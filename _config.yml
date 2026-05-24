@@ -2,9 +2,9 @@
 
 title: McRetro.net
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  A retro-futurist blog where dial-up nostalgia meets real-world
+  resilience. Documenting the analog ghosts and digital debris
+  of a life lived across both worlds.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mcretro.net" # the base hostname & protocol for your site, e.g. http://example.com
 timezone: Australia/Sydney

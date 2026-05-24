@@ -1,21 +1,80 @@
-name: Build and Deploy Jekyll
+name: Deploy Jekyll site with Pagefind
 
 on:
   push:
-    branches: [main]
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: ruby/setup-ruby@v1
+      - name: Checkout
+        uses: actions/checkout@v5         # was v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1          # unchanged, already fine
         with:
           ruby-version: '3.2'
-          bundler-cache: true
-      - run: bundle exec jekyll build
-      - uses: peaceiris/actions-gh-pages@v3
+          bundler-cache: true             # this caches gems automatically
+
+      - name: Install Jekyll and dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      - name: Build site with Jekyll
+        run: bundle exec jekyll build --destination _site
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6       # was v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          publish_branch: gh-pages
+          node-version: 18
+
+      - name: Install Pagefind
+        run: npm install -g pagefind
+
+      - name: Run Pagefind
+        run: pagefind --site _site --output-subdir pagefind --exclude-selectors "img,.widget,.site-footer,.footer-widgets,.navbar,.pagination,.adventure-pagination,.post-navigation,#secondary"
+
+      # New step: check for broken links in _site
+      - name: Check links with Lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --root-dir ${{ github.workspace }}/_site
+            --verbose
+            --no-progress
+            --max-concurrency 8
+            --accept 200,429,530
+            './_site/**/*.html'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6   # was v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5   # was v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5      # was v4

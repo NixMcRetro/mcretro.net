@@ -11,11 +11,11 @@ Here I was thinking I had an 11 minute voiceover but I misread the timeline. I'l
 
 ![](/assets/images/2023/img_1016.jpg)
 
-Let's start with the innocent [NCSA Mosaic](https://en.wikipedia.org/wiki/Mosaic_\(web_browser\)). At this stage we were running on a [Macintosh Classic](https://support.apple.com/kb/SP198). The splash screen works well.
+Let's start with the innocent [NCSA Mosaic](https://en.wikipedia.org/wiki/NCSA_Mosaic). At this stage we were running on a [Macintosh Classic](https://support.apple.com/kb/SP198). The splash screen works well.
 
 ![](/assets/images/2023/img_1015.jpg)
 
-We even made it to the [RetroJunkie homepage](http://retrojunkie.net)!
+We even made it to the [RetroJunkie homepage](https://retrojunkie.net)!
 
 ![](/assets/images/2023/img_1014.jpg)
 
@@ -71,4 +71,10 @@ And our Windows Mozilla 1.0, unsurprisingly perhaps, uses Mozilla/1.0 (Windows).
 
 What's perhaps most interesting to me in all the above examples, Apache is only seeing GET from HTML/1.0. There's no GET from HTML/0.9 because it wasn't versioned. My poor little Apache2 web server has no idea what HTML version is knocking so it just says 1.0.
 
-Here's some of the pages I followed to get this to work, a big thanks to each of the authors! [https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP) [https://metalbabble.wordpress.com/2020/02/08/the-final-frontier-connecting-a-macintosh-se-to-the-internet-with-a-raspberry-pi/](https://metalbabble.wordpress.com/2020/02/08/the-final-frontier-connecting-a-macintosh-se-to-the-internet-with-a-raspberry-pi/) [http://www.mirrorservice.org/sites/browsers.evolt.org/browsers/macweb/macweb.htm](http://www.mirrorservice.org/sites/browsers.evolt.org/browsers/macweb/macweb.htm) [http://www.kafsemo.org/2015/01/03_talking-HTTP-0.9%2C1.0%2C1.1.html](http://www.kafsemo.org/2015/01/03_talking-HTTP-0.9%2C1.0%2C1.1.html) [http://www.tobymackenzie.com/blog/2018/02/18/supporting-http-0-9/](http://www.tobymackenzie.com/blog/2018/02/18/supporting-http-0-9/) [https://datatracker.ietf.org/doc/html/rfc7230#appendix-A.2](https://datatracker.ietf.org/doc/html/rfc7230#appendix-A.2)
+**Here's some of the pages I followed to get this to work, a big thanks to each of the authors!**
+- [https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP)
+- [https://metalbabble.wordpress.com/2020/02/08/the-final-frontier-connecting-a-macintosh-se-to-the-internet-with-a-raspberry-pi/](https://metalbabble.wordpress.com/2020/02/08/the-final-frontier-connecting-a-macintosh-se-to-the-internet-with-a-raspberry-pi/)
+- [http://www.mirrorservice.org/sites/browsers.evolt.org/browsers/macweb/macweb.htm](http://www.mirrorservice.org/sites/browsers.evolt.org/browsers/macweb/macweb.htm)
+- [http://www.kafsemo.org/2015/01/03_talking-HTTP-0.9%2C1.0%2C1.1.html](http://www.kafsemo.org/2015/01/03_talking-HTTP-0.9%2C1.0%2C1.1.html)
+- [http://www.tobymackenzie.com/blog/2018/02/18/supporting-http-0-9/](http://www.tobymackenzie.com/blog/2018/02/18/supporting-http-0-9/)
+- [https://datatracker.ietf.org/doc/html/rfc7230#appendix-A.2](https://datatracker.ietf.org/doc/html/rfc7230#appendix-A.2)

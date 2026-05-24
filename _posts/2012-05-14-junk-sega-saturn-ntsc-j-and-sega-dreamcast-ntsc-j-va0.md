@@ -7,7 +7,7 @@ categories: [repairs, sega]
 
 ![](/assets/images/2012/img_0104.jpg)
 
-Today I received my White Japanese Model 2 Sega Saturn from Japan. Look at it, isn't it just the cleanest looking design Saturn you have seen? Well, compared to PAL Saturns at least. I have added it into the [photo gallery](/goodies/) too. It powers on with no issues through the step down converter, but has a very bad drive mechanism that seems to not know where it is supposed to rest. Very bad clicking noises. I bought it just for the case, but perhaps there is hope to repair it...
+Today I received my White Japanese Model 2 Sega Saturn from Japan. Look at it, isn't it just the cleanest looking design Saturn you have seen? Well, compared to PAL Saturns at least. I have added it into the [photo gallery](/photos) too. It powers on with no issues through the step down converter, but has a very bad drive mechanism that seems to not know where it is supposed to rest. Very bad clicking noises. I bought it just for the case, but perhaps there is hope to repair it...
 
 ![](/assets/images/2012/img_0105.jpg)
 
@@ -15,7 +15,7 @@ Today I received my White Japanese Model 2 Sega Saturn from Japan. Look at it, i
 
 ![](/assets/images/2012/img_0078.jpg)
 
-And here is the Dreamcast I received. It seems to be a VA0 - Metal fan and all! What are the chances? Very unreal and the box was in immaculate condition. Lots of paperwork and documents. I have added a new photo gallery just for it in the [photo gallery](https://photos.mcretro.net/) under Sega Dreamcast 058007003298.
+And here is the Dreamcast I received. It seems to be a VA0 - Metal fan and all! What are the chances? Very unreal and the box was in immaculate condition. Lots of paperwork and documents. I have added a new photo gallery just for it in the [photo gallery](/photos) under Sega Dreamcast 058007003298.
 
 ![](/assets/images/2012/img_0101.jpg)
 

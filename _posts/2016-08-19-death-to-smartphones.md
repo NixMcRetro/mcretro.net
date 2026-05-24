@@ -7,9 +7,9 @@ categories: [apple]
 
 ![iPhone 5s](/assets/images/2016/img_0539.jpg)
 
-That's it, I'm sick of mobile phones and always being switched on in the digital world. Modern phones are such a joke with their 60-minute-man-like batteries.
+That's it, I'm sick of mobile phones and always being switched on in the digital world. Modern phones are such a joke with their [60-minute-man-like](https://en.wikipedia.org/wiki/Sixty_Minute_Man) batteries.
 
-{% include youtube.html id="NlZqfNNtvVM" %}
+{% include youtube.html id="09EarjR-UPU" %}
 
 All I use my phone for is SMS and that's usually just 2FA rubbish. Don't get me wrong, I love getting two almost two days out of my phone but it's time to move backwards.
 

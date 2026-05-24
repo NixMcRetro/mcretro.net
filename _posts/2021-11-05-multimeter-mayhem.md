@@ -15,4 +15,4 @@ This particular multimeter, an AideTek.com VC97+, had a few corroded Varta batte
 
 ![](/assets/images/2021/img_0774.jpg)
 
-Unfortunately, I also noticed that the stand was broken. One of the pegs had snapped. I can't be trusted with superglue. So I handed it over to [Nick](/humble-beginnings-nintendo-famicom-incoming/), a.k.a. SuperNick, who has been a part of the McRetro family since [before it existed](http://retrojunkie.net). He fixed it up and now it is as good as new. Thanks Nick!
+Unfortunately, I also noticed that the stand was broken. One of the pegs had snapped. I can't be trusted with superglue. So I handed it over to [Nick](/humble-beginnings-nintendo-famicom-incoming/), a.k.a. SuperNick, who has been a part of the McRetro family since [before it existed](https://retrojunkie.net). He fixed it up and now it is as good as new. Thanks Nick!

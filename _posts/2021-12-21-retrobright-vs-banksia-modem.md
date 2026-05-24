@@ -11,11 +11,9 @@ Lots of people I know like [retrobright](https://en.wikipedia.org/wiki/Retrobrig
 
 ![](/assets/images/2021/img_0779.jpg)
 
-You can see more before and after shots in the [photo gallery](https://photos.mcretro.net) under the Banksia Wave SP56 modem serial 13412650. [Pendleton115](https://web.archive.org/web/20230904050034/http://pendleton115.net/) was kind enough to give it a shot with this method-
+You can see more before and after shots in the [photo gallery](/photos) under the Banksia Wave SP56 modem serial 13412650. [Pendleton115](https://web.archive.org/web/20230904050034/http://pendleton115.net/) was kind enough to give it a shot with this method-
 
- 
-
-> Hydrogen peroxide and up
+> **Hydrogen peroxide and up**
 
 Hmmm, that looks like an iOS-style typo or unwanted autocorrect. Probably should read UV. The results will vary depending on a few factors, concentration of hydrogen peroxide, UV exposure time, etc. It definitely lightened up the plastics. It also had a negative effect on the coloured text, which to be fair, we were expecting to happen.
 

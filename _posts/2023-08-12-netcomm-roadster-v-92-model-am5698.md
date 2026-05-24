@@ -35,8 +35,6 @@ It was of interest it was a bipolar, or non-polar, capacitor. [Jon](https://damn
 
 Next up we have the ATI (inquiry, information, or interrogation) results. This give us the active firmware version - this wasn't dumped because I didn't have much interest in doing it at the time. That said, it might be available through [archive.org](http://archive.org) as an available firmware update. You'll need to scour the archives to track that down though.
 
- 
-
 ```
 ---------- 2022-10-02 20:47:01 +1100: Logging Started ----------
 
@@ -86,25 +84,23 @@ CONNECT 28800
 
 The capacitors were replaced in this modem in September 2022. The parts listed below are manufacturer part numbers. The formatting isn’t too web friendly, copy the raw text out and paste it into a non-rich text editor (Such as Notepad or TextEdit – in plain text mode) and you’ll probably be fine. 😄
 
- 
-
 ```
 Location	Value	Voltage		Height	Width	Notes
-C50		100uF	25V		12mm	6mm	25YXF100MEFC6.3X11
-C67		100uF	25V		12mm	6mm	As above
-C25		22uF	63V		12mm	8mm	100YXM22MEFC8X11.5 - Non-polar but had silkscreen for polar, YXM Series, 100V upgrade.
-C30		4.7uF	50V		6mm	5mm	50YXF4R7MEFC5X11
+C50			100uF	25V			12mm	6mm		25YXF100MEFC6.3X11
+C67			100uF	25V			12mm	6mm		As above
+C25			22uF	63V			12mm	8mm		100YXM22MEFC8X11.5 - Non-polar but had silkscreen for polar, YXM Series, 100V upgrade.
+C30			4.7uF	50V			6mm		5mm		50YXF4R7MEFC5X11
 
-C65		10uF	25V		6mm	4mm	50YXF10MEFC5X11 - YXF Series, 50V upgrade.
-C64		10uF	25V		6mm	4mm	As above
-C63		10uF	25V		6mm	4mm	As above
-C62		10uF	25V		6mm	4mm	As above
-C15		10uF	25V		6mm	4mm	As above
-C16		10uF	25V		6mm	4mm	As above
-C17		10uF	25V		6mm	4mm	As above
+C65			10uF	25V			6mm		4mm		50YXF10MEFC5X11 - YXF Series, 50V upgrade.
+C64			10uF	25V			6mm		4mm		As above
+C63			10uF	25V			6mm		4mm		As above
+C62			10uF	25V			6mm		4mm		As above
+C15			10uF	25V			6mm		4mm		As above
+C16			10uF	25V			6mm		4mm		As above
+C17			10uF	25V			6mm		4mm		As above
 
-C18		10uF	25V		6mm	4mm	25ZLG10MEFC4X7 - Height restricted.
-C19		10uF	25V		6mm	4mm	As above
+C18			10uF	25V			6mm		4mm		25ZLG10MEFC4X7 - Height restricted.
+C19			10uF	25V			6mm		4mm		As above
 
 All electrolytic capacitors are radial.
 Lead spacing is 2-2.5mm on most.
@@ -112,6 +108,6 @@ Use caution under the speaker as 11/12mm (h) capacitors will not have enough cle
 
 ```
 
-As always you can see more pictures in the [photo gallery](https://photos.mcretro.net) and grab any drivers from the [file server](https://files.mcretro.net). I've put an iso image up of the entire driver disc as well but you shouldn't need much more than the above init string to get dialling.
+As always you can see more pictures in the [photo gallery](/photos) and grab any drivers from the [file server](/files). I've put an iso image up of the entire driver disc as well but you shouldn't need much more than the above init string to get dialling.
 
 This modem has been donated to the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/).

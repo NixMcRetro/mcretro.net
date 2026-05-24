@@ -67,7 +67,7 @@ For assigned male at birth (AMAB) people, DHT gives you the gift of male pattern
 
 ![](/assets/images/2024/img_1264.jpg)
 
-Remember our little friend allopregnanolone from earlier? [Blocked](https://finasterideinfo.org/merck-official-account-concealed-widespread-biochemical-impacts/). What about [isopregnanolone](https://en.wikipedia.org/wiki/Isopregnanolone). [Blocked](https://www.researchgate.net/publication/338182353_Post-finasteride_syndrome_An_emerging_clinical_problem). Finasteride is really quite a dirty drug with lots of off-target activity.
+Remember our little friend allopregnanolone from earlier? [Blocked](https://archive.is/rWnu6). What about [isopregnanolone](https://en.wikipedia.org/wiki/Isopregnanolone). [Blocked](https://www.researchgate.net/publication/338182353_Post-finasteride_syndrome_An_emerging_clinical_problem). Finasteride is really quite a dirty drug with lots of off-target activity.
 
 I've deemed it as unnecessary for the same reason I don't take any testosterone blockers, such as [cyproterone acetate](https://en.wikipedia.org/wiki/Cyproterone_acetate) or [spironolactone](https://en.wikipedia.org/wiki/Spironolactone). We're going for estrogen dominance here. Women do have testosterone, but it isn't the dominant sex hormone.
 

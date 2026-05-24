@@ -7,13 +7,11 @@ categories: [repairs]
 
 ![](/assets/images/2021/img_0741.jpg)
 
-I did replace the capacitors in this one as they were... sus...pect (see photo below). And while there aren't many photos, the ones I do have are now in the [photo gallery](http://photos.mcretro.net) in case they are of use to anyone. The serial number on this SPA112 is YM191HWJI129A.
+I did replace the capacitors in this one as they were... sus...pect (see photo below). And while there aren't many photos, the ones I do have are now in the [photo gallery](/photos) in case they are of use to anyone. The serial number on this SPA112 is YM191HWJI129A.
 
 ![](/assets/images/2021/img_0740.jpg)
 
 Capacitor replacement was quite straight forward. Whether they are the best capacitors for the job, I couldn't tell you. But honestly, anything is better than a low tier capacitor to save on cost. Right, Cisco?
-
- 
 
 ```
 2x 100uF @ 25V - Rubycon YXF Series - 25YXF100MEFC6.3X11
@@ -33,4 +31,5 @@ ATDT****,,,,,,,,,,73738#,,,,1#
 
 ```
 
-**Update 2023** This Cisco SPA112 was donated to Jon in 2023 after I finished up dealing with dial-up modems. Jon helped me, well did all the work, when it came to desoldering PLCC32s and resoldering them back on before the modems were donated to the [ACMS](http://forum.acms.org.au).
+**Update 2023**
+This Cisco SPA112 was donated to Jon in 2023 after I finished up dealing with dial-up modems. Jon helped me, well did all the work, when it came to desoldering PLCC32s and resoldering them back on before the modems were donated to the [ACMS](http://forum.acms.org.au).

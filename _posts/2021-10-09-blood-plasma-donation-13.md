@@ -39,4 +39,4 @@ We aren't feeding the birds, so they look ragged like this poor fellow. We stood
 
 ![](/assets/images/2021/img_0759.jpg)
 
-It all came from a "grab bag" keycap kit. Mostly misprints and a tonne of F12 keys. It has helped determine what profile would suit the upcoming [YamPAD](https://github.com/mattdibi/yampad) project, I think the lower profiles would suit better. Oh, look! You can also see the [GeoCities](http://geocities.mcretro.net) proxy server hanging by an ethernet cable in the background.
+It all came from a "grab bag" keycap kit. Mostly misprints and a tonne of F12 keys. It has helped determine what profile would suit the upcoming [YamPAD](https://github.com/mattdibi/yampad) project, I think the lower profiles would suit better. Oh, look! You can also see the [GeoCities](/homepages/geocities) proxy server hanging by an ethernet cable in the background.

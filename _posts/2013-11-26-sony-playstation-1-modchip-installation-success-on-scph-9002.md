@@ -11,4 +11,5 @@ What a mess! But I guess that's just the way I like it :) We ended up moving fro
 
 It's interesting to note that the CD burner we were burning test games with was actually faulty... in the excitement of getting games working "verify burn" was either switched off or ignored - whoops! Part 2 explains all that though!
 
-**References** [http://www.mcumall.com/forum/topic.asp?TOPIC_ID=4858](http://www.mcumall.com/forum/topic.asp?TOPIC_ID=4858)
+**References**
+- [http://www.mcumall.com/forum/topic.asp?TOPIC_ID=4858](http://www.mcumall.com/forum/topic.asp?TOPIC_ID=4858)

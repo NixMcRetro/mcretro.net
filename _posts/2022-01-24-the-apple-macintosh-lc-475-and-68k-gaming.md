@@ -23,7 +23,7 @@ Next up we have [Brickles Plus](https://www.macintoshrepository.org/3641-brickle
 
 ![](/assets/images/2022/img_0803.gif)
 
-[Maniac](https://www.macintoshrepository.org/6026-maniac). What can I say? I love the gameplay and I **_love_** [the soundtrack](/assets/uploads/Maniac-Game-Music.zip). [MOD files](https://en.wikipedia.org/wiki/MOD_\(file_format\)) rock my world. It's possible I fell in love with Maniac due to the soundtrack, not just the very cool game mechanics. Pac-Man combined with hangman? Hangman... how could I forget!
+[Maniac](https://www.macintoshrepository.org/6026-maniac). What can I say? I love the gameplay and I **_love_** [the soundtrack](/assets/uploads/Maniac-Game-Music.zip). [MOD files](https://en.wikipedia.org/wiki/MOD_(file_format)) rock my world. It's possible I fell in love with Maniac due to the soundtrack, not just the very cool game mechanics. Pac-Man combined with hangman? Hangman... how could I forget!
 
 ![](/assets/images/2022/img_0802.gif)
 

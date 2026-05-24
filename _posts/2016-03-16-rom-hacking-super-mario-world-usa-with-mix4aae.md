@@ -21,22 +21,20 @@ For the sake of being complete, we'll also fix up the checksum (no one likes a d
 
 Now you can fire up an emulator of your choice to test that the ROM works. I went with the time-tested Snes9x 1.53 on the Mac. It also gives the information we need to find an appropriate donor cartridge: - LoROM - 32Mbits - NTSC - SRAM: 16kbits - Battery
 
-Next head over to the [Server](/goodies/) page and visit the Google Drive and locate a document called [SNES PCB List-full.xls](http://files.mcretro.net). It is a great big list I found somewhere a while back. It lists all the details we need! The size of the cartridge isn't important as we will be replacing the ROM with a TSOP40 AM29F032B or an ST M29F032D chip. SRAM is usually important to match in size. LoROM is also important as that is how the cartridge is wired up. You could technically use a Super Mario World cart! The only thing not listed is whether the game has battery backup support. Find a ROM, throw it into Snes9x and check for ROM+RAM+BAT on startup.
+Next head over to the [server](/goodies) page and visit the Google Drive and locate a document called [SNES PCB List-full.xls](/files). It is a great big list I found somewhere a while back. It lists all the details we need! The size of the cartridge isn't important as we will be replacing the ROM with a TSOP40 AM29F032B or an ST M29F032D chip. SRAM is usually important to match in size. LoROM is also important as that is how the cartridge is wired up. You could technically use a Super Mario World cart! The only thing not listed is whether the game has battery backup support. Find a ROM, throw it into Snes9x and check for ROM+RAM+BAT on startup.
 
 Once you find a suitable donor cart also make sure the region matches or install a SuperCIC modchip in your SNES / SFC to bypass any region checks. From there it is just a matter of getting the ROM code onto the TSOP chip and into your cartridge. It's more complicated than it sounds, these videos might help.
-
- 
 
 {% include youtube.html id="dV6J6cpVUfg" %}
 
 This first video shows a bit of the ROM flashing process using EarthBound as an example. EarthBound is a 24Mbit game that fits well on a 32Mbit TSOP40 chip.
 
- 
-
 {% include youtube.html id="w0vsgrKIE4E" %}
 
 The above video is more a guide on how to solder TSOP chips. There will be a part two on programming in the near future. In the meantime, if you get stuck, feel free to ask around on forums. I'd recommend [AssemblerGames](https://web.archive.org/web/20191206184256/https://assemblergames.com/) or [ROMhacking.net](http://www.romhacking.net) as a good starting point for any questions. And of course, remember to have fun! Good luck! :)
 
-**January 2020 edit:** [The Poor Student Hobbyist](https://thepoorstudenthobbyist.com/2017/09/14/how-to-make-a-snes-reproduction-cartridge/#step7d) has a fantastic write up with many details and a heap of options depending on cartridge and chips you decide to work with.
+**January 2020 Edit:**
+- [The Poor Student Hobbyist](https://thepoorstudenthobbyist.com/2017/09/14/how-to-make-a-snes-reproduction-cartridge/#step7d) has a fantastic write up with many details and a heap of options depending on cartridge and chips you decide to work with.
 
-**References** [https://web.archive.org/web/20191027015856/http://www.nintendoage.com/forum/messageview.cfm?catid=22&threadid=85308](https://web.archive.org/web/20191027015856/http://www.nintendoage.com/forum/messageview.cfm?catid=22&threadid=85308)
+**References**
+- [https://web.archive.org/web/20191027015856/http://www.nintendoage.com/forum/messageview.cfm?catid=22&threadid=85308](https://web.archive.org/web/20191027015856/http://www.nintendoage.com/forum/messageview.cfm?catid=22&threadid=85308)

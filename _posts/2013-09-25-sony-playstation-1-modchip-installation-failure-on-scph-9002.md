@@ -9,9 +9,9 @@ categories: [hacks, sony, youtube]
 
 Oh geez! Another video of a guide I was attempting to do only to have many things go wrong and write it off. Rather than throw it away I thought I might let the internet feast on this beauty of a video - see my attempt at stop motion in Final Cut Pro X at the end of the video...
 
-{% include youtube.html id="Dl-ai9HuR60" %}
+{% include youtube.html id="V6QhAZckY8w" %}
 
-... things can only get better! ;)
+...things can only get better! ;)
 
 ![](/assets/images/2013/img_0419.jpg)
 

@@ -27,15 +27,11 @@ Poking around the board a bit more I was delighted to see capacitors. Those who 
 
 ![](/assets/images/2023/img_1067.jpg)
 
-And while I'd love to give Nichicon the benefit of the doubt, but those caps don't look too happy. Fair, it's been over two decades, and most of the has probably been in storage. There's a reason I always recap with Rubycon and Panasonic branded capacitors. They seem to last longer. Even the general purpose Rubys or ELNA ones in Sega's hardware looks to do very well. Regardless, they were replaced. The [photo gallery](https://photos.mcretro.net) has been restocked to help quench your thirst for modems too.
-
- 
+And while I'd love to give Nichicon the benefit of the doubt, but those caps don't look too happy. Fair, it's been over two decades, and most of the has probably been in storage. There's a reason I always recap with Rubycon and Panasonic branded capacitors. They seem to last longer. Even the general purpose Rubys or ELNA ones in Sega's hardware looks to do very well. Regardless, they were replaced. The [photo gallery](/photos) has been restocked to help quench your thirst for modems too.
 
 {% include youtube.html id="mZaE4dVaeJ8" %}
 
-The exact initialisation string I used is well... lost. However looking at the Windows drivers for this modem it looks to be the below. Now, whether they are the best ones... I couldn’t say. Trial and error can be fun! As usual, I’ll throw in some ATI (inquiry, information, or interrogation) results. The windows drivers can be found on the [file server](https://files.mcretro.net).
-
- 
+The exact initialisation string I used is well... lost. However looking at the Windows drivers for this modem it looks to be the below. Now, whether they are the best ones... I couldn’t say. Trial and error can be fun! As usual, I’ll throw in some ATI (inquiry, information, or interrogation) results. The windows drivers can be found on the [file server](/files).
 
 ```
 ---------- 2021-11-07 16:53:19 +1100: Logging Started ----------
@@ -85,7 +81,7 @@ As hinted at above in ATI4, the firmware version is F02_V1.56 and fits neatly in
 
 ![](/assets/images/2023/img_1069.jpg)
 
-Unfortunately for me the firmware upgrader, [am56906.exe](https://files.mcretro.net), was the same version as what I already had. I reflashed it anyway as the retention for this chip, the AM29F002NB, is **_only_** 20 years... at 125 degrees... Celsius! I'm not sure how it was stored in the past. So if it was kept in a fire pit for the last 20 years, I'd rather be safe than sorry I guess! 🤣
+Unfortunately for me the firmware upgrader, [am56906.exe](/files), was the same version as what I already had. I reflashed it anyway as the retention for this chip, the AM29F002NB, is **_only_** 20 years... at 125 degrees... Celsius! I'm not sure how it was stored in the past. So if it was kept in a fire pit for the last 20 years, I'd rather be safe than sorry I guess! 🤣
 
 ![](/assets/images/2023/img_1068.jpg)
 
@@ -93,21 +89,19 @@ The am56906.exe installer also included an older version of the flash ROM - V1.5
 
 Next up is a listing of the electrolytic capacitors replaced and what they were replaced with i.e. their manufacturer part numbers. All 11 capacitors were replaced in November 2021. While the formatting isn't too web friendly, copy the raw text out and paste it into a non-rich text editor (Such as Notepad or TextEdit - in plain text mode) and you'll probably be fine. 😄
 
- 
-
 ```
 Location	Value	Voltage		Height	Width	Notes
-C24		100uF	16V		7mm	6mm	16ML100MEFC6.3X7
-C49		100uF	16V		7mm	6mm	As above
-C44		47uF	50V		11mm	6mm	50YXJ47M6.3X11
-C45		47uF	50V		11mm	6mm	As above
-C50		10uF	50V		7mm	5mm	50YXF10MEFC5X11 - Taller at 11mm(h)
-C38		10uF	25V		7mm	4mm	25ZLG10MEFC4X7
-C30		10uF	25V		7mm	4mm	As above
-C27		10uF	25V		7mm	4mm	As above
-C14		10uF	25V		7mm	4mm	As above
-C21		10uF	25V		7mm	4mm	As above
-C46		10uF	25V		7mm	4mm	As above
+C24			100uF	16V			7mm		6mm		16ML100MEFC6.3X7
+C49			100uF	16V			7mm		6mm		As above
+C44			47uF	50V			11mm	6mm		50YXJ47M6.3X11
+C45			47uF	50V			11mm	6mm		As above
+C50			10uF	50V			7mm		5mm		50YXF10MEFC5X11 - Taller at 11mm(h)
+C38			10uF	25V			7mm		4mm		25ZLG10MEFC4X7
+C30			10uF	25V			7mm		4mm		As above
+C27			10uF	25V			7mm		4mm		As above
+C14			10uF	25V			7mm		4mm		As above
+C21			10uF	25V			7mm		4mm		As above
+C46			10uF	25V			7mm		4mm		As above
 
 All electrolytic capacitors are radial.
 Lead spacing is 2-2.5mm on most.
@@ -115,6 +109,8 @@ Use caution under the speaker as 11mm(h) capacitors will not have clearance.
 
 ```
 
-**Special thanks to:** [Doge Microsystems](https://dogemicrosystems.ca) as always for their VoIP configuration guides and [Gough's blog](https://goughlui.com/).
+**Special thanks to:**
+- [Doge Microsystems](https://dogemicrosystems.ca) as always for their VoIP configuration guides
+- [Gough's Blog](https://goughlui.com/).
 
 This modem has been donated to the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/).

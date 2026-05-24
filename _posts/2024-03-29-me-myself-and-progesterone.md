@@ -23,7 +23,7 @@ Instead I get this whole brain fire thing and feel like I've taken an [anxiogeni
 
 I've experienced similar feelings while withdrawing from pregabalin (decreases glutamate levels) and trusty old diazepam (increases GABA levels). Definitely that same feeling though. It appears that taking what I would consider a small dose (2 mg) of diazepam negates the insomnia pretty well. Even though diazepam isn't a terribly good choice for sleep. It takes me from being a wired insomniac to sleeping beauty in about an hour.
 
-Another interesting side effect I am seeing a lot more of is [dissociation](https://en.wikipedia.org/wiki/Dissociation_\(psychology\)). Ordinarily, I would only experience this while in high stress, high anxiety situations but recently I'm noting it a lot more just doing chores around the house - which is a little concerning.
+Another interesting side effect I am seeing a lot more of is [dissociation](https://en.wikipedia.org/wiki/Dissociation_(psychology)). Ordinarily, I would only experience this while in high stress, high anxiety situations but recently I'm noting it a lot more just doing chores around the house - which is a little concerning.
 
 ![](/assets/images/2024/img_1258.jpg)
 

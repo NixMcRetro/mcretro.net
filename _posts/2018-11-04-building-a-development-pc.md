@@ -11,9 +11,9 @@ Quick, down memory lane! This one was a fun video to put together, slowly piecin
 
 At any rate I'm still powering through university, final exams for the semester are coming up in the next few weeks. I guess I'll have to sift through all the study I should have been doing the past... hmmm... 12 or 13 weeks! I always say I'll be a better student, but it never happens. Attendance just isn't my thing.
 
-{% include youtube.html id="PWmNi_VVVko" %}
+{% include youtube.html id="I85zkLP7kls" %}
 
-Rick and Morty might have nailed it.
+Rick and Morty might just have nailed it.
 
 {% include youtube.html id="-2RVtFwLWLo" %}
 

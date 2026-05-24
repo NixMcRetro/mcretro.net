@@ -9,7 +9,7 @@ categories: [gaming, news, study]
 
 It's been a busy year with study at university and a bit of freelance photo work on the side. I want to thank the gaming giants of yesteryear for releasing these magnificent little consoles. It's given me the ability to help move on and away from original hardware.
 
-Sadly most of my consoles had just been sitting on this open bookcase collecting dust, so much dust. So I am going to get rid of a bunch and replace them with their itty-bitty [chibi-chibi](https://en.wikipedia.org/wiki/Chibi_\(slang\)) equivalents.
+Sadly most of my consoles had just been sitting on this open bookcase collecting dust, so much dust. So I am going to get rid of a bunch and replace them with their itty-bitty [chibi-chibi](https://en.wikipedia.org/wiki/Chibi_(style)) equivalents.
 
 I'll focus on 1980s and 1990s gaming hardware which, mind you, I was supposed to be doing from the start... and aim for Japanese models only where possible. Looking at the above photo means my mini Mega Drive and mini PlayStation might need to be replaced with their Japanese brethren. That should narrow the field significantly.
 

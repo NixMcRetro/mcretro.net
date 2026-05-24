@@ -56,6 +56,7 @@ jobs:
             --no-progress
             --max-concurrency 8
             --accept 200,429,530
+            --exclude-file ${{ github.workspace }}/.lycheeignore
             './_site/**/*.html'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

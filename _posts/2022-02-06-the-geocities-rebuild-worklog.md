@@ -506,16 +506,16 @@ Above is the VirtualHost configuration to date. I better get around to moving ev
 These are some other good test cases while trying to get the merging to work as some were present in lowercase and some in uppercase. Ultimately I'll need to merge all the case variants at some stage.
 
 **Exists**
-[http://geocities.mcretro.net/capecanaveral/1020/line/](http://geocities.mcretro.net/capecanaveral/1020/line/)
+[http://geocities.mcretro.net/capecanaveral/1020/line/](#)
 
 **Doesn't Exist**
-[http://geocities.mcretro.net/CapeCanaveral/1020/line/](http://geocities.mcretro.net/CapeCanaveral/1020/line/)
+[http://geocities.mcretro.net/CapeCanaveral/1020/line/](#)
 
 Great links for testing this out:
-- [http://geocities.mcretro.net/CapeCanaveral/1020/line/marsh.gif](http://geocities.mcretro.net/CapeCanaveral/1020/line/marsh.gif)
-- [http://geocities.mcretro.net/capecanaveral/1020/line/marsh.gif](http://geocities.mcretro.net/capecanaveral/1020/line/marsh.gif)
-- [http://geocities.mcretro.net/CapeCanaveral/1020/index.html](http://geocities.mcretro.net/CapeCanaveral/1020/index.html)
-- [http://geocities.mcretro.net/capecanaveral/1020/index.html](http://geocities.mcretro.net/capecanaveral/1020/index.html)
+- [http://geocities.mcretro.net/CapeCanaveral/1020/line/marsh.gif](#)
+- [http://geocities.mcretro.net/capecanaveral/1020/line/marsh.gif](#)
+- [http://geocities.mcretro.net/CapeCanaveral/1020/index.html](#)
+- [http://geocities.mcretro.net/capecanaveral/1020/index.html](h#)
 
 Does mod_spelling work it out? If yes, mod_spelling is working well to merge the mush of uppercase and lowercase.
 
@@ -729,7 +729,7 @@ Creating a snapshot of the progress so far, to rotational media, is a good idea.
 
 ![](/assets/images/2022/img_0825.jpg)
 
-For the past week, my primary goal has been to merge all the core data together, avoiding copy blocks as pictured above. I've been mostly successful at this, although I might have had to call upon the backup from last week a few times. It's very easy to enable autopilot and accidentally overwrite all of [Heartland](https://geocities.mcretro.net/neighborhoods/#heartland) by replacing instead of merging. Thankfully, that's now water under the bridge and we have arrived at...
+For the past week, my primary goal has been to merge all the core data together, avoiding copy blocks as pictured above. I've been mostly successful at this, although I might have had to call upon the backup from last week a few times. It's very easy to enable autopilot and accidentally overwrite all of [https://geocities.mcretro.net/neighborhoods/#heartland](#) by replacing instead of merging. Thankfully, that's now water under the bridge and we have arrived at...
 
 ![](/assets/images/2022/img_0879.jpg)
 
@@ -847,7 +847,7 @@ So now if you happen to be on a modern computer running the Tor Browser (based o
 
 ![](/assets/images/2022/img_0855.jpg)
 
-Once clicked you end up with the very easy to remember: [http://geocitiesllczuf44da2nj45jn3fntdjpw27ercfbhkrw3mnegti7pid.onion](homepages/geocities)
+Once clicked you end up with the very easy to remember: [http://geocitiesllczuf44da2nj45jn3fntdjpw27ercfbhkrw3mnegti7pid.onion](/homepages/geocities)
 
 This link will not resolve in a clearnet browser, you need to use one that has Tor capabilities (or a Tor proxy service).
 

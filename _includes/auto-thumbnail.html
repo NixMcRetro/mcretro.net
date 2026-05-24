@@ -1,0 +1,50 @@
+{% assign content = include.content | default: post.content %}
+{% assign img_src = nil %}
+{% assign yt_id = nil %}
+
+{% comment %} ---- 1. Try to extract the first YouTube iframe ---- {% endcomment %}
+{% assign iframe_split = content | split: '<iframe ' %}
+{% if iframe_split.size > 1 %}
+  {% assign iframe_part = iframe_split[1] | split: '>' | first %}
+  {% assign src_split = iframe_part | split: 'src="' %}
+  {% if src_split.size > 1 %}
+    {% assign iframe_src = src_split[1] | split: '"' | first %}
+  {% else %}
+    {% assign src_split = iframe_part | split: "src='" %}
+    {% assign iframe_src = src_split[1] | split: "'" | first %}
+  {% endif %}
+  {% if iframe_src contains 'youtube.com/embed/' %}
+    {% assign yt_parts = iframe_src | split: 'youtube.com/embed/' %}
+    {% assign yt_id = yt_parts[1] | split: '?' | first | split: '/' | first %}
+  {% elsif iframe_src contains 'youtu.be/' %}
+    {% assign yt_parts = iframe_src | split: 'youtu.be/' %}
+    {% assign yt_id = yt_parts[1] | split: '?' | first | split: '/' | first %}
+  {% endif %}
+{% endif %}
+
+{% comment %} ---- 2. If no video was found, look for the first image ---- {% endcomment %}
+{% if yt_id == nil %}
+  {% assign img_split = content | split: '<img ' %}
+  {% if img_split.size > 1 %}
+    {% assign img_part = img_split[1] | split: '>' | first %}
+    {% assign src_split = img_part | split: 'src="' %}
+    {% if src_split.size > 1 %}
+      {% assign img_src = src_split[1] | split: '"' | first %}
+    {% else %}
+      {% assign src_split = img_part | split: "src='" %}
+      {% assign img_src = src_split[1] | split: "'" | first %}
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+{% comment %} ---- 3. Output the preview ---- {% endcomment %}
+{% if yt_id %}
+  <a href="{{ post.url | default: include.url }}" class="post-thumbnail-link video-thumb">
+    <img src="https://img.youtube.com/vi/{{ yt_id }}/hq720.jpg" alt="{{ post.title | default: include.title }}" class="post-thumbnail-img">
+    <span class="play-overlay" aria-hidden="true">▶</span>
+  </a>
+{% elsif img_src %}
+  <a href="{{ post.url | default: include.url }}" class="post-thumbnail-link">
+    <img src="{{ img_src }}" alt="{{ post.title | default: include.title }}" class="post-thumbnail-img">
+  </a>
+{% endif %}

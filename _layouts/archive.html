@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="post-full">
+  <h1 class="post-title">
+    {% if page.type == 'category' %}Category: {{ site.data.categories[page.title] | default: page.title }}
+    {% elsif page.type == 'month' %}{{ page.date | date: "%B %Y" }}
+    {% else %}{{ page.title }}
+    {% endif %}
+  </h1>
+
+  <div class="post-content">
+    {% for post in page.posts %}
+      <div class="archive-entry">
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
+        <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</article>

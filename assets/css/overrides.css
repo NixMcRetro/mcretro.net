@@ -1,0 +1,392 @@
+/* ============================================================
+   BLOG ROLL / EXCERPTS
+   ============================================================ */
+
+/* "Continue reading" link */
+.read-more {
+  display: inline-block;
+  color: #0009b5;
+  text-decoration: none;
+  margin-bottom: 2em;
+}
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   HAMBURGER MENU
+   ============================================================ */
+
+/* Hide hamburger on desktop (wide screens) */
+.nav-toggle {
+  display: none;
+}
+
+/* Mobile menu (≤ 750px) */
+@media screen and (max-width: 750px) {
+  /* Show hamburger button */
+  .nav-toggle {
+    display: flex;
+    /* keep existing rounded‑box styles from main theme */
+  }
+
+  /* Dropdown container – hidden by default, slides down when open */
+  .nav-list {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff8dc;
+    margin: 0;
+    padding: 0.8rem 0;          /* vertical padding only */
+    list-style: none;
+    border: none;
+    gap: 0;
+    z-index: 5;
+
+    /* Animation */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.5s ease;
+  }
+
+  /* List items with black divider */
+  .nav-list li {
+    margin: 0 3%;                 /* horizontal gap on both sides of the line */
+    border-bottom: 1px solid #000;
+  }
+  .nav-list li:last-child {
+    border-bottom: none;
+  }
+
+  /* Full‑width clickable links */
+  .nav-list li a {
+    display: block;
+    padding: 1rem 5%;             /* text aligned with dividers */
+    color: #000;
+    text-decoration: none;
+    font-family: Montserrat, "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .nav-list li a:hover {
+    background: rgba(1, 130, 129, 1.0);   /* Windows 95 Teal */
+    color: #fff;
+  }
+
+  /* Open state – expand the dropdown */
+  .main-nav[data-nav="open"] .nav-list {
+    max-height: 600px;
+    opacity: 1;
+  }
+
+  /* Remove any left padding inherited from desktop styles */
+  .main-nav .nav-list {
+    padding-left: 0%;
+  }
+}
+
+/* Dimmed background overlay (appears when menu is open) */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);     /* dark semi‑transparent */
+  z-index: 4;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Show overlay when menu is active */
+.main-nav[data-nav="open"] ~ .nav-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Desktop nav: hover & active link colours */
+.main-nav a:hover,
+.main-nav a.active {
+  color: #000;                     /* black instead of blue */
+}
+.main-nav a.active {
+  font-weight: bold;
+}
+
+
+/* ============================================================
+   VERY SMALL SCREENS (≤ 500px) – e.g. iPhone SE
+   ============================================================ */
+@media screen and (max-width: 500px) {
+  .site-logo {
+    font-size: 1.7rem;
+  }
+
+  /* Subtitle text */
+  .textcycle .phrase {
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* Smaller hamburger button */
+  .nav-toggle {
+    width: 36px;
+    height: 36px;
+    gap: 3px;
+  }
+  .nav-toggle span {
+    width: 18px;
+    height: 2px;
+  }
+
+  /* Compact dropdown links */
+  .nav-list li a {
+    padding: 0.8rem 5%;
+    font-size: 0.9rem;
+  }
+
+  /* Slightly smaller body text */
+  body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Smaller footer */
+  .site-footer {
+    font-size: 0.95rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+
+/* ============================================================
+   INLINE CODE & CODE BLOCKS
+   ============================================================ */
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  background: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+pre code {
+  display: block;
+  padding: 1rem;
+  font-size: 0.85rem;
+  background: #f4f4f4;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+
+/* ============================================================
+   POST META (author, date, categories)
+   ============================================================ */
+
+/* Base compact meta line (used on single post & blog roll mobile) */
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4em;
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: #000;
+}
+
+.meta-sep {
+  color: #999;
+  font-weight: 400;
+}
+
+.post-meta .post-author,
+.post-meta .post-date,
+.post-meta .post-categories {
+  white-space: nowrap;
+}
+
+.post-meta a {
+  color: #000;
+  text-decoration: none;
+}
+.post-meta a:hover {
+  color: #0009b5;
+  text-decoration: underline;
+}
+
+/* Normalise font sizes inside meta */
+.post-meta .post-author,
+.post-meta .post-date,
+.post-meta .post-categories,
+.post-meta .post-categories a {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+.meta-sep {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+/* Remove extra margin under date and reset larger font size on individual posts */
+.post-full .post-meta .post-date {
+  font-size: inherit;
+}
+.post-meta .post-date {
+  margin-bottom: 0;
+}
+
+/* Author avatar */
+.author-avatar {
+  width: 2.4em;
+  height: 2.4em;
+  border-radius: 30%;
+  margin-right: 0.4em;
+  vertical-align: middle;         /* fallback; flex handles alignment in the meta row */
+}
+
+/* Author block – ensures avatar + name stay together */
+.post-author {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   RESPONSIVE META LAYOUTS
+   ============================================================ */
+
+/* Mobile (≤ 750px): inline meta row with "//" separators */
+@media screen and (max-width: 750px) {
+  .post-meta-row {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4em;
+    font-family: Montserrat, "Helvetica Neue", sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: #000;
+    margin-bottom: 0.8em;
+    white-space: nowrap;
+  }
+
+  .post-meta .post-author,
+  .post-meta .post-date,
+  .post-meta .post-categories {
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    white-space: nowrap;
+  }
+
+  .post-meta a {
+    color: #000;
+    text-decoration: none;
+  }
+  .post-meta a:hover {
+    color: #0009b5;
+    text-decoration: underline;
+  }
+
+  .meta-sep {
+    color: #999;
+    font-weight: 400;
+    font-size: inherit;
+    font-family: inherit;
+  }
+}
+
+/* Desktop (> 750px): meta column with avatar above author, categories wrap */
+@media screen and (min-width: 751px) {
+  .post-meta-row .post-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;        /* left‑align everything */
+    gap: 0.3em;
+  }
+
+  /* Hide "//" separators on desktop */
+  .post-meta-row .post-meta .meta-sep {
+    display: none;
+  }
+
+  /* Author: avatar on top, name below */
+  .post-meta-row .post-author {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2em;
+  }
+
+  .post-meta-row .author-avatar {
+    width: 2.4em;
+    height: 2.4em;
+    border-radius: 30%;
+    margin-right: 0;
+    margin-bottom: 0.3em;
+  }
+
+  /* Allow categories to wrap inside the meta column */
+  .post-meta-row .post-categories {
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+.content-area > :first-child {
+  margin-top: 0;
+}
+
+
+/* Match the first heading on static pages to the blog title size */
+h2 {
+  margin-bottom: 0em;
+}
+
+h2 a {
+  color: #000;
+  text-decoration: none;
+}
+h2 a:hover {
+  color: #0009b5;
+  text-decoration: none;
+}
+
+/* Navigation hover – blue, no underline */
+.main-nav a:hover {
+  color: #0009b5;
+  text-decoration: none;
+}
+
+/* Active page – keep black and bold */
+.main-nav a.active {
+  color: #000;
+  font-weight: bold;
+}
+
+
+/* Tighten the space between any paragraph and the next unordered list (good for references/source lists) */
+.post-content p {
+  margin-bottom: 0em;      /* smaller paragraph bottom margin */
+}
+.post-content ul {
+  margin-top: 0em;         /* smaller list top margin */
+}

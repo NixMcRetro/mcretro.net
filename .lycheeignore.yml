@@ -1,3 +1,5 @@
-.*\.onion.*
 .*/archive/.*
 .*/category/.*
+img.youtube.com
+.*\.onion.*
+.*\.mcretro\.net

@@ -23,7 +23,7 @@ Next up we have the Accolade silkscreen on the PCB that was blacked out with wha
 
 ![](/assets/images/2013/img_0371.jpg)
 
-Finally the interesting 9 pin cable hanging off might have been due to a game known as [Zero Tolerance](https://en.wikipedia.org/wiki/Zero_Tolerance_\(video_game\)) as was pointed out by one YouTube commenter.
+Finally the interesting 9 pin cable hanging off might have been due to a game known as [Zero Tolerance](https://en.wikipedia.org/wiki/Zero_Tolerance_(video_game)) as was pointed out by one YouTube commenter.
 
 **Link cable support** The game supported connecting two Genesis/Mega Drives via a special link cable using the second joypad ports for a multiplayer mode. The cable was originally supposed to be shipped as a pack-in with the game. However this was changed in a last-minute decision and a coupon for ordering a free cable was added instead.
 

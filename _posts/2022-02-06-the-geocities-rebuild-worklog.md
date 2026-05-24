@@ -7,7 +7,7 @@ categories: [guides, linux, programming]
 
 **!!! Consider this a work-in-progress until further notice !!!**
 
-This is the original, updated and mostly complete worklog for my GeoCities Reboot at [http://geocities.mcretro.net](http://geocities.mcretro.net).
+This is the original, updated and mostly complete worklog for my GeoCities Reboot at [https://mcretro.net/homepages/geocities](http://geocities.mcretro.net).
 
   
 
@@ -31,19 +31,24 @@ I haven't had any forms on my website for a long time due to bots and not wantin
 
 With that out of the way I can work on the actual content. Yahoo! acquired GeoCities mid-1999 and messed with the city's structure. This is how GeoCities was structured, for the most part, up until Yahoo!'s acquisition.
 
-**Each neighborhood could hold ~9999 websites:** http://www.geocities.com/neighborhood/XXXX
+**Each neighborhood could hold ~9999 websites:**
+http://www.geocities.com/neighborhood/XXXX
 
-**GeoCities got too popular and needed suburbs inside those cities:** http://www.geocities.com/neighborhood/suburb/XXXX
+**GeoCities got too popular and needed suburbs inside those cities:**
+http://www.geocities.com/neighborhood/suburb/XXXX
 
-**After Yahoo! took over, you could use your YahooID:** http://www.geocities.com/YahooID
+**After Yahoo! took over, you could use your YahooID:**
+http://www.geocities.com/YahooID
 
-**So you could have two sites serving the same content:** http://www.geocities.com/neighborhood/suburb/XXXX http://www.geocities.com/YahooID
+**So you could have two sites serving the same content:**
+http://www.geocities.com/neighborhood/suburb/XXXX
+http://www.geocities.com/YahooID
 
 Throw in case sensitivity and localisations and it gets messy. Very messy.
 
 That's why I am only targeting the pre-Yahoo takeover sites operational at this stage. So far I have a very much incomplete staging area at http://geocities.mcretro.net. Only about six of the Athens suburbs are active.
 
-Hardware-wise the main server, [mcretro.net](https://mcretro.net), is a headless Raspberry Pi 4 running Ubuntu Server with a reverse proxy to the staging server, [geocities.mcretro.net](http://geocities.mcretro.net), on a Raspberry Pi 3.
+Hardware-wise the main server, [mcretro.net](https://mcretro.net), is a headless Raspberry Pi 4 running Ubuntu Server with a reverse proxy to the staging server, [geocities.mcretro.net](https://mcretro.net/homepages/geocities), on a Raspberry Pi 3.
 
 ![](/assets/images/2022/img_0827.jpg)
 

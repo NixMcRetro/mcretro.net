@@ -7,7 +7,7 @@ categories: [ibm-pc, news]
 
 ![lofi](/assets/images/2016/img_0535.jpg)
 
-WordPress does not like working with darknets due to something, something. What were those somethings? I've already forgotten. However, it has led me on a new journey to create [eleventy7.net](http://retrojunkie.net) - not the hip Christian rock band or anything to do with The Hobbit... but a website dedicated to the old.
+WordPress does not like working with darknets due to something, something. What were those somethings? I've already forgotten. However, it has led me on a new journey to create [eleventy7.net](https://retrojunkie.net) - not the hip Christian rock band or anything to do with The Hobbit... but a website dedicated to the old.
 
 I'll essentially be boiling down McRetro.net (in my spare, spare time) to a HTML 2.0 compatible website, that's before HTML 3.2, let along 4.0 / 4.01 standards! You won't find any fancy cascading style sheets on there. Just nice code. Code that will work on your older computers - such as the Sega TeraDrive or even your IBM PS/2.
 

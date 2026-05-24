@@ -1466,13 +1466,11 @@ And the winner is - 32MB. So what I did was dump 32MB of **_\*something\*_** ove
 
 ![](/assets/images/2021/img_0714.jpg)
 
-The firmware for the TP-Link V1600v is not available online except through that pesky auto-download function (TR-069) that we're trying to work around. So I did a quick compare with some available firmware for the TP-Link [Archer\_VR600v](https://static.tp-link.com/res/down/doc/Archer_VR600v\(DE\)_V1_UG.pdf) V2 and found similarities albeit at different offsets. Progress, is still progress.
+The firmware for the TP-Link V1600v is not available online except through that pesky auto-download function (TR-069) that we're trying to work around. So I did a quick compare with some available firmware for the TP-Link Archer VR600v V2 and found similarities albeit at different offsets. Progress, is still progress.
 
 ![](/assets/images/2021/img_0705.jpg)
 
 One thing I did notice while poking around in cfenand.py via the dn command and our [VR600v firmware](https://www.tp-link.com/au/support/download/archer-vr600v/#Firmware) was the repeating pattern:
-
- 
 
 ```
 ..7D..7D..7D..7L

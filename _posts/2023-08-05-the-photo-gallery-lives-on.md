@@ -19,4 +19,4 @@ Licensed hardware makes things a little messy but I suppose in the grand scheme 
 
 ![](/assets/images/2023/img_1060.jpg)
 
-There will be some pretty neat stuff in there but for now, the data is slowly going up and you are welcome to [browse](https://photos.mcretro.net). Once I'm done with uploading what I can, I'll probably move back onto processing modem videos for the next 3-4 years. Ha ha! 😅
+There will be some pretty neat stuff in there but for now, the data is slowly going up and you are welcome to [browse](/photos). Once I'm done with uploading what I can, I'll probably move back onto processing modem videos for the next 3-4 years. Ha ha! 😅

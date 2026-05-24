@@ -142,67 +142,67 @@ The websites below have clearnet and darknet (.onion) web links. If you want to 
 <div style="border: 2px solid black; padding: 5px; margin: 20px">
 <strong>🦔 Sonic the Hedgehog 🦔</strong>
 Blue streak speeds by... The best homepage to visit to learn all about Sonic and his pals.
-<a href="http://sonic.mcretro.net">Clearnet</a> or <a href="http://sonicmfly4cagomgelwtd4hkbsopuhkahfprcvk5hwvb5i2c2q6s7iqd.onion">Darknet</a>
+<a href="/homepages/sonic">Clearnet</a>
 </div>
 
 <div style="border: 2px solid black; padding: 5px; margin: 20px">
 <strong>🪐 Planets and Space 🪐</strong>
 Ever wondered about planets and space? Wonder no more!
-<a href="http://space.mcretro.net">Clearnet</a> or <a href="http://spacewarpwv4jfef5um36c7bzofwrslnvky2lkgk2e3tqgvlzbwvbcyd.onion">Darknet</a>
+<a href="/homepages/space">Clearnet</a>
 </div>
 
 <div style="border: 2px solid black; padding: 5px; margin: 20px">
 <strong>🐍 Frank the Snake 🐍</strong>
 A big snake with a big heart. Frank!
-<a href="http://frank.mcretro.net">Clearnet</a> or <a href="http://frank666vaq7j5kt7ek62urayao3ovmeqr3kiwiulshu32hkseuamuyd.onion">Darknet</a>
+<a href="/homepages/frank">Clearnet</a>
 </div>
 
 <div style="border: 2px solid black; padding: 5px; margin: 20px">
 <strong>🐟 Fish Tank World 🐟</strong>
 Fish tank world is all about fish. Now with cool biographies!
-<a href="http://fishtankworld.mcretro.net">Clearnet</a> or <a href="http://fishnetski77aqzeo7trux7agla7mqb6jzw5r43mmdzkmjsmsdikodid.onion">Darknet</a>
+<a href="/homepages/fishtankworld">Clearnet</a>
 </div>
 
 <div style="border: 2px solid black; padding: 5px; margin: 20px">
 <strong>🌳 Nature World 🌳</strong>
 Welcome to the fascinating world of nature. Nature World!
-<a href="http://nature.mcretro.net">Clearnet</a> or <a href="#">Darknet available soon!</a>
+<a href="/homepages/nature">Clearnet</a>
 </div>
 
 <div style="border: 2px solid black; padding: 5px; margin: 20px">
 <strong>🦜 Channel Chirp 🦜</strong>
 The best homepage of the best parrots.
-<a href="http://channelchirp.mcretro.net">Clearnet</a> or <a href="http://chirpysl54soda3vpws5erwcoh32cjky33xkrj4cr7fxbaia2cqhdnyd.onion">Darknet</a>
+<a href="http://channelchirp.com">Clearnet</a>
 </div>
 
 <div style="border: 2px solid black; padding: 5px; margin: 20px">
 <strong>🐶 Pepper the Dog Blog 🐶</strong>
 The dog blog that started a revolution.
-<a href="http://pepper.mcretro.net">Clearnet</a> or <a href="http://pepperfoxgryauwqd4llzyqyczdbi3gey67dm7ug7xhf7ponf5i65zyd.onion">Darknet</a>
+<a href="/homepages/pepper">Clearnet</a>
 </div>
 
 <div style="border: 2px solid black; padding: 5px; margin: 20px">
 <strong>💾 The Files Archive 💾</strong>
 Files archive served at 10kb/sec. More than enough speed for browsing on dial-up!
-<a href="http://files.mcretro.net">Clearnet</a> or <a href="#">Darknet available soon!</a>
+<a href="/files">Clearnet</a>
 </div>
 
 <div style="border: 2px solid black; padding: 5px; margin: 20px">
 <strong>📸 Photo Gallery 📸</strong>
 Lots of cool photos.
-<a href="http://photos.mcretro.net">Clearnet</a> or <a href="#">Darknet available soon!</a>
+<a href="/photos">Clearnet</a>
 </div>
 
 <div style="border: 2px solid black; padding: 5px; margin: 20px">
 <strong>😎 RetroJunkie 😎</strong>
 Get your fix! Where it all began in 2012.
-<a href="http://retrojunkie.mcretro.net">Clearnet</a> or <a href="http://retro56qdosu3zuisr5tiuh7ihpn6owzpwjwvs7djlweiqb3mcspahyd.onion">Darknet</a>
+<a href="http://retrojunkie.net">Clearnet</a>
 </div>
 
 <div style="border: 2px solid black; padding: 5px; margin: 20px">
 <strong>🏡 McRetro.net 🏡</strong>
 You are here. The most current, up-to-date homepage of Shane McRetro.
-<a href="/">Clearnet</a> or <a href="http://mcretro4lov3ycyvikjdeer3dgl5wel5aer6xakj5mxa26a3qvrp22qd.onion">Darknet</a>
+<a href="/">Clearnet</a>
 </div>
 
 </details>

@@ -7,7 +7,7 @@ categories: [news]
 
 ![](/assets/images/2023/img_1180.jpg)
 
-There's something about waking up at 3am every morning that just gives you that extra bit of time to blog. Today we're touching on what happened to my [GeoCities Archive](http://geocities.mcretro.net). A while back I had an idea to dockerise my Apache-based web server.
+There's something about waking up at 3am every morning that just gives you that extra bit of time to blog. Today we're touching on what happened to my [GeoCities Archive](/homepages/geocities). A while back I had an idea to dockerise my Apache-based web server.
 
 ![](/assets/images/2023/img_1181.jpg)
 
@@ -23,7 +23,7 @@ Sure, I could manually search for pornography and gore based on filename but I w
 
 ![](/assets/images/2023/img_1183.jpg)
 
-In most cases, they were not worth keeping and I made the decision to pull the plug. Only a few days ago, I reverted back to the Raspberry Pi setup without the GeoCities Archive. I also trimmed away [Sci-Fi](http://scifi.mcretro.net) and [Assembler Games](http://assember.mcretro.net). If I remove GeoCities, I can also remove the blade hard drive from the web server.
+In most cases, they were not worth keeping and I made the decision to pull the plug. Only a few days ago, I reverted back to the Raspberry Pi setup without the GeoCities Archive. I also trimmed away [Sci-Fi](/) and [Assembler Games](/). If I remove GeoCities, I can also remove the blade hard drive from the web server.
 
 ![](/assets/images/2023/img_1179.jpg)
 

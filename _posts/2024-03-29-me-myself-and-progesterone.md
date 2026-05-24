@@ -45,21 +45,15 @@ Alright, so a bunch of neurosteroids are doing a bunch of things. A few are bein
 
 My search revealed some interesting data with overlap in symptoms shared with [premenstrual syndrome](https://en.wikipedia.org/wiki/Premenstrual_syndrome) (PMS) and [premenstrual dysphoric disorder](https://en.wikipedia.org/wiki/Premenstrual_dysphoric_disorder) (PMDD) in cisgender women.
 
- 
-
-> PMDD is believed to be caused by fluctuations in gonadal sex hormones or variations in sensitivity to sex hormones.
+> **PMDD is believed to be caused by fluctuations in gonadal sex hormones or variations in sensitivity to sex hormones.**
 
 If sensitivity to level shifts is reason for the negative side effects, then single or even twice daily doses are probably not enough to smooth out the levels of neurosteroids for me, allowing me enter a withdrawal state, perhaps? Brain on fire? [This paper](https://www.sciencedirect.com/science/article/pii/S0091302220300479) offers some great insight into the mechanisms behind it all with some interesting side notes on SSRIs.
 
- 
-
-> Interestingly, SSRIs increase allopregnanolone levels in the brain, rapidly and at low doses, as demonstrated in rodents as well as in patients with depression.
+> **Interestingly, SSRIs increase allopregnanolone levels in the brain, rapidly and at low doses, as demonstrated in rodents as well as in patients with depression.**
 
 Could this be one of the reasons why I can't tolerate SSRI/SNRIs? At the very least, it's some food for thought. Worth noting that the original study has been questioned a little further along in the paper. Let's circle back to those progesterone levels again. From [Wikipedia](https://en.wikipedia.org/wiki/Progesterone)
 
- 
-
-> Progesterone levels tend to be less than **2 ng/mL** prior to ovulation and greater than 5 ng/mL after ovulation.
+> **Progesterone levels tend to be less than 2 ng/mL prior to ovulation and greater than 5 ng/mL after ovulation.**
 
 What were my most recent levels again? 9.1 nmol/L or should I say **2.6 ng/mL** (freedom units). That's at 200 mg once daily at night, measured in the trough. I really need to ask myself, do I want to have symptoms of PMS/PMDD? Is that even a question that needs to be asked?
 

@@ -63,7 +63,7 @@ I'm also checking serum [DHT](https://en.wikipedia.org/wiki/Dihydrotestosterone)
 
 ![](/assets/images/2024/img_1320.jpg)
 
-It was also neat to see what my [estradiol](https://en.wikipedia.org/wiki/Estradiol_\(medication\)) levels were so soon after a new set of pellets were implanted. I scored just over 1500 pmol/L around one week after implant. This was ~700 pmol/L with the existing pellets prior to the newest set. After another three weeks, it was round 1200 pmol/L. [Anything above 400 pmol/L is just gravy](https://transfemscience.org/articles/hormone-levels-female-puberty/).
+It was also neat to see what my [estradiol](https://en.wikipedia.org/wiki/Estradiol_(medication)) levels were so soon after a new set of pellets were implanted. I scored just over 1500 pmol/L around one week after implant. This was ~700 pmol/L with the existing pellets prior to the newest set. After another three weeks, it was round 1200 pmol/L. [Anything above 400 pmol/L is just gravy](https://transfemscience.org/articles/hormone-levels-female-puberty/).
 
 ![](/assets/images/2024/img_1323.jpg)
 

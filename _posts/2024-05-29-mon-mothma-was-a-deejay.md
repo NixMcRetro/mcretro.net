@@ -39,7 +39,7 @@ Losing weight while transitioning might not be the best idea, the two just happe
 
 ![](/assets/images/2024/img_1305.jpg)
 
-That's not to say that being healthier and baking bread and cake goods are incompatible. At the moment I'm almost reverse-engineering the pretzels into regular wholemeal bread. To think, I was just trying to make it an easier (or lazier) recipe. Don't worry once they are ready I'll be sure to add them to the [recipes](/recipes/) page. Most of the recipes will be vegan. Eggs or dairy milk are no longer welcome. I'm back on the path to being as vegan as I can... bee.
+That's not to say that being healthier and baking bread and cake goods are incompatible. At the moment I'm almost reverse-engineering the pretzels into regular wholemeal bread. To think, I was just trying to make it an easier (or lazier) recipe. Don't worry once they are ready I'll be sure to add them to the [recipes](/recipes) page. Most of the recipes will be vegan. Eggs or dairy milk are no longer welcome. I'm back on the path to being as vegan as I can... bee.
 
 ![](/assets/images/2024/img_1307.jpg)
 

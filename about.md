@@ -172,7 +172,7 @@ Welcome to the fascinating world of nature. Nature World!
 <div style="border: 2px solid black; padding: 5px; margin: 20px">
 <strong>🦜 Channel Chirp 🦜</strong>
 The best homepage of the best parrots.
-<a href="http://channelchirp.com">Clearnet</a>
+<a href="https://channelchirp.com">Clearnet</a>
 </div>
 
 <div style="border: 2px solid black; padding: 5px; margin: 20px">
@@ -213,9 +213,9 @@ You are here. The most current, up-to-date homepage of Shane McRetro.
 
 ## Super Secret Recipes {: .center}
 
-- [Garlic Roast Potatoes](/recipes/garlic-roast-potatoes/)
-- [Quick Mix Chocolate Cake](/recipes/quick-mix-chocolate-cake/)
-- [Mars Bar Slice](/recipes/mars-bar-slice/)
+- [Garlic Roast Potatoes](/)
+- [Quick Mix Chocolate Cake](/)
+- [Mars Bar Slice](/)
 - [Soft Pretzels](https://sallysbakingaddiction.com/easy-homemade-soft-pretzels/)
 
 </details>

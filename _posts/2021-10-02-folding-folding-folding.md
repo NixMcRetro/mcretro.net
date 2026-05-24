@@ -21,4 +21,4 @@ I also had 16-odd [Gridcoins](https://gridcoin.us) but they **_kinda_** got lost
 
 ![](/assets/images/2021/img_0757.jpg)
 
-None of the above recoups anything though. Thankfully we are not in this for the sweet, sweet cryptocurrency. No, we're here to fold proteins and perhaps have a bit of fun on the side. For the fun part, doge just makes sense! Doge was voted [Time's such person of the year in 2014](http://dogecoin.mcretro.net) after all.
+None of the above recoups anything though. Thankfully we are not in this for the sweet, sweet cryptocurrency. No, we're here to fold proteins and perhaps have a bit of fun on the side. For the fun part, doge just makes sense! Doge was voted Time's such person of the year in 2014 after all.

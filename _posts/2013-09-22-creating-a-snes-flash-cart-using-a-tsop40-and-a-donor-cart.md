@@ -9,4 +9,7 @@ categories: [hacks, nintendo, youtube]
 
 Here we create a SNES cart using a donor cart - either NHL 96 or World Cup Striker. We will be flashing two games, EarthBound and Donkey Kong Country 3.
 
-**References** [http://forums.nesdev.com/viewtopic.php?t=5605](http://forums.nesdev.com/viewtopic.php?t=5605) [https://web.archive.org/web/20160313064923/http://retrohacker.info/viewtopic.php?f=13&t=6](https://web.archive.org/web/20160313064923/http://retrohacker.info/viewtopic.php?f=13&t=6) [https://web.archive.org/web/20140921210156/http://retrohacker.info/viewtopic.php?f=13&t=18](https://web.archive.org/web/20140921210156/http://retrohacker.info/viewtopic.php?f=13&t=18)
+**References**
+- [http://forums.nesdev.com/viewtopic.php?t=5605](https://web.archive.org/web/20231014212322/https://forums.nesdev.org/viewtopic.php?t=5605)
+- [http://retrohacker.info/viewtopic.php?f=13&t=6](https://web.archive.org/web/20160313064923/http://retrohacker.info/viewtopic.php?f=13&t=6)
+- [http://retrohacker.info/viewtopic.php?f=13&t=18](https://web.archive.org/web/20140921210156/http://retrohacker.info/viewtopic.php?f=13&t=18)

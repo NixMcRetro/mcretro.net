@@ -11,7 +11,7 @@ First thing, I should probably note is that this was from relatively early on in
 
 ![](/assets/images/2023/img_1126.jpg)
 
-It does get to a point though where you stop and ask yourself - "How many modems are too many modems?" I think I've worked out the answer. They only had a very limited use case for me. Testing them while testing [the GeoCities Archive](https://geocities.mcretro.net). With GeoCities work mostly behind me now, the modems don't really serve a purpose.
+It does get to a point though where you stop and ask yourself - "How many modems are too many modems?" I think I've worked out the answer. They only had a very limited use case for me. Testing them while testing [the GeoCities Archive](/homepages/geocities). With GeoCities work mostly behind me now, the modems don't really serve a purpose.
 
 ![](/assets/images/2023/img_1127.jpg)
 

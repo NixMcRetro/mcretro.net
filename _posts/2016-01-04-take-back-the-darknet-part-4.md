@@ -7,7 +7,7 @@ categories: [guides, raspberry-pi]
 
 **Part 4 - Hardening Your Pi**
 
-[Hardening](https://en.wikipedia.org/wiki/Hardening_\(computing\)), important for the sake of reducing attack vectors! First off we'll create a new user and then delete the "pi" user that comes preinstalled.
+[Hardening](https://en.wikipedia.org/wiki/Hardening_(computing)), important for the sake of reducing attack vectors! First off we'll create a new user and then delete the "pi" user that comes preinstalled.
 
 Log back in via SSH / Terminal / PuTTY `ssh pi@xxx.xxx.xxx.xxx`
 

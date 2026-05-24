@@ -11,7 +11,7 @@ First off we need to get an operating system onto the MicroSD card. We will be u
 
 I recommend using at least a 10 watt (5 volt, 2 amp) power adapter. Using a USB port on your computer probably won't have enough juice. USB2 comes in a 2.5 watt (5 volt, 0.5 amp) and USB3 hovers around 4.5 watts (5 volt, 0.9 amp). Might cut it, but a dedicated power supply is always going to be a better move, with plenty of amperage left over.
 
-Use something like [Angry IP Scanner](http://angryip.org/download/) to help you locate your Raspberry Pi on your local network if it's headless, otherwise check the output via the HDMI attached screen. We are looking for the IP address. Note it down, we'll need it to SSH/remotely connect in. Your IP address should be in the format xxx.xxx.xxx.xxx or with either 1, 2 or 3 digits per set of xxx. No, not that type of [xxx](https://en.wikipedia.org/wiki/XXX_\(franchise\))!
+Use something like [Angry IP Scanner](http://angryip.org/download/) to help you locate your Raspberry Pi on your local network if it's headless, otherwise check the output via the HDMI attached screen. We are looking for the IP address. Note it down, we'll need it to SSH/remotely connect in. Your IP address should be in the format xxx.xxx.xxx.xxx or with either 1, 2 or 3 digits per set of xxx. No, not that type of [xXx](https://en.wikipedia.org/wiki/XXX_(film_series))!
 
 Pickup an SSH client (OS X and Linux already have this built-in): - [PuTTY](https://www.putty.org/) for Windows - [Terminal](https://www.macworld.co.uk/how-to/how-use-terminal-on-mac-3608274/) which is built-in to OS X - [Terminal](https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/) which is also built-in to Linux
 

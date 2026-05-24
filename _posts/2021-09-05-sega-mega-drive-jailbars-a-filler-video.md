@@ -9,7 +9,7 @@ categories: [youtube]
 
 It's impressive that with only 17 seconds of footage I was able to create this, I want to say masterpiece, but that might be blowing my own horn! While this may have been a filler video, we are still working on things in the backend.
 
-We're on our way. [The GeoCities Archive](http://geocities.mcretro.net) is coming along. A few key notes: - Non-SSL encrypted (unencrypted) by design - Script to "shuffle" site to visit - Run "natively" in Windows 9x - Run via physical dial-up modems connected over an SPA112 - Livestream via MiSTer (DE10-Nano) - Expose to _the darknet_
+We're on our way. [The GeoCities Archive](/homepages/geocities) is coming along. A few key notes: - Non-SSL encrypted (unencrypted) by design - Script to "shuffle" site to visit - Run "natively" in Windows 9x - Run via physical dial-up modems connected over an SPA112 - Livestream via MiSTer (DE10-Nano) - Expose to _the darknet_
 
 At this stage, though I'm still trying to decode and piece together the structure of GeoCities. The torrent, made way back in 2011, took long enough to unpack all the case-sensitive folders. I only discovered they were case sensitive after the torrent wouldn't verify, repeatedly. Other things on the to-do list include: - Delete any illegal objectionable content (filename search, needs to be indexed) - Fix broken links (rewrite engine perhaps?)
 

@@ -196,7 +196,7 @@ Lots of cool photos.
 <div style="border: 2px solid black; padding: 5px; margin: 20px">
 <strong>😎 RetroJunkie 😎</strong>
 Get your fix! Where it all began in 2012.
-<a href="http://retrojunkie.net">Clearnet</a>
+<a href="https://retrojunkie.net">Clearnet</a>
 </div>
 
 <div style="border: 2px solid black; padding: 5px; margin: 20px">

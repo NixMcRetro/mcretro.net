@@ -27,19 +27,15 @@ At least the power supply was well built (solid). It's a NetComm 9V AC 1A (240V 
 
 The Rockwell chipset is noteably absent and we have a Motorola chipset. The only other modem I've seen with a Motorola chipset to date is the Acer AcerModem 56 Surf (AME-MU00). Which is strange as NetComm/Sirius was well aligned with Rockwell and odd for Motorola, from what I understand from [here](https://goughlui.com/2016/05/03/project-the-definitive-collection-of-v-90v-92-modem-sounds/) most of their modems were internal.
 
- 
-
 {% include youtube.html id="P3bVila54tk" %}
 
 But I guess this is just a rebadged Motorola made to look like an Avtek. Cost cutting perhaps or an attempt to diversity maybe. This Avtek doesn't feel like an Avtek with it being reported as a Motorola Lifestyle 28.8 External in ROM.
 
 ![](/assets/images/2023/img_1040.jpg)
 
-I will admit that because I didn't really need this modem - or want it. Due to the clips failing and it being beige, we **_might_** not have done the best job on the capacitor replacement. Using on-hand caps with pads lifting here and there. There are more photos in the [photo gallery](https://photos.mcretro.net/) (surprise!) if you have a hunger for modem photos.
+I will admit that because I didn't really need this modem - or want it. Due to the clips failing and it being beige, we **_might_** not have done the best job on the capacitor replacement. Using on-hand caps with pads lifting here and there. There are more photos in the [photo gallery](/photos) (surprise!) if you have a hunger for modem photos.
 
 Below are the initialisation strings used, whether they are the best ones... I couldn't be sure. But I'll throw in some ATI (inquiry, information, or interrogation) results.
-
- 
 
 ```
 ---------- 2022-09-02 10:25:09 +1000: Logging Started ----------
@@ -96,8 +92,6 @@ CONNECT 115200
 Whoops looks like I didn't quite have those init strings right and ended up with a DTE (modem to computer) instead of DCE (modem to modem) for that last command. Oh well, at least externally it looks OK, as long as you don't try to pick it up.
 
 Next is a listing of the capacitors replaced with order numbers are Element 14 (Australia). The capacitors were replaced in this modem in September 2022. The formatting isn't too web friendly, copy the raw text out and paste it into a non-rich text editor (Such as Notepad or TextEdit - in plain text mode) and you'll probably be fine. 😄
-
- 
 
 ```
 Value	Voltage  	Width	Height	Notes

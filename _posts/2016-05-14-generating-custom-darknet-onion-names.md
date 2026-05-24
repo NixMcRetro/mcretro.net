@@ -5,9 +5,9 @@ date: 2016-05-14T23:25:26.000+10:00
 categories: [guides, hacks, raspberry-pi]
 ---
 
-![shallot](/assets/images/2016/img_0472.jpg)
+![Shallot](/assets/images/2016/img_0472.jpg)
 
-[Shallot](https://web.archive.org/web/20230331011246/https://github.com/katmagic/Shallot) is a great little program for generating your own vanity darknet onion address. I've used it for my old [http://mcretro35qepy5cy.onion/](http://mcretro35qepy5cy.onion/) address. I figured I'd share how it all works.
+[Shallot](https://web.archive.org/web/20230331011246/https://github.com/katmagic/Shallot) is a great little program for generating your own vanity darknet onion address. I've used it for my old [http://mcretro35qepy5cy.onion/](/) address. I figured I'd share how it all works.
 
 So I fired up the old Ubuntu 16.04 (64-bit) and it's still working well, Shallot (Version 0.0.3-alpha at the time of writing) is getting on in age but still works just as good as it used to. A few things to note though - Make sure you `sudo apt-get update` then `sudo apt-get install libssl-dev` OR `sudo apt-get install openssl-dev`
 

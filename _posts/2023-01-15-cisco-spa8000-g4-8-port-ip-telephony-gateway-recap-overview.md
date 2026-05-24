@@ -21,4 +21,4 @@ Replaced all the electrolytic capacitors with Panasonic FR and FS series. This c
 
 In other news, I've been uploading pretty consistently to the [Super Nature World YouTube Channel](https://www.youtube.com/@SuperNatureWorld). It's mostly lizards and bugs with a sprinkling of birds.
 
-Sadly, I don't have much in store for the [Shane McRetro YouTube Channel](https://www.youtube.com/@NixMcRetro) as I have been running low on disposable income for a while now. While the [Super Nature World homepage](http://nature.mcretro.net) may look a little dead now, wait until you see what I have in store for it! Stay tuned I guess! 😀
+Sadly, I don't have much in store for the [Nix McRetro's YouTube Channel](https://www.youtube.com/@NixMcRetro) as I have been running low on disposable income for a while now. While the [Super Nature World homepage](/homepages/nature) may look a little dead now, wait until you see what I have in store for it! Stay tuned I guess! 😀

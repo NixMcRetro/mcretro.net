@@ -7,17 +7,15 @@ categories: [apple, hacks, repairs]
 
 {% include youtube.html id="hO2O4d3ZtaI" %}
 
-A Macintosh Classic! What a great platform to test [GeoCities](http://geocities.mcretro.net). No, just no. Stop right there. No way. Let's dig a little deeper. Perhaps some background would help. First came the Macintosh Plus (Jan 1986 - Oct 1990). The Macintosh Classic (Oct 1990 - Sept 1992) followed on from there. Both were powered by Motorola 68000s at 8MHz with up to 4MB of RAM.
+A Macintosh Classic! What a great platform to test [GeoCities](/homepages/geocities). No, just no. Stop right there. No way. Let's dig a little deeper. Perhaps some background would help. First came the Macintosh Plus (Jan 1986 - Oct 1990). The Macintosh Classic (Oct 1990 - Sept 1992) followed on from there. Both were powered by Motorola 68000s at 8MHz with up to 4MB of RAM.
 
 ![](/assets/images/2022/img_0926.jpg)
 
 This machine has had the internal hard drive upgraded to a [RaSCSI](https://github.com/akuker/RASCSI) using PCB v2.3. There's a little bit of an unaddressed voltage drop happening that **_probably_** won't be an issue so we'll just ignore the video above with the [lack of red LED](https://raspberrypi.stackexchange.com/questions/51615/raspberry-pi-power-limitations).
 
- 
+> **If the Red Power LED is not illuminated this means the supply voltage is inadequate. (The newer Pi have a well engineered power circuit, and may continue to function even if the input voltage is below spec; the same may not be true of peripherals).**
 
-> If the Red Power LED is not illuminated this means the supply voltage is inadequate. (The newer Pi have a well engineered power circuit, and may continue to function even if the input voltage is below spec; the same may not be true of peripherals).
-
-This tech is not ready for mid-late 1990s internet. I just didn't realise just how incompatible early 1990s internet was! When setting up my web server I tried to make [GeoCities](http://geocities.mcretro.net), [RetroJunkie.net](http://retrojunkie.net) and even my [files archive](http://files.mcretro.net) as simple as possible to avoid issues. It all seems to have boiled down to old browsers missing something. Then it hit me! They all had HTTP/0.9 support but probably nothing more recent.
+This tech is not ready for mid-late 1990s internet. I just didn't realise just how incompatible early 1990s internet was! When setting up my web server I tried to make [GeoCities](/homepages/geocities), [RetroJunkie.net](https://retrojunkie.net) and even my [files archive](/files) as simple as possible to avoid issues. It all seems to have boiled down to old browsers missing something. Then it hit me! They all had HTTP/0.9 support but probably nothing more recent.
 
 ![](/assets/images/2022/img_0939.jpg)
 
@@ -45,7 +43,7 @@ Neither does Mosaic 1.0.3. At least they are giving similar results but I had to
 
 ![](/assets/images/2022/img_0929.jpg)
 
-And using Internet Explorer 5.0 grabbed Mosaic 1.0 from [my file server](http://files.mcretro.net).
+And using Internet Explorer 5.0 grabbed Mosaic 1.0 from [my file server](/files).
 
 ![](/assets/images/2022/img_0930.jpg)
 
@@ -57,7 +55,7 @@ Not the slowest download I've had. A couple of minutes later I was able to load 
 
 ![](/assets/images/2022/img_0933.jpg)
 
-And it seems that [retrojunkie.net](http://retrojunkie.net), [files.mcretro.net](http://files.mcretro.net) and [google.com](http://google.com) were all giving the same errors. We'll try another browser again, shall we?
+And it seems that [retrojunkie.net](https://retrojunkie.net), [the files server](/files) and [google.com](https://www.google.com) were all giving the same errors. We'll try another browser again, shall we?
 
 ![](/assets/images/2022/img_0934.jpg)
 
@@ -69,4 +67,13 @@ Netscape 1.0 doesn't want to play nice either. I'm putting this down to older br
 
 While it would be nice to be able to do things on a 68000 powered Mac, we're just not ready for it yet. Stick with a faster classic Mac like the LC475 for a true internet experience. Leave the early 1990s for bulletin boards! :)
 
-**References:** [https://ia600503.us.archive.org/21/items/macweb-evolt_browsers/macweb.htm](https://ia600503.us.archive.org/21/items/macweb-evolt_browsers/macweb.htm) [https://browsers.evolt.org/browsers/archive/macweb](https://browsers.evolt.org/browsers/archive/macweb) [https://browsers.evolt.org/browsers/archive/macweb/1.1.1E/](https://browsers.evolt.org/browsers/archive/macweb/1.1.1E/) [https://browsers.evolt.org/browsers/archive/macweb/2.0/](https://browsers.evolt.org/browsers/archive/macweb/2.0/) [https://browsers.evolt.org/browsers/archive/macweb/0.98a/](https://browsers.evolt.org/browsers/archive/macweb/0.98a/) [https://www.angelfire.com/mac/68kmacrevival/68kdownloads.html](https://www.angelfire.com/mac/68kmacrevival/68kdownloads.html) [https://web.archive.org/web/20010406030443/http://www.sjoki.uta.fi/~shmhav/68000.txt](https://web.archive.org/web/20010406030443/http://www.sjoki.uta.fi/~shmhav/68000.txt) [https://www.jagshouse.com/classicinternet.html](https://www.jagshouse.com/classicinternet.html) [https://vintageapple.org/gamba2/browsers.html](https://vintageapple.org/gamba2/browsers.html)
+**References:**
+- [https://ia600503.us.archive.org/21/items/macweb-evolt_browsers/macweb.htm](https://ia600503.us.archive.org/21/items/macweb-evolt_browsers/macweb.htm)
+- [https://browsers.evolt.org/browsers/archive/macweb](https://browsers.evolt.org/browsers/archive/macweb)
+- [https://browsers.evolt.org/browsers/archive/macweb/1.1.1E/](https://browsers.evolt.org/browsers/archive/macweb/1.1.1E/)
+- [https://browsers.evolt.org/browsers/archive/macweb/2.0/](https://browsers.evolt.org/browsers/archive/macweb/2.0/)
+- [https://browsers.evolt.org/browsers/archive/macweb/0.98a/](https://browsers.evolt.org/browsers/archive/macweb/0.98a/)
+- [https://www.angelfire.com/mac/68kmacrevival/68kdownloads.html](https://web.archive.org/web/20230612124558/https://www.angelfire.com/mac/68kmacrevival/68kdownloads.html)
+- [http://www.sjoki.uta.fi/~shmhav/68000.txt](https://web.archive.org/web/20010406030443/http://www.sjoki.uta.fi/~shmhav/68000.txt)
+- [https://www.jagshouse.com/classicinternet.html](https://web.archive.org/web/20040803073531/http://www.jagshouse.com/classicinternet.html)
+- [https://vintageapple.org/gamba2/browsers.html](https://vintageapple.org/gamba2/browsers.html)

@@ -43,7 +43,7 @@ What an excellent segue into the medication side of things for being a transgend
 
 ![](/assets/images/2024/img_1319.jpg)
 
-[Progesterone](https://en.wikipedia.org/wiki/Progesterone_\(medication\)) is expensive and I am poor. So I have been trying to see how equivalent the compounded version of progesterone is to Prometrium (progesterone with an oil-based carrier, expensive). And at 400 mg/day split twice a day and measured in the trough, I ended up with slightly better numbers on paper using compounded.
+[Progesterone](https://en.wikipedia.org/wiki/Progesterone_(medication)) is expensive and I am poor. So I have been trying to see how equivalent the compounded version of progesterone is to Prometrium (progesterone with an oil-based carrier, expensive). And at 400 mg/day split twice a day and measured in the trough, I ended up with slightly better numbers on paper using compounded.
 
 ![](/assets/images/2024/img_1312.jpg)
 

@@ -42,41 +42,41 @@ I mean it looks neat, that's not like me at all. I'd want the fan to be on at al
 The parts listed below are manufacturer part numbers. The formatting isn’t too web friendly, copy the raw text out and paste it into a non-rich text editor (Such as Notepad or TextEdit – in plain text mode) and you’ll probably be fine. 😄  
 
 ```
-Location	Value	Voltage		Dimensions		Lead Spacing	Notes
-EC1/EC2		1500uF	16V		12.5mm (h) x 12.5mm (w)	5mm		EEUFR1C152	Panasonic FR Series
+Location	Value	Voltage		Dimensions				Lead Spacing	Notes
+EC1/EC2		1500uF	16V			12.5mm (h) x 12.5mm (w)	5mm				EEUFR1C152	Panasonic FR Series
 
-VC353		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm	EEUFS2A270	Panasonic FS Series
-VC333		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm	As above
-VC246		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm	As above
-VC266		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm	As above
-VC139		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm	As above
-VC119		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm	As above
-VC32		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm	As above
-VC12		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm	As above
+VC353		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm		EEUFS2A270	Panasonic FS Series
+VC333		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm		As above
+VC246		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm		As above
+VC266		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm		As above
+VC139		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm		As above
+VC119		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm		As above
+VC32		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm		As above
+VC12		27uF	100V		12.5mm (h) x 8mm (w)	3.0-3.5mm		As above
 
-VEC8		100uF	10V		12.5mm (h) x 5mm (w)	2.0mm		EEUFR1C101	Panasonic FR Series, upgraded to 16V
-VEC7		100uF	10V		12.5mm (h) x 5mm (w)	2.0mm		As above
-VEC6		100uF	10V		12.5mm (h) x 5mm (w)	2.0mm		As above
-VEC5		100uF	10V		12.5mm (h) x 5mm (w)	2.0mm		As above
-VEC4		100uF	10V		12.5mm (h) x 5mm (w)	2.0mm		As above
-VEC3		100uF	10V		12.5mm (h) x 5mm (w)	2.0mm		As above
-VEC2		100uF	10V		12.5mm (h) x 5mm (w)	2.0mm		As above
-VEC1		100uF	10V		12.5mm (h) x 5mm (w)	2.0mm		As above
+VEC8		100uF	10V			12.5mm (h) x 5mm (w)	2.0mm			EEUFR1C101	Panasonic FR Series, upgraded to 16V
+VEC7		100uF	10V			12.5mm (h) x 5mm (w)	2.0mm			As above
+VEC6		100uF	10V			12.5mm (h) x 5mm (w)	2.0mm			As above
+VEC5		100uF	10V			12.5mm (h) x 5mm (w)	2.0mm			As above
+VEC4		100uF	10V			12.5mm (h) x 5mm (w)	2.0mm			As above
+VEC3		100uF	10V			12.5mm (h) x 5mm (w)	2.0mm			As above
+VEC2		100uF	10V			12.5mm (h) x 5mm (w)	2.0mm			As above
+VEC1		100uF	10V			12.5mm (h) x 5mm (w)	2.0mm			As above
 
-EC10		470uF	10V		12.5mm (h) x 6mm (w)	2.0-2.5mm	EEUFR1C471	Panasonic FR Series, upgraded to 16V
-EC8		470uF	10V		12.5mm (h) x 6mm (w)	2.0-2.5mm	As above	Lead spacing is 3.5mm, 8mm wide not 6mm... may not fit...
-EC5		470uF	10V		12.5mm (h) x 6mm (w)	2.0-2.5mm	As above	Solution - Raised them up above the board a few millimeters.
-EC4		470uF	10V		12.5mm (h) x 6mm (w)	2.0-2.5mm	As above	Originals were definitely below their rated spec.
+EC10		470uF	10V			12.5mm (h) x 6mm (w)	2.0-2.5mm		EEUFR1C471	Panasonic FR Series, upgraded to 16V
+EC8			470uF	10V			12.5mm (h) x 6mm (w)	2.0-2.5mm		As above	Lead spacing is 3.5mm, 8mm wide not 6mm... may not fit...
+EC5			470uF	10V			12.5mm (h) x 6mm (w)	2.0-2.5mm		As above	Solution - Raised them up above the board a few millimeters.
+EC4			470uF	10V			12.5mm (h) x 6mm (w)	2.0-2.5mm		As above	Originals were definitely below their rated spec.
 
-Fan		12V 0.043A		35mm (w) x 35mm (h) 10mm (d) 		MC011510	For Replacement of Superred CHC3512CB DC 12V 0.13A 35x35x10mm 2-Wire Server Fan
+Fan			12V 	0.043A		35mm (w) x 35mm (h) 10mm (d) 			MC011510	For Replacement of Superred CHC3512CB DC 12V 0.13A 35x35x10mm 2-Wire Server Fan
 
 ```
 
 One issue I encountered on first power on, which is probably worth mentioning, was boot looping. Here's the initial specs of the software I was running and the device serial number.  
 
 ```
-Serial: 	CFH01T701904
-Software:	5.1.10
+Serial: 		CFH01T701904
+Software:		5.1.10
 Modem reset:	ATDT****,,,,73738#,,,,1
 
 ```
@@ -103,4 +103,4 @@ The [quick start guide](https://www.cisco.com/c/dam/en/us/td/docs/voice_ip_comm/
 
 It seems to get around the boot loop issue, do not connect ethernet. An active ethernet connection seemed to cause the device to boot loop. Now the AUX port is OK to access manually assigned IP of 192.168.0.1. Another thing that was kicking me was the lack of a time server so the date/time wouldn't update. Adding a primary time server under WAN status (Advanced) of time.nist.gov solved that.
 
-There's more photos of this device in the [photo gallery](https://photos.mcretro.net) if you are interested in that sort of thing. No judgement from this side of the table! 😄 I've also added the latest firmware at the time of writing and some pdfs on configuring the SPA8000 onto the [file server](https://files.mcretro.net).
+There's more photos of this device in the [photo gallery](/photos) if you are interested in that sort of thing. No judgement from this side of the table! 😄 I've also added the latest firmware at the time of writing and some pdfs on configuring the SPA8000 onto the [file server](/files).

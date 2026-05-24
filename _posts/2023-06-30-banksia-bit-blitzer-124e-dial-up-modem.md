@@ -15,7 +15,7 @@ Not the fastest, but the cool factor is pretty high on this modem. Look at all t
 
 ![](/assets/images/2023/img_1026.jpg)
 
-The ROM is dated 891210, so just before Christmas 1989. If you're interested in the ROM, you can download it [here](http://files.mcretro.net/dumps/). This was dumped using a [TL866CS programmer](https://proghq.org/wiki/index.php/TL866). The PCB has the markings Banksia Bit Blitzer 124E/1234E-A which would imply that the same board was used on multiple models.
+The ROM is dated 891210, so just before Christmas 1989. If you're interested in the ROM, you can download it [here](/files/dumps/). This was dumped using a [TL866CS programmer](https://proghq.org/wiki/TL866). The PCB has the markings Banksia Bit Blitzer 124E/1234E-A which would imply that the same board was used on multiple models.
 
 {% include youtube.html id="As8rEfB5iCw" %}
 
@@ -23,7 +23,7 @@ Above is part two following on from the video at the start of this post. Some of
 
 ![](/assets/images/2023/img_1028.jpg)
 
-Here's the Arlec power supply that came with it running on 240V 50Hz power it steps it down a little to 9V AC at 500mA. Other markings on the power supply are APP. NO. V/79309/61227. You can find more photos over in the [photo gallery](https://photos.mcretro.net).
+Here's the Arlec power supply that came with it running on 240V 50Hz power it steps it down a little to 9V AC at 500mA. Other markings on the power supply are APP. NO. V/79309/61227. You can find more photos over in the [photo gallery](/photos).
 
 Next up we have data from the modem itself and what might be a functioning AT string, probably found thanks to [wvdialconf](https://wiki.archlinux.org/title/Wvdial).
 

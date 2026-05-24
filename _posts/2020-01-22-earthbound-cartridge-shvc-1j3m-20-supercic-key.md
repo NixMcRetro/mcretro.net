@@ -39,8 +39,18 @@ It was all worth it though as the Super Famicom booted up.
 
 Will it continue to work through the [copy](https://tcrf.net/EarthBound) [protections](http://media.earthboundcentral.com/2011/05/earthbounds-copy-protection/index.html)? Time will tell, sooner or later. Time will tell.
 
-**Edit:** Found a note from myself about half a decade ago.
+**Edit:**
+Found a note from myself about half a decade ago.
 
-Remove CIC from Cartridge (otherwise lockout activates... why?) [http://www.cs.umb.edu/~bazz/snes/helpful/SuperCIC.html](https://web.archive.org/web/20190311181602/https://www.cs.umb.edu/~bazz/snes/helpful/SuperCIC.html) [http://forums.nesdev.com/viewtopic.php?t=8884](http://forums.nesdev.com/viewtopic.php?t=8884)
+Remove CIC from Cartridge (otherwise lockout activates... why?) [http://www.cs.umb.edu/~bazz/snes/helpful/SuperCIC.html](https://web.archive.org/web/20190311181602/https://www.cs.umb.edu/~bazz/snes/helpful/SuperCIC.html) [http://forums.nesdev.com/viewtopic.php?t=8884](https://web.archive.org/web/20231014233041/https://forums.nesdev.org/viewtopic.php?t=8884)
 
-**References** [http://www.dbwbp.com/index.php/10-electronic-projects/24-snes-cart-region-free-modification-replacing-cic-lockout-chip-with-supercic](http://www.dbwbp.com/index.php/10-electronic-projects/24-snes-cart-region-free-modification-replacing-cic-lockout-chip-with-supercic) [https://sd2snes.de/blog/cool-stuff/supercic](https://sd2snes.de/blog/cool-stuff/supercic) [https://hackmii.com/2010/01/the-weird-and-wonderful-cic/](https://hackmii.com/2010/01/the-weird-and-wonderful-cic/) [http://nintendoallstars.w.interia.pl/romlab/cart\_types.htm](https://www.interia.pl/) [http://forums.nesdev.com/viewtopic.php?t=8289](http://forums.nesdev.com/viewtopic.php?t=8289) [http://www.snescentral.com/article.php?id=0909](http://snescentral.com/article.php?id=0909) [http://nintendoallstars.w.interia.pl/romlab/cart2epr.htm](https://www.interia.pl/) [http://web.archive.org/web/20120712033436/http://snesdev.romhack.de/game\_select.htm](http://web.archive.org/web/20120712033436/http://snesdev.romhack.de/game_select.htm) [http://www.mcumall.com/forum/topic.asp?TOPIC\_ID=4858](http://www.mcumall.com/forum/topic.asp?TOPIC_ID=4858) [https://web.archive.org/web/20161219041616/http://emu-docs.org/Super%20NES/Cartridges/sfcdev2.php](https://web.archive.org/web/20161219041616/http://emu-docs.org/Super%20NES/Cartridges/sfcdev2.php)
+**References** - [http://www.dbwbp.com/index.php/10-electronic-projects/24-snes-cart-region-free-modification-replacing-cic-lockout-chip-with-supercic](http://www.dbwbp.com/index.php/10-electronic-projects/24-snes-cart-region-free-modification-replacing-cic-lockout-chip-with-supercic)
+- [https://sd2snes.de/blog/cool-stuff/supercic](https://sd2snes.de/blog/cool-stuff/supercic)
+- [https://hackmii.com/2010/01/the-weird-and-wonderful-cic/](https://hackmii.com/2010/01/the-weird-and-wonderful-cic/)
+- [http://nintendoallstars.w.interia.pl/romlab/cart\_types.htm](https://www.interia.pl/)
+- [http://forums.nesdev.com/viewtopic.php?t=8289](https://web.archive.org/web/20231014212226/https://forums.nesdev.org/viewtopic.php?t=8289)
+- [http://www.snescentral.com/article.php?id=0909](http://snescentral.com/article.php?id=0909)
+- [http://nintendoallstars.w.interia.pl/romlab/cart2epr.htm](https://www.interia.pl/)
+- [http://web.archive.org/web/20120712033436/http://snesdev.romhack.de/game\_select.htm](http://web.archive.org/web/20120712033436/http://snesdev.romhack.de/game_select.htm)
+- [http://www.mcumall.com/forum/topic.asp?TOPIC\_ID=4858](http://www.mcumall.com/forum/topic.asp?TOPIC_ID=4858)
+- [https://web.archive.org/web/20161219041616/http://emu-docs.org/Super%20NES/Cartridges/sfcdev2.php](https://web.archive.org/web/20161219041616/http://emu-docs.org/Super%20NES/Cartridges/sfcdev2.php)

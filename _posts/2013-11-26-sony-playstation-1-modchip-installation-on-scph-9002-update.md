@@ -8,3 +8,6 @@ categories: [hacks, sony, youtube]
 {% include youtube.html id="Udr_CFyVsYg" %}
 
 Make sure "Verify burn" is switched on, or you'll have more coasters than a beer hall in the Alps!
+
+**Update 2026:**
+What the heck was I quoting? More coasters than a beer hall? In the Alps? Ohhhh 2013, what a ride!

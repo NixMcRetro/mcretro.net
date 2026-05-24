@@ -19,7 +19,7 @@ Geez, that Daewoo one doesn't look too good. Haven't seen a Daewoo car in years 
 
 ![](/assets/images/2013/img_0409.jpg)
 
-I didn't keep very good notes on this one regarding capacitors. But you can always find more in the [photo gallery](https://photos.mcretro.net/) if you need it. It looks like we just replaced the failing caps with ones we had on hand in May 2022 - FM and FR series Panasonics.
+I didn't keep very good notes on this one regarding capacitors. But you can always find more in the [photo gallery](/photos) if you need it. It looks like we just replaced the failing caps with ones we had on hand in May 2022 - FM and FR series Panasonics.
 
 ![](/assets/images/2023/img_1034.jpg)
 
@@ -37,8 +37,6 @@ Interestingly the only model number externally is what is on the front of the mo
 
 For the sake of this post, I'm going to call it an AM1234 because it fits well. AM being AutoModem shortened and 1234 plucked straight from the front of the modem and from the ATI9 string.
 
- 
-
 {% include youtube.html id="cqpAJREkahY" %}
 
 Here's an slightly older video showing the modem performing a blind dial and then a stable connection once the VoIP was configured... correctly, better, less worse. 😅 Slow and steady.
@@ -52,8 +50,6 @@ One important lesson this modem taught me was that the circuits on modems that r
 ![](/assets/images/2023/img_1037.jpg)
 
 Up last we have the logs from querying the modem.
-
- 
 
 ```
 ---------- 2022-06-11 18:02:54 +1000: Logging Started ----------

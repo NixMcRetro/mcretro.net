@@ -11,7 +11,7 @@ Those who are long-term subscribers would remember [way back in 2016](/cloudflar
 
 ![](/assets/images/2022/img_0812.jpg)
 
-The motivations behind this are primarily hosting of the [GeoCities Archive](https://geocities.mcretro.net) and the [ASSEMblerGames Archive](https://assembler.mcretro.net). Cloudflare's [Always Online](https://blog.cloudflare.com/cloudflares-always-online-and-the-internet-archive-team-up-to-fight-origin-errors/) has been on my bucket list too long. Now it is a reality.
+The motivations behind this are primarily hosting of the [GeoCities Archive](/homepages/geocities) and the [ASSEMblerGames Archive](/). Cloudflare's [Always Online](https://blog.cloudflare.com/cloudflares-always-online-and-the-internet-archive-team-up-to-fight-origin-errors/) has been on my bucket list too long. Now it is a reality.
 
 ![](/assets/images/2022/img_0813.jpg)
 

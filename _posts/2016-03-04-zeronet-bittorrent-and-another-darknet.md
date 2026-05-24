@@ -5,7 +5,7 @@ date: 2016-03-04T13:05:33.000+11:00
 categories: [news, raspberry-pi]
 ---
 
-![Namecoin\_Logo](/assets/images/2016/img_0460.jpg)
+![Namecoin Logo](/assets/images/2016/img_0460.jpg)
 
 Just a few days ago I managed to get WordPress to play nice with my darknet (Tor) website, meaning [McRetro.net](https://retrojunkie.net) is now mirrored 100% to the [mcretro35qepy5cy.onion](/) address. Magnificent! That got me thinking though, what other darknets could I get my website onto? Well as the image above might hint at - .bit addresses courtesy of [Namecoin](https://www.namecoin.org/).
 

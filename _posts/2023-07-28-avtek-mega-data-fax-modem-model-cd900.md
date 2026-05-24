@@ -11,7 +11,7 @@ This modem was purchased through eBay in February 2023 and recapped in late May 
 
 ![](/assets/images/2023/img_1045.jpg)
 
-Here's the brains of the modem. A Rockwell RC224ATF R6641-14 with datecode of week 30, 1992. More photos can be found in the [photo gallery](https://photos.mcretro.net).
+Here's the brains of the modem. A Rockwell RC224ATF R6641-14 with datecode of week 30, 1992. More photos can be found in the [photo gallery](/photos).
 
 ![](/assets/images/2023/img_1046.jpg)
 
@@ -38,8 +38,6 @@ The power supply was one of the three pictured here. Which one? I could not be s
 ![](/assets/images/2023/img_1050.jpg)
 
 I love the way they designed the front of the modem to make the LEDs shine through like the letter A (for Avtek). Last up we have the results of the probing the modem for information. Surprisingly short as nothing beyond ATI3 registered anything apart from ERROR. Short and sweet! 😄
-
- 
 
 ```
 ---------- 2023-05-28 15:36:54 +1000: Logging Started ----------
@@ -69,8 +67,6 @@ CONNECT 2400
 ```
 
 The capacitors were replaced in this modem in May 2023. The parts listed below are manufacturer part numbers. The formatting isn’t too web friendly, copy the raw text out and paste it into a non-rich text editor (Such as Notepad or TextEdit – in plain text mode) and you’ll probably be fine. 😄
-
- 
 
 ```
 SMD Electrolytic

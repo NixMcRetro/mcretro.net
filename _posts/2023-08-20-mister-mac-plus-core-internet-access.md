@@ -11,7 +11,7 @@ Last year we were playing around with the Macintosh Classic, thanks to [Pendleto
 
  
 
-{% include youtube.html id="eApRV4d1zwg" %} You can see more of the browsing experience on the MiSTer in the above live stream from [McRetro Gaming](/channels/). Thanks to the MiSTer settings, we are able to bump the system up to a Macintosh SE running a 68020 at 16MHz... with the same 4MB of RAM. We were still limited by the paltry hardware of the Mac itself though. Maybe we were asking too much... then again, that's half the fun.
+{% include youtube.html id="eApRV4d1zwg" %} You can see more of the browsing experience on the MiSTer in the above live stream from [McRetro Gaming](/channels). Thanks to the MiSTer settings, we are able to bump the system up to a Macintosh SE running a 68020 at 16MHz... with the same 4MB of RAM. We were still limited by the paltry hardware of the Mac itself though. Maybe we were asking too much... then again, that's half the fun.
 
 ![](/assets/images/2023/img_1110.jpg)
 
@@ -21,7 +21,7 @@ Another alternative is to run System 7.5 through the Amiga core and [ShapeShifte
 
 {% include youtube.html id="l7z3d2ErFvU" %}
 
-Here's a closer look at the TradeWave MacWeb 2.0 browser. It can load websites provided they are very basic. Anything too complicated, i.e. greater than HTML1.0 and it just doesn't know what to do. That said, at the time [retrojunkie.net](http://retrojunkie.net) was configured to not use any proxy or CDN through Cloudflare and it worked OK. I was impressed I was able to work that out on my little Apache web server!
+Here's a closer look at the TradeWave MacWeb 2.0 browser. It can load websites provided they are very basic. Anything too complicated, i.e. greater than HTML1.0 and it just doesn't know what to do. That said, at the time [retrojunkie.net](https://retrojunkie.net) was configured to not use any proxy or CDN through Cloudflare and it worked OK. I was impressed I was able to work that out on my little Apache web server!
 
 ![](/assets/images/2023/img_1111.jpg)
 

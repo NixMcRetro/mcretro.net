@@ -17,15 +17,11 @@ Up next we have an internal overview of the modem before it was recapped. There'
 
 I only have two photos of the modem and the following log is limited because I might have accidentally ran a rouge...
 
- 
-
 ```
 rm -rf *
 ```
 
 ... in terminal while in my Desktop folder... I had backups but they sadly didn't include that modem. Many modem log files were lost that day. I guess that's what I get for messing about with the GeoCities archive late at night.
-
- 
 
 ```
 ---------- 2021-06-02 12:41:41 +1000: Logging Started ----------
@@ -73,8 +69,6 @@ Looks like the majority were replaced with Panasonic FR series caps. There were 
 
 The parts listed below are manufacturer part numbers. The formatting isn’t too web friendly, copy the raw text out and paste it into a non-rich text editor (Such as Notepad or TextEdit – in plain text mode) and you’ll probably be fine. 😄
 
- 
-
 ```
 Value	Voltage		Height	Width	Notes
 470uF	16V		12mm	7mm	EEUFR1C471
@@ -87,7 +81,7 @@ Value	Voltage		Height	Width	Notes
 100uF	16V		12mm	5mm	EEUFR1C101
 100uF	16V		12mm	5mm	EEUFR1C101
 
-1uF	50V		11mm	4mm	50YXJ1M5X11
+1uF	    50V		11mm	4mm	50YXJ1M5X11
 10uF	25V		11mm	4mm	EEUFR1H100	Upgraded to 50V
 10uF	25V		11mm	4mm	EEUFR1H100	Upgraded to 50V
 
@@ -96,6 +90,6 @@ Lead spacing is 2-2.5mm on most.
 
 ```
 
-As always you can see more pictures, OK two pictures, in the [photo gallery](https://photos.mcretro.net) and grab any drivers from the [file server](https://files.mcretro.net). I've put an iso image up of the entire driver disc as well but you shouldn't need much more than the above init string to get dialling.
+As always you can see more pictures, OK two pictures, in the [photo gallery](/photos) and grab any drivers from the [file server](/files). I've put an iso image up of the entire driver disc as well but you shouldn't need much more than the above init string to get dialling.
 
 This modem has been donated to the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/).

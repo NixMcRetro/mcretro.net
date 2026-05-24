@@ -33,4 +33,4 @@ This is her in her mostly hardened state.
 
 Finally, we have the shell itself. Who would have thought [partial (incomplete) metamorphosis](https://en.wikipedia.org/wiki/Hemimetabolism) (also known as hemimetabolism) would be so cool!
 
-It's always a little bittersweet writing this up knowing she is gone. I guess the only comfort I have is the possibility that she passed on her genetics to future cicadas. Catch you at the [rainbow bridge](https://en.wikipedia.org/wiki/Rainbow_Bridge_\(pets\)) little one!
+It's always a little bittersweet writing this up knowing she is gone. I guess the only comfort I have is the possibility that she passed on her genetics to future cicadas. Catch you at the [rainbow bridge](https://en.wikipedia.org/wiki/Rainbow_Bridge_(pets)) little one!

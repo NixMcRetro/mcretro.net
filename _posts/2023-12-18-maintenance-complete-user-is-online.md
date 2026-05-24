@@ -19,7 +19,7 @@ After finding some time to look at the settings, I can see why I was locked out.
 
 ![](/assets/images/2023/img_1233.jpg)
 
-Enter Cloudflare Access (again)! Using a one-time pin through Cloudflare offers security far superior to my existing freemium Wordpress plugin. Reduced server load and less attack vectors? Yes please! This user is most definitely [back online](/uploads/uploads/user-is-online.mp3)!
+Enter Cloudflare Access (again)! Using a one-time pin through Cloudflare offers security far superior to my existing freemium Wordpress plugin. Reduced server load and less attack vectors? Yes please! This user is most definitely [back online](/assets/uploads/user-is-online.mp3)!
 
 ![](/assets/images/2023/img_1230.jpg)
 

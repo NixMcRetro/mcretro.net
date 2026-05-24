@@ -11,7 +11,7 @@ Here's my relatively new, old modem. The Avtek MegaPlus V.32bis Modem - Model CD
 
 This year I'll be primarily dealing with dial-up modems, retro website development and probably a bunch of random ramblings as per normal. To start it off let's talk about this modem briefly.
 
-The Avtek MegaPlus V.32bis is **\*almost\*** the modem of my childhood. What I hadn't realised is we likely had a V.34bis not V.32bis. What the difference? Double the speed! We're comparing 14.4kBit/sec to 28.8kBit/sec.
+The Avtek MegaPlus V.32bis is **\*almost\*** the modem of my childhood. What I hadn't realised is we likely had a V.34bis not V.32bis. What the difference? Double the speed! We're comparing 14.4 kBit/sec to 28.8 kBit/sec.
 
 The ITU-T recommendations state:
 
@@ -20,4 +20,4 @@ The ITU-T recommendations state:
 
 [Wow](https://en.wikipedia.org/wiki/Owen_Wilson), even if it was just V.34 I would have been flying along the old information superhighway.
 
-For me, modems are going to be needed for browsing the [GeoCities Archives](https://mcretro.net/homepages/geocities) on my MiSTer. Next up we need to replace some capacitors, and of course do some test dialling.
+For me, modems are going to be needed for browsing the [GeoCities Archives](/homepages/geocities) on my MiSTer. Next up we need to replace some capacitors, and of course do some test dialling.

@@ -13,4 +13,4 @@ As it happened [RetroChallenge](https://www.retrochallenge.org) 2021/10 was runn
 
 This has made things progress a lot faster than expected. I hadn't planned on starting this part of the project until next year. Yet here we are. Now I can browse the old internet through real modems connected to a MiSTer running Windows 98.
 
-You can check out the 56k friendly GeoCities at [http://geocities.mcretro.net](http://geocities.mcretro.net). There's still a lot of work going on in the backend. Expect trouble! 🎃
+You can check out the 56k friendly GeoCities at [http://geocities.mcretro.net](/homepages/geocities). There's still a lot of work going on in the backend. Expect trouble! 🎃

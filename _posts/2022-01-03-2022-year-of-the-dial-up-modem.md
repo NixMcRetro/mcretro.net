@@ -20,4 +20,4 @@ The ITU-T recommendations state:
 
 [Wow](https://en.wikipedia.org/wiki/Owen_Wilson), even if it was just V.34 I would have been flying along the old information superhighway.
 
-For me, modems are going to be needed for browsing the [GeoCities Archives](https://geocities.mcretro.net) on my MiSTer. Next up we need to replace some capacitors, and of course do some test dialling.
+For me, modems are going to be needed for browsing the [GeoCities Archives](https://mcretro.net/homepages/geocities) on my MiSTer. Next up we need to replace some capacitors, and of course do some test dialling.

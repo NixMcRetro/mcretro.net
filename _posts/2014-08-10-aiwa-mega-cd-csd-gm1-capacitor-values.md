@@ -9,4 +9,4 @@ categories: [repairs, sega]
 
 Below is a list of the capacitors used in the Aiwa Mega-CD CSD-GM1. I noted down these as I was replacing them cap by cap. The similarities between the revision 1 and revision 2 boards are nearly identical. In fact, they may possibly be identical and some caps replaced by another party at some point.
 
-You can also download the spreadsheet [here](http://files.mcretro.net).
+You can also download the spreadsheet [here](/files).

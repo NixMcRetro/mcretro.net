@@ -7,7 +7,7 @@ categories: [news, raspberry-pi]
 
 ![Namecoin\_Logo](/assets/images/2016/img_0460.jpg)
 
-Just a few days ago I managed to get WordPress to play nice with my darknet (Tor) website, meaning [McRetro.net](http://retrojunkie.net) is now mirrored 100% to the [mcretro35qepy5cy.onion](http://mcretro35qepy5cy.onion) address. Magnificent! That got me thinking though, what other darknets could I get my website onto? Well as the image above might hint at - .bit addresses courtesy of [Namecoin](https://www.namecoin.org/).
+Just a few days ago I managed to get WordPress to play nice with my darknet (Tor) website, meaning [McRetro.net](https://retrojunkie.net) is now mirrored 100% to the [mcretro35qepy5cy.onion](/) address. Magnificent! That got me thinking though, what other darknets could I get my website onto? Well as the image above might hint at - .bit addresses courtesy of [Namecoin](https://www.namecoin.org/).
 
 It has taken over a whole day to just to download the blockchain, which is only a fraction the size of the [Bitcoin](https://bitcoin.org/en/) blockchain, but it is nearing completion. I've converted a few of my [Dogecoins](https://dogecoin.com/), several thousand actually, into Namecoin and Namecoin allows for the purchase of a .bit domain name through the Namecoin wallet. Genius!
 

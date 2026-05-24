@@ -15,7 +15,7 @@ Yeahhh 824 TB of NAND writing (TLC and SLC). That doesn't sound right. Those ret
 
 ![](/assets/images/2023/img_1205.jpg)
 
-A massive 1.8 TB of host writes, GeoCities dataset copied twice. 400 TBW is where WD expected the drive to fail [according to the data sheet](https://documents.westerndigital.com/content/dam/doc-library/en_us/assets/public/western-digital/product/internal-drives/pc-sa510-ssd/product-brief-pc-sa510-sata-ssd.pdf). Guess I better hook it into the old WD Dashboard and see what it says.
+A massive 1.8 TB of host writes, GeoCities dataset copied twice. 400 TBW is where WD expected the drive to fail [according to the data sheet](https://web.archive.org/web/20240331045530/https://documents.westerndigital.com/content/dam/doc-library/en_us/assets/public/western-digital/product/internal-drives/pc-sa510-ssd/product-brief-pc-sa510-sata-ssd.pdf). Guess I better hook it into the old WD Dashboard and see what it says.
 
 ![](/assets/images/2023/img_1207.jpg)
 

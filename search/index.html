@@ -1,0 +1,21 @@
+---
+layout: default
+title: Search
+---
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+
+<div class="center">
+  <img src="/assets/images/search/search.gif" alt="Let's go searching!" width="35" height="35">
+</div>
+
+<script src="/pagefind/pagefind-ui.js"></script>
+<div id="search"></div>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      showImages: false
+    });
+  });
+</script>

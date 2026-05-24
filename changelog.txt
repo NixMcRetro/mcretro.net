@@ -1,0 +1,347 @@
+Changelog for:
+http://mcretro.net
+http://retrojunkie.net
+
+
+To Do
+- GitHub for static websites.
+- Image cycle on front page (randomised).
+
+
+2026-05-24
+- Cosmetic fixes mostly done - looks better than identical.
+- Images resized from 800MB to 400MB, GitHub limit of 1GB!
+- Added a randomiser post nav item.
+- Reduced categories to maximum of three.
+- Exceeded expectations on rebuilding!
+
+2026-05-22
+- Onion sites won't work anymore. Farewell darknet.
+
+2026-05-18
+- Downtime has been a while now; I haven't been able to host at home.
+- Attempting to create a markdown-based GitHub Pages website.
+- Not sure how darknet sites can be integrated?
+
+2024-12-14
+- Migrated from RPi4 to x64 NUC.
+- Downtime of around one to two months, whoops.
+- https (via Cloudflare) has been fixed, I think.
+
+2024-09-30
+- Cleaned up rebrand, removed references to old name.
+- Continuing to release McRetro.net new videos from Fish Tank World.
+
+2024-08-25
+- Fish Tank World YouTube channel deleted.
+- Video will be merged with Nix McRetro's main channel.
+- Also rebranded a little while ago as Nix McRetro.
+- Channel Chirp videos have been added to Nix McRetro's channel as drafts.
+- Need to merge into McRetro.net (in time order).
+- Then need to have a static GitHub site (as listed under the To Do section.
+
+2024-03-17
+- Contact form is broken. How long has it been broken? I don't know.
+- Contact form removed. Reach me through social media, like BlueSky or Tumblr.
+- Removed WPForms and hCaptcha as no more forms. Easy!
+- Page caching enabled - we're still on a 4G internet connection.
+
+2023-12-18
+- Cloudflare Argo Tunnel active to bypass CG-NAT - set latency to maximum.
+
+2023-10-13
+- The GeoCities archive rebuild (v6) has been mothballed.
+- Abandoning Docker migration; Raspberry Pi is here to stay.
+
+2023-08-02
+- Migration complete for channelchirp.mcretro.net and retrojunkie.mcretro.net
+- Splash pages exist on channelchirp.com and retrojunkie.net
+- Started swapping donation links to archive.org
+- Got the header working on retrojunkie.net after a decade!
+- Added a marquee to retrojunkie.mcretro.net...
+
+2023-07-24
+- Began migration channelchirp.com to channelchirp.mcretro.net
+- Began migration retrojunkie.net to retrojunkie.mcretro.net
+- Fixed new sitemap width to suit mobile devices slightly better.
+- Adjusted title cycling text to be slightly smaller to prevent overflow to next line.
+
+2023-07-05
+- Removed hardware page - I'm no longer a collector.
+- Installed sitemap page from retrojunkie.net - width is broken for mobile.
+
+2023-06-26
+- Considering moving to Docker for portability.
+- Considering moving static sites to GitHub for offsite hosting.
+- Rejiggered the YouTube Channel page - now has five channels, up from two.
+- Homepage text refreshed, reworded slightly.
+- Removed server stats from About page.
+
+2022-11-15
+- GeoCities is back online after a few months downtime.
+- Removed outdated plugins.
+
+2022-06-13
+- GeoCities rebuild proof of concept complete.
+- Disabled geocities.mcretro.net, taking it offline.
+- Still available locally and on the darknet address below:
+- geocitiesllczuf44da2nj45jn3fntdjpw27ercfbhkrw3mnegti7pid.onion
+
+2022-01-23
+- Cloudflare CDN now in use.
+- Covers GeoCities, Assembler and more.
+- Using ddclient 3.9.1 with Cloudflare support.
+- Will allow for "Always Online".
+- Onion (Tor) addresses still work when accessed via https sites.
+
+2021-12-29
+- Started work on hosting an AssemblerGames mirror.
+
+2021-10-02
+- Broke the footer (0 bytes).
+- Fixed the footer.
+- Added dogecoin donation links on each page.
+- Generation of v3 vanity onions for darknet domains is underway.
+
+2021-09-26
+- Moved most subsites to subdomains, allowing for better future darknet integration.
+- Migrated to a Raspberry Pi 4 (Ubuntu 20.04.03).
+- Proxyserver enabled for geocities.mcretro.net subdomain for load balancing.
+- Established files.mcretro.net, speed capped at 10kb/sec.
+
+2021-05-14
+- Dockerisation failed (Tor requirements).
+- Migrated to a Raspberry Pi 3B+ (Ubuntu 20.04.02).
+
+2020-12-20
+- Migrated to aarch64 (Apple M1).
+- Now running Ubuntu 20.04.01 on a Parallels VM.
+
+2020-10-04
+- Migrated to VM from a dedicated Raspberry Pi.
+- Now running Ubuntu 20.04.01 on a VirtualBox 6.1 VM.
+- v2 onion domains retired.
+
+2019-08-21
+- v2 onion domains active.
+- v3 onion domains active.
+
+2019-08-10
+- Multi-domain support for onion domains using WordPress filter hooks.
+
+2019-08-04
+- Began work on 56 character v3 onion addresses.
+- Migrated to Buster.
+
+2019-02-14
+- Shortened the permalink structure.
+
+2019-01-20
+- Converted the header text to CSS.
+- Fixed YouTube video formatting.
+- Nuked sidebar calender.
+
+2018-12-28
+- Upgraded Photo Gallery to Single File PHP Gallery.
+- Removed Emulation Realm 124 (ER124) and The Glitch (09/09/1999).
+- Limited social media contact information, too many avenues. 
+
+2018-12-21
+- Upgraded to faster SD card.
+
+2018-06-16
+- Moved back to Raspberry Pi (Model 3 B+).
+- Turns out the old site was undervolting and powering off.
+- Cause was thin wiring in the RetroFlag NesPi Case.
+
+2018-03-15
+- Uptime of 18 days. The fan works well!
+
+2018-03-02
+- Removed a bunch of rogue iframes for YouTube.
+
+2018-02-25
+- Installed a 5V fan on a 3V3 GPIO pin.
+- Boosted CPU speed to 1800MHz.
+- 40 degrees Celcius (104 degrees Fahrenheit) idle.
+
+2018-02-10
+- Reintegrated all "Imported" posts from 2013-2015.
+- Slowed CPU speed to 1200MHz on Tinker Board to prevent overheating.
+- Fixed all darknet links on RetroJunkie.net.
+
+2018-02-05
+- TLS/SSL (https) enabled via Let's Encrypt.
+- DNSSEC enabled sitewide.
+- FTP server enabled.
+- Full resolution photos moved to FTP server.
+
+2018-02-03
+- Much changes.
+- Moved to MariaDB from MySQL.
+- Online shop purged completely.
+- Lost my https.
+- Darknet probably broken again too.
+- Almost got the ftp server working though.
+
+2016-07-03
+- OpenCart is having issues with TLS.
+- Moved the shop back to WooCommerce in WordPress.
+- shop.mcretro.net has been nuked for now.
+
+2016-06-29
+- irc.mcretro.net is live on encrypted port 6697.
+- TLS/SSL (https) enabled on all sites
+- Moved more images into the WordPress directory structure.
+
+2016-06-19
+- So many changes over the past few months.
+- shop.mcretro.net is now working.
+- oldskool.mcretro.net is now working and mirrors the darknet.
+- Added "Latest News" table back onto the front page.
+- Investigating setting up an IRC server.
+
+2016-03-17
+- A store page has been added and is now under test.
+- Resurrected the contact form, that shouldn't have been down for so long.
+- Tweaked the general layout even more.
+
+2016-03-12
+- Lightened the background colour slightly.
+- Sorted out the social icons at the top, they spin now.
+
+2016-03-03
+- Fixed the darknet (tor) mirror. WordPress and absolute links...
+
+2016-02-09
+- Sanding the rough edges on the WordPress theme.
+
+2016-02-08
+- Major overhaul, moving to WordPress.
+
+2016-01-12
+- Dropped font size to 14. 16 is far too big. Wikipedia uses 14.
+
+2016-01-11
+- File Server is active.
+- Fixed last updated date on pages that were not the front page.
+
+2016-01-07
+- Upgraded font size to 16.
+- Added cellspacing to text on front page underneath image.
+- Hid the blogroll, *should* remove it.
+
+2016-01-05
+- 41 days uptime, decided to rebuild server using Raspbian Jessie Lite.
+- Enabled speed limits to 56kbps - 7000 bytes per second.
+- Any code now displays in a shadowed box.
+
+2015-12-29
+- Photos page now displays gallery if on a modern browser.
+- YouTube page now shows most recent video rather than subscription video.
+- Reduced front page blog items from four to three.
+
+2015-12-06
+- Livestreaming via 4G WiFi dongle has better upload - 80kB/sec vs 480kB/sec.
+- Improved header images on both Shane McRetro and McRetro Gaming YouTubes.
+- Fixed YouTube "About" pages so that links are current.
+- Added more draft pages from old guides and hardware on former website. 
+- Noted 13 days uptime on the Raspberry Pi 2. Gotta love Linux!
+- Updated 404 not found page with a Zero Wing face palm.
+- Added latest updates section to front page, last four posts pulled from blog.
+
+2015-12-01
+- Tidied up YouTube descriptions on most popular videos.
+- Livestream on PS4 works OK, really need more upload bandwidth.
+
+2015-11-27
+- Purged RetroJunkie.net tags from YouTube videos.
+- Added McRetro.net tags to YouTube videos.
+- McRetro Gaming livestream is somewhat successful - 360p maximum.
+- Initial tests with Blue Yeti Microphone.
+
+2015-11-26
+- Keeping the server on the Raspberry Pi 2 Model B.
+- Fixed CPU utilisation percentages, was 1 core, now 4 cores.
+- Corrected Shane McRetro and McRetro Gaming YouTube Channel links.
+
+2015-11-15
+- Imported YouTube videos from July 2013 to present.
+- Updated sitemap for both / and /blog/
+- Modified search box to include advanced search options.
+
+2015-11-14
+- Completed importing posts from 2012-2013.
+- Resized images that exceeded the 560px width of column1.
+
+2015-11-13
+- Cleaned up some more imported posts, 137 posts to go.
+
+2015-11-11
+- Started to tidy up imported posts.
+- Deleted "Science with Shane" YouTube Channel.
+- Updated channel links to McRetroGaming and ShaneMcRetro.
+- Optimised some internal links to avoid redirects.
+- Updated root sitemap.xml
+
+2015-11-10
+- Hacked up a python script to convert WordPress XML to FlatPress.
+- Deleted all previously imported posts (~2000).
+- Broke the blog, post import failed to rebuild properly.
+- Fixed the blog, format was ddmmyy, should have been yymmdd.
+- Imported 237 posts vs ~2000 with previous method.
+- Repaired blog .htaccess file, leftover code was causing redirect issues.
+- Generated sitemap for / (manual) and /blog (updates on publish).
+- Imported comments from WordPress.
+
+2015-11-09
+- Revised changelog formatting.
+- Added statistics via Webalyzer.
+
+2015-11-08
+- Removed Dropplets blogging platform.
+- Installed FlatPress blog in place of Dropplets.
+- Configured FlatPress theme heavily to match website.
+- Imported all old Wordpress posts including ALL revisions..!
+
+2015-11-03
+- Added Games section to header.
+- Added Asteroids and initial formatting / layout.
+- Rejiggered the CSS, mainly consolidated code.
+
+2015-10-29
+- Added Google Drive to File Server page.
+- Basic password protection on /files/public/
+- Merged onion and clearnet website for ease of configuration.
+- Disabled indexes via “Options -Indexes” sitewide.
+- Enabled indexes via “Options +Indexes” for /files/public/
+
+2015-10-28
+- Started a changelog to track website progress.
+- YouTube page now has subscription videos.
+- Screen captures of older Netscape versions to the about page.
+- Added align="center" to <div class="nav”> instead of <center> tag.
+- Added border="0" to images to avoid blue outline on Netscape.
+- Random text in header and front page images are now PHP based. 
+- Document.getElementById() is not compatible with older browsers.
+- document.write could not be used twice as it would overwrite random site code.
+- Compatibility with Netscape Navigator 1.22+ significantly improved.
+- Header image no longer embedded in CSS for better compatibility.
+- Moved background colour from CSS to header.php <body> tag.
+- Reverted from UTF-8 to ISO-8859-1 via php.ini improving compatibility.
+- Fattened up borders on tables.
+- All JavaScript removed in favour of server-side PHP scripting.
+- Removed retrosites from navigation bar, accessible via about page.
+- Blog path now relative, not absolute to allow for https / onion sites.
+- Permalinks now working on blog (Apache 2.4.x).
+- Revalidated as HTML 4.01 Transitional.
+- Adjusted width of navigation bar and page width due to wide headers on onion domains.
+- Refreshed sitemap.xml
+
+Formerly changelog for:
+- http://mcretro35qepy5cy.onion (V2 onion, retired)
+http://mcretro4lov3ycyvikjdeer3dgl5wel5aer6xakj5mxa26a3qvrp22qd.onion (V3, retired)
+http://retro56qdosu3zuisr5tiuh7ihpn6owzpwjwvs7djlweiqb3mcspahyd.onion (V3, retired)
+
+
+"There's nothing I want to do. There's nothing I want to be. That's probably not the best way to be... but you know what, that probably doesn't matter." - FLCL

@@ -1,0 +1,66 @@
+# bundle exec jekyll serve
+
+title: McRetro.net
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://mcretro.net" # the base hostname & protocol for your site, e.g. http://example.com
+timezone: Australia/Sydney
+encoding: utf-8
+
+
+# The blog structure
+permalink: /:title/
+
+# Pagination for the blog (adventures)
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# The plugin section!
+plugins:
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Not needed to send to the internet or something but optional to not do.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+
+jekyll-archives:
+  enabled:
+    - categories
+    - month
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+    month: '/archive/:year/:month/'   # like /archive/2026/11/
+
+# Defaults – make sure pages use the default layout
+# and posts use the post layout
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+    type: "posts"
+    values:
+      layout: "post"

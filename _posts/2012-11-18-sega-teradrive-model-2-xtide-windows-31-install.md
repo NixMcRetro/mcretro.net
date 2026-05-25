@@ -7,4 +7,4 @@ categories: [ibm-pc, microsoft, sega]
 
 {% include youtube.html id="Lv1GlH_As1c" %}
 
-If you have troubles with your own XTIDE card be sure to drop a line to the good folk at [Vintage-Computer](https://www.vcfed.org/forum/forum/technical-support/vintage-computer-hardware/19870-xtide-tech-support-thread/page40?19591-XTIDE-tech-support-thread%2Fpage40=). I didn't need to use their forums for help, however, their wiki and documentation is very handy in getting this card up and running.
+If you have troubles with your own XTIDE card be sure to drop a line to the good folk at [Vintage-Computer](https://forum.vcfed.org/index.php?threads/xtide-tech-support-thread.19870/). I didn't need to use their forums for help, however, their wiki and documentation is very handy in getting this card up and running.

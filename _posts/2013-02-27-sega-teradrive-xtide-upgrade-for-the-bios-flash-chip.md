@@ -11,7 +11,7 @@ Well I'll be moving up from a 28C64 to a roomy 28C256. Currently I have an Amtel
 
 ![](/assets/images/2012/img_0359.jpg)
 
-Thanks to Krille on the Vintage-Computer for the help on getting it to work. See [this thread](https://www.vcfed.org/forum/forum/genres/pcs-and-clones/36040-sega-teradrive-286-with-xt-ide-v2-card?35769-Sega-TeraDrive-286-with-XT-IDE-V2-Card=) for the details. And there I was thinking I was doing something wrong! Turns out there was a bug in the XTIDE BIOS itself. I guess that's why it is still (and probably always will be) considered beta software. Kudos for the help Krille and for the compiled copy of r505.
+Thanks to Krille on the Vintage-Computer for the help on getting it to work. See [this thread](https://forum.vcfed.org/index.php?threads/sega-teradrive-286-with-xt-ide-v2-card.36040/) for the details. And there I was thinking I was doing something wrong! Turns out there was a bug in the XTIDE BIOS itself. I guess that's why it is still (and probably always will be) considered beta software. Kudos for the help Krille and for the compiled copy of r505.
 
 ![](/assets/images/2013/img_0379.jpg)
 

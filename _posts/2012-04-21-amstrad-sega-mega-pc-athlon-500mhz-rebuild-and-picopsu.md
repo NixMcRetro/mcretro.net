@@ -9,7 +9,7 @@ categories: [ibm-pc, repairs, sega]
 
 After loading Windows 95 to the Amstrad Mega PC, it is quite clear that it will not be a good choice to leave it running like a broken down horse-drawn buggy. So poking around the internet Windows 3.11 is the perfect choice. Lightweight and can be modified to act like a more modern Windows OS. Enter [Calmira](http://www.calmira.de/).
 
-Found this while hunting down a copy of Counterpoint (Amstrad's OS for the Mega PC). Have a look at this [internet archive](http://web.archive.org/web/20080630223212/http://web.ukonline.co.uk/joe.gentile/Text/amstradCP.htm). Interestingly the download links were archived too. Looks like I'll be running Counterpoint Version 2.5 very soon along with a copy of MS-DOS 5 running underneath / in parallel.
+Found this while hunting down a copy of Counterpoint (Amstrad's OS for the Mega PC). Have a look at this [internet archive](https://web.archive.org/web/20080630223212/http://web.ukonline.co.uk/joe.gentile/Text/amstradCP.htm). Interestingly the download links were archived too. Looks like I'll be running Counterpoint Version 2.5 very soon along with a copy of MS-DOS 5 running underneath/in parallel.
 
 ![](/assets/images/2012/img_0067.jpg)
 

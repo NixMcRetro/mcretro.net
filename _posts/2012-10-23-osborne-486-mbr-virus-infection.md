@@ -11,7 +11,7 @@ Looks like I am not the only one who has a virus at the moment. Trusty old Osbor
 
 ![](/assets/images/2012/img_0333.jpg)
 
-It was only discovered after I'd used the disks in the machine and brought them back to reformat / re-image more data onto them. So a big thanks to Avast for Windows XP for detecting issues on my floppy disks and another big thanks to Caluser2000 over at the [Vintage Computer forums](https://www.vcfed.org/forum/forum/genres/later-pcs/34252-recommendations-on-antivirus-software-for-486-class-pcs?34004-Recommendations-on-Antivirus-Software-for-486-class-PCs=#post419712) for pointing me in the right direction so quickly.
+It was only discovered after I'd used the disks in the machine and brought them back to reformat / re-image more data onto them. So a big thanks to Avast for Windows XP for detecting issues on my floppy disks and another big thanks to Caluser2000 over at the [Vintage Computer forums](https://forum.vcfed.org/index.php?threads/recommendations-on-antivirus-software-for-486-class-pcs.34252/#post419712) for pointing me in the right direction so quickly.
 
 ![](/assets/images/2012/img_0334.jpg)
 

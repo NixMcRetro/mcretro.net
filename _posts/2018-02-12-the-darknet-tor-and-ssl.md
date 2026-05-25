@@ -13,7 +13,7 @@ And now? I've got the darknet websites working again! I've established [RetroJun
 
 It's also a great idea to dilute the darknet of scary websites as [Some Ordinary Gamers](https://www.youtube.com/user/SomeOrdinaryGamers) have shown us on their YouTube channel. Quite fun to configure at the very least! :D
 
-If you want to know more about digital online anonymity and privacy, jump over to The Electronic Frontier Foundation with their [great write-up](https://www.eff.org/pages/tor-and-https) on how HTTPS and Tor work together to achieve just that.
+If you want to know more about digital online anonymity and privacy, jump over to The Electronic Frontier Foundation with their [great write-up](https://web.archive.org/web/20180109215502/https://www.eff.org/pages/tor-and-https) on how HTTPS and Tor work together to achieve just that.
 
 I still need to see if I can get SSL enabled on onion sites, but I'll leave that for another day I think! ;)
 

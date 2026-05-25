@@ -11,11 +11,11 @@ Here we have some video of the Amstrad Mega PC, which has been upgraded to the A
 
 ![](/assets/images/2018/img_0606.jpg)
 
-Image provided by [WorldOfBrainFreeze](http://www.youtube.com/user/WorldOfBrainFreeze)
+Image provided by [WorldOfBrainFreeze](https://www.youtube.com/user/WorldOfBrainFreeze)
 
 ![](/assets/images/2018/img_0605.jpg)
 
-Image provided by [WorldOfBrainFreeze](http://www.youtube.com/user/WorldOfBrainFreeze)
+Image provided by [WorldOfBrainFreeze](https://www.youtube.com/user/WorldOfBrainFreeze)
 
 Above is what the Mega PC looks like without a Mega Drive inside it, a hideous beige box. Also known as the Amstrad PC7386SX80.
 

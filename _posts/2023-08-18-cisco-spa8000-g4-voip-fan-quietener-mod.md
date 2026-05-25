@@ -89,7 +89,7 @@ The firmware was out of date, which wasn't all that surprising. Keep your eyes o
 
 ![](/assets/images/2023/img_1095.jpg)
 
-Cisco offer a [nice article](https://www.cisco.com/c/en/us/support/docs/smb/collaboration-endpoints/cisco-ip-phone-8800-series/1739-SPA8000-upgrade-firmware-to-6112.html) on how to update to the latest.
+Cisco offer a [nice article](https://web.archive.org/web/20230228080434/https://www.cisco.com/c/en/us/support/docs/smb/collaboration-endpoints/cisco-ip-phone-8800-series/1739-SPA8000-upgrade-firmware-to-6112.html) on how to update to the latest.
 
 ![](/assets/images/2023/img_1096.jpg)
 
@@ -97,7 +97,7 @@ The [quick start guide](https://www.cisco.com/c/dam/en/us/td/docs/voice_ip_comm/
 
 ![](/assets/images/2023/img_1097.jpg)
 
-[I wasn't alone](https://community.cisco.com/t5/atas-gateways-and-accessories/spa8000-stuck-in-a-boot-loop/td-p/1675301) on the boot loop issue thankfully.
+[I wasn't alone](https://community.cisco.com/t5/voice-systems-and-accessories-small-business/spa8000-stuck-in-a-boot-loop/td-p/1675301) on the boot loop issue thankfully.
 
 ![](/assets/images/2023/img_1098.jpg)
 

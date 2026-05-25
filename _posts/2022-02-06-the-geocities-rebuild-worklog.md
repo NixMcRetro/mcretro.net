@@ -410,7 +410,7 @@ For now I have removed some of the JavaScript hiding on almost all pages. I coul
 
 ![](/assets/images/2022/img_0858.jpg)
 
-Not much more to report except for some insight into those new Matrix sequels. I'll keep working away on working out structure on the backend. I need to verify the structure of the neighborhoods against other sources such as [Blade's Place](https://www.bladesplace.id.au/geocities-neighborhoods-suburbs.html), [OoCities.com](http://oocities.com) and [Wayback Machine](https://web.archive.org/web/19961022173245/http://www.geocities.com/).
+Not much more to report except for some insight into those new Matrix sequels. I'll keep working away on working out structure on the backend. I need to verify the structure of the neighborhoods against other sources such as [Blade's Place](https://www.bladesplace.id.au/geocities-neighborhoods-suburbs.html), [OoCities.org](https://www.oocities.org/) and [Wayback Machine](https://web.archive.org/web/19961022173245/http://www.geocities.com/).
 
 Then I'll need to poke around the YahooIDs, Neighborhoods and pictures spanning three periods: GeoCities, the GeoCities/Yahoo transition and Yahoo. Working these ones out will help determine the best way to mount the external media.
 
@@ -587,7 +587,7 @@ From that we can steal the first part - four lines worth:
 
 And that's pretty unique in itself as it narrows down HTML files that have "Index of" in their title. That's only going to be indexes of directories. Perfect. Another bonus is the !DOCTYPE declaration. HTML3.2 Final (we're up to HTML5 now). Very handy.
 
-Next up I did some searching to find what command line tool(s) I could use. Enter grep via [this post](https://stackoverflow.com/questions/16956810/how-do-i-find-all-files-containing-specific-text-on-linux):
+Next up I did some searching to find what command line tool(s) I could use. Enter grep via [this post](https://stackoverflow.com/questions/16956810/find-all-files-containing-a-specific-text-string-on-linux):
 
 `grep --include=\\\*.{htm,html} -rnw '/path/to/somewhere/' -e "pattern"`
 
@@ -869,7 +869,7 @@ The jump page mostly works. I noticed that on it tends to take you to the clearn
 
 **Fixed darknet jumping.**
 
-If you visit [https://geocities.mcretro.net](/homepages/geocities) in the Tor Browser, please note the activation of the location bar. [Onion-Location](https://support.torproject.org/onionservices/onion-location/) activates. This will not work if visiting on clearnet non-ssl site, [http://geocities.mcretro.net](/homepages/geocities). This is [by design](https://community.torproject.org/onion-services/advanced/onion-location/) according to The Tor Project.
+If you visit [https://geocities.mcretro.net](/homepages/geocities) in the Tor Browser, please note the activation of the location bar. [Onion-Location](https://support.torproject.org/onionservices/onion-location/) activates. This will not work if visiting on clearnet non-ssl site, [http://geocities.mcretro.net](/homepages/geocities). This is [by design](https://web.archive.org/web/20220101193148/https://support.torproject.org/onionservices/onion-location/) according to The Tor Project.
 
 * * *
 
@@ -927,7 +927,7 @@ Works as expected on the clearnet, external IPs shouldn’t be able to see it. B
 
 ![](/assets/images/2022/img_0820.jpg)
 
-Having a look around why this was happening resulted in me finding [this great site](https://osintcurio.us/2019/03/05/apache-mod_status-in-tor-hidden-services-destroy-anonymity/) explaining how it all works in detail. After a quick read I ran the following commands to try and solve the problem I didn’t know I had.
+Having a look around why this was happening resulted in me finding [this great site](https://www.osintcurio.us/2019/03/05/apache-mod_status-in-tor-hidden-services-destroy-anonymity/) explaining how it all works in detail. After a quick read I ran the following commands to try and solve the problem I didn’t know I had.
 
 `sudo a2dismod status sudo a2dismod info sudo apache2ctl configtest sudo systemctl restart apache2.service`
 

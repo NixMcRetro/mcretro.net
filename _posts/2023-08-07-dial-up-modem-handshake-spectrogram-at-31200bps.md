@@ -27,11 +27,9 @@ But what software to use? I went back to the initial YouTube channel and... I re
 
 Mother cluckers !!!🐓!!! Sometimes it pays to read the blooping manual. You'd think I'd learn, but no. It's also mentioned about 50 times in the comments.
 
- 
+> **"izotope ozone 5 - 8192 FFT size, 93.75% overlap."**
 
-> "izotope ozone 5 - 8192 FFT size, 93.75% overlap."
-
-Well, I know what iZotope 5 is. It's 5 versions older than [iZotope 10](https://www.izotope.com/en/products/ozone.html) - which is current at the time of writing. So how did they get the cool spectrogram to happen? As far as I can tell there was a thing called "Meter Bridge" in iZotope Ozone 5, which might have been the answer. In iZotope Ozone 10... we have "[Insight 2](https://www.izotope.com/en/products/insight.html)", which is installed like a plugin on a plugin.
+Well, I know what iZotope 5 is. It's 5 versions older than [iZotope 10](https://www.izotope.com/products/ozone-advanced) - which is current at the time of writing. So how did they get the cool spectrogram to happen? As far as I can tell there was a thing called "Meter Bridge" in iZotope Ozone 5, which might have been the answer. In iZotope Ozone 10... we have "[Insight 2](https://www.izotope.com/products/insight)", which is installed like a plugin on a plugin.
 
 ![](/assets/images/2023/img_1073.jpg)
 
@@ -39,14 +37,12 @@ While I used Final Cut Pro X, it turns out you can use iZotop Ozone with Logic P
 
 ![](/assets/images/2023/img_1074.jpg)
 
-Here's what is happening in the handshake as documented by [Oona Räisänen](https://www.windytan.com/2012/11/the-sound-of-dialup-pictured.html). However, as [Gough Lui points out](https://goughlui.com/2016/05/03/project-the-definitive-collection-of-v-90v-92-modem-sounds/)\-
+Here's what is happening in the handshake as documented by [Oona Räisänen](https://www.windytan.com/2012/11/the-sound-of-dialup-pictured.html). However, as [Gough Lui points out](https://goughlui.com/2016/05/03/project-the-definitive-collection-of-v-90v-92-modem-sounds/),
 
- 
-
-> "This image, however, depicts a V.34-type connection, as it has no high speed sound."
+> **"This image, however, depicts a V.34-type connection, as it has no high speed sound."**
 
 Which is great, that's what this one is too. V.34 is by far my favourite internet dialling sequence. Don't give me any of that V.32bis trash, I want sweet, sweet V.34 or maybe V.FC for some chaos. If you're connecting at 56k, that's too much man. Overall though, it was interesting to replicate the spectrogram ten years on with one of my own little sound snippets.
 
 ![](/assets/images/2023/img_1070.jpg)
 
-In other news, I've setup and configured [BlueSky](https://bsky.app/). So I've gone from having one Twitter to neglect to having two Twitter replacements, [Mastodon](https://mastodon.social/@NixMcRetro) and [BlueSky](https://bsky.app/profile/shanemcretro.bsky.social), to neglect. The responsibilities are stacking up, fast! 😅
+In other news, I've setup and configured [BlueSky](https://bsky.app/). So I've gone from having one Twitter to neglect to having two Twitter replacements, [Mastodon](https://mastodon.social/@NixMcRetro) and [BlueSky](https://bsky.app/profile/nixmcretro.bsky.social), to neglect. The responsibilities are stacking up, fast! 😅

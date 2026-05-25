@@ -23,7 +23,7 @@ Doing nothing now will likely result in me deferring until 2025. In an effort to
 
 ![](/assets/images/2024/img_1325.jpg)
 
-And no. I can't even. [Unrelenting bruxism 24/7](https://journals.sagepub.com/doi/10.1177/2320206821992534). At the lowest dose. [Every damn time](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6698238/). Something is not quite right with my serotonin-based systems. Great. That's why I've had no luck with antidepressants or first-line anxiolytics for the past decade. So where to from here?
+And no. I can't even. [Unrelenting bruxism 24/7](https://journals.sagepub.com/doi/10.1177/2320206821992534). At the lowest dose. [Every damn time](https://pmc.ncbi.nlm.nih.gov/articles/PMC6698238/). Something is not quite right with my serotonin-based systems. Great. That's why I've had no luck with antidepressants or first-line anxiolytics for the past decade. So where to from here?
 
 ![](/assets/images/2024/img_1317.jpg)
 
@@ -47,7 +47,7 @@ What an excellent segue into the medication side of things for being a transgend
 
 ![](/assets/images/2024/img_1312.jpg)
 
-However, there is one unexpected, positive side effect that I appreciate. When taking the oil-based Prometrium (200 mg with food), I get a nice little high. A similar feeling to 4-5 mg of diazepam. I was not getting this when I was on [finasteride](https://en.wikipedia.org/wiki/Finasteride). My best guess is that the [finasteride was interfering with metabolism](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6920809/) to the several neurosteroids - [allopregnanolone](https://en.wikipedia.org/wiki/Allopregnanolone) and friends.
+However, there is one unexpected, positive side effect that I appreciate. When taking the oil-based Prometrium (200 mg with food), I get a nice little high. A similar feeling to 4-5 mg of diazepam. I was not getting this when I was on [finasteride](https://en.wikipedia.org/wiki/Finasteride). My best guess is that the [finasteride was interfering with metabolism](https://pmc.ncbi.nlm.nih.gov/articles/PMC6920809/) to the several neurosteroids - [allopregnanolone](https://en.wikipedia.org/wiki/Allopregnanolone) and friends.
 
 ![](/assets/images/2024/img_1313.jpg)
 

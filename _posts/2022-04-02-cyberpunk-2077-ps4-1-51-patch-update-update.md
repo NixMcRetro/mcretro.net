@@ -11,7 +11,7 @@ How did they break the game to the point of [Sony needing to release a system pa
 
 ![](/assets/images/2022/img_0915.jpg)
 
-[That's impressive](https://support.cdprojektred.com/en/cyberpunk/playstation/sp-technical/issue/2090/ps4-system-update-addresses-cannot-start-the-application-the-data-is-corrupted-issue-occuring-after-updating-to-1-5). But you know what I think is even more impressive?
+[That's impressive](https://web.archive.org/web/20220402195154/https://support.cdprojektred.com/en/cyberpunk/playstation/sp-technical/issue/2090/ps4-system-update-addresses-cannot-start-the-application-the-data-is-corrupted-issue-occuring-after-updating-to-1-5). But you know what I think is even more impressive?
 
 ![](/assets/images/2022/img_0917.jpg)
 
@@ -33,19 +33,13 @@ But then again, some were broken from the very beginning or rather unachievable 
 
 How do I fix something that bugged? I had to go back to the start, right back. Maybe I learnt from the best, CD Projekt RED when they broke the PS4 version of the game...
 
- 
-
-> “Cannot start the application. The data is corrupted. Delete the application from the PS4 and insert the disc again.”
+> **“Cannot start the application. The data is corrupted. Delete the application from the PS4 and insert the disc again.”**
 
 I deleted the game from my PS4 per CDPR recommendation, disconnected from the internet and installed from my release day discs loaded with v1.00. Picked up a nice money hack and started to grind, grind, grind.
-
- 
 
 {% include youtube.html id="EryLdln7tgk" %}
 
 The weirdest thing was is that v1.00 felt **_more stable_** when driving about but was missing **_a lot_** of polish compared with patch v1.31 and even v1.51. It's almost like they traded driving stability for prettiness on the lower tier consoles.
-
- 
 
 {% include youtube.html id="8JYpSWUZRLQ" %}
 

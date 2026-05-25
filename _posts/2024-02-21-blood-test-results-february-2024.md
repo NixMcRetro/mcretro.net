@@ -17,9 +17,9 @@ Phosphates and calcium, I do wonder if this is actually a bad thing to have lowe
 
 ![](/assets/images/2024/img_1262.jpg)
 
-Now phosphates are in everything, it should be difficult to ingest this in low amounts. Thankfully, I have a good history owing to low blood iron and phosphate levels were ordered as a complementary test most of the time. Using this data we can see that I tend to be on the lower side of things. But since starting GAHT, record new lows. Some potential answers could be [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9039118/) and [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3849680/).
+Now phosphates are in everything, it should be difficult to ingest this in low amounts. Thankfully, I have a good history owing to low blood iron and phosphate levels were ordered as a complementary test most of the time. Using this data we can see that I tend to be on the lower side of things. But since starting GAHT, record new lows. Some potential answers could be [here](https://pmc.ncbi.nlm.nih.gov/articles/PMC9039118/) and [here](https://pmc.ncbi.nlm.nih.gov/articles/PMC3849680/).
 
-My theory is either my spirulina (cyanobacteria) infused multivitamin is causing lowered calcium and phosphate levels leading to improved bone density. This could perhaps explain the historically lower phosphate levels as I've taken this particular multivitamin for a few years now. Then we have this ([potato](https://en.wikipedia.org/wiki/Potato)) gem from the second article.
+My theory is either my spirulina (cyanobacteria) infused multivitamin is causing lowered calcium and phosphate levels leading to improved bone density. This could perhaps explain the historically lower phosphate levels as I've taken this particular multivitamin for a few years now. Then we have this [potato](https://en.wikipedia.org/wiki/Potato) of a gem from the second article.
 
 > **Estrogen therapy (ET) is associated with lower serum calcium and phosphorus concentrations and is known to increase bone mineral density (BMD).**
 

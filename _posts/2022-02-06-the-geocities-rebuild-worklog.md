@@ -256,7 +256,7 @@ A redirection to **[https://geocities.mcretro.net/CapeCanaveral/](/homepages/geo
 
 ![](/assets/images/2022/img_0844.jpg)
 
-And that's it for the weekend. Feel free to stop by [http://geocities.mcretro.net](http://geocities.mcretro.net) and test out Area51 or CapeCanaveral. Don't press anything in Athens though, it isn't working just yet!
+And that's it for the weekend. Feel free to stop by [http://geocities.mcretro.net](/homepages/geocities) and test out Area51 or CapeCanaveral. Don't press anything in Athens though, it isn't working just yet!
 
 * * *
 
@@ -515,7 +515,7 @@ Great links for testing this out:
 - [http://geocities.mcretro.net/CapeCanaveral/1020/line/marsh.gif](#)
 - [http://geocities.mcretro.net/capecanaveral/1020/line/marsh.gif](#)
 - [http://geocities.mcretro.net/CapeCanaveral/1020/index.html](#)
-- [http://geocities.mcretro.net/capecanaveral/1020/index.html](h#)
+- [http://geocities.mcretro.net/capecanaveral/1020/index.html](#)
 
 Does mod_spelling work it out? If yes, mod_spelling is working well to merge the mush of uppercase and lowercase.
 

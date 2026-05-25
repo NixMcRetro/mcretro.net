@@ -7,7 +7,7 @@ categories: [guides, hacks, sega]
 
 {% include youtube.html id="_cXIrhNazys" %}
 
-I finally got around to doing some soldering on a somewhat faulty Mega Drive 2 I had lying about. Now I took the schematic from [gieskes.nl](https://www.gieskes.nl/) but noticed that there were two VSS / VCC lines into the 40 pin static VRAM. So I decided to avoid them and just stick with address lines A0 - A8 and grounding them seems to be the easiest way to get results.
+I finally got around to doing some soldering on a somewhat faulty Mega Drive 2 I had lying about. Now I took the schematic from [gieskes.nl](https://web.archive.org/web/20160219222212/http://www.gieskes.nl/) but noticed that there were two VSS / VCC lines into the 40 pin static VRAM. So I decided to avoid them and just stick with address lines A0 - A8 and grounding them seems to be the easiest way to get results.
 
 ![VRAM_pinout_Circuit Bending](/assets/images/2016/img_0470.jpg)
 

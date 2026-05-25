@@ -51,7 +51,7 @@ Not all is well though, the most common form of failure I have seen so far is wh
 
 ![](/assets/images/2024/img_1302.jpg)
 
-Another one I found seems to have had issues with the two front legs. Poor thing couldn't clean itself. A little bit of digging and... the [slow bee paralysis virus (SBPV)](https://en.wikipedia.org/wiki/Slow_bee_paralysis_virus) appeared. Look at that vector, Varroa destructor mite. And it looks like [the government has given up](https://www.dpi.nsw.gov.au/emergencies/biosecurity/current-situation/varroa-mite-emergency-response). Interestingly, [it does not affect the native bees](https://www.outbreak.gov.au/current-outbreaks/varroa-mite).
+Another one I found seems to have had issues with the two front legs. Poor thing couldn't clean itself. A little bit of digging and... the [slow bee paralysis virus (SBPV)](https://en.wikipedia.org/wiki/Slow_bee_paralysis_virus) appeared. Look at that vector, Varroa destructor mite. And it looks like [the government has given up](https://www.dpi.nsw.gov.au/emergencies/biosecurity/current-situation/varroa-mite-emergency-response). Interestingly, [it does not affect the native bees](https://web.archive.org/web/20251006131135/https://www.outbreak.gov.au/current-outbreaks/varroa-mite).
 
 ![](/assets/images/2018/img_0619.jpg)
 

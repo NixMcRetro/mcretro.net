@@ -19,17 +19,13 @@ A massive 1.8 TB of host writes, GeoCities dataset copied twice. 400 TBW is wher
 
 ![](/assets/images/2023/img_1207.jpg)
 
-Oh, a [new critical firmware update](https://support-en.wd.com/app/answers/detailweb/a_id/50208) has appeared.
+Oh, a [new critical firmware update](https://web.archive.org/web/20231015000448/https://support-en.wd.com/app/answers/detailweb/a_id/50208) has appeared.
 
- 
-
-> October 27, 2022 – Firmware v52020100 Addresses an issue in which a drive may not be recognized by the computer.
+> **October 27, 2022 – Firmware v52020100 Addresses an issue in which a drive may not be recognized by the computer.**
 
 So firmware 52020100 should solve a pretty big issue, not being able to see the drive at all - this is what was installed on both my SA510s. Then there's this new update:
 
- 
-
-> May 25, 2023 – Firmware v52046100 Addresses an issue in which a drive may enter a read-only state.
+> **May 25, 2023 – Firmware v52046100 Addresses an issue in which a drive may enter a read-only state.**
 
 Hmmm right, are you still trying to work out how your own tech works WD? I mean read-only is better and possibly explained by the excessive writes going on. Good thing there's a five year warranty and I have consumer rights against dud hardware.
 

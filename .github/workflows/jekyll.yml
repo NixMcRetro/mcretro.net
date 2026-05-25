@@ -46,6 +46,26 @@ jobs:
       - name: Run Pagefind
         run: pagefind --site _site --output-subdir pagefind --exclude-selectors "img,.widget,.site-footer,.footer-widgets,.navbar,.pagination,.adventure-pagination,.post-navigation,#secondary"
 
+      # New step: check for broken links in _site
+      - name: Check links with Lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --root-dir ${{ github.workspace }}/_site
+            --verbose
+            --no-progress
+            --max-concurrency 8
+            --accept 200,429,530,403,503,406
+            --timeout 60
+            --no-cache
+            --user-agent 'Mozilla/5.0 (Linux x86_64) Chrome/134.0.0.0'
+            --exclude-path '.*/archive/.*'
+            --exclude-path '.*/category/.*'
+            --exclude-path '.*/pagefind/.*'
+            --exclude-path '.*/blog/page[0-9]+/.*'
+            './_site/**/*.html'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
       - name: Configure Pages

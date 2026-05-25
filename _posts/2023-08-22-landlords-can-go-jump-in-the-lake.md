@@ -13,7 +13,7 @@ Honestly, why do landlords even exist in modern times. Didn't we leave [medieval
 
 Above are the three types of potential leases you can have in NSW at this time of writing. I have been on a fixed term agreement of one year until recently when the lease expired. As a result I entered a periodic agreement. My landlords who reign from above, decided to bump the rent up 10%.
 
-They sent through a revised lease with the new weekly rent value and I thought, that isn't right. [Sure enough it's illegal](https://www.fairtrading.nsw.gov.au/housing-and-property/renting/during-a-tenancy/rent). As in against-the-law-illegal.
+They sent through a revised lease with the new weekly rent value and I thought, that isn't right. [Sure enough it's illegal](https://web.archive.org/web/20230812202356/https://www.fairtrading.nsw.gov.au/housing-and-property/renting/during-a-tenancy/rent). As in against-the-law-illegal.
 
 ![](/assets/images/2023/img_1119.jpg)
 

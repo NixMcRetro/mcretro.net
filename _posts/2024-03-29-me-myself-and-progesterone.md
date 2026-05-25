@@ -15,7 +15,7 @@ I had also ceased finasteride. And finasteride interferes with the progesterone 
 
 ![](/assets/images/2024/img_1289.jpg)
 
-My sleep quality has been pretty broken for a while now. Look at those orange blocks. And here I was looking forward to some of the benefits from progesterone. [Anxiolytic?](https://en.wikipedia.org/wiki/Anxiolytic) Yes please! [Sleep improving?](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9175584/) Definitely!
+My sleep quality has been pretty broken for a while now. Look at those orange blocks. And here I was looking forward to some of the benefits from progesterone. [Anxiolytic?](https://en.wikipedia.org/wiki/Anxiolytic) Yes please! [Sleep improving?](https://pmc.ncbi.nlm.nih.gov/articles/PMC9175584/) Definitely!
 
 ![](/assets/images/2024/img_1290.jpg)
 

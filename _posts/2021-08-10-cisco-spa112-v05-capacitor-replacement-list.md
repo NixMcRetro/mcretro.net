@@ -32,4 +32,4 @@ ATDT****,,,,,,,,,,73738#,,,,1#
 ```
 
 **Update 2023**
-This Cisco SPA112 was donated to Jon in 2023 after I finished up dealing with dial-up modems. Jon helped me, well did all the work, when it came to desoldering PLCC32s and resoldering them back on before the modems were donated to the [ACMS](http://forum.acms.org.au).
+This Cisco SPA112 was donated to Jon in 2023 after I finished up dealing with dial-up modems. Jon helped me, well did all the work, when it came to desoldering PLCC32s and resoldering them back on before the modems were donated to the [ACMS](https://forum.acms.org.au/).

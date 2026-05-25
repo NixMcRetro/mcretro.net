@@ -95,31 +95,32 @@ Next is a listing of the capacitors replaced with order numbers are Element 14 (
 
 ```
 Value	Voltage  	Width	Height	Notes
-2200uF	16V		15mm	15mm	1144631 - Spacing 7.5mm, too tall needs to bend
+2200uF	16V			15mm	15mm	1144631 - Spacing 7.5mm, too tall needs to bend
 
-120uF	16V		6mm	12mm	2346210 - Upgraded to 35V, wider 8mm
-120uF	16V		6mm	12mm	2346210 - Upgraded to 35V, wider 8mm
-120uF	16V		6mm	12mm	2346210 - Upgraded to 35V, wider 8mm
-120uF	16V		6mm	12mm	2346210 - Upgraded to 35V, wider 8mm
+120uF	16V			6mm		12mm	2346210 - Upgraded to 35V, wider 8mm
+120uF	16V			6mm		12mm	2346210 - Upgraded to 35V, wider 8mm
+120uF	16V			6mm		12mm	2346210 - Upgraded to 35V, wider 8mm
+120uF	16V			6mm		12mm	2346210 - Upgraded to 35V, wider 8mm
 
-220uF	16V		10mm	10mm	1144621 - SMD, replaced with radial (25V)
-220uF	16V		10mm	10mm	1144621 - SMD, replaced with radial (25V)
+220uF	16V			10mm	10mm	1144621 - SMD, replaced with radial (25V)
+220uF	16V			10mm	10mm	1144621 - SMD, replaced with radial (25V)
 
-10uF	100V		6mm	12mm	1144640
-10uF	100V		6mm	12mm	1144640
+10uF	100V		6mm		12mm	1144640
+10uF	100V		6mm		12mm	1144640
 
-10uF	16V		4mm	4mm	1144632 - SMD, replaced with radial
-10uF	16V		4mm	4mm	1144632 - SMD, replaced with radial
-10uF	16V		4mm	4mm	1144632 - SMD, replaced with radial
-10uF	16V		4mm	4mm	1144632 - SMD, replaced with radial
+10uF	16V			4mm		4mm		1144632 - SMD, replaced with radial
+10uF	16V			4mm		4mm		1144632 - SMD, replaced with radial
+10uF	16V			4mm		4mm		1144632 - SMD, replaced with radial
+10uF	16V			4mm		4mm		1144632 - SMD, replaced with radial
 
-47uF	16V		6mm	6mm	1144619 - SMD, replaced with radial
-47uF	16V		6mm	6mm	1144619 - SMD, replaced with radial
+47uF	16V			6mm		6mm		1144619 - SMD, replaced with radial
+47uF	16V			6mm		6mm		1144619 - SMD, replaced with radial
 
 ```
 
-**Special thanks to:** [Doge Microsystems](https://dogemicrosystems.ca) as always for their VoIP guides and Gough's write ups on [modem sounds](https://goughlui.com/2017/05/30/project-the-large-collection-of-v-34-modem-sounds/).
+**Special thanks to:**
+[Doge Microsystems](https://dogemicrosystems.ca/wiki/Main_Page) as always for their VoIP guides and Gough's write ups on [modem sounds](https://goughlui.com/2017/05/30/project-the-large-collection-of-v-34-modem-sounds/).
 
-As a footnote to a footnote, I've left Twitter because I do not agree with a lot of things the company- [if you wanna call it a band, because it’s a one man name](https://en.wikipedia.org/wiki/The_Rockafeller_Skank) - has been doing as of late and Mastodon is getting a bit more traction as a Twitter replacement. **Good riddance** I say! 😎
+As a footnote to a footnote, I've left Twitter because I do not agree with a lot of things the company, [if you wanna call it a band, because it’s a one man name](https://en.wikipedia.org/wiki/The_Rockafeller_Skank), has been doing as of late and Mastodon is getting a bit more traction as a Twitter replacement. **Good riddance** I say! 😎
 
 This modem has been donated to the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/).

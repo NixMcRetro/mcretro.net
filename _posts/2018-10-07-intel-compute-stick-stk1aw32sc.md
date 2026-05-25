@@ -11,7 +11,7 @@ When I revise for university exams I seem to be in a habit of falling asleep rew
 
 ![](/assets/images/2018/img_0625.jpg)
 
-Enter the Intel Compute Stick STK1AW32SC. It runs Linux thanks _(many, many thanks)_ to [this fellow](https://linuxiumcomau.blogspot.com/) and his [great work](/assets/uploads/isorespin.zip) on making Ubuntu (and various flavours) available for [Cherry Trail-based](https://ark.intel.com/content/www/us/en/ark/products/codename/46629/products-formerly-cherry-trail.html) hardware. I use this as my daily driver for watching lecture recordings and it has been fantastic.
+Enter the Intel Compute Stick STK1AW32SC. It runs Linux thanks _(many, many thanks)_ to [this fellow](https://linuxiumcomau.blogspot.com/) and his [great work](/assets/uploads/isorespin.zip) on making Ubuntu (and various flavours) available for [Cherry Trail-based](https://www.intel.com/content/www/us/en/ark/products/codename/46629/products-formerly-cherry-trail.html) hardware. I use this as my daily driver for watching lecture recordings and it has been fantastic.
 
 To fix the lack of audio a quick `sudo nano /etc/pulse/default.pa`, slapping in my device specific hardware address `load-module module-alsa-sink device=hw:0,2`, a bit of commenting out for the next block, a quick reboot and we're away and racing. High speed lecturers incoming! For what it's worth this is running Xubuntu 18.04. Full blown Ubuntu just seems a bit too hungry on the RAM side of things. We are only working with 2GB after all! :)
 

@@ -21,4 +21,4 @@ It's a smaller version of itself? I had to do a bit of digging on this one as I'
 
 Turns out it was likely one of these! The babies are wingless (like the shell above), the white bug is the one just emerged from a shell and the ones with darkened wings are adults. The ants pictured are in a mutualistic, symbiotic relationship with the leafhoppers. Neat! 📸
 
-Both cicadas and leafhoppers belong to the suborder [Auchenorrhyncha](https://en.wikipedia.org/wiki/Auchenorrhyncha). I won't even try to pronounce that. Thanks to the [Museum of Tropical Queensland](https://mtq.qm.qld.gov.au/Explore/Find+out+about/Ask+an+Expert/Question+of+the+month/Question+Archive/Questions/2020/November+2020) for having a Q&A on these little guys.
+Both cicadas and leafhoppers belong to the suborder [Auchenorrhyncha](https://en.wikipedia.org/wiki/Auchenorrhyncha). I won't even try to pronounce that. Thanks to the [Museum of Tropical Queensland](https://web.archive.org/web/20211010061041/https://mtq.qm.qld.gov.au/Explore/Find+out+about/Ask+an+Expert/Question+of+the+month/Question+Archive/Questions/2020/November+2020) for having a Q&A on these little guys.

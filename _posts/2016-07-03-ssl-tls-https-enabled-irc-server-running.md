@@ -19,5 +19,5 @@ But right now for the moment, the new shop is looking promising and I've even wo
 
 **Sources:**
 - [Dynamic DNS ddclient with Namecheap](https://web.archive.org/web/20231014224641/https://ktmresearch.com/2014/10/dynamic-dns-ddclient-with-namecheap/)
-- [Namecheap - Configuring Host for DynDNS](https://www.namecheap.com/support/knowledgebase/article.aspx/43/11/how-do-i-set-up-a-host-for-dynamic-dns)
-- [Namecheap - Configuring ddclient](https://www.namecheap.com/support/knowledgebase/article.aspx/583/11/how-do-i-configure-ddclient)
+- [Namecheap - Configuring Host for DynDNS](https://www.namecheap.com/support/knowledgebase/article.aspx/43/11/how-do-i-set-up-a-host-for-dynamic-dns/)
+- [Namecheap - Configuring ddclient](https://www.namecheap.com/support/knowledgebase/article.aspx/583/11/how-do-i-configure-ddclient/)

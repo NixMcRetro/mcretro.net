@@ -5,7 +5,7 @@ date: 2020-04-11T10:00:55.000+10:00
 categories: [ibm-pc, sega]
 ---
 
-The IBM PS/55 5510 information below was translated from Japanese [here](http://www.funkygoods.com/schwarzschild/2010_02/2010_02_21.html). This model has a lot in common with the Sega TeraDrive Model 2 which is why I've added it on here. The follow text is a translation - but it's not the best translation.
+The IBM PS/55 5510 information below was translated from Japanese [here](https://funkygoods.com/schwarzschild/2010_02/2010_02_21.html). This model has a lot in common with the Sega TeraDrive Model 2 which is why I've added it on here. The follow text is a translation - but it's not the best translation.
 
 ![](/assets/images/2020/img_0667.jpg)
 

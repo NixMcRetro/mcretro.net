@@ -23,11 +23,11 @@ The above is my secondary drive (offline backup) for GeoCities. Interestingly it
 
 ![](/assets/images/2023/img_1004.jpg)
 
-[I was not alone](https://community.wd.com/t/wd-blue-250-gb-sa510-issues/279814). Both drives were running some [bad firmware from Western Digital](https://support-en.wd.com/app/answers/detailweb/a_id/50208). The good news is, [there was an update](https://support-en.wd.com/app/answers/detailweb/a_id/50208/kw/SA510).
+[I was not alone](https://community.wd.com/t/wd-blue-250-gb-sa510-issues/279814). Both drives were running some [bad firmware from Western Digital](https://web.archive.org/web/20230519165540/https://support-en.wd.com/app/answers/detailweb/a_id/50208). The good news is, [there was an update](https://web.archive.org/web/20231015000448/https://support-en.wd.com/app/answers/detailweb/a_id/50208/kw/SA510).
 
 ![](/assets/images/2023/img_1005.jpg)
 
-The main GeoCities drive couldn't even update from the bad firmware to the new fixed firmware. Firmware 52008100 (bad) to 52020100 (good) via WD Dashboard in Windows. After a [quick warranty check](https://support-en.wd.com/app/warrantystatusweb) and message to the initial seller, it was sent back for repair or replacement.
+The main GeoCities drive couldn't even update from the bad firmware to the new fixed firmware. Firmware 52008100 (bad) to 52020100 (good) via WD Dashboard in Windows. After a quick warranty check and message to the initial seller, it was sent back for repair or replacement.
 
 ![](/assets/images/2023/img_1008.jpg)
 

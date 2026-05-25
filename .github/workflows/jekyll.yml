@@ -57,6 +57,7 @@ jobs:
             --max-concurrency 8
             --accept 200,429,530,403,503,406
             --timeout 60
+            --accept-timeouts true
             --user-agent 'Mozilla/5.0 (Linux x86_64) Chrome/134.0.0.0'
             --exclude-path '.*/archive/.*'
             --exclude-path '.*/category/.*'

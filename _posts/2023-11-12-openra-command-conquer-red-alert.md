@@ -21,6 +21,6 @@ Regardless, it's good to see these classics up and running, even if I keep getti
 
 The ant missions! Wow! Takes me back to clicking on a speaker in-game! Geez that's a long time ago. Thanks to all who have helped develop these over the years. I only came across it in the Ubuntu App Store while installing 18.04 onto one of my HPE MicroServers - a great find!
 
-OpenRA can be found [here](http://openra.net). The content (Movies and Music) can be found [here](https://archive.org/details/content-openra) and where to put them can be found [here](https://github.com/Walkman100/OpenRA-Install-Guide).
+OpenRA can be found [here](https://www.openra.net). The content (Movies and Music) can be found [here](https://archive.org/details/content-openra) and where to put them can be found [here](https://github.com/Walkman100/OpenRA-Install-Guide).
 
 **Battle control terminated!** 🥰

@@ -11,7 +11,7 @@ Now this is an interesting one. I entered in the [RetroChallenge 2022/10](https:
 
 ![](/assets/images/2022/img_0980.jpg)
 
-And what can I say, if I was better at installing dependencies, it probably would have happened sooner. Regardless, it worked! Now that I've seen all of the scripts in action I am going to try and run the same scripts in a modern OS, Ubuntu 22.04. I'll track it all in [GitHub](https://github.com/ShaneMcRetro/GeoCities). I've even downloaded GitHub Desktop to try and use GitHub properly... that's a first.
+And what can I say, if I was better at installing dependencies, it probably would have happened sooner. Regardless, it worked! Now that I've seen all of the scripts in action I am going to try and run the same scripts in a modern OS, Ubuntu 22.04. I'll track it all in [GitHub](https://github.com/NixMcRetro/GeoCities). I've even downloaded GitHub Desktop to try and use GitHub properly... that's a first.
 
 {% include youtube.html id="Ea-7tOt0tys" %}
 

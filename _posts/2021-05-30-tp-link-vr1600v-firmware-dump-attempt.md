@@ -35,8 +35,6 @@ This looks to be the UART header with solder pads for components C317, R283 and 
 
 Above is a V1 revision of the VR1600v taken from [the world's shittiest teardown](https://www.marcelvarallo.com/so-i-tore-apart-my-archer-vr1600v/) - which helped greatly, thank you! However, of course mine is a V2. Note the date code on the PCBs. V1 is 1850, that's Week 50 of 2018. My V2 date code is 2010, i.e. Week 10 of 2020. Overall the boards look **_very_** similar. Using the multimeter, we get the following on the likely serial header location.
 
- 
-
 ```
 PIN 1 - Likely VCC - *DO NOT CONNECT*
 - Quick chirp when tested against pin 2 (GND)
@@ -97,8 +95,6 @@ Something wasn't right, see the first column, why is my RX open line? Bad solder
 ![](/assets/images/2021/img_0701.jpg)
 
 Well, I'll be damned. We have readable, formatted output. The full output is below.
-
- 
 
 ```
 Welcome to minicom 2.7.1
@@ -1247,8 +1243,6 @@ Nailed it! Somehow. Now that we have output from UART that looks to be in order.
 
 Well that's promising, a login prompt. Except it's not useful without a valid login. One of the threads above had a potential login for another model. I don't remember trying it, but we need even root-ier access. Looking back at the boot code above we find this.
 
- 
-
 ```
 *** Press 't' to stop auto run (0.1 seconds) ***
 
@@ -1260,13 +1254,11 @@ Well that's promising, a login prompt. Except it's not useful without a valid lo
 
 I might have spammed the t key a little too much. That's new, a [CFE prompt](https://openwrt.org/docs/techref/bootloader/cfe).
 
-> Common Firmware Environment, sometimes pronounced as 'cafe', is a firmware interface and bootloader developed by Broadcom for 32-bit and 64-bit system-on-a-chip systems.
+> **Common Firmware Environment, sometimes pronounced as 'cafe', is a firmware interface and bootloader developed by Broadcom for 32-bit and 64-bit system-on-a-chip systems.**
 
 ![](/assets/images/2021/img_0704.jpg)
 
 Running a help commands gives us the lowdown on what's available. Let's start with something basic - dn for dumping the NAND.
-
- 
 
 ```
 CFE> help
@@ -1440,7 +1432,7 @@ CFE>
 
 ```
 
-The next part gets a little messy, alright messier. After trying a few tools such as [FlashDumpScript](https://github.com/waldo-irc/IOTToolkit/tree/master/FlashDumpScript) and Python 2 vs Python 3 issues. I came across this [Polish forum post](https://openrouter.info/forum/viewtopic.php?f=24&t=4818&start=0&_x_tr_sl=pl&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=sc), with the help of Google Translate... I ended up with [this](https://web.archive.org/web/20230822235816/https://openrouter-info.translate.goog/forum/viewtopic.php?f=24&t=4818&start=0&_x_tr_sl=pl&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=sc) - which led me onto [this set of tools](https://github.com/danitool/bootloader-dump-tools) and a slightly newer version [here](https://github.com/Depau/bcm-cfedump).
+The next part gets a little messy, alright messier. After trying a few tools such as [FlashDumpScript](https://github.com/waldo-irc/IOTToolkit/tree/master/FlashDumpScript) and Python 2 vs Python 3 issues. I came across this [Polish forum post](https://web.archive.org/web/20230823000243/https://openrouter.info/forum/viewtopic.php?f=24&t=4818&start=0&_x_tr_sl=pl&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=sc), with the help of Google Translate... I ended up with [this](https://web.archive.org/web/20230822235816/https://openrouter-info.translate.goog/forum/viewtopic.php?f=24&t=4818&start=0&_x_tr_sl=pl&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=sc) - which led me onto [this set of tools](https://github.com/danitool/bootloader-dump-tools) and a slightly newer version [here](https://github.com/Depau/bcm-cfedump).
 
 ![](/assets/images/2021/img_0709.jpg)
 
@@ -1496,8 +1488,6 @@ Eventually, I entered a command that looked like it might do something. Full of 
 ![](/assets/images/2021/img_0715.jpg)
 
 It dumped something overnight at 1.2 bytes per second... but we need to compare. So let's take the firmware for the VR600v again, as we have no frame of reference for the VR1600v V2. So far we have this set of firmware for comparison with our nand\_winner.img firmware.
-
- 
 
 ```
 Archer_VR600vV2_1.0.0_0.9.1_up_boot(170814)_2017-08-14_18.28.17.bin

@@ -21,7 +21,7 @@ It looks like I had been using [SnemulDS](https://web.archive.org/web/2019051603
 
 EarthBound still rates among the best games I have ever played for the Super Nintendo. But I was playing it on a DS Lite so I could take it anywhere I wanted, if I wanted to play in bed or on the couch - done!
 
-With my original DS Lite from Japan long since sold, today I'm on a Mac and was able to fire it up in [OpenEmu](https://github.com/OpenEmu/OpenEmu) under [SNES9x 1.6](http://snes9x.com). SNES9x really does go [wayback](https://web.archive.org/web/19981202225201/http://www.snes9x.com/)!
+With my original DS Lite from Japan long since sold, today I'm on a Mac and was able to fire it up in [OpenEmu](https://github.com/OpenEmu/OpenEmu) under [SNES9x 1.6](http://www.snes9x.com/). SNES9x really does go [wayback](https://web.archive.org/web/19981202225201/http://www.snes9x.com/)!
 
 ![](/assets/images/2022/img_0809.jpg)
 

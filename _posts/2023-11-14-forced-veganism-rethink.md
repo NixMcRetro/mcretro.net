@@ -23,6 +23,6 @@ Failure to stem this bleeding will likely result in homelessness. This is the co
 
 ![](/assets/images/2023/img_1200.jpg)
 
-But unfortunately for salmon, they are a very healthy meal. [We are making them better](https://kb.rspca.org.au/knowledge-base/what-are-farmed-atlantic-salmon-fed/) for the environment. For a [5kg fish](https://kb.rspca.org.au/knowledge-base/how-are-salmon-farmed-in-australia/), at around a 60% yield. That's 3kg of edible flesh. With 115g meal servings, that works out to be one entire salmon slaughtered every 27 meals.
+But unfortunately for salmon, they are a very healthy meal. [We are making them better](https://kb.rspca.org.au/categories/farmed-animals/fish/what-are-farmed-atlantic-salmon-fed) for the environment. For a [5kg fish](https://kb.rspca.org.au/categories/farmed-animals/fish/how-are-salmon-farmed-in-australia), at around a 60% yield. That's 3kg of edible flesh. With 115g meal servings, that works out to be one entire salmon slaughtered every 27 meals.
 
 Onward to [the decline](https://en.wikipedia.org/wiki/Holocene_extinction). 🫠

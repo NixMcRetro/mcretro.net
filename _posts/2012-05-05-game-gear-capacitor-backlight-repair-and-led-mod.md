@@ -7,7 +7,7 @@ categories: [repairs, sega, youtube]
 
 {% include youtube.html id="6R1JY72DdTk" %}
 
-Above is the replacing of the capacitors on a Game Gear (European Model). The guide I used could once be found [here](https://www.otakus-store.net/en/).
+Above is the replacing of the capacitors on a Game Gear (European Model). The guide I used could once be found [here](https://otakus-store.net/en/).
 
 {% include youtube.html id="H8mDDoSboJU" %}
 

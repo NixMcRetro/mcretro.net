@@ -17,8 +17,6 @@ Today we are looking at a broken hard drive, the Fujitsu MPB3021AT 2.16GB.
 
 We used GNU ddrescue 1.23 for the data recovery attempt. You can read the full manual [here](https://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html). It describes how it goes about recovering data. For this recovery we used the following command.
 
- 
-
 ```
 sudo ddrescue -f -r3 /dev/sdb /dev/sdc logfile
 
@@ -34,7 +32,7 @@ The machine we were hooked into was powered by a Gigabyte GA-945GCMX-S2 mainboar
 
 ![](/assets/images/2023/img_1115.jpg)
 
-Here's the Fujitsu drive itself, it certainly looks like a 2GB hard drive, and sounds like one too! Fujitsu have kindly left the [hard drive manual](https://www.fujitsu.com/downloads/COMP/fcpa/hdd/discontinued/mpb3xxxat_prod-manual.pdf) online. Good guy Fujitsu. We had to install a missing crystal oscillator from the underside of the drive at X1. Thanks to [this guide](https://www.fpga4fun.com/oscillators.html) we were able to find the correct form factor and name.
+Here's the Fujitsu drive itself, it certainly looks like a 2GB hard drive, and sounds like one too! Fujitsu have kindly left the [hard drive manual](https://web.archive.org/web/20240613043402/https://www.fujitsu.com/downloads/COMP/fcpa/hdd/discontinued/mpb3xxxat_prod-manual.pdf) online. Good guy Fujitsu. We had to install a missing crystal oscillator from the underside of the drive at X1. Thanks to [this guide](https://www.fpga4fun.com/oscillators.html) we were able to find the correct form factor and name.
 
 ![](/assets/images/2023/img_1116.jpg)
 

@@ -9,11 +9,11 @@ categories: [activism, news]
 
 Yesterday, [I attended my very first protest rally](https://transjustice.org.au/youth/). It appears that the Liberal National Party of Queensland is following the playbook of the orange idiot in the states. As much as I hate linking to a News Corp Australia website... [this article](https://www.news.com.au/national/haters-going-to-hate-peter-dutton-backs-ban-on-transgender-girls-playing-female-sports/news-story/fd97eda9d3637e8def174e4b38904c56) made my decision to attend the [National Day of Action](https://transjustice.org.au/youth/) in my state.
 
-> Peter Dutton has hinted he supports US President Donald Trump’s moves to stop trans people competing in sport against biological girls, declaring that allowing it to occur is “not in the spirit of sport.”
+> **Peter Dutton has hinted he supports US President Donald Trump’s moves to stop trans people competing in sport against biological girls, declaring that allowing it to occur is “not in the spirit of sport.”**
 
 I am glad I had a support person with me yesterday and we were in one of the safest "Yes" vote regions of my state for the [Indigenous Voice to Parliament](https://en.wikipedia.org/wiki/Indigenous_Voice_to_Parliament), which ultimately failed. But hearing the [Welcome to Country](https://www.reconciliation.org.au/reconciliation/acknowledgement-of-country-and-welcome-to-country/) made me tear up something fierce. It really pisses me off how this entire system is built against us, the people. What scares me the most is that, I honestly don't know if we're smart enough as a nation to realise we are being divided and conquered.
 
-Hearing the stories from the speakers had a similar effect. Very emotional and relatable. So I have no issue saying a big fuck you to the Queensland Health Minister Tim Nicholls for fucking with people's lives like that. You have no fucking right.
+Hearing the stories from the speakers had a similar effect. Very emotional and relatable. So I have no issue saying a big f**k you to the Queensland Health Minister Tim Nicholls for messing with people's lives like that. You have no right.
 
 I've now [donated](https://givenow.com.au/project-491) and [signed the petition](https://transjustice.org.au/youth/). And I am going to (politely) hassle the hell out of my local members of parliament and remind them know that trans rights ARE human rights. You Liberal Party dickwads just pissed me off something fierce.
 

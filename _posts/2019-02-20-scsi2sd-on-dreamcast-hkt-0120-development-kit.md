@@ -7,7 +7,7 @@ categories: [apple, devkit, sega]
 
 ![](/assets/images/2019/img_0633.jpg)
 
-I ended up mounting the [SCSI2SD](http://www.codesrc.com/mediawiki/index.php?title=SCSI2SD) in my recently sold Sega Dreamcast Katana into a [3D printed sled](https://68kmla.org/forums/index.php?/topic/24466-scsi2sd-mounting-bracket-for-se30/). I've just noticed now that there are plenty of caddies that help them fit into the space of a 3.5" hard drive. If I did it all again, I'd do it slightly differently now!
+I ended up mounting the [SCSI2SD](http://www.codesrc.com/mediawiki/index.php?title=SCSI2SD) in my recently sold Sega Dreamcast Katana into a [3D printed sled](https://web.archive.org/web/20190217042332/https://68kmla.org/forums/index.php?/topic/24466-scsi2sd-mounting-bracket-for-se30/). I've just noticed now that there are plenty of caddies that help them fit into the space of a 3.5" hard drive. If I did it all again, I'd do it slightly differently now!
 
 ![](/assets/images/2019/img_0632.jpg)
 

@@ -11,7 +11,7 @@ Where to start with the last few days. Why not here! The [RetroChallenge 2022/10
 
 ![](/assets/images/2023/img_1150.jpg)
 
-SuperNick also got a place, congratulations! SuperNick won the [Australian Computer Museum Society (ACMS)](http://forum.acms.org.au) grand prize last year.
+SuperNick also got a place, congratulations! SuperNick won the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/) grand prize last year.
 
 ![](/assets/images/2023/img_1148.jpg)
 
@@ -31,4 +31,4 @@ So far, from what I understand- Solr is the database. Nutch is the indexer. Proj
 
 Above is a crippled Blacklight. Not quite functional yet. Search doesn't work and I lost the formatting... wait, was PHP even installed? Maybe that's it! This is why it is good to think out loud. 😆
 
-Regardless, dockerising it has been proving a bit tricky, but fun. I am definitely making progress though. Do I have a Dockerfile? Why yes, I do have a Dockerfile. As far back as 2019 I have dreamed of making a Dockerfile. I've now made one and can confirm it is magical. It's quite hacky of course, but that's generally [the way I roll](https://mcretro.net). 😎
+Regardless, dockerising it has been proving a bit tricky, but fun. I am definitely making progress though. Do I have a Dockerfile? Why yes, I do have a Dockerfile. As far back as 2019 I have dreamed of making a Dockerfile. I've now made one and can confirm it is magical. It's quite hacky of course, but that's generally [the way I roll](/). 😎

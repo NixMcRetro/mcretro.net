@@ -110,7 +110,7 @@ Use caution under the speaker as 11mm(h) capacitors will not have clearance.
 ```
 
 **Special thanks to:**
-- [Doge Microsystems](https://dogemicrosystems.ca) as always for their VoIP configuration guides
+- [Doge Microsystems](https://dogemicrosystems.ca/wiki/Main_Page) as always for their VoIP configuration guides
 - [Gough's Blog](https://goughlui.com/).
 
 This modem has been donated to the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/).

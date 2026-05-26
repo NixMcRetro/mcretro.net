@@ -7,7 +7,7 @@ categories: [guides, raspberry-pi]
 
 **Part 2 - Image Raspbian, Basic Settings and Updates**
 
-First off we need to get an operating system onto the MicroSD card. We will be using the official image from [raspberrypi.org](https://www.raspberrypi.org/software/operating-systems/). At the time of writing the most recent version was Raspbian Jessie Lite (November 2015). To restore this onto a 4GB (or larger) MicroSD we will need one of the following depending on your computer that has this guide open:
+First off we need to get an operating system onto the MicroSD card. We will be using the official image from [raspberrypi.org](https://www.raspberrypi.com/software/operating-systems/). At the time of writing the most recent version was Raspbian Jessie Lite (November 2015). To restore this onto a 4GB (or larger) MicroSD we will need one of the following depending on your computer that has this guide open:
 - [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) for Windows
 - [ApplePi Baker 1.81](https://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/) for OS X
 - dd for Linux
@@ -18,7 +18,10 @@ I recommend using at least a 10 watt (5 volt, 2 amp) power adapter. Using a USB 
 
 Use something like [Angry IP Scanner](https://angryip.org/download/#mac) to help you locate your Raspberry Pi on your local network if it's headless, otherwise check the output via the HDMI attached screen. We are looking for the IP address. Note it down, we'll need it to SSH/remotely connect in. Your IP address should be in the format xxx.xxx.xxx.xxx or with either 1, 2 or 3 digits per set of xxx. No, not that type of [xXx](https://en.wikipedia.org/wiki/XXX_(film_series))!
 
-Pickup an SSH client (OS X and Linux already have this built-in): - [PuTTY](https://www.putty.org/) for Windows - [Terminal](https://www.macworld.co.uk/how-to/how-use-terminal-on-mac-3608274/) which is built-in to OS X - [Terminal](https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/) which is also built-in to Linux
+Pickup an SSH client (OS X and Linux already have this built-in):
+- [PuTTY](https://www.putty.org/) for Windows
+- [Terminal](https://web.archive.org/web/20201025142105/https://www.macworld.co.uk/how-to/how-use-terminal-on-mac-3608274/) which is built-in to OS X
+- [Terminal](https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/) which is also built-in to Linux
 
 Login to the Raspberry Pi remotely with the IP address (xxx.xxx.xxx.xxx) you noted down earlier. `ssh pi@xxx.xxx.xxx.xxx` You are now logged in to your Raspberry Pi remotely - congratulations!
 

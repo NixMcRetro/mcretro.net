@@ -869,7 +869,7 @@ The jump page mostly works. I noticed that on it tends to take you to the clearn
 
 **Fixed darknet jumping.**
 
-If you visit [https://geocities.mcretro.net](/homepages/geocities) in the Tor Browser, please note the activation of the location bar. [Onion-Location](https://support.torproject.org/onionservices/onion-location/) activates. This will not work if visiting on clearnet non-ssl site, [http://geocities.mcretro.net](/homepages/geocities). This is [by design](https://web.archive.org/web/20220101193148/https://support.torproject.org/onionservices/onion-location/) according to The Tor Project.
+If you visit [https://geocities.mcretro.net](/homepages/geocities) in the Tor Browser, please note the activation of the location bar. [Onion-Location](https://support.torproject.org/tor-browser/features/onion-services/) activates. This will not work if visiting on clearnet non-ssl site, [http://geocities.mcretro.net](/homepages/geocities). This is [by design](https://support.torproject.org/tor-browser/features/onion-services/) as per The Tor Project.
 
 * * *
 

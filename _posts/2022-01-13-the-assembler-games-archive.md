@@ -13,7 +13,7 @@ This was [archived primarily by Nemesis](https://archive.org/details/AssemblerGa
 
 The search function is still being indexed so it might work if you are lucky. It's rough around the edges but that's OK. Google and Bing are frantically trying to index the sitemaps but they are also competing with GeoCities which has some 298,000 links found so far. As time goes by it should work a little better.
 
-[Obscure Gamers](https://www.obscuregamers.com/threads/the-assemblergames-forums-backup-is-back-online-for-browsing.3898) is a refuge for those who lost their home at Assembler Games all those years ago. Thank you Obscure Gamers!
+[Obscure Gamers](https://web.archive.org/web/20220120181638/https://www.obscuregamers.com/threads/the-assemblergames-forums-backup-is-back-online-for-browsing.3898) is a refuge for those who lost their home at Assembler Games all those years ago. Thank you Obscure Gamers!
 
 And a big thank you to Nemesis and others for your work saving Assembler Games. Nemesis can be found at his [highly accurate Sega Mega Drive emulator website](https://www.exodusemulator.com).
 

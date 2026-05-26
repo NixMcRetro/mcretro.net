@@ -38,7 +38,7 @@ The darknet is waiting to be taken back by people like you who want to host thei
 - 1x Raspberry Pi with an ethernet port
 - 1x 4GB or larger MicroSD card, any class/speed
 - Ethernet (Wi-Fi is not covered in this guide)
-- [Raspbian Jessie Lite (Nov 2015)](https://www.raspberrypi.org/downloads/raspbian/)
+- [Raspbian Jessie Lite (Nov 2015)](https://web.archive.org/web/20151127024357/https://www.raspberrypi.org/downloads/raspbian/)
 - Private key for a vanity darknet address (optional)
 
 Advance onward to [part 2](/take-back-the-darknet-part-2/) or use the table of contents above to navigate.

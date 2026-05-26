@@ -7,4 +7,4 @@ categories: [repairs, sony, youtube]
 
 {% include youtube.html id="v3aLDiDC6rQ" %}
 
-Part two of this epic journey through the lands! Where is that [PSIO](https://ps-io.com/) project anyway?
+Part two of this epic journey through the lands! Where is that [PSIO](https://psio.cybdyn-systems.com.au/) project anyway?

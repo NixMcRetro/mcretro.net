@@ -11,16 +11,24 @@ title: Search
 <script src="/pagefind/pagefind-ui.js"></script>
 <div id="search"></div>
 <script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    // Read the ?q= parameter from the URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const query = urlParams.get('q') || '';
+  window.addEventListener('DOMContentLoaded', () => {
+    console.log('Pagefind script running…');
+    console.log('PagefindUI available:', typeof PagefindUI);
+
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('q') || '';
+    console.log('Search query:', query);
+
+    if (typeof PagefindUI === 'undefined') {
+      console.error('PagefindUI not found – is pagefind-ui.js loading?');
+      return;
+    }
 
     new PagefindUI({
       element: "#search",
       showSubResults: true,
       showImages: false,
-      initialSearchValue: query   // triggers search immediately
+      initialSearchValue: query
     });
   });
 </script>

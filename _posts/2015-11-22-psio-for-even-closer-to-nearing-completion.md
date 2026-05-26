@@ -7,4 +7,4 @@ categories: [hacks, news, sony]
 
 ![Screen Shot 2015-11-22 at 2.22.40 AM](/assets/images/2015/img_0444.jpg)
 
-They are edging closer and closer by the day. Pre-orders are coming up... So keep your eyes on the [PSIO website](https://ps-io.com/) for more!
+They are edging closer and closer by the day. Pre-orders are coming up... So keep your eyes on the [PSIO website](https://psio.cybdyn-systems.com.au/) for more!

@@ -9,7 +9,7 @@ categories: [guides, programming, youtube]
 
 For anyone else who has the [Assembler Games archive](https://archive.org/details/AssemblerGames.com-Httrack-June-04th-2019-Nemesis), I thought I'd just leave up some notes on what I did and what issues I had while putting it all together.
 
-I've since taken down my mirror as I didn't have time to go through and get it, let alone my GeoCities rebuild, to get them working as well as I would have hoped. Maybe in the future it will reappear, who knows! Thanks to the good folk at [Obscure Gamers](https://www.obscuregamers.com/threads/assemblergames-backups.23/) for tracking this as it all went down. It looks like the Archive Team has [captured the YouTube videos from Assembler Games](https://archive.org/details/assemblergames-youtube-archive) before it went down in September 2021 also - lucky!
+I've since taken down my mirror as I didn't have time to go through and get it, let alone my GeoCities rebuild, to get them working as well as I would have hoped. Maybe in the future it will reappear, who knows! Thanks to the good folk at [Obscure Gamers](https://web.archive.org/web/20221007095651/https://www.obscuregamers.com/threads/assemblergames-backups.23/) for tracking this as it all went down. It looks like the Archive Team has [captured the YouTube videos from Assembler Games](https://archive.org/details/assemblergames-youtube-archive) before it went down in September 2021 also - lucky!
 
 ![](/assets/images/2022/img_0965.jpg)
 

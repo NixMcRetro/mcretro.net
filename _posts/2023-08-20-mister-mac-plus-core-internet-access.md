@@ -9,15 +9,11 @@ categories: [apple, modems, youtube]
 
 Last year we were playing around with the Macintosh Classic, thanks to [Pendleton115](https://web.archive.org/web/20230904050034/http://pendleton115.net/). We wanted to get it internet ready but were having issues with the [HTTP/0.9 limitations on the modern web](/macintosh-classic-rascsi-and-the-internet/). The MiSTer has a Mac Plus core, which is pretty similar - Motorola 68000 at a whopping 8MHz, 4MB RAM, with a maximum OS of System 7.5.5.
 
- 
-
 {% include youtube.html id="eApRV4d1zwg" %} You can see more of the browsing experience on the MiSTer in the above live stream from [McRetro Gaming](/channels). Thanks to the MiSTer settings, we are able to bump the system up to a Macintosh SE running a 68020 at 16MHz... with the same 4MB of RAM. We were still limited by the paltry hardware of the Mac itself though. Maybe we were asking too much... then again, that's half the fun.
 
 ![](/assets/images/2023/img_1110.jpg)
 
 Another alternative is to run System 7.5 through the Amiga core and [ShapeShifter](http://shapeshifter.cebix.net), which might sound familiar to some. However I (mis)recognise it best from [SheepShaver](http://sheepshaver.cebix.net). Turns out they were both initially created by the same person, Christian Bauer. However, I didn't know the ins and outs of AmigaOS well enough to get it to dial-out. That said, there's definitely potential there.
-
- 
 
 {% include youtube.html id="l7z3d2ErFvU" %}
 

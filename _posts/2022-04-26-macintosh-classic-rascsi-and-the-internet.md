@@ -11,7 +11,7 @@ A Macintosh Classic! What a great platform to test [GeoCities](/homepages/geocit
 
 ![](/assets/images/2022/img_0926.jpg)
 
-This machine has had the internal hard drive upgraded to a [RaSCSI](https://github.com/akuker/RASCSI) using PCB v2.3. There's a little bit of an unaddressed voltage drop happening that **_probably_** won't be an issue so we'll just ignore the video above with the [lack of red LED](https://raspberrypi.stackexchange.com/questions/51615/raspberry-pi-power-limitations).
+This machine has had the internal hard drive upgraded to a [RaSCSI](https://github.com/PiSCSI/piscsi) (now PiSCSI) using PCB v2.3. There's a little bit of an unaddressed voltage drop happening that **_probably_** won't be an issue so we'll just ignore the video above with the [lack of red LED](https://raspberrypi.stackexchange.com/questions/51615/raspberry-pi-power-limitations).
 
 > **If the Red Power LED is not illuminated this means the supply voltage is inadequate. (The newer Pi have a well engineered power circuit, and may continue to function even if the input voltage is below spec; the same may not be true of peripherals).**
 
@@ -68,7 +68,7 @@ Netscape 1.0 doesn't want to play nice either. I'm putting this down to older br
 While it would be nice to be able to do things on a 68000 powered Mac, we're just not ready for it yet. Stick with a faster classic Mac like the LC475 for a true internet experience. Leave the early 1990s for bulletin boards! :)
 
 **References:**
-- [https://ia600503.us.archive.org/21/items/macweb-evolt_browsers/macweb.htm](https://ia600503.us.archive.org/21/items/macweb-evolt_browsers/macweb.htm)
+- [https://ia600503.us.archive.org/21/items/macweb-evolt_browsers/macweb.htm](https://ia800100.us.archive.org/0/items/macweb-evolt_browsers/macweb.htm)
 - [https://browsers.evolt.org/browsers/archive/macweb](https://browsers.evolt.org/browsers/archive/macweb)
 - [https://browsers.evolt.org/browsers/archive/macweb/1.1.1E/](https://browsers.evolt.org/browsers/archive/macweb/1.1.1E/)
 - [https://browsers.evolt.org/browsers/archive/macweb/2.0/](https://browsers.evolt.org/browsers/archive/macweb/2.0/)

@@ -27,7 +27,7 @@ Why did I fail to vote? I wanted to do postal vote but after looking at these re
 
 When it comes to things like our constitution I am generally out of the loop. From what I've read, the reason for getting [The Voice](https://web.archive.org/web/20230930193314/https://voice.gov.au/) into the Australian constitution was to prevent the ruling party from removing it at a later date without a referendum. While it could be made law by the current ruling party (centre-left) but would likely be removed when the current opposition (centre-right) gets into power.
 
-I guess I am just disappointed at how we treat our own people. The very fact that [our right leaning party did not support](https://www.abc.net.au/news/2023-10-22/indigenous-leaders-call-referendum-defeat-appalling/103004646) The Voice was disgusting. The following images are from [here](https://voice.gov.au/about-voice/voice-principles).
+I guess I am just disappointed at how we treat our own people. The very fact that [our right leaning party did not support](https://www.abc.net.au/news/2023-10-22/indigenous-leaders-call-referendum-defeat-appalling/103004646) The Voice was disgusting. The following images are from [here](https://web.archive.org/web/20231012062458/https://voice.gov.au/about-voice/voice-principles).
 
 ![](/assets/images/2023/img_1170.jpg)
 

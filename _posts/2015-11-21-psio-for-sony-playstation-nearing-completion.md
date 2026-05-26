@@ -13,4 +13,4 @@ One can only hope that they will also work on a Sega Dreamcast, Sega Saturn and 
 
 {% include youtube.html id="fhJNDNcIz9Y" %}
 
-You can click over to [ps-io.com](https://ps-io.com/) if you have any questions since I am only a tester of the hardware and no longer have access to it - returned to the developers as it is now well into version 2.x.
+You can click over to [ps-io.com]https://psio.cybdyn-systems.com.au/) if you have any questions since I am only a tester of the hardware and no longer have access to it - returned to the developers as it is now well into version 2.x.

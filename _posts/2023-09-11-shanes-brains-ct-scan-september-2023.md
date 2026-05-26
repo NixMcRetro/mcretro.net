@@ -43,5 +43,6 @@ There is normal alignment of the cervical vertebrae. The facet joints show norma
 **Conclusion:**\
 No significant intracranial pathology. Incidental finding of anatomic variation that may need further characterisation with MRI to assess for any CSF flow abnormality. No significant cervical spine pathology.
 
+**Sources**
 [Reference 1](https://www.radiologymasterclass.co.uk/tutorials/ct/ct_brain_anatomy/ct_brain_anatomy_choroid_calcified)\
-[Reference 2](https://radiopaedia.org/articles/falx-ossification)
+[Reference 2](https://web.archive.org/web/20220526214718/https://radiopaedia.org/articles/falx-ossification)

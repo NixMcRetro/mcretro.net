@@ -7,4 +7,4 @@ categories: [programming, youtube]
 
 {% include youtube.html id="xiE_-fCGows" %}
 
-Another music instrument created! Thanks to [Buranelectrix](http://buranelectrix.com) for creating this great little project based on the Atmel ATMEGA328P chip. I'll be making one on a proper fabricated PCB in the near future.
+Another music instrument created! Thanks to [Buranelectrix](https://web.archive.org/web/20131112015528/http://buranelectrix.com/) for creating this great little project based on the Atmel ATMEGA328P chip. I'll be making one on a proper fabricated PCB in the near future.

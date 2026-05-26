@@ -7,7 +7,7 @@ categories: [programming, youtube]
 
 {% include youtube.html id="dt0s9hSIgiI" %}
 
-This was the final AVRDUDE flash of the Lunchbeat by Buranelectrix, we also reminisce on how good SuperNick was at holding down buttons while flashing things, whether this was entirely necessary throughout the flash - I can't remember.
+This was the final AVRDUDE flash of the [Lunchbeat by Buranelectrix](https://web.archive.org/web/20131112015528/http://buranelectrix.com/), we also reminisce on how good SuperNick was at holding down buttons while flashing things, whether this was entirely necessary throughout the flash - I can't remember.
 
 Just sit back, listen to the tunes, they sure can be catchy and you can join these together if you have two or more... just think of the possibilities!
 

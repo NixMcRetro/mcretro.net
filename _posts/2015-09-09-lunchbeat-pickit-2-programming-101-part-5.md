@@ -7,4 +7,4 @@ categories: [programming, youtube]
 
 {% include youtube.html id="yLU5i_mNRek" %}
 
-Well, something seems to work - we have lights and buttons! Still missing some of the bits, hopefully, they'll turn up soon! Learn more about the Lunchbeat at [buranelectrix.com](http://buranelectrix.com/lunchbeat-1bit-groovebox/). It's a is neg-fi groovemachine with 1-bit sounds.
+Well, something seems to work - we have lights and buttons! Still missing some of the bits, hopefully, they'll turn up soon! Learn more about the Lunchbeat at [buranelectrix.com](https://web.archive.org/web/20131112013520/http://buranelectrix.com/lunchbeat/lunchbeat.php). It's a is neg-fi groovemachine with 1-bit sounds.

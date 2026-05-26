@@ -93,7 +93,7 @@ Cisco offer a [nice article](https://web.archive.org/web/20230228080434/https://
 
 ![](/assets/images/2023/img_1096.jpg)
 
-The [quick start guide](https://www.cisco.com/c/dam/en/us/td/docs/voice_ip_comm/csbpvga/spa8000/quick_start/guide/spa8000_quick.pdf) also came in handy.
+The [quick start guide](https://web.archive.org/web/20250417145553/https://www.cisco.com/c/dam/en/us/td/docs/voice_ip_comm/csbpvga/spa8000/quick_start/guide/spa8000_quick.pdf) also came in handy.
 
 ![](/assets/images/2023/img_1097.jpg)
 

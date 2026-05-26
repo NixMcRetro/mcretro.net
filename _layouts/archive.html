@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<div data-pagefind-ignore>
 <article class="post-full">
   <h1 class="post-title">
     {% if page.type == 'category' %}Category: {{ site.data.categories[page.title] | default: page.title }}
@@ -19,3 +20,4 @@ layout: default
     {% endfor %}
   </div>
 </article>
+</div>

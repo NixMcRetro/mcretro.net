@@ -33,4 +33,5 @@ Initially I had issues with Mayumi 4 for PIC12C508, PIC12C508A and PIC12F508 not
 
 Thanks to Master991 and Bad\_Ad84 for teaching me about code protect. More information can be viewed [here](https://web.archive.org/web/20191112062242/https://assemblergames.com/threads/mayumi-v4-on-the-pic12c508a-pic12f508.59924/) at Assembler Games.
 
-**References** [http://www.fatcat.co.nz/psx/ps1.html](http://www.fatcat.co.nz/psx/ps1.html)
+**References**
+ - [http://www.fatcat.co.nz/psx/ps1.html](https://web.archive.org/web/20231014203434/http://www.fatcat.co.nz/psx/ps1.html)

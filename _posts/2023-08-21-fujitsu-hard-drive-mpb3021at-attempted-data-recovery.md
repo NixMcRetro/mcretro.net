@@ -15,7 +15,7 @@ Today we are looking at a broken hard drive, the Fujitsu MPB3021AT 2.16GB.
 
 ![](/assets/images/2023/img_1118.gif)
 
-We used GNU ddrescue 1.23 for the data recovery attempt. You can read the full manual [here](https://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html). It describes how it goes about recovering data. For this recovery we used the following command.
+We used GNU ddrescue 1.23 for the data recovery attempt. You can read the full manual [here](https://web.archive.org/web/20260511155236/https://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html) if you're curious. It describes how it goes about recovering data. For this recovery we used the following command.
 
 ```
 sudo ddrescue -f -r3 /dev/sdb /dev/sdc logfile

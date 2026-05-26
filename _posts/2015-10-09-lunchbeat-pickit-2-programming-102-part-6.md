@@ -7,4 +7,4 @@ categories: [programming, youtube]
 
 {% include youtube.html id="VW1VT0bMG_c" %}
 
-Even more programming, under OS X nonetheless! Learn more about the Lunchbeat at [buranelectrix.com](http://buranelectrix.com/lunchbeat-1bit-groovebox/). It's a is neg-fi groovemachine with 1-bit sounds.
+Even more programming, under OS X nonetheless! Learn more about the Lunchbeat at [buranelectrix.com](https://web.archive.org/web/20131112013520/http://buranelectrix.com/lunchbeat/lunchbeat.php). It's a is neg-fi groovemachine with 1-bit sounds.

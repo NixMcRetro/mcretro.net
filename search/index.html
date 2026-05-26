@@ -12,23 +12,24 @@ title: Search
 <div id="search"></div>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
-    console.log('Pagefind script running…');
-    console.log('PagefindUI available:', typeof PagefindUI);
-
-    const params = new URLSearchParams(window.location.search);
-    const query = params.get('q') || '';
-    console.log('Search query:', query);
-
-    if (typeof PagefindUI === 'undefined') {
-      console.error('PagefindUI not found – is pagefind-ui.js loading?');
-      return;
-    }
-
-    new PagefindUI({
+    const ui = new PagefindUI({
       element: "#search",
       showSubResults: true,
-      showImages: false,
-      initialSearchValue: query
+      showImages: false
     });
+
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('q');
+    if (query) {
+      setTimeout(() => {
+        const input = document.querySelector('#search input');
+        if (input) {
+          // Focus the input, set value, and dispatch input event
+          input.focus();
+          input.value = query;
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      }, 300);
+    }
   });
 </script>

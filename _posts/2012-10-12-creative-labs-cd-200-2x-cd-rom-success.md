@@ -36,7 +36,7 @@ C:SB16DRVMSCDEX.EXE /D:MSCD001 /V /M:15
 
 **Resources:**
 - [VOGONS Vintage Driver Library](https://www.vogonsdrivers.com)
-- [French Driver Website](http://www.autourdupc.com/index.php?sPage=/Materiel/CDROM/CDROM_IDE.htm)
+- [French Driver Website](https://web.archive.org/web/20250915191235/http://www.autourdupc.com/index.php?sPage=/Materiel/CDROM/CDROM_IDE.htm)
 - [Virtual Dr](https://discussions.virtualdr.com/showthread.php?69838-Creative-Labs-2X-CD&s=becdc9d2b2ab5d5832c8dc2c373a1be6)
 - [Vintage Computer Sound Blaster ISA Card Collection](https://forum.vcfed.org/index.php?threads/sound-blaster-ide-cards-drivers-collection.24571/)
 - [Another Driver Website](https://files.mpoli.fi/hardware/SOUND/CLABS/)

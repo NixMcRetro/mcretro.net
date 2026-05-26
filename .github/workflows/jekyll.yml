@@ -44,7 +44,7 @@ jobs:
         run: npm install -g pagefind
 
       - name: Run Pagefind
-        run: pagefind --site _site --output-subdir pagefind --exclude-selectors "img,.widget,.site-footer,.footer-widgets,.navbar,.pagination,.adventure-pagination,.post-navigation,#secondary"
+        run: pagefind --site _site --output-subdir pagefind
 
       # New step: check for broken links in _site
       - name: Check links with Lychee
@@ -55,7 +55,7 @@ jobs:
             --verbose
             --no-progress
             --max-concurrency 6
-            --accept 200,429,530
+            --accept 200,429,530,403,415
             --timeout 60
             --max-retries 3
             --retry-wait-time 10

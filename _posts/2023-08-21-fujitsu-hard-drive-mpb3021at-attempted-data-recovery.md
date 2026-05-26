@@ -24,7 +24,7 @@ sudo ddrescue -f -r3 /dev/sdb /dev/sdc logfile
 
 The -f flag was for forcing to write to another device instead of a file. The -r3 flag gives us three retries of bad blocks - both reading forward and backwards each pass. /dev/sdb was our 2GB hard drive and /dev/sdc was a failing SSD to recover onto. The SSD was bad, but wasn't as bad as our Fujitsu. The mapfile, formerly known as a logfile, keeps track of what has been happening and allows for resuming.
 
-Another option that probably should be considered is the -n flag. Also known as no-scrape it avoids spending a lot of time trying to rescue the most difficult parts (i.e. damaged parts). Apparently it is less stressful on the drive than no-split [which was changed to no-scrape](https://lists.gnu.org/archive/html/bug-ddrescue/2015-09/msg00001.html) in ddrescue 1.19. More information [here](https://datarecovery.com/rd/how-to-clone-hard-disks-with-ddrescue/) and [here](https://www.linux.com/topic/desktop/gnu-ddrescue-best-damaged-drive-rescue/).
+Another option that probably should be considered is the -n flag. Also known as no-scrape it avoids spending a lot of time trying to rescue the most difficult parts (i.e. damaged parts). Apparently it is less stressful on the drive than no-split [which was changed to no-scrape](https://web.archive.org/web/20260511155236/https://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html) in ddrescue 1.19. More information [here](https://datarecovery.com/rd/how-to-clone-hard-disks-with-ddrescue/) and [here](https://www.linux.com/topic/desktop/gnu-ddrescue-best-damaged-drive-rescue/).
 
 ![](/assets/images/2023/img_1114.jpg)
 

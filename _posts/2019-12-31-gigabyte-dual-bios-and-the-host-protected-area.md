@@ -11,4 +11,4 @@ Gigabyte motherboards with an Xpress Recovery BIOS are apparently affected by a 
 
 "When the drive is first in the boot order, Gigabyte's BIOS will write a backup copy of itself to a small Host Protected Area (HPA) at the end of the user area. It then hides this image by reducing the capacity of the drive by a corresponding amount. Unfortunately a bug in the BIOS incorrectly adjusts the drive's capacity after creating the HPA. 1TB drives are reduced to 31/32/33MB, 1.5TB become 500GB, 2TB become 1TB, and 3TB become 2TB (not 2TiB)."
 
-So a big thank you to [these folks](https://web.archive.org/web/20181216211558/http://www.users.on.net/~fzabkar/HDD/HDD_Capacity_FAQ.html) and [HDAT2](https://www.hdat2.com/).
+So a big thank you to [these folks](https://web.archive.org/web/20181216211558/http://www.users.on.net/~fzabkar/HDD/HDD_Capacity_FAQ.html) and [HDAT2](https://web.archive.org/web/20260511194612/https://www.hdat2.com/).

@@ -12,10 +12,15 @@ title: Search
 <div id="search"></div>
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
+    // Read the ?q= parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('q') || '';
+
     new PagefindUI({
       element: "#search",
       showSubResults: true,
-      showImages: false
+      showImages: false,
+      initialSearchValue: query   // triggers search immediately
     });
   });
 </script>

@@ -44,7 +44,11 @@ jobs:
         run: npm install -g pagefind
 
       - name: Run Pagefind
-        run: pagefind --site _site --output-subdir pagefind
+        run: |
+          pagefind --site _site --output-subdir pagefind \
+            --exclude-path '/category/*' \
+            --exclude-path '/archive/*' \
+            --exclude-path '/blog/page*'
 
       # New step: check for broken links in _site
       - name: Check links with Lychee

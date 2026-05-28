@@ -29,7 +29,7 @@ Mother cluckers !!!🐓!!! Sometimes it pays to read the blooping manual. You'd 
 
 > **"izotope ozone 5 - 8192 FFT size, 93.75% overlap."**
 
-Well, I know what iZotope 5 is. It's 5 versions older than [iZotope 10](https://www.izotope.com/products/ozone-advanced) - which is current at the time of writing. So how did they get the cool spectrogram to happen? As far as I can tell there was a thing called "Meter Bridge" in iZotope Ozone 5, which might have been the answer. In iZotope Ozone 10... we have "[Insight 2](https://www.izotope.com/products/insight)", which is installed like a plugin on a plugin.
+Well, I know what iZotope 5 is. It's 5 versions older than iZotope 10 - which is current at the time of writing. So how did they get the cool spectrogram to happen? As far as I can tell there was a thing called "Meter Bridge" in iZotope Ozone 5, which might have been the answer. In iZotope Ozone 10... we have Insight 2, which is installed like a plugin on a plugin.
 
 ![](/assets/images/2023/img_1073.jpg)
 

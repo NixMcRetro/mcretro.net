@@ -4,13 +4,13 @@ https://retrojunkie.net
 
 
 To Do
-- Move all sites to GitHub for static serving.
 - Image cycle on front page (randomised).
 
 
 2026-05-25
 - So many broken links, so many redirects...
 - Lychee is now running, built and deployed the site.
+- Fixed the search, need to port to Channel Chirp
 
 2026-05-24
 - Cosmetic fixes mostly done - looks better than identical.

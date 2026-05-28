@@ -390,3 +390,52 @@ h2 a:hover {
 .post-content ul {
   margin-top: 0em;         /* smaller list top margin */
 }
+
+
+
+/* ===========================
+   SEARCH PAGE STYLING
+   =========================== */
+
+/* Remove any default top margin from the first element on the search page */
+.search-page .content-area > :first-child {
+  margin-top: 0;
+}
+
+/* Make the Pagefind search bar inline (input + button on the same row) */
+#search .pagefind-ui__search-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Ensure the input field takes most of the width and has proper padding */
+#search .pagefind-ui__search-input input {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0;
+}
+
+/* Style the clear button to be flush with the input */
+#search .pagefind-ui__search-input button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #0009b5;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Reduce space below the search form before results appear */
+#search .pagefind-ui__form {
+  margin-bottom: 1rem;
+}
+
+#search {
+  max-width: 85%;    /* change to 80% if you prefer */
+  margin: 0 auto;    /* centre the box */
+  margin: 2rem auto 0 auto;   /* top: 2rem, right/left: auto, bottom: 0 */
+}

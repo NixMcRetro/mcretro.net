@@ -460,14 +460,14 @@ h2 a:hover {
   background: transparent; /* Matches whatever your site background is */
   border: 1px solid transparent;
   border-radius: 8px;
-  padding: 1.5rem 1.75rem;
+  padding: 0.75rem 1.25rem;
   transition: all 0.3s ease; /* Smooth fade-in for the card background */
   box-shadow: none;
 }
 
 /* Hover: Reveal the solid white card */
 #search .pagefind-ui__result:hover {
-  background: #ffffff; /* The solid white card appears */
+  background: #fffae8; /* The solid white card appears */
   border: 1px solid #e2e8f0;
   border-left: 3px solid #0009b5; /* Signature retro-blue left border */
   box-shadow: 0 6px 15px rgba(0,0,0,0.06);

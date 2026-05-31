@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Blast Processed Since 199X - McRetro.net
+title: Blast Processed Since 199X
 ---
 <h2 class="center">Blast Processed Since 199X</h2>
 

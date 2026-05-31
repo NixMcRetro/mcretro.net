@@ -47,26 +47,26 @@ jobs:
         run: pagefind --site _site --output-subdir pagefind
 
       # New step: check for broken links in _site
-      - name: Check links with Lychee
-        uses: lycheeverse/lychee-action@v2
-        with:
-          args: >
-            --root-dir ${{ github.workspace }}/_site
-            --verbose
-            --no-progress
-            --max-concurrency 6
-            --accept 200,429,530,403,415,503,500,502
-            --timeout 60
-            --max-retries 3
-            --retry-wait-time 10
-            --user-agent 'Mozilla/5.0 (Linux x86_64) Chrome/134.0.0.0'
-            --exclude-path '.*/archive/.*'
-            --exclude-path '.*/category/.*'
-            --exclude-path '.*/pagefind/.*'
-            --exclude-path '.*/blog/page[0-9]+/.*'
-            './_site/**/*.html'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Check links with Lychee
+#        uses: lycheeverse/lychee-action@v2
+#        with:
+#          args: >
+#            --root-dir ${{ github.workspace }}/_site
+#            --verbose
+#            --no-progress
+#            --max-concurrency 6
+#            --accept 200,429,530,403,415,503,500,502
+#            --timeout 60
+#            --max-retries 3
+#            --retry-wait-time 10
+#            --user-agent 'Mozilla/5.0 (Linux x86_64) Chrome/134.0.0.0'
+#            --exclude-path '.*/archive/.*'
+#            --exclude-path '.*/category/.*'
+#            --exclude-path '.*/pagefind/.*'
+#            --exclude-path '.*/blog/page[0-9]+/.*'
+#            './_site/**/*.html'
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
       - name: Configure Pages

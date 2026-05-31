@@ -10,6 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }}{% endif %} - {{ site.title }}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
+  <meta name="pagefind-title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/overrides.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">

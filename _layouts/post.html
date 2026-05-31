@@ -2,18 +2,18 @@
 layout: default
 ---
 <article class="post-full">
-  <h2 class="post-title">{{ page.title }}</h2>
+  <h2 class="post-title" data-pagefind-title>{{ page.title }}</h2>
 
-  <div class="post-meta">
+  <div class="post-meta" data-pagefind-ignore="all">
     {% if page.author %}
-      <span class="post-author" data-pagefind-ignore="all">
+      <span class="post-author">
         <img src="/assets/favicon/favicon-96x96.png" alt="" class="author-avatar">
         {{ page.author }}
       </span>
-      <span class="meta-sep" data-pagefind-ignore="all">//</span>
+      <span class="meta-sep">//</span>
     {% endif %}
-
-    <span class="post-date" data-pagefind-ignore="all">
+  
+    <span class="post-date">
       {% assign d = page.date | date: "%-d" | plus: 0 %}
       {% case d %}
         {% when 1 or 21 or 31 %}{% assign ordinal = "st" %}
@@ -23,10 +23,10 @@ layout: default
       {% endcase %}
       {{ d }}{{ ordinal }} {{ page.date | date: "%B %Y" }}
     </span>
-
+  
     {% if page.categories.size > 0 %}
-      <span class="meta-sep" data-pagefind-ignore="all">//</span>
-      <span class="post-categories" data-pagefind-ignore="all">
+      <span class="meta-sep">//</span>
+      <span class="post-categories">
         {% for cat in page.categories %}
           <a href="/category/{{ cat | slugify }}/">{{ site.data.categories[cat] | default: cat }}</a>{% unless forloop.last %}, {% endunless %}
         {% endfor %}

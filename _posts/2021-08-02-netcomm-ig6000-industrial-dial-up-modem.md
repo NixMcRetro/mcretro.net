@@ -35,45 +35,43 @@ This unit was powered by a Conexant RP56D/SP R6764-61 ACF2 Modem IC coupled with
 
 Interestingly [a reference to the IG6000 was found](https://web.archive.org/web/20001011011937/http://www.avtek.com.au:80/products/ig6000/ig6000_t.gif) on the Avtek website through archive.org in October 2000. It's a very small gif!
 
- 
-
 ```
-====================================================================================================================================================
+
 NetComm Industrial Modem IG6000
 14 capacitors
 All replacements are 2x taller (What did Licon leave out?)
 Completely Broken
 
-Fatties (2x)																	Element 14 Order Code
-C15		47uF		16V		6mm (h) x 5mm (w)		2-2.5mm spacing	Silkscreen is full!			8126747 	2x taller, upgraded to 35V	Order 10x
-C60		47uF		16V		6mm (h) x 5mm (w)		2-2.5mm spacing	Silkscreen is full!			As above
+Location	Value	Voltage	Height	Width	PCB spacing			Notes    				Element 14 Order Code
+
+
+C15 		47uF	16V		6 mm	5 mm	2-2.5mm spacing		Silkscreen is full!		8126747 	2x taller, upgraded to 35V
+C60			47uF	16V		6 mm	5 mm	2-2.5mm spacing		Silkscreen is full!		As above
 
 Babies (11x)
-C34		2.2uF		50V		6mm (h) x 3-4mm (w)	2-2.5mm spacing	Silkscreen is ~5mm (w)		2346265	2x taller				Order 10x
-C89		2.2uF		50V		6mm (h) x 3-4mm (w)	2-2.5mm spacing	Silkscreen is ~5mm (w)		As Above
-C101		2.2uF		50V		6mm (h) x 3-4mm (w)	2-2.5mm spacing	Silkscreen is ~5mm (w)		As Above
-C102		2.2uF		50V		6mm (h) x 3-4mm (w)	2-2.5mm spacing	Silkscreen is ~5mm (w)		As Above
+C34			2.2uF	50V		6 mm 	3-4 mm	2-2.5mm spacing		Silkscreen is ~5mm (w)	2346265		2x taller
+C89			2.2uF	50V		6 mm 	3-4 mm	2-2.5mm spacing		Silkscreen is ~5mm (w)	As above
+C101		2.2uF	50V		6 mm  	3-4 mm 	2-2.5mm spacing		Silkscreen is ~5mm (w)	As above
+C102		2.2uF	50V		6 mm  	3-4 mm 	2-2.5mm spacing		Silkscreen is ~5mm (w)	As above
 
-U4		1uF		50V		6mm (h) x 3-4mm (w)	2-2.5mm spacing	Attached to U4 with resistor	234626402 	This broke!				Order 10x
+U4			1uF		50V		6 mm 	3-4 mm 	2-2.5mm spacing		Joined to U4 w/ resistor 234626402 	This broke!
 
-C53		10uF		25V		6mm (h) x 3-4mm (w)	2-2.5mm spacing	Silkscreen is ~5mm (w)		114463202 	2x taller, upgraded to 50V	Order 10x
-C72		10uF		25V		6mm (h) x 3-4mm (w)	2-2.5mm spacing	Silkscreen is ~5mm (w)		As Above
-C51		10uF		25V		6mm (h) x 3-4mm (w)	2-2.5mm spacing	Silkscreen is ~5mm (w)		As Above
-C69		10uF		25V		6mm (h) x 3-4mm (w)	2-2.5mm spacing	Silkscreen is ~5mm (w)		As Above
-C21		10uF		25V		6mm (h) x 3-4mm (w)	2-2.5mm spacing	Silkscreen is ~5mm (w)		As Above
-C22		10uF		25V		6mm (h) x 3-4mm (w)	2-2.5mm spacing	Silkscreen is ~5mm (w)		As Above
+C53			10uF	25V		6 mm  	3-4 mm	2-2.5mm spacing		Silkscreen is ~5mm (w)	114463202 	2x taller, upgraded to 50V
+C72			10uF	25V		6 mm  	3-4 mm	2-2.5mm spacing		Silkscreen is ~5mm (w)	As above
+C51			10uF	25V		6 mm  	3-4 mm	2-2.5mm spacing		Silkscreen is ~5mm (w)	As above
+C69			10uF	25V		6 mm  	3-4 mm	2-2.5mm spacing		Silkscreen is ~5mm (w)	As above
+C21			10uF	25V		6 mm  	3-4 mm	2-2.5mm spacing		Silkscreen is ~5mm (w)	As above
+C22			10uF	25V		6 mm	3-4 mm	2-2.5mm spacing		Silkscreen is ~5mm (w)	As above
 
 POWER SUPPLY (Mean Well ~7.5V 1.6A 60mV Ripple)
-GEM12I07-P1J																2815709
-AC PLUG-AU2																2816209
+GEM12I07-P1J																			2815709
+AC PLUG-AU2																				2816209
 
-====================================================================================================================================================
 ```
-
-  
 
 We wish our modem, the NetComm IG6000, the best of luck. Goodnight and farewell to the dearest black box we knew!
 
 ![](/assets/images/2021/img_0739.jpg)
 
-**References:** [Datasheet, user manual and firmware](https://support.netcommwireless.com/legacy-products/IG6000)
+**References:**
+- [Datasheet, user manual and firmware](https://support.netcommwireless.com/legacy-products/IG6000)

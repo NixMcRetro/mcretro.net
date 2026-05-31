@@ -71,19 +71,19 @@ The parts listed below are manufacturer part numbers. The formatting isn’t too
 
 ```
 Value	Voltage		Height	Width	Notes
-470uF	16V		12mm	7mm	EEUFR1C471
-470uF	16V		12mm	7mm	EEUFR1C471
-470uF	16V		12mm	7mm	EEUFR1C471
-470uF	16V		12mm	7mm	EEUFR1C471
-470uF	16V		12mm	7mm	EEUFR1C471
+470uF	16V			12mm	7mm		EEUFR1C471
+470uF	16V			12mm	7mm		EEUFR1C471
+470uF	16V			12mm	7mm		EEUFR1C471
+470uF	16V			12mm	7mm		EEUFR1C471
+470uF	16V			12mm	7mm		EEUFR1C471
 
-100uF	16V		12mm	5mm	EEUFR1C101
-100uF	16V		12mm	5mm	EEUFR1C101
-100uF	16V		12mm	5mm	EEUFR1C101
+100uF	16V			12mm	5mm		EEUFR1C101
+100uF	16V			12mm	5mm		EEUFR1C101
+100uF	16V			12mm	5mm		EEUFR1C101
 
-1uF	    50V		11mm	4mm	50YXJ1M5X11
-10uF	25V		11mm	4mm	EEUFR1H100	Upgraded to 50V
-10uF	25V		11mm	4mm	EEUFR1H100	Upgraded to 50V
+1uF	    50V			11mm	4mm		50YXJ1M5X11
+10uF	25V			11mm	4mm		EEUFR1H100	Upgraded to 50V
+10uF	25V			11mm	4mm		EEUFR1H100	Upgraded to 50V
 
 All electrolytic capacitors are radial.
 Lead spacing is 2-2.5mm on most.

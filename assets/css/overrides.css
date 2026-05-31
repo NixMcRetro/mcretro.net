@@ -467,7 +467,7 @@ h2 a:hover {
 
 /* Hover: Reveal the solid white card */
 #search .pagefind-ui__result:hover {
-  background: #fffae8; /* The solid white card appears */
+  background: #fffae8; /* A tint of the background colour */
   border: 1px solid #e2e8f0;
   border-left: 3px solid #0009b5; /* Signature retro-blue left border */
   box-shadow: 0 6px 15px rgba(0,0,0,0.06);
@@ -516,4 +516,54 @@ h2 a:hover {
 /* Bring the URL color to life on hover */
 #search .pagefind-ui__result:hover .pagefind-ui__result-url {
   color: #0009b5;
+}
+
+
+/* ===========================
+ "LOAD MORE" BUTTON (STEALTH STYLE)
+ =========================== */
+
+#search .pagefind-ui__button {
+  /* Default: Minimalist ghost button */
+  background: transparent;
+  border: 1px solid #cbd5e0; /* Subtle faint gray border */
+  color: #4a5568; /* Muted gray text */
+  
+  /* Spacing & Layout */
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif; /* Match your site's font if applicable */
+  border-radius: 8px;
+  
+  /* Center the button below the results */
+  display: block;
+  width: fit-content;
+  margin: 2.5rem auto 0 auto; 
+  
+  /* Interactivity */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+/* Hover: Materialize into a solid card */
+#search .pagefind-ui__button:hover {
+  background: #fffae8; /* A tint of the background colour */
+  border: 1px solid #0009b5; /* Retro-blue border */
+  color: #0009b5; /* Retro-blue text */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.06); /* Subtle shadow appears */
+  transform: translateY(-2px); /* Same subtle lift as the cards */
+}
+
+/* Focus: Accessibility for keyboard navigation */
+#search .pagefind-ui__button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 9, 181, 0.3); /* Retro-blue glow ring */
+}
+
+/* Active: Slight push-down effect when clicking */
+#search .pagefind-ui__button:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }

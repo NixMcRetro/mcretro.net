@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Blog
+title: The Blog
+pagefind: false
 ---
-<div class="blog-list" {% if paginator.page > 1 %}data-pagefind-ignore{% endif %}>
+<div class="blog-list">
 {% for post in paginator.posts %}
   <article class="post-entry">
 

@@ -1,8 +1,7 @@
 ---
 layout: default
 ---
-<div data-pagefind-ignore>
-<article class="post-full">
+<article class="post-full" data-pagefind-ignore="all">
   <h1 class="post-title">
     {% if page.type == 'category' %}Category: {{ site.data.categories[page.title] | default: page.title }}
     {% elsif page.type == 'month' %}{{ page.date | date: "%B %Y" }}
@@ -20,4 +19,3 @@ layout: default
     {% endfor %}
   </div>
 </article>
-</div>

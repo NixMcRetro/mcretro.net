@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meow Meow</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0014 0%, #1a0033 50%, #0a0014 100%);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Twinkling stars */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.5); }
+        }
+
+        /* Flying bats */
+        .bat {
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0.7;
+            animation: fly 10s infinite linear;
+            z-index: 100;
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+        }
+
+        .bat:nth-child(1) { top: 15%; animation-delay: 0s; font-size: 3rem; }
+        .bat:nth-child(2) { top: 40%; animation-delay: 2.5s; font-size: 2rem; }
+        .bat:nth-child(3) { top: 65%; animation-delay: 5s; font-size: 2.8rem; }
+        .bat:nth-child(4) { top: 25%; animation-delay: 7.5s; font-size: 2.2rem; }
+        .bat:nth-child(5) { top: 80%; animation-delay: 3s; font-size: 2.6rem; }
+
+        @keyframes fly {
+            0% { left: -10%; transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(-5deg); }
+            50% { transform: translateY(10px) rotate(5deg); }
+            75% { transform: translateY(-10px) rotate(-3deg); }
+            100% { left: 110%; transform: translateY(0) rotate(0deg); }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            padding: 20px;
+            position: relative;
+        }
+
+        h1 {
+            color: #e0e0e0;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px rgba(150, 100, 200, 0.5);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .meow-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: transform 0.1s ease;
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+        }
+
+        .meow-button:hover { transform: scale(1.05); }
+        .meow-button:active { transform: scale(0.95); }
+
+        .meow-button img {
+            width: 250px;
+            height: 250px;
+            filter: drop-shadow(0 0 15px rgba(150, 100, 200, 0.3));
+            border-radius: 20px;
+            transition: filter 0.2s ease;
+        }
+
+        .meow-button.clicked img {
+            animation: catBounce 0.3s ease;
+            filter: drop-shadow(0 0 25px rgba(255, 150, 50, 0.6));
+        }
+
+        @keyframes catBounce {
+            0% { transform: scale(1); }
+            50% { transform: scale(0.92) rotate(-3deg); }
+            100% { transform: scale(1); }
+        }
+
+        /* Speech bubble */
+        .speech-bubble {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            background: #2d0052;
+            color: #ff9900;
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .speech-bubble.show {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
+        }
+
+        .instruction {
+            color: #9370db;
+            margin-top: 1.5rem;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            font-weight: 300;
+        }
+
+        .counter {
+            color: #7a52a6;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .moon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.6;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 200, 0.3));
+            z-index: 5;
+        }
+
+        /* Milestone toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: rgba(45, 0, 82, 0.9);
+            color: #ff9900;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 200;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        @media (max-width: 480px) {
+            .meow-button img { width: 200px; height: 200px; }
+            .moon { font-size: 2rem; top: 10px; right: 10px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .bat, .star, .meow-button.clicked img, .speech-bubble, .toast {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bat">🐈‍⬛</div>
+    <div class="bat">🐾</div>
+    <div class="bat">🐈‍⬛</div>
+    <div class="bat">🐾</div>
+    <div class="bat">🐈‍⬛</div>
+    <div class="moon">🌙</div>
+
+    <div class="container">
+        <h1>Meow Meow</h1>
+        
+        <button class="meow-button" id="meowBtn" aria-label="Meow button">
+            <div class="speech-bubble" id="bubble">Meow!</div>
+            <img src="cat.webp" alt="Black cat with Halloween theme" id="catImage">
+        </button>
+
+        <p class="instruction">Tap to hear the me(ow)</p>
+        <p class="counter" id="counter">0 meows</p>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // Audio setup
+        const meowAudio = new Audio('meow.mp3');
+        let meowCount = 0;
+        let bubbleTimeout;
+
+        // Milestones
+        const milestones = {
+            10: "Getting warmed up! 🐾",
+            25: "Meow master! 🎃",
+            50: "The bats are impressed! 🦇",
+            100: "LEGENDARY MEOWER! 👑"
+        };
+
+        // Generate stars
+        function createStars() {
+            const body = document.body;
+            for (let i = 0; i < 40; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.width = star.style.height = (Math.random() * 2 + 1) + 'px';
+                body.appendChild(star);
+            }
+        }
+
+        // Show speech bubble
+        function showBubble() {
+            const bubble = document.getElementById('bubble');
+            bubble.classList.add('show');
+            clearTimeout(bubbleTimeout);
+            bubbleTimeout = setTimeout(() => bubble.classList.remove('show'), 800);
+        }
+
+        // Show milestone toast
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        // Handle meow
+        function triggerMeow() {
+            // Audio with subtle pitch variation
+            meowAudio.playbackRate = 0.88 + Math.random() * 0.24;
+            meowAudio.currentTime = 0;
+            meowAudio.play().catch(() => {});
+
+            // Haptic feedback (mobile)
+            if (navigator.vibrate) navigator.vibrate(40);
+
+            // Visual feedback
+            const btn = document.getElementById('meowBtn');
+            btn.classList.add('clicked');
+            setTimeout(() => btn.classList.remove('clicked'), 300);
+            showBubble();
+
+            // Counter & milestones
+            meowCount++;
+            document.getElementById('counter').textContent = `${meowCount} meow${meowCount !== 1 ? 's' : ''}`;
+            if (milestones[meowCount]) showToast(milestones[meowCount]);
+        }
+
+        // Event listeners
+        document.getElementById('meowBtn').addEventListener('click', triggerMeow);
+        
+        // Keyboard support
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' || e.code === 'Enter') {
+                e.preventDefault();
+                triggerMeow();
+            }
+        });
+
+        // Preload audio on first interaction
+        document.addEventListener('click', () => {
+            meowAudio.preload = 'auto';
+            meowAudio.load();
+        }, { once: true });
+
+        // Init
+        createStars();
+    </script>
+</body>
+</html>

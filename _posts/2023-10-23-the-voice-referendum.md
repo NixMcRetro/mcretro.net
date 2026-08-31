@@ -2,7 +2,7 @@
 title: "The Voice Referendum"
 author: "Nix McRetro"
 date: 2023-10-23T05:32:57.000+11:00
-categories: [activism news]
+categories: [activism, news]
 ---
 
 ![](/assets/images/2023/img_1169.jpg)

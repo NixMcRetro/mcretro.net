@@ -311,7 +311,7 @@ These files are written to `/Users/username/`:
 | File | Content | Purpose |
 |---|---|---|
 | `.botid` | e.g., `19a9ff38c1b24ffe8e5c54a91af203c8` | Unique bot identifier assigned by C2 |
-| `.pwd` | Stolen login password | Plaintext password (e.g., `password1`) |
+| `.pwd` | Stolen login password | Plaintext password (e.g., `password0, password1`) |
 | `.phost` | `http://ukdsopas.at` | Panel host (HTTP header) |
 | `.bhost` | `http://192.253.248.181` | Bot host (primary C2 server) |
 | `.username` | `newooble` | Attacker panel username |
@@ -579,10 +579,10 @@ Two separate infections were analysed—both with the same malware, same C2 serv
 | Attribute | Infection 1 (`m1`) | Infection 2 (`m2`) |
 |---|---|---|
 | User | `m1` | `m2` |
-| macOS version | 26.5.2 | 14.0 |
+| macOS version | 26.5.2 | 26.5.1 |
 | `.botid` | Not recovered (cleanup ran) | Recovered: `19a9ff38c1b24ffe8e5c54a91af203c8` |
 | `.username` | `newooble` | `newooble` |
-| Stolen password | Unconfirmed | `password1` (from `cache.txt`) |
+| Stolen password | `password0` | `password1` (from `cache.txt`) |
 | Chrome installed | True | `false` |
 | lksopo.zip contents | 7 files (finder, cache.txt, hardware, installedSoft, kc, pwd, user) | Same (analysed) |
 | C2 status | Active | Active |

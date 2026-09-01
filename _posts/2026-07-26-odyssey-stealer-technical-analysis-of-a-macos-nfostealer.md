@@ -582,7 +582,7 @@ Two separate infections were analysed—both with the same malware, same C2 serv
 | macOS version | 26.5.2 | 26.5.1 |
 | `.botid` | Not recovered (cleanup ran) | Recovered: `19a9ff38c1b24ffe8e5c54a91af203c8` |
 | `.username` | `newooble` | `newooble` |
-| Stolen password | `password0` | `password1` (from `cache.txt`) |
+| Stolen password | `password0`  (from `.pwd`) | `password1` (from `cache.txt`) |
 | Chrome installed | True | `false` |
 | lksopo.zip contents | 7 files (finder, cache.txt, hardware, installedSoft, kc, pwd, user) | Same (analysed) |
 | C2 status | Active | Active |
@@ -633,12 +633,372 @@ Every 60 seconds, a `curl` process connected to `192.253.248.181:80`, matching t
 
 The following detection script (`detect_odyssey_mac.sh`) was developed to identify and optionally remove the malware:
 
+```
+#!/bin/bash
+#
+# detect_odyssey_mac.sh
+#
+# Detects and optionally removes known IoCs from macOS stealers/backdoors including:
+# - Original xdivcmp / Office serializer trojan
+# - Newer Odyssey Stealer / AMOS variants (e.g., xxxblyat build)
+#
+# Known IoCs checked:
+#   ~/Library/Application Support/Install.app
+#   ~/Library/LaunchDaemons/com.xdivcmp.plist
+#   ~/.pwd ~/.phost ~/.bhost ~/.username ~/.botid ~/.lastaction ~/.uninstalled
+#   Domains: charge0x.at, ukdsopas.at
+#   IPs: 192.253.248.181
+#   Staging/Proxy: /tmp/socks, /tmp/lksopo
+#
+# Default: detect only
+# Cleanup: sudo ./detect_odyssey_mac.sh --clean
+#
+# This script is intentionally conservative:
+# - It does not delete anything unless --clean is supplied.
+# - It backs up evidence before removing known IoCs.
+# - It kills active malware processes during cleanup.
+# - It does not claim the Mac is clean if no IoCs are found.
+
+set -u
+
+CLEAN=0
+TARGET_HASH="0ea6167e44bb2d9b111c184df09432729bc69fd509426df83facf07eb6c39100"
+
+INSTALL_APP="~/Library/Application Support/Install.app"
+LAUNCHD_PLIST="~/Library/LaunchDaemons/com.xdivcmp.plist"
+
+USER_HOME="${SUDO_USER:+$(eval echo "~$SUDO_USER")}"
+if [ -z "${USER_HOME:-}" ]; then
+  USER_HOME="$HOME"
+fi
+
+# Expanded to include Odyssey Stealer tracking files
+DOTFILES=(
+  "$USER_HOME/.pwd"
+  "$USER_HOME/.phost"
+  "$USER_HOME/.bhost"
+  "$USER_HOME/.username"
+  "$USER_HOME/.botid"
+  "$USER_HOME/.lastaction"
+  "$USER_HOME/.uninstalled"
+)
+
+# Expanded to include new domains, build tags, and proxy paths
+IOC_STRINGS=(
+  "charge0x.at"
+  "ukdsopas.at"
+  "192.253.248.181"
+  "xdivcmp"
+  "com.xdivcmp"
+  "xxxblyat"
+  "/web/socks"
+  "lksopo"
+)
+
+FOUND=0
+SUSPICIOUS=0
+
+timestamp() {
+  date +"%Y-%m-%d_%H-%M-%S"
+}
+
+say() {
+  printf '%s\n' "$*"
+}
+
+hit() {
+  FOUND=1
+  printf '  [HIT] %s\n' "$*"
+}
+
+warn() {
+  SUSPICIOUS=1
+  printf '  [WARN] %s\n' "$*"
+}
+
+ok() {
+  printf '  [OK] %s\n' "$*"
+}
+
+section() {
+  printf '\n==== %s ====\n' "$*"
+}
+
+usage() {
+  cat <<EOF
+Usage:
+  $0             Detect only
+  sudo $0 --clean   Backup evidence, kill processes, unload LaunchDaemon, remove known IoCs, re-enable Gatekeeper
+
+EOF
+}
+
+if [ "${1:-}" = "--clean" ]; then
+  CLEAN=1
+elif [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
+  usage
+  exit 0
+elif [ -n "${1:-}" ]; then
+  usage
+  exit 2
+fi
+
+section "Mode"
+if [ "$CLEAN" -eq 1 ]; then
+  if [ "$(id -u)" -ne 0 ]; then
+    say "Cleanup mode requires sudo/root."
+    say "Run: sudo $0 --clean"
+    exit 1
+  fi
+  say "Running in CLEANUP mode."
+else
+  say "Running in DETECT-ONLY mode. Nothing will be deleted."
+fi
+
+section "Basic system info"
+say "Host: $(hostname)"
+say "User home checked: $USER_HOME"
+say "macOS: $(sw_vers -productVersion 2>/dev/null || echo unknown)"
+say "Date: $(date)"
+
+section "Check known filesystem IoCs"
+
+if [ -e "$INSTALL_APP" ]; then
+  hit "Found $INSTALL_APP"
+  say "  Details:"
+  ls -ld "$INSTALL_APP" 2>/dev/null | sed 's/^/    /'
+
+  if [ -d "$INSTALL_APP/Contents" ]; then
+    say "  Bundle Info:"
+    /usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$INSTALL_APP/Contents/Info.plist" 2>/dev/null | sed 's/^/    CFBundleIdentifier: /' || true
+    /usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$INSTALL_APP/Contents/Info.plist" 2>/dev/null | sed 's/^/    CFBundleExecutable: /' || true
+  fi
+
+  say "  Codesign:"
+  codesign -dv --verbose=4 "$INSTALL_APP" 2>&1 | sed 's/^/    /' || true
+
+  say "  Gatekeeper assessment:"
+  spctl --assess --verbose=4 "$INSTALL_APP" 2>&1 | sed 's/^/    /' || true
+
+  say "  Executable file hashes:"
+  find "$INSTALL_APP" -type f -perm /111 2>/dev/null | while read -r exe; do
+    h="$(shasum -a 256 "$exe" 2>/dev/null | awk '{print $1}')"
+    printf '    %s  %s\n' "$h" "$exe"
+    if [ "$h" = "$TARGET_HASH" ]; then
+      printf '    *** HASH MATCHES KNOWN MALWARE IOC ***\n'
+    fi
+  done
+else
+  ok "Not found: $INSTALL_APP"
+fi
+
+if [ -e "$LAUNCHD_PLIST" ]; then
+  hit "Found $LAUNCHD_PLIST"
+  say "  Contents:"
+  sed 's/^/    /' "$LAUNCHD_PLIST" 2>/dev/null || true
+else
+  ok "Not found: $LAUNCHD_PLIST"
+fi
+
+for f in "${DOTFILES[@]}"; do
+  if [ -e "$f" ]; then
+    hit "Found $f"
+    ls -l "$f" 2>/dev/null | sed 's/^/    /'
+  else
+    ok "Not found: $f"
+  fi
+done
+
+section "Check LaunchDaemon loaded state"
+
+if launchctl print system/com.xdivcmp >/tmp/xdivcmp_launchctl_check.$$ 2>&1; then
+  hit "LaunchDaemon appears loaded: system/com.xdivcmp"
+  sed 's/^/    /' /tmp/xdivcmp_launchctl_check.$$
+else
+  ok "system/com.xdivcmp does not appear loaded"
+fi
+rm -f /tmp/xdivcmp_launchctl_check.$$
+
+section "Search common persistence locations for IoC strings"
+
+PERSISTENCE_DIRS=(
+  "/Library/LaunchAgents"
+  "/Library/LaunchDaemons"
+  "$USER_HOME/Library/LaunchAgents"
+)
+
+for d in "${PERSISTENCE_DIRS[@]}"; do
+  if [ -d "$d" ]; then
+    for s in "${IOC_STRINGS[@]}"; do
+      matches="$(grep -RIl "$s" "$d" 2>/dev/null || true)"
+      if [ -n "$matches" ]; then
+        hit "Found string '$s' under $d"
+        printf '%s\n' "$matches" | sed 's/^/    /'
+      fi
+    done
+  fi
+done
+
+section "Search recent logs for network IoCs (macOS 14+ optimized)"
+
+# Look back 7 days instead of 24 hours, as malware beacons can be infrequent
+LOG_LOOKBACK="7d"
+if command -v log >/dev/null 2>&1; then
+  # Added new domains, the build tag, and the hidden proxy download path
+  NET_IOCS=("charge0x.at" "ukdsopas.at" "192.253.248.181" "/tmp/socks" "xxxblyat")
+
+  for s in "${NET_IOCS[@]}"; do
+    say "Scanning unified logs for '$s'..."
+    # Run the log search once per target and save it to memory (much faster on macOS 14+)
+    hits=$(log show --last "$LOG_LOOKBACK" --predicate "eventMessage CONTAINS[c] '$s'" 2>/dev/null | grep -i "$s" || true)
+
+    if [ -n "$hits" ]; then
+      hit "Found network activity for '$s' in unified logs within last $LOG_LOOKBACK"
+      echo "$hits" | tail -10 | sed 's/^/    /'
+    else
+      ok "No '$s' found in unified logs within last $LOG_LOOKBACK"
+    fi
+  done
+else
+  warn "macOS log command not available"
+fi
+
+section "Gatekeeper status"
+
+GK_STATUS="$(spctl --status 2>/dev/null || true)"
+say "  $GK_STATUS"
+
+if echo "$GK_STATUS" | grep -qi "disabled"; then
+  hit "Gatekeeper assessments are disabled"
+else
+  ok "Gatekeeper assessments are enabled or status unavailable"
+fi
+
+section "Current active connections and listening ports"
+
+# 1. Check for active outbound connections to known bad IPs/Domains
+if command -v lsof >/dev/null 2>&1; then
+  if lsof -i -n -P 2>/dev/null | grep -E "charge0x\.at|ukdsopas\.at|192\.253\.248\.181" >/tmp/xdivcmp_net.$$; then
+    hit "Found active outbound network connection matching known IoCs"
+    sed 's/^/    /' /tmp/xdivcmp_net.$$
+  else
+    ok "No active outbound lsof connection to known IoCs found"
+  fi
+  rm -f /tmp/xdivcmp_net.$$
+fi
+
+# 2. Check for suspicious listening ports (The SOCKS5 proxy or Reverse Shell)
+# Even if disconnected from the internet, the malware may be listening locally
+say "Checking for suspicious local listening ports..."
+LISTENING_PORTS=$(lsof -i -P -n 2>/dev/null | grep LISTEN | grep -v "com.apple" || true)
+if [ -n "$LISTENING_PORTS" ]; then
+  warn "Found non-Apple processes listening on network ports (Review these):"
+  echo "$LISTENING_PORTS" | sed 's/^/    /'
+else
+  ok "No suspicious third-party listening ports found."
+fi
+
+section "Verdict"
+
+if [ "$FOUND" -eq 1 ]; then
+  say "RESULT: KNOWN IOCS FOUND."
+  say "Treat this Mac as compromised. Change passwords from a different clean device."
+elif [ "$SUSPICIOUS" -eq 1 ]; then
+  say "RESULT: No hard IoC found, but warnings occurred."
+  say "This does not prove the Mac is clean."
+else
+  say "RESULT: No known malware IoCs found by this script."
+  say "This does not prove the Mac is clean; it only checks known infection patterns."
+fi
+
+if [ "$CLEAN" -ne 1 ]; then
+  section "No cleanup performed"
+  say "To clean known IoCs, run:"
+  say "  sudo $0 --clean"
+  exit 0
+fi
+
+section "Cleanup mode: evidence backup"
+
+EVIDENCE_DIR="/Users/Shared/odyssey-evidence-$(timestamp)"
+mkdir -p "$EVIDENCE_DIR"
+
+backup_item() {
+  item="$1"
+  if [ -e "$item" ]; then
+    say "  Backing up: $item"
+    ditto "$item" "$EVIDENCE_DIR/$(basename "$item")" 2>/dev/null || cp -R "$item" "$EVIDENCE_DIR/" 2>/dev/null || true
+  fi
+}
+
+backup_item "$INSTALL_APP"
+backup_item "$LAUNCHD_PLIST"
+for f in "${DOTFILES[@]}"; do
+  backup_item "$f"
+done
+
+if [ -d "$EVIDENCE_DIR" ]; then
+  say "Evidence copied to: $EVIDENCE_DIR"
+  /usr/bin/zip -qry "$EVIDENCE_DIR.zip" "$EVIDENCE_DIR" 2>/dev/null && say "Evidence zip: $EVIDENCE_DIR.zip"
+fi
+
+section "Cleanup mode: unload persistence and kill processes"
+
+launchctl bootout system "$LAUNCHD_PLIST" 2>/dev/null || true
+launchctl remove system/com.xdivcmp 2>/dev/null || true
+
+# Kill the active AppleScript and Bash loops spawned by the malware
+say "  Killing active malware processes..."
+pkill -f "xxxblyat" 2>/dev/null || true
+pkill -f "com.xdivcmp" 2>/dev/null || true
+pkill -f "/tmp/socks" 2>/dev/null || true
+pkill -f "lksopo" 2>/dev/null || true
+
+section "Cleanup mode: remove known IoCs"
+
+remove_item() {
+  item="$1"
+  if [ -e "$item" ]; then
+    say "  Removing: $item"
+    rm -rf "$item"
+  fi
+}
+
+remove_item "$INSTALL_APP"
+remove_item "$LAUNCHD_PLIST"
+for f in "${DOTFILES[@]}"; do
+  remove_item "$f"
+done
+
+# Remove known temp files dropped by the malware
+say "  Removing malware staging files in /tmp/..."
+rm -f /tmp/socks 2>/dev/null || true
+rm -rf /tmp/lksopo 2>/dev/null || true
+rm -f /tmp/lksopo.zip 2>/dev/null || true
+
+section "Cleanup mode: re-enable Gatekeeper"
+
+spctl --master-enable 2>/dev/null || true
+spctl --status 2>/dev/null | sed 's/^/  /' || true
+
+section "Cleanup complete"
+
+say "Known IoCs were removed if present."
+say ""
+say "Important next steps:"
+say "  1. Reboot the Mac."
+say "  2. Run this script again in detect-only mode."
+say "  3. Change passwords from a different clean device."
+say "  4. Revoke browser sessions, email sessions, Apple ID sessions, GitHub/API tokens, SSH keys, and crypto wallet seeds."
+say "  5. Strongly consider erase/reinstall macOS instead of trusting cleanup alone."
+```
+
 ### 10.1 IoCs Checked
 
 | Type | IoC |
 |---|---|
-| Files | `/Library/Application Support/Install.app` |
-| Files | `/Library/LaunchDaemons/com.xdivcmp.plist` |
+| Files | `~/Library/Application Support/Install.app` |
+| Files | `~/Library/LaunchDaemons/com.xdivcmp.plist` |
 | Dotfiles | `~/.pwd`, `~/.phost`, `~/.bhost`, `~/.username`, `~/.botid`, `~/.lastaction`, `~/.uninstalled` |
 | Temp files | `/tmp/lksopo`, `/tmp/lksopo.zip`, `/tmp/socks` |
 | Domains | `charge0x.at`, `ukdsopas.at` |
@@ -648,7 +1008,7 @@ The following detection script (`detect_odyssey_mac.sh`) was developed to identi
 
 ### 10.2 Script Usage
 
-```bash
+```
 # Detect only (safe, changes nothing)
 sudo ./detect_odyssey_mac.sh
 
@@ -664,14 +1024,303 @@ sudo ./detect_odyssey_mac.sh --clean
 
 A separate script (`detect_external_mac.sh`) was developed for scanning external drives:
 
-```bash
-sudo ./detect_external_mac.sh "/Volumes/MyDrive"
+```
+#!/bin/bash
+#
+# detect_external_mac.sh
+#
+# Forensically scans an external macOS hard drive or backup for Odyssey Stealer / xdivcmp IoCs.
+# 
+# Usage: sudo ./detect_external_mac.sh "/Volumes/NameOfExternalDrive"
+#
+
+set -u
+
+# ============================================================
+# INPUT VALIDATION
+# ============================================================
+TARGET_VOL="${1:-}"
+
+if [ -z "$TARGET_VOL" ] || [ ! -d "$TARGET_VOL" ]; then
+  printf '\n'
+  printf 'ERROR: You must provide the path to the external drive.\n'
+  printf 'Usage: sudo %s "/Volumes/NameOfExternalDrive"\n' "$0"
+  printf '\n'
+  printf 'To find your drive name, open Finder and look in the left sidebar,\n'
+  printf 'or type: ls /Volumes/\n'
+  printf '\n'
+  exit 1
+fi
+
+if [ "$(id -u)" -ne 0 ]; then
+  printf 'ERROR: This script requires administrator (root) privileges to read external drives.\n'
+  printf 'Please run: sudo %s "%s"\n' "$0" "$TARGET_VOL"
+  exit 1
+fi
+
+# ============================================================
+# OPENING WARNING
+# ============================================================
+printf '\n'
+printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
+printf '!!                                                                !!\n'
+printf '!!  EXTERNAL DRIVE FORENSIC SCANNER                               !!\n'
+printf '!!                                                                !!\n'
+printf '!!  Target Drive: %-48s !!\n' "$TARGET_VOL"
+printf '!!                                                                !!\n'
+printf '!!  This script will scan the dormant files on this drive.        !!\n'
+printf '!!  It will NOT check live network connections or active memory,  !!\n'
+printf '!!  because this drive is not the active operating system.        !!\n'
+printf '!!                                                                !!\n'
+printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
+printf '\n'
+sleep 3
+
+CLEAN=0
+if [ "${2:-}" = "--clean" ]; then
+  CLEAN=1
+fi
+
+FOUND=0
+SUSPICIOUS=0
+
+timestamp() {
+  date +"%Y-%m-%d_%H-%M-%S"
+}
+
+say() {
+  printf '%s\n' "$*"
+}
+
+hit() {
+  FOUND=1
+  printf '  [HIT] %s\n' "$*"
+}
+
+warn() {
+  SUSPICIOUS=1
+  printf '  [WARN] %s\n' "$*"
+}
+
+ok() {
+  printf '  [OK] %s\n' "$*"
+}
+
+section() {
+  printf '\n==== %s ====\n' "$*"
+}
+
+# ============================================================
+# DISCOVER USERS ON EXTERNAL DRIVE
+# ============================================================
+section "Step 1 of 5: Locating User Accounts on the External Drive"
+say "I am looking inside the 'Users' folder on the external drive to find"
+say "which user accounts might be infected..."
+say ""
+
+TARGET_USERS=()
+if [ -d "$TARGET_VOL/Users" ]; then
+  for d in "$TARGET_VOL/Users"/*; do
+    if [ -d "$d" ]; then
+      bname=$(basename "$d")
+      if [ "$bname" != "Shared" ] && [ "$bname" != "Guest" ] && [ "$bname" != ".localized" ]; then
+        TARGET_USERS+=("$d")
+        say "  Found user account on external drive: $bname"
+      fi
+    fi
+  done
+else
+  warn "Could not find a standard '/Users' folder on this drive."
+  say "  This might be a data-only drive, or a Time Machine backup (which hides user folders)."
+fi
+
+if [ ${#TARGET_USERS[@]} -eq 0 ]; then
+  warn "No standard user folders found. I will still scan system folders."
+fi
+
+# ============================================================
+# FILE SYSTEM CHECKS
+# ============================================================
+section "Step 2 of 5: Checking for known malware files on the external drive"
+say "Scanning system folders on the external drive for malware components..."
+say ""
+
+INSTALL_APP="$TARGET_VOL/Library/Application Support/Install.app"
+LAUNCHD_PLIST="$TARGET_VOL/Library/LaunchDaemons/com.xdivcmp.plist"
+
+say "  Checking for the fake 'Install.app'..."
+if [ -e "$INSTALL_APP" ]; then
+  hit "FOUND the fake Install.app on the external drive!"
+  ls -ld "$INSTALL_APP" 2>/dev/null | sed 's/^/    /'
+else
+  ok "The fake Install.app was NOT found."
+fi
+
+say ""
+say "  Checking for the malicious startup file (LaunchDaemon)..."
+if [ -e "$LAUNCHD_PLIST" ]; then
+  hit "FOUND the malicious startup file on the external drive!"
+  say "  If this is a bootable clone, it will infect the Mac on next boot."
+  sed 's/^/    /' "$LAUNCHD_PLIST" 2>/dev/null || true
+else
+  ok "The malicious startup file was NOT found."
+fi
+
+# ============================================================
+# USER DOTFILES CHECK
+# ============================================================
+section "Step 3 of 5: Checking for hidden tracking files in user folders"
+say "Looking for the tiny hidden files the malware uses to track the victim..."
+say ""
+
+DOTFILES=(
+  ".pwd"
+  ".phost"
+  ".bhost"
+  ".username"
+  ".botid"
+  ".lastaction"
+  ".uninstalled"
+)
+
+for u in "${TARGET_USERS[@]}"; do
+  say "  Scanning user: $(basename "$u")"
+  for f in "${DOTFILES[@]}"; do
+    filepath="$u/$f"
+    if [ -e "$filepath" ]; then
+      hit "FOUND hidden malware file: $filepath"
+      ls -l "$filepath" 2>/dev/null | sed 's/^/    /'
+    fi
+  done
+done
+
+# ============================================================
+# PERSISTENCE STRING SEARCH
+# ============================================================
+section "Step 4 of 5: Scanning startup folders for hidden malware references"
+say "Reading startup files on the external drive to search for malware keywords..."
+say "This may take a minute."
+say ""
+
+IOC_STRINGS=(
+  "charge0x.at"
+  "ukdsopas.at"
+  "192.253.248.181"
+  "xdivcmp"
+  "com.xdivcmp"
+  "xxxblyat"
+  "/web/socks"
+  "lksopo"
+)
+
+PERSISTENCE_DIRS=(
+  "$TARGET_VOL/Library/LaunchAgents"
+  "$TARGET_VOL/Library/LaunchDaemons"
+)
+
+# Add user launch agents
+for u in "${TARGET_USERS[@]}"; do
+  PERSISTENCE_DIRS+=("$u/Library/LaunchAgents")
+done
+
+for d in "${PERSISTENCE_DIRS[@]}"; do
+  if [ -d "$d" ]; then
+    for s in "${IOC_STRINGS[@]}"; do
+      matches="$(grep -RIl "$s" "$d" 2>/dev/null || true)"
+      if [ -n "$matches" ]; then
+        hit "Found the malware keyword '$s' hidden inside a startup file on the external drive!"
+        printf '%s\n' "$matches" | sed 's/^/    /'
+      fi
+    done
+  fi
+done
+say "  Startup folder scan complete."
+
+# ============================================================
+# VERDICT & CLEANUP
+# ============================================================
+section "Step 5 of 5: Final Verdict"
+
+printf '\n'
+if [ "$FOUND" -eq 1 ]; then
+  printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
+  printf '!!                                                                !!\n'
+  printf '!!  *** EXTERNAL DRIVE IS INFECTED ***                            !!\n'
+  printf '!!                                                                !!\n'
+  printf '!!  Known malware files or backdoors were found on this drive.    !!\n'
+  printf '!!                                                                !!\n'
+  printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
+elif [ "$SUSPICIOUS" -eq 1 ]; then
+  printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
+  printf '!!  *** SUSPICIOUS ACTIVITY DETECTED ***                          !!\n'
+  printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
+else
+  say "RESULT: No known malware indicators were found on this external drive."
+  say "Note: This does not guarantee the drive is 100% clean, only that"
+  say "the specific Odyssey/xdivcmp malware fingerprints were not found."
+fi
+
+if [ "$CLEAN" -eq 1 ] && [ "$FOUND" -eq 1 ]; then
+  section "Cleanup: Removing known malware files from external drive"
+  say "Deleting known malware files from $TARGET_VOL..."
+  
+  [ -e "$INSTALL_APP" ] && rm -rf "$INSTALL_APP" && say "  Deleted: $INSTALL_APP"
+  [ -e "$LAUNCHD_PLIST" ] && rm -f "$LAUNCHD_PLIST" && say "  Deleted: $LAUNCHD_PLIST"
+  
+  for u in "${TARGET_USERS[@]}"; do
+    for f in "${DOTFILES[@]}"; do
+      filepath="$u/$f"
+      [ -e "$filepath" ] && rm -f "$filepath" && say "  Deleted: $filepath"
+    done
+  done
+  say "Cleanup complete."
+fi
+
+# ============================================================
+# CRITICAL FINAL INSTRUCTIONS
+# ============================================================
+section "CRITICAL NEXT STEPS — READ CAREFULLY"
+
+printf '\n'
+printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
+printf '!!                                                                !!\n'
+printf '!!  DO NOT USE THIS EXTERNAL DRIVE TO RESTORE YOUR MAC.           !!\n'
+printf '!!                                                                !!\n'
+printf '!!  If this is a Time Machine or Bootable Clone backup, the       !!\n'
+printf '!!  malware is likely baked into older backup snapshots that      !!\n'
+printf '!!  this script cannot reach. Restoring from this drive will      !!\n'
+printf '!!  simply re-infect your clean Mac.                              !!\n'
+printf '!!                                                                !!\n'
+printf '!!  YOU MUST ERASE THIS EXTERNAL DRIVE.                           !!\n'
+printf '!!                                                                !!\n'
+printf '!!  1. Open 'Disk Utility' on your clean Mac.                     !!\n'
+printf '!!  2. Select the external drive on the left sidebar.             !!\n'
+printf '!!  3. Click 'Erase' at the top (Format: APFS or Mac OS Extended).!!\n'
+printf '!!  4. Once erased, the drive is safe to use again.               !!\n'
+printf '!!                                                                !!\n'
+printf '!!  If this is just a standard USB drive used for moving files:   !!\n'
+printf '!!  - Move ONLY essential documents (PDFs, Images, Text) to a     !!\n'
+printf '!!    clean computer.                                             !!\n'
+printf '!!  - Do NOT move applications, scripts, or hidden folders.       !!\n'
+printf '!!  - Erase the external drive immediately after.                 !!\n'
+printf '!!                                                                !!\n'
+printf '!!  REMEMBER: Run a FULL scan with Malwarebytes on your clean     !!\n'
+printf '!!  Mac, and keep your Mac disconnected from the internet until   !!\n'
+printf '!!  you have changed all your passwords from a different device.  !!\n'
+printf '!!                                                                !!\n'
+printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
+printf '\n'
 ```
 
 This script:
 - Scans the external drive's `Users` folder for dotfiles
 - Checks `/Library/LaunchDaemons` and `/Library/LaunchAgents` on the external drive
 - Warns that Time Machine backups cannot be safely cleaned (must be erased)
+
+Usage:
+```
+sudo ./detect_external_mac.sh "/Volumes/MyDrive"
+```
 
 ---
 

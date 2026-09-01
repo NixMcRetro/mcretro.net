@@ -643,8 +643,8 @@ The following detection script (`detect_odyssey_mac.sh`) was developed to identi
 # - Newer Odyssey Stealer / AMOS variants (e.g., xxxblyat build)
 #
 # Known IoCs checked:
-#   ~/Library/Application Support/Install.app
-#   ~/Library/LaunchDaemons/com.xdivcmp.plist
+#   /Library/Application Support/Install.app
+#   /Library/LaunchDaemons/com.xdivcmp.plist
 #   ~/.pwd ~/.phost ~/.bhost ~/.username ~/.botid ~/.lastaction ~/.uninstalled
 #   Domains: charge0x.at, ukdsopas.at
 #   IPs: 192.253.248.181
@@ -664,8 +664,8 @@ set -u
 CLEAN=0
 TARGET_HASH="0ea6167e44bb2d9b111c184df09432729bc69fd509426df83facf07eb6c39100"
 
-INSTALL_APP="~/Library/Application Support/Install.app"
-LAUNCHD_PLIST="~/Library/LaunchDaemons/com.xdivcmp.plist"
+INSTALL_APP="/Library/Application Support/Install.app"
+LAUNCHD_PLIST="/Library/LaunchDaemons/com.xdivcmp.plist"
 
 USER_HOME="${SUDO_USER:+$(eval echo "~$SUDO_USER")}"
 if [ -z "${USER_HOME:-}" ]; then
@@ -997,8 +997,8 @@ say "  5. Strongly consider erase/reinstall macOS instead of trusting cleanup al
 
 | Type | IoC |
 |---|---|
-| Files | `~/Library/Application Support/Install.app` |
-| Files | `~/Library/LaunchDaemons/com.xdivcmp.plist` |
+| Files | `/Library/Application Support/Install.app` |
+| Files | `/Library/LaunchDaemons/com.xdivcmp.plist` |
 | Dotfiles | `~/.pwd`, `~/.phost`, `~/.bhost`, `~/.username`, `~/.botid`, `~/.lastaction`, `~/.uninstalled` |
 | Temp files | `/tmp/lksopo`, `/tmp/lksopo.zip`, `/tmp/socks` |
 | Domains | `charge0x.at`, `ukdsopas.at` |
@@ -1425,3 +1425,6 @@ The sample and all associated IOCs have been submitted to VirusTotal, URLhaus, a
 ---
 
 *The author is an independent security researcher based in Australia. All analysis was conducted on preserved forensic evidence. The views expressed here are the author's own. IOCs and samples are available to verified researchers on request.*
+
+References:
+https://0xlibris.net/posts/odyssey_infostealer/

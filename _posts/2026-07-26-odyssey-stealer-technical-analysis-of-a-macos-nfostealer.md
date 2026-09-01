@@ -470,24 +470,50 @@ ammjlinfekkoockogfhdkgcohjlbhmff
 
 ---
 
-## 5. Attack Timeline
+## 5. Attack Timeline (User: m1 — Initial Infection)
 
-Reconstructed from AdGuard Home DNS logs, macOS kernel network logs, file system timestamps, keychain metadata, decompiled source code, and the recovered `.botid`.
+The following timeline was reconstructed from AdGuard Home DNS logs, macOS kernel network logs, file system timestamps, keychain metadata, decompiled source code, `.zsh_history`, screenshot metadata, and the recovered `.botid` from the `m2` infection (which served as corroborating evidence for the C2 server's continued operation). All times are AEST.
 
-| Time (AEST) | Event | Source |
-|---|---|---|
-| 22:30 | `Patch.app` executed; anti‑analysis check passes | Process logs |
-| 22:39–22:49 | 11 DNS queries to `ukdsopas.at` blocked by AdGuard (domain block failed to stop the malware) | AdGuard Home logs |
-| 22:40:49 | `.IuN79Kxxpn` (2,048 bytes) written; ExecPolicy modified | File system timestamps |
-| 22:50:38 | First TCP connection to `192.253.248.181:80`; bot registration successful | Kernel network logs |
-| 22:50–23:08 | Data collection: keychain, browsers, wallets, Notes, cookies | Decompiled code |
-| 22:50 | `.botid` assigned: `19a9ff38c1b24ffe8e5c54a91af203c8` | Recovered from disk |
-| 22:50 | `.pwd` created (password recovered as `password1`) | File system |
-| 22:57:06 | Infection detected by analyst | Manual observation |
-| 23:08–23:11 | Cleanup attempted by analyst | File system analysis |
-| 23:15:00 | System rebooted | System logs |
+| Time | Phase | Event | Source |
+| :--- | :--- | :--- | :--- |
+| ~22:30 | **Infection** | Microsoft Office LTSC 2024 VL Serializer package executed | BOM receipt |
+| 22:35:03 | **Infection** | Microsoft AutoUpdate runs (coincidental) — creates MAU2.0 directory | Timeline |
+| 22:35:15 | **Infection** | Microsoft Excel frameworks updated (Office update) | Timeline |
+| 22:38:48 | **Infection** | User opens Terminal | Terminal log |
+| 22:39:21 – 22:49:38 | **Infection** | Malware attempts DNS for `ukdsopas.at` → **BLOCKED** by AdGuard Home (11× over ~10 min) | AdGuard logs |
+| 22:39:58 | **Infection** | "Patch" process crashes — CrashReporter log written | CrashReporter |
+| 22:40:23 | **Infection** | Gatekeeper rejects something — `.LastGKReject` written | Timeline |
+| 22:40:34 | **Infection** | Package receipt created — installs `Patch.app` (393 KB) + Office VL Serializer (6.9 MB) to `/Library/Application Support/` | BOM file |
+| 22:40:49 | **Infection** | ExecPolicy modified (Gatekeeper bypass) + `.IuN79Kxxpn` dropped in `/var/root/Library/Application Support/` | Timeline |
+| 22:41:31 | **Infection** | LuLu firewall rules modified (`rules.plist`) | Timeline |
+| ~22:50 | **C2 Active** | Malware falls back to IP `192.253.248.181`; creates dotfiles: `.pwd`, `.phost`, `.bhost`, `.username` | Detection script |
+| 22:50:38 | **C2 Active** | First C2 connection — `joinsystem` → bot registered as `newooble`, **`.botid` assigned** (32 bytes) | Kernel logs; screenshot |
+| 22:50:39 | **C2 Active** | `getActions` polling begins — every 60 seconds | Kernel logs |
+| 22:50–22:58 | **C2 Active** | Active attack window — `doshell`, `repeat`, `enablesocks5` commands available to attacker | Source code |
+| ~22:58 | **C2 Active** | C2 **stops responding to the `m1` bot** (transient issue or attacker action); bot begins 10‑retry countdown (10 × 60s) | Source code logic |
+| 22:57:06 | **Discovery** | User writes `virus?.rtf` — infection confirmed | Timeline |
+| 23:01:01 | **Discovery** | User runs `detect_xdivcmp_mac.sh` (detect‑only; malware PID 12047 still running) | Terminal output |
+| 23:02:10 | **Discovery** | User begins taking screenshots | Timeline |
+| 23:07:23 | **Discovery** | User writes `virus confirmed.txt` | Timeline |
+| 23:08:47 | **Self‑destruct** | Malware self‑destructs — `uninstall()` writes `+` to `~/.uninstalled`, bot exits | Evidence backup; screenshot |
+| 23:11:00 | **Cleanup** | User runs cleanup script (`--clean`) — evidence preserved, LaunchDaemon unloaded, Gatekeeper re‑enabled | Timeline |
+| 23:13:28 | **Investigation** | **Screenshot taken** — shows both `.botid` (32 bytes) and `.uninstalled` (1 byte) still present in `~/` | Screenshot metadata |
+| ~23:15 | **Shutdown** | Mac reboots — shutdown logs, uuidtext flush, system databases saved | Timeline |
+| ~23:18 | **Reboot** | Mac comes back up after reboot | Timeline |
 
-**The C2 server did NOT go offline.** The `.botid` was recovered intact, and subsequent polling confirmed the server was still active and responding to requests. The earlier assumption that the C2 server went offline was incorrect—the self‑destruct routine was not triggered because the server was still reachable.
+---
+
+### 5.1 The C2 Server Remained Operational
+
+The C2 server did **not** go offline. The recovery of an intact `.botid` file (`19a9ff38c1b24ffe8e5c54a91af203c8`) from a second, independent infection (user `m2`) proved that the server had been successfully contacted and had responded to registration requests. Subsequent manual polling of the `/api/v1/bot/actions/` endpoint using that `botID` confirmed that the server was still active and returning valid command payloads long after the `m1` infection had been cleaned.
+
+However, this raises an important question: if the C2 server never went offline, why did the `m1` bot self‑destruct?
+
+The answer lies in the timeline. At 22:58, the C2 server **stopped responding to the `m1` bot specifically**—possibly due to a transient network issue, the attacker selectively disconnecting that bot, or the bot's own polling logic failing to reach the server. The malware entered its 10‑retry countdown (10 × 60 seconds). At 23:08:47, after 10 consecutive polling failures, the `uninstall()` function executed, writing a `+` to `~/.uninstalled` and exiting.
+
+This is confirmed by the screenshot taken at 23:13:28, which clearly shows `.uninstalled` present with a modification time of "Today at 11:08pm" (23:08), alongside `.botid` (still present at that time). The `.uninstalled` file survived the initial cleanup because the version of `detect_xdivcmp_mac.sh` used at 23:11 did **not** include `.uninstalled` in its `DOTFILES` array—it only targeted `.pwd`, `.phost`, `.bhost`, and `.username`. The `.botid` file was manually deleted later during the investigation, sometime between the screenshot and the creation of the forensic clone.
+
+**The self‑destruct was triggered not because the C2 infrastructure collapsed, but because the bot lost contact with the server—either due to network conditions or the attacker's deliberate actions.** The server itself remained operational, as proven by the live `.botid` recovered from the `m2` infection and the successful polling of that endpoint. The `m1` machine stopped communicating only because the bot self‑destructed, not because the attacker's infrastructure had failed.
 
 ---
 
@@ -706,10 +732,9 @@ This script:
 | IP abuse | btcloud.ro / PureVPN | Sent |
 | Malware sample | VirusTotal | Both slices uploaded |
 | C2 URL | URLhaus (abuse.ch) | Added |
-| IP report | AbuseIPDB | Pending |
+| IP report | AbuseIPDB | Added |
 | Fraud alert | Financial institution | Placed |
 | Credit bans | Equifax, Experian, illion | Placed |
-| Identity theft report | ATO | Filed |
 
 All credentials on the affected systems were rotated within 24 hours. Two‑factor authentication was enabled on all supported accounts. The infected machines were erased following forensic preservation.
 

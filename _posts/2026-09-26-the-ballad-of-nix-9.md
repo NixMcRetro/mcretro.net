@@ -5,7 +5,6 @@ date: 2026-09-26T09:00:00.000+10:00
 categories: [ai-generated]
 ---
 
-# The Ballad of Nix-9
 *Being a True Account of One Netrunner's Quest Through the Neon-Lit Dungeon of Corporate Bureaucracy, Armed Only with Wit, Persistence, and the Ancient Statutes of Fair Trade*
 
 ---

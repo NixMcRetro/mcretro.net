@@ -1,0 +1,2522 @@
+<!DOCTYPE html>
+<!-- CYBER LANES VERSION: v22 -->
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Nix's Cyber Lanes - random day bowling league scores, averages and leaderboard.">
+<meta name="keywords" content="bowling,league,scores,averages,1997,cyber,lanes,australia,webring,guestbook,midi,arcade">
+<meta name="author" content="Nix">
+<meta name="generator" content="Notepad">
+<meta name="theme-color" content="#000080">
+<title>Nix's Cyber Lanes - Bowling League Scores</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B3%3C/text%3E%3C/svg%3E">
+<style>
+  /* ============ CYBER LANES '97 ============ */
+  :root{
+    --gray:#c0c0c0; --navy:#000080; --lime:#00e000; --yellow:#ffff00;
+    --hot:#ff2020; --pink:#ff00ff; --cyan:#00e5e5;
+    --oz-green:#00843d; --oz-gold:#ffd700; --oz-red:#c8102e;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:#05051e url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Cpath d='M30 14c4 0 7 3 7 6 0 2-1 4-1 6 0 4 4 8 5 13 1 6-2 15-11 15s-12-9-11-15c1-5 5-9 5-13 0-2-1-4-1-6 0-3 3-6 7-6z' fill='%23191952'/%3E%3Ccircle cx='72' cy='70' r='10' fill='%23141447'/%3E%3Ccircle cx='69' cy='67' r='1.6' fill='%23232366'/%3E%3Ccircle cx='74' cy='66' r='1.6' fill='%23232366'/%3E%3Ccircle cx='72' cy='71' r='1.6' fill='%23232366'/%3E%3C/svg%3E");
+    font:14px/1.55 Verdana, Geneva, sans-serif; color:#000;
+  }
+  ::selection{background:var(--lime);color:#000}
+  a{color:#0000ee}
+  a:visited{color:#7a00b0}
+  a:hover{background:var(--yellow);color:#f00}
+  :focus-visible{outline:3px dotted #ffff00;outline-offset:2px}
+  .mono{font-family:"Courier New",Courier,monospace}
+  .raised{border:3px solid;border-color:#fff #6f6f6f #6f6f6f #fff;background:var(--gray)}
+  .sunken{border:2px solid;border-color:#6f6f6f #fff #fff #6f6f6f}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+  /* --- top ticker --- */
+  .ticker{background:#b00000;border-bottom:3px solid var(--yellow);color:var(--yellow);
+    overflow:hidden;white-space:nowrap;padding:5px 0;
+    font:bold 14px "Comic Sans MS","Comic Sans",cursive;letter-spacing:1px}
+  .ticker-track{display:inline-block;animation:tick 40s linear infinite}
+  .ticker-track span{padding-right:48px}
+  @keyframes tick{to{transform:translateX(-50%)}}
+
+  .page{max-width:880px;margin:16px auto 48px;padding:0 12px}
+
+  /* --- banner --- */
+  .banner{
+    position:relative;text-align:center;padding:26px 12px 20px;color:var(--lime);
+    background:#000 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='100'%3E%3Ccircle cx='12' cy='18' r='1' fill='%23ffffff'/%3E%3Ccircle cx='60' cy='70' r='1.3' fill='%239fd8ff'/%3E%3Ccircle cx='105' cy='30' r='1' fill='%23ffffff'/%3E%3Ccircle cx='35' cy='85' r='1' fill='%23ffd76b'/%3E%3Ccircle cx='125' cy='82' r='1.2' fill='%23ffffff'/%3E%3C/svg%3E");
+    border:4px ridge var(--cyan);
+  }
+  .banner .pin-left,.banner .pin-right{position:absolute;top:18px;font-size:44px;animation:bob 3s ease-in-out infinite alternate}
+  .banner .pin-left{left:22px}
+  .banner .pin-right{right:22px;animation-delay:-1.5s}
+  @keyframes bob{from{transform:translateY(-5px) rotate(-6deg)}to{transform:translateY(5px) rotate(6deg)}}
+  h1{
+    margin:0;font:bold 44px/1.05 "Comic Sans MS","Comic Sans",cursive;
+    background:linear-gradient(180deg,#fff7ae 0%,#ffd23f 38%,#ff7b00 55%,#ff2d78 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:3px 3px 0 rgba(0,229,229,.35);
+    letter-spacing:1px;
+  }
+  .subtitle{margin:8px 0 0;font:bold 14px "Courier New",monospace;color:var(--cyan);letter-spacing:2px}
+  .cursor{animation:blink 1s steps(1) infinite}
+  .updated{margin:10px 0 0;font:bold 13px "Courier New",monospace;color:#9f9fff}
+  .blink{animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .new-badge{display:inline-block;background:var(--hot);color:#fff;border:2px outset #ff9d9d;
+    font:bold 11px Verdana;padding:1px 6px;vertical-align:middle;margin-left:8px}
+  .new-badge.blink{animation:blink 1.37s steps(1) .29s infinite}
+  .quote{margin:12px 0 0;font:italic 13px "Comic Sans MS",cursive;color:#ffd700}
+
+  /* --- JUKEBOX --- */
+  .jukebox{margin:16px auto 0;display:inline-block;text-align:left;
+    background:#111;border:3px inset #666;padding:9px 12px;
+    font:bold 11px "Courier New",monospace;color:#0f0;min-width:360px;
+    box-shadow:2px 2px 0 rgba(0,0,0,.5)}
+  .jb-row{display:flex;align-items:center;gap:8px;margin:4px 0;flex-wrap:wrap}
+  .jb-display{justify-content:space-between;gap:12px}
+  .jb-now{color:#0f0;letter-spacing:1px}
+  .jb-file{color:#0f0;background:#000;padding:1px 8px;border:1px inset #333;letter-spacing:1px;
+    text-shadow:0 0 4px #0f0}
+  .jb-tag{font-size:10px;background:#444;color:#fff;padding:1px 6px;border:1px solid #888;
+    letter-spacing:1px;border-radius:2px;align-self:center;white-space:nowrap}
+  .jb-title{display:block;color:#9f9fff;font-size:11px;font-style:italic;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%}
+  .jb-controls{gap:4px;border-top:1px dashed #333;padding-top:6px;margin-top:6px}
+  .jb-controls .btn90{font-size:11px;padding:2px 8px;background:#2a2a2a;color:#0f0;
+    border-color:#555 #000 #000 #555}
+  .jb-controls .btn90:hover{background:#0f0;color:#000}
+  .jb-controls .btn90:active{border-color:#000 #555 #555 #000}
+  .jb-check{display:inline-flex;align-items:center;gap:3px;color:#0f0;font-size:11px;cursor:pointer;
+    letter-spacing:1px}
+  .jb-check input{margin:0;accent-color:#0f0}
+  .jb-vol{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#0f0;
+    margin-left:auto;letter-spacing:1px}
+  .jb-vol input[type=range]{width:76px;height:14px;accent-color:#0f0;cursor:pointer}
+  .jb-pick{display:flex;align-items:center;gap:6px;font-size:11px;color:#0f0;
+    width:100%;letter-spacing:1px;margin-top:2px}
+  .jb-pick select{flex:1;font:bold 11px "Courier New",monospace;background:#000;color:#0f0;
+    border:1px inset #333;padding:2px 4px;cursor:pointer}
+  .jb-pick select:focus-visible{outline:2px dotted #ff0}
+
+  /* --- arcade theme on the jukebox --- */
+  .jukebox.arcade{border-color:#ff3000;box-shadow:0 0 14px rgba(255,48,0,.55),2px 2px 0 rgba(0,0,0,.5)}
+  .jukebox.arcade .jb-file{color:#ff5000;text-shadow:0 0 5px #ff3000}
+  .jukebox.arcade .jb-tag{background:#ff3000;border-color:#ff9d00;color:#fff;
+    text-shadow:0 0 3px #fff;animation:blink .9s steps(1) infinite}
+
+  .eq{display:inline-flex;align-items:flex-end;gap:2px;height:14px}
+  .eq i{display:block;width:3px;background:var(--lime);height:3px;box-shadow:0 0 4px #0f0}
+  .eq.on i{animation:eq .5s ease-in-out infinite alternate}
+  .eq i:nth-child(2){animation-delay:.1s}
+  .eq i:nth-child(3){animation-delay:.2s}
+  .eq i:nth-child(4){animation-delay:.3s}
+  .eq i:nth-child(5){animation-delay:.15s}
+  @keyframes eq{from{height:3px}to{height:14px}}
+
+  /* --- construction bar + rainbow + lane divider --- */
+  .construction{height:20px;margin:10px 0;border:2px solid #000;
+    background:repeating-linear-gradient(45deg,#ffd700 0 16px,#111 16px 32px);
+    animation:crawl 1.2s linear infinite}
+  @keyframes crawl{to{background-position:45px 0}}
+  .rainbow{height:8px;margin:14px 0;border:2px solid #000;
+    background:linear-gradient(90deg,#f00,#ff8000,#ff0,#0f0,#0ff,#00f,#f0f,#f00);
+    background-size:200% 100%;animation:rainbow 5s linear infinite}
+  @keyframes rainbow{to{background-position:200% 0}}
+  .lane{position:relative;height:30px;overflow:hidden;margin:22px 0;
+    border:2px solid #4a2c06;border-radius:3px;
+    background:repeating-linear-gradient(90deg,#c07f35 0 42px,#a5691f 42px 46px)}
+  .lane::before,.lane::after{content:"▲";position:absolute;top:6px;color:rgba(255,255,255,.55);font-size:13px}
+  .lane::before{left:22%} .lane::after{right:22%}
+  .ball{position:absolute;top:4px;left:-30px;width:22px;height:22px;border-radius:50%;
+    background:
+      radial-gradient(circle at 35% 30%, rgba(255,255,255,.85) 0 1.6px, transparent 2.4px),
+      radial-gradient(circle at 48% 26%, rgba(255,255,255,.85) 0 1.6px, transparent 2.4px),
+      radial-gradient(circle at 42% 40%, rgba(255,255,255,.85) 0 1.6px, transparent 2.4px),
+      radial-gradient(circle at 32% 30%, #a86bff, #4b17a0 55%, #17033a);
+    animation:roll 9s linear infinite}
+  @keyframes roll{to{left:104%;transform:rotate(980deg)}}
+
+  /* --- section headers --- */
+  .sec-head{margin:0 0 12px;padding:7px 12px;background:var(--navy);color:var(--lime);
+    font:bold 18px "Comic Sans MS","Comic Sans",cursive;border:3px outset #9f9fff;
+    display:flex;align-items:center;gap:10px}
+  .sec-head small{margin-left:auto;font:bold 11px Verdana;color:#9f9fff;letter-spacing:1px}
+  section{margin-top:30px}
+
+  /* --- jump nav --- */
+  .jumpnav{text-align:center;margin:14px 0;font:bold 14px "Courier New",monospace;color:#9f9fff}
+  .jumpnav a{margin:0 6px;color:var(--cyan)}
+  .jumpnav a:visited{color:var(--pink)}
+  .jumpnav a:hover{background:var(--yellow);color:#f00}
+
+  /* --- buttons --- */
+  .btn90{font:bold 13px Verdana;padding:4px 12px;background:var(--gray);color:#000;
+    border:3px solid;border-color:#fff #4a4a4a #4a4a4a #fff;cursor:pointer}
+  .btn90:active{border-color:#4a4a4a #fff #fff #4a4a4a;padding:5px 11px 3px 13px}
+  .btn90:hover{background:var(--yellow)}
+
+  /* --- tables --- */
+  table.score{width:100%;border-collapse:collapse;background:#fffef0;border:3px solid var(--navy);font:13px "Courier New",monospace}
+  table.score th{background:var(--navy);color:#fff;padding:6px 8px;font:bold 13px Verdana;letter-spacing:1px;border:1px solid #000}
+  table.score td{padding:5px 8px;border:1px solid #9a9a4a;text-align:right}
+  table.score td.name{text-align:left;font-weight:bold}
+  table.score tbody tr:nth-child(odd) td{background:#f7ffd6}
+  table.score tbody tr{animation:rise .45s both;animation-delay:calc(var(--i)*70ms)}
+  table.score tbody tr:hover td{background:var(--navy);color:var(--yellow)}
+  @keyframes rise{from{opacity:0;transform:translateY(7px)}}
+  tr.champ td{background:linear-gradient(120deg,#ffd700 40%,#fff6b0 50%,#ffd700 60%) !important;
+    background-size:200% 100% !important;color:#000;font-weight:bold;
+    animation:rise .45s both,sheen 3s linear infinite}
+  @keyframes sheen{to{background-position:-200% 0}}
+  .hot{color:var(--hot);font-weight:bold}
+  .cold{color:#0055cc;font-weight:bold}
+  .best{color:var(--hot);font-weight:bold}
+  .miss{color:#999}
+  .table-note{font:12px Verdana;color:#d8d8f0;margin:6px 2px 0}
+
+  table.score th[data-sort]{cursor:pointer;user-select:none}
+  table.score th[data-sort]:hover{background:#3a3ac0;color:var(--yellow)}
+  table.score th[aria-sort="ascending"],table.score th[aria-sort="descending"]{background:#c00000;color:var(--yellow)}
+
+  /* --- average-o-meter --- */
+  .bar-row{display:flex;align-items:center;gap:10px;margin:8px 0}
+  .bar-name{width:104px;text-align:right;font:bold 13px "Courier New",monospace;color:#fff;
+    background:var(--navy);padding:3px 6px;border:2px outset #9f9fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .bar-track{flex:1;background:#fff;border:2px inset #888;height:22px;padding:2px}
+  .bar{display:block;height:100%;width:0;background:repeating-linear-gradient(90deg,#00b400 0 8px,#00e878 8px 16px);
+      border-right:2px solid #003300;transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+  .bar-val{width:44px;font:bold 14px "Courier New",monospace;color:var(--lime);text-shadow:1px 1px 0 #000}
+
+  /* --- stat chips --- */
+  .chips{display:flex;flex-wrap:wrap;gap:12px}
+  .chip{flex:1;min-width:150px;text-align:center;padding:10px 8px}
+  .chip b{display:block;font:bold 30px "Courier New",monospace;color:var(--hot)}
+  .chip span{font:bold 11px Verdana;letter-spacing:1px;text-transform:uppercase;color:#222}
+  .chip em{display:block;font:11px Verdana;color:#444;font-style:normal;min-height:14px}
+
+  /* --- bowler cards --- */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:16px}
+  .card{animation:rise .5s both;animation-delay:calc(var(--i)*90ms)}
+  .card-head{padding:7px 10px;border-bottom:3px solid #555;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;
+    font:bold 16px "Comic Sans MS","Comic Sans",cursive}
+  .card-head .meta{font:bold 12px "Courier New",monospace}
+  .card:nth-child(5n+1) .card-head{background:var(--cyan)}
+  .card:nth-child(5n+2) .card-head{background:#7cfc00}
+  .card:nth-child(5n+3) .card-head{background:#ff9de2}
+  .card:nth-child(5n+4) .card-head{background:#ffe14d}
+  .card:nth-child(5n+5) .card-head{background:#d8d8d8}
+  .card-body{padding:10px}
+  .card-body table.score{font-size:12px}
+  .card-body table.score th{font-size:11px;padding:4px}
+  .card-body table.score td{padding:3px 6px}
+  .card-body tfoot td{background:#e8e8d8;font-weight:bold;border-top:2px solid var(--navy)}
+
+  /* --- notes --- */
+  .notes{padding:12px 16px;font-size:13px}
+  .notes h3{margin:0 0 8px;font:bold 15px "Comic Sans MS",cursive;color:var(--navy)}
+  .notes code{background:#fff;border:1px solid #888;padding:0 4px;font-family:"Courier New",monospace}
+  .notes li{margin:5px 0}
+
+  /* --- guestbook --- */
+  .gb-form{display:grid;gap:8px;margin-bottom:14px}
+  .gb-form label{font:bold 12px Verdana;display:grid;gap:3px}
+  .gb-form input,.gb-form textarea{font:13px "Courier New",monospace;padding:4px 6px;border:2px inset #888;background:#fffef0;width:100%}
+  .gb-form textarea{resize:vertical;min-height:56px}
+  .gb-list{display:grid;gap:10px}
+  .gb-entry{padding:8px 12px;font-size:13px}
+  .gb-entry .who{font:bold 13px "Comic Sans MS",cursive;color:var(--navy)}
+  .gb-entry .when{font:11px Verdana;color:#555;float:right}
+  .gb-entry p{margin:4px 0 0}
+  .gb-empty{color:#333;font-style:italic}
+
+
+  /* --- under construction notice --- */
+  .construction-note{background:#ffff00;color:#000;border:3px dashed #ff0000;
+    margin:6px 0;padding:5px 8px;text-align:center;
+    font:bold 13px "Comic Sans MS","Comic Sans",cursive;letter-spacing:.5px}
+  .construction-warning{display:block;margin:0 0 4px;font-size:15px}
+
+  /* --- footer --- */
+  footer{margin-top:34px;text-align:center}
+  .visitorbox{display:inline-block;padding:10px 20px;margin-bottom:14px}
+  .counter{display:inline-flex;gap:2px;margin-left:8px;vertical-align:middle}
+  .counter span{background:#000;color:var(--lime);border:2px inset #777;
+    font:bold 18px "Courier New",monospace;padding:2px 5px}
+  .badges{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:14px 0}
+  .badge88{width:88px;height:31px;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
+    font:bold 10px Verdana;line-height:1.1;border:2px outset #ddd;text-decoration:none !important;cursor:pointer}
+  .badge88:hover{filter:invert(1)}
+  .b1{background:#00007c;color:#fff}
+  .b2{background:var(--gray);color:#000}
+  .b3{background:#003300;color:var(--lime)}
+  .b4{background:#5c005c;color:#ffd700}
+  .b5{background:var(--oz-green);color:var(--oz-gold)}
+  .b6{background:#000;color:var(--hot)}
+  .b7{background:var(--oz-red);color:#fff}
+  .b8{background:var(--oz-gold);color:#000}
+  .webring{font:bold 13px "Courier New",monospace;background:#000;color:var(--cyan);
+    display:inline-block;padding:6px 14px;border:3px ridge var(--cyan);margin-bottom:12px}
+  .webring a{color:var(--yellow);text-decoration:underline;cursor:pointer}
+  .fineprint{font:11px Verdana;color:#a8a8d8;margin-top:10px}
+  .fineprint a{color:#aaaaff}
+
+  @media (max-width:600px){
+    h1{font-size:30px}
+    .banner .pin-left,.banner .pin-right{display:none}
+    .bar-name{width:78px;font-size:11px}
+    .sec-head{font-size:15px;flex-wrap:wrap}
+    .sec-head small{width:100%;margin-left:0}
+    .jukebox{min-width:0;width:100%;max-width:420px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.001s !important;animation-iteration-count:1 !important;transition:none !important}
+  }
+</style>
+
+<style id="v22-player-music-leaderboard-overrides">
+/* ============================================================
+   CYBER LANES v22: GUTTERBYTE COMPLETE REWRITE
+   ============================================================ */
+html{scroll-behavior:auto!important}
+body{background-color:#071536!important;background-image:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27280%27 height=%27280%27 viewBox=%270 0 280 280%27%3E%3Crect width=%27280%27 height=%27280%27 fill=%27%23071536%27/%3E%3Cg opacity=%27.68%27%3E%3Cg transform=%27translate(28 34) rotate(-18 24 43)%27%3E%3Cpath d=%27M24 0c7 0 12 5 12 12 0 6-4 11-4 17 0 7 9 19 10 31 1 13-6 26-18 26S5 73 6 60c1-12 10-24 10-31 0-6-4-11-4-17C12 5 17 0 24 0z%27 fill=%27%23fffdf2%27 stroke=%27%23bfc7d9%27 stroke-width=%272%27/%3E%3Cpath d=%27M14 20h20M15 25h18%27 stroke=%27%23ee3040%27 stroke-width=%273%27/%3E%3C/g%3E%3Cg transform=%27translate(198 150) rotate(19 24 43)%27%3E%3Cpath d=%27M24 0c7 0 12 5 12 12 0 6-4 11-4 17 0 7 9 19 10 31 1 13-6 26-18 26S5 73 6 60c1-12 10-24 10-31 0-6-4-11-4-17C12 5 17 0 24 0z%27 fill=%27%23fffdf2%27 stroke=%27%23bfc7d9%27 stroke-width=%272%27/%3E%3Cpath d=%27M14 20h20M15 25h18%27 stroke=%27%23ee3040%27 stroke-width=%273%27/%3E%3C/g%3E%3Cg transform=%27translate(164 36)%27%3E%3Ccircle cx=%2730%27 cy=%2730%27 r=%2728%27 fill=%27%2300dfff%27 stroke=%27%23ffffff%27 stroke-width=%273%27/%3E%3Ccircle cx=%2721%27 cy=%2720%27 r=%274%27 fill=%27%23071936%27/%3E%3Ccircle cx=%2732%27 cy=%2718%27 r=%274%27 fill=%27%23071936%27/%3E%3Ccircle cx=%2727%27 cy=%2730%27 r=%274%27 fill=%27%23071936%27/%3E%3C/g%3E%3Cg transform=%27translate(58 186)%27%3E%3Ccircle cx=%2727%27 cy=%2727%27 r=%2725%27 fill=%27%23ff4dc4%27 stroke=%27%23ffd6f5%27 stroke-width=%273%27/%3E%3Ccircle cx=%2719%27 cy=%2718%27 r=%273.6%27 fill=%27%23071936%27/%3E%3Ccircle cx=%2729%27 cy=%2717%27 r=%273.6%27 fill=%27%23071936%27/%3E%3Ccircle cx=%2725%27 cy=%2727%27 r=%273.6%27 fill=%27%23071936%27/%3E%3C/g%3E%3C/g%3E%3Cg opacity=%27.18%27 fill=%27%23ffd84d%27%3E%3Ccircle cx=%27135%27 cy=%27130%27 r=%273%27/%3E%3Ccircle cx=%27250%27 cy=%27102%27 r=%272.5%27/%3E%3Ccircle cx=%2718%27 cy=%27228%27 r=%272%27/%3E%3C/g%3E%3C/svg%3E")!important;background-repeat:repeat!important;background-attachment:scroll!important;font:13px/1.35 "Comic Sans MS","Comic Sans",cursive!important;color:#000!important}
+.page{width:780px!important;max-width:calc(100% - 12px)!important;margin:8px auto 34px!important;padding:10px!important;background:rgba(0,0,18,.58)!important;box-shadow:0 0 0 2px rgba(0,0,0,.35),0 0 26px rgba(0,0,0,.55)!important}
+a{color:#0000ee!important;text-decoration:underline!important} a:visited{color:#551a8b!important}
+a:hover{background:#ffff00!important;color:#ff0000!important}
+.ticker{padding:2px 0!important;border:2px outset #ff0!important;background:#800000!important;font:bold 12px "Comic Sans MS","Comic Sans",cursive!important}
+.banner{padding:10px 6px 8px!important;border:5px ridge #00ffff!important;background-color:#000!important;text-align:center!important}
+.banner .pin-left,.banner .pin-right{animation:none!important;font-size:34px!important;top:8px!important}
+h1{font:900 38px/1 "Arial Black",Impact,sans-serif!important;color:#ffff00!important;background:none!important;-webkit-background-clip:initial!important;background-clip:initial!important;text-shadow:3px 3px #ff0000,-3px -3px #0000ff!important;letter-spacing:0!important}
+.subtitle{font:bold 16px/1.35 "Comic Sans MS","Comic Sans",cursive!important;color:#00ff00!important;letter-spacing:0!important;margin-top:10px!important}
+.updated{font:bold 14px/1.3 "Comic Sans MS","Comic Sans",cursive!important;color:#c0c0c0!important;margin-top:6px!important}
+.quote{font:bold italic 12px "Comic Sans MS","Comic Sans",cursive!important;color:#ffff00!important}
+.jukebox,.jukebox.arcade{width:700px!important;max-width:96%!important;min-width:0!important;margin:14px auto 4px!important;padding:8px!important;background:linear-gradient(180deg,#0a1f7a 0%,#07175a 55%,#040a2e 100%)!important;border:4px ridge #d8d8d8!important;box-shadow:4px 4px 0 rgba(0,0,0,.45)!important;color:#00ff9c!important;font:11px "Courier New",monospace!important;position:relative!important}
+.jb-file,.jukebox.arcade .jb-file{background:#000!important;color:#00ff00!important;text-shadow:none!important;border:2px inset #808080!important;font:bold 12px "Courier New",monospace!important;padding:2px 8px!important;min-width:138px!important;text-align:center!important}
+.jb-tag,.jukebox.arcade .jb-tag{border-radius:0!important;animation:none!important;text-shadow:none!important;background:#c0c0c0!important;color:#000!important;border:2px outset #fff!important;font:bold 10px "Comic Sans MS","Comic Sans",cursive!important;padding:2px 6px!important}
+.jb-title{display:block!important;margin-top:7px!important;padding:5px 7px!important;background:#000!important;border:2px inset #808080!important;color:#ffff00!important;font:bold 11px "Comic Sans MS","Comic Sans",cursive!important}.eq{background:#000!important;border:2px inset #666!important;padding:2px 5px!important}.eq i{box-shadow:none!important}.jb-controls .btn90{background:#c0c0c0!important;color:#000!important;font-size:10px!important;min-width:70px!important}
+.jb-controls .btn90:hover{background:#ffff00!important;color:#000!important}
+.jukebox::before{content:"MODULE PLAYER v22";display:block;margin:0 0 7px;padding:2px 6px;background:#c0c0c0;color:#000;border:2px outset #fff;font:bold 11px "Comic Sans MS","Comic Sans",cursive!important;letter-spacing:1px!important;text-align:center!important}
+.jb-layout{display:grid!important;grid-template-columns:minmax(0,1fr) 205px!important;gap:8px!important;align-items:stretch!important}
+.jb-main{min-width:0!important}
+.jb-playlist-wrap{min-width:0!important;background:#050505!important;border:2px inset #808080!important;padding:4px!important;text-align:left!important}
+.jb-playlist-head{padding:3px 5px!important;margin-bottom:4px!important;background:#c0c0c0!important;color:#000!important;border:1px outset #fff!important;font:bold 9px "Courier New",monospace!important;white-space:nowrap!important;overflow:hidden!important}
+.jb-playlist{height:138px!important;overflow-y:auto!important;overflow-x:hidden!important;background:#000!important;border:1px solid #003c20!important;color:#00ff88!important;font:10px/1.25 "Courier New",monospace!important;scrollbar-color:#808080 #000!important}
+.jb-pl-row{display:grid!important;grid-template-columns:20px minmax(0,1fr)!important;gap:3px!important;padding:3px 4px!important;border-bottom:1px dotted #164529!important;cursor:default!important;user-select:none!important}
+.jb-pl-row:hover{background:#001f12!important;color:#ffff00!important}
+.jb-pl-row.selected{outline:1px dotted #ffff00!important;outline-offset:-2px!important;background:#172000!important;color:#ffff00!important}
+.jb-pl-row.current{background:#00351d!important;color:#fff!important;font-weight:bold!important}
+.jb-pl-row.current::before{content:">";color:#00ff00!important}
+.jb-pl-row:not(.current)::before{content:attr(data-num);color:#6fbf8f!important}
+.jb-pl-name{min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}
+.jb-pl-kind{display:block!important;color:#8f8fff!important;font-size:9px!important;font-weight:normal!important}
+.jb-fallback-pick{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.jb-row{gap:10px!important;margin:6px 0!important}
+.jb-display{align-items:center!important;background:#10184d!important;border:2px inset #808080!important;padding:6px!important}
+.jb-now{display:inline-block!important;padding:2px 6px!important;background:#000!important;border:1px solid #008a43!important;color:#00ff9c!important;font:bold 11px "Courier New",monospace!important}
+.jb-controls{gap:7px!important;background:#10184d!important;border-top:2px groove #c0c0c0!important;padding:8px 4px 2px!important;margin-top:8px!important}
+.jb-check,.jb-vol{display:inline-flex!important;align-items:center!important;gap:4px!important;background:#000!important;border:1px solid #4f7f6a!important;color:#9fffd2!important;padding:2px 6px!important}
+.jb-pick{background:#10184d!important;border:2px inset #808080!important;padding:6px!important}
+.jb-pick select{background:#000!important;color:#00ff9c!important;border:2px inset #808080!important;padding:3px 5px!important}
+.jb-pick label{font:bold 11px "Comic Sans MS","Comic Sans",cursive!important;color:#ffff00!important}
+input[type="range"]{width:110px!important}.construction{animation:none!important;height:14px!important;margin:5px 0!important}
+.jumpnav{margin:20px 0 10px!important;padding:7px 5px!important;background:#c0c0c0!important;border:2px outset #fff!important;font:bold 14px "Comic Sans MS","Comic Sans",cursive!important;color:#000!important;line-height:1.8!important}
+.jumpnav a{margin:0 6px!important;color:#0000ee!important;white-space:nowrap!important}
+.construction-note{margin:5px 0!important;padding:4px!important;font-size:12px!important;border:3px dashed #f00!important}
+section{margin:22px 0!important}.sec-head{display:block!important;margin:0!important;padding:3px 5px!important;background:#000080!important;color:#fff!important;border:2px outset #c0c0c0!important;font:bold 15px "Comic Sans MS","Comic Sans",cursive!important;letter-spacing:0!important}
+.sec-head small{float:right!important;font:10px "Comic Sans MS","Comic Sans",cursive!important;color:#ffff00!important;letter-spacing:0!important}
+.raised{border:3px outset #c0c0c0!important;background:#c0c0c0!important}.sunken{border:2px inset #c0c0c0!important}
+.btn90{border:2px outset #fff!important;border-radius:0!important;background:#c0c0c0!important;font:bold 11px "Comic Sans MS","Comic Sans",cursive!important;padding:2px 6px!important}
+table.score{border:2px solid #000!important;background:#fff!important;font:12px "Courier New",monospace!important}table.score th{padding:3px!important;background:#000080!important;font:bold 11px "Comic Sans MS","Comic Sans",cursive!important;letter-spacing:0!important}table.score td{padding:2px 4px!important;border-color:#808080!important}table.score tbody tr{animation:none!important}tr.champ td{background:#ffff00!important;color:#000!important}
+#lb-table th{padding:6px 5px!important;font-size:12px!important}
+#lb-table td{padding:7px 6px!important;line-height:1.35!important}
+#lb-table td.name{font:bold 14px/1.35 "Comic Sans MS","Comic Sans",cursive!important;letter-spacing:.2px!important}
+.table-note{margin:3px 0!important;font-size:10px!important}.lane{margin:7px 0!important;height:18px!important;border-radius:0!important}.lane .ball{display:block!important;top:2px!important;width:12px!important;height:12px!important}
+#bars{padding:6px!important;background:#000!important}.bar{transition:none!important;background:#00ff00!important}.bar-val{text-shadow:none!important;font-size:12px!important}
+.cards{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}.card{animation:none!important;margin:0!important;min-width:0!important}.card-head{padding:3px 5px!important;border-bottom:2px solid #000!important}.card-body{padding:4px!important}
+.notes{padding:6px 8px!important;font-size:12px!important}.notes h3{font:bold 14px "Comic Sans MS","Comic Sans",cursive!important;color:#000080!important}.notes code{padding:0 2px!important}
+.gb-form{padding:6px!important}.gb-form input,.gb-form textarea{border:2px inset #c0c0c0!important;border-radius:0!important;font:12px "Courier New",monospace!important}
+.rainbow{animation:none!important;height:5px!important;margin:6px 0!important;background:linear-gradient(90deg,#f00 0 14%,#ff0 14% 28%,#0f0 28% 42%,#0ff 42% 56%,#00f 56% 70%,#f0f 70% 84%,#f00 84%)!important}
+.badges{gap:3px!important}.badge88{transform:none!important;transition:none!important}.badge88:hover{transform:none!important}
+/* --- v22 fake animated GIF energy --- */
+@keyframes gifWobble{0%,100%{transform:translate(0,0) rotate(-5deg)}50%{transform:translate(0,3px) rotate(5deg)}}
+@keyframes gifFlash{0%,49%{visibility:visible}50%,100%{visibility:hidden}}
+@keyframes gifInvert{0%,49%{filter:none}50%,100%{filter:invert(1)}}
+@keyframes gifStripe{to{background-position:24px 0}}
+@keyframes pumpkinHop{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.banner .pin-left,.banner .pin-right{display:block!important;animation:gifWobble .75s steps(2,end) infinite!important}
+.banner .pin-right{animation-delay:-.35s!important}
+.gif-strip{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;margin:7px 0 3px!important}
+.gif88{width:88px;height:31px;display:inline-flex;align-items:center;justify-content:center;border:2px outset #ddd;background:#000;color:#0f0;font:bold 9px/1.05 Verdana,Arial,sans-serif;text-align:center;overflow:hidden}
+.gif88.bowlgif{color:#ffff00;background:#000080;animation:gifInvert 1.1s steps(2,end) infinite}
+.gif88.flamegif{color:#ff0;background:#b00000;animation:gifFlash .8s steps(2,end) infinite}
+.gif88.spookgif{color:#00ff66;background:#200020;animation:gifInvert 1.4s steps(2,end) infinite}
+.badge88.b4{animation:gifFlash 1.35s steps(2,end) infinite}
+.badge88.b6{background:repeating-linear-gradient(45deg,#000 0 8px,#ffd700 8px 16px)!important;color:#ff0000!important;text-shadow:1px 1px #ffff00;animation:gifStripe .55s steps(2,end) infinite}
+.badge88.b1{animation:gifInvert 1.8s steps(2,end) infinite}
+.visitorbox.halloween-counter{background:#120012!important;color:#ff8c00!important;border:4px ridge #ff8c00!important;box-shadow:3px 3px 0 #000!important;padding:8px 14px!important}
+.halloween-counter .haunt-label{display:block;font:bold 13px "Comic Sans MS","Comic Sans",cursive;color:#ff8c00;text-shadow:1px 1px #5b006e;margin-bottom:5px}
+.halloween-counter .pumpkin{display:inline-block;font-size:20px;animation:pumpkinHop .7s steps(2,end) infinite;vertical-align:middle;margin:0 5px}
+.halloween-counter .pumpkin:last-child{animation-delay:-.35s}
+.halloween-counter .counter{margin:0 4px!important}
+.halloween-counter .counter span{background:#000!important;color:#ff8c00!important;border:2px inset #6b3a00!important;text-shadow:1px 1px #5b006e!important}
+/* --- v22 photo album --- */
+.photo-viewer{padding:8px!important;text-align:center!important}
+.photo-frame{width:min(100%,520px)!important;aspect-ratio:4/3!important;margin:0 auto!important;background:#000!important;overflow:hidden!important;position:relative!important}
+.photo-frame img{display:none;width:100%!important;height:100%!important;object-fit:contain!important;background:#000!important}
+.photo-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:18px;color:#00ff00;background:#000;font:bold 13px/1.6 "Courier New",monospace;text-align:center}
+.photo-controls{margin-top:7px;display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap}
+.photo-status{min-width:130px;font:bold 11px "Courier New",monospace;color:#000080}
+.photo-caption{margin:5px 0 0;font:11px "Comic Sans MS","Comic Sans",cursive}
+@media(max-width:680px){.jb-layout{grid-template-columns:1fr!important}.jb-playlist{height:116px!important}.jukebox,.jukebox.arcade{max-width:98%!important}}
+@media(max-width:780px){.page{width:auto!important;margin:4px 6px 20px!important;padding:6px!important}h1{font-size:28px!important}.banner .pin-left,.banner .pin-right{display:none!important}.sec-head small{float:none!important;display:block!important}.jukebox{width:auto!important}}
+@media(max-width:620px){.cards{grid-template-columns:1fr!important}.jumpnav{font-size:13px!important}.jumpnav a{margin:0 3px!important}}
+</style>
+
+</head>
+<body>
+
+<div class="ticker" aria-label="News ticker">
+  <div class="ticker-track"><span id="tick1"></span><span id="tick2" aria-hidden="true"></span></div>
+</div>
+
+<div class="page">
+
+  <header class="banner">
+    <span class="pin-left" aria-hidden="true">🎳</span><span class="pin-right" aria-hidden="true">🎳</span>
+    <h1>NIX'S CYBER LANES</h1>
+    <p class="subtitle">DAY LEAGUE · EST. 2025 · DARLING HARBOUR, SYDNEY</p>
+    <p class="updated mono" id="updated-line">LAST UPDATED: --</p>
+    <p class="quote" id="quote"></p>
+
+    <div class="jukebox" id="jukebox" aria-label="module jukebox">
+      <div class="jb-layout">
+        <div class="jb-main">
+          <div class="jb-row jb-display">
+            <span class="jb-now">MOD PLAYER ::</span>
+            <span class="jb-file" id="jb-file">CYBERLANES.MID</span>
+            <span class="jb-tag" id="jb-tag">CLASSIC</span>
+            <span class="eq" id="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          </div>
+          <span class="jb-title" id="jb-title">The Original: Cheesy Pentatonic Anthem</span>
+
+          <div class="jb-row jb-controls">
+            <button class="btn90" id="jb-prev" type="button" title="Previous track">◀◀</button>
+            <button class="btn90" id="midi-btn" type="button" aria-pressed="false">▶ PLAY</button>
+            <button class="btn90" id="jb-next" type="button" title="Next track">▶▶</button>
+            <label class="jb-check"><input type="checkbox" id="jb-loop" checked> LOOP</label>
+            <label class="jb-check"><input type="checkbox" id="jb-shuffle"> SHUFFLE</label>
+            <label class="jb-vol">VOL
+              <input type="range" id="jb-vol" min="0" max="100" value="70" aria-label="Volume">
+            </label>
+          </div>
+
+          <div class="jb-row jb-pick jb-fallback-pick">
+            <label for="jb-select" style="white-space:nowrap">MODULE:</label>
+            <select id="jb-select" aria-label="Select a track"></select>
+          </div>
+        </div>
+
+        <aside class="jb-playlist-wrap" aria-label="Module playlist">
+          <div class="jb-playlist-head">PLAYLIST // DOUBLE-CLICK TO PLAY</div>
+          <div class="jb-playlist" id="jb-playlist" role="listbox" aria-label="Upcoming songs"></div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <div class="construction" role="presentation" aria-hidden="true"></div>
+  <div class="construction-note" role="note">
+    <span class="construction-warning blink">⚠ UNDER CONSTRUCTION ⚠</span>
+    <span>Don't mind the broken links and questionable HTML</span>
+  </div>
+  <div class="gif-strip" aria-hidden="true">
+    <span class="gif88 bowlgif">🎳 BOWL<br>THE WEB!</span>
+    <span class="gif88 flamegif">🔥 HOT<br>HOMEPAGE 🔥</span>
+    <span class="gif88 spookgif">☠ SPOOKY<br>FOREVER ☠</span>
+  </div>
+
+  <nav class="jumpnav" aria-label="Jump to section">
+    [ <a href="#leaderboard">LEADERBOARD</a> ]
+    [ <a href="#averages">AVERAGES</a> ]
+    [ <a href="#cards">BOWLER CARDS</a> ]
+    [ <a href="#photos">PHOTOS</a> ]
+    [ <a href="#guestbook" class="js-guest">GUESTBOOK</a> ]
+  </nav>
+
+  <section id="leaderboard">
+    <h2 class="sec-head">🏆 LEADERBOARD <small>CLICK A COLUMN TO SORT</small></h2>
+    <table class="score" id="lb-table">
+      <caption class="sr-only">League leaderboard, sortable by column</caption>
+      <thead>
+        <tr>
+          <th data-sort="rank" scope="col">#</th>
+          <th data-sort="name" scope="col" style="text-align:left">BOWLER</th>
+          <th data-sort="gp" scope="col">GP</th>
+          <th data-sort="total" scope="col">PINS</th>
+          <th data-sort="avg" scope="col">AVG</th>
+          <th data-sort="high" scope="col">HIGH</th>
+          <th data-sort="form" scope="col">FORM</th>
+        </tr>
+      </thead>
+      <tbody id="lb-body"></tbody>
+    </table>
+    <p class="table-note">AVG = total pins ÷ games bowled (rounded down). FORM compares the last 3 games with season average. <span class="miss">--</span> = sat out a game. The 🏆 marks the season-average leader, whatever the sort.</p>
+  </section>
+
+  <div class="lane" role="presentation" aria-hidden="true"><div class="ball"></div></div>
+
+  <section id="averages">
+    <h2 class="sec-head">📊 THE AVERAGE-O-METER</h2>
+    <div class="raised" style="padding:14px;background:#101030" id="bars"></div>
+    <div class="chips" style="margin-top:14px" id="chips"></div>
+  </section>
+
+  <section id="cards">
+    <h2 class="sec-head">📇 BOWLER CARDS <small>GAME BY GAME</small></h2>
+    <div class="cards" id="cards-grid"></div>
+  </section>
+
+  <section id="photos">
+    <h2 class="sec-head">📷 PHOTO ALBUM</h2>
+    <div class="photo-viewer raised">
+      <div class="photo-frame sunken">
+        <img id="photo-img" alt="Bowling league photo">
+        <div class="photo-empty" id="photo-empty">NO PHOTOS FOUND<br>ADD 01.JPG, 02.JPG, ETC. TO /photos</div>
+      </div>
+      <div class="photo-controls">
+        <button class="btn90" id="photo-prev" type="button">◀ PREV</button>
+        <span class="photo-status" id="photo-status">PHOTO 0 OF 0</span>
+        <button class="btn90" id="photo-next" type="button">NEXT ▶</button>
+        <button class="btn90" id="photo-toggle" type="button" aria-pressed="false">❚❚ PAUSE</button>
+      </div>
+      <p class="photo-caption" id="photo-caption">Automatic slideshow. Photos are loaded from the /photos folder next to index.html.</p>
+    </div>
+  </section>
+
+  <div class="lane" role="presentation" aria-hidden="true"><div class="ball" style="animation-delay:-4.5s"></div></div>
+
+  <section id="guestbook">
+    <h2 class="sec-head">📖 GUESTBOOK <small>SIGN IT!</small></h2>
+    <form class="gb-form raised notes" id="gb-form" autocomplete="off">
+      <label>YOUR NAME (or handle)
+        <input name="name" maxlength="24" required placeholder="BowlMaster99">
+      </label>
+      <label>YOUR HOMEPAGE (optional)
+        <input name="homepage" maxlength="120" placeholder="http://">
+      </label>
+      <label>MESSAGE
+        <textarea name="message" maxlength="240" required placeholder="Nice site!! Check out mine!!"></textarea>
+      </label>
+      <div><button class="btn90" type="submit">SIGN THE GUESTBOOK!</button></div>
+    </form>
+    <div class="gb-list" id="gb-list"></div>
+  </section>
+
+  <div class="rainbow" role="presentation" aria-hidden="true"></div>
+
+  <footer id="guestbook-footer">
+    <div class="visitorbox raised halloween-counter">
+      <span class="haunt-label">HALLOWEEN VISITOR COUNTER</span>
+      <span class="pumpkin" aria-hidden="true">🎃</span>
+      <span class="counter" id="counter" aria-label="Halloween visitor counter"></span>
+      <span class="pumpkin" aria-hidden="true">🎃</span>
+    </div>
+    <div class="badges">
+      <span class="badge88 b1" title="The only browser that mattered">NETSCAPE<br>NOW! 2.0</span>
+      <span class="badge88 b2" title="No WYSIWYG was harmed">MADE WITH<br>NOTEPAD</span>
+      <span class="badge88 b3" title="And proud of it">BEST AT<br>800 × 600</span>
+      <span class="badge88 b4" title="Y2K READY">Y2K<br>COMPLIANT</span>
+      <span class="badge88 b5" title="Made in Australia">MADE IN<br>AUSTRALIA</span>
+      <span class="badge88 b6" title="Still being edited">UNDER<br>CONSTRUCTION</span>
+      <span class="badge88 b7" title="Old school markup">HTML<br>3.2-ish</span>
+      <span class="badge88 b8" title="Frames are not required">NO<br>FRAMES</span>
+    </div>
+    <div class="webring">
+      🎳 Bowlers WebRing: [ <a class="js-ring" href="#">« PREV</a> | <a class="js-ring" href="#">RANDOM</a> | <a class="js-ring" href="#">NEXT »</a> ]
+    </div>
+    <p class="fineprint">
+      © 1997-<span id="yr"></span> Nix's Cyber Lanes ·
+      <a href="mailto:webmaster@cyberlanes.geo">webmaster@cyberlanes.geo</a> ·
+      Proudly built in Australia · Gutter balls not refundable ·
+      <a href="#" id="frames-link">FRAMES VERSION</a>
+    </p>
+  </footer>
+
+</div>
+
+<noscript><p style="color:#fff;text-align:center">JavaScript is off, so the averages cannot be calculated. Please enable it.</p></noscript>
+
+<!-- ====================================================== -->
+<!-- LEAGUE DATA - edit ONLY this block to update the site.  -->
+<!-- Newest week at the top. Markdown-ish: "## Date" then Name | g1 | g2 -->
+<!-- Lines starting with ";" are comments and are ignored.   -->
+<!-- ====================================================== -->
+<script id="league-data" type="text/plain">
+@updated: 2026-09-20
+
+## 20th Sep 2026
+Maxie    |  -  | 97
+Zoe      | 103 | 106
+Morgan   | 86  | 129
+Tim      | 139 | 117
+Ray      |  -  | 96
+Jet      | 71  | 90
+Nix      | 108 | 85
+
+## 19th Jul 2026
+Jon      | 120 | 75
+Nix      | 94  | 135
+Jessica  | 104 | 86
+Morgan   | 88  | 97
+Maxie    | 82  | 79
+Ray      | 81  | 101
+
+## 16th Nov 2025
+Tim      | 81 | 126
+Maxie    | 95 | 75
+Arthur   | 46 | 68
+Nix      | 74 | 83
+Marcie   | 72 | 53
+Ray      | 41 | 56
+Jon      | 79 | 73
+
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var $ = function(id){ return document.getElementById(id); };
+
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+    });
+  }
+
+  /* =====================================================
+     1. PARSE THE DATA BLOCK
+     ===================================================== */
+  var raw = $("league-data").textContent;
+  var sessions = [], current = null, updated = "";
+
+  raw.split(/\r?\n/).forEach(function(line){
+    line = line.trim();
+    if(!line || line.charAt(0) === ";") return;
+    if(/^@updated/i.test(line)){
+      updated = line.replace(/^@updated\s*:?\s*/i, "").trim();
+      return;
+    }
+    if(/^#+\s/.test(line)){
+      current = { title: line.replace(/^#+\s*/, ""), rows: [] };
+      sessions.push(current);
+      return;
+    }
+    if(!current || line.indexOf("|") < 0) return;
+
+    var cells = line.split("|").map(function(c){ return c.trim(); });
+    if(cells[0] === "") cells.shift();
+    if(cells[cells.length - 1] === "") cells.pop();
+
+    var name = cells[0];
+    if(!name || /^name$/i.test(name)) return;
+
+    var games = cells.slice(1).map(function(c){
+      return /^\d{1,3}$/.test(c) ? parseInt(c, 10) : null;
+    });
+    if(games.length === 0 || games.every(function(g){ return g === null; })) return;
+
+    current.rows.push({ name: name, games: games });
+  });
+
+  sessions.reverse();
+
+  /* =====================================================
+     2. AGGREGATE
+     ===================================================== */
+  var bowlerMap = {}, order = [];
+
+  sessions.forEach(function(s, weekIndex){
+    s.rows.forEach(function(r){
+      var b = bowlerMap[r.name];
+      if(!b){
+        b = bowlerMap[r.name] = { name: r.name, all: [], perWeek: [] };
+        order.push(r.name);
+      }
+      b.perWeek.push({ week: weekIndex, games: r.games });
+      r.games.forEach(function(g){ if(g !== null) b.all.push(g); });
+    });
+  });
+
+  var bowlers = order.map(function(n){
+    var b = bowlerMap[n];
+    var total = b.all.reduce(function(a, g){ return a + g; }, 0);
+    var gp = b.all.length;
+    var last3 = b.all.slice(-3);
+    var last3Avg = last3.length
+      ? last3.reduce(function(a, g){ return a + g; }, 0) / last3.length
+      : 0;
+    return {
+      name: b.name,
+      all: b.all,
+      perWeek: b.perWeek,
+      gp: gp,
+      total: total,
+      avg: gp ? Math.floor(total / gp) : 0,
+      high: gp ? Math.max.apply(null, b.all) : 0,
+      last3: last3Avg,
+      form: gp >= 3 ? last3Avg - Math.floor(total / gp) : 0
+    };
+  });
+
+  bowlers.sort(function(a, b){
+    return b.avg - a.avg || b.high - a.high || a.name.localeCompare(b.name);
+  });
+  bowlers.forEach(function(b, i){ b.rank = i + 1; });
+
+  var leaguePins = bowlers.reduce(function(a, b){ return a + b.total; }, 0);
+  var leagueGP   = bowlers.reduce(function(a, b){ return a + b.gp; }, 0);
+  var leagueAvg  = leagueGP ? Math.floor(leaguePins / leagueGP) : 0;
+  var highHolder = bowlers.length
+    ? bowlers.reduce(function(a, b){ return b.high > a.high ? b : a; }, bowlers[0])
+    : { name: "-", high: 0, rank: 0 };
+
+  var weeks = sessions.map(function(s){
+    var short = s.title.split("-")[0].trim().toUpperCase();
+    return { short: short || "DATE", full: s.title };
+  });
+
+  /* =====================================================
+     3. HEADER + TICKER
+     ===================================================== */
+  $("yr").textContent = new Date().getFullYear();
+
+  var isNew = false;
+  var d = new Date(updated);
+  if(!isNaN(d)) isNew = (Date.now() - d.getTime()) < 10 * 24 * 3600 * 1000;
+  $("updated-line").innerHTML =
+    "LAST UPDATED: " + esc(updated || "soon™") +
+    (isNew ? ' <span class="new-badge blink">NEW!</span>' : "");
+
+  var quotes = [
+    "\"Another quality homepage on the Information Superhighway.\"",
+    "\"Please sign the guestbook before leaving.\"",
+    "\"Frames? Not on this page.\"",
+    "\"High score first. Style second.\"",
+    "\"Best viewed after league night.\"",
+    "\"Yes, the MIDI player is staying.\""
+  ];
+  $("quote").textContent = quotes[Math.floor(Math.random() * quotes.length)];
+
+  var tickText = " NIX'S CYBER LANES · DAY LEAGUE · " +
+    highHolder.name.toUpperCase() + " BOWLED " + highHolder.high +
+    " · " + bowlers.length + " BOWLERS · " + leagueGP + " GAMES · " + leaguePins +
+    " PINS · SIGN THE GUESTBOOK · SITE UNDER CONSTRUCTION · ";
+  $("tick1").textContent = tickText;
+  $("tick2").textContent = tickText;
+
+  /* =====================================================
+     4. LEADERBOARD (sortable)
+     ===================================================== */
+  var SORT_KEYS = {
+    rank:  function(b){ return b.rank; },
+    name:  function(b){ return b.name.toLowerCase(); },
+    gp:    function(b){ return b.gp; },
+    total: function(b){ return b.total; },
+    avg:   function(b){ return b.avg; },
+    high:  function(b){ return b.high; },
+    form:  function(b){ return b.form; }
+  };
+  var sortState = { key: "avg", dir: -1 };
+
+  function formLabel(b){
+    if(b.gp < 3)     return { text: "ROOKIE", cls: "" };
+    if(b.form >= 3)  return { text: "▲ UP", cls: "hot" };
+    if(b.form <= -3) return { text: "▼ DOWN", cls: "cold" };
+    return { text: "STEADY", cls: "" };
+  }
+
+  function renderLeaderboard(){
+    var rows = bowlers.slice().sort(function(a, b){
+      var ka = SORT_KEYS[sortState.key](a);
+      var kb = SORT_KEYS[sortState.key](b);
+      var c = (typeof ka === "string") ? ka.localeCompare(kb) : (ka - kb);
+      return c * sortState.dir;
+    });
+
+    $("lb-body").innerHTML = rows.map(function(b, i){
+      var f = formLabel(b);
+      var isChamp = b.rank === 1;
+      return '<tr style="--i:' + i + '" class="' + (isChamp ? "champ" : "") + '">' +
+        '<td>' + (isChamp ? "🏆" : b.rank) + '</td>' +
+        '<td class="name">' + esc(b.name) + '</td>' +
+        '<td>' + b.gp + '</td>' +
+        '<td>' + b.total + '</td>' +
+        '<td><b>' + b.avg + '</b></td>' +
+        '<td>' + b.high + '</td>' +
+        '<td class="' + f.cls + '">' + f.text + '</td>' +
+      '</tr>';
+    }).join("");
+
+    Array.prototype.forEach.call(
+      document.querySelectorAll("#lb-table th[data-sort]"),
+      function(th){
+        var key = th.getAttribute("data-sort");
+        var base = th.getAttribute("data-label");
+        if(base === null){
+          base = th.textContent.replace(/ [▲▼]$/, "");
+          th.setAttribute("data-label", base);
+        }
+        th.textContent = base;
+        th.removeAttribute("aria-sort");
+        if(key === sortState.key){
+          th.textContent = base + (sortState.dir === 1 ? " ▲" : " ▼");
+          th.setAttribute("aria-sort",
+            sortState.dir === 1 ? "ascending" : "descending");
+        }
+      }
+    );
+  }
+
+  Array.prototype.forEach.call(
+    document.querySelectorAll("#lb-table th[data-sort]"),
+    function(th){
+      th.setAttribute("tabindex", "0");
+      th.setAttribute("role", "button");
+      function activate(){
+        var key = th.getAttribute("data-sort");
+        if(sortState.key === key){
+          sortState.dir *= -1;
+        } else {
+          sortState.key = key;
+          sortState.dir = (key === "name" || key === "rank") ? 1 : -1;
+        }
+        renderLeaderboard();
+      }
+      th.addEventListener("click", activate);
+      th.addEventListener("keydown", function(e){
+        if(e.key === "Enter" || e.key === " "){ e.preventDefault(); activate(); }
+      });
+    }
+  );
+
+  renderLeaderboard();
+
+  /* =====================================================
+     5. AVERAGE-O-METER
+     ===================================================== */
+  var maxAvg = Math.max.apply(null, bowlers.map(function(b){ return b.avg; })) || 1;
+  var bars = $("bars");
+  bars.innerHTML = bowlers.map(function(b){
+    return '<div class="bar-row">' +
+      '<span class="bar-name" title="' + esc(b.name) + '">' + esc(b.name) + '</span>' +
+      '<span class="bar-track"><span class="bar" data-w="' +
+        (b.avg / maxAvg * 100).toFixed(1) + '"></span></span>' +
+      '<span class="bar-val">' + b.avg + '</span>' +
+    '</div>';
+  }).join("");
+
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){
+      Array.prototype.forEach.call(bars.querySelectorAll(".bar"), function(el){
+        el.style.width = el.getAttribute("data-w") + "%";
+      });
+    });
+  });
+
+  /* =====================================================
+     6. STAT CHIPS  (gender-neutral: "Punters")
+     ===================================================== */
+  var chips = [
+    { n: leagueAvg,      label: "League Average",    sub: leagueGP + " games bowled" },
+    { n: highHolder.high, label: "Season High Game", sub: highHolder.name },
+    { n: leaguePins,     label: "Total Pins", sub: "season total" },
+    { n: bowlers.length, label: "Bowlers",           sub: "on the sheet" }
+  ];
+
+  $("chips").innerHTML = chips.map(function(c, i){
+    return '<div class="chip raised"><b id="chip' + i + '">0</b>' +
+      '<span>' + esc(c.label) + '</span><em>' + esc(c.sub) + '</em></div>';
+  }).join("");
+
+  chips.forEach(function(c, i){
+    var el = $("chip" + i), target = c.n;
+    if(reduced || !window.requestAnimationFrame){
+      el.textContent = target;
+      return;
+    }
+    var t0 = null;
+    function step(ts){
+      if(t0 === null) t0 = ts;
+      var p = Math.min((ts - t0) / 1200, 1);
+      el.textContent = Math.floor(target * (1 - Math.pow(1 - p, 3)));
+      if(p < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  });
+
+  /* =====================================================
+     7. BOWLER CARDS
+     ===================================================== */
+  var maxGames = 1;
+  sessions.forEach(function(s){
+    s.rows.forEach(function(r){
+      if(r.games.length > maxGames) maxGames = r.games.length;
+    });
+  });
+
+  var gameHeaders = "";
+  for(var h = 1; h <= maxGames; h++){
+    gameHeaders += '<th scope="col">G' + h + '</th>';
+  }
+
+  $("cards-grid").innerHTML = bowlers.map(function(b, bi){
+    var running = [];
+
+    var rows = b.perWeek.map(function(entry){
+      var games = entry.games;
+      var label = weeks[entry.week] || { short: "DATE", full: "" };
+
+      var played = games.filter(function(g){ return g !== null; });
+      var nightTotal = played.reduce(function(a, g){ return a + g; }, 0);
+      var nightAvg = played.length ? Math.floor(nightTotal / played.length) : null;
+
+      played.forEach(function(g){ running.push(g); });
+      var runAvg = running.length
+        ? Math.floor(running.reduce(function(a, g){ return a + g; }, 0) / running.length)
+        : null;
+
+      var cells = "";
+      for(var g = 0; g < maxGames; g++){
+        var gv = games[g];
+        if(gv === undefined || gv === null){
+          cells += '<td class="miss">--</td>';
+          continue;
+        }
+        var star = "";
+        cells += '<td class="' + (gv === b.high ? "best" : "") + '">' + gv + star + '</td>';
+      }
+
+      return '<tr>' +
+        '<td class="name" title="' + esc(label.full) + '">' + esc(label.short) + '</td>' +
+        cells +
+        '<td title="series total: ' + nightTotal + '">' +
+          (nightAvg === null ? "--" : nightAvg) + '</td>' +
+        '<td><b>' + (runAvg === null ? "--" : runAvg) + '</b></td>' +
+      '</tr>';
+    }).join("");
+
+    return '<div class="card raised" style="--i:' + bi + '">' +
+      '<div class="card-head">#' + b.rank + ' ' + esc(b.name) +
+        '<span class="meta">AVG ' + b.avg + ' · HIGH ' + b.high +
+        ' · ' + b.gp + ' GP</span></div>' +
+      '<div class="card-body">' +
+        '<table class="score">' +
+          '<caption class="sr-only">Game-by-game scores for ' +
+            esc(b.name) + '</caption>' +
+          '<thead><tr><th scope="col">DATE</th>' + gameHeaders +
+            '<th scope="col" title="Average for that night">NIGHT</th>' +
+            '<th scope="col" title="Season average up to that night">RUN AVG</th>' +
+          '</tr></thead>' +
+          '<tbody>' + rows + '</tbody>' +
+          '<tfoot><tr>' +
+            '<td class="name">TOTAL</td>' +
+            '<td colspan="' + maxGames + '" style="text-align:center">' +
+              b.total + ' pins</td>' +
+            '<td></td><td><b>' + b.avg + '</b></td>' +
+          '</tr></tfoot>' +
+        '</table>' +
+      '</div>' +
+    '</div>';
+  }).join("");
+
+  /* =====================================================
+     8. VISITOR COUNTER
+     ===================================================== */
+  var visits = 0;
+  try{
+    visits = parseInt(localStorage.getItem("cyberlanes_visits") || "0", 10) + 1;
+    if(!isFinite(visits) || visits < 1) visits = 1;
+    localStorage.setItem("cyberlanes_visits", String(visits));
+  }catch(e){ visits = 1; }
+
+  var digits = String(666000 + visits).padStart(6, "0");
+  $("counter").innerHTML = digits.split("").map(function(dg){
+    return "<span>" + dg + "</span>";
+  }).join("");
+
+  /* =====================================================
+     9. GUESTBOOK
+     ===================================================== */
+  var GB_KEY = "cyberlanes_guestbook";
+
+  var SEED = [
+    { name: "WebMaster", homepage: "", date: "1997-04-12",
+      message: "Welcome to my homepage!! Bookmark it and sign the book!!" },
+    { name: "PinPal_Jo", homepage: "http://geocities.com/pinpal_jo",
+      date: "1997-06-03",
+      message: "found u thru the Bowlers WebRing. kewl lanes!! added u 2 my links page" },
+    { name: "xX_Turkey_Xx", homepage: "", date: "1998-01-19",
+      message: "three strikes in a row is called a TURKEY fyi. nice site" },
+    { name: "Dave_213", homepage: "",
+      date: "1998-09-14",
+      message: "nice site!! what's your best game? mine's 213" }
+  ];
+
+  function cleanGuestbook(entries){
+    return entries.filter(function(e){
+      var name = String((e && e.name) || "").trim();
+      var message = String((e && e.message) || "").trim();
+      if(/^winner$/i.test(name) && /^dasd$/i.test(message)) return false;
+      if(name.toLowerCase().indexOf("stra" + "ya") !== -1){
+        e.name = "Dave_213";
+        e.message = "nice site!! what's your best game? mine's 213";
+      }
+      return true;
+    });
+  }
+
+  function loadGuestbook(){
+    try{
+      var stored = JSON.parse(localStorage.getItem(GB_KEY) || "null");
+      if(Array.isArray(stored)){
+        stored = cleanGuestbook(stored);
+        try{ localStorage.setItem(GB_KEY, JSON.stringify(stored)); }catch(e){}
+        return stored;
+      }
+    }catch(e){}
+    var seeded = cleanGuestbook(SEED.slice());
+    try{ localStorage.setItem(GB_KEY, JSON.stringify(seeded)); }catch(e){}
+    return seeded;
+  }
+
+  function safeUrl(u){
+    return /^https?:\/\//i.test(u) ? u : null;
+  }
+
+  function renderGuestbook(){
+    var entries = loadGuestbook().slice().reverse().slice(0, 25);
+    var list = $("gb-list");
+    if(!entries.length){
+      list.innerHTML = '<p class="gb-empty">Nobody has signed yet. ' +
+        'Be the first. It\'s 1997 somewhere.</p>';
+      return;
+    }
+    list.innerHTML = entries.map(function(e){
+      var url = safeUrl(e.homepage || "");
+      var who = esc(e.name || "Anonymous");
+      var home = url
+        ? ' <a href="' + esc(url) + '" rel="nofollow noopener">' +
+          esc(e.homepage) + '</a>'
+        : "";
+      return '<div class="gb-entry raised">' +
+        '<span class="when">' + esc(e.date || "") + '</span>' +
+        '<span class="who">' + who + '</span>' + home +
+        '<p>' + esc(e.message || "") + '</p>' +
+      '</div>';
+    }).join("");
+  }
+
+  var gbForm = $("gb-form");
+  if(gbForm){
+    gbForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      var fd = new FormData(e.target);
+      var entry = {
+        name: String(fd.get("name") || "").trim().slice(0, 24),
+        homepage: String(fd.get("homepage") || "").trim().slice(0, 120),
+        message: String(fd.get("message") || "").trim().slice(0, 240),
+        date: new Date().toISOString().slice(0, 10)
+      };
+      if(!entry.name || !entry.message) return;
+
+      var all;
+      try{
+        all = JSON.parse(localStorage.getItem(GB_KEY) || "[]");
+        if(!Array.isArray(all)) all = [];
+      }catch(err){ all = []; }
+      all.push(entry);
+      try{ localStorage.setItem(GB_KEY, JSON.stringify(all.slice(-200))); }catch(err){}
+      e.target.reset();
+      renderGuestbook();
+    });
+  }
+
+  renderGuestbook();
+
+  /* =====================================================
+     11. JUKEBOX v3 - ADVANCED SYNTH ENGINE
+     ===================================================== */
+
+  /* --- note name → frequency --- */
+  var NOTE_SEMIS = { C:0, D:2, E:4, F:5, G:7, A:9, B:11 };
+  function noteFreq(name){
+    if(!name || name === "-" || name === ".") return 0;
+    var m = /^([A-G])([#b]?)(-?\d)$/.exec(name);
+    if(!m) return 0;
+    var n = NOTE_SEMIS[m[1]];
+    if(m[2] === "#") n += 1;
+    else if(m[2] === "b") n -= 1;
+    var midi = (parseInt(m[3], 10) + 1) * 12 + n;
+    return 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  function transpose(name, semis){
+    if(!name || name === "-" || name === ".") return name;
+    var m = /^([A-G])([#b]?)(-?\d)$/.exec(name);
+    if(!m) return name;
+    var n = NOTE_SEMIS[m[1]];
+    if(m[2] === "#") n += 1;
+    else if(m[2] === "b") n -= 1;
+    var midi = (parseInt(m[3], 10) + 1) * 12 + n + semis;
+    var names = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+    var pc = ((midi % 12) + 12) % 12;
+    var octave = Math.floor(midi / 12) - 1;
+    return names[pc] + octave;
+  }
+
+  /* --- voice presets: waveform + ADSR + vibrato + detune --- */
+  var VOICES = {
+    chipLead:   { wave:"square",   a:0.005, d:0.05, s:0.40, r:0.07, vol:0.034,
+                  vib:{rate:6.0, depth:5, delay:0.06}, detune:4 },
+    sawLead:    { wave:"sawtooth", a:0.015, d:0.10, s:0.55, r:0.14, vol:0.026,
+                  vib:{rate:4.6, depth:6, delay:0.15} },
+    sineLead:   { wave:"sine",     a:0.025, d:0.15, s:0.55, r:0.18, vol:0.055,
+                  vib:{rate:5.0, depth:7, delay:0.20} },
+    squareLead: { wave:"square",   a:0.008, d:0.06, s:0.40, r:0.09, vol:0.032,
+                  vib:{rate:5.5, depth:4, delay:0.10}, detune:5 },
+    chipHarm:   { wave:"triangle", a:0.010, d:0.06, s:0.35, r:0.10, vol:0.020 },
+    sawHarm:    { wave:"triangle", a:0.020, d:0.10, s:0.45, r:0.14, vol:0.018 },
+    triBass:    { wave:"triangle", a:0.008, d:0.10, s:0.65, r:0.14, vol:0.058 },
+    squareBass: { wave:"square",   a:0.006, d:0.08, s:0.60, r:0.12, vol:0.042 },
+    sawBass:    { wave:"sawtooth", a:0.010, d:0.14, s:0.55, r:0.16, vol:0.044 },
+    sineBass:   { wave:"sine",     a:0.015, d:0.18, s:0.65, r:0.20, vol:0.062 }
+  };
+
+  /* ======================================================
+     THE PLAYLIST.
+     Longer melody arrays = longer loops.
+     Melody length drives the loop: 32 notes ≈ 2 bars,
+     48 ≈ 3 bars, 64 ≈ 4 bars at 16th-note timing.
+     Bass and drums loop independently at their own lengths.
+     ====================================================== */
+  var TRACKS = [
+    /* ───────── CLASSICS ───────── */
+    {
+      file: "NEON_RUSH.MID", tag: "ARCADE",
+      title: "Neon Rush - Synthwave Arcade (4-bar loop)",
+      bpm: 120,
+      leadVoice: "sawLead", harmVoice: "sawHarm", bassVoice: "sawBass",
+      melody: [
+        "A4","-","E5","-","G5","-","E5","-",
+        "F5","-","E5","-","D5","-","C5","-",
+        "A4","-","E5","-","G5","-","A5","-",
+        "G5","-","E5","-","D5","-","E5","-",
+        "A4","-","E5","-","G5","-","A5","-",
+        "C6","-","A5","-","G5","-","E5","-",
+        "F5","-","E5","-","D5","-","C5","-",
+        "A4","-","B4","-","C5","-","D5","-"
+      ],
+      harmony: [
+        "E4","-","A4","-","C5","-","A4","-",
+        "A4","-","A4","-","A4","-","A4","-",
+        "E4","-","A4","-","C5","-","E5","-",
+        "E5","-","C5","-","A4","-","A4","-",
+        "E4","-","A4","-","C5","-","E5","-",
+        "E5","-","E5","-","C5","-","A4","-",
+        "A4","-","A4","-","A4","-","A4","-",
+        "E4","-","G4","-","A4","-","A4","-"
+      ],
+      bass:    ["A2","-","A2","-","A2","-","A2","-","F2","-","F2","-","G2","-","G2","-",
+                "A2","-","A2","-","A2","-","A2","-","F2","-","F2","-","G2","-","G2","-"],
+      drums:   "KHSHKHSHKHSHKHSH"
+    },
+
+    /* ══════════════ SYNTHWAVE / NEON RUSH FAMILY ══════════════ */
+    {
+      file: "NEON_RUSH_II.MID", tag: "ARCADE",
+      title: "Midnight Circuit - Neon Rush II (Am-F-C-G)",
+      bpm: 130,
+      leadVoice: "sawLead", harmVoice: "sawHarm", bassVoice: "sawBass",
+      melody: [
+        "A4","-","E5","-","G5","-","A5","-",
+        "C6","-","A5","-","G5","-","E5","-",
+        "F5","-","A5","-","C6","-","A5","-",
+        "G5","-","F5","-","E5","-","C5","-",
+        "E5","-","G5","-","C6","-","G5","-",
+        "E5","-","C5","-","G4","-","E4","-",
+        "D5","-","F5","-","A5","-","F5","-",
+        "D5","-","A4","-","B4","-","C5","-"
+      ],
+      harmony: [
+        "E4","-","A4","-","C5","-","E5","-",
+        "E5","-","C5","-","A4","-","E4","-",
+        "A4","-","C5","-","E5","-","C5","-",
+        "C5","-","A4","-","A4","-","A4","-",
+        "G4","-","C5","-","E5","-","C5","-",
+        "G4","-","G4","-","C4","-","C4","-",
+        "A4","-","C5","-","E5","-","C5","-",
+        "A4","-","E4","-","G4","-","A4","-"
+      ],
+      bass: [
+        "A2","-","A2","-","A2","-","A2","-",
+        "F2","-","F2","-","F2","-","F2","-",
+        "C3","-","C3","-","C3","-","C3","-",
+        "G2","-","G2","-","G2","-","G2","-"
+      ],
+      drums: "KHSHKHSHKHSHKHSH"
+    },
+    {
+      file: "CYBERDECK.MOD", tag: "DEMO",
+      title: "Cyberdeck.mod - 16-Bar Tracker Demo",
+      bpm: 150,
+      leadVoice: "squareLead", harmVoice: "sawHarm", bassVoice: "triBass",
+      melody: [
+        // ── PART A (Bars 1-8): The Chiptune Motif ──
+        "A5","-","F5","-", "D5","-","F5","-", "A5","-","C6","-","A5","-","F5","-", // 1 Dm
+        "D6","-","C6","-","A5","-","G5","-", "F5","-","E5","-","D5","-","-","-", // 2 Dm
+        "F5","-","D5","-","Bb4","-","D5","-", "F5","-","A5","-","F5","-","D5","-", // 3 Bb
+        "Bb5","-","A5","-","F5","-","E5","-", "D5","-","C5","-","Bb4","-","-","-", // 4 Bb
+        "C5","-","A4","-","F4","-","A4","-", "C5","-","E5","-","C5","-","A4","-", // 5 F
+        "F5","-","E5","-","C5","-","Bb4","-", "A4","-","G4","-","F4","-","-","-", // 6 F
+        "G4","-","E4","-","C4","-","E4","-", "G4","-","B4","-","G4","-","E4","-", // 7 C
+        "A4","C#5","E5","G5", "A5","-","G5","-", "E5","-","C#5","-", "A4","-","-","-", // 8 A7 (Turnaround run)
+        
+        // ── PART B (Bars 9-16): Tracker Stutters & Trills ──
+        "A5","-","A5","A5", "F5","-","F5","F5", "D5","-","F5","-", "A5","-","C6","-", // 9 Dm
+        "D6","C6","D6","C6", "A5","-","G5","-", "F5","-","E5","-", "D5","-","-","-", // 10 Dm
+        "F5","-","F5","F5", "D5","-","D5","D5", "Bb4","-","D5","-", "F5","-","A5","-", // 11 Bb
+        "Bb5","A5","Bb5","A5", "F5","-","E5","-", "D5","-","C5","-", "Bb4","-","-","-", // 12 Bb
+        "C5","-","C5","C5", "A4","-","A4","A4", "F4","-","A4","-", "C5","-","E5","-", // 13 F
+        "F5","E5","F5","E5", "C5","-","Bb4","-", "A4","-","G4","-", "F4","-","-","-", // 14 F
+        "G4","-","G4","G4", "E4","-","E4","E4", "C4","-","E4","-", "G4","-","B4","-", // 15 C
+        "A4","C#5","E5","G5", "A5","G5","E5","C#5", "A4","-","-","-", "A4","-","-","-"  // 16 A7 (Fast arpeggio run down)
+      ],
+      harmony: [
+        // ── The "0xy" Tracker Arpeggio Effect ──
+        // Cycles Root -> 3rd -> 5th -> Root every 16th note to simulate chords on 1 channel!
+        // Dm
+        "D4","F4","A4","D4", "F4","A4","D4","F4", "A4","D4","F4","A4", "D4","F4","A4","D4",
+        "D4","F4","A4","D4", "F4","A4","D4","F4", "A4","D4","F4","A4", "D4","F4","A4","D4",
+        // Bb
+        "Bb3","D4","F4","Bb3", "D4","F4","Bb3","D4", "F4","Bb3","D4","F4", "Bb3","D4","F4","Bb3",
+        "Bb3","D4","F4","Bb3", "D4","F4","Bb3","D4", "F4","Bb3","D4","F4", "Bb3","D4","F4","Bb3",
+        // F
+        "F3","A3","C4","F3", "A3","C4","F3","A3", "C4","F3","A3","C4", "F3","A3","C4","F3",
+        "F3","A3","C4","F3", "A3","C4","F3","A3", "C4","F3","A3","C4", "F3","A3","C4","F3",
+        // C & A7
+        "C4","E4","G4","C4", "E4","G4","C4","E4", "G4","C4","E4","G4", "C4","E4","G4","C4",
+        "A3","C#4","E4","A3", "C#4","E4","A3","C#4", "E4","A3","C#4","E4", "A3","C#4","E4","A3",
+        
+        // Repeat for Part B
+        "D4","F4","A4","D4", "F4","A4","D4","F4", "A4","D4","F4","A4", "D4","F4","A4","D4",
+        "D4","F4","A4","D4", "F4","A4","D4","F4", "A4","D4","F4","A4", "D4","F4","A4","D4",
+        "Bb3","D4","F4","Bb3", "D4","F4","Bb3","D4", "F4","Bb3","D4","F4", "Bb3","D4","F4","Bb3",
+        "Bb3","D4","F4","Bb3", "D4","F4","Bb3","D4", "F4","Bb3","D4","F4", "Bb3","D4","F4","Bb3",
+        "F3","A3","C4","F3", "A3","C4","F3","A3", "C4","F3","A3","C4", "F3","A3","C4","F3",
+        "F3","A3","C4","F3", "A3","C4","F3","A3", "C4","F3","A3","C4", "F3","A3","C4","F3",
+        "C4","E4","G4","C4", "E4","G4","C4","E4", "G4","C4","E4","G4", "C4","E4","G4","C4",
+        "A3","C#4","E4","A3", "C#4","E4","A3","C#4", "E4","A3","C#4","E4", "A3","C#4","E4","A3"
+      ],
+      bass: [
+        // ── The Snappy Triangle Bass ──
+        // Dm
+        "D2","D3","D2","-", "A2","-","D3","-", "D2","D3","D2","-", "C3","-","A2","-",
+        "D2","D3","D2","-", "A2","-","D3","-", "D2","D3","D2","-", "C3","-","A2","-",
+        // Bb
+        "Bb1","Bb2","Bb1","-", "F2","-","Bb2","-", "Bb1","Bb2","Bb1","-", "A2","-","F2","-",
+        "Bb1","Bb2","Bb1","-", "F2","-","Bb2","-", "Bb1","Bb2","Bb1","-", "A2","-","F2","-",
+        // F
+        "F2","F3","F2","-", "C3","-","F3","-", "F2","F3","F2","-", "E3","-","C3","-",
+        "F2","F3","F2","-", "C3","-","F3","-", "F2","F3","F2","-", "E3","-","C3","-",
+        // C & A7
+        "C2","C3","C2","-", "G2","-","C3","-", "C2","C3","C2","-", "B2","-","G2","-",
+        "A2","A3","A2","-", "E2","-","A3","-", "A2","A3","A2","-", "G2","-","E2","-",
+        
+        // Repeat for Part B
+        "D2","D3","D2","-", "A2","-","D3","-", "D2","D3","D2","-", "C3","-","A2","-",
+        "D2","D3","D2","-", "A2","-","D3","-", "D2","D3","D2","-", "C3","-","A2","-",
+        "Bb1","Bb2","Bb1","-", "F2","-","Bb2","-", "Bb1","Bb2","Bb1","-", "A2","-","F2","-",
+        "Bb1","Bb2","Bb1","-", "F2","-","Bb2","-", "Bb1","Bb2","Bb1","-", "A2","-","F2","-",
+        "F2","F3","F2","-", "C3","-","F3","-", "F2","F3","F2","-", "E3","-","C3","-",
+        "F2","F3","F2","-", "C3","-","F3","-", "F2","F3","F2","-", "E3","-","C3","-",
+        "C2","C3","C2","-", "G2","-","C3","-", "C2","C3","C2","-", "B2","-","G2","-",
+        "A2","A3","A2","-", "E2","-","A3","-", "A2","A3","A2","-", "G2","-","E2","-"
+      ],
+      drums:
+        // ── The Tracker Breakbeat ──
+        // Syncopated kicks, fast hats, and snare rolls at the end of every 4th bar.
+        "K-H-S-H-KKHSH-H-" + "K-H-S-H-K-HKSSSH" + "K-H-S-H-KKHSH-H-" + "C-H-S-H-KKHSSSSS" +
+        "K-H-S-H-KKHSH-H-" + "K-H-S-H-K-HKSSSH" + "K-H-S-H-KKHSH-H-" + "C-H-S-H-KKHSSSSS" +
+        "K-H-S-H-KKHSH-H-" + "K-H-S-H-K-HKSSSH" + "K-H-S-H-KKHSH-H-" + "C-H-S-H-KKHSSSSS" +
+        "K-H-S-H-KKHSH-H-" + "K-H-S-H-K-HKSSSH" + "K-H-S-H-KKHSH-H-" + "C-H-S-H-KKHSSSSS"
+    }
+
+  ];
+
+  /* =====================================================
+     V22 TRACKER MUSIC
+     Original browser-native module music. The waveforms and
+     drum samples are generated locally when playback starts.
+     Nothing is fetched from the network.
+     ===================================================== */
+
+  function trackerEmptyPattern(rows, channels){
+    var p = [], r, c;
+    for(r = 0; r < rows; r++){
+      p[r] = [];
+      for(c = 0; c < channels; c++) p[r][c] = null;
+    }
+    return p;
+  }
+
+  function trackerPut(p, row, ch, note, inst, vol, fx){
+    if(row < 0 || row >= p.length) return;
+    p[row][ch] = { note:note || null, inst:inst || 0, vol:vol == null ? 48 : vol, fx:fx || null };
+  }
+
+  function makeLaneChase(){
+    var CH = 8, ROWS = 32;
+    var patterns = [];
+    var chords = [
+      { root:"A4", bass:"A2", arp:[0,3,7] },
+      { root:"F4", bass:"F2", arp:[0,4,7] },
+      { root:"C4", bass:"C3", arp:[0,4,7] },
+      { root:"G4", bass:"G2", arp:[0,4,7] }
+    ];
+    var bridge = [
+      { root:"D4", bass:"D2", arp:[0,3,7] },
+      { root:"F4", bass:"F2", arp:[0,4,7] },
+      { root:"G4", bass:"G2", arp:[0,4,7] },
+      { root:"E4", bass:"E2", arp:[0,4,7] }
+    ];
+
+    function rhythm(p, busy, crash){
+      var r;
+      for(r = 0; r < ROWS; r += 4) trackerPut(p, r, 4, "C3", 5, 58);
+      for(r = 4; r < ROWS; r += 8) trackerPut(p, r, 5, "D3", 6, 50);
+      for(r = 2; r < ROWS; r += 4) trackerPut(p, r, 6, "F#3", 7, busy ? 24 : 18, { cut:0.32 });
+      if(busy){
+        for(r = 1; r < ROWS; r += 8) trackerPut(p, r, 6, "F#3", 7, 15, { cut:0.24 });
+        for(r = 7; r < ROWS; r += 8) trackerPut(p, r, 6, "A#3", 7, 16, { cut:0.30 });
+      }
+      if(crash) trackerPut(p, 0, 7, "C4", 8, 48);
+    }
+
+    function harmony(p, prog, dense){
+      var block, c, base;
+      for(block = 0; block < 4; block++){
+        c = prog[block];
+        base = block * 8;
+        trackerPut(p, base, 2, c.root, 3, dense ? 34 : 28, { cut:0.75 });
+        trackerPut(p, base + 4, 2, c.root, 3, dense ? 29 : 24, { cut:0.55 });
+        var r;
+        for(r = base; r < base + 8; r += dense ? 1 : 2){
+          trackerPut(p, r, 1, c.root, 2, dense ? 30 : 24, { arp:c.arp });
+        }
+        trackerPut(p, base, 3, c.bass, 4, 54);
+        trackerPut(p, base + 4, 3, c.bass, 4, 50, { slide:-2 });
+      }
+    }
+
+    function melody(p, notes, start, step, octaveFx){
+      var i, row;
+      for(i = 0; i < notes.length; i++){
+        row = start + i * step;
+        if(row >= ROWS) break;
+        if(!notes[i] || notes[i] === "-") continue;
+        trackerPut(p, row, 0, notes[i], 1, 48,
+          (octaveFx && (i % 5 === 4)) ? { vib:7, cut:0.90 } : { vib:4 });
+      }
+    }
+
+    var p0 = trackerEmptyPattern(ROWS, CH);
+    harmony(p0, chords, false);
+    rhythm(p0, false, true);
+    melody(p0, ["A4","-","C5","E5","-","G5","E5","C5"], 8, 3, false);
+    trackerPut(p0, 28, 5, "D3", 6, 34, { cut:0.32 });
+    patterns.push(p0);
+
+    var p1 = trackerEmptyPattern(ROWS, CH);
+    harmony(p1, chords, true);
+    rhythm(p1, true, true);
+    melody(p1,
+      ["A4","C5","E5","A5","G5","E5","C5","D5",
+       "E5","G5","A5","C6","B5","G5","E5","D5"],
+      0, 2, true);
+    trackerPut(p1, 14, 0, "E5", 1, 48, { slide:7, cut:0.85 });
+    trackerPut(p1, 30, 5, "D3", 6, 32, { cut:0.28 });
+    patterns.push(p1);
+
+    var p2 = trackerEmptyPattern(ROWS, CH);
+    harmony(p2, bridge, true);
+    rhythm(p2, true, true);
+    melody(p2,
+      ["D5","F5","A5","C6","A5","G5","F5","E5",
+       "G5","B5","D6","B5","A5","G5","F5","E5"],
+      0, 2, true);
+    trackerPut(p2, 24, 0, "E5", 1, 44, { vib:5, cut:0.72 });
+    patterns.push(p2);
+
+    var p3 = trackerEmptyPattern(ROWS, CH);
+    harmony(p3, bridge, false);
+    for(var r = 0; r < ROWS; r += 8){
+      trackerPut(p3, r, 4, "C3", 5, 58);
+      trackerPut(p3, r + 4, 5, "D3", 6, 45);
+    }
+    for(r = 0; r < ROWS; r += 2) trackerPut(p3, r, 6, "F#3", 7, 18, { cut:0.35 });
+    melody(p3,
+      ["A5","-","G5","E5","-","D5","E5","G5",
+       "A5","-","C6","B5","-","G5","E5","D5"],
+      0, 2, false);
+    trackerPut(p3, 16, 2, "E4", 3, 32, { arp:[0,4,7], cut:0.58 });
+    trackerPut(p3, 24, 7, "C4", 8, 50);
+    patterns.push(p3);
+
+    var p4 = trackerEmptyPattern(ROWS, CH);
+    harmony(p4, chords, true);
+    rhythm(p4, true, true);
+    melody(p4,
+      ["A4","C5","E5","A5","G5","E5","C5","D5",
+       "E5","G5","A5","C6","B5","G5","E5","A4"],
+      0, 2, true);
+    trackerPut(p4, 24, 0, "E5", 1, 44, { vib:5, cut:0.68 });
+    trackerPut(p4, 28, 0, "A4", 1, 42, { slide:5, cut:0.82 });
+    trackerPut(p4, 31, 7, "C4", 8, 38);
+    patterns.push(p4);
+
+    return {
+      kind:"tracker",
+      file:"LANECHASE.XM",
+      tag:"XM 8CH",
+      title:"Lane Chase - Darling Harbour Demo Mix",
+      bpm:150,
+      speed:6,
+      channels:CH,
+      pan:[-0.38,0.34,-0.20,0.0,-0.18,0.18,0.22,-0.16],
+      order:[0,1,1,2,3,1,2,4],
+      patterns:patterns
+    };
+  }
+
+  function makePixelStrike(){
+    var CH = 8, ROWS = 32;
+    var patterns = [];
+
+    /* Bright melodic demo anthem. The hook, bass and drums all keep moving. */
+    var MAIN = [
+      { root:"C4", third:"E4", fifth:"G4", bass:"C2" },
+      { root:"G3", third:"B3", fifth:"D4", bass:"G1" },
+      { root:"A3", third:"C4", fifth:"E4", bass:"A1" },
+      { root:"F3", third:"A3", fifth:"C4", bass:"F1" }
+    ];
+    var LIFT = [
+      { root:"F3", third:"A3", fifth:"C4", bass:"F1" },
+      { root:"G3", third:"B3", fifth:"D4", bass:"G1" },
+      { root:"E3", third:"G3", fifth:"B3", bass:"E2" },
+      { root:"A3", third:"C4", fifth:"E4", bass:"A1" }
+    ];
+
+    function pixelBed(p, prog, drive){
+      for(var block = 0; block < 4; block++){
+        var c = prog[block], base = block * 8;
+        /* Off-beat chord stabs leave room for the melody but keep momentum. */
+        trackerPut(p, base,     1, c.root,  3, drive ? 30 : 24, { cut:0.72 });
+        trackerPut(p, base,     2, c.fifth, 2, drive ? 24 : 18, { cut:0.72 });
+        trackerPut(p, base + 4, 1, c.third, 3, drive ? 25 : 19, { cut:0.52 });
+        trackerPut(p, base + 6, 2, c.fifth, 2, drive ? 19 : 14, { cut:0.34 });
+
+        /* Root, octave, fifth, octave. This is the motor under the hook. */
+        trackerPut(p, base,     3, c.bass,               4, 52, { cut:0.44 });
+        trackerPut(p, base + 2, 3, transpose(c.bass,12), 4, 42, { cut:0.34 });
+        trackerPut(p, base + 4, 3, transpose(c.bass,7),  4, 46, { cut:0.36 });
+        trackerPut(p, base + 6, 3, transpose(c.bass,12), 4, 40, { cut:0.30 });
+      }
+    }
+
+    function pixelDrums(p, full, fill){
+      var r;
+      for(r = 0; r < ROWS; r += 4) trackerPut(p, r, 4, "C3", 5, r % 8 === 0 ? 55 : 48);
+      for(r = 4; r < ROWS; r += 8){
+        trackerPut(p, r, 5, "D3", 6, 43);
+        if(full) trackerPut(p, r, 7, "D3", 10, 22, { cut:0.48 });
+      }
+      /* Audible eighth-note hats, plus quiet sixteenth ghosts in the final sections. */
+      for(r = 2; r < ROWS; r += 4) trackerPut(p, r, 6, "F#3", 7, full ? 17 : 12, { cut:0.18 });
+      if(full){
+        for(r = 1; r < ROWS; r += 4) trackerPut(p, r, 6, "F#3", 7, 8, { cut:0.11 });
+      }
+      if(fill){
+        trackerPut(p, 27, 6, "C3", 9, 24, { cut:0.42 });
+        trackerPut(p, 29, 6, "C3", 9, 30, { cut:0.42 });
+        trackerPut(p, 31, 7, "C4", 8, 25);
+      }
+    }
+
+    function pixelLead(p, notes, rows, answer){
+      for(var i = 0; i < notes.length; i++){
+        if(!notes[i] || notes[i] === "-") continue;
+        trackerPut(p, rows[i], 0, notes[i], 1, (i % 4 === 0 ? 48 : 42),
+          { cut:(answer ? 0.68 : 0.78), vib:(i % 8 === 7 ? 3 : 1) });
+      }
+    }
+
+    var hookRows = [0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30];
+    var hookA = ["E5","G5","C6","G5","D5","G5","B5","G5","C5","E5","A5","E5","C5","F5","G5","E5"];
+    var hookB = ["A5","G5","F5","C6","B5","G5","D6","B5","G5","E5","B5","G5","A5","C6","B5","A5"];
+
+    /* 0: logo intro. Rhythm appears before the full hook. */
+    var p0 = trackerEmptyPattern(ROWS, CH);
+    pixelBed(p0, MAIN, false); pixelDrums(p0, false, false);
+    trackerPut(p0, 8, 0, "E5", 1, 37, { cut:0.72 });
+    trackerPut(p0, 12,0, "G5", 1, 39, { cut:0.72 });
+    trackerPut(p0, 24,0, "C6", 1, 41, { cut:0.70 });
+    trackerPut(p0, 28,0, "G5", 1, 39, { cut:0.70 });
+    patterns.push(p0);
+
+    /* 1: main hook. */
+    var p1 = trackerEmptyPattern(ROWS, CH);
+    pixelBed(p1, MAIN, true); pixelDrums(p1, true, true); pixelLead(p1, hookA, hookRows, false);
+    patterns.push(p1);
+
+    /* 2: answer phrase and harmonic lift. */
+    var p2 = trackerEmptyPattern(ROWS, CH);
+    pixelBed(p2, LIFT, true); pixelDrums(p2, true, false); pixelLead(p2, hookB, hookRows, true);
+    trackerPut(p2, 15, 2, "G4", 2, 18, { cut:0.38 });
+    trackerPut(p2, 31, 2, "A4", 2, 18, { cut:0.38 });
+    patterns.push(p2);
+
+    /* 3: tracker breakdown. Bass and a controlled arpeggio carry the motion. */
+    var p3 = trackerEmptyPattern(ROWS, CH);
+    for(var b = 0; b < 4; b++){
+      var c = MAIN[b], base = b * 8;
+      trackerPut(p3, base, 3, c.bass, 4, 49, { cut:0.64 });
+      trackerPut(p3, base + 4, 3, transpose(c.bass,12), 4, 42, { cut:0.52 });
+      for(var ar = base; ar < base + 8; ar += 2) trackerPut(p3, ar, 1, c.root, 2, 20, { arp:[0,4,7], cut:0.46 });
+    }
+    for(var r = 0; r < ROWS; r += 8){
+      trackerPut(p3, r, 4, "C3", 5, 48);
+      trackerPut(p3, r + 4, 5, "D3", 10, 33);
+    }
+    trackerPut(p3, 16,0, "G5", 1, 35, { cut:0.78 });
+    trackerPut(p3, 20,0, "A5", 1, 37, { cut:0.78 });
+    trackerPut(p3, 24,0, "C6", 1, 41, { cut:0.78 });
+    trackerPut(p3, 28,0, "B5", 1, 40, { slide:-1, cut:0.78 });
+    patterns.push(p3);
+
+    /* 4: final hook with a small counterline. */
+    var p4 = trackerEmptyPattern(ROWS, CH);
+    pixelBed(p4, MAIN, true); pixelDrums(p4, true, true); pixelLead(p4, hookA, hookRows, false);
+    [4,12,20,28].forEach(function(row, i){
+      trackerPut(p4, row, 2, ["G4","D5","E5","C5"][i], 2, 20, { cut:0.52 });
+    });
+    trackerPut(p4, 31, 7, "C4", 8, 30);
+    patterns.push(p4);
+
+    return {
+      kind:"tracker",
+      file:"PIXELSTRIKE.XM",
+      tag:"XM 8CH",
+      title:"Pixel Strike - Summer Compo Anthem",
+      bpm:144,
+      speed:6,
+      channels:CH,
+      pan:[-0.36,0.30,-0.24,0.02,-0.16,0.17,0.34,-0.30],
+      order:[0,1,1,2,1,3,2,4],
+      patterns:patterns
+    };
+  }
+
+  function makeGutterByte(){
+    var CH = 8, ROWS = 32;
+    var patterns = [];
+
+    /*
+       Complete rewrite for v22.
+       Gutterbyte is now built around the physical drama of a bowling ball:
+       release, roll, drift, edge, gutter and aftershock. It deliberately
+       avoids Pixelstrike's chord-bed language and Lanechase's arp-heavy feel.
+    */
+
+    var MAIN_ROOTS = ["F2","Db2","Eb2","C2"];
+    var DRIFT_ROOTS = ["F2","E2","Eb2","D2"];
+
+    function bassMotor(p, roots, pressure){
+      for(var block = 0; block < 4; block++){
+        var base = block * 8;
+        var root = roots[block % roots.length];
+        var fifth = transpose(root, 7);
+        var octave = transpose(root, 12);
+
+        /* Eight-note motor with one late shove that creates forward pull. */
+        trackerPut(p, base,     3, root,   4, pressure ? 58 : 52, { cut:0.40 });
+        trackerPut(p, base + 2, 3, octave, 4, pressure ? 43 : 37, { cut:0.24 });
+        trackerPut(p, base + 4, 3, fifth,  4, pressure ? 49 : 43, { cut:0.31 });
+        trackerPut(p, base + 6, 3, octave, 4, pressure ? 45 : 38, { cut:0.22, delay:0.10 });
+      }
+    }
+
+    function machineBeat(p, intensity, tomRoll, finalFill){
+      var r;
+      /* Straight drive. No broken-beat ambiguity. */
+      for(r = 0; r < ROWS; r += 4){
+        trackerPut(p, r, 4, "C3", 5, (r % 8 === 0) ? 59 : 53);
+      }
+      for(r = 4; r < ROWS; r += 8){
+        trackerPut(p, r, 5, "D3", 6, intensity ? 49 : 43);
+        trackerPut(p, r, 7, "D3", 10, intensity ? 25 : 19, { cut:0.42, delay:0.08 });
+      }
+
+      /* Off-beat hats define the real speed. */
+      for(r = 2; r < ROWS; r += 4){
+        trackerPut(p, r, 6, "F#3", 7, intensity ? 18 : 13, { cut:0.14 });
+      }
+      if(intensity){
+        for(r = 1; r < ROWS; r += 4){
+          trackerPut(p, r, 6, "F#3", 7, 8, { cut:0.08 });
+        }
+      }
+
+      /* A rolling tom is the bowling-ball signature. It crosses the straight beat. */
+      if(tomRoll){
+        [3,7,11,15,19,23,27].forEach(function(row, i){
+          trackerPut(p, row, 7, "C3", 9, 19 + (i % 3) * 3, { cut:0.34 });
+        });
+      }
+
+      if(finalFill){
+        trackerPut(p, 28, 5, "D3", 6, 42, { cut:0.25 });
+        trackerPut(p, 29, 7, "C3", 9, 31, { cut:0.30 });
+        trackerPut(p, 30, 5, "D3", 6, 48, { cut:0.22 });
+        trackerPut(p, 31, 7, "C3", 9, 40, { cut:0.28 });
+      }
+    }
+
+    function railStabs(p, roots, hard){
+      for(var block = 0; block < 4; block++){
+        var base = block * 8;
+        var root = transpose(roots[block % roots.length], 24);
+        /* Short saw/triangle hits on the off-beats, almost like lane lights flashing. */
+        trackerPut(p, base + 2, 1, root,               3, hard ? 34 : 27, { cut:0.22 });
+        trackerPut(p, base + 2, 2, transpose(root, 7), 2, hard ? 24 : 18, { cut:0.20, delay:0.08 });
+        trackerPut(p, base + 6, 1, transpose(root, 5), 3, hard ? 30 : 23, { cut:0.18 });
+      }
+    }
+
+    function warningMotif(p, variant, loud){
+      var rows, notes;
+      if(variant === 1){
+        rows  = [0,5,8,13,16,21,24,29];
+        notes = ["F5","C5","Db5","Ab4","Eb5","C5","Db5","F5"];
+      } else if(variant === 2){
+        rows  = [0,4,8,12,16,20,24,28];
+        notes = ["F5","E5","Eb5","D5","C5","Db5","C5","Ab4"];
+      } else {
+        rows  = [8,14,20,26];
+        notes = ["F5","Db5","Eb5","C5"];
+      }
+      for(var i = 0; i < rows.length; i++){
+        trackerPut(p, rows[i], 0, notes[i], 13, loud ? 45 : 37,
+          { cut:(variant === 0 ? 0.62 : 0.46), vib:(i % 4 === 3 ? 2 : 0) });
+      }
+    }
+
+    function laneBell(p, tense){
+      var rows = tense ? [1,9,17,25] : [3,11,19,27];
+      var notes = tense ? ["C6","B5","Bb5","A5"] : ["C5","Ab4","Bb4","G4"];
+      for(var i = 0; i < rows.length; i++){
+        trackerPut(p, rows[i], 2, notes[i], 12, tense ? 22 : 17, { cut:0.55 });
+      }
+    }
+
+    /* 0: APPROACH. The machine starts, then the ball enters the lane. */
+    var p0 = trackerEmptyPattern(ROWS, CH);
+    bassMotor(p0, MAIN_ROOTS, false);
+    for(var r0 = 0; r0 < 16; r0 += 8){
+      trackerPut(p0, r0, 4, "C3", 5, 46);
+      trackerPut(p0, r0 + 4, 7, "C3", 9, 22, { cut:0.34 });
+    }
+    for(r0 = 16; r0 < ROWS; r0 += 4) trackerPut(p0, r0, 4, "C3", 5, 52);
+    trackerPut(p0, 20, 5, "D3", 6, 40);
+    trackerPut(p0, 28, 5, "D3", 6, 43);
+    [19,23,27,31].forEach(function(row, i){
+      trackerPut(p0, row, 7, "C3", 9, 20 + i * 3, { cut:0.30 });
+    });
+    warningMotif(p0, 0, false);
+    laneBell(p0, false);
+    patterns.push(p0);
+
+    /* 1: RELEASE. This is the main groove and main warning hook. */
+    var p1 = trackerEmptyPattern(ROWS, CH);
+    bassMotor(p1, MAIN_ROOTS, true);
+    machineBeat(p1, true, true, true);
+    railStabs(p1, MAIN_ROOTS, false);
+    warningMotif(p1, 1, true);
+    laneBell(p1, false);
+    patterns.push(p1);
+
+    /* 2: DRIFT. Harmony collapses chromatically as the ball moves off line. */
+    var p2 = trackerEmptyPattern(ROWS, CH);
+    bassMotor(p2, DRIFT_ROOTS, true);
+    machineBeat(p2, true, false, true);
+    railStabs(p2, DRIFT_ROOTS, true);
+    warningMotif(p2, 2, true);
+    laneBell(p2, true);
+    trackerPut(p2, 15, 7, "C4", 11, 22, { cut:0.42 });
+    trackerPut(p2, 31, 7, "C4", 11, 27, { cut:0.42 });
+    patterns.push(p2);
+
+    /* 3: EDGE. Everything drops away, then tension rebuilds with a snare staircase. */
+    var p3 = trackerEmptyPattern(ROWS, CH);
+    trackerPut(p3, 0, 3, "F2", 4, 58, { cut:0.95 });
+    trackerPut(p3, 8, 3, "E2", 4, 54, { cut:0.95, slide:-1 });
+    trackerPut(p3, 0, 2, "C5", 12, 23, { cut:0.90 });
+    trackerPut(p3, 8, 2, "B4", 12, 24, { cut:0.90 });
+    trackerPut(p3, 4, 0, "F5", 13, 36, { cut:0.70 });
+    trackerPut(p3, 12,0, "E5", 13, 38, { cut:0.68 });
+
+    for(var r3 = 16; r3 < ROWS; r3 += 4){
+      trackerPut(p3, r3, 4, "C3", 5, 50 + Math.floor((r3 - 16) / 4) * 2);
+    }
+    [18,22,26,28,30,31].forEach(function(row, i){
+      trackerPut(p3, row, 5, "D3", 6, 28 + i * 4, { cut:Math.max(0.14, 0.36 - i * 0.035) });
+    });
+    [19,23,27,29].forEach(function(row, i){
+      trackerPut(p3, row, 7, "C3", 9, 20 + i * 4, { cut:0.26 });
+    });
+    trackerPut(p3, 16, 3, "Eb2",4,53,{ cut:0.40 });
+    trackerPut(p3, 20, 3, "D2", 4,54,{ cut:0.34 });
+    trackerPut(p3, 24, 3, "Db2",4,55,{ cut:0.32 });
+    trackerPut(p3, 28, 3, "C2", 4,57,{ slide:-1, cut:0.30 });
+    trackerPut(p3, 24, 0, "Eb5",13,41,{ cut:0.42 });
+    trackerPut(p3, 28, 0, "D5", 13,43,{ cut:0.34 });
+    trackerPut(p3, 30, 0, "Db5",13,44,{ cut:0.26 });
+    patterns.push(p3);
+
+    /* 4: GUTTER. Full machine speed, but no triumphant pin crash. */
+    var p4 = trackerEmptyPattern(ROWS, CH);
+    bassMotor(p4, DRIFT_ROOTS, true);
+    machineBeat(p4, true, true, true);
+    railStabs(p4, DRIFT_ROOTS, true);
+    warningMotif(p4, 2, true);
+    laneBell(p4, true);
+    /* Metal rail scrapes, not a strike impact. */
+    trackerPut(p4, 7,  7, "C4", 11, 20, { cut:0.26 });
+    trackerPut(p4, 15, 7, "C4", 11, 23, { cut:0.24 });
+    trackerPut(p4, 23, 7, "C4", 11, 26, { cut:0.22 });
+    trackerPut(p4, 31, 7, "C3", 9, 38, { cut:0.44 });
+    patterns.push(p4);
+
+    /* 5: RESET. The machine comes back, main motif returns lower and heavier. */
+    var p5 = trackerEmptyPattern(ROWS, CH);
+    bassMotor(p5, MAIN_ROOTS, true);
+    machineBeat(p5, true, false, true);
+    railStabs(p5, MAIN_ROOTS, false);
+    var resetRows = [0,6,8,14,16,22,24,30];
+    var resetNotes = ["F4","C4","Db4","Ab3","Eb4","C4","Db4","F4"];
+    for(var i5 = 0; i5 < resetRows.length; i5++){
+      trackerPut(p5, resetRows[i5], 0, resetNotes[i5], 13, 42, { cut:0.48 });
+    }
+    trackerPut(p5, 0, 7, "C4", 8, 20);
+    trackerPut(p5, 31,7, "C3", 9, 36, { cut:0.50 });
+    patterns.push(p5);
+
+    return {
+      kind:"tracker",
+      file:"GUTTERBYTE.S3M",
+      tag:"S3M 8CH",
+      title:"Gutter Byte - Rail Panic",
+      bpm:172,
+      speed:6,
+      channels:CH,
+      pan:[0.22,-0.31,0.30,-0.03,-0.17,0.16,-0.26,0.27],
+      order:[0,1,1,2,1,3,4,2,5],
+      patterns:patterns
+    };
+  }
+
+  
+  var TRACKER_TRACKS = [makeLaneChase(), makePixelStrike(), makeGutterByte()];
+
+  /* =====================================================
+     10. PHOTO ALBUM
+     ===================================================== */
+  (function photoAlbum(){
+    var img = $("photo-img");
+    var empty = $("photo-empty");
+    var status = $("photo-status");
+    var caption = $("photo-caption");
+    var prev = $("photo-prev");
+    var next = $("photo-next");
+    var toggle = $("photo-toggle");
+    if(!img || !empty || !status || !prev || !next || !toggle) return;
+
+    /*
+      Put arbitrary filenames here if you do not want numbered files.
+      Example:
+        var PHOTO_FILES = ["team-night.jpg", "maxie-300.png"];
+
+      Leave the list empty to auto-discover consecutively numbered files:
+        photos/01.jpg, photos/02.jpg, photos/03.png, etc.
+    */
+    var PHOTO_FILES = [];
+    var AUTO_MAX = 99;
+    var EXTENSIONS = ["jpg", "jpeg", "png", "webp", "gif"];
+    var photos = [];
+    var current = 0;
+    var timer = null;
+    var paused = false;
+    var SLIDE_MS = 6000;
+
+    function safePath(name){
+      return "photos/" + String(name).replace(/^\/+/, "");
+    }
+
+    function fileLabel(url){
+      try { return decodeURIComponent(url.split("/").pop()); }
+      catch(e){ return url.split("/").pop(); }
+    }
+
+    function show(index){
+      if(!photos.length){
+        img.style.display = "none";
+        empty.style.display = "flex";
+        status.textContent = "PHOTO 0 OF 0";
+        return;
+      }
+      current = (index + photos.length) % photos.length;
+      img.onload = function(){
+        empty.style.display = "none";
+        img.style.display = "block";
+      };
+      img.onerror = function(){
+        var bad = photos.splice(current, 1)[0];
+        if(!photos.length){
+          show(0);
+          caption.textContent = "Could not load " + fileLabel(bad) + ". Check the /photos folder.";
+          return;
+        }
+        if(current >= photos.length) current = 0;
+        show(current);
+      };
+      img.src = photos[current];
+      img.alt = "Bowling league photo " + (current + 1) + " of " + photos.length;
+      status.textContent = "PHOTO " + (current + 1) + " OF " + photos.length;
+      caption.textContent = fileLabel(photos[current]);
+    }
+
+    function restart(){
+      if(timer) clearInterval(timer);
+      timer = null;
+      if(!paused && photos.length > 1){
+        timer = setInterval(function(){ show(current + 1); }, SLIDE_MS);
+      }
+    }
+
+    function setPaused(value){
+      paused = value;
+      toggle.setAttribute("aria-pressed", paused ? "true" : "false");
+      toggle.textContent = paused ? "▶ AUTO" : "❚❚ PAUSE";
+      restart();
+    }
+
+    prev.addEventListener("click", function(){ show(current - 1); restart(); });
+    next.addEventListener("click", function(){ show(current + 1); restart(); });
+    toggle.addEventListener("click", function(){ setPaused(!paused); });
+
+    function useManualList(){
+      photos = PHOTO_FILES.filter(Boolean).map(safePath);
+      show(0);
+      restart();
+    }
+
+    function probeNumber(n, missingRun){
+      if(n > AUTO_MAX || missingRun >= 3){
+        show(0);
+        restart();
+        return;
+      }
+      var stem = String(n).padStart(2, "0");
+      var extIndex = 0;
+      function tryExtension(){
+        if(extIndex >= EXTENSIONS.length){
+          probeNumber(n + 1, missingRun + 1);
+          return;
+        }
+        var url = "photos/" + stem + "." + EXTENSIONS[extIndex++];
+        var test = new Image();
+        test.onload = function(){
+          photos.push(url);
+          status.textContent = "FOUND " + photos.length + " PHOTO" + (photos.length === 1 ? "" : "S");
+          probeNumber(n + 1, 0);
+        };
+        test.onerror = tryExtension;
+        test.src = url;
+      }
+      tryExtension();
+    }
+
+    if(PHOTO_FILES.length) useManualList();
+    else probeNumber(1, 0);
+  })();
+
+  (function jukebox(){
+    var btn       = $("midi-btn");
+    var btnPrev   = $("jb-prev");
+    var btnNext   = $("jb-next");
+    var eq        = $("eq");
+    var fileEl    = $("jb-file");
+    var titleEl   = $("jb-title");
+    var selectEl  = $("jb-select");
+    var playlistEl = $("jb-playlist");
+    var loopEl    = $("jb-loop");
+    var shuffleEl = $("jb-shuffle");
+    var volEl     = $("jb-vol");
+    var nowEl     = document.querySelector(".jb-now");
+
+    var PLAYLIST = TRACKER_TRACKS.concat(TRACKS.map(function(t){
+      var x = {};
+      Object.keys(t).forEach(function(k){ x[k] = t[k]; });
+      x.kind = "legacy";
+      return x;
+    }));
+
+    if(!btn || !fileEl || !PLAYLIST.length) return;
+
+    var AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if(!AudioCtx){
+      btn.disabled = true;
+      btn.textContent = "NO SOUNDCARD";
+      return;
+    }
+
+    var ctx = null;
+    var noiseBuffer = null;
+    var sampleBank = null;
+    var masterBus = null;
+    var limiter = null;
+    var idx = Math.floor(Math.random() * PLAYLIST.length);
+    var selectedIdx = idx;
+    var playing = false;
+    var masterVol = 0.70;
+    var legacyTimer = null;
+    var legacyTickCount = 0;
+    var trackerTimer = null;
+    var trackerOrder = 0;
+    var trackerRow = 0;
+    var trackerNextTime = 0;
+    var activeSources = [];
+
+    function ensureCtx(){
+      if(!ctx) ctx = new AudioCtx();
+      if(!masterBus){
+        masterBus = ctx.createGain();
+        limiter = ctx.createDynamicsCompressor();
+        masterBus.gain.value = 0.72;
+        limiter.threshold.value = -16;
+        limiter.knee.value = 10;
+        limiter.ratio.value = 12;
+        limiter.attack.value = 0.003;
+        limiter.release.value = 0.16;
+        masterBus.connect(limiter);
+        limiter.connect(ctx.destination);
+      }
+      if(!noiseBuffer){
+        var size = Math.floor(ctx.sampleRate * 0.6);
+        noiseBuffer = ctx.createBuffer(1, size, ctx.sampleRate);
+        var d = noiseBuffer.getChannelData(0);
+        for(var i = 0; i < size; i++) d[i] = Math.random() * 2 - 1;
+      }
+      if(!sampleBank) sampleBank = buildSampleBank();
+      return ctx;
+    }
+
+    function keepSource(src){
+      activeSources.push(src);
+      src.onended = function(){
+        var i = activeSources.indexOf(src);
+        if(i >= 0) activeSources.splice(i, 1);
+      };
+    }
+
+    function stopSources(){
+      activeSources.slice().forEach(function(src){
+        try{ src.stop(); }catch(e){}
+      });
+      activeSources.length = 0;
+    }
+
+    function connectPan(node, pan){
+      var target = masterBus || ctx.destination;
+      if(ctx.createStereoPanner){
+        var p = ctx.createStereoPanner();
+        p.pan.value = Math.max(-0.65, Math.min(0.65, pan || 0));
+        node.connect(p);
+        p.connect(target);
+      } else {
+        node.connect(target);
+      }
+    }
+
+    function buildWave(kind){
+      var sr = 11025, len = 512;
+      var b = ctx.createBuffer(1, len, sr);
+      var d = b.getChannelData(0);
+      for(var i = 0; i < len; i++){
+        var ph = i / len;
+        var v = 0;
+        if(kind === "lead"){
+          v = (ph < 0.25 ? 0.85 : -0.75) + 0.18 * (2 * ph - 1);
+        } else if(kind === "arp"){
+          v = 0.62 * (2 * ph - 1) + 0.22 * Math.sin(ph * Math.PI * 4);
+        } else if(kind === "stab"){
+          v = 0.48 * Math.sign(Math.sin(ph * Math.PI * 2)) + 0.30 * Math.sign(Math.sin(ph * Math.PI * 4));
+        } else {
+          v = 1 - 4 * Math.abs(Math.round(ph - 0.25) - (ph - 0.25));
+        }
+        v = Math.max(-1, Math.min(1, v));
+        d[i] = Math.round(v * 48) / 48;
+      }
+      return b;
+    }
+
+    function buildDrum(kind){
+      var sr = 22050;
+      var dur = kind === "crash" ? 0.75 : (kind === "pin" ? 0.34 : (kind === "kick" ? 0.28 : (kind === "tom" ? 0.30 : 0.22)));
+      var len = Math.floor(sr * dur);
+      var b = ctx.createBuffer(1, len, sr);
+      var d = b.getChannelData(0);
+      var phase = 0;
+      for(var i = 0; i < len; i++){
+        var t = i / sr;
+        var x = 0;
+        if(kind === "kick"){
+          var f = 150 * Math.exp(-t * 17) + 42;
+          phase += 2 * Math.PI * f / sr;
+          x = Math.sin(phase) * Math.exp(-t * 18);
+        } else if(kind === "snare"){
+          x = ((Math.random() * 2 - 1) * 0.75 + Math.sin(t * Math.PI * 360) * 0.25) * Math.exp(-t * 23);
+        } else if(kind === "hat"){
+          var hn = Math.random() * 2 - 1;
+          var hp = i ? d[i - 1] : 0;
+          x = (hn * 0.62 + hp * 0.38) * Math.exp(-t * 48);
+        } else if(kind === "tom"){
+          var tf = 190 * Math.exp(-t * 9) + 72;
+          phase += 2 * Math.PI * tf / sr;
+          x = Math.sin(phase) * Math.exp(-t * 13);
+        } else if(kind === "clap"){
+          var ce = Math.exp(-t * 22) * (0.65 + 0.35 * Math.sin(t * Math.PI * 70) * Math.sin(t * Math.PI * 70));
+          x = (Math.random() * 2 - 1) * ce;
+        } else if(kind === "pin"){
+          x = (Math.sin(t * Math.PI * 2 * 720) * 0.68 + Math.sin(t * Math.PI * 2 * 1030) * 0.32) * Math.exp(-t * 15);
+        } else {
+          var cn = Math.random() * 2 - 1;
+          var cp = i ? d[i - 1] : 0;
+          x = (cn * 0.72 + cp * 0.28) * Math.exp(-t * 5.2);
+        }
+        d[i] = Math.round(Math.max(-1, Math.min(1, x)) * 32) / 32;
+      }
+      return b;
+    }
+
+    function buildSampleBank(){
+      return {
+        /* Tone instruments use Web Audio's band-limited oscillators.
+           The older tiny looped buffers aliased badly on high notes. */
+        1:{ type:"tone", wave:"square",   level:0.100, cutoff:9000, harmonics:8.5, floor:1900 },
+        2:{ type:"tone", wave:"triangle", level:0.088, cutoff:7600, harmonics:6.5, floor:1600 },
+        3:{ type:"tone", wave:"sawtooth", level:0.070, cutoff:8200, harmonics:7.5, floor:1800 },
+        4:{ type:"tone", wave:"triangle", level:0.16,  cutoff:5200, harmonics:4.8, floor:900 },
+        5:{ type:"drum", buffer:buildDrum("kick"),  level:0.45, cutoff:3200, highpass:35 },
+        6:{ type:"drum", buffer:buildDrum("snare"), level:0.26, cutoff:6800, highpass:650 },
+        7:{ type:"drum", buffer:buildDrum("hat"),   level:0.055, cutoff:8400, highpass:4200 },
+        8:{ type:"drum", buffer:buildDrum("crash"), level:0.13, cutoff:7600, highpass:1800 },
+        9:{ type:"drum", buffer:buildDrum("tom"),   level:0.30, cutoff:3800, highpass:55 },
+        10:{ type:"drum", buffer:buildDrum("clap"), level:0.18, cutoff:6600, highpass:900 },
+        11:{ type:"drum", buffer:buildDrum("pin"),  level:0.16, cutoff:7800, highpass:500 },
+        12:{ type:"tone", wave:"sine",     level:0.090, cutoff:6200, harmonics:2.6, floor:1200 },
+        13:{ type:"tone", wave:"square",   level:0.062, cutoff:5600, harmonics:5.0, floor:1350 }
+      };
+    }
+
+    function semitoneRatio(n){ return Math.pow(2, n / 12); }
+
+    function playTrackerTone(ev, ch, when, dur, semis){
+      var inst = sampleBank[ev.inst];
+      var freq = noteFreq(ev.note) * semitoneRatio(semis || 0);
+      if(!inst || !freq || inst.type !== "tone") return;
+
+      /* OscillatorNode waveforms are band-limited by the browser. This avoids
+         the fierce aliasing that the old 11 kHz looped tone samples produced. */
+      freq = Math.max(35, Math.min(1800, freq));
+      var osc = ctx.createOscillator();
+      var filter = ctx.createBiquadFilter();
+      var gain = ctx.createGain();
+      osc.type = inst.wave || "triangle";
+      osc.frequency.setValueAtTime(freq, when);
+
+      if(ev.fx && ev.fx.slide){
+        var targetFreq = Math.max(35, Math.min(1800, freq * semitoneRatio(ev.fx.slide)));
+        osc.frequency.exponentialRampToValueAtTime(targetFreq, when + dur);
+      }
+      if(ev.fx && ev.fx.vib && osc.detune){
+        var depth = Math.min(12, Math.abs(ev.fx.vib));
+        for(var k = 0; k <= 8; k++){
+          osc.detune.setValueAtTime(Math.sin(k * Math.PI / 2) * depth, when + dur * (k / 8));
+        }
+      }
+
+      filter.type = "lowpass";
+      var harmonicReach = inst.harmonics || 7;
+      var filterFloor = inst.floor || 1200;
+      filter.frequency.setValueAtTime(Math.min(inst.cutoff || 8000, Math.max(filterFloor, freq * harmonicReach)), when);
+      filter.Q.value = 0.18;
+
+      var level = inst.level * (ev.vol / 64) * masterVol;
+      var attack = Math.min(0.010, Math.max(0.003, dur * 0.12));
+      gain.gain.setValueAtTime(0.0001, when);
+      gain.gain.linearRampToValueAtTime(level, when + attack);
+      gain.gain.setValueAtTime(level * 0.82, when + Math.max(attack + 0.002, dur * 0.30));
+      gain.gain.linearRampToValueAtTime(0.0001, when + dur);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      connectPan(gain, PLAYLIST[idx].pan[ch] || 0);
+      osc.start(when);
+      osc.stop(when + dur + 0.02);
+      keepSource(osc);
+    }
+
+    function playTrackerDrum(ev, ch, when){
+      var inst = sampleBank[ev.inst];
+      if(!inst) return;
+      var src = ctx.createBufferSource();
+      var highpass = ctx.createBiquadFilter();
+      var filter = ctx.createBiquadFilter();
+      var gain = ctx.createGain();
+      src.buffer = inst.buffer;
+      highpass.type = "highpass";
+      highpass.frequency.setValueAtTime(inst.highpass || 30, when);
+      highpass.Q.value = 0.10;
+      filter.type = "lowpass";
+      filter.frequency.setValueAtTime(inst.cutoff || 6800, when);
+      filter.Q.value = 0.12;
+      var level = inst.level * (ev.vol / 64) * masterVol;
+      var end = when + inst.buffer.duration;
+      gain.gain.setValueAtTime(0.0001, when);
+      gain.gain.linearRampToValueAtTime(level, when + 0.006);
+      gain.gain.setValueAtTime(level * 0.92, Math.max(when + 0.010, end - 0.018));
+      gain.gain.linearRampToValueAtTime(0.0001, end);
+      src.connect(highpass);
+      highpass.connect(filter);
+      filter.connect(gain);
+      connectPan(gain, PLAYLIST[idx].pan[ch] || 0);
+      src.start(when);
+      src.stop(end + 0.01);
+      keepSource(src);
+    }
+
+    function scheduleTrackerEvent(ev, ch, when, rowDur, track){
+      if(!ev || !ev.inst) return;
+      var fx = ev.fx || {};
+      var start = when + rowDur * (fx.delay || 0);
+      var dur = rowDur * (fx.cut || 0.92);
+      var inst = sampleBank[ev.inst];
+      if(!inst) return;
+      if(inst.type === "drum"){
+        if(fx.retrig){
+          for(var dr = 0; dr < fx.retrig; dr++) playTrackerDrum(ev, ch, start + rowDur * dr / fx.retrig);
+        } else playTrackerDrum(ev, ch, start);
+        return;
+      }
+      if(fx.arp && fx.arp.length){
+        var tickDur = rowDur / track.speed;
+        for(var t = 0; t < track.speed; t++){
+          playTrackerTone(ev, ch, start + t * tickDur, tickDur * 1.08, fx.arp[t % fx.arp.length]);
+        }
+      } else if(fx.retrig){
+        for(var rr = 0; rr < fx.retrig; rr++){
+          playTrackerTone(ev, ch, start + rowDur * rr / fx.retrig, dur / fx.retrig * 0.95, 0);
+        }
+      } else {
+        playTrackerTone(ev, ch, start, dur, 0);
+      }
+    }
+
+    function trackerRowSeconds(track){
+      return track.speed * (2.5 / track.bpm);
+    }
+
+    function scheduleTrackerRow(track, when){
+      var patNo = track.order[trackerOrder];
+      var pat = track.patterns[patNo];
+      var row = pat[trackerRow];
+      var rowDur = trackerRowSeconds(track);
+      for(var ch = 0; ch < track.channels; ch++) scheduleTrackerEvent(row[ch], ch, when, rowDur, track);
+
+      trackerRow++;
+      if(trackerRow >= pat.length){
+        trackerRow = 0;
+        trackerOrder++;
+        if(trackerOrder >= track.order.length){
+          if(loopEl && loopEl.checked){
+            trackerOrder = 0;
+          } else {
+            trackerOrder = 0;
+            window.setTimeout(function(){ if(playing) switchTrack(pickNext(), true); }, Math.max(0, (when - ctx.currentTime) * 1000 + rowDur * 1000));
+          }
+        }
+      }
+      trackerNextTime += rowDur;
+    }
+
+    function trackerSchedule(){
+      var track = PLAYLIST[idx];
+      if(!playing || !track || track.kind !== "tracker") return;
+      while(trackerNextTime < ctx.currentTime + 0.16) scheduleTrackerRow(track, trackerNextTime);
+    }
+
+    function startTracker(){
+      var track = PLAYLIST[idx];
+      trackerOrder = 0;
+      trackerRow = 0;
+      trackerNextTime = ctx.currentTime + 0.05;
+      trackerSchedule();
+      trackerTimer = setInterval(trackerSchedule, 25);
+    }
+
+    function playLegacyNote(freq, voice, duration, pan){
+      if(!freq || !ctx || !voice) return;
+      var now = ctx.currentTime;
+      var humanize = 0.92 + Math.random() * 0.10;
+      var vol = Math.max(0.0001, (voice.vol || 0.04) * masterVol * humanize);
+      var gain = ctx.createGain();
+      var filter = ctx.createBiquadFilter();
+      filter.type = "lowpass";
+      filter.frequency.value = Math.min(7600, Math.max(1800, freq * 7));
+      filter.Q.value = 0.2;
+      filter.connect(gain);
+      connectPan(gain, pan || 0);
+      var a = Math.max(0.004, voice.a != null ? voice.a : 0.01);
+      var d = voice.d != null ? voice.d : 0.05;
+      var ss = voice.s != null ? voice.s : 0.35;
+      var rel = Math.max(0.05, voice.r != null ? voice.r : 0.09);
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.linearRampToValueAtTime(vol, now + a);
+      gain.gain.linearRampToValueAtTime(vol * ss, now + a + d);
+      gain.gain.setValueAtTime(vol * ss, now + Math.max(duration, a + d));
+      gain.gain.linearRampToValueAtTime(0.0001, now + Math.max(duration, a + d) + rel);
+      var stopTime = now + Math.max(duration, a + d) + rel + 0.06;
+      var detunes = (voice.detune && voice.detune > 0) ? [-voice.detune, voice.detune] : [0];
+      detunes.forEach(function(cents){
+        var osc = ctx.createOscillator();
+        osc.type = voice.wave || "square";
+        osc.frequency.value = Math.min(3200, freq);
+        if(cents) osc.detune.value = cents;
+        if(voice.vib && voice.vib.depth){
+          var lfo = ctx.createOscillator();
+          var lfoGain = ctx.createGain();
+          lfo.type = "sine";
+          lfo.frequency.value = voice.vib.rate || 5;
+          lfoGain.gain.setValueAtTime(0, now);
+          lfoGain.gain.linearRampToValueAtTime(Math.min(10, voice.vib.depth), now + (voice.vib.delay || 0) + 0.05);
+          lfo.connect(lfoGain);
+          lfoGain.connect(osc.detune);
+          lfo.start(now);
+          lfo.stop(stopTime);
+        }
+        osc.connect(filter);
+        osc.start(now);
+        osc.stop(stopTime);
+        keepSource(osc);
+      });
+    }
+
+    function legacyKick(){
+      var now = ctx.currentTime;
+      var osc = ctx.createOscillator(), gain = ctx.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(140, now);
+      osc.frequency.exponentialRampToValueAtTime(42, now + 0.07);
+      gain.gain.setValueAtTime(0.55 * masterVol, now);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.22);
+      osc.connect(gain); connectPan(gain, -0.08); osc.start(now); osc.stop(now + 0.25); keepSource(osc);
+    }
+
+    function legacyNoise(kind){
+      var now = ctx.currentTime;
+      var noise = ctx.createBufferSource();
+      noise.buffer = noiseBuffer;
+      var hp = ctx.createBiquadFilter();
+      var gain = ctx.createGain();
+      var stopAt;
+      if(kind === "snare"){
+        hp.type = "highpass"; hp.frequency.value = 1400;
+        gain.gain.setValueAtTime(0.30 * masterVol, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.14);
+        stopAt = now + 0.15;
+      } else if(kind === "open" || kind === "hat"){
+        hp.type = "highpass"; hp.frequency.value = 5200;
+        var dur = kind === "open" ? 0.22 : 0.045;
+        gain.gain.setValueAtTime(0.085 * masterVol, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+        stopAt = now + dur + 0.02;
+      } else {
+        hp.type = "highpass"; hp.frequency.value = 3200;
+        gain.gain.setValueAtTime(0.18 * masterVol, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.80);
+        stopAt = now + 0.85;
+      }
+      noise.connect(hp);
+      hp.connect(gain);
+      connectPan(gain, kind === "snare" ? 0.12 : (kind === "hat" || kind === "open" ? 0.24 : -0.10));
+      /* Start before scheduling stop. Safari and Chromium both reject stop()
+         on an AudioScheduledSourceNode that has not been started yet. */
+      noise.start(now);
+      noise.stop(stopAt);
+      keepSource(noise);
+    }
+
+    function legacyTick(){
+      var t = PLAYLIST[idx];
+      var stepMs = 60000 / (t.bpm * 4);
+      var melDur = Math.max(0.04, (stepMs / 1000) * 0.65);
+      var melIdx = legacyTickCount % t.melody.length;
+      var bassIdx = legacyTickCount % t.bass.length;
+      var drumIdx = legacyTickCount % t.drums.length;
+      var lead = VOICES[t.leadVoice], leadName = t.melody[melIdx];
+      if(lead && leadName && leadName !== "-") playLegacyNote(noteFreq(leadName), lead, melDur, -0.24);
+      if(t.harmony && t.harmVoice){
+        var harm = VOICES[t.harmVoice];
+        var harmName = t.harmony[legacyTickCount % t.harmony.length];
+        if(harm && harmName && harmName !== "-") playLegacyNote(noteFreq(harmName), harm, melDur * 0.85, 0.28);
+      }
+      var bass = VOICES[t.bassVoice], bassName = t.bass[bassIdx];
+      if(bass && bassName && bassName !== "-") playLegacyNote(noteFreq(bassName), bass, Math.max(0.05, (stepMs / 1000) * 0.9), 0);
+      var dc = t.drums[drumIdx];
+      if(dc === "K") legacyKick();
+      else if(dc === "S") legacyNoise("snare");
+      else if(dc === "H") legacyNoise("hat");
+      else if(dc === "O") legacyNoise("open");
+      else if(dc === "C") legacyNoise("crash");
+      legacyTickCount++;
+      if(legacyTickCount >= t.melody.length){
+        if(loopEl && loopEl.checked) legacyTickCount = 0;
+        else switchTrack(pickNext(), true);
+      }
+    }
+
+    function startLegacy(){
+      legacyTickCount = 0;
+      legacyTick();
+      legacyTimer = setInterval(legacyTick, 60000 / (PLAYLIST[idx].bpm * 4));
+    }
+
+    if(selectEl){
+      selectEl.innerHTML = PLAYLIST.map(function(t, i){
+        return '<option value="' + i + '">' + esc(t.file) + '</option>';
+      }).join("");
+    }
+
+    function renderPlaylist(){
+      if(!playlistEl) return;
+      playlistEl.innerHTML = PLAYLIST.map(function(t, i){
+        var current = i === idx ? " current" : "";
+        var selected = i === selectedIdx ? " selected" : "";
+        var kind = t.kind === "tracker" ? "TRACKER" : "LEGACY";
+        return '<div class="jb-pl-row' + current + selected + '" role="option" tabindex="0" data-index="' + i + '" data-num="' + String(i + 1).padStart(2, "0") + '" aria-selected="' + (i === selectedIdx ? 'true' : 'false') + '">' +
+          '<span class="jb-pl-name">' + esc(t.file) + '<span class="jb-pl-kind">' + kind + ' // ' + esc(t.title) + '</span></span></div>';
+      }).join("");
+      var currentRow = playlistEl.querySelector('.jb-pl-row.current');
+      if(currentRow && currentRow.scrollIntoView){
+        try{ currentRow.scrollIntoView({block:"nearest"}); }catch(e){ currentRow.scrollIntoView(false); }
+      }
+    }
+
+    function selectPlaylistRow(newIdx){
+      selectedIdx = Math.max(0, Math.min(PLAYLIST.length - 1, newIdx));
+      if(!playlistEl) return;
+      Array.prototype.forEach.call(playlistEl.querySelectorAll(".jb-pl-row"), function(row){
+        var n = parseInt(row.getAttribute("data-index"), 10);
+        var on = n === selectedIdx;
+        row.classList.toggle("selected", on);
+        row.setAttribute("aria-selected", on ? "true" : "false");
+      });
+    }
+
+    function updateDisplay(){
+      var t = PLAYLIST[idx];
+      fileEl.textContent = t.file;
+      if(titleEl) titleEl.textContent = t.title;
+      if(selectEl) selectEl.value = String(idx);
+      var tagEl = $("jb-tag");
+      if(tagEl) tagEl.textContent = t.tag || "CLASSIC";
+      if(nowEl) nowEl.textContent = t.kind === "tracker" ? "TRACKER ::" : "MOD PLAYER ::";
+      var jb = $("jukebox");
+      if(jb) jb.classList.toggle("arcade", t.tag === "ARCADE");
+      selectedIdx = idx;
+      renderPlaylist();
+    }
+
+    function clearTimers(){
+      if(legacyTimer){ clearInterval(legacyTimer); legacyTimer = null; }
+      if(trackerTimer){ clearInterval(trackerTimer); trackerTimer = null; }
+    }
+
+    function startCurrent(){
+      ensureCtx();
+      function beginPlayback(){
+        clearTimers();
+        stopSources();
+        playing = true;
+        if(PLAYLIST[idx].kind === "tracker") startTracker();
+        else startLegacy();
+        btn.textContent = "STOP";
+        btn.setAttribute("aria-pressed", "true");
+        if(eq) eq.classList.add("on");
+      }
+      if(ctx.state === "suspended" && ctx.resume){
+        return ctx.resume().then(beginPlayback);
+      }
+      beginPlayback();
+      return Promise.resolve();
+    }
+
+    function stop(){
+      clearTimers();
+      stopSources();
+      playing = false;
+      btn.textContent = "PLAY";
+      btn.setAttribute("aria-pressed", "false");
+      if(eq) eq.classList.remove("on");
+    }
+
+    function pickNext(){
+      if(shuffleEl && shuffleEl.checked && PLAYLIST.length > 1){
+        var n = idx;
+        while(n === idx) n = Math.floor(Math.random() * PLAYLIST.length);
+        return n;
+      }
+      return (idx + 1) % PLAYLIST.length;
+    }
+
+    function pickPrev(){
+      if(shuffleEl && shuffleEl.checked && PLAYLIST.length > 1){
+        var n = idx;
+        while(n === idx) n = Math.floor(Math.random() * PLAYLIST.length);
+        return n;
+      }
+      return (idx - 1 + PLAYLIST.length) % PLAYLIST.length;
+    }
+
+    function switchTrack(newIdx, keepPlaying){
+      var wasPlaying = playing || keepPlaying;
+      clearTimers();
+      stopSources();
+      idx = newIdx;
+      updateDisplay();
+      if(wasPlaying) startCurrent().catch(playbackError);
+    }
+
+    function playbackError(e){
+      clearTimers();
+      stopSources();
+      playing = false;
+      btn.disabled = false;
+      btn.textContent = "PLAY";
+      btn.setAttribute("aria-pressed", "false");
+      if(eq) eq.classList.remove("on");
+      try{ console.error("Jukebox playback error", e); }catch(ignore){}
+    }
+
+    btn.addEventListener("click", function(){
+      try{
+        if(playing) stop();
+        else startCurrent().catch(playbackError);
+      }catch(e){
+        playbackError(e);
+      }
+    });
+
+    if(btnPrev) btnPrev.addEventListener("click", function(){ switchTrack(pickPrev(), playing); });
+    if(btnNext) btnNext.addEventListener("click", function(){ switchTrack(pickNext(), playing); });
+    if(selectEl) selectEl.addEventListener("change", function(){ switchTrack(parseInt(selectEl.value, 10) || 0, playing); });
+    if(playlistEl){
+      playlistEl.addEventListener("click", function(e){
+        var row = e.target.closest ? e.target.closest(".jb-pl-row") : null;
+        if(!row) return;
+        var n = parseInt(row.getAttribute("data-index"), 10) || 0;
+        selectPlaylistRow(n);
+        /* Safari can be inconsistent about dblclick when nested text is clicked.
+           The second click of a normal double-click still arrives with detail >= 2. */
+        if(e.detail >= 2){
+          e.preventDefault();
+          selectedIdx = n;
+          switchTrack(n, true);
+        }
+      });
+      playlistEl.addEventListener("dblclick", function(e){
+        var row = e.target.closest ? e.target.closest(".jb-pl-row") : null;
+        if(!row) return;
+        e.preventDefault();
+        var n = parseInt(row.getAttribute("data-index"), 10) || 0;
+        if(n !== idx || !playing){
+          selectedIdx = n;
+          switchTrack(n, true);
+        }
+      });
+      playlistEl.addEventListener("keydown", function(e){
+        var row = e.target.closest ? e.target.closest(".jb-pl-row") : null;
+        if(!row) return;
+        var n = parseInt(row.getAttribute("data-index"), 10) || 0;
+        if(e.key === "Enter"){
+          e.preventDefault();
+          selectedIdx = n;
+          switchTrack(n, true);
+        } else if(e.key === " " || e.key === "Spacebar"){
+          e.preventDefault();
+          selectPlaylistRow(n);
+        }
+      });
+    }
+    if(volEl) volEl.addEventListener("input", function(){ masterVol = parseInt(volEl.value, 10) / 100; });
+    document.addEventListener("visibilitychange", function(){ if(document.hidden && playing) stop(); });
+
+    updateDisplay();
+  })();
+
+  /* =====================================================
+     13. PERIOD-CORRECT EASTER EGGS
+     ===================================================== */
+  Array.prototype.forEach.call(document.querySelectorAll(".js-ring"), function(a){
+    a.addEventListener("click", function(e){
+      e.preventDefault();
+      alert("The Bowlers WebRing shut up shop years ago. Try the Wayback Machine.");
+    });
+  });
+
+  var gb = document.querySelector(".js-guest");
+  if(gb){
+    gb.addEventListener("click", function(e){
+      e.preventDefault();
+      alert("The guestbook link is already on this page. Scroll down a bit.");
+    });
+  }
+
+  var framesLink = $("frames-link");
+  if(framesLink){
+    framesLink.addEventListener("click", function(e){
+      e.preventDefault();
+      alert("Error 404: there is no frames version. This page is proudly frame-free.");
+    });
+  }
+})();
+</script>
+</body>
+</html>

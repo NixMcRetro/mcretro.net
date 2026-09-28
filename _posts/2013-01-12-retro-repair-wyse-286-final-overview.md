@@ -7,4 +7,4 @@ categories: [ibm-pc, repairs, youtube]
 
 {% include youtube.html id="PhXfDNmgsl4" %}
 
-We fire up the Wyse 286 one last time before passing it on to (hopefully) greener pastures. Farewell dear Wyse PC, you have been a learning experience. We get the floppy drives firing up and both become bootable (in turns of course). We also get to see a small demo of the hard drive.
+We fire up the Wyse 286 one last time before passing it on to (hopefully) greener pastures. Farewell dear Wyse PC, you have been a learning experience. We get the floppy drives firing up and both become bootable (in turn, of course). We also get to see a small demo of the hard drive.

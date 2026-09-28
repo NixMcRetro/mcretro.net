@@ -2,6 +2,11 @@
 title: "Sega TeraDrive, Nomad and Mega Drive 2"
 author: "Nix McRetro"
 date: 2012-05-09T03:29:04.000+10:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [repairs, sega]
 ---
 
@@ -31,4 +36,4 @@ Next up we have the Mega Drive 2. I purchased a broken Mega Drive 1 to use with 
 
 ![](/assets/images/2012/img_0082.jpg)
 
-Last but certainly not least - the Sega TeraDrive Model 2 has been tested and works well. Both floppy drives are functional. I have been unable to test the Mega Drive side of things - but it should be working. I'll know once I pick up one of those 15KHz video converters that has been on my to buy list for quite a while now. I have also uploaded some of the flyers and the quick reference guide that came with the TeraDrive - it's over in the [photo gallery](/goodies).
+Last but certainly not least - the Sega TeraDrive Model 2 has been tested and works well. Both floppy drives are functional. I have been unable to test the Mega Drive side of things yet, so for now it remains unverified. I'll know once I pick up one of those 15KHz video converters that has been on my to buy list for quite a while now. I have also uploaded some of the flyers and the quick reference guide that came with the TeraDrive - it's over in the [photo gallery](/goodies).

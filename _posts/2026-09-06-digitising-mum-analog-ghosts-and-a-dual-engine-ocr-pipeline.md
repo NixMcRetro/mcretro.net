@@ -2,6 +2,11 @@
 title: "Digitising Mum: Analog Ghosts, Bureaucracy, and a Dual-Engine OCR Pipeline"
 author: "Nix McRetro"
 date: 2026-09-06T09:00:00.000+10:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ai-generated, programming]
 ---
 
@@ -35,23 +40,23 @@ on a 1000x1000 canvas...
 
 The spatial awareness was incredible: headers, paragraphs, table structures, all correct. Then I hit the blank pages.
 
-Generative models cannot say "I don't know." Show a VLM a blank scan and ask what it says, and it will confidently invent a reality.
+The generative OCR model I tested did not reliably abstain when given blank or ambiguous scans. In this workflow, asking the VLM to transcribe a blank page could still produce a confident-looking invention.
 
 > Prompted for page 6 (a blank scan), Chandra returned a detailed Spanish agricultural campaign — "CAMPAÑA 2017", goat prices per kilo. Prompted for page 12 (also blank), it returned the meeting agenda of the Assam Meghalaya Veterinary Association.
 
 The fix was a pre-flight guardrail: PyMuPDF ink-coverage analysis, with any page under ~1% ink quarantined and its PNG deleted before it could ever reach the model. Plus junk filters for the microprint control codes banks print vertically down the margin, and a lesson learned the hard way about PDF rotation traps (`/Rotate 270`, I'm looking at you).
 
-The takeaway: **generative models have high recall but terrible precision.** They'll find your text, and occasionally invent goats.
+The takeaway from **this dataset**: Chandra behaved like a high-recall reader. It recovered faint text that the second engine missed, but it could also generate false content on blank scans. Occasionally, that meant invented goats.
 
 ---
 
-## Engine B: rent a discriminative robot
+## Engine B: rent a document-analysis robot
 
 To solve the precision problem I needed a discriminative model. I spun up an AWS account, created an IAM user scoped to `AmazonTextractFullAccess`, and ran `AnalyzeDocument` with the `TABLES` feature (Sydney region) over the whole `pages/` directory.
 
-Textract doesn't hallucinate. Show it a blank page and it returns an empty payload. More importantly it gives **cell-level geometry**, it knows exactly which words belong to Row 4, Column 2. Cost for the entire 200-page batch: about a dollar.
+In my tests, Textract returned no text for the blank pages that caused Chandra to invent content. More importantly, it provides **cell-level geometry** and row/column structure for detected tables. My actual charge for the ~200-page batch was about a dollar, helped by AWS's free-tier allowance; pricing varies by region and usage.
 
-But it has the opposite failure mode. Textract missed seven tiny credit-interest entries ($0.03–$1.35) that Chandra caught. **Discriminative models have high precision but lower recall on faint or oddly-placed text.**
+But it had the opposite failure mode on these statements. Textract missed seven tiny credit-interest entries ($0.03–$1.35) that Chandra caught. **On this dataset, Textract produced fewer false textual detections but lower recall on some faint or oddly placed text.**
 
 ---
 
@@ -63,7 +68,7 @@ I wrote a comparison script that independently parsed the Chandra HTML and the T
 
 ### The date state machine
 
-Banks print statements in reverse-chronological order (newest first, because of course), and to save space they print the year *once*, on the first page, or when the year rolls over. Every other row just says `16 Dec` or `06 Jan`. So the extractor carries a "current year" state forward down the rows and across page breaks: an explicit year anywhere in a row resets the state, and a December to January transition ticks the year forward. Only then do you have clean ISO `YYYY-MM-DD` dates to diff on.
+These statements were printed in reverse-chronological order (newest first, because of course), and to save space they printed the year *once*, on the first page, or when the year rolled over. Every other row just says `16 Dec` or `06 Jan`. So the extractor carries a "current year" state forward down the rows and across page breaks: an explicit year anywhere in a row resets the state, and a December to January transition ticks the year forward. Only then do you have clean ISO `YYYY-MM-DD` dates to diff on.
 
 ### The diff
 
@@ -85,7 +90,7 @@ statements.pdf
 
 ## The human tiebreaker
 
-The 8 disputed rows got adjudicated the old-fashioned way: I opened the original scans and looked. Seven were real — tiny monthly interest credits Textract's boxes had skipped. I added them to a `VERIFIED` list. The eighth was a "Debit Interest Adjusted" entry for $0.26; debit interest is money the bank *charges* you, which isn't assessable income, so it was filtered out. Only credit interest matters to the ATO.
+The 8 disputed rows got adjudicated the old-fashioned way: I opened the original scans and looked. Seven were real — tiny monthly interest credits Textract's boxes had skipped. I added them to a `VERIFIED` list. The eighth was a "Debit Interest Adjusted" entry for $0.26; it was not an interest-income credit, so it was filtered out. For this extraction task I only needed assessable interest credited to the account.
 
 | Financial year | Interest earned |
 | --- | --- |
@@ -106,7 +111,7 @@ Eight years of "hidden income": **$479.59**. That's the whole mystery the tax of
 
 One last script turns the final CSV into a print-ready A4 HTML appendix: the per-FY summary, the 82-row detail table, and a methodology declaration documenting the dual-engine process so the numbers are auditable. A second script writes the same methodology out as plain text for the estate folder. The letter to Penrith went together with certified copies of the Death Certificate and Grant of Probate, and the whole envelope went Registered Post this week.
 
-When the processing officer opens it, they won't see a messy spreadsheet. They'll see a verified summary proving her interest income was microscopic, well below the tax-free threshold, backed by a documented method.
+When the processing officer opens it, they won't see a messy spreadsheet. They'll see a verified summary showing that the previously unaccounted-for bank interest totalled only $479.59 across eight financial years, backed by a documented method.
 
 ---
 
@@ -117,5 +122,12 @@ The tagline on this site says I document the analog ghosts and digital debris of
 What I keep coming back to is that "archival fidelity" was never about which engine benchmarks better. It's a process: two independent readers, a human with the original paper as tiebreaker, and everything written down. That's not OCR. That's just good archiving. The exact same instinct that makes us label our floppy disks.
 
 The ATO gets their numbers. I keep the archive, every statement, searchable, forever. The analog ghosts are at rest now, and the digital debris is organised.
+
+## Sources and technical notes
+
+- [Datalab — Chandra OCR 2](https://api.datalab.to/blog/chandra-2) — model capabilities, structured output, and bounding boxes.
+- [AWS — Amazon Textract pricing](https://aws.amazon.com/textract/pricing/) — current AnalyzeDocument/TABLES pricing and Free Tier allowances.
+- [AWS — Tables in Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-tables.html) — cell, row/column, confidence, and geometry output.
+- [ATO — When and how to lodge returns for a deceased estate](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/when-and-how-to-lodge-returns-for-a-deceased-estate) — distinction between the deceased person's return and later estate trust returns.
 
 I'm going to take a few days off the terminal. Keep being awesome 🙂

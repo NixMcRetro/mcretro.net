@@ -12,7 +12,7 @@ categories: [ai-generated, programming]
 
 If I've been quiet lately, or if I've seemed perpetually distracted for the past twelve months, this is why. It's almost the one-year anniversary of my mother's death, and I am still drowning in paperwork. Grief, it turns out, is mostly just an endless series of administrative tasks.
 
-The Australian Taxation Office wanted her tax affairs regularised going back to 2018–19. The bank's automated deceased-estate data package only covered the last three years, and even then it was sparse. What I actually had was a ~200-page scanned PDF of her historical statements. What the ATO needed was every interest entry, categorised by financial year, in a form I could legally sign my name to.
+The Australian Taxation Office wanted her tax affairs regularised going back to 2018-19. The bank's automated deceased-estate data package only covered the last three years, and even then it was sparse. What I actually had was a ~200-page scanned PDF of her historical statements. What the ATO needed was every interest entry, categorised by financial year, in a form I could legally sign my name to.
 
 I wasn't about to sit there with a highlighter for three weeks, and I wasn't going to pay an accountant hundreds of dollars to do it. So I did what I always do: I turned a deeply personal, emotionally exhausting problem into a homelab engineering sprint. A local vision-language model on the M4 mini, AWS Textract in the cloud, a Python date state machine, and a human-in-the-loop (me, with the original paper) as the tiebreaker.
 
@@ -30,7 +30,7 @@ I briefly opened Adobe Acrobat Pro, got hit with a paywall (the trial on that Ad
 
 ## Engine A: a local VLM that dreams too vividly
 
-I pointed `omlx` on the M4 Mac mini at **Chandra OCR 2**, a vision-language model quantised to 8-bit MLX. Fully on-device, so her financials never left the house. The magic of a VLM is that you can prompt it for structure — I asked for semantic HTML with explicit bounding boxes on a normalised 1000×1000 canvas:
+I pointed `omlx` on the M4 Mac mini at **Chandra OCR 2**, a vision-language model quantised to 8-bit MLX. Fully on-device, so her financials never left the house. The magic of a VLM is that you can prompt it for structure - I asked for semantic HTML with explicit bounding boxes on a normalised 1000×1000 canvas:
 
 ```text
 Transcribe the document. Output valid HTML. Every block must include a
@@ -42,7 +42,7 @@ The spatial awareness was incredible: headers, paragraphs, table structures, all
 
 The generative OCR model I tested did not reliably abstain when given blank or ambiguous scans. In this workflow, asking the VLM to transcribe a blank page could still produce a confident-looking invention.
 
-> Prompted for page 6 (a blank scan), Chandra returned a detailed Spanish agricultural campaign — "CAMPAÑA 2017", goat prices per kilo. Prompted for page 12 (also blank), it returned the meeting agenda of the Assam Meghalaya Veterinary Association.
+> Prompted for page 6 (a blank scan), Chandra returned a detailed Spanish agricultural campaign - "CAMPAÑA 2017", goat prices per kilo. Prompted for page 12 (also blank), it returned the meeting agenda of the Assam Meghalaya Veterinary Association.
 
 The fix was a pre-flight guardrail: PyMuPDF ink-coverage analysis, with any page under ~1% ink quarantined and its PNG deleted before it could ever reach the model. Plus junk filters for the microprint control codes banks print vertically down the margin, and a lesson learned the hard way about PDF rotation traps (`/Rotate 270`, I'm looking at you).
 
@@ -56,7 +56,7 @@ To solve the precision problem I needed a discriminative model. I spun up an AWS
 
 In my tests, Textract returned no text for the blank pages that caused Chandra to invent content. More importantly, it provides **cell-level geometry** and row/column structure for detected tables. My actual charge for the ~200-page batch was about a dollar, helped by AWS's free-tier allowance; pricing varies by region and usage.
 
-But it had the opposite failure mode on these statements. Textract missed seven tiny credit-interest entries ($0.03–$1.35) that Chandra caught. **On this dataset, Textract produced fewer false textual detections but lower recall on some faint or oddly placed text.**
+But it had the opposite failure mode on these statements. Textract missed seven tiny credit-interest entries ($0.03-$1.35) that Chandra caught. **On this dataset, Textract produced fewer false textual detections but lower recall on some faint or oddly placed text.**
 
 ---
 
@@ -72,8 +72,8 @@ These statements were printed in reverse-chronological order (newest first, beca
 
 ### The diff
 
-- **75 rows** — identical date and amount in both engines. Bulletproof.
-- **8 rows** — Chandra only. Textract only: **0**.
+- **75 rows** - identical date and amount in both engines. Bulletproof.
+- **8 rows** - Chandra only. Textract only: **0**.
 - **Final: 82 verified credit-interest rows.**
 
 ```text
@@ -90,18 +90,18 @@ statements.pdf
 
 ## The human tiebreaker
 
-The 8 disputed rows got adjudicated the old-fashioned way: I opened the original scans and looked. Seven were real — tiny monthly interest credits Textract's boxes had skipped. I added them to a `VERIFIED` list. The eighth was a "Debit Interest Adjusted" entry for $0.26; it was not an interest-income credit, so it was filtered out. For this extraction task I only needed assessable interest credited to the account.
+The 8 disputed rows got adjudicated the old-fashioned way: I opened the original scans and looked. Seven were real - tiny monthly interest credits Textract's boxes had skipped. I added them to a `VERIFIED` list. The eighth was a "Debit Interest Adjusted" entry for $0.26; it was not an interest-income credit, so it was filtered out. For this extraction task I only needed assessable interest credited to the account.
 
 | Financial year | Interest earned |
 | --- | --- |
-| 2018–19 | $3.53 |
-| 2019–20 | $1.81 |
-| 2020–21 | $0.33 |
-| 2021–22 | $0.41 |
-| 2022–23 | $51.64 |
-| 2023–24 | $152.24 |
-| 2024–25 | $171.39 |
-| 2025–26 | $98.24 |
+| 2018-19 | $3.53 |
+| 2019-20 | $1.81 |
+| 2020-21 | $0.33 |
+| 2021-22 | $0.41 |
+| 2022-23 | $51.64 |
+| 2023-24 | $152.24 |
+| 2024-25 | $171.39 |
+| 2025-26 | $98.24 |
 
 Eight years of "hidden income": **$479.59**. That's the whole mystery the tax office was worried about.
 
@@ -125,9 +125,9 @@ The ATO gets their numbers. I keep the archive, every statement, searchable, for
 
 ## Sources and technical notes
 
-- [Datalab — Chandra OCR 2](https://api.datalab.to/blog/chandra-2) — model capabilities, structured output, and bounding boxes.
-- [AWS — Amazon Textract pricing](https://aws.amazon.com/textract/pricing/) — current AnalyzeDocument/TABLES pricing and Free Tier allowances.
-- [AWS — Tables in Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-tables.html) — cell, row/column, confidence, and geometry output.
-- [ATO — When and how to lodge returns for a deceased estate](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/when-and-how-to-lodge-returns-for-a-deceased-estate) — distinction between the deceased person's return and later estate trust returns.
+- [Datalab - Chandra OCR 2](https://api.datalab.to/blog/chandra-2) - model capabilities, structured output, and bounding boxes.
+- [AWS - Amazon Textract pricing](https://aws.amazon.com/textract/pricing/) - current AnalyzeDocument/TABLES pricing and Free Tier allowances.
+- [AWS - Tables in Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-tables.html) - cell, row/column, confidence, and geometry output.
+- [ATO - When and how to lodge returns for a deceased estate](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/when-and-how-to-lodge-returns-for-a-deceased-estate) - distinction between the deceased person's return and later estate trust returns.
 
 I'm going to take a few days off the terminal. Keep being awesome 🙂

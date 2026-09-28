@@ -2,12 +2,17 @@
 title: "Sega Mega Drive 32X Photos"
 author: "Nix McRetro"
 date: 2012-07-17T11:17:56.000+10:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [sega]
 ---
 
 ![](/assets/images/2012/img_0222.jpg)
 
-The Mega Drive 32X. One small step for man. 50,000 polygons for mankind.
+The Mega Drive 32X. One small step for man. Around 50,000 texture-mapped polygons per second for mankind, according to the commonly quoted specification.
 
 ![](/assets/images/2012/img_0224.jpg)
 
@@ -38,3 +43,8 @@ Stacks up pretty well on top of a Mega Drive and Mega CD Model 1. While this par
 I wouldn't mind modding one together with a Mega Drive 2 to make it a Neptune... but I'd rather slay some American 32X than the seemingly rare European 32Xs.
 
 I've updated a chunk of the [photo gallery](/goodies/) as well and added a few more tear downs of the Mega Drive 2s. I had to repair the DC-in jack on one of them as the solder had cracked from physical stress. A few hundred degrees later and it is back up and running. Played a bit of Pier Solar, but was unable to get to the caves! Where are the damn caves! Love the in-game jokes too. Very well done WaterMelon!
+
+
+### Sources
+
+- [GameFAQs - Sega 32X FAQ](https://gamefaqs.gamespot.com/sega32x/916394-sega-32x/faqs/2755) - preserves the commonly quoted 32X performance figure of around 50,000 texture-mapped polygons per second.

@@ -2,6 +2,11 @@
 title: "Junk Sega Saturn NTSC-J and Sega Dreamcast NTSC-J VA0"
 author: "Nix McRetro"
 date: 2012-05-14T11:39:02.000+10:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [repairs, sega]
 ---
 
@@ -15,7 +20,7 @@ Today I received my White Japanese Model 2 Sega Saturn from Japan. Look at it, i
 
 ![](/assets/images/2012/img_0078.jpg)
 
-And here is the Dreamcast I received. It seems to be a VA0 - Metal fan and all! What are the chances? Very unreal and the box was in immaculate condition. Lots of paperwork and documents. I have added a new photo gallery just for it in the [photo gallery](/photos) under Sega Dreamcast 058007003298.
+And here is the Dreamcast I received. It seems to be a VA0, and the metal fan and heatpipe cooling arrangement are consistent with that early revision. What are the chances? Very unreal and the box was in immaculate condition. Lots of paperwork and documents. I have added a new photo gallery just for it in the [photo gallery](/photos) under Sega Dreamcast 058007003298.
 
 ![](/assets/images/2012/img_0101.jpg)
 
@@ -36,3 +41,8 @@ Black - Ground
 ```
 
 Perfect! Just as was predicted, good on IBM / Sega for sticking to known PC colour coding standards of the time. Makes my life easier when considering whether to replace the internal PSU with something like a PicoPSU. I've been messaging back and forth with Nemesis via the ASSEMblergames forums and compared his photos with my Sega TeraDrives, Model 2 and Model 3, and they have the same controller chips. [Hacking-Cult.org](http://nemesis.hacking-cult.org/MegaDrive/TeraDrive/Pictures/) is where his photos are hosted and an active thread he is on [SpritesMind.net](http://gendev.spritesmind.net/forum/viewtopic.php?p=15182).
+
+
+### Sources
+
+- [ConsoleMods - Dreamcast Model Differences](https://consolemods.org/wiki/Dreamcast:Dreamcast_Model_Differences) - documents the VA0 revision and its distinctive metal fan and heatpipe cooling arrangement.

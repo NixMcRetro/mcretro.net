@@ -30,7 +30,7 @@ Next up we have the Accolade silkscreen on the PCB that was blacked out with wha
 
 Finally the interesting 9 pin cable hanging off might have been due to a game known as [Zero Tolerance](https://en.wikipedia.org/wiki/Zero_Tolerance_(video_game)) as was pointed out by one YouTube commenter.
 
-**Link cable support** The game supported connecting two Genesis/Mega Drives via a special link cable using the second joypad ports for a multiplayer mode. The cable was originally supposed to be shipped as a pack-in with the game. However this was changed in a last-minute decision and a coupon for ordering a free cable was added instead.
+**Link cable support** The game supported connecting two Genesis/Mega Drives via a special link cable for a multiplayer mode. Technopop later stated that its proprietary two-player Network Link Cable had been offered free with purchases of Zero Tolerance, and published the wiring needed to build one.
 
 The Accolade development system itself is now better documented, including Accolade's collaboration with The Code Monkeys and the use of epoxy on surviving hardware. Zero Tolerance's two-console link feature is also well documented, including the special cable connecting the second controller ports. What remains unverified is whether the 9 pin lead on this particular development cartridge had anything to do with Zero Tolerance. That connection was a plausible suggestion from a commenter, not something I established at the time.
 
@@ -41,4 +41,5 @@ So there you have it, a piece of history!
 ### Sources
 
 - [Exodus Emulator TechDocs - Sega Mega Drive Development Hardware](https://techdocs.exodusemulator.com/Console/SegaMegaDrive/Hardware.html)
+- [Technopop - Zero Tolerance / 2-Player Network Link Cable](https://www.technopop.net/)
 - [Sega-16 - Zero Tolerance Link Cable](https://www.sega-16.com/2009/12/sega-gear-zero-tolerance-link-cable/)

@@ -2,6 +2,11 @@
 title: "Sega Saturn Rolling Horizontal Lines - Discovery"
 author: "Nix McRetro"
 date: 2012-08-26T00:45:37.000+10:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [hacks, repairs, sega]
 ---
 
@@ -19,4 +24,9 @@ I could have only assumed that would be a bad thing to do. 100-120V should not l
 
 `**PAL 50Hz 240V** Voltage: 251V Power Factor: 0.67PF Frequency: 50Hz Volt-Ampere: 21VA Watts: 14W Ampere: 0.08A`
 
-It works? Yes it works. What is even more strange is that I am now testing to see if the rolling horizontal lines have disappeared completely when running the units at 120V. So far so good, just attempting to replicate it once more in a reverse configuration to show that it a sound solution.
+It actually ran, which surprised me, but running is not the same thing as operating within specification. A PAL Saturn power supply is designed for 220-240V input, so feeding it roughly 120V is substantial undervoltage and is not a valid repair or recommended operating condition. The fact that the rolling interference changed under severe undervoltage instead points back toward a fault or regulation or filtering problem in the power supply itself. I was still attempting to reproduce the behaviour in both configurations to understand what was happening.
+
+
+### Sources
+
+- [ConsoleMods - Comparison of Power Supplies](https://consolemods.org/wiki/Comparison_of_Power_Supplies) - documents regional Sega Saturn mains-input ranges and PSU differences.

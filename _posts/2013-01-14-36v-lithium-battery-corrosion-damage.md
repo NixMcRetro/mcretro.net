@@ -14,11 +14,9 @@ ai_assistance:
 
 Here's a peek at what damage those little power cells can wreak on poor unsuspecting motherboards. It just happened to be an LC 475 as well, didn't it? Not mine thankfully! :P
 
-**2026 note:** Apple specified a 3.6V lithium PRAM battery for the LC 475. Old lithium batteries in stored vintage Macs are worth inspecting and removing where appropriate, as leakage can cause serious logic-board damage. Handle and dispose of lithium cells carefully rather than treating them like ordinary rubbish.
+Apple specified a 3.6V lithium PRAM battery for the LC 475. Old lithium batteries in stored vintage Macs are worth inspecting and removing where appropriate, as leakage can cause serious logic-board damage. Handle and dispose of lithium cells carefully rather than treating them like ordinary rubbish.
 
 ### Sources
 
 - [Apple - Macintosh LC 475: Technical Specifications](https://support.apple.com/en-ca/112204)
 - [Maxell - Lithium Thionyl Chloride Battery Safety Data Sheet](https://biz.maxell.com/en/primary_batteries/sds/er_battery_sdse.pdf)
-
-**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

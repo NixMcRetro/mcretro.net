@@ -26,10 +26,8 @@ This is the usual welcome screen when the Sega TeraDrive is first powered on, th
 
 The Puzzle Construction menu once loaded up. Create your own Sega game and more! Looks very similar to the above screen doesn't it?
 
-**2026 update:** The TeraDrive is now implemented in MAME, whose current driver documentation records F1 during POST as the way to enter the setup menu. That later documentation places the keypress during the PC-side startup sequence rather than at an already-running DOS prompt.
+The TeraDrive is now implemented in MAME, whose current driver documentation records F1 during POST as the way to enter the setup menu. That later documentation places the keypress during the PC-side startup sequence rather than at an already-running DOS prompt.
 
 ### Sources
 
 - [MAME - Sega TeraDrive driver notes](https://github.com/mamedev/mame/blob/master/src/mame/pc/teradrive.cpp)
-
-**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

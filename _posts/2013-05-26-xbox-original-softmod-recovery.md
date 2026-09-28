@@ -21,5 +21,3 @@ Here are half of the notes I kept along the way, the rest were lost in a feveris
 - [XboxDevWiki - EEPROM](https://xboxdevwiki.net/EEPROM)
 - [ConsoleMods Wiki - Xbox Drive Locking](https://consolemods.org/wiki/Xbox:Drive_Locking)
 - [ConsoleMods Wiki - Xbox TSOP Flashing](https://consolemods.org/wiki/Xbox:TSOP_Flashing)
-
-**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

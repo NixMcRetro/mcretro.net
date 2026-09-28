@@ -24,5 +24,5 @@ Both models have different mainboards; one of them uses the later 64-pin CD-boar
 
 ### Sources
 
-- [Sega-16 Forums — Sega CD systems repair thread](https://www.sega-16forums.com/forum/general-discussion/tech-aid/21805-sega-cd-systems-repair-thread) — documents JVC Optima-5 and Sony KSS-240A Model 1 mechanisms and notes that complete drive assemblies can be swapped, with compatibility caveats.
-- [Sega-16 Forums — Sega Saturn Revisions and Models Guide](https://www.sega-16forums.com/forum/general-discussion/tech-aid/24084-sega-saturn-revisions-and-models-guide/page4) — documents Saturn motherboard, PSU and CD-drive revisions, including 64-pin drives used across late Model 1 and Model 2 hardware.
+- [Sega-16 Forums - Sega CD systems repair thread](https://www.sega-16forums.com/forum/general-discussion/tech-aid/21805-sega-cd-systems-repair-thread) - documents JVC Optima-5 and Sony KSS-240A Model 1 mechanisms and notes that complete drive assemblies can be swapped, with compatibility caveats.
+- [Sega-16 Forums - Sega Saturn Revisions and Models Guide](https://www.sega-16forums.com/forum/general-discussion/tech-aid/24084-sega-saturn-revisions-and-models-guide/page4) - documents Saturn motherboard, PSU and CD-drive revisions, including 64-pin drives used across late Model 1 and Model 2 hardware.

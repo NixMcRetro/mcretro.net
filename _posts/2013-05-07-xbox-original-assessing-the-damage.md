@@ -30,5 +30,3 @@ We can't blame this last one on the previous owner, a busted "super" cap. A glor
 
 - [ConsoleMods Wiki - Xbox Clock Capacitor](https://consolemods.org/wiki/Xbox:Clock_Capacitor)
 - [XboxDevWiki - Hardware Revisions](https://xboxdevwiki.net/Hardware_Revisions)
-
-**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

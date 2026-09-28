@@ -36,5 +36,3 @@ I've ordered an [XP Power ACM12US09](https://www.xppower.com/portals/0/pdfs/SF_A
 - [Energizer - Rechargeable battery and charger FAQ](https://data.energizer.com/pdfs/rechargeable_faq.pdf)
 - [Swiss Nixie - IN-12B](https://www.swissnixie.com/tubes/IN12B/)
 - [XP Power - ACM12 Series](https://www.xppower.com/product/ACM12-Series)
-
-**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

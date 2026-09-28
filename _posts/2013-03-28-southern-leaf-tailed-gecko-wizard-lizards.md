@@ -19,5 +19,3 @@ Hunting at night is a wise idea too to avoid predators. Smart gecko! :)
 ### Sources
 
 - [Australian Museum - Southern Leaf-tailed Gecko, Phyllurus platurus](https://australian.museum/learn/animals/reptiles/southern-leaf-tailed-gecko/)
-
-**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

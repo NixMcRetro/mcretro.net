@@ -22,11 +22,9 @@ Thanks to Krille on the Vintage-Computer for the help on getting it to work. See
 
 But I found that the BIOS I am using is IDE\_XTP.bin at the moment, but would really like that menu overlay back. It just makes it so much more presentable.
 
-**2026 note:** The original post called the installed EEPROM an "Amtel AT28C648". This was an Atmel AT28C64B. The physical upgrade was from the 8KiB AT28C64B to the 32KiB AT28C256, and the EEPROM type selected in the XTIDE configuration was 28256. The AT28C64B is organised as 8K x 8, while the AT28C256 is 32K x 8.
+The original post called the installed EEPROM an "Amtel AT28C648". This was an Atmel AT28C64B. The physical upgrade was from the 8KiB AT28C64B to the 32KiB AT28C256, and the EEPROM type selected in the XTIDE configuration was 28256. The AT28C64B is organised as 8K x 8, while the AT28C256 is 32K x 8.
 
 ### Sources
 
 - [Microchip - AT28C64B](https://www.microchip.com/en-us/product/at28c64b)
 - [Microchip - AT28C256](https://www.microchip.com/en-us/product/at28c256)
-
-**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

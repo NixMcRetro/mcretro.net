@@ -7,4 +7,4 @@ categories: [nintendo, repairs, youtube]
 
 {% include youtube.html id="L1Z0RHQWTGw" %}
 
-Lucky last, one SNES with no video and no sound. Let' have a poke around and see what we can find... well not so much yet... more to come though!
+Lucky last, one SNES with no video and no sound. Let's have a poke around and see what we can find... well not so much yet... more to come though!

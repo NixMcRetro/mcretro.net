@@ -2,6 +2,11 @@
 title: "The Ballad of Nix-9"
 author: "Nix McRetro"
 date: 2026-09-26T09:00:00.000+10:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ai-generated]
 ---
 
@@ -21,7 +26,7 @@ The troubles began early. The habitat chambers at the Nexus Spire proved unworth
 
 When Nix-9 raised concerns, the Habitat Wardens offered a paltry token, a credit voucher of highly restricted use, a mockery of fair compensation.
 
-But Nix-9 was no ordinary soul. Drawing upon the Ancient Statutes of Fair Trade, she invoked the sacred right of the merchant of record, and the Stellar Consortium, having brokered the package, was bound to intervene.
+But Nix-9 was no ordinary soul. Drawing upon the Ancient Statutes of Fair Trade, she invoked the protections that can apply when travel services fail and demanded that the Stellar Consortium, having brokered the package, intervene.
 
 The Wardens relented. A partial refund of 100 credits was agreed, one-fifth of the accommodation's cost, and the Consortium confirmed it would return the credits to Nix-9's original cred-stick, a Sony model she had carried since her first dive into the net.
 
@@ -78,7 +83,7 @@ The second scribe's first response arrived like a slap:
 
 A token. For a future stay. With a consortium that had just stranded Nix-9 in the cold cycle. Nix-9's response was swift and merciless:
 
-> "I firmly decline the token. Under the Ancient Statutes of Fair Trade, a major failure of a service requires a remedy of the consumer's choosing, not a token that forces me to spend more credits with the very consortium that failed me."
+> "I firmly decline the token. Where the Ancient Statutes of Fair Trade apply, failed services can attract refund, replacement, or compensation remedies. A restricted token is not the only form of resolution I am prepared to accept."
 
 The gauntlet was thrown. The scribe retreated to consult their superiors.
 
@@ -187,7 +192,7 @@ But the full saga is not yet complete. Nix-9 has learned much on this quest. She
 * **Evidence is power.** The neural-link logs, preserved with timestamps and sender marks, had proven irrefutable.
 * **Arithmetic is a weapon.** The mathematical reckoning, the cold precision of percentages and proportions, had forced the Consortium to reckon with their own inadequacy.
 * **Persistence prevails.** From the first cracked chamber to the final accord, Nix-9 had refused to surrender.
-* **The Ancient Statutes protect.** The consumer guarantees, the rights of the vulnerable, the obligations of the merchant of record, all had stood firm.
+* **The Ancient Statutes can protect.** Consumer guarantees can apply to travel services, although the available remedy and an intermediary's obligations depend on the circumstances and booking terms.
 
 Nix-9 will rest now. The credits will arrive. The saga will close. But the neon-lit tale endures, a warning to corporate leviathans and a beacon to travelers everywhere:
 
@@ -219,7 +224,7 @@ For those who find themselves in similar straits, here are the lessons from this
 
 | Chapter | Challenge | Response |
 | --- | --- | --- |
-| I | Cracked Chamber | Invoke merchant of record, request partial refund |
+| I | Cracked Chamber | Raise the complaint with the booking intermediary and request a remedy |
 | II | Star-Liner Cancelled | Preserve all logs, document everything |
 | III | Order Deflects | Follow the deflection, use it as leverage |
 | IV | Consortium Engaged | Accept what is owed, open new claim |
@@ -236,6 +241,12 @@ May your journeys be smooth, your logs be preserved, and your refunds be swift.
 Farewell, fellow traveler.
 
 ---
+
+### Real-World Consumer-Law Note
+
+Australian consumer guarantees can apply to travel services booked directly or through an intermediary. Whether a refund, replacement, reimbursement, or other remedy is available depends on the circumstances — including the cause and length of a disruption, whether a reasonable replacement was offered, and the terms applying to both the primary provider and any intermediary. The ACCC also notes that an intermediary may, in some circumstances, only be required to pass on the remedy offered by the primary travel provider.
+
+Source: [ACCC — Travel delays and cancellations](https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations)
 
 **Author's Note:** This chronicle is based on true events. The leviathans, while metaphorical, are very real. Nix-9's victory stands as testament to the power of persistence, evidence, and the diligent application of consumer law.
 

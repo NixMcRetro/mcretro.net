@@ -32,7 +32,7 @@ Finally the interesting 9 pin cable hanging off might have been due to a game kn
 
 **Link cable support** The game supported connecting two Genesis/Mega Drives via a special link cable using the second joypad ports for a multiplayer mode. The cable was originally supposed to be shipped as a pack-in with the game. However this was changed in a last-minute decision and a coupon for ordering a free cable was added instead.
 
-**2026 note:** The Accolade development system itself is now better documented, including Accolade's collaboration with The Code Monkeys and the use of epoxy on surviving hardware. Zero Tolerance's two-console link feature is also documented in the game's manual, including the special cable connecting the second controller ports. What remains unverified is whether the 9 pin lead on this particular development cartridge had anything to do with Zero Tolerance. That connection was a plausible suggestion from a commenter, not something I established at the time.
+The Accolade development system itself is now better documented, including Accolade's collaboration with The Code Monkeys and the use of epoxy on surviving hardware. Zero Tolerance's two-console link feature is also documented in the game's manual, including the special cable connecting the second controller ports. What remains unverified is whether the 9 pin lead on this particular development cartridge had anything to do with Zero Tolerance. That connection was a plausible suggestion from a commenter, not something I established at the time.
 
 ![](/assets/images/2013/img_0373.jpg)
 
@@ -42,5 +42,3 @@ So there you have it, a piece of history!
 
 - [Exodus Emulator TechDocs - Sega Mega Drive Development Hardware](https://techdocs.exodusemulator.com/Console/SegaMegaDrive/Hardware.html)
 - [Zero Tolerance Sega Genesis Manual](https://manuals.plus/m/eafce09957591dbaf5919ca4c01790436561d8c2e38e44264bdf2911ea29ad18)
-
-**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

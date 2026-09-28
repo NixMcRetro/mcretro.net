@@ -26,7 +26,7 @@ So far I've gone through three types / brands of disk on modules. I was after on
 
 Unfortunately, I can't track down these TopSSD drives anywhere. I was hoping the Transcend ones would work best, but they didn't. They had voltage, but weren't recognised correctly with the XTIDE software. Limitations or issues with the Transcends sure is harsh. But at least I have now seen all three possible scenarios these DOMs provide. There can't be any more ways to fail, right? RIGHT?!?!?! :D
 
-**2026 note:** The XTIDE warning quoted above specifically concerns CompactFlash cards and Microdrives, so it should not be taken as proof of why this particular Transcend DOM failed detection. All I established here was that the Transcend unit had power but was not recognised correctly in my setup. Current XTIDE documentation still notes compatibility quirks with some CF cards and Microdrives.
+The XTIDE warning quoted above specifically concerns CompactFlash cards and Microdrives, so it should not be taken as proof of why this particular Transcend DOM failed detection. All I established here was that the Transcend unit had power but was not recognised correctly in my setup. Current XTIDE documentation still notes compatibility quirks with some CF cards and Microdrives.
 
 ![](/assets/images/2013/img_0375.jpg)
 
@@ -36,5 +36,3 @@ Unfortunately, I can't track down these TopSSD drives anywhere. I was hoping the
 
 - [XTIDE Universal BIOS - Documentation and known storage compatibility issues](https://xtideuniversalbios.org/)
 - [XTIDE Universal BIOS v2.0.0 Manual](https://www.xtideuniversalbios.org/browser/xtideuniversalbios/wiki/Manual_v2_0_0.wiki?rev=329)
-
-**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

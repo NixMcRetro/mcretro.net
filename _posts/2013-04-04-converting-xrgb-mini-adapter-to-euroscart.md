@@ -19,5 +19,3 @@ The adapter supplied with the XRGB-mini Framemeister uses the Japanese RGB21 pin
 ### Sources
 
 - [Classic Console Upscaler Wiki - XRGB-mini Framemeister](https://www.junkerhq.net/xrgb/index.php/XRGB-mini_FRAMEMEISTER)
-
-**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

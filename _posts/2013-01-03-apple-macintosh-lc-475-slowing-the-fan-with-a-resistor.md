@@ -19,8 +19,6 @@ Determining which resistor to use from a selection of four or so resistors from 
 And here is the promised second part with the installation and soldering of the resistor to the red power cable on the fan.
 
 
-### 2026 Note
-
 This did reduce the noise, but a series resistor also reduces the voltage available to the fan, lowering both speed and airflow. It can also make startup unreliable if the resulting fan voltage falls below its starting requirement. If doing something similar today I would verify reliable cold starts and monitor internal temperatures rather than assuming that quieter automatically means adequate cooling.
 
 ### Sources

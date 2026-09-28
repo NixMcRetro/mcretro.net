@@ -20,5 +20,3 @@ A great example of what's on the underside of BGA-packaged CPUs and GPUs. BGA su
 
 - [ConsoleMods Wiki - Xbox Debug](https://consolemods.org/wiki/Xbox:Debug)
 - [ConsoleMods Wiki - Xbox RAM Upgrade](https://consolemods.org/wiki/Xbox:RAM_Upgrade)
-
-**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

@@ -17,5 +17,3 @@ Here's a Japanese Saturn that needed a modchip, so I went ahead and installed on
 ### Sources
 
 - [ConsoleMods Wiki - Sega Saturn Modchips](https://consolemods.org/wiki/Saturn:Modchips)
-
-**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

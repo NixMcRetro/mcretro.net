@@ -24,5 +24,3 @@ Games previewed on this tape include: Night Trap, Sewer Shark, Make your own mus
 
 - [Video Game History Foundation - Mean Machines Sega, No. 3, December 1992](https://library.gamehistory.org/repositories/2/digital_objects/11878)
 - [VHS Preservation Project - Mean Machines Sega Mega-CD promo video](https://tiredoldhack.com/2017/11/24/vhs-preservation-project-7-mean-machines-sega-mega-cd-promo-video/)
-
-**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

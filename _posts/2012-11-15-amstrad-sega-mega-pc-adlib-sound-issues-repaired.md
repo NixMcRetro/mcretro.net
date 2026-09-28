@@ -27,4 +27,4 @@ You can have a look at how things evolved on the [ASSEMblergames forums](https:/
 
 ### Sources
 
-- [Amstrad Mega PC Manual](https://acpc.me/ACME/AMSTRAD_PRO/AMSTRAD_PC/LITTERATURE/MANUELS/MEGA_PC_Manual%5BENG%5D.pdf) - describes the Mega PC's built-in FM synthesizer as AdLib-compatible.
+- [Centre for Computing History - Amstrad Mega PC Owners Manual](https://www.computinghistory.org.uk/det/32501/Amstrad-Mega-PC-Owners-Manual/) - identifies the Mega PC manual and describes its AdLib-compatible sound synthesizer.

@@ -21,4 +21,3 @@ Here is a rip of the VHS tape supplied with issue 1 of Official Sega Saturn Maga
 ### Sources
 
 - [Out-of-Print Archive - Official Sega Saturn Magazine Issue 1](https://www.outofprintarchive.com/catalogue/officialsegasaturnmagazine/OSSM1.html)
-- [Magazines From The Past - Sega Saturn Magazine Issue 1](https://magazinesfromthepast.fandom.com/wiki/Sega_Saturn_Magazine_Issue_1)

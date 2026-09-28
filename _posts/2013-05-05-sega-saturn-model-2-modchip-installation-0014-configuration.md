@@ -16,4 +16,4 @@ Here's a Japanese Saturn that needed a modchip, so I went ahead and installed on
 
 ### Sources
 
-- [ConsoleMods Wiki - Sega Saturn Modchips](https://consolemods.org/wiki/Saturn:Modchips)
+- [SegaXtreme - How to mod a 21 pin Saturn](https://segaxtreme.net/threads/how-to-mod-a-21-pin-saturn.2939/)

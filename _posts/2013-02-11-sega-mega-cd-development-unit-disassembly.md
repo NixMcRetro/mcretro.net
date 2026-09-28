@@ -7,7 +7,7 @@ categories: [sega]
 
 ![](/assets/images/2013/img_0369.jpg)
 
-The Sega Mega-CD Development Unit MCD01/0174 also known as Cross Products SNASM Mega-CD is our next target to be disassembled and photographed.This is one beefed up devkit.
+The Sega Mega-CD Development Unit MCD01/0174 also known as Cross Products SNASM Mega-CD is our next target to be disassembled and photographed. This is one beefed up devkit.
 
 {% include youtube.html id="NzrBAAvLpB0" %}
 

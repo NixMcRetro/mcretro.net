@@ -2,6 +2,11 @@
 title: "Aiwa Sega Mega-CD CSD-GM1 Repairs Intermission"
 author: "Nix McRetro"
 date: 2012-10-14T19:01:43.000+11:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [repairs, sega, youtube]
 ---
 
@@ -9,7 +14,7 @@ categories: [repairs, sega, youtube]
 
 {% include youtube.html id="3QUKEtyldZ8" %}
 
-A way around the transformer issue(s) might be to try running off C cell batteries or to run a DC-DC stepdown through the battery terminals. More details as they happen can be found over at the [ASSEMblergames forums](https://web.archive.org/web/20191110101129/https://assemblergames.com/threads/aiwa-mega-cd-csd-gm1-mainboard-repair.42186/).
+A way around the transformer issue(s) might be to try running off C cell batteries or to run a DC-DC stepdown through the battery terminals. That would only be worth attempting after identifying the battery supply voltage, polarity and the internal rails it feeds. The battery input cannot automatically be assumed to be electrically equivalent to every transformer secondary inside the unit. More details as they happen can be found over at the [ASSEMblergames forums](https://web.archive.org/web/20191110101129/https://assemblergames.com/threads/aiwa-mega-cd-csd-gm1-mainboard-repair.42186/).
 
 ![](/assets/images/2012/img_0305.jpg)
 

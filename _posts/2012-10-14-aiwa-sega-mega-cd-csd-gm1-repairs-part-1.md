@@ -2,6 +2,11 @@
 title: "Aiwa Sega Mega-CD CSD-GM1 Repairs Part 1"
 author: "Nix McRetro"
 date: 2012-10-14T07:39:43.000+11:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [repairs, sega, youtube]
 ---
 
@@ -21,4 +26,4 @@ I fear the laser is dead so I have ordered a replacement KSS-210B about a week a
 
 ![](/assets/images/2012/img_0301.jpg)
 
-I have also found though that after checking the output voltages from the voltage regulators on the mainboard that there is a 14V difference in some of the readings. Further investigation is needed into this, don't want to fry any microchips!
+I also found, after checking the output voltages from the voltage regulators on the mainboard, differences of as much as 14V between some of the power readings I was comparing. Further investigation is needed into this, don't want to fry any microchips!

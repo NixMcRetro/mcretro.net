@@ -15,7 +15,7 @@ The above video at the top of this post gives you an idea of the setup I was usi
 
 ![](/assets/images/2013/img_0365.jpg)
 
-Above is the Pentium 600MHz machine that helped it power up for the first time in who knows how long. Why do I have so many bit of old hardware hanging around anyway?
+Above is the Pentium 600MHz machine that helped it power up for the first time in who knows how long. Why do I have so many bits of old hardware hanging around anyway?
 
 ![](/assets/images/2013/img_0366.jpg)
 
@@ -23,4 +23,4 @@ This was a 133MHz something or other, not sure if it was Cyrix, AMD or Pentium. 
 
 ![](/assets/images/2013/img_0368.jpg)
 
-Does that silkscreen look attractive on the back of the SNASM2 card? I'll be disassembling the unit shortly, dumping the what chips I can and taking some more photos.
+Does that silkscreen look attractive on the back of the SNASM2 card? I'll be disassembling the unit shortly, dumping whatever chips I can and taking some more photos.

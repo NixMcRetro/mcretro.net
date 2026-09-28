@@ -2,9 +2,14 @@
 title: "Sega Mega Drive 32X Repair - No Display, No Sound"
 author: "Nix McRetro"
 date: 2012-09-13T21:11:55.000+10:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [repairs, sega, youtube]
 ---
 
 {% include youtube.html id="VO0ow_fYduU" %}
 
-No life from your Sega Mega Drive 32X? It might just need a bit of TLC. Clean it up using a little bit of isopropyl (ideally) or methylated spirits and some sandpaper. It worked for me, I hope it will for you too. This unit was not showing any sound or video prior to being cleaned up. That said, sandpaper probably isn't the best thing to use, but it got the job done for the short term.
+No life from your Sega Mega Drive 32X? It might just need a bit of TLC. Disconnect it from power and start by cleaning the contacts with high-purity isopropyl alcohol and a lint-free swab. I used sandpaper during this repair, but I would not recommend abrasive paper on plated connector contacts because it can remove the contact plating. A suitable electronics contact cleaner or other non-abrasive method is preferable. Cleaning restored this particular unit, but a no-video or no-audio 32X can have other causes.

@@ -2,6 +2,11 @@
 title: "The Apple Macintosh LC 475"
 author: "Nix McRetro"
 date: 2012-09-23T13:38:14.000+10:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [apple, repairs]
 ---
 
@@ -21,4 +26,9 @@ At least the machine is working well for the time being. Loaded Maniac and Munch
 
 ![](/assets/images/2012/img_0264.jpg)
 
-Mmmm cacheless 68k... yum!
+Mmmm, stock LC 475 with only the 68LC040's internal cache... yum!
+
+
+### Sources
+
+- [Apple - Macintosh LC 475 Technical Specifications](https://support.apple.com/en-ca/112204) - lists the 68LC040 processor, 8KB L1 cache and no external L2 cache.

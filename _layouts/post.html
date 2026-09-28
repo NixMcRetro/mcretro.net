@@ -24,11 +24,6 @@ layout: default
       {{ d }}{{ ordinal }} {{ page.date | date: "%B %Y" }}
     </span>
   
-    {% if page.last_modified_at %}
-      <span class="meta-sep">//</span>
-      <span class="post-updated">Updated {{ page.last_modified_at | date: "%-d %B %Y" }}</span>
-    {% endif %}
-
     {% if page.categories.size > 0 %}
       <span class="meta-sep">//</span>
       <span class="post-categories">
@@ -37,6 +32,10 @@ layout: default
         {% endfor %}
       </span>
     {% endif %}
+  </div>
+
+  <div class="post-content">
+    {{ content }}
   </div>
 
   {% if page.ai_assistance %}
@@ -48,10 +47,6 @@ layout: default
       Final editorial responsibility remains with the author.
     </div>
   {% endif %}
-
-  <div class="post-content">
-    {{ content }}
-  </div>
   
   <nav class="post-navigation" data-pagefind-ignore="all">
     <div class="nav-previous">

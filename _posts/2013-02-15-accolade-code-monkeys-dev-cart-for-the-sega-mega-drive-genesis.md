@@ -42,3 +42,5 @@ So there you have it, a piece of history!
 
 - [Exodus Emulator TechDocs - Sega Mega Drive Development Hardware](https://techdocs.exodusemulator.com/Console/SegaMegaDrive/Hardware.html)
 - [Zero Tolerance Sega Genesis Manual](https://manuals.plus/m/eafce09957591dbaf5919ca4c01790436561d8c2e38e44264bdf2911ea29ad18)
+
+**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

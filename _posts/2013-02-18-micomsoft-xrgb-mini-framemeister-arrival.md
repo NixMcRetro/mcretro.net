@@ -28,3 +28,5 @@ As a side note, I've fallen in love with SCART connectors. They are so easy to r
 
 - [Classic Console Upscaler Wiki - XRGB-mini Framemeister](https://www.junkerhq.net/xrgb/index.php/XRGB-mini_FRAMEMEISTER)
 - [Classic Console Upscaler Wiki - Dreamcast](https://www.junkerhq.net/xrgb/index.php/Dreamcast)
+
+**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

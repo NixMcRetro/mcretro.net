@@ -20,3 +20,5 @@ Here's a peek at what damage those little power cells can wreak on poor unsuspec
 
 - [Apple - Macintosh LC 475: Technical Specifications](https://support.apple.com/en-ca/112204)
 - [Maxell - Lithium Thionyl Chloride Battery Safety Data Sheet](https://biz.maxell.com/en/primary_batteries/sds/er_battery_sdse.pdf)
+
+**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

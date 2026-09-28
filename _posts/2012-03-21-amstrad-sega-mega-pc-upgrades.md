@@ -2,6 +2,11 @@
 title: "Amstrad Sega Mega PC Upgrades"
 author: "Nix McRetro"
 date: 2012-03-21T02:56:26.000+11:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ibm-pc, repairs, sega]
 ---
 
@@ -11,7 +16,7 @@ Browsing the internet I came across an Amstrad PC7486SLC motherboard. I couldn't
 
 ![](/assets/images/2012/img_0034.jpg)
 
-The Mega PC is powered by an AMD 386SX running at 25MHz. The PC7486SLC-33 is powered by a Texas Instruments (of Cyrix design) 486SLC. The 486SLC is somewhat of a hybrid. With the power of a 386... and the instruction set of a 486. Did I mention this one runs at 33MHz? That is a colossal performance boost in raw processing power.
+My Mega PC is fitted with an AMD 386SX running at 25MHz. Amstrad's documentation specifies the PC7386SX platform around an 80386SX, so the AMD part refers to the CPU actually fitted to this machine. The PC7486SLC-33 is powered by a Texas Instruments 486SLC. The TI486SLC is an interesting bridge between generations. It retains a 386SX-compatible external interface, adds a 486-compatible instruction set and a small on-chip cache, and this version runs at 33MHz. At 33MHz it also has a 32 percent clock-speed advantage over the 25MHz 386SX, with the cache and architectural improvements potentially widening the performance gap further.
 
 ![](/assets/images/2012/img_0039.jpg)
 
@@ -19,9 +24,9 @@ The Mega PC is powered by an AMD 386SX running at 25MHz. The PC7486SLC-33 is pow
 
 ![](/assets/images/2012/img_0038.jpg)
 
-Now while the Amstrad PC7486SLC-33 motherboard I have purchased appears to have been used in a beige Amstrad box with no Mega Drive card - it appears to be same motherboard as used in the upgraded version of the Amstrad Mega PC, the Amstrad Mega PC Plus.
+Now while the Amstrad PC7486SLC-33 motherboard I have purchased appears to have been used in a beige Amstrad box with no Mega Drive card, it looks extremely similar to the sort of 486SLC platform associated with the Mega PC Plus, and I wanted to find out whether it could accept the Mega Drive card.
 
-The Amstrad Mega PC Plus seems to be a bit of an urban legend as I cannot find anything online about this beast. But it does look as though I'll be creating one.
+At the time the Amstrad Mega PC Plus felt like an urban legend because I could find almost nothing online about it. We now know that surviving Mega PC Plus machines do exist, with the later model documented around a 33MHz 486SLC-class processor and 4MB of RAM. But it does look as though I'll be creating something very close to one.
 
 ![](/assets/images/2012/img_0037.jpg)
 
@@ -31,6 +36,14 @@ Anyway, video is passed through the Mega Drive card when the switch at the front
 
 ![](/assets/images/2012/img_0035.jpg)
 
-This indicates that by removing the jumpers and installing the Mega Drive card it will work perfectly. This board appears to be the same one used in the Amstrad Mega Plus. Sadly the RAM will not go beyond 16MB (4x4MB) although I could always try "borrow" the RAM slots off another motherboard... I think this would be a little bit too much effort though with very little pay off. Especially if the chipset cannot support more than 16MB and I'm fairly certain that is the case.
+This indicates that by removing the jumpers and installing the Mega Drive card it may work as intended with this board. I would not treat that as proof that the PC7486SLC-33 is definitely the exact factory motherboard used in every Mega PC Plus. The board provides four SIMM positions and I could not take it beyond 16MB. The original PC7386SX Mega PC is officially documented as supporting up to 16MB, but I have not found enough primary documentation to say whether 16MB is a hard chipset limit on this PC7486SLC board.
 
 The things I find most attractive about this replacement board are: 1. It does not appear to have battery acid all over it. 2. It is faster - 25MHz vs 33MHz.
+
+
+### Sources
+
+- [Amstrad Mega PC instruction manual](https://manualzz.com/doc/68157046/amstrad-megapc-instruction-manual) - documents the PC7386SX platform and memory expansion up to 16MB.
+- [Texas Instruments TI486 Microprocessor Reference Guide](https://www.bitsavers.org/components/ti/TI486/1993_TI486_Microprocessor_Reference_Guide.pdf) - documents TI486SLC architecture, cache, instruction-set compatibility and operating frequencies.
+- [Bannister forums - Mega PC Plus discussion](https://forums.bannister.org/ubbthreads.php?Number=35633&ubb=showflat) - historical discussion from an owner of a Mega PC Plus, including BIOS preservation work.
+- [San Simera Computers - Amstrad Mega PC](https://sansimeracomputers.wordpress.com/2014/07/20/amstrad-mega-pc/) - documents a later Mega PC Plus configuration with a 33MHz 486SLC-class CPU and 4MB RAM.

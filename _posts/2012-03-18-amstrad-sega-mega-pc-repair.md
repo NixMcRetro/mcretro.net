@@ -2,6 +2,11 @@
 title: "Amstrad Sega Mega PC Repair"
 author: "Nix McRetro"
 date: 2012-03-18T09:33:45.000+11:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ibm-pc, repairs, sega]
 ---
 
@@ -13,7 +18,7 @@ categories: [ibm-pc, repairs, sega]
 
 ![](/assets/images/2012/img_0020.jpg)
 
-Such a wonderful shade of blue. Unfortunate that it has eaten the tracks on the motherboard. That's the power of NiCad battery acid though.
+Such a wonderful shade of blue. Unfortunate that it has eaten the tracks on the motherboard. That's the damage a leaking NiCad battery can do. The electrolyte is alkaline potassium hydroxide rather than acid, but it can still make an impressive mess of a motherboard.
 
 ![](/assets/images/2012/img_0022.jpg)
 
@@ -21,7 +26,7 @@ Such a wonderful shade of blue. Unfortunate that it has eaten the tracks on the 
 
 ![](/assets/images/2012/img_0023.jpg)
 
-Cleaned it up as best as it could be cleaned with some isopropyl alcohol then mapped out the damage. Multimeter time.
+Cleaned it up as best as it could be cleaned with some isopropyl alcohol then mapped out the damage. At the time I used isopropyl alcohol for the cleanup; the important correction here is that the leaked NiCad electrolyte was alkaline, not acidic. Multimeter time.
 
 ![](/assets/images/2012/img_0015.jpg)
 
@@ -54,3 +59,8 @@ Reassembled and found that the PC side wouldn't recognise any hard drives. I had
 I thought I was close with that FDISK result above, however there is only one connector on the motherboard. Trying to FDISK was impossible sadly. It just kept throwing up errors. Guess I'll just have to wait for the other motherboard I ordered to arrive so I can verify what is at fault.
 
 Overall though, a good result. The Sega side functions perfectly and the PC side functions somewhat. Very much looking forward to receiving this other Amstrad motherboard as it should allow me to use the hard drive properly.
+
+
+### Sources
+
+- [ScienceDirect - Nickel-Cadmium Battery](https://www.sciencedirect.com/science/article/pii/B978008037539750020X) - describes nickel-cadmium cell chemistry and the alkaline potassium hydroxide electrolyte.

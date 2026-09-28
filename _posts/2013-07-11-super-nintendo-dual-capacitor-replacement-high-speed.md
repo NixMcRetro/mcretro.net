@@ -1,8 +1,9 @@
 ---
-title: "Super Nintendo Dual Capacitor Replacment High-Speed"
+title: "Super Nintendo Dual Capacitor Replacement High-Speed"
 author: "Nix McRetro"
 date: 2013-07-11T06:12:25.000+10:00
 categories: [nintendo, repairs, youtube]
+permalink: /super-nintendo-dual-capacitor-replacment-high-speed/
 ---
 
 {% include youtube.html id="Lub4Bh-b2Ag" %}

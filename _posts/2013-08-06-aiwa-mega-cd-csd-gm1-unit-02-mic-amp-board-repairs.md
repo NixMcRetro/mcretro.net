@@ -7,4 +7,4 @@ categories: [repairs, sega, youtube]
 
 {% include youtube.html id="-zlB79E64Ns" %}
 
-Found that one of the Mic Amp Board (Board 02-09) does not amplify and sound. In this video, we look as to why that might be and work to resolve the problem as best we can. The Mic Amp Board (01-09) from the revision 1 unit has no issues and was a good part to compare results with.
+Found that one of the Mic Amp Boards (Board 02-09) does not amplify sound. In this video, we look at why that might be and work to resolve the problem as best we can. The Mic Amp Board (01-09) from the revision 1 unit has no issues and was a good part to compare results with.

@@ -26,7 +26,7 @@ My Mega PC is fitted with an AMD 386SX running at 25MHz. Amstrad's documentation
 
 Now while the Amstrad PC7486SLC-33 motherboard I have purchased appears to have been used in a beige Amstrad box with no Mega Drive card, it looks extremely similar to the sort of 486SLC platform associated with the Mega PC Plus, and I wanted to find out whether it could accept the Mega Drive card.
 
-At the time the Amstrad Mega PC Plus felt like an urban legend because I could find almost nothing online about it. We now know that surviving Mega PC Plus machines do exist, with the later model documented around a 33MHz 486SLC-class processor and 4MB of RAM. But it does look as though I'll be creating something very close to one.
+At the time the Amstrad Mega PC Plus felt like an urban legend because I could find almost nothing online about it. Period listings show a Mega Plus 486SLC-33 configuration being offered for sale, and later histories describe a 33MHz 486SLC-class system with upgraded memory, but surviving documentation is sparse. My PC7486SLC conversion should therefore be treated as an experiment inspired by the Mega PC Plus specification, not proof that this exact motherboard shipped in a factory Mega PC Plus.
 
 ![](/assets/images/2012/img_0037.jpg)
 
@@ -45,5 +45,5 @@ The things I find most attractive about this replacement board are: 1. It does n
 
 - [Amstrad Mega PC instruction manual](https://manualzz.com/doc/68157046/amstrad-megapc-instruction-manual) - documents the PC7386SX platform and memory expansion up to 16MB.
 - [Texas Instruments TI486 Microprocessor Reference Guide](https://www.bitsavers.org/components/ti/TI486/1993_TI486_Microprocessor_Reference_Guide.pdf) - documents TI486SLC architecture, cache, instruction-set compatibility and operating frequencies.
-- [Bannister forums - Mega PC Plus discussion](https://forums.bannister.org/ubbthreads.php?Number=35633&ubb=showflat) - historical discussion from an owner of a Mega PC Plus, including BIOS preservation work.
-- [San Simera Computers - Amstrad Mega PC](https://sansimeracomputers.wordpress.com/2014/07/20/amstrad-mega-pc/) - documents a later Mega PC Plus configuration with a 33MHz 486SLC-class CPU and 4MB RAM.
+- [DOS Days - Typical PCs in 1993](https://www.dosdays.co.uk/topics/1993.php) - reproduces a period listing for an Amstrad Mega Plus 486SLC-33 configuration.
+- [Retro Isle - Amstrad PC](https://www.retroisle.com/amstrad/pcs/general.php) - later historical summary of the Mega PC and Mega Plus.

@@ -2,6 +2,11 @@
 title: "Sega Mega Drive Frenzy"
 author: "Nix McRetro"
 date: 2012-07-03T05:38:17.000+10:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [repairs, sega]
 ---
 
@@ -11,7 +16,7 @@ I do not think I could take apart another Mega Drive... at least not for a few d
 
 ![](/assets/images/2012/img_0215.jpg)
 
-I found that one of the Mega Drive Model 1s was made in Thailand instead of the usual China and did have some differences more significant than minor changes between the China built Model 1s. The Thailand model had a Hitachi 68K chip too. All the China models have Motorolas in them.
+I found that one of the Mega Drive Model 1s was made in Thailand instead of the usual China and did have some differences more significant than minor changes between the China-built Model 1s. In the units I opened, the Thailand-built Model 1 used a Hitachi 68000-compatible CPU, while all of the China-built Model 1s in this particular sample used Motorola CPUs.
 
 ![](/assets/images/2012/img_0217.jpg)
 
@@ -20,3 +25,8 @@ Other differences include the screws! They were silver instead of black to secur
 ![](/assets/images/2012/img_0218.jpg)
 
 I was very pleased to see that most of the Mega Drive Model 1s have Rubycon capacitors in them. What a delight! Check out the whole range of pictures over in the [photo gallery](/goodies/).
+
+
+### Sources
+
+- [Sega Retro - Mega Drive PCB revisions](https://segaretro.org/Sega_Mega_Drive_PCB_revisions) - documents the many board and component revisions used across Mega Drive Model 1 production.

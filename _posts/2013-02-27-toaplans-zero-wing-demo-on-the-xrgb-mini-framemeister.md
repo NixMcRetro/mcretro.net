@@ -11,4 +11,4 @@ categories: [gaming, sega, youtube]
 
 {% include youtube.html id="NVLMLNnh6WQ" %}
 
-Also, I've ditched intros to videos to save on compressing the video multiple times over. Previously I'd have the raw camera copy, iMovie compresses it and then YouTube does what it sees fit to make it internet-ready. I probably should move up to better video editing software but I am yet to see any that works in such as easy was as iMovie. That said, iMovie has more bugs than a large rainforest. Enjoy the videos and stay tuned!
+Also, I've ditched intros to videos to save on compressing the video multiple times over. Previously I'd have the raw camera copy, iMovie compresses it and then YouTube does what it sees fit to make it internet-ready. I probably should move up to better video editing software but I am yet to see any that is as easy to use as iMovie. That said, iMovie has more bugs than a large rainforest. Enjoy the videos and stay tuned!

@@ -13,8 +13,11 @@ When I returned home I found that it was still there! Grabbed it and dumped it i
 
 ![](/assets/images/2013/img_0381.jpg)
 
-The machine appears to be a 2010 model from what I can tell. Below are the specifications of the various functional parts. Sadly there was no hard drive and the optical drive was corroded pretty bad. The heatsink was a stock Intel one. You know, the ones that cause the motherboard to bend and are impossible to clip down properly...
+The machine appears to be a 2010 model from what I can tell. Below are the specifications of the various functional parts. Sadly there was no hard drive and the optical drive was corroded pretty badly. The heatsink was a stock Intel one. You know, the ones that cause the motherboard to bend and are impossible to clip down properly...
 
-\- Gigabyte GA-G41MT-S2P Motherboard - Intel Core 2 Quad Processor Q8400 (4M Cache, 2.66 GHz, 1333 MHz FSB) Socket LGA775 - Gigabyte GV-R577UD-1GD AMD Radeon HD 5770 GPU 1GB GDDR5 - 2x2GB of 1333MHz RAM
+- Gigabyte GA-G41MT-S2P motherboard
+- Intel Core 2 Quad Q8400 processor, 4MB cache, 2.66GHz, 1333MHz FSB, LGA775
+- Gigabyte GV-R577UD-1GD AMD Radeon HD 5770 GPU, 1GB GDDR5
+- 2 x 2GB of 1333MHz RAM
 
 But overall, not a bad deal for the price of free! ;)

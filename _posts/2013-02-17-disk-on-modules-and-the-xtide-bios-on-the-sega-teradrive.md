@@ -36,3 +36,5 @@ Unfortunately, I can't track down these TopSSD drives anywhere. I was hoping the
 
 - [XTIDE Universal BIOS - Documentation and known storage compatibility issues](https://xtideuniversalbios.org/)
 - [XTIDE Universal BIOS v2.0.0 Manual](https://www.xtideuniversalbios.org/browser/xtideuniversalbios/wiki/Manual_v2_0_0.wiki?rev=329)
+
+**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

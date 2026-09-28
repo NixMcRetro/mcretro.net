@@ -23,3 +23,5 @@ This is part two of the ongoing saga that is the Sega Mega Drive 32X on PAL hard
 ### Sources
 
 - [ConsoleMods Wiki - Genesis: 32X Service Bulletin Fixes](https://consolemods.org/wiki/Genesis:32X_Service_Bulletin_Fixes)
+
+**AI-assisted revision:** This post was reviewed and edited with OpenAI GPT-5.6 Sol on 28 September 2026 for fact-checking, sourcing, and editorial cleanup. Final editorial responsibility remains with the author.

@@ -18,8 +18,8 @@ This is part two of the ongoing saga that is the Sega Mega Drive 32X on PAL hard
 
 **Edit:** The solution to this problem is over on [Assembler Games](https://web.archive.org/web/20191111135932/https://assemblergames.com/threads/sega-mega-32x-video-flickering-distortion.41947/). Alternatively you can just not use a VA4 Sega Mega Drive with your 32X. Entirely up to you!
 
-This turned out to be a genuine documented hardware compatibility problem, not just a quirk of my setup. Sega issued service fixes for certain Asian and PAL VA4 Mega Drives used with the 32X, including unstable video and lockups caused by poor EDCLK and VCLK signal quality.
+This turned out to be a genuine documented hardware compatibility problem, not just a quirk of my setup. Sega issued service fixes for PAL VA4 Mega Drives used with the 32X, including unstable video and lockups caused by poor EDCLK and VCLK signal quality.
 
 ### Sources
 
-- [ConsoleMods Wiki - Genesis: 32X Service Bulletin Fixes](https://consolemods.org/wiki/Genesis:32X_Service_Bulletin_Fixes)
+- [Sega - 32X Service Bulletins](https://consolemods.org/wiki/images/8/8b/Sega_32X_Service_Bulletins.pdf)

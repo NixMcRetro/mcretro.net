@@ -1,7 +1,12 @@
 ---
 title: "Welcome to the Retro Zone"
 author: "Nix McRetro"
-date: 2012-02-19T20:52:55.000+11:00
+date: 2012-02-19T08:52:55.000+11:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [news]
 ---
 

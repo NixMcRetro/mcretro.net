@@ -1,7 +1,12 @@
 ---
 title: "New Purchases - 28th April 2012"
 author: "Nix McRetro"
-date: 2012-04-27T21:49:07.000+10:00
+date: 2012-04-28T21:49:07.000+10:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ibm-pc, news, sega]
 ---
 

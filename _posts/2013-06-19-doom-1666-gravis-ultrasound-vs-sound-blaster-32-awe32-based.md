@@ -7,4 +7,4 @@ categories: [ibm-pc, youtube]
 
 {% include youtube.html id="diW3-y40wP0" %}
 
-Credit goes out to ID Software for making such a great shooter! Also, my video card doesn't seem to be doing such a good job... but when the music is this good, who needs video! Sound effects were muted so the pure joy of these two cards could be enjoyed. Which is your favourite?
+Credit goes out to id Software for making such a great shooter! Also, my video card doesn't seem to be doing such a good job... but when the music is this good, who needs video! Sound effects were muted so the pure joy of these two cards could be enjoyed. Which is your favourite?

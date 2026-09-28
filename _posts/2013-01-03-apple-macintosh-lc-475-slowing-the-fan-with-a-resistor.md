@@ -2,6 +2,11 @@
 title: "Apple Macintosh LC 475 Slowing the Fan with a Resistor"
 author: "Nix McRetro"
 date: 2013-01-03T13:54:58.000+11:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [apple, hacks, youtube]
 ---
 
@@ -12,3 +17,12 @@ Determining which resistor to use from a selection of four or so resistors from 
 {% include youtube.html id="gkGAGWQ2UVI" %}
 
 And here is the promised second part with the installation and soldering of the resistor to the red power cable on the fan.
+
+
+### 2026 Note
+
+This did reduce the noise, but a series resistor also reduces the voltage available to the fan, lowering both speed and airflow. It can also make startup unreliable if the resulting fan voltage falls below its starting requirement. If doing something similar today I would verify reliable cold starts and monitor internal temperatures rather than assuming that quieter automatically means adequate cooling.
+
+### Sources
+
+- [Noctua - Fan troubleshooting and starting voltage](https://www.noctua.at/en/support/faqs/my-fan-is-not-working-as-intended-is-it-faulty) - explains that fans require sufficient voltage to start and that operation below their specified range can be unreliable.

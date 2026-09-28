@@ -2,12 +2,17 @@
 title: "Odyssey Stealer: Technical Analysis of a macOS Infostealer"
 author: "Nix McRetro"
 date: 2026-07-26T17:08:14.000+11:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ai-generated, programming]
 ---
 
 ## Executive Summary
 
-In mid‑July 2026, I obtained a macOS infostealer trojan disguised as a software licensing tool (`Patch.app`). The sample is a Mach‑O universal binary (x86_64 + arm64) that leverages a custom xorshift32 PRNG‑based XOR cipher to obfuscate **379 embedded strings**. Upon execution, it harvests credentials from **14 browsers**, **17 cryptocurrency wallet applications**, the macOS Keychain, Apple Notes, and Safari cookies, then exfiltrates the collected data as a ZIP archive to a command‑and‑control server via HTTP.
+In mid‑July 2026, I obtained a macOS infostealer trojan disguised as a software licensing tool (`Patch.app`). The sample is a Mach‑O universal binary (x86_64 + arm64) that leverages a custom xorshift32 PRNG‑based XOR cipher to obfuscate **379 embedded strings**. Upon execution, it harvests credentials from **14 browsers**, **16 software-wallet locations plus two hardware-wallet export targets**, the macOS Keychain, Apple Notes, and Safari cookies, then exfiltrates the collected data as a ZIP archive to a command‑and‑control server via HTTP.
 
 **Key Findings:**
 
@@ -15,10 +20,10 @@ In mid‑July 2026, I obtained a macOS infostealer trojan disguised as a softwar
 - **`.bhost`** → Primary C2 IP: `192.253.248.181` (raw IP, not a fallback).
 - **`.phost`** → Panel domain: `http://ukdsopas.at` (used as an HTTP header identifier).
 - **`xxxblyat`** → Hardcoded `app_id` linking this build to the Odyssey Stealer MaaS platform.
-- **`newooble`** → Attacker panel username (recovered from `.username`).
-- **Four command types**: `doshell`, `repeat`, `enablesocks5`, `uninstall` — giving the attacker unrestricted remote control.
-- **Two separate infections** (users `m1` and `m2`) confirmed the same operator (`newooble`) was actively managing the botnet.
-- **Live bot channel** discovered with `.botid` `19a9ff38c1b24ffe8e5c54a91af203c8` — proving the C2 server was still active.
+- **`newooble`** → Affiliate/panel username observed in this build (recovered from `.username`).
+- **Four command types**: `doshell`, `repeat`, `enablesocks5`, `uninstall` — giving the remote operator unrestricted command execution.
+- **Two separate infections** (users `m1` and `m2`) carried the same affiliate/panel identifier (`newooble`).
+- **Live bot channel** discovered with `.botid` `19a9ff38c1b24ffe8e5c54a91af203c8`; subsequent successful manual polling confirmed that the C2 server remained responsive.
 - **Password theft confirmed**: `password1` (recovered from `cache.txt`).
 - **Data exfiltration confirmed**: `lksopo.zip` containing stolen credentials, wallets, and system information.
 
@@ -28,7 +33,7 @@ All indicators of compromise have been reported to the ACSC, AFP, and relevant a
 
 ## 1. Sample Acquisition
 
-The sample was obtained from a malicious distribution site where it was presented as a legitimate software licensing tool. The ad‑hoc code signature and lack of a Team Identifier immediately flagged it as suspicious.
+The sample was obtained from a malicious distribution site where it was presented as a legitimate software licensing tool. In that context, the ad-hoc code signature and lack of a Team Identifier were early reasons for additional scrutiny, rather than proof of maliciousness on their own.
 
 The malware was detonated on an isolated macOS system with network monitoring in place — an AdGuard Home DNS sinkhole and kernel‑level network logging. This setup allowed me to observe the malware's full behaviour in real time.
 
@@ -61,11 +66,11 @@ The binary is a C++ application that makes heavy use of `std::string` for path c
 
 ## 3. String Obfuscation: xorshift32
 
-Every string embedded in the binary — file paths, shell commands, URLs, wallet names, browser identifiers — is encrypted using a custom scheme based on the **xorshift32** pseudorandom number generator.
+The strings recovered from this sample — file paths, shell commands, URLs, wallet names, browser identifiers — are protected using a custom scheme derived from the **xorshift32** pseudorandom number generator.
 
 ### 3.1 The cipher
 
-Each encrypted string is stored as a sequence of bytes in the `__TEXT __const` section, accompanied by a 4‑byte seed. Decryption proceeds as follows:
+The sample uses per-string state values with a xorshift32-derived byte stream. In my extraction workflow, candidate 4-byte seeds were recovered from `__TEXT,__const` and tested against candidate ciphertext regions identified during reverse engineering. The offsets below are specific to this sample and slice. The decryption primitive proceeds as follows:
 
 1. Initialise the PRNG state with the 4‑byte seed.
 2. For each byte of the encrypted string:
@@ -80,7 +85,7 @@ uint32_t xorshift32(uint32_t state) {
     state ^= state << 13;
     state ^= state >> 17;
     state ^= state << 5;
-    return state | 1;  // force odd to avoid zero-period
+    return state | 1;  // additional OR-with-1 step observed in this sample
 }
 ```
 
@@ -92,20 +97,20 @@ I developed a Python‑based brute‑force decoder that extracted **379** unique
 |---|---|
 | 1 | Extract every 4‑byte little‑endian value from `__TEXT __const` (file offset `0x1D350`, size `0x3904`). |
 | 2 | Filter to 392 unique non‑zero candidate seeds. |
-| 3 | For each seed, generate a xorshift32 keystream and XOR against the `__DATA` section at every offset. |
+| 3 | For each seed, generate the xorshift32-derived keystream and test candidate ciphertext regions and offsets identified during reverse engineering. |
 | 4 | Score each result by printable ASCII ratio (threshold: >70%). |
 | 5 | Flag results containing known patterns (`/`, `http`, `{`, `curl`, wallet names). |
 | 6 | Manually verify and catalogue all hits. |
 
-**Result: 379 strings decrypted, 100% printable, zero false positives.**
+**Result: 379 strings were retained in the final catalogue after automated filtering and manual review; I did not identify false positives in that final set.**
 
-The following Python script implements the complete decryption routine:
+The following Python is a **simplified reproducer of the PRNG/decryption primitive** used in my analysis. The offsets are sample-specific; the full extraction workflow also used candidate-region scanning and manual review:
 
 ```python
 #!/usr/bin/env python3
 """
-xorshift32 string decryptor for Odyssey Stealer / Patch.app
-Extracts and decrypts all obfuscated strings from the binary.
+xorshift32-derived string decryption reproducer for Odyssey Stealer / Patch.app
+Demonstrates the sample-specific PRNG/decryption primitive and candidate extraction.
 """
 
 import struct
@@ -180,7 +185,7 @@ if __name__ == "__main__":
 
 ## 4. Decrypted Strings: Complete Catalogue
 
-All 379 decrypted strings are listed below, organised by category. This is the definitive list of everything the malware targets, the commands it runs, and the infrastructure it uses.
+All 379 decrypted strings retained in my final catalogue are listed below, organised by category. This is the complete catalogue recovered from **this sample by this analysis**, not a claim that every Odyssey build has the same configuration or targets.
 
 ### 4.1 Command‑and‑Control Infrastructure
 
@@ -314,7 +319,7 @@ These files are written to `/Users/username/`:
 | `.pwd` | Stolen login password | Plaintext password (e.g., `password0, password1`) |
 | `.phost` | `http://ukdsopas.at` | Panel host (HTTP header) |
 | `.bhost` | `http://192.253.248.181` | Bot host (primary C2 server) |
-| `.username` | `newooble` | Attacker panel username |
+| `.username` | `newooble` | Affiliate/panel username |
 | `.lastaction` | Last command ID | Prevents command replay |
 | `.uninstalled` | `+` | Self‑destruct marker |
 
@@ -374,7 +379,7 @@ The macOS version check gates the Chrome master password extraction — the malw
 /formhistory.sqlite
 ```
 
-### 4.12 Cryptocurrency Wallet Targets (17 wallets + hardware)
+### 4.12 Cryptocurrency Wallet Targets (16 software wallets + 2 hardware-wallet export targets)
 
 | Wallet | Path |
 |---|---|
@@ -1348,7 +1353,7 @@ sudo ./detect_external_mac.sh "/Volumes/MyDrive"
 | `/tmp/socks` | SOCKS5 proxy binary |
 | `Patch.app` | Malware binary |
 | `xxxblyat` | Build ID / operator identifier |
-| `newooble` | Attacker panel username |
+| `newooble` | Affiliate/panel username |
 
 ### 12.3 Hashes
 
@@ -1363,7 +1368,7 @@ sudo ./detect_external_mac.sh "/Volumes/MyDrive"
 | IoC | Value |
 |---|---|
 | Build ID | `909286c1d2fb4c5c97dfc22a486661c1` |
-| Panel username | `newooble` |
+| Affiliate/panel username | `newooble` |
 | app_id | `xxxblyat` |
 | botid | `19a9ff38c1b24ffe8e5c54a91af203c8` |
 
@@ -1408,7 +1413,7 @@ If you find IoCs on your Mac:
 
 This sample demonstrates a mature macOS infostealer with several notable characteristics:
 
-1. **Broad target coverage.** Fourteen browsers, seventeen cryptocurrency wallets, the macOS Keychain, Apple Notes, and Safari cookies. The inclusion of hardware wallet export (Ledger, Trezor) indicates a financially motivated operator with specific interest in cryptocurrency theft.
+1. **Broad target coverage.** Fourteen browsers, sixteen software-wallet locations, two hardware-wallet export targets, the macOS Keychain, Apple Notes, and Safari cookies. The Ledger and Trezor export targets are consistent with the sample's strong focus on cryptocurrency theft.
 
 2. **Effective string obfuscation.** The xorshift32‑based cipher is simple but sufficient to defeat static string analysis. All 379 strings were recovered through brute‑force seed extraction.
 
@@ -1418,7 +1423,7 @@ This sample demonstrates a mature macOS infostealer with several notable charact
 
 5. **The raw IP bypasses DNS blocks.** The malware uses `.bhost` to store the raw IP (`192.253.248.181`), completely bypassing DNS‑based domain blocking. The `.phost` domain is only used as an HTTP header, not for actual communication.
 
-6. **The C2 infrastructure remained active.** The `.botid` recovered from the second infection (`19a9ff38c1b24ffe8e5c54a91af203c8`) proved the attacker's panel was still online and the campaign was ongoing.
+6. **The C2 infrastructure remained active during my investigation.** The second infection showed that bot registration had succeeded, and subsequent manual polling with the recovered `.botid` (`19a9ff38c1b24ffe8e5c54a91af203c8`) confirmed that the C2 was still returning valid responses at the time I tested it.
 
 The sample and all associated IOCs have been submitted to VirusTotal, URLhaus, and the relevant national and infrastructure abuse contacts.
 
@@ -1426,5 +1431,9 @@ The sample and all associated IOCs have been submitted to VirusTotal, URLhaus, a
 
 *The author is an independent security researcher based in Australia. All analysis was conducted on preserved forensic evidence. The views expressed here are the author's own. IOCs and samples are available to verified researchers on request.*
 
-References:
-https://0xlibris.net/posts/odyssey_infostealer/
+## References
+
+- [0xlibris — Odyssey Infostealer](https://0xlibris.net/posts/odyssey_infostealer/)
+- [Censys — Odyssey Stealer: Inside a macOS Crypto-Stealing Operation](https://censys.com/blog/odyssey-stealer-inside-a-macos-crypto-stealing-operation/)
+- [Jamf Threat Labs — Signed and stealing: uncovering new insights on Odyssey Infostealer](https://www.jamf.com/blog/signed-and-stealing-uncovering-new-insights-on-odyssey-infostealer/)
+- [Red Canary — A taxonomy of Mac stealers: Distinguishing Atomic, Odyssey, and Poseidon](https://redcanary.com/blog/threat-intelligence/atomic-odyssey-poseidon-stealers/)

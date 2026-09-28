@@ -2,6 +2,11 @@
 title: "Aiwa Mega-CD CSD-GM1 Repairs (Part 2)"
 author: "Nix McRetro"
 date: 2012-10-20T04:17:40.000+11:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [hacks, repairs, sega]
 ---
 
@@ -9,7 +14,7 @@ categories: [hacks, repairs, sega]
 
 The above video is not the one I originally intended, however YouTube screwed up the upload. Then I accidentally deleted the video and attempted to recover it... it was gone. Nevermind, enjoy some transformer rantings.
 
-Started off the weekend by joining the two blue (blue->blue) and two white (white->white) as they were separate for reasons unknown. They both feed into the board and supply voltage from the known working transformer, so they both needed to be connected - possibly on different rails?
+Started off the weekend by joining the two blue (blue->blue) and two white (white->white) as they were separate for reasons unknown. I rejoined the matching pairs based on their original routing and comparison with the other unit. At this point I still did not know exactly which circuits each rail supplied.
 
 ![](/assets/images/2012/img_0308.jpg)
 
@@ -53,7 +58,7 @@ I then tried disconnecting one of the DC-DC stepdown converters to see which one
 
 ![](/assets/images/2012/img_0316.jpg)
 
-Now if you'll remember for a moment I was feeding 6.3V to white, 9.75V to blue and 12V to red... you can see we have a problem. I was feeding 6.3V to a voltage regulator that is meant to output at 6V. Impossible mission? Yes! So I tweaked the pot up to 8V to test...
+Now if you'll remember for a moment I was feeding 6.3V to white, 9.75V to blue and 12V to red... you can see we have a problem. I was feeding only 6.3V into a regulator expected to produce around 6V. If this was a conventional 78xx-style regulator, that leaves nowhere near enough input headroom. A typical 7806 needs roughly 2V more at its input than its regulated 6V output. So I tweaked the pot up to 8V to test...
 
 ![](/assets/images/2012/img_0320.jpg)
 
@@ -61,6 +66,11 @@ Now if you'll remember for a moment I was feeding 6.3V to white, 9.75V to blue a
 
 ![](/assets/images/2012/img_0322.jpg)
 
-Not only was the picture a million times better, **there was also sound** off the damaged mainboard. While this is great news, it means that the dodgy looking transformer is rubbish (and now in the bin) and the working one is failing. As it only outputs 6.3V to the white power cables... I think I'm in trouble. However, it does mean that my soldering worked and the mainboard should be fully functional.
+Not only was the picture a million times better, **there was also sound** off the damaged mainboard. The improvement after raising the input showed that the 6V rail was being starved of headroom, but it did not by itself prove that the transformer was the failed component. The transformer, rectification, filter capacitors, wiring and downstream load were all still possible contributors and needed to be isolated separately. It did show that the repaired mainboard could produce video and sound, which was strong evidence that the trace repairs were working. It did not yet prove that every part of the mainboard was fully functional.
 
 That aside though, victory! I've got a new laser for the CD deck so I might even get a chance to play a Sega Mega-CD game. And thanks again to Dutchy on [ASSEMblergames](https://web.archive.org/web/20191110101129/https://assemblergames.com/threads/aiwa-mega-cd-csd-gm1-mainboard-repair.42186/) for reminding me about voltage regulators requiring more than they output. They might have just saved the day!
+
+
+### Sources
+
+- [STMicroelectronics L7806 datasheet](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6283/L7806.pdf) - documents the input headroom required for a conventional 6V 78xx-family linear regulator.

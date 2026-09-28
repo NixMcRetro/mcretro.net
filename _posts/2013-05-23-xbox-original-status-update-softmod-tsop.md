@@ -1,5 +1,5 @@
 ---
-title: "XBOX (Original) Status Update Softmod  TSOP"
+title: "XBOX (Original) Status Update: Softmod / TSOP"
 author: "Nix McRetro"
 date: 2013-05-23T04:08:23.000+10:00
 categories: [hacks, microsoft, youtube]

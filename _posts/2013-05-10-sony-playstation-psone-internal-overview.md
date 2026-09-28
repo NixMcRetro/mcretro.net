@@ -1,5 +1,5 @@
 ---
-title: "Sony PlayStation PSone Internal Overview"
+title: "Sony PlayStation PS one Internal Overview"
 author: "Nix McRetro"
 date: 2013-05-10T04:02:26.000+10:00
 categories: [hacks, sony, youtube]

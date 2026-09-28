@@ -2,6 +2,11 @@
 title: "Sega Saturn Photographing Has Begun"
 author: "Nix McRetro"
 date: 2012-08-27T08:52:03.000+10:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [sega]
 ---
 
@@ -27,4 +32,9 @@ I've also retaken some photos of the above Saturn, I had so many photos of chips
 
 ![](/assets/images/2012/img_0253.jpg)
 
-One thing I did notice is that the mainboard is huge and has the controller ports integrated onto it. However I also found that the VCD slot / CD interface is on a separate board - like the Sophia. I compared the two boards and they are almost identical. The Sophia obviously has earlier date stamps, but also has a serial number on the underside of the card.
+One thing I did notice is that the mainboard is huge and has the controller ports integrated onto it. However I also found that the VCD slot / CD interface is on a separate board - like the Sophia. I compared the two boards and they are visually very similar in layout. The Sophia obviously has earlier date stamps and also has a serial number on the underside of the card, but I would not assume from appearance alone that the two boards are electrically identical.
+
+
+### Sources
+
+- [ConsoleMods - Saturn Model Differences](https://consolemods.org/wiki/Saturn:Saturn_Model_Differences) - documents the separate CD-processing daughterboard arrangement used in early VA0 Saturn hardware.

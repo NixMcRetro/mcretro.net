@@ -2,12 +2,17 @@
 title: "Amstrad Sega Mega PC 486 CPU Upgrade Failure"
 author: "Nix McRetro"
 date: 2012-07-26T01:17:04.000+10:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ibm-pc, repairs, sega]
 ---
 
 {% include youtube.html id="oGvDwl04crs" %}
 
-First up we have some test desoldering of a RAM chip off a RAM chip board to see if this would even work using a heat gun.
+First up we have some test desoldering of a RAM chip off a RAM chip board to see if this would even work using a heat gun. This was very much a learning experiment. A general-purpose heat gun gives far less temperature and airflow control than proper hot-air rework equipment, so I would not recommend this as a method for removing a QFP CPU from vintage multilayer hardware.
 
 {% include youtube.html id="U6FR-Bq1GDQ" %}
 
@@ -42,3 +47,8 @@ Some of the finest drag soldering this side of the 'verse.
 ![](/assets/images/2012/img_0237.jpg)
 
 At least now I know that the 486SLC board is permanently installed into the Mega PC as there is no reverting back to the old board now... I've scrapped the board and plucked off all the possibly useful chips. I took some decent photos of the board and major components before doing this. See below for more. Photos of both the 486SLC and 386SX can be found in the [photo gallery](/goodies/).
+
+
+### Further Reading
+
+- [Amstrad Sega Mega PC 386SX CPU Replacement](/amstrad-sega-mega-pc-386sx-cpu-replacement/) - the preceding experiment and the 50MHz-class upgrade goal.

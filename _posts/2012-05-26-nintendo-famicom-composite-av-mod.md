@@ -2,6 +2,11 @@
 title: "Nintendo Famicom Composite AV Mod"
 author: "Nix McRetro"
 date: 2012-05-26T19:18:06.000+10:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [hacks, nintendo, youtube]
 ---
 
@@ -22,6 +27,8 @@ The second attempt is the slightly longer prototyping board. I was attempting to
 The final version was shrunk down to fit on a smaller piece of prototyping board. A much better piece of hardware.
 
 **Parts Required**
+
+> **2026 technical note:** This parts list documents the circuit I successfully built on this particular Famicom motherboard. Other Famicom board revisions and later AV-mod designs use different component values and connection points.
 - 1x 110 ohm resistor (I used 110 ohm, 0.25 watt 1% tolerance, no voltage specified).
 - 1x 300 ohm resistor (I used 300 ohm, 0.5 watt 5% tolerance, 350V).
 - 2x 16V 220uF 105°C electrolytic capacitor.
@@ -45,7 +52,7 @@ To make it all come together and actually give us AV composite you are going to 
 
 ![](/assets/images/2012/img_0145.jpg) A937Q D PNP transistor desoldered from the Famicom mainboard. It fell into the Famicom...
 
-Firstly, desolder the PNP transistor (three pin component - see above) from the mainboard. If you wedge a flatblade screwdriver underneath the transistor it will greatly help with removing it. Try and heat the three legs as fast and evenly as possible. It will take some time but keep at it and you'll get there. Be careful not to overheat the component, while they are pretty solid and can take a fair amount of heat - the less the better though! If you have desolder braid or a desolder pump you might be better off.
+Firstly, desolder the PNP transistor (three pin component - see above) from the mainboard. I originally used a small flatblade screwdriver to help lift the transistor while desoldering it. With the benefit of hindsight, a desoldering pump, braid or proper desoldering tool with minimal mechanical force is the safer approach on an ageing PCB. Be careful not to overheat the component or damage the pads.
 
 ![](/assets/images/2012/img_0163.jpg)
 
@@ -75,9 +82,9 @@ The ground point cable (black) is where you wire all your grounds into. If you s
 
 ![](/assets/images/2012/img_0161.jpg) Composite Video
 
-The final point is the video signal cable (green). Like the sound the AV cable will require two cables, one is the source (this!) and the other goes to ground - just like the sound will. Think of it as if the video point on the mainboard is the positive terminal and it needs to connect into a negative terminal (ground) to work properly.
+The final point is the video signal cable (green). Like the sound connection, the AV cable needs the signal and a ground reference. The composite video signal is measured relative to circuit ground, so the RCA centre pin carries the video signal and the RCA outer connection goes to ground.
 
-The best method for soldering to these points is to reflow the solder. This way the solder will be nice and fresh and have great conductivity with the new cables you are adding. To do this you pretty much apply heat to the joint melting the existing solder and add some fresh solder in. I usually add enough so I do not have to tin the cables I am installing (Yes... I know... It sure is lazy isn't it!).
+Adding a small amount of fresh solder and flux can make an old joint easier to rework and helps the new wire wet properly. The benefit is improved solderability and joint quality, rather than old solder somehow losing its electrical conductivity. To do this you apply heat to the joint, melt the existing solder and add a small amount of fresh solder. I usually add enough so I do not have to tin the cables I am installing (Yes... I know... It sure is lazy isn't it!).
 
 Once you have added in your four cables, grab your prototyping board. It is time to use a knife, flatblade or hacksaw (I used this once...) to cut the board down to size.
 
@@ -105,7 +112,7 @@ What are all those coloured cables above? Purple is the +5V coming in from the v
 
 ![](/assets/images/2012/img_0151.jpg)
 
-Be sure to solder the transistor you desoldered from the Famicom on the right way with the notch facing the correct side. Otherwise things will go funky and possibly explode. Once all this is done you should be able to get video to show on your TV screen. If nothing shows or you see flames, disconnect the unit from mains power and check your soldering and polarities.
+Be sure to solder the transistor you desoldered from the Famicom on the right way with the notch facing the correct side. Otherwise things will go funky and possibly explode. Once all this is done you should be able to get video to show on your TV screen. If the modification does not behave as expected, switch the console off and disconnect the power adaptor before inspecting the wiring, component orientation and capacitor polarity.
 
 ![](/assets/images/2012/img_0158.jpg)
 
@@ -129,8 +136,14 @@ Now all that's left is to enjoy your Kirby and Spelunker! Below are some videos 
 
 {% include youtube.html id="VaGMn3mrMa4" %}
 
-Additionally you can try to remove the jail bars that show by checking out this link [here](http://jpx72web.blogspot.com/2016/11/famicom-av-mod-new.html). This was the original guide that I followed. It has good schematics too if you are a schematicky sort of person. I had no luck with any of the jail bar reducing/removing methods listed. Your luck may vary. Good luck!
+Additionally, a later guide covering improved Famicom AV modification and jailbar-reduction techniques can be found [here](http://jpx72web.blogspot.com/2016/11/famicom-av-mod-new.html). It documents a related approach and provides useful schematics. I had no luck with any of the jail bar reducing/removing methods listed. Your luck may vary. Good luck!
 
 **Resources:**\
 [Another Nintendo Famicom AV Mod](http://jpx72web.blogspot.com/2016/11/famicom-av-mod-new.html)\
 [McRetro Photo Gallery](/goodies)
+
+
+### Sources
+
+- [ConsoleMods - NES Top Loader AV Mod](https://consolemods.org/wiki/NES:Top_Loader_AV_Mod) - documents a closely related PNP-transistor composite amplifier topology used in Nintendo RF-only hardware.
+- [Ctrl-Alt-Rees - Nintendo Famicom Composite Video Output Mod](https://ctrl-alt-rees.com/2019-01-26-nintendo-famicom-composite-video-output-mod.html) - documents Famicom board-revision differences and later composite-mod approaches.

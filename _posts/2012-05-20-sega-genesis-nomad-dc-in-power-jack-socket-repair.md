@@ -2,6 +2,11 @@
 title: "Sega Genesis Nomad DC-in Power Jack / Socket Repair"
 author: "Nix McRetro"
 date: 2012-05-20T10:32:14.000+10:00
+last_modified_at: 2026-09-28
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-28
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [repairs, sega]
 ---
 
@@ -27,7 +32,7 @@ Apart came the Nomad and I discovered that the DC-in jack was damaged causing po
 
 ![](/assets/images/2012/img_0128.jpg)
 
-After closer inspection I found that the DC-in jack was exactly the same as a Mega Drive 2. Centre positive as well. I removed the DC-in jack off one of my functional Mega Drive 2 units and attached it onto the Nomad.
+After closer inspection I found that the DC-in jack was compatible with the one in my Mega Drive 2. Both use the same centre-positive power arrangement, so I removed the jack from one of my working Mega Drive 2 units and fitted it to the Nomad.
 
 ![](/assets/images/2012/img_0129.jpg)
 
@@ -38,3 +43,8 @@ After closer inspection I found that the DC-in jack was exactly the same as a Me
 Replaced the front plastic screen and cleaned out the controller buttons, put it all back together and plonked in my nearest cartridge(s). Tested with the external battery pack and it works well also. A great success! Here's a video of the Nomad during initial tests too.
 
 {% include youtube.html id="X5LQolaXIL4" %}
+
+
+### Sources
+
+- [Sega Genesis Nomad instruction manual](https://manualzilla.com/doc/6982054/sega-genesis-nomad-instruction-manual) - documents compatibility with the Genesis 2 AC adaptor and the Nomad's external power arrangement.

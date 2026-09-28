@@ -1,0 +1,12 @@
+.ai-assistance-note {
+  margin: 1rem 0 1.5rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid currentColor;
+  background: rgba(127, 127, 127, 0.08);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.ai-assistance-note strong {
+  font-weight: 700;
+}

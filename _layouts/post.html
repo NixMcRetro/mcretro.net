@@ -24,6 +24,11 @@ layout: default
       {{ d }}{{ ordinal }} {{ page.date | date: "%B %Y" }}
     </span>
   
+    {% if page.last_modified_at %}
+      <span class="meta-sep">//</span>
+      <span class="post-updated">Updated {{ page.last_modified_at | date: "%-d %B %Y" }}</span>
+    {% endif %}
+
     {% if page.categories.size > 0 %}
       <span class="meta-sep">//</span>
       <span class="post-categories">
@@ -33,6 +38,16 @@ layout: default
       </span>
     {% endif %}
   </div>
+
+  {% if page.ai_assistance %}
+    <div class="ai-assistance-note" data-pagefind-ignore="all">
+      <strong>AI-assisted revision:</strong>
+      This post was reviewed and edited with {{ page.ai_assistance.model }}
+      on {{ page.ai_assistance.date | date: "%-d %B %Y" }}
+      for {{ page.ai_assistance.purpose }}.
+      Final editorial responsibility remains with the author.
+    </div>
+  {% endif %}
 
   <div class="post-content">
     {{ content }}

@@ -20,6 +20,10 @@ For this early Saturn revision, a regulated 12V brick with enough power capacity
 
 Now I can sleep at night not fearing that all my model 1 Saturns will die and never be resurrected. They all have the potential to live forever (or as long as their mainboards and CD decks choose to live for).
 
+### Related posts
+
+- [Sega Saturn Model 1 Power Supply Issues](/sega-saturn-model-1-power-supply-issues/)
+- [Sega Saturn External PSU DC-DC Converter Test](/sega-saturn-external-psu-dc-dc-converter-test/)
 
 ### Sources
 

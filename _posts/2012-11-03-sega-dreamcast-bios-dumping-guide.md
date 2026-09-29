@@ -1,21 +1,57 @@
 ---
-title: "Sega Dreamcast - BIOS Dumping Guide"
+title: "Sega Dreamcast BIOS Dumping Guide"
 author: "Nix McRetro"
 date: 2012-11-03T13:58:05.000+11:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-09-29
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
+  date: 2026-09-29
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [hacks, sega, youtube]
 ---
 
 {% include youtube.html id="DVowfmrifN8" %}
 
-Below is the Dreamcast the BIOS was dumped from and the chip it was beamed down through. I'd used httpd-ack-20080711.zip and XDP.rar to get me my BIOS - MPR-21871.zip. Turns out it is PAL BIOS version 1.01c, identified as MPR-21871. The known CRC32 for this revision is 2f551bc5, which gives a useful reference for checking the dump. It also has the well-known spelling oddity in the menu text. Overall it wasn't too exciting, but great to be able to dump the BIOS from my own Dreamcast. Last time I even tried to do that would have been about a decade ago. Glad to see it worked much easier this time than previously.
+Above is the Dreamcast I dumped the BIOS from, along with the BIOS hardware involved.
 
-Furthermore, I also discovered that the `crc32` utility was available in my Mac OS X terminal environment. Running `crc32` followed by the path to a file produces its CRC-32 checksum. The command is associated with the Perl Archive::Zip package, so it should not be assumed to exist on every Mac installation. CRC32 is useful for identifying an exact ROM dump, but it is not a cryptographic integrity check. Just like that, the checksum is generated right there for you, free of charge! :)
+I used `httpd-ack-20080711.zip` together with `XDP.rar` to retrieve my own BIOS image.
 
+The result was:
+
+```text
+BIOS:    MPR-21871
+Region:  PAL
+Version: 1.01c
+CRC32:   2f551bc5
+```
+
+That CRC32 matches the known value for the PAL MPR-21871 v1.01c BIOS, which is a useful sanity check that the dump matches the known revision.
+
+It also contains the well-known spelling oddity in the Dreamcast menu text.
+
+Overall it wasn't the world's most exciting operation, but it was satisfying to dump the BIOS from my own Dreamcast.
+
+The last time I had attempted anything like this would have been about a decade earlier.
+
+Glad to see it went considerably more smoothly this time.
+
+### Checking the dump
+
+I also discovered that a `crc32` utility was available in my Mac OS X terminal environment.
+
+Running `crc32` followed by a file path produces the CRC-32 checksum for that file.
+
+It should not be assumed that every Mac installation includes that command. The utility I was using comes from the Perl Archive::Zip package.
+
+CRC32 is very useful for recognising known ROM images and spotting accidental changes, but it is not a cryptographic integrity mechanism.
+
+Just like that, checksum generated.
+
+Free of charge! :)
+
+### Related posts
+
+- [Sega Dreamcast BIOS and GD-ROM Dumping](/sega-dreamcast-bios-and-gd-rom-dumping/)
 
 ### Sources
 

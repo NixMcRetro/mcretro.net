@@ -2,27 +2,55 @@
 title: "Aiwa Mega-CD CSD-GM1 Game Unit Overview"
 author: "Nix McRetro"
 date: 2012-11-03T13:44:28.000+11:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-09-29
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
+  date: 2026-09-29
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [sega, youtube]
 ---
 
 {% include youtube.html id="IEjsam_FNSw" %}
 
-A quick look inside the Aiwa Mega-CD CSD-GM1 Game Unit showing off all of the many capacitors and some damage near the rear of the unit. Not every day you get to see inside one of these. I've compared the two units I own and one is around 10-20 weeks newer than the other. I have designated the older unit to the 01-01 Aiwa Mega-CD unit and the newer unit to the 01-02 Aiwa Mega-CD unit.
+Here's a closer look inside the Aiwa Mega-CD CSD-GM1 Game Unit, complete with a truly impressive number of capacitors and some damage near the rear of the board.
+
+It is not every day you get to see inside one of these.
+
+Comparing my two Game Units, the PCBs are silkscreened **01-01** and **01-02**.
+
+Component date codes suggest that the 01-02 board is roughly 10 to 20 weeks newer than the 01-01 board.
+
+That makes the markings particularly useful when comparing component and production differences between the two revisions.
 
 ![](/assets/images/2012/img_0344.jpg)
 
-Interestingly the two black capacitors that can be seen on the mainboard (I think they were 220uF) are blue Rubycons on the newer unit, which perhaps indicates that they had been replaced previously. Have a look at the photos in the [Photo Gallery](/goodies) or the video above and be the judge. Maybe they just used black capacitors because it was all they had at the factory that day.
+One interesting difference is that two capacitors that are black on the 01-01 mainboard are blue Rubycons on the 01-02 board.
+
+My first thought was that perhaps somebody had replaced them.
+
+Colour and brand differences alone do not prove that though. They could just as easily represent an ordinary production change between the 01-01 and 01-02 PCB revisions.
+
+Have a look at the [photo gallery](/goodies/) or the video and be the judge.
 
 ![](/assets/images/2012/img_0343.jpg)
 
-You can get the capacitor listing in full on the [File Server](/goodies). The battery used in these units is a VL2020 with a three-prong connector. One is for the negative terminal and two are on the positive side. The VL2020 is a rechargeable 3V vanadium-lithium cell, so a non-rechargeable CR2032 is not a direct substitute. Any replacement needs to suit the original charging circuit as well as the physical terminal arrangement. I seem to be having issues tracking down a suitable replacement. The search continues...
+The complete capacitor list is also available on the [file server](/goodies/).
 
+The backup battery is a VL2020 with a three-terminal mounting arrangement.
+
+The VL2020 is a rechargeable 3 V vanadium-lithium cell with a nominal capacity of 20 mAh. That means an ordinary non-rechargeable CR2032 is not a direct electrical substitute.
+
+Any replacement needs to suit both the original charging circuit and the physical terminal arrangement.
+
+I seem to be having trouble finding exactly what I want.
+
+The search continues...
+
+### Related posts
+
+- [Inside the Aiwa Mega-CD CSD-GM1 Game Unit](/inside-the-aiwa-mega-cd-csd-gm1-game-unit/)
+- [Aiwa Sega Mega-CD CSD-GM1 Game Unit in Standalone Mode](/aiwa-sega-mega-cd-csd-gm1-game-unit-in-standalone-mode/)
 
 ### Sources
 
-- [Panasonic VL2020 rechargeable coin battery](https://energy.panasonic.com/jp/business/products/coin-rechargeable/vl/models/VL2020) - identifies the VL2020 as a rechargeable 3V vanadium-lithium coin cell and provides charging specifications.
+- [Panasonic VL2020 rechargeable coin battery](https://energy.panasonic.com/jp/business/products/coin-rechargeable/vl/models/VL2020) - identifies the VL2020 as a rechargeable 3 V vanadium-lithium coin cell with a nominal 20 mAh capacity and provides charging specifications.

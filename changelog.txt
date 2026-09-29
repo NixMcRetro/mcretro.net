@@ -6,6 +6,9 @@ https://retrojunkie.net
 To Do
 - Image cycle on front page (randomised).
 
+2026-09-28
+- Using AI to fix bad sources, broken links, etc.
+- Anything touched is usually attributed correctly.
 
 2026-05-25
 - So many broken links, so many redirects...

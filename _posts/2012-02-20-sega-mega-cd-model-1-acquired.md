@@ -1,18 +1,20 @@
 ---
-title: "Sega Mega-CD 1 Acquired"
+title: "Sega Mega-CD Model 1 Acquired"
 author: "Nix McRetro"
 date: 2012-02-20T20:39:14.000+11:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-09-29
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
+  date: 2026-09-29
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [sega]
 ---
 
 ![](/assets/images/2012/img_0002.jpg)
 
-Received my Sega Mega-CD 1 from Germany yesterday. Pulled it apart and had a look on the inside. It has one of the dreaded JVC Optima-5 optical pickups. Replacement Optima-5 units were already difficult to source compared with the more common Sony KSS-240A.
+Received my Sega Mega-CD Model 1 from Germany yesterday, so naturally I pulled it apart to have a look inside.
+
+It has one of the dreaded JVC Optima-5 optical pickups. Replacement Optima-5 units were difficult to source compared with the more common Sony KSS-240A.
 
 ### Sources
 

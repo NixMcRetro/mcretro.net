@@ -7,7 +7,7 @@ categories: [news, repairs, sega]
 
 ![](/assets/images/2012/img_0246.jpg)
 
-It's pretty cold here at the moment and I am in the process of moving house, so things have slowed down a significantly. I am currently looking into purchasing an old PC from my youth. When I was a child I had a computer that was quite fast at the time. No, I am not talking about the Athlon 500. Something I didn't create, but was the beginning of a life dedicated to computers and electronics. Once she is won, I'll post pictures and a break down of her.
+It's pretty cold here at the moment and I am in the process of moving house, so things have slowed down significantly. I am currently looking into purchasing an old PC from my youth. When I was a child I had a computer that was quite fast at the time. No, I am not talking about the Athlon 500. Something I didn't create, but was the beginning of a life dedicated to computers and electronics. Once she is won, I'll post pictures and a breakdown of her.
 
 I've been purchasing random bits and pieces off eBay the past few days, such as 5 metres of ribbon cable, 64-pin IC sockets, more ISA sound cards that you could poke a stick at, a smokey grey Dreamcast shell... so many things that are taking so long to arrive. One set of the IC sockets is lost in transit and have been reshipped. Another long wait begins.
 

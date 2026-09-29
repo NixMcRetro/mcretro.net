@@ -31,3 +31,9 @@ The troublesome transformer is behind the metal plate.
 ![](/assets/images/2012/img_0307.jpg)
 
 Tis but a scratch... or maybe it's just a flesh wound! :D
+
+### Related posts
+
+- [Aiwa Sega Mega-CD CSD-GM1 Initial Damage Report](/aiwa-sega-mega-cd-csd-gm1-initial-damage-report/)
+- [Aiwa Sega Mega-CD CSD-GM1 Repairs Part 1: Power Restored](/aiwa-sega-mega-cd-csd-gm1-repairs-part-1-power-restored/)
+- [Aiwa Mega-CD CSD-GM1 Repairs Part 2: Power Rail Testing](/aiwa-mega-cd-csd-gm1-repairs-part-2-power-rail-testing/)

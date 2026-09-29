@@ -14,7 +14,7 @@ categories: [ibm-pc, youtube]
 
 Apart from that motherboard above, not too much has been happening in the last week or two. I've been working hard at work to keep on top of things and in my spare time have ordered some new gadgets to play with but haven't had the time to use them. In the coming weeks (especially Christmas time) I should be able to do a bunch of videos and update the content of this website.
 
-Motherboard specifications are as below:
+The BIOS identification strings are below:
 
 ```
 11/11/92 (C) 1992 American Megatrends Inc., All Rights Reserved
@@ -23,10 +23,9 @@ AMIBIOS (C)1992 American Megatrends Inc.
 4407 UNICHIP BIOS VER 1.0
 ```
 
-Later BIOS cataloguing independently associates the U4800VLX string with the DataExpert / Unichip 486 WB 4407 family, so the board identification shown here holds up.
+Later BIOS cataloguing independently associates the `U4800VLX` identifier with the DataExpert / Unichip 486 WB 4407 family, which supports the board identification shown here.
 
 I have been silently updating some of the guide pages and the collection pages also. I am still trying to work out a suitable format for the computers vs consoles. Mainly because there are more consoles than computers and many more duplicates. I'll work something out. In the meantime stay tuned. We might even have some Apple Lisa videos in the near future if anyone is interested.
-
 
 ### Sources
 

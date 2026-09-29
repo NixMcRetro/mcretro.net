@@ -1,33 +1,75 @@
 ---
-title: "Apple Macintosh LC 475 Overclocking to 33MHz"
+title: "Apple Macintosh LC 475 Overclocking to 33 MHz"
 author: "Nix McRetro"
 date: 2013-01-01T13:45:33.000+11:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-09-29
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
+  date: 2026-09-29
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [apple, hacks, youtube]
 ---
 
 {% include youtube.html id="GbJmgxy_Kb0" %}
 
-The first video up is the mod itself, rejiggering some resistors around on the mainboard.
+The first video shows the actual motherboard modification.
+
+The LC 475 normally runs at 25 MHz. This modification changes the board's clock configuration to 33 MHz by moving the relevant surface-mount resistors.
+
+That is roughly a 32% increase in clock frequency.
+
+Actual application performance does not automatically increase by exactly the same percentage because different workloads are limited by different parts of the machine.
 
 {% include youtube.html id="YgzQLAsQmcg" %}
 
-Benchmarks, everyone loves a good way to compare systems before and after overclocking. Here's what to do to get your LC 475 up from a measly 25MHz to a beefed up 33MHz. It's a 15% - 30% performance gain for free! Based on benchmarks on my stock 25MHz chip running at 33MHz.
+Benchmarks!
+
+Everybody loves a good before-and-after benchmark.
+
+In the tests I ran with the original 25 MHz-rated processor operating at 33 MHz, the performance improvement varied by benchmark, generally somewhere around 15 to 30%.
+
+So that old line about a "15 to 30% performance gain for free" was describing **my benchmark results**, not a universal guarantee for every LC 475 or every application.
+
+Free is also perhaps generous when soldering is involved.
+
+The processor upgrade is a separate part of this project.
+
+The LC 475 originally shipped with a 68LC040, which deliberately omits the integrated floating-point unit.
+
+I had specifically bought a full 68040 to replace that FPU-less CPU.
+
+In other words, I wasn't simply buying another processor for the sake of overclocking it. The goal was to gain the full 68040 feature set, including the FPU, while I was already modifying the machine.
 
 {% include youtube.html id="4_t4jBz-Jts" %}
 
-For context, the LC 475 originally shipped with a 68LC040, which intentionally lacks the integrated floating-point unit. I had bought this replacement specifically as a full 68040 upgrade, which should include the FPU. So when the replacement still appeared to have no FPU, that was why I suspected the chip might not be what it was sold as.
+Which brings us to:
 
-Dude, where's my FPU? Missing FPU in my 68040 is definitely cause for alarm. Counterfeit processor... Blighters!
+Dude, where's my FPU?
 
-I cannot now prove exactly what was wrong with that replacement chip. It may have been remarked, defective, or affected by some other compatibility or detection issue, but a functioning full MC68040 should provide the integrated FPU that the 68LC040 lacks.
+The replacement chip still appeared not to provide an FPU, which was obviously suspicious for something sold to me as a full 68040.
 
+At the time my immediate reaction was:
+
+Counterfeit processor... blighters!
+
+I cannot prove that conclusion now.
+
+A functioning full MC68040 should provide its integrated FPU, but this particular result could have come from a remarked processor, a defective part or another compatibility or detection problem.
+
+So the correct conclusion is not "definitely counterfeit".
+
+It is "this replacement did not behave as the full 68040 I expected to receive."
+
+Still, the LC 475 itself was now running happily at 33 MHz.
+
+That part was a success.
+
+### Related posts
+
+- [Removing the Socketed CPU from an Apple Macintosh LC 475](/removing-the-socketed-cpu-from-an-apple-macintosh-lc-475/)
+- [Apple Macintosh LC 475 Modifications Overview](/apple-macintosh-lc-475-modifications-overview/)
 
 ### Sources
 
-- [Apple - Macintosh LC 475 Technical Specifications](https://support.apple.com/en-la/112204) - documents the LC 475's original 68LC040 configuration and lack of an FPU.
-- [NXP - MC68040](https://www.nxp.com/products/MC68040) - documents the full MC68040 family and its integrated floating-point unit.
+- [Apple - Macintosh LC 475 Technical Specifications](https://support.apple.com/en-la/112204) - documents the stock 25 MHz 68LC040 configuration and lack of an FPU.
+- [NXP - MC68040](https://www.nxp.com/products/MC68040) - documents the full MC68040 family and integrated floating-point unit.

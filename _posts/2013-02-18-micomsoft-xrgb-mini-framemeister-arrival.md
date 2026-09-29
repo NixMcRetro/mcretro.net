@@ -26,5 +26,7 @@ As a side note, I've fallen in love with SCART connectors. They are so easy to r
 
 ### Sources
 
+- [Micomsoft - Framemeister official product page](https://www.micomsoft.co.jp/xrgb-mini.html) - official specifications for the XRGB-mini Framemeister and its 21-pin RGB input.
+- [Micomsoft - Framemeister manual](https://www.micomsoft.co.jp/XRGB-mini_m2.pdf) - official safety warning against connecting PAL / EuroSCART pin wiring directly to the NTSC-style 21-pin RGB input.
 - [Classic Console Upscaler Wiki - XRGB-mini Framemeister](https://www.junkerhq.net/xrgb/index.php/XRGB-mini_FRAMEMEISTER)
 - [Classic Console Upscaler Wiki - Dreamcast](https://www.junkerhq.net/xrgb/index.php/Dreamcast)

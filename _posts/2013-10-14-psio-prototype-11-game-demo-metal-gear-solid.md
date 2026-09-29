@@ -2,15 +2,29 @@
 title: "PSIO Prototype 1.1 Game Demo: Metal Gear Solid"
 author: "Nix McRetro"
 date: 2013-10-14T17:52:52.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="fhJNDNcIz9Y" %}
 
-Metal Gear Solid, or MGS as all the kids know it - another masterpiece and guess what... it seems to work flawlessly!
+Metal Gear Solid, or MGS as all the kids know it.
 
-Please remember that this a prototype device and does likely not reflect what the final hardware will be like. This includes compatibility with games as well.
+Another masterpiece.
 
-You can hit up [ps-io.com](https://psio.cybdyn-systems.com.au/) if you have any questions since I am but a mere tester, I do not understand the technology behind this wonderful invention.
+Everything I tested in this session behaved flawlessly on the PSIO 1.1 prototype.
 
-PSIO Hardware Version: 1.1 PSIO Software Version: 1.1A All tested on an SCPH-5502 with a missing CD deck.
+That is an observation from the tested portion of the game rather than a claim that I exhaustively validated every possible part of Metal Gear Solid.
+
+**Prototype test conditions**
+
+- PSIO hardware: 1.1
+- PSIO software: 1.1A
+- PlayStation: SCPH-5502
+- CD deck: removed
+
+These results belong to the prototype revision shown here.

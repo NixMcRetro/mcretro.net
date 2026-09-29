@@ -2,23 +2,45 @@
 title: "IBM PS/2 Model 30 8086 with ISA XTIDE Card"
 author: "Nix McRetro"
 date: 2012-11-17T01:16:29.000+11:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-09-29
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
+  date: 2026-09-29
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ibm-pc, repairs, sega]
 ---
 
 {% include youtube.html id="h6eXHUqOZZ0" %}
 
-This was a simple demo to make sure the XTIDE card works as I was having trouble with the Sega TeraDrive side getting it to recognise at all. The good news is that the card seems to work and I can access the 4GB Disk On Module (DOM) through the command prompt. The important part for an 8086 machine like this is using an XT-compatible XTIDE Universal BIOS build. The BIOS can handle modern large drives, although DOS filesystem and partition limits still determine how much of a 4GB DOM can be used in any one volume. Now to make it bootable and install it into the TeraDrive... progress!
+This was originally just a quick test to prove that the XTIDE card itself worked.
 
-The IBM PS/2 is destined for an original hard drive if it turned up in the next month. The seller was a bit dodgy and I think they forgot to charge me shipping, so who knows what will happen. Ordered two drives and a 5.25" floppy drive while I was at it.
+I had been fighting with it in the Sega TeraDrive, so the IBM PS/2 Model 30 made a handy known-good 8086 test machine.
 
-**Edit:** The seller never shipped me anything and by the time PayPal got involved it was too late. Scammers... dammit!
+Success.
 
+The XT-compatible XTIDE Universal BIOS build works here and I can access the 4 GB Disk on Module from the command prompt.
+
+XTIDE can handle storage far larger than an original 8086 PC would normally expect, although DOS filesystem and partition limits still determine how much space is practical in each volume.
+
+Now I need to make the DOM bootable and move the experiment back into the TeraDrive.
+
+That part eventually worked too.
+
+I had originally planned to return the IBM PS/2 to an original-style hard drive.
+
+I ordered two drives and a 5.25-inch floppy drive from a seller who seemed increasingly dubious.
+
+They never shipped anything.
+
+By the time PayPal became involved, it was too late.
+
+Scammers... dammit!
+
+### Related posts
+
+- [IBM PS/2 Model 30 8086 Sound, Video and CPU Upgrades](/ibm-ps2-model-30-8086-sound-video-and-cpu-upgrades/)
+- [Sega TeraDrive Model 2 XTIDE Boot Success](/sega-teradrive-model-2-xtide-boot-success/)
 
 ### Sources
 
-- [XTIDE Universal BIOS Manual](https://www.xtideuniversalbios.org/browser/xtideuniversalbios/wiki/Manual_v2_0_0.wiki?rev=329) - documents the XT build for 8086 and 8088 systems and large-drive support.
+- [XTIDE Universal BIOS](https://www.xtideuniversalbios.org/) - documents XT builds for 8086 and 8088 systems and support for modern ATA storage.

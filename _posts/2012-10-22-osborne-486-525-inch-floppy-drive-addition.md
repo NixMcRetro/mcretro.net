@@ -41,4 +41,4 @@ Then I just need to find a less rusty power supply and repair the broken PSU ret
 ### Related posts
 
 - [Osborne Australia 486DX2-66 Overview](/osborne-australia-486dx2-66-overview/)
-- [Apple Macintosh LC 475 Internet Ready](/apple-macintosh-lc-475-internet-ready/)
+- [Apple Macintosh LC 475 Internet Ready](/apple-macintosh-lc-475-online-with-pds-ethernet/)

@@ -7,4 +7,4 @@ categories: [sega, youtube]
 
 {% include youtube.html id="MrDwuTH5nuY" %}
 
-Oh yes, it's Karaoke Friday alright. Enjoy this tune brought to you by Jason and YouTube mixed in with some voice-overs and gameplay. It's really hard to be a song write!
+Oh yes, it's Karaoke Friday alright. Enjoy this tune brought to you by Jason and YouTube mixed in with some voice-overs and gameplay. It's really hard to be a songwriter!

@@ -1,21 +1,36 @@
 ---
 title: "Nintendo Famicom AV Mod Complete"
-author: "Nix McRetro"
+author: "Nick"
 date: 2012-06-17T02:31:57.000+10:00
+last_modified_at: 2026-09-29
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-29
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [hacks, nintendo]
 ---
 
 {% include youtube.html id="zfdA--W3E5A" %}
 
-Above is a demonstration of how the AV mod works and why it works the way that it does.
+The Famicom AV mod is complete.
+
+The first video is a demonstration of how the composite-video modification works and why I wired it the way I did.
 
 {% include youtube.html id="dPkrig13CxE" %}
 
-Next up we have an overview of the completed AV mod.
+Next is an overview of the completed modification inside the console.
 
 {% include youtube.html id="VaGMn3mrMa4" %}
 
-A video demo of Spelunker on the Famicom. What an enjoyable game it can be when you put your mind to it. Really put your mind to it. Meld it. Meld your mind with it.
+And finally, some Spelunker.
+
+What an enjoyable game it can be when you put your mind to it.
+
+Really put your mind to it.
+
+Meld it.
+
+Meld your mind with it.
 
 ![](/assets/images/2012/img_0207.jpg)
 
@@ -23,7 +38,11 @@ A video demo of Spelunker on the Famicom. What an enjoyable game it can be when 
 
 ![](/assets/images/2012/img_0149.jpg)
 
-I was able to shrink down the original and second designs and cram them onto a smaller piece of prototyping board. This allows for it to cram into a corner of the case. Amazing what such a small piece of technology can do.
+I was able to shrink the first two versions of the circuit down onto a much smaller piece of prototyping board. That lets it tuck into the corner of the Famicom case instead of floating around inside like an electronics science experiment.
+
+Amazing what such a small piece of hardware can do.
+
+This is the same board-specific composite modification documented in the full guide. Other Famicom motherboard revisions can need different connection points or circuit values, so the detailed post should be read as a record of this particular build rather than a universal schematic.
 
 ![](/assets/images/2012/img_0165.jpg)
 
@@ -32,3 +51,8 @@ I was able to shrink down the original and second designs and cram them onto a s
 ![](/assets/images/2012/img_0206.jpg)
 
 There's more photos in the [photo gallery](/goodies/).
+
+### Related posts
+
+- [Humble Beginnings: Nintendo Famicom Incoming](/humble-beginnings-nintendo-famicom-incoming/)
+- [Nintendo Famicom Composite AV Mod](/nintendo-famicom-composite-av-mod/)

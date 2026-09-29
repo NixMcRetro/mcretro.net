@@ -12,7 +12,7 @@ categories: [repairs, sega, youtube]
 
 {% include youtube.html id="p3uQaLUmliM" %}
 
-Electrolytic capacitors can deteriorate with age, heat and use, and these Aiwas have plenty of ageing capacitors to investigate. Here we have a great example, recapping an Aiwa Mega-CD boom box. Not the Sega Mega Drive part, just the Aiwa boom box part in this three part series of videos.
+Electrolytic capacitors can deteriorate with age, heat and use, and these Aiwas have plenty of ageing capacitors to investigate. Here we have a great example, recapping an Aiwa Mega-CD boom box. Not the Sega Mega Drive part, just the Aiwa boom box part in this four-part series of videos.
 
 ![](/assets/images/2013/img_0412a.jpg)
 

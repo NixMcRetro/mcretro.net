@@ -1,5 +1,5 @@
 ---
-title: "XBOX (Original) TSOP Flash Overview"
+title: "Original Xbox TSOP Flash Overview"
 author: "Nix McRetro"
 date: 2013-05-26T04:10:00.000+10:00
 last_modified_at: 2026-09-28

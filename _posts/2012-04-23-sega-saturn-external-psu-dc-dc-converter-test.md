@@ -14,6 +14,10 @@ categories: [hacks, repairs, sega]
 
 Finally received the DC-DC step-down converters for the Saturn. Gave them a quick bench test and confirmed that each converter produced an output. That established basic operation, but did not yet verify load regulation, ripple, current capacity or thermal behaviour under an actual Saturn load. I'll be able to wire them into a Saturn with a completely dead internal PSU in the next few weeks.
 
+### Related posts
+
+- [Sega Saturn Model 1 Power Supply Issues](/sega-saturn-model-1-power-supply-issues/)
+- [Sega Saturn External PSU Proof of Concept](/sega-saturn-external-psu-proof-of-concept/)
 
 ### Sources
 

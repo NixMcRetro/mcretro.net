@@ -2,10 +2,10 @@
 title: "Sega Mega-CD Karaoke Accessory and Yukawa Dreamcast"
 author: "Nix McRetro"
 date: 2012-05-07T12:57:09.000+10:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-09-29
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
+  date: 2026-09-29
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [repairs, sega]
 ---
@@ -22,9 +22,13 @@ Sega Mega CD Karaoke - Top View
 
 Sega Mega CD Karaoke Microphone HAA-2932
 
-Just a quick update - I received the Sega Mega CD Karaoke add-on today. Gave it a test and found there is a buzzing noise from the unit when it is powered up.
+Just a quick update. I received the Sega Mega-CD Karaoke add-on today, gave it a test and found that there is a buzzing noise from the unit while it is powered up.
 
-More annoyingly the microphone does not work. I've pulled it apart, see the [photo gallery](/goodies) for more, and found the microphone cartridge seems to be dead. So I've gone ahead and bought a $10 600-ohm Model BG-58 microphone cartridge off eBay as a candidate replacement. It will be a few weeks before that arrives though, so I will not know whether it is electrically and mechanically suitable until I test it.
+More annoyingly, the microphone does not work. I pulled it apart, with more photos in the [photo gallery](/goodies/), and the microphone cartridge appears to be dead.
+
+I've gone ahead and bought a $10 600-ohm BG-58 microphone cartridge from eBay as a candidate replacement. It'll be a few weeks before it arrives, so at this point I don't know whether it will be electrically and mechanically suitable.
+
+It did eventually turn out to be the right gamble: the replacement BG-58 cartridge worked and the microphone was successfully repaired.
 
 ![](/assets/images/2012/img_0079.jpg)
 
@@ -32,10 +36,20 @@ More annoyingly the microphone does not work. I've pulled it apart, see the [pho
 
 ![](/assets/images/2012/img_0074.jpg)
 
-In the mean time I have purchased a very nice looking boxed Yukawa Dreamcast - My first NTSC-J Dreamcast. I am still waiting on the Genesis Nomad to arrive from the US - the good news is it has hit land here, shouldn't be more than a few days now before I am gaming on the go!
+In the meantime, I've purchased a very nice-looking boxed Yukawa Dreamcast, my first NTSC-J Dreamcast.
 
-All you regular visitors might have noticed that the menu bar has slipped up to the very top of the page. I am still tweaking the banner and alignment, but it is good enough for now. Here's to the week ahead!
+The Yukawa packaging is part of the early Japanese Dreamcast story rather than a fundamentally different Dreamcast hardware model. Sega executive Hidekazu Yukawa featured heavily in the Japanese launch advertising and appeared on launch-era packaging.
 
+I am still waiting on the Genesis Nomad from the US. The good news is that it has reached Australia, so it shouldn't be more than a few days before I am gaming on the go!
+
+Regular visitors might also have noticed that the menu bar has slipped up to the very top of the page. I'm still tweaking the banner and alignment, but it is good enough for now.
+
+Here's to the week ahead!
+
+### Related posts
+
+- [Sega Mega-CD Karaoke Microphone - Faulty](/sega-mega-cd-karaoke-microphone-faulty/)
+- [Sega Mega-CD Karaoke Microphone Repaired](/sega-mega-cd-karaoke-microphone-repaired/)
 
 ### Sources
 

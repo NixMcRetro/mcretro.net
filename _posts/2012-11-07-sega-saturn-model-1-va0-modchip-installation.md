@@ -2,18 +2,25 @@
 title: "Sega Saturn Model 1 VA0 Modchip Installation"
 author: "Nix McRetro"
 date: 2012-11-07T11:50:53.000+11:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-09-29
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
+  date: 2026-09-29
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [hacks, news, sega]
 ---
 
 {% include youtube.html id="4xHgHW-2eNQ" %}
 
-As you can see from the video above this mod is for the Sega Saturn (Model 1) with a VA0 motherboard. This particular guide is for the early VA0 / 20-pin CD-board arrangement. Later Saturn revisions use different optical-drive boards and ribbon configurations, so the installation should not be assumed to apply unchanged to every Saturn. I've also done some website housekeeping to the menu bar at the top so there are no more drop downs. Drop downs are too hard to mouse-off and lose. So now I am working on restructuring the internals to make them suit. The modifications menu has been renamed to "Mods & Guides" as it will eventually include walkthroughs as well.
+As you can see from the video above, this modchip installation is for an early Sega Saturn Model 1 with the VA0-style 20-pin CD-board arrangement.
 
+This should not be treated as a universal Saturn modchip guide. Later Saturn revisions use different CD boards, ribbon cables and modchip arrangements, so identify the hardware inside the console before following an installation intended for another revision.
+
+In unrelated website-housekeeping news, I've also removed the drop-down menus from the navigation bar.
+
+Drop-down menus are too easy to mouse away from and lose.
+
+The old Modifications section has also become **Mods & Guides**, since I want it to contain proper walkthroughs like this one rather than just a loose collection of modifications.
 
 ### Sources
 

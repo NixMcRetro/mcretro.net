@@ -2,15 +2,31 @@
 title: "PSIO Prototype 1.1 Game Demo: Dance Dance Revolution 5th Mix"
 author: "Nix McRetro"
 date: 2013-10-07T18:48:14.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="SN5szKa-NmU" %}
 
-Dance Dance Revolution 5th Mix is in the spotlight for this video. Any takers to challenge me at some arcades? Pretty sure I would end up kicking you in the head... especially if I can't coordinate my left hand to press four buttons when needed!
+Dance Dance Revolution 5th Mix is in the spotlight for this test.
 
-Please remember that this a prototype device and does likely not reflect what the final hardware will be like. This includes compatibility with games as well.
+Any takers to challenge me at some arcades?
 
-You can hit up [ps-io.com](https://psio.cybdyn-systems.com.au/) if you have any questions since I am but a mere tester, I do not understand the technology behind this wonderful invention.
+Pretty sure I would end up kicking you in the head...
 
-PSIO Hardware Version: 1.1 PSIO Software Version: 1.1A All tested on an SCPH-5502 with a missing CD deck.
+especially if I can't coordinate my left hand to press four buttons when needed!
+
+**Prototype test conditions**
+
+- PSIO hardware: 1.1
+- PSIO software: 1.1A
+- PlayStation: SCPH-5502
+- CD deck: removed
+
+This is a result from development hardware under active testing, not a compatibility claim for later PSIO revisions or the final retail product.
+
+I was a tester rather than one of the PSIO developers, so the video records what the system actually did on my bench rather than attempting to explain the internals.

@@ -14,7 +14,9 @@ ai_assistance:
 
 This is the second one of these leaf-tailed geckos that has come into my home over the years. Possibly the same one!
 
-Hunting at night is a wise idea too to avoid predators. Smart gecko! :)
+Southern leaf-tailed geckos are nocturnal, so wandering around and hunting at night is perfectly normal behaviour for the species.
+
+Smart gecko! :)
 
 ### Sources
 

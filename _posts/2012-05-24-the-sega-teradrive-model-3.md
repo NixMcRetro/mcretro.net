@@ -2,10 +2,10 @@
 title: "The Sega TeraDrive Model 3"
 author: "Nix McRetro"
 date: 2012-05-24T12:25:50.000+10:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-09-29
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
+  date: 2026-09-29
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [repairs, sega]
 ---
@@ -16,7 +16,13 @@ categories: [repairs, sega]
 
 ![](/assets/images/2012/img_0132.jpg)
 
-Finally got a chance to test the Sega TeraDrive Model 3 that arrived a few days ago. It boots Windows 3.11 from a floppy just like the Model 2 does. It's missing the hard drive, which I later confirmed could be replaced with compatible drives using the TeraDrive's unusual 44-pin interface. The cable, screws and hard drive sleds are all present thankfully.
+Finally got a chance to test the Sega TeraDrive Model 3 that arrived a few days ago.
+
+Sega sold the Model 3 as the top configuration, with 2.5 MB of RAM, one 3.5-inch floppy drive and a 30 MB internal hard drive.
+
+Mine arrived without its hard drive.
+
+Thankfully the original cable, screws and hard-drive sled are still present, and it boots Windows 3.11 from floppy just like my Model 2.
 
 ![](/assets/images/2012/img_0136.jpg)
 
@@ -24,7 +30,13 @@ Finally got a chance to test the Sega TeraDrive Model 3 that arrived a few days 
 
 ![](/assets/images/2012/img_0137.jpg)
 
-I am still waiting on my IDE controller card from the UK to test in the Model 2 with a hard drive. While I am waiting for that I can order a replacement 44-pin edge connector based hard drive. I found [this](https://forum.vcfed.org/index.php?threads/seeking-hard-drive-interface-pinout-for-ps-2-8530-30-286.17317/) while trawling the internet. It points to a proprietary 44-pin hard-drive interface used in IBM PS/2 Model 25 and Model 30 systems. Older references often describe it as IBM XT IDE or XTA, while later preservation work describes it more cautiously as a proprietary direct-bus-attachment interface. Either way, it is not standard 44-pin laptop IDE, despite the superficial similarity.
+At this point I was trying to work out exactly what sort of replacement drive the TeraDrive wanted.
+
+The connector uses 44 pins, but it is not standard laptop IDE. Later investigation linked it to the unusual proprietary storage arrangement used in some early IBM PS/2 systems.
+
+I found information about the similarly unusual hard-drive arrangement in early IBM PS/2 Model 25 and Model 30 systems. Older references often call these drives XT IDE or XTA, while later preservation work describes the interface more carefully as a proprietary direct-bus-attachment design.
+
+The important result came later: IBM WDL-330P drives work in the TeraDrive Model 3. I eventually tested several of them successfully.
 
 ![](/assets/images/2012/img_0138.jpg)
 
@@ -32,15 +44,22 @@ I am still waiting on my IDE controller card from the UK to test in the Model 2 
 
 ![](/assets/images/2012/img_0139.jpg)
 
-Another thing I noticed is that the trace wire on my Model 3 travels to slightly different locations on my Model 2. The Model 3 has far better looking yellow cables, while the Model 2 has mostly green wires. I better get a hard drive or two on order so I can proceed further and get this Model 3 working.
+I am still waiting on the ISA IDE controller card from the UK for the Model 2. In the meantime, knowing which original-style drives are compatible gives me another route for getting the Model 3 back to its proper configuration.
+
+Another thing I noticed is that the trace wiring on the Model 3 travels to slightly different locations from my Model 2. The Model 3 also has much nicer-looking yellow wiring, while the Model 2 uses mostly green.
+
+Not exactly the most important engineering discovery of the century, but there it is.
+
+Time to get a hard drive installed and see how far this one can go.
 
 Many more images can be found in the [photo gallery](/photos) filed under Sega TeraDrive Model 2 and Model 3.
 
+### Related posts
 
-### Further Reading
-
-- [Sega TeraDrive Hard Drive Interface: IDE, ESDI or XTA?](/sega-teradrive-hard-drive-interface-ide-esdi-xta/) - my later investigation into compatible TeraDrive hard drives and the unusual 44-pin interface.
+- [Sega TeraDrive Model 3 Hard Drive Replacement](/sega-teradrive-model-3-hard-drive-replacement/)
+- [Sega TeraDrive Hard Drive Interface: IDE, ESDI or XTA?](/sega-teradrive-hard-drive-interface-ide-esdi-xta/)
 
 ### Sources
 
+- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - Sega's official specifications list the Model 3 with 2.5 MB RAM, one floppy drive and a 30 MB hard drive.
 - [IBM Files - PS/2 Model 25](https://www.ibmfiles.com/pages/ps2model25.htm) - documents the proprietary hard-drive arrangement used in early PS/2 systems and distinguishes it from standard IDE.

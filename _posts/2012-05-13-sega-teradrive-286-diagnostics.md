@@ -2,10 +2,10 @@
 title: "Sega TeraDrive 286 Diagnostics"
 author: "Nix McRetro"
 date: 2012-05-13T05:14:14.000+10:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-09-29
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
+  date: 2026-09-29
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ibm-pc, sega]
 ---
@@ -18,7 +18,9 @@ Figured I should hit the Sega TeraDrive up with some diagnostics and found out s
 
 ![](/assets/images/2012/img_0098.jpg)
 
-1\. The SEGA menu on startup is based on IBM PC-DOS 3.30. This version of PC-DOS brought support for high density 3.5-inch 1.44MB floppy disk drives. My TeraDrive is equipped with two of these. IBM PC-DOS 3.30 was released on 2 April 1987.
+1\. The embedded SEGA startup environment appears to be based on PC DOS 3.x, and the version running here reports PC DOS 3.30. This is separate from the IBM DOS J4.0/V software Sega supplied with the TeraDrive.
+
+PC DOS 3.30 was released on 2 April 1987 and added support for 1.44 MB 3.5-inch floppy disks. My TeraDrive Model 2 is equipped with two of those drives.
 
 ![](/assets/images/2012/img_0093.jpg)
 
@@ -32,7 +34,7 @@ Figured I should hit the Sega TeraDrive up with some diagnostics and found out s
 
 ![](/assets/images/2012/img_0095.jpg)
 
-3\. The SEGA startup environment exposes a small RAM disk or virtual drive that is 242,176 bytes large. There is even 87,552 bytes free on this drive. The label is LOADER 1.0. It reports 1 head, 16 sectors and 130 cylinders. Pretty neat. Read speed seems to be around 1300KB-1400KB/sec.
+3\. The SEGA startup environment exposes a small RAM disk or virtual drive that is 242,176 bytes large. There is even 87,552 bytes free on this drive. The label is LOADER 1.0. It reports 1 head, 16 sectors and 130 cylinders. Pretty neat. Read speed seems to be around 1300 KB to 1400 KB/sec.
 
 ![](/assets/images/2012/img_0097.jpg)
 
@@ -42,14 +44,19 @@ Figured I should hit the Sega TeraDrive up with some diagnostics and found out s
 
 ![](/assets/images/2012/img_0094.jpg)
 
-5\. The video controller is a Paradise/Western Digital WD90C22, with the TeraDrive officially specified as having 256KB of VGA VRAM. The WD90C22 itself supports both Micro Channel and AT-compatible interfaces and includes a PS/2-compatible RAMDAC, so its presence alone does not prove that the TeraDrive is directly derived from a particular IBM PS/2 model.
+5\. The diagnostic software identified the VGA controller as a Paradise/Western Digital WD90C22. Later hardware documentation identifies the actual chip fitted to the TeraDrive as a Western Digital WD90C10-LR, so the diagnostic appears to have identified a compatible controller family rather than the exact device.
 
-The full set of Sega TeraDrive (Model 2 and 3) photos can be found in the [photo gallery](/goodies/).
+Sega officially specifies 256 KB of VGA VRAM. The actual WD90C10 hardware is therefore more useful evidence than the software identification string.
 
+The full set of Sega TeraDrive Model 2 and Model 3 photos can be found in the [photo gallery](/goodies/).
+
+### Related posts
+
+- [Sega TeraDrive Demo: Sonic 1 and Sega Menu](/sega-teradrive-demo-sonic-1-and-sega-menu/)
 
 ### Sources
 
-- [PCjs - IBM PC DOS 3.30](https://www.pcjs.org/software/pcx86/sys/dos/ibm/3.30/) - documents the 2 April 1987 release and 1.44MB 3.5-inch floppy support.
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - Sega's official TeraDrive specifications, including the 31 May 1991 release and 256KB VGA memory.
+- [PCjs - IBM PC DOS 3.30](https://www.pcjs.org/software/pcx86/sys/dos/ibm/3.30/) - documents the 2 April 1987 release and 1.44 MB 3.5-inch floppy support.
+- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - Sega's official TeraDrive specifications, including the 31 May 1991 release, supplied IBM DOS J4.0/V software and 256 KB VGA memory.
+- [MAME - Sega TeraDrive driver](https://github.com/mamedev/mame/blob/master/src/mame/pc/teradrive.cpp) - models the TeraDrive's Western Digital WD90C10 VGA hardware.
 - [Microsoft Knowledge Base Archive - BIOS beep codes](https://www.betaarchive.com/wiki/index.php/Microsoft_KB_Archive/85636) - documents common AMI BIOS beep-code meanings, including one beep for DRAM refresh failure and nine for ROM BIOS checksum failure.
-- [Western Digital WD90C22 datasheet](https://ftpmirror.your.org/pub/misc/bitsavers/components/westernDigital/_dataSheets/WD90C22_199111.pdf) - documents the controller's AT-compatible and Micro Channel support and PS/2-compatible RAMDAC.

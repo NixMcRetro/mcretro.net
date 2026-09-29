@@ -2,32 +2,48 @@
 title: "Sega TeraDrive Model 3 with XTIDE Installed"
 author: "Nix McRetro"
 date: 2012-11-18T01:44:56.000+11:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-09-29
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
+  date: 2026-09-29
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ibm-pc, repairs, sega]
 ---
 
 {% include youtube.html id="lMLOwaci3g4" %}
 
-I cloned the BIOS across between my two XTIDE cards, so it shouldn't really be a surprise that it worked. However, I was not sure how it would behave with the hard drive installed in this model... and it behaved perfectly! Like a gentleman and a scholar.
+I cloned the BIOS configuration across my two XTIDE cards, so it probably shouldn't have been a surprise that the second one worked.
+
+Still, I wasn't sure how the Model 3 would behave with its original-style hard drive arrangement still installed.
+
+It behaved perfectly.
+
+Like a gentleman and a scholar.
 
 ![](/assets/images/2012/img_0359.jpg)
 
-Now both Sega TeraDrives (Model 2 and Model 3) are fully equipped to take on the 21st century with fresh date/time batteries. This makes me far less dependent on the proprietary 44-pin power-and-data hard drives used by the original Model 3 storage system. I have personally confirmed the WDL-330P working in the TeraDrive; the WDL-330PS has also been reported in surviving machines, but I did not confirm that variant firsthand.
+That means both my Model 2 and Model 3 TeraDrives can now use XTIDE storage.
+
+The Model 3 originally shipped with a 30 MB internal hard drive, while the Model 2 had no hard disk at all.
+
+XTIDE gives me a much easier route to modern ATA storage and makes me far less dependent on finding surviving examples of the proprietary 44-pin power-and-data drives used by the original Model 3 setup.
+
+I have personally confirmed IBM WDL-330P drives working in the TeraDrive. WDL-330PS drives have also been reported in surviving machines, but I have not confirmed that variant firsthand.
 
 ![](/assets/images/2012/img_0360.jpg)
 
-Hopefully, nothing else will go wrong! Fingers crossed! :D
+Fresh date and time batteries, modern storage options and both machines booting properly.
 
+Hopefully nothing else will go wrong!
+
+Fingers crossed! :D
 
 ### Further Reading
 
-- [Sega TeraDrive Hard Drive Interface IDE / ESDI / XTA](/sega-teradrive-hard-drive-interface-ide-esdi-xta/)
+- [Sega TeraDrive Hard Drive Interface Investigation](/sega-teradrive-hard-drive-interface-investigation/)
+- [Sega TeraDrive Model 3 Hard Drive Replacement](/sega-teradrive-model-3-hard-drive-replacement/)
 
 ### Sources
 
-- [Sega - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - documents the Model 3 with a 30MB internal hard drive.
+- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - documents the Model 3 with a 30 MB internal hard drive and the Model 2 without one.
 - [IBM Files - PS/2 Model 25](https://www.ibmfiles.com/pages/ps2model25.htm) - documents the related proprietary direct-bus-attachment storage arrangement.

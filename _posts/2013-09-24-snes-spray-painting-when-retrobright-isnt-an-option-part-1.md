@@ -12,3 +12,7 @@ Well, the case was as brittle as could be, even when cleaning this one with soap
 We're actually spray painting two Super Nintendos, one red, one black and splicing their bits together to make two sassy looking units. Too bad I have four cases and only three SNES units now... one makes a good spare I suppose!
 
 And let's be honest, [Retrobright](https://en.wikipedia.org/wiki/Retrobright), as good as it is... is a pain to make. This is where Sega of the 90s got it right. Black is better! Can't discolour black, unless there is dust settling on your Mega Drive - shame on you if that's the case! Crack out those Mega Drive dust covers to keep them safe!
+
+### Related posts
+
+- [Super NES Spray Painting Completed](/super-nes-spray-painting-completed/)

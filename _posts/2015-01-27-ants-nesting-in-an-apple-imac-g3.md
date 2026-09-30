@@ -7,4 +7,10 @@ categories: [apple, youtube]
 
 {% include youtube.html id="CjGVLPFFTz8" %}
 
-This poor iMac was left in the garage. It had a bad analog board, but now it has another problem. Bugs... or rather an ants nest inside the machine! Don't worry I _debugged_ it by letting the ants gather their eggs and move out before e-waste recycling it. The disc did turn out to be mine and had Munchies and Maniac on it! Both great games for the Mac platform!
+This poor iMac was left in the garage. It already had a bad analog board, but now it had another problem.
+
+Bugs... or rather, an entire ant nest inside the machine!
+
+Don't worry, I _debugged_ it by letting the ants gather their eggs and move out before sending the iMac off for e-waste recycling.
+
+The disc did turn out to be mine and had Munchies and Maniac on it! Both great games for the Mac platform!

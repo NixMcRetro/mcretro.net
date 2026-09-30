@@ -7,4 +7,10 @@ categories: [youtube]
 
 {% include youtube.html id="uY07nfJ1Buw" %}
 
-Just a quick video of the sounds of the Willie Wagtail that was in the backyard until recently - it's since flown away!
+Just a quick video comparing the sounds of the young Willie Wagtail with the parent.
+
+They had been living in the backyard until recently, but the youngster has since flown away!
+
+### Related posts
+
+- [Newly Hatched Willie Wagtail Chicks](/newly-hatched-willie-wagtail-chicks/)

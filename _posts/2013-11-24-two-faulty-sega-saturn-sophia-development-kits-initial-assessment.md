@@ -41,5 +41,5 @@ Because apparently one enormous Sega development box was not enough.
 
 ### Related posts
 
-- [Sega Saturn Sophia Dev Kit - No Video Repair](/sega-saturn-sophia-dev-kit-no-video-repair/)
-- [Sega Saturn Sophia Dev Kit - Another No Video Repair](/sega-saturn-sophia-dev-kit-another-no-video-repair/)
+- [Sega Saturn Sophia Development Kit - No Video Repair](/sega-saturn-sophia-dev-kit-no-video-repair/)
+- [Sega Saturn Sophia Development Kit - Another No Video Repair](/sega-saturn-sophia-dev-kit-another-no-video-repair/)

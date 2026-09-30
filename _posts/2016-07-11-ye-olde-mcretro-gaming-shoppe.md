@@ -24,3 +24,11 @@ Look at that decline, 2016 has clearly been the year to lose weight. I'm at leas
 {% include youtube.html id="LWcnwlmoIu8" %}
 
 I've promised myself to do some more YouTube videos this week, and I usually do what I say I'm going to do. Usually... :) Oh and I fixed that darn lightbox (image zooming) on individual posts, I did lose it somewhere else, but that's fine.
+
+### McRetro Gaming Shop
+
+- [eBay - Open for Business](/ebay-open-for-business/)
+- [McRetro Gaming Shop Grand Opening!](/mcretro-gaming-shop-grand-opening/)
+- [eBay, You Glorious Beast](/ebay-you-glorious-beast/)
+- [The Shop is Closed!](/the-shop-is-closed/)
+

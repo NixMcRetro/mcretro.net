@@ -1,17 +1,22 @@
 ---
-title: "The Theme from Sega Channel Japan"
+title: "Japanese Sega Channel Adapter - First Look"
 author: "Nix McRetro"
-date: 2013-12-01T02:58:15.000+11:00
-categories: [gaming, sega, youtube]
+date: 2013-12-03T20:26:01.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
+categories: [sega, youtube]
 ---
 
-{% include youtube.html id="qrWJIo-Gopk" %}
+{% include youtube.html id="kzJM6c0nW7U" %}
 
-Rock out to Sega Channel Japan with this fantastic video and slideshow! I recorded the audio directly from the output of a Mega Drive Model 1 HDG into my Canon EOS 600D camera. Don't forget to like, subscribe and comment!
+A first look at the features of the Japanese Sega Channel adapter!
 
 ### Sega Channel Japan series
 
-- [Japanese Sega Channel Adapter - First Look](/japanese-sega-channel-adapter-first-look/)
+- [The Theme from Sega Channel Japan](/the-theme-from-sega-channel-japan/)
 - [Japanese Sega Channel Adapter - Second Look](/japanese-sega-channel-adapter-second-look/)
 - [Socketing the Sega Channel Adapter BIOS (Japanese Version)](/socketing-the-sega-channel-adapter-bios-japanese-version/)
 - [Dumping the Japanese Sega Channel BIOS (Failure 1)](/dumping-the-japanese-sega-channel-bios-failure-1/)

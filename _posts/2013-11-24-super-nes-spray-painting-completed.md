@@ -7,4 +7,8 @@ categories: [hacks, nintendo, repairs]
 
 {% include youtube.html id="-usr2BSPACY" %}
 
-Well, we made it look much less yellow with the power of RED AND BLACK SPRAY PAINT! See one of the previous videos (use the power of search) to learn more about what was done.
+Well, we made it look considerably less yellow with the power of RED AND BLACK SPRAY PAINT!
+
+This is the completed shell project from [SNES Spray Painting - When Retrobright isn't an Option (Part 1)](/snes-spray-painting-when-retrobright-isnt-an-option-part-1/).
+
+Two cases, red and black, with the parts mixed together into something considerably sassier than brittle yellow plastic.

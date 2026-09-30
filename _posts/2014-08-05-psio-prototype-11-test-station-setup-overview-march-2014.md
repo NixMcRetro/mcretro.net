@@ -2,17 +2,42 @@
 title: "PSIO Prototype 1.1 Test Station Setup Overview - March 2014"
 author: "Nix McRetro"
 date: 2014-08-05T20:29:11.000+10:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="vUPamzKPADo" %}
 
-Fired the PSIO prototype up back in March 2014, recorded some video, moved house multiple times and rediscovered this footage. Essentially it's an overview of how everything is connected up to the prototype PSIO device.
+I fired the PSIO prototype up back in March 2014, recorded some video, moved house multiple times, and eventually rediscovered the footage.
 
-Please remember that this a prototype device and does likely not reflect what the final hardware will be like. This includes compatibility with games as well.
+This is an overview of how the test station was connected.
 
-We're using the good old XRGB-mini to overcome lack of colour on composite when playing NTSC games, something to do with needing a colour correction mod when using PAL hardware. It's all gravy though as RGB is far superior!
+Please remember that this is prototype hardware. These observations belong to this development configuration and should not be treated as representative of later PSIO revisions or the final product.
 
-You can hit up [ps-io.com](https://psio.cybdyn-systems.com.au/) if you have any questions since I am but a mere tester, I do not understand the technology behind this wonderful invention.
+The test console is a PAL SCPH-5502. When running NTSC software over composite, PAL PlayStations can lose correct colour because of the colour-carrier arrangement. RGB avoids that composite colour encoding problem, so I used the XRGB-mini for the picture instead.
 
-PSIO Hardware Version: 1.1 PSIO Software Version: 1.1A All tested on an SCPH-5502 with a missing CD deck.
+I'm only the tester here, not the designer, so this post records what I used and observed rather than pretending I understood every part of the technology behind PSIO.
+
+**Prototype test conditions**
+
+- PSIO hardware: 1.1
+- PSIO software: 1.1A
+- PlayStation: PAL SCPH-5502
+- CD deck: removed
+
+### Related PSIO prototype tests
+
+- [PSIO Prototype 1.1 Game Demo: Chrono Cross (Part 1)](/psio-prototype-11-game-demo-chrono-cross-part-1/)
+- [PSIO Prototype 1.1 Game Demo: Chrono Cross (Part 2)](/psio-prototype-11-game-demo-chrono-cross-part-2/)
+- [PSIO Prototype 1.1 Game Demo: Gran Turismo 2](/psio-prototype-11-game-demo-gran-turismo-2/)
+- [PSIO Prototype 1.1 Game Demo: Grandia](/psio-prototype-11-game-demo-grandia/)
+- [PSIO Prototype 1.1 Game Demo: Mega Man Legends 1, 2 and Philosoma](/psio-prototype-11-game-demo-mega-man-legends-1-2-and-philosoma/)
+
+### Sources
+
+- [PS1 Developer Wiki - SKU Models](https://www.psdevwiki.com/ps1/SKU_Models)
+- [PSXDEV - PlayStation PAL Series Colour/Color Modification (PAL60)](https://www.psxdev.net/forum/viewtopic.php?f=47&t=444)

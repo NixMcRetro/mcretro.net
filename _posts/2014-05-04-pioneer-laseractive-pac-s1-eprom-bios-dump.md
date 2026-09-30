@@ -22,7 +22,7 @@ The MBM27C1024A is a 1 Mbit UV-erasable EPROM in a 40-pin package.
 
 ### Related posts
 
-- [Pioneer LaserActive Sega PAC-S1 Pull Apart / Disassembly](/pioneer-laseractive-sega-pac-s1-pull-apart-disassembly/)
+- [Pioneer LaserActive Sega PAC-S1 Disassembly](/pioneer-laseractive-sega-pac-s1-disassembly/)
 - [Pioneer LaserActive Sega PAC-S1 Mainboard Capacitor Removal](/pioneer-laseractive-sega-pac-s1-mainboard-capacitor-removal/)
 - [Pioneer LaserActive Sega PAC-S1 Subboard Capacitor Removal](/pioneer-laseractive-sega-pac-s1-subboard-capacitor-removal/)
 

@@ -16,6 +16,7 @@ And yes, that's the Aiwa Mega-CD CSD-GM1 in the background too!
 ### Related posts
 
 - [XRG - Xtreme Retro Gaming, Now Closed](/xrg-xtreme-retro-gaming-now-closed/)
+- [Cancelled Channel - Xtreme Retro Gaming](/cancelled-channel-xtreme-retro-gaming/)
 
 ### Channel trailers
 

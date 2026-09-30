@@ -2,9 +2,36 @@
 title: "The Sega Dreamcast HKT-0120 Development Box Teaser"
 author: "Nix McRetro"
 date: 2016-03-22T15:03:06.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [devkit, sega, youtube]
 ---
 
 {% include youtube.html id="I9jRJ40c9Uc" %}
 
-We'll be taking a good look into the Sega Dreamcast. I must admit I do not own a Dreamcast at this very point... but I do own an HKT-0120. Curious. In future videos, we will be looking into how to image/clone the internal hard drive (in case there are any goodies) and then look into getting this box up and running.
+We'll be taking a proper look into Sega Dreamcast development hardware.
+
+I did not actually own a retail Dreamcast at this point.
+
+I did, however, own an **HKT-0120 Dreamcast / Katana development box**.
+
+Curious.
+
+The HKT-0120 belongs to Sega's later Set 5 development hardware and was designed to work with a host PC over SCSI as part of the Dreamcast development environment.
+
+Before trying to make the unit useful again, I wanted to preserve the internal hard drive in case it still contained interesting development material.
+
+The next videos will therefore focus on imaging that drive before I start making changes to the machine.
+
+### Related posts
+
+- [Preparing to Dump the Sega Dreamcast HKT-0120 Dev Kit SCSI Hard Drive](/preparing-to-dump-the-sega-dreamcast-hkt-0120-dev-kit-scsi-hard-drive/)
+- [Dumping the Sega Dreamcast HKT-0120 Dev Kit SCSI Hard Drive via GUI and dd](/dumping-the-sega-dreamcast-hkt-0120-dev-kit-scsi-hard-drive-via-gui-and-dd/)
+- [Dumping the Sega Dreamcast HKT-0120 Dev Kit SCSI Hard Drive with GNU ddrescue](/dumping-the-sega-dreamcast-hkt-0120-dev-kit-scsi-hard-drive-with-gnu-ddrescue/)
+
+### Sources
+
+- [SEGAKatana - HKT-0120 Development Box](https://segakatana.com/hardware/dcdev/hkt01/)

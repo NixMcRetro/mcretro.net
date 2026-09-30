@@ -8,3 +8,8 @@ categories: [ibm-pc, youtube]
 {% include youtube.html id="tZaYZOvOvwI" %}
 
 The final frenzy in a long line of chaotic madness. I hope you enjoyed, we'll return to our regular scheduled program on Friday with some Sega TeraDrive problems. You can grab more tracks on [SoundCloud](https://soundcloud.com/nixmcretro)... there's even a 100x. White noise! :)
+
+### Model M Keyboard Frenzy
+
+- [IBM Model M Keyboard Frenzy (1x Multiplier)](/ibm-model-m-keyboard-frenzy-1x-multiplier/)
+- [IBM Model M Keyboard Frenzy (5x Multiplier!)](/ibm-model-m-keyboard-frenzy-5x-multiplier/)

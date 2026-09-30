@@ -7,7 +7,7 @@ categories: [news, youtube]
 
 {% include youtube.html id="UprMHeQF-kE" %}
 
-Welcome to the McRetro Gaming Channel with your host Shane McRetro! We're still new here, but will be uploaded by the bucketful once things get rolling. Be sure to subscribe for updates!
+Welcome to the McRetro Gaming Channel with your host Shane McRetro! We're still new here, but videos will be uploaded by the bucketful once things get rolling. Be sure to subscribe for updates!
 
 ### Channel trailers
 

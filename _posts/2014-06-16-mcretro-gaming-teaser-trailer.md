@@ -9,9 +9,13 @@ categories: [gaming, youtube]
 
 I've just made a channel dedicated to retro gaming! Check out [McRetro Gaming](https://www.youtube.com/user/McRetroGaming)!
 
-The spiritual successor to Xtreme Retro Gaming - now defunct! Gameplay and hints, tips will all be provided by me, Shane McRetro! Lucky you! So get over there and pickup a subscription. I'll be sure to upload more videos in the future.
+It's the spiritual successor to Xtreme Retro Gaming, now defunct. Gameplay, hints and tips will all be provided by me, Shane McRetro! Lucky you! So get over there and pick up a subscription. I'll be sure to upload more videos in the future.
 
 And yes, that's the Aiwa Mega-CD CSD-GM1 in the background too!
+
+### Related posts
+
+- [XRG - Xtreme Retro Gaming, Now Closed](/xrg-xtreme-retro-gaming-now-closed/)
 
 ### Channel trailers
 

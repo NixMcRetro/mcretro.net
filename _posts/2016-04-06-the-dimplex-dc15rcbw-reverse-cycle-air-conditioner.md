@@ -2,15 +2,40 @@
 title: "The Dimplex DC15RCBW Reverse Cycle Air Conditioner"
 author: "Nix McRetro"
 date: 2016-04-06T12:43:13.000+10:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [youtube]
 ---
 
 {% include youtube.html id="Ws7BdhqYU0U" %}
 
-You might all remember [this review](/dimplex-dc10rc-review/) that was done way back in early March - not the most glowing review because the Dimplex DC10RC was likely faulty or just a complete hunk of junk. Let me show you the MEGA edition - The Dimplex DC15RCBW Reverse Cycle Air Conditioner.
+You might remember my less-than-glowing experience with the Dimplex DC10RC.
+
+At the time I could not establish whether that unit was faulty or simply performing badly in my room.
+
+Either way, I replaced it with the larger **Dimplex DC15RCBW**.
 
 {% include youtube.html id="qtTW-SRfPbw" %}
 
-Now to summarise what is said in the video, this unit can actually cool a room twice as large as the one the DC10RC could not. Definitely makes me suspect that the DC10RC was faulty, which is really annoying as I shelled out more cash for the larger unit. To make matters worse, the new room I'm in has nowhere for the drainage pipe to drain for those cold winter days. So I picked up a Dyson AM09 and it works a treat for heating up rooms. Off to storage you go dear DC15RCBW, for at least 6 months until the harshest of winters is over.
+In my actual rooms, the difference was dramatic.
 
-**Edit:** Never hurts to put a title on the post...
+This unit could cool a room roughly twice the size of the one in which the DC10RC had struggled, which made me increasingly suspicious that something had been wrong with my particular DC10RC.
+
+That's still a comparison between two units I personally used, not a laboratory test of every DC10RC and DC15RCBW.
+
+The new room created a different problem: nowhere sensible to run the drainage pipe during heating operation.
+
+So I picked up a Dyson AM09 for winter heating instead.
+
+Off to storage you go, dear DC15RCBW, until warmer weather returns.
+
+### Related posts
+
+- [Dimplex DC10RC Review](/dimplex-dc10rc-review/)
+
+### Sources
+
+- [Dimplex DC10RC / DC12RCBW / DC15RCBW instruction manual](https://www.manualslib.com/manual/746497/Dimplex-Dc10rc.html)

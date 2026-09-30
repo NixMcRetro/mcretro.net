@@ -22,6 +22,10 @@ Modern version 3 onion addresses are 56 characters long and require different to
 
 The old [Shallot](https://web.archive.org/web/20230331011246/https://github.com/katmagic/Shallot) link is preserved here because this is what I actually used at the time.
 
+### Related posts
+
+- [Generating Vanity Onion Addresses with Shallot](/generating-vanity-onion-addresses-with-shallot/)
+
 Advance onward to [Part 14](/take-back-the-darknet-part-14/) or head back to the table of contents on [Part 1](/take-back-the-darknet-part-1/).
 
 ### Sources

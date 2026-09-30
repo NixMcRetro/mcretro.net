@@ -2,13 +2,37 @@
 title: "Dumping the Sega Dreamcast HKT-0120 Dev Kit SCSI Hard Drive via GUI and dd"
 author: "Nix McRetro"
 date: 2016-04-09T13:03:38.000+10:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [sega, youtube]
 ---
 
 {% include youtube.html id="ynXxOYtCZYY" %}
 
-Everyone loves World Series Baseball 2K2 (WSB2K2) and in this video we try dumping via dd and the GUI, the results aren't all that bad either. It does look like there is a small amount of unreadable data, but that shouldn't stop us from getting the contents of this Dreamcast HKT-0120 Dev Kit. Stay tuned for part 3, using ddrescue... or was it dd_rescue... :)
+Everyone loves World Series Baseball 2K2!
 
-**Sources:**
-- [Here's the thread on Assembler Games](https://web.archive.org/web/20160708220702/http://assemblergames.com/l/threads/world-series-baseball-2k2-wsb2k2-dumping-from-hkt-0120.60534/)
-- [Data recovery used](https://www.r-studio.com/data_recovery_linux/Download.shtml)
+In this part I try imaging the HKT-0120 SCSI drive with a graphical recovery tool and ordinary `dd`.
+
+The results are not terrible, but there appears to be a small amount of unreadable data.
+
+A raw copy with `dd` is useful when a disk is healthy enough, but it is not specialised recovery software. When a drive starts returning read errors, repeatedly hammering the bad areas is not ideal.
+
+That's why the next attempt moves to GNU ddrescue, which is designed specifically around recovering readable areas first and keeping track of what still needs attention.
+
+Stay tuned for part 3.
+
+And yes, at the time I was still trying to remember whether the program was called `ddrescue` or `dd_rescue`. :)
+
+### Sources
+
+- [ASSEMBlergames - World Series Baseball 2K2 dumping thread](https://web.archive.org/web/20160708220702/http://assemblergames.com/l/threads/world-series-baseball-2k2-wsb2k2-dumping-from-hkt-0120.60534/)
+- [R-Studio for Linux](https://www.r-studio.com/data_recovery_linux/Download.shtml)
+- [GNU Project - GNU ddrescue](https://www.gnu.org/software/ddrescue/)
+
+### Related posts
+
+- [Preparing to Dump the Sega Dreamcast HKT-0120 Dev Kit SCSI Hard Drive](/preparing-to-dump-the-sega-dreamcast-hkt-0120-dev-kit-scsi-hard-drive/)
+- [Dumping the Sega Dreamcast HKT-0120 Dev Kit SCSI Hard Drive with GNU ddrescue](/dumping-the-sega-dreamcast-hkt-0120-dev-kit-scsi-hard-drive-with-gnu-ddrescue/)

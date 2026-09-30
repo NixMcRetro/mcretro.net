@@ -22,17 +22,29 @@ Do not click that link.
 
 Anyway, as you can see in the chart above, I've been working on getting back into shape for winter.
 
+After all, that's when I leave the house the most. Otherwise the sun cooks away my skin and the scorpions, spiders and snakes all attack.
+
+Thankfully in winter they're all in hibernation.
+
+Probably making more mini-nopes.
+
 I've also been helping a friend with their PhD, which stands for Doctor of Philosophy, from the Latin *philosophiae doctor*.
 
-Most of that help has involved **LimeSurvey**.
+Most of that has involved **LimeSurvey**.
 
-I spent quite a bit of time experimenting with the 2.06+ and 2.50+ branches.
+After playing around with the 2.06+ and 2.50+ branches, I can safely say that **for the survey project I was working on, 2.50+ was terrible**.
 
-For the particular survey and template workflow I was dealing with, I found 2.50+ considerably more frustrating, so I rolled back to 2.06+.
+There. I said it.
 
-Unfortunately the survey database did not simply come backwards with me, because apparently life was not complicated enough already.
+I rolled back to 2.06+, although the survey database couldn't simply come backwards with me.
 
-I also liked the [Tools for Research](https://www.toolsforresearch.com/limesurvey-responsive-template) responsive template with that older branch.
+Much more pleasant.
+
+Buyer beware!
+
+Oh wait, it's open-source free software! :)
+
+I also liked the [Tools for Research](https://www.toolsforresearch.com/limesurvey-responsive-template) responsive template with the older branch.
 
 All my console and repair projects were effectively on hold while I dealt with the survey project.
 
@@ -48,8 +60,10 @@ Meanwhile I had rebuilt the website again.
 
 The contact form worked, the header text was no longer cropped, and I had finally worked out how to make Apache 2.4 serve multiple websites and subdomains from the Raspberry Pi.
 
-Naturally I also broke the onion mirror again.
+Oh... and I broke the darknet side of things again.
 
-WordPress 4.5.3 and the plugin I had been using to force relative links no longer seemed to cooperate in my setup.
+WordPress 4.5.3 seemed to have broken my make-all-links-relative-not-bloody-absolute plugin.
+
+That could be a problem...
 
 Stay retro, readers!

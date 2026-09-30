@@ -22,13 +22,15 @@ Turns out they mostly do!
 
 They need some older hard drives and some mainboard capacitor attention, but they're remarkably alive for roadside computers.
 
-The timing was also useful because I was looking for an AT or ATX supply that might help with the Sega TeraDrive experiments.
+The timing was also useful because I was looking for an AT or ATX power supply for the Sega TeraDrive experiments.
 
-In the original post I wrote that I needed "5A on the 12V rail, or was it the 5V rail..."
+Apparently I needed 5 A on the 12 V rail.
 
-I clearly had not confirmed the requirement yet, so I'm leaving that uncertainty intact rather than manufacturing the answer retrospectively.
+Or was it the 5 V rail...
 
-That's another video for the near future.
+Yeah, clearly I hadn't confirmed that part yet. :P
+
+So don't take that as a TeraDrive power specification. That's another video for the near future.
 
 ### Related posts
 

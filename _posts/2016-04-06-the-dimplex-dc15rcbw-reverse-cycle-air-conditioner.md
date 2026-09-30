@@ -12,19 +12,19 @@ categories: [youtube]
 
 {% include youtube.html id="Ws7BdhqYU0U" %}
 
-You might remember my less-than-glowing experience with the Dimplex DC10RC.
+You might all remember [this review](/dimplex-dc10rc-review/) from early March.
 
-At the time I could not establish whether that unit was faulty or simply performing badly in my room.
+Not the most glowing review, because my Dimplex DC10RC was either faulty or, in my original highly scientific terminology, a complete hunk of junk.
 
-Either way, I replaced it with the larger **Dimplex DC15RCBW**.
+Let me show you the **MEGA edition**, the Dimplex DC15RCBW Reverse Cycle Air Conditioner.
 
 {% include youtube.html id="qtTW-SRfPbw" %}
 
 In my actual rooms, the difference was dramatic.
 
-This unit could cool a room roughly twice the size of the one in which the DC10RC had struggled, which made me increasingly suspicious that something had been wrong with my particular DC10RC.
+This unit could cool a room roughly twice the size of the one where my DC10RC had struggled.
 
-That's still a comparison between two units I personally used, not a laboratory test of every DC10RC and DC15RCBW.
+That definitely made me more suspicious that something had been wrong with my particular DC10RC, although two units in two rooms is hardly a laboratory test of the entire product range.
 
 The new room created a different problem: nowhere sensible to run the drainage pipe during heating operation.
 

@@ -22,7 +22,9 @@ Curious.
 
 The HKT-0120 belongs to Sega's later Set 5 development hardware and was designed to work with a host PC over SCSI as part of the Dreamcast development environment.
 
-Before trying to make the unit useful again, I wanted to preserve the internal hard drive in case it still contained interesting development material.
+Before trying to make the unit useful again, I wanted a raw copy of the internal hard drive in case there were any goodies hiding on it.
+
+You know, potentially interesting development material. ;)
 
 The next videos will therefore focus on imaging that drive before I start making changes to the machine.
 

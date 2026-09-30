@@ -14,7 +14,9 @@ categories: [devkit, sega, youtube]
 
 This is the preliminary setup for preserving the SCSI hard drive from the Sega Dreamcast HKT-0120 development box.
 
-Before making any changes to the development kit, I wanted a raw copy of the existing disk in case it contained anything useful or historically interesting.
+Before making any changes to the development kit, I wanted a raw copy of the existing disk in case there were any goodies hiding on it.
+
+Or, to use slightly more archival terminology, anything useful or historically interesting. ;)
 
 I planned to try a couple of different imaging and recovery approaches under Linux: a graphical recovery tool, ordinary `dd`, and then a more recovery-oriented tool if the disk showed read errors.
 

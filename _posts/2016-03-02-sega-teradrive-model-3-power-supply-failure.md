@@ -20,9 +20,11 @@ It may have been dead for a while without me noticing because the machine had mo
 
 The Model 2 still worked, so I swapped modules and stripped the machines back to minimal configurations to narrow the fault down.
 
+Aren't I just an amazingly good technician? ;)
+
 With this particular Model 3 power supply installed, the rear speaker buzzed immediately at power-on and the machine produced no usable display or POST.
 
-That does not yet tell us which component inside the power supply failed, only that swapping the PSU moved the fault with it.
+That still doesn't tell us which component inside the power supply failed, only that swapping the PSU moved the fault with it.
 
 The next stage will be investigating the supply itself.
 

@@ -29,14 +29,17 @@ I'm only the tester here, not the designer, so this post records what I used and
 - PlayStation: PAL SCPH-5502
 - CD deck: removed
 
-### Related PSIO prototype tests
+### Related PSIO prototype posts
 
 - [PSIO Prototype 1.1 Game Demo: Chrono Cross (Part 1)](/psio-prototype-11-game-demo-chrono-cross-part-1/)
 - [PSIO Prototype 1.1 Game Demo: Chrono Cross (Part 2)](/psio-prototype-11-game-demo-chrono-cross-part-2/)
 - [PSIO Prototype 1.1 Game Demo: Gran Turismo 2](/psio-prototype-11-game-demo-gran-turismo-2/)
 - [PSIO Prototype 1.1 Game Demo: Grandia](/psio-prototype-11-game-demo-grandia/)
 - [PSIO Prototype 1.1 Game Demo: Mega Man Legends 1, 2 and Philosoma](/psio-prototype-11-game-demo-mega-man-legends-1-2-and-philosoma/)
-
+- [PSIO Prototype 1.1 Game Demo: Ridge Racer and Ridge Racer Revolution](/psio-prototype-11-game-demo-ridge-racer-and-ridge-racer-revolution/)
+- [PSIO Prototype 1.1 Game Demo: Soul Edge / Soul Blade](/psio-prototype-11-game-demo-soul-edge-soul-blade/)
+- [PSIO Prototype 1.1 Game Demo: Wipeout, Wipeout 2097 / XL, Wip3out / Wipeout 3](/psio-prototype-11-game-demo-wipeout-wipeout-2097-xl-wip3out-wipeout-3/)
+- [Thoughts on PSIO 2.x Recent Updates](/thoughts-on-psio-2x-recent-updates/)
 ### Sources
 
 - [PS1 Developer Wiki - SKU Models](https://www.psdevwiki.com/ps1/SKU_Models)

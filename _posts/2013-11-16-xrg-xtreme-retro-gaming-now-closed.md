@@ -25,3 +25,8 @@ Sorry about that!
 The Shane McRetro / RetroJunkie channel was not going anywhere, though.
 
 There was still plenty of nonsense waiting to happen over there.
+
+### Related posts
+
+- [McRetro Gaming Teaser Trailer](/mcretro-gaming-teaser-trailer/)
+- [Cancelled Channel - Xtreme Retro Gaming](/cancelled-channel-xtreme-retro-gaming/)

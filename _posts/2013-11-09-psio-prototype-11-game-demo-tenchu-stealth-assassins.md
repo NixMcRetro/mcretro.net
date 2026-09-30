@@ -2,15 +2,33 @@
 title: "PSIO Prototype 1.1 Game Demo: Tenchu: Stealth Assassins"
 author: "Nix McRetro"
 date: 2013-11-09T18:31:05.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="hdztprc9tNU" %}
 
-Sadly we only got an intro video with no sound and then the game appeared to have disappeared into a blank screen. No worries, hardware version 2.0 is in the works!
+Tenchu: Stealth Assassins does not get very far on this PSIO build.
 
-Please remember that this a prototype device and does likely not reflect what the final hardware will be like. This includes compatibility with games as well.
+I get the intro video with no sound, followed by a blank screen instead of usable gameplay.
 
-You can hit up [ps-io.com](https://psio.cybdyn-systems.com.au/) if you have any questions since I am but a mere tester, I do not understand the technology behind this wonderful invention.
+I did not establish which specific part of the prototype implementation caused either symptom.
 
-PSIO Hardware Version: 1.1 PSIO Software Version: 1.1A All tested on an SCPH-5502 with a missing CD deck.
+So this remains a straightforward compatibility result:
+
+**intro video, no audio, then blank screen.**
+
+**Prototype test conditions**
+
+- PSIO hardware: 1.1
+- PSIO software: 1.1A
+- PlayStation: SCPH-5502
+- CD deck: removed
+
+No worries.
+
+Hardware version 2.0 was already in the works.

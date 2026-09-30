@@ -2,15 +2,46 @@
 title: "PSIO Prototype 1.1 Game Demo: Rage Racer"
 author: "Nix McRetro"
 date: 2013-11-08T21:28:32.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="A6ndDJIb_bc" %}
 
-Rage Racer, with crash physics even more realistic than Burnout 1 or NFS 3 we have a few laps. The only thing that wasn't working seemed to be background music. Presumably due to as of yet unimplemented CD-XA capabilities.
+Rage Racer.
 
-Please remember that this a prototype device and does likely not reflect what the final hardware will be like. This includes compatibility with games as well.
+Crash physics even more realistic than Burnout 1 or Need for Speed III.
 
-You can hit up [ps-io.com](https://psio.cybdyn-systems.com.au/) if you have any questions since I am but a mere tester, I do not understand the technology behind this wonderful invention.
+Most of what I tested was working, but the obvious missing piece was the background music.
 
-PSIO Hardware Version: 1.1 PSIO Software Version: 1.1, Revision 1.2 All tested on a PAL SCPH-5502
+I originally guessed that this was because PSIO had not yet implemented CD-XA audio.
+
+That was not the best diagnosis.
+
+Rage Racer stores much of its soundtrack as separate CD audio tracks.
+
+So the missing music is much more consistent with the prototype's incomplete CDDA support.
+
+The test itself still only proves the symptom:
+
+**the game ran, but much of the background music was absent on this build.**
+
+**Prototype test conditions**
+
+- PSIO hardware: 1.1
+- PSIO software: 1.1, revision 1.2
+- PlayStation: PAL SCPH-5502
+
+Later PSIO development added broader CDDA and XA support.
+
+### Related posts
+
+- [Thoughts on PSIO 2.x Recent Updates](/thoughts-on-psio-2x-recent-updates/)
+
+### Sources
+
+- [GameFAQs - Rage Racer FAQ](https://gamefaqs.gamespot.com/ps/198393-rage-racer/faqs/4093)

@@ -2,15 +2,29 @@
 title: "PSIO Prototype 1.1 Game Demo: Final Fantasy IX"
 author: "Nix McRetro"
 date: 2013-11-03T18:14:37.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="TuTwc8MRlnU" %}
 
-Another fantastic Square Enix title that seems to work perfectly on PSIO!
+Another fantastic Square title.
 
-Please remember that this a prototype device and does likely not reflect what the final hardware will be like. This includes compatibility with games as well.
+Everything I tested in Final Fantasy IX behaved perfectly on this PSIO prototype build.
 
-You can hit up [ps-io.com](https://psio.cybdyn-systems.com.au/) if you have any questions since I am but a mere tester, I do not understand the technology behind this wonderful invention.
+That means the portion shown here worked without problems.
 
-PSIO Hardware Version: 1.1 PSIO Software Version: 1.1A All tested on an SCPH-5502 with a missing CD deck.
+It does not mean I exhaustively tested every disc, FMV, battle, save operation and late-game event.
+
+**Prototype test conditions**
+
+- PSIO hardware: 1.1
+- PSIO software: 1.1A
+- PlayStation: SCPH-5502
+- CD deck: removed
+
+These results describe this prototype configuration rather than later PSIO releases.

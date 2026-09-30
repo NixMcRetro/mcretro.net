@@ -2,15 +2,27 @@
 title: "PSIO Prototype 1.1 Game Demo: Crash Bandicoot"
 author: "Nix McRetro"
 date: 2013-11-06T18:22:43.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="cPZOVBjCRT0" %}
 
-Crrrrrrashhhhh Bandicoot (Pronounce with a Cortex-like accent) is one of the best platformer series for the PlayStation 1, and what do you know it works a charm on the PSIO.
+Crrrrrrashhhhh Bandicoot.
 
-Please remember that this a prototype device and does likely not reflect what the final hardware will be like. This includes compatibility with games as well.
+Pronounce that in your best Cortex voice.
 
-You can hit up [ps-io.com](https://psio.cybdyn-systems.com.au/) if you have any questions since I am but a mere tester, I do not understand the technology behind this wonderful invention.
+It is one of my favourite PlayStation platforming series, and everything I tested here behaved beautifully on the PSIO prototype.
 
-PSIO Hardware Version: 1.1 PSIO Software Version: 1.1A All tested on an SCPH-5502 with a missing CD deck.
+As usual, "worked beautifully" means the portion I tested, not every possible part of the game.
+
+**Prototype test conditions**
+
+- PSIO hardware: 1.1
+- PSIO software: 1.1A
+- PlayStation: SCPH-5502
+- CD deck: removed

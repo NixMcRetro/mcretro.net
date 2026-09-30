@@ -2,10 +2,23 @@
 title: "Take Back the Darknet (Part 9)"
 author: "Nix McRetro"
 date: 2016-01-04T23:36:15.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [guides, raspberry-pi]
 ---
 
 **Part 9 - Configuring Apache**
+
+**Archive note:** This page documents the January 2016 Raspbian Jessie setup. Read the compatibility and security warning in [Part 1](/take-back-the-darknet-part-1/) before using any of these commands on a current system.
+
+**Formatting warning:** The imported copy of this article has lost some of the original Apache configuration structure, including parts of the `VirtualHost` and `Directory` blocks.
+
+I cannot establish every missing character from the surviving post, so the configuration fragments below are being preserved as incomplete historical material rather than silently reconstructed into something that merely looks plausible.
+
+Do not paste these fragments into a live Apache configuration without rebuilding and validating them against current documentation.
 
 First up, here's a cool add-on to limit speed and amount of connections of the people visiting your website. Great if you have finite bandwidth on the upstream. Its specific settings can be found in the tim.conf config below under "IfModule mod\_bw.c". Installing this is optional but recommended. The settings below limit "\*" (all files) that are over "1" byte in size to "7200" (~56.6kbps) a second. You can also limit the number of inbound connections via the "MaxConnection" setting and the "Bandwidth all" setting does something... but alas I cannot remember! Install with the following command.
 
@@ -21,7 +34,11 @@ These configurations allow for a blog at website.net/blog, omit that part if you
 
 Additionally, we have the bandwidth limiter, if you don't want this exclude the "IfModule mod\_bw.c" section.
 
-Even more additionally is the FTP server which can be setup using the "Directory /var/www/files/public" section, alternatively, you can omit this if you are just wanting a basic website.
+The `/var/www/files/public` section below is **not an FTP server**.
+
+It is an Apache HTTP directory configuration using features such as authentication and directory indexing. An actual FTP service would require separate server software.
+
+If you do not want that HTTP file area, omit the corresponding directory configuration.
 
 `ServerName http://tim.net ServerAdmin webmaster@tim.net DocumentRoot /var/www ErrorDocument 404 /404/  Options -Indexes +FollowSymLinks AllowOverride None Require all granted  AllowOverride All  Options +FollowSymLinks +Multiviews +Indexes AllowOverride None AuthType basic AuthName "tim File Server" AuthUserFile /etc/htpasswd/.htpasswd Require valid-user BandwidthModule On ForceBandWidthModule On Bandwidth all "52428800" MaxConnection all "20" LargeFileLimit * 1 7200 BandWidthError 510`
 
@@ -62,3 +79,7 @@ Change `default_charset = “UTF-8“` to `default_charset = "ISO-8859-1"`
 Once that is done we are onto the next part.
 
 Advance onward to [part 10](/take-back-the-darknet-part-10/) or head back to the table of contents on [page 1](/take-back-the-darknet-part-1/).
+
+### Sources
+
+- [Apache HTTP Server - Core Features and VirtualHost Configuration](https://httpd.apache.org/docs/2.4/mod/core.html)

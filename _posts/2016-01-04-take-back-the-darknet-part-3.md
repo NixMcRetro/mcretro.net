@@ -2,20 +2,39 @@
 title: "Take Back the Darknet (Part 3)"
 author: "Nix McRetro"
 date: 2016-01-04T22:22:11.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [guides, raspberry-pi]
 ---
 
 **Part 3 - Setting a Static IP Address**
 
+**Archive note:** This page documents the January 2016 Raspbian Jessie setup. Read the compatibility and security warning in [Part 1](/take-back-the-darknet-part-1/) before using any of these commands on a current system.
+
 As we are using Raspbian Jessie, both sudo and Nano are installed by default. Nano is a simple text editor, think Notepad for the command line. Easier to navigate than Vim. Sudo allows us to be the superuser which pretty much lets us do whatever we want. Very handy to have!
 
 Under Raspbian Jessie (and therefore Debian as well) setting a static IP has been moved from /etc/network/interfaces to /etc/dhcpcd.conf. Let's get editing. `sudo nano /etc/dhcpcd.conf`
 
-Add the below code to the end, adjusting it to suit your preferred network address. I recommend a static IP address that is easy to remember, this will be the new address you log in to SSH with in the future. Take your existing IP address, xxx.xxx.xxx.xxx and change the last three digits to either .200 or .250 to keep it simple. You will probably end up with something like 192.168.0.200 or 10.0.0.200. As long as the first three numbers (**xxx.xxx.xxx**.xxx) are the same you shouldn't encounter any issues.
+Add the configuration below to the end, adjusting it for your own network.
+
+In the original guide I suggested simply choosing something memorable such as `.200` or `.250`.
+
+That shortcut is only safe if the address is valid for your subnet, is not already being used by another device, and does not conflict with addresses your router may hand out through DHCP.
+
+My "keep the first three numbers the same" advice also assumed a typical `/24` home network. That is common, but it is not a universal networking rule.
 
 In addition to that, we'll also need to add your router address. Not sure what your router IP address is? [This](https://www.computerworld.com/article/1496151/network-security-find-the-ip-address-of-your-home-router.html) is a solid enough guide for finding your router IP. If your IP address is 192.168.0.xxx then your router is likely at 192.168.0.1 or 192.168.0.100, that's why we choose a static IP address that is in the 200s.
 
-`#Static IP configuration interface eth0 static ip_address=xxx.xxx.xxx.200/24 static routers=xxx.xxx.xxx.yyy static domain_name_servers=8.8.8.8 8.8.4.4`
+```text
+# Static IP configuration
+interface eth0
+static ip_address=xxx.xxx.xxx.200/24
+static routers=xxx.xxx.xxx.yyy
+static domain_name_servers=8.8.8.8 8.8.4.4
+```
 
 Save and exit, Ctrl-O (Writeout / Save) and Ctrl-X (Exit) and reboot. `sudo reboot`
 

@@ -1,6 +1,11 @@
 ---
 title: "The Birth of Eleventy7.net"
 author: "Nix McRetro"
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 date: 2016-08-17T18:32:39.000+10:00
 categories: [ibm-pc, news]
 ---

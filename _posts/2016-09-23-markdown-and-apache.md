@@ -50,4 +50,5 @@ Maybe this was a bad idea! :-D
 
 ### Sources
 
+- [Jekyll - Command Line Usage](https://jekyllrb.com/docs/usage/)
 - [Tor Project - V2 Onion Services Deprecation](https://support.torproject.org/onionservices/v2-deprecation/)

@@ -2,15 +2,27 @@
 title: "PSIO Prototype 1.1 Game Demo: Star Ocean: The Second Story"
 author: "Nix McRetro"
 date: 2013-11-02T18:11:49.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="LJ73iecHjkY" %}
 
-Star Ocean: The Second Story, seems to be a pretty good game. I didn't die immediately like in Crash Bash.
+Star Ocean: The Second Story seems to be a pretty good game.
 
-Please remember that this a prototype device and does likely not reflect what the final hardware will be like. This includes compatibility with games as well.
+More importantly, I didn't die immediately like I did in Crash Bash.
 
-You can hit up [ps-io.com](https://psio.cybdyn-systems.com.au/) if you have any questions since I am but a mere tester, I do not understand the technology behind this wonderful invention.
+Everything I tested here behaved well on the PSIO 1.1 setup.
 
-PSIO Hardware Version: 1.1 PSIO Software Version: 1.1A All tested on an SCPH-5502 with a missing CD deck.
+As with the other prototype videos, that means the tested portion worked rather than proving complete compatibility with the entire game.
+
+**Prototype test conditions**
+
+- PSIO hardware: 1.1
+- PSIO software: 1.1A
+- PlayStation: SCPH-5502
+- CD deck: removed

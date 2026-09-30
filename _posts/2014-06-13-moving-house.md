@@ -7,4 +7,6 @@ categories: [youtube]
 
 {% include youtube.html id="jaFDUxo0rpw" %}
 
-And this is why my videos have been so spotty since December. I'm still between homes, with all my cool things in boxes. Although I have managed a few repairs, the videos will be upcoming in the next few weeks.
+And this is why my videos have been so spotty since December. I'm still between homes, with all my cool things packed away in boxes.
+
+I have managed a few repairs, though, and those videos should be appearing over the next few weeks.

@@ -2,17 +2,46 @@
 title: "Healthy Rate of Weight Loss"
 author: "Nix McRetro"
 date: 2016-07-30T10:18:33.000+10:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [news]
 ---
 
-![jul\_2016\_end](/assets/images/2016/img_0503.jpg)
+![jul_2016_end](/assets/images/2016/img_0503.jpg)
 
-Ideally, I'd be losing 500g - 1kg a week, in reality, it's closer to 1.2kg a week. An impressive feat at any rate really. Look at that dip from the blood donation earlier and then the rebuild as my body knocked together some plasma to account for the blood loss, very cool!
+I had been using roughly 500 g to 1 kg per week as my own target rate.
 
-![jul\_2016\_end2](/assets/images/2016/img_0504.jpg)
+In reality, over roughly the previous six months, I was averaging around **1.13 kg per week**.
 
-So I had a look at the above chart and for the last six months, late February 2016 to late July 2016, and found that the rate has been 1.13kg per week on average. This is actually better than I had expected.
+The sharp little movement around the blood donation is interesting, but I should not have described the graph as directly showing plasma disappearing and being rebuilt.
 
-So why not average it out since my first weigh in on record in late October 2008 and... we find I've been losing around 0.017948718kg a week, give or take for the past eight years. All that weight gain in between? All a part of my master plan to lose weight at a slower rate! 0.02kg isn't a bad rate. That's four servings of Vegemite a week in weight lost.
+Body weight can move around over short periods because of fluid balance, food, glycogen and plenty of other things. The scale does not tell me which of those caused a particular little bump.
 
-Maybe I'm just using the wrong sort of average and should switch to one of the other types. Oh that's right, I purged all that information from my mind when the university bridging course ended six months ago. Whoops! Did I mention I'm at 81.2kg? 200g outside of the healthy weight range. Muahahaha! :D
+![jul_2016_end2](/assets/images/2016/img_0504.jpg)
+
+So why not average everything since my first recorded weigh-in in late October 2008?
+
+That gives around 0.017948718 kg per week.
+
+All that weight gain in between?
+
+Clearly just part of the master plan to lose weight at a slower average rate.
+
+0.02 kg is about four servings of Vegemite per week in weight.
+
+Maybe I'm using the wrong sort of average.
+
+Oh, that's right. I purged all that information from my mind when the university bridging course ended six months ago.
+
+Whoops!
+
+Did I mention I'm at 81.2 kg?
+
+200 g outside the BMI category I was aiming for.
+
+Muahahaha! :D
+
+This is a record of what I was doing in 2016, not a target rate for somebody else's weight loss.

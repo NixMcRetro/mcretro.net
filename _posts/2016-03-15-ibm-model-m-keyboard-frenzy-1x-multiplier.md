@@ -8,3 +8,8 @@ categories: [ibm-pc, youtube]
 {% include youtube.html id="tFX-yC2YJ-0" %}
 
 We start off nice and simple with just one keyboard. Next video in about 12 hours is five keyboards... then the finale with a massive ten keyboards clicking away at once. Headphones are recommended for this exercise.
+
+### Model M Keyboard Frenzy
+
+- [IBM Model M Keyboard Frenzy (5x Multiplier!)](/ibm-model-m-keyboard-frenzy-5x-multiplier/)
+- [IBM Model M Keyboard Frenzy (10x Multiplier!)](/ibm-model-m-keyboard-frenzy-10x-multiplier/)

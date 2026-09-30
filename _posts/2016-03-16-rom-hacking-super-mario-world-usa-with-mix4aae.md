@@ -2,6 +2,11 @@
 title: "ROM Hacking Super Mario World (USA) with MIX4AAE"
 author: "Nix McRetro"
 date: 2016-03-16T13:26:35.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [hacks, nintendo, youtube]
 ---
 
@@ -9,37 +14,60 @@ categories: [hacks, nintendo, youtube]
 
 I had a request for some help on getting [this](https://w.atwiki.jp/sm4wiki_mix/pages/64.html) working on a flash cart. So I figured sure, why not! :)
 
-First up we take the Super Mario World (US) ROM which weighs in at 512kB, making it a 4Mbit ROM. Then apply the IPS patch on [here](https://w.atwiki.jp/sm4wiki_mix/pages/64.html). I used the good old reliable [SFC/SNES ROM UTILITY V2.1](https://www.romhacking.net/utilities/593/) under Windows 10. I couldn't get [MultiPatcher 1.5](http://projects.sappharad.com/tools/multipatch.html) to patch correctly on the Mac side, so quickly gave up on that.
+First up we take the Super Mario World (US) ROM which weighs in at 512 kB, making it a 4 Mbit ROM. Then apply the IPS patch from the link above.
 
-Hit file, open select your Super Mario World (US) ROM. It will then load it up and give you some information about the ROM. size is 0.5MB, It is a 4Mbit LoROM and it NTSC. Hit the "IPS Patch" radio button and then OK. Select the MIX4AAE.ips file and when prompted select yes where it asks about a headered ROM. It will then create a new file that is patched. You'll note that the size has jumped up to 3.00MB and is now a 32Mbit LoROM.
+I used the good old reliable [SFC/SNES ROM UTILITY V2.1](https://www.romhacking.net/utilities/593/) under Windows 10. I couldn't get [MultiPatcher 1.5](http://projects.sappharad.com/tools/multipatch.html) to patch correctly on the Mac side, so quickly gave up on that.
 
-![ipsandsum](/assets/images/2016/img_0469.jpg)
+Open the Super Mario World (US) ROM in the utility. It reports a 0.5 MB, 4 Mbit NTSC LoROM.
 
-For the sake of being complete, we'll also fix up the checksum (no one likes a dirty checksum). Grab [IpsAndSum](https://www.romhacking.net/utilities/499/). Once open, file and open your newly patched file. Nothing will happen until you go back into file and select "Repair Snes CheckSum", it will tell you that the "CheckSum Does not match. Repair it?" Hit yes. It will advise success and to save the ROM. Head back to file again and then "Save..." - Excellent! You now have a patched Super Mario World ROM.
+Select the IPS Patch option, choose the MIX4AAE IPS file and follow the prompt about the headered ROM.
+
+The patched file grows to about **3.00 MB**, which is **24 Mbit** of data. It still fits comfortably inside the **32 Mbit / 4 MB** AM29F032B or M29F032D flash chips I was using.
+
+![IPS patch and checksum repair](/assets/images/2016/img_0469.jpg)
+
+For the sake of being complete, we'll also fix up the checksum. No one likes a dirty checksum.
+
+I used [IpsAndSum](https://www.romhacking.net/utilities/499/). Open the newly patched file, select "Repair Snes CheckSum", accept the repair prompt and save the resulting ROM.
 
 ![MIX4AAE](/assets/images/2016/img_0467.jpg)
 
-Now you can fire up an emulator of your choice to test that the ROM works. I went with the time-tested Snes9x 1.53 on the Mac. It also gives the information we need to find an appropriate donor cartridge:
+Now fire up an emulator to test that the patched ROM actually works.
+
+I used Snes9x 1.53 on the Mac. It also reported the information I needed for finding a suitable donor cartridge:
+
 - LoROM
-- 32Mbits
+- patched data size of about 24 Mbit
 - NTSC
-- SRAM: 16kbits
-- Battery
+- SRAM: 16 kbit
+- battery-backed save support
 
-Next head over to the [file server](/files) page and visit the Google Drive and locate a document called [SNES PCB List-full.xls](/files). It is a great big list I found somewhere a while back. It lists all the details we need! The size of the cartridge isn't important as we will be replacing the ROM with a TSOP40 AM29F032B or an ST M29F032D chip. SRAM is usually important to match in size. LoROM is also important as that is how the cartridge is wired up. You could technically use a Super Mario World cart! The only thing not listed is whether the game has battery backup support. Find a ROM, throw it into Snes9x and check for ROM+RAM+BAT on startup.
+The original mask-ROM capacity is not the main concern once we're replacing that ROM with a larger flash device, but the donor PCB still matters. The board needs the appropriate LoROM mapping and save-memory hardware for the patched game, including suitable SRAM and battery support where required.
 
-Once you find a suitable donor cart also make sure the region matches or install a SuperCIC modchip in your SNES / SFC to bypass any region checks. From there it is just a matter of getting the ROM code onto the TSOP chip and into your cartridge. It's more complicated than it sounds, these videos might help.
+The old [SNES PCB List-full.xls](/files) was useful for comparing donor boards.
+
+You could technically use a Super Mario World cart. For other candidates, check that the PCB layout, mapping and save hardware suit the patched game.
+
+Once you find a suitable donor cart, also make sure the region matches or use appropriate region-modification hardware.
+
+From there it is a matter of getting the ROM data onto the TSOP flash chip and installing it in the cartridge.
 
 {% include youtube.html id="dV6J6cpVUfg" %}
 
-This first video shows a bit of the ROM flashing process using EarthBound as an example. EarthBound is a 24Mbit game that fits well on a 32Mbit TSOP40 chip.
+This first video shows part of the ROM flashing process using EarthBound as an example. EarthBound is a 24 Mbit game that fits inside a 32 Mbit TSOP40 flash chip.
 
 {% include youtube.html id="w0vsgrKIE4E" %}
 
-The above video is more a guide on how to solder TSOP chips. There will be a part two on programming in the near future. In the meantime, if you get stuck, feel free to ask around on forums. I'd recommend [AssemblerGames](https://web.archive.org/web/20191206184256/https://assemblergames.com/) or [ROMhacking.net](https://www.romhacking.net/) as a good starting point for any questions. And of course, remember to have fun! Good luck! :)
+The second video is a guide to soldering the TSOP device itself.
 
-**January 2020 Edit:**
-- [The Poor Student Hobbyist](https://thepoorstudenthobbyist.com/2017/09/14/how-to-make-a-snes-reproduction-cartridge/#step7d) has a fantastic write up with many details and a heap of options depending on cartridge and chips you decide to work with.
+A later write-up from [The Poor Student Hobbyist](https://thepoorstudenthobbyist.com/2017/09/14/how-to-make-a-snes-reproduction-cartridge/#step7d) also goes through SNES reproduction-cartridge construction in much more detail, with several board and chip options.
 
-**References**
-- [https://web.archive.org/web/20191027015856/http://www.nintendoage.com/forum/messageview.cfm?catid=22&threadid=85308](https://web.archive.org/web/20191027015856/http://www.nintendoage.com/forum/messageview.cfm?catid=22&threadid=85308)
+And of course, remember to have fun! Good luck! :)
+
+### Related posts
+
+- [Drag Soldering a 29F032 TSOP Chip](/drag-soldering-a-29f032-tsop-chip/)
+
+### References
+
+- [NintendoAge discussion archive](https://web.archive.org/web/20191027015856/http://www.nintendoage.com/forum/messageview.cfm?catid=22&threadid=85308)

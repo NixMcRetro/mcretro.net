@@ -12,3 +12,11 @@ categories: [news]
 I'll aim to list by the weekend - or perhaps Thursday for some 10 day auctions, giving them two weekends worth of views since everything goes to auction from $0.99 plus shipping! I wish that guy who bought printer ink off me would just pay... I've had to open a dispute... what a waste of time for everyone involved.
 
 Anyway, back to fixing all the things to sell most of the things! :)
+
+### McRetro Gaming Shop
+
+- [Ye Olde McRetro Gaming Shoppe](/ye-olde-mcretro-gaming-shoppe/)
+- [eBay - Open for Business](/ebay-open-for-business/)
+- [McRetro Gaming Shop Grand Opening!](/mcretro-gaming-shop-grand-opening/)
+- [The Shop is Closed!](/the-shop-is-closed/)
+

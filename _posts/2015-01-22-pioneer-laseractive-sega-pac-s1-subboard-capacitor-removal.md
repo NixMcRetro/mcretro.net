@@ -12,11 +12,15 @@ categories: [repairs, sega, youtube]
 
 {% include youtube.html id="N4OYQTUKXaU" %}
 
-This subboard was considerably easier to damage than the mainboard I worked on immediately beforehand.
+This subboard was a very different beast.
 
-From that repair experience, the mainboard certainly felt more robust to me.
+It was considerably easier to damage than the mainboard I'd worked on immediately beforehand.
 
-I cannot turn one repair into a universal claim about the manufacturing quality of every PAC-S1 revision, but the difference in repair tolerance on my unit was obvious.
+After working on both, my immediate conclusion was that the mainboard had been made to a much better standard.
+
+What I can actually support is a little narrower: on this PAC-S1, the mainboard tolerated capacitor removal far better and felt considerably more robust to me.
+
+That does not prove a universal manufacturing-quality difference across every PAC-S1 revision, but the difference between the two boards in my unit was obvious.
 
 ### Related posts
 

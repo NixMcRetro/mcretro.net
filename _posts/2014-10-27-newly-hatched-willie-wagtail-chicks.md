@@ -14,13 +14,19 @@ categories: [news, youtube]
 
 Newly hatched Willie Wagtail chicks here in NSW, Australia!
 
-The adults were very protective of the nest. They swooped at us when we got too close and made sharp clicking and scolding noises, which certainly made going outside interesting for a while.
+The adults loved to swoop us like the magpies do and made sharp clicking and scolding noises whenever we got too close.
 
-Willie Wagtails (*Rhipidura leucophrys*) are territorial birds and are known to defend their nesting area, so the behaviour made considerably more sense once I looked into it.
+Steer clear!
 
-Hopefully the babies grow up quickly and everyone decides the backyard can become neutral territory again.
+Hopefully the babies grow up fast and go away so we can go outside once more. ;)
 
-By December 2014 the young birds had left the nest, the swooping had stopped, and instead we were hearing the much nicer calls from the family.
+Willie Wagtails (*Rhipidura leucophrys*) are territorial birds and will actively defend their nesting area, so the behaviour made considerably more sense once I looked into it.
+
+By December 2014 the young birds had left the nest and the swooping had stopped.
+
+Instead they were making lovely calls, a bit like Australian Magpies to my ear.
+
+Much more civilised!
 
 ### Related posts
 

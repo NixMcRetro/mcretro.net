@@ -14,11 +14,15 @@ categories: [gaming, sony, youtube]
 
 Raaaaaaaaaaacing around those corners like a freaking pinball in a pinball machine. Bounce, bounce, bounce. Those are the physics I want in a racing game!
 
-Ridge Racer and Ridge Racer Revolution both behaved reasonably well in the portions I tested on this PSIO 1.1 prototype setup.
+Ridge Racer and Ridge Racer Revolution both behaved reasonably well in the bits I tested on this PSIO 1.1 prototype.
 
-I did not establish exhaustive compatibility, so this should stay limited to what can actually be seen in the recording rather than implying that every part of either game works perfectly.
+Not exhaustive testing, just what you can actually see in the video.
 
-At the time I was optimistic that the upcoming 2.x hardware would address the remaining prototype issues. That was an expectation, not a result of this test.
+I was optimistic that the 2.x hardware would sort out the remaining prototype weirdness, but that was hope rather than evidence from this 1.1 setup.
+
+Please remember that this is prototype hardware and does not necessarily reflect what the final product will be like, including game compatibility.
+
+If you want the actual technical details, hit up [PSIO](https://psio.cybdyn-systems.com.au/), because I am but a mere tester and do not understand the technology behind this wonderful invention. :)
 
 **Prototype test conditions**
 

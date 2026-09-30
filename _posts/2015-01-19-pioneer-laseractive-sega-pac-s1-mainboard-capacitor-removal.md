@@ -14,9 +14,13 @@ categories: [repairs, sega, youtube]
 
 Mainboard capacitor removal on the PAC-S1, perfectly done for once!
 
-This particular mainboard tolerated the work well. Compared with the subboard I tackled next, it felt considerably more robust during capacitor removal.
+Coming straight out of this repair, my impression was that the mainboard was a much higher-quality, tougher board than the subboard.
 
-That is an observation about the boards I actually worked on rather than proof of a universal manufacturing-quality difference between every PAC-S1 mainboard and subboard.
+It certainly tolerated my capacitor removal much better.
+
+That's an observation from the boards in this particular PAC-S1 rather than proof that every PAC-S1 mainboard is universally manufactured to a higher standard than every subboard.
+
+Still, the two boards I worked on were very different beasts.
 
 ### Related posts
 

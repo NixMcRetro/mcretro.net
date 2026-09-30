@@ -14,11 +14,15 @@ categories: [repairs, sega, youtube]
 
 Here we go, pulling apart a Japanese Pioneer LaserActive PAC-S1.
 
-The PAC-S1 is the Japanese version of the Sega PAC, with the PAC-S10 being its North American counterpart.
+I expected the North American PAC-S10 to come apart the same way.
 
-They are closely related, but documented hardware revisions exist, so I would not assume that every internal detail is identical across every PAC-S1 and PAC-S10.
+The PAC-S1 and PAC-S10 are the Japanese and North American versions of the Sega PAC respectively, but documented hardware revisions exist, so I would not assume that every internal detail is identical across every unit.
 
-This video documents the particular PAC-S1 unit I actually had on the bench.
+This video documents the particular PAC-S1 I actually had on the bench.
+
+These modules are also notorious for their surface-mount electrolytic capacitors, which is why capacitor removal becomes the next part of this little adventure.
+
+What could possibly go wrong?
 
 ### Related posts
 

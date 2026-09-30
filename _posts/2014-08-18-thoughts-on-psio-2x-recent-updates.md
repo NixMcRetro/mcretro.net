@@ -12,13 +12,15 @@ categories: [sony, youtube]
 
 {% include youtube.html id="7-_8NkEE1qw" %}
 
-After all the work done on the 1.1 prototype, the 2.x prototype updates I was following were now talking about CDDA and XA support.
+With all the incredible work done on the 1.1 prototype, the 2.x prototype was racing along!
 
-That was particularly exciting because audio support had been one of the visible limitations in several of my 1.1 tests.
+The development updates I was following were now talking about CDDA and XA support, which sounded especially promising after the audio problems I'd just seen in some of the 1.1 game tests.
 
-This is a progress update rather than a 2.x hardware test in my hands. My firsthand testing evidence still belongs to the earlier 1.1 prototype, so I do not want to turn development updates into things I personally verified.
+Full audio! Bugs squashed! Progress!
 
-Be sure to visit [PSIO](https://psio.cybdyn-systems.com.au/) for project information.
+Important distinction though: this was me reacting to PSIO development updates, not 2.x hardware I had tested myself. My firsthand testing was still on the 1.1 prototype.
+
+Be sure to visit [PSIO](https://psio.cybdyn-systems.com.au/) for the actual project information and whatever wonderful things they have managed to make it do next!
 
 ### Related PSIO prototype posts
 

@@ -12,9 +12,13 @@ categories: [news]
 
 ![](/assets/images/2016/img_0565.jpg)
 
-In 2016 I stopped minocycline after four weeks because I did not want to continue the oral antibiotic treatment and I was preparing to start prescribed isotretinoin.
+In 2016 I decided to stop minocycline after four weeks.
 
-The important correction is that the timing between these medicines should be managed with the prescriber, not improvised from an old blog post.
+I can't say I'd enjoyed taking an antibiotic to solve a skin issue.
+
+I was also preparing to start prescribed isotretinoin, so the timing between the two medicines mattered.
+
+The important correction is that this timing should be managed with the prescriber, not improvised from an old blog post.
 
 Isotretinoin should **not** be taken concurrently with tetracycline antibiotics such as minocycline because of the risk of intracranial hypertension.
 
@@ -34,9 +38,11 @@ Around eight days after stopping minocycline I noticed my skin becoming spotty a
 
 That is a firsthand observation about what happened to me, not proof that minocycline universally "only works while you are taking the pills".
 
-At this point I was hoping isotretinoin would provide longer-term control.
+It had been incredible having such clear skin for a while.
 
-That was still an expectation, not a result.
+Here's hoping isotretinoin is a long-term solution! :-)
+
+That was my hope in October 2016, not a treatment result I already knew.
 
 ### Related posts
 

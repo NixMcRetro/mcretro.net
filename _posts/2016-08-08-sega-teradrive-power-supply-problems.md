@@ -42,17 +42,27 @@ That gives me:
 
 The important result is that the faulty supply collapses badly under load, especially on the 5 V rail.
 
-That establishes the symptom.
+Bad capacitor?
 
-It does **not** tell me whether the actual culprit is a capacitor, transformer, transistor or something else.
+Transformer?
 
-I originally worried that replacing the supply with something ATX-derived would automatically create a problem because of missing -5 V and -12 V PC rails.
+Transistor?
 
-The TeraDrive itself has an unusual power arrangement and does not simply reproduce every conventional PC supply rail at the ISA slots, so that needs to be considered from the actual TeraDrive wiring rather than from a generic "AT versus ATX" assumption.
+Search me!
+
+At this point that establishes the symptom, not the culprit.
 
 Plan B was paying somebody who actually enjoys mains power supplies to repair it.
 
 Frankly, that still seems sensible.
+
+Actually there was a Plan C as well: somehow adapting a modern power supply.
+
+At the time I was worried that an ATX-derived supply would automatically be unsuitable because of missing -5 V and -12 V rails.
+
+The TeraDrive's power arrangement is stranger than a generic AT-versus-ATX comparison suggests, so any replacement really needs to be worked out from the actual TeraDrive wiring and expansion requirements.
+
+Hopefully my knight in shining armour answers the call.
 
 **Mains-voltage warning:** this is not a low-voltage console repair. Power supplies can contain lethal voltages and can retain charge after being unplugged.
 

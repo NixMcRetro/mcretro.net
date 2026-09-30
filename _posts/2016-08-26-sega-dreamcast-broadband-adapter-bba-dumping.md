@@ -12,7 +12,7 @@ categories: [hacks, sega]
 
 ![crazy_taxi1](/assets/images/2016/img_0546.jpg)
 
-The Dreamcast Broadband Adapter is an incredibly useful piece of Dreamcast hardware.
+The Dreamcast Broadband Adapter is one of the most awesome pieces of technology you can bolt onto a Dreamcast.
 
 Among other things, software such as **httpd-ack** can use the BBA to transfer GD-ROM tracks over the network.
 
@@ -27,13 +27,19 @@ I had four unlabeled pressed Sega discs, or "silvers":
 
 ![crazy_taxi2](/assets/images/2016/img_0547.jpg)
 
-I originally called an unlabeled pressed disc "a very late beta".
+I originally described an unlabeled pressed Sega disc as "a very late beta if you will".
 
-That's too strong.
+That was me getting excited.
 
-An unlabeled pressed disc tells me something unusual about the physical media, but it does not by itself establish the development stage of the software recorded on it.
+An unlabeled pressed disc tells me that the physical media is unusual. It does not tell me by itself whether the software is a beta, review build, final mastering copy or something else.
 
-For ChuChu Rocket!, Space Channel 5 and Crazy Taxi, my dumps matched the retail data represented in Redump, so I did not find unique game content there.
+For ChuChu Rocket!, Space Channel 5 and Crazy Taxi, my dumps matched the retail data represented in Redump.
+
+So apparently I had nothing special.
+
+Mighty boring.
+
+It never hurts to check though!
 
 ![virtua_striker](/assets/images/2016/img_0549.jpg)
 

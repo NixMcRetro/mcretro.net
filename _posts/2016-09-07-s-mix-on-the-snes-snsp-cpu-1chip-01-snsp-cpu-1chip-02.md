@@ -28,7 +28,13 @@ What I actually did was route audio from the UPD6379A DAC at U6 to the AV output
 
 On **this particular board**, the bypass restored audible game audio.
 
-That makes it a useful fault workaround, but I should not have immediately declared it a universal "no audio issue solved!" repair for every 1CHIP SNES / Super Famicom.
+At the time I was ready to declare:
+
+**No audio issue solved! Fixed! Repaired! Sound for everyone! :)**
+
+That enthusiasm got a little ahead of the evidence.
+
+That makes it a useful fault workaround, but I should not have immediately declared it a universal repair for every 1CHIP SNES / Super Famicom.
 
 The S-MIX normally sits in the audio path for a reason, and bypassing circuitry is not electrically identical to repairing the original circuit.
 

@@ -26,15 +26,27 @@ The console was also asking for its language every time it powered on rather tha
 
 This particular Victor RG-JX2(Y) VA9 had clearly been left in a strange state after previous modification work was removed.
 
+Before fixing it, both the Action Replay and GameShark produced:
+
+"Cartridge unsuitable for this system"
+
+Retail NTSC-U, NTSC-J and PAL game discs also produced:
+
+"Game disk unsuitable for this system"
+
+Audio CDs still worked normally.
+
+That combination was one of the clues that the console's region configuration itself had been left in a strange state rather than the optical drive simply being unable to read discs.
+
 Saturn region selection is controlled by a group of motherboard jumpers. Different high / low combinations identify the console's region.
 
 With help from Nopileus on ASSEMblerGames, I restored the Japanese jumper configuration on this board, including the JP6 / JP11 arrangement shown in the photographs.
 
-Once that was restored, the console returned to Japanese behaviour and the Action Replay / GameShark region errors disappeared.
+Once that was restored, the console returned to Japanese behaviour and the cartridge / game-region errors disappeared.
 
 That should be read as the repair record for **this particular VA9 board**, not as an instruction to bridge those same points blindly on every Saturn revision.
 
-One other distinction matters: restoring the region jumpers does not itself make a Saturn boot CD-R backups. If this machine could boot recordable discs, that came from whatever separate modification remained in the console.
+It also booted the CD-Rs I tried, but that is a separate issue. Restoring the region jumpers does not itself give a Saturn CD-R boot capability, so some other modification was still responsible for that behaviour.
 
 ![before](/assets/images/2016/img_0542.jpg)
 

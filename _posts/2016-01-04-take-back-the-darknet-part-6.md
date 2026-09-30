@@ -36,7 +36,15 @@ That big block of text was intended to allow us to log in and edit files through
 
 The historical configuration also used `force user = www-data`. Samba applies file operations as the forced UNIX user after authentication when that option is enabled. That can be useful, but using `force user` incorrectly can create security problems, so preserve this as part of the old setup rather than treating it as a default modern recommendation.
 
-Next, we need to set a password for your user under Samba. It can be different to your Raspberry Pi account or the same for the sake of simplicity. Make sure it matches the "write list" and "valid user" you picked for the above. Enter a new password when prompted. `sudo smbpasswd -a tim`
+Next, set a Samba password for the user named in `write list` and `valid users`.
+
+My original guide said it could simply be the same password as the Raspberry Pi account for convenience.
+
+That's what I wrote in 2016, but password reuse is not something I'd recommend as modern security advice.
+
+Enter the Samba password when prompted:
+
+`sudo smbpasswd -a tim`
 
 Restart the Samba service to make the changes active. `sudo /etc/init.d/samba restart`
 

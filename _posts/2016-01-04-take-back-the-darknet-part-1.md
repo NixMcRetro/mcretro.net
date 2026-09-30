@@ -10,27 +10,38 @@ ai_assistance:
 categories: [guides, raspberry-pi]
 ---
 
-**Historical draft:** This series was originally published as an incomplete working guide.
+**Historical guide:** This 14-part series documents the Raspberry Pi, Raspbian Jessie and Tor setup I actually used in January 2016.
 
-**Archive status:** This guide is preserved as a record of the Raspberry Pi, Raspbian Jessie and Tor setup I used in January 2016. It is not current deployment or security guidance.
+A lot has changed since then. Debian 8 Jessie is obsolete, Tor retired the v2 onion-service system used here in 2021, and Raspberry Pi OS, Apache, Samba, SSH and Tor defaults have all moved on.
 
-Debian 8 Jessie is now obsolete, Tor retired the version 2 onion-service system used by this series in 2021, and several Raspberry Pi OS, Apache, Samba, SSH and Tor defaults have changed since these posts were written.
-
-Several package names, account assumptions and security practices below are consequently obsolete.
-
-If you are building an onion service now, use a currently supported operating system and the current Tor Project documentation rather than copying this guide verbatim.
+So treat this as an archive of what I built, not as current deployment or security guidance. If you're doing this today, use a supported operating system and the current Tor documentation.
 
 **Objective: Host a darknet website on a Raspberry Pi.**
 
-Kickass Darknet Web Server TOC:[Part 1 - Preamble and Requirements](/take-back-the-darknet-part-1/)[Part 2 - Image Raspbian, Basic Settings and Updates](/take-back-the-darknet-part-2/)[Part 3 - Setting a Static IP Address](/take-back-the-darknet-part-3/)[Part 4 - Hardening Your Pi](/take-back-the-darknet-part-4/)[Part 5 - Installing Apache 2.4 HTTP Server](/take-back-the-darknet-part-5/)[Part 6 - Installing Samba Server](/take-back-the-darknet-part-6/)[Part 7 - Hardening Apache and Secure Shell](/take-back-the-darknet-part-7/)[Part 8 - Installing Tor](/take-back-the-darknet-part-8/)[Part 9 - Configuring Apache](/take-back-the-darknet-part-9/)[Part 10 - Configuring Tor](/take-back-the-darknet-part-10/)[Part 11 - Configuring HTTPS (SSL)](/take-back-the-darknet-part-11/)[Part 12 - Hardening Tor](/take-back-the-darknet-part-12/)[Part 13 - Generating a Vanity Onion Address](/take-back-the-darknet-part-13/)[Part 14 - Testing the Waters](/take-back-the-darknet-part-14/)
+### Kickass Darknet Web Server TOC
+
+- [Part 1 - Preamble and Requirements](/take-back-the-darknet-part-1/)
+- [Part 2 - Image Raspbian, Basic Settings and Updates](/take-back-the-darknet-part-2/)
+- [Part 3 - Setting a Static IP Address](/take-back-the-darknet-part-3/)
+- [Part 4 - Hardening Your Pi](/take-back-the-darknet-part-4/)
+- [Part 5 - Installing Apache 2.4 HTTP Server](/take-back-the-darknet-part-5/)
+- [Part 6 - Installing Samba Server](/take-back-the-darknet-part-6/)
+- [Part 7 - Hardening Apache and Secure Shell](/take-back-the-darknet-part-7/)
+- [Part 8 - Installing Tor](/take-back-the-darknet-part-8/)
+- [Part 9 - Configuring Apache](/take-back-the-darknet-part-9/)
+- [Part 10 - Configuring Tor](/take-back-the-darknet-part-10/)
+- [Part 11 - Configuring HTTPS (SSL)](/take-back-the-darknet-part-11/)
+- [Part 12 - Preparing Website Directories](/take-back-the-darknet-part-12/)
+- [Part 13 - Generating a Vanity Onion Address](/take-back-the-darknet-part-13/)
+- [Part 14 - Testing the Waters](/take-back-the-darknet-part-14/)
 
 **Why host an onion service?**
 
 It's as cheap as free is why!
 
-One of the things that appealed to me in 2016 was that an onion address did not require renting a conventional DNS domain from a registrar.
+What appealed to me in 2016 was that an onion address did not require renting another conventional DNS domain from a registrar. Rent money is dead money!
 
-Calling that a "free domain name" was not quite technically correct. An onion address is its own Tor service address rather than a normal DNS domain, but the attraction was the same: I could self-host the site and reach it through Tor without renting another conventional domain name.
+Calling that a "free domain name" was not quite technically right. An onion address is its own Tor service address rather than a normal DNS domain, but the attraction was the same: I could self-host the site and reach it through Tor without renting another conventional domain name.
 
 **Isn't the darknet only for [insert strange and/or illegal things]?**
 

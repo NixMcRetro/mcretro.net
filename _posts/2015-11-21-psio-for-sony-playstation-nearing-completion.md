@@ -16,7 +16,7 @@ Incredible!
 
 I look away for a few days, or maybe weeks... months?... and the PSIO status page is showing **98% complete**.
 
-I'd been speaking with Shadow over email and the project certainly looked like it was moving quickly. What the team had managed to accomplish was impressive, and I was very much looking forward to seeing where it ended up.
+I'd been speaking with Shadow over email and he definitely seemed to be in top gear. What he and Cybdyn had managed was nothing short of amazing, and I was absolutely looking forward to the fruits of their labour.
 
 One can only hope they eventually work on Sega Dreamcast, Sega Saturn and Sega Mega-CD equivalents too. Time will tell, because these things most certainly take time.
 

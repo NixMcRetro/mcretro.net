@@ -16,13 +16,19 @@ Today was the big day: I gave live streaming a test with the shiny new Fallout 4
 
 Unfortunately, the roughly 1 Mbps uplink on this ADSL connection simply isn't enough for much beyond 360p. Maybe 480p if I'm really lucky.
 
-We were expecting NBN availability in this area sometime in early 2016. At the time I was expecting a 25/5 service here, which would at least lift the upload side from about 1 Mbps to about 5 Mbps.
+We were expecting NBN availability in this area sometime in early 2016. What I expected locally was a 25/5 service, which would at least lift the upload side from about 1 Mbps to about 5 Mbps.
 
-I was still disappointed because I'd hoped for something much faster.
+That was better, but I was still bitter because I'd been hoping for something much faster.
 
-NBN services were not universally limited to 25/5. Other FTTN speed tiers, including 50/20 and 100/40, were also sold where the service and line could support them. What I was complaining about here was the connection I expected to receive locally rather than a universal limit for the entire network.
+My original rant made it sound as though 25/5 was the network's universal ceiling. It wasn't. FTTN services were also sold at 50/20 and 100/40 where the line and service could support them.
 
-For streaming, five megabits up sounded much better than one, but it was nowhere near the future I'd been hoping for.
+So the factual correction is simple: **25/5 was the service I expected here, not the maximum NBN speed everywhere.**
+
+My 2015 reaction was considerably less measured:
+
+"What a disappointment. Good job Australia. 25/5 for the next 10, maybe 50 years? Girt by sea and run by those in the ID-10t club."
+
+Five megabits up still sounded much better than one for live streaming, but it was nowhere near the future I'd been hoping for.
 
 ### Fallout 4 live streams
 

@@ -16,7 +16,13 @@ categories: [guides, raspberry-pi]
 
 As we are using Raspbian Jessie, both sudo and Nano are installed by default. Nano is a simple text editor, think Notepad for the command line. Easier to navigate than Vim. Sudo allows us to be the superuser which pretty much lets us do whatever we want. Very handy to have!
 
-Under Raspbian Jessie (and therefore Debian as well) setting a static IP has been moved from /etc/network/interfaces to /etc/dhcpcd.conf. Let's get editing. `sudo nano /etc/dhcpcd.conf`
+Under the Raspbian Jessie image I was using, static network configuration had moved into `/etc/dhcpcd.conf`.
+
+That's a statement about this Raspbian setup, not a universal rule for every Debian Jessie installation.
+
+Let's get editing:
+
+`sudo nano /etc/dhcpcd.conf`
 
 Add the configuration below to the end, adjusting it for your own network.
 
@@ -26,7 +32,11 @@ That shortcut is only safe if the address is valid for your subnet, is not alrea
 
 My "keep the first three numbers the same" advice also assumed a typical `/24` home network. That is common, but it is not a universal networking rule.
 
-In addition to that, we'll also need to add your router address. Not sure what your router IP address is? [This](https://www.computerworld.com/article/1496151/network-security-find-the-ip-address-of-your-home-router.html) is a solid enough guide for finding your router IP. If your IP address is 192.168.0.xxx then your router is likely at 192.168.0.1 or 192.168.0.100, that's why we choose a static IP address that is in the 200s.
+In addition to the static address, we'll also need the actual router or default-gateway address.
+
+Not sure what it is? [This guide](https://www.computerworld.com/article/1496151/network-security-find-the-ip-address-of-your-home-router.html) explains how to find it.
+
+On a typical home network it might be something like `192.168.0.1`, but don't guess it from the static address you picked. Check the real gateway on your network and use that.
 
 ```text
 # Static IP configuration

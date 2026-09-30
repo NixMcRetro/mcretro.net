@@ -7,7 +7,23 @@ categories: [news]
 
 ![jekyll-logo](/assets/images/2016/img_0561.jpg)
 
-[GitHub](https://github.com), [Markdown](https://daringfireball.net/projects/markdown/) and a splash of [Jekyll](https://jekyllrb.com/docs/quickstart/). Let's see how this goes... I need to work out how to get everything imported again... Well I guess I worked out that! 566 posts imported successfully! Also thank you to [jmcglone.com](https://jmcglone.com/guides/github-pages/) for the guide, it was most helpful in setting up.
+[GitHub](https://github.com), [Markdown](https://daringfireball.net/projects/markdown/) and a splash of [Jekyll](https://jekyllrb.com/docs/quickstart/).
 
-**Edit:**
-30th October 2016 - And we're back on WordPress, what a ride! 😮‍💨
+Let's see how this goes...
+
+First challenge: import everything again.
+
+Apparently I worked that part out because **566 posts imported successfully**.
+
+Thanks to [jmcglone.com](https://jmcglone.com/guides/github-pages/) for the guide too. It was extremely useful getting everything set up.
+
+This particular website incarnation did not last very long.
+
+By 30 October 2016 I was back on WordPress.
+
+What a ride! 😮‍💨
+
+### Related posts
+
+- [Jekyll WordPress Import from XML - Deleting the Unwanted](/jekyll-wordpress-import-from-xml-deleting-the-unwanted/)
+- [Markdown and Apache](/markdown-and-apache/)

@@ -2,41 +2,71 @@
 title: "Take Back the Darknet (Part 2)"
 author: "Nix McRetro"
 date: 2016-01-04T22:18:34.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [guides, raspberry-pi]
 ---
 
 **Part 2 - Image Raspbian, Basic Settings and Updates**
 
-First off we need to get an operating system onto the MicroSD card. We will be using the official image from [raspberrypi.org](https://www.raspberrypi.com/software/operating-systems/). At the time of writing the most recent version was Raspbian Jessie Lite (November 2015). To restore this onto a 4GB (or larger) MicroSD we will need one of the following depending on your computer that has this guide open:
+**Archive note:** This page documents the January 2016 Raspbian Jessie setup. Read the compatibility and security warning in [Part 1](/take-back-the-darknet-part-1/) before using any of these commands on a current system.
+
+The Jessie image used here had the old default `pi` account. Current Raspberry Pi OS no longer creates that account automatically, so the login steps below belong specifically to this historical image.
+
+First off we need to get an operating system onto the MicroSD card. We will be using the official image from [raspberrypi.org](https://www.raspberrypi.com/software/operating-systems/). At the time of writing the most recent version was Raspbian Jessie Lite (November 2015).
+
+To restore this onto a 4GB or larger MicroSD card, we used one of the following depending on the computer running the guide:
+
 - [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) for Windows
 - [ApplePi Baker 1.81](https://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/) for OS X
-- dd for Linux
+- `dd` for Linux
 
-Once imaging has completed, insert the MicroSD card into the powered off Raspberry Pi then connect it to power and ethernet.
+Once imaging has completed, insert the MicroSD card into the powered-off Raspberry Pi, then connect it to power and ethernet.
 
-I recommend using at least a 10 watt (5 volt, 2 amp) power adapter. Using a USB port on your computer probably won't have enough juice. USB2 comes in a 2.5 watt (5 volt, 0.5 amp) and USB3 hovers around 4.5 watts (5 volt, 0.9 amp). Might cut it, but a dedicated power supply is always going to be a better move, with plenty of amperage left over.
+I recommend using at least a 10 watt (5 volt, 2 amp) power adapter. Using a USB port on your computer probably won't have enough juice. USB 2.0 commonly provides 2.5 watts (5 volt, 0.5 amp) and a standard USB 3.0 port provides 4.5 watts (5 volt, 0.9 amp). It might cut it, but a dedicated power supply is the better move, with plenty of amperage left over.
 
-Use something like [Angry IP Scanner](https://angryip.org/download/#mac) to help you locate your Raspberry Pi on your local network if it's headless, otherwise check the output via the HDMI attached screen. We are looking for the IP address. Note it down, we'll need it to SSH/remotely connect in. Your IP address should be in the format xxx.xxx.xxx.xxx or with either 1, 2 or 3 digits per set of xxx. No, not that type of [xXx](https://en.wikipedia.org/wiki/XXX_(film_series))!
+Use something like [Angry IP Scanner](https://angryip.org/download/#mac) to help locate the Raspberry Pi on your local network if it is headless. Otherwise, check the output on an attached HDMI screen.
 
-Pickup an SSH client (OS X and Linux already have this built-in):
+We are looking for the IP address. Note it down because we'll need it to connect remotely over SSH.
+
+No, not that type of [xXx](https://en.wikipedia.org/wiki/XXX_(film_series))!
+
+Pick up an SSH client. OS X and Linux already have one built in:
+
 - [PuTTY](https://www.putty.org/) for Windows
-- [Terminal](https://web.archive.org/web/20201025142105/https://www.macworld.co.uk/how-to/how-use-terminal-on-mac-3608274/) which is built-in to OS X
-- [Terminal](https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/) which is also built-in to Linux
+- [Terminal](https://web.archive.org/web/20201025142105/https://www.macworld.co.uk/how-to/how-use-terminal-on-mac-3608274/) on OS X
+- [Terminal](https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/) on Linux
 
-Login to the Raspberry Pi remotely with the IP address (xxx.xxx.xxx.xxx) you noted down earlier. `ssh pi@xxx.xxx.xxx.xxx` You are now logged in to your Raspberry Pi remotely - congratulations!
+Log in to the Raspberry Pi remotely with the IP address you noted earlier:
 
-Next up we need to run basic setup options so at the command line type `sudo raspi-config`
+`ssh pi@xxx.xxx.xxx.xxx`
 
-From this menu, we want to do the following.
-- Expand Filesystem,  this will fill the MicroSD card.
-- Overclock, set to None there's no need for this.
-- Advanced, Hostname, change to WebServer so we know what it is.
-- Advanced, Memory Split, set to 16MB (lowest) note that 0 doesn't work.
+You are now logged in to the Raspberry Pi remotely. Congratulations!
 
-After completing these it will ask to reboot, reboot and you will be logged out of your terminal / PuTTY session. Once rebooted (~30 seconds), Log back in with SSH to your server. `ssh pi@xxx.xxx.xxx.xxx`
+Next up we need to run the basic setup options:
 
-This is an important command to remember for software updates. If you know nothing else, remember this line. `sudo apt-get update && sudo apt-get upgrade`
+`sudo raspi-config`
 
-Once all updates have installed, reboot for good measure. `sudo reboot`
+For this Jessie-era setup, I used:
+
+- Expand Filesystem, to fill the MicroSD card
+- Overclock, set to None because there was no need for it here
+- Advanced, Hostname, changed to WebServer
+- Advanced, Memory Split, set to 16 MB
+
+After completing these it will ask to reboot. Once it has rebooted, log back in over SSH:
+
+`ssh pi@xxx.xxx.xxx.xxx`
+
+The update command used throughout this Jessie-era setup was:
+
+`sudo apt-get update && sudo apt-get upgrade`
+
+Once the updates have installed, reboot for good measure:
+
+`sudo reboot`
 
 Advance onward to [part 3](/take-back-the-darknet-part-3/) or head back to the table of contents on [page 1](/take-back-the-darknet-part-1/).

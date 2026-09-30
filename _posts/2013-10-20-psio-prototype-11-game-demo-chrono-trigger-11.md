@@ -2,15 +2,37 @@
 title: "PSIO Prototype 1.1 Game Demo: Chrono Trigger 1.1"
 author: "Nix McRetro"
 date: 2013-10-20T17:57:19.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="MYzZAY3syUI" %}
 
-Version 1.1 of Chrono Trigger (something was revised in it) and as a result, it locks up on the FMV video at the beginning. This video compares 1.0 and 1.1 to see if the lockup was consistent - it was!
+Chrono Trigger 1.1 behaves differently from the 1.0 revision on this early PSIO setup.
 
-Please remember that this a prototype device and does likely not reflect what the final hardware will be like. This includes compatibility with games as well.
+In this test, version 1.1 consistently locks up during the opening FMV.
 
-You can hit up [ps-io.com](https://psio.cybdyn-systems.com.au/) if you have any questions since I am but a mere tester, I do not understand the technology behind this wonderful invention.
+I repeated the test against Chrono Trigger 1.0 and reproduced the difference.
 
-PSIO Hardware Version: 1.1 PSIO Software Version: 1.1A All tested on an SCPH-5502 with a missing CD deck.
+I did not establish what changed between the two game revisions or exactly why that change affected PSIO 1.1.
+
+So the evidence here is deliberately narrow:
+
+**Chrono Trigger 1.0 gets past this point on my setup, while 1.1 consistently locks during the opening FMV.**
+
+**Prototype test conditions**
+
+- PSIO hardware: 1.1
+- PSIO software: 1.1A
+- PlayStation: SCPH-5502
+- CD deck: removed
+
+These are prototype-specific compatibility observations rather than results for later PSIO hardware or software.
+
+### Related posts
+
+- [PSIO Prototype 1.1 Game Demo: Chrono Trigger 1.0](/psio-prototype-11-game-demo-chrono-trigger-10/)

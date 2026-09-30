@@ -2,15 +2,30 @@
 title: "PSIO Prototype 1.1 Game Demo: Crash Team Racing"
 author: "Nix McRetro"
 date: 2013-11-02T17:39:18.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="WbxWJjvxvdw" %}
 
-Crash Team Racing, I've never played this one before but it feels like Mario Kart without those cubes that spin around and give you power-ups. Overall it seems to work well though!
+Crash Team Racing.
 
-Please remember that this a prototype device and does likely not reflect what the final hardware will be like. This includes compatibility with games as well.
+I'd never played this one before, but my immediate reaction was:
 
-You can hit up [ps-io.com](https://psio.cybdyn-systems.com.au/) if you have any questions since I am but a mere tester, I do not understand the technology behind this wonderful invention.
+Mario Kart without those spinning cubes that give you power-ups.
 
-PSIO Hardware Version: 1.1 PSIO Software Version: 1.1, Revision 1.2 All tested on a PAL SCPH-5502
+Everything I tested here behaved well on this PSIO prototype build.
+
+That is deliberately limited to what I actually played rather than an exhaustive compatibility claim.
+
+**Prototype test conditions**
+
+- PSIO hardware: 1.1
+- PSIO software: 1.1, revision 1.2
+- PlayStation: PAL SCPH-5502
+
+These results belong to this development build rather than later PSIO revisions.

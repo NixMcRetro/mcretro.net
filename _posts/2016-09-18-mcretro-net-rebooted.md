@@ -1,6 +1,11 @@
 ---
 title: "McRetro.net Rebooted"
 author: "Nix McRetro"
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 date: 2016-09-18T20:59:46.000+10:00
 categories: [news]
 ---

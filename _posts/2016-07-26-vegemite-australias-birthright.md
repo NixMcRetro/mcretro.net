@@ -39,3 +39,8 @@ I wonder how it tastes?
 It's hard to imagine Vegemite tasting like anything other than Vegemite.
 
 Stay tuned!
+
+### Sources
+
+- [Bega Group - 2017 Annual Report](https://begagroup.com.au/wp-content/uploads/2017/08/2017-Bega-Annual-Report.pdf)
+- [NIH Office of Dietary Supplements - Vitamin B12 Fact Sheet for Health Professionals](https://ods.od.nih.gov/factsheets/Vitaminb12-HealthProfessional/)

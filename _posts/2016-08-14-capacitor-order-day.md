@@ -98,3 +98,7 @@ C73	47uf	16v	GOT
 - [Super Nintendo - Replacing C59 on the SNSP-CPU-01](/super-nintendo-replacing-c59-on-the-snsp-cpu-01/)
 - [Sega TeraDrive Power Supply Problems](/sega-teradrive-power-supply-problems/)
 - [Sega TeraDrive - Retrofitting a Mean Well PT-65B PSU](/sega-teradrive-retrofitting-a-mean-well-pt-65b-psu/)
+
+### Sources
+
+- [ConsoleMods - SNES Model Differences](https://consolemods.org/wiki/SNES:SNES_Model_Differences)

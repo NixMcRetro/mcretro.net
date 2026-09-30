@@ -44,9 +44,15 @@ NTSC machines generally have four pins:
 
 PAL machines generally have an additional 9 V / 12 V output.
 
-I originally described that extra PAL rail as being for "SCART RGB switching or something".
+I originally described that extra PAL rail as being for "SCART RGB switching or something along those lines".
 
-More precisely, it is used for SCART automatic input / aspect switching. It is not the RGB video signal itself.
+Don't quote me on that though.
+
+Composite or bust!
+
+I was in roughly the right neighbourhood. The extra rail is used for SCART automatic input / aspect switching. It is not the RGB video signal itself.
+
+Composite or bust! ;)
 
 Like-for-like physical format and pinout matter when swapping supplies.
 

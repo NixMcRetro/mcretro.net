@@ -14,17 +14,21 @@ categories: [news]
 
 Johnny Five is alive!
 
-According to the standard adult BMI classification I had just entered the **healthy weight** category.
+I think I've won this particular 2016 game.
 
-I originally described that as "between 18 and 25". More precisely, for most adults the conventional category is **18.5 to 24.9**.
+According to the standard adult BMI classification I had just entered the **healthy weight** category after coming down from an "obese" BMI of thirty-five-point-something.
 
-BMI is only a screening measure. It does not directly distinguish body fat from muscle and it is not an all-purpose measurement of health.
+More precisely, the conventional healthy-weight category for most adults is 18.5 to 24.9.
 
-So I am preserving it here as the metric I happened to be tracking in 2016 rather than treating it as the final scoreboard for the human body.
+BMI is only a screening measure. It does not directly distinguish body fat from muscle and it is certainly not the final scoreboard for the human body.
+
+In my head at the time though, this meant I had finally reached a nice place to live for the rest of my salmon, chicken, milk, high-grain and low-carb-bread days.
 
 ![start_aug2](/assets/images/2016/img_0508.jpg)
 
-My plan at the time was to start slowing the loss by gradually increasing my own energy intake until my weight stabilised.
+My master plan was to start putting the brakes on by gradually increasing my own energy intake until my weight stabilised.
+
+That was the experiment I was running on myself, not a universal formula for anybody else.
 
 Johnny Five NEED INPUT!
 

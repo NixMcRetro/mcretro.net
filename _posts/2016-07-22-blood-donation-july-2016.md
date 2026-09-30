@@ -12,47 +12,53 @@ categories: [news]
 
 ![Red Cross Blood Service](/assets/images/2016/img_0498.jpg)
 
-Since late 2014 I'd noticed the blood-donation van turning up every few months, so I figured why not donate?
+Since late 2014 I'd noticed the blood-donation van turning up every few months, so I figured why not give some blood?
 
-At the very least there were free snacks!
+Giving blood can even be kind of fun and, at the very least, FREE CANDY!
+
+It is not entirely without its problems though.
 
 ![Before...](/assets/images/2016/img_0497.jpg)
 
 ![... and after](/assets/images/2016/img_0496.jpg)
 
-The blood-volume numbers I quoted here came from an estimate rather than a direct clinical measurement, so the percentages should be treated as rough figures rather than exact measurements of my circulating blood volume.
+The blood-volume figures I calculated at the time were estimates rather than direct measurements, so the percentages I quoted should be treated as rough numbers rather than precise measurements of my circulating blood volume.
 
 This particular donation did not go quite as smoothly.
 
-About half an hour after getting home I stood up to go to the bathroom. Partway through I felt a sudden rush, my vision began fading towards black and my ears started ringing.
+About half an hour after getting home I was checking emails and chatting away on the old ASSEMblerGames forums when I realised I'd been drinking so much water that my bladder was about to explode.
 
-I made it back to the bed and lay down. I never lost consciousness.
+Naturally, off to the bathroom.
 
-I noted the time, 3:46 pm, and spent the next 20 minutes resting and listening to music.
+Partway through I felt a sudden rush leave my head. I looked in the mirror, noticed my pupils looked rather dilated, then my vision started fading towards black and my ears began ringing.
 
-Lifeblood describes dizziness, light-headedness, blurred or fading vision and fainting as recognised donation reactions. A drop in blood pressure can be involved, and some blood-pressure-lowering medicines can make a reaction more likely.
+Instinctively I headed back to the bedroom and flopped onto the bed.
 
-What I should **not** have concluded from that was that I ought to reduce or skip my propranolol dose myself before donating.
+Consciousness was never lost.
 
-Medication doses should not be changed for a blood donation without checking with the prescriber and the donor service.
+I noted the time, 3:46 pm, and spent the next 20 minutes lying there listening to some tunes.
 
-The practical lessons are much less exciting:
+What an experience!
 
-- eat properly beforehand
-- stay well hydrated
-- tell the donor staff about medications and any previous reaction
-- take time recovering afterwards
-- follow their instructions if dizziness or bleeding occurs
+At the time I wrote that one of my lessons should be to reduce or skip my propranolol dose before donating.
+
+Nope.
+
+That is not something I should have decided for myself. Prescription medication should not be adjusted for a blood donation without checking with the prescriber and donor service.
+
+The much more sensible lesson is to follow Lifeblood's preparation and aftercare instructions, tell them about medications and previous reactions, and let the staff know if anything starts going strange.
 
 ![Mmmm Cookie!](/assets/images/2016/img_0495.jpg)
 
-I also managed to reopen the needle site before getting into the car.
+I also managed to reopen the needle site and bleed on the driveway before getting into the car.
 
-At least the timing meant I did not bleed all over the car or my fancy jeans.
+Which was actually excellent timing because at least I wasn't bleeding all over the car and my fancy jeans.
 
-Donating still helps people who need it.
+Donating still helps people who need it, so I'm happy to keep doing it when eligible.
 
-Plus, snacks. :)
+Plus you get all those junk foods!
+
+FREE CANDY! :)
 
 ### Sources
 

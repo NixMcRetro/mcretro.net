@@ -1,7 +1,12 @@
 ---
-title: "Programming w/ Visual Studio – Week 2"
+title: "Programming with Visual Studio - Week 2"
 author: "Nix McRetro"
 date: 2016-08-10T19:56:02.000+10:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [programming]
 ---
 
@@ -30,4 +35,25 @@ Ohhh those Romans! Honestly with so many Ifs and ElseIfs it feels like I'm typin
         Console.ReadLine()
 ```
 
-Pretty neat if you ask me. And I've learnt that 0.5 rounds to 0 using Integer. I guess 0.00 rounds to -1 then, right?
+Pretty neat if you ask me.
+
+And I've learnt why 0.5 can become 0 when converting to an Integer in Visual Basic.
+
+Visual Basic's integer conversion uses round-to-nearest-even when the fractional part is exactly .5:
+
+- 0.5 becomes 0
+- 1.5 becomes 2
+- 2.5 also becomes 2
+
+So my conclusion that 0.00 must therefore round to -1 was, surprisingly, not how numbers work.
+
+Apparently the computer knew more mathematics than I did.
+
+### Visual Studio programming
+
+- [Programming with Visual Studio - Week 1](/programming-with-visual-studio-week-1/)
+- [Programming with Visual Studio - Abandoned!](/programming-with-visual-studio-abandoned/)
+
+### Sources
+
+- [Microsoft Learn - Visual Basic Type Conversion Functions](https://learn.microsoft.com/en-au/dotnet/visual-basic/language-reference/functions/type-conversion-functions)

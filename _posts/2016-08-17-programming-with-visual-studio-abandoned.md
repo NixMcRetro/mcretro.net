@@ -1,5 +1,5 @@
 ---
-title: "Programming w/ Visual Studio Abandoned!"
+title: "Programming with Visual Studio - Abandoned!"
 author: "Nix McRetro"
 date: 2016-08-17T14:18:20.000+10:00
 categories: [programming, study]
@@ -20,3 +20,8 @@ And I've done exactly that, the fire part that is, with my newly found programmi
 Unfortunate, but I'd rather not risk losing a course I've already invested so heavily in getting into. Too bad I can't defer for a second year, I really do enjoy this time off to organise my life, not a day goes by where I am not busy. How did I have time for this while working full-time all those years?
 
 Oh that's right, I didn't. ;)
+
+### Visual Studio programming
+
+- [Programming with Visual Studio - Week 1](/programming-with-visual-studio-week-1/)
+- [Programming with Visual Studio - Week 2](/programming-with-visual-studio-week-2/)

@@ -21,3 +21,11 @@ You know you want to!
 This trailer is preserved as part of the channel's history.
 
 Current and archived McRetro channel links can be found on the [Channels](/channels/) page.
+
+### Channel trailers
+
+- [Subscribe Today! (Version 2.0)](/subscribe-today-version-20/)
+- [Subscribe Today! (Version 3.0)](/subscribe-today-version-30/)
+- [McRetro Gaming Teaser Trailer](/mcretro-gaming-teaser-trailer/)
+- [Subscribe Today - Retro Gaming is Fun!](/subscribe-today-retro-gaming-is-fun/)
+- [Subscribe Today - McRetro Wants You!](/subscribe-today-mcretro-wants-you/)

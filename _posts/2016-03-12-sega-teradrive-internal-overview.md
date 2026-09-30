@@ -9,4 +9,10 @@ categories: [ibm-pc, sega, youtube]
 
 This is a refresher on the Sega TeraDrive, I figure while I have them out for the XT-IDE card I might as well share a new video of them in their natural habitat. Hope you enjoy the video, be sure to like and subscribe if you enjoyed. We'll have a few more TeraDrive videos uploaded in the following days ahead - so stay tuned!
 
-Also be sure to pop by the [photo gallery](/goodies/) for more photos of the Sega TeraDrive.
+Also be sure to pop by the [photo gallery](/photos/) for more photos of the Sega TeraDrive.
+
+### Related posts
+
+- [Sega TeraDrive Model 2 External Overview](/sega-teradrive-model-2-external-overview/)
+- [Configuring an XTIDE / XT-CF-Lite for the Sega TeraDrive](/configuring-an-xtide-xt-cf-lite-for-the-sega-teradrive/)
+- [Sega TeraDrive Model 3 Power Supply Failure](/sega-teradrive-model-3-power-supply-failure/)

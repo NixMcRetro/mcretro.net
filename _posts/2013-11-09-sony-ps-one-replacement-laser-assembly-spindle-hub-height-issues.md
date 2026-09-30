@@ -30,7 +30,7 @@ So this should remain a firsthand warning about my batch of aftermarket assembli
 
 ### Related posts
 
-- [Sony PS one Laser Replacement with Extra Issues](/sony-psone-laser-replacement-with-extra-issues/)
+- [Sony PS one Laser Replacement with Extra Issues](/sony-ps-one-laser-replacement-with-extra-issues/)
 
 ### Sources
 

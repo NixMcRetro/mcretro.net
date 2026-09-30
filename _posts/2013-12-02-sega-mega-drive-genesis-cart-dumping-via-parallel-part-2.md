@@ -2,9 +2,25 @@
 title: "Sega Mega Drive / Genesis Cart Dumping via Parallel (Part 2)"
 author: "Nix McRetro"
 date: 2013-12-02T21:21:40.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [hacks, programming, sega]
 ---
 
 {% include youtube.html id="-0Q-WPvYtwU" %}
 
-Dumping carts via the second controller port of a Mega-CD - incredible right? Success is had on this attempt and Fatal Fury PAL is dumped... but what's this? Watch on to see!
+Dumping carts through controller port 2 on the Mega Drive / Genesis, with the Mega-CD running the transfer software. Incredible, right?
+
+Success! On this attempt I dumped the PAL Fatal Fury 2 cartridge... but what's this? Watch on to see!
+
+### Related posts
+
+- [Sega Mega Drive / Genesis Cart Dumping via Parallel (Part 1)](/sega-mega-drive-genesis-cart-dumping-via-parallel-part-1/)
+- [Sega Mega Drive / Genesis Cart Dumping via Parallel (Part 3)](/sega-mega-drive-genesis-cart-dumping-via-parallel-part-3/)
+
+### Sources
+
+- [RetroDev - Sega CD Transfer Suite](https://www.retrodev.com/transfer.html)

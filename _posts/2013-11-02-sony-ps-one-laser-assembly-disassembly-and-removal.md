@@ -29,7 +29,7 @@ I come back to replacement-drive compatibility, spindle height and questionable 
 ### Related posts
 
 - [Sony PS one Replacement Laser Assembly Spindle Hub Height Issues](/sony-ps-one-replacement-laser-assembly-spindle-hub-height-issues/)
-- [Sony PS one Laser Replacement with Extra Issues](/sony-psone-laser-replacement-with-extra-issues/)
+- [Sony PS one Laser Replacement with Extra Issues](/sony-ps-one-laser-replacement-with-extra-issues/)
 
 ### Sources
 

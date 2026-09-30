@@ -16,9 +16,15 @@ Wipeout! All of them. So many Wipeouts.
 
 I didn't realise there were that many alternative names. If I did, I wouldn't have done them all at once since they nearly burst out the side of the YouTube video!
 
-Sadly, I did not have much luck with these games on the PSIO 1.1 prototype configuration.
+Not much luck with Wipeout sadly.
 
-At the time I was following the work on revision 2.x hardware and expected its expanded hardware, firmware and software support to improve compatibility. That was development optimism rather than a result from this 1.1 test.
+I was following the 2.x development closely and the project updates were talking about additional work across the hardware, firmware and software sides of PSIO. I was hopeful that would translate into much better compatibility.
+
+That was development optimism though. This video only documents what happened on the 1.1 prototype sitting in front of me.
+
+Please remember that this is prototype hardware and does not necessarily reflect what the final product will be like, including game compatibility.
+
+And once again, if you want to know how the wonderful thing actually works, ask [PSIO](https://psio.cybdyn-systems.com.au/). I am still just the tester. :)
 
 **Prototype test conditions**
 

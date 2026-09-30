@@ -16,9 +16,13 @@ The game that led to SoulCalibur. Not too bad! It still reminds me a little of V
 
 Soul Edge is the first game in what became the Soulcalibur series. The PlayStation version retained the Soul Edge name in Japan and was released as Soul Blade outside Japan.
 
-In the portion I tested here, the game itself appeared to run well on PSIO 1.1, but the background music was missing.
+From what I could see here, the game itself ran well on PSIO 1.1, but the background music was missing.
 
-I originally assumed the upcoming 2.x hardware would fix the audio problem. That was optimism rather than something this test established, so the useful result here is simply that gameplay appeared functional while the background music was absent on this 1.1 configuration.
+I was sure the upcoming 2.x hardware would fix it. That was optimism speaking rather than something this test proved, so the useful result from this video is simply: gameplay appeared functional while the music was absent.
+
+Please remember that this is prototype hardware and does not necessarily reflect what the final product will be like, including game compatibility.
+
+If you want the technical details, hit up [PSIO](https://psio.cybdyn-systems.com.au/). I am but a mere tester. :)
 
 **Prototype test conditions**
 

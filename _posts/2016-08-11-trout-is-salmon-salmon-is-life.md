@@ -2,6 +2,11 @@
 title: "Trout is Salmon, Salmon is Life"
 author: "Nix McRetro"
 date: 2016-08-11T20:42:39.000+10:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [news]
 ---
 
@@ -19,6 +24,23 @@ Trout is just like salmon and can often be used in place of a rifle. While only 
 
 ![MercuryFoodChain.svg](/assets/images/2016/img_0524.jpg)
 
-In a very real way though, trout is more mercury ridden than the rifle replacement salmon. That's thanks to salmon being a terrible predatory creature. It gets eaten by trout, that's how terrible it is. Eaten by a fish it could have shot. In fact, salmon has a median of 0.015ppm of mercury while trout has over 1.5x that amount at 0.025ppm.
+There is one real fact hiding underneath it.
 
-Eat your salmon everyone, it's the best fish out there and rich in nice healthy fats as well as being a close second to chicken in taste!
+The mercury figures I quoted came from FDA monitoring data.
+
+In that dataset:
+
+- fresh/frozen salmon had a **median** mercury concentration of 0.015 ppm
+- freshwater trout had a **median** of 0.025 ppm
+
+Those are medians across sampled fish, not universal mercury concentrations for every salmon and trout in existence.
+
+The corresponding means were around 0.022 ppm for fresh/frozen salmon and 0.071 ppm for freshwater trout.
+
+I still vote salmon.
+
+Mostly because it tastes better and appears to be more effective as a fictional rifle substitute.
+
+### Sources
+
+- [US Food and Drug Administration - Mercury Levels in Commercial Fish and Shellfish](https://www.fda.gov/food/environmental-contaminants-food/mercury-levels-commercial-fish-and-shellfish-1990-2012)

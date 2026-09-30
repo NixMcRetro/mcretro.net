@@ -20,7 +20,9 @@ Overkill?
 
 Very much so.
 
-The GQ-4X had simply become so familiar that I couldn't live without one.
+The GQ-4X had become so familiar that I couldn't live without one anymore.
+
+Dammit!
 
 I also finally gave my Willem-to-TSOP adapter a proper try.
 
@@ -28,7 +30,9 @@ Some flash chips sold or marked as AMD AM29F032B identified in my setup as ST M2
 
 Fortunately, both AM29F032B and M29F032D TSOP40 devices are supported by the GQ-4X v4 / GQ-4x4 with the appropriate adapter, and both worked for the SNES flash-cart project I was building.
 
-This should let me finally continue the SNES flash-chip programming project after being distracted by approximately seventeen TeraDrives.
+This should let me finally continue part two of the SNES flash-chip programming project.
+
+I nearly forgot about it among all these TeraDrives!
 
 My original GQ-4X had also developed communication problems, hanging or failing during initialisation.
 

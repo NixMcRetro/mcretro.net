@@ -12,15 +12,19 @@ categories: [guides, sony]
 
 First up, a little information on the PlayStation modchips and programmers I was experimenting with around 2016.
 
-A lot of my original notes were based on forum posts and trial and error, so let's separate the things I actually observed from the things that can now be documented more confidently.
+A lot of this originally came from educated guesses, forum posts, things I read on the *internet* of all places, and my own trial and error.
+
+Probably shouldn't be taken as gospel! ;)
+
+What we can do now is separate the things I actually observed from the bits that can be documented more confidently.
 
 **Programmers**
 
-My GQ-4X gave me trouble programming some of these PIC devices, particularly around configuration data. That describes my setup rather than proving that every GQ-4X behaves the same way.
+My GQ-4X gave me trouble programming some of these PIC devices, particularly around configuration data. That's what happened in my setup, not proof that every GQ-4X behaves the same way.
 
-The MiniPro TL866CS became my preferred programmer for these chips.
+The MiniPro TL866CS became my weapon of choice for these chips.
 
-My K150 was also unreliable in my setup and repeatedly lost communication.
+My K150 kept "exploding", by which I mean repeatedly losing communication while I tried to program things. Why? Who knows!
 
 I originally wrote that PICkit 2 supported the PIC12F508 but not the PIC12F629. That was wrong. The official PICkit 2 v2.61 device list includes both the PIC12F508 and PIC12F629. The older PIC12C508 is a different matter and does not appear in that support list.
 
@@ -39,6 +43,8 @@ OneChip is specifically aimed at the PAL PS one and includes the additional boot
 ![TL866CS](/assets/images/2016/img_0450.jpg)
 
 I also eventually discovered why some Mayumi-programmed PICs would not read back normally: the supplied code had code protection enabled. That was why the behaviour differed from some of the MultiMode3 chips I had programmed.
+
+It's amazing what you learn after going back to what you were already supposed to know.
 
 Thanks again to Master991 and Bad_Ad84 for helping me work out what was happening.
 

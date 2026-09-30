@@ -2,6 +2,11 @@
 title: "Sega TeraDrive Model 3 - Faulty Power Supply (Part 2)"
 author: "Nix McRetro"
 date: 2016-03-27T09:41:21.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ibm-pc, repairs, sega]
 ---
 
@@ -9,7 +14,9 @@ categories: [ibm-pc, repairs, sega]
 
 Part two reveals an interesting bit of information.
 
-I think we've narrowed down the symptom, but we still need to find where the actual fault originates.
+I think we've found the symptom.
+
+Now we have to find where the disease is originating from.
 
 Is it a capacitor?
 
@@ -17,7 +24,7 @@ Is it a FET?
 
 Is it an *insert component here*?
 
-We don't know yet.
+We still don't know.
 
 We'll find out one day soon! ;)
 

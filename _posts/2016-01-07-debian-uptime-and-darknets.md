@@ -30,9 +30,11 @@ They overlap a little, but they are not exactly the same thing. `lsb_release` fo
 
 In other news, we hit **41 days uptime** before I decided to rebuild the server using Raspbian Jessie Lite.
 
-The smaller Lite image suited this Raspberry Pi web-server setup much better than the larger desktop image I had been using.
+The smaller Lite image suited this little Raspberry Pi web-server setup much better than the larger desktop image I had been using.
 
-Most of the Take Back the Darknet guide was now online too, although it still needed plenty of refining.
+Every day is a good day to rebuild!
+
+Most of the Take Back the Darknet guide was online by then too, although it still needed plenty of refining.
 
 ### Related posts
 

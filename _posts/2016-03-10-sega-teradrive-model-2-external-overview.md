@@ -24,9 +24,13 @@ Where do those similarities begin and end?
 
 Watch on to find out, and stay tuned for the internal overview.
 
-I had also just discovered featured images when this post was written.
+I've also just worked out how to use the featured-image section for videos.
 
-That particular website experiment did not last very long. :P
+Radical!
+
+Aaaaaand now I'm not using featured anything anymore.
+
+Oh well! :P
 
 ### Related posts
 

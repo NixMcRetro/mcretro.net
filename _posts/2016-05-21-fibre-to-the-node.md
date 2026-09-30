@@ -16,13 +16,17 @@ Some friends recently had their NBN Fibre to the Node connection installed, and 
 
 This website was even being hosted there for a while, which might explain some of the downtime. ;)
 
-Technically, FTTN runs fibre to a nearby street node and then uses the existing copper telephone network for the final section to the premises.
+Technically, FTTN runs fibre to a nearby street node and uses the existing copper telephone network for the final section to the premises.
 
-The photograph above shows the condition of one particular section of old copper I encountered. It does not mean every FTTN connection uses copper in that condition.
+The photograph above shows one particular section of old copper I encountered. It does not mean every FTTN connection uses copper in that condition.
 
-Copper-line length and condition can affect the maximum attainable speed, which was one of the reasons I was frustrated with the FTTN approach at the time.
+Distance from the node and the condition of the copper can affect VDSL2 performance, which was part of why I was so frustrated with the approach.
 
-My own preference in 2016 was for fibre to run all the way to the premises instead.
+And I was not remotely neutral about it in 2016:
+
+"I hope we get a government in that can fix this mess up. The copper should have been done away with completely."
+
+That was my political and technical preference at the time, not a claim that every FTTN service was unusable.
 
 Dropouts every...
 

@@ -37,10 +37,12 @@ Now fire up an emulator to test that the patched ROM actually works.
 I used Snes9x 1.53 on the Mac. It also reported the information I needed for finding a suitable donor cartridge:
 
 - LoROM
-- patched data size of about 24 Mbit
+- 32 Mbits
 - NTSC
-- SRAM: 16 kbit
-- battery-backed save support
+- SRAM: 16 kbits
+- Battery
+
+That 32 Mbit value is what Snes9x reported from the ROM metadata. The patched file itself is still about 3.00 MB, or 24 Mbit of actual data.
 
 The original mask-ROM capacity is not the main concern once we're replacing that ROM with a larger flash device, but the donor PCB still matters. The board needs the appropriate LoROM mapping and save-memory hardware for the patched game, including suitable SRAM and battery support where required.
 

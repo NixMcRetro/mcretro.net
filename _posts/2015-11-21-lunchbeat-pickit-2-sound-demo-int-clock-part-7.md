@@ -16,11 +16,15 @@ In this video we finally give the Lunchbeat a chance to play some phat tunes.
 
 Something isn't quite right, though.
 
-If you guessed that the ATmega328P is running from its internal clock source instead of the external crystal, you'd be correct! :D
+If you guessed that it isn't using the external crystal and is instead running from the internal clock source, you'd be correct! :D
 
-One technical correction to my original wording: there is not a tiny crystal hiding inside the microcontroller. The ATmega328P has a calibrated internal RC oscillator.
+I originally called it "the crystal inside the microchip".
 
-The external crystal comes into play in the next sound demo.
+Close in spirit, wrong in silicon.
+
+The ATmega328P actually has a calibrated internal RC oscillator. With the factory CKDIV8 setting, its default 8 MHz oscillator gives a 1 MHz system clock, which also helps explain why everything sounds a little... relaxed.
+
+The external 16 MHz crystal gets its turn in the next sound demo.
 
 ### Lunchbeat / PICkit 2 series
 

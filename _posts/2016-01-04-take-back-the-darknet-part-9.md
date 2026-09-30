@@ -26,7 +26,11 @@ First up, here's a cool add-on to limit speed and amount of connections of the p
 
 Next we want to remove both default settings for Apache as they will just get in the way otherwise. We are removing the http and https (ssl) settings. `sudo rm /etc/apache2/sites-available/000-default.conf sudo rm /etc/apache2/sites-available/default-ssl.conf`
 
-The sites-enabled and site-available are linked together by symlinks or some sort of voodoo so editing one results in both changing. We want to create a single configuration with both http and https settings to keep things tidy. I've used tim as the name, but you should use something easier to remember.
+The `sites-enabled` and `sites-available` directories are tied together by symlinks, or some sort of Debian voodoo if you prefer.
+
+More precisely, `a2ensite` creates links in `sites-enabled` that point back to the files in `sites-available`, which is why editing through the enabled link reaches the same configuration file.
+
+We want to create a single configuration with both http and https settings to keep things tidy. I've used tim as the name, but you should use something easier to remember.
 
 `sudo nano /etc/apache2/sites-available/tim.conf` If you have a clearnet website (http) copy the following into your configuration file. Anywhere you see "tim" change it to whatever is more appropriate for your configuration (such as the ServerAdmin setting). You'll note that http uses port 80 at the very top of the VirtualHost setting.
 
@@ -72,9 +76,25 @@ If you are wanting a password protected file server and have entered the setting
 
 And inside that we will create a password file, change "USERNAME" to what you want the username to be. It can be anything you want. `htpasswd -c /etc/htpasswd/.htpasswd USERNAME`
 
-It will then prompt you for a password, make a password and you are away. You might just use guest, guest but it's entirely up to you. I guess I'll slap this in here as well if you are looking to create a highly backward compatible website you'll probably want to disable UTF-8 and enable ISO-8859-1 for font formatting. Extremely optional if you aren't wanting to have a good looking website on say, Netscape 3. But not so much for modern websites! Completely optional! `sudo nano /etc/php5/apache2/php.ini`
+It will then prompt you for a password, make a password and you are away. You might just use guest, guest but it's entirely up to you.
 
-Change `default_charset = “UTF-8“` to `default_charset = "ISO-8859-1"`
+I also experimented with changing PHP's default character set from UTF-8 to ISO-8859-1 because I was deliberately targeting ancient browsers such as Netscape 3.
+
+That was a backwards-compatibility experiment, not good general web advice.
+
+For modern content, stick with UTF-8 unless you have a very specific legacy reason not to.
+
+Historical command:
+
+`sudo nano /etc/php5/apache2/php.ini`
+
+Change:
+
+`default_charset = "UTF-8"`
+
+to:
+
+`default_charset = "ISO-8859-1"`
 
 Once that is done we are onto the next part.
 
@@ -83,3 +103,5 @@ Advance onward to [part 10](/take-back-the-darknet-part-10/) or head back to the
 ### Sources
 
 - [Apache HTTP Server - Core Features and VirtualHost Configuration](https://httpd.apache.org/docs/2.4/mod/core.html)
+- [Debian - a2ensite manual page](https://manpages.debian.org/testing/apache2/a2ensite.8.en.html)
+- [W3C - Choosing and applying a character encoding](https://www.w3.org/International/questions/qa-choosing-encodings)

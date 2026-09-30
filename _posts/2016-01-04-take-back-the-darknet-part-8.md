@@ -28,7 +28,12 @@ We need to tell Apache to listen for Tor traffic:
 
 Add the following. If you just want darknet websites, comment out Listen 80 by adding a # (commenting out) at the front of the line (or delete it). If you are only hosting one darknet website, comment out the second line. If you are adding even more darknet sites, just keep adding "Listen 127.0.0.1:90xx" until you are satisfied you have enough.
 
-`#Listen for clearnet and onion websites Listen 80 Listen 127.0.0.1:9070 Listen 127.0.0.1:9071`
+~~~text
+# Listen for clearnet and onion websites
+Listen 80
+Listen 127.0.0.1:9070
+Listen 127.0.0.1:9071
+~~~
 
 Save and exit, Ctrl-O (Writeout) and Ctrl-X (Exit).
 

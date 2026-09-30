@@ -14,7 +14,7 @@ categories: [guides, raspberry-pi]
 
 **Archive note:** This page documents the January 2016 Raspbian Jessie setup. Read the compatibility and security warning in [Part 1](/take-back-the-darknet-part-1/) before using any of these commands on a current system.
 
- If you are hosting a clearnet website, you will want to make sure ports 80 (http) and 443 (https) are forwarded on your router. One of the wonderful things about the darknet is that it does not require any port forwarding due to the way Tor works.
+If you are hosting a clearnet website, you will want to make sure ports 80 (http) and 443 (https) are forwarded on your router. One of the wonderful things about the darknet is that it does not require any port forwarding due to the way Tor works.
 
 We'll use Apache 2.4 as the web server for this build.
 

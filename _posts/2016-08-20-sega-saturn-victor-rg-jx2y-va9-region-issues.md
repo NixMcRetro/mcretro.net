@@ -2,25 +2,51 @@
 title: "Sega Saturn Victor RG-JX2(Y) VA9 Region Issues"
 author: "Nix McRetro"
 date: 2016-08-20T07:40:18.000+10:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [repairs, sega]
 ---
 
-![IMG\_0808 2](/assets/images/2016/img_0540.jpg)
+![IMG_0808 2](/assets/images/2016/img_0540.jpg)
 
-So how did I get to this point, error after error "Cartridge unsuitable for this system" or "Game disk unsuitable for this system". Stop whining already Segata! Plus instead of Japanese text, it would prompt which language to enter each time it was powered on (like it didn't know).
+How did I get to this point?
 
-It looks like by removing whatever the original modchip, switchless at 60Hz only perhaps, stopped the console from recognising itself as a "proper" region, hardcoding of NTSC-U, NTSC-J and PAL maybe? No idea to be sure.
+Error after error:
 
-What gave that away was the "Cartridge unsuitable for this system" with an Action Replay and GameShark, which meant I'd have no chance getting a disc working either. So unsurprisingly that's why I was also getting "Game disk unsuitable for this system" on NTSC-U, NTSC-J and PAL retail discs, although audio CDs still worked well as they are not region locked.
+"Cartridge unsuitable for this system"
 
-A gentleman on [Assembler Games](https://web.archive.org/web/20191206184256/https://assemblergames.com/), Nopileus, cracked the code to work out which exact jumpers needed to be bridged. Bridging JP6 and JP11 with some bare kynar wire... so just... wire, and it was back to Japanese and reading GameShark / Action Replays without a hitch, and played CD-R backups with no issue. Perfect!
+"Game disk unsuitable for this system"
+
+Stop whining already, Segata!
+
+The console was also asking for its language every time it powered on rather than behaving like a normal Japanese unit.
+
+This particular Victor RG-JX2(Y) VA9 had clearly been left in a strange state after previous modification work was removed.
+
+Saturn region selection is controlled by a group of motherboard jumpers. Different high / low combinations identify the console's region.
+
+With help from Nopileus on ASSEMblerGames, I restored the Japanese jumper configuration on this board, including the JP6 / JP11 arrangement shown in the photographs.
+
+Once that was restored, the console returned to Japanese behaviour and the Action Replay / GameShark region errors disappeared.
+
+That should be read as the repair record for **this particular VA9 board**, not as an instruction to bridge those same points blindly on every Saturn revision.
+
+One other distinction matters: restoring the region jumpers does not itself make a Saturn boot CD-R backups. If this machine could boot recordable discs, that came from whatever separate modification remained in the console.
 
 ![before](/assets/images/2016/img_0542.jpg)
 
 ![after](/assets/images/2016/img_0541.jpg)
 
-The above jumpers (red annotations and green links) are what makes a Japanese Saturn Japanese.
+TriMesh also documented the wider set of Saturn region combinations, including unused / reserved values.
 
-Another technically minded gentleman, TriMesh, threw in a bit of info about the possible regions, 14 usable with an additional two "do not use" regions for 16 total. Who knows, I could have been using one of those! More information on this can be found at [Assembler Games](https://web.archive.org/web/20191113141823/https://assemblergames.com/threads/sega-saturn-victor-va9-modchip-mess.62691/).
+Big thanks to Nopileus, TriMesh and the other Saturn modding references linked below.
 
-And thanks to the following websites for documenting their findings! [Sega Saturn UK](https://segasaturngroup.proboards.com/thread/1393/game-disk-unsuitable-system) [Wolfsoft](http://wolfsoft.de/wordpress/?p=354) [KNZL](https://knzl.at/saturnmod/) (Creator of the “switchless mod”)
+### Sources
+
+- [ASSEMblerGames - Sega Saturn Victor VA9 modchip mess](https://web.archive.org/web/20191113141823/https://assemblergames.com/threads/sega-saturn-victor-va9-modchip-mess.62691/)
+- [Sega Saturn UK](https://segasaturngroup.proboards.com/thread/1393/game-disk-unsuitable-system)
+- [Wolfsoft](http://wolfsoft.de/wordpress/?p=354)
+- [KNZL - Saturn switchless mod](https://knzl.at/saturnmod/)

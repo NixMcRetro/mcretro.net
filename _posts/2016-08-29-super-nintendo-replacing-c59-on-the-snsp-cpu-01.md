@@ -2,11 +2,42 @@
 title: "Super Nintendo - Replacing C59 on the SNSP-CPU-01"
 author: "Nix McRetro"
 date: 2016-08-29T11:19:22.000+10:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [nintendo, repairs, youtube]
 ---
 
 {% include youtube.html id="UsNQNxMeQok" %}
 
-In this video we replace C59 on the PAL SNES mainboard SNSP-CPU-01. The only noticeable difference between the SNSP-CPU-01 and SNSP-CPU-02 is that the SNSP-CPU-02 has a bipolar / non-polar cap at C59. So we replace that lone capacitor in this video as all the others were replaced recently.
+In this video we replace C59 on a PAL SNSP-CPU-01 mainboard.
 
-We also use the Hakko tweezers - incredible how well they worked! The solder pads must be fresh it appears, not good for leaked SMD capacitors... which is mostly what I deal with unfortunately. Enjoy the video as always! The whole repair took around 15 minutes, just enough time for my salmon to cook! :-)
+The important detail is that C59 is not completely consistent across these revisions.
+
+The -01 revision and some -02 boards were fitted with a polarised capacitor at C59, while most -02 boards use a bipolar / non-polar capacitor there.
+
+Nintendo therefore appears to have corrected this position during the revision history, but you should inspect the component actually fitted to the board rather than assuming every CPU-02 is identical.
+
+I originally said this was the only noticeable difference between CPU-01 and CPU-02.
+
+That's too broad. The boards are extremely similar, but CPU-02 also has small layout changes such as the additional C67 mounting option.
+
+In this machine all the other capacitors had already been replaced recently, leaving C59 as the lone job for the day.
+
+We also get to use the Hakko tweezers.
+
+Incredible how well they worked!
+
+The entire repair took around 15 minutes.
+
+Just enough time for my salmon to cook. :-)
+
+### Related posts
+
+- [Capacitor Order Day](/capacitor-order-day/)
+
+### Sources
+
+- [ConsoleMods - SNES Model Differences](https://consolemods.org/wiki/SNES:SNES_Model_Differences)

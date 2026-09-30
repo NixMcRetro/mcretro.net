@@ -2,35 +2,73 @@
 title: "Sega TeraDrive Power Supply Problems"
 author: "Nix McRetro"
 date: 2016-08-08T19:07:41.000+10:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ibm-pc, repairs, sega]
 ---
 
-![IMG\_0645](/assets/images/2016/img_0516.jpg)
+![IMG_0645](/assets/images/2016/img_0516.jpg)
 
-One of the reasons I have two of everything was originally for solving this exact type of problem, unfortunately it only helps to a module level, not component. So I have two Sega TeraDrives, one a model 2 with dual floppy drives and a model 3 with a 30MB WDL-330P hard drive with its hilarious edge connector and one floppy drive. They also have XTIDE cards in them with at least 2GB of storage.
+One of the reasons I originally ended up with two TeraDrives was for exactly this kind of troubleshooting.
 
-![IMG\_0648](/assets/images/2016/img_0518.jpg)
+I have a Model 2 with dual floppy drives and a Model 3 with its original 30 MB WDL-330P hard drive and one floppy drive. Both also have XTIDE cards installed.
 
-Now here's the problem, one produces a buzzing, clicking hum like noise through the internal speaker when powered on and does not complete POST at all. After putting it into a minimal configuration with no change, I started swapping core parts - starting with the PSU. Sure enough, it roared back to life.
+![IMG_0648](/assets/images/2016/img_0518.jpg)
 
-![IMG\_0649](/assets/images/2016/img_0519.jpg)
+One machine produced a buzzing / clicking hum through the internal speaker and would not complete POST.
 
-What that means is that I've got a non-functional power supply with a serial ending in 0629 and a reference power supply with a serial ending in 1135. There's no physical anomalies (blown caps) that I can see with the naked eye but have a look at the photos down below to see if you can spot anything peculiar
+After stripping it back to a minimal configuration and then swapping major modules, the fault followed the power supply.
 
-**1135 - Working** 12V rail (yellow cable) - no load 11.46V 5V rail (red cables) - no load 5.00V 12V rail (yellow cable) - powered on 12.16V 5V rail (red cables) - no load 5.17V
+![IMG_0649](/assets/images/2016/img_0519.jpg)
 
-**0629 - Non-functional** 12V rail (yellow cable) - no load 11.14V 5V rail (red cables) - no load 4.93V 12V rail (yellow cable) - powered on 10.73V 5V rail (red cables) - no load 3.10V
+That gives me:
 
-The 5V and 12V rail are dipping way too much when under load. Bad capacitor? Transformer? Transistor? Search me! I've called on the folk at Assembler Games to try to help out. Fingers crossed someone will be able to help me. Although "Plan B" as they call it in the movies is already in action - paying for someone to repair the power supply. Less desirable but the same end result. I'm not terribly fond of working on mains power devices.
+**1135 - working reference PSU**
 
-![IMG\_0646](/assets/images/2016/img_0517.jpg)
+- 12 V rail, no load: 11.46 V
+- 5 V rail, no load: 5.00 V
+- 12 V rail, powered on: 12.16 V
+- 5 V rail, powered on: 5.17 V
 
-Actually there's a "Plan C" as well involving a PicoPSU - somehow. ATX vs AT design PSUs could be a problem with -12V and -5V rails not existing on ATX PSUs like the PicoPSU. At least I've raised my hand for help. Hopefully my knight in shining armor will answer the call.
+**0629 - faulty PSU**
 
-![IMG\_0650](/assets/images/2016/img_0520.jpg)
+- 12 V rail, no load: 11.14 V
+- 5 V rail, no load: 4.93 V
+- 12 V rail, powered on: 10.73 V
+- 5 V rail, powered on: 3.10 V
 
-![IMG\_0651](/assets/images/2016/img_0521.jpg)
+The important result is that the faulty supply collapses badly under load, especially on the 5 V rail.
 
-![IMG\_0652](/assets/images/2016/img_0522.jpg)
+That establishes the symptom.
 
-If you want to follow along, subscribe to the blog or follow [this thread](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/) at Assembler Games.
+It does **not** tell me whether the actual culprit is a capacitor, transformer, transistor or something else.
+
+I originally worried that replacing the supply with something ATX-derived would automatically create a problem because of missing -5 V and -12 V PC rails.
+
+The TeraDrive itself has an unusual power arrangement and does not simply reproduce every conventional PC supply rail at the ISA slots, so that needs to be considered from the actual TeraDrive wiring rather than from a generic "AT versus ATX" assumption.
+
+Plan B was paying somebody who actually enjoys mains power supplies to repair it.
+
+Frankly, that still seems sensible.
+
+**Mains-voltage warning:** this is not a low-voltage console repair. Power supplies can contain lethal voltages and can retain charge after being unplugged.
+
+![IMG_0646](/assets/images/2016/img_0517.jpg)
+
+![IMG_0650](/assets/images/2016/img_0520.jpg)
+
+![IMG_0651](/assets/images/2016/img_0521.jpg)
+
+![IMG_0652](/assets/images/2016/img_0522.jpg)
+
+If you want to follow the original discussion, see the archived [ASSEMblerGames thread](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/).
+
+### Related posts
+
+- [Sega TeraDrive Model 3 Power Supply Failure](/sega-teradrive-model-3-power-supply-failure/)
+- [Sega TeraDrive Model 3 - Faulty Power Supply (Part 1)](/sega-teradrive-model-3-faulty-power-supply-part-1/)
+- [Sega TeraDrive Model 3 - Faulty Power Supply (Part 2)](/sega-teradrive-model-3-faulty-power-supply-part-2/)
+- [Sega TeraDrive - Retrofitting a Mean Well PT-65B PSU](/sega-teradrive-retrofitting-a-mean-well-pt-65b-psu/)

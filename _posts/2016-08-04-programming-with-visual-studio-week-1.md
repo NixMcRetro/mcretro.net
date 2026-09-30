@@ -1,5 +1,5 @@
 ---
-title: "Programming w/ Visual Studio - Week 1"
+title: "Programming with Visual Studio - Week 1"
 author: "Nix McRetro"
 date: 2016-08-04T19:13:23.000+10:00
 categories: [news, programming]
@@ -59,7 +59,7 @@ Module Module1
         num2 = Console.ReadLine
         'Calculate the total2 variable before writing out to console. 
         total2 = (num2 ^ 2)
-        'Write the solution out to the console and thank the user by variable firstName.
+        'Write the solution out to console and thank the user by variable firstName.
         Console.WriteLine(total2 & " numbers administered, thanks " & firstName & ", numbers are really just like vitamins for me.")
         'Spacer to help split the questions up.
         Console.WriteLine()
@@ -83,7 +83,12 @@ Module Module1
     End Sub
 
 End Module
-
 ```
 
 You might notice the name of it is the Glenmatic 2000, a throwback to the days of Glen. Haha! :)
+
+### Visual Studio programming
+
+- [Programming with Visual Studio - Week 2](/programming-with-visual-studio-week-2/)
+- [Programming with Visual Studio - Abandoned!](/programming-with-visual-studio-abandoned/)
+

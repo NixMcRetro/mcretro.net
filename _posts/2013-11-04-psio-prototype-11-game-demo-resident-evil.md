@@ -2,15 +2,29 @@
 title: "PSIO Prototype 1.1 Game Demo: Resident Evil"
 author: "Nix McRetro"
 date: 2013-11-04T18:15:48.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="Mesw2XeHn30" %}
 
-Resident Evil, famous for its B grade voiceovers, sadly is not yet functional on the PSIO. Keep an eye out for version 2.0 of PSIO. I have a good feeling about what is to come! :)
+Resident Evil, famous for its B-grade voice acting, does not get far on this PSIO prototype build.
 
-Please remember that this a prototype device and does likely not reflect what the final hardware will be like. This includes compatibility with games as well.
+The useful result is simply that this particular test was unsuccessful.
 
-You can hit up [ps-io.com](https://psio.cybdyn-systems.com.au/) if you have any questions since I am but a mere tester, I do not understand the technology behind this wonderful invention.
+I did not preserve enough information here to identify the exact compatibility failure, so I am not going to invent one now.
 
-PSIO Hardware Version: 1.1 PSIO Software Version: 1.1A All tested on an SCPH-5502 with a missing CD deck.
+**Prototype test conditions**
+
+- PSIO hardware: 1.1
+- PSIO software: 1.1A
+- PlayStation: SCPH-5502
+- CD deck: removed
+
+PSIO 2.0 was already under development, so this should remain a snapshot of prototype 1.1 rather than a verdict on the later product.
+
+I had a good feeling about what was to come! :)

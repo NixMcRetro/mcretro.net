@@ -2,15 +2,41 @@
 title: "ZeroNet, BitTorrent and Another Darknet"
 author: "Nix McRetro"
 date: 2016-03-04T13:05:33.000+11:00
+last_modified_at: 2026-09-30
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-09-30
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [news, raspberry-pi]
 ---
 
 ![Namecoin Logo](/assets/images/2016/img_0460.jpg)
 
-Just a few days ago I managed to get WordPress to play nice with my darknet (Tor) website, meaning [McRetro.net](https://retrojunkie.net) is now mirrored 100% to the [mcretro35qepy5cy.onion](/) address. Magnificent! That got me thinking though, what other darknets could I get my website onto? Well as the image above might hint at - .bit addresses courtesy of [Namecoin](https://www.namecoin.org/).
+Just a few days ago I managed to get WordPress playing nicely with the Tor onion mirror of this website.
 
-It has taken over a whole day to just to download the blockchain, which is only a fraction the size of the [Bitcoin](https://bitcoin.org/en/) blockchain, but it is nearing completion. I've converted a few of my [Dogecoins](https://dogecoin.com/), several thousand actually, into Namecoin and Namecoin allows for the purchase of a .bit domain name through the Namecoin wallet. Genius!
+That got me wondering what other decentralised networks I could experiment with.
 
-How did I come across this? [ZeroNet](https://zeronet.io) is how. ZeroNet looks quite interesting and I'm sure it will be a little bit of a challenge to get running but should be amazing once it is! Essentially it is "P2P websites using Bitcoin cryptography and the BitTorrent network". Amazing! Plus you can also slap Tor into the mix to make it a little more anonymous or should I say pseudoanonymous.
+First up: **Namecoin** and `.bit` names.
 
-Of course I'll have to work out how to slap all of this onto a Raspberry Pi 2, along with my current setup. At any rate it is certainly a challenge and I look forward to winning the prize.
+I had been downloading the Namecoin blockchain and converted some Dogecoin into Namecoin so I could experiment with registering a `.bit` name.
+
+Then I stumbled onto **ZeroNet**.
+
+ZeroNet describes itself as decentralised websites using Bitcoin-style cryptography and the BitTorrent network. It can also resolve Namecoin `.bit` addresses and use Tor for peer connections.
+
+In the original post I called that "more anonymous or pseudoanonymous". Better wording is that Tor can help hide the network address used for ZeroNet traffic, but that does not automatically make every action or identity anonymous.
+
+Naturally, the next challenge was trying to cram all of this onto a Raspberry Pi 2 alongside everything else already running there.
+
+Apparently one obscure web stack was not enough.
+
+### Related posts
+
+- [The Darknet (Day 36)](/the-darknet-day-36/)
+- [Take Back the Darknet (Part 1)](/take-back-the-darknet-part-1/)
+- [Generating Vanity Onion Addresses with Shallot](/generating-vanity-onion-addresses-with-shallot/)
+
+### Sources
+
+- [ZeroNet](https://zeronet.io/)
+- [Namecoin](https://www.namecoin.org/)

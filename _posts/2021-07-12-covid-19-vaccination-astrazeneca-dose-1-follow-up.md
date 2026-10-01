@@ -3,13 +3,18 @@ title: "COVID-19 Vaccination - AstraZeneca Dose 1 - Follow Up"
 author: "Nix McRetro"
 date: 2021-07-12T20:56:59.000+10:00
 categories: [news]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2021/img_0730.jpg)
 
-It looks like the delta variant is spreading around Sydney now. We’ve entered a pseudo-lockdown and I can see why. If the government closes all businesses, no one has any income. Federal-level support has dried up but we shouldn't worry as they are working on something, soon. I hope they work it out because if they don’t - it will spread into every state and territory as people flee NSW.
+It looked like Delta was spreading around Sydney and we had entered another lockdown. I was worried about how people and businesses would manage financially, and about the outbreak spreading beyond NSW.
 
-Here is what happened to me after my first jab of AstraZeneca (alpha). I was curious to see how high my temperature would go without paracetamol - I was not disappointed, clocking in a serious fever of 40.9°C. Interestingly there was no headache until the day after, probably because my brain cooked overnight and forgot what pain was. However, I would recommend it, and will certainly be doing it again in 11 weeks!
+Here is what happened to me after my first jab of AstraZeneca. I was curious to see how high my temperature would go without paracetamol - I was not disappointed, clocking in a serious fever of 40.9°C. Interestingly there was no headache until the day after, probably because my brain cooked overnight and forgot what pain was. Looking back, I would not present deliberately repeating that experiment as a recommendation or benchmark. This is simply a record of what I did and how I felt after the dose.
 
  
 
@@ -34,4 +39,8 @@ END
 
 ```
 
-**Update 2021-08-02** Our governments are allowing us to halve our gap between AstraZeneca shots from 12 weeks to a mere 6 weeks! Past cool!
+By early August the Delta outbreak had changed the timing too. ATAGI was advising people in outbreak areas to bring their second AstraZeneca dose forward to 4 to 8 weeks after the first rather than waiting the usual 12 weeks. That meant I could bring mine forward to six weeks. Past cool!
+
+### Sources
+
+- [Australian Government - ATAGI advice on COVID-19 vaccines and outbreak settings](https://www.health.gov.au/news/atagi-statement-on-use-of-covid-19-vaccines-in-an-outbreak-setting)

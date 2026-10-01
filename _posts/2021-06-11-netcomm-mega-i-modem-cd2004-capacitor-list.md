@@ -2,18 +2,23 @@
 title: "NetComm Mega-i-Modem CD2004 Capacitor List"
 author: "Nix McRetro"
 date: 2021-06-11T17:06:19.000+10:00
-categories: [repairs, sega, sony]
+categories: [modems, repairs]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2021/img_0727.jpg)
 
-One of the best parts about having retro gear pass through your hands is the ability to perform _**preventative maintenance**_ on hardware. What's the easiest preventative maintenance that can be carried out? Lovely little through-hole capacitors. Here's the list for the NetComm Mega-i-Modem, aka CD2004. There's a few models of this fellow. The one I came across was a very late 2008 (!) model.
+One of the best parts about having retro gear pass through your hands is the chance to document what is actually fitted before doing any maintenance. On this particular late-2008 NetComm Mega-i-Modem CD2004 I recorded the through-hole electrolytics before replacing them. Treat the list below as a record of this unit, not a universal bill of materials: verify the components actually fitted to your board, including polarity, capacitance, voltage rating, ESR, ripple-current requirements and physical size.
 
 The last number on the list is the manufacturer part number. Baby sushi denotes that the capacitor is quite small and not needing to be measured. I think they were roughly 11mm (h) x 4mm (w) from memory.
 
-On the underside of the modem it reads: NetComm CD2004 Mega i 56K Modem F/W: 3CC4 APN: 9317773009682 S/N: 80600697N0436 Power adapter used is a 9VAC 800mA
+The underside reads NetComm CD2004 Mega i 56K Modem, F/W: 3CC4, APN: 9317773009682, S/N: 80600697N0436. The power adapter I used was 9 VAC, 800 mA.
 
-The formatting isn’t too web friendly, copy the raw text out and paste it into a non-rich text editor (Such as Notepad or TextEdit – in plain text mode) and you’ll probably be fine. 😄
+The formatting isn't too web friendly. Copy the raw text out and paste it into a non-rich text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
 
  
 

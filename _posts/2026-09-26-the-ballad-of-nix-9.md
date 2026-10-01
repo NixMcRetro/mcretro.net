@@ -2,10 +2,10 @@
 title: "The Ballad of Nix-9"
 author: "Nix McRetro"
 date: 2026-09-26T09:00:00.000+10:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-10-01
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
+  date: 2026-10-01
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ai-generated]
 ---
@@ -228,7 +228,7 @@ For those who find themselves in similar straits, here are the lessons from this
 | II | Star-Liner Cancelled | Preserve all logs, document everything |
 | III | Order Deflects | Follow the deflection, use it as leverage |
 | IV | Consortium Engaged | Accept what is owed, open new claim |
-| V | Voucher Gambit | Decline, cite consumer choice under Ancient Statutes |
+| V | Voucher Gambit | Decline if unsuitable, state the remedy sought and why |
 | VI | Evidence Demanded | Provide logs, trap is set |
 | VII | War of Words | Correct lies with precision, remain calm |
 | VIII | Mathematical Reckoning | Deploy arithmetic, anchor the request |
@@ -246,9 +246,11 @@ Farewell, fellow traveler.
 
 Australian consumer guarantees can apply to travel services booked directly or through an intermediary. Whether a refund, replacement, reimbursement, or other remedy is available depends on the circumstances - including the cause and length of a disruption, whether a reasonable replacement was offered, and the terms applying to both the primary provider and any intermediary. The ACCC also notes that an intermediary may, in some circumstances, only be required to pass on the remedy offered by the primary travel provider.
 
+One important distinction: this was a negotiated settlement, not a court or tribunal ruling that I was legally entitled to 40% of the flight component. The final 200-credit offer was accepted as a practical resolution of this particular dispute. Another traveller facing superficially similar circumstances could have different rights depending on the cause and duration of the disruption, the replacement service offered, the booking terms, and the roles of the airline and intermediary.
+
 Source: [ACCC - Travel delays and cancellations](https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations)
 
-**Author's Note:** This chronicle is based on true events. The leviathans, while metaphorical, are very real. Nix-9's victory stands as testament to the power of persistence, evidence, and the diligent application of consumer law.
+**Author's Note:** This chronicle is based on true events. The leviathans, while metaphorical, are very real. Nix-9's settlement stands as testament to persistence, evidence, arithmetic, and a carefully argued consumer complaint.
 
 **Campaign Status:** Victory Achieved  
 **Final Tally:** 300 credits settlement secured  

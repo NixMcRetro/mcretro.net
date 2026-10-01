@@ -12,3 +12,6 @@ Here's an attempt at dialling out with the Avtek MegaPlus V.32bis Modem (Model C
 Unfortunately these attempts to dial resulted in a failed negotiation with the line dropping before the modem could finish the handshake. I'm not sure what caused it but I noticed the handshake seems a lot slower than I would expect for a V.32bis modem, aka 14.4kbps.
 
 Next up we'll try to get the modem to dial and maintain a connection. Right now we are not even seeing carrier detect (CD) come up. We're getting closer! :)
+
+Previous: [Avtek MegaPlus V.32bis - Resetting the Linksys PAP2T](/avtek-megaplus-v-32bis-resetting-the-linksys-pap2t/)  
+Next: [Avtek MegaPlus V.32bis - Carrier Detect](/avtek-megaplus-v-32bis-carrier-detect/)

@@ -3,9 +3,14 @@ title: "The GeoCities Rebuild Worklog"
 author: "Nix McRetro"
 date: 2022-02-06T21:40:46.000+11:00
 categories: [guides, linux, programming]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
-**!!! Consider this a work-in-progress until further notice !!!**
+**Historical worklog:** This page preserves my 2021-2022 working notes for the GeoCities rebuild. It contains experiments, dead ends and destructive shell commands, and it is not a current paste-ready deployment guide. Check every path and command before reusing anything.
 
 This is the original, updated and mostly complete worklog for my GeoCities Reboot at [https://mcretro.net/homepages/geocities](/homepages/geocities).
 
@@ -196,9 +201,9 @@ I had no idea that this is how they worked. Setting a directory to:
 
 and a file to:
 
-`644 (-rwxr--r--)`
+`644 (-rw-r--r--)`
 
-is what I was doing earlier without really knowing. Neat! Anyway, **hall** redirects to **Hall** OK in the first image above. I went through and manually tidied up the "Station" folder, so there is no longer a lowercase "station" folder. I've created a symlink on my Mac using:
+is what I was doing earlier without really knowing. My original `-rwxr--r--` example accidentally included an execute bit, so it was not actually a 0644 file mode. Neat! Anyway, **hall** redirects to **Hall** OK in the first image above. I went through and manually tidied up the "Station" folder, so there is no longer a lowercase "station" folder. I've created a symlink on my Mac using:
 
 `ln -s Station station`
 
@@ -438,9 +443,7 @@ RewriteCond "/var/www/html/External/YahooIDs%{REQUEST_URI}" -f \[OR\] RewriteCon
 RewriteCond "/var/www/html/External/Core%{REQUEST_URI}" -f \[OR\] RewriteCond "/var/www/html/External/Core%{REQUEST_URI}" -d RewriteRule ^/?(.\*)$ /var/www/html/External/Core/$1 \[L\]
 ```
 
-It worked! Almost perfectly. I found that we would lose the ability to have "athens" be corrected to "Athens" once passed through the rewrite rule. It turns out [mod_speling](https://stackoverflow.com/questions/1978737/mod-speling-mod-rewrite-to-work-together) and [mod_rewrite](https://www.reddit.com/r/webdev/comments/21m4k1/issue_checkspelling_and_rewriterule_dont_work/) are incompatible.
-
-"mod_speling and mod_rewrite apply their rules during the same phase. If rewrite touches a URL it generally won't pass the url on to mod_speling." 
+It worked! Almost perfectly. In this configuration I lost the ability to have "athens" corrected to "Athens" after the request had been rewritten. I treated that as `mod_speling` and `mod_rewrite` being incompatible, but that was too broad. The two modules can interact differently depending on where and how the rewrite occurs. What mattered here was simpler: my rewrite setup stopped `mod_speling` from performing the case correction I needed.
 
 One document root (my HTML) and two rewrite rules (Neighborhoods and YahooIDs) were so close to working. Every article I read told me it wasn't possible, everyone else gave up or threads went dead. I did learn that Microsoft IIS has this issue often when migrating to a Linux host with Apache. Great.
 
@@ -901,7 +904,7 @@ Here's the command that brought them back to life. The neighborhoods need to be 
 
 **9th April 2022**
 
-**Fixing a little Apache Tor Vulnerability**
+**Fixing a Little Apache mod_status Onion-Service Exposure**
 
 Just when I thought everything was done and dusted, I received this message through the contact form on my website a few months back.
 
@@ -917,7 +920,7 @@ And we are looking forward to your reply which is important to our ongoing resea
 Best Regards, INSC, Tsinghua University
 ```
 
-I thought, that’s interesting. Naturally, I was curious as to what I had misconfigured. So I visited my sitemap domain as a test [http://retrojunkie.net/server-status](https://retrojunkie.net/) and was presented with this:
+I thought, that's interesting. Naturally, I was curious as to what I had misconfigured. The underlying problem was not some mysterious flaw in Tor itself. Apache's `mod_status` was restricted to localhost on the clearnet, but the Tor service also reached Apache locally. That meant an onion-service request could reach `/server-status` and expose information I had assumed was local-only. So I visited my sitemap domain as a test [http://retrojunkie.net/server-status](https://retrojunkie.net/) and was presented with this:
 
 ![](/assets/images/2022/img_0817.jpg)
 
@@ -937,6 +940,14 @@ A quick refresh of the onion site...
 
 And all is well... Well, not found because it isn’t supposed to be showing all the intimate server details and pages being loaded. Thanks for the heads up Institute of Network Science and Cyberspace (INSC) of Tsinghua University, most appreciated!
 
-**Sources:**
-- [https://forum.acms.org.au/t/geocities-rebuild-for-older-browsers/83](https://forum.acms.org.au/t/geocities-rebuild-for-older-browsers/83)
-- [https://archive.fo/eRyuQ](https://archive.fo/eRyuQ)
+### Sources
+
+- [Apache HTTP Server - mod_speling](https://httpd.apache.org/docs/2.4/mod/mod_speling.html)
+- [GeoCities Rebuild for Older Browsers - ACMS Forum](https://forum.acms.org.au/t/geocities-rebuild-for-older-browsers/83)
+- [Archived project reference](https://archive.fo/eRyuQ)
+
+### Related posts
+
+- [The GeoCities Archive Rebuild Blog](/the-geocities-archive-rebuild-blog/)
+- [The GeoCities Archive Rebuild Goes Live](/the-geocities-archive-rebuild-goes-live/)
+- [Rebuilding GeoCities on macOS 12](/rebuilding-geocities-on-macos-12/)

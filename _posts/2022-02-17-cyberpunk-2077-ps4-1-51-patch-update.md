@@ -52,3 +52,6 @@ At least the error is different to what we normally see for in-game crashes. Cha
 ![](/assets/images/2022/img_0912.jpg)
 
 I guess for now all I can do is sit here with my pre-ordered v1.00 discs and wait for the above screen to present itself once more. I sure do miss version 1.31.
+
+Previous: [Cyberpunk 2077 - The 2022 Update](/cyberpunk-2077-the-2022-update/)  
+Next: [Cyberpunk 2077 PS4 1.51 Patch Update... Update](/cyberpunk-2077-ps4-1-51-patch-update-update/)

@@ -7,4 +7,4 @@ categories: [ibm-pc, sega, youtube]
 
 {% include youtube.html id="PtVHTuisVQ0" %}
 
-With everything recapped, we move to scan the disks... with ScanDisk... in realtime! For a change of pace at the end we then speed up the video significantly on the second and third hard drives. In teh next video we have some game demos on the TeraDrive. Then we break and do some non-TeraDrive related videos!
+With everything recapped, we move to scan the disks... with ScanDisk... in real time! For a change of pace at the end we then speed up the video significantly on the second and third hard drives. In the next video we have some game demos on the TeraDrive. Then we break and do some non-TeraDrive related videos!

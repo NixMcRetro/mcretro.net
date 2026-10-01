@@ -10,3 +10,5 @@ categories: [repairs, sony, youtube]
 Today we have a peek inside a marvel from the mid-90s, a Sony PVM monitor. These are great for broadcasting if you happen to be a television studio but they are also great for their RGB capabilities and retrogaming. With most television studios moving to that flat panel junk, it frees up the world supply of CRT PVMs! :P
 
 Anyway, enjoy me rambling, avoiding anode caps, zappy caps, and [POG](https://en.wikipedia.org/wiki/Milk_caps_(game)) caps. Just kidding, no one avoids POG caps! They are great fun! :D
+
+Next: [Sony PVM-9044QM Overview and Minor Repair (Part 2)](/sony-pvm-9044qm-overview-and-minor-repair-part-2/)

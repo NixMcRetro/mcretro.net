@@ -1,11 +1,11 @@
 ---
-title: "Healthy Rate of Weight Loss"
+title: "My Weight Loss Rate - July 2016"
 author: "Nix McRetro"
 date: 2016-07-30T10:18:33.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-01
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
+  date: 2026-10-01
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [news]
 ---

@@ -7,7 +7,9 @@ categories: [news, sega, sony]
 
 ![shop_day1](/assets/images/2016/img_0505.jpg)
 
-We're live and ready to sell, operators are waiting by the phones for your order. Sega Saturn, Sony PlayStation, Nintendo GameCube and even the Sega Mega-CD have chips available for order right now. Shipping starts at $2. After something specific, I might be able to point you in the right direction if I can't help you directly.
+We're live and ready to sell, operators are waiting by the phones for your order. Sega Saturn, Sony PlayStation, Nintendo GameCube and even the Sega Mega-CD have chips available right now. Shipping starts at $2.
+
+If you're after something specific, I might be able to point you in the right direction if I can't help directly.
 
 _Cuts ribbon_
 

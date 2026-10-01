@@ -3,6 +3,11 @@ title: "Avtek Mega Data/Fax Modem - Model CD900"
 author: "Nix McRetro"
 date: 2023-07-28T18:30:23.000+10:00
 categories: [linux, modems, repairs]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="ScKgwIrByFU" %}
@@ -66,7 +71,7 @@ CONNECT 2400
 
 ```
 
-The capacitors were replaced in this modem in May 2023. The parts listed below are manufacturer part numbers. The formatting isn’t too web friendly, copy the raw text out and paste it into a non-rich text editor (Such as Notepad or TextEdit – in plain text mode) and you’ll probably be fine. 😄
+The capacitors were replaced in this modem in May 2023. The list below records this particular CD900 and the replacements I used. Treat it as a board record rather than a universal bill of materials; verify the parts actually fitted, including polarity, capacitance, voltage, ESR, ripple-current requirements and physical size. The parts listed below are manufacturer part numbers. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
 
 ```
 SMD Electrolytic

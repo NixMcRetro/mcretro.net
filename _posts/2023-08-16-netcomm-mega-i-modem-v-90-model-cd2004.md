@@ -3,6 +3,11 @@ title: "NetComm Mega-i-Modem V.90 - Model CD2004"
 author: "Nix McRetro"
 date: 2023-08-16T17:49:56.000+10:00
 categories: [linux, modems, repairs]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="Gm-ekXhaUKY" %}
@@ -15,7 +20,7 @@ Up next we have an internal overview of the modem before it was recapped. There'
 
 ![](/assets/images/2021/img_0727.jpg)
 
-I only have two photos of the modem and the following log is limited because I might have accidentally ran a rouge...
+I only have two photos of the modem and the following log is limited because I might have accidentally run a rogue...
 
 ```
 rm -rf *
@@ -67,7 +72,7 @@ CONNECT 28800
 
 Looks like the majority were replaced with Panasonic FR series caps. There were 11 capacitors in total. I didn't note down the locations of each capacitor, but rest assured you can see the locations in the video above.
 
-The parts listed below are manufacturer part numbers. The formatting isn’t too web friendly, copy the raw text out and paste it into a non-rich text editor (Such as Notepad or TextEdit – in plain text mode) and you’ll probably be fine. 😄
+As with my 2021 capacitor post, this list records this particular CD2004 rather than a universal replacement bill of materials. Verify the board and fitted parts before ordering replacements. The parts listed below are manufacturer part numbers. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
 
 ```
 Value	Voltage		Height	Width	Notes

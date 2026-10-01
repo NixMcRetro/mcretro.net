@@ -3,6 +3,11 @@ title: "Sleep Hygiene and Sleep Health"
 author: "Nix McRetro"
 date: 2023-08-14T11:41:18.000+10:00
 categories: [news]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2023/img_1091.jpg)
@@ -19,7 +24,7 @@ One of the most annoying things I've been encountering intermittently over the p
 
 Anxiety and stress are always there. As far back as 2015, I'd blamed medications such as pregabalin, diazepam, or whatever anti-depressant I was on. Most anti-depressants (SSRI and SNRI) cause sleep bruxism for me and is why I end up ceasing treatment. But what if we were wrong and there was another underlying cause? Could sleep apnea be the root of some of my issues?
 
-Certainly, being unable to breathe is rather stressful in itself. Bolstering stress hormones - **_while you are sleeping_**. I believed it was worth further investigation so I slapped my MacBook Pro on a fold-out table next to my bed and recorded a few days of sleep.
+Sleep apnoea was one possibility I wanted investigated, especially because disrupted breathing and repeated arousals can disturb sleep. But night sweats, poor sleep and noises on a microphone are not enough to diagnose it or establish it as the root cause. I believed it was worth further investigation, so I slapped my MacBook Pro on a fold-out table next to my bed and recorded a few nights of sleep.
 
 ![](/assets/images/2023/img_1083.jpg)
 
@@ -33,15 +38,15 @@ Six hour sample. Recorded with a Blue Yeti Nano microphone.
 
 Another six hour sample. Recorded with a Blue Yeti Nano microphone.
 
-Alright, so we have some data. I'm using Final Cut Pro X to analyse the audio since it's what I have on hand. The audio amplitude is greatly increased from baseline. This helps to see the peaks. What are the peaks? They are me waking up from being unable to breathe properly.
+Alright, so we have some data. I'm using Final Cut Pro X to analyse the audio since it's what I have on hand. I boosted the audio amplitude above baseline so the peaks were easier to see. They sounded like a mixture of snoring, movement, breaths and brief awakenings. An audio waveform by itself cannot tell me whether an event is an apnoea or what caused it, but it was enough to convince me that my sleep was worth investigating properly.
 
-I live in Australia, where we have (mostly) free health care here. What should happen in a situation like this is I report poor sleep to my GP and get a sleep study done through a specialist (c/o a referral). However, it turns out our health care system is sick. Of the places I contacted with my referral, they reported an almost **_one-year wait_** for bulk-billed on a sleep study or a few months less if I wanted to pay the gap.
+The sensible pathway in Australia was the one I had already started: report the problem to my GP and have a sleep study arranged if clinically appropriate. My practical problem was the wait. The bulk-billed services I contacted quoted close to a year, with shorter waits if I paid the gap.
 
 ![](/assets/images/2023/img_1089.jpg)
 
 What the hell is wrong with our system? Those who **_need_** to use bulk-billed services should be prioritised. How is this not the case? I am disgusted that this is even an issue in a modern society.
 
-The one thing we have working to our advantage in Australia is that sleep apnea can **_kind of_** be treated by yourself as the devices do not require a prescription - unlike in the US... Look, my background in biomedical sciences probably helps too. From simply recording my sleeping I can see that my breathing is borked. Let's zoom in and look at these peaks a little closer on a smaller time scale.
+Because CPAP machines could be obtained without the US-style prescription barrier I had been reading about, I was tempted to experiment while waiting. That availability does not turn a CPAP trial into a diagnosis, and my biomedical-science background does not replace a sleep physician or a sleep study. Let's zoom in and look at these peaks a little closer on a smaller time scale.
 
 ![](/assets/images/2023/img_1084.jpg)
 
@@ -57,8 +62,14 @@ Yep, there's nothing good happening there! The time scales are seven and nine mi
 
 ![](/assets/images/2023/img_1093.jpg)
 
-Well what do you know, I can trial a ResMed AirSense 10 AutoSet for the cost of only a few big meals each week. Biggest issues are probably going to be mask type, mask fitting and exhaling against the machine. Thanks to some others going over what's important to look for in a machine (see below) I can see that this device is probably alright. It's not the best, but we're looking for what might be suitable and what might help solve my sleep issues.
+Well what do you know, I could trial a ResMed AirSense 10 AutoSet for the cost of only a few big meals each week. I arranged a short trial while I waited, mainly to see whether I could tolerate the equipment and whether anything useful emerged to discuss with clinicians. I was not treating the machine's output as a substitute for a formal diagnosis. Biggest issues were probably going to be mask type, mask fitting and exhaling against the machine.
 
 {% include youtube.html id="v6_NHkXgSRU" %}
 
 I could honestly research these for years, the end result being analysis paralysis with no device ever materialising. For now, I wait for the trial ResMed AirSense 10 AutoSet CPAP hardware to arrive and hope I picked a suitable mask. Here's to a good night sleep at some point in the future? Time will tell! 😴
+
+Next: [Sleep Hygiene and Sleep Health - The Data](/sleep-hygiene-and-sleep-health-the-data/)
+
+### Sources
+
+- [Healthdirect Australia - Obstructive sleep apnoea](https://www.healthdirect.gov.au/obstructive-sleep-apnoea)

@@ -3,6 +3,11 @@ title: "NetComm Roadster II 56 Ultra SVD - Model AM5690"
 author: "Nix McRetro"
 date: 2023-08-06T16:27:02.000+10:00
 categories: [linux, modems, repairs]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="414Of8sLJlc" %}
@@ -21,7 +26,7 @@ The BT134 REV B1 is flat as a pancake in the NetComm AM5690, while the BT134 REV
 
 ![](/assets/images/2023/img_1066.jpg)
 
-So now we know the BT134 REV B1 board is just a variation on the BT134 REV B board. Neat! That also confirms we are using the right power supply for the job thanks to the Banksia being labelled properly externally. It also gives us a minimum milliamp rating of 450mA to modulate and demodulate properly.
+The BT134 REV B1 clearly shares a lot with the earlier BT134 REV B layout. The labelled Banksia hardware also gave me useful evidence that 7.5 V DC centre-positive and at least 450 mA was plausible for this family. That is good supporting evidence, not proof that every BT134 revision has identical power requirements.
 
 Poking around the board a bit more I was delighted to see capacitors. Those who know me, know that I love preventative maintenance. The board design appears to have been designed in week 36, 1998 - 23 years old. So out they came!
 
@@ -81,7 +86,7 @@ As hinted at above in ATI4, the firmware version is F02_V1.56 and fits neatly in
 
 ![](/assets/images/2023/img_1069.jpg)
 
-Unfortunately for me the firmware upgrader, [am56906.exe](/files), was the same version as what I already had. I reflashed it anyway as the retention for this chip, the AM29F002NB, is **_only_** 20 years... at 125 degrees... Celsius! I'm not sure how it was stored in the past. So if it was kept in a fire pit for the last 20 years, I'd rather be safe than sorry I guess! 🤣
+Unfortunately for me the firmware upgrader, [am56906.exe](/files), was the same version as what I already had. The AM29F002NB datasheet gives a minimum pattern-retention figure of 20 years at 125°C. That is a high-temperature retention specification, not an expiry date saying the flash forgets its contents after 20 ordinary years on a shelf. I reflashed it anyway because the updater was available and I was already in there. If it spent 20 years in a fire pit, we had bigger problems. 🤣
 
 ![](/assets/images/2023/img_1068.jpg)
 

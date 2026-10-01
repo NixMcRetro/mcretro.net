@@ -7,11 +7,11 @@ categories: [news]
 
 ![](/assets/images/2023/img_1062.jpg)
 
-Unemployment is a both blessing and a curse. The blessing? Catch up time to clear my desktop of all the random photos and videos that have been accumulating since... 2016. The curse? Probably the lack of any income.
+Unemployment is both a blessing and a curse. The blessing? Catch up time to clear my desktop of all the random photos and videos that have been accumulating since... 2016. The curse? Probably the lack of any income.
 
 ![](/assets/images/2023/img_1063.jpg)
 
-So focus on what you can change. For me, that's the photo gallery at - I've been making progress at long last! I'm still working on getting the directory structure more... structured.
+So focus on what you can change. For me, that's the photo gallery. I've been making progress at long last! I'm still working on getting the directory structure more... structured.
 
 ![](/assets/images/2023/img_1061.jpg)
 

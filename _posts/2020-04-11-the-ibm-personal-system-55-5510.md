@@ -3,9 +3,16 @@ title: "The IBM Personal System/55 5510"
 author: "Nix McRetro"
 date: 2020-04-11T10:00:55.000+10:00
 categories: [ibm-pc, sega]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
-The IBM PS/55 5510 information below was translated from Japanese [here](https://funkygoods.com/schwarzschild/2010_02/2010_02_21.html). This model has a lot in common with the Sega TeraDrive Model 2 which is why I've added it on here. The follow text is a translation - but it's not the best translation.
+The IBM PS/55 5510 material below is a rough machine translation of a Japanese article from FunkyGoods. I saved it because the 5510 has some interesting overlap with the Sega TeraDrive Model 2. I have not independently verified every technical statement in the translated text, so treat the translation as historical source material rather than as my own hardware specification.
+
+### Rough translation
 
 ![](/assets/images/2020/img_0667.jpg)
 

@@ -3,19 +3,24 @@ title: "70kg Weight Goal Achieved!"
 author: "Nix McRetro"
 date: 2016-10-28T07:54:51.000+11:00
 categories: [news]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![2016-10-28\_70kg\_goal](/assets/images/2016/img_0578.jpg)
 
-Well, that was a ride! Made it down to 70kg which is the middle of my healthy BMI range.
+Well, that was a ride! Made it down to 70kg, which put me around the middle of the BMI "healthy weight" range for my height. BMI was one of the markers I was following here, not the whole picture.
 
 ![2016-10-28\_70kg\_weight](/assets/images/2016/img_0580.jpg)
 
-Next up I'll head toward the first quartile or the beginning of the second quartile which lies around 65kg. That should allow my body fat percentage to be a little healthier.
+Next up I'll head towards 65kg and see what the scale's estimated body-fat percentage does along the way.
 
 ![2016-10-28\_70kg\_fat](/assets/images/2016/img_0577.jpg)
 
-Of course, what goes down must come up, or rather as my fat percentage goes down my lean mass increases. Currently skimming the healthy range, I might as well make a solid attempt at getting it down a little more.
+Of course, what goes down must come up... or at least that was what the scale was reporting. As its estimated body-fat percentage went down, its estimated lean-mass figure moved the other way.
 
 ![2016-10-28\_70kg\_lean](/assets/images/2016/img_0579.jpg)
 

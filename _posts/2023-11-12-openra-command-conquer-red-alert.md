@@ -1,5 +1,5 @@
 ---
-title: "OpenRA - Command & Conquer - Red Alert"
+title: "OpenRA - Command & Conquer: Red Alert"
 author: "Nix McRetro"
 date: 2023-11-12T08:17:41.000+11:00
 categories: [gaming]
@@ -7,7 +7,7 @@ categories: [gaming]
 
 ![](/assets/images/2023/img_1196.jpg)
 
-**Silos needed.** I used to love Command & Conquer as a teenager. My Athlon 500 MHz sure did clock a few hours as did Andrew's PC. While his PC wasn't as fast as mine, it was my gateway to getting my own PC. Then came Red Alert 2 and the Yuri's Revenge expansion. Such great game play.
+**Silos needed.** I used to love Command & Conquer as a teenager. My Athlon 500 MHz sure did clock a few hours as did Andrew's PC. While his PC wasn't as fast as mine, it was my gateway to getting my own PC. Then came Red Alert 2 and the Yuri's Revenge expansion. Such great gameplay.
 
 ![](/assets/images/2023/img_1198.jpg)
 
@@ -19,8 +19,8 @@ Regardless, it's good to see these classics up and running, even if I keep getti
 
 ![](/assets/images/2023/img_1199.jpg)
 
-The ant missions! Wow! Takes me back to clicking on a speaker in-game! Geez that's a long time ago. Thanks to all who have helped develop these over the years. I only came across it in the Ubuntu App Store while installing 18.04 onto one of my HPE MicroServers - a great find!
+The ant missions! Wow! Takes me back to holding Shift and clicking the speaker on the Red Alert title screen to unlock the Counterstrike ant campaign. Geez that's a long time ago. Thanks to all who have helped develop these over the years. I only came across it in the Ubuntu App Store while installing 18.04 onto one of my HPE MicroServers - a great find!
 
-OpenRA can be found [here](https://www.openra.net). The content (Movies and Music) can be found [here](https://archive.org/details/content-openra) and where to put them can be found [here](https://github.com/Walkman100/OpenRA-Install-Guide).
+OpenRA can be found [here](https://www.openra.net). At the time I was using [this Archive.org content set](https://archive.org/details/content-openra) and [this install guide](https://github.com/Walkman100/OpenRA-Install-Guide). OpenRA also has its own content-install mechanism for the original game assets, so treat those two links as the route I was using at the time rather than the only way to set it up.
 
 **Battle control terminated!** 🥰

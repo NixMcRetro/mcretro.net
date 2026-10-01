@@ -7,7 +7,7 @@ categories: [nature, youtube]
 
 {% include youtube.html id="KJDxxvHXkN0" %}
 
-This all started a bit grim finding a flattened cicada being attacked by ants and a dead beetle who probably couldn't get to soil. But there's always a story to be told and her one lies in the video above! 🙃
+This all started a bit grim finding a flattened cicada being attacked by ants and a dead beetle who probably couldn't get to soil. But there's always a story to be told and her story lies in the video above! 🙃
 
   {% include youtube.html id="_gkFnoO045w" %}
 
@@ -31,6 +31,6 @@ This is her in her mostly hardened state.
 
 ![](/assets/images/2023/img_1165.jpg)
 
-Finally, we have the shell itself. Who would have thought [partial (incomplete) metamorphosis](https://en.wikipedia.org/wiki/Hemimetabolism) (also known as hemimetabolism) would be so cool!
+Finally, we have the shell itself. Who would have thought [incomplete metamorphosis](https://australian.museum/learn/animals/insects/metamorphosis-a-remarkable-change/) (hemimetabolism) would be so cool!
 
 It's always a little bittersweet writing this up knowing she is gone. I guess the only comfort I have is the possibility that she passed on her genetics to future cicadas. Catch you at the [rainbow bridge](https://en.wikipedia.org/wiki/Rainbow_Bridge_(pets)) little one!

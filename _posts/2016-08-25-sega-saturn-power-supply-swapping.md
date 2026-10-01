@@ -2,10 +2,10 @@
 title: "Sega Saturn Power Supply Swapping"
 author: "Nix McRetro"
 date: 2016-08-25T19:52:49.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-01
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
+  date: 2026-10-01
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [hacks, repairs, sega]
 ---
@@ -42,7 +42,9 @@ NTSC machines generally have four pins:
 
 `GND, GND, 5 V, 5 V`
 
-PAL machines generally have an additional 9 V / 12 V output.
+PAL machines have an additional 9 V output:
+
+`GND, GND, 5 V, 5 V, 9 V`
 
 I originally described that extra PAL rail as being for "SCART RGB switching or something along those lines".
 
@@ -50,7 +52,7 @@ Don't quote me on that though.
 
 Composite or bust!
 
-I was in roughly the right neighbourhood. The extra rail is used for SCART automatic input / aspect switching. It is not the RGB video signal itself.
+I was in roughly the right neighbourhood. On PAL Saturns, the extra 9 V appears at the AV connector for SCART automatic switching. It is not part of the RGB video signal itself.
 
 Composite or bust! ;)
 
@@ -65,3 +67,4 @@ And because these boards connect directly to mains electricity:
 ### Sources
 
 - [Sega Saturn PSU swap discussion by Zyrobs](https://segasaturngroup.proboards.com/thread/8097/jpn-pal-psu-swap?page=1)
+- [ConsoleMods - Saturn Video Output Notes](https://consolemods.org/wiki/Saturn%3AVideo_Output_Notes)

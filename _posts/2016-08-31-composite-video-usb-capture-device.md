@@ -2,11 +2,18 @@
 title: "Composite Video USB Capture Device"
 author: "Nix McRetro"
 date: 2016-08-31T12:08:54.000+10:00
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [gaming, hacks, sega]
 ---
 
 {% include youtube.html id="oFfXh8Jjfk4" %}
 
-Not the capture device we need, but the capture device we deserve. For $25 it doesn't do a bad job at all and it even works on a Mac? Incredible. Glitching videos where we cross random address lines (and I dare say data lines) resulting in all sorts of on screen madness. Should prevent rolling lines (CRTs) and off colours (LCD TVs + Canon cameras).
+Not the capture device we need, but the capture device we deserve. For $25 it doesn't do a bad job at all, and it even works on a Mac? Incredible.
 
-Available on the McRetro Gaming YouTube Channel, not the Shane McRetro YouTube Channel - try and keep up! ;-)
+For the glitching videos, this gives me a direct composite capture so I no longer have to rely on filming CRTs and LCD TVs with a Canon camera. That should avoid the rolling bars and colour shifts I was getting from filming the displays while still preserving the actual glitches coming out of the console.
+
+Available on the McRetro Gaming YouTube channel, not the Shane McRetro YouTube channel. Try and keep up! ;-)

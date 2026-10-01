@@ -16,7 +16,7 @@ That's it, I'm sick of mobile phones and always being switched on in the digital
 
 {% include youtube.html id="09EarjR-UPU" %}
 
-All I use my phone for is SMS and that's usually just 2FA rubbish. Don't get me wrong, I love getting two almost two days out of my phone but it's time to move backwards.
+All I use my phone for is SMS and that's usually just 2FA rubbish. Don't get me wrong, I love getting almost two days out of my phone, but it's time to move backwards.
 
 Enter the Nokia 301.
 

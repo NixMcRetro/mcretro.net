@@ -51,3 +51,8 @@ Big thanks to [Stian](https://web.archive.org/web/20191029031401/http://nintendo
 ### Related posts
 
 - [Damaged S-MIX on a SNES SNSP-CPU-02 Mainboard](/damaged-s-mix-on-a-snes-snsp-cpu-02-mainboard/)
+
+### Sources
+
+- [Console5 - UPD6379](https://console5.com/wiki/UPD6379)
+- [NintendoAge - S-MIX discussion (archived)](https://web.archive.org/web/20191029031401/http://nintendoage.com/forum/messageview.cfm?catid=8&threadid=156634)

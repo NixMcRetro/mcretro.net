@@ -3,11 +3,16 @@ title: "GeoCities Downtime - WD Blue SA510 1TB WDS100T3B0B Failure"
 author: "Nix McRetro"
 date: 2023-04-09T13:15:37.000+10:00
 categories: [raspberry-pi]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2023/img_1002.jpg)
 
-Back in late-December, and I'm talking right on 31st December 2022, GeoCities crashed hard. All thanks to poorly written firmware by Western Digital. Firmwares 52008100 and 52015100, I'm looking at you!
+Back on 31 December 2022, GeoCities crashed hard when its WD Blue SA510 1 TB SSD, model WDS100T3B0B, became unusable for normal writes. The drive was running firmware 52008100. Western Digital later published critical firmware updates for this SA510 family: 52020100 addressed drives not being recognised, and a later 52046100 release addressed a condition where a drive could enter read-only mode. That makes firmware a very relevant suspect here, but my one failed drive does not prove firmware was the only possible cause.
 
 ![](/assets/images/2023/img_1003.jpg)
 
@@ -19,7 +24,7 @@ After 606 hours and 43 power cycles it was in read-only mode (GeoCities data is 
 
 ![](/assets/images/2023/img_1006.jpg)
 
-The above is my secondary drive (offline backup) for GeoCities. Interestingly it updated without any issues. It had 2 hours of uptime and 26 power cycles, somehow. The firmware was also 52008100 (bad) but updated to 52020100 (good) without any issues.
+The above is my secondary drive, the offline backup for GeoCities. Interestingly it updated without any issues. It had 2 hours of uptime and 26 power cycles, somehow. It was also on 52008100 and successfully updated to 52020100, which was the available fix I had at the time.
 
 ![](/assets/images/2023/img_1004.jpg)
 
@@ -27,8 +32,12 @@ The above is my secondary drive (offline backup) for GeoCities. Interestingly it
 
 ![](/assets/images/2023/img_1005.jpg)
 
-The main GeoCities drive couldn't even update from the bad firmware to the new fixed firmware. Firmware 52008100 (bad) to 52020100 (good) via WD Dashboard in Windows. After a quick warranty check and message to the initial seller, it was sent back for repair or replacement.
+The failed drive could not update from 52008100 to 52020100 through WD Dashboard. It was already stuck in the failure state, so the firmware updater was not a recovery tool for it. After a quick warranty check and message to the initial seller, it was sent back for repair or replacement.
 
 ![](/assets/images/2023/img_1008.jpg)
 
 Not too long later I received a replacement and copied GeoCities back across, completely forgot the mount point and nearly set fire to my Raspberry Pi 4. Mission accomplished! 🤷‍♀️
+
+### Sources
+
+- [Western Digital / SanDisk - WD Blue SA510 SATA SSD critical firmware updates](https://support-en.sandisk.com/app/answers/detailweb/a_id/50208)

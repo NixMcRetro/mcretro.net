@@ -3,6 +3,11 @@ title: "Avtek Flash Modem 288 V.34 - Model CD1500M"
 author: "Nix McRetro"
 date: 2023-07-24T17:02:18.000+10:00
 categories: [linux, modems, repairs]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="ikJBM0HyRdM" %}
@@ -29,7 +34,7 @@ The Rockwell chipset is noteably absent and we have a Motorola chipset. The only
 
 {% include youtube.html id="P3bVila54tk" %}
 
-But I guess this is just a rebadged Motorola made to look like an Avtek. Cost cutting perhaps or an attempt to diversity maybe. This Avtek doesn't feel like an Avtek with it being reported as a Motorola Lifestyle 28.8 External in ROM.
+The firmware reports `Motorola Lifestyle 28.8 External 68356`, which strongly suggests the CD1500M is based on a Motorola modem platform. That does not by itself prove who physically manufactured every part of the finished Avtek unit, so "Motorola-based Avtek" is safer than declaring the whole thing a simple rebadge. Cost cutting perhaps or an attempt to diversify maybe. This Avtek still doesn't feel like an Avtek.
 
 ![](/assets/images/2023/img_1040.jpg)
 
@@ -89,9 +94,9 @@ CONNECT 115200
 
 ```
 
-Whoops looks like I didn't quite have those init strings right and ended up with a DTE (modem to computer) instead of DCE (modem to modem) for that last command. Oh well, at least externally it looks OK, as long as you don't try to pick it up.
+That final `CONNECT 115200` is clearly not a 115.2 kbit/s telephone-line connection from a 28.8 modem. It is a reporting or configuration artefact around the serial-side rate, not evidence of the modem-to-modem line speed. Oh well, at least externally it looks OK, as long as you don't try to pick it up.
 
-Next is a listing of the capacitors replaced with order numbers are Element 14 (Australia). The capacitors were replaced in this modem in September 2022. The formatting isn't too web friendly, copy the raw text out and paste it into a non-rich text editor (Such as Notepad or TextEdit - in plain text mode) and you'll probably be fine. 😄
+Next is a listing of the capacitors replaced, with order numbers from Element 14 Australia. The capacitors were replaced in this modem in September 2022. The list records this particular CD1500M, serial 601000266, so verify the actual board and fitted parts before copying it. The formatting isn't too web friendly; copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
 
 ```
 Value	Voltage  	Width	Height	Notes

@@ -3,6 +3,11 @@ title: "Miss Melody ES688 - ESS AudioDrive 688 Capacitor Replacement"
 author: "Nix McRetro"
 date: 2023-04-02T14:53:48.000+10:00
 categories: [repairs, youtube]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="TU2rRy1BW78" %}
@@ -16,6 +21,8 @@ Those old capacitors were way past their prime and couldn't even be found on the
 ![](/assets/images/2023/img_1000.jpg)
 
 More information on this card can be found [here](https://amoretro.de/2011/06/miss-melody-ess-audiodrive-688-es688.html) and [here](https://vccollection.ru/?page_id=4860). A good place to start looking for the drivers, if needed, is also [here](https://www.vogons.org/viewtopic.php?f=62&t=70102&start=20).
+
+The values below record this particular card. Verify the actual board before ordering replacements, including polarity, capacitance, voltage, ESR, ripple-current requirements and physical size.
 
 ```
 ===================================================================

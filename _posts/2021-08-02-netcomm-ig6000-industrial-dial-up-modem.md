@@ -2,12 +2,17 @@
 title: "NetComm IG6000 Industrial Dial-up Modem"
 author: "Nix McRetro"
 date: 2021-08-02T18:03:55.000+10:00
-categories: [ibm-pc, repairs]
+categories: [modems, repairs]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2021/img_0731.jpg)
 
-I stumbled upon the IG6000 modem by mistake, I was actually looking for a regular old dial-up modem for my test dial-up network. I've since learnt that NetComm has been eaten up by Casa Systems. That's ironic because NetComm gobbled up most local modem manufacturers of the 90s. Avtek, Banskia, all absorbed into NetComm. Interestingly of the dial-up modems I have, most are NetComm branded internally with either Avtek or Banksia branding externally. A peek inside the NetComm IG6000 reveals the inner workings.
+I stumbled upon the IG6000 modem by mistake, I was actually looking for a regular old dial-up modem for my test dial-up network. NetComm itself had been acquired by Casa Systems in 2019. My little modem pile also showed how tangled the Australian modem market had become: several units carried Avtek or Banksia branding outside while using NetComm-branded hardware inside. A peek inside the NetComm IG6000 reveals the inner workings.
 
 ![](/assets/images/2021/img_0732.jpg)
 
@@ -17,7 +22,7 @@ Anyhow, I went through and replaced all the electrolytic caps for maintenance, a
 
 ![](/assets/images/2021/img_0734.jpg)
 
-To make things extra interesting everything appears to be covered in a film, likely a fire retardant. Thankfully, we had _high quality?_ Licon capacitors installed and I didn't mind replacing them. The poor Sharp PQ05SZ51 voltage regulator (above) sure did look toasty.
+To make things extra interesting, everything appears to be covered in a protective film, probably some form of conformal coating. I cannot identify the formulation from the photographs, so calling it a fire retardant would be a guess. Thankfully, we had _high quality?_ Licon capacitors installed and I didn't mind replacing them. The poor Sharp PQ05SZ51 voltage regulator (above) sure did look toasty.
 
 ![](/assets/images/2021/img_0735.jpg)
 
@@ -31,7 +36,9 @@ The other side of the capacitor leg lifted the pad from the board and went... mi
 
 ![](/assets/images/2021/img_0738.jpg)
 
-This unit was powered by a Conexant RP56D/SP R6764-61 ACF2 Modem IC coupled with a Motorola MC68302PV33C RISC CPU. Going off their datecodes, they were manufactured mid-2005 and late 2000 (if I'm reading that right) respectively. Below are the capacitors that I was replacing, save it as plain text and it should format correctly. I still need to fix my formatting to scroll on either code or pre tags.
+This unit was powered by a Conexant RP56D/SP R6764-61 ACF2 modem IC alongside a Motorola MC68302PV33C integrated multiprotocol processor. The MC68302 contains an MC68000/MC68008-family processor core plus a separate RISC communications processor, so calling the whole device a "RISC CPU" was wrong. Going off their datecodes, they were manufactured mid-2005 and late 2000 (if I'm reading that right) respectively.
+
+The list below records what I found on this particular board. It is not a universal IG6000 replacement bill of materials, especially given that I damaged this unit during the recap. Save it as plain text and it should format correctly. I still need to fix my formatting to scroll on either code or pre tags.
 
 Interestingly [a reference to the IG6000 was found](https://web.archive.org/web/20001011011937/http://www.avtek.com.au:80/products/ig6000/ig6000_t.gif) on the Avtek website through archive.org in October 2000. It's a very small gif!
 
@@ -73,5 +80,8 @@ We wish our modem, the NetComm IG6000, the best of luck. Goodnight and farewell 
 
 ![](/assets/images/2021/img_0739.jpg)
 
-**References:**
-- [Datasheet, user manual and firmware](https://support.netcommwireless.com/legacy-products/IG6000)
+### Sources
+
+- [NetComm - IG6000 datasheet, user manual and firmware](https://support.netcommwireless.com/legacy-products/IG6000)
+- [NXP - MC68302 Integrated Multiprotocol Processor](https://www.nxp.com/products/MC68302)
+- [Casa Systems - Acquisition of NetComm Wireless](https://www.sec.gov/Archives/edgar/data/1333835/000119312519187381/d13444dex992.htm)

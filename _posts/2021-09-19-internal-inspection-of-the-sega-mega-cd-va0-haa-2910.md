@@ -3,11 +3,16 @@ title: "Internal Inspection of the Sega Mega-CD (VA0) HAA-2910"
 author: "Nix McRetro"
 date: 2021-09-19T18:37:50.000+10:00
 categories: [sega, youtube]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="tAXBUDGAPD8" %}
 
-A quick stroll around the internals of the Sega Mega-CD HAA-2910. This one is a VA0 revision making it a launch day console! If not launch day very close to launch day. Definitely in time for Christmas - probably.
+A quick stroll around the internals of the Sega Mega-CD HAA-2910. This one is a VA0 revision, so it is clearly an early Mega-CD. Sega launched the Mega-CD in Japan on 12 December 1991, but the board revision alone cannot prove that this particular unit was sold on launch day. Launch-era hardware? Very likely. Actual launch-day provenance? I don't have that.
 
 In other news [geocities.mcretro.net](/homepages/geocities) has had a little bit of work done. Mostly in the way the term "geocities.com" and "www.geocities.com" are handled. Turns out Apache2 has a module called mod_substitute and it appears to work well. Not much is online yet while I primarily use [the Athens root](/homepages/geocities) as a test bed to find obvious issues and try and fix them server-side before pushing more data online.
 
@@ -22,3 +27,7 @@ Wait a minute, that wasn't exciting at all. Maybe it's just too late on a Sunday
 - [Space Website](/homepages/space)
 
 Slowly but surely I'll piece together bits and bobs from here, there and everywhere - the internet of old. That said, most of it is coming from that one terabyte GeoCities torrent. Yikes!
+
+### Sources
+
+- [Sega - Mega-CD hardware history](https://www.sega.jp/history/hard/mega-cd/)

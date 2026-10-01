@@ -3,6 +3,11 @@ title: "The Jewel of the Xbox"
 author: "Nix McRetro"
 date: 2019-02-07T11:30:01.000+11:00
 categories: [devkit, microsoft, repairs]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2019/img_0628.jpg)
@@ -15,6 +20,6 @@ Anyway, it was actually far easier than I thought, and I should have done it a l
 
 ![](/assets/images/2019/img_0629.jpg)
 
-Interestingly the Kasumi Blue has a v1.0 motherboard, like the DVT4 - even though it was released way later. Apparently Microsoft just do whatever they want. As long as the casing is OK, let's burn through some old inventory apparently! Works for me! Plus the date/time supercap didn't do any real damage as far as I can tell to either the DVT4 or the Kasumi Blue. Woohoo!
+Interestingly, this Kasumi Blue contains what I identified as a v1.0 motherboard, like the DVT4, even though the Kasumi Blue edition came much later. I don't have evidence that Microsoft was simply burning through old inventory, though, and I also can't rule out somebody swapping the board before I got the console. The observation is the v1.0 board in this unit; the factory-history explanation was only my theory. Plus the date/time supercap didn't do any real damage as far as I can tell to either the DVT4 or the Kasumi Blue. Woohoo!
 
 **References:** 1. [http://www.uk-dave.com/projects/misc/xbox-jewel/](https://web.archive.org/web/20210228215847/http://www.uk-dave.com/projects/misc/xbox-jewel/) 2. [http://tweakification.blogspot.com/2007/01/step-by-step-xbox-jewel-led-mod.html](http://tweakification.blogspot.com/2007/01/step-by-step-xbox-jewel-led-mod.html)

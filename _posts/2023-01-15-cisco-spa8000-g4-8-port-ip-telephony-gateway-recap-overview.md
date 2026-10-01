@@ -2,7 +2,7 @@
 title: "Cisco SPA8000-G4 8-Port IP Telephony Gateway - Recap Overview"
 author: "Nix McRetro"
 date: 2023-01-15T19:11:57.000+11:00
-categories: [nature, news, repairs]
+categories: [repairs]
 ---
 
 {% include youtube.html id="BRzDQn9LpF0" %}

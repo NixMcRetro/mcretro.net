@@ -15,4 +15,6 @@ We were using the Spirit Viper V.34 external modem on the client-side. These wer
 
 ![](/assets/images/2022/img_0984.jpg)
 
-The Spirit Viper V.34 is a nice looking modem internally too. Those capacitors at the front touch the plastic top. If they vent, they'll be melting through the top. I'm still waiting for a backorder to arrive with potentially suitable replacements, but as we all know, the chip shortage continues.
+The Spirit Viper V.34 is a nice looking modem internally too. Those capacitors at the front are close enough to touch the plastic top. If one ever vented or leaked, that clearance would be less than... well let's just say [Melty Blood](https://en.wikipedia.org/wiki/Melty_Blood). I'm still waiting for a backorder to arrive with potentially suitable replacements, but as we all know, the chip shortage continues.
+
+Previous: [RetroChallenge 2022/10 - GeoCities Rebuild on Dial-up at 14.4k](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-14-4k/)

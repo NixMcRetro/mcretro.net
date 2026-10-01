@@ -1,5 +1,5 @@
 ---
-title: "Sakura Taisen (Saturn Live Stream, Episode 5)"
+title: "Sakura Taisen (1996, Saturn Live Stream, Episode 5)"
 author: "Nix McRetro"
 date: 2020-05-24T20:35:53.000+10:00
 categories: [gaming, livestream, sega]

@@ -1,5 +1,5 @@
 ---
-title: "Cyberpunk 2077 (PS4 Live Stream, Day 1)"
+title: "Cyberpunk 2077 (2020, PS4 Live Stream, Day 1)"
 author: "Nix McRetro"
 date: 2021-01-06T21:52:13.000+11:00
 categories: [gaming, livestream, youtube]

@@ -1,5 +1,5 @@
 ---
-title: "Final Fantasy XVI Live Stream (2023)"
+title: "Final Fantasy XVI (2023, PS5 Live Stream)"
 author: "Nix McRetro"
 date: 2023-09-07T09:38:52.000+10:00
 categories: [gaming, livestream, sony]

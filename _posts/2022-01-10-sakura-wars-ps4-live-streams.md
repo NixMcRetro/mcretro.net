@@ -1,5 +1,5 @@
 ---
-title: "Sakura Wars (PS4 Live Streams)"
+title: "Sakura Wars (2020, PS4 Live Streams)"
 author: "Nix McRetro"
 date: 2022-01-10T08:52:02.000+11:00
 categories: [livestream, sega, youtube]

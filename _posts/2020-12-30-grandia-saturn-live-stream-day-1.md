@@ -1,5 +1,5 @@
 ---
-title: "Grandia (Saturn Live Stream, Day 1)"
+title: "Grandia (1997, Saturn Live Stream, Day 1)"
 author: "Nix McRetro"
 date: 2020-12-30T09:04:24.000+11:00
 categories: [gaming, livestream, sega]

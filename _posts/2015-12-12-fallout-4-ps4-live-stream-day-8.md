@@ -1,5 +1,5 @@
 ---
-title: "Fallout 4 (PS4 Live Stream, Day 8)"
+title: "Fallout 4 (2015, PS4 Live Stream, Day 8)"
 author: "Nix McRetro"
 date: 2015-12-12T21:26:19.000+11:00
 categories: [gaming, livestream, youtube]

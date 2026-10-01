@@ -1,5 +1,5 @@
 ---
-title: "Sakura Wars (PS4 Live Stream, Chapter 1)"
+title: "Sakura Wars (2020, PS4 Live Stream, Chapter 1)"
 author: "Nix McRetro"
 date: 2021-01-03T09:10:15.000+11:00
 categories: [livestream, sega, sony]

@@ -1,5 +1,5 @@
 ---
-title: "Grandia (PS1 Live Stream, Day 1)"
+title: "Grandia (1999, PS1 Live Stream, Day 1)"
 author: "Nix McRetro"
 date: 2020-12-26T09:00:04.000+11:00
 categories: [gaming, livestream, sony]

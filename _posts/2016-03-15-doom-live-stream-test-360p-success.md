@@ -1,5 +1,5 @@
 ---
-title: "Doom Live Stream Test - 360p Success!"
+title: "Doom (1993, PC Live Stream Test) - 360p Success!"
 author: "Nix McRetro"
 date: 2016-03-15T13:10:05.000+11:00
 last_modified_at: 2026-09-30

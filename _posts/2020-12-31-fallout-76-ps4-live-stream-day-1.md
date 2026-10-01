@@ -1,5 +1,5 @@
 ---
-title: "Fallout 76 (PS4 Live Stream, Day 1)"
+title: "Fallout 76 (2018, PS4 Live Stream, Day 1)"
 author: "Nix McRetro"
 date: 2020-12-31T12:43:17.000+11:00
 categories: [gaming, livestream, sony]

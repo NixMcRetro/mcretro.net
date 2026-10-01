@@ -2,10 +2,10 @@
 title: "Odyssey Stealer: Technical Analysis of a macOS Infostealer"
 author: "Nix McRetro"
 date: 2026-07-26T17:08:14.000+11:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-10-01
 ai_assistance:
  model: "OpenAI GPT-5.6 Sol"
- date: 2026-09-28
+ date: 2026-10-01
  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ai-generated, programming]
 ---
@@ -21,9 +21,9 @@ In mid‑July 2026, I obtained a macOS infostealer trojan disguised as a softwar
 - **`.phost`** → Panel domain: `http://ukdsopas.at` (used as an HTTP header identifier).
 - **`xxxblyat`** → Hardcoded `app_id` linking this build to the Odyssey Stealer MaaS platform.
 - **`newooble`** → Affiliate/panel username observed in this build (recovered from `.username`).
-- **Four command types**: `doshell`, `repeat`, `enablesocks5`, `uninstall` - giving the remote operator unrestricted command execution.
+- **Four command types**: `doshell`, `repeat`, `enablesocks5`, `uninstall` - including arbitrary shell-command execution in the malware's execution context.
 - **Two separate infections** (users `m1` and `m2`) carried the same affiliate/panel identifier (`newooble`).
-- **Live bot channel** discovered with `.botid` `19a9ff38c1b24ffe8e5c54a91af203c8`; subsequent successful manual polling confirmed that the C2 server remained responsive.
+- **Live bot channel** discovered with `.botid` `19a9ff38c1b24ffe8e5c54a91af203c8`; subsequent successful manual polling confirmed that the C2 server responded during later testing.
 - **Password theft confirmed**: `password1` (recovered from `cache.txt`).
 - **Data exfiltration confirmed**: `lksopo.zip` containing stolen credentials, wallets, and system information.
 
@@ -60,7 +60,7 @@ A second infection was later analysed on a separate machine (user `m2`), confirm
 | Linked libraries | `libSystem.B.dylib`, `libc++.1.dylib` |
 | Notable imports | `_fopen`, `_fwrite`, `_system`, `_getenv`, `_sleep`, `_memcmp`, `std::string`, `std::ios_base` |
 
-The binary is a C++ application that makes heavy use of `std::string` for path construction and data manipulation. All file I/O is performed through C++ streams (`basic_ofstream`), and shell commands are executed via `_system()`.
+The binary is a C++ application that makes heavy use of `std::string` for path construction and data manipulation. C++ streams are prominent in its file handling, while the binary also imports C stdio functions including `_fopen` and `_fwrite`. Shell commands are executed through `_system()`.
 
 ---
 
@@ -91,7 +91,7 @@ uint32_t xorshift32(uint32_t state) {
 
 ### 3.2 Decryption methodology
 
-I developed a Python‑based brute‑force decoder that extracted **379** unique decrypted strings - far more than the 113 initially reported in earlier analyses:
+I developed a Python-based extraction workflow that retained **379** unique decrypted strings after automated filtering and manual review. Interestingly, that count independently matches the 379 strings recovered by 0xlibris from a closely related Odyssey sample, although configuration values differ between builds:
 
 | Step | Method |
 |---|---|
@@ -508,17 +508,17 @@ The following timeline was reconstructed from AdGuard Home DNS logs, macOS kerne
 
 ---
 
-### 5.1 The C2 Server Remained Operational
+### 5.1 The C2 Server Was Still Reachable
 
-The C2 server did **not** go offline. The recovery of an intact `.botid` file (`19a9ff38c1b24ffe8e5c54a91af203c8`) from a second, independent infection (user `m2`) proved that the server had been successfully contacted and had responded to registration requests. Subsequent manual polling of the `/api/v1/bot/actions/` endpoint using that `botID` confirmed that the server was still active and returning valid command payloads long after the `m1` infection had been cleaned.
+The later evidence shows that the C2 infrastructure had not permanently disappeared when the `m1` bot lost contact. The second infection successfully obtained a `.botid`, and later manual polling using that identifier returned valid responses. That proves the service was reachable at those observed times; it does not establish uninterrupted uptime throughout the entire interval.
 
-However, this raises an important question: if the C2 server never went offline, why did the `m1` bot self‑destruct?
+This raises an important question: if the C2 service was reachable again later, why did the `m1` bot self-disable?
 
-The answer lies in the timeline. At 22:58, the C2 server **stopped responding to the `m1` bot specifically** - possibly due to a transient network issue, the attacker selectively disconnecting that bot, or the bot's own polling logic failing to reach the server. The malware entered its 10‑retry countdown (10 × 60 seconds). At 23:08:47, after 10 consecutive polling failures, the `uninstall()` function executed, writing a `+` to `~/.uninstalled` and exiting.
+The timeline shows the `m1` bot losing contact at about 22:58 and entering its 10-retry countdown. At 23:08:47, after the polling failures, the same self-disable path wrote `+` to `~/.uninstalled` and the bot exited. A screenshot taken at 23:13:28 shows `.uninstalled` present with a modification time of 23:08 alongside `.botid`.
 
-This is confirmed by the screenshot taken at 23:13:28, which clearly shows `.uninstalled` present with a modification time of "Today at 11:08pm" (23:08), alongside `.botid` (still present at that time). The `.uninstalled` file survived the initial cleanup because the version of `detect_xdivcmp_mac.sh` used at 23:11 did **not** include `.uninstalled` in its `DOTFILES` array - it only targeted `.pwd`, `.phost`, `.bhost`, and `.username`. The `.botid` file was manually deleted later during the investigation, sometime between the screenshot and the creation of the forensic clone.
+The `.uninstalled` file survived the initial cleanup because the version of `detect_xdivcmp_mac.sh` used at 23:11 did **not** include `.uninstalled` in its `DOTFILES` array; it only targeted `.pwd`, `.phost`, `.bhost`, and `.username`. The `.botid` file was manually deleted later during the investigation, sometime between the screenshot and the creation of the forensic clone.
 
-**The self‑destruct was triggered not because the C2 infrastructure collapsed, but because the bot lost contact with the server - either due to network conditions or the attacker's deliberate actions.** The server itself remained operational, as proven by the live `.botid` recovered from the `m2` infection and the successful polling of that endpoint. The `m1` machine stopped communicating only because the bot self‑destructed, not because the attacker's infrastructure had failed.
+The available evidence therefore supports a narrower conclusion: the `m1` bot lost contact and self-disabled, while the C2 infrastructure was reachable again during the subsequent `m2` investigation.
 
 ---
 
@@ -563,17 +563,15 @@ The malware installs a LaunchDaemon at `/Library/LaunchDaemons/com.xdivcmp.plist
 
 The plist contains the full AppleScript payload with `app_id = "xxxblyat"` and runs as the user `m1` (or `m2` on the second infection).
 
-### 7.2 Self‑Destruct
+### 7.2 Self-Destruct
 
-When the `uninstall` command is received, the malware:
-1. Writes `+` to `~/.uninstalled`
-2. Exits
+The `uninstall()` routine writes `+` to `~/.uninstalled` and exits. An explicit C2 `uninstall` action can invoke that routine, but that was not the path observed in the `m1` timeline.
 
-The `~/.uninstalled` file prevents the malware from restarting. In the `m1` infection, this file was never created (the C2 server never sent the `uninstall` command).
+In the `m1` infection, `.uninstalled` **was** created at approximately 23:08 after the bot exhausted its polling retries. A screenshot taken at 23:13 shows the one-byte file still present. This is therefore consistent with the retry-exhaustion path reaching the same self-disable routine rather than an operator explicitly sending the `uninstall` action.
 
 ### 7.3 The Encrypted Payload: .IuN79Kxxpn
 
-A 2,048‑byte encrypted file was written to `/Users/username/Library/Application Support/.IuN79Kxxpn` at 22:40:49. Attempts to decrypt it with all known keys (xorshift32, RC4, AES, single‑byte XOR, multi‑byte XOR, HMAC‑SHA256, PBKDF2) failed. The encryption key is almost certainly a random value generated in the dropper's process memory at runtime, used once, and never persisted to disk.
+A 2,048-byte encrypted file named `.IuN79Kxxpn` was recorded at 22:40:49. My preserved notes currently disagree on its path: the timeline places it under `/var/root/Library/Application Support/`, while an earlier analysis note placed it under `/Users/username/Library/Application Support/`. I am not resolving that discrepancy by guesswork; the exact path needs to be re-checked against the preserved forensic evidence. Attempts to decrypt the file using the approaches I tested, including xorshift32, RC4, AES, single-byte XOR, multi-byte XOR, HMAC-SHA256 and PBKDF2, failed. I could not recover a working decryption key from the preserved artifacts. A runtime-only or randomly generated key is one possible explanation, but the available evidence does not establish how the key was generated or whether it was ever persisted elsewhere.
 
 ---
 
@@ -1400,10 +1398,10 @@ If you find IoCs on your Mac:
 
 1. **DISCONNECT FROM THE INTERNET IMMEDIATELY.** Turn off Wi‑Fi, unplug Ethernet.
 2. **DO NOT enter any passwords or login to any accounts** on this machine.
-3. **Using a clean device**, change ALL passwords (email, banking, crypto exchanges, social media).
+3. **Using a clean device**, change ALL passwords (email, banking, crypto exchanges, social media) and revoke active sessions or tokens where the service allows it.
 4. **Move ALL cryptocurrency funds** to new wallets generated on a clean device.
 5. **Run Malwarebytes for Mac** (full system scan) on the compromised machine.
-6. **ERASE THE ENTIRE DISK** via macOS Recovery and **reinstall macOS from scratch**. This is NOT optional - the `doshell` backdoor means the attacker had full command execution.
+6. **For a confirmed infection with this backdoor, the safest remediation is to erase the system and reinstall macOS from a known-good source after preserving any evidence you need.** The `doshell` capability means cleanup of the known files alone cannot establish that no additional commands or payloads were executed.
 7. **After fresh install**, run Malwarebytes again and run the detection script as a verification.
 8. **DO NOT reuse any passwords** that were stored on this machine.
 
@@ -1417,13 +1415,13 @@ This sample demonstrates a mature macOS infostealer with several notable charact
 
 2. **Effective string obfuscation.** The xorshift32‑based cipher is simple but sufficient to defeat static string analysis. All 379 strings were recovered through brute‑force seed extraction.
 
-3. **Persistent backdoor capability.** The `doshell` command gives the attacker unrestricted command execution on the victim's machine, enabling secondary payload deployment, data theft beyond the automated stealer, and persistent remote access.
+3. **Persistent backdoor capability.** The `doshell` command gives the attacker arbitrary shell-command execution in the malware's execution context, enabling secondary payload deployment and theft beyond the automated stealer.
 
 4. **The Apple Notes vector is underappreciated.** The 969‑byte AppleScript that extracts all notes from all accounts is a significant privacy threat. Users routinely store passwords, recovery codes, and sensitive personal information in Notes.
 
 5. **The raw IP bypasses DNS blocks.** The malware uses `.bhost` to store the raw IP (`192.253.248.181`), completely bypassing DNS‑based domain blocking. The `.phost` domain is only used as an HTTP header, not for actual communication.
 
-6. **The C2 infrastructure remained active during my investigation.** The second infection showed that bot registration had succeeded, and subsequent manual polling with the recovered `.botid` (`19a9ff38c1b24ffe8e5c54a91af203c8`) confirmed that the C2 was still returning valid responses at the time I tested it.
+6. **The C2 infrastructure was reachable during later testing.** The second infection showed that bot registration had succeeded, and subsequent manual polling with the recovered `.botid` (`19a9ff38c1b24ffe8e5c54a91af203c8`) confirmed that the C2 returned valid responses at the times I tested it.
 
 The sample and all associated IOCs have been submitted to VirusTotal, URLhaus, and the relevant national and infrastructure abuse contacts.
 

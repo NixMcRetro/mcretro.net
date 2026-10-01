@@ -2,10 +2,10 @@
 title: "New Weight Record - 88kg"
 author: "Nix McRetro"
 date: 2016-06-22T09:30:42.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-01
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
+  date: 2026-10-01
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [news]
 ---
@@ -32,6 +32,10 @@ Up next is the last six months where I sat at a massive 114.7kg and have shed 26
 
 ![2016-06-22_weight2](/assets/images/2016/img_0478.jpg)
 
-The goal though is to have lost around 35kg to put me at around the 80kg mark, just inside the healthy weight range. Yep, bragging rights will be mine. Thanks BMI scale. To think I was happy to go from "Obese" to "Overweight", imagine what it will be like when I hit "Healthy"! Might be a good day for... cake? Or was that all a lie...
+The goal though is to have lost around 35 kg, putting me around the 80 kg mark and into the BMI "healthy weight" category I was aiming for. Yep, bragging rights will be mine. Thanks BMI scale. To think I was happy to go from "Obese" to "Overweight", imagine what it will be like when I hit "Healthy"! Might be a good day for... cake? Or was that all a lie...
 
-**Full steam ahead to the magical 80kg mark!**
+**Full steam ahead to the magical 80 kg mark!**
+
+### Sources
+
+- [Healthdirect Australia - BMI and Waist Circumference](https://www.healthdirect.gov.au/body-mass-index-bmi-and-waist-circumference)

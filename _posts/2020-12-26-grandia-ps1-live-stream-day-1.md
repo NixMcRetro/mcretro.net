@@ -1,5 +1,5 @@
 ---
-title: "Grandia (1999) Live Stream (PS1) - Day 1"
+title: "Grandia (PS1 Live Stream, Day 1)"
 author: "Nix McRetro"
 date: 2020-12-26T09:00:04.000+11:00
 categories: [gaming, livestream, sony]
@@ -11,4 +11,4 @@ I can't believe it didn't let me empty the memory card... as a result I couldn't
 
 {% include youtube.html id="wguc_0t6FdI" %}
 
-That Saturn attempt follows in [Grandia (1997) Live Stream - Day 1](/grandia-1997-live-stream-day-1/).
+That Saturn attempt follows in [Grandia (Saturn Live Stream, Day 1)](/grandia-saturn-live-stream-day-1/).

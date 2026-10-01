@@ -8,3 +8,5 @@ categories: [devkit, nintendo, youtube]
 {% include youtube.html id="5SkLZDTf1C8" %}
 
 Here's what the IS Nitro Capture could do. This footage is incredible! If you intend on watching any video today, make sure this is the one you view!
+
+Previous: [IS Nitro Capture Functional Overview](/is-nitro-capture-functional-overview/)

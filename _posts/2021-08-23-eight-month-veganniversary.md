@@ -3,6 +3,11 @@ title: "Eight Month Veganniversary"
 author: "Nix McRetro"
 date: 2021-08-23T14:53:48.000+10:00
 categories: [news]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2021/img_0742.jpg)
@@ -20,7 +25,7 @@ I carried on purchasing free-range chicken until that fateful day when I had _th
 After caring for [parrots](https://channelchirp.com/) and [fish](/homepages/fishtankworld), you can see we share a commonality with these animals. My conscience got the better of me. Creating life with endless suffering, forced to exist and then only to be destroyed, sometimes in the most inhumane ways. All living creatures deserve the best quality of life that we can offer. What's the point of being at the top of the evolutionary chain if you cannot protect the ones "beneath" you?
 
 **Health**
-Physically my health is acceptable. I've never been one to eat red meat - mainly due to being a little on the lazy side when it comes to cooking and cleaning in the kitchen. A side effect of this is a lower risk for heart disease, cancer, diabetes, and the big one - premature death. These are delicately balanced with being a junk-food vegan. I eat fungus nuggets, fake mayonnaise, plant-based meat patties and salt and vinegar dusted mixed nuts. I guess I have always been a junk-food person, but am now a junk-food vegan. You won't catch me eating lettuce on a burger, I'd rather inhale a packet of Oreos. I guess health hasn't been a strong driver for this shift, as long as it isn't more work then it's alright with me.
+Health was not the main driver for this shift. I had never eaten much red meat anyway, and well-planned vegetarian or vegan diets can be perfectly healthy and are associated with lower risks of some chronic diseases. That does not mean "vegan" is a magic health label, though. I remained a dedicated junk-food vegan: fungus nuggets, fake mayonnaise, plant-based meat patties, salt and vinegar dusted mixed nuts, and absolutely no lettuce on my burger if a packet of Oreos was available.
 
 **Old Age**
 Maybe this is just what happens when you get older. You start to crave sushi, fake mayonnaise, plant-based burger patties and the like. Or perhaps it is the sum of my experiences and a dear flexitarian friend showing me that other possibilities existed. While I didn't realise it at the time, it seems that maybe they were on to something. In hindsight, I am glad to have been shown that path and am very happy to continue along.
@@ -28,3 +33,7 @@ Maybe this is just what happens when you get older. You start to crave sushi, fa
 ![](/assets/images/2021/img_0743.jpg)
 
 Raise your 15-avocado-baby-sushis and celebrate with me as I forge ahead into the unknown toward my one-year veganniversary, perhaps I will see you there one day! 🙂
+
+### Sources
+
+- [Healthdirect Australia - Vegetarian and vegan diets](https://www.healthdirect.gov.au/vegetarian-and-vegan-diets)

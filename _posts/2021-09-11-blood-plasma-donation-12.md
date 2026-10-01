@@ -3,6 +3,11 @@ title: "Blood Plasma Donation #12"
 author: "Nix McRetro"
 date: 2021-09-11T21:04:03.000+10:00
 categories: [news]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2021/img_0745.jpg)
@@ -35,10 +40,18 @@ The reasoning behind the roll method is simple. If you are still squeezing and b
 
 And even though it was probably going to end up taking the above donor twice as long, they were sticking at it. Kudos! Again, this might have just been a slow vein that was being tapped. But I felt for them when the nurses gave them the heat pack ball, until I realised how distracted they was on their phone. They weren't paying any attention to the machine! OK, maybe this one is better off with the safer roll method.
 
-Back to my donation. As I reached the final stage I realised my isotonic saline was still half full. It turns out that the saline sourced is new-old-stock bought on the cheap from hospitals. In hindsight, the yellowed rubber connectors gave that away. Remember that drain-talk from earlier? They were pouring the **_saline_** down the sink. Even half of my saline would be destined for the sink. It also reminded me that we, as Australians, use more plasma than we donate. The rest is sought from overseas using the money saved from the free donations we give. The lowest bidder and all that, kind of concerning - but what can I do? Withhold donations? That's a bad idea for all involved.
+Back to my donation. As I reached the final stage I realised my isotonic saline was still half full. My theory at the time was that the saline sourced was new old stock bought on the cheap from hospitals. In hindsight, the yellowed rubber connectors certainly looked the part. Remember that drain-talk from earlier? They were pouring the **_saline_** down the sink. Even half of my saline would be destined for the sink.
+
+It also reminded me that Australia was relying quite heavily on imported plasma-derived products. My original explanation was a bit too simple, though. In 2020-21, 53% of the immunoglobulin supplied under Australia's national blood arrangements was manufactured domestically and 47% was imported. That does not mean Australia simply imported "the rest of our plasma". The lowest bidder and all that was my cynical read on it at the time, but the national blood-supply arrangements were rather more complicated than that.
+
+What can I do? Withhold donations? That's a bad idea for all involved.
 
 Although some of the penny pinching is starting to show. When I started donating in 2014 they gave [Byron Bay Cookies](https://cookie.com.au). They disappeared a few years ago now but made a brief comeback. Since then I have become vegan, so the point is a little bit moot now with all the milk and butter involved in a cookie. But now they're messing with my beloved Arnott's Jatz three-pack, replacing it with...
 
 ![](/assets/images/2021/img_0746.jpg)
 
 Crak Oz. Yep. Rumour has it if you turn them over and check along the crease they are made in China or contain no Australian ingredients. Either way, they are no substitute for... Oh. That slogan makes a lot of sense now. My lucky 13th plasma donation is in a month. Let's go! #teamplasma
+
+### Sources
+
+- [National Blood Authority - Report on the Issue and Use of Immunoglobulin 2020-21](https://www.blood.gov.au/sites/default/files/documents/2025-06/Report%20on%20the%20Issue%20and%20Use%20of%20Ig%202020-21%20Revised%20V2.pdf)

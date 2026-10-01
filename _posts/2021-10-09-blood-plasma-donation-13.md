@@ -3,6 +3,11 @@ title: "Blood Plasma Donation #13"
 author: "Nix McRetro"
 date: 2021-10-09T21:30:03.000+11:00
 categories: [news]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2021/img_0761.jpg)
@@ -23,7 +28,7 @@ I not only managed to have the big clunker pause on one of the return cycles at 
 
 ![](/assets/images/2021/img_0762.jpg)
 
-Ah yes, I zapped a photo of the elusive, antique-looking 1L isotonic saline that the centre got on the cheap - new old stock! It's just [how I remembered it](/blood-plasma-donation-12/). Fun fact: the anticoagulant is 250mL, and saline used to be 500mL.
+Ah yes, I zapped a photo of the elusive, antique-looking 1 L isotonic saline that the centre got on the cheap - new old stock! It's just [how I remembered it](/blood-plasma-donation-12/). That description was my read from appearances; I did not actually know its age or procurement history. Fun fact: the anticoagulant is 250 mL, and saline used to be 500 mL.
 
 ![](/assets/images/2021/img_0766.jpg)
 

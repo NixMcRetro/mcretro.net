@@ -1,8 +1,13 @@
 ---
-title: "The Assembler Games Archive - Work Notes"
+title: "The ASSEMbler Games Archive - Work Notes"
 author: "Nix McRetro"
 date: 2022-10-09T22:15:11.000+11:00
 categories: [guides, programming, youtube]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2022/img_0973.gif)
@@ -13,11 +18,13 @@ I've since taken down my mirror as I didn't have time to go through and get it, 
 
 ![](/assets/images/2022/img_0965.jpg)
 
-One of the biggest issues I had was either filenames being too long for Mac OS, 1024 character limit, or having non-printable characters.
+One of the biggest issues I hit on macOS was pathname length. I described it at the time as a "1024-character filename limit", but that was the wrong term. An individual filename component can be up to 255 characters, while the traditional macOS pathname limit is less than 1024 characters. These recursive archive paths were blowing out the full path, not creating a single 1024-character filename.
 
 ![](/assets/images/2022/img_0966.jpg)
 
-Another example above. Thankfully to fix this you can remove by inodes instead of filenames.
+Another example above. Thankfully, one way I worked around the troublesome names was to address the file by inode instead of typing the filename.
+
+The commands below are my historical cleanup notes. They include file deletion, so they are not paste-ready instructions for an archive you have not backed up and inspected.
 
 ![](/assets/images/2022/img_0967.jpg)
 
@@ -137,3 +144,7 @@ try /l/		THEN try 		/	THEN fail with 404
 ```
 
 I never got around to looking into it too far though. It's been good. Assembler Games was where I tended to hang around when I had free time during the mid 2010s. They ignited my love of retrogaming once more and gave me reason. They will be missed. All the best Kevin! :-)
+
+### Sources
+
+- [Apple - macOS file and pathname limits](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man2/intro.2.html)

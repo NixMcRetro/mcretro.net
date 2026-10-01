@@ -16,3 +16,5 @@ In other news, I've taken down geocities.mcretro.net. Overall, the seven month l
 My plan is to host these on my local network only and resolve them through my locally hosted DNS server. By doing this I can live stream browsing in Windows 95/98.
 
 Related to that, I've taken down assembler.mcretro.net as I haven't been able to have enough free time to look through the data and tidy it up any more. Thankfully we have [assemblergames.org](https://assemblergames.org) as an archive and [obscuregamers.com](https://www.obscuregamers.com) as the spiritual successor.
+
+Previous: [Avtek MegaPlus V.32bis - Failed Negotiation](/avtek-megaplus-v-32bis-failed-negotiation/)

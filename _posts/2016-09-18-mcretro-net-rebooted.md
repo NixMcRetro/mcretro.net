@@ -1,10 +1,10 @@
 ---
 title: "McRetro.net Rebooted"
 author: "Nix McRetro"
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-01
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
+  date: 2026-10-01
   purpose: "fact-checking, sourcing, and editorial cleanup"
 date: 2016-09-18T20:59:46.000+10:00
 categories: [news]
@@ -24,7 +24,7 @@ Thanks to [jmcglone.com](https://jmcglone.com/guides/github-pages/) for the guid
 
 This particular website incarnation did not last very long.
 
-By 30 October 2016 I was back on WordPress.
+By late October 2016 I was back on WordPress.
 
 What a ride! 😮‍💨
 

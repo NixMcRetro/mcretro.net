@@ -31,7 +31,7 @@ Not everything has been rosy though. My first plant casualty, lavender. I had hi
 
 ![](/assets/images/2024/img_1242.jpg)
 
-My native beehives have been doing well, attracting a few different species of [native masked bee](https://inaturalist.ala.org.au/taxa/127812-Hylaeus) (Genus Hylaneus) as well as [native wasps](https://inaturalist.ala.org.au/taxa/368724-Pison) (possibly Genus Pison). Both are ridiculously tiny and harmless to us.
+My native bee hotels have been doing well, attracting a few different species of [native masked bee](https://inaturalist.ala.org.au/taxa/127812-Hylaeus) (genus Hylaeus), as well as [native wasps](https://inaturalist.ala.org.au/taxa/368724-Pison) that might be genus Pison. Both are ridiculously tiny and mostly seem interested in getting on with their own business.
 
 ![](/assets/images/2024/img_1243.jpg)
 

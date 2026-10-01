@@ -7,4 +7,7 @@ categories: [ibm-pc, sega, youtube]
 
 {% include youtube.html id="uHWhDq0oe2M" %}
 
-With the two spare hard drives recapped, we move onto the main course. The drive is removed and recapped. After this we have just the floppy drives to recap - which prove to be a much more error-filled adventure. Tear a cable here, tear a cable there. That's my motto! ?
+With the two spare hard drives recapped, we move onto the main course. The drive is removed and recapped. After this we have just the floppy drives to recap - which prove to be a much more error-filled adventure. Tear a cable here, tear a cable there. That's my motto!
+
+Previous: [Sega TeraDrive Spare Drive WDL-330P #2 Recapping](/sega-teradrive-spare-drive-wdl-330p-2-recapping/)  
+Next: [Sega TeraDrive WDL-330P Comparison](/sega-teradrive-wdl-330p-comparison/)

@@ -8,3 +8,5 @@ categories: [devkit, sega, youtube]
 {% include youtube.html id="x6z55gkKjoI" %}
 
 This handy little piece of built-in software, Sega Katana Set5 Checker, is great for checking your Sega Dreamcast HKT-0120 functionality and ensuring it is firing on all cylinders.
+
+For an earlier look at the HKT-0120 software environment, see [Sega Dreamcast Dev Kit Software Overview](/sega-dreamcast-dev-kit-software-overview/).

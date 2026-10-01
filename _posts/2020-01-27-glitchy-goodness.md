@@ -2,7 +2,7 @@
 title: "Glitchy Goodness on the Mega Drive"
 author: "Nix McRetro"
 date: 2020-01-27T12:51:07.000+11:00
-categories: [guides, hacks, sega]
+categories: [hacks, sega]
 ---
 
 ![](/assets/images/2020/img_0656.jpg)
@@ -36,3 +36,5 @@ I am pretty sure this was done on a Mega Drive Model 2. However, I don't seem to
 **Datasheets here:**
 - [2017-05-09-0002 (dragged)](/assets/uploads/2017-05-09-0002-dragged.pdf)
 - [2017-05-09-0002 (dragged) 1](/assets/uploads/2017-05-09-0002-dragged-1.pdf)
+
+For more footage from the same circuit-bending era, see [Circuit Bending on the Mega Drive](/circuit-bending-on-the-mega-drive/).

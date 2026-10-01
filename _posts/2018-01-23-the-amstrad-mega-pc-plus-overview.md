@@ -3,11 +3,16 @@ title: "The Amstrad Mega PC Plus Overview"
 author: "Nix McRetro"
 date: 2018-01-23T18:19:58.000+11:00
 categories: [ibm-pc, sega, youtube]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="npSQS8hBbGI" %}
 
-Here we have some video of the Amstrad Mega PC, which has been upgraded to the Amstrad Mega PC Plus (or the Amstrad Mega "Plus") by replacing the 386SX motherboard with a 486SLC motherboard. That's right, all the instructions of a 486 with the raw processing power of a 386. Maybe that isn't quite selling that right.
+Here we have some video of the Amstrad Mega PC, upgraded into what is effectively Mega PC Plus territory by replacing the PC7386SX 386SX motherboard with a PC7486SLC 486SLC motherboard. That's right, one of those wonderfully awkward chips sitting somewhere between the 386 and 486 worlds. Maybe that isn't quite selling it right.
 
 ![](/assets/images/2018/img_0606.jpg)
 

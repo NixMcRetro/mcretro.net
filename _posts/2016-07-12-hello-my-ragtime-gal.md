@@ -15,7 +15,7 @@ Ok, ok, enough gumball... what about some Casino Night Zone from Sonic the Hedge
 
 {% include youtube.html id="3wuLxREANpw" %}
 
-I'm pretty sure that all ragtime is inspired from the following short.
+I'm pretty sure that all ragtime is inspired by the following short.
 
 {% include youtube.html id="bkjsN-J27aU" %}
 

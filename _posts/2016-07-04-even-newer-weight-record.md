@@ -11,4 +11,4 @@ That's a much clearer picture of the journey I'm on. Happy I'm heading in the ri
 
 ![Six month weight chart](/assets/images/2016/img_0485b.jpg)
 
-We can also see a zoom in at the six month level, which helps with shorter term trends.
+The six-month view makes the shorter-term trend much easier to see.

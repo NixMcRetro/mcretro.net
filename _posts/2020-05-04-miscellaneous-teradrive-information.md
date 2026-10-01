@@ -3,7 +3,17 @@ title: "Miscellaneous TeraDrive Information"
 author: "Nix McRetro"
 date: 2020-05-04T10:27:28.000+10:00
 categories: [ibm-pc, sega]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
+
+
+The material below is a rough machine translation of a Japanese blog entry about miscellaneous TeraDrive information. Some lines are clearly awkward, so I am preserving them as translated source material rather than rewriting the author's claims into polished modern English. The original entry is linked below.
+
+### Rough translation
 
 Teradrive various information secure
 
@@ -11,4 +21,6 @@ The story of becoming 486. The old log was uploaded to the data library with NDE
 
 Also, how to add an FDD (where the cable is integrated with the power supply, where to disconnect it), and how to display the CMOS setting menu by Ctrl + Alt + F1 . There are quite a lot of useful free softwares , and it seems that FIBM has a ratio. SIMM is also MEMORY.EXE, and seems to be using 8MB. It doesn't seem like it can be used a lot.
 
-**References** [https://nyanonon.hatenablog.com/entries/1994/04/27](https://nyanonon.hatenablog.com/entries/1994/04/27)
+### Source
+
+- [Original Japanese blog entry](https://nyanonon.hatenablog.com/entries/1994/04/27)

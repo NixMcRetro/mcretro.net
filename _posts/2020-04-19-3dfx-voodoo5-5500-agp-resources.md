@@ -9,4 +9,7 @@ categories: [ibm-pc]
 
 While sorting through some old documents I came across my old Voodoo5 card and some [vogons.org](http://www.vogons.org/) references to Glide and driver lists. I figured they should be somewhere on here, even if I don't have a retro PC anymore! See the references below for more!
 
-**References** [https://www.vogons.org/viewtopic.php?t=534](https://www.vogons.org/viewtopic.php?t=534) [https://www.vogons.org/viewtopic.php?t=28206](https://www.vogons.org/viewtopic.php?t=28206)
+### References
+
+- [VOGONS thread 534](https://www.vogons.org/viewtopic.php?t=534)
+- [VOGONS thread 28206](https://www.vogons.org/viewtopic.php?t=28206)

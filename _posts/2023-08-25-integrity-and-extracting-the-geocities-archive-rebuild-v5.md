@@ -3,6 +3,11 @@ title: "Integrity and Extracting the GeoCities Archive - Rebuild V5"
 author: "Nix McRetro"
 date: 2023-08-25T04:12:21.000+10:00
 categories: [guides]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2023/img_1130.jpg)
@@ -13,7 +18,7 @@ Quick heads up, this is a post for my own reference. The above is a screenshot f
 
 Another awesome thing about using tar files is that you can search for things in them and extract them based on wildcard searches. More on that [here](https://linuxize.com/post/how-to-create-and-extract-archives-using-the-tar-command-in-linux/). I appear to have lost the original link for the above screenshot and neither Google or the Duck is helping today.
 
-While keeping the [original GeoCities data](https://wiki.archiveteam.org/index.php/GeoCities) from [archive.org](https://archive.org/details/archiveteam-geocities) My GeoCities rebuild was slapped into tar but not gunzipped (.gz) because I couldn't get it to split the files into 793 separate 1GB files. The following command was used on an Ubuntu 22.04 system.
+While keeping the [original GeoCities data](https://wiki.archiveteam.org/index.php/GeoCities) from [archive.org](https://archive.org/details/archiveteam-geocities), my GeoCities rebuild was slapped into a plain tar archive rather than a gzip-compressed `.tar.gz`. This was the workflow I got working for splitting it into 1GB pieces. The following command was used on an Ubuntu 22.04 system.
 
  
 
@@ -24,7 +29,7 @@ tar cvf - Rebuild_v5/ | split --bytes=1GB - "/media/ubuntu/GC_2TB/REBUILD/GeoCit
 
 ```
 
-and then we ran sha256 - all on a machine with ECC RAM.
+That produced consecutive decimal 1GB chunks. GNU `split` interprets `GB` here as 1,000,000,000 bytes. The finished archive ended up as 794 chunks: `.000` through `.793`, with the last chunk smaller than 1GB. Then we generated a SHA-256 checksum for every chunk on a machine with ECC RAM.
 
  
 
@@ -59,7 +64,7 @@ sha256sum -c GeoCities_Rebuild.sha256 > ~/Desktop/GeoCities_Rebuild.sha256.statu
 
 ```
 
-We can then join all the files to the giant single tar file.
+We can then join all the pieces back into the giant single tar file. Because `split` produced consecutive byte chunks, concatenating them back in filename order reconstructs the original tar stream.
 
  
 
@@ -74,7 +79,7 @@ cat GeoCities_Rebuild.tar.* > /media/ubuntu/CHONK/GeoCities_Rebuild.tar
  
 
 ```
-# Then verify that the archiving is OK with 7z
+# Then verify that the reassembled tar archive is structurally readable with 7z
 7z t /media/ubuntu/CHONK/GeoCities_Rebuild.tar
 
 ```
@@ -109,6 +114,8 @@ Compressed: 793889955840
 
 I got a little lost at this point. Why aren't my notes better. It was probably late.
 
+My note says "Decompress" below, but there is no compression involved here. This is extracting the files from the reassembled tar archive.
+
  
 
 ```
@@ -122,6 +129,8 @@ cat GeoCities_Rebuild.tar.* | tar xf - --directory=/media/ubuntu/CHONK/
 ```
 
 Even more \*things\*
+
+The next block is preserved from my original notes. One correction before anyone trusts it: `du` does not confirm that two datasets are identical. It reports filesystem space usage here, not file-by-file content equality.
 
  
 
@@ -143,7 +152,9 @@ sudo du -s -h --si -B1
 
 ```
 
-Below are the hashes generated for each of my project files - no one has access to these except me.
+The notes above also say 793 files, but the checksum list runs from `.000` through `.793`, which is 794 chunks in total. Treat these `du` totals as a rough sanity check only. The `sha256sum -c` checks above are the actual content-integrity test for the split tar pieces, and the archive test checks that the reconstructed tar can be read. Do not delete the source copies solely because the `du` totals look similar.
+
+Below are the SHA-256 hashes generated for each split archive piece. The chunks themselves were not publicly available from me; this was primarily my own integrity record.
 
  
 
@@ -944,3 +955,10 @@ e49bdd85983dfe7a65de0ef5eeb67b06cf387a6116c37c29d6306d0a5ee394d5  GeoCities_Rebu
 e38cbd8ec0e8b12aaead0bf85951b17b02d19f38bc7315eeb37d8743ec64e759  GeoCities_Rebuild.tar.793
 
 ```
+
+
+### Sources
+
+- [GNU Coreutils - split invocation](https://www.gnu.org/software/coreutils/manual/html_node/split-invocation.html)
+- [GNU Coreutils - sha2 utilities and checking checksums](https://www.gnu.org/software/coreutils/manual/html_node/sha2-utilities.html)
+- [GNU Coreutils - du invocation](https://www.gnu.org/software/coreutils/manual/html_node/du-invocation.html)

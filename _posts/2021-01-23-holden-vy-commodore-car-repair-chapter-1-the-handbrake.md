@@ -7,6 +7,8 @@ categories: [repairs, youtube]
 
 {% include youtube.html id="adPZNT3w7oA" %}
 
-Never saw myself as much of a mechanic, but here I am replacing a handbrake in a motor vehicle. This is chapter one of a six chapter series on the VY Series II. I tried a few things to get it working as best as possible. Some things I succeeded at, others I didn't. Join me on a journey of retro car repair!
+Never saw myself as much of a mechanic, but here I am replacing a handbrake in a motor vehicle. This is chapter one of a five-part series on the VY Series II. I tried a few things to get it working as best as possible. Some things I succeeded at, others I didn't. Join me on a journey of retro car repair!
 
 **Sources:** [Handbrake Ratchet Failure](https://forums.justcommodores.com.au/threads/handbrake-ratchet-failure.110470/) [New Handbrake Lever](https://forums.justcommodores.com.au/threads/how-to-install-new-handbrake-lever.174635/)
+
+Next: [Chapter 2 - Vacuum Actuator](/holden-vy-commodore-car-repair-chapter-2-vacuum-actuator/)

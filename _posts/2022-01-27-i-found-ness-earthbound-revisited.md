@@ -28,3 +28,7 @@ With my original DS Lite from Japan long since sold, today I'm on a Mac and was 
 So for now we must once again say goodbye to Ness and his friends, smiles and tears, smiles and tears...
 
 {% include youtube.html id="kKEtWSAyeCY" %}
+
+### Related posts
+
+- [EarthBound Completed on a Nintendo DS Lite with SNEmulDS](/earthbound-completed-on-nintendo-ds-lite-with-snemulds/)

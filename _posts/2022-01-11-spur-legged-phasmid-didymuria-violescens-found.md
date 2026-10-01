@@ -1,5 +1,5 @@
 ---
-title: "Spur Legged Phasmid (Didymuria violescens) Found!"
+title: "Spur-Legged Phasmid (Didymuria violescens) Found!"
 author: "Nix McRetro"
 date: 2022-01-11T18:52:47.000+11:00
 categories: [nature, youtube]
@@ -19,11 +19,11 @@ Really didn't want to put it back into nature.
 
 ![](/assets/images/2022/img_0785.jpg)
 
-But we aren't meant to keep these little guys.
+But I wasn't set up to keep this little guy.
 
 ![](/assets/images/2022/img_0786.jpg)
 
-Well I can't anyway.
+Well I could.
 
 ![](/assets/images/2022/img_0787.jpg)
 

@@ -1,5 +1,5 @@
 ---
-title: "Cyberpunk 2077 – The 2022 Update"
+title: "Cyberpunk 2077 - The 2022 Update"
 author: "Nix McRetro"
 date: 2022-01-06T19:09:10.000+11:00
 categories: [livestream, sony, youtube]
@@ -7,7 +7,7 @@ categories: [livestream, sony, youtube]
 
 {% include youtube.html id="EFdTpHnZzDs" %}
 
-Well it's been a year, [to the day](/cyberpunk-2077-2020-live-stream-ps4-day-1/). There's been a few patches issued and the game has progressed from from 1.06 to the current 1.31 on my trusty **PlayStation 4 slim**, aaaaand the game still crashes.
+Well it's been a year, [to the day](/cyberpunk-2077-2020-live-stream-ps4-day-1/). There's been a few patches issued and the game has progressed from 1.06 to the current 1.31 on my trusty **PlayStation 4 slim**, aaaaand the game still crashes.
 
 ![](/assets/images/2022/img_0782.jpg)
 
@@ -22,3 +22,5 @@ The above image hit me with whatever the uncanny valley equivalent is for glass 
 {% include youtube.html id="KpDCnCzi1gM" %}
 
 I feel bad for my poor PlayStation 4, it's not your fault this game somehow made it past QA testing. It should never have happened. With game physics (read: bugs) reminiscent of early Fallout 4 and graphics of The Outer Worlds, it always was a recipe for disaster! 🏄‍♂️
+
+The next revisit is [Cyberpunk 2077 PS4 1.51 Patch Update](/cyberpunk-2077-ps4-1-51-patch-update/).

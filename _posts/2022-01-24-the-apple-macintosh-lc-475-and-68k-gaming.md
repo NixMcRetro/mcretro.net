@@ -36,3 +36,8 @@ Next up we have [Brickles Plus](https://web.archive.org/web/20231014235507/https
 ![](/assets/images/2022/img_0801.jpg)
 
 On a brighter note, I was also able fire up [SheepShaver](https://sheepshaver.cebix.net) and load up an old PowerBook 1400cs disk image. There wasn't much on there so it was trashed. Doing that cleared up a hefty 2 GB of storage, incredible!
+
+### Related posts
+
+- [Apple Macintosh LC 475 Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33mhz/)
+- [Apple Macintosh LC 475 Game Demo - Hangman Plus](/apple-macintosh-lc-475-game-demo-hangman-plus/)

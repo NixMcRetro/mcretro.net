@@ -7,7 +7,7 @@ categories: [nature]
 
 ![](/assets/images/2022/img_0792.jpg)
 
-A friend who happens to be photography enthusiast sent me through the above and below photos of some lizards he came across. Above we have the [Eastern Water Skink](https://en.wikipedia.org/wiki/Eulamprus_quoyii), Eulamprus quoyii, and below...
+A friend who happens to be a photography enthusiast sent me through the above and below photos of some lizards he came across. Above we have the [Eastern Water Skink](https://en.wikipedia.org/wiki/Eulamprus_quoyii), Eulamprus quoyii, and below...
 
 ![](/assets/images/2022/img_0793.jpg)
 

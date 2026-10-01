@@ -3,6 +3,11 @@ title: "Me, Myself and Progesterone"
 author: "Nix McRetro"
 date: 2024-03-29T11:52:43.000+11:00
 categories: [news]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2024/img_1288.jpg)
@@ -11,7 +16,7 @@ I touched on progesterone (P4) in my [last transgender update post](/blood-test-
 
 Rewind to late February 2024, for almost three weeks my progesterone dose was doubled to 400 mg of oral, micronised, compounded progesterone - 200 mg twice a day. That's up from the 200 mg once at night.
 
-I had also ceased finasteride. And finasteride interferes with the progesterone (oral) pathway conversion to neurosteroids such as allopregnanolone. This is because finasteride blocks _**\*most\***_ of the activity (~70%) of the 5-alpha reductase (5AR) enzyme. In turn, reducing levels of allopregnanolone - or at least slowing their conversion to neurosteroids.
+I had also ceased finasteride. Finasteride inhibits 5-alpha reductase, one of the enzymes involved in converting progesterone through 5-alpha-reduced intermediates towards neurosteroids such as allopregnanolone. So stopping finasteride gave me a plausible reason to wonder whether my neurosteroid exposure had changed. The exact effect in me, however, was not something I had measured.
 
 ![](/assets/images/2024/img_1289.jpg)
 
@@ -19,31 +24,31 @@ My sleep quality has been pretty broken for a while now. Look at those orange bl
 
 ![](/assets/images/2024/img_1290.jpg)
 
-Instead I get this whole brain fire thing and feel like I've taken an [anxiogenic](https://en.wikipedia.org/wiki/Anxiogenic). That got me thinking, brain on fire? Throw in some [formication](https://en.wikipedia.org/wiki/Formication) and it's what feels like a glutamate rebound or surge. Excitotoxicity perhaps?
+Instead I get this whole brain fire thing and feel like I've taken an [anxiogenic](https://en.wikipedia.org/wiki/Anxiogenic). That got me thinking about glutamate rebound or a sudden shift in inhibition versus excitation. "Excitotoxicity" was the word that came to mind, but that describes actual cellular injury and I had no evidence that was happening. Brain on fire describes how it **felt**, not a diagnosis of what my neurons were doing.
 
-I've experienced similar feelings while withdrawing from pregabalin (decreases glutamate levels) and trusty old diazepam (increases GABA levels). Definitely that same feeling though. It appears that taking what I would consider a small dose (2 mg) of diazepam negates the insomnia pretty well. Even though diazepam isn't a terribly good choice for sleep. It takes me from being a wired insomniac to sleeping beauty in about an hour.
+I've experienced similar feelings while withdrawing from pregabalin and trusty old diazepam, but those drugs do not work through the same mechanism. Pregabalin acts mainly through alpha-2-delta subunits of voltage-gated calcium channels and can reduce release of excitatory neurotransmitters; diazepam potentiates GABA-A receptor activity. The similarity here was in my subjective experience, not proof that the same neurochemical process was happening. It appears that taking what I would consider a small dose (2mg) of diazepam negates the insomnia pretty well. Even though diazepam isn't a terribly good choice for sleep. It takes me from being a wired insomniac to sleeping beauty in about an hour.
 
 Another interesting side effect I am seeing a lot more of is [dissociation](https://en.wikipedia.org/wiki/Dissociation_(psychology)). Ordinarily, I would only experience this while in high stress, high anxiety situations but recently I'm noting it a lot more just doing chores around the house - which is a little concerning.
 
 ![](/assets/images/2024/img_1258.jpg)
 
-Regardless, it seems that something is messing with my GABAergic system and metabolites of progesterone fit the bill. Armed with my two-thirds of a biomedical science degree I went digging for more information on the metabolites. Up above is an image from my last health blog post. Note the action of finasteride on progesterone - blocking allopregnanolone (THP) and isopregnanolone.
+Regardless, I suspected something involving the GABAergic system, and progesterone-derived neurosteroids were an interesting candidate. Armed with my two-thirds of a biomedical science degree I went digging for more information. Up above is an image from my last health blog post. Finasteride can interfere with the 5-alpha-reduced pathway that produces neurosteroids such as allopregnanolone, but this is a pathway, not a simple on/off switch.
 
-I wonder if moving to a more potent 5AR blocker, such as dutasteride, would reduce the side effects of a higher dose of progesterone? A question for my endocrinologist I suppose. I restarted my finasteride to at least partially block some of the following progesterone metabolites. Let's look at the metabolites a little closer and how they act.
+I wondered whether moving to a more potent 5AR inhibitor, such as dutasteride, would reduce the side effects I associated with higher-dose progesterone. There is research using 5-alpha reductase inhibition to alter allopregnanolone responses in PMDD, but jumping from that to "dutasteride will fix my progesterone side effects" would be a very large leap. A question for my endocrinologist, definitely. I restarted my finasteride while I kept digging into the following progesterone metabolites.
 
-**Allopregnanolone (Tetrahydroprogesterone or THP)** [Positive allosteric modulator](https://en.wikipedia.org/wiki/GABAA_receptor_positive_allosteric_modulator) 9 hours
+**Allopregnanolone (THP)** - a positive allosteric modulator of GABA-A receptors.
 
-**Pregnanolone** Positive allosteric modulator 1 - 3.5 hours
+**Pregnanolone** - another progesterone-derived neuroactive steroid with positive GABA-A receptor effects.
 
-**Isopregnanolone** [Negative allosteric modulator](https://en.wikipedia.org/wiki/GABAA_receptor_negative_allosteric_modulator) 14 hours _Targets allopregnanolone only_
+**Isopregnanolone / isoallopregnanolone** - can antagonise some effects of allopregnanolone at GABA-A receptors; calling it simply a universal "negative allosteric modulator" is a bit too neat.
 
-**Epipregnanolone** Negative allosteric modulator Half-life unknown
+**Epipregnanolone** - another neuroactive progesterone metabolite with more complicated receptor effects than my original table suggested.
 
-Alright, so a bunch of neurosteroids are doing a bunch of things. A few are being blocked, but also produce negative side effects when they weren't blocked. Hormones are messy. Where does that leave me? I guess I am left questioning whether I should be taking progesterone at all. At minimum a dose reduction is definitely called for. I will probably return back to 200 mg and see what symptoms, if any, follow.
+I had also collected half-life figures for these, but they came from a mixture of contexts and were giving the list a false precision. The useful point is that oral progesterone generates several neuroactive metabolites with different pharmacology. Hormones are messy. Where does that leave me? I guess I am left questioning whether I should be taking progesterone at all. At minimum a dose reduction is definitely called for. I will probably return back to 200mg and see what symptoms, if any, follow.
 
 ![](/assets/images/2024/img_1287.jpg)
 
-My search revealed some interesting data with overlap in symptoms shared with [premenstrual syndrome](https://en.wikipedia.org/wiki/Premenstrual_syndrome) (PMS) and [premenstrual dysphoric disorder](https://en.wikipedia.org/wiki/Premenstrual_dysphoric_disorder) (PMDD) in cisgender women.
+My search revealed some interesting overlap with research into [premenstrual syndrome](https://en.wikipedia.org/wiki/Premenstrual_syndrome) (PMS) and [premenstrual dysphoric disorder](https://en.wikipedia.org/wiki/Premenstrual_dysphoric_disorder) (PMDD). PMDD research increasingly points towards altered sensitivity to normal hormone and allopregnanolone fluctuations rather than abnormal hormone concentrations by themselves. That made the mechanism interesting to me, but I am not a cisgender woman with a menstrual cycle and this does not mean my symptoms were PMDD.
 
 > **PMDD is believed to be caused by fluctuations in gonadal sex hormones or variations in sensitivity to sex hormones.**
 
@@ -55,26 +60,35 @@ Could this be one of the reasons why I can't tolerate SSRI/SNRIs? At the very le
 
 > **Progesterone levels tend to be less than 2 ng/mL prior to ovulation and greater than 5 ng/mL after ovulation.**
 
-What were my most recent levels again? 9.1 nmol/L or should I say **2.6 ng/mL** (freedom units). That's at 200 mg once daily at night, measured in the trough. I really need to ask myself, do I want to have symptoms of PMS/PMDD? Is that even a question that needs to be asked?
+What were my most recent levels again? 9.1nmol/L, or about **2.6ng/mL** in freedom units, roughly 12 hours after a 200mg evening dose. I was comparing that number with cisgender menstrual-cycle ranges. That was interesting physiology, but there is no established serum progesterone target for transfeminine GAHT, so landing near one phase of a menstrual cycle does not tell me that my regimen was optimal.
 
-Looking at the levels on [Table 1 in this paper](https://www.sciencedirect.com/science/article/pii/S0091302220300479#s0025) give an idea where my levels line up. If you factor in the short half-life of most of the metabolites, once daily dosing is probably a bad idea. Ideally, I should look into getting the dose split to 100 mg twice daily.
+Looking at the short-lived peaks involved in oral progesterone made me wonder whether splitting the dose might feel smoother for me. Moving from once daily to 100mg twice daily was something I wanted to discuss and test with my endocrinologist, not an evidence-based rule that twice-daily progesterone is inherently better.
 
 ![](/assets/images/2024/img_1286.jpg)
 
-Of course I have to be mindful of negative risk such as the [androgen backdoor pathway](https://en.wikipedia.org/wiki/Androgen_backdoor_pathway). This has the potential to generate unwanted androgens like DHT - which will affect the hair on my head. That's why the finasteride is here to stay until most means of testosterone generation is removed from my system...
+Of course I was also thinking about androgen pathways. Progesterone can feed into several steroid pathways, including so-called [androgen backdoor pathways](https://en.wikipedia.org/wiki/Androgen_backdoor_pathway) capable of producing potent androgens. That pathway exists biochemically, but I had not demonstrated that my progesterone regimen was meaningfully raising DHT in me. So this was a reason to measure and ask questions, not proof that progesterone was attacking my hairline.
 
-It's not all bad though. Finasteride competes with progesterone for the 5AR enzyme - which results in even less 5AR being available for testosterone -> DHT conversion. Another point worth considering is that progesterone has a positive effect on bone-building cells (osteoblasts). This can help with avoiding or reducing effects of osteoporosis.
+Finasteride does not "compete with progesterone" for 5-alpha reductase in the way I described here. It inhibits 5-alpha reductase itself, reducing several 5-alpha-reduced steroid pathways. That includes testosterone to DHT and also parts of progesterone neurosteroid metabolism.
 
-Touching on side effects I've noticed, Progesterone should increase libido. Which is something I do not want due to [past trauma](https://en.wikipedia.org/wiki/Child_sexual_abuse). However, I wonder if the [finasteride side effects](https://en.wikipedia.org/wiki/Finasteride#Adverse_effects) are at play here. Again, I don't consider them negative side effects either.
+Libido was another thing I was watching because I absolutely did not want an increase due to [past trauma](https://en.wikipedia.org/wiki/Child_sexual_abuse). I had seen libido changes attributed to progesterone online, but there is no predictable rule that progesterone "should" increase it in transfeminine people. Whatever happened to mine was an individual treatment effect, not something I could assume beforehand.
 
-Other oddities I've also noticed my facial hair has become darker at the higher progesterone dosing at 400 mg. My upper lip now has dark black hairs, that's new and unwanted. It might be useful for [IPL](https://en.wikipedia.org/wiki/Intense_pulsed_light) treatment. But now there's shadow on my upper lip I never had before. It isn't just the thinning of skin either. The hairs are black instead of blonde.
+I also noticed darker facial hairs while I was on the higher 400mg progesterone dose. My upper lip suddenly had black hairs where I remembered blonde ones. That was a direct observation; the timing alone does not prove progesterone caused the change. It might be useful for [IPL](https://en.wikipedia.org/wiki/Intense_pulsed_light) treatment. But now there's shadow on my upper lip I never had before.
 
 ![](/assets/images/2024/img_1291.jpg)
 
 One big uncertainty is that I'm not sure what my levels of estradiol will be at the next blood test. Are the 200 mg of pellets doing their job properly? Or did they fail? Does the dose need to be increased?
 
-For now, I've been supplementing the implant with the remainder of my 2 mg estradiol pills while the pellets stabilise. One pill gives me ~85 pmol/L in estradiol levels. I've only just ran out of those so now I'm adding in some of the estradiol gel (Sandrena branded). These gave ~200 pmol/L estradiol per dose according to my most recent blood tests. In theory with one a day, I should be guaranteed to be in the late follicular phase - regardless of the implant levels.
+For now, I had been supplementing the implant with some remaining oral estradiol and later Sandrena gel while the pellets settled. I made the mistake of treating previous blood results as though each pill or gel sachet contributed a fixed number of pmol/L that I could simply add together. Pharmacokinetics does not work that neatly, especially when implants, tablets and gel are overlapping. Those earlier measurements can tell me what happened under those specific conditions, not guarantee that one extra dose places me in a particular cisgender menstrual phase.
 
 Anyway, that was one heck of an info dump. I think that sums everything up that has been on my mind lately.
 
-**TL;DR** 400 mg oral progesterone makes my brain go on fire. Progesterone metabolite levels shifting around are very activating for me. I will now target cisgender progesterone levels in the late follicular phase. Hormones are complicated. One size fits most seems to be at play when it comes to progesterone. Nothing like some trial and error! 🙃
+**TL;DR** 400mg oral progesterone coincided with my brain-on-fire sensation. Progesterone-derived neurosteroids gave me a biologically interesting hypothesis, but I had not proved the mechanism. I planned to reduce the dose, smooth out the regimen and discuss it with my endocrinologist. There is no established cisgender-cycle progesterone target I need to reproduce. Hormones are complicated. Nothing like some carefully supervised trial and error! 🙃
+
+Previous: [Blood Test Results February 2024](/blood-test-results-february-2024/)
+
+Next: [Progesterone Consumer Medicines Information (CMI)](/progesterone-consumer-medicines-information-cmi/)
+
+### Sources
+
+- [WPATH Standards of Care Version 8](https://pmc.ncbi.nlm.nih.gov/articles/PMC9553112/)
+- [Allopregnanolone and reproductive psychiatry: an overview](https://pmc.ncbi.nlm.nih.gov/articles/PMC7231988/)

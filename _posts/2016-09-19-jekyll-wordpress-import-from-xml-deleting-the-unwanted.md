@@ -45,3 +45,8 @@ test bulk text transformations on copies or version-controlled files before poin
 markdown, markdown, markdown
 
 **/end chant**
+
+### Related posts
+
+- [McRetro.net Rebooted](/mcretro-net-rebooted/)
+- [Markdown and Apache](/markdown-and-apache/)

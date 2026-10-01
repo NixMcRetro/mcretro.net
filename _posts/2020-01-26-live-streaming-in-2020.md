@@ -28,3 +28,5 @@ The future sure is looking interesting, the Dreamcast footage was captured on a 
 {% include youtube.html id="CPolnHIkzeo" %}
 
 All in all, things are looking up! Stay tuned (on the McRetro Gaming channel, not on the Shane McRetro channel).
+
+The hunt for a small-form-factor streaming machine eventually led to [NUC8i7BEH Hackintosh Catalina Overview](/nuc8i7beh-hackintosh-catalina-overview/).

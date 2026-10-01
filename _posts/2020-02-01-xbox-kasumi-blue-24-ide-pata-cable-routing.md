@@ -8,3 +8,5 @@ categories: [guides, microsoft, youtube]
 {% include youtube.html id="hjcbPIL0CzY" %}
 
 The Kasumi Xbox of awesomeness! Such an incredible shade of blue, and now full of so many cool upgrades. Released back into the wild a while back, it still lives on in my memory and in this video.
+
+I later returned to the cable itself in [Xbox OG 24" Super IDE PATA Cable Folding and Routing](/xbox-og-24-super-ide-pata-cable-folding-and-routing/).

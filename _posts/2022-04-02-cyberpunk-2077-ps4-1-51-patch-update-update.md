@@ -23,7 +23,7 @@ Nothing worse than having to buy a car that is missing and therefore can't be bo
 
 ![](/assets/images/2022/img_0918.jpg)
 
-Some of the things I could address by reverting my 117 hours of gameplay by ~87 hours of gameplay to around hour 30. Something went wrong at some point that.
+Some of the things I could address by reverting my 117 hours of gameplay by roughly 87 hours, back to around hour 30. Something went wrong at some point.
 
 ![](/assets/images/2022/img_0914.jpg)
 
@@ -31,7 +31,7 @@ But then again, some were broken from the very beginning or rather unachievable 
 
 ![](/assets/images/2012/img_0138.jpg)
 
-How do I fix something that bugged? I had to go back to the start, right back. Maybe I learnt from the best, CD Projekt RED when they broke the PS4 version of the game...
+How do I fix something that's bugged? I had to go back to the start, right back. Maybe I learnt from the best, CD Projekt RED when they broke the PS4 version of the game...
 
 > **“Cannot start the application. The data is corrupted. Delete the application from the PS4 and insert the disc again.”**
 
@@ -44,3 +44,6 @@ The weirdest thing was is that v1.00 felt **_more stable_** when driving about b
 {% include youtube.html id="8JYpSWUZRLQ" %}
 
 Every time I would visit this area there'd be other people eating hot dogs. I guess life really does imitate art! Check out the [McRetro Gaming YouTube channel](https://www.youtube.com/c/McRetroGamingOnline/videos) for more videos of v1.00 gameplay.
+
+Previous: [Cyberpunk 2077 PS4 1.51 Patch Update](/cyberpunk-2077-ps4-1-51-patch-update/)  
+Next: [Cyberpunk 2077 PS4 Final Thoughts](/cyberpunk-2077-ps4-final-thoughts/)

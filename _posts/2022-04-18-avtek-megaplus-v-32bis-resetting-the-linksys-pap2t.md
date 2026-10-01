@@ -12,3 +12,6 @@ This one is a bit of an oddball. I had a chicken and egg situation. I needed the
 ![](/assets/images/2022/img_0923.jpg)
 
 The next step of course is to use the PAP2T as a VoIP phone exchange emulator. At least at a local level anyway. Interesting times ahead, for me anyway. Haha! 🙃
+
+Previous: [Avtek MegaPlus V.32bis - First Connection Attempt](/avtek-megaplus-v-32bis-first-connection-attempt/)  
+Next: [Avtek MegaPlus V.32bis - Failed Negotiation](/avtek-megaplus-v-32bis-failed-negotiation/)

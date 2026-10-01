@@ -3,6 +3,11 @@ title: "Macintosh Classic, RaSCSI and The Internet"
 author: "Nix McRetro"
 date: 2022-04-26T01:25:17.000+10:00
 categories: [apple, hacks, repairs]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="hO2O4d3ZtaI" %}
@@ -15,7 +20,7 @@ This machine has had the internal hard drive upgraded to a [RaSCSI](https://gith
 
 > **If the Red Power LED is not illuminated this means the supply voltage is inadequate. (The newer Pi have a well engineered power circuit, and may continue to function even if the input voltage is below spec; the same may not be true of peripherals).**
 
-This tech is not ready for mid-late 1990s internet. I just didn't realise just how incompatible early 1990s internet was! When setting up my web server I tried to make [GeoCities](/homepages/geocities), [RetroJunkie.net](https://retrojunkie.net) and even my [files archive](/files) as simple as possible to avoid issues. It all seems to have boiled down to old browsers missing something. Then it hit me! They all had HTTP/0.9 support but probably nothing more recent.
+This tech is not ready for mid-late 1990s internet. I just didn't realise just how incompatible early 1990s internet was! When setting up my web server I tried to make [GeoCities](/homepages/geocities), [RetroJunkie.net](https://retrojunkie.net) and even my [files archive](/files) as simple as possible to avoid issues. It all seemed to boil down to the old browsers missing something. My theory at the time was HTTP/0.9, but that turned out to be the wrong diagnosis. These browsers were capable of more than HTTP/0.9, and I later confirmed requests arriving at Apache as HTTP/1.0. The real problem was in how my modern hosting setup, name-based virtual hosts and proxying interacted with clients this old.
 
 ![](/assets/images/2022/img_0939.jpg)
 
@@ -23,7 +28,7 @@ HTTP/1.0 and HTTP/1.1 are way past cool in my book. Look at this crazy mapping o
 
 ![](/assets/images/2022/img_0938.jpg)
 
-At least that was the theory. HTTP/0.9 only supports GET. That's not enough in the modern worked (~1996 onward) I tried some websites I thought **_should_** have worked.
+At least that was the theory. HTTP/0.9 really is tiny: essentially a one-line `GET` request, with no protocol version in the request and no request headers. That also means no `Host` header, so it cannot select between modern name-based virtual hosts. That simplicity mattered to this experiment, but it was not the explanation for every failure I was seeing here.
 
 ![](/assets/images/2022/img_0927.jpg)
 
@@ -61,13 +66,18 @@ And it seems that [retrojunkie.net](https://retrojunkie.net), [the files server]
 
 ![](/assets/images/2022/img_0935.jpg)
 
-Netscape 1.0 doesn't want to play nice either. I'm putting this down to older browsers only supporting HTTP/0.9. Feel free to prove me otherwise.
+Netscape 1.0 doesn't want to play nice either. At the time I put this down to the browsers only supporting HTTP/0.9. That conclusion did not survive testing. I revisited the same problem in 2023 and got MacWeb, Mosaic and Netscape talking to the server once I simplified the hosting path and gave the old clients a site they could actually resolve cleanly.
+
+Later: [Mac Web Browsers from the 90s and HTTP/0.9](/mac-web-browsers-from-the-90s-and-http-0-9/)
 
 ![](/assets/images/2022/img_0925.jpg)
 
 While it would be nice to be able to do things on a 68000 powered Mac, we're just not ready for it yet. Stick with a faster classic Mac like the LC475 for a true internet experience. Leave the early 1990s for bulletin boards! :)
 
-**References:**
+### Sources
+
+- [RFC 7230 - HTTP/1.1 Message Syntax and Routing](https://www.rfc-editor.org/rfc/rfc7230)
+
 - [https://ia600503.us.archive.org/21/items/macweb-evolt_browsers/macweb.htm](https://ia800100.us.archive.org/0/items/macweb-evolt_browsers/macweb.htm)
 - [https://browsers.evolt.org/browsers/archive/macweb](https://browsers.evolt.org/browsers/archive/macweb)
 - [https://browsers.evolt.org/browsers/archive/macweb/1.1.1E/](https://browsers.evolt.org/browsers/archive/macweb/1.1.1E/)

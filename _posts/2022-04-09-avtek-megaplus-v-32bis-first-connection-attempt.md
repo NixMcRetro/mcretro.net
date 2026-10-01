@@ -9,4 +9,6 @@ categories: [ibm-pc, youtube]
 
 Another test of the Avtek MegaPlus V.32bis Modem (Model CD950). We are performing a blind dial from the Mac app [Serial](https://www.decisivetactics.com/products/serial/) with no server to dial-in to.
 
-In a future video, after we reset the VoIP box (PAP2T or similar), we should be able to dial another modem. We'll work it out down the track. This at least is showing us that the modem is functional enough attempt to dial out.
+In a future video, after we reset the VoIP box (PAP2T or similar), we should be able to dial another modem. We'll work it out down the track. This at least shows us that the modem is functional enough to attempt to dial out.
+
+Next: [Avtek MegaPlus V.32bis - Resetting the Linksys PAP2T](/avtek-megaplus-v-32bis-resetting-the-linksys-pap2t/)

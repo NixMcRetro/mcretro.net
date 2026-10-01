@@ -40,3 +40,5 @@ With that, we hold the buttons to end the Cyberpunk 2077 saga - Ctrl, Alt and...
 ![](/assets/images/2022/img_0947.jpg)
 
 Del.
+
+Previous: [Cyberpunk 2077 PS4 1.51 Patch Update... Update](/cyberpunk-2077-ps4-1-51-patch-update-update/)

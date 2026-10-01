@@ -1,13 +1,18 @@
 ---
-title: "General Electric Model 4665 AM/FM Radio – Part 5: Photo Slideshow"
+title: "General Electric Model 4665 AM/FM Radio - Part 5: Photo Slideshow"
 author: "Nix McRetro"
 date: 2022-11-04T19:51:59.000+11:00
 categories: [repairs]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="02wIXkOE1Wk" %}
 
-All good things eventually come to an end. You're probably here because you have watched all four videos in the series so far. This is the fifth and final video on this alarm clock radio. Below are the capacitor values needed and their locations on the board.
+All good things eventually come to an end. You're probably here because you have watched all four videos in the series so far. This is the fifth and final video on this alarm clock radio. Below are the capacitor values I recorded from this particular unit. I could not confirm whether it was the A or B revision because the stickers were missing, so treat this as a record of my board, not a universal Model 4665 bill of materials. Verify what is actually fitted before ordering replacements, including polarity, capacitance, voltage rating, temperature rating, ESR, ripple-current requirements and physical size.
 
 ![](/assets/images/2022/img_0982.jpg)
 
@@ -15,7 +20,7 @@ I'm not sure if this is an A or B revision because the stickers were missing. Yo
 
 ![](/assets/images/2022/img_0981.jpg)
 
-Note that all capacitor markings are underneath capacitors. On this unit the sticker with model number missing from base. If any of your switches need cleaning some plastic safe contact cleaner is the way to go.
+Note that all capacitor markings are underneath the capacitors. On this unit the sticker with the model number was missing from the base. If any switches need cleaning, use a cleaner specifically suitable for the switch materials and surrounding plastics.
 
 ![](/assets/images/2022/img_0983.jpg)
 
@@ -42,3 +47,5 @@ C28	100uF	10V	8mm	12mm	3254079	Upgraded to 35V
 C29	470uF	16V	10mm	20mm	3254036	Same specifications
 -----------------------------------------------------------------
 ```
+
+Previous: [General Electric Model 4665 AM/FM Radio - Part 4: AM/FM Switch](/general-electric-model-4665-am-fm-radio-part-4-am-fm-switch/)

@@ -1,5 +1,5 @@
 ---
-title: "General Electric Model 4665 AM/FM Radio – Part 4: AM/FM Switch"
+title: "General Electric Model 4665 AM/FM Radio - Part 4: AM/FM Switch"
 author: "Nix McRetro"
 date: 2022-10-29T23:25:46.000+11:00
 categories: [guides, repairs, youtube]

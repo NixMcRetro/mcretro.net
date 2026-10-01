@@ -18,3 +18,6 @@ And what can I say, if I was better at installing dependencies, it probably woul
 What was most interesting about this project is that it combined a few labours of love. Modems, the MiSTer (DE10-Nano), Raspberry Pis, websites (from the internet of old), and probably most importantly a little more knowledge on how things work. The best part was tying it all together.
 
 You can track the progress of my [RetroChallenge 2022/10 here](https://forum.acms.org.au/t/portable-all-in-one-geocities-web-server/255) and look at what I did last year for [RetroChallenge 2021/10 here](https://forum.acms.org.au/t/geocities-rebuild-for-older-browsers/83/). I wonder what I'll do for the next RetroChallenge? Time will tell. Sooner or later... time will tell... 🙃
+
+Previous: [Rebuilding GeoCities on macOS 12](/rebuilding-geocities-on-macos-12/)  
+Next: [RetroChallenge 2022/10 - GeoCities Rebuild on Dial-up at 28.8k](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-28-8k/)

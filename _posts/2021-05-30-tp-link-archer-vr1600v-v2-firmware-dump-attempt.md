@@ -1,8 +1,13 @@
 ---
-title: "TP-Link VR1600v Firmware Dump Attempt"
+title: "TP-Link Archer VR1600v V2 Firmware Dump Attempt"
 author: "Nix McRetro"
 date: 2021-05-30T09:37:17.000+10:00
 categories: [guides]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2021/img_0686.jpg)
@@ -72,7 +77,7 @@ It was better than the second bridge... which just looks to be a blob of solder.
 
 ![](/assets/images/2021/img_0689.jpg)
 
-Looks good from the other side though! 😅 Connecting TX, RX and GND were all that mattered. Do not connect voltage from the serial -> USB adapter or you will cook something. The two resistor bridges were now bridged. Are TX and RX beaming anything down over serial from the Broadcom SoC now?
+Looks good from the other side though! 😅 Connecting TX, RX and GND were all that mattered in my setup; I left the USB serial adapter's VCC disconnected. The header measured about 3.36 V, so I treated it as 3.3 V logic. Do not assume another board has the same pinout or voltage levels: verify them before connecting an adapter. The two resistor bridges were now bridged. Are TX and RX beaming anything down over serial from the Broadcom SoC now?
 
 ![](/assets/images/2021/img_0696.jpg)
 
@@ -1237,7 +1242,7 @@ open DNS error: No such file or directory
 
 ```
 
-Nailed it! Somehow. Now that we have output from UART that looks to be in order. We can see that the RAM total is reported as 134217728 bytes (128MB). And the NAND itself is an ESMT F59L1G81MA, id 0xc8d1 block 128KB size 131072KB (128MB). The BCM63167D0 seems to be a D0 revision of the BCM63167 chipset along with the BCM963268 chip. Remember this is a TP-LINK Archer VR1600v V2 (AU).
+Nailed it! Somehow. The boot log reports 134217728 bytes of RAM, or 128 MiB, and identifies the NAND as an ESMT F59L1G81MA with 131072 KiB, or 128 MiB, capacity. It identifies the SoC as BCM63167D0 and also uses BCM963268 as the CFE platform target. The log alone does not establish that BCM963268 is a second main chip, so I should not describe it that way. Remember this is a TP-Link Archer VR1600v V2 (AU).
 
 ![](/assets/images/2021/img_0702.jpg)
 
@@ -1448,11 +1453,11 @@ It was definitely doing something, so I left it to run overnight. [This guide](h
 
 ![](/assets/images/2021/img_0712.jpg)
 
-Hmmm, something was dumped. If we convert 33554432 from binary to decimal we get... drum roll!
+Hmmm, something was dumped. The output file was 33,554,432 bytes.
 
 ![](/assets/images/2021/img_0720.jpg)
 
-And the winner is - 32MB. So what I did was dump 32MB of **_\*something\*_** overnight. Is 32MB the right size? Probably not. Is it the right part of the firmware? Also probably not. Damn looking at the boot log above, the device has 128MB RAM and 128MB NAND. Well at least we know we can dump things somewhat.
+And the winner is 32 MiB. The boot log reports 128 MiB of NAND, so this was clearly only a partial dump. Is it the right part of the firmware? Also probably not. Well, at least we know we can dump things somewhat.
 
 ![](/assets/images/2021/img_0713.jpg)
 
@@ -1506,7 +1511,7 @@ In common? Definitely, let's adjust the offset by 512 bytes.
 
 ![](/assets/images/2021/img_0722.gif)
 
-Well we've definitely got something that [resembles](https://fma.fandom.com/wiki/Resembool) firmware. The extra changes this early on that we see compared to the VR600v modem are likely user configuration data. Because I know that searching for my own TPG username returns a few results. Performing a factory restore on the modem and dumping the same data again overnight.
+Well we've definitely got something that [resembles](https://fma.fandom.com/wiki/Resembool) firmware. The early differences might include model-specific or configuration data, especially because searching the dump found my own TPG username. Comparing a VR1600v dump with VR600v firmware could not tell me what each changed region represented, though. Time for a factory restore and another overnight dump.
 
 ![](/assets/images/2021/img_0716.jpg)
 

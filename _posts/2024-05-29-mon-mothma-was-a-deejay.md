@@ -3,6 +3,11 @@ title: "Mon Mothma was a Deejay"
 author: "Nix McRetro"
 date: 2024-05-29T16:44:08.000+10:00
 categories: [nature, news, study]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2024/img_1298.jpg)
@@ -15,7 +20,7 @@ My transgender journey continues. I'd be lying if I said I was on top of this. T
 
 ![](/assets/images/2024/img_1299.jpg)
 
-Gender marker changes, i.e. male to female, are proving a bit more difficult thanks to the NSW state government lagging the most when it comes to transgender legislation in Australia. I mean **even** Queensland is ahead of us... yes, the one with all the crocodiles.
+Gender marker changes, i.e. male to female, were proving a bit more difficult. In May 2024 NSW still required a sex affirmation procedure and two medical declarations to alter the sex recorded on a NSW birth certificate. Queensland had already passed legislation moving away from that model, although those reforms would not actually commence until 24 June 2024. So my **even Queensland** jab was about legislation already passed, not rules already operating. Yes, the one with all the crocodiles. NSW eventually removed its medical-procedure requirement from 1 July 2025.
 
 ![](/assets/images/2024/img_1304.jpg)
 
@@ -43,15 +48,17 @@ That's not to say that being healthier and baking bread and cake goods are incom
 
 ![](/assets/images/2024/img_1307.jpg)
 
-A positive side effect of being vegan means I have to stop eating bees. This means instead of eating them, I can get better at handling them. Flow-on effects include helping me gain a new respect for the local paper wasps. It's almost winter here so the queens are asleep. The European honey bees on the other hand are still out and about. They seem to enter torpor and power down overnight if they get stuck away from their hives. Sometimes they will warm up when popped in the sun and take flight.
+A positive side effect of being vegan means I have to stop eating bees. This means instead of eating them, I can get better at handling them. Flow-on effects include helping me gain a new respect for the local paper wasps. It's almost winter here, so many of the seasonal paper-wasp colonies are winding down and surviving queens may be overwintering. The European honey bees on the other hand are still out and about. Individual bees stranded away from the hive can become cold and nearly motionless overnight. Sometimes popping one in the sun is enough for it to warm up and take flight again.
 
 ![](/assets/images/2024/img_1308.jpg)
 
-Not all is well though, the most common form of failure I have seen so far is what looks like pesticide poisoning. All legs spasm, then work fine for a bit, then spasm again. To prevent suffering, these little ones are mechanically destroyed. It hurts. **Every. Single. Time.**
+Not all is well though, the most common failure pattern I have seen so far looks neurological: all the legs spasm, work normally for a while, then spasm again. At the time I suspected pesticide poisoning, but those signs are not specific enough for me to know the cause just by looking at a bee. To prevent prolonged suffering, these little ones are mechanically destroyed. It hurts. **Every. Single. Time.**
 
 ![](/assets/images/2024/img_1302.jpg)
 
-Another one I found seems to have had issues with the two front legs. Poor thing couldn't clean itself. A little bit of digging and... the [slow bee paralysis virus (SBPV)](https://en.wikipedia.org/wiki/Slow_bee_paralysis_virus) appeared. Look at that vector, Varroa destructor mite. And it looks like [the government has given up](https://www.dpi.nsw.gov.au/emergencies/biosecurity/current-situation/varroa-mite-emergency-response). Interestingly, [it does not affect the native bees](https://web.archive.org/web/20251006131135/https://www.outbreak.gov.au/current-outbreaks/varroa-mite).
+Another one I found seemed to have problems with the two front pairs of legs. Poor thing couldn't clean itself. A little bit of digging led me to [slow bee paralysis virus (SBPV)](https://en.wikipedia.org/wiki/Slow_bee_paralysis_virus), because front-leg paralysis is one of its reported signs and Varroa destructor can transmit it. But I had no laboratory test, and later Australian national baseline testing found no evidence of SBPV in the samples tested. So this was a symptom match I found on the internet, not a diagnosis of this bee.
+
+And look at that vector, Varroa destructor. By then the national response had already shifted away from eradication after the National Management Group concluded in September 2023 that eradication was no longer technically feasible. I called that the government giving up; officially it was a transition from eradication to management. The February 2024 transition plan was aimed at slowing spread and helping the honey-bee industry manage the now-established mite. Australian native bees are not affected by Varroa destructor itself.
 
 ![](/assets/images/2018/img_0619.jpg)
 
@@ -63,4 +70,12 @@ With that in mind, I guess I'll head back to university for the 18th time. I've 
 
 ![](/assets/images/2024/img_1306.jpg)
 
-**Footnote:** I picked up some fully hectic debt. And now I'm trying to kick pregabalin again. Incredible how fast physiological dependence happens. I can rest, errr-somewhat-uneasily-thanks-to-pregabalin-withdrawal-induced-insomnia, knowing that the psychiatrist who prescribed them **for sleep** is now retired. I think I'll be ready for mid-year intake at uni in... late July. I best do some exposure therapy at the uni before my first day there... bring it on! 🦎
+**Footnote:** I picked up some fully hectic debt. And now I'm trying to kick pregabalin again. Incredible how quickly physiological dependence seemed to happen **for me**. Withdrawal symptoms after both short- and long-term pregabalin use are recognised, so this was another reminder that "prescribed" does not mean "effortless to stop". I can rest, errr-somewhat-uneasily-thanks-to-pregabalin-withdrawal-induced-insomnia, knowing that the psychiatrist who prescribed them **for sleep** is now retired. I think I'll be ready for mid-year intake at uni in... late July. I best do some exposure therapy at the uni before my first day there... bring it on! 🦎
+
+### Sources
+
+- [NSW Births, Deaths and Marriages Registration Act 1995 - historical version](https://legislation.nsw.gov.au/view/whole/pdf/inforce/2024-11-08/act-1995-062)
+- [Queensland Births, Deaths and Marriages Registration Act 2023](https://www.legislation.qld.gov.au/view/html/inforce/current/act-2023-017/lh)
+- [NSW DPI - Varroa mite emergency response](https://www.dpi.nsw.gov.au/emergencies/biosecurity/current-situation/varroa-mite-emergency-response)
+- [USDA APHIS - Slow Bee Paralysis Virus case definition](https://www.aphis.usda.gov/sites/default/files/slow-bee-paralysis-virus-case-definition.pdf)
+- [TGA - Pregabalin and gabapentin safety alert](https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/pregabalin-and-gabapentin)

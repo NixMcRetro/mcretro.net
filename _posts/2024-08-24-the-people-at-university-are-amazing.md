@@ -3,6 +3,11 @@ title: "The People at University are Amazing"
 author: "Nix McRetro"
 date: 2024-08-24T05:18:28.000+10:00
 categories: [news, study]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2024/img_1347.jpg)
@@ -19,7 +24,7 @@ But there's always a catch, isn't there? There's this damn trade off between soc
 
 ![](/assets/images/2024/img_1342.jpg)
 
-So pregabalin and/or clonazepam (even though I haven't got the doses ideal yet) are perfect. Clonazepam should only be used short term, but pregabalin can apparently be used long term with no issue. So what do I do? The way I see it there are three options.
+So pregabalin and/or clonazepam were helping enormously with the social side, even though I still hadn't found a balance I was happy with. I was treating clonazepam as the obvious short-term problem while telling myself pregabalin could just be used long term "with no issue". That was too casual. Benzodiazepines carry dependence and memory-impairment risks, and the TGA also warns that pregabalin can cause dependence and withdrawal after both short- and long-term use. Long-term pregabalin can be clinically appropriate for some people; that is very different from saying it has no issues. So what do I do? The way I see it there are four options.
 
 1\. Should I reduce the levels of pregabalin and cease clonazepam? This would likely result in me reverting and just abandoning study.
 
@@ -35,7 +40,7 @@ The good thing this round is that my Jobseeker Payment from the Australian Gover
 
 ![](/assets/images/2024/img_1339.jpg)
 
-The only reason I can get these thoughts onto paper is because my medication is at the lowest levels in my system, which means my brain has minimal scrambling. Cognitive function will decline when I have my morning dose in a few hours.
+The only reason I can get these thoughts onto paper is because I was finding my thinking clearest when the medication level felt lowest. A few hours after the morning dose I often felt more cognitively scrambled. That is my repeated subjective experience, not a serum drug-level measurement, but the trade-off was becoming hard to ignore.
 
 ![](/assets/images/2024/img_1336.jpg)
 
@@ -55,7 +60,7 @@ My next psychiatrist appointment should have a breakthrough or two with speciali
 
 ![](/assets/images/2024/img_1351.jpg)
 
-In other news, I've downsized my study TV (and sold my PlayStation 5 to fund it), the wasp comb nest I've been watching has **three** overwintered native wasps, and I've started to stress eat, which combined with pregabalin has caused roughly a 5% weight increase
+In other news, I've downsized my study TV (and sold my PlayStation 5 to fund it), the wasp comb nest I've been watching has **three** overwintered native wasps, and I've started to stress eat. That, alongside pregabalin and everything else changing at once, has coincided with roughly a 5% weight increase.
 
 ![](/assets/images/2024/img_1350.jpg)
 
@@ -76,3 +81,8 @@ Jon made it as a regular which was great too!
 ![](/assets/images/2024/img_1337.jpg)
 
 I guess I technically started UTS for the spring period and am still finding bees on the path out front of a (cold) morning. Spring will be here soon and I can't wait. Hope for the best, plan for the worst. Too bad my planning is out the window thanks to pregabalin. Oh well, what's a girl to do! 🤷‍♀️
+
+### Sources
+
+- [TGA - Pregabalin and gabapentin safety alert](https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/pregabalin-and-gabapentin)
+- [Australian Commission on Safety and Quality in Health Care - Rivotril consumer medicine information](https://www.safetyandquality.gov.au/medicine-finder/rivotril)

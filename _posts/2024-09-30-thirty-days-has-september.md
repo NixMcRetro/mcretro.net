@@ -3,6 +3,11 @@ title: "Thirty Days Has September"
 author: "Nix McRetro"
 date: 2024-09-30T19:28:49.000+10:00
 categories: [microsoft, news, repairs]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![](/assets/images/2024/img_1358.jpg)
@@ -27,7 +32,9 @@ One year ago I abandoned my pursuit of the disability support pension (DSP) beca
 
 ![](/assets/images/2024/img_1359.jpg)
 
-Also had an appointment with my endocrinologist - all my blood work is looking good. 5,000 IU per day of D3 appears to be increasing my phosphate levels. If it keeps increasing then I can look into getting a shot of 600,000 IU intramuscular D3 that should last a while.
+Also had an appointment with my endocrinologist - all my blood work was looking good. I had been taking 5,000 IU of vitamin D3 per day and my phosphate had risen. The timing made me wonder whether the vitamin D was responsible, but one rising result does not establish causation. For context, 5,000 IU/day is already above the Australian adult Upper Level of 3,200 IU/day for routine population intake, although clinicians may deliberately use higher doses when treating and monitoring deficiency.
+
+I was also discussing the possibility of a 600,000 IU intramuscular vitamin D3 dose. Very large intermittent vitamin D doses have been studied clinically, but 600,000 IU is firmly a medical megadose, not a casual next step based on one phosphate result. Too much vitamin D can cause hypercalcaemia, so this belongs with the endocrinologist and the blood tests rather than DIY supplementation.
 
 ![](/assets/images/2024/img_1355.jpg)
 
@@ -55,11 +62,11 @@ Ehhhh, it was kind of annoying. PLL points and all that jazz.
 
 ![](/assets/images/2024/img_1362.jpg)
 
-But the Pico Pi finally has a use beyond blinking an LED or blinking multiple LEDs.
+But the Raspberry Pi Pico finally has a use beyond blinking an LED or blinking multiple LEDs.
 
 ![](/assets/images/2024/img_1363.jpg)
 
-So much could have went wrong...
+So much could have gone wrong...
 
 ![](/assets/images/2024/img_1364.jpg)
 
@@ -87,4 +94,9 @@ And the lizards that hide in the garden getting watered - sorry little guy! Apar
 
 ![](/assets/images/2024/img_1371.jpg)
 
-University has shown me even more great people and just love being around them. I love listening. Not sure what it is. Now, I just need to wait for the 3rd October when I'll hopefully receive an offer for university in 2025. Fingers crossed! 🙃
+University has shown me even more great people and I just love being around them. I love listening. Not sure what it is. Now, I just need to wait for the 3rd October when I'll hopefully receive an offer for university in 2025. Fingers crossed! 🙃
+
+### Sources
+
+- [NHMRC - Nutrient Reference Values for Australia and New Zealand](https://www.nhmrc.gov.au/sites/default/files/images/nutrient-refererence-dietary-intakes.pdf)
+- [Healthdirect Australia - Vitamin D](https://www.healthdirect.gov.au/vitamin-d)

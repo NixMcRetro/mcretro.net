@@ -1,13 +1,18 @@
 ---
-title: "Mac Web Browsers from the 90s and HTML/0.9"
+title: "Mac Web Browsers from the 90s and HTTP/0.9"
 author: "Nix McRetro"
 date: 2023-05-30T21:26:09.000+10:00
 categories: [ibm-pc, youtube]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="Wn0RECnBTg8" %}
 
-Here I was thinking I had an 11 minute voiceover but I misread the timeline. I'll never use a script, I'm too lazy. Enjoy my half completed thoughts in the above. You'll work it out. My biggest issue was HTML/0.9 being interpreted as HTML/1.0 since 0.9 doesn't announce itself or something along those lines. The following issues we encountered are in no particular order - it adds to the fun! 😉
+Here I was thinking I had an 11 minute voiceover but I misread the timeline. I'll never use a script, I'm too lazy. Enjoy my half-completed thoughts above. You'll work it out. The protocol I was wrestling with was HTTP/0.9, not "HTML/0.9". HTML is the document format; HTTP is the protocol carrying it. The following issues we encountered are in no particular order - it adds to the fun! 😉
 
 ![](/assets/images/2023/img_1016.jpg)
 
@@ -31,7 +36,7 @@ Forbidden address. Ahhh yes. I believe this was caused by Cloudflare doing somet
 
 ![](/assets/images/2023/img_1018.jpg)
 
-So I resorted to telnet (which is very old-internet friendly it turns out). Performing a simple "GET /" at my server's IP resulted in... a bad request... with a sprinkling of Cloudflare - which was supposed to be disabled. I messed with the proxy settings a bit more, possibly disabling Cloudflare completely for testing and...
+So I resorted to telnet, which is very old-internet friendly as long as you type the request correctly. A true HTTP/0.9 request is just a one-line `GET` request with no HTTP version token or request headers. Throwing modern expectations, name-based virtual hosting and Cloudflare into the path made this a lot less simple than it sounds. HTTP/0.9 has no `Host` header, so it cannot select between name-based virtual hosts. I messed with the proxy settings a bit more, possibly disabling Cloudflare completely for testing and...
 
 ![](/assets/images/2023/img_1019.jpg)
 
@@ -69,9 +74,13 @@ MacMosaicB6 uses libwww2.09 - MacMosaicB6 is any pre-2.0 version. In our case 1.
 
 And our Windows Mozilla 1.0, unsurprisingly perhaps, uses Mozilla/1.0 (Windows).
 
-What's perhaps most interesting to me in all the above examples, Apache is only seeing GET from HTML/1.0. There's no GET from HTML/0.9 because it wasn't versioned. My poor little Apache2 web server has no idea what HTML version is knocking so it just says 1.0.
+What's perhaps most interesting in these examples is the request protocol recorded by Apache. The old clients were reaching the server as HTTP/1.0. A real HTTP/0.9 request would just be a one-line `GET /path` with no HTTP version token and no request headers. Apache was not detecting an "HTML version" here at all; I had been mixing up the page format with the transport protocol.
 
-**Here's some of the pages I followed to get this to work, a big thanks to each of the authors!**
+This also corrects my earlier [Macintosh Classic, RaSCSI and The Internet](/macintosh-classic-rascsi-and-the-internet/) theory that the browsers were failing because they only supported HTTP/0.9. That conclusion did not survive testing, which is exactly why documenting the wrong turns is useful.
+
+### Sources
+
+Here's some of the pages I followed to get this to work, a big thanks to each of the authors!
 - [https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP)
 - [https://metalbabble.wordpress.com/2020/02/08/the-final-frontier-connecting-a-macintosh-se-to-the-internet-with-a-raspberry-pi/](https://metalbabble.wordpress.com/2020/02/08/the-final-frontier-connecting-a-macintosh-se-to-the-internet-with-a-raspberry-pi/)
 - [http://www.mirrorservice.org/sites/browsers.evolt.org/browsers/macweb/macweb.htm](http://www.mirrorservice.org/sites/browsers.evolt.org/browsers/macweb/macweb.htm)

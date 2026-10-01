@@ -3,6 +3,11 @@ title: "Banksia BIT Blitzer 124E Dial-up Modem - Model BBM124E-B2CL"
 author: "Nix McRetro"
 date: 2023-06-30T22:31:21.000+10:00
 categories: [linux, modems, repairs]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="cyZtVOeXYCg" %}
@@ -15,11 +20,11 @@ Not the fastest, but the cool factor is pretty high on this modem. Look at all t
 
 ![](/assets/images/2023/img_1026.jpg)
 
-The ROM is dated 891210, so just before Christmas 1989. If you're interested in the ROM, you can download it [here](/files/dumps/). This was dumped using a [TL866CS programmer](https://proghq.org/wiki/TL866). The PCB has the markings Banksia Bit Blitzer 124E/1234E-A which would imply that the same board was used on multiple models.
+The firmware is dated `891210`, so 10 December 1989 if that field is a date. If you're interested in the ROM, you can download it [here](/files/dumps/). This was dumped using a [TL866CS programmer](https://proghq.org/wiki/TL866). The PCB has the markings Banksia Bit Blitzer 124E/1234E-A, which suggests the same board design was used across multiple models.
 
 {% include youtube.html id="As8rEfB5iCw" %}
 
-Above is part two following on from the video at the start of this post. Some of the components onboard seem to have date codes around mid-late 1990. To this unit would have shipped just short of a year after the firmware was ready.
+Above is part two following on from the video at the start of this post. Some of the component codes appear to point to mid-to-late 1990, which suggests this particular unit was assembled sometime after the firmware build if I am reading those codes correctly.
 
 ![](/assets/images/2023/img_1028.jpg)
 
@@ -92,7 +97,7 @@ CONNECT 2400
 
 ```
 
-Last but not least, we have the original capacitor values and what they were replaced with. The parts listed below are manufacturer part numbers. The formatting isn’t too web friendly, copy the raw text out and paste it into a non-rich text editor (Such as Notepad or TextEdit – in plain text mode) and you’ll probably be fine. 😄
+Last but not least, we have the original capacitor values and what they were replaced with. The list below records this BBM124E-B2CL, serial 303159. Treat it as a record of this board rather than a universal Banksia bill of materials; verify the parts actually fitted before ordering replacements. The parts listed below are manufacturer part numbers. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
 
 ```
 Radial Electrolytic

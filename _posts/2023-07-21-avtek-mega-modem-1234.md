@@ -1,8 +1,13 @@
 ---
-title: "Avtek Mega Modem 1234 - Model AM1234"
+title: "Avtek Mega Modem 1234"
 author: "Nix McRetro"
 date: 2023-07-21T13:42:40.000+10:00
 categories: [linux, modems, repairs]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="a2gDiMr5X8k" %}
@@ -31,11 +36,11 @@ During testing the initialisation string used was AT&FS0=0V1X3. ATI9 identified 
 
 ![](/assets/images/2023/img_1032.jpg)
 
-Interestingly the only model number externally is what is on the front of the modem. But knowing what I know now about AutoModems, it was likely an early model from so perhaps before Netcomm Australia, the parent company, started to standardise their model numbering.
+Interestingly, I could not find an external model number beyond "Mega Modem 1234" on the front. The ATI9 string identifies it as `AutoModem 1234PCi Vers 500m (C) NetComm 1991`.
 
 ![](/assets/images/2023/img_1033.jpg)
 
-For the sake of this post, I'm going to call it an AM1234 because it fits well. AM being AutoModem shortened and 1234 plucked straight from the front of the modem and from the ATI9 string.
+I had been calling it AM1234 because that looked consistent with some later NetComm naming, but I do not have evidence that AM1234 was this modem's official model number. Better to preserve the label I can actually see: Avtek Mega Modem 1234.
 
 {% include youtube.html id="cqpAJREkahY" %}
 
@@ -43,9 +48,9 @@ Here's an slightly older video showing the modem performing a blind dial and the
 
 ![](/assets/images/2023/img_1035.jpg)
 
-But geez, with a bit of patience you can easily get six megabytes down and six megabytes up, no small feat but accomplished only though pings.
+But geez, with a bit of patience I managed to clock roughly six megabytes in each direction during extended ping testing. No small feat for 2400 bps.
 
-One important lesson this modem taught me was that the circuits on modems that require an **AC** power adapter need **AC**. While they will accept DC from either centre positive or centre negative - they will not dial. This indicates that some of the circuit is activated but we're missing a rail required for dialing out. This modem required a 9V AC adapter with a barrel type plug.
+One important lesson this modem taught me was specific to this unit: feeding DC into its 9 V AC input was enough to power some logic, but the modem would not dial. That is consistent with part of the analogue or line circuitry needing the AC supply arrangement. It is not a universal rule that every AC-input modem will safely tolerate arbitrary DC, so the correct adapter remains 9 V AC for this modem.
 
 ![](/assets/images/2023/img_1037.jpg)
 

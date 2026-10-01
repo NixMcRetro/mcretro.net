@@ -3,11 +3,18 @@ title: "Ghost Publishing Platform on the Raspberry Pi"
 author: "Nix McRetro"
 date: 2016-12-05T17:48:59.000+11:00
 categories: [guides, linux, raspberry-pi]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 ![ghost-logo-svg](/assets/images/2016/img_0594.jpg)
 
-I decided to have a look around for an alternative to WordPress. I must admit I do have a tendency to do this from time to time. Anyway, enter [Ghost](https://ghost.org). No php, just pure js built for the new world order. Anyway, get your Raspberry Pi up and running with Raspbian Jessie and then plug in the following commands - you can check through the [here](https://nodejs.org/dist/latest-argon/) for the latest v4 (Argon) nodejs. That is currently the best supported version Ghost recommends.
+I decided to have a look around for an alternative to WordPress. I must admit I do have a tendency to do this from time to time. Anyway, enter [Ghost](https://ghost.org). No PHP, just JavaScript built for the new world order.
+
+**Historical installation notes:** This is the Ghost installation process I was experimenting with in December 2016. It uses Raspbian Jessie, Node.js 4 and the pre-Ghost-CLI installation method, so it should not be treated as a current installation guide. I have left the old commands here as part of the record rather than trying to modernise them in place.
 
 ```
 cd ~
@@ -19,6 +26,8 @@ make
 sudo make install
 node -v
 ```
+
+One command in my original notes, `tar -xzf node node-v4.6.2.tar.gz`, appears malformed. I no longer have enough evidence here to reconstruct exactly what I typed successfully in 2016, so this block should not be treated as paste-ready.
 
 ```
 cd ~
@@ -39,3 +48,8 @@ sudo npm start --production
 ```
 
 Visit http://\[your-webserver-address\]/ghost and you'll be firing on all cylinders!
+
+
+### Sources
+
+- [Ghost - How to reinstall Ghost](https://ghost.org/docs/reinstall/)

@@ -2,17 +2,17 @@
 title: "Programming with Visual Studio - Week 2"
 author: "Nix McRetro"
 date: 2016-08-10T19:56:02.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-01
 ai_assistance:
   model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
+  date: 2026-10-01
   purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [programming]
 ---
 
 ![vb\_romans](/assets/images/2016/img_0523.jpg)
 
-Ohhh those Romans! Honestly with so many Ifs and ElseIfs it feels like I'm typing in circles, but hey! My code worked for a few of the examples, albeit they were not what the solutions listed. Many ways to do the same thing, I honestly think mine was more efficient and answered their question better... which is odd - given they wrote the question and the answer! But that's fine, as long as I can continue to insert Hogan's Heroes catch phrases and Pentium FDIV references into my code then the world is a better place.
+Ohhh those Romans! With so many Ifs and ElseIfs it feels like I'm typing in circles, but hey! My code worked for a few of the examples, even if it wasn't the same as the listed solution. There are many ways to do the same thing, and I honestly think mine was more efficient and answered the question better... which is odd, given they wrote both the question and the answer! But that's fine. As long as I can continue to insert *Hogan's Heroes* catchphrases and Pentium FDIV references into my code, the world is a better place.
 
 ```
         '3. Write a program that accepts a number from 1 to 100. For multiples of three print “Fizz” instead of the number And for the multiples of five print “Buzz”. For numbers which are multiples of both three And five print “FizzBuzz”.

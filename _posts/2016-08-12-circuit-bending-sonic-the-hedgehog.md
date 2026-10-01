@@ -42,3 +42,8 @@ Big thanks to [Console5](https://console5.com/store/) for the pinout reference.
 
 - [Circuit Bending a Sega Mega Drive 2](/circuit-bending-a-sega-mega-drive-2/)
 - [Circuit Bending VRAM on a Sega Mega Drive / Genesis 2](/circuit-bending-vram-on-a-sega-mega-drive-genesis-2/)
+
+### Sources
+
+- [Gieskes.nl - circuit-bending reference (archived)](https://web.archive.org/web/20160219222212/http://www.gieskes.nl/)
+- [Console5](https://console5.com/store/)

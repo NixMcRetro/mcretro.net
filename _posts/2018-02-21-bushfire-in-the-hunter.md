@@ -1,5 +1,5 @@
 ---
-title: "Bushfire in The Hunter"
+title: "Bushfire in the Hunter"
 author: "Nix McRetro"
 date: 2018-02-21T07:17:22.000+11:00
 categories: [youtube]

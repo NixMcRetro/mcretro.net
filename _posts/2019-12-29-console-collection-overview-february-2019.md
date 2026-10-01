@@ -1,5 +1,5 @@
 ---
-title: "Console Collection Overview – February 2019"
+title: "Console Collection Overview - February 2019"
 author: "Nix McRetro"
 date: 2019-12-29T07:46:59.000+11:00
 categories: [news, youtube]

@@ -5,16 +5,18 @@ date: 2019-01-26T22:28:51.000+11:00
 categories: [study]
 ---
 
-| GPA Results |  |
-| --- | --- |
-| Semester 2, 2015 | 5.5\* |
+| GPA Results | GPA |
+| --- | ---: |
+| Semester 2, 2015 | 5.5* |
 | Semester 1, 2017 | 6.5 |
 | Semester 2, 2017 | 5.3 |
 | Semester 1, 2018 | 6.7 |
 | Semester 2, 2018 | 6.3 |
-| Overall Course GPA 6.1   \* Entry exams to get into the degree. |  |
+| Overall course GPA | 6.1 |
 
-I was curious about how my results were shaping up for my first two years of university. I went ahead and calculated my grade point average (GPA) for each semester (scale of 1-7) since starting way back in 2015 as a non-school leaver. I'm currently running at less than full units, but still enough to be considered full time.
+\* Entry exams to get into the degree.
+
+I was curious about how my results were shaping up for my first two years of university. I went ahead and calculated my grade point average (GPA) for each semester (scale of 1-7) since starting way back in 2015 as a non-school leaver. I'm currently running at less than full units, but still enough to be considered full-time.
 
 It seems I'm still doing well. It is incredible how lazy I can be though. Why learn all semester when you can do it when the exams are only two weeks away? My brain just purges the majority of the information anyway once the course is done. I wish I cared more about getting this degree, it just feels like I'm going through the motions to get the piece of paper that certifies me to research science.
 

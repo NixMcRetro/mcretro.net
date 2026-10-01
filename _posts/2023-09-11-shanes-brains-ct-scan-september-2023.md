@@ -3,11 +3,16 @@ title: "Shane's Brains! CT Scan - September 2023"
 author: "Nix McRetro"
 date: 2023-09-11T15:22:31.000+10:00
 categories: [news]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="wkTBQv1y65M" %}
 
-After having a headache for nearly a week I figured I should get it checked out at the local GP. Thanks to having a somewhat decent health system in place, I had a CT scan just one hour later. Having a history in human biomedical science I did some looking about but couldn't see anything that stuck out, well except for the big diagnostically irrelevant - but neat looking, calcified falx cerebri.
+After having a headache for nearly a week I figured I should get it checked out at the local GP. Thanks to having a somewhat decent health system in place, I had a CT scan just one hour later. Having a background in human biomedical science, I naturally started poking around the images myself. Nothing obvious jumped out at me, apart from what looked like a chunky calcified or ossified section of the falx cerebri. The radiology report did not identify it as pathology, so this was me admiring an incidental-looking bit of anatomy rather than diagnosing myself.
 
 ![](/assets/images/2023/img_1155.jpg)
 
@@ -15,11 +20,11 @@ The CT scans provided have two "modes". Brain window and bone window. Above is b
 
 ![](/assets/images/2023/img_1155a.jpg)
 
-After a quick anatomy refresher, the falx cerebri separates the left and right hemispheres at the very top of the brain. In my case it has turned to bone (via ossification/calcification) for whatever reason. Relatively rare but benign.
+After a quick anatomy refresher, the falx cerebri is the dural fold separating the left and right cerebral hemispheres. Calcification and true ossification are not quite the same thing, and I couldn't establish which I was looking at from these screenshots alone. Both falx calcification and ossification can turn up as incidental imaging findings.
 
 ![](/assets/images/2023/img_1154.jpg)
 
-Next we have bone window mode, where you can see the bone detail but not so much the brain squiggly mush bits, I want to say spaghetti? The falx cerebri appears to be made of the same structure as the skull itself. But it doesn't connect to the skull. Cool science!
+Next we have bone window mode, where you can see the bone detail but not so much the brain squiggly mush bits, I want to say spaghetti? To my eyes, the bright section of falx looked very similar to the skull itself. That alone doesn't establish whether it was calcification or true ossification, but it certainly looks neat. Cool science!
 
 ![](/assets/images/2023/img_1156.jpg)
 
@@ -43,6 +48,13 @@ There is normal alignment of the cervical vertebrae. The facet joints show norma
 **Conclusion:**\
 No significant intracranial pathology. Incidental finding of anatomic variation that may need further characterisation with MRI to assess for any CSF flow abnormality. No significant cervical spine pathology.
 
-**Sources**
-[Reference 1](https://www.radiologymasterclass.co.uk/tutorials/ct/ct_brain_anatomy/ct_brain_anatomy_choroid_calcified)\
-[Reference 2](https://web.archive.org/web/20220526214718/https://radiopaedia.org/articles/falx-ossification)
+Interestingly, the falx was not the finding the radiologist actually wanted followed up. That was the cavum velum interpositum (CVI). A CVI is a CSF-filled midline anatomical variant and is generally considered part of the normal spectrum, although enlargement or a cyst producing mass effect can warrant further investigation. In my scan the radiologist specifically noted convex margins and some degree of mass effect, which is why the MRI was recommended.
+
+Next: [The Headache That Keeps Marching On](/the-headache-that-keeps-marching-on/)
+
+### Sources
+
+- [Radiology Masterclass - Intracranial calcification](https://www.radiologymasterclass.co.uk/tutorials/ct/ct_brain_anatomy/ct_brain_anatomy_choroid_calcified)
+- [Radiopaedia - Falx ossification](https://web.archive.org/web/20220526214718/https://radiopaedia.org/articles/falx-ossification)
+- [Falx cerebri ossification: CT and MRI appearance](https://pubmed.ncbi.nlm.nih.gov/24351265/)
+- [Cavum velum interpositum: imaging and clinical considerations](https://pmc.ncbi.nlm.nih.gov/articles/PMC10607410/)

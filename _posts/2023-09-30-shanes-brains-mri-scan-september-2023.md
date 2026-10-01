@@ -1,19 +1,24 @@
 ---
-title: "Shane's Brains! MRI Scan – September 2023"
+title: "Shane's Brains! MRI Scan - September 2023"
 author: "Nix McRetro"
 date: 2023-09-30T17:55:36.000+10:00
 categories: [news, youtube]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="qI1r7S1O9O4" %}
 
-We're on day 25 of the [never](/shanes-brains-ct-scan-september-2023/)\-[ending](/the-headache-that-keeps-marching-on/) headache. The good news, however, is that I have been to a neurologist who prescribed some [indometacin](https://en.wikipedia.org/wiki/Indometacin) (US: indomethacin). Indometacin is a nonsteroidal anti-inflammatory drug (NSAID), much like naproxen or ibuprofen but even stronger.
+We're on day 25 of the [never](/shanes-brains-ct-scan-september-2023/)\-[ending](/the-headache-that-keeps-marching-on/) headache. The good news, however, is that I have been to a neurologist who prescribed some [indometacin](https://en.wikipedia.org/wiki/Indometacin) (US: indomethacin). Indometacin is a nonsteroidal anti-inflammatory drug (NSAID), in the same broad family as naproxen or ibuprofen. It also has a rather distinctive role in diagnosing and treating indometacin-responsive headache disorders.
 
 ![](/assets/images/2023/img_1163.jpg)
 
-I have been given a suspected diagnosis of [hemicrania continua](https://en.wikipedia.org/wiki/Hemicrania_continua). "The cause of hemicrania continua is unknown." - Well that's probably not good. Interestingly, one of the diagnostic criteria of [hemicrania continua](https://www.ncbi.nlm.nih.gov/books/NBK557568/) is a complete response to therapeutic doses of indomethacin.
+I have been given a suspected diagnosis of [hemicrania continua](https://ichd-3.org/3-trigeminal-autonomic-cephalalgias/3-4-hemicrania-continua/). "The cause of hemicrania continua is unknown." Well that's probably not good. Interestingly, an absolute response to therapeutic doses of indometacin is part of the diagnostic criteria. The ICHD-3 criteria also require the headache to have been present for more than three months, so at day 25 this was still very much a working diagnosis rather than something I could tick off from a checklist.
 
-I am currently on 50 mg indometacin in the morning and 50 mg indometacin at night. I figured if I could get away with 2x 50 mg, I'm better off than having 3x 50 mg. These pills will probably end up destroying your stomach lining. Have I checked I still have the [headache](https://www.sciencedirect.com/topics/medicine-and-dentistry/hemicrania-continua)? Yes! I have missed a dose on at least one occasion and it's definitely still there. Neck, back of eye socket and scalp start to tickle(?) and then turn to pain.
+I was currently taking 50mg indometacin in the morning and 50mg at night. I figured if I could get away with 2x 50mg, I was better off than having 3x 50mg. That was my own dosing decision in this historical diary, not a recommendation for anyone to alter a prescription. My concern about the stomach was at least grounded in reality: indometacin, like other NSAIDs, can cause ulcers and gastrointestinal bleeding, especially as dose or duration increases. Have I checked I still have the [headache](https://www.sciencedirect.com/topics/medicine-and-dentistry/hemicrania-continua)? Yes! I have missed a dose on at least one occasion and it's definitely still there. Neck, back of eye socket and scalp start to tickle(?) and then turn to pain.
 
 ![](/assets/images/2023/img_1164.jpg)
 
@@ -27,4 +32,9 @@ Yes, I am still unemployed and burning through my savings. I mean they were for 
 
 **Comment:** No acute intracranial pathology detected.
 
-I am just glad there **_is_** a way treat the symptoms. Well at least until the medication either doesn't work or burns a hole through my stomach. Probably should check and update my lucky bingo card for 2023. Hmmmmm. Oh there it is! "Primary headache disorder" - ✅ 😅
+I am just glad there **_is_** a way to treat the symptoms. Indometacin is not exactly gentle on the gastrointestinal tract, so hopefully it keeps working without giving my stomach something new to complain about. Probably should check and update my lucky bingo card for 2023. Hmmmmm. Oh there it is! "Primary headache disorder" - ✅ 😅
+
+### Sources
+
+- [International Classification of Headache Disorders 3 - Hemicrania continua](https://ichd-3.org/3-trigeminal-autonomic-cephalalgias/3-4-hemicrania-continua/)
+- [Australian Commission on Safety and Quality in Health Care - Indocid consumer medicine information](https://www.safetyandquality.gov.au/medicine-finder/indocid-suppositories)

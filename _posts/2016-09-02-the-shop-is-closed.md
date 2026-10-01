@@ -7,7 +7,7 @@ categories: [news]
 
 ![closed_sign](/assets/images/2016/img_0550.jpg)
 
-Thanks to everyone who purchased from McRetro.net! It was an interesting experience, however, selling things isn't nearly as fun as playing with them. As a result, effective immediately - the shop is closed down and database purged. This won't affect anything else on the website so you can still enjoy great YouTube videos and the photo gallery and... drum roll... this blog! :-)
+Thanks to everyone who purchased from McRetro.net! It was an interesting experience, but selling things isn't nearly as fun as playing with them. As a result, effective immediately, the shop is closed and the database has been purged. This won't affect anything else on the website, so you can still enjoy great YouTube videos, the photo gallery and... drum roll... this blog! :-)
 
 ### McRetro Gaming Shop
 

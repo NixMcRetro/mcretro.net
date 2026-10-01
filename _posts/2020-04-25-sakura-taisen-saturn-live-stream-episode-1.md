@@ -1,0 +1,25 @@
+---
+title: "Sakura Taisen (Saturn Live Stream, Episode 1)"
+author: "Nix McRetro"
+date: 2020-04-25T18:46:23.000+10:00
+categories: [gaming, livestream, sega]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
+---
+
+{% include youtube.html id="rYFg_xpyukA" %}
+
+Today we take a look at Sakura Taisen for the Sega Saturn. We're using an Open Source Scan Converter (OSSC) from an RGB source with a peppering of scanlines at 6%. Everyone needs more scanlines in their lives. A bit awkward on full-motion video, but what can you do!
+
+The Saturn game received its English fan-translation patch on 15 December 2019, so this was still wonderfully fresh when I started playing it. I've always been a fan of the soundtracks, which were released as box sets. They are fantastic! Project Sakura Wars (Shin Sakura Taisen) was also on the way in English, which only added to the excitement.
+
+Other great games like Final Fantasy VII were also being remade for modern consoles. Maybe I finally needed to install that PSIO from many years ago into my PlayStation!
+
+Next: [Sakura Taisen (Saturn Live Stream, Episode 2)](/sakura-taisen-saturn-live-stream-episode-2/)
+
+### Sources
+
+- [SegaXtreme - Sakura Wars English translation release discussion](https://segaxtreme.net/threads/sega-saturn-25th-anniversary-game-competition.24462/page-2)

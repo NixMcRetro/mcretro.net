@@ -3,6 +3,11 @@ title: "Cisco SPA8000-G4 VoIP Fan Quietener Mod"
 author: "Nix McRetro"
 date: 2023-08-18T08:43:38.000+10:00
 categories: [hacks, repairs, youtube]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="h9isDzHVapY" %}
@@ -11,15 +16,15 @@ I really don't like small fans. Dreamcast, looking at you. Then again, I've adde
 
 ![](/assets/images/2023/img_1099.jpg)
 
-This SPA8000 was originally slated to replace my Linksys PAP2T. However, I ended up moving to the similar Cisco SPA112. The SPA8000 was overkill for my needs - testing some dial-up modems. It wasn't ever going to hang around for long. Since this will probably be the last post on this device, I probably should tie up some lose ends.
+This SPA8000 was originally slated to replace my Linksys PAP2T. However, I ended up moving to the similar Cisco SPA112. The SPA8000 was overkill for my needs - testing some dial-up modems. It wasn't ever going to hang around for long. Since this will probably be the last post on this device, I probably should tie up some loose ends.
 
 ![](/assets/images/2023/img_1101.jpg)
 
-First up is the capacitor replacement. These capacitors must have been rated with Nichicon-levels of life. Because the 10V and 16V both had the same form factor in the Panasonic FR series. Which leads me to believe that these capacitors were either not both 470uF and 10V. I was able to get around it be elevating the capacitors slightly off the PCB.
+First up is the capacitor replacement. These capacitors must have been rated with Nichicon-levels of life. The Panasonic FR replacements did not line up neatly with every original footprint, which made me suspicious, but case size alone does not prove the original markings were wrong. Different capacitor series can package the same capacitance and voltage rating in different case sizes. I was able to get around the fit problem by elevating the larger replacements slightly off the PCB.
 
 ![](/assets/images/2023/img_1102.jpg)
 
-Here's the fan controller that was used. Relatively simple and cheap. I swapped out the 50V Sanyo for a 25V Panasonic capacitor to fit flush with the PCB. Not ideal as you want it to have room to vent, but I knew the input voltage wouldn't exceed the input voltage of where the fan wires came from.
+Here's the fan controller that was used. Relatively simple and cheap. I swapped out the 50 V Sanyo for a 25 V Panasonic capacitor to fit flush with the PCB. That was my 2023 choice, but dropping a capacitor's voltage rating should only be done after measuring or otherwise verifying the maximum voltage and transients at that component. Physical fit alone is not enough.
 
 ![](/assets/images/2023/img_1103.jpg)
 
@@ -35,11 +40,11 @@ And you can hardly even notice it from the front.
 
 ![](/assets/images/2023/img_1106.jpg)
 
-I mean it looks neat, that's not like me at all. I'd want the fan to be on at all times - even at the lowest setting for peace of mind. Even after this modification I still found the fan, at the lowest speed, to be noisy. Probably that grill blocking airflow and increasing turbulence. Definitely a deciding factor in moving to the Cisco SPA112 instead - no fan!
+I mean it looks neat, that's not like me at all. I'd want the fan to be on at all times - even at the lowest setting for peace of mind. Reducing fan speed also reduces cooling, so this sort of modification should be validated with temperatures under the actual load and ambient conditions. Even after this modification I still found the fan, at the lowest speed, to be noisy. Probably that grill blocking airflow and increasing turbulence. Definitely a deciding factor in moving to the Cisco SPA112 instead - no fan!
 
 ![](/assets/images/2023/img_1100.jpg)
 
-The parts listed below are manufacturer part numbers. The formatting isn’t too web friendly, copy the raw text out and paste it into a non-rich text editor (Such as Notepad or TextEdit – in plain text mode) and you’ll probably be fine. 😄  
+The parts listed below are manufacturer part numbers and record what I installed in this particular SPA8000-G4. Treat the table as a board record rather than a universal bill of materials. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄  
 
 ```
 Location	Value	Voltage		Dimensions				Lead Spacing	Notes
@@ -66,7 +71,7 @@ VEC1		100uF	10V			12.5mm (h) x 5mm (w)	2.0mm			As above
 EC10		470uF	10V			12.5mm (h) x 6mm (w)	2.0-2.5mm		EEUFR1C471	Panasonic FR Series, upgraded to 16V
 EC8			470uF	10V			12.5mm (h) x 6mm (w)	2.0-2.5mm		As above	Lead spacing is 3.5mm, 8mm wide not 6mm... may not fit...
 EC5			470uF	10V			12.5mm (h) x 6mm (w)	2.0-2.5mm		As above	Solution - Raised them up above the board a few millimeters.
-EC4			470uF	10V			12.5mm (h) x 6mm (w)	2.0-2.5mm		As above	Originals were definitely below their rated spec.
+EC4			470uF	10V			12.5mm (h) x 6mm (w)	2.0-2.5mm		As above	Original package was smaller; case size alone does not establish that it was operated beyond rating.
 
 Fan			12V 	0.043A		35mm (w) x 35mm (h) 10mm (d) 			MC011510	For Replacement of Superred CHC3512CB DC 12V 0.13A 35x35x10mm 2-Wire Server Fan
 
@@ -101,6 +106,6 @@ The [quick start guide](https://web.archive.org/web/20250417145553/https://www.c
 
 ![](/assets/images/2023/img_1098.jpg)
 
-It seems to get around the boot loop issue, do not connect ethernet. An active ethernet connection seemed to cause the device to boot loop. Now the AUX port is OK to access manually assigned IP of 192.168.0.1. Another thing that was kicking me was the lack of a time server so the date/time wouldn't update. Adding a primary time server under WAN status (Advanced) of time.nist.gov solved that.
+On this unit, the boot loop stopped when I disconnected Ethernet, which let me reach the AUX interface at 192.168.0.1 and continue recovery. I would not turn that into a universal SPA8000 rule, but it was the condition that worked here. Another thing that was kicking me was the lack of a time server so the date/time wouldn't update. Adding a primary time server under WAN status (Advanced) of time.nist.gov solved that.
 
 There's more photos of this device in the [photo gallery](/photos) if you are interested in that sort of thing. No judgement from this side of the table! 😄 I've also added the latest firmware at the time of writing and some pdfs on configuring the SPA8000 onto the [file server](/files).

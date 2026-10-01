@@ -11,7 +11,7 @@ I saw this awesome dial-up modem spectrogram from ten years ago while hunting so
 
 {% include youtube.html id="vvr9AMWEU-c" %}
 
-Reading through the comments on the above video disappointed me that the software used wasn't mentioned. So I started digging around and [came across this](https://spectrogram.sciencemusic.org) which pretty cool. Drop an audiophile in there and you're good to go. Wait, no not that sort of audio file.
+Reading through the comments on the above video disappointed me that the software used wasn't mentioned. So I started digging around and [came across this](https://spectrogram.sciencemusic.org), which is pretty cool. Drop an audiophile in there and you're good to go. Wait, no not that sort of audio file.
 
 ![](/assets/images/2023/img_1075.jpg)
 
@@ -33,7 +33,7 @@ Well, I know what iZotope 5 is. It's 5 versions older than iZotope 10 - which is
 
 ![](/assets/images/2023/img_1073.jpg)
 
-While I used Final Cut Pro X, it turns out you can use iZotop Ozone with Logic Pro X and other apps which is pretty neat. And that's it. Screen capture the video, sync it to the source, encode again... [add some more JPEG](https://web.archive.org/web/20130516130936/http://needsmorejpeg.com/) to your HEVC video and it's ready to be processed for an eighth time by YouTube.
+While I used Final Cut Pro X, it turns out you can use iZotope Ozone with Logic Pro X and other apps which is pretty neat. And that's it. Screen capture the video, sync it to the source, encode again... [add some more JPEG](https://web.archive.org/web/20130516130936/http://needsmorejpeg.com/) to your HEVC video and it's ready to be processed for an eighth time by YouTube.
 
 ![](/assets/images/2023/img_1074.jpg)
 

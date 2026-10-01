@@ -3,6 +3,11 @@ title: "NetComm Roadster V.92 - Model AM5698"
 author: "Nix McRetro"
 date: 2023-08-12T12:39:05.000+10:00
 categories: [linux, modems, repairs]
+last_modified_at: 2026-10-01
+ai_assistance:
+  model: "OpenAI GPT-5.6 Sol"
+  date: 2026-10-01
+  purpose: "fact-checking, sourcing, and editorial cleanup"
 ---
 
 {% include youtube.html id="bOloActkN2Q" %}
@@ -27,11 +32,11 @@ Dammit! That speaker does not have the clearance it needs. I need the ultra shor
 
 ![](/assets/images/2023/img_1080.jpg)
 
-Perfect! Interestingly most of the affected caps were 10uf at 25V but I might have derated them a little to 50V, which in this case made them not quite fit right... 😅 The capacitor at C25 is a 22uF with a 63V rating. Now given it is nearest to the power input it's probably running at ~7.5V which gives plenty of leeway.
+Perfect! Most of the affected originals were 10 µF, 25 V parts. I replaced some with 50 V parts, which increased the voltage rating but also made the cans too tall for the space under the speaker. That is not "derating" the capacitor; derating means operating a component below its rating. The shorter ZLG parts solved the mechanical problem. The capacitor at C25 is a 22 µF, 63 V part.
 
 ![](/assets/images/2023/img_1081.jpg)
 
-It was of interest it was a bipolar, or non-polar, capacitor. [Jon](https://damntechnology.blogspot.com) informed me that it was likely because the factory would have just used whatever they had on hand to save on costs or to meet production. When the capacitor was removed, the silkscreen revealed a polarised cap confirming his theory.
+C25 was more important. The fitted 22 µF, 63 V capacitor was bipolar or non-polar, while the PCB silkscreen showed a polarity mark. I originally took that silkscreen as confirmation that a polarised replacement was fine. It is not enough evidence on its own. A non-polar electrolytic may be deliberate where the voltage can reverse, so a polar replacement should only be used after checking the circuit and confirming the actual voltage polarity.
 
 Next up we have the ATI (inquiry, information, or interrogation) results. This give us the active firmware version - this wasn't dumped because I didn't have much interest in doing it at the time. That said, it might be available through [archive.org](http://archive.org) as an available firmware update. You'll need to scour the archives to track that down though.
 
@@ -82,7 +87,7 @@ CONNECT 28800
 
 ```
 
-The capacitors were replaced in this modem in September 2022. The parts listed below are manufacturer part numbers. The formatting isn’t too web friendly, copy the raw text out and paste it into a non-rich text editor (Such as Notepad or TextEdit – in plain text mode) and you’ll probably be fine. 😄
+The capacitors were replaced in this modem in September 2022. This is a record of this ST309 REV B board, not a universal AM5698 bill of materials. The parts listed below are manufacturer part numbers. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
 
 ```
 Location	Value	Voltage		Height	Width	Notes
@@ -111,3 +116,7 @@ Use caution under the speaker as 11/12mm (h) capacitors will not have enough cle
 As always you can see more pictures in the [photo gallery](/photos) and grab any drivers from the [file server](/files). I've put an iso image up of the entire driver disc as well but you shouldn't need much more than the above init string to get dialling.
 
 This modem has been donated to the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/).
+
+### Sources
+
+- [Nichicon - Application Guidelines for Aluminium Electrolytic Capacitors](https://www.nichicon.co.jp/english/series_items/catalog_pdf/e-aluminum.pdf)

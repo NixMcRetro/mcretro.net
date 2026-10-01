@@ -7,4 +7,6 @@ categories: [ibm-pc, sega, youtube]
 
 {% include youtube.html id="pgCsxhCDH3A" %}
 
-A video review of the horrors I had previously done to these innocent WDL-330P hard drives. Don't worry, we'll fix then and their counterpart floppy drives in the next set of videos. This series will take us right through until the coming weekend. So please, pull up a seat and enjoy the first video of the set!
+A video review of the horrors I had previously done to these innocent WDL-330P hard drives. Don't worry, we'll fix them and their counterpart floppy drives in the next set of videos. This series will take us right through until the coming weekend. So please, pull up a seat and enjoy the first video of the set!
+
+Next: [Sega TeraDrive Spare Drive WDL-330P #1 Recapping](/sega-teradrive-spare-drive-wdl-330p-1-recapping/)

@@ -2,11 +2,11 @@
 title: "Unichip 486 WB 4407 Rev 1.1 Motherboard Overview"
 author: "Nix McRetro"
 date: 2012-12-04T10:51:54.000+11:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-10-04
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-04
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, youtube]
 ---
 
@@ -23,10 +23,10 @@ AMIBIOS (C)1992 American Megatrends Inc.
 4407 UNICHIP BIOS VER 1.0
 ```
 
-Later BIOS cataloguing independently associates the `U4800VLX` identifier with the DataExpert / Unichip 486 WB 4407 family, which supports the board identification shown here.
+A later Elektroda discussion reports the same `U4800VLX` BIOS prefix, a DataExpert vendor identification and `4407 UNICHIP BIOS VER 1.0`. That is consistent with the board identification shown here.
 
 I have been silently updating some of the guide pages and the collection pages also. I am still trying to work out a suitable format for the computers vs consoles. Mainly because there are more consoles than computers and many more duplicates. I'll work something out. In the meantime stay tuned. We might even have some Apple Lisa videos in the near future if anyone is interested.
 
 ### Sources
 
-- [Elektroda - U4800VLX / Unichip 4407 BIOS identification](https://www.elektroda.pl/rtvforum/topic3694152.html) - independently catalogues the same BIOS family and board identification.
+- [Elektroda - GMB-486 UNP - Bios do BARDZO starej płyty głównej, post 26](https://www.elektroda.pl/rtvforum/topic3694152.html) - the 20 May 2020 post reports the matching BIOS prefix, DataExpert vendor identification and Unichip 4407 BIOS version.

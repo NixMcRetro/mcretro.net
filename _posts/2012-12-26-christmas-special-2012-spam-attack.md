@@ -2,6 +2,11 @@
 title: "Christmas Special 2012: SPAM Attack"
 author: "Nix McRetro"
 date: 2012-12-26T12:06:58.000+11:00
+last_modified_at: 2026-10-04
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-04
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [news, youtube]
 ---
 

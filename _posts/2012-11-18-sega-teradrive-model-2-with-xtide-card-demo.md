@@ -2,11 +2,11 @@
 title: "Sega TeraDrive Model 2 with XTIDE Card Demo"
 author: "Nix McRetro"
 date: 2012-11-18T01:48:27.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-04
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-04
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, sega]
 ---
 
@@ -32,19 +32,9 @@ That is presently my favourite feature.
 
 ![](/assets/images/2012/img_0358.jpg)
 
-Finally, XTIDECFG programming the onboard EEPROM.
+Finally, XTIDECFG programming the onboard EEPROM. The screen shows `ide_at.bin`, version 2.0.0 Beta 2, dated 19 September 2012.
 
-At the time I was looking at moving from Beta 1 to Beta 2 because newer obviously means better, right?
-
-There is an important catch.
-
-XTIDE Universal BIOS 2.0.0 Beta 2 changed the logical CHS geometry behaviour used by Beta 1 and older releases.
-
-Upgrading an already partitioned drive can therefore change the disk geometry presented to DOS and potentially corrupt the existing filesystem.
-
-The XTIDE documentation recommends recreating the partitions after moving from Beta 1 or an older release where the reported geometry changes.
-
-So, somewhat accidentally, sticking with the configuration that already worked was a very sensible choice.
+One important detail I did not know at the time: XTIDE Universal BIOS 2.0.0 Beta 2 changed the logical CHS behaviour used by Beta 1 and older releases. Upgrading an already partitioned drive can change the geometry presented to DOS and risk data corruption. The later project documentation calls for recreating and formatting the affected partitions after upgrading.
 
 ### Related posts
 
@@ -53,4 +43,4 @@ So, somewhat accidentally, sticking with the configuration that already worked w
 
 ### Sources
 
-- [XTIDE Universal BIOS Manual](https://www.xtideuniversalbios.org/browser/xtideuniversalbios/wiki/Manual_v2_0_0.wiki?rev=329) - documents BIOS builds for older CPUs and the logical CHS compatibility warning around Beta 2.
+- [XTIDE Universal BIOS - project documentation](https://www.xtideuniversalbios.org/) - documents the BIOS builds and the later logical CHS compatibility warning when upgrading from Beta 1 or older releases to Beta 2 or later.

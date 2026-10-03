@@ -2,19 +2,17 @@
 title: "The Apple Macintosh LC 475"
 author: "Nix McRetro"
 date: 2012-09-23T13:38:14.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [apple, repairs]
 ---
 
 ![](/assets/images/2012/img_0267.jpg)
 
-Finally got around to installing a clean system on the LC 475 I picked up a few weeks ago.
-
-I've recorded some video of the installation process. The hard drive sounds as though it is preparing to shatter into several thousand pieces, but for now it is still working.
+Finally got around to installing a clean system on the LC 475 I picked up a few weeks ago. I've recorded some video of the installation process. The hard drive sounds as though it is preparing to shatter into several thousand pieces, but for now it is still working.
 
 The pizza-box design has always been a favourite of mine.
 
@@ -38,9 +36,7 @@ I've also added a small LC 475 album to the [photo gallery](/goodies/) if you wa
 
 Mmmm. Stock LC 475.
 
-Apple shipped it with a 25 MHz Motorola 68LC040, 8 KB of internal L1 cache and no external L2 cache. The LC version of the 68040 also lacks the full 68040's integrated floating-point unit.
-
-Mine is still stock CPU-wise at this point.
+Apple shipped it with a 25 MHz Motorola 68LC040, 8 KB of internal L1 cache and no external L2 cache. The LC version of the 68040 also lacks the full 68040's integrated floating-point unit. Mine is still stock CPU-wise at this point.
 
 That will not last forever.
 
@@ -48,7 +44,7 @@ I later bought a full 68040 specifically to replace the FPU-less 68LC040, then w
 
 ### Related posts
 
-- [Apple Macintosh LC 475 Demo](/apple-macintosh-lc-475-demo/)
+- [Apple Macintosh LC 475 System Setup Demo](/apple-macintosh-lc-475-system-setup-demo/)
 - [Apple Macintosh LC 475 Overclocking to 33MHz](/apple-macintosh-lc-475-overclocking-to-33mhz/)
 
 ### Sources

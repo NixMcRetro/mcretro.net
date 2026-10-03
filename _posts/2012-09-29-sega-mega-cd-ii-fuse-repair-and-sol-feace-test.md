@@ -2,11 +2,11 @@
 title: "Sega Mega-CD II Fuse Repair and Sol-Feace Test"
 author: "Nix McRetro"
 date: 2012-09-29T23:04:23.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega, youtube]
 ---
 

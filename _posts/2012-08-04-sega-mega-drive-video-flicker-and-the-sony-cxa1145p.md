@@ -2,11 +2,11 @@
 title: "Sega Mega Drive Video Flicker and the Sony CXA1145P"
 author: "Nix McRetro"
 date: 2012-08-04T12:27:10.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega]
 ---
 
@@ -16,9 +16,7 @@ categories: [repairs, sega]
 
 ![](/assets/images/2012/img_0245.jpg)
 
-I was going to sell this Mega Drive for scrap, but some more testing made the fault considerably more interesting.
-
-The yellow and green video flicker only happens from a cold boot. After the console has been running for around thirty minutes, the picture settles down and the flickering disappears.
+I was going to sell this Mega Drive for scrap, but some more testing made the fault considerably more interesting. The yellow and green video flicker only happens from a cold boot. After the console has been running for around thirty minutes, the picture settles down and the flickering disappears.
 
 One suspect is the Sony CXA1145P video encoder. Sony designed the CXA1145P to take the console's analogue RGB signals and generate composite video, so a fault there could plausibly affect the colours reaching the television.
 
@@ -30,9 +28,7 @@ Who cares? They're about $3 each!
 
 The gamble eventually paid off. Replacing the CXA1145P fixed the yellow and green flickering completely.
 
-The other Mega Drive I was planning to sell had a dodgy power connection. I scraped back the corrosion around the power plug and got a solid connection again. It still needs the broken volume slider and power LED repaired.
-
-This is the Thailand-made unit with the particularly brittle internal wiring. Some of the wires practically fell out when I removed the case.
+The other Mega Drive I was planning to sell had a dodgy power connection. I scraped back the corrosion around the power plug and got a solid connection again. It still needs the broken volume slider and power LED repaired. This is the Thailand-made unit with the particularly brittle internal wiring. Some of the wires practically fell out when I removed the case.
 
 Aaaand the volume slider that fell off...
 

@@ -2,11 +2,11 @@
 title: "Acquisitions Inbound: PAL VA0 Dreamcast, Accolade Dev Cart and LC 475"
 author: "Nix McRetro"
 date: 2012-08-19T11:25:05.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [apple, repairs, sega]
 ---
 
@@ -42,9 +42,7 @@ I'm looking forward to pulling it apart and comparing it with both my Japanese V
 
 ### Accolade development cartridge
 
-I also received the Accolade development cartridge from Germany.
-
-It isn't especially functional without the original PC-side software or something useful loaded into it, but it looks incredibly cool.
+I also received the Accolade development cartridge from Germany. It isn't especially functional without the original PC-side software or something useful loaded into it, but it looks incredibly cool.
 
 I haven't had a chance to photograph it properly yet. That deserves its own post later.
 
@@ -68,13 +66,9 @@ One Model 1 still has the strange cold-start video flicker where red shifts towa
 
 I'm also still waiting on the sockets for my Mega Drive overclocking experiments and the BA6798S motor-driver IC for the faulty Japanese Saturn.
 
-Finally, I've decided I'm going to attempt a homemade Neptune-style console using a Mega Drive 2 and a 32X.
+Finally, I've decided I'm going to attempt a homemade Neptune-style console using a Mega Drive 2 and a 32X. I have two partially modified Mega Drive 2 consoles, so one can remain a normal region and video-frequency modded machine while the other becomes the experiment.
 
-I have two partially modified Mega Drive 2 consoles, so one can remain a normal region and video-frequency modded machine while the other becomes the experiment.
-
-Regional 32X hardware also has to be considered because PAL units are configured around 50 Hz video while Japanese and US units are already configured for 60 Hz.
-
-The US 32X therefore looks like the most sensible donor.
+Regional 32X hardware also has to be considered because PAL units are configured around 50 Hz video while Japanese and US units are already configured for 60 Hz. The US 32X therefore looks like the most sensible donor.
 
 That, and they're uglier than the PAL and Japanese ones.
 

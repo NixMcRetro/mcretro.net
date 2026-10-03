@@ -2,11 +2,11 @@
 title: "Nintendo Famicom Composite AV Mod"
 author: "Nick"
 date: 2012-05-26T19:18:06.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [hacks, nintendo, youtube]
 ---
 
@@ -166,7 +166,7 @@ Below are some videos of the unit while it was in pieces, explaining where the w
 
 {% include youtube.html id="VaGMn3mrMa4" %}
 
-A later guide covering improved Famicom AV modification and jailbar-reduction techniques can be found [here](http://jpx72web.blogspot.com/2016/11/famicom-av-mod-new.html). It documents a related approach and useful schematics. I had no luck with the jailbar-reduction methods I tried. Your luck may vary. Good luck!
+A later guide covering improved Famicom AV modification and jailbar-reduction techniques can be found in [JPX72 - Famicom AV mod - NEW!](http://jpx72web.blogspot.com/2016/11/famicom-av-mod-new.html). It documents a related approach and useful schematics. I had no luck with the jailbar-reduction methods I tried. Your luck may vary. Good luck!
 
 ### Related posts
 
@@ -175,10 +175,10 @@ A later guide covering improved Famicom AV modification and jailbar-reduction te
 
 ### Resources
 
-- [Another Nintendo Famicom AV Mod](http://jpx72web.blogspot.com/2016/11/famicom-av-mod-new.html)
 - [McRetro Photo Gallery](/goodies)
 
 ### Sources
 
+- [JPX72 - Famicom AV mod - NEW!](http://jpx72web.blogspot.com/2016/11/famicom-av-mod-new.html) - a later guide, published in 2016, covering Famicom AV modification and jailbar reduction.
 - [ConsoleMods - NES Top Loader AV Mod](https://consolemods.org/wiki/NES:Top_Loader_AV_Mod) - documents a closely related PNP-transistor composite amplifier topology used in Nintendo RF-only hardware.
 - [Ctrl-Alt-Rees - Nintendo Famicom Composite Video Output Mod](https://ctrl-alt-rees.com/2019-01-26-nintendo-famicom-composite-video-output-mod.html) - documents Famicom board-revision differences and later composite-mod approaches.

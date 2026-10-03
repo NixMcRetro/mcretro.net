@@ -2,11 +2,11 @@
 title: "Sega TeraDrive Model 2 and Model 3 Storage Tests"
 author: "Nix McRetro"
 date: 2012-06-11T01:15:08.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega, youtube]
 ---
 
@@ -22,9 +22,7 @@ Very happy with this.
 
 Above is the Model 3 reassembled, complete with a working hard-drive activity LED.
 
-I also noticed that the floppy-drive rail in the Model 2 has screw holes that physically accommodate the hard-drive mounting arrangement.
-
-That suggests there is room to install a drive in a Model 2. At this stage I had not verified whether the Model 1 used the same mounting arrangement, or whether either machine provided all of the electrical support needed.
+I also noticed that the floppy-drive rail in the Model 2 has screw holes that physically accommodate the hard-drive mounting arrangement. That suggests there is room to install a drive in a Model 2. At this stage I had not verified whether the Model 1 used the same mounting arrangement, or whether either machine provided all of the electrical support needed.
 
 It would be a little ugly in the Model 2 because of the missing front-panel hard-drive LED, while the Model 1 would hide that more neatly.
 
@@ -34,13 +32,9 @@ It would be a little ugly in the Model 2 because of the missing front-panel hard
 
 Next came some Promise EIDEMAX action.
 
-With the controller's onboard BIOS disabled it detected a 40 MB IDE drive, but I still couldn't get the TeraDrive to configure it as a usable hard disk.
+With the controller's onboard BIOS disabled it detected a 40 MB IDE drive, but I still couldn't get the TeraDrive to configure it as a usable hard disk. I suspected some sort of conflict with the TeraDrive motherboard, but that was only a theory. I tried every jumper combination I could think of, including different IRQs and BIOS addresses.
 
-I suspected some sort of conflict with the TeraDrive motherboard, but that was only a theory. I tried every jumper combination I could think of, including different IRQs and BIOS addresses.
-
-Setting the card as primary with IRQ 14 allowed it to initialise the drive as C:, but the boot process then stalled.
-
-Num Lock still responded, so the machine was not completely frozen.
+Setting the card as primary with IRQ 14 allowed it to initialise the drive as C:, but the boot process then stalled. Num Lock still responded, so the machine was not completely frozen.
 
 Close, but no cigar.
 

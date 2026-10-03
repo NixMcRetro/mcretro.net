@@ -2,11 +2,11 @@
 title: "Sega Mega-CD Karaoke Microphone Repaired"
 author: "Nix McRetro"
 date: 2012-05-15T09:47:19.000+10:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega]
 ---
 

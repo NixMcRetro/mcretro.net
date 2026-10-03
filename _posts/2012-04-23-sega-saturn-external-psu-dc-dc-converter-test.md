@@ -2,11 +2,11 @@
 title: "Sega Saturn External PSU DC-DC Converter Test"
 author: "Nix McRetro"
 date: 2012-04-23T21:08:18.000+10:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [hacks, repairs, sega]
 ---
 
@@ -21,4 +21,4 @@ Finally received the DC-DC step-down converters for the Saturn. Gave them a quic
 
 ### Sources
 
-- [Keysight - Fundamentals of DC-DC Converter Testing](https://www.keysight.com/au/en/assets/7018-05723/application-notes/5992-2278.pdf) - outlines load regulation, ripple, efficiency and transient testing beyond a simple no-load output check.
+- [Keysight - Performing DC-DC Converter Test Using DC Power Analyzers](https://www.keysight.com/au/en/assets/7018-05723/application-notes/5992-2278.pdf) - outlines load regulation, ripple, efficiency and transient testing beyond a simple no-load output check.

@@ -2,11 +2,11 @@
 title: "Sega Genesis Nomad DC-in Jack Repair"
 author: "Nix McRetro"
 date: 2012-05-20T10:32:14.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega]
 ---
 
@@ -30,9 +30,7 @@ I already knew there was a problem with the DC-in jack because it was loose as a
 
 ![](/assets/images/2012/img_0123.jpg)
 
-Apart came the Nomad, and the problem became much clearer. The damaged DC-in jack was allowing positive and ground to short together.
-
-That also gave me a plausible explanation for why the machine would not run from the external battery pack.
+Apart came the Nomad, and the problem became much clearer. The damaged DC-in jack was allowing positive and ground to short together. That also gave me a plausible explanation for why the machine would not run from the external battery pack.
 
 For diagnosis, I traced the power input and temporarily connected one of the DC-DC step-down converters from my Saturn PSU project, adjusted to 9 V.
 
@@ -48,9 +46,7 @@ That was a diagnostic experiment rather than a general power-supply recommendati
 
 ![](/assets/images/2012/img_0128.jpg)
 
-On closer inspection I found that the DC-in jack from my Mega Drive 2 was compatible with the Nomad. Both machines use the same tip-positive power arrangement.
-
-So I removed the jack from one of my working Mega Drive 2 consoles and fitted it to the Nomad.
+On closer inspection I found that the DC-in jack from my Mega Drive 2 was compatible with the Nomad. Both machines use the same tip-positive power arrangement. So I removed the jack from one of my working Mega Drive 2 consoles and fitted it to the Nomad.
 
 ![](/assets/images/2012/img_0129.jpg)
 
@@ -58,9 +54,7 @@ So I removed the jack from one of my working Mega Drive 2 consoles and fitted it
 
 ![](/assets/images/2012/img_0131.jpg)
 
-I replaced the scratched front screen, cleaned the controller buttons, put everything back together and plonked in the nearest cartridge I could find.
-
-It works from the external battery pack as well.
+I replaced the scratched front screen, cleaned the controller buttons, put everything back together and plonked in the nearest cartridge I could find. It works from the external battery pack as well.
 
 A great success!
 

@@ -2,11 +2,11 @@
 title: "Sega TeraDrive with Windows 2.1, Windows 3.00a and Game Boy"
 author: "Nix McRetro"
 date: 2012-05-13T00:13:41.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, nintendo, sega]
 ---
 
@@ -20,9 +20,7 @@ Next came a proof-of-concept Windows 3.00a install. I stripped it down until I c
 
 {% include youtube.html id="uNJ6U6cssGY" %}
 
-And finally, the end result.
-
-Note the change in the colour of the light. The sun had long since set by the time I finished this journey several hours later.
+And finally, the end result. Note the change in the colour of the light. The sun had long since set by the time I finished this journey several hours later.
 
 The next goal is getting a hard drive into the TeraDrive, either through the strange 44-pin connector on the motherboard or through an ISA expansion card.
 
@@ -36,11 +34,7 @@ We will be victorious!
 
 ![](/assets/images/2012/img_0091.jpg)
 
-For now, please welcome Nintendo Game Boy to the family.
-
-I had one of these back in primary school, I think. Long time ago now.
-
-Good times with Tetris and Super Mario Land... oh, and Snow Brothers on my dodgy 10-in-1 pirate cart.
+For now, please welcome Nintendo Game Boy to the family. I had one of these back in primary school, I think. Long time ago now. Good times with Tetris and Super Mario Land... oh, and Snow Brothers on my dodgy 10-in-1 pirate cart.
 
 ### Related posts
 
@@ -48,4 +42,4 @@ Good times with Tetris and Super Mario Land... oh, and Snow Brothers on my dodgy
 
 ### Further Reading
 
-- [Sega TeraDrive Hard Drive Interface: IDE, ESDI or XTA?](/sega-teradrive-hard-drive-interface-ide-esdi-xta/) - my later investigation into the TeraDrive's unusual 44-pin hard-drive interface.
+- [Sega TeraDrive Hard Drive Interface Investigation](/sega-teradrive-hard-drive-interface-investigation/) - my later investigation into the TeraDrive's unusual 44-pin hard-drive interface.

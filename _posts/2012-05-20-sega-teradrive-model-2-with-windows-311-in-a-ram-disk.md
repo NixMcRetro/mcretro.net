@@ -2,11 +2,11 @@
 title: "Sega TeraDrive Model 2 with Windows 3.11 in a RAM Disk"
 author: "Nix McRetro"
 date: 2012-05-20T11:19:53.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega, youtube]
 ---
 
@@ -14,9 +14,7 @@ categories: [repairs, sega, youtube]
 
 Does this TeraDrive work never end? Will I never be content?
 
-I picked up some cheap ISA IDE controllers from eBay, but so far I have had no luck getting them to work properly with the TeraDrive.
-
-I was reading that a controller with its own BIOS might be the better approach, so that is the next hardware experiment.
+I picked up some cheap ISA IDE controllers from eBay, but so far I have had no luck getting them to work properly with the TeraDrive. I was reading that a controller with its own BIOS might be the better approach, so that is the next hardware experiment.
 
 ![](/assets/images/2012/img_0109.jpg)
 
@@ -52,11 +50,7 @@ Standalone Windows 3.11 can still run in Standard Mode on a 286, which makes it 
 
 ![](/assets/images/2012/img_0117.jpg)
 
-I used essentially the same trick as with my Windows 3.00a experiment, but quickly discovered that Windows 3.11 wanted more memory.
-
-I had to shrink the RAM Disk until the machine reported another 64 KB of extended memory available to Windows.
-
-In this stripped-down configuration it booted!
+I used essentially the same trick as with my Windows 3.00a experiment, but quickly discovered that Windows 3.11 wanted more memory. I had to shrink the RAM Disk until the machine reported another 64 KB of extended memory available to Windows. In this stripped-down configuration it booted!
 
 Hurrah!
 
@@ -83,5 +77,5 @@ You can find all the files in the [file server](/goodies/) and photos in the [ph
 
 ### Sources
 
-- [Microsoft Knowledge Base Archive - Windows for Workgroups 3.1 system requirements](https://jeffpar.github.io/kbarchive/kb/089/Q89333/) - documents 80286 support for Windows for Workgroups 3.1.
-- [Microsoft Knowledge Base Archive - Windows 3.11 Standard Mode](https://jeffpar.github.io/kbarchive/kb/081/Q81855/) - documents standalone Windows 3.11 operation on 286-class systems in Standard Mode.
+- [Microsoft Knowledge Base Archive - Minimum System Requirements for Windows for Workgroups](https://jeffpar.github.io/kbarchive/kb/089/Q89333/) - documents 80286 support for Windows for Workgroups 3.1.
+- [Microsoft Knowledge Base Archive - Windows Problems on AST Premium/286](https://jeffpar.github.io/kbarchive/kb/081/Q81855/) - documents standalone Windows 3.11 operation on 286-class systems in Standard Mode.

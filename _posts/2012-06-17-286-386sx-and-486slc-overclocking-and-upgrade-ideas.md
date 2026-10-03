@@ -2,11 +2,11 @@
 title: "286, 386SX and 486SLC Overclocking and Upgrade Ideas"
 author: "Nix McRetro"
 date: 2012-06-17T11:31:02.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs]
 ---
 
@@ -20,25 +20,17 @@ This is basically the notebook beside my computer turned into a blog post. These
 
 ### 1. Socketed CPUs for everyone
 
-One idea is to convert both the Sega TeraDrive CPU and Amstrad Mega PC CPU to socketed arrangements.
-
-That would make experimenting with compatible processors much easier without repeatedly attacking the motherboard with a soldering iron.
+One idea is to convert both the Sega TeraDrive CPU and Amstrad Mega PC CPU to socketed arrangements. That would make experimenting with compatible processors much easier without repeatedly attacking the motherboard with a soldering iron.
 
 ### 2. Socketed clock oscillators
 
-Replacing a CPU does not automatically mean the system clock needs to change.
-
-If a replacement processor is compatible with the existing clock, it can simply run at that speed. Changing the clock source only becomes necessary if I want to change the actual processor or bus frequency, and at that point the rest of the motherboard has to tolerate the new timing as well.
-
-The math coprocessor in the Mega PC would have to be considered too.
+Replacing a CPU does not automatically mean the system clock needs to change. If a replacement processor is compatible with the existing clock, it can simply run at that speed. Changing the clock source only becomes necessary if I want to change the actual processor or bus frequency, and at that point the rest of the motherboard has to tolerate the new timing as well. The math coprocessor in the Mega PC would have to be considered too.
 
 ![](/assets/images/2012/img_0208.jpg) What appears to be a 386SX-derived Amstrad motherboard fitted with a 486SLC CPU and BIOS.
 
 ### The Mega PC Plus mystery
 
-This idea came back to me when I looked again at a photograph I had saved of what appeared to be a 386SX-derived Amstrad motherboard fitted with a 486SLC CPU and matching BIOS.
-
-The silkscreen still refers to VSC386SXD, yet there is a TX486SLC fitted.
+This idea came back to me when I looked again at a photograph I had saved of what appeared to be a 386SX-derived Amstrad motherboard fitted with a 486SLC CPU and matching BIOS. The silkscreen still refers to VSC386SXD, yet there is a TX486SLC fitted.
 
 It is extremely interesting in the context of the Mega PC Plus, but this photograph by itself is not enough to prove that the board is a factory Mega PC Plus motherboard.
 
@@ -64,9 +56,7 @@ One terminology correction as well: those little DIP-4 metal cans are oscillator
 
 ### So, what do I actually want to do?
 
-A socketed CPU and socketed clock oscillator would make experimenting much easier.
-
-But changing the clock potentially affects much more than the CPU. The chipset, memory timing, expansion buses and coprocessor all have to remain happy as well.
+A socketed CPU and socketed clock oscillator would make experimenting much easier. But changing the clock potentially affects much more than the CPU. The chipset, memory timing, expansion buses and coprocessor all have to remain happy as well.
 
 For the TeraDrive, a socketed 286 experiment still looks tempting.
 
@@ -79,7 +69,7 @@ You'll know when it happens because I'll almost certainly write far too much abo
 ### Sources
 
 - [AMD Am80286 datasheet](https://www.bitsavers.org/components/amd/x86/_dataSheets/1985_80286.pdf) - documents the 80286 clock input running at twice the internal processor frequency.
-- [AMD Am386SX/SXL datasheet](https://www.amd.com/content/dam/amd/en/documents/archived-tech-docs/datasheets/21020.pdf) - documents the Am386SX CLK2 relationship and distinguishes standard and low-voltage variants.
+- [AMD Am386SX/SXL/SXLV Microprocessors Data Sheet](https://www.amd.com/content/dam/amd/en/documents/archived-tech-docs/datasheets/21020.pdf) - documents the Am386SX CLK2 relationship and distinguishes standard and low-voltage variants.
 - [Texas Instruments TI486 Microprocessor Reference Guide](https://www.bitsavers.org/components/ti/TI486/1993_TI486_Microprocessor_Reference_Guide.pdf) - documents TI486SLC/E clocking, 25 MHz and 33 MHz operation, and voltage variants.
 - [PCjs - IBM PC technical reference material](https://www.pcjs.org/documents/manuals/ibm/) - background on the IBM PC's 14.31818 MHz base timing reference.
 - [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - official background on the TeraDrive and its IBM Japan collaboration.

@@ -2,11 +2,11 @@
 title: "Amstrad Sega Mega PC 486SLC: Coprocessor and 16 MB RAM"
 author: "Nix McRetro"
 date: 2012-03-29T10:21:03.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, sega]
 ---
 
@@ -40,7 +40,7 @@ Time will tell! :D
 
 ### Related posts
 
-- [Amstrad Sega Mega PC Boot Failure (DOM HD Issues)](/amstrad-sega-mega-pc-boot-failure-dom-hd-issues/)
+- [Amstrad Sega Mega PC Boot Failure: DOM and Hard Drive Troubleshooting](/amstrad-sega-mega-pc-boot-failure-dom-and-hard-drive-troubleshooting/)
 
 ### Sources
 

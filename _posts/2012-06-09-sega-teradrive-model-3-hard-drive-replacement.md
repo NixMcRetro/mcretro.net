@@ -2,11 +2,11 @@
 title: "Sega TeraDrive Model 3 Hard Drive Replacement"
 author: "Nix McRetro"
 date: 2012-06-09T03:58:09.000+10:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, sega]
 ---
 
@@ -32,7 +32,7 @@ The drives had 3, 8 and 12 bad sectors between them. Not too bad for 20 year old
 
 ![](/assets/images/2012/img_0184.jpg)
 
-Different drives report different free space due to bad sectors taking up valuable free space.
+The drives report different amounts of free space. Bad sectors reduce usable space, but these readings alone do not establish how much of the difference comes from bad sectors rather than files or formatting.
 
 ![](/assets/images/2012/img_0191.jpg)
 

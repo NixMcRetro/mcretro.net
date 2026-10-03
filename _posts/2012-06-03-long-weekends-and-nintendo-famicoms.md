@@ -2,23 +2,19 @@
 title: "Long Weekends and Nintendo Famicoms"
 author: "Nix McRetro"
 date: 2012-06-03T07:25:27.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [nintendo, repairs, sega]
 ---
 
 ![](/assets/images/2012/img_0176.jpg)
 
-Some good news, and some more good news. It looks like I am going to have Thursday to Monday off work.
+Some good news, and some more good news. It looks like I am going to have Thursday to Monday off work. This means nothing but organising and sorting through my console collection.
 
-This means nothing but organising and sorting through my console collection.
-
-I have also received some boxed Japanese Saturn accessories, including a floppy drive, keyboard, mouse, modem and RF cable. There may be more, but that's everything that comes to mind at the moment.
-
-It appears I will now need to find a boxed Japanese Model 2 Saturn to match all these cool accessories!
+I have also received some boxed Japanese Saturn accessories, including a floppy drive, keyboard, mouse, modem and RF cable. There may be more, but that's everything that comes to mind at the moment. It appears I will now need to find a boxed Japanese Model 2 Saturn to match all these cool accessories!
 
 ![](/assets/images/2012/img_0177.jpg)
 
@@ -34,11 +30,9 @@ Oh, and I zapped myself on the Sega TeraDrive.
 
 Well, technically it was the open AT power supply I was using while trying to power a hard drive through an ISA controller card.
 
-Nothing useful came from that experiment except a reminder that an exposed AT PSU contains hazardous mains-voltage circuitry. Working around one while it is energised is not something to do unless you know exactly what you are doing.
+Nothing useful came from that experiment except a reminder that an exposed AT PSU contains hazardous mains-voltage circuitry. Working around one while it is energised is not something to attempt unless you are appropriately qualified.
 
-Since the ISA experiment was getting nowhere, I picked up a few IBM WDL-330P 30 MB hard drives and an IBM WDI-325Q 20 MB drive.
-
-The WDL-330P drives should fit nicely into the Model 3 TeraDrive that arrived without its hard drive. I also picked up some matching cables.
+Since the ISA experiment was getting nowhere, I picked up a few IBM WDL-330P 30 MB hard drives and an IBM WDI-325Q 20 MB drive. The WDL-330P drives should fit nicely into the Model 3 TeraDrive that arrived without its hard drive. I also picked up some matching cables.
 
 At this stage I hoped an ordinary IDE drive might somehow be adapted to the TeraDrive with enough rewiring. I later discovered that the storage interface is much stranger than that.
 

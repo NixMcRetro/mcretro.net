@@ -2,11 +2,11 @@
 title: "IBM PS/2 Model 30 8086: External Overview"
 author: "Nix McRetro"
 date: 2012-09-23T13:33:14.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, youtube]
 ---
 
@@ -20,13 +20,9 @@ categories: [ibm-pc, youtube]
 
 Apparently one video wasn't enough, so here are four of them.
 
-This is the original 8086-based IBM PS/2 Model 30 rather than the later Model 30 286. It runs an 8 MHz Intel 8086 with 640 KB of RAM and uses 8-bit ISA expansion.
+This is the original 8086-based IBM PS/2 Model 30 rather than the later Model 30 286. It runs an 8 MHz Intel 8086 with 640 KB of RAM and uses 8-bit ISA expansion. Depending on the Model 30 configuration, IBM sold these with one or two 720 KB floppy drives or a 20 MB hard drive.
 
-Depending on the Model 30 configuration, IBM sold these with one or two 720 KB floppy drives or a 20 MB hard drive.
-
-One thing that particularly surprised me was the original lithium battery. After more than 25 years it still measured around 3 V.
-
-Incredible, although an unloaded voltage reading by itself does not tell me how much useful capacity the battery still has.
+One thing that particularly surprised me was the original lithium battery. After more than 25 years it still measured around 3 V. Incredible, although an unloaded voltage reading by itself does not tell me how much useful capacity the battery still has.
 
 ![](/assets/images/2012/img_0271.jpg)
 

@@ -2,11 +2,11 @@
 title: "Sega Mega Drive Model 1 CXA1145P Video Repair"
 author: "Nix McRetro"
 date: 2012-09-13T21:16:09.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega]
 ---
 
@@ -14,17 +14,11 @@ categories: [repairs, sega]
 
 Success!
 
-Replacing the Sony CXA1145P video encoder fixed the yellow and green flickering completely.
-
-This was the Mega Drive that behaved badly from a cold start and then settled down after warming up. Sony designed the CXA1145P to convert analogue RGB into composite video, so replacing it was a reasonable test once the fault appeared to be colour and video related.
-
-Since the flickering disappeared after the encoder was replaced, the original CXA1145P is now the strongest culprit. I still can't say exactly what failed inside the old chip, only that replacing it solved the symptom.
+Replacing the Sony CXA1145P video encoder fixed the yellow and green flickering completely. This was the Mega Drive that behaved badly from a cold start and then settled down after warming up. Sony designed the CXA1145P to convert analogue RGB into composite video, so replacing it was a reasonable test once the fault appeared to be colour and video related. Since the flickering disappeared after the encoder was replaced, the original CXA1145P is now the strongest culprit. I still can't say exactly what failed inside the old chip, only that replacing it solved the symptom.
 
 I broke the repaired Mega Drive in with some Metallic Uniframe Super Hybrid Armor.
 
-As you can see, complete success, even with the fairly limited tools I had on hand.
-
-I could really have used my Hakko 808 vacuum desoldering tool for removing that 24-pin DIP cleanly. It would have made life considerably easier.
+As you can see, complete success, even with the fairly limited tools I had on hand. I could really have used my Hakko 808 vacuum desoldering tool for removing that 24-pin DIP cleanly. It would have made life considerably easier.
 
 ![](/assets/images/2012/img_0261.jpg)
 

@@ -2,19 +2,17 @@
 title: "Aiwa Mega-CD CSD-GM1 Repairs Part 2: Power Rail Testing"
 author: "Nix McRetro"
 date: 2012-10-20T04:17:40.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [hacks, repairs, sega]
 ---
 
 {% include youtube.html id="rk-CYnqxv6M" %}
 
-The video above is not the one I originally intended to upload.
-
-YouTube messed up the upload, then I accidentally deleted the original while trying to recover it.
+The video above is not the one I originally intended to upload. YouTube messed up the upload, then I accidentally deleted the original while trying to recover it.
 
 It was gone.
 
@@ -22,17 +20,13 @@ Never mind. Enjoy some transformer rantings instead.
 
 ### Reconnecting the power wiring
 
-I started the weekend by reconnecting the two blue wires to each other and the two white wires to each other.
+These are historical test notes for my two machines. Exposed mains circuitry and stored charge make this work hazardous.
 
-They had been separated for reasons unknown.
-
-I restored them according to their original routing and by comparing the damaged machine with my other CSD-GM1. At this stage I still didn't know exactly which sections of the machine each rail supplied.
+I started the weekend by reconnecting the two blue wires to each other and the two white wires to each other. They had been separated for reasons unknown. I restored them according to their original routing and by comparing the damaged machine with my other CSD-GM1. At this stage I still didn't know exactly which sections of the machine each rail supplied.
 
 ![](/assets/images/2012/img_0308.jpg)
 
-Next came the DC-DC step-down converters.
-
-One was initially adjusted to 6.3 V and the other to 9.75 V. Ground was connected to the same point on the battery PCB that feeds into the transformer wiring.
+Next came the DC-DC step-down converters. One was initially adjusted to 6.3 V and the other to 9.75 V. Ground was connected to the same point on the battery PCB that feeds into the transformer wiring.
 
 ![](/assets/images/2012/img_0309.jpg)
 
@@ -78,23 +72,13 @@ Now to power the unit on and... errr, that's not looking quite right...
 
 ![](/assets/images/2012/img_0319.jpg)
 
-I measured the supplies at several points.
-
-One CD-deck rail looked reasonable, while another was almost 2 V too low.
-
-More importantly, a regulator that should have been producing around 6 V was only giving me about 4 V.
+I measured the supplies at several points. One CD-deck rail looked reasonable, while another was almost 2 V too low. More importantly, a regulator that should have been producing around 6 V was only giving me about 4 V.
 
 Disconnecting one converter also established that the white-wire rail was feeding the Mega Drive side. I still did not know exactly what the blue rail powered at this point.
 
 ![](/assets/images/2012/img_0316.jpg)
 
-Then the mistake became obvious.
-
-I was feeding only 6.3 V into a regulator expected to produce around 6 V.
-
-If the regulator behaves like a conventional 7806, that leaves nowhere near enough voltage headroom. A typical 7806 needs roughly another 2 V at its input to regulate properly.
-
-So I increased the test input to 8 V.
+Then the mistake became obvious. I was feeding only 6.3 V into a regulator expected to produce around 6 V. If the regulator behaves like a conventional 7806, that leaves nowhere near enough voltage headroom. A typical 7806 needs roughly another 2 V at its input to regulate properly. So I increased the test input to 8 V.
 
 ![](/assets/images/2012/img_0320.jpg)
 
@@ -106,19 +90,13 @@ Not only did the picture improve enormously, **there was sound** from the damage
 
 Victory!
 
-More importantly, the result told me something useful. The 6 V rail had been starved of input headroom.
+More importantly, the result told me something useful. The 6 V rail had been starved of input headroom. It did **not** prove that the transformer itself was definitely faulty. The transformer, rectification, filter capacitors, wiring and downstream load were all still possibilities that needed to be isolated separately.
 
-It did **not** prove that the transformer itself was definitely faulty. The transformer, rectification, filter capacitors, wiring and downstream load were all still possibilities that needed to be isolated separately.
-
-What it did show was that my mainboard trace repairs were working well enough for the machine to produce both video and audio.
-
-That is a very good result.
+What it did show was that my mainboard trace repairs were working well enough for the machine to produce both video and audio. That is a very good result.
 
 I've also got the replacement optical pickup for the CD mechanism, so perhaps I'll even get to play a Mega-CD game on this thing eventually.
 
-Thanks again to Dutchy on the archived [ASSEMblergames forum](https://web.archive.org/web/20191110101129/https://assemblergames.com/threads/aiwa-mega-cd-csd-gm1-mainboard-repair.42186/) for reminding me that voltage regulators need some headroom above their regulated output.
-
-That may have saved the day.
+Thanks again to Dutchy on the [ASSEMblergames forum](https://web.archive.org/web/20130920141927/http://www.assemblergames.com/forums/showthread.php?42186-Aiwa-Mega-CD-CSD-GM1-Mainboard-Repair) for reminding me that voltage regulators need some headroom above their regulated output. That may have saved the day.
 
 ### Related posts
 
@@ -127,4 +105,5 @@ That may have saved the day.
 
 ### Sources
 
-- [STMicroelectronics L7806 datasheet](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6283/L7806.pdf) - documents the input headroom required for a conventional 6 V 78xx-family linear regulator.
+- [STMicroelectronics - L78: Positive voltage regulator ICs](https://www.st.com/resource/en/datasheet/l78.pdf) - the L7806A electrical-characteristics table gives a typical 2 V dropout at 1 A and 25 °C; actual headroom depends on the part and operating conditions.
+- [HSE - Electrical safety: Frequently asked questions](https://www.hse.gov.uk/electricity/faq.htm) - explains the hazards of live electrical work and the need to isolate supplies and release stored energy.

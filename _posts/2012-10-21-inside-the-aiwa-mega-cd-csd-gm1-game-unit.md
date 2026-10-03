@@ -2,11 +2,11 @@
 title: "Inside the Aiwa Mega-CD CSD-GM1 Game Unit"
 author: "Nix McRetro"
 date: 2012-10-21T12:58:38.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [sega, youtube]
 ---
 
@@ -26,9 +26,7 @@ Turns out I was wrong about that part.
 
 The Game Unit contains the Mega Drive and Mega-CD game hardware, while the upper Aiwa section supplies power, the CD mechanism and the rest of the audio-system integration.
 
-Later testing showed that the Mega Drive side of this particular Game Unit can actually be powered independently with a suitable regulated 5 V supply.
-
-On the unit I tested, 5 V on pin 24 and ground on pin 12 were enough to boot Mega Drive cartridges without the boombox attached.
+Later testing showed that the Mega Drive side of this particular Game Unit can actually be powered independently with a suitable regulated 5 V supply. On the unit I tested, 5 V on pin 24 and ground on pin 12 were enough to boot Mega Drive cartridges without the boombox attached.
 
 That pinout is based on my own hardware and should be verified before anybody applies power to another unit. Feeding the wrong voltage or polarity into rare hardware is a particularly expensive way to discover a numbering mistake.
 

@@ -2,29 +2,21 @@
 title: "picoPSU-80 on a Pentium III 800 MHz"
 author: "Nix McRetro"
 date: 2012-11-05T19:32:48.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-04
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-04
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, sega]
 ---
 
 {% include youtube.html id="svhVakdRmKI" %}
 
-Here's an idea of what the picoPSU-80 setup draws from the wall when connected to a Pentium III 800 MHz machine with 512 MB RAM, a hard drive and a floppy drive.
+Here's an idea of what the picoPSU-80 setup draws from the wall when connected to a Pentium III 800 MHz machine with 512 MB RAM, a hard drive and a floppy drive. It performs surprisingly well. I should really repeat this test with the machine under a meaningful CPU and disk load to see how high the power consumption actually gets.
 
-It performs surprisingly well.
+The picoPSU was first tested on the Amstrad Mega PC a few months ago with an adapter to suit AT-style power supplies. It worked well then, but I did not have access to a power usage meter. Now I can check the juice that is being eaten by whatever device is attached.
 
-I should really repeat this test with the machine under a meaningful CPU and disk load to see how high the power consumption actually gets.
-
-The picoPSU was first tested on the Amstrad Mega PC a few months ago with an adapter to suit AT-style power supplies. It worked well then, but I did not have access to a power usage meter.
-
-Now I can check the juice that is being eaten by whatever device is attached.
-
-Load monitoring is quite important. The picoPSU-80 has an 80 W overall rating, but individual rail limits and the capacity of the external 12 V supply also matter. An overloaded setup may become unstable, shut down, overheat or potentially damage components depending on which limit is being exceeded.
-
-The wall-power meter also includes losses in the external AC-to-12 V power brick, so its reading is not the same as the DC output load on the picoPSU itself.
+Load monitoring is quite important. The picoPSU-80 has an 80 W overall rating, but individual rail limits and the capacity of the external 12 V supply also matter. An overloaded setup may become unstable, shut down, overheat or potentially damage components depending on which limit is being exceeded. The wall-power meter also includes losses in the external AC-to-12 V power brick, so its reading is not the same as the DC output load on the picoPSU itself.
 
 ### Related posts
 
@@ -32,4 +24,5 @@ The wall-power meter also includes losses in the external AC-to-12 V power brick
 
 ### Sources
 
-- [Mini-Box picoPSU-80](https://www.mini-box.com/picoPSU-80) - manufacturer specifications for the 80 W DC-DC ATX supply, 12 V input and individual output limits.
+- [Mini-Box - picoPSU-80](https://www.mini-box.com/picoPSU-80) - manufacturer specifications for the 80 W DC-DC ATX supply and 12 V input.
+- [Mini-Box - picoPSU-80 Quick Installation Guide, version 1.0d](https://resources.mini-box.com/online/PWR-PICOPSU-80/PWR-PICOPSU-80-manual.pdf) - lists the individual rail limits, regulated 12 V input and ventilation requirements.

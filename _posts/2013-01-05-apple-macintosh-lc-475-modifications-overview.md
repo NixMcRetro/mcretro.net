@@ -2,17 +2,15 @@
 title: "Apple Macintosh LC 475 Modifications Overview"
 author: "Nix McRetro"
 date: 2013-01-05T14:00:57.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-04
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-04
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [apple, youtube]
 ---
 
-Here's an overview of where the LC 475 project has ended up after the last few weeks of modifications.
-
-This started as a fairly ordinary 25 MHz 68LC040 pizza-box Macintosh.
+Here's an overview of where the LC 475 project has ended up after the last few weeks of modifications. This started as a fairly ordinary 25 MHz 68LC040 pizza-box Macintosh.
 
 It is not particularly ordinary anymore.
 
@@ -40,6 +38,8 @@ Go team AppleTalk!
 ### Related posts
 
 - [Apple Macintosh LC 475 Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33mhz/)
+- [Apple Macintosh LC 475 RAM Utilisation and 32-Bit Addressing](/apple-macintosh-lc-475-ram-utilisation-and-32-bit-addressing/)
+- [Apple Macintosh LC 475 Mismatched VRAM Test](/apple-macintosh-lc-475-mismatched-vram-test/)
 - [Solid-State SCSI Storage in an LC 475 with a PCD-60B Card Reader](/solid-state-scsi-storage-in-an-lc-475-with-a-pcd-60b-card-reader/)
 - [Apple Macintosh LC 475 Online with PDS Ethernet](/apple-macintosh-lc-475-online-with-pds-ethernet/)
 - [Apple Macintosh LC 475 Slowing the Fan with a Resistor](/apple-macintosh-lc-475-slowing-the-fan-with-a-resistor/)

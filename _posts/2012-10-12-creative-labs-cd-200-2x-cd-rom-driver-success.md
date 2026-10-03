@@ -2,11 +2,11 @@
 title: "Creative Labs CD-200 2x CD-ROM Driver Success"
 author: "Nix McRetro"
 date: 2012-10-12T11:16:56.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, youtube]
 ---
 
@@ -14,9 +14,7 @@ categories: [ibm-pc, repairs, youtube]
 
 Mission accomplished.
 
-If anyone from the future arrives here trying to get a Creative Labs CD-200 working under DOS, the breakthrough was finding the correct Creative driver family.
-
-`CCD.SYS` worked with my drive, while `CRCCD.SYS` is another driver associated with the CD-200 family. Once the hardware driver is loaded, MSCDEX provides the DOS drive letter.
+If anyone from the future arrives here trying to get a Creative Labs CD-200 working under DOS, the breakthrough was finding a Creative driver that worked with this drive. `CCD.SYS` worked in my setup. Once the hardware driver is loaded, MSCDEX provides the DOS drive letter.
 
 The settings below are the exact configuration that worked in this particular machine. The port address and driver switches depend on the controller or sound card the CD-ROM is connected through, so don't assume every CD-200 will use precisely the same values.
 
@@ -34,9 +32,7 @@ C:\SBPRO\SBPSET /P /Q
 C:\SB16\DRV\MSCDEX.EXE /D:MSCD001 /V /M:15
 ```
 
-And there it is. A functioning double-speed Creative CD-ROM drive.
-
-After the desktop full of random drivers in the previous post, this was a particularly satisfying result.
+And there it is. A functioning double-speed Creative CD-ROM drive. After the desktop full of random drivers in the previous post, this was a particularly satisfying result.
 
 BBQ party successfully earned.
 
@@ -57,11 +53,11 @@ BBQ party successfully earned.
 ### Resources
 
 - [VOGONS Vintage Driver Library](https://www.vogonsdrivers.com)
-- [French Driver Website](https://web.archive.org/web/20250915191235/http://www.autourdupc.com/index.php?sPage=/Materiel/CDROM/CDROM_IDE.htm)
-- [Virtual Dr](https://discussions.virtualdr.com/showthread.php?69838-Creative-Labs-2X-CD&s=becdc9d2b2ab5d5832c8dc2c373a1be6)
-- [Vintage Computer Sound Blaster ISA Card Collection](https://forum.vcfed.org/index.php?threads/sound-blaster-ide-cards-drivers-collection.24571/)
-- [Another Driver Website](https://files.mpoli.fi/hardware/SOUND/CLABS/)
+- [French Driver Website](https://web.archive.org/web/20100311235635/http://www.autourdupc.com:80/index.php?sPage=/Materiel/CDROM/CDROM_IDE.htm)
+- [VirtualDr - Creative Labs 2X CD](https://discussions.virtualdr.com/showthread.php?69838-Creative-Labs-2X-CD&s=becdc9d2b2ab5d5832c8dc2c373a1be6)
+- [Vintage Computer Federation - Sound Blaster IDE Cards Drivers Collection](https://forum.vcfed.org/index.php?threads/sound-blaster-ide-cards-drivers-collection.24571/)
+- [Metropoli BBS - Creative Labs driver directory](https://files.mpoli.fi/hardware/SOUND/CLABS/)
 
 ### Sources
 
-- [Creative CD-ROM driver archive](https://driverzone.com/drivers/creative/cdrom/crccd.htm) - preserves Creative documentation identifying CCD.SYS and CRCCD.SYS as drivers for the CD-200 family and showing the expected DOS path syntax.
+- [Creative CD-ROM driver package README.TXT](https://driverzone.com/drivers/creative/cdrom/crccd.htm) - describes updating CCD.SYS/CRCCD.SYS and installing MSCDEX separately. The configuration above records what worked in my machine.

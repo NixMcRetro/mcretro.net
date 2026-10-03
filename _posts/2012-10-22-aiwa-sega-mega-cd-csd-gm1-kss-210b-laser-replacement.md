@@ -2,23 +2,19 @@
 title: "Aiwa Sega Mega-CD CSD-GM1 KSS-210B Laser Replacement"
 author: "Nix McRetro"
 date: 2012-10-22T08:57:17.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega, youtube]
 ---
 
 {% include youtube.html id="zTvW6ZARAik" %}
 
-Compared with everything else this Aiwa has thrown at me, this was almost a straightforward repair.
+Compared with everything else this Aiwa has thrown at me, this was almost a straightforward repair. The video above covers replacing the Sony KSS-210B optical pickup in the CSD-GM1 CD mechanism.
 
-The video above covers replacing the Sony KSS-210B optical pickup in the CSD-GM1 CD mechanism.
-
-I had suspected the pickup earlier because the drive was struggling to read discs, although I had not wanted to call it dead until I had done more testing.
-
-Replacement finally gave me the result I wanted.
+I had suspected the pickup earlier because the drive was struggling to read discs, although I had not wanted to call it dead until I had done more testing. Replacement finally gave me the result I wanted.
 
 ![](/assets/images/2012/img_0326.jpg)
 
@@ -26,9 +22,7 @@ Replacement finally gave me the result I wanted.
 
 ![](/assets/images/2012/img_0327.jpg)
 
-The Aiwa mechanism is arranged a little differently from the Mega-CD II drives I had worked on previously.
-
-The motor circuitry is on a separate PCB from the board carrying the main CD-control electronics.
+The Aiwa mechanism is arranged a little differently from the Mega-CD II drives I had worked on previously. The motor circuitry is on a separate PCB from the board carrying the main CD-control electronics.
 
 ![](/assets/images/2012/img_0329.jpg)
 

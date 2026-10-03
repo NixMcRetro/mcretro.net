@@ -2,19 +2,15 @@
 title: "Learning to Desolder ICs"
 author: "Nix McRetro"
 date: 2012-07-14T13:42:52.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs]
 ---
 
-Before I attack anything particularly valuable, it seems like a good idea to learn how to desolder multi-pin ICs without completely destroying everything around them.
-
-These videos are my practice runs.
-
-I was experimenting with heat, flux and removing chips from scrap hardware before moving on to the considerably more ambitious soldered CPU inside the Amstrad Mega PC.
+Before I attack anything particularly valuable, it seems like a good idea to learn how to desolder multi-pin ICs without completely destroying everything around them. These videos are my practice runs. I was experimenting with heat, flux and removing chips from scrap hardware before moving on to the considerably more ambitious soldered CPU inside the Amstrad Mega PC.
 
 I was using a general-purpose heat gun here. It worked well enough for experimenting, but proper hot-air rework equipment gives far better control over temperature and airflow and is a much more sensible choice on valuable vintage boards.
 

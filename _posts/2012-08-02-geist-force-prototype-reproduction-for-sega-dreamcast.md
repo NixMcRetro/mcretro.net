@@ -2,21 +2,17 @@
 title: "Geist Force Prototype Reproduction for Sega Dreamcast"
 author: "Nix McRetro"
 date: 2012-08-02T12:42:37.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [sega, youtube]
 ---
 
 {% include youtube.html id="zBKg39WmFJE" %}
 
-It looks like I've been lucky enough to pick up a copy from the limited ASSEMbler community reproduction run of the unreleased Geist Force prototype.
-
-Geist Force was never commercially released by Sega. The surviving unfinished Dreamcast build was preserved through the ASSEMbler community, with additional work required to make the prototype usable on normal retail Dreamcast hardware.
-
-So this isn't an official late Sega release. It is a community preservation and reproduction project built around an unfinished game prototype.
+It looks like I've been lucky enough to pick up a copy from the limited ASSEMbler community reproduction run of the unreleased Geist Force prototype. Geist Force was never commercially released by Sega. The surviving unfinished Dreamcast build was preserved through the ASSEMbler community, with additional work required to make the prototype usable on normal retail Dreamcast hardware. So this isn't an official late Sega release. It is a community preservation and reproduction project built around an unfinished game prototype.
 
 ASSEMbler himself certainly put a lot of work into this, as did the other people involved in getting the project into people's hands.
 

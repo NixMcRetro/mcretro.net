@@ -2,11 +2,11 @@
 title: "Amstrad Sega Mega PC, Athlon 500 MHz Rebuild and picoPSU"
 author: "Nix McRetro"
 date: 2012-04-21T11:39:33.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, sega]
 ---
 
@@ -28,9 +28,7 @@ In other news, my side project, the Athlon 500 MHz Project, came to life today. 
 
 Now I just need a rockin' case for it, with some horns if possible.
 
-This particular CPU has significant sentimental value. It was used in the first PC I put together as a teenager back in 2000. According to the warranty sticker, February 2000.
-
-I remember that day well. We were looking for a faster CPU but the entry-level 500 MHz was all they had. I was not leaving empty handed.
+This particular CPU has significant sentimental value. It was used in the first PC I put together as a teenager back in 2000. According to the warranty sticker, February 2000. I remember that day well. We were looking for a faster CPU but the entry-level 500 MHz was all they had. I was not leaving empty handed.
 
 The markings on this particular 500 MHz Athlon appeared to identify a 650 MHz-rated core. There were contemporary reports of some early Slot A 500 MHz Athlons containing higher-marked cores, but that does not mean AMD guaranteed those processors to operate at the higher speed.
 
@@ -48,9 +46,7 @@ That is still well beyond the roughly 33 GB limit I was hitting through the BIOS
 
 ![](/assets/images/2012/img_0070.jpg)
 
-Another oddity was a Samsung 250 GB drive pulled from an el cheapo PVR. It only identified as 160 GB instead of the 250 GB printed on the label.
-
-I never established why. It could have involved firmware, capacity limiting or configuration, but I didn't investigate it far enough to know.
+Another oddity was a Samsung 250 GB drive pulled from an el cheapo PVR. It only identified as 160 GB instead of the 250 GB printed on the label. I never established why. It could have involved firmware, capacity limiting or configuration, but I didn't investigate it far enough to know.
 
 Who cares! It works, and it runs much quieter than my other PATA drives.
 
@@ -58,15 +54,13 @@ Who cares! It works, and it runs much quieter than my other PATA drives.
 
 I also tested the [picoPSU-80](https://www.mini-box.com/picoPSU-80) that arrived from the US a few days ago, and it seems to work a charm.
 
-I'm not sure what I'll ultimately use it for. I'm toying with the idea of getting the old Mega PC 386SX motherboard powered up and functional as a spare old PC.
-
-I'd just need a small Disk on Module, a safe replacement for the original rechargeable NiCad backup battery and the picoPSU... perhaps!
+I'm not sure what I'll ultimately use it for. I'm toying with the idea of getting the old Mega PC 386SX motherboard powered up and functional as a spare old PC. I'd just need a small Disk on Module, a safe replacement for the original rechargeable NiCad backup battery and the picoPSU... perhaps!
 
 An ordinary non-rechargeable AA or AAA battery must not be connected directly to a charging circuit, so any external battery holder would need appropriate isolation or a compatible rechargeable arrangement.
 
 ### Related posts
 
-- [Amstrad Sega Mega PC with PicoPSU on a Dual Screen Setup](/amstrad-sega-mega-pc-with-picopsu-on-a-dual-screen-setup/)
+- [Amstrad Sega Mega PC with picoPSU and a Dual-Screen Setup](/amstrad-sega-mega-pc-with-picopsu-and-a-dual-screen-setup/)
 
 ### Sources
 

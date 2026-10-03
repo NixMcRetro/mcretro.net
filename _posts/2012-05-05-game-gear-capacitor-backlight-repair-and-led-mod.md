@@ -2,11 +2,11 @@
 title: "Game Gear Capacitor, Backlight Repair and LED Mod"
 author: "Nix McRetro"
 date: 2012-05-05T23:54:39.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega, youtube]
 ---
 
@@ -18,9 +18,7 @@ The capacitor guide I used at the time was hosted by [Otaku's Store](https://ota
 
 {% include youtube.html id="H8mDDoSboJU" %}
 
-The second video is another attempt to rescue the first Game Gear, the one I may have mangled slightly while trying to repair it.
-
-Slow and steady wins the race. I've fixed it up darned well considering the number of problems it had, although there is still work to do.
+The second video is another attempt to rescue the first Game Gear, the one I may have mangled slightly while trying to repair it. Slow and steady wins the race. I've fixed it up darned well considering the number of problems it had, although there is still work to do.
 
 The battery bay is missing terminals and the DC power connection is bad. Maybe I'll hardwire it into a power adaptor?
 

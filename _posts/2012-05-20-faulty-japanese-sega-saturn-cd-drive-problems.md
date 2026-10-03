@@ -2,11 +2,11 @@
 title: "Faulty Japanese Sega Saturn: CD Drive Problems"
 author: "Nix McRetro"
 date: 2012-05-20T11:23:48.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega]
 ---
 
@@ -32,6 +32,4 @@ Segata Sanshiro style!
 
 - [Japanese Sega Saturn, VA0 Dreamcast and TeraDrive Power Checks](/japanese-sega-saturn-va0-dreamcast-and-teradrive-power-checks/)
 
-### Sources
 
-- [Sega Hardware Archive - Sega Saturn](https://www.sega.jp/history/hard/segasaturn/) - Sega's official Japanese Saturn specifications list a 100 V AC power requirement.

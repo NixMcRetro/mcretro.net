@@ -2,11 +2,11 @@
 title: "Sega TeraDrive Hard Drive Interface Investigation"
 author: "Nix McRetro"
 date: 2012-06-24T12:26:38.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, sega]
 ---
 
@@ -16,9 +16,7 @@ categories: [ibm-pc, repairs, sega]
 
 ![](/assets/images/2012/img_0213.jpg)
 
-Above are some photos of a Sega TeraDrive hard drive.
-
-When I wrote this in 2012 I was trying to work out exactly what the interface was. IDE? ESDI? XTA? Something else entirely?
+Above are some photos of a Sega TeraDrive hard drive. When I wrote this in 2012 I was trying to work out exactly what the interface was. IDE? ESDI? XTA? Something else entirely?
 
 The connector has 44 pins and carries both data and power, but the pinout does not match standard ATA/IDE.
 
@@ -34,7 +32,7 @@ If anyone stumbles upon this, I apologise for the lack of immediate success.
 
 [Nemesis](https://www.exodusemulator.com), author of the Exodus Emulation Platform, also believed there was more to uncover because several controller chips in the TeraDrive are closely related to hardware found in IBM-derived systems.
 
-I pulled together information from old XTA references and Vintage Computer Forum discussions and started comparing pinouts.
+I pulled together information from old XTA references and Vintage Computer Forum discussions and started comparing pinouts. An earlier version of this post also linked to the TeraDrive HD pinout spreadsheet on the [file server](/files/), but that download is not currently available.
 
 ![](/assets/images/2012/img_0210.jpg)
 
@@ -44,9 +42,7 @@ I pulled together information from old XTA references and Vintage Computer Forum
 
 ### What the interface actually appears to be
 
-Later IBM preservation work gives us a much better description.
-
-The closely related drives used in early IBM PS/2 Model 25 and Model 30 systems are proprietary direct-bus-attachment devices. They are not standard ESDI, and they are not normal ATA/IDE drives.
+Later IBM preservation work gives us a much better description. The closely related drives used in early IBM PS/2 Model 25 and Model 30 systems are proprietary direct-bus-attachment devices. They are not standard ESDI, and they are not normal ATA/IDE drives.
 
 The TeraDrive's confirmed compatibility with IBM WDL-330P drives strongly links it to this same unusual IBM storage family.
 
@@ -89,4 +85,4 @@ The 44-pin connector carries both data and power, including 5 V and 12 V rails.
 
 ### Sources
 
-- [IBM Files - PS/2 Model 25](https://www.ibmfiles.com/pages/ps2model25.htm) - documents the proprietary direct-bus-attachment hard-drive arrangement used in early PS/2 systems and distinguishes it from standard IDE and ESDI.
+- [IBM Files - PS/2 Model 25 / 30](https://www.ibmfiles.com/pages/ps2model25.htm) - documents the proprietary direct-bus-attachment hard-drive arrangement used in early PS/2 systems and distinguishes it from standard IDE and ESDI.

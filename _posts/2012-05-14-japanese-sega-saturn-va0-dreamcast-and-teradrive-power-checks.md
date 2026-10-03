@@ -2,11 +2,11 @@
 title: "Japanese Sega Saturn, VA0 Dreamcast and TeraDrive Power Checks"
 author: "Nix McRetro"
 date: 2012-05-14T11:39:02.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega]
 ---
 
@@ -14,9 +14,7 @@ categories: [repairs, sega]
 
 #### Japanese Sega Saturn
 
-Today I received my white Japanese Model 2 Sega Saturn from Japan.
-
-Look at it. Isn't it just the cleanest-looking Saturn design you have seen? Well, compared with PAL Saturns at least.
+Today I received my white Japanese Model 2 Sega Saturn from Japan. Look at it. Isn't it just the cleanest-looking Saturn design you have seen? Well, compared with PAL Saturns at least.
 
 I've added it to the [photo gallery](/photos) too.
 
@@ -32,9 +30,7 @@ I bought it mainly for the case, but perhaps there is still hope of repairing it
 
 #### VA0 Dreamcast
 
-And here is the Dreamcast I received.
-
-It appears to be a VA0 revision. The metal fan and heatpipe cooling arrangement are characteristic of those early machines.
+And here is the Dreamcast I received. It appears to be a VA0 revision. The metal fan and heatpipe cooling arrangement are characteristic of those early machines.
 
 What are the chances? Very unreal, and the box was in immaculate condition. Lots of paperwork and documents as well.
 

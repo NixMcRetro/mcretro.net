@@ -2,19 +2,17 @@
 title: "Sega TeraDrive Model 2, Genesis Nomad and Mega Drive 2"
 author: "Nix McRetro"
 date: 2012-05-09T03:29:04.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega]
 ---
 
 {% include youtube.html id="9nb4CfT9KuM" %}
 
-All those and more. We also have a new editor joining McRetro, focusing mainly on the Famicom.
-
-Please welcome Nick to the scene. He already has a Famicom on the way and is relatively new to the world of soldering and tinkering.
+All those and more. We also have a new editor joining McRetro, focusing mainly on the Famicom. Please welcome Nick to the scene. He already has a Famicom on the way and is relatively new to the world of soldering and tinkering.
 
 He was also voted most silent person in the two top-ranking Counter LED videos:
 
@@ -28,9 +26,7 @@ As you can see above, we have three new arrivals: a Sega TeraDrive Model 2, a Se
 
 #### Sega Genesis Nomad
 
-The Nomad is broken. No power from the AC adaptor and no power from the battery pack.
-
-I don't have a GameBit to disassemble it at the moment.
+The Nomad is broken. No power from the AC adaptor and no power from the battery pack. I don't have a GameBit to disassemble it at the moment.
 
 Good news, really. It means I get to attempt to repair it.
 
@@ -40,13 +36,7 @@ Will victory be mine?
 
 #### Mega Drive 2
 
-Next up we have the Mega Drive 2.
-
-I had actually purchased a broken Mega Drive 1 to use with the Mega-CD/TeraDrive expansion connection and to scrounge together some parts for my more prized High Definition Mega Drive 1.
-
-The seller had other intentions and sent me a Model 2 instead.
-
-I contacted them and they are sending the Mega Drive 1 up to me, while telling me to keep or throw out the Mega Drive 2.
+Next up we have the Mega Drive 2. I had actually purchased a broken Mega Drive 1 to use with the Mega-CD/TeraDrive expansion connection and to scrounge together some parts for my more prized High Definition Mega Drive 1. The seller had other intentions and sent me a Model 2 instead. I contacted them and they are sending the Mega Drive 1 up to me, while telling me to keep or throw out the Mega Drive 2.
 
 Small victories!
 
@@ -74,7 +64,7 @@ I've also uploaded some of the flyers and the quick-reference guide that came wi
 
 - [Humble Beginnings: Nintendo Famicom Incoming](/humble-beginnings-nintendo-famicom-incoming/)
 - [Sega TeraDrive Demo - Sonic 1 and Sega Menu](/sega-teradrive-demo-sonic-1-and-sega-menu/)
-- [Sega Genesis Nomad DC-in Power Jack / Socket Repair](/sega-genesis-nomad-dc-in-power-jack-socket-repair/)
+- [Sega Genesis Nomad DC-in Jack Repair](/sega-genesis-nomad-dc-in-jack-repair/)
 
 ### Sources
 

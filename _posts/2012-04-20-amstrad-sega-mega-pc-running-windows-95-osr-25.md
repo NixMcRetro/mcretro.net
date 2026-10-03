@@ -2,17 +2,17 @@
 title: "Amstrad Sega Mega PC Running Windows 95 OSR 2.5"
 author: "Nix McRetro"
 date: 2012-04-20T01:10:18.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, sega]
 ---
 
 {% include youtube.html id="5w2H9iUdraI" %}
 
-It ran, but I later discovered that the 386SX was actually below Microsoft's official Windows 95 minimum specification, which called for a 386DX or higher. That makes the fact it ran at all rather more entertaining.
+Microsoft's published minimum for Windows 95 called for a 386DX or higher. The Mega PC started out with a 386SX, although by this point I had also been experimenting with the 486SLC replacement board. Seeing Windows 95 running on this thing is still rather entertaining.
 
 This thing runs like a beast on Windows 95. I think I will kick it back to Windows 3.11, or perhaps dual boot with two 2 GB partitions. It will be interesting to get the network cranking under Windows 3.11 so I can do some web browsing.
 

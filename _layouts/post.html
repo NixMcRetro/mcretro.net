@@ -40,11 +40,18 @@ layout: default
 
   {% if page.ai_assistance %}
     <div class="ai-assistance-note" data-pagefind-ignore="all">
-      <strong>AI-assisted revision:</strong>
-      This post was reviewed and edited with {{ page.ai_assistance.model }}
-      on {{ page.ai_assistance.date | date: "%-d %B %Y" }}
-      for {{ page.ai_assistance.purpose }}.
-      Final editorial responsibility remains with the author.
+      {% if page.ai_assistance.purpose == "fact-checking, sourcing, and editorial quality" %}
+        <strong>AI review:</strong>
+        Last reviewed by Nix using OpenAI {{ page.ai_assistance.model }}
+        on {{ page.ai_assistance.date | date: "%-d %B %Y" }}
+        for {{ page.ai_assistance.purpose }}.
+      {% else %}
+        <strong>AI-assisted revision:</strong>
+        This post was reviewed and edited with {{ page.ai_assistance.model }}
+        on {{ page.ai_assistance.date | date: "%-d %B %Y" }}
+        for {{ page.ai_assistance.purpose }}.
+        Final editorial responsibility remains with the author.
+      {% endif %}
     </div>
   {% endif %}
   

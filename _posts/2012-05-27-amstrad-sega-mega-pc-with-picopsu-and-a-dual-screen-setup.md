@@ -2,11 +2,11 @@
 title: "Amstrad Sega Mega PC with picoPSU and a Dual-Screen Setup"
 author: "Nix McRetro"
 date: 2012-05-27T23:36:44.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, sega]
 ---
 

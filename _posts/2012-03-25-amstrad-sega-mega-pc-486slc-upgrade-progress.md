@@ -2,19 +2,17 @@
 title: "Amstrad Sega Mega PC 486SLC Upgrade Progress"
 author: "Nix McRetro"
 date: 2012-03-25T00:42:58.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-02
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6 Astra Max"
+  date: 2026-10-02
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, sega]
 ---
 
 ![](/assets/images/2012/img_0046.jpg)
 
-The replacement PC7486SLC motherboard is in. It passes POST and, unlike the original 386 board, recognises the hard drives perfectly. That strongly points to a fault somewhere in the original motherboard's storage subsystem or related circuitry rather than the drives themselves.
-
-The old board will still make a useful spare.
+The replacement PC7486SLC motherboard is in. It passes POST and, unlike the original 386 board, recognises the hard drives perfectly. That strongly points to a fault somewhere in the original motherboard's storage subsystem or related circuitry rather than the drives themselves. The old board will still make a useful spare.
 
 I want to see how large a hard drive this machine will recognise and then try a Disk on Module. A PATA DOM is flash storage that plugs directly into the IDE/PATA interface and presents itself to the computer much like a conventional hard disk.
 
@@ -26,7 +24,7 @@ I did hit one show-stopper: the TH6887A real-time clock module has a flat intern
 
 ![](/assets/images/2012/img_0048.jpg)
 
-The module is more than a battery. It contains the clock and calendar circuitry, battery-backed CMOS RAM, crystal and internal power source, all sealed into one package. So simply removing it does not solve the problem.
+The module is marked TH6887A 9309. It is more than a battery. It contains the clock and calendar circuitry, battery-backed CMOS RAM, crystal and internal power source, all sealed into one package. So simply removing it does not solve the problem.
 
 I found reports suggesting that Dallas DS1287-family RTC modules were compatible, so I ordered both a DS1287 and DS1287A to test rather than assuming either one would definitely work. Lead time: two to three weeks. Bummer. The wait begins again.
 
@@ -38,9 +36,7 @@ I found reports suggesting that Dallas DS1287-family RTC modules were compatible
 
 #### Math coprocessor
 
-While I was on eBay I picked up a coprocessor for the 486 board as well. It is a ULSI US83S87 SX/SLC33 in a 68-pin PLCC package, rated at 33 MHz to match the 33 MHz 486SLC system.
-
-Period documentation for other 486SLC-33 machines specifies an 83S87-33 coprocessor as well, so this is exactly the sort of part I want here. Not that coprocessors are going to be heavily utilised for what I'll be doing with it. Mostly, there was an empty socket and this situation clearly had to be corrected.
+While I was on eBay I picked up a coprocessor for the 486 board as well. It is a ULSI US83S87 SX/SLC33 in a 68-pin PLCC package, rated at 33 MHz to match the 33 MHz 486SLC system. Period documentation for other 486SLC-33 machines specifies an 83S87-33 coprocessor as well, so this is exactly the sort of part I want here. Not that coprocessors are going to be heavily utilised for what I'll be doing with it. Mostly, there was an empty socket and this situation clearly had to be corrected.
 
 ![](/assets/images/2012/img_0054.jpg)
 

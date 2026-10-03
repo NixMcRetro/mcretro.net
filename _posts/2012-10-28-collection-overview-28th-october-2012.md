@@ -3,6 +3,11 @@ title: "Collection Overview 28th October 2012"
 author: "Nix McRetro"
 date: 2012-10-28T07:02:27.000+11:00
 categories: [news, youtube]
+last_modified_at: 2026-10-03
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="2gD60B1CCYs" %}

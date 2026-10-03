@@ -2,11 +2,11 @@
 title: "Sega Dreamcast PAL Revision VA0"
 author: "Nix McRetro"
 date: 2012-10-25T13:06:33.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [news, sega]
 ---
 
@@ -14,35 +14,21 @@ categories: [news, sega]
 
 A Dreamcast post? It's been a while, hasn't it?
 
-Here's a Dreamcast I picked up from the UK some time ago and somehow never properly wrote about after it arrived.
-
-It has shown a few problems, including occasional random restarts. That said, I've had it running Bomberman Online for about 45 minutes without a problem.
+Here's a Dreamcast I picked up from the UK some time ago and somehow never properly wrote about after it arrived. It has shown a few problems, including occasional random restarts. That said, I've had it running Bomberman Online for about 45 minutes without a problem.
 
 I am also getting disturbingly good at Bomberman.
 
 ![](/assets/images/2012/img_0340.jpg)
 
-The GD-ROM drive makes a little clicking noise and the bearings in the heatsink fan assembly sound crunchy at times.
+The GD-ROM drive makes a little clicking noise and the bearings in the heatsink fan assembly sound crunchy at times. I really need to put it beside my Japanese VA0 and compare them properly.
 
-I really need to put it beside my Japanese VA0 and compare them properly.
+What makes this unit especially interesting is the date stamp inside the top shell: April 1999. The Dreamcast did not launch commercially in Europe until 14 October 1999, so this shell predates the European launch by roughly six months.
 
-What makes this unit especially interesting is the date stamp inside the top shell: April 1999.
-
-The Dreamcast did not launch commercially in Europe until 14 October 1999, so this shell predates the European launch by roughly six months.
-
-The machine has the PAL blue-swirl startup and no functioning modem. It also carries the unusual "MODIFIED CONSOLE, FOR DISPLAY PURPOSES ONLY, NOT SUITABLE FOR HOME USE" label I mentioned when I first acquired it.
-
-All of that makes some sort of pre-launch display or demonstration use plausible.
-
-Plausible is as far as I am willing to go though. I do not have documentation establishing exactly who used this machine or what its original purpose was.
+The machine has the PAL blue-swirl startup and no functioning modem. It also carries the unusual "MODIFIED CONSOLE, FOR DISPLAY PURPOSES ONLY, NOT SUITABLE FOR HOME USE" label I mentioned when I first acquired it. All of that makes some sort of pre-launch display or demonstration use plausible. Plausible is as far as I am willing to go though. I do not have documentation establishing exactly who used this machine or what its original purpose was.
 
 ![](/assets/images/2012/img_0341.jpg)
 
-PAL VA0 hardware is real, but much less commonly documented than the later PAL VA1.
-
-Older discussion sometimes treated PAL VA0 machines as though they had never existed at retail at all. I don't have enough surviving evidence to make that broader claim either way.
-
-What I can establish is that this is a genuine PAL VA0 and that its shell was manufactured before the European Dreamcast launch.
+PAL VA0 hardware is real, but much less commonly documented than the later PAL VA1. Older discussion sometimes treated PAL VA0 machines as though they had never existed at retail at all. I don't have enough surviving evidence to make that broader claim either way. What I can establish is that this is a genuine PAL VA0 and that its shell was manufactured before the European Dreamcast launch.
 
 ![](/assets/images/2012/img_0342.jpg)
 
@@ -56,4 +42,5 @@ Next up I'll pull it apart properly and compare the internals with my Japanese V
 
 ### Sources
 
-- [ConsoleMods - Dreamcast Model Differences](https://consolemods.org/wiki/Dreamcast:Dreamcast_Model_Differences) - documents PAL VA0 hardware and early Dreamcast revision characteristics.
+- [ConsoleMods - Dreamcast Model Differences](https://consolemods.org/wiki/Dreamcast:Dreamcast_Model_Differences) - summarises revision differences and links back to this machine's photographs as evidence of PAL VA0 hardware.
+- [TSSZ News - Dreamcast Launch in Europe Delayed](https://lastminutecontinue.com/news/dreamcast-launch-in-europe-delayed/) - reproduces Sega Europe's 27 August 1999 announcement of the 14 October launch.

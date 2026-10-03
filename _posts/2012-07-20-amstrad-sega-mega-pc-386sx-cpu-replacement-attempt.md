@@ -2,11 +2,11 @@
 title: "Amstrad Sega Mega PC 386SX CPU Replacement Attempt"
 author: "Nix McRetro"
 date: 2012-07-20T19:01:55.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, sega]
 ---
 
@@ -18,15 +18,9 @@ We wish you a safe journey, AMD 386SX CPU. You have served us well.
 
 Armed with a heat gun and flux, work begins on my attempt to create a 50 MHz Amstrad Mega PC.
 
-That 50 MHz target needs a little explanation.
+That 50 MHz target needs a little explanation. The original Am386SX does not run its core at the full CLK2 input frequency. A 50 MHz CLK2 signal corresponds to a 25 MHz 386SX core. The replacement chip shown in the later repair photographs is marked TI486SXLC2-G50-PQ. It belongs to TI's clock-doubled SXLC2-G family, designed for a 50 MHz internal core from a 25 MHz external bus in a 100-pin QFP package. So the idea was not to force the entire Mega PC motherboard to run at a 50 MHz external bus speed.
 
-The original Am386SX does not run its core at the full CLK2 input frequency. A 50 MHz CLK2 signal corresponds to a 25 MHz 386SX core.
-
-The upgrade part I was interested in was a Texas Instruments TX486SXLC2-050-PJF. That processor runs a 50 MHz internal core from a 25 MHz external bus and comes in a 100-pin QFP package.
-
-So the idea was not to force the entire Mega PC motherboard to run at a 50 MHz external bus speed.
-
-Unfortunately, similar clocks and packaging do not automatically make a CPU a drop-in replacement. The motherboard chipset, BIOS, cache-control signals, pin compatibility and surrounding circuitry all have to cooperate as well.
+Looking back, similar clocks and packaging do not automatically make a CPU a drop-in replacement. The SXLC2-G needs a 3.3 V core supply, despite having 5 V-tolerant I/O. The supply voltages, motherboard chipset, BIOS, cache-control signals, pin compatibility and surrounding circuitry all have to cooperate as well.
 
 This was very much an experiment.
 
@@ -42,4 +36,5 @@ I was also using a general-purpose heat gun for the removal. Having now spent mo
 ### Sources
 
 - [AMD Am386SX/SXL/SXLV datasheet](https://www.amd.com/content/dam/amd/en/documents/archived-tech-docs/datasheets/21020.pdf) - documents the Am386SX operating frequency as half the CLK2 input frequency.
-- [Texas Instruments TI486SXLC and TI486SXL Microprocessors Reference Guide](https://www.bitsavers.org/components/ti/TI486/1994_TI486SXLC_and_TI486SXL_Microprocessors_Reference_Guide.pdf) - lists the TX486SXLC2-050-PJF as a 5 V, 100-pin QFP part with a 50 MHz core and 25 MHz bus.
+- [Texas Instruments TI486SXLC and TI486SXL Microprocessors Reference Guide](https://www.bitsavers.org/components/ti/TI486/1994_TI486SXLC_and_TI486SXL_Microprocessors_Reference_Guide.pdf) - documents SXLC2 clock doubling and the distinction between core and bus frequencies.
+- [Texas Instruments - Designing With the TI486SXL2-G: Converting Existing 486-Based Microprocessor Designs](https://www.bitsavers.org/components/ti/TI486/SRZA004_Designing_With_The_TI486SCL2-G_199502.pdf) - explains the SXLC2-G family's 3.3 V core supply, 5 V-tolerant I/O and required hardware changes.

@@ -2,11 +2,11 @@
 title: "IBM PS/2 Model 30 8086 Disassembly"
 author: "Nix McRetro"
 date: 2012-09-24T22:44:16.000+10:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-03
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-03
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs]
 ---
 
@@ -14,9 +14,7 @@ categories: [ibm-pc, repairs]
 
 Forgot I uploaded this giant video...
 
-This IBM PS/2 Model 30 sure was a fun beast to disassemble and reassemble.
-
-Despite wearing the PS/2 badge, this original 8086-based Model 30 is a little unusual within the family because it uses an 8-bit ISA expansion bus rather than Micro Channel.
+This IBM PS/2 Model 30 sure was a fun beast to disassemble and reassemble. Despite wearing the PS/2 badge, this original 8086-based Model 30 is a little unusual within the family because it uses an 8-bit ISA expansion bus rather than Micro Channel.
 
 The video above is the complete disassembly and reassembly, so if you have an hour to spare you can watch the whole thing.
 

@@ -2,11 +2,11 @@
 title: "Sega TeraDrive Model 2 XTIDE Boot Success"
 author: "Nix McRetro"
 date: 2012-11-18T01:29:16.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-04
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-04
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, sega, youtube]
 ---
 
@@ -14,13 +14,9 @@ categories: [ibm-pc, sega, youtube]
 
 Victory!
 
-The Sega TeraDrive Model 2 can now boot from the XTIDE setup all the way to a DOS command prompt.
+The Sega TeraDrive Model 2 can now boot from the XTIDE setup all the way to a DOS command prompt. This is a fairly important little milestone.
 
-This is a fairly important little milestone.
-
-Sega sold the Model 2 with two 3.5-inch floppy drives and **no internal hard drive**, so persistent mass storage has been one of the big limitations of this machine from the beginning.
-
-The XTIDE card gives the old 286 an 8-bit ISA route to modern ATA storage, and the TopSSD Disk on Module is finally behaving like a real boot drive.
+Sega sold the Model 2 with two 3.5-inch floppy drives and **no internal hard drive**, so persistent mass storage has been one of the big limitations of this machine from the beginning. The XTIDE card gives the old 286 an 8-bit ISA route to modern ATA storage, and the TopSSD Disk on Module is finally behaving like a real boot drive.
 
 Next stop: MS-DOS 6.22 and Windows 3.1.
 
@@ -32,9 +28,7 @@ Accident?
 
 Conspiracy theorists, book your flights. The forum starts in six hours.
 
-The XTIDE card really is an amazing piece of hardware.
-
-Thanks to the Vintage Computer community and the XTIDE developers for giving old machines like this a practical way to use modern storage.
+The XTIDE card really is an amazing piece of hardware. Thanks to the Vintage Computer community and the XTIDE developers for giving old machines like this a practical way to use modern storage.
 
 ### Related posts
 

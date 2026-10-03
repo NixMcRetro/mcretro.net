@@ -2,19 +2,17 @@
 title: "Sega TeraDrive Model 3 with XTIDE Installed"
 author: "Nix McRetro"
 date: 2012-11-18T01:44:56.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-04
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-04
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, sega]
 ---
 
 {% include youtube.html id="lMLOwaci3g4" %}
 
-I cloned the BIOS configuration across my two XTIDE cards, so it probably shouldn't have been a surprise that the second one worked.
-
-Still, I wasn't sure how the Model 3 would behave with its original-style hard drive arrangement still installed.
+I cloned the BIOS configuration across my two XTIDE cards, so it probably shouldn't have been a surprise that the second one worked. Still, I wasn't sure how the Model 3 would behave with its original-style hard drive arrangement still installed.
 
 It behaved perfectly.
 
@@ -22,11 +20,7 @@ Like a gentleman and a scholar.
 
 ![](/assets/images/2012/img_0359.jpg)
 
-That means both my Model 2 and Model 3 TeraDrives can now use XTIDE storage.
-
-The Model 3 originally shipped with a 30 MB internal hard drive, while the Model 2 had no hard disk at all.
-
-XTIDE gives me a much easier route to modern ATA storage and makes me far less dependent on finding surviving examples of the proprietary 44-pin power-and-data drives used by the original Model 3 setup.
+That means both my Model 2 and Model 3 TeraDrives can now use XTIDE storage. The Model 3 originally shipped with a 30 MB internal hard drive, while the Model 2 had no hard disk at all. XTIDE gives me a much easier route to modern ATA storage and makes me far less dependent on finding surviving examples of the proprietary 44-pin power-and-data drives used by the original Model 3 setup.
 
 I have personally confirmed IBM WDL-330P drives working in the TeraDrive. WDL-330PS drives have also been reported in surviving machines, but I have not confirmed that variant firsthand.
 

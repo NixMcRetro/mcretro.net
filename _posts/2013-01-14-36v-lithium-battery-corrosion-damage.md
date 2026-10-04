@@ -3,11 +3,11 @@ title: "3.6V Lithium Battery Corrosion Damage"
 author: "Nix McRetro"
 date: 2013-01-14T10:43:59.000+11:00
 categories: [apple, ibm-pc, repairs]
-last_modified_at: 2026-09-28
+last_modified_at: 2026-10-05
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-05
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="4vbAsA9_96M" %}

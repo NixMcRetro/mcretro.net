@@ -3,11 +3,11 @@ title: "Disk on Modules and the XTIDE BIOS on the Sega TeraDrive"
 author: "Nix McRetro"
 date: 2013-02-17T19:11:53.000+11:00
 categories: [ibm-pc, repairs, sega]
-last_modified_at: 2026-09-28
+last_modified_at: 2026-10-05
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-05
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2013/img_0377.jpg)
@@ -18,11 +18,11 @@ So many types of disk on modules, so little time. Found this [in the XTIDE Unive
 
 So far I've gone through three types / brands of disk on modules. I was after one that was powered on pin 20 for 5V and preferably around 2GB in size. That is a convenient ceiling for a single FAT16 partition under the MS-DOS versions I was using, where 2GB is the normal maximum partition size. It's plenty of room for a 286-class machine as well.
 
-**Transcend 4GB** 5V on Pin 20: YES Recognised with XTIDE: NO
-
-**KingSpec 2GB** 5V on Pin 20: NO Recognised with XTIDE: YES
-
-**TopSSD 4GB** 5V on Pin 20: YES Recognised with XTIDE: YES
+| DOM tested | 5 V from pin 20 | Recognised with XTIDE in this setup |
+| --- | --- | --- |
+| Transcend 4 GB | Yes | No |
+| KingSpec 2 GB | No | Yes |
+| TopSSD 4 GB | Yes | Yes |
 
 Unfortunately, I can't track down these TopSSD drives anywhere. I was hoping the Transcend ones would work best, but they didn't. They had voltage, but weren't recognised correctly with the XTIDE software. Limitations or issues with the Transcends sure is harsh. But at least I have now seen all three possible scenarios these DOMs provide. There can't be any more ways to fail, right? RIGHT?!?!?! :D
 

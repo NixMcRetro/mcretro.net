@@ -2,45 +2,35 @@
 title: "Cross Products SNASM Mega-CD Development Unit Power-Up"
 author: "Nix McRetro"
 date: 2013-02-10T07:55:55.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-05
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-05
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [devkit, sega, youtube]
 ---
 
 {% include youtube.html id="STpdeioICpk" %}
 
-I finally found enough bench space to power up the Cross Products SNASM Mega-CD development unit.
+I finally found enough bench space to power up the Cross Products SNASM Mega-CD development unit. Success, at least at the most basic level.
 
-Success, at least at the most basic level.
-
-The hardware powers up and the SNASM2 PC interface initialises correctly and reports that it is ready to connect.
-
-That does not prove every part of the development system is functional, but it is considerably better than an expensive box full of silence.
+It's not like I have a degree for programming games or the time at the moment to learn. The hardware powers up and the SNASM2 PC interface initialises correctly and reports that it is ready to connect. That does not prove every part of the development system is functional, but it is considerably better than an expensive box full of silence.
 
 ![](/assets/images/2013/img_0367.jpg)
 
-The video above shows the setup running from a Pentium III 800 MHz machine.
-
-Powered by an Intel Pentium III processor clocked at 800 MHz, we conquered the world together.
+The video above shows the setup running from a Pentium III 800 MHz machine. Powered by an Intel Pentium III processor clocked at 800 MHz, we conquered the world together.
 
 ![](/assets/images/2013/img_0365.jpg)
 
-The first machine I used during the power-up experiments was actually this Pentium 600 MHz system.
+The first machine I used during the power-up experiments was actually this Pentium 600 MHz system. Why do I have so many bits of old hardware hanging around anyway?
 
 Somewhere along the way I also tried the wonderfully anonymous 133 MHz machine below.
 
 ![](/assets/images/2013/img_0366.jpg)
 
-This was a 133 MHz something or other, not sure if it was Cyrix, AMD or Pentium.
+This was a 133 MHz something or other, not sure if it was Cyrix, AMD or Pentium. It was sufficient though and stacked well into the case.
 
-It was sufficient though and stacked well into the case.
-
-Later testing showed that the SNASM hardware could be unusually sensitive to the host PC.
-
-A 486DX4-100 worked beautifully, while some Pentium-class setups needed considerably more persuasion.
+Later testing showed that the SNASM hardware could be unusually sensitive to the host PC. A 486DX4-100 worked beautifully, while some Pentium-class setups needed considerably more persuasion.
 
 At this point, though, all I wanted to know was whether the development hardware would wake up.
 
@@ -48,9 +38,7 @@ It did.
 
 ![](/assets/images/2013/img_0368.jpg)
 
-Does that silkscreen look attractive on the back of the SNASM2 card?
-
-Next step: disassembly, chip dumping and a lot more photography.
+Does that silkscreen look attractive on the back of the SNASM2 card? Next step: disassembly, chip dumping and a lot more photography.
 
 ### Related posts
 

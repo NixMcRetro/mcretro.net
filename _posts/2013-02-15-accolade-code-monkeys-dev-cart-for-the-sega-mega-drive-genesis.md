@@ -3,11 +3,11 @@ title: "Accolade Code Monkeys Dev Cart for the Sega Mega Drive / Genesis"
 author: "Nix McRetro"
 date: 2013-02-15T08:09:40.000+11:00
 categories: [devkit, gaming, sega]
-last_modified_at: 2026-09-28
+last_modified_at: 2026-10-05
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-05
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="m-UYDH0lgdM" %}
@@ -30,9 +30,9 @@ Next up we have the Accolade silkscreen on the PCB that was blacked out with wha
 
 Finally the interesting 9 pin cable hanging off might have been due to a game known as [Zero Tolerance](https://en.wikipedia.org/wiki/Zero_Tolerance_(video_game)) as was pointed out by one YouTube commenter.
 
-**Link cable support** The game supported connecting two Genesis/Mega Drives via a special link cable for a multiplayer mode. Technopop later stated that its proprietary two-player Network Link Cable had been offered free with purchases of Zero Tolerance, and published the wiring needed to build one.
+Zero Tolerance supported connecting two Mega Drives through their second controller ports. Technopop later stated that its proprietary two-player Network Link Cable had been offered free with purchases of the game, and published the wiring needed to build one.
 
-The Accolade development system itself is now better documented, including Accolade's collaboration with The Code Monkeys and the use of epoxy on surviving hardware. Zero Tolerance's two-console link feature is also well documented, including the special cable connecting the second controller ports. What remains unverified is whether the 9 pin lead on this particular development cartridge had anything to do with Zero Tolerance. That connection was a plausible suggestion from a commenter, not something I established at the time.
+Accolade's development manual also describes a PC-to-console connection as part of its development system. Neither that manual nor Zero Tolerance's link feature establishes what the 9 pin lead on this particular cartridge was for. That connection was a suggestion from a commenter, not something I established at the time.
 
 ![](/assets/images/2013/img_0373.jpg)
 
@@ -40,6 +40,7 @@ So there you have it, a piece of history!
 
 ### Sources
 
+- [Accolade - The Sega Development System, version 2.0 (21 February 1991)](https://drive.google.com/file/d/1C_T91q6Pf_TTA5Bl5IUbqscrgapqxAq8/view) - original setup instructions describe the PC and console connections; they do not identify this cartridge's loose lead.
 - [Exodus Emulator TechDocs - Sega Mega Drive Development Hardware](https://techdocs.exodusemulator.com/Console/SegaMegaDrive/Hardware.html)
-- [Technopop - Zero Tolerance / 2-Player Network Link Cable](https://www.technopop.net/)
-- [Sega-16 - Zero Tolerance Link Cable](https://www.sega-16.com/2009/12/sega-gear-zero-tolerance-link-cable/)
+- [Technopop - Zero Tolerance / 2-Player Network Link Cable](http://www.technopop.net/)
+- [Sega-16 - Tech Talk: Zero Tolerance Link Cable](https://www.sega-16.com/2009/12/sega-gear-zero-tolerance-link-cable/)

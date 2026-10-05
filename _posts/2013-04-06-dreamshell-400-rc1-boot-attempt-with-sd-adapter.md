@@ -2,11 +2,11 @@
 title: "DreamShell 4.0.0 RC1 Boot Attempt with SD Adapter"
 author: "Nix McRetro"
 date: 2013-04-06T03:35:16.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [hacks, sega, youtube]
 ---
 
@@ -14,15 +14,9 @@ Some progress with DreamShell 4.0.0 RC1, but this setup is still behaving unpred
 
 {% include youtube.html id="ILqrG6tCvtE" %}
 
-DreamShell 4.0 RC1 was one of the early release-candidate builds of the Dreamcast homebrew environment, with several different boot and SD-loading approaches already being experimented with at the time.
+What I am seeing here does not tell me whether DreamShell itself is the problem. The SD card, adapter or some interaction between the two could just as easily be involved.
 
-What I am seeing here does not tell me whether DreamShell itself is the problem.
-
-The SD card, adapter or some interaction between the two could just as easily be involved.
-
-I've therefore ordered another SD card and a different DreamShell adapter.
-
-We'll have to wait and see whether that behaves any better.
+I've therefore ordered another SD card and a different DreamShell adapter. We'll have to wait and see whether that behaves any better.
 
 Stay tuned! :)
 

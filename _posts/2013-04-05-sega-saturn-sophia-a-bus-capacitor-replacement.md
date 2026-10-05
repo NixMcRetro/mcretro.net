@@ -2,11 +2,11 @@
 title: "Sega Saturn Sophia A-Bus Capacitor Replacement"
 author: "Nix McRetro"
 date: 2013-04-05T03:32:41.000+11:00
-last_modified_at: 2026-09-29
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-29
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega, youtube]
 ---
 
@@ -14,13 +14,9 @@ The lovely Sophia is getting a fresh set of capacitors on the A-Bus board today.
 
 {% include youtube.html id="PSiZzTdsUVw" %}
 
-Unfortunately, replacing them did not noticeably improve the fault.
+Unfortunately, replacing them did not noticeably improve the fault. That is still useful information.
 
-That is still useful information.
-
-The A-Bus board has now moved considerably further down the suspect list, so the next step is the mainboard.
-
-There are a lot more capacitors on that board too.
+The A-Bus board has now moved considerably further down the suspect list, so the next step is the mainboard. There are a lot more capacitors on that board too.
 
 Delightful.
 

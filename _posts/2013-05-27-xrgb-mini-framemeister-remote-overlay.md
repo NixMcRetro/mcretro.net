@@ -3,11 +3,18 @@ title: "XRGB-mini Framemeister Remote Overlay"
 author: "Nix McRetro"
 date: 2013-05-27T04:24:27.000+10:00
 categories: [news]
+last_modified_at: 2026-10-06
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2013/img_0402.jpg)
 
-This image is a photo of the great work a Framemeister XRGB Mini can do. The remote... a little difficult to understand since my Japanese is very limited. Now, thanks to a very kind member of the System11 forums I no longer have to guess what the buttons do. They are labelled with a marvellous looking vinyl decal overlay.
+These photos show the great work a Framemeister XRGB Mini can do.
+
+The remote... a little difficult to understand since my Japanese is very limited. Now, thanks to a very kind member of the System11 forums I no longer have to guess what the buttons do. They are labelled with a marvellous looking vinyl decal overlay.
 
 ![](/assets/images/2013/img_0407.jpg)
 

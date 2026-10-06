@@ -2,6 +2,11 @@
 title: "Collection Dilemma - Where to Draw the Line?"
 author: "Nix McRetro"
 date: 2013-09-16T16:07:09.000+10:00
+last_modified_at: 2026-10-06
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [news, youtube]
 ---
 

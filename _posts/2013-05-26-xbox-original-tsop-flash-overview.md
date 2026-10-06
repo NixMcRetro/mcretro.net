@@ -2,17 +2,17 @@
 title: "Original Xbox TSOP Flash Overview"
 author: "Nix McRetro"
 date: 2013-05-26T04:10:00.000+10:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [microsoft, repairs, youtube]
 ---
 
 {% include youtube.html id="ODRL3Em4s2o" %}
 
-Here's what I soldered to flash the BIOS on my revision 1.2 or 1.3 original XBOX. We have a Winbond 256KB TSOP flash ROM on this. Soldering the two points disables the write protection, leaving us the opportunity to install a much better BIOS.
+Here's what I soldered to flash the BIOS on my revision 1.2 or 1.3 original XBOX. We have a Winbond 256KB TSOP flash ROM on this. Bridging the write-enable connections disables the write protection, leaving us the opportunity to install a much better BIOS. The standard EvolutionX flasher does not support Winbond TSOPs, so the flashing tool matters too.
 
 ![](/assets/images/2013/img_0400.jpg)
 
@@ -20,7 +20,7 @@ It's essentially a modchip, without a modchip. That also leaves you without a ba
 
 ![](/assets/images/2013/img_0401.jpg)
 
-I'll get around to putting a guide up on eventually, there's still a lot to be done on this website...
+I'll get around to putting a guide up eventually, there's still a lot to be done on this website...
 
 ### Sources
 

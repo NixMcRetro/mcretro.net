@@ -2,23 +2,17 @@
 title: "Subscribe Today! (Version 1.0)"
 author: "Nix McRetro"
 date: 2013-08-25T15:40:49.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [news, youtube]
 ---
 
 {% include youtube.html id="yf4CvKXRPMw" %}
 
-Welcome to Version 1.0 of the old RetroJunkie YouTube channel trailer, from the period when I was still using the Shane McRetro branding.
-
-Feel free to browse the selection of videos for what you are after...
-
-You know you want to!
-
-This trailer is preserved as part of the channel's history.
+Welcome to the RetroJunkie YouTube Channel with your host Nix McRetro! Feel free to browse the selection of videos for what you are after... you know you want to!
 
 Current and archived McRetro channel links can be found on the [Channels](/channels/) page.
 

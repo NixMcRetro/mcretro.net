@@ -2,29 +2,19 @@
 title: "Aiwa CSD-EX80 vs Aiwa Mega-CD CSD-GM1: Donor Comparison"
 author: "Nix McRetro"
 date: 2013-09-23T02:21:25.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega, youtube]
 ---
 
 {% include youtube.html id="BIg69IzAJec" %}
 
-These two look like they were separated at birth.
+They look to me like they were separated at birth! An initial look at the internals is promising too. Looks like we've found our donor boombox to fix up bits and pieces from the other two.
 
-This is my first comparison between an ordinary Aiwa CSD-EX80 and the boombox section of the Aiwa Mega-CD CSD-GM1.
-
-Cosmetically, the similarities are extremely promising.
-
-An initial look inside also suggests that the EX80 may be useful as a donor for at least some mechanical and cosmetic parts.
-
-That does **not** mean every PCB or electrical assembly can automatically be swapped between the two machines.
-
-At this stage it is a donor candidate, not proof of complete parts interchangeability.
-
-Given the broken tape mechanism and damaged boards in my CSD-GM1 units, though, finding something this closely related is very good news indeed.
+This is the Aiwa CSD-EX80 alongside the boombox section of the Aiwa Mega-CD CSD-GM1. The similarities make it a promising donor candidate, but they do not establish that every PCB or electrical assembly can be swapped between the two machines.
 
 ### Related posts
 

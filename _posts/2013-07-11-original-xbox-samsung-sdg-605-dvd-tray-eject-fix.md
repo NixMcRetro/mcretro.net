@@ -2,31 +2,26 @@
 title: "Original Xbox Samsung SDG-605 DVD Tray Eject Fix"
 author: "Nix McRetro"
 date: 2013-07-11T04:55:02.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [microsoft, repairs, youtube]
 ---
 
 {% include youtube.html id="mRRqyVdPZJc" %}
 
-If your Xbox has a Samsung SDG-605 DVD drive that refuses to eject, but occasionally opens when you tap the console, there are a few mechanical possibilities.
+If your Xbox DVD drive is not ejecting, but sometimes ejects when tapped... that was the symptom I was looking at on this Samsung SDG-605. At the time I suspected the magnet on the spindle hub was holding too strongly.
 
-In this particular drive I was investigating whether the spindle clamp magnet was holding the mechanism together too strongly.
+The modification shown worked for this drive and this symptom. That does not establish the same fault or fix for every stuck Samsung tray.
 
-That can contribute to this symptom, but it is not the only possibility.
+But how to fix it? Watch on! I'll come back to this one in the next few days as I have another Xbox 1.6 with this issue.
 
-The eject belt and tray mechanism are also common places to start when an Xbox DVD tray refuses to open.
+### Related posts
 
-So the modification shown in this video is what worked for this drive and this symptom.
-
-It should not be treated as the universal fix for every stuck Samsung tray.
-
-I'll come back to DVD-drive repairs again shortly because I have another late Xbox with similar behaviour.
+- [Original Xbox Hitachi-LG GDR-8050L DVD Tray Repair](/original-xbox-hitachi-lg-gdr-8050l-dvd-tray-repair/)
 
 ### Sources
 
 - [ConsoleMods Wiki - Xbox DVD-ROM](https://consolemods.org/wiki/Xbox:DVDROM)
-- [Xbox-Scene - Replacing / Repairing Your DVD-ROM](https://www.xbox-scene.info/tutorials/article/20-replacingrepairing-your-dvd-rom/)

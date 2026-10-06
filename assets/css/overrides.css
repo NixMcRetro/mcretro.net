@@ -10,3 +10,13 @@
 .ai-assistance-note strong {
   font-weight: 700;
 }
+
+/* Keep post-end link sections at the size of bold body text. */
+.post-content #sources,
+.post-content #related-posts {
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: inherit;
+  margin: 1em 0 0;
+}

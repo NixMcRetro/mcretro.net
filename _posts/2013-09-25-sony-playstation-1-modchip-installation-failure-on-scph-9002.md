@@ -2,47 +2,34 @@
 title: "Sony PlayStation 1 Modchip Installation Failure on SCPH-9002"
 author: "Nix McRetro"
 date: 2013-09-25T00:25:12.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [hacks, sony, youtube]
 ---
 
-Oh geez!
-
-Another guide attempt where several things went wrong at once.
-
-Rather than throw the footage away, I figured I might as well let the internet feast on this beauty of a failed installation.
-
-See my attempt at stop motion in Final Cut Pro X at the end too.
-
 {% include youtube.html id="bA2Xc0uRxZY" %}
+
+Oh geez! Another video of a guide I was attempting to do only to have many things go wrong and write it off. Rather than throw it away I thought I might let the internet feast on this beauty of a video - see my attempt at stop motion in Final Cut Pro X at the end of the video...
 
 {% include youtube.html id="V6QhAZckY8w" %}
 
-![](/assets/images/2013/img_0419.jpg)
+...things can only get better! ;)
 
-There were several overlapping problems here.
+![Small surface-mount component beside an Australian one-dollar coin](/assets/images/2013/img_0419.jpg)
 
-My previous PIC programming attempts were already unreliable.
+As with the previous video, without the modchip, we weren't going to get too far anyway even if all the wires had gone in properly. I've since purchased a pair of wire strippers - how did I not have these before now? And some nice PIC flash chips so I can make mistakes and reflash - that's the power of Flash!
 
-I also later discovered that the CD burner I was using for test discs was faulty, and that disc verification had either been disabled or ignored during some burns.
-
-So a disc refusing to boot did not necessarily mean the modchip wiring itself was wrong.
-
-I eventually came back to this same SCPH-9002 project, moved to a reflashable PIC12F629 and successfully installed MultiMode3.
-
-In other words:
-
-this is a failed attempt, not a failed console design and not a wiring guide.
-
-I've since purchased a pair of wire strippers too.
-
-How did I not have those before now?
+I returned to this SCPH-9002 project in November 2013, using a reflashable PIC12F629 and successfully loading MultiMode3. I also found that the CD burner used for test games was faulty, with "verify burn" switched off or ignored. That meant a failed disc boot was not a clean test of the modchip wiring.
 
 ### Related posts
 
+- [Sony PlayStation Modchip Programming Failure with a PIC12C508A](/sony-playstation-modchip-programming-failure-with-pic12c508a/)
 - [Sony PlayStation 1 Modchip Installation on SCPH-9002 Update](/sony-playstation-1-modchip-installation-on-scph-9002-update/)
 - [Sony PlayStation 1 Modchip Installation Success on SCPH-9002](/sony-playstation-1-modchip-installation-success-on-scph-9002/)
+
+### Sources
+
+- [Microchip - PIC12F629/675 Data Sheet](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/41190G.pdf)

@@ -2,31 +2,19 @@
 title: "Aiwa Mega-CD CSD-GM1 02-01 Rev 2 Mainboard Recap"
 author: "Nix McRetro"
 date: 2013-08-06T15:30:17.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega, youtube]
 ---
 
-Back to the revision 2 Aiwa mainboard, silkscreened `02-01`.
-
-More capacitors, more troubleshooting and, naturally, a few more parts that need to be ordered.
-
 {% include youtube.html id="QkpbVodA_gM" %}
 
-At this point this board is especially useful because it is the only one of my two CSD-GM1 mainboards currently passing power through to the Game Unit section.
+Back to the revision 2 Aiwa mainboard, silkscreened `02-01`. At this point it is the only one of my two CSD-GM1 mainboards passing power through to the Game Unit section, which makes it useful for comparing both Game Units.
 
-That makes it my best available test platform for comparing both Game Units.
-
-One day these machines will shine with perfection.
-
-Well...
-
-Maybe not exactly perfection.
-
-I'll settle for functioning alright.
+Came across a few problems on this one, never fear there are always more parts on order. One day these units will shine with perfection. Well maybe not exactly perfection, but they'll function alright!
 
 ### Related posts
 

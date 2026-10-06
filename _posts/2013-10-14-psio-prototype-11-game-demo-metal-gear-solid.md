@@ -2,23 +2,21 @@
 title: "PSIO Prototype 1.1 Game Demo: Metal Gear Solid"
 author: "Nix McRetro"
 date: 2013-10-14T17:52:52.000+11:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="fhJNDNcIz9Y" %}
 
-Metal Gear Solid, or MGS as all the kids know it.
+Metal Gear Solid, or MGS as all the kids know it - another masterpiece and guess what... it seems to work flawlessly in what I tested here!
 
-Another masterpiece.
+Please remember that this is a prototype device. These results apply to hardware 1.1 and software 1.1A, rather than later PSIO revisions or the final product.
 
-Everything I tested in this session behaved flawlessly on the PSIO 1.1 prototype.
-
-That is an observation from the tested portion of the game rather than a claim that I exhaustively validated every possible part of Metal Gear Solid.
+You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I am but a mere tester. I do not understand the technology behind this wonderful invention.
 
 **Prototype test conditions**
 
@@ -27,4 +25,7 @@ That is an observation from the tested portion of the game rather than a claim t
 - PlayStation: SCPH-5502
 - CD deck: removed
 
-These results belong to the prototype revision shown here.
+### Related posts
+
+- [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)
+- [PSIO Prototype 1.1 Game Demo: Metal Gear Solid: Integral](/psio-prototype-11-game-demo-metal-gear-solid-integral/)

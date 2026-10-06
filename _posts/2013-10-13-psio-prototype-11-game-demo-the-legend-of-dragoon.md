@@ -2,23 +2,21 @@
 title: "PSIO Prototype 1.1 Game Demo: The Legend of Dragoon"
 author: "Nix McRetro"
 date: 2013-10-13T17:51:46.000+11:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="TMXZwy1BV08" %}
 
-The Legend of Dragoon did not have too much success on this early PSIO setup.
+The Legend of Dragoon: this one we didn't have too much success with.
 
-Unfortunately, the surviving post does not record the exact failure point in enough detail for me to reconstruct it now.
+Please remember that this is a prototype device. These results apply to hardware 1.1 and software 1.1A, rather than later PSIO revisions or the final product.
 
-So I am leaving the result at exactly that:
-
-**this particular prototype test was unsuccessful.**
+You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I am but a mere tester. I do not understand the technology behind this wonderful invention.
 
 **Prototype test conditions**
 
@@ -27,4 +25,6 @@ So I am leaving the result at exactly that:
 - PlayStation: SCPH-5502
 - CD deck: removed
 
-This should not be treated as a compatibility verdict for later PSIO versions or the final hardware.
+### Related posts
+
+- [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)

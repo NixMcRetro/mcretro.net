@@ -2,25 +2,19 @@
 title: "Sega Sophia Target Box PAL Switch Settings and Hardware Notes"
 author: "Nix McRetro"
 date: 2013-07-02T12:01:49.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [guides, repairs, sega]
 ---
 
 ![](/assets/images/2013/img_0409.jpg)
 
-Here are the PAL switch settings and hardware notes I recorded from my Sega / Cross Systems Sophia.
+Here are the PAL switch settings and hardware notes I recorded from my Sega Saturn Sophia Programming Box. I originally called these the "factory settings", but I have not established that they were universal PAL factory defaults.
 
-I originally called these the "factory settings".
-
-I do not have enough surviving documentation to establish that every switch position shown here was a universal PAL factory default, so it is safer to describe them as the settings recorded from my unit.
-
-One useful troubleshooting note from the time: if no video appears, it may be worth trying the NTSC / PAL switch in the NTSC position.
-
-I remember having some display trouble around this setting, although I did not fully characterise it.
+One useful troubleshooting note from the time: if no video appears, it may be worth trying the NTSC / PAL switch in the NTSC (OFF) position. I remember some display trouble around this setting, although I did not fully characterise it. A TV that supports both PAL and NTSC makes that experiment easier. Thanks globalisation!
 
 **Switch Bank 1**
 
@@ -61,4 +55,4 @@ Until we know, I guess we'll never know.
 
 ### Sources
 
-- [Sega Saturn Developer FAQ - Programming Box SIMM system](https://docs.exodusemulator.com/Archives/SSDDV25/segahtml/faq/devl/p08_10.htm)
+- [Sega Saturn Developer FAQ - Programming Box SIMM system](http://docs.exodusemulator.com/Archives/SSDDV25/segahtml/faq/devl/p08_10.htm)

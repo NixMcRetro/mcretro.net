@@ -2,29 +2,21 @@
 title: "SNASM2 ISA Card on a Pentium-class Motherboard"
 author: "Nix McRetro"
 date: 2013-06-26T15:50:33.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [devkit, programming, sega]
 ---
 
 {% include youtube.html id="zb2928JnKEg" %}
 
-Turns out I can get the SNASM2 card behaving on this Pentium-class motherboard by disabling the CPU's internal cache through the BIOS.
+Turns out I can get the SNASM2 card behaving on this Pentium-class motherboard by disabling the CPU's internal cache through the BIOS. Why? I have no idea!
 
-Why?
+This was a workaround for this particular PC and development-card combination. I never established the underlying reason, so I would not treat "disable the CPU cache" as a general SNASM2 requirement. The 486DX4-100 system worked much more happily without this particular piece of nonsense.
 
-I have no idea!
-
-The important distinction is that this is an observed workaround for this particular PC and development-card combination.
-
-I never established the underlying reason, so I would not treat "disable the CPU cache" as a general SNASM2 requirement.
-
-The 486DX4-100 system worked much more happily without this particular piece of nonsense.
-
-Any and all historically informed speculation remains welcome.
+Any and all speculation is welcome.
 
 ### Related posts
 

@@ -21,7 +21,7 @@ I later tried an LM324 as a replacement. That did not work in my test; the follo
 ### Related posts
 
 - [Super Nintendo Serial UP17388130 - No Sound](/super-nintendo-serial-up17388130-no-sound/)
-- [Damaged S-MIX on a SNES SNSP-CPU-02 Mainboard](/damaged-s-mix-on-a-snes-snsp-cpu-02-mainboard/)
+- [Damaged S-MIX on a SNES SNSP-CPU-1CHIP-02 Mainboard](/damaged-s-mix-on-a-snes-snsp-cpu-1chip-02-mainboard/)
 
 ### Sources
 

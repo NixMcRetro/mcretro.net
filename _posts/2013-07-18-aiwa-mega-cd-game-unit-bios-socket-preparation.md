@@ -2,31 +2,19 @@
 title: "Aiwa Mega-CD Game Unit BIOS Socket Preparation"
 author: "Nix McRetro"
 date: 2013-07-18T13:04:18.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega, youtube]
 ---
 
-Well, the me of the past did not do such a wonderful job of removing the Aiwa BIOS chip.
-
-The MPR-15768-T ROM had already been removed so I could preserve its contents, but the PCB suffered in the process.
-
-If only I had owned the Hakko 808 back then.
-
-The good news is:
-
-we can rebuild him.
-
-We have the technology!
-
 {% include youtube.html id="HAYwlG-0ojo" %}
 
-The plan now is to fit a socket and repair the damaged connections so I can swap and test BIOS devices without repeatedly desoldering the board.
+Well, the me of the past didn't do such a good job of removing that BIOS chip... but the good news is, we can rebuild him! We have the technology! If only I had my Hakko 808 back then! :)
 
-The next post covers the actual trace repair.
+The MPR-15768-T ROM had been removed for the earlier BIOS dump. This is the preparation for fitting a socket and repairing the damaged connections; the next post records the trace repair.
 
 ### Related posts
 

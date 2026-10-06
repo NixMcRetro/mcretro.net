@@ -2,37 +2,21 @@
 title: "Aiwa Mega-CD Game Unit BIOS Socket Installation and Trace Repair"
 author: "Nix McRetro"
 date: 2013-07-18T13:55:52.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega, youtube]
 ---
 
-Back to the Aiwa Game Unit and the damage left behind from my earlier BIOS removal.
-
-Installing a socket is the easy part.
-
-Repairing the damaged PCB connections underneath it took considerably more time.
-
 {% include youtube.html id="Nxz84M6u57k" %}
+
+Here we are with the Aiwa Game Unit again and we are onto attempting the repair. It actually turned out quite well. Took a while to trace back all the connections, but we got there!
 
 ![](/assets/images/2013/img_0413.jpg)
 
-I traced the BIOS connections back one by one and repaired the damaged tracks.
-
-Continuity now checks correctly between the expected points and I am not seeing shorts between them.
-
-That is excellent news.
-
-It means the socket and trace work are ready for the next stage of testing.
-
-The catch?
-
-I still need the boombox side of the CSD-GM1 to be functional enough to power and test the complete system.
-
-More repairs on the way!
+Continuity showed as good between all the points I checked, and none were reporting shorts, which was great news! We were ready to test... but I needed the boombox part to be somewhat functional first... more repairs on the way!
 
 ![](/assets/images/2013/img_0412.jpg)
 

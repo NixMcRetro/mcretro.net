@@ -2,43 +2,21 @@
 title: "Faulty / Damaged Super Nintendo Consoles Overview"
 author: "Nix McRetro"
 date: 2013-06-29T04:13:40.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [nintendo, repairs, youtube]
 ---
 
 {% include youtube.html id="7nFvlEY5XE8" %}
 
-Three faulty Super Nintendo consoles.
+Three faulty Super Nintendo consoles. The first step is assessing the damage: look for obvious corrosion or damaged components, then test each unit to see its current state. After that? Replace all capacitors, right? No one likes old SMD electrolytic caps!
 
-First step: assess the damage.
+Replacing deteriorated capacitors can help, but age alone does not establish the cause of a fault. Stay tuned, we'll have more up on what each unit does and hopefully get them repaired in the near future!
 
-Look for obvious corrosion, liquid damage, broken traces, burned components, cracked joints or anything else that immediately stands out.
-
-Then power them up carefully and record what each machine actually does.
-
-Back in 2013 my next instinct was basically:
-
-Replace all capacitors, right?
-
-Fresh capacitors are useful where the originals have genuinely deteriorated, but age alone does not establish the cause of a fault.
-
-These three consoles ended up being a very good demonstration of that.
-
-One had a reset-switch problem.
-
-One had corroded traces around PPU1.
-
-One had a visibly damaged S-MIX audio chip.
-
-So the real plan became:
-
-diagnose first, repair what the evidence actually points to, and recap where it makes sense.
-
-Stay tuned. We have three very different repairs coming up.
+Later posts recorded a reset-switch repair on 30 June and repairs to three corroded traces around PPU1 on 11 July. The no-sound unit's damaged S-MIX chip became a suspect in the 11 July update; that investigation was still ongoing.
 
 ### Related posts
 
@@ -48,4 +26,4 @@ Stay tuned. We have three very different repairs coming up.
 
 ### Sources
 
-- [ConsoleMods Wiki - Replacing Capacitors](https://consolemods.org/wiki/Replacing_Capacitors)
+- [Nichicon - General Descriptions of Aluminum Electrolytic Capacitors (Technical Notes)](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)

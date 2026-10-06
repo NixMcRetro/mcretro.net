@@ -2,23 +2,19 @@
 title: "PSIO Prototype 1.1 Game Demo: Crash Bash"
 author: "Nix McRetro"
 date: 2013-11-07T18:25:00.000+11:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="S6wtg-UtP7M" %}
 
-Crash Bash.
+Crash Bash, yet another Crash Bandicoot game I've never played. It too seems to work quite well and I didn't encounter any issues while testing. Another win for the PSIO project!
 
-Yet another Crash game I had somehow never played.
-
-I did not encounter any problems during this particular test, which makes it another good result for the PSIO prototype.
-
-Naturally, I also managed not to die immediately this time.
+Please remember that this is a prototype device and these results do not necessarily reflect the final hardware or game compatibility. You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I am but a mere tester. I do not understand the technology behind this wonderful invention.
 
 **Prototype test conditions**
 
@@ -26,4 +22,6 @@ Naturally, I also managed not to die immediately this time.
 - PSIO software: 1.1, revision 1.2
 - PlayStation: PAL SCPH-5502
 
-This describes the test session shown here rather than guaranteeing complete compatibility across the game.
+### Related posts
+
+- [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)

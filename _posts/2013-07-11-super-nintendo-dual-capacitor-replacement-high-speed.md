@@ -4,6 +4,11 @@ author: "Nix McRetro"
 date: 2013-07-11T06:12:25.000+10:00
 categories: [nintendo, repairs, youtube]
 permalink: /super-nintendo-dual-capacitor-replacement-high-speed/
+last_modified_at: 2026-10-06
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="Lub4Bh-b2Ag" %}

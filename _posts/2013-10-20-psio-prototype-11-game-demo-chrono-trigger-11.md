@@ -2,27 +2,19 @@
 title: "PSIO Prototype 1.1 Game Demo: Chrono Trigger 1.1"
 author: "Nix McRetro"
 date: 2013-10-20T17:57:19.000+11:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="MYzZAY3syUI" %}
 
-Chrono Trigger 1.1 behaves differently from the 1.0 revision on this early PSIO setup.
+Version 1.1 of Chrono Trigger consistently locks up during the opening FMV on this PSIO setup. This video compares 1.0 and 1.1 to see if the lockup was consistent, and it was! I did not establish what changed between the revisions or why they behaved differently.
 
-In this test, version 1.1 consistently locks up during the opening FMV.
-
-I repeated the test against Chrono Trigger 1.0 and reproduced the difference.
-
-I did not establish what changed between the two game revisions or exactly why that change affected PSIO 1.1.
-
-So the evidence here is deliberately narrow:
-
-**Chrono Trigger 1.0 gets past this point on my setup, while 1.1 consistently locks during the opening FMV.**
+Please remember that this is a prototype device and these results do not necessarily reflect the final hardware or game compatibility. You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I am but a mere tester. I do not understand the technology behind this wonderful invention.
 
 **Prototype test conditions**
 
@@ -31,8 +23,7 @@ So the evidence here is deliberately narrow:
 - PlayStation: SCPH-5502
 - CD deck: removed
 
-These are prototype-specific compatibility observations rather than results for later PSIO hardware or software.
-
 ### Related posts
 
 - [PSIO Prototype 1.1 Game Demo: Chrono Trigger 1.0](/psio-prototype-11-game-demo-chrono-trigger-10/)
+- [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)

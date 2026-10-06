@@ -2,44 +2,31 @@
 title: "SNES SuperCIC Switchless Modchip - More Testing (Part 3)"
 author: "Nix McRetro"
 date: 2013-11-28T19:31:02.000+11:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-07
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-07
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [hacks, nintendo, youtube]
 ---
 
 {% include youtube.html id="Nt16y4l6Hcg" %}
 
-They always say you can never have enough testing.
+They always say you can never have enough testing, so let's test the homemade SNES cartridge I made a few weeks (or is that up to months now?) ago, combined with the SuperCIC beast.
 
-So let's combine the SuperCIC console with the homemade SNES cartridge I built a few weeks earlier.
+I had to remove the CIC on the cartridge for this experiment. My guess was that the PAL donor cart was giving the SuperCIC the wrong region for the replacement game. Makes sense when you think about it!
 
-This exposed an interesting problem.
+In automatic mode, the SuperCIC follows the cartridge CIC's region, which can differ from the replacement game's region. It also has forced 50 Hz and 60 Hz modes, so it doesn't always have to match the cartridge. Removing a cartridge's CIC isn't a general requirement for using a SuperCIC console.
 
-The donor cartridge was PAL, so it still carried a PAL CIC key.
+Years later, in 2020, I revisited this EarthBound cartridge and installed a SuperCIC key in the cartridge itself. Apparently the CIC saga was not finished with me yet.
 
-The game image I had programmed into the cartridge was from another region.
+### Sources
 
-A SuperCIC console lock can normally detect the region of an ordinary cartridge CIC and switch accordingly.
-
-In this homemade cartridge, however, the donor CIC was describing the **donor board's region**, not necessarily the region expected by the replacement game image.
-
-That is why removing the donor CIC helped this particular experiment.
-
-It should not be turned into the general rule that cartridges need their CIC removed to work with a SuperCIC console.
-
-I eventually revisited this exact EarthBound cartridge years later and installed a SuperCIC key in the cartridge itself.
-
-Apparently the CIC saga was not finished with me yet.
+- [SuperCIC - ikari's project page](https://sd2snes.de/blog/cool-stuff/supercic)
+- [SuperCIC lock firmware source and operating modes](https://github.com/mrehkopf/sd2snes/blob/master/cic/supercic/supercic-lock.asm)
 
 ### Related posts
 
 - [SNES SuperCIC Switchless Modchip - Installation (Part 1)](/snes-supercic-switchless-modchip-installation-part-1/)
 - [SNES SuperCIC Switchless Modchip - The Test (Part 2)](/snes-supercic-switchless-modchip-the-test-part-2/)
 - [EarthBound Cartridge (SHVC-1J3M-20) SuperCIC Key](/earthbound-cartridge-shvc-1j3m-20-supercic-key/)
-
-### Sources
-
-- [SuperCIC Lock Firmware and Documentation](https://sd2snes.de/blog/cool-stuff/supercic)

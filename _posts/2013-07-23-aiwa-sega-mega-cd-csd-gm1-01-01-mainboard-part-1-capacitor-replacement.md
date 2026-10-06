@@ -2,11 +2,11 @@
 title: "Aiwa Sega Mega-CD CSD-GM1 01-01 Mainboard (Part 1: Capacitor Replacement)"
 author: "Nix McRetro"
 date: 2013-07-23T00:24:32.000+10:00
-last_modified_at: 2026-09-28
+last_modified_at: 2026-10-06
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-28
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-06
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega, youtube]
 ---
 
@@ -22,6 +22,10 @@ We pull out the mighty Hakko 808 desolder gun and replace the capacitors.
 
 And for the most part, I think we can label this one as a partial win? I mean we got the CD drive LED to light up? On to the next part - Volume check!
 
+### Related posts
+
+- [Aiwa Sega Mega-CD CSD-GM1 (Part 2: Volume Check)](/aiwa-sega-mega-cd-csd-gm1-part-2-volume-check/)
+
 ### Sources
 
-- [Nichicon - Application Guidelines for Aluminum Electrolytic Capacitors](https://www.nichicon.co.jp/english/products/pdf/aluminum.pdf)
+- [Nichicon - Aluminum Electrolytic Capacitor Technical Notes](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)

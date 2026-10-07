@@ -2,19 +2,21 @@
 title: "PSIO Prototype 1.1 Game Demo: Grandia"
 author: "Nix McRetro"
 date: 2014-08-10T20:36:36.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="gGvRpLrJ9Yc" %}
 
-Grandia came very close to working on this PSIO 1.1 prototype configuration, but not close enough for me to call it compatible.
+Grandia, so close to working on the 1.1 prototype! I bet it's been nailed on 2.x hardware, but this recording is from 1.1. Any progress is progress, and the team at [PSIO](https://ps-io.com/) have been hammering along.
 
-At the time I was optimistic that later 2.x hardware would improve things. This post should stay anchored to what I actually tested on 1.1 rather than treating that expectation as a result.
+Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
+
+You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 
 **Prototype test conditions**
 
@@ -22,8 +24,6 @@ At the time I was optimistic that later 2.x hardware would improve things. This 
 - PSIO software: 1.1A
 - PlayStation: PAL SCPH-5502
 - CD deck: removed
-
-These results describe this development build rather than later PSIO revisions or the final product.
 
 ### Related PSIO prototype posts
 

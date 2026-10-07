@@ -2,19 +2,21 @@
 title: "PSIO Prototype 1.1 Game Demo: Gran Turismo 2"
 author: "Nix McRetro"
 date: 2014-08-09T20:34:51.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="LiZAKQfxbRQ" %}
 
-Gran Turismo 2 did not behave well on this PSIO 1.1 prototype configuration.
+Gran Turismo 2 did not have much luck on this PSIO 1.1 prototype setup. I'm hoping the improvements in the upcoming 2.x PCB hardware will bring much better compatibility!
 
-At the time I was optimistic that the upcoming 2.x hardware would improve compatibility, but this video only establishes the result I actually observed on 1.1.
+Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
+
+You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 
 **Prototype test conditions**
 
@@ -22,8 +24,6 @@ At the time I was optimistic that the upcoming 2.x hardware would improve compat
 - PSIO software: 1.1A
 - PlayStation: PAL SCPH-5502
 - CD deck: removed
-
-These results belong to this development build rather than later PSIO revisions or the final product.
 
 ### Related PSIO prototype posts
 

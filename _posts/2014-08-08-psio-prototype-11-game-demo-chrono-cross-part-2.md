@@ -2,19 +2,21 @@
 title: "PSIO Prototype 1.1 Game Demo: Chrono Cross (Part 2)"
 author: "Nix McRetro"
 date: 2014-08-08T21:33:21.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="Raajas_N0j8" %}
 
-More Chrono Cross on the PSIO 1.1 prototype.
+More Chrono Cross on the PSIO 1.1 prototype. This game seems to run so well it would seem like it's final! Many of the Square and Enix (and Square Enix) titles ran out of the box in my tests on this prototype.
 
-The section I tested here also behaved well, so this continues the result from Part 1 rather than making a wider compatibility claim about Square or Enix games.
+Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
+
+You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 
 **Prototype test conditions**
 
@@ -22,8 +24,6 @@ The section I tested here also behaved well, so this continues the result from P
 - PSIO software: 1.1A
 - PlayStation: PAL SCPH-5502
 - CD deck: removed
-
-These results describe this development build rather than later PSIO revisions or the final product.
 
 ### Related PSIO prototype posts
 

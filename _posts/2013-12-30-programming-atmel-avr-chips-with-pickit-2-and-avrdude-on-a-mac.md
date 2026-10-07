@@ -2,21 +2,19 @@
 title: "Programming Atmel AVR Chips with a PICkit 2 and AVRDUDE on a Mac"
 author: "Nix McRetro"
 date: 2013-12-30T05:43:56.000+11:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-07
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-07
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [guides, programming]
 ---
 
 ![](/assets/images/2013/img_0435.jpg)
 
-PICkit 2 is a Microchip programmer/debugger designed primarily for Microchip devices.
+PICkit 2 is a Microchip programmer/debugger designed primarily for PIC chips. The fun part is that AVRDUDE can also use it as an ISP programmer for supported AVR microcontrollers, including the ATmega328P I was working with here. That AVR support comes from AVRDUDE rather than Microchip's PICkit 2 application.
 
-The fun part is that AVRDUDE can also use a PICkit 2 as an ISP programmer for AVR microcontrollers, including the ATmega328P I was working with here. That AVR support comes from AVRDUDE rather than Microchip's PICkit 2 application.
-
-Back in 2013, Atmel and Microchip were separate competitors. I originally repeated speculation that Microchip had stopped supporting PICkit 2 because people were using it to program Atmel devices. I have not found evidence for that, so that claim is coming out. Microchip simply moved on to newer programmer/debugger hardware. In a fun historical twist, Microchip later acquired Atmel in 2016.
+At the time, Atmel was a separate competitor, and I thought Microchip might have stopped supporting PICkit 2 because people were using it to program Atmel chips. After all, you wouldn't want your open-source hardware funding sales of your biggest competitor! That explanation was speculation, though; I don't have evidence for the connection.
 
 What I used:
 
@@ -26,18 +24,17 @@ What I used:
 - [ATmega328P](https://web.archive.org/web/20130928215235/http://www.atmel.com/Images/doc8161.pdf) as the AVR target
 - AVRDUDE on the Mac
 
-Compiling all of this was particularly entertaining because I had very little idea what I was doing! 😅
+Compiling all of this was particularly entertaining because I had very little idea what I was doing! 😅 More to come when I find the time...
 
-This experiment was all part of the Lunchbeat project. I originally intended to come back and document more of the process here, but that never quite happened. The project itself did continue later, including a proper Lunchbeat PICkit 2 PCB and a much longer series of hardware and programming experiments.
+By 2023, I'd pretty much accepted that I'd probably never find the time. This was all done for the Lunchbeat project. More of that hot mess can be found in the Projects folder in the [photo gallery](https://photos.mcretro.net). Enjoy! 🙃
+
+### Sources
+
+- [Microchip Technology - PICkit 2 Development Programmer/Debugger](https://www.microchip.com/en-us/development-tool/pg164120)
+- [AVRDUDE - Version 6.0 Manual (2013)](https://download-mirror.savannah.gnu.org/releases/avrdude/avrdude-doc-6.0.1.pdf)
 
 ### Related posts
 
 - [Lunchbeat 1-bit Groovebox by Buranelectrix: Introduction](/lunchbeat-1-bit-groovebox-by-buranelectrix-introduction/)
 - [Lunchbeat 1-bit Groovebox by Buranelectrix - Demo](/lunchbeat-1-bit-groovebox-by-buranelectrix-demo/)
-- [Lunchbeat PICkit 2 PCB Arrival (Part 1)](/lunchbeat-pickit-2-pcb-arrival-part-1/)
-
-### Sources
-
-- [Microchip Technology - PICkit 2 Development Programmer/Debugger](https://www.microchip.com/en-us/development-tool/pg164120)
-- [AVRDUDE - List of Programmers](https://avrdudes.github.io/avrdude/8.1/avrdude_45.html)
-- [Microchip Technology - Microchip Completes Atmel Acquisition](https://ir.microchip.com/sec-filings/all-sec-filings/content/0001193125-16-529460/d174903dex991.htm)
+- [Lunchbeat / PICkit 2 - PCB Arrival (Part 1)](/lunchbeat-pickit-2-pcb-arrival-part-1/)

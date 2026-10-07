@@ -1,7 +1,12 @@
 ---
-title: "The 2015 Shane McRetro Update"
+title: "The 2015 Nix McRetro Update"
 author: "Nix McRetro"
 date: 2015-01-09T21:48:10.000+11:00
+last_modified_at: 2026-10-08
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [news, youtube]
 ---
 

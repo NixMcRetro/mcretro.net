@@ -2,11 +2,11 @@
 title: "Pioneer LaserActive Sega PAC-S1 Mainboard Capacitor Removal"
 author: "Nix McRetro"
 date: 2015-01-19T21:54:36.000+11:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [repairs, sega, youtube]
 ---
 
@@ -14,13 +14,7 @@ categories: [repairs, sega, youtube]
 
 Mainboard capacitor removal on the PAC-S1, perfectly done for once!
 
-Coming straight out of this repair, my impression was that the mainboard was a much higher-quality, tougher board than the subboard.
-
-It certainly tolerated my capacitor removal much better.
-
-That's an observation from the boards in this particular PAC-S1 rather than proof that every PAC-S1 mainboard is universally manufactured to a higher standard than every subboard.
-
-Still, the two boards I worked on were very different beasts.
+The mainboard in this PAC-S1 tolerated my capacitor removal much better than the subboard and felt tougher to work on. Two very different beasts!
 
 ### Related posts
 

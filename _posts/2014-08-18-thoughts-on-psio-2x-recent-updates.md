@@ -2,25 +2,19 @@
 title: "Thoughts on PSIO 2.x Recent Updates"
 author: "Nix McRetro"
 date: 2014-08-18T20:43:42.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [sony, youtube]
 ---
 
 {% include youtube.html id="7-_8NkEE1qw" %}
 
-With all the incredible work done on the 1.1 prototype, the 2.x prototype was racing along!
+With all the incredible work done on the 1.1 prototype, the 2.x prototype was racing along! The development updates were reporting CDDA and XA support. Full audio and a whole lot of bugs squashed! My firsthand testing was still on 1.1, so this was excitement about the updates rather than a 2.x test.
 
-The development updates I was following were now talking about CDDA and XA support, which sounded especially promising after the audio problems I'd just seen in some of the 1.1 game tests.
-
-Full audio! Bugs squashed! Progress!
-
-Important distinction though: this was me reacting to PSIO development updates, not 2.x hardware I had tested myself. My firsthand testing was still on the 1.1 prototype.
-
-Be sure to visit [PSIO](https://psio.cybdyn-systems.com.au/) for the actual project information and whatever wonderful things they have managed to make it do next!
+Be sure to visit [PSIO](https://ps-io.com/) for the latest up-to-the-minute information!
 
 ### Related PSIO prototype posts
 

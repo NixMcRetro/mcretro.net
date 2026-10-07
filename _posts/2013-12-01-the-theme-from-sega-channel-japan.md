@@ -2,6 +2,11 @@
 title: "The Theme from Sega Channel Japan"
 author: "Nix McRetro"
 date: 2013-12-01T02:58:15.000+11:00
+last_modified_at: 2026-10-07
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-07
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [gaming, sega, youtube]
 ---
 

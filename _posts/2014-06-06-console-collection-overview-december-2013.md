@@ -2,6 +2,11 @@
 title: "Console Collection Overview - December 2013"
 author: "Nix McRetro"
 date: 2014-06-06T08:54:03.000+10:00
+last_modified_at: 2026-10-07
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-07
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [youtube]
 ---
 

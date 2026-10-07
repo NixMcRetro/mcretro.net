@@ -2,12 +2,17 @@
 title: "Subscribe Today - McRetro Wants You!"
 author: "Nix McRetro"
 date: 2014-06-21T23:14:30.000+10:00
+last_modified_at: 2026-10-08
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [news, youtube]
 ---
 
 {% include youtube.html id="tMiB4tDUxCw" %}
 
-Welcome to the RetroJunkie YouTube Channel with your host Shane McRetro! Feel free to browse the selection of videos previously uploaded, there's plenty! Drop by our sister channel McRetro Gaming where McRetro battles it out with special guests! See you in the latest video!
+Welcome to the RetroJunkie YouTube Channel with your host Nix McRetro! Feel free to browse the selection of videos previously uploaded, there's plenty! Drop by our sister channel McRetro Gaming where McRetro battles it out with special guests! See you in the latest video!
 
 ### Channel trailers
 

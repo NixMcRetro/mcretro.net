@@ -2,12 +2,17 @@
 title: "Subscribe Today - Retro Gaming is Fun!"
 author: "Nix McRetro"
 date: 2014-06-16T22:20:14.000+10:00
+last_modified_at: 2026-10-08
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [news, youtube]
 ---
 
 {% include youtube.html id="UprMHeQF-kE" %}
 
-Welcome to the McRetro Gaming Channel with your host Shane McRetro! We're still new here, but videos will be uploaded by the bucketful once things get rolling. Be sure to subscribe for updates!
+Welcome to the McRetro Gaming Channel with your host Nix McRetro! We're still new here, but videos will be uploaded by the bucketful once things get rolling. Be sure to subscribe for updates!
 
 ### Channel trailers
 

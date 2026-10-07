@@ -2,21 +2,21 @@
 title: "PSIO Prototype 1.1 Game Demo: Mega Man Legends 1, 2 and Philosoma"
 author: "Nix McRetro"
 date: 2014-08-12T20:37:57.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="ikIB0oX4wiU" %}
 
-I was really hoping for some Capcom kicking and punching in Mega Man Legends and some shmup action in Philosoma, but not today!
+I was really hoping for some Capcom kicking and punching in Mega Man Legends and some shmup action in Philosoma, but not today! Mega Man Legends, Mega Man Legends 2 and Philosoma did not seem to work correctly on the PSIO 1.1 prototype in this test. With 2.x hardware underway, I'm hoping for better compatibility... I can't wait!
 
-Mega Man Legends, Mega Man Legends 2 and Philosoma did not behave correctly in the portions I tested on this PSIO 1.1 prototype setup.
+Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
 
-At the time I was excited about the upcoming 2.x hardware and expected compatibility to improve. That was an expectation, not a result of this test.
+You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 
 **Prototype test conditions**
 
@@ -24,8 +24,6 @@ At the time I was excited about the upcoming 2.x hardware and expected compatibi
 - PSIO software: 1.1A
 - PlayStation: PAL SCPH-5502
 - CD deck: removed
-
-These results describe this development build rather than later PSIO revisions or the final product.
 
 ### Related PSIO prototype posts
 

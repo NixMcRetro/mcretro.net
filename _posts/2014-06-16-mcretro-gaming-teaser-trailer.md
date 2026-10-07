@@ -2,6 +2,11 @@
 title: "McRetro Gaming Teaser Trailer"
 author: "Nix McRetro"
 date: 2014-06-16T20:00:32.000+10:00
+last_modified_at: 2026-10-08
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [gaming, youtube]
 ---
 
@@ -9,7 +14,7 @@ categories: [gaming, youtube]
 
 I've just made a channel dedicated to retro gaming! Check out [McRetro Gaming](https://www.youtube.com/user/McRetroGaming)!
 
-It's the spiritual successor to Xtreme Retro Gaming, now defunct. Gameplay, hints and tips will all be provided by me, Shane McRetro! Lucky you! So get over there and pick up a subscription. I'll be sure to upload more videos in the future.
+It's the spiritual successor to Xtreme Retro Gaming, now defunct. Gameplay, hints and tips will all be provided by me, Nix McRetro! Lucky you! So get over there and pick up a subscription. I'll be sure to upload more videos in the future.
 
 And yes, that's the Aiwa Mega-CD CSD-GM1 in the background too!
 

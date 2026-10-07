@@ -2,29 +2,23 @@
 title: "PSIO Prototype 1.1 Game Demo: Wipeout, Wipeout 2097 / XL, Wip3out / Wipeout 3"
 author: "Nix McRetro"
 date: 2014-08-16T20:42:41.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="VJ5ju6lQTvU" %}
 
-Wipeout! All of them. So many Wipeouts.
+Wipeout! All of them. So many Wipeouts. I didn't realise there were that many alternative names. If I did, I wouldn't have done them all at once since they nearly burst out the side of the YouTube video!
 
-I didn't realise there were that many alternative names. If I did, I wouldn't have done them all at once since they nearly burst out the side of the YouTube video!
+Not much luck with Wipeout sadly. The 2.x development updates were talking about further work on PSIO's hardware, firmware and software, so I'm hoping for much better compatibility.
 
-Not much luck with Wipeout sadly.
+Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
 
-I was following the 2.x development closely and the project updates were talking about additional work across the hardware, firmware and software sides of PSIO. I was hopeful that would translate into much better compatibility.
-
-That was development optimism though. This video only documents what happened on the 1.1 prototype sitting in front of me.
-
-Please remember that this is prototype hardware and does not necessarily reflect what the final product will be like, including game compatibility.
-
-And once again, if you want to know how the wonderful thing actually works, ask [PSIO](https://psio.cybdyn-systems.com.au/). I am still just the tester. :)
+You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 
 **Prototype test conditions**
 
@@ -33,7 +27,6 @@ And once again, if you want to know how the wonderful thing actually works, ask 
 - PlayStation: PAL SCPH-5502
 - CD deck: removed
 
-These results belong to this development build rather than later PSIO revisions or the final product.
 
 ### Related PSIO prototype posts
 

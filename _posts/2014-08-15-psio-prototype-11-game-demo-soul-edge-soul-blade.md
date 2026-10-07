@@ -2,27 +2,23 @@
 title: "PSIO Prototype 1.1 Game Demo: Soul Edge / Soul Blade"
 author: "Nix McRetro"
 date: 2014-08-15T20:41:48.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [gaming, sony, youtube]
 ---
 
 {% include youtube.html id="AUr1WM6gHco" %}
 
-The game that led to SoulCalibur. Not too bad! It still reminds me a little of Virtua Fighter on the old Sega.
+The game that led to SoulCalibur. Not too bad! It still reminds me a little of Virtua Fighter on the old Sega. From what I could see here, the game ran well on PSIO 1.1, but the background music was missing. I'm hoping the upcoming 2.x hardware will fix that!
 
 Soul Edge is the first game in what became the Soulcalibur series. The PlayStation version retained the Soul Edge name in Japan and was released as Soul Blade outside Japan.
 
-From what I could see here, the game itself ran well on PSIO 1.1, but the background music was missing.
+Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
 
-I was sure the upcoming 2.x hardware would fix it. That was optimism speaking rather than something this test proved, so the useful result from this video is simply: gameplay appeared functional while the music was absent.
-
-Please remember that this is prototype hardware and does not necessarily reflect what the final product will be like, including game compatibility.
-
-If you want the technical details, hit up [PSIO](https://psio.cybdyn-systems.com.au/). I am but a mere tester. :)
+You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 
 **Prototype test conditions**
 
@@ -31,7 +27,11 @@ If you want the technical details, hit up [PSIO](https://psio.cybdyn-systems.com
 - PlayStation: PAL SCPH-5502
 - CD deck: removed
 
-These results describe this development build rather than later PSIO revisions or the final product.
+
+### Sources
+
+- [Bandai Namco - Soul Edge for PlayStation (Japanese product page)](https://www.bandainamcoent.co.jp/cs/list/souledge/)
+- [MobyGames - Soul Blade releases](https://www.mobygames.com/game/3676/soul-blade/releases/)
 
 ### Related PSIO prototype posts
 
@@ -44,7 +44,3 @@ These results describe this development build rather than later PSIO revisions o
 - [PSIO Prototype 1.1 Game Demo: Ridge Racer and Ridge Racer Revolution](/psio-prototype-11-game-demo-ridge-racer-and-ridge-racer-revolution/)
 - [PSIO Prototype 1.1 Game Demo: Wipeout, Wipeout 2097 / XL, Wip3out / Wipeout 3](/psio-prototype-11-game-demo-wipeout-wipeout-2097-xl-wip3out-wipeout-3/)
 - [Thoughts on PSIO 2.x Recent Updates](/thoughts-on-psio-2x-recent-updates/)
-
-### Sources
-
-- [MobyGames - Soul Blade / Soul Edge release information](https://www.mobygames.com/game/3676/soul-blade/releases/)

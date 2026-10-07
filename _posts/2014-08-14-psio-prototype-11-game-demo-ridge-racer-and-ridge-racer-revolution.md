@@ -2,11 +2,11 @@
 title: "PSIO Prototype 1.1 Game Demo: Ridge Racer and Ridge Racer Revolution"
 author: "Nix McRetro"
 date: 2014-08-14T20:39:26.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [gaming, sony, youtube]
 ---
 
@@ -14,15 +14,11 @@ categories: [gaming, sony, youtube]
 
 Raaaaaaaaaaacing around those corners like a freaking pinball in a pinball machine. Bounce, bounce, bounce. Those are the physics I want in a racing game!
 
-Ridge Racer and Ridge Racer Revolution both behaved reasonably well in the bits I tested on this PSIO 1.1 prototype.
+Ridge Racer and Ridge Racer Revolution both worked pretty well in the parts I tested on this PSIO 1.1 prototype. I'm hoping the new 2.x hardware will sort out the remaining prototype weirdness!
 
-Not exhaustive testing, just what you can actually see in the video.
+Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
 
-I was optimistic that the 2.x hardware would sort out the remaining prototype weirdness, but that was hope rather than evidence from this 1.1 setup.
-
-Please remember that this is prototype hardware and does not necessarily reflect what the final product will be like, including game compatibility.
-
-If you want the actual technical details, hit up [PSIO](https://psio.cybdyn-systems.com.au/), because I am but a mere tester and do not understand the technology behind this wonderful invention. :)
+You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 
 **Prototype test conditions**
 
@@ -31,7 +27,6 @@ If you want the actual technical details, hit up [PSIO](https://psio.cybdyn-syst
 - PlayStation: PAL SCPH-5502
 - CD deck: removed
 
-These results describe this development build rather than later PSIO revisions or the final product.
 
 ### Related PSIO prototype posts
 

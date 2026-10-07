@@ -2,6 +2,11 @@
 title: "Cooking with McRetro: A Quick Doughnut Fix"
 author: "Nix McRetro"
 date: 2014-01-30T03:41:44.000+11:00
+last_modified_at: 2026-10-07
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-07
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [youtube]
 ---
 

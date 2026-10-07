@@ -2,11 +2,11 @@
 title: "Japanese Sega Channel Adapter - First Look"
 author: "Nix McRetro"
 date: 2013-12-03T20:26:01.000+11:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-07
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-07
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [sega, youtube]
 ---
 

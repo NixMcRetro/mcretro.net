@@ -2,17 +2,17 @@
 title: "New Weight Record - 88kg"
 author: "Nix McRetro"
 date: 2016-06-22T09:30:42.000+10:00
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [news]
 ---
 
 ![2016-06-22_weight1](/assets/images/2016/img_0477.jpg)
 
-Mission accomplished. Today on the 22nd June 2016 I have finally reached 88.0kg. This puts me at the lowest weight in my recorded history. Records date back to October 2008, a mere eight years ago. Alright, maybe not that mere. Chicken and milk. That's how it was _mostly_ done.
+Mission accomplished. Today on the 22nd June 2016 I have finally reached 88.0kg. This puts me at the lowest weight in my recorded history. Records date back to October 2008, a mere eight years ago. Alright, almost eight, and maybe not that mere. Chicken and milk. That's how it was _mostly_ done.
 
 Let's have a look at some more cool screen caps though. First up, the last six months (or thereabouts) of lean / fat percentages. I like where the trends are heading.
 
@@ -22,7 +22,7 @@ Let's have a look at some more cool screen caps though. First up, the last six m
 
 The body-fat and lean-mass figures here come from my consumer body-composition scale, so I am mainly interested in the trend rather than treating the absolute numbers as clinical measurements.
 
-Next we have the entire history since late 2008 crammed onto tiny charts to make it look dramatic.
+Next we have the weight history since late 2008 crammed onto tiny charts to make it look dramatic, alongside the more recent body-composition readings.
 
 ![Screen Shot 2016-06-22 at 9.14.44 AM](/assets/images/2016/img_0481.jpg)
 

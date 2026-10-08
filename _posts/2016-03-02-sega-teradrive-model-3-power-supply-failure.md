@@ -2,11 +2,11 @@
 title: "Sega TeraDrive Model 3 Power Supply Failure"
 author: "Nix McRetro"
 date: 2016-03-02T22:11:47.000+11:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, sega]
 ---
 
@@ -14,30 +14,20 @@ categories: [ibm-pc, repairs, sega]
 
 Oh dear!
 
-My Sega TeraDrive Model 3 power supply has given up.
+My Sega TeraDrive Model 3 power supply, an SPS-356JU, has given up. It may have been dead for a while without me noticing because the machine had mostly been sitting on a shelf looking tidy.
 
-It may have been dead for a while without me noticing because the machine had mostly been sitting on a shelf looking tidy.
+The Model 2 still worked, so I swapped modules and stripped the machines back to minimal configurations to narrow the fault down. Aren't I just an amazingly good technician? ;)
 
-The Model 2 still worked, so I swapped modules and stripped the machines back to minimal configurations to narrow the fault down.
+With this particular Model 3 power supply installed, the rear speaker buzzed immediately at power-on and the machine produced no usable display or POST. Swapping the PSU moved the fault with it, but did not identify the failed component inside. The next stage will be investigating the supply itself.
 
-Aren't I just an amazingly good technician? ;)
+**Mains-voltage warning:** power supplies can retain dangerous voltages even after being unplugged. Do not work on a live mains supply unless you are qualified and equipped to do so. Having survived a zap before does not make it safe.
 
-With this particular Model 3 power supply installed, the rear speaker buzzed immediately at power-on and the machine produced no usable display or POST.
+Anyway, here are some useful links to helpful software. The three Google Drive downloads are historical references; their current availability has not been verified.
 
-That still doesn't tell us which component inside the power supply failed, only that swapping the PSU moved the fault with it.
-
-The next stage will be investigating the supply itself.
-
-**Mains-voltage warning:** power supplies can retain dangerous voltages even after being unplugged. Do not work on a live mains supply unless you are qualified and equipped to do so.
-
-I mentioned in the original post that I'd been zapped before and survived. That is an argument for being more careful, not evidence that doing it is safe.
-
-Anyway, here are some useful links to helpful software:
-
-- [Amstrad Mega PC dd image](/files)
+- [Amstrad Mega PC dd image](https://drive.google.com/file/d/0B3Rk2eO8E26vWkRUTzdvX1VsSGs/view?usp=drive_web)
 - [HDD Raw Copy Tool](https://hddguru.com/software/HDD-Raw-Copy-Tool/) for an easy way to duplicate CF cards for the XTIDE or XT-CF-Lite ISA cards.
-- [XTIDECFG (r588)](/files)
-- XTIDE [ide_xt r588](/files), compiled to play nicely with CF cards and show the attractive boot menu.
+- [XTIDECFG (r588)](https://drive.google.com/file/d/0B3Rk2eO8E26va0d0d1NqZU15X1U/view?usp=drive_web)
+- XTIDE [ide_xt r588](https://drive.google.com/file/d/0B3Rk2eO8E26veXVkb3BVeGJ3SW8/view?usp=drive_web), compiled to play nicely with CF cards and show the attractive boot menu.
 
 ### Related posts
 

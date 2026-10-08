@@ -2,19 +2,17 @@
 title: "Lunchbeat / PICkit 2 - Programming 101 (Part 5)"
 author: "Nix McRetro"
 date: 2015-09-09T21:15:35.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [programming, youtube]
 ---
 
 {% include youtube.html id="yLU5i_mNRek" %}
 
-Time to move further into the programming side of the Lunchbeat / PICkit 2 project.
-
-This is Programming 101, still working under OS X and trying to get all the pieces of this increasingly elaborate little project behaving together.
+More programming under OS X! Well, something seems to work: we have lights and buttons! Some of the bits are still missing, so hopefully they'll turn up soon.
 
 ### Lunchbeat / PICkit 2 series
 

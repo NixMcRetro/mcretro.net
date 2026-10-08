@@ -2,27 +2,24 @@
 title: "Lunchbeat / PICkit 2 - PCB Arrival (Part 1)"
 author: "Nix McRetro"
 date: 2015-02-16T22:03:28.000+11:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [programming, youtube]
 ---
 
 {% include youtube.html id="3364kAlhw2w" %}
 
-The Lunchbeat / PICkit 2 adventure begins!
+The Lunchbeat / PICkit 2 adventure begins! The Lunchbeat is Buranelectrix's neg-fi groovemachine with 1-bit sounds, and now the properly fabricated PCB has arrived for the next round.
 
-The Lunchbeat is Buranelectrix's little 1-bit groovebox. I had already played around with one earlier, and now the properly fabricated PCB has arrived for the next round.
+As a bonus challenge, we'll be programming the Atmel chip with a PICkit 2 and AVRDUDE... just for kicks... in OS X! I think this is a **nine-part** series and we'll be cranking out the videos over the next few weeks.
 
-As an additional challenge, I'm using a PICkit 2 with AVRDUDE under OS X to deal with the programming side.
+### Sources
 
-I thought this was going to be a **nine-part** series.
-
-Amazingly, that prediction was actually right.
-
-Learn more about the original Lunchbeat through the [Buranelectrix archive](https://web.archive.org/web/20131112013520/http://buranelectrix.com/lunchbeat/lunchbeat.php).
+- [Buranelectrix - Lunchbeat: 1bit groovebox](https://web.archive.org/web/20131112013520/http://buranelectrix.com/lunchbeat/lunchbeat.php)
+- [AVRDUDE - Version 6.0 Manual (2013)](https://download-mirror.savannah.gnu.org/releases/avrdude/avrdude-doc-6.0.1.pdf)
 
 ### Lunchbeat / PICkit 2 series
 
@@ -34,3 +31,8 @@ Learn more about the original Lunchbeat through the [Buranelectrix archive](http
 - [Lunchbeat / PICkit 2 - Sound Demo Int. Clock (Part 7)](/lunchbeat-pickit-2-sound-demo-int-clock-part-7/)
 - [Lunchbeat / PICkit 2 - Sound Demo Ext. Clock (Part 8)](/lunchbeat-pickit-2-sound-demo-ext-clock-part-8/)
 - [Lunchbeat / PICkit 2 - Resistor Upgrade (Part 9)](/lunchbeat-pickit-2-resistor-upgrade-part-9/)
+
+### Related posts
+
+- [Lunchbeat 1-bit Groovebox by Buranelectrix: Introduction](/lunchbeat-1-bit-groovebox-by-buranelectrix-introduction/)
+- [Programming Atmel AVR Chips with a PICkit 2 and AVRDUDE on a Mac](/programming-atmel-avr-chips-with-pickit-2-and-avrdude-on-a-mac/)

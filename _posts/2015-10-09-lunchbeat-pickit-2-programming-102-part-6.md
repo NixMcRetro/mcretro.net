@@ -2,19 +2,17 @@
 title: "Lunchbeat / PICkit 2 - Programming 102 (Part 6)"
 author: "Nix McRetro"
 date: 2015-10-09T22:18:17.000+11:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [programming, youtube]
 ---
 
 {% include youtube.html id="VW1VT0bMG_c" %}
 
-Even more programming under OS X!
-
-Part 6 picks up from Programming 101 as the Lunchbeat / PICkit 2 project continues inching towards actually making some proper noise.
+Even more programming, under OS X nonetheless!
 
 ### Lunchbeat / PICkit 2 series
 

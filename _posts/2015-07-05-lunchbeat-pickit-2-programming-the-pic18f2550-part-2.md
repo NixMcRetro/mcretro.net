@@ -2,23 +2,24 @@
 title: "Lunchbeat / PICkit 2 - Programming the PIC18F2550 (Part 2)"
 author: "Nix McRetro"
 date: 2015-07-05T21:10:03.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [programming, youtube]
 ---
 
 {% include youtube.html id="PhpF1AXMBZg" %}
 
-Part 2 moves over to the programmer itself.
+This time I'm programming the PIC18F2550 that forms the heart of the PICkit 2 programmer. That is separate from the AVR microcontroller in the Lunchbeat itself.
 
-The PICkit 2 hardware is built around a PIC18F2550 microcontroller, so this time I'm programming the chip that will become the heart of the programmer.
+The bonus challenge is still to program the Atmel chip with the PICkit 2 and AVRDUDE... just for kicks... in OS X!
 
-That is separate from the AVR microcontroller used by the Lunchbeat itself.
+### Sources
 
-In other words, this stage is getting the PICkit 2 side of the project ready before it can be used for the Lunchbeat programming experiments.
+- [Microchip - PICkit 2 Programmer/Debugger User's Guide](https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/UserGuides/51553E.pdf)
+- [AVRDUDE - Version 6.0 Manual (2013)](https://download-mirror.savannah.gnu.org/releases/avrdude/avrdude-doc-6.0.1.pdf)
 
 ### Lunchbeat / PICkit 2 series
 
@@ -30,7 +31,3 @@ In other words, this stage is getting the PICkit 2 side of the project ready bef
 - [Lunchbeat / PICkit 2 - Sound Demo Int. Clock (Part 7)](/lunchbeat-pickit-2-sound-demo-int-clock-part-7/)
 - [Lunchbeat / PICkit 2 - Sound Demo Ext. Clock (Part 8)](/lunchbeat-pickit-2-sound-demo-ext-clock-part-8/)
 - [Lunchbeat / PICkit 2 - Resistor Upgrade (Part 9)](/lunchbeat-pickit-2-resistor-upgrade-part-9/)
-
-### Sources
-
-- [Microchip - PICkit 2 Programmer/Debugger User's Guide](https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/UserGuides/51553E.pdf)

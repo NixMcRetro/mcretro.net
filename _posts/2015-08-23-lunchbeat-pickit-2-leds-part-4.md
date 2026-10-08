@@ -2,23 +2,17 @@
 title: "Lunchbeat / PICkit 2 - LEDs (Part 4)"
 author: "Nix McRetro"
 date: 2015-08-23T21:12:37.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [programming, youtube]
 ---
 
 {% include youtube.html id="EoG5tyq1vC0" %}
 
-Well, something seems to work.
-
-We have lights and buttons!
-
-There are still some missing bits, so the build is not finished yet, but at least it is starting to show signs of life.
-
-Hopefully the rest of the parts turn up soon.
+Well, something seems to work: we have lights and buttons! There are still some missing bits, so the build is not finished yet. Hopefully the rest of the parts turn up soon.
 
 ### Lunchbeat / PICkit 2 series
 

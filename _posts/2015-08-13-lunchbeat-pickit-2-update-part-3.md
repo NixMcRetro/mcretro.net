@@ -2,23 +2,19 @@
 title: "Lunchbeat / PICkit 2 - Update (Part 3)"
 author: "Nix McRetro"
 date: 2015-08-13T21:11:04.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [programming, youtube]
 ---
 
 {% include youtube.html id="wikkB21uws0" %}
 
-We're getting closer!
+We're getting closer! Some components have now been installed, but I'm still waiting for more parts to arrive. Here's hoping they do!
 
-Some components have now been installed, but I'm still waiting for more parts to arrive.
-
-Here's hoping they do.
-
-The goal remains the same: get the Lunchbeat build together and make the PICkit 2 / AVRDUDE setup under OS X behave itself.
+The bonus challenge is still to program the Atmel chip with the PICkit 2 and AVRDUDE... just for kicks... in OS X!
 
 ### Lunchbeat / PICkit 2 series
 

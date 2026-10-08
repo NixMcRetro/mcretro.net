@@ -2,33 +2,28 @@
 title: "Lunchbeat / PICkit 2 - Sound Demo Ext. Clock (Part 8)"
 author: "Nix McRetro"
 date: 2015-11-27T18:20:47.000+11:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [programming, youtube]
 ---
 
 {% include youtube.html id="dt0s9hSIgiI" %}
 
-This was the final AVRDUDE flash of the [Lunchbeat by Buranelectrix](https://web.archive.org/web/20131112015528/http://buranelectrix.com/).
+This was the final AVRDUDE flash of the [Lunchbeat by Buranelectrix](https://web.archive.org/web/20131112015528/http://buranelectrix.com/). We also reminisce about how good SuperNick (Nick) was at holding down buttons while flashing things. Whether this was entirely necessary throughout the flash... I can't remember.
 
-We also reminisce about how good SuperNick (Nick) was at holding down buttons while flashing things. Whether this was entirely necessary throughout the flash... I can't remember.
+Just sit back and listen to the tunes. They sure can be catchy, and you can join multiple Lunchbeats together if you have two or more. Just think of the possibilities!
 
-Just sit back and listen to the tunes. They sure can be catchy, and you can join multiple Lunchbeats together if you have two or more.
+I believed the earlier setup had effectively been running at around 1 MHz before moving to the external 16 MHz crystal, and the change certainly made the sound playback behave much better. That earlier clock source was the ATmega328P's internal RC oscillator, not a crystal.
 
-Just think of the possibilities!
+That's what happens when I hack about with things beyond my understanding. Quite a fun little project. One more video to come.
 
-I believed the earlier setup had effectively been running at around 1 MHz before moving to the external 16 MHz crystal, and the change certainly made the sound playback behave much better.
+### Sources
 
-One correction to the terminology I used in the previous video: the ATmega328P's internal clock source is an RC oscillator, not an internal crystal. The 16 MHz crystal is the external clock source used here.
-
-That's what happens when I hack about with things beyond my understanding.
-
-Quite a fun little project.
-
-One more video to come.
+- [Buranelectrix - Lunchbeat: 1bit groovebox](https://web.archive.org/web/20131112013520/http://buranelectrix.com/lunchbeat/lunchbeat.php)
+- [Microchip - ATmega328P Datasheet](https://ww1.microchip.com/downloads/en/devicedoc/atmel-7810-automotive-microcontrollers-atmega328p_datasheet.pdf)
 
 ### Lunchbeat / PICkit 2 series
 
@@ -40,7 +35,3 @@ One more video to come.
 - [Lunchbeat / PICkit 2 - Programming 102 (Part 6)](/lunchbeat-pickit-2-programming-102-part-6/)
 - [Lunchbeat / PICkit 2 - Sound Demo Int. Clock (Part 7)](/lunchbeat-pickit-2-sound-demo-int-clock-part-7/)
 - [Lunchbeat / PICkit 2 - Resistor Upgrade (Part 9)](/lunchbeat-pickit-2-resistor-upgrade-part-9/)
-
-### Sources
-
-- [Microchip - ATmega328P Datasheet](https://ww1.microchip.com/downloads/en/devicedoc/atmel-7810-automotive-microcontrollers-atmega328p_datasheet.pdf)

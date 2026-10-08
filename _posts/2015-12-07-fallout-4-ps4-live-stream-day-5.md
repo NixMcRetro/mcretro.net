@@ -2,6 +2,11 @@
 title: "Fallout 4 (2015, PS4 Live Stream, Day 5)"
 author: "Nix McRetro"
 date: 2015-12-07T21:40:21.000+11:00
+last_modified_at: 2026-10-08
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [gaming, livestream, youtube]
 ---
 
@@ -11,15 +16,9 @@ We clear the Corvega factory of raiders and get very, very over-encumbered.
 
 It's all MINE!
 
-Sadly we're still stuck at 360p. The uplink is less than 80 kB/sec here, which is terrible for video.
+Sadly we're still stuck at 360p. The uplink is less than 80 kB/sec here, which is terrible for video. H.265 maybe? One day? Definitely. "PlayStation 5" and "Xbox Two", here we come!
 
-H.265 maybe? One day? Definitely.
-
-"PlayStation 5" and "Xbox Two", here we come!
-
-Somehow I also managed to mute the commentary audio for this stream... err, sorry about that.
-
-You missed a lot of counting down and complaining about how slowly I moved while carrying roughly 9xx/230 items!
+**Edit:** Somehow I also managed to mute the commentary audio for this stream... err, sorry about that. You missed a lot of counting down and complaining about how slowly I moved while carrying roughly 9xx/230!
 
 ### Fallout 4 live streams
 

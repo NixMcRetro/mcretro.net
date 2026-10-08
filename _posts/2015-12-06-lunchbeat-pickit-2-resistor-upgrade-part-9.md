@@ -2,25 +2,17 @@
 title: "Lunchbeat / PICkit 2 - Resistor Upgrade (Part 9)"
 author: "Nix McRetro"
 date: 2015-12-06T01:11:42.000+11:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [programming, youtube]
 ---
 
 {% include youtube.html id="hJ1wHtEFg7E" %}
 
-We finally reach the end of the Lunchbeat saga!
-
-The final tweak is changing the LED series resistors from 470 ohms to 10 kOhms because the LEDs I picked were far too bright.
-
-Increasing the resistance cuts the LED current substantially, which is exactly what I wanted here.
-
-This was a brightness fix for the LEDs in my particular build, not a universal requirement that every Lunchbeat needs 10 kOhm LED resistors.
-
-And with that, the nine-part Lunchbeat / PICkit 2 adventure is finally complete.
+We finally reach the end of the Lunchbeat saga! The final tweak is changing the LED series resistors in my build from 470 ohms to 10 kOhms because the LEDs I picked were far too bright. Increasing the resistance cuts the LED current substantially, which is exactly what I wanted here.
 
 ### Lunchbeat / PICkit 2 series
 

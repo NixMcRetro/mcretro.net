@@ -2,6 +2,11 @@
 title: "PSIO for Even Closer to Nearing Completion"
 author: "Nix McRetro"
 date: 2015-11-22T03:09:55.000+11:00
+last_modified_at: 2026-10-08
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [hacks, news, sony]
 ---
 

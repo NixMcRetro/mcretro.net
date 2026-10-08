@@ -2,11 +2,11 @@
 title: "Ye Olde McRetro Gaming Shoppe"
 author: "Nix McRetro"
 date: 2016-07-11T12:51:27.000+10:00
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-08
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-08
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [news, youtube]
 ---
 
@@ -28,7 +28,7 @@ Look at that decline. 2016 has clearly been the year to lose weight. I'm at leas
 
 {% include youtube.html id="LWcnwlmoIu8" %}
 
-I've promised myself to do some more YouTube videos this week, and I usually do what I say I'm going to do. Usually... :) Oh and I fixed that darn lightbox (image zooming) on individual posts, I did lose it somewhere else, but that's fine.
+I've promised myself to do some more YouTube videos this week, and I usually do what I say I'm going to do. Usually... :) Oh, and I fixed that darn lightbox (image zooming) on individual posts. I did lose it somewhere else, but that's fine.
 
 ### McRetro Gaming Shop
 
@@ -36,4 +36,3 @@ I've promised myself to do some more YouTube videos this week, and I usually do 
 - [McRetro Gaming Shop Grand Opening!](/mcretro-gaming-shop-grand-opening/)
 - [eBay, You Glorious Beast](/ebay-you-glorious-beast/)
 - [The Shop is Closed!](/the-shop-is-closed/)
-

@@ -2,21 +2,17 @@
 title: "Sega TeraDrive - Retrofitting a Mean Well PT-65B PSU"
 author: "Nix McRetro"
 date: 2016-10-10T17:31:52.000+11:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-09
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-09
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [hacks, ibm-pc, sega]
 ---
 
 ![td_header](/assets/images/2016/img_0575.jpg)
 
-Lately I'd noticed people replacing failed TeraDrive power supplies or looking for an alternative to running a Japanese supply through a large external transformer.
-
-These photographs, courtesy of **DeChief on ASSEMblerGames**, show one approach using a Mean Well PT-65B open-frame power supply inside the original TeraDrive PSU housing.
-
-This is **not my own installation shown here**, so I want to keep the attribution clear.
+Lately I'd noticed people replacing failed TeraDrive power supplies or looking for an alternative to running a Japanese supply through a large external transformer. I'm in the latter group. These photographs, courtesy of **DeChief on ASSEMblerGames**, show one approach using a Mean Well PT-65B open-frame power supply inside the original TeraDrive PSU housing. This is **not my own installation shown here**, so I want to keep the attribution clear.
 
 The PT-65B is a triple-output supply providing:
 
@@ -28,7 +24,7 @@ It also accepts a universal 90 to 264 VAC input, which makes it interesting for 
 
 ![photo1](/assets/images/2016/img_0566.jpg)
 
-The board fits remarkably well inside the original enclosure.
+The board fits remarkably well inside the original enclosure. The PT-65B also provides a -12 V rail that the stock TeraDrive power arrangement does not normally provide. Whether to route that anywhere in the machine depends on the specific expansion hardware and wiring design, rather than assuming it can simply be wired into the ISA slots.
 
 ![photo2](/assets/images/2016/img_0567.jpg)
 
@@ -46,21 +42,13 @@ The board fits remarkably well inside the original enclosure.
 
 ![photo9](/assets/images/2016/img_0574.jpg)
 
-I originally described the -12 V output as something that could simply be wired into the TeraDrive ISA slots.
+**This is an open-frame mains power supply.** The photographs show the physical retrofit, not a complete electrical-safety guide. Correct earthing, fusing, insulation, clearances, mains wiring and enclosure safety all matter.
 
-Better wording is that the PT-65B provides a negative rail that the stock TeraDrive power arrangement does not normally provide. Whether to route that anywhere in the machine depends on the specific expansion hardware and wiring design rather than "more rails must be better".
+Enjoy the photos, and thanks again to DeChief for documenting the installation.
 
-Most importantly:
+### Sources
 
-**this is an open-frame mains power supply.**
-
-The photographs show the physical retrofit, not a complete electrical-safety guide.
-
-Correct earthing, fusing, insulation, clearances, mains wiring and enclosure safety all matter.
-
-Enjoy the photos.
-
-And thanks again to DeChief for documenting the installation.
+- [Mean Well - PT-65 Series: 65 W Triple Output Switching Power Supply datasheet](https://www.meanwell.com/Upload/PDF/PT-65/PT-65-SPEC.PDF)
 
 ### Related posts
 
@@ -68,7 +56,3 @@ And thanks again to DeChief for documenting the installation.
 - [Sega TeraDrive Model 3 - Faulty Power Supply (Part 1)](/sega-teradrive-model-3-faulty-power-supply-part-1/)
 - [Sega TeraDrive Model 3 - Faulty Power Supply (Part 2)](/sega-teradrive-model-3-faulty-power-supply-part-2/)
 - [Sega TeraDrive Power Supply Problems](/sega-teradrive-power-supply-problems/)
-
-### Sources
-
-- [Mean Well - PT-65 Series](https://www.meanwellaustralia.com.au/products/PT-65)

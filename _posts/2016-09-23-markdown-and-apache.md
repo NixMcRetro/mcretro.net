@@ -2,53 +2,32 @@
 title: "Markdown and Apache"
 author: "Nix McRetro"
 date: 2016-09-23T21:18:35.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-09
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-09
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [hacks]
 ---
 
 ![2016-09-23](/assets/images/2016/img_0563.jpg)
 
-More specifically:
+More specifically: Markdown, Apache and the darknet. The old McRetro v2 onion address was loading, but Apache served the Markdown source files as plain text. Baby steps, at least the site was somewhat functional... right?
 
-Markdown, Apache and the darknet.
+I was wondering whether an Apache module, Perl script, Ruby script or PHP script could translate it on demand. In hindsight, Apache serving a static `.md` file does not automatically transform Markdown into HTML: something needs to render or build it first. With Jekyll, another approach is to build the Markdown into the generated HTML site and have Apache serve that output.
 
-The old McRetro v2 onion address was loading, but Apache had no idea what I expected it to do with the Markdown source files.
+A later clarification: the old `mcretro35qepy5cy.onion` address shown here was a Tor **v2** onion address. Tor retired that 16-character address format in 2021, so the historical link no longer works on the modern Tor network.
 
-So it served them as plain text.
+My GitHub Pages / Jekyll setup also turned out not to support all the fancy modifications I wanted from this website experiment. Maybe this was a bad idea! :-D
 
-In hindsight that is perfectly normal.
+### Sources
 
-Apache serving a static `.md` file does not automatically transform Markdown into HTML. Something needs to render or build the Markdown first.
-
-With Jekyll, the cleaner model is to build the Markdown into the generated HTML site and then have Apache serve that output.
-
-I was originally wondering whether an Apache module, Perl script, Ruby script or PHP script could translate it on demand.
-
-Possible?
-
-Probably.
-
-Sensible for this setup?
-
-Maybe not.
-
-The old `mcretro35qepy5cy.onion` address shown in this post was also a Tor **v2** onion address. Tor retired that 16-character address format in 2021, so the historical link no longer works on the modern Tor network.
-
-GitHub / Jekyll also turned out not to support all the fancy modifications I wanted from this website experiment.
-
-Maybe this was a bad idea! :-D
+- [Jekyll - Command Line Usage](https://jekyllrb.com/docs/usage/)
+- [Tor Project - Onion Service version 2 deprecation timeline](https://blog.torproject.org/v2-deprecation-timeline/)
+- [GitHub Docs - About GitHub Pages and Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll)
 
 ### Related posts
 
 - [The Birth of Eleventy7.net](/the-birth-of-eleventy7-net/)
 - [McRetro.net Rebooted](/mcretro-net-rebooted/)
 - [Take Back the Darknet (Part 1)](/take-back-the-darknet-part-1/)
-
-### Sources
-
-- [Jekyll - Command Line Usage](https://jekyllrb.com/docs/usage/)
-- [Tor Project - V2 Onion Services Deprecation](https://support.torproject.org/onionservices/v2-deprecation/)

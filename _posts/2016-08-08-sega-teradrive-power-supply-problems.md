@@ -2,29 +2,27 @@
 title: "Sega TeraDrive Power Supply Problems"
 author: "Nix McRetro"
 date: 2016-08-08T19:07:41.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-09
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-09
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, sega]
 ---
 
 ![IMG_0645](/assets/images/2016/img_0516.jpg)
 
-One of the reasons I originally ended up with two TeraDrives was for exactly this kind of troubleshooting.
+The faulty supply pictured above is an **SPS-356JU**, part **400-5142**. Its label lists **+5 VDC at 5 A** and **+12 VDC at 1 A**. The TeraDrive's serial number is **102000629**.
 
-I have a Model 2 with dual floppy drives and a Model 3 with its original 30 MB WDL-330P hard drive and one floppy drive. Both also have XTIDE cards installed.
+One of the reasons I originally ended up with two TeraDrives was for exactly this kind of troubleshooting. Unfortunately, swapping parts only narrows things down to a module, not the failed component inside it. I have a Model 2 with dual floppy drives and a Model 3 with its original 30 MB WDL-330P hard drive, hilarious edge connector and one floppy drive. Both also have XTIDE cards installed with at least 2 GB of storage.
 
 ![IMG_0648](/assets/images/2016/img_0518.jpg)
 
-One machine produced a buzzing / clicking hum through the internal speaker and would not complete POST.
-
-After stripping it back to a minimal configuration and then swapping major modules, the fault followed the power supply.
+One machine produced a buzzing / clicking hum through the internal speaker and would not complete POST. After stripping it back to a minimal configuration without any change, I swapped the power supply. Sure enough, it roared back to life. The fault followed the original supply.
 
 ![IMG_0649](/assets/images/2016/img_0519.jpg)
 
-That gives me:
+That gives me a faulty supply identified here as **0629** and a working reference supply as **1135**. I can't see any obvious physical anomalies, such as blown caps, with the naked eye. Have a look at the photos below and see if you can spot anything peculiar.
 
 **1135 - working reference PSU**
 
@@ -40,33 +38,15 @@ That gives me:
 - 12 V rail, powered on: 10.73 V
 - 5 V rail, powered on: 3.10 V
 
-The important result is that the faulty supply collapses badly under load, especially on the 5 V rail.
+The important result is that the faulty supply collapses badly under load, especially on the 5 V rail. Bad capacitor? Transformer? Transistor? Search me! At this point that establishes the symptom, not the culprit.
 
-Bad capacitor?
-
-Transformer?
-
-Transistor?
-
-Search me!
-
-At this point that establishes the symptom, not the culprit.
-
-Plan B was paying somebody who actually enjoys mains power supplies to repair it.
-
-Frankly, that still seems sensible.
-
-Actually there was a Plan C as well: somehow adapting a modern power supply.
-
-At the time I was worried that an ATX-derived supply would automatically be unsuitable because of missing -5 V and -12 V rails.
-
-The TeraDrive's power arrangement is stranger than a generic AT-versus-ATX comparison suggests, so any replacement really needs to be worked out from the actual TeraDrive wiring and expansion requirements.
-
-Hopefully my knight in shining armour answers the call.
+Plan B was paying somebody who actually enjoys mains power supplies to repair it. Frankly, that still seems sensible. I'm not terribly fond of working on mains power devices.
 
 **Mains-voltage warning:** this is not a low-voltage console repair. Power supplies can contain lethal voltages and can retain charge after being unplugged.
 
 ![IMG_0646](/assets/images/2016/img_0517.jpg)
+
+Actually there was a Plan C as well: somehow adapting a PicoPSU. At the time I was worried about getting the -5 V and -12 V rails I thought I needed from an ATX-derived supply. That concern alone did not establish whether a particular PicoPSU would work; any replacement needs to be checked against the actual TeraDrive wiring and expansion requirements. Hopefully my knight in shining armour answers the call.
 
 ![IMG_0650](/assets/images/2016/img_0520.jpg)
 
@@ -74,7 +54,7 @@ Hopefully my knight in shining armour answers the call.
 
 ![IMG_0652](/assets/images/2016/img_0522.jpg)
 
-If you want to follow the original discussion, see the archived [ASSEMblerGames thread](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/).
+If you want to follow the original discussion, see the archived [Sega TeraDrive PSU Repair - Trinity! Help!](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/) thread on ASSEMblerGames.
 
 ### Related posts
 

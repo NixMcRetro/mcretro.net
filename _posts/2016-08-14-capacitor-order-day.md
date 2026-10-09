@@ -2,27 +2,21 @@
 title: "Capacitor Order Day"
 author: "Nix McRetro"
 date: 2016-08-14T12:42:34.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-09
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-09
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [nintendo, repairs, sega]
 ---
 
 ![cap\_definition](/assets/images/2016/img_0533.jpg)
 
-Capacitors, there's nothing more fun than replacing capacitors. As a result I'm on the hunt for the following capacitors from my local friendly Element14 / Farnell. TeraDrive power supply is on the list as are four Super Nintendo / Super Famicoms. SNES values are thanks to [Console5](https://console5.com/store/).
+Capacitors, there's nothing more fun than replacing capacitors. As a result I'm on the hunt for the following capacitors from my local friendly Element14 / Farnell. TeraDrive power supply is on the list as are four Super Nintendo / Super Famicoms. SNES values are thanks to [Console5](https://wiki.console5.com/wiki/SNES).
 
-Turns out I already had a bunch from over a year ago when I was repairing the 1CHIP SNES, but ended up shelving it because S-MIX couldn't be fixed. Well what do you know, now I have another 1CHIP with no sound... at least there's no physical hole in the S-MIX this time... ;)
+Turns out I already had a bunch from over a year ago when I was [repairing the 1CHIP SNES](/damaged-s-mix-on-a-snes-snsp-cpu-1chip-02-mainboard/), but ended up shelving it because S-MIX couldn't be fixed. Well what do you know, now I have another 1CHIP with no sound... at least there's no physical hole in the S-MIX this time... ;)
 
-This is a workshop shopping list for the specific board revisions and hardware I had in front of me, not a universal capacitor bill of materials.
-
-The SNES values were assembled around the particular revisions listed below, while the TeraDrive PSU values were transcribed from the unit on my bench.
-
-Always verify the actual board revision, fitted component, polarity, capacitor type and physical dimensions before ordering replacements.
-
-C59 on PAL SNSP boards is particularly worth checking rather than assuming, because Nintendo changed the fitted capacitor across revisions.
+This is a workshop shopping list for the specific board revisions and hardware I had in front of me, not a universal capacitor bill of materials. The SNES values were assembled around the particular revisions listed below, while the TeraDrive PSU values were transcribed from the unit on my bench. Always verify the actual board revision, fitted component, polarity, capacitor type and physical dimensions before ordering replacements. C59 on PAL SNSP boards is particularly worth checking rather than assuming, because Nintendo changed the fitted capacitor across revisions.
 
 ```
 CAP ORDER LIST
@@ -93,12 +87,14 @@ C67	1000uf	25v	N/A
 C73	47uf	16v	GOT
 ```
 
+### Sources
+
+- [Console5 TechWiki - SNES](https://wiki.console5.com/wiki/SNES)
+- [ConsoleMods - SNES Model Differences](https://consolemods.org/wiki/SNES:SNES_Model_Differences)
+
 ### Related posts
 
+- [S-MIX on the SNES SNSP-CPU-1CHIP-01 / SNSP-CPU-1CHIP-02](/s-mix-on-the-snes-snsp-cpu-1chip-01-snsp-cpu-1chip-02/)
 - [Super Nintendo - Replacing C59 on the SNSP-CPU-01](/super-nintendo-replacing-c59-on-the-snsp-cpu-01/)
 - [Sega TeraDrive Power Supply Problems](/sega-teradrive-power-supply-problems/)
 - [Sega TeraDrive - Retrofitting a Mean Well PT-65B PSU](/sega-teradrive-retrofitting-a-mean-well-pt-65b-psu/)
-
-### Sources
-
-- [ConsoleMods - SNES Model Differences](https://consolemods.org/wiki/SNES:SNES_Model_Differences)

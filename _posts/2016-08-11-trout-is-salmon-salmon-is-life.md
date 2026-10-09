@@ -2,11 +2,11 @@
 title: "Trout is Salmon, Salmon is Life"
 author: "Nix McRetro"
 date: 2016-08-11T20:42:39.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-09
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-09
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [news]
 ---
 
@@ -24,23 +24,10 @@ Trout is just like salmon and can often be used in place of a rifle. While only 
 
 ![MercuryFoodChain.svg](/assets/images/2016/img_0524.jpg)
 
-There is one real fact hiding underneath it.
+There is one real fact hiding underneath it. The diagram above is a historical illustration of mercury moving through the food chain, not a current eating guide. The mercury figures I quoted came from the FDA's 1990-2012 monitoring table: fresh/frozen salmon had a **median** mercury concentration of **0.015 ppm**, while freshwater trout had a median of **0.025 ppm**. Those are medians across sampled fish, not universal mercury concentrations for every salmon and trout in existence. The corresponding means were **0.022 ppm** for fresh/frozen salmon and **0.071 ppm** for freshwater trout.
 
-The mercury figures I quoted came from FDA monitoring data.
-
-In that dataset:
-
-- fresh/frozen salmon had a **median** mercury concentration of 0.015 ppm
-- freshwater trout had a **median** of 0.025 ppm
-
-Those are medians across sampled fish, not universal mercury concentrations for every salmon and trout in existence.
-
-The corresponding means were around 0.022 ppm for fresh/frozen salmon and 0.071 ppm for freshwater trout.
-
-I still vote salmon.
-
-Mostly because it tastes better and appears to be more effective as a fictional rifle substitute.
+I still vote salmon. Mostly because it tastes better and appears to be more effective as a fictional rifle substitute.
 
 ### Sources
 
-- [US Food and Drug Administration - Mercury Levels in Commercial Fish and Shellfish](https://www.fda.gov/food/environmental-contaminants-food/mercury-levels-commercial-fish-and-shellfish-1990-2012)
+- [US Food and Drug Administration - Mercury Levels in Commercial Fish and Shellfish (1990-2012)](https://www.fda.gov/food/environmental-contaminants-food/mercury-levels-commercial-fish-and-shellfish-1990-2012)

@@ -2,11 +2,11 @@
 title: "Death to Smartphones!"
 author: "Nix McRetro"
 date: 2016-08-19T07:39:20.000+10:00
-last_modified_at: 2026-09-30
+last_modified_at: 2026-10-09
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-09-30
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-09
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [apple]
 ---
 
@@ -22,14 +22,11 @@ Enter the Nokia 301.
 
 ![Nokia 301 Blue](/assets/images/2016/img_0538.jpg)
 
-Nokia's published specifications quoted standby times of roughly five weeks under ideal conditions, depending on network mode and model.
-
-Actual battery life obviously depends on network conditions, signal strength, battery age and what you actually do with the phone, but "up to more than a month" was genuinely the sort of number this thing was sold on.
-
-Thank you, candybar phones!
+Nokia quoted up to **39 days of standby** for the single-SIM Nokia 301 on a 3G network. Actual battery life depends on network conditions, signal strength, battery age and what you do with the phone, but more than a month was the advertised maximum. One month or MORE! Thank you, candybar phones!
 
 Maybe when the next batch of iPhones roll out and there's a 4" overpowered phone available for a reasonable price I'll switch back. At any rate, it's time to sell my old iPhone 5s and move on.
 
 ### Sources
 
-- [Nokia 301 specifications archive](https://web.archive.org/web/20160304075411/http://www.microsoft.com/en/mobile/phone/301/specifications/)
+- [Microsoft - Nokia 301 Specifications](https://web.archive.org/web/20160304075411/http://www.microsoft.com/en/mobile/phone/301/specifications/)
+- [Microsoft Devices Blog - Nokia 301: A clever feature phone for 2013](https://blogs.windows.com/devices/2013/02/25/nokia-301-a-clever-feature-phone-for-2013/)

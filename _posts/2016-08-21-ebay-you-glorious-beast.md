@@ -2,11 +2,11 @@
 title: "eBay, You Glorious Beast"
 author: "Nix McRetro"
 date: 2016-08-21T07:31:14.000+10:00
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-09
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-09
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [news]
 ---
 

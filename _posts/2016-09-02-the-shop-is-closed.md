@@ -2,6 +2,11 @@
 title: "The Shop is Closed!"
 author: "Nix McRetro"
 date: 2016-09-02T12:18:57.000+10:00
+last_modified_at: 2026-10-09
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-09
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [news]
 ---
 

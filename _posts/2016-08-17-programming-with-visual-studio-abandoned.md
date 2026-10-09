@@ -2,11 +2,11 @@
 title: "Programming with Visual Studio - Abandoned!"
 author: "Nix McRetro"
 date: 2016-08-17T14:18:20.000+10:00
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-09
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-09
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [programming, study]
 ---
 
@@ -16,7 +16,7 @@ Oh! Looky! I made a Visual Basic program with some sort of windowed interface! W
 
 ![program1](/assets/images/2016/img_0536.jpg)
 
-Jump ship everyone! Well it's as the old age saying goes...
+Jump ship everyone! Well, it's as the age-old saying goes...
 
 > Help where you can, set fire to everything else!
 

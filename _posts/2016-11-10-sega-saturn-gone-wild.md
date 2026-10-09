@@ -2,17 +2,19 @@
 title: "Sega Saturn Gone Wild!"
 author: "Nix McRetro"
 date: 2016-11-10T16:43:26.000+11:00
-categories: [sega]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-10
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
+categories: [sega]
 ---
 
 ![sega-saturn-console-set-mk1](/assets/images/2016/img_0592.jpg)
 
-Let's go through all the different types of Sega Saturns. All images courtesy of [Zyrobs](https://imgur.com/a/dMbRj). Thank you Zyrobs! And who knew the Sega Saturn had so many revisions. How Sega managed this... well I suppose they didn't... too soon? Ahhh, it's been twenty-something years folks! :-)
+Let's go through some of the different types of Sega Saturns. The eleven internal photographs and original catalogue notes are courtesy of [Zyrobs](https://imgur.com/a/dMbRj). Thank you Zyrobs! And who knew the Sega Saturn had so many revisions. How Sega managed this... well I suppose they didn't... too soon? Ahhh, it's been twenty-something years folks! :-)
+
+This is a selection of photographed consoles, not a complete list of Saturn revisions. The details below follow the original catalogue, with source discrepancies called out where the surviving evidence shows them. The PSU pinouts describe these units; they are not a guarantee that supplies can be swapped between machines. Local mains-voltage compatibility still matters.
 
 * * *
 
@@ -71,7 +73,7 @@ Power supply: 5-pin Type B (GND, GND, 3.3V, 5V, 9V)
 Model number: MK-80200A-50  
 Serial number: 167015869  
 Motherboard type: VA7 PAL  
-CD drive type: JVC ENR-013A  
+CD drive type: JVC ENR-013A in the album caption; visible PCB marked SANYO 610-6185-20 (complete assembly identification unresolved)  
 Power supply: 5-pin Type C (GND, GND, 5V, 5V, 12V)
 
 * * *
@@ -81,9 +83,9 @@ Power supply: 5-pin Type C (GND, GND, 5V, 5V, 12V)
 **Sega Saturn Model 2, USA, VA7**
 
 Model number: MK-80000A  
-Serial number: 167015869  
+Serial number: AF67091875 (album image filename; not visible in this photograph)  
 Motherboard type: VA7 USA SD  
-CD drive type: JVC ENR-013A  
+CD drive type: JVC ENR-013A in the album caption; visible PCB marked SANYO 610-6185-20 (complete assembly identification unresolved)  
 Power supply: 4-pin Type C (GND, GND, 5V, 5V)
 
 * * *
@@ -95,7 +97,7 @@ Power supply: 4-pin Type C (GND, GND, 5V, 5V)
 Model number: MMP-11  
 Serial number: B69006875  
 Motherboard type: VA9  
-CD drive type: JVC ENR-013A  
+CD drive type: JVC ENR-013A in the album caption; visible PCB marked SANYO 610-6185-20 (complete assembly identification unresolved)  
 Power supply: 4-pin Type C (GND, GND, 5V, 5V)
 
 * * *
@@ -119,7 +121,7 @@ Power supply: 5-pin Type C (GND, GND, 5V, 5V, 12V)
 Model number: MK-80200A-50  
 Serial number: AD69035903  
 Motherboard type: VA9  
-CD drive type: JVC ENR-013A  
+CD drive type: JVC ENR-013A in the album caption; visible PCB marked SANYO 610-6185-20 (complete assembly identification unresolved)  
 Power supply: 5-pin Type C (GND, GND, 5V, 5V, 12V)
 
 * * *
@@ -145,3 +147,11 @@ Serial number: 09295551
 Motherboard type: VA13 (JPN)  
 CD drive type: JVC HQA-001A  
 Power supply: 4-pin Type C (GND, GND, 5V, 5V)
+
+### Sources
+
+- [Zyrobs - Sega Saturns Gone Wild](https://imgur.com/a/dMbRj)
+
+### Related posts
+
+- [Sega Saturn Power Supply Swapping](/sega-saturn-power-supply-swapping/)

@@ -2,12 +2,12 @@
 title: "Ghost Publishing Platform on the Raspberry Pi"
 author: "Nix McRetro"
 date: 2016-12-05T17:48:59.000+11:00
-categories: [guides, linux, raspberry-pi]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-10
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
+categories: [guides, linux, raspberry-pi]
 ---
 
 ![ghost-logo-svg](/assets/images/2016/img_0594.jpg)
@@ -27,7 +27,7 @@ sudo make install
 node -v
 ```
 
-One command in my original notes, `tar -xzf node node-v4.6.2.tar.gz`, appears malformed. I no longer have enough evidence here to reconstruct exactly what I typed successfully in 2016, so this block should not be treated as paste-ready.
+One command in my original notes, `tar -xzf node node-v4.6.2.tar.gz`, appears malformed. I no longer have enough evidence here to reconstruct exactly what I typed successfully in 2016, so this block should not be treated as paste-ready. The later lines headed `Under production` and `Under server` describe edits inside `config.js`; they are not shell commands, and the displayed fields are only a fragment of that file. The historical download URLs and privileged npm commands remain part of these notes, not a current installation recommendation.
 
 ```
 cd ~
@@ -49,7 +49,7 @@ sudo npm start --production
 
 Visit http://\[your-webserver-address\]/ghost and you'll be firing on all cylinders!
 
-
 ### Sources
 
-- [Ghost - How to reinstall Ghost](https://ghost.org/docs/reinstall/)
+- [Ghost - Ghost 0.11.3](https://ghost.org/changelog/ghost-0-11-3/)
+- [Node.js - Node.js 4.6.2 (LTS)](https://nodejs.org/en/blog/release/v4.6.2)

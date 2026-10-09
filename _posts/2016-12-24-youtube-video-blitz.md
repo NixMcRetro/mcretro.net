@@ -2,6 +2,11 @@
 title: "YouTube Video Blitz"
 author: "Nix McRetro"
 date: 2016-12-24T08:53:09.000+11:00
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [news, youtube]
 ---
 

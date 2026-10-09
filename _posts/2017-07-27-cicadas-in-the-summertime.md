@@ -2,6 +2,11 @@
 title: "Cicadas in the Summertime"
 author: "Nix McRetro"
 date: 2017-07-27T21:14:02.000+10:00
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 categories: [study]
 ---
 
@@ -11,8 +16,10 @@ Oh, hello there! It seems I shelved this entire website and YouTube while studyi
 
 Now I've complained about the lack of internet speed here on a _few_ occasions. We were supposed to get true high speed internet over a year ago. It's since been delayed indefinitely thanks to politics. I hate politics so much.
 
-Anyway, while waiting for a lab at uni I tried splicing together the above video on an iPad and happened upon my university wifi. The video uploaded in less than a minute. A short speedtest later and... 229Mbps down, 452Mbps up. That's something like a 56 megabytes per second uplink. To put things into perspective my home internet connection can manage a massive 80 kilobytes a second - 700 times less. I couldn't believe it uploaded 2GB in seconds instead of a whole day or so.
+Anyway, while waiting for a lab at uni, I tried splicing together the above video on an iPad and happened upon my university wifi. The video uploaded in less than a minute. A short speed test later and... 229Mbps down, 452Mbps up. That's a theoretical 56.5 megabytes per second uplink, before overhead, rather than a measurement of the video's sustained upload speed.
 
-So the future is looking bright, maybe I will end up getting the 250-odd gigabytes of footage uploaded yet! Stay tuned! :-)
+To put things into perspective, my home internet connection could manage a massive 80 kilobytes a second. Comparing those figures gives roughly 700 times the rate. I couldn't believe that a 2GB upload could finish in under a minute instead of taking hours. Suddenly the footage backlog felt a lot less impossible!
 
-**Edit:** Looks like this was the only post for 2017! Happy 2017 everyone! :)
+So the future is looking bright, maybe I will end up getting the [250-odd gigabytes of footage](/youtube-video-blitz/) uploaded yet! Stay tuned! :-)
+
+**Later edit:** Looks like this was the only post for 2017! Happy 2017 everyone! :)

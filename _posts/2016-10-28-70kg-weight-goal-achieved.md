@@ -2,12 +2,12 @@
 title: "70kg Weight Goal Achieved!"
 author: "Nix McRetro"
 date: 2016-10-28T07:54:51.000+11:00
-categories: [news]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-10
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
+categories: [news]
 ---
 
 ![2016-10-28\_70kg\_goal](/assets/images/2016/img_0578.jpg)
@@ -20,7 +20,7 @@ Next up I'll head towards 65kg and see what the scale's estimated body-fat perce
 
 ![2016-10-28\_70kg\_fat](/assets/images/2016/img_0577.jpg)
 
-Of course, what goes down must come up... or at least that was what the scale was reporting. As its estimated body-fat percentage went down, its estimated lean-mass figure moved the other way.
+Of course, what goes down must come up... or at least that was what the scale's percentages were doing. As its estimated body-fat percentage went down, its estimated lean-mass percentage moved the other way. That does not mean I was gaining lean tissue in kilograms.
 
 ![2016-10-28\_70kg\_lean](/assets/images/2016/img_0579.jpg)
 

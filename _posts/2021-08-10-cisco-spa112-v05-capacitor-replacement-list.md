@@ -3,11 +3,11 @@ title: "Cisco SPA112 V05 Capacitor Replacement List"
 author: "Nix McRetro"
 date: 2021-08-10T21:51:46.000+10:00
 categories: [modems, repairs]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-11
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2021/img_0741.jpg)
@@ -36,7 +36,7 @@ ATDT****,,,,,,,,,,73738#,,,,1#
 
 ```
 
-In 2023 I donated this SPA112 to Jon after I finished with the dial-up modem project. Jon had also done the PLCC32 desoldering and resoldering work before the modems went to the [ACMS](https://forum.acms.org.au/).
+In 2023 I donated this SPA112 to Jon after I finished with the dial-up modem project. Jon helped me, well, did all the work when it came to desoldering the PLCC32s and resoldering them before the modems went to the [ACMS](https://forum.acms.org.au/).
 
 ### Sources
 

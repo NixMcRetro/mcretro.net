@@ -3,16 +3,16 @@ title: "Blood Plasma Donation #13"
 author: "Nix McRetro"
 date: 2021-10-09T21:30:03.000+11:00
 categories: [news]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-11
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2021/img_0761.jpg)
 
-Today was plasma donation #13 and overall 33rd donation. Nothing went wrong, as usual. I'll be getting my iron levels checked before the next whole blood donation in roughly a month. Peripheral haemoglobins were rocking 159g/L which is back where they should be. And what's this?
+Today was plasma donation #13 and my 33rd donation overall. Nothing went wrong, as usual. I'll be getting my iron stores checked before the next whole blood donation in roughly a month. My haemoglobin was rocking 159g/L, back where I wanted it. That's a separate measurement from iron stores, though. And what's this?
 
 ![](/assets/images/2021/img_0758.jpg)
 
@@ -28,7 +28,7 @@ I not only managed to have the big clunker pause on one of the return cycles at 
 
 ![](/assets/images/2021/img_0762.jpg)
 
-Ah yes, I zapped a photo of the elusive, antique-looking 1 L isotonic saline that the centre got on the cheap - new old stock! It's just [how I remembered it](/blood-plasma-donation-12/). That description was my read from appearances; I did not actually know its age or procurement history. Fun fact: the anticoagulant is 250 mL, and saline used to be 500 mL.
+Ah yes, I zapped a photo of the elusive, antique-looking 1 L isotonic saline. New old stock bought on the cheap? That was my theory from appearances, not something I knew about its age or procurement. It's just [how I remembered it](/blood-plasma-donation-12/). The anticoagulant bag was 250 mL, and I remembered the saline bags being 500 mL. Those are bag capacities, not a record of how much went into me.
 
 ![](/assets/images/2021/img_0766.jpg)
 
@@ -44,4 +44,13 @@ We aren't feeding the birds, so they look ragged like this poor fellow. We stood
 
 ![](/assets/images/2021/img_0759.jpg)
 
-It all came from a "grab bag" keycap kit. Mostly misprints and a tonne of F12 keys. It has helped determine what profile would suit the upcoming [YamPAD](https://github.com/mattdibi/yampad) project, I think the lower profiles would suit better. Oh, look! You can also see the [GeoCities](/homepages/geocities) proxy server hanging by an ethernet cable in the background.
+It all came from a "grab bag" keycap kit. Mostly misprints and a tonne of F12 keys. It has helped determine what profile would suit the upcoming [YamPAD](https://github.com/mattdibi/yampad) project. I think the lower profiles would suit better. Oh, look! You can also see the [GeoCities](/homepages/geocities) proxy server hanging by an Ethernet cable in the background.
+
+### Sources
+
+- [Australian Red Cross Lifeblood - Haemoglobin, iron health and blood donation](https://www.lifeblood.com.au/donors/blood-plasma-platelets/learn/iron-health)
+
+### Related posts
+
+- Previous donation: [Blood Plasma Donation #12](/blood-plasma-donation-12/)
+- Calculator build: [Tentaku Mechanical Calculator](/tentaku-mechanical-calculator/)

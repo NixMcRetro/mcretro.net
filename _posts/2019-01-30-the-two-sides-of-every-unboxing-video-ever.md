@@ -3,6 +3,11 @@ title: "The Two Sides of Every Unboxing Video Ever"
 author: "Nix McRetro"
 date: 2019-01-30T18:08:31.000+11:00
 categories: [sega, youtube]
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="T4rjjfcMceg" %}

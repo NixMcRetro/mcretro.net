@@ -3,11 +3,16 @@ title: "SCSI2SD on Dreamcast HKT-0120 Development Kit"
 author: "Nix McRetro"
 date: 2019-02-20T15:23:04.000+11:00
 categories: [apple, devkit, sega]
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2019/img_0633.jpg)
 
-I ended up mounting the [SCSI2SD](https://www.codesrc.com/mediawiki/index.php?title=SCSI2SD) in my recently sold Sega Dreamcast Katana into a [3D printed sled](https://web.archive.org/web/20190217042332/https://68kmla.org/forums/index.php?/topic/24466-scsi2sd-mounting-bracket-for-se30/). I've just noticed now that there are plenty of caddies that help them fit into the space of a 3.5" hard drive. If I did it all again, I'd do it slightly differently now!
+I ended up mounting the [SCSI2SD](https://web.archive.org/web/20190217042647/http://www.codesrc.com/mediawiki/index.php?title=SCSI2SD) in my recently sold Sega Dreamcast Katana into a [3D printed sled](https://web.archive.org/web/20190217042332/https://68kmla.org/forums/index.php?/topic/24466-scsi2sd-mounting-bracket-for-se30/). I've just noticed now that there are plenty of caddies that help them fit into the space of a 3.5" hard drive. If I did it all again, I'd do it slightly differently now!
 
 This follows on from the earlier HKT-0120 hard-drive work, including [dumping the SCSI drive with GNU ddrescue](/dumping-the-sega-dreamcast-hkt-0120-dev-kit-scsi-hard-drive-with-gnu-ddrescue/).
 

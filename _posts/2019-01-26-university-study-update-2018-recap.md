@@ -3,6 +3,11 @@ title: "University Study Update (2018 Recap)"
 author: "Nix McRetro"
 date: 2019-01-26T22:28:51.000+11:00
 categories: [study]
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 | GPA Results | GPA |

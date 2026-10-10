@@ -3,6 +3,11 @@ title: "The GeoCities Archive Rebuild Blog"
 author: "Nix McRetro"
 date: 2021-10-24T11:52:58.000+11:00
 categories: [guides, programming, youtube]
+last_modified_at: 2026-10-11
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="e6ZckJ2HD9A" %}
@@ -15,4 +20,8 @@ This has made things progress a lot faster than expected. I hadn't planned on st
 
 You can check out the 56k friendly GeoCities at [http://geocities.mcretro.net](/homepages/geocities). There's still a lot of work going on in the backend. Expect trouble! 🎃
 
-The public rebuild went live a week later in [The GeoCities Archive Rebuild Goes Live](/the-geocities-archive-rebuild-goes-live/), and I later folded the project notes into [The GeoCities Rebuild Worklog](/the-geocities-rebuild-worklog/).
+### Related posts
+
+- [The GeoCities Archive Rebuild Goes Live](/the-geocities-archive-rebuild-goes-live/)
+- [Multimeter, MiSTer and GeoCities](/multimeter-mister-and-geocities/)
+- [The GeoCities Rebuild Worklog](/the-geocities-rebuild-worklog/)

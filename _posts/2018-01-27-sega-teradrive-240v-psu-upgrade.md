@@ -3,11 +3,11 @@ title: "Sega TeraDrive 240V PSU Upgrade"
 author: "Nix McRetro"
 date: 2018-01-27T14:50:26.000+11:00
 categories: [hacks, repairs, sega]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-10
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="FAY_UUh2dNI" %}
@@ -24,9 +24,12 @@ Leading up to this, I had replaced a whole heap of components on the PSU. I fina
 
 The non-functional unit, 0629, showed the readings below. At first I thought I had a no-power situation. Leaving it connected for around a minute eventually produced output, but the machine still would not operate. With no load, the 12V rail also wandered between roughly 10.3V and 10.9V every few seconds while the 5V rail stayed steadier. Those readings describe what this PSU was doing; they do not by themselves establish why it was doing it.
 
-**1135 - Working (Reference)** 12V rail (yellow cable) - no load 11.46V 5V rail (red cables) - no load 5.00V 12V rail (yellow cable) - under load 12.16V 5V rail (red cables) - under load 5.17V
-
-**0629 - Non-functional** 12V rail (yellow cable) - no load 10.93V 5V rail (red cables) - no load 4.93V 12V rail (yellow cable) - under load 12.12V 5V rail (red cables) - under load 4.75 - 4.84V
+| Rail and test condition | 1135 - working reference | 0629 - non-functional |
+| --- | --- | --- |
+| 12 V, yellow cable, no load | 11.46 V | 10.93 V |
+| 5 V, red cables, no load | 5.00 V | 4.93 V |
+| 12 V, yellow cable, under load | 12.16 V | 12.12 V |
+| 5 V, red cables, under load | 5.17 V | 4.75 to 4.84 V |
 
 The component list below is what I recorded from this particular TeraDrive PSU board. It is not a universal recap or repair list for every TeraDrive revision.
 
@@ -49,17 +52,19 @@ Q3    C3331
 ===========================================================================
 ```
 
-That was enough tinkering for me, especially with mains voltage, so I decided to terminate the Sega TeraDrive PSU repair and pass the units on to other folk. Not with a bang but a whimper. Mains-powered supplies can remain hazardous after disconnection, and an open-frame replacement also needs proper mounting, insulation and earthing in its final installation. Above is a listing of the major capacitors and some other components on this particular PSU mainboard.
+That was enough tinkering for me, especially with mains voltage, so I decided to terminate the Sega TeraDrive PSU repair and pass the units on to other folk. Not with a bang but a whimper. Mains-powered supplies can remain hazardous after disconnection, and any replacement needs proper mounting, insulation and earthing in its final installation.
 
 ![](/assets/images/2018/img_0607.jpg)
 
 For more information, check out [ASSEMBlergames](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/).
 
 
-For the earlier retrofit work, see [Sega TeraDrive Retrofitting a Mean Well PT-65B PSU](/sega-teradrive-retrofitting-a-mean-well-pt-65b-psu/).
-
 ### Sources
 
-- [MEAN WELL - RD-65 series](https://www.meanwell.co.uk/power-supplies/enclosed-power-supplies/rd-65-series)
-- [MEAN WELL - PT-65 series datasheet](https://www.meanwell.com/Upload/PDF/PT-65/PT-65-SPEC.PDF)
-- [Archived ASSEMblergames TeraDrive PSU discussion](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/)
+- [Mean Well - RD-65 Series: 65 W Dual Output Switching Power Supply datasheet](https://www.meanwell.com/Upload/PDF/RD-65/RD-65-SPEC.PDF)
+- [Mean Well - PT-65 Series: 65 W Triple Output Switching Power Supply datasheet](https://www.meanwell.com/Upload/PDF/PT-65/PT-65-SPEC.PDF)
+- [ASSEMblergames - Sega TeraDrive PSU Repair - Trinity! Help!](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/)
+
+### Related posts
+
+- [Sega TeraDrive - Retrofitting a Mean Well PT-65B PSU](/sega-teradrive-retrofitting-a-mean-well-pt-65b-psu/)

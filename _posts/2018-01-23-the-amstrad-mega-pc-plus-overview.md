@@ -3,11 +3,11 @@ title: "The Amstrad Mega PC Plus Overview"
 author: "Nix McRetro"
 date: 2018-01-23T18:19:58.000+11:00
 categories: [ibm-pc, sega, youtube]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-10
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="npSQS8hBbGI" %}
@@ -36,4 +36,8 @@ And here we have the wonderful, just-as-gorgeous-486-version, the Amstrad PC7486
 
 ![](/assets/images/2018/img_0603.jpg)
 
-This unit has been sold to a friend in Japan (or back from Japan, depending on where he ended up) nearly two years ago. I hope it treats him well in the future! Farewell Amstrad Mega PC! :D
+This unit was sold to a friend in Japan (or back from Japan, depending on where he ended up) nearly two years ago. I hope it treats him well in the future! Farewell Amstrad Mega PC! :D
+
+### Related posts
+
+- [Amstrad Sega Mega PC 486SLC Upgrade Progress](/amstrad-sega-mega-pc-486slc-upgrade-progress/)

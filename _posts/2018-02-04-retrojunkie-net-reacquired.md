@@ -3,13 +3,18 @@ title: "RetroJunkie.net Reacquired"
 author: "Nix McRetro"
 date: 2018-02-04T09:37:27.000+11:00
 categories: [news]
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2018/img_0616.jpg)
 
 After allowing [RetroJunkie.net](https://web.archive.org/web/20141217232524/http://retrojunkie.net/) to [lapse](https://web.archive.org/web/20150227093449/http://retrojunkie.net/), somebody else acquired the domain and used it for [their own site](https://web.archive.org/web/20161017235125/http://www.retrojunkie.net/). I was quite disappointed and had no one to blame but myself. A lack of motivation drove me not to bother with it. My bad! That said, it gave birth to McRetro.net, which is by far a shorter web address! :D
 
-The good news is, I got it back! And now I can use that website as my [Lo-Fi](https://retrojunkie.net) website for hosting all my old websites from the past. Nothing of real use there yet, but eventually it will be a goldmine for browsing on old PC hardware.
+The good news is, I got it back! And now I can use that website as my [Lo-Fi](https://web.archive.org/web/20180115202352/http://retrojunkie.net/) website for hosting all my old websites from the past. Nothing of real use there yet, but eventually it will be a goldmine for browsing on old PC hardware.
 
 ![](/assets/images/2018/img_0616a.jpg)
 

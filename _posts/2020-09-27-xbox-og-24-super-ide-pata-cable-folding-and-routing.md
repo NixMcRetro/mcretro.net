@@ -3,27 +3,24 @@ title: "Xbox OG 24\" Super IDE PATA Cable Folding and Routing"
 author: "Nix McRetro"
 date: 2020-09-27T10:47:31.000+10:00
 categories: [guides, microsoft, youtube]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-10
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="oHE2vqzA61g" %}
 
-ATA cables are normally specified at a maximum of 18 inches. I used a 24-inch cable in this Xbox and did not encounter problems during my testing, but that makes this an out-of-spec setup rather than evidence that cable length does not matter. Your mileage may vary!
-
-The useful part of the 80-conductor cable is not extra insulation. It still uses 40-pin connectors, but the additional 40 conductors are interleaved ground wires that reduce crosstalk between the signal lines. That improves signal integrity for the higher UDMA modes. Adding another six inches of cable can work, as it did here, but extra length can also make signal integrity less forgiving.
+These things are supposed to be limited to 18 inches. I had no issues in my testing at 24 inches, but that's still beyond the normal cable limit. Your mileage may vary! The 80-conductor cable still uses 40-pin connectors; the extra 40 wires are grounds between the signal wires, helping to reduce crosstalk. That helps with the higher UDMA modes, although extra length can still cause signal trouble. Don't look at me, I'm not a physicist. Unless I'm playing Half-Life.
 
 With the power of a super-long 24-inch, 80-conductor IDE/PATA cable, we get to work. I just hope the cable you have... has the connectors in the correct orientation!
 
-Don't look at me, I'm not a physicist. Unless I'm playing Half-Life.
-
 {% include youtube.html id="PzYaKbfWQ44" %}
 
-I referenced the above video when folding this around - The Original Xbox How to Fold an IDE 80 Pin PATA Cable
+I referenced the above cable-folding video by Mod-Heure when routing this around the Xbox. This is an 80-conductor IDE/PATA cable with 40-pin connectors.
 
 ### Sources
 
-- [AllPinouts - IDE / ATA cable pinout](https://allpinouts.org/pinouts/cables/data_storage/ide/)
+- [Seagate - Medalist ATA installation guide (18-inch cable limit)](https://www.seagate.com/staticfiles/support/disc/iguides/ata/k33igb.pdf)
+- [Intel - 855GME and 6300ESB Embedded Platform Design Guide (80-conductor IDE cable, page 195)](https://download.intel.com/design/intarch/designgd/30066905.pdf)

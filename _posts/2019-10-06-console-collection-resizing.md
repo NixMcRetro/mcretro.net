@@ -3,6 +3,11 @@ title: "Console Collection Resizing"
 author: "Nix McRetro"
 date: 2019-10-06T18:10:00.000+11:00
 categories: [gaming, news, study]
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2019/img_0635.jpg)

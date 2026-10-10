@@ -3,11 +3,11 @@ title: "Xbox DVT4 Factory Restore (XDK Recovery 5849)"
 author: "Nix McRetro"
 date: 2019-11-24T17:06:58.000+11:00
 categories: [devkit, microsoft, youtube]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-10
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="5MsQyTo8NeU" %}
@@ -19,4 +19,4 @@ Next: [Xbox DVT4 Network Update (XDK 5933)](/xbox-dvt4-network-update-xdk-5849-5
 
 ### Sources
 
-- [Hidden Palace - Xbox Developer Kit Recovery Disc](https://hiddenpalace.org/Xbox_Developer_Kit_Recovery_Disc_%28Oct_2%2C_2002_prototype%29)
+- [Hidden Palace - Xbox Developer Kit Recovery Disc (Dec 19, 2003 prototype)](https://hiddenpalace.org/Xbox_Developer_Kit_Recovery_Disc_%28Dec_19%2C_2003_prototype%29)

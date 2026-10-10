@@ -3,6 +3,11 @@ title: "Current State of the WDL-330P 30MB Hard Drives"
 author: "Nix McRetro"
 date: 2019-12-11T08:11:20.000+11:00
 categories: [ibm-pc, sega, youtube]
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="pgCsxhCDH3A" %}

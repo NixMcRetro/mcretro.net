@@ -3,6 +3,11 @@ title: "Sega TeraDrive WDL-330P Comparison"
 author: "Nix McRetro"
 date: 2019-12-15T07:16:38.000+11:00
 categories: [ibm-pc, sega, youtube]
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="wdDHfLlJdfk" %}

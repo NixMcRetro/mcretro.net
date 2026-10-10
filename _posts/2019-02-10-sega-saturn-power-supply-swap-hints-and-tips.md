@@ -3,11 +3,11 @@ title: "Sega Saturn Power Supply Swap Hints and Tips"
 author: "Nix McRetro"
 date: 2019-02-10T10:02:16.000+11:00
 categories: [hacks, sega, youtube]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-10
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="IM84C8cBlmk" %}

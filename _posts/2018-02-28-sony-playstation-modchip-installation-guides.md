@@ -3,11 +3,11 @@ title: "Sony PlayStation Modchip Installation Guides"
 author: "Nix McRetro"
 date: 2018-02-28T21:16:31.000+11:00
 categories: [guides, sony]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-10
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2018/img_0622.gif)
@@ -24,4 +24,4 @@ Am I missing any models? Send me a message via the [contact](/about/) page and I
 
 - [Microchip - PIC12F508](https://www.microchip.com/en-us/product/PIC12F508)
 - [Microchip - PIC12F629](https://www.microchip.com/en-us/product/PIC12F629)
-- [Archived ASSEMblergames - Making your own PS1 modchips](https://web.archive.org/web/20191109112030/https://assemblergames.com/threads/tutorial-making-your-own-ps1-modchips.55904/)
+- [Mord.Fustang on ASSEMblergames - Tutorial: Making your own PS1 Modchips](https://web.archive.org/web/20170810225955/https://www.assemblergames.com/threads/tutorial-making-your-own-ps1-modchips.55904/)

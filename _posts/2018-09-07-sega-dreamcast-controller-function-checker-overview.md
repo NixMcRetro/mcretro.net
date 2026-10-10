@@ -3,6 +3,11 @@ title: "Sega Dreamcast Controller Function Checker Overview"
 author: "Nix McRetro"
 date: 2018-09-07T09:07:57.000+10:00
 categories: [devkit, sega]
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="bGCq5aMfNZo" %}

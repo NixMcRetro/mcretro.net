@@ -3,11 +3,11 @@ title: "Dreamcast Arcade Stick Checker Version 2.00 ROM"
 author: "Nix McRetro"
 date: 2018-09-05T19:35:27.000+10:00
 categories: [sega]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-10
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2018/img_0624.jpg)
@@ -16,6 +16,6 @@ At long last, the Dreamcast Arcade Stick Checker Version 2.00 ROM is free of the
 
 ![](/assets/images/2018/img_0623.jpg)
 
-I don't have any photos of the actual unit on hand, but you can see the same unit I own over at [Sega Retro](https://segaretro.org/Dreamcast_Controller_Function_Checker). Now we know it's not really a Dreamcast Controller Function Checker but a Dreamcast Arcade Stick Checker. So very specific, so very beautiful. Grab the freshly dumped ROM [here](/assets/uploads/1998_08_DCC_ROM.zip) to hack around with!
+I don't have any photos of the actual unit on hand, but you can see photos of this type of checker over at [Sega Retro](https://segaretro.org/Dreamcast_Controller_Function_Checker). The ROM identifies itself as Dreamcast Arcade Stick Checker Version 2.00. So very specific, so very beautiful. Grab the freshly dumped ROM in [1998_08_DCC_ROM.zip](/assets/uploads/1998_08_DCC_ROM.zip) to hack around with!
 
 Two days later I opened the checker itself up in [Sega Dreamcast Controller Function Checker Overview](/sega-dreamcast-controller-function-checker-overview/).

@@ -3,14 +3,14 @@ title: "The IBM Personal System/55 5510"
 author: "Nix McRetro"
 date: 2020-04-11T10:00:55.000+10:00
 categories: [ibm-pc, sega]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-10
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
-The IBM PS/55 5510 material below is a rough machine translation of a Japanese article from FunkyGoods. I saved it because the 5510 has some interesting overlap with the Sega TeraDrive Model 2. I have not independently verified every technical statement in the translated text, so treat the translation as historical source material rather than as my own hardware specification.
+The IBM PS/55 5510 material below is a rough machine translation of [FunkyGoods' Japanese article about the PS/55 TYPE 5510](https://funkygoods.com/schwarzschild/2010_02/2010_02_21.html), published on 21 February 2010. It caught my attention because of the overlap with the Sega TeraDrive Model 2. The photographs and hands-on observations belong to the original article, not to a teardown I performed. The translation is not the best, and I have not independently verified every technical statement.
 
 ### Rough translation
 
@@ -26,18 +26,17 @@ As previously announced, this is the anatomy of PS55 TYEP5510, an IBM genuine PC
 
 The main chips are listed below. Since it is an old machine of the 286 era, the chip consolidation has not been done much and the number of parts is very large. If you analyze the chip model number, you will get a vague idea of ​​the board configuration.
 
-- N80286-12 286 CPU (Genuine Intel 12MHz: PLCC)\
-- C80287XL coprocessor (Genuine Intel)\
-- WD76C10LP-LR System controller (Western Digital)\
-- WD76C20-JU FDC (Western Digital)\
-- WD76C30-JU Serial I/O\
-- Clock generator\
-- WD90C10-LR VGA chip (Western Digital)\
-- iP8042AH keyboard controller (Intel)\
-- IMSG176P 6bit-DAC (video I/F palette: inmos)\
-- IBM 79F2661 Unknown (probably HDC)\
+- N80286-12 286 CPU (Intel, 12 MHz, PLCC)
+- C80287XL coprocessor (Intel)
+- WD76C10LP-LR system controller (Western Digital)
+- WD76C20-JU floppy disk controller (Western Digital)
+- WD76C30-JU serial/parallel I/O and clock generator (Western Digital)
+- WD90C10-LR VGA chip (Western Digital)
+- iP8042AH keyboard controller (Intel)
+- IMSG176P 6-bit palette DAC (Inmos)
+- IBM 79F2661, unidentified (possibly the hard disk controller)
 
-Which device was also manufactured in the late 1990's. Since it is divided by function, it uses a large number of devices, but you can see that it is mainly fixed with Western Digital products. Incidentally, the onboard memory chip is equipped with genuine IBM, and is equipped with four 30-pin SIMM sockets for additional expansion. Initially, there was no memory in this socket, but I installed a suitable guy left in the push-in to recognise it.
+The devices were manufactured in the second half of 1990. Their functions are spread across several chips, mostly from Western Digital. The onboard memory is IBM-branded, with four 30-pin SIMM sockets for expansion. Those sockets were initially empty, but I installed some suitable modules left in the cupboard and got them recognised.
 
 ![](/assets/images/2020/img_0668.jpg)
 
@@ -73,6 +72,8 @@ Riser card with 3 slots for ISA bus. From this, you can feel that this machine i
 
 It seems to have a riser card. Three full-size ISA expansion boards can be installed.
 
+![](/assets/images/2020/ps_55_18.jpg)
+
 Mysterious FDD connection cable. For some reason, the number of pins on the board header is 40 Pin. Since the cable itself is a common 34Pin, you can see that it does not use 6Pin (the right side of the connector). Why is that? Wake Wakaran... Perhaps it was reserved for signals when using a drive compatible with 3 modes, but it is strange that the IDE HDD has many pins... After all, it is an unreasonable assumption.
 
 ![](/assets/images/2020/img_0675.jpg)
@@ -81,4 +82,13 @@ When I was looking at the FDC WD76C20 data sheet, I found a block diagram very s
 
 ![](/assets/images/2020/img_0676.jpg)
 
-For reference, this is the Baby AT size motherboard that was included in the original IBM PC/AT Type 5170 (Full Size AT is even bigger than this). Manufactured in 1984. The CPU is 80286-8MHz. The board does not have any I/O or video features.
+For reference, the original article includes this IBM PC/AT Type 5170 motherboard for comparison. It has no onboard VGA or serial/parallel ports. The article's "1984" and "8 MHz" description should not be treated as an exact identification of this board: IBM's product reference distinguishes the 6 MHz 5170-068 from the 8 MHz 5170-319 and 5170-339.
+
+### Sources
+
+- [FunkyGoods / Schwarzschild Cafe - PS/55 TYPE 5510 解剖編 (21 February 2010)](https://funkygoods.com/schwarzschild/2010_02/2010_02_21.html)
+- [IBM - Personal System/2 and IBM Personal Computer Product Reference, Version 4.0 (April 1987), page 49](https://bitsavers.org/pdf/ibm/pc/PS2_and_IBM_PC_Product_Reference_Version_4.0_Apr87.pdf)
+
+### Related posts
+
+- [Sega TeraDrive Model 2, Genesis Nomad and Mega Drive 2](/sega-teradrive-model-2-genesis-nomad-and-mega-drive-2/)

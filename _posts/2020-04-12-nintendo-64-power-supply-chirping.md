@@ -3,6 +3,11 @@ title: "Nintendo 64 Power Supply Chirping"
 author: "Nix McRetro"
 date: 2020-04-12T12:54:02.000+10:00
 categories: [nintendo, youtube]
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="cj4MRjQ95gI" %}

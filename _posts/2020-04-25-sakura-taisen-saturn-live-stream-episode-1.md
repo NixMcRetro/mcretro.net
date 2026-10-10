@@ -3,11 +3,11 @@ title: "Sakura Taisen (1996, Saturn Live Stream, Episode 1)"
 author: "Nix McRetro"
 date: 2020-04-25T18:46:23.000+10:00
 categories: [gaming, livestream, sega]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-10
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="rYFg_xpyukA" %}
@@ -18,8 +18,12 @@ The Saturn game received its English fan-translation patch on 15 December 2019, 
 
 Other great games like Final Fantasy VII were also being remade for modern consoles. Maybe I finally needed to install that PSIO from many years ago into my PlayStation!
 
-Next: [Sakura Taisen (Saturn Live Stream, Episode 2)](/sakura-taisen-saturn-live-stream-episode-2/)
-
 ### Sources
 
-- [SegaXtreme - Sakura Wars English translation release discussion](https://segaxtreme.net/threads/sega-saturn-25th-anniversary-game-competition.24462/page-2)
+- [SEGA - Sega Saturn software catalogue](https://www.sega.jp/history/hard/segasaturn/software.html)
+- [NoahSteam - Sakura Wars English translation release submission on SegaXtreme](https://segaxtreme.net/threads/sega-saturn-25th-anniversary-game-competition.24462/page-2)
+
+### Related posts
+
+- Next: [Sakura Taisen (1996, Saturn Live Stream, Episode 2)](/sakura-taisen-saturn-live-stream-episode-2/)
+- [Sakura Wars Complete Song Box](/sakura-wars-complete-song-box/)

@@ -3,24 +3,24 @@ title: "TP-Link Archer VR1600v V2 Firmware Dump Attempt"
 author: "Nix McRetro"
 date: 2021-05-30T09:37:17.000+10:00
 categories: [guides]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-11
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2021/img_0686.jpg)
 
-The [TP-Link VR1600v VDSL/ADSL Modem Router](https://www.tp-link.com/au/service-provider/xdsl/archer-vr1600v/). Just a word of warning, this post **_does not_** result in a successful firmware dump. Over five days I had a look into how to dump the firmware off a spare modem I had. This wasn't my main modem, it wasn't even my backup modem - for me, there was no risk of loss if I had to bin the modem.
+The [TP-Link Archer VR1600v VDSL/ADSL Modem Router](https://www.tp-link.com/au/service-provider/xdsl/archer-vr1600v/). Just a word of warning, this post **_does not_** result in a successful firmware dump. Over five days I had a look into how to dump the firmware off a spare modem I had. This wasn't my main modem, it wasn't even my backup modem - for me, there was no risk of loss if I had to bin the modem.
 
 ![](/assets/images/2021/img_0693.jpg)
 
-Why did I even try this? It turns out someone I knew was actively using the OpenVPN software that's built into the modem. The internet service provider (ISP) was TPG Australia. They were removing the software via an update to improve security - which makes sense if you think about it. Anyway, I was interested to see if I could force flash an older firmware then disable auto-update, leaving you vulnerable to exploits...
+Why did I even try this? It turns out someone I knew was actively using the OpenVPN software built into this TPG-supplied modem. A firmware update was reportedly removing that option. I was interested to see if I could force-flash the older firmware and disable automatic updates. Of course, hanging onto old firmware could also mean hanging onto its security holes...
 
 ![](/assets/images/2021/img_0692.jpg)
 
-It turns out you can disable the auto-update functionality by logging in with [the hidden super user password](https://www.marcelvarallo.com/so-we-cracked-the-archer-vr1600v-v2-super-user-password/). This password is not provided to the end user by TPG. So if your router has been updated with their push of their new firmware via the Technical Report 069 (TR-069) and CWMP functionality, OpenVPN is gone. My spare (offline) modem still had the old firmware though. This phrase stuck - "anti-user behaviour".
+I found that the auto-update functionality could be disabled on this firmware by logging in with [the hidden super user password](https://www.marcelvarallo.com/so-we-cracked-the-archer-vr1600v-v2-super-user-password/), which TPG did not provide to the end user. The reported update was pushed through TR-069/CWMP, and the complaint was that OpenVPN disappeared afterwards. My spare (offline) modem still had the old firmware though. This phrase stuck - "anti-user behaviour".
 
 ![](/assets/images/2021/img_0694.jpg)
 
@@ -30,7 +30,7 @@ Our goal now becomes, how to extract the existing firmware from the modem. We we
 
 Most of day one was tracking down the serial TTL port / UART header location. First I had to learn about serial and how on earth I was meant to extract anything from it.
 
-The OpenWrt Project provided a fair amount of knowledge on the topic - [here](https://openwrt.org/docs/techref/hardware/port.serial), [here](https://openwrt.org/docs/guide-user/troubleshooting/generic.debrick), [here](https://web.archive.org/web/20210522202158/http://www.devttys0.com/2012/11/reverse-engineering-serial-ports/) and [here](https://openwrt.org/docs/techref/hardware/soc/soc.broadcom.bcm63xx). [This Reddit comment thread](https://www.reddit.com/r/HomeNetworking/comments/cz1fus/archer_vr1600v_modem_router_can_i_install_openwrt/) helped me work out the chipset used. [Googling a bit](https://www.google.com/search?q=UART+port+on+TP+LINK) helped of course, it's all about keywords. [This page](https://www.cyberark.com/resources/threat-research-blog/accessing-and-dumping-firmware-through-uart) gave great insight into how the dumping process should look. [Here's another page](http://router-mod.blogspot.com/2018/09/router-serial-or-uart-port-how-to-find.html) that gave me some valuable hints. No way! [Another page](https://wiki.dd-wrt.com/wiki/index.php/Serial_port_pinouts#TP-Link_TL-WR941ND_v3)?
+The OpenWrt Project provided a fair amount of knowledge on [serial ports](https://openwrt.org/docs/techref/hardware/port.serial), [debricking](https://openwrt.org/docs/guide-user/troubleshooting/generic.debrick) and [Broadcom BCM63xx hardware](https://openwrt.org/docs/techref/hardware/soc/soc.broadcom.bcm63xx). devttys0's [Reverse Engineering Serial Ports](https://web.archive.org/web/20210522202158/http://www.devttys0.com/2012/11/reverse-engineering-serial-ports/) helped too. [This Reddit comment thread](https://www.reddit.com/r/HomeNetworking/comments/cz1fus/archer_vr1600v_modem_router_can_i_install_openwrt/) helped me work out the chipset used. [Googling a bit](https://www.google.com/search?q=UART+port+on+TP+LINK) helped of course, it's all about keywords. CyberArk's [Accessing and Dumping Firmware Through UART](https://web.archive.org/web/20210418170153/https://www.cyberark.com/resources/threat-research-blog/accessing-and-dumping-firmware-through-uart) gave great insight into how the dumping process should look. [Router Serial or UART Port: How to find and Configure](https://web.archive.org/web/20210310093438/https://router-mod.blogspot.com/2018/09/router-serial-or-uart-port-how-to-find.html) gave me some valuable hints. No way! [DD-WRT serial-port pinouts](https://wiki.dd-wrt.com/wiki/index.php/Serial_port_pinouts#TP-Link_TL-WR941ND_v3) too?
 
 ![](/assets/images/2021/img_0695.jpg)
 
@@ -65,7 +65,7 @@ RX (receive) will be less active.
 
 ![](/assets/images/2021/img_0725.jpg)
 
-Let's attach a header and make some bridges at the TX and RX pins, the pinout should be similar to the above two images taken from one of the sites above.
+Let's attach a header and make some bridges at the TX and RX pins. The two images above were useful clues from other TP-Link boards, but I still needed to check my V2 rather than assume its pinout matched.
 
 ![](/assets/images/2021/img_0687.jpg)
 
@@ -1242,7 +1242,7 @@ open DNS error: No such file or directory
 
 ```
 
-Nailed it! Somehow. The boot log reports 134217728 bytes of RAM, or 128 MiB, and identifies the NAND as an ESMT F59L1G81MA with 131072 KiB, or 128 MiB, capacity. It identifies the SoC as BCM63167D0 and also uses BCM963268 as the CFE platform target. The log alone does not establish that BCM963268 is a second main chip, so I should not describe it that way. Remember this is a TP-Link Archer VR1600v V2 (AU).
+Nailed it! Somehow. The boot log reports 134217728 bytes of RAM, or 128 MiB, and identifies the NAND as an ESMT F59L1G81MA with 131072 KiB, or 128 MiB, capacity. It identifies the SoC as BCM63167D0; BCM963268 is the CFE platform target, not evidence of a second main chip. Remember this is a TP-Link Archer VR1600v V2 (AU).
 
 ![](/assets/images/2021/img_0702.jpg)
 
@@ -1263,7 +1263,7 @@ I might have spammed the t key a little too much. That's new, a [CFE prompt](htt
 
 ![](/assets/images/2021/img_0704.jpg)
 
-Running a help commands gives us the lowdown on what's available. Let's start with something basic - dn for dumping the NAND.
+Running the help command gives us the lowdown on what's available. Let's start with something basic: `dn` for dumping the NAND.
 
 ```
 CFE> help
@@ -1437,11 +1437,11 @@ CFE>
 
 ```
 
-The next part gets a little messy, alright messier. After trying a few tools such as [FlashDumpScript](https://github.com/waldo-irc/IOTToolkit/tree/master/FlashDumpScript) and Python 2 vs Python 3 issues. I came across this [Polish forum post](https://web.archive.org/web/20230823000243/https://openrouter.info/forum/viewtopic.php?f=24&t=4818&start=0&_x_tr_sl=pl&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=sc), with the help of Google Translate... I ended up with [this](https://web.archive.org/web/20230822235816/https://openrouter-info.translate.goog/forum/viewtopic.php?f=24&t=4818&start=0&_x_tr_sl=pl&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=sc) - which led me onto [this set of tools](https://github.com/danitool/bootloader-dump-tools) and a slightly newer version [here](https://github.com/Depau/bcm-cfedump).
+The next part gets a little messy. Alright, messier. After trying [FlashDumpScript](https://github.com/waldo-irc/IOTToolkit/tree/master/FlashDumpScript) and getting tangled up in Python 2 versus Python 3 issues, I came across [this Polish forum discussion](https://web.archive.org/web/20230823000243/https://openrouter.info/forum/viewtopic.php?f=24&t=4818&start=0&_x_tr_sl=pl&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=sc). With [Google Translate's help](https://web.archive.org/web/20230822235816/https://openrouter-info.translate.goog/forum/viewtopic.php?f=24&t=4818&start=0&_x_tr_sl=pl&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=sc), it led me to [danitool's bootloader-dump-tools](https://github.com/danitool/bootloader-dump-tools) and [Depau's bcm-cfedump](https://github.com/Depau/bcm-cfedump).
 
 ![](/assets/images/2021/img_0709.jpg)
 
-Above is a quick peek inside the file being dumped. Why, that's html from the web interface.
+Above is a quick peek inside the file being dumped. Why, that's HTML from the web interface.
 
 ![](/assets/images/2021/img_0710.jpg)
 
@@ -1463,7 +1463,7 @@ And the winner is 32 MiB. The boot log reports 128 MiB of NAND, so this was clea
 
 ![](/assets/images/2021/img_0714.jpg)
 
-The firmware for the TP-Link V1600v is not available online except through that pesky auto-download function (TR-069) that we're trying to work around. So I did a quick compare with some available firmware for the TP-Link Archer VR600v V2 and found similarities albeit at different offsets. Progress, is still progress.
+I couldn't find firmware for the TP-Link Archer VR1600v V2 online at the time, apart from that pesky auto-download function (TR-069) we were trying to work around. So I did a quick compare with some available firmware for the TP-Link Archer VR600v V2 and found similarities, albeit at different offsets. Progress is still progress.
 
 ![](/assets/images/2021/img_0705.jpg)
 
@@ -1492,7 +1492,7 @@ Eventually, I entered a command that looked like it might do something. Full of 
 
 ![](/assets/images/2021/img_0715.jpg)
 
-It dumped something overnight at 1.2 bytes per second... but we need to compare. So let's take the firmware for the VR600v again, as we have no frame of reference for the VR1600v V2. So far we have this set of firmware for comparison with our nand\_winner.img firmware.
+It had dumped something overnight, with the progress display reporting 1.2 bytes per second... but we need to compare. Let's take the VR600v firmware again, as I still don't have a known-good VR1600v V2 dump to compare against. So far, we have these three versions to compare with nand\_winner.img.
 
 ```
 Archer_VR600vV2_1.0.0_0.9.1_up_boot(170814)_2017-08-14_18.28.17.bin
@@ -1534,7 +1534,7 @@ PAGE_SIZE = 2048
 
 ```
 
-Actually on second inspection I also modified bcm\_cfedump.py even further with the following code. I think that was to dump the hex on lines that started with the word "read :" - which makes sense. Not all modems are created equally.
+Actually, on second inspection I also modified bcm\_cfedump.py further to skip the extra `read :` status lines. The surviving snippet below has lost its indentation and surrounding loop, so it is a record of that modification, not paste-ready Python. Not all modems are created equally.
 
  
 
@@ -1554,7 +1554,7 @@ The second dump has completed. Filesizes are the same, which should be expected.
 
 ![](/assets/images/2021/img_0719.jpg)
 
-Hmmm, that's not identical. That's exactly 16kB of data that isn't the same. Which means a factory restore does \*something\* but my TPG username is still in there... 🤔
+Hmmm, that's not identical. Hex Fiend shows a 16 KiB region of differences between the two dumps. The factory restore certainly didn't give me the clean slate I was hoping for: my TPG username is still in there... 🤔
 
 ![](/assets/images/2021/img_0690.jpg)
 
@@ -1563,3 +1563,9 @@ And that's it, that's as far as I got. Because the firmware has my credentials i
 ![](/assets/images/2021/img_0691.jpg)
 
 I certainly learnt a lot from this exercise. Would I do it again? Probably not, but now the information is here if I ever do! 😄
+
+### Sources
+
+- [TP-Link Australia - Archer VR1600v](https://www.tp-link.com/au/service-provider/xdsl/archer-vr1600v/)
+- [OpenWrt - Serial port](https://openwrt.org/docs/techref/hardware/port.serial)
+- [Depau - bcm-cfedump](https://github.com/Depau/bcm-cfedump)

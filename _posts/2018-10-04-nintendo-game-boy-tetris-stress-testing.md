@@ -3,6 +3,11 @@ title: "Nintendo Game Boy Tetris Stress Testing"
 author: "Nix McRetro"
 date: 2018-10-04T22:15:39.000+10:00
 categories: [news, nintendo, youtube]
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="NsKZTus88kg" %}

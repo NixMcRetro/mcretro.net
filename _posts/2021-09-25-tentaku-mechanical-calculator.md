@@ -3,6 +3,11 @@ title: "Tentaku Mechanical Calculator"
 author: "Nix McRetro"
 date: 2021-09-25T15:53:52.000+10:00
 categories: [guides]
+last_modified_at: 2026-10-11
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2021/img_0747.jpg)
@@ -11,7 +16,7 @@ This is [A&N Laboratory's Tentaku Mechanical Calculator DIY Kit](https://anlabo.
 
 ![](/assets/images/2021/img_0748.jpg)
 
-Powered by two beefy seven-segment LED displays and a tiny bit of circuitry it makes calculating fun. My build is equipped with Glorious Pandas (non-lubed). I am planning on getting a Glorious PC Gaming Race GMMK Pro 75% Barebone keyboard and wanted to see how well Glorious Pandas thock before getting a full set of key switches.
+With two beefy seven-segment LED display modules and a tiny bit of circuitry, it makes calculating fun. My build is equipped with Glorious Pandas (non-lubed). I am planning on getting a Glorious PC Gaming Race GMMK Pro 75% Barebone keyboard and wanted to see how well Glorious Pandas thock before getting a full set of key switches.
 
 ![](/assets/images/2021/img_0749.jpg)
 
@@ -23,7 +28,7 @@ Powered by 1x AAA battery, just don't forget to remove it when it isn't in use!
 
 ![](/assets/images/2021/img_0751.jpg)
 
-Obligatory 1337. The calculator is limited to six characters for most operations. So while I couldn't fit 8008135 onto it...
+Obligatory 1337. The calculator has a six-digit display. So while I couldn't fit 8008135 onto it...
 
 ![](/assets/images/2021/img_0752.jpg)
 
@@ -31,8 +36,16 @@ I was able to get 80085 loaded in. It's in black and white to be art. Loaded wit
 
 {% include youtube.html id="Hp5NM63PDSA" %}
 
-Assembly was straight forward with the complete build video found on YouTube above.
+Assembly was straightforward. A&N Laboratory's build video above goes through the whole thing.
 
 ![](/assets/images/2021/img_0753.jpg)
 
 1337 with the alternate ENTER key. The keycaps installed are the [Drop MT3 Black-on-White Keycap Set](https://drop.com/buy/drop-mt3-black-on-white-keycap-set). I'll be installing these onto my GMMK Pro. I must admit though the Drop ALT keyboard looks very nice... expensive, but nice. In other news, I've also been working on a device known as the [YamPAD](https://github.com/mattdibi/yampad). More on that in a future post!
+
+### Sources
+
+- [A&N Laboratory - Mechanical Switch Calculator TENTAKU DIY Kit](https://anlabo.booth.pm/items/1069765)
+
+### Related posts
+
+- Later keycap experiment: [Blood Plasma Donation #13](/blood-plasma-donation-13/)

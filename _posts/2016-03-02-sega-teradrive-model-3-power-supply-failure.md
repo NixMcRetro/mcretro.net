@@ -2,10 +2,10 @@
 title: "Sega TeraDrive Model 3 Power Supply Failure"
 author: "Nix McRetro"
 date: 2016-03-02T22:11:47.000+11:00
-last_modified_at: 2026-10-08
+last_modified_at: 2026-10-10
 ai_assistance:
   model: "GPT-6.1 Sol"
-  date: 2026-10-08
+  date: 2026-10-10
   purpose: "fact-checking, sourcing, and editorial quality"
 categories: [ibm-pc, repairs, sega]
 ---
@@ -33,3 +33,7 @@ Anyway, here are some useful links to helpful software. The three Google Drive d
 
 - [Sega TeraDrive Model 3 - Faulty Power Supply (Part 1)](/sega-teradrive-model-3-faulty-power-supply-part-1/)
 - [Sega TeraDrive Model 3 - Faulty Power Supply (Part 2)](/sega-teradrive-model-3-faulty-power-supply-part-2/)
+- [Sega TeraDrive Model 3 - Faulty Power Supply (Part 3)](/sega-teradrive-model-3-faulty-power-supply-part-3/)
+- [Sega TeraDrive Model 3 - Faulty Power Supply (Part 4)](/sega-teradrive-model-3-faulty-power-supply-part-4/)
+- [Sega TeraDrive Model 3 - Faulty Power Supply (Part 5)](/sega-teradrive-model-3-faulty-power-supply-part-5/)
+- [Sega TeraDrive Model 3 - Faulty Power Supply (Part 6)](/sega-teradrive-model-3-faulty-power-supply-part-6/)

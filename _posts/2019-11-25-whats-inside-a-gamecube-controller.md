@@ -3,6 +3,11 @@ title: "What's Inside a GameCube Controller?"
 author: "Nix McRetro"
 date: 2019-11-25T01:16:01.000+11:00
 categories: [nintendo, youtube]
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="DZqS6TC1nSA" %}

@@ -3,24 +3,20 @@ title: "Crunch Those Numbers - SARS-CoV-2"
 author: "Nix McRetro"
 date: 2020-03-15T13:27:35.000+11:00
 categories: [study]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-10
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2020/img_0664.jpg)
 
-[SARS-CoV-2 RBD domain in complex with human ACE2 receptor](https://web.archive.org/web/20210831052250/https://science.sciencemag.org/content/367/6483/1260)
+[SARS-CoV-2 receptor-binding domain modelled in complex with human ACE2, from Folding@home's March 2020 update](https://www.foldingathome.org/news/covid19-update)
 
-There are times when I miss university and getting to learn more about how all the things work. In March 2020, both Rosetta@home and Folding@home were contributing volunteer computing to coronavirus research, although they were doing different kinds of calculations and not every work unit on either platform was necessarily about SARS-CoV-2. The best thing I personally felt I could do from home was donate some compute time.
+There are times when I miss university and getting to learn more about how all the things work. The best thing I personally felt I could do from home was donate some compute time and encourage more people to crunch more numbers through Rosetta@home and Folding@home.
 
-**Rosetta@home**  
-Uses the Rosetta software platform for protein structure prediction and protein design. Coronavirus-related work was among the projects being run through Rosetta@home during this period.
-
-**Folding@home**  
-Runs distributed molecular simulations. By March 2020 it had released SARS-CoV-2 projects studying viral protein dynamics and possible therapeutic targets.
+Rosetta@home uses the Rosetta software platform for protein structure prediction and protein design, while Folding@home runs distributed molecular simulations. Both were contributing to coronavirus research in March 2020, although they were doing different kinds of calculations and not every work unit was necessarily about SARS-CoV-2.
 
 Both are important in different ways. Both now run on my Intel NUC, the NUC8I7BEH. Soon I will upgrade to a fanless solution as the whine of that little fan is driving me crazy. The good news? It tends to stabilise with all four cores chugging along at 3.2GHz at load. Jump on board for science!
 
@@ -30,5 +26,7 @@ By 28 March I had moved the NUC8i7BEH into an Akasa Turing fanless case. After r
 
 ### Sources
 
-- [Folding@home - COVID-19 update](https://foldingathome.org/2020/03/10/covid19-update/)
+- [Folding@home - Folding@home update on SARS-CoV-2 (10 Mar 2020)](https://www.foldingathome.org/news/covid19-update)
+- [Institute for Protein Design - Rosetta's role in fighting coronavirus](https://www.ipd.uw.edu/2020/02/rosettas-role-in-fighting-coronavirus/)
 - [Rosetta@home](https://boinc.bakerlab.org/rosetta/)
+- [Science - Cryo-EM structure of the 2019-nCoV spike in the prefusion conformation](https://web.archive.org/web/20210831052250/https://science.sciencemag.org/content/367/6483/1260)

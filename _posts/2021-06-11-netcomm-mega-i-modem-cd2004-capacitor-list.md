@@ -3,18 +3,18 @@ title: "NetComm Mega-i-Modem CD2004 Capacitor List"
 author: "Nix McRetro"
 date: 2021-06-11T17:06:19.000+10:00
 categories: [modems, repairs]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-11
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2021/img_0727.jpg)
 
-One of the best parts about having retro gear pass through your hands is the chance to document what is actually fitted before doing any maintenance. On this particular late-2008 NetComm Mega-i-Modem CD2004 I recorded the through-hole electrolytics before replacing them. Treat the list below as a record of this unit, not a universal bill of materials: verify the components actually fitted to your board, including polarity, capacitance, voltage rating, ESR, ripple-current requirements and physical size.
+One of the best parts about having retro gear pass through your hands is the chance to document it and do a little preventative maintenance. Lovely little through-hole capacitors! Here's my list for the NetComm Mega-i-Modem, aka CD2004. There's a few models of this fellow; mine was a very late 2008 (!) unit. Check what's actually fitted to your board before ordering replacements, including polarity, capacitance, voltage rating, ESR, ripple-current requirements and physical size.
 
-The last number on the list is the manufacturer part number. Baby sushi denotes that the capacitor is quite small and not needing to be measured. I think they were roughly 11mm (h) x 4mm (w) from memory.
+The part numbers at the end of the rows identify the listed replacements. 'Baby sushi' was my shorthand for the tiny ones whose dimensions I didn't record; I think they were roughly 11 mm high and 4 mm wide from memory. Measure yours before ordering.
 
 The underside reads NetComm CD2004 Mega i 56K Modem, F/W: 3CC4, APN: 9317773009682, S/N: 80600697N0436. The power adapter I used was 9 VAC, 800 mA.
 
@@ -45,4 +45,4 @@ Netcomm Mega-i-Modem - Model CD2004
 
 On other fronts, it's been a busy past few months with life continuing to tick on getting in the way of retro videos. I have parted with almost all of my retro collection now. I am now fully invested in the MiSTer project, powered by the Terasic DE10-Nano.
 
-Looking forward to the [Saturn core](https://www.patreon.com/srg320) work being done. It was unfortunate to lose the [Playstation core](https://www.patreon.com/laxer3a) from active development. That's OK, we can always look forward to it being completed one day. Not today, maybe not any time soon - but one day. Thanks laxer3a for your work! 😊
+Looking forward to the [Saturn core](https://www.patreon.com/srg320) work being done. It was unfortunate to lose the [PlayStation core](https://web.archive.org/web/20210407003423/https://www.patreon.com/laxer3a) from active development. That's OK, we can always look forward to it being completed one day. Not today, maybe not any time soon - but one day. Thanks laxer3a for your work! 😊

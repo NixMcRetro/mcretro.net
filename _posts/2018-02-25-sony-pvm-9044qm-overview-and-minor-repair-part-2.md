@@ -3,6 +3,11 @@ title: "Sony PVM-9044QM Overview and Minor Repair (Part 2)"
 author: "Nix McRetro"
 date: 2018-02-25T06:44:51.000+11:00
 categories: [repairs, sony, youtube]
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="U5Fz1iYT_CY" %}

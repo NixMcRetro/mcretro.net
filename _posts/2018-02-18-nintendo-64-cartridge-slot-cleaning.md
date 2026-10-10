@@ -3,11 +3,11 @@ title: "Nintendo 64 Cartridge Slot Cleaning"
 author: "Nix McRetro"
 date: 2018-02-18T10:33:16.000+11:00
 categories: [nintendo, repairs, youtube]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-10
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="-wrgkwdt5_s" %}
@@ -18,4 +18,4 @@ The old "clean the cartridge contacts with an eraser" trick is abrasive as well.
 
 ### Sources
 
-- [Nintendo Support - Cartridge-Based Console Precautions and Maintenance](https://en-americas-support.nintendo.com/app/answers/detail/a_id/54157/p/50)
+- [Nintendo Support - Health & Safety Precautions: Cartridge-Based Consoles (NES, Super NES, and Nintendo 64)](https://en-americas-support.nintendo.com/app/answers/detail/a_id/54157/p/50)

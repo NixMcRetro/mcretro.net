@@ -3,6 +3,11 @@ title: "Bushfire in the Hunter"
 author: "Nix McRetro"
 date: 2018-02-21T07:17:22.000+11:00
 categories: [youtube]
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="--ZU8a1T4lQ" %}

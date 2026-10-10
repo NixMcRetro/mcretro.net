@@ -3,6 +3,11 @@ title: "Glitchy Goodness on the Mega Drive"
 author: "Nix McRetro"
 date: 2020-01-27T12:51:07.000+11:00
 categories: [hacks, sega]
+last_modified_at: 2026-10-10
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-10
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2020/img_0656.jpg)
@@ -33,8 +38,11 @@ Casino Night Zone? More like... I can't even!
 
 I am pretty sure this was done on a Mega Drive Model 2. However, I don't seem to have labelled my source for what to bend and what not to bend. I'm sure I'll work it out one day.
 
-**Datasheets here:**
-- [2017-05-09-0002 (dragged)](/assets/uploads/2017-05-09-0002-dragged.pdf)
-- [2017-05-09-0002 (dragged) 1](/assets/uploads/2017-05-09-0002-dragged-1.pdf)
+### Sources
 
-For more footage from the same circuit-bending era, see [Circuit Bending on the Mega Drive](/circuit-bending-on-the-mega-drive/).
+- [Annotated VRAM pinout (40-pin SOJ)](/assets/uploads/2017-05-09-0002-dragged.pdf)
+- [Annotated SRAM pinout (28-pin)](/assets/uploads/2017-05-09-0002-dragged-1.pdf)
+
+### Related posts
+
+- [Circuit Bending on the Mega Drive](/circuit-bending-on-the-mega-drive/)

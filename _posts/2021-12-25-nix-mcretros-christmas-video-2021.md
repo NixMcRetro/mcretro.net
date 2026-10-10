@@ -1,8 +1,13 @@
 ---
-title: "Shane McRetro's Christmas Video 2021"
+title: "Nix McRetro's Christmas Video 2021"
 author: "Nix McRetro"
 date: 2021-12-25T19:25:22.000+11:00
 categories: [news, youtube]
+last_modified_at: 2026-10-11
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="qNrWHFk33c8" %}
@@ -13,4 +18,4 @@ Looking back on the year, not a lot really happened for me. Everything was prett
 
 I've also updated the [files server](/files) with some Sega TeraDrive files that were on the now defunct Google Drive. There's more things there for me to sort out as well. Lots of things to do, but no time to do them. Still, I'll keep chugging along for as long as I can! 🏄‍♂️
 
-Anyway, a happy holidays to everyone out there! 🎄 May the new year be a great time for you! 🎉
+Anyway, happy holidays to everyone out there! 🎄 May the new year be a great time for you! 🎉

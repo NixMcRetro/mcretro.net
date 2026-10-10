@@ -3,11 +3,16 @@ title: "Retrobright vs. Banksia Modem"
 author: "Nix McRetro"
 date: 2021-12-21T10:14:18.000+11:00
 categories: [hacks, modems, repairs]
+last_modified_at: 2026-10-11
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2021/img_0778.jpg)
 
-Lots of people I know like [retrobright](https://en.wikipedia.org/wiki/Retrobright). I've never really liked it, seems too much hassle for too little return. Above is a before shot of the modem. Note at this stage the modem had some extensive accidental damage to the PCB - risk of losing this case was a non-issue.
+Lots of people I know like [retrobright](https://en.wikipedia.org/wiki/Retrobright). I've never really liked it. Seems too much hassle for too little return. Above is a before shot of the modem. Note that at this stage the modem had some extensive accidental damage to the PCB, so the risk of losing this case was a non-issue.
 
 ![](/assets/images/2021/img_0779.jpg)
 

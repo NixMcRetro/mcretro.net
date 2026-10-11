@@ -3,16 +3,16 @@ title: "Rebuilding GeoCities on macOS 12"
 author: "Nix McRetro"
 date: 2022-10-12T08:27:53.000+11:00
 categories: [guides, news, raspberry-pi]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-11
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2022/img_0976.jpg)
 
-A while back, some of you may remember that I entered [RetroChallenge 2021/10](https://www.retrochallenge.org/2021/10/). I was [somewhat successfully](/the-geocities-rebuild-worklog/) at a rebuild of the [GeoCities Archive](https://archive.org/details/archiveteam-geocities), also known as The Archive Team Geocities Valhalla, and managed to host it on a Raspberry Pi.
+A while back, some of you may remember that I entered [RetroChallenge 2021/10](https://www.retrochallenge.org/2021/10/). I had [some success](/the-geocities-rebuild-worklog/) rebuilding the [GeoCities Archive](https://archive.org/details/archiveteam-geocities), also known as The Archive Team Geocities Valhalla, and managed to host it on a Raspberry Pi.
 
 Of course it wasn't perfect and I knew that. So since then I've tried to reboot it again using the [GitHub repository from despens](https://github.com/despens/Geocities) as it would potentially solve some of the problems I had when I started to merge data together. But then this happened...
 
@@ -30,9 +30,9 @@ I did find what appears to be a typo in the [despens GitHub](https://github.com/
 
 ![](/assets/images/2022/img_0977.jpg)
 
-GEO SCRIPTS/filer-indexes.pl should probably be GEO SCRIPTS/filter-indexes.pl. Don't worry, I'll fix it in post.
+`$GEO_SCRIPTS/filer-indexes.pl` should probably be `$GEO_SCRIPTS/filter-indexes.pl`. Don't worry, I'll fix it in post.
 
-The following is just for my reference and was more related to the pre-004 steps in despens' instructions under macOS. The block below is my 2022 working notebook, preserved as-is. It is not a current install guide, and package versions, paths and destructive cleanup commands are historical. You can see at the end where the recursive path hit the macOS pathname limit and I headed back to Ubuntu 22.04.
+The following is just for my reference and was more related to the pre-004 steps in despens' instructions under macOS. The block below is my 2022 working notebook, preserved as-is. It is not a current install guide: some lines mix commands with notes, and the package versions, paths and destructive cleanup commands are historical. You can see at the end where the recursive path hit the macOS pathname limit and I headed back to Ubuntu 22.04.
 
 ```
 Verify and complete your Geocities Download
@@ -102,14 +102,17 @@ Mac OS limit of ~1024 characters
 /Volumes/GeoCities/work/geocities/YAHOOIDS/E/n/EnchantedForest/Dell/2237/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino-d.html
 ```
 
-![](/assets/images/2022/img_0976a.jpg){: width="100" style="float:left; margin:0 1em 0.5em 0;"} For now, I'm back in the game with [RetroChallenge 2022/10](https://www.retrochallenge.org/2022/) doing something similar but different on hardware and software from 2012. I'm thinking a Mac Pro and Ubuntu 12.04.5. This should result in less errors and a more accurate replication of despens results. :)
+![](/assets/images/2022/img_0976a.jpg){: width="100" style="float:left; margin:0 1em 0.5em 0;"} For now, I'm back in the game with [RetroChallenge 2022/10](https://www.retrochallenge.org/2022/) doing something similar but different on hardware and software from 2012. I'm thinking a Mac Pro and Ubuntu 12.04.5. This should result in fewer errors and a more accurate replication of despens' results. :)
+
+### Sources
+
+- [Apple - Mac OS X intro(2): file and pathname limits](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man2/intro.2.html)
+- [despens - GeoCities rebuild repository and README](https://github.com/despens/Geocities)
+- [One Terabyte of Kilobyte Age - Verify and complete your Geocities Download via HTTP](https://blog.geocities.institute/archives/3209)
+- [One Terabyte of Kilobyte Age - Resolving conflicts](https://blog.geocities.institute/archives/3288)
 
 ### Related posts
 
 - [The GeoCities Rebuild Worklog](/the-geocities-rebuild-worklog/)
 - [RetroChallenge 2022/10 - GeoCities Rebuild on Dial-up at 14.4k](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-14-4k/)
 - [RetroChallenge 2022/10 - GeoCities Rebuild on Dial-up at 28.8k](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-28-8k/)
-
-### Sources
-
-- [Apple - macOS file and pathname limits](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man2/intro.2.html)

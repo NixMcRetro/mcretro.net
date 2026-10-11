@@ -1,13 +1,18 @@
 ---
-title: "Stray and Every Day Life"
+title: "Stray (2022, PS4 Live Stream) and Everyday Life"
 author: "Nix McRetro"
 date: 2022-09-28T22:51:43.000+10:00
 categories: [gaming, sony, youtube]
+last_modified_at: 2026-10-11
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="rpQX0S7XpyU" %}
 
-Recently, there's been more tumbleweeds than posts. I've moved house. That took a lot out of me. The old landlords had decided to sell. I'd be understating it if I said that it was annoying losing your home every so often, but I get it - money is nice. Heck, I like money!  
+Recently, there have been more tumbleweeds than posts. I've moved house, and that took a lot out of me. The old landlords had decided to sell. I'd be understating it if I said that it was annoying losing your home every so often, but I get it - money is nice. Heck, I like money!  
 
 > "I can't believe you like money too. We should hang out."
 > 
@@ -19,7 +24,7 @@ On a positive note, moving has given me the opportunity to slap new feet on my e
 
 ![](/assets/images/2022/img_0955.jpg)
 
-Then I might have went on a bit of an [anime binge](https://myanimelist.net/animelist/NixMcRetro). A little bit of FLCL here, Space Dandy there and a sprinkling of Martian Successor Nadesico, Serial Experiments Lain and of course some Panty & Stocking with Garterbelt. Not listed is the pictured Angel Beats.
+Then I might have gone on a bit of an [anime binge](https://myanimelist.net/animelist/NixMcRetro). A little bit of FLCL here, Space Dandy there and a sprinkling of Martian Successor Nadesico, Serial Experiments Lain and of course some Panty & Stocking with Garterbelt. Not listed is the pictured Angel Beats.
 
 ![](/assets/images/2022/img_0956.jpg)
 
@@ -27,7 +32,7 @@ Which then led on to me getting around to finishing Stray. Took me long enough, 
 
 ![](/assets/images/2022/img_0957.jpg)
 
-Was it because I got distracted by IDE hard drives, Creative Sound Blasters and other goodies in the game? Look, it might have played a part who am I to tell! Ohhhoooo a box!
+Was it because I got distracted by IDE hard drives, Creative Sound Blasters and other goodies in the game? Look, it might have played a part. Who am I to tell! Ohhhoooo a box!
 
 ![](/assets/images/2022/img_0958.jpg)
 
@@ -43,8 +48,8 @@ Neither would I. Stray would have been a lot easier without all those damn off-b
 
 ![](/assets/images/2022/img_0961.jpg)
 
-Ahhh, such familiarity. One day I'll pickup a PS5 slim. I guess Sony will have to release it first though. I can't physically fit a PS5 under my TV because of the weird shape they went with and Xbox isn't much better, at least they kept edges instead of curves.
+Ahhh, such familiarity. One day I'll pick up a PS5 slim. I guess Sony will have to release it first though. I can't physically fit a PS5 under my TV because of the weird shape they went with and Xbox isn't much better; at least they kept edges instead of curves.
 
 ![](/assets/images/2022/img_0962.jpg)
 
-Would I play Stray again? Probably not. Would I watch someone else play it? Absolutely! Head back to the top to watch the entire playlist of my Stray (2022) gameplay that I spammed out on my trusty PlayStation 4 slim. I'm surprised it only crashed twice! :)
+Would I play Stray again? Probably not. Would I watch someone else play it? Absolutely! Head back to the top for a taste of my Stray (2022) gameplay that I spammed out on my trusty PlayStation 4 slim. I'm surprised it only crashed twice! :)

@@ -3,24 +3,24 @@ title: "GeoCities Downtime - WD Blue SA510 1TB WDS100T3B0B Failure"
 author: "Nix McRetro"
 date: 2023-04-09T13:15:37.000+10:00
 categories: [raspberry-pi]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2023/img_1002.jpg)
 
-Back on 31 December 2022, GeoCities crashed hard when its WD Blue SA510 1 TB SSD, model WDS100T3B0B, became unusable for normal writes. The drive was running firmware 52008100. Western Digital later published critical firmware updates for this SA510 family: 52020100 addressed drives not being recognised, and a later 52046100 release addressed a condition where a drive could enter read-only mode. That makes firmware a very relevant suspect here, but my one failed drive does not prove firmware was the only possible cause.
+Back in late December, and I'm talking right on 31 December 2022, GeoCities crashed hard. Its SSD had become unusable for normal writes while running firmware 52008100. Firmware, I'm looking at you! It was a very relevant suspect, though this one failed drive doesn't prove it was the only possible cause.
 
 ![](/assets/images/2023/img_1003.jpg)
 
-The hardware failure of the the WD Blue SATA blade hard drive powering GeoCities was enough to take it offline. It was a WD Blue SA510 1TB model WDS100T3B0B.
+The failed drive powering GeoCities was a WD Blue SA510 1 TB M.2 SATA SSD, model WDS100T3B0B. That little blade-shaped SSD was enough to take the whole site offline.
 
 ![](/assets/images/2023/img_1007.jpg)
 
-After 606 hours and 43 power cycles it was in read-only mode (GeoCities data is still there when read with [iBored](https://apps.tempel.org/iBored/)) in Ubuntu and Mac OS but doesn't show anything in Windows. Being overly cautious, I had another drive ready to go. The bad news is, that other drive was of the same vintage. It should be noted that the 606 power-on hours is probably a result of being on since the [RetroChallenge 2022/10](https://www.retrochallenge.org/2022/11/finish-line.html).
+The drive reported 606 power-on hours and 43 power cycles, and it was behaving as read-only. GeoCities data was still there when read with [iBored](https://apps.tempel.org/iBored/). I could read it in Ubuntu and macOS, but couldn't get at the data in my Windows setup, even though WD Dashboard could see the drive. Being overly cautious, I had another drive ready to go. The bad news is, that other drive was of the same vintage. This was the drive I'd been using for [RetroChallenge 2022/10](https://www.retrochallenge.org/2022/11/finish-line.html); its reported power-on hours aren't a measure of the calendar time since then.
 
 ![](/assets/images/2023/img_1006.jpg)
 
@@ -28,11 +28,11 @@ The above is my secondary drive, the offline backup for GeoCities. Interestingly
 
 ![](/assets/images/2023/img_1004.jpg)
 
-[I was not alone](https://community.wd.com/t/wd-blue-250-gb-sa510-issues/279814). Both drives were running some [bad firmware from Western Digital](https://web.archive.org/web/20230519165540/https://support-en.wd.com/app/answers/detailweb/a_id/50208). The good news is, [there was an update](https://web.archive.org/web/20231015000448/https://support-en.wd.com/app/answers/detailweb/a_id/50208/kw/SA510).
+[I was not alone](https://community.wd.com/t/wd-blue-250-gb-sa510-issues/279814). Both drives were running 52008100, one of the firmware versions covered by [Western Digital's critical update notice](https://web.archive.org/web/20230519165540/https://support-en.wd.com/app/answers/detailweb/a_id/50208). The good news was that 52020100 was available, and my backup drive accepted it. WD's [later release history](https://web.archive.org/web/20231015000448/https://support-en.wd.com/app/answers/detailweb/a_id/50208/kw/SA510) dates that detection fix to 27 October 2022, before this failure. It also lists 52046100, dated 25 May 2023, for a read-only issue. That second fix came after this April post, so it helps explain the firmware suspicion in hindsight; it wasn't the update I was trying here.
 
 ![](/assets/images/2023/img_1005.jpg)
 
-The failed drive could not update from 52008100 to 52020100 through WD Dashboard. It was already stuck in the failure state, so the firmware updater was not a recovery tool for it. After a quick warranty check and message to the initial seller, it was sent back for repair or replacement.
+The failed drive wouldn't update from 52008100 to 52020100 through WD Dashboard. I couldn't recover it that way, so after a quick warranty check and message to the initial seller, it was sent back for repair or replacement.
 
 ![](/assets/images/2023/img_1008.jpg)
 
@@ -40,4 +40,12 @@ Not too long later I received a replacement and copied GeoCities back across, co
 
 ### Sources
 
-- [Western Digital / SanDisk - WD Blue SA510 SATA SSD critical firmware updates](https://support-en.sandisk.com/app/answers/detailweb/a_id/50208)
+- [Western Digital - WD Blue SA510 SATA SSDs Critical Firmware Update Available](https://web.archive.org/web/20230519165540/https://support-en.wd.com/app/answers/detailweb/a_id/50208)
+- [Western Digital / SanDisk - WD Blue SA510 SATA SSD Critical Firmware Update and release history](https://support-en.sandisk.com/app/answers/detailweb/a_id/50208/~/wd-blue-sa510-sata-ssd-critical-firmware-update)
+
+### Related posts
+
+- [The GeoCities Rebuild Worklog](/the-geocities-rebuild-worklog/)
+- [Rebuilding GeoCities on macOS 12](/rebuilding-geocities-on-macos-12/)
+- [RetroChallenge 2022/10 - GeoCities Rebuild on Dial-up at 14.4k](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-14-4k/)
+- [RetroChallenge 2022/10 - GeoCities Rebuild on Dial-up at 28.8k](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-28-8k/)

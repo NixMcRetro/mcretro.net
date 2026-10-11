@@ -3,11 +3,11 @@ title: "Avtek Mega Modem 1234"
 author: "Nix McRetro"
 date: 2023-07-21T13:42:40.000+10:00
 categories: [linux, modems, repairs]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="a2gDiMr5X8k" %}
@@ -24,7 +24,7 @@ Geez, that Daewoo one doesn't look too good. Haven't seen a Daewoo car in years 
 
 ![](/assets/images/2013/img_0409.jpg)
 
-I didn't keep very good notes on this one regarding capacitors. But you can always find more in the [photo gallery](/photos) if you need it. It looks like we just replaced the failing caps with ones we had on hand in May 2022 - FM and FR series Panasonics.
+I didn't keep very good notes on this one regarding capacitors. I'd put more photos in the [photo gallery](/photos), though the gallery is currently offline. It looks like we replaced the failing caps with ones we had on hand in May 2022 - FM and FR series Panasonics.
 
 ![](/assets/images/2023/img_1034.jpg)
 
@@ -36,7 +36,7 @@ During testing the initialisation string used was AT&FS0=0V1X3. ATI9 identified 
 
 ![](/assets/images/2023/img_1032.jpg)
 
-Interestingly, I could not find an external model number beyond "Mega Modem 1234" on the front. The ATI9 string identifies it as `AutoModem 1234PCi Vers 500m (C) NetComm 1991`.
+Interestingly, I couldn't find an external model number beyond "Mega Modem 1234" on the front. At least that label survived, unlike the handwritten firmware sticker.
 
 ![](/assets/images/2023/img_1033.jpg)
 
@@ -44,13 +44,13 @@ I had been calling it AM1234 because that looked consistent with some later NetC
 
 {% include youtube.html id="cqpAJREkahY" %}
 
-Here's an slightly older video showing the modem performing a blind dial and then a stable connection once the VoIP was configured... correctly, better, less worse. 😅 Slow and steady.
+Here's a slightly older video showing the modem performing a blind dial and then a stable connection once the VoIP was configured... correctly, better, less worse. 😅 Slow and steady.
 
 ![](/assets/images/2023/img_1035.jpg)
 
 But geez, with a bit of patience I managed to clock roughly six megabytes in each direction during extended ping testing. No small feat for 2400 bps.
 
-One important lesson this modem taught me was specific to this unit: feeding DC into its 9 V AC input was enough to power some logic, but the modem would not dial. That is consistent with part of the analogue or line circuitry needing the AC supply arrangement. It is not a universal rule that every AC-input modem will safely tolerate arbitrary DC, so the correct adapter remains 9 V AC for this modem.
+One important lesson this modem taught me: its **9 V AC** input really wanted **AC**. With DC, some logic came alive, but the modem wouldn't dial. It looked as though part of the analogue or line circuitry was missing the supply it needed. That's what happened with this unit, not permission to try either DC polarity on every AC-input modem. The correct adapter for this one remains 9 V AC with a barrel-type plug.
 
 ![](/assets/images/2023/img_1037.jpg)
 

@@ -3,11 +3,11 @@ title: "Banksia BIT Blitzer 124E Dial-up Modem - Model BBM124E-B2CL"
 author: "Nix McRetro"
 date: 2023-06-30T22:31:21.000+10:00
 categories: [linux, modems, repairs]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="cyZtVOeXYCg" %}
@@ -20,7 +20,7 @@ Not the fastest, but the cool factor is pretty high on this modem. Look at all t
 
 ![](/assets/images/2023/img_1026.jpg)
 
-The firmware is dated `891210`, so 10 December 1989 if that field is a date. If you're interested in the ROM, you can download it [here](/files/dumps/). This was dumped using a [TL866CS programmer](https://proghq.org/wiki/TL866). The PCB has the markings Banksia Bit Blitzer 124E/1234E-A, which suggests the same board design was used across multiple models.
+The firmware reports `891210`, so 10 December 1989 if that field is a date. I dumped the ROM using a [TL866CS programmer](https://proghq.org/wiki/TL866) and originally shared it through the [file server](/files/dumps/), but the download is currently unavailable. The PCB has the markings Banksia Bit Blitzer 124E/1234E-A, which suggests a shared board design across models; it doesn't establish that every version had identical components.
 
 {% include youtube.html id="As8rEfB5iCw" %}
 
@@ -28,9 +28,9 @@ Above is part two following on from the video at the start of this post. Some of
 
 ![](/assets/images/2023/img_1028.jpg)
 
-Here's the Arlec power supply that came with it running on 240V 50Hz power it steps it down a little to 9V AC at 500mA. Other markings on the power supply are APP. NO. V/79309/61227. You can find more photos over in the [photo gallery](/photos).
+Here's the Arlec power supply that came with it: 240 V AC at 50 Hz in, 9 V AC at 500 mA out. Other markings on the power supply are APP. NO. V/79309/61227. I'd put more photos in the [photo gallery](/photos), though the gallery is currently offline.
 
-Next up we have data from the modem itself and what might be a functioning AT string, probably found thanks to [wvdialconf](https://wiki.archlinux.org/title/Wvdial).
+Next up we have data from the modem itself and the `AT&FS0=0V1X3` initialisation string I used, probably found thanks to [wvdialconf](https://wiki.archlinux.org/title/Wvdial). It reached `CONNECT 2400` in this test; that doesn't make it the best init string for every setup.
 
 ```
 ---------- 2023-05-27 16:19:13 +1000: Logging Started ----------
@@ -97,7 +97,7 @@ CONNECT 2400
 
 ```
 
-Last but not least, we have the original capacitor values and what they were replaced with. The list below records this BBM124E-B2CL, serial 303159. Treat it as a record of this board rather than a universal Banksia bill of materials; verify the parts actually fitted before ordering replacements. The parts listed below are manufacturer part numbers. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
+Last but not least, we have the original capacitor values and what they were replaced with. The list below records this BBM124E-B2CL, serial 303159. Before copying it, check the actual board and fitted capacitor type, polarity, capacitance, voltage rating, ESR, ripple-current and temperature ratings, lead spacing and physical fit. A higher voltage rating alone doesn't establish a suitable replacement. The parts listed below are manufacturer part numbers. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
 
 ```
 Radial Electrolytic
@@ -123,3 +123,12 @@ C11		1000uF	25V	12mm (W) x 20mm (H)	35ZLH1000MEFC12.5X20 - Rubycon ZLH Series, 3
 ```
 
 This modem has been donated to the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/).
+
+### Sources
+
+- [Rubycon - Aluminum Electrolytic Capacitor Technical Notes](https://www.rubycon.co.jp/wp-content/uploads/products-aluminum/al-technical-note_en.pdf)
+- [Panasonic - EEUFR1V330B FR-series capacitor specifications](https://industrial.panasonic.com/ww/products/pt/aluminum-cap-lead/models/EEUFR1V330B)
+
+### Related posts
+
+- [Banksia BIT Blitzer 124E Dial-up Modem - Dial Testing](/banksia-bit-blitzer-124e-dial-up-modem-dial-testing/)

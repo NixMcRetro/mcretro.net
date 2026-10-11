@@ -3,6 +3,11 @@ title: "Saturated Skinks and Stink Bugs"
 author: "Nix McRetro"
 date: 2022-01-16T09:56:56.000+11:00
 categories: [nature]
+last_modified_at: 2026-10-11
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2022/img_0792.jpg)
@@ -11,7 +16,7 @@ A friend who happens to be a photography enthusiast sent me through the above an
 
 ![](/assets/images/2022/img_0793.jpg)
 
-We have the [Tree Skink](https://en.wikipedia.org/wiki/Tree-crevice_skink), Egernia striolata, unironically on a rock as it is also known as the Rock Skink. These photos have all been saturated to maximum and vignette added. It actually makes them look quite good in the otherwise dull Australian outback. Let's see what else it might work on.
+We have the [Tree Skink](https://en.wikipedia.org/wiki/Tree-crevice_skink), Egernia striolata, unironically on a rock as it is also known as the Rock Skink. These photos have all been saturated to maximum with a vignette added. It actually makes them look quite good in the otherwise dull Australian outback. Let's see what else it might work on.
 
 ![](/assets/images/2022/img_0795.jpg)
 

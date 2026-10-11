@@ -3,6 +3,11 @@ title: "Spur-Legged Phasmid (Didymuria violescens) Found!"
 author: "Nix McRetro"
 date: 2022-01-11T18:52:47.000+11:00
 categories: [nature, youtube]
+last_modified_at: 2026-10-11
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="838vUIPhqH0" %}

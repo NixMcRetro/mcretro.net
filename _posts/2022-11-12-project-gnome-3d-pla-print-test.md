@@ -3,11 +3,16 @@ title: "Project Gnome - 3D PLA Print Test"
 author: "Nix McRetro"
 date: 2022-11-12T08:56:30.000+11:00
 categories: [nature, youtube]
+last_modified_at: 2026-10-11
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="e6kyW1GmWlk" %}
 
-I don't own many things. However, I do own this gnome. This heavy, concrete gnome. I don't have a garden or any outdoor space because those things are expensive where I live. _Sigh._ Luckily, I was able to leverage the power of [photogrammetry](https://guides.lib.unc.edu/c.php?g=716413&p=5098011) and [Agisoft Metashape](https://en.wikipedia.org/wiki/Metashape) to make the gnome a digital 3D model.
+I don't own many things. However, I do own this gnome. This heavy, concrete gnome. I don't have a garden or any outdoor space because those things are expensive where I live. _Sigh._ Luckily, I was able to turn him into a digital 3D model using [photogrammetry](https://guides.lib.unc.edu/c.php?g=716413&p=5098011) and [Agisoft Metashape](https://en.wikipedia.org/wiki/Metashape).
 
 ![](/assets/images/2022/img_0987.jpg)
 
@@ -19,6 +24,6 @@ Here's our garden gnome in the present day. A little worn, but still looks like 
 
 ![](/assets/images/2022/img_0988.jpg)
 
-He can live inside the computer as a 3D model, or thanks to [augmented reality](https://web.archive.org/web/20251207102228/https://www.apple.com/au/augmented-reality/), project out into lounge room or even kitchen sink (scale is no issue!). And of course, you can always 3D print more to carry around and throw at people... or whatever one would do with Pocket Gnomes (Patent pending).
+He can live inside the computer as a 3D model or, thanks to [augmented reality](https://web.archive.org/web/20221111200747/https://www.apple.com/au/augmented-reality/), appear in my lounge room or even the kitchen sink (scale is no issue!). And of course, you can always 3D print more to carry around and throw at people... or whatever one would do with Pocket Gnomes (Patent pending).
 
 You can find more gnome photos in the [photo gallery](/photos) under Project Gnome. I'll likely be doing a future post on how all this came about as the photogrammetry software, Metashape, was quite interesting and very fun to work with! 😀

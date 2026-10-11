@@ -3,11 +3,16 @@ title: "RetroChallenge 2022/10 - GeoCities Rebuild on Dial-up at 28.8k"
 author: "Nix McRetro"
 date: 2022-11-07T18:40:55.000+11:00
 categories: [raspberry-pi, youtube]
+last_modified_at: 2026-10-11
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="MnZkWuE0UmM" %}
 
-That's right, we doubled the speed to 28.8k, but it's still only 28.8k... maybe that's why the video is four hours long. Haha! Or maybe it's because I was searching for the perfect [Evangelion](https://en.wikipedia.org/wiki/Neon_Genesis_Evangelion) midi. I do need to find some new [SoundFonts](https://en.wikipedia.org/wiki/SoundFont)!
+That's right, we doubled the speed to 28.8k, but it's still only 28.8k... maybe that's why the video is four hours long. Haha! Or maybe it's because I was searching for the perfect [Evangelion](https://en.wikipedia.org/wiki/Neon_Genesis_Evangelion) MIDI. I do need to find some new [SoundFonts](https://en.wikipedia.org/wiki/SoundFont)!
 
 ![](/assets/images/2022/img_0985.jpg)
 
@@ -17,4 +22,8 @@ We were using the Spirit Viper V.34 external modem on the client-side. These wer
 
 The Spirit Viper V.34 is a nice looking modem internally too. Those capacitors at the front are close enough to touch the plastic top. If one ever vented or leaked, that clearance would be less than... well let's just say [Melty Blood](https://en.wikipedia.org/wiki/Melty_Blood). I'm still waiting for a backorder to arrive with potentially suitable replacements, but as we all know, the chip shortage continues.
 
-Previous: [RetroChallenge 2022/10 - GeoCities Rebuild on Dial-up at 14.4k](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-14-4k/)
+### Related posts
+
+- [The GeoCities Rebuild Worklog](/the-geocities-rebuild-worklog/)
+- [Rebuilding GeoCities on macOS 12](/rebuilding-geocities-on-macos-12/)
+- [RetroChallenge 2022/10 - GeoCities Rebuild on Dial-up at 14.4k](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-14-4k/)

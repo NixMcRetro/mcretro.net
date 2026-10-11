@@ -3,6 +3,11 @@ title: "New Game Console, Redundancy, Modems and Cicadas"
 author: "Nix McRetro"
 date: 2023-06-26T18:52:46.000+10:00
 categories: [gaming, livestream, news]
+last_modified_at: 2026-10-12
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="6biKPJ_JXDw" %}
@@ -15,7 +20,7 @@ But I mean look at this, it's part 2 of 2 and it's still 1080p 60fps streaming! 
 
 ![](/assets/images/2023/img_1025.jpg)
 
-She's a beefy one, a [CFI-1202A](https://www.theverge.com/2022/9/7/23340577/sony-ps5-new-design-motherboard-less-power-lighter), that's the least beefy one so far - the middle one, and it barely fits in my entertainment unit - but it does and horizontally at that! VCR-sized appliances are back, baby! The slims aren't here and I've waited as long as I can. The amount of heat it exhausts is crazy... and the 825 GB storage is full already.
+She's a beefy one, a [CFI-1202A](https://www.theverge.com/2022/9/7/23340577/sony-ps5-new-design-motherboard-less-power-lighter). The 1200-series internals are the middle set in the comparison above, from [Austin Evans's PS5 teardown](https://www.youtube.com/watch?v=21vJ9XBozeI), shared via The Verge. That's the least beefy version so far, and it barely fits in my entertainment unit - but it does, and horizontally at that! VCR-sized appliances are back, baby! The slims aren't here and I've waited as long as I can. The amount of heat it exhausts is crazy... and I've already filled the usable space on its built-in 825 GB SSD.
 
 ![](/assets/images/2023/img_1024.jpg)
 
@@ -23,4 +28,9 @@ In other news, I'm being made redundant at the end of this week. Among many othe
 
 ![](/assets/images/2023/img_1023.jpg)
 
-On the topic of YouTube, there's a lot of cicada related video for me to sift through as well for the [Super Nature World YouTube channel](https://www.youtube.com/@SuperNatureWorld). On the blog front, we now have Mastodon sharing via Jetpack for Wordpress to my brand new [Mastodon feed](https://mastodon.social/@NixMcRetro). Coupling Mastodon with a sprinkling of Facebook and [Tumblr](https://www.tumblr.com/nixmcretro), I think we'll be OK. I'll try to post to Twitter when I remember but it won't be [automattic](https://automattic.com/about/) anymore... ha ha ha! 😉
+On the topic of YouTube, there's a lot of cicada related video for me to sift through as well for the [Super Nature World YouTube channel](https://www.youtube.com/@SuperNatureWorld). On the blog front, we now have Mastodon sharing via Jetpack for WordPress to my brand new [Mastodon feed](https://mastodon.social/@NixMcRetro). Coupling Mastodon with a sprinkling of Facebook and [Tumblr](https://www.tumblr.com/nixmcretro), I think we'll be OK. I'll try to post to Twitter when I remember but it won't be [automattic](https://automattic.com/about/) anymore... ha ha ha! 😉
+
+### Sources
+
+- [Austin Evans - The new PS5 is BETTER](https://www.youtube.com/watch?v=21vJ9XBozeI)
+- [Sony - CFI-1202A PS5 Safety Guide, specifications](https://www.playstation.com/content/dam/global_pdc/en-au/corporate/support/manuals/ps5-docs/1200a/CFI-12XXA_PS5_Safety_Guide%24en-au.pdf)

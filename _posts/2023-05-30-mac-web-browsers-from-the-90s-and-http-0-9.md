@@ -3,16 +3,16 @@ title: "Mac Web Browsers from the 90s and HTTP/0.9"
 author: "Nix McRetro"
 date: 2023-05-30T21:26:09.000+10:00
 categories: [ibm-pc, youtube]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="Wn0RECnBTg8" %}
 
-Here I was thinking I had an 11 minute voiceover but I misread the timeline. I'll never use a script, I'm too lazy. Enjoy my half-completed thoughts above. You'll work it out. The protocol I was wrestling with was HTTP/0.9, not "HTML/0.9". HTML is the document format; HTTP is the protocol carrying it. The following issues we encountered are in no particular order - it adds to the fun! 😉
+Here I was thinking I had an 11-minute voiceover but I misread the timeline. I'll never use a script, I'm too lazy. Enjoy my half-completed thoughts above. You'll work it out. The protocol I was wrestling with was HTTP/0.9, not "HTML/0.9". HTML is the document format; HTTP is the protocol carrying it. The following issues we encountered are in no particular order - it adds to the fun! 😉
 
 ![](/assets/images/2023/img_1016.jpg)
 
@@ -36,15 +36,15 @@ Forbidden address. Ahhh yes. I believe this was caused by Cloudflare doing somet
 
 ![](/assets/images/2023/img_1018.jpg)
 
-So I resorted to telnet, which is very old-internet friendly as long as you type the request correctly. A true HTTP/0.9 request is just a one-line `GET` request with no HTTP version token or request headers. Throwing modern expectations, name-based virtual hosting and Cloudflare into the path made this a lot less simple than it sounds. HTTP/0.9 has no `Host` header, so it cannot select between name-based virtual hosts. I messed with the proxy settings a bit more, possibly disabling Cloudflare completely for testing and...
+So I resorted to telnet, which is very old-internet friendly it turns out. A simple `GET /` sent to retrojunkie.net resulted in... a bad request... with a sprinkling of Cloudflare, which was supposed to be disabled. The screenshot catches that in all its glory. A true HTTP/0.9 request is just that one-line `GET` with no HTTP version token or request headers. It has no `Host` header, so it can't select between name-based virtual hosts. I messed with the proxy settings a bit more, possibly disabling Cloudflare completely for testing and...
 
 ![](/assets/images/2023/img_1019.jpg)
 
-Telnet successfully gets the root! By this point I'd opted to mess with the GeoCities subdomain. Now what about a web browser?
+Telnet successfully gets the root! This time I connected directly to the server's IP and got the GeoCities HTML back from a simple `GET /`. By this point I'd opted to mess with the GeoCities subdomain. Now what about a web browser?
 
 ![](/assets/images/2023/img_1020.jpg)
 
-One IP address, one resolved website. That means these would now load on older browsers.
+One IP address, one default website. That gave these older clients somewhere useful to land even without a `Host` header.
 
 ![](/assets/images/2023/img_1010.jpg)
 
@@ -56,7 +56,7 @@ And it works a charm.
 
 ![](/assets/images/2023/img_1011.jpg)
 
-Well close enough to a charm. Especially given "charset-UTF-8" wasn't yet the rage and ISO-8859-1 would rule supreme for a while longer.
+Well, close enough to a charm. Especially given `charset=UTF-8` wasn't yet the rage and ISO-8859-1 would rule supreme for a while longer.
 
 `sudo tail -f /var/log/apache2/access.log`
 
@@ -68,11 +68,11 @@ MacWeb/F2.0 uses libwww/2.17 - There's that F for French again...
 
 ![](/assets/images/2023/img_1022.jpg)
 
-MacMosaicB6 uses libwww2.09 - MacMosaicB6 is any pre-2.0 version. In our case 1.0.3.
+Mosaic identifies itself in this log as `MacMosaicB6 libwww2.09`. Our copy is version 1.0.3, as the splash screen shows. That user-agent string tells us what this copy reported; it doesn't establish that every pre-2.0 Mac Mosaic version used the same string.
 
 ![](/assets/images/2023/img_1017.jpg)
 
-And our Windows Mozilla 1.0, unsurprisingly perhaps, uses Mozilla/1.0 (Windows).
+And our Windows Netscape 1.0 identifies itself as `Mozilla/1.0 (Windows)`.
 
 What's perhaps most interesting in these examples is the request protocol recorded by Apache. The old clients were reaching the server as HTTP/1.0. A real HTTP/0.9 request would just be a one-line `GET /path` with no HTTP version token and no request headers. Apache was not detecting an "HTML version" here at all; I had been mixing up the page format with the transport protocol.
 
@@ -80,10 +80,16 @@ This also corrects my earlier [Macintosh Classic, RaSCSI and The Internet](/maci
 
 ### Sources
 
-Here's some of the pages I followed to get this to work, a big thanks to each of the authors!
-- [https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP)
-- [https://metalbabble.wordpress.com/2020/02/08/the-final-frontier-connecting-a-macintosh-se-to-the-internet-with-a-raspberry-pi/](https://metalbabble.wordpress.com/2020/02/08/the-final-frontier-connecting-a-macintosh-se-to-the-internet-with-a-raspberry-pi/)
-- [http://www.mirrorservice.org/sites/browsers.evolt.org/browsers/macweb/macweb.htm](http://www.mirrorservice.org/sites/browsers.evolt.org/browsers/macweb/macweb.htm)
-- [http://www.kafsemo.org/2015/01/03_talking-HTTP-0.9%2C1.0%2C1.1.html](http://www.kafsemo.org/2015/01/03_talking-HTTP-0.9%2C1.0%2C1.1.html)
-- [http://www.tobymackenzie.com/blog/2018/02/18/supporting-http-0-9/](http://www.tobymackenzie.com/blog/2018/02/18/supporting-http-0-9)
-- [https://datatracker.ietf.org/doc/html/rfc7230#appendix-A.2](https://datatracker.ietf.org/doc/html/rfc7230#appendix-A.2)
+Here's some of the pages I followed to get this to work, a big thanks to each of the authors! RFC 1945 also spells out the difference between the simple HTTP/0.9 request and a full HTTP/1.0 request.
+
+- [MDN - Evolution of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP)
+- [Metalbabble - The final frontier: connecting a Macintosh SE to the Internet with a Raspberry Pi](https://metalbabble.wordpress.com/2020/02/08/the-final-frontier-connecting-a-macintosh-se-to-the-internet-with-a-raspberry-pi/)
+- [Web browsers for antique Macs](http://www.mirrorservice.org/sites/browsers.evolt.org/browsers/macweb/macweb.htm)
+- [Kafsemo - Talking HTTP/0.9, 1.0, 1.1](http://www.kafsemo.org/2015/01/03_talking-HTTP-0.9%2C1.0%2C1.1.html)
+- [Toby Mackenzie - Supporting HTTP 0.9](http://www.tobymackenzie.com/blog/2018/02/18/supporting-http-0-9)
+- [RFC 7230, Appendix A.2 - Changes from RFC 2616](https://datatracker.ietf.org/doc/html/rfc7230#appendix-A.2)
+- [RFC 1945 - Hypertext Transfer Protocol HTTP/1.0, Sections 4 and 5](https://www.rfc-editor.org/rfc/rfc1945.html#section-4)
+
+### Related posts
+
+- [Macintosh Classic, RaSCSI and The Internet](/macintosh-classic-rascsi-and-the-internet/)

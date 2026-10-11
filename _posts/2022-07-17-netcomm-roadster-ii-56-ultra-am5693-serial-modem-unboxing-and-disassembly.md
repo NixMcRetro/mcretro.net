@@ -3,11 +3,11 @@ title: "NetComm Roadster II 56 Ultra (AM5693) Serial Modem Unboxing and Disassem
 author: "Nix McRetro"
 date: 2022-07-17T22:03:11.000+10:00
 categories: [ibm-pc, youtube]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-11
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="RmtcMSIBuBI" %}
@@ -18,4 +18,6 @@ In this video I unbox an AM5693 and compare the internals with an AM5690. Some i
 
 The Banksia Wave SP 56, model BD4064S Rev. 2, uses a BT134 Rev F board that appears to share the same PCB design as this NetComm Roadster II Ultra 56K AM5693. The earlier Banksia Wave SP 56 Rev. 1 uses BT134 Rev B, while the NetComm Roadster II 56 Ultra SVD AM5690 uses BT134 Rev B1. The shared board markings show a very close hardware relationship, although they do not prove every component or configuration is identical.
 
-Related: [NetComm Roadster II 56 Ultra SVD - Model AM5690](/netcomm-roadster-ii-56-ultra-svd-model-am5690/)
+### Related posts
+
+- [NetComm Roadster II 56 Ultra SVD - Model AM5690](/netcomm-roadster-ii-56-ultra-svd-model-am5690/)

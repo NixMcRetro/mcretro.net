@@ -3,6 +3,11 @@ title: "High Dynamic Range (HDR) Video Upgrades"
 author: "Nix McRetro"
 date: 2022-06-05T20:29:46.000+10:00
 categories: [news, youtube]
+last_modified_at: 2026-10-11
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2022/img_0948.jpg)

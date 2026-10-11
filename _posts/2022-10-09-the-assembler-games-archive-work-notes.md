@@ -3,26 +3,26 @@ title: "The ASSEMbler Games Archive - Work Notes"
 author: "Nix McRetro"
 date: 2022-10-09T22:15:11.000+11:00
 categories: [guides, programming, youtube]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-11
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2022/img_0973.gif)
 
-For anyone else who has the [Assembler Games archive](https://archive.org/details/AssemblerGames.com-Httrack-June-04th-2019-Nemesis), I thought I'd just leave up some notes on what I did and what issues I had while putting it all together.
+For anyone else who has the [ASSEMbler Games archive](https://archive.org/details/AssemblerGames.com-Httrack-June-04th-2019-Nemesis), I thought I'd just leave up some notes on what I did and what issues I had while putting it all together.
 
-I've since taken down my mirror as I didn't have time to go through and get it, let alone my GeoCities rebuild, to get them working as well as I would have hoped. Maybe in the future it will reappear, who knows! Thanks to the good folk at [Obscure Gamers](https://web.archive.org/web/20221007095651/https://www.obscuregamers.com/threads/assemblergames-backups.23/) for tracking this as it all went down. It looks like the Archive Team has [captured the YouTube videos from Assembler Games](https://archive.org/details/assemblergames-youtube-archive) before it went down in September 2021 also - lucky!
+I've since taken down my mirror as I didn't have time to get it, let alone my GeoCities rebuild, working as well as I'd hoped. Maybe in the future it will reappear, who knows! Thanks to the good folk at [Obscure Gamers](https://web.archive.org/web/20221007095651/https://www.obscuregamers.com/threads/assemblergames-backups.23/) for tracking this as it all went down. The [YouTube archive credited to ASSEMBlergamers](https://archive.org/details/assemblergames-youtube-archive) describes videos saved in 2019, before the channel was reported missing in September 2021 - lucky!
 
 ![](/assets/images/2022/img_0965.jpg)
 
-One of the biggest issues I hit on macOS was pathname length. I described it at the time as a "1024-character filename limit", but that was the wrong term. An individual filename component can be up to 255 characters, while the traditional macOS pathname limit is less than 1024 characters. These recursive archive paths were blowing out the full path, not creating a single 1024-character filename.
+One of the biggest issues I hit on macOS was pathname length. I described it at the time as a "1024-character filename limit", but that was the wrong term. An individual filename component can be up to 255 characters, while the traditional macOS pathname limit is less than 1024 characters. These recursive archive paths were blowing out the full path, not creating a single 1024-character filename. I also had names that did not display cleanly in the terminal, as the question marks above show. I described those as "non-printable characters" in my original notes; that was a separate cleanup headache.
 
 ![](/assets/images/2022/img_0966.jpg)
 
-Another example above. Thankfully, one way I worked around the troublesome names was to address the file by inode instead of typing the filename.
+Another example above. For the awkward names, I used the inode number to find the file without having to type its name.
 
 The commands below are my historical cleanup notes. They include file deletion, so they are not paste-ready instructions for an archive you have not backed up and inspected.
 
@@ -30,9 +30,9 @@ The commands below are my historical cleanup notes. They include file deletion, 
 
 We can identify the inode/file that needs to be removed with this command: `ls -li`
 
-This then removes the offending inode, assuming it was 99807. `sudo find . -inum 99807 -exec rm -i {} \;`
+This finds files with inode number 99807 under the current directory and asks before removing each one. It removes the file, not the inode as a separate object: `sudo find . -inum 99807 -exec rm -i {} \;`
 
-[Source for inode deletion](https://unix.stackexchange.com/questions/463913/delete-files-with-names-that-appear-to-begin-with-in-command-line)
+
 
 The next issue I came across involved links not working, possibly due to redirects that once existed.
 
@@ -42,15 +42,15 @@ In the middle of the page there is a link. I can't remember what was broken and 
 
 ![](/assets/images/2022/img_0968.jpg)
 
-Looking at the above image you can see that the index.html file isn't found. The problem is that blocks the actual attachment - this causes a little bit of chaos on when browsing threads. I had this listed as "File listing not showing". An annoyance certainly but having it fixed was and will remain on my to do list indefinitely unfortunately. Here's the attachment for reference below.
+Looking at the above image, you can see that the index.html file isn't found. That broken link blocks access to the attachment from this page and causes a little chaos when browsing threads, even though the attachment itself survives, as you can see below. I had this listed as "File listing not showing". An annoyance certainly, but having it fixed was and will remain on my to do list indefinitely, unfortunately. Here's the attachment for reference below.
 
 ![](/assets/images/2022/img_0969.jpg)
 
-Sitemap generation was a bit of a hassle, I had been using this command in Ubuntu 20.04: `sitemap-generator 192.168.1.254:8081 -v`
+Sitemap generation was a bit of a hassle. I had been using this command in Ubuntu 20.04: `sitemap-generator 192.168.1.254:8081 -v`. I vaguely remember doing a find and replace on the local IP address and port to match where the archive was hosted, changing 192.168.1.254:8081 to https://assembler.mcretro.net. Find and replace was my friend. Oh, and I think I kept the sitemap files to around 30,000 entries.
 
-I vaguely remember that you do a find and replace on the IP address to make it where it is actually hosted. So it changed from 192.168.1.254:8081 to https://assembler.mcretro.net. Find and replace was my friend. Oh and I think I kept the sitemap files to around 30,000 entries. Another thing that had to be done with to modify the Apache web configuration for assemblergames.mcretro.net to include the new port: `VirtualHost *:80 *:8081`
+Another thing I had to do was modify the Apache configuration for assemblergames.mcretro.net to include the new port. My note for the virtual-host setting was `VirtualHost *:80 *:8081`, which is shorthand rather than a complete Apache configuration section.
 
-And then we needed to edit this file: `sudo nano /etc/apache2/ports.conf` To make the server listen on that 8081 port. `Listen 192.168.1.254:8081`
+And then we needed to edit the ports file: `sudo nano /etc/apache2/ports.conf`. To make the server listen on port 8081 at that local address, my note was `Listen 192.168.1.254:8081`.
 
 It all became a bit chaotic when I started using a proxy server and I tried to merge it into my main server with deleterious effects... 
 
@@ -60,7 +60,7 @@ Right?
 
 ![](/assets/images/2022/img_0972.jpg)
 
-I had been using the following to generate code but it tended to fail part way through with code error, that's why I switched over to the local IP method. `sitemap-generator https://assembler.mcretro.net --verbose --max-depth 4`
+I had been using the following to generate a sitemap, but it tended to fail part way through with an error. That's why I switched over to the local IP method: `sitemap-generator https://assembler.mcretro.net --verbose --max-depth 4`
 
 For reference here is the error I was getting:
 
@@ -82,7 +82,7 @@ Error: Site "http://assembler.mcretro.net" could not be found.
     at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
 ```
 
-Note for future self - I really need to fix my code and pre tags to look better. Another way it would fail would as follows:
+Note for future self - I really need to fix my code and pre tags to look better. Another failure looked like this:
 
 ```
 /usr/local/lib/node_modules/sitemap-generator-cli/node_modules/sitemap-generator/src/index.js:88
@@ -131,11 +131,11 @@ As the forums were upgraded over the years we saw a shift in the way the URLs we
 
 ![](/assets/images/2022/img_0971.jpg)
 
-Something simple that can be done is to track down 0-byte files and delete them. I never did get around to that for some reason. The root folder is quite chaotic owing to all the other sites that were ripped along with Assembler Games. This can be good in some ways as images of hardware in threads was captured. I'm not sure how well implemented this was though.
+Something simple I had on my cleanup list was to track down 0-byte files and delete them, though I never did get around to it. The root folder is quite chaotic owing to all the other sites that were ripped along with ASSEMbler Games. This can be good in some ways, as images of hardware in threads were captured. I'm not sure how well implemented this was though.
 
 Another curiosity I never worked out was this one. On the following link: **https://assembler.mcretro.net/members/sonicdude10.65150/index.html** you were able to see a link that references either the /l/threads or /threads.
 
-Links \*might\* be rewritten from https://assemblergames.com/l/threads/ to Links \*might\* be rewritten from https://assemblergames.com/threads/
+Links *might* need to be rewritten between `https://assemblergames.com/l/threads/` and `https://assemblergames.com/threads/`.
 
 ```
 This could be fixed with some sort of redirect plugin, i.e.
@@ -147,4 +147,12 @@ I never got around to looking into it too far though. It's been good. Assembler 
 
 ### Sources
 
-- [Apple - macOS file and pathname limits](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man2/intro.2.html)
+- [Apple - Mac OS X intro(2): file and pathname limits](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man2/intro.2.html)
+- [GNU Findutils - Hard Links](https://www.gnu.org/software/findutils/manual/html_node/find_html/Hard-Links.html)
+- [GNU Coreutils - rm invocation](https://www.gnu.org/s/coreutils/manual/html_node/rm-invocation.html)
+- [Unix & Linux Stack Exchange - Delete files with names that appear to begin with '?' in command line](https://unix.stackexchange.com/questions/463913/delete-files-with-names-that-appear-to-begin-with-in-command-line)
+- [Apache HTTP Server - Binding to Addresses and Ports](https://httpd.apache.org/docs/2.4/bind.html)
+
+### Related posts
+
+- [The ASSEMbler Games Archive](/the-assembler-games-archive/)

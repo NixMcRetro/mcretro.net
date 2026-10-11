@@ -3,6 +3,11 @@ title: "The Apple Macintosh LC 475 and 68k Gaming"
 author: "Nix McRetro"
 date: 2022-01-24T20:24:58.000+11:00
 categories: [apple, gaming]
+last_modified_at: 2026-10-11
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2022/img_0798.gif)
@@ -11,33 +16,39 @@ Recently I've been trying to sort all the haphazardly "organised" files on my co
 
 ![](/assets/images/2022/img_0799.jpg)
 
-For anyone not familiar with the [LC 475](https://en.wikipedia.org/wiki/Macintosh_Quadra_605), it's a pizza box shaped Mac featuring a 25 MHz 68LC040 (68k) processor, 4 MB or 8 MB of RAM, and an 80 MB, a 160 MB, or a 250 MB hard drive. There's only really three, or maybe four games I love on 68k Macs.
+For anyone not familiar with the [LC 475](https://support.apple.com/en-us/112204), it's a pizza box shaped Mac that originally shipped with a 25 MHz 68LC040 (68k) processor, 4 MB of onboard RAM and SCSI hard drives in the 80 MB to 250 MB range. Mine had already been through [some rather less stock experiments](/apple-macintosh-lc-475-modifications-overview/). There are only really three, or maybe four games I love on 68k Macs.
 
 ![](/assets/images/2022/img_0804.gif)
 
-The first is [Munchies](https://web.archive.org/web/20250822231008/https://www.macintoshrepository.org/4098-munchies) that I discovered as a child visiting my cousins up north of Sydney somewhere. Melvin is a bad ass when he's loaded with peas and covered in butter. I'm not forking around. This is serious fun. Go Melvin!
+The first is [Munchies](https://web.archive.org/web/20201112041331/https://www.macintoshrepository.org/4098-munchies) that I discovered as a child visiting my cousins up north of Sydney somewhere. Melvin is a bad ass when he's loaded with peas and covered in butter. I'm not forking around. This is serious fun. Go Melvin!
 
 ![](/assets/images/2022/img_0800.jpg)
 
-Next up we have [Brickles Plus](https://web.archive.org/web/20231014235507/https://www.macintoshrepository.org/3641-brickles-plus). I'm still not sure who I am in this game. Am I the paddle or the ball. Is the paddle a rebellious brick that fell? After thinking about that for a while I had an existential crisis about poor Brickle. My favourite part is when the bricks disappear. Very neat!
+Next up we have [Brickles Plus](https://web.archive.org/web/20160710131308/http://www.macintoshrepository.org/3641-brickles-plus). I'm still not sure who I am in this game. Am I the paddle or the ball? Is the paddle a rebellious brick that fell? After thinking about that for a while I had an existential crisis about poor Brickle. My favourite part is when the bricks disappear. Very neat!
 
 ![](/assets/images/2022/img_0803.gif)
 
-[Maniac](https://web.archive.org/web/20231014103253/https://www.macintoshrepository.org/6026-maniac). What can I say? I love the gameplay and I **_love_** [the soundtrack](/assets/uploads/Maniac-Game-Music.zip). [MOD files](https://en.wikipedia.org/wiki/MOD_(file_format)) rock my world. It's possible I fell in love with Maniac due to the soundtrack, not just the very cool game mechanics. Pac-Man combined with hangman? Hangman... how could I forget!
+[Maniac](https://web.archive.org/web/20210616231946/https://www.macintoshrepository.org/6026-maniac). What can I say? I love the gameplay and I **_love_** [the soundtrack](/assets/uploads/Maniac-Game-Music.zip). [MOD files](https://en.wikipedia.org/wiki/MOD_(file_format)) rock my world. It's possible I fell in love with Maniac due to the soundtrack, not just the very cool game mechanics. Pac-Man combined with hangman? Hangman... how could I forget!
 
 ![](/assets/images/2022/img_0802.gif)
 
-[Hangman Plus!](https://web.archive.org/web/20231014235506/https://www.macintoshrepository.org/3478-hangman-plus) Another game that I was lucky enough to play at my cousins as a child as well. As they say in the game "he he he". Let's hope you don't make it to high noon! The next game is a little different.
+[Hangman Plus!](https://web.archive.org/web/20201130053627/https://www.macintoshrepository.org/3478-hangman-plus) Another game that I was lucky enough to play at my cousins as a child as well. As they say in the game "he he he". Let's hope you don't make it to high noon! The next game is a little different.
 
 ![](/assets/images/2022/img_0805.gif)
 
-**[trainset-Pro or Trainset](https://web.archive.org/web/20231014235502/https://www.macintoshrepository.org/37696-trainset).** After all these years I found the damn train game that helped ruin my childhood for all the wrong reasons.
+**[trainset-Pro](https://web.archive.org/web/20231014235502/https://www.macintoshrepository.org/37696-trainset).** After all these years I found the damn train game that helped ruin my childhood for all the wrong reasons.
 
 ![](/assets/images/2022/img_0801.jpg)
 
-On a brighter note, I was also able fire up [SheepShaver](https://sheepshaver.cebix.net) and load up an old PowerBook 1400cs disk image. There wasn't much on there so it was trashed. Doing that cleared up a hefty 2 GB of storage, incredible!
+On a brighter note, I was also able to fire up [SheepShaver](https://sheepshaver.cebix.net) and load an old PowerBook 1400cs disk image. There wasn't much on there so it was trashed. Doing that cleared up a hefty 2 GB of storage, incredible!
+
+### Sources
+
+- [Apple - Macintosh LC 475: Technical Specifications](https://support.apple.com/en-us/112204)
+- [Apple Tech Info Library - Macintosh LC 475: Specifications (8/95), preserved by Savage Taylor](https://savagetaylor.com/til/KB013575.html)
 
 ### Related posts
 
+- [Apple Macintosh LC 475 Modifications Overview](/apple-macintosh-lc-475-modifications-overview/)
 - [Apple Macintosh LC 475 Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33mhz/)
 - [Apple Macintosh LC 475 Game Demo - Hangman Plus](/apple-macintosh-lc-475-game-demo-hangman-plus/)

@@ -3,21 +3,26 @@ title: "Silver Princess Cicadas Moulting (Yoyetta celis)"
 author: "Nix McRetro"
 date: 2022-01-15T19:08:39.000+11:00
 categories: [nature, youtube]
+last_modified_at: 2026-10-11
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="C2-AExK36Xk" %}
 
 Found two of these little ones moulting in the summer heat.
 
-  {% include youtube.html id="of4dwuT3oJs" %}
+{% include youtube.html id="of4dwuT3oJs" %}
 
 A bit of a windy evening for such small cicadas.
 
-  {% include youtube.html id="YjmMN7OqYzQ" %}
+{% include youtube.html id="YjmMN7OqYzQ" %}
 
 But they'll probably be alright if they've made it this far.
 
-  {% include youtube.html id="KuER_28DZWQ" %}
+{% include youtube.html id="KuER_28DZWQ" %}
 
 The next day, there's nothing left but a shell.
 

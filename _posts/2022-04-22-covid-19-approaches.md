@@ -3,11 +3,11 @@ title: "COVID-19 Approaches"
 author: "Nix McRetro"
 date: 2022-04-22T21:59:19.000+10:00
 categories: [news]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-11
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2022/img_0924.jpg)

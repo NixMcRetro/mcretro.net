@@ -3,14 +3,14 @@ title: "The GeoCities Rebuild Worklog"
 author: "Nix McRetro"
 date: 2022-02-06T21:40:46.000+11:00
 categories: [guides, linux, programming]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-11
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
-**Historical worklog:** This page preserves my 2021-2022 working notes for the GeoCities rebuild. It contains experiments, dead ends and destructive shell commands, and it is not a current paste-ready deployment guide. Check every path and command before reusing anything.
+**Historical worklog:** These are my 2021-2022 working notes for the GeoCities rebuild, complete with experiments, dead ends and destructive shell commands. Some command sequences and Apache configuration examples have lost their line breaks or contain escaped characters from the old page conversion. I have preserved those damaged fragments rather than guessed how to repair them. This is not a current paste-ready deployment guide. Check the original evidence, every path and the command syntax before reusing anything.
 
 This is the original, updated and mostly complete worklog for my GeoCities Reboot at [https://mcretro.net/homepages/geocities](/homepages/geocities).
 
@@ -34,7 +34,7 @@ I haven't had any forms on my website for a long time due to bots and not wantin
 
 With that out of the way I can work on the actual content. Yahoo! acquired GeoCities mid-1999 and messed with the city's structure. This is how GeoCities was structured, for the most part, up until Yahoo!'s acquisition.
 
-**Each neighborhood could hold ~9999 websites:**
+**Each neighborhood used numbered website addresses:**
 http://www.geocities.com/neighborhood/XXXX
 
 **GeoCities got too popular and needed suburbs inside those cities:**
@@ -61,7 +61,7 @@ Then there's the modems. I've got two Banksia Wave SP56 modems. Internally the b
 
 ![](/assets/images/2022/img_0828.jpg)
 
-We dial between two modems locally thanks to [this wonderful guide](https://dogemicrosystems.ca/wiki/Dial-up_pool). I'm using an Cisco SPA112 that I won in a raffle. This is coupled with an Asterisk server on a Raspberry Pi. All the bleeps and bloops without the cost of dialling outside my home.
+We dial between two modems locally thanks to [this wonderful guide](https://dogemicrosystems.ca/wiki/Dial-up_pool). I'm using a Cisco SPA112 that I won in a raffle. This is coupled with an Asterisk server on a Raspberry Pi. All the bleeps and bloops without the cost of dialling outside my home.
 
 Among the next steps will be working out how to migrate the data from a Mac APFS (case-sensitive) partition to a Linux ext4 (case-sensitive) partition that can be mounted with appropriate permissions for apache2 on the RPi3 web server.
 
@@ -81,7 +81,7 @@ I still need to work out the mounting parameters and whether overriding ownershi
 
 This project **_shouldn't_** be completed before the end of October but we should have something to show. I had been working on the modems tying in with the MiSTer since April. Then I accidentally deleted my entire desktop in July and lost a whole heap of notes. My backup was a few weeks old, but much was lost.
 
-While I was busy deleting by desktop, MiSTer FPGA has been progressing allowing support of FTDI's FT232RL chipset and Prolific's PL2303. This allows us to connect these serial modems over USB directly into the MiSTer.
+While I was busy deleting my desktop, MiSTer FPGA has been progressing allowing support of FTDI's FT232RL chipset and Prolific's PL2303. This allows us to connect these serial modems over USB directly into the MiSTer.
 
 * * *
 
@@ -179,19 +179,7 @@ Once I work out how to get all the suburbs into their correctly capitalised fold
 
 ![](/assets/images/2022/img_0859.jpg)
 
-Alright, so we've had data cloning back and forth. What damage have we done to the permissions and symlinks? Thankfully the symlinks look to be intact - they are denoted by the letter
-
-` l `
-
-at the start of the permissions. and the letter
-
-` d `
-
-indicates a directory with
-
-` - `
-
-indicating it is a file.
+Alright, so we've had data cloning back and forth. What damage have we done to the permissions and symlinks? Thankfully the symlinks look to be intact. In the first character of the listing, `l` means a symbolic link, `d` means a directory and `-` means a regular file.
 
 ![](/assets/images/2022/img_0847.jpg)
 
@@ -241,7 +229,7 @@ This gave me some weird permissions, **501:dialout** against the CapeCanaveral d
 
 ![](/assets/images/2022/img_0824.jpg)
 
-Turns out 501 is the default User ID for Mac OS. Mystery solved! A quick run of the below commands fixed up the permissions issues and...
+Turns out 501 was the User ID of the account on my Mac, as the screenshot shows. Mystery solved! A quick run of the below commands fixed up the ownership and permissions issues and...
 
 `cd /var/www sudo chown www-data:www-data -R \* sudo chmod -R a=r,a+X,u+w .`
 
@@ -271,7 +259,7 @@ And that's it for the weekend. Feel free to stop by [http://geocities.mcretro.ne
 
 This weekend I've been taking it easy due to giving a blood donation on Saturday. Perfect opportunity to test out the website on as close as I have to real hardware - while live streaming. Interestingly Netscape 4 feels clunkier and slower than Internet Explorer 5. Maybe I backed the wrong horse on this one.
 
-For now I'm going to get the [neighborhood list](https://web.archive.org/web/20230926133901/http://geocities.mcretro.net/neighborhoods/) tabled up and cross checked between a few sources and the [WayBack Machine](https://web.archive.org/web/19990203120656/http://www4.geocities.com/neighborhoods/).
+For now I'm going to get the [neighborhood list](https://web.archive.org/web/20211208123141/https://geocities.mcretro.net/neighborhoods/) tabled up and cross checked between a few sources and the [WayBack Machine](https://web.archive.org/web/19990203120656/http://www4.geocities.com/neighborhoods/).
 
 * * *
 
@@ -314,7 +302,7 @@ Back to the first image. In the red box there is also additional, possibly globa
 
 Another issue I remembered was that the pages without an index.html or index.php file that just return a file listing could possibly also use the header/footer feature of Apache2 to insert a similar header / footer.
 
-So for now there is a spinning pickle on all the pages that are up, until a header is added. Definitely check out CapeCanaveral and Area51 to see if you can find any without spinning pickles. What a time to be alive. I better get back to creating the [neighborhood pages](https://web.archive.org/web/20230926133901/http://geocities.mcretro.net/neighborhoods/).
+So for now there is a spinning pickle on all the pages that are up, until a header is added. Definitely check out CapeCanaveral and Area51 to see if you can find any without spinning pickles. What a time to be alive. I better get back to creating the [neighborhood pages](https://web.archive.org/web/20211208123141/https://geocities.mcretro.net/neighborhoods/).
 
 * * *
 
@@ -342,7 +330,7 @@ After waiting what felt like a few hours, move the sitemap into the appropriate 
 
 ![](/assets/images/2022/img_0894.jpg)
 
-We now have a [sitemap](https://web.archive.org/web/20230802071059/https://geocities.mcretro.net/sitemap.xml). Next, we need to figure out how to best implement the teleport (Jump™) feature to utilise the sitemap.
+We now have a [sitemap](https://web.archive.org/web/20211208130512/https://geocities.mcretro.net/sitemap.xml). Next, we need to figure out how to best implement the teleport (Jump™) feature to utilise the sitemap.
 
 * * *
 
@@ -352,9 +340,9 @@ We now have a [sitemap](https://web.archive.org/web/20230802071059/https://geoci
 
 **Jump™** implemented.
 
-The code comes from [stackoverflow.com](https://stackoverflow.com/questions/12390522/open-random-page-from-sitemap-xml-using-php). The Jump™ code now runs a server-side script, in PHP, to randomly select a website from the sitemap.xml file. If it weren’t server-side you’d know because the file large at 1.8MB. Downloading that over dialup is going to be very slow!
+The code comes from [stackoverflow.com](https://stackoverflow.com/questions/12390522/open-random-page-from-sitemap-xml-using-php). The Jump™ code now runs a server-side script, in PHP, to randomly select a website from the sitemap.xml file. If it weren’t server-side you’d know because the file is large at 1.8MB. Downloading that over dialup is going to be very slow!
 
-You can try it [here](https://web.archive.org/web/20230926122957/http://geocities.mcretro.net/jump/) to beam to a random GeoCities website. We still have only Area51 and CapeCanaveral active. Great for fans of X-Files fanfic, not so great for anyone else.
+At the time, Jump™ would beam you to a random GeoCities website. The [archived jump page](https://web.archive.org/web/20230926122957/http://geocities.mcretro.net/jump/) preserves the buttons, but the archive can't run the original server-side PHP for you. We still had only Area51 and CapeCanaveral active at this point. Great for fans of X-Files fanfic, not so great for anyone else.
 
 Now we have the code that helps us jump to random sites that is pulled from our sitemap.xml. So where to next? Finding a way to keep a "Home", "Jump", and "Report" text or buttons on the majority of sites visited. Initial tests were somewhat successful...
 
@@ -362,11 +350,7 @@ Now we have the code that helps us jump to random sites that is pulled from our 
 
 I rediscovered TARGET="_top" after having my test links as same window. TARGET="_top" makes links open in the topmost frame, i.e. the full browser tab and window. Lesson learnt!
 
-The current iteration of nav buttons embed into the page through Apache's mod_substitute. We replace the
-
-`</BODY>`
-
-tag of the website server-side, not on the client-side browser. No solution was perfect, so I went with the one that causes **the least** damage.
+The current nav buttons are embedded into the page through Apache's mod_substitute. We replace the website's `</BODY>` tag on the server, not in the client-side browser. No solution was perfect, so I went with the one that causes **the least** damage.
 
 - Closing HEAD tag - Could cause the body tag to start prematurely, resulting in malformed content and it breaks frames.
 - Opening BODY tag - Most pages have this contain most of their formatting. Injecting code into here results in a mess, often stripping formatting.
@@ -390,7 +374,7 @@ and inserted the following:
 
 We can now jump from most pages - including directory listings (i.e. pages without an index).
 
-In other news, I've mostly finished the [neighborhood listing](https://web.archive.org/web/20230926133901/http://geocities.mcretro.net/neighborhoods/). This means if I copy all the files across they will now load up well enough. I'm still working on directory structure though.
+In other news, I've mostly finished the [neighborhood listing](https://web.archive.org/web/20211208123141/https://geocities.mcretro.net/neighborhoods/). This means if I copy all the files across they will now load up well enough. I'm still working on directory structure though.
 
 **Images for sites seem to come from the following pages:**
 - http://geocities.com/pictures/
@@ -407,7 +391,7 @@ I'm looking into aliasing some of the data directories for YahooIDs to prevent t
 
 ![](/assets/images/2022/img_0854.jpg)
 
-I've tidied up the counters and the root substitutes, I noticed a lot more backgrounds work now. Once I merge all the root pictures/images together, we'll have much better looking sites. Well, perhaps better isn't quite be the right word.
+I've tidied up the counters and the root substitutes, I noticed a lot more backgrounds work now. Once I merge all the root pictures/images together, we'll have much better looking sites. Well, perhaps better isn't quite the right word.
 
 ![](/assets/images/2022/img_0851.gif)
 
@@ -431,7 +415,7 @@ There's a lot of cross over between YahooIDs and neighborhoods. It looks like if
 
 So really I needed two separate locations to meet (parallel and overlapping data) under the root folder where I already had data.
 
-My external hard drive containing all Core and YahooIDs data data is currently mounted at /var/www/html/External/
+My external hard drive containing all Core and YahooIDs data is currently mounted at /var/www/html/External/
 
 I attempted to use [mod_alias](https://httpd.apache.org/docs/2.4/mod/mod_alias.html) only to find it kind of worked, but not really. Then I came across [this incredible idea](https://madbean.com/2007/two-docroots/) of having **two DocumentRoots**. My VirtualHost configuration became this:
 
@@ -451,9 +435,10 @@ I guess symlinks are back on the menu. I could use:
 
 `sudo ln -s Athens athens`
 
-This would allow me to have athens corrected to Athens. But what about SoHo, Soho and soho. Let alone the case sensitivity on YahooIDs... Plus there's a bunch of unmerged case differences. I'll merge them one day, maybe. mod_speling might negate the need to do that.
+This would let the lowercase athens address reach the same directory as Athens, but a symlink alone wouldn't redirect the browser to the capitalised URL. And what about SoHo, Soho and soho? Let alone the case sensitivity on YahooIDs... Plus there's a bunch of unmerged case differences. I'll merge them one day, maybe. mod_speling might negate the need to create all those links.
 
-There's too many variations of each YahooID, e.g. bananaphone vs BANANAPHONE and every iteration inbetween to create symlinks for. If mod_speling is broken, then case sensitivity is broken stopping people visiting the second address listed:
+There are too many variations of each YahooID, e.g. bananaphone vs BANANAPHONE and every iteration in between to create symlinks for. If case correction isn't working in this setup, people can't reach the site using the second address listed:
+
 - http://geocities.mcretro.net/bananaphone/
 - http://geocities.mcretro.net/bananaPHONE/
 
@@ -463,7 +448,7 @@ It was so close to working. Just the lowercase variations were broken. I even da
 
 ![](/assets/images/2022/img_0893.gif)
 
-I know that my created HTML is all lowercase and doesn't require mod_speling. That means that the "geocities" folder can be ran through mod_rewrite with no consequences of mod_speling being disabled. Great!
+I know that my created HTML is all lowercase and doesn't require mod_speling. That means that the "geocities" folder can be run through mod_rewrite without needing case correction in that part of this setup. Great!
 
 `# Rewrites for GeoCities (self-made) files. Allows mod_speling to function. # mod_rewrite does not allow mod_speling to modify / ignore case. # This is fine on my created files as everything is lowercase. RewriteEngine on RewriteCond "/var/www/html/geocities%{REQUEST_URI}" -f \[OR\] RewriteCond "/var/www/html/geocities%{REQUEST_URI}" -d RewriteRule ^/?(.\*)$ /var/www/html/geocities/$1 \[L\]`
 
@@ -475,7 +460,7 @@ Simple? Not really. No wonder I got stuck on this so long! The larger of the two
 
 `sudo ln -s /var/www/html/External/Core/\* /var/www/html/External/YahooIDs`
 
-I could also use the following to force linking in case other symbolic links exist in the YahooID folder. I can't remember which once I used but the following would have been useful after the first run - and making sure there were no YahooIDs equal to Neighbourhoods...
+I could also use the following to force linking in case other symbolic links exist in the YahooID folder. I can't remember which one I used but the following would have been useful after the first run - and making sure there were no YahooIDs equal to Neighbourhoods...
 
 `sudo ln -sf /var/www/html/External/Core/\* /var/www/html/External/YahooIDs`
 
@@ -509,18 +494,18 @@ Above is the VirtualHost configuration to date. I better get around to moving ev
 These are some other good test cases while trying to get the merging to work as some were present in lowercase and some in uppercase. Ultimately I'll need to merge all the case variants at some stage.
 
 **Exists**
-[http://geocities.mcretro.net/capecanaveral/1020/line/](#)
+`http://geocities.mcretro.net/capecanaveral/1020/line/`
 
 **Doesn't Exist**
-[http://geocities.mcretro.net/CapeCanaveral/1020/line/](#)
+`http://geocities.mcretro.net/CapeCanaveral/1020/line/`
 
 Great links for testing this out:
-- [http://geocities.mcretro.net/CapeCanaveral/1020/line/marsh.gif](#)
-- [http://geocities.mcretro.net/capecanaveral/1020/line/marsh.gif](#)
-- [http://geocities.mcretro.net/CapeCanaveral/1020/index.html](#)
-- [http://geocities.mcretro.net/capecanaveral/1020/index.html](#)
+- `http://geocities.mcretro.net/CapeCanaveral/1020/line/marsh.gif`
+- `http://geocities.mcretro.net/capecanaveral/1020/line/marsh.gif`
+- `http://geocities.mcretro.net/CapeCanaveral/1020/index.html`
+- `http://geocities.mcretro.net/capecanaveral/1020/index.html`
 
-Does mod_spelling work it out? If yes, mod_spelling is working well to merge the mush of uppercase and lowercase.
+Does mod_speling work it out? If yes, it's finding the right path through the mush of uppercase and lowercase.
 
 **UPDATE 2:**
 Copied all the neighborhoods (core) across and a few usernames (yahooids) - it looks like it might be working. I'll rebuild the sitemap.xml file tonight. It should wind up being pretty big. Then jump should teleport across any page that is available!
@@ -531,9 +516,9 @@ Copied all the neighborhoods (core) across and a few usernames (yahooids) - it l
 
 ![](/assets/images/2022/img_0880.jpg)
 
-[Jump™](/homepages/geocities) is working, however the server does not like having to parse a file that is 15MB everytime the link is clicked. There's over 280,000 links indexed. Yikes! That's before I add 100,000+ user folders... That's a lot of files.
+[Jump™](/homepages/geocities) is working, however the server does not like having to parse a file that is 15MB every time the link is clicked. There's over 280,000 links indexed. Yikes! That's before I add 100,000+ user folders... That's a lot of files.
 
-What I can possibly do to speed it up a little is to split the sitemap into multiple files. Then the jump PHP script could call on one of the sitemaps at random, and pick a random URL inside the sitemap called upon. Of course you could just pick a suburb from the neighhborhood section and explore that way too.
+What I can possibly do to speed it up a little is to split the sitemap into multiple files. Then the jump PHP script could call on one of the sitemaps at random, and pick a random URL inside the sitemap called upon. Of course you could just pick a suburb from the neighborhood section and explore that way too.
 
 ![](/assets/images/2022/img_0873.jpg)
 
@@ -541,7 +526,7 @@ Now that I've got everything redirecting to the root where it should be, I'm com
 
 ![](/assets/images/2022/img_0846.gif)
 
-As you can see from the above gif, marsh.gif is present in only one and it mod_speling failed to splice the two directories together. This might be a by-product of the way the DocumentRoot and mod_rewrite was configured earlier... I guess it doesn't matter too much for now. I will need to find a way to merge the lower case and upper case variations on directory names eventually.
+As you can see from the above gif, marsh.gif is present in only one directory. mod_speling can correct a requested spelling or case; it doesn't splice two directories together. The way I configured DocumentRoot and mod_rewrite may also have affected which directory was searched. I guess it doesn't matter too much for now. I will need to find a way to merge the lowercase and uppercase variations on directory names eventually.
 
 Next steps will be capturing more core (neighborhoods) directories to merge from the YahooID folders. The data dump included a few extra sources apart from the main files, I'll need to get these into the mix.
 
@@ -626,11 +611,11 @@ Whoops. Good thing that had an **ls** in place of the **rm**. Apparently white s
 
 ![](/assets/images/2022/img_0889.gif)
 
-Adding quotes is quite easy using BBEdit as it has a built in grep function. As I just happened to have the knowledge fresh in my memory, I did some grepping to add to the front of each line with the **^** (carrat) symbol and to the end of each line with a **$** (dollar) symbol. Done. Now the file should be able to get parsed correctly in terminal (Mac OS).
+Adding quotes is quite easy using BBEdit as it has a built-in grep function. As I just happened to have the knowledge fresh in my memory, I did some grepping to add to the front of each line with the **^** (caret) symbol and to the end of each line with a **$** (dollar) symbol. Done. Now the file should be able to get parsed correctly in terminal (Mac OS).
 
 `xargs -n 1 ls -v < ~/Desktop/blankindex.txt`
 
-A lot of reading indicated I should have been using the -0 (or --null) flag for xargs. I think it would have saved putting the quotes around each line. But I didn't, I took the risk and watched it list attributes of files in the blankindex.txt file. I checked for any errors. None. We are go for the final command.
+A lot of reading indicated I should have been using the `-0` (or `--null`) flag for xargs. That needs a list with each filename terminated by a NUL character, not just the same newline-separated file with a different flag. It would have saved the quoting step if I'd generated the list that way. But I didn't. I took the risk and watched it list the attributes of the files in blankindex.txt. I checked for any errors. None. We are go for the final command.
 
 `xargs -n 1 rm -v < ~/Desktop/blankindex.txt`
 
@@ -649,13 +634,14 @@ We now have a much tidier directory structure for merging and a lack of empty fi
 The above video shows the **rm** command running through stripping static, server-generated index.html files away.
 
 **Recapping yesterday:**
-- 1. Found and removed all index.html files from directory listings ✅
-- 2. Removed 0 byte files, removed 0 byte folders (in that order) ✅
-- 3. Started to clean up some of the redirection looped files and folders.
-- 4. Less than 1TB of data is present now.
-- 5. Symlinks were all deleted (again) - we need mod_speling to work properly.
-- 6. Sitemap has been created successfully and is now split into smaller chunks.
-- 7. The jump script now covers all neighborhoods and is a fair bit quicker.
+
+1. Found and removed all index.html files from directory listings ✅
+2. Removed 0 byte files, removed 0 byte folders (in that order) ✅
+3. Started to clean up some of the redirection looped files and folders.
+4. Less than 1TB of data is present now.
+5. Symlinks were all deleted (again) - we need mod_speling to work properly.
+6. Sitemap has been created successfully and is now split into smaller chunks.
+7. The jump script now covers all neighborhoods and is a fair bit quicker.
 
 Onto number three in the list. Cleaning up files and folders that suffered from redirection loops when being harvested by Archive Team.
 
@@ -675,9 +661,11 @@ I've run this command a few times now and fixed the loops by deleting duplicated
 
 ![](/assets/images/2022/img_0878.jpg)
 
-In particular, take note of;- The file name music.html,
-- variations of music.html,
-- and the file sizes.
+In particular, take note of:
+
+- The file name music.html.
+- The variations of music.html.
+- The file sizes.
 
 The correct **music.html** is the file named **music.html.1**. However, all the files in the **music.html folder** are also the same **music.html.1 file**. It doesn't seem to happen on every recursive loop, but has happened enough for me to take note on how to fix it.
 
@@ -685,12 +673,12 @@ The correct **music.html** is the file named **music.html.1**. However, all the 
 
 Deleting these has helped dip the entire decompressed data set below the 1TB mark. Some of those loops were big, causing folders to inflate to gigabytes. I should really run a search on folder size to detect any excessive utilisation of hard drive space. Low priority for now. But it does mean I can backup onto a 1TB drive/partition in full now. Lucky!
 
-Touching on Apache's mod_speling again, symlinks have all been removed from the local drive (not the server facing one, yet). If symlinks are present they have been confirmed to mess with mod_speling. This prevents correct redirections from happening. It's more the nested directories that have issues. For example take:
+Touching on Apache's mod_speling again, symlinks have all been removed from the local drive (not the server-facing one, yet). In this setup, the case-variant symlinks were getting in the way of the redirections I wanted. It was mainly the nested directories that had issues. For example, take:
 
 - https://geocities.mcretro.net/Athens/olympus/1043/
 - https://geocities.mcretro.net/Athens/Olympus/1043/
 
-`/Athens/olympus/` is not redirected to `/Athens/Olympus/` as `/Athens/olympus/` exists as a symlink. This causes issues for mod_speling as it can't resolve issues like this as it sees two olympus folders, even though they are one and the same.
+`/Athens/olympus/` is not redirected to `/Athens/Olympus/` because the lowercase path already exists as a symlink. mod_speling normally looks for a correction when the requested path isn't found; it doesn't need to correct a path that already resolves. That was the snag here, rather than symlinks being universally incompatible with mod_speling.
 
 ![](/assets/images/2022/img_0875.jpg)
 
@@ -708,7 +696,9 @@ Jump™ loads faster now and the stress on the weak Raspberry Pi 3 CPU is less w
 
 I've been using **awk**, **grep** (and **pcregrep** for multiline matching), **find**, **rsync** and **xargs**. I think I am getting better at regular expressions (regex). Regex are extremely powerful provided you are using the right tool. I may have nearly wiped my desktop out... a second time... with an rm command. This time around I was quite careful with what I was doing with these backupless, work-in-progress files.
 
-**The Future** The next steps over the week will be to continue sorting out the pictures and images from the rest of the decompressed data. I'll be tidying up the YahooIDs to remove any core folders, such as Area51, Hollywood, etc. They can't be left in the YahooIDs folder. That would cause pretty big issues when, for example, /core/Area51/ tries to mount at the same point as /yahooids/Area51.
+**The Future**
+
+The next steps over the week will be to continue sorting out the pictures and images from the rest of the decompressed data. I'll be tidying up the YahooIDs to remove any core folders, such as Area51, Hollywood, etc. They can't be left in the YahooIDs folder. That would cause pretty big issues when, for example, /core/Area51/ tries to mount at the same point as /yahooids/Area51.
 
 I also need to continue to think about the best way to serve the images. Currently there are many locations images were stored at, including international sites. I need to work out the best way to write that into Apache's mod_substitute. A sample of the website addresses is below:
 - http://pic.geocities.com
@@ -732,7 +722,7 @@ Creating a snapshot of the progress so far, to rotational media, is a good idea.
 
 ![](/assets/images/2022/img_0825.jpg)
 
-For the past week, my primary goal has been to merge all the core data together, avoiding copy blocks as pictured above. I've been mostly successful at this, although I might have had to call upon the backup from last week a few times. It's very easy to enable autopilot and accidentally overwrite all of [https://geocities.mcretro.net/neighborhoods/#heartland](#) by replacing instead of merging. Thankfully, that's now water under the bridge and we have arrived at...
+For the past week, my primary goal has been to merge all the core data together, avoiding copy blocks as pictured above. I've been mostly successful at this, although I might have had to call upon the backup from last week a few times. It's very easy to enable autopilot and accidentally overwrite all of `https://geocities.mcretro.net/neighborhoods/#heartland` by replacing instead of merging. Thankfully, that's now water under the bridge and we have arrived at...
 
 ![](/assets/images/2022/img_0879.jpg)
 
@@ -764,7 +754,7 @@ After this has completed, I've allocated some time to spend browsing the GeoCiti
 
 The sitemap generation is still chugging along. We're up to 16 hours and we've just hit SunsetStrip. This will likely still be running tomorrow morning as I now have all the YahooIDs on there too. I'll probably manually delete them off the sitemap though as they are **_usually_** just storage for the neighborhood sites.
 
-Another thought I had while beaming between sites randomly, is that the jump link might be better suited for each neighborhood. For example, to randomise a visit to a site from Area51 you would could load /jump_area51.php. It would make it a little less random, but then you can focus in on what you may actually want to see. For example, I might be an X-Files fanatic, I'm unlikely to find X-Files in Heartland or MotorCity.
+Another thought I had while beaming between sites randomly, is that the jump link might be better suited for each neighborhood. For example, to randomise a visit to a site from Area51 you could load /jump_area51.php. It would make it a little less random, but then you can focus in on what you may actually want to see. For example, I might be an X-Files fanatic, I'm unlikely to find X-Files in Heartland or MotorCity.
 
 {% include youtube.html id="2yYzeKaq3Nk" %}
 
@@ -802,11 +792,13 @@ This also works if websites were spliced and diced between the YahooID and the n
 
 ![](/assets/images/2022/img_0862.jpg)
 
-For now that seems to be the end of the immediate project. Some things I would do differently a second time around: 1. Merge with the command line instead of Finder in Mac OS. I could see that some files were not merging even though they didn't exist in the destination.
+For now that seems to be the end of the immediate project. One thing I would do differently a second time around: merge with the command line instead of Finder in Mac OS. I could see that some files were not merging even though they didn't exist in the destination.
 
 That was a short list. I suppose a lot did go well. Things for future consideration include:
 
-1\. Darknet compatibility via Tor, because why not. My main blog and retrosites as all darknet enabled, it would be interesting to get GeoCities on the darknet. 2. Enabling caching for Apache to reduce server load - We're on a little Raspberry Pi 3. 3. Cloudflare CDN for the same reasons as above.
+1. Darknet compatibility via Tor, because why not. My main blog and retrosites are all darknet enabled, so it would be interesting to get GeoCities on the darknet.
+2. Enabling caching for Apache to reduce server load. We're on a little Raspberry Pi 3.
+3. Cloudflare CDN for the same reasons as above.
 
 ![](/assets/images/2022/img_0840.jpg)
 
@@ -872,7 +864,7 @@ The jump page mostly works. I noticed that on it tends to take you to the clearn
 
 **Fixed darknet jumping.**
 
-If you visit [https://geocities.mcretro.net](/homepages/geocities) in the Tor Browser, please note the activation of the location bar. [Onion-Location](https://support.torproject.org/tor-browser/features/onion-services/) activates. This will not work if visiting on clearnet non-ssl site, [http://geocities.mcretro.net](/homepages/geocities). This is [by design](https://support.torproject.org/tor-browser/features/onion-services/) as per The Tor Project.
+If you visit [https://geocities.mcretro.net](/homepages/geocities) in Tor Browser, the [Onion-Location](https://community.torproject.org/onion-services/advanced/onion-location/) header activates the address-bar prompt. This won't work on the plain HTTP version, [http://geocities.mcretro.net](/homepages/geocities). The page advertising an Onion-Location header has to be served over HTTPS. That's by design, as per The Tor Project.
 
 * * *
 
@@ -888,11 +880,11 @@ Apache, the web server software, was not happy with symlinks being broken. These
 
 ![](/assets/images/2022/img_0842.jpg)
 
-They even show up maroon! How did I manage this, I had renamed the external drive from "External" to "geocities" to help differentiate it from another project I had activated in the past week or so - [The Assembler Games Archive](https://web.archive.org/web/20220606142437/https://assembler.mcretro.net/). All my old symlinks died as a result.
+They even show up maroon! How did I manage this? I had renamed the external drive from "External" to "geocities" to help differentiate it from another project I had activated in the past week or so - [The Assembler Games Archive](/the-assembler-games-archive/). All my old symlinks died as a result.
 
 ![](/assets/images/2022/img_0901.jpg)
 
-I ran a test to make sure I wasn't going to wipe out the entire internet first - i.e. without sudo tacked on the front of the command I stole from the internet. It worked, it found all the correct symlinks to remove and them I did!
+I ran a test to make sure I wasn't going to wipe out the entire internet first - i.e. without sudo tacked on the front of the command I stole from the internet. It worked, it found all the correct symlinks to remove and then I did!
 
 ![](/assets/images/2022/img_0892.jpg)
 
@@ -920,11 +912,11 @@ And we are looking forward to your reply which is important to our ongoing resea
 Best Regards, INSC, Tsinghua University
 ```
 
-I thought, that's interesting. Naturally, I was curious as to what I had misconfigured. The underlying problem was not some mysterious flaw in Tor itself. Apache's `mod_status` was restricted to localhost on the clearnet, but the Tor service also reached Apache locally. That meant an onion-service request could reach `/server-status` and expose information I had assumed was local-only. So I visited my sitemap domain as a test [http://retrojunkie.net/server-status](https://retrojunkie.net/) and was presented with this:
+I thought, that's interesting. Naturally, I was curious as to what I had misconfigured. The underlying problem was not some mysterious flaw in Tor itself. Apache's `mod_status` was restricted to localhost on the clearnet, but the Tor service also reached Apache locally. That meant an onion-service request could reach `/server-status` and expose information I had assumed was local-only. So I visited my sitemap domain as a test `http://retrojunkie.net/server-status` and was presented with this:
 
 ![](/assets/images/2022/img_0817.jpg)
 
-Works as expected on the clearnet, external IPs shouldn’t be able to see it. But onion domains use localhost (127.0.0.1) to do some funky routing. Let’s try the darknet version of the same site at: [http://retro56qdosu3zuisr5tiuh7ihpn6owzpwjwvs7djlweiqb3mcspahyd.onion/server-status](https://retrojunkie.net)
+That was the expected result on the clearnet: external clients couldn't see it. But in my setup Tor forwarded onion-service requests to Apache from localhost (127.0.0.1), which passed that local-only restriction. Let's try the onion version of the same site at `http://retro56qdosu3zuisr5tiuh7ihpn6owzpwjwvs7djlweiqb3mcspahyd.onion/server-status`.
 
 ![](/assets/images/2022/img_0819.jpg)
 
@@ -943,8 +935,10 @@ And all is well... Well, not found because it isn’t supposed to be showing all
 ### Sources
 
 - [Apache HTTP Server - mod_speling](https://httpd.apache.org/docs/2.4/mod/mod_speling.html)
+- [GNU Findutils - Finding Files: safe filename handling and xargs](https://ftp.gnu.org/old-gnu/Manuals/findutils-4.1/html_mono/find.html)
+- [Tor Project - Onion-Location](https://community.torproject.org/onion-services/advanced/onion-location/)
+- [Apache HTTP Server - mod_status](https://httpd.apache.org/docs/2.4/mod/mod_status.html)
 - [GeoCities Rebuild for Older Browsers - ACMS Forum](https://forum.acms.org.au/t/geocities-rebuild-for-older-browsers/83)
-- [Archived project reference](https://archive.fo/eRyuQ)
 
 ### Related posts
 

@@ -3,6 +3,11 @@ title: "Cyberpunk 2077 PS4 1.51 Patch Update"
 author: "Nix McRetro"
 date: 2022-02-17T18:25:56.000+11:00
 categories: [gaming, sony, youtube]
+last_modified_at: 2026-10-11
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2022/img_0905.jpg)
@@ -39,8 +44,6 @@ But that pales in comparison to the latest 1.5 patch on PS4, appropriately named
 
 ![](/assets/images/2022/img_0910.jpg)
 
- 
-
 > "Cannot start the application. The data is corrupted. Delete the application from the PS4 and insert the disc again."
 
 Nope. Somehow they broke it even more. It doesn't boot at all. CD Projekt Red... why do you do this?
@@ -53,5 +56,13 @@ At least the error is different to what we normally see for in-game crashes. Cha
 
 I guess for now all I can do is sit here with my pre-ordered v1.00 discs and wait for the above screen to present itself once more. I sure do miss version 1.31.
 
-Previous: [Cyberpunk 2077 - The 2022 Update](/cyberpunk-2077-the-2022-update/)  
-Next: [Cyberpunk 2077 PS4 1.51 Patch Update... Update](/cyberpunk-2077-ps4-1-51-patch-update-update/)
+### Sources
+
+- [CD Projekt Red - Cannot start the application: corrupted-data error after updating to 1.5/1.51 (archived 17 February 2022)](https://web.archive.org/web/20220217065632/https://support.cdprojektred.com/en/cyberpunk/playstation/sp-technical/issue/2090/cannot-start-the-application-the-data-is-corrupted-error-after-updating-1)
+
+### Related posts
+
+- [Cyberpunk 2077 (2020, PS4 Live Stream, Day 1)](/cyberpunk-2077-ps4-live-stream-day-1/)
+- Earlier: [Cyberpunk 2077 (2020, PS4 Live Stream) - The 2022 Update](/cyberpunk-2077-the-2022-update/)
+- Next: [Cyberpunk 2077 PS4 1.51 Patch Update... Update](/cyberpunk-2077-ps4-1-51-patch-update-update/)
+- [Cyberpunk 2077 PS4 Final Thoughts](/cyberpunk-2077-ps4-final-thoughts/)

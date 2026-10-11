@@ -3,6 +3,11 @@ title: "Cyberpunk 2077 PS4 Final Thoughts"
 author: "Nix McRetro"
 date: 2022-05-30T11:00:50.000+10:00
 categories: [sony]
+last_modified_at: 2026-10-11
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-11
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="-n95rMK4AnY" %}
@@ -41,4 +46,9 @@ With that, we hold the buttons to end the Cyberpunk 2077 saga - Ctrl, Alt and...
 
 Del.
 
-Previous: [Cyberpunk 2077 PS4 1.51 Patch Update... Update](/cyberpunk-2077-ps4-1-51-patch-update-update/)
+### Related posts
+
+- [Cyberpunk 2077 (2020, PS4 Live Stream, Day 1)](/cyberpunk-2077-ps4-live-stream-day-1/)
+- [Cyberpunk 2077 (2020, PS4 Live Stream) - The 2022 Update](/cyberpunk-2077-the-2022-update/)
+- [Cyberpunk 2077 PS4 1.51 Patch Update](/cyberpunk-2077-ps4-1-51-patch-update/)
+- Earlier: [Cyberpunk 2077 PS4 1.51 Patch Update... Update](/cyberpunk-2077-ps4-1-51-patch-update-update/)

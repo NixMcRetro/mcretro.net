@@ -3,20 +3,20 @@ title: "Sleep Hygiene and Sleep Health - The Data"
 author: "Nix McRetro"
 date: 2023-08-29T10:19:43.000+10:00
 categories: [news]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2023/img_1093.jpg)
 
-My ResMed AirSense 10 AutoSet trial arrived a couple of weeks ago. After setting it up and picking some starting options the data flowed for roughly two weeks. Nasal pillows are not suitable for me. They cause my mouth to open, creating the strangest air pressure sensations. My notes call the ResMed N20 a full-face mask, but the AirFit N20 is actually a nasal mask. I either wrote the mask type or the model down wrong, so I'm not going to invent the answer now. 😷
+My ResMed AirSense 10 AutoSet trial arrived a couple of weeks ago. After setting it up and picking some starting options, the data flowed for roughly two weeks. Nasal pillows weren't for me: my mouth kept opening, creating the strangest air-pressure sensations. My notes call the ResMed N20 a full-face mask, but the AirFit N20 is a nasal mask. I either wrote the mask type or the model down wrong. 😷
 
 ![](/assets/images/2023/img_1145.jpg)
 
-Using [the Open Source CPAP Analysis Reporter](https://www.sleepfiles.com/OSCAR/) (OSCAR v1.4.0), we can delve a into the data. Any days missing data are due to insomnia keeping me awake all night. I've put the data into a zip file [here](/assets/uploads/OSCAR.zip) too. Not fun. Anyway, let's look at some of the days in more detail and the different event types.
+Using [the Open Source CPAP Analysis Reporter](https://www.sleepfiles.com/OSCAR/) (OSCAR v1.4.0), we can dig into the data. The missing days were nights when insomnia kept me awake. Not fun. I've also put the screenshot exports into an [OSCAR ZIP file](/assets/uploads/OSCAR.zip). Anyway, let's look at some of the days and event types in more detail.
 
 ![](/assets/images/2023/img_1134.jpg)
 
@@ -24,11 +24,11 @@ We'll start off with longer periods of recorded data. Above is the 17th August. 
 
 ![](/assets/images/2023/img_1133.jpg)
 
-The machine flagged about 21 seconds without detected airflow. Interesting. The duration alone does not tell me what caused it, and I cannot tell from this screenshot whether I was actually asleep for the whole event.
+The machine flagged a clear-airway event lasting about 21 seconds. Interesting. That duration doesn't tell me what caused it, or whether I was actually asleep for the whole event.
 
 ![](/assets/images/2023/img_1136.jpg)
 
-Here's the 18th August, and we have recorded some obstructive apneas (OAs).
+Here's the 18th August, and the machine has flagged some obstructive apnoeas (OAs).
 
 ![](/assets/images/2023/img_1135.jpg)
 
@@ -36,7 +36,7 @@ How does the machine distinguish between clear-airway and obstructive events tho
 
 ![](/assets/images/2023/img_1138.jpg)
 
-Here's some data from the 19th August. The machine-reported AHI was below five on most days and never exceeded eight. I was treating that as reassuring, but the AirSense number is therapy data, not a diagnosis by itself.
+Here's some data from the 19th August. The machine-reported apnoea-hypopnoea index (AHI) was below five on most days and never exceeded eight. It counts flagged events per hour of mask-on therapy, which is not necessarily the same as an hour asleep. I found the numbers reassuring, but they weren't a diagnosis.
 
 ![](/assets/images/2023/img_1137.jpg)
 
@@ -52,7 +52,7 @@ There's a hypopnoea. In plain English, that is a partial reduction in breathing 
 
 ![](/assets/images/2023/img_1141.jpg)
 
-And the last day of recorded data where the pressure ramped up to 11 and I threw the mask off after a few hours.
+And on the last day of recorded data, the pressure ramped up to 11 cm H2O and I threw the mask off after a few hours.
 
 What have I learnt from this? While my snoring might be an issue to any roommates, I still did not know whether it was clinically important. I varied the settings on the machine night to night, but found that EPR, which reduces pressure during exhalation, made it much easier to sleep.
 
@@ -66,15 +66,17 @@ Did APAP or CPAP solve the night sweats during this trial? For me, no. That was 
 
 ![](/assets/images/2023/img_1143.gif)
 
-I guess all I can do is continue investigating why I have issues getting to sleep and staying asleep. I've tried eliminating caffeine, reducing room temperature and changing sleeping positions, and nothing seems to work. Coupled with phantom itches as I'm trying to sleep, it certainly doesn't help either.
+I guess all I can do is keep investigating why I have issues getting to sleep and staying asleep. I've tried eliminating caffeine, reducing room temperature and changing sleeping positions, and nothing seems to work. The phantom itches as I'm trying to sleep certainly don't help either.
 
 I was starting to wonder whether stress and anxiety were part of the picture, but I did not have an answer yet. 😮‍💨
-
-Previous: [Sleep Hygiene and Sleep Health](/sleep-hygiene-and-sleep-health/)
 
 ### Sources
 
 - [ResMed - AirFit N20 nasal mask](https://www.resmed.com/en-us/products/cpap/masks/airfit-n20/)
-- [ResMed - AirSense 10 innovation and technology](https://www.resmed.com.au/healthcare-professionals/airsolutions/innovation-and-technology)
+- [ResMed - AirSense 10 AutoSet, AutoSet for Her, Elite and CPAP Clinical Guide](https://www.resmed.com.au/hubfs/airsense-10-autoset-afh-elite-cpap-clinical-guide-apac-eng.pdf)
 - [Healthdirect Australia - Obstructive sleep apnoea](https://www.healthdirect.gov.au/obstructive-sleep-apnoea)
 - [Treatment-emergent central sleep apnea: a unique sleep-disordered breathing](https://pmc.ncbi.nlm.nih.gov/articles/PMC7725531/)
+
+### Related posts
+
+- [Sleep Hygiene and Sleep Health](/sleep-hygiene-and-sleep-health/)

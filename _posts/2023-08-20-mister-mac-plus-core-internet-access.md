@@ -3,22 +3,24 @@ title: "MiSTer Mac Plus Core - Internet Access"
 author: "Nix McRetro"
 date: 2023-08-20T09:07:02.000+10:00
 categories: [apple, modems, youtube]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="W9TQBRUclFc" %}
 
 Last year we were playing around with the Macintosh Classic, thanks to [Pendleton115](https://web.archive.org/web/20230904050034/http://pendleton115.net/). We wanted to get it internet-ready, but the old browsers were fighting my modern hosting setup. At the time I blamed HTTP/0.9; [later testing](/mac-web-browsers-from-the-90s-and-http-0-9/) showed MacWeb, Mosaic and Netscape reaching Apache as HTTP/1.0. The MiSTer has a Mac Plus core, and the original Plus gives us the right sort of starting point: Motorola 68000 at a whopping 8MHz, up to 4MB RAM, with System 7.5.5 as the last supported system version.
 
-{% include youtube.html id="eApRV4d1zwg" %} You can see more of the emulation settings in the above live stream from [McRetro Gaming](/channels). Thanks to the MiSTer settings, we can switch the core to the Macintosh SE ROM and select a 68020 at 16MHz, with the same 4MB of RAM. That is a MiSTer configuration rather than a stock Macintosh SE specification, but it gave the old software some extra legs. We were still limited by the paltry hardware and contemporary web browser support. Maybe asking a 1980s computer architecture to browse the 2020s web is a little unfair!
+{% include youtube.html id="eApRV4d1zwg" %}
+
+You can see more of the emulation settings in the live stream above from [McRetro Gaming](/channels). In the MiSTer settings, we can switch to the Macintosh SE ROM and select a 68020 at 16 MHz, with the same 4 MB of RAM. That's a MiSTer configuration rather than a stock Macintosh SE specification, but it gave the old software some extra legs. We were still limited by the paltry hardware and contemporary web browser support. Maybe asking a 1980s computer architecture to browse the 2020s web is a little unfair!
 
 ![](/assets/images/2023/img_1110.jpg)
 
-Another alternative is to run System 7.5 through the Amiga core and [ShapeShifter](http://shapeshifter.cebix.net), which might sound familiar to some. However I (mis)recognise it best from [SheepShaver](http://sheepshaver.cebix.net). Turns out they were both initially created by the same person, Christian Bauer. However, I didn't know the ins and outs of AmigaOS well enough to get it to dial-out. That said, there's definitely potential there.
+Another alternative is to run System 7.5 through the Amiga core and [ShapeShifter](http://shapeshifter.cebix.net), which might sound familiar to some. The name (mis)reminds me most of [SheepShaver](http://sheepshaver.cebix.net). Turns out they were both initially created by the same person, Christian Bauer. I didn't know the ins and outs of AmigaOS well enough to get it to dial out, though. There's definitely potential there.
 
 {% include youtube.html id="l7z3d2ErFvU" %}
 
@@ -26,7 +28,7 @@ Here's a closer look at the TradeWave MacWeb 2.0 browser. It can load websites p
 
 ![](/assets/images/2023/img_1111.jpg)
 
-The MiSTer, powered by the DE10-nano, is great for being able to output to HDMI and VGA using the analog board add-on. This way I can enjoy the VGA screen resolution on a 5:4 screen with a giant System 7.5 staring at me in the, not-far-away-enough distance. But why do I only have one hard drive mounted with the option for two drives to be mounted?
+The MiSTer, powered by the DE10-Nano, gives me HDMI and, with the analogue board add-on, VGA output. That lets me enjoy a giant System 7.5 desktop on a 5:4 screen, staring at me from a not-far-away-enough distance. But why do I only have one hard drive mounted when there's an option for two?
 
 ![](/assets/images/2023/img_1112.jpg)
 
@@ -36,5 +38,10 @@ Enter Big Bob. Big Bob was a great hard drive image we made up for the Macintosh
 
 - [Apple - Macintosh Plus: Technical Specifications](https://support.apple.com/en-au/112183)
 - [MiSTer-devel - MacPlus_MiSTer](https://github.com/MiSTer-devel/MacPlus_MiSTer)
-- [MacWeb 0.98 alpha release announcement, 1994](https://www.krsaborio.net/internet/research/www/1994-q3/0468.html)
+- [MacWeb 1.00ALPHA2.1 interim release announcement, 1994](https://www.krsaborio.net/internet/research/www/1994-q3/0468.html)
 - [MiSTer MacPlus issue 15 - VHD corruption after reboot](https://github.com/MiSTer-devel/MacPlus_MiSTer/issues/15)
+
+### Related posts
+
+- [Macintosh Classic, RaSCSI and The Internet](/macintosh-classic-rascsi-and-the-internet/)
+- [Mac Web Browsers from the 90s and HTTP/0.9](/mac-web-browsers-from-the-90s-and-http-0-9/)

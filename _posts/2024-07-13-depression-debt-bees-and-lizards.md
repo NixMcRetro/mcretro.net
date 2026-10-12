@@ -3,11 +3,11 @@ title: "Depression, Debt, Bees and Lizards"
 author: "Nix McRetro"
 date: 2024-07-13T12:50:17.000+10:00
 categories: [nature, news, study]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2024/img_1311.jpg)
@@ -28,7 +28,7 @@ Doing nothing now will likely result in me deferring until 2025. In an effort to
 
 ![](/assets/images/2024/img_1325.jpg)
 
-And no. I can't even. [Unrelenting bruxism 24/7](https://journals.sagepub.com/doi/10.1177/2320206821992534). At the lowest dose. [Every damn time](https://pmc.ncbi.nlm.nih.gov/articles/PMC6698238/). Bruxism is a documented adverse effect of serotonergic antidepressants, so that part was not imaginary. What I **cannot** conclude from it is that "something is wrong with my serotonin system" or that one mechanism explains every antidepressant I've failed to tolerate over the past decade. So where to from here?
+And no. I can't even. [Unrelenting bruxism 24/7](https://journals.sagepub.com/doi/10.1177/2320206821992534). At the lowest dose. [Every damn time](https://pmc.ncbi.nlm.nih.gov/articles/PMC6698238/). Bruxism is a known side effect of serotonergic antidepressants, but that still doesn't tell me why I've had such a rough time with them. Great. So where to from here?
 
 ![](/assets/images/2024/img_1317.jpg)
 
@@ -36,15 +36,11 @@ My anxiety seems to fuel my depression and seems to be specific to interacting w
 
 ![](/assets/images/2024/img_1318.jpg)
 
-I'm trialling [bupropion](https://en.wikipedia.org/wiki/Bupropion) (Zyban, Wellbutrin), usually described as a norepinephrine-dopamine reuptake inhibitor. It has little direct serotonergic activity and, importantly for me, I wasn't getting the same bruxism. There is evidence that bupropion can improve anxiety symptoms when they occur alongside depression, although pooled trials found a modest advantage for SSRIs in highly anxious depression. So "might help my anxious depression" was reasonable; "this is an anxiety medicine" would not be.
-
-I had what I called a two-week honeymoon where everything felt magical and stimulating. Calling bupropion "pretty much a stimulant" and waiting for receptor down-regulation was me inventing a neat mechanism for my subjective early response. There is no universal two-week honeymoon rule. Now I wait and see whether the benefit lasts.
+I'm trialling [bupropion](https://en.wikipedia.org/wiki/Bupropion) (Zyban, Wellbutrin), a norepinephrine-dopamine reuptake inhibitor (NDRI). Little direct effect on serotonin, and no bruxism for me. It might help my anxious depression, although pooled trials found a modest advantage for SSRIs when anxiety was high. For the first two weeks everything felt magical and stimulating. My little honeymoon period. I was waiting for [receptor down-regulation](https://en.wikipedia.org/wiki/Downregulation_and_upregulation), though I couldn't tell whether receptors explained any of that. Now I wait and see whether the benefit lasts.
 
 ![](/assets/images/2024/img_1324.jpg)
 
-In other news I've scraped the top end of the so-called healthy [BMI](https://en.wikipedia.org/wiki/Body_mass_index) range. BMI is a rough population screening measure rather than a complete verdict on an individual body, but dropping from 34.8 to 24.8 reflected a substantial change in **my** weight and risk profile.
-
-I was also thinking about deliberately cycling my weight to see whether GAHT changed where I regained fat. That was an experiment I was considering, not an evidence-based method for forcing fat redistribution, so don't read it as a transition protocol.
+In other news I've scraped the top end of the so-called healthy [BMI](https://en.wikipedia.org/wiki/Body_mass_index) range. BMI isn't the absolute best measure of health, but going from 34.8 to 24.8 was a pretty substantial change in my weight. I was also thinking about cycling my weight to see whether GAHT changed where I regained fat. Would it help with redistribution? I didn't know whether that would work.
 
 ![](/assets/images/2024/img_1321.jpg)
 
@@ -52,11 +48,11 @@ What an excellent segue into the medication side of things for being a transgend
 
 ![](/assets/images/2024/img_1319.jpg)
 
-[Progesterone](https://en.wikipedia.org/wiki/Progesterone_(medication)) is expensive and I am poor. So I had been comparing compounded progesterone with commercial Prometrium. At 400mg/day split twice daily, the compounded product gave me a slightly higher serum progesterone result on one set of tests. That does **not** establish bioequivalence between the formulations. Formulation, particle size, vehicle, food and release characteristics can all change progesterone pharmacokinetics.
+[Progesterone](https://en.wikipedia.org/wiki/Progesterone_(medication)) is expensive and I am poor. So I had been comparing compounded progesterone with commercial Prometrium. At 400mg/day split twice daily and measured in the trough, the compounded version gave me slightly higher numbers on one set of tests. Nice on paper, but that couldn't tell me whether the products were equivalent. Food, formulation and release characteristics can all change what gets absorbed and when.
 
 ![](/assets/images/2024/img_1312.jpg)
 
-However, there was one unexpected effect I appreciated. When I took oil-based Prometrium 200mg with food I experienced a short-lived sedated, mildly euphoric feeling that reminded me subjectively of diazepam. This is **not** a recommendation to take Prometrium with food: the Australian product information specifically says not to, because food increases its bioavailability. I also noticed this effect after stopping finasteride, which made progesterone-derived neurosteroids such as [allopregnanolone](https://en.wikipedia.org/wiki/Allopregnanolone) an interesting possible explanation, but I had not measured those metabolites.
+However, there was one unexpected effect I appreciated. When I took oil-based Prometrium 200mg with food, I got a short-lived sedated, mildly euphoric feeling that reminded me of 4-5mg of diazepam. The food part matters: it increases absorption, and the Prometrium leaflet says not to take it with food. I also noticed the effect after stopping finasteride. My best guess involved progesterone-derived neurosteroids such as [allopregnanolone](https://en.wikipedia.org/wiki/Allopregnanolone), though I hadn't measured those.
 
 ![](/assets/images/2024/img_1313.jpg)
 
@@ -64,15 +60,15 @@ For a few hours each day, at a big hit to my wallet, I can leave my anxiety behi
 
 ![](/assets/images/2024/img_1322.jpg)
 
-One of the reasons for retesting my baseline was a pretty big confounding factor: I was now taking modified-release compounded progesterone, so comparing the serum result directly with immediate-release Prometrium was messy. For one week I self-increased the modified-release product to 800mg/day trying to see whether anything changed. Nothing obvious did. That was a very high self-directed dosing experiment and a terrible way to establish formulation equivalence. It stays here because it happened, not because it is something to repeat.
+One of the reasons for retesting my baseline was a pretty big confounding factor: I was now taking modified-release compounded progesterone. Comparing that with immediate-release Prometrium was getting messy. Over one week I increased the modified-release dose to 800mg/day to see whether anything changed. Nothing. No positive mental effects, no negative ones either. That was a very high dose, and any further dose experiments needed to go through my prescriber. It still didn't tell me whether the formulations were equivalent.
 
 ![](/assets/images/2024/img_1326.jpg)
 
-I'm also checking serum [DHT](https://en.wikipedia.org/wiki/Dihydrotestosterone). A serum DHT result is real data, but it does not directly tell me the androgen exposure inside a particular hair follicle, where local 5-alpha reductase activity matters. I was mainly looking for broad shifts in steroid precursors on progesterone versus off progesterone. I'll do another post when I have additional data.
+I'm also checking serum [DHT](https://en.wikipedia.org/wiki/Dihydrotestosterone). That can tell me about what's circulating, though it won't tell me exactly what's happening inside a hair follicle. I was mainly looking for shifts in steroid precursors on progesterone versus off progesterone. I'll do another post when I have additional data.
 
 ![](/assets/images/2024/img_1320.jpg)
 
-It was also neat to see what my [estradiol](https://en.wikipedia.org/wiki/Estradiol_(medication)) levels were soon after another set of pellets was implanted. I measured just over 1500pmol/L at about one week, compared with roughly 700pmol/L before the newest implants, and around 1200pmol/L another three weeks later. I originally called anything above 400pmol/L "gravy". That's not how this works. The Australian guidance I was using targeted roughly 250 to 600pmol/L, with treatment adjusted to clinical response. A higher concentration is not automatically a better transition result, and these early post-implant levels were above that target rather than a bonus.
+It was also neat to see what my [estradiol](https://en.wikipedia.org/wiki/Estradiol_(medication)) levels were soon after another set of pellets was implanted. I scored just over 1500pmol/L at about one week, compared with roughly 700pmol/L before the newest implants, and around 1200pmol/L another three weeks later. I'd called anything above 400pmol/L "gravy", but more isn't automatically better. The Australian guidance I was using targeted roughly 250 to 600pmol/L, adjusted to clinical response, so those early post-implant levels were above that range.
 
 ![](/assets/images/2024/img_1323.jpg)
 
@@ -80,7 +76,14 @@ See what the bupropion made me do? This post is massive. Oh well, until next tim
 
 ### Sources
 
-- [Bupropion versus SSRIs for anxiety symptoms in major depressive disorder](https://pubmed.ncbi.nlm.nih.gov/18605812/)
-- [TGA - Prometrium product information](https://www.tga.gov.au/sites/default/files/auspar-progesterone-170601-pi-01.pdf)
-- [Australian position statement on the hormonal management of adult transgender and gender diverse individuals](https://auspath.org.au/wp-content/uploads/2023/01/mja250259-position-statement-adult-transgender-2022.pdf)
-- [WPATH Standards of Care Version 8](https://pmc.ncbi.nlm.nih.gov/articles/PMC9553112/)
+- [Efficacy of bupropion and the selective serotonin reuptake inhibitors in the treatment of major depressive disorder with high levels of anxiety (anxious depression): a pooled analysis of 10 studies](https://pubmed.ncbi.nlm.nih.gov/18605812/)
+- [Prometrium 100 and 200 mg - Consumer Medicine Information, published by MIMS May 2022](/assets/uploads/prometrium-100-and-200-mg-published-by-mims-may-2022.pdf)
+- [A position statement on the hormonal management of adult transgender and gender diverse individuals](https://auspath.org.au/wp-content/uploads/2023/01/mja250259-position-statement-adult-transgender-2022.pdf)
+- [Standards of Care for the Health of Transgender and Gender Diverse People, Version 8](https://pmc.ncbi.nlm.nih.gov/articles/PMC9553112/)
+
+### Related posts
+
+- [Mon Mothma was a Deejay](/mon-mothma-was-a-deejay/)
+- [Me, Myself and Progesterone](/me-myself-and-progesterone/)
+- [Progesterone Consumer Medicines Information (CMI)](/progesterone-consumer-medicines-information-cmi/)
+- [Third Time's a Charm; University Begins... Again](/third-times-a-charm-university-begins-again/)

@@ -3,11 +3,11 @@ title: "My First Rally - Trans Rights (Project 491)"
 author: "Nix McRetro"
 date: 2025-02-09T12:33:14.000+11:00
 categories: [activism, news]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2025/img_1372.jpg)
@@ -22,7 +22,7 @@ I am glad I had a support person with me yesterday and we were in one of the saf
 
 Hearing the stories from the speakers had a similar effect. Very emotional and relatable. So I have no issue saying a big f**k you to the Queensland Health Minister Tim Nicholls for messing with people's lives like that. You have no right.
 
-I've now [donated](https://givenow.com.au/project-491) and [signed the petition](https://transjustice.org.au/youth/). And I am going to (politely) hassle the hell out of my local members of parliament and remind them know that trans rights ARE human rights. You Liberal Party dickwads just pissed me off something fierce.
+I've now [donated](https://givenow.com.au/project-491) and [signed the petition](https://transjustice.org.au/youth/). And I am going to (politely) hassle the hell out of my local members of parliament and remind them that trans rights ARE human rights. You Liberal Party dickwads just pissed me off something fierce.
 
 In other news, I've been able to use Jetpack Social to finally link my [Bluesky](https://bsky.app/profile/nixmcretro.bsky.social), [Mastodon](https://mastodon.social/@nixmcretro) and [Tumblr](https://www.tumblr.com/nixmcretro) accounts. Anything Meta owns (Facebook and Instagram) has been purged after Meta [loosened its Hateful Conduct policy](https://www.abc.net.au/news/2025-01-10/meta-hateful-conduct-policy-changes-alarm-lgbtq-advocates/104800042), including allowing some statements about gender and sexual orientation that its previous rules prohibited.
 
@@ -30,6 +30,6 @@ Unfortunately, it seems we are living in interesting times. It's time to protect
 
 ### Sources
 
-- [Queensland Health - Independent review of Stage 1 and Stage 2 hormone therapies](https://www.health.qld.gov.au/research-reports/reports/review-investigation/hormone-therapies-review)
+- [Children's Health Queensland - Health Service Directive: Treatment of gender dysphoria in children (FAQs, updated 30 January 2025)](https://www.childrens.health.qld.gov.au/__data/assets/pdf_file/0034/354499/QCH_QCGS_FAQs_Health-Service-Directive_Gender-care.pdf)
 - [Children's Health Queensland - Queensland Children's Gender Service External Clinical Service Evaluation](https://www.childrens.health.qld.gov.au/__data/assets/pdf_file/0036/289719/Queensland-Childrens-Gender-Service-External-Clinical-Services-Evaluation.pdf)
 - [ABC News - Meta Hateful Conduct policy changes](https://www.abc.net.au/news/2025-01-10/meta-hateful-conduct-policy-changes-alarm-lgbtq-advocates/104800042)

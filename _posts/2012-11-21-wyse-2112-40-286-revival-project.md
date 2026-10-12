@@ -2,7 +2,7 @@
 title: "Wyse 2112-40 286 Revival Project"
 author: "Nix McRetro"
 date: 2012-11-21T21:43:56.000+11:00
-last_modified_at: 2026-10-04
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-04
@@ -12,11 +12,7 @@ categories: [hacks, ibm-pc, repairs]
 
 {% include youtube.html id="pNFAPLzcT74" %}
 
-This machine was originally earmarked to be stripped for parts.
-
-Then curiosity got the better of me.
-
-Instead, I spent the last couple of days getting the thing back into a workable state.
+This machine was originally earmarked to be stripped for parts. Then curiosity got the better of me. Instead, I spent the last couple of days getting the thing back into a workable state.
 
 The Wyse 2112 is built around a 12.5 MHz 80286. This particular machine has a 40 MB hard drive and originally used a 720 KB 3.5-inch floppy drive.
 

@@ -2,7 +2,7 @@
 title: "Sega Mega-CD Karaoke Unit and CD+G Demo"
 author: "Nix McRetro"
 date: 2012-11-08T19:50:29.000+11:00
-last_modified_at: 2026-10-04
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-04
@@ -14,9 +14,7 @@ categories: [sega, youtube]
 
 As you can see, the Sega Mega-CD Karaoke Unit and the microphone I repaired earlier are both still working nicely.
 
-It is your lucky day.
-
-My neighbours may have a different opinion.
+It is your lucky day. My neighbours may have a different opinion.
 
 The Mega-CD handles playback of CD+G discs, where the audio CD also carries simple graphics data used for things such as synchronised lyrics. The Karaoke Unit adds microphone mixing and vocal effects.
 
@@ -28,9 +26,7 @@ The material I started with was in MP3+G form, with the audio and karaoke graphi
 
 The hardware itself provides considerably more than a microphone socket, including effects and controls intended specifically for karaoke use.
 
-I really wish my Karaoke Unit wasn't boxed so I could leave it displayed alongside the Mega Drive and Mega-CD all the time.
-
-What can you do!
+I really wish my Karaoke Unit wasn't boxed so I could leave it displayed alongside the Mega Drive and Mega-CD all the time. What can you do!
 
 ### Related posts
 

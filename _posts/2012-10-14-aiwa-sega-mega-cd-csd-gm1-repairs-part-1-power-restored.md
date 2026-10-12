@@ -2,7 +2,7 @@
 title: "Aiwa Sega Mega-CD CSD-GM1 Repairs Part 1: Power Restored"
 author: "Nix McRetro"
 date: 2012-10-14T07:39:43.000+11:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -12,13 +12,7 @@ categories: [repairs, sega, youtube]
 
 {% include youtube.html id="J0-hOrLau4Q" %}
 
-Progress was her middle name.
-
-Success was her first.
-
-Not too sure what her last name was at this point. Still unwritten perhaps.
-
-As you can see from the video, repairs are going well in the traditional sense of solving one problem and discovering another three.
+Progress was her middle name. Success was her first. Not too sure what her last name was at this point. Still unwritten perhaps. As you can see from the video, repairs are going well in the traditional sense of solving one problem and discovering another three.
 
 ![](/assets/images/2012/img_0299.jpg)
 
@@ -39,8 +33,6 @@ Simple!
 Power is still the bigger mystery. Measuring the regulator outputs produced differences of as much as 14 V between some of the points I was comparing across the two machines. That is far too large a difference to start connecting things blindly, so I need to map the rails properly before doing much more.
 
 Don't want to fry any microchips!
-
-The KSS-210B replacement did eventually get the CD mechanism reading again, but first I had to work through the power-supply mess.
 
 ### Related posts
 

@@ -2,7 +2,7 @@
 title: "Aiwa Sega Mega-CD CSD-GM1 KSS-210B Laser Replacement"
 author: "Nix McRetro"
 date: 2012-10-22T08:57:17.000+11:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -26,9 +26,7 @@ The Aiwa mechanism is arranged a little differently from the Mega-CD II drives I
 
 ![](/assets/images/2012/img_0329.jpg)
 
-Track 13!
-
-Yes!
+Track 13! Yes!
 
 Seeing the mechanism reading that far through the disc was a particularly satisfying sight after all the other faults in these machines.
 

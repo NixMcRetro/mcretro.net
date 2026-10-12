@@ -2,7 +2,7 @@
 title: "Aiwa Mega-CD CSD-GM1 Repairs Part 2: Power Rail Testing"
 author: "Nix McRetro"
 date: 2012-10-20T04:17:40.000+11:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -12,11 +12,7 @@ categories: [hacks, repairs, sega]
 
 {% include youtube.html id="rk-CYnqxv6M" %}
 
-The video above is not the one I originally intended to upload. YouTube messed up the upload, then I accidentally deleted the original while trying to recover it.
-
-It was gone.
-
-Never mind. Enjoy some transformer rantings instead.
+The video above is not the one I originally intended to upload. YouTube messed up the upload, then I accidentally deleted the original while trying to recover it. It was gone. Never mind. Enjoy some transformer rantings instead.
 
 ### Reconnecting the power wiring
 

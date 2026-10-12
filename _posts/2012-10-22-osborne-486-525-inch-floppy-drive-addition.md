@@ -2,7 +2,7 @@
 title: "Osborne 486 5.25-inch Floppy Drive Addition"
 author: "Nix McRetro"
 date: 2012-10-22T11:14:54.000+11:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -14,11 +14,7 @@ categories: [apple, ibm-pc, youtube]
 
 The 5.25-inch floppy drive now living in the Osborne came from the Wyse 286 desktop I had a quick look at earlier. The Wyse isn't mine anymore because someone else wanted it. All I really needed was the floppy drive anyway.
 
-It is always a little disappointing when an eBay seller sends out an untested drive described as working but sold as-is. If it doesn't work, don't list it as working.
-
-What can you do?
-
-At least I now have one functioning 5.25-inch floppy drive in the Osborne.
+It is always a little disappointing when an eBay seller sends out an untested drive described as working but sold as-is. If it doesn't work, don't list it as working. But what can you do? At least I now have one functioning 5.25-inch floppy drive in the Osborne.
 
 ![](/assets/images/2012/img_0331.jpg)
 

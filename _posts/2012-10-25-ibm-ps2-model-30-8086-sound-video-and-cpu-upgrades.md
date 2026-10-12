@@ -2,7 +2,7 @@
 title: "IBM PS/2 Model 30 8086 Sound, Video and CPU Upgrades"
 author: "Nix McRetro"
 date: 2012-10-25T03:12:20.000+11:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -44,11 +44,7 @@ I should really try an ESS card next.
 
 I'm still waiting for the replacement hard drives. At the rate the seller is progressing I'll be lucky to see them within the next month.
 
-Chances are I'll end up lodging a PayPal dispute before the deadline expires. They were completely silent until yesterday, when they promised to get onto it tomorrow.
-
-Which is yesterday.
-
-Ahhh, time zones...
+Chances are I'll end up lodging a PayPal dispute before the deadline expires. They were completely silent until yesterday, when they promised to get onto it tomorrow. Which is yesterday. Ahhh, time zones...
 
 ![](/assets/images/2012/img_0335.jpg)
 

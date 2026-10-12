@@ -2,7 +2,7 @@
 title: "Osborne 486 Boot-Sector Virus Cleanup with F-PROT"
 author: "Nix McRetro"
 date: 2012-10-23T05:56:45.000+11:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -12,9 +12,7 @@ categories: [ibm-pc, repairs]
 
 ![](/assets/images/2012/img_0332.jpg)
 
-Looks like I am not the only one who has a virus at the moment.
-
-The trusty old Osborne ended up with what appeared to be an MBR or boot-sector infection. The Sound Blaster 16 installation disks I had been using were also detected as infected. At the time I assumed those disks had infected the PC. I cannot actually prove the direction of transmission though. Without a known-clean copy of the disks from before they entered the Osborne, the PC could just as easily have infected them.
+Looks like I am not the only one who has a virus at the moment. The trusty old Osborne ended up with what appeared to be an MBR or boot-sector infection. The Sound Blaster 16 installation disks I had been using were also detected as infected. At the time I assumed those disks had infected the PC. I cannot actually prove the direction of transmission though. Without a known-clean copy of the disks from before they entered the Osborne, the PC could just as easily have infected them.
 
 ![](/assets/images/2012/img_0333.jpg)
 

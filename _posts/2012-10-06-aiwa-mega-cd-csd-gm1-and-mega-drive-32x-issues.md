@@ -2,7 +2,7 @@
 title: "Aiwa Mega-CD CSD-GM1 and Mega Drive 32X Issues"
 author: "Nix McRetro"
 date: 2012-10-06T02:57:30.000+10:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -26,15 +26,13 @@ The other CSD-GM1 is considerably more functional, but it has horizontal video f
 
 They were only a suspect at this stage though.
 
-This ended up becoming a much larger repair project involving multiple boards, power problems, the CD mechanism and audio circuitry rather than one simple "replace the capacitors" fix.
-
 ### Mega Drive 32X video problems
 
 {% include youtube.html id="xOgntz8Z0mk" %}
 
 I was also still chasing the strange 32X flickering problem on my Model 1 Mega Drives. At the time I wondered whether this was another capacitor problem or perhaps something related to a particular production range. Testing several completely different 32X units against the same affected Mega Drive was the important clue: the common factor was increasingly looking like the host console.
 
-I later learned that Sega had already documented this type of problem on PAL and Asian Model 1 VA4 boards in its 1994 and 1995 service bulletins. The factory service bulletins identify poor EDCLK and VCLK signal quality in the Mega Drive itself. As affected hardware warms up, the 32X-generated part of the picture can begin to jitter and the system may eventually lock up. Sega's repair modifies the Mega Drive motherboard, not the 32X. That fits what I was seeing considerably better than my original capacitor theory.
+**Later context, discovered after this 2012 post:** I learned that Sega had already documented this problem on PAL and Asian Model 1 VA4 boards in its 1994 and 1995 service bulletins. Poor EDCLK and VCLK signal quality in the Mega Drive itself can cause 32X-generated video to jitter and the system to lock up as it warms. Sega's repair modifies the Mega Drive motherboard rather than the 32X. That fits my symptoms much better than the capacitor theory I was exploring here.
 
 I've also started a thread on the [ASSEMblergames forum](https://web.archive.org/web/20121127045759/http://www.assemblergames.com/forums/showthread.php?41947-Sega-Mega-32X-Video-Flickering-Distortion) for anyone interested in the investigation.
 

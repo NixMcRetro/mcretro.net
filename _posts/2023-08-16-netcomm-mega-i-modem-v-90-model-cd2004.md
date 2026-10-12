@@ -3,11 +3,11 @@ title: "NetComm Mega-i-Modem V.90 - Model CD2004"
 author: "Nix McRetro"
 date: 2023-08-16T17:49:56.000+10:00
 categories: [linux, modems, repairs]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="Gm-ekXhaUKY" %}
@@ -70,9 +70,7 @@ CONNECT 28800
 
 ```
 
-Looks like the majority were replaced with Panasonic FR series caps. There were 11 capacitors in total. I didn't note down the locations of each capacitor, but rest assured you can see the locations in the video above.
-
-As with my 2021 capacitor post, this list records this particular CD2004 rather than a universal replacement bill of materials. Verify the board and fitted parts before ordering replacements. The parts listed below are manufacturer part numbers. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
+Looks like the majority were replaced with Panasonic FR series caps. There were 11 capacitors in total. I didn't note down each location, so the video is useful context, but check your actual board before ordering. As with my 2021 capacitor post, this is a record of this particular CD2004. Check capacitor type and polarity, capacitance, voltage and temperature ratings, ESR, ripple current and physical fit. The parts listed below are manufacturer part numbers. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
 
 ```
 Value	Voltage		Height	Width	Notes
@@ -95,6 +93,14 @@ Lead spacing is 2-2.5mm on most.
 
 ```
 
-As always you can see more pictures, OK two pictures, in the [photo gallery](/photos) and grab any drivers from the [file server](/files). I've put an iso image up of the entire driver disc as well but you shouldn't need much more than the above init string to get dialling.
+I put more pictures - OK, two pictures - in the [photo gallery](/photos), and the drivers, including an ISO image of the entire driver disc, on the [file server](/files). Both are currently unavailable. The init string above records what I used on this modem; it isn't a guarantee for every setup.
 
 This modem has been donated to the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/).
+
+### Sources
+
+- [Nichicon - Application Guidelines for Aluminum Electrolytic Capacitors](https://www.nichicon.co.jp/english/series_items/catalog_pdf/e-aluminum.pdf)
+
+### Related posts
+
+- [NetComm Mega-i-Modem CD2004 Capacitor List](/netcomm-mega-i-modem-cd2004-capacitor-list/)

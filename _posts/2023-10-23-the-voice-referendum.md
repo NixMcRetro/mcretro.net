@@ -3,16 +3,16 @@ title: "The Voice Referendum"
 author: "Nix McRetro"
 date: 2023-10-23T05:32:57.000+11:00
 categories: [activism, news]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2023/img_1169.jpg)
 
-What the actual f**k Australia? When it comes to politics I am very left leaning and the echo chambers I frequent tend to be left aligned. Oh, aaaaaand I might not have voted. The referendum failed nationally with 39.94% Yes and 60.06% No. But what the hell are we doing voting no on something that I believed could benefit First Nations people without taking anything away from anyone else?
+What the actual f**k Australia? When it comes to politics I am very left leaning and the echo chambers I frequent tend to be left aligned. Oh, aaaaaand I might not have voted. The final count was 39.94% Yes and 60.06% No; the screenshot above shows an earlier tally. But what the hell are we doing voting no on something that I believed could benefit First Nations people without taking anything away from anyone else?
 
 The right rambles on about equality while seeding fear, uncertainty and doubt. Are we actually that gullible to believe the crap spewing from the right, i.e. the Liberal-National Coalition. Apparently, yes we are.
 
@@ -30,9 +30,9 @@ But what of these no voters? Was this just a census for how racist and bigoted w
 
 Why did I fail to vote? I wanted to do a postal vote but after looking at the requirements I didn't think I fitted them. Looking back at the actual 2023 AEC rules, they included serious illness, infirmity and a reasonable fear for personal wellbeing or safety. Whether my circumstances fitted one of those grounds was not something I worked through at the time. Instead I chose to go in person, have a panic attack, escape the voting area and not return all day. Great to see the pregabalin I've been prescribed not quite working right for anxiety. Works great for sleep, but that's about it.
 
-When it comes to things like our constitution I am generally out of the loop. The distinction I was trying to get at was real, but my explanation was a bit too simple. Proposed section 129 would have put into the Constitution that "there shall be a body" called the Aboriginal and Torres Strait Islander Voice. Parliament would still have had broad power to make laws about its composition, functions, powers and procedures, so a future government could have changed or restricted how it operated. What ordinary legislation could not have done was simply erase the constitutional requirement that the body exist. Removing that would have required another constitutional alteration and referendum.
+When it comes to things like our constitution I am generally out of the loop. Proposed section 129 would have put into the Constitution that "there shall be a body" called the Aboriginal and Torres Strait Islander Voice. Parliament would still have controlled its composition, functions, powers and procedures, so a future government could have changed or restricted how it operated. It could not simply have abolished the constitutional requirement for the body through ordinary legislation. Removing that requirement would have needed another constitutional alteration and referendum.
 
-I guess I am just disappointed at how we treat our own people. The federal Liberal Party had formally decided to oppose the proposed Voice and campaign for No, joining the Nationals, although not every Liberal politician agreed. I found that position disgusting. The following images are from [here](https://web.archive.org/web/20231012062458/https://voice.gov.au/about-voice/voice-principles).
+I guess I am just disappointed at how we treat our own people. The federal Liberal Party had formally decided to oppose the proposed Voice and campaign for No, joining the Nationals, although not every Liberal politician agreed. I found that position disgusting. The following images show the [Voice design principles](https://web.archive.org/web/20231012062458/https://voice.gov.au/about-voice/voice-principles).
 
 ![](/assets/images/2023/img_1170.jpg)
 
@@ -57,5 +57,5 @@ If you find yourself supporting policies of the right, consider how you got ther
 
 - [Australian Electoral Commission - 2023 referendum national results](https://results.aec.gov.au/29581/Website/ReferendumNationalResults-29581.htm)
 - [Parliamentary Library - Constitution Alteration (Aboriginal and Torres Strait Islander Voice) 2023](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/bd/bd2223a/23bd080)
-- [Australian Electoral Commission - Referendum Scrutineers Handbook 2023](https://www.aec.gov.au/referendums/files/scrutineers-handbook.pdf)
+- [Federal Register of Legislation - Referendum (Machinery Provisions) Act 1984, 27 March 2023 compilation, Schedule 3](https://www.legislation.gov.au/C2004A02908/2023-03-27/text)
 - [ABC News - Liberal Party formally opposes the Voice](https://www.abc.net.au/news/2023-04-05/liberal-party-oppose-voice-to-parliament/102188290)

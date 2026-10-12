@@ -1,13 +1,13 @@
 ---
-title: "HPE MicroServer with TrueNAS Scale - Clunking Hard Drives"
+title: "HPE MicroServer with TrueNAS SCALE - Clunking Hard Drives"
 author: "Nix McRetro"
 date: 2023-11-04T12:46:01.000+11:00
 categories: [guides, news, youtube]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="ph_s2SxldPE" %}
@@ -16,7 +16,7 @@ I have been listening to my three or four drives go clunk, clunk, clunk for the 
 
 ![](/assets/images/2023/img_1189.jpg)
 
-Well it turns out I found a very plausible answer. Western Digital users have described a behaviour called "Preventive Wear Leveling", or PWL, involving periodic head movement that can produce a regular clicking noise while some drives are spun up and idle. That matches what I was hearing almost perfectly. I have not found a WD specification for the WD161KFGX that explicitly documents PWL itself, so I would call it the best-supported explanation rather than proof from the model specification.
+Well, I found a very plausible answer. Western Digital users describe "Preventive Wear Leveling", or PWL: periodic head movement that can produce a regular click while some drives are spun up and idle. It sounds a lot like what I was hearing. I have not found a WD specification confirming PWL for my WD161KFGX drives, so it remains a likely explanation rather than a confirmed diagnosis.
 
 ![](/assets/images/2023/img_1190.jpg)
 
@@ -26,9 +26,9 @@ On one hand I'm glad that I know what the likely noise is now. Spinning rust. I 
 
 > But, spinning up every hour, which is more likely- That is ~9,000 cycles per year, and you would take 33 years to exceed that threshold.
 
-That's rough arithmetic rather than a drive-life calculation. One event every hour is 8,760 events per year, so "about 9,000" is close enough, but I was also mixing different counters together. A load/unload cycle is not simply identical to one standby timeout firing, so dividing a rated cycle count by 9,000 does not tell me how many years the drives will last.
+The rough arithmetic checks out: one event every hour is 8,760 a year, or about 9,000. The problem is that I was mixing counters. A load/unload cycle is not the same thing as a standby timeout firing, and dividing a rated cycle count by 9,000 does not tell me how many years a drive will last.
 
-Honestly though, I have warranty for another four years. As long as I don't churn unnecessary start, stop and load cycles I can't see there being any issues with experimenting with the sleep settings. The question is, how to make it work best?
+Honestly though, I still have another four years of warranty. That doesn't promise a drive won't fail, but with backups in place I'm curious to see how the sleep settings behave without churning unnecessary start, stop and load cycles. The question is, how to make it work best?
 
 ![](/assets/images/2023/img_1188.jpg)
 
@@ -44,3 +44,4 @@ That raw ATA description made the setting easier to understand. TrueNAS itself e
 
 - [TrueNAS Community - New WD Red Pros clicking every 5 seconds, described as Preventive Wear Leveling](https://www.truenas.com/community/threads/new-wd-red-pros-clicking-every-5-seconds-preventive-wear-leveling-firmware-feature.105866/)
 - [TrueNAS Documentation - Disks](https://www.truenas.com/docs/scale/storage/disks/disksscreen/)
+- [hdparm 9.65 manual - Standby timeout (-S)](https://sources.debian.org/src/hdparm/9.65%2Bds-1/hdparm.8/)

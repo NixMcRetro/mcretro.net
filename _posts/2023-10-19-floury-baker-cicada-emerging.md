@@ -3,19 +3,24 @@ title: "Floury Baker Cicada Emerging"
 author: "Nix McRetro"
 date: 2023-10-19T08:54:01.000+11:00
 categories: [nature, youtube]
+last_modified_at: 2026-10-12
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="KJDxxvHXkN0" %}
 
-This all started a bit grim finding a flattened cicada being attacked by ants and a dead beetle who probably couldn't get to soil. But there's always a story to be told and her story lies in the video above! 🙃
+This all started a bit grimly, with a flattened cicada being attacked by ants and a dead beetle who probably couldn't get to soil. But there's always a story to be told, and her story lies in the video above! 🙃
 
-  {% include youtube.html id="_gkFnoO045w" %}
+{% include youtube.html id="_gkFnoO045w" %}
 
 Above is some video of the shell left behind, shot in normal mode. I get to ramble on about bugs which is always a joy.
 
-  {% include youtube.html id="Oh04nwE_A3E" %}
+{% include youtube.html id="Oh04nwE_A3E" %}
 
-Next is the same shell shot with my relatively cheap clip-on macro lens. It's incredible to see the detail up close. The hairs, the white filaments, all incredible. Here's some of the best photos from the day.
+Next is the same shell shot with my relatively cheap clip-on macro lens. It's incredible to see the detail up close. The hairs, the white filaments, all incredible. Here are some of the best photos from the day.
 
 ![](/assets/images/2023/img_1166.jpg)
 
@@ -33,4 +38,8 @@ This is her in her mostly hardened state.
 
 Finally, we have the shell itself. Who would have thought [incomplete metamorphosis](https://australian.museum/learn/animals/insects/metamorphosis-a-remarkable-change/) (hemimetabolism) would be so cool!
 
-It's always a little bittersweet writing this up knowing she is gone. I guess the only comfort I have is the possibility that she passed on her genetics to future cicadas. Catch you at the [rainbow bridge](https://en.wikipedia.org/wiki/Rainbow_Bridge_(pets)) little one!
+It's always a little bittersweet writing this up knowing she is gone. I guess the only comfort I have is the possibility that she passed on her genetics to future cicadas. Catch you at the [rainbow bridge](https://en.wikipedia.org/wiki/Rainbow_Bridge_(pets)), little one!
+
+### Related posts
+
+- [Exuviae Variation Among Australian Cicadas](/exuviae-variation-among-australian-cicadas/)

@@ -1,22 +1,22 @@
 ---
-title: "Shane's Brains! CT Scan - September 2023"
+title: "Nix's Brains! CT Scan - September 2023"
 author: "Nix McRetro"
 date: 2023-09-11T15:22:31.000+10:00
 categories: [news]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="wkTBQv1y65M" %}
 
-After having a headache for nearly a week I figured I should get it checked out at the local GP. Thanks to having a somewhat decent health system in place, I had a CT scan just one hour later. Having a background in human biomedical science, I naturally started poking around the images myself. Nothing obvious jumped out at me, apart from what looked like a chunky calcified or ossified section of the falx cerebri. The radiology report did not identify it as pathology, so this was me admiring an incidental-looking bit of anatomy rather than diagnosing myself.
+After having a headache for nearly a week, I figured I should get it checked out at the local GP. Thanks to having a somewhat decent health system in place, I had a CT scan just one hour later. Having a background in human biomedical science, I naturally started poking around the images myself. Nothing obvious jumped out at me, apart from what looked like a chunky calcified or ossified section of the falx cerebri. The radiology report did not identify it as pathology, so this was me admiring an incidental-looking bit of anatomy rather than diagnosing myself.
 
 ![](/assets/images/2023/img_1155.jpg)
 
-The CT scans provided have two "modes". Brain window and bone window. Above is brain window mode with better detail of the brain. The falx cerebri visible as bright white. 
+The CT scans provided have two display settings: brain window and bone window. Above is the brain window, which shows more detail in the brain itself. The falx cerebri is visible as that bright white section.
 
 ![](/assets/images/2023/img_1155a.jpg)
 
@@ -50,11 +50,15 @@ No significant intracranial pathology. Incidental finding of anatomic variation 
 
 Interestingly, the falx was not the finding the radiologist actually wanted followed up. That was the cavum velum interpositum (CVI). A CVI is a CSF-filled midline anatomical variant and is generally considered part of the normal spectrum, although enlargement or a cyst producing mass effect can warrant further investigation. In my scan the radiologist specifically noted convex margins and some degree of mass effect, which is why the MRI was recommended.
 
-Next: [The Headache That Keeps Marching On](/the-headache-that-keeps-marching-on/)
-
 ### Sources
 
 - [Radiology Masterclass - Intracranial calcification](https://www.radiologymasterclass.co.uk/tutorials/ct/ct_brain_anatomy/ct_brain_anatomy_choroid_calcified)
 - [Radiopaedia - Falx ossification](https://web.archive.org/web/20220526214718/https://radiopaedia.org/articles/falx-ossification)
-- [Falx cerebri ossification: CT and MRI appearance](https://pubmed.ncbi.nlm.nih.gov/24351265/)
-- [Cavum velum interpositum: imaging and clinical considerations](https://pmc.ncbi.nlm.nih.gov/articles/PMC10607410/)
+- [Falx Cerebri Ossification: CT and MRI Evaluation](https://pubmed.ncbi.nlm.nih.gov/24351265/)
+- [Imaging of the septum pellucidum: normal, variants and pathology](https://pmc.ncbi.nlm.nih.gov/articles/PMC10607410/)
+
+### Related posts
+
+- [The Headache That Keeps Marching On](/the-headache-that-keeps-marching-on/)
+- [Nix's Brains! MRI Scan - September 2023](/nixs-brains-mri-scan-september-2023/)
+- [Nix's Brains! MRI Scan - October 2023](/nixs-brains-mri-scan-october-2023/)

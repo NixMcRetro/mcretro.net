@@ -7,7 +7,7 @@ categories: [news]
 
 ![](/assets/images/2024/img_1257.jpg)
 
-A few milestones have been achieved this month. I've reached my third month of gender affirming hormone therapy (GAHT) and was able to get an estradiol implant (200mg, compounded). I kicked pregabalin as it wasn't helping with my anxiety symptoms - but was helping with sleep... I also ceased indometacin successfully. Hemicrania continua is [not being so continua now](/shanes-brains-mri-scan-september-2023/).
+A few milestones have been achieved this month. I've reached my third month of gender affirming hormone therapy (GAHT) and was able to get an estradiol implant (200mg, compounded). I kicked pregabalin as it wasn't helping with my anxiety symptoms - but was helping with sleep... I also ceased indometacin successfully. Hemicrania continua is [not being so continua now](/nixs-brains-mri-scan-september-2023/).
 
 ![](/assets/images/2024/img_1259.jpg)
 

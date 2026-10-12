@@ -2,7 +2,7 @@
 title: "Leaking NiCad Batteries and Motherboards"
 author: "Nix McRetro"
 date: 2012-10-28T06:58:02.000+11:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -12,9 +12,7 @@ categories: [ibm-pc, repairs]
 
 {% include youtube.html id="VTKAVvqteMM" %}
 
-I hate NiCad batteries.
-
-I hate them so much.
+I hate NiCad batteries. I hate them so much.
 
 The rechargeable barrel-style NiCd batteries used on many vintage computer motherboards are notorious for leaking and destroying nearby tracks and components. The electrolyte inside a NiCd cell is alkaline, primarily a potassium-hydroxide solution, rather than an acid. That distinction matters chemically, but either way it is something I do not want spreading across a motherboard.
 

@@ -2,7 +2,7 @@
 title: "Osborne Australia 486DX2-66 Overview"
 author: "Nix McRetro"
 date: 2012-10-13T04:21:57.000+11:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -14,9 +14,7 @@ categories: [ibm-pc, youtube]
 
 This is what it was all about. With the Creative CD-ROM finally working, we now have a functional 486 in the household.
 
-The Amstrad Mega PC doesn't count. That is more of a 386SX on steroids or, in my highly scientific terminology, a crippled 486.
-
-Take your pick!
+The Amstrad Mega PC doesn't count. That is more of a 386SX on steroids or, in my highly scientific terminology, a crippled 486. Take your pick!
 
 ![](/assets/images/2012/img_0293.jpg)
 
@@ -28,7 +26,7 @@ Now that's how you make a logo sticker!
 
 ![](/assets/images/2012/img_0291.jpg)
 
-Made in Australia. Those were the days. Not that being Australian-made automatically makes something technically better. I think it is more the nostalgia of seeing a big beige PC that was assembled and sold locally.
+Made in Australia. Those were the days. Not that being Australian-made automatically makes something technically better. There is something nostalgic about these big beige PCs, put together to be solid and last a decade or three.
 
 ![](/assets/images/2012/img_0290.jpg)
 

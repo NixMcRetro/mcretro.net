@@ -2,7 +2,7 @@
 title: "Creative Labs CD-200 2x CD-ROM Driver Hunt"
 author: "Nix McRetro"
 date: 2012-10-08T21:59:31.000+11:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -18,11 +18,7 @@ So little information seems to exist about this particular Creative Labs CD-200 
 
 And the search continues...
 
-I did eventually get the beast working. The driver I needed was Creative's `CCD.SYS`; Creative's driver README also refers to `CRCCD.SYS`. MSCDEX then provides the DOS drive letter once the hardware driver has loaded. I documented the exact `CONFIG.SYS` and `AUTOEXEC.BAT` setup in the follow-up post.
-
-Once I get this beast working, we'll have a BBQ party, I said.
-
-Looks like I owe everyone a BBQ.
+Once I get this beast working, we'll have a BBQ party. It will be a lovely day!
 
 ![](/assets/images/2012/img_0281.jpg)
 

@@ -2,7 +2,7 @@
 title: "Aiwa Mega-CD CSD-GM1 Game Unit Overview"
 author: "Nix McRetro"
 date: 2012-11-03T13:44:28.000+11:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -12,9 +12,7 @@ categories: [sega, youtube]
 
 {% include youtube.html id="IEjsam_FNSw" %}
 
-Here's a closer look inside the Aiwa Mega-CD CSD-GM1 Game Unit, complete with a truly impressive number of capacitors and some damage near the rear of the board.
-
-It is not every day you get to see inside one of these.
+Here's a closer look inside the Aiwa Mega-CD CSD-GM1 Game Unit, complete with a truly impressive number of capacitors and some damage near the rear of the board. It is not every day you get to see inside one of these.
 
 Comparing my two Game Units, I estimated that one was roughly 10 to 20 weeks newer than the other. I labelled the older unit **01-01** and the newer unit **01-02** to keep track of them.
 

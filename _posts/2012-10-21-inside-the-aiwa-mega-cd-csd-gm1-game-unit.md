@@ -2,7 +2,7 @@
 title: "Inside the Aiwa Mega-CD CSD-GM1 Game Unit"
 author: "Nix McRetro"
 date: 2012-10-21T12:58:38.000+11:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -12,11 +12,7 @@ categories: [sega, youtube]
 
 {% include youtube.html id="nt5E4DaJMxM" %}
 
-Here's a quick look inside the Mega Drive and Mega-CD Game Unit that attaches underneath the Aiwa CSD-GM1.
-
-At the time I joked that it was pretty useless by itself unless you wanted a lead-weighted frisbee.
-
-Turns out I was wrong about that part.
+Here's a quick look inside the Mega Drive and Mega-CD Game Unit that attaches underneath the Aiwa CSD-GM1. Pretty useless by itself, unless you want a lead-weighted frisbee! Or so I thought.
 
 ![](/assets/images/2012/img_0323.jpg)
 

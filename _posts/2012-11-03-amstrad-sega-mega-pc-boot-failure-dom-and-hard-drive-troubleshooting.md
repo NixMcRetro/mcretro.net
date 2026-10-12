@@ -2,7 +2,7 @@
 title: "Amstrad Sega Mega PC Boot Failure: DOM and Hard Drive Troubleshooting"
 author: "Nix McRetro"
 date: 2012-11-03T14:28:42.000+11:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -12,11 +12,7 @@ categories: [ibm-pc, repairs, youtube]
 
 {% include youtube.html id="jtELwBEe-Ek" %}
 
-Sometimes it is good that things break.
-
-[CityEscaper](https://www.youtube.com/user/CityEscaper) asked whether I could pull the Mega PC out and test it on some different displays around the house. The video output works on my Samsung LCD TV and on my ViewSonic computer LCD from around 2004 to 2005. My newer Toshiba LCD TV wants nothing to do with it.
-
-Fair enough.
+Sometimes it is good that things break. [CityEscaper](https://www.youtube.com/user/CityEscaper) asked whether I could pull the Mega PC out and test it on some different displays around the house. The video output works on my Samsung LCD TV and on my ViewSonic computer LCD from around 2004 to 2005. My newer Toshiba LCD TV wants nothing to do with it. Fair enough.
 
 ![](/assets/images/2012/img_0345.jpg)
 

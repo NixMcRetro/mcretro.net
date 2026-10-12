@@ -2,7 +2,7 @@
 title: "The Apple Macintosh LC 475"
 author: "Nix McRetro"
 date: 2012-09-23T13:38:14.000+10:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -34,13 +34,9 @@ I've also added a small LC 475 album to the [photo gallery](/goodies/) if you wa
 
 ![](/assets/images/2012/img_0264.jpg)
 
-Mmmm. Stock LC 475.
+Mmmm. No external L2 cache on this 68K... yum!
 
 Apple shipped it with a 25 MHz Motorola 68LC040, 8 KB of internal L1 cache and no external L2 cache. The LC version of the 68040 also lacks the full 68040's integrated floating-point unit. Mine is still stock CPU-wise at this point.
-
-That will not last forever.
-
-I later bought a full 68040 specifically to replace the FPU-less 68LC040, then went considerably further and experimented with running the LC 475 at 33 MHz.
 
 ### Related posts
 

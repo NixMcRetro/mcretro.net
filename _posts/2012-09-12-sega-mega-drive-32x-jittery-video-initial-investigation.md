@@ -2,7 +2,7 @@
 title: "Sega Mega Drive 32X Jittery Video: Initial Investigation"
 author: "Nix McRetro"
 date: 2012-09-12T11:46:32.000+10:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -19,10 +19,6 @@ Surprisingly, all three work to some degree.
 The bad news is the jittering and distorted video shown above. At this point it looked as though the same problem might be affecting every 32X I owned, which made me wonder whether the fault was somewhere else in the setup rather than inside each individual 32X.
 
 One of the units originally produced no video at all. A good clean restored that one, and I'll upload a separate repair video showing what I did.
-
-The distorted-video problem turned out to be much more interesting.
-
-I later learned that Sega had already documented a compatibility fault affecting PAL and Asian Model 1 VA4 Mega Drives used with the 32X in its 1994 and 1995 service bulletins. Poor EDCLK and VCLK signal quality on the host Mega Drive can cause 32X-rendered graphics to jitter, sound to slow down or the game to lock up as the hardware warms. In other words, the 32X itself was not necessarily the problem. Sega's service procedure modifies the Mega Drive motherboard. That fits the warm-up behaviour I was seeing considerably better than the theories I was working through at the time.
 
 In other repair news, I also received a Mega Drive 2 and Mega-CD 2 combination, both sold as dead.
 
@@ -42,7 +38,9 @@ I managed to finish the first level before realising I'd left the soldering iron
 
 Whoops!
 
-More 32X testing to come.
+More 32X testing to come. Until next time, keep powering on everyone!
+
+**Edit, 6 February 2018:** I later learned that Sega had already documented a compatibility fault affecting PAL and Asian Model 1 VA4 Mega Drives used with the 32X in its 1994 and 1995 service bulletins. Poor EDCLK and VCLK signal quality on the host Mega Drive can cause 32X-rendered graphics to jitter, sound to slow down or the game to lock up as the hardware warms. In other words, the 32X itself was not necessarily the problem. Sega's service procedure modifies the Mega Drive motherboard. That fits the warm-up behaviour I was seeing considerably better than the theories I was working through at the time.
 
 ### Related posts
 

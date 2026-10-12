@@ -2,7 +2,7 @@
 title: "Sega Mega Drive Video Flicker and the Sony CXA1145P"
 author: "Nix McRetro"
 date: 2012-08-04T12:27:10.000+10:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -22,23 +22,13 @@ One suspect is the Sony CXA1145P video encoder. Sony designed the CXA1145P to ta
 
 Plausible is not the same as proven, of course.
 
-I've ordered a couple of replacement CXA1145Ps to find out. Are they a good investment?
-
-Who cares? They're about $3 each!
-
-The gamble eventually paid off. Replacing the CXA1145P fixed the yellow and green flickering completely.
+I've ordered a couple of replacement CXA1145Ps to find out. Are they a good investment? Who cares? They're about $3 each!
 
 The other Mega Drive I was planning to sell had a dodgy power connection. I scraped back the corrosion around the power plug and got a solid connection again. It still needs the broken volume slider and power LED repaired. This is the Thailand-made unit with the particularly brittle internal wiring. Some of the wires practically fell out when I removed the case.
 
-Aaaand the volume slider that fell off...
+Aaaand the volume slider that fell off... I thought I'd lost it! Turns out I knew I'd have to repair the LED, so I had put the volume slider safely in a bag inside the Mega Drive. So efficiently inefficient! At least it should be working properly once I'm finished with it. Stay tuned!
 
-I thought I'd lost it!
-
-Turns out I knew I'd have to repair the LED, so I had put the volume slider safely in a bag inside the Mega Drive.
-
-So efficiently inefficient.
-
-At least it should be working properly once I'm finished with it.
+**Edit:** The replacement Sony CXA1145P fixed the flickering green and yellow!
 
 ### Related posts
 

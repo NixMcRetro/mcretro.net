@@ -2,7 +2,7 @@
 title: "Amstrad Sega Mega PC 386SX CPU Replacement Attempt"
 author: "Nix McRetro"
 date: 2012-07-20T19:01:55.000+10:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -12,11 +12,7 @@ categories: [ibm-pc, repairs, sega]
 
 ![](/assets/images/2012/img_0013.jpg)
 
-The time has come.
-
-We wish you a safe journey, AMD 386SX CPU. You have served us well.
-
-Armed with a heat gun and flux, work begins on my attempt to create a 50 MHz Amstrad Mega PC.
+The time has come. We wish you a safe journey, AMD 386SX CPU. You have served us well. Armed with a heat gun and flux, work begins on my attempt to create a 50 MHz Amstrad Mega PC.
 
 That 50 MHz target needs a little explanation. The original Am386SX does not run its core at the full CLK2 input frequency. A 50 MHz CLK2 signal corresponds to a 25 MHz 386SX core. The replacement chip shown in the later repair photographs is marked TI486SXLC2-G50-PQ. It belongs to TI's clock-doubled SXLC2-G family, designed for a 50 MHz internal core from a 25 MHz external bus in a 100-pin QFP package. So the idea was not to force the entire Mega PC motherboard to run at a 50 MHz external bus speed.
 

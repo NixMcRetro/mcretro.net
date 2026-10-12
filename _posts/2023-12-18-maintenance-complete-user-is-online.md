@@ -3,11 +3,11 @@ title: "Maintenance Complete - User Is Online!"
 author: "Nix McRetro"
 date: 2023-12-18T13:06:33.000+11:00
 categories: [news]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2023/img_1234.jpg)
@@ -16,15 +16,15 @@ CG-NAT defeated! Cloudflare Tunnel, which I was still habitually calling Argo Tu
 
 ![](/assets/images/2023/img_1231.jpg)
 
-...I **_might_** have inadvertently locked myself out, with help from botnets spamming my Wordpress login page of course! No problem, it gave me a week to mull over options and find a better solution.
+...I **_might_** have inadvertently locked myself out, with help from botnets spamming my WordPress login page of course! No problem, it gave me a week to mull over options and find a better solution.
 
 ![](/assets/images/2023/img_1232.jpg)
 
-After finding some time to look at the settings, I can see why I was locked out. Cloudflare Tunnel brings the request into my network through `cloudflared`, so software looking only at the local connection can see the tunnel or local proxy rather than the visitor. Cloudflare still passes the original visitor address in headers such as `CF-Connecting-IP`, but my WordPress security tooling wasn't interpreting that path correctly. The end result was that botnet login attempts and my own login activity could all look like they were coming through the same local/proxy path.
+After finding some time to look at the settings, I could see a likely explanation for the lockout. Cloudflare Tunnel brings the request into my network through `cloudflared`, so software looking only at the local connection can see the tunnel or local proxy rather than the visitor. Cloudflare passes the original visitor address in headers such as `CF-Connecting-IP`, but the security tooling needs to interpret that trusted proxy path correctly. Otherwise, botnet login attempts and my own login activity can look as though they're coming from the same address. That fitted the lockout I was seeing.
 
 ![](/assets/images/2023/img_1233.jpg)
 
-Enter Cloudflare Access (again)! Using a one-time PIN through Cloudflare puts another authentication gate in front of the WordPress login, so only an approved email identity gets as far as `wp-login.php`. It doesn't replace WordPress updates or strong credentials, but it means a lot less unauthenticated junk ever reaches the login page. Reduced server load and less exposed attack surface? Yes please! This user is most definitely [back online](/assets/uploads/user-is-online.mp3)!
+Enter Cloudflare Access (again)! With the Access policy restricted to approved email identities, a one-time PIN puts another authentication gate in front of the WordPress login. It doesn't replace WordPress updates or strong credentials, but it means a lot less unauthenticated junk reaches `wp-login.php`. Reduced server load and less exposed attack surface? Yes please! This user is most definitely [back online](/assets/uploads/user-is-online.mp3)!
 
 ![](/assets/images/2023/img_1230.jpg)
 
@@ -38,3 +38,8 @@ Big thanks to [Tim Smith](https://tsmith.co/2023/protecting-wordpress-admin-logi
 - [Cloudflare - Cloudflare Tunnel](https://developers.cloudflare.com/tunnel/)
 - [Cloudflare - HTTP request headers](https://developers.cloudflare.com/fundamentals/reference/http-headers/)
 - [Cloudflare - One-time PIN authentication](https://developers.cloudflare.com/cloudflare-one/integrations/identity-providers/one-time-pin/)
+
+### Related posts
+
+- [HTTP/0.9 Request and Other One-Liners](/http-0-9-request-and-other-one-liners/)
+- [Downtime - Planned Maintenance](/downtime-planned-maintenance/)

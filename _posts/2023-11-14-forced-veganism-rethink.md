@@ -3,16 +3,16 @@ title: "Forced Veganism Rethink"
 author: "Nix McRetro"
 date: 2023-11-14T10:11:38.000+11:00
 categories: [nature, news]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2023/img_1201.jpg)
 
-For the past three years I've been vegan. A junk food vegan. Processed foods have always been my friend. They're cheap, full of energy and bad for you? Meatloaf had it right when he said two out of three ain't bad.
+For the past three years I've been vegan. A junk food vegan. Processed foods have always been my friend. They're cheap, full of energy and bad for you? Meat Loaf had it right when he said two out of three ain't bad.
 
 ![](/assets/images/2013/img_0430.jpg)
 
@@ -28,6 +28,14 @@ Failure to stem this bleeding will likely result in homelessness. This is the co
 
 ![](/assets/images/2023/img_1200.jpg)
 
-But unfortunately for salmon, salmon is a nutrient-dense meal and I was still willing to make that exception. Farmed Atlantic salmon feed has reduced its reliance on wild-caught fish over time, but that does not make salmon farming environmentally benign. The average farmed salmon is harvested at around 5kg. Using my rough 60% edible-yield estimate, that's about 3kg of flesh, or roughly 26 meals at 115g each. So that's still one entire salmon slaughtered every 26 meals.
+But unfortunately for salmon, salmon is a nutrient-dense meal and I was still willing to make that exception. Farmed Atlantic salmon feed has reduced its reliance on marine ingredients over time, but that does not make salmon farming environmentally benign. For my rough maths, take a 5kg salmon and assume 60% edible yield. That's about 3kg of flesh, or roughly 26 meals at 115g each. Those are my estimates, not a standard yield for every fish. So that's still one entire salmon slaughtered every 26 meals.
 
 Onward to [the decline](https://en.wikipedia.org/wiki/Holocene_extinction). 🫠
+
+### Sources
+
+- [Institute of Marine Research - Feed and nutrition](https://www.hi.no/en/hi/temasider/aquaculture/feed-and-nutrition)
+
+### Related posts
+
+- [New Year, New Something That Rhymes with Year](/new-year-new-something-that-rhymes-with-year/)

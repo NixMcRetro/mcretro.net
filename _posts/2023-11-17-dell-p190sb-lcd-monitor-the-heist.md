@@ -3,6 +3,11 @@ title: "Dell P190Sb LCD Monitor - The Heist"
 author: "Nix McRetro"
 date: 2023-11-17T12:17:33.000+11:00
 categories: [ibm-pc, news]
+last_modified_at: 2026-10-12
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2023/img_1211.jpg)
@@ -43,7 +48,7 @@ Unbelievable, she works well. Dwarfing the 17" HP monitor in the background with
 
 ![](/assets/images/2023/img_1219.jpg)
 
-**10th November 2023.** The Raspberry Pi proves to be too slow and RAM-limited to run LibreELEC successfully. Workarounds are attempted but ultimately fail. No speakers were a showstopper.
+**10th November 2023.** The Raspberry Pi Zero 2 W proved too slow and RAM-limited for my LibreELEC setup. Workarounds were attempted but ultimately failed. The lack of speakers was a showstopper.
 
 ![](/assets/images/2023/img_1221.jpg)
 

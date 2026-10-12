@@ -3,11 +3,11 @@ title: "The Garden, Lizards and Bees"
 author: "Nix McRetro"
 date: 2024-02-20T14:15:00.000+11:00
 categories: [nature]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2024/img_1253.jpg)
@@ -20,9 +20,7 @@ Stumpie continues to appear intermittently. He's doing quite well, but I've seen
 
 ![](/assets/images/2024/img_1254.jpg)
 
-But what to do with the dog food? Well since Bluey hasn't shown up, I thought maybe the bar-sided skinks would like a taste. And yes, they really do. The one I had captured earlier must have been a baby because this one living inside the walls is huge!
-
-They certainly liked it, but "the lizards ate it" and "feeding wild lizards dog food is a good idea" are two different things. NSW guidance generally discourages deliberately feeding native wildlife because it can change their behaviour, encourage dependency and create nutrition or disease problems. So this is staying here as something I did, not feeding advice. Better to make the garden attractive enough that the skinks can feed themselves.
+But what to do with the dog food? Well, since Bluey hasn't shown up, I thought maybe the bar-sided skinks would like a taste. And yes, they really do. The one I had captured earlier must have been a baby because this one living inside the walls is huge! They liked it, but that didn't make dog food a good choice for wild lizards. NSW guidance generally discourages feeding native wildlife because it can change their behaviour, encourage dependency and cause nutrition or disease problems. Better to make the garden attractive enough that the skinks can feed themselves.
 
 ![](/assets/images/2024/img_1255.jpg)
 
@@ -36,3 +34,7 @@ There's at least two that frequent the purple flowers here. I love them. Especia
 ### Sources
 
 - [NSW Government - Living with native animals](https://www.environment.nsw.gov.au/topics/animals-and-plants/native-animals/living-with-native-animals)
+
+### Related posts
+
+- [New Year, New Something That Rhymes with Year](/new-year-new-something-that-rhymes-with-year/)

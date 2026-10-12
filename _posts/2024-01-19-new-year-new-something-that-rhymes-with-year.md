@@ -3,6 +3,11 @@ title: "New Year, New Something That Rhymes with Year"
 author: "Nix McRetro"
 date: 2024-01-19T13:04:51.000+11:00
 categories: [nature, news]
+last_modified_at: 2026-10-12
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2024/img_1236.jpg)
@@ -47,7 +52,7 @@ Wait that's not the image I was looking for... that's more dandelions!
 
 ![](/assets/images/2024/img_1235.jpg)
 
-Whoops, that's another floury baker cicada. I think the several that were in this tree were eaten by the local bat population as they've been silent for a while now.
+Whoops, that's another floury baker cicada. The several in this tree have gone quiet. I wondered whether the local bats had eaten them, but silence alone couldn't confirm what happened.
 
 ![](/assets/images/2024/img_1247.jpg)
 
@@ -59,7 +64,7 @@ Don't look at me like that Stumpie. We don't want any repeats of how you got the
 
 ![](/assets/images/2024/img_1249.jpg)
 
-Then we've got this little guy still rocking about, a [bar-sided skink (Concinnia tenuis)](https://inaturalist.ala.org.au/taxa/538970-Concinnia-tenuis). After being trapped by a [redback spider (Latrodectus hasselti)](https://en.wikipedia.org/wiki/Redback_spider). Luckily for the lizard I noticed...
+Then we've got this little guy still rocking about, a [bar-sided skink (Concinnia tenuis)](https://inaturalist.ala.org.au/taxa/538970-Concinnia-tenuis). He'd been trapped by a [redback spider (Latrodectus hasselti)](https://en.wikipedia.org/wiki/Redback_spider). Luckily for the lizard, I noticed...
 
 ![](/assets/images/2024/img_1251.jpg)
 
@@ -72,3 +77,8 @@ Sure, I could have killed myself easily enough but chose to do the paradigm shif
 ![](/assets/images/2024/img_1250.jpg)
 
 Better go and check the garden is still there and get my 30 minutes of exercise in. Target weight is set at 75 kg this time around. Roughly 20 kg of weight loss to go, and while transitioning. Should be one heck of a ride. 🤷‍♀️
+
+### Related posts
+
+- [Forced Veganism Rethink](/forced-veganism-rethink/)
+- [The Garden, Lizards and Bees](/the-garden-lizards-and-bees/)

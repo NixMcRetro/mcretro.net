@@ -26,19 +26,19 @@ The Consumer Medicines Information (CMI) leaflet I was provided for my compounde
 
 > **Do not take Prometrium with food as this may affect the way Prometrium works.**
 
-I remember reading both of these when starting progesterone and thinking, those are not the same. One gave a general warning about food; the other explicitly said not to take Prometrium with it. I'd imported my usual assumption that taking medication with food would somehow smooth things out. But a study of oral micronised progesterone found that food enhanced absorption about twofold. That doesn't tell me exactly how much food changed exposure from my compounded capsules, but it certainly wasn't the reassuring assumption I'd started with. Whoops?
+I remember reading both of these when starting progesterone and thinking, those are not the same. One was a general food warning; the other said not to take Prometrium with food. With most medications I'd taken, I assumed food would smooth things out. But a study of oral micronised progesterone found about twice the absorption with food. I couldn't put that exact figure on my compounded capsules, but so much for my assumption. Whoops?
 
 ![](/assets/images/2024/img_1295.jpg)
 
-Oral progesterone undergoes extensive first-pass metabolism and produces neuroactive metabolites including allopregnanolone and pregnanolone. Food can change progesterone exposure, but I couldn't tell how much that changed each metabolite in me. Great! Throw in changing levels and you're in for a treat.
+Oral progesterone gets extensively metabolised on its first pass through the liver, producing neuroactive metabolites including allopregnanolone and pregnanolone. Add food to the mix and progesterone absorption can change again. What that meant for each metabolite in me, I couldn't tell. Great! Throw in changing levels and you're in for a treat.
 
 ![](/assets/images/2024/img_1293.jpg)
 
-Probably worth noting that allopregnanolone interacts strongly with GABA-A receptors and has wider effects on neural signalling. I was tempted to reason that a rapid fall in allopregnanolone caused some kind of glutamate rebound and therefore my brain-fire sensation. That's an interesting hypothesis, especially given research on sensitivity to changing allopregnanolone levels, but I did not measure brain neurosteroids or glutamate. "It felt like excitotoxicity" remains a description of the sensation, not evidence that excitotoxic neuronal injury was occurring.
+Probably worth noting that allopregnanolone acts on GABA-A receptors and can affect other neural signalling too. What happens when its levels drop? Could that be part of the brain fire? I hadn't measured neurosteroids or glutamate, so it was still a question. It **felt like excitotoxicity**, but I had no evidence of neuronal injury.
 
 ![](/assets/images/2024/img_1296.jpg)
 
-Realistically, I wanted to discuss whether another route of progesterone administration would produce a different metabolite profile. Non-oral routes can reduce gastrointestinal and hepatic first-pass metabolism, but they do not magically "dodge all the neurosteroids", and their pharmacokinetics are different again. I guess I'll have a word to my endocrinologist sometime in the near future. Stay tuned! 🙃
+Realistically, I wanted to discuss another route of administration. Getting around some of the first-pass metabolism might change the metabolite profile, though it wouldn't dodge all the neurosteroids. I guess I'll have a word to my endocrinologist sometime in the near future. Stay tuned! 🙃
 
 ### Sources
 

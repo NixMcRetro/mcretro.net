@@ -20,7 +20,7 @@ My transgender journey continues. I'd be lying if I said I was on top of this. T
 
 ![](/assets/images/2024/img_1299.jpg)
 
-Gender marker changes, i.e. male to female, were proving a bit more difficult. In May 2024 NSW still required a sex affirmation procedure and two medical declarations to alter the sex recorded on a NSW birth certificate. Queensland had already passed legislation moving away from that model, although those reforms would not actually commence until 24 June 2024. So my **even Queensland** jab was about legislation already passed, not rules already operating. Yes, the one with all the crocodiles. NSW eventually removed its medical-procedure requirement from 1 July 2025.
+Gender marker changes, i.e. male to female, were proving a bit more difficult. In May 2024 NSW still required a sex affirmation procedure and two medical declarations to change a NSW birth certificate. **Even Queensland** had passed legislation moving away from that, although it wouldn't start until 24 June 2024. Yes, the one with all the crocodiles. NSW eventually removed its medical-procedure requirement from 1 July 2025.
 
 ![](/assets/images/2024/img_1304.jpg)
 
@@ -56,9 +56,9 @@ Not all is well though, the most common failure pattern I have seen so far looks
 
 ![](/assets/images/2024/img_1302.jpg)
 
-Another one I found seemed to have problems with the two front pairs of legs. Poor thing couldn't clean itself. A little bit of digging led me to [slow bee paralysis virus (SBPV)](https://en.wikipedia.org/wiki/Slow_bee_paralysis_virus), because front-leg paralysis is one of its reported signs and Varroa destructor can transmit it. But I had no laboratory test, and later Australian national baseline testing in 2025 found no evidence of SBPV in the samples tested. So this was a symptom match I found on the internet, not a diagnosis of this bee.
+Another one I found seemed to have problems with the two front pairs of legs. Poor thing couldn't clean itself. A little bit of digging led me to [slow bee paralysis virus (SBPV)](https://en.wikipedia.org/wiki/Slow_bee_paralysis_virus), which can cause front-leg paralysis and be transmitted by Varroa destructor. Was that what I was seeing? I couldn't tell just by looking. Later Australian national baseline testing in 2025 found no evidence of SBPV in the samples tested.
 
-And look at that vector, Varroa destructor. By then the national response had already shifted away from eradication after the National Management Group concluded in September 2023 that eradication was no longer technically feasible. I called that the government giving up; officially it was a transition from eradication to management. The February 2024 transition plan was aimed at slowing spread and helping the honey-bee industry manage the now-established mite. Australian native bees are not affected by Varroa destructor itself.
+And look at that vector, Varroa destructor. By then the national response had already moved from eradication to management: in September 2023 the National Management Group concluded eradication was no longer technically feasible. I still called that the government giving up. The February 2024 transition plan was about slowing its spread and helping the honey-bee industry manage it. Australian native bees aren't affected by the mite itself.
 
 ![](/assets/images/2018/img_0619.jpg)
 

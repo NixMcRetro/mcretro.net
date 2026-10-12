@@ -2,7 +2,7 @@
 title: "Amstrad Sega Mega PC 486SLC Upgrade Experiment"
 author: "Nix McRetro"
 date: 2012-03-21T02:56:26.000+11:00
-last_modified_at: 2026-10-02
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6 Astra Max"
   date: 2026-10-02
@@ -52,7 +52,7 @@ We copied the jumper settings from the PC7486SLC board onto my PC7386SX Mega PC 
 
 #### Memory
 
-The board has four SIMM positions and I couldn't get it beyond 16 MB. That limit makes considerably more sense now: the TI486SLC itself can directly address up to 16 MB of physical memory. That doesn't prove every PC7486SLC motherboard supports every possible 16 MB configuration, but it does explain why there is no point looking for 32 MB from this CPU.
+The board has four SIMM positions and I couldn't get it beyond 16 MB. I even considered "borrowing" a few RAM slots from another motherboard, although that sounded like an awful lot of effort for very little payoff. That limit makes considerably more sense now: the TI486SLC itself can directly address up to 16 MB of physical memory. That doesn't prove every PC7486SLC motherboard supports every possible 16 MB configuration, but it does explain why adding sockets would not get this CPU to 32 MB.
 
 The two biggest attractions of the replacement board are simple: it doesn't appear to have NiCad leakage all over it, and it gives me a 33 MHz 486SLC instead of the 25 MHz 386SX.
 

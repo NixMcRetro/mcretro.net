@@ -2,17 +2,17 @@
 title: "Odyssey Stealer: Technical Analysis of a macOS Infostealer"
 author: "Nix McRetro"
 date: 2026-07-26T17:08:14.000+11:00
-last_modified_at: 2026-10-01
-ai_assistance:
- model: "OpenAI GPT-5.6 Sol"
- date: 2026-10-01
- purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ai-generated, programming]
+last_modified_at: 2026-10-12
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ## Executive Summary
 
-In mid‑July 2026, I obtained a macOS infostealer trojan disguised as a software licensing tool (`Patch.app`). The sample is a Mach‑O universal binary (x86_64 + arm64) that leverages a custom xorshift32 PRNG‑based XOR cipher to obfuscate **379 embedded strings**. Upon execution, it harvests credentials from **14 browsers**, **16 software-wallet locations plus two hardware-wallet export targets**, the macOS Keychain, Apple Notes, and Safari cookies, then exfiltrates the collected data as a ZIP archive to a command‑and‑control server via HTTP.
+In mid-July 2026, I obtained a macOS infostealer trojan disguised as a software licensing tool (`Patch.app`). The sample is a Mach-O universal binary (x86_64 + arm64) that uses a custom xorshift32 PRNG-based XOR cipher to obfuscate **379 embedded strings**. Its recovered code targets **14 browsers**, **16 software-wallet locations**, the macOS Keychain, Apple Notes and Safari cookies, and includes Ledger and Trezor application ZIP names. It packages collected data into a ZIP archive and contains an HTTP upload command. Those capabilities describe this sample; what was actually collected depended on the contents of each analysis system.
 
 **Key Findings:**
 
@@ -25,7 +25,7 @@ In mid‑July 2026, I obtained a macOS infostealer trojan disguised as a softwar
 - **Two separate infections** (users `m1` and `m2`) carried the same affiliate/panel identifier (`newooble`).
 - **Live bot channel** discovered with `.botid` `19a9ff38c1b24ffe8e5c54a91af203c8`; subsequent successful manual polling confirmed that the C2 server responded during later testing.
 - **Password theft confirmed**: `password1` (recovered from `cache.txt`).
-- **Data exfiltration confirmed**: `lksopo.zip` containing stolen credentials, wallets, and system information.
+- **Collected data recovered**: `lksopo.zip` containing credentials and system information. Recovering the local archive and upload command does not, by itself, confirm delivery to the remote server.
 
 All indicators of compromise have been reported to the ACSC, AFP, and relevant abuse contacts. This writeup documents the complete analysis.
 
@@ -116,76 +116,76 @@ Demonstrates the sample-specific PRNG/decryption primitive and candidate extract
 import struct
 
 def xorshift32_next(state):
- state &= 0xFFFFFFFF
- state ^= (state << 13) & 0xFFFFFFFF
- state ^= (state >> 17) & 0xFFFFFFFF
- state ^= (state << 5) & 0xFFFFFFFF
- return (state | 1) & 0xFFFFFFFF
+    state &= 0xFFFFFFFF
+    state ^= (state << 13) & 0xFFFFFFFF
+    state ^= (state >> 17) & 0xFFFFFFFF
+    state ^= (state << 5) & 0xFFFFFFFF
+    return (state | 1) & 0xFFFFFFFF
 
 def decrypt_block(encrypted_bytes, seed):
- state = seed & 0xFFFFFFFF
- plain = bytearray()
- for b in encrypted_bytes:
- plain.append(b ^ (state & 0xFF))
- state = xorshift32_next(state)
- return bytes(plain)
+    state = seed & 0xFFFFFFFF
+    plain = bytearray()
+    for b in encrypted_bytes:
+        plain.append(b ^ (state & 0xFF))
+        state = xorshift32_next(state)
+    return bytes(plain)
 
 def extract_seeds_from_const_section(binary_path, const_offset, const_size):
- with open(binary_path, 'rb') as f:
- f.seek(const_offset)
- data = f.read(const_size)
- 
- seeds = set()
- # Every 4 bytes may be a seed, but we scan for non‑zero values
- for i in range(0, len(data), 4):
- seed = struct.unpack('<I', data[i:i+4])[0]
- if seed != 0:
- seeds.add(seed)
- return seeds
+    with open(binary_path, 'rb') as f:
+        f.seek(const_offset)
+        data = f.read(const_size)
+    
+    seeds = set()
+    # Every 4 bytes may be a seed, but we scan for non‑zero values
+    for i in range(0, len(data), 4):
+        seed = struct.unpack('<I', data[i:i+4])[0]
+        if seed != 0:
+            seeds.add(seed)
+    return seeds
 
 def brute_force_decrypt(binary_path, const_offset, const_size, data_offset, data_size):
- seeds = extract_seeds_from_const_section(binary_path, const_offset, const_size)
- print(f"[*] Found {len(seeds)} candidate seeds")
- 
- with open(binary_path, 'rb') as f:
- f.seek(data_offset)
- encrypted_data = f.read(data_size)
- 
- results = []
- for seed in seeds:
- decrypted = decrypt_block(encrypted_data, seed)
- # Try to split on null bytes and keep printable ASCII
- parts = decrypted.split(b'\x00')
- for part in parts:
- try:
- s = part.decode('utf-8')
- if len(s) > 3 and all(32 <= ord(c) < 127 for c in s):
- results.append(s)
- except UnicodeDecodeError:
- continue
- 
- # Deduplicate and sort
- unique = sorted(set(results))
- print(f"[+] Decrypted {len(unique)} unique strings")
- for s in unique:
- print(s)
+    seeds = extract_seeds_from_const_section(binary_path, const_offset, const_size)
+    print(f"[*] Found {len(seeds)} candidate seeds")
+    
+    with open(binary_path, 'rb') as f:
+        f.seek(data_offset)
+        encrypted_data = f.read(data_size)
+    
+    results = []
+    for seed in seeds:
+        decrypted = decrypt_block(encrypted_data, seed)
+        # Try to split on null bytes and keep printable ASCII
+        parts = decrypted.split(b'\x00')
+        for part in parts:
+            try:
+                s = part.decode('utf-8')
+                if len(s) > 3 and all(32 <= ord(c) < 127 for c in s):
+                    results.append(s)
+            except UnicodeDecodeError:
+                continue
+    
+    # Deduplicate and sort
+    unique = sorted(set(results))
+    print(f"[+] Decrypted {len(unique)} unique strings")
+    for s in unique:
+        print(s)
 
 if __name__ == "__main__":
- # Adjust these offsets based on your binary
- BINARY = "Patch_x86_64"
- CONST_OFFSET = 0x1D350 # __TEXT __const start
- CONST_SIZE = 0x3904
- DATA_OFFSET = 0x1D4A4 # approximate start of encrypted data
- DATA_SIZE = 0x2000 # adjust as needed
- 
- brute_force_decrypt(BINARY, CONST_OFFSET, CONST_SIZE, DATA_OFFSET, DATA_SIZE)
+    # Adjust these offsets based on your binary
+    BINARY = "Patch_x86_64"
+    CONST_OFFSET = 0x1D350 # __TEXT __const start
+    CONST_SIZE = 0x3904
+    DATA_OFFSET = 0x1D4A4 # approximate start of encrypted data
+    DATA_SIZE = 0x2000 # adjust as needed
+    
+    brute_force_decrypt(BINARY, CONST_OFFSET, CONST_SIZE, DATA_OFFSET, DATA_SIZE)
 ```
 
 ---
 
-## 4. Decrypted Strings: Complete Catalogue
+## 4. Decrypted Strings and Targets
 
-All 379 decrypted strings retained in my final catalogue are listed below, organised by category. This is the complete catalogue recovered from **this sample by this analysis**, not a claim that every Odyssey build has the same configuration or targets.
+I retained 379 decrypted strings in the final catalogue for this sample. The sections below group selected strings and targets by purpose; they do not print all 379 entries. In particular, the browser-extension block shows a subset of the 203 IDs. Other Odyssey builds can have different configurations and targets.
 
 ### 4.1 Command‑and‑Control Infrastructure
 
@@ -202,7 +202,7 @@ false
 - **`.bhost`** → Bot Host (primary C2 server): `http://192.253.248.181`
 - **`.phost`** → Panel Host (admin panel domain): `http://ukdsopas.at`
 
-The `.bhost` file is read as `botHost` and used for **all** C2 API calls. The `.phost` file is read as `panelAddr` and only used as an HTTP header (`panel_addr:`) when downloading the repeat script. This means the attacker hardcoded the raw IP as the primary communication channel - the domain was only used as a label for the panel interface.
+The AppleScript backdoor reads `.bhost` as `botHost` and uses the raw IP for its bot API calls. It reads `.phost` as `panelAddr` and sends that value in the `panel_addr:` header for the repeat-script request. That separates the backdoor's connection destination from its panel label. The first-stage archive upload is a different request: section 4.6 shows it using `http://ukdsopas.at/log`. The domain therefore still matters to that exfiltration path.
 
 ### 4.2 Anti‑analysis
 
@@ -213,9 +213,9 @@ root
 
 The malware checks `getenv("USER")` and exits immediately if the value is `root`. This is a simple but effective anti‑sandbox measure - automated analysis environments often run as root.
 
-### 4.3 AppleScript Payload (Full)
+### 4.3 AppleScript Payload
 
-The full AppleScript is embedded as a string in the LaunchDaemon plist. It contains 180 lines of code with these key functions:
+The full AppleScript is embedded as a string in the LaunchDaemon plist. My recovered payload was 180 lines long. The one-line excerpt below identifies its `app_id`; the following tables summarise its functions and commands.
 
 ```applescript
 set app_id to "xxxblyat"
@@ -379,7 +379,7 @@ The macOS version check gates the Chrome master password extraction - the malwar
 /formhistory.sqlite
 ```
 
-### 4.12 Cryptocurrency Wallet Targets (16 software wallets + 2 hardware-wallet export targets)
+### 4.12 Cryptocurrency Wallet and Application Targets
 
 | Wallet | Path |
 |---|---|
@@ -399,8 +399,10 @@ The macOS version check gates the Chrome master password extraction - the malwar
 | Guarda | `Guarda/` |
 | Trezor Suite | `@trezor/suite-desktop/` |
 | Sparrow | `.sparrow/wallets/` |
-| Ledger (hardware) | Exported as `ledger.zip`, `ledgerwallet.zip` |
-| Trezor (hardware) | Exported as `trezor.zip` |
+| Ledger application ZIP names | `ledger.zip`, `ledgerwallet.zip` |
+| Trezor application ZIP name | `trezor.zip` |
+
+The three ZIP names above are preserved as recovered strings. Censys documents trojanised Ledger and Trezor application downloads in related Odyssey samples. The names alone are not evidence of exports from a hardware wallet or extraction of keys held on the device.
 
 ### 4.13 Chrome Extension IDs (Wallet Stealing)
 
@@ -489,9 +491,9 @@ The following timeline was reconstructed from AdGuard Home DNS logs, macOS kerne
 | 22:39:58 | **Infection** | "Patch" process crashes - CrashReporter log written | CrashReporter |
 | 22:40:23 | **Infection** | Gatekeeper rejects something - `.LastGKReject` written | Timeline |
 | 22:40:34 | **Infection** | Package receipt created - installs `Patch.app` (393 KB) + Office VL Serializer (6.9 MB) to `/Library/Application Support/` | BOM file |
-| 22:40:49 | **Infection** | ExecPolicy modified (Gatekeeper bypass) + `.IuN79Kxxpn` dropped in `/var/root/Library/Application Support/` | Timeline |
+| 22:40:49 | **Infection** | ExecPolicy modified; `.IuN79Kxxpn` recorded in `/var/root/Library/Application Support/` | Timeline |
 | 22:41:31 | **Infection** | LuLu firewall rules modified (`rules.plist`) | Timeline |
-| ~22:50 | **C2 Active** | Malware falls back to IP `192.253.248.181`; creates dotfiles: `.pwd`, `.phost`, `.bhost`, `.username` | Detection script |
+| ~22:50 | **C2 Active** | Malware uses the configured primary IP `192.253.248.181`; creates dotfiles: `.pwd`, `.phost`, `.bhost`, `.username` | Detection script |
 | 22:50:38 | **C2 Active** | First C2 connection - `joinsystem` → bot registered as `newooble`, **`.botid` assigned** (32 bytes) | Kernel logs; screenshot |
 | 22:50:39 | **C2 Active** | `getActions` polling begins - every 60 seconds | Kernel logs |
 | 22:50-22:58 | **C2 Active** | Active attack window - `doshell`, `repeat`, `enablesocks5` commands available to attacker | Source code |
@@ -524,7 +526,7 @@ The available evidence therefore supports a narrower conclusion: the `m1` bot lo
 
 ## 6. Command Structure and C2 API
 
-The malware communicates with the C2 server via these unauthenticated HTTP endpoints:
+The HTTP endpoints serve different stages. The AppleScript backdoor uses the bot-management API, while the archive upload goes to `/log`. The linked 0xlibris analysis documents `/api/v1/getscptraw` as a GET request for the AppleScript second stage, not an exfiltration POST.
 
 | Endpoint | Method | Purpose |
 |---|---|---|
@@ -532,9 +534,10 @@ The malware communicates with the C2 server via these unauthenticated HTTP endpo
 | `/api/v1/bot/actions/{botID}` | GET | Poll for commands (every 60 seconds) |
 | `/api/v1/bot/repeat/{panelUsername}` | GET | Download secondary payload script |
 | `/web/socks` | GET | Download SOCKS5 proxy binary |
-| `/api/v1/getscptraw` | POST | Exfiltrate stolen data |
+| `/api/v1/getscptraw` | GET | AppleScript second-stage retrieval documented in the related 0xlibris analysis |
+| `/log` | POST | Archive upload shown in section 4.6 |
 
-All requests use the header `User‑Agent: bot`. The `repeat` request also sends `panel_addr: http://ukdsopas.at`.
+The AppleScript bot requests use `User-Agent: bot`. The `repeat` request also sends `panel_addr: http://ukdsopas.at`. Those headers describe the backdoor requests, not every request made by the first-stage binary.
 
 ### 6.1 Command Response Format
 
@@ -577,20 +580,20 @@ A 2,048-byte encrypted file named `.IuN79Kxxpn` was recorded at 22:40:49. My pre
 
 ## 8. The Two Infections: `m1` and `m2`
 
-Two separate infections were analysed - both with the same malware, same C2 server, and same attacker (`newooble`):
+Two separate infections were analysed. Both carried the same sample configuration, C2 server and affiliate/panel username (`newooble`). That links the observed configuration; a shared account identifier does not establish that one individual operated both infections.
 
 | Attribute | Infection 1 (`m1`) | Infection 2 (`m2`) |
 |---|---|---|
 | User | `m1` | `m2` |
 | macOS version | 26.5.2 | 26.5.1 |
-| `.botid` | Not recovered (cleanup ran) | Recovered: `19a9ff38c1b24ffe8e5c54a91af203c8` |
+| `.botid` | Visible in the post-cleanup screenshot; manually deleted before the clone | Recovered: `19a9ff38c1b24ffe8e5c54a91af203c8` |
 | `.username` | `newooble` | `newooble` |
 | Stolen password | `password0` (from `.pwd`) | `password1` (from `cache.txt`) |
 | Chrome installed | True | `false` |
 | lksopo.zip contents | 7 files (finder, cache.txt, hardware, installedSoft, kc, pwd, user) | Same (analysed) |
 | C2 status | Active | Active |
 
-The `m2` infection provided the `.botid` that proved the C2 server was still active and the attacker (`newooble`) was still managing the botnet.
+The `m2` infection provided a recovered `.botid`, and later manual polling returned valid responses. The C2 service was reachable at those observed times. Registration and responses alone do not show whether an operator was actively managing the channel.
 
 ---
 
@@ -634,7 +637,7 @@ Every 60 seconds, a `curl` process connected to `192.253.248.181:80`, matching t
 
 ## 10. Detection and Cleanup Script
 
-The following detection script (`detect_odyssey_mac.sh`) was developed to identify and optionally remove the malware:
+The following detection script (`detect_odyssey_mac.sh`) is retained as a historical tool from the investigation. It checks the older `Install.app` path and an older target hash; it does not directly check the `Patch.app` path or the sample hashes listed in this article. Detect-only mode still writes temporary files and invokes system tools. In `--clean` mode, backup failures are suppressed and do not prevent deletion, so this version should not be used to clean a system without independently preserving the evidence first.
 
 ```
 #!/bin/bash
@@ -1019,13 +1022,13 @@ sudo ./detect_odyssey_mac.sh
 sudo ./detect_odyssey_mac.sh --clean
 ```
 
-**The script insists on erasing and reinstalling macOS** - cleanup alone is not sufficient due to the `doshell` backdoor.
+The script recommends erasing and reinstalling macOS; it does not perform that operation. For a confirmed infection with the `doshell` backdoor, removing the listed indicators alone cannot establish what other commands or payloads ran.
 
 ---
 
 ## 11. External Drive Forensic Script
 
-A separate script (`detect_external_mac.sh`) was developed for scanning external drives:
+A separate script (`detect_external_mac.sh`) is retained for scanning external drives. It assumes a conventional macOS directory layout, checks the older `Install.app` path, and does not establish that every backup snapshot has been examined. Its optional `--clean` mode deletes indicators without first backing them up, and its closing instructions say to erase the drive. Those are historical instructions, not a reason to destroy the only forensic copy. Preserve that copy and plan any recovery or cleanup separately.
 
 ```
 #!/bin/bash
@@ -1318,7 +1321,7 @@ printf '\n'
 This script:
 - Scans the external drive's `Users` folder for dotfiles
 - Checks `/Library/LaunchDaemons` and `/Library/LaunchAgents` on the external drive
-- Warns that Time Machine backups cannot be safely cleaned (must be erased)
+- Prints a blanket instruction to erase Time Machine backups; the limited scan does not establish that every snapshot is infected or that the only evidence copy should be destroyed.
 
 Usage:
 ```
@@ -1400,9 +1403,9 @@ If you find IoCs on your Mac:
 2. **DO NOT enter any passwords or login to any accounts** on this machine.
 3. **Using a clean device**, change ALL passwords (email, banking, crypto exchanges, social media) and revoke active sessions or tokens where the service allows it.
 4. **Move ALL cryptocurrency funds** to new wallets generated on a clean device.
-5. **Run Malwarebytes for Mac** (full system scan) on the compromised machine.
+5. **Run a Malwarebytes for Mac scan after preserving the evidence you need.** Its normal scan focuses on locations likely to contain threats; a negative result is not proof that every file or payload has been checked.
 6. **For a confirmed infection with this backdoor, the safest remediation is to erase the system and reinstall macOS from a known-good source after preserving any evidence you need.** The `doshell` capability means cleanup of the known files alone cannot establish that no additional commands or payloads were executed.
-7. **After fresh install**, run Malwarebytes again and run the detection script as a verification.
+7. **After a fresh install**, scan again and review the known indicators. The historical scripts above can provide limited checks, but should not be treated as proof that the system is clean.
 8. **DO NOT reuse any passwords** that were stored on this machine.
 
 ---
@@ -1411,15 +1414,15 @@ If you find IoCs on your Mac:
 
 This sample demonstrates a mature macOS infostealer with several notable characteristics:
 
-1. **Broad target coverage.** Fourteen browsers, sixteen software-wallet locations, two hardware-wallet export targets, the macOS Keychain, Apple Notes, and Safari cookies. The Ledger and Trezor export targets are consistent with the sample's strong focus on cryptocurrency theft.
+1. **Broad target coverage.** Fourteen browsers, sixteen software-wallet locations, the macOS Keychain, Apple Notes and Safari cookies. The recovered Ledger and Trezor ZIP names add application-related indicators; they do not establish that keys were extracted from hardware wallets.
 
-2. **Effective string obfuscation.** The xorshift32‑based cipher is simple but sufficient to defeat static string analysis. All 379 strings were recovered through brute‑force seed extraction.
+2. **Effective string obfuscation.** The xorshift32-based scheme hides plaintext from a basic strings scan. I retained 379 strings using candidate-seed extraction, candidate-region testing, filtering and manual review.
 
 3. **Persistent backdoor capability.** The `doshell` command gives the attacker arbitrary shell-command execution in the malware's execution context, enabling secondary payload deployment and theft beyond the automated stealer.
 
 4. **The Apple Notes vector is underappreciated.** The 969‑byte AppleScript that extracts all notes from all accounts is a significant privacy threat. Users routinely store passwords, recovery codes, and sensitive personal information in Notes.
 
-5. **The raw IP bypasses DNS blocks.** The malware uses `.bhost` to store the raw IP (`192.253.248.181`), completely bypassing DNS‑based domain blocking. The `.phost` domain is only used as an HTTP header, not for actual communication.
+5. **The backdoor can bypass a blocked domain.** Its bot API uses the raw IP in `.bhost` (`192.253.248.181`), so blocking the panel domain in DNS does not stop that channel. The archive-upload command is separate and still uses `ukdsopas.at/log`.
 
 6. **The C2 infrastructure was reachable during later testing.** The second infection showed that bot registration had succeeded, and subsequent manual polling with the recovered `.botid` (`19a9ff38c1b24ffe8e5c54a91af203c8`) confirmed that the C2 returned valid responses at the times I tested it.
 
@@ -1427,11 +1430,12 @@ The sample and all associated IOCs have been submitted to VirusTotal, URLhaus, a
 
 ---
 
-*The author is an independent security researcher based in Australia. All analysis was conducted on preserved forensic evidence. The views expressed here are the author's own. IOCs and samples are available to verified researchers on request.*
+*The author is an independent security researcher based in Australia. This analysis combined controlled execution tests with examination of preserved forensic evidence. The views expressed here are the author's own. IOCs and samples are available to verified researchers on request.*
 
-## References
+### Sources
 
-- [0xlibris - Odyssey Infostealer](https://0xlibris.net/posts/odyssey_infostealer/)
+- [0xlibris - Odyssey infostealer infection chain](https://0xlibris.net/posts/odyssey_infostealer/)
 - [Censys - Odyssey Stealer: Inside a macOS Crypto-Stealing Operation](https://censys.com/blog/odyssey-stealer-inside-a-macos-crypto-stealing-operation/)
 - [Jamf Threat Labs - Signed and stealing: uncovering new insights on Odyssey Infostealer](https://www.jamf.com/blog/signed-and-stealing-uncovering-new-insights-on-odyssey-infostealer/)
 - [Red Canary - A taxonomy of Mac stealers: Distinguishing Atomic, Odyssey, and Poseidon](https://redcanary.com/blog/threat-intelligence/atomic-odyssey-poseidon-stealers/)
+- [Malwarebytes - Run and schedule scans in Malwarebytes for Windows and Mac](https://help.malwarebytes.com/hc/en-us/articles/31589496411291-Run-and-schedule-scans-in-Malwarebytes-for-Windows-and-Mac)

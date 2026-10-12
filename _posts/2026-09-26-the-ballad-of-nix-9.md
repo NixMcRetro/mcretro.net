@@ -2,12 +2,12 @@
 title: "The Ballad of Nix-9"
 author: "Nix McRetro"
 date: 2026-09-26T09:00:00.000+10:00
-last_modified_at: 2026-10-01
-ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ai-generated]
+last_modified_at: 2026-10-12
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 *Being a True Account of One Netrunner's Quest Through the Neon-Lit Dungeon of Corporate Bureaucracy, Armed Only with Wit, Persistence, and the Ancient Statutes of Fair Trade*
@@ -109,7 +109,7 @@ The Consortium's scribes fought back with the weapons of bureaucracy:
 > 
 > "You were notified promptly."
 
-Lies. Nix-9 had the logs to prove it. A misdirection. Orbital Warden constraints were operational, not meteorological. Absurd. The logs showed six hours of chaos. Nix-9 responded with precision, dismantling each argument:
+Lies, thought Nix-9. The logs showed six hours of chaos, whatever had disrupted the orbital lanes. Weather could cause Orbital Warden constraints too; those words alone did not settle the cause. But her complaint was about the handling and communication. Nix-9 responded with precision, dismantling each argument:
 
 > "The logs show a chaotic six-hour sequence of rolling updates, not prompt notification. My complaint is not about the cause of the cancellation, but the failure in its handling and communication."
 
@@ -248,7 +248,10 @@ Australian consumer guarantees can apply to travel services booked directly or t
 
 One important distinction: this was a negotiated settlement, not a court or tribunal ruling that I was legally entitled to 40% of the flight component. The final 200-credit offer was accepted as a practical resolution of this particular dispute. Another traveller facing superficially similar circumstances could have different rights depending on the cause and duration of the disruption, the replacement service offered, the booking terms, and the roles of the airline and intermediary.
 
-Source: [ACCC - Travel delays and cancellations](https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations)
+### Sources
+
+- [ACCC - Travel delays and cancellations](https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations)
+- [Airservices Australia - Impact of weather on operations](https://www.airservicesaustralia.com/about-us/our-services/how-air-traffic-control-works/impact-of-weather/)
 
 **Author's Note:** This chronicle is based on true events. The leviathans, while metaphorical, are very real. Nix-9's settlement stands as testament to persistence, evidence, arithmetic, and a carefully argued consumer complaint.
 

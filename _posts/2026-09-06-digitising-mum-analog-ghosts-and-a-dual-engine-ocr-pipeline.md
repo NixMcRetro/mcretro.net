@@ -2,12 +2,12 @@
 title: "Digitising Mum: Analog Ghosts, Bureaucracy, and a Dual-Engine OCR Pipeline"
 author: "Nix McRetro"
 date: 2026-09-06T09:00:00.000+10:00
-last_modified_at: 2026-10-01
-ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
 categories: [ai-generated, programming]
+last_modified_at: 2026-10-12
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 If I've been quiet lately, or if I've seemed perpetually distracted for the past twelve months, this is why. It's almost the one-year anniversary of my mother's death, and I am still drowning in paperwork. Grief, it turns out, is mostly just an endless series of administrative tasks.
@@ -32,7 +32,7 @@ I briefly opened Adobe Acrobat Pro, got hit with a paywall (the trial on that Ad
 
 ## Engine A: a local VLM that dreams too vividly
 
-I pointed `omlx` on the M4 Mac mini at **Chandra OCR 2**, a vision-language model quantised to 8-bit MLX. Fully on-device, so her financials never left the house. The magic of a VLM is that you can prompt it for structure - I asked for semantic HTML with explicit bounding boxes on a normalised 1000×1000 canvas:
+I pointed `omlx` on the M4 Mac mini at **Chandra OCR 2**, a vision-language model quantised to 8-bit MLX. This first pass stayed on-device; the separate Textract pass below went to AWS. The magic of a VLM is that you can prompt it for structure - I asked for semantic HTML with explicit bounding boxes on a normalised 1000×1000 canvas:
 
 ```text
 Transcribe the document. Output valid HTML. Every block must include a
@@ -83,7 +83,7 @@ These statements were printed in reverse-chronological order, newest first, beca
 statements.pdf
  └─ render.py              # PyMuPDF: 200 DPI, ink filter drops blank pages
      ├─ batch_ocr.py       # Engine A: Chandra OCR 2 (local VLM via oMLX)
-     └─ batch_textract.py  # Engine B: AWS Textract (cloud, discriminative)
+     └─ batch_textract.py  # Engine B: AWS Textract (cloud, table OCR)
          └─ compare_interest.py   # cross-validate, print the symmetric difference
              └─ human eyes        # open page_N.png, be the tiebreaker
                  └─ interest_final.csv -> Appendices A/B -> ATO
@@ -126,11 +126,11 @@ What I keep coming back to is that "archival fidelity" was never about which eng
 
 The ATO gets their numbers. I keep the archive, every statement, searchable, forever. The analog ghosts are at rest now, and the digital debris is organised.
 
-## Sources and technical notes
+### Sources
 
-- [Datalab - Chandra OCR 2](https://api.datalab.to/blog/chandra-2) - model capabilities, structured output, and bounding boxes.
+- [Datalab - Announcing Chandra OCR 2: 90+ Languages, Top Benchmarks](https://api.datalab.to/blog/chandra-2) - model capabilities, structured output, and bounding boxes.
 - [AWS - Amazon Textract pricing](https://aws.amazon.com/textract/pricing/) - current AnalyzeDocument/TABLES pricing and Free Tier allowances.
 - [AWS - Tables in Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-tables.html) - cell, row/column, confidence, and geometry output.
-- [ATO - When and how to lodge returns for a deceased estate](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/when-and-how-to-lodge-returns-for-a-deceased-estate) - distinction between the deceased person's return and later estate trust returns.
+- [ATO - Registering a deceased estate trust and lodging returns](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/when-and-how-to-lodge-returns-for-a-deceased-estate) - distinction between the deceased person's return and later estate trust returns.
 
 I'm going to take a few days off the terminal. Keep being awesome 🙂

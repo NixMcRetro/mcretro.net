@@ -3,20 +3,20 @@ title: "Thirty Days Has September"
 author: "Nix McRetro"
 date: 2024-09-30T19:28:49.000+10:00
 categories: [microsoft, news, repairs]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2024/img_1358.jpg)
 
-Well, university has been a big false start. I've gone with option 4 from the last blog post. That's dropping all subjects and reapplying to UAC after I get all my other stuff in order. My other stuff is my life... getting my life in order, should be an easy task right?
+Well, university has been a big false start. I've gone with option 4 from [the last blog post](/the-people-at-university-are-amazing/). That's dropping all subjects and reapplying to UAC after I get all my other stuff in order. My other stuff is my life... getting my life in order, should be an easy task right?
 
 ![](/assets/images/2024/img_1368.jpg)
 
-I've been trialling medications (as always) and found I take less selfies of myself when not on pregabalin. I suppose I find that I am less accepting of myself. It's strange. Almost like my baseline self doesn't like me so much I need to be **_somewhat not me_**.
+I've been trialling medications (as always) and found I take fewer selfies of myself when not on pregabalin. I suppose I find that I am less accepting of myself. It's strange. Almost like my baseline self doesn't like me so much I need to be **_somewhat not me_**.
 
 ![](/assets/images/2024/img_1352.jpg)
 
@@ -32,9 +32,7 @@ One year ago I abandoned my pursuit of the disability support pension (DSP) beca
 
 ![](/assets/images/2024/img_1359.jpg)
 
-Also had an appointment with my endocrinologist - all my blood work was looking good. I had been taking 5,000 IU of vitamin D3 per day and my phosphate had risen. The timing made me wonder whether the vitamin D was responsible, but one rising result does not establish causation. For context, 5,000 IU/day is already above the Australian adult Upper Level of 3,200 IU/day for routine population intake, although clinicians may deliberately use higher doses when treating and monitoring deficiency.
-
-I was also discussing the possibility of a 600,000 IU intramuscular vitamin D3 dose. Very large intermittent vitamin D doses have been studied clinically, but 600,000 IU is firmly a medical megadose, not a casual next step based on one phosphate result. Too much vitamin D can cause hypercalcaemia, so this belongs with the endocrinologist and the blood tests rather than DIY supplementation.
+Also had an appointment with my endocrinologist - all my blood work was looking good. I'd been taking 5,000 IU of vitamin D3 per day and my phosphate had risen. Related? Maybe, but that result alone couldn't tell me. The routine Australian adult upper intake level is 3,200 IU/day, though higher doses can be used with clinical monitoring. I was also discussing a 600,000 IU intramuscular vitamin D3 dose. That's a huge dose, and too much vitamin D can cause hypercalcaemia, so it was something to work through with the endocrinologist and blood tests.
 
 ![](/assets/images/2024/img_1355.jpg)
 
@@ -98,5 +96,10 @@ University has shown me even more great people and I just love being around them
 
 ### Sources
 
-- [NHMRC - Nutrient Reference Values for Australia and New Zealand](https://www.nhmrc.gov.au/sites/default/files/images/nutrient-refererence-dietary-intakes.pdf)
-- [Healthdirect Australia - Vitamin D](https://www.healthdirect.gov.au/vitamin-d)
+- [NHMRC - Nutrient Reference Values: Vitamin D](https://www.eatforhealth.gov.au/nutrient-reference-values/nutrients/vitamin-d)
+- [Healthdirect Australia - Vitamin D deficiency](https://www.healthdirect.gov.au/vitamin-d)
+
+### Related posts
+
+- [Third Time's a Charm; University Begins... Again](/third-times-a-charm-university-begins-again/)
+- [The People at University are Amazing](/the-people-at-university-are-amazing/)

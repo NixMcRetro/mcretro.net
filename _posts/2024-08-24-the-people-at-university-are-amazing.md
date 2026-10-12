@@ -3,11 +3,11 @@ title: "The People at University are Amazing"
 author: "Nix McRetro"
 date: 2024-08-24T05:18:28.000+10:00
 categories: [news, study]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2024/img_1347.jpg)
@@ -24,15 +24,12 @@ But there's always a catch, isn't there? There's this damn trade off between soc
 
 ![](/assets/images/2024/img_1342.jpg)
 
-So pregabalin and/or clonazepam were helping enormously with the social side, even though I still hadn't found a balance I was happy with. I was treating clonazepam as the obvious short-term problem while telling myself pregabalin could just be used long term "with no issue". That was too casual. Benzodiazepines carry dependence and memory-impairment risks, and the TGA also warns that pregabalin can cause dependence and withdrawal after both short- and long-term use. Long-term pregabalin can be clinically appropriate for some people; that is very different from saying it has no issues. So what do I do? The way I see it there are four options.
+So pregabalin and/or clonazepam were helping enormously with the social side, even though I hadn't got the doses ideal yet. I'd been thinking of clonazepam as the short-term problem and pregabalin as something I could keep taking with no issue. Unfortunately, both can cause dependence and mess with memory and concentration. Pregabalin withdrawal can happen after short- or long-term use too, so changing things needed my prescriber's help. So what do I do? The way I see it there are four options.
 
-1\. Should I reduce the levels of pregabalin and cease clonazepam? This would likely result in me reverting and just abandoning study.
-
-2\. Should I carry on at full force and hope for the best even though my brain looks like Morgan's scrambled eggs? (Visualise the most heat denatured protein you have ever witnessed).
-
-3\. Should I perhaps drop the loading down to 0.25 full time, at the very least to maintain access to the queer collective - which I am finding amazingly beneficial to be a part of.
-
-4\. Or... drop all courses. Reapply for UTS after I get all my other stuff in order.
+1. Should I reduce the levels of pregabalin and cease clonazepam? This would likely result in me reverting and just abandoning study.
+2. Should I carry on at full force and hope for the best even though my brain looks like Morgan's scrambled eggs? (Visualise the most heat denatured protein you have ever witnessed).
+3. Should I perhaps drop the loading down to 0.25 full time, at the very least to maintain access to the queer collective - which I am finding amazingly beneficial to be a part of.
+4. Or... drop all courses. Reapply for UTS after I get all my other stuff in order.
 
 ![](/assets/images/2024/img_1338.jpg)
 
@@ -40,7 +37,7 @@ The good thing this round is that my Jobseeker Payment from the Australian Gover
 
 ![](/assets/images/2024/img_1339.jpg)
 
-The only reason I can get these thoughts onto paper is because I was finding my thinking clearest when the medication level felt lowest. A few hours after the morning dose I often felt more cognitively scrambled. That is my repeated subjective experience, not a serum drug-level measurement, but the trade-off was becoming hard to ignore.
+The only reason I can get these thoughts onto paper is because my thinking feels clearest before the morning dose. A few hours after it, I often feel more cognitively scrambled. Whatever the levels are doing, this trade-off is becoming hard to ignore.
 
 ![](/assets/images/2024/img_1336.jpg)
 
@@ -86,3 +83,8 @@ I guess I technically started UTS for the spring period and am still finding bee
 
 - [TGA - Pregabalin and gabapentin safety alert](https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/pregabalin-and-gabapentin)
 - [Australian Commission on Safety and Quality in Health Care - Rivotril consumer medicine information](https://www.safetyandquality.gov.au/medicine-finder/rivotril)
+
+### Related posts
+
+- [Third Time's a Charm; University Begins... Again](/third-times-a-charm-university-begins-again/)
+- [Thirty Days Has September](/thirty-days-has-september/)

@@ -2,7 +2,7 @@
 title: "Amstrad Sega Mega PC 486SLC: Coprocessor and 16 MB RAM"
 author: "Nix McRetro"
 date: 2012-03-29T10:21:03.000+11:00
-last_modified_at: 2026-10-02
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6 Astra Max"
   date: 2026-10-02
@@ -34,9 +34,7 @@ MEMTEST 4.20 does not run though. It simply restarts when I try to boot it from 
 
 For now I am still waiting on the replacement RTC module to arrive from Hong Kong. A couple more weeks to go.
 
-I've also ordered a 4 GB Disk on Module using SLC flash rather than MLC. Hopefully the BIOS will recognise it and I can boot DOS and Windows from it without too much drama.
-
-Time will tell! :D
+I've also ordered a 4 GB Disk on Module using SLC flash rather than MLC. Hopefully the BIOS will recognise it and I can boot DOS and Windows from it without too much drama. Time will tell! :D
 
 ### Related posts
 

@@ -2,7 +2,7 @@
 title: "Amstrad Sega Mega PC Disassembled"
 author: "Nix McRetro"
 date: 2012-03-22T13:09:58.000+11:00
-last_modified_at: 2026-10-02
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6 Astra Max"
   date: 2026-10-02
@@ -12,11 +12,7 @@ categories: [ibm-pc, repairs, sega]
 
 {% include youtube.html id="MyKHXU0ikFY" %}
 
-A look inside the Amstrad Mega PC with the system pulled apart. The Sega Mega Drive hardware is carried on a dedicated ISA expansion card inside what is otherwise recognisably an Amstrad PC.
-
-This is the same machine that arrived with NiCad battery corrosion around the motherboard. By this point the damaged traces had been repaired well enough to get the Sega side working and the PC side running, although I was still chasing the hard-drive problem.
-
-Seeing everything disassembled makes it much easier to appreciate just how strange the Mega PC really is: part ordinary early-'90s PC, part Mega Drive, all crammed into the same beige box.
+A quick look inside the Amstrad Mega PC with the system pulled apart. The Sega Mega Drive hardware sits on a dedicated ISA card inside the PC. This is the same machine that arrived in not-so-good condition with NiCad battery corrosion on the motherboard.
 
 ### Related posts
 

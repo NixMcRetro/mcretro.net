@@ -2,7 +2,7 @@
 title: "Amstrad Sega Mega PC 486SLC Upgrade Progress"
 author: "Nix McRetro"
 date: 2012-03-25T00:42:58.000+11:00
-last_modified_at: 2026-10-02
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6 Astra Max"
   date: 2026-10-02
@@ -20,7 +20,7 @@ I want to see how large a hard drive this machine will recognise and then try a 
 
 #### The RTC problem
 
-I did hit one show-stopper: the TH6887A real-time clock module has a flat internal battery. On this board that means the machine will not retain its setup properly.
+I did hit one show-stopper: the TH6887A real-time clock module has a flat internal battery. On this board the machine wasn't retaining its setup properly on reboot. Yes, even with the power still connected! Dammit!
 
 ![](/assets/images/2012/img_0048.jpg)
 

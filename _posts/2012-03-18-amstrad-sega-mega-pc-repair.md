@@ -2,7 +2,7 @@
 title: "Amstrad Sega Mega PC Repair"
 author: "Nix McRetro"
 date: 2012-03-18T09:33:45.000+11:00
-last_modified_at: 2026-10-02
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6 Astra Max"
   date: 2026-10-02
@@ -34,7 +34,7 @@ I cleaned everything up as best I could with some isopropyl alcohol, then mapped
 
 From the maps above it looked as though most of the damage affected at least one of the serial ports. Serial? Pffft, I have PS/2 connectors.
 
-Unfortunately, one of the main power tracks from the power connector was damaged as well. I handed the board over to boss and he did some soldering while I stood around eating candy.
+Unfortunately, one of the main power tracks from the power connector was damaged as well. I handed the board over to Big Boss and he did some soldering while I stood around eating candy.
 
 ![](/assets/images/2012/img_0025.jpg)
 

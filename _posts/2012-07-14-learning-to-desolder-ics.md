@@ -2,7 +2,7 @@
 title: "Learning to Desolder ICs"
 author: "Nix McRetro"
 date: 2012-07-14T13:42:52.000+10:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -20,13 +20,7 @@ I was using a general-purpose heat gun here. It worked well enough for experimen
 
 {% include youtube.html id="DVPNk2SLS9A" %}
 
-Desoldering success!
-
-What about resoldering?
-
-Stay tuned. I might do some of that shortly if I find the energy to wake up before the afternoon.
-
-This practice was about to become considerably less theoretical.
+Desoldering success! What about resoldering? Stay tuned, I might do some of that shortly if I find the energy to wake up before the afternoon.
 
 ### Related posts
 

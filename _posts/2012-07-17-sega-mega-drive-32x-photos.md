@@ -2,7 +2,7 @@
 title: "Sega Mega Drive 32X Photos"
 author: "Nix McRetro"
 date: 2012-07-17T11:17:56.000+10:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -12,7 +12,7 @@ categories: [sega]
 
 ![](/assets/images/2012/img_0222.jpg)
 
-The Mega Drive 32X. One small step for man. Sega's marketing claimed around 50,000 texture-mapped polygons per second for mankind. That number is best treated as a theoretical marketing figure rather than a promise about real-world game performance, but it certainly sounded impressive in the mid-'90s.
+The Mega Drive 32X. One small step for man. 50,000 polygons for mankind! Sega's marketing claimed around 50,000 texture-mapped polygons per second. That figure is best treated as a theoretical marketing number rather than real-world game performance, but it certainly sounded impressive in the mid-'90s.
 
 ![](/assets/images/2012/img_0224.jpg)
 

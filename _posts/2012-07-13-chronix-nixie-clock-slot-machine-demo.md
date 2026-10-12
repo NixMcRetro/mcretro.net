@@ -2,7 +2,7 @@
 title: "Chronix Nixie Clock: Slot Machine Demo"
 author: "Nix McRetro"
 date: 2012-07-13T14:20:03.000+10:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -18,7 +18,7 @@ It also looks pretty cool while doing it.
 
 I should have some more photos and documentation up this weekend.
 
-In 2013 I replaced the NiCad battery in this particular clock with a NiMH cell and it worked successfully. That does not mean NiCd-to-NiMH replacement is automatically safe in every piece of equipment. Suitability depends on the charging circuit, charge current and the replacement cell itself.
+**Update 23 April 2013:** I replaced the NiCad battery in this clock with a NiMH cell. See my other videos for the swap! It worked successfully in this particular clock, but a NiCd-to-NiMH replacement is not automatically safe in every piece of equipment. Suitability depends on the charging circuit, charge current and replacement cell.
 
 ### Related posts
 

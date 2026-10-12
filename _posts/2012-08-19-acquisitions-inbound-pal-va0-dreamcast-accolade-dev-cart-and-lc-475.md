@@ -2,7 +2,7 @@
 title: "Acquisitions Inbound: PAL VA0 Dreamcast, Accolade Dev Cart and LC 475"
 author: "Nix McRetro"
 date: 2012-08-19T11:25:05.000+10:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -22,11 +22,7 @@ I'm looking forward to opening it, smelling that '90s air and getting the video 
 
 ### PAL VA0 Dreamcast
 
-I also came across a PAL VA0 Dreamcast.
-
-PAL VA0, you say?
-
-Yes, that's correct.
+I also came across a PAL VA0 Dreamcast. PAL VA0, you say? Yes, that's correct!
 
 VA0 hardware is much harder to find in PAL regions than the later VA1 machines. It uses the early metal cooling and heatpipe arrangement also seen in Japanese VA0 Dreamcasts.
 
@@ -52,11 +48,7 @@ I also fetched an Apple Macintosh LC 475, or Performa 475, to play around with.
 
 One of the clips on the pizza-box case is damaged, but I'm not particularly interested in cosmetic perfection. I want the hardware.
 
-I actually gave an LC 475 away to a collector years ago.
-
-How we always come to regret these things.
-
-It is probably locked away in a garage growing fungus on it.
+I actually gave an LC 475 away to a collector years ago. How we always come to regret these things. It is probably locked away in a garage growing fungus on it.
 
 ### Mega Drives and 32X plans
 

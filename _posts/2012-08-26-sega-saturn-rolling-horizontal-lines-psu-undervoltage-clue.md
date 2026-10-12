@@ -2,7 +2,7 @@
 title: "Sega Saturn Rolling Horizontal Lines: PSU Undervoltage Clue"
 author: "Nix McRetro"
 date: 2012-08-26T00:45:37.000+10:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -22,7 +22,7 @@ Something did not make sense.
 
 The Saturns with the supposedly bad PSUs were no longer showing the rolling-line problem, even after being left running for quite a while.
 
-I packed everything away, went to bed and then had the giant light-bulb moment.
+I packed everything away and went to bed with an uneasy feeling. Turned off the light and then a giant light bulb activated inside my big fat head.
 
 I had forgotten to unplug the step-down transformer. In other words, I had accidentally been feeding my PAL Saturn power supplies roughly half their intended mains voltage.
 

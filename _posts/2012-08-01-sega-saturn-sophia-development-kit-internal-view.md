@@ -2,7 +2,7 @@
 title: "Sega Saturn Sophia Development Kit: Internal View"
 author: "Nix McRetro"
 date: 2012-08-01T12:21:04.000+10:00
-last_modified_at: 2026-10-03
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-03
@@ -25,8 +25,6 @@ If anyone has compatible Sophia SH-2 boards lying around, I'd be more than happy
 ![](/assets/images/2012/img_0240.jpg)
 
 I'll post much better photos once everything has been cleaned properly.
-
-This eventually turned into a much larger restoration project. I later found compatible SH-2 cards and spent a good part of 2013 bringing the Sophia hardware back together.
 
 Anyway, enjoy the video.
 

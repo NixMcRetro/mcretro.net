@@ -3,24 +3,24 @@ title: "NetComm Roadster V.92 - Model AM5698"
 author: "Nix McRetro"
 date: 2023-08-12T12:39:05.000+10:00
 categories: [linux, modems, repairs]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="bOloActkN2Q" %}
 
-Back in mid-2022 I was given this modem as a gift, and while I wasn't looking for any V.92 modems I figured I'd document it. While I tend to be a little more [V.32 or V.34](https://en.wikipedia.org/wiki/List_of_ITU-T_V-series_recommendations) inclined, I am open to the idea of V.92 modems doing the work of a V.34 modem. Maybe I just really like the old Rockwell chipsets before they were floated on the stock exchange becoming [Conexant Systems](https://en.wikipedia.org/wiki/Conexant).
+Back in mid-2022 I was given this modem as a gift, and while I wasn't looking for any V.92 modems, I figured I'd document it. While I tend to be a little more [V.32 or V.34](https://en.wikipedia.org/wiki/List_of_ITU-T_V-series_recommendations) inclined, I am open to the idea of V.92 modems doing the work of a V.34 modem. Maybe I just really like the old Rockwell chipsets more than the later [Conexant Systems](https://en.wikipedia.org/wiki/Conexant) ones.
 
 ![](/assets/images/2023/img_1079.jpg)
 
-Externally it is marked as a NetComm Roadster V.92 model AM5698. The power supply required is 7.5V DC centre-positive at a minimum of 450mA which seems to be the standard for the NetComm AM56XX series and the related Banksia Wave SP family of modems.
+Externally it is marked as a NetComm Roadster V.92 model AM5698, serial T510001CN0251. The label specifies 7.5 V DC, 450 mA, and I recorded the input as centre-positive. That's this unit's setup, rather than a specification for every NetComm AM56XX or Banksia Wave SP modem.
 
 ![](/assets/images/2023/img_1076.jpg)
 
-Internally we can see the PCB is marked with ST309 REV B. Most of the date codes on the board indicate a manufacturing date of mid-late 2004 - which makes this quite a late revision and under 20 years old it came across my desk. 13 capacitors, most if not all were STONE branded. Make note of those capacitor heights. I might have made a slight misstep when replacing them. More on that later.
+Internally, the PCB is marked ST309 REV B. The component date codes point to 2004, although they don't pin down the finished modem's exact manufacturing date. That made the components under 20 years old when it came across my desk. There were 13 capacitors, most if not all STONE branded. Make note of those capacitor heights. I might have made a slight misstep when replacing them. More on that later.
 
 ![](/assets/images/2023/img_1077.jpg)
 
@@ -32,13 +32,13 @@ Dammit! That speaker does not have the clearance it needs. I need the ultra shor
 
 ![](/assets/images/2023/img_1080.jpg)
 
-Perfect! Most of the affected originals were 10 µF, 25 V parts. I replaced some with 50 V parts, which increased the voltage rating but also made the cans too tall for the space under the speaker. That is not "derating" the capacitor; derating means operating a component below its rating. The shorter ZLG parts solved the mechanical problem. The capacitor at C25 is a 22 µF, 63 V part.
+Perfect! Most of the affected originals were 10 µF, 25 V parts. I replaced some with 50 V parts, which increased the voltage rating but also made the cans too tall for the space under the speaker. That is not "derating" the capacitor; derating means operating a component below its rating. The shorter ZLG parts solved the mechanical problem. 😅 C25 was a 22 µF, 63 V part, with another little surprise waiting for me.
 
 ![](/assets/images/2023/img_1081.jpg)
 
-C25 was more important. The fitted 22 µF, 63 V capacitor was bipolar or non-polar, while the PCB silkscreen showed a polarity mark. I originally took that silkscreen as confirmation that a polarised replacement was fine. It is not enough evidence on its own. A non-polar electrolytic may be deliberate where the voltage can reverse, so a polar replacement should only be used after checking the circuit and confirming the actual voltage polarity.
+C25 was the odd one out: the fitted 22 µF, 63 V capacitor was bipolar or non-polar. [Jon](https://damntechnology.blogspot.com) suggested that the factory might simply have used what it had on hand, and I took the polarity mark on the PCB as confirmation. That was a theory, not a circuit check. A non-polar electrolytic may be deliberate where the voltage can reverse, so a polar replacement should only be used after checking the circuit and confirming the actual voltage polarity.
 
-Next up we have the ATI (inquiry, information, or interrogation) results. This give us the active firmware version - this wasn't dumped because I didn't have much interest in doing it at the time. That said, it might be available through [archive.org](http://archive.org) as an available firmware update. You'll need to scour the archives to track that down though.
+Next up we have the ATI (inquiry, information, or interrogation) results. These give us the active firmware version. I didn't dump it because I didn't have much interest in doing so at the time. An update might be somewhere on [archive.org](http://archive.org), but I haven't tracked down a matching file.
 
 ```
 ---------- 2022-10-02 20:47:01 +1100: Logging Started ----------
@@ -87,7 +87,7 @@ CONNECT 28800
 
 ```
 
-The capacitors were replaced in this modem in September 2022. This is a record of this ST309 REV B board, not a universal AM5698 bill of materials. The parts listed below are manufacturer part numbers. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
+The capacitors were replaced in this modem in September 2022. This is a record of this ST309 REV B board, not a universal AM5698 bill of materials. In particular, the C25 entry records the polarised replacement I fitted; it is not evidence that this was suitable for the original non-polar position. Check the circuit, capacitor type and polarity, capacitance, voltage and temperature ratings, ESR, ripple current and physical fit before choosing replacements. The parts listed below are manufacturer part numbers. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
 
 ```
 Location	Value	Voltage		Height	Width	Notes
@@ -113,7 +113,7 @@ Use caution under the speaker as 11/12mm (h) capacitors will not have enough cle
 
 ```
 
-As always you can see more pictures in the [photo gallery](/photos) and grab any drivers from the [file server](/files). I've put an iso image up of the entire driver disc as well but you shouldn't need much more than the above init string to get dialling.
+I put more pictures in the [photo gallery](/photos) and the drivers, including an ISO image of the entire driver disc, on the [file server](/files). Both are currently unavailable. The init string above records what I used on this modem; it isn't a guarantee for every setup.
 
 This modem has been donated to the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/).
 

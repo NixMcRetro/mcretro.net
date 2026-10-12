@@ -3,20 +3,20 @@ title: "Crisis Core: Final Fantasy VII Reunion (2022, PS5 Live Streams)"
 author: "Nix McRetro"
 date: 2023-07-30T19:06:35.000+10:00
 categories: [gaming, livestream, youtube]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="lYVVaK_hgV4" %}
 
-Wow. Just wow. What a great game! Above is the entire playlist of roughly 73 hours play time. 73 glorious hours over 27 days. Roughly three hours a day.
+Wow. Just wow. What a great game! My playthrough ran to roughly 73 glorious hours over 27 days. Just under three hours a day. The stream above gives you a taste of the adventure.
 
 ![](/assets/images/2023/img_1052.jpg)
 
-Yet it feels like only yesterday when I was munching away on peanut butter pretzels while installing my speedy looking Samsung 980 Pro M.2 into my shiny new PlayStation 5. And yes, I did get some crumbs in there.
+Yet it feels like only yesterday that I was munching away on peanut butter pretzels while installing my speedy-looking Samsung 980 PRO M.2 NVMe SSD into my shiny new PlayStation 5. And yes, I did get some crumbs in there.
 
 ![](/assets/images/2023/img_1053.jpg)
 
@@ -24,7 +24,7 @@ With the help of Lilly, we confirmed the drive had shipped with firmware 5B2QGXA
 
 ![](/assets/images/2023/img_1054.jpg)
 
-And at some point along the way, my window frames and windows were all replaced. Which caused a little bit of chaos and a wild bookcase to appear.
+And at some point along the way, my window frames and windows were all replaced, causing a little bit of chaos and a wild bookcase to appear.
 
 ![](/assets/images/2023/img_1055.jpg)
 
@@ -44,7 +44,7 @@ Eventually I got closer to the end of the story but got a little stuck while try
 
 ![](/assets/images/2023/img_1057.jpg)
 
-Not to spoil anything, but the ending is quite emotional. You'll have to play it to see as the ending is of course, a blocked scene from live streaming. Overall, well worth a play. If you skip the missions, you'll only have a few hours gameplay I believe. Even though I can't shake that Zack sounds like Sonic the Hedgehog most of the time, he grew on me eventually - and he was right about one thing:-  
+Not to spoil anything, but the ending is quite emotional. You'll have to play it to see: it was a blocked scene in my live stream. Overall, well worth a play. If you skip the missions, it'll be a much shorter playthrough. Even though I can't shake that Zack sounds like Sonic the Hedgehog most of the time, he grew on me eventually - and he was right about one thing:
 
 > "Boy oh boy, the price of freedom is steep." - Zack Fair
 

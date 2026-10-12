@@ -3,11 +3,11 @@ title: "Cisco SPA8000-G4 VoIP Fan Quietener Mod"
 author: "Nix McRetro"
 date: 2023-08-18T08:43:38.000+10:00
 categories: [hacks, repairs, youtube]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="h9isDzHVapY" %}
@@ -24,11 +24,11 @@ First up is the capacitor replacement. These capacitors must have been rated wit
 
 ![](/assets/images/2023/img_1102.jpg)
 
-Here's the fan controller that was used. Relatively simple and cheap. I swapped out the 50 V Sanyo for a 25 V Panasonic capacitor to fit flush with the PCB. That was my 2023 choice, but dropping a capacitor's voltage rating should only be done after measuring or otherwise verifying the maximum voltage and transients at that component. Physical fit alone is not enough.
+Here's the fan controller I used. Relatively simple and cheap. I swapped the 50 V Sanyo capacitor for a 25 V Panasonic to fit flush with the PCB. That's what I fitted, but reducing the voltage rating requires checking the maximum circuit voltage and transients at that component. Physical fit alone is not enough.
 
 ![](/assets/images/2023/img_1103.jpg)
 
-Some of the case needed to be dremelled to fit the potentiometer through. Kapton tape on the underside of the controller PCB to prevent shorts.
+Some of the case needed to be dremelled to fit the potentiometer through. I put Kapton tape on the underside of the controller PCB to prevent shorts.
 
 ![](/assets/images/2023/img_1105.jpg)
 
@@ -40,11 +40,11 @@ And you can hardly even notice it from the front.
 
 ![](/assets/images/2023/img_1106.jpg)
 
-I mean it looks neat, that's not like me at all. I'd want the fan to be on at all times - even at the lowest setting for peace of mind. Reducing fan speed also reduces cooling, so this sort of modification should be validated with temperatures under the actual load and ambient conditions. Even after this modification I still found the fan, at the lowest speed, to be noisy. Probably that grill blocking airflow and increasing turbulence. Definitely a deciding factor in moving to the Cisco SPA112 instead - no fan!
+I mean, it looks neat. That's not like me at all. I'd want the fan on at all times, even at the lowest setting, for peace of mind. Reducing fan speed also reduces cooling, so this sort of modification should be validated with temperatures under the actual load and ambient conditions. Even after the modification, I still found the fan noisy at its lowest speed. Probably that grille blocking airflow and increasing turbulence. Definitely a deciding factor in moving to the Cisco SPA112 instead - no fan!
 
 ![](/assets/images/2023/img_1100.jpg)
 
-The parts listed below are manufacturer part numbers and record what I installed in this particular SPA8000-G4. Treat the table as a board record rather than a universal bill of materials. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄  
+The parts listed below are manufacturer part numbers and record what I installed in this particular SPA8000-G4. Check your board, capacitor type and polarity, capacitance, voltage and temperature ratings, ESR, ripple current and physical fit before choosing replacements. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
 
 ```
 Location	Value	Voltage		Dimensions				Lead Spacing	Notes
@@ -77,7 +77,7 @@ Fan			12V 	0.043A		35mm (w) x 35mm (h) 10mm (d) 			MC011510	For Replacement of S
 
 ```
 
-One issue I encountered on first power on, which is probably worth mentioning, was boot looping. Here's the initial specs of the software I was running and the device serial number.  
+One issue I encountered on first power-on, which is probably worth mentioning, was boot looping. Here are the initial software version, device serial number and reset command I used.
 
 ```
 Serial: 		CFH01T701904
@@ -94,7 +94,7 @@ The firmware was out of date, which wasn't all that surprising. Keep your eyes o
 
 ![](/assets/images/2023/img_1095.jpg)
 
-Cisco offer a [nice article](https://web.archive.org/web/20230228080434/https://www.cisco.com/c/en/us/support/docs/smb/collaboration-endpoints/cisco-ip-phone-8800-series/1739-SPA8000-upgrade-firmware-to-6112.html) on how to update to the latest.
+Cisco's [firmware-upgrade guide for SPA8000 version 6.1.12SR1](https://web.archive.org/web/20230228080434/https://www.cisco.com/c/en/us/support/docs/smb/collaboration-endpoints/cisco-ip-phone-8800-series/1739-SPA8000-upgrade-firmware-to-6112.html) helped me through the update.
 
 ![](/assets/images/2023/img_1096.jpg)
 
@@ -102,10 +102,18 @@ The [quick start guide](https://web.archive.org/web/20250417145553/https://www.c
 
 ![](/assets/images/2023/img_1097.jpg)
 
-[I wasn't alone](https://community.cisco.com/t5/voice-systems-and-accessories-small-business/spa8000-stuck-in-a-boot-loop/td-p/1675301) on the boot loop issue thankfully.
+Thankfully, I wasn't alone: I found a [Cisco Community thread about the SPA8000 boot loop](https://community.cisco.com/t5/voice-systems-and-accessories-small-business/spa8000-stuck-in-a-boot-loop/td-p/1675301). That thread was useful at the time, although it currently returns a site-unavailable page.
 
 ![](/assets/images/2023/img_1098.jpg)
 
-On this unit, the boot loop stopped when I disconnected Ethernet, which let me reach the AUX interface at 192.168.0.1 and continue recovery. I would not turn that into a universal SPA8000 rule, but it was the condition that worked here. Another thing that was kicking me was the lack of a time server so the date/time wouldn't update. Adding a primary time server under WAN status (Advanced) of time.nist.gov solved that.
+On this unit, the boot loop stopped when I disconnected Ethernet, which let me reach the AUX interface at 192.168.0.1 and continue recovery. I wouldn't turn that into a universal SPA8000 rule, but it was the condition that worked here. Another thing that was kicking me was the lack of a time server, so the date and time wouldn't update. Adding time.nist.gov as the primary time server in the advanced settings solved that.
 
-There's more photos of this device in the [photo gallery](/photos) if you are interested in that sort of thing. No judgement from this side of the table! 😄 I've also added the latest firmware at the time of writing and some pdfs on configuring the SPA8000 onto the [file server](/files).
+I put more photos of this device in the [photo gallery](/photos), if you are interested in that sort of thing. No judgement from this side of the table! 😄 I also put the firmware I used and some PDFs on configuring the SPA8000 onto the [file server](/files). Both are currently unavailable.
+
+### Sources
+
+- [Nichicon - Application Guidelines for Aluminum Electrolytic Capacitors](https://www.nichicon.co.jp/english/series_items/catalog_pdf/e-aluminum.pdf)
+
+### Related posts
+
+- [Cisco SPA8000-G4 8-Port IP Telephony Gateway Recap Overview](/cisco-spa8000-g4-8-port-ip-telephony-gateway-recap-overview/)

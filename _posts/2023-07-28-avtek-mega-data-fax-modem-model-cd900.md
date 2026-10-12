@@ -3,11 +3,11 @@ title: "Avtek Mega Data/Fax Modem - Model CD900"
 author: "Nix McRetro"
 date: 2023-07-28T18:30:23.000+10:00
 categories: [linux, modems, repairs]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="ScKgwIrByFU" %}
@@ -16,11 +16,11 @@ This modem was purchased through eBay in February 2023 and recapped in late May 
 
 ![](/assets/images/2023/img_1045.jpg)
 
-Here's the brains of the modem. A Rockwell RC224ATF R6641-14 with datecode of week 30, 1992. More photos can be found in the [photo gallery](/photos).
+Here's the brain of the modem: a Rockwell RC224ATF R6641-14 with a date code of week 30, 1992. I put more photos in the [photo gallery](/photos), which is currently unavailable.
 
 ![](/assets/images/2023/img_1046.jpg)
 
-Some of the surface mount capacitors had leaked and started to corrode the board but nothing a small scrub couldn't handle. The pads did lift in some cases but didn't sever from the PCB. Nobody likes surface mount capacitors leaking. No one!
+Some of the surface-mount capacitors had leaked and started to corrode the board, but it was nothing a small scrub couldn't handle. A few pads lifted without breaking away from the PCB. Nobody likes surface-mount capacitors leaking. No one!
 
 ![](/assets/images/2023/img_1047.jpg)
 
@@ -28,21 +28,21 @@ Quite a simple board design, no firmware to dump as far as I could tell. The LED
 
 ![](/assets/images/2023/img_1048.jpg)
 
-While recapping the SMD components, I used due diligence (for once) and removed the P1200 component rather than risking it getting, let's just say **_somewhat melted_**. How did the universe repay me? Why one of the legs fell off. I tried jamming it back in but no dial.
+While recapping the SMD components, I did my due diligence (for once) and removed the P1200 rather than risk getting it, let's just say **_somewhat melted_**. How did the universe repay me? Why, one of the legs fell off. I tried jamming it back in, but no dial.
 
-So I sourced a replacement - P1200 ETAL isolation transformer TH line matching, 100 µA. Also known as a telecom transformer, line matching, 1.5 dB, 148 ohm, 100 µA, 3.88 kVrms. And here I was thinking it was just a relay! Isolation transformer... I'll try to remember that one!
+So I sourced a replacement ETAL P1200 line-matching and isolation transformer. And here I was thinking it was just a relay! Isolation transformer... I'll try to remember that one!
 
 ![](/assets/images/2023/img_1049.jpg)
 
-Hmmm good old 2,400 bps. Not the fastest of modems and going off the datecodes on the majority of chips, we're looking at a birthday of mid-late 1992 for this modem. That's over 30 years old! I'm not surprised those surface mounts capacitors leaked.
+Hmmm, good old 2,400 bps. Not the fastest of modems. That 1992 date code gives us an early-1990s component, rather than an exact birthday for the finished modem. The chip was over 30 years old by the time I got to it! I'm not surprised those surface-mount capacitors leaked.
 
 ![](/assets/images/2023/img_1051.jpg)
 
-The power supply was one of the three pictured here. Which one? I could not be sure... But it was 15V AC with a female prong connector. Pretty standard for this era of Avteks and even NetComm modems - they did share the same parent company after all.
+The power supply was one of the three pictured here. Which one? I could not be sure... All three are labelled WW037, 15 V AC, 10 VA. I used a 15 V AC supply with the female prong connector; that is a record of this setup, not a power-supply specification for every Avtek or NetComm modem.
 
 ![](/assets/images/2023/img_1050.jpg)
 
-I love the way they designed the front of the modem to make the LEDs shine through like the letter A (for Avtek). Last up we have the results of the probing the modem for information. Surprisingly short as nothing beyond ATI3 registered anything apart from ERROR. Short and sweet! 😄
+I love the way they designed the front of the modem to make the LEDs shine through like the letter A (for Avtek). Last up, we have the results of probing the modem for information. Surprisingly short, as nothing beyond ATI3 registered anything apart from ERROR. Short and sweet! 😄
 
 ```
 ---------- 2023-05-28 15:36:54 +1000: Logging Started ----------
@@ -71,7 +71,7 @@ CONNECT 2400
 
 ```
 
-The capacitors were replaced in this modem in May 2023. The list below records this particular CD900 and the replacements I used. Treat it as a board record rather than a universal bill of materials; verify the parts actually fitted, including polarity, capacitance, voltage, ESR, ripple-current requirements and physical size. The parts listed below are manufacturer part numbers. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
+The capacitors were replaced in this modem in May 2023. The list below records this particular CD900 and the replacements I used. Before ordering, check the actual board, capacitor type and polarity, capacitance, voltage and temperature ratings, ESR, ripple-current requirements and physical size. The parts listed below are manufacturer part numbers. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
 
 ```
 SMD Electrolytic
@@ -94,3 +94,8 @@ C59		220uF		35V		10mm (W) x 12mm (H)	35ZLK220M10X12.5 - Rubycon ZLK Series
 ```
 
 This modem has been donated to the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/).
+
+### Sources
+
+- [ETAL - P1200 line-matching transformer datasheet](https://www.farnell.com/datasheets/1801043.pdf)
+- [Nichicon - Application Guidelines for Aluminum Electrolytic Capacitors](https://www.nichicon.co.jp/english/series_items/catalog_pdf/e-aluminum.pdf)

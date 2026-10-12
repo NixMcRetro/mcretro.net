@@ -3,6 +3,11 @@ title: "Dial-up Modem Handshake Spectrogram at 31,200bps"
 author: "Nix McRetro"
 date: 2023-08-07T21:33:42.000+10:00
 categories: [modems, news, youtube]
+last_modified_at: 2026-10-12
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 {% include youtube.html id="_5ZUPU5NHyM" %}
@@ -11,7 +16,7 @@ I saw this awesome dial-up modem spectrogram from ten years ago while hunting so
 
 {% include youtube.html id="vvr9AMWEU-c" %}
 
-Reading through the comments on the above video disappointed me that the software used wasn't mentioned. So I started digging around and [came across this](https://spectrogram.sciencemusic.org), which is pretty cool. Drop an audiophile in there and you're good to go. Wait, no not that sort of audio file.
+Reading through the comments on the video above, I was disappointed that the software used didn't seem to be mentioned. So I started digging around and found [ScienceMusic's Spectrogram](https://spectrogram.sciencemusic.org), which is pretty cool. Drop an audiophile in there and you're good to go. Wait, no, not that sort of audio file.
 
 ![](/assets/images/2023/img_1075.jpg)
 
@@ -29,7 +34,7 @@ Mother cluckers !!!🐓!!! Sometimes it pays to read the blooping manual. You'd 
 
 > **"izotope ozone 5 - 8192 FFT size, 93.75% overlap."**
 
-Well, I know what iZotope 5 is. It's 5 versions older than iZotope 10 - which is current at the time of writing. So how did they get the cool spectrogram to happen? As far as I can tell there was a thing called "Meter Bridge" in iZotope Ozone 5, which might have been the answer. In iZotope Ozone 10... we have Insight 2, which is installed like a plugin on a plugin.
+Well, I know what iZotope Ozone 5 is. It's five versions older than Ozone 10, which was current when I wrote this in 2023. So how did they get the cool spectrogram to happen? Ozone 5 Advanced had a Meter Bridge with a spectrogram. For my attempt, I used Insight 2, iZotope's separate metering plugin, rather than a plugin inside Ozone 10. Mystery solved... eventually.
 
 ![](/assets/images/2023/img_1073.jpg)
 
@@ -45,4 +50,9 @@ Which is great, that's what this one is too. V.34 is by far my favourite interne
 
 ![](/assets/images/2023/img_1070.jpg)
 
-In other news, I've setup and configured [BlueSky](https://bsky.app/). So I've gone from having one Twitter to neglect to having two Twitter replacements, [Mastodon](https://mastodon.social/@NixMcRetro) and [BlueSky](https://bsky.app/profile/nixmcretro.bsky.social), to neglect. The responsibilities are stacking up, fast! 😅
+In other news, I've set up and configured [Bluesky](https://bsky.app/). So I've gone from having one Twitter to neglect to having two Twitter replacements, [Mastodon](https://mastodon.social/@NixMcRetro) and [Bluesky](https://bsky.app/profile/nixmcretro.bsky.social), to neglect. The responsibilities are stacking up, fast! 😅
+
+### Sources
+
+- [iZotope - Ozone 5 Help: Meter Bridge](https://help.izotope.com/docs/izotope-ozone5-help.pdf)
+- [iZotope - Insight 2 Help: Spectrogram](https://s3.amazonaws.com/izotopedownloads/docs/insight200/en/spectrogram/index.html)

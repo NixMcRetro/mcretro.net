@@ -3,6 +3,11 @@ title: "The Photo Gallery Lives On"
 author: "Nix McRetro"
 date: 2023-08-05T10:48:13.000+10:00
 categories: [news]
+last_modified_at: 2026-10-12
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2023/img_1062.jpg)
@@ -15,8 +20,8 @@ So focus on what you can change. For me, that's the photo gallery. I've been mak
 
 ![](/assets/images/2023/img_1061.jpg)
 
-Licensed hardware makes things a little messy but I suppose in the grand scheme of things, it doesn't matter. I'll be able to put accessories - think Sega's Mega CD Karaoke add-on or that [Stargate shaped ring thing](https://giantbomb.com/sega-activator/3000-8/) in their own folders without too much hassle.
+Licensed hardware makes things a little messy, but I suppose in the grand scheme of things it doesn't matter. I'll be able to put accessories - think Sega's Mega-CD Karaoke add-on or that [Stargate-shaped ring thing](https://giantbomb.com/sega-activator/3000-8/) - in their own folders without too much hassle.
 
 ![](/assets/images/2023/img_1060.jpg)
 
-There will be some pretty neat stuff in there but for now, the data is slowly going up and you are welcome to [browse](/photos). Once I'm done with uploading what I can, I'll probably move back onto processing modem videos for the next 3-4 years. Ha ha! 😅
+There will be some pretty neat stuff in there. At the time, the data was slowly going up in the [photo gallery](/photos), although the gallery is currently unavailable. Once I'm done uploading what I can, I'll probably move back onto processing modem videos for the next 3-4 years. Ha ha! 😅

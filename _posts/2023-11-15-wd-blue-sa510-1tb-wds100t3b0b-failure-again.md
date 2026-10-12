@@ -3,20 +3,20 @@ title: "WD Blue SA510 1TB WDS100T3B0B Failure... Again"
 author: "Nix McRetro"
 date: 2023-11-15T13:36:30.000+11:00
 categories: [raspberry-pi]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2023/img_1208.jpg)
 
-Oh my sweet WD Blue SA510 M.2 SATA 2280 blade drives. [You are such trash](/geocities-downtime-wd-blue-sa510-1tb-wds100t3b0b-failure/). I had two of these for GeoCities, one master and one backup. However, since [I took GeoCities offline](/geocities-archive-retired-dockerisation-abandoned/) I thought I'd erase and sell the drives. But look at what I found when looking at the drive stats with [DriveDX](https://binaryfruit.com/drivedx).
+Oh my sweet WD Blue SA510 M.2 SATA 2280 blade drives. [You are such trash](/geocities-downtime-wd-blue-sa510-1tb-wds100t3b0b-failure/). I had two of these for GeoCities, one master and one backup. However, since [I took GeoCities offline](/geocities-archive-retired-dockerisation-abandoned/) I thought I'd erase and sell the drives. But look at what I found when looking at the drive stats with [DriveDx](https://binaryfruit.com/drivedx).
 
 ![](/assets/images/2023/img_1204.jpg)
 
-Yeahhh, DriveDX was reporting 824TB of NAND writing across TLC and SLC. That is internal NAND activity rather than host writes, so it is not directly comparable with the 1.8TB written by the computer. SSD firmware does its own internal garbage collection, caching and data movement, so NAND writes can exceed host writes. Even so, that number looked absolutely wild. Those retired blocks weren't exactly filling me with confidence either. Digging a little deeper we find...
+Yeahhh, DriveDx was displaying 824.6TB under NAND Writes TLC and 824.9TB under NAND Writes SLC. Those are two separate displayed counters, not a combined total, and I haven't independently verified their vendor-specific decoding. NAND activity is also different from the 1.8TB of host writes reported below: firmware can move data internally for caching and garbage collection. Even so, those numbers looked absolutely wild. Those retired blocks weren't exactly filling me with confidence either. Digging a little deeper we find...
 
 ![](/assets/images/2023/img_1205.jpg)
 
@@ -36,7 +36,7 @@ Hmmm right. Read-only is at least a safer failure mode than silently eating writ
 
 ![](/assets/images/2023/img_1209.jpg)
 
-Through the motions we go. Updated firmware OK, but DriveDX was still reporting only 40% health. Updating the firmware was never going to magically reset the underlying SMART history or replace worn or retired flash blocks.
+Through the motions we go. Updated firmware OK, but WD Dashboard reported only 40% health. The earlier DriveDx screenshot had shown 100%, so the two tools weren't agreeing. A firmware update doesn't replace flash hardware, but these screenshots don't establish how either tool calculated its health figure or whether the NAND-write figures were decoded correctly.
 
 ![](/assets/images/2023/img_1210.jpg)
 
@@ -44,11 +44,16 @@ At least this second drive had accumulated 6586 power-on hours before I noticed 
 
 ![](/assets/images/2023/img_1206.jpg)
 
-Tech support was less than useful directing me to India who may not be aware of consumer rights. But you've gotta feel bad for the [people buying lots of these](https://www.reddit.com/r/pcmasterrace/comments/wk6myd/wd_blue_sa510_vs_3d_nand_sata_3/) based on the success of previous revision WDS100T2XXX working as expected. For now I'll just use the other working drive as a throw about spare and wait for it to fail in a new quirky way. If anyone can do it WD flash division can! 💁‍♀️
+Tech support was less than useful, directing me to India when I was trying to discuss Australian consumer rights. But you've gotta feel bad for the [people buying lots of these](https://www.reddit.com/r/pcmasterrace/comments/wk6myd/wd_blue_sa510_vs_3d_nand_sata_3/) based on the success of the earlier WD Blue 3D NAND drives. For now I'll just use the other working drive as a throw about spare and wait for it to fail in a new quirky way. If anyone can do it WD flash division can! 💁‍♀️
 
 
 ### Sources
 
-- [SanDisk / Western Digital - WD Blue SA510 SATA SSD critical firmware updates](https://support-en.sandisk.com/app/answers/detailweb/a_id/50208)
-- [Western Digital - Internal SSD endurance and warranty periods](https://support-eu.sandisk.com/app/answers/detailweb/a_id/30797/~/wd-internal-ssd-endurance-and-warranty-periods)
-- [Western Digital - S.M.A.R.T. attributes](https://support-en.wd.com/app/answers/detail/a_id/12163)
+- [Western Digital - WD Blue SA510 SATA SSD critical firmware update](https://web.archive.org/web/20231015000448/https://support-en.wd.com/app/answers/detailweb/a_id/50208)
+- [Western Digital - WD Blue SA510 SATA SSD product brief, October 2023](https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/western-digital/product/internal-drives/wd-blue-ssd/product-brief-wd-blue-sa510-sata-ssd.pdf)
+- [Western Digital - S.M.A.R.T. Self-Monitoring Analysis and Reporting Technology](https://support-en.wd.com/app/answers/detailweb/a_id/12163)
+
+### Related posts
+
+- [GeoCities Downtime - WD Blue SA510 1TB WDS100T3B0B Failure](/geocities-downtime-wd-blue-sa510-1tb-wds100t3b0b-failure/)
+- [GeoCities Archive Retired, Dockerisation Abandoned](/geocities-archive-retired-dockerisation-abandoned/)

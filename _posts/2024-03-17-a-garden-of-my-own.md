@@ -28,7 +28,7 @@ So there'd be a bunch of native ground cover in the form of Grevillea juniperina
 
 ![](/assets/images/2024/img_1267.jpg)
 
-I guess I'd probably hit up the local hardware store and look for some [bee hotels](https://entomologistlounge.wordpress.com/2017/09/18/insect-hotels-a-refuge-or-a-fad/), since my property was likely cleared by the previous owners. I'd need to look past the cute little roofs though: smooth nesting holes, shelter from rain and a way to maintain them matter more than how fancy they look.
+I guess I'd probably hit up the local hardware store and buy a bunch of [bee hotels](https://entomologistlounge.wordpress.com/2017/09/18/insect-hotels-a-refuge-or-a-fad/), since my property was likely cleared by the previous owners. I'd need to check the nesting holes were smooth and the hotel could be kept dry and maintained, though. A cute little roof doesn't tell me much about that.
 
 ![](/assets/images/2024/img_1268.jpg)
 

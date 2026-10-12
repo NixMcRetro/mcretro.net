@@ -3,11 +3,11 @@ title: "Me, Myself and Progesterone"
 author: "Nix McRetro"
 date: 2024-03-29T11:52:43.000+11:00
 categories: [news]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2024/img_1288.jpg)
@@ -20,11 +20,11 @@ I had also ceased finasteride. Finasteride inhibits 5-alpha reductase, one of th
 
 ![](/assets/images/2024/img_1289.jpg)
 
-My sleep quality has been pretty broken for a while now. Look at those orange blocks. And here I was looking forward to some of the benefits from progesterone. [Anxiolytic?](https://en.wikipedia.org/wiki/Anxiolytic) Yes please! [Sleep improving?](https://pmc.ncbi.nlm.nih.gov/articles/PMC9175584/) Definitely!
+My sleep quality has been pretty broken for a while now. Look at those orange blocks. And here I was hoping progesterone might help. [Anxiolytic?](https://en.wikipedia.org/wiki/Anxiolytic) Yes please! [Sleep improving?](https://pmc.ncbi.nlm.nih.gov/articles/PMC9175584/) Definitely on the wish list, though that small study of 100mg nightly found no clear improvement over three months.
 
 ![](/assets/images/2024/img_1290.jpg)
 
-Instead I get this whole brain fire thing and feel like I've taken an [anxiogenic](https://en.wikipedia.org/wiki/Anxiogenic). That got me thinking about glutamate rebound or a sudden shift in inhibition versus excitation. "Excitotoxicity" was the word that came to mind, but that describes actual cellular injury and I had no evidence that was happening. Brain on fire describes how it **felt**, not a diagnosis of what my neurons were doing.
+Instead I get this whole brain fire thing and feel like I've taken an [anxiogenic](https://en.wikipedia.org/wiki/Anxiogenic). Throw in some [formication](https://en.wikipedia.org/wiki/Formication), that crawling sensation, and I was wondering about glutamate rebound or a sudden shift between inhibition and excitation. Excitotoxicity perhaps? That describes actual cellular injury, and I had no evidence of that. Brain on fire describes how it **felt**, not a diagnosis of what my neurons were doing.
 
 I've experienced similar feelings while withdrawing from pregabalin and trusty old diazepam, but those drugs do not work through the same mechanism. Pregabalin acts mainly through alpha-2-delta subunits of voltage-gated calcium channels and can reduce release of excitatory neurotransmitters; diazepam potentiates GABA-A receptor activity. The similarity here was in my subjective experience, not proof that the same neurochemical process was happening. It appears that taking what I would consider a small dose (2mg) of diazepam negates the insomnia pretty well. Even though diazepam isn't a terribly good choice for sleep. It takes me from being a wired insomniac to sleeping beauty in about an hour.
 
@@ -44,7 +44,7 @@ I wondered whether moving to a more potent 5AR inhibitor, such as dutasteride, w
 
 **Epipregnanolone** - another neuroactive progesterone metabolite with more complicated receptor effects than my original table suggested.
 
-I had also collected half-life figures for these, but they came from a mixture of contexts and were giving the list a false precision. The useful point is that oral progesterone generates several neuroactive metabolites with different pharmacology. Hormones are messy. Where does that leave me? I guess I am left questioning whether I should be taking progesterone at all. At minimum a dose reduction is definitely called for. I will probably return back to 200mg and see what symptoms, if any, follow.
+I had also collected half-life figures for these, but they came from different contexts and weren't a reliable timetable for what was happening in me. Oral progesterone produces several neuroactive metabolites with different effects. Hormones are messy. Where does that leave me? I guess I am left questioning whether I should be taking progesterone at all. My plan was to return to 200mg and go over the dose and symptoms with my endocrinologist.
 
 ![](/assets/images/2024/img_1287.jpg)
 
@@ -60,7 +60,7 @@ Could this be one of the reasons why I can't tolerate SSRI/SNRIs? At the very le
 
 > **Progesterone levels tend to be less than 2 ng/mL prior to ovulation and greater than 5 ng/mL after ovulation.**
 
-What were my most recent levels again? 9.1nmol/L, or about **2.6ng/mL** in freedom units, roughly 12 hours after a 200mg evening dose. I was comparing that number with cisgender menstrual-cycle ranges. That was interesting physiology, but there is no established serum progesterone target for transfeminine GAHT, so landing near one phase of a menstrual cycle does not tell me that my regimen was optimal.
+What were my most recent levels again? 9.1nmol/L (about **2.9ng/mL** in freedom units), roughly 12 hours after a 200mg evening dose. I was comparing that number with cisgender menstrual-cycle ranges. That was interesting physiology, but there is no established serum progesterone target for transfeminine GAHT, so landing near one phase of a menstrual cycle does not tell me that my regimen was optimal.
 
 Looking at the short-lived peaks involved in oral progesterone made me wonder whether splitting the dose might feel smoother for me. Moving from once daily to 100mg twice daily was something I wanted to discuss and test with my endocrinologist, not an evidence-based rule that twice-daily progesterone is inherently better.
 
@@ -84,11 +84,15 @@ Anyway, that was one heck of an info dump. I think that sums everything up that 
 
 **TL;DR** 400mg oral progesterone coincided with my brain-on-fire sensation. Progesterone-derived neurosteroids gave me a biologically interesting hypothesis, but I had not proved the mechanism. I planned to reduce the dose, smooth out the regimen and discuss it with my endocrinologist. There is no established cisgender-cycle progesterone target I need to reproduce. Hormones are complicated. Nothing like some carefully supervised trial and error! 🙃
 
-Previous: [Blood Test Results February 2024](/blood-test-results-february-2024/)
-
-Next: [Progesterone Consumer Medicines Information (CMI)](/progesterone-consumer-medicines-information-cmi/)
-
 ### Sources
 
-- [WPATH Standards of Care Version 8](https://pmc.ncbi.nlm.nih.gov/articles/PMC9553112/)
-- [Allopregnanolone and reproductive psychiatry: an overview](https://pmc.ncbi.nlm.nih.gov/articles/PMC7231988/)
+- [Standards of Care for the Health of Transgender and Gender Diverse People, Version 8](https://pmc.ncbi.nlm.nih.gov/articles/PMC9553112/)
+- [Allopregnanolone in premenstrual dysphoric disorder (PMDD): Evidence for dysregulated sensitivity to GABA-A receptor modulating neuroactive steroids across the menstrual cycle](https://pmc.ncbi.nlm.nih.gov/articles/PMC7231988/)
+- [Effects of low-dose oral micronised progesterone on sleep, psychological distress, and breast development in transgender individuals undergoing feminising hormone therapy: a prospective controlled study](https://pubmed.ncbi.nlm.nih.gov/35521814/)
+- [Progesterone - Friend or foe?](https://uu.diva-portal.org/smash/get/diva2%3A1547372/FULLTEXT01.pdf)
+
+### Related posts
+
+- [Blood Test Results February 2024](/blood-test-results-february-2024/)
+- [Progesterone Consumer Medicines Information (CMI)](/progesterone-consumer-medicines-information-cmi/)
+- [Depression, Debt, Bees and Lizards](/depression-debt-bees-and-lizards/)

@@ -3,6 +3,11 @@ title: "A Garden of My Own"
 author: "Nix McRetro"
 date: 2024-03-17T21:18:43.000+11:00
 categories: [nature]
+last_modified_at: 2026-10-12
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![A photo of Grevillea Juniperina Gold](/assets/images/2024/img_1282.jpg)
@@ -23,7 +28,7 @@ So there'd be a bunch of native ground cover in the form of Grevillea juniperina
 
 ![](/assets/images/2024/img_1267.jpg)
 
-I guess I'd probably hit up the local hardware store and buy a bunch of [bee hotels](https://entomologistlounge.wordpress.com/2017/09/18/insect-hotels-a-refuge-or-a-fad/) since my property was likely cleared by the previous owners.
+I guess I'd probably hit up the local hardware store and look for some [bee hotels](https://entomologistlounge.wordpress.com/2017/09/18/insect-hotels-a-refuge-or-a-fad/), since my property was likely cleared by the previous owners. I'd need to look past the cute little roofs though: smooth nesting holes, shelter from rain and a way to maintain them matter more than how fancy they look.
 
 ![](/assets/images/2024/img_1268.jpg)
 
@@ -31,11 +36,11 @@ I have no idea where to find untreated wood so these would absolutely tide me, a
 
 ![](/assets/images/2024/img_1270.jpg)
 
-[Blue-banded bees](https://en.wikipedia.org/wiki/Amegilla). We need purple and blue to bring them in. Let's load up with [lavender](https://en.wikipedia.org/wiki/Lavandula). It will grow above the ground cover quite well and flowers most of the year... I think.
+[Blue-banded bees](https://en.wikipedia.org/wiki/Amegilla). Purple and blue flowers are a good place to start, though they aren't the only colours these bees visit. Let's load up with [lavender](https://en.wikipedia.org/wiki/Lavandula). It will grow above the ground cover quite well, and some varieties flower for a long stretch... I think.
 
 ![](/assets/images/2024/img_1269.jpg)
 
-I mean we probably have a native variety. Maybe I should just get some native daisies from [Brachyscome spp.](https://en.wikipedia.org/wiki/Brachyscome)
+Lavender isn't an Australian native, though. Maybe I should get some native daisies from [Brachyscome spp.](https://en.wikipedia.org/wiki/Brachyscome) instead.
 
 ![](/assets/images/2024/img_1271.jpg)
 
@@ -80,3 +85,13 @@ I guess it's all just a pipe dream though. Who knows if we'll get another year o
 ![](/assets/images/2024/img_1281.jpg)
 
 Maybe I'll just live in some broken ceramic pots - a potential lizard lounge maybe? This little lizard, a [bar-sided skink (Concinnia tenuis)](https://inaturalist.ala.org.au/taxa/538970-Concinnia-tenuis), has no trouble hunting bugs in the carrot planter! 🥰
+
+### Sources
+
+- [The Entomologist Lounge - Insect Hotels: A Refuge or a Fad?](https://entomologistlounge.wordpress.com/2017/09/18/insect-hotels-a-refuge-or-a-fad/)
+- [Aussie Bee - Flowers Loved by Native Bees](https://www.aussiebee.com.au/flowerslovedbybees.html)
+- [Royal Botanic Gardens, Kew - Lavandula](https://powo.science.kew.org/taxon/20960-1)
+
+### Related posts
+
+- [The Garden, Lizards and Bees](/the-garden-lizards-and-bees/)

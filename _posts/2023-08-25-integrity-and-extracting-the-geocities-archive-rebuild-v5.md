@@ -3,22 +3,22 @@ title: "Integrity and Extracting the GeoCities Archive - Rebuild V5"
 author: "Nix McRetro"
 date: 2023-08-25T04:12:21.000+10:00
 categories: [guides]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2023/img_1130.jpg)
 
-Quick heads up, this is a post for my own reference. The above is a screenshot from [here](https://serverfault.com/questions/293605/check-integrity-of-tar-gz-backup).
+Quick heads up: this is a post for my own reference. The screenshot above comes from the [Server Fault discussion on checking a tar.gz backup's integrity](https://serverfault.com/questions/293605/check-integrity-of-tar-gz-backup).
 
 ![](/assets/images/2023/img_1129.jpg)
 
-Another awesome thing about using tar files is that you can search for things in them and extract them based on wildcard searches. More on that [here](https://linuxize.com/post/how-to-create-and-extract-archives-using-the-tar-command-in-linux/). I appear to have lost the original link for the above screenshot and neither Google or the Duck is helping today.
+Another awesome thing about tar files is that you can search for files and extract them using wildcard patterns. At the time I couldn't find the original link for the screenshot above, and neither Google nor the Duck was helping. It matches the wildcard-extraction example in [Tecmint's tar guide](https://web.archive.org/web/20230324065846/https://www.tecmint.com/18-tar-command-examples-in-linux/).
 
-While keeping the [original GeoCities data](https://wiki.archiveteam.org/index.php/GeoCities) from [archive.org](https://archive.org/details/archiveteam-geocities), my GeoCities rebuild was slapped into a plain tar archive rather than a gzip-compressed `.tar.gz`. This was the workflow I got working for splitting it into 1GB pieces. The following command was used on an Ubuntu 22.04 system.
+While keeping the [original GeoCities data](https://wiki.archiveteam.org/index.php/GeoCities) from [archive.org](https://archive.org/details/archiveteam-geocities), I slapped my rebuild into a plain tar archive rather than a gzip-compressed `.tar.gz`. This was the workflow I got working on Ubuntu 22.04 for splitting it into 1 GB pieces.
 
  
 
@@ -40,7 +40,7 @@ sha256sum GeoCities_Rebuild.tar.* > GeoCities_Rebuild.sha256
 
 ```
 
-We could then copy the data across the rickety, old network and verify the files had the same sha256 hashes.
+We could then copy the data across the rickety old network and check each piece against its recorded SHA-256 checksum.
 
  
 
@@ -52,7 +52,7 @@ sha256sum -c GeoCities_Rebuild.sha256 > ~/Desktop/GeoCities_Rebuild.sha256.statu
 
 ```
 
-Then we would run it again.
+Then we would run the same check again on the destination.
 
  
 
@@ -84,7 +84,7 @@ cat GeoCities_Rebuild.tar.* > /media/ubuntu/CHONK/GeoCities_Rebuild.tar
 
 ```
 
-Output should be...
+This was the output I recorded:
 
  
 
@@ -112,7 +112,7 @@ Compressed: 793889955840
 
 ```
 
-I got a little lost at this point. Why aren't my notes better. It was probably late.
+I got a little lost at this point. Why aren't my notes better? It was probably late.
 
 My note says "Decompress" below, but there is no compression involved here. This is extracting the files from the reassembled tar archive.
 
@@ -962,3 +962,17 @@ e38cbd8ec0e8b12aaead0bf85951b17b02d19f38bc7315eeb37d8743ec64e759  GeoCities_Rebu
 - [GNU Coreutils - split invocation](https://www.gnu.org/software/coreutils/manual/html_node/split-invocation.html)
 - [GNU Coreutils - sha2 utilities and checking checksums](https://www.gnu.org/software/coreutils/manual/html_node/sha2-utilities.html)
 - [GNU Coreutils - du invocation](https://www.gnu.org/software/coreutils/manual/html_node/du-invocation.html)
+- [Tecmint - 21 Useful Tar Command Examples for Every Linux Sysadmin](https://web.archive.org/web/20230324065846/https://www.tecmint.com/18-tar-command-examples-in-linux/)
+
+### Related posts
+
+- [The GeoCities Archive Rebuild Blog](/the-geocities-archive-rebuild-blog/)
+- [The GeoCities Archive Rebuild Goes Live](/the-geocities-archive-rebuild-goes-live/)
+- [Multimeter, MiSTer and GeoCities](/multimeter-mister-and-geocities/)
+- [The GeoCities Rebuild Worklog](/the-geocities-rebuild-worklog/)
+- [Rebuilding GeoCities on macOS 12](/rebuilding-geocities-on-macos-12/)
+- [RetroChallenge 2022/10 - GeoCities Rebuild on Dial-up at 14.4k](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-14-4k/)
+- [RetroChallenge 2022/10 - GeoCities Rebuild on Dial-up at 28.8k](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-28-8k/)
+- [GeoCities Downtime - WD Blue SA510 1TB WDS100T3B0B Failure](/geocities-downtime-wd-blue-sa510-1tb-wds100t3b0b-failure/)
+- [Docker, GeoCities Search, and RetroChallenge 2022/10 Results](/docker-geocities-search-and-retrochallenge-2022-10-results/)
+- [GeoCities Archive Retired, Dockerisation Abandoned](/geocities-archive-retired-dockerisation-abandoned/)

@@ -3,13 +3,18 @@ title: "Flicky - The Floury Baker Cicada"
 author: "Nix McRetro"
 date: 2024-03-10T09:42:03.000+11:00
 categories: [nature]
+last_modified_at: 2026-10-12
+ai_assistance:
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2024/img_1266.jpg)
 
 Flicky! Ohhh that little cicada was such a survivor. Resting and laying eggs almost every day for ten days while in captivity. Sadly she succumbed to time on 8th March 2023.
 
-All of these events happened just about one year ago. You can view the videos below or on either my [Super Nature World playlist](https://www.youtube.com/playlist?list=PLbei9YJqem2nKHPaowFMeLX_8osOJS_v7) or [Shane McRetro playlist](https://www.youtube.com/playlist?list=PLJAZP-TLMPj5agB1oCwFcS8rs0BpDd8Pb). It doesn't all end here though as Flicky's children eventually hatch. 🪲
+All of these events happened just about one year ago. You can view the videos below or on either my [Super Nature World playlist](https://www.youtube.com/playlist?list=PLbei9YJqem2nKHPaowFMeLX_8osOJS_v7) or [Nix McRetro playlist](https://www.youtube.com/playlist?list=PLJAZP-TLMPj5agB1oCwFcS8rs0BpDd8Pb). It doesn't all end here though as Flicky's children eventually hatch. 🪲
 
  
 

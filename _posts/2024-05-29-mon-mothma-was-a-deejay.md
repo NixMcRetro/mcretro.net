@@ -3,11 +3,11 @@ title: "Mon Mothma was a Deejay"
 author: "Nix McRetro"
 date: 2024-05-29T16:44:08.000+10:00
 categories: [nature, news, study]
-last_modified_at: 2026-10-01
+last_modified_at: 2026-10-12
 ai_assistance:
-  model: "OpenAI GPT-5.6 Sol"
-  date: 2026-10-01
-  purpose: "fact-checking, sourcing, and editorial cleanup"
+  model: "GPT-6.1 Sol"
+  date: 2026-10-12
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 ![](/assets/images/2024/img_1298.jpg)
@@ -56,7 +56,7 @@ Not all is well though, the most common failure pattern I have seen so far looks
 
 ![](/assets/images/2024/img_1302.jpg)
 
-Another one I found seemed to have problems with the two front pairs of legs. Poor thing couldn't clean itself. A little bit of digging led me to [slow bee paralysis virus (SBPV)](https://en.wikipedia.org/wiki/Slow_bee_paralysis_virus), because front-leg paralysis is one of its reported signs and Varroa destructor can transmit it. But I had no laboratory test, and later Australian national baseline testing found no evidence of SBPV in the samples tested. So this was a symptom match I found on the internet, not a diagnosis of this bee.
+Another one I found seemed to have problems with the two front pairs of legs. Poor thing couldn't clean itself. A little bit of digging led me to [slow bee paralysis virus (SBPV)](https://en.wikipedia.org/wiki/Slow_bee_paralysis_virus), because front-leg paralysis is one of its reported signs and Varroa destructor can transmit it. But I had no laboratory test, and later Australian national baseline testing in 2025 found no evidence of SBPV in the samples tested. So this was a symptom match I found on the internet, not a diagnosis of this bee.
 
 And look at that vector, Varroa destructor. By then the national response had already shifted away from eradication after the National Management Group concluded in September 2023 that eradication was no longer technically feasible. I called that the government giving up; officially it was a transition from eradication to management. The February 2024 transition plan was aimed at slowing spread and helping the honey-bee industry manage the now-established mite. Australian native bees are not affected by Varroa destructor itself.
 
@@ -75,7 +75,13 @@ With that in mind, I guess I'll head back to university for the 18th time. I've 
 ### Sources
 
 - [NSW Births, Deaths and Marriages Registration Act 1995 - historical version](https://legislation.nsw.gov.au/view/whole/pdf/inforce/2024-11-08/act-1995-062)
-- [Queensland Births, Deaths and Marriages Registration Act 2023](https://www.legislation.qld.gov.au/view/html/inforce/current/act-2023-017/lh)
-- [NSW DPI - Varroa mite emergency response](https://www.dpi.nsw.gov.au/emergencies/biosecurity/current-situation/varroa-mite-emergency-response)
+- [NSW Government - Change of sex](https://www.nsw.gov.au/family-and-relationships/name-changes-and-corrections/change-of-sex)
+- [Queensland Births, Deaths and Marriages Registration Act 2023 - as at 24 June 2024](https://www.legislation.qld.gov.au/view/pdf/2024-06-24/act-2023-017)
+- [NSW DPI - Varroa mite](https://www.dpi.nsw.gov.au/emergencies/biosecurity/current-situation/varroa-mite-emergency-response)
 - [USDA APHIS - Slow Bee Paralysis Virus case definition](https://www.aphis.usda.gov/sites/default/files/slow-bee-paralysis-virus-case-definition.pdf)
-- [TGA - Pregabalin and gabapentin safety alert](https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/pregabalin-and-gabapentin)
+- [National Varroa Mite Management Program - National Baseline Project](https://www.varroa.org.au/baseline)
+- [TGA - Pregabalin and gabapentin](https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/pregabalin-and-gabapentin)
+
+### Related posts
+
+- [Depression, Debt, Bees and Lizards](/depression-debt-bees-and-lizards/)

@@ -41,7 +41,6 @@ layout: default
   {% if page.ai_assistance %}
     <div class="ai-assistance-note" data-pagefind-ignore="all">
       {% if page.ai_assistance.purpose == "fact-checking, sourcing, and editorial quality" %}
-        <strong>AI review:</strong>
         Last reviewed by Nix using OpenAI {{ page.ai_assistance.model }}
         on {{ page.ai_assistance.date | date: "%-d %B %Y" }}
         for {{ page.ai_assistance.purpose }}.

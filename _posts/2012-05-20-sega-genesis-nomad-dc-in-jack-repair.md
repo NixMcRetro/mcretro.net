@@ -2,7 +2,7 @@
 title: "Sega Genesis Nomad DC-in Jack Repair"
 author: "Nix McRetro"
 date: 2012-05-20T10:32:14.000+10:00
-last_modified_at: 2026-10-02
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6 Astra Max"
   date: 2026-10-02
@@ -16,13 +16,7 @@ categories: [repairs, sega]
 
 ![](/assets/images/2012/img_0108.jpg)
 
-The Sega Genesis Nomad. What an amazing beast.
-
-It didn't work up until today. The seller had kindly offered me a full refund if I returned it.
-
-Not while I have an empty weekend to do some repairing!
-
-I already knew there was a problem with the DC-in jack because it was loose as a goose.
+The Sega Genesis Nomad. What an amazing beast. It didn't work up until today, and the seller had kindly offered me a full refund if I returned it. Not while I have an empty weekend to do some repairing! I already knew there was a problem with the DC-in jack because it was loose as a goose.
 
 ![](/assets/images/2012/img_0124.jpg)
 

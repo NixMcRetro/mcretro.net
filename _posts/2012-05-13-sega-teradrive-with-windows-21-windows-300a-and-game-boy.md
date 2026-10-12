@@ -2,7 +2,7 @@
 title: "Sega TeraDrive with Windows 2.1, Windows 3.00a and Game Boy"
 author: "Nix McRetro"
 date: 2012-05-13T00:13:41.000+10:00
-last_modified_at: 2026-10-02
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6 Astra Max"
   date: 2026-10-02
@@ -22,11 +22,7 @@ Next came a proof-of-concept Windows 3.00a install. I stripped it down until I c
 
 And finally, the end result. Note the change in the colour of the light. The sun had long since set by the time I finished this journey several hours later.
 
-The next goal is getting a hard drive into the TeraDrive, either through the strange 44-pin connector on the motherboard or through an ISA expansion card.
-
-At this stage I knew the connector was unusual, but I had not yet worked out exactly what interface Sega and IBM were using. I later investigated it in considerably more detail and found that it belonged to the same unusual IBM storage family used in some early PS/2 systems.
-
-We will be victorious!
+The next goal is getting a hard drive into the TeraDrive, either through the strange 44-pin connector on the motherboard or through an ISA expansion card. We will be victorious!
 
 ![](/assets/images/2012/img_0092.jpg)
 

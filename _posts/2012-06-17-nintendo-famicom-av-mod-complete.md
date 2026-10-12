@@ -2,7 +2,7 @@
 title: "Nintendo Famicom AV Mod Complete"
 author: "Nick"
 date: 2012-06-17T02:31:57.000+10:00
-last_modified_at: 2026-10-02
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6 Astra Max"
   date: 2026-10-02
@@ -22,15 +22,7 @@ Next is an overview of the completed modification inside the console.
 
 {% include youtube.html id="VaGMn3mrMa4" %}
 
-And finally, some Spelunker.
-
-What an enjoyable game it can be when you put your mind to it.
-
-Really put your mind to it.
-
-Meld it.
-
-Meld your mind with it.
+And finally, some Spelunker. What an enjoyable game it can be when you put your mind to it. Really put your mind to it. Meld it. Meld your mind with it.
 
 ![](/assets/images/2012/img_0207.jpg)
 

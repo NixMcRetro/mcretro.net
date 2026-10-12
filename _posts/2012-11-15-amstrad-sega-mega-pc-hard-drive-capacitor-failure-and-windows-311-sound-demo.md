@@ -2,7 +2,7 @@
 title: "Amstrad Sega Mega PC Hard Drive Capacitor Failure and Windows for Workgroups 3.11 Sound Demo"
 author: "Nix McRetro"
 date: 2012-11-15T07:52:51.000+11:00
-last_modified_at: 2026-10-04
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-04
@@ -13,8 +13,6 @@ categories: [ibm-pc, sega, youtube]
 {% include youtube.html id="BKoCBsni6Ts" %}
 
 While trying to install MS-DOS 6.22 and Windows for Workgroups 3.11, the Mega PC suddenly appeared to develop a power short. I tried another power supply, switched it on and was rewarded with plumes of smoke rising from the machine.
-
-Excellent.
 
 After pulling everything apart, I found that a tantalum capacitor on the Seagate 107 MB hard drive had failed dramatically. The failed capacitor was the obvious source of the smoke and short-like behaviour, although I still need to inspect the surrounding circuit before assuming nothing else was damaged.
 

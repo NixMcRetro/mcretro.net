@@ -2,7 +2,7 @@
 title: "Apple Macintosh LC 475 Mismatched VRAM Test"
 author: "Nix McRetro"
 date: 2012-11-12T21:09:50.000+11:00
-last_modified_at: 2026-10-04
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-04
@@ -14,11 +14,7 @@ categories: [apple, hacks, repairs]
 
 Ever wonder what happens when you install one 256 KB VRAM SIMM and one 512 KB VRAM SIMM in an LC 475?
 
-They say you shouldn't do it.
-
-They have a good reason.
-
-The display becomes a complete mess: lines everywhere, poor screen updates and mouse-pointer trails that refuse to disappear. Interestingly, the machine did still produce a usable-enough display to demonstrate the failure. I wasn't expecting it to work at all.
+They say you shouldn't do it. They have a good reason. The display becomes a complete mess: lines everywhere, poor screen updates and mouse-pointer trails that refuse to disappear. Interestingly, the machine did still produce a usable-enough display to demonstrate the failure. I wasn't expecting it to work at all.
 
 Apple's own specification explains the problem. The LC 475 supports VRAM as a matched pair: either two 256 KB modules for 512 KB total or two 512 KB modules for 1 MB total. One of each is outside the supported configuration.
 

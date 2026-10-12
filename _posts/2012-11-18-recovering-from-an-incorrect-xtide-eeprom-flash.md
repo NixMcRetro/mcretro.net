@@ -2,7 +2,7 @@
 title: "Recovering from an Incorrect XTIDE EEPROM Flash"
 author: "Nix McRetro"
 date: 2012-11-18T01:23:03.000+11:00
-last_modified_at: 2026-10-04
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-04
@@ -12,9 +12,7 @@ categories: [ibm-pc, programming, youtube]
 
 {% include youtube.html id="UbKzfdFUt30" %}
 
-Well, I worked out how to flash the XTIDE card.
-
-I also worked out how to flash it incorrectly.
+Well, I worked out how to flash the XTIDE card. I also worked out how to flash it incorrectly.
 
 XTIDECFG can program the EEPROM while it is installed on supported XTIDE hardware, but after my first attempt the card stopped detecting the Disk on Module entirely.
 

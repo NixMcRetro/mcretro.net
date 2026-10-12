@@ -2,7 +2,7 @@
 title: "GQ-4X EEPROM and EPROM Programmer Test"
 author: "Nix McRetro"
 date: 2012-11-17T01:12:50.000+11:00
-last_modified_at: 2026-10-04
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-04
@@ -24,9 +24,7 @@ That isn't quite how the GQ-4X works.
 
 The programmer has its own voltage-generation circuitry for programming devices. The external supply is mainly useful when the USB connection cannot provide enough power, such as through an unpowered hub. MCUmall's guidance calls for a centre-positive 2.1 mm supply at 9 V and at least 200 mA when external power is required. So if I adapt some random old power brick, voltage and plug size are not enough. Polarity gets checked with the multimeter first.
 
-Scissors anyone?
-
-Don't worry, they're third-party adaptors.
+Scissors anyone? Don't worry, they're third-party adaptors.
 
 Eventually I want to use this for Dreamcast and Saturn BIOS work, region modifications, prototype preservation and dumping chips from various boards. For a first proper test I dumped, erased and reflashed a 486 BIOS chip.
 

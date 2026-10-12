@@ -2,7 +2,7 @@
 title: "Sega Mega-CD Karaoke Accessory and Yukawa Dreamcast"
 author: "Nix McRetro"
 date: 2012-05-07T12:57:09.000+10:00
-last_modified_at: 2026-10-02
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6 Astra Max"
   date: 2026-10-02
@@ -27,8 +27,6 @@ Just a quick update. I received the Sega Mega-CD Karaoke add-on today, gave it a
 More annoyingly, the microphone does not work. I pulled it apart, with more photos in the [photo gallery](/goodies/), and the microphone cartridge appears to be dead.
 
 I've gone ahead and bought a $10 600-ohm BG-58 microphone cartridge from eBay as a candidate replacement. It'll be a few weeks before it arrives, so at this point I don't know whether it will be electrically and mechanically suitable.
-
-It did eventually turn out to be the right gamble: the replacement BG-58 cartridge worked and the microphone was successfully repaired.
 
 ![](/assets/images/2012/img_0079.jpg)
 

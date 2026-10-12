@@ -2,7 +2,7 @@
 title: "The Sega TeraDrive Model 3"
 author: "Nix McRetro"
 date: 2012-05-24T12:25:50.000+10:00
-last_modified_at: 2026-10-02
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6 Astra Max"
   date: 2026-10-02
@@ -33,8 +33,6 @@ At this point I was trying to work out exactly what sort of replacement drive th
 The connector uses 44 pins, but it is not standard laptop IDE. Later investigation linked it to the unusual proprietary storage arrangement used in some early IBM PS/2 systems.
 
 I found information about the similarly unusual hard-drive arrangement in early IBM PS/2 Model 25 and Model 30 systems. Older references often call these drives XT IDE or XTA, while later preservation work describes the interface more carefully as a proprietary direct-bus-attachment design.
-
-The important result came later: IBM WDL-330P drives work in the TeraDrive Model 3. I eventually tested several of them successfully.
 
 ![](/assets/images/2012/img_0138.jpg)
 

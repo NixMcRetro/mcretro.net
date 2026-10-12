@@ -2,7 +2,7 @@
 title: "Sega TeraDrive Model 2 with Windows 3.11 in a RAM Disk"
 author: "Nix McRetro"
 date: 2012-05-20T11:19:53.000+10:00
-last_modified_at: 2026-10-02
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6 Astra Max"
   date: 2026-10-02
@@ -38,11 +38,7 @@ Instead of fighting the storage hardware all night, I went back to trying to fit
 
 Windows for Workgroups 3.1 will run on a 286, unlike Windows for Workgroups 3.11, which requires at least a 386SX.
 
-But I don't particularly care about Workgroups networking here.
-
-Enter standalone Windows 3.11.
-
-Standalone Windows 3.11 can still run in Standard Mode on a 286, which makes it much more interesting for the TeraDrive.
+But I don't particularly care about Workgroups networking here. Enter standalone Windows 3.11, which can still run in Standard Mode on a 286. Much more interesting for the TeraDrive.
 
 ![](/assets/images/2012/img_0115.jpg)
 

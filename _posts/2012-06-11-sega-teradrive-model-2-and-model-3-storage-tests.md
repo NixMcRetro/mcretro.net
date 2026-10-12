@@ -2,7 +2,7 @@
 title: "Sega TeraDrive Model 2 and Model 3 Storage Tests"
 author: "Nix McRetro"
 date: 2012-06-11T01:15:08.000+10:00
-last_modified_at: 2026-10-02
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6 Astra Max"
   date: 2026-10-02
@@ -12,9 +12,7 @@ categories: [repairs, sega, youtube]
 
 {% include youtube.html id="mDXXutfmcyI" %}
 
-First up, the TeraDrive Model 3 getting a hard drive installed and running.
-
-Very happy with this.
+That's right, it's video time! First up is the TeraDrive Model 3 getting a hard drive installed and running. Very happy with this.
 
 {% include youtube.html id="oQBVd5si7jY" %}
 

@@ -2,7 +2,7 @@
 title: "Sega TeraDrive Hard Drive Interface Investigation"
 author: "Nix McRetro"
 date: 2012-06-24T12:26:38.000+10:00
-last_modified_at: 2026-10-02
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6 Astra Max"
   date: 2026-10-02
@@ -22,11 +22,7 @@ The connector has 44 pins and carries both data and power, but the pinout does n
 
 At the time I wondered whether the reduced number of apparent signal lines implied some kind of 8-bit versus 16-bit distinction. That observation alone was nowhere near enough to identify the bus.
 
-Sure, I could install an ISA hard-drive controller.
-
-But where is the fun in that?
-
-The motherboard connector is sitting there waiting to be understood.
+Sure, I could install an ISA hard-drive controller. But where is the fun in that? The motherboard connector is sitting there waiting to be understood.
 
 If anyone stumbles upon this, I apologise for the lack of immediate success.
 

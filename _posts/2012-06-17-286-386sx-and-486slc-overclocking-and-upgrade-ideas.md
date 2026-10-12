@@ -2,7 +2,7 @@
 title: "286, 386SX and 486SLC Overclocking and Upgrade Ideas"
 author: "Nix McRetro"
 date: 2012-06-17T11:31:02.000+10:00
-last_modified_at: 2026-10-02
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6 Astra Max"
   date: 2026-10-02
@@ -12,11 +12,7 @@ categories: [ibm-pc, repairs]
 
 ![](/assets/images/2012/img_0204.jpg)
 
-Wow! My mind has been racing at 1000 miles an hour. I can barely keep up with all the ideas for future mods.
-
-I have more tabs open than a Firefox enthusiast right now.
-
-This is basically the notebook beside my computer turned into a blog post. These are ideas and experiments, not finished upgrade instructions.
+Wow! My mind has been racing at 1000 miles an hour. I can barely keep up with all the ideas for future mods. I have more tabs open than a Firefox enthusiast right now! This is basically the notebook beside my computer turned into a blog post. These are ideas and experiments, not finished upgrade instructions.
 
 ### 1. Socketed CPUs for everyone
 

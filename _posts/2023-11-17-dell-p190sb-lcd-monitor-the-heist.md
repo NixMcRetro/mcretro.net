@@ -24,7 +24,7 @@ ai_assistance:
 
 ![](/assets/images/2023/img_1214.jpg)
 
-**6th November 2023.** Under the cover of darkness, Jon and I secure the monitor.
+**6th November 2023.** Under the cover of darkness, [Jon](https://damntechnology.blogspot.com/) and I secure the monitor.
 
 ![](/assets/images/2023/img_1215.jpg)
 

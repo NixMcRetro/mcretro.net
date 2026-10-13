@@ -73,7 +73,7 @@ We held a successful BBQ party with an appearance from Nick, I was very glad he 
 
 ![](/assets/images/2024/img_1346.jpg)
 
-Jon made it as a regular which was great too!
+[Jon](https://damntechnology.blogspot.com/) made it as a regular which was great too!
 
 ![](/assets/images/2024/img_1337.jpg)
 

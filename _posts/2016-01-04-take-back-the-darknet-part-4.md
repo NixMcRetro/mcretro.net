@@ -20,7 +20,7 @@ Log back in via SSH / Terminal / PuTTY `ssh pi@xxx.xxx.xxx.xxx`
 
 Think of a new username. Could be your name or something a bit more fun. I'll be using "tim" as my example. `sudo adduser tim` When prompted for a password, make a very long complicated password (or even passphrase). You could also use a [password generator](https://privacycanada.net/strong-password-generator/). This will be your new username and password to login via SSH in the future. Don't forget it!
 
-Now we have a new user, but it does not have the same permissions as the old `pi` account. The two explicit group-addition commands in this guide are for `sudo` and `adm`. I also originally suggested copying every group from `pi`, which was broader than necessary: add the groups the account needs rather than copying every privilege simply because the old account had it.
+Now we have a new user, but it does not have the same permissions as the old `pi` account. Such lonely. The two explicit group-addition commands in this guide are for `sudo` and `adm`. I also originally suggested copying every group from `pi`, which was broader than necessary: add the groups the account needs rather than copying every privilege simply because the old account had it.
 
 `sudo adduser tim sudo`
 

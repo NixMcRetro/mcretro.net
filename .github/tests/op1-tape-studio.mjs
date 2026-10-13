@@ -1,4 +1,4 @@
-// SuperNick OP-1 Tape Studio v1.4 regression. Uses browser AudioContext with no external audio assets.
+// SuperNick OP-1 Tape Studio v1.5 regression. Uses browser AudioContext with no external audio assets.
 import { chromium } from 'playwright';
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
@@ -20,7 +20,7 @@ try{
  page.on('pageerror',e=>errors.push(e.message));
  page.on('dialog',d=>d.accept());
  await page.setContent(html,{waitUntil:'domcontentloaded'});
- assert.match(await page.title(),/v1\.4/);
+ assert.match(await page.title(),/v1\.5/);
  assert.equal(await page.locator('#tapeDrive').count(),1);
  for(const [id,value] of [['tapeDrive','65'],['tapeWow','55'],['tapeFlutter','40']])
   await page.locator('#'+id).fill(value);
@@ -78,6 +78,6 @@ try{
  assert.equal(saved.tracks[1].clips.length,1,'Bounce failed to add PCM to destination');
  assert(saved.audioSamples[saved.tracks[1].clips[0].sampleId],'Bounced PCM missing from backup');
  assert.deepEqual(errors,[],'Uncaught browser error');
- console.log('PASS v1.4 Tape Studio: PCM editing, undo, varispeed WAV, bounce, backup');
+ console.log('PASS v1.5 Tape Studio: PCM editing, undo, varispeed WAV, bounce, backup');
  await ctx.close();
 }finally{await browser.close();}

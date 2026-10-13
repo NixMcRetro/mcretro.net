@@ -16,7 +16,7 @@ This is another chapter in the ongoing saga of the Sega Mega Drive 32X on PAL ha
 
 {% include youtube.html id="xOgntz8Z0mk" %}
 
-I had tested multiple 32X units and investigated grounding and other possibilities. **Edit:** I later found a documented explanation through [Assembler Games](https://web.archive.org/web/20191111135932/https://assemblergames.com/threads/sega-mega-32x-video-flickering-distortion.41947/). Sega's service bulletins identify EDCLK and VCLK problems on Model 1 VA4 Mega Drives used with the 32X.
+I had tested multiple 32X units and investigated grounding and other possibilities. **Update:** I later found a documented explanation through [Assembler Games](https://web.archive.org/web/20191111135932/https://assemblergames.com/threads/sega-mega-32x-video-flickering-distortion.41947/). Sega's service bulletins identify EDCLK and VCLK problems on Model 1 VA4 Mega Drives used with the 32X.
 
 The PAL VA4 EDCLK bulletin describes screen shaking, slowing game sound and lockups as the console warms up. That is an extremely good match for what I had been seeing, although the symptom match alone does not prove which fault was present on my board.
 

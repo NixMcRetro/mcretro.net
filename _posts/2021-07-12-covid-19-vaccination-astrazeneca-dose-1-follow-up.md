@@ -39,7 +39,7 @@ END
 
 ```
 
-By early August the Delta outbreak had changed the timing too. ATAGI was advising people in outbreak areas to bring their second AstraZeneca dose forward to 4 to 8 weeks after the first rather than waiting the usual 12 weeks. That meant I could bring mine forward to six weeks. Past cool!
+**Update 2nd August 2021:** The Delta outbreak had changed the timing too. ATAGI was advising people in outbreak areas to bring their second AstraZeneca dose forward to 4 to 8 weeks after the first rather than waiting the usual 12 weeks. That meant I could bring mine forward to six weeks. Past cool!
 
 ### Sources
 

@@ -24,7 +24,7 @@ Remove the existing configuration file to start from scratch. `sudo rm /etc/samb
 
 Create and edit your new configuration file. `sudo nano /etc/samba/smb.conf`
 
-**Formatting warning:** The block's line layout has been restored from a 15 July 2019 capture of this post. That capture already has the damaged `passwd chat` text, so it does not establish the missing backslashes. The block remains incomplete historical evidence and is not paste-ready Samba configuration.
+**Formatting warning:** The block's line layout has been restored from a 15th July 2019 capture of this post. That capture already has the damaged `passwd chat` text, so it does not establish the missing backslashes. The block remains incomplete historical evidence and is not paste-ready Samba configuration.
 
 The surviving text said to change the "write list" and "valid users" to your current username.
 
@@ -82,7 +82,7 @@ Which will lead us on to hardening some more things in the next step.
 
 ### Sources
 
-- [McRetro - Take Back the Darknet, Part 6 (15 July 2019 capture)](https://web.archive.org/web/20190715200901/https://mcretro.net/take-back-the-darknet-part-6/)
+- [McRetro - Take Back the Darknet, Part 6 (15th July 2019 capture)](https://web.archive.org/web/20190715200901/https://mcretro.net/take-back-the-darknet-part-6/)
 - [Samba - smb.conf manual](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html)
 
 Advance onward to [part 7](/take-back-the-darknet-part-7/) or head back to the table of contents on [page 1](/take-back-the-darknet-part-1/).

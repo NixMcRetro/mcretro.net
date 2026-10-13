@@ -1,5 +1,5 @@
 ---
-title: "New Purchases: 28 April 2012"
+title: "New Purchases: 28th April 2012"
 author: "Nix McRetro"
 date: 2012-04-28T21:49:07.000+10:00
 last_modified_at: 2026-10-02

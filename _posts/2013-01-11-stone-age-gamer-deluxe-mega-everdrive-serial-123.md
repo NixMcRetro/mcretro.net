@@ -28,4 +28,4 @@ Not bad at all.
 
 ### Sources
 
-- [Krikzz - Mega EverDrive User Manual (23 March 2012)](https://manualzz.com/doc/7240363/krikzz-mega-everdrive-user-manual) - the period manual covers PCB revision v1.00 and its features, including the experimental snapshot function.
+- [Krikzz - Mega EverDrive User Manual (23rd March 2012)](https://manualzz.com/doc/7240363/krikzz-mega-everdrive-user-manual) - the period manual covers PCB revision v1.00 and its features, including the experimental snapshot function.

@@ -20,7 +20,7 @@ My transgender journey continues. I'd be lying if I said I was on top of this. T
 
 ![](/assets/images/2024/img_1299.jpg)
 
-Gender marker changes, i.e. male to female, were proving a bit more difficult. In May 2024 NSW still required a sex affirmation procedure and two medical declarations to change a NSW birth certificate. **Even Queensland** had passed legislation moving away from that, although it wouldn't start until 24 June 2024. Yes, the one with all the crocodiles. NSW eventually removed its medical-procedure requirement from 1 July 2025.
+Gender marker changes, i.e. male to female, were proving a bit more difficult. In May 2024 NSW still required a sex affirmation procedure and two medical declarations to change a NSW birth certificate. **Even Queensland** had passed legislation moving away from that, although it wouldn't start until 24th June 2024. Yes, the one with all the crocodiles. NSW eventually removed its medical-procedure requirement from 1st July 2025.
 
 ![](/assets/images/2024/img_1304.jpg)
 
@@ -76,7 +76,7 @@ With that in mind, I guess I'll head back to university for the 18th time. I've 
 
 - [NSW Births, Deaths and Marriages Registration Act 1995 - historical version](https://legislation.nsw.gov.au/view/whole/pdf/inforce/2024-11-08/act-1995-062)
 - [NSW Government - Change of sex](https://www.nsw.gov.au/family-and-relationships/name-changes-and-corrections/change-of-sex)
-- [Queensland Births, Deaths and Marriages Registration Act 2023 - as at 24 June 2024](https://www.legislation.qld.gov.au/view/pdf/2024-06-24/act-2023-017)
+- [Queensland Births, Deaths and Marriages Registration Act 2023 - as at 24th June 2024](https://www.legislation.qld.gov.au/view/pdf/2024-06-24/act-2023-017)
 - [NSW DPI - Varroa mite](https://www.dpi.nsw.gov.au/emergencies/biosecurity/current-situation/varroa-mite-emergency-response)
 - [USDA APHIS - Slow Bee Paralysis Virus case definition](https://www.aphis.usda.gov/sites/default/files/slow-bee-paralysis-virus-case-definition.pdf)
 - [National Varroa Mite Management Program - National Baseline Project](https://www.varroa.org.au/baseline)

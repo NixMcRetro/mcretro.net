@@ -16,7 +16,7 @@ Yesterday, [I attended my very first protest rally](https://transjustice.org.au/
 
 > **Peter Dutton has hinted he supports US President Donald Trump’s moves to stop trans people competing in sport against biological girls, declaring that allowing it to occur is “not in the spirit of sport.”**
 
-The immediate issue behind this rally was in Queensland. On 28 January 2025, the Queensland Government paused new public patients under 18 from commencing Stage 1 puberty blockers or Stage 2 gender-affirming hormones while it commissioned another review. Existing patients who had already commenced treatment could continue. A Queensland Children's Gender Service evaluation had reported 491 young people waiting for care as of June 2024, which is where the number behind Project 491 came from.
+The immediate issue behind this rally was in Queensland. On 28th January 2025, the Queensland Government paused new public patients under 18 from commencing Stage 1 puberty blockers or Stage 2 gender-affirming hormones while it commissioned another review. Existing patients who had already commenced treatment could continue. A Queensland Children's Gender Service evaluation had reported 491 young people waiting for care as of June 2024, which is where the number behind Project 491 came from.
 
 I am glad I had a support person with me yesterday and we were in one of the safest "Yes" vote regions of my state for the [Indigenous Voice to Parliament](https://en.wikipedia.org/wiki/Indigenous_Voice_to_Parliament), which ultimately failed. But hearing the [Welcome to Country](https://www.reconciliation.org.au/reconciliation/acknowledgement-of-country-and-welcome-to-country/) made me tear up something fierce. It really pisses me off how this entire system is built against us, the people. What scares me the most is that, I honestly don't know if we're smart enough as a nation to realise we are being divided and conquered.
 
@@ -30,6 +30,6 @@ Unfortunately, it seems we are living in interesting times. It's time to protect
 
 ### Sources
 
-- [Children's Health Queensland - Health Service Directive: Treatment of gender dysphoria in children (FAQs, updated 30 January 2025)](https://www.childrens.health.qld.gov.au/__data/assets/pdf_file/0034/354499/QCH_QCGS_FAQs_Health-Service-Directive_Gender-care.pdf)
+- [Children's Health Queensland - Health Service Directive: Treatment of gender dysphoria in children (FAQs, updated 30th January 2025)](https://www.childrens.health.qld.gov.au/__data/assets/pdf_file/0034/354499/QCH_QCGS_FAQs_Health-Service-Directive_Gender-care.pdf)
 - [Children's Health Queensland - Queensland Children's Gender Service External Clinical Service Evaluation](https://www.childrens.health.qld.gov.au/__data/assets/pdf_file/0036/289719/Queensland-Childrens-Gender-Service-External-Clinical-Services-Evaluation.pdf)
 - [ABC News - Meta Hateful Conduct policy changes](https://www.abc.net.au/news/2025-01-10/meta-hateful-conduct-policy-changes-alarm-lgbtq-advocates/104800042)

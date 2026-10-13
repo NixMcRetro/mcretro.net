@@ -11,7 +11,7 @@ ai_assistance:
 ---
 
 
-The material below is a rough machine-translated excerpt from a Japanese blog entry by nyanonon, dated 27 April 1994, about miscellaneous TeraDrive information. Some lines are clearly awkward, so I am preserving them as translated source material rather than rewriting the author's claims into polished modern English. The original entry is linked below.
+The material below is a rough machine-translated excerpt from a Japanese blog entry by nyanonon, dated 27th April 1994, about miscellaneous TeraDrive information. Some lines are clearly awkward, so I am preserving them as translated source material rather than rewriting the author's claims into polished modern English. The original entry is linked below.
 
 ### Rough translation
 
@@ -25,7 +25,7 @@ The excerpt also has two translation slips: `NDEV` should read `NIF`, and the la
 
 ### Sources
 
-- [nyanonon - TeraDrive information, 27 April 1994](https://nyanonon.hatenablog.com/entries/1994/04/27)
+- [nyanonon - TeraDrive information, 27th April 1994](https://nyanonon.hatenablog.com/entries/1994/04/27)
 
 ### Related posts
 

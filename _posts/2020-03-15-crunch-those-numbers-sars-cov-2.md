@@ -26,7 +26,7 @@ See my progress [here](https://web.archive.org/web/20231014233339/https://boinc.
 
 ### Sources
 
-- [Folding@home - Folding@home update on SARS-CoV-2 (10 Mar 2020)](https://www.foldingathome.org/news/covid19-update)
+- [Folding@home - Folding@home update on SARS-CoV-2 (10th Mar 2020)](https://www.foldingathome.org/news/covid19-update)
 - [Institute for Protein Design - Rosetta's role in fighting coronavirus](https://www.ipd.uw.edu/2020/02/rosettas-role-in-fighting-coronavirus/)
 - [Rosetta@home](https://boinc.bakerlab.org/rosetta/)
 - [Science - Cryo-EM structure of the 2019-nCoV spike in the prefusion conformation](https://web.archive.org/web/20210831052250/https://science.sciencemag.org/content/367/6483/1260)

@@ -43,7 +43,7 @@ END
 
 ### Sources
 
-- [Australian Government - ATAGI advice on COVID-19 vaccines and outbreak settings, 13 July 2021](https://www.health.gov.au/news/atagi-statement-on-use-of-covid-19-vaccines-in-an-outbreak-setting)
+- [Australian Government - ATAGI advice on COVID-19 vaccines and outbreak settings, 13th July 2021](https://www.health.gov.au/news/atagi-statement-on-use-of-covid-19-vaccines-in-an-outbreak-setting)
 - [Better Health Channel - Fever](https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/fever)
 
 ### Related posts

@@ -10,7 +10,7 @@ ai_assistance:
 categories: [repairs, sega, youtube]
 ---
 
-The final backordered capacitors are installed and Sophia is reassembled. The capacitor restoration was completed on 28 April 2013.
+The final backordered capacitors are installed and Sophia is reassembled. The capacitor restoration was completed on 28th April 2013.
 
 {% include youtube.html id="CWiCEyuIc7A" %}
 

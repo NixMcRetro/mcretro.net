@@ -14,7 +14,7 @@ categories: [news, sony, youtube]
 
 It looks like [PSIO](https://psio.cybdyn-systems.com.au/) will be "Re-Available for Pre-Ordering March 1st 2016." That's only a couple of days away, and for once it's in Australian time zones! Woohoo!
 
-I wasn't sure what the "re-available" bit meant. I could have sworn I'd seen a 1 February pre-order date before it flicked over to March, but that was just what I remembered. Either way, glad to see the project seeing the light of day.
+I wasn't sure what the "re-available" bit meant. I could have sworn I'd seen a 1st February pre-order date before it flicked over to March, but that was just what I remembered. Either way, glad to see the project seeing the light of day.
 
 In other news, I've picked up an expensive new Canon EOS 760D so I can document more consoles and record even more videos.
 

@@ -18,7 +18,7 @@ It also looks pretty cool while doing it.
 
 I should have some more photos and documentation up this weekend.
 
-**Update 23 April 2013:** I replaced the NiCad battery in this clock with a NiMH cell. See my other videos for the swap! It worked successfully in this particular clock, but a NiCd-to-NiMH replacement is not automatically safe in every piece of equipment. Suitability depends on the charging circuit, charge current and replacement cell.
+**Update 23rd April 2013:** I replaced the NiCad battery in this clock with a NiMH cell. See my other videos for the swap! It worked successfully in this particular clock, but a NiCd-to-NiMH replacement is not automatically safe in every piece of equipment. Suitability depends on the charging circuit, charge current and replacement cell.
 
 ### Related posts
 

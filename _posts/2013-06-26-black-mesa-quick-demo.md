@@ -15,7 +15,7 @@ permalink: /black-mesa-quick-demo/
 
 Just a quick peek at some Black Mesa madness. I'm sure there will be more. I need a better GPU... Any game with an Office Space reference earns instant respect points!
 
-Black Mesa is a fan-made reimagining of the original Half-Life. An earlier version of this post said "get the game now on Steam", but its Steam Early Access release arrived on 5 May 2015, after this post's June 2013 publication date.
+Black Mesa is a fan-made reimagining of the original Half-Life. An earlier version of this post said "get the game now on Steam", but its Steam Early Access release arrived on 5th May 2015, after this post's June 2013 publication date.
 
 ### Sources
 

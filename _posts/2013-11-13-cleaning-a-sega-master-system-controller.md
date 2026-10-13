@@ -14,7 +14,7 @@ categories: [repairs, sega, youtube]
 
 My Sega Master System sits on the shelf unrepaired, but the controller? We can fix that! Button 2 was behaving very badly, so we whipped out some metho and gave it a good scrub down.
 
-At the time I also wondered whether a pencil eraser could give the contacts the same finish as cartridge pins. That should not be treated as a general rule for controllers: inspect the contact materials, clean conductive rubber or carbon pads gently rather than scrubbing them like metal cartridge contacts, and let everything dry before reassembly.
+I was thinking about those shiny metal contacts versus carbon pads, and all the corrosion and GUNK that can get in the way of a working button! I even wondered if a pencil eraser might give them the perfect finish, just like on cartridge pins. That last thought was not good general cleaning advice: inspect the contact materials, clean conductive rubber or carbon pads gently rather than scrubbing them like metal cartridge contacts, and let everything dry before reassembly.
 
 Thanks go out to [patrikw25](https://www.youtube.com/user/patrikw25/) for pointing out the switch between ENG/JPN with Wonder Boy a few weeks (or even months) back now!
 

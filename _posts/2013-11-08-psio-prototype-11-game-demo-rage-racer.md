@@ -18,7 +18,6 @@ At the time I suspected the missing music was due to as-yet unimplemented CD-XA 
 
 Please remember that this is a prototype device and these results do not necessarily reflect the final hardware or game compatibility. You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I am but a mere tester. I do not understand the technology behind this wonderful invention.
 
-The later 2014 post follows the project's development updates about CDDA and XA support.
 
 **Prototype test conditions**
 

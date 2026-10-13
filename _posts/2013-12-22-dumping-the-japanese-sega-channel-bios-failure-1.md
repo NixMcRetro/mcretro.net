@@ -12,7 +12,7 @@ categories: [programming, sega, youtube]
 
 {% include youtube.html id="pol0XohsHqw" %}
 
-We're attempting to dump the good old BIOS from the older of the two units, but what's this? The dump doesn't look reliable! Uh oh! Sounds like another video or two is needed to solve this mystery!
+We're attempting to dump the good old BIOS from the older of the two units, but what's this? The dump doesn't seem to pass the checksum check! Uh oh! Sounds like another video or two is needed to solve this mystery!
 
 ### Sega Channel Japan series
 

@@ -10,9 +10,9 @@ ai_assistance:
 categories: [repairs, sega]
 ---
 
-I noted down the capacitor values as I was replacing the electrolytics in my Aiwa Mega-CD CSD-GM1, cap by cap. The revision 1 and revision 2 boards I examined were extremely similar. They may have been identical in this area, although I could not rule out that some components had already been replaced by somebody else.
-
 ![](/assets/images/2014/img_0440.jpg)
+
+I noted down the capacitor values as I was replacing the electrolytics in my Aiwa Mega-CD CSD-GM1, cap by cap. The revision 1 and revision 2 boards I examined were extremely similar. They may have been identical in this area, although I could not rule out that some components had already been replaced by somebody else.
 
 That record describes the boards I actually worked on, rather than a guaranteed factory bill of materials for every CSD-GM1 revision.
 

@@ -18,7 +18,7 @@ For web records configured through Cloudflare's proxy, visitors connect to Cloud
 
 The setup involved moving the domain's DNS to Cloudflare and configuring the relevant web records to use its proxy. Hopefully that means a faster site and less work for my poor Raspberry Pi and equally poor upload connection.
 
-I still wonder how much data all these giant internet intermediaries can see along the way.
+I still wonder how much data Cloudflare is harvesting and what they're doing with it!
 
 Oh well! :)
 

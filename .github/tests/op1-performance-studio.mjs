@@ -101,6 +101,29 @@ for(const [name,engine] of Object.entries(engines)){
    await page.waitForFunction(()=>!document.querySelector('#performanceRecord').disabled);
   }
 
+  if(name==='chromium'){
+   // Offline rendering must honour MUTE for both persisted tape notes and WAV.
+   const fixture=await save();
+   fixture.tracks[0].events.push({t:.1,d:.4,n:60,kind:'synth',kit:0,patch:null});
+   fixture.tracks[0].mute=true;
+   fixture.tracks[0].gain=.8;
+   fixture.tracks[1].events=[];fixture.tracks[2].events=[];fixture.tracks[3].events=[];
+   fixture.fx.delay=0;fixture.fx.feedback=0;fixture.fx.wet=0;fixture.fx.reverb=0;fixture.fx.chorus=0;
+   await page.locator('#projectFile').setInputFiles({name:'mute-export-v15.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(fixture))});
+   await page.waitForTimeout(450);
+   async function wavPeak(){
+    const pending=page.waitForEvent('download',{timeout:90000});
+    await page.locator('#exportWav').click();
+    const b=readFileSync(await (await pending).path());
+    assert.equal(b.toString('ascii',0,4),'RIFF');
+    let peak=0;
+    for(let i=44;i<Math.min(b.length,44100*4);i+=2)peak=Math.max(peak,Math.abs(b.readInt16LE(i)));
+    return peak;
+   }
+   assert((await wavPeak())<5,'Muted tape event was audible in WAV export');
+   await page.locator('[data-performance-mute="0"]').click();
+   assert((await wavPeak())>100,'Audible tape event disappeared after clearing MUTE');
+  }
   await page.setViewportSize({width:390,height:844});
   await page.locator('#quickMixer').click();
   assert(await page.locator('#performancePanel').isVisible());

@@ -16,7 +16,7 @@ The blog came back to life and was extinguished again within a week or so. [Drop
 
 I'll have more on FlatPress and the plugins I've used to make the site functional. It's been quite an experience, from modifying Python scripts to salsa dancing.
 
-After plenty of tinkering, the blog is finally at a point where it is actually functional. The sidebar search even works. Doesn't fare too badly on Netscape either.
+I've switched blogging platforms yet again, and after plenty of tinkering I've finally got the blog to a point where it is actually functional. The sidebar search even works. Doesn't fare too badly on Netscape either.
 
 This is currently running on a Raspberry Pi 2. I was considering moving it back to the Raspberry Pi Model A+ once I was confident I could retire the old WordPress database. On this little Raspberry Pi setup, WordPress plus MySQL felt much heavier than I wanted, which is why I kept experimenting with flat-file blogging software.
 

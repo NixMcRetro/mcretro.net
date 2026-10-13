@@ -2,17 +2,74 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0c1516">
 <title>Lunchbeat • Original 1-bit groovebox in your browser</title>
 <style>
+
 :root{color-scheme:dark;--body:#dce8e5;--muted:#8fa6a2;--cyan:#7ff5e4;--lime:#b8ff8c;--surface:#0b1417;--outline:#37504c;--blue:#3a9aff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#183533 0,transparent 55%),#080e11;color:var(--body);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;-webkit-font-smoothing:antialiased}button,input{font:inherit}button{cursor:pointer}button:focus-visible,[role=slider]:focus-visible,input:focus-visible{outline:3px solid #baffac;outline-offset:4px}a{color:#9bf8e8}a:hover{color:white}.wrap{max-width:1240px;padding:0 28px;margin:0 auto}.top{padding-top:31px;padding-bottom:20px;display:flex;justify-content:space-between;align-items:center;gap:15px}.mark{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.1em;color:#b7ffe8;font-size:14px}.mark-icon{width:35px;height:35px;border:1px solid #638b7f;border-radius:9px;display:grid;place-items:center;background:#172925;box-shadow:inset 0 0 16px #132f27}.nav-right{font-size:11px;color:#9aafac;text-transform:uppercase;letter-spacing:.09em}.nav-right a{text-decoration:none}.hero{padding-top:23px;padding-bottom:20px}.eyebrow{font-size:11px;color:var(--lime);letter-spacing:.16em}.hero h1{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:750;line-height:1.07;letter-spacing:-.058em;font-size:clamp(42px,7.1vw,90px);margin:12px 0 12px;color:#effef7}.hero h1 span{color:#8debc0}.lede{color:#aabebb;font-family:system-ui,-apple-system,sans-serif;max-width:650px;line-height:1.55;font-size:15px;margin:0}.displaybar{border:1px solid #29433f;border-radius:12px;background:linear-gradient(135deg,#172624,#101b1e);display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:13px 17px;margin:20px auto 30px}.display-left,.display-right{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.dot{display:inline-block;height:9px;width:9px;border-radius:50%;background:#48635d;vertical-align:middle;box-shadow:0 0 0 3px #ffffff08;margin-right:6px}.dot.on{background:#8dfba9;box-shadow:0 0 12px #6aff8b99}.status{color:#e5f9f1;letter-spacing:.08em;font-size:12px}.status small{color:#91aaa1}.meter{width:78px;height:5px;border-radius:20px;background:#315047;overflow:hidden}.meter>i{display:block;height:100%;width:0;background:#9af3b5;transition:width .08s}.display-right label{font-size:11px;color:#a9c0b6}.display-right input{accent-color:#a4f49a;width:110px;vertical-align:middle}.small-btn{padding:9px 13px;border:1px solid #567469;border-radius:7px;color:#dcf5ec;background:#18302a;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;transition:.15s}.small-btn:hover{background:#2f4b3d;border-color:#a9ddbb}.small-btn.highlight{background:#b8ff90;color:#142015;border-color:#b8ff90}.small-btn.highlight:hover{background:#dcffbf}.small-btn:disabled{opacity:.5;cursor:wait}.board-shell{position:relative;margin-bottom:23px;padding:22px;border-radius:22px;background:linear-gradient(145deg,#243c3b,#071014 60%,#0d1619);border:1px solid #3c5552;box-shadow:0 28px 75px #0009,0 0 0 1px #ffffff05;overflow:hidden}.board-shell:before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,#ffffff0d,transparent 35%,#ffffff04);border-radius:inherit}.pcb{position:relative;aspect-ratio:2.30/1;width:100%;min-height:320px;border-radius:9px;background:radial-gradient(circle at 75% 60%,#132f23 0,#10251f 45%,#0d211a 100%);border:2px solid #173629;box-shadow:0 0 0 4px #081410,inset 0 0 28px #020f0b,inset 0 0 0 2px #4273514d;isolation:isolate;user-select:none;touch-action:pan-y}.pcb>*{position:absolute}.traces{inset:0;width:100%;height:100%;pointer-events:none;opacity:.65}.silk{font-weight:700;letter-spacing:.12em;pointer-events:none;white-space:nowrap}.pcb-title{top:5.3%;left:25%;font-size:clamp(14px,2.45vw,35px);color:#dcf5d8;font-weight:900;letter-spacing:.18em;text-shadow:0 1px 0 #00120b}.pcb-sub{top:16.5%;left:25%;font-size:clamp(7px,.9vw,13px);color:#acc9ad}.pcb-edition{top:5.6%;right:3%;font-size:clamp(7px,.82vw,12px);color:#a3c6a9}.pcb-screw{width:1.55%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#080d0a 40%,#97855f 47%,#6c663d 61%,#0b1a11 70%);box-shadow:0 0 0 2px #14231b}.pcb-screw.one{left:1.6%;top:2.5%}.pcb-screw.two{right:1.6%;top:2.5%}.pcb-screw.three{left:1.6%;bottom:3%}.pcb-screw.four{right:1.6%;bottom:3%}.battery{left:2.9%;top:12%;width:18.3%;height:59%;border:clamp(4px,.6vw,9px) solid #070d0f;border-radius:10px;background:linear-gradient(90deg,#070a0a 0 12%,#0b1011 12% 85%,#030708);box-shadow:inset 0 0 16px #000,0 4px 10px #0008;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:6px}.battery:before,.battery:after{content:'';display:block;width:52%;height:8%;border-radius:40%;background:linear-gradient(#969b8c,#3d4841,#a3aa95);box-shadow:0 0 0 3px #060b0c}.battery-label{position:absolute;top:40%;left:1%;width:98%;text-align:center;color:#cad0bf;font-size:clamp(8px,1.2vw,15px);font-weight:800;line-height:1.4;letter-spacing:.15em;transform:rotate(-90deg);text-shadow:0 2px 2px #000}.battery small{font-size:.67em;color:#91a59b}.ic{height:11%;background:linear-gradient(180deg,#070b0b,#22282a 30%,#0a1012 90%);border:2px solid #040a0b;border-radius:3px;box-shadow:0 2px 7px #000b;display:flex;justify-content:center;align-items:center;color:#b7bdb6;letter-spacing:.08em;font-size:clamp(5px,.65vw,10px);font-weight:700}.ic:before,.ic:after{position:absolute;content:'';left:6%;right:6%;height:3px;background:repeating-linear-gradient(90deg,#90988e 0 5px,transparent 5px 11px)}.ic:before{top:-4px}.ic:after{bottom:-4px}.ic.atmega{left:48%;top:24%;width:23%;}.ic.logic{left:23%;top:25%;width:17%}.ic.opamp{left:76%;top:26%;width:17%}.jack{top:22%;height:8%;width:4%;background:linear-gradient(#9aabaa,#171f22 50%,#0b1212);border:2px solid #72807c;border-radius:3px;box-shadow:0 4px 0 #101413}.jack.pulse{left:43%}.jack.audio{left:72%}.power-sw{left:4.5%;top:77%;width:14%;height:10%;font-size:clamp(6px,.9vw,10px);letter-spacing:.07em;color:#d3e8d9;border:1px solid #608a73;border-radius:4px;background:linear-gradient(135deg,#202f2b,#10201d);display:grid;place-items:center}.power-sw:before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:#69e19b;box-shadow:0 0 8px #82ffbf;margin-right:5px}.knob-position{width:10%;top:41%;display:flex;flex-direction:column;align-items:center;gap:1px;z-index:2}.knob-wheel{width:min(6.3vw,65px);height:min(6.3vw,65px);min-width:37px;min-height:37px;border-radius:50%;background:radial-gradient(circle at 37% 25%,#434d4e,#20292c 58%,#050a0c 70%);border:4px solid #606869;box-shadow:0 5px 8px #0009,0 0 0 3px #111a17,0 0 0 4px #708a67;cursor:ns-resize;position:relative;touch-action:none;transition:box-shadow .1s}.knob-wheel:hover{box-shadow:0 5px 8px #0009,0 0 0 3px #111a17,0 0 0 5px #a4d09b}.knob-wheel .indicator{position:absolute;left:calc(50% - 2px);top:10%;height:31%;width:4px;border-radius:5px;background:#d9eadf;box-shadow:0 0 6px #bdfff05e;transform-origin:center 130%;transform:rotate(var(--turn,-30deg))}.knob-wheel .nub{position:absolute;inset:32%;border-radius:50%;background:radial-gradient(circle at 32% 22%,#465352,#101a1e);border:1px solid #56625f}.knob-name{font-size:clamp(7px,.85vw,12px);color:#d1e4c9;font-weight:700;letter-spacing:.08em;margin-top:6px}.knob-value{font-size:clamp(7px,.77vw,11px);color:#83ad93}.knob-kick{left:23%}.knob-snare{left:36%}.knob-hat{left:49%}.knob-bass{left:62%}.knob-tempo{left:78%}.knob-tempo .knob-wheel{border-color:#a8a27e}.bottom-trench{left:21%;top:72%;width:75%;height:20%;border:1px solid #50745a70;border-radius:3px;background:#03190d55;pointer-events:none}.lights{left:25.2%;top:71%;width:69%;height:7%;display:grid;grid-template-columns:repeat(8,1fr);align-items:center;justify-items:center}.led-col{display:flex;flex-direction:column;align-items:center;gap:2px}.led{width:clamp(8px,1.17vw,15px);height:clamp(8px,1.17vw,15px);border-radius:50%;background:radial-gradient(circle at 30% 25%,#537da3,#173458 42%,#001627 70%);border:2px solid #17394d;box-shadow:0 0 0 2px #051a1d,inset 0 1px 1px #becbdd80;transition:background .055s,box-shadow .055s,filter .055s}.led.dim{background:radial-gradient(circle at 32% 25%,#a7dfff,#317ee6 32%,#092a79 67%);box-shadow:0 0 6px #2f90ff7c,0 0 0 2px #051a1d}.led.bright{background:radial-gradient(circle at 34% 26%,#ffffff,#bcf2ff 26%,#298cf9 63%);box-shadow:0 0 10px #369aff,0 0 19px #4c9bffbb,0 0 0 2px #061a1d}.led-number{font-size:clamp(6px,.65vw,9px);color:#91b69a}.pads{left:22%;top:80%;height:15%;width:76%;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));justify-items:center;align-items:start;gap:1%}.pad-group{display:flex;flex-direction:column;align-items:center;gap:5px}.hardware-button{height:clamp(22px,3vw,34px);width:clamp(29px,4.15vw,48px);border:3px solid #687c77;border-radius:4px;box-shadow:0 3px 0 #101717,0 5px 7px #000b;background:linear-gradient(140deg,#d4d6c7,#687373 18%,#162022 35%,#293536 60%,#070d0d);position:relative;touch-action:manipulation}.hardware-button:before{content:'';position:absolute;inset:19%;background:linear-gradient(130deg,#1f2425,#070d10);border:1px solid #84938b;border-radius:2px}.hardware-button:active,.hardware-button.pressed{transform:translateY(2px);box-shadow:0 1px 0 #101717,0 2px 4px #0009}.hardware-button.active{border-color:#b7ddae;box-shadow:0 0 10px #95fcb55c}.pad-label{font-weight:700;font-size:clamp(7px,.77vw,11px);letter-spacing:.08em;color:#d1dfc5;white-space:nowrap}.pad-sub{font-size:clamp(6px,.6vw,8px);color:#8caf93}.pad-group.play .hardware-button{border-color:#708d6f}.pad-group.edit .hardware-button{border-color:#a2a686}.tempo-led{right:3.1%;top:49%;display:flex;flex-direction:column;align-items:center;gap:7px;color:#9cbe9d;font-size:clamp(7px,.7vw,9px);font-weight:700;letter-spacing:.08em}.tempo-led i{height:12px;width:12px;background:#350b08;border:2px solid #672822;border-radius:50%}.tempo-led i.on{background:#ff5a3c;box-shadow:0 0 12px #ff603f,0 0 21px #ff532577;border-color:#e9816c}.pcb-footprint{top:95%;left:3%;color:#77997e;font-size:clamp(7px,.8vw,10px);letter-spacing:.1em}.pcb-spec{top:95%;right:3%;color:#77997e;font-size:clamp(7px,.8vw,10px);letter-spacing:.06em}.board-caption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:11px;color:#91a69c;padding-top:12px}.help-layout{display:grid;grid-template-columns:1.18fr .82fr;gap:20px;margin-bottom:26px}.panel{background:#101d20;border:1px solid #27423b;border-radius:14px;padding:20px}.panel h2{font-family:system-ui,sans-serif;font-size:18px;letter-spacing:-.02em;margin:0 0 8px;color:#effbee}.panel p{line-height:1.6;font-size:12px;color:#9eafa9;margin:0 0 12px}.steps{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:7px;margin:15px 0}.step-pill{background:#22342f;border:1px solid #446258;color:#bcddd0;font-size:12px;padding:9px 2px;border-radius:6px;text-align:center}.step-pill.current{border-color:#95ffca;background:#305343;color:#d2ffe1}.step-pill.edited{box-shadow:0 0 0 2px #ddf5a0 inset}.legend{display:flex;gap:13px;align-items:center;flex-wrap:wrap;font-size:10px;color:#92aea0}.legend i{width:7px;height:7px;display:inline-block;border-radius:50%;background:#8cfff3;margin-right:4px}.legend .edited-marker{background:#e2f6ad}.mini{font-size:10px;color:#8fb0a1}.panel-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.instructions{display:grid;grid-template-columns:1fr;gap:9px;margin-top:14px}.instructions div{display:flex;gap:14px;align-items:baseline;font-size:11px;color:#bed2c7}.instructions kbd{flex:0 0 93px;color:#a9f8bd;border:1px solid #52745e;border-radius:4px;text-align:center;padding:4px;font-size:10px;background:#152c23}.source{font-family:system-ui,sans-serif;font-size:12px;line-height:1.7;color:#90a49e;margin:0 0 45px}.source strong{color:#c7e3d5}.status-call{color:#9fe0bb}.mobile-only{display:none}@media(max-width:800px){.wrap{padding:0 14px}.top{padding-top:17px}.board-shell{padding:10px;border-radius:12px}.pcb{min-width:700px;min-height:305px}.board-shell{overflow-x:auto}.board-caption{font-size:10px}.help-layout{grid-template-columns:1fr}.pcb-title{font-size:20px}.pcb-sub{font-size:9px}.knob-wheel{width:45px;height:45px}.knob-name{font-size:9px}.knob-value{font-size:8px}.pad-label{font-size:8px}.mobile-only{display:inline}}@media(max-width:480px){.hero h1{font-size:48px}.nav-right{display:none}.displaybar{gap:12px}.display-left,.display-right{gap:10px}.small-btn{padding:9px}.panel{padding:16px}}
+
+
+/* Linked rack */
+.rack-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:18px 20px;margin:18px 0 22px;border:1px solid #3a5b52;border-radius:14px;background:linear-gradient(120deg,#172b2b,#0f1b1e)}
+.rack-toolbar h2{margin:0 0 5px;font-family:system-ui,sans-serif;font-size:20px;letter-spacing:-.035em;color:#ecfff1}
+.rack-toolbar p{margin:0;color:#a7c1b5;font:12px/1.5 system-ui,sans-serif;max-width:630px}
+.rack-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.rack-count{color:#c3e1d3;font-size:12px}.rack-unit{margin-bottom:18px}.unit-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 12px;padding:0 2px}
+.unit-title{font-size:14px;letter-spacing:.07em;font-weight:800;color:#e9fee9}.unit-subtitle{font-size:11px;color:#91b5a9;margin-top:5px}.unit-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rack-unit.is-selected .board-shell{border-color:#729a79}.unit-select[aria-pressed=true]{border-color:#a4efb3;color:#adffc0}.unit-remove{color:#ffcabf;border-color:#8f564e}.unit-remove:hover{background:#51312c}
+.cable{margin:0 0 18px;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:12px;color:#a5ffe0;font-size:11px;letter-spacing:.04em;text-align:center;background:linear-gradient(90deg,transparent,#17382e,transparent)}
+.cable:before,.cable:after{content:'';height:2px;flex:1;max-width:150px;background:repeating-linear-gradient(90deg,#6bd4a7 0 12px,#1b5849 12px 19px)}
+.rack-note{font-size:12px;color:#bddac7;margin:0 0 20px;font-family:system-ui,sans-serif}
+.mobile-message{display:none;border:1px solid #628a73;background:#162f28;padding:18px 20px;border-radius:14px;margin-bottom:18px;color:#e2f8e9;font:14px/1.5 system-ui,sans-serif}
+.mobile-message h2{margin:0 0 9px;font-size:18px}.mobile-message p{margin:0 0 14px}.mobile-message[hidden]{display:none!important}
+.mobile-one-note{display:none;font:12px/1.5 system-ui,sans-serif;color:#b6d2be;padding:9px 0 13px}
+@media(max-width:767px){
+  .wrap{padding:0 12px}.hero{padding-top:7px;padding-bottom:8px}.hero h1{font-size:clamp(39px,10vw,65px);margin:8px 0}.lede{font-size:13px}
+  .top{gap:8px}.mark{font-size:10px;letter-spacing:.04em}.mark-icon{width:28px;height:28px}.nav-right{display:none}
+  .rack-toolbar{padding:14px;margin:12px 0 18px}.rack-toolbar h2{font-size:17px}.rack-toolbar p{font-size:11px}.rack-actions{width:100%;gap:8px}.rack-actions .small-btn{flex:1;text-align:center}
+  .mobile-one-note{display:block}.rack-unit{margin:0 0 20px}.rack-unit.mobile-extras-hidden{display:none}
+  .board-shell{padding:10px 10px 14px;overflow:visible;margin-bottom:13px}
+  .pcb{width:100%;min-width:0;min-height:0;height:585px;aspect-ratio:auto;overflow:hidden}
+  .traces,.battery,.ic,.jack,.power-sw,.pcb-sub,.pcb-edition,.pcb-screw,.pcb-footprint,.pcb-spec,.bottom-trench{display:none}
+  .pcb-title{top:3%;left:6%;font-size:clamp(21px,7vw,29px);letter-spacing:.1em}.tempo-led{right:6%;top:4%;font-size:9px}
+  .knob-position{width:31%;gap:4px}.knob-kick{top:15%;left:1%}.knob-snare{top:15%;left:34.5%}.knob-hat{top:15%;left:68%}.knob-bass{top:36%;left:16%}.knob-tempo{top:36%;left:53%}
+  .knob-wheel{width:64px;height:64px;min-width:0;min-height:0;max-width:90%;border-width:5px}
+  .knob-name{font-size:11px;margin-top:6px}.knob-value{font-size:10px}
+  .lights{top:58%;left:5%;width:90%;height:8%}.led{width:14px;height:14px}.led-number{font-size:10px}
+  .pads{top:70%;left:3%;width:94%;height:auto;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:18px 3px}
+  .pad-group{gap:6px;text-align:center}.hardware-button{width:48px;height:42px;min-width:45px;min-height:39px}.pad-label{font-size:10px;white-space:normal}.pad-sub{font-size:9px}
+  .board-caption{font-size:10px;line-height:1.5}.board-caption span{max-width:100%}
+  .displaybar{margin:0 0 16px;padding:12px;gap:10px}.display-left,.display-right{gap:9px}.display-left{width:100%;justify-content:space-between}.display-right{width:100%;justify-content:space-between}.display-right input{width:90px}.status{font-size:10px}
+  .panel{padding:13px}.help-layout{gap:10px;margin-bottom:18px}.panel h2{font-size:17px}.panel p{font-size:12px}.instructions kbd{flex:0 0 85px}.step-pill{font-size:10px;padding:9px 1px}
+  .unit-heading{align-items:flex-start;flex-direction:column}.unit-actions{width:100%}.unit-actions button{flex:1}
+  .mobile-multi .rack-unit,.mobile-multi .cable,.mobile-multi .rack-note{display:none!important}
+  .mobile-multi .mobile-message,.mobile-notice .mobile-message{display:block}
+}
+@media(max-width:340px){.pcb{height:565px}.knob-wheel{width:56px;height:56px}.hardware-button{width:42px;height:39px}.pad-label{font-size:9px}}
+
 </style>
 </head>
 <body>
 <header class="wrap top"><div class="mark"><div class="mark-icon">♫</div><span>BURAN ELECTRIX <span style="color:#6e9183">/</span> WEB EXPERIMENT</span></div><nav class="nav-right"><a href="https://github.com/NixMcRetro/Lunchbeat-PCB" target="_blank" rel="noopener">PCB SOURCE ↗</a></nav></header>
 <main class="wrap">
   <section class="hero"><div class="eyebrow">THE ORIGINAL 1-BIT GROOVEBOX · RECREATED FOR YOUR BROWSER</div><h1>LUNCH<span>BEAT</span><span style="font-size:.30em;vertical-align:top;margin-left:14px;color:#c9ff85;letter-spacing:0">PCB</span></h1><p class="lede">Press the buttons. Turn the pots. Make some gloriously crunchy noise. A playable browser adaptation of Jan Cumpelik's 2013 Lunchbeat firmware and PCB.</p></section>
+  <section class="rack-toolbar" aria-label="Lunchbeat rack controls">
+    <div><h2>Connect your Lunchbeats</h2><p>Each new Lunchbeat has its own sounds and pattern. Virtual trigger cables connect the boards in sync, just like a hardware chain.</p></div>
+    <div class="rack-actions"><span class="rack-count" id="rackCount" aria-live="polite">1 Lunchbeat</span><button id="playAll" class="small-btn">PLAY ALL</button><button id="addLunchbeat" class="small-btn highlight">+ ADD LUNCHBEAT</button></div>
+  </section>
+  <div class="mobile-one-note">Mobile mode: a single full-size, touch-friendly Lunchbeat. Want to connect more? Use a computer.</div>
+  <section class="mobile-message" id="mobileMultiMessage" role="status" hidden>
+    <h2>More Lunchbeats need a little more room 🎵</h2>
+    <p>For two or more connected Lunchbeats, please open this page on a computer. You can still enjoy one Lunchbeat on your phone!</p>
+    <button class="small-btn highlight" id="keepOne">KEEP ONE LUNCHBEAT</button>
+  </section>
+  <div id="rack" aria-live="off"></div>
+  <p class="source"><strong>About this recreation.</strong> The synthesiser logic is adapted from Jan Cumpelik's Lunchbeat PCB v1.31 C firmware (2013–2014) and aims to recreate its four 1-bit voices, 3-bit summed output, original eight-step sequencing and edit/setup controls. This is a browser emulation, <strong>not a cycle-accurate AVR or analogue circuit simulation</strong>; your browser's audio hardware and filtering will sound somewhat different. The visually inspired PCB is an original HTML/CSS illustration, not the original manufacturing artwork. Sound-algorithm port: GPL-3.0, with author attribution preserved; hardware design by Jan Cumpelik, CC BY-SA 3.0. <a href="https://github.com/NixMcRetro/Lunchbeat-PCB" target="_blank" rel="noopener">Original PCB repository ↗</a> · <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">GPL v3 ↗</a>. Everything runs locally; no samples, server or external JavaScript needed.</p>
+</main>
+<template id="lunchbeatUnitTemplate">
+  <article class="rack-unit">
+    <div class="unit-heading"><div><div class="unit-title">LUNCHBEAT <span data-unit-number>01</span></div><div class="unit-subtitle" data-unit-detail>Master clock · Trigger out</div></div>
+      <div class="unit-actions"><button class="small-btn unit-select" data-select aria-pressed="false">SELECT FOR KEYBOARD</button><button class="small-btn unit-remove" data-remove>REMOVE</button></div></div>
   <section class="displaybar" aria-label="Audio controls and playback status"><div class="display-left"><span class="status"><span class="dot" id="statusDot"></span><span id="statusText">AUDIO OFF</span></span><span class="status"><small>MODE</small> <span id="modeText">LIVE</span></span><span class="status"><small>STEP</small> <span id="stepText">01 / 08</span></span><span class="status"><small>TEMPO</small> <span id="tempoText">≈ 72 BPM</span></span></div><div class="display-right"><label>VOL <input type="range" id="volume" min="0" max="100" value="24" aria-label="Master volume"></label><span class="meter" title="Output activity"><i id="activity"></i></span><button class="small-btn highlight" id="enableAudio">ENABLE AUDIO</button></div></section>
   <section class="board-shell" aria-label="Playable Lunchbeat PCB control surface"><div class="pcb" id="pcb">
       <svg class="traces" viewBox="0 0 1060 460" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="vias" width="46" height="42" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r="2.2" fill="#b39851" opacity=".55"/><circle cx="32" cy="25" r="1.7" fill="#659a69" opacity=".55"/></pattern></defs><rect x="5" y="5" width="1050" height="450" fill="url(#vias)" opacity=".5"/><g fill="none" stroke="#4d9060" stroke-width="1.1" opacity=".30"><path d="M180 90H330V155H402V214H495"/><path d="M180 105H310V177H424V215"/><path d="M178 325H210V190H315"/><path d="M200 305H285V235H330"/><path d="M425 118H525V165H705V220"/><path d="M410 125H510V175H750"/><path d="M648 165H780V210H890"/><path d="M670 195H695V315H840"/><path d="M450 275V305H745V360"/><path d="M280 270V320H930"/><path d="M210 415V390H990V185"/><path d="M410 280V310H850V385"/><path d="M670 280V315H910V390"/></g><g fill="none" stroke="#a7c48c" opacity=".20" stroke-width="1"><path d="M220 67H300V120H415"/><path d="M220 78H290V135H415"/><path d="M890 65H800V112H670"/><path d="M895 80H790V123H670"/><path d="M910 285H950V350H1020"/></g></svg>
@@ -32,14 +89,14 @@
       <div class="silk pcb-footprint">16 MHz · 3-BIT DAC · 8 LED</div><div class="silk pcb-spec">AUDIO OUT / SYNC / ISP</div>
     </div><div class="board-caption"><span><strong>KNOBS:</strong> Drag up/down, use mouse wheel, or arrow keys.</span><span><strong>EDIT:</strong> Tap to advance steps · Hold ~2 sec for settings.</span></div></section>
   <div class="help-layout"><section class="panel"><h2>Eight steps. Four sounds. Endless fun.</h2><p>Press <strong style="color:#e6f2e7">ENABLE AUDIO</strong> first. Hit PLAY, then EDIT to choose a step. The four instrument buttons toggle sounds on that step. The eight blue LEDs mirror the original dual-purpose display, using brightness to show the selected step.</p><div class="steps" id="stepOverview" aria-label="Eight step positions"></div><div class="legend"><span><i></i> Playing step</span><span><i class="edited-marker"></i> Editing step</span><span id="patternSummary">Original power-on pattern</span></div><div class="panel-actions"><button class="small-btn highlight" id="demoButton">LOAD A GROOVE</button><button class="small-btn" id="originalButton">ORIGINAL PATTERN</button><button class="small-btn" id="clearButton">CLEAR STEPS</button><button class="small-btn" id="resetButton">RESET DEVICE</button></div></section><section class="panel"><h2>Quick controls</h2><div class="instructions"><div><kbd>1 · 2 · 3 · 4</kbd><span>Play sounds, or toggle notes in EDIT</span></div><div><kbd>SPACE</kbd><span>Start / stop the sequencer</span></div><div><kbd>E</kbd><span>Move to next edit step (cycles 1–8)</span></div><div><kbd>SHIFT + E</kbd><span>Enter / leave setup mode</span></div><div><kbd>EDIT HOLD</kbd><span>Hold about two seconds for setup mode</span></div><div><kbd>TRIG IN</kbd><span>Manual pulse in external-clock mode</span></div></div><div class="panel-actions"><button class="small-btn" id="pulseButton">SEND TRIG PULSE</button><span id="syncText" style="font-size:10px;color:#9db8a6;align-self:center">INTERNAL CLOCK · DIV 1</span></div></section></div>
-  <p class="source"><strong>About this recreation.</strong> The synthesiser logic is adapted from Jan Cumpelik's Lunchbeat PCB v1.31 C firmware (2013–2014) and aims to recreate its four 1-bit voices, 3-bit summed output, original eight-step sequencing and edit/setup controls. This is a browser emulation, <strong>not a cycle-accurate AVR or analogue circuit simulation</strong>; your browser's audio hardware and filtering will sound somewhat different. The visually inspired PCB is an original HTML/CSS illustration, not the original manufacturing artwork. Sound-algorithm port: GPL-3.0, with author attribution preserved; hardware design by Jan Cumpelik, CC BY-SA 3.0. <a href="https://github.com/NixMcRetro/Lunchbeat-PCB" target="_blank" rel="noopener">Original PCB repository ↗</a> · <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">GPL v3 ↗</a>. Everything runs locally; no samples, server or external JavaScript needed.</p>
-</main>
+  </article>
+</template>
 <script id="worklet-source" type="text/plain">
+
 // Lunchbeat PCB v1.31 firmware sound algorithms adapted from Jan Cumpelik (2013).
 // GPL-3.0. Audio simulation: sampled 1-bit voices summed through the original 3-bit DAC idea.
-class LunchbeatProcessor extends AudioWorkletProcessor {
+class LunchbeatVoice {
   constructor() {
-    super();
     this.rate = 2000000 / 129; // 16MHz / 8 / (OCR1A+1)
     this.phase = 0; this.lastSample = 0; this.prevIn=0; this.prevOut=0;
     this.seq = [1,0,0,0,0,0,0,0];
@@ -52,13 +109,12 @@ class LunchbeatProcessor extends AudioWorkletProcessor {
     this.hatlfsr=0b0100101010001010;
     this.wave=0;this.wavefreq=1;
     this.outputCounter=0;this.level=0;
-    this.port.onmessage = (e)=>this.message(e.data);
   }
   message(m) {
     switch (m.type) {
       case 'init':
         this.seq=m.seq.slice();this.pots=m.pots.slice();this.division=m.division;this.external=m.external;
-        this.playing=m.playing;this.playstep=m.playstep;this.subdiv=this.division;this.sendStatus();break;
+        this.playing=m.playing;this.playstep=m.playstep;this.subdiv=this.division;break;
       case 'pot': this.pots[m.i]=Math.max(0,Math.min(1023,m.v|0));break;
       case 'seq': this.seq=m.seq.slice();break;
       case 'live':
@@ -70,31 +126,36 @@ class LunchbeatProcessor extends AudioWorkletProcessor {
         else {this.playing=true;this.counter=0;this.subdiv=this.external?1:this.division;
           if(this.external) this.playstep=7;
           else {this.playstep=0;this.triggerStep();this.tempo=5500-(this.pots[0]<<2);}}
-        this.sendStatus();break;
-      case 'external': this.external=!!m.value;this.counter=0;this.sendStatus();break;
-      case 'division': this.division=Math.max(1,Math.min(15,m.value|0));this.subdiv=this.division;this.sendStatus();break;
-      case 'trig':
-        if(this.playing&&this.external){this.subdiv--;
-          if(this.subdiv<=0){this.subdiv=this.division;this.counter=0;this.playstep=(this.playstep+1)&7;this.triggerStep();}}
-        this.sendStatus();break;
+        break;
+      case 'external': this.external=!!m.value;this.counter=0;break;
+      case 'division': this.division=Math.max(1,Math.min(15,m.value|0));this.subdiv=this.division;break;
+      case 'trig': this.pulse();break;
       case 'reset':
         this.seq=[1,0,0,0,0,0,0,0];this.gate=[0,0,0,0];this.held=[false,false,false,false];
         this.playing=false;this.external=false;this.division=1;this.subdiv=1;this.playstep=0;this.counter=0;
         this.kick=0;this.kickfreq=2;this.snare=0;this.snarefreq=2;this.snarelfsr=0b0011010010100100;
-        this.hatlfsr=0b0100101010001010;this.wave=0;this.wavefreq=1;this.sendStatus();break;
+        this.hatlfsr=0b0100101010001010;this.wave=0;this.wavefreq=1;break;
     }
   }
-  sendStatus(){this.port.postMessage({type:'status',playing:this.playing,playstep:this.playstep,
+  status(){return {type:'status',playing:this.playing,playstep:this.playstep,
     counter:this.counter,tempo:this.tempo,external:this.external,division:this.division,
-    active:this.gate.map(x=>x>0),level:this.level});}
+    active:this.gate.map(x=>x>0),level:this.level};}
+  pulse(){
+    if(!(this.playing&&this.external))return false;
+    this.subdiv--;
+    if(this.subdiv>0)return false;
+    this.subdiv=this.division;this.counter=0;this.playstep=(this.playstep+1)&7;this.triggerStep();
+    return true;
+  }
   triggerStep(){for(let i=0;i<4;i++)if(this.seq[this.playstep]&(1<<i))this.gate[i]=1;}
   tick(){
+    let pulseOut=false;
     if(this.playing){
       this.counter++;
       if(!this.external && this.counter>this.tempo){
         this.tempo=5500-(this.pots[0]<<2);this.counter=0;
         this.playstep=(this.playstep+1)&7;this.triggerStep();
-        this.subdiv--;if(this.subdiv<=0)this.subdiv=this.division;
+        this.subdiv--;if(this.subdiv<=0){this.subdiv=this.division;pulseOut=true;}
       }
     }
     const pot=this.pots,gate=this.gate;
@@ -143,165 +204,307 @@ class LunchbeatProcessor extends AudioWorkletProcessor {
     this.level=mix/4;
     // Emulate stepped DAC and remove DC offset (analogue output uses a coupling capacitor).
     this.lastSample=mix*0.225;
+    return pulseOut;
   }
+  sample(){
+    this.phase+=this.rate/sampleRate;
+    let pulseOut=false;
+    while(this.phase>=1){if(this.tick())pulseOut=true;this.phase--;}
+    const x=this.lastSample;
+    const a=this.hpAlpha;
+    const y=a*(this.prevOut+x-this.prevIn);
+    this.prevIn=x;this.prevOut=y;
+    this.pulseOut=pulseOut;
+    return Math.max(-1,Math.min(1,y));
+  }
+}
+// Shared audio timeline: trigger pulses travel through the virtual wire on the same sample.
+class LunchbeatRackProcessor extends AudioWorkletProcessor {
+  constructor(){
+    super();this.ids=[];this.voices=new Map();this.levels=new Map();this.outputCounter=0;
+    this.port.onmessage=e=>this.message(e.data);
+  }
+  message(m){
+    if(m.type==='add'){
+      if(this.voices.has(m.id))return;
+      const v=new LunchbeatVoice();v.message({...m,type:'init'});
+      this.voices.set(m.id,v);this.levels.set(m.id,Math.max(0,Math.min(1,m.volume==null?.24:+m.volume)));this.ids.push(m.id);this.report();return;
+    }
+    if(m.type==='remove'){
+      this.voices.delete(m.id);this.levels.delete(m.id);this.ids=this.ids.filter(x=>x!==m.id);this.report();return;
+    }
+    if(m.type==='ctl'){
+      const v=this.voices.get(m.id);if(!v)return;
+      if(m.command.type==='volume'){this.levels.set(m.id,Math.max(0,Math.min(1,+m.command.value)));return;}
+      if(m.command.type==='trig'){
+        let signal=v.pulse(),i=this.ids.indexOf(m.id);
+        while(signal&&++i<this.ids.length)signal=this.voices.get(this.ids[i]).pulse();
+      }else {
+        const starting=m.command.type==='play'&&!v.playing&&this.ids[0]===m.id;
+        v.message(m.command);
+        if(starting&&v.playing){
+          let signal=true;for(const id of this.ids.slice(1)){if(!signal)break;signal=this.voices.get(id).pulse();}
+        }
+      }
+      this.report();
+    }
+  }
+  report(){for(const id of this.ids)this.port.postMessage({id,...this.voices.get(id).status()});}
   process(inputs,outputs){
-    const out=outputs[0][0];
-    if(!out)return true;
+    const out=outputs[0][0];if(!out)return true;
+    const units=this.ids.map(id=>this.voices.get(id));
+    const scaling=2.4/Math.sqrt(Math.max(1,units.length));
     for(let i=0;i<out.length;i++){
-      this.phase+=this.rate/sampleRate;
-      while(this.phase>=1){this.tick();this.phase--;}
-      const x=this.lastSample;
-      // Single-pole high-pass at approximately 18Hz, approximating AC coupling.
-      const a=Math.exp(-2*Math.PI*18/sampleRate);
-      const y=a*(this.prevOut+x-this.prevIn);
-      this.prevIn=x;this.prevOut=y;
-      out[i]=Math.max(-1,Math.min(1,y));
+      let mixed=0,wire=false;
+      for(let j=0;j<units.length;j++){
+        const u=units[j];
+        if(wire){wire=u.pulse();}else wire=false;
+        const sample=u.sample();
+        if(u.pulseOut)wire=true;
+        mixed+=sample*(this.levels.get(this.ids[j])||0);
+      }
+      out[i]=Math.max(-1,Math.min(1,mixed*scaling));
     }
     this.outputCounter+=out.length;
-    if(this.outputCounter>=sampleRate/24){this.outputCounter=0;this.sendStatus();}
+    if(this.outputCounter>=sampleRate/24){this.outputCounter=0;this.report();}
     return true;
   }
 }
-registerProcessor('lunchbeat-processor',LunchbeatProcessor);
+registerProcessor('lunchbeat-rack-processor',LunchbeatRackProcessor);
+
 </script>
 <script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id);
-let audioCtx=null,audioNode=null,masterGain=null,audioPromise=null;
-const heldUI=[false,false,false,false];
-let seq=[1,0,0,0,0,0,0,0],pots=[512,512,512,512,512];
-let playing=false,external=false,division=1,editmode=false,setmode=false,editstep=0,playstep=0,gate=[false,false,false,false];
-let lastCounter=0,lastTempo=5500-(512<<2),lastLevel=0,blink=false;
+const units=[];let nextId=1,selected=null,audioCtx=null,audioNode=null,audioPromise=null,masterGain=null;
+const smallScreen=window.matchMedia('(max-width: 767px)');
 const original=[1,0,0,0,0,0,0,0];
 const groove=[1|4,4,1|2|4,8,1|4,4,1|2|4,2|8];
-function estimateBpm(){return Math.round((60*2000000/129)/(4*(5500-(pots[0]<<2)+1)));}
-function send(m){if(audioNode){if(audioNode.port)audioNode.port.postMessage(m);else audioNode._fallbackPort(m);}}
+function estimateBpm(pots){return Math.round((60*2000000/129)/(4*(5500-(pots[0]<<2)+1)));}
+function send(id,command){if(audioNode){let m={type:'ctl',id,command};if(audioNode.port)audioNode.port.postMessage(m);else audioNode._fallbackPort(m);}}
+function broadcast(m){if(audioNode){if(audioNode.port)audioNode.port.postMessage(m);else audioNode._fallbackPort(m);}}
+function getUnit(id){return units.find(u=>u.id===id);}
 async function ensureAudio(){
   if(audioPromise)return audioPromise;
   audioPromise=(async()=>{
-    const AC=window.AudioContext||window.webkitAudioContext;if(!AC)throw new Error('Web Audio is unavailable in this browser.');
-    audioCtx=new AC();masterGain=audioCtx.createGain();masterGain.gain.value=(+$('volume').value/100)*.9;
-    masterGain.connect(audioCtx.destination);
+    const AC=window.AudioContext||window.webkitAudioContext;
+    if(!AC)throw Error('Web Audio is unavailable in this browser.');
+    audioCtx=new AC();masterGain=audioCtx.createGain();masterGain.gain.value=.85;masterGain.connect(audioCtx.destination);
     const code=$('worklet-source').textContent;
     if(audioCtx.audioWorklet){
       try{
         const blob=new Blob([code],{type:'text/javascript'}),url=URL.createObjectURL(blob);
         try{await audioCtx.audioWorklet.addModule(url);}finally{URL.revokeObjectURL(url);}
-        audioNode=new AudioWorkletNode(audioCtx,'lunchbeat-processor',{numberOfInputs:0,numberOfOutputs:1,outputChannelCount:[1]});
+        audioNode=new AudioWorkletNode(audioCtx,'lunchbeat-rack-processor',{numberOfInputs:0,numberOfOutputs:1,outputChannelCount:[1]});
         audioNode.port.onmessage=e=>statusMessage(e.data);
-      }catch(e){console.warn('AudioWorklet unavailable, using ScriptProcessor fallback:',e);}
+      }catch(e){console.warn('AudioWorklet unavailable; using ScriptProcessor fallback:',e);}
     }
     if(!audioNode){
-      // Compatibility fallback for local file:// browsers that restrict AudioWorklet modules.
-      const Processor=new Function('AudioWorkletProcessor','registerProcessor','sampleRate',code+'\nreturn LunchbeatProcessor;')(
+      const Rack=new Function('AudioWorkletProcessor','registerProcessor','sampleRate',code+'\nreturn LunchbeatRackProcessor;')(
         class {constructor(){this.port={postMessage:()=>{},onmessage:null};}},()=>{},audioCtx.sampleRate);
-      const processor=new Processor();processor.port.postMessage=m=>statusMessage(m);
+      const processor=new Rack();processor.port.postMessage=m=>statusMessage(m);
       const fallback=audioCtx.createScriptProcessor(1024,0,1);
       fallback.onaudioprocess=e=>processor.process([],[[e.outputBuffer.getChannelData(0)]]);
-      fallback._fallbackPort=m=>processor.port.onmessage({data:m});
-      audioNode=fallback;
+      fallback._fallbackPort=m=>processor.port.onmessage({data:m});audioNode=fallback;
     }
-    audioNode.connect(masterGain);
-    await audioCtx.resume();
-    send({type:'init',seq,pots,division,external,playing,playstep});
-    $('enableAudio').textContent='AUDIO ON';$('enableAudio').classList.remove('highlight');
-    $('statusText').textContent='AUDIO READY';$('statusDot').classList.add('on');return true;
+    audioNode.connect(masterGain);await audioCtx.resume();
+    for(const u of units){broadcast({type:'add',id:u.id,seq:u.seq,pots:u.pots,division:u.division,external:u.external,playing:u.playing,playstep:u.playstep,volume:+u.ui('volume').value/100});
+      u.el.querySelector('[data-part=enableAudio]').textContent='AUDIO ON';
+      u.el.querySelector('[data-part=enableAudio]').classList.remove('highlight');
+      u.el.querySelector('[data-part=statusText]').textContent='AUDIO READY';
+      u.el.querySelector('[data-part=statusDot]').classList.add('on');
+    }
+    return true;
   })();
-  try{return await audioPromise;}catch(e){audioPromise=null;$('statusText').textContent='AUDIO ERROR';$('enableAudio').textContent='RETRY AUDIO';alert(e.message);throw e;}
+  try{return await audioPromise;}
+  catch(e){audioPromise=null;audioNode=null;
+    for(const u of units){u.ui('statusText').textContent='AUDIO ERROR';u.ui('enableAudio').textContent='RETRY AUDIO';}
+    window.alert(e.message);throw e;}
 }
-function statusMessage(m){if(m.type!=='status')return;
-  playing=m.playing;playstep=m.playstep;gate=m.active;lastCounter=m.counter;lastTempo=m.tempo;lastLevel=m.level;external=m.external;division=m.division;
-  updateDisplay();}
-function updateDisplay(){
-  $('modeText').textContent=setmode?'SETUP':editmode?'EDIT':'LIVE';
-  $('stepText').textContent=String(playstep+1).padStart(2,'0')+' / 08';
-  $('tempoText').textContent='≈ '+estimateBpm()+' BPM';
-  $('syncText').textContent=(external?'EXTERNAL':'INTERNAL')+' CLOCK · DIV '+division;
-  $('patternSummary').textContent=seq.reduce((a,b)=>a+(b?1:0),0)+' populated steps';
-  $('playButton').classList.toggle('active',playing);
-  $('editButton').classList.toggle('active',editmode||setmode);
-  $('activity').style.width=Math.min(100,lastLevel*100)+'%';
-  const led=$('tempoLed');led.classList.toggle('on',setmode?blink:(playing&&(external?blink:lastCounter<lastTempo/8)));
-  let bits=0,brightBits=0;
-  if(setmode){bits=(division<<4)|(external?1:0);brightBits=bits;}
-  else if(editmode){const s=seq[editstep];for(let i=0;i<4;i++)if(s&(1<<i))bits|=(3<<(6-i*2));brightBits=(1<<(7-editstep));bits|=brightBits;}
-  else {for(let i=0;i<4;i++)if(gate[i])bits|=(3<<(6-i*2));brightBits=bits;}
-  [...$('lights').children].forEach((c,i)=>{const mask=1<<(7-i),on=!!(bits&mask);
-    c.querySelector('.led').className='led '+(on?(setmode||!editmode||(brightBits&mask)?'bright':'dim'):'');});
-  [...$('stepOverview').children].forEach((c,i)=>{c.className='step-pill'+(playing&&i===playstep?' current':'')+(editmode&&i===editstep?' edited':'');
-    c.title='Step '+(i+1)+' — '+['KICK','SNARE','HAT','BASS'].filter((_,j)=>seq[i]&(1<<j)).join(' + ');
-    c.textContent=String(i+1).padStart(2,'0')+(seq[i]?' ●':' ·');});
+function statusMessage(m){if(m.type!=='status')return;const u=getUnit(m.id);if(!u)return;
+  Object.assign(u,{playing:m.playing,playstep:m.playstep,gate:m.active,lastCounter:m.counter,lastTempo:m.tempo,lastLevel:m.level,external:m.external,division:m.division});
+  u.update();
 }
-function potSet(i,v){v=Math.max(0,Math.min(1023,Math.round(v)));pots[i]=v;
-  const k=document.querySelector('[data-pot="'+i+'"]');
-  k.style.setProperty('--turn',(-135+270*v/1023)+'deg');k.setAttribute('aria-valuenow',v);
-  k.setAttribute('aria-valuetext',i===0?'approximately '+estimateBpm()+' beats per minute':Math.round(100*v/1023)+' percent');
-  $('pot-value-'+i).textContent=i===0?'~ '+estimateBpm()+' BPM':Math.round(100*v/1023)+'%';
-  send({type:'pot',i,v});updateDisplay();}
-function setSequence(next){seq=next.slice(0,8);send({type:'seq',seq});updateDisplay();}
-function toggleSound(i,down){
-  if(setmode){if(down){const d=division^(1<<(3-i));if(d>=1){division=d;send({type:'division',value:division});}}updateDisplay();return;}
-  if(editmode){if(down){seq[editstep]^=1<<i;send({type:'seq',seq});}updateDisplay();return;}
-  if(down){heldUI[i]=true;ensureAudio().then(()=>{send({type:'live',i,down:true});if(!heldUI[i])send({type:'live',i,down:false});}).catch(()=>{});} else{heldUI[i]=false;send({type:'live',i,down:false});}
+function setSelected(unit){selected=unit;
+  for(const u of units){u.el.classList.toggle('is-selected',u===unit);u.el.querySelector('[data-select]').setAttribute('aria-pressed',String(u===unit));}
 }
-function pressPlay(){
-  if(setmode){external=!external;send({type:'external',value:external});updateDisplay();return;}
-  ensureAudio().then(()=>send({type:'play'})).catch(()=>{});
+class LunchbeatUI {
+  constructor(id,position){
+    this.id=id;this.seq=original.slice();this.pots=[512,512,512,512,512];
+    this.playing=false;this.external=position>0;this.division=1;this.editmode=false;this.setmode=false;
+    this.editstep=0;this.playstep=0;this.gate=[false,false,false,false];this.heldUI=[false,false,false,false];
+    this.lastCounter=0;this.lastTempo=5500-(512<<2);this.lastLevel=0;
+    this.blink=false;this.pointerTimers=new Set();
+    this.el=$('lunchbeatUnitTemplate').content.firstElementChild.cloneNode(true);
+    this.el.dataset.unitId=id;
+    // Convert repeated template IDs to unique IDs, while retaining reliable local selectors.
+    this.el.querySelectorAll('[id]').forEach(el=>{const key=el.id;el.dataset.part=key;el.id=key+'-'+id;});
+    this.el.querySelector('[data-unit-number]').textContent=String(position+1).padStart(2,'0');
+    this.ui=id=>this.el.querySelector('[data-part="'+id+'"]');
+    // Avoid duplicate SVG pattern IDs when boards are cloned.
+    const vias=this.el.querySelector('[id="vias-'+id+'"]');
+    if(vias)this.el.querySelector('.traces rect').setAttribute('fill','url(#vias-'+id+')');
+    this.el.querySelector('[data-select]').addEventListener('click',()=>setSelected(this));
+    this.el.querySelector('[data-remove]').addEventListener('click',()=>removeUnit(this));
+    this.el.addEventListener('pointerdown',()=>setSelected(this));
+    for(let i=0;i<8;i++){
+      const col=document.createElement('div');col.className='led-col';col.innerHTML='<div class="led"></div><div class="led-number">'+(i+1)+'</div>';this.ui('lights').appendChild(col);
+      const pill=document.createElement('div');pill.className='step-pill';pill.title='Step '+(i+1);pill.textContent=String(i+1).padStart(2,'0');this.ui('stepOverview').appendChild(pill);
+    }
+    for(let i=0;i<5;i++)this.potSet(i,this.pots[i]);
+    this.installEvents();this.update();
+  }
+  update(){
+    this.ui('modeText').textContent=this.setmode?'SETUP':this.editmode?'EDIT':'LIVE';
+    this.ui('stepText').textContent=String(this.playstep+1).padStart(2,'0')+' / 08';
+    this.ui('tempoText').textContent='≈ '+estimateBpm(this.pots)+' BPM';
+    this.ui('syncText').textContent=(this.external?'EXTERNAL':'INTERNAL')+' CLOCK · DIV '+this.division;
+    this.ui('patternSummary').textContent=this.seq.reduce((a,b)=>a+(b?1:0),0)+' populated steps';
+    this.ui('playButton').classList.toggle('active',this.playing);
+    this.ui('editButton').classList.toggle('active',this.editmode||this.setmode);
+    this.ui('activity').style.width=Math.min(100,this.lastLevel*100)+'%';
+    this.ui('tempoLed').classList.toggle('on',this.setmode?this.blink:(this.playing&&(this.external?this.blink:this.lastCounter<this.lastTempo/8)));
+    let bits=0,brightBits=0;
+    if(this.setmode){bits=(this.division<<4)|(this.external?1:0);brightBits=bits;}
+    else if(this.editmode){const s=this.seq[this.editstep];for(let i=0;i<4;i++)if(s&(1<<i))bits|=3<<(6-i*2);
+      brightBits=1<<(7-this.editstep);bits|=brightBits;}
+    else {for(let i=0;i<4;i++)if(this.gate[i])bits|=3<<(6-i*2);brightBits=bits;}
+    [...this.ui('lights').children].forEach((c,i)=>{const mask=1<<(7-i),on=!!(bits&mask);
+      c.querySelector('.led').className='led '+(on?(this.setmode||!this.editmode||(brightBits&mask)?'bright':'dim'):'');});
+    [...this.ui('stepOverview').children].forEach((c,i)=>{c.className='step-pill'+(this.playing&&i===this.playstep?' current':'')+(this.editmode&&i===this.editstep?' edited':'');
+      c.title='Step '+(i+1)+' — '+['KICK','SNARE','HAT','BASS'].filter((_,j)=>this.seq[i]&(1<<j)).join(' + ');
+      c.textContent=String(i+1).padStart(2,'0')+(this.seq[i]?' ●':' ·');});
+  }
+  potSet(i,v){v=Math.max(0,Math.min(1023,Math.round(v)));this.pots[i]=v;
+    const k=this.el.querySelector('[data-pot="'+i+'"]');k.style.setProperty('--turn',(-135+270*v/1023)+'deg');k.setAttribute('aria-valuenow',v);
+    k.setAttribute('aria-valuetext',i===0?'approximately '+estimateBpm(this.pots)+' beats per minute':Math.round(100*v/1023)+' percent');
+    this.ui('pot-value-'+i).textContent=i===0?'~ '+estimateBpm(this.pots)+' BPM':Math.round(100*v/1023)+'%';
+    send(this.id,{type:'pot',i,v});this.update();
+  }
+  setSequence(next){this.seq=next.slice(0,8);send(this.id,{type:'seq',seq:this.seq});this.update();}
+  toggleSound(i,down){
+    if(this.setmode){if(down){const d=this.division^(1<<(3-i));if(d>=1){this.division=d;send(this.id,{type:'division',value:d});}}this.update();return;}
+    if(this.editmode){if(down){this.seq[this.editstep]^=1<<i;send(this.id,{type:'seq',seq:this.seq});}this.update();return;}
+    if(down){this.heldUI[i]=true;ensureAudio().then(()=>{send(this.id,{type:'live',i,down:true});if(!this.heldUI[i])send(this.id,{type:'live',i,down:false});}).catch(()=>{});}
+    else{this.heldUI[i]=false;send(this.id,{type:'live',i,down:false});}
+  }
+  async pressPlay(){
+    if(this.setmode){
+      if(units.indexOf(this)!==0 || units.length>1){this.ui('statusText').textContent='WIRED SYNC';return;}
+      this.external=!this.external;send(this.id,{type:'external',value:this.external});this.update();return;
+    }
+    try{await ensureAudio();
+      // When the master starts, arm all connected followers in external clock mode.
+      if(this===units[0]&&!this.playing){
+        for(const follower of units.slice(1)){
+          if(!follower.playing)send(follower.id,{type:'play'});
+        }
+      }
+      send(this.id,{type:'play'});
+    }catch(e){}
+  }
+  editShort(){if(this.setmode)return;
+    if(!this.editmode){this.editmode=true;this.editstep=0;}
+    else {this.editstep++;if(this.editstep>7){this.editmode=false;this.editstep=0;}}
+    this.update();}
+  toggleSetup(){this.setmode=!this.setmode;if(this.setmode){this.editmode=false;this.editstep=0;}this.update();}
+  resetDevice(){this.seq=original.slice();this.playing=false;this.division=1;this.editmode=false;this.setmode=false;this.editstep=0;this.playstep=0;this.gate=[false,false,false,false];this.lastLevel=0;
+    this.external=units.indexOf(this)>0;
+    send(this.id,{type:'reset'});send(this.id,{type:'seq',seq:this.seq});if(this.external)send(this.id,{type:'external',value:true});this.update();}
+  installEvents(){
+    this.ui('enableAudio').addEventListener('click',()=>ensureAudio().then(()=>audioCtx.resume()).catch(()=>{}));
+    this.ui('volume').addEventListener('input',e=>send(this.id,{type:'volume',value:+e.target.value/100}));
+    this.el.querySelectorAll('.knob-wheel').forEach(k=>{
+      const i=+k.dataset.pot;let startY=0,startVal=0,dragging=false;
+      k.addEventListener('pointerdown',e=>{if(e.button!==0)return;dragging=true;startY=e.clientY;startVal=this.pots[i];k.setPointerCapture(e.pointerId);e.preventDefault();});
+      k.addEventListener('pointermove',e=>{if(dragging)this.potSet(i,startVal+(startY-e.clientY)*6);});
+      k.addEventListener('pointerup',()=>dragging=false);k.addEventListener('pointercancel',()=>dragging=false);
+      k.addEventListener('wheel',e=>{e.preventDefault();this.potSet(i,this.pots[i]+(e.deltaY<0?26:-26));},{passive:false});
+      k.addEventListener('keydown',e=>{let d=0;if(e.key==='ArrowUp'||e.key==='ArrowRight')d=16;
+        if(e.key==='ArrowDown'||e.key==='ArrowLeft')d=-16;if(e.key==='PageUp')d=128;if(e.key==='PageDown')d=-128;
+        if(e.key==='Home'){this.potSet(i,0);e.preventDefault();return;}if(e.key==='End'){this.potSet(i,1023);e.preventDefault();return;}
+        if(d){this.potSet(i,this.pots[i]+d);e.preventDefault();}});
+    });
+    this.el.querySelectorAll('.sound-button').forEach(b=>{
+      let held=false;const i=+b.dataset.sound;
+      b.addEventListener('pointerdown',e=>{if(e.button!==0)return;held=true;b.classList.add('pressed');this.toggleSound(i,true);});
+      function release(){if(!held)return;held=false;b.classList.remove('pressed');}
+      b.addEventListener('pointerup',()=>{release();if(!this.editmode&&!this.setmode)this.toggleSound(i,false);});
+      b.addEventListener('pointercancel',()=>{release();if(!this.editmode&&!this.setmode)this.toggleSound(i,false);});
+      b.addEventListener('pointerleave',()=>{release();if(!this.editmode&&!this.setmode)this.toggleSound(i,false);});
+      b.addEventListener('click',e=>{if(e.detail===0){this.toggleSound(i,true);if(!this.editmode&&!this.setmode)setTimeout(()=>this.toggleSound(i,false),170);}});
+    });
+    this.ui('playButton').addEventListener('click',()=>this.pressPlay());
+    let holdTimer=null,heldLong=false;const edit=this.ui('editButton');
+    edit.addEventListener('pointerdown',e=>{if(e.button!==0)return;heldLong=false;edit.classList.add('pressed');holdTimer=setTimeout(()=>{heldLong=true;this.toggleSetup();},2100);});
+    const clear=()=>{clearTimeout(holdTimer);edit.classList.remove('pressed');};
+    edit.addEventListener('pointerup',clear);edit.addEventListener('pointercancel',clear);edit.addEventListener('pointerleave',clear);
+    edit.addEventListener('click',e=>{if(e.detail===0||!heldLong)this.editShort();heldLong=false;});
+    this.ui('demoButton').addEventListener('click',()=>this.setSequence(groove));
+    this.ui('originalButton').addEventListener('click',()=>this.setSequence(original));
+    this.ui('clearButton').addEventListener('click',()=>this.setSequence(Array(8).fill(0)));
+    this.ui('resetButton').addEventListener('click',()=>this.resetDevice());
+    this.ui('pulseButton').addEventListener('click',()=>send(this.id,{type:'trig'}));
+  }
 }
-function editShort(){if(setmode)return;if(!editmode){editmode=true;editstep=0;}
-  else{editstep++;if(editstep>7){editmode=false;editstep=0;}}
-  updateDisplay();}
-function toggleSetup(){setmode=!setmode;if(setmode){editmode=false;editstep=0;}updateDisplay();}
-function resetDevice(){seq=original.slice();playing=false;external=false;division=1;editmode=false;setmode=false;editstep=0;playstep=0;gate=[false,false,false,false];lastLevel=0;
-  send({type:'reset'});send({type:'seq',seq});updateDisplay();}
-function installEvents(){
-  $('enableAudio').addEventListener('click',()=>ensureAudio().then(()=>audioCtx.resume()).catch(()=>{}));
-  $('volume').addEventListener('input',e=>{if(masterGain)masterGain.gain.setTargetAtTime(+e.target.value/100*.9,audioCtx.currentTime,.015)});
-  document.querySelectorAll('.knob-wheel').forEach(k=>{
-    const i=+k.dataset.pot;let startY=0,startVal=0,dragging=false;
-    k.addEventListener('pointerdown',e=>{if(e.button!==0)return;dragging=true;startY=e.clientY;startVal=pots[i];k.setPointerCapture(e.pointerId);e.preventDefault();});
-    k.addEventListener('pointermove',e=>{if(!dragging)return;potSet(i,startVal+(startY-e.clientY)*6);});
-    k.addEventListener('pointerup',()=>dragging=false);k.addEventListener('pointercancel',()=>dragging=false);
-    k.addEventListener('wheel',e=>{e.preventDefault();potSet(i,pots[i]+(e.deltaY<0?26:-26));},{passive:false});
-    k.addEventListener('keydown',e=>{let d=0;if(e.key==='ArrowUp'||e.key==='ArrowRight')d=16;
-      if(e.key==='ArrowDown'||e.key==='ArrowLeft')d=-16;if(e.key==='PageUp')d=128;if(e.key==='PageDown')d=-128;
-      if(e.key==='Home'){potSet(i,0);e.preventDefault();return;}if(e.key==='End'){potSet(i,1023);e.preventDefault();return;}
-      if(d){potSet(i,pots[i]+d);e.preventDefault();}});
+function refreshRack(){
+  if(!smallScreen.matches)document.body.classList.remove('mobile-notice');
+  const count=units.length;document.body.classList.toggle('mobile-multi',smallScreen.matches&&count>1);
+  $('mobileMultiMessage').hidden=!(smallScreen.matches&&count>1);
+  $('rackCount').textContent=count+' Lunchbeat'+(count===1?'':'s');
+  $('addLunchbeat').disabled=count>=4;
+  $('addLunchbeat').textContent=count>=4?'MAX 4 LUNCHBEATS':'+ ADD LUNCHBEAT';
+  $('playAll').textContent=units.some(u=>u.playing)?'STOP ALL':'PLAY ALL';
+  units.forEach((u,i)=>{
+    u.el.querySelector('[data-unit-number]').textContent=String(i+1).padStart(2,'0');
+    u.el.querySelector('[data-unit-detail]').textContent=i===0?'Master clock · Trigger out':'SYNC IN from Lunchbeat '+i+' · Trigger out';
+    u.el.querySelector('[data-remove]').hidden=i===0;
+    if(i>0&&!u.external){u.external=true;send(u.id,{type:'external',value:true});}
   });
-  document.querySelectorAll('.sound-button').forEach(b=>{
-    let held=false;const i=+b.dataset.sound;
-    b.addEventListener('pointerdown',e=>{if(e.button!==0)return;held=true;b.classList.add('pressed');toggleSound(i,true);});
-    function release(){if(!held)return;held=false;b.classList.remove('pressed');if(!editmode&&!setmode)toggleSound(i,false);}
-    b.addEventListener('pointerup',release);b.addEventListener('pointercancel',release);b.addEventListener('pointerleave',release);
-    b.addEventListener('click',e=>{if(e.detail===0){toggleSound(i,true);if(!editmode&&!setmode)setTimeout(()=>toggleSound(i,false),160);}});
-  });
-  $('playButton').addEventListener('click',pressPlay);
-  let editHold=null,editLong=false;
-  const edit=$('editButton');
-  edit.addEventListener('pointerdown',e=>{if(e.button!==0)return;editLong=false;edit.classList.add('pressed');
-    editHold=setTimeout(()=>{editLong=true;toggleSetup();},2100);});
-  edit.addEventListener('pointerup',()=>{clearTimeout(editHold);edit.classList.remove('pressed');});
-  edit.addEventListener('pointerleave',()=>{clearTimeout(editHold);edit.classList.remove('pressed');});
-  edit.addEventListener('pointercancel',()=>{clearTimeout(editHold);edit.classList.remove('pressed');});
-  edit.addEventListener('click',e=>{if(e.detail===0){editShort();return;}if(!editLong)editShort();editLong=false;});
-  $('demoButton').addEventListener('click',()=>setSequence(groove));
-  $('originalButton').addEventListener('click',()=>setSequence(original));
-  $('clearButton').addEventListener('click',()=>setSequence(Array(8).fill(0)));
-  $('resetButton').addEventListener('click',resetDevice);
-  $('pulseButton').addEventListener('click',()=>send({type:'trig'}));
-  const heldKeys=new Set();
-  document.addEventListener('keydown',e=>{const target=e.target;if(['INPUT','TEXTAREA'].includes(target.tagName)||target.isContentEditable)return;
-    if(e.key===' '){e.preventDefault();if(!e.repeat)pressPlay();return;}
-    if(e.key.toLowerCase()==='e'){if(!e.repeat){if(e.shiftKey)toggleSetup();else editShort();}return;}
-    if(/^[1-4]$/.test(e.key)&&!e.repeat){const i=+e.key-1;heldKeys.add(i);toggleSound(i,true);e.preventDefault();}
-  });
-  document.addEventListener('keyup',e=>{if(/^[1-4]$/.test(e.key)){const i=+e.key-1;if(heldKeys.has(i)){heldKeys.delete(i);if(!editmode&&!setmode)toggleSound(i,false);}}});
-  window.addEventListener('blur',()=>{for(const i of heldKeys)send({type:'live',i,down:false});heldKeys.clear();});
 }
-for(let i=0;i<8;i++){const col=document.createElement('div');col.className='led-col';col.innerHTML='<div class="led"></div><div class="led-number">'+(i+1)+'</div>';$('lights').appendChild(col);
- const p=document.createElement('div');p.className='step-pill';p.title='Step '+(i+1);p.textContent=String(i+1).padStart(2,'0');$('stepOverview').appendChild(p);}
-for(let i=0;i<5;i++)potSet(i,pots[i]);installEvents();updateDisplay();
-setInterval(()=>{blink=!blink;updateDisplay();},95);
+function createUnit(){
+  if(smallScreen.matches&&units.length){$('mobileMultiMessage').hidden=false;
+    document.body.classList.add('mobile-notice');$('mobileMultiMessage').scrollIntoView({behavior:'smooth',block:'center'});return;}
+  if(units.length>=4)return;
+  if(units.length&&units[0].external){units[0].external=false;send(units[0].id,{type:'external',value:false});}
+  const u=new LunchbeatUI(nextId++,units.length);
+  const rack=$('rack');if(units.length){const wire=document.createElement('div');wire.className='cable';wire.textContent='TRIG OUT → SYNC IN · VIRTUAL CABLE';rack.appendChild(wire);}
+  units.push(u);rack.appendChild(u.el);setSelected(u);
+  if(audioNode){broadcast({type:'add',id:u.id,seq:u.seq,pots:u.pots,division:u.division,external:u.external,playing:units[0].playing,playstep:u.playstep,volume:+u.ui('volume').value/100});
+    u.ui('enableAudio').textContent='AUDIO ON';u.ui('enableAudio').classList.remove('highlight');u.ui('statusText').textContent='AUDIO READY';u.ui('statusDot').classList.add('on');}
+  refreshRack();
+}
+function removeUnit(u){
+  if(units.length===1||units[0]===u)return;
+  const i=units.indexOf(u);if(i<0)return;
+  broadcast({type:'remove',id:u.id});units.splice(i,1);
+  u.el.remove();$('rack').querySelectorAll('.cable').forEach(c=>c.remove());
+  for(let j=1;j<units.length;j++){const wire=document.createElement('div');wire.className='cable';wire.textContent='TRIG OUT → SYNC IN · VIRTUAL CABLE';units[j].el.before(wire);}
+  if(selected===u)setSelected(units[Math.max(0,Math.min(i,units.length-1))]);
+  refreshRack();
+}
+const keysHeld=new Map();
+document.addEventListener('keydown',e=>{
+  if(!selected)return;
+  const t=e.target;if(['INPUT','TEXTAREA','SELECT'].includes(t.tagName)||t.isContentEditable)return;
+  if(e.key===' '){if(e.target instanceof HTMLButtonElement)return;e.preventDefault();if(!e.repeat)selected.pressPlay();return;}
+  if(e.key.toLowerCase()==='e'){if(!e.repeat){if(e.shiftKey)selected.toggleSetup();else selected.editShort();}return;}
+  if(/^[1-4]$/.test(e.key)&&!e.repeat){const i=+e.key-1;keysHeld.set(i,selected);selected.toggleSound(i,true);e.preventDefault();}
+});
+document.addEventListener('keyup',e=>{if(/^[1-4]$/.test(e.key)&&selected){const i=+e.key-1;if(keysHeld.has(i)){const owner=keysHeld.get(i);keysHeld.delete(i);if(!owner.editmode&&!owner.setmode)owner.toggleSound(i,false);}}});
+window.addEventListener('blur',()=>{for(const u of units)for(let i=0;i<4;i++){u.heldUI[i]=false;send(u.id,{type:'live',i,down:false});}keysHeld.clear();});
+$('addLunchbeat').addEventListener('click',createUnit);
+$('keepOne').addEventListener('click',()=>{for(const u of units.slice(1))removeUnit(u);document.body.classList.remove('mobile-notice');refreshRack();});
+$('playAll').addEventListener('click',async()=>{
+  try{await ensureAudio();const stop=units.some(u=>u.playing);
+    if(stop){for(const u of units){if(u.playing)send(u.id,{type:'play'});}}
+    else {for(const u of units.slice(1)){if(!u.playing)send(u.id,{type:'play'});}
+      if(!units[0].playing)send(units[0].id,{type:'play'});}
+  }catch(e){}
+});
+smallScreen.addEventListener('change',refreshRack);
+createUnit();setInterval(()=>{for(const u of units){u.blink=!u.blink;u.update();}refreshPlayAll();},95);
+function refreshPlayAll(){$('playAll').textContent=units.some(u=>u.playing)?'STOP ALL':'PLAY ALL';}
 })();
 </script>
 </body>

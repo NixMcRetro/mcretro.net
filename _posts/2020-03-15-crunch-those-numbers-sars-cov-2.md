@@ -22,7 +22,7 @@ Both are important in different ways. Both now run on my Intel NUC, the NUC8I7BE
 
 See my progress [here](https://web.archive.org/web/20231014233339/https://boinc.netsoft-online.com/e107_plugins/boinc/get_user.php?cpid=676f3c4f4f9d35dfd294f5a778fb4eaf)!
 
-By 28 March I had moved the NUC8i7BEH into an Akasa Turing fanless case. After running Folding@home and Rosetta@home overnight at around 22 degrees ambient, the CPU seemed to top out around 71 degrees. Way past cool!
+**Update 28th March 2020:** I've since moved the NUC8i7BEH into an Akasa Turing fanless case. After running Folding@home and Rosetta@home overnight at around 22 degrees ambient, the CPU seemed to top out around 71 degrees. Way past cool!
 
 ### Sources
 

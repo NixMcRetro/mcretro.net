@@ -52,7 +52,7 @@ It was all worth it though as the Super Famicom booted up.
 
 Will it continue to work through the [copy](https://tcrf.net/EarthBound) [protections](http://media.earthboundcentral.com/2011/05/earthbounds-copy-protection/index.html)? Time will tell, sooner or later. Time will tell.
 
-Finding an old note from myself later reminded me that I'd removed the donor CIC during my 2013 experiments with this homemade EarthBound cartridge. My guess then was that the PAL donor cart was giving the console's SuperCIC the wrong region for the replacement game. That experiment is documented in [SNES SuperCIC Switchless Modchip - More Testing (Part 3)](/snes-supercic-switchless-modchip-more-testing-part-3/). This time, at least the cartridge has its own SuperCIC key!
+**Update:** I later found an old note from myself that reminded me I'd removed the donor CIC during my 2013 experiments with this homemade EarthBound cartridge. My guess then was that the PAL donor cart was giving the console's SuperCIC the wrong region for the replacement game. That experiment is documented in [SNES SuperCIC Switchless Modchip - More Testing (Part 3)](/snes-supercic-switchless-modchip-more-testing-part-3/). This time, at least the cartridge has its own SuperCIC key!
 
 ### Sources
 

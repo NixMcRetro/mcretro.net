@@ -82,9 +82,9 @@ While it would be nice to be able to do things on a 68000 powered Mac, we're jus
 - [Evolt browser archive - MacWeb 1.1.1E](https://browsers.evolt.org/browsers/archive/macweb/1.1.1E/)
 - [Evolt browser archive - MacWeb 2.0](https://browsers.evolt.org/browsers/archive/macweb/2.0/)
 - [Evolt browser archive - MacWeb 0.98a](https://browsers.evolt.org/browsers/archive/macweb/0.98a/)
-- [68K Mac Revival - Downloads (archived 4 August 2019)](https://web.archive.org/web/20190804193457/http://www.angelfire.com/mac/68kmacrevival/68kdownloads.html)
-- [Matti Haveri - 68000 Macintosh software notes (archived 6 April 2001)](https://web.archive.org/web/20010406030443/http://www.sjoki.uta.fi/~shmhav/68000.txt)
-- [Jag's House - Classic Mac Internet Links (archived 3 August 2004)](https://web.archive.org/web/20040803073531/http://www.jagshouse.com/classicinternet.html)
+- [68K Mac Revival - Downloads (archived 4th August 2019)](https://web.archive.org/web/20190804193457/http://www.angelfire.com/mac/68kmacrevival/68kdownloads.html)
+- [Matti Haveri - 68000 Macintosh software notes (archived 6th April 2001)](https://web.archive.org/web/20010406030443/http://www.sjoki.uta.fi/~shmhav/68000.txt)
+- [Jag's House - Classic Mac Internet Links (archived 3rd August 2004)](https://web.archive.org/web/20040803073531/http://www.jagshouse.com/classicinternet.html)
 - [Gamba - Where to Download 680x0 Browsers](https://vintageapple.org/gamba2/browsers.html)
 
 ### Related posts

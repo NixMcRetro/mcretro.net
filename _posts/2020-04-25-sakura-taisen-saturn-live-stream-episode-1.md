@@ -14,7 +14,7 @@ ai_assistance:
 
 Today we take a look at Sakura Taisen for the Sega Saturn. We're using an Open Source Scan Converter (OSSC) from an RGB source with a peppering of scanlines at 6%. Everyone needs more scanlines in their lives. A bit awkward on full-motion video, but what can you do!
 
-The Saturn game received its English fan-translation patch on 15 December 2019, so this was still wonderfully fresh when I started playing it. I've always been a fan of the soundtracks, which were released as box sets. They are fantastic! Project Sakura Wars (Shin Sakura Taisen) was also on the way in English, which only added to the excitement.
+The Saturn game received its English fan-translation patch on 15th December 2019, so this was still wonderfully fresh when I started playing it. I've always been a fan of the soundtracks, which were released as box sets. They are fantastic! Project Sakura Wars (Shin Sakura Taisen) was also on the way in English, which only added to the excitement.
 
 Other great games like Final Fantasy VII were also being remade for modern consoles. Maybe I finally needed to install that PSIO from many years ago into my PlayStation!
 

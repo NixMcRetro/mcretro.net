@@ -57,5 +57,5 @@ If you find yourself supporting policies of the right, consider how you got ther
 
 - [Australian Electoral Commission - 2023 referendum national results](https://results.aec.gov.au/29581/Website/ReferendumNationalResults-29581.htm)
 - [Parliamentary Library - Constitution Alteration (Aboriginal and Torres Strait Islander Voice) 2023](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/bd/bd2223a/23bd080)
-- [Federal Register of Legislation - Referendum (Machinery Provisions) Act 1984, 27 March 2023 compilation, Schedule 3](https://www.legislation.gov.au/C2004A02908/2023-03-27/text)
+- [Federal Register of Legislation - Referendum (Machinery Provisions) Act 1984, 27th March 2023 compilation, Schedule 3](https://www.legislation.gov.au/C2004A02908/2023-03-27/text)
 - [ABC News - Liberal Party formally opposes the Voice](https://www.abc.net.au/news/2023-04-05/liberal-party-oppose-voice-to-parliament/102188290)

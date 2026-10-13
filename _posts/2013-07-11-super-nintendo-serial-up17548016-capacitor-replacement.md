@@ -16,7 +16,7 @@ We are recapping a 1CHIP SNES today and here's the process I follow and, as a ge
 
 Capacitor life depends on the particular part and its operating conditions, so radial does not automatically mean longer-lived than SMD. I was very much in favour of proactive recapping once hardware reached 15-20 years old, but age alone does not mean every electrolytic needs replacing.
 
-On this unit, attention to the reset switch had already restored video and sound on 30 June. This is the later capacitor replacement, not the repair that first brought it back to life.
+On this unit, attention to the reset switch had already restored video and sound on 30th June. This is the later capacitor replacement, not the repair that first brought it back to life.
 
 ### Related posts
 

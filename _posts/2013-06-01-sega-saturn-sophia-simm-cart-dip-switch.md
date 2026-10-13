@@ -37,7 +37,7 @@ My test notes and possible follow-ups included:
 - [X-Men Vs. Street Fighter](https://www.satakore.com/sega-saturn-game,,T-1227G,,X-Men-Vs.-Street-Fighter-JPN.html) (`T-1227G`), 4 MB RAM cartridge.
 - [Pia Carrot he Youkoso!! 2](https://www.satakore.com/sega-saturn-game,,T-20114G,,Pia-Carrot-he-Youkoso-2-JPN.html) (`T-20114G`), optional 1 MB or 4 MB RAM cartridge in my test notes. I hoped its title screen might help distinguish no RAM, 1 MB and 4 MB configurations.
 
-In my 26 May 2013 forum notes, I reported error screens from both The King of Fighters '96 and X-Men Vs. Street Fighter on the Sophia, and trouble getting the Action Replay Plus recognised as a valid RAM cartridge. A retail Saturn cross-check was mixed: X-Men Vs. Street Fighter still failed with that Action Replay, while The King of Fighters '96 worked.
+In my 26th May 2013 forum notes, I reported error screens from both The King of Fighters '96 and X-Men Vs. Street Fighter on the Sophia, and trouble getting the Action Replay Plus recognised as a valid RAM cartridge. A retail Saturn cross-check was mixed: X-Men Vs. Street Fighter still failed with that Action Replay, while The King of Fighters '96 worked.
 
 I still don't trust "auto" Action Replay cartridges as a clean diagnostic tool for this sort of thing. Better to test known hardware against known configurations.
 

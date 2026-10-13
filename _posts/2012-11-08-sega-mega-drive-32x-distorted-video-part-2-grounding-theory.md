@@ -18,7 +18,7 @@ With the 32X installed, I can also see the distortion while using the Mega-CD, e
 
 Perhaps they really are required. It is worth testing. If the plates solve the problem, they will save me from soldering approximately fifty billion capacitors. At least temporarily.
 
-**Edit, 6 February 2018:** The grounding plates were not the underlying fault. Sega had already documented the problem and issued service procedures for affected Mega Drive motherboards.
+**Edit, 6th February 2018:** The grounding plates were not the underlying fault. Sega had already documented the problem and issued service procedures for affected Mega Drive motherboards.
 
 PAL and Asian Model 1 VA4 boards can have poor EDCLK and VCLK signal quality when paired with the 32X. In the EDCLK case, the signal can become increasingly unstable as the console warms up, causing the 32X-generated portion of the picture to jitter and eventually lock up. The important detail is that Sega's repair modifies the **Mega Drive motherboard**, not the 32X. That fits the pattern I had been seeing across several different 32X units far better than the grounding-plate theory.
 
@@ -29,5 +29,5 @@ PAL and Asian Model 1 VA4 boards can have poor EDCLK and VCLK signal quality whe
 
 ### Sources
 
-- [Sega - 32X Service Bulletins](https://consolemods.org/wiki/images/8/8b/Sega_32X_Service_Bulletins.pdf) - includes the PAL VA4 EDCLK bulletin of 13 December 1994 and VA4 VCLK bulletin of 28 March 1995.
+- [Sega - 32X Service Bulletins](https://consolemods.org/wiki/images/8/8b/Sega_32X_Service_Bulletins.pdf) - includes the PAL VA4 EDCLK bulletin of 13th December 1994 and VA4 VCLK bulletin of 28th March 1995.
 - [ConsoleMods - 32X Service Bulletin Fixes](https://consolemods.org/wiki/Genesis:32X_Service_Bulletin_Fixes) - summarises Sega service procedures for PAL and Asian VA4 Mega Drive clock-signal instability when used with 32X hardware.

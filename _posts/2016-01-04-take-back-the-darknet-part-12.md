@@ -50,6 +50,6 @@ Next we get to the vanity onion-address experiment and then finally test the sit
 
 ### Sources
 
-- [McRetro - Take Back the Darknet, Part 12 (18 July 2019 capture)](https://web.archive.org/web/20190718115515/https://mcretro.net/take-back-the-darknet-part-12/)
+- [McRetro - Take Back the Darknet, Part 12 (18th July 2019 capture)](https://web.archive.org/web/20190718115515/https://mcretro.net/take-back-the-darknet-part-12/)
 
 Advance onward to [Part 13](/take-back-the-darknet-part-13/) or head back to the table of contents on [Part 1](/take-back-the-darknet-part-1/).

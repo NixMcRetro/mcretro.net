@@ -20,7 +20,7 @@ Keep up the good work and I'll be playing W3D in no time!
 
 **Update:** Apparently it should have worked, but it didn't in my case. Perhaps the strange development hardware I was using had something to do with it, although I never established that. :)
 
-VBT continued developing the Saturn port after this experiment. On 15 December 2023, VBT described this old version as deprecated; on 21 December, he pointed users towards the newer project. The video above remains a snapshot of the port during its early development.
+VBT continued developing the Saturn port after this experiment. On 15th December 2023, VBT described this old version as deprecated; on 21st December, he pointed users towards the newer project. The video above remains a snapshot of the port during its early development.
 
 ### Sources
 

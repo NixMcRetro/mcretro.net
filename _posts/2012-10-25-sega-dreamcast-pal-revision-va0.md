@@ -22,7 +22,7 @@ I am also getting disturbingly good at Bomberman.
 
 The GD-ROM drive makes a little clicking noise and the bearings in the heatsink fan assembly sound crunchy at times. I really need to put it beside my Japanese VA0 and compare them properly.
 
-What makes this unit especially interesting is the date stamp inside the top shell: April 1999. The Dreamcast did not launch commercially in Europe until 14 October 1999, so this shell predates the European launch by roughly six months.
+What makes this unit especially interesting is the date stamp inside the top shell: April 1999. The Dreamcast did not launch commercially in Europe until 14th October 1999, so this shell predates the European launch by roughly six months.
 
 The machine has the PAL blue-swirl startup and no functioning modem. It also carries the unusual "MODIFIED CONSOLE, FOR DISPLAY PURPOSES ONLY, NOT SUITABLE FOR HOME USE" label I mentioned when I first acquired it. All of that makes some sort of pre-launch display or demonstration use plausible. Plausible is as far as I am willing to go though. I do not have documentation establishing exactly who used this machine or what its original purpose was.
 
@@ -43,4 +43,4 @@ Next up I'll pull it apart properly and compare the internals with my Japanese V
 ### Sources
 
 - [ConsoleMods - Dreamcast Model Differences](https://consolemods.org/wiki/Dreamcast:Dreamcast_Model_Differences) - summarises revision differences and links back to this machine's photographs as evidence of PAL VA0 hardware.
-- [TSSZ News - Dreamcast Launch in Europe Delayed](https://lastminutecontinue.com/news/dreamcast-launch-in-europe-delayed/) - reproduces Sega Europe's 27 August 1999 announcement of the 14 October launch.
+- [TSSZ News - Dreamcast Launch in Europe Delayed](https://lastminutecontinue.com/news/dreamcast-launch-in-europe-delayed/) - reproduces Sega Europe's 27th August 1999 announcement of the 14th October launch.

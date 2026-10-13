@@ -12,7 +12,7 @@ ai_assistance:
 
 {% include youtube.html id="tAXBUDGAPD8" %}
 
-A quick stroll around the internals of the Sega Mega-CD HAA-2910. This one is a VA0 revision, making it an early Mega-CD. Launch-day console? I can't prove that from the board revision alone. Sega launched the Mega-CD in Japan on 12 December 1991. Definitely in time for Christmas - probably.
+A quick stroll around the internals of the Sega Mega-CD HAA-2910. This one is a VA0 revision, making it an early Mega-CD. Launch-day console? I can't prove that from the board revision alone. Sega launched the Mega-CD in Japan on 12th December 1991. Definitely in time for Christmas - probably.
 
 In other news [geocities.mcretro.net](/homepages/geocities) has had a little bit of work done. Mostly in the way the term "geocities.com" and "www.geocities.com" are handled. Turns out Apache2 has a module called mod_substitute and it appears to work well. Not much is online yet while I primarily use [the Athens root](/homepages/geocities) as a test bed to find obvious issues and try and fix them server-side before pushing more data online.
 

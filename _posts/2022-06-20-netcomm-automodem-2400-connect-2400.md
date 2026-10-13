@@ -20,4 +20,4 @@ The NetComm AutoModem uses a Rockwell RC224ATF R6641-14 with a 9337 date code, o
 
 ### Sources
 
-- [EDN - High-speed modem (John Gallant, 12 May 1994)](https://www.edn.com/edn-access-05-12-94-high-speed-modem/)
+- [EDN - High-speed modem (John Gallant, 12th May 1994)](https://www.edn.com/edn-access-05-12-94-high-speed-modem/)

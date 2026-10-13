@@ -76,7 +76,7 @@ Now to deal with SSL keys (if you are going down the HTTPS / SSL path).
 
 ### Sources
 
-- [McRetro - Take Back the Darknet, Part 10 (24 August 2019 capture)](https://web.archive.org/web/20190824013219/https://mcretro.net/take-back-the-darknet-part-10/)
+- [McRetro - Take Back the Darknet, Part 10 (24th August 2019 capture)](https://web.archive.org/web/20190824013219/https://mcretro.net/take-back-the-darknet-part-10/)
 - [Debian Jessie - tor(1)](https://manpages.debian.org/jessie/tor/tor.1.en.html)
 - [Tor Project - Onion Service version 2 deprecation timeline](https://blog.torproject.org/v2-deprecation-timeline/)
 - [Tor Project - Set up Your Onion Service](https://community.torproject.org/onion-services/setup/)

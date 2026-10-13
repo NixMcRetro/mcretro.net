@@ -16,7 +16,7 @@ Who would have thought that it would be so easy? Just a simple rejigger of the r
 
 I'll replace the caps anyway in this unit after all these years. That is a separate maintenance plan: capacitor life depends on the part and its operating conditions, and age alone does not prove that the capacitors caused this fault.
 
-The capacitor replacement was recorded in a later post on 11 July, after this reset-switch repair.
+The capacitor replacement was recorded in a later post on 11th July, after this reset-switch repair.
 
 ### Related posts
 

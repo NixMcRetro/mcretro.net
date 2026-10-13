@@ -20,9 +20,9 @@ How long protection after infection or vaccination would last was still an open 
 
 ### Sources
 
-- [Australian Government - ATAGI and THANZ statement on TTS and AstraZeneca, 23 May 2021](https://www.health.gov.au/news/joint-statement-from-atagi-and-thanz-on-thrombosis-with-thrombocytopenia-syndrome-tts-and-the-use-of-covid-19-vaccine-astrazeneca?language=en)
-- [Australian Government - Revised ATAGI AstraZeneca recommendations, 17 June 2021](https://www.health.gov.au/news/atagi-statement-on-revised-recommendations-on-the-use-of-covid-19-vaccine-astrazeneca-17-june-2021?language=en)
-- [Australian Government - Greg Hunt press conference, 29 June 2021](https://www.health.gov.au/ministers/the-hon-greg-hunt-mp/media/press-conference-in-somerville-on-29-june-2021-about-covid-19-cases-national-cabinet-and-the-vaccine-rollout?language=en)
+- [Australian Government - ATAGI and THANZ statement on TTS and AstraZeneca, 23rd May 2021](https://www.health.gov.au/news/joint-statement-from-atagi-and-thanz-on-thrombosis-with-thrombocytopenia-syndrome-tts-and-the-use-of-covid-19-vaccine-astrazeneca?language=en)
+- [Australian Government - Revised ATAGI AstraZeneca recommendations, 17th June 2021](https://www.health.gov.au/news/atagi-statement-on-revised-recommendations-on-the-use-of-covid-19-vaccine-astrazeneca-17-june-2021?language=en)
+- [Australian Government - Greg Hunt press conference, 29th June 2021](https://www.health.gov.au/ministers/the-hon-greg-hunt-mp/media/press-conference-in-somerville-on-29-june-2021-about-covid-19-cases-national-cabinet-and-the-vaccine-rollout?language=en)
 
 ### Related posts
 

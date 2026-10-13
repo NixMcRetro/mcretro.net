@@ -14,7 +14,7 @@ categories: [devkit, sony, youtube]
 
 One of the admins over at [PSXDEV](http://www.psxdev.net/) sent me a BIOS chip from some old (~1994) Sony PlayStation development hardware to dump: a DTL-H2000, an ISA-bus board designed to live inside a PC.
 
-PlayStation Specifications lists a pre-retail DTL-H2000 kernel dated 28 July 1994.
+PlayStation Specifications lists a pre-retail DTL-H2000 kernel dated 28th July 1994.
 
 The resulting BIOS was shared through this [archived PSXDEV thread](https://web.archive.org/web/20150405104355/http://www.psxdev.net/forum/viewtopic.php?f=54&t=570).
 

@@ -25,6 +25,6 @@ Mac OS X 10.4 Tiger was also the Mac OS X generation that bridged the PowerPC-to
 
 - [ASRock - 775Dual-915GL](https://www.asrock.com/mb/Intel/775Dual-915gl/) - documents the Intel 915GL, ICH6 and GMA 900 platform used by this motherboard.
 - [Apple - Apple to Use Intel Microprocessors Beginning in 2006](https://www.apple.com/newsroom/2005/06/06Apple-to-Use-Intel-Microprocessors-Beginning-in-2006/) - Apple's June 2005 Intel transition announcement and Developer Transition Kit context.
-- [Pierre Dandumont - Test et analyse du kit de transition Intel (DTK) de 2005](https://www.journaldulapin.com/2016/04/09/dtk-intel-apple/) - the 9 April 2016 firsthand examination identifies the 2005 DTK's 915G chipset and GMA 900 graphics.
+- [Pierre Dandumont - Test et analyse du kit de transition Intel (DTK) de 2005](https://www.journaldulapin.com/2016/04/09/dtk-intel-apple/) - the 9th April 2016 firsthand examination identifies the 2005 DTK's 915G chipset and GMA 900 graphics.
 - [Apple - Power Mac G5 Quad and Dual](https://www.apple.com/newsroom/2005/10/19Apple-Introduces-Power-Mac-G5-Quad-Power-Mac-G5-Dual/) - documents the high-end dual-core and quad G5 systems shipping in late 2005.
 - [Apple - First Intel iMac](https://www.apple.com/au/newsroom/2006/01/10Apple-Unveils-New-iMac-with-Intel-Core-Duo-Processor/) - documents the January 2006 retail Intel Mac launch.

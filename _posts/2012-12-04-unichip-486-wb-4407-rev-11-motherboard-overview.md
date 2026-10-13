@@ -29,4 +29,4 @@ I have been silently updating some of the guide pages and the collection pages a
 
 ### Sources
 
-- [Elektroda - GMB-486 UNP - Bios do BARDZO starej płyty głównej, post 26](https://www.elektroda.pl/rtvforum/topic3694152.html) - the 20 May 2020 post reports the matching BIOS prefix, DataExpert vendor identification and Unichip 4407 BIOS version.
+- [Elektroda - GMB-486 UNP - Bios do BARDZO starej płyty głównej, post 26](https://www.elektroda.pl/rtvforum/topic3694152.html) - the 20th May 2020 post reports the matching BIOS prefix, DataExpert vendor identification and Unichip 4407 BIOS version.

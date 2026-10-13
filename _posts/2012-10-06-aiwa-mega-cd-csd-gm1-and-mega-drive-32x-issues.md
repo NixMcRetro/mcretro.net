@@ -45,5 +45,5 @@ I've also started a thread on the [ASSEMblergames forum](https://web.archive.org
 
 - [ConsoleMods - 32X Service Bulletin Fixes](https://consolemods.org/wiki/Genesis:32X_Service_Bulletin_Fixes) - summarises Sega service bulletins for PAL and Asian VA4 Mega Drive clock-signal instability when used with 32X hardware.
 
-- [Sega - Service Bulletin 008: Mega Drive 1 VA4 PAL, 13 December 1994](https://drive.google.com/file/d/1gUPVeXch-TWNjwld4bYFWFZG23_RJ9Be/view) - documents the EDCLK modification for screen shake, slowing sound and lockups as the hardware warms.
-- [Sega - Service Bulletin 012: MD 32X / MD 1 (VA4), 28 March 1995](https://drive.google.com/file/d/1sOElKt5W6S89mjgpqdoGD3c4R3beXH_q/view) - documents the VCLK modification on the Mega Drive motherboard.
+- [Sega - Service Bulletin 008: Mega Drive 1 VA4 PAL, 13th December 1994](https://drive.google.com/file/d/1gUPVeXch-TWNjwld4bYFWFZG23_RJ9Be/view) - documents the EDCLK modification for screen shake, slowing sound and lockups as the hardware warms.
+- [Sega - Service Bulletin 012: MD 32X / MD 1 (VA4), 28th March 1995](https://drive.google.com/file/d/1sOElKt5W6S89mjgpqdoGD3c4R3beXH_q/view) - documents the VCLK modification on the Mega Drive motherboard.

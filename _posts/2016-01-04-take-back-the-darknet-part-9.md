@@ -14,7 +14,7 @@ categories: [guides, raspberry-pi]
 
 **Archive note:** This page documents the January 2016 Raspbian Jessie setup. Read the compatibility and security warning in [Part 1](/take-back-the-darknet-part-1/) before using any of these commands on a current system.
 
-**Formatting warning:** The `VirtualHost`, `Directory` and `IfModule` boundaries below have been recovered from a 24 August 2019 capture of this post. That copy already has malformed `Directory` arguments and smart quotes in the HTTPS and onion configurations. Those defects remain unresolved, so these are incomplete historical fragments, not paste-ready Apache configuration.
+**Formatting warning:** The `VirtualHost`, `Directory` and `IfModule` boundaries below have been recovered from a 24th August 2019 capture of this post. That copy already has malformed `Directory` arguments and smart quotes in the HTTPS and onion configurations. Those defects remain unresolved, so these are incomplete historical fragments, not paste-ready Apache configuration.
 
 First up, here's a cool add-on to limit bandwidth and connections for people visiting your website. Great if you have finite bandwidth on the upstream! Installing it was optional in this setup. The settings are in the `IfModule mod_bw.c` section below: `LargeFileLimit * 1 7200` applies a 7200 bytes-per-second limit (57.6 kbit/s) to files at least 1 kilobyte in size, not 1 byte. `MaxConnection all 20` limits concurrent connections for the matching origin collectively, rather than allowing 20 per visitor. At the time I couldn't remember what `Bandwidth all` did... it sets the available bandwidth for the matching origin, in bytes per second. Install with the following command.
 
@@ -196,7 +196,7 @@ Once that is done we are onto the next part.
 
 ### Sources
 
-- [McRetro - Take Back the Darknet, Part 9 (24 August 2019 capture)](https://web.archive.org/web/20190824000515/https://mcretro.net/take-back-the-darknet-part-9/)
+- [McRetro - Take Back the Darknet, Part 9 (24th August 2019 capture)](https://web.archive.org/web/20190824000515/https://mcretro.net/take-back-the-darknet-part-9/)
 - [Debian Jessie - mod_bw 0.92-11 documentation](https://sources.debian.org/src/libapache2-mod-bw/0.92-11/mod_bw.txt/)
 - [Apache HTTP Server 2.4 - Core Features](https://httpd.apache.org/docs/2.4/mod/core.html)
 - [Apache HTTP Server 2.4 - Binding to Addresses and Ports](https://httpd.apache.org/docs/2.4/bind.html)

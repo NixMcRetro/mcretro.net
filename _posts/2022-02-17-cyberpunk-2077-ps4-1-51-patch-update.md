@@ -58,7 +58,7 @@ I guess for now all I can do is sit here with my pre-ordered v1.00 discs and wai
 
 ### Sources
 
-- [CD Projekt Red - Cannot start the application: corrupted-data error after updating to 1.5/1.51 (archived 17 February 2022)](https://web.archive.org/web/20220217065632/https://support.cdprojektred.com/en/cyberpunk/playstation/sp-technical/issue/2090/cannot-start-the-application-the-data-is-corrupted-error-after-updating-1)
+- [CD Projekt Red - Cannot start the application: corrupted-data error after updating to 1.5/1.51 (archived 17th February 2022)](https://web.archive.org/web/20220217065632/https://support.cdprojektred.com/en/cyberpunk/playstation/sp-technical/issue/2090/cannot-start-the-application-the-data-is-corrupted-error-after-updating-1)
 
 ### Related posts
 

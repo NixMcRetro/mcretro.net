@@ -20,7 +20,7 @@ Not the fastest, but the cool factor is pretty high on this modem. Look at all t
 
 ![](/assets/images/2023/img_1026.jpg)
 
-The firmware reports `891210`, so 10 December 1989 if that field is a date. I dumped the ROM using a [TL866CS programmer](https://proghq.org/wiki/TL866) and originally shared it through the [file server](/files/dumps/), but the download is currently unavailable. The PCB has the markings Banksia Bit Blitzer 124E/1234E-A, which suggests a shared board design across models; it doesn't establish that every version had identical components.
+The firmware reports `891210`, so 10th December 1989 if that field is a date. I dumped the ROM using a [TL866CS programmer](https://proghq.org/wiki/TL866) and originally shared it through the [file server](/files/dumps/), but the download is currently unavailable. The PCB has the markings Banksia Bit Blitzer 124E/1234E-A, which suggests a shared board design across models; it doesn't establish that every version had identical components.
 
 {% include youtube.html id="As8rEfB5iCw" %}
 

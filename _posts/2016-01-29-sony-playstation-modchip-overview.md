@@ -38,7 +38,7 @@ OneChip is specifically aimed at the PAL PS one and includes the additional boot
 
 ![TL866CS](/assets/images/2016/img_0450.jpg)
 
-**Later discovery, 5 February 2016:** I worked out why the Mayumi-programmed PIC12C508A and PIC12F508 chips would not read back normally: the original Mayumi v4 code had code protection enabled. That was why the readback differed from some of the MultiMode3 chips I had programmed. The protected readback did not, by itself, mean programming had failed.
+**Later discovery, 5th February 2016:** I worked out why the Mayumi-programmed PIC12C508A and PIC12F508 chips would not read back normally: the original Mayumi v4 code had code protection enabled. That was why the readback differed from some of the MultiMode3 chips I had programmed. The protected readback did not, by itself, mean programming had failed.
 
 It's amazing what you learn after going back to what you were already supposed to know.
 

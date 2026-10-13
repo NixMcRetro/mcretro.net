@@ -29,6 +29,9 @@ But right now the new shop is looking promising and I've even worked out that I 
 ### Sources
 
 - [InspIRCd Documentation - How to enable TLS on your IRC network](https://docs.inspircd.org/tutorials/enable-tls/)
+- [Dynamic DNS ddclient with Namecheap](https://web.archive.org/web/20231014224641/https://ktmresearch.com/2014/10/dynamic-dns-ddclient-with-namecheap/)
+- [Namecheap - Configuring Host for DynDNS](https://www.namecheap.com/support/knowledgebase/article.aspx/43/11/how-do-i-set-up-a-host-for-dynamic-dns)
+- [Namecheap - Configuring ddclient](https://www.namecheap.com/support/knowledgebase/article.aspx/583/11/how-do-i-configure-ddclient)
 
 ### McRetroNet IRC server
 

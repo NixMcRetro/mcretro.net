@@ -26,7 +26,9 @@ At the time, the archive was available at [assembler.mcretro.net](https://web.ar
 
 **P.S.** If a link doesn't work, try right clicking and opening in a new window. I don't quite know how to fix that bug yet or that I will.
 
-By 23 January 2022 I'd also [posted about the rebuild to Obscure Gamers](https://web.archive.org/web/20220123085102/https://www.obscuregamers.com/threads/the-assemblergames-forums-backup-is-back-online-for-browsing.3898/page-2#post-26346). Unfortunately, on 9 October 2022 I had to take my mirror offline as it just wasn't working properly. Maybe one day I'll put it back up, but for now the archived captures preserve this attempt.
+**Update 23rd January 2022:** I also [posted about the rebuild to Obscure Gamers](https://web.archive.org/web/20220123085102/https://www.obscuregamers.com/threads/the-assemblergames-forums-backup-is-back-online-for-browsing.3898/page-2#post-26346).
+
+**Update 9th October 2022:** Unfortunately, I had to take my mirror offline as it just wasn't working properly. Maybe one day I'll put it back up, but for now the archived captures preserve this attempt.
 
 ### Related posts
 

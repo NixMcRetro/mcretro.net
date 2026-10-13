@@ -1,0 +1,33 @@
+name: OP-1 Browser Regression
+
+on:
+  push:
+    branches: [main, op1-v1.1-polish]
+    paths:
+      - 'homepages/op-1/index.html'
+      - '.github/tests/op1-browser-smoke.mjs'
+      - '.github/workflows/op1-browser-tests.yml'
+  pull_request:
+    paths:
+      - 'homepages/op-1/index.html'
+      - '.github/tests/op1-browser-smoke.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.57.0
+          npx playwright install --with-deps chromium firefox webkit
+      - name: Chromium, Firefox and WebKit regression checks
+        run: node .github/tests/op1-browser-smoke.mjs

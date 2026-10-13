@@ -2,7 +2,7 @@
 title: "Apple Macintosh LC 475 Overclocking to 33 MHz"
 author: "Nix McRetro"
 date: 2013-01-01T13:45:33.000+11:00
-last_modified_at: 2026-10-04
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-04
@@ -30,15 +30,7 @@ The processor upgrade is a separate part of this project. The LC 475 originally 
 
 {% include youtube.html id="4_t4jBz-Jts" %}
 
-Which brings us to:
-
-Dude, where's my FPU?
-
-The replacement chip still appeared not to provide an FPU, which was obviously suspicious for something sold to me as a full 68040.
-
-At the time my immediate reaction was:
-
-Counterfeit processor... blighters!
+Which brings us to: Dude, where's my FPU? The replacement chip still appeared not to provide an FPU, which was obviously suspicious for something sold to me as a full 68040. At the time my immediate reaction was: Counterfeit processor... blighters!
 
 I cannot prove that conclusion now. A functioning full MC68040 should provide its integrated FPU, but this particular result could have come from a remarked processor, a defective part or another compatibility or detection problem.
 

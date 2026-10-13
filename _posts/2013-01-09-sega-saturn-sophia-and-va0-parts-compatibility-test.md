@@ -2,7 +2,7 @@
 title: "Sega Saturn Sophia and VA0 Parts Compatibility Test"
 author: "Nix McRetro"
 date: 2013-01-09T14:17:00.000+11:00
-last_modified_at: 2026-10-04
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-04
@@ -28,13 +28,7 @@ No such luck.
 
 Still, proving that two major pieces of otherwise difficult-to-test development hardware actually work is a pretty good consolation prize.
 
-I eventually did find suitable SH-2 processor cards and the Sophia restoration continued through 2013.
-
-For now, though, this takes two more unknowns off the repair list. I'll also be taking much more detailed photos as the machine slowly goes back together.
-
-Yes, slowly.
-
-Very slowly.
+For now, though, this takes two more unknowns off the repair list. I'll also be taking much more detailed photos as the machine slowly goes back together over the next few weeks. Yes, I am that slow at the moment.
 
 ### Related posts
 

@@ -52,7 +52,7 @@ This first video shows part of the ROM flashing process using EarthBound as an e
 
 The second video is a guide to soldering the TSOP device itself. At the time, I was planning a follow-up on programming.
 
-**January 2020 Edit:** A later write-up from [The Poor Student Hobbyist](https://thepoorstudenthobbyist.com/2017/09/14/how-to-make-a-snes-reproduction-cartridge/#step7d) also goes through SNES reproduction-cartridge construction in much more detail, with several board and chip options.
+**Update January 2020**: A later write-up from [The Poor Student Hobbyist](https://thepoorstudenthobbyist.com/2017/09/14/how-to-make-a-snes-reproduction-cartridge/#step7d) also goes through SNES reproduction-cartridge construction in much more detail, with several board and chip options.
 
 And of course, remember to have fun! Good luck! :)
 

@@ -16,4 +16,4 @@ Sometimes even I forget I have a gaming channel on YouTube - but I do! :) Here's
 
 {% include youtube.html id="C4CtRbjUh8Q" %}
 
-I am thinking of playing Fallout 4 again using the original install disc **without any updates**. Bugs everywhere. There've been plenty of patches and Bethesda have done a great job tidying things up... but the bugs are half the reason I enjoyed the game so much! :P
+I am thinking of playing Fallout 4 again using the original install disc **without any updates**. Bugs everywhere. There've been what felt like a good ten patches and Bethesda have done a great job patching up the bugs... but that's half the reason I enjoyed the game so much! :P

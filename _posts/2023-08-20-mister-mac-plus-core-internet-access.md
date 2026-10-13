@@ -12,7 +12,7 @@ ai_assistance:
 
 {% include youtube.html id="W9TQBRUclFc" %}
 
-Last year we were playing around with the Macintosh Classic, thanks to [Pendleton115](https://web.archive.org/web/20230904050034/http://pendleton115.net/). We wanted to get it internet-ready, but the old browsers were fighting my modern hosting setup. At the time I blamed HTTP/0.9; [later testing](/mac-web-browsers-from-the-90s-and-http-0-9/) showed MacWeb, Mosaic and Netscape reaching Apache as HTTP/1.0. The MiSTer has a Mac Plus core, and the original Plus gives us the right sort of starting point: Motorola 68000 at a whopping 8MHz, up to 4MB RAM, with System 7.5.5 as the last supported system version.
+Last year we were playing around with the Macintosh Classic, thanks to [Tim](https://pendleton115.net/). We wanted to get it internet-ready, but the old browsers were fighting my modern hosting setup. At the time I blamed HTTP/0.9; [later testing](/mac-web-browsers-from-the-90s-and-http-0-9/) showed MacWeb, Mosaic and Netscape reaching Apache as HTTP/1.0. The MiSTer has a Mac Plus core, and the original Plus gives us the right sort of starting point: Motorola 68000 at a whopping 8MHz, up to 4MB RAM, with System 7.5.5 as the last supported system version.
 
 {% include youtube.html id="eApRV4d1zwg" %}
 

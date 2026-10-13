@@ -37,4 +37,4 @@ For now, we play Horizon Zero Dawn, which is proving to be a beautiful, stable g
 ### Sources
 
 - [Electronic Arts - Save the Galaxy in the Epic Saga of Commander Shepard With Mass Effect Legendary Edition Today](https://news.ea.com/press-releases/press-releases-details/2021/Save-the-Galaxy-in-the-Epic-Saga-of-Commander-Shepard-With-Mass-Effect-Legendary-Edition-Today/)
-- [Blu-ray Disc Association - Blu-ray Disc Format General, 5th Edition (2018), sections 1.2 and 1.6 (archived 28 October 2021)](https://web.archive.org/web/20211028160330/http://www.blu-raydisc.com/Assets/Downloadablefile/White_Paper_General_5th_20180216.pdf)
+- [Blu-ray Disc Association - Blu-ray Disc Format General, 5th Edition (2018), sections 1.2 and 1.6 (archived 28th October 2021)](https://web.archive.org/web/20211028160330/http://www.blu-raydisc.com/Assets/Downloadablefile/White_Paper_General_5th_20180216.pdf)

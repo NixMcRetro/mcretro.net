@@ -30,7 +30,7 @@ Meanwhile I had rebuilt the website again, without breaking too many things. Act
 
 Oh... and I broke the darknet side of things again. WordPress 4.5.3 seemed to have broken my make-all-links-relative-not-bloody-absolute plugin. That could be a problem...
 
-**Review note (8 October 2026):** The surviving text names WordPress 4.5.3, released in June 2016, after this post's May publication date. It is unclear whether this was a later edit or a mistaken version number.
+**Review note (8th October 2026):** The surviving text names WordPress 4.5.3, released in June 2016, after this post's May publication date. It is unclear whether this was a later edit or a mistaken version number.
 
 Stay retro, readers!
 

@@ -16,9 +16,9 @@ categories: [guides, raspberry-pi]
 
 This was the HTTPS route I was experimenting with in January 2016: OpenSSL created a private key and certificate-signing request, with CAcert intended as the certificate authority. The walkthrough I was following is preserved [here](https://samhobbs.co.uk/2014/04/ssl-certificate-signing-cacert-raspberry-pi-ubuntu-debian).
 
-The surviving instructions create `tim.key` and `tim.csr`, but omit the step that produces the `tim.crt` used later. CAcert's root was also not automatically trusted by mainstream browsers; clients needed to trust it separately. Let's Encrypt had entered public beta on 3 December 2015, just before this article, offering another historical route to publicly trusted certificates.
+The surviving instructions create `tim.key` and `tim.csr`, but omit the step that produces the `tim.crt` used later. CAcert's root was also not automatically trusted by mainstream browsers; clients needed to trust it separately. Let's Encrypt had entered public beta on 3rd December 2015, just before this article, offering another historical route to publicly trusted certificates.
 
-The command line breaks below have been restored from a 24 August 2019 capture, but that copy has the same certificate-issuance gap. This remains an incomplete record of the experiment, rather than current HTTPS deployment instructions.
+The command line breaks below have been restored from a 24th August 2019 capture, but that copy has the same certificate-issuance gap. This remains an incomplete record of the experiment, rather than current HTTPS deployment instructions.
 
 You'll need three things in the intended workflow: a `.csr` certificate signing request, a `.crt` signed certificate file and a `.key` private key file.
 
@@ -76,9 +76,9 @@ sudo chmod 644 /etc/ssl/certs/tim.crt
 
 ### Sources
 
-- [McRetro - Take Back the Darknet, Part 11 (24 August 2019 capture)](https://web.archive.org/web/20190824013202/https://mcretro.net/take-back-the-darknet-part-11/)
+- [McRetro - Take Back the Darknet, Part 11 (24th August 2019 capture)](https://web.archive.org/web/20190824013202/https://mcretro.net/take-back-the-darknet-part-11/)
 - [Sam Hobbs - SSL certificate signing with CAcert](https://samhobbs.co.uk/2014/04/ssl-certificate-signing-cacert-raspberry-pi-ubuntu-debian)
 - [CAcert - Browser Client / Root Certificate Trust Information](https://web.archive.org/web/20151230164623/http://wiki.cacert.org/FAQ/BrowserClients)
-- [Let's Encrypt - Entering Public Beta, 3 December 2015](https://letsencrypt.org/2015/12/03/entering-public-beta)
+- [Let's Encrypt - Entering Public Beta, 3rd December 2015](https://letsencrypt.org/2015/12/03/entering-public-beta)
 
 Advance onward to [part 12](/take-back-the-darknet-part-12/) or head back to the table of contents on [page 1](/take-back-the-darknet-part-1/).

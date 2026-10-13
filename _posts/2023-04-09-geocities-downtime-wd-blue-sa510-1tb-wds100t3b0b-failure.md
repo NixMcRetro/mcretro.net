@@ -12,7 +12,7 @@ ai_assistance:
 
 ![](/assets/images/2023/img_1002.jpg)
 
-Back in late December, and I'm talking right on 31 December 2022, GeoCities crashed hard. Its SSD had become unusable for normal writes while running firmware 52008100. Firmware, I'm looking at you! It was a very relevant suspect, though this one failed drive doesn't prove it was the only possible cause.
+Back in late December, and I'm talking right on 31st December 2022, GeoCities crashed hard. Its SSD had become unusable for normal writes while running firmware 52008100. Firmware, I'm looking at you! It was a very relevant suspect, though this one failed drive doesn't prove it was the only possible cause.
 
 ![](/assets/images/2023/img_1003.jpg)
 
@@ -28,7 +28,7 @@ The above is my secondary drive, the offline backup for GeoCities. Interestingly
 
 ![](/assets/images/2023/img_1004.jpg)
 
-[I was not alone](https://community.wd.com/t/wd-blue-250-gb-sa510-issues/279814). Both drives were running 52008100, one of the firmware versions covered by [Western Digital's critical update notice](https://web.archive.org/web/20230519165540/https://support-en.wd.com/app/answers/detailweb/a_id/50208). The good news was that 52020100 was available, and my backup drive accepted it. WD's [later release history](https://web.archive.org/web/20231015000448/https://support-en.wd.com/app/answers/detailweb/a_id/50208/kw/SA510) dates that detection fix to 27 October 2022, before this failure. It also lists 52046100, dated 25 May 2023, for a read-only issue. That second fix came after this April post, so it helps explain the firmware suspicion in hindsight; it wasn't the update I was trying here.
+[I was not alone](https://community.wd.com/t/wd-blue-250-gb-sa510-issues/279814). Both drives were running 52008100, one of the firmware versions covered by [Western Digital's critical update notice](https://web.archive.org/web/20230519165540/https://support-en.wd.com/app/answers/detailweb/a_id/50208). The good news was that 52020100 was available, and my backup drive accepted it. WD's [later release history](https://web.archive.org/web/20231015000448/https://support-en.wd.com/app/answers/detailweb/a_id/50208/kw/SA510) dates that detection fix to 27th October 2022, before this failure. It also lists 52046100, dated 25th May 2023, for a read-only issue. That second fix came after this April post, so it helps explain the firmware suspicion in hindsight; it wasn't the update I was trying here.
 
 ![](/assets/images/2023/img_1005.jpg)
 

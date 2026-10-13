@@ -40,7 +40,7 @@ Wait a long time, check Activity Monitor for disk activity.
 
 ```
 
-**Oct 2015 Edit:** Since OS X 10.11 El Capitan was released, I found a great little program called [ApplePi-Baker](https://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/), then at version 1.81. I was unsure whether the commands above still held up under El Capitan, but they had worked well for me in 10.6 Snow Leopard.
+**Update Oct 2015:** Since OS X 10.11 El Capitan was released, I found a great little program called [ApplePi-Baker](https://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/), then at version 1.81. I was unsure whether the commands above still held up under El Capitan, but they had worked well for me in 10.6 Snow Leopard.
 
 ### Sources
 

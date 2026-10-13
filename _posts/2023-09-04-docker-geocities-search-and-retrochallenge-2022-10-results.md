@@ -24,7 +24,7 @@ That poor pumpkin Mac just can't catch a break.
 
 ![](/assets/images/2023/img_1146.jpg)
 
-I honestly believe it deserved a place. I suppose as the grand prize winner, I can relinquish my title and hand it to the true winner - [Pendleton115](https://web.archive.org/web/20230904050034/http://pendleton115.net/). Why? Pumpkin Mac has more merch of course!
+I honestly believe it deserved a place. I suppose as the grand prize winner, I can relinquish my title and hand it to the true winner - [Tim](https://pendleton115.net/). Why? Pumpkin Mac has more merch of course!
 
 ![](/assets/images/2023/img_1151.jpg)
 

@@ -22,4 +22,4 @@ To put things into perspective, my home internet connection could manage a massi
 
 So the future is looking bright, maybe I will end up getting the [250-odd gigabytes of footage](/youtube-video-blitz/) uploaded yet! Stay tuned! :-)
 
-**Later edit:** Looks like this was the only post for 2017! Happy 2017 everyone! :)
+**Update:** Looks like this was the only post for 2017! Happy 2017 everyone! :)

@@ -22,7 +22,7 @@ If you want to know more about digital online anonymity and privacy, jump over t
 
 I still need to see if I can get SSL enabled on onion sites, but I'll leave that for another day I think! ;)
 
-**Later clarification:** I had the right practical conclusion for the wrong technical reason. Tor onion services do not "use SSL" underneath. The onion-service protocol already provides end-to-end encryption and authenticates the onion address, so an HTTPS certificate is not required merely to stop the Tor connection being plaintext. HTTPS can still be layered on top for other reasons.
+**Update:** I had the right practical conclusion for the wrong technical reason. Tor onion services do not "use SSL" underneath. The onion-service protocol already provides end-to-end encryption and authenticates the onion address, so an HTTPS certificate is not required merely to stop the Tor connection being plaintext. HTTPS can still be layered on top for other reasons. Cool! :D
 
 The 16-character onion address I was using here was a version 2 onion address, which Tor retired in 2021. At the time, [Scallion](https://github.com/lachesis/scallion) still seemed to be the weapon of choice for vanity onion addresses. It generates those retired v2 addresses and is no longer a current recommendation.
 

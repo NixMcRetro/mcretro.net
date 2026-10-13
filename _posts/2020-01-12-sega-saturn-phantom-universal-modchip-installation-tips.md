@@ -12,7 +12,7 @@ ai_assistance:
 
 {% include youtube.html id="bJWDRq0tUf8" %}
 
-This one went into a Victor V-Saturn that had recently been unmodded. We've fitted the much newer Phantom Universal, developed by Bad_Ad84 and Zer0-2k11. Here's to you, Bad_Ad84! The chip lets CD-R backups boot, but the region lock is still there; imports need something like an Action Replay or a region-free BIOS. Then again, Pseudo Saturn Kai can boot CD-Rs and bypass the region lock from a compatible cartridge, which might put internal modchips a little closer to being six feet underground!
+This one went into a Victor V-Saturn that had recently been unmodded. We've fitted the much newer Phantom Universal, developed by Bad_Ad84 and Zer0-2k11. If he's still out there, here's to you, Bad_Ad84! The chip lets CD-R backups boot, but the region lock is still there; imports need something like an Action Replay or a region-free BIOS. Then again, Pseudo Saturn Kai can boot CD-Rs and bypass the region lock from a compatible cartridge, which might put internal modchips a little closer to being six feet underground!
 
 ### Sources
 

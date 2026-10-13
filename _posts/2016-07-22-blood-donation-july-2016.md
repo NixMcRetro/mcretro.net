@@ -28,7 +28,7 @@ Partway through I felt a sudden rush leave my head. I looked in the mirror, noti
 
 I noted the time, 3:46 pm, and spent the next 20 minutes lying there listening to some tunes. What an experience!
 
-At the time I wrote that one of my lessons should be to reduce or skip my propranolol dose before donating.
+At the time I thought 150 g of salmon and Savoury Shapes hadn't been enough to eat beforehand. I also wrote that one of my lessons should be to reduce or skip my propranolol dose before donating.
 
 Nope.
 
@@ -39,8 +39,6 @@ That is not something I should have decided for myself. Prescription medication 
 I also managed to reopen the needle site and bleed on the driveway before getting into the car. Which was actually excellent timing because at least I wasn't bleeding all over the car and my fancy jeans. Donating still helps people who need it, so I'm happy to keep doing it when eligible.
 
 Plus you get all those junk foods! :) Cheat day!
-
-FREE CANDY! :)
 
 ### Sources
 

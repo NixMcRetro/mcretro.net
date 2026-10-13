@@ -28,11 +28,7 @@ The second command was intended to remove imported HTML paragraph tags, but the 
 
 The important lesson survives even if the second command does not: test bulk text transformations on copies or version-controlled files before pointing them at hundreds of posts.
 
-**start chant**
-
-markdown, markdown, markdown
-
-**/end chant**
+**start chant** markdown, markdown, markdown **/end chant**
 
 ### Sources
 

@@ -12,7 +12,7 @@ ai_assistance:
 
 {% include youtube.html id="npSQS8hBbGI" %}
 
-Here we have some video of the Amstrad Mega PC, upgraded into what is effectively Mega PC Plus territory by replacing the PC7386SX 386SX motherboard with a PC7486SLC 486SLC motherboard. That's right, one of those wonderfully awkward chips sitting somewhere between the 386 and 486 worlds. Maybe that isn't quite selling it right.
+Here we have some video of the Amstrad Mega PC, upgraded into what is effectively Mega PC Plus territory by replacing the PC7386SX 386SX motherboard with a PC7486SLC 486SLC motherboard. That's right, 486-style instructions with the raw processing power of a 386. Maybe that isn't quite selling it right.
 
 ![](/assets/images/2018/img_0606.jpg)
 

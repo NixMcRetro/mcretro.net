@@ -48,7 +48,7 @@ Isotretinoin is a prescription medicine with significant monitoring and safety r
 - do not use it concurrently with tetracycline antibiotics
 - do not donate blood during treatment or for at least one month afterwards
 
-The blood-donation restriction is particularly important because isotretinoin is highly teratogenic. Dry skin, lips and other mucosal effects are common enough that the medicine information specifically discusses moisturising those areas.
+The blood-donation restriction is particularly important because isotretinoin is highly teratogenic. Dry skin, lips and other mucosal effects are common enough that the medicine information specifically discusses moisturising those areas. What could possibly go wrong? Nosebleeds, for example, did not sound fun at all.
 
 I had assembled a personal supplement experiment while preparing for treatment, and some of my reasoning was much more confident than the evidence justified.
 

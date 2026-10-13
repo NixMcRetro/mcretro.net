@@ -2,7 +2,7 @@
 title: "Faulty / Damaged Super Nintendo Consoles Overview"
 author: "Nix McRetro"
 date: 2013-06-29T04:13:40.000+10:00
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -15,8 +15,6 @@ categories: [nintendo, repairs, youtube]
 Three faulty Super Nintendo consoles. The first step is assessing the damage: look for obvious corrosion or damaged components, then test each unit to see its current state. After that? Replace all capacitors, right? No one likes old SMD electrolytic caps!
 
 Replacing deteriorated capacitors can help, but age alone does not establish the cause of a fault. Stay tuned, we'll have more up on what each unit does and hopefully get them repaired in the near future!
-
-Later posts recorded a reset-switch repair on 30 June and repairs to three corroded traces around PPU1 on 11 July. The no-sound unit's damaged S-MIX chip became a suspect in the 11 July update; that investigation was still ongoing.
 
 ### Related posts
 

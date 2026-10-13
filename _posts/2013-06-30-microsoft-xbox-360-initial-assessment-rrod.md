@@ -2,7 +2,7 @@
 title: "Microsoft Xbox 360 RROD Initial Assessment"
 author: "Nix McRetro"
 date: 2013-06-30T06:04:48.000+10:00
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -15,8 +15,6 @@ categories: [microsoft, repairs, youtube]
 Here's an Xbox 360 I picked up with the infamous Red Ring of Death and hope to repair in the coming weeks. Flux and repair gear is on order. Cross your fingers and let's hope for the best!
 
 The red-light indication does not identify the failed component by itself. Recording the secondary error code would help narrow the fault, but no code is recorded in this post, so this account does not establish a more precise diagnosis.
-
-The later repair attempt, posted on 9 July, was unsuccessful.
 
 ### Related posts
 

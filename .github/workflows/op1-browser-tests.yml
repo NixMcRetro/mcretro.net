@@ -2,15 +2,17 @@ name: OP-1 Browser Regression
 
 on:
   push:
-    branches: [main, op1-v1.1-polish, op1-v1.2-sound-design]
+    branches: [main, op1-v1.1-polish, op1-v1.2-sound-design, op1-v1.3-tape-studio]
     paths:
       - 'homepages/op-1/index.html'
       - '.github/tests/op1-browser-smoke.mjs'
+      - '.github/tests/op1-tape-studio.mjs'
       - '.github/workflows/op1-browser-tests.yml'
   pull_request:
     paths:
       - 'homepages/op-1/index.html'
       - '.github/tests/op1-browser-smoke.mjs'
+      - '.github/tests/op1-tape-studio.mjs'
   workflow_dispatch:
 
 permissions:
@@ -31,3 +33,5 @@ jobs:
           npx playwright install --with-deps chromium firefox webkit
       - name: Chromium, Firefox and WebKit regression checks
         run: node .github/tests/op1-browser-smoke.mjs
+      - name: Tape Studio PCM and varispeed regression (Chromium)
+        run: node .github/tests/op1-tape-studio.mjs

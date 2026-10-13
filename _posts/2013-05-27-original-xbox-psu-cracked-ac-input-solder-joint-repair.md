@@ -2,7 +2,7 @@
 title: "Original Xbox PSU Cracked AC Input Solder Joint Repair"
 author: "Nix McRetro"
 date: 2013-05-27T04:07:08.000+10:00
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -19,8 +19,6 @@ I resoldered the failed joint with fresh solder, and the arcing stopped. So "ref
 This is a mains-voltage power supply, so it should be disconnected from AC before inspection and treated as potentially charged even after being unplugged.
 
 This is also not a universal diagnosis for every original Xbox power fault. Microsoft separately ran a power-cord replacement programme for early Xbox consoles because rare internal electrical component failures could create a fire hazard. That broader safety issue is useful context, but the cracked input joint shown here is the fault I actually observed and repaired on this particular PSU.
-
-Much better. And considerably less sparky.
 
 ### Sources
 

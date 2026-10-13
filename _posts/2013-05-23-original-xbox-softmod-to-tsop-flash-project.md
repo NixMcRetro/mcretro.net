@@ -2,7 +2,7 @@
 title: "Original Xbox Softmod to TSOP Flash Project"
 author: "Nix McRetro"
 date: 2013-05-23T04:08:23.000+10:00
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -12,12 +12,7 @@ categories: [hacks, microsoft, youtube]
 
 The Xbox project continues.
 
-The goal is straightforward:
-
-1. get the existing softmod behaving
-2. TSOP-flash the console
-3. install the 160 GB hard drive
-4. play Burnout
+The goal is straightforward: get the existing softmod behaving, TSOP-flash the console, fit the 160 GB hard drive and finally play Burnout.
 
 {% include youtube.html id="IOt3T3uMl78" %}
 

@@ -2,7 +2,7 @@
 title: "Original Xbox Initial Damage Assessment"
 author: "Nix McRetro"
 date: 2013-05-07T03:59:31.000+10:00
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -35,8 +35,6 @@ So this repair is not quite as universal as "find capacitor, rip capacitor out".
 There's nothing wrong with cell batteries, nor getting the time from the internet.
 
 This will likely be a three-part repair. Hopefully we'll have Burnout Revenge running in the next few weeks.
-
-Priorities.
 
 ### Sources
 

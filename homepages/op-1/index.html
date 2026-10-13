@@ -4,8 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#e9eaeb">
+<meta name="application-name" content="OP-1 Browser Lab">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="OP-1 Lab">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
 <meta name="description" content="SuperNick's OP-1 Browser Lab: a playable browser synthesizer and tape workstation inspired by the original OP-1.">
-<title>SuperNick's OP-1 Browser Lab v1.3 · Sound Design</title>
+<title>SuperNick's OP-1 Browser Lab v1.4 · Offline & Mobile</title>
 <style>
   :root{color-scheme:light;--blue:#46a7e5;--green:#73c896;--orange:#f28542;--ink:#22292d;--page:#f5f5f2;--ui:#eceef0;--shadow:#adb2b6}
   *{box-sizing:border-box}body{margin:0;background:var(--page);font-family:Arial,Helvetica,sans-serif;color:#303638;-webkit-tap-highlight-color:transparent}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #3d9ddb;outline-offset:2px}button:disabled{cursor:not-allowed;opacity:.4}
@@ -196,12 +204,29 @@
 .tape-studio-actions{gap:6px}.tape-studio-actions .mini-btn{font-size:10px;min-height:35px}
 .tape-studio-tip{margin:8px 0 0!important;line-height:1.55!important;font-size:11px!important}
 @media(max-width:640px){.tape-studio-row label{flex-basis:45%}.tape-studio-actions .mini-btn{flex:1 1 auto}}
+
+/* v1.4: install and offline status. All recording data remains local to the app. */
+.offline-panel{border-color:#cad6dc;background:linear-gradient(135deg,#fcfefe,#f5f9fb)}
+.offline-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.offline-heading h2{margin:0 0 7px}.offline-heading p{max-width:640px}
+.offline-ver{color:#88999f;font-weight:400}
+.offline-badge{flex:none;font-size:10px;letter-spacing:.02em;border:1px solid #ced6dc;background:#edf1f4;color:#58636a;border-radius:5px;padding:6px 9px;white-space:nowrap}
+.offline-badge.ready{border-color:#94cbb0;background:#eaf8ef;color:#287149}
+.offline-badge.warn{border-color:#e9bd86;background:#fff5e7;color:#895b18}
+.offline-status{font-weight:650;color:#495962!important;margin:12px 0!important;overflow-wrap:anywhere}
+.offline-actions{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0}
+.offline-actions .mini-btn{min-height:43px;touch-action:manipulation}
+.offline-actions #offlineBackup{border-color:#97b0b7;background:#e4f1f3}
+.offline-instructions{border:1px solid #cad5da;border-radius:8px;padding:13px 14px;background:white;margin:12px 0}
+.offline-instructions strong{font-size:13px}.offline-instructions p{margin:6px 0 10px!important;color:#34474d!important}
+.offline-warning{margin-top:10px!important;color:#735641!important}
+@media(max-width:650px){.offline-heading{flex-direction:column;gap:7px}.offline-actions{display:grid;grid-template-columns:1fr}.offline-actions .mini-btn{min-height:48px}.offline-badge{font-size:11px}}
 </style>
 </head>
 <body>
 <main class="shell">
   <header class="topline">
-    <div class="brand"><div class="brandmark" aria-hidden="true">op<span style="color:#f38156">.</span></div><div><h1>SuperNick's OP-1 Browser Lab <span style="font-weight:400;color:#9ba2a6;font-size:13px">/ 1.3</span></h1><p>AN INDEPENDENT BROWSER MUSIC WORKSTATION · NO FIRMWARE REQUIRED</p></div></div>
+    <div class="brand"><div class="brandmark" aria-hidden="true">op<span style="color:#f38156">.</span></div><div><h1>SuperNick's OP-1 Browser Lab <span style="font-weight:400;color:#9ba2a6;font-size:13px">/ 1.4</span></h1><p>AN INDEPENDENT BROWSER MUSIC WORKSTATION · NO FIRMWARE REQUIRED</p></div></div>
     <nav class="topactions" aria-label="Project controls"><button class="action primary" id="startAudio">▶ ENABLE AUDIO</button><button class="action" id="saveProject">SAVE PROJECT</button><button class="action" id="quickRecovery" type="button" title="See automatic checkpoints and storage status">RECOVERY</button><button class="action" id="openProject">OPEN PROJECT</button><button class="action" id="exportWav">EXPORT WAV</button><span id="exportStatus" role="status" aria-live="polite" hidden></span><button class="action" id="showHelp">? GUIDE</button><input class="hide" id="projectFile" type="file" accept=".json,application/json"></nav>
   </header>
   <div class="mobile-mode">You can play this on mobile. Swipe the instrument to explore its controls, or use the larger touch keyboard below. Landscape works best.</div>
@@ -236,12 +261,19 @@
       <p class="v12-note">Brightness is a broad low/high shelving EQ. Warmth adds gentle parallel saturation. Both affect the live mix and WAV export. The four coloured encoders continue controlling the selected synth pages.</p>
     </section>
     <section class="panel recovery-panel" id="recoveryPanel" aria-label="Project recovery and storage">
-      <div class="seq-top"><div><h2>PROJECT RECOVERY <span style="color:#8d9a9f;font-weight:400">/ v0.8</span></h2><p>Verified autosave checkpoints keep the current project and a previous recovery point. Download a portable project to protect against browser data loss.</p></div><strong class="recovery-indicator" id="recoveryIndicator" role="status" aria-live="polite">CHECKING STORAGE</strong></div>
+      <div class="seq-top"><div><h2>PROJECT RECOVERY <span style="color:#8d9a9f;font-weight:400">/ LOCAL</span></h2><p>Verified autosave checkpoints keep the current project and a previous recovery point. Download a portable project to protect against browser data loss.</p></div><strong class="recovery-indicator" id="recoveryIndicator" role="status" aria-live="polite">CHECKING STORAGE</strong></div>
       <p id="recoverySummary" class="recovery-summary">Checking browser storage and available recorded audio…</p>
       <p class="v04-note" id="storageSummary">Storage estimate unavailable until checked.</p><p class="v04-note" id="compatSummary" role="status">Checking browser audio and storage support…</p>
       <div class="control-row recovery-buttons"><button class="mini-btn" id="checkpointNow" type="button">SAVE CHECKPOINT</button><button class="mini-btn" id="restorePrevious" type="button">RESTORE PREVIOUS</button><button class="mini-btn" id="keepStorage" type="button">PROTECT STORAGE</button><button class="mini-btn" id="freeMemory" type="button">FREE UNUSED MEMORY</button><button class="mini-btn" id="backupRecovery" type="button">DOWNLOAD BACKUP</button></div>
       <p class="v04-note">A recovery checkpoint is local to this browser. It is not a cloud backup. RESTORE PREVIOUS replaces the current project after confirmation. FREE UNUSED MEMORY does not delete stored recordings or project backups. PROTECT STORAGE asks the browser to reduce automatic eviction, but cannot guarantee it.</p>
     </section>
+      <section class="panel offline-panel" id="offlinePanel" aria-label="Offline installation and mobile support">
+        <div class="offline-heading"><div><h2>OFFLINE &amp; INSTALL <span class="offline-ver">/ v1.4</span></h2><p>Keep the instrument on your device for playing and editing without a connection after the application files have finished caching.</p></div><strong id="offlineBadge" class="offline-badge" role="status" aria-live="polite">CHECKING</strong></div>
+        <p class="offline-status" id="offlineSummary" role="status" aria-live="polite">Checking offline support and app cache…</p>
+        <div class="offline-actions"><button type="button" class="mini-btn" id="installApp">INSTALL / HOW TO</button><button type="button" class="mini-btn" id="refreshOffline">CHECK OFFLINE FILES</button><button type="button" class="mini-btn" id="offlineBackup">DOWNLOAD PROJECT BACKUP</button></div>
+        <div id="offlineInstructions" class="offline-instructions" hidden tabindex="-1"><strong>Install on your device</strong><p id="offlineInstructionText">On iPhone, open this page in Safari, choose Share, then Add to Home Screen. On a computer, use your browser’s Install App action if available.</p><button class="mini-btn" type="button" id="closeOfflineInstructions">GOT IT</button></div>
+        <p class="offline-warning" id="offlineStorageWarning">Offline app files are separate from your recordings. Browser storage, private mode, device resets, or uninstalling the app may delete local projects. Save a portable project JSON regularly, including after recording.</p>
+      </section>
     </div>
     <div class="below-side">
       <section class="panel"><h2>SESSION / TAPE</h2><p id="sessionInfo">Track 1 selected · 00:00 / 01:00 · 120 BPM</p>
@@ -932,7 +964,64 @@ function initV09Controls(){
  const label=$('compatSummary');label.textContent=caps.length?'Browser limitations: '+caps.join(', ')+'. Download portable project backups regularly.':'Browser APIs available for audio, exports and recovery. Storage persistence and actual microphone capture still depend on permissions.';
 }
 
-recoveryStartup=true;buildUI();initV09Controls();wireNewVisuals();initV12();initStore();syncUI();drawDisplay();animateMeter();startRecovery();
+
+/* v1.4: PWA lifecycle. The app shell is cached; private projects and audio are
+   intentionally never added to Cache Storage. Do not request persistence without
+   a direct user action. */
+let op1InstallPrompt=null,op1SwRegistration=null,op1OfflineReady=false;
+function op1OfflineMessage(message,kind='neutral'){
+  const badge=$('offlineBadge'),info=$('offlineSummary');if(!badge||!info)return;
+  badge.classList.toggle('ready',kind==='ready');badge.classList.toggle('warn',kind==='warn');
+  badge.textContent=kind==='ready'?'CACHED':kind==='warn'?'NOT READY':'CHECKING';
+  info.textContent=message;
+}
+function op1IsAppleMobile(){return /iPad|iPhone|iPod/.test(navigator.userAgent)||navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1}
+function op1Standalone(){return window.matchMedia?.('(display-mode: standalone)').matches||navigator.standalone===true}
+function op1InstallHelp(){
+ const target=$('offlineInstructions'),body=$('offlineInstructionText');
+ let message;
+ if(op1Standalone())message='This instrument is already running as an installed app. Audio and project data still require regular downloaded backups.';
+ else if(op1IsAppleMobile())message='On iPhone or iPad, open this site in Safari, tap Share (square with upward arrow), choose Add to Home Screen, then tap Add. Open it once while online and check that OFFLINE FILES is marked CACHED before going offline.';
+ else message='In Chrome or Edge, look for Install App in the address bar or browser menu. Firefox and some other browsers may only offer a bookmark. Open the page once online and verify OFFLINE FILES says CACHED before disconnecting.';
+ body.textContent=message;target.hidden=false;target.focus();
+}
+async function op1CheckOffline(){
+ if(!('serviceWorker' in navigator)||!('caches' in window)||!window.isSecureContext){op1OfflineReady=false;op1OfflineMessage('Offline installation is unavailable in this browser or context. Use HTTPS in a regular browser tab; download portable project backups.', 'warn');return}
+ try {
+  const cache=await caches.open('op1-browser-lab-shell-v1.4');
+  const root=new URL('./',location.href),paths=['index.html','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png'];
+  const found=await Promise.all(paths.map(p=>cache.match(new URL(p,root).href)));
+  op1OfflineReady=found.every(Boolean);
+  if(op1OfflineReady){const offline=!navigator.onLine;
+   op1OfflineMessage((offline?'Device appears offline. ':'')+'Application files cached for offline use. Audio and your recordings stay on this device; export a project backup regularly.','ready');
+  }else op1OfflineMessage('Application files are not completely cached yet. Stay online and choose CHECK OFFLINE FILES to retry.','warn');
+ }catch(e){op1OfflineReady=false;op1OfflineMessage('Could not verify offline files: '+e.message+'. Download project backups before leaving this page.','warn')}
+}
+async function op1InstallOffline(){
+ if(op1Standalone()){op1InstallHelp();return}
+ if(op1InstallPrompt){const evt=op1InstallPrompt;op1InstallPrompt=null;
+  try{await evt.prompt();const result=await evt.userChoice;if(result?.outcome==='accepted')notice('Install accepted. Open the app and check its offline status.');else op1InstallHelp()}catch(e){op1InstallHelp()}
+ }else op1InstallHelp();
+}
+function op1WireOffline(){
+ $('installApp').addEventListener('click',op1InstallOffline);
+ $('refreshOffline').addEventListener('click',async()=>{if(op1SwRegistration&&navigator.onLine){try{await op1SwRegistration.update()}catch(e){console.warn('Offline update check failed',e)}}await op1CheckOffline();await refreshStorageEstimate()});
+ $('offlineBackup').addEventListener('click',()=>$('saveProject').click());
+ $('closeOfflineInstructions').addEventListener('click',()=>{$('offlineInstructions').hidden=true;$('installApp').focus()});
+ window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();op1InstallPrompt=e;$('installApp').textContent='INSTALL APP'});
+ window.addEventListener('appinstalled',()=>{op1InstallPrompt=null;$('installApp').textContent='INSTALLED / HELP';op1CheckOffline()});
+ window.addEventListener('online',op1CheckOffline);
+ window.addEventListener('offline',op1CheckOffline);
+ if(op1Standalone())$('installApp').textContent='INSTALLED / HELP';
+ if(!('serviceWorker' in navigator)||!isSecureContext){op1CheckOffline();return}
+ navigator.serviceWorker.addEventListener('controllerchange',()=>{op1CheckOffline()});
+ navigator.serviceWorker.register('./sw.js',{scope:'./',updateViaCache:'none'}).then(async reg=>{
+  op1SwRegistration=reg;await navigator.serviceWorker.ready;await op1CheckOffline();
+  // No automatic reload: do not interrupt active performances or unsaved edits.
+ }).catch(e=>{op1OfflineMessage('Offline installation could not be enabled: '+e.message+'. The browser instrument still works online.','warn')});
+}
+
+recoveryStartup=true;buildUI();initV09Controls();wireNewVisuals();initV12();initStore();syncUI();drawDisplay();animateMeter();startRecovery();op1WireOffline();
 })();
 </script>
 </body>

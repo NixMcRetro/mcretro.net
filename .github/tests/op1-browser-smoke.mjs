@@ -1,4 +1,4 @@
-// Browser regression checks for SuperNick's OP-1 Browser Lab v1.3.
+// Browser regression checks for SuperNick's OP-1 Browser Lab v1.4.
 // Run: node .github/tests/op1-browser-smoke.mjs
 // Dependencies: npm install --no-save playwright && npx playwright install --with-deps chromium firefox webkit
 import { chromium, firefox, webkit } from 'playwright';
@@ -14,7 +14,7 @@ for(const [name,engine] of Object.entries(engines)){
   const page=await ctx.newPage();const errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   await page.setContent(html,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/v1\.3/);
+  assert.match(await page.title(),/v1\.4/);
   assert.equal(await page.locator('.sound-key').count(),8);
   assert.equal(await page.locator('.knob').count(),4);
   assert(!html.includes('For SuperNick (Nick).'));

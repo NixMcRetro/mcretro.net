@@ -14,6 +14,6 @@ categories: [gaming, hacks, sega]
 
 Not the capture device we need, but the capture device we deserve. For $25 it doesn't do a bad job at all, and it even works on a Mac? Incredible.
 
-For the glitching videos, this gives me a direct composite capture so I no longer have to rely on filming CRTs and LCD TVs with a Canon camera. That should avoid the rolling bars and colour shifts I was getting from filming the displays.
+For the glitching videos I'm crossing random address lines (and I dare say data lines) to produce all sorts of on-screen madness. This gives me direct composite capture, so I no longer have to rely on filming CRTs and LCD TVs with a Canon camera. That should avoid the rolling bars and colour shifts I was getting from filming the displays.
 
 Available on the McRetro Gaming YouTube channel, not the Nix McRetro YouTube channel. Try and keep up! ;-)

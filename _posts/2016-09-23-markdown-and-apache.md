@@ -18,7 +18,7 @@ I was wondering whether an Apache module, Perl script, Ruby script or PHP script
 
 A later clarification: the old `mcretro35qepy5cy.onion` address shown here was a Tor **v2** onion address. Tor retired that 16-character address format in 2021, so the historical link no longer works on the modern Tor network.
 
-My GitHub Pages / Jekyll setup also turned out not to support all the fancy modifications I wanted from this website experiment. Maybe this was a bad idea! :-D
+**Update:** My GitHub Pages / Jekyll setup doesn't support lots of the fancy mods I want... maybe this was a bad idea! :-D
 
 ### Sources
 

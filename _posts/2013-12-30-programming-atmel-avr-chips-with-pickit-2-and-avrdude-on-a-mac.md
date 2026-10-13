@@ -26,7 +26,7 @@ What I used:
 
 Compiling all of this was particularly entertaining because I had very little idea what I was doing! 😅 More to come when I find the time...
 
-By 2023, I'd pretty much accepted that I'd probably never find the time. This was all done for the Lunchbeat project. More of that hot mess can be found in the Projects folder in the [photo gallery](https://photos.mcretro.net). Enjoy! 🙃
+**Update 2023:** I'll probably never find the time. However, it's worth mentioning that this was all done for the Lunchbeat project. More of that hot mess can be found in the Projects folder in the [photo gallery](https://photos.mcretro.net). Enjoy! 🙃
 
 ### Sources
 

@@ -18,7 +18,7 @@ Hopefully the babies grow up fast and go away so we can go outside once more. ;)
 
 Willie Wagtails (*Rhipidura leucophrys*) actively defend their territory, which helps explain the swooping around the nest.
 
-By December 2014 the nest was empty and the swooping had stopped. Instead, the birds were making lovely calls, a bit like Australian Magpies to my ear. Much more civilised!
+**Update December 2014:** They have left the nest empty and no longer swoop, but make lovely calls, much like Australian Magpies! Much more civilised!
 
 ### Sources
 

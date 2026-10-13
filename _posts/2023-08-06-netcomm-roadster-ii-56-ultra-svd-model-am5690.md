@@ -18,7 +18,7 @@ Of note, there are no power-supply specs on the device itself. My working conclu
 
 ![](/assets/images/2023/img_1065.jpg)
 
-After popping the hood, I noticed that the board design looked very familiar. That board number, BT134 REV B1. BT as in Banksia Technology? But the Banksia modems are much more vertical. So I pulled out my Banksia Wave SP 56 Rev.1 (Model Wave56-SP, Serial 13412650), and here are the two boards in a seizure-inducing GIF. I've made it a little less like a strobe light from a 90s rave.
+After popping the hood, I noticed that the board design looked very familiar. That board number, BT134 REV B1. BT as in Banksia Technology? But the Banksia modems are much more vertical. So I pulled out my Banksia Wave SP 56 Rev.1 (Model Wave56-SP, Serial 13412650), and here are the two boards in a seizure-inducing GIF. **Update:** I made the GIF a little less like a strobe light from a 90s rave.
 
 ![](/assets/images/2023/img_1064.gif)
 

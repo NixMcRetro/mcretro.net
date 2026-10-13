@@ -26,7 +26,7 @@ The to-do list was still fairly grim: find and remove objectionable material, in
 
 I'll keep chipping away on the GeoCities website for the time being. I can probably move all my retrojunkie.net subfolders into a subdomain structure now too. I had completely forgotten how to do all these things! Until next time, Everybody's Golf!
 
-By 5 December 2021 Docker had been updated and I had moved to Bullseye (Debian 11) based images, which stopped the ARM-native crashes. Docker also gave me the choice to install updates again rather than forcing the old snooze cycle. No more SIGSEGVs for me. Thank you Docker!
+**Update 5th December 2021:** Docker had been updated and I had moved to Bullseye (Debian 11) based images, which stopped the ARM-native crashes. Docker also gave me the choice to install updates again rather than forcing the old snooze cycle. No more SIGSEGVs for me. Thank you Docker!
 
 ### Sources
 

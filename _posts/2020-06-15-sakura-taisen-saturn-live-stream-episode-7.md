@@ -16,7 +16,7 @@ Split up, we covertly sneak into The Hive of Darkness lair in our Koubus. Destro
 
 In other news, I've opened my Saturn (This is COOL) and found it has a VA15 mainboard. I reflowed the AV port sockets with no change, still jittery. The caps looked awfully dated, even for a Saturn from March 1998. That's 22 years! They were my next target, though I hadn't yet pinned the fault on them. At least they were all through-hole, which was very surprising, and my Hakko 808 poked his nose out of the basket he had been sitting in. By the next Sakura Taisen stream the recap was complete and the visible flicker was gone. Stay tuned!
 
-Also, I didn't mention it above... we're on to DISC 2 now! Woohoo! :-)
+**Update:** I didn't mention it above... we're on to DISC 2 now! Woohoo! :-)
 
 ### Related posts
 

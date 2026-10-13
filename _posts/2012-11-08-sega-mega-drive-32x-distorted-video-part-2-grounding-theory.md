@@ -18,7 +18,7 @@ With the 32X installed, I can also see the distortion while using the Mega-CD, e
 
 Perhaps they really are required. It is worth testing. If the plates solve the problem, they will save me from soldering approximately fifty billion capacitors. At least temporarily.
 
-**Edit, 6th February 2018:** The grounding plates were not the underlying fault. Sega had already documented the problem and issued service procedures for affected Mega Drive motherboards.
+**Update 6th February 2018:** The grounding plates were not the underlying fault. Sega had already documented the problem and issued service procedures for affected Mega Drive motherboards.
 
 PAL and Asian Model 1 VA4 boards can have poor EDCLK and VCLK signal quality when paired with the 32X. In the EDCLK case, the signal can become increasingly unstable as the console warms up, causing the 32X-generated portion of the picture to jitter and eventually lock up. The important detail is that Sega's repair modifies the **Mega Drive motherboard**, not the 32X. That fits the pattern I had been seeing across several different 32X units far better than the grounding-plate theory.
 

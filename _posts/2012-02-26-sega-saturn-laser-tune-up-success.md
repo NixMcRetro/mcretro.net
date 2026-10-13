@@ -32,9 +32,9 @@ I was also considering hacking apart a PC power supply to see if I could run the
 
 I also need to get image uploads working so I can actually show pictures of all these things I'm working on.
 
-**Edit (2016):** Lightbox works now on pictures! Also pictures are now showing.
+**Update 2016:** Lightbox works now on pictures! Also pictures are now showing.
 
-**Edit (2018):** Fixed those pictures again, bad Google breaking all my image links.
+**Update 2018:** Fixed those pictures again, bad Google breaking all my image links.
 
 ### Sources
 

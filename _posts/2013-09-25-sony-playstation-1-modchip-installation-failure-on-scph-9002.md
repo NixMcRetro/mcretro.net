@@ -2,7 +2,7 @@
 title: "Sony PlayStation 1 Modchip Installation Failure on SCPH-9002"
 author: "Nix McRetro"
 date: 2013-09-25T00:25:12.000+10:00
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -21,8 +21,6 @@ Oh geez! Another video of a guide I was attempting to do only to have many thing
 ![Small surface-mount component beside an Australian one-dollar coin](/assets/images/2013/img_0419.jpg)
 
 As with the previous video, without the modchip, we weren't going to get too far anyway even if all the wires had gone in properly. I've since purchased a pair of wire strippers - how did I not have these before now? And some nice PIC flash chips so I can make mistakes and reflash - that's the power of Flash!
-
-I returned to this SCPH-9002 project in November 2013, using a reflashable PIC12F629 and successfully loading MultiMode3. I also found that the CD burner used for test games was faulty, with "verify burn" switched off or ignored. That meant a failed disc boot was not a clean test of the modchip wiring.
 
 ### Related posts
 

@@ -2,7 +2,7 @@
 title: "Super Nintendo / SNES Cartridge Battery Holder Installation"
 author: "Nix McRetro"
 date: 2013-08-06T17:31:58.000+10:00
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -18,7 +18,7 @@ Just solder in a holder and... well mine didn't have enough clearance inside the
 
 This is for the upcoming EarthBound cartridge I am making from terrible EA Sports games. If you object, you have no soul!
 
-Let's face it, your old saves weren't that good anyway. Do better this time, you've got ten years... hopefully. Go!
+Let's face it, your old saves weren't that good anyway. Do better this time, you've got ten years... Go!
 
 ### Related posts
 

@@ -2,7 +2,7 @@
 title: "Sony PlayStation Modchip Programming Failure with a PIC12C508A"
 author: "Nix McRetro"
 date: 2013-09-24T23:23:15.000+10:00
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -18,7 +18,7 @@ Microchip's datasheet does show differences between the devices, including the o
 
 I promise to upload a video where I do successfully flash the... I think they are PIC12F629 or something along those lines anyway. Reflashable... none of this one-time programming (OTP).
 
-By January 2015, it had turned out that my GQ-4X was dying slowly and randomly. I had purchased another model with no issues. That gives this failed attempt another possible explanation, rather than proving the PIC12C508A was incompatible.
+**Update January 2015:** It turned out my GQ-4X was dying slowly and randomly. I bought another model with no issues! That gives this failed attempt another possible explanation, rather than proving the PIC12C508A was incompatible.
 
 ### Related posts
 

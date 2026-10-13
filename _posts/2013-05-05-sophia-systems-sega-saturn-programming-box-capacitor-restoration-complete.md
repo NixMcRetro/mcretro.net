@@ -2,7 +2,7 @@
 title: "Sophia Systems Sega Saturn Programming Box: Capacitor Restoration Complete"
 author: "Nix McRetro"
 date: 2013-05-05T03:57:19.000+10:00
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -33,14 +33,6 @@ Here's to another 20 years!
 Isn't she lovely?
 
 {% include youtube.html id="IVvkjuEAwgU" %}
-
-This was not quite the end of the Sophia story. My 171-6692B SH-2 CPU boards still lacked the power-header arrangement found on the better-documented 171-6692D boards, so I later made an appropriate power lead and continued investigating the development hardware.
-
-But the long capacitor repair itself?
-
-Done.
-
-Finally.
 
 More photos are in the [Photo Gallery](/goodies).
 

@@ -3,7 +3,7 @@ title: "Nixie Clock 3.6V NiCad Battery Replacement NiMH Upgrade"
 author: "Nix McRetro"
 date: 2013-04-23T03:54:14.000+10:00
 categories: [guides, repairs, youtube]
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -18,7 +18,7 @@ A NiMH battery is not automatically a drop-in replacement for NiCd in equipment 
 
 ![](/assets/images/2013/img_0389.jpg)
 
-By 17 April 2022, the battery had been replaced again, in late 2021. IN-12B has a dot; IN-12A does not. Some facts about the power supply, mostly for my own future reference:
+**Update, 17 April 2022:** The battery had been replaced again late last year, in late 2021. IN-12B has a dot; IN-12A does not. Some facts about the power supply, mostly for my own future reference:
 
 - ID: 2.5 mm
 - OD: 5.5 mm

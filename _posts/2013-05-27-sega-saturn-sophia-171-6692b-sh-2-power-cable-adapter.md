@@ -2,7 +2,7 @@
 title: "Sega Saturn Sophia 171-6692B SH-2 Power Cable Adapter"
 author: "Nix McRetro"
 date: 2013-05-27T04:44:44.000+10:00
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -21,8 +21,6 @@ The 171-6692B boards do have another header available, but its pin pitch is 2.0 
 ![](/assets/images/2013/img_0405.jpg)
 
 Visually, the differences between the 171-6692B and 171-6692D are easy to spot. The B revision lacks the second power header and the two jumper blocks normally seen beside the processors on the D revision.
-
-In my 2 July 2013 Sophia notes, I described the branched EVA-board power cable on my unit. Since these 171-6692B boards do not provide the expected D-revision connector arrangement, this adapter became the practical solution for my particular hardware.
 
 ![](/assets/images/2013/img_0406.jpg)
 

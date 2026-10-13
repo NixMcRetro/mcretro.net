@@ -2,7 +2,7 @@
 title: "Sony PS one Internal Overview and Old Modchip Install"
 author: "Nix McRetro"
 date: 2013-05-10T04:02:26.000+10:00
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -14,11 +14,7 @@ A quick look inside my old Sony PS one. This particular console has some history
 
 {% include youtube.html id="M5uTyK_Z9aM" %}
 
-Ahh, memories!
-
-Taking it apart now means I get to inspect my own ancient soldering rather than somebody else's. Surprisingly, it is actually pretty good. I guess I know where some of today's soldering habits came from.
-
-Thanks, past me!
+Ahh, memories! Taking it apart now means I get to inspect my own ancient soldering rather than somebody else's. Surprisingly, it is actually pretty good. I guess I know where some of today's soldering habits came from. Thanks, past me!
 
 The little PS one is also a much more compact redesign than the original full-size PlayStation, so there is considerably less empty case volume to work with when installing anything internally.
 

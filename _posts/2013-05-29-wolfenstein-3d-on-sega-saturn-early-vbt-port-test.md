@@ -2,7 +2,7 @@
 title: "Wolfenstein 3D on Sega Saturn: Early VBT Port Test"
 author: "Nix McRetro"
 date: 2013-05-29T05:15:06.000+10:00
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -16,9 +16,9 @@ VBT over at ASSEMblergames has been working on getting Wolfenstein 3D running on
 
 This build seemed to work in emulators, but I could not get it behaving properly on my actual hardware.
 
-Later, I noted that it was apparently expected to work. That left me wondering whether the strange development hardware I was using had something to do with the problem. I never established that.
-
 Keep up the good work and I'll be playing W3D in no time!
+
+**Edit:** Apparently it should have worked, but it didn't in my case. Perhaps the strange development hardware I was using had something to do with it, although I never established that. :)
 
 VBT continued developing the Saturn port after this experiment. On 15 December 2023, VBT described this old version as deprecated; on 21 December, he pointed users towards the newer project. The video above remains a snapshot of the port during its early development.
 

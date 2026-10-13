@@ -18,7 +18,7 @@ A NiMH battery is not automatically a drop-in replacement for NiCd in equipment 
 
 ![](/assets/images/2013/img_0389.jpg)
 
-**Update, 17 April 2022:** The battery had been replaced again late last year, in late 2021. IN-12B has a dot; IN-12A does not. Some facts about the power supply, mostly for my own future reference:
+**Update 17th April 2022:** The battery had been replaced again late last year, in late 2021. IN-12B has a dot; IN-12A does not. Some facts about the power supply, mostly for my own future reference:
 
 - ID: 2.5 mm
 - OD: 5.5 mm

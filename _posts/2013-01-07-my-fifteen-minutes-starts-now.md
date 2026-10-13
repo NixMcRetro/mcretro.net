@@ -14,4 +14,4 @@ Without further delay, hurry over to [ChimeraRevo](https://web.archive.org/web/2
 
 It was all made possible by one of my good YouTube friends, MasterControl90. You are all my friends, don't worry! Be sure to check out [his channel](https://www.youtube.com/user/gioita90) as well.
 
-**Edit:** I later realised that the article title translates to something along the lines of "Gaming: A Cheerful Chat with a Friend". Ohhh, how nice! :)
+**Update:** I later realised that the article title translates to something along the lines of "Gaming: A Cheerful Chat with a Friend". Ohhh, how nice! :)

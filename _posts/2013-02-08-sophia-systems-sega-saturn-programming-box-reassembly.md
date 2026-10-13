@@ -34,7 +34,7 @@ Lots more photos, nearly 300 of them, are in the [photo gallery](/goodies/).
 
 Look at that! 171-6692B SH7095 SH-2 CPUs!
 
-**Edit:** Someone had some SH-2 CPUs and has since sold them to me! What a wonderful person! Stay tuned!
+**Update:** Someone had some SH-2 CPUs and has since sold them to me! What a wonderful person! Stay tuned!
 
 ### Related posts
 

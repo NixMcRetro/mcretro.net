@@ -2,7 +2,7 @@
 title: "Cross Products SNASM Mega-CD Development Unit Disassembly"
 author: "Nix McRetro"
 date: 2013-02-11T08:00:55.000+11:00
-last_modified_at: 2026-10-05
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-05
@@ -22,9 +22,7 @@ The system could also interface with dedicated CD-emulation hardware, allowing d
 
 I'll probably finish photographing everything later this month or early next. Keep an eye on the [photo gallery](/goodies/) for the inevitable mountain of photographs.
 
-I hope you enjoy poking around inside this one as much as I'll enjoy trying to remember where all the screws went.
-
-Errr... Just kidding?
+I hope you enjoy poking around inside this one as much as I'll enjoy trying to remember where all the screws went. Errr... just kidding?
 
 ### Related posts
 

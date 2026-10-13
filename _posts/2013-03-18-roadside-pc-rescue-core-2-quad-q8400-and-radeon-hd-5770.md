@@ -2,7 +2,7 @@
 title: "Roadside PC Rescue: Core 2 Quad Q8400 and Radeon HD 5770"
 author: "Nix McRetro"
 date: 2013-03-18T10:54:19.000+11:00
-last_modified_at: 2026-10-05
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-05
@@ -15,8 +15,6 @@ categories: [ibm-pc]
 There's nothing more exciting than finding electronic rubbish on the side of the road. This morning, while leaving for work, I noticed a PC sitting out the front of my home. It had been raining overnight and the machine looked wet. More importantly, I could see two DVI ports occupying the space above two expansion slots. Double-width video card! Unfortunately I was already running late, so I had to leave it there.
 
 When I got home, it was somehow still waiting for me. I grabbed it and dumped it in my bathroom, then started pulling it apart. The power supply contained a delightful cockroach infestation. Then a lizard fell out of it and ran away. The power supply went straight out.
-
-Excellent.
 
 A wet or contaminated mains power supply is not something I want to energise without a proper inspection, and this one had already provided more wildlife than any PSU reasonably should.
 

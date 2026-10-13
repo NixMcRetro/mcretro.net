@@ -14,7 +14,7 @@ categories: [news]
 
 [GitHub](https://github.com), [Markdown](https://daringfireball.net/projects/markdown/) and a splash of [Jekyll](https://jekyllrb.com/docs/). Let's see how this goes... First challenge: import everything again. Apparently I worked that part out because **566 posts imported successfully**. Thanks to [jmcglone.com](https://jmcglone.com/guides/github-pages/) for the guide too. It was extremely useful getting everything set up.
 
-This particular website incarnation did not last very long. By **30 October 2016** I was back on WordPress. What a ride! 😮‍💨
+**Update 30 October 2016:** And we're back on WordPress, what a ride! :-)
 
 ### Related posts
 

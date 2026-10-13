@@ -24,7 +24,7 @@ My goals were:
 
 ![75kg_sept2016_all](/assets/images/2016/img_0557.jpg)
 
-The scale had gone from 114.7 kg to 74.9 kg, a recorded difference of 39.8 kg. Almost 40 kg. Way past cool!
+The scale had gone from 114.7 kg to 74.9 kg, a recorded difference of 39.8 kg. Just a little further and it would be a nice round 40 kg. That's more than half my current weight. Way past cool!
 
 ![fatmass_sept16](/assets/images/2016/img_0558.jpg)
 

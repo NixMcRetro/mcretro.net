@@ -40,7 +40,7 @@ But Xubuntu had my attention with everything working out of the box. Next I had 
 
 One great advantage to switching to Firefox is having the extensions I wanted: Disconnect, HTTPS Everywhere and uBlock Origin. Finally! So that's the browser side of things handled.
 
-I tend to like using a dedicated email client, so I've gone with Mozilla Thunderbird, which also has a calendar. The Evolution email-loss story was only a rumour, but I was not taking that risk.
+I tend to like using a dedicated email client, so I've gone with Mozilla Thunderbird, which also has a calendar. It doesn't delete emails like... ummm... oh! Evolution does! Or at least that was the rumour. I wasn't taking that risk.
 
 Coming from OS X (Yes I am still on 10.11) I needed to make things a little bit prettier. Enter Numix. Numix solved that very well. Thank you Numix!
 

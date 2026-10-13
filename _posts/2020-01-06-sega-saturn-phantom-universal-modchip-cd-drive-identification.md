@@ -12,7 +12,7 @@ ai_assistance:
 
 {% include youtube.html id="LVdSIsAMrs8" %}
 
-We've got a bunch of Phantom Universal videos recorded way back in 2016. The chip sits between the Saturn motherboard and CD-ROM drive and lets compatible CD-R backups boot, but it leaves the separate region lock in place. With Rhea already around and the Satiator on the way, we're definitely getting closer to a CD-less society! Anyway, this first video is all about identifying the Saturn CD drive before installing the chip.
+This week we've got a bunch of Phantom Universal videos recorded way back in 2016. Hopefully they're still relevant to the Saturns of today! The chip sits between the Saturn motherboard and CD-ROM drive and lets compatible CD-R backups boot, but it leaves the separate region lock in place. With Rhea already around and the Satiator on the way, we're definitely getting closer to a CD-less society! Anyway, this first video is all about identifying the Saturn CD drive before installing the chip.
 
 ### Sources
 

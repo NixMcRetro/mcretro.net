@@ -12,7 +12,7 @@ ai_assistance:
 
 {% include youtube.html id="x6EnMkOPQKM" %}
 
-Always connect your video ground - that's the lesson learnt here! Nice and simple. That picture looks amazing. Here's to the next 20 years of that screen working without any intervention! :P
+Always ground your ground! In this case, that meant connecting the video ground properly. That's the lesson learnt here! Nice and simple. That picture looks amazing. Here's to the next 20 years of that screen working without any intervention! :P
 
 {% include youtube.html id="96iRRmjoBME" %}
 

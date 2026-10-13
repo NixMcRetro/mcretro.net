@@ -16,7 +16,7 @@ How did I get to this point? Error after error: "Cartridge unsuitable for this s
 
 This particular Victor RG-JX2(Y) VA9 appeared to have been left in a strange state, possibly after previous modification work was removed. Before fixing it, both the Action Replay and GameShark produced "Cartridge unsuitable for this system", while retail NTSC-U, NTSC-J and PAL game discs produced "Game disk unsuitable for this system". Audio CDs still worked normally. That combination was one of the clues that the console's region configuration had been left in a strange state rather than the optical drive simply being unable to read discs.
 
-Saturn region selection is controlled by a group of motherboard jumpers. Different high / low combinations identify the console's region. With help from Nopileus on ASSEMblerGames, I restored the Japanese jumper configuration on this board, including the JP6 / JP11 arrangement shown in the photographs.
+Saturn region selection is controlled by a group of motherboard jumpers. Different high / low combinations identify the console's region. With help from Nopileus on ASSEMblerGames, I restored the Japanese jumper configuration on this particular VA9 by bridging JP6 and JP11 with bare Kynar wire... so just... wire. The photographs show what I did on this board.
 
 ![before](/assets/images/2016/img_0542.jpg)
 
@@ -26,7 +26,7 @@ Once that was restored, the console returned to Japanese behaviour and the cartr
 
 It also booted the CD-Rs I tried, but restoring the region jumpers does not itself bypass Saturn disc authentication. I hadn't established what was allowing those discs to boot.
 
-TriMesh also discussed the wider set of Saturn region combinations, including unused / reserved values. Big thanks to Nopileus, TriMesh and the other Saturn modding references linked below.
+TriMesh also discussed the wider set of Saturn region combinations. He described 14 usable combinations plus two marked "do not use", making 16 in total. Who knows, maybe I had ended up on one of those! Big thanks to Nopileus, TriMesh and the other Saturn modding references linked below.
 
 ### Sources
 

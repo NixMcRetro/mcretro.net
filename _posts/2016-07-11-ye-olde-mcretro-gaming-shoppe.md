@@ -20,7 +20,7 @@ So all should be ready for an August launch. Thanks again to WooCommerce and Wor
 
 ![2016-07-11_weight2](/assets/images/2016/img_0487.jpg)
 
-I know, I know... I did say I wouldn't report on my weight-loss efforts until I reached the goal of 80 kg, but it's incredible to watch the number keep dropping. The graph above shows the BMI "healthy weight" range, with my target just inside the blue zone.
+I know, I know... I did say I wouldn't report on my weight-loss efforts until I reached the goal of 80 kg, but it's incredible to watch the weight just disappear. The graph above shows the BMI "healthy weight" range, with my target just inside the blue zone.
 
 ![2016-07-11_weight1](/assets/images/2016/img_0486.jpg)
 

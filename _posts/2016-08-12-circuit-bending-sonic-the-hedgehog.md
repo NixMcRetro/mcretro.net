@@ -18,11 +18,11 @@ I finally got around to doing some soldering on a somewhat faulty Mega Drive 2 I
 
 On the VRAM I concentrated on address inputs, grounding them to get results. The pinout above labels them **A0 through A7**; my original A0-to-A8 description went one address line too far. Interfering with those signals can produce wonderfully broken graphics. This is deliberately abusive experimentation, not a repair technique, and neighbouring pins should not be assumed safe just because they are close together.
 
-Then I started experimenting with the Z80 RAM, particularly address lines A8 through A11 and control signals such as `/OE` and `/CE1`.
+Then I started messing with the Z80 RAM, particularly address lines A8, A9, A10 and A11, and whatever `/OE` is. Possibly with a dash of `/CE1`. Those last two are control signals, not address lines.
 
 ![Z80 RAM](/assets/images/2016/img_0532.jpg)
 
-Messing with the data lines tended to hang the console and require a power cycle. I've decided to put the circuit-bending videos over on McRetro Gaming since technically this is some sort of gaming. If people enjoy staring at the pretty patterns and strange sounds, maybe I'll remember to do one every week.
+Messing with the data lines tended to hang the console and require a power cycle. Plenty more address lines to play with there, though. I've decided to put circuit bending over on the McRetro Gaming YouTube channel since technically it's some sort of gaming. I'll be doing one of these a week if I remember and people show enough interest in staring at all the pretty patterns and odd sounds. It will be very interesting to see what each game can do.
 
 ![Sonic1_Glitch](/assets/images/2016/img_0531.jpg)
 

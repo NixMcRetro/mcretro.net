@@ -38,7 +38,7 @@ That gives me a faulty supply identified here as **0629** and a working referenc
 - 12 V rail, powered on: 10.73 V
 - 5 V rail, powered on: 3.10 V
 
-The important result is that the faulty supply collapses badly under load, especially on the 5 V rail. Bad capacitor? Transformer? Transistor? Search me! At this point that establishes the symptom, not the culprit.
+The important result is that the faulty supply collapses badly under load, especially on the 5 V rail. Bad capacitor? Transformer? Transistor? Search me! At this point that establishes the symptom, not the culprit. I've called on the folk at ASSEMblerGames to see if they can help out. Fingers crossed someone will have an idea.
 
 Plan B was paying somebody who actually enjoys mains power supplies to repair it. Frankly, that still seems sensible. I'm not terribly fond of working on mains power devices.
 

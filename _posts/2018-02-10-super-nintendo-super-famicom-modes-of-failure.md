@@ -16,4 +16,4 @@ Image borrowed from [DogP's Nintendo Super System repair log](https://www.projec
 
 The Nintendo Super System is related to SNES hardware but is not the same retail console, so I would treat these failure examples as useful diagnostic clues rather than a definitive list of what causes every garbled SNES or Super Famicom display.
 
-Actually, this might be useful in working out some circuit bending for the SNES... stay tuned! 😉
+Actually, this might be useful in working out some circuit bending for the SNES... stay tuned ;)

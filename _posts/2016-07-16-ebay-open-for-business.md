@@ -26,7 +26,7 @@ Now onto eBay. The eBay shop will have some things, but there won't be any modch
 
 In other news, weight loss is progressing well. Down to 83.7 kg, which is a minuscule 2.7 kg, or about 0.8 BMI points, above the BMI category I was aiming for. I should be there within the next two months, then it's all about maintenance and sticking around that range instead of dropping off and fading into the distance.
 
-My 4XL jacket has to go in the clothes recycling pile, it's just waaaay too big now. Very interesting to see the difference in not being able to fit my own clothes. It used to only be in the other direction - size increases, not decreases! My pants have dropped... literally, from a size 42 to a size 36 / 34. My shirts are down to 2XL or even just XL which is definitely where I remember being in 2008. Party on! 🙃
+My 4XL jacket has to go in the clothes recycling pile, it's just waaaay too big now. Very interesting to see the difference in not being able to fit my own clothes. It used to only be in the other direction - size increases, not decreases! My pants have dropped... literally, from a size 42 to a size 36 / 34. My shirts are down to 2XL or even just XL which is definitely where I remember being in 2008. Party on! :-D
 
 ### McRetro Gaming Shop
 

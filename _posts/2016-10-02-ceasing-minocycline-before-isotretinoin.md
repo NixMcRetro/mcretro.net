@@ -18,7 +18,7 @@ That timing should be managed with the prescriber, not improvised from an old bl
 
 I had also hoped to fit in another blood donation before starting isotretinoin. Current Australian Lifeblood guidance says people taking long-term / low-dose minocycline for mild acne or rosacea are generally eligible to donate, but medication and donor eligibility should still be declared and checked with Lifeblood. Isotretinoin is different: blood donation is not permitted during treatment or for at least one month afterwards.
 
-Around eight days after stopping minocycline I noticed my skin becoming spotty again. That is a firsthand observation about what happened to me, not proof that minocycline universally "only works while you are taking the pills". It had been incredible having such clear skin for a while. Here's hoping isotretinoin is a long-term solution! :-) That was my hope in October 2016, not a treatment result I already knew.
+**Update:** It appears that minocycline only works as long as you are taking the pills. After approximately eight days my skin had become a bit spotty like it was before. It was incredible to have such good skin for a while. Here's hoping isotretinoin is a long term solution! :-)
 
 ### Sources
 

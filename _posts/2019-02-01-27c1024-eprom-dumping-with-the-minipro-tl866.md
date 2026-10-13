@@ -16,7 +16,7 @@ Ah yes, the ways of the 16-bit chip. Here we dump a Mega-CD BIOS several times t
 
 Now that everyone has recovered from the NSFW Dreamcast controller unboxing video, it's back to business as usual. Unfortunately though... my studies are fast approaching. We'll see what I can get done before the end of February at any rate.
 
-**2021-08-23 update:** You can also use the open-source command-line tool [minipro](https://gitlab.com/DavidGriffith/minipro/) with the TL866 family. It's separate from the MiniPro software supplied with the programmer. Great news for those of us on a Mac or Linux-powered machine!
+**Update 23rd August 2021:** You can also use the open-source command-line tool [minipro](https://gitlab.com/DavidGriffith/minipro/) with the TL866 family. It's separate from the MiniPro software supplied with the programmer. Great news for those of us on a Mac or Linux-powered machine!
 
 ### Sources
 

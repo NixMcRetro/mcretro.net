@@ -16,7 +16,7 @@ Vegemite. It is in our blood. Too bad it's owned by the multinational Mondelez..
 
 ![Vegemite!!](/assets/images/2016/img_0500.jpg)
 
-**Salt Reduced Vegemite.** What really caught my eye was not the reduced salt but the added vitamin B12. B12 is an important vitamin that I was lacking mid-last year. As you should know from being awesome and reading my blog, B12 has a cobalt atom sitting in the middle of a very complex molecule. Very cool cobalt!
+**Salt Reduced Vegemite.** What really caught my eye was not the reduced salt but the added vitamin B12. B12 is an important vitamin that I was lacking mid-last year. As you should know from being awesome and reading my blog, B12 has a cobalt atom sitting in the middle of a very complex-looking web of a molecule. Very cool cobalt!
 
 ![Vegemite!!!](/assets/images/2016/img_0501.jpg)
 

@@ -2,7 +2,7 @@
 title: "Sega Mega Drive 2 50 Hz / 60 Hz Mod, Mark II"
 author: "Nix McRetro"
 date: 2013-01-20T10:54:39.000+11:00
-last_modified_at: 2026-10-05
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-05
@@ -12,9 +12,7 @@ categories: [hacks, repairs, sega]
 
 {% include youtube.html id="CnRq9yR02_Y" %}
 
-This is the Mega Drive 2 I was talking about in the previous video. I knew I had it somewhere. More importantly, I knew this one worked properly.
-
-Well... Close to properly.
+This is the Mega Drive 2 I was talking about in the previous video. I knew I had it somewhere. More importantly, I knew this one worked properly. Well... close to properly.
 
 This is my second pass at the 50 Hz / 60 Hz modification. Mega Drive region configuration is controlled by the console's language and video-frequency settings. Switching the video-frequency signal lets a suitable board move between 50 Hz and 60 Hz operation.
 

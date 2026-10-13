@@ -18,7 +18,7 @@ The main difference is the clock source: Mayumi V4 uses the PlayStation's mechac
 
 This particular programmed chip eventually went to Dale, who successfully installed it in his PlayStation. Kudos to Dale! :)
 
-This was also my first 4K-ready video, and probably the last one for a while too. I did not have the CPU power to encode these things quickly or the bandwidth to upload them!
+**Update:** This was also my first 4K-ready video, and probably the last one for a while too. I did not have the CPU power to encode these things quickly or the bandwidth to upload them!
 
 ### Sources
 

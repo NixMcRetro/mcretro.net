@@ -18,7 +18,7 @@ Final Cut Pro X still doesn't quite _cut_ it for me. iMovie 9.0.8 is buggy, incl
 
 The actual star of the video above is the lizard that crawled out of the 600 W power supply from the roadside Core 2 Quad machine. Because apparently computers need wildlife now.
 
-**Edit, 8 February 2018:** Background music was a terrible idea...
+**Update 8th February 2018:** Background music was a terrible idea...
 
 ### Related posts
 

@@ -10,85 +10,109 @@ ai_assistance:
   purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
-The IBM PS/55 5510 material below is a rough machine translation of [FunkyGoods' Japanese article about the PS/55 TYPE 5510](https://funkygoods.com/schwarzschild/2010_02/2010_02_21.html), published on 21 February 2010. It caught my attention because of the overlap with the Sega TeraDrive Model 2. The photographs and hands-on observations belong to the original article, not to a teardown I performed. The translation is not the best, and I have not independently verified every technical statement.
+While looking into the Sega TeraDrive Model 2, I came across a fascinating Japanese look inside IBM's PS/55 Type 5510. It is one of those machines that looks familiar at first, until you start paying attention to the motherboard and cables. There is some wonderfully peculiar hardware in here!
 
-### Rough translation
+The photographs and hands-on observations below come from [Schwarzschild Cafe / FunkyGoods' article published on 21st February 2010](https://funkygoods.com/schwarzschild/2010_02/2010_02_21.html), part 32 of the author's *Decadent PC-Compatible Hobby* series. This is a newly edited English-language **adaptation and technical summary**, not my own teardown or a word-for-word translation. I've kept the original sequence of images and some of the author's sense of humour, while distinguishing observations from guesses and preserving the technical cautions already added to this post.
 
-![](/assets/images/2020/img_0667.jpg)
+## Inside the PS/55 Type 5510
 
-After removing the cover of the genuine machine manufactured by IBM, PS/55 TYPE 5510-Z02. The upper elongated block is the power supply unit. This model has two FDDs, so no HDD is stored. The motherboard is of course dedicated, not a so-called Baby AT form factor.
+![IBM PS/55 Type 5510-Z02 with its cover removed](/assets/images/2020/img_0667.jpg)
 
-\- Decaying compatible machine hobby (No. 32) (2010/02/21) \[PS/55 TYPE 5510 Anatomy\]
+*The PS/55 Type 5510-Z02 with the case removed. The long enclosure across the top is its power supply. This particular configuration has two floppy drives and no internal hard drive.*
 
-This series is also very rude, and more recently, it was ironic that "Omae's decadent compatible machine series has already been read!" . Well, of course, since it's a content that doesn't get more elaborate, it makes sense. Moreover, there is no useful information for people living in this era, and this is a waste of time. Nevertheless, the only reason to continue this series is as a senior crock ...
+The Japanese author describes opening the case of an IBM-made PS/55 Type 5510, then taking a close look at what is inside. It is an original IBM PC/AT-compatible design, but the motherboard has little in common with the conventional Baby AT boards found in many other computers of its era. Rather than relying on a collection of expansion cards, IBM put serial and parallel I/O and VGA video on the motherboard itself.
 
-As previously announced, this is the anatomy of PS55 TYEP5510, an IBM genuine PC/AT compatible machine. That said, I just removed the lid and looked inside. Well, of course, it's quite different from modern machines, and it has a proprietary IBM-designed motherboard that has a completely different configuration than Baby AT machines that were common at the time. The ISA bus, which is a proof of AT compatible machines, is installed horizontally using a riser card from the motherboard, and there are only three slots. However, this motherboard has all the necessary Siripara I/O and video, so the small number of slots should not be a problem.
+The ISA expansion slots sit on a riser card rather than directly on the main board. There are only three, but with so much already built in, that is not necessarily a problem. The author also has a laugh at the expense of this long-running vintage-PC series: there may not be much practical value in dismantling another obsolete machine, but that has never stopped a dedicated hardware enthusiast!
 
-The main chips are listed below. Since it is an old machine of the 286 era, the chip consolidation has not been done much and the number of parts is very large. If you analyze the chip model number, you will get a vague idea of ​​the board configuration.
+## What is on the motherboard?
 
-- N80286-12 286 CPU (Intel, 12 MHz, PLCC)
-- C80287XL coprocessor (Intel)
-- WD76C10LP-LR system controller (Western Digital)
-- WD76C20-JU floppy disk controller (Western Digital)
-- WD76C30-JU serial/parallel I/O and clock generator (Western Digital)
-- WD90C10-LR VGA chip (Western Digital)
-- iP8042AH keyboard controller (Intel)
-- IMSG176P 6-bit palette DAC (Inmos)
-- IBM 79F2661, unidentified (possibly the hard disk controller)
+This is a 12 MHz 80286-era system. Its functions are distributed across a considerable number of separate chips, with Western Digital supplying much of the support logic. The major devices identified in the Japanese article are:
 
-The devices were manufactured in the second half of 1990. Their functions are spread across several chips, mostly from Western Digital. The onboard memory is IBM-branded, with four 30-pin SIMM sockets for expansion. Those sockets were initially empty, but I installed some suitable modules left in the cupboard and got them recognised.
+| Chip | Identification in the source |
+| --- | --- |
+| Intel N80286-12 | 12 MHz 80286 CPU, PLCC package |
+| Intel C80287XL | Optional maths coprocessor |
+| Western Digital WD76C10LP-LR | System controller |
+| Western Digital WD76C20-JU | Floppy disk controller |
+| Western Digital WD76C30-JU | Serial/parallel I/O and clock-generation functions |
+| Western Digital WD90C10-LR | VGA controller |
+| Intel iP8042AH | Keyboard controller |
+| Inmos IMSG176P | 6-bit video palette DAC |
+| IBM 79F2661 | Unidentified; the original author suggests it may be related to hard-disk control |
 
-![](/assets/images/2020/img_0668.jpg)
+The article describes chips dated to the latter part of 1990 and an IBM-branded onboard memory arrangement. Four 30-pin SIMM sockets provide additional memory expansion. They were empty when the author acquired the machine, but suitable modules from their collection were recognised when fitted.
 
-Take a bird's eye view of the motherboard. The vertical connector in the center of the board is for inserting the riser card in the ISA bus slot. A rare battery for older motherboards, the CR2032 CMOS retention battery is common and can be replaced immediately. There was a stamp stamped on April 3, 1991 inside the case. .
+![Overview of the IBM PS/55 motherboard](/assets/images/2020/img_0668.jpg)
 
-![](/assets/images/2020/img_0669.jpg)
+*An overview of the motherboard. The long connector near the centre accepts the ISA riser. A standard CR2032 battery handles CMOS retention, which is rather convenient for a machine of this vintage. The author also found a 3rd April 1991 date stamp inside the case.*
 
-80286-12MHz CPU and 80287 coprocessor. Copro is an optional retrofit. The trace of the modified jumper line is vivid. Copro is a ceramic package and a gold lid, and is now a valuable item.
+![Intel 80286 CPU and 80287 coprocessor](/assets/images/2020/img_0669.jpg)
 
-![](/assets/images/2020/img_0670.jpg)
+*The 12 MHz 80286 and the optional 80287 coprocessor. The coprocessor's ceramic package and gold lid are particularly striking. A hand-added jumper wire is visible nearby.*
 
-Onboard main memory and 30Pin SIMM optional memory. At the time of product purchase, there was no memory in the SIMM socket. The onboard memory is genuine IBM. You can see the WD system controller chip, WD76C10, on the right side of the screen, and the keyboard controller i8042 on the left side.
+![Onboard memory and SIMM expansion sockets](/assets/images/2020/img_0670.jpg)
 
-![](/assets/images/2020/img_0671.jpg)
+*IBM-branded onboard RAM alongside the 30-pin SIMM sockets. The photograph also shows the WD76C10 system controller and Intel 8042 keyboard controller.*
 
-The chip at the bottom of the screen is WD76C30 for Siripara I/O and clock generator. At the top of the screen you can see the WD90C10 VGA chip, VRAM, DAC, etc. The colorful flat cable is a mysterious FDD connection cable. The reason for the mystery will be described later.
+![Motherboard video and I/O components](/assets/images/2020/img_0671.jpg)
 
-Jumper wires are flying around on the board. Even though it is a mother equipped with 80286. Even with just this much manual wiring, it would have increased the cost considerably. What's weird is the pin count of the FDD and HDD board-side connectors. Normally, a compatible cable uses a flat cable of 34 pins for FDD and a flat cable of 40 pins for HDD (IDE). However, for some reason, this board has a 40-pin connector for FDD and a 44-pin connector for HDD.
+*The WD76C30 handles serial/parallel I/O and clock-related duties. The WD90C10 VGA chip, video memory and DAC are also visible. That colourful ribbon cable will become important shortly.*
 
-This model is only FDD type. I confirmed that even the FD drive is not a special specification, and the drive side is a general 34 Pin. Special specifications were on the cable. I don't know why, but the header of the flat cable that connects to the board is floating with 6 pins unused. Perhaps the cable that connects to the HDD has a similar mechanism. This part is a small part, but it is a little puzzling. I am very worried. I'm gonna worry about this! Even if it is said, I am worried. . .
+## Jumper wires and curious drive connectors
 
-By the way, the price at the time of release of this machine was 198,000 yen for the basic model of 5510-Z02. It was exceptionally cheap for an IBM genuine product. The HDD-equipped model had a 40MB IDE, but the price at the time of release was unknown. It must have been expensive. . . Next time, let's take a look at mysterious expansion cards. The metamorphosis of this card is panae ... !! !!
+The author noticed a surprising amount of jumper wiring on this board. On a production motherboard, that kind of handwork looks time-consuming, and the article wonders what it added to the cost of building the machine.
 
-![](/assets/images/2020/img_0672.jpg)
+More interesting still are the drive connectors. A typical PC-compatible floppy interface uses a **34-pin cable**, while a conventional desktop IDE hard drive generally uses **40 pins**. The PS/55 motherboard in this article instead has a **40-pin floppy connector** and a **44-pin hard-disk connector**.
 
-Jumper wiring around the system control chip. Very detailed work is done.
+Does that mean the floppy drive itself is unusual? Apparently not. The actual drive has the familiar 34-pin connection. The additional six positions are on the motherboard end of the ribbon cable, where the source photographs show them unused. The original author suspected there might be a similar arrangement for the hard-disk connection, but did not establish that as fact.
 
-![](/assets/images/2020/img_0673.jpg)
+The article also considers whether the extra pins might have been reserved for three-mode floppy-drive signals. That is a theory, not a confirmed explanation. Why IBM chose this arrangement remains an interesting little mystery. What sort of enthusiast *wouldn't* want to know?
 
-Riser card with 3 slots for ISA bus. From this, you can feel that this machine is a PC/AT compatible machine.
+![Hand-added jumper wires near the system controller](/assets/images/2020/img_0672.jpg)
 
-![](/assets/images/2020/img_0674.jpg)
+*Detail of the wiring around the system controller. The handwork is unusually prominent for something that otherwise looks like a neatly engineered production motherboard.*
 
-It seems to have a riser card. Three full-size ISA expansion boards can be installed.
+![Three-slot ISA riser card](/assets/images/2020/img_0673.jpg)
 
-![](/assets/images/2020/ps_55_18.jpg)
+*The ISA riser has three expansion slots, reinforcing the machine's PC/AT-compatible design.*
 
-Mysterious FDD connection cable. For some reason, the number of pins on the board header is 40 Pin. Since the cable itself is a common 34Pin, you can see that it does not use 6Pin (the right side of the connector). Why is that? Wake Wakaran... Perhaps it was reserved for signals when using a drive compatible with 3 modes, but it is strange that the IDE HDD has many pins... After all, it is an unreasonable assumption.
+![ISA riser installed in the PS/55](/assets/images/2020/img_0674.jpg)
 
-![](/assets/images/2020/img_0675.jpg)
+*With the riser fitted, the system can accommodate three full-length ISA expansion boards.*
 
-When I was looking at the FDC WD76C20 data sheet, I found a block diagram very similar to the configuration of this machine. The only difference is the video DAC. If you use WD chips to harden it, it will look like this.
+![Unusual IBM PS/55 floppy disk ribbon cable](/assets/images/2020/ps_55_18.jpg)
 
-![](/assets/images/2020/img_0676.jpg)
+*The unusually wide motherboard-side floppy header, compared with the 34 conductors actually used by the drive cable. The six extra positions are visible at one end.*
 
-For reference, the original article includes this IBM PC/AT Type 5170 motherboard for comparison. It has no onboard VGA or serial/parallel ports. The article's "1984" and "8 MHz" description should not be treated as an exact identification of this board: IBM's product reference distinguishes the 6 MHz 5170-068 from the 8 MHz 5170-319 and 5170-339.
+## A familiar Western Digital design
 
-### Sources
+![WD76C20 reference block diagram](/assets/images/2020/img_0675.jpg)
 
-- [FunkyGoods / Schwarzschild Cafe - PS/55 TYPE 5510 解剖編 (21 February 2010)](https://funkygoods.com/schwarzschild/2010_02/2010_02_21.html)
+*The original author found a WD76C20 floppy-controller block diagram whose overall arrangement resembled the PS/55 motherboard. The video DAC was one noted difference. This is a design comparison, not proof that every circuit follows the reference exactly.*
+
+With the system controller, floppy controller, serial and parallel functions, and VGA all provided by Western Digital chips, the board starts to make more sense. It is also a good reminder of just how many individual parts were needed to implement what later machines would integrate into far fewer devices.
+
+## How does it compare with an IBM PC/AT?
+
+![IBM Personal Computer AT Type 5170 motherboard for comparison](/assets/images/2020/img_0676.jpg)
+
+*An IBM PC/AT Type 5170 motherboard, included in the Japanese article as a comparison. The older design has a very different layout and lacks the PS/55's integrated VGA and serial/parallel functions.*
+
+The original article labels the comparison as a 1984-era PC/AT motherboard with an 8 MHz 80286. That wording needs some care: IBM's own [product reference](https://bitsavers.org/pdf/ibm/pc/PS2_and_IBM_PC_Product_Reference_Version_4.0_Apr87.pdf) distinguishes the 6 MHz 5170-068 from later 8 MHz models such as the 5170-319 and 5170-339. The image is still useful as a visual comparison, but the exact model should not be inferred from the caption alone.
+
+## The price, and one more mystery
+
+According to the Japanese article, the basic PS/55 5510-Z02 originally cost **¥198,000**, which the author regarded as exceptionally inexpensive for an IBM-branded computer at the time. A configuration with a **40 MB IDE hard drive** was also available, but the author did not know its original price.
+
+And naturally, that is not the end of the story. The article finishes by teasing a particularly strange expansion card for the next instalment. If an unusual floppy cable and all those jumper wires weren't enough, apparently there was more to come!
+
+**Sources**
+
+- [Schwarzschild Cafe / FunkyGoods - Decadent PC-Compatible Hobby, Part 32: PS/55 Type 5510 Disassembly (21 February 2010), original Japanese article](https://funkygoods.com/schwarzschild/2010_02/2010_02_21.html)
+- [Schwarzschild Cafe / FunkyGoods - Part 31: Discovering the PS/55 Type 5510 (23 January 2010), original Japanese article](https://funkygoods.com/schwarzschild/2010_01/2010_01_23.html)
+- [Schwarzschild Cafe / FunkyGoods - Part 33: The Mysterious Hard Disk Card (27 February 2010), original Japanese article](https://funkygoods.com/schwarzschild/2010_02/2010_02_27.html)
 - [IBM - Personal System/2 and IBM Personal Computer Product Reference, Version 4.0 (April 1987), page 49](https://bitsavers.org/pdf/ibm/pc/PS2_and_IBM_PC_Product_Reference_Version_4.0_Apr87.pdf)
 
-### Related posts
+**Related Posts**
 
 - [Sega TeraDrive Model 2, Genesis Nomad and Mega Drive 2](/sega-teradrive-model-2-genesis-nomad-and-mega-drive-2/)

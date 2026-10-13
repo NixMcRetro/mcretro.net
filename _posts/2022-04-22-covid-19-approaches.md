@@ -16,7 +16,7 @@ Three of our staff at work are off with coronavirus infections after testing pos
 
 It's not really surprising but those who I would consider to be social butterflies or those with families seem to be getting infected first. As someone who generally spends my time alone, my risk is low unless I have to go to work - which I do. Still can't work out if I'm a gear, a cam or a cog.
 
-By 24 April I was still testing negative, which was good news. I've got two AstraZeneca vaccinations and a Moderna booster under my belt, so I'm less worried about myself. They're good protection against severe disease, but they're not a force field against catching or passing on Omicron. Next test is the morning before work.
+**Update 24th April 2022:** I am still testing negative, which is good news. I've got two AstraZeneca vaccinations and a Moderna booster under my belt, so I'm less worried about myself. They're good protection against severe disease, but they're not a force field against catching or passing on Omicron. Next test is the morning before work.
 
 ### Sources
 

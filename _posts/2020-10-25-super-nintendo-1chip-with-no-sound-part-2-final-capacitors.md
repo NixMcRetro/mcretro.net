@@ -12,7 +12,7 @@ ai_assistance:
 
 {% include youtube.html id="IXO1WYXIuSw" %}
 
-The final capacitors enter the scene and will determine whether we have succeeded or failed... Watch on to see the horrors. It's just about spooky Halloween time, but hopefully there won't be any trouble. Spoiler: the recap did **not** bring the sound back. The old capacitors are out, but I still haven't found what's causing the missing sound. On with the diagnosis!
+The final capacitors enter the scene and will determine whether we have succeeded or failed... Watch on to see the horrors. It's just about spooky Halloween time, but hopefully there won't be any trouble. Spoiler: the recap did **not** bring the sound back. I still haven't found what's causing the missing sound, but at least the old capacitors are out. That's kind of a win, right? On with the diagnosis!
 
 ### Related posts
 

@@ -33,7 +33,7 @@ I finally got around to putting together my MiSTer FPGA. Below is a list of all 
 - inline power switch
 - power-supply splitter cable
 
-Overall I was very impressed with the hardware, enough that I had started selling off original consoles and related FPGA carts such as my Terraonion gear. Playing Earth Defence Force on the Super Famicom, you really get hit by slowdown when too many sprites are dancing around the screen, which tends to happen in a shmup. On my setup the same slowdown appeared in the same sort of places on MiSTer, which absolutely made my day. Way past cool!
+Overall I was very impressed with the hardware, enough that I had started selling off original consoles and related FPGA carts such as my Terraonion gear. Playing Earth Defence Force on the Super Famicom, you really get hit by slowdown when too many sprites are dancing around the screen, which tends to happen in a shmup. On my setup the same slowdown appeared in the same sort of places on MiSTer, which absolutely made my day. Past cool!
 
 ### Related posts
 

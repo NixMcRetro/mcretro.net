@@ -16,4 +16,4 @@ With [Google preparing to retire Picasa](https://googlephotos.blogspot.com/2016/
 
 I left the old Picasa material up for as long as it remained available and wondered whether everything would eventually disappear into Google+ too. 🙃
 
-**Update, 7th May 2022:** The Flickr account was closed, and I planned to move the photo archive to the site's own [Photo Gallery](/photos). That destination currently shows a placeholder; the gallery has not been restored there.
+**Update 7th May 2022:** The Flickr account was closed, and I planned to move the photo archive to the site's own [Photo Gallery](/photos). That destination currently shows a placeholder; the gallery has not been restored there.

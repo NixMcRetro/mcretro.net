@@ -40,7 +40,7 @@ Whoops!
 
 More 32X testing to come. Until next time, keep powering on everyone!
 
-**Edit, 6th February 2018:** I later learned that Sega had already documented a compatibility fault affecting PAL and Asian Model 1 VA4 Mega Drives used with the 32X in its 1994 and 1995 service bulletins. Poor EDCLK and VCLK signal quality on the host Mega Drive can cause 32X-rendered graphics to jitter, sound to slow down or the game to lock up as the hardware warms. In other words, the 32X itself was not necessarily the problem. Sega's service procedure modifies the Mega Drive motherboard. That fits the warm-up behaviour I was seeing considerably better than the theories I was working through at the time.
+**Update 6th February 2018:** I later learned that Sega had already documented a compatibility fault affecting PAL and Asian Model 1 VA4 Mega Drives used with the 32X in its 1994 and 1995 service bulletins. Poor EDCLK and VCLK signal quality on the host Mega Drive can cause 32X-rendered graphics to jitter, sound to slow down or the game to lock up as the hardware warms. In other words, the 32X itself was not necessarily the problem. Sega's service procedure modifies the Mega Drive motherboard. That fits the warm-up behaviour I was seeing considerably better than the theories I was working through at the time.
 
 ### Related posts
 

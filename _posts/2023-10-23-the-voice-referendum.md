@@ -12,7 +12,7 @@ ai_assistance:
 
 ![](/assets/images/2023/img_1169.jpg)
 
-What the actual f**k Australia? When it comes to politics I am very left leaning and the echo chambers I frequent tend to be left aligned. Oh, aaaaaand I might not have voted. The final count was 39.94% Yes and 60.06% No; the screenshot above shows an earlier tally. But what the hell are we doing voting no on something that I believed could benefit First Nations people without taking anything away from anyone else?
+What the actual fuck Australia? When it comes to politics I am very left leaning and the echo chambers I frequent tend to be left aligned. Oh, aaaaaand I might not have voted. The final count was 39.94% Yes and 60.06% No; the screenshot above shows an earlier tally. But what the hell are we doing voting no on something that I believed could benefit First Nations people without taking anything away from anyone else?
 
 The right rambles on about equality while seeding fear, uncertainty and doubt. Are we actually that gullible to believe the crap spewing from the right, i.e. the Liberal-National Coalition. Apparently, yes we are.
 

@@ -2,7 +2,7 @@
 title: "Sega TeraDrive IBM WDL-330P 30 MB Hard Drive Overview"
 author: "Nix McRetro"
 date: 2013-07-18T02:13:57.000+10:00
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -15,8 +15,6 @@ categories: [sega, youtube]
 Just some poking around at how these hard drives were put together, nothing terribly exciting but figured the internet should have more on these WDL-330P drives.
 
 The WDL-330P uses a proprietary IBM-family interface, not the standard 44-pin laptop IDE pinout. My earlier interface investigation records successful WDL-330P tests in the TeraDrive.
-
-I returned to these drives in 2019 for another recap and comparison, linked below.
 
 ### Related posts
 

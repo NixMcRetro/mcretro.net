@@ -2,7 +2,7 @@
 title: "Sega TeraDrive WDL-330P Hard Drive Capacitor Replacement"
 author: "Nix McRetro"
 date: 2013-07-18T03:12:37.000+10:00
-last_modified_at: 2026-10-06
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-06
@@ -15,8 +15,6 @@ categories: [hacks, repairs, sega]
 One day I'll use surface mounted electrolytic capacitors... one day, just not today! Close call on the most faulty (bad blocks!) of all the drives, but we were able to recover thanks to vias in the PCB. Not my best repair job ever...!
 
 The vias let me recover a damaged connection during the recap; that does not mean the bad blocks were repaired or caused by the capacitors.
-
-I came back to these WDL-330P drives in 2019, looked in horror at some of my earlier work and recapped them again. The later posts are linked below.
 
 ### Related posts
 

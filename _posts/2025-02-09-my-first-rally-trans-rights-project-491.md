@@ -20,7 +20,7 @@ The immediate issue behind this rally was in Queensland. On 28 January 2025, the
 
 I am glad I had a support person with me yesterday and we were in one of the safest "Yes" vote regions of my state for the [Indigenous Voice to Parliament](https://en.wikipedia.org/wiki/Indigenous_Voice_to_Parliament), which ultimately failed. But hearing the [Welcome to Country](https://www.reconciliation.org.au/reconciliation/acknowledgement-of-country-and-welcome-to-country/) made me tear up something fierce. It really pisses me off how this entire system is built against us, the people. What scares me the most is that, I honestly don't know if we're smart enough as a nation to realise we are being divided and conquered.
 
-Hearing the stories from the speakers had a similar effect. Very emotional and relatable. So I have no issue saying a big f**k you to the Queensland Health Minister Tim Nicholls for messing with people's lives like that. You have no right.
+Hearing the stories from the speakers had a similar effect. Very emotional and relatable. So I have no issue saying a big fuck you to the Queensland Health Minister Tim Nicholls for fucking with people's lives like that. You have no fucking right.
 
 I've now [donated](https://givenow.com.au/project-491) and [signed the petition](https://transjustice.org.au/youth/). And I am going to (politely) hassle the hell out of my local members of parliament and remind them that trans rights ARE human rights. You Liberal Party dickwads just pissed me off something fierce.
 

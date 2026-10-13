@@ -14,7 +14,7 @@ categories: [hacks, sega, youtube]
 
 The fun starts in 45 minutes. Let's see if I can configure all this software for a massive **240p broadcast**. You won't be able to see anything! :)
 
-**Edit:** And... failure. At least we now know the internet connection here is bad enough that this particular setup simply does not work reliably. Useful result, I suppose.
+**Update:** And... failure. At least we now know the internet connection here is bad enough that this particular setup simply does not work reliably. Useful result, I suppose.
 
 All that aside, happy fourth birthday to the Nix McRetro Show! Four years on YouTube today. Look at those early videos... incredible quality, amazing content! Not much has changed, I suppose. ;)
 

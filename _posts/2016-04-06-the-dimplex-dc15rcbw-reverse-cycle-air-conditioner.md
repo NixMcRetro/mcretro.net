@@ -20,7 +20,7 @@ In my actual rooms, the difference was dramatic. This unit could cool a room rou
 
 The new room created a different problem: nowhere sensible to run the drainage pipe during heating operation. So I picked up a Dyson AM09 for winter heating instead, and it worked a treat in my rooms. Off to storage you go, dear DC15RCBW, until warmer weather returns.
 
-**Edit:** Never hurts to put a title on the post...
+**Update:** Never hurts to put a title on the post...
 
 ### Sources
 

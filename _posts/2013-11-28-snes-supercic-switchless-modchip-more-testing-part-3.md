@@ -18,7 +18,6 @@ I had to remove the CIC on the cartridge for this experiment. My guess was that 
 
 In automatic mode, the SuperCIC follows the cartridge CIC's region, which can differ from the replacement game's region. It also has forced 50 Hz and 60 Hz modes, so it doesn't always have to match the cartridge. Removing a cartridge's CIC isn't a general requirement for using a SuperCIC console.
 
-Years later, in 2020, I revisited this EarthBound cartridge and installed a SuperCIC key in the cartridge itself. Apparently the CIC saga was not finished with me yet.
 
 ### Sources
 

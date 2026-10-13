@@ -14,7 +14,6 @@ categories: [devkit, repairs, sega]
 
 Look who I picked up on my way home today. Two sassy ladies, I like to call Sophia 2 and Sophia 3. Now there is even more to do! More on their repairs as we go! They are Sega Saturn dev kits and originated from the UK.
 
-The June 2014 repair posts below record SG4101 systems with serials `H417010070` and `H417010020`. Both regained video output during those later repairs.
 
 ### Related posts
 

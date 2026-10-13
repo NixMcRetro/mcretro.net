@@ -14,7 +14,7 @@ categories: [news, raspberry-pi]
 
 Just a few days ago I managed to get WordPress playing nicely with the Tor onion mirror of this website, then hosted at **mcretro35qepy5cy.onion**. Magnificent! That got me wondering what other decentralised networks I could experiment with. First up: **Namecoin** and `.bit` names.
 
-I had been downloading the Namecoin blockchain and converted several thousand Dogecoins into Namecoin so I could experiment with registering a `.bit` name. Genius!
+I had spent over a day downloading the Namecoin blockchain, even though it was only a fraction of Bitcoin's size! I'd also converted several thousand Dogecoins into Namecoin so I could experiment with registering a `.bit` name. Genius!
 
 Then I stumbled onto **ZeroNet**, which describes itself as decentralised websites using Bitcoin-style cryptography and the BitTorrent network. It can also resolve Namecoin `.bit` addresses and use Tor for peer connections.
 

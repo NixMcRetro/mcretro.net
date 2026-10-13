@@ -415,9 +415,9 @@ async function bounceOtherTracks(){if(transport.playing||microphone||micStopping
   const Ctx=window.OfflineAudioContext||window.webkitOfflineAudioContext,ctx=new Ctx(2,Math.ceil((seconds+.15)*samples),samples),g=makeGraph(ctx);
   g.output.gain.value=state.volume;
   for(let i=0;i<4;i++){if(i===target)continue;const tr=state.tracks[i];for(const e of tr.events){if(e.t>=end||e.t+e.d<=begin)continue;const start=Math.max(begin,e.t),when=(start-begin)/speed+.01,d=Math.min(e.t+e.d,end)-start;if(d<=0)continue;
-   if(e.kind==='drum')playDrum(g,e.n,when,e.kit??0,1,tr.pan,i);
-   else if(e.kind==='sample')playSampleSlice(g,e.sampleId,e.sliceIndex||0,when,1,tr.pan,e.sliceSettings,speed,i);
-   else playSynth(g,clamp(e.n+Math.round(12*Math.log2(speed)),0,127),when,d/speed,e.patch||snapshotPatch(),1,tr.pan,i);
+   if(e.kind==='drum')playDrum(g,e.n,when,e.kit??0,1,0,i);
+   else if(e.kind==='sample')playSampleSlice(g,e.sampleId,e.sliceIndex||0,when,1,0,e.sliceSettings,speed,i);
+   else playSynth(g,clamp(e.n+Math.round(12*Math.log2(speed)),0,127),when,d/speed,e.patch||snapshotPatch(),1,0,i);
   }for(const c of tr.clips){const start=Math.max(c.t,begin),stop=Math.min(c.t+c.d,end);if(stop>start)playTapeClip(g,c,(start-begin)/speed+.01,start-c.t,stop-start,i,false)}
   }
   const rendered=await ctx.startRendering(),duration=Math.min(seconds,rendered.duration),id=await registerAudio(rendered);
@@ -459,9 +459,9 @@ function makeGraph(ctx){let compressor=ctx.createDynamicsCompressor();compressor
  chorusLfo.start(0);
   const roomSend=ctx.createGain(),room=ctx.createConvolver(),roomWet=ctx.createGain();room.buffer=makeRoomImpulse(ctx);roomSend.connect(room).connect(roomWet).connect(preColor);roomSend.gain.value=clamp(Number(state.fx.reverb)||0,0,1)*.55;roomWet.gain.value=.5;
   tone.gain.value=(state.fx.tone-.5)*22;body.gain.value=(.5-state.fx.tone)*8;satDry.gain.value=1-state.fx.saturation*.38;satWet.gain.value=state.fx.saturation*.34;
-const trackInputs=[],trackBuses=[],trackMeters=[];for(let i=0;i<4;i++){const input=ctx.createGain(),bus=ctx.createGain(),meter=ctx.createAnalyser();meter.fftSize=256;bus.gain.value=trackLevel(i);input.connect(bus).connect(meter);for(const destination of [dry,delay,chorusSend,roomSend])meter.connect(destination);trackInputs.push(input);trackBuses.push(bus);trackMeters.push(meter)}
-return {ctx,dry,delay,feedback,wet,output,compressor,analyser,chorusSend,chorusLfo,roomSend,room,roomWet,tone,body,satDry,satWet,trackInputs,trackBuses,trackMeters,noise:null}}
-function syncAudio(){if(!audio)return;const t=audio.ctx.currentTime;for(let i=0;i<4;i++)audio.trackBuses[i].gain.setTargetAtTime(trackLevel(i),t,.012);audio.output.gain.setTargetAtTime(state.volume,t,.025);audio.delay.delayTime.setTargetAtTime(.11+state.fx.delay*.55,t,.03);audio.feedback.gain.setTargetAtTime(state.fx.feedback*.67,t,.03);audio.wet.gain.setTargetAtTime(state.fx.wet*.65,t,.03);audio.chorusSend.gain.setTargetAtTime(state.fx.chorus*.38,t,.035);audio.roomSend.gain.setTargetAtTime(state.fx.reverb*.55,t,.04);if(audio.tone){audio.tone.gain.setTargetAtTime((state.fx.tone-.5)*22,t,.03);audio.body.gain.setTargetAtTime((.5-state.fx.tone)*8,t,.03);audio.satDry.gain.setTargetAtTime(1-state.fx.saturation*.38,t,.04);audio.satWet.gain.setTargetAtTime(state.fx.saturation*.34,t,.04)}}
+const trackInputs=[],trackBuses=[],trackPanners=[],trackMeters=[];for(let i=0;i<4;i++){const input=ctx.createGain(),bus=ctx.createGain(),pan=ctx.createStereoPanner?.()||null,meter=ctx.createAnalyser();meter.fftSize=256;bus.gain.value=trackLevel(i);input.connect(bus);if(pan){pan.pan.value=state.tracks[i].pan;bus.connect(pan).connect(meter)}else bus.connect(meter);for(const destination of [dry,delay,chorusSend,roomSend])meter.connect(destination);trackInputs.push(input);trackBuses.push(bus);trackPanners.push(pan);trackMeters.push(meter)}
+return {ctx,dry,delay,feedback,wet,output,compressor,analyser,chorusSend,chorusLfo,roomSend,roomWet,tone,body,satDry,satWet,trackInputs,trackBuses,trackPanners,trackMeters,noise:null}}
+function syncAudio(){if(!audio)return;const t=audio.ctx.currentTime;for(let i=0;i<4;i++){audio.trackBuses[i].gain.setTargetAtTime(trackLevel(i),t,.012);audio.trackPanners[i]?.pan.setTargetAtTime(state.tracks[i].pan,t,.012)}audio.output.gain.setTargetAtTime(state.volume,t,.025);audio.delay.delayTime.setTargetAtTime(.11+state.fx.delay*.55,t,.03);audio.feedback.gain.setTargetAtTime(state.fx.feedback*.67,t,.03);audio.wet.gain.setTargetAtTime(state.fx.wet*.65,t,.03);audio.chorusSend.gain.setTargetAtTime(state.fx.chorus*.38,t,.035);audio.roomSend.gain.setTargetAtTime(state.fx.reverb*.55,t,.04);if(audio.tone){audio.tone.gain.setTargetAtTime((state.fx.tone-.5)*22,t,.03);audio.body.gain.setTargetAtTime((.5-state.fx.tone)*8,t,.03);audio.satDry.gain.setTargetAtTime(1-state.fx.saturation*.38,t,.04);audio.satWet.gain.setTargetAtTime(state.fx.saturation*.34,t,.04)}}
 function connectVoice(graph,last,level,pan=0,trackIndex=null){let gain=graph.ctx.createGain();gain.gain.value=level;last.connect(gain);let out=gain;if(graph.ctx.createStereoPanner){let p=graph.ctx.createStereoPanner();p.pan.value=pan;gain.connect(p);out=p}if(Number.isInteger(trackIndex)&&trackIndex>=0&&trackIndex<4&&graph.trackInputs){out.connect(graph.trackInputs[trackIndex])}else{out.connect(graph.dry);out.connect(graph.delay);out.connect(graph.chorusSend);out.connect(graph.roomSend)}return out}
 function oscType(w){return ['sine','sawtooth','square','triangle','sawtooth','sine','sine','triangle'][Math.round(clamp(w,0,7))]}
 function playSynth(graph,midi,when,duration,p,level=.85,pan=0,trackIndex=null){let ctx=graph.ctx;when=Math.max(when,ctx.currentTime||0);let freq=440*Math.pow(2,(midi-69)/12);const env={...state.env,...(p.env||{})},a=clamp(Number(env.a)||.005,.003,2),d=clamp(Number(env.d)||.1,.02,3),s=clamp(Number(env.s??.7),.03,1),r=clamp(Number(env.r)||.15,.025,3);let end=duration===null?null:when+Math.max(.03,duration);
@@ -501,7 +501,7 @@ if(kind==='drum'){const dur=playDrum(a,midi,when,state.kit,.9,0,targetTrack);voi
 function liveNoteOff(note,id){const data=voices.get(id);if(!data)return;const t=audio?.ctx.currentTime??0;try{data.voice.release(t)}catch(e){}if(data.event&&data.kind==='synth')data.event.d=clamp((t-data.started)*state.tapeSpeed,.04,Math.min(12,state.tapeLength-data.event.t));voices.delete(id);if(![...voices.values()].some(v=>v.note===note))heldKeys.delete(note);updateVoiceCount();paintKeys();markDirty()}
 function releaseAll(){for(let [id,data] of voices){try{data.voice.release(audio?.ctx.currentTime||0)}catch(e){}}voices.clear();heldKeys.clear();updateVoiceCount();paintKeys()}
 function paintKeys(){qa('.piano-key,.mobile-note').forEach(k=>k.classList.toggle('down',heldKeys.has(Number(k.dataset.note))))}
-function playEvent(event,when,track){let a=audio;if(!a)return;let t=state.tracks[track],speed=state.tapeSpeed;const semis=Math.round(12*Math.log2(speed));if(event.kind==='drum')playDrum(a,event.n,when,event.kit??0,1,t.pan,track);else if(event.kind==='sample')playSampleSlice(a,event.sampleId,event.sliceIndex||0,when,1,t.pan,event.sliceSettings,speed,track);else playSynth(a,clamp(event.n+semis,0,127),when,clamp(event.d/speed,.01,24),event.patch||snapshotPatch(),1,t.pan,track)}
+function playEvent(event,when,track){let a=audio;if(!a)return;let t=state.tracks[track],speed=state.tapeSpeed;const semis=Math.round(12*Math.log2(speed));if(event.kind==='drum')playDrum(a,event.n,when,event.kit??0,1,0,track);else if(event.kind==='sample')playSampleSlice(a,event.sampleId,event.sliceIndex||0,when,1,0,event.sliceSettings,speed,track);else playSynth(a,clamp(event.n+semis,0,127),when,clamp(event.d/speed,.01,24),event.patch||snapshotPatch(),1,0,track)}
 function tapeNow(){return transport.playing&&audio?clamp((audio.ctx.currentTime-transport.origin)*state.tapeSpeed*(state.tapeReverse?-1:1),0,state.tapeLength):transport.pos}
 function tapeAudioTime(pos){return transport.origin+(state.tapeReverse?-pos:pos)/state.tapeSpeed}
 function playClick(when,accent){if(!audio||!state.metronome)return;let ctx=audio.ctx,o=ctx.createOscillator(),gain=ctx.createGain();o.type='sine';o.frequency.setValueAtTime(accent?1240:850,when);o.frequency.exponentialRampToValueAtTime(540,when+.035);gain.gain.setValueAtTime(.0001,when);gain.gain.exponentialRampToValueAtTime(accent?.12:.075,when+.002);gain.gain.exponentialRampToValueAtTime(.0001,when+.052);o.connect(gain).connect(audio.dry);o.start(when);o.stop(when+.055)}
@@ -877,7 +877,7 @@ function appendEndless(note){if(state.endlessSteps.length>=128){notice('Endless 
 function tickSequence(){if(!sequence.running||!audio)return;if(state.seqType==='tombola'){tickTombola();return}
  const a=audio,stepDuration=60/state.bpm*4/state.seqRate;let guard=0;
  while(sequence.origin+sequence.nextStep*stepDuration<a.ctx.currentTime+.135&&guard++<64){const step=sequence.nextStep,when=sequence.origin+step*stepDuration+(step%2?stepDuration*state.seqSwing:0),num=sequenceStepIndex(step,16);let notes=[];
- if(state.seqType==='pattern'){const bar=Math.floor(step/16);sequence.playingSlot=patternSlotAt(bar);sequence.chainBar=bar;notes=[patternForSlot(sequence.playingSlot)[sequenceStepIndex(step%16,16)]];}
+ if(state.seqType==='pattern'){const bar=Math.floor(step/16);sequence.playingSlot=patternSlotAt(bar);sequence.chainBar=bar;notes=[patternForSlot(sequence.playingSlot)[state.patternChainEnabled?sequenceStepIndex(step%16,16):num]];}
  else if(state.seqType==='finger')notes=[state.seqPattern[num],state.fingerB[num]];
  else if(state.seqType==='endless'){let count=state.endlessSteps.length;notes=[count?state.endlessSteps[sequenceStepIndex(step,count)]:null]}
  else{const held=[...heldKeys].sort((a,b)=>a-b);notes=[held.length?held[sequenceStepIndex(step,held.length)]:null]}
@@ -907,9 +907,9 @@ async function exportWav(){if(exporting)return;const any=state.tracks.some(t=>t.
  graph.output.gain.value=state.volume;graph.delay.delayTime.value=.11+state.fx.delay*.55;graph.feedback.gain.value=state.fx.feedback*.67;graph.wet.gain.value=state.fx.wet*.65;graph.chorusSend.gain.value=state.fx.chorus*.38;
  const at=t=>((reverse?state.tapeLength-t:t)/speed)+.001;
  for(let i=0;i<4;i++){const tr=state.tracks[i];for(const ev of tr.events){const when=at(reverse?ev.t+ev.d:ev.t);
-  if(ev.kind==='drum')playDrum(graph,ev.n,when,ev.kit??0,1,tr.pan,i);
-  else if(ev.kind==='sample')playSampleSlice(graph,ev.sampleId,ev.sliceIndex||0,when,1,tr.pan,ev.sliceSettings,speed,i);
-  else playSynth(graph,clamp(ev.n+Math.round(12*Math.log2(speed)),0,127),when,ev.d/speed,ev.patch||snapshotPatch(),1,tr.pan,i);
+  if(ev.kind==='drum')playDrum(graph,ev.n,when,ev.kit??0,1,0,i);
+  else if(ev.kind==='sample')playSampleSlice(graph,ev.sampleId,ev.sliceIndex||0,when,1,0,ev.sliceSettings,speed,i);
+  else playSynth(graph,clamp(ev.n+Math.round(12*Math.log2(speed)),0,127),when,ev.d/speed,ev.patch||snapshotPatch(),1,0,i);
  }for(const c of tr.clips)playTapeClip(graph,c,at(reverse?c.t+c.d:c.t),0,c.d,i,reverse)}
  setExportStatus('Rendering audio… (the browser does not report rendering percentage)');await nextExportFrame();const buffer=await offline.startRendering();setExportStatus('Encoding WAV · 0%');await nextExportFrame();const encoded=await wavBufferResponsive(buffer,pct=>setExportStatus('Encoding WAV · '+pct+'%'));setExportStatus('Preparing download…');download(new Blob([encoded],{type:'audio/wav'}),'supernick-op1-tape-v09-'+(reverse?'reverse-':'')+new Date().toISOString().slice(0,10)+'.wav');notice('Stereo WAV rendered'+(reverse?' in reverse PCM playback mode.':'.'));
  }catch(e){console.error(e);notice('WAV render failed: '+e.message)}finally{exporting=false;btn.disabled=false;btn.textContent=old;setExportStatus('');}}
@@ -955,7 +955,7 @@ function playTapeClip(graph,clip,when,skip=0,duration=clip.d,track=0,reverse=fal
  modulateTapeRate(source,t0,playSeconds,base);
  let output=source,drive=state.tapeFx?.drive||0;
  if(drive>.005){const shape=graph.ctx.createWaveShaper();shape.curve=tapeSaturationCurve(drive);shape.oversample='2x';const gain=graph.ctx.createGain();gain.gain.value=1/(1+drive*.38);source.connect(shape).connect(gain);output=gain}
- const tr=state.tracks[track];connectVoice(graph,output,1,tr.pan,track);
+ const tr=state.tracks[track];connectVoice(graph,output,1,0,track);
  source.start(t0,clamp(start,0,src.duration),bounded);
  if(graph===audio){activeAudioSources.add(source);source.onended=()=>activeAudioSources.delete(source)}return source;
 }

@@ -12,9 +12,9 @@ categories: [raspberry-pi]
 
 ![irc_test](/assets/images/2016/img_0476.jpg)
 
-Well, for the most part it worked for a while, and I was able to join my own conversation with myself a few times. IRC might be a fun way of having an instant chat hosted entirely on the trusty Raspberry Pi.
+Well, for the most part it seemed to work for a while and I was able to join in on my conversation with myself a few times. IRC might be a good way of having an instant chat running on the rock-solid Raspberry Pi.
 
-So far I've been using InspIRCd as the IRC daemon and experimenting with IRC services packages such as Anope and Atheme for things like NickServ and ChanServ. I got stuck on that second part, but progress is progress. I'm sure I'll have it working before the month is out. There should eventually be a web-based client here too for anybody less inclined to crack open mIRC, Textual, Konversation or Irssi. :)
+So far I've meddled with InspIRCd for the server and Anope and Atheme for the services (bot control and whatnot... ChanServ, NickServ, etc.), and I got stuck on that second part. Still, progress is progress. I'm sure I'll have it working before the month is out. There should be a web-based version sitting here too for those less inclined to crack open mIRC, Textual, Konversation and heck, even Irssi! :)
 
 ### McRetroNet IRC server
 

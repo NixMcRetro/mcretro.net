@@ -2,7 +2,7 @@
 title: "Sophia Systems Sega Saturn Programming Box Reassembly"
 author: "Nix McRetro"
 date: 2013-02-08T10:16:00.000+11:00
-last_modified_at: 2026-10-05
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-05
@@ -34,9 +34,7 @@ Lots more photos, nearly 300 of them, are in the [photo gallery](/goodies/).
 
 Look at that! 171-6692B SH7095 SH-2 CPUs!
 
-Later, someone had some SH-2 CPUs and sold them to me! What a wonderful person! Stay tuned!
-
-The Sophia story was not over after all.
+**Edit:** Someone had some SH-2 CPUs and has since sold them to me! What a wonderful person! Stay tuned!
 
 ### Related posts
 

@@ -2,7 +2,7 @@
 title: "Cross Products SNASM Mega-CD Development Unit Power-Up"
 author: "Nix McRetro"
 date: 2013-02-10T07:55:55.000+11:00
-last_modified_at: 2026-10-05
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-05
@@ -29,8 +29,6 @@ Somewhere along the way I also tried the wonderfully anonymous 133 MHz machine b
 ![](/assets/images/2013/img_0366.jpg)
 
 This was a 133 MHz something or other, not sure if it was Cyrix, AMD or Pentium. It was sufficient though and stacked well into the case.
-
-Later testing showed that the SNASM hardware could be unusually sensitive to the host PC. A 486DX4-100 worked beautifully, while some Pentium-class setups needed considerably more persuasion.
 
 At this point, though, all I wanted to know was whether the development hardware would wake up.
 

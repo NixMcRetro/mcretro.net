@@ -2,7 +2,7 @@
 title: "Toaplan's Zero Wing Demo on the XRGB-mini Framemeister"
 author: "Nix McRetro"
 date: 2013-02-27T08:25:34.000+11:00
-last_modified_at: 2026-10-05
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-05
@@ -12,9 +12,7 @@ categories: [gaming, sega, youtube]
 
 {% include youtube.html id="86xuKg32k9g" %}
 
-**All your base are belong to us.**
-
-That's right. Zero Wing on the Mega Drive through the XRGB-mini Framemeister. I am pretty terrible at it, as the video above demonstrates. Somehow I made it to stage two, which I had previously been unable to do.
+**All your base are belong to us.** That's right. Zero Wing on the Mega Drive through the XRGB-mini Framemeister. I am pretty terrible at it, as the video above demonstrates. Somehow I made it to stage two, which I had previously been unable to do.
 
 Clearly the Framemeister has improved my gaming ability. There can be no other explanation.
 

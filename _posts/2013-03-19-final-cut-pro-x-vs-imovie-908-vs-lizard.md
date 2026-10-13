@@ -2,7 +2,7 @@
 title: "Final Cut Pro X vs iMovie 9.0.8 vs Lizard"
 author: "Nix McRetro"
 date: 2013-03-19T09:58:58.000+11:00
-last_modified_at: 2026-10-05
+last_modified_at: 2026-10-13
 ai_assistance:
   model: "GPT-6.1 Sol"
   date: 2026-10-05
@@ -18,7 +18,7 @@ Final Cut Pro X still doesn't quite _cut_ it for me. iMovie 9.0.8 is buggy, incl
 
 The actual star of the video above is the lizard that crawled out of the 600 W power supply from the roadside Core 2 Quad machine. Because apparently computers need wildlife now.
 
-By 8 February 2018, my verdict on the background-music experiment was considerably less enthusiastic: background music was a terrible idea. Some experiments deserve to remain in 2013.
+**Edit, 8 February 2018:** Background music was a terrible idea...
 
 ### Related posts
 

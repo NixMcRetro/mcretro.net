@@ -49,3 +49,17 @@ jobs:
         run: node .github/tests/op1-performance-studio.mjs
       - name: Offline installation and reload regression (Chromium)
         run: node .github/tests/op1-pwa-offline.mjs
+      - name: Archive v1.5 source, assets and regression tests
+        uses: actions/upload-artifact@v4
+        with:
+          name: supernicks-op1-v1.5-source-${{ github.sha }}
+          retention-days: 90
+          if-no-files-found: error
+          path: |
+            homepages/op-1/
+            .github/tests/op1-browser-smoke.mjs
+            .github/tests/op1-tape-studio.mjs
+            .github/tests/op1-pwa-offline.mjs
+            .github/tests/op1-performance-studio.mjs
+            .github/workflows/op1-browser-tests.yml
+            .github/OP1-V1.5-HANDOVER.md

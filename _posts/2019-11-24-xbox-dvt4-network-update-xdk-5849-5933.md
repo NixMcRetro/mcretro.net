@@ -14,7 +14,7 @@ ai_assistance:
 
 We bring the DVT4 from XDK 5849 on the recovery ISO up to XDK 5933. I called this the "latest available XDK" at the time, though it's still unclear whether 5933 was an official release or an internal build.
 
-I couldn't get the update process working from Windows 10, but Windows 7 under Parallels on the Mac worked perfectly for my setup. Sure is great to see this stuff still working all these years later!
+I couldn't get the update process working from Windows 10, but Windows 7 under Parallels on the Mac worked perfectly for my setup. Sure is great to see this stuff still working 15 years on!
 
 Previous: [Xbox DVT4 Factory Restore (XDK Recovery 5849)](/xbox-dvt4-factory-restore-recovery-5849/)  
 Next: [Xbox DVT4 Running UnleashX](/xbox-dvt4-running-unleashx/)

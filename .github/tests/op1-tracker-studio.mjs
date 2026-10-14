@@ -104,21 +104,36 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    assert(await page.locator('#trackerStudio').isVisible(),'Tracker disappeared in Advanced');
    await page.locator('#studioSimpleButton').click();
    assert(await page.locator('#trackerStudio').isVisible(),'Tracker not restored in Simple');
-   // Load an original, deterministic eight-bar example without modifying song clips or tapes.
-   page.once('dialog',dialog=>dialog.accept());
-   await page.locator('#trackerExample').click();
-   const countAfterExample=await page.locator('#trackerPattern option').count();
-   const bpmAfterExample=await page.locator('#trackerBpm').inputValue();
-   assert.equal(countAfterExample,4,'Example failed to create four patterns: '+await page.locator('#trackerStatus').innerText());
-   assert.equal(bpmAfterExample,'104','Example did not set its own BPM');
-   const demo=await downloaded('#studioBackup');
-   assert.equal(demo.tracker.patterns.length,4);
-   assert.deepEqual(demo.tracker.chain,[0,1,2,3]);
-   assert.equal(demo.tracker.bpm,104);
-   assert(demo.tracker.patterns.flatMap(p=>p.cells).filter(Boolean).length>80);
-   assert.deepEqual(demo.songWorkspace.clips,withClips.songWorkspace.clips,'Example modified existing song clips');
-   await page.locator('#trackerUndo').click();
-   assert.deepEqual((await downloaded('#studioBackup')).tracker,original.tracker,'Example undo lost original tracker data');
+   // Verify the example in a fresh session. Browsers may throttle repeated automatic downloads
+   // after many rapid save clicks in one test context; this also checks portable reload safety.
+   const demoCtx=await browser.newContext({viewport:{width,height:880},acceptDownloads:true});
+   try{
+    const demoPage=await demoCtx.newPage(),demoErrors=[];
+    demoPage.on('pageerror',e=>demoErrors.push(e.message));
+    await demoPage.setContent(rawHtml,{waitUntil:'domcontentloaded'});
+    await demoPage.locator('[data-studio-group="Compose"]').click();
+    await demoPage.locator('[data-studio-tool="trackerStudio"]').click();
+    await demoPage.locator('#projectFile').setInputFiles({name:'existing-song.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(withClips))});
+    await demoPage.waitForFunction(()=>document.querySelector('#feedback')?.textContent.includes('Project loaded'),null,{timeout:25000});
+    demoPage.once('dialog',dialog=>dialog.accept());
+    await demoPage.locator('#trackerExample').click();
+    assert.equal(await demoPage.locator('#trackerPattern option').count(),4);
+    assert.equal(await demoPage.locator('#trackerBpm').inputValue(),'104');
+    const demoDownloaded=async()=>{
+     const download=demoPage.waitForEvent('download',{timeout:25000});
+     await demoPage.locator('#saveProject').click();
+     return JSON.parse(readFileSync(await(await download).path(),'utf8'));
+    };
+    const demo=await demoDownloaded();
+    assert.equal(demo.tracker.patterns.length,4);
+    assert.deepEqual(demo.tracker.chain,[0,1,2,3]);
+    assert.equal(demo.tracker.bpm,104);
+    assert(demo.tracker.patterns.flatMap(p=>p.cells).filter(Boolean).length>80);
+    assert.deepEqual(demo.songWorkspace.clips,withClips.songWorkspace.clips,'Example modified existing song clips');
+    await demoPage.locator('#trackerUndo').click();
+    assert.deepEqual((await demoDownloaded()).tracker,original.tracker,'Example undo lost original tracker data');
+    assert.deepEqual(demoErrors,[],'Example caused unexpected JS exceptions');
+   }finally{await demoCtx.close()}
    assert.deepEqual(errors,[],'Unexpected JS exceptions');
    if(width===390){
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);

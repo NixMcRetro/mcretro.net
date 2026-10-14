@@ -287,7 +287,7 @@ function sendToSong(){
  const draft=clone(s.songWorkspace);if(!draft.clips.length)draft.meter='4/4';draft.clips.push(...clips);
  try{
   const validated=window.OP1Workspace.normalize(draft);
-  if(compiled.notes.some(n=>n.fx!=='none'||n.vel!==Math.round(.76*127))&&!confirm('Song Workspace preserves pattern pitches and timing but may simplify tracker effects, retriggers, and drum velocities. Copy snapshots anyway?'))return;
+  if(compiled.notes.some(n=>n.fx!=='none')&&!confirm('Song Workspace preserves pattern pitches and timing but may simplify tracker effects, retriggers, and drum velocities. Copy snapshots anyway?'))return;
   window.OP1Workspace.stop();s.songWorkspace=validated;api.markDirty();window.OP1Workspace.render();
   status(clips.length+' tracker clips appended to Song Workspace; tracker patterns unchanged');
  }catch(e){status('Could not copy tracker: '+e.message)}

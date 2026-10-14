@@ -44,7 +44,7 @@ const MELODIES=[
   {type:'drum',name:'Skyline Drums',voice:'drum',pattern:'pocket',notes:beat(drumPatterns.pocket,4)}]},
  {id:'downstairs',name:'Downstairs Session',category:'Tape',description:'A slightly slower, warm three-track groove with deliberate space.',bpm:94,meter:'4/4',bars:4,parts:[
   {type:'synth',name:'Warm Keys',voice:'pad',notes:[...chord([50,57,62,65],0,4),...chord([48,55,60,64],4,4),...chord([45,52,57,60],8,4),...chord([43,50,55,59],12,4)]},
-  {type:'synth',name:'Low Pulse',voice:'bass',notes:seq([38,45,38,45,36,43,36,43,33,40,33,40,31,38,31,38],1)},
+  {type:'synth',name:'Low Pulse',voice:'bass',notes:seq([38,45,38,45,36,43,36,43,45,40,45,40,43,38,43,38],1)},
   {type:'drum',name:'Loft Beat',voice:'drum',pattern:'halftime',notes:beat(drumPatterns.halftime,4)}]},
  {id:'sunset',name:'Sunset Signal',category:'Tape',description:'Four tracks of melodic motifs, drum rhythm and a pulsing bassline.',bpm:124,meter:'4/4',bars:4,parts:[
   {type:'synth',name:'Sunset Melody',voice:'bell',notes:seq([76,79,81,79,76,74,72,74,76,81,84,81,79,76,74,72,74,76,79,76,72,69,67,69,72,74,76,79,76,72,69,67],.5)},
@@ -146,11 +146,11 @@ function initMidi(){
  $('pianolaImportJson')?.after(btn('IMPORT MIDI','pianola'));
  $('synthScoreImport')?.after(btn('IMPORT MIDI','synth'));
  $('workspaceAddPianola')?.after(btn('＋ IMPORT MIDI','song'));
- const top=btn('♫ MIDI IMPORT','roll');top.className='action';top.id='comfortMidiTop';top.title='MIDI import is available in Piano Roll, Pianola, Synth Note Player and Song Workspace';top.addEventListener('click',()=>chooseTab('Compose'));
+ const top=document.createElement('button');top.type='button';top.textContent='♫ MIDI IMPORT';top.className='action';top.id='comfortMidiTop';top.title='Choose a MIDI import destination';top.addEventListener('click',()=>{chooseTab('Compose');$('comfortMidiEntry').scrollIntoView({block:'center'});$('comfortMidiDestination').focus()});$('showHelp').before(top);
  // The top entry is a destination picker, rather than always overwriting a score.
  const wrapper=document.createElement('div');wrapper.className='comfort-midi-entry';wrapper.id='comfortMidiEntry';
  wrapper.innerHTML='<label for="comfortMidiDestination">IMPORT INTO <select id="comfortMidiDestination"><option value="roll">Piano Roll</option><option value="pianola">Pianola</option><option value="synth">Synth Note Player</option><option value="song">Song Workspace</option></select></label>';
- const b=btn('CHOOSE MIDI','roll');b.id='comfortMidiChoose';b.replaceWith();
+ const b=document.createElement('button');b.type='button';b.className='mini-btn';b.textContent='CHOOSE MIDI';b.id='comfortMidiChoose';
  b.addEventListener('click',e=>{e.stopPropagation();midiImport($('comfortMidiDestination').value)});
  wrapper.append(b);$('comfortTabs').after(wrapper);
 }

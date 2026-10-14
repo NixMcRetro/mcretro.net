@@ -1,0 +1,83 @@
+/* v2.1 Studio Simplified: keep the original instrument and underlying editors intact. */
+.studio-mode-bar,.studio-main-navigation,.studio-shortcuts,.studio-advanced-note{max-width:1180px;margin-left:auto;margin-right:auto;box-sizing:border-box}
+.studio-mode-bar{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 15px;border:1px solid #b7cbd4;border-radius:11px;background:#e5eef2;color:#294455}
+.studio-mode-bar strong{font-size:12px;letter-spacing:.1em}
+.studio-mode-bar p{margin:4px 0 0;font-size:12px;color:#587180;line-height:1.4}
+.studio-layout-choice{display:flex;gap:4px;flex-shrink:0;background:#cfdee5;padding:4px;border-radius:8px}
+.studio-layout-choice button{min-width:106px;min-height:43px;background:#f2f7f9;color:#405d6a;border:1px solid #b2c6d0;border-radius:6px;font-size:12px;font-weight:800}
+.studio-layout-choice button[aria-pressed=true]{background:#286883;color:#fff;border-color:#286883}
+.studio-shortcuts{margin-top:8px;padding:9px 11px;border:1px solid #bdd0d9;border-radius:10px;background:#edf3f5;display:flex;align-items:center;flex-wrap:wrap;gap:7px}
+.studio-shortcuts button{border:1px solid #b2c9d5;background:#fafcfd;color:#31536a;border-radius:7px;min-height:42px;padding:7px 12px;font-size:12px;font-weight:800}
+.studio-shortcuts button:hover,.studio-layout-choice button:hover,.studio-main-navigation button:hover{filter:brightness(.94)}
+#studioShortcutHelp{flex:1 0 100%;padding:10px;color:#456170;font-size:12px;line-height:1.6;background:#dfeaf0;border-radius:7px}
+.studio-main-navigation{margin-top:13px;padding:16px;background:#e7eef1;border:1px solid #b1c6d1;border-radius:13px;color:#28495b}
+.studio-heading{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:11px}
+.studio-heading strong{font-size:16px;letter-spacing:.045em}.studio-heading span{font-size:12px;color:#527083}
+.studio-stage-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.studio-stage-row button{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;padding:14px 14px 13px;min-height:116px;border-radius:9px;border:1px solid #b1c8d4;background:#f9fcfd;color:#28495c}
+.studio-stage-row button[aria-selected=true]{background:#286780;border-color:#174c68;color:#fff}
+.studio-stage-number{font-size:10px;letter-spacing:.14em;font-weight:900;opacity:.76}
+.studio-stage-row strong{font-size:15px}
+.studio-stage-row small{font-size:11px;line-height:1.4;opacity:.86;font-weight:500}
+.studio-detail{margin-top:13px}
+.studio-detail-head{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-bottom:9px}
+.studio-detail-head strong{font-size:12px;letter-spacing:.11em}
+.studio-detail-head span{font-size:11px;color:#567484}
+.studio-tool-navigation{display:flex;flex-wrap:wrap;gap:7px}
+.studio-tool-navigation button{min-height:43px;padding:7px 14px;border:1px solid #b5cbd7;background:#f9fcfd;color:#385b6e;border-radius:7px;font-weight:750;font-size:12px}
+.studio-tool-navigation button[aria-pressed=true]{background:#d4e9f0;border-color:#31839d;color:#185271;box-shadow:inset 0 0 0 1px #31839d}
+.studio-guide{margin-top:13px;background:#f9fcfd;border:1px solid #b5cbd6;padding:13px;border-radius:9px}
+.studio-guide-heading{display:flex;gap:12px;align-items:center;justify-content:space-between}
+.studio-guide-heading strong{color:#274d61;font-size:14px}
+.studio-guide-heading p{margin:6px 0;color:#536e7f;font-size:12px;line-height:1.5}
+.studio-guide-heading button,.studio-compose-flow button{min-height:43px;white-space:nowrap;padding:8px 13px;background:#27708d;color:white;border:1px solid #1d5a74;border-radius:7px;font-weight:800;font-size:12px}
+.studio-guide-steps{display:flex;flex-wrap:wrap;gap:9px}
+.studio-guide-steps span{background:#ebf3f7;padding:7px 10px;border-radius:6px;color:#4b6b7a;font-size:11px}
+.studio-advanced-note{margin:6px auto;font-size:12px;color:#637e8a}
+.studio-compose-flow{border:1px solid #b7cedb;border-radius:8px;margin-top:14px;padding:12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#e6eff3;color:#456777}
+.studio-compose-flow strong{font-size:12px;letter-spacing:.08em}
+.studio-compose-flow span{font-size:12px;flex:1 1 220px;line-height:1.5}
+.studio-advanced-note[hidden],.studio-main-navigation[hidden],.studio-guide[hidden],.studio-tool-navigation[hidden]{display:none!important}
+/* The old six-tab layout is retained verbatim in Advanced. Simple only filters visibility. */
+html.studio-simple #comfortTabs{display:none!important}
+html.studio-simple .quick-strip{display:none!important}
+html.studio-simple .below [data-comfort-tab].comfort-visible:not(.studio-current){display:none!important}
+html.studio-simple .below [data-comfort-tab].studio-current{display:block!important;width:100%;max-width:100%;box-sizing:border-box}
+html.studio-simple #sequencePanel:not(.studio-current){display:none!important}
+html.studio-simple #comfortTabStatus{display:none!important}
+html.studio-simple .studio-advanced-note{display:none!important}
+html.studio-advanced .studio-main-navigation{display:none!important}
+html.studio-advanced .studio-compose-flow{display:none!important}
+html.studio-advanced .studio-shortcuts{margin-bottom:3px}
+html.studio-advanced #comfortTabs{margin-top:8px}
+.studio-shortcuts button:focus-visible,.studio-layout-choice button:focus-visible,.studio-main-navigation button:focus-visible,.studio-compose-flow button:focus-visible{outline:3px solid #52b5d4;outline-offset:2px}
+/* The graphite theme applies to the studio chrome as well as legacy editors. */
+html[data-op1-theme=dark] .studio-mode-bar,html[data-op1-theme=dark] .studio-main-navigation,html[data-op1-theme=dark] .studio-shortcuts{background:#263640;border-color:#4a6878;color:#e9f4f9}
+html[data-op1-theme=dark] .studio-mode-bar p,html[data-op1-theme=dark] .studio-heading span,html[data-op1-theme=dark] .studio-detail-head span{color:#b0cad7}
+html[data-op1-theme=dark] .studio-layout-choice{background:#1e303a}
+html[data-op1-theme=dark] .studio-mode-bar button,html[data-op1-theme=dark] .studio-shortcuts button,html[data-op1-theme=dark] .studio-stage-row button,html[data-op1-theme=dark] .studio-tool-navigation button{background:#344c5b;color:#e8f5fb;border-color:#5b8093}
+html[data-op1-theme=dark] .studio-mode-bar button[aria-pressed=true],html[data-op1-theme=dark] .studio-stage-row button[aria-selected=true]{background:#347e9c;color:#fff;border-color:#8fc5db}
+html[data-op1-theme=dark] .studio-tool-navigation button[aria-pressed=true]{background:#315e72;color:#fff;border-color:#83bad1}
+html[data-op1-theme=dark] .studio-guide,html[data-op1-theme=dark] #studioShortcutHelp,html[data-op1-theme=dark] .studio-compose-flow{background:#304652;color:#deeaf1;border-color:#557487}
+html[data-op1-theme=dark] .studio-guide p,html[data-op1-theme=dark] .studio-guide strong,html[data-op1-theme=dark] .studio-compose-flow span{color:#e1eef5}
+html[data-op1-theme=dark] .studio-guide-steps span{background:#385363;color:#cddfe9}
+html[data-op1-theme=dark] .studio-compose-flow button,html[data-op1-theme=dark] .studio-guide-heading button{background:#347c98;color:#fff;border-color:#7da8b8}
+html[data-op1-theme=dark] .studio-advanced-note{color:#c0d5de}
+@media(max-width:800px){
+ .studio-mode-bar{flex-wrap:wrap;gap:10px;margin-top:8px;padding:10px}
+ .studio-layout-choice{width:100%}
+ .studio-layout-choice button{flex:1}
+ .studio-main-navigation{padding:9px;margin-top:8px}
+ .studio-stage-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .studio-stage-row button{min-height:100px;padding:10px}
+ .studio-stage-row strong{font-size:13px}
+ .studio-tool-navigation{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .studio-tool-navigation button{padding:8px;white-space:normal}
+ .studio-guide-heading{flex-wrap:wrap}
+ .studio-guide-heading button{width:100%}
+ .studio-shortcuts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:8px}
+ .studio-shortcuts button{min-width:0;padding:8px 3px;font-size:11px}
+ #studioShortcutHelp{grid-column:1/-1}
+}
+@media(max-width:420px){.studio-stage-row small{font-size:10px}.studio-stage-row button{min-height:110px}.studio-detail-head{display:block}.studio-shortcuts{margin-top:6px}}
+@media(prefers-reduced-motion:reduce){.studio-main-navigation button{transition:none}}

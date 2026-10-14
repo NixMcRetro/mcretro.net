@@ -4,7 +4,7 @@ import {chromium,firefox,webkit} from 'playwright';
 import {readFileSync} from 'node:fs';
 import assert from 'node:assert/strict';
 
-const html=readFileSync('homepages/op-1/index.html','utf8');
+import {html} from './op1-test-html.mjs';
 const engines={chromium,firefox,webkit};
 for(const [name,engine] of Object.entries(engines)){
  const browser=await engine.launch({headless:true});
@@ -13,7 +13,7 @@ for(const [name,engine] of Object.entries(engines)){
   const page=await ctx.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   await page.setContent(html,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/v1\.9/);
+  assert.match(await page.title(),/v2\.0/);
   assert.equal(await page.locator('.performance-track').count(),4);
   assert.equal(await page.locator('.performance-meter').count(),4);
   await page.locator('#quickMixer').click();

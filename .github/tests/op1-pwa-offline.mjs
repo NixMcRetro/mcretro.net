@@ -70,7 +70,7 @@ try{
  await page.waitForTimeout(1000);
  await ctx.setOffline(true);
  await page.reload({waitUntil:'domcontentloaded',timeout:20000});
- assert.match(await page.title(),/v2\.0/);
+ assert.match(await page.title(),/v2\.1/);
  assert.equal(await page.locator('.sound-key').count(),8,'Instrument did not load offline');
  assert.equal(await page.locator('.knob').count(),4,'Encoder controls missing offline');
  await page.waitForFunction(()=>document.querySelector('#offlineBadge')?.textContent==='CACHED',null,{timeout:10000});

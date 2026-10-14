@@ -61,7 +61,8 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
     assert.equal(bytes.readUInt16BE(8),0);
     assert.equal(bytes.readUInt16BE(10),1);
     assert.equal(bytes.toString('ascii',14,18),'MTrk');
-    assert(bytes.length>90,'MIDI missing notes');
+    assert.equal(bytes.readUInt32BE(18),bytes.length-22,'MIDI track length mismatch');
+    assert([...bytes.subarray(22)].some(x=>(x&0xf0)===0x90),'MIDI note-on events missing');
    }
    // Legacy v5 projects still load and produce an empty default tracker.
    const original=await downloaded();

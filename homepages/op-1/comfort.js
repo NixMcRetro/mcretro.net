@@ -58,7 +58,7 @@ function patched(voice){const p=structuredClone(api.snapshotPatch());const confi
  chip:{wave:2,cutoff:.90,res:.08,detune:.12}
  }[voice]||{};Object.assign(p,config);p.env={...p.env,a:voice==='pad'?.23:.008,d:.24,s:voice==='pad'?.8:.65,r:voice==='pad'?.65:.18};return p}
 function setTheme(theme){theme=theme==='dark'?'dark':'light';document.documentElement.dataset.op1Theme=theme;const button=$('comfortTheme');if(button){button.textContent=theme==='dark'?'☀ LIGHT MODE':'☾ GRAPHITE';button.setAttribute('aria-label','Switch to '+(theme==='dark'?'light':'graphite')+' theme');button.setAttribute('aria-pressed',String(theme==='dark'))}safeStore('op1-lab-ui-theme-v201',theme)}
-function syncOctave(){if(!$('comfortOctValue'))return;const oct=state().octave,label=(oct>=0?'+':'')+oct;const midi=48+oct*12,high=midi+23;const pitch=n=>['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'][n%12]+(Math.floor(n/12)-1);$('comfortOctValue').textContent='OCT '+label; $('comfortOctRange').textContent=pitch(midi)+' to '+pitch(high);$('comfortOctDown').disabled=oct<=-2;$('comfortOctUp').disabled=oct>=2}
+function syncOctave(){if(!$('comfortOctValue'))return;const oct=state().octave,label=(oct>=0?'+':'')+oct;const midi=48+oct*12,high=midi+23;const pitch=n=>['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'][n%12]+(Math.floor(n/12)-1);$('comfortOctValue').textContent='OCT '+label; $('comfortOctRange').textContent=pitch(midi)+' to '+pitch(high);$('comfortOctDown').disabled=oct<=-2;$('comfortOctUp').disabled=oct>=2;document.querySelectorAll('.comfort-dock-key').forEach(b=>{const n=Number(b.dataset.note),m=48+n+oct*12;b.textContent=pitch(m);b.setAttribute('aria-label','Play '+pitch(m))})}
 function initOctave(){
  const bar=document.createElement('div');bar.className='comfort-octave';bar.id='comfortOctave';bar.setAttribute('aria-label','Central keyboard octave controls');
  bar.innerHTML='<button id="comfortOctDown" type="button" title="Down one octave" aria-label="Octave down">−</button><output aria-live="polite"><span id="comfortOctValue">OCT +0</span><small id="comfortOctRange">C3 to B4</small></output><button id="comfortOctUp" type="button" title="Up one octave" aria-label="Octave up">+</button>';
@@ -156,6 +156,25 @@ function importScore(score,target){
 }
 function midiImport(target){
  midiTarget=target;midiInput.value='';midiInput.click();
+}
+function initKeyboardDock(){
+ const dock=document.createElement('div');dock.className='comfort-keyboard-dock';dock.id='comfortKeyboardDock';dock.setAttribute('role','group');dock.setAttribute('aria-label','Sticky two-octave musical keyboard');dock.hidden=true;
+ const sharps=new Set([1,3,6,8,10]);
+ for(let n=0;n<24;n++){
+  const b=document.createElement('button');b.type='button';b.className='comfort-dock-key';b.classList.toggle('sharp',sharps.has(n%12));b.dataset.note=String(n);
+  const id='comfort-dock-'+n;let down=false;
+  const on=()=>{if(down)return;down=true;b.classList.add('down');api.liveNoteOn(n,id)};
+  const off=()=>{if(!down)return;down=false;b.classList.remove('down');api.liveNoteOff(n,id)};
+  b.addEventListener('pointerdown',e=>{if(e.button!==0)return;e.preventDefault();b.setPointerCapture(e.pointerId);on()});
+  for(const event of ['pointerup','pointercancel','lostpointercapture'])b.addEventListener(event,off);
+  b.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&!e.repeat){e.preventDefault();on()}});
+  b.addEventListener('keyup',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();off()}});
+  window.addEventListener('blur',off);dock.append(b);
+ }
+ $('mobileKeys').after(dock);
+ const original=$('deviceOuter');
+ if('IntersectionObserver' in window){new IntersectionObserver(entries=>{dock.hidden=entries[0]?.isIntersecting!==false},{threshold:.02}).observe(original)}
+ else window.addEventListener('scroll',()=>{dock.hidden=original.getBoundingClientRect().bottom>0},{passive:true});
 }
 function initMidi(){
  midiInput=document.createElement('input');midiInput.type='file';midiInput.accept='.mid,.midi,audio/midi,audio/x-midi';midiInput.id='comfortMidiFile';midiInput.className='hide';
@@ -259,7 +278,7 @@ function init(deps){
  const theme=document.createElement('button');theme.id='comfortTheme';theme.type='button';theme.className='action comfort-theme-toggle';
  $('showHelp').before(theme);theme.addEventListener('click',()=>setTheme(document.documentElement.dataset.op1Theme==='dark'?'light':'dark'));
  setTheme(safeRead('op1-lab-ui-theme-v201')||'light');
- initOctave();initTabs();initMidi();initDemos();syncOctave();
+ initOctave();initTabs();initKeyboardDock();initMidi();initDemos();syncOctave();
 }
 window.OP1Comfort={init,syncOctave,chooseTab,get demos(){return MELODIES.map(({id,name,category,bpm,meter})=>({id,name,category,bpm,meter}))}};
 })();

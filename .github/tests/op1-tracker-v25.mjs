@@ -1,9 +1,19 @@
 // v2.5 Focus-first workflow, 18-track musical library, musical expression and old-project compatibility.
 import {chromium,firefox,webkit} from 'playwright';
 import {readFileSync} from 'node:fs';
+import {createServer} from 'node:http';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
 import {rawHtml} from './op1-test-html.mjs';
+const server=createServer((request,response)=>{
+ const path=new URL(request.url,'http://localhost').pathname;
+ if(path==='/'){response.writeHead(200,{'Content-Type':'text/html'});response.end(rawHtml);return}
+ const file=path==='/sw.js'?'homepages/op-1/sw.js':path==='/manifest.webmanifest'?'homepages/op-1/manifest.webmanifest':path.startsWith('/icons/')?'homepages/op-1'+path:null;
+ try{if(file){response.writeHead(200,{'Content-Type':path.endsWith('.png')?'image/png':path.endsWith('.webmanifest')?'application/manifest+json':'text/javascript'});response.end(readFileSync(file));return}}catch(_){}
+ response.writeHead(404);response.end('Not found');
+});
+await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+const baseUrl='http://127.0.0.1:'+server.address().port+'/';
 const script=readFileSync('homepages/op-1/tracker.js','utf8');
 {
  const env={window:{},structuredClone,console};vm.runInNewContext(script,env);
@@ -38,7 +48,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    try{
     const page=await ctx.newPage(),errors=[];
     page.on('pageerror',e=>errors.push(e.message));
-    await page.setContent(rawHtml,{waitUntil:'domcontentloaded'});
+    await page.goto(baseUrl,{waitUntil:'domcontentloaded'});
     assert.match(await page.title(),/v2\.5/);
     assert(await page.locator('#studioWelcome').isVisible());
     assert.equal(await page.locator('#studioMainNavigation [data-studio-group]').count(),4);
@@ -65,7 +75,13 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
     assert.equal(await page.locator('#trackerDemo').inputValue(),'glitch');
     // Non-destructive audio preview never replaces the current project.
     const snapshot=await page.evaluate(()=>JSON.stringify(window.OP1Tracker.normalize(window.OP1Tracker.defaults())));
+    await page.locator('#startAudio').click();
     await page.locator('[data-demo-listen="glitch"]').click();
+    console.log('PREVIEW DIAG',name,width,await page.evaluate(()=>({
+      previewing:window.OP1Tracker.previewing,
+      status:document.querySelector('#trackerStatus').textContent,
+      feedback:document.querySelector('#feedback')?.textContent.slice(0,200)
+    })));
     assert.match(await page.locator('#trackerStatus').innerText(),/Previewing Glitch Garden/);
     const current=await page.evaluate(()=>JSON.stringify(window.OP1Tracker.normalize(window.OP1Tracker.defaults())));
     assert.equal(current,snapshot);
@@ -106,3 +122,5 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   }
  }finally{await browser.close()}
 }
+
+server.close();

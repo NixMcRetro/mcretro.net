@@ -2,7 +2,7 @@ name: OP-1 Browser Regression
 
 on:
   push:
-    branches: [main, op1-v1.1-polish, op1-v1.2-sound-design, op1-v1.3-tape-studio, op1-v1.4-offline, op1-v1.5-performance-studio, op1-v1.5.1-key-labels]
+    branches: [main, op1-v1.1-polish, op1-v1.2-sound-design, op1-v1.3-tape-studio, op1-v1.4-offline, op1-v1.5-performance-studio, op1-v1.5.1-key-labels, op1-v1.6-display-foundation]
     paths:
       - 'homepages/op-1/index.html'
       - '.github/tests/op1-browser-smoke.mjs'

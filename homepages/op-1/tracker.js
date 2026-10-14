@@ -409,6 +409,12 @@ function renderLibrary(){
  $('trackerDemoCount').textContent=shown.length+' OF '+DEMO_LIST.length+' ORIGINAL TRACKS';
  if(!shown.length){const p=document.createElement('p');p.textContent='No matching tracks. Clear the search or change the style.';host.append(p)}
 }
+function setLayoutMode(mode){
+ if(!$('trackerStudio'))return;
+ for(const id of ['trackerPerformanceOptions','trackerMixerOptions','trackerGrooveOptions']){
+  const section=$(id);if(section)section.open=mode==='advanced';
+ }
+}
 function openLibrary(){
  const panel=$('trackerLibrary');if(!panel)return;
  panel.open=true;renderLibrary();panel.scrollIntoView({block:'start',behavior:'smooth'});
@@ -883,5 +889,5 @@ function init(deps){
 }
 window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
  get playing(){return playing},get live(){return !!live},get transport(){return {playing,mode:live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
- launch,play,finishTapeTake,openLibrary,buildDemo,stopDemoPreview,get previewing(){return !!demoPreview}};
+ launch,play,finishTapeTake,openLibrary,setLayoutMode,buildDemo,stopDemoPreview,get previewing(){return !!demoPreview}};
 })();

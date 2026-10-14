@@ -436,7 +436,7 @@ function toggleTapeTake(){
    if(!entry.chunks.length)throw Error('No audio captured');
    const raw=new Blob(entry.chunks,{type:rec.mimeType||entry.chunks[0].type||'audio/webm'});
    const decoded=await ctx.decodeAudioData((await raw.arrayBuffer()).slice(0));
-   if(decoded.duration<.1||decoded.duration>60)throw Error('Take duration is outside the 0.1–60 second limit');
+   if(decoded.duration<.1||decoded.duration>60)throw Error('Take duration is outside the 0.1 to 60 second limit');
    const sampleId=await api.registerAudio(decoded);
    const state=api.getState(),track=state.tracks[entry.track];
    if(!track)throw Error('Tape track is missing');

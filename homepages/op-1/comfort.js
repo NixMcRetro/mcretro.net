@@ -27,13 +27,29 @@ function line(rows,beats=4,level=78){
 function harmonic(bars,beatLength=4,level=66){
  return bars.flatMap((p,bar)=>p.map((midi,i)=>note(midi,bar*beatLength+.04,beatLength*.81,level-i*3)));
 }
+// Bass is played at its written pitch, with a quiet upper-octave harmonic for
+// laptop speakers. Vary the rhythm between bars rather than repeating a loop.
 function bass(roots,beats=4,level=79){
  return roots.flatMap((midi,bar)=>{
-  const at=bar*beats;return [
-   note(midi,at,Math.max(.25,beats*.46),level+4),
-   note(midi+7,at+beats*.5,Math.max(.25,beats*.18),level-10),
-   note(midi,at+beats*.75,Math.max(.25,beats*.22),level-3)
-  ];
+  const at=bar*beats,late=bar%2===1,turn=bar===3||bar===7;
+  const root=(pos,len,vel)=>note(midi,at+pos,Math.max(.25,len),vel);
+  const upper=(pos,len,vel)=>note(midi+12,at+pos,Math.max(.25,len),vel);
+  const fifth=(pos,len,vel)=>note(midi+7,at+pos,Math.max(.25,len),vel);
+  if(beats===3)return late
+   ? [root(0,.92,level+1),upper(0,.7,Math.round(level*.32)),fifth(1.5,.44,level-13),root(2.25,.55,level-6)]
+   : [root(0,.79,level+3),upper(0,.7,Math.round(level*.32)),root(1.25,.45,level-11),fifth(2,.45,level-9)];
+  if(turn)return [
+   root(0,.8,level+3),upper(0,.64,Math.round(level*.31)),
+   fifth(1.5,.43,level-11),root(2,.53,level-6),
+   fifth(3,.38,level-15)];
+  if(late)return [
+   root(0,1.12,level+2),upper(0,.82,Math.round(level*.32)),
+   fifth(1.75,.44,level-13),root(2.5,.8,level-5),
+   upper(3.5,.36,Math.round(level*.25))];
+  return [
+   root(0,.91,level+4),upper(0,.73,Math.round(level*.32)),
+   root(1.5,.38,level-14),fifth(2,.58,level-10),
+   root(3,.74,level-4)];
  });
 }
 function drums(style,bars=8,meter='4/4'){
@@ -128,7 +144,7 @@ function patched(voice){
   lead:{wave:3,cutoff:.46,res:.08,detune:.04,env:{a:.012,d:.2,s:.54,r:.11}},
   soft:{wave:3,cutoff:.30,res:.04,detune:.0,env:{a:.055,d:.38,s:.42,r:.33}},
   pluck:{wave:1,cutoff:.38,res:.06,detune:.04,env:{a:.005,d:.19,s:.12,r:.16}},
-  bass:{wave:5,cutoff:.27,res:.04,detune:.0,env:{a:.012,d:.2,s:.64,r:.13}},
+  bass:{wave:3,cutoff:.58,res:.02,detune:0,env:{a:.009,d:.24,s:.72,r:.095}},
   pad:{wave:0,cutoff:.41,res:.03,detune:0,env:{a:.12,d:.35,s:.61,r:.28}},
   chip:{wave:2,cutoff:.37,res:.04,detune:.10,env:{a:.005,d:.17,s:.37,r:.09}}
  }[voice]||{};
@@ -143,7 +159,7 @@ function initOctave(){
  const bar=document.createElement('div');bar.className='comfort-octave';bar.id='comfortOctave';bar.setAttribute('aria-label','Central keyboard octave controls');
  bar.innerHTML='<button id="comfortOctDown" type="button" title="Down one octave" aria-label="Octave down">−</button><output aria-live="polite"><span id="comfortOctValue">OCT +0</span><small id="comfortOctRange">C3 to B4</small></output><button id="comfortOctUp" type="button" title="Up one octave" aria-label="Octave up">+</button>';
  $('board').append(bar);
- $('comfortOctDown').addEventListener('click',()=>$('octDown').click());$('comfortOctUp').addEventListener('click',()=>$('octUp').click());
+ $('comfortOctDown').addEventListener('click',()=>api.changeOct(-1));$('comfortOctUp').addEventListener('click',()=>api.changeOct(1));
  syncOctave();
 }
 function assignPanels(){

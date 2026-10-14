@@ -3,7 +3,7 @@ import {chromium,firefox,webkit} from 'playwright';
 import {readFileSync} from 'node:fs';
 import assert from 'node:assert/strict';
 import {html} from './op1-test-html.mjs';
-async function getFile(page,id){const pending=page.waitForEvent('download',{timeout:12000});await page.locator(id).click();try{return readFileSync(await (await pending).path());}catch(e){console.error('DOWNLOAD DIAGNOSTIC',JSON.stringify({id,feedback:await page.locator('#feedback').innerText(),recovery:await page.locator('#recoveryIndicator').innerText(),audio:await page.locator('#audioStatus').innerText(),workspace:await page.locator('#workspaceStatus').innerText()}));throw e}}
+async function getFile(page,id){const pending=page.waitForEvent('download',{timeout:12000});await page.locator(id).click();await page.waitForTimeout(200);const immediate=await page.evaluate(()=>({feedback:document.querySelector('#feedback')?.textContent,recovery:document.querySelector('#recoveryIndicator')?.textContent,assets:document.querySelector('#audioStatus')?.textContent,errors:window.__op1Errors||[],messages:window.__op1Messages||[]}));try{return readFileSync(await (await pending).path());}catch(e){console.error('DOWNLOAD DIAGNOSTIC',JSON.stringify({id,immediate,feedback:await page.locator('#feedback').innerText(),recovery:await page.locator('#recoveryIndicator').innerText(),audio:await page.locator('#audioStatus').innerText(),workspace:await page.locator('#workspaceStatus').innerText()}));throw e}}
 const project=async p=>JSON.parse((await getFile(p,'#saveProject')).toString());
 async function draw(page,row){await page.locator('#rollSurface').evaluate((el,row)=>{const box=el.getBoundingClientRect();el.dispatchEvent(new MouseEvent('click',{bubbles:true,clientX:box.left+64,clientY:box.top+32+row*24+9}));},row);}
 function peak(wav){assert.equal(wav.toString('ascii',0,4),'RIFF');let m=0;for(let i=44;i<wav.length-1;i+=2)m=Math.max(m,Math.abs(wav.readInt16LE(i)));return m;}
@@ -11,7 +11,7 @@ for(const [browserName,engine] of Object.entries({chromium,firefox,webkit})){
  const browser=await engine.launch({headless:true});
  try{for(const width of (browserName==='chromium'?[1440,390]:[1100])){
   const ctx=await browser.newContext({viewport:{width,height:880},acceptDownloads:true}),page=await ctx.newPage(),errors=[];
-  page.on('pageerror',e=>errors.push(e.message));await page.setContent(html,{waitUntil:'domcontentloaded'});
+  page.on('pageerror',e=>errors.push(e.message));await page.setContent(html,{waitUntil:'domcontentloaded'});await page.evaluate(()=>{window.__op1Messages=[];new MutationObserver(()=>{window.__op1Messages.push(document.querySelector('#feedback')?.textContent);}).observe(document.querySelector('#feedback'),{childList:true,characterData:true,subtree:true})});
   assert.match(await page.title(),/v2\.0/);assert.equal(await page.locator('#workspacePanel').count(),1);
   assert.equal(await page.evaluate('document.documentElement.scrollWidth'),width);
   await draw(page,11);await draw(page,7);await page.locator('#rollSendSong').click();

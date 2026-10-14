@@ -87,6 +87,15 @@ try{
  page.once('dialog',d=>d.accept());await page.locator('#workspaceMeter').selectOption('6/8');
  assert.equal((await project(page)).songWorkspace.meter,'6/8');
  const wav68=await getFile(page,'#workspaceExport');assert(peak(wav68)>30,'6/8 WAV silent');
+ await page.locator('#comfortDemoOpen').click();
+ await page.locator('#comfortDemoCategories').getByText('Tape',{exact:true}).click();
+ page.once('dialog',d=>d.accept());
+ await page.locator('#comfortDemoPrint-skyline').click();
+ await page.waitForFunction(()=>document.querySelector('#comfortDemoStatus')?.textContent.includes('printed as a new PCM tape clip'),null,{timeout:60000});
+ await page.locator('#comfortDemoClose').click();
+ const withDemo=await project(page);
+ assert.equal(withDemo.tracks[0].clips.length,2,'Demo tape render did not preserve existing PCM clip');
+ assert.equal(Object.keys(withDemo.audioSamples).length,2,'Demo tape render was not included in portable audio backup');
  assert.deepEqual(errors,[]);
- console.log('Chromium stereo WAV, print to PCM tape, imported backup and 6/8 passed');
+ console.log('Chromium stereo WAV, song and demo print to PCM tape, imported audio backup and 6/8 passed');
 }finally{await browser.close();await new Promise(resolve=>server.close(resolve));}

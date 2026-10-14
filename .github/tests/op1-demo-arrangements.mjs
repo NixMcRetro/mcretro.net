@@ -29,6 +29,15 @@ for(const d of MELODIES){
    totalNotes++;
   }
   if(part.type==='synth')assert(![6,7].includes(patched(part.voice).wave),'Unwanted bright FM timbre');
+  if(part.voice==='bass'){
+   assert.equal(patched('bass').wave,3,'Demo bass must use triangle at written pitch, not sub-octave engine');
+   const beats=beatsPerBar;
+   const roots=part.notes.filter(n=>n.start===Math.floor(n.start/beats)*beats);
+   assert.equal(roots.length>=8,true,'Bass should articulate every bar');
+   const quietUpper=part.notes.filter(n=>n.velocity<=Math.round(79*.45));
+   assert(quietUpper.length>=6,'Audible upper octave harmonic missing from bass for laptop speakers');
+   assert(new Set(part.notes.filter(n=>n.velocity>45).map(n=>(n.start%beats).toFixed(2))).size>=4,'Bass rhythm is still mechanically identical every bar');
+  }
  }
  const clips=demoSongClips(d,0);
  assert(clips.length<=32,'Demo exceeds workspace clip limit');

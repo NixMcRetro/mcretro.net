@@ -1,11 +1,12 @@
 /* SuperNick's OP-1 Browser Lab v2.0: unified non-destructive clip workspace. */
-.workspace-panel{margin-top:18px;padding:16px;border:1px solid #a6c4d0;border-radius:12px;background:#eaf2f5}
+.song-studio{min-width:0}
+.workspace-panel{box-sizing:border-box;max-width:100%;min-width:0;overflow:hidden;margin-top:18px;padding:16px;border:1px solid #a6c4d0;border-radius:12px;background:#eaf2f5}
 .workspace-panel h3{font-size:17px;margin:0 0 4px;color:#24485c}
 .workspace-panel p{line-height:1.5;font-size:12px;color:#495f69}
 .workspace-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:end;margin:12px 0}
 .workspace-toolbar label{font-size:11px;font-weight:700;display:grid;gap:3px}
 .workspace-toolbar select{min-height:39px}
-.workspace-scroll{overflow-x:auto;max-width:100%;padding:7px 0 12px;overscroll-behavior-x:contain}
+.workspace-scroll{box-sizing:border-box;display:block;width:100%;min-width:0;overflow-x:auto;max-width:100%;padding:7px 0 12px;overscroll-behavior-x:contain}
 .workspace-grid{width:1570px;position:relative;padding-left:34px}
 .workspace-ruler{position:relative;height:24px;background:repeating-linear-gradient(to right,transparent 0,transparent 95px,#9cb9c8 95px,#9cb9c8 96px)}
 .workspace-ruler span{position:absolute;top:3px;font-size:10px;color:#385d70}

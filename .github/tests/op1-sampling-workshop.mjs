@@ -70,15 +70,17 @@ for(const [engineName,engine] of Object.entries({chromium,firefox,webkit})){
    assert.equal(saved.sampleSettings.slicePoints.length,5);
    assert(Math.abs(saved.sampleSettings.slicePoints[2]-.55)<.001);
    assert(saved.audioSamples[saved.sampleId]&&saved.audioSamples[saved.sampleId].length>100,'Source audio not embedded');
+   await page.evaluate(()=>document.querySelector('#feedback').textContent='');
    await page.locator('#projectFile').setInputFiles({name:'sample-workshop-project.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(saved))});
-   await page.waitForFunction(()=>document.querySelector('#sampleWorkshopStatus')?.textContent.includes('4 SLICES'),{timeout:12000});
+   await page.waitForFunction(()=>document.querySelector('#feedback')?.textContent.includes('Project loaded with'),null,{timeout:12000});
    assert.equal(await page.locator('#samplePitch').inputValue(),'7');
    assert.equal(await page.locator('#sampleSliceRightValue').innerText(),'30%'); // selected slice resets to 1 after project load
    await page.locator('#sampleSliceSelect').selectOption('1');
    assert.equal(await page.locator('#sampleSliceRightValue').innerText(),'55%');
    const legacy=JSON.parse(JSON.stringify(saved));legacy.sampleSettings={slices:8,rate:1.3,level:.7,start:.25};
+   await page.evaluate(()=>document.querySelector('#feedback').textContent='');
    await page.locator('#projectFile').setInputFiles({name:'legacy-sampler-project.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(legacy))});
-   await page.waitForFunction(()=>document.querySelector('#sampleWorkshopStatus')?.textContent.includes('8 SLICES'),{timeout:12000});
+   await page.waitForFunction(()=>document.querySelector('#feedback')?.textContent.includes('Project loaded with'),null,{timeout:12000});
    const downloadLegacy=page.waitForEvent('download');await page.locator('#saveProject').click();
    const roundtrip=JSON.parse(readFileSync(await (await downloadLegacy).path(),'utf8'));
    assert.equal(roundtrip.sampleSettings.start,.25,'Old per-slice skip changed');

@@ -3,7 +3,7 @@ import { chromium } from 'playwright';
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 
-const html=readFileSync('homepages/op-1/index.html','utf8');
+import {html} from './op1-test-html.mjs';
 function wavTone(){
  const rate=22050,n=rate,bytes=Buffer.alloc(44+n*2);
  bytes.write('RIFF',0);bytes.writeUInt32LE(36+n*2,4);bytes.write('WAVEfmt ',8);
@@ -20,7 +20,7 @@ try{
  page.on('pageerror',e=>errors.push(e.message));
  page.on('dialog',d=>d.accept());
  await page.setContent(html,{waitUntil:'domcontentloaded'});
- assert.match(await page.title(),/v1\.9/);
+ assert.match(await page.title(),/v2\.0/);
  assert.equal(await page.locator('#tapeDrive').count(),1);
  for(const [id,value] of [['tapeDrive','65'],['tapeWow','55'],['tapeFlutter','40']])
   await page.locator('#'+id).fill(value);

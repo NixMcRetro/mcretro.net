@@ -351,7 +351,7 @@ let demoPreview=null;
 function stopDemoPreview(){
  if(!demoPreview)return;
  const entry=demoPreview;demoPreview=null;
- clearTimeout(entry.timer);
+ clearTimeout(entry.timer);clearInterval(entry.interval);
  const now=entry.graph.ctx.currentTime;
  for(const gate of entry.graph.trackerGates){
   gate.gain.cancelScheduledValues(now);
@@ -360,20 +360,34 @@ function stopDemoPreview(){
 }
 function previewDemo(key){
  if(rendering||captureEncoding||api.isRecording()){status('Finish recording or export before previewing music');return}
- const source=buildDemo(key),notes=prepare(source),rowSec=60/source.bpm/4;
- if(!notes.length)return;
- stop();
- api.stopOthers();const base=api.ensureAudio();if(!base){status('Enable browser audio to hear the preview');return}
- const graph=isolatedLiveGraph(base);configure(graph);
- const seconds=Math.min(source.patterns[0].rows*rowSec,12),when=graph.ctx.currentTime+.06;
- try{
-  for(const n of notes){
-   if(n.when>=seconds)break;
-   emit(graph,n,when+n.when);
+ const source=buildDemo(key),rowSec=60/source.bpm/4,seconds=Math.min(source.patterns[0].rows*rowSec,12);
+ const notes=prepare(source).notes.filter(n=>n.when<seconds);
+ if(!notes.length){status('No playable notes in this demo');return}
+ stop();api.stopOthers();
+ const base=api.ensureAudio();if(!base){status('Enable browser audio to hear the preview');return}
+ let graph;
+ try{graph=isolatedLiveGraph(base);configure(graph)}
+ catch(e){status('Preview audio unavailable: '+e.message);console.warn('Tracker preview graph error',e);return}
+ const start=graph.ctx.currentTime+.09,name=DEMOS[key]?.name||key;
+ const entry={graph,name,interval:null,timer:null};demoPreview=entry;
+ let next=0;
+ entry.interval=setInterval(()=>{
+  if(demoPreview!==entry)return;
+  const now=graph.ctx.currentTime;let limit=0;
+  while(next<notes.length&&limit++<24){
+   const n=notes[next],at=start+n.when;
+   if(at>=now+.13)break;
+   next++;
+   if(at<now-.1)continue;
+   try{emit(graph,n,at)}
+   catch(e){stopDemoPreview();status('Preview unavailable: '+e.message);console.warn('Tracker preview note failed',e);return}
   }
-  demoPreview={name:DEMOS[key]?.name||key,graph,timer:setTimeout(()=>{stopDemoPreview();status('Preview complete. Select USE IN TRACKER to edit the song.');},(seconds+.3)*1000)};
-  status('Previewing '+(DEMOS[key]?.name||key)+' · no project notes were changed');
- }catch(e){for(const gate of graph.trackerGates)gate.gain.value=0;status('Preview unavailable: '+e.message)}
+ },20);
+ entry.timer=setTimeout(()=>{
+  if(demoPreview!==entry)return;
+  stopDemoPreview();status('Preview finished. USE IN TRACKER loads a copy you can edit.');
+ },(seconds+.45)*1000);
+ status('Previewing '+name+' · your project is unchanged');
 }
 const demoCategory=style=>['break','funk','shuffle'].includes(style)?'Grooves':['arcade','demo','drive'].includes(style)?'Retro':['half','space','slow'].includes(style)?'Ambient':'Electronic';
 function renderLibrary(){

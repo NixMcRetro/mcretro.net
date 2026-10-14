@@ -35,7 +35,7 @@ const pitch=m=>SEMI[m%12]+(Math.floor(m/12)-1);
 const formatCell=c=>!c?'··· ·· ··':(c.kind==='drum'?'DR'+(c.inst+1):c.kind==='sample'?'SM'+(c.inst+1):pitch(c.midi).padEnd(3,' '))+' '+String(c.inst+1).padStart(2,'0')+' '+(c.fx==='none'?'··':c.fx.slice(0,2).toUpperCase())+c.param.toString(16).toUpperCase();
 const toIndex=(row,ch)=>row*CHANNELS+ch;
 let api=null,cursor={row:0,ch:0},clock=null,playing=false,started=0,next=0,events=[],playhead=-1,rendering=false;
-let history=[],clipboard=null,context=null,cycle=0,loopEnabled=false,compiledSeconds=0,compiledRows=0;
+let history=[],clipboard=null,clipboardReady=false,context=null,cycle=0,loopEnabled=false,compiledSeconds=0,compiledRows=0;
 const data=()=>api.getState().tracker;
 const pattern=()=>data().patterns[data().active];
 function status(s){$('trackerStatus').textContent=s||data().patterns.length+' PATTERNS · '+data().chain.length+' CHAIN STEPS · '+data().bpm+' BPM'}
@@ -123,10 +123,10 @@ function writeNote(advance=false){
  if(advance)setCursor(Math.min(cursor.row+1,pattern().rows-1),cursor.ch,true);
 }
 function erase(){const index=toIndex(cursor.row,cursor.ch);commit(d=>d.patterns[d.active].cells[index]=null)}
-function copyCell(){const cell=pattern().cells[toIndex(cursor.row,cursor.ch)];clipboard=cell?clone(cell):null;status(cell?'Step copied. Select another cell and paste.':'Empty step copied. Paste to clear another cell.')}
+function copyCell(){const cell=pattern().cells[toIndex(cursor.row,cursor.ch)];clipboard=cell?clone(cell):null;clipboardReady=true;status(cell?'Step copied. Select another cell and paste.':'Empty step copied. Paste to clear another cell.')}
 function cutCell(){copyCell();erase()}
-function pasteCell(){const index=toIndex(cursor.row,cursor.ch),saved=clipboard?clone(clipboard):null;commit(d=>{d.patterns[d.active].cells[index]=saved})}
-function resetSession(){stop();history=[];clipboard=null;cursor={row:0,ch:0}}
+function pasteCell(){if(!clipboardReady){status('Copy a step before pasting');return}const index=toIndex(cursor.row,cursor.ch),saved=clipboard?clone(clipboard):null;commit(d=>{d.patterns[d.active].cells[index]=saved})}
+function resetSession(){stop();history=[];clipboard=null;clipboardReady=false;cursor={row:0,ch:0}}
 function loadExample(){
  if(data().patterns.some(p=>p.cells.some(Boolean))&&!confirm('Replace tracker patterns with the original eight-bar example? You can undo this change. The rest of your project is untouched.'))return;
  const chords=[

@@ -2,10 +2,16 @@ name: OP-1 Browser Regression
 
 on:
   push:
-    branches: [main, op1-v1.1-polish, op1-v1.2-sound-design, op1-v1.3-tape-studio, op1-v1.4-offline, op1-v1.5-performance-studio, op1-v1.5.1-key-labels, op1-v1.6-display-foundation, op1-v1.6-sampling-workshop, op1-v1.7-cat-song-arrangement, op1-v1.8-pianola-composer, op1-v1.8.1-note-interchange, op1-v1.9-piano-roll-studio]
+    branches: [main, op1-v1.1-polish, op1-v1.2-sound-design, op1-v1.3-tape-studio, op1-v1.4-offline, op1-v1.5-performance-studio, op1-v1.5.1-key-labels, op1-v1.6-display-foundation, op1-v1.6-sampling-workshop, op1-v1.7-cat-song-arrangement, op1-v1.8-pianola-composer, op1-v1.8.1-note-interchange, op1-v1.9-piano-roll-studio, op1-v2.0-unified-song-workspace]
     paths:
       - 'homepages/op-1/index.html'
       - '.github/tests/op1-piano-roll-studio.mjs'
+      - '.github/tests/op1-unified-song.mjs'
+      - '.github/tests/op1-test-html.mjs'
+      - '.github/tests/op1-pianola-composer.mjs'
+      - '.github/tests/op1-score-interchange.mjs'
+      - 'homepages/op-1/workspace.js'
+      - 'homepages/op-1/workspace.css'
       - '.github/tests/op1-browser-smoke.mjs'
       - '.github/tests/op1-tape-studio.mjs'
       - '.github/tests/op1-performance-studio.mjs'
@@ -19,6 +25,12 @@ on:
     paths:
       - 'homepages/op-1/index.html'
       - '.github/tests/op1-piano-roll-studio.mjs'
+      - '.github/tests/op1-unified-song.mjs'
+      - '.github/tests/op1-test-html.mjs'
+      - '.github/tests/op1-pianola-composer.mjs'
+      - '.github/tests/op1-score-interchange.mjs'
+      - 'homepages/op-1/workspace.js'
+      - 'homepages/op-1/workspace.css'
       - '.github/tests/op1-browser-smoke.mjs'
       - '.github/tests/op1-tape-studio.mjs'
       - '.github/tests/op1-performance-studio.mjs'
@@ -59,12 +71,14 @@ jobs:
         run: node .github/tests/op1-score-interchange.mjs
       - name: v1.9 Piano Roll Studio, MIDI/polyphony and live recording regression
         run: node .github/tests/op1-piano-roll-studio.mjs
+      - name: v2.0 Unified Song Workspace cross-browser, WAV, tape and recovery regression
+        run: node .github/tests/op1-unified-song.mjs
       - name: Offline installation and reload regression (Chromium)
         run: node .github/tests/op1-pwa-offline.mjs
       - name: Archive v1.9 source, assets and regression tests
         uses: actions/upload-artifact@v4
         with:
-          name: supernicks-op1-v1.9-source-${{ github.sha }}
+          name: supernicks-op1-v2.0-source-${{ github.sha }}
           retention-days: 90
           if-no-files-found: error
           path: |
@@ -77,6 +91,8 @@ jobs:
             .github/tests/op1-pianola-composer.mjs
             .github/tests/op1-score-interchange.mjs
             .github/tests/op1-piano-roll-studio.mjs
+            .github/tests/op1-unified-song.mjs
+            .github/tests/op1-test-html.mjs
             .github/workflows/op1-browser-tests.yml
             .github/OP1-V1.5-HANDOVER.md
             .github/OP1-V1.5.1-HANDOVER.md
@@ -85,3 +101,4 @@ jobs:
             .github/OP1-V1.8-HANDOVER.md
             .github/OP1-V1.8.1-HANDOVER.md
             .github/OP1-V1.9-HANDOVER.md
+            .github/OP1-V2.0-HANDOVER.md

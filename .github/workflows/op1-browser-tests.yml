@@ -63,10 +63,10 @@ jobs:
         run: |
           npm install --no-save playwright@1.57.0
           npx playwright install --with-deps chromium firefox webkit
-      - name: v2.0 Unified Song Workspace cross-browser, WAV, tape and recovery regression
-        run: node .github/tests/op1-unified-song.mjs
       - name: v2.0.1 Studio Comfort, MIDI routing, demos, Retina and tabs regression
         run: node .github/tests/op1-studio-comfort.mjs
+      - name: v2.0 Unified Song Workspace cross-browser, WAV, tape and recovery regression
+        run: node .github/tests/op1-unified-song.mjs
       - name: v1.9 Piano Roll Studio, MIDI/polyphony and live recording regression
         run: node .github/tests/op1-piano-roll-studio.mjs
       - name: Chromium, Firefox and WebKit regression checks

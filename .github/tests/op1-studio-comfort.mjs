@@ -83,12 +83,12 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   // The initial song import is 120 BPM and the first tape demo has its own BPM.
   const clips=await page.locator('.workspace-clip-item').count();
   assert.equal(clips,5,'Demo loading did not preserve the MIDI song clip plus add four parts');
+  await page.locator('#comfortDemoClose').click();
+  assert(!(await page.locator('#comfortDemoDialog').isVisible()));
   const postDemoDownload=page.waitForEvent('download');await page.locator('#saveProject').click();
   const postDemo=JSON.parse(readFileSync(await(await postDemoDownload).path(),'utf8'));
   assert.deepEqual(postDemo.songWorkspace.clips[0],project.songWorkspace.clips[0],'Demo loading changed the original MIDI clip');
   assert.deepEqual(postDemo.tracks[0].events,project.tracks[0].events,'Demo loading changed tape notes');
-  await page.locator('#comfortDemoClose').click();
-  assert(!(await page.locator('#comfortDemoDialog').isVisible()));
   if(width>800){await page.evaluate(()=>window.scrollTo(0,document.documentElement.scrollHeight));await page.waitForFunction(()=>document.querySelector('#comfortKeyboardDock')?.hidden===false,null,{timeout:5000});assert(await page.locator('#comfortKeyboardDock').isVisible(),'Keyboard dock did not appear when the instrument was scrolled away')}
   if(width===390){const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);assert(overflow<=1,'Mobile page horizontally overflows by '+overflow+'px');assert(await page.locator('#mobileKeys').isVisible())}
   assert.deepEqual(errors,[],'Unexpected browser exceptions: '+errors.join('; '));

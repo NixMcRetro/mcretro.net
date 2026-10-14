@@ -1,4 +1,4 @@
-// v2.3 Music-Making Update. Original editing, mixer, mobile and sample handoff regression.
+// v2.4 Music-Making Update. Original editing, mixer, mobile and sample handoff regression.
 import {chromium,firefox,webkit} from 'playwright';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
@@ -26,7 +26,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
     const page=await ctx.newPage(),errors=[];
     page.on('pageerror',e=>errors.push(e.message));
     await page.setContent(rawHtml,{waitUntil:'domcontentloaded'});
-    assert.match(await page.title(),/v2\.3/);
+    assert.match(await page.title(),/v2\.4/);
     await page.locator('[data-studio-group="Compose"]').click();
     await page.locator('[data-studio-tool="trackerStudio"]').click();
     assert(await page.locator('#trackerStudio').isVisible());
@@ -75,7 +75,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
     assert.equal(project.tracker.channels[0].level,.65);
     assert.equal(project.tracker.channels[0].pan,-.3);
     assert.deepEqual(errors,[],'Unexpected browser JS errors');
-    console.log('PASS v2.3 editing, mixer, persistence and mobile',name,width);
+    console.log('PASS v2.4 editing, mixer, persistence and mobile',name,width);
    }finally{await ctx.close()}
   }
  }finally{await browser.close()}
@@ -99,7 +99,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   }
   await ctx.close();
  }finally{await browser.close()}
- console.log('PASS v2.3 original composition library');
+ console.log('PASS v2.4 original composition library');
 }
 function sampleWav(){
  const rate=22050,len=rate*2,bytes=Buffer.alloc(44+len*2),v=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength);

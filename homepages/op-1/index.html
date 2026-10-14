@@ -1106,7 +1106,7 @@ function initV09Controls(){
  const encoders=$('displayZoomEncoders');encoders.innerHTML=Array.from({length:4},(_,i)=>'<div class="display-zoom-encoder"><button type="button" data-zoom-encoder="'+i+'" data-zoom-delta="-1" aria-label="Decrease encoder '+(i+1)+'">−</button><span data-zoom-encoder-label="'+i+'">ENCODER '+(i+1)+'</span><button type="button" data-zoom-encoder="'+i+'" data-zoom-delta="1" aria-label="Increase encoder '+(i+1)+'">+</button></div>').join('');
  $('displayZoomToolbar').addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
-  if(b.hasAttribute('data-zoom-mode')){if(gameMode)toggleGame(false);selectMode(b.dataset.zoomMode)}
+  if(b.hasAttribute('data-zoom-mode')){if(gameMode)toggleGame(false);state.seqVisible=false;uiSeqMenu=false;selectMode(b.dataset.zoomMode)}
   else if(b.hasAttribute('data-zoom-tool')){const kind=b.dataset.zoomTool;
    if(kind==='seq')openSequencerMenu();else if(kind==='edit')setTapeTools(true);
    else if(kind==='fx'){if(gameMode)toggleGame(false);selectMode('synth');state.sub=2;state.seqVisible=false;syncUI()}

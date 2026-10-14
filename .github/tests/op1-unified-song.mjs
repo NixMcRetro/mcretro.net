@@ -3,7 +3,7 @@ import {chromium,firefox,webkit} from 'playwright';
 import {readFileSync} from 'node:fs';
 import assert from 'node:assert/strict';
 import {html} from './op1-test-html.mjs';
-async function getFile(page,id){const pending=page.waitForEvent('download',{timeout:60000});await page.locator(id).click();return readFileSync(await (await pending).path());}
+async function getFile(page,id){const pending=page.waitForEvent('download',{timeout:12000});await page.locator(id).click();try{return readFileSync(await (await pending).path());}catch(e){console.error('DOWNLOAD DIAGNOSTIC',JSON.stringify({id,feedback:await page.locator('#feedback').innerText(),recovery:await page.locator('#recoveryIndicator').innerText(),audio:await page.locator('#audioStatus').innerText(),workspace:await page.locator('#workspaceStatus').innerText()}));throw e}}
 const project=async p=>JSON.parse((await getFile(p,'#saveProject')).toString());
 async function draw(page,row){await page.locator('#rollSurface').evaluate((el,row)=>{const box=el.getBoundingClientRect();el.dispatchEvent(new MouseEvent('click',{bubbles:true,clientX:box.left+64,clientY:box.top+32+row*24+9}));},row);}
 function peak(wav){assert.equal(wav.toString('ascii',0,4),'RIFF');let m=0;for(let i=44;i<wav.length-1;i+=2)m=Math.max(m,Math.abs(wav.readInt16LE(i)));return m;}

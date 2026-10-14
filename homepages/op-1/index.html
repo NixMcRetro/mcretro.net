@@ -1251,7 +1251,7 @@ const song={running:false,origin:0,nextStep:0,clock:null,bar:-1,section:-1};let 
 function songBars(){return state.songSections.reduce((n,p)=>n+p.bars,0)}
 function songPartAtBar(index){const total=songBars();let bar=index;for(let i=0;i<state.songSections.length;i++){const section=state.songSections[i];if(bar<section.bars)return {section,index:i,barWithin:bar};bar-=section.bars}return null}
 function stopSong(){OP1Workspace.stop();if(song.clock)clearInterval(song.clock);song.clock=null;song.running=false;song.nextStep=0;song.bar=-1;song.section=-1;syncSongStatus()}
-function playSong(){if(song.running){stopSong();return}rollStop();stopSequence();const graph=ensureAudio();if(!graph)return;song.running=true;song.origin=graph.ctx.currentTime+.055;song.nextStep=0;song.bar=-1;song.section=-1;song.clock=setInterval(tickSong,17);tickSong();syncSongStatus();notice('Song arrangement playing. Every section uses its saved voice and pattern.')}
+function playSong(){if(song.running){stopSong();return}OP1Workspace.stop();rollStop();stopSequence();const graph=ensureAudio();if(!graph)return;song.running=true;song.origin=graph.ctx.currentTime+.055;song.nextStep=0;song.bar=-1;song.section=-1;song.clock=setInterval(tickSong,17);tickSong();syncSongStatus();notice('Song arrangement playing. Every section uses its saved voice and pattern.')}
 function playArrangementNote(graph,n,part,when,duration){if(n===null||n===undefined)return;const midi=48+n+state.octave*12,track=part.track;
  if(part.voice==='drum')playDrum(graph,midi,when,state.kit,.85,0,track);
  else if(part.voice==='sample'){if(state.sampleId&&sampleBuffers.has(state.sampleId))playSampleSlice(graph,state.sampleId,n%state.sampleSettings.slices,when,.85,0,null,1,track,duration)}

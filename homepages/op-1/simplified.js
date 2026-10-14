@@ -9,6 +9,7 @@ const groups=[
   {id:'sequencePanel',name:'Make a Beat',tab:'Drums',hint:'Build a 16-step drum pattern or choose another sequencer.'},
   {id:'comfortPlayPanel',name:'Getting Started',tab:'Play',hint:'A short introduction to the instrument, recording and exporting.'}]},
  {name:'Compose',tag:'02',intro:'Write a melody, record chords, and assemble your song.',tools:[
+  {id:'trackerStudio',name:'Tracker Studio',tab:'Compose',hint:'Four-channel pattern tracker, chains, note effects, MIDI/WAV and song arrangements.'},
   {id:'rollPanel',name:'Piano Roll',tab:'Compose',hint:'Draw or record polyphonic notes, import MIDI, and send your score to Song Workspace.'},
   {id:'pianolaPanel',name:'Pianola',tab:'Compose',hint:'Enter a melody using written notes, rests and time signatures.'},
   {id:'songStudio',name:'Song Workspace',tab:'Song',hint:'Arrange piano, Pianola, drum and tape clips on four lanes. Legacy Song Arrangement is here too.'},

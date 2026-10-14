@@ -34,10 +34,12 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    const downloaded=async(button='#saveProject')=>{
     const pending=page.waitForEvent('download',{timeout:25000});
     await page.locator(button).click({timeout:12000});
+    const feedbackNow=await page.locator('#feedback').innerText().catch(()=>'(unavailable)');
+    const trackerNow=await page.locator('#trackerStatus').innerText().catch(()=>'(unavailable)');
     try{return JSON.parse(readFileSync(await(await pending).path(),'utf8'))}
     catch(e){
      const feedback=await page.locator('#feedback').innerText().catch(()=>'(unavailable)');
-     throw Error('Project export via '+button+' failed: '+e.message+'; app feedback: '+feedback);
+     throw Error('Project export via '+button+' failed: '+e.message+'; immediate feedback: '+feedbackNow+'; later feedback: '+feedback+'; tracker: '+trackerNow+'; pageerrors: '+errors.join(' | '));
     }
    };
    let project=await downloaded();
@@ -105,6 +107,10 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    // Load an original, deterministic eight-bar example without modifying song clips or tapes.
    page.once('dialog',dialog=>dialog.accept());
    await page.locator('#trackerExample').click();
+   const countAfterExample=await page.locator('#trackerPattern option').count();
+   const bpmAfterExample=await page.locator('#trackerBpm').inputValue();
+   assert.equal(countAfterExample,4,'Example failed to create four patterns: '+await page.locator('#trackerStatus').innerText());
+   assert.equal(bpmAfterExample,'104','Example did not set its own BPM');
    const demo=await downloaded('#studioBackup');
    assert.equal(demo.tracker.patterns.length,4);
    assert.deepEqual(demo.tracker.chain,[0,1,2,3]);

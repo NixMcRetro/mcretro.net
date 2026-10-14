@@ -35,7 +35,7 @@ const pitch=m=>SEMI[m%12]+(Math.floor(m/12)-1);
 const formatCell=c=>!c?'··· ·· ··':(c.kind==='drum'?'DR'+(c.inst+1):c.kind==='sample'?'SM'+(c.inst+1):pitch(c.midi).padEnd(3,' '))+' '+String(c.inst+1).padStart(2,'0')+' '+(c.fx==='none'?'··':c.fx.slice(0,2).toUpperCase())+c.param.toString(16).toUpperCase();
 const toIndex=(row,ch)=>row*CHANNELS+ch;
 let api=null,cursor={row:0,ch:0},clock=null,playing=false,started=0,next=0,events=[],playhead=-1,rendering=false;
-let history=[],activePatch=null,context=null,selectionRedraw=false;
+let history=[],clipboard=null,context=null,cycle=0,loopEnabled=false,compiledSeconds=0,compiledRows=0;
 const data=()=>api.getState().tracker;
 const pattern=()=>data().patterns[data().active];
 function status(s){$('trackerStatus').textContent=s||data().patterns.length+' PATTERNS · '+data().chain.length+' CHAIN STEPS · '+data().bpm+' BPM'}
@@ -74,6 +74,11 @@ function renderGrid(){
    b.setAttribute('role','gridcell');b.setAttribute('aria-label',b.title);
    b.addEventListener('click',()=>setCursor(row,ch));
    b.addEventListener('keydown',e=>{
+    if((e.ctrlKey||e.metaKey)&&['c','x','v'].includes(e.key.toLowerCase())){
+     e.preventDefault();e.stopPropagation();
+     if(e.key.toLowerCase()==='c')copyCell();else if(e.key.toLowerCase()==='x')cutCell();else pasteCell();
+     return;
+    }
     if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Home','End','Delete','Backspace','Enter',' '].includes(e.key)){
      e.preventDefault();e.stopPropagation();
      if(e.key==='ArrowUp')setCursor(row-1,ch,true);
@@ -102,7 +107,7 @@ function render(){
  $('trackerChain').value=data().chain.map(n=>n.toString(16).padStart(2,'0').toUpperCase()).join(' ');
  $('trackerAdd').disabled=data().patterns.length>=MAX_PATTERNS;
  $('trackerDelete').disabled=data().patterns.length===1;
- renderGrid();updateEditor();status();
+ renderGrid();updateEditor();if($('trackerLoop')){$('trackerLoop').setAttribute('aria-pressed',String(loopEnabled));$('trackerLoop').textContent=loopEnabled?'↻ LOOP ON':'↻ LOOP OFF'}status();
 }
 function writeNote(advance=false){
  const midi=Number($('trackerMidi').value),inst=Number($('trackerInstrument').value),vel=Number($('trackerVelocity').value),kind=$('trackerKind').value,fx=$('trackerEffect').value,param=Number($('trackerParam').value);
@@ -118,6 +123,32 @@ function writeNote(advance=false){
  if(advance)setCursor(Math.min(cursor.row+1,pattern().rows-1),cursor.ch,true);
 }
 function erase(){const index=toIndex(cursor.row,cursor.ch);commit(d=>d.patterns[d.active].cells[index]=null)}
+function copyCell(){const cell=pattern().cells[toIndex(cursor.row,cursor.ch)];clipboard=cell?clone(cell):null;status(cell?'Step copied. Select another cell and paste.':'Empty step copied. Paste to clear another cell.')}
+function cutCell(){copyCell();erase()}
+function pasteCell(){const index=toIndex(cursor.row,cursor.ch),saved=clipboard?clone(clipboard):null;commit(d=>{d.patterns[d.active].cells[index]=saved})}
+function resetSession(){stop();history=[];clipboard=null;cursor={row:0,ch:0}}
+function loadExample(){
+ if(data().patterns.some(p=>p.cells.some(Boolean))&&!confirm('Replace tracker patterns with the original eight-bar example? You can undo this change. The rest of your project is untouched.'))return;
+ const chords=[
+  {bass:38,notes:[62,65,69,72]}, // D minor
+  {bass:46,notes:[58,62,65,70]}, // B-flat major
+  {bass:41,notes:[60,65,69,72]}, // F major
+  {bass:48,notes:[60,64,67,72]}  // C major
+ ];
+ const patterns=chords.map(({bass,notes},section)=>{
+  const p=defPattern(32),put=(row,ch,midi,inst,kind,vel=100)=>{p.cells[toIndex(row,ch)]={midi,inst,kind,vel,fx:'none',param:0}};
+  for(let bar=0;bar<2;bar++){
+   const n=bar*16;
+   for(const [at,inst] of [[0,0],[2,2],[4,1],[6,2],[8,0],[10,2],[12,1],[14,2]])put(n+at,0,48+inst,inst,'drum',inst===2?55:94);
+   for(const [at,shift] of [[0,0],[7,0],[10,7],[13,0]])put(n+at,1,bass+shift,0,'synth',at===0?104:79);
+   for(const [at,pos] of [[0,0],[3,1],[6,2],[10,3],[14,1]])put(n+at,2,notes[(pos+bar+section)%4],3,'synth',at===0?96:74);
+   for(const [at,pos] of [[2,0],[5,2],[9,1],[13,3]])put(n+at,3,notes[pos]+12,5,'synth',55);
+  }
+  return p;
+ });
+ commit(d=>{d.patterns=patterns;d.chain=[0,1,2,3];d.active=0;d.bank=1;d.bpm=104});
+ cursor={row:0,ch:0};render();status('Original eight-bar tracker sketch loaded. Undo restores your previous patterns.');
+}
 function resizePattern(n){
  commit(d=>{const p=d.patterns[d.active];p.cells=Array.from({length:n*4},(_,i)=>p.cells[i]||null);p.rows=n});cursor.row=Math.min(cursor.row,n-1);
 }
@@ -183,33 +214,67 @@ function paintPlayhead(row){
  if(playhead===row)return;
  playhead=row;document.querySelectorAll('.tracker-row').forEach(el=>el.classList.toggle('playing',Number(el.dataset.row)===row));
 }
+function isolatedLiveGraph(base){
+ // Only tracker voices use these gates. Muting a tracker must not silence tape or other instruments.
+ const graph=Object.create(base),gates=base.trackInputs.map(input=>{
+  const gate=base.ctx.createGain();gate.gain.value=1;gate.connect(input);return gate;
+ });
+ graph.trackInputs=gates;graph.trackerGates=gates;return graph;
+}
 function stop(){
- if(clock)clearInterval(clock);clock=null;playing=false;events=[];next=0;playhead=-1;
+ if(clock)clearInterval(clock);clock=null;
+ if(context?.trackerGates){
+  const now=context.ctx.currentTime;
+  for(const gate of context.trackerGates){
+   gate.gain.cancelScheduledValues(now);
+   gate.gain.setTargetAtTime(0,now,.004);
+  }
+ }
+ context=null;playing=false;events=[];next=0;cycle=0;playhead=-1;
  if($('trackerPlay'))$('trackerPlay').textContent='▶ PLAY CHAIN';
  document.querySelectorAll('.tracker-row.playing').forEach(x=>x.classList.remove('playing'));
 }
 function tick(){
  if(!playing||!context)return;
  const now=context.ctx.currentTime;
- while(next<events.length&&started+events[next].when<now+.14){
-  const n=events[next++];try{emit(context,n,started+n.when)}catch(e){stop();status(e.message);return}
+ // Background tabs can be throttled for minutes. Skip stale cycles instead of bursting old notes.
+ if(loopEnabled&&now-started>compiledSeconds*2){
+  const skip=Math.max(0,Math.floor((now-started)/compiledSeconds)-1);
+  if(skip>cycle){cycle=skip;next=0}
  }
- const row=Math.floor(Math.max(0,now-started)/(60/data().bpm/4));
- let sum=0;for(const id of data().chain){const len=data().patterns[id].rows;if(row>=sum&&row<sum+len){if(id===data().active)paintPlayhead(row-sum);else paintPlayhead(-1);break}sum+=len}
- if(now-started>=compiledSeconds+.1)stop();
+ let queued=0;
+ while(next<events.length&&queued<256){
+  const n=events[next],at=started+cycle*compiledSeconds+n.when;
+  if(at>=now+.14)break;
+  if(at>=now-.1){try{emit(context,n,at)}catch(e){stop();status(e.message);return}}
+  next++;queued++;
+  if(next===events.length&&loopEnabled){next=0;cycle++}
+ }
+ const elapsed=Math.max(0,now-started),row=Math.floor(elapsed/(60/data().bpm/4))%compiledRows;
+ let sum=0;for(const id of data().chain){const len=data().patterns[id].rows;if(row>=sum&&row<sum+len){paintPlayhead(id===data().active?row-sum:-1);break}sum+=len}
+ if(!loopEnabled&&elapsed>=(cycle+1)*compiledSeconds+.1)stop();
 }
-let compiledSeconds=0;
 function play(){
  if(playing){stop();return}
  if(api.isRecording()){status('Stop recording or rendering before tracker playback');return}
  const compiled=prepare();
  if(!compiled.notes.length){status('Place at least one note before playing');return}
  api.stopOthers();
- context=api.ensureAudio();if(!context){status('Audio engine not available');return}
- try{for(const n of compiled.notes)if(n.kind==='sample'&&!api.hasSample(n.sampleId))throw Error('Missing tracker sample; restore the backed-up audio');
-  events=compiled.notes;compiledSeconds=compiled.seconds;next=0;playing=true;started=context.ctx.currentTime+.09;clock=setInterval(tick,20);
-  $('trackerPlay').textContent='■ STOP CHAIN';status('PLAYING · '+data().chain.length+' PATTERNS');tick();
+ const base=api.ensureAudio();if(!base){status('Audio engine not available');return}
+ try{
+  for(const n of compiled.notes)if(n.kind==='sample'&&!api.hasSample(n.sampleId))throw Error('Missing tracker sample; restore the backed-up audio');
+  context=isolatedLiveGraph(base);
+  events=compiled.notes;compiledSeconds=compiled.seconds;compiledRows=compiled.rows;
+  next=0;cycle=0;playing=true;started=context.ctx.currentTime+.09;clock=setInterval(tick,20);
+  $('trackerPlay').textContent='■ STOP CHAIN';status('PLAYING · '+data().chain.length+' PATTERNS'+(loopEnabled?' · LOOP':''));
+  tick();
  }catch(e){stop();status(e.message)}
+}
+function toggleLoop(){
+ loopEnabled=!loopEnabled;
+ const b=$('trackerLoop');
+ b.setAttribute('aria-pressed',String(loopEnabled));b.textContent=loopEnabled?'↻ LOOP ON':'↻ LOOP OFF';
+ status(loopEnabled?'Continuous playback enabled':'Playback stops after this chain');
 }
 async function exportWav(){
  if(rendering||api.isRecording()){status('Finish recording or export first');return}
@@ -299,8 +364,9 @@ function init(deps){
  '<div class="tracker-chain"><label for="trackerChain">PATTERN CHAIN (hex IDs)</label><input id="trackerChain" value="00" spellcheck="false" autocapitalize="characters" aria-label="Tracker pattern sequence"><button type="button" id="trackerApplyChain">APPLY CHAIN</button><span>Example: 00 00 01 · up to 16 entries</span></div>'+
  '<div class="tracker-headers"><span>ROW</span><span>CH 1</span><span>CH 2</span><span>CH 3</span><span>CH 4</span></div><div class="tracker-grid-scroll"><div id="trackerGrid" class="tracker-grid" role="grid" aria-label="Tracker pattern note grid"></div></div>'+
  '<div class="tracker-editor"><div><strong id="trackerSelection">ROW 00</strong><small id="trackerSelectedNote">EMPTY STEP</small></div><label>PITCH (MIDI)<input id="trackerMidi" type="number" min="36" max="95" value="60"></label><label>TYPE<select id="trackerKind"><option value="synth">SYNTH</option><option value="drum">DRUM</option><option value="sample">SAMPLE SLICE</option></select></label><label>INSTRUMENT<select id="trackerInstrument">'+Array.from({length:8},(_,i)=>'<option value="'+i+'">'+String(i+1).padStart(2,'0')+'</option>').join('')+'</select></label><label>VELOCITY<input type="number" id="trackerVelocity" min="1" max="127" value="100"></label><label>EFFECT<select id="trackerEffect"><option value="none">NONE</option><option value="up">PITCH UP</option><option value="down">PITCH DOWN</option><option value="vibrato">VIBRATO</option><option value="retrigger">RETRIGGER</option></select></label><label>AMOUNT (HEX 0-F)<input id="trackerParam" min="0" max="15" type="number" value="0"></label><button id="trackerWrite" type="button">PLACE NOTE</button><button id="trackerErase" type="button">CLEAR STEP</button></div>'+
- '<div class="tracker-actions"><button type="button" id="trackerPlay">▶ PLAY CHAIN</button><button type="button" id="trackerStop">■ STOP</button><button type="button" id="trackerWav">⬇ EXPORT WAV</button><button type="button" id="trackerMidiExport">⬇ EXPORT MIDI</button><button type="button" id="trackerToSong">＋ SEND TO SONG WORKSPACE</button></div>'+
- '<p class="tracker-guide">Click a step, set its pitch and instrument, then PLACE NOTE. Arrow keys navigate focused cells; Z/S/X/D… enter notes; Delete clears. Four rows equal one beat. Each row holds one sound per channel. Drum instruments 01-08 map to the existing kit. Sample instruments select slices 01-08 from a previously loaded sample. Pitch changes are stepped; vibrato and retriggers play in the browser. MIDI does not contain synthesizer effect parameters. Song Workspace import converts patterns to compatible note/drum clips and may simplify some step effects.</p>';
+ '<div class="tracker-edit-tools" role="group" aria-label="Tracker step editing"><button type="button" id="trackerCopy">COPY STEP</button><button type="button" id="trackerCut">CUT STEP</button><button type="button" id="trackerPaste">PASTE STEP</button><button type="button" id="trackerExample">LOAD ORIGINAL EXAMPLE</button></div>'+
+ '<div class="tracker-actions"><button type="button" id="trackerPlay">▶ PLAY CHAIN</button><button type="button" id="trackerLoop" aria-pressed="false">↻ LOOP OFF</button><button type="button" id="trackerStop">■ STOP</button><button type="button" id="trackerWav">⬇ EXPORT WAV</button><button type="button" id="trackerMidiExport">⬇ EXPORT MIDI</button><button type="button" id="trackerToSong">＋ SEND TO SONG WORKSPACE</button></div>'+
+ '<p class="tracker-guide">Click a step, set its pitch and instrument, then PLACE NOTE. Arrow keys navigate focused cells; Z/S/X/D… enter notes; Delete clears. Ctrl/Cmd+C, X and V copy, cut and paste focused steps. Loop repeats the entire pattern chain until stopped. Four rows equal one beat. Each row holds one sound per channel. Drum instruments 01-08 map to the existing kit. Sample instruments select slices 01-08 from a previously loaded sample. Pitch changes are stepped; vibrato and retriggers play in the browser. MIDI does not contain synthesizer effect parameters. Song Workspace import converts patterns to compatible note/drum clips and may simplify some step effects.</p>';
  $('rollPanel').before(root);
  $('trackerPattern').addEventListener('change',e=>{stop();commit(d=>d.active=Number(e.target.value));cursor.row=0});
  $('trackerRows').addEventListener('change',e=>resizePattern(Number(e.target.value)));
@@ -313,6 +379,11 @@ function init(deps){
  $('trackerApplyChain').addEventListener('click',chainChange);
  $('trackerWrite').addEventListener('click',()=>writeNote(false));
  $('trackerErase').addEventListener('click',erase);
+ $('trackerCopy').addEventListener('click',copyCell);
+ $('trackerCut').addEventListener('click',cutCell);
+ $('trackerPaste').addEventListener('click',pasteCell);
+ $('trackerExample').addEventListener('click',loadExample);
+ $('trackerLoop').addEventListener('click',toggleLoop);
  $('trackerPlay').addEventListener('click',play);
  $('trackerStop').addEventListener('click',stop);
  $('trackerWav').addEventListener('click',exportWav);
@@ -320,5 +391,5 @@ function init(deps){
  $('trackerToSong').addEventListener('click',sendToSong);
  render();
 }
-window.OP1Tracker={defaults,normalize,init,render,stop,prepare,get playing(){return playing}};
+window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,get playing(){return playing}};
 })();

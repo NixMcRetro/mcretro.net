@@ -5,12 +5,14 @@
 .tracker-heading h2 small{color:#7b98a8;font-size:12px;font-weight:500}
 .tracker-heading p{margin:6px 0 12px;line-height:1.6;font-size:12px;color:#577281}
 #trackerStatus{font-size:12px;font-weight:800;color:#257a91;max-width:420px;text-align:right;line-height:1.5}
-.tracker-controls,.tracker-chain,.tracker-actions,.tracker-editor{display:flex;align-items:flex-end;flex-wrap:wrap;gap:8px;margin:12px 0}
+.tracker-controls,.tracker-chain,.tracker-actions,.tracker-editor,.tracker-edit-tools{display:flex;align-items:flex-end;flex-wrap:wrap;gap:8px;margin:12px 0}
 .tracker-controls label,.tracker-editor label{display:flex;flex-direction:column;gap:4px;font-size:10px;font-weight:850;letter-spacing:.06em;color:#47687a}
 .tracker-controls input,.tracker-controls select,.tracker-chain input,.tracker-editor input,.tracker-editor select{min-height:40px;border:1px solid #abc4d0;color:#203d50;background:#fdfefe;border-radius:6px;padding:7px 8px;font-size:12px;max-width:150px}
-.tracker-controls button,.tracker-chain button,.tracker-actions button,.tracker-editor button{min-height:42px;border:1px solid #a6bfcc;background:#eff5f8;color:#31556b;border-radius:7px;padding:9px 11px;font-size:11px;font-weight:850}
-.tracker-controls button:hover,.tracker-actions button:hover,.tracker-editor button:hover,.tracker-chain button:hover{filter:brightness(.94)}
-#trackerDelete,#trackerErase{color:#924f41}
+.tracker-controls button,.tracker-chain button,.tracker-actions button,.tracker-editor button,.tracker-edit-tools button{min-height:42px;border:1px solid #a6bfcc;background:#eff5f8;color:#31556b;border-radius:7px;padding:9px 11px;font-size:11px;font-weight:850}
+.tracker-controls button:hover,.tracker-actions button:hover,.tracker-editor button:hover,.tracker-chain button:hover,.tracker-edit-tools button:hover{filter:brightness(.94)}
+#trackerDelete,#trackerErase,#trackerCut{color:#924f41}
+.tracker-edit-tools{gap:7px}.tracker-edit-tools button{flex:1 1 115px}
+#trackerLoop[aria-pressed="true"]{background:#286d87;color:#fff;border-color:#23627b}
 .tracker-chain{padding:10px;background:#e4eef3;border:1px solid #b9cfd8;border-radius:8px;align-items:center}
 .tracker-chain label{font-size:11px;font-weight:850;color:#3c6477}
 .tracker-chain input{flex:1;min-width:160px;max-width:350px;text-transform:uppercase;letter-spacing:.07em;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
@@ -39,8 +41,8 @@ html.studio-simple #trackerStudio:not(.studio-current){display:none!important}
 html[data-op1-theme=dark] .tracker-heading p,html[data-op1-theme=dark] #trackerStatus,html[data-op1-theme=dark] .tracker-guide{color:#b8d0dc}
 html[data-op1-theme=dark] .tracker-controls label,html[data-op1-theme=dark] .tracker-editor label,html[data-op1-theme=dark] .tracker-chain label,html[data-op1-theme=dark] .tracker-editor strong{color:#c8e2ed}
 html[data-op1-theme=dark] .tracker-editor,html[data-op1-theme=dark] .tracker-chain{background:#2c414d;border-color:#4b6979}
-html[data-op1-theme=dark] .tracker-controls button,html[data-op1-theme=dark] .tracker-editor button,html[data-op1-theme=dark] .tracker-chain button,html[data-op1-theme=dark] .tracker-actions button{background:#37505f;border-color:#617d8e;color:#e9f6fb}
-html[data-op1-theme=dark] #trackerWrite,html[data-op1-theme=dark] #trackerPlay{background:#3585a0;color:#fff}
+html[data-op1-theme=dark] .tracker-controls button,html[data-op1-theme=dark] .tracker-editor button,html[data-op1-theme=dark] .tracker-chain button,html[data-op1-theme=dark] .tracker-actions button,html[data-op1-theme=dark] .tracker-edit-tools button{background:#37505f;border-color:#617d8e;color:#e9f6fb}
+html[data-op1-theme=dark] #trackerWrite,html[data-op1-theme=dark] #trackerPlay,html[data-op1-theme=dark] #trackerLoop[aria-pressed="true"]{background:#3585a0;color:#fff}
 html[data-op1-theme=dark] .tracker-chain span,html[data-op1-theme=dark] .tracker-editor small{color:#c0d9e6}
 @media(max-width:800px){
  .tracker-headers{display:none}

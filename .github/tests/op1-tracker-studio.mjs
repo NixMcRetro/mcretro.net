@@ -40,6 +40,17 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    assert.equal(project.tracker.patterns[0].cells[0].midi,60);
    assert.equal(project.tracks.length,4);
    assert.equal(project.songWorkspace.clips.length,0);
+   // Cell clipboard, undo and chain-loop controls must not mutate unrelated state.
+   await page.locator('#trackerCopy').click();
+   await page.locator('[data-tracker-row="1"][data-tracker-ch="1"]').click();
+   await page.locator('#trackerPaste').click();
+   assert.equal((await downloaded()).tracker.patterns[0].cells[5].midi,60);
+   await page.locator('#trackerUndo').click();
+   assert.equal((await downloaded()).tracker.patterns[0].cells[5],null);
+   await page.locator('#trackerLoop').click();
+   assert.equal(await page.locator('#trackerLoop').getAttribute('aria-pressed'),'true');
+   await page.locator('#trackerLoop').click();
+   assert.equal(await page.locator('#trackerLoop').getAttribute('aria-pressed'),'false');
    // Create a drum hit in channel 4.
    await page.locator('[data-tracker-row="4"][data-tracker-ch="3"]').click();
    await page.locator('#trackerKind').selectOption('drum');
@@ -86,6 +97,17 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    assert(await page.locator('#trackerStudio').isVisible(),'Tracker disappeared in Advanced');
    await page.locator('#studioSimpleButton').click();
    assert(await page.locator('#trackerStudio').isVisible(),'Tracker not restored in Simple');
+   // Load an original, deterministic eight-bar example without modifying song clips or tapes.
+   page.once('dialog',dialog=>dialog.accept());
+   await page.locator('#trackerExample').click();
+   const demo=await downloaded();
+   assert.equal(demo.tracker.patterns.length,4);
+   assert.deepEqual(demo.tracker.chain,[0,1,2,3]);
+   assert.equal(demo.tracker.bpm,104);
+   assert(demo.tracker.patterns.flatMap(p=>p.cells).filter(Boolean).length>80);
+   assert.deepEqual(demo.songWorkspace.clips,withClips.songWorkspace.clips,'Example modified existing song clips');
+   await page.locator('#trackerUndo').click();
+   assert.deepEqual((await downloaded()).tracker,original.tracker,'Example undo lost original tracker data');
    assert.deepEqual(errors,[],'Unexpected JS exceptions');
    if(width===390){
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
@@ -106,6 +128,13 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   await page.locator('[data-studio-tool="trackerStudio"]').click();
   await page.locator('#trackerMidi').fill('60');
   await page.locator('#trackerWrite').click();
+  await page.locator('#trackerLoop').click();
+  await page.locator('#trackerPlay').click();
+  assert.match(await page.locator('#trackerPlay').innerText(),/STOP CHAIN/);
+  await page.waitForTimeout(320);
+  await page.locator('#trackerStop').click();
+  assert.match(await page.locator('#trackerPlay').innerText(),/PLAY CHAIN/);
+  await page.locator('#trackerLoop').click();
   const download=page.waitForEvent('download',{timeout:60000});await page.locator('#trackerWav').click();
   const wav=readFileSync(await(await download).path());
   assert.equal(wav.toString('ascii',0,4),'RIFF');

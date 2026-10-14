@@ -2,7 +2,7 @@
 import {chromium,firefox,webkit} from 'playwright';
 import {readFileSync} from 'node:fs';
 import assert from 'node:assert/strict';
-const html=readFileSync('homepages/op-1/index.html','utf8');
+import {html} from './op1-test-html.mjs';
 const peak=buf=>{assert.equal(buf.toString('ascii',0,4),'RIFF');assert.equal(buf.toString('ascii',8,12),'WAVE');let max=0;for(let i=44;i<buf.length-1;i+=2)max=Math.max(max,Math.abs(buf.readInt16LE(i)));return max};
 async function saveProject(page){const promise=page.waitForEvent('download',{timeout:30000});await page.locator('#saveProject').click();return JSON.parse(readFileSync(await (await promise).path(),'utf8'))}
 for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
@@ -11,7 +11,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   const context=await browser.newContext({viewport:{width,height:850},acceptDownloads:true});
   const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.setContent(html,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/v1\.9/);
+  assert.match(await page.title(),/v2\.0/);
   assert.equal(await page.locator('#soundKeys .sound-key').count(),8);
   assert.equal(await page.locator('.cat-split,[data-cat]').count(),0,'Removed cat buttons must not reappear');
   assert.equal(await page.locator('#pianolaMeter').inputValue(),'4/4');

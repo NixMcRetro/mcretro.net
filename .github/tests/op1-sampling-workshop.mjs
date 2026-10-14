@@ -31,7 +31,7 @@ for(const [engineName,engine] of Object.entries({chromium,firefox,webkit})){
    const page=await ctx.newPage(),errors=[];
    page.on('pageerror',e=>errors.push(e.message));
    await page.goto(baseUrl,{waitUntil:'domcontentloaded'});
-   assert.match(await page.title(),/v1\.8/);
+   assert.match(await page.title(),/v1\.8\.1/);
    assert.equal(await page.locator('#sampleWaveform').count(),1);
    assert.equal(await page.locator('#samplePreview').isDisabled(),true,'Audition should require a sample');
    await page.locator('#sampleAudioFile').setInputFiles({name:'workshop-test.wav',mimeType:'audio/wav',buffer:wav});

@@ -52,7 +52,9 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   await importVia(page,'#comfortMidiSong',midi);
   assert.equal(await page.locator('.workspace-clip-item').count(),1,'MIDI did not arrive in song timeline');
   await page.getByRole('tab',{name:'Drums'}).click();
+  assert.equal(await page.locator('#seqRun + button').innerText(),'IMPORT MIDI');
   await importVia(page,'#seqRun + button',midi);
+  assert.match(await page.locator('#feedback').innerText(),/Imported 2 MIDI notes into Drum Sequencer/, 'Drum MIDI failure notice');
   await page.getByRole('tab',{name:'Tape'}).click();
   page.once('dialog',d=>d.accept());
   await importVia(page,'#goTape + button',midi);

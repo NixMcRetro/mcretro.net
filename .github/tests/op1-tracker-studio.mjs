@@ -31,7 +31,6 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    assert.equal(await page.locator('.tracker-row').count(),32);
    await page.locator('#trackerMidi').fill('60');
    await page.locator('#trackerWrite').click();
-   let s=await page.evaluate(()=>JSON.parse(localStorage.getItem('op1-browser-lab-v01')||'null')); // local autosave may be debounced
    const downloaded=async()=>{
     const pending=page.waitForEvent('download',{timeout:25000});
     await page.locator('#saveProject').click();return JSON.parse(readFileSync(await(await pending).path(),'utf8'))

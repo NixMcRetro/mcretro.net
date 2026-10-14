@@ -23,6 +23,8 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert(!(await page.locator('.quick-strip').isVisible()),'Redundant shortcut strip was not hidden in Simple');
   assert(!(await page.locator('#comfortMidiEntry').isVisible()),'Unused MIDI picker should be collapsed in Simple');
   assert.equal(await page.locator('#comfortKeyboardDock .comfort-dock-key').count(),24,'Sticky desktop keyboard missing');
+  assert.equal(await page.locator('#studioShortcuts').getAttribute('open'),null,'Secondary shortcuts should begin collapsed');
+  await page.locator('#studioShortcuts').evaluate(el=>el.open=true);
   await page.locator('#studioDemo').click();
   assert(await page.locator('#comfortDemoDialog').isVisible(),'Demo browser not reachable from simple toolbar');
   await page.locator('#comfortDemoClose').click();
@@ -71,6 +73,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert.deepEqual(roundtrip.pianola,project.pianola,'Layout switching changed user Pianola notes');
   assert.deepEqual(roundtrip.tracks,project.tracks,'Layout switching changed tape recordings');
   assert.equal(roundtrip.format,project.format);
+  await page.locator('#studioShortcuts').evaluate(el=>el.open=true);
   await page.locator('#studioKeyboardHelp').click();
   assert(await page.locator('#studioShortcutHelp').isVisible());
   if(width===390){

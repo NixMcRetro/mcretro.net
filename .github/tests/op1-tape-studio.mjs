@@ -20,7 +20,7 @@ try{
  page.on('pageerror',e=>errors.push(e.message));
  page.on('dialog',d=>d.accept());
  await page.setContent(html,{waitUntil:'domcontentloaded'});
- assert.match(await page.title(),/v2\.0/);
+ assert.match(await page.title(),/v2\.1/);
  assert.equal(await page.locator('#tapeDrive').count(),1);
  for(const [id,value] of [['tapeDrive','65'],['tapeWow','55'],['tapeFlutter','40']])
   await page.locator('#'+id).fill(value);

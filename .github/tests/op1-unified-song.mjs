@@ -69,7 +69,7 @@ const audioUrl='http://127.0.0.1:'+server.address().port+'/';
 const browser=await chromium.launch({headless:true});
 try{
  const page=await browser.newPage({viewport:{width:1300,height:850},acceptDownloads:true}),errors=[];
- page.on('pageerror',e=>errors.push(e.message));await page.goto(audioUrl,{waitUntil:'domcontentloaded'});await page.addStyleTag({content:"html.comfort-tabs-enabled .below .panel[data-comfort-tab],html.comfort-tabs-enabled .below .song-studio[data-comfort-tab]{display:block!important}html.comfort-tabs-enabled .below #sequencePanel{display:block!important}html.studio-simple .below [data-comfort-tab]{display:block!important}"});
+ page.on('pageerror',e=>errors.push(e.message));await page.goto(audioUrl,{waitUntil:'domcontentloaded'});await page.addStyleTag({content:"html.comfort-tabs-enabled .below .panel[data-comfort-tab],html.comfort-tabs-enabled .below .song-studio[data-comfort-tab]{display:block!important}html.comfort-tabs-enabled .below #sequencePanel{display:block!important}html.studio-simple .below [data-comfort-tab]{display:block!important}html.studio-simple .below [data-comfort-tab].comfort-visible:not(.studio-current){display:block!important}"});
  await draw(page,11);await draw(page,7);await page.locator('#rollSendSong').click();
  await page.locator('#startAudio').click();await page.locator('#workspacePlay').click();
  assert.match(await page.locator('#workspacePlay').innerText(),/STOP/);

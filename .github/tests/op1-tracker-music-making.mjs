@@ -88,9 +88,9 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   const page=await ctx.newPage();await page.setContent(rawHtml,{waitUntil:'domcontentloaded'});
   await page.locator('[data-studio-group="Compose"]').click();
   await page.locator('[data-studio-tool="trackerStudio"]').click();
+  page.on('dialog',dialog=>dialog.accept());
   for(const [key,bpm] of [['midnight','104'],['subway','92'],['arcade','126']]){
    await page.locator('#trackerDemo').selectOption(key);
-   page.once('dialog',dialog=>dialog.accept());
    await page.locator('#trackerExample').click();
    assert.equal(await page.locator('#trackerBpm').inputValue(),bpm);
    assert.equal(await page.locator('#trackerPattern option').count(),4);

@@ -109,7 +109,8 @@
 .display-zoom-head{display:flex;align-items:start;justify-content:space-between;gap:15px;margin-bottom:12px}
 .display-zoom-head h2{margin:0 0 5px;font-size:21px;color:#26363e}
 .display-zoom-head p,.display-zoom-help{margin:0;font-size:13px;color:#5a6971;line-height:1.4}
-#displayZoomCanvas{display:block;width:100%;height:auto;max-height:365px;background:#0e151a;border-radius:7px;border:7px solid #d3dce2}
+.display-zoom-screen{width:100%;max-width:100%;border:7px solid #d3dce2;border-radius:8px;overflow:hidden;background:#0e151a;box-sizing:border-box}
+#displayZoomCanvas{display:block;width:100%;height:auto;max-width:100%;max-height:none;aspect-ratio:680 / 325;touch-action:none;cursor:crosshair}
 .display-zoom-actions{background:#101f27;border-radius:8px;padding:14px;min-height:80px;margin-top:12px;color:#e4f1f5}
 .display-zoom-actions h3{font-size:18px;margin:0 0 12px;color:#f1fbfd}
 .display-zoom-actions p,.display-zoom-actions .screen-menu-footer span{font-size:13px;line-height:1.5;color:#c5dce4}
@@ -122,6 +123,19 @@
 .display-zoom-actions .screen-shortcuts{position:static;display:flex;gap:9px;padding:0;background:transparent;flex-wrap:wrap}
 .display-zoom-actions .screen-shortcuts button{flex:1;white-space:normal;min-width:95px;font-size:14px}
 .display-zoom-help{margin-top:12px}
+.display-zoom-toolbar{display:grid;gap:8px;margin-top:12px;padding:12px;border:1px solid #ccdce4;border-radius:8px;background:#e8f1f5}
+.display-zoom-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.display-zoom-row strong{font-size:11px;color:#46606d;letter-spacing:.04em;flex:0 0 64px}
+.display-zoom-row button{min-width:48px;min-height:40px;flex:1;border:1px solid #a9c1ce;background:white;color:#253e4e;border-radius:6px;font:700 11px Arial,sans-serif;touch-action:manipulation;cursor:pointer}
+.display-zoom-row button[aria-pressed="true"]{background:#236687;color:white;border-color:#236687}
+.display-zoom-row button:focus-visible{outline:3px solid #2b93cb;outline-offset:2px}
+.display-zoom-encoders{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.display-zoom-encoder{display:grid;grid-template-columns:39px minmax(0,1fr) 39px;align-items:center;gap:4px;border:1px solid #c8dce6;border-radius:6px;padding:5px;background:#f6fafc}
+.display-zoom-encoder span{text-align:center;font:600 10px Arial,sans-serif;color:#355269;overflow-wrap:anywhere}
+.display-zoom-encoder button{min-height:39px;border:1px solid #a4bfd0;border-radius:5px;color:#22475a;font-size:20px;background:white;cursor:pointer}
+.display-zoom-encoder button:focus-visible{outline:3px solid #2b93cb}
+@media(max-width:600px){.display-zoom-toolbar{padding:8px}.display-zoom-row strong{flex-basis:100%}.display-zoom-row button{min-height:44px}.display-zoom-encoders{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 #exportStatus:not([hidden]){display:inline-block;font-size:11px;font-weight:700;color:#31627c;padding:8px 10px;border:1px solid #b7d8e5;background:#e9f5fa;border-radius:7px;max-width:275px}
 @media(max-width:600px){.display-zoom{padding:8px}.display-zoom-card{padding:12px;max-height:97vh}.display-zoom-head h2{font-size:16px}.display-zoom-head p{font-size:11px}.display-zoom-actions .screen-modes{grid-template-columns:repeat(2,minmax(0,1fr))}.display-zoom-actions button{font-size:12px;min-height:44px;padding:10px 5px}}
 
@@ -175,7 +189,7 @@
   .display-zoom-head{top:-12px;padding-top:4px;align-items:center}
   .display-zoom-head h2{font-size:17px}
   .display-zoom-head p{font-size:11px}
-  #displayZoomCanvas{border-width:4px;max-height:min(38dvh,280px)}
+  .display-zoom-screen{border-width:4px}
   .display-zoom-actions{padding:10px}
   .display-zoom-actions .screen-modes{grid-template-columns:repeat(2,minmax(0,1fr))}
   .display-zoom-actions button{min-height:46px}
@@ -351,7 +365,14 @@
 <p id="patternChainStatus" role="status">Select A–D to edit its sixteen steps. Chain OFF repeats the selected slot; CHAIN ON follows the programmed repeats.</p></div><div class="steps" id="steps"></div><div id="tombolaControls" class="v05-controls" hidden><button class="mini-btn" id="ballAdd">＋ BALL</button><button class="mini-btn" id="ballRemove">－ BALL</button><label>GRAVITY <input type="range" id="ballGravity" min="0.5" max="2" step="0.1" value="1"></label><span id="ballCount">4 BALLS</span></div><div class="seq-endless-actions" id="endlessActions"><button class="mini-btn" id="seqAddNote">＋ ADD LAST NOTE</button><button class="mini-btn" id="seqRest">＋ REST</button><button class="mini-btn" id="seqBack">↶ REMOVE LAST</button><span class="v04-note" id="endlessCount">0 / 128 STEPS</span></div><p class="v04-note">The sequencers use note events; the four-track tape still records real audio clips independently. Arm REC and start tape playback to capture a sequence as editable notes.</p></section>
   </div>
 </main>
-<div class="overlay display-zoom" id="displayZoom" role="dialog" aria-modal="true" aria-labelledby="displayZoomTitle" aria-hidden="true"><div class="display-zoom-card"><div class="display-zoom-head"><div><h2 id="displayZoomTitle">OP-1 DISPLAY · Expanded</h2><p>All sequencer and tape menus are fully visible here. The original instrument keeps its size.</p></div><button class="mini-btn" id="closeDisplay" type="button" aria-label="Close expanded display">✕ CLOSE</button></div><canvas id="displayZoomCanvas" width="680" height="325" role="img" aria-label="Enlarged live instrument screen"></canvas><div class="display-zoom-actions" id="displayZoomActions" aria-label="Expanded screen controls"></div><p class="display-zoom-help">Use the mode buttons to change views. Press Escape or CLOSE to return to the instrument.</p></div></div>
+<div class="overlay display-zoom" id="displayZoom" role="dialog" aria-modal="true" aria-labelledby="displayZoomTitle" aria-hidden="true"><div class="display-zoom-card"><div class="display-zoom-head"><div><h2 id="displayZoomTitle">OP-1 DISPLAY · Expanded</h2><p>Live interactive screen with tape selection, sequencers and touch-sized controls. The instrument keeps its size.</p></div><button class="mini-btn" id="closeDisplay" type="button" aria-label="Close expanded display">✕ CLOSE</button></div><div class="display-zoom-screen"><canvas id="displayZoomCanvas" width="680" height="325" role="img" tabindex="0" aria-label="Interactive enlarged instrument display; tap tape to select or seek, use the controls beneath to change modes"></canvas></div>
+<div class="display-zoom-toolbar" id="displayZoomToolbar" aria-label="Expanded display instrument controls">
+<div class="display-zoom-row" role="group" aria-label="Instrument modes"><strong>MODE</strong><button data-zoom-mode="synth" type="button">SYNTH</button><button data-zoom-mode="drum" type="button">DRUM</button><button data-zoom-mode="tape" type="button">TAPE</button><button data-zoom-mode="mixer" type="button">MIXER</button></div>
+<div class="display-zoom-row" role="group" aria-label="Display views"><strong>DISPLAY</strong><button type="button" data-zoom-tool="seq">✣ SEQUENCER</button><button type="button" data-zoom-tool="fx">∿ SYNTH FX</button><button type="button" data-zoom-tool="edit">✂ TAPE EDIT</button><button type="button" data-zoom-tool="reels">↻ REELS</button><button type="button" data-zoom-tool="game">◉ GAME</button></div>
+<div class="display-zoom-encoders" id="displayZoomEncoders" role="group" aria-label="Coloured screen encoders"></div>
+<div class="display-zoom-row" role="group" aria-label="Physical display keys"><strong>KEYS</strong><button type="button" data-zoom-soft="0">1</button><button type="button" data-zoom-soft="1">2</button><button type="button" data-zoom-soft="2">3</button><button type="button" data-zoom-soft="3">4</button></div>
+<div class="display-zoom-row" role="group" aria-label="Tape transport"><strong>TAPE</strong><button type="button" data-zoom-transport="rew">◀ SEEK</button><button type="button" data-zoom-transport="play">▶ PLAY</button><button type="button" data-zoom-transport="stop">■ STOP</button><button type="button" data-zoom-transport="rec">● REC ARM</button><button type="button" data-zoom-transport="ff">SEEK ▶</button></div>
+</div><div class="display-zoom-actions" id="displayZoomActions" aria-label="Expanded screen controls"></div><p class="display-zoom-help">Tap the enlarged tape to select clips or seek. Drag the reel progress bar to scrub. Use modes, the four display keys, coloured encoders, or the large menu buttons below. Press Escape to close.</p></div></div>
 <div class="overlay" id="helpOverlay" role="dialog" aria-modal="true" aria-label="Instrument guide"><div class="modal"><div class="modal-header"><h2>SuperNick's OP-1 Browser Lab · quick guide</h2><button class="close" id="closeHelp" aria-label="Close guide">×</button></div><p>This is an independent HTML/Web Audio homage to the <strong>original</strong> OP-1, not official Teenage Engineering firmware or an exact emulation. The instrument includes verified local recovery checkpoints, safer audio storage, memory cleanup and project integrity checks. Existing projects remain compatible.</p><ul><li><strong>Play notes:</strong> bottom octave <span class="keys">Z S X D C V G B H N J M</span>; upper octave <span class="keys">Q 2 W 3 E R 5 T 6 Y 7 U</span>. Use the on-screen keys too.</li><li><strong>Control a sound:</strong> select SYNTH, choose sound 1–8, then press screen keys 1–4 to change engine, ADSR, effects or LFO. Drag / scroll the coloured knobs; double-click to reset.</li><li><strong>Drums:</strong> switch to DRUM, select a kit 1–8, then tap different notes for synthesized percussion.</li><li><strong>Record:</strong> choose TAPE, select a track with screen keys 1–4, arm REC, then PLAY. Perform while tape rolls. STOP completes the recording. REC can be armed while the tape is moving to overdub. Clicking REC again disarms it.</li><li><strong>Tape:</strong> left/right transport arrows move four seconds; SHIFT + rewind returns to zero. Use SET IN / SET OUT to mark a loop region, ZOOM to inspect it, and click the screen ruler to seek. LOOP repeats the chosen region.</li><li><strong>Clear a track:</strong> hold SHIFT (or click the SHIFT button), then press ⌫ while in TAPE mode. Clearing a track can now be undone during the current session.</li><li><strong>Timing:</strong> CLICK enables a beat metronome, GRID quantises new note onsets to the nearest sixteenth note, and the tape screen shows musical bar guides.</li><li><strong>Edit tape:</strong> select a note or audio waveform on the TAPE screen, then tap ✂ EDIT on the screen. SPLIT divides it at the playhead, LIFT removes it to a clipboard and DROP places a copy at the playhead on the chosen track. UNDO and REDO protect edits during this session.</li><li><strong>Synth effects:</strong> choose SYNTH and select the on-screen FX tab. The orange knob adjusts drive; hold SHIFT to adjust chorus depth with that knob. All four knobs work on the FX page.</li><li><strong>Mixer:</strong> four knobs change track volumes. Hold SHIFT while changing a knob to pan its corresponding track.</li><li><strong>Sequencer:</strong> ✣ now opens a five-mode picker directly on the OP-1 screen. Select Pattern, Endless, Arpeggio, Finger or Tombola there; the display buttons 1–4 and coloured encoders control the active sequencer. Use ☰ MODES to switch again. Advanced controls remain below the instrument. Choose rate, swing and direction. Press RUN to audition. To record, arm REC and press PLAY.</li><li><strong>Tape speed:</strong> change SPEED to 0.5× through 2× and toggle REVERSE for backwards playback of PCM clips. Note events trigger backwards in time but retain forward envelopes. WAV export respects speed and direction. Microphone and resampling are recorded at 1× to preserve audio integrity.</li><li><strong>Audio sampling:</strong> MIC REC requests microphone permission and records into the selected track while tape runs. RESAMPLE captures the instrument's actual audio mix including any other tracks (and the metronome if enabled). + TAPE AUDIO imports a recording at the playhead. + SAMPLE loads an instrument sample; SAMPLE KEYS plays 4, 8 or 16 sliced pads using the instrument keyboard. Browser storage is used for local audio cache.</li><li><strong>Save:</strong> verified autosave checkpoints reference audio stored in IndexedDB, with a previous checkpoint available for recovery. SAVE PROJECT embeds audio in portable JSON, and EXPORT WAV renders the combined note and audio tracks.</li></ul><p><strong>Known limits of v0.8:</strong> this is still an independent OP-1-inspired instrument, not a complete emulation. PCM clips are 22.05 kHz mono; waveform operations and sample pads are simplified. Tape supports forward/reverse PCM playback; reverse note events use forward envelopes, and sequencers are independent browser interpretations, not firmware replicas. Full hardware tape tricks/MIDI are not yet implemented. Playback and WAV export synthesize from the saved notes.</p><p style="font-size:11px">Unofficial fan-made recreation. OP-1 and Teenage Engineering are trademarks of their respective owner. No original firmware, artwork or samples are included.</p></div></div>
 <script>
 (()=>{'use strict';
@@ -623,7 +644,8 @@ function encoderInfo(i){
 function changeEncoder(i,steps){let x=encoderInfo(i),v=clamp(x.value+steps*x.step,x.min,x.max);v=Math.round(v*10000)/10000;x.set(v);syncAudio();syncUI();markDirty()}
 function tapeView(){let len=state.tapeLength/state.tapeZoom,now=tapeNow(),start=clamp(now-len*.4,0,state.tapeLength-len);return {start,end:start+len,len,x0:62,width:582}}
 function tapeX(t,v){return v.x0+(t-v.start)/v.len*v.width}
-function handleTapePointer(e){if(state.mode!=='tape'||state.seqVisible||currentView==='tempo')return;let r=$('display').getBoundingClientRect(),x=(e.clientX-r.left)*W/r.width,y=(e.clientY-r.top)*H/r.height,v=tapeView();if(x<62||x>646)return;const t=clamp(v.start+(x-v.x0)/v.width*v.len,0,state.tapeLength);if(y>=78&&y<213){let track=clamp(Math.floor((y-81)/33),0,3),events=state.tracks[track].events,hit=-1;for(let i=events.length-1;i>=0;i--){let ev=events[i],left=tapeX(ev.t,v),right=tapeX(ev.t+ev.d,v);if(x>=left-4&&x<=Math.max(left+5,right+2)){hit=i;break}}let clips=state.tracks[track].clips,clipHit=-1;for(let i=clips.length-1;i>=0;i--){const c=clips[i];if(t>=c.t-.02&&t<=c.t+c.d+.02){clipHit=i;break}}state.selectedTrack=track;state.sub=track;selectedAudio=clipHit>=0?{track,index:clipHit}:null;selectedEvent=clipHit>=0?null:hit>=0?{track,index:hit}:null;syncUI();if(clipHit>=0)notice('Selected audio waveform on T'+(track+1)+'. SPLIT / LIFT / DROP are available.');else if(hit>=0)notice('Selected note on T'+(track+1)+'. Seek inside it to SPLIT, or press LIFT.');else{seek(t);notice('Playhead moved to '+m2s(t)+'.')}}else if(y<78){seek(t);notice('Playhead moved to '+m2s(t)+'.')}}
+function displayPointerPosition(canvas,clientX,clientY){const r=canvas.getBoundingClientRect();return {x:(clientX-r.left)*W/r.width,y:(clientY-r.top)*H/r.height}}
+function handleTapePointer(e){if(gameMode||tapeReelView||state.mode!=='tape'||state.seqVisible||currentView==='tempo')return;let {x,y}=displayPointerPosition(e.currentTarget,e.clientX,e.clientY),v=tapeView();if(x<62||x>646)return;const t=clamp(v.start+(x-v.x0)/v.width*v.len,0,state.tapeLength);if(y>=78&&y<213){let track=clamp(Math.floor((y-81)/33),0,3),events=state.tracks[track].events,hit=-1;for(let i=events.length-1;i>=0;i--){let ev=events[i],left=tapeX(ev.t,v),right=tapeX(ev.t+ev.d,v);if(x>=left-4&&x<=Math.max(left+5,right+2)){hit=i;break}}let clips=state.tracks[track].clips,clipHit=-1;for(let i=clips.length-1;i>=0;i--){const c=clips[i];if(t>=c.t-.02&&t<=c.t+c.d+.02){clipHit=i;break}}state.selectedTrack=track;state.sub=track;selectedAudio=clipHit>=0?{track,index:clipHit}:null;selectedEvent=clipHit>=0?null:hit>=0?{track,index:hit}:null;syncUI();if(clipHit>=0)notice('Selected audio waveform on T'+(track+1)+'. SPLIT / LIFT / DROP are available.');else if(hit>=0)notice('Selected note on T'+(track+1)+'. Seek inside it to SPLIT, or press LIFT.');else{seek(t);notice('Playhead moved to '+m2s(t)+'.')}}else if(y<78){seek(t);notice('Playhead moved to '+m2s(t)+'.')}}
 
 /* Independently drawn, asset-free visuals and a small original browser game.
    No OP-1 binary, artwork, sample, or emulated firmware is used. */
@@ -693,7 +715,7 @@ function drawSignatureSynth(g,t){const p=patch(),v=state.preset%8,c=colors[v%4];
  else if(v===6){for(let k=0;k<17;k++){let a=t*.32+k*6.28/17,gx=cx+Math.cos(a)*k*14,gy=cy+Math.sin(a)*k*4;g.beginPath();g.ellipse(gx,gy,9+k*.32,3+k*.11,a,0,Math.PI*2);g.stroke()}}
  else {for(let k=0;k<28;k++){let x=30+k*22,y=cy+Math.sin(k*.8+t*1.8)*33,dx=Math.cos(k*2+t)*20;g.beginPath();g.moveTo(x,y);g.lineTo(x+dx,y-28);g.lineTo(x+dx+10,y+20);g.closePath();g.stroke()}}
  g.restore();soundReactiveOverlay(g,t);g.globalAlpha=1;g.fillStyle='#dfe7eb';g.font='bold 24px Arial';g.fillText('SYNTH / '+p.name,21,79);g.fillStyle='#0e1216';g.fillRect(22,218,622,27);g.font='14px Arial';g.fillStyle='#a3bfcc';g.fillText('FILTER '+Math.round(p.cutoff*100)+'  /  RES '+Math.round(p.res*100)+'   ·   ORIGINAL VISUAL ENGINE '+(v+1),30,236);}
-function scrubTapePosition(clientX){const rect=$('display').getBoundingClientRect(),x=(clientX-rect.left)*W/rect.width;seek(clamp(tapeReelView?(x-110)/460:(x-215)/250,0,1)*state.tapeLength)}
+function scrubTapePosition(clientX,canvas=$('display')){const {x}=displayPointerPosition(canvas,clientX,0);seek(clamp(tapeReelView?(x-110)/460:(x-215)/250,0,1)*state.tapeLength)}
 function wireNewVisuals(){
  $('quickReels').addEventListener('click',()=>{if(gameMode)toggleGame(false);if(state.mode!=='tape')selectMode('tape');tapeReelView=!tapeReelView;uiTapeMenu=false;syncUI();$('quickReels').classList.toggle('active',tapeReelView);$('quickReels').setAttribute('aria-pressed',String(tapeReelView));notice(tapeReelView?'Full-screen tape reels. Drag the transport bar to scrub.':'Four-track timeline restored.');});
  $('quickGame').addEventListener('click',()=>toggleGame());
@@ -701,7 +723,16 @@ function wireNewVisuals(){
  for(const [id,dir] of [['gameLeft',-1],['gameRight',1]]){const el=$(id);el.addEventListener('pointerdown',e=>{game.move=dir});for(const evt of ['pointerup','pointercancel','pointerleave'])el.addEventListener(evt,()=>{game.move=0})}
  document.addEventListener('keydown',e=>{if(!gameMode||e.target?.closest?.('input,textarea,select')||!['ArrowLeft','ArrowRight',' '].includes(e.key))return;e.preventDefault();e.stopImmediatePropagation();if(e.key===' ')gameAction('toggle');else game.move=e.key==='ArrowLeft'?-1:1},true);
  document.addEventListener('keyup',e=>{if(!gameMode||!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();e.stopImmediatePropagation();game.move=0},true);
- let scrubbing=false;const canvas=$('display');canvas.addEventListener('pointerdown',e=>{if(gameMode||state.mode!=='tape'||transport.armed||microphone||e.button!==0)return;const r=canvas.getBoundingClientRect(),y=(e.clientY-r.top)*H/r.height;if(tapeReelView?(y<229||y>286):(y<245||y>290))return;if(transport.playing)stopTransport();scrubbing=true;canvas.setPointerCapture(e.pointerId);scrubTapePosition(e.clientX);e.preventDefault()});canvas.addEventListener('pointermove',e=>{if(scrubbing)scrubTapePosition(e.clientX)});for(const evt of ['pointerup','pointercancel'])canvas.addEventListener(evt,()=>scrubbing=false);
+ for(const canvas of [$('display'),$('displayZoomCanvas')]){
+  let scrubbing=false;
+  canvas.addEventListener('pointerdown',e=>{if(e.button!==0)return;if(gameMode){if(canvas.id==='displayZoomCanvas'){game.paddle=clamp(displayPointerPosition(canvas,e.clientX,e.clientY).x,72,608);e.preventDefault()}return}
+   if(state.mode!=='tape'||transport.armed||microphone)return;
+   const {y}=displayPointerPosition(canvas,e.clientX,e.clientY);
+   if(tapeReelView?(y<229||y>286):(y<245||y>290))return;
+   if(transport.playing)stopTransport();scrubbing=true;canvas.setPointerCapture(e.pointerId);scrubTapePosition(e.clientX,canvas);e.preventDefault()});
+  canvas.addEventListener('pointermove',e=>{if(scrubbing){scrubTapePosition(e.clientX,canvas)}else if(gameMode&&canvas.id==='displayZoomCanvas'&&e.buttons===1)game.paddle=clamp(displayPointerPosition(canvas,e.clientX,e.clientY).x,72,608)});
+  for(const evt of ['pointerup','pointercancel'])canvas.addEventListener(evt,()=>scrubbing=false);
+ }
  gameSetup();syncGameControls();
 }
 function drawTapeCinema(g,t){
@@ -1031,6 +1062,13 @@ function syncExpandedDisplay(){if(!displayZoomOpen)return;const actions=$('displ
  const source=!overlay.hidden?overlay:!shortcuts.hidden?shortcuts:null;
  if(source){const copy=source.cloneNode(true);copy.removeAttribute('id');copy.removeAttribute('hidden');copy.classList.remove('screen-overlay');if(source===shortcuts)copy.classList.add('screen-shortcuts');actions.replaceChildren(copy)}
  else actions.innerHTML='<p>No pop-up menu on this page. Press ✣ for sequencers, TAPE for tape editing or SYNTH FX for effects, then use the menu here.</p>';
+ const controls=$('displayZoomToolbar');
+ controls.querySelectorAll('[data-zoom-mode]').forEach(b=>b.setAttribute('aria-pressed',String(!gameMode&&state.mode===b.dataset.zoomMode)));
+ controls.querySelectorAll('[data-zoom-tool]').forEach(b=>b.setAttribute('aria-pressed',String((b.dataset.zoomTool==='game'&&gameMode)||(b.dataset.zoomTool==='reels'&&tapeReelView&&state.mode==='tape')||(b.dataset.zoomTool==='seq'&&state.seqVisible))));
+ controls.querySelectorAll('[data-zoom-soft]').forEach(b=>b.textContent=$('softKeys').children[Number(b.dataset.zoomSoft)]?.textContent||String(Number(b.dataset.zoomSoft)+1));
+ controls.querySelectorAll('[data-zoom-encoder-label]').forEach(el=>{const i=Number(el.dataset.zoomEncoderLabel);const p=encoderInfo(i);el.textContent=p.label+' · '+p.format(p.value)});
+ controls.querySelector('[data-zoom-transport="rec"]').setAttribute('aria-pressed',String(transport.armed));
+ controls.querySelector('[data-zoom-transport="play"]').setAttribute('aria-pressed',String(transport.playing));
  updateExpandedCanvas();
 }
 let displayZoomPreviousFocus=null;
@@ -1063,6 +1101,24 @@ function initV09Controls(){
  $('closeDisplay').addEventListener('click',()=>setDisplayZoom(false));
  $('displayZoom').addEventListener('click',e=>{if(e.target===$('displayZoom'))setDisplayZoom(false)});
  $('displayZoomActions').addEventListener('click',clickExpandedControl);
+ $('displayZoomCanvas').addEventListener('click',handleTapePointer);
+ $('displayZoomCanvas').addEventListener('keydown',e=>{if(state.mode!=='tape'||gameMode)return;if(e.key==='ArrowLeft'||e.key==='ArrowRight'){seek(tapeNow()+(e.key==='ArrowRight'?1:-1));e.preventDefault()}});
+ const encoders=$('displayZoomEncoders');encoders.innerHTML=Array.from({length:4},(_,i)=>'<div class="display-zoom-encoder"><button type="button" data-zoom-encoder="'+i+'" data-zoom-delta="-1" aria-label="Decrease encoder '+(i+1)+'">−</button><span data-zoom-encoder-label="'+i+'">ENCODER '+(i+1)+'</span><button type="button" data-zoom-encoder="'+i+'" data-zoom-delta="1" aria-label="Increase encoder '+(i+1)+'">+</button></div>').join('');
+ $('displayZoomToolbar').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  if(b.hasAttribute('data-zoom-mode')){if(gameMode)toggleGame(false);selectMode(b.dataset.zoomMode)}
+  else if(b.hasAttribute('data-zoom-tool')){const kind=b.dataset.zoomTool;
+   if(kind==='seq')openSequencerMenu();else if(kind==='edit')setTapeTools(true);
+   else if(kind==='fx'){if(gameMode)toggleGame(false);selectMode('synth');state.sub=2;state.seqVisible=false;syncUI()}
+   else if(kind==='reels')$('quickReels').click();else if(kind==='game')toggleGame();
+  }else if(b.hasAttribute('data-zoom-soft'))selectSoft(Number(b.dataset.zoomSoft));
+  else if(b.hasAttribute('data-zoom-encoder'))changeEncoder(Number(b.dataset.zoomEncoder),Number(b.dataset.zoomDelta));
+  else if(b.hasAttribute('data-zoom-transport')){const kind=b.dataset.zoomTransport;
+   if(kind==='rew')$('rewButton').click();else if(kind==='ff')$('ffButton').click();
+   else if(kind==='play')$('playButton').click();else if(kind==='stop')$('stopButton').click();
+   else if(kind==='rec')$('recButton').click();
+  }
+ });
  window.addEventListener('keydown',e=>{
   if(displayZoomOpen&&e.key==='Tab')trapDisplayFocus(e);
   if(e.key==='Escape'&&displayZoomOpen){e.preventDefault();e.stopImmediatePropagation();setDisplayZoom(false)}

@@ -17,7 +17,7 @@ Prepared 14 October 2026 (Australia/Sydney). Feature-branch development, not app
 - Ten entirely original, asset-free synth, drum and four-track demo compositions. Expanded DEMOS browser offers category filters, non-destructive audio preview, load as new Unified Song Workspace clips, and explicit PCM render-to-tape for tape demos. Audio previews use a disposable Web Audio graph, independent of saved tracks. No official artwork, audio samples or firmware.
 - Retina-expanded OP-1 display redrawn from vector Canvas2D operations at the target device pixel density instead of stretching a 680x325 bitmap. Tap coordinates continue to use original 680x325 logical units. Physical display stays original-sized.
 - Graphite/light theme switch, saved in a separate local UI preference rather than portable song state. The OP-1 instrument body stays light.
-- Six tabbed workspaces: Play, Drums, Tape, Compose, Song, Tools. Physical keyboard remains mounted above workspace tabs; mobile features are retained and touch keyboard stays available. Tabs only hide non-active panels; they never destroy controls or restart audio.
+- Six tabbed workspaces: Play, Drums, Tape, Compose, Song, Tools. Physical keyboard remains mounted above workspace tabs. A compact sticky desktop keyboard appears when scrolling past the full instrument; mobile features are retained and the touch keyboard stays sticky. Tabs only hide non-active panels; they never destroy controls or restart audio.
 
 ## Compatibility and architecture
 

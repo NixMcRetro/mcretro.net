@@ -81,3 +81,9 @@ html[data-op1-theme=dark] .studio-advanced-note{color:#c0d5de}
 }
 @media(max-width:420px){.studio-stage-row small{font-size:10px}.studio-stage-row button{min-height:110px}.studio-detail-head{display:block}.studio-shortcuts{margin-top:6px}}
 @media(prefers-reduced-motion:reduce){.studio-main-navigation button{transition:none}}
+
+/* Progressive disclosure of the global MIDI destination picker. */
+html.studio-simple #comfortMidiEntry:not(.studio-midi-open){display:none!important}
+html.studio-simple #comfortMidiTop{display:none!important}
+html.studio-simple #comfortMidiEntry.studio-midi-open{padding:10px;border:1px solid #b4cbd6;border-radius:9px;background:#e8f1f4}
+html.studio-simple[data-op1-theme=dark] #comfortMidiEntry.studio-midi-open{background:#304652;border-color:#557487}

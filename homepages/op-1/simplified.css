@@ -104,3 +104,12 @@ html.studio-simple .studio-stage-row small{font-size:10px;line-height:1.45}
 html.studio-simple .studio-guide-steps{font-size:11px}
 @media(max-width:630px){.studio-welcome{padding:12px}.studio-welcome-actions{grid-template-columns:1fr 1fr;flex-basis:100%}.studio-welcome-actions button{min-height:48px}}
 @media(max-width:355px){.studio-welcome-actions{grid-template-columns:1fr}}
+
+/* Focus mode keeps the secondary utilities available, but off the main surface. */
+.studio-shortcuts{display:block!important;padding:0!important;overflow:hidden}
+.studio-shortcuts>summary{cursor:pointer;padding:12px 14px;font-size:11px;letter-spacing:.05em;font-weight:850;color:#466979;min-height:44px;box-sizing:border-box}
+.studio-shortcuts[open]>summary{border-bottom:1px solid #bdd0d9}
+.studio-shortcut-buttons{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px}
+.studio-shortcut-buttons button{flex:0 1 auto}
+html[data-op1-theme=dark] .studio-shortcuts>summary{color:#d3e9f3}
+@media(max-width:620px){.studio-shortcut-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.studio-shortcut-buttons button{min-width:0}}

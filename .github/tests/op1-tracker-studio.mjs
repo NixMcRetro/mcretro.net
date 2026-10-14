@@ -1,4 +1,4 @@
-// v2.4 Tracker Studio safety and browser integration.
+// v2.5 Tracker Studio safety and browser integration.
 import { chromium, firefox, webkit } from 'playwright';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
@@ -23,7 +23,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    const ctx=await browser.newContext({viewport:{width,height:880},acceptDownloads:true});
    const page=await ctx.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
    await page.setContent(rawHtml,{waitUntil:'domcontentloaded'});
-   assert.match(await page.title(),/v2\.4/);
+   assert.match(await page.title(),/v2\.5/);
    await page.locator('[data-studio-group="Compose"]').click();
    await page.locator('[data-studio-tool="trackerStudio"]').click();
    assert(await page.locator('#trackerStudio').isVisible());

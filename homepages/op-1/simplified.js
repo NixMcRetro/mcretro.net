@@ -1,4 +1,4 @@
-/* SuperNick's OP-1 Browser Lab v2.1: a focused studio UI, not a new project format. */
+/* SuperNick's OP-1 Browser Lab v2.5: an OP-1-style guided studio UI, not a new project format. */
 (function(){
 'use strict';
 const $=id=>document.getElementById(id);
@@ -21,6 +21,7 @@ const groups=[
   {id:'recoveryPanel',name:'Recovery & Backups',tab:'Tools',hint:'Make a portable project backup and inspect local recovery checkpoints.'},
   {id:'offlinePanel',name:'Offline & Install',tab:'Tools',hint:'Check your browser cache and learn how to install the app.'}]}
 ];
+const STAGES={'Sounds':{label:'PLAY',action:'Choose a sound or try a demo.'},'Compose':{label:'CREATE',action:'Write a melody or build a tracker pattern.'},'Record & Mix':{label:'TAPE',action:'Capture and mix a musical idea.'},'Tools':{label:'KEEP',action:'Save your project and work offline.'}};
 const all=groups.flatMap(g=>g.tools);
 const GROUP_BY_TAB={Play:'Sounds',Drums:'Sounds',Compose:'Compose',Song:'Compose',Tape:'Record & Mix',Tools:'Tools'};
 const KEY_MODE='op1-lab-layout-v21',KEY_TOOL='op1-lab-editor-v21';
@@ -40,7 +41,7 @@ function sync(){
  $('studioToolNavigation').hidden=!simple;
  $('studioGuide').hidden=!simple;
  $('studioAdvancedNote').hidden=simple;
- $('studioModeDescription').textContent=simple?'Simple: focus on one tool at a time. All music features remain available.':'Advanced: all six original workspaces and full instrument shortcuts.';
+ $('studioModeDescription').textContent=simple?'Focus: one musical task at a time. All instruments and projects are still here.':'All Tools: every original workspace and instrument shortcut.';
  for(const button of document.querySelectorAll('[data-studio-group]')){
   const on=button.dataset.studioGroup===group.name;button.setAttribute('aria-selected',String(on));button.tabIndex=on?0:-1;
  }
@@ -54,7 +55,7 @@ function sync(){
  for(const panel of document.querySelectorAll('.below [data-comfort-tab]')){
   panel.classList.toggle('studio-current',simple&&panel.id===selected);
  }
- $('studioCurrentHeading').textContent=group.name+' / '+tool.name;
+ $('studioCurrentHeading').textContent=STAGES[group.name].label+' / '+tool.name;
  $('studioCurrentHelp').textContent=tool.hint;
  const steps=group.name==='Sounds'?['Try a few presets, or build a drum pattern.','Compose a melody when ready.']:
   group.name==='Compose'?['Use Piano Roll for chords, or Pianola for a single-note melody.','Use SEND TO SONG, then arrange your clips in Song Workspace.']:
@@ -99,12 +100,12 @@ function onLegacyTab(tab){
 function initPrimaryNav(){
  const main=document.createElement('nav');main.className='studio-main-navigation';main.id='studioMainNavigation';main.setAttribute('aria-label','Simple studio stages');
  const header=document.createElement('div');header.className='studio-heading';
- header.innerHTML='<strong>YOUR MUSIC STUDIO</strong><span>Choose a stage. The keyboard stays ready to play.</span>';
+ header.innerHTML='<strong>MAKE MUSIC, NOT MENUS</strong><span>Play a sound. Build an idea. Record it to tape. Keep the result.</span>';
  main.append(header);
  const row=document.createElement('div');row.className='studio-stage-row';row.setAttribute('role','tablist');row.setAttribute('aria-label','Music-making stages');
  for(const g of groups){
   const b=document.createElement('button');b.type='button';b.dataset.studioGroup=g.name;b.setAttribute('role','tab');
-  b.innerHTML='<span class="studio-stage-number">'+g.tag+'</span><strong>'+g.name+'</strong><small>'+g.intro+'</small>';
+  b.innerHTML='<span class="studio-stage-number">'+g.tag+'</span><strong>'+STAGES[g.name].label+'</strong><small>'+g.name+' · '+STAGES[g.name].action+'</small>';
   b.addEventListener('click',()=>selectGroup(g.name));
   b.addEventListener('keydown',e=>{if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;e.preventDefault();
    const step=e.key==='ArrowRight'?1:-1;const i=groups.indexOf(g),next=groups[(i+step+groups.length)%groups.length];selectGroup(next.name);row.querySelector('[data-studio-group="'+next.name+'"]').focus();
@@ -113,7 +114,7 @@ function initPrimaryNav(){
  }
  main.append(row);
  const detail=document.createElement('div');detail.className='studio-detail';
- detail.innerHTML='<div class="studio-detail-head"><strong>WORKSPACE</strong><span>Select one editor, or switch to Advanced for all the original panels.</span></div><div class="studio-tool-navigation" id="studioToolNavigation" role="group" aria-label="Choose a focused editor"></div>';
+ detail.innerHTML='<div class="studio-detail-head"><strong>CHOOSE YOUR TOOL</strong><span>One editor at a time. All the original panels remain in All Tools.</span></div><div class="studio-tool-navigation" id="studioToolNavigation" role="group" aria-label="Choose a focused editor"></div>';
  main.append(detail);
  const guide=document.createElement('section');guide.className='studio-guide';guide.id='studioGuide';
  guide.innerHTML='<div class="studio-guide-heading"><div><strong id="studioCurrentHeading"></strong><p id="studioCurrentHelp"></p></div><button type="button" id="studioNextStep">NEXT →</button></div><div class="studio-guide-steps" id="studioGuideSteps"></div>';
@@ -127,13 +128,24 @@ function initPrimaryNav(){
 }
 function initToolbar(){
  const controls=document.createElement('div');controls.className='studio-mode-bar';controls.id='studioModeBar';
- controls.innerHTML='<div><strong>STUDIO LAYOUT</strong><p id="studioModeDescription"></p></div><div class="studio-layout-choice" role="group" aria-label="Studio layout"><button type="button" id="studioSimpleButton">SIMPLE</button><button type="button" id="studioAdvancedButton">ADVANCED</button></div>';
+ controls.innerHTML='<div><strong>HOW MUCH DO YOU WANT TO SEE?</strong><p id="studioModeDescription"></p></div><div class="studio-layout-choice" role="group" aria-label="Studio layout"><button type="button" id="studioSimpleButton">FOCUS</button><button type="button" id="studioAdvancedButton">ALL TOOLS</button></div>';
  $('comfortTabs').before(controls);
  $('studioSimpleButton').addEventListener('click',()=>setMode('simple'));
  $('studioAdvancedButton').addEventListener('click',()=>setMode('advanced'));
  const advanced=document.createElement('p');advanced.id='studioAdvancedNote';advanced.className='studio-advanced-note';
- advanced.textContent='Advanced shows every panel in each original workspace. Select SIMPLE to focus on one editor.';
+ advanced.textContent='All Tools shows every original panel. Select Focus for one musical task at a time.';
  $('comfortTabs').after(advanced);
+}
+function initWelcome(){
+ const root=document.createElement('section');root.className='studio-welcome';root.id='studioWelcome';
+ root.setAttribute('aria-label','Four-step music-making guide');
+ root.innerHTML='<div class="studio-welcome-text"><strong>THE FOUR-STEP OP-1 IDEA</strong><p>Play a sound, make a pattern, record it to tape, then keep your song. Start anywhere. Switching stages never deletes anything.</p></div>'+
+ '<div class="studio-welcome-actions"><button type="button" id="studioQuickSongs">♫ TRY A TRACKER SONG</button><button type="button" id="studioQuickBeat">▦ MAKE A BEAT</button><button type="button" id="studioQuickTape">● RECORD TO TAPE</button><button type="button" id="studioQuickSave">↓ SAVE PROJECT</button></div>';
+ $('studioMainNavigation').before(root);
+ $('studioQuickSongs').addEventListener('click',()=>{selectTool('trackerStudio',{scroll:true});window.OP1Tracker?.openLibrary?.()});
+ $('studioQuickBeat').addEventListener('click',()=>selectTool('sequencePanel',{scroll:true}));
+ $('studioQuickTape').addEventListener('click',()=>selectTool('comfortTapePanel',{scroll:true}));
+ $('studioQuickSave').addEventListener('click',()=>$('saveProject').click());
 }
 function initQuickActions(){
  const bar=document.createElement('div');bar.className='studio-shortcuts';bar.id='studioShortcuts';
@@ -165,7 +177,7 @@ function initPanelLinks(){
 }
 function init(){
  if(!$('comfortTabs')||!window.OP1Comfort)return;
- initToolbar();initPrimaryNav();initQuickActions();initPanelLinks();
+ initToolbar();initPrimaryNav();initWelcome();initQuickActions();initPanelLinks();
  window.addEventListener('op1:tabchange',e=>onLegacyTab(e.detail?.tab));
  const remembered=read(KEY_TOOL);
  if(remembered&&all.some(t=>t.id===remembered))selected=remembered;

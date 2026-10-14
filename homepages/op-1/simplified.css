@@ -87,3 +87,20 @@ html.studio-simple #comfortMidiEntry:not(.studio-midi-open){display:none!importa
 html.studio-simple #comfortMidiTop{display:none!important}
 html.studio-simple #comfortMidiEntry.studio-midi-open{padding:10px;border:1px solid #b4cbd6;border-radius:9px;background:#e8f1f4}
 html.studio-simple[data-op1-theme=dark] #comfortMidiEntry.studio-midi-open{background:#304652;border-color:#557487}
+
+/* v2.5: a calm, OP-1-inspired starting point that preserves Advanced. */
+.studio-welcome{margin:12px 0 15px;padding:15px 17px;background:#f0f5f7;border:1px solid #c4d7df;border-radius:12px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.studio-welcome-text{flex:1 1 230px;color:#344d5c}
+.studio-welcome-text strong{font-size:12px;letter-spacing:.06em}
+.studio-welcome-text p{margin:5px 0 0;font-size:12px;line-height:1.55;color:#5b7585}
+.studio-welcome-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;flex:1.5 1 350px}
+.studio-welcome-actions button{min-height:45px;padding:8px 10px;font-size:11px;font-weight:850;border:1px solid #9cb8c6;border-radius:8px;background:#fff;color:#335f75;cursor:pointer}
+.studio-welcome-actions button:first-child{background:#2f748c;color:#fff;border-color:#2f748c}
+.studio-welcome-actions button:focus-visible{outline:3px solid #efa256;outline-offset:2px}
+html.studio-advanced .studio-welcome{display:none}
+html.studio-simple .studio-heading{padding:4px 0}
+html.studio-simple .studio-stage-row strong{font-size:13px}
+html.studio-simple .studio-stage-row small{font-size:10px;line-height:1.45}
+html.studio-simple .studio-guide-steps{font-size:11px}
+@media(max-width:630px){.studio-welcome{padding:12px}.studio-welcome-actions{grid-template-columns:1fr 1fr;flex-basis:100%}.studio-welcome-actions button{min-height:48px}}
+@media(max-width:355px){.studio-welcome-actions{grid-template-columns:1fr}}

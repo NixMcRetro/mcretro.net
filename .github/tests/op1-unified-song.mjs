@@ -35,7 +35,8 @@ for(const [browserName,engine] of Object.entries({chromium,firefox,webkit})){
   saved=await project(page);assert.equal(saved.pianoRoll.notes.length,0);
   assert.deepEqual(saved.songWorkspace,clips,'Source roll edit changed its copied clip');
   await page.locator('#projectFile').setInputFiles({name:'workspace.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(saved))});
-  await page.waitForFunction(()=>document.querySelectorAll('.workspace-clip-item').length===3);
+  await page.waitForFunction(()=>document.querySelectorAll('.workspace-clip-item').length===3&&document.querySelector('#feedback')?.textContent.includes('Project loaded'));
+  await page.waitForTimeout(150);
   assert.deepEqual((await project(page)).songWorkspace,clips);
   const invalid=structuredClone(saved);invalid.songWorkspace.clips[0].startBar=500;
   await page.locator('#projectFile').setInputFiles({name:'invalid.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(invalid))});
@@ -43,7 +44,8 @@ for(const [browserName,engine] of Object.entries({chromium,firefox,webkit})){
   assert.deepEqual((await project(page)).songWorkspace,clips,'Invalid project damaged active state');
   const old=structuredClone(saved);delete old.songWorkspace;
   await page.locator('#projectFile').setInputFiles({name:'v19.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(old))});
-  await page.waitForFunction(()=>document.querySelectorAll('.workspace-clip-item').length===0);
+  await page.waitForFunction(()=>document.querySelectorAll('.workspace-clip-item').length===0&&document.querySelector('#feedback')?.textContent.includes('Project loaded'));
+  await page.waitForTimeout(150);
   assert.equal((await project(page)).songWorkspace.clips.length,0);
   assert.deepEqual(errors,[],'Browser exceptions');
   console.log(browserName,width,'clips/edit/undo/project safety passed');await ctx.close();
@@ -64,6 +66,7 @@ try{
  assert.equal(typeof saved.audioSamples[saved.tracks[0].clips[0].sampleId],'string');
  await page.locator('#projectFile').setInputFiles({name:'with-tape.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(saved))});
  await page.waitForFunction(()=>document.querySelector('#feedback')?.textContent.includes('Project loaded'),null,{timeout:60000});
+ await page.waitForTimeout(150);
  assert.equal((await project(page)).tracks[0].clips.length,1);
  page.once('dialog',d=>d.accept());await page.locator('#workspaceMeter').selectOption('6/8');
  assert.equal((await project(page)).songWorkspace.meter,'6/8');

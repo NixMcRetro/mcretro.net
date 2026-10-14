@@ -2,7 +2,7 @@
 import {chromium,firefox,webkit} from 'playwright';
 import {readFileSync} from 'node:fs';
 import assert from 'node:assert/strict';
-const html=readFileSync('homepages/op-1/index.html','utf8');
+import {html} from './op1-test-html.mjs';
 function midiTracks(bytes){const b=Buffer.from(bytes);assert.equal(b.toString('ascii',0,4),'MThd');assert.equal(b.readUInt32BE(4),6);assert.equal(b.readUInt16BE(8),0);assert.equal(b.readUInt16BE(10),1);assert.equal(b.readUInt16BE(12),480);assert.equal(b.toString('ascii',14,18),'MTrk');assert.equal(b.readUInt32BE(18),b.length-22);let i=22,ticks=0;const out=[];while(i<b.length){let delta=0,octets=0,c;do{c=b[i++];delta=(delta<<7)|(c&127);if(++octets>4)throw Error('Invalid VLQ')}while(c&128);ticks+=delta;const cmd=b[i++];let data=[];if(cmd===0xff){const type=b[i++],len=b[i++];data=[type,...b.subarray(i,i+len)];i+=len}else if((cmd&0xf0)===0x90||(cmd&0xf0)===0x80){data=[b[i++],b[i++]]}else throw Error('Unsupported unexpected MIDI event '+cmd);out.push({ticks,cmd,data})}return out}
 async function getDownload(page,selector){const p=page.waitForEvent('download',{timeout:30000});await page.locator(selector).click();return readFileSync(await (await p).path())}
 for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
@@ -10,7 +10,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
  try{for(const width of(name==='chromium'?[1440,390]:[1100])){
   const context=await browser.newContext({viewport:{width,height:880},acceptDownloads:true});
   const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.setContent(html,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/v1\.9/);assert.equal(await page.locator('#pianolaExportMidi').count(),1);
+  assert.match(await page.title(),/v2\.0/);assert.equal(await page.locator('#pianolaExportMidi').count(),1);
   await page.locator('#pianolaMeter').selectOption('6/8');await page.locator('#pianolaPitch').selectOption('60');await page.locator('#pianolaAdd').click();
   await page.locator('#pianolaLength').selectOption('0.5');await page.locator('#pianolaRest').click();
   await page.locator('#pianolaPitch').selectOption('64');await page.locator('#pianolaLength').selectOption('0.25');await page.locator('#pianolaAdd').click();

@@ -133,11 +133,15 @@ function initToolbar(){
 }
 function initQuickActions(){
  const bar=document.createElement('div');bar.className='studio-shortcuts';bar.id='studioShortcuts';
- bar.innerHTML='<button type="button" id="studioDemo">♫ BROWSE DEMOS</button><button type="button" id="studioMidi">♫ IMPORT MIDI</button><button type="button" id="studioArrange">▦ SONG WORKSPACE</button><button type="button" id="studioMix">◫ MIXER</button><button type="button" id="studioBackup">⬇ SAVE BACKUP</button><button type="button" id="studioKeyboardHelp" aria-expanded="false" aria-controls="studioShortcutHelp">? SHORTCUTS</button><div id="studioShortcutHelp" hidden>Play notes with Z, S, X and the keyboard labels. Press ← / → for octaves when not editing. Space controls tape playback. Ctrl/Cmd + Z undoes applicable edits. The full guide remains in the top menu.</div>';
+ bar.innerHTML='<button type="button" id="studioDemo">♫ BROWSE DEMOS</button><button type="button" id="studioMidi" aria-expanded="false" aria-controls="comfortMidiEntry">♫ IMPORT MIDI</button><button type="button" id="studioArrange">▦ SONG WORKSPACE</button><button type="button" id="studioMix">◫ MIXER</button><button type="button" id="studioBackup">⬇ SAVE BACKUP</button><button type="button" id="studioKeyboardHelp" aria-expanded="false" aria-controls="studioShortcutHelp">? SHORTCUTS</button><div id="studioShortcutHelp" hidden>Play notes with Z, S, X and the keyboard labels. Press ← / → for octaves when not editing. Space controls tape playback. Ctrl/Cmd + Z undoes applicable edits. The full guide remains in the top menu.</div>';
  $('studioModeBar').after(bar);
  $('studioDemo').addEventListener('click',()=>$('comfortDemoOpen').click());
- $('studioMidi').addEventListener('click',()=>{if(mode==='simple')selectTool('rollPanel');else window.OP1Comfort.chooseTab('Compose');
-  $('comfortMidiDestination').focus();$('comfortMidiEntry').scrollIntoView({block:'center',behavior:'smooth'});
+ $('studioMidi').addEventListener('click',()=>{
+  const picker=$('comfortMidiEntry'),open=!picker.classList.contains('studio-midi-open');
+  picker.classList.toggle('studio-midi-open',open);$('studioMidi').setAttribute('aria-expanded',String(open));
+  if(open){if(mode==='simple')selectTool('rollPanel');else window.OP1Comfort.chooseTab('Compose');
+   $('comfortMidiDestination').focus();picker.scrollIntoView({block:'center',behavior:'smooth'});
+  }else $('studioMidi').focus();
  });
  $('studioArrange').addEventListener('click',()=>{if(mode==='simple')selectTool('songStudio',{scroll:true});else window.OP1Comfort.chooseTab('Song')});
  $('studioMix').addEventListener('click',()=>{if(mode==='simple')selectTool('performancePanel',{scroll:true});else window.OP1Comfort.chooseTab('Tape')});

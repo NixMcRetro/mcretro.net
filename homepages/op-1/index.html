@@ -1452,7 +1452,7 @@ async function exportTapeStem(index){if(songExportBusy||exporting)return;if(micr
   download(new Blob([bytes],{type:'audio/wav'}),'supernick-op1-v18-track-'+(index+1)+'-stem.wav');notice('Track '+(index+1)+' stem exported as stereo WAV. Original tracks untouched.');
  }catch(e){console.error(e);notice('Stem export failed: '+e.message)}finally{songExportBusy=false;btn.disabled=false;btn.textContent='EXPORT TAPE STEM'}
 }
-async function saveProject(){if(microphone||micStopping||assetsBusy){notice('Wait until audio recording or import finishes before saving.');return}saveLocal();const data={format:'op1-browser-lab-v05',version:5,savedAt:new Date().toISOString(),...state,audioSamples:{}};for(const id of usedSampleIds()){const wav=sampleWavs.get(id)||await fetchSampleDb(id).catch(()=>null);if(!wav){notice('Cannot back up: sample '+id+' is unavailable. Check PROJECT RECOVERY.');return}data.audioSamples[id]=bufferToBase64(wav)}download(new Blob([JSON.stringify(data)],{type:'application/json'}),'supernick-op1-project-v20-'+new Date().toISOString().slice(0,10)+'.json');notice('Portable project saved including audio clips.');}
+async function saveProject(){if(microphone||micStopping||assetsBusy){notice('Wait until audio recording or import finishes before saving.');return}saveLocal();const data={format:'op1-browser-lab-v05',version:5,savedAt:new Date().toISOString(),...state,audioSamples:{}};for(const id of usedSampleIds()){const wav=sampleWavs.get(id)||await fetchSampleDb(id).catch(()=>null);if(!wav){notice('Cannot back up: sample '+id+' is unavailable. Check PROJECT RECOVERY.');return}data.audioSamples[id]=bufferToBase64(wav)}download(new Blob([JSON.stringify(data)],{type:'application/json'}),'supernick-op1-project-v201-'+new Date().toISOString().slice(0,10)+'.json');notice('Portable project saved including audio clips.');}
 function download(blob,name){let url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=name;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),30000)}
 function setExportStatus(message){const el=$('exportStatus');el.hidden=!message;el.textContent=message||''}
 const nextExportFrame=()=>new Promise(resolve=>requestAnimationFrame(resolve));
@@ -1695,7 +1695,7 @@ function op1InstallHelp(){
 async function op1CheckOffline(){
  if(!('serviceWorker' in navigator)||!('caches' in window)||!window.isSecureContext){op1OfflineReady=false;op1OfflineMessage('Offline installation is unavailable in this browser or context. Use HTTPS in a regular browser tab; download portable project backups.', 'warn');return}
  try {
-  const cache=await caches.open('op1-browser-lab-shell-v2.0');
+  const cache=await caches.open('op1-browser-lab-shell-v2.0.1');
   const root=new URL('./',location.href),paths=['index.html','workspace.js','workspace.css','comfort.js','comfort.css','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png'];
   const found=await Promise.all(paths.map(p=>cache.match(new URL(p,root).href)));
   op1OfflineReady=found.every(Boolean);

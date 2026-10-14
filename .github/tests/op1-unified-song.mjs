@@ -64,8 +64,10 @@ try{
  await page.waitForFunction(()=>document.querySelector('#feedback')?.textContent.includes('printed to a new PCM clip'),null,{timeout:60000});
  let saved=await project(page);assert.equal(saved.tracks[0].clips.length,1);
  assert.equal(typeof saved.audioSamples[saved.tracks[0].clips[0].sampleId],'string');
+ // about:blank blocks IndexedDB: explicitly approve the application's safe memory-only recovery fallback.
+ page.once('dialog',d=>d.accept());
  await page.locator('#projectFile').setInputFiles({name:'with-tape.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(saved))});
- await page.waitForFunction(()=>document.querySelector('#feedback')?.textContent.includes('Project loaded'),null,{timeout:60000});
+ await page.waitForFunction(()=>{const s=document.querySelector('#feedback')?.textContent||'';return s.includes('Project opened temporarily')||s.includes('Project loaded')},null,{timeout:30000});
  await page.waitForTimeout(150);
  assert.equal((await project(page)).tracks[0].clips.length,1);
  page.once('dialog',d=>d.accept());await page.locator('#workspaceMeter').selectOption('6/8');

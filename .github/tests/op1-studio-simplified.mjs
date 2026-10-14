@@ -12,7 +12,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   const ctx=await browser.newContext({viewport:{width,height:900},acceptDownloads:true}),page=await ctx.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   await page.setContent(rawHtml,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/v2\.4/);
+  assert.match(await page.title(),/v2\.5/);
   assert.equal(await page.locator('#studioMainNavigation [data-studio-group]').count(),4);
   assert.deepEqual(await page.locator('#studioMainNavigation [data-studio-group]').allTextContents().then(xs=>xs.map(s=>expected.find(y=>s.includes(y)))),expected);
   assert.equal(await page.locator('#studioSimpleButton').getAttribute('aria-pressed'),'true');

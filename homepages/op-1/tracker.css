@@ -135,3 +135,39 @@ html[data-op1-theme=dark] .tracker-launch-pad.queued{background:#674f32;border-c
  .tracker-perf-tools>label{flex:1 1 100%}
  .tracker-perf-tools button{flex:1 1 45%}
 }
+
+/* v2.5 focus-first tracker layout and accessible original music browser. */
+.tracker-grid-label{margin:15px 0 7px;color:#32596b;letter-spacing:.07em;font-size:12px;font-weight:850}
+.tracker-disclosure,.tracker-library{border:1px solid #bdd1db;border-radius:9px;background:#edf4f7;margin:11px 0;overflow:hidden}
+.tracker-disclosure>summary,.tracker-library>summary{padding:12px 14px;display:flex;gap:9px;align-items:center;flex-wrap:wrap;font-size:12px;letter-spacing:.04em;font-weight:850;color:#285971;cursor:pointer;min-height:46px}
+.tracker-disclosure>summary small,.tracker-library>summary small{font-size:10px;letter-spacing:0;font-weight:500;color:#5d8090}
+.tracker-disclosure[open]>summary,.tracker-library[open]>summary{border-bottom:1px solid #bdd1db}
+.tracker-disclosure .tracker-performance,.tracker-disclosure .tracker-mixer{margin:10px}
+.tracker-help p,.tracker-feel p{padding:0 13px 12px;margin:8px 0;font-size:11px;line-height:1.6}
+.tracker-groove-controls{padding:12px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.tracker-groove-controls label{font-size:10px;font-weight:800;color:#3a6072;display:flex;flex-direction:column;gap:5px}
+.tracker-groove-controls select{width:100%;min-height:42px;border:1px solid #aac6d0;border-radius:7px;background:#fff;color:#224b61;padding:6px}
+.tracker-demos{background:#e1edf2;border-color:#b8d0da;padding:12px}
+.tracker-demos #trackerBrowse{background:#f7fcfe;color:#285a72;border:1px solid #abc3d0}
+.tracker-library{background:#f5f9fa}
+.tracker-library-filters{display:flex;align-items:end;gap:9px;padding:11px 12px 7px;flex-wrap:wrap}
+.tracker-library-filters label{flex:1 1 150px;display:flex;flex-direction:column;gap:5px;font-size:10px;font-weight:850;color:#426b7e}
+.tracker-library-filters input,.tracker-library-filters select{min-height:42px;width:100%;background:#fff;color:#2b4d60;border:1px solid #b3cbd6;border-radius:7px;padding:8px}
+.tracker-library-filters small{flex:1 1 100%;font-size:10px;font-weight:750;color:#617d8c}
+.tracker-song-grid{max-height:325px;overflow:auto;overscroll-behavior:contain;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:9px 12px;align-content:start}
+.tracker-song-card{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:#fff;border:1px solid #c1d6df;border-radius:9px;padding:11px}
+.tracker-song-info{min-width:125px;flex:1 1 125px;display:flex;flex-direction:column;gap:4px}
+.tracker-song-info strong{font-size:12px;color:#315568}
+.tracker-song-info small{font-size:10px;color:#728995}
+.tracker-song-actions{display:flex;gap:5px;flex:0 1 auto;flex-wrap:wrap}
+.tracker-song-actions button{min-height:40px;padding:7px 10px;font-weight:850;font-size:10px;border-radius:7px;border:1px solid #afc8d4;background:#f4fafc;color:#376078}
+.tracker-song-actions button[aria-pressed=true]{background:#337789;color:#fff;border-color:#337789}
+.tracker-song-actions button:focus-visible,.tracker-library-filters input:focus-visible,.tracker-library-filters select:focus-visible{outline:3px solid #f39948;outline-offset:2px}
+.tracker-library-note{font-size:11px;line-height:1.5;color:#607d8b;padding:2px 13px 12px;margin:4px 0}
+html[data-op1-theme=dark] .tracker-disclosure,html[data-op1-theme=dark] .tracker-library{background:#293d48;border-color:#496879}
+html[data-op1-theme=dark] .tracker-disclosure>summary,html[data-op1-theme=dark] .tracker-library>summary,html[data-op1-theme=dark] .tracker-grid-label,html[data-op1-theme=dark] .tracker-groove-controls label{color:#d5e9f3}
+html[data-op1-theme=dark] .tracker-disclosure>summary small,html[data-op1-theme=dark] .tracker-library>summary small,html[data-op1-theme=dark] .tracker-library-filters small,html[data-op1-theme=dark] .tracker-library-note{color:#c5dce7}
+html[data-op1-theme=dark] .tracker-song-card{background:#304b59;border-color:#567385}
+html[data-op1-theme=dark] .tracker-song-info strong,html[data-op1-theme=dark] .tracker-song-info small{color:#e1f1f7}
+@media(max-width:830px){.tracker-groove-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.tracker-song-grid{grid-template-columns:1fr}}
+@media(max-width:440px){.tracker-groove-controls{grid-template-columns:1fr}.tracker-song-grid{max-height:290px}.tracker-song-card{padding:9px}.tracker-song-actions button{flex:1 1 auto}}

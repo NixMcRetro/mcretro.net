@@ -1,4 +1,4 @@
-// v2.4 independent tracker live arrangement, original demo and recording checks.
+// v2.5 independent tracker live arrangement, original demo and recording checks.
 import {chromium,firefox,webkit} from 'playwright';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -23,11 +23,13 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
     const page=await ctx.newPage(),errors=[];
     page.on('pageerror',e=>errors.push(e.message));
     await page.goto(baseUrl,{waitUntil:'domcontentloaded'});
-    assert.match(await page.title(),/v2\.4/);
+    assert.match(await page.title(),/v2\.5/);
     await page.locator('[data-studio-group="Compose"]').click();
     await page.locator('[data-studio-tool="trackerStudio"]').click();
+    await page.locator('#trackerPerformanceOptions').evaluate(el=>el.open=true);
+    await page.locator('#trackerMixerOptions').evaluate(el=>el.open=true);
     assert(await page.locator('#trackerPerformance').count()===0||await page.locator('.tracker-performance').isVisible());
-    assert.equal(await page.locator('#trackerDemo option').count(),10);
+    assert.equal(await page.locator('#trackerDemo option').count(),18);
     page.on('dialog',dialog=>dialog.accept());
     for(const [key,bpm] of Object.entries(songs)){
      await page.locator('#trackerDemo').selectOption(key);
@@ -77,7 +79,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
     assert.equal(saved.tracker.channels[0].level,.66);
     assert.equal(saved.tracker.patterns.length,4);
     assert.deepEqual(errors,[],'Browser errors: '+errors.join('; '));
-    console.log('PASS v2.4 10 demos, queued launch, automation, project save',name,width);
+    console.log('PASS v2.5 10 demos, queued launch, automation, project save',name,width);
     await page.close();
    }finally{await ctx.close()}
   }
@@ -92,6 +94,7 @@ try{
   await page.goto(baseUrl,{waitUntil:'domcontentloaded'});
   await page.locator('[data-studio-group="Compose"]').click();
   await page.locator('[data-studio-tool="trackerStudio"]').click();
+  await page.locator('#trackerPerformanceOptions').evaluate(el=>el.open=true);
   await page.locator('#trackerDemo').selectOption('harbor');
   await page.locator('#trackerExample').click();
   await page.locator('[data-launch="0"]').click();
@@ -109,7 +112,7 @@ try{
   const clip=saved.tracks[1].clips.at(-1);
   assert(saved.audioSamples[clip.sampleId], 'Tape audio was not included in portable backup');
   assert.deepEqual(errors,[]);
-  console.log('PASS v2.4 live performance recorded to tape and saved in portable backup');
+  console.log('PASS v2.5 live performance recorded to tape and saved in portable backup');
   await page.close();
  }finally{await ctx.close()}
 }finally{await browser.close()}

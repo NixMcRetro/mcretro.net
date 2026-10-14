@@ -60,7 +60,7 @@ let live=null,capture=null,captureEncoding=false,automationArmed=false,autoCurso
 const MAX_AUTO=256,MAX_LIVE_ROWS=4096;
 const data=()=>api.getState().tracker;
 const pattern=()=>data().patterns[data().active];
-function status(s){$('trackerStatus').textContent=s||data().patterns.length+' PATTERNS · '+data().chain.length+' CHAIN STEPS · '+data().bpm+' BPM'}
+function status(s){$('trackerStatus').textContent=s||(demoPreview?'Previewing '+demoPreview.name+' · no project notes were changed':data().patterns.length+' PATTERNS · '+data().chain.length+' CHAIN STEPS · '+data().bpm+' BPM')}
 function commit(fn){
  if(rendering){status('Finish audio export before editing');return}
  const old=clone(data()),draft=clone(old);
@@ -371,7 +371,7 @@ function previewDemo(key){
    if(n.when>=seconds)break;
    emit(graph,n,when+n.when);
   }
-  demoPreview={graph,timer:setTimeout(()=>{stopDemoPreview();status('Preview complete. Select USE IN TRACKER to edit the song.');},(seconds+.3)*1000)};
+  demoPreview={name:DEMOS[key]?.name||key,graph,timer:setTimeout(()=>{stopDemoPreview();status('Preview complete. Select USE IN TRACKER to edit the song.');},(seconds+.3)*1000)};
   status('Previewing '+(DEMOS[key]?.name||key)+' · no project notes were changed');
  }catch(e){for(const gate of graph.trackerGates)gate.gain.value=0;status('Preview unavailable: '+e.message)}
 }
@@ -869,5 +869,5 @@ function init(deps){
 }
 window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
  get playing(){return playing},get live(){return !!live},get transport(){return {playing,mode:live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
- launch,play,finishTapeTake,openLibrary,buildDemo,stopDemoPreview};
+ launch,play,finishTapeTake,openLibrary,buildDemo,stopDemoPreview,get previewing(){return !!demoPreview}};
 })();

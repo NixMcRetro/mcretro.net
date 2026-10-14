@@ -90,6 +90,9 @@ function onLegacyTab(tab){
  if(busy)return;
  const group=groups.find(g=>g.name===GROUP_BY_TAB[tab]);
  if(!group)return;
+ // Preserve a focused editor when the user reopens its existing Advanced tab.
+ // Otherwise choose that tab's familiar default editor.
+ if(activeTool().tab===tab){sync();return}
  selected=group.tools.find(t=>t.tab===tab)?.id||group.tools[0].id;
  store(KEY_TOOL,selected);sync();
 }

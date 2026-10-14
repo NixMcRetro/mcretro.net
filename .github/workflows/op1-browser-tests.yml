@@ -2,7 +2,7 @@ name: OP-1 Browser Regression
 
 on:
   push:
-    branches: [main, op1-v1.1-polish, op1-v1.2-sound-design, op1-v1.3-tape-studio, op1-v1.4-offline, op1-v1.5-performance-studio, op1-v1.5.1-key-labels, op1-v1.6-display-foundation, op1-v1.6-sampling-workshop, op1-v1.7-cat-song-arrangement]
+    branches: [main, op1-v1.1-polish, op1-v1.2-sound-design, op1-v1.3-tape-studio, op1-v1.4-offline, op1-v1.5-performance-studio, op1-v1.5.1-key-labels, op1-v1.6-display-foundation, op1-v1.6-sampling-workshop, op1-v1.7-cat-song-arrangement, op1-v1.8-pianola-composer]
     paths:
       - 'homepages/op-1/index.html'
       - '.github/tests/op1-browser-smoke.mjs'
@@ -51,14 +51,14 @@ jobs:
         run: node .github/tests/op1-performance-studio.mjs
       - name: Sampling Workshop and legacy project audio regression
         run: node .github/tests/op1-sampling-workshop.mjs
-      - name: Cat modes and Song Arrangement regression
-        run: node .github/tests/op1-cat-song-arrangement.mjs
+      - name: Pianola Composer, original sound slots and song compatibility regression
+        run: node .github/tests/op1-pianola-composer.mjs
       - name: Offline installation and reload regression (Chromium)
         run: node .github/tests/op1-pwa-offline.mjs
-      - name: Archive v1.7 source, assets and regression tests
+      - name: Archive v1.8 source, assets and regression tests
         uses: actions/upload-artifact@v4
         with:
-          name: supernicks-op1-v1.7-source-${{ github.sha }}
+          name: supernicks-op1-v1.8-source-${{ github.sha }}
           retention-days: 90
           if-no-files-found: error
           path: |
@@ -68,7 +68,7 @@ jobs:
             .github/tests/op1-pwa-offline.mjs
             .github/tests/op1-performance-studio.mjs
             .github/tests/op1-sampling-workshop.mjs
-            .github/tests/op1-cat-song-arrangement.mjs
+            .github/tests/op1-pianola-composer.mjs
             .github/workflows/op1-browser-tests.yml
             .github/OP1-V1.5-HANDOVER.md
             .github/OP1-V1.5.1-HANDOVER.md

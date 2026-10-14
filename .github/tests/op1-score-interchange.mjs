@@ -1,4 +1,4 @@
-// v1.8.1 Pianola notes JSON + Standard MIDI export, full-score synth playback/import.
+// v1.9 Pianola notes JSON + Standard MIDI export, full-score synth playback/import.
 import {chromium,firefox,webkit} from 'playwright';
 import {readFileSync} from 'node:fs';
 import assert from 'node:assert/strict';

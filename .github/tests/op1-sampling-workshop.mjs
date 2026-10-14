@@ -16,7 +16,7 @@ const wav=fixtureWav();
 // Serve localhost so IndexedDB can persist the source WAV; about:blank blocks storage.
 const server=createServer((request,response)=>{
  const path=new URL(request.url,'http://localhost').pathname;
- const resources={'/':'homepages/op-1/index.html','/index.html':'homepages/op-1/index.html','/workspace.js':'homepages/op-1/workspace.js','/workspace.css':'homepages/op-1/workspace.css','/comfort.js':'homepages/op-1/comfort.js','/comfort.css':'homepages/op-1/comfort.css','/simplified.js':'homepages/op-1/simplified.js','/simplified.css':'homepages/op-1/simplified.css','/sw.js':'homepages/op-1/sw.js','/manifest.webmanifest':'homepages/op-1/manifest.webmanifest'};
+ const resources={'/':'homepages/op-1/index.html','/index.html':'homepages/op-1/index.html','/workspace.js':'homepages/op-1/workspace.js','/workspace.css':'homepages/op-1/workspace.css','/comfort.js':'homepages/op-1/comfort.js','/comfort.css':'homepages/op-1/comfort.css','/simplified.js':'homepages/op-1/simplified.js','/simplified.css':'homepages/op-1/simplified.css','/simplified.js':'homepages/op-1/simplified.js','/simplified.css':'homepages/op-1/simplified.css','/sw.js':'homepages/op-1/sw.js','/manifest.webmanifest':'homepages/op-1/manifest.webmanifest'};
  const file=resources[path]||(path.startsWith('/icons/')?'homepages/op-1'+path:null);if(!file){response.writeHead(404);response.end('not found');return}
  const mime=path.endsWith('.png')?'image/png':path.endsWith('.js')?'text/javascript':path.endsWith('.css')?'text/css':path.endsWith('.webmanifest')?'application/manifest+json':'text/html';
  response.writeHead(200,{'Content-Type':mime});response.end(readFileSync(file));
@@ -30,7 +30,7 @@ for(const [engineName,engine] of Object.entries({chromium,firefox,webkit})){
    const ctx=await browser.newContext({viewport:{width,height:850},acceptDownloads:true});
    const page=await ctx.newPage(),errors=[];
    page.on('pageerror',e=>errors.push(e.message));
-   await page.goto(baseUrl,{waitUntil:'domcontentloaded'});await page.addStyleTag({content:"html.comfort-tabs-enabled .below .panel[data-comfort-tab],html.comfort-tabs-enabled .below .song-studio[data-comfort-tab]{display:block!important}html.comfort-tabs-enabled .below #sequencePanel{display:block!important}"});
+   await page.goto(baseUrl,{waitUntil:'domcontentloaded'});await page.addStyleTag({content:"html.comfort-tabs-enabled .below .panel[data-comfort-tab],html.comfort-tabs-enabled .below .song-studio[data-comfort-tab]{display:block!important}html.comfort-tabs-enabled .below #sequencePanel{display:block!important}html.studio-simple .below [data-comfort-tab]{display:block!important}"});
    assert.match(await page.title(),/v2\.0/);
    assert.equal(await page.locator('#sampleWaveform').count(),1);
    assert.equal(await page.locator('#samplePreview').isDisabled(),true,'Audition should require a sample');

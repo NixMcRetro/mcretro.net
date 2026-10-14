@@ -17,8 +17,8 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
  assert.equal(await page.locator('#soundKeys > :last-child').getAttribute('class'),'cat-split','Cat control must follow Slot 8');
  assert.equal(await page.locator('[data-cat="drum"]').getAttribute('title'),'Meow Drum');
  assert.equal(await page.locator('[data-cat="keyboard"]').getAttribute('title'),'Meow Keyboard');
- const sizes=await page.locator('#soundKeys .cat-split button').evaluateAll(buttons=>buttons.map(b=>b.getBoundingClientRect().height));
- assert(sizes.every(h=>h>10&&h<22),'Each split button must occupy half the slot');
+ const sizes=await page.locator('#soundKeys .cat-split button').evaluateAll(buttons=>buttons.map(b=>({part:b.getBoundingClientRect().height,whole:b.parentElement.getBoundingClientRect().height})));
+ assert(sizes.every(({part,whole})=>part>0&&Math.abs(part/whole-.5)<.07),'Each split button must occupy half the slot even when board scales on mobile');
  await page.locator('[data-cat="keyboard"]').click();
  assert.equal(await page.locator('[data-cat="keyboard"]').getAttribute('aria-pressed'),'true');
  assert.match(await page.locator('#deviceHint').innerText(),/MEOW KEYBOARD/);

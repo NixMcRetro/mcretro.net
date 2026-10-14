@@ -1,8 +1,17 @@
-// Inline the v2.0 static workspace assets for page.setContent() regressions.
-// PWA/network tests still serve the original linked files from localhost.
+// Inline the static OP-1 assets for Playwright page.setContent() regressions.
+// rawHtml preserves production tabs; html exposes legacy panels for older test suites.
 import {readFileSync} from 'node:fs';
 const base=readFileSync('homepages/op-1/index.html','utf8');
-const js=readFileSync('homepages/op-1/workspace.js','utf8');
-const css=readFileSync('homepages/op-1/workspace.css','utf8');
-export const html=base.replace('<script src="./workspace.js"></script>','<script>'+js+'</script>').replace('<link rel="stylesheet" href="./workspace.css">','<style>'+css+'</style>');
-if(!html.includes('window.OP1Workspace')||!html.includes('id="workspacePanel"'))throw Error('Missing unified song test fixture');
+let rendered=base;
+for(const name of ['workspace.js','comfort.js']){
+ const js=readFileSync('homepages/op-1/'+name,'utf8');
+ rendered=rendered.replace('<script src="./'+name+'"></script>','<script>'+js+'</script>');
+}
+for(const name of ['workspace.css','comfort.css']){
+ const css=readFileSync('homepages/op-1/'+name,'utf8');
+ rendered=rendered.replace('<link rel="stylesheet" href="./'+name+'">','<style>'+css+'</style>');
+}
+export const rawHtml=rendered;
+const allowLegacyPanels='<style id="legacy-test-panels">html.comfort-tabs-enabled .below .panel[data-comfort-tab],html.comfort-tabs-enabled .below .song-studio[data-comfort-tab]{display:block!important}html.comfort-tabs-enabled .below #sequencePanel{display:block!important}</style>';
+export const html=rendered.replace('</head>',allowLegacyPanels+'</head>');
+if(!rawHtml.includes('window.OP1Workspace')||!rawHtml.includes('window.OP1Comfort')||!rawHtml.includes('id="workspacePanel"'))throw Error('Missing v2.0.1 static test fixture');

@@ -18,7 +18,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
  try{for(const width of(name==='chromium'?[1440,390]:[1100])){
   const ctx=await browser.newContext({viewport:{width,height:900},acceptDownloads:true}),page=await ctx.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));await page.setContent(rawHtml,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/v2\.0\.1/);
+  assert.match(await page.title(),/v2\.0\.2/);
   assert.equal(await page.locator('#comfortTabs [role=tab]').count(),6);
   assert(await page.locator('#piano').isVisible(),'Physical keyboard is not visible');
   assert(await page.locator('#soundPanel').isVisible(),'Play tab did not open');
@@ -80,9 +80,9 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert.equal(await page.locator('.comfort-demo-card').count(),3);
   page.once('dialog',d=>d.accept());
   await page.locator('.comfort-demo-card').first().getByText('＋ LOAD SONG CLIPS').click();
-  // The initial song import is 120 BPM and the first tape demo has its own BPM.
+  // Original MIDI clip retained. Eight drum bars preserve simultaneous rhythm and hat hits.
   const clips=await page.locator('.workspace-clip-item').count();
-  assert.equal(clips,5,'Demo loading did not preserve the MIDI song clip plus add four parts');
+  assert.equal(clips,20,'Demo loading must retain the imported MIDI clip plus all melodic and separate per-bar drum patterns');
   await page.locator('#comfortDemoClose').click();
   assert(!(await page.locator('#comfortDemoDialog').isVisible()));
   const postDemoDownload=page.waitForEvent('download');await page.locator('#saveProject').click();

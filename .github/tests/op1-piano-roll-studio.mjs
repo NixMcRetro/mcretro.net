@@ -2,7 +2,7 @@
 import {chromium,firefox,webkit} from 'playwright';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-const html=readFileSync('homepages/op-1/index.html','utf8');
+import {html} from './op1-test-html.mjs';
 async function getFile(page,id){const promise=page.waitForEvent('download',{timeout:45000});await page.locator(id).click();return readFileSync(await (await promise).path());}
 async function getProject(page){return JSON.parse((await getFile(page,'#saveProject')).toString())}
 for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
@@ -10,7 +10,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
  try{for(const width of (name==='chromium'?[1440,390]:[1100])){
   const context=await browser.newContext({viewport:{width,height:880},acceptDownloads:true}),page=await context.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));await page.setContent(html,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/v1\.9/);assert.equal(await page.locator('#rollPanel').count(),1);
+  assert.match(await page.title(),/v2\.0/);assert.equal(await page.locator('#rollPanel').count(),1);
   assert.equal(await page.evaluate('document.documentElement.scrollWidth'),width,'No horizontal page overflow allowed');
   // Draw C5/E5 at the same beat. Chord playback requires concurrent notes.
   for(const row of [11,7])await page.locator('#rollSurface').evaluate((el,row)=>{const box=el.getBoundingClientRect();el.dispatchEvent(new MouseEvent('click',{bubbles:true,clientX:box.left+64,clientY:box.top+32+row*24+9}))},row);

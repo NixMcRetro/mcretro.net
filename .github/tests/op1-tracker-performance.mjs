@@ -2,7 +2,17 @@
 import {chromium,firefox,webkit} from 'playwright';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {createServer} from 'node:http';
 import {rawHtml} from './op1-test-html.mjs';
+const server=createServer((request,response)=>{
+ const path=new URL(request.url,'http://localhost').pathname;
+ if(path==='/'){response.writeHead(200,{'Content-Type':'text/html'});response.end(rawHtml);return}
+ const file=path==='/sw.js'?'homepages/op-1/sw.js':path==='/manifest.webmanifest'?'homepages/op-1/manifest.webmanifest':path.startsWith('/icons/')?'homepages/op-1'+path:null;
+ try{if(file){response.writeHead(200,{'Content-Type':path.endsWith('.png')?'image/png':path.endsWith('.webmanifest')?'application/manifest+json':'text/javascript'});response.end(readFileSync(file));return}}catch(_){}
+ response.writeHead(404);response.end('Not found');
+});
+await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+const baseUrl='http://127.0.0.1:'+server.address().port+'/';
 const songs={midnight:104,subway:92,arcade:126,harbor:84,comet:140,bloom:112,tide:72,drift:132,horizon:96,velvet:110};
 for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
  const browser=await engine.launch({headless:true});
@@ -12,7 +22,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    try{
     const page=await ctx.newPage(),errors=[];
     page.on('pageerror',e=>errors.push(e.message));
-    await page.setContent(rawHtml,{waitUntil:'domcontentloaded'});
+    await page.goto(baseUrl,{waitUntil:'domcontentloaded'});
     assert.match(await page.title(),/v2\.4/);
     await page.locator('[data-studio-group="Compose"]').click();
     await page.locator('[data-studio-tool="trackerStudio"]').click();
@@ -65,7 +75,7 @@ try{
  try{
   const page=await ctx.newPage();
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.setContent(rawHtml,{waitUntil:'domcontentloaded'});
+  await page.goto(baseUrl,{waitUntil:'domcontentloaded'});
   await page.locator('[data-studio-group="Compose"]').click();
   await page.locator('[data-studio-tool="trackerStudio"]').click();
   await page.locator('#trackerDemo').selectOption('harbor');
@@ -89,3 +99,5 @@ try{
   await page.close();
  }finally{await ctx.close()}
 }finally{await browser.close()}
+
+server.close();

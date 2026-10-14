@@ -10,7 +10,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
  try{for(const width of(name==='chromium'?[1440,390]:[1100])){
   const context=await browser.newContext({viewport:{width,height:880},acceptDownloads:true});
   const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.setContent(html,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/v2\.0/);assert.equal(await page.locator('#pianolaExportMidi').count(),1);
+  assert.match(await page.title(),/v2\.1/);assert.equal(await page.locator('#pianolaExportMidi').count(),1);
   await page.locator('#pianolaMeter').selectOption('6/8');await page.locator('#pianolaPitch').selectOption('60');await page.locator('#pianolaAdd').click();
   await page.locator('#pianolaLength').selectOption('0.5');await page.locator('#pianolaRest').click();
   await page.locator('#pianolaPitch').selectOption('64');await page.locator('#pianolaLength').selectOption('0.25');await page.locator('#pianolaAdd').click();

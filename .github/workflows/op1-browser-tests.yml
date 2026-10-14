@@ -2,7 +2,7 @@ name: OP-1 Browser Regression
 
 on:
   push:
-    branches: [main, op1-v1.1-polish, op1-v1.2-sound-design, op1-v1.3-tape-studio, op1-v1.4-offline, op1-v1.5-performance-studio, op1-v1.5.1-key-labels, op1-v1.6-display-foundation, op1-v1.6-sampling-workshop, op1-v1.7-cat-song-arrangement, op1-v1.8-pianola-composer, op1-v1.8.1-note-interchange, op1-v1.9-piano-roll-studio, op1-v2.0-unified-song-workspace, op1-v2.0.1-studio-comfort, op1-v2.0.2-musical-demos, op1-v2.1-studio-simplified, op1-v2.2-tracker-studio, op1-v2.2-tracker-release-candidate]
+    branches: [main, op1-v1.1-polish, op1-v1.2-sound-design, op1-v1.3-tape-studio, op1-v1.4-offline, op1-v1.5-performance-studio, op1-v1.5.1-key-labels, op1-v1.6-display-foundation, op1-v1.6-sampling-workshop, op1-v1.7-cat-song-arrangement, op1-v1.8-pianola-composer, op1-v1.8.1-note-interchange, op1-v1.9-piano-roll-studio, op1-v2.0-unified-song-workspace, op1-v2.0.1-studio-comfort, op1-v2.0.2-musical-demos, op1-v2.1-studio-simplified, op1-v2.2-tracker-studio, op1-v2.2-tracker-release-candidate, op1-v2.3-music-making]
     paths:
       - 'homepages/op-1/index.html'
       - '.github/tests/op1-piano-roll-studio.mjs'
@@ -19,6 +19,7 @@ on:
       - 'homepages/op-1/tracker.js'
       - 'homepages/op-1/tracker.css'
       - '.github/tests/op1-tracker-studio.mjs'
+      - '.github/tests/op1-tracker-music-making.mjs'
       - '.github/tests/op1-studio-simplified.mjs'
       - '.github/tests/op1-studio-comfort.mjs'
       - '.github/tests/op1-demo-arrangements.mjs'
@@ -48,6 +49,7 @@ on:
       - 'homepages/op-1/tracker.js'
       - 'homepages/op-1/tracker.css'
       - '.github/tests/op1-tracker-studio.mjs'
+      - '.github/tests/op1-tracker-music-making.mjs'
       - '.github/tests/op1-studio-simplified.mjs'
       - '.github/tests/op1-studio-comfort.mjs'
       - '.github/tests/op1-demo-arrangements.mjs'
@@ -77,6 +79,8 @@ jobs:
         run: |
           npm install --no-save playwright@1.57.0
           npx playwright install --with-deps chromium firefox webkit
+      - name: v2.3 Tracker Music-Making Update regression
+        run: node .github/tests/op1-tracker-music-making.mjs
       - name: v2.2 Tracker Studio browser and project regression
         run: node .github/tests/op1-tracker-studio.mjs
       - name: v2.1 Simple and Advanced workspace, mobile and project regression
@@ -103,10 +107,10 @@ jobs:
         run: node .github/tests/op1-score-interchange.mjs
       - name: Offline installation and reload regression (Chromium)
         run: node .github/tests/op1-pwa-offline.mjs
-      - name: Archive v2.2 source, assets and regression tests
+      - name: Archive v2.3 source, assets and regression tests
         uses: actions/upload-artifact@v4
         with:
-          name: supernicks-op1-v2.2-source-${{ github.sha }}
+          name: supernicks-op1-v2.3-source-${{ github.sha }}
           retention-days: 90
           if-no-files-found: error
           path: |
@@ -125,6 +129,8 @@ jobs:
             .github/tests/op1-demo-arrangements.mjs
             .github/tests/op1-studio-simplified.mjs
             .github/tests/op1-tracker-studio.mjs
+            .github/tests/op1-tracker-music-making.mjs
+            .github/OP1-V2.3-HANDOVER.md
             .github/OP1-V2.2-HANDOVER.md
             .github/OP1-V2.1-HANDOVER.md
             .github/OP1-V2.0.1-HANDOVER.md

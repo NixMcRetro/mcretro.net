@@ -70,8 +70,8 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert.equal(await page.locator('.comfort-demo-card').count(),10);
   const filter=page.locator('#comfortDemoCategories').getByText('Tape',{exact:true});await filter.click();
   assert.equal(await page.locator('.comfort-demo-card').count(),3);
-  await page.locator('.comfort-demo-card').first().getByText('＋ LOAD SONG CLIPS').click();
   page.once('dialog',d=>d.accept());
+  await page.locator('.comfort-demo-card').first().getByText('＋ LOAD SONG CLIPS').click();
   // The initial song import is 120 BPM and the first tape demo has its own BPM.
   const clips=await page.locator('.workspace-clip-item').count();
   assert.equal(clips,5,'Demo loading did not preserve the MIDI song clip plus add four parts');

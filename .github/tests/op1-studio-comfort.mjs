@@ -32,8 +32,10 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert.match(await page.locator('#comfortOctRange').innerText(),/C4 to B5/);
   await page.locator('#comfortOctDown').click();
   assert.equal(await page.locator('#comfortOctValue').innerText(),'OCT +0');
+  const lightBackground=await page.locator('body').evaluate(el=>getComputedStyle(el).backgroundColor);
   await page.locator('#comfortTheme').click();
   assert.equal(await page.locator('html').getAttribute('data-op1-theme'),'dark');
+  assert.notEqual(await page.locator('body').evaluate(el=>getComputedStyle(el).backgroundColor),lightBackground,'Theme switch only changed its label');
   await page.locator('#comfortTheme').click();
   assert.equal(await page.locator('html').getAttribute('data-op1-theme'),'light');
   await page.locator('#pianolaPitch').selectOption('60');
@@ -58,6 +60,8 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   await page.getByRole('tab',{name:'Tape'}).click();
   page.once('dialog',d=>d.accept());
   await importVia(page,'#goTape + button',midi);
+  await page.locator('#comfortMidiDestination').selectOption('roll');
+  await importVia(page,'#comfortMidiChoose',midi);
   const savedPromise=page.waitForEvent('download');
   await page.locator('#saveProject').click();
   const project=JSON.parse(readFileSync(await(await savedPromise).path(),'utf8'));
@@ -66,6 +70,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert.equal(project.tracks[0].events.length,2);
   assert.equal(project.pianola.notes.length,2);
   assert.equal(project.synthScore.notes.length,2);
+  assert.equal(project.pianoRoll.notes.length,2,'Global destination MIDI import did not reach Piano Roll');
   const notesInPattern=project.seqPattern.filter(n=>n!==null).length;
   assert.equal(notesInPattern,2,'Drum MIDI not loaded: '+JSON.stringify({patternSlot:project.patternSlot,sequence:project.seqPattern,feedback:await page.locator('#feedback').innerText(),patternSlots:project.patternSlots}));
   await page.locator('#comfortDemoOpen').click();
@@ -78,8 +83,13 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   // The initial song import is 120 BPM and the first tape demo has its own BPM.
   const clips=await page.locator('.workspace-clip-item').count();
   assert.equal(clips,5,'Demo loading did not preserve the MIDI song clip plus add four parts');
+  const postDemoDownload=page.waitForEvent('download');await page.locator('#saveProject').click();
+  const postDemo=JSON.parse(readFileSync(await(await postDemoDownload).path(),'utf8'));
+  assert.deepEqual(postDemo.songWorkspace.clips[0],project.songWorkspace.clips[0],'Demo loading changed the original MIDI clip');
+  assert.deepEqual(postDemo.tracks[0].events,project.tracks[0].events,'Demo loading changed tape notes');
   await page.locator('#comfortDemoClose').click();
   assert(!(await page.locator('#comfortDemoDialog').isVisible()));
+  if(width>800){await page.evaluate(()=>window.scrollTo(0,document.documentElement.scrollHeight));await page.waitForFunction(()=>document.querySelector('#comfortKeyboardDock')?.hidden===false,null,{timeout:5000});assert(await page.locator('#comfortKeyboardDock').isVisible(),'Keyboard dock did not appear when the instrument was scrolled away')}
   if(width===390){const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);assert(overflow<=1,'Mobile page horizontally overflows by '+overflow+'px');assert(await page.locator('#mobileKeys').isVisible())}
   assert.deepEqual(errors,[],'Unexpected browser exceptions: '+errors.join('; '));
   console.log(name,width,'tabs, theme, octave, Pianola/Synth/Song/Drum/Tape MIDI, demo safety passed');

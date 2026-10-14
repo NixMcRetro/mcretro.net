@@ -109,8 +109,10 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
     assert.equal(backup.tracker.patterns[0].cells[0].length,4);
     assert.equal(backup.tracker.patterns[0].cells[0].chance,100);
     await page.locator('#studioAdvancedButton').click();
+    assert.equal(await page.locator('#trackerMixerOptions').getAttribute('open'),'');
     assert(await page.locator('#comfortTabs').isVisible());
     await page.locator('#studioSimpleButton').click();
+    assert.equal(await page.locator('#trackerMixerOptions').getAttribute('open'),null);
     assert(await page.locator('#trackerStudio').isVisible());
     if(width===390){
      const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);

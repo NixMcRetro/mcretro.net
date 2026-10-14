@@ -84,6 +84,7 @@ function selectGroup(name,{scroll=false}={}){
 }
 function setMode(next){
  mode=next==='advanced'?'advanced':'simple';store(KEY_MODE,mode);
+ window.OP1Tracker?.setLayoutMode?.(mode);
  if($('studioShortcuts'))$('studioShortcuts').open=mode==='advanced';
  if(mode==='simple')selectTool(selected);else{sync();const t=activeTool();window.OP1Comfort.chooseTab(t.tab)}
  sync();

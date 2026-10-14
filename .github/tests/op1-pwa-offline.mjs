@@ -29,7 +29,7 @@ try{
  assert.match(await page.title(),/v2\.0/);
  await page.waitForFunction(async()=>{
   if(!navigator.serviceWorker?.controller)return false;
-  const c=await caches.open('op1-browser-lab-shell-v2.0.1');
+  const c=await caches.open('op1-browser-lab-shell-v2.0.2');
   return !!(await c.match(new URL('index.html',location.href).href));
  },null,{timeout:30000});
  await page.waitForFunction(()=>document.querySelector('#offlineBadge')?.textContent==='CACHED',null,{timeout:15000});
@@ -37,7 +37,7 @@ try{
  const registration=await page.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration();return {scope:r?.scope,controller:!!navigator.serviceWorker.controller}});
  assert(registration.scope.endsWith('/homepages/op-1/'),'Service worker scope escaped instrument path');
  assert(registration.controller,'Page has no controlling service worker');
- const cached=await page.evaluate(async()=>{const c=await caches.open('op1-browser-lab-shell-v2.0.1');return (await c.keys()).map(req=>new URL(req.url).pathname)});
+ const cached=await page.evaluate(async()=>{const c=await caches.open('op1-browser-lab-shell-v2.0.2');return (await c.keys()).map(req=>new URL(req.url).pathname)});
  assert(cached.some(x=>x.endsWith('/index.html')),'Application HTML not cached');
  assert(cached.some(x=>x.endsWith('/workspace.js')),'Song workspace logic not cached');
  assert(cached.some(x=>x.endsWith('/workspace.css')),'Song workspace styles not cached');

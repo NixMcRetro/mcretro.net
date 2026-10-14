@@ -39,13 +39,29 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
      assert(count>=60,key+' is not a complete composition: '+count);
     }
     // Unlock Web Audio through an explicit gesture, especially important in Firefox/WebKit headless.
+    await page.evaluate(()=>{
+     const Native=window.AudioContext;
+     if(Native)window.AudioContext=class InstrumentedAudioContext extends Native{
+      constructor(...args){super(...args);window.__testCtx=this}
+     };
+    });
     await page.locator('#startAudio').click();
     await page.locator('#trackerQuantize').selectOption('beat');
     await page.locator('[data-launch="0"]').click();
     await page.waitForFunction(()=>window.OP1Tracker.transport.mode==='live');
     await page.locator('[data-launch="1"]').click();
     assert.equal(await page.locator('.tracker-launch-pad.queued').count(),1);
-    await page.waitForFunction(()=>window.OP1Tracker.transport.pattern===1,null,{timeout:5500});
+    try{await page.waitForFunction(()=>window.OP1Tracker.transport.pattern===1,null,{timeout:5500})}
+    catch(e){
+     const diagnosis=await page.evaluate(()=>({
+      state:window.__testCtx?.state,time:window.__testCtx?.currentTime,
+      transport:window.OP1Tracker.transport,
+      status:document.querySelector('#trackerStatus')?.textContent,
+      live:document.querySelector('#trackerLiveStatus')?.textContent
+     }));
+     console.error('LIVE LAUNCH CLOCK DIAGNOSTIC',name,width,diagnosis);
+     throw e;
+    }
     assert.equal(await page.locator('.tracker-launch-pad[aria-pressed="true"]').count(),1);
     await page.locator('#trackerAutomation').click();
     await page.locator('#trackerLevel0').evaluate(el=>{el.value='66';el.dispatchEvent(new Event('change',{bubbles:true}))});

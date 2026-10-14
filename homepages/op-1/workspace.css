@@ -1,5 +1,5 @@
 /* SuperNick's OP-1 Browser Lab v2.0: unified non-destructive clip workspace. */
-.song-studio{min-width:0}
+.song-studio{align-self:stretch;width:100%;max-width:100%;min-width:0;box-sizing:border-box}
 .workspace-panel{box-sizing:border-box;max-width:100%;min-width:0;overflow:hidden;margin-top:18px;padding:16px;border:1px solid #a6c4d0;border-radius:12px;background:#eaf2f5}
 .workspace-panel h3{font-size:17px;margin:0 0 4px;color:#24485c}
 .workspace-panel p{line-height:1.5;font-size:12px;color:#495f69}

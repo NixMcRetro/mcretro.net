@@ -1,0 +1,60 @@
+/* OP-1 Browser Lab v2.0.1 Studio Comfort. The physical instrument stays light. */
+.comfort-octave{position:absolute;left:584px;top:213px;z-index:7;width:250px;height:35px;display:flex;align-items:center;justify-content:center;gap:7px;background:#dbe5e9;border:1px solid #aabdc7;border-radius:8px;padding:3px 7px;box-shadow:0 2px 5px #7e91974d}
+.comfort-octave button{width:32px;height:27px;font-size:20px;line-height:1;border:1px solid #8da5af;background:#f9fcfe;border-radius:5px;color:#314b5b;font-weight:800}
+.comfort-octave output{font-weight:800;color:#285c77;font-size:13px;white-space:nowrap;text-align:center;min-width:140px;line-height:1.1}
+.comfort-octave small{display:block;font-size:9px;color:#476272}
+.op1 .board-status{top:251px;left:588px;font-size:9px}
+.comfort-tabs{max-width:1180px;position:relative;z-index:9;margin:18px auto 0;display:flex;gap:5px;flex-wrap:wrap;padding:8px;border:1px solid #bdcbd2;background:#e7eef1;border-radius:10px}
+.comfort-tabs button{min-height:43px;flex:1 1 120px;border:1px solid #bdcfd9;border-radius:7px;background:#f8fcfd;color:#3f5868;font-size:12px;font-weight:800;padding:8px}
+.comfort-tabs button[aria-selected=true]{color:white;background:#2e667d;border-color:#21566b}
+.comfort-tabs-status{max-width:1180px;margin:7px auto;font-size:12px;color:#607681;line-height:1.5}
+.comfort-tabs-enabled .below{display:flex!important;flex-direction:column!important;gap:12px!important;max-width:1180px;align-items:stretch}
+.comfort-tabs-enabled .below-main,.comfort-tabs-enabled .below-side{display:contents!important}
+.comfort-tabs-enabled .below .panel[data-comfort-tab],.comfort-tabs-enabled .below .song-studio[data-comfort-tab]{display:none!important}
+.comfort-tabs-enabled .below .panel[data-comfort-tab].comfort-visible,.comfort-tabs-enabled .below .song-studio[data-comfort-tab].comfort-visible{display:block!important;width:100%;max-width:100%;box-sizing:border-box}
+.comfort-tabs-enabled .below .song-studio .workspace-panel{max-width:100%}
+.comfort-tabs-enabled #sequencePanel.comfort-visible{display:block!important}
+.comfort-tabs-enabled .panel.comfort-visible{order:unset!important}
+.comfort-theme-toggle{min-width:86px}
+html[data-op1-theme=dark]{color-scheme:dark;--page:#171e23;--ui:#222c33}
+html[data-op1-theme=dark] body{color:#e8f0f4;background:#171e23}
+html[data-op1-theme=dark] .brand h1,html[data-op1-theme=dark] .brand p{color:#e3ecf1}
+html[data-op1-theme=dark] .panel,html[data-op1-theme=dark] .display-zoom-card,html[data-op1-theme=dark] .modal{background:#26313a;border-color:#465760;box-shadow:none;color:#e8f0f4}
+html[data-op1-theme=dark] .panel h2,html[data-op1-theme=dark] .panel h3,html[data-op1-theme=dark] .panel strong,html[data-op1-theme=dark] .modal h2{color:#eff5f8}
+html[data-op1-theme=dark] .panel p,html[data-op1-theme=dark] .panel label,html[data-op1-theme=dark] .panel output,html[data-op1-theme=dark] .panel .v04-note,html[data-op1-theme=dark] .modal p,html[data-op1-theme=dark] .modal li,html[data-op1-theme=dark] .keyboard-legend,html[data-op1-theme=dark] .tip{color:#c1d1db!important}
+html[data-op1-theme=dark] .action,html[data-op1-theme=dark] .mini-btn,html[data-op1-theme=dark] .comfort-tabs button,html[data-op1-theme=dark] .quick-strip button,html[data-op1-theme=dark] .v12-preset-grid button{background:#34454f;border-color:#566f7c;color:#eff6fa}
+html[data-op1-theme=dark] .action.primary,html[data-op1-theme=dark] .comfort-tabs button[aria-selected=true]{background:#3a7e96;color:#fff;border-color:#6eacba}
+html[data-op1-theme=dark] .quick-strip,html[data-op1-theme=dark] .comfort-tabs,html[data-op1-theme=dark] .game-actions,html[data-op1-theme=dark] .sample-workshop,html[data-op1-theme=dark] .workspace-panel,html[data-op1-theme=dark] .pianola-interchange{background:#24343e;border-color:#425e6e;color:#d7e6ed}
+html[data-op1-theme=dark] .quick-strip span,html[data-op1-theme=dark] .comfort-tabs-status,html[data-op1-theme=dark] .statusline,html[data-op1-theme=dark] .feedback{color:#c1d4df!important}
+html[data-op1-theme=dark] .edit-status,html[data-op1-theme=dark] .recovery-indicator,html[data-op1-theme=dark] .workspace-clip-item,html[data-op1-theme=dark] .pianola-roll,html[data-op1-theme=dark] .roll-inspector,html[data-op1-theme=dark] .v12-effects{background:#314450;color:#e6f1f6;border-color:#4b6878}
+html[data-op1-theme=dark] .workspace-clip-item strong,html[data-op1-theme=dark] .workspace-clip-item label{color:#eef6fa}
+html[data-op1-theme=dark] input:not([type=range]):not([type=file]),html[data-op1-theme=dark] select,html[data-op1-theme=dark] textarea{background:#1c2931;color:#f3f9fc;border:1px solid #637985}
+html[data-op1-theme=dark] .pianola-cell{background:#375365;border-color:#557083;color:#eef5f8}
+html[data-op1-theme=dark] .pianola-cell[data-rest=true]{background:#3a424b}
+html[data-op1-theme=dark] .workspace-lanes{background-color:#304450}
+html[data-op1-theme=dark] .workspace-ruler{background-color:#314854}
+html[data-op1-theme=dark] .display-zoom-head{background:#26313a}
+html[data-op1-theme=dark] .display-zoom-head h2{color:#e8f2f5}
+html[data-op1-theme=dark] .display-zoom-head p,html[data-op1-theme=dark] .display-zoom-help{color:#c0d2dc}
+.comfort-overlay{z-index:95}
+.comfort-dialog{background:#f7fafc;color:#243c49;border:1px solid #9ebac9;border-radius:14px;padding:18px;width:min(100%,950px);max-height:92dvh;overflow:auto;box-shadow:0 25px 70px #0008}
+.comfort-dialog h2{font-size:22px;margin:0}.comfort-dialog p{line-height:1.5}
+.comfort-dialog-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.comfort-dialog-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+.comfort-dialog button,.comfort-dialog select{min-height:42px;padding:8px 12px;border:1px solid #9db6c4;background:#e6eff4;color:#22465a;border-radius:7px;font-weight:750}
+.comfort-dialog button[aria-pressed=true]{background:#2c6c86;color:white}
+.comfort-demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px}
+.comfort-demo-card{border:1px solid #a6bfcd;background:#e6eff4;border-radius:9px;padding:13px;display:flex;flex-direction:column;gap:7px}
+.comfort-demo-card h3{margin:0;font-size:15px}.comfort-demo-card p{font-size:12px;margin:0;flex:1;line-height:1.5}
+.comfort-demo-card button{width:100%}
+.comfort-demo-status{font-size:13px;color:#426879;min-height:24px;padding:8px 0}
+html[data-op1-theme=dark] .comfort-dialog{background:#25343e;color:#ebf5fa;border-color:#58788b}
+html[data-op1-theme=dark] .comfort-demo-card{background:#314651;border-color:#557082}
+html[data-op1-theme=dark] .comfort-dialog button,html[data-op1-theme=dark] .comfort-dialog select{background:#3b5868;color:#f0f9fd;border-color:#6b90a2}
+html[data-op1-theme=dark] .comfort-demo-status{color:#c1d5df}
+html[data-op1-theme=dark] .comfort-dialog button[aria-pressed=true]{background:#2f819d}
+.comfort-midi-entry{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.comfort-midi-entry label{display:flex;gap:6px;align-items:center;font-weight:700;font-size:12px}
+.comfort-midi-entry select{min-height:38px}
+@media(max-width:800px){.comfort-tabs{margin:10px auto 0;gap:4px}.comfort-tabs button{min-height:44px;flex:1 1 31%;font-size:11px}.comfort-octave{top:213px}.comfort-dialog{padding:12px;max-height:95dvh}.comfort-demo-grid{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}.mobile-keys{position:sticky;top:0;z-index:12;border:2px solid #b5c8d3;box-shadow:0 4px 10px #101b243a}.comfort-tabs-status{padding:0 6px}}
+@media(prefers-reduced-motion:reduce){.comfort-tabs button,.comfort-dialog button{transition:none}}

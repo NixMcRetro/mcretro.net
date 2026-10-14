@@ -27,6 +27,9 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert(await page.locator('#pianolaPanel').isVisible(),'Compose tab not functional');
   assert(await page.locator('#piano').isVisible(),'Switching tabs hid the instrument');
   assert(!(await page.locator('#soundPanel').isVisible()),'Play panel remained visible');
+  assert.equal(await page.locator('#octDown, #octUp').count(),0,'Duplicate physical octave steppers must be removed');
+  assert.equal(await page.locator('#comfortOctDown, #comfortOctUp').count(),2,'Keep one central set of octave steppers');
+  assert.equal(await page.locator('#mobileDown, #mobileUp').count(),2,'Mobile octave accessibility must remain');
   await page.locator('#comfortOctUp').click();
   assert.equal(await page.locator('#comfortOctValue').innerText(),'OCT +1');
   assert.match(await page.locator('#comfortOctRange').innerText(),/C4 to B5/);

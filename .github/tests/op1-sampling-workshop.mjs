@@ -16,9 +16,9 @@ const wav=fixtureWav();
 // Serve localhost so IndexedDB can persist the source WAV; about:blank blocks storage.
 const server=createServer((request,response)=>{
  const path=new URL(request.url,'http://localhost').pathname;
- const resources={'/':'homepages/op-1/index.html','/index.html':'homepages/op-1/index.html','/sw.js':'homepages/op-1/sw.js','/manifest.webmanifest':'homepages/op-1/manifest.webmanifest'};
+ const resources={'/':'homepages/op-1/index.html','/index.html':'homepages/op-1/index.html','/workspace.js':'homepages/op-1/workspace.js','/workspace.css':'homepages/op-1/workspace.css','/sw.js':'homepages/op-1/sw.js','/manifest.webmanifest':'homepages/op-1/manifest.webmanifest'};
  const file=resources[path]||(path.startsWith('/icons/')?'homepages/op-1'+path:null);if(!file){response.writeHead(404);response.end('not found');return}
- const mime=path.endsWith('.png')?'image/png':path.endsWith('.js')?'text/javascript':path.endsWith('.webmanifest')?'application/manifest+json':'text/html';
+ const mime=path.endsWith('.png')?'image/png':path.endsWith('.js')?'text/javascript':path.endsWith('.css')?'text/css':path.endsWith('.webmanifest')?'application/manifest+json':'text/html';
  response.writeHead(200,{'Content-Type':mime});response.end(readFileSync(file));
 });
 await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));

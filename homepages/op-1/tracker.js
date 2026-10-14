@@ -1,4 +1,4 @@
-/* SuperNick's OP-1 Browser Lab v2.3 Music-Making Studio.
+/* SuperNick's OP-1 Browser Lab v2.4 Performance & Arrangement Studio.
    Independent patterns and audio, no proprietary tracker assets or module parsers. */
 (function(){
 'use strict';
@@ -10,7 +10,7 @@ const GM_DRUM=[36,38,42,46,45,39,56,49];
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 const defPattern=(rows=32)=>({rows,cells:Array(rows*CHANNELS).fill(null)});
 const defaultChannels=()=>Array.from({length:CHANNELS},()=>({level:1,pan:0,mute:false,solo:false}));
-const defaults=()=>({patterns:[defPattern()],chain:[0],active:0,bank:0,bpm:120,channels:defaultChannels()});
+const defaults=()=>({patterns:[defPattern()],chain:[0],active:0,bank:0,bpm:120,channels:defaultChannels(),automation:[]});
 const clone=structuredClone;
 const validInt=(n,min,max)=>Number.isInteger(n)&&n>=min&&n<=max;
 function normalize(value){
@@ -36,7 +36,13 @@ function normalize(value){
   if(!c||typeof c!=='object'||!Number.isFinite(c.level)||c.level<0||c.level>1.5||!Number.isFinite(c.pan)||c.pan< -1||c.pan>1||typeof c.mute!=='boolean'||typeof c.solo!=='boolean')throw Error('Invalid tracker mixer channel');
   return {level:c.level,pan:c.pan,mute:c.mute,solo:c.solo};
  });
- return {patterns,chain:value.chain.slice(),active:value.active,bank:value.bank,bpm:value.bpm,channels:safeChannels};
+ const automation=value.automation===undefined?[]:value.automation;
+ if(!Array.isArray(automation)||automation.length>MAX_AUTO)throw Error('Invalid tracker automation list');
+ const safeAutomation=automation.map(e=>{
+  if(!e||!validInt(e.row,0,MAX_LIVE_ROWS)||!validInt(e.ch,0,3)||!Number.isFinite(e.level)||e.level<0||e.level>1.5||!Number.isFinite(e.pan)||e.pan< -1||e.pan>1)throw Error('Invalid tracker automation point');
+  return {row:e.row,ch:e.ch,level:e.level,pan:e.pan};
+ }).sort((a,b)=>a.row-b.row);
+ return {patterns,chain:value.chain.slice(),active:value.active,bank:value.bank,bpm:value.bpm,channels:safeChannels,automation:safeAutomation};
 }
 const pitch=m=>SEMI[m%12]+(Math.floor(m/12)-1);
 const formatCell=c=>!c?'··· ·· ··':(c.kind==='drum'?'DR'+(c.inst+1):c.kind==='sample'?'SM'+(c.inst+1):pitch(c.midi).padEnd(3,' '))+' '+String(c.inst+1).padStart(2,'0')+' '+(c.fx==='none'?'··':c.fx.slice(0,2).toUpperCase())+c.param.toString(16).toUpperCase();
@@ -44,6 +50,8 @@ const toIndex=(row,ch)=>row*CHANNELS+ch;
 let api=null,cursor={row:0,ch:0},clock=null,playing=false,started=0,next=0,events=[],playhead=-1,rendering=false;
 let history=[],redoHistory=[],clipboard=null,clipboardReady=false,blockClipboard=null;
 let context=null,cycle=0,loopEnabled=false,compiledSeconds=0,compiledRows=0,viewChannel='all';
+let live=null,capture=null,captureEncoding=false,automationArmed=false,autoCursor=0,lastAutoRow=-1;
+const MAX_AUTO=256,MAX_LIVE_ROWS=4096;
 const data=()=>api.getState().tracker;
 const pattern=()=>data().patterns[data().active];
 function status(s){$('trackerStatus').textContent=s||data().patterns.length+' PATTERNS · '+data().chain.length+' CHAIN STEPS · '+data().bpm+' BPM'}
@@ -56,10 +64,42 @@ function commit(fn){
 function restoreSnapshot(snapshot){stop();api.getState().tracker=normalize(snapshot);api.markDirty();cursor.row=Math.min(cursor.row,pattern().rows-1);render()}
 function undo(){if(!history.length){status('Nothing to undo');return}redoHistory.push(clone(data()));restoreSnapshot(history.pop())}
 function redo(){if(!redoHistory.length){status('Nothing to redo');return}history.push(clone(data()));restoreSnapshot(redoHistory.pop())}
+function recordAutomationPoint(){
+ if(!automationArmed||!playing||!context)return;
+ const rowSec=60/data().bpm/4;
+ const row=Math.max(0,Math.round((context.ctx.currentTime-started)/rowSec));
+ if(row>MAX_LIVE_ROWS){automationArmed=false;status('Automation limit reached');return}
+ const draft=clone(data());
+ for(let ch=0;ch<CHANNELS;ch++){
+  const c=draft.channels[ch],old=draft.automation.findIndex(e=>e.row===row&&e.ch===ch);
+  const point={row,ch,level:c.level,pan:c.pan};
+  if(old>=0)draft.automation[old]=point;else draft.automation.push(point);
+ }
+ if(draft.automation.length>MAX_AUTO){automationArmed=false;status('Automation limit: 256 points');return}
+ api.getState().tracker=normalize(draft);api.markDirty();renderAutomationStatus();
+}
+function renderAutomationStatus(){
+ if(!$('trackerAutomation'))return;
+ $('trackerAutomation').setAttribute('aria-pressed',String(automationArmed));
+ $('trackerAutomation').textContent=automationArmed?'● ARM ON':'● ARM MIX';
+ $('trackerAutoCount').textContent=data().automation.length+' AUTOMATION POINTS';
+}
+function applyAutomation(row){
+ if(!context?.trackerGates)return;
+ const list=data().automation;
+ if(row<lastAutoRow){autoCursor=0;lastAutoRow=-1;applyLiveMixer()}
+ while(autoCursor<list.length&&list[autoCursor].row<=row){
+  const e=list[autoCursor++],now=context.ctx.currentTime;
+  const gate=context.trackerGates[e.ch],pan=context.trackerPanners[e.ch];
+  gate.gain.setTargetAtTime(channelIsAudible(e.ch)?e.level*.72:0,now,.025);
+  pan?.pan.setTargetAtTime(e.pan,now,.025);
+ }
+ lastAutoRow=row;
+}
 function commitMixer(fn){
  if(rendering){status('Finish audio export before editing the mixer');return}
  const old=clone(data()),draft=clone(old);
- try{fn(draft);const safe=normalize(draft);history.push(old);if(history.length>40)history.shift();redoHistory=[];api.getState().tracker=safe;api.markDirty();applyLiveMixer();renderMixer();$('trackerUndo').disabled=false;$('trackerRedo').disabled=true;status('Tracker channel mixer updated')}
+ try{fn(draft);const safe=normalize(draft);history.push(old);if(history.length>40)history.shift();redoHistory=[];api.getState().tracker=safe;api.markDirty();applyLiveMixer();recordAutomationPoint();renderMixer();$('trackerUndo').disabled=false;$('trackerRedo').disabled=true;status('Tracker channel mixer updated')}
  catch(e){status('Mixer change rejected: '+e.message)}
 }
 const channelIsAudible=(c,channels=data().channels)=>!channels[c].mute&&(!channels.some(x=>x.solo)||channels[c].solo);
@@ -146,7 +186,7 @@ function render(){
  $('trackerChain').value=data().chain.map(n=>n.toString(16).padStart(2,'0').toUpperCase()).join(' ');
  $('trackerAdd').disabled=data().patterns.length>=MAX_PATTERNS;
  $('trackerDelete').disabled=data().patterns.length===1;
- renderGrid();updateEditor();renderMixer();changeView(viewChannel);$('trackerUndo').disabled=!history.length;$('trackerRedo').disabled=!redoHistory.length;if($('trackerLoop')){$('trackerLoop').setAttribute('aria-pressed',String(loopEnabled));$('trackerLoop').textContent=loopEnabled?'↻ LOOP ON':'↻ LOOP OFF'}status();
+ renderGrid();updateEditor();renderMixer();changeView(viewChannel);renderLaunchPads();renderAutomationStatus();$('trackerUndo').disabled=!history.length;$('trackerRedo').disabled=!redoHistory.length;if($('trackerLoop')){$('trackerLoop').setAttribute('aria-pressed',String(loopEnabled));$('trackerLoop').textContent=loopEnabled?'↻ LOOP ON':'↻ LOOP OFF'}status();
 }
 function writeNote(advance=false){
  const midi=Number($('trackerMidi').value),inst=Number($('trackerInstrument').value),vel=Number($('trackerVelocity').value),kind=$('trackerKind').value,fx=$('trackerEffect').value,param=Number($('trackerParam').value);
@@ -166,7 +206,7 @@ function erase(){const index=toIndex(cursor.row,cursor.ch);commit(d=>d.patterns[
 function copyCell(){const cell=pattern().cells[toIndex(cursor.row,cursor.ch)];clipboard=cell?clone(cell):null;clipboardReady=true;status(cell?'Step copied. Select another cell and paste.':'Empty step copied. Paste to clear another cell.')}
 function cutCell(){copyCell();erase()}
 function pasteCell(){if(!clipboardReady){status('Copy a step before pasting');return}const index=toIndex(cursor.row,cursor.ch),saved=clipboard?clone(clipboard):null;commit(d=>{d.patterns[d.active].cells[index]=saved})}
-function resetSession(){stop();history=[];redoHistory=[];clipboard=null;clipboardReady=false;blockClipboard=null;cursor={row:0,ch:0}}
+function resetSession(){stop();history=[];redoHistory=[];clipboard=null;clipboardReady=false;blockClipboard=null;cursor={row:0,ch:0};automationArmed=false}
 function blockSpec(){
  const count=Number($('trackerBlockRows').value),all=$('trackerBlockScope').value==='all';
  return {start:cursor.row,count:Math.min(count,pattern().rows-cursor.row),channels:all?[0,1,2,3]:[cursor.ch],all};
@@ -223,35 +263,68 @@ function previewStep(){
 }
 function loadExample(){
  const key=$('trackerDemo').value;
- if(data().patterns.some(p=>p.cells.some(Boolean))&&!confirm('Replace tracker patterns with this original composition? Undo restores your tracker. Tape and Song Workspace stay untouched.'))return;
+ if(data().patterns.some(p=>p.cells.some(Boolean))&&!confirm('Replace the current tracker patterns with an original composition? Undo restores them. Tape and Song Workspace remain untouched.'))return;
+ // All scores are original, generated locally from authored note/rhythm patterns.
  const songs={
-  midnight:{bpm:104,bank:1,bass:[45,46,41,48],notes:[[62,65,69,72],[58,62,65,70],[60,65,69,72],[60,64,67,72]],label:'Midnight Windows'},
-  subway:{bpm:92,bank:0,bass:[43,46,41,45],notes:[[55,58,62,67],[58,62,65,70],[53,57,60,65],[57,60,64,69]],label:'Subway Breaks'},
-  arcade:{bpm:126,bank:2,bass:[48,43,45,46],notes:[[60,64,67,72],[55,59,62,67],[57,60,64,69],[58,62,65,70]],label:'Pixel Arcade'}
+  midnight:{name:'Midnight Windows',bpm:104,bank:1,bass:[45,46,41,48],notes:[[62,65,69,72],[58,62,65,70],[60,65,69,72],[60,64,67,72]],style:'steady'},
+  subway:{name:'Subway Breaks',bpm:92,bank:0,bass:[43,46,41,45],notes:[[55,58,62,67],[58,62,65,70],[53,57,60,65],[57,60,64,69]],style:'break'},
+  arcade:{name:'Pixel Arcade',bpm:126,bank:2,bass:[48,43,45,46],notes:[[60,64,67,72],[55,59,62,67],[57,60,64,69],[58,62,65,70]],style:'arcade'},
+  harbor:{name:'Harbour Lights',bpm:84,bank:1,bass:[45,41,48,43],notes:[[57,60,64,69],[53,57,60,65],[60,64,67,72],[55,59,62,67]],style:'half'},
+  comet:{name:'Comet Runner',bpm:140,bank:2,bass:[48,46,43,41],notes:[[60,64,67,72],[58,62,65,70],[55,59,62,67],[53,57,60,65]],style:'drive'},
+  bloom:{name:'Analog Bloom',bpm:112,bank:1,bass:[41,45,48,46],notes:[[53,57,60,65],[57,60,64,69],[60,64,67,72],[58,62,65,70]],style:'shuffle'},
+  tide:{name:'Tidal Echoes',bpm:72,bank:0,bass:[43,41,45,48],notes:[[55,59,62,67],[53,57,60,65],[57,60,64,69],[60,64,67,72]],style:'space'},
+  drift:{name:'Chiptune Drift',bpm:132,bank:2,bass:[45,48,43,46],notes:[[57,60,64,69],[60,64,67,72],[55,59,62,67],[58,62,65,70]],style:'arcade'},
+  horizon:{name:'Horizon Breaks',bpm:96,bank:0,bass:[46,43,41,48],notes:[[58,62,65,70],[55,59,62,67],[53,57,60,65],[60,64,67,72]],style:'break'},
+  velvet:{name:'Velvet Orbit',bpm:110,bank:1,bass:[48,45,41,43],notes:[[60,64,67,72],[57,60,64,69],[53,57,60,65],[55,59,62,67]],style:'shuffle'}
  };
- const tune=songs[key]||songs.midnight;
+ const tune=songs[key]||songs.midnight,style=tune.style;
+ const beats={
+  steady:[[0,0],[2,2],[4,1],[6,2],[8,0],[10,2],[12,1],[14,2]],
+  break:[[0,0],[3,2],[4,1],[7,2],[8,0],[11,2],[12,1],[15,2]],
+  arcade:[[0,0],[2,2],[4,1],[6,2],[8,0],[10,2],[12,1],[13,2],[14,2]],
+  half:[[0,0],[4,2],[8,1],[10,2],[14,2]],
+  drive:[[0,0],[2,2],[4,1],[6,0],[7,2],[8,0],[10,2],[12,1],[14,2],[15,2]],
+  shuffle:[[0,0],[3,2],[4,1],[7,2],[8,0],[11,2],[12,1],[15,2]],
+  space:[[0,0],[4,2],[8,1],[12,2]]
+ };
+ const bassRows={
+  steady:[[0,0],[7,0],[10,7],[13,0]],break:[[0,0],[6,0],[11,7],[14,0]],
+  arcade:[[0,0],[4,7],[8,0],[12,12]],half:[[0,0],[8,7],[12,0]],
+  drive:[[0,0],[4,0],[8,7],[12,0]],shuffle:[[0,0],[6,7],[10,0],[14,7]],
+  space:[[0,0],[10,7]]
+ };
+ const melodyRows={
+  steady:[0,3,6,10,14],break:[0,4,7,11,14],arcade:[0,2,4,7,10,12,14],
+  half:[0,6,10,14],drive:[0,2,5,8,10,12,14],shuffle:[0,3,7,10,13],space:[0,7,12]
+ };
  const patterns=tune.bass.map((bass,section)=>{
   const notes=tune.notes[section],p=defPattern(32);
-  const put=(row,ch,midi,inst,kind,vel=100,fx='none',param=0)=>{p.cells[toIndex(row,ch)]={midi,inst,kind,vel,fx,param}};
+  const put=(row,ch,midi,inst,kind,vel=100,fx='none',param=0)=>{
+   p.cells[toIndex(row,ch)]={midi,inst,kind,vel,fx,param};
+  };
   for(let bar=0;bar<2;bar++){
    const n=bar*16;
-   for(const [at,inst] of [[0,0],[2,2],[4,1],[6,2],[8,0],[10,2],[12,1],[14,2]]){
-    if(key==='subway'&&(at===6||at===14)&&bar===0)continue;
-    put(n+at,0,48+inst,inst,'drum',inst===2?49:inst===1?97:91);
+   for(const [at,inst] of beats[style]){
+    if(style==='break'&&bar===0&&at===7)continue;
+    put(n+at,0,48+inst,inst,'drum',inst===2?46:inst===1?92:96);
    }
-   for(const [at,shift] of [[0,0],[7,0],[10,7],[13,0]]){
-    if(key==='subway'&&at===7)continue;
-    put(n+at,1,bass+shift,0,'synth',at===0?105:78);
+   for(const [at,shift] of bassRows[style]){
+    const midi=clamp(bass+shift,36,62);
+    put(n+at,1,midi,0,'synth',at===0?102:77);
    }
-   const pulse=key==='arcade'?[0,2,4,7,10,12,14]:[0,3,6,10,14];
-   for(let i=0;i<pulse.length;i++)put(n+pulse[i],2,notes[(i+bar+section)%4],key==='arcade'?2:3,'synth',i===0?97:74);
-   for(const [at,pos] of (key==='subway'?[[4,0],[12,2]]:[[2,0],[5,2],[9,1],[13,3]]))
-    put(n+at,3,notes[pos]+12,key==='arcade'?4:5,'synth',key==='subway'?53:58,key==='arcade'&&pos===3?'vibrato':'none',key==='arcade'?2:0);
+   const steps=melodyRows[style];
+   for(let i=0;i<steps.length;i++){
+    const midi=notes[(i+section+bar)%notes.length];
+    put(n+steps[i],2,midi,style==='arcade'||style==='drive'?2:3,'synth',i===0?92:72,
+     style==='drive'&&i===steps.length-1?'vibrato':'none',style==='drive'?2:0);
+   }
+   const counter=style==='space'?[6,14]:style==='half'?[3,11]:[2,5,9,13];
+   counter.forEach((at,i)=>put(n+at,3,clamp(notes[(i*2+bar)%4]+12,36,86),style==='arcade'?4:5,'synth',style==='space'?39:52));
   }
   return p;
  });
- commit(d=>{d.patterns=patterns;d.chain=[0,1,2,3];d.active=0;d.bank=tune.bank;d.bpm=tune.bpm;d.channels=defaultChannels()});
- cursor={row:0,ch:0};render();status(tune.label+' loaded · four patterns · eight bars. Undo restores previous tracker.');
+ commit(d=>{d.patterns=patterns;d.chain=[0,1,2,3];d.active=0;d.bank=tune.bank;d.bpm=tune.bpm;d.channels=defaultChannels();d.automation=[]});
+ cursor={row:0,ch:0};render();status(tune.name+' · eight bars loaded. Undo restores the previous tracker.');
 }
 function resizePattern(n){
  commit(d=>{const p=d.patterns[d.active];p.cells=Array.from({length:n*4},(_,i)=>p.cells[i]||null);p.rows=n});cursor.row=Math.min(cursor.row,n-1);
@@ -333,7 +406,150 @@ function isolatedLiveGraph(base){
  graph.trackInputs=gates;graph.trackerGates=gates;graph.trackerPanners=panners;
  return graph;
 }
+function finishTapeTake(){
+ if(!capture)return;
+ const entry=capture;capture=null;clearTimeout(entry.timer);
+ if(entry.rec.state!=='inactive')entry.rec.stop();
+ updateTransport();status('Encoding take for tape track '+(entry.track+1)+'…');
+}
+function toggleTapeTake(){
+ if(capture){finishTapeTake();return}
+ if(captureEncoding||api.isRecording()){status('Finish recording or export in another studio first');return}
+ if(!window.MediaRecorder){status('Your browser does not support live mix recording');return}
+ if(!playing)beginLive(data().active);
+ if(!playing||!context)return;
+ const graph=context,ctx=graph.ctx;
+ if(!ctx.createMediaStreamDestination){status('This browser cannot create an audio capture destination');return}
+ const dest=ctx.createMediaStreamDestination();
+ graph.output.connect(dest);
+ let rec;
+ try{rec=new MediaRecorder(dest.stream)}catch(e){graph.output.disconnect(dest);status('Recorder unavailable: '+e.message);return}
+ const entry={rec,dest,output:graph.output,ctx,chunks:[],track:Number($('trackerTapeTrack').value),timer:null};
+ capture=entry;
+ rec.ondataavailable=e=>{if(e.data?.size)entry.chunks.push(e.data)};
+ rec.onerror=()=>{finishTapeTake();status('Recorder interrupted; attempting to preserve the captured audio')};
+ rec.onstop=async()=>{
+  clearTimeout(entry.timer);try{entry.output.disconnect(entry.dest)}catch(_){}
+  entry.dest.stream.getTracks().forEach(t=>t.stop());
+  captureEncoding=true;updateTransport();
+  try{
+   if(!entry.chunks.length)throw Error('No audio captured');
+   const raw=new Blob(entry.chunks,{type:rec.mimeType||entry.chunks[0].type||'audio/webm'});
+   const decoded=await ctx.decodeAudioData((await raw.arrayBuffer()).slice(0));
+   if(decoded.duration<.1||decoded.duration>60)throw Error('Take duration is outside the 0.1–60 second limit');
+   const sampleId=await api.registerAudio(decoded);
+   const state=api.getState(),track=state.tracks[entry.track];
+   if(!track)throw Error('Tape track is missing');
+   api.checkpointEdit();
+   track.clips.push({sampleId,t:0,d:Math.min(decoded.duration,60),offset:0,captureSpeed:1});
+   api.markDirty();api.syncUI();
+   status('Live performance added to tape track '+(entry.track+1)+'. Use Tape Undo to remove it.');
+  }catch(e){
+   if(entry.chunks.length){
+    const raw=new Blob(entry.chunks,{type:rec.mimeType||'audio/webm'});
+    api.download(raw,'supernick-tracker-recovered-take.'+(raw.type.includes('mp4')?'m4a':raw.type.includes('ogg')?'ogg':'webm'));
+   }
+   status('Tape recording could not be saved: '+e.message+'. Raw audio downloaded where possible.');
+  }finally{captureEncoding=false;updateTransport()}
+ };
+ rec.start(250);entry.timer=setTimeout(finishTapeTake,55000);
+ updateTransport();status('RECORDING LIVE PERFORMANCE · TRACK '+(entry.track+1)+' · MAX 55 SECONDS');
+}
+function toggleAutomationArm(){
+ automationArmed=!automationArmed;renderAutomationStatus();
+ status(automationArmed?'Automation armed. Move faders while the tracker plays.':'Automation recording disarmed.');
+}
+function clearAutomation(){
+ if(!data().automation.length)return;
+ if(!confirm('Clear all tracker mixer automation points? Undo can restore them.'))return;
+ commit(d=>d.automation=[]);autoCursor=0;lastAutoRow=-1;
+}
+function updateTransport(){
+ const indicator=$('trackerTransport');if(!indicator)return;
+ const mode=live?'LIVE':playing?'CHAIN':'READY';
+ indicator.textContent=(playing?'● ':'○ ')+mode+' · '+data().bpm+' BPM';
+ indicator.setAttribute('data-playing',String(playing));
+ $('trackerLiveStatus').textContent=live?'PATTERN '+String(live.current).padStart(2,'0')+(live.pending?' · NEXT '+String(live.pending.id).padStart(2,'0'):''):'Select a pattern to perform live';
+ $('trackerTape').textContent=capture?'■ FINISH TAKE':captureEncoding?'SAVING TAKE…':'● RECORD TO TAPE';
+ $('trackerTape').disabled=captureEncoding;
+}
+function renderLaunchPads(){
+ const host=$('trackerLaunchPads');if(!host)return;
+ host.replaceChildren(...data().patterns.map((pat,id)=>{
+  const el=document.createElement('button');el.type='button';el.className='tracker-launch-pad';
+  el.dataset.launch=String(id);el.textContent='PAT '+id.toString(16).padStart(2,'0').toUpperCase();
+  el.title=pat.rows+' rows · click to queue on the next beat or bar';
+  el.setAttribute('aria-pressed',String(live?.current===id));
+  el.classList.toggle('queued',live?.pending?.id===id);
+  return el;
+ }));
+ updateTransport();
+}
+function rowEvents(pat,row,absRow){
+ const out=[],unit=60/data().bpm/4;
+ for(let ch=0;ch<CHANNELS;ch++){
+  const c=pat.cells[toIndex(row,ch)];if(!c)continue;
+  const parts=c.fx==='retrigger'?Math.max(2,Math.min(4,c.param||2)):c.fx==='up'||c.fx==='down'?2:1;
+  for(let j=0;j<parts;j++){
+   const delta=(c.fx==='up'?1:c.fx==='down'?-1:0)*Math.round(c.param/5||2)*j;
+   out.push({when:absRow*unit+j*unit/parts,duration:unit/parts*.91,
+    midi:clamp(c.midi+delta,36,95),kind:c.kind,inst:c.inst,bank:data().bank,
+    vel:c.vel/127*.76,fx:c.fx,param:c.param,ch,sampleId:c.sampleId,sampleSettings:c.sampleSettings,row:absRow});
+  }
+ }
+ return out;
+}
+function beginLive(id){
+ if(api.isRecording()||captureEncoding){status('Finish recording or rendering before starting live playback');return}
+ if(playing)stop();
+ api.stopOthers();const base=api.ensureAudio();if(!base){status('Audio engine not available');return}
+ context=isolatedLiveGraph(base);
+ live={current:id,pending:null,nextRow:0,patternStart:0};
+ autoCursor=0;lastAutoRow=-1;
+ started=context.ctx.currentTime+.09;playing=true;clock=setInterval(tick,20);
+ data().active=id;api.markDirty();render();
+ $('trackerPlay').textContent='■ STOP CHAIN';
+ status('Playing live pattern '+String(id).padStart(2,'0')+' · queue another pattern on a beat or bar');
+ tick();
+}
+function launch(id){
+ if(!validInt(id,0,data().patterns.length-1))return;
+ if(!live){beginLive(id);return}
+ const quant=$('trackerQuantize').value==='beat'?4:16,unit=60/data().bpm/4;
+ const elapsed=Math.max(0,Math.floor((context.ctx.currentTime-started)/unit));
+ const at=Math.ceil(Math.max(live.nextRow,elapsed+1)/quant)*quant;
+ live.pending={id,at};renderLaunchPads();
+ status('Pattern '+String(id).padStart(2,'0')+' queued at next '+(quant===4?'beat':'bar'));
+}
+function tickLive(){
+ const now=context.ctx.currentTime,unit=60/data().bpm/4;
+ const elapsed=Math.max(0,Math.floor((now-started)/unit));
+ if(elapsed>MAX_LIVE_ROWS){stop();status('Live playback session reached safety limit');return}
+ if(live.nextRow<elapsed-1)live.nextRow=elapsed;
+ let guard=0;
+ while(guard++<32){
+  const abs=live.nextRow,when=started+abs*unit;
+  if(when>=now+.12)break;
+  if(live.pending&&abs>=live.pending.at){
+   live.current=live.pending.id;live.pending=null;live.patternStart=abs;
+   data().active=live.current;api.markDirty();render();
+  }
+  const pat=data().patterns[live.current];
+  if(abs-live.patternStart>=pat.rows)live.patternStart=abs;
+  if(when>=now-.09){
+   for(const note of rowEvents(pat,abs-live.patternStart,abs)){
+    try{emit(context,note,started+note.when)}catch(e){stop();status(e.message);return}
+   }
+  }
+  live.nextRow++;
+ }
+ const pat=data().patterns[live.current];
+ paintPlayhead(Math.max(0,(elapsed-live.patternStart)%pat.rows));
+ applyAutomation(elapsed);
+ updateTransport();
+}
 function stop(){
+ if(capture)finishTapeTake();
  if(clock)clearInterval(clock);clock=null;
  if(context?.trackerGates){
   const now=context.ctx.currentTime;
@@ -342,12 +558,14 @@ function stop(){
    gate.gain.setTargetAtTime(0,now,.004);
   }
  }
- context=null;playing=false;events=[];next=0;cycle=0;playhead=-1;
+ context=null;playing=false;live=null;events=[];next=0;cycle=0;playhead=-1;autoCursor=0;lastAutoRow=-1;
  if($('trackerPlay'))$('trackerPlay').textContent='▶ PLAY CHAIN';
  document.querySelectorAll('.tracker-row.playing').forEach(x=>x.classList.remove('playing'));
+ if($('trackerLaunchPads'))renderLaunchPads();
 }
 function tick(){
  if(!playing||!context)return;
+ if(live){tickLive();return}
  const now=context.ctx.currentTime;
  // Background tabs can be throttled for minutes. Skip stale cycles instead of bursting old notes.
  if(loopEnabled&&now-started>compiledSeconds*2){
@@ -363,6 +581,7 @@ function tick(){
   if(next===events.length&&loopEnabled){next=0;cycle++}
  }
  const elapsed=Math.max(0,now-started),row=Math.floor(elapsed/(60/data().bpm/4))%compiledRows;
+  applyAutomation(row);
  let sum=0;for(const id of data().chain){const len=data().patterns[id].rows;if(row>=sum&&row<sum+len){paintPlayhead(id===data().active?row-sum:-1);break}sum+=len}
  if(!loopEnabled&&elapsed>=(cycle+1)*compiledSeconds+.1)stop();
 }
@@ -377,9 +596,9 @@ function play(){
   for(const n of compiled.notes)if(n.kind==='sample'&&!api.hasSample(n.sampleId))throw Error('Missing tracker sample; restore the backed-up audio');
   context=isolatedLiveGraph(base);
   events=compiled.notes;compiledSeconds=compiled.seconds;compiledRows=compiled.rows;
-  next=0;cycle=0;playing=true;started=context.ctx.currentTime+.09;clock=setInterval(tick,20);
+  next=0;cycle=0;live=null;autoCursor=0;lastAutoRow=-1;playing=true;started=context.ctx.currentTime+.09;clock=setInterval(tick,20);
   $('trackerPlay').textContent='■ STOP CHAIN';status('PLAYING · '+data().chain.length+' PATTERNS'+(loopEnabled?' · LOOP':''));
-  tick();
+  updateTransport();tick();
  }catch(e){stop();status(e.message)}
 }
 function toggleLoop(){
@@ -480,18 +699,19 @@ function sendToSong(){
 }
 function init(deps){
  api=deps;const root=document.createElement('section');root.className='panel tracker-studio';root.id='trackerStudio';root.setAttribute('aria-label','Tracker Studio four-channel editor');
- root.innerHTML='<div class="tracker-heading"><div><h2>TRACKER STUDIO <small>/ v2.3</small></h2><p>Original four-channel pattern tracker. Enter notes, chain patterns, and use existing synths, drums and loaded samples.</p></div><strong id="trackerStatus" role="status" aria-live="polite">TRACKER READY</strong></div>'+
+ root.innerHTML='<div class="tracker-heading"><div><h2>TRACKER STUDIO <small>/ v2.4</small></h2><p>Original four-channel pattern tracker. Enter notes, chain patterns, and use existing synths, drums and loaded samples.</p></div><strong id="trackerStatus" role="status" aria-live="polite">TRACKER READY</strong></div>'+
  '<div class="tracker-controls"><label>PATTERN<select id="trackerPattern"></select></label><label>ROWS<select id="trackerRows"><option>16</option><option>32</option><option>64</option></select></label><label>TRACKER BPM<input id="trackerBpm" type="number" min="40" max="240" value="120"></label><label>SOUND BANK<select id="trackerBank"><option value="0">CLASSICS</option><option value="1">AFTER HOURS</option><option value="2">EXPERIMENTAL</option></select></label><button type="button" id="trackerAdd">＋ PATTERN</button><button type="button" id="trackerClone">COPY PATTERN</button><button type="button" id="trackerDelete">DELETE PATTERN</button><button type="button" id="trackerUndo">↶ UNDO</button><button type="button" id="trackerRedo">↷ REDO</button></div>'+
  '<div class="tracker-chain"><label for="trackerChain">PATTERN CHAIN (hex IDs)</label><input id="trackerChain" value="00" spellcheck="false" autocapitalize="characters" aria-label="Tracker pattern sequence"><button type="button" id="trackerApplyChain">APPLY CHAIN</button><span>Example: 00 00 01 · up to 16 entries</span></div>'+
+ '<section class="tracker-performance" aria-label="Live tracker arrangement and performance"><div class="tracker-perf-head"><div><h3>LIVE PATTERN PERFORMANCE</h3><strong id="trackerTransport" aria-live="polite">○ READY</strong></div><label>SWITCH ON<select id="trackerQuantize"><option value="bar" selected>NEXT BAR</option><option value="beat">NEXT BEAT</option></select></label><button id="trackerLivePlay" type="button">▶ PLAY PATTERN</button><button id="trackerLiveStop" type="button">■ STOP</button></div><p id="trackerLiveStatus" role="status">Select a pattern to perform live</p><div id="trackerLaunchPads" class="tracker-launch-pads" role="group" aria-label="Live pattern launch pads"></div><div class="tracker-perf-tools"><label>RECORD TO TAPE TRACK<select id="trackerTapeTrack"><option value="0">TRACK 1</option><option value="1">TRACK 2</option><option value="2">TRACK 3</option><option value="3">TRACK 4</option></select></label><button id="trackerTape" type="button">● RECORD TO TAPE</button><button id="trackerAutomation" type="button" aria-pressed="false">● ARM MIX</button><button id="trackerAutoClear" type="button">CLEAR AUTOMATION</button><small id="trackerAutoCount">0 AUTOMATION POINTS</small></div><p class="tracker-perf-note">Live pads launch patterns on the next beat or bar. Record the performance into a tape clip (up to 55 seconds, browser support required). ARM MIX records mixer moves during playback; the points are saved in your project.</p></section>'+
  '<div class="tracker-view"><label for="trackerView">GRID VIEW</label><select id="trackerView"><option value="all">ALL 4 CHANNELS</option><option value="0">CHANNEL 1</option><option value="1">CHANNEL 2</option><option value="2">CHANNEL 3</option><option value="3">CHANNEL 4</option></select><small>Choose one channel for easier touch editing on a phone.</small></div>'+
  '<div class="tracker-headers"><span>ROW</span><span>CH 1</span><span>CH 2</span><span>CH 3</span><span>CH 4</span></div><div class="tracker-grid-scroll"><div id="trackerGrid" class="tracker-grid" role="grid" aria-label="Tracker pattern note grid"></div></div>'+
  '<div class="tracker-editor"><div><strong id="trackerSelection">ROW 00</strong><small id="trackerSelectedNote">EMPTY STEP</small></div><label>PITCH (MIDI)<input id="trackerMidi" type="number" min="36" max="95" value="60"></label><label>TYPE<select id="trackerKind"><option value="synth">SYNTH</option><option value="drum">DRUM</option><option value="sample">SAMPLE SLICE</option></select></label><label>INSTRUMENT<select id="trackerInstrument">'+Array.from({length:8},(_,i)=>'<option value="'+i+'">'+String(i+1).padStart(2,'0')+'</option>').join('')+'</select></label><label>VELOCITY<input type="number" id="trackerVelocity" min="1" max="127" value="100"></label><label>EFFECT<select id="trackerEffect"><option value="none">NONE</option><option value="up">PITCH UP</option><option value="down">PITCH DOWN</option><option value="vibrato">VIBRATO</option><option value="retrigger">RETRIGGER</option></select></label><label>AMOUNT (HEX 0-F)<input id="trackerParam" min="0" max="15" type="number" value="0"></label><button id="trackerWrite" type="button">PLACE NOTE</button><button id="trackerErase" type="button">CLEAR STEP</button></div>'+
  '<div class="tracker-edit-tools" role="group" aria-label="Tracker step editing"><button type="button" id="trackerCopy">COPY STEP</button><button type="button" id="trackerCut">CUT STEP</button><button type="button" id="trackerPaste">PASTE STEP</button><button type="button" id="trackerPreview">♫ PREVIEW STEP</button><label class="tracker-audition"><input type="checkbox" id="trackerAudition"> PREVIEW ON ENTRY</label></div>'+
  '<details class="tracker-batch-editor"><summary>ROW / BAR EDITING</summary><div class="tracker-batch-form"><label>SELECTION<select id="trackerBlockRows"><option value="1">1 STEP</option><option value="4">4 ROWS / BEAT</option><option value="16" selected>16 ROWS / BAR</option><option value="32">32 ROWS / 2 BARS</option></select></label><label>SCOPE<select id="trackerBlockScope"><option value="channel">SELECTED CHANNEL</option><option value="all">ALL CHANNELS</option></select></label><button id="trackerCopyBlock" type="button">COPY ROWS</button><button id="trackerCutBlock" type="button">CUT ROWS</button><button id="trackerPasteBlock" type="button">PASTE ROWS</button><button id="trackerDuplicateBlock" type="button">DUPLICATE NEXT</button><label>TRANSPOSE (SEMITONES)<input type="number" min="-12" max="12" value="2" id="trackerTranspose"></label><button id="trackerTransposeButton" type="button">TRANSPOSE SYNTH</button></div></details>'+
  '<section class="tracker-mixer" id="trackerMixer" aria-label="Tracker channel mixer"><h3>FOUR-CHANNEL MIXER <small>Independent of tape tracks</small></h3><div class="tracker-mixer-grid">'+Array.from({length:4},(_,i)=>'<div class="tracker-mixer-strip"><strong>CHANNEL '+(i+1)+'</strong><label>LEVEL <output id="trackerLevelText'+i+'">100%</output><input type="range" id="trackerLevel'+i+'" min="0" max="150" value="100" aria-label="Channel '+(i+1)+' level"></label><label>PAN <output id="trackerPanText'+i+'">C</output><input type="range" id="trackerPan'+i+'" min="-100" max="100" value="0" aria-label="Channel '+(i+1)+' pan"></label><div><button type="button" id="trackerMute'+i+'" aria-pressed="false">MUTE</button><button type="button" id="trackerSolo'+i+'" aria-pressed="false">SOLO</button></div></div>').join('')+'</div></section>'+
- '<div class="tracker-demos"><label for="trackerDemo">ORIGINAL COMPOSITION</label><select id="trackerDemo"><option value="midnight">MIDNIGHT WINDOWS · CHILLED</option><option value="subway">SUBWAY BREAKS · 92 BPM</option><option value="arcade">PIXEL ARCADE · UPBEAT</option></select><button type="button" id="trackerExample">LOAD COMPOSITION</button></div>'+
+ '<div class="tracker-demos"><label for="trackerDemo">ORIGINAL COMPOSITION</label><select id="trackerDemo"><option value="midnight">MIDNIGHT WINDOWS · CHILLED</option><option value="subway">SUBWAY BREAKS · 92 BPM</option><option value="arcade">PIXEL ARCADE · UPBEAT</option><option value="harbor">HARBOUR LIGHTS · CHILL</option><option value="comet">COMET RUNNER · FAST</option><option value="bloom">ANALOG BLOOM · GROOVE</option><option value="tide">TIDAL ECHOES · AMBIENT</option><option value="drift">CHIPTUNE DRIFT · RETRO</option><option value="horizon">HORIZON BREAKS · BREAKBEAT</option><option value="velvet">VELVET ORBIT · MELODIC</option></select><button type="button" id="trackerExample">LOAD COMPOSITION</button></div>'+
  '<div class="tracker-actions"><button type="button" id="trackerPlay">▶ PLAY CHAIN</button><button type="button" id="trackerLoop" aria-pressed="false">↻ LOOP OFF</button><button type="button" id="trackerStop">■ STOP</button><button type="button" id="trackerWav">⬇ EXPORT WAV</button><button type="button" id="trackerMidiExport">⬇ EXPORT MIDI</button><button type="button" id="trackerToSong">＋ SEND TO SONG WORKSPACE</button></div>'+
- '<p class="tracker-guide">Click a step, set its pitch and instrument, then PLACE NOTE. Arrow keys navigate focused cells; Z/S/X/D… enter notes; Delete clears. Ctrl/Cmd+C, X and V copy, cut and paste focused steps. Open ROW / BAR EDITING to copy, duplicate and transpose a selection starting at the selected row. Channel sliders and mute/solo work during playback. The focused grid is easier to edit on mobile. Loop repeats the entire chain until stopped. Four rows equal one beat. Each row holds one sound per channel. Drum instruments 01-08 map to the existing kit. Sample instruments select slices 01-08 from a previously loaded sample. Pitch changes are stepped; vibrato and retriggers play in the browser. MIDI does not contain synthesizer effect parameters. Song Workspace imports synth, drum and sample-slice patterns as compatible clips; retriggers, effects and channel mixing can be simplified.</p>';
+ '<p class="tracker-guide">Click a step, set its pitch and instrument, then PLACE NOTE. Arrow keys navigate focused cells; Z/S/X/D… enter notes; Delete clears. Ctrl/Cmd+C, X and V copy, cut and paste focused steps. Open ROW / BAR EDITING to copy, duplicate and transpose a selection starting at the selected row. Channel sliders and mute/solo work during playback. Live launch pads queue patterns on a beat or bar, while ARM MIX stores mixer changes. The focused grid is easier to edit on mobile. Loop repeats the entire chain until stopped. Four rows equal one beat. Each row holds one sound per channel. Drum instruments 01-08 map to the existing kit. Sample instruments select slices 01-08 from a previously loaded sample. Pitch changes are stepped; vibrato and retriggers play in the browser. MIDI does not contain synthesizer effect parameters. Song Workspace imports synth, drum and sample-slice patterns as compatible clips; retriggers, effects and channel mixing can be simplified.</p>';
  $('rollPanel').before(root);
  $('trackerPattern').addEventListener('change',e=>{stop();commit(d=>d.active=Number(e.target.value));cursor.row=0});
  $('trackerRows').addEventListener('change',e=>resizePattern(Number(e.target.value)));
@@ -518,6 +738,14 @@ function init(deps){
  $('trackerPaste').addEventListener('click',pasteCell);
  $('trackerExample').addEventListener('click',loadExample);
  $('trackerLoop').addEventListener('click',toggleLoop);
+ $('trackerLaunchPads').addEventListener('click',e=>{const pad=e.target.closest('[data-launch]');if(pad)launch(Number(pad.dataset.launch))});
+ $('trackerLivePlay').addEventListener('click',()=>live?stop():launch(data().active));
+ $('trackerLiveStop').addEventListener('click',stop);
+ $('trackerTape').addEventListener('click',toggleTapeTake);
+ $('trackerAutomation').addEventListener('click',toggleAutomationArm);
+ $('trackerAutoClear').addEventListener('click',clearAutomation);
+ $('trackerQuantize').addEventListener('change',()=>{if(live?.pending){live.pending=null;renderLaunchPads();status('Quantise changed. Queue a pattern again.')}});
+
  $('trackerPlay').addEventListener('click',play);
  $('trackerStop').addEventListener('click',stop);
  $('trackerWav').addEventListener('click',exportWav);
@@ -526,5 +754,7 @@ function init(deps){
  if(window.matchMedia?.('(max-width:640px)')?.matches)viewChannel='0';
  render();
 }
-window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,get playing(){return playing}};
+window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
+ get playing(){return playing},get live(){return !!live},get transport(){return {playing,mode:live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
+ launch,play,finishTapeTake};
 })();

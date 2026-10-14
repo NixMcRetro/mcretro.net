@@ -57,6 +57,10 @@ jobs:
         run: |
           npm install --no-save playwright@1.57.0
           npx playwright install --with-deps chromium firefox webkit
+      - name: v1.9 Piano Roll Studio, MIDI/polyphony and live recording regression
+        run: node .github/tests/op1-piano-roll-studio.mjs
+      - name: v2.0 Unified Song Workspace cross-browser, WAV, tape and recovery regression
+        run: node .github/tests/op1-unified-song.mjs
       - name: Chromium, Firefox and WebKit regression checks
         run: node .github/tests/op1-browser-smoke.mjs
       - name: Tape Studio PCM and varispeed regression (Chromium)
@@ -69,13 +73,9 @@ jobs:
         run: node .github/tests/op1-pianola-composer.mjs
       - name: Pianola MIDI/JSON interchange and Synth Note Player regression
         run: node .github/tests/op1-score-interchange.mjs
-      - name: v1.9 Piano Roll Studio, MIDI/polyphony and live recording regression
-        run: node .github/tests/op1-piano-roll-studio.mjs
-      - name: v2.0 Unified Song Workspace cross-browser, WAV, tape and recovery regression
-        run: node .github/tests/op1-unified-song.mjs
       - name: Offline installation and reload regression (Chromium)
         run: node .github/tests/op1-pwa-offline.mjs
-      - name: Archive v1.9 source, assets and regression tests
+      - name: Archive v2.0 source, assets and regression tests
         uses: actions/upload-artifact@v4
         with:
           name: supernicks-op1-v2.0-source-${{ github.sha }}

@@ -28,6 +28,8 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
      const count=await page.evaluate(()=>window.OP1Tracker.prepare().notes.length);
      assert(count>=60,key+' is not a complete composition: '+count);
     }
+    // Unlock Web Audio through an explicit gesture, especially important in Firefox/WebKit headless.
+    await page.locator('#startAudio').click();
     await page.locator('#trackerQuantize').selectOption('beat');
     await page.locator('[data-launch="0"]').click();
     await page.waitForFunction(()=>window.OP1Tracker.transport.mode==='live');

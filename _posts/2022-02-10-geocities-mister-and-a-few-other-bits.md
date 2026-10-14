@@ -4,9 +4,9 @@ author: "Nix McRetro"
 date: 2022-02-10T12:00:00.000+11:00
 categories: [guides, linux, programming]
 ai_assistance:
-  model: "GPT-6"
+  model: "GPT-6.1 Sol"
   date: 2026-10-15
-  purpose: "drafting from the author's October 2021 ACMS forum posts"
+  purpose: "fact-checking, sourcing, and editorial quality"
 ---
 
 Last October I was working on my [GeoCities Rebuild](https://mcretro.net/the-geocities-rebuild-worklog/) as part of RetroChallenge 2021/10. Most of the technical details made it into the worklog, but I was also posting updates over on the Australian Computer Museum Society forum. There were a few replies and slightly off-topic conversations that I never got around to including.

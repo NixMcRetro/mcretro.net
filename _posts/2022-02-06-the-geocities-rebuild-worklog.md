@@ -14,6 +14,8 @@ ai_assistance:
 
 This is the original, updated and mostly complete worklog for my GeoCities Reboot at [https://mcretro.net/homepages/geocities](/homepages/geocities).
 
+For a bit of extra background, I was also posting updates to the [Australian Computer Museum Society forum](https://forum.acms.org.au/t/geocities-rebuild-for-older-browsers/83) as part of RetroChallenge 2021/10. There's also some extra discussion in there about the MiSTer FPGA and older browsers beyond what made it into this worklog.
+
 * * *
 
 **1st October 2021**
@@ -82,6 +84,8 @@ I still need to work out the mounting parameters and whether overriding ownershi
 This project **_shouldn't_** be completed before the end of October but we should have something to show. I had been working on the modems tying in with the MiSTer since April. Then I accidentally deleted my entire desktop in July and lost a whole heap of notes. My backup was a few weeks old, but much was lost.
 
 While I was busy deleting my desktop, MiSTer FPGA has been progressing allowing support of FTDI's FT232RL chipset and Prolific's PL2303. This allows us to connect these serial modems over USB directly into the MiSTer.
+
+Space has always been a premium for me unfortunately, so having a MiSTer instead of a bunch of consoles makes sense. I was also amazed by the accuracy of the SNES core. In Earth Defense Force, there are points where the SNES struggles with too many sprites on screen. The MiSTer replicated it perfectly. Incredible!
 
 * * *
 

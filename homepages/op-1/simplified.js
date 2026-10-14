@@ -84,6 +84,7 @@ function selectGroup(name,{scroll=false}={}){
 }
 function setMode(next){
  mode=next==='advanced'?'advanced':'simple';store(KEY_MODE,mode);
+ if($('studioShortcuts'))$('studioShortcuts').open=mode==='advanced';
  if(mode==='simple')selectTool(selected);else{sync();const t=activeTool();window.OP1Comfort.chooseTab(t.tab)}
  sync();
 }
@@ -148,8 +149,8 @@ function initWelcome(){
  $('studioQuickSave').addEventListener('click',()=>$('saveProject').click());
 }
 function initQuickActions(){
- const bar=document.createElement('div');bar.className='studio-shortcuts';bar.id='studioShortcuts';
- bar.innerHTML='<button type="button" id="studioDemo">♫ BROWSE DEMOS</button><button type="button" id="studioMidi" aria-expanded="false" aria-controls="comfortMidiEntry">♫ IMPORT MIDI</button><button type="button" id="studioArrange">▦ SONG WORKSPACE</button><button type="button" id="studioMix">◫ MIXER</button><button type="button" id="studioBackup">⬇ SAVE BACKUP</button><button type="button" id="studioKeyboardHelp" aria-expanded="false" aria-controls="studioShortcutHelp">? SHORTCUTS</button><div id="studioShortcutHelp" hidden>Play notes with Z, S, X and the keyboard labels. Press ← / → for octaves when not editing. Space controls tape playback. Ctrl/Cmd + Z undoes applicable edits. The full guide remains in the top menu.</div>';
+ const bar=document.createElement('details');bar.className='studio-shortcuts';bar.id='studioShortcuts';
+ bar.innerHTML='<summary>MORE TOOLS · MIDI, ARRANGEMENTS, MIXER, HELP</summary><div class="studio-shortcut-buttons"><button type="button" id="studioDemo">♫ BROWSE DEMOS</button><button type="button" id="studioMidi" aria-expanded="false" aria-controls="comfortMidiEntry">♫ IMPORT MIDI</button><button type="button" id="studioArrange">▦ SONG WORKSPACE</button><button type="button" id="studioMix">◫ MIXER</button><button type="button" id="studioBackup">⬇ SAVE BACKUP</button><button type="button" id="studioKeyboardHelp" aria-expanded="false" aria-controls="studioShortcutHelp">? SHORTCUTS</button><div id="studioShortcutHelp" hidden>Play notes with Z, S, X and the keyboard labels. Press ← / → for octaves when not editing. Space controls tape playback. Ctrl/Cmd + Z undoes applicable edits. The full guide remains in the top menu.</div></div>';
  $('studioModeBar').after(bar);
  $('studioDemo').addEventListener('click',()=>$('comfortDemoOpen').click());
  $('studioMidi').addEventListener('click',()=>{

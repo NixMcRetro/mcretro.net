@@ -14,7 +14,7 @@ for(const [browserName,engine] of Object.entries({chromium,firefox,webkit})){
  try{for(const width of (browserName==='chromium'?[1440,390]:[1100])){
   const ctx=await browser.newContext({viewport:{width,height:880},acceptDownloads:true}),page=await ctx.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));await page.setContent(html,{waitUntil:'domcontentloaded'});await page.evaluate(()=>{window.__op1Messages=[];new MutationObserver(()=>{window.__op1Messages.push(document.querySelector('#feedback')?.textContent);}).observe(document.querySelector('#feedback'),{childList:true,characterData:true,subtree:true})});
-  assert.match(await page.title(),/v2\.0/);assert.equal(await page.locator('#workspacePanel').count(),1);
+  assert.match(await page.title(),/v2\.(?:0|1)/);assert.equal(await page.locator('#workspacePanel').count(),1);
   assert.equal(await page.evaluate('document.documentElement.scrollWidth'),width);
   await draw(page,11);await draw(page,7);await page.locator('#rollSendSong').click();
   let saved=await project(page);
@@ -55,7 +55,7 @@ for(const [browserName,engine] of Object.entries({chromium,firefox,webkit})){
 }
 // Audio restoration requires real origin-backed IndexedDB, not about:blank.
 const audioRoot=resolve('homepages/op-1');
-const audioFiles=new Set(['index.html','workspace.js','workspace.css','comfort.js','comfort.css','sw.js','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png']);
+const audioFiles=new Set(['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','sw.js','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png']);
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.webmanifest':'application/manifest+json','.png':'image/png'};
 const server=createServer((req,res)=>{
  const pathname=new URL(req.url,'http://localhost').pathname;
@@ -69,7 +69,7 @@ const audioUrl='http://127.0.0.1:'+server.address().port+'/';
 const browser=await chromium.launch({headless:true});
 try{
  const page=await browser.newPage({viewport:{width:1300,height:850},acceptDownloads:true}),errors=[];
- page.on('pageerror',e=>errors.push(e.message));await page.goto(audioUrl,{waitUntil:'domcontentloaded'});await page.addStyleTag({content:"html.comfort-tabs-enabled .below .panel[data-comfort-tab],html.comfort-tabs-enabled .below .song-studio[data-comfort-tab]{display:block!important}html.comfort-tabs-enabled .below #sequencePanel{display:block!important}"});
+ page.on('pageerror',e=>errors.push(e.message));await page.goto(audioUrl,{waitUntil:'domcontentloaded'});await page.addStyleTag({content:"html.comfort-tabs-enabled .below .panel[data-comfort-tab],html.comfort-tabs-enabled .below .song-studio[data-comfort-tab]{display:block!important}html.comfort-tabs-enabled .below #sequencePanel{display:block!important}html.studio-simple .below [data-comfort-tab]{display:block!important}"});
  await draw(page,11);await draw(page,7);await page.locator('#rollSendSong').click();
  await page.locator('#startAudio').click();await page.locator('#workspacePlay').click();
  assert.match(await page.locator('#workspacePlay').innerText(),/STOP/);

@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { createServer } from 'node:http';
 import assert from 'node:assert/strict';
 
-const html=readFileSync('homepages/op-1/index.html','utf8');
+import {html} from './op1-test-html.mjs';
 function fixtureWav(){
  const sampleRate=22050,length=sampleRate*2,bytes=new Uint8Array(44+length*2),view=new DataView(bytes.buffer);
  for(const [at,s] of [[0,'RIFF'],[8,'WAVE'],[12,'fmt '],[36,'data']])for(let i=0;i<s.length;i++)view.setUint8(at+i,s.charCodeAt(i));
@@ -31,7 +31,7 @@ for(const [engineName,engine] of Object.entries({chromium,firefox,webkit})){
    const page=await ctx.newPage(),errors=[];
    page.on('pageerror',e=>errors.push(e.message));
    await page.goto(baseUrl,{waitUntil:'domcontentloaded'});
-   assert.match(await page.title(),/v1\.9/);
+   assert.match(await page.title(),/v2\.0/);
    assert.equal(await page.locator('#sampleWaveform').count(),1);
    assert.equal(await page.locator('#samplePreview').isDisabled(),true,'Audition should require a sample');
    await page.locator('#sampleAudioFile').setInputFiles({name:'workshop-test.wav',mimeType:'audio/wav',buffer:wav});

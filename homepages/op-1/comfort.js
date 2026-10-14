@@ -182,7 +182,7 @@ function initMidi(){
  midiInput.addEventListener('change',async()=>{const file=midiInput.files?.[0];midiInput.value='';if(!file)return;try{
   if(file.size>2*1024*1024)throw Error('MIDI file exceeds 2 MB');
   const score=api.parseRollMidi(await file.arrayBuffer());const done=importScore(score,midiTarget);
-  if(done){api.notice('Imported '+score.notes.length+' MIDI notes into '+({roll:'Piano Roll',pianola:'Pianola',synth:'Synth Note Player',song:'Song Workspace',drums:'Drum Sequencer',tape:'Tape Track'}[midiTarget])+'.');if(midiTarget==='song')chooseTab('Song');else if(midiTarget!=='roll')chooseTab('Compose')}
+  if(done){api.notice('Imported '+score.notes.length+' MIDI notes into '+({roll:'Piano Roll',pianola:'Pianola',synth:'Synth Note Player',song:'Song Workspace',drums:'Drum Sequencer',tape:'Tape Track'}[midiTarget])+'.');if(midiTarget==='song')chooseTab('Song');else if(midiTarget==='drums')chooseTab('Drums');else if(midiTarget==='tape')chooseTab('Tape');else if(midiTarget!=='roll')chooseTab('Compose')}
  }catch(e){api.notice('MIDI import failed: '+e.message);console.warn('MIDI import refused',e.message)}});
  const btn=(label,target)=>{const b=document.createElement('button');b.type='button';b.className='mini-btn';b.textContent=label;b.addEventListener('click',()=>midiImport(target));return b};
  $('pianolaImportJson')?.after(btn('IMPORT MIDI','pianola'));

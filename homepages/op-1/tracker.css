@@ -1,0 +1,57 @@
+/* v2.2 Tracker Studio. Original tracker-inspired interface, responsive and keyboard accessible. */
+.tracker-studio{width:100%;max-width:100%;box-sizing:border-box}
+.tracker-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.tracker-heading h2{margin:0;color:#315062}
+.tracker-heading h2 small{color:#7b98a8;font-size:12px;font-weight:500}
+.tracker-heading p{margin:6px 0 12px;line-height:1.6;font-size:12px;color:#577281}
+#trackerStatus{font-size:12px;font-weight:800;color:#257a91;max-width:420px;text-align:right;line-height:1.5}
+.tracker-controls,.tracker-chain,.tracker-actions,.tracker-editor{display:flex;align-items:flex-end;flex-wrap:wrap;gap:8px;margin:12px 0}
+.tracker-controls label,.tracker-editor label{display:flex;flex-direction:column;gap:4px;font-size:10px;font-weight:850;letter-spacing:.06em;color:#47687a}
+.tracker-controls input,.tracker-controls select,.tracker-chain input,.tracker-editor input,.tracker-editor select{min-height:40px;border:1px solid #abc4d0;color:#203d50;background:#fdfefe;border-radius:6px;padding:7px 8px;font-size:12px;max-width:150px}
+.tracker-controls button,.tracker-chain button,.tracker-actions button,.tracker-editor button{min-height:42px;border:1px solid #a6bfcc;background:#eff5f8;color:#31556b;border-radius:7px;padding:9px 11px;font-size:11px;font-weight:850}
+.tracker-controls button:hover,.tracker-actions button:hover,.tracker-editor button:hover,.tracker-chain button:hover{filter:brightness(.94)}
+#trackerDelete,#trackerErase{color:#924f41}
+.tracker-chain{padding:10px;background:#e4eef3;border:1px solid #b9cfd8;border-radius:8px;align-items:center}
+.tracker-chain label{font-size:11px;font-weight:850;color:#3c6477}
+.tracker-chain input{flex:1;min-width:160px;max-width:350px;text-transform:uppercase;letter-spacing:.07em;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.tracker-chain span{font-size:11px;color:#587788}
+.tracker-headers{display:grid;grid-template-columns:54px repeat(4,minmax(0,1fr));min-width:600px;gap:4px;background:#213746;border:1px solid #365768;border-bottom:0;border-radius:8px 8px 0 0;padding:8px 9px;color:#bde3ee;text-align:center;font:700 11px ui-monospace,SFMono-Regular,Consolas,monospace}
+.tracker-grid-scroll{border:1px solid #496272;background:#172530;border-radius:0 0 9px 9px;max-height:408px;overflow:auto;scrollbar-color:#668698 #1d2b35}
+.tracker-grid{min-width:600px;padding:4px 9px 7px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.tracker-row{display:grid;grid-template-columns:54px repeat(4,minmax(0,1fr));gap:4px;min-height:32px;align-items:stretch}
+.tracker-row:nth-child(4n+1){border-top:1px solid #395364}
+.tracker-row-number{display:flex;align-items:center;justify-content:center;font-weight:700;color:#7d9aa9;font-size:11px}
+.tracker-row.playing{background:#35536a}
+.tracker-cell{border:1px solid transparent;border-radius:3px;text-align:center;min-width:0;background:#233848;color:#9ee0cc;white-space:pre;font-family:inherit;font-size:11px;letter-spacing:0;min-height:31px;padding:4px}
+.tracker-row:nth-child(even) .tracker-cell{background:#1e3241}
+.tracker-cell:hover{border-color:#5ba7ba}
+.tracker-cell.selected,.tracker-row:nth-child(even) .tracker-cell.selected{background:#39728c;border-color:#a4dfef;color:white;box-shadow:inset 0 0 0 1px #9dc9de}
+.tracker-cell:focus-visible{outline:2px solid #e9c67c;outline-offset:0}
+.tracker-editor{background:#e5eef3;padding:12px;border:1px solid #bed2dc;border-radius:8px;align-items:flex-end}
+.tracker-editor>div:first-child{display:flex;flex-direction:column;gap:5px;min-width:130px;margin-right:4px}
+.tracker-editor strong{font-size:11px;color:#3e5f72}
+.tracker-editor small{font-size:11px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#376e87}
+.tracker-editor input{max-width:94px}
+#trackerWrite,#trackerPlay{background:#286d87;border-color:#23627b;color:white}
+.tracker-actions{border-top:1px solid #c2d5dd;padding-top:12px}
+.tracker-guide{font-size:12px;line-height:1.7;color:#607d8c}
+html.studio-simple #trackerStudio:not(.studio-current){display:none!important}
+html[data-op1-theme=dark] .tracker-heading p,html[data-op1-theme=dark] #trackerStatus,html[data-op1-theme=dark] .tracker-guide{color:#b8d0dc}
+html[data-op1-theme=dark] .tracker-controls label,html[data-op1-theme=dark] .tracker-editor label,html[data-op1-theme=dark] .tracker-chain label,html[data-op1-theme=dark] .tracker-editor strong{color:#c8e2ed}
+html[data-op1-theme=dark] .tracker-editor,html[data-op1-theme=dark] .tracker-chain{background:#2c414d;border-color:#4b6979}
+html[data-op1-theme=dark] .tracker-controls button,html[data-op1-theme=dark] .tracker-editor button,html[data-op1-theme=dark] .tracker-chain button,html[data-op1-theme=dark] .tracker-actions button{background:#37505f;border-color:#617d8e;color:#e9f6fb}
+html[data-op1-theme=dark] #trackerWrite,html[data-op1-theme=dark] #trackerPlay{background:#3585a0;color:#fff}
+html[data-op1-theme=dark] .tracker-chain span,html[data-op1-theme=dark] .tracker-editor small{color:#c0d9e6}
+@media(max-width:800px){
+ .tracker-headers{display:none}
+ .tracker-grid-scroll{max-height:360px}
+ .tracker-controls label{flex:1 1 120px}
+ .tracker-controls input,.tracker-controls select{max-width:none;width:100%}
+ .tracker-controls button{flex:1 1 27%}
+ .tracker-editor>div:first-child{flex:1 0 100%}
+ .tracker-editor label{flex:1 1 90px}
+ .tracker-editor label input,.tracker-editor label select{width:100%;max-width:none}
+ .tracker-editor button{flex:1}
+ .tracker-actions button{flex:1 1 42%;min-height:44px}
+ .tracker-chain input{min-width:100px}
+}

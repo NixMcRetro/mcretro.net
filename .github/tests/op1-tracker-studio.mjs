@@ -27,6 +27,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    await page.locator('[data-studio-group="Compose"]').click();
    await page.locator('[data-studio-tool="trackerStudio"]').click();
    assert(await page.locator('#trackerStudio').isVisible());
+   if(width===390)await page.locator('#trackerView').selectOption('all'); // Restore v2.2 four-column test view on phones.
    assert.equal(await page.locator('#trackerGrid [data-tracker-row]').count(),128);
    assert.equal(await page.locator('.tracker-row').count(),32);
    await page.locator('#trackerMidi').fill('60');

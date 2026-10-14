@@ -58,3 +58,11 @@ html[data-op1-theme=dark] .comfort-dialog button[aria-pressed=true]{background:#
 .comfort-midi-entry select{min-height:38px}
 @media(max-width:800px){.comfort-tabs{margin:10px auto 0;gap:4px}.comfort-tabs button{min-height:44px;flex:1 1 31%;font-size:11px}.comfort-octave{top:213px}.comfort-dialog{padding:12px;max-height:95dvh}.comfort-demo-grid{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}.mobile-keys{position:sticky;top:0;z-index:12;border:2px solid #b5c8d3;box-shadow:0 4px 10px #101b243a}.comfort-tabs-status{padding:0 6px}}
 @media(prefers-reduced-motion:reduce){.comfort-tabs button,.comfort-dialog button{transition:none}}
+
+/* The instrument stays playable while desktop workspaces are scrolled. */
+.comfort-keyboard-dock{position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:24;width:min(97vw,1180px);padding:8px 12px;border:1px solid #8ba2b1;border-radius:0 0 12px 12px;box-shadow:0 8px 25px #0005;background:#dbe6ec;display:grid;grid-template-columns:repeat(24,minmax(0,1fr));gap:3px}
+.comfort-keyboard-dock[hidden]{display:none!important}
+.comfort-dock-key{min-width:0;height:44px;display:flex;align-items:center;justify-content:center;padding:2px 0;font-size:9px;font-weight:700;background:#f7fbfd;border:1px solid #a7bdc9;color:#315265;border-radius:5px;touch-action:none}
+.comfort-dock-key.sharp{background:#27353d;color:#f0f6fa;border-color:#111e25}
+.comfort-dock-key.down{background:#69b9d0;color:#122b38}
+@media(max-width:800px){.comfort-keyboard-dock{display:none!important}}

@@ -59,7 +59,9 @@ try{
  const backup=JSON.parse(readFileSync(await item.path(),'utf8'));
  assert.equal(backup.format,'op1-browser-lab-v05','Portable project format was changed');
  assert.equal(backup.soundBank,1,'Backup lost the selected sound bank');
+ await page.getByRole('tab',{name:'Tools'}).click();
  await page.locator('#checkpointNow').click();
+ await page.getByRole('tab',{name:'Play'}).click();
  await page.waitForTimeout(1000);
  await ctx.setOffline(true);
  await page.reload({waitUntil:'domcontentloaded',timeout:20000});

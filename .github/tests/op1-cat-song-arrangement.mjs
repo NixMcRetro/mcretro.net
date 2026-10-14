@@ -68,13 +68,14 @@ try{
  const songFile=page.waitForEvent('download',{timeout:45000});await page.locator('#songExport').click();
  const songWav=readFileSync(await (await songFile).path());assert(pcmPeak(songWav)>50,'Arranged song WAV is silent');
  await page.locator('[data-cat="keyboard"]').click();
- await page.locator('#recButton').click();await page.locator('#playButton').click();
+ await page.locator('#startAudio').click();await page.waitForTimeout(100);await page.locator('#recButton').click();await page.locator('#playButton').click();
+ assert.equal(await page.locator('#recButton').getAttribute('aria-pressed'),'true','Recording should be armed');await page.waitForTimeout(100);
  await page.locator('.piano-key[data-note="0"]').dispatchEvent('pointerdown',{button:0,pointerId:11});await page.waitForTimeout(175);
  await page.locator('.piano-key[data-note="0"]').dispatchEvent('pointerup',{button:0,pointerId:11});
  await page.locator('.piano-key[data-note="12"]').dispatchEvent('pointerdown',{button:0,pointerId:12});await page.waitForTimeout(150);
  await page.locator('.piano-key[data-note="12"]').dispatchEvent('pointerup',{button:0,pointerId:12});await page.locator('#stopButton').click();
  const savedFile=page.waitForEvent('download');await page.locator('#saveProject').click();const project=JSON.parse(readFileSync(await (await savedFile).path(),'utf8'));
- const meows=project.tracks[0].events.filter(e=>e.kind==='catKeyboard');assert(meows.length>=2,'Recorded cat notes were not preserved');
+ const meows=project.tracks.flatMap(t=>t.events).filter(e=>e.kind==='catKeyboard');assert(meows.length>=2,'Recorded cat notes were not preserved: '+JSON.stringify({catMode:project.catMode,allEvents:project.tracks.map(t=>t.events),status:await page.locator('#statusText').innerText()}));
  assert(new Set(meows.map(e=>e.n)).size>=2,'Keyboard pitch did not follow distinct musical notes');
  await page.locator('#stemTrack').selectOption('0');
  const stemFile=page.waitForEvent('download',{timeout:45000});await page.locator('#stemExport').click();

@@ -181,6 +181,7 @@ function chooseTab(tab){
  document.querySelectorAll('.comfort-tabs button[data-comfort-view]').forEach(b=>{const active=b.dataset.comfortView===tab;b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1});
  $('comfortTabStatus').textContent={Play:'SYNTH, sound banks and performance basics',Drums:'Pattern, Endless, Arpeggio, Finger and Tombola sequencers',Tape:'Tape editing, four-track mixing, microphone and sampling',Compose:'Pianola, Synth Note Player and polyphonic Piano Roll',Song:'Song Arrangement and the 64-bar Unified Song Workspace',Tools:'Project recovery, storage, offline installation and backup'}[tab];
  safeStore('op1-lab-ui-tab-v201',tab);
+ window.dispatchEvent(new CustomEvent('op1:tabchange',{detail:{tab}}));
 }
 function initTabs(){
  assignPanels();const nav=document.createElement('div');nav.className='comfort-tabs';nav.id='comfortTabs';nav.setAttribute('role','tablist');nav.setAttribute('aria-label','Studio workspaces');

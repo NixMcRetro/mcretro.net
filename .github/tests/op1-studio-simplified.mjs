@@ -21,6 +21,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert(await page.locator('#piano').isVisible(),'Physical keyboard must remain visible');
   assert(!(await page.locator('#comfortTabs').isVisible()),'The six advanced tabs are redundant in Simple mode');
   assert(!(await page.locator('.quick-strip').isVisible()),'Redundant shortcut strip was not hidden in Simple');
+  assert(!(await page.locator('#comfortMidiEntry').isVisible()),'Unused MIDI picker should be collapsed in Simple');
   assert.equal(await page.locator('#comfortKeyboardDock .comfort-dock-key').count(),24,'Sticky desktop keyboard missing');
   await page.locator('#studioDemo').click();
   assert(await page.locator('#comfortDemoDialog').isVisible(),'Demo browser not reachable from simple toolbar');
@@ -32,7 +33,10 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert(await page.locator('#rollPanel').isVisible(),'Compose should start on polyphonic editor');
   assert.equal(await countVisible(page),1);
   await page.locator('#studioMidi').click();
+  assert(await page.locator('#comfortMidiEntry').isVisible(),'MIDI picker did not expand');
   assert.equal(await page.evaluate('document.activeElement.id'),'comfortMidiDestination');
+  await page.locator('#studioMidi').click();
+  assert(!(await page.locator('#comfortMidiEntry').isVisible()),'MIDI picker should close cleanly');
   await page.locator('[data-studio-tool="pianolaPanel"]').click();
   assert(await page.locator('#pianolaPanel').isVisible());
   await page.locator('#pianolaPitch').selectOption('60');await page.locator('#pianolaAdd').click();

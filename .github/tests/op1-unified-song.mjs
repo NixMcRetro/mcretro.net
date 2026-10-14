@@ -1,6 +1,8 @@
 // v2.0 Unified Song Workspace: portable clips, old projects, sound and tape handoff.
 import {chromium,firefox,webkit} from 'playwright';
 import {readFileSync} from 'node:fs';
+import {createServer} from 'node:http';
+import {resolve,join,extname} from 'node:path';
 import assert from 'node:assert/strict';
 import {html} from './op1-test-html.mjs';
 async function getFile(page,id){const pending=page.waitForEvent('download',{timeout:12000});await page.locator(id).click();await page.waitForTimeout(200);const immediate=await page.evaluate(()=>({feedback:document.querySelector('#feedback')?.textContent,recovery:document.querySelector('#recoveryIndicator')?.textContent,assets:document.querySelector('#audioStatus')?.textContent,errors:window.__op1Errors||[],messages:window.__op1Messages||[]}));try{return readFileSync(await (await pending).path());}catch(e){console.error('DOWNLOAD DIAGNOSTIC',JSON.stringify({id,immediate,feedback:await page.locator('#feedback').innerText(),recovery:await page.locator('#recoveryIndicator').innerText(),audio:await page.locator('#audioStatus').innerText(),workspace:await page.locator('#workspaceStatus').innerText()}));throw e}}
@@ -51,10 +53,23 @@ for(const [browserName,engine] of Object.entries({chromium,firefox,webkit})){
   console.log(browserName,width,'clips/edit/undo/project safety passed');await ctx.close();
  }}finally{await browser.close();}
 }
+// Audio restoration requires real origin-backed IndexedDB, not about:blank.
+const audioRoot=resolve('homepages/op-1');
+const audioFiles=new Set(['index.html','workspace.js','workspace.css','sw.js','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png']);
+const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.webmanifest':'application/manifest+json','.png':'image/png'};
+const server=createServer((req,res)=>{
+ const pathname=new URL(req.url,'http://localhost').pathname;
+ const path=pathname==='/'?'index.html':pathname.replace(/^\//,'');
+ if(!audioFiles.has(path)){res.writeHead(404);res.end('Not found');return;}
+ try{res.writeHead(200,{'Content-Type':mime[extname(path)]||'application/octet-stream','Cache-Control':'no-cache'});res.end(readFileSync(join(audioRoot,path)));}
+ catch(e){res.writeHead(404);res.end('Not found');}
+});
+await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+const audioUrl='http://127.0.0.1:'+server.address().port+'/';
 const browser=await chromium.launch({headless:true});
 try{
  const page=await browser.newPage({viewport:{width:1300,height:850},acceptDownloads:true}),errors=[];
- page.on('pageerror',e=>errors.push(e.message));await page.setContent(html);
+ page.on('pageerror',e=>errors.push(e.message));await page.goto(audioUrl,{waitUntil:'domcontentloaded'});
  await draw(page,11);await draw(page,7);await page.locator('#rollSendSong').click();
  await page.locator('#startAudio').click();await page.locator('#workspacePlay').click();
  assert.match(await page.locator('#workspacePlay').innerText(),/STOP/);
@@ -75,4 +90,4 @@ try{
  const wav68=await getFile(page,'#workspaceExport');assert(peak(wav68)>30,'6/8 WAV silent');
  assert.deepEqual(errors,[]);
  console.log('Chromium stereo WAV, print to PCM tape, imported backup and 6/8 passed');
-}finally{await browser.close();}
+}finally{await browser.close();await new Promise(resolve=>server.close(resolve));}

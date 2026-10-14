@@ -157,7 +157,7 @@ function initPanelLinks(){
 }
 function init(){
  if(!$('comfortTabs')||!window.OP1Comfort)return;
- initPrimaryNav();initToolbar();initQuickActions();initPanelLinks();
+ initToolbar();initPrimaryNav();initQuickActions();initPanelLinks();
  window.addEventListener('op1:tabchange',e=>onLegacyTab(e.detail?.tab));
  const remembered=read(KEY_TOOL);
  if(remembered&&all.some(t=>t.id===remembered))selected=remembered;

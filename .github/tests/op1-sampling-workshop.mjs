@@ -1,6 +1,7 @@
 // v1.6 Sampling Workshop cross-browser and project compatibility checks.
 import { chromium, firefox, webkit } from 'playwright';
 import { readFileSync } from 'node:fs';
+import { createServer } from 'node:http';
 import assert from 'node:assert/strict';
 
 const html=readFileSync('homepages/op-1/index.html','utf8');
@@ -12,6 +13,16 @@ function fixtureWav(){
  return Buffer.from(bytes);
 }
 const wav=fixtureWav();
+// Serve localhost so IndexedDB can persist the source WAV; about:blank blocks storage.
+const server=createServer((request,response)=>{
+ const path=new URL(request.url,'http://localhost').pathname;
+ const resources={'/':'homepages/op-1/index.html','/index.html':'homepages/op-1/index.html','/sw.js':'homepages/op-1/sw.js','/manifest.webmanifest':'homepages/op-1/manifest.webmanifest'};
+ const file=resources[path]||(path.startsWith('/icons/')?'homepages/op-1'+path:null);if(!file){response.writeHead(404);response.end('not found');return}
+ const mime=path.endsWith('.png')?'image/png':path.endsWith('.js')?'text/javascript':path.endsWith('.webmanifest')?'application/manifest+json':'text/html';
+ response.writeHead(200,{'Content-Type':mime});response.end(readFileSync(file));
+});
+await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+const baseUrl='http://127.0.0.1:'+server.address().port+'/';
 for(const [engineName,engine] of Object.entries({chromium,firefox,webkit})){
  const browser=await engine.launch({headless:true});
  try {
@@ -19,7 +30,7 @@ for(const [engineName,engine] of Object.entries({chromium,firefox,webkit})){
    const ctx=await browser.newContext({viewport:{width,height:850},acceptDownloads:true});
    const page=await ctx.newPage(),errors=[];
    page.on('pageerror',e=>errors.push(e.message));
-   await page.setContent(html,{waitUntil:'domcontentloaded'});
+   await page.goto(baseUrl,{waitUntil:'domcontentloaded'});
    assert.match(await page.title(),/v1\.6/);
    assert.equal(await page.locator('#sampleWaveform').count(),1);
    assert.equal(await page.locator('#samplePreview').isDisabled(),true,'Audition should require a sample');
@@ -79,3 +90,5 @@ for(const [engineName,engine] of Object.entries({chromium,firefox,webkit})){
   }
  }finally{await browser.close()}
 }
+
+await new Promise(resolve=>server.close(resolve));

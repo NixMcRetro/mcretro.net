@@ -1,0 +1,82 @@
+// Studio Simplified v2.1: real production UI, layout-only preference, mobile and keyboard safety.
+import { chromium, firefox, webkit } from 'playwright';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { rawHtml } from './op1-test-html.mjs';
+const expected=['Sounds','Compose','Record & Mix','Tools'];
+const countVisible=page=>page.locator('.below [data-comfort-tab]:visible').count();
+const save=async page=>{const pending=page.waitForEvent('download');await page.locator('#saveProject').click();return JSON.parse(readFileSync(await(await pending).path(),'utf8'))};
+for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
+ const browser=await engine.launch({headless:true});
+ try{for(const width of (name==='chromium'?[1440,390]:[1100])){
+  const ctx=await browser.newContext({viewport:{width,height:900},acceptDownloads:true}),page=await ctx.newPage(),errors=[];
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.setContent(rawHtml,{waitUntil:'domcontentloaded'});
+  assert.match(await page.title(),/v2\.1/);
+  assert.equal(await page.locator('#studioMainNavigation [data-studio-group]').count(),4);
+  assert.deepEqual(await page.locator('#studioMainNavigation [data-studio-group]').allTextContents().then(xs=>xs.map(s=>expected.find(y=>s.includes(y)))),expected);
+  assert.equal(await page.locator('#studioSimpleButton').getAttribute('aria-pressed'),'true');
+  assert.equal(await countVisible(page),1,'Simple mode must show exactly one focused editor');
+  assert(await page.locator('#soundLibrary').isVisible(),'Simple default should show an approachable preset library');
+  assert(await page.locator('#piano').isVisible(),'Physical keyboard must remain visible');
+  assert(!(await page.locator('#comfortTabs').isVisible()),'The six advanced tabs are redundant in Simple mode');
+  assert(!(await page.locator('.quick-strip').isVisible()),'Redundant shortcut strip was not hidden in Simple');
+  assert.equal(await page.locator('#comfortKeyboardDock .comfort-dock-key').count(),24,'Sticky desktop keyboard missing');
+  await page.locator('#studioDemo').click();
+  assert(await page.locator('#comfortDemoDialog').isVisible(),'Demo browser not reachable from simple toolbar');
+  await page.locator('#comfortDemoClose').click();
+  await page.locator('[data-studio-tool="soundPanel"]').click();
+  assert(await page.locator('#soundPanel').isVisible());
+  assert.equal(await countVisible(page),1);
+  await page.locator('[data-studio-group="Compose"]').click();
+  assert(await page.locator('#rollPanel').isVisible(),'Compose should start on polyphonic editor');
+  assert.equal(await countVisible(page),1);
+  await page.locator('#studioMidi').click();
+  assert.equal(await page.evaluate('document.activeElement.id'),'comfortMidiDestination');
+  await page.locator('[data-studio-tool="pianolaPanel"]').click();
+  assert(await page.locator('#pianolaPanel').isVisible());
+  await page.locator('#pianolaPitch').selectOption('60');await page.locator('#pianolaAdd').click();
+  await page.locator('#studioPianolaToSong').click();
+  assert(await page.locator('#songStudio').isVisible(),'Pianola to arrangement help went to wrong panel');
+  await page.locator('#workspaceAddPianola').click();
+  assert.equal(await page.locator('.workspace-clip-item').count(),1,'Pianola score did not enter timeline');
+  const project=await save(page);
+  assert.equal(project.version,5,'Simple view must not upgrade project format');
+  assert.equal(project.songWorkspace.clips.length,1);
+  await page.locator('[data-studio-group="Record & Mix"]').click();
+  assert(await page.locator('#comfortTapePanel').isVisible());
+  await page.locator('#studioMix').click();
+  assert(await page.locator('#performancePanel').isVisible());
+  await page.locator('[data-studio-group="Tools"]').click();
+  assert(await page.locator('#recoveryPanel').isVisible());
+  await page.locator('[data-studio-tool="offlinePanel"]').click();
+  assert(await page.locator('#offlinePanel').isVisible(),'Mobile and offline settings lost in Simple');
+  await page.locator('#studioAdvancedButton').click();
+  assert.equal(await page.locator('#studioAdvancedButton').getAttribute('aria-pressed'),'true');
+  assert(await page.locator('#comfortTabs').isVisible(),'Advanced must restore six original tabs');
+  assert.equal(await page.locator('#comfortTabs [role="tab"]').count(),6);
+  assert(!(await page.locator('#studioMainNavigation').isVisible()),'Simple stage navigation should be hidden in Advanced');
+  await page.getByRole('tab',{name:'Compose'}).click();
+  assert(await page.locator('#rollPanel').isVisible(),'Original polyphonic composer not restored');
+  assert(await page.locator('#pianolaPanel').isVisible(),'Original Pianola composer not restored');
+  await page.locator('#studioSimpleButton').click();
+  assert.equal(await countVisible(page),1,'Returning to Simple should focus on one editor');
+  assert(await page.locator('#rollPanel').isVisible(),'Returning from Advanced must preserve current editor');
+  const roundtrip=await save(page);
+  assert.deepEqual(roundtrip.songWorkspace,project.songWorkspace,'Layout switching changed user song clips');
+  assert.deepEqual(roundtrip.pianola,project.pianola,'Layout switching changed user Pianola notes');
+  assert.deepEqual(roundtrip.tracks,project.tracks,'Layout switching changed tape recordings');
+  assert.equal(roundtrip.format,project.format);
+  await page.locator('#studioKeyboardHelp').click();
+  assert(await page.locator('#studioShortcutHelp').isVisible());
+  if(width===390){
+   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
+   assert(overflow<=1,'Mobile simple studio overflows by '+overflow+'px');
+   assert(await page.locator('#mobileKeys').isVisible(),'Mobile keyboard not present');
+   assert.equal(await page.locator('#mobileDown').count(),1,'Mobile octave control removed');
+  }
+  assert.deepEqual(errors,[],'Browser JavaScript exceptions');
+  console.log('PASS v2.1 Simple / Advanced',name,width,'responsive workflow, MIDI, projects, song and mobile access');
+  await ctx.close();
+ }}finally{await browser.close()}
+}

@@ -49,6 +49,8 @@ try{
  await page.locator('#installApp').click();
  assert(await page.locator('#offlineInstructions').isVisible(),'Device installation guidance missing');
  await page.locator('#closeOfflineInstructions').click();
+ await page.locator('#comfortTheme').click();
+ assert.equal(await page.locator('html').getAttribute('data-op1-theme'),'dark');
  await page.locator('#bankNext').click();
  assert.equal(await page.locator('#bankName').innerText(),'AFTER HOURS');
  const download=page.waitForEvent('download');
@@ -66,6 +68,7 @@ try{
  assert.equal(await page.locator('.knob').count(),4,'Encoder controls missing offline');
  await page.waitForFunction(()=>document.querySelector('#offlineBadge')?.textContent==='CACHED',null,{timeout:10000});
  assert.equal(await page.locator('#bankName').innerText(),'AFTER HOURS','Local project state lost after offline reload');
+ assert.equal(await page.locator('html').getAttribute('data-op1-theme'),'dark','Graphite theme preference was not retained offline');
  await page.locator('.mode-btn[data-mode="tape"]').click();
  assert.equal(await page.locator('.mode-btn[data-mode="tape"]').getAttribute('aria-pressed'),'true');
  assert.deepEqual(errors,[],'Browser JavaScript errors');

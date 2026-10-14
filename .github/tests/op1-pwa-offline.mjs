@@ -26,10 +26,10 @@ try{
  const page=await ctx.newPage(),errors=[];
  page.on('pageerror',e=>errors.push(String(e)));
  await page.goto(origin,{waitUntil:'domcontentloaded'});
- assert.match(await page.title(),/v1\.5\.1/);
+ assert.match(await page.title(),/v1\.6/);
  await page.waitForFunction(async()=>{
   if(!navigator.serviceWorker?.controller)return false;
-  const c=await caches.open('op1-browser-lab-shell-v1.5.1');
+  const c=await caches.open('op1-browser-lab-shell-v1.6');
   return !!(await c.match(new URL('index.html',location.href).href));
  },null,{timeout:30000});
  await page.waitForFunction(()=>document.querySelector('#offlineBadge')?.textContent==='CACHED',null,{timeout:15000});
@@ -37,7 +37,7 @@ try{
  const registration=await page.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration();return {scope:r?.scope,controller:!!navigator.serviceWorker.controller}});
  assert(registration.scope.endsWith('/homepages/op-1/'),'Service worker scope escaped instrument path');
  assert(registration.controller,'Page has no controlling service worker');
- const cached=await page.evaluate(async()=>{const c=await caches.open('op1-browser-lab-shell-v1.5.1');return (await c.keys()).map(req=>new URL(req.url).pathname)});
+ const cached=await page.evaluate(async()=>{const c=await caches.open('op1-browser-lab-shell-v1.6');return (await c.keys()).map(req=>new URL(req.url).pathname)});
  assert(cached.some(x=>x.endsWith('/index.html')),'Application HTML not cached');
  assert(cached.some(x=>x.endsWith('/icons/icon-512.png')),'App icon not cached');
  assert(cached.every(x=>x.startsWith('/homepages/op-1/')),'Cache escaped intended scope');
@@ -57,7 +57,7 @@ try{
  await page.waitForTimeout(1000);
  await ctx.setOffline(true);
  await page.reload({waitUntil:'domcontentloaded',timeout:20000});
- assert.match(await page.title(),/v1\.5\.1/);
+ assert.match(await page.title(),/v1\.6/);
  assert.equal(await page.locator('.sound-key').count(),8,'Instrument did not load offline');
  assert.equal(await page.locator('.knob').count(),4,'Encoder controls missing offline');
  await page.waitForFunction(()=>document.querySelector('#offlineBadge')?.textContent==='CACHED',null,{timeout:10000});

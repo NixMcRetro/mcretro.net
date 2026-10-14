@@ -6,12 +6,12 @@ import { resolve, join, extname } from 'node:path';
 import assert from 'node:assert/strict';
 
 const root=resolve('homepages/op-1');
-const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.webmanifest':'application/manifest+json','.png':'image/png'};
+const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.webmanifest':'application/manifest+json','.png':'image/png'};
 const server=createServer((req,res)=>{
  const url=new URL(req.url,'http://localhost');
  const rel=url.pathname.startsWith('/homepages/op-1/')?url.pathname.slice('/homepages/op-1/'.length):null;
  const name=rel===''?'index.html':rel;
- if(name===null||!['index.html','sw.js','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png'].includes(name)){
+ if(name===null||!['index.html','workspace.js','workspace.css','sw.js','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png'].includes(name)){
   res.writeHead(404);res.end('Not found');return;
  }
  try{const bytes=readFileSync(join(root,name));res.writeHead(200,{'content-type':types[extname(name)]??'application/octet-stream','cache-control':'no-cache'});res.end(bytes)}
@@ -26,10 +26,10 @@ try{
  const page=await ctx.newPage(),errors=[];
  page.on('pageerror',e=>errors.push(String(e)));
  await page.goto(origin,{waitUntil:'domcontentloaded'});
- assert.match(await page.title(),/v1\.9/);
+ assert.match(await page.title(),/v2\.0/);
  await page.waitForFunction(async()=>{
   if(!navigator.serviceWorker?.controller)return false;
-  const c=await caches.open('op1-browser-lab-shell-v1.9');
+  const c=await caches.open('op1-browser-lab-shell-v2.0');
   return !!(await c.match(new URL('index.html',location.href).href));
  },null,{timeout:30000});
  await page.waitForFunction(()=>document.querySelector('#offlineBadge')?.textContent==='CACHED',null,{timeout:15000});
@@ -37,8 +37,10 @@ try{
  const registration=await page.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration();return {scope:r?.scope,controller:!!navigator.serviceWorker.controller}});
  assert(registration.scope.endsWith('/homepages/op-1/'),'Service worker scope escaped instrument path');
  assert(registration.controller,'Page has no controlling service worker');
- const cached=await page.evaluate(async()=>{const c=await caches.open('op1-browser-lab-shell-v1.9');return (await c.keys()).map(req=>new URL(req.url).pathname)});
+ const cached=await page.evaluate(async()=>{const c=await caches.open('op1-browser-lab-shell-v2.0');return (await c.keys()).map(req=>new URL(req.url).pathname)});
  assert(cached.some(x=>x.endsWith('/index.html')),'Application HTML not cached');
+ assert(cached.some(x=>x.endsWith('/workspace.js')),'Song workspace logic not cached');
+ assert(cached.some(x=>x.endsWith('/workspace.css')),'Song workspace styles not cached');
  assert(cached.some(x=>x.endsWith('/icons/icon-512.png')),'App icon not cached');
  assert(cached.every(x=>x.startsWith('/homepages/op-1/')),'Cache escaped intended scope');
  assert(cached.every(x=>!x.includes('recording')&&!x.includes('sample')&&!x.endsWith('.json')),'Cache contains user data');
@@ -57,7 +59,7 @@ try{
  await page.waitForTimeout(1000);
  await ctx.setOffline(true);
  await page.reload({waitUntil:'domcontentloaded',timeout:20000});
- assert.match(await page.title(),/v1\.9/);
+ assert.match(await page.title(),/v2\.0/);
  assert.equal(await page.locator('.sound-key').count(),8,'Instrument did not load offline');
  assert.equal(await page.locator('.knob').count(),4,'Encoder controls missing offline');
  await page.waitForFunction(()=>document.querySelector('#offlineBadge')?.textContent==='CACHED',null,{timeout:10000});

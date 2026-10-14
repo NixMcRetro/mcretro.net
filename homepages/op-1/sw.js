@@ -1,6 +1,6 @@
-/* OP-1 Browser Lab v2.2. Cache only the static application shell, not projects. */
+/* OP-1 Browser Lab v2.3. Cache only the static application shell, not projects. */
 'use strict';
-const CACHE='op1-browser-lab-shell-v2.2';
+const CACHE='op1-browser-lab-shell-v2.3';
 const PREFIX='op1-browser-lab-shell-';
 const SCOPE=new URL('./',self.location.href);
 const SHELL=['./','./index.html','./workspace.js','./workspace.css','./comfort.js','./comfort.css','./simplified.js','./simplified.css','./tracker.js','./tracker.css','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/icon-maskable-512.png','./icons/apple-touch-icon.png'];

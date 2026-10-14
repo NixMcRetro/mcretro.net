@@ -57,3 +57,47 @@ html[data-op1-theme=dark] .tracker-chain span,html[data-op1-theme=dark] .tracker
  .tracker-actions button{flex:1 1 42%;min-height:44px}
  .tracker-chain input{min-width:100px}
 }
+
+/* v2.3 Music-Making Update */
+.tracker-view,.tracker-demos{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:10px 0;padding:10px 12px;background:#e7eff4;border:1px solid #bdcfda;border-radius:9px;font-size:12px}
+.tracker-view label,.tracker-demos label{font-size:11px;font-weight:850;color:#3d6074}
+.tracker-view select,.tracker-demos select{flex:1 1 155px;min-height:42px;min-width:0;max-width:350px;border-radius:6px;border:1px solid #abc4d0;background:#fff;color:#28475a;padding:8px}
+.tracker-view small{flex:1 1 200px;color:#5c7b8b;font-size:11px}
+.tracker-demos button{min-height:42px;background:#286d87;color:#fff;border:1px solid #23627b;padding:8px 14px;border-radius:7px;font-weight:850}
+.tracker-audition{display:flex;align-items:center;gap:7px;font-size:11px;color:#47687a;font-weight:800}
+.tracker-audition input{width:18px;height:18px;accent-color:#286d87}
+.tracker-batch-editor{margin:12px 0;border:1px solid #b5cbd8;border-radius:9px;background:#eef4f7;overflow:hidden}
+.tracker-batch-editor summary{cursor:pointer;padding:13px 14px;font-size:12px;font-weight:900;letter-spacing:.045em;color:#31566c}
+.tracker-batch-editor[open] summary{border-bottom:1px solid #b5cbd8}
+.tracker-batch-form{padding:12px;display:flex;align-items:end;gap:9px;flex-wrap:wrap}
+.tracker-batch-form label{display:flex;flex-direction:column;gap:5px;color:#416477;font-size:10px;font-weight:850;letter-spacing:.04em}
+.tracker-batch-form select,.tracker-batch-form input{height:40px;max-width:185px;min-width:100px;background:#fff;border:1px solid #adbfce;border-radius:6px;color:#26475c;padding:8px;font-size:12px}
+.tracker-batch-form button{min-height:42px;padding:8px 11px;border:1px solid #a8c2d0;border-radius:7px;background:#fff;color:#28506a;font-size:11px;font-weight:850}
+.tracker-batch-form button:hover,.tracker-demos button:hover{filter:brightness(.95)}
+.tracker-mixer{border:1px solid #aac4d1;border-radius:10px;background:#eaf2f6;margin:15px 0;padding:12px}
+.tracker-mixer h3{color:#31556a;font-size:12px;margin:0 0 12px;letter-spacing:.05em}
+.tracker-mixer h3 small{font-weight:500;font-size:11px;color:#658190;letter-spacing:normal}
+.tracker-mixer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.tracker-mixer-strip{display:flex;flex-direction:column;gap:10px;border:1px solid #b7cbd5;border-radius:8px;padding:10px;background:#f8fcfd;min-width:0}
+.tracker-mixer-strip strong{font-size:11px;color:#245873}
+.tracker-mixer-strip label{display:flex;flex-direction:column;gap:4px;font-size:10px;font-weight:800;color:#4d7182}
+.tracker-mixer-strip label output{font-weight:700;color:#286d87}
+.tracker-mixer-strip input[type=range]{width:100%;height:24px;accent-color:#347f9d;cursor:pointer;touch-action:pan-y}
+.tracker-mixer-strip>div{display:flex;gap:6px;flex-wrap:wrap}
+.tracker-mixer-strip button{flex:1 1 45%;min-height:40px;border-radius:6px;background:#e8f1f5;border:1px solid #a8c1ce;color:#31576c;font-weight:850;font-size:11px}
+.tracker-mixer-strip button[aria-pressed=true]{background:#356f8b;border-color:#245e78;color:#fff}
+.tracker-studio:not([data-focus-channel=all]) .tracker-headers{display:none}
+.tracker-studio:not([data-focus-channel=all]) .tracker-row{grid-template-columns:54px minmax(0,1fr)}
+.tracker-studio:not([data-focus-channel=all]) .tracker-grid{min-width:0}
+.tracker-studio[data-focus-channel="0"] .tracker-cell:not([data-tracker-ch="0"]),
+.tracker-studio[data-focus-channel="1"] .tracker-cell:not([data-tracker-ch="1"]),
+.tracker-studio[data-focus-channel="2"] .tracker-cell:not([data-tracker-ch="2"]),
+.tracker-studio[data-focus-channel="3"] .tracker-cell:not([data-tracker-ch="3"]){display:none}
+html[data-op1-theme=dark] .tracker-view,html[data-op1-theme=dark] .tracker-demos,html[data-op1-theme=dark] .tracker-batch-editor,html[data-op1-theme=dark] .tracker-mixer{background:#2c414d;border-color:#4b6979;color:#d2e9f3}
+html[data-op1-theme=dark] .tracker-view label,html[data-op1-theme=dark] .tracker-view small,html[data-op1-theme=dark] .tracker-demos label,html[data-op1-theme=dark] .tracker-batch-editor summary,html[data-op1-theme=dark] .tracker-batch-form label,html[data-op1-theme=dark] .tracker-mixer h3,html[data-op1-theme=dark] .tracker-mixer h3 small,html[data-op1-theme=dark] .tracker-audition{color:#d2e9f3}
+html[data-op1-theme=dark] .tracker-mixer-strip{background:#243945;border-color:#527081}
+html[data-op1-theme=dark] .tracker-mixer-strip strong,html[data-op1-theme=dark] .tracker-mixer-strip label{color:#d3e9f4}
+html[data-op1-theme=dark] .tracker-mixer-strip button{background:#345264;color:#e5f5fb;border-color:#658494}
+html[data-op1-theme=dark] .tracker-mixer-strip button[aria-pressed=true]{background:#286d87;color:#fff}
+@media(max-width:800px){.tracker-mixer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tracker-batch-form label{flex:1 1 130px}.tracker-batch-form button{flex:1 1 125px}}
+@media(max-width:420px){.tracker-mixer{padding:8px}.tracker-mixer-strip{padding:8px}.tracker-view small{flex:1 1 100%}.tracker-edit-tools button{flex:1 1 40%}}

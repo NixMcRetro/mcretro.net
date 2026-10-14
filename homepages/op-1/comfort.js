@@ -119,10 +119,33 @@ function importToSong(score){
  s.songWorkspace=window.OP1Workspace.normalize(ws);if(!existing.length)s.bpm=score.bpm;
  window.OP1Workspace.stop();window.OP1Workspace.render();api.syncUI();api.markDirty();return true
 }
+function importToDrums(score){
+ const s=state(),pattern=Array(16).fill(null),bar=METERS[score.meter];
+ if(score.notes.some(n=>n.start+n.beats>bar+.001))throw Error('A drum sequencer pattern holds one bar. Import longer drum MIDI into Song Workspace or Tape.');
+ for(const n of score.notes){const step=Math.round(n.start/bar*16),index=n.midi>=48&&n.midi<=71?n.midi-48:n.midi>=35&&n.midi<=58?n.midi-35:-1;
+  if(index<0||index>23||step<0||step>15)throw Error('Drum MIDI pitches must be 48 to 71 (or 35 to 58 General MIDI pitches).');
+  if(pattern[step]!==null)throw Error('Two drum notes share step '+(step+1)+'. Use Piano Roll or Song Workspace for polyphony.');
+  pattern[step]=index;
+ }
+ const old=api.patternForSlot(s.patternSlot);
+ if(old.some(n=>n!==null)&&!confirm('Replace Pattern '+s.patternSlot+' with the imported MIDI drum sequence?'))return false;
+ old.splice(0,16,...pattern);api.syncUI();api.markDirty();chooseTab('Drums');return true
+}
+function importToTape(score){
+ const s=state(),duration=60/score.bpm,track=s.tracks[s.selectedTrack];
+ if(score.notes.length+track.events.length>10000)throw Error('Selected tape track has too many note events.');
+ if(score.notes.some(n=>(n.start+n.beats)*duration>60||n.beats*duration>12))throw Error('MIDI exceeds the 60-second tape range or 12-second sustained note limit.');
+ if(!confirm('Add '+score.notes.length+' MIDI note events to tape track '+(s.selectedTrack+1)+'? Existing recordings remain.'))return false;
+ const p=api.snapshotPatch();api.checkpointEdit();
+ for(const n of score.notes)track.events.push({t:n.start*duration,d:n.beats*duration,n:n.midi,kind:'synth',kit:s.kit,patch:p,sampleId:null,sliceIndex:0,sliceSettings:null});
+ api.syncUI();api.markDirty();chooseTab('Tape');return true
+}
 function importScore(score,target){
  const s=state();
  if(target==='roll'){if(s.pianoRoll.notes.length&&!confirm('Replace the current Piano Roll notes? Export or back up this score first if you need both.'))return false;api.importRollScore(score);return true}
  if(target==='song')return importToSong(score);
+ if(target==='drums')return importToDrums(score);
+ if(target==='tape')return importToTape(score);
  const value=toMonophonic(score);
  if(target==='pianola'){if(s.pianola.notes.length&&!confirm('Replace your Pianola score with this MIDI? Your current score will be lost unless backed up.'))return false;
   api.pianolaMutate(()=>{s.pianola={meter:value.meter,notes:value.notes,repeat:false}});
@@ -140,16 +163,21 @@ function initMidi(){
  midiInput.addEventListener('change',async()=>{const file=midiInput.files?.[0];midiInput.value='';if(!file)return;try{
   if(file.size>2*1024*1024)throw Error('MIDI file exceeds 2 MB');
   const score=api.parseRollMidi(await file.arrayBuffer());const done=importScore(score,midiTarget);
-  if(done){api.notice('Imported '+score.notes.length+' MIDI notes into '+({roll:'Piano Roll',pianola:'Pianola',synth:'Synth Note Player',song:'Song Workspace'}[midiTarget])+'.');if(midiTarget==='song')chooseTab('Song');else if(midiTarget!=='roll')chooseTab('Compose')}
+  if(done){api.notice('Imported '+score.notes.length+' MIDI notes into '+({roll:'Piano Roll',pianola:'Pianola',synth:'Synth Note Player',song:'Song Workspace',drums:'Drum Sequencer',tape:'Tape Track'}[midiTarget])+'.');if(midiTarget==='song')chooseTab('Song');else if(midiTarget!=='roll')chooseTab('Compose')}
  }catch(e){api.notice('MIDI import failed: '+e.message);console.warn('MIDI import refused',e.message)}});
  const btn=(label,target)=>{const b=document.createElement('button');b.type='button';b.className='mini-btn';b.textContent=label;b.addEventListener('click',()=>midiImport(target));return b};
  $('pianolaImportJson')?.after(btn('IMPORT MIDI','pianola'));
  $('synthScoreImport')?.after(btn('IMPORT MIDI','synth'));
  $('workspaceAddPianola')?.after(btn('＋ IMPORT MIDI','song'));
+ $('seqRun')?.after(btn('IMPORT MIDI','drums'));
+ $('goTape')?.after(btn('IMPORT MIDI','tape'));
+ document.querySelector('#pianolaImportJson + button')?.setAttribute('id','comfortMidiPianola');
+ document.querySelector('#synthScoreImport + button')?.setAttribute('id','comfortMidiSynth');
+ document.querySelector('#workspaceAddPianola + button')?.setAttribute('id','comfortMidiSong');
  const top=document.createElement('button');top.type='button';top.textContent='♫ MIDI IMPORT';top.className='action';top.id='comfortMidiTop';top.title='Choose a MIDI import destination';top.addEventListener('click',()=>{chooseTab('Compose');$('comfortMidiEntry').scrollIntoView({block:'center'});$('comfortMidiDestination').focus()});$('showHelp').before(top);
  // The top entry is a destination picker, rather than always overwriting a score.
  const wrapper=document.createElement('div');wrapper.className='comfort-midi-entry';wrapper.id='comfortMidiEntry';
- wrapper.innerHTML='<label for="comfortMidiDestination">IMPORT INTO <select id="comfortMidiDestination"><option value="roll">Piano Roll</option><option value="pianola">Pianola</option><option value="synth">Synth Note Player</option><option value="song">Song Workspace</option></select></label>';
+ wrapper.innerHTML='<label for="comfortMidiDestination">IMPORT INTO <select id="comfortMidiDestination"><option value="roll">Piano Roll</option><option value="pianola">Pianola</option><option value="synth">Synth Note Player</option><option value="song">Song Workspace</option><option value="drums">Drum Sequencer</option><option value="tape">Tape Track</option></select></label>';
  const b=document.createElement('button');b.type='button';b.className='mini-btn';b.textContent='CHOOSE MIDI';b.id='comfortMidiChoose';
  b.addEventListener('click',e=>{e.stopPropagation();midiImport($('comfortMidiDestination').value)});
  wrapper.append(b);$('comfortTabs').after(wrapper);

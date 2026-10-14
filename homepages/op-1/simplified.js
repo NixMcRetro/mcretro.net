@@ -10,6 +10,7 @@ const groups=[
   {id:'comfortPlayPanel',name:'Getting Started',tab:'Play',hint:'A short introduction to the instrument, recording and exporting.'}]},
  {name:'Compose',tag:'02',intro:'Write a melody, record chords, and assemble your song.',tools:[
   {id:'rollPanel',name:'Piano Roll',tab:'Compose',hint:'Draw or record polyphonic notes, import MIDI, and send your score to Song Workspace.'},
+  {id:'trackerStudio',name:'Tracker Studio',tab:'Compose',hint:'Four-channel pattern tracker, chains, note effects, MIDI/WAV and song arrangements.'},
   {id:'pianolaPanel',name:'Pianola',tab:'Compose',hint:'Enter a melody using written notes, rests and time signatures.'},
   {id:'songStudio',name:'Song Workspace',tab:'Song',hint:'Arrange piano, Pianola, drum and tape clips on four lanes. Legacy Song Arrangement is here too.'},
   {id:'synthScorePanel',name:'Synth Note Player',tab:'Compose',hint:'Play a saved melody through the selected instrument sound.'}]},
@@ -89,6 +90,9 @@ function onLegacyTab(tab){
  if(busy)return;
  const group=groups.find(g=>g.name===GROUP_BY_TAB[tab]);
  if(!group)return;
+ // Preserve a focused editor when the user reopens its existing Advanced tab.
+ // Otherwise choose that tab's familiar default editor.
+ if(activeTool().tab===tab){sync();return}
  selected=group.tools.find(t=>t.tab===tab)?.id||group.tools[0].id;
  store(KEY_TOOL,selected);sync();
 }

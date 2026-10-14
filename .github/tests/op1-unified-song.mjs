@@ -14,7 +14,7 @@ for(const [browserName,engine] of Object.entries({chromium,firefox,webkit})){
  try{for(const width of (browserName==='chromium'?[1440,390]:[1100])){
   const ctx=await browser.newContext({viewport:{width,height:880},acceptDownloads:true}),page=await ctx.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));await page.setContent(html,{waitUntil:'domcontentloaded'});await page.evaluate(()=>{window.__op1Messages=[];new MutationObserver(()=>{window.__op1Messages.push(document.querySelector('#feedback')?.textContent);}).observe(document.querySelector('#feedback'),{childList:true,characterData:true,subtree:true})});
-  assert.match(await page.title(),/v2\.1/);assert.equal(await page.locator('#workspacePanel').count(),1);
+  assert.match(await page.title(),/v2\.2/);assert.equal(await page.locator('#workspacePanel').count(),1);
   assert.equal(await page.evaluate('document.documentElement.scrollWidth'),width);
   await draw(page,11);await draw(page,7);await page.locator('#rollSendSong').click();
   let saved=await project(page);
@@ -55,7 +55,7 @@ for(const [browserName,engine] of Object.entries({chromium,firefox,webkit})){
 }
 // Audio restoration requires real origin-backed IndexedDB, not about:blank.
 const audioRoot=resolve('homepages/op-1');
-const audioFiles=new Set(['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','sw.js','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png']);
+const audioFiles=new Set(['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','tracker.js','tracker.css','sw.js','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png']);
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.webmanifest':'application/manifest+json','.png':'image/png'};
 const server=createServer((req,res)=>{
  const pathname=new URL(req.url,'http://localhost').pathname;

@@ -3,11 +3,11 @@
 import {readFileSync} from 'node:fs';
 const base=readFileSync('homepages/op-1/index.html','utf8');
 let rendered=base;
-for(const name of ['workspace.js','comfort.js','simplified.js']){
+for(const name of ['workspace.js','comfort.js','simplified.js','tracker.js']){
  const js=readFileSync('homepages/op-1/'+name,'utf8');
  rendered=rendered.replace('<script src="./'+name+'"></script>','<script>'+js+'</script>');
 }
-for(const name of ['workspace.css','comfort.css','simplified.css']){
+for(const name of ['workspace.css','comfort.css','simplified.css','tracker.css']){
  const css=readFileSync('homepages/op-1/'+name,'utf8');
  rendered=rendered.replace('<link rel="stylesheet" href="./'+name+'">','<style>'+css+'</style>');
 }

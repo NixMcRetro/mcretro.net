@@ -77,10 +77,11 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
     const snapshot=await page.evaluate(()=>JSON.stringify(window.OP1Tracker.normalize(window.OP1Tracker.defaults())));
     await page.locator('#startAudio').click();
     await page.locator('[data-demo-listen="glitch"]').click();
+    console.log('PREVIEW PAGE ERRORS',name,width,errors);
     console.log('PREVIEW DIAG',name,width,await page.evaluate(()=>({
       previewing:window.OP1Tracker.previewing,
       status:document.querySelector('#trackerStatus').textContent,
-      feedback:document.querySelector('#feedback')?.textContent.slice(0,200)
+      feedback:document.querySelector('#feedback')?.textContent.slice(0,200),errors:window.__diagErrors||[]
     })));
     assert.match(await page.locator('#trackerStatus').innerText(),/Previewing Glitch Garden/);
     const current=await page.evaluate(()=>JSON.stringify(window.OP1Tracker.normalize(window.OP1Tracker.defaults())));

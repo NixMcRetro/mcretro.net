@@ -64,7 +64,8 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert.equal(project.tracks[0].events.length,2);
   assert.equal(project.pianola.notes.length,2);
   assert.equal(project.synthScore.notes.length,2);
-  assert.equal(project.seqPattern.filter(n=>n!==null).length,2);
+  const notesInPattern=project.seqPattern.filter(n=>n!==null).length;
+  assert.equal(notesInPattern,2,'Drum MIDI not loaded: '+JSON.stringify({patternSlot:project.patternSlot,sequence:project.seqPattern,feedback:await page.locator('#feedback').innerText(),patternSlots:project.patternSlots}));
   await page.locator('#comfortDemoOpen').click();
   assert(await page.locator('#comfortDemoDialog').isVisible());
   assert.equal(await page.locator('.comfort-demo-card').count(),10);

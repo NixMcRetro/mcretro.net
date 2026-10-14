@@ -217,12 +217,12 @@ function fromDemoToSong(demo){
  window.OP1Workspace.stop();s.songWorkspace=window.OP1Workspace.normalize(ws);if(!existing.length)s.bpm=demo.bpm;
  window.OP1Workspace.render();api.syncUI();api.markDirty();return true
 }
-async function printDemoTape(demo){
+async function printDemoTape(demo,btn){
  if(api.isRecording())throw Error('Stop audio recording before printing demo.');
  const length=demoDuration(demo),s=state();if(length>59)throw Error('Tape print must fit in 59 seconds.');
  const Ctx=window.OfflineAudioContext||window.webkitOfflineAudioContext;if(!Ctx)throw Error('Offline audio rendering unavailable.');
  if(!confirm('Render '+demo.name+' into a NEW audio clip on tape track '+(s.selectedTrack+1)+'? The existing project and audio clips will remain.'))return false;
- const btn=$('comfortDemoPrint');btn.disabled=true;const oldText=btn.textContent;btn.textContent='RENDERING…';
+ btn.disabled=true;const oldText=btn.textContent;btn.textContent='RENDERING…';
  try{const ctx=new Ctx(2,Math.ceil((length+.3)*22050),22050),graph=api.makeGraph(ctx);emitDemo(graph,demo,.06);
   const buffer=await ctx.startRendering(),id=await api.registerAudio(buffer);
   api.checkpointEdit();s.tracks[s.selectedTrack].clips.push({sampleId:id,t:0,d:length,offset:0,captureSpeed:1});
@@ -238,7 +238,7 @@ function updateDemoList(){
   const desc=document.createElement('p');desc.textContent=d.description;card.append(h,detail,desc);
   const play=document.createElement('button');play.textContent='▶ PREVIEW';play.addEventListener('click',()=>preview(d));card.append(play);
   const load=document.createElement('button');load.textContent='＋ LOAD SONG CLIPS';load.addEventListener('click',()=>{try{if(fromDemoToSong(d)){stopDemo();$('comfortDemoStatus').textContent=d.name+' added to the Unified Song Workspace. Existing clips preserved.'}}catch(e){$('comfortDemoStatus').textContent=e.message}});card.append(load);
-  if(d.category==='Tape'){const print=document.createElement('button');print.textContent='PRINT DEMO TO TAPE';print.id='comfortDemoPrint';print.addEventListener('click',async()=>{try{if(await printDemoTape(d))$('comfortDemoStatus').textContent=d.name+' printed as a new PCM tape clip. Existing clips preserved.'}catch(e){$('comfortDemoStatus').textContent='Tape print failed: '+e.message}});card.append(print)}
+  if(d.category==='Tape'){const print=document.createElement('button');print.textContent='PRINT DEMO TO TAPE';print.id='comfortDemoPrint-'+d.id;print.addEventListener('click',async()=>{try{if(await printDemoTape(d,print))$('comfortDemoStatus').textContent=d.name+' printed as a new PCM tape clip. Existing clips preserved.'}catch(e){$('comfortDemoStatus').textContent='Tape print failed: '+e.message}});card.append(print)}
   list.append(card);
  }
 }

@@ -1,7 +1,7 @@
 {
   "name": "BleepGarden Music Maker 2000",
   "short_name": "BleepGarden 2000",
-  "description": "Make your own tunes with BleepGarden Music Maker 2000 by SuperNick. A friendly offline-capable keyboard, song builder and retro music studio.",
+  "description": "Make your own tunes with BleepGarden Music Maker 2000, created for SuperNick (Nick). A friendly offline-capable keyboard, song builder and retro music studio.",
   "id": "./",
   "start_url": "./",
   "scope": "./",

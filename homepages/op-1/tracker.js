@@ -571,7 +571,7 @@ function finishArrangementRecording(){
  renderArrangement();
 }
 function startArrangementRecording(){
- if(rendering||captureEncoding||api.isRecording()){status('Finish other recording or export before starting an arrangement');return}
+ if(rendering||capture||captureEncoding||api.isRecording()){status('Finish other recording or export before starting an arrangement');return}
  if(arrangementRecording){stop();return}
  if(data().arrangement.length&&!confirm('Record a new arrangement? The previous arrangement can be restored with Tracker Undo. Your pattern notes will not be replaced.'))return;
  if(playing)stop();
@@ -644,7 +644,7 @@ function renderArrangement(){
  $('trackerRecordArrangement').textContent=arrangementRecording?'■ FINISH SONG':'● RECORD ARRANGEMENT';
  $('trackerRecordArrangement').setAttribute('aria-pressed',String(!!arrangementRecording));
  $('trackerArrangementPlay').textContent=arrangementPlaying?'■ STOP SONG':'▶ PLAY SONG';
- $('trackerArrangementPlay').disabled=!sections.length&&!arrangementPlaying;
+ $('trackerArrangementPlay').disabled=!!arrangementRecording||(!sections.length&&!arrangementPlaying);
  $('trackerArrangementAdd').disabled=sections.length>=MAX_SECTIONS||!!arrangementRecording;
  list.replaceChildren(...sections.map((part,i)=>{
   const item=document.createElement('div');item.className='tracker-arrangement-item';
@@ -654,10 +654,12 @@ function renderArrangement(){
   patternSel.setAttribute('aria-label','Pattern for song section '+(i+1));
   patternSel.replaceChildren(...data().patterns.map((pat,id)=>new Option('PATTERN '+String(id).padStart(2,'0'),String(id))));
   patternSel.value=String(part.pattern);
+  patternSel.disabled=!!arrangementRecording;
   const length=document.createElement('select');length.dataset.arrangementRows=String(i);
   length.setAttribute('aria-label','Length of song section '+(i+1));
   length.replaceChildren(...Array.from({length:64},(_,n)=>{const rows=(n+1)*4;return new Option(rows%16===0?(rows/16)+' BAR'+(rows===16?'':'S'):(rows/4)+' BEATS',String(rows))}));
   length.value=String(part.rows);
+  length.disabled=!!arrangementRecording;
   const actions=document.createElement('div');actions.className='tracker-arrangement-actions';
   for(const [action,label] of [['up','↑'],['down','↓'],['duplicate','＋'],['delete','×']]){
    const button=document.createElement('button');button.type='button';button.textContent=label;

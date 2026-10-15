@@ -1,4 +1,4 @@
-/* v2.7 Music Maker: original, seeded, offline musical ideas. All notes remain standard tracker cells. */
+/* v2.9 BleepGarden: seeded, coherent, offline musical ideas. All notes remain standard tracker cells. */
 (function(){
 'use strict';
 const $=id=>document.getElementById(id);
@@ -32,62 +32,98 @@ function pitch(c,degree,octave=0){
  const index=((degree%7)+7)%7,wrap=Math.floor(degree/7);
  return c.base+c.scale[index]+12*(octave+wrap);
 }
-function partNotes(c,section,ch,rng,variation='new'){
- const notes=new Array(32).fill(null),energy=c.energy;
- const movement=variation==='simpler'?.65:variation==='busier'?1.4:1;
+/* A recurring melodic identity binds the four sections into one tune. The verse
+   answers the hook; the chorus returns it, and the outro ends on the tonic. */
+const MELODY_SHAPES=[
+ [0,2,4,2,1,0],[0,4,3,2,1,0],[2,4,2,0,1,0],
+ [0,2,1,4,2,0],[0,3,4,2,1,0],[2,3,4,2,0,0]
+];
+function songIdentity(seedValue){
+ const rng=random((seedValue^0x6d2b79f5)>>>0);
+ return {hook:MELODY_SHAPES[Math.floor(rng()*MELODY_SHAPES.length)],
+         response:Math.floor(rng()*3),fill:Math.floor(rng()*4)};
+}
+function harmony(c,section,bar){
+ // Intro and chorus share the same harmonic territory; outro resolves to tonic.
+ return section===3&&bar===1?c.progression[0]:c.progression[(section*2+bar)%4];
+}
+function partNotes(c,section,ch,rng,variation='new',identity=songIdentity(1)){
+ const notes=Array(32).fill(null),energy=c.energy;
+ const movement=variation==='simpler'?.66:variation==='busier'?1.35:1;
  const shift=variation==='higher'?12:variation==='lower'?-12:0;
- const density=(energy==='low'?.72:energy==='high'?1.16:1)*movement;
- const drum=ch===0,inst=c.inst[ch];
- const minor=c.mood==='dark';
- const melodicMotif=[0,2,4,3,2,0,1,0];
+ const roleEnergy=[.64,.93,1.2,.68][section];
+ const density=(energy==='low'?.79:energy==='high'?1.16:1)*movement*roleEnergy;
+ const inst=c.inst[ch],chorus=section===2,intro=section===0,outro=section===3;
+ const ambient=c.style==='ambient',dance=c.style==='dance';
+ const hatsFast=energy==='high'||dance;
+ const melodicSteps=ambient?[0,8,12]:dance?[0,3,6,8,10,14]:[0,3,6,8,11,14];
  for(let bar=0;bar<2;bar++){
-  const degree=c.progression[(section*2+bar)%4],root=bar*16;
+  const degree=harmony(c,section,bar),root=bar*16;
   const chord=[degree,degree+2,degree+4];
   for(let step=0;step<16;step++){
    const row=root+step,r=rng();
-   if(drum){
-    if(c.style==='ambient'&&r>.48)continue;
-    const onBackbeat=step===4||step===12;
-    const onKick=step===0||step===8||(c.style==='dance'&&(step===4||step===12));
+   if(ch===0){
+    const kick=step===0||step===8||(chorus&&dance&&step===10);
+    const snare=step===4||step===12;
     let type=null;
-    if(onBackbeat)type=1;else if(onKick)type=0;
-    else if(step%4===2 && r<cap(.74*density,0,.98))type=2;
-    else if(energy==='high'&&step%4===3&&r<cap(.38*density,0,.85))type=3;
-    if(type!==null)notes[row]=cell(48+type,type,'drum',1,type===0?110:type===1?103:65+Math.floor(rng()*15));
+    if(kick)type=0;
+    else if(snare&&!(intro&&bar===0&&step===4))type=1;
+    else if(step%2===0&&(hatsFast||step%4===2)&&r<Math.min(.94,(ambient?.45:.68)*density))type=2;
+    else if(chorus&&bar===1&&step>=13&&r<.56)density>1?type=3:type=2;
+    if(outro&&bar===1&&step>=12&&step!==12)type=null;
+    if(type!==null)notes[row]=cell(48+type,type,'drum',1,type===0?108:type===1?101:62+Math.floor(rng()*16));
    }else if(ch===1){
-    const positions=c.style==='ambient'?[0,8]:[0,6,8,12];
-    if(!positions.includes(step)||r>(step===0?1:cap(.64*density,0,.96)))continue;
-    const degreeOffset=step===12&&r>.65?4:step===6&&r>.6?2:0;
-    const bass=pitch(c,degree+degreeOffset,-1)+shift;
-    notes[row]=cell(bass,inst,'synth',step===0?4:2,85+Math.floor(rng()*20));
+    const positions=ambient?[0,8]:dance?[0,6,8,10,12]:[0,6,8,12];
+    if(!positions.includes(step)||(step!==0&&r>Math.min(.98,.72*density)))continue;
+    // Root first; passing notes lead into the next chord without big jumps.
+    const bassDegree=step===12&&bar===0&&r>.5?degree+2:degree;
+    notes[row]=cell(pitch(c,bassDegree,-1)+shift,inst,'synth',step===0?4:step===8?2:1,85+Math.floor(rng()*17)+(chorus?5:0));
    }else if(ch===2){
-    const rate=c.style==='ambient'?8:c.style==='dance'?2:4;
-    if(step%rate!==0||r>cap(.88*density,0,1))continue;
-    const arpIndex=Math.floor(step/rate)%3;
-    const arpDegree=chord[(section%2===0?arpIndex:2-arpIndex)];
-    notes[row]=cell(pitch(c,arpDegree,0)+shift,inst,'synth',c.style==='ambient'?4:2,65+Math.floor(rng()*20));
+    const rate=ambient?8:dance||chorus?2:4;
+    if(step%rate!==0||r>Math.min(.98,(intro?.65:.87)*density))continue;
+    const position=Math.floor(step/rate)%3;
+    const index=(section%2===0?position:2-position);
+    const arpeggio=chord[index];
+    notes[row]=cell(pitch(c,arpeggio,0)+shift,inst,'synth',ambient?4:chorus?1:2,67+Math.floor(rng()*18));
    }else{
-    const positions=c.style==='ambient'?[0,8]:c.style==='dance'?[0,4,6,10,12,14]:[0,3,6,8,12,14];
-    if(!positions.includes(step)||r>cap((step===0?.98:.74)*density,0,1))continue;
-    const motifIndex=(Math.floor(step/2)+section)%melodicMotif.length;
-    const deviation=rng()<.15?1:0;
-    const melodicDegree=degree+melodicMotif[motifIndex]+deviation;
-    const melody=pitch(c,melodicDegree,minor?0:1)+shift;
-    notes[row]=cell(melody,inst,'synth',step%4===0?2:1,79+Math.floor(rng()*23));
+    if(!melodicSteps.includes(step))continue;
+    const pos=melodicSteps.indexOf(step),motif=identity.hook[pos%identity.hook.length];
+    // Intro previews the chorus hook, the verse answers it, chorus states it fully.
+    if(intro&&(pos===1||pos===4))continue;
+    if(outro&&bar===1&&step>8)continue;
+    const leadChance=step===0?.995:chorus?.91:intro?.77:.83;
+    if(r>Math.min(.999,leadChance*density))continue;
+    let relative=motif;
+    if(section===1)relative=Math.max(0,identity.hook[(pos+2+identity.response)%identity.hook.length]-(pos%3===1?1:0));
+    if(outro)relative=bar===1?0:identity.hook[(pos+3)%identity.hook.length];
+    // Accents land on chord tones, passing notes use scale steps.
+    if(step%4===0){
+     const options=[0,2,4];
+     relative=options.reduce((best,v)=>Math.abs(v-relative)<Math.abs(best-relative)?v:best,options[0]);
+    }
+    const pitchDegree=(outro&&bar===1)?c.progression[0]+relative:degree+relative;
+    const note=pitch(c,pitchDegree,c.mood==='dark'?0:1)+shift;
+    notes[row]=cell(note,inst,'synth',step===0?2:step>=14?2:1,
+      78+Math.floor(rng()*16)+(chorus?10:0));
    }
   }
+ }
+ // A final held tonic creates closure after the last drum fill.
+ if(ch===3&&outro){
+  const final=pitch(c,c.progression[0],c.mood==='dark'?0:1)+shift;
+  notes[24]=cell(final,inst,'synth',4,92);
  }
  return notes;
 }
 function patterns(input,seed=1,variation='new',parts=[0,1,2,3]){
- const c=config(input),out=[];
+ const c=config(input),out=[],identity=songIdentity(seed);
  const wanted=new Set(parts);
  for(let section=0;section<4;section++){
   const cells=new Array(128).fill(null);
   for(let ch=0;ch<4;ch++){
    if(!wanted.has(ch))continue;
    const rng=random((seed+section*1013904223+ch*2654435761)>>>0);
-   const n=partNotes(c,section,ch,rng,variation);
+   const n=partNotes(c,section,ch,rng,variation,identity);
    for(let row=0;row<32;row++)cells[row*4+ch]=n[row];
   }
   out.push({rows:32,cells});

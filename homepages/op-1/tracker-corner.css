@@ -1,0 +1,24 @@
+/* BleepGarden v2.9: approachable access to the original 4-channel tracker. */
+.maker-tracker-corner{margin:21px 0;padding:0;border:1px solid #bcd3df;border-radius:14px;background:#f5fafc;overflow:hidden}
+.maker-tracker-corner>summary{padding:17px 19px;font-size:16px;line-height:1.45;cursor:pointer;font-weight:850;color:#245a73}
+.maker-tracker-corner>summary:focus-visible{outline:3px solid #4799b8;outline-offset:-3px}
+.maker-tracker-content{padding:1px 19px 18px}
+.maker-tracker-content>p{font-size:13px;line-height:1.6;color:#4f6d7c}
+#makerTrackerInfo{display:block;font-size:13px;color:#225970;margin:13px 0}
+.maker-tracker-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.maker-tracker-fields label{display:grid;gap:7px;font-size:13px;font-weight:750;color:#365e73}
+.maker-tracker-fields select{width:100%;min-width:0}
+.maker-tracker-actions{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.maker-tracker-actions button{flex:1 1 190px}
+#makerTrackerStatus{font-size:13px;line-height:1.55;background:#e6f3f8;border:1px solid #bcdbe6;border-radius:10px;padding:12px;margin:12px 0}
+.maker-tracker-footnote{font-size:12px!important}
+#makerMidi{background:#edf8ef;color:#245f45;border-color:#8bbc9a}
+#makerMidi:hover:not(:disabled){background:#d6f0dd}
+html[data-op1-theme=dark] .music-maker .maker-tracker-corner{background:#273d49;border-color:#52778b;color:#e9f4fa}
+html[data-op1-theme=dark] .music-maker .maker-tracker-corner>summary,
+html[data-op1-theme=dark] .music-maker #makerTrackerInfo{color:#d8eff8}
+html[data-op1-theme=dark] .music-maker .maker-tracker-fields label,
+html[data-op1-theme=dark] .music-maker .maker-tracker-content>p{color:#c5dce8}
+html[data-op1-theme=dark] .music-maker #makerTrackerStatus{background:#1e3542;color:#d6eaf3;border-color:#54788b}
+html[data-op1-theme=dark] .music-maker #makerMidi{background:#315f4c;color:#e5f9ec;border-color:#87b79c}
+@media(max-width:620px){.maker-tracker-content{padding:1px 13px 14px}.maker-tracker-corner>summary{padding:15px 13px}.maker-tracker-fields{grid-template-columns:1fr}}

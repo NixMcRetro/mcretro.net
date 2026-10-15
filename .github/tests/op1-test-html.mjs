@@ -7,7 +7,7 @@ for(const name of ['workspace.js','comfort.js','simplified.js','tracker.js','mus
  const js=readFileSync('homepages/op-1/'+name,'utf8');
  rendered=rendered.replace('<script src="./'+name+'"></script>','<script>'+js+'</script>');
 }
-for(const name of ['workspace.css','comfort.css','simplified.css','tracker.css','music-maker.css','casio-keyboard.css','riff-recorder.css','song-sections.css']){
+for(const name of ['workspace.css','comfort.css','simplified.css','tracker.css','music-maker.css','casio-keyboard.css','riff-recorder.css','song-sections.css','beginner-polish.css']){
  const css=readFileSync('homepages/op-1/'+name,'utf8');
  rendered=rendered.replace('<link rel="stylesheet" href="./'+name+'">','<style>'+css+'</style>');
 }

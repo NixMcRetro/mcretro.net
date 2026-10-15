@@ -1,0 +1,20 @@
+/* v2.8: musical changes and keyboard capture, no new hardware-inspired controls. */
+.maker-easy,.riff-recorder{padding:19px;border:1px solid #bed5df;border-radius:14px;background:#fff;margin:19px 0;color:#29465b}
+.maker-easy h3,.riff-recorder h3{font-size:21px;margin:2px 0 6px}
+.maker-easy p,.riff-recorder p{font-size:13px;line-height:1.58;color:#4b6777;margin:5px 0 14px}
+.riff-title>span{font-size:11px;letter-spacing:.12em;font-weight:800;color:#277a99}
+.maker-easy-settings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0}
+.riff-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
+.maker-easy-settings label,.riff-choices label{display:grid;gap:7px;font-size:13px;font-weight:750}
+.maker-easy-settings select,.riff-choices select{width:100%;min-width:0}
+.maker-easy-actions,.riff-buttons{display:flex;flex-wrap:wrap;gap:9px}
+.maker-easy-actions button,.riff-buttons button{min-height:44px}
+.riff-buttons #riffRecord,.riff-buttons #riffKeep,.maker-easy-actions #makerEasyApply{background:#225c78;color:white;border-color:#225c78}
+.riff-buttons #riffRecord:hover:not(:disabled),.riff-buttons #riffKeep:hover:not(:disabled),.maker-easy-actions #makerEasyApply:hover:not(:disabled){background:#16465c;color:white}
+#riffStatus,#makerEasyStatus{margin:15px 0 0;padding:10px 12px;border:1px solid #d2e2e9;background:#ecf5f8;border-radius:9px;font-size:13px;min-height:44px}
+.riff-recorder .riff-note{font-size:12px;margin:12px 0 0}
+@media(max-width:660px){
+ .maker-easy,.riff-recorder{padding:14px}
+ .maker-easy-settings,.riff-choices{grid-template-columns:1fr}
+ .maker-easy-actions button,.riff-buttons button{flex:1 1 130px}
+}

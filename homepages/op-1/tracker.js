@@ -71,7 +71,7 @@ let history=[],redoHistory=[],clipboard=null,clipboardReady=false,blockClipboard
 let context=null,cycle=0,loopEnabled=false,compiledSeconds=0,compiledRows=0,viewChannel='all';
 let live=null,capture=null,captureEncoding=false,automationArmed=false,autoCursor=0,lastAutoRow=-1;
 let arrangementRecording=null,arrangementPlaying=false,arrangementSequence=[],arrangementActiveSection=-1,arrangementSelected=0;
-let finishedSongExport='idle',musicMakerPreview=null;
+let finishedSongExport='idle',musicMakerPreview=null,musicMakerTakePreview=null,musicMakerBacking=null;
 const MAX_AUTO=256,MAX_LIVE_ROWS=4096;
 const data=()=>api.getState().tracker;
 const pattern=()=>data().patterns[data().active];
@@ -636,11 +636,16 @@ function startArrangementRecording(){
  status('RECORDING SONG · Tap pattern pads to change sections. Press FINISH SONG to save.');
  $('trackerLaunchPads').scrollIntoView({block:'nearest',behavior:'smooth'});
 }
-function compileArrangement(source=data()){
+function compileArrangement(source=data(),includeTakePreview=true){
  const sequence=[],notes=[],rowSec=60/source.bpm/4;
  let base=0;
- for(const section of source.arrangement){
-  const pat=source.patterns[section.pattern];
+ for(const [index,section] of source.arrangement.entries()){
+  let pat=source.patterns[section.pattern];
+  if(includeTakePreview&&musicMakerTakePreview?.section===index){
+   pat=clone(pat);
+   for(let row=0;row<Math.min(32,pat.rows);row++)
+    pat.cells[toIndex(row,musicMakerTakePreview.ch)]=clone(musicMakerTakePreview.cells[row]);
+  }
   sequence.push({pattern:section.pattern,start:base,end:base+section.rows});
   for(let row=0;row<section.rows;row++){
    const local=row%pat.rows,absolute=base+row;
@@ -662,7 +667,7 @@ async function exportFinishedSong(){
  if(!sections.length){status('Add a song section before exporting');return false}
  const secs=arrangementRows(sections)*60/data().bpm/4;
  if(secs>180){status('Finished song WAV export is limited to three minutes');return false}
- const compiled=compileArrangement();
+ const compiled=compileArrangement(data(),false);
  if(!compiled.notes.length){status('Add musical notes to your song before exporting');return false}
  if(compiled.notes.some(n=>n.kind==='sample'&&!api.hasSample(n.sampleId))){
   status('One of your song samples is missing. Reload the original project audio before exporting');
@@ -1003,6 +1008,7 @@ function tickLive(){
 }
 function stop(){
  stopDemoPreview();
+ musicMakerBacking=null;musicMakerTakePreview=null;
  if(arrangementRecording)finishArrangementRecording();
  if(capture)finishTapeTake();
  if(clock)clearInterval(clock);clock=null;
@@ -1022,6 +1028,7 @@ function stop(){
 }
 function tick(){
  if(!playing||!context)return;
+ if(musicMakerBacking){tickMusicMakerBacking();return}
  if(live){tickLive();return}
  const now=context.ctx.currentTime;
  // Background tabs can be throttled for minutes. Skip stale cycles instead of bursting old notes.
@@ -1161,6 +1168,122 @@ function sendToSong(){
  }catch(e){status('Could not copy tracker: '+e.message)}
 }
 /* A guarded bridge: generated notes use the exact existing v5 tracker schema and Undo. */
+/* v2.8: simple keyboard takes share the existing tracker data, rendering and Undo.
+   One two-bar pattern is the smallest editable unit; cloned when shared by sections. */
+function musicMakerRecordingTarget(section,ch){
+ const d=data();
+ if(!validInt(section,0,d.arrangement.length-1)||!validInt(ch,1,3))return {ok:false,reason:'Choose a song section and Bass, Chords or Melody.'};
+ const entry=d.arrangement[section],pat=d.patterns[entry.pattern];
+ if(!pat||pat.rows<32)return {ok:false,reason:'This section uses a short pattern. Generate a song to record a two-bar riff.'};
+ const shared=d.arrangement.filter(a=>a.pattern===entry.pattern).length>1;
+ if(shared&&d.patterns.length>=MAX_PATTERNS)return {ok:false,reason:'The selected section shares a pattern and all eight slots are used. Make a project backup and free a pattern in Classic Studio first.'};
+ return {ok:true,section,ch,bpm:d.bpm,rows:32,pattern:entry.pattern,shared,
+  name:entry.label||'Part '+(section+1),inst:pat.cells.filter((cell,index)=>index%4===ch&&cell?.kind==='synth')[0]?.inst??0,
+  containsNotes:pat.cells.some((cell,index)=>index%4===ch&&cell!==null)};
+}
+function materializeMakerSection(d,section){
+ const idx=d.arrangement[section].pattern;
+ if(d.arrangement.some((x,i)=>i!==section&&x.pattern===idx)){
+  if(d.patterns.length>=MAX_PATTERNS)throw Error('There are no free tracker patterns to preserve shared song sections');
+  d.patterns.push(clone(d.patterns[idx]));
+  d.arrangement[section].pattern=d.patterns.length-1;
+ }
+ return d.patterns[d.arrangement[section].pattern];
+}
+function applyMusicMakerRecording(section,ch,cells){
+ const target=musicMakerRecordingTarget(section,ch);
+ if(!target.ok||rendering||arrangementRecording||capture||captureEncoding||api.isRecording()||playing)return false;
+ if(!Array.isArray(cells)||cells.length!==32)return false;
+ musicMakerTakePreview=null;
+ return commit(d=>{
+  const pat=materializeMakerSection(d,section);
+  for(let row=0;row<32;row++)pat.cells[toIndex(row,ch)]=cells[row]===null?null:clone(cells[row]);
+ });
+}
+function adjustMusicMakerPart(section,ch,action,generated){
+ const target=musicMakerRecordingTarget(section,ch);
+ if(!target.ok||rendering||arrangementRecording||capture||captureEncoding||api.isRecording()||playing)return false;
+ if(!['simpler','busier','higher','lower','regenerate'].includes(action))return false;
+ if(action==='regenerate'&&(!Array.isArray(generated)||generated.length!==32))return false;
+ return commit(d=>{
+  const pat=materializeMakerSection(d,section),old=Array.from({length:32},(_,r)=>pat.cells[toIndex(r,ch)]);
+  if(action==='regenerate'){
+   for(let row=0;row<32;row++)pat.cells[toIndex(row,ch)]=clone(generated[row]);
+   return;
+  }
+  let notes=0;
+  for(let row=0;row<32;row++){
+   const item=old[row];
+   if(!item||item.kind!=='synth')continue;
+   if(action==='simpler'&&row%16!==0&&notes++%2===1)pat.cells[toIndex(row,ch)]=null;
+   else if(action==='higher'||action==='lower'){
+    const offset=action==='higher'?12:-12;
+    if(!validInt(item.midi+offset,36,95))throw Error('Some notes would go outside the safe keyboard range');
+    pat.cells[toIndex(row,ch)]={...item,midi:item.midi+offset};
+    notes++;
+   }else notes++;
+  }
+  if(action==='busier'){
+   for(let row=0;row<31;row++){
+    const current=old[row];
+    if(!current||current.kind!=='synth'||old[row+1])continue;
+    if(row%4===3)continue;
+    pat.cells[toIndex(row+1,ch)]={...current,vel:Math.max(35,Math.round(current.vel*.75)),length:.5};
+   }
+  }
+  if(action==='simpler'&&!notes)throw Error('There are no synthesiser notes to simplify');
+ });
+}
+function tickMusicMakerBacking(){
+ const practice=musicMakerBacking,ctx=context.ctx,unit=60/data().bpm/4,now=ctx.currentTime;
+ if(!practice)return;
+ let guard=0;
+ while(practice.next<32&&guard++<20){
+  const row=practice.next,when=started+row*unit;
+  if(when>now+.16)break;
+  if(when>=now-.1){
+   for(const note of rowEvents(practice.pattern,row,row,practice.patternId)){
+    if(note.ch===practice.omit)continue;
+    try{emit(context,note,started+note.when)}catch(e){stop();status('Practice playback stopped: '+e.message);return;}
+   }
+  }
+  practice.next++;
+ }
+ if(practice.next>=32&&now>=started+32*unit+.08)stop();
+}
+function startMusicMakerBacking(section,ch){
+ const target=musicMakerRecordingTarget(section,ch);
+ if(!target.ok||rendering||arrangementRecording||capture||captureEncoding||api.isRecording())return null;
+ if(playing)stop();
+ api.stopOthers();
+ const base=api.ensureAudio();
+ if(!base)return null;
+ try{
+  context=isolatedLiveGraph(base);
+  const oneBeat=60/data().bpm,ctxNow=context.ctx.currentTime;
+  // Audible four-count before capture; playback starts at the bar boundary.
+  const intro=ctxNow+.12;
+  for(let beat=0;beat<4;beat++)api.playDrum(base,50,intro+beat*oneBeat,api.getState().kit,.16,0,null);
+  started=intro+4*oneBeat;
+  musicMakerBacking={next:0,pattern:clone(data().patterns[target.pattern]),patternId:target.pattern,omit:ch};
+  playing=true;arrangementPlaying=false;live=null;clock=setInterval(tick,20);tick();
+  status('FOUR BEAT COUNT-IN · Play your notes when the accompaniment starts');
+  return {...target,startAtMs:performance.now()+(started-ctxNow)*1000,finishAtMs:performance.now()+(started-ctxNow+32*oneBeat/4)*1000,stepMs:oneBeat*250};
+ }catch(e){stop();status('Cannot start keyboard recording: '+e.message);return null}
+}
+function previewMusicMakerRecording(section,ch,cells){
+ const target=musicMakerRecordingTarget(section,ch);
+ if(!target.ok||!Array.isArray(cells)||cells.length!==32||rendering||capture||captureEncoding||api.isRecording())return false;
+ if(playing)stop();
+ musicMakerTakePreview={section,ch,cells:clone(cells)};
+ playArrangement();
+ if(!arrangementPlaying)musicMakerTakePreview=null;
+ return arrangementPlaying;
+}
+function cancelMusicMakerRecordingPreview(){
+ if(musicMakerTakePreview){stop();musicMakerTakePreview=null}
+}
+/* A guarded bridge: generated notes use the exact existing v5 tracker schema and Undo. */
 function applyMusicMakerSong(song){
  if(rendering||arrangementRecording||capture||captureEncoding||api.isRecording()){
   status('Finish recording or exporting before generating music');return false;
@@ -1298,7 +1421,7 @@ window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
  get playing(){return playing},get live(){return !!live},get transport(){return {playing,mode:arrangementPlaying?'song':live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
  launch,play,finishTapeTake,openLibrary,setLayoutMode,buildDemo,stopDemoPreview,
  compileArrangement,recordedSections,playArrangement,startArrangementRecording,makeStarterPattern,addStarter,
- applyMusicMakerSong,applyMusicMakerParts,readMusicMakerSound,musicMakerHasNotes,musicMakerOverview,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
+ applyMusicMakerSong,applyMusicMakerParts,musicMakerRecordingTarget,startMusicMakerBacking,applyMusicMakerRecording,adjustMusicMakerPart,previewMusicMakerRecording,cancelMusicMakerRecordingPreview,readMusicMakerSound,musicMakerHasNotes,musicMakerOverview,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
  get recordingArrangement(){return !!arrangementRecording},
  get arrangementPlaying(){return arrangementPlaying},
  get previewing(){return !!demoPreview}};

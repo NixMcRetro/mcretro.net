@@ -1,0 +1,34 @@
+/* v2.7 beginner-first Music Maker; existing Focus and All Tools remain available. */
+.music-maker{margin:24px auto 18px;padding:24px;border-radius:20px;background:linear-gradient(145deg,#f8fcff,#edf3f8);border:1px solid #c8d7e3;box-shadow:0 12px 32px #274b6510;color:#243644;max-width:1130px}
+html.studio-advanced .music-maker{display:none}
+.maker-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.maker-heading span{font-size:12px;font-weight:800;letter-spacing:.12em;color:#367c8b}
+.maker-heading h2{margin:6px 0;font-size:clamp(23px,3vw,34px);line-height:1.12;letter-spacing:-.04em}
+.maker-heading p{margin:0;color:#496475;font-size:15px;line-height:1.5;max-width:650px}
+.music-maker button,.music-maker select{font-family:inherit;font-size:14px;border:1px solid #bacdd9;border-radius:10px;min-height:44px;padding:10px 14px;background:#fff;color:#243644;font-weight:700}
+.music-maker button:hover:not(:disabled){background:#e4f0f8;border-color:#65a1bf}
+.music-maker button:disabled{opacity:.48;cursor:not-allowed}
+.music-maker button:focus-visible,.music-maker select:focus-visible{outline:3px solid #2b79c4;outline-offset:2px}
+.maker-settings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0 16px}
+.maker-settings label,.maker-remix-tools label{display:grid;gap:7px;color:#385263;font-size:13px;font-weight:700}
+.maker-settings select,.maker-remix-tools select{min-width:0;width:100%;font-weight:600}
+.maker-transport,.maker-footer{display:flex;gap:9px;flex-wrap:wrap;margin:16px 0}
+.maker-transport .maker-primary{background:#235a7a;border-color:#235a7a;color:white;box-shadow:0 4px 10px #235a7a20}
+.maker-transport .maker-primary:hover:not(:disabled){background:#174b6a;color:white}
+#makerStatus{background:#e4eff5;border:1px solid #c4d9e5;border-radius:10px;padding:12px 14px;line-height:1.5;font-size:14px;min-height:48px}
+.maker-parts{border:1px solid #d5e2e9;background:#fff;border-radius:14px;padding:16px;margin-top:20px}
+.maker-parts-heading h3{margin:0 0 3px;font-size:21px}
+.maker-parts-heading p{margin:0 0 14px;color:#50697a;font-size:14px}
+.maker-part{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:8px;border-top:1px solid #e4edf2;padding:12px 0}
+.maker-part strong,.maker-part small{display:block}
+.maker-part strong{font-size:16px}
+.maker-part small{font-size:12px;color:#587084;margin-top:3px}
+.maker-part button[aria-pressed=true]{background:#e3f0fa;border-color:#418ab2;color:#1d526f}
+.maker-remix-tools{display:flex;align-items:end;flex-wrap:wrap;gap:12px;background:#f4f8fb;padding:14px;border-radius:10px}
+.maker-remix-tools label{flex:1;min-width:160px}
+.maker-remix-tools button{background:#294e66;color:#fff;border-color:#294e66}
+.maker-remix-tools button:hover:not(:disabled){background:#1a4057;color:white}
+.maker-footer{border-top:1px solid #c8dce8;padding-top:18px;margin-top:22px}
+.maker-footnote{font-size:12px;line-height:1.6;color:#526e80;max-width:760px}
+@media(max-width:680px){.music-maker{padding:15px;margin:16px 0}.maker-heading{flex-direction:column}.maker-settings{grid-template-columns:1fr}.maker-transport button,.maker-footer button{flex:1 1 130px}.maker-part{grid-template-columns:minmax(0,1fr) auto auto}.maker-part button{padding:9px 10px;font-size:12px}.maker-remix-tools{display:grid;grid-template-columns:1fr}.maker-remix-tools label{min-width:0}.maker-heading h2{font-size:26px}}
+@media(prefers-reduced-motion:reduce){.music-maker *{scroll-behavior:auto!important;transition:none!important}}

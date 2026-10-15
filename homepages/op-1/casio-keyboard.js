@@ -27,6 +27,7 @@ function buildKeys(holder){
   const label=document.createElement('span');label.className='casio-note-label';label.textContent=names[n%12];
   const shortcut=document.createElement('small');shortcut.className='casio-shortcut';shortcut.textContent=shortcuts[n];
   btn.append(label,shortcut);
+  btn.style.setProperty('--white-position',String(white));
   if(!black){btn.style.left=(white*100/14)+'%';btn.style.width=(100/14)+'%';white++}
   else{btn.style.left='calc('+(white*100/14)+'% - 2.35%)';btn.style.width='4.7%'}
   const id='casio-pointer-'+n;

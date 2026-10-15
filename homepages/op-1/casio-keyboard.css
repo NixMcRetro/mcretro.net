@@ -86,3 +86,13 @@ html[data-op1-theme=dark] .casio-top h2,html[data-op1-theme=dark] .casio-top p,h
  .casio-case-display{gap:5px;padding:9px 6px;font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.casio-tabs button{transition:none}}
+
+/* On phones show one octave at full touch size; the octave controls shift pitch. */
+@media(max-width:460px){
+ .casio-key[data-casio-note="12"],.casio-key[data-casio-note="13"],.casio-key[data-casio-note="14"],.casio-key[data-casio-note="15"],.casio-key[data-casio-note="16"],.casio-key[data-casio-note="17"],.casio-key[data-casio-note="18"],.casio-key[data-casio-note="19"],.casio-key[data-casio-note="20"],.casio-key[data-casio-note="21"],.casio-key[data-casio-note="22"],.casio-key[data-casio-note="23"]{display:none!important}
+ .casio-keybed{min-height:156px}
+ .casio-key.white{left:calc(var(--white-position) * 100% / 7)!important;width:calc(100% / 7)!important}
+ .casio-key.black{left:calc(var(--white-position) * 100% / 7 - 4.7%)!important;width:9.4%!important}
+ .casio-note-label{font-size:12px!important}
+ .casio-case-display span:last-child{font-size:10px}
+}

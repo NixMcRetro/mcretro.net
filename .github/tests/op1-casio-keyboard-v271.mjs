@@ -31,6 +31,7 @@ for(const [name,browserType] of Object.entries({chromium,firefox,webkit})){
   assert.equal(await page.locator('#casioKeys .casio-key').count(),24);
   assert.equal(await page.locator('#casioKeys .casio-key.white').count(),14);
   assert.equal(await page.locator('#casioKeys .casio-key.black').count(),10);
+  if(width===390)assert.equal(await page.locator('#casioKeys .casio-key:visible').count(),12,'Phone should display one larger playable octave');
   assert.match(await page.locator('#casioKeys [data-casio-note="0"]').getAttribute('aria-label'),/C3/);
   assert.equal(await page.locator('#casioBank option').count(),3);
   await page.locator('#casioBank').selectOption('1');

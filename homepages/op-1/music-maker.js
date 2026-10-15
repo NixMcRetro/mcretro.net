@@ -25,7 +25,7 @@ function config(input){
  const spec=STYLES[style];
  return {style,mood,energy,bank:spec.bank,swing:spec.swing,
  bpm:cap(spec.bpm+(energy==='low'?-8:energy==='high'?10:0),40,240),
- scale:mood==='dark'?MINOR:MAJOR,base:mood==='dark'?45:48,
+ scale:mood==='dark'?MINOR:MAJOR,base:mood==='dark'?57:48,
  progression:MODES[mood],inst:spec.inst};
 }
 function pitch(c,degree,octave=0){
@@ -72,7 +72,7 @@ function partNotes(c,section,ch,rng,variation='new'){
     const motifIndex=(Math.floor(step/2)+section)%melodicMotif.length;
     const deviation=rng()<.15?1:0;
     const melodicDegree=degree+melodicMotif[motifIndex]+deviation;
-    const melody=pitch(c,melodicDegree,1)+shift;
+    const melody=pitch(c,melodicDegree,minor?0:1)+shift;
     notes[row]=cell(melody,inst,'synth',step%4===0?2:1,79+Math.floor(rng()*23));
    }
   }

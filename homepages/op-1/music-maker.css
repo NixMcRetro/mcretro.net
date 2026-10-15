@@ -32,3 +32,16 @@ html.studio-advanced .music-maker{display:none}
 .maker-footnote{font-size:12px;line-height:1.6;color:#526e80;max-width:760px}
 @media(max-width:680px){.music-maker{padding:15px;margin:16px 0}.maker-heading{flex-direction:column}.maker-settings{grid-template-columns:1fr}.maker-transport button,.maker-footer button{flex:1 1 130px}.maker-part{grid-template-columns:minmax(0,1fr) auto auto}.maker-part button{padding:9px 10px;font-size:12px}.maker-remix-tools{display:grid;grid-template-columns:1fr}.maker-remix-tools label{min-width:0}.maker-heading h2{font-size:26px}}
 @media(prefers-reduced-motion:reduce){.music-maker *{scroll-behavior:auto!important;transition:none!important}}
+/* Stage 4: compact, touch-friendly sound audition. */
+.maker-sound{border:1px solid #bdd3df;border-radius:14px;background:#fff;padding:18px;margin:18px 0}
+.maker-sound-settings{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:13px;margin:16px 0}
+.maker-sound-settings label{font-size:13px;font-weight:750;color:#385263;display:grid;gap:7px}
+.maker-sound-settings label strong{font-size:13px;font-weight:700}
+.maker-sound-settings select{width:100%;min-width:0}
+.maker-intensity input{accent-color:#235a7a;width:100%;min-width:0;min-height:32px}
+.maker-sound-actions{display:flex;gap:8px;flex-wrap:wrap}
+.maker-sound-actions .maker-primary{background:#235a7a;color:#fff;border-color:#235a7a}
+.maker-sound-actions [aria-pressed=true]{border-color:#247b9c;background:#d6edf4;color:#194b63}
+#makerSoundKeep{background:#e2f5ed;border-color:#81b8a2}
+#makerSoundStatus{font-size:13px;line-height:1.55;background:#f1f7fa;border:1px solid #d6e6ee;border-radius:9px;margin:15px 0 0;padding:10px 12px;min-height:44px}
+@media(max-width:680px){.maker-sound{padding:13px}.maker-sound-settings{grid-template-columns:1fr}.maker-sound-actions button{flex:1 1 130px}}

@@ -11,7 +11,7 @@ const server=createServer((req,res)=>{
  const url=new URL(req.url,'http://localhost');
  const rel=url.pathname.startsWith('/homepages/op-1/')?url.pathname.slice('/homepages/op-1/'.length):null;
  const name=rel===''?'index.html':rel;
- if(name===null||!['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','tracker.js','tracker.css','music-maker.js','music-maker.css','casio-keyboard.js','casio-keyboard.css','sw.js','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png'].includes(name)){
+ if(name===null||!['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','tracker.js','tracker.css','music-maker.js','music-maker.css','casio-keyboard.js','casio-keyboard.css','riff-recorder.js','riff-recorder.css','sw.js','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png'].includes(name)){
   res.writeHead(404);res.end('Not found');return;
  }
  try{const bytes=readFileSync(join(root,name));res.writeHead(200,{'content-type':types[extname(name)]??'application/octet-stream','cache-control':'no-cache'});res.end(bytes)}
@@ -34,7 +34,7 @@ try{
  await page.locator('#casioClassic').click();
  await page.waitForFunction(async()=>{
   if(!navigator.serviceWorker?.controller)return false;
-  const c=await caches.open('op1-browser-lab-shell-v2.7.1-keyboard');
+  const c=await caches.open('op1-browser-lab-shell-v2.8-riff-recorder');
   return !!(await c.match(new URL('index.html',location.href).href));
  },null,{timeout:30000});
  await page.waitForFunction(()=>document.querySelector('#offlineBadge')?.textContent==='CACHED',null,{timeout:15000});
@@ -42,7 +42,7 @@ try{
  const registration=await page.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration();return {scope:r?.scope,controller:!!navigator.serviceWorker.controller}});
  assert(registration.scope.endsWith('/homepages/op-1/'),'Service worker scope escaped instrument path');
  assert(registration.controller,'Page has no controlling service worker');
- const cached=await page.evaluate(async()=>{const c=await caches.open('op1-browser-lab-shell-v2.7.1-keyboard');return (await c.keys()).map(req=>new URL(req.url).pathname)});
+ const cached=await page.evaluate(async()=>{const c=await caches.open('op1-browser-lab-shell-v2.8-riff-recorder');return (await c.keys()).map(req=>new URL(req.url).pathname)});
  assert(cached.some(x=>x.endsWith('/index.html')),'Application HTML not cached');
  assert(cached.some(x=>x.endsWith('/workspace.js')),'Song workspace logic not cached');
  assert(cached.some(x=>x.endsWith('/workspace.css')),'Song workspace styles not cached');
@@ -56,6 +56,8 @@ try{
  assert(cached.some(x=>x.endsWith('/music-maker.css')),'Music Maker styles not cached');
  assert(cached.some(x=>x.endsWith('/casio-keyboard.js')),'Keyboard logic not cached');
  assert(cached.some(x=>x.endsWith('/casio-keyboard.css')),'Keyboard styles not cached');
+ assert(cached.some(x=>x.endsWith('/riff-recorder.js')),'Riff recorder logic not cached');
+ assert(cached.some(x=>x.endsWith('/riff-recorder.css')),'Riff recorder styles not cached');
  assert(cached.some(x=>x.endsWith('/icons/icon-512.png')),'App icon not cached');
  assert(cached.every(x=>x.startsWith('/homepages/op-1/')),'Cache escaped intended scope');
  assert(cached.every(x=>!x.includes('recording')&&!x.includes('sample')&&!x.endsWith('.json')),'Cache contains user data');

@@ -82,6 +82,7 @@ try{
      console.log('PASS Song Builder section edit, undo, audio playback mode and project save',browserName,width);
      if(browserName==='chromium'&&width===1280){
       await page.locator('#startAudio').click();
+      await page.locator('#trackerPerformanceOptions').evaluate(el=>el.open=true);
       await page.locator('#trackerQuantize').selectOption('beat');
       await page.locator('#trackerRecordArrangement').click();
       assert.equal(await page.evaluate(()=>window.OP1Tracker.recordingArrangement),true);

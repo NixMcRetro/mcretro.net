@@ -92,5 +92,6 @@ html[data-op1-theme=dark] .music-maker .casio-key.black{background:linear-gradie
 html[data-op1-theme=dark] .music-maker .casio-key.down.white{background:#9ddde9}
 html[data-op1-theme=dark] .music-maker .casio-key.down.black{background:#4a92b6}
 html[data-op1-theme=dark] .music-maker .casio-more{color:#d4e8f0;border-color:#547589}
+html[data-op1-theme=dark] .music-maker .maker-export-scope{color:#c4dce9}
 html[data-op1-theme=dark] .music-maker .maker-section-limit{background:#48372b;color:#ffe2b7;border-left-color:#e5aa62}
 @media(max-width:680px){.maker-finish{padding:16px}.maker-finish-actions{display:grid;grid-template-columns:1fr}.maker-finish-actions button{width:100%}}

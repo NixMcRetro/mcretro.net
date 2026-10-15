@@ -152,6 +152,7 @@ function refresh(){
  } // Tracker initialises before Music Maker inserts its controls.
  const overview=window.OP1Tracker?.musicMakerOverview?.()||{ready:false,sections:0,seconds:0,bpm:120,playing:false};
  const playable=overview.ready;
+ window.OP1TrackerCorner?.refresh?.();
  if($('makerSongOverview'))$('makerSongOverview').textContent=overview.ready?
   overview.sections+' song sections · about '+Math.round(overview.seconds)+' seconds · '+overview.bpm+' BPM'+(overview.seconds>180?' · Export limit 3 minutes':''):
   'No song arranged yet. Choose a style, then Generate a Song.';
@@ -170,6 +171,7 @@ function refresh(){
  const recording=window.OP1RiffRecorder&&['countin','recording'].includes(window.OP1RiffRecorder.phase);
  $('makerFinish').disabled=finishing||!playable||overview.seconds>180||recording;
  $('makerSave').disabled=finishing;
+ $('makerMidi').disabled=finishing||!playable||recording;
  if($('makerFinishDetail')){
   $('makerFinishDetail').textContent=!playable?'Generate a song or open a saved project to get started.':overview.seconds>180?'Your song is longer than three minutes. Shorten it in Song Sections before exporting.':'Your arrangement is '+Math.round(overview.seconds)+' seconds at '+overview.bpm+' BPM. Export WAV to listen and share; save a project backup to edit again.';
  }
@@ -323,7 +325,7 @@ function init(){
  '<label class="maker-intensity">How much? <strong id="makerSoundAmountLabel">55%</strong><input type="range" id="makerSoundAmount" min="0" max="100" value="55" step="5"></label></div>'+
  '<div class="maker-sound-actions"><button type="button" id="makerSoundTry" class="maker-primary">♫ Try Sound</button><button type="button" id="makerSoundA" aria-pressed="false" disabled>A Original</button><button type="button" id="makerSoundB" aria-pressed="false" disabled>B Changed</button><button type="button" id="makerSoundKeep" disabled>✓ Keep This Sound</button><button type="button" id="makerSoundCancel" disabled>Cancel</button></div>'+
  '<p id="makerSoundStatus" role="status" aria-live="polite">Choose a part, then Try Sound.</p><p class="maker-footnote">Preview changes only the tracker sound while you listen. Keep commits one undoable change. Effects are bounded to avoid extreme loudness; your tape, other projects and independent Song Workspace remain untouched.</p></section>'+
- '<section class="maker-finish" id="makerFinishPanel" aria-label="Finish and save your song"><div class="maker-finish-heading"><span>STEP 4 · FINISH YOUR SONG</span><h3>Ready to keep your tune?</h3><p id="makerFinishDetail">Generate a song or open a saved project to get started.</p></div><div class="maker-finish-actions"><button type="button" id="makerFinish" class="maker-primary">⬇ Download My Song (WAV)</button><button type="button" id="makerSave">Save Editable Project</button></div><p id="makerExportScope" class="maker-export-scope">WAV contains your Music Maker / Tracker arrangement. Independent Tape Studio and Song Workspace recordings are preserved in the editable project, not mixed into this WAV.</p><p id="makerFinishStatus" role="status" aria-live="polite">Choose WAV for listening or an editable project to continue creating music.</p></section>'+
+ '<section class="maker-finish" id="makerFinishPanel" aria-label="Finish and save your song"><div class="maker-finish-heading"><span>STEP 4 · FINISH YOUR SONG</span><h3>Ready to keep your tune?</h3><p id="makerFinishDetail">Generate a song or open a saved project to get started.</p></div><div class="maker-finish-actions"><button type="button" id="makerFinish" class="maker-primary">⬇ Download My Song (WAV)</button><button type="button" id="makerMidi">⬇ Download Song MIDI</button><button type="button" id="makerSave">Save Editable Project</button></div><p id="makerExportScope" class="maker-export-scope">WAV contains your Music Maker / Tracker arrangement as audio. MIDI contains that arrangement as editable notes in four tracks, tempo and song-section markers; it cannot contain our synth patches, effects or sample audio. Independent Tape Studio and Song Workspace recordings are preserved in the editable project, not mixed into either export.</p><p id="makerFinishStatus" role="status" aria-live="polite">Choose WAV for listening or an editable project to continue creating music.</p></section>'+
  '<div class="maker-footer"><details class="maker-classic-detail"><summary>Need detailed note editing?</summary><button type="button" id="makerEdit">Open Classic Note Editor</button></details></div>'+
  '<p class="maker-footnote">Everything is editable in Tracker Studio. Generate and Change use its normal Undo history; your Tape Studio, samples and Song Workspace are never replaced. Chord parts use one-note-at-a-time arpeggios in this four-channel tracker.</p>';
  const header=document.querySelector('main.shell > header.topline');
@@ -351,6 +353,15 @@ function init(){
   });
  }
  $('makerRemixAll').addEventListener('click',()=>remix([0,1,2,3].filter(ch=>!locks.has(ch))));
+ $('makerMidi').addEventListener('click',()=>{
+  if(finishing)return;
+  if(soundCandidate){soundStatus('Keep or cancel your sound preview before exporting.');return;}
+  if(window.OP1RiffRecorder&&['countin','recording','review'].includes(window.OP1RiffRecorder.phase)){
+   $('makerFinishStatus').textContent='Keep or discard your keyboard take before exporting MIDI.';return;
+  }
+  const result=window.OP1Tracker.exportMusicMakerMidi();
+  $('makerFinishStatus').textContent=result?'Song MIDI downloaded with the arrangement, tempo, four editable tracks and section markers. Your sounds and sample audio remain in the project.':'MIDI was not exported. Arrange some notes and finish any recordings first.';
+ });
  $('makerSave').addEventListener('click',()=>{
   if(finishing)return;
   if(soundCandidate){soundStatus('Keep or cancel the preview before saving your project.');return;}

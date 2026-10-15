@@ -11,7 +11,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   const context=await browser.newContext({viewport:{width,height:850},acceptDownloads:true});
   const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.setContent(html,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/v2\.6/);
+  assert.match(await page.title(),/v2\.7/);
   assert.equal(await page.locator('#soundKeys .sound-key').count(),8);
   assert.equal(await page.locator('.cat-split,[data-cat]').count(),0,'Removed cat buttons must not reappear');
   assert.equal(await page.locator('#pianolaMeter').inputValue(),'4/4');

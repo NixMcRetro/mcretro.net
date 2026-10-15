@@ -31,7 +31,7 @@ for(const [engineName,engine] of Object.entries({chromium,firefox,webkit})){
    const page=await ctx.newPage(),errors=[];
    page.on('pageerror',e=>errors.push(e.message));
    await page.goto(baseUrl,{waitUntil:'domcontentloaded'});await page.addStyleTag({content:"html.comfort-tabs-enabled .below .panel[data-comfort-tab],html.comfort-tabs-enabled .below .song-studio[data-comfort-tab]{display:block!important}html.comfort-tabs-enabled .below #sequencePanel{display:block!important}html.studio-simple .below [data-comfort-tab]{display:block!important}html.studio-simple .below [data-comfort-tab].comfort-visible:not(.studio-current){display:block!important}html.studio-simple #sequencePanel:not(.studio-current){display:block!important}"});
-   assert.match(await page.title(),/v2\.6/);
+   assert.match(await page.title(),/v2\.7/);
    assert.equal(await page.locator('#sampleWaveform').count(),1);
    assert.equal(await page.locator('#samplePreview').isDisabled(),true,'Audition should require a sample');
    await page.locator('#sampleAudioFile').setInputFiles({name:'workshop-test.wav',mimeType:'audio/wav',buffer:wav});

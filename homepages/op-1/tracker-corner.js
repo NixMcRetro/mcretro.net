@@ -28,7 +28,7 @@ function init(){
  '<div class="maker-tracker-content"><p>Here are the original tracker tools that make those retro, keygen-style tunes possible. You still have four independent musical channels; this is just a simpler way in.</p>'+
  '<strong id="makerTrackerInfo">Four musical channels</strong>'+
  '<div class="maker-tracker-fields"><label>Choose a pattern<select id="makerPatternList" aria-label="Choose a tracker pattern to preview"></select></label><label>Groove<select id="makerGroove"><option value="0">Straight timing</option><option value="12">Light swing</option><option value="25">Laid-back shuffle</option><option value="36">Deep shuffle</option></select></label></div>'+
- '<div class="maker-tracker-actions"><button type="button" id="makerPatternPreview" aria-pressed="false">▶ Hear Pattern</button><button type="button" id="makerOpenTracker">Open Full Tracker Editor</button></div>'+
+ '<div class="maker-tracker-actions"><button type="button" id="makerPatternPreview" aria-pressed="false">▶ Hear Pattern</button><button type="button" id="makerOpenTracker">Open Full Tracker Editor</button><button type="button" id="makerTrackerDemos">Browse Tracker Demos</button></div>'+
  '<p id="makerTrackerStatus" role="status" aria-live="polite">Preview patterns and change the timing without editing notes. The full tracker has step effects, instrument choices, pattern chaining, performance pads and more.</p>'+
  '<p class="maker-tracker-footnote">Pattern preview loops one pattern, unlike Play Song, which follows your song arrangement. Groove affects tracker timing and is saved with your project. Undo Change restores it.</p></div>';
  const panel=$('makerFinishPanel');if(panel)panel.before(root);else composer.append(root);
@@ -50,6 +50,11 @@ function init(){
  $('makerOpenTracker').addEventListener('click',()=>{
   if(window.OP1Tracker.playing)window.OP1Tracker.stop();
   $('makerEdit').click();
+ });
+ $('makerTrackerDemos').addEventListener('click',()=>{
+  if(window.OP1Tracker.playing)window.OP1Tracker.stop();
+  $('makerEdit').click();
+  window.OP1Tracker.openLibrary();
  });
  root.addEventListener('toggle',()=>{if(root.open)refresh()});
  refresh();

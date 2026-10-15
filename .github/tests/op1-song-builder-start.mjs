@@ -20,7 +20,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
     await page.setContent(rawHtml,{waitUntil:'domcontentloaded'});
     const welcome=page.locator('#studioWelcome');
     assert(await welcome.isVisible(),'The Make a Song screen must be visible in Focus');
-    assert.equal(await page.locator('.studio-start-card').count(),3);
+    assert.equal(await page.locator('.studio-start-card').count(),4);
     assert.match(await welcome.innerText(),/Make a song, one idea at a time/);
     const before=await save(page);
     await page.locator('#studioQuickBeat').click();
@@ -33,6 +33,8 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
     assert(await page.locator('#trackerStudio').isVisible(),'Song browser must open Tracker Studio');
     assert(await page.locator('#trackerLibrary').evaluate(el=>el.open),'Song library should be expanded');
     assert.equal(await page.locator('#trackerDemo option').count(),18);
+    await page.locator('#studioQuickBuild').click();
+    assert(await page.locator('#trackerSongBuilder').isVisible(),'Build a Song should open the editable song builder');
     await page.locator('#studioQuickTape').click();
     assert(await page.locator('#comfortTapePanel').isVisible(),'Tape shortcut must reach recording');
     await page.evaluate(()=>window.__openClicks=0);

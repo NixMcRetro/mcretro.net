@@ -14,7 +14,7 @@ assert.match(manifest.description,/created for SuperNick \(Nick\)/);
 const serviceWorker=readFileSync('homepages/op-1/sw.js','utf8');
 const htmlSource=readFileSync('homepages/op-1/index.html','utf8');
 assert.match(serviceWorker,/bleepgarden/);
-assert.match(htmlSource,/op1-browser-lab-shell-v2\.8-bleepgarden/);
+assert.match(htmlSource,/op1-browser-lab-shell-v2\.9-bleepgarden/);
 assert.match(readFileSync('homepages/op-1/tracker.js','utf8'),/bleepgarden-music-maker-2000-song\.wav/);
 
 for(const [browserName,type] of Object.entries({chromium,firefox,webkit})){
@@ -23,7 +23,7 @@ for(const [browserName,type] of Object.entries({chromium,firefox,webkit})){
   const page=await browser.newPage({viewport:{width:browserName==='chromium'?390:1150,height:860},acceptDownloads:true});
   const errors=[];page.on('pageerror',error=>errors.push(error.message));
   await page.setContent(beginnerHtml,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/^BleepGarden Music Maker 2000 v2\.8 \| Created for SuperNick \(Nick\)$/);
+  assert.match(await page.title(),/^BleepGarden Music Maker 2000 v2\.9 \| Created for SuperNick \(Nick\)$/);
   assert.match(await page.locator('.brand h1').innerText(),/^BleepGarden Music Maker 2000/);
   assert.match(await page.locator('.brand p').innerText(),/Created for SuperNick \(Nick\)/);
   assert.equal((await page.locator('.brandmark').innerText()).replace(/\s/g,''),'bg.');

@@ -14,7 +14,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   const ctx=await browser.newContext({viewport:{width:name==='chromium'?390:1200,height:900},acceptDownloads:true});
   const page=await ctx.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.setContent(rawHtml,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/v2\.8/,'The website must identify itself as v2.7');
+  assert.match(await page.title(),/v2\.9/,'The website must identify itself as v2.7');
   assert.match(await page.locator('#makerSongOverview').innerText(),/No song arranged yet/);
   assert(await page.locator('#makerPlay').isDisabled());
   await page.locator('#makerGenerate').click();

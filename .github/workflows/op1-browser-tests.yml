@@ -197,6 +197,7 @@ jobs:
             .github/tests/op1-tracker-music-making.mjs
             .github/tests/op1-tracker-performance.mjs
             .github/tests/op1-tracker-v25.mjs
+            .github/OP1-V2.8-RIFF-RECORDER-HANDOVER.md
             .github/OP1-V2.7.1-KEYBOARD-HANDOVER.md
             .github/OP1-V2.7-STAGE5-HANDOVER.md
             .github/OP1-V2.7-STAGE4-HANDOVER.md

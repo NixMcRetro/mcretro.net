@@ -14,10 +14,10 @@ for(const [name,engine] of Object.entries(engines)){
   const page=await ctx.newPage();const errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   await page.setContent(html,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/v2\.6/);
+  assert.match(await page.title(),/v2\.7/);
   assert.equal(await page.locator('.sound-key').count(),8);
   assert.equal(await page.locator('.knob').count(),4);
-  assert.match(await page.locator('.brand h1').innerText(),/v2\.6/,'Visible website header has an old version');
+  assert.match(await page.locator('.brand h1').innerText(),/v2\.7/,'Visible website header has an old version');
   assert.equal(await page.locator('.piano-key').count(),24,'Desktop must have 24 named keys');
   assert.equal(await page.locator('.piano-key .note-name').count(),24,'A desktop key is missing its note name');
   assert.equal(await page.locator('#mobileKbdGrid .note-name').count(),24,'A mobile key is missing its note name');

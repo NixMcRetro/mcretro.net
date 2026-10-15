@@ -71,7 +71,7 @@ try{
      const downloadPromise=page.waitForEvent('download',{timeout:120000});
      await page.locator('#trackerFinishSong').click();
      const audio=await downloadPromise;
-     assert.equal(audio.suggestedFilename(),'supernicks-op1-finished-song.wav');
+     assert.equal(audio.suggestedFilename(),'bleepgarden-music-maker-2000-song.wav');
      checkWav(readFileSync(await audio.path()),expected.duration);
      assert.match(await page.locator('#trackerFinishStatus').innerText(),/Stereo WAV downloaded/);
      const projectAfter=await saveProject(page);

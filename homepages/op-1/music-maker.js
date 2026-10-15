@@ -131,7 +131,7 @@ function refresh(){
  $('makerRemixAll').disabled=!session||locks.size===4;
  $('makerUndo').disabled=!session;
  $('makerPlay').disabled=!playable;
- $('makerFinish').disabled=!playable;
+ $('makerFinish').disabled=!playable||overview.seconds>180;
 }
 function generate(){
  const selected=options(),song=whole(selected,seed());

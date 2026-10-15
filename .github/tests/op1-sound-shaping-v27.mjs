@@ -33,7 +33,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    assert.equal(original.tracker.channels[3].warmth,0);
    await page.locator('#makerSoundPart').selectOption('3');
    await page.locator('#makerSoundDirection').selectOption('warm');
-   await page.locator('#makerSoundAmount').fill('80');
+   await page.locator('#makerSoundAmount').evaluate(el=>{el.value='80';el.dispatchEvent(new Event('input',{bubbles:true}));});
    await page.locator('#makerSoundTry').click();
    assert.equal(await page.locator('#makerSoundB').getAttribute('aria-pressed'),'true');
    assert.equal(await page.locator('#makerSoundKeep').isEnabled(),true);
@@ -73,7 +73,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    const punchy=await save(page);
    assert(part(punchy,3).punch>0,'Punchier must change musical envelope');
    await page.locator('#makerSoundDirection').selectOption('surprise');
-   await page.locator('#makerSoundAmount').fill('100');
+   await page.locator('#makerSoundAmount').evaluate(el=>{el.value='100';el.dispatchEvent(new Event('input',{bubbles:true}));});
    await page.locator('#makerSoundTry').click();
    await page.locator('#makerSoundKeep').click();
    const randomised=await save(page);

@@ -776,6 +776,33 @@ function addStarter(key){
  renderArrangement();
  status(entry.name+' added to your song. Select its notes in the tracker to personalise it.');
 }
+/* v2.8 Stage 3: beginner-friendly, atomic song-section edits.
+   The arrangement stores references to existing patterns; no audio or sample data is rewritten. */
+function musicMakerArrange(action,index,value){
+ const old=data(),list=old.arrangement;
+ if(rendering||arrangementRecording||capture||captureEncoding||api.isRecording()||playing){
+  status('Stop playback, export or recording before changing song sections');return false;
+ }
+ if(!['add','duplicate','delete','move','label','rows'].includes(action))return false;
+ if(action!=='add'&&!validInt(index,0,list.length-1))return false;
+ if((action==='add'||action==='duplicate')&&list.length>=MAX_SECTIONS)return false;
+ if(action==='move'&&(!validInt(value,0,list.length-1)||value===index))return false;
+ if(action==='label'&&!SECTION_LABELS.includes(value))return false;
+ if(action==='rows'&&![16,32,64,128].includes(value))return false;
+ return commit(d=>{
+  const parts=d.arrangement;
+  if(action==='add'){
+   const basis=parts.length&&validInt(index,0,parts.length-1)?parts[index]:null;
+   const initial=basis?{...basis}:{pattern:d.active,rows:Math.min(32,d.patterns[d.active].rows),label:'Intro'};
+   parts.splice(basis?index+1:0,0,initial);
+  }
+  if(action==='duplicate')parts.splice(index+1,0,{...parts[index]});
+  if(action==='delete')parts.splice(index,1);
+  if(action==='move')parts.splice(value,0,parts.splice(index,1)[0]);
+  if(action==='label')parts[index].label=value;
+  if(action==='rows')parts[index].rows=value;
+ });
+}
 function arrangementEdit(index,action,value){
  if(arrangementRecording){status('Finish recording before editing the arrangement');return}
  const list=data().arrangement;
@@ -862,6 +889,7 @@ function renderArrangement(){
   item.append(number,labelSelect,patternSel,length,actions);return item;
  }));
  $('trackerArrangementEmpty').hidden=sections.length>0;
+ window.OP1SongSections?.refresh?.();
 }
 function finishTapeTake(){
  if(!capture)return;
@@ -1425,7 +1453,7 @@ window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
  get playing(){return playing},get live(){return !!live},get transport(){return {playing,mode:arrangementPlaying?'song':live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
  launch,play,finishTapeTake,openLibrary,setLayoutMode,buildDemo,stopDemoPreview,
  compileArrangement,recordedSections,playArrangement,startArrangementRecording,makeStarterPattern,addStarter,
- applyMusicMakerSong,applyMusicMakerParts,musicMakerSnapshot,musicMakerSectionChoices,musicMakerRecordingTarget,startMusicMakerBacking,applyMusicMakerRecording,adjustMusicMakerPart,previewMusicMakerRecording,cancelMusicMakerRecordingPreview,readMusicMakerSound,musicMakerHasNotes,musicMakerOverview,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
+ applyMusicMakerSong,applyMusicMakerParts,musicMakerSnapshot,musicMakerSectionChoices,musicMakerArrange,musicMakerRecordingTarget,startMusicMakerBacking,applyMusicMakerRecording,adjustMusicMakerPart,previewMusicMakerRecording,cancelMusicMakerRecordingPreview,readMusicMakerSound,musicMakerHasNotes,musicMakerOverview,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
  get recordingArrangement(){return !!arrangementRecording},
  get arrangementPlaying(){return arrangementPlaying},
  get previewing(){return !!demoPreview}};

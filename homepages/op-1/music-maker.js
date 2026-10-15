@@ -104,6 +104,7 @@ function seed(){if(window.crypto&&crypto.getRandomValues)return crypto.getRandom
 function options(){return {style:$('makerStyle').value,mood:$('makerMood').value,energy:$('makerEnergy').value};}
 function status(message){$('makerStatus').textContent=message;}
 function refresh(){
+ if(!$('musicMaker'))return; // Tracker initialises before Music Maker inserts its controls.
  const overview=window.OP1Tracker?.musicMakerOverview?.()||{ready:false,sections:0,seconds:0,bpm:120,playing:false};
  const playable=session||overview.ready;
  if($('makerSongOverview'))$('makerSongOverview').textContent=overview.ready?

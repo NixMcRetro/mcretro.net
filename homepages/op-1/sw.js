@@ -1,6 +1,6 @@
-/* OP-1 Browser Lab v2.7. Cache only the static application shell, not projects. */
+/* BleepGarden Music Maker 2000 v2.8. Cache the static shell only; do not cache projects. */
 'use strict';
-const CACHE='op1-browser-lab-shell-v2.8-stage4-finish';
+const CACHE='op1-browser-lab-shell-v2.8-bleepgarden';
 const PREFIX='op1-browser-lab-shell-';
 const SCOPE=new URL('./',self.location.href);
 const SHELL=['./','./index.html','./workspace.js','./workspace.css','./comfort.js','./comfort.css','./simplified.js','./simplified.css','./tracker.js','./tracker.css','./music-maker.js','./music-maker.css','./casio-keyboard.js','./casio-keyboard.css','./riff-recorder.js','./riff-recorder.css','./song-sections.js','./song-sections.css','./beginner-polish.css','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/icon-maskable-512.png','./icons/apple-touch-icon.png'];

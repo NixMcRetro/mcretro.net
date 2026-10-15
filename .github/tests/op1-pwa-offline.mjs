@@ -28,6 +28,8 @@ try{
  await page.goto(origin,{waitUntil:'domcontentloaded'});
  assert.match(await page.title(),/v2\.8/);
  assert(!(await page.locator('#deviceOuter').isVisible()),'Legacy hardware should not clutter default app');
+ await page.locator('#makerThemeToggle').click();
+ assert.equal(await page.locator('html').getAttribute('data-op1-theme'),'dark','Simple-mode theme switch failed');
  await page.locator('#makerTabKeyboard').click();
  assert(await page.locator('#casioKeys').isVisible(),'Offline app must load beginner keyboard');
  await page.locator('#casioMore').evaluate(el=>el.open=true);
@@ -68,8 +70,7 @@ try{
  await page.locator('#installApp').click();
  assert(await page.locator('#offlineInstructions').isVisible(),'Device installation guidance missing');
  await page.locator('#closeOfflineInstructions').click();
- await page.locator('#comfortTheme').click();
- assert.equal(await page.locator('html').getAttribute('data-op1-theme'),'dark');
+ assert.equal(await page.locator('html').getAttribute('data-op1-theme'),'dark','Classic Studio must inherit the same graphite preference');
  await page.getByRole('tab',{name:'Play'}).click();
  await page.locator('#bankNext').click();
  assert.equal(await page.locator('#bankName').innerText(),'AFTER HOURS');
@@ -93,6 +94,7 @@ try{
  assert.equal(await page.locator('html').getAttribute('data-op1-theme'),'dark','Graphite theme preference was not retained offline');
  assert(await page.locator('html').evaluate(el=>el.classList.contains('beginner-studio')),'Offline reload should return to beginner-first view');
  assert(await page.locator('#musicMaker').isVisible(),'Offline beginner Music Maker not visible');
+ assert.equal(await page.locator('#makerThemeToggle').innerText(),'☀ Light mode','Simple-mode dark preference must persist through offline reload');
  await page.locator('#makerTabKeyboard').click();
  assert(await page.locator('#casioKeys').isVisible(),'Offline keyboard not functional');
  await page.locator('#casioMore').evaluate(el=>el.open=true);

@@ -1701,8 +1701,8 @@ function op1InstallHelp(){
 async function op1CheckOffline(){
  if(!('serviceWorker' in navigator)||!('caches' in window)||!window.isSecureContext){op1OfflineReady=false;op1OfflineMessage('Offline installation is unavailable in this browser or context. Use HTTPS in a regular browser tab; download portable project backups.', 'warn');return}
  try {
-  const cache=await caches.open('op1-browser-lab-shell-v2.6');
-  const root=new URL('./',location.href),paths=['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','tracker.js','tracker.css','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png'];
+  const cache=await caches.open('op1-browser-lab-shell-v2.7');
+  const root=new URL('./',location.href),paths=['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','tracker.js','tracker.css','music-maker.js','music-maker.css','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png'];
   const found=await Promise.all(paths.map(p=>cache.match(new URL(p,root).href)));
   op1OfflineReady=found.every(Boolean);
   if(op1OfflineReady){const offline=!navigator.onLine;

@@ -27,7 +27,11 @@ try{
  page.on('pageerror',e=>errors.push(String(e)));
  await page.goto(origin,{waitUntil:'domcontentloaded'});
  assert.match(await page.title(),/v2\.7/);
- await page.locator('#studioAdvancedButton').click();
+ assert(!(await page.locator('#deviceOuter').isVisible()),'Legacy hardware should not clutter default app');
+ await page.locator('#makerTabKeyboard').click();
+ assert(await page.locator('#casioKeys').isVisible(),'Offline app must load beginner keyboard');
+ await page.locator('#casioMore').evaluate(el=>el.open=true);
+ await page.locator('#casioClassic').click();
  await page.waitForFunction(async()=>{
   if(!navigator.serviceWorker?.controller)return false;
   const c=await caches.open('op1-browser-lab-shell-v2.7.1-keyboard');

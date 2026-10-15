@@ -2,7 +2,7 @@ name: OP-1 Browser Regression
 
 on:
   push:
-    branches: [main, op1-v1.1-polish, op1-v1.2-sound-design, op1-v1.3-tape-studio, op1-v1.4-offline, op1-v1.5-performance-studio, op1-v1.5.1-key-labels, op1-v1.6-display-foundation, op1-v1.6-sampling-workshop, op1-v1.7-cat-song-arrangement, op1-v1.8-pianola-composer, op1-v1.8.1-note-interchange, op1-v1.9-piano-roll-studio, op1-v2.0-unified-song-workspace, op1-v2.0.1-studio-comfort, op1-v2.0.2-musical-demos, op1-v2.1-studio-simplified, op1-v2.2-tracker-studio, op1-v2.2-tracker-release-candidate, op1-v2.3-music-making, op1-v2.4-performance-arrangement, op1-v2.5-sound-design-simplification, op1-v2.6-song-builder]
+    branches: [main, op1-v1.1-polish, op1-v1.2-sound-design, op1-v1.3-tape-studio, op1-v1.4-offline, op1-v1.5-performance-studio, op1-v1.5.1-key-labels, op1-v1.6-display-foundation, op1-v1.6-sampling-workshop, op1-v1.7-cat-song-arrangement, op1-v1.8-pianola-composer, op1-v1.8.1-note-interchange, op1-v1.9-piano-roll-studio, op1-v2.0-unified-song-workspace, op1-v2.0.1-studio-comfort, op1-v2.0.2-musical-demos, op1-v2.1-studio-simplified, op1-v2.2-tracker-studio, op1-v2.2-tracker-release-candidate, op1-v2.3-music-making, op1-v2.4-performance-arrangement, op1-v2.5-sound-design-simplification, op1-v2.6-song-builder, op1-v2.7-music-maker]
     paths:
       - 'homepages/op-1/index.html'
       - '.github/tests/op1-piano-roll-studio.mjs'
@@ -18,6 +18,9 @@ on:
       - 'homepages/op-1/simplified.css'
       - 'homepages/op-1/tracker.js'
       - 'homepages/op-1/tracker.css'
+      - 'homepages/op-1/music-maker.js'
+      - 'homepages/op-1/music-maker.css'
+      - '.github/tests/op1-music-maker-v27.mjs'
       - '.github/tests/op1-tracker-studio.mjs'
       - '.github/tests/op1-tracker-music-making.mjs'
       - '.github/tests/op1-tracker-performance.mjs'
@@ -54,6 +57,9 @@ on:
       - 'homepages/op-1/simplified.css'
       - 'homepages/op-1/tracker.js'
       - 'homepages/op-1/tracker.css'
+      - 'homepages/op-1/music-maker.js'
+      - 'homepages/op-1/music-maker.css'
+      - '.github/tests/op1-music-maker-v27.mjs'
       - '.github/tests/op1-tracker-studio.mjs'
       - '.github/tests/op1-tracker-music-making.mjs'
       - '.github/tests/op1-tracker-performance.mjs'
@@ -91,6 +97,8 @@ jobs:
         run: |
           npm install --no-save playwright@1.57.0
           npx playwright install --with-deps chromium firefox webkit
+      - name: v2.7 beginner generator, editable remix and backup regression
+        run: node .github/tests/op1-music-maker-v27.mjs
       - name: v2.6 Stage 4 finished song stereo WAV and backup regression
         run: node .github/tests/op1-song-finish-v26.mjs
       - name: v2.6 Stage 3 visual timeline and starter patterns regression
@@ -156,6 +164,7 @@ jobs:
             .github/tests/op1-song-arrangement-v26.mjs
             .github/tests/op1-song-timeline-v26.mjs
             .github/tests/op1-song-finish-v26.mjs
+            .github/tests/op1-music-maker-v27.mjs
             .github/tests/op1-tracker-studio.mjs
             .github/tests/op1-tracker-music-making.mjs
             .github/tests/op1-tracker-performance.mjs

@@ -3,7 +3,7 @@
 'use strict';
 const $=id=>document.getElementById(id),PARTS=['Drums','Bass','Chords','Melody'];
 const lengths=[.5,1,2,4],cap=(x,a,b)=>Math.max(a,Math.min(b,x));
-let phase='idle',take=null,interval=null,review=null,undoReady=false,auditioning=false;
+let phase='idle',take=null,interval=null,review=null,undoReady=false,auditioning=false,lastTakeSnapshot=null;
 function quantize(events,startAtMs,bpm,inst=0){
  const cells=Array(32).fill(null),step=60000/bpm/4;
  if(!Array.isArray(events)||!Number.isFinite(startAtMs)||!Number.isFinite(step)||step<=0)return cells;
@@ -68,7 +68,7 @@ function begin(){
  if(!target.ok){say(target.reason);return}
  const timing=window.OP1Tracker.startMusicMakerBacking(section,ch);
  if(!timing){say('Unable to start. Stop song playback or export, then enable audio and try again.');return}
- review=null;undoReady=false;auditioning=false;
+ review=null;undoReady=false;lastTakeSnapshot=null;auditioning=false;
  take={section,ch,inst:timing.inst,bpm:timing.bpm,startAtMs:timing.startAtMs,finishAtMs:timing.finishAtMs,events:[],active:new Map()};
  phase='countin';buttons();tick();interval=setInterval(tick,45);
  $('casioKeys').scrollIntoView({block:'center',behavior:'instant'});
@@ -99,13 +99,14 @@ function keep(){
  if(auditioning){window.OP1Tracker.cancelMusicMakerRecordingPreview();auditioning=false}
  const {section,ch,cells}=review;
  if(!window.OP1Tracker.applyMusicMakerRecording(section,ch,cells)){say('Could not save. Stop other recording or playback and try Keep again.');return}
- review=null;phase='idle';undoReady=true;
+ review=null;phase='idle';undoReady=true;lastTakeSnapshot=JSON.stringify(window.OP1Tracker.musicMakerSnapshot());
  say('Your riff is saved in '+PARTS[ch]+'. Press Play Song to hear it or Undo Take to restore the previous part.');
  buttons();window.OP1MusicMaker?.refresh?.();
 }
 function undoTake(){
  if(!undoReady||phase!=='idle')return;
- window.OP1Tracker.undo();undoReady=false;say('Take undone. Previous notes restored.');buttons();
+ if(JSON.stringify(window.OP1Tracker.musicMakerSnapshot())!==lastTakeSnapshot){undoReady=false;lastTakeSnapshot=null;say('The song has changed since this take. Use Undo Latest Edit in Music Maker first.');buttons();return;}
+ window.OP1Tracker.undo();undoReady=false;lastTakeSnapshot=null;say('Take undone. Previous notes restored.');buttons();
 }
 function init(){
  const keyboard=$('casioKeyboardPanel');if(!keyboard)return;

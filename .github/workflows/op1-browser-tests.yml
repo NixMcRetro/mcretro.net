@@ -227,6 +227,7 @@ jobs:
             .github/tests/op1-tracker-music-making.mjs
             .github/tests/op1-tracker-performance.mjs
             .github/tests/op1-tracker-v25.mjs
+            .github/BLEEPGARDEN-V2.9-MIDI-TRACKER-MUSICALITY-HANDOVER.md
             .github/BLEEPGARDEN-V2.8-BRANDING-HANDOVER.md
             .github/OP1-V2.8-STAGE4-FINISH-DARK-HANDOVER.md
             .github/OP1-V2.8-STAGE3-SONG-SECTIONS-HANDOVER.md

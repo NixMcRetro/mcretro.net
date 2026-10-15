@@ -55,7 +55,7 @@ for(const [browserName,engine] of Object.entries({chromium,firefox,webkit})){
 }
 // Audio restoration requires real origin-backed IndexedDB, not about:blank.
 const audioRoot=resolve('homepages/op-1');
-const audioFiles=new Set(['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','tracker.js','tracker.css','music-maker.js','music-maker.css','casio-keyboard.js','casio-keyboard.css','riff-recorder.js','riff-recorder.css','song-sections.js','song-sections.css','beginner-polish.css','sw.js','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png']);
+const audioFiles=new Set(['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','tracker.js','tracker.css','music-maker.js','music-maker.css','casio-keyboard.js','casio-keyboard.css','riff-recorder.js','riff-recorder.css','song-sections.js','song-sections.css','beginner-polish.css','tracker-corner.js','tracker-corner.css','sw.js','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png']);
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.webmanifest':'application/manifest+json','.png':'image/png'};
 const server=createServer((req,res)=>{
  const pathname=new URL(req.url,'http://localhost').pathname;

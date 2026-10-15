@@ -47,15 +47,16 @@ function init(){
   }
   refresh();
  });
- $('makerOpenTracker').addEventListener('click',()=>{
+ function openOriginalTracker(showDemos){
   if(window.OP1Tracker.playing)window.OP1Tracker.stop();
-  $('makerEdit').click();
- });
- $('makerTrackerDemos').addEventListener('click',()=>{
-  if(window.OP1Tracker.playing)window.OP1Tracker.stop();
-  $('makerEdit').click();
-  window.OP1Tracker.openLibrary();
- });
+  // The full 18-demo library lives inside the original studio, which the
+  // beginner-first CSS otherwise keeps tucked away.
+  window.OP1CasioKeyboard?.openClassic?.(true);
+  window.OP1Simplified.selectTool('trackerStudio',{scroll:true});
+  if(showDemos)window.OP1Tracker.openLibrary();
+ }
+ $('makerOpenTracker').addEventListener('click',()=>openOriginalTracker(false));
+ $('makerTrackerDemos').addEventListener('click',()=>openOriginalTracker(true));
  root.addEventListener('toggle',()=>{if(root.open)refresh()});
  refresh();
 }

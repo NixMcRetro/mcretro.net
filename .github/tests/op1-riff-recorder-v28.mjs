@@ -46,6 +46,37 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert.deepEqual(fresh.songWorkspace,original.songWorkspace);
   await page.locator('#makerEasyUndo').click();
   assert.deepEqual((await backup(page)).tracker,original.tracker);
+  // Busier should add notes without touching other sections or channels.
+  await page.locator('#makerEasyDirection').selectOption('busier');
+  await page.locator('#makerEasyApply').click();
+  const busier=await backup(page);
+  assert(cellsOf(busier.tracker.patterns[2],3).filter(Boolean).length>=cellsOf(original.tracker.patterns[2],3).filter(Boolean).length);
+  await page.locator('#makerEasyUndo').click();
+  assert.deepEqual((await backup(page)).tracker,original.tracker);
+  await page.locator('#makerLock3').click();
+  await page.locator('#makerEasyApply').click();
+  assert.deepEqual((await backup(page)).tracker,original.tracker,'Locked melody may not change');
+  await page.locator('#makerLock3').click();
+  // Shared section patterns must be cloned, never overwritten in other sections.
+  const shared=structuredClone(original);
+  shared.tracker.arrangement[1].pattern=shared.tracker.arrangement[0].pattern;
+  await page.locator('#projectFile').setInputFiles({name:'shared-song.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(shared))});
+  await page.waitForFunction(()=>document.querySelector('#feedback')?.textContent.includes('Project loaded'),null,{timeout:20000});
+  const priorShared=await backup(page);
+  const synth={midi:60,inst:0,kind:'synth',vel:95,fx:'none',param:0,length:1,chance:100};
+  const newTake=Array.from({length:32},(_,i)=>i===4?synth:null);
+  const isolated=await page.evaluate(t=>window.OP1Tracker.applyMusicMakerRecording(1,3,t),newTake);
+  assert(isolated);
+  const split=await backup(page);
+  assert.equal(split.tracker.patterns.length,priorShared.tracker.patterns.length+1);
+  assert.equal(split.tracker.arrangement[0].pattern,0);
+  assert.notEqual(split.tracker.arrangement[1].pattern,0);
+  assert.deepEqual(split.tracker.patterns[0],priorShared.tracker.patterns[0],'Original section must not change');
+  await page.evaluate(()=>window.OP1Tracker.undo());
+  assert.deepEqual((await backup(page)).tracker,priorShared.tracker,'Undo restores shared pattern arrangement');
+  // Restore the normal generated song before testing real keyboard capture.
+  await page.locator('#projectFile').setInputFiles({name:'normal-song.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(original))});
+  await page.waitForFunction(()=>document.querySelector('#feedback')?.textContent.includes('Project loaded'),null,{timeout:20000});
   const unit=60000/120/4;
   const result=await page.evaluate(({unit})=>window.OP1RiffRecorder.quantize([
    {midi:60,startMs:1000+unit*.08,endMs:1000+unit*1.8},

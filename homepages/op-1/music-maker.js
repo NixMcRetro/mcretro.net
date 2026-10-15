@@ -104,7 +104,16 @@ function seed(){if(window.crypto&&crypto.getRandomValues)return crypto.getRandom
 function options(){return {style:$('makerStyle').value,mood:$('makerMood').value,energy:$('makerEnergy').value};}
 function status(message){$('makerStatus').textContent=message;}
 function refresh(){
- if(!$('musicMaker'))return; // Tracker initialises before Music Maker inserts its controls.
+ if(!$('musicMaker'))return;
+ const sections=window.OP1Tracker?.musicMakerSectionChoices?.()||[];
+ if($('makerEasySection')){
+  const select=$('makerEasySection'),prev=select.value;
+  if(select.options.length!==sections.length||sections.some((part,i)=>select.options[i]?.textContent!==part.name)){
+   select.replaceChildren(...sections.map(x=>new Option(x.name,String(x.index))));
+   if(sections.some(x=>String(x.index)===prev))select.value=prev;
+  }
+  $('makerEasyApply').disabled=!sections.length;
+ } // Tracker initialises before Music Maker inserts its controls.
  const overview=window.OP1Tracker?.musicMakerOverview?.()||{ready:false,sections:0,seconds:0,bpm:120,playing:false};
  const playable=session||overview.ready;
  if($('makerSongOverview'))$('makerSongOverview').textContent=overview.ready?
@@ -128,7 +137,26 @@ function generate(){
  const selected=options(),song=whole(selected,seed());
  if(!window.OP1Tracker.applyMusicMakerSong(song))return;
  cancelSoundPreview();session=true;songOptions=selected;locks.clear();variationCount=[0,0,0,0];refresh();
- status('Your song is ready. Press Play, then change any part that needs work. Your other studios and recordings are untouched.');
+ status('Your song is ready. Press Play, then change any part that needs work. Your other studios and recordings are untouched.');window.OP1RiffRecorder?.refresh?.();
+}
+function easyStatus(message){$('makerEasyStatus').textContent=message}
+function adjustPart(){
+ const section=Number($('makerEasySection').value),ch=Number($('makerEasyPart').value),action=$('makerEasyDirection').value;
+ if(locks.has(ch)){easyStatus(PARTS[ch]+' is locked. Unlock it above before changing its notes.');return}
+ const target=window.OP1Tracker.musicMakerRecordingTarget(section,ch);
+ if(!target.ok){easyStatus(target.reason);return}
+ let generated=null;
+ if(action==='regenerate'){
+  const original=songOptions||options();
+  const fresh=patterns(original,seed(),'new',[ch]);
+  generated=Array.from({length:32},(_,row)=>fresh[section%4].cells[row*4+ch]);
+ }
+ cancelSoundPreview();
+ const result=window.OP1Tracker.adjustMusicMakerPart(section,ch,action,generated);
+ if(!result){easyStatus('Could not make that change. Stop playback or an export. For higher or lower notes, the part may already be near the keyboard limit.');return}
+ if(session)variationCount[ch]++;
+ refresh();
+ easyStatus(PARTS[ch]+' updated in '+target.name+'. Only this section and part changed. Undo Latest Edit restores the previous version.');
 }
 function remix(channels){
  if(!session||!channels.length)return;
@@ -247,6 +275,7 @@ function init(){
  '<div class="maker-parts"><div class="maker-parts-heading"><h3>Make it your own</h3><p>Lock what sounds good. Change the rest, without losing the whole song.</p></div>'+
  PARTS.map((name,i)=>'<div class="maker-part"><div><strong>'+name+'</strong><small id="makerVersion'+i+'">No part yet</small></div><button type="button" id="makerLock'+i+'" aria-pressed="false">Lock</button><button type="button" id="makerRemix'+i+'">↻ Change</button></div>').join('')+
  '<div class="maker-remix-tools"><label>Change the feel<select id="makerDirection"><option value="new">Surprise me</option><option value="simpler">Simpler</option><option value="busier">Busier</option><option value="lower">Lower notes</option><option value="higher">Higher notes</option></select></label><button type="button" id="makerRemixAll">↻ Remix Unlocked Parts</button></div></div>'+
+ '<section class="maker-easy" aria-label="Easy changes for individual song parts"><h3>Fix a part without editing notes</h3><p>Choose one part and section, then tell the song what to change. Everything else stays put.</p><div class="maker-easy-settings"><label>Part<select id="makerEasyPart"><option value="3">Melody</option><option value="1">Bass</option><option value="2">Chords</option></select></label><label>Section<select id="makerEasySection"></select></label><label>Change<select id="makerEasyDirection"><option value="simpler">Simpler</option><option value="busier">Busier</option><option value="higher">Higher</option><option value="lower">Lower</option><option value="regenerate">New Idea</option></select></label></div><div class="maker-easy-actions"><button type="button" id="makerEasyApply">✓ Make This Change</button><button type="button" id="makerEasyUndo">↶ Undo Latest Edit</button></div><p id="makerEasyStatus" role="status" aria-live="polite">Choose a part and try a musical adjustment. Saved projects work too.</p></section>'+
  '<section class="maker-sound" aria-label="Shape the sound of a musical part"><div class="maker-parts-heading"><h3>Shape your sound</h3><p>Try warmer, brighter or another feel. Compare before and after without changing your saved song.</p></div>'+
  '<div class="maker-sound-settings"><label>Choose a part<select id="makerSoundPart"><option value="0">Drums</option><option value="1">Bass</option><option value="2">Chords</option><option value="3" selected>Melody</option></select></label>'+
  '<label>Make it sound<select id="makerSoundDirection"><option value="warm">Warmer</option><option value="bright">Brighter</option><option value="punch">Punchier</option><option value="soft">Softer</option><option value="space">Spacier</option><option value="dark">Darker</option><option value="surprise">Surprise Me (safe random)</option></select></label>'+
@@ -261,6 +290,8 @@ function init(){
   if(session)status('Changed generation settings. Press Generate a Song to start a new idea; Change keeps the musical key and tempo of your current song.');
  });
  initSound();
+ $('makerEasyApply').addEventListener('click',adjustPart);
+ $('makerEasyUndo').addEventListener('click',()=>{cancelSoundPreview();window.OP1Tracker.undo();easyStatus('Restored the previous tracker edit.');refresh()});
  $('makerGenerate').addEventListener('click',generate);
  $('makerPlay').addEventListener('click',()=>{
   if(window.OP1Tracker.arrangementPlaying){window.OP1Tracker.stop();status('Playback stopped. Press Play Song whenever you want to listen again.');}

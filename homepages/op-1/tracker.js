@@ -242,7 +242,7 @@ function render(){
  $('trackerChain').value=data().chain.map(n=>n.toString(16).padStart(2,'0').toUpperCase()).join(' ');
  $('trackerAdd').disabled=data().patterns.length>=MAX_PATTERNS;
  $('trackerDelete').disabled=data().patterns.length===1;
- renderGrid();updateEditor();renderMixer();changeView(viewChannel);renderLaunchPads();renderAutomationStatus();renderLibrary();renderArrangement();$('trackerUndo').disabled=!history.length;$('trackerRedo').disabled=!redoHistory.length;if($('trackerLoop')){$('trackerLoop').setAttribute('aria-pressed',String(loopEnabled));$('trackerLoop').textContent=loopEnabled?'↻ LOOP ON':'↻ LOOP OFF'}status();window.OP1MusicMaker?.refresh?.();
+ renderGrid();updateEditor();renderMixer();changeView(viewChannel);renderLaunchPads();renderAutomationStatus();renderLibrary();renderArrangement();$('trackerUndo').disabled=!history.length;$('trackerRedo').disabled=!redoHistory.length;if($('trackerLoop')){$('trackerLoop').setAttribute('aria-pressed',String(loopEnabled));$('trackerLoop').textContent=loopEnabled?'↻ LOOP ON':'↻ LOOP OFF'}status();window.OP1MusicMaker?.refresh?.();window.OP1RiffRecorder?.refresh?.();
 }
 function writeNote(advance=false){
  const midi=Number($('trackerMidi').value),inst=Number($('trackerInstrument').value),vel=Number($('trackerVelocity').value),kind=$('trackerKind').value,fx=$('trackerEffect').value,param=Number($('trackerParam').value),length=Number($('trackerLength').value),chance=Number($('trackerChance').value);
@@ -1170,6 +1170,9 @@ function sendToSong(){
 /* A guarded bridge: generated notes use the exact existing v5 tracker schema and Undo. */
 /* v2.8: simple keyboard takes share the existing tracker data, rendering and Undo.
    One two-bar pattern is the smallest editable unit; cloned when shared by sections. */
+function musicMakerSectionChoices(){
+ return data().arrangement.map((part,index)=>({index,name:(part.label||'Part '+(index+1))+' · '+(Math.round(part.rows/16*10)/10)+' bars'}));
+}
 function musicMakerRecordingTarget(section,ch){
  const d=data();
  if(!validInt(section,0,d.arrangement.length-1)||!validInt(ch,1,3))return {ok:false,reason:'Choose a song section and Bass, Chords or Melody.'};
@@ -1421,7 +1424,7 @@ window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
  get playing(){return playing},get live(){return !!live},get transport(){return {playing,mode:arrangementPlaying?'song':live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
  launch,play,finishTapeTake,openLibrary,setLayoutMode,buildDemo,stopDemoPreview,
  compileArrangement,recordedSections,playArrangement,startArrangementRecording,makeStarterPattern,addStarter,
- applyMusicMakerSong,applyMusicMakerParts,musicMakerRecordingTarget,startMusicMakerBacking,applyMusicMakerRecording,adjustMusicMakerPart,previewMusicMakerRecording,cancelMusicMakerRecordingPreview,readMusicMakerSound,musicMakerHasNotes,musicMakerOverview,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
+ applyMusicMakerSong,applyMusicMakerParts,musicMakerSectionChoices,musicMakerRecordingTarget,startMusicMakerBacking,applyMusicMakerRecording,adjustMusicMakerPart,previewMusicMakerRecording,cancelMusicMakerRecordingPreview,readMusicMakerSound,musicMakerHasNotes,musicMakerOverview,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
  get recordingArrangement(){return !!arrangementRecording},
  get arrangementPlaying(){return arrangementPlaying},
  get previewing(){return !!demoPreview}};

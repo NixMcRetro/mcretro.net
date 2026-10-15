@@ -7,6 +7,7 @@ const EFFECTS=['none','up','down','vibrato','retrigger'], KINDS=['synth','drum',
 const SEMI=['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
 const ROW_CHOICES=[16,32,64];
 const MAX_SECTIONS=64,MAX_SECTION_ROWS=256,MIN_SECTION_ROWS=4;
+const SECTION_LABELS=['Part','Intro','Verse','Chorus','Break','Outro'];
 const GM_DRUM=[36,38,42,46,45,39,56,49];
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 const defPattern=(rows=32)=>({rows,cells:Array(rows*CHANNELS).fill(null)});
@@ -56,7 +57,8 @@ function normalize(value){
   if(!section||typeof section!=='object'||!validInt(section.pattern,0,patterns.length-1)||
     !validInt(section.rows,MIN_SECTION_ROWS,MAX_SECTION_ROWS)||section.rows%4)throw Error('Invalid tracker arrangement section');
   totalRows+=section.rows;
-  return {pattern:section.pattern,rows:section.rows};
+  if(section.label!==undefined&&!SECTION_LABELS.includes(section.label))throw Error('Invalid song section label');
+  return {pattern:section.pattern,rows:section.rows,...(section.label?{label:section.label}:{})};
  });
  if(totalRows>MAX_LIVE_ROWS)throw Error('Tracker arrangement exceeds maximum song length');
  return {patterns,chain:value.chain.slice(),active:value.active,bank:value.bank,bpm:value.bpm,channels:safeChannels,automation:safeAutomation,swing,synthShape,arrangement};
@@ -68,7 +70,7 @@ let api=null,cursor={row:0,ch:0},clock=null,playing=false,started=0,next=0,event
 let history=[],redoHistory=[],clipboard=null,clipboardReady=false,blockClipboard=null;
 let context=null,cycle=0,loopEnabled=false,compiledSeconds=0,compiledRows=0,viewChannel='all';
 let live=null,capture=null,captureEncoding=false,automationArmed=false,autoCursor=0,lastAutoRow=-1;
-let arrangementRecording=null,arrangementPlaying=false,arrangementSequence=[],arrangementActiveSection=-1;
+let arrangementRecording=null,arrangementPlaying=false,arrangementSequence=[],arrangementActiveSection=-1,arrangementSelected=0;
 const MAX_AUTO=256,MAX_LIVE_ROWS=4096;
 const data=()=>api.getState().tracker;
 const pattern=()=>data().patterns[data().active];
@@ -618,12 +620,57 @@ function playArrangement(){
   status('PLAYING SONG · '+compiled.sequence.length+' SECTIONS · '+Math.ceil(compiled.rows/16)+' BARS');
  }catch(e){stop();status('Song playback unavailable: '+e.message)}
 }
+const STARTERS={
+ drums:{name:'Drum Groove',description:'Two bars of kick, snare and hi-hat.',section:'Intro'},
+ bass:{name:'Bassline',description:'A simple two-bar A minor bass part.',section:'Verse'},
+ melody:{name:'Melody',description:'A gentle two-bar melody in A minor.',section:'Chorus'},
+ chords:{name:'Chords',description:'Warm A minor and F major chords.',section:'Chorus'}
+};
+function makeStarterPattern(key){
+ if(!STARTERS[key])throw Error('Unknown starter pattern');
+ const pat=defPattern(32);
+ const add=(row,ch,midi,inst,kind='synth',vel=85,length=1)=>{
+  pat.cells[toIndex(row,ch)]={midi,inst,kind,vel,fx:'none',param:0,length,chance:100};
+ };
+ if(key==='drums'){
+  for(const row of [0,8,16,24])add(row,0,36,0,'drum',104);
+  for(const row of [4,12,20,28])add(row,1,38,1,'drum',89);
+  for(let row=0;row<32;row+=2)add(row,2,42,2,'drum',row%4===0?66:45);
+ }
+ if(key==='bass'){
+  [45,45,52,48,41,41,48,43].forEach((m,i)=>add(i*4,1,m,0,'synth',i%2?78:100,2));
+ }
+ if(key==='melody'){
+  [69,72,76,72,67,69,64,69].forEach((m,i)=>add(i*4,2,m,3,'synth',i%2?75:92,2));
+ }
+ if(key==='chords'){
+  for(const [offset,chord] of [[0,[57,60,64]],[16,[53,57,60]]]){
+   chord.forEach((m,ch)=>add(offset,ch+1,m,ch===0?5:3,'synth',62,4));
+  }
+ }
+ return pat;
+}
+function addStarter(key){
+ const entry=STARTERS[key];
+ if(!entry)return;
+ if(arrangementRecording||playing||rendering||captureEncoding||api.isRecording()){status('Stop playback or recording before adding a starter');return}
+ if(data().patterns.length>=MAX_PATTERNS){status('The tracker already has 8 patterns. Reuse or edit an existing pattern first.');return}
+ if(data().arrangement.length>=MAX_SECTIONS||arrangementRows(data().arrangement)+32>MAX_LIVE_ROWS){status('This song has reached its arrangement length limit');return}
+ commit(d=>{
+  const id=d.patterns.length;
+  d.patterns.push(makeStarterPattern(key));d.active=id;
+  d.arrangement.push({pattern:id,rows:32,label:entry.section});
+ });
+ arrangementSelected=data().arrangement.length-1;
+ renderArrangement();
+ status(entry.name+' added to your song. Select its notes in the tracker to personalise it.');
+}
 function arrangementEdit(index,action,value){
  if(arrangementRecording){status('Finish recording before editing the arrangement');return}
  const list=data().arrangement;
  if(action==='add'){
   if(list.length>=MAX_SECTIONS){status('Maximum 64 song sections');return}
-  commit(d=>d.arrangement.push({pattern:d.active,rows:16}));return;
+  commit(d=>d.arrangement.push({pattern:d.active,rows:16}));arrangementSelected=data().arrangement.length-1;renderArrangement();return;
  }
  if(!validInt(index,0,list.length-1))return;
  if(action==='delete'&&list.length===1&&!confirm('Remove the only song section? Your original patterns stay safe.'))return;
@@ -635,11 +682,29 @@ function arrangementEdit(index,action,value){
   if(action==='delete')a.splice(index,1);
   if(action==='pattern')part.pattern=Number(value);
   if(action==='rows')part.rows=Number(value);
+  if(action==='label')part.label=value;
  });
+ arrangementSelected=Math.max(0,Math.min(arrangementSelected,data().arrangement.length-1));
 }
 function renderArrangement(){
  const list=$('trackerArrangementSections');if(!list||!api)return;
  const sections=data().arrangement;
+ const timeline=$('trackerArrangementTimeline');
+ timeline.replaceChildren(...sections.map((part,i)=>{
+  const block=document.createElement('button');
+  block.type='button';block.className='tracker-song-block';block.dataset.sectionSelect=String(i);
+  const kind=SECTION_LABELS.includes(part.label)?part.label:'Part';
+  block.dataset.sectionKind=kind.toLowerCase();
+  block.classList.toggle('playing',arrangementPlaying&&i===arrangementActiveSection);
+  block.setAttribute('aria-pressed',String(i===arrangementSelected));
+  block.setAttribute('aria-label',kind+', section '+(i+1)+', pattern '+(part.pattern+1)+', '+part.rows/4+' beats. Select section to edit.');
+  block.style.flexGrow=String(Math.max(1,part.rows/16));
+  const title=document.createElement('strong');title.textContent=kind==='Part'?'Part '+(i+1):kind;
+  const meta=document.createElement('small');meta.textContent='PAT '+String(part.pattern+1).padStart(2,'0')+' · '+(part.rows/16)+' bars';
+  block.append(title,meta);
+  return block;
+ }));
+ $('trackerArrangementTimelineEmpty').hidden=sections.length>0;
  $('trackerArrangementCount').textContent=sections.length?sections.length+' SECTIONS · '+(arrangementRows(sections)/16).toFixed(1)+' BARS':'NO SONG YET';
  $('trackerRecordArrangement').textContent=arrangementRecording?'■ FINISH SONG':'● RECORD ARRANGEMENT';
  $('trackerRecordArrangement').setAttribute('aria-pressed',String(!!arrangementRecording));
@@ -649,6 +714,7 @@ function renderArrangement(){
  list.replaceChildren(...sections.map((part,i)=>{
   const item=document.createElement('div');item.className='tracker-arrangement-item';
   item.classList.toggle('playing',arrangementPlaying&&i===arrangementActiveSection);
+  item.classList.toggle('selected',i===arrangementSelected);
   const number=document.createElement('strong');number.textContent=String(i+1).padStart(2,'0');
   const patternSel=document.createElement('select');patternSel.dataset.arrangementPattern=String(i);
   patternSel.setAttribute('aria-label','Pattern for song section '+(i+1));
@@ -660,6 +726,11 @@ function renderArrangement(){
   length.replaceChildren(...Array.from({length:64},(_,n)=>{const rows=(n+1)*4;return new Option(rows%16===0?(rows/16)+' BAR'+(rows===16?'':'S'):(rows/4)+' BEATS',String(rows))}));
   length.value=String(part.rows);
   length.disabled=!!arrangementRecording;
+  const labelSelect=document.createElement('select');labelSelect.dataset.arrangementLabel=String(i);
+  labelSelect.setAttribute('aria-label','Musical role for section '+(i+1));
+  labelSelect.replaceChildren(...SECTION_LABELS.map(name=>new Option(name.toUpperCase(),name)));
+  labelSelect.value=part.label||'Part';
+  labelSelect.disabled=!!arrangementRecording;
   const actions=document.createElement('div');actions.className='tracker-arrangement-actions';
   for(const [action,label] of [['up','↑'],['down','↓'],['duplicate','＋'],['delete','×']]){
    const button=document.createElement('button');button.type='button';button.textContent=label;
@@ -668,7 +739,7 @@ function renderArrangement(){
    button.disabled=!!arrangementRecording||(action==='up'&&i===0)||(action==='down'&&i===sections.length-1);
    actions.append(button);
   }
-  item.append(number,patternSel,length,actions);return item;
+  item.append(number,labelSelect,patternSel,length,actions);return item;
  }));
  $('trackerArrangementEmpty').hidden=sections.length>0;
 }
@@ -980,7 +1051,7 @@ function init(deps){
  '<details id="trackerLibrary" class="tracker-library"><summary>♫ MUSIC LIBRARY <small>18 ORIGINAL TRACKS · LISTEN WITHOUT REPLACING YOUR PROJECT</small></summary><div class="tracker-library-filters"><label>FIND A TRACK<input id="trackerDemoSearch" type="search" placeholder="Search tracks" autocomplete="off"></label><label>STYLE<select id="trackerDemoStyle"><option value="all">ALL STYLES</option><option value="Electronic">ELECTRONIC</option><option value="Grooves">GROOVES</option><option value="Retro">RETRO</option><option value="Ambient">AMBIENT</option></select></label><small id="trackerDemoCount">18 ORIGINAL TRACKS</small></div><div id="trackerDemoGrid" class="tracker-song-grid" role="region" aria-label="Original tracker demo compositions"></div><p class="tracker-library-note">LISTEN previews a track without changing your music. SELECT chooses it, then USE IN TRACKER loads it after confirmation. Undo can restore the previous tracker.</p></details>'+
  '<div class="tracker-controls"><label>PATTERN<select id="trackerPattern"></select></label><label>ROWS<select id="trackerRows"><option>16</option><option>32</option><option>64</option></select></label><label>TRACKER BPM<input id="trackerBpm" type="number" min="40" max="240" value="120"></label><label>SOUND BANK<select id="trackerBank"><option value="0">CLASSICS</option><option value="1">AFTER HOURS</option><option value="2">EXPERIMENTAL</option></select></label><button type="button" id="trackerAdd">＋ PATTERN</button><button type="button" id="trackerClone">COPY PATTERN</button><button type="button" id="trackerDelete">DELETE PATTERN</button><button type="button" id="trackerUndo">↶ UNDO</button><button type="button" id="trackerRedo">↷ REDO</button></div>'+
  '<div class="tracker-chain"><label for="trackerChain">PATTERN CHAIN (hex IDs)</label><input id="trackerChain" value="00" spellcheck="false" autocapitalize="characters" aria-label="Tracker pattern sequence"><button type="button" id="trackerApplyChain">APPLY CHAIN</button><span>Example: 00 00 01 · up to 16 entries</span></div>'+
- '<section class="tracker-song-builder" id="trackerSongBuilder" aria-label="Build and edit your tracker song"><div class="tracker-song-builder-heading"><div><span>SONG BUILDER · STEP 2</span><h3>Turn patterns into a song</h3><p>Record yourself switching patterns, or add sections one at a time. Rearrange them afterwards. Your original notes stay safe.</p></div><strong id="trackerArrangementCount">NO SONG YET</strong></div><div class="tracker-song-builder-tools"><button type="button" id="trackerRecordArrangement" aria-pressed="false">● RECORD ARRANGEMENT</button><button type="button" id="trackerArrangementAdd">＋ ADD CURRENT PATTERN</button><button type="button" id="trackerArrangementPlay">▶ PLAY SONG</button><button type="button" id="trackerArrangementPads">SHOW PATTERN PADS ↓</button></div><p id="trackerArrangementEmpty" class="tracker-song-empty">Your song is empty. Add the current pattern, or record a live performance to create sections automatically.</p><div id="trackerArrangementSections" class="tracker-arrangement-sections" aria-label="Editable song sections"></div><p class="tracker-song-builder-help">Move sections with ↑ and ↓, duplicate with ＋, or delete with ×. Change the pattern and number of beats or bars using the menus. Song playback stops automatically at the end.</p></section>'+
+ '<section class="tracker-song-builder" id="trackerSongBuilder" aria-label="Build and edit your tracker song"><div class="tracker-song-builder-heading"><div><span>SONG BUILDER · STEP 2</span><h3>Turn patterns into a song</h3><p>Record yourself switching patterns, or add sections one at a time. Rearrange them afterwards. Your original notes stay safe.</p></div><strong id="trackerArrangementCount">NO SONG YET</strong></div><div class="tracker-song-starters"><div><strong>START WITH AN IDEA</strong><p>Add a simple, editable pattern. Make the notes your own!</p></div><label for="trackerStarterType">CHOOSE AN IDEA</label><select id="trackerStarterType"><option value="drums">DRUM GROOVE</option><option value="bass">BASSLINE</option><option value="melody">MELODY</option><option value="chords">CHORDS</option></select><button type="button" id="trackerStarterAdd">＋ ADD IDEA</button><small id="trackerStarterHelp">Two bars of kick, snare and hi-hat.</small></div><div class="tracker-song-timeline" aria-label="Song sections in playback order"><div class="tracker-song-timeline-head"><strong>YOUR SONG TIMELINE</strong><span>Choose a section to edit it</span></div><div class="tracker-song-timeline-scroll"><div id="trackerArrangementTimeline" class="tracker-song-timeline-blocks" role="group" aria-label="Song timeline"></div><p id="trackerArrangementTimelineEmpty">Your timeline appears here after you add an idea or record a performance.</p></div></div><div class="tracker-song-builder-tools"><button type="button" id="trackerRecordArrangement" aria-pressed="false">● RECORD ARRANGEMENT</button><button type="button" id="trackerArrangementAdd">＋ ADD CURRENT PATTERN</button><button type="button" id="trackerArrangementPlay">▶ PLAY SONG</button><button type="button" id="trackerArrangementPads">SHOW PATTERN PADS ↓</button></div><p id="trackerArrangementEmpty" class="tracker-song-empty">Your song is empty. Add the current pattern, or record a live performance to create sections automatically.</p><div id="trackerArrangementSections" class="tracker-arrangement-sections" aria-label="Editable song sections"></div><p class="tracker-song-builder-help">Move sections with ↑ and ↓, duplicate with ＋, or delete with ×. Change the pattern and number of beats or bars using the menus. Song playback stops automatically at the end.</p></section>'+
  '<details id="trackerPerformanceOptions" class="tracker-disclosure"><summary>LIVE PATTERN PERFORMANCE <small>Switch patterns, capture takes and automate the mix</small></summary><section class="tracker-performance" aria-label="Live tracker arrangement and performance"><div class="tracker-perf-head"><div><h3>LIVE PATTERN PERFORMANCE</h3><strong id="trackerTransport" aria-live="polite">○ READY</strong></div><label>SWITCH ON<select id="trackerQuantize"><option value="bar" selected>NEXT BAR</option><option value="beat">NEXT BEAT</option></select></label><button id="trackerLivePlay" type="button">▶ PLAY PATTERN</button><button id="trackerLiveStop" type="button">■ STOP</button></div><p id="trackerLiveStatus" role="status">Select a pattern to perform live</p><div id="trackerLaunchPads" class="tracker-launch-pads" role="group" aria-label="Live pattern launch pads"></div><div class="tracker-perf-tools"><label>RECORD TO TAPE TRACK<select id="trackerTapeTrack"><option value="0">TRACK 1</option><option value="1">TRACK 2</option><option value="2">TRACK 3</option><option value="3">TRACK 4</option></select></label><button id="trackerTape" type="button">● RECORD TO TAPE</button><button id="trackerAutomation" type="button" aria-pressed="false">● ARM MIX</button><button id="trackerAutoClear" type="button">CLEAR AUTOMATION</button><small id="trackerAutoCount">0 AUTOMATION POINTS</small></div><p class="tracker-perf-note">Live pads launch patterns on the next beat or bar. Record the performance into a tape clip (up to 55 seconds, browser support required). ARM MIX records mixer moves during playback; the points are saved in your project.</p></section></details>'+
  '<div class="tracker-view"><label for="trackerView">GRID VIEW</label><select id="trackerView"><option value="all">ALL 4 CHANNELS</option><option value="0">CHANNEL 1</option><option value="1">CHANNEL 2</option><option value="2">CHANNEL 3</option><option value="3">CHANNEL 4</option></select><small>Choose one channel for easier touch editing on a phone.</small></div>'+
  '<h3 class="tracker-grid-label">2. MAKE A PATTERN</h3><div class="tracker-headers"><span>ROW</span><span>CH 1</span><span>CH 2</span><span>CH 3</span><span>CH 4</span></div><div class="tracker-grid-scroll"><div id="trackerGrid" class="tracker-grid" role="grid" aria-label="Tracker pattern note grid"></div></div>'+
@@ -1031,6 +1102,18 @@ function init(deps){
  });
  $('trackerRecordArrangement').addEventListener('click',startArrangementRecording);
  $('trackerArrangementAdd').addEventListener('click',()=>arrangementEdit(-1,'add'));
+ $('trackerStarterAdd').addEventListener('click',()=>addStarter($('trackerStarterType').value));
+ $('trackerStarterType').addEventListener('change',e=>{
+  $('trackerStarterHelp').textContent=STARTERS[e.target.value]?.description||'Select a starting idea';
+ });
+ $('trackerArrangementTimeline').addEventListener('click',e=>{
+  const block=e.target.closest('[data-section-select]');
+  if(!block)return;
+  arrangementSelected=Number(block.dataset.sectionSelect);
+  renderArrangement();
+  const item=$('trackerArrangementSections').children[arrangementSelected];
+  if(item)item.scrollIntoView({block:'nearest',behavior:'smooth'});
+ });
  $('trackerArrangementPlay').addEventListener('click',playArrangement);
  $('trackerArrangementPads').addEventListener('click',()=>{
   $('trackerPerformanceOptions').open=true;
@@ -1039,6 +1122,7 @@ function init(deps){
  $('trackerArrangementSections').addEventListener('change',e=>{
   if(e.target.matches('[data-arrangement-pattern]'))arrangementEdit(Number(e.target.dataset.arrangementPattern),'pattern',e.target.value);
   if(e.target.matches('[data-arrangement-rows]'))arrangementEdit(Number(e.target.dataset.arrangementRows),'rows',e.target.value);
+  if(e.target.matches('[data-arrangement-label]'))arrangementEdit(Number(e.target.dataset.arrangementLabel),'label',e.target.value);
  });
  $('trackerArrangementSections').addEventListener('click',e=>{
   const button=e.target.closest('[data-arrangement-action]');
@@ -1067,7 +1151,7 @@ function init(deps){
 window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
  get playing(){return playing},get live(){return !!live},get transport(){return {playing,mode:arrangementPlaying?'song':live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
  launch,play,finishTapeTake,openLibrary,setLayoutMode,buildDemo,stopDemoPreview,
- compileArrangement,recordedSections,playArrangement,startArrangementRecording,
+ compileArrangement,recordedSections,playArrangement,startArrangementRecording,makeStarterPattern,addStarter,
  get recordingArrangement(){return !!arrangementRecording},
  get arrangementPlaying(){return arrangementPlaying},
  get previewing(){return !!demoPreview}};

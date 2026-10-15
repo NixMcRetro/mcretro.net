@@ -25,6 +25,7 @@ on:
       - '.github/tests/op1-studio-simplified.mjs'
       - '.github/tests/op1-song-builder-start.mjs'
       - '.github/tests/op1-song-arrangement-v26.mjs'
+      - '.github/tests/op1-song-timeline-v26.mjs'
       - '.github/tests/op1-studio-comfort.mjs'
       - '.github/tests/op1-demo-arrangements.mjs'
       - '.github/tests/op1-browser-smoke.mjs'
@@ -59,6 +60,7 @@ on:
       - '.github/tests/op1-studio-simplified.mjs'
       - '.github/tests/op1-song-builder-start.mjs'
       - '.github/tests/op1-song-arrangement-v26.mjs'
+      - '.github/tests/op1-song-timeline-v26.mjs'
       - '.github/tests/op1-studio-comfort.mjs'
       - '.github/tests/op1-demo-arrangements.mjs'
       - '.github/tests/op1-browser-smoke.mjs'
@@ -87,6 +89,8 @@ jobs:
         run: |
           npm install --no-save playwright@1.57.0
           npx playwright install --with-deps chromium firefox webkit
+      - name: v2.6 Stage 3 visual timeline and starter patterns regression
+        run: node .github/tests/op1-song-timeline-v26.mjs
       - name: v2.6 Stage 2 editable live song arrangement regression
         run: node .github/tests/op1-song-arrangement-v26.mjs
       - name: v2.6 Song Builder start screen regression
@@ -123,10 +127,10 @@ jobs:
         run: node .github/tests/op1-score-interchange.mjs
       - name: Offline installation and reload regression (Chromium)
         run: node .github/tests/op1-pwa-offline.mjs
-      - name: Archive v2.6 stage 2 preview, assets and regression tests
+      - name: Archive v2.6 stage 3 preview, assets and regression tests
         uses: actions/upload-artifact@v4
         with:
-          name: supernicks-op1-v2.6-stage2-source-${{ github.sha }}
+          name: supernicks-op1-v2.6-stage3-source-${{ github.sha }}
           retention-days: 90
           if-no-files-found: error
           path: |
@@ -146,10 +150,12 @@ jobs:
             .github/tests/op1-studio-simplified.mjs
             .github/tests/op1-song-builder-start.mjs
             .github/tests/op1-song-arrangement-v26.mjs
+            .github/tests/op1-song-timeline-v26.mjs
             .github/tests/op1-tracker-studio.mjs
             .github/tests/op1-tracker-music-making.mjs
             .github/tests/op1-tracker-performance.mjs
             .github/tests/op1-tracker-v25.mjs
+            .github/OP1-V2.6-STAGE3-HANDOVER.md
             .github/OP1-V2.6-STAGE2-HANDOVER.md
             .github/OP1-V2.6-STAGE1-HANDOVER.md
             .github/OP1-V2.5-HANDOVER.md

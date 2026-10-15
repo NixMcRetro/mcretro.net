@@ -11,7 +11,7 @@ const SECTION_LABELS=['Part','Intro','Verse','Chorus','Break','Outro'];
 const GM_DRUM=[36,38,42,46,45,39,56,49];
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 const defPattern=(rows=32)=>({rows,cells:Array(rows*CHANNELS).fill(null)});
-const defaultChannels=()=>Array.from({length:CHANNELS},()=>({level:1,pan:0,mute:false,solo:false,tone:100,fxSend:100,warmth:0,punch:0,space:0}));
+const defaultChannels=()=>Array.from({length:CHANNELS},()=>({level:1,pan:0,mute:false,solo:false,tone:100,fxSend:100,warmth:0,punch:0,space:0,brightness:0}));
 const defaults=()=>({patterns:[defPattern()],chain:[0],active:0,bank:0,bpm:120,channels:defaultChannels(),automation:[],swing:0,synthShape:'original',arrangement:[]});
 const clone=structuredClone;
 const validInt=(n,min,max)=>Number.isInteger(n)&&n>=min&&n<=max;
@@ -37,8 +37,8 @@ function normalize(value){
  const channels=value.channels===undefined?defaultChannels():value.channels;
  if(!Array.isArray(channels)||channels.length!==CHANNELS)throw Error('Invalid tracker mixer');
  const safeChannels=channels.map(c=>{
-  if(!c||typeof c!=='object'||!Number.isFinite(c.level)||c.level<0||c.level>1.5||!Number.isFinite(c.pan)||c.pan< -1||c.pan>1||typeof c.mute!=='boolean'||typeof c.solo!=='boolean'||!Number.isFinite(c.tone??100)||(c.tone??100)<0||(c.tone??100)>100||!Number.isFinite(c.fxSend??100)||(c.fxSend??100)<0||(c.fxSend??100)>100||!validInt(c.warmth??0,0,100)||!validInt(c.punch??0,0,100)||!validInt(c.space??0,0,100))throw Error('Invalid tracker mixer channel');
-  return {level:c.level,pan:c.pan,mute:c.mute,solo:c.solo,tone:c.tone??100,fxSend:c.fxSend??100,warmth:c.warmth??0,punch:c.punch??0,space:c.space??0};
+  if(!c||typeof c!=='object'||!Number.isFinite(c.level)||c.level<0||c.level>1.5||!Number.isFinite(c.pan)||c.pan< -1||c.pan>1||typeof c.mute!=='boolean'||typeof c.solo!=='boolean'||!Number.isFinite(c.tone??100)||(c.tone??100)<0||(c.tone??100)>100||!Number.isFinite(c.fxSend??100)||(c.fxSend??100)<0||(c.fxSend??100)>100||!validInt(c.warmth??0,0,100)||!validInt(c.punch??0,0,100)||!validInt(c.space??0,0,100)||!validInt(c.brightness??0,0,100))throw Error('Invalid tracker mixer channel');
+  return {level:c.level,pan:c.pan,mute:c.mute,solo:c.solo,tone:c.tone??100,fxSend:c.fxSend??100,warmth:c.warmth??0,punch:c.punch??0,space:c.space??0,brightness:c.brightness??0};
  });
  const automation=value.automation===undefined?[]:value.automation;
  if(!Array.isArray(automation)||automation.length>MAX_AUTO)throw Error('Invalid tracker automation list');
@@ -128,6 +128,7 @@ function effectiveMusicMakerChannel(ch,preview=true){
  return preview&&musicMakerPreview?.ch===ch?musicMakerPreview.value:data().channels[ch];
 }
 function readMusicMakerSound(ch){return validInt(ch,0,3)?clone(data().channels[ch]):null}
+function musicMakerHasNotes(){return data().patterns.some(p=>p.cells.some(Boolean));}
 function previewMusicMakerSound(ch,value){
  if(!validInt(ch,0,3)||rendering||capture||captureEncoding||arrangementRecording||api.isRecording())return false;
  try{
@@ -157,6 +158,7 @@ function applyLiveMixer(){
   context.trackerFilters?.[i]?.frequency.setTargetAtTime(toneHz(c.tone??100),now,.014);
   context.trackerSends?.[i]?.gain.setTargetAtTime((c.fxSend??100)/100,now,.014);
   context.trackerSpaces?.[i]?.gain.setTargetAtTime((c.space??0)/100*.17,now,.025);
+  context.trackerBrights?.[i]?.gain.setTargetAtTime((c.brightness??0)/100*5,now,.025);
   context.trackerWarmDrys?.[i]?.gain.setTargetAtTime(1-(c.warmth??0)/100*.22,now,.025);
   context.trackerWarmWets?.[i]?.gain.setTargetAtTime((c.warmth??0)/100*.22,now,.025);
  });
@@ -552,7 +554,7 @@ function paintPlayhead(row){
 const toneHz=v=>160*Math.pow(85,Math.min(100,Math.max(0,v))/100);
 function isolatedLiveGraph(base,allowPreview=true){
  // Tracker-owned, bounded local effects. No changes to independent tape-track buses.
- const graph=Object.create(base),gates=[],panners=[],filters=[],sends=[],spaces=[],warmDrys=[],warmWets=[];
+ const graph=Object.create(base),gates=[],panners=[],filters=[],sends=[],spaces=[],warmDrys=[],warmWets=[],brights=[];
  graph.makerPreview=allowPreview;
  const curve=new Float32Array(257);
  for(let i=0;i<curve.length;i++){const x=i/128-1;curve[i]=Math.tanh(x*1.8)/Math.tanh(1.8)}
@@ -562,14 +564,16 @@ function isolatedLiveGraph(base,allowPreview=true){
   filter.type='lowpass';filter.frequency.value=toneHz(c.tone??100);filter.Q.value=.62;
   gate.gain.value=channelIsAudible(ch)?c.level*.72:0;
   gate.connect(filter);
+  const bright=ctx.createBiquadFilter();bright.type='highshelf';bright.frequency.value=2600;bright.gain.value=(c.brightness??0)/100*5;
+  filter.connect(bright);
   const out=pan||ctx.createGain();
   if(pan)pan.pan.value=c.pan;
   const dry=ctx.createGain(),shaper=ctx.createWaveShaper(),wet=ctx.createGain();
   dry.gain.value=1-(c.warmth??0)/100*.22;
   wet.gain.value=(c.warmth??0)/100*.22;
   shaper.curve=curve.slice();shaper.oversample='2x';
-  filter.connect(dry).connect(out);
-  filter.connect(shaper).connect(wet).connect(out);
+  bright.connect(dry).connect(out);
+  bright.connect(shaper).connect(wet).connect(out);
   out.connect(base.dry);
   const send=ctx.createGain();send.gain.value=(c.fxSend??100)/100;
   out.connect(send);
@@ -578,10 +582,10 @@ function isolatedLiveGraph(base,allowPreview=true){
   spaceDelay.delayTime.value=.23;
   spaceWet.gain.value=(c.space??0)/100*.17;
   out.connect(spaceDelay).connect(spaceWet).connect(base.dry);
-  gates.push(gate);panners.push(pan);filters.push(filter);sends.push(send);spaces.push(spaceWet);warmDrys.push(dry);warmWets.push(wet);
+  gates.push(gate);panners.push(pan);filters.push(filter);sends.push(send);spaces.push(spaceWet);warmDrys.push(dry);warmWets.push(wet);brights.push(bright);
  }
  graph.trackInputs=gates;graph.trackerGates=gates;graph.trackerPanners=panners;graph.trackerFilters=filters;graph.trackerSends=sends;
- graph.trackerSpaces=spaces;graph.trackerWarmDrys=warmDrys;graph.trackerWarmWets=warmWets;
+ graph.trackerSpaces=spaces;graph.trackerWarmDrys=warmDrys;graph.trackerWarmWets=warmWets;graph.trackerBrights=brights;
  return graph;
 }
 function arrangementRows(sections){return sections.reduce((sum,x)=>sum+x.rows,0)}
@@ -1291,7 +1295,7 @@ window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
  get playing(){return playing},get live(){return !!live},get transport(){return {playing,mode:arrangementPlaying?'song':live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
  launch,play,finishTapeTake,openLibrary,setLayoutMode,buildDemo,stopDemoPreview,
  compileArrangement,recordedSections,playArrangement,startArrangementRecording,makeStarterPattern,addStarter,
- applyMusicMakerSong,applyMusicMakerParts,readMusicMakerSound,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
+ applyMusicMakerSong,applyMusicMakerParts,readMusicMakerSound,musicMakerHasNotes,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
  get recordingArrangement(){return !!arrangementRecording},
  get arrangementPlaying(){return arrangementPlaying},
  get previewing(){return !!demoPreview}};

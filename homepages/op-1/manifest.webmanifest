@@ -1,7 +1,7 @@
 {
-  "name": "SuperNick's OP-1 Browser Lab",
-  "short_name": "OP-1 Lab",
-  "description": "Independent browser synthesizer, four-track tape and music workstation. Works offline after installation.",
+  "name": "BleepGarden Music Maker 2000",
+  "short_name": "BleepGarden 2000",
+  "description": "Make your own tunes with BleepGarden Music Maker 2000 by SuperNick. A friendly offline-capable keyboard, song builder and retro music studio.",
   "id": "./",
   "start_url": "./",
   "scope": "./",

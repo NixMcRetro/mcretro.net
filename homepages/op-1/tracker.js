@@ -77,10 +77,10 @@ const data=()=>api.getState().tracker;
 const pattern=()=>data().patterns[data().active];
 function status(s){$('trackerStatus').textContent=s||(demoPreview?'Previewing '+demoPreview.name+' · no project notes were changed':data().patterns.length+' PATTERNS · '+data().chain.length+' CHAIN STEPS · '+data().bpm+' BPM')}
 function commit(fn){
- if(rendering||arrangementRecording){status(arrangementRecording?'Finish recording the song before editing notes':'Finish audio export before editing');return}
+ if(rendering||arrangementRecording){status(arrangementRecording?'Finish recording the song before editing notes':'Finish audio export before editing');return false}
  const old=clone(data()),draft=clone(old);
- try{fn(draft);const value=normalize(draft);history.push(old);if(history.length>40)history.shift();redoHistory=[];stop();finishedSongExport='idle';api.getState().tracker=value;api.markDirty();render();}
- catch(e){status('Edit rejected: '+e.message);console.warn('Tracker edit rejected',e)}
+ try{fn(draft);const value=normalize(draft);history.push(old);if(history.length>40)history.shift();redoHistory=[];stop();finishedSongExport='idle';api.getState().tracker=value;api.markDirty();render();return true;}
+ catch(e){status('Edit rejected: '+e.message);console.warn('Tracker edit rejected',e);return false}
 }
 function restoreSnapshot(snapshot){stop();api.getState().tracker=normalize(snapshot);api.markDirty();cursor.row=Math.min(cursor.row,pattern().rows-1);render()}
 function undo(){if(rendering||arrangementRecording){status('Finish export or arrangement recording before undo');return}if(!history.length){status('Nothing to undo');return}redoHistory.push(clone(data()));restoreSnapshot(history.pop())}
@@ -1108,6 +1108,34 @@ function sendToSong(){
   status(clips.length+' tracker clips appended to Song Workspace; tracker patterns unchanged');
  }catch(e){status('Could not copy tracker: '+e.message)}
 }
+/* A guarded bridge: generated notes use the exact existing v5 tracker schema and Undo. */
+function applyMusicMakerSong(song){
+ if(rendering||arrangementRecording||capture||captureEncoding||api.isRecording()){
+  status('Finish recording or exporting before generating music');return false;
+ }
+ if(!song||!Array.isArray(song.patterns)||song.patterns.length!==4)return false;
+ const old=data();
+ const hasNotes=old.patterns.some(p=>p.cells.some(Boolean))||old.arrangement.length>0;
+ if(hasNotes&&!confirm('Replace the current TRACKER patterns and arrangement with a generated song? Tracker Undo can restore them during this session. Tape, samples and Song Workspace will not change. Save a project backup first if needed.'))return false;
+ return commit(d=>{
+  d.patterns=clone(song.patterns);d.chain=song.chain.slice();d.arrangement=clone(song.arrangement);
+  d.active=0;d.bank=song.bank;d.bpm=song.bpm;d.swing=song.swing;
+  d.channels=defaultChannels();d.automation=[];d.synthShape='original';
+ });
+}
+function applyMusicMakerParts(generated,parts){
+ if(rendering||arrangementRecording||capture||captureEncoding||api.isRecording()){status('Finish recording or exporting before remixing');return false}
+ if(!Array.isArray(generated)||!Array.isArray(parts)||!parts.length||parts.some(x=>!validInt(x,0,3)))return false;
+ return commit(d=>{
+  if(d.patterns.length!==4||generated.length!==4||d.patterns.some(p=>p.rows!==32))
+   throw Error('The song layout has changed. Generate a new song or edit individual notes in Tracker Studio.');
+  for(let section=0;section<4;section++){
+   if(generated[section].cells.length!==128)throw Error('Invalid generated pattern');
+   for(const part of parts)for(let row=0;row<32;row++)
+    d.patterns[section].cells[row*4+part]=clone(generated[section].cells[row*4+part]);
+  }
+ });
+}
 function init(deps){
  api=deps;const root=document.createElement('section');root.className='panel tracker-studio';root.id='trackerStudio';root.setAttribute('aria-label','Tracker Studio four-channel editor');
  root.innerHTML='<div class="tracker-heading"><div><h2>TRACKER STUDIO <small>/ v2.5</small></h2><p>Choose a song or make your own. Open extra controls only when you need them.</p></div><strong id="trackerStatus" role="status" aria-live="polite">TRACKER READY</strong></div>'+
@@ -1218,7 +1246,7 @@ window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
  get playing(){return playing},get live(){return !!live},get transport(){return {playing,mode:arrangementPlaying?'song':live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
  launch,play,finishTapeTake,openLibrary,setLayoutMode,buildDemo,stopDemoPreview,
  compileArrangement,recordedSections,playArrangement,startArrangementRecording,makeStarterPattern,addStarter,
- exportFinishedSong,openFinishSong,
+ applyMusicMakerSong,applyMusicMakerParts,undo,redo,exportFinishedSong,openFinishSong,
  get recordingArrangement(){return !!arrangementRecording},
  get arrangementPlaying(){return arrangementPlaying},
  get previewing(){return !!demoPreview}};

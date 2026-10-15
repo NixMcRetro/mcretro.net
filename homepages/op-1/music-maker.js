@@ -120,17 +120,113 @@ function refresh(){
 function generate(){
  const selected=options(),song=whole(selected,seed());
  if(!window.OP1Tracker.applyMusicMakerSong(song))return;
- session=true;songOptions=selected;locks.clear();variationCount=[0,0,0,0];refresh();
+ cancelSoundPreview();session=true;songOptions=selected;locks.clear();variationCount=[0,0,0,0];refresh();
  status('Your song is ready. Press Play, then change any part that needs work. Your other studios and recordings are untouched.');
 }
 function remix(channels){
  if(!session||!channels.length)return;
+ cancelSoundPreview();
  const choice=$('makerDirection').value,origin=songOptions||options();
  const remixPatterns=patterns(origin,seed(),choice,channels);
  if(!window.OP1Tracker.applyMusicMakerParts(remixPatterns,channels))return;
  channels.forEach(ch=>variationCount[ch]++);
  refresh();
  status('Changed '+channels.map(ch=>PARTS[ch]).join(', ')+'. Your locked parts and other tracks are unchanged. Use Undo if you preferred the previous version.');
+}
+/* Stage 4: preview is deliberately separate from the saved v5 tracker mixer. */
+let soundCandidate=null,comparison='B';
+const SOUND_DIRECTIONS=['warm','bright','punch','soft','space','dark','surprise'];
+function soundStatus(message){$('makerSoundStatus').textContent=message;}
+const mixerClamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+function shapeSound(original,direction,amount,seedValue=1){
+ if(!original||!SOUND_DIRECTIONS.includes(direction))throw Error('Invalid sound direction');
+ const strength=mixerClamp(Number(amount)/100,0,1),rng=random(seedValue),o={...original};
+ let target={...original};
+ const rise=(name,delta,max=100)=>target[name]=mixerClamp((original[name]??0)+delta,0,max);
+ switch(direction){
+  case 'warm':
+   target.tone=mixerClamp(original.tone-42,14,100);rise('warmth',72);target.brightness=mixerClamp((original.brightness??0)-32,0,100);break;
+  case 'bright':
+   target.tone=mixerClamp(original.tone+38,0,100);rise('brightness',76);target.warmth=mixerClamp((original.warmth??0)-16,0,100);break;
+  case 'punch':
+   rise('punch',82);target.tone=mixerClamp(original.tone+12,0,100);target.space=mixerClamp((original.space??0)-24,0,100);break;
+  case 'soft':
+   target.tone=mixerClamp(original.tone-26,10,100);target.punch=mixerClamp((original.punch??0)-55,0,100);
+   target.level=mixerClamp(original.level*.86,0,1.5);rise('warmth',24);break;
+  case 'space':
+   rise('space',85);target.fxSend=mixerClamp((original.fxSend??100)+22,0,100);
+   target.tone=mixerClamp(original.tone-8,15,100);break;
+  case 'dark':
+   target.tone=mixerClamp(original.tone-62,7,100);target.brightness=0;rise('warmth',43);break;
+  case 'surprise':
+   target={...original,tone:40+Math.round(rng()*55),warmth:Math.round(rng()*75),
+    brightness:Math.round(rng()*70),punch:Math.round(rng()*68),space:Math.round(rng()*67),
+    fxSend:60+Math.round(rng()*40),level:mixerClamp(original.level*(.91+rng()*.13),0,1.5),
+    pan:mixerClamp(original.pan+(rng()-.5)*.3,-1,1)};
+   break;
+ }
+ for(const key of ['tone','warmth','brightness','punch','space','fxSend']){
+  if(target[key]!==undefined)o[key]=mixerClamp(Math.round((original[key]??0)+((target[key]??0)-(original[key]??0))*strength),0,100);
+ }
+ for(const key of ['level','pan'])if(target[key]!==undefined){
+  o[key]=Math.round(mixerClamp(original[key]+(target[key]-original[key])*strength,key==='pan'?-1:0,key==='pan'?1:1.5)*1000)/1000;
+ }
+ return o;
+}
+function cancelSoundPreview(message='Sound preview cancelled. Nothing was changed.'){
+ if(soundCandidate){window.OP1Tracker.clearMusicMakerSoundPreview();}
+ soundCandidate=null;comparison='B';
+ for(const id of ['makerSoundA','makerSoundB','makerSoundKeep','makerSoundCancel'])if($(id))$(id).disabled=true;
+ if($('makerSoundA'))$('makerSoundA').setAttribute('aria-pressed','false');
+ if($('makerSoundB'))$('makerSoundB').setAttribute('aria-pressed','false');
+ if($('makerSoundStatus'))soundStatus(message);
+}
+function compareSound(which){
+ if(!soundCandidate)return;
+ comparison=which;
+ const value=which==='A'?soundCandidate.before:soundCandidate.after;
+ if(!window.OP1Tracker.previewMusicMakerSound(soundCandidate.ch,value)){
+  cancelSoundPreview('Preview unavailable during recording or export. Your saved sound is unchanged.');return;
+ }
+ $('makerSoundA').setAttribute('aria-pressed',String(which==='A'));
+ $('makerSoundB').setAttribute('aria-pressed',String(which==='B'));
+ soundStatus((which==='A'?'A: Original sound.':'B: Changed sound.')+' Press Play Song if playback is stopped. Keeping B is optional.');
+}
+function trySound(){
+ if(!window.OP1Tracker.musicMakerHasNotes()){
+  soundStatus('Generate a song or open an existing tracker song before shaping its sound.');return;
+ }
+ cancelSoundPreview();
+ const ch=Number($('makerSoundPart').value),original=window.OP1Tracker.readMusicMakerSound(ch);
+ if(!original){soundStatus('Choose a musical part first.');return}
+ const direction=$('makerSoundDirection').value,amount=Number($('makerSoundAmount').value);
+ const after=shapeSound(original,direction,amount,seed());
+ if(!window.OP1Tracker.previewMusicMakerSound(ch,after)){
+  soundStatus('Stop recordings or exports before previewing a new sound.');return;
+ }
+ soundCandidate={ch,before:original,after};comparison='B';
+ for(const id of ['makerSoundA','makerSoundB','makerSoundKeep','makerSoundCancel'])$(id).disabled=false;
+ compareSound('B');
+}
+function keepSound(){
+ if(!soundCandidate)return;
+ const saved=soundCandidate;
+ if(!window.OP1Tracker.commitMusicMakerSound(saved.ch,saved.after)){
+  soundStatus('Could not save this sound during recording or export.');return;
+ }
+ soundCandidate=null;cancelSoundPreview('Sound saved to '+PARTS[saved.ch]+'. Use Undo Change to restore the previous sound. It will also be included in your WAV and portable project backup.');
+}
+function initSound(){
+ $('makerSoundAmount').addEventListener('input',e=>{$('makerSoundAmountLabel').textContent=e.target.value+'%';if(soundCandidate)cancelSoundPreview('Adjustment changed. Press Try Sound to hear it.');});
+ for(const id of ['makerSoundPart','makerSoundDirection'])$(id).addEventListener('change',()=>{
+  if(soundCandidate)cancelSoundPreview('Selection changed. The old preview was cancelled. Press Try Sound.');
+ });
+ $('makerSoundTry').addEventListener('click',trySound);
+ $('makerSoundA').addEventListener('click',()=>compareSound('A'));
+ $('makerSoundB').addEventListener('click',()=>compareSound('B'));
+ $('makerSoundKeep').addEventListener('click',keepSound);
+ $('makerSoundCancel').addEventListener('click',()=>cancelSoundPreview());
+ cancelSoundPreview('Choose a part, then Try Sound. The saved song stays unchanged until you press Keep This Sound.');
 }
 function init(){
  const welcome=$('studioWelcome');
@@ -143,6 +239,12 @@ function init(){
  '<div class="maker-parts"><div class="maker-parts-heading"><h3>Make it your own</h3><p>Lock what sounds good. Change the rest, without losing the whole song.</p></div>'+
  PARTS.map((name,i)=>'<div class="maker-part"><div><strong>'+name+'</strong><small id="makerVersion'+i+'">No part yet</small></div><button type="button" id="makerLock'+i+'" aria-pressed="false">Lock</button><button type="button" id="makerRemix'+i+'">↻ Change</button></div>').join('')+
  '<div class="maker-remix-tools"><label>Change the feel<select id="makerDirection"><option value="new">Surprise me</option><option value="simpler">Simpler</option><option value="busier">Busier</option><option value="lower">Lower notes</option><option value="higher">Higher notes</option></select></label><button type="button" id="makerRemixAll">↻ Remix Unlocked Parts</button></div></div>'+
+ '<section class="maker-sound" aria-label="Shape the sound of a musical part"><div class="maker-parts-heading"><h3>Shape your sound</h3><p>Try warmer, brighter or another feel. Compare before and after without changing your saved song.</p></div>'+
+ '<div class="maker-sound-settings"><label>Choose a part<select id="makerSoundPart"><option value="0">Drums</option><option value="1">Bass</option><option value="2">Chords</option><option value="3" selected>Melody</option></select></label>'+
+ '<label>Make it sound<select id="makerSoundDirection"><option value="warm">Warmer</option><option value="bright">Brighter</option><option value="punch">Punchier</option><option value="soft">Softer</option><option value="space">Spacier</option><option value="dark">Darker</option><option value="surprise">Surprise Me (safe random)</option></select></label>'+
+ '<label class="maker-intensity">How much? <strong id="makerSoundAmountLabel">55%</strong><input type="range" id="makerSoundAmount" min="0" max="100" value="55" step="5"></label></div>'+
+ '<div class="maker-sound-actions"><button type="button" id="makerSoundTry" class="maker-primary">♫ Try Sound</button><button type="button" id="makerSoundA" aria-pressed="false" disabled>A Original</button><button type="button" id="makerSoundB" aria-pressed="false" disabled>B Changed</button><button type="button" id="makerSoundKeep" disabled>✓ Keep This Sound</button><button type="button" id="makerSoundCancel" disabled>Cancel</button></div>'+
+ '<p id="makerSoundStatus" role="status" aria-live="polite">Choose a part, then Try Sound.</p><p class="maker-footnote">Preview changes only the tracker sound while you listen. Keep commits one undoable change. Effects are bounded to avoid extreme loudness; your tape, other projects and independent Song Workspace remain untouched.</p></section>'+
  '<div class="maker-footer"><button type="button" id="makerEdit">Edit Individual Notes</button><button type="button" id="makerFinish">⬇ Export Song WAV</button><button type="button" id="makerSave">Save Editable Project</button></div>'+
  '<p class="maker-footnote">Everything is editable in Tracker Studio. Generate and Change use its normal Undo history; your Tape Studio, samples and Song Workspace are never replaced. Chord parts use one-note-at-a-time arpeggios in this four-channel tracker.</p>';
  const header=document.querySelector('main.shell > header.topline');
@@ -150,10 +252,11 @@ function init(){
  for(const field of ['makerStyle','makerMood','makerEnergy'])$(field).addEventListener('change',()=>{
   if(session)status('Changed generation settings. Press Generate a Song to start a new idea; Change keeps the musical key and tempo of your current song.');
  });
+ initSound();
  $('makerGenerate').addEventListener('click',generate);
  $('makerPlay').addEventListener('click',()=>{window.OP1Tracker.playArrangement();status('Playing your song. If the browser asks to enable audio, choose Enable Audio above.')});
  $('makerStop').addEventListener('click',()=>{window.OP1Tracker.stop();status('Playback stopped.')});
- $('makerUndo').addEventListener('click',()=>{window.OP1Tracker.undo();status('Tracker change undone. Your original idea is restored.');});
+ $('makerUndo').addEventListener('click',()=>{cancelSoundPreview();window.OP1Tracker.undo();status('Tracker change undone. Your original idea is restored.');});
  for(let ch=0;ch<4;ch++){
   $('makerRemix'+ch).addEventListener('click',()=>remix([ch]));
   $('makerLock'+ch).addEventListener('click',()=>{
@@ -162,11 +265,11 @@ function init(){
   });
  }
  $('makerRemixAll').addEventListener('click',()=>remix([0,1,2,3].filter(ch=>!locks.has(ch))));
- $('makerSave').addEventListener('click',()=>$('saveProject').click());
- $('makerFinish').addEventListener('click',()=>window.OP1Tracker.exportFinishedSong());
+ $('makerSave').addEventListener('click',()=>{if(soundCandidate){soundStatus('Keep or cancel the preview before saving your project.');return;}$('saveProject').click();});
+ $('makerFinish').addEventListener('click',()=>{if(soundCandidate){soundStatus('Keep or cancel the preview before exporting your song.');return;}window.OP1Tracker.exportFinishedSong();});
  $('makerEdit').addEventListener('click',()=>window.OP1Simplified.selectTool('trackerStudio',{scroll:true}));
  $('makerAdvanced').addEventListener('click',()=>window.OP1Simplified.setMode('advanced'));
  refresh();
 }
-window.OP1MusicMaker={config,patterns,whole,init,get active(){return session}};
+window.OP1MusicMaker={config,patterns,whole,shapeSound,init,get active(){return session}};
 })();

@@ -10,7 +10,7 @@ async function save(page){
 }
 async function colors(page){
  return page.evaluate(()=>{
-  const color=id=>getComputedStyle(document.querySelector(id)).backgroundColor;
+  const color=id=>{const style=getComputedStyle(document.querySelector(id));return style.backgroundImage!=='none'?style.backgroundImage:style.backgroundColor};
   return {
    maker:color('.music-maker'),parts:color('.maker-parts'),arrangement:color('.maker-song-sections'),
    finish:color('#makerFinishPanel'),riff:color('#riffRecorder'),

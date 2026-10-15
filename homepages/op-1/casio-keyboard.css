@@ -1,0 +1,88 @@
+/* v2.7.1 Music Maker: keep the old engine running, not on the beginner's screen. */
+html.beginner-studio .device-outer,
+html.beginner-studio #keyboardLegend,
+html.beginner-studio #mobileKeys,
+html.beginner-studio #comfortKeyboardDock,
+html.beginner-studio .quick-strip,
+html.beginner-studio #gameControls,
+html.beginner-studio .mobile-mode,
+html.beginner-studio .tip,
+html.beginner-studio .below,
+html.beginner-studio .studio-mode-bar,
+html.beginner-studio .studio-welcome,
+html.beginner-studio .studio-main-navigation,
+html.beginner-studio .studio-shortcuts,
+html.beginner-studio #comfortTabs,
+html.beginner-studio #comfortTabStatus,
+html.beginner-studio #studioAdvancedNote,
+html.beginner-studio #comfortOctave,
+html.beginner-studio #comfortMidiEntry,
+html.beginner-studio #comfortMidiTop {display:none!important}
+html.beginner-studio .topactions #quickRecovery,
+html.beginner-studio .topactions #exportWav,
+html.beginner-studio .topactions #comfortDemoOpen,
+html.beginner-studio .topactions #comfortTheme {display:none!important}
+html.beginner-studio .music-maker{display:block!important}
+html.beginner-studio .music-maker .maker-heading #makerAdvanced{display:none}
+.music-maker #makerComposerPanel[hidden],.music-maker #casioKeyboardPanel[hidden],
+#casioReturn[hidden]{display:none!important}
+.casio-tabs{display:flex;gap:5px;padding:6px;background:#d9e7ee;border:1px solid #c1d4de;border-radius:13px;margin-bottom:20px}
+.casio-tabs button{flex:1;min-height:53px;border-radius:9px;border:1px solid transparent;background:transparent;color:#436779;font:800 16px/1.3 inherit;cursor:pointer}
+.casio-tabs button[aria-selected=true]{background:white;color:#144e6d;border-color:#9dbccc;box-shadow:0 2px 7px #22495d16}
+.casio-tabs button:focus-visible{outline:3px solid #367eaa;outline-offset:2px}
+.casio-panel{padding:8px 0}
+.casio-top{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+.casio-top .casio-eyebrow{font-size:11px;font-weight:850;letter-spacing:.14em;color:#587a8c}
+.casio-top h2{font-size:clamp(23px,3.3vw,33px);line-height:1.18;letter-spacing:-.03em;margin:7px 0}
+.casio-top p{font-size:14px;color:#4a6576;line-height:1.5;margin:0}
+#casioCurrentSound{font-size:13px;color:#26566d;border-radius:20px;background:#e3eff3;padding:9px 15px}
+.casio-controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,1.3fr);gap:13px;align-items:end;margin:24px 0 20px}
+.casio-controls label{display:grid;gap:8px;color:#395366;font-size:13px;font-weight:750}
+.casio-controls select{width:100%;font-size:15px;background:white}
+.casio-octave>span{display:block;font-size:13px;font-weight:800;color:#365365;margin-bottom:8px}
+.casio-octave>div{display:flex;gap:7px;align-items:center;justify-content:space-between}
+.casio-octave button{flex:0 0 auto;padding:8px;font-size:12px}
+.casio-octave strong{font-size:12px;white-space:nowrap}
+.casio-case{border-radius:19px;border:7px solid #333a3e;background:#333a3e;box-shadow:0 14px 28px #25374724;overflow:hidden;padding:0 8px 12px}
+.casio-case-display{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px 14px 15px;color:#e9f4ef;font-size:11px;font-weight:700;letter-spacing:.06em}
+.casio-case-display strong{font-size:14px;letter-spacing:0;color:#f6f8ff}
+.casio-keybed{position:relative;aspect-ratio:7.4;max-height:190px;min-height:115px;background:#26292c;border:2px solid #232729;border-radius:0 0 7px 7px;touch-action:none;overflow:hidden;user-select:none}
+.casio-key{position:absolute;top:0;display:flex;align-items:center;justify-content:flex-end;flex-direction:column;gap:8px;cursor:pointer;padding:0 0 11px;border:1px solid #9aa6a8;touch-action:none;user-select:none}
+.casio-key.white{height:100%;background:linear-gradient(#fff,#f7f9f5 68%,#dce3e7);border-radius:0 0 6px 6px;color:#283945;z-index:1}
+.casio-key.black{height:62%;z-index:2;background:linear-gradient(90deg,#252e32,#444e55 60%,#182024);border:1px solid #17262b;border-radius:0 0 5px 5px;color:#f4f8fb;box-shadow:1px 4px 5px #0004}
+.casio-key.down.white,.casio-key.white:active{background:#90d6e9}
+.casio-key.down.black,.casio-key.black:active{background:#3e90b1}
+.casio-key:focus-visible{outline:4px solid #f8a549;outline-offset:-4px}
+.casio-note-label{font-size:12px;font-weight:900;pointer-events:none;white-space:nowrap}
+.casio-shortcut{font-size:9px;font-weight:700;pointer-events:none;opacity:.68}
+.casio-help{font-size:13px;color:#4a6576;line-height:1.65;margin:17px 0 8px}
+.casio-more{margin-top:20px;border-top:1px solid #cadce7;padding-top:14px;color:#456477;font-size:13px}
+.casio-more summary{cursor:pointer;font-weight:750;padding:8px}
+.casio-more p{max-width:640px;line-height:1.55}
+.casio-more button{margin:8px 0}
+html[data-op1-theme=dark] .casio-tabs{background:#293e48;border-color:#496b7b}
+html[data-op1-theme=dark] .casio-tabs button{color:#e0f0f9}
+html[data-op1-theme=dark] .casio-tabs button[aria-selected=true]{color:#173f56;background:#b6d7e6}
+html[data-op1-theme=dark] #casioCurrentSound{background:#365462;color:#eff8fb}
+html[data-op1-theme=dark] .casio-top h2,html[data-op1-theme=dark] .casio-top p,html[data-op1-theme=dark] .casio-help,html[data-op1-theme=dark] .casio-octave>span{color:#edf6fb}
+@media(max-width:720px){
+ .casio-controls{grid-template-columns:1fr 1fr}
+ .casio-octave{grid-column:1/-1}
+ .casio-case{padding:0 4px 8px;border-width:5px}
+ .casio-keybed{min-height:120px}
+ .casio-key{padding-bottom:7px}
+ .casio-note-label{font-size:10px}
+ .casio-shortcut{font-size:8px}
+ .casio-case-display span:first-child{display:none}
+}
+@media(max-width:420px){
+ .casio-controls{grid-template-columns:1fr}
+ .casio-octave{grid-column:auto}
+ .casio-tabs button{font-size:13px}
+ .casio-keybed{min-height:112px}
+ .casio-key .casio-shortcut{display:none}
+ .casio-key .casio-note-label{font-size:9px}
+ .casio-key.black .casio-note-label{font-size:8px}
+ .casio-case-display{gap:5px;padding:9px 6px;font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){.casio-tabs button{transition:none}}

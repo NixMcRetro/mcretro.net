@@ -99,6 +99,9 @@ for(const [browserName,engine] of Object.entries({chromium,firefox,webkit})){
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
    assert(overflow<=1,'Phone should not overflow by '+overflow);
   }
+  await page.locator('#makerTrackerDemos').click();
+  assert(await page.locator('#trackerLibrary').isVisible(),'Original tracker demos should be directly discoverable');
+  assert(await page.locator('#trackerStudio').isVisible(),'Demos should open original Tracker Studio');
   assert.deepEqual(errors,[],'No JavaScript browser errors');
   console.log('PASS BleepGarden arranged-song MIDI, musical hooks, tracker options and Undo',browserName);
   await ctx.close();

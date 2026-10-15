@@ -1243,17 +1243,23 @@ function adjustMusicMakerPart(section,ch,action,generated){
    for(let row=0;row<32;row++)pat.cells[toIndex(row,ch)]=clone(generated[row]);
    return;
   }
-  let notes=0;
-  for(let row=0;row<32;row++){
-   const item=old[row];
-   if(!item||item.kind!=='synth')continue;
-   if(action==='simpler'&&row%16!==0&&notes++%2===1)pat.cells[toIndex(row,ch)]=null;
-   else if(action==='higher'||action==='lower'){
-    const offset=action==='higher'?12:-12;
+  const rows=old.map((item,row)=>item?.kind==='synth'?row:-1).filter(row=>row!==-1);
+  const notes=rows.length;
+  if(action==='simpler'&&notes>1){
+   // Always remove at least one note from a phrase with multiple notes.
+   // Keep its opening note; favour dropping offbeats before strong beats.
+   const strength=row=>row%4!==0?2:row%16!==0?1:0;
+   const candidates=rows.slice(1).sort((a,b)=>strength(b)-strength(a)||b-a);
+   const remove=Math.min(candidates.length,Math.max(1,Math.floor(notes/2)));
+   for(const row of candidates.slice(0,remove))pat.cells[toIndex(row,ch)]=null;
+  }
+  if(action==='higher'||action==='lower'){
+   const offset=action==='higher'?12:-12;
+   for(const row of rows){
+    const item=old[row];
     if(!validInt(item.midi+offset,36,95))throw Error('Some notes would go outside the safe keyboard range');
     pat.cells[toIndex(row,ch)]={...item,midi:item.midi+offset};
-    notes++;
-   }else notes++;
+   }
   }
   if(action==='busier'){
    for(let row=0;row<31;row++){

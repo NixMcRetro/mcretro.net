@@ -13,7 +13,7 @@ function inspectMidi(buffer){
  assert.equal(id(),'MThd');assert.equal(read4(),6);
  const type=word(),count=word(),division=word();const tracks=[];
  for(let k=0;k<count;k++){
-  assert.equal(id(),'MTrk');const end=i+read4(),events=[];let tick=0;
+  assert.equal(id(),'MTrk');const length=read4(),end=i+length,events=[];let tick=0;
   while(i<end){
    tick+=vlq();const byte=buffer[i++];
    if(byte===0xff){const code=buffer[i++],length=vlq(),text=buffer.subarray(i,i+length);i+=length;events.push({tick,meta:code,text:text.toString('ascii'),bytes:text});}

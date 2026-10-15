@@ -1170,6 +1170,7 @@ function sendToSong(){
 /* A guarded bridge: generated notes use the exact existing v5 tracker schema and Undo. */
 /* v2.8: simple keyboard takes share the existing tracker data, rendering and Undo.
    One two-bar pattern is the smallest editable unit; cloned when shared by sections. */
+function musicMakerSnapshot(){return clone(data());}
 function musicMakerSectionChoices(){
  return data().arrangement.map((part,index)=>({index,name:(part.label||'Part '+(index+1))+' · '+(Math.round(part.rows/16*10)/10)+' bars'}));
 }
@@ -1424,7 +1425,7 @@ window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
  get playing(){return playing},get live(){return !!live},get transport(){return {playing,mode:arrangementPlaying?'song':live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
  launch,play,finishTapeTake,openLibrary,setLayoutMode,buildDemo,stopDemoPreview,
  compileArrangement,recordedSections,playArrangement,startArrangementRecording,makeStarterPattern,addStarter,
- applyMusicMakerSong,applyMusicMakerParts,musicMakerSectionChoices,musicMakerRecordingTarget,startMusicMakerBacking,applyMusicMakerRecording,adjustMusicMakerPart,previewMusicMakerRecording,cancelMusicMakerRecordingPreview,readMusicMakerSound,musicMakerHasNotes,musicMakerOverview,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
+ applyMusicMakerSong,applyMusicMakerParts,musicMakerSnapshot,musicMakerSectionChoices,musicMakerRecordingTarget,startMusicMakerBacking,applyMusicMakerRecording,adjustMusicMakerPart,previewMusicMakerRecording,cancelMusicMakerRecordingPreview,readMusicMakerSound,musicMakerHasNotes,musicMakerOverview,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
  get recordingArrangement(){return !!arrangementRecording},
  get arrangementPlaying(){return arrangementPlaying},
  get previewing(){return !!demoPreview}};

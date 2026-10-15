@@ -1146,6 +1146,69 @@ function midiExport(){
  const u32=x=>[(x>>>24)&255,(x>>>16)&255,(x>>>8)&255,x&255],out=new Uint8Array([...Array.from('MThd').map(c=>c.charCodeAt(0)),...u32(6),0,0,0,1,1,224,...Array.from('MTrk').map(c=>c.charCodeAt(0)),...u32(track.length),...track]);
  api.download(new Blob([out],{type:'audio/midi'}),'supernick-tracker-v25.mid');status('Standard MIDI exported (notes and velocities; synth effect parameters remain browser-only)');
 }
+/* BleepGarden: the main page exports the ARRANGED SONG, not Classic Tracker's chain.
+   Standard type-1 MIDI, a tempo/section marker track plus four editable part tracks.
+   MIDI carries notes and timing, never the original synthesizer patches or sampled audio. */
+function buildMusicMakerMidi(source=data()){
+ const compiled=compileArrangement(source,false);
+ if(!compiled.notes.length||!source.arrangement.length)return null;
+ const ppq=480,tempo=Math.round(60000000/source.bpm);
+ const write32=n=>[(n>>>24)&255,(n>>>16)&255,(n>>>8)&255,n&255];
+ const chunk=bytes=>[77,84,114,107,...write32(bytes.length),...bytes];
+ const textBytes=value=>Array.from(value).map(c=>c.charCodeAt(0)&127);
+ const meta=(kind,string)=>{const bytes=textBytes(string);return [0xff,kind,...variable(bytes.length),...bytes]};
+ const ticks=time=>Math.max(0,Math.round(time*source.bpm/60*ppq));
+ const conductor=[
+  {tick:0,order:0,bytes:meta(3,'BleepGarden Song')},
+  {tick:0,order:0,bytes:[0xff,0x51,3,(tempo>>16)&255,(tempo>>8)&255,tempo&255]},
+  {tick:0,order:0,bytes:[0xff,0x58,4,4,2,24,8]}
+ ];
+ let offset=0;
+ for(let i=0;i<source.arrangement.length;i++){
+  const section=source.arrangement[i],name=(section.label||'Part')+' '+(i+1);
+  conductor.push({tick:offset*120,order:1,bytes:meta(6,name)});
+  offset+=section.rows;
+ }
+ const parts=Array.from({length:4},(_,i)=>[{tick:0,order:0,bytes:meta(3,['Drums','Bass','Chords','Melody'][i])}]);
+ let sampleTriggers=0,drumCount=0;
+ for(const note of compiled.notes){
+  if(!Number.isInteger(note.ch)||note.ch<0||note.ch>3)continue;
+  const isDrum=note.kind==='drum',channel=isDrum?9:note.ch;
+  const pitch=isDrum?GM_DRUM[note.inst]:note.kind==='sample'?60+note.inst:note.midi;
+  if(note.kind==='sample')sampleTriggers++;if(isDrum)drumCount++;
+  const start=ticks(note.when),end=Math.max(start+1,ticks(note.when+note.duration));
+  const velocity=Math.round(clamp(note.vel*127,1,127));
+  parts[note.ch].push({tick:start,order:2,bytes:[0x90|channel,pitch,velocity]});
+  parts[note.ch].push({tick:end,order:1,bytes:[0x80|channel,pitch,0]});
+ }
+ function track(events,finalTick){
+  events.sort((a,b)=>a.tick-b.tick||a.order-b.order);
+  const bytes=[];let prior=0;
+  for(const entry of events){
+   bytes.push(...variable(entry.tick-prior),...entry.bytes);prior=entry.tick;
+  }
+  bytes.push(...variable(Math.max(0,finalTick-prior)),0xff,0x2f,0);
+  return chunk(bytes);
+ }
+ const end=offset*120;
+ const header=[77,84,104,100,...write32(6),0,1,0,5,1,224];
+ const chunks=[track(conductor,end),...parts.map(part=>track(part,end))];
+ return {bytes:new Uint8Array([...header,...chunks.flat()]),notes:compiled.notes.length,sections:source.arrangement.length,sampleTriggers,drumCount};
+}
+function exportMusicMakerMidi(){
+ if(rendering||capture||captureEncoding||arrangementRecording||api.isRecording()){
+  status('Finish other recording or export before downloading song MIDI');return false;
+ }
+ const result=buildMusicMakerMidi();
+ if(!result){status('Arrange musical notes before exporting MIDI');return false}
+ api.download(new Blob([result.bytes],{type:'audio/midi'}),'bleepgarden-music-maker-2000-song.mid');
+ status('Arranged song MIDI downloaded · '+result.sections+' sections · four editable instrument tracks'+(result.sampleTriggers?' · sample triggers are MIDI placeholders, not audio':''));
+ return true;
+}
+function setMusicMakerSwing(amount){
+ if(!validInt(amount,0,40)||rendering||capture||captureEncoding||arrangementRecording||api.isRecording()||playing)return false;
+ return commit(d=>{d.swing=amount});
+}
 function sendToSong(){
  const s=api.getState(),compiled=prepare(),barBeats=4,secondsPerBar=60/s.bpm*4,barSecs=60/data().bpm*4;
  if(!compiled.notes.length){status('Enter some tracker notes first');return}
@@ -1459,7 +1522,7 @@ window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
  get playing(){return playing},get canUndo(){return history.length>0},get activeSection(){return arrangementActiveSection},get live(){return !!live},get transport(){return {playing,mode:arrangementPlaying?'song':live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
  launch,play,finishTapeTake,openLibrary,setLayoutMode,buildDemo,stopDemoPreview,
  compileArrangement,recordedSections,playArrangement,startArrangementRecording,makeStarterPattern,addStarter,
- applyMusicMakerSong,applyMusicMakerParts,musicMakerSnapshot,musicMakerSectionChoices,musicMakerArrange,musicMakerRecordingTarget,startMusicMakerBacking,applyMusicMakerRecording,adjustMusicMakerPart,previewMusicMakerRecording,cancelMusicMakerRecordingPreview,readMusicMakerSound,musicMakerHasNotes,musicMakerOverview,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
+ applyMusicMakerSong,applyMusicMakerParts,buildMusicMakerMidi,exportMusicMakerMidi,setMusicMakerSwing,musicMakerSnapshot,musicMakerSectionChoices,musicMakerArrange,musicMakerRecordingTarget,startMusicMakerBacking,applyMusicMakerRecording,adjustMusicMakerPart,previewMusicMakerRecording,cancelMusicMakerRecordingPreview,readMusicMakerSound,musicMakerHasNotes,musicMakerOverview,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
  get recordingArrangement(){return !!arrangementRecording},
  get arrangementPlaying(){return arrangementPlaying},
  get previewing(){return !!demoPreview}};

@@ -26,7 +26,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
     const page=await ctx.newPage(),errors=[];
     page.on('pageerror',e=>errors.push(e.message));
     await page.setContent(rawHtml,{waitUntil:'domcontentloaded'});
-    assert.match(await page.title(),/v2\.5/);
+    assert.match(await page.title(),/v2\.6/);
     await page.locator('[data-studio-group="Compose"]').click();
     await page.locator('[data-studio-tool="trackerStudio"]').click();
     assert(await page.locator('#trackerStudio').isVisible());

@@ -13,7 +13,7 @@ for(const [name,engine] of Object.entries(engines)){
   const page=await ctx.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   await page.setContent(html,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/v2\.5/);
+  assert.match(await page.title(),/v2\.6/);
   assert.equal(await page.locator('.performance-track').count(),4);
   assert.equal(await page.locator('.performance-meter').count(),4);
   await page.locator('#quickMixer').click();

@@ -240,3 +240,20 @@ html[data-op1-theme=dark] .tracker-song-block[aria-pressed="true"]{outline-color
 @media(max-width:950px){.tracker-arrangement-item{grid-template-columns:24px repeat(2,minmax(0,1fr));gap:7px}.tracker-arrangement-item select[data-arrangement-rows]{grid-column:2}.tracker-arrangement-actions{grid-column:3;justify-content:flex-end}.tracker-song-starters{grid-template-columns:minmax(0,1fr) minmax(150px,1fr);gap:8px}.tracker-song-starters>div{grid-column:1/-1;grid-row:auto}.tracker-song-starters button{grid-column:2}.tracker-song-starters small{grid-column:1/-1}}
 @media(max-width:550px){.tracker-arrangement-item{grid-template-columns:24px minmax(0,1fr) minmax(0,1fr)}.tracker-arrangement-item select[data-arrangement-label]{grid-column:2}.tracker-arrangement-item select[data-arrangement-pattern]{grid-column:3}.tracker-arrangement-item select[data-arrangement-rows]{grid-column:2}.tracker-arrangement-actions{grid-column:3}.tracker-song-starters{grid-template-columns:1fr}.tracker-song-starters>div,.tracker-song-starters label,.tracker-song-starters select,.tracker-song-starters button,.tracker-song-starters small{grid-column:1}}
 @media(prefers-reduced-motion:reduce){.tracker-song-block{scroll-behavior:auto}}
+
+/* v2.6 Stage 4: a clear, beginner-friendly finish-and-save area. */
+.tracker-finish-panel{display:grid;gap:12px;grid-template-columns:minmax(0,1fr);margin:17px 0 14px;padding:18px;border:1px solid #a9cbd8;border-radius:12px;background:linear-gradient(145deg,#e7f4f3,#ecf5fa);color:#305567}
+.tracker-finish-heading span{display:block;color:#2d7b73;font-size:11px;letter-spacing:.10em;font-weight:850}
+.tracker-finish-heading h3{font-size:19px;margin:6px 0;line-height:1.25}
+.tracker-finish-heading p{font-size:12px;line-height:1.55;color:#526c79;margin:0 0 8px}
+#trackerFinishSummary{display:block;font-size:12px;color:#496e7e}
+.tracker-finish-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.tracker-finish-actions button{min-height:52px;border:1px solid #9dc0ca;border-radius:8px;background:#fff;color:#336274;cursor:pointer;padding:10px 12px;font-weight:850;letter-spacing:.03em;font-size:11px;line-height:1.4}
+.tracker-finish-actions #trackerFinishSong{background:#2e826f;border-color:#2e826f;color:#fff}
+.tracker-finish-actions button:disabled{opacity:.50;cursor:not-allowed}
+.tracker-finish-actions button:focus-visible{outline:3px solid #e69f4c;outline-offset:3px}
+#trackerFinishStatus{font-size:12px;color:#517381;line-height:1.55;margin:0;min-height:19px}
+html[data-op1-theme=dark] .tracker-finish-panel{background:#294853;border-color:#597c89;color:#e8f5f8}
+html[data-op1-theme=dark] .tracker-finish-heading span,html[data-op1-theme=dark] .tracker-finish-heading p,html[data-op1-theme=dark] #trackerFinishStatus,html[data-op1-theme=dark] #trackerFinishSummary{color:#c8e5ec}
+html[data-op1-theme=dark] .tracker-finish-actions button:not(#trackerFinishSong){background:#3c5d6c;color:#f1fcff;border-color:#6a91a0}
+@media(max-width:580px){.tracker-finish-panel{padding:13px}.tracker-finish-actions{grid-template-columns:1fr}}

@@ -154,7 +154,7 @@ function initWelcome(){
  '<button type="button" id="studioQuickSongs" class="studio-start-card"><span class="studio-start-number">03</span><strong>Try a song</strong><span>Hear original tracker music and edit a copy.</span><b>BROWSE SONGS →</b></button>'+
  '<button type="button" id="studioQuickBuild" class="studio-start-card"><span class="studio-start-number">04</span><strong>Build a song</strong><span>Arrange sections or add a starting musical idea.</span><b>OPEN SONG BUILDER →</b></button>'+
  '</div>'+
- '<div class="studio-start-footer"><span id="studioJourneyHint" role="status">Choose a starting point above, or continue editing below.</span><div class="studio-start-utilities"><button type="button" id="studioQuickOpen">OPEN A PROJECT</button><button type="button" id="studioQuickTape">GO TO TAPE</button><button type="button" id="studioQuickSave">SAVE BACKUP</button></div></div>';
+ '<div class="studio-start-footer"><span id="studioJourneyHint" role="status">Choose a starting point above, or continue editing below.</span><div class="studio-start-utilities"><button type="button" id="studioQuickOpen">OPEN A PROJECT</button><button type="button" id="studioQuickTape">GO TO TAPE</button><button type="button" id="studioQuickFinish">FINISH SONG / WAV</button><button type="button" id="studioQuickSave">SAVE BACKUP</button></div></div>';
  $('studioMainNavigation').before(root);
  $('studioQuickSongs').addEventListener('click',()=>{selectTool('trackerStudio',{scroll:true});window.OP1Tracker?.openLibrary?.()});
  $('studioQuickBeat').addEventListener('click',()=>selectTool('sequencePanel',{scroll:true}));
@@ -164,6 +164,10 @@ function initWelcome(){
   $('trackerSongBuilder')?.scrollIntoView({block:'start',behavior:'smooth'});
  });
  $('studioQuickTape').addEventListener('click',()=>selectTool('comfortTapePanel',{scroll:true}));
+ $('studioQuickFinish').addEventListener('click',()=>{
+  selectTool('trackerStudio',{scroll:false});
+  window.OP1Tracker?.openFinishSong?.();
+ });
  $('studioQuickOpen').addEventListener('click',()=>$('openProject').click());
  $('studioQuickSave').addEventListener('click',()=>$('saveProject').click());
 }

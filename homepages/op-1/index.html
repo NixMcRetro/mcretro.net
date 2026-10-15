@@ -348,6 +348,7 @@
 <link rel="stylesheet" href="./simplified.css">
 <link rel="stylesheet" href="./tracker.css">
 <link rel="stylesheet" href="./music-maker.css">
+<link rel="stylesheet" href="./casio-keyboard.css">
 </head>
 <body>
 <main class="shell">
@@ -562,6 +563,7 @@
 <script src="./simplified.js"></script>
 <script src="./tracker.js"></script>
 <script src="./music-maker.js"></script>
+<script src="./casio-keyboard.js"></script>
 <script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id); const q=(sel,root=document)=>root.querySelector(sel); const qa=(sel,root=document)=>[...root.querySelectorAll(sel)];
@@ -1701,8 +1703,8 @@ function op1InstallHelp(){
 async function op1CheckOffline(){
  if(!('serviceWorker' in navigator)||!('caches' in window)||!window.isSecureContext){op1OfflineReady=false;op1OfflineMessage('Offline installation is unavailable in this browser or context. Use HTTPS in a regular browser tab; download portable project backups.', 'warn');return}
  try {
-  const cache=await caches.open('op1-browser-lab-shell-v2.7-stage4');
-  const root=new URL('./',location.href),paths=['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','tracker.js','tracker.css','music-maker.js','music-maker.css','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png'];
+  const cache=await caches.open('op1-browser-lab-shell-v2.7.1-keyboard');
+  const root=new URL('./',location.href),paths=['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','tracker.js','tracker.css','music-maker.js','music-maker.css','casio-keyboard.js','casio-keyboard.css','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png'];
   const found=await Promise.all(paths.map(p=>cache.match(new URL(p,root).href)));
   op1OfflineReady=found.every(Boolean);
   if(op1OfflineReady){const offline=!navigator.onLine;
@@ -1734,7 +1736,18 @@ function op1WireOffline(){
  }).catch(e=>{op1OfflineMessage('Offline installation could not be enabled: '+e.message+'. The browser instrument still works online.','warn')});
 }
 
-recoveryStartup=true;buildUI();initSongStudio();initPianola();initSynthScore();initRoll();OP1Workspace.init({getState:()=>state,markDirty,notice,ensureAudio,getAudio:()=>audio,playSynth,playDrum,playSampleSlice,playTapeClip,patternForSlot,pianolaScoreEvents,snapshotPatch,makeGraph,setExportGraphEffects,wavBufferResponsive,download,registerAudio,checkpointEdit,syncUI,hasSample:id=>sampleBuffers.has(id),isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),stopOthers:()=>{rollStop();pianolaStop();stopSong();stopSequence();if(transport.playing)stopTransport()}});initV09Controls();wireNewVisuals();initV12();initSampleWorkshop();initStore();syncUI();drawDisplay();animateMeter();startRecovery();op1WireOffline();OP1Comfort.init({getState:()=>state,markDirty,notice,syncUI,snapshotPatch,parseRollMidi,importRollScore:score=>rollChange(()=>{state.pianoRoll=score;rollSelected=-1}),pianolaMutate,pianolaStop,syncSynthScoreStatus,ensureAudio,makeGraph,playSynth,playDrum,isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),registerAudio,checkpointEdit,patternForSlot,liveNoteOn,liveNoteOff,changeOct});OP1Simplified.init();OP1Tracker.init({getState:()=>state,markDirty,notice,ensureAudio,makeGraph,playSynth,playDrum,playSampleSlice,hasSample:id=>sampleBuffers.has(id),snapshotPatch,patchForPreset:(bank,index)=>({...((soundBanks[bank]?.patches||patches)[index]||patches[0]),env:{...state.env},fx:{...state.fx},lfo:{...state.lfo}}),stopOthers:()=>{OP1Workspace.stop();rollStop();pianolaStop();stopSong();stopSequence();if(transport.playing)stopTransport()},isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),wavBufferResponsive,download,registerAudio,checkpointEdit,syncUI});OP1MusicMaker.init();document.getElementById('trackerStudio').dataset.comfortTab='Compose';OP1Simplified.selectTool(OP1Simplified.getTool());
+window.OP1KeyboardEngine={
+ noteOn:liveNoteOn,noteOff:liveNoteOff,octave:changeOct,
+ status:()=>({octave:state.octave,bank:state.soundBank,preset:state.preset,soundName:patch().name,
+  bankName:soundBanks[state.soundBank]?.name||'CLASSICS'}),
+ banks:()=>soundBanks.map(b=>({name:b.name,patches:(b.patches||patches).map(p=>p.name)})),
+ chooseSound:(bank,preset)=>{
+  if(!Number.isInteger(bank)||bank<0||bank>=soundBanks.length||!Number.isInteger(preset)||preset<0||preset>=8)return false;
+  releaseAll();state.mode='synth';state.instrument='synth';state.soundBank=bank;state.preset=preset;state.sub=0;
+  syncUI();markDirty();return true;
+ }
+};
+recoveryStartup=true;buildUI();initSongStudio();initPianola();initSynthScore();initRoll();OP1Workspace.init({getState:()=>state,markDirty,notice,ensureAudio,getAudio:()=>audio,playSynth,playDrum,playSampleSlice,playTapeClip,patternForSlot,pianolaScoreEvents,snapshotPatch,makeGraph,setExportGraphEffects,wavBufferResponsive,download,registerAudio,checkpointEdit,syncUI,hasSample:id=>sampleBuffers.has(id),isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),stopOthers:()=>{rollStop();pianolaStop();stopSong();stopSequence();if(transport.playing)stopTransport()}});initV09Controls();wireNewVisuals();initV12();initSampleWorkshop();initStore();syncUI();drawDisplay();animateMeter();startRecovery();op1WireOffline();OP1Comfort.init({getState:()=>state,markDirty,notice,syncUI,snapshotPatch,parseRollMidi,importRollScore:score=>rollChange(()=>{state.pianoRoll=score;rollSelected=-1}),pianolaMutate,pianolaStop,syncSynthScoreStatus,ensureAudio,makeGraph,playSynth,playDrum,isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),registerAudio,checkpointEdit,patternForSlot,liveNoteOn,liveNoteOff,changeOct});OP1Simplified.init();OP1Tracker.init({getState:()=>state,markDirty,notice,ensureAudio,makeGraph,playSynth,playDrum,playSampleSlice,hasSample:id=>sampleBuffers.has(id),snapshotPatch,patchForPreset:(bank,index)=>({...((soundBanks[bank]?.patches||patches)[index]||patches[0]),env:{...state.env},fx:{...state.fx},lfo:{...state.lfo}}),stopOthers:()=>{OP1Workspace.stop();rollStop();pianolaStop();stopSong();stopSequence();if(transport.playing)stopTransport()},isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),wavBufferResponsive,download,registerAudio,checkpointEdit,syncUI});OP1MusicMaker.init();OP1CasioKeyboard.init(window.OP1KeyboardEngine);document.getElementById('trackerStudio').dataset.comfortTab='Compose';OP1Simplified.selectTool(OP1Simplified.getTool());
 })();
 </script>
 </body>

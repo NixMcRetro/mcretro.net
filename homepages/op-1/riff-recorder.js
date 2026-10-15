@@ -19,7 +19,7 @@ function quantize(events,startAtMs,bpm,inst=0){
 function say(msg){$('riffStatus').textContent=msg}
 function buttons(){
  const busy=phase==='countin'||phase==='recording',ready=phase==='review';
- $('riffRecord').disabled=busy;$('riffRecord').textContent=busy?'● Recording…':'● Record Two Bars';
+ $('riffRecord').disabled=busy||ready;$('riffRecord').textContent=busy?'● Recording…':'● Record Two Bars';
  $('riffStop').disabled=!busy;
  for(const id of ['riffTry','riffKeep'])$(id).disabled=!ready||!review?.cells.some(Boolean);
  $('riffRetry').disabled=!ready;$('riffDiscard').disabled=!(busy||ready);$('riffUndo').disabled=!undoReady;
@@ -119,8 +119,9 @@ function init(){
  $('riffRetry').addEventListener('click',()=>{discard();begin()});
  $('riffDiscard').addEventListener('click',discard);$('riffUndo').addEventListener('click',undoTake);
  document.addEventListener('visibilitychange',()=>{if(document.hidden&&take)complete()});
+ window.addEventListener('blur',()=>{if(take)complete()});
  window.addEventListener('pagehide',stopClock);
  refresh();buttons();
 }
-window.OP1RiffRecorder={init,refresh,quantize,noteOn,noteOff,get phase(){return phase}};
+window.OP1RiffRecorder={init,refresh,quantize,noteOn,noteOff,cancel:discard,finish:complete,get phase(){return phase}};
 })();

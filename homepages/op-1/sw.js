@@ -1,9 +1,9 @@
 /* BleepGarden Music Maker 2000 v2.8. Cache the static shell only; do not cache projects. */
 'use strict';
-const CACHE='op1-browser-lab-shell-v2.8-bleepgarden';
+const CACHE='op1-browser-lab-shell-v2.9-midi-tracker';
 const PREFIX='op1-browser-lab-shell-';
 const SCOPE=new URL('./',self.location.href);
-const SHELL=['./','./index.html','./workspace.js','./workspace.css','./comfort.js','./comfort.css','./simplified.js','./simplified.css','./tracker.js','./tracker.css','./music-maker.js','./music-maker.css','./casio-keyboard.js','./casio-keyboard.css','./riff-recorder.js','./riff-recorder.css','./song-sections.js','./song-sections.css','./beginner-polish.css','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/icon-maskable-512.png','./icons/apple-touch-icon.png'];
+const SHELL=['./','./index.html','./workspace.js','./workspace.css','./comfort.js','./comfort.css','./simplified.js','./simplified.css','./tracker.js','./tracker.css','./music-maker.js','./music-maker.css','./casio-keyboard.js','./casio-keyboard.css','./riff-recorder.js','./riff-recorder.css','./song-sections.js','./song-sections.css','./beginner-polish.css','./tracker-corner.js','./tracker-corner.css','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/icon-maskable-512.png','./icons/apple-touch-icon.png'];
 self.addEventListener('install',event=>{
  event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL.map(path=>new URL(path,SCOPE).href))).then(()=>self.skipWaiting()));
 });

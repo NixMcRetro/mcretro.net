@@ -15,7 +15,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   const ctx=await browser.newContext({viewport:{width:name==='chromium'?390:1200,height:860},acceptDownloads:true}),page=await ctx.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(String(e)));
   await page.setContent(beginnerHtml,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/v2\.8/);
+  assert.match(await page.title(),/v2\.9/);
   assert.equal(await page.locator('#makerEasySection option').count(),0);
   await page.locator('#makerGenerate').click();
   const original=await backup(page);

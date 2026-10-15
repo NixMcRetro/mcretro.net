@@ -73,6 +73,13 @@ function populateSounds(){
  $('casioPreset').addEventListener('change',()=>{stopAll();api.chooseSound(Number(select.value),Number($('casioPreset').value));refresh()});
  changeBank(api.status().bank,api.status().preset);
 }
+function refreshBeginnerTheme(){
+ const toggle=$('makerThemeToggle');if(!toggle)return;
+ const dark=document.documentElement.dataset.op1Theme==='dark';
+ toggle.textContent=dark?'☀ Light mode':'☾ Dark mode';
+ toggle.setAttribute('aria-label','Switch to '+(dark?'light':'dark')+' mode');
+ toggle.setAttribute('aria-pressed',String(dark));
+}
 function selectTab(next){
  if(!root)return;
  const keyboard=next==='keyboard';
@@ -84,6 +91,7 @@ function selectTab(next){
   const btn=$(id);btn.setAttribute('aria-selected',String(on));btn.tabIndex=on?0:-1;
  }
  if(keyboard)refresh();
+ refreshBeginnerTheme();
 }
 function openClassic(open=true){
  if(open){
@@ -110,6 +118,12 @@ function init(deps){
  const settings=document.createElement('details');settings.className='casio-more';settings.id='casioMore';
  settings.innerHTML='<summary>Need the original studio tools?</summary><p>The sequencers, synthesizer settings, tape recorder and MIDI editors still run underneath. Open the classic interface only when you need those controls.</p><button type="button" id="casioClassic">Open Classic Studio</button>';
  root.append(nav,content,panel,settings);
+ const themeRow=document.createElement('div');themeRow.className='maker-theme-row';
+ const themeButton=document.createElement('button');themeButton.id='makerThemeToggle';themeButton.type='button';
+ themeButton.className='maker-theme-toggle';themeButton.addEventListener('click',()=>{
+  $('comfortTheme')?.click();refreshBeginnerTheme();
+ });
+ themeRow.append(themeButton);nav.before(themeRow);refreshBeginnerTheme();
  const comeback=document.createElement('button');comeback.type='button';comeback.id='casioReturn';comeback.className='action';comeback.textContent='← BACK TO MUSIC MAKER';comeback.hidden=true;
  $('showHelp').before(comeback);
  comeback.addEventListener('click',()=>openClassic(false));
@@ -132,5 +146,5 @@ function init(deps){
  if(document.documentElement.dataset.op1TestLegacy!=='true')document.documentElement.classList.add('beginner-studio');
  refresh();selectTab('compose');
 }
-window.OP1CasioKeyboard={init,refresh,selectTab,openClassic,get view(){return view},get classic(){return classic}};
+window.OP1CasioKeyboard={init,refresh,refreshBeginnerTheme,selectTab,openClassic,get view(){return view},get classic(){return classic}};
 })();

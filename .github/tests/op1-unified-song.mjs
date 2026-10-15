@@ -55,7 +55,7 @@ for(const [browserName,engine] of Object.entries({chromium,firefox,webkit})){
 }
 // Audio restoration requires real origin-backed IndexedDB, not about:blank.
 const audioRoot=resolve('homepages/op-1');
-const audioFiles=new Set(['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','tracker.js','tracker.css','music-maker.js','music-maker.css','sw.js','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png']);
+const audioFiles=new Set(['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','tracker.js','tracker.css','music-maker.js','music-maker.css','casio-keyboard.js','casio-keyboard.css','sw.js','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png']);
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.webmanifest':'application/manifest+json','.png':'image/png'};
 const server=createServer((req,res)=>{
  const pathname=new URL(req.url,'http://localhost').pathname;
@@ -69,7 +69,7 @@ const audioUrl='http://127.0.0.1:'+server.address().port+'/';
 const browser=await chromium.launch({headless:true});
 try{
  const page=await browser.newPage({viewport:{width:1300,height:850},acceptDownloads:true}),errors=[];
- page.on('pageerror',e=>errors.push(e.message));await page.goto(audioUrl,{waitUntil:'domcontentloaded'});await page.addStyleTag({content:"html.comfort-tabs-enabled .below .panel[data-comfort-tab],html.comfort-tabs-enabled .below .song-studio[data-comfort-tab]{display:block!important}html.comfort-tabs-enabled .below #sequencePanel{display:block!important}html.studio-simple .below [data-comfort-tab]{display:block!important}html.studio-simple .below [data-comfort-tab].comfort-visible:not(.studio-current){display:block!important}html.studio-simple #sequencePanel:not(.studio-current){display:block!important}"});
+ page.on('pageerror',e=>errors.push(e.message));await page.goto(audioUrl,{waitUntil:'domcontentloaded'});await page.locator('#casioMore').evaluate(el=>el.open=true);await page.locator('#casioClassic').click();await page.addStyleTag({content:"html.comfort-tabs-enabled .below .panel[data-comfort-tab],html.comfort-tabs-enabled .below .song-studio[data-comfort-tab]{display:block!important}html.comfort-tabs-enabled .below #sequencePanel{display:block!important}html.studio-simple .below [data-comfort-tab]{display:block!important}html.studio-simple .below [data-comfort-tab].comfort-visible:not(.studio-current){display:block!important}html.studio-simple #sequencePanel:not(.studio-current){display:block!important}"});
  await draw(page,11);await draw(page,7);await page.locator('#rollSendSong').click();
  await page.locator('#startAudio').click();await page.locator('#workspacePlay').click();
  assert.match(await page.locator('#workspacePlay').innerText(),/STOP/);

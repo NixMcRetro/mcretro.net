@@ -16,7 +16,7 @@ function quantize(events,startAtMs,bpm,inst=0){
  }
  return cells;
 }
-function say(msg){$('riffStatus').textContent=msg}
+function say(msg){if($('riffStatus').textContent!==msg)$('riffStatus').textContent=msg}
 function buttons(){
  const busy=phase==='countin'||phase==='recording',ready=phase==='review';
  $('riffRecord').disabled=busy||ready;$('riffRecord').textContent=busy?'● Recording…':'● Record Two Bars';
@@ -46,6 +46,7 @@ function complete(){
  const count=cells.filter(Boolean).length;
  say(count?'Captured '+count+' note(s). Listen, Keep, Retry or Discard. Your song is still unchanged.':'No notes were captured. Retry or Discard.');
  buttons();
+ if(!$('casioKeyboardPanel').hidden)$('riffRecorder').scrollIntoView({block:'nearest',behavior:'instant'});
 }
 function tick(){
  if(!take)return;
@@ -70,6 +71,7 @@ function begin(){
  review=null;undoReady=false;auditioning=false;
  take={section,ch,inst:timing.inst,bpm:timing.bpm,startAtMs:timing.startAtMs,finishAtMs:timing.finishAtMs,events:[],active:new Map()};
  phase='countin';buttons();tick();interval=setInterval(tick,45);
+ $('casioKeys').scrollIntoView({block:'center',behavior:'instant'});
 }
 function noteOn(note,id,octave){
  if(!take||!(phase==='countin'||phase==='recording')||take.active.has(id))return;

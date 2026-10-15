@@ -14,7 +14,7 @@ assert.match(manifest.description,/created for SuperNick \(Nick\)/);
 const serviceWorker=readFileSync('homepages/op-1/sw.js','utf8');
 const htmlSource=readFileSync('homepages/op-1/index.html','utf8');
 assert.match(serviceWorker,/bleepgarden/i);
-assert.match(htmlSource,/op1-browser-lab-shell-v2\.9-bleepgarden/);
+assert.match(htmlSource,/op1-browser-lab-shell-v2\.9-midi-tracker/);
 assert.match(readFileSync('homepages/op-1/tracker.js','utf8'),/bleepgarden-music-maker-2000-song\.wav/);
 
 for(const [browserName,type] of Object.entries({chromium,firefox,webkit})){

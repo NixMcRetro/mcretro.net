@@ -35,6 +35,8 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
     assert.equal(await page.locator('#trackerDemo option').count(),18);
     await page.locator('#studioQuickBuild').click();
     assert(await page.locator('#trackerSongBuilder').isVisible(),'Build a Song should open the editable song builder');
+    await page.locator('#studioQuickFinish').click();
+    assert(await page.locator('#trackerFinishPanel').isVisible(),'The home Finish button must open the export panel');
     await page.locator('#studioQuickTape').click();
     assert(await page.locator('#comfortTapePanel').isVisible(),'Tape shortcut must reach recording');
     await page.evaluate(()=>window.__openClicks=0);

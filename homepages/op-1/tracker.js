@@ -71,6 +71,7 @@ let history=[],redoHistory=[],clipboard=null,clipboardReady=false,blockClipboard
 let context=null,cycle=0,loopEnabled=false,compiledSeconds=0,compiledRows=0,viewChannel='all';
 let live=null,capture=null,captureEncoding=false,automationArmed=false,autoCursor=0,lastAutoRow=-1;
 let arrangementRecording=null,arrangementPlaying=false,arrangementSequence=[],arrangementActiveSection=-1,arrangementSelected=0;
+let finishedSongExport='idle';
 const MAX_AUTO=256,MAX_LIVE_ROWS=4096;
 const data=()=>api.getState().tracker;
 const pattern=()=>data().patterns[data().active];
@@ -78,12 +79,12 @@ function status(s){$('trackerStatus').textContent=s||(demoPreview?'Previewing '+
 function commit(fn){
  if(rendering||arrangementRecording){status(arrangementRecording?'Finish recording the song before editing notes':'Finish audio export before editing');return}
  const old=clone(data()),draft=clone(old);
- try{fn(draft);const value=normalize(draft);history.push(old);if(history.length>40)history.shift();redoHistory=[];stop();api.getState().tracker=value;api.markDirty();render();}
+ try{fn(draft);const value=normalize(draft);history.push(old);if(history.length>40)history.shift();redoHistory=[];stop();finishedSongExport='idle';api.getState().tracker=value;api.markDirty();render();}
  catch(e){status('Edit rejected: '+e.message);console.warn('Tracker edit rejected',e)}
 }
 function restoreSnapshot(snapshot){stop();api.getState().tracker=normalize(snapshot);api.markDirty();cursor.row=Math.min(cursor.row,pattern().rows-1);render()}
-function undo(){if(!history.length){status('Nothing to undo');return}redoHistory.push(clone(data()));restoreSnapshot(history.pop())}
-function redo(){if(!redoHistory.length){status('Nothing to redo');return}history.push(clone(data()));restoreSnapshot(redoHistory.pop())}
+function undo(){if(rendering||arrangementRecording){status('Finish export or arrangement recording before undo');return}if(!history.length){status('Nothing to undo');return}redoHistory.push(clone(data()));restoreSnapshot(history.pop())}
+function redo(){if(rendering||arrangementRecording){status('Finish export or arrangement recording before redo');return}if(!redoHistory.length){status('Nothing to redo');return}history.push(clone(data()));restoreSnapshot(redoHistory.pop())}
 function recordAutomationPoint(){
  if(!automationArmed||!playing||!context)return;
  const rowSec=60/data().bpm/4;
@@ -601,6 +602,60 @@ function compileArrangement(source=data()){
  notes.sort((a,b)=>a.when-b.when);
  return {notes,rows:base,seconds:base*rowSec,sequence};
 }
+async function exportFinishedSong(){
+ if(rendering||capture||captureEncoding||arrangementRecording||api.isRecording()||playing){
+  status('Stop playback and other recording before exporting your finished song');
+  $('trackerFinishStatus').textContent='Stop playback or recording, then try exporting again.';
+  return false;
+ }
+ const sections=data().arrangement;
+ if(!sections.length){status('Add a song section before exporting');return false}
+ const secs=arrangementRows(sections)*60/data().bpm/4;
+ if(secs>180){status('Finished song WAV export is limited to three minutes');return false}
+ const compiled=compileArrangement();
+ if(!compiled.notes.length){status('Add musical notes to your song before exporting');return false}
+ if(compiled.notes.some(n=>n.kind==='sample'&&!api.hasSample(n.sampleId))){
+  status('One of your song samples is missing. Reload the original project audio before exporting');
+  return false;
+ }
+ const Ctx=window.OfflineAudioContext||window.webkitOfflineAudioContext;
+ if(!Ctx){status('Offline WAV export is unavailable in this browser');return false}
+ stopDemoPreview();
+ rendering=true;finishedSongExport='rendering';
+ const button=$('trackerFinishSong'),progress=$('trackerFinishStatus'),label=button.textContent;
+ button.disabled=true;button.textContent='RENDERING SONG…';progress.textContent='Rendering your arrangement to stereo audio…';
+ try{
+  const rate=32000;
+  const contextOffline=new Ctx(2,Math.ceil((compiled.seconds+.6)*rate),rate);
+  const graph=isolatedLiveGraph(api.makeGraph(contextOffline));
+  configure(graph);
+  for(const note of compiled.notes)emit(graph,note,.06+note.when);
+  const buffer=await contextOffline.startRendering();
+  finishedSongExport='encoding';
+  progress.textContent='Preparing your WAV download…';
+  const bytes=await api.wavBufferResponsive(buffer,()=>{});
+  api.download(new Blob([bytes],{type:'audio/wav'}),'supernicks-op1-finished-song.wav');
+  finishedSongExport='success';
+  progress.textContent='Stereo WAV downloaded. Save an editable project backup too.';
+  status('Finished song exported as a stereo WAV');
+  return true;
+ }catch(error){
+  finishedSongExport='error';
+  progress.textContent='Could not export this song: '+error.message;
+  status('Song export failed: '+error.message);
+  console.error('Song export failed',error);
+  return false;
+ }finally{
+  rendering=false;button.textContent=label;
+  renderArrangement();
+ }
+}
+function openFinishSong(){
+ const panel=$('trackerFinishPanel');
+ if(!panel)return;
+ panel.scrollIntoView({block:'start',behavior:'smooth'});
+ $('trackerFinishSong').focus({preventScroll:true});
+}
 function playArrangement(){
  if(playing){stop();return}
  if(rendering||api.isRecording()){status('Finish other recording or export before playing the song');return}
@@ -710,7 +765,16 @@ function renderArrangement(){
  $('trackerRecordArrangement').setAttribute('aria-pressed',String(!!arrangementRecording));
  $('trackerArrangementPlay').textContent=arrangementPlaying?'■ STOP SONG':'▶ PLAY SONG';
  $('trackerArrangementPlay').disabled=!!arrangementRecording||(!sections.length&&!arrangementPlaying);
- $('trackerArrangementAdd').disabled=sections.length>=MAX_SECTIONS||!!arrangementRecording;
+ $('trackerArrangementAdd').disabled=sections.length>=MAX_SECTIONS||!!arrangementRecording||rendering;
+ const finish=$('trackerFinishSong');
+ if(finish){
+  const secs=arrangementRows(sections)*60/data().bpm/4;
+  const minutes=Math.floor(secs/60),rest=Math.floor(secs%60);
+  $('trackerFinishSummary').textContent=sections.length?sections.length+' sections · '+minutes+':'+String(rest).padStart(2,'0')+' · '+data().bpm+' BPM':'Add an idea or record a performance to make a song';
+  finish.disabled=!sections.length||!!arrangementRecording||rendering||secs>180;
+  $('trackerFinishBackup').disabled=!!arrangementRecording||rendering;
+  if(!rendering&&finishedSongExport==='idle')$('trackerFinishStatus').textContent=secs>180?'This song is longer than the 3-minute WAV export limit. Shorten it to export.':'WAV for listening and sharing. Project backup to keep editing.';
+ }
  list.replaceChildren(...sections.map((part,i)=>{
   const item=document.createElement('div');item.className='tracker-arrangement-item';
   item.classList.toggle('playing',arrangementPlaying&&i===arrangementActiveSection);
@@ -1051,7 +1115,7 @@ function init(deps){
  '<details id="trackerLibrary" class="tracker-library"><summary>♫ MUSIC LIBRARY <small>18 ORIGINAL TRACKS · LISTEN WITHOUT REPLACING YOUR PROJECT</small></summary><div class="tracker-library-filters"><label>FIND A TRACK<input id="trackerDemoSearch" type="search" placeholder="Search tracks" autocomplete="off"></label><label>STYLE<select id="trackerDemoStyle"><option value="all">ALL STYLES</option><option value="Electronic">ELECTRONIC</option><option value="Grooves">GROOVES</option><option value="Retro">RETRO</option><option value="Ambient">AMBIENT</option></select></label><small id="trackerDemoCount">18 ORIGINAL TRACKS</small></div><div id="trackerDemoGrid" class="tracker-song-grid" role="region" aria-label="Original tracker demo compositions"></div><p class="tracker-library-note">LISTEN previews a track without changing your music. SELECT chooses it, then USE IN TRACKER loads it after confirmation. Undo can restore the previous tracker.</p></details>'+
  '<div class="tracker-controls"><label>PATTERN<select id="trackerPattern"></select></label><label>ROWS<select id="trackerRows"><option>16</option><option>32</option><option>64</option></select></label><label>TRACKER BPM<input id="trackerBpm" type="number" min="40" max="240" value="120"></label><label>SOUND BANK<select id="trackerBank"><option value="0">CLASSICS</option><option value="1">AFTER HOURS</option><option value="2">EXPERIMENTAL</option></select></label><button type="button" id="trackerAdd">＋ PATTERN</button><button type="button" id="trackerClone">COPY PATTERN</button><button type="button" id="trackerDelete">DELETE PATTERN</button><button type="button" id="trackerUndo">↶ UNDO</button><button type="button" id="trackerRedo">↷ REDO</button></div>'+
  '<div class="tracker-chain"><label for="trackerChain">PATTERN CHAIN (hex IDs)</label><input id="trackerChain" value="00" spellcheck="false" autocapitalize="characters" aria-label="Tracker pattern sequence"><button type="button" id="trackerApplyChain">APPLY CHAIN</button><span>Example: 00 00 01 · up to 16 entries</span></div>'+
- '<section class="tracker-song-builder" id="trackerSongBuilder" aria-label="Build and edit your tracker song"><div class="tracker-song-builder-heading"><div><span>SONG BUILDER · STEP 2</span><h3>Turn patterns into a song</h3><p>Record yourself switching patterns, or add sections one at a time. Rearrange them afterwards. Your original notes stay safe.</p></div><strong id="trackerArrangementCount">NO SONG YET</strong></div><div class="tracker-song-starters"><div><strong>START WITH AN IDEA</strong><p>Add a simple, editable pattern. Make the notes your own!</p></div><label for="trackerStarterType">CHOOSE AN IDEA</label><select id="trackerStarterType"><option value="drums">DRUM GROOVE</option><option value="bass">BASSLINE</option><option value="melody">MELODY</option><option value="chords">CHORDS</option></select><button type="button" id="trackerStarterAdd">＋ ADD IDEA</button><small id="trackerStarterHelp">Two bars of kick, snare and hi-hat.</small></div><div class="tracker-song-timeline" aria-label="Song sections in playback order"><div class="tracker-song-timeline-head"><strong>YOUR SONG TIMELINE</strong><span>Choose a section to edit it</span></div><div class="tracker-song-timeline-scroll"><div id="trackerArrangementTimeline" class="tracker-song-timeline-blocks" role="group" aria-label="Song timeline"></div><p id="trackerArrangementTimelineEmpty">Your timeline appears here after you add an idea or record a performance.</p></div></div><div class="tracker-song-builder-tools"><button type="button" id="trackerRecordArrangement" aria-pressed="false">● RECORD ARRANGEMENT</button><button type="button" id="trackerArrangementAdd">＋ ADD CURRENT PATTERN</button><button type="button" id="trackerArrangementPlay">▶ PLAY SONG</button><button type="button" id="trackerArrangementPads">SHOW PATTERN PADS ↓</button></div><p id="trackerArrangementEmpty" class="tracker-song-empty">Your song is empty. Add the current pattern, or record a live performance to create sections automatically.</p><div id="trackerArrangementSections" class="tracker-arrangement-sections" aria-label="Editable song sections"></div><p class="tracker-song-builder-help">Move sections with ↑ and ↓, duplicate with ＋, or delete with ×. Change the pattern and number of beats or bars using the menus. Song playback stops automatically at the end.</p></section>'+
+ '<section class="tracker-song-builder" id="trackerSongBuilder" aria-label="Build and edit your tracker song"><div class="tracker-song-builder-heading"><div><span>SONG BUILDER · STEP 2</span><h3>Turn patterns into a song</h3><p>Record yourself switching patterns, or add sections one at a time. Rearrange them afterwards. Your original notes stay safe.</p></div><strong id="trackerArrangementCount">NO SONG YET</strong></div><div class="tracker-song-starters"><div><strong>START WITH AN IDEA</strong><p>Add a simple, editable pattern. Make the notes your own!</p></div><label for="trackerStarterType">CHOOSE AN IDEA</label><select id="trackerStarterType"><option value="drums">DRUM GROOVE</option><option value="bass">BASSLINE</option><option value="melody">MELODY</option><option value="chords">CHORDS</option></select><button type="button" id="trackerStarterAdd">＋ ADD IDEA</button><small id="trackerStarterHelp">Two bars of kick, snare and hi-hat.</small></div><div class="tracker-song-timeline" aria-label="Song sections in playback order"><div class="tracker-song-timeline-head"><strong>YOUR SONG TIMELINE</strong><span>Choose a section to edit it</span></div><div class="tracker-song-timeline-scroll"><div id="trackerArrangementTimeline" class="tracker-song-timeline-blocks" role="group" aria-label="Song timeline"></div><p id="trackerArrangementTimelineEmpty">Your timeline appears here after you add an idea or record a performance.</p></div></div><div class="tracker-finish-panel" id="trackerFinishPanel" aria-label="Finish and save your song"><div class="tracker-finish-heading"><span>STEP 4 · FINISH YOUR SONG</span><h3>Ready to hear your finished music?</h3><p>Export the complete arrangement in section order, or save an editable project to continue another day.</p><strong id="trackerFinishSummary">Add a song section to begin</strong></div><div class="tracker-finish-actions"><button type="button" id="trackerFinishSong">⬇ EXPORT FINISHED SONG WAV</button><button type="button" id="trackerFinishBackup">↓ SAVE EDITABLE PROJECT</button></div><p id="trackerFinishStatus" role="status" aria-live="polite">WAV for listening and sharing. Project backup to keep editing.</p></div><div class="tracker-song-builder-tools"><button type="button" id="trackerRecordArrangement" aria-pressed="false">● RECORD ARRANGEMENT</button><button type="button" id="trackerArrangementAdd">＋ ADD CURRENT PATTERN</button><button type="button" id="trackerArrangementPlay">▶ PLAY SONG</button><button type="button" id="trackerArrangementPads">SHOW PATTERN PADS ↓</button></div><p id="trackerArrangementEmpty" class="tracker-song-empty">Your song is empty. Add the current pattern, or record a live performance to create sections automatically.</p><div id="trackerArrangementSections" class="tracker-arrangement-sections" aria-label="Editable song sections"></div><p class="tracker-song-builder-help">Move sections with ↑ and ↓, duplicate with ＋, or delete with ×. Change the pattern and number of beats or bars using the menus. Song playback stops automatically at the end.</p></section>'+
  '<details id="trackerPerformanceOptions" class="tracker-disclosure"><summary>LIVE PATTERN PERFORMANCE <small>Switch patterns, capture takes and automate the mix</small></summary><section class="tracker-performance" aria-label="Live tracker arrangement and performance"><div class="tracker-perf-head"><div><h3>LIVE PATTERN PERFORMANCE</h3><strong id="trackerTransport" aria-live="polite">○ READY</strong></div><label>SWITCH ON<select id="trackerQuantize"><option value="bar" selected>NEXT BAR</option><option value="beat">NEXT BEAT</option></select></label><button id="trackerLivePlay" type="button">▶ PLAY PATTERN</button><button id="trackerLiveStop" type="button">■ STOP</button></div><p id="trackerLiveStatus" role="status">Select a pattern to perform live</p><div id="trackerLaunchPads" class="tracker-launch-pads" role="group" aria-label="Live pattern launch pads"></div><div class="tracker-perf-tools"><label>RECORD TO TAPE TRACK<select id="trackerTapeTrack"><option value="0">TRACK 1</option><option value="1">TRACK 2</option><option value="2">TRACK 3</option><option value="3">TRACK 4</option></select></label><button id="trackerTape" type="button">● RECORD TO TAPE</button><button id="trackerAutomation" type="button" aria-pressed="false">● ARM MIX</button><button id="trackerAutoClear" type="button">CLEAR AUTOMATION</button><small id="trackerAutoCount">0 AUTOMATION POINTS</small></div><p class="tracker-perf-note">Live pads launch patterns on the next beat or bar. Record the performance into a tape clip (up to 55 seconds, browser support required). ARM MIX records mixer moves during playback; the points are saved in your project.</p></section></details>'+
  '<div class="tracker-view"><label for="trackerView">GRID VIEW</label><select id="trackerView"><option value="all">ALL 4 CHANNELS</option><option value="0">CHANNEL 1</option><option value="1">CHANNEL 2</option><option value="2">CHANNEL 3</option><option value="3">CHANNEL 4</option></select><small>Choose one channel for easier touch editing on a phone.</small></div>'+
  '<h3 class="tracker-grid-label">2. MAKE A PATTERN</h3><div class="tracker-headers"><span>ROW</span><span>CH 1</span><span>CH 2</span><span>CH 3</span><span>CH 4</span></div><div class="tracker-grid-scroll"><div id="trackerGrid" class="tracker-grid" role="grid" aria-label="Tracker pattern note grid"></div></div>'+
@@ -1115,6 +1179,8 @@ function init(deps){
   if(item)item.scrollIntoView({block:'nearest',behavior:'smooth'});
  });
  $('trackerArrangementPlay').addEventListener('click',playArrangement);
+ $('trackerFinishSong').addEventListener('click',exportFinishedSong);
+ $('trackerFinishBackup').addEventListener('click',()=>$('saveProject').click());
  $('trackerArrangementPads').addEventListener('click',()=>{
   $('trackerPerformanceOptions').open=true;
   $('trackerLaunchPads').scrollIntoView({block:'nearest',behavior:'smooth'});
@@ -1152,6 +1218,7 @@ window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
  get playing(){return playing},get live(){return !!live},get transport(){return {playing,mode:arrangementPlaying?'song':live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
  launch,play,finishTapeTake,openLibrary,setLayoutMode,buildDemo,stopDemoPreview,
  compileArrangement,recordedSections,playArrangement,startArrangementRecording,makeStarterPattern,addStarter,
+ exportFinishedSong,openFinishSong,
  get recordingArrangement(){return !!arrangementRecording},
  get arrangementPlaying(){return arrangementPlaying},
  get previewing(){return !!demoPreview}};

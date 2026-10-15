@@ -49,7 +49,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
     const page=await ctx.newPage(),errors=[];
     page.on('pageerror',e=>errors.push(e.message));
     await page.goto(baseUrl,{waitUntil:'domcontentloaded'});
-    assert.match(await page.title(),/v2\.5/);
+    assert.match(await page.title(),/v2\.6/);
     assert(await page.locator('#studioWelcome').isVisible());
     assert.equal(await page.locator('#studioMainNavigation [data-studio-group]').count(),4);
     assert.match(await page.locator('#studioMainNavigation').innerText(),/PLAY/);

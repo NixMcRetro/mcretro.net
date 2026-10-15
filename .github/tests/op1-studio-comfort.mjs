@@ -18,7 +18,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
  try{for(const width of(name==='chromium'?[1440,390]:[1100])){
   const ctx=await browser.newContext({viewport:{width,height:900},acceptDownloads:true}),page=await ctx.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));await page.setContent(rawHtml,{waitUntil:'domcontentloaded'});await page.locator('#studioAdvancedButton').click();
-  assert.match(await page.title(),/v2\.5/);
+  assert.match(await page.title(),/v2\.6/);
   assert.equal(await page.locator('#comfortTabs [role=tab]').count(),6);
   assert(await page.locator('#piano').isVisible(),'Physical keyboard is not visible');
   assert(await page.locator('#soundPanel').isVisible(),'Play tab did not open');

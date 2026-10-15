@@ -4,7 +4,7 @@
 const $=id=>document.getElementById(id);
 const ROLES=['Intro','Verse','Chorus','Break','Outro','Part'];
 const LENGTHS=[16,32,64,128];
-let root=null,selected=0,dragFrom=null,lastSignature='',lastFeedback='';
+let root=null,selected=0,dragFrom=null,lastSignature='',lastFeedback='',lastVisualEdit=null;
 const barText=rows=>{const bars=rows/16;return bars+' bar'+(bars===1?'':'s')};
 function message(value){lastFeedback=value;const status=$('makerSectionsStatus');if(status)status.textContent=value}
 function currentSnapshot(){return window.OP1Tracker.musicMakerSnapshot()}
@@ -27,6 +27,7 @@ function mutate(action,index=selected,value=null){
   const difference=value-snapshot.arrangement[index].rows,rows=snapshot.arrangement.reduce((sum,x)=>sum+x.rows,0);
   if(rows+difference>4096){message('That would exceed the song arrangement length limit. Shorten another section first.');return false}
  }
+ const priorSelection=selected;
  const ok=window.OP1Tracker.musicMakerArrange(action,index,value);
  if(!ok){message('Could not change the song. Stop playback or recording first; for longer arrangements, try shorter sections.');return false}
  const size=currentSnapshot().arrangement.length;
@@ -34,6 +35,7 @@ function mutate(action,index=selected,value=null){
  else if(action==='move')selected=value;
  else if(action==='delete')selected=Math.max(0,Math.min(size-1,index));
  else selected=index;
+ lastVisualEdit={after:JSON.stringify(currentSnapshot()),selection:priorSelection};
  message('Song updated. Your notes, recordings and other studios are unchanged. Undo Latest Change restores the previous arrangement.');
  focusSelection();lastSignature='';refresh();window.OP1MusicMaker?.refresh?.();window.OP1RiffRecorder?.refresh?.();
  return true;
@@ -121,7 +123,12 @@ function init(){
  $('makerSectionDuplicate').addEventListener('click',()=>mutate('duplicate'));
  $('makerSectionDelete').addEventListener('click',()=>mutate('delete'));
  $('makerSectionAdd').addEventListener('click',()=>mutate('add',selected));
- $('makerSectionUndo').addEventListener('click',()=>{window.OP1Tracker.undo();selected=Math.min(selected,currentSnapshot().arrangement.length-1);lastSignature='';message('Undid the latest tracker or song edit.');refresh()});
+ $('makerSectionUndo').addEventListener('click',()=>{
+  const restore=lastVisualEdit&&JSON.stringify(currentSnapshot())===lastVisualEdit.after?lastVisualEdit.selection:null;
+  window.OP1Tracker.undo();if(restore!==null)selected=restore;
+  lastVisualEdit=null;selected=Math.max(0,Math.min(selected,currentSnapshot().arrangement.length-1));lastSignature='';
+  message('Undid the latest tracker or song edit.');focusSelection();refresh();
+ });
  $('makerSectionChange').addEventListener('click',()=>{focusSelection();$('.maker-easy')?.scrollIntoView({block:'center',behavior:'smooth'});$('makerEasyDirection')?.focus({preventScroll:true})});
  $('makerSectionRecord').addEventListener('click',()=>{
   focusSelection();window.OP1CasioKeyboard?.selectTab('keyboard');

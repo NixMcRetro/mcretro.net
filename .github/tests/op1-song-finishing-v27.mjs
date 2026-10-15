@@ -24,7 +24,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   await page.locator('#makerPlay').click();
   assert.equal(await page.locator('#makerPlay').getAttribute('aria-pressed'),'true','Play should start song');
   assert.match(await page.locator('#makerPlay').innerText(),/Stop Song/);
-  await page.locator('#makerStop').click();
+  await page.locator('#makerPlay').click();
   assert.equal(await page.locator('#makerPlay').getAttribute('aria-pressed'),'false');
   const original=await save(page);
   assert.equal(original.version,5);
@@ -46,7 +46,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    const wav=readFileSync(await (await pending).path());
    assert.equal(wav.toString('ascii',0,4),'RIFF');
    assert.equal(wav.readUInt16LE(22),2);
-   assert.match(await page.locator('#makerStatus').innerText(),/finished WAV was downloaded/);
+   assert.match(await page.locator('#makerStatus').innerText(),/stereo WAV has downloaded/);
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
    assert(overflow<=1,'Stage 5 beginner controls overflow the phone screen');
   }

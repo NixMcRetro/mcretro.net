@@ -1,4 +1,4 @@
-/* BleepGarden Music Maker 2000 v2.8. Cache the static shell only; do not cache projects. */
+/* BleepGarden Music Maker 2000 v2.9. Cache the static shell only; do not cache projects. */
 'use strict';
 const CACHE='op1-browser-lab-shell-v2.9-midi-tracker';
 const PREFIX='op1-browser-lab-shell-';

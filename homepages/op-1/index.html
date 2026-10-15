@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
 <meta name="description" content="SuperNick's OP-1 Browser Lab: a friendly beginner Music Maker and playable keyboard, powered by offline synth, tracker and tape engines.">
-<title>SuperNick's OP-1 Browser Lab v2.7.1 · Music Maker & Keyboard</title>
+<title>SuperNick's OP-1 Browser Lab v2.8 · Play It, Keep It</title>
 <style>
   :root{color-scheme:light;--blue:#46a7e5;--green:#73c896;--orange:#f28542;--ink:#22292d;--page:#f5f5f2;--ui:#eceef0;--shadow:#adb2b6}
   *{box-sizing:border-box}body{margin:0;background:var(--page);font-family:Arial,Helvetica,sans-serif;color:#303638;-webkit-tap-highlight-color:transparent}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #3d9ddb;outline-offset:2px}button:disabled{cursor:not-allowed;opacity:.4}
@@ -349,11 +349,12 @@
 <link rel="stylesheet" href="./tracker.css">
 <link rel="stylesheet" href="./music-maker.css">
 <link rel="stylesheet" href="./casio-keyboard.css">
+<link rel="stylesheet" href="./riff-recorder.css">
 </head>
 <body>
 <main class="shell">
   <header class="topline">
-    <div class="brand"><div class="brandmark" aria-hidden="true">op<span style="color:#f38156">.</span></div><div><h1>SuperNick's OP-1 Browser Lab <span style="font-weight:400;color:#9ba2a6;font-size:13px">/ v2.7.1</span></h1><p>MAKE A SONG OR PLAY THE KEYBOARD · NO EXPERIENCE NEEDED</p></div></div>
+    <div class="brand"><div class="brandmark" aria-hidden="true">op<span style="color:#f38156">.</span></div><div><h1>SuperNick's OP-1 Browser Lab <span style="font-weight:400;color:#9ba2a6;font-size:13px">/ v2.8</span></h1><p>MAKE A SONG OR PLAY THE KEYBOARD · NO EXPERIENCE NEEDED</p></div></div>
     <nav class="topactions" aria-label="Project controls"><button class="action primary" id="startAudio">▶ ENABLE AUDIO</button><button class="action" id="saveProject">SAVE PROJECT</button><button class="action" id="quickRecovery" type="button" title="See automatic checkpoints and storage status">RECOVERY</button><button class="action" id="openProject">OPEN PROJECT</button><button class="action" id="exportWav">EXPORT WAV</button><span id="exportStatus" role="status" aria-live="polite" hidden></span><button class="action" id="showHelp">? GUIDE</button><input class="hide" id="projectFile" type="file" accept=".json,application/json"></nav>
   </header>
   <div class="mobile-mode">You can play this on mobile. Swipe the instrument to explore its controls, or use the larger touch keyboard below. Landscape works best.</div>
@@ -564,6 +565,7 @@
 <script src="./tracker.js"></script>
 <script src="./music-maker.js"></script>
 <script src="./casio-keyboard.js"></script>
+<script src="./riff-recorder.js"></script>
 <script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id); const q=(sel,root=document)=>root.querySelector(sel); const qa=(sel,root=document)=>[...root.querySelectorAll(sel)];
@@ -742,10 +744,10 @@ function updateVoiceCount(){if($('voiceCount'))$('voiceCount').textContent=voice
 function liveNoteOn(note,id){let a=ensureAudio();if(!a||voices.has(id))return;trimLiveVoices();const midi=48+note+state.octave*12,when=a.ctx.currentTime+.005;let kind=state.instrument, p=snapshotPatch(), voice;
  const targetTrack=transport.playing&&transport.armed?state.selectedTrack:null;
 if(kind==='drum'){const dur=playDrum(a,midi,when,state.kit,.9,0,targetTrack);voice={release:()=>{},drumDuration:dur}}else if(kind==='sample'){const src=playSampleSlice(a,state.sampleId,note%state.sampleSettings.slices,when,.9,0,null,1,targetTrack);voice={release:()=>{if(state.sampleSettings.loop&&src)try{src.stop()}catch(_){}}}}else voice=playSynth(a,midi,when,null,p,.9,0,targetTrack);voices.set(id,{voice,midi,kind,note,started:when});heldKeys.add(note);updateVoiceCount();state.lastNote=note;flashKey=note;flashUntil=performance.now()+300;paintKeys();
- rollLiveOn(midi,id,when);
+ rollLiveOn(midi,id,when);window.OP1RiffRecorder?.noteOn?.(note,id,state.octave);
  if(transport.playing&&transport.armed&&!state.tapeReverse){const t=quantizeTime(clamp((a.ctx.currentTime-transport.origin)*state.tapeSpeed,0,state.tapeLength-.01));let ev={t,d:kind==='drum'?.2:.24,n:midi,kind,kit:state.kit,patch:kind==='synth'?p:null,sampleId:kind==='sample'?state.sampleId:null,sliceIndex:note%state.sampleSettings.slices,sliceSettings:kind==='sample'?structuredClone(state.sampleSettings):null};state.tracks[state.selectedTrack].events.push(ev);voices.get(id).event=ev;markDirty()}
 }
-function liveNoteOff(note,id){const data=voices.get(id);if(!data)return;const t=audio?.ctx.currentTime??0;try{data.voice.release(t)}catch(e){}if(data.event&&data.kind==='synth')data.event.d=clamp((t-data.started)*state.tapeSpeed,.04,Math.min(12,state.tapeLength-data.event.t));rollLiveOff(id,t);voices.delete(id);if(![...voices.values()].some(v=>v.note===note))heldKeys.delete(note);updateVoiceCount();paintKeys();markDirty()}
+function liveNoteOff(note,id){window.OP1RiffRecorder?.noteOff?.(note,id);const data=voices.get(id);if(!data)return;const t=audio?.ctx.currentTime??0;try{data.voice.release(t)}catch(e){}if(data.event&&data.kind==='synth')data.event.d=clamp((t-data.started)*state.tapeSpeed,.04,Math.min(12,state.tapeLength-data.event.t));rollLiveOff(id,t);voices.delete(id);if(![...voices.values()].some(v=>v.note===note))heldKeys.delete(note);updateVoiceCount();paintKeys();markDirty()}
 function releaseAll(){if(rollRecorder.armed){for(const [id] of rollRecorder.held)rollLiveOff(id,audio?.ctx.currentTime||0)}for(let [id,data] of voices){try{data.voice.release(audio?.ctx.currentTime||0)}catch(e){}}voices.clear();heldKeys.clear();updateVoiceCount();paintKeys()}
 function paintKeys(){qa('.piano-key,.mobile-note').forEach(k=>k.classList.toggle('down',heldKeys.has(Number(k.dataset.note))))}
 function playEvent(event,when,track){let a=audio;if(!a)return;let t=state.tracks[track],speed=state.tapeSpeed;const semis=Math.round(12*Math.log2(speed));if(event.kind==='drum')playDrum(a,event.n,when,event.kit??0,1,0,track);else if(event.kind==='sample')playSampleSlice(a,event.sampleId,event.sliceIndex||0,when,1,0,event.sliceSettings,speed,track,event.d/speed);else playSynth(a,clamp(event.n+semis,0,127),when,clamp(event.d/speed,.01,24),event.patch||snapshotPatch(),1,0,track)}
@@ -1703,8 +1705,8 @@ function op1InstallHelp(){
 async function op1CheckOffline(){
  if(!('serviceWorker' in navigator)||!('caches' in window)||!window.isSecureContext){op1OfflineReady=false;op1OfflineMessage('Offline installation is unavailable in this browser or context. Use HTTPS in a regular browser tab; download portable project backups.', 'warn');return}
  try {
-  const cache=await caches.open('op1-browser-lab-shell-v2.7.1-keyboard');
-  const root=new URL('./',location.href),paths=['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','tracker.js','tracker.css','music-maker.js','music-maker.css','casio-keyboard.js','casio-keyboard.css','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png'];
+  const cache=await caches.open('op1-browser-lab-shell-v2.8-riff-recorder');
+  const root=new URL('./',location.href),paths=['index.html','workspace.js','workspace.css','comfort.js','comfort.css','simplified.js','simplified.css','tracker.js','tracker.css','music-maker.js','music-maker.css','casio-keyboard.js','casio-keyboard.css','riff-recorder.js','riff-recorder.css','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png'];
   const found=await Promise.all(paths.map(p=>cache.match(new URL(p,root).href)));
   op1OfflineReady=found.every(Boolean);
   if(op1OfflineReady){const offline=!navigator.onLine;
@@ -1747,7 +1749,7 @@ window.OP1KeyboardEngine={
   syncUI();markDirty();return true;
  }
 };
-recoveryStartup=true;buildUI();initSongStudio();initPianola();initSynthScore();initRoll();OP1Workspace.init({getState:()=>state,markDirty,notice,ensureAudio,getAudio:()=>audio,playSynth,playDrum,playSampleSlice,playTapeClip,patternForSlot,pianolaScoreEvents,snapshotPatch,makeGraph,setExportGraphEffects,wavBufferResponsive,download,registerAudio,checkpointEdit,syncUI,hasSample:id=>sampleBuffers.has(id),isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),stopOthers:()=>{rollStop();pianolaStop();stopSong();stopSequence();if(transport.playing)stopTransport()}});initV09Controls();wireNewVisuals();initV12();initSampleWorkshop();initStore();syncUI();drawDisplay();animateMeter();startRecovery();op1WireOffline();OP1Comfort.init({getState:()=>state,markDirty,notice,syncUI,snapshotPatch,parseRollMidi,importRollScore:score=>rollChange(()=>{state.pianoRoll=score;rollSelected=-1}),pianolaMutate,pianolaStop,syncSynthScoreStatus,ensureAudio,makeGraph,playSynth,playDrum,isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),registerAudio,checkpointEdit,patternForSlot,liveNoteOn,liveNoteOff,changeOct});OP1Simplified.init();OP1Tracker.init({getState:()=>state,markDirty,notice,ensureAudio,makeGraph,playSynth,playDrum,playSampleSlice,hasSample:id=>sampleBuffers.has(id),snapshotPatch,patchForPreset:(bank,index)=>({...((soundBanks[bank]?.patches||patches)[index]||patches[0]),env:{...state.env},fx:{...state.fx},lfo:{...state.lfo}}),stopOthers:()=>{OP1Workspace.stop();rollStop();pianolaStop();stopSong();stopSequence();if(transport.playing)stopTransport()},isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),wavBufferResponsive,download,registerAudio,checkpointEdit,syncUI});OP1MusicMaker.init();OP1CasioKeyboard.init(window.OP1KeyboardEngine);document.getElementById('trackerStudio').dataset.comfortTab='Compose';OP1Simplified.selectTool(OP1Simplified.getTool());
+recoveryStartup=true;buildUI();initSongStudio();initPianola();initSynthScore();initRoll();OP1Workspace.init({getState:()=>state,markDirty,notice,ensureAudio,getAudio:()=>audio,playSynth,playDrum,playSampleSlice,playTapeClip,patternForSlot,pianolaScoreEvents,snapshotPatch,makeGraph,setExportGraphEffects,wavBufferResponsive,download,registerAudio,checkpointEdit,syncUI,hasSample:id=>sampleBuffers.has(id),isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),stopOthers:()=>{rollStop();pianolaStop();stopSong();stopSequence();if(transport.playing)stopTransport()}});initV09Controls();wireNewVisuals();initV12();initSampleWorkshop();initStore();syncUI();drawDisplay();animateMeter();startRecovery();op1WireOffline();OP1Comfort.init({getState:()=>state,markDirty,notice,syncUI,snapshotPatch,parseRollMidi,importRollScore:score=>rollChange(()=>{state.pianoRoll=score;rollSelected=-1}),pianolaMutate,pianolaStop,syncSynthScoreStatus,ensureAudio,makeGraph,playSynth,playDrum,isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),registerAudio,checkpointEdit,patternForSlot,liveNoteOn,liveNoteOff,changeOct});OP1Simplified.init();OP1Tracker.init({getState:()=>state,markDirty,notice,ensureAudio,makeGraph,playSynth,playDrum,playSampleSlice,hasSample:id=>sampleBuffers.has(id),snapshotPatch,patchForPreset:(bank,index)=>({...((soundBanks[bank]?.patches||patches)[index]||patches[0]),env:{...state.env},fx:{...state.fx},lfo:{...state.lfo}}),stopOthers:()=>{OP1Workspace.stop();rollStop();pianolaStop();stopSong();stopSequence();if(transport.playing)stopTransport()},isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),wavBufferResponsive,download,registerAudio,checkpointEdit,syncUI});OP1MusicMaker.init();OP1CasioKeyboard.init(window.OP1KeyboardEngine);OP1RiffRecorder.init();document.getElementById('trackerStudio').dataset.comfortTab='Compose';OP1Simplified.selectTool(OP1Simplified.getTool());
 })();
 </script>
 </body>

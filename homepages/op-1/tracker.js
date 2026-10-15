@@ -689,7 +689,7 @@ async function exportFinishedSong(){
   finishedSongExport='encoding';
   progress.textContent='Preparing your WAV download…';
   const bytes=await api.wavBufferResponsive(buffer,()=>{});
-  api.download(new Blob([bytes],{type:'audio/wav'}),'supernicks-op1-finished-song.wav');
+  api.download(new Blob([bytes],{type:'audio/wav'}),'bleepgarden-music-maker-2000-song.wav');
   finishedSongExport='success';
   progress.textContent='Stereo WAV downloaded. Save an editable project backup too.';
   status('Finished song exported as a stereo WAV');

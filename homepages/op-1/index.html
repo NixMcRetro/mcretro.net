@@ -347,6 +347,7 @@
 <link rel="stylesheet" href="./comfort.css">
 <link rel="stylesheet" href="./simplified.css">
 <link rel="stylesheet" href="./tracker.css">
+<link rel="stylesheet" href="./music-maker.css">
 </head>
 <body>
 <main class="shell">
@@ -560,6 +561,7 @@
 <script src="./comfort.js"></script>
 <script src="./simplified.js"></script>
 <script src="./tracker.js"></script>
+<script src="./music-maker.js"></script>
 <script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id); const q=(sel,root=document)=>root.querySelector(sel); const qa=(sel,root=document)=>[...root.querySelectorAll(sel)];
@@ -1732,7 +1734,7 @@ function op1WireOffline(){
  }).catch(e=>{op1OfflineMessage('Offline installation could not be enabled: '+e.message+'. The browser instrument still works online.','warn')});
 }
 
-recoveryStartup=true;buildUI();initSongStudio();initPianola();initSynthScore();initRoll();OP1Workspace.init({getState:()=>state,markDirty,notice,ensureAudio,getAudio:()=>audio,playSynth,playDrum,playSampleSlice,playTapeClip,patternForSlot,pianolaScoreEvents,snapshotPatch,makeGraph,setExportGraphEffects,wavBufferResponsive,download,registerAudio,checkpointEdit,syncUI,hasSample:id=>sampleBuffers.has(id),isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),stopOthers:()=>{rollStop();pianolaStop();stopSong();stopSequence();if(transport.playing)stopTransport()}});initV09Controls();wireNewVisuals();initV12();initSampleWorkshop();initStore();syncUI();drawDisplay();animateMeter();startRecovery();op1WireOffline();OP1Comfort.init({getState:()=>state,markDirty,notice,syncUI,snapshotPatch,parseRollMidi,importRollScore:score=>rollChange(()=>{state.pianoRoll=score;rollSelected=-1}),pianolaMutate,pianolaStop,syncSynthScoreStatus,ensureAudio,makeGraph,playSynth,playDrum,isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),registerAudio,checkpointEdit,patternForSlot,liveNoteOn,liveNoteOff,changeOct});OP1Simplified.init();OP1Tracker.init({getState:()=>state,markDirty,notice,ensureAudio,makeGraph,playSynth,playDrum,playSampleSlice,hasSample:id=>sampleBuffers.has(id),snapshotPatch,patchForPreset:(bank,index)=>({...((soundBanks[bank]?.patches||patches)[index]||patches[0]),env:{...state.env},fx:{...state.fx},lfo:{...state.lfo}}),stopOthers:()=>{OP1Workspace.stop();rollStop();pianolaStop();stopSong();stopSequence();if(transport.playing)stopTransport()},isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),wavBufferResponsive,download,registerAudio,checkpointEdit,syncUI});document.getElementById('trackerStudio').dataset.comfortTab='Compose';OP1Simplified.selectTool(OP1Simplified.getTool());
+recoveryStartup=true;buildUI();initSongStudio();initPianola();initSynthScore();initRoll();OP1Workspace.init({getState:()=>state,markDirty,notice,ensureAudio,getAudio:()=>audio,playSynth,playDrum,playSampleSlice,playTapeClip,patternForSlot,pianolaScoreEvents,snapshotPatch,makeGraph,setExportGraphEffects,wavBufferResponsive,download,registerAudio,checkpointEdit,syncUI,hasSample:id=>sampleBuffers.has(id),isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),stopOthers:()=>{rollStop();pianolaStop();stopSong();stopSequence();if(transport.playing)stopTransport()}});initV09Controls();wireNewVisuals();initV12();initSampleWorkshop();initStore();syncUI();drawDisplay();animateMeter();startRecovery();op1WireOffline();OP1Comfort.init({getState:()=>state,markDirty,notice,syncUI,snapshotPatch,parseRollMidi,importRollScore:score=>rollChange(()=>{state.pianoRoll=score;rollSelected=-1}),pianolaMutate,pianolaStop,syncSynthScoreStatus,ensureAudio,makeGraph,playSynth,playDrum,isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),registerAudio,checkpointEdit,patternForSlot,liveNoteOn,liveNoteOff,changeOct});OP1Simplified.init();OP1Tracker.init({getState:()=>state,markDirty,notice,ensureAudio,makeGraph,playSynth,playDrum,playSampleSlice,hasSample:id=>sampleBuffers.has(id),snapshotPatch,patchForPreset:(bank,index)=>({...((soundBanks[bank]?.patches||patches)[index]||patches[0]),env:{...state.env},fx:{...state.fx},lfo:{...state.lfo}}),stopOthers:()=>{OP1Workspace.stop();rollStop();pianolaStop();stopSong();stopSequence();if(transport.playing)stopTransport()},isRecording:()=>!!(microphone||micStopping||performanceCapture||performanceEncoding||exporting||songExportBusy||rollBusy),wavBufferResponsive,download,registerAudio,checkpointEdit,syncUI});OP1MusicMaker.init();document.getElementById('trackerStudio').dataset.comfortTab='Compose';OP1Simplified.selectTool(OP1Simplified.getTool());
 })();
 </script>
 </body>

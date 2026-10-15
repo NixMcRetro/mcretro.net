@@ -1450,7 +1450,7 @@ function init(deps){
  render();
 }
 window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
- get playing(){return playing},get live(){return !!live},get transport(){return {playing,mode:arrangementPlaying?'song':live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
+ get playing(){return playing},get canUndo(){return history.length>0},get activeSection(){return arrangementActiveSection},get live(){return !!live},get transport(){return {playing,mode:arrangementPlaying?'song':live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
  launch,play,finishTapeTake,openLibrary,setLayoutMode,buildDemo,stopDemoPreview,
  compileArrangement,recordedSections,playArrangement,startArrangementRecording,makeStarterPattern,addStarter,
  applyMusicMakerSong,applyMusicMakerParts,musicMakerSnapshot,musicMakerSectionChoices,musicMakerArrange,musicMakerRecordingTarget,startMusicMakerBacking,applyMusicMakerRecording,adjustMusicMakerPart,previewMusicMakerRecording,cancelMusicMakerRecordingPreview,readMusicMakerSound,musicMakerHasNotes,musicMakerOverview,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,

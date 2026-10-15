@@ -1,3 +1,7 @@
+/* BleepGarden Music Maker 2000 by SuperNick: v2.8 branding and finish theme. */
+.brandmark{color:#276c63;letter-spacing:-1px;background:linear-gradient(145deg,#eef8e9,#d3ecd7);border-color:#538d75;box-shadow:inset 0 1px 2px #fff8}
+html[data-op1-theme=dark] .brandmark{color:#c1ebce;background:linear-gradient(145deg,#345b4c,#223f35);border-color:#6ba784}
+@media(max-width:640px){.brand h1{font-size:clamp(17px,4.4vw,21px)}.brand p{font-size:10px;letter-spacing:.02em}.topline .brand{align-items:flex-start}.brandmark{flex:0 0 44px}}
 /* v2.8 Stage 4: one plain-language finish step and true beginner dark mode.
    Uses the same persisted OP-1 theme as Classic Studio. */
 .maker-theme-row{display:flex;justify-content:flex-end;align-items:center;margin:-4px 0 8px}

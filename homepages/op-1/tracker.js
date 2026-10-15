@@ -129,6 +129,7 @@ function effectiveMusicMakerChannel(ch,preview=true){
 }
 function readMusicMakerSound(ch){return validInt(ch,0,3)?clone(data().channels[ch]):null}
 function musicMakerHasNotes(){return data().patterns.some(p=>p.cells.some(Boolean));}
+function musicMakerOverview(){const sections=data().arrangement,rows=arrangementRows(sections);return {hasNotes:musicMakerHasNotes(),ready:sections.length>0&&musicMakerHasNotes(),sections:sections.length,seconds:rows*60/data().bpm/4,bpm:data().bpm,playing:arrangementPlaying};}
 function previewMusicMakerSound(ch,value){
  if(!validInt(ch,0,3)||rendering||capture||captureEncoding||arrangementRecording||api.isRecording())return false;
  try{
@@ -723,6 +724,7 @@ function playArrangement(){
   renderArrangement();updateTransport();tick();
   status('PLAYING SONG · '+compiled.sequence.length+' SECTIONS · '+Math.ceil(compiled.rows/16)+' BARS');
  }catch(e){stop();status('Song playback unavailable: '+e.message)}
+ window.OP1MusicMaker?.refresh?.();
 }
 const STARTERS={
  drums:{name:'Drum Groove',description:'Two bars of kick, snare and hi-hat.',section:'Intro'},
@@ -1016,6 +1018,7 @@ function stop(){
  document.querySelectorAll('.tracker-row.playing').forEach(x=>x.classList.remove('playing'));
  if($('trackerLaunchPads'))renderLaunchPads();
  renderArrangement();
+ window.OP1MusicMaker?.refresh?.();
 }
 function tick(){
  if(!playing||!context)return;
@@ -1295,7 +1298,7 @@ window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
  get playing(){return playing},get live(){return !!live},get transport(){return {playing,mode:arrangementPlaying?'song':live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
  launch,play,finishTapeTake,openLibrary,setLayoutMode,buildDemo,stopDemoPreview,
  compileArrangement,recordedSections,playArrangement,startArrangementRecording,makeStarterPattern,addStarter,
- applyMusicMakerSong,applyMusicMakerParts,readMusicMakerSound,musicMakerHasNotes,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
+ applyMusicMakerSong,applyMusicMakerParts,readMusicMakerSound,musicMakerHasNotes,musicMakerOverview,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
  get recordingArrangement(){return !!arrangementRecording},
  get arrangementPlaying(){return arrangementPlaying},
  get previewing(){return !!demoPreview}};

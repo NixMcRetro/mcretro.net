@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 import {beginnerHtml} from './op1-test-html.mjs';
 async function backup(page){
  const download=page.waitForEvent('download',{timeout:60000});
- await page.locator('#makerSave').click();
+ await page.locator('#saveProject').click();
  return JSON.parse(readFileSync(await (await download).path(),'utf8'));
 }
 function cellsOf(p,ch){return p.cells.filter((_,i)=>i%4===ch)}
@@ -24,10 +24,10 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert.equal(await page.locator('#riffRecorder').count(),1);
   await page.locator('#makerEasyPart').selectOption('3');
   await page.locator('#makerEasySection').selectOption('2');
-  await page.locator('#makerEasyDirection').selectOption('higher');
+  await page.locator('#makerEasyDirection').selectOption('lower');
   await page.locator('#makerEasyApply').click();
   const higher=await backup(page);
-  assert.notDeepEqual(cellsOf(higher.tracker.patterns[2],3),cellsOf(original.tracker.patterns[2],3),'Higher must transpose melody');
+  assert.notDeepEqual(cellsOf(higher.tracker.patterns[2],3),cellsOf(original.tracker.patterns[2],3),'Lower must transpose melody');
   for(const ch of [0,1,2])assert.deepEqual(cellsOf(higher.tracker.patterns[2],ch),cellsOf(original.tracker.patterns[2],ch));
   for(const sec of [0,1,3])assert.deepEqual(higher.tracker.patterns[sec],original.tracker.patterns[sec]);
   await page.locator('#makerEasyUndo').click();

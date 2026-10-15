@@ -1,0 +1,95 @@
+/* v2.8 Stage 4: one plain-language finish step and true beginner dark mode.
+   Uses the same persisted OP-1 theme as Classic Studio. */
+.maker-theme-row{display:flex;justify-content:flex-end;align-items:center;margin:-4px 0 8px}
+.music-maker .maker-theme-toggle{min-height:42px;padding:7px 14px;border-radius:22px;font-size:13px;font-weight:800;border:1px solid #9eb9ca;background:#f7fbfd;color:#265774}
+.music-maker .maker-theme-toggle:focus-visible{outline:3px solid #3c96bb;outline-offset:2px}
+.maker-finish{margin:25px 0 4px;padding:22px;border:1px solid #a6c6d5;border-radius:15px;background:linear-gradient(145deg,#e9f5f9,#f7fbfd);color:#294c60}
+.maker-finish-heading>span{font-size:11px;font-weight:900;letter-spacing:.13em;color:#28799b}
+.maker-finish h3{font-size:24px;line-height:1.2;margin:7px 0}
+.maker-finish-heading p{font-size:14px;line-height:1.55;color:#456779;max-width:730px}
+.maker-finish-actions{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 0}
+.music-maker .maker-finish-actions button{min-height:54px;flex:1 1 215px;font-weight:800}
+.music-maker .maker-finish-actions #makerFinish{background:#205d7a;color:#fff;border-color:#205d7a}
+.music-maker .maker-finish-actions #makerFinish:hover:not(:disabled){background:#164b64;color:#fff}
+#makerFinishStatus{font-size:12px;line-height:1.6;color:#466678;background:#f2f8fb;border:1px solid #d1e2eb;border-radius:9px;padding:11px 12px;margin:14px 0 0}
+.maker-classic-detail{font-size:12px;color:#516d80}
+.maker-classic-detail summary{cursor:pointer;padding:8px 4px;font-weight:700}
+.maker-classic-detail button{margin-top:8px}
+.music-maker #makerStop[hidden]{display:none!important}
+
+/* All beginner screens share one readable dark palette, not bright white cards on graphite. */
+html[data-op1-theme=dark] .music-maker{
+ color-scheme:dark;background:linear-gradient(145deg,#202c36,#17242d);color:#ecf5f9;
+ border-color:#426375;box-shadow:0 14px 35px #0004;
+}
+html[data-op1-theme=dark] .music-maker .maker-heading span,
+html[data-op1-theme=dark] .maker-finish-heading>span,
+html[data-op1-theme=dark] .riff-title>span,
+html[data-op1-theme=dark] .maker-section-heading>div>span{color:#9bdbf2}
+html[data-op1-theme=dark] .music-maker h2,
+html[data-op1-theme=dark] .music-maker h3,
+html[data-op1-theme=dark] .music-maker strong{color:#f0f8fc}
+html[data-op1-theme=dark] .music-maker .maker-heading p,
+html[data-op1-theme=dark] .music-maker .maker-parts-heading p,
+html[data-op1-theme=dark] .music-maker .maker-footnote,
+html[data-op1-theme=dark] .music-maker .maker-section-heading p,
+html[data-op1-theme=dark] .music-maker .maker-section-empty,
+html[data-op1-theme=dark] .music-maker .casio-help,
+html[data-op1-theme=dark] .music-maker .riff-note,
+html[data-op1-theme=dark] .music-maker .maker-finish-heading p,
+html[data-op1-theme=dark] .music-maker .maker-part small{color:#bfd5e1}
+html[data-op1-theme=dark] .music-maker .maker-settings label,
+html[data-op1-theme=dark] .music-maker .maker-remix-tools label,
+html[data-op1-theme=dark] .music-maker .maker-easy-settings label,
+html[data-op1-theme=dark] .music-maker .maker-sound-settings label,
+html[data-op1-theme=dark] .music-maker .maker-section-tools label,
+html[data-op1-theme=dark] .music-maker .riff-choices label,
+html[data-op1-theme=dark] .music-maker .casio-controls label,
+html[data-op1-theme=dark] .music-maker .casio-octave>span{color:#d9e9f0}
+html[data-op1-theme=dark] .music-maker :is(.maker-parts,.maker-sound,.maker-easy,.maker-song-sections,.riff-recorder,.maker-finish){
+ background:#273a47;color:#eaf4fa;border-color:#496b7e;box-shadow:none;
+}
+html[data-op1-theme=dark] .music-maker .maker-finish{background:linear-gradient(135deg,#284b5c,#253944)}
+html[data-op1-theme=dark] .music-maker :is(.maker-remix-tools,.maker-song-overview,.maker-section-card-tools,.casio-tabs,.maker-theme-row){background:#314754;border-color:#557588;color:#e6f3f9}
+html[data-op1-theme=dark] .music-maker :is(#makerStatus,#makerSoundStatus,#makerEasyStatus,#makerSectionsStatus,#riffStatus,#makerFinishStatus){
+ background:#1e3542;color:#d6eaf3;border-color:#54788b;
+}
+html[data-op1-theme=dark] .music-maker :is(#makerSongOverview,#makerSectionsSummary,.maker-song-overview span,.maker-part small,.maker-section-select small){color:#d0e4ef}
+html[data-op1-theme=dark] .music-maker :is(.maker-section-card,.maker-section-card[data-role=intro],.maker-section-card[data-role=verse],.maker-section-card[data-role=chorus],.maker-section-card[data-role=outro],.maker-section-card[data-role=break]){
+ background:#34505d;border-color:#5c7c8e;color:#f1f7fb;
+}
+html[data-op1-theme=dark] .music-maker .maker-section-card[data-role=chorus]{background:#4f4840}
+html[data-op1-theme=dark] .music-maker .maker-section-card[data-role=verse]{background:#314d42}
+html[data-op1-theme=dark] .music-maker .maker-section-card[data-role=outro]{background:#413e5a}
+html[data-op1-theme=dark] .music-maker .maker-section-card.selected{border-color:#93d5ed;box-shadow:0 0 0 2px #366b84}
+html[data-op1-theme=dark] .music-maker .maker-section-card :is(strong,.maker-section-number,small){color:#f0f7fc}
+html[data-op1-theme=dark] .music-maker .maker-section-select{color:#f0f7fc}
+html[data-op1-theme=dark] .music-maker .maker-section-card-tools{border-color:#597c8b}
+html[data-op1-theme=dark] .music-maker .maker-section-card-tools button{color:#e2f3fa}
+html[data-op1-theme=dark] .music-maker button:not(.casio-key):not(.maker-section-select):not(.maker-primary):not(#makerGenerate):not(#makerFinish):not(#makerSectionAdd):not(#makerEasyApply):not(#riffRecord):not(#riffKeep):not(#makerRemixAll){
+ background:#355060;color:#edf7fc;border-color:#638399;
+}
+html[data-op1-theme=dark] .music-maker button:not(.casio-key):not(.maker-section-select):hover:not(:disabled){border-color:#95cadd}
+html[data-op1-theme=dark] .music-maker :is(#makerGenerate,#makerFinish,#makerSectionAdd,#makerEasyApply,#riffRecord,#riffKeep,#makerRemixAll){
+ background:#327f9e;color:white;border-color:#83b8cb;
+}
+html[data-op1-theme=dark] .music-maker :is(#makerGenerate,#makerFinish,#makerSectionAdd,#makerEasyApply,#riffRecord,#riffKeep,#makerRemixAll):hover:not(:disabled){
+ background:#276d89;color:white;
+}
+html[data-op1-theme=dark] .music-maker :is(select,input:not([type=range])){background:#1d313d;color:#eff8fc;border:1px solid #648496}
+html[data-op1-theme=dark] .music-maker select:focus-visible,
+html[data-op1-theme=dark] .music-maker button:focus-visible{outline:3px solid #9ad6e9;outline-offset:2px}
+html[data-op1-theme=dark] .music-maker :is(.casio-tabs button[aria-selected=true],#makerPlay[aria-pressed=true],.maker-part button[aria-pressed=true],.maker-sound-actions button[aria-pressed=true]){
+ background:#427d97!important;color:#fff!important;border-color:#a0cfe0!important;
+}
+html[data-op1-theme=dark] .music-maker .casio-top p{color:#cddfe9}
+html[data-op1-theme=dark] .music-maker #casioCurrentSound{background:#355a6b;color:#eaf8fe}
+html[data-op1-theme=dark] .music-maker .casio-keybed{background:#141c21}
+/* Piano keys deliberately remain recognisable white and black in both modes. */
+html[data-op1-theme=dark] .music-maker .casio-key.white{background:linear-gradient(#fff,#edf4f7 70%,#cad7dd);color:#1d333e}
+html[data-op1-theme=dark] .music-maker .casio-key.black{background:linear-gradient(90deg,#20282d,#404d57 65%,#182126);color:#fff}
+html[data-op1-theme=dark] .music-maker .casio-key.down.white{background:#9ddde9}
+html[data-op1-theme=dark] .music-maker .casio-key.down.black{background:#4a92b6}
+html[data-op1-theme=dark] .music-maker .casio-more{color:#d4e8f0;border-color:#547589}
+html[data-op1-theme=dark] .music-maker .maker-section-limit{background:#48372b;color:#ffe2b7;border-left-color:#e5aa62}
+@media(max-width:680px){.maker-finish{padding:16px}.maker-finish-actions{display:grid;grid-template-columns:1fr}.maker-finish-actions button{width:100%}}

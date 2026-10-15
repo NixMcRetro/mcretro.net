@@ -86,7 +86,13 @@ try{
  await page.waitForFunction(()=>document.querySelector('#offlineBadge')?.textContent==='CACHED',null,{timeout:10000});
  assert.equal(await page.locator('#bankName').innerText(),'AFTER HOURS','Local project state lost after offline reload');
  assert.equal(await page.locator('html').getAttribute('data-op1-theme'),'dark','Graphite theme preference was not retained offline');
- assert.equal(await page.locator('#studioAdvancedButton').getAttribute('aria-pressed'),'true','Advanced layout preference was not retained offline');
+ assert(await page.locator('html').evaluate(el=>el.classList.contains('beginner-studio')),'Offline reload should return to beginner-first view');
+ assert(await page.locator('#musicMaker').isVisible(),'Offline beginner Music Maker not visible');
+ await page.locator('#makerTabKeyboard').click();
+ assert(await page.locator('#casioKeys').isVisible(),'Offline keyboard not functional');
+ await page.locator('#casioMore').evaluate(el=>el.open=true);
+ await page.locator('#casioClassic').click();
+ assert(await page.locator('#deviceOuter').isVisible(),'Legacy engine unavailable after offline reload');
  await page.locator('.mode-btn[data-mode="tape"]').click();
  assert.equal(await page.locator('.mode-btn[data-mode="tape"]').getAttribute('aria-pressed'),'true');
  assert.deepEqual(errors,[],'Browser JavaScript errors');

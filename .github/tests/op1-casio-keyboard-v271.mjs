@@ -15,7 +15,7 @@ for(const [name,browserType] of Object.entries({chromium,firefox,webkit})){
   const page=await ctx.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(String(e)));
   await page.setContent(beginnerHtml,{waitUntil:'domcontentloaded'});
-  assert.match(await page.title(),/v2\.7/);
+  assert.match(await page.title(),/v2\.8/);
   assert(await page.locator('html').evaluate(el=>el.classList.contains('beginner-studio')),'Expected beginner-first layout');
   for(const id of ['deviceOuter','comfortKeyboardDock','mobileKeys','studioMainNavigation','studioModeBar']){
    assert(!(await page.locator('#'+id).isVisible()),'Old studio unexpectedly visible: '+id);

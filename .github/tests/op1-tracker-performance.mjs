@@ -23,7 +23,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
     const page=await ctx.newPage(),errors=[];
     page.on('pageerror',e=>errors.push(e.message));
     await page.goto(baseUrl,{waitUntil:'domcontentloaded'});
-    assert.match(await page.title(),/v2\.7/);
+    assert.match(await page.title(),/v2\.8/);
     await page.locator('[data-studio-group="Compose"]').click();
     await page.locator('[data-studio-tool="trackerStudio"]').click();
     await page.locator('#trackerPerformanceOptions').evaluate(el=>el.open=true);

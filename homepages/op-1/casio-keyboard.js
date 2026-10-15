@@ -76,7 +76,7 @@ function populateSounds(){
 function selectTab(next){
  if(!root)return;
  const keyboard=next==='keyboard';
- if(!keyboard)stopAll();
+ if(!keyboard){stopAll();if(['recording','countin'].includes(window.OP1RiffRecorder?.phase))window.OP1RiffRecorder.cancel();}
  view=keyboard?'keyboard':'compose';
  $('makerComposerPanel').hidden=keyboard;
  $('casioKeyboardPanel').hidden=!keyboard;
@@ -87,7 +87,7 @@ function selectTab(next){
 }
 function openClassic(open=true){
  if(open){
-  stopAll();classic=true;document.documentElement.classList.remove('beginner-studio');
+  stopAll();if(['recording','countin'].includes(window.OP1RiffRecorder?.phase))window.OP1RiffRecorder.cancel();classic=true;document.documentElement.classList.remove('beginner-studio');
   window.OP1Simplified.setMode('advanced');
   $('casioReturn').hidden=false;return;
  }
@@ -106,7 +106,7 @@ function init(deps){
  panel.innerHTML='<div class="casio-top"><div><span class="casio-eyebrow">MY LITTLE KEYBOARD</span><h2>Pick a sound. Play some notes.</h2><p>A straightforward two-octave keyboard. Use your mouse, fingers, or the letter keys shown below.</p></div><strong id="casioCurrentSound" aria-live="polite"></strong></div>'+
  '<div class="casio-controls"><label>Sound bank<select id="casioBank" aria-label="Choose keyboard sound bank"></select></label><label>Instrument<select id="casioPreset" aria-label="Choose keyboard instrument"></select></label><div class="casio-octave"><span>Pitch</span><div><button type="button" id="casioOctaveDown" aria-label="Play lower notes">− Lower</button><strong id="casioOctave">Octave +0</strong><button type="button" id="casioOctaveUp" aria-label="Play higher notes">Higher +</button></div></div></div>'+
  '<div class="casio-case"><div class="casio-case-display"><span>CASIO-STYLE KEYS</span><strong id="casioSoundName"></strong><span>24 keys · 2 octaves</span></div><div id="casioKeys" class="casio-keybed" role="group" aria-label="Playable two-octave piano keyboard"></div></div>'+
- '<p class="casio-help">Tip: Z, X, C, V and nearby keys play notes. Black keys use S, D, G, H and J. Change Octave for lower bass or higher melodies. This plays your current synth; it does not replace any song or recording.</p>';
+ '<p class="casio-help">Tip: Z, X, C, V and nearby keys play notes. Black keys use S, D, G, H and J. Change Octave for lower bass or higher melodies. This plays your current synth. Notes only become part of your song when you record and Keep a take.</p>';
  const settings=document.createElement('details');settings.className='casio-more';settings.id='casioMore';
  settings.innerHTML='<summary>Need the original studio tools?</summary><p>The sequencers, synthesizer settings, tape recorder and MIDI editors still run underneath. Open the classic interface only when you need those controls.</p><button type="button" id="casioClassic">Open Classic Studio</button>';
  root.append(nav,content,panel,settings);

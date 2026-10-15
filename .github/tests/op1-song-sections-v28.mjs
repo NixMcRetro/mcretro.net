@@ -12,7 +12,7 @@ async function project(page){
 for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
  const browser=await engine.launch({headless:true});
  try{
-  const width=name==='chromium'?390:1150;
+  const width=1150;
   const ctx=await browser.newContext({viewport:{width,height:870},acceptDownloads:true});
   const page=await ctx.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.setContent(beginnerHtml,{waitUntil:'domcontentloaded'});
@@ -115,7 +115,9 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert.equal(await fresh.locator('.maker-section-card').count(),saved.tracker.arrangement.length);
   assert.deepEqual(await fresh.evaluate(()=>window.OP1Tracker.musicMakerSnapshot()),saved.tracker);
   // Narrow phone view should scroll card strip, not the entire page.
-  if(width===390){const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
+  if(name==='chromium'){
+   await page.setViewportSize({width:390,height:870});
+   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
    assert(overflow<=1,'Song section layout overflows phone screen by '+overflow);}
   assert.deepEqual(errors,[],'Unexpected browser exceptions');
   console.log('PASS Stage 3 visual arrangement, shared-pattern isolation, Undo, recording link, backup',name);

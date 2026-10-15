@@ -9,11 +9,11 @@ Starting published main commit: 132e8db03c8cbcd6f190ee57963904aae8ca23db
 
 **BleepGarden Music Maker 2000**
 
-Creator credit: **by SuperNick**. The creator is **SuperNick (Nick)**. Do not replace the creator credit with a dedication, and do not treat SuperNick as the name of the program.
+Exact requested credit: **Created for SuperNick (Nick)**. This identifies the intended recipient, not the creator. Do not describe SuperNick as the developer, and do not treat SuperNick as the name of the program.
 
 ## Branding changes
 
-- Visible header, browser title, HTML metadata, Apple home-screen title, PWA manifest name/short name/description, help-guide heading, and Classic Studio hardware badge are renamed.
+- Visible header, browser title, HTML metadata, Apple home-screen title, PWA manifest name/short name/description, help-guide heading, and Classic Studio hardware badge are renamed. Display the exact “Created for SuperNick (Nick)” credit in the header, with consistent recipient wording in metadata and the guide.
 - Minimal typographic identity: `bg.` wordmark and garden-inspired sage/green accents. The underlying two-tab Make Music / Play Keyboard UX, existing saved dark-mode preference and instrument controls stay intact.
 - The user-facing finished-song WAV download becomes `bleepgarden-music-maker-2000-song.wav`.
 - Tests verify the new branding and preserved functionality in Chromium, Firefox and WebKit.

@@ -36,6 +36,23 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    assert.deepEqual(song.tracks,baseline.tracks,'Never modify tape');
    assert.deepEqual(song.songWorkspace,baseline.songWorkspace,'Never modify Song Workspace');
    assert.deepEqual(song.audioSamples,baseline.audioSamples,'Never change recordings or samples');
+   // The generated song must render actual playable PCM, not just a valid JSON score.
+   const pendingWav=page.waitForEvent('download',{timeout:120000});
+   await page.locator('#makerFinish').click();
+   const wavItem=await pendingWav, wav=readFileSync(await wavItem.path());
+   assert.equal(wav.toString('ascii',0,4),'RIFF');
+   assert.equal(wav.toString('ascii',8,12),'WAVE');
+   assert.equal(wav.readUInt16LE(22),2,'Stereo export required');
+   assert.equal(wav.readUInt32LE(24),32000,'Finished-song exporter should use 32 kHz');
+   assert.equal(wav.readUInt16LE(34),16,'Expected PCM 16-bit audio');
+   assert(wav.readUInt32LE(40)>400000,'Generated song export is too short');
+   let audible=false;
+   for(let i=44;i<Math.min(wav.length,200044);i+=2){if(wav.readInt16LE(i)!==0){audible=true;break}}
+   assert(audible,'Generated song WAV is silent');
+   const afterExport=await save(page);
+   assert.deepEqual(afterExport.tracker,song.tracker,'Export changed generated song notes');
+   assert.deepEqual(afterExport.tracks,song.tracks,'Export modified tape');
+
    for(let ch=0;ch<4;ch++)assert(notesOnChannel(song.tracker,ch).flat().some(Boolean),'Expected generated part '+ch);
    const bass=notesOnChannel(song.tracker,1),melody=notesOnChannel(song.tracker,3);
    assert(bass.flat().filter(Boolean).every(n=>n.midi>=36&&n.midi<=95));

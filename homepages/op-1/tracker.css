@@ -171,3 +171,35 @@ html[data-op1-theme=dark] .tracker-song-card{background:#304b59;border-color:#56
 html[data-op1-theme=dark] .tracker-song-info strong,html[data-op1-theme=dark] .tracker-song-info small{color:#e1f1f7}
 @media(max-width:830px){.tracker-groove-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.tracker-song-grid{grid-template-columns:1fr}}
 @media(max-width:440px){.tracker-groove-controls{grid-template-columns:1fr}.tracker-song-grid{max-height:290px}.tracker-song-card{padding:9px}.tracker-song-actions button{flex:1 1 auto}}
+
+/* v2.6 Stage 2: song arrangement recorder and editable section list */
+.tracker-song-builder{background:linear-gradient(145deg,#f5f9fa,#e7f2f4);border:1px solid #b6d0d8;border-radius:12px;margin:15px 0;padding:15px;color:#32566a}
+.tracker-song-builder-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.tracker-song-builder-heading>div{flex:1 1 240px}
+.tracker-song-builder-heading span{font-size:10px;letter-spacing:.10em;font-weight:850;color:#477d91}
+.tracker-song-builder-heading h3{font-size:19px;margin:4px 0 5px;font-weight:850;line-height:1.3}
+.tracker-song-builder-heading p{font-size:12px;line-height:1.6;margin:0;color:#597687}
+#trackerArrangementCount{font-size:11px;white-space:nowrap;letter-spacing:.02em;color:#537487}
+.tracker-song-builder-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:13px}
+.tracker-song-builder-tools button{border:1px solid #a6c4d0;border-radius:8px;background:#fff;color:#315b70;font-weight:800;padding:10px 12px;font-size:11px;min-height:43px;cursor:pointer}
+.tracker-song-builder-tools #trackerRecordArrangement{color:#fff;background:#347991;border-color:#347991}
+.tracker-song-builder-tools #trackerRecordArrangement[aria-pressed=true]{background:#a33e39;border-color:#a33e39}
+.tracker-song-builder-tools button:disabled{cursor:not-allowed;opacity:.55}
+.tracker-song-builder-tools button:focus-visible,.tracker-arrangement-item button:focus-visible,.tracker-arrangement-item select:focus-visible{outline:3px solid #e79a44;outline-offset:2px}
+.tracker-song-empty{font-size:12px;line-height:1.5;padding:12px 13px;margin:12px 0 4px;background:#fff;border:1px dashed #b6d2dc;border-radius:7px;color:#678190}
+.tracker-arrangement-sections{display:flex;flex-direction:column;gap:7px;margin-top:12px;max-height:350px;overflow:auto;overscroll-behavior:contain}
+.tracker-arrangement-item{display:grid;grid-template-columns:32px minmax(110px,1fr) minmax(115px,1fr) auto;align-items:center;gap:8px;padding:8px 10px;background:#fff;border-radius:8px;border:1px solid #bad1db}
+.tracker-arrangement-item.playing{border-color:#3a8a75;box-shadow:inset 3px 0 #3a8a75}
+.tracker-arrangement-item>strong{font-size:12px;color:#57778a}
+.tracker-arrangement-item select{width:100%;min-width:0;min-height:39px;border:1px solid #b9cbd4;border-radius:6px;background:#f9fcfd;color:#335366;padding:7px;font-size:11px}
+.tracker-arrangement-actions{display:flex;gap:4px}
+.tracker-arrangement-actions button{font-size:15px;min-height:39px;min-width:36px;border:1px solid #aac5d0;border-radius:6px;color:#34627c;background:#f4f9fb;font-weight:800}
+.tracker-arrangement-actions button:disabled{opacity:.42;cursor:not-allowed}
+.tracker-song-builder-help{font-size:11px;line-height:1.5;color:#607d8b;margin:10px 0 0}
+html[data-op1-theme=dark] .tracker-song-builder{background:#263f4e;color:#e1f0f7;border-color:#567b8d}
+html[data-op1-theme=dark] .tracker-song-builder-heading h3,html[data-op1-theme=dark] .tracker-song-builder-heading p,html[data-op1-theme=dark] .tracker-song-builder-heading span,html[data-op1-theme=dark] #trackerArrangementCount,html[data-op1-theme=dark] .tracker-song-builder-help{color:#d3e8f2}
+html[data-op1-theme=dark] .tracker-arrangement-item,html[data-op1-theme=dark] .tracker-song-empty{background:#2b4858;color:#e6f5fc;border-color:#54788b}
+html[data-op1-theme=dark] .tracker-arrangement-item>strong{color:#e1f0f7}
+html[data-op1-theme=dark] .tracker-arrangement-item select,html[data-op1-theme=dark] .tracker-arrangement-item button,html[data-op1-theme=dark] .tracker-song-builder-tools button:not(#trackerRecordArrangement){background:#38586a;color:#f2fcff;border-color:#658a9e}
+@media(max-width:660px){.tracker-arrangement-item{grid-template-columns:24px minmax(0,1fr) minmax(0,1fr);gap:6px}.tracker-arrangement-actions{grid-column:2/-1;justify-content:flex-end}.tracker-song-builder-tools button{flex:1 1 43%}}
+@media(max-width:410px){.tracker-song-builder{padding:11px}.tracker-arrangement-actions button{flex:1;min-width:32px}.tracker-song-builder-tools button{flex:1 1 100%}}

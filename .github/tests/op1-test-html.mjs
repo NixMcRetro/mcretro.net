@@ -3,11 +3,11 @@
 import {readFileSync} from 'node:fs';
 const base=readFileSync('homepages/op-1/index.html','utf8');
 let rendered=base;
-for(const name of ['workspace.js','comfort.js','simplified.js','tracker.js','music-maker.js','casio-keyboard.js']){
+for(const name of ['workspace.js','comfort.js','simplified.js','tracker.js','music-maker.js','casio-keyboard.js','riff-recorder.js']){
  const js=readFileSync('homepages/op-1/'+name,'utf8');
  rendered=rendered.replace('<script src="./'+name+'"></script>','<script>'+js+'</script>');
 }
-for(const name of ['workspace.css','comfort.css','simplified.css','tracker.css','music-maker.css','casio-keyboard.css']){
+for(const name of ['workspace.css','comfort.css','simplified.css','tracker.css','music-maker.css','casio-keyboard.css','riff-recorder.css']){
  const css=readFileSync('homepages/op-1/'+name,'utf8');
  rendered=rendered.replace('<link rel="stylesheet" href="./'+name+'">','<style>'+css+'</style>');
 }

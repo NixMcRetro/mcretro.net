@@ -71,6 +71,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    await page.locator('#makerUndo').click();
    const undone=await save(page);
    assert.deepEqual(undone.tracker,song.tracker,'Remix Undo must restore exact previous tracker notes');
+   await page.locator('.maker-classic-detail').evaluate(el=>el.open=true);
    await page.locator('#makerEdit').click();
    assert(await page.locator('#trackerStudio').isVisible(),'Edit should open existing tracker');
    await page.locator('#studioAdvancedButton').click();

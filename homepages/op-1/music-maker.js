@@ -99,7 +99,7 @@ function whole(input,seed){
  return {patterns:p,chain:[0,1,2,3],active:0,bank:c.bank,bpm:c.bpm,swing:c.swing,
  arrangement:[{pattern:0,rows:32,label:'Intro'},{pattern:1,rows:64,label:'Verse'},{pattern:2,rows:64,label:'Chorus'},{pattern:3,rows:32,label:'Outro'}]};
 }
-let session=false,lastSeed=0,locks=new Set(),variationCount=[0,0,0,0];
+let session=false,songOptions=null,locks=new Set(),variationCount=[0,0,0,0];
 function seed(){if(window.crypto&&crypto.getRandomValues)return crypto.getRandomValues(new Uint32Array(1))[0];return (Math.random()*4294967295)>>>0;}
 function options(){return {style:$('makerStyle').value,mood:$('makerMood').value,energy:$('makerEnergy').value};}
 function status(message){$('makerStatus').textContent=message;}
@@ -118,14 +118,14 @@ function refresh(){
  $('makerFinish').disabled=!session;
 }
 function generate(){
- const song=whole(options(),seed());
+ const selected=options(),song=whole(selected,seed());
  if(!window.OP1Tracker.applyMusicMakerSong(song))return;
- session=true;lastSeed=seed();locks.clear();variationCount=[0,0,0,0];refresh();
+ session=true;songOptions=selected;locks.clear();variationCount=[0,0,0,0];refresh();
  status('Your song is ready. Press Play, then change any part that needs work. Your other studios and recordings are untouched.');
 }
 function remix(channels){
  if(!session||!channels.length)return;
- const choice=$('makerDirection').value,origin=options();
+ const choice=$('makerDirection').value,origin=songOptions||options();
  const remixPatterns=patterns(origin,seed(),choice,channels);
  if(!window.OP1Tracker.applyMusicMakerParts(remixPatterns,channels))return;
  channels.forEach(ch=>variationCount[ch]++);
@@ -145,7 +145,11 @@ function init(){
  '<div class="maker-remix-tools"><label>Change the feel<select id="makerDirection"><option value="new">Surprise me</option><option value="simpler">Simpler</option><option value="busier">Busier</option><option value="lower">Lower notes</option><option value="higher">Higher notes</option></select></label><button type="button" id="makerRemixAll">↻ Remix Unlocked Parts</button></div></div>'+
  '<div class="maker-footer"><button type="button" id="makerEdit">Edit Individual Notes</button><button type="button" id="makerFinish">⬇ Export Song WAV</button><button type="button" id="makerSave">Save Editable Project</button></div>'+
  '<p class="maker-footnote">Everything is editable in Tracker Studio. Generate and Change use its normal Undo history; your Tape Studio, samples and Song Workspace are never replaced. Chord parts use one-note-at-a-time arpeggios in this four-channel tracker.</p>';
- welcome.before(root);
+ const header=document.querySelector('main.shell > header.topline');
+ if(header)header.after(root);else welcome.before(root);
+ for(const field of ['makerStyle','makerMood','makerEnergy'])$(field).addEventListener('change',()=>{
+  if(session)status('Changed generation settings. Press Generate a Song to start a new idea; Change keeps the musical key and tempo of your current song.');
+ });
  $('makerGenerate').addEventListener('click',generate);
  $('makerPlay').addEventListener('click',()=>{window.OP1Tracker.playArrangement();status('Playing your song. If the browser asks to enable audio, choose Enable Audio above.')});
  $('makerStop').addEventListener('click',()=>{window.OP1Tracker.stop();status('Playback stopped.')});

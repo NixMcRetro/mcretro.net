@@ -45,3 +45,10 @@ html.studio-advanced .music-maker{display:none}
 #makerSoundKeep{background:#e2f5ed;border-color:#81b8a2}
 #makerSoundStatus{font-size:13px;line-height:1.55;background:#f1f7fa;border:1px solid #d6e6ee;border-radius:9px;margin:15px 0 0;padding:10px 12px;min-height:44px}
 @media(max-width:680px){.maker-sound{padding:13px}.maker-sound-settings{grid-template-columns:1fr}.maker-sound-actions button{flex:1 1 130px}}
+
+/* Stage 5: a clear, single-path song progress and status line. */
+.maker-song-overview{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 15px;border-radius:10px;border:1px solid #cedfe9;background:#fff;margin:6px 0 12px}
+.maker-song-overview strong{font-size:14px;font-weight:800;color:#294b60}
+.maker-song-overview span{font-size:12px;font-weight:650;color:#4a697c}
+#makerPlay[aria-pressed=true]{background:#d5eff2;border-color:#3e8793;color:#174f5b}
+@media(max-width:680px){.maker-song-overview{align-items:flex-start;flex-direction:column;gap:5px}}

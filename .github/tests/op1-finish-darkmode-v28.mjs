@@ -53,7 +53,7 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert.equal(original.tracker.arrangement.length,4);
   assert(await page.locator('#makerFinish').isEnabled());
   assert.match(await page.locator('#makerFinishDetail').innerText(),/WAV to listen and share/);
-  assert.match(await page.locator('#makerFinishStatus').innerText(),/Independent Tape Studio and Song Workspace/);
+  assert.match(await page.locator('#makerExportScope').innerText(),/Independent Tape Studio and Song Workspace/);
   await page.locator('#makerPlay').click();
   assert.equal(await page.locator('#makerPlay').getAttribute('aria-pressed'),'true');
   assert.match(await page.locator('#makerPlay').innerText(),/Stop Song/);

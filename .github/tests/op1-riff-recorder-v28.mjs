@@ -113,6 +113,9 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    await page.locator('#riffStop').click();
    assert(await page.locator('#riffKeep').isEnabled(),'Physical keyboard should capture note presses');
    assert.deepEqual((await backup(page)).tracker,before.tracker,'Take must not save before Keep');
+   await page.locator('#riffTry').click();
+   assert.match(await page.locator('#riffStatus').innerText(),/Playing the proposed riff/);
+   assert.deepEqual((await backup(page)).tracker,before.tracker,'Take audition must remain unsaved');
    await page.locator('#riffKeep').click();
    const done=await backup(page);
    assert.notDeepEqual(cellsOf(done.tracker.patterns[0],3),cellsOf(before.tracker.patterns[0],3));

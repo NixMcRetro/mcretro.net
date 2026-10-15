@@ -58,10 +58,10 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   assert.deepEqual((await backup(page)).tracker,original.tracker,'Locked melody may not change');
   await page.locator('#makerLock3').click();
   // Shared section patterns must be cloned, never overwritten in other sections.
-  const shared=structuredClone(original);
-  shared.tracker.arrangement[1].pattern=shared.tracker.arrangement[0].pattern;
-  await page.locator('#projectFile').setInputFiles({name:'shared-song.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(shared))});
-  await page.waitForFunction(()=>document.querySelector('#feedback')?.textContent.includes('Project loaded'),null,{timeout:20000});
+  const shared=structuredClone(original.tracker);
+  shared.arrangement[1].pattern=shared.arrangement[0].pattern;
+  page.once('dialog',dialog=>dialog.accept());
+  assert(await page.evaluate(song=>window.OP1Tracker.applyMusicMakerSong(song),shared));
   const priorShared=await backup(page);
   const synth={midi:60,inst:0,kind:'synth',vel:95,fx:'none',param:0,length:1,chance:100};
   const newTake=Array.from({length:32},(_,i)=>i===4?synth:null);
@@ -75,8 +75,8 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
   await page.evaluate(()=>window.OP1Tracker.undo());
   assert.deepEqual((await backup(page)).tracker,priorShared.tracker,'Undo restores shared pattern arrangement');
   // Restore the normal generated song before testing real keyboard capture.
-  await page.locator('#projectFile').setInputFiles({name:'normal-song.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(original))});
-  await page.waitForFunction(()=>document.querySelector('#feedback')?.textContent.includes('Project loaded'),null,{timeout:20000});
+  page.once('dialog',dialog=>dialog.accept());
+  assert(await page.evaluate(song=>window.OP1Tracker.applyMusicMakerSong(song),original.tracker));
   const unit=60000/120/4;
   const result=await page.evaluate(({unit})=>window.OP1RiffRecorder.quantize([
    {midi:60,startMs:1000+unit*.08,endMs:1000+unit*1.8},

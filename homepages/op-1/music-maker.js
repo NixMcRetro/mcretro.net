@@ -104,6 +104,12 @@ function seed(){if(window.crypto&&crypto.getRandomValues)return crypto.getRandom
 function options(){return {style:$('makerStyle').value,mood:$('makerMood').value,energy:$('makerEnergy').value};}
 function status(message){$('makerStatus').textContent=message;}
 function refresh(){
+ const overview=window.OP1Tracker?.musicMakerOverview?.()||{ready:false,sections:0,seconds:0,bpm:120,playing:false};
+ const playable=session||overview.ready;
+ if($('makerSongOverview'))$('makerSongOverview').textContent=overview.ready?
+  overview.sections+' song sections · about '+Math.round(overview.seconds)+' seconds · '+overview.bpm+' BPM'+(overview.seconds>180?' · Export limit 3 minutes':''):
+  'No song arranged yet. Choose a style, then Generate a Song.';
+ if($('makerPlay')){$('makerPlay').textContent=overview.playing?'■ Stop Song':'▶ Play Song';$('makerPlay').setAttribute('aria-pressed',String(overview.playing))}
  for(let i=0;i<4;i++){
   const b=$('makerRemix'+i),lock=$('makerLock'+i);
   b.disabled=!session||locks.has(i);
@@ -114,8 +120,8 @@ function refresh(){
  }
  $('makerRemixAll').disabled=!session||locks.size===4;
  $('makerUndo').disabled=!session;
- $('makerPlay').disabled=!session;
- $('makerFinish').disabled=!session;
+ $('makerPlay').disabled=!playable;
+ $('makerFinish').disabled=!playable;
 }
 function generate(){
  const selected=options(),song=whole(selected,seed());
@@ -235,6 +241,7 @@ function init(){
  root.innerHTML='<div class="maker-heading"><div><span>v2.7 · MUSIC MAKER</span><h2>Make something that sounds like music.</h2><p>Choose a style, make a song, then change anything you don\'t like. No music experience needed.</p></div><button type="button" id="makerAdvanced">Open Advanced Studio</button></div>'+
  '<div class="maker-settings"><label>Style<select id="makerStyle"><option value="tracker">Retro tracker / keygen</option><option value="chiptune">Chiptune</option><option value="synthpop">Synthpop</option><option value="lofi">Lo-fi / chill</option><option value="dance">Electronic / dance</option><option value="ambient">Ambient / dreamy</option></select></label><label>Mood<select id="makerMood"><option value="happy">Happy and bouncy</option><option value="dreamy">Dreamy and gentle</option><option value="dark">Dark and mysterious</option><option value="epic">Dramatic and energetic</option></select></label><label>Energy<select id="makerEnergy"><option value="low">Relaxed</option><option value="medium" selected>Medium</option><option value="high">Energetic</option></select></label></div>'+
  '<div class="maker-transport"><button type="button" id="makerGenerate" class="maker-primary">✦ Generate a Song</button><button type="button" id="makerPlay">▶ Play Song</button><button type="button" id="makerStop">■ Stop</button><button type="button" id="makerUndo">↶ Undo Change</button></div>'+
+ '<div class="maker-song-overview"><strong id="makerSongOverview" role="status">No song arranged yet.</strong><span>1. Generate · 2. Remix or shape · 3. Play · 4. Export or save</span></div>'+
  '<p id="makerStatus" role="status" aria-live="polite">Choose your style and press Generate a Song. This replaces tracker patterns only after confirmation if you have existing notes.</p>'+
  '<div class="maker-parts"><div class="maker-parts-heading"><h3>Make it your own</h3><p>Lock what sounds good. Change the rest, without losing the whole song.</p></div>'+
  PARTS.map((name,i)=>'<div class="maker-part"><div><strong>'+name+'</strong><small id="makerVersion'+i+'">No part yet</small></div><button type="button" id="makerLock'+i+'" aria-pressed="false">Lock</button><button type="button" id="makerRemix'+i+'">↻ Change</button></div>').join('')+
@@ -254,8 +261,12 @@ function init(){
  });
  initSound();
  $('makerGenerate').addEventListener('click',generate);
- $('makerPlay').addEventListener('click',()=>{window.OP1Tracker.playArrangement();status('Playing your song. If the browser asks to enable audio, choose Enable Audio above.')});
- $('makerStop').addEventListener('click',()=>{window.OP1Tracker.stop();status('Playback stopped.')});
+ $('makerPlay').addEventListener('click',()=>{
+  if(window.OP1Tracker.arrangementPlaying){window.OP1Tracker.stop();status('Playback stopped. Press Play Song whenever you want to listen again.');}
+  else{window.OP1Tracker.playArrangement();status(window.OP1Tracker.arrangementPlaying?'Playing your song. Use Stop Song to finish listening.':'Could not begin playback. Enable browser audio, or check that your song has notes.');}
+  refresh();
+ });
+ $('makerStop').addEventListener('click',()=>{window.OP1Tracker.stop();status('Playback stopped.');refresh();});
  $('makerUndo').addEventListener('click',()=>{cancelSoundPreview();window.OP1Tracker.undo();status('Tracker change undone. Your original idea is restored.');});
  for(let ch=0;ch<4;ch++){
   $('makerRemix'+ch).addEventListener('click',()=>remix([ch]));
@@ -265,11 +276,19 @@ function init(){
   });
  }
  $('makerRemixAll').addEventListener('click',()=>remix([0,1,2,3].filter(ch=>!locks.has(ch))));
- $('makerSave').addEventListener('click',()=>{if(soundCandidate){soundStatus('Keep or cancel the preview before saving your project.');return;}$('saveProject').click();});
- $('makerFinish').addEventListener('click',()=>{if(soundCandidate){soundStatus('Keep or cancel the preview before exporting your song.');return;}window.OP1Tracker.exportFinishedSong();});
+ $('makerSave').addEventListener('click',()=>{if(soundCandidate){soundStatus('Keep or cancel the preview before saving your project.');return;}status('Saving an editable project backup with your song, tape and samples.');$('saveProject').click();});
+ $('makerFinish').addEventListener('click',async()=>{
+  if(soundCandidate){soundStatus('Keep or cancel the preview before exporting your song.');return;}
+  const btn=$('makerFinish');btn.disabled=true;btn.textContent='Rendering song…';status('Rendering your finished song to stereo WAV. Keep this tab open.');
+  try{
+   const success=await window.OP1Tracker.exportFinishedSong();
+   status(success?'Your finished WAV was downloaded. Save an editable project backup too.':'Song WAV was not exported. Check the song length (maximum three minutes), audio samples and recording status.');
+  }catch(e){status('Could not export your song: '+e.message);}
+  finally{btn.textContent='⬇ Export Song WAV';refresh();}
+ });
  $('makerEdit').addEventListener('click',()=>window.OP1Simplified.selectTool('trackerStudio',{scroll:true}));
  $('makerAdvanced').addEventListener('click',()=>window.OP1Simplified.setMode('advanced'));
  refresh();
 }
-window.OP1MusicMaker={config,patterns,whole,shapeSound,init,get active(){return session}};
+window.OP1MusicMaker={config,patterns,whole,shapeSound,init,refresh,get active(){return session}};
 })();

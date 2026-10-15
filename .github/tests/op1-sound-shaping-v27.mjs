@@ -43,6 +43,12 @@ for(const [name,engine] of Object.entries({chromium,firefox,webkit})){
    assert.equal(await page.locator('#makerSoundA').getAttribute('aria-pressed'),'true');
    await page.locator('#makerSoundB').click();
    assert.deepEqual((await save(page)).tracker,original.tracker,'A/B comparison must not save automatically');
+   await page.locator('#makerSoundCancel').click();
+   assert.equal(await page.locator('#makerSoundKeep').isDisabled(),true,'Cancel should discard uncommitted preview');
+   assert.deepEqual((await save(page)).tracker,original.tracker,'Cancel must retain exact original song');
+   await page.locator('#makerSoundTry').click();
+   assert.equal(await page.locator('#makerSoundKeep').isEnabled(),true);
+
    await page.locator('#makerSoundKeep').click();
    const modified=await save(page);
    assert.notDeepEqual(part(modified,3),part(original,3),'Keep must change the selected mixer channel');

@@ -26,7 +26,7 @@ try{
  const page=await ctx.newPage(),errors=[];
  page.on('pageerror',e=>errors.push(String(e)));
  await page.goto(origin,{waitUntil:'domcontentloaded'});
- assert.match(await page.title(),/v2\.8/);
+ assert.match(await page.title(),/v2\.9/);
  assert(!(await page.locator('#deviceOuter').isVisible()),'Legacy hardware should not clutter default app');
  await page.locator('#makerThemeToggle').click();
  assert.equal(await page.locator('html').getAttribute('data-op1-theme'),'dark','Simple-mode theme switch failed');
@@ -92,7 +92,7 @@ try{
  await page.waitForTimeout(1000);
  await ctx.setOffline(true);
  await page.reload({waitUntil:'domcontentloaded',timeout:20000});
- assert.match(await page.title(),/v2\.8/);
+ assert.match(await page.title(),/v2\.9/);
  assert.equal(await page.locator('.sound-key').count(),8,'Instrument did not load offline');
  assert.equal(await page.locator('.knob').count(),4,'Encoder controls missing offline');
  await page.waitForFunction(()=>document.querySelector('#offlineBadge')?.textContent==='CACHED',null,{timeout:10000});

@@ -11,7 +11,7 @@ const SECTION_LABELS=['Part','Intro','Verse','Chorus','Break','Outro'];
 const GM_DRUM=[36,38,42,46,45,39,56,49];
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 const defPattern=(rows=32)=>({rows,cells:Array(rows*CHANNELS).fill(null)});
-const defaultChannels=()=>Array.from({length:CHANNELS},()=>({level:1,pan:0,mute:false,solo:false,tone:100,fxSend:100}));
+const defaultChannels=()=>Array.from({length:CHANNELS},()=>({level:1,pan:0,mute:false,solo:false,tone:100,fxSend:100,warmth:0,punch:0,space:0}));
 const defaults=()=>({patterns:[defPattern()],chain:[0],active:0,bank:0,bpm:120,channels:defaultChannels(),automation:[],swing:0,synthShape:'original',arrangement:[]});
 const clone=structuredClone;
 const validInt=(n,min,max)=>Number.isInteger(n)&&n>=min&&n<=max;
@@ -37,8 +37,8 @@ function normalize(value){
  const channels=value.channels===undefined?defaultChannels():value.channels;
  if(!Array.isArray(channels)||channels.length!==CHANNELS)throw Error('Invalid tracker mixer');
  const safeChannels=channels.map(c=>{
-  if(!c||typeof c!=='object'||!Number.isFinite(c.level)||c.level<0||c.level>1.5||!Number.isFinite(c.pan)||c.pan< -1||c.pan>1||typeof c.mute!=='boolean'||typeof c.solo!=='boolean'||!Number.isFinite(c.tone??100)||(c.tone??100)<0||(c.tone??100)>100||!Number.isFinite(c.fxSend??100)||(c.fxSend??100)<0||(c.fxSend??100)>100)throw Error('Invalid tracker mixer channel');
-  return {level:c.level,pan:c.pan,mute:c.mute,solo:c.solo,tone:c.tone??100,fxSend:c.fxSend??100};
+  if(!c||typeof c!=='object'||!Number.isFinite(c.level)||c.level<0||c.level>1.5||!Number.isFinite(c.pan)||c.pan< -1||c.pan>1||typeof c.mute!=='boolean'||typeof c.solo!=='boolean'||!Number.isFinite(c.tone??100)||(c.tone??100)<0||(c.tone??100)>100||!Number.isFinite(c.fxSend??100)||(c.fxSend??100)<0||(c.fxSend??100)>100||!validInt(c.warmth??0,0,100)||!validInt(c.punch??0,0,100)||!validInt(c.space??0,0,100))throw Error('Invalid tracker mixer channel');
+  return {level:c.level,pan:c.pan,mute:c.mute,solo:c.solo,tone:c.tone??100,fxSend:c.fxSend??100,warmth:c.warmth??0,punch:c.punch??0,space:c.space??0};
  });
  const automation=value.automation===undefined?[]:value.automation;
  if(!Array.isArray(automation)||automation.length>MAX_AUTO)throw Error('Invalid tracker automation list');
@@ -71,7 +71,7 @@ let history=[],redoHistory=[],clipboard=null,clipboardReady=false,blockClipboard
 let context=null,cycle=0,loopEnabled=false,compiledSeconds=0,compiledRows=0,viewChannel='all';
 let live=null,capture=null,captureEncoding=false,automationArmed=false,autoCursor=0,lastAutoRow=-1;
 let arrangementRecording=null,arrangementPlaying=false,arrangementSequence=[],arrangementActiveSection=-1,arrangementSelected=0;
-let finishedSongExport='idle';
+let finishedSongExport='idle',musicMakerPreview=null;
 const MAX_AUTO=256,MAX_LIVE_ROWS=4096;
 const data=()=>api.getState().tracker;
 const pattern=()=>data().patterns[data().active];
@@ -118,21 +118,47 @@ function applyAutomation(row){
  lastAutoRow=row;
 }
 function commitMixer(fn){
- if(rendering){status('Finish audio export before editing the mixer');return}
+ if(rendering){status('Finish audio export before editing the mixer');return false}
  const old=clone(data()),draft=clone(old);
- try{fn(draft);const safe=normalize(draft);history.push(old);if(history.length>40)history.shift();redoHistory=[];api.getState().tracker=safe;api.markDirty();applyLiveMixer();recordAutomationPoint();renderMixer();$('trackerUndo').disabled=false;$('trackerRedo').disabled=true;status('Tracker channel mixer updated')}
- catch(e){status('Mixer change rejected: '+e.message)}
+ try{fn(draft);const safe=normalize(draft);history.push(old);if(history.length>40)history.shift();redoHistory=[];api.getState().tracker=safe;api.markDirty();applyLiveMixer();recordAutomationPoint();renderMixer();$('trackerUndo').disabled=false;$('trackerRedo').disabled=true;status('Tracker channel mixer updated');return true;}
+ catch(e){status('Mixer change rejected: '+e.message);return false;}
 }
 const channelIsAudible=(c,channels=data().channels)=>!channels[c].mute&&(!channels.some(x=>x.solo)||channels[c].solo);
+function effectiveMusicMakerChannel(ch,preview=true){
+ return preview&&musicMakerPreview?.ch===ch?musicMakerPreview.value:data().channels[ch];
+}
+function readMusicMakerSound(ch){return validInt(ch,0,3)?clone(data().channels[ch]):null}
+function previewMusicMakerSound(ch,value){
+ if(!validInt(ch,0,3)||rendering||capture||captureEncoding||arrangementRecording||api.isRecording())return false;
+ try{
+  const draft=clone(data());draft.channels[ch]={...draft.channels[ch],...value};
+  const safe=normalize(draft);
+  musicMakerPreview={ch,value:clone(safe.channels[ch])};
+  applyLiveMixer();
+  return true;
+ }catch(e){status('Sound preview rejected: '+e.message);return false}
+}
+function clearMusicMakerSoundPreview(){
+ musicMakerPreview=null;applyLiveMixer();
+}
+function commitMusicMakerSound(ch,value){
+ if(!validInt(ch,0,3)||rendering||capture||captureEncoding||arrangementRecording||api.isRecording())return false;
+ clearMusicMakerSoundPreview();
+ return commitMixer(d=>{d.channels[ch]={...d.channels[ch],...value};});
+}
 function applyLiveMixer(){
  if(!context?.trackerGates)return;
  const now=context.ctx.currentTime;
- data().channels.forEach((c,i)=>{
+ data().channels.forEach((saved,i)=>{
+  const c=effectiveMusicMakerChannel(i,context.makerPreview!==false);
   const gate=context.trackerGates[i];
   gate.gain.setTargetAtTime(channelIsAudible(i)?c.level*.72:0,now,.008);
   context.trackerPanners[i]?.pan.setTargetAtTime(c.pan,now,.008);
   context.trackerFilters?.[i]?.frequency.setTargetAtTime(toneHz(c.tone??100),now,.014);
   context.trackerSends?.[i]?.gain.setTargetAtTime((c.fxSend??100)/100,now,.014);
+  context.trackerSpaces?.[i]?.gain.setTargetAtTime((c.space??0)/100*.17,now,.025);
+  context.trackerWarmDrys?.[i]?.gain.setTargetAtTime(1-(c.warmth??0)/100*.22,now,.025);
+  context.trackerWarmWets?.[i]?.gain.setTargetAtTime((c.warmth??0)/100*.22,now,.025);
  });
 }
 function renderMixer(){
@@ -504,12 +530,17 @@ function shapedPatch(bank,inst,shape){
 }
 function emit(graph,n,when){
  const gain=n.vel*.8;
- if(n.kind==='drum')api.playDrum(graph,48+n.inst,when,api.getState().kit,gain,0,n.ch);
+ if(n.kind==='drum')api.playDrum(graph,48+n.inst,when,api.getState().kit,gain*(1+(effectiveMusicMakerChannel(n.ch,graph.makerPreview!==false).punch??0)/100*.12),0,n.ch);
  else if(n.kind==='sample'){
   if(!api.hasSample(n.sampleId))throw Error('Tracker sample is missing: restore the portable audio project backup');
   api.playSampleSlice(graph,n.sampleId,n.inst,when,gain,0,n.sampleSettings,1,n.ch,n.duration);
  }else{
   const p=shapedPatch(n.bank,n.inst,n.shape);
+  const amount=(effectiveMusicMakerChannel(n.ch,graph.makerPreview!==false).punch??0)/100;
+  if(amount>0){
+   const env=p.env||{},a=Number(env.a)||.01,d=Number(env.d)||.12,r=Number(env.r)||.18;
+   p.env={...env,a:Math.max(.003,a*(1-amount*.75)),d:Math.max(.025,d*(1-amount*.2)),r:Math.max(.025,r*(1-amount*.14))};
+  }
   if(n.fx==='vibrato')p.lfo={rate:4.5+n.param*.3,depth:.06+n.param*.02,type:0,phase:0};
   api.playSynth(graph,n.midi,when,n.duration,p,gain,0,n.ch);
  }
@@ -519,24 +550,38 @@ function paintPlayhead(row){
  playhead=row;document.querySelectorAll('.tracker-row').forEach(el=>el.classList.toggle('playing',Number(el.dataset.row)===row));
 }
 const toneHz=v=>160*Math.pow(85,Math.min(100,Math.max(0,v))/100);
-function isolatedLiveGraph(base){
- // A tracker-owned mixer avoids changing tape-track gain, pan, mute and solo.
- // Voices still travel through the established safe master effects and limiter.
- const graph=Object.create(base),gates=[],panners=[],filters=[],sends=[];
+function isolatedLiveGraph(base,allowPreview=true){
+ // Tracker-owned, bounded local effects. No changes to independent tape-track buses.
+ const graph=Object.create(base),gates=[],panners=[],filters=[],sends=[],spaces=[],warmDrys=[],warmWets=[];
+ graph.makerPreview=allowPreview;
+ const curve=new Float32Array(257);
+ for(let i=0;i<curve.length;i++){const x=i/128-1;curve[i]=Math.tanh(x*1.8)/Math.tanh(1.8)}
  for(let ch=0;ch<CHANNELS;ch++){
-  const c=data().channels[ch],gate=base.ctx.createGain(),pan=base.ctx.createStereoPanner?.()||null,filter=base.ctx.createBiquadFilter();
+  const c=effectiveMusicMakerChannel(ch,allowPreview),ctx=base.ctx;
+  const gate=ctx.createGain(),pan=ctx.createStereoPanner?.()||null,filter=ctx.createBiquadFilter();
   filter.type='lowpass';filter.frequency.value=toneHz(c.tone??100);filter.Q.value=.62;
   gate.gain.value=channelIsAudible(ch)?c.level*.72:0;
   gate.connect(filter);
-  if(pan){pan.pan.value=c.pan;filter.connect(pan)}
-  const out=pan||filter;
+  const out=pan||ctx.createGain();
+  if(pan)pan.pan.value=c.pan;
+  const dry=ctx.createGain(),shaper=ctx.createWaveShaper(),wet=ctx.createGain();
+  dry.gain.value=1-(c.warmth??0)/100*.22;
+  wet.gain.value=(c.warmth??0)/100*.22;
+  shaper.curve=curve.slice();shaper.oversample='2x';
+  filter.connect(dry).connect(out);
+  filter.connect(shaper).connect(wet).connect(out);
   out.connect(base.dry);
-  const send=base.ctx.createGain();send.gain.value=(c.fxSend??100)/100;
+  const send=ctx.createGain();send.gain.value=(c.fxSend??100)/100;
   out.connect(send);
   for(const sink of [base.delay,base.chorusSend,base.roomSend])send.connect(sink);
-  gates.push(gate);panners.push(pan);filters.push(filter);sends.push(send);
+  const spaceDelay=ctx.createDelay(1),spaceWet=ctx.createGain();
+  spaceDelay.delayTime.value=.23;
+  spaceWet.gain.value=(c.space??0)/100*.17;
+  out.connect(spaceDelay).connect(spaceWet).connect(base.dry);
+  gates.push(gate);panners.push(pan);filters.push(filter);sends.push(send);spaces.push(spaceWet);warmDrys.push(dry);warmWets.push(wet);
  }
  graph.trackInputs=gates;graph.trackerGates=gates;graph.trackerPanners=panners;graph.trackerFilters=filters;graph.trackerSends=sends;
+ graph.trackerSpaces=spaces;graph.trackerWarmDrys=warmDrys;graph.trackerWarmWets=warmWets;
  return graph;
 }
 function arrangementRows(sections){return sections.reduce((sum,x)=>sum+x.rows,0)}
@@ -627,7 +672,7 @@ async function exportFinishedSong(){
  try{
   const rate=32000;
   const contextOffline=new Ctx(2,Math.ceil((compiled.seconds+.6)*rate),rate);
-  const graph=isolatedLiveGraph(api.makeGraph(contextOffline));
+  const graph=isolatedLiveGraph(api.makeGraph(contextOffline),false);
   configure(graph);
   for(const note of compiled.notes)emit(graph,note,.06+note.when);
   const buffer=await contextOffline.startRendering();
@@ -1027,7 +1072,7 @@ async function exportWav(){
  if(!Ctx){status('This browser does not support OfflineAudioContext');return}
  rendering=true;const button=$('trackerWav');button.disabled=true;button.textContent='RENDERING…';
  try{
-  const rate=32000,ctx=new Ctx(2,Math.ceil((compiled.seconds+.6)*rate),rate),graph=isolatedLiveGraph(api.makeGraph(ctx));configure(graph);
+  const rate=32000,ctx=new Ctx(2,Math.ceil((compiled.seconds+.6)*rate),rate),graph=isolatedLiveGraph(api.makeGraph(ctx),false);configure(graph);
   for(const n of compiled.notes)emit(graph,n,.06+n.when);
   const buffer=await ctx.startRendering();
   const bytes=await api.wavBufferResponsive(buffer,()=>{});
@@ -1246,7 +1291,7 @@ window.OP1Tracker={defaults,normalize,init,render,stop,prepare,resetSession,
  get playing(){return playing},get live(){return !!live},get transport(){return {playing,mode:arrangementPlaying?'song':live?'live':playing?'chain':'stopped',bpm:api?data().bpm:120,pattern:live?.current??null,queued:live?.pending?.id??null}},
  launch,play,finishTapeTake,openLibrary,setLayoutMode,buildDemo,stopDemoPreview,
  compileArrangement,recordedSections,playArrangement,startArrangementRecording,makeStarterPattern,addStarter,
- applyMusicMakerSong,applyMusicMakerParts,undo,redo,exportFinishedSong,openFinishSong,
+ applyMusicMakerSong,applyMusicMakerParts,readMusicMakerSound,previewMusicMakerSound,clearMusicMakerSoundPreview,commitMusicMakerSound,undo,redo,exportFinishedSong,openFinishSong,
  get recordingArrangement(){return !!arrangementRecording},
  get arrangementPlaying(){return arrangementPlaying},
  get previewing(){return !!demoPreview}};

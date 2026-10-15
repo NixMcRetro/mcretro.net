@@ -2,7 +2,7 @@ name: BleepGarden Browser Regression
 
 on:
   push:
-    branches: [main, op1-v1.1-polish, op1-v1.2-sound-design, op1-v1.3-tape-studio, op1-v1.4-offline, op1-v1.5-performance-studio, op1-v1.5.1-key-labels, op1-v1.6-display-foundation, op1-v1.6-sampling-workshop, op1-v1.7-cat-song-arrangement, op1-v1.8-pianola-composer, op1-v1.8.1-note-interchange, op1-v1.9-piano-roll-studio, op1-v2.0-unified-song-workspace, op1-v2.0.1-studio-comfort, op1-v2.0.2-musical-demos, op1-v2.1-studio-simplified, op1-v2.2-tracker-studio, op1-v2.2-tracker-release-candidate, op1-v2.3-music-making, op1-v2.4-performance-arrangement, op1-v2.5-sound-design-simplification, op1-v2.6-song-builder, op1-v2.7-music-maker, op1-v2.7-stage4-sound-shaping, op1-v2.7.1-beginner-keyboard, op1-v2.8-play-it-keep-it, op1-v2.8-stage3-song-sections, op1-v2.8-stage4-finish-darkmode, op1-v2.8-bleepgarden-branding]
+    branches: [main, op1-v1.1-polish, op1-v1.2-sound-design, op1-v1.3-tape-studio, op1-v1.4-offline, op1-v1.5-performance-studio, op1-v1.5.1-key-labels, op1-v1.6-display-foundation, op1-v1.6-sampling-workshop, op1-v1.7-cat-song-arrangement, op1-v1.8-pianola-composer, op1-v1.8.1-note-interchange, op1-v1.9-piano-roll-studio, op1-v2.0-unified-song-workspace, op1-v2.0.1-studio-comfort, op1-v2.0.2-musical-demos, op1-v2.1-studio-simplified, op1-v2.2-tracker-studio, op1-v2.2-tracker-release-candidate, op1-v2.3-music-making, op1-v2.4-performance-arrangement, op1-v2.5-sound-design-simplification, op1-v2.6-song-builder, op1-v2.7-music-maker, op1-v2.7-stage4-sound-shaping, op1-v2.7.1-beginner-keyboard, op1-v2.8-play-it-keep-it, op1-v2.8-stage3-song-sections, op1-v2.8-stage4-finish-darkmode, op1-v2.8-bleepgarden-branding, bleepgarden-v2.9-midi-tracker-musicality]
     paths:
       - 'homepages/op-1/index.html'
       - '.github/tests/op1-piano-roll-studio.mjs'
@@ -28,6 +28,9 @@ on:
       - '.github/tests/op1-song-sections-v28.mjs'
       - '.github/tests/op1-finish-darkmode-v28.mjs'
       - '.github/tests/op1-bleepgarden-branding.mjs'
+      - '.github/tests/bleepgarden-midi-musicality-v29.mjs'
+      - 'homepages/op-1/tracker-corner.js'
+      - 'homepages/op-1/tracker-corner.css'
       - 'homepages/op-1/beginner-polish.css'
       - 'homepages/op-1/song-sections.js'
       - 'homepages/op-1/song-sections.css'
@@ -81,6 +84,9 @@ on:
       - '.github/tests/op1-song-sections-v28.mjs'
       - '.github/tests/op1-finish-darkmode-v28.mjs'
       - '.github/tests/op1-bleepgarden-branding.mjs'
+      - '.github/tests/bleepgarden-midi-musicality-v29.mjs'
+      - 'homepages/op-1/tracker-corner.js'
+      - 'homepages/op-1/tracker-corner.css'
       - 'homepages/op-1/beginner-polish.css'
       - 'homepages/op-1/song-sections.js'
       - 'homepages/op-1/song-sections.css'
@@ -125,6 +131,8 @@ jobs:
         run: |
           npm install --no-save playwright@1.57.0
           npx playwright install --with-deps chromium firefox webkit
+      - name: BleepGarden v2.9 arranged MIDI export, tracker and musicality
+        run: node .github/tests/bleepgarden-midi-musicality-v29.mjs
       - name: BleepGarden name, credit, install metadata and compatible engine
         run: node .github/tests/op1-bleepgarden-branding.mjs
       - name: v2.8 Stage 4 beginner finish and graphite theme regression
@@ -184,7 +192,7 @@ jobs:
       - name: Archive BleepGarden v2.8 named release candidate
         uses: actions/upload-artifact@v4
         with:
-          name: bleepgarden-music-maker-2000-v2.8-source-${{ github.sha }}
+          name: bleepgarden-v2.9-midi-tracker-source-${{ github.sha }}
           retention-days: 90
           if-no-files-found: error
           path: |
@@ -214,6 +222,7 @@ jobs:
             .github/tests/op1-song-sections-v28.mjs
             .github/tests/op1-finish-darkmode-v28.mjs
             .github/tests/op1-bleepgarden-branding.mjs
+            .github/tests/bleepgarden-midi-musicality-v29.mjs
             .github/tests/op1-tracker-studio.mjs
             .github/tests/op1-tracker-music-making.mjs
             .github/tests/op1-tracker-performance.mjs

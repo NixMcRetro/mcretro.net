@@ -22,6 +22,7 @@ on:
       - 'homepages/op-1/music-maker.css'
       - '.github/tests/op1-music-maker-v27.mjs'
       - '.github/tests/op1-sound-shaping-v27.mjs'
+      - '.github/tests/op1-song-finishing-v27.mjs'
       - '.github/tests/op1-tracker-studio.mjs'
       - '.github/tests/op1-tracker-music-making.mjs'
       - '.github/tests/op1-tracker-performance.mjs'
@@ -62,6 +63,7 @@ on:
       - 'homepages/op-1/music-maker.css'
       - '.github/tests/op1-music-maker-v27.mjs'
       - '.github/tests/op1-sound-shaping-v27.mjs'
+      - '.github/tests/op1-song-finishing-v27.mjs'
       - '.github/tests/op1-tracker-studio.mjs'
       - '.github/tests/op1-tracker-music-making.mjs'
       - '.github/tests/op1-tracker-performance.mjs'
@@ -99,6 +101,8 @@ jobs:
         run: |
           npm install --no-save playwright@1.57.0
           npx playwright install --with-deps chromium firefox webkit
+      - name: v2.7 Stage 5 beginner finish and resume workflow
+        run: node .github/tests/op1-song-finishing-v27.mjs
       - name: v2.7 Stage 4 sound shaping, A/B, Undo and WAV regression
         run: node .github/tests/op1-sound-shaping-v27.mjs
       - name: v2.7 beginner generator, editable remix and backup regression
@@ -143,10 +147,10 @@ jobs:
         run: node .github/tests/op1-score-interchange.mjs
       - name: Offline installation and reload regression (Chromium)
         run: node .github/tests/op1-pwa-offline.mjs
-      - name: Archive v2.6 stage 4 release candidate, assets and regression tests
+      - name: Archive v2.7 music-maker candidate, assets and regression tests
         uses: actions/upload-artifact@v4
         with:
-          name: supernicks-op1-v2.6-stage4-source-${{ github.sha }}
+          name: supernicks-op1-v2.7-music-maker-source-${{ github.sha }}
           retention-days: 90
           if-no-files-found: error
           path: |
@@ -170,10 +174,12 @@ jobs:
             .github/tests/op1-song-finish-v26.mjs
             .github/tests/op1-music-maker-v27.mjs
             .github/tests/op1-sound-shaping-v27.mjs
+            .github/tests/op1-song-finishing-v27.mjs
             .github/tests/op1-tracker-studio.mjs
             .github/tests/op1-tracker-music-making.mjs
             .github/tests/op1-tracker-performance.mjs
             .github/tests/op1-tracker-v25.mjs
+            .github/OP1-V2.7-STAGE4-HANDOVER.md
             .github/OP1-V2.6-STAGE4-HANDOVER.md
             .github/OP1-V2.6-STAGE3-HANDOVER.md
             .github/OP1-V2.6-STAGE2-HANDOVER.md

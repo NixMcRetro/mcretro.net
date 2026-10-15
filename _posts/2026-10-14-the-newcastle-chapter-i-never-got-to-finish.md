@@ -5,7 +5,7 @@ date: 2026-10-14T10:32:00.000+10:00
 categories: [news, study]
 ---
 
-# The Newcastle Chapter I Never Got to Finish
+![The little birds perched together](/assets/images/2026/newcastle-2019-birds-perch.webp)
 
 I've been going through some old messages and notes from 2019 recently. It's amazing how much you can forget about a particular period of your life, only to have it all come flooding back when you start piecing things together. Some memories are wonderful, others not so much, and this is unfortunately one of the latter.
 
@@ -41,7 +41,7 @@ I don't know whether the people who took them fully appreciated what they were g
 
 The accommodation problems were only part of the story. I'd spent years studying at the University of Newcastle, trying to build something worthwhile for my future. University wasn't always easy for me, but it mattered, and I wanted to finish what I'd started. Instead, I found myself needing to return to Sydney to work for a boss I wasn't particularly fond of then, and still aren't especially fond of now.
 
-![Chemistry notes from my time at the University of Newcastle](/assets/images/2026/newcastle-chem-notes.webp)
+![Chemistry notes from my time at the University of Newcastle](/assets/images/2026/newcastle-2019-chem-notes.webp)
 
 I needed an income. The cost of accommodation, the uncertainty surrounding where I would live, and the practicalities of keeping everything together had become too much. My degree was left unfinished, and the future I'd been working towards suddenly looked rather different.
 

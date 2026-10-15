@@ -113,3 +113,33 @@ html.studio-simple .studio-guide-steps{font-size:11px}
 .studio-shortcut-buttons button{flex:0 1 auto}
 html[data-op1-theme=dark] .studio-shortcuts>summary{color:#d3e9f3}
 @media(max-width:620px){.studio-shortcut-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.studio-shortcut-buttons button{min-width:0}}
+
+/* v2.6 Song Builder, first milestone: welcoming task-based home screen. */
+html.studio-simple .studio-song-start{display:block;max-width:1180px;margin:14px auto 16px;padding:21px 22px;background:linear-gradient(145deg,#f5f9fa,#e8f1f5);border:1px solid #b6d0dc;border-radius:15px}
+.studio-song-intro{max-width:690px;margin-bottom:17px}
+.studio-song-intro .studio-eyebrow{font-size:10px;font-weight:850;letter-spacing:.14em;color:#597a8a}
+.studio-song-intro h2{margin:7px 0 8px;color:#244d61;font-size:clamp(21px,3vw,31px);line-height:1.2;letter-spacing:-.02em}
+.studio-song-intro p{margin:0;color:#536f80;font-size:13px;line-height:1.6}
+.studio-start-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.studio-start-card{min-width:0;min-height:166px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:8px;padding:16px;border:1px solid #b4cbd5;background:#fff;color:#294d62;border-radius:12px;cursor:pointer;box-shadow:0 2px 6px rgba(21,57,77,.045);transition:border-color .12s ease,transform .12s ease}
+.studio-start-card:hover{border-color:#568ba3;transform:translateY(-1px)}
+.studio-start-card .studio-start-number{font-size:10px;letter-spacing:.13em;font-weight:850;color:#748b98}
+.studio-start-card strong{font-size:18px;line-height:1.2}
+.studio-start-card>span:not(.studio-start-number){font-size:12px;line-height:1.5;color:#657d8b}
+.studio-start-card b{font-size:10px;letter-spacing:.06em;color:#277490;margin-top:auto}
+.studio-start-card:focus-visible,.studio-start-utilities button:focus-visible{outline:3px solid #d98937;outline-offset:2px}
+.studio-start-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:15px}
+.studio-start-footer>span{flex:1 1 250px;color:#486c7d;font-size:12px;line-height:1.45}
+.studio-start-utilities{display:flex;flex-wrap:wrap;gap:8px}
+.studio-start-utilities button{border:1px solid #abc4d0;background:#f8fcfd;border-radius:7px;padding:9px 11px;min-height:42px;font-size:10px;letter-spacing:.03em;font-weight:850;color:#37677d}
+html.studio-advanced .studio-song-start{display:none}
+html[data-op1-theme=dark] .studio-song-start{background:#253d49;border-color:#557789}
+html[data-op1-theme=dark] .studio-song-intro h2,html[data-op1-theme=dark] .studio-song-intro .studio-eyebrow{color:#ebf7fd}
+html[data-op1-theme=dark] .studio-song-intro p,html[data-op1-theme=dark] .studio-start-footer>span{color:#d4e7f1}
+html[data-op1-theme=dark] .studio-start-card{background:#324f61;color:#f2fcff;border-color:#63889a}
+html[data-op1-theme=dark] .studio-start-card>span:not(.studio-start-number),html[data-op1-theme=dark] .studio-start-card .studio-start-number{color:#d3e5ef}
+html[data-op1-theme=dark] .studio-start-card b{color:#a1e1fb}
+html[data-op1-theme=dark] .studio-start-utilities button{background:#324e60;color:#e2f3fc;border-color:#66889a}
+@media(max-width:760px){.studio-start-options{grid-template-columns:1fr}.studio-start-card{min-height:112px;padding:14px;gap:6px}.studio-start-card strong{font-size:16px}.studio-song-start{padding:15px!important}}
+@media(max-width:425px){.studio-start-utilities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}.studio-start-utilities button{min-width:0}.studio-start-utilities button:first-child{grid-column:span 2}}
+@media(prefers-reduced-motion:reduce){.studio-start-card{transition:none}.studio-start-card:hover{transform:none}}

@@ -57,6 +57,12 @@ function sync(){
  }
  $('studioCurrentHeading').textContent=STAGES[group.name].label+' / '+tool.name;
  $('studioCurrentHelp').textContent=tool.hint;
+  const journey=$('studioJourneyHint');
+  if(journey){
+   const hints={'soundLibrary':'Try a sound, then make a beat or melody.','sequencePanel':'Your drums are ready. Add a pattern and press Play.','rollPanel':'Your melody editor is ready. Add a few notes and press Play.','trackerStudio':'Explore a track or edit four channels of notes.','songStudio':'Arrange your existing musical clips into a complete song.','comfortTapePanel':'Record your idea to a tape track when you are ready.','recoveryPanel':'Keep a portable project backup so you can continue later.'};
+   journey.textContent=hints[tool.id]||tool.hint;
+  }
+
  const steps=group.name==='Sounds'?['Try a few presets, or build a drum pattern.','Compose a melody when ready.']:
   group.name==='Compose'?['Use Piano Roll for chords, or Pianola for a single-note melody.','Use SEND TO SONG, then arrange your clips in Song Workspace.']:
   group.name==='Record & Mix'?['Choose a tape track before recording.','Mix your levels, then EXPORT WAV or SAVE PROJECT.']:
@@ -139,14 +145,21 @@ function initToolbar(){
  $('comfortTabs').after(advanced);
 }
 function initWelcome(){
- const root=document.createElement('section');root.className='studio-welcome';root.id='studioWelcome';
- root.setAttribute('aria-label','Four-step music-making guide');
- root.innerHTML='<div class="studio-welcome-text"><strong>THE FOUR-STEP OP-1 IDEA</strong><p>Play a sound, make a pattern, record it to tape, then keep your song. Start anywhere. Switching stages never deletes anything.</p></div>'+
- '<div class="studio-welcome-actions"><button type="button" id="studioQuickSongs">♫ TRY A TRACKER SONG</button><button type="button" id="studioQuickBeat">▦ MAKE A BEAT</button><button type="button" id="studioQuickTape">● RECORD TO TAPE</button><button type="button" id="studioQuickSave">↓ SAVE PROJECT</button></div>';
+ const root=document.createElement('section');root.className='studio-welcome studio-song-start';root.id='studioWelcome';
+ root.setAttribute('aria-label','Start making your own song');
+ root.innerHTML='<div class="studio-song-intro"><span class="studio-eyebrow">YOUR MUSIC STARTS HERE</span><h2>Make a song, one idea at a time.</h2><p>Start with a drum beat or a melody. You can always change sounds, add layers and record later. Nothing is cleared when you switch tools.</p></div>'+
+ '<div class="studio-start-options" role="group" aria-label="Choose how to start making music">'+
+ '<button type="button" id="studioQuickBeat" class="studio-start-card"><span class="studio-start-number">01</span><strong>Make a beat</strong><span>Tap a rhythm into the drum sequencer.</span><b>START WITH DRUMS →</b></button>'+
+ '<button type="button" id="studioQuickMelody" class="studio-start-card"><span class="studio-start-number">02</span><strong>Write a melody</strong><span>Draw notes or play them on the keyboard.</span><b>OPEN PIANO ROLL →</b></button>'+
+ '<button type="button" id="studioQuickSongs" class="studio-start-card"><span class="studio-start-number">03</span><strong>Try a song</strong><span>Hear original tracker music and edit a copy.</span><b>BROWSE SONGS →</b></button>'+
+ '</div>'+
+ '<div class="studio-start-footer"><span id="studioJourneyHint" role="status">Choose a starting point above, or continue editing below.</span><div class="studio-start-utilities"><button type="button" id="studioQuickOpen">OPEN A PROJECT</button><button type="button" id="studioQuickTape">GO TO TAPE</button><button type="button" id="studioQuickSave">SAVE BACKUP</button></div></div>';
  $('studioMainNavigation').before(root);
  $('studioQuickSongs').addEventListener('click',()=>{selectTool('trackerStudio',{scroll:true});window.OP1Tracker?.openLibrary?.()});
  $('studioQuickBeat').addEventListener('click',()=>selectTool('sequencePanel',{scroll:true}));
+ $('studioQuickMelody').addEventListener('click',()=>selectTool('rollPanel',{scroll:true}));
  $('studioQuickTape').addEventListener('click',()=>selectTool('comfortTapePanel',{scroll:true}));
+ $('studioQuickOpen').addEventListener('click',()=>$('openProject').click());
  $('studioQuickSave').addEventListener('click',()=>$('saveProject').click());
 }
 function initQuickActions(){

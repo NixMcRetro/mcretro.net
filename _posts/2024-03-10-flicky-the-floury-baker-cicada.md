@@ -18,8 +18,6 @@ When I was a kid, I called cicadas "Croaky" because I thought they sounded like 
 
 I ended up reading quite a bit about keeping branches alive, cicadas feeding on xylem sap, and what happens to their eggs once they hatch. I knew the species already, but there's still a great deal I don't know about what goes on once the singing stops and the season ends.
 
-I've separated the ten daily recordings into individual posts using the videos from the Nix McRetro YouTube channel. The dates come from the original video titles, not a new account written in 2023.
-
 **Flicky's Ten Days**
 
 - [Day 1, 27th February 2023](/flicky-the-floury-baker-day-1/)

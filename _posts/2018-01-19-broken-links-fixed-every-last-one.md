@@ -2,11 +2,7 @@
 title: "Broken Links... Fixed! Every. Last. One."
 author: "Nix McRetro"
 date: 2018-01-19T23:14:36.000+11:00
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [news, study]
 ---
 

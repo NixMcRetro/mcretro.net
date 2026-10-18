@@ -3,11 +3,7 @@ title: "Xbox 360 E 4GB - 500GB HDDHackr Upgrade"
 author: "Nix McRetro"
 date: 2020-04-26T04:29:29.000+10:00
 categories: [guides, microsoft]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 

@@ -3,11 +3,7 @@ title: "The People at University are Amazing"
 author: "Nix McRetro"
 date: 2024-08-24T05:18:28.000+10:00
 categories: [news, study]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2024/img_1347.jpg)

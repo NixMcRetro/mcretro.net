@@ -2,11 +2,7 @@
 title: "eBay - Open for Business"
 author: "Nix McRetro"
 date: 2016-07-16T12:00:20.000+10:00
-last_modified_at: 2026-10-08
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-08
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [news]
 ---
 

@@ -3,11 +3,7 @@ title: "Internal Inspection of the Sega Mega Modem HAA-2951"
 author: "Nix McRetro"
 date: 2021-01-11T08:40:53.000+11:00
 categories: [sega, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="e1mpUmBoMBA" %}

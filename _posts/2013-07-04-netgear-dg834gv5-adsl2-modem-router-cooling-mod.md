@@ -3,11 +3,7 @@ title: "Netgear DG834Gv5 ADSL2+ Modem Router Cooling Mod"
 author: "Nix McRetro"
 date: 2013-07-04T13:05:48.000+10:00
 categories: [hacks, youtube]
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="46GEuVSulwA" %}

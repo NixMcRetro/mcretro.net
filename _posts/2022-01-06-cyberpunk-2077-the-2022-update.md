@@ -3,11 +3,7 @@ title: "Cyberpunk 2077 (2020, PS4 Live Stream) - The 2022 Update"
 author: "Nix McRetro"
 date: 2022-01-06T19:09:10.000+11:00
 categories: [livestream, sony, youtube]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="EFdTpHnZzDs" %}

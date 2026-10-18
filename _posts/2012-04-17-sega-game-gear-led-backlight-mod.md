@@ -2,11 +2,7 @@
 title: "Sega Game Gear LED Backlight Mod"
 author: "Nix McRetro"
 date: 2012-04-17T04:59:10.000+10:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6 Astra Max"
-  date: 2026-10-02
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
 ---
 

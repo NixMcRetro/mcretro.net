@@ -2,11 +2,7 @@
 title: "SuperCIC Installation Notes for SNSP-CPU-02 with F413A"
 author: "Nix McRetro"
 date: 2013-10-20T20:08:36.000+11:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [guides, hacks, nintendo]
 ---
 

@@ -2,11 +2,7 @@
 title: "Cleaning the Sony PS one Eject Button Mechanism"
 author: "Nix McRetro"
 date: 2013-11-30T19:56:43.000+11:00
-last_modified_at: 2026-10-07
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-07
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, repairs, sony]
 ---
 

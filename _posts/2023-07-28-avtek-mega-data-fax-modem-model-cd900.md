@@ -3,11 +3,7 @@ title: "Avtek Mega Data/Fax Modem - Model CD900"
 author: "Nix McRetro"
 date: 2023-07-28T18:30:23.000+10:00
 categories: [linux, modems, repairs]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="ScKgwIrByFU" %}

@@ -3,11 +3,7 @@ title: "Cyberpunk 2077 PS4 Final Thoughts"
 author: "Nix McRetro"
 date: 2022-05-30T11:00:50.000+10:00
 categories: [sony]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="-n95rMK4AnY" %}

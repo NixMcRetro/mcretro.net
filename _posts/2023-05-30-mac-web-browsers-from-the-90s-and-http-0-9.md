@@ -3,11 +3,7 @@ title: "Mac Web Browsers from the 90s and HTTP/0.9"
 author: "Nix McRetro"
 date: 2023-05-30T21:26:09.000+10:00
 categories: [ibm-pc, youtube]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="Wn0RECnBTg8" %}

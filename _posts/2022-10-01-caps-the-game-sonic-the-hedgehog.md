@@ -3,11 +3,7 @@ title: "Caps The Game: Sonic The Hedgehog"
 author: "Nix McRetro"
 date: 2022-10-01T17:09:40.000+10:00
 categories: [ibm-pc, news, sega]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="bsDjlV9rObk" %}

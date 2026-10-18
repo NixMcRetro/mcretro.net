@@ -2,11 +2,7 @@
 title: "The Sega TeraDrive Model 3"
 author: "Nix McRetro"
 date: 2012-05-24T12:25:50.000+10:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6 Astra Max"
-  date: 2026-10-02
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [repairs, sega]
 ---
 

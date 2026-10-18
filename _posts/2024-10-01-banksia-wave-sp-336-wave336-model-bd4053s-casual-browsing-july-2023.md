@@ -3,11 +3,7 @@ title: "Banksia Wave SP 336 Wave336 Model BD4053S - Casual Browsing (July 2023)"
 author: "Nix McRetro"
 date: 2024-10-01T20:02:55.000+10:00
 categories: [modems, youtube]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="rInuSikkXms" %}

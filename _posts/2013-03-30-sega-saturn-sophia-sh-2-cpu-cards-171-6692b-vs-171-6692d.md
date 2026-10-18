@@ -2,11 +2,7 @@
 title: "Sega Saturn Sophia SH-2 CPU Cards: 171-6692B vs 171-6692D"
 author: "Nix McRetro"
 date: 2013-03-30T00:57:06.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-05
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
 ---
 

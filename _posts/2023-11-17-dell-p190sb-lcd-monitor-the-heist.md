@@ -3,11 +3,7 @@ title: "Dell P190Sb LCD Monitor - The Heist"
 author: "Nix McRetro"
 date: 2023-11-17T12:17:33.000+11:00
 categories: [ibm-pc, news]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2023/img_1211.jpg)

@@ -2,11 +2,7 @@
 title: "Replacing the Video Encoder Chip and AV Socket on a Mega Drive 2"
 author: "Nix McRetro"
 date: 2013-09-28T22:37:03.000+10:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
 ---
 

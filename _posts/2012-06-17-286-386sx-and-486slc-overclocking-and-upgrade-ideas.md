@@ -2,11 +2,7 @@
 title: "286, 386SX and 486SLC Overclocking and Upgrade Ideas"
 author: "Nix McRetro"
 date: 2012-06-17T11:31:02.000+10:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6 Astra Max"
-  date: 2026-10-02
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs]
 ---
 

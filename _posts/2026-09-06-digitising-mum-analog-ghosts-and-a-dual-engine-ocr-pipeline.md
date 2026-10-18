@@ -3,11 +3,7 @@ title: "Digitising Mum: Analog Ghosts, Bureaucracy, and a Dual-Engine OCR Pipeli
 author: "Nix McRetro"
 date: 2026-09-06T09:00:00.000+10:00
 categories: [ai-generated, programming]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 If I've been quiet lately, or if I've seemed perpetually distracted for the past twelve months, this is why. It's almost the one-year anniversary of my mother's death, and I am still drowning in paperwork. Grief, it turns out, is mostly just an endless series of administrative tasks.

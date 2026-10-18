@@ -2,11 +2,7 @@
 title: "Fuse Replacement on the Super Nintendo and Super Famicom"
 author: "Nix McRetro"
 date: 2016-07-31T08:48:33.000+10:00
-last_modified_at: 2026-10-09
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-09
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [nintendo, repairs]
 ---
 

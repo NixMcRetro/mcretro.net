@@ -3,11 +3,7 @@ title: "Denon DCD-F101 Eject Mechanism Repair"
 author: "Nix McRetro"
 date: 2019-02-08T22:13:41.000+11:00
 categories: [hacks, repairs, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="9QK3DWSGjSY" %}

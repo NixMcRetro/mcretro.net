@@ -3,11 +3,7 @@ title: "NetComm AutoModem 2400 - CONNECT 2400"
 author: "Nix McRetro"
 date: 2022-06-20T20:56:25.000+10:00
 categories: [ibm-pc, repairs, youtube]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="2rogYD1Kiks" %}

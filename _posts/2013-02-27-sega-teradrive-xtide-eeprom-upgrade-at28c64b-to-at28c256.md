@@ -2,11 +2,7 @@
 title: "Sega TeraDrive XTIDE EEPROM Upgrade: AT28C64B to AT28C256"
 author: "Nix McRetro"
 date: 2013-02-27T07:51:50.000+11:00
-last_modified_at: 2026-10-05
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-05
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, sega]
 ---
 

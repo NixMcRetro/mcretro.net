@@ -2,11 +2,7 @@
 title: "Take Back the Darknet (Part 11)"
 author: "Nix McRetro"
 date: 2016-01-04T23:38:16.000+11:00
-last_modified_at: 2026-10-08
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-08
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [guides, raspberry-pi]
 ---
 

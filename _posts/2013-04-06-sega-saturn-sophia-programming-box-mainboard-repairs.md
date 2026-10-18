@@ -2,11 +2,7 @@
 title: "Sega Saturn Sophia Programming Box Mainboard Repairs"
 author: "Nix McRetro"
 date: 2013-04-06T03:36:48.000+11:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [devkit, repairs, sega]
 ---
 

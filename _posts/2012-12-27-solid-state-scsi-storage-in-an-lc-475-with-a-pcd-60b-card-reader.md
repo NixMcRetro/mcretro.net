@@ -2,11 +2,7 @@
 title: "Solid-State SCSI Storage in an LC 475 with a PCD-60B Card Reader"
 author: "Nix McRetro"
 date: 2012-12-27T12:14:00.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-04
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [apple, hacks, youtube]
 ---
 

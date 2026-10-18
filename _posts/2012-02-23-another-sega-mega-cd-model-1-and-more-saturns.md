@@ -2,11 +2,7 @@
 title: "Another Sega Mega-CD Model 1 and More Saturns"
 author: "Nix McRetro"
 date: 2012-02-23T11:31:02.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6 Astra Max"
-  date: 2026-10-02
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [sega]
 ---
 

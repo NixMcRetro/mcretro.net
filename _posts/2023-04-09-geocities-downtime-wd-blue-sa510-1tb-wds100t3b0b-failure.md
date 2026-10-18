@@ -3,11 +3,7 @@ title: "GeoCities Downtime - WD Blue SA510 1TB WDS100T3B0B Failure"
 author: "Nix McRetro"
 date: 2023-04-09T13:15:37.000+10:00
 categories: [raspberry-pi]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2023/img_1002.jpg)

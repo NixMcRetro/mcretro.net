@@ -2,11 +2,7 @@
 title: "Inside the Aiwa Mega-CD CSD-GM1 Game Unit"
 author: "Nix McRetro"
 date: 2012-10-21T12:58:38.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-03
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [sega, youtube]
 ---
 

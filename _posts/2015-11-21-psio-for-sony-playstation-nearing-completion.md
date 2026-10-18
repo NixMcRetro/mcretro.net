@@ -2,11 +2,7 @@
 title: "PSIO for Sony PlayStation Nearing Completion"
 author: "Nix McRetro"
 date: 2015-11-21T01:02:15.000+11:00
-last_modified_at: 2026-10-08
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-08
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [news, sony, youtube]
 ---
 

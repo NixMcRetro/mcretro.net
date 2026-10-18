@@ -3,11 +3,7 @@ title: "XBOX (Original) Softmod Recovery"
 author: "Nix McRetro"
 date: 2013-05-26T04:08:57.000+10:00
 categories: [hacks, microsoft, youtube]
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="F0NbBUJh2kc" %}

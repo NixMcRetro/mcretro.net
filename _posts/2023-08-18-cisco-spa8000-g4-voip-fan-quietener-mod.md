@@ -3,11 +3,7 @@ title: "Cisco SPA8000-G4 VoIP Fan Quietener Mod"
 author: "Nix McRetro"
 date: 2023-08-18T08:43:38.000+10:00
 categories: [hacks, repairs, youtube]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="h9isDzHVapY" %}

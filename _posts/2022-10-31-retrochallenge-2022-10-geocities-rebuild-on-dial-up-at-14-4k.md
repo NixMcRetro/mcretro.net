@@ -3,11 +3,7 @@ title: "RetroChallenge 2022/10 - GeoCities Rebuild on Dial-up at 14.4k"
 author: "Nix McRetro"
 date: 2022-10-31T16:47:12.000+11:00
 categories: [raspberry-pi, youtube]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="nhbe7veKQ78" %}

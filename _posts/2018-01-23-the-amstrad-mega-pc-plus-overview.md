@@ -3,11 +3,7 @@ title: "The Amstrad Mega PC Plus Overview"
 author: "Nix McRetro"
 date: 2018-01-23T18:19:58.000+11:00
 categories: [ibm-pc, sega, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="npSQS8hBbGI" %}

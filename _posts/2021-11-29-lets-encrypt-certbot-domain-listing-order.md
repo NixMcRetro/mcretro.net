@@ -3,11 +3,7 @@ title: "Let's Encrypt Certbot Domain Listing Order"
 author: "Nix McRetro"
 date: 2021-11-29T19:53:36.000+11:00
 categories: [linux, news, raspberry-pi]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2021/img_0777.jpg)

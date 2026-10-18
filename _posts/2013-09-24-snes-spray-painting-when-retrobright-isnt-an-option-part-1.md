@@ -2,11 +2,7 @@
 title: "SNES Spray Painting - When Retrobright isn't an Option (Part 1)"
 author: "Nix McRetro"
 date: 2013-09-24T19:22:10.000+10:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, nintendo, repairs]
 ---
 

@@ -2,11 +2,7 @@
 title: "Aiwa Sega Mega-CD CSD-GM1 Part 4: Tracing the Missing 8 V Rail"
 author: "Nix McRetro"
 date: 2013-07-23T15:27:51.000+10:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
 ---
 

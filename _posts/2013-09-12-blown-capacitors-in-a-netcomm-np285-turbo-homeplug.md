@@ -2,11 +2,7 @@
 title: "Blown Capacitors in a NetComm NP285 Turbo HomePlug"
 author: "Nix McRetro"
 date: 2013-09-12T18:01:07.000+10:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [repairs, youtube]
 ---
 

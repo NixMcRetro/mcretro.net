@@ -2,11 +2,7 @@
 title: "Xbox 360 RROD Repair Attempt Serial 072261382807"
 author: "Nix McRetro"
 date: 2013-07-09T04:58:38.000+10:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, microsoft, repairs]
 ---
 

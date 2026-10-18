@@ -2,11 +2,7 @@
 title: "Two Faulty Sega Saturn Sophia Development Kits: Initial Assessment"
 author: "Nix McRetro"
 date: 2013-11-24T08:16:18.000+11:00
-last_modified_at: 2026-10-07
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-07
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [devkit, repairs, sega]
 ---
 

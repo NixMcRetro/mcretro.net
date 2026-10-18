@@ -2,11 +2,7 @@
 title: "Amstrad Sega Mega PC Boot Failure: DOM and Hard Drive Troubleshooting"
 author: "Nix McRetro"
 date: 2012-11-03T14:28:42.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-03
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, youtube]
 ---
 

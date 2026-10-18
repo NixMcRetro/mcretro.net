@@ -2,11 +2,7 @@
 title: "Amstrad Sega Mega PC Hard Drive Capacitor Failure and Windows for Workgroups 3.11 Sound Demo"
 author: "Nix McRetro"
 date: 2012-11-15T07:52:51.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-04
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, sega, youtube]
 ---
 

@@ -2,11 +2,7 @@
 title: "Super Nintendo Serial UP15971140 PPU1 Trace Repair"
 author: "Nix McRetro"
 date: 2013-07-11T20:05:58.000+10:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [nintendo, repairs, youtube]
 ---
 

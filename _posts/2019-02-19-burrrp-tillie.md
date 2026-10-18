@@ -5,10 +5,6 @@ date: 2019-02-19
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://www.youtube.com/watch?v=Z5JoLWXzpxY"
-ai_assistance:
-  model: "GPT-6"
-  date: 2026-10-18
-  purpose: "historical reconstruction from YouTube inventory and contextual original articles"
 ---
 
 {% include youtube.html id="Z5JoLWXzpxY" %}

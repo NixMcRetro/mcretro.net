@@ -2,11 +2,7 @@
 title: "Removing an EPROM from a Sega Prototype / Test Cartridge"
 author: "Nix McRetro"
 date: 2013-01-20T11:04:43.000+11:00
-last_modified_at: 2026-10-05
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-05
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [guides, sega, youtube]
 ---
 

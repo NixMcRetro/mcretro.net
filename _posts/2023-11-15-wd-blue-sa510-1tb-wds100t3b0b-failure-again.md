@@ -3,11 +3,7 @@ title: "WD Blue SA510 1TB WDS100T3B0B Failure... Again"
 author: "Nix McRetro"
 date: 2023-11-15T13:36:30.000+11:00
 categories: [raspberry-pi]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2023/img_1208.jpg)

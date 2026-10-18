@@ -3,11 +3,7 @@ title: "Onions, Great with All Websites!"
 author: "Nix McRetro"
 date: 2020-07-04T22:47:09.000+10:00
 categories: [guides, linux, programming]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2020/img_0679.jpg)

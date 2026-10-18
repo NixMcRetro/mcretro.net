@@ -3,11 +3,7 @@ title: "Holden VY Commodore Car Repair: Chapter 5 - Cabin Temperature Sensor Rep
 author: "Nix McRetro"
 date: 2021-03-04T22:01:55.000+11:00
 categories: [repairs, youtube]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="qd5SNM056a4" %}

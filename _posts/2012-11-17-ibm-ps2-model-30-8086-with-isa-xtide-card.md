@@ -2,11 +2,7 @@
 title: "IBM PS/2 Model 30 8086 with ISA XTIDE Card"
 author: "Nix McRetro"
 date: 2012-11-17T01:16:29.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-04
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
 ---
 

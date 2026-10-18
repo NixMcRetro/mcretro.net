@@ -2,11 +2,7 @@
 title: "Sega Mega Drive / Genesis Cart Dumping via Parallel (Part 3)"
 author: "Nix McRetro"
 date: 2013-12-02T22:22:41.000+11:00
-last_modified_at: 2026-10-07
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-07
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, sega, youtube]
 ---
 

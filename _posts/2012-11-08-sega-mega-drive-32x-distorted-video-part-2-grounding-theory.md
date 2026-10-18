@@ -2,11 +2,7 @@
 title: "Sega Mega Drive 32X Distorted Video Part 2: Testing the Grounding Theory"
 author: "Nix McRetro"
 date: 2012-11-08T19:54:26.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-04
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
 ---
 

@@ -2,11 +2,7 @@
 title: "Sega TeraDrive Model 3 Power Supply Failure"
 author: "Nix McRetro"
 date: 2016-03-02T22:11:47.000+11:00
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
 ---
 

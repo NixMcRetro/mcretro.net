@@ -2,13 +2,8 @@
 title: "Black Mesa Quick Demo"
 author: "Nix McRetro"
 date: 2013-06-26T17:02:11.000+10:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [gaming, ibm-pc]
-permalink: /black-mesa-quick-demo/
 ---
 
 {% include youtube.html id="aJ5SqgLuqOU" %}

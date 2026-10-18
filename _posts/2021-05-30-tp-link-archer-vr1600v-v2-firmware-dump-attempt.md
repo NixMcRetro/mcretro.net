@@ -3,11 +3,7 @@ title: "TP-Link Archer VR1600v V2 Firmware Dump Attempt"
 author: "Nix McRetro"
 date: 2021-05-30T09:37:17.000+10:00
 categories: [guides]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2021/img_0686.jpg)

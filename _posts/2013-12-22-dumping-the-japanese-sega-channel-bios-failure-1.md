@@ -2,11 +2,7 @@
 title: "Dumping the Japanese Sega Channel BIOS (Failure 1)"
 author: "Nix McRetro"
 date: 2013-12-22T20:30:06.000+11:00
-last_modified_at: 2026-10-07
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-07
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [programming, sega, youtube]
 ---
 

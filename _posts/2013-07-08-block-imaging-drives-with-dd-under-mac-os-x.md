@@ -2,11 +2,7 @@
 title: "Block Imaging Drives with dd under Mac OS X"
 author: "Nix McRetro"
 date: 2013-07-08T11:23:30.000+10:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [apple, guides, raspberry-pi]
 ---
 

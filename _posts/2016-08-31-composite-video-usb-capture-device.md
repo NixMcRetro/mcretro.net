@@ -2,11 +2,7 @@
 title: "Composite Video USB Capture Device"
 author: "Nix McRetro"
 date: 2016-08-31T12:08:54.000+10:00
-last_modified_at: 2026-10-09
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-09
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [gaming, hacks, sega]
 ---
 

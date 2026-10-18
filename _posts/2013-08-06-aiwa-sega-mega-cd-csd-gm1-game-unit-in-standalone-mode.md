@@ -2,11 +2,7 @@
 title: "Aiwa Sega Mega-CD CSD-GM1 Game Unit in Standalone Mode"
 author: "Nix McRetro"
 date: 2013-08-06T18:33:53.000+10:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
 ---
 

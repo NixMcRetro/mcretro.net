@@ -3,11 +3,7 @@ title: "Sega Dreamcast HKT-0120 Development Kit Diagnostics Mode"
 author: "Nix McRetro"
 date: 2019-12-07T22:37:23.000+11:00
 categories: [devkit, sega, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="x6z55gkKjoI" %}

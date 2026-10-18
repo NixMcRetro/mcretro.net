@@ -2,11 +2,7 @@
 title: "Sega Mega Drive Video Flicker and the Sony CXA1145P"
 author: "Nix McRetro"
 date: 2012-08-04T12:27:10.000+10:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-03
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [repairs, sega]
 ---
 

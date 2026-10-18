@@ -2,11 +2,7 @@
 title: "Super Nintendo Serial UP17548016 - Repaired"
 author: "Nix McRetro"
 date: 2013-06-30T07:48:31.000+10:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [nintendo, repairs, youtube]
 ---
 

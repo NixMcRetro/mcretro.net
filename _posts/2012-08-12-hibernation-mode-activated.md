@@ -2,11 +2,7 @@
 title: "Hibernation Mode - Activated"
 author: "Nix McRetro"
 date: 2012-08-12T00:52:19.000+10:00
-last_modified_at: 2026-10-03
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-03
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [news, repairs, sega]
 ---
 

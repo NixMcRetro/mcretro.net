@@ -2,11 +2,7 @@
 title: "Sega Master System Converter II Pull Apart"
 author: "Nix McRetro"
 date: 2014-05-11T19:46:14.000+10:00
-last_modified_at: 2026-10-07
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-07
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
 ---
 

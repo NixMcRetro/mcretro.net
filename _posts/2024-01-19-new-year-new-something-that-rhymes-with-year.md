@@ -3,11 +3,7 @@ title: "New Year, New Something That Rhymes with Year"
 author: "Nix McRetro"
 date: 2024-01-19T13:04:51.000+11:00
 categories: [nature, news]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2024/img_1236.jpg)

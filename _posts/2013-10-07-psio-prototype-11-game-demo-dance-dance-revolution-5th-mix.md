@@ -2,11 +2,7 @@
 title: "PSIO Prototype 1.1 Game Demo: Dance Dance Revolution 5th Mix"
 author: "Nix McRetro"
 date: 2013-10-07T18:48:14.000+11:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
 ---
 

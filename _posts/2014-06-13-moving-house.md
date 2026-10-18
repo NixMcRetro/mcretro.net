@@ -2,11 +2,7 @@
 title: "Moving House"
 author: "Nix McRetro"
 date: 2014-06-13T19:56:27.000+10:00
-last_modified_at: 2026-10-07
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-07
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [youtube]
 ---
 

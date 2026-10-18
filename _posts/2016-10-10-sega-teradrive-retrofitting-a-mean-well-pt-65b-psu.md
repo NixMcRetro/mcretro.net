@@ -2,11 +2,7 @@
 title: "Sega TeraDrive - Retrofitting a Mean Well PT-65B PSU"
 author: "Nix McRetro"
 date: 2016-10-10T17:31:52.000+11:00
-last_modified_at: 2026-10-09
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-09
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, ibm-pc, sega]
 ---
 

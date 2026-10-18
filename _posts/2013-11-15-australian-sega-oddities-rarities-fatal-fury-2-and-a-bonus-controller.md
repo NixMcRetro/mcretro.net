@@ -2,11 +2,7 @@
 title: "Australian Sega Oddities: Fatal Fury 2 and a Bonus Controller"
 author: "Nix McRetro"
 date: 2013-11-15T08:48:09.000+11:00
-last_modified_at: 2026-10-07
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-07
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [gaming, sega, youtube]
 ---
 

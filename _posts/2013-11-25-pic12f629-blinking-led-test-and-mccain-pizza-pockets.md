@@ -2,11 +2,7 @@
 title: "PIC12F629 Blinking LED Test and McCain Pizza Pockets"
 author: "Nix McRetro"
 date: 2013-11-25T19:22:44.000+11:00
-last_modified_at: 2026-10-07
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-07
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, programming, sony]
 ---
 

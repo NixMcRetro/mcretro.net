@@ -3,11 +3,7 @@ title: "Sony PSP-1000 Button PCB Replacement"
 author: "Nix McRetro"
 date: 2020-02-03T06:06:32.000+11:00
 categories: [guides, sony, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="8Uwagtdv6wc" %}

@@ -3,11 +3,7 @@ title: "Docker, GeoCities Search, and RetroChallenge 2022/10 Results"
 author: "Nix McRetro"
 date: 2023-09-04T14:57:22.000+10:00
 categories: [hacks, news]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2023/img_1149.jpg)

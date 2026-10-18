@@ -3,11 +3,7 @@ title: "The Jewel of the Xbox"
 author: "Nix McRetro"
 date: 2019-02-07T11:30:01.000+11:00
 categories: [devkit, microsoft, repairs]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2019/img_0628.jpg)

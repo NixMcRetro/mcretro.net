@@ -3,11 +3,7 @@ title: "Avtek MegaPlus V.32bis - First Connection Attempt"
 author: "Nix McRetro"
 date: 2022-04-09T12:36:33.000+10:00
 categories: [ibm-pc, youtube]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="nmcGrJ_ninY" %}

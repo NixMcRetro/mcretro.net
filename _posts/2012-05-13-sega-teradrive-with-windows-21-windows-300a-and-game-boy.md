@@ -2,11 +2,7 @@
 title: "Sega TeraDrive with Windows 2.1, Windows 3.00a and Game Boy"
 author: "Nix McRetro"
 date: 2012-05-13T00:13:41.000+10:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6 Astra Max"
-  date: 2026-10-02
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, nintendo, sega]
 ---
 

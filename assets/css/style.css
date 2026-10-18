@@ -1040,10 +1040,10 @@ pre code {
     margin-right: 0;
     margin-bottom: 0.3em;
   }
-  /* Compact, crisp portrait on the blog roll only. Individual posts are unchanged. */
+  /* Crisp 90px portrait on the blog roll only. Individual posts are unchanged. */
   .blog-list .post-meta-row .author-avatar {
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 90px;
+    height: 90px;
     image-rendering: auto;
     border-radius: 0;
   }

@@ -1045,6 +1045,7 @@ pre code {
     width: 4.5rem;
     height: 4.5rem;
     image-rendering: pixelated;
+    border-radius: 0;
   }
   .post-meta-row .post-categories {
     white-space: normal;

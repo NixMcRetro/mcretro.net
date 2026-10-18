@@ -13,4 +13,6 @@ ai_assistance:
 
 {% include youtube.html id="cfWPg5xQ8Lg" %}
 
-It's time for another showdown in the bird hut of rumbling doom! In one corner, Tillie. In the other, Chip. These two are facing off again and I have to wonder, is there ever really a winner in a proper conure rumble? Or does everybody just decide they've had enough and wander off? Place your bets!
+It's time for another showdown in the bird hut of rumbling doom! In one corner, Tillie. In the other, Chip. These two have apparently decided that a nice quiet hut is the perfect venue for yet another conure rumble.
+
+Is there ever really a winner when the opponents face off like this? Or does everybody eventually decide they've had enough and wander off to attend to more important bird business? With Tillie and Chippy involved, I'm not sure there are any sensible rules. Place your bets!

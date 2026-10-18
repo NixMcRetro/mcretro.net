@@ -13,8 +13,8 @@ ai_assistance:
 
 {% include youtube.html id="66yfAyvsCqE" %}
 
-It's been a big week for Tillie and Pudge, getting used to their new home and finding all sorts of trouble to get into. After a day of running around, they've finally decided that it's time to snuggle down together. Aww, sleepy little birdies!
+It's only been just over a week since Tillie and Pudge arrived on New Year's Day. They've already been exploring their new home, chasing around and finding all sorts of little adventures to get into. After a busy day, however, the two conures have decided it's time to snuggle down together. Aww, sleepy birdies!
 
 {% include youtube.html id="bfjMWDiR-7w" %}
 
-And some more of the sleepy pair. It's a pleasant change from all the running about, and I'm sure the peace and quiet won't last forever. For now though, it's snuggle time for Tillie and Pudge!
+And here are a few more moments with the sleepy pair. It's a lovely change of pace from the running about and general mischief of the past week. I'm sure the peace and quiet won't last forever, so we'd better enjoy it while it does. Sweet dreams, Tillie and Pudge!

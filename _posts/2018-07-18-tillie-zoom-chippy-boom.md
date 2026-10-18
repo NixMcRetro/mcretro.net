@@ -13,4 +13,6 @@ ai_assistance:
 
 {% include youtube.html id="zvJDdabLreQ" %}
 
-Tillie has been zooming around again! There's time for a few scritches between all the excitement, but I don't think this little green terror intends to slow down any time soon. Meanwhile, lil Chippy has decided it's an excellent opportunity to start a fight. Apparently one bird having a nice time just isn't enough. Zoom, scritch, boom! Such is life with the conure gang.
+Tillie has been zooming around again! There's time for a few scritches between all the excitement, but I don't think this little green terror intends to slow down any time soon. It's just another day in the busy life of a conure with places to be and things to investigate.
+
+Meanwhile, little Chippy has decided it's an excellent opportunity to try and start a fight. Apparently one bird having a nice time isn't enough around here. Zoom, scritch, boom! What a bunch of troublesome little turkeys.

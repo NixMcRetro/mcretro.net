@@ -17,4 +17,4 @@ Please welcome Chip, the Baby Borb! Today this tiny little cinnamon green-cheeke
 
 {% include youtube.html id="jckxC-T-kj4" %}
 
-Tillie and Pudge are already part of the family, so Chip will need some time apart from the others before they can all get properly acquainted. A few weeks of quarantine first, then we'll see what the resident bird gang thinks of the newcomer. No need to start trouble on day one! Chip is a little messy around the neck after all that baby bird feeding. Some warm water and a good soak should help clean him up. For now though, here's the little fellow on his way home. Welcome to the family, Chippy!
+Tillie and Pudge are already part of the family, so Chip will need some time apart from the others before they can all get properly acquainted. A few weeks of quarantine first, then we'll see what the resident bird gang thinks of the newcomer. No need to start trouble on day one! Chip is a little messy around the neck after all that baby bird feeding. Some warm water and a good soak should help clean things up. For now though, here's our tiny new arrival on the way home. Welcome to the family, Chippy!

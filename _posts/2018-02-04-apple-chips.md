@@ -13,4 +13,6 @@ ai_assistance:
 
 {% include youtube.html id="9OWk5A6CxTY" %}
 
-Munch, munch, munch! Chip's only been home a little while and he's already developing a taste for some of the good stuff. Sultanas? Yes please. Apple? Definitely. Corn? Well, time will tell! His little tail feathers are still so short, but that doesn't stop Baby Borb from investigating the menu. Nom, nom, nom!
+Munch, munch, munch! Chip has only been home since yesterday, but our tiny Baby Borb has already started investigating some of the tasty things on offer. Sultanas? Yes please. Apple? Definitely. Corn? Well, time will tell!
+
+Those little tail feathers are still so short, and there's something rather funny about seeing such a tiny conure getting stuck into the menu. There's a lot of growing and exploring ahead, but for now the important work is eating. Nom, nom, nom, Chippy!

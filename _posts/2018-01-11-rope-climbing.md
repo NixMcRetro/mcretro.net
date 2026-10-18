@@ -13,4 +13,6 @@ ai_assistance:
 
 {% include youtube.html id="8n-geRAbzx4" %}
 
-Rope climbing isn't just for the gym or the military, you know. It's a very important part of the daily routine for Tillie and Pudge too! They've got a newly made rope in the cage and have decided to climb all the way from the bottom to the top. Who needs a gym membership when you're a green-cheeked conure?
+Rope climbing isn't just for the gym or the military, you know. Apparently it's an important part of the daily routine for Tillie and Pudge as well! The two conures have a newly made rope running from the bottom of their cage up towards the top, and they're determined to put it to good use.
+
+Up they go, one little foot after another. Between all the climbing, toy attacks and general bird business, I don't think these two need a gym membership. Who knew the household fitness programme would be run by a couple of tiny green parrots?

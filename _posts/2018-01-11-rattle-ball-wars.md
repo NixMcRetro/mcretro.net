@@ -13,4 +13,6 @@ ai_assistance:
 
 {% include youtube.html id="fsQAEsUUoZw" %}
 
-The rattle ball wars have begun! Tillie has apparently taken on the role of a cyborg assassin sent from the future, and poor Pudge is in her sights. Where's Kyle Reese when you need him? At this rate Skynet is going to have an entire army of tiny green Terminators. Watch out, Pudge!
+The rattle ball wars have begun! Tillie has apparently been sent back through time disguised as a cyborg assassin, and poor Pudge is the latest target. Does anyone know where Kyle Reese has got to? We could probably use some help around here.
+
+At this rate, Skynet is going to have a whole army of tiny green Terminators. Never mind protecting the future of humanity, somebody needs to save that rattle ball! Watch out, Pudge!

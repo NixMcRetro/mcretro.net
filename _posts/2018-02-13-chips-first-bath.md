@@ -13,8 +13,8 @@ ai_assistance:
 
 {% include youtube.html id="wzPSWOqyFC8" %}
 
-Chip goes on a journey to find a wetter version of himself! This is his first bath and it's quite a performance. Tillie and Pudge look on as the Baby Borb tries to work out the finer points of getting wet. He's not exactly the most coordinated little creature, but that just makes the whole thing even more adorable.
+It's bath time for Baby Borb Chip! This first proper bathing adventure is quite a performance, with Tillie and Pudge looking on as the newest member of the flock discovers the finer points of having a wash. The coordination might need a little practice, but the enthusiasm is wonderful to watch.
 
 {% include youtube.html id="8lc82ymzLb8" %}
 
-And he's still going! This might be the longest, most uncoordinated bath in the history of the conures. It's ridiculous how much entertainment can come from watching one little bird figure out how to get wet. Sooooo cute!
+And the bath continues! Chip is taking the whole business very seriously, even if it might be the longest and most uncoordinated conure bath we've seen. Who knew such a little bird could turn a simple splash about into a full-length production? Sooooo cute!

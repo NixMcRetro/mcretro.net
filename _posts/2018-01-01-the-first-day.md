@@ -13,4 +13,6 @@ ai_assistance:
 
 {% include youtube.html id="6GGHFzctsFc" %}
 
-The first day! We've just adopted two lovely green-cheeked conures. They're brother and sister and, at the moment, neither has a name. We'll have to do something about that! For now though, there are two little parrots to get to know and one very important question to ask. Does Polly want a cracker?
+What a way to start the new year! We've just adopted two lovely green-cheeked conures, and neither has a name yet. That's something we'll have to sort out, but for now we're getting to know our newest little housemates and helping them settle in.
+
+Two little parrots have joined the household, and there's already one very important question to ask. Does Polly want a cracker? Welcome home, little birdies!

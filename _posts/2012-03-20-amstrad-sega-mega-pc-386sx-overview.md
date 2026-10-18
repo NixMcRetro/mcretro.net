@@ -2,11 +2,7 @@
 title: "Amstrad Sega Mega PC 386SX Overview"
 author: "Nix McRetro"
 date: 2012-03-20T23:05:33.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6 Astra Max"
-  date: 2026-10-02
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, sega, youtube]
 ---
 

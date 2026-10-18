@@ -3,11 +3,7 @@ title: "Microsoft Xbox OG Talk of Swapping the Power Supply"
 author: "Nix McRetro"
 date: 2020-02-15T14:56:32.000+11:00
 categories: [microsoft, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="Wm9SglIGCFY" %}

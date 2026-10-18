@@ -3,11 +3,7 @@ title: "McRetro Late Night Gaming - Sonic 1 (1991, Mega Drive, S01E01)"
 author: "Nix McRetro"
 date: 2018-02-21T15:06:56.000+11:00
 categories: [gaming, sega, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="DUwrEZQz3KM" %}

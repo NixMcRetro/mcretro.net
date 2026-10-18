@@ -2,11 +2,7 @@
 title: "Aiwa Mega-CD CSD-GM1 BIOS Dump: MPR-15768-T"
 author: "Nix McRetro"
 date: 2013-01-21T10:56:01.000+11:00
-last_modified_at: 2026-10-05
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-05
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
 ---
 

@@ -2,11 +2,7 @@
 title: "Sega Game Gear Before Repair: No Video, Quiet Audio"
 author: "Nix McRetro"
 date: 2012-03-30T11:08:27.000+11:00
-last_modified_at: 2026-10-02
-ai_assistance:
-  model: "GPT-6 Astra Max"
-  date: 2026-10-02
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [repairs, sega]
 ---
 

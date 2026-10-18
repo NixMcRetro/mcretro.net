@@ -2,11 +2,7 @@
 title: "Removing a SNES Cartridge Battery and TSOP40 to DIP36 Adapter"
 author: "Nix McRetro"
 date: 2013-09-23T01:18:55.000+10:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [nintendo, repairs, youtube]
 ---
 

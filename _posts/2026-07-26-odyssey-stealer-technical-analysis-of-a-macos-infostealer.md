@@ -3,11 +3,7 @@ title: "Odyssey Stealer: Technical Analysis of a macOS Infostealer"
 author: "Nix McRetro"
 date: 2026-07-26T17:08:14.000+11:00
 categories: [ai-generated, programming]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ## Executive Summary

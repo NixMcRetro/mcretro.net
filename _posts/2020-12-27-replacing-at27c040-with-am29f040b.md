@@ -3,11 +3,7 @@ title: "Replacing AT27C040 with Am29F040B"
 author: "Nix McRetro"
 date: 2020-12-27T22:51:25.000+11:00
 categories: [guides, hacks, sega]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2020/img_0683.jpg)

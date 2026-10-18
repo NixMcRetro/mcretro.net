@@ -2,11 +2,7 @@
 title: "PSIO Prototype 1.1 Game Demo: Wipeout, Wipeout 2097 / XL, Wip3out / Wipeout 3"
 author: "Nix McRetro"
 date: 2014-08-16T20:42:41.000+10:00
-last_modified_at: 2026-10-08
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-08
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
 ---
 

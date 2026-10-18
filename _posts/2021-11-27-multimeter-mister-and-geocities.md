@@ -3,11 +3,7 @@ title: "Multimeter, MiSTer and GeoCities"
 author: "Nix McRetro"
 date: 2021-11-27T22:36:09.000+11:00
 categories: [ibm-pc, repairs, youtube]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="2AoXWdPaqis" %}

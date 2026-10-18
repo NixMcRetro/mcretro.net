@@ -3,11 +3,7 @@ title: "Nix McRetro's Christmas Video 2021"
 author: "Nix McRetro"
 date: 2021-12-25T19:25:22.000+11:00
 categories: [news, youtube]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="qNrWHFk33c8" %}

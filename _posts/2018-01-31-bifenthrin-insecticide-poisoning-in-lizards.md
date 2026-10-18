@@ -3,11 +3,7 @@ title: "Bifenthrin Insecticide Poisoning in Lizards"
 author: "Nix McRetro"
 date: 2018-01-31T09:14:10.000+11:00
 categories: [news]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="4vWaEu3mUhw" %}

@@ -2,11 +2,7 @@
 title: "PlayStation 2: 8 MB Memory Card Disassembly"
 author: "Nix McRetro"
 date: 2014-06-14T19:57:58.000+10:00
-last_modified_at: 2026-10-07
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-07
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [sony, youtube]
 ---
 

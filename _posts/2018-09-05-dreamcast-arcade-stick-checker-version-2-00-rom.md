@@ -3,11 +3,7 @@ title: "Dreamcast Arcade Stick Checker Version 2.00 ROM"
 author: "Nix McRetro"
 date: 2018-09-05T19:35:27.000+10:00
 categories: [sega]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2018/img_0624.jpg)

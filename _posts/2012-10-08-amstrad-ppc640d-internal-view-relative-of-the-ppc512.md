@@ -2,11 +2,7 @@
 title: "Amstrad PPC640D Internal View - Relative of the PPC512"
 author: "Nix McRetro"
 date: 2012-10-08T21:50:43.000+11:00
-last_modified_at: 2026-10-03
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-03
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, youtube]
 ---
 

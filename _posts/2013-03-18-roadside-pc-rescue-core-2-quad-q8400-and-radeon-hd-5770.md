@@ -2,11 +2,7 @@
 title: "Roadside PC Rescue: Core 2 Quad Q8400 and Radeon HD 5770"
 author: "Nix McRetro"
 date: 2013-03-18T10:54:19.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-05
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc]
 ---
 

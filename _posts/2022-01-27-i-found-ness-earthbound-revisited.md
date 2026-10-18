@@ -3,11 +3,7 @@ title: "I Found Ness! EarthBound Revisited"
 author: "Nix McRetro"
 date: 2022-01-27T07:54:42.000+11:00
 categories: [gaming, nintendo]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2022/img_0806.jpg)

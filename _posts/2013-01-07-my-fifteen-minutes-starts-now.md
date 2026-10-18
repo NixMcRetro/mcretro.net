@@ -2,11 +2,7 @@
 title: "My Fifteen Minutes Starts Now!"
 author: "Nix McRetro"
 date: 2013-01-07T06:16:24.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-04
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [gaming, youtube]
 ---
 

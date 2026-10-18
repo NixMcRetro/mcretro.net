@@ -3,11 +3,7 @@ title: "HEX1GON's Xbox OG"
 author: "Nix McRetro"
 date: 2020-02-22T18:53:27.000+11:00
 categories: [microsoft, repairs, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="sOxopR6_JCM" %}

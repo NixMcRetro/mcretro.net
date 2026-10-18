@@ -3,11 +3,7 @@ title: "Forced Veganism Rethink"
 author: "Nix McRetro"
 date: 2023-11-14T10:11:38.000+11:00
 categories: [nature, news]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2023/img_1201.jpg)

@@ -2,11 +2,7 @@
 title: "ASUS EeeBox B202 Disassembly and Upgrade Access"
 author: "Nix McRetro"
 date: 2013-04-02T19:44:57.000+11:00
-last_modified_at: 2026-10-05
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-05
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, youtube]
 ---
 

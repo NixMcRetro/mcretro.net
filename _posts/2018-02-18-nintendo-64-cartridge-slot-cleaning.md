@@ -3,11 +3,7 @@ title: "Nintendo 64 Cartridge Slot Cleaning"
 author: "Nix McRetro"
 date: 2018-02-18T10:33:16.000+11:00
 categories: [nintendo, repairs, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="-wrgkwdt5_s" %}

@@ -3,11 +3,7 @@ title: "2022: Year of the Dial-up Modem"
 author: "Nix McRetro"
 date: 2022-01-03T15:34:48.000+11:00
 categories: [youtube]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="2VtskjEJ4Ao" %}

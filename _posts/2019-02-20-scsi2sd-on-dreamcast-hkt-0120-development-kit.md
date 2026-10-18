@@ -3,11 +3,7 @@ title: "SCSI2SD on Dreamcast HKT-0120 Development Kit"
 author: "Nix McRetro"
 date: 2019-02-20T15:23:04.000+11:00
 categories: [apple, devkit, sega]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2019/img_0633.jpg)

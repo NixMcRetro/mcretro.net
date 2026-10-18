@@ -2,11 +2,7 @@
 title: "Programming Atmel AVR Chips with a PICkit 2 and AVRDUDE on a Mac"
 author: "Nix McRetro"
 date: 2013-12-30T05:43:56.000+11:00
-last_modified_at: 2026-10-07
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-07
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [guides, programming]
 ---
 

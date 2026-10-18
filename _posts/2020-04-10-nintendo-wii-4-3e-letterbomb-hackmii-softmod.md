@@ -3,11 +3,7 @@ title: "Nintendo Wii 4.3E LetterBomb / HackMii Softmod"
 author: "Nix McRetro"
 date: 2020-04-10T03:55:03.000+10:00
 categories: [nintendo]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 Oh trusty old Nintendo Wii, how I had forgotten about thee. Looking through my "To Be Sorted" bookmarks folder I found the old GroovyPost guide I must have followed when I softmodded a Wii running System Menu 4.3E using LetterBomb and the HackMii Installer. Boy oh boy, does that take me back to simpler times.

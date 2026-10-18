@@ -3,11 +3,7 @@ title: "Super Nintendo / Super Famicom Modes of Failure"
 author: "Nix McRetro"
 date: 2018-02-10T12:57:46.000+11:00
 categories: [nintendo, repairs]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2018/img_0620.jpg)

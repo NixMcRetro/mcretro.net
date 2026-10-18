@@ -3,11 +3,7 @@ title: "Mean Machines Sega - Mega-CD Preview VHS Tape"
 author: "Nix McRetro"
 date: 2013-04-04T03:16:24.000+11:00
 categories: [gaming, sega, youtube]
-last_modified_at: 2026-10-05
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-05
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="CLYfrhCWUx0" %}

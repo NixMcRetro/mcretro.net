@@ -2,11 +2,7 @@
 title: "Toaplan's Zero Wing Demo on the XRGB-mini Framemeister"
 author: "Nix McRetro"
 date: 2013-02-27T08:25:34.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-05
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [gaming, sega, youtube]
 ---
 

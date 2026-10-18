@@ -3,11 +3,7 @@ title: "Holden VY Commodore Car Repair: Chapter 2 - Vacuum Actuator"
 author: "Nix McRetro"
 date: 2021-01-30T21:48:33.000+11:00
 categories: [repairs, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="bWN9F-c_gEg" %}

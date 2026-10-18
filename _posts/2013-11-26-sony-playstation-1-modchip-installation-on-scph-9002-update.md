@@ -2,11 +2,7 @@
 title: "Sony PlayStation 1 Modchip Installation on SCPH-9002 Update"
 author: "Nix McRetro"
 date: 2013-11-26T19:25:54.000+11:00
-last_modified_at: 2026-10-07
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-07
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, sony, youtube]
 ---
 

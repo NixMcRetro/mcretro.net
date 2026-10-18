@@ -2,11 +2,7 @@
 title: "Subscribe Today! (Version 3.0)"
 author: "Nix McRetro"
 date: 2014-05-23T19:47:21.000+10:00
-last_modified_at: 2026-10-07
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-07
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [youtube]
 ---
 

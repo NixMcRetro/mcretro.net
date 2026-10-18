@@ -2,11 +2,7 @@
 title: "Wolfenstein 3D on Sega Saturn: Early VBT Port Test"
 author: "Nix McRetro"
 date: 2013-05-29T05:15:06.000+10:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [devkit, gaming, sega]
 ---
 

@@ -3,11 +3,7 @@ title: "Mon Mothma was a Deejay"
 author: "Nix McRetro"
 date: 2024-05-29T16:44:08.000+10:00
 categories: [nature, news, study]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2024/img_1298.jpg)

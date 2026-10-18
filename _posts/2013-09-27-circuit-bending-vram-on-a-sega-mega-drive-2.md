@@ -2,11 +2,7 @@
 title: "Circuit Bending VRAM on a Sega Mega Drive 2"
 author: "Nix McRetro"
 date: 2013-09-27T20:32:40.000+10:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, sega, youtube]
 ---
 

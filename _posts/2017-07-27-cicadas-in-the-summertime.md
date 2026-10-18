@@ -2,11 +2,7 @@
 title: "Cicadas in the Summertime"
 author: "Nix McRetro"
 date: 2017-07-27T21:14:02.000+10:00
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [study]
 ---
 

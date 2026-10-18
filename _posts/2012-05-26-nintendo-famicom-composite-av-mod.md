@@ -2,11 +2,7 @@
 title: "Nintendo Famicom Composite AV Mod"
 author: "Nick"
 date: 2012-05-26T19:18:06.000+10:00
-last_modified_at: 2026-10-02
-ai_assistance:
-  model: "GPT-6 Astra Max"
-  date: 2026-10-02
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, nintendo, youtube]
 ---
 

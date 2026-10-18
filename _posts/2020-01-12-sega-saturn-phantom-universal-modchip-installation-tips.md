@@ -3,11 +3,7 @@ title: "Sega Saturn Phantom Universal Modchip Installation Tips"
 author: "Nix McRetro"
 date: 2020-01-12T10:57:53.000+11:00
 categories: [guides, sega, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="bJWDRq0tUf8" %}

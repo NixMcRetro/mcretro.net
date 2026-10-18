@@ -3,11 +3,7 @@ title: "A Garden of My Own"
 author: "Nix McRetro"
 date: 2024-03-17T21:18:43.000+11:00
 categories: [nature]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![A photo of Grevillea Juniperina Gold](/assets/images/2024/img_1282.jpg)

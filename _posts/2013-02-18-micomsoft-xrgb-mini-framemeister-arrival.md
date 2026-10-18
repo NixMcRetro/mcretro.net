@@ -3,11 +3,7 @@ title: "Micomsoft XRGB-mini Framemeister Arrival"
 author: "Nix McRetro"
 date: 2013-02-18T08:10:11.000+11:00
 categories: [gaming, hacks]
-last_modified_at: 2026-10-05
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-05
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="EM1SXr8sIIo" %}

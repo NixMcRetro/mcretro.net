@@ -3,11 +3,7 @@ title: "27C1024 EPROM Dumping with the MiniPro TL866"
 author: "Nix McRetro"
 date: 2019-02-01T07:42:35.000+11:00
 categories: [guides, programming, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="ZfEeTAFjEug" %}

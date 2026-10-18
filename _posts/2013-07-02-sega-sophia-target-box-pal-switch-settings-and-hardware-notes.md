@@ -2,11 +2,7 @@
 title: "Sega Sophia Target Box PAL Switch Settings and Hardware Notes"
 author: "Nix McRetro"
 date: 2013-07-02T12:01:49.000+10:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [guides, repairs, sega]
 ---
 

@@ -2,11 +2,7 @@
 title: "Lunchbeat / PICkit 2 - Programming 102 (Part 6)"
 author: "Nix McRetro"
 date: 2015-10-09T22:18:17.000+11:00
-last_modified_at: 2026-10-08
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-08
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [programming, youtube]
 ---
 

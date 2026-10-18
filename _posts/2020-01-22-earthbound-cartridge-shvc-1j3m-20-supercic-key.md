@@ -3,11 +3,7 @@ title: "EarthBound Cartridge (SHVC-1J3M-20) SuperCIC Key"
 author: "Nix McRetro"
 date: 2020-01-22T21:14:51.000+11:00
 categories: [hacks, nintendo, programming]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2020/img_0643.jpg)

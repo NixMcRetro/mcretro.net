@@ -3,11 +3,7 @@ title: "Teenage Engineering OP-1 Demo Track"
 author: "Nix McRetro"
 date: 2021-12-27T14:31:16.000+11:00
 categories: [youtube]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="qolj2Fu0mR0" %}

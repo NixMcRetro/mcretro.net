@@ -2,11 +2,7 @@
 title: "Osborne 486 Boot-Sector Virus Cleanup with F-PROT"
 author: "Nix McRetro"
 date: 2012-10-23T05:56:45.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-03
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs]
 ---
 

@@ -2,11 +2,7 @@
 title: "Drag Soldering a 29F032 TSOP Chip"
 author: "Nix McRetro"
 date: 2016-03-05T10:38:01.000+11:00
-last_modified_at: 2026-10-08
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-08
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [guides, repairs, youtube]
 ---
 

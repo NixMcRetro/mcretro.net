@@ -2,11 +2,7 @@
 title: "Sega TeraDrive Model 2 with XTIDE Card Demo"
 author: "Nix McRetro"
 date: 2012-11-18T01:48:27.000+11:00
-last_modified_at: 2026-10-04
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-04
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
 ---
 

@@ -4,10 +4,6 @@ author: "Nix McRetro"
 date: 2024-03-10T09:42:03.000+11:00
 categories: [nature]
 last_modified_at: 2026-10-18
-ai_assistance:
-  model: "GPT-6"
-  date: 2026-10-18
-  purpose: "historical video-source migration and navigation"
 ---
 
 ![](/assets/images/2024/img_1266.jpg)

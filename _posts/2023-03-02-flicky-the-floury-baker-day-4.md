@@ -2,13 +2,9 @@
 title: "Flicky the Floury Baker, Day 4: The Tree Branch Question"
 author: "Nix McRetro"
 date: 2023-03-02
+last_modified_at: 2026-10-18
 categories: [nature, reconstructed, youtube]
-permalink: /flicky-the-floury-baker-day-4/
 historical_source_url: "https://www.youtube.com/watch?v=ylVdX7cuG-U"
-ai_assistance:
-  model: "GPT-6"
-  date: 2026-10-18
-  purpose: "historical video reconstruction and editorial sourcing"
 ---
 
 {% include youtube.html id="ylVdX7cuG-U" %}

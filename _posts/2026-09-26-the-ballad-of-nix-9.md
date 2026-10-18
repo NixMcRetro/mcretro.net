@@ -3,11 +3,7 @@ title: "The Ballad of Nix-9"
 author: "Nix McRetro"
 date: 2026-09-26T09:00:00.000+10:00
 categories: [ai-generated]
-last_modified_at: 2026-10-12
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-12
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 *Being a True Account of One Netrunner's Quest Through the Neon-Lit Dungeon of Corporate Bureaucracy, Armed Only with Wit, Persistence, and the Ancient Statutes of Fair Trade*

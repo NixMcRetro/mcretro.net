@@ -3,11 +3,7 @@ title: "Disk on Modules and the XTIDE BIOS on the Sega TeraDrive"
 author: "Nix McRetro"
 date: 2013-02-17T19:11:53.000+11:00
 categories: [ibm-pc, repairs, sega]
-last_modified_at: 2026-10-05
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-05
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2013/img_0377.jpg)

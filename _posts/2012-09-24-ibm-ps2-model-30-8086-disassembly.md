@@ -2,11 +2,7 @@
 title: "IBM PS/2 Model 30 8086 Disassembly"
 author: "Nix McRetro"
 date: 2012-09-24T22:44:16.000+10:00
-last_modified_at: 2026-10-03
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-03
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs]
 ---
 

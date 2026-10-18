@@ -3,11 +3,7 @@ title: "Microsoft Xbox OG Kasumi Blue Clock Capacitor Removed"
 author: "Nix McRetro"
 date: 2020-05-02T12:54:10.000+10:00
 categories: [microsoft, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="HVsIA9OQO3A" %}

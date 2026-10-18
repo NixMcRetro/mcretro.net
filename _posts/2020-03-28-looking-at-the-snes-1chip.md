@@ -3,11 +3,7 @@ title: "Looking at the SNES 1CHIP"
 author: "Nix McRetro"
 date: 2020-03-28T13:33:31.000+11:00
 categories: [nintendo, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="1F007E4l-H4" %}

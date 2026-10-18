@@ -2,11 +2,7 @@
 title: "Creative Labs CD-200 2x CD-ROM Driver Hunt"
 author: "Nix McRetro"
 date: 2012-10-08T21:59:31.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-03
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs]
 ---
 

@@ -3,11 +3,7 @@ title: "Xbox DVT4 XBpartitioner and Game Demos"
 author: "Nix McRetro"
 date: 2019-11-24T18:59:04.000+11:00
 categories: [devkit, microsoft, youtube]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="5LL4LrlK2DM" %}

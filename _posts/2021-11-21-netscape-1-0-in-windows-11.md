@@ -3,11 +3,7 @@ title: "Netscape 1.0 in Windows 11"
 author: "Nix McRetro"
 date: 2021-11-21T22:30:37.000+11:00
 categories: [ibm-pc, linux, microsoft]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2021/img_0775.jpg)

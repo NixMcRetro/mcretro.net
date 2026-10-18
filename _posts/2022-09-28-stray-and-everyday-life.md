@@ -3,11 +3,7 @@ title: "Stray (2022, PS4 Live Stream) and Everyday Life"
 author: "Nix McRetro"
 date: 2022-09-28T22:51:43.000+10:00
 categories: [gaming, sony, youtube]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="rpQX0S7XpyU" %}

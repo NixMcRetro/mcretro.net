@@ -2,11 +2,7 @@
 title: "Wyse 2112-40 286 Revival Project"
 author: "Nix McRetro"
 date: 2012-11-21T21:43:56.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-04
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, ibm-pc, repairs]
 ---
 

@@ -2,11 +2,7 @@
 title: "Sega Mega Drive 2 DC-in Socket Repair and Secondary Fault"
 author: "Nix McRetro"
 date: 2012-12-29T12:33:06.000+11:00
-last_modified_at: 2026-10-13
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-04
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
 ---
 

@@ -3,11 +3,7 @@ title: "Australian Red Cross Lifeblood - Donations in 2020"
 author: "Nix McRetro"
 date: 2021-03-27T19:03:37.000+11:00
 categories: [youtube]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="Fo0fdnoqXIM" %}

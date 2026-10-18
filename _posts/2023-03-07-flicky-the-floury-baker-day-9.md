@@ -2,13 +2,9 @@
 title: "Flicky the Floury Baker, Day 9: Still Laying Eggs!"
 author: "Nix McRetro"
 date: 2023-03-07
+last_modified_at: 2026-10-18
 categories: [nature, reconstructed, youtube]
-permalink: /flicky-the-floury-baker-day-9/
 historical_source_url: "https://www.youtube.com/watch?v=NlZ-JLDtDvg"
-ai_assistance:
-  model: "GPT-6"
-  date: 2026-10-18
-  purpose: "historical video reconstruction and editorial sourcing"
 ---
 
 {% include youtube.html id="NlZ-JLDtDvg" %}

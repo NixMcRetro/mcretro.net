@@ -2,11 +2,7 @@
 title: "Sega TeraDrive Model 3 - Faulty Power Supply (Part 2)"
 author: "Nix McRetro"
 date: 2016-03-27T09:41:21.000+11:00
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
 ---
 

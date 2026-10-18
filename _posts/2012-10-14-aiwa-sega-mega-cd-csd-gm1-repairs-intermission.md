@@ -2,11 +2,7 @@
 title: "Aiwa Sega Mega-CD CSD-GM1 Repairs Intermission"
 author: "Nix McRetro"
 date: 2012-10-14T19:01:43.000+11:00
-last_modified_at: 2026-10-03
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-03
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
 ---
 

@@ -3,11 +3,7 @@ title: "Avtek MegaPlus V.32bis - Resetting the Linksys PAP2T"
 author: "Nix McRetro"
 date: 2022-04-18T09:59:52.000+10:00
 categories: [guides, youtube]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="NQq7oI-WboE" %}

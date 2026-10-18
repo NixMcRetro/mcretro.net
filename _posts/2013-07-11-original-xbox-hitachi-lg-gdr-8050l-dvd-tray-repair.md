@@ -2,11 +2,7 @@
 title: "Original Xbox Hitachi-LG GDR-8050L DVD Tray Repair"
 author: "Nix McRetro"
 date: 2013-07-11T14:19:30.000+10:00
-last_modified_at: 2026-10-06
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-06
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [hacks, microsoft, repairs]
 ---
 

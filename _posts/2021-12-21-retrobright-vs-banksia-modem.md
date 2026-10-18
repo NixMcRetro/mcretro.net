@@ -3,11 +3,7 @@ title: "Retrobright vs. Banksia Modem"
 author: "Nix McRetro"
 date: 2021-12-21T10:14:18.000+11:00
 categories: [hacks, modems, repairs]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2021/img_0778.jpg)

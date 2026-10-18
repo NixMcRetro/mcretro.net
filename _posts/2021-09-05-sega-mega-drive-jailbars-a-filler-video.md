@@ -3,11 +3,7 @@ title: "Sega Mega Drive Jailbars: A Filler Video"
 author: "Nix McRetro"
 date: 2021-09-05T14:19:09.000+10:00
 categories: [youtube]
-last_modified_at: 2026-10-11
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-11
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 {% include youtube.html id="JbZ_0qu1i1w" %}

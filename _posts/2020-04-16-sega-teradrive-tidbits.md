@@ -3,11 +3,7 @@ title: "Sega TeraDrive Tidbits"
 author: "Nix McRetro"
 date: 2020-04-16T10:32:35.000+10:00
 categories: [ibm-pc, sega]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2012/img_0133.jpg)

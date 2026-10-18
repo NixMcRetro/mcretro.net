@@ -3,11 +3,7 @@ title: "Sega Dreamcast Hardware List"
 author: "Nix McRetro"
 date: 2018-01-31T11:16:41.000+11:00
 categories: [sega]
-last_modified_at: 2026-10-10
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-10
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 ---
 
 ![](/assets/images/2018/img_0613.jpg)

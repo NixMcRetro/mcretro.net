@@ -2,11 +2,7 @@
 title: "Roadside Core 2 Quad: Initial Test and Donation"
 author: "Nix McRetro"
 date: 2013-03-28T00:34:01.000+11:00
-last_modified_at: 2026-10-05
-ai_assistance:
-  model: "GPT-6.1 Sol"
-  date: 2026-10-05
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, youtube]
 ---
 

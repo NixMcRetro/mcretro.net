@@ -5,10 +5,6 @@ date: 2018-05-22
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/cute-little-tillie-noises/"
-ai_assistance:
-  model: "GPT-6"
-  date: 2026-10-18
-  purpose: "historical reconstruction from original writing and video inventory"
 ---
 
 {% include youtube.html id="9P24OqgbC4U" %}

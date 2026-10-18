@@ -2,11 +2,7 @@
 title: "Amstrad Sega Mega PC, Athlon 500 MHz Rebuild and picoPSU"
 author: "Nix McRetro"
 date: 2012-04-21T11:39:33.000+10:00
-last_modified_at: 2026-10-02
-ai_assistance:
-  model: "GPT-6 Astra Max"
-  date: 2026-10-02
-  purpose: "fact-checking, sourcing, and editorial quality"
+last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
 ---
 

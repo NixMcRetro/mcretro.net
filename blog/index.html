@@ -18,7 +18,8 @@ pagefind: false
         {% if post.author %}
           <span class="post-author">
             <picture>
-              <source media="(min-width: 751px)" srcset="/assets/images/mcretro-author-portrait-full.webp?v=20261018c">
+              <source media="(min-width: 751px)" type="image/jxl" srcset="/assets/images/mcretro-author-portrait-192.jxl?v=20261018d">
+              <source media="(min-width: 751px)" type="image/webp" srcset="/assets/images/mcretro-author-portrait-192.webp?v=20261018d">
               <img src="/assets/favicon/favicon-96x96.png?v=20261018b" width="96" height="96" alt="" class="author-avatar">
             </picture>
             {{ post.author }}

@@ -38,24 +38,6 @@ layout: default
     {{ content }}
   </div>
 
-  {% if page.ai_assistance %}
-    {% unless page.categories contains 'reconstructed' %}
-    <div class="ai-assistance-note" data-pagefind-ignore="all">
-      {% assign disclosure_purpose = page.ai_assistance.purpose | default: "fact-checking, sourcing, and editorial quality" %}
-      {% if disclosure_purpose == "fact-checking, sourcing, and editorial quality" %}
-        Last reviewed by Nix using OpenAI {{ page.ai_assistance.model }}
-        on {{ page.ai_assistance.date | date: "%-d %B %Y" }}
-        for {{ disclosure_purpose }}.
-      {% else %}
-        <strong>AI-assisted revision:</strong>
-        This post was reviewed and edited with {{ page.ai_assistance.model }}
-        on {{ page.ai_assistance.date | date: "%-d %B %Y" }}
-        for {{ disclosure_purpose }}.
-        Final editorial responsibility remains with the author.
-      {% endif %}
-    </div>
-    {% endunless %}
-  {% endif %}
   
   <nav class="post-navigation" data-pagefind-ignore="all">
     <div class="nav-previous">

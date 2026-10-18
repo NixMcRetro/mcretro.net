@@ -13,17 +13,17 @@ Trevor! An Australian eel-tailed catfish (*Tandanus tandanus*), otherwise known 
 
 First up, Eel-tailed Catfish Detected! Yes, apparently detecting fish is now a legitimate pastime. Nothing quite like having an aquarium and then having to go looking for its inhabitants. Trevor seemed rather interested in whatever was happening outside the glass too. I'm not entirely sure who was supposed to be studying who here!
 
-[![Trevor as a youngster in September 2017](/assets/images/fish/2017/IMG_20170903_113958_thumb.jpg)](https://drive.google.com/file/d/1HID6rDuEHexfnUob3AsJVtyU2AUsmdBR/view)
+![Trevor as a youngster in September 2017](/assets/images/fish/2017/trevor-september-2017.jpg)
 
-*Trevor as a youngster, 3 September 2017. This photograph was taken before I met Big Fish! Click for the original full-resolution photograph.*
+*Trevor as a youngster, 3 September 2017. This photograph was taken before I met Big Fish!*
 
 {% include youtube.html id="DjfgYXW20po" %}
 
 It's rather fascinating looking back at these early photographs, knowing just how substantial Trevor would eventually become. Eel-tailed catfish aren't exactly tiny little aquarium fish once fully grown, and Trevor was certainly heading in that direction! They're also capable of changing their colouring to better suit their surroundings, which is a pretty neat biological trick. Changes in colour can have several explanations, though, so appearances alone aren't proof that a fish is stressed.
 
-[![Trevor as a youngster in October 2017](/assets/images/fish/2017/IMG_20171021_190141_thumb.jpg)](https://drive.google.com/file/d/1op7Ua0EeanNVJU7HgDA8DqZLvATD4Rsr/view)
+![Trevor as a youngster in October 2017](/assets/images/fish/2017/trevor-october-2017.jpg)
 
-*Another early photograph of Trevor, 21 October 2017. Still a youngster, long before Big Fish became quite so big! Click for the original full-resolution photograph.*
+*Another early photograph of Trevor, 21 October 2017. Still a youngster, long before Big Fish became quite so big!*
 
 {% include youtube.html id="4f07AWT7QpA" %}
 

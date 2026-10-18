@@ -3,13 +3,13 @@
   "short_name": "McRetro",
   "icons": [
     {
-      "src": "/assets/favicon/web-app-manifest-192x192.png?v=20261018",
+      "src": "/assets/favicon/web-app-manifest-192x192.png?v=20261018b",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/assets/favicon/web-app-manifest-512x512.png?v=20261018",
+      "src": "/assets/favicon/web-app-manifest-512x512.png?v=20261018b",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

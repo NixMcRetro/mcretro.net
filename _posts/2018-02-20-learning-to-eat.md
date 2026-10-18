@@ -13,8 +13,8 @@ ai_assistance:
 
 {% include youtube.html id="NYzaSGiOD7Y" %}
 
-Baby Borb is growing up! Chip is starting to investigate all sorts of food instead of relying entirely on his baby bird mush. Seeds, peanuts, sultanas and plenty of other things to get that little beak into. Nom, nom, nom!
+Baby Borb is growing up! Chip has only been with us since the beginning of February, but already there's more to eating than warm baby-bird mush. Seeds, peanuts, sultanas and other interesting things are all waiting for investigation. There's a whole new world of snacks for that tiny beak. Nom, nom, nom!
 
 {% include youtube.html id="0LCSZ7eCfdM" %}
 
-I managed to catch some of the food adventures on video. Tillie even drops in towards the end of the second one, looking like she's just been for a swim in the local drinking bowl. Honestly, these birds. There's always something going on around here!
+Here are some more of Chip's food adventures. Tillie also makes an appearance towards the end of the second recording, looking as though there's just been a swim in the local drinking bowl. One bird is learning to eat, another appears to be investigating bath time, and there's never a dull moment with this lot!

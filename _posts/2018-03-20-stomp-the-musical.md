@@ -13,4 +13,6 @@ ai_assistance:
 
 {% include youtube.html id="nk5Xr7D1cT0" %}
 
-Oi, dark green parrot! Is that you, Tillie? Pudge? You can't just go around stomping on poor little Chip like that! Apparently the bird gang has decided to stage their own production of *Stomp!*, and nobody bothered to ask the Baby Borb if he wanted to join in. Don't worry Chippy, you'll get your revenge one day!
+Oi, dark green parrot! Is that you, Tillie? Pudge? You can't just go around stomping on poor little Chip like that! Apparently the bird gang has decided to stage its own production of *Stomp!*, and nobody asked the Baby Borb whether joining the performance was a good idea.
+
+It's certainly a lively household now that all three conures are getting up to mischief. Never mind the musical production, somebody ought to check that Chip is getting a fair go! Don't worry, Chippy, revenge might be just around the corner!

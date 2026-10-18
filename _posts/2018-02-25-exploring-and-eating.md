@@ -13,8 +13,8 @@ ai_assistance:
 
 {% include youtube.html id="6CyKl7WJvLU" %}
 
-Chip is still spending most of his time apart from Tillie and Pudge, but there's plenty for the little Baby Borb to investigate. First on the agenda is a seed-stick treat. Very important work, Chippy! Meanwhile, the other two are carrying on with their own little bird missions in the background.
+Chip is still spending most of the time apart from Tillie and Pudge, but there's plenty for the little Baby Borb to investigate. First on the agenda is a seed-stick treat. Very important work, Chippy! Meanwhile, the other two are carrying on with their own little bird missions in the background.
 
 {% include youtube.html id="RQ7yIPToGNM" %}
 
-More exploring and more eating! Tillie and Pudge have a rather impressive sunflower seed bell to keep them occupied, while Chip gets on with his own snacks. So many seeds, so little time. It's a busy life being a little parrot!
+More exploring and more eating! Tillie and Pudge have a rather impressive sunflower seed bell to keep them occupied, while Chip gets on with another snack. So many seeds, so little time. It's a busy life being a little parrot!

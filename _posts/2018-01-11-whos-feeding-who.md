@@ -13,4 +13,6 @@ ai_assistance:
 
 {% include youtube.html id="3eNs2s4MWaY" %}
 
-Who's feeding who around here?! Tillie and Pudge have been taking turns trying to feed each other, and apparently this is a very important bird activity. They're brother and sister, so they certainly won't be raising a family together. Perhaps one day they'll find themselves some nice unrelated conure companions. Until then, it's feeding time, again and again, until one of them gets grumpy!
+Who's feeding who around here?! Tillie and Pudge have been taking turns trying to feed each other, which is apparently a very important activity in the conure household. Over and over they go, until one of them gets a little grumpy about the whole arrangement.
+
+Perhaps one day there'll be some lovely turquoise or cinnamon conure companions around here too. Until then, I suppose we'll have to put up with this endless game of feeding each other. Such romance! Such drama! Such ridiculous little birds!

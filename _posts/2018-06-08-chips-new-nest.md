@@ -13,4 +13,6 @@ ai_assistance:
 
 {% include youtube.html id="1hhDTv3ttq0" %}
 
-Chip has apparently decided that a birdperson's hair would make an excellent new nest. The sneaky little fellow has climbed right in and is getting to work on his latest housing project. Will he manage to build himself a lovely nest, or will the whole thing get washed out in the next shower? Stay tuned for more adventures from the Baby Borb!
+Chip has apparently decided that a birdperson's hair would make an excellent new nest. Never mind the usual bird accommodation, our sneaky little Baby Borb has climbed right in to investigate a new housing project. There's a nice spot to settle into, and it's very close to the human staff as well.
+
+Will this become a lovely nest, or will the whole thing get washed out in the next shower? It's difficult to run a successful construction project when the building materials keep needing shampoo. Stay tuned for more adventures from the Baby Borb!

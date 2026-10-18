@@ -3,7 +3,7 @@ title: "Chip's Ride Home!"
 author: "Nix McRetro"
 date: 2018-02-03
 last_modified_at: 2026-10-18
-categories: [parrots, youtube, reconstructed]
+categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/chips-ride-home/"
 ai_assistance:
   model: "GPT-6"

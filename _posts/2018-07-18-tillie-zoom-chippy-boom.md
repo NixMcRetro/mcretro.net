@@ -3,7 +3,7 @@ title: "Tillie Zoom, Chippy Boom!"
 author: "Nix McRetro"
 date: 2018-07-18
 last_modified_at: 2026-10-18
-categories: [parrots, youtube, reconstructed]
+categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/tillie-zoom-chippy-boom/"
 ai_assistance:
   model: "GPT-6"

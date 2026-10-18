@@ -3,7 +3,7 @@ title: "Baby Borb Learning to Eat!"
 author: "Nix McRetro"
 date: 2018-02-20
 last_modified_at: 2026-10-18
-categories: [parrots, youtube]
+categories: [parrots, youtube, reconstructed]
 historical_source_url: "https://channelchirp.com/learning-to-eat/"
 ai_assistance:
   model: "GPT-6"

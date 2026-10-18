@@ -39,6 +39,7 @@ layout: default
   </div>
 
   {% if page.ai_assistance %}
+    {% unless page.categories contains 'reconstructed' %}
     <div class="ai-assistance-note" data-pagefind-ignore="all">
       {% assign disclosure_purpose = page.ai_assistance.purpose | default: "fact-checking, sourcing, and editorial quality" %}
       {% if disclosure_purpose == "fact-checking, sourcing, and editorial quality" %}
@@ -53,6 +54,7 @@ layout: default
         Final editorial responsibility remains with the author.
       {% endif %}
     </div>
+    {% endunless %}
   {% endif %}
   
   <nav class="post-navigation" data-pagefind-ignore="all">

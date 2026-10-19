@@ -16,4 +16,4 @@ Let's speed it back up to a regular-speed version of the same head-bobbing perfo
 
 {% include youtube.html id="mxBfN5pH5rg" %}
 
-Part 3! More head bobbing and head-shaking gestures from our little (well... large) feathered friend. That's three videos from the one nursery visit on the 26th November 2017, all featuring a rather expressive corella. Looking back at these recordings from before I had parrots of my own, perhaps my interest in these ridiculous birds wasn't quite as sudden as it might have seemed!
+More head bobbing and head-shaking gestures from our little (well... large) feathered friend. Looking back at these recordings from before I had parrots of my own, perhaps my interest in these ridiculous birds wasn't quite as sudden as it might have seemed!

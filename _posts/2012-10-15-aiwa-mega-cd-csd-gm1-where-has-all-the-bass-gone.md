@@ -1,9 +1,9 @@
 ---
-title: "Aiwa Mega-CD CSD-GM1: Where Has All the Bass Gone?!"
+title: "Aiwa Mega-CD CSD-GM1 Sound Quality Comparison"
 author: "Nix McRetro"
 date: 2012-10-15
 last_modified_at: 2026-10-20
-categories: [reconstructed, repairs, sega, youtube]
+categories: [repairs, sega, youtube]
 ---
 
 {% include youtube.html id="BIS8lC1eapc" %}

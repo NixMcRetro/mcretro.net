@@ -1,8 +1,8 @@
 ---
-title: "Toga the Saratoga at UNSW Sydney!"
+title: "Toga the Saratoga at UNSW Sydney"
 author: "Nix McRetro"
 date: 2021-03-01
-last_modified_at: 2026-10-19
+last_modified_at: 2026-10-20
 categories: [fish, reconstructed, youtube]
 ---
 

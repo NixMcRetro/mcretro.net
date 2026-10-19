@@ -12,7 +12,7 @@ Big Fish is back! On the 24th October 2019, we've got another look at Trevor, ou
 
 {% include youtube.html id="nALuq2maHvo" %}
 
-The next day, Big Fish is hiding! Well, that's what we're looking for, anyway. One of the entertaining things about keeping catfish is discovering that a fish can be somewhere inside an aquarium while apparently being nowhere in particular. Trevor was hardly a tiny fish by this stage, which made the whole business even more amusing.
+The next day, Big Fish is hiding! Well, that's what we're looking for, anyway. One of the entertaining things about keeping catfish is discovering that a fish can be somewhere inside an aquarium while apparently being nowhere in particular.
 
 {% include youtube.html id="DFhV3dwHWZ4" %}
 

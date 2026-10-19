@@ -16,7 +16,7 @@ A week later, it's time for some Slinky swimming! Between the long body, the lit
 
 {% include youtube.html id="Qnk2pimVM4o" %}
 
-Then we hit the 26th November 2019 and it's time for some Slinky versus bubbles! Another instalment of the ongoing relationship between Slinky and the aquarium's bubble supply. There's also my original [Slinky the Fish](/slinky-the-fish/) article from the same day, because apparently one helping of Slinky simply wasn't enough. I could watch this little fish zoom about for ages!
+Then we hit the 26th November 2019 and it's time for some Slinky versus bubbles! We also have my original [Slinky the Fish](/slinky-the-fish/) article from the same day, because apparently one helping of Slinky simply wasn't enough. I could watch this little fish zoom about for ages!
 
 {% include youtube.html id="HkKidtIecEA" %}
 

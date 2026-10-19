@@ -26,8 +26,6 @@ By the 8th December 2019, we're back to watching Trevor swimming around. I could
 
 {% include youtube.html id="jCsqw6LiRvY" %}
 
-And on the 16th December 2019, it's time for Big Fish swim training! Swim training? For a fish? I don't recall issuing any swimming certificates, but I suspect Trevor would have passed with flying colours.
-
-For Trevor's earlier adventures and the bigger story behind the aquarium, have a look at [Big Fish (Trevor) the Eel-tailed Catfish!](/trevor-the-eel-tailed-catfish/).
+And on the 16th December 2019, it's time for Big Fish swim training! Swim training? For a fish? I don't recall issuing any swimming certificates, but I suspect Trevor would have passed with flying colours. For Trevor's earlier adventures and the bigger story behind the aquarium, have a look at [Big Fish (Trevor) the Eel-tailed Catfish!](/trevor-the-eel-tailed-catfish/).
 
 Fish rock!

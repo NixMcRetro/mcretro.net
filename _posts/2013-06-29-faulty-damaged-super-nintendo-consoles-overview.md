@@ -15,7 +15,7 @@ Replacing deteriorated capacitors can help, but age alone does not establish the
 ### Related posts
 
 - [Super Nintendo Serial UP15971140 PPU1 Trace Repair](/super-nintendo-serial-up15971140-ppu1-trace-repair/)
-- [Damaged S-MIX on a SNES SNSP-CPU-02 Mainboard](/damaged-s-mix-on-a-snes-snsp-cpu-02-mainboard/)
+- [Damaged S-MIX on a SNES SNSP-CPU-1CHIP-02 Mainboard](/damaged-s-mix-on-a-snes-snsp-cpu-1chip-02-mainboard/)
 - [Super Nintendo Serial UP17548016 - Repaired](/super-nintendo-serial-up17548016-repaired/)
 
 ### Sources

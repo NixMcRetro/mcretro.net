@@ -13,4 +13,4 @@ Here's the first of three faulty SNES units I came across recently. This one has
 ### Related posts
 
 - [Super Nintendo Serial UP17388130 - No Sound Update](/super-nintendo-serial-up17388130-no-sound-update/)
-- [Damaged S-MIX on a SNES SNSP-CPU-02 Mainboard](/damaged-s-mix-on-a-snes-snsp-cpu-02-mainboard/)
+- [Damaged S-MIX on a SNES SNSP-CPU-1CHIP-02 Mainboard](/damaged-s-mix-on-a-snes-snsp-cpu-1chip-02-mainboard/)

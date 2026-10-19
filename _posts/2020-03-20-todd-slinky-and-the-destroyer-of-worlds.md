@@ -1,5 +1,5 @@
 ---
-title: "Todd, Slinky and the Destroyer of Worlds! March 2020"
+title: "Todd, Slinky and the Destroyer of Worlds!"
 author: "Nix McRetro"
 date: 2020-03-20
 last_modified_at: 2026-10-19

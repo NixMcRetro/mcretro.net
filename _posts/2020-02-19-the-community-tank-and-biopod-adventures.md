@@ -1,5 +1,5 @@
 ---
-title: "The Community Tank and BioPod Adventures in 2020!"
+title: "The Community Tank and BioPod Adventures!"
 author: "Nix McRetro"
 date: 2020-02-19
 last_modified_at: 2026-10-19

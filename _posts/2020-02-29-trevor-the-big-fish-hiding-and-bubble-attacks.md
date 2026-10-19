@@ -1,5 +1,5 @@
 ---
-title: "Trevor the Big Fish! February 2020 Adventures!"
+title: "Trevor the Big Fish! Hiding and Bubble Attacks!"
 author: "Nix McRetro"
 date: 2020-02-29
 last_modified_at: 2026-10-19

@@ -1,9 +1,9 @@
 ---
-title: "Aiwa Mega-CD CSD-GM1: External Power Supply Testing!"
+title: "Aiwa Mega-CD CSD-GM1: External Power Supply Testing"
 author: "Nix McRetro"
 date: 2012-10-15
 last_modified_at: 2026-10-20
-categories: [reconstructed, repairs, sega, youtube]
+categories: [repairs, sega, youtube]
 ---
 
 {% include youtube.html id="6qr6_9mnZjI" %}

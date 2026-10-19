@@ -1,8 +1,8 @@
 ---
-title: "Little Corella at the Local Nursery!"
+title: "Little Corella at the Local Nursery"
 author: "Nix McRetro"
 date: 2017-11-26
-last_modified_at: 2026-10-19
+last_modified_at: 2026-10-20
 categories: [parrots, reconstructed, youtube]
 ---
 

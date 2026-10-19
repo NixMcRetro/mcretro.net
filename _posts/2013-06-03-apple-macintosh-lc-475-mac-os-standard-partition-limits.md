@@ -1,5 +1,5 @@
 ---
-title: "Apple Macintosh LC 475: Mac OS Standard Partition Limits!"
+title: "Apple Macintosh LC 475: Mac OS Standard Partition Limits"
 author: "Nix McRetro"
 date: 2013-06-03
 last_modified_at: 2026-10-20

@@ -1,5 +1,5 @@
 ---
-title: "Mitsumi Newtronics: A Floppy Drive That Almost Worked!"
+title: "Mitsumi Newtronics 5.25-inch Floppy Drive Failure"
 author: "Nix McRetro"
 date: 2012-11-18
 last_modified_at: 2026-10-20

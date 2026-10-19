@@ -1,9 +1,9 @@
 ---
-title: "Aiwa Mega-CD CSD-GM1: Wavy Video and Power Supply Problems!"
+title: "Aiwa Mega-CD CSD-GM1: Wavy Video and Power Supply Problems"
 author: "Nix McRetro"
 date: 2012-10-21
 last_modified_at: 2026-10-20
-categories: [reconstructed, repairs, sega, youtube]
+categories: [repairs, sega, youtube]
 ---
 
 {% include youtube.html id="sxdw4L0O6EM" %}

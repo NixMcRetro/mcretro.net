@@ -1,5 +1,5 @@
 ---
-title: "NEC FD1157C: Cleaning a Troublesome Floppy Drive!"
+title: "NEC FD1157C 5.25-inch Floppy Drive Cleaning"
 author: "Nix McRetro"
 date: 2012-11-18
 last_modified_at: 2026-10-20

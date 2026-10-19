@@ -1,5 +1,5 @@
 ---
-title: "NEC FD1157C: More Floppy Drive Fault Finding!"
+title: "NEC FD1157C: More Floppy Drive Fault Finding"
 author: "Nix McRetro"
 date: 2012-11-19
 last_modified_at: 2026-10-20

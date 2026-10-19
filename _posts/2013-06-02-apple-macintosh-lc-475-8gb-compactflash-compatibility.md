@@ -1,5 +1,5 @@
 ---
-title: "Apple Macintosh LC 475: 8GB CompactFlash Compatibility!"
+title: "Apple Macintosh LC 475: 8GB CompactFlash Compatibility"
 author: "Nix McRetro"
 date: 2013-06-02
 last_modified_at: 2026-10-20

@@ -1,5 +1,5 @@
 ---
-title: "Apple Macintosh LC 475: Checking CPU Capabilities!"
+title: "Apple Macintosh LC 475: Checking CPU Capabilities"
 author: "Nix McRetro"
 date: 2013-06-01
 last_modified_at: 2026-10-20

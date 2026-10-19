@@ -8,7 +8,7 @@ categories: [fish, reconstructed, youtube]
 
 {% include youtube.html id="jfEvvfrjWA8" %}
 
-Meet Toga the Saratoga (*Scleropages*) at UNSW Sydney! A Saratoga named Toga. Now that's a fish name I can get behind! This is the first of three recordings from the same visit. Toga is a very large fish in an even larger tank, which seems like a pretty good reason to get the camera out.
+Meet Toga the Saratoga (*Scleropages*) at UNSW Sydney! A Saratoga named Toga. I love that! Toga is a very large fish in an even larger tank, which seems like a pretty good reason to get the camera out.
 
 {% include youtube.html id="fYN26JLUz8I" %}
 

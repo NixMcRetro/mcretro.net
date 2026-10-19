@@ -8,16 +8,16 @@ categories: [fish, reconstructed, youtube]
 
 {% include youtube.html id="-TW1V0K3js8" %}
 
-Welcome back to the community tank! It's the 10th June 2020, and we've got another update from the aquarium. Todd the Cod, Slinky, Plankers, Whiskers and the other friends had featured in plenty of recordings over the previous months. It's always nice to catch up with everybody, particularly after all those individual adventures with Slinky earlier in the year.
+Welcome back to the community tank! It's the 10th June 2020, and we've got another update from the aquarium. Todd the Cod, Slinky, Plankers, Whiskers and the other friends had featured in plenty of recordings over the previous months. It's always nice to catch up with everybody, particularly after all those adventures with Slinky earlier in the year.
 
 {% include youtube.html id="6udc04VnKsw" %}
 
-On the 17th June, it's time for something a little different! A driftwood catfish discovers an eel-tailed catfish! Now there's an interesting combination. We've spent plenty of time watching Trevor, but there are other catfish friends to catch up with as well. Different species, different personalities and another little episode in the aquarium story.
+On the 17th June, it's time for something a little different! A driftwood catfish discovers an eel-tailed catfish! Now there's an interesting combination. We've spent plenty of time watching Trevor, but there are other catfish friends keen to meet Trevor as well. Just another short episode in the underwater story.
 
 {% include youtube.html id="_dN-MDvY6eY" %}
 
-And on the 27th June, we've got Extreme Fish Evolution! What could possibly go wrong with a title like that? Between the community tank and the various catfish adventures, there was certainly plenty of fish-related activity to document during June.
+Slam dunk! The 27th June, and we've got extreme fish evolution! Is this the eventual evolutionary pathway for all fish or am I literally looking at a Kreepy Krauly pool cleaner?
 
 {% include youtube.html id="UeShNEjLI9s" %}
 
-On the 28th July 2020, it's time for a last look at the community tank. We'd spent so many months following Todd, Slinky and the other friends, from their everyday activities to feeding time and the occasional burst of aquarium excitement. It's good to have these recordings to look back on. For more earlier adventures, have a look at [The Community Tank Adventures!](/the-community-tank-adventures/) and [The Community Tank and BioPod Adventures!](/the-community-tank-and-biopod-adventures/)
+We've landed on the 28th July 2020, and it's time for a last look at the community tank. We'd spent so many months following Todd, Slinky and the other friends, from their everyday activities to feeding time and the occasional burst of aquarium excitement. It's good to have these recordings to look back on. For more earlier adventures, have a look at [The Community Tank Adventures!](/the-community-tank-adventures/) and [The Community Tank and BioPod Adventures!](/the-community-tank-and-biopod-adventures/)

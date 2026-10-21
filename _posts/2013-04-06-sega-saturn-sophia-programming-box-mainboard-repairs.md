@@ -2,23 +2,31 @@
 title: "Sega Saturn Sophia Programming Box Mainboard Repairs"
 author: "Nix McRetro"
 date: 2013-04-06T03:36:48.000+11:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-10-22
 categories: [devkit, repairs, sega]
 ---
 
-After the A-Bus capacitor replacement failed to improve Sophia's condition, I moved on to the mainboard. I've now replaced most of the electrolytic capacitors there, and the result is considerably more promising. The Hakko 808 works wonders on these old boards.
-
 {% include youtube.html id="OBpd2jAA6E8" %}
+
+After the A-Bus capacitor replacement failed to improve Sophia's condition, I moved on to the mainboard. I've now replaced most of the electrolytic capacitors there, and the result is considerably more promising. The Hakko 808 works wonders on these old boards.
 
 ![](/assets/images/2013/img_0388.jpg)
 
-This is the first really strong indication that at least part of Sophia's trouble is on the mainboard. Replacing the majority of its capacitors produced a substantial improvement. I still have several capacitors on backorder, so I am not calling the diagnosis completely finished yet.
+I'd been operating on very little sleep when I decided to tackle this one, which is always an excellent start to an evening of soldering! With most of the capacitors replaced, I thought I'd give Sophia a preliminary test before finishing everything off.
+
+At first, there was no video signal, just as before. Then something changed. The television started detecting a signal from Sophia! That was certainly more than we'd been getting previously, so I went back to experimenting with the DIP switches and reassembling the hardware.
 
 ![](/assets/images/2013/img_0386.jpg)
 
-I am very happy with the results so far. The CD mechanism still has its own known problems as well. We already established that while testing the drive in a retail VA0 Saturn, so that remains a separate repair job.
+And then, would you believe it, Sophia actually came to life and asked me to set the clock! After all this time, we finally had something recognisable on the screen. Absolutely wonderful!
 
-I should probably inspect the power-supply boards too while I am this deep into it. Apparently there is no such thing as replacing just one capacitor on Sophia. The good news is that she is finally looking alive again.
+This was the first really strong indication that at least part of Sophia's trouble was on the mainboard. Replacing the majority of its capacitors had produced a substantial improvement, although I still had several components on backorder.
+
+It also confirmed that the SH-2 CPU cards and replacement RAM I'd been experimenting with were compatible enough to get the machine running. That's another mystery out of the way.
+
+Unfortunately, there was still a problem with the CD mechanism. Sophia recognised changes in the drive's state, but it wasn't reading discs properly. We'd already found trouble with that mechanism while testing it in a retail VA0 Saturn, so it remained a separate repair job.
+
+I should probably inspect the power-supply boards too while I'm this deep into it. Apparently there is no such thing as replacing just one capacitor on Sophia. The good news is that she's finally looking alive again!
 
 ![](/assets/images/2013/img_0387.jpg)
 

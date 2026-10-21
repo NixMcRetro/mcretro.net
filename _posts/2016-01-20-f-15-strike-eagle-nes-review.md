@@ -8,19 +8,19 @@ categories: [gaming, nintendo, youtube]
 
 {% include youtube.html id="uV5KD-Gf05k" %}
 
-I've been having a go at *F-15 Strike Eagle* on the Nintendo Entertainment System, and it seems only reasonable that we should review a game about fighter jets using a scoring system made entirely of eagles. How many eagles? Well, we'll work that out as we go along!
+I had a go at *F-15 Strike Eagle* on the Nintendo Entertainment System, and decided the only sensible way to review a game about fighter jets was with a scoring system made entirely of eagles. How many eagles? Well, that was something I worked out as I went along!
 
-The graphics are a good start. We get some rather nice menus with different places to fly, and there's even a little sequence showing the aircraft taking off. One eagle for graphics! Hang on, those mission screens look pretty good too. Better give it another eagle. I may need to rethink this award system before we run out of room.
+The graphics were a good start. There were some rather nice menus showing the different places I could fly, along with a little sequence of the aircraft taking off. One eagle for graphics! Then I spotted the mission screens and decided they deserved another eagle. I was already running out of room on the scoreboard.
 
-Getting my name entered was an adventure of its own. After finally managing to become Lieutenant McRetro, I sat staring at a screen for far too long before realising I was supposed to press a button. Off to a flying start, then!
+Entering my name turned into an adventure of its own. After finally managing to become Second Lieutenant McRetro, I spent far too long staring at a screen before realising I was supposed to press a button. Off to a flying start, then!
 
-Once we're in the air, things get rather busy. We've got missiles that lock onto targets, guns to fire and plenty of scenery rushing past. I even managed to blow something up on the ground before somehow finding my way back to the aircraft carrier. That landing looked lovely, although I'm not entirely convinced I did it myself.
+Once I got airborne, things became rather busy. I had missiles that locked onto targets, guns to fire and plenty of scenery rushing past. I even managed to blow something up on the ground before somehow finding my way back to the aircraft carrier. That landing looked lovely, although I'm not entirely convinced I did it myself.
 
-Better still, the game promoted me from second lieutenant to first lieutenant! There's even a pilot code to record, so apparently I can come back to my magnificent flying career later. Another eagle for gameplay, I think. The graphics category is getting a little crowded.
+Better still, the game promoted me to First Lieutenant! There was even a pilot code to record, so apparently I could return to my magnificent flying career later. Another eagle for gameplay. The graphics category was getting a little crowded by this stage.
 
-The music, on the other hand, is terrible. There is some surprisingly decent speech for an NES game of this age, but the soundtrack really isn't doing it for me. I've awarded the music an upside-down eagle, which is apparently worth about minus three points. Perfectly sensible!
+The music, on the other hand, was terrible. There was some surprisingly decent speech for an NES game of this age, but the soundtrack really wasn't doing it for me. I awarded the music an upside-down eagle, which was apparently worth about minus three points.
 
-After all that, *F-15 Strike Eagle* receives a grand total of **4.4-ish eagles**. Not entirely sure how we arrived at that number, but there it is. Another McRetro review, another scoring system that makes absolutely no sense.
+After all that, *F-15 Strike Eagle* received a grand total of **4.4-ish eagles**. I'm still not entirely sure how I arrived at that number, but there it is. Another McRetro review, another scoring system that makes absolutely no sense.
 
 **Related Posts**
 

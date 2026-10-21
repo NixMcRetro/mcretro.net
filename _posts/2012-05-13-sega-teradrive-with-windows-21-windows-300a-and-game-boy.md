@@ -2,7 +2,7 @@
 title: "Sega TeraDrive with Windows 2.1, Windows 3.00a and Game Boy"
 author: "Nix McRetro"
 date: 2012-05-13T00:13:41.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-10-21
 categories: [ibm-pc, nintendo, sega]
 ---
 
@@ -13,6 +13,14 @@ First up, some testing with Windows 2.1. It worked surprisingly well from a sing
 {% include youtube.html id="Tk93s2BfL-I" %}
 
 Next came a proof-of-concept Windows 3.00a install. I stripped it down until I could cram the whole thing onto a floppy and, somehow, that worked too.
+
+Of course, getting Windows to run from a floppy disk wasn't quite enough. I wanted to see if I could load the whole thing into RAM, which would leave both floppy drives available for something more exciting.
+
+{% include youtube.html id="S2Bc_2RNHTc" %}
+
+Loading `HIMEM.SYS` made things considerably more interesting. The machine was now reporting just under 2 MB of available memory with very little else loaded, which was more than the capacity of a high-density floppy disk.
+
+That's rather encouraging! I reckon we can fit Windows in there.
 
 {% include youtube.html id="uNJ6U6cssGY" %}
 

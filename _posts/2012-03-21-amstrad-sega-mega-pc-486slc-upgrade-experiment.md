@@ -2,7 +2,7 @@
 title: "Amstrad Sega Mega PC 486SLC Upgrade Experiment"
 author: "Nix McRetro"
 date: 2012-03-21T02:56:26.000+11:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-10-21
 categories: [ibm-pc, repairs, sega]
 ---
 
@@ -43,6 +43,10 @@ My PC7486SLC conversion should still be treated as an experiment inspired by the
 Video normally passes through the Mega Drive card when the front switch moves between PC and Mega Drive mode. Without the Mega Drive card installed there is no video because nothing is bridging the relevant passthrough pins on the motherboard.
 
 We copied the jumper settings from the PC7486SLC board onto my PC7386SX Mega PC motherboard and got internal video without the Mega Drive card attached. That suggests removing those jumpers and installing the Mega Drive card into the PC7486SLC board may let it work the way I want. Time to experiment.
+
+{% include youtube.html id="mr4QcQhea-8" %}
+
+Here's a little demonstration of those jumper settings on the original 386SX board. The camera doesn't seem particularly interested in focusing on the jumpers, but once everything is configured, switch the machine on and there's your PC video! No Mega Drive card required.
 
 ![](/assets/images/2012/img_0035.jpg)
 

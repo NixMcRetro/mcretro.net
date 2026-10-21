@@ -2,7 +2,7 @@
 title: "Creating a Sony PlayStation Modchip"
 author: "Nix McRetro"
 date: 2016-02-14T23:10:18.000+11:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-10-22
 categories: [hacks, sony, youtube]
 ---
 
@@ -24,6 +24,6 @@ This particular programmed chip eventually went to Dale, who successfully instal
 ### Related posts
 
 - [Sony PlayStation Modchip Overview](/sony-playstation-modchip-overview/)
-- [Mayumi 4 | PIC12F629 | SCPH-7502 | PU-22](/mayumi-4-pic12f629-scph-7502-pu-22/)
-- [Mayumi 4 | PIC12C508A | SCPH-7502 | PU-22](/mayumi-4-pic12c508a-scph-7502-pu-22/)
-- [Mayumi 4 | PIC12C508A | SCPH-5502 | PU-18](/mayumi-4-pic12c508a-scph-5502-pu-18/)
+- [Mayumi 4: PIC12F629, SCPH-7502 (PU-22)](/mayumi-4-pic12f629-scph-7502-pu-22/)
+- [Mayumi 4: PIC12C508A, SCPH-7502 (PU-22)](/mayumi-4-pic12c508a-scph-7502-pu-22/)
+- [Mayumi 4: PIC12C508A, SCPH-5502 (PU-18)](/mayumi-4-pic12c508a-scph-5502-pu-18/)

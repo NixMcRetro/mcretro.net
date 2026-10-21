@@ -1,6 +1,7 @@
 ---
 title: "Minecraft Villagers in Moshpit Madness"
 author: "Nix McRetro"
+date: 2016-01-29
 last_modified_at: 2026-10-22
 categories: [gaming, youtube]
 ---

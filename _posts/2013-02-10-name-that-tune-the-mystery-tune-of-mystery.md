@@ -1,6 +1,7 @@
 ---
 title: "Name That Tune: The Mystery Tune of Mystery"
 author: "Nix McRetro"
+date: 2013-02-10
 last_modified_at: 2026-10-22
 categories: [music, youtube]
 ---

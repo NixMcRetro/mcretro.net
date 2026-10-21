@@ -2,15 +2,23 @@
 title: "Western Technologies Sega Dev Card Software Overview"
 author: "Nix McRetro"
 date: 2013-06-26T17:51:55.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-10-22
 categories: [devkit, programming, sega]
 ---
 
 {% include youtube.html id="ak-G2ouUytk" %}
 
-This gives a peek at the software running behind the Western Technologies Development Card for uploading (they call it downloading) from the PC to the Mega Drive. `SEGALOAD` sends the game image through the PC's parallel port into SRAM on the development cartridge. Beats having to burn the EPROMs with the game code every time you update code!
+Here's a look at the software running behind the Western Technologies Development Card. I've got the retro PC set up with DOS and Windows, although Windows for Workgroups 3.11 seems particularly appropriate for something of this vintage.
 
-It reminded me of a Mega EverDrive. The 2012 Mega EverDrive could load a ROM from SD or transfer one from a PC over USB into cartridge memory. Different hardware, but a similar way to get new code running on the Mega Drive.
+The program itself is called SegaDev, and rather surprisingly I managed to get the hardware communicating without too much trouble. Usually there's an IRQ conflict, a missing driver or something equally wonderful standing between me and a working development tool!
+
+Once connected, the software offers access to the Mega Drive's VRAM, CRAM and VSRAM, along with various VDP registers. There are plenty of interesting options to explore, even if I don't entirely understand what half of them do just yet.
+
+There's also a file transfer utility called SEGALOAD, which sends code from the PC through its parallel connection into SRAM on the development cartridge. The documentation calls this downloading, although from the PC's point of view it feels rather more like uploading. Potato, potato!
+
+A gentleman on ASSEMbler Games kindly supplied the software, which made this little experiment possible. I haven't reached the stage of compiling my own programs yet, but getting the tools connected and seeing the interface working is an excellent start.
+
+It reminded me a little of the Mega EverDrive, which could load game images from an SD card or transfer them from a PC over USB. Different hardware, of course, but a similarly convenient way to get new code running on a Mega Drive without burning another EPROM.
 
 ### Related posts
 

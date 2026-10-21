@@ -1,5 +1,5 @@
 ---
-title: "Introducing the Navir Super Optic Wonder, Italian Made."
+title: "Introducing the Navir Super Optic Wonder, Italian Made"
 author: "Nix McRetro"
 date: 2013-05-03
 last_modified_at: 2026-10-22

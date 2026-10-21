@@ -28,7 +28,7 @@ The TeraDrive is now implemented in MAME, whose current driver documentation rec
 
 {% include youtube.html id="nruzUvZfBGU" %}
 
-Now here's another interesting discovery from my TeraDrive investigations. While trying to work out how to attach a hard drive to the Model 2, I came across a couple of DOS utilities called `CUSTOMIZ.EXE` and `CONFIGUR.EXE`, or something very close to that second name. Good old DOS 8.3 filenames!
+Now here's another interesting discovery from my TeraDrive investigations. While trying to work out how to attach a hard drive to the Model 2, I came across a couple of DOS utilities called `CUSTOMIZ.EXE` and `CONFIGUR.EXE`. Good old DOS 8.3 filenames!
 
 Unlike the F1 setup screen above, `CUSTOMIZ.EXE` deals with how the machine starts up. I can choose whether it tries a floppy disk, the built-in DOS, or a hard drive that I don't actually have yet. There's also the option to bypass the Sega menu and start elsewhere, along with settings for Num Lock and where `CONFIG.SYS` and `AUTOEXEC.BAT` should be loaded from.
 

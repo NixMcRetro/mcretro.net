@@ -2,7 +2,7 @@
 title: "Sony PlayStation Modchip Programming Failure with a PIC12C508A"
 author: "Nix McRetro"
 date: 2013-09-24T23:23:15.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-10-22
 categories: [programming, sony, youtube]
 ---
 
@@ -19,7 +19,7 @@ I promise to upload a video where I do successfully flash the... I think they ar
 ### Related posts
 
 - [Sony PlayStation 1 Modchip Installation Success on SCPH-9002](/sony-playstation-1-modchip-installation-success-on-scph-9002/)
-- [Mayumi 4 | PIC12F629 | SCPH-7502 | PU-22](/mayumi-4-pic12f629-scph-7502-pu-22/)
+- [Mayumi 4: PIC12F629, SCPH-7502 (PU-22)](/mayumi-4-pic12f629-scph-7502-pu-22/)
 
 ### Sources
 

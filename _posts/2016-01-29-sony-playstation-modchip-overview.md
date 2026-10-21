@@ -2,7 +2,7 @@
 title: "Sony PlayStation Modchip Overview"
 author: "Nix McRetro"
 date: 2016-01-29T19:39:47.000+11:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-10-22
 categories: [guides, sony]
 ---
 
@@ -49,7 +49,7 @@ Thanks again to Master991 and Bad_Ad84 for helping me work out what was happenin
 
 ### Related posts
 
-- [Mayumi 4 | PIC12F629 | SCPH-7502 | PU-22](/mayumi-4-pic12f629-scph-7502-pu-22/)
-- [Mayumi 4 | PIC12C508A | SCPH-7502 | PU-22](/mayumi-4-pic12c508a-scph-7502-pu-22/)
-- [Mayumi 4 | PIC12C508A | SCPH-5502 | PU-18](/mayumi-4-pic12c508a-scph-5502-pu-18/)
+- [Mayumi 4: PIC12F629, SCPH-7502 (PU-22)](/mayumi-4-pic12f629-scph-7502-pu-22/)
+- [Mayumi 4: PIC12C508A, SCPH-7502 (PU-22)](/mayumi-4-pic12c508a-scph-7502-pu-22/)
+- [Mayumi 4: PIC12C508A, SCPH-5502 (PU-18)](/mayumi-4-pic12c508a-scph-5502-pu-18/)
 - [Creating a Sony PlayStation Modchip](/creating-a-sony-playstation-modchip/)

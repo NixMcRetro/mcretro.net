@@ -1,7 +1,7 @@
 ---
 title: "Corydora: The Miniature Catfish Feeding Frenzy"
 author: "Nix McRetro"
-date: 2024-08-17
+date: 2017-11-21
 last_modified_at: 2026-10-22
 categories: [fish, youtube]
 ---

@@ -1,14 +1,14 @@
 ---
 title: "A New Direction - Game Reviews"
 author: "Nix McRetro"
-date: 2016-01-20T01:21:47.000+11:00
-last_modified_at: 2026-10-18
+date: 2016-01-15
+last_modified_at: 2026-10-21
 categories: [news, youtube]
 ---
 
-{% include youtube.html id="uV5KD-Gf05k" %}
+![Game Reviews collage](/assets/images/2016/game-reviews-collage.jxl)
 
-It has recently occurred to me that being a full-time student (and unemployed) has really stopped me from having any disposable income like I had previously while employed full time. Ahhh, being a student gives you all the "freedoms" of working without the paycheque at the end of the week.
+It has recently occurred to me that being a full-time student (and unemployed) has really stopped me from having any disposable income like I had previously while employed full time. Ahhh, being a student gives you all the "freedoms" of working without the pay day at the end of the week.
 
 Now, this was quite a problem to have since most of the repairs I do are on old, overpriced hardware - especially when dealing with development gear. I have downsized my console collection significantly over the last year since moving house and have been working on a way to keep the videos coming.
 
@@ -19,3 +19,9 @@ So that sorts out McRetro Gaming. What about Nix McRetro and the RetroJunkie2020
 Reviews! Specifically, game reviews - with a twist of course, as is the spirit of myself, Nix McRetro! Half-baked reviews with the score just being a number I pluck out of the air and a point system that makes no sense at all. If you can make sense of the scoring system, you probably need to be medicated! :P
 
 So stay tuned, I should be able to generate a couple of these a week if we are all lucky enough. I just need to work on streamlining the review process. So far it's looking good and can only get better, right?
+
+**Related Posts**
+
+- [F-15 Strike Eagle (NES) Review](/f-15-strike-eagle-nes-review/)
+- [Batman: Return of the Joker (NES) Review](/batman-return-of-the-joker-nes-review/)
+- [Kirby's Adventure (NES) Review](/kirbys-adventure-nes-review/)

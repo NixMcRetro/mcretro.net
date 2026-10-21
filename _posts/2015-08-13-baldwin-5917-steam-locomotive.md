@@ -1,7 +1,7 @@
 ---
 title: "Baldwin 5917 Steam Locomotive"
 author: "Nix McRetro"
-date: 2016-01-31
+date: 2015-08-13
 last_modified_at: 2026-10-22
 categories: [youtube]
 ---

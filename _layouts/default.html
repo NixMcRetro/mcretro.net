@@ -93,6 +93,16 @@
         toggle.setAttribute('aria-expanded', 'false');
       }
     });
+
+    // Dismiss the mobile menu with the keyboard and return focus to its toggle.
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && nav.getAttribute('data-nav') === 'open') {
+        nav.setAttribute('data-nav', '');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
+    });
   })();
 </script>
 

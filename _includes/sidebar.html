@@ -1,6 +1,7 @@
 <div class="widget search-widget">
   <form action="/search/" method="get" class="inline-search-form">
-    <input type="text" name="q" placeholder="Search..." required>
+    <label class="visually-hidden" for="sidebar-search">Search McRetro.net</label>
+    <input id="sidebar-search" type="text" name="q" placeholder="Search..." required>
     <button type="submit">Go</button>
   </form>
 </div>
@@ -28,6 +29,7 @@
 
 <div class="widget">
   <h4 class="widgettitle">Archives</h4>
+  <label class="visually-hidden" for="archive-dropdown">Browse archives by month</label>
   <select id="archive-dropdown" onchange="if (this.value) window.location.href=this.value">
     <option value="">Select a month…</option>
     {% assign posts_by_month = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m'" %}

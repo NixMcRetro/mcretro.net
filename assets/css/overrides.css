@@ -92,3 +92,16 @@
   outline: 3px solid #0009b5;
   outline-offset: 3px;
 }
+
+/* Prominent link from Goodies to the complete Homepages Directory. */
+.goodies-directory-link {
+  border: 1px solid #333;
+  border-left: 4px solid #0009b5;
+  background: #fffdf2;
+  padding: 0.85rem 1rem;
+  margin: 1.15rem 0;
+}
+.goodies-directory-link a {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}

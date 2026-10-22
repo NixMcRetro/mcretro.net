@@ -2,23 +2,30 @@
 layout: default
 title: The Goodies Page
 ---
-<h2 class="center">Goodies</h2>
 
-Everything is under going through a rehaul. I'm not sure how this will turn out. It will definitely take some time and these links will be dead for a good while.
+## Goodies
 
 <div class="center" markdown="1">
 
-| **The Goodies Page**{: .center} |
-|:---:|
-| ![Your files are copying...](/assets/images/goodies/filecopy.gif){: height="60" width="272" } |
-
-| File Server | [Offline](/files) | ![Offline](/assets/images/goodies/warn.gif) |
-| Photo Gallery | [Offline](/photos) ![56k warning](/assets/images/goodies/warn.gif) |
-| Homepages | [Offline](/homepages) ![New!](/assets/images/goodies/new.gif) |
-| Sitemap | [Offline](/sitemap) | ![Offline](/assets/images/goodies/warn.gif) |
-| Tools | [Offline](/tools) ![New!](/assets/images/goodies/new.gif) |
-
-| **Don't copy that floppy!** |
-|:---:|
+![Your files are copying...](/assets/images/goodies/filecopy.gif){: height="60" width="272"}
 
 </div>
+
+Welcome to the Goodies page! This is where I keep all sorts of bits and pieces that don't quite fit anywhere else. Some are working, some are being restored, and some are still little more than a good idea and a hopeful message.
+
+### Ready to Explore
+
+- **[Pepper the Dog Blog](/homepages/pepper/)**: The original sausage dog homepage, complete with photographs and adventures.
+- **[Music Maker](/homepages/op-1/)**: A browser-based music-making experiment.
+- **[Lunchbeat PCB](/homepages/lunchbeat/)**: A little something for the electronics enthusiasts.
+- **[XML Sitemap](/sitemap.xml)**: An index of pages for search engines, rather than a traditional homepage directory.
+
+### Still Under Construction
+
+- **[File Server](/files/)**: Not ready yet. The promised 10 KB/s downloads remain a dream!
+- **[Photo Gallery](/photos/)**: The gallery is still being restored.
+- **[Homepages Directory](/homepages/)**: The directory itself is unfinished, although some individual homepages are already available.
+
+As for the other tools and experiments, they'll turn up here as they become ready. No need to pretend everything works when it doesn't!
+
+**Don't copy that floppy!**

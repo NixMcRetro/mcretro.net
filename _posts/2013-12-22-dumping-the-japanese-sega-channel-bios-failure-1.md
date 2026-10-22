@@ -2,13 +2,25 @@
 title: "Dumping the Japanese Sega Channel BIOS (Failure 1)"
 author: "Nix McRetro"
 date: 2013-12-22T20:30:06.000+11:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-10-22
 categories: [programming, sega, youtube]
 ---
 
 {% include youtube.html id="pol0XohsHqw" %}
 
-We're attempting to dump the good old BIOS from the older of the two units, but what's this? The dump doesn't seem to pass the checksum check! Uh oh! Sounds like another video or two is needed to solve this mystery!
+We're attempting to dump the good old BIOS from the older of the two Japanese Sega Channel adapters. Unfortunately, getting a readable file and getting a reliable dump aren't necessarily the same thing. As we'll soon discover!
+
+First up, I pulled the older adapter apart to see what was hiding inside. The plastic had a July 1994 marking, and there were some interesting differences compared with the other unit, including a few different chips and a wire running across part of the circuit board.
+
+The backup battery wasn't looking particularly healthy either. I also noticed what appeared to be evidence of previous soldering around the BIOS chip, although I couldn't say for certain whether that was factory work or something somebody had done later.
+
+Out came the desoldering equipment, and after a little encouragement the ROM was free. Fortunately, the pins survived intact! There was some stubborn solder hiding around the legs, but nothing that couldn't be persuaded to let go eventually.
+
+The chip was marked NEC D23C4000SCZ, so I started experimenting with compatible device selections in the GQ-4X programmer. After a few unsuccessful attempts, selecting D27C4000 with the 16-bit adapter gave me something readable.
+
+Using the byte-swap function revealed some recognisable information, including a July 1994 date and BIOS version 2.11J. That was encouraging! The problem was that the dumps weren't producing consistent checksums, so I couldn't yet trust the resulting file as an accurate copy.
+
+So we've learnt a little more about this older adapter and managed to read some interesting data from its BIOS. Unfortunately, the checksum problem remains. Looks like there's another mystery to investigate!
 
 ### Sega Channel Japan series
 

@@ -122,16 +122,17 @@ A collection of projects, old homepages and other little corners of the internet
 
 - **🏡 [McRetro.net](/)**: You're already here! The main website and historical blog.
 - **🐶 [Pepper the Dog Blog](/homepages/pepper/)**: Pepper's original homepage, complete with photographs and adventures from 2016 to 2018.
+- **🦔 [Sonic the Hedgehog](/homepages/sonic/)**: The original Sonic cartoon homepage, complete with character biographies and audio files.
+- **🪐 [Planets and Space](/homepages/space/)**: My old planetary homepage and its original graphics.
+- **🐍 [Frank the Snake](/homepages/frank/)**: A big snake with a big heart, and a photo gallery!
+- **🌳 [Super Nature World](/homepages/nature/)**: A little corner of the internet for nature.
 
 ### Homepages Awaiting Restoration
 
-- **🦔 [Sonic the Hedgehog](/homepages/sonic/)**: A very early homepage dedicated to Sonic and pals.
-- **🪐 [Planets and Space](/homepages/space/)**: My old planetary website.
-- **🐍 [Frank the Snake](/homepages/frank/)**: A big snake with a big heart.
 - **🐟 [Aquarium Homepage](/homepages/fishtankworld/)**: Fish, fish and even more fish!
-- **🌳 [Nature World](/homepages/nature/)**: A little corner of the internet for nature.
+- **🌐 [GeoCities](/homepages/geocities/)**: Some unfinished homepage archaeology.
 
-These pages currently contain placeholders rather than their complete historical content.
+These two sections currently contain placeholders rather than restored historical websites.
 
 ### Other Sites and Projects
 

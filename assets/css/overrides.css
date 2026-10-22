@@ -7,3 +7,66 @@
   line-height: inherit;
   margin: 1em 0 0;
 }
+
+/* About page: limit these styles to the native expandable sections. */
+.about-panel {
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #fffdf2;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+.about-panel > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  background: #f3eac9;
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.about-panel > summary:hover,
+.about-panel > summary:focus-visible {
+  background: #e9ddb1;
+}
+.about-panel > summary:focus-visible {
+  outline: 2px solid #0009b5;
+  outline-offset: -2px;
+}
+.about-panel > summary img {
+  flex: none;
+}
+.about-panel[open] > summary {
+  border-bottom: 1px solid #333;
+}
+.about-panel > :not(summary) {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.about-panel > :last-child {
+  margin-bottom: 1rem;
+}
+.about-panel h3 {
+  font-size: 1.15rem;
+  line-height: 1.35;
+  margin-top: 1.4rem;
+  margin-bottom: 0.55rem;
+}
+.about-panel li {
+  margin-bottom: 0.35rem;
+  overflow-wrap: anywhere;
+}
+.about-panel code {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+  .about-panel > summary {
+    padding: 0.75rem;
+  }
+  .about-panel > :not(summary) {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+}

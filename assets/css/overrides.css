@@ -70,3 +70,25 @@
     margin-right: 0.75rem;
   }
 }
+
+/* Shared controls: hide text visually without removing accessible labels. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Restore a visible keyboard focus indicator without changing the theme. */
+.inline-search-form:focus-within,
+#archive-dropdown:focus-visible,
+.nav-toggle:focus-visible,
+.main-nav a:focus-visible {
+  outline: 3px solid #0009b5;
+  outline-offset: 3px;
+}

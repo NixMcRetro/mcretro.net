@@ -34,16 +34,29 @@ An original 1-bit groovebox running in your web browser, with an electronics pro
 
 An old-school bowling league homepage with scores, averages and a leaderboard. Check out those lanes!
 
-### Historical Homepages Awaiting Restoration
+### Restored Historical Homepages
 
-The original website files for the following four homepages have been recovered, including their original HTML and supporting images. They're not yet restored on McRetro.net, so I'm leaving the links out until the actual pages are ready.
+The original HTML and artwork from these four sites have made it back onto McRetro.net. No modern makeover here; these are the old-style pages as they were, with just the paths fixed where necessary.
 
-- **🦔 Sonic the Hedgehog Homepage (1994 to 1997)**: One of my earliest websites, dedicated to Sonic and pals.
-- **🪐 Space / Planets Webpage (1996 to 1997)**: A little journey around the Solar System.
-- **🐍 Frank the Snake**: A big snake with a big heart and a photo gallery.
-- **🌳 Super Nature World**: A little corner of the internet dedicated to nature.
+**🐍 [Frank the Snake](/homepages/frank/)**
 
-There's more homepage archaeology to do as well, including **Fish Tank World** and **GeoCities**. Those sections still need proper restoration.
+Frank's own homepage, snake facts and an original [photo gallery](/homepages/frank/gallery.html). A big snake with a big heart!
+
+**🪐 [Space / Planets Webpage](/homepages/space/)**
+
+Travel back to 1996 with a page full of planets, animated graphics and some wonderfully brief astronomical descriptions.
+
+**🌳 [Super Nature World](/homepages/nature/)**
+
+An old-fashioned nature homepage featuring a frog, a lizard and a few original placeholder pictures. Apparently not a place for fish or birds!
+
+**🦔 [Sonic the Hedgehog Homepage](/homepages/sonic/)**
+
+One of my earliest websites, dedicated to the Sonic the Hedgehog Saturday morning cartoon. Character biographies, original images, MIDI files and even a downloadable theme song. The guestbook link is a historical placeholder, and modern browsers may block automatic music playback.
+
+### Still Awaiting Restoration
+
+**Fish Tank World** and **GeoCities** still need their proper historical content restored. No point pretending those pages are finished!
 
 ### More McRetro
 

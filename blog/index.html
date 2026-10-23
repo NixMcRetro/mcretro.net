@@ -41,6 +41,7 @@ pagefind: false
         {% if post.categories.size > 0 %}
           <span class="meta-sep">//</span>
           <span class="post-categories">
+            <span class="category-label">Categories:</span>
             {% for cat in post.categories %}
               <a href="/category/{{ cat | slugify }}/">{{ site.data.categories[cat] | default: cat }}</a>{% unless forloop.last %}, {% endunless %}
             {% endfor %}

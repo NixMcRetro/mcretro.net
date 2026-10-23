@@ -322,3 +322,15 @@
     letter-spacing: 0.1em;
   }
 }
+
+/* Tiny displays use a single static tagline, without changing larger-screen animations. */
+@media screen and (max-width: 375px) {
+  .textcycle .phrase {
+    display: none;
+    animation: none;
+  }
+  .textcycle .phrase:nth-child(2) {
+    display: block;
+    opacity: 1;
+  }
+}

@@ -241,3 +241,11 @@
     margin-right: 0.2em;
   }
 }
+
+/* Hide categories on phones and small tablets; desktop categories remain visible. */
+@media screen and (max-width: 750px) {
+  .post-full .post-meta .post-categories,
+  .blog-list .post-meta .post-categories {
+    display: none;
+  }
+}

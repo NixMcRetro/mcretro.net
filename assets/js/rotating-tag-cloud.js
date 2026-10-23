@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let lastTime = null;
   let visible = true;
   let hovering = false;
+  let keyboardFocused = false;
   // The old values were radians per frame at 60 FPS. Convert to radians/second.
   const speedX = 0.003 * 60;
   const speedY = 0.005 * 60;
@@ -81,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function shouldAnimate() {
-    return !reducedMotion.matches && !document.hidden && visible && !hovering;
+    return !reducedMotion.matches && !document.hidden && visible && !hovering && !keyboardFocused;
   }
 
   function animate(now) {
@@ -139,6 +140,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   container.addEventListener('mouseleave', () => {
     hovering = false;
+    syncAnimation();
+  });
+  container.addEventListener('focusin', () => {
+    keyboardFocused = true;
+    syncAnimation();
+  });
+  container.addEventListener('focusout', event => {
+    keyboardFocused = container.contains(event.relatedTarget);
     syncAnimation();
   });
   document.addEventListener('visibilitychange', syncAnimation);

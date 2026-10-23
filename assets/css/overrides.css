@@ -197,3 +197,47 @@
     overflow-wrap: break-word;
   }
 }
+
+/* Article typography, scoped to single posts only. */
+.post-full .post-content > p {
+  margin: 0 0 1.15em;
+}
+
+.post-full .post-content > h2 {
+  font-size: 1.5rem;
+  line-height: 1.35;
+  margin: 1.45em 0 0.55em;
+}
+
+.post-full .post-content > h3 {
+  font-size: 1.25rem;
+  line-height: 1.35;
+  margin: 1.35em 0 0.5em;
+}
+
+.post-full .post-content > h4,
+.post-full .post-content > h5,
+.post-full .post-content > h6 {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin: 1.2em 0 0.45em;
+}
+
+/* Use the same vertical rhythm for photos in figure elements as video embeds. */
+.post-full .post-content > figure {
+  margin: 1.5em 0;
+}
+
+/* The category label is intentionally visible only on mobile. */
+.post-meta .category-label {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+  .post-full .post-meta .category-label,
+  .blog-list .post-meta .category-label {
+    display: inline;
+    font-weight: 700;
+    margin-right: 0.2em;
+  }
+}

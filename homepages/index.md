@@ -19,16 +19,16 @@ At least there's something here now!
 <details class="about-panel" markdown="1" open>
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Ready to Visit</summary>
 
-**🐶 [Pepper the Dog Blog](/homepages/pepper/)**\
+**🐶 [Pepper the Dog Blog](/homepages/pepper/)**<br>
 Hello, I am Pepper the Dog! The original sausage dog homepage, complete with photographs, adventures and entries dating from 2016 to 2018. Woof!
 
-**🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**\
+**🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**<br>
 A browser-based music maker originally created for SuperNick. Make some noise with synthesizers, keyboards, rhythms and songs. Bleep, bloop, bleep!
 
-**🎵 [Lunchbeat](/homepages/lunchbeat/)**\
+**🎵 [Lunchbeat](/homepages/lunchbeat/)**<br>
 An original 1-bit groovebox running in your web browser, with an electronics project behind it. Sometimes the simplest sounds are the most entertaining!
 
-**🎳 [Nix's Cyber Lanes](/homepages/bowling/)**\
+**🎳 [Nix's Cyber Lanes](/homepages/bowling/)**<br>
 An old-school bowling league homepage with scores, averages and a leaderboard. Check out those lanes!
 
 </details>
@@ -38,16 +38,16 @@ An old-school bowling league homepage with scores, averages and a leaderboard. C
 
 The original HTML and artwork from these four sites have made it back onto McRetro.net. No modern makeover here; these are the old-style pages as they were, with just the paths fixed where necessary.
 
-**🐍 [Frank the Snake](/homepages/frank/)**\
+**🐍 [Frank the Snake](/homepages/frank/)**<br>
 Frank's own homepage, snake facts and an original [photo gallery](/homepages/frank/gallery.html). A big snake with a big heart!
 
-**🪐 [Space / Planets Webpage](/homepages/space/)**\
+**🪐 [Space / Planets Webpage](/homepages/space/)**<br>
 Travel back to 1996 with a page full of planets, animated graphics and some wonderfully brief astronomical descriptions.
 
-**🌳 [Super Nature World](/homepages/nature/)**\
+**🌳 [Super Nature World](/homepages/nature/)**<br>
 An old-fashioned nature homepage featuring a frog, a lizard and a few original placeholder pictures. Apparently not a place for fish or birds!
 
-**🦔 [Sonic the Hedgehog Homepage](/homepages/sonic/)**\
+**🦔 [Sonic the Hedgehog Homepage](/homepages/sonic/)**<br>
 One of my earliest websites, dedicated to the Sonic the Hedgehog Saturday morning cartoon. Character biographies, original images, MIDI files and even a downloadable theme song. The guestbook link is a historical placeholder, and modern browsers may block automatic music playback.
 
 </details>

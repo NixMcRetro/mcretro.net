@@ -105,3 +105,69 @@
   text-decoration: underline;
   text-underline-offset: 0.12em;
 }
+
+/* Responsive readability proposal: scoped to articles and the blog roll. */
+@media screen and (max-width: 750px) {
+  .post-full .post-title,
+  .blog-list .post-title {
+    overflow-wrap: anywhere;
+  }
+
+  .post-full .post-meta,
+  .blog-list .post-meta {
+    min-width: 0;
+    white-space: normal;
+  }
+
+  .post-full .post-meta .post-categories,
+  .blog-list .post-meta .post-categories,
+  .post-full .post-meta .post-categories a,
+  .blog-list .post-meta .post-categories a {
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .post-full .post-navigation {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .post-full .nav-previous,
+  .post-full .nav-next {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .post-full .nav-title {
+    overflow-wrap: anywhere;
+  }
+
+  .blog-list + .pagination-wrapper .pagination-bar {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .blog-list + .pagination-wrapper .pagination-numbers {
+    gap: 0.75rem 1rem;
+  }
+
+  .blog-list + .pagination-wrapper .pagination-arrows {
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .post-full .post-title,
+  .blog-list .post-title {
+    font-size: clamp(1.4rem, 6vw, 1.75rem);
+    line-height: 1.3;
+  }
+}

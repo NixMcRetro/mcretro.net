@@ -14,34 +14,32 @@
   margin-bottom: 0.2em;
 }
 
-/* Match the mobile navigation's #018281 teal on the About, Channels
-   and Goodies accordions only. Other panels retain their original theme. */
+/* Muted teal for About, Channels and Goodies, drawn from the mobile
+   navigation's #018281 accent. Other accordions retain their original theme. */
 .about-panel.panel--teal {
-  border-color: #005f5e;
-  border-left: 3px solid #005f5e;
+  border-color: #8fb6ac;
+  border-left: 3px solid #018281;
 }
 .about-panel.panel--teal > summary {
-  background: #018281;
-  color: #fff;
+  background: #e2f0ec;
+  color: #19433e;
 }
 .about-panel.panel--teal > summary:hover {
-  background: #006f6d;
+  background: #cce3dc;
 }
 .about-panel.panel--teal[open] > summary {
-  background: #006361;
-  border-bottom-color: #005f5e;
+  background: #d3e8e1;
+  border-bottom-color: #8fb6ac;
 }
 .about-panel.panel--teal[open] > summary:hover {
-  background: #005a59;
+  background: #bcdcd2;
 }
-/* Distinct high-contrast focus indication on the dark-coloured buttons. */
+/* Retain the site's existing cobalt-blue keyboard focus outline. */
 .about-panel.panel--teal > summary:focus-visible {
-  background: #006f6d;
-  outline: 3px solid #ffdf75;
-  outline-offset: -3px;
+  background: #cce3dc;
 }
 .about-panel.panel--teal[open] > summary:focus-visible {
-  background: #005a59;
+  background: #bcdcd2;
 }
 
 /* About page: limit these styles to the native expandable sections. */

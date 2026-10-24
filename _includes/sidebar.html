@@ -54,8 +54,10 @@
       {% assign categories = site.categories | sort %}
       {% for cat in categories %}
         {% assign name = cat[0] %}
-        {% assign count = cat[1] | size %}
-        <li data-name="{{ site.data.categories[name] | default: name }}" data-count="{{ count }}" data-url="/category/{{ name | slugify }}/"></li>
+        {% unless name == 'youtube' %}
+          {% assign count = cat[1] | size %}
+          <li data-name="{{ site.data.categories[name] | default: name }}" data-count="{{ count }}" data-url="/category/{{ name | slugify }}/"></li>
+        {% endunless %}
       {% endfor %}
     </ul>
   </div>

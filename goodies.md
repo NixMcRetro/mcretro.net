@@ -13,24 +13,55 @@ title: The Goodies Page
 
 Welcome to the Goodies page! This is where I keep all sorts of bits and pieces that don't quite fit anywhere else. Some are working, some are being restored, and some are still little more than a good idea and a hopeful message.
 
-<p class="goodies-directory-link">🗂️ Looking for Pepper, the restored 1990s websites or the other browser projects? <strong><a href="/homepages/">Browse the Homepages Directory</a></strong>!</p>
+The restored homepages and browser projects have found a home here too. Click a section below to have a look around!
 
 <details class="about-panel panel--teal" markdown="1" open>
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Ready to Explore</summary>
+<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Ready to Visit</summary>
 
-- **[Music Maker](/homepages/op-1/)**: A browser-based music-making experiment.
-- **[Lunchbeat PCB](/homepages/lunchbeat/)**: A little something for the electronics enthusiasts.
-- **[XML Sitemap](/sitemap.xml)**: An index of pages for search engines, rather than a traditional homepage directory.
+**🐶 [Pepper the Dog Blog](/homepages/pepper/)**<br>
+Hello, I am Pepper the Dog! The original sausage dog homepage, complete with photographs, adventures and entries dating from 2016 to 2018. Woof!
+
+**🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**<br>
+A browser-based music maker originally created for SuperNick. Make some noise with synthesizers, keyboards, rhythms and songs. Bleep, bloop, bleep!
+
+**🎵 [Lunchbeat](/homepages/lunchbeat/)**<br>
+An original 1-bit groovebox running in your web browser, with an electronics project behind it. Sometimes the simplest sounds are the most entertaining!
+
+**🎳 [Nix's Cyber Lanes](/homepages/bowling/)**<br>
+An old-school bowling league homepage with scores, averages and a leaderboard. Check out those lanes!
+
+</details>
+
+<details class="about-panel panel--teal" markdown="1">
+<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Restored Historical Homepages</summary>
+
+The original HTML and artwork from these four sites have made it back onto McRetro.net. No modern makeover here; these are the old-style pages as they were, with just the paths fixed where necessary.
+
+**🐍 [Frank the Snake](/homepages/frank/)**<br>
+Frank's own homepage, snake facts and an original [photo gallery](/homepages/frank/gallery.html). A big snake with a big heart!
+
+**🪐 [Space / Planets Webpage](/homepages/space/)**<br>
+Travel back to 1996 with a page full of planets, animated graphics and some wonderfully brief astronomical descriptions.
+
+**🌳 [Super Nature World](/homepages/nature/)**<br>
+An old-fashioned nature homepage featuring a frog, a lizard and a few original placeholder pictures. Apparently not a place for fish or birds!
+
+**🦔 [Sonic the Hedgehog Homepage](/homepages/sonic/)**<br>
+One of my earliest websites, dedicated to the Sonic the Hedgehog Saturday morning cartoon. Character biographies, original images, MIDI files and even a downloadable theme song. The guestbook link is a historical placeholder, and modern browsers may block automatic music playback.
 
 </details>
 
 <details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Still Under Construction</summary>
 
+**Fish Tank World** and **GeoCities** still need their proper historical content restored. No point pretending those pages are finished!
+
 - **[File Server](/files/)**: Not ready yet. The promised 10 KB/s downloads remain a dream!
 - **[Photo Gallery](/photos/)**: The gallery is still being restored.
 
 </details>
+
+For search engines, there's also the [XML Sitemap](/sitemap.xml), although it's not much of a homepage!
 
 As for the other tools and experiments, they'll turn up here as they become ready. No need to pretend everything works when it doesn't!
 

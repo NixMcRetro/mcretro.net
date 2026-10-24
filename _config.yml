@@ -46,11 +46,9 @@ exclude:
 
 jekyll-archives:
   enabled:
-    - categories
     - month
   layout: archive
   permalinks:
-    category: '/category/:name/'
     month: '/archive/:year/:month/'   # like /archive/2026/11/
 
 # Defaults – make sure pages use the default layout

@@ -8,23 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
   dataList.querySelectorAll('li').forEach(li => {
     const name = li.dataset.name;
     const count = parseInt(li.dataset.count, 10);
-    const url = li.dataset.url;
-    if (name && count > 0 && url) items.push({ name, count, url });
+    if (name && count > 0) items.push({ name, count });
   });
   if (!items.length) return;
 
   const maxCount = Math.max(...items.map(item => item.count));
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const tags = items.map(item => {
-    const link = document.createElement('a');
-    link.className = 'rotating-tag';
-    link.href = item.url;
-    // Preserve the original weighted sizes, based on each category's real post count.
-    link.style.fontSize = (0.8 + item.count / maxCount) + 'rem';
-    link.dataset.theta = Math.random() * Math.PI * 2;
-    link.dataset.phi = Math.random() * Math.PI * 2;
-    container.appendChild(link);
-    return link;
+    const tag = document.createElement('span');
+    tag.className = 'rotating-tag';
+    // Counts still control relative size but are never displayed.
+    tag.style.fontSize = (0.8 + item.count / maxCount) + 'rem';
+    tag.dataset.theta = Math.random() * Math.PI * 2;
+    tag.dataset.phi = Math.random() * Math.PI * 2;
+    container.appendChild(tag);
+    return tag;
   });
 
   let radiusX = 0;
@@ -53,9 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const centerX = container.offsetWidth / 2;
     const centerY = container.offsetHeight / 2;
 
-    tags.forEach(link => {
-      const theta = Number(link.dataset.theta);
-      const phi = Number(link.dataset.phi);
+    tags.forEach(tag => {
+      const theta = Number(tag.dataset.theta);
+      const phi = Number(tag.dataset.phi);
       let x = Math.sin(phi) * Math.cos(theta);
       let y = Math.cos(phi);
       let z = Math.sin(phi) * Math.sin(theta);
@@ -69,9 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const scale = 400 / (400 + z * radiusX);
       const screenX = x * radiusX * scale + centerX;
       const screenY = -y * radiusY * scale + centerY;
-      link.style.transform = `translate(-50%, -50%) translate(${screenX}px, ${screenY}px)`;
-      link.style.opacity = String(0.6 + 0.4 * ((z + 1) / 2));
-      link.style.zIndex = String(Math.round(scale * 100));
+      tag.style.transform = `translate(-50%, -50%) translate(${screenX}px, ${screenY}px)`;
+      tag.style.opacity = String(0.6 + 0.4 * ((z + 1) / 2));
+      tag.style.zIndex = String(Math.round(scale * 100));
     });
   }
 
@@ -115,16 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const staticMode = reducedMotion.matches;
     stop();
     container.classList.toggle('tag-cloud-static', staticMode);
-    tags.forEach((link, index) => {
-      const item = items[index];
-      link.textContent = staticMode ? item.name : `${item.name} (${item.count})`;
+    tags.forEach((tag, index) => {
+      tag.textContent = items[index].name;
       if (staticMode) {
-        link.setAttribute('aria-label', `${item.name}, ${item.count} posts`);
-        link.style.removeProperty('transform');
-        link.style.removeProperty('opacity');
-        link.style.removeProperty('z-index');
-      } else {
-        link.removeAttribute('aria-label');
+        tag.style.removeProperty('transform');
+        tag.style.removeProperty('opacity');
+        tag.style.removeProperty('z-index');
       }
     });
     if (!staticMode) {

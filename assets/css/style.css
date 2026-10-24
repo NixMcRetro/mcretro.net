@@ -879,55 +879,6 @@ pre code {
   .header-runner-lane { display: none; }
 }
 
-/* Mobile-only Progress Pride stars bursting from the hamburger button.
-   Decoration only: no pointer interference or page-wide flybys. */
-.pride-star-particle {
-  position: fixed;
-  z-index: 9999;
-  display: block;
-  pointer-events: none;
-  border-radius: 0;
-  background: var(--pride-colour);
-  clip-path: polygon(
-    50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
-    50% 71%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
-  );
-  filter: drop-shadow(0 0 1.5px rgba(0,0,0,.65));
-  opacity: 0;
-  will-change: transform, opacity;
-  animation: pride-star-burst 4.5s ease-out forwards;
-}
-@keyframes pride-star-burst {
-  0% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(.65) rotate(0deg);
-  }
-  20% {
-    opacity: 1;
-    transform: translate3d(var(--burst-x), var(--burst-y), 0) scale(1) rotate(0deg);
-  }
-  /* Fall gradually after the outward pop, with a gentle, extended fade. */
-  65% {
-    opacity: .96;
-    transform: translate3d(var(--mid-x), var(--mid-y), 0) scale(.98) rotate(0deg);
-  }
-  85% {
-    opacity: .55;
-    transform: translate3d(var(--late-x), var(--late-y), 0) scale(.92) rotate(0deg);
-  }
-  100% {
-    opacity: 0;
-    transform: translate3d(
-      calc(var(--burst-x) + var(--drift-x)),
-      calc(var(--burst-y) + var(--fall-y)),
-      0
-    ) scale(.85) rotate(var(--turn));
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .pride-star-particle { display: none; animation: none; }
-}
-
 /* ===========================
    RESPONSIVE & MOBILE LAYOUTS
    =========================== */

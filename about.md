@@ -107,41 +107,7 @@ You can find me on [Bluesky](https://bsky.app/profile/nixmcretro.bsky.social) or
 
 </details>
 
-<details class="about-panel panel--teal" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> The McRetro Network Sitemap</summary>
 
-<div class="center" markdown="1">
-
-![Where do you want to go today?](/assets/images/about/search.gif){: width="35" height="35"}
-
-</div>
-
-A collection of projects, old homepages and other little corners of the internet. Some are working, some are historical archives and some are still waiting for me to get around to restoring them.
-
-### Current and Restored
-
-- **🏡 [McRetro.net](/)**: You're already here! The main website and historical blog.
-- **🐶 [Pepper the Dog Blog](/homepages/pepper/)**: Pepper's original homepage, complete with photographs and adventures from 2016 to 2018.
-- **🦔 [Sonic the Hedgehog](/homepages/sonic/)**: The original Sonic cartoon homepage, complete with character biographies and audio files.
-- **🪐 [Planets and Space](/homepages/space/)**: My old planetary homepage and its original graphics.
-- **🐍 [Frank the Snake](/homepages/frank/)**: A big snake with a big heart, and a photo gallery!
-- **🌳 [Super Nature World](/homepages/nature/)**: A little corner of the internet for nature.
-
-### Homepages Awaiting Restoration
-
-- **🐟 [Aquarium Homepage](/homepages/fishtankworld/)**: Fish, fish and even more fish!
-- **🌐 [GeoCities](/homepages/geocities/)**: Some unfinished homepage archaeology.
-
-These two sections currently contain placeholders rather than restored historical websites.
-
-### Other Sites and Projects
-
-- **🦜 [Channel Chirp](https://channelchirp.com)**: A separate website dedicated to parrots.
-- **😎 [RetroJunkie.net](https://retrojunkie.net)**: The earlier home of many McRetro projects and recordings.
-- **💾 [The Files Archive](/files/)**: Under construction. The promised 10 KB/s file server isn't quite ready!
-- **📸 [Photo Gallery](/photos/)**: Also under construction. More photographs than you can shake a floppy disk at, once they're available.
-
-</details>
 
 <details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Super Secret Recipes</summary>

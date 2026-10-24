@@ -18,9 +18,6 @@ The restored homepages and browser projects have found a home here too. Click a 
 <details class="about-panel panel--teal" markdown="1" open>
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Ready to Visit</summary>
 
-**🐶 [Pepper the Dog Blog](/homepages/pepper/)**<br>
-Hello, I am Pepper the Dog! The original sausage dog homepage, complete with photographs, adventures and entries dating from 2016 to 2018. Woof!
-
 **🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**<br>
 A browser-based music maker originally created for SuperNick. Make some noise with synthesizers, keyboards, rhythms and songs. Bleep, bloop, bleep!
 
@@ -35,7 +32,12 @@ An old-school bowling league homepage with scores, averages and a leaderboard. C
 <details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Restored Historical Homepages</summary>
 
-The original HTML and artwork from these four sites have made it back onto McRetro.net. No modern makeover here; these are the old-style pages as they were, with just the paths fixed where necessary.
+The original HTML and artwork from these restored sites have made it back onto McRetro.net. No modern makeover here; these are the old-style pages as they were, with just the paths fixed where necessary.
+
+**🐶 [Pepper the Dog Blog](/homepages/pepper/)**<br>
+Hello, I am Pepper the Dog! The original sausage dog homepage, complete with photographs, adventures and entries dating from 2016 to 2018. Woof!
+
+
 
 **🐍 [Frank the Snake](/homepages/frank/)**<br>
 Frank's own homepage, snake facts and an original [photo gallery](/homepages/frank/gallery.html). A big snake with a big heart!
@@ -60,8 +62,6 @@ One of my earliest websites, dedicated to the Sonic the Hedgehog Saturday mornin
 - **[Photo Gallery](/photos/)**: The gallery is still being restored.
 
 </details>
-
-For search engines, there's also the [XML Sitemap](/sitemap.xml), although it's not much of a homepage!
 
 As for the other tools and experiments, they'll turn up here as they become ready. No need to pretend everything works when it doesn't!
 

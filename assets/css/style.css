@@ -825,57 +825,47 @@ pre code {
   border: 1px solid #000;
   background: #fff;
 }
-/* Small five-pointed stars, retaining the original confetti colours. */
-/* Flying retro hardware with vivid, tapered Progress Pride exhaust.
-   Hardware remains fully opaque and unrotated until it leaves the viewport. */
-.retro-tech-particle {
+/* Small five-pointed stars bursting from the logo, then drifting down.
+   Decoration only: no pointer interference or page-wide flybys. */
+.pride-star-particle {
   position: fixed;
   z-index: 9999;
   display: block;
   pointer-events: none;
-  opacity: 1;
-  overflow: visible;
-  will-change: transform;
-  animation: retro-tech-cross linear both;
+  border-radius: 0;
+  background: var(--pride-colour);
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+    50% 71%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+  );
+  filter: drop-shadow(0 0 1.5px rgba(0,0,0,.65));
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: pride-star-burst 2.3s cubic-bezier(.2,.65,.35,1) forwards;
 }
-.retro-tech-icon {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .55));
-}
-.retro-tech-particle::before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  /* Align the tail's centreline precisely with the icon's centre.
-     Rotating around the left-centre anchor keeps it aligned at any angle. */
-  top: calc(50% - var(--trail-half-width, 7px));
-  width: var(--trail-length, 145px);
-  height: var(--trail-width, 14px);
-  transform-origin: 0 50%;
-  transform: rotate(var(--trail-angle));
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.88), rgba(255,255,255,0) 78%) center / 100% 21% no-repeat,
-    linear-gradient(90deg,
-      #e40303 0%, #ff8c00 14%, #ffed00 29%, #008026 43%,
-      #004dff 57%, #750787 70%, #f5a9b8 80%, #5bcefa 89%,
-      rgba(91,206,250,0) 100%);
-  border-radius: 9px;
-  clip-path: polygon(0 8%, 100% 50%, 0 92%);
-  mask-image: linear-gradient(90deg, black 0%, black 45%, transparent 100%);
-  filter: drop-shadow(0 0 5px rgba(250, 136, 230, .85));
-}
-@keyframes retro-tech-cross {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(var(--move-x), var(--move-y), 0); }
+@keyframes pride-star-burst {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(.65) rotate(0deg);
+  }
+  28% {
+    opacity: 1;
+    transform: translate3d(var(--burst-x), var(--burst-y), 0) scale(1) rotate(0deg);
+  }
+  75% {
+    opacity: .85;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(
+      calc(var(--burst-x) + var(--drift-x)),
+      calc(var(--burst-y) + var(--fall-y)),
+      0
+    ) scale(.85) rotate(var(--turn));
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .retro-tech-particle { display: none; animation: none; }
+  .pride-star-particle { display: none; animation: none; }
 }
 
 /* ===========================

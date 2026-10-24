@@ -1,0 +1,33 @@
+name: Centred retro-tech trails (no deploy)
+
+on:
+  push:
+    branches:
+      - test/retro-tech-centred-trails-2026-10-24
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Validate animation syntax and behaviour
+        run: |
+          node --check assets/js/confetti.js
+          node tests/retro-tech-confetti.mjs
+      - name: Validate unchanged sprite XML
+        run: python3 -c "import xml.etree.ElementTree as E; E.parse('assets/images/effects/retro-tech-particles.svg')"
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll site without deployment
+        run: |
+          bundle exec jekyll build --destination _site
+          test -f _site/assets/images/effects/retro-tech-particles.svg

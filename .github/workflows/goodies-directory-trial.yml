@@ -1,0 +1,54 @@
+name: Goodies directory trial (no deploy)
+
+on:
+  push:
+    branches:
+      - proposal/goodies-directory-hide-youtube-cloud-2026-10-24
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout proposal
+        uses: actions/checkout@v5
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build the Jekyll site (never deploy)
+        run: bundle exec jekyll build --destination _site
+      - name: Verify directory, 404, sitemap and tag cloud
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          site = Path("_site")
+          candidates = [site / "goodies" / "index.html", site / "goodies.html"]
+          goodies = next((p for p in candidates if p.is_file()), None)
+          assert goodies is not None, "Goodies page must still be generated"
+          html = goodies.read_text(encoding="utf-8")
+          assert "Pepper the Dog Blog" in html
+          ready = html.split("Ready to Visit", 1)[1].split("</details>", 1)[0]
+          restored = html.split("Restored Historical Homepages", 1)[1].split("</details>", 1)[0]
+          assert "Pepper the Dog Blog" not in ready, "Pepper must not be in Ready to Visit"
+          assert "Pepper the Dog Blog" in restored, "Pepper must be under Restored Historical Homepages"
+          assert "XML Sitemap" not in html, "Do not show a sitemap link in Goodies"
+          assert not (site / "homepages" / "index.html").exists(), "Former /homepages/ index must not exist"
+          assert (site / "404.html").is_file(), "Custom 404 must remain available"
+          assert (site / "sitemap.xml").is_file(), "Jekyll must continue generating the bot sitemap"
+          sitemap = (site / "sitemap.xml").read_text(encoding="utf-8")
+          assert not re.search(r'<loc>[^<]*/homepages/</loc>', sitemap), "Remove root /homepages/ directory from sitemap"
+          assert (site / "homepages" / "frank" / "index.html").exists(), "Keep Frank the Snake"
+          assert (site / "homepages" / "sonic" / "index.html").exists(), "Keep Sonic homepage"
+          assert (site / "homepages" / "pepper" / "index.html").exists(), "Keep Pepper homepage"
+          assert (site / "category" / "youtube" / "index.html").exists(), "Keep YouTube category archive"
+          tag_data = re.search(r'<ul id="tag-data"[^>]*>(.*?)</ul>', html, re.I | re.S)
+          assert tag_data, "Missing sidebar category cloud source"
+          assert "/category/youtube/" not in tag_data.group(1), "YouTube must be hidden only in the cloud"
+          print("PASS: Goodies sections, Pepper placement, custom 404, generated sitemap, sub-sites, YouTube archive, cloud exclusion")
+          PY

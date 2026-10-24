@@ -850,53 +850,33 @@ pre code {
   border: 1px solid #000;
   background: #fff;
 }
-/* Small five-pointed stars bursting from the logo, then drifting down.
-   Decoration only: no pointer interference or page-wide flybys. */
-.pride-star-particle {
+/* One original, unmodified pixel-art GIF runs beside the homepage logo.
+   Fixed clipping lane avoids overflow; the effect never catches input. */
+.header-runner-lane {
   position: fixed;
-  z-index: 9999;
-  display: block;
+  inset: 0;
+  overflow: hidden;
   pointer-events: none;
-  border-radius: 0;
-  background: var(--pride-colour);
-  clip-path: polygon(
-    50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
-    50% 71%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
-  );
-  filter: drop-shadow(0 0 1.5px rgba(0,0,0,.65));
-  opacity: 0;
-  will-change: transform, opacity;
-  animation: pride-star-burst 4.5s ease-out forwards;
+  z-index: 20;
 }
-@keyframes pride-star-burst {
-  0% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(.65) rotate(0deg);
-  }
-  20% {
-    opacity: 1;
-    transform: translate3d(var(--burst-x), var(--burst-y), 0) scale(1) rotate(0deg);
-  }
-  /* Fall gradually after the outward pop, with a gentle, extended fade. */
-  65% {
-    opacity: .96;
-    transform: translate3d(var(--mid-x), var(--mid-y), 0) scale(.98) rotate(0deg);
-  }
-  85% {
-    opacity: .55;
-    transform: translate3d(var(--late-x), var(--late-y), 0) scale(.92) rotate(0deg);
-  }
-  100% {
-    opacity: 0;
-    transform: translate3d(
-      calc(var(--burst-x) + var(--drift-x)),
-      calc(var(--burst-y) + var(--fall-y)),
-      0
-    ) scale(.85) rotate(var(--turn));
-  }
+.header-runner-sprite {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: auto;
+  height: 48px;
+  max-width: none;
+  pointer-events: none;
+  image-rendering: pixelated;
+  animation: header-runner-cross 6s linear both;
 }
-@media (prefers-reduced-motion: reduce) {
-  .pride-star-particle { display: none; animation: none; }
+@keyframes header-runner-cross {
+  from { transform: translate3d(var(--runner-start-x), var(--runner-y), 0); }
+  to { transform: translate3d(var(--runner-end-x), var(--runner-y), 0); }
+}
+@media screen and (max-width: 750px), (prefers-reduced-motion: reduce) {
+  .header-runner-lane { display: none; }
 }
 
 /* ===========================

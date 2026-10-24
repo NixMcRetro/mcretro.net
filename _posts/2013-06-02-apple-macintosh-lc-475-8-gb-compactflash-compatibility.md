@@ -1,5 +1,5 @@
 ---
-title: "Apple Macintosh LC 475: 8GB CompactFlash Compatibility"
+title: "Apple Macintosh LC 475: 8 GB CompactFlash Compatibility"
 author: "Nix McRetro"
 date: 2013-06-02
 last_modified_at: 2026-10-20
@@ -18,7 +18,7 @@ Eight gigabytes in a Macintosh LC 475! A rather ridiculous amount of storage for
 
 ### Related posts
 
-- [Solid-State SCSI Storage in an LC 475 with a PCD-60B Card Reader](/solid-state-scsi-storage-in-an-lc-475-with-a-pcd-60b-card-reader/)
-- [Apple Macintosh LC 475: 4 GB Hitachi Microdrive Testing](/apple-macintosh-lc-475-4gb-hitachi-microdrive-testing/)
-- [Microdrives: Revenge of the Microdrives](/microdrives-revenge-of-the-microdrives/)
-- [Apple Macintosh LC 475: 256 MB PCMCIA Flash Card Test](/apple-macintosh-lc-475-256mb-pcmcia-flash-card-test/)
+- [Apple Macintosh LC 475: Solid-State SCSI Storage with a PCD-60B Card Reader](/apple-macintosh-lc-475-solid-state-scsi-storage-with-a-pcd-60b-card-reader/)
+- [Apple Macintosh LC 475: 4 GB Hitachi Microdrive Testing](/apple-macintosh-lc-475-4-gb-hitachi-microdrive-testing/)
+- [Apple Macintosh LC 475: Revenge of the Microdrives](/apple-macintosh-lc-475-revenge-of-the-microdrives/)
+- [Apple Macintosh LC 475: 256 MB PCMCIA Flash Card Test](/apple-macintosh-lc-475-256-mb-pcmcia-flash-card-test/)

@@ -1,5 +1,5 @@
 ---
-title: "Apple Macintosh LC 475 System Setup Demo"
+title: "Apple Macintosh LC 475: System Setup Demo"
 author: "Nix McRetro"
 date: 2012-10-05T22:48:22.000+10:00
 last_modified_at: 2026-10-18
@@ -21,4 +21,4 @@ Below are a few photos of the LC 475 up and running, along with the original har
 ### Related posts
 
 - [The Apple Macintosh LC 475](/the-apple-macintosh-lc-475/)
-- [Apple Macintosh LC 475 RAM Utilisation and 32-Bit Addressing](/apple-macintosh-lc-475-ram-utilisation-and-32-bit-addressing/)
+- [Apple Macintosh LC 475: RAM Utilisation and 32-Bit Addressing](/apple-macintosh-lc-475-ram-utilisation-and-32-bit-addressing/)

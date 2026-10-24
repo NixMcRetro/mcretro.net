@@ -1,5 +1,5 @@
 ---
-title: "Apple Macintosh LC 475 Mismatched VRAM Test"
+title: "Apple Macintosh LC 475: Mismatched VRAM Test"
 author: "Nix McRetro"
 date: 2012-11-12T21:09:50.000+11:00
 last_modified_at: 2026-10-18

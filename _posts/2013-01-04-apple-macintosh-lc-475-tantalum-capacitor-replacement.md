@@ -1,5 +1,5 @@
 ---
-title: "Apple Macintosh LC 475 Tantalum Capacitor Replacement"
+title: "Apple Macintosh LC 475: Tantalum Capacitor Replacement"
 author: "Nix McRetro"
 date: 2013-01-04T14:00:49.000+11:00
 last_modified_at: 2026-10-18

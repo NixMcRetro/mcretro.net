@@ -1,5 +1,5 @@
 ---
-title: "Solid-State SCSI Storage in an LC 475 with a PCD-60B Card Reader"
+title: "Apple Macintosh LC 475: Solid-State SCSI Storage with a PCD-60B Card Reader"
 author: "Nix McRetro"
 date: 2012-12-27T12:14:00.000+11:00
 last_modified_at: 2026-10-18

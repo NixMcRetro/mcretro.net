@@ -1,5 +1,5 @@
 ---
-title: "Apple Macintosh LC 475 Online with PDS Ethernet"
+title: "Apple Macintosh LC 475: Online with PDS Ethernet"
 author: "Nix McRetro"
 date: 2013-01-03T13:57:39.000+11:00
 last_modified_at: 2026-10-18

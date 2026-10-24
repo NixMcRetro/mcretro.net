@@ -1,59 +1,57 @@
+/* McRetro star confetti: one homepage welcome and logo-hover bursts.
+   No images or third-party libraries. Respect reduced-motion preferences. */
 document.addEventListener('DOMContentLoaded', () => {
   const logo = document.querySelector('.site-logo');
   if (!logo) return;
 
-  logo.addEventListener('mouseenter', burstConfetti);
+  const colors = ['#E40303', '#FF8C00', '#FFED00', '#008026', '#004DFF', '#750787'];
+  const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const random = (min, max) => min + Math.random() * (max - min);
 
-  function burstConfetti(e) {
-    const rect = logo.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
+  function makeStar(x, y, dx, dy, duration) {
+    const particle = document.createElement('span');
+    particle.classList.add('confetti-particle');
+    particle.setAttribute('aria-hidden', 'true');
 
-    const colors = ['#FFFAE3', '#003d85', '#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3'];
+    const size = random(7, 12);
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
+    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.left = x + 'px';
+    particle.style.top = y + 'px';
+    particle.style.setProperty('--dx', dx + 'px');
+    particle.style.setProperty('--dy', dy + 'px');
+    particle.style.setProperty('--rotation', random(-270, 270) + 'deg');
+    particle.style.animationDuration = duration + 's';
 
-    for (let i = 0; i < 30; i++) {
-      const particle = document.createElement('span');
-      particle.classList.add('confetti-particle');
+    document.body.appendChild(particle);
+    particle.addEventListener('animationend', () => particle.remove(), { once: true });
+    // Also remove particles if their animation was interrupted or disabled.
+    setTimeout(() => particle.remove(), 2500);
+  }
 
-      // Random size between 6px and 12px
-      const size = Math.random() * 6 + 6;
-      particle.style.width = size + 'px';
-      particle.style.height = size + 'px';
-
-      // Random color
-      particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-
-      // Random starting position near the logo center
-      const startX = centerX + (Math.random() - 0.5) * rect.width;
-      const startY = centerY + (Math.random() - 0.5) * rect.height;
-      particle.style.left = startX + 'px';
-      particle.style.top = startY + 'px';
-
-      // Random end offsets – they fly outward in random directions
-      const angle = Math.random() * Math.PI * 2;
-      const distance = Math.random() * 100 + 50; // 50‑150px
-      const dx = Math.cos(angle) * distance;
-      const dy = Math.sin(angle) * distance;
-      particle.style.setProperty('--dx', dx + 'px');
-      particle.style.setProperty('--dy', dy + 'px');
-
-      // Random rotation
-      const rotation = Math.random() * 360;
-      particle.style.setProperty('--rotation', rotation + 'deg');
-
-      // Random duration
-      const duration = Math.random() * 0.6 + 0.6; // 0.6–1.2s
-      particle.style.animationDuration = duration + 's';
-
-      // Append to body
-      document.body.appendChild(particle);
-
-      // Remove after animation ends
-      particle.addEventListener('animationend', () => {
-        particle.remove();
-      });
+  function scatterStars(count) {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    // Spread particles across visible viewport cells, not only near the logo.
+    const columns = Math.max(1, Math.ceil(Math.sqrt(count * width / Math.max(height, 1))));
+    const rows = Math.ceil(count / columns);
+    for (let i = 0; i < count; i++) {
+      const col = i % columns;
+      const row = Math.floor(i / columns);
+      const x = (col + random(0.15, 0.85)) * width / columns;
+      const y = (row + random(0.15, 0.85)) * height / rows;
+      makeStar(x, y, random(-60, 60), random(25, 95), random(1.0, 1.8));
     }
   }
-});
 
-// lumi was here
+  function scatterOnLogoHover() {
+    if (reducedMotion()) return;
+    scatterStars(window.innerWidth < 600 ? 18 : 30);
+  }
+
+  logo.addEventListener('mouseenter', scatterOnLogoHover);
+  if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    if (!reducedMotion()) scatterStars(window.innerWidth < 600 ? 24 : 48);
+  }
+});

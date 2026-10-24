@@ -54,10 +54,12 @@ An old-fashioned nature homepage featuring a frog, a lizard and a few original p
 <details class="about-panel panel--teal" name="mcretro-goodies" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Still Under Construction</summary>
 
-**[Fish Tank World](/homepages/fishtankworld/)** and **[GeoCities](/homepages/geocities/)** still need their proper historical content restored. No point pretending those pages are finished!
-
+- **[Fish Tank World](/homepages/fishtankworld/)**: Still needs its proper historical content restored.
+- **[GeoCities](/homepages/geocities/)**: Still needs its proper historical content restored.
 - **[File Server](/files/)**: Not ready yet. The promised 10 KB/s downloads remain a dream!
 - **[Photo Gallery](/photos/)**: The gallery is still being restored.
+
+No point pretending those pages are finished!
 
 </details>
 

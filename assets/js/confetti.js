@@ -1,8 +1,9 @@
-/* Progress Pride stars: one homepage welcome and logo-triggered bursts.
-   Stars pop outward, then slowly drift and fade down. */
+/* Progress Pride stars: one homepage welcome, Random hover/focus on desktop,
+   and a burst when the mobile navigation menu opens. */
 document.addEventListener('DOMContentLoaded', () => {
-  const logo = document.querySelector('.site-logo');
-  if (!logo) return;
+  const randomLink = document.querySelector('#random-post-link');
+  const menuToggle = document.querySelector('.nav-toggle');
+  if (!randomLink || !menuToggle) return;
 
   // Six rainbow stripes plus the five Progress Pride chevron colours.
   const colours = [
@@ -11,32 +12,35 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   const random = (min, max) => min + Math.random() * (max - min);
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Match the hamburger layout breakpoint in assets/css/style.css.
+  const mobileMenu = () => window.matchMedia('(max-width: 750px)').matches;
 
-  function burstFromLogo() {
+  function burstFromTarget(target) {
     if (reducedMotion()) return;
 
-    // The logo link can stretch across its flex-column header.
-    // Measure the rendered text itself, not the full clickable link box.
-    const textRange = document.createRange();
-    textRange.selectNodeContents(logo);
-    const textRect = textRange.getBoundingClientRect();
-    const rect = textRect.width > 0 && textRect.height > 0
-      ? textRect
-      : logo.getBoundingClientRect();
+    // Desktop: measure the actual Random label, not its surrounding nav item.
+    // Mobile: centre on the whole 44px hamburger button, not its icon strokes.
+    let rect = target.getBoundingClientRect();
+    if (target === randomLink) {
+      const textRange = document.createRange();
+      textRange.selectNodeContents(randomLink);
+      const textRect = textRange.getBoundingClientRect();
+      if (textRect.width > 0 && textRect.height > 0) rect = textRect;
+    }
     const centreX = rect.left + rect.width / 2;
     const centreY = rect.top + rect.height / 2;
-    const mobile = window.innerWidth < 600;
+    const mobile = mobileMenu();
     const count = mobile ? 22 : 33;
-    // Extend the circular burst from the middle of the text to just beyond
-    // both ends of "McRetro.net". This adapts to actual text width on mobile.
+    // Scale to the rendered Random label or hamburger button,
+    // reaching slightly beyond either side of the visible target.
     const burstRadius = Math.max(50, rect.width / 2 + (mobile ? 12 : 20));
     // Cycling by seven (coprime with eleven) gives exactly two of each
     // Progress Pride colour on mobile and three of each on desktop.
     const colourOffset = Math.floor(Math.random() * colours.length);
 
     for (let i = 0; i < count; i++) {
-      // Two stars fly straight sideways to reach beyond either end of the
-      // lettering, while the others scatter in every direction.
+      // Two stars reach beyond either side of the target;
+      // the remaining stars scatter in every direction.
       const leftmost = Math.floor(count / 2);
       const sideways = i === 0 || i === leftmost;
       // Odd counts need an explicit leftward angle: 33 / 2 is not an index.
@@ -79,10 +83,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // One welcome burst on the homepage, plus mouse or keyboard logo triggers.
-  logo.addEventListener('mouseenter', burstFromLogo);
-  logo.addEventListener('focus', burstFromLogo);
+  // Desktop: hovering or tabbing to Random triggers the effect. Clicking Random
+  // still navigates normally using the independent random-post script.
+  randomLink.addEventListener('mouseenter', () => {
+    if (!mobileMenu()) burstFromTarget(randomLink);
+  });
+  randomLink.addEventListener('focus', () => {
+    if (!mobileMenu()) burstFromTarget(randomLink);
+  });
+
+  // Mobile: listen to the navigation's existing expanded state, not click order.
+  // This catches touch and keyboard opening, without bursting on close.
+  const menuObserver = new MutationObserver(() => {
+    if (mobileMenu() && menuToggle.getAttribute('aria-expanded') === 'true') {
+      burstFromTarget(menuToggle);
+    }
+  });
+  menuObserver.observe(menuToggle, { attributes: true, attributeFilter: ['aria-expanded'] });
+
+  // One welcome burst only on the homepage, from the visible nav control.
   if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-    burstFromLogo();
+    burstFromTarget(mobileMenu() ? menuToggle : randomLink);
   }
 });

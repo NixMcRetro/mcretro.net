@@ -8,6 +8,12 @@
   margin: 1em 0 0;
 }
 
+/* Bold paragraph labels before lists (such as Related Posts and Sources)
+   should sit close to the first bullet, not inherit full paragraph spacing. */
+.post-full .post-content > p:has(> strong:only-child):has(+ ul) {
+  margin-bottom: 0.2em;
+}
+
 /* About page: limit these styles to the native expandable sections. */
 .about-panel {
   border: 1px solid #333;

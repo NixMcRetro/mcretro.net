@@ -14,27 +14,34 @@
   margin-bottom: 0.2em;
 }
 
-/* Restrained blue panel headers for About, Channels and Goodies only.
-   The Homepages directory keeps its existing cream panel styling. */
-.about-panel.panel--blue {
-  border-color: #8d9fbd;
-  border-left: 3px solid #0009b5;
+/* Match the mobile navigation's #018281 teal on the About, Channels
+   and Goodies accordions only. Other panels retain their original theme. */
+.about-panel.panel--teal {
+  border-color: #005f5e;
+  border-left: 3px solid #005f5e;
 }
-.about-panel.panel--blue > summary {
-  background: #e5ecfa;
-  color: #17274c;
+.about-panel.panel--teal > summary {
+  background: #018281;
+  color: #fff;
 }
-.about-panel.panel--blue > summary:hover,
-.about-panel.panel--blue > summary:focus-visible {
-  background: #d2dff6;
+.about-panel.panel--teal > summary:hover {
+  background: #006f6d;
 }
-.about-panel.panel--blue[open] > summary {
-  background: #dce6f8;
-  border-bottom-color: #8d9fbd;
+.about-panel.panel--teal[open] > summary {
+  background: #006361;
+  border-bottom-color: #005f5e;
 }
-.about-panel.panel--blue[open] > summary:hover,
-.about-panel.panel--blue[open] > summary:focus-visible {
-  background: #ccdafa;
+.about-panel.panel--teal[open] > summary:hover {
+  background: #005a59;
+}
+/* Distinct high-contrast focus indication on the dark-coloured buttons. */
+.about-panel.panel--teal > summary:focus-visible {
+  background: #006f6d;
+  outline: 3px solid #ffdf75;
+  outline-offset: -3px;
+}
+.about-panel.panel--teal[open] > summary:focus-visible {
+  background: #005a59;
 }
 
 /* About page: limit these styles to the native expandable sections. */

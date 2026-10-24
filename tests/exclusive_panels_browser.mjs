@@ -50,6 +50,8 @@ for (const [browserName, browserType] of Object.entries(browsers)) {
             await assertOpen([1],'click second should close first');
             await elements.nth(2).locator('summary').click();
             await assertOpen([2],'click third should close second');
+            // Allow the optional scroll-preservation rAF to complete.
+            await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
             const thirdVisible = await elements.nth(2).locator('summary').evaluate(el=>{
               const r=el.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight;
             });

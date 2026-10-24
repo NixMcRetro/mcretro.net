@@ -120,3 +120,5 @@ A few old favourites from the kitchen. Some of the original recipes still need t
 - [Soft Pretzels](https://sallysbakingaddiction.com/easy-homemade-soft-pretzels/)
 
 </details>
+
+{% include exclusive-panel-visibility.html %}

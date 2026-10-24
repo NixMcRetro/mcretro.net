@@ -64,3 +64,5 @@ An old-fashioned nature homepage featuring a frog, a lizard and a few original p
 As for the other tools and experiments, they'll turn up here as they become ready. No need to pretend everything works when it doesn't!
 
 **Don't copy that floppy!**
+
+{% include exclusive-panel-visibility.html %}

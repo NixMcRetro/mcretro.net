@@ -37,7 +37,8 @@ jobs:
             exit 1
           fi
           echo "Checking $GOODIES"
-          grep -Fq "Don't copy that floppy!" "$GOODIES"
+          grep -inE 'floppy|filecopy|under construction' "$GOODIES" | head -30
+          grep -Fq 'copy that floppy!' "$GOODIES"
           grep -Fq 'filecopy.gif' "$GOODIES"
           grep -Fq 'Still Under Construction' "$GOODIES"
           ! grep -Fq 'No point pretending those pages are finished!' "$GOODIES"

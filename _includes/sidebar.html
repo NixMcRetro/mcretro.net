@@ -56,7 +56,7 @@
         {% assign name = cat[0] %}
         {% unless name == 'youtube' %}
           {% assign count = cat[1] | size %}
-          <li data-name="{{ site.data.categories[name] | default: name }}" data-count="{{ count }}" data-url="/category/{{ name | slugify }}/"></li>
+          <li data-name="{{ site.data.categories[name] | default: name }}" data-count="{{ count }}"></li>
         {% endunless %}
       {% endfor %}
     </ul>

@@ -850,7 +850,36 @@ pre code {
   border: 1px solid #000;
   background: #fff;
 }
-/* Small five-pointed stars bursting from the logo, then drifting down.
+/* One original, unmodified pixel-art GIF runs beside the homepage logo.
+   Fixed clipping lane avoids overflow; the effect never catches input. */
+.header-runner-lane {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 20;
+}
+.header-runner-sprite {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: auto;
+  height: 48px;
+  max-width: none;
+  pointer-events: none;
+  image-rendering: pixelated;
+  animation: header-runner-cross 6s linear both;
+}
+@keyframes header-runner-cross {
+  from { transform: translate3d(var(--runner-start-x), var(--runner-y), 0); }
+  to { transform: translate3d(var(--runner-end-x), var(--runner-y), 0); }
+}
+@media screen and (max-width: 750px), (prefers-reduced-motion: reduce) {
+  .header-runner-lane { display: none; }
+}
+
+/* Mobile-only Progress Pride stars bursting from the hamburger button.
    Decoration only: no pointer interference or page-wide flybys. */
 .pride-star-particle {
   position: fixed;

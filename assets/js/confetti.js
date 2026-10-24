@@ -1,10 +1,10 @@
-/* McRetro star confetti: one homepage welcome and logo-hover bursts.
+/* McRetro Progress Pride star confetti: one homepage welcome and logo-hover bursts.
    No images or third-party libraries. Respect reduced-motion preferences. */
 document.addEventListener('DOMContentLoaded', () => {
   const logo = document.querySelector('.site-logo');
   if (!logo) return;
 
-  const colors = ['#E40303', '#FF8C00', '#FFED00', '#008026', '#004DFF', '#750787'];
+  const colors = ['#E40303', '#FF8C00', '#FFED00', '#008026', '#004DFF', '#750787', '#000000', '#784F17', '#FFFFFF', '#F5A9B8', '#5BCEFA'];
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const random = (min, max) => min + Math.random() * (max - min);
 
@@ -13,15 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
     particle.classList.add('confetti-particle');
     particle.setAttribute('aria-hidden', 'true');
 
-    const size = random(7, 12);
+    // A few extra-large stars glitter like little disco balls.
+    const glitter = Math.random() < 0.09;
+    const size = glitter ? random(28, 42) : random(12, 24) + (Math.random() < 0.16 ? random(4, 8) : 0);
+    if (glitter) particle.classList.add('confetti-particle--glitter');
     particle.style.width = size + 'px';
     particle.style.height = size + 'px';
-    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.setProperty('--star-color', colors[Math.floor(Math.random() * colors.length)]);
     particle.style.left = x + 'px';
     particle.style.top = y + 'px';
     particle.style.setProperty('--dx', dx + 'px');
     particle.style.setProperty('--dy', dy + 'px');
     particle.style.setProperty('--rotation', random(-270, 270) + 'deg');
+    particle.style.setProperty('--duration', duration + 's');
+    particle.style.setProperty('--trail-length', random(32, window.innerWidth < 600 ? 54 : 78) + 'px');
+    // Trail points behind the star, opposite the direction of travel.
+    particle.style.setProperty('--trail-angle', (Math.atan2(dy, dx) * 180 / Math.PI + 180) + 'deg');
     particle.style.animationDuration = duration + 's';
 
     document.body.appendChild(particle);
@@ -47,11 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function scatterOnLogoHover() {
     if (reducedMotion()) return;
-    scatterStars(window.innerWidth < 600 ? 18 : 30);
+    scatterStars(window.innerWidth < 600 ? 24 : 42);
   }
 
   logo.addEventListener('mouseenter', scatterOnLogoHover);
   if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-    if (!reducedMotion()) scatterStars(window.innerWidth < 600 ? 24 : 48);
+    if (!reducedMotion()) scatterStars(window.innerWidth < 600 ? 32 : 64);
   }
 });

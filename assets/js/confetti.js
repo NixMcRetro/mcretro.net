@@ -15,7 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function burstFromLogo() {
     if (reducedMotion()) return;
 
-    const rect = logo.getBoundingClientRect();
+    // The logo link can stretch across its flex-column header.
+    // Measure the rendered text itself, not the full clickable link box.
+    const textRange = document.createRange();
+    textRange.selectNodeContents(logo);
+    const textRect = textRange.getBoundingClientRect();
+    const rect = textRect.width > 0 && textRect.height > 0
+      ? textRect
+      : logo.getBoundingClientRect();
     const centreX = rect.left + rect.width / 2;
     const centreY = rect.top + rect.height / 2;
     const mobile = window.innerWidth < 600;

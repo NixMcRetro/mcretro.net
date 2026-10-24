@@ -15,7 +15,7 @@ Welcome to the Goodies page! This is where I keep all sorts of bits and pieces t
 
 <p class="goodies-directory-link">🗂️ Looking for Pepper, the restored 1990s websites or the other browser projects? <strong><a href="/homepages/">Browse the Homepages Directory</a></strong>!</p>
 
-<details class="about-panel" markdown="1" open>
+<details class="about-panel panel--teal" markdown="1" open>
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Ready to Explore</summary>
 
 - **[Music Maker](/homepages/op-1/)**: A browser-based music-making experiment.
@@ -24,7 +24,7 @@ Welcome to the Goodies page! This is where I keep all sorts of bits and pieces t
 
 </details>
 
-<details class="about-panel" markdown="1">
+<details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Still Under Construction</summary>
 
 - **[File Server](/files/)**: Not ready yet. The promised 10 KB/s downloads remain a dream!

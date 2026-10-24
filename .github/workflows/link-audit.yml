@@ -1,0 +1,102 @@
+name: McRetro Link Audit
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Internal links and local assets
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Install Jekyll dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      - name: Build site with Jekyll
+        run: bundle exec jekyll build --destination _site
+
+      # Match the currently deployed build; Node/Pagefind upgrades are separate.
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 18
+
+      - name: Install Pagefind
+        run: npm install -g pagefind
+
+      - name: Generate Pagefind assets
+        run: pagefind --site _site --output-subdir pagefind
+
+      - name: Record build inventory
+        shell: bash
+        run: |
+          mkdir -p link-audit
+          find _site -type f \( -iname '*.html' -o -iname '*.htm' \) \
+            | LC_ALL=C sort > link-audit/scanned-pages.txt
+          {
+            echo "Repository: $GITHUB_REPOSITORY"
+            echo "Commit: $GITHUB_SHA"
+            echo "Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            echo "UTC: $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+            echo "Built HTML/HTM files: $(wc -l < link-audit/scanned-pages.txt)"
+            echo "All built files: $(find _site -type f | wc -l)"
+            echo "Mode: offline; no external HTTP checks"
+            echo "Note: Lychee's results are candidates for human review, not automatic edits."
+          } > link-audit/build-summary.txt
+
+      - name: Run Lychee (report only)
+        id: lychee
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          lycheeVersion: v0.24.2
+          fail: false
+          failIfEmpty: true
+          format: markdown
+          checkbox: false
+          jobSummary: true
+          output: link-audit/lychee-report.md
+          args: >-
+            --offline
+            --no-ignore
+            --root-dir "${{ github.workspace }}/_site"
+            --index-files index.html,index.htm
+            --fallback-extensions html,htm
+            --remap '^https?://(www\.)?mcretro\.net([/?#]|$) file://${{ github.workspace }}/_site$2'
+            --no-progress
+            './_site/**/*.html'
+            './_site/**/*.htm'
+            './_site/**/*.css'
+
+      - name: Record checker status
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p link-audit
+          echo "Lychee exit code: ${{ steps.lychee.outputs.exit_code }}" \
+            > link-audit/checker-status.txt
+          echo "A nonzero Lychee code means findings may exist; it does not block deployment." \
+            >> link-audit/checker-status.txt
+
+      - name: Upload audit reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mcretro-link-audit-${{ github.run_number }}
+          path: link-audit/
+          if-no-files-found: warn
+          retention-days: 30

@@ -48,17 +48,22 @@
   </select>
 </div>
 
-<div class="widget">
-  <div id="tag-cloud-container" style="position:relative; width:100%; height:180px; overflow:hidden;">
-    <ul id="tag-data" style="display:none;">
-      {% assign categories = site.categories | sort %}
-      {% for cat in categories %}
-        {% assign name = cat[0] %}
-        {% unless name == 'youtube' %}
-          {% assign count = cat[1] | size %}
-          <li data-name="{{ site.data.categories[name] | default: name }}" data-count="{{ count }}"></li>
-        {% endunless %}
-      {% endfor %}
-    </ul>
+<div class="widget mcretro-webring" data-mcretro-webring>
+  <h4 class="widgettitle">McRetro Webring</h4>
+  <div class="mcretro-webring-window">
+    <div aria-hidden="true">✦ 💾 ✦</div>
+    <p class="mcretro-webring-intro">The old Internet lives!</p>
+    <p class="mcretro-webring-name" data-webring-current aria-live="polite">Sonic the Hedgehog Homepage</p>
+    <div class="mcretro-webring-nav" role="group" aria-label="Choose a restored homepage">
+      <button type="button" data-webring-move="prev">◀ Prev</button>
+      <button type="button" data-webring-move="random">? Random</button>
+      <button type="button" data-webring-move="next">Next ▶</button>
+    </div>
+    <p class="mcretro-webring-path" data-webring-url>/homepages/sonic/</p>
+    <a class="mcretro-webring-visit" href="/homepages/modem/?site=sonic" data-webring-visit>Visit Actual Homepage →</a>
   </div>
 </div>
+
+<dialog id="mcretro-modem-dialog" class="mcretro-modem-dialog" aria-label="McRetro dial-up connection" data-modem-root>
+  {% include modem-connection.html %}
+</dialog>

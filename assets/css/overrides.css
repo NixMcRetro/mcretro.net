@@ -284,33 +284,6 @@
   }
 }
 
-/* Reduced-motion alternative to the rotating sidebar cloud: weighted, readable links. */
-@media (prefers-reduced-motion: reduce) {
-  #tag-cloud-container.tag-cloud-static {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    gap: 0.25rem 0.55rem;
-    min-height: 180px;
-    height: auto !important;
-    overflow: visible !important;
-    padding: 0.55rem 0.15rem;
-  }
-  #tag-cloud-container.tag-cloud-static .rotating-tag {
-    display: inline-block;
-    position: static;
-    white-space: normal;
-    line-height: 1.3;
-    text-align: center;
-    text-shadow: none;
-    transform: none !important;
-    opacity: 1 !important;
-    z-index: auto !important;
-  }
-}
-
 /* Make a Pagefind title link cover its result card, retaining real link behaviour. */
 #search .pagefind-ui__result {
   position: relative;
@@ -367,4 +340,158 @@
     display: block;
     opacity: 1;
   }
+}
+
+/* McRetro Webring: local, compact, keyboard-accessible sidebar navigation. */
+.mcretro-webring {
+  margin-top: 0.15rem;
+}
+.mcretro-webring-window {
+  border: 2px dashed #3b6585;
+  background: #fffaf0;
+  padding: 0.7rem 0.55rem;
+  text-align: center;
+}
+.mcretro-webring-name {
+  font: 700 0.96rem/1.35 Montserrat, "Helvetica Neue", sans-serif;
+  color: #003d85;
+  min-height: 2.65em;
+  margin: 0.45rem 0;
+}
+.mcretro-webring-intro,
+.mcretro-webring-path {
+  font: 0.76rem/1.4 Montserrat, "Helvetica Neue", sans-serif;
+  margin: 0.25rem auto;
+}
+.mcretro-webring-path {
+  overflow-wrap: anywhere;
+  color: #544b3c;
+}
+.mcretro-webring-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  justify-content: center;
+  margin: 0.55rem 0;
+}
+.mcretro-webring-nav button {
+  border: 1px solid #7b91aa;
+  background: #eaf0f6;
+  color: #003d85;
+  font: 700 0.73rem/1.25 Montserrat, "Helvetica Neue", sans-serif;
+  padding: 0.48rem 0.35rem;
+  min-height: 36px;
+  margin: 0;
+  cursor: pointer;
+}
+.mcretro-webring-nav button:hover,
+.mcretro-webring-nav button:focus-visible {
+  background: #d4e1ef;
+}
+.mcretro-webring-visit {
+  display: block;
+  border: 1px outset #a3a3a3;
+  padding: 0.55rem 0.3rem;
+  margin-top: 0.7rem;
+  background: #e5e5e5;
+  color: #003d85;
+  font: 700 0.81rem/1.3 Montserrat, "Helvetica Neue", sans-serif;
+  text-decoration: none;
+}
+.mcretro-webring-visit:hover { background: #d4e1ef; text-decoration: underline; }
+.mcretro-webring-nav button:focus-visible,
+.mcretro-webring-visit:focus-visible,
+.mcretro-modem-controls button:focus-visible,
+.mcretro-modem-controls a:focus-visible {
+  outline: 2px solid #003d85;
+  outline-offset: 2px;
+}
+
+/* Same connection card on the standalone page and in the modal. */
+.mcretro-modem-dialog {
+  width: min(94vw, 470px);
+  max-height: min(90vh, 750px);
+  padding: 0;
+  border: 3px outset #dddddd;
+  background: #c7c7c7;
+  color: #111111;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.mcretro-modem-dialog::backdrop { background: rgba(0, 0, 0, 0.7); }
+.mcretro-modem-page { max-width: 570px; margin: 0 auto; }
+.mcretro-modem-page > h1 { font-size: 1.6rem; }
+.mcretro-modem-page > p { margin-bottom: 1.2rem; }
+.mcretro-modem-card {
+  border: 3px outset #eeeeee;
+  background: #c7c7c7;
+  color: #111111;
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+}
+.mcretro-modem-titlebar {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: #000080;
+  color: white;
+  padding: 0.5rem 0.65rem;
+  font: 700 0.83rem/1.3 Montserrat, "Helvetica Neue", sans-serif;
+}
+.mcretro-modem-body { padding: 0.85rem; }
+.mcretro-modem-caption { margin: 0 0 0.8rem; font-size: 0.87rem; font-weight: 700; }
+.mcretro-modem-photo {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  max-height: 200px;
+  margin: 0 auto 0.8rem;
+  object-fit: contain;
+  image-rendering: auto;
+}
+.mcretro-modem-destination { font-size: 0.79rem; line-height: 1.5; overflow-wrap: anywhere; }
+.mcretro-modem-status {
+  background: #fff;
+  color: #171717;
+  border: 2px inset #ddd;
+  padding: 0.75rem;
+  min-height: 5.2rem;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: 0.8rem/1.45 "Courier New", Courier, monospace;
+}
+.mcretro-modem-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+}
+.mcretro-modem-controls button,
+.mcretro-modem-controls a {
+  border: 2px outset #eeeeee;
+  background: #e5e5e5;
+  color: #111111;
+  border-radius: 0;
+  padding: 0.45rem 0.55rem;
+  min-height: 38px;
+  font: 700 0.75rem/1.2 Montserrat, "Helvetica Neue", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.mcretro-modem-controls button:disabled { opacity: 0.6; cursor: default; }
+.mcretro-modem-controls button:not(:disabled):hover,
+.mcretro-modem-controls a:hover { background: #d4e1ef; }
+.mcretro-modem-note {
+  font: 0.74rem/1.45 Montserrat, "Helvetica Neue", sans-serif;
+  margin: 0.75rem 0 0;
+  color: #3e3e3e;
+}
+@media (max-width: 360px) {
+  .mcretro-modem-body { padding: 0.6rem; }
+  .mcretro-modem-controls { justify-content: center; }
+  .mcretro-webring-nav button { font-size: 0.69rem; }
 }

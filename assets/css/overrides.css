@@ -14,6 +14,29 @@
   margin-bottom: 0.2em;
 }
 
+/* Restrained blue panel headers for About, Channels and Goodies only.
+   The Homepages directory keeps its existing cream panel styling. */
+.about-panel.panel--blue {
+  border-color: #8d9fbd;
+  border-left: 3px solid #0009b5;
+}
+.about-panel.panel--blue > summary {
+  background: #e5ecfa;
+  color: #17274c;
+}
+.about-panel.panel--blue > summary:hover,
+.about-panel.panel--blue > summary:focus-visible {
+  background: #d2dff6;
+}
+.about-panel.panel--blue[open] > summary {
+  background: #dce6f8;
+  border-bottom-color: #8d9fbd;
+}
+.about-panel.panel--blue[open] > summary:hover,
+.about-panel.panel--blue[open] > summary:focus-visible {
+  background: #ccdafa;
+}
+
 /* About page: limit these styles to the native expandable sections. */
 .about-panel {
   border: 1px solid #333;

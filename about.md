@@ -15,7 +15,7 @@ Ahhh yes, the About page. A staple of every gloriously overengineered homepage. 
 
 Click a section below to explore the wreckage!
 
-<details class="about-panel" markdown="1">
+<details class="about-panel panel--blue" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> My Internet History</summary>
 
 <div class="center" markdown="1">
@@ -73,7 +73,7 @@ The place you're visiting right now. We've got a blog, historical videos, repair
 
 </details>
 
-<details class="about-panel" markdown="1">
+<details class="about-panel panel--blue" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> About McRetro</summary>
 
 <div class="center" markdown="1">
@@ -88,7 +88,7 @@ Recently I realised that my gender identity aligns better with that of a woman. 
 
 </details>
 
-<details class="about-panel" markdown="1">
+<details class="about-panel panel--blue" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Make Contact</summary>
 
 <div class="center" markdown="1">
@@ -107,7 +107,7 @@ You can find me on [Bluesky](https://bsky.app/profile/nixmcretro.bsky.social) or
 
 </details>
 
-<details class="about-panel" markdown="1">
+<details class="about-panel panel--blue" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> The McRetro Network Sitemap</summary>
 
 <div class="center" markdown="1">
@@ -143,7 +143,7 @@ These two sections currently contain placeholders rather than restored historica
 
 </details>
 
-<details class="about-panel" markdown="1">
+<details class="about-panel panel--blue" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Super Secret Recipes</summary>
 
 A few old favourites from the kitchen. Some of the original recipes still need to be added to the website.

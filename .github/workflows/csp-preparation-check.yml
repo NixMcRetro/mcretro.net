@@ -4,12 +4,16 @@ on:
   push:
     branches:
       - security/csp-preparation-2026-10-24
+      - security/random-post-no-inline-2026-10-24
   pull_request:
     paths:
       - '_layouts/default.html'
       - 'search/index.html'
       - 'assets/js/mobile-navigation.js'
       - 'assets/js/search-page.js'
+      - 'assets/js/random-post.js'
+      - 'assets/data/random-post-urls.json'
+      - '.github/tests/random-post.mjs'
       - '.github/tests/csp-preparation.mjs'
       - '.github/workflows/csp-preparation-check.yml'
   workflow_dispatch:
@@ -30,8 +34,9 @@ jobs:
         run: |
           node --check assets/js/mobile-navigation.js
           node --check assets/js/search-page.js
-      - name: Run navigation and search regression tests
-        run: node --test .github/tests/csp-preparation.mjs
+          node --check assets/js/random-post.js
+      - name: Run navigation, search and random-post regression tests
+        run: node --test .github/tests/csp-preparation.mjs .github/tests/random-post.mjs
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
@@ -46,7 +51,15 @@ jobs:
         run: |
           test -s _site/assets/js/mobile-navigation.js
           test -s _site/assets/js/search-page.js
+          test -s _site/assets/js/random-post.js
+          test -s _site/assets/data/random-post-urls.json
+          node -e 'const fs=require("node:fs"); const urls=JSON.parse(fs.readFileSync("_site/assets/data/random-post-urls.json", "utf8")); if (!Array.isArray(urls) || !urls.length || !urls.every(url => typeof url === "string" && url.startsWith("/") && !url.startsWith("//"))) process.exit(1)'
           test -s _site/search/index.html
           test -s _site/pagefind/pagefind-ui.js
           grep -Fq '/assets/js/search-page.js' _site/search/index.html
           grep -Fq '/assets/js/mobile-navigation.js' _site/index.html
+          grep -Fq '/assets/js/random-post.js' _site/index.html
+          if grep -qE '<script[^>]*>[[:space:]]*[^<[:space:]]' _site/index.html; then
+            echo "Found inline script in homepage" >&2
+            exit 1
+          fi

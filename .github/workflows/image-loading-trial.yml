@@ -48,7 +48,7 @@ jobs:
           ref: f71a1b053bc56e34c5f8be2c40784ba67195e8d0
           path: baseline
       - name: Build unmodified baseline
-        run: cd baseline && bundle exec jekyll build --destination _site
+        run: bundle exec jekyll build --source baseline --destination baseline/_site
       - name: Setup Node.js for browser pilot
         uses: actions/setup-node@v6
         with:

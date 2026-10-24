@@ -10,11 +10,21 @@ categories: [repairs, sega, youtube]
 
 My Sega Master System sits on the shelf unrepaired, but the controller? We can fix that! Button 2 was behaving very badly, so we whipped out some metho and gave it a good scrub down.
 
-I was thinking about those shiny metal contacts versus carbon pads, and all the corrosion and GUNK that can get in the way of a working button! I even wondered if a pencil eraser might give them the perfect finish, just like on cartridge pins. That last thought was not good general cleaning advice: inspect the contact materials, clean conductive rubber or carbon pads gently rather than scrubbing them like metal cartridge contacts, and let everything dry before reassembly.
+Opening the controller revealed a fair bit of black gunk around the contacts. No idea what the previous owner had been doing with it. Perhaps somebody spilt an entire Canon Bubble Jet ink cartridge inside? Whatever it was, it certainly wasn't helping Button 2 respond properly.
 
-Thanks go out to [patrikw25](https://www.youtube.com/user/patrikw25/) for pointing out the switch between ENG/JPN with Wonder Boy a few weeks (or even months) back now!
+These old controllers are wonderfully simple inside. There isn't even a controller chip like you'd find in a Mega Drive pad, just the contacts, wiring and conductive pads. I gave the board a clean with methylated spirits and some cotton tips, then had a look at the rubber button pads.
 
-### Sources
+You do have to be a bit more careful with those conductive pads. Cleaning them too aggressively can damage the material that makes the electrical connection in the first place. I even wondered about using a pencil eraser, as people sometimes do with cartridge contacts. Looking back, that's not something I'd recommend for the rubber pads!
+
+Once the contacts were looking considerably better, I cleaned the remaining dirt from the case and put everything back together. While I've got the console sitting around unrepaired, I can still use the controller with my Mega Drive and Master System Converter. Convenient!
+
+For the test I fired up Wonder Boy on the Mega Drive 2, complete with my 50/60 Hz and English/Japanese switches. Thanks go out to [patrikw25](https://www.youtube.com/user/patrikw25/) for pointing out the ENG/JPN behaviour in Wonder Boy a few weeks, or even months, back now!
+
+The controller was behaving beautifully again. I also got thoroughly distracted changing the region and refresh-rate settings, discovering wasps in the Japanese version and generally being terrible at Wonder Boy. Apparently having a working controller doesn't automatically make me any better at the game!
+
+A nice simple repair for a change, and Button 2 is back in action. Now I just need to find the time to give the Master System itself some attention.
+
+**Sources**
 
 - [RetroRGB - Controller Repair](https://www.retrorgb.com/controllerrepair.html)
 - [Chemtronics - CircuitWorks Rubber Keypad Repair Kit](https://www.chemtronics.com/circuitworks-rubber-keypad-repair-kit)

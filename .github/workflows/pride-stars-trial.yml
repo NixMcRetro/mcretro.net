@@ -1,0 +1,29 @@
+name: Pride stars and teal-border trial (no deploy)
+
+on:
+  push:
+    branches:
+      - test/larger-pride-stars-teal-panel-border-2026-10-24
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Validate Pride star syntax, colours and behaviour
+        run: |
+          node --check assets/js/confetti.js
+          node tests/star-confetti.mjs
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll without deploying
+        run: bundle exec jekyll build --destination _site

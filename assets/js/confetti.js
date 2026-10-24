@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const logo = document.querySelector('.site-logo');
   if (!logo) return;
 
-  const colors = ['#E40303', '#FF8C00', '#FFED00', '#008026', '#004DFF', '#750787'];
+  const colors = ['#E40303', '#FF8C00', '#FFED00', '#008026', '#004DFF', '#750787', '#FF4FA3', '#5BCEFA'];
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const random = (min, max) => min + Math.random() * (max - min);
 
@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     particle.classList.add('confetti-particle');
     particle.setAttribute('aria-hidden', 'true');
 
-    const size = random(7, 12);
+    // Larger stars, with a few oversized showstoppers. 
+    const size = random(12, 24) + (Math.random() < 0.16 ? random(4, 8) : 0);
     particle.style.width = size + 'px';
     particle.style.height = size + 'px';
     particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
@@ -47,11 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function scatterOnLogoHover() {
     if (reducedMotion()) return;
-    scatterStars(window.innerWidth < 600 ? 18 : 30);
+    scatterStars(window.innerWidth < 600 ? 24 : 42);
   }
 
   logo.addEventListener('mouseenter', scatterOnLogoHover);
   if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-    if (!reducedMotion()) scatterStars(window.innerWidth < 600 ? 24 : 48);
+    if (!reducedMotion()) scatterStars(window.innerWidth < 600 ? 32 : 64);
   }
 });

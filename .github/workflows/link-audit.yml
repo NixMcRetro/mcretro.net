@@ -22,25 +22,19 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
-      - name: Install Jekyll dependencies
-        run: |
-          gem install bundler
-          bundle install
-
       - name: Build site with Jekyll
         run: bundle exec jekyll build --destination _site
 
-      # Match the currently deployed build; Node/Pagefind upgrades are separate.
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version: '24'
 
       - name: Install Pagefind
-        run: npm install -g pagefind
+        run: npm ci --no-audit --no-fund
 
       - name: Generate Pagefind assets
-        run: pagefind --site _site --output-subdir pagefind
+        run: ./node_modules/.bin/pagefind --site _site --output-subdir pagefind
 
       - name: Record build inventory
         shell: bash

@@ -1,8 +1,8 @@
-/* Desktop homepage: run one randomly chosen original Sonic, Tails or cat GIF
-   horizontally past the McRetro.net lettering. No star or mobile effects. */
+/* Desktop homepage: a randomly chosen original Sonic, Tails or cat GIF
+   follows the top border of the main navigation bar. No mobile effects. */
 document.addEventListener('DOMContentLoaded', () => {
-  const logo = document.querySelector('.site-logo');
-  if (!logo) return;
+  const mainNav = document.querySelector('.main-nav');
+  if (!mainNav) return;
 
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const mobileMenu = () => window.matchMedia('(max-width: 750px)').matches;
@@ -20,22 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
   function runHeaderSprite() {
     if (reducedMotion() || mobileMenu()) return;
 
-    // The clickable logo can stretch across the whole header: locate its
-    // rendered lettering with a Range so the runner starts beside the text.
-    const textRange = document.createRange();
-    textRange.selectNodeContents(logo);
-    const textRect = textRange.getBoundingClientRect();
-    const rect = textRect.width > 0 && textRect.height > 0
-      ? textRect
-      : logo.getBoundingClientRect();
+    // Position the 48px-tall sprite with its feet on the thin top border.
+    // Start just left of the navigation and exit just beyond its right edge.
+    const rect = mainNav.getBoundingClientRect();
+    if (rect.width <= 0) return;
     const selected = runners[Math.floor(Math.random() * runners.length)];
-    const startX = Math.min(rect.right + 16, window.innerWidth - 60);
-    const endX = window.innerWidth + 120;
-    const y = Math.max(0, rect.top + rect.height / 2 - 24);
+    const startX = rect.left - 110;
+    const endX = rect.right + 110;
+    const y = Math.max(0, rect.top - 48);
     const seconds = Math.max(3.5, Math.min(8.5, (endX - startX) / selected.speed));
 
-    // Clip the decorative runner to the viewport so it never creates
-    // horizontal scrolling or interferes with links and menu controls.
+    // Keep the runner clipped to the viewport and click-through so it never
+    // creates horizontal scrolling or interferes with the navigation links.
     const lane = document.createElement('div');
     lane.classList.add('header-runner-lane');
     lane.setAttribute('aria-hidden', 'true');

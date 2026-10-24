@@ -1,0 +1,43 @@
+name: Image loading trial (no deploy)
+on:
+  push:
+    branches:
+      - test/image-loading-no-derivatives-2026-10-24
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Check Ruby dimension parser
+        run: ruby tests/image_dimensions_test.rb
+      - name: Build test site (never deploy)
+        run: bundle exec jekyll build --destination _site
+      - name: Verify generated video and thumbnail loading
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          site = Path("_site")
+          sample = site / "capture-tests-from-composite-and-mac" / "index.html"
+          html = sample.read_text()
+          videos = re.findall(r"<iframe\b[^>]*youtube\.com/embed/[^>]*>", html, re.I | re.S)
+          assert len(videos) == 3, f"Expected three existing embeds, found {len(videos)}"
+          assert 'loading="eager"' in videos[0], "First video must load normally"
+          assert all('loading="lazy"' in x for x in videos[1:]), "Later videos must lazy-load"
+          roll = (site / "blog" / "index.html").read_text()
+          thumbnails = re.findall(r'<img\b[^>]*class="post-thumbnail-img"[^>]*>', roll, re.I | re.S)
+          if thumbnails:
+              assert 'loading="eager"' in thumbnails[0], "First actual thumbnail must be eager"
+              assert all('loading="lazy"' in x for x in thumbnails[1:]), "Later thumbnails must lazy-load"
+              assert all('decoding="async"' in x for x in thumbnails), "Thumbnails must async decode"
+          assert 'src="/assets/images/footer/creative.gif"' in roll, "Keep historic footer imagery"
+          print(f"PASS: {len(videos)} video embeds, {len(thumbnails)} blog thumbnails, footer preserved")
+          PY

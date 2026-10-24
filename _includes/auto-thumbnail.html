@@ -37,14 +37,23 @@
   {% endif %}
 {% endif %}
 
+{% comment %} Count only thumbnails that actually appear on this blog page. {% endcomment %}
+{% if yt_id or img_src %}
+  {% capture thumbnail_index %}{% increment mcretro_thumbnail_index %}{% endcapture %}
+  {% assign thumbnail_index = thumbnail_index | plus: 0 %}
+  {% assign thumbnail_loading = 'lazy' %}
+  {% if thumbnail_index == 0 %}{% assign thumbnail_loading = 'eager' %}{% endif %}
+{% endif %}
+
 {% comment %} ---- 3. Output the preview ---- {% endcomment %}
 {% if yt_id %}
   <a href="{{ post.url | default: include.url }}" class="post-thumbnail-link video-thumb">
-    <img src="https://img.youtube.com/vi/{{ yt_id }}/hq720.jpg" alt="{{ post.title | default: include.title }}" class="post-thumbnail-img">
+    <img src="https://img.youtube.com/vi/{{ yt_id }}/hq720.jpg" alt="{{ post.title | default: include.title }}" class="post-thumbnail-img" width="1280" height="720" loading="{{ thumbnail_loading }}" decoding="async">
     <span class="play-overlay" aria-hidden="true">▶</span>
   </a>
 {% elsif img_src %}
+  {% assign dimensions = img_src | local_image_dimensions %}
   <a href="{{ post.url | default: include.url }}" class="post-thumbnail-link">
-    <img src="{{ img_src }}" alt="{{ post.title | default: include.title }}" class="post-thumbnail-img">
+    <img src="{{ img_src }}" alt="{{ post.title | default: include.title }}" class="post-thumbnail-img"{% if dimensions %} width="{{ dimensions.width }}" height="{{ dimensions.height }}"{% endif %} loading="{{ thumbnail_loading }}" decoding="async">
   </a>
 {% endif %}

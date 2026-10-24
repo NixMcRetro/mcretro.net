@@ -32,7 +32,7 @@ jobs:
           goodies = (root / "goodies" / "index.html").read_text(encoding="utf-8")
           channels = (root / "channels" / "index.html").read_text(encoding="utf-8")
           assert "Please browse through the menu and definitely drop by the" in homepage
-          assert "page for some really cool links." in homepage
+          assert "page for some really cool links including the retro hardware photo gallery, homepages, and the file server." in homepage
           assert 'href="/goodies"' in homepage or 'href="/goodies/"' in homepage
           for old in ('href="/photos"', 'href="/files"', 'href="/homepages"'):
               assert old not in homepage, "Removed duplicate homepage navigation: " + old

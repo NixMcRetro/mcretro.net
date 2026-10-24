@@ -18,8 +18,18 @@ Unfortunately, no such luck. The static was reduced, which was something, but th
 
 The control came apart more easily than expected, revealing a collection of little contacts and other interesting bits and pieces. I wasn't entirely sure how to repair it just yet, so more investigating was required.
 
+The seven connections were rather interesting, particularly the one associated with the low end of the control. That's where I'd been having trouble, so I wanted to understand whether the problem was inside the potentiometer or somewhere on the board.
+
+There was also a suspicious-looking area of PCB near the control. It appeared to have a small crack, although I couldn't see obvious damage to the tracks. Another thing for the multimeter to investigate while everything was apart.
+
+I've repaired plenty of computers over the years, but these multi-section volume controls aren't something I normally take apart. I found a few videos explaining how potentiometers work and managed to watch just enough to convince myself I should have a go. What could possibly go wrong?
+
+Thankfully, the component came apart without immediately disintegrating into a hundred tiny pieces. There were several internal sections, little sliding contacts and a track arrangement that needed further examination. I was rather pleased that it looked as though it might go back together again.
+
 In hindsight, I probably wouldn't have used quite so much contact cleaner. It seemed to disturb the grease that was supposed to protect the control. Lucky for me, the thing was already faulty anyway!
 
-### Related posts
+So we're still not at the point where the Aiwa's volume control behaves as it should. The next job is working out exactly where the connection is failing and whether anything inside this little assembly can be repaired.
+
+**Related Posts**
 
 - [Aiwa Mega-CD CSD-GM1 Unit-02 Volume Board Diagnosis](/aiwa-mega-cd-csd-gm1-unit-02-volume-board-diagnosis/)

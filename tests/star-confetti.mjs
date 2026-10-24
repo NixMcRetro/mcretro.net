@@ -50,7 +50,10 @@ for (const p of home.particles) {
   assert.ok(Number.parseFloat(p.style.top) >= 0 && Number.parseFloat(p.style.top) <= 900);
 }
 home.logoEvents.get('mouseenter')();
-assert.equal(home.particles.length, 78, 'logo hover adds original 30 particles');
+assert.equal(home.particles.length, 78, 'logo hover adds 30 stars across the page');
+const hoverStars = home.particles.slice(48);
+assert.ok(hoverStars.some(p => Number.parseFloat(p.style.left) > 300), 'logo hover stars spread beyond logo width');
+assert.ok(hoverStars.some(p => Number.parseFloat(p.style.top) > 300), 'logo hover stars spread down the page');
 home.particles[0].handlers.get('animationend')();
 assert.equal(home.particles[0].removed, true, 'particles cleaned after animation');
 const mobile = boot('/', false, 320, 730);

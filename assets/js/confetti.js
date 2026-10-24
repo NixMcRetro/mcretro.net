@@ -30,33 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => particle.remove(), 2500);
   }
 
-  function burstFromLogo() {
-    if (reducedMotion()) return;
-
-    const rect = logo.getBoundingClientRect();
-    for (let i = 0; i < 30; i++) {
-      const x = rect.left + random(0, rect.width);
-      const y = rect.top + random(0, rect.height);
-      const angle = random(0, Math.PI * 2);
-      const distance = random(50, 150);
-      makeStar(
-        x, y,
-        Math.cos(angle) * distance,
-        Math.sin(angle) * distance,
-        random(0.6, 1.2)
-      );
-    }
-  }
-
-  function scatterHomepageStars() {
-    if (reducedMotion()) return;
+  function scatterStars(count) {
     const width = window.innerWidth;
     const height = window.innerHeight;
-    // Distribute across viewport cells rather than clumping around the logo.
-    const count = width < 600 ? 24 : 48;
+    // Spread particles across visible viewport cells, not only near the logo.
     const columns = Math.max(1, Math.ceil(Math.sqrt(count * width / Math.max(height, 1))));
     const rows = Math.ceil(count / columns);
-
     for (let i = 0; i < count; i++) {
       const col = i % columns;
       const row = Math.floor(i / columns);
@@ -66,8 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  logo.addEventListener('mouseenter', burstFromLogo);
+  function scatterOnLogoHover() {
+    if (reducedMotion()) return;
+    scatterStars(window.innerWidth < 600 ? 18 : 30);
+  }
+
+  logo.addEventListener('mouseenter', scatterOnLogoHover);
   if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-    scatterHomepageStars();
+    if (!reducedMotion()) scatterStars(window.innerWidth < 600 ? 24 : 48);
   }
 });

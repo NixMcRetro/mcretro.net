@@ -37,13 +37,8 @@
   {% endif %}
 {% endif %}
 
-{% comment %} Count only thumbnails that actually appear on this blog page. {% endcomment %}
-{% if yt_id or img_src %}
-  {% capture thumbnail_index %}{% increment mcretro_thumbnail_index %}{% endcapture %}
-  {% assign thumbnail_index = thumbnail_index | plus: 0 %}
-  {% assign thumbnail_loading = 'lazy' %}
-  {% if thumbnail_index == 0 %}{% assign thumbnail_loading = 'eager' %}{% endif %}
-{% endif %}
+{% comment %} Off-screen thumbnails are lazy; the page render hook keeps the first eager. {% endcomment %}
+{% assign thumbnail_loading = 'lazy' %}
 
 {% comment %} ---- 3. Output the preview ---- {% endcomment %}
 {% if yt_id %}

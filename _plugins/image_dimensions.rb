@@ -98,3 +98,33 @@ Jekyll::Hooks.register :posts, :post_render do |post|
     end
   end
 end
+
+# The first YouTube player in each article should be ready immediately, while
+# subsequent players can wait. Per-page rendered HTML avoids Liquid counter scope.
+Jekyll::Hooks.register :posts, :post_render do |post|
+  next unless post.output.is_a?(String)
+  first_player = true
+  post.output = post.output.gsub(/<iframe\b[^>]*>/i) do |tag|
+    next tag unless tag.include?("youtube.com/embed/")
+    loading = first_player ? "eager" : "lazy"
+    first_player = false
+    if tag.match?(/\sloading\s*=/i)
+      tag.sub(/\sloading\s*=\s*(["'])[^"']*\1/i, %( loading="#{loading}"))
+    else
+      tag.sub(/>\z/, %( loading="#{loading}">))
+    end
+  end
+end
+
+# The first *actual* thumbnail on each blog page should be eager, even if the
+# preceding post has no thumbnail at all. No image source URL is changed.
+Jekyll::Hooks.register :pages, :post_render do |page|
+  next unless page.output.is_a?(String) && page.output.include?('class="post-thumbnail-img"')
+  first_thumbnail = true
+  page.output = page.output.gsub(/<img\b[^>]*>/i) do |tag|
+    next tag unless tag.include?('class="post-thumbnail-img"')
+    next tag unless first_thumbnail
+    first_thumbnail = false
+    tag.sub('loading="lazy"', 'loading="eager"')
+  end
+end

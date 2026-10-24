@@ -1,12 +1,10 @@
 {% assign video_id = include.id %}
 {% if video_id %}
-{% capture video_index %}{% increment mcretro_youtube_embed_index %}{% endcapture %}
-{% assign video_index = video_index | plus: 0 %}
 <div class="video-container">
   <iframe
     src="https://www.youtube.com/embed/{{ video_id }}"
     title="YouTube video: {{ include.title | default: page.title | default: 'Video' | escape }}"
-    loading="{% if video_index == 0 %}eager{% else %}lazy{% endif %}"
+    loading="lazy"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen

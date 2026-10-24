@@ -14,11 +14,11 @@
   margin-bottom: 0.2em;
 }
 
-/* Soft warm-mint headings and dark-grey borders for About, Channels
-   and Goodies. Preserve near-black labels and the site's cobalt links/focus. */
+/* Soft warm-mint headings, dark-grey outlines, and a teal left accent.
+   Preserve near-black labels and the site's cobalt links/focus. */
 .about-panel.panel--teal {
   border-color: #555555;
-  border-left: 3px solid #555555;
+  border-left: 3px solid #018281;
 }
 .about-panel.panel--teal > summary {
   background: #e6f0e5;

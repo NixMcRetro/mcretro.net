@@ -1,0 +1,29 @@
+name: Progress Pride confetti trial (no deploy)
+
+on:
+  push:
+    branches:
+      - test/progress-pride-rainbow-trails-2026-10-24
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Test star behaviour and styles
+        run: |
+          node --check assets/js/confetti.js
+          node tests/star-confetti.mjs
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll without deployment
+        run: bundle exec jekyll build --destination _site

@@ -8,15 +8,28 @@ categories: [apple, hacks, youtube]
 
 {% include youtube.html id="cllZ5zuXryI" %}
 
-Determining which resistor to use from a selection of four or so resistors from previous projects that I have either shelved or long forgotten.
+Resistors are fun! With the new 68040 processor and plans to run the LC 475 at 33 MHz, I've been experimenting with additional cooling. Unfortunately, the little fan I've installed is darned noisy, so I thought I'd try slowing it down with a resistor.
+
+I've got four resistors left over from previous projects, some of which I've probably long forgotten. Rather than buy something new, why not experiment with what I've already got? The fan normally receives approximately 8 V from the connection I'm using, so the idea is to reduce that a little without stopping it altogether.
+
+The first few experiments were interesting. One resistor reduced the voltage so much that the fan barely moved, while another got incredibly hot. I eventually found one that brought the voltage down to around 5.5 V and seemed to offer a reasonable balance between noise and fan speed.
+
+There's also the small matter of fitting everything inside the LC 475. The fan is sitting rather close to the lid, and with a heatsink on the processor there's not exactly an enormous amount of room to play with. Still, things are looking promising.
 
 {% include youtube.html id="gkGAGWQ2UVI" %}
 
 And here is the promised second part with the installation and soldering of the resistor to the red power cable on the fan.
 
+Naturally, the soldering didn't go quite as smoothly as planned. My heat-shrink tubing was much too large, I wasn't particularly impressed with some of my soldering, and the heat gun made things a little meltier than intended. Eventually everything was connected and insulated, so back into the Macintosh it went.
 
-This did reduce the noise, but a series resistor also reduces the voltage available to the fan, lowering both speed and airflow. It can also make startup unreliable if the resulting fan voltage falls below its starting requirement. If doing something similar today I would verify reliable cold starts and monitor internal temperatures rather than assuming that quieter automatically means adequate cooling.
+Then came the question of which way to mount the fan. I'd have preferred to blow air into the case, but the fan's bracket and the existing grille made that arrangement rather noisy. Turning it around worked better with the available clearance, so that settled that little argument.
+
+The resistor certainly made things quieter, although slowing a fan down also means reducing the airflow. Some of the earlier resistors wouldn't even let the fan start properly, so that's something I'd want to keep an eye on before relying on it for cooling.
+
+And just as I was showing off the heatsink on my 33 MHz processor, something snapped. Oh, wonderful! At least it happened on film.
+
+Right, where's the super glue?
 
 ### Sources
 
-- [Noctua - Fan troubleshooting and starting voltage](https://www.noctua.at/en/support/faqs/my-fan-is-not-working-as-intended-is-it-faulty) - explains that fans require sufficient voltage to start and that operation below their specified range can be unreliable.
+- [Noctua - Fan troubleshooting and starting voltage](https://www.noctua.at/en/support/faqs/my-fan-is-not-working-as-intended-is-it-faulty) - explains why fans need sufficient voltage to start reliably.

@@ -15,7 +15,7 @@ Welcome to the Goodies page! This is where I keep all sorts of bits and pieces t
 
 The restored homepages and browser projects have found a home here too. Click a section below to have a look around!
 
-<details class="about-panel panel--teal" markdown="1" open>
+<details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Ready to Visit</summary>
 
 **🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**<br>

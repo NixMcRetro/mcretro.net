@@ -27,12 +27,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const centreY = rect.top + rect.height / 2;
     const mobile = window.innerWidth < 600;
     const count = mobile ? 12 : 20;
+    // Extend the circular burst from the middle of the text to just beyond
+    // both ends of "McRetro.net". This adapts to actual text width on mobile.
+    const burstRadius = Math.max(50, rect.width / 2 + (mobile ? 12 : 20));
     // Cycling by seven (coprime with eleven) shows every Pride colour in each burst.
     const colourOffset = Math.floor(Math.random() * colours.length);
 
     for (let i = 0; i < count; i++) {
-      const angle = (i / count) * 2 * Math.PI + random(-0.14, 0.14);
-      const distance = random(38, mobile ? 75 : 105);
+      // Two stars fly straight sideways to reach beyond either end of the
+      // lettering, while the others scatter in every direction.
+      const sideways = i === 0 || i === count / 2;
+      const angle = (i / count) * 2 * Math.PI
+        + (sideways ? 0 : random(-0.14, 0.14));
+      const distance = burstRadius * (sideways
+        ? random(1.02, 1.12)
+        : random(0.7, 1.08));
       const size = random(9, mobile ? 14 : 16);
       const duration = random(1.9, 2.8);
       const star = document.createElement('span');

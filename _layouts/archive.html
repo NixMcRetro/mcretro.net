@@ -16,6 +16,13 @@ layout: default
 
         <div class="post-meta-row">
           <div class="post-meta">
+            <span class="post-author">
+              <picture>
+                <source type="image/jxl" srcset="/assets/images/mcretro-author-portrait-192.jxl?v=20261018d">
+                <img src="/assets/images/mcretro-author-portrait-192.webp?v=20261018d" width="96" height="96" alt="" class="author-avatar" loading="lazy" decoding="async">
+              </picture>
+              {% if post.author %}{{ post.author }}{% endif %}
+            </span>
             <span class="post-date">
               {% assign d = post.date | date: "%-d" | plus: 0 %}
               {% case d %}
@@ -38,9 +45,8 @@ layout: default
           </div>
 
           <div class="post-content-preview">
-            {% include auto-thumbnail.html content=post.content url=post.url title=post.title %}
             <div class="post-excerpt">
-              {% assign excerpt_text = post.content | strip_html | normalize_whitespace | truncatewords: 34 %}
+              {% assign excerpt_text = post.content | strip_html | normalize_whitespace | truncatewords: 50 %}
               {% if excerpt_text != blank %}
                 {{ excerpt_text }}
               {% else %}

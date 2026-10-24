@@ -8,10 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Weighted to favour the iconic floppy disk.
   const choices = [
     { id: 'floppy-35', weight: 60 },
-    { id: 'floppy-525', weight: 15 },
     { id: 'crt', weight: 10 },
-    { id: 'keyboard', weight: 10 },
-    { id: 'cdrom', weight: 5 }
+    { id: 'keyboard', weight: 20 },
+    { id: 'cdrom', weight: 10 }
   ];
   const random = (min, max) => min + Math.random() * (max - min);
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -71,7 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
     particle.style.setProperty('--move-x', dx + 'px');
     particle.style.setProperty('--move-y', dy + 'px');
     particle.style.setProperty('--trail-length', trail + 'px');
-    particle.style.setProperty('--trail-width', random(10, 17) + 'px');
+    const trailWidth = random(10, 17);
+    particle.style.setProperty('--trail-width', trailWidth + 'px');
+    particle.style.setProperty('--trail-half-width', (trailWidth / 2) + 'px');
     particle.style.setProperty('--trail-angle', (Math.atan2(dy, dx) * 180 / Math.PI + 180) + 'deg');
     particle.style.animationDuration = duration + 's';
     // Keep the initial burst spread across the screen at the slower speed.

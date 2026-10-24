@@ -14,32 +14,40 @@
   margin-bottom: 0.2em;
 }
 
-/* Muted teal for About, Channels, Goodies and Homepages, drawn from the mobile
-   navigation's #018281 accent. Other accordions retain their original theme. */
+/* Teal text on muted-teal headings for About, Channels and Goodies.
+   Keep cobalt links everywhere else on the site and original artwork unchanged. */
 .about-panel.panel--teal {
   border-color: #8fb6ac;
   border-left: 3px solid #018281;
 }
 .about-panel.panel--teal > summary {
-  background: #e2f0ec;
-  color: #1a1a1a;
+  background: #dceee7;
+  color: #065f5b;
 }
 .about-panel.panel--teal > summary:hover {
-  background: #cce3dc;
+  background: #c7e2d8;
 }
 .about-panel.panel--teal[open] > summary {
-  background: #d3e8e1;
+  background: #cfe7de;
   border-bottom-color: #8fb6ac;
 }
 .about-panel.panel--teal[open] > summary:hover {
-  background: #bcdcd2;
+  background: #bcdbcf;
 }
-/* Retain the site's existing cobalt-blue keyboard focus outline. */
 .about-panel.panel--teal > summary:focus-visible {
-  background: #cce3dc;
+  background: #c7e2d8;
+  outline-color: #065f5b;
 }
 .about-panel.panel--teal[open] > summary:focus-visible {
-  background: #bcdcd2;
+  background: #bcdbcf;
+}
+/* In expanded panels, use deeper teal links instead of site-wide cobalt. */
+.about-panel.panel--teal a,
+.about-panel.panel--teal a:visited {
+  color: #006561;
+}
+.about-panel.panel--teal a:hover {
+  color: #004c4b;
 }
 
 /* About page: limit these styles to the native expandable sections. */

@@ -1,0 +1,51 @@
+name: Native exclusive panels trial (no deploy)
+
+on:
+  push:
+    branches:
+      - test/native-exclusive-panels-2026-10-24
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-browser-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll test site, without deploying
+        run: bundle exec jekyll build --destination _site
+      - name: Assert generated accordion group names and no default open
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          for page, name, count in [
+              ("about", "mcretro-about", 4),
+              ("channels", "mcretro-channels", 4),
+              ("goodies", "mcretro-goodies", 3)
+          ]:
+              content = (Path("_site")/page/"index.html").read_text(encoding="utf-8")
+              panels = re.findall(r'<details\\b[^>]*class="about-panel panel--teal"[^>]*>', content)
+              assert len(panels)==count, f"{page}: expected {count}, got {len(panels)}"
+              assert all(f'name="{name}"' in panel for panel in panels), f"{page}: incorrect grouping"
+              assert all(not re.search(r'\\bopen(?:\\s|>|=)', panel) for panel in panels), f"{page}: panel starts open"
+              print(f"PASS {page}: {count} panels in one native exclusive group")
+          PY
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Install temporary Chromium, Firefox and WebKit test browsers
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium firefox webkit
+      - name: Exercise native accordion on mobile and desktop in three browser engines
+        run: |
+          python3 -m http.server 8097 --bind 127.0.0.1 --directory _site >/tmp/mcretro-exclusive-panels.log 2>&1 &
+          sleep 2
+          node tests/exclusive_panels_browser.mjs

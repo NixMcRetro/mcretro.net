@@ -1,0 +1,52 @@
+name: McRetro CSP Preparation Checks
+
+on:
+  push:
+    branches:
+      - security/csp-preparation-2026-10-24
+  pull_request:
+    paths:
+      - '_layouts/default.html'
+      - 'search/index.html'
+      - 'assets/js/mobile-navigation.js'
+      - 'assets/js/search-page.js'
+      - '.github/tests/csp-preparation.mjs'
+      - '.github/workflows/csp-preparation-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Check JavaScript syntax
+        run: |
+          node --check assets/js/mobile-navigation.js
+          node --check assets/js/search-page.js
+      - name: Run navigation and search regression tests
+        run: node --test .github/tests/csp-preparation.mjs
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll
+        run: bundle exec jekyll build --destination _site
+      - name: Install locked Pagefind dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Generate Pagefind index
+        run: ./node_modules/.bin/pagefind --site _site --output-subdir pagefind
+      - name: Verify generated site assets
+        run: |
+          test -s _site/assets/js/mobile-navigation.js
+          test -s _site/assets/js/search-page.js
+          test -s _site/search/index.html
+          test -s _site/pagefind/pagefind-ui.js
+          grep -Fq '/assets/js/search-page.js' _site/search/index.html
+          grep -Fq '/assets/js/mobile-navigation.js' _site/index.html

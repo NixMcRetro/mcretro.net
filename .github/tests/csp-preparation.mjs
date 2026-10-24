@@ -31,7 +31,8 @@ function element() {
 
 test('HTML loads the new scripts without changing random-post wiring', () => {
   assert.ok(layout.includes("'/assets/js/mobile-navigation.js' | relative_url"));
-  assert.ok(layout.includes('random-post-urls.html'));
+  assert.ok(layout.includes("'/assets/js/random-post.js' | relative_url"));
+  assert.ok(!layout.includes('random-post-urls.html'));
   assert.ok(!layout.includes("document.querySelector('.nav-toggle')"));
   assert.ok(searchHTML.includes('<script src="/assets/js/search-page.js"></script>'));
   assert.ok(searchHTML.indexOf('/pagefind/pagefind-ui.js') < searchHTML.indexOf('/assets/js/search-page.js'));

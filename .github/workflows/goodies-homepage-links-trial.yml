@@ -1,0 +1,55 @@
+name: Goodies and homepage links trial (no deploy)
+
+on:
+  push:
+    branches:
+      - proposal/goodies-homepage-links-2026-10-24
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout proposal
+        uses: actions/checkout@v5
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll without deploying
+        run: bundle exec jekyll build --destination _site
+      - name: Verify homepage, directory and closed panels
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          root = Path("_site")
+          homepage = (root / "index.html").read_text(encoding="utf-8")
+          goodies = (root / "goodies" / "index.html").read_text(encoding="utf-8")
+          channels = (root / "channels" / "index.html").read_text(encoding="utf-8")
+          assert "Please browse through the menu and definitely drop by the" in homepage
+          assert "page for some really cool links." in homepage
+          assert 'href="/goodies"' in homepage or 'href="/goodies/"' in homepage
+          for old in ('href="/photos"', 'href="/files"', 'href="/homepages"'):
+              assert old not in homepage, "Removed duplicate homepage navigation: " + old
+          assert '/assets/images/goodies/filecopy.gif' in goodies
+          assert "Restored Historical Homepages" in goodies
+          assert "Fish Tank World" in goodies and "/homepages/fishtankworld/" in goodies
+          assert "GeoCities" in goodies and "/homepages/geocities/" in goodies
+          assert "/photos/" in goodies and "/files/" in goodies
+          for name, html in (("Ready to Visit", goodies), ("Nix McRetro", channels)):
+              blocks = re.findall(r'<details\\b([^>]*)>\\s*<summary[^>]*>(.*?)</summary>', html, re.I | re.S)
+              matching = [(attrs, summary) for attrs, summary in blocks if name in summary]
+              assert len(matching) == 1, "Missing or duplicate panel " + name
+              assert not re.search(r'\\bopen\\b', matching[0][0]), "Unexpected default open: " + name
+          restored = goodies.split("Restored Historical Homepages", 1)[1].split("</details>", 1)[0]
+          names = ["Frank the Snake", "Pepper the Dog Blog", "Sonic the Hedgehog Homepage", "Space / Planets Webpage", "Super Nature World"]
+          offsets = [restored.index(name) for name in names]
+          assert offsets == sorted(offsets), "Historical homepage entries must be alphabetical"
+          assert (root / "homepages" / "pepper" / "index.html").exists()
+          print("PASS: homepage, Goodies, historical order and collapsed panels")
+          PY

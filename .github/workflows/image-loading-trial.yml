@@ -41,3 +41,25 @@ jobs:
           assert 'src="/assets/images/footer/creative.gif"' in roll, "Keep historic footer imagery"
           print(f"PASS: {len(videos)} video embeds, {len(thumbnails)} blog thumbnails, footer preserved")
           PY
+
+      - name: Checkout comparison baseline
+        uses: actions/checkout@v5
+        with:
+          ref: f71a1b053bc56e34c5f8be2c40784ba67195e8d0
+          path: baseline
+      - name: Build unmodified baseline
+        run: cd baseline && bundle exec jekyll build --destination _site
+      - name: Setup Node.js for browser pilot
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Install temporary browser test dependencies
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install chromium
+      - name: Compare browser loading at mobile and desktop widths
+        run: |
+          python3 -m http.server 8051 --bind 127.0.0.1 --directory baseline/_site >/tmp/mcretro-baseline.log 2>&1 &
+          python3 -m http.server 8052 --bind 127.0.0.1 --directory _site >/tmp/mcretro-trial.log 2>&1 &
+          sleep 2
+          node tests/image_loading_browser.mjs

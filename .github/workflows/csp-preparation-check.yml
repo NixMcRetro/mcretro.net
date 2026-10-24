@@ -1,6 +1,9 @@
 name: McRetro CSP Preparation Checks
 
 on:
+  push:
+    branches:
+      - security/csp-preparation-2026-10-24
   pull_request:
     paths:
       - '_layouts/default.html'

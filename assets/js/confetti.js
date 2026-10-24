@@ -1,9 +1,10 @@
-/* Progress Pride stars: one homepage welcome, Random hover/focus on desktop,
-   and a burst when the mobile navigation menu opens. */
+/* Homepage desktop: one randomly selected original Sonic/Tails/cat GIF
+   runs to the right of the site title. Mobile: retain Progress Pride
+   welcome and hamburger-open bursts. No Random menu effects. */
 document.addEventListener('DOMContentLoaded', () => {
-  const randomLink = document.querySelector('#random-post-link');
+  const logo = document.querySelector('.site-logo');
   const menuToggle = document.querySelector('.nav-toggle');
-  if (!randomLink || !menuToggle) return;
+  if (!logo || !menuToggle) return;
 
   // Six rainbow stripes plus the five Progress Pride chevron colours.
   const colours = [
@@ -15,27 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Match the hamburger layout breakpoint in assets/css/style.css.
   const mobileMenu = () => window.matchMedia('(max-width: 750px)').matches;
 
-  function burstFromTarget(target) {
-    if (reducedMotion()) return;
+  function burstFromMenu() {
+    if (reducedMotion() || !mobileMenu()) return;
 
-    // Desktop: measure the actual Random label, not its surrounding nav item.
-    // Mobile: centre on the whole 44px hamburger button, not its icon strokes.
-    let rect = target.getBoundingClientRect();
-    if (target === randomLink) {
-      const textRange = document.createRange();
-      textRange.selectNodeContents(randomLink);
-      const textRect = textRange.getBoundingClientRect();
-      if (textRect.width > 0 && textRect.height > 0) rect = textRect;
-    }
+    const rect = menuToggle.getBoundingClientRect();
     const centreX = rect.left + rect.width / 2;
     const centreY = rect.top + rect.height / 2;
-    const mobile = mobileMenu();
-    const count = mobile ? 22 : 33;
-    // Scale to the rendered Random label or hamburger button,
-    // reaching slightly beyond either side of the visible target.
+    const mobile = true;
+    const count = 22;
+    // Keep the existing mobile Progress Pride star size, spread and drift.
     const burstRadius = Math.max(50, rect.width / 2 + (mobile ? 12 : 20));
-    // Cycling by seven (coprime with eleven) gives exactly two of each
-    // Progress Pride colour on mobile and three of each on desktop.
+    // Cycling by seven gives exactly two of each of the eleven colours.
     const colourOffset = Math.floor(Math.random() * colours.length);
 
     for (let i = 0; i < count; i++) {
@@ -83,26 +74,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Desktop: hovering or tabbing to Random triggers the effect. Clicking Random
-  // still navigates normally using the independent random-post script.
-  randomLink.addEventListener('mouseenter', () => {
-    if (!mobileMenu()) burstFromTarget(randomLink);
-  });
-  randomLink.addEventListener('focus', () => {
-    if (!mobileMenu()) burstFromTarget(randomLink);
-  });
+  // Keep the original GIFs exactly as stored in the repository.
+  // Walking characters move more slowly than running ones.
+  const runners = [
+    { src: '/homepages/sonic/images/swalk.gif', speed: 125 },
+    { src: '/homepages/sonic/images/twalk.gif', speed: 125 },
+    { src: '/homepages/sonic/images/trun.gif', speed: 205 },
+    { src: '/homepages/sonic/images/srun.gif', speed: 205 },
+    { src: '/assets/images/about/0CATRUNY.gif', speed: 205 }
+  ];
 
-  // Mobile: listen to the navigation's existing expanded state, not click order.
-  // This catches touch and keyboard opening, without bursting on close.
+  function runHeaderSprite() {
+    if (reducedMotion() || mobileMenu()) return;
+
+    // The clickable logo can stretch across the whole header: locate its
+    // rendered lettering with a Range so the runner starts beside the text.
+    const textRange = document.createRange();
+    textRange.selectNodeContents(logo);
+    const textRect = textRange.getBoundingClientRect();
+    const rect = textRect.width > 0 && textRect.height > 0
+      ? textRect
+      : logo.getBoundingClientRect();
+    const selected = runners[Math.floor(Math.random() * runners.length)];
+    const startX = Math.min(rect.right + 16, window.innerWidth - 60);
+    const endX = window.innerWidth + 120;
+    const y = Math.max(0, rect.top + rect.height / 2 - 24);
+    const seconds = Math.max(3.5, Math.min(8.5, (endX - startX) / selected.speed));
+
+    // Clip the decorative runner to the viewport so it never creates
+    // horizontal scrolling or interferes with links and menu controls.
+    const lane = document.createElement('div');
+    lane.classList.add('header-runner-lane');
+    lane.setAttribute('aria-hidden', 'true');
+    const sprite = document.createElement('img');
+    sprite.classList.add('header-runner-sprite');
+    sprite.src = selected.src;
+    sprite.alt = '';
+    sprite.style.setProperty('--runner-start-x', startX + 'px');
+    sprite.style.setProperty('--runner-end-x', endX + 'px');
+    sprite.style.setProperty('--runner-y', y + 'px');
+    sprite.style.animationDuration = seconds + 's';
+    lane.appendChild(sprite);
+    document.body.appendChild(lane);
+    sprite.addEventListener('animationend', () => lane.remove(), { once: true });
+    setTimeout(() => lane.remove(), 9500);
+  }
+
+  // Mobile: a burst only when the existing hamburger changes to open,
+  // including keyboard activation. Closing never triggers a new burst.
   const menuObserver = new MutationObserver(() => {
     if (mobileMenu() && menuToggle.getAttribute('aria-expanded') === 'true') {
-      burstFromTarget(menuToggle);
+      burstFromMenu();
     }
   });
   menuObserver.observe(menuToggle, { attributes: true, attributeFilter: ['aria-expanded'] });
 
-  // One welcome burst only on the homepage, from the visible nav control.
+  // One decorative welcome on the homepage; no effect on inner page loads.
   if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-    burstFromTarget(mobileMenu() ? menuToggle : randomLink);
+    if (mobileMenu()) burstFromMenu();
+    else runHeaderSprite();
   }
 });

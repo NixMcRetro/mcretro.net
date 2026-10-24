@@ -16,7 +16,7 @@ Welcome to the homepage directory! This is where I've collected some of the litt
 
 At least there's something here now!
 
-<details class="about-panel" markdown="1" open>
+<details class="about-panel panel--teal" markdown="1" open>
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Ready to Visit</summary>
 
 **🐶 [Pepper the Dog Blog](/homepages/pepper/)**<br>
@@ -33,7 +33,7 @@ An old-school bowling league homepage with scores, averages and a leaderboard. C
 
 </details>
 
-<details class="about-panel" markdown="1">
+<details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Restored Historical Homepages</summary>
 
 The original HTML and artwork from these four sites have made it back onto McRetro.net. No modern makeover here; these are the old-style pages as they were, with just the paths fixed where necessary.
@@ -52,7 +52,7 @@ One of my earliest websites, dedicated to the Sonic the Hedgehog Saturday mornin
 
 </details>
 
-<details class="about-panel" markdown="1">
+<details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Still Awaiting Restoration</summary>
 
 **Fish Tank World** and **GeoCities** still need their proper historical content restored. No point pretending those pages are finished!

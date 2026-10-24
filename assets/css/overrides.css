@@ -14,7 +14,7 @@
   margin-bottom: 0.2em;
 }
 
-/* Muted teal for About, Channels and Goodies, drawn from the mobile
+/* Muted teal for About, Channels, Goodies and Homepages, drawn from the mobile
    navigation's #018281 accent. Other accordions retain their original theme. */
 .about-panel.panel--teal {
   border-color: #8fb6ac;

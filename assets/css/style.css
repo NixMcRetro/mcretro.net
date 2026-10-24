@@ -361,6 +361,31 @@ pre code {
   font-size: 1rem;
 }
 
+/* Preserve footer spacing and historical image styling without inline CSS. */
+.site-footer .footer-rule {
+  border: 0.5px solid black;
+  text-align: center;
+  margin: 0 auto 30px;
+  width: 100%;
+}
+.site-footer .footer-badges {
+  text-align: center;
+}
+.site-footer .footer-badge {
+  margin: 2px 1px;
+}
+.site-footer .footer-details {
+  max-width: 80%;
+  min-width: 50%;
+  margin: auto;
+  text-align: center;
+}
+.site-footer .footer-pride {
+  text-align: center;
+  margin: 6px;
+}
+
+
 /* ===========================
    BLOG / POST STYLES
    =========================== */

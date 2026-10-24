@@ -1,5 +1,5 @@
-/* McRetro logo-only Progress Pride confetti.
-   Stars burst outward and drift downward. No automatic page-load effect. */
+/* Progress Pride stars: one homepage welcome and logo-triggered bursts.
+   Stars pop outward, then slowly drift and fade down. */
 document.addEventListener('DOMContentLoaded', () => {
   const logo = document.querySelector('.site-logo');
   if (!logo) return;
@@ -26,24 +26,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const centreX = rect.left + rect.width / 2;
     const centreY = rect.top + rect.height / 2;
     const mobile = window.innerWidth < 600;
-    const count = mobile ? 12 : 20;
+    const count = mobile ? 22 : 33;
     // Extend the circular burst from the middle of the text to just beyond
     // both ends of "McRetro.net". This adapts to actual text width on mobile.
     const burstRadius = Math.max(50, rect.width / 2 + (mobile ? 12 : 20));
-    // Cycling by seven (coprime with eleven) shows every Pride colour in each burst.
+    // Cycling by seven (coprime with eleven) gives exactly two of each
+    // Progress Pride colour on mobile and three of each on desktop.
     const colourOffset = Math.floor(Math.random() * colours.length);
 
     for (let i = 0; i < count; i++) {
       // Two stars fly straight sideways to reach beyond either end of the
       // lettering, while the others scatter in every direction.
-      const sideways = i === 0 || i === count / 2;
-      const angle = (i / count) * 2 * Math.PI
-        + (sideways ? 0 : random(-0.14, 0.14));
+      const leftmost = Math.floor(count / 2);
+      const sideways = i === 0 || i === leftmost;
+      // Odd counts need an explicit leftward angle: 33 / 2 is not an index.
+      const angle = i === 0 ? 0
+        : i === leftmost ? Math.PI
+        : (i / count) * 2 * Math.PI + random(-0.14, 0.14);
       const distance = burstRadius * (sideways
         ? random(1.02, 1.12)
         : random(0.7, 1.08));
       const size = random(9, mobile ? 14 : 16);
-      const duration = random(1.9, 2.8);
+      const duration = random(3.9, 5.4);
+      const driftX = random(-14, 14);
+      const fallY = random(mobile ? 42 : 58, mobile ? 85 : 110);
+      // Keep a slow, steady descent rather than dropping sharply mid-flight.
+      const burstX = Math.cos(angle) * distance;
+      const burstY = Math.sin(angle) * distance;
       const star = document.createElement('span');
       star.classList.add('pride-star-particle');
       star.setAttribute('aria-hidden', 'true');
@@ -52,21 +61,28 @@ document.addEventListener('DOMContentLoaded', () => {
       star.style.left = centreX - size / 2 + 'px';
       star.style.top = centreY - size / 2 + 'px';
       star.style.setProperty('--pride-colour', colours[(i * 7 + colourOffset) % colours.length]);
-      star.style.setProperty('--burst-x', Math.cos(angle) * distance + 'px');
-      star.style.setProperty('--burst-y', Math.sin(angle) * distance + 'px');
-      star.style.setProperty('--drift-x', random(-25, 25) + 'px');
-      star.style.setProperty('--fall-y', random(mobile ? 70 : 90, mobile ? 130 : 175) + 'px');
-      star.style.setProperty('--turn', random(-100, 100) + 'deg');
+      star.style.setProperty('--burst-x', burstX + 'px');
+      star.style.setProperty('--burst-y', burstY + 'px');
+      star.style.setProperty('--drift-x', driftX + 'px');
+      star.style.setProperty('--fall-y', fallY + 'px');
+      star.style.setProperty('--mid-x', burstX + driftX * 0.35 + 'px');
+      star.style.setProperty('--mid-y', burstY + fallY * 0.35 + 'px');
+      star.style.setProperty('--late-x', burstX + driftX * 0.7 + 'px');
+      star.style.setProperty('--late-y', burstY + fallY * 0.7 + 'px');
+      star.style.setProperty('--turn', random(-45, 45) + 'deg');
       star.style.animationDuration = duration + 's';
 
       document.body.appendChild(star);
       star.addEventListener('animationend', () => star.remove(), { once: true });
       // Remove particles if an animation is interrupted or disabled mid-flight.
-      setTimeout(() => star.remove(), 3600);
+      setTimeout(() => star.remove(), 6600);
     }
   }
 
-  // Mouse and keyboard access; no continuous animation or homepage auto-burst.
+  // One welcome burst on the homepage, plus mouse or keyboard logo triggers.
   logo.addEventListener('mouseenter', burstFromLogo);
   logo.addEventListener('focus', burstFromLogo);
+  if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    burstFromLogo();
+  }
 });

@@ -13,10 +13,6 @@ const images = [
   '/homepages/sonic/images/srun.gif',
   '/assets/images/about/0CATRUNY.gif'
 ];
-const colours = [
-  '#E40303','#FF8C00','#FFED00','#008026','#004DFF','#750787',
-  '#000000','#784F17','#5BCEFA','#F5A9B8','#FFFFFF'
-];
 function fixture({ width = 1280, path = '/', reduced = false, random = 0 } = {}) {
   const appended = [], timers = [];
   let observer = null;
@@ -113,18 +109,6 @@ function onlySprite(f) {
   assert.equal(f.timers[0].delay,9500);
   return {lane,sprite,d};
 }
-function starsIn(f,start=0) {
-  const particles=f.appended.slice(start);
-  assert.equal(particles.length,22);
-  const counts=new Map();
-  for(const star of particles) {
-    assert.ok(star.classList.contains('pride-star-particle'));
-    const c=star.vars.get('--pride-colour');
-    counts.set(c,(counts.get(c)||0)+1);
-  }
-  for(const c of colours) assert.equal(counts.get(c),2,c);
-}
-
 test('all five unchanged GIF files exist and have GIF headers', () => {
   for(const src of images) {
     const bytes=readFileSync(new URL('../../'+src.slice(1),import.meta.url));
@@ -156,15 +140,17 @@ test('one of five sprites chosen across deterministic random values', () => {
   }
 });
 
-test('mobile homepage keeps 22 equally coloured stars and no runner', () => {
+test('mobile homepage has no animation at 320, 375, 600 or 750px, even opening menu', () => {
   for(const width of [320,375,600,750]) {
     const f=fixture({width});
-    starsIn(f);
-    assert.equal(f.appended.some(x=>x.classList.contains('header-runner-lane')),false);
+    assert.equal(f.appended.length,0);
     f.menu.fire('click',{stopPropagation(){}});
-    starsIn(f,22);
+    assert.equal(f.navigation.getAttribute('data-nav'),'open');
+    assert.equal(f.menu.getAttribute('aria-expanded'),'true');
+    assert.equal(f.appended.length,0);
     f.menu.fire('click',{stopPropagation(){}});
-    assert.equal(f.appended.length,44,'close must not trigger');
+    assert.equal(f.navigation.getAttribute('data-nav'),'');
+    assert.equal(f.appended.length,0);
   }
 });
 
@@ -176,18 +162,18 @@ test('751px breakpoint uses desktop sprite and no Random stars', () => {
   assert.equal(f.appended.length,1);
 });
 
-test('inner pages never auto-run, mobile menu still animates on opening only', () => {
+test('inner pages never auto-run and mobile menu remains animation-free', () => {
   const d=fixture({path:'/blog/',width:1280});
   const m=fixture({path:'/about/',width:375});
   assert.equal(d.appended.length,0);
   assert.equal(m.appended.length,0);
   d.randomLink.fire('mouseenter');
-  assert.equal(d.appended.length,0);
   m.menu.fire('click',{stopPropagation(){}});
-  starsIn(m);
+  assert.equal(d.appended.length,0);
+  assert.equal(m.appended.length,0);
 });
 
-test('index.html equivalent homepage, reduced motion blocks all decorations', () => {
+test('index.html equivalent homepage, reduced motion blocks the runner', () => {
   onlySprite(fixture({path:'/index.html'}));
   const desktop=fixture({reduced:true});
   assert.equal(desktop.appended.length,0);
@@ -208,7 +194,10 @@ test('runner cleanup fallback and original CSS plus layout remain intact', () =>
   assert.match(css,/@keyframes header-runner-cross/);
   assert.match(css,/image-rendering:\s*pixelated/);
   assert.match(css,/prefers-reduced-motion:\s*reduce/);
-  assert.match(css,/@keyframes pride-star-burst/);
+  assert.ok(!css.includes('.pride-star-particle'));
+  assert.ok(!css.includes('@keyframes pride-star-burst'));
+  assert.ok(!code.includes('burstFromMenu'));
+  assert.ok(!code.includes('MutationObserver'));
   assert.ok(layout.includes("'/assets/js/confetti.js' | relative_url"));
   assert.ok(!code.includes("querySelector('#random-post-link')"));
 });

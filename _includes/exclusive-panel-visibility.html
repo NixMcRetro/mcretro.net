@@ -1,0 +1,21 @@
+<script>
+/* Native <details name> handles exclusivity. If collapsing an earlier long
+   panel moves the newly opened summary off-screen, restore its visibility. */
+(() => {
+  document.querySelectorAll('main details[name^="mcretro-"]').forEach((panel) => {
+    panel.addEventListener('toggle', () => {
+      if (!panel.open) return;
+      requestAnimationFrame(() => {
+        if (!panel.open) return;
+        const summary = panel.querySelector('summary');
+        if (!summary) return;
+        const box = summary.getBoundingClientRect();
+        const inset = 12;
+        if (box.top < inset || box.bottom > window.innerHeight - inset) {
+          summary.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
+        }
+      });
+    });
+  });
+})();
+</script>

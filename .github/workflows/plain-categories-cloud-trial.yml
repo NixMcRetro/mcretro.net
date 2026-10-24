@@ -1,0 +1,48 @@
+name: Plain Categories and Decorative Cloud Trial
+
+on:
+  push:
+    branches:
+      - test/plain-categories-decorative-cloud-2026-10-25
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Category labels, cloud rendering and existing site checks
+        run: |
+          node --check assets/js/rotating-tag-cloud.js
+          node --test .github/tests/decorative-category-cloud.mjs
+          node --test .github/tests/csp-preparation.mjs .github/tests/random-post.mjs .github/tests/footer-csp.mjs
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build site with Jekyll
+        run: bundle exec jekyll build --destination _site
+      - name: Verify no category archives and monthly archives remain
+        run: |
+          test -s _site/blog/index.html
+          test -d _site/archive
+          test ! -d _site/category
+          grep -Fq 'category-label' _site/blog/index.html
+          ! grep -Fq 'href="/category/' _site/blog/index.html
+          grep -Fq 'search-widget' _site/index.html
+      - name: Install locked Pagefind dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build existing Pagefind index
+        run: ./node_modules/.bin/pagefind --site _site --output-subdir pagefind
+      - name: Verify search and font files remain
+        run: |
+          test -s _site/pagefind/pagefind-ui.js
+          test -s _site/assets/fonts/montserrat/montserrat-latin-400-normal.woff2
+          test -s _site/assets/fonts/merriweather/merriweather-latin-400-normal.woff2
+          node .github/tests/footer-csp-built.mjs _site/index.html

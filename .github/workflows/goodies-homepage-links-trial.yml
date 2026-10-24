@@ -31,6 +31,10 @@ jobs:
           homepage = (root / "index.html").read_text(encoding="utf-8")
           goodies = (root / "goodies" / "index.html").read_text(encoding="utf-8")
           channels = (root / "channels" / "index.html").read_text(encoding="utf-8")
+          about = (root / "about" / "index.html").read_text(encoding="utf-8")
+          assert "The McRetro Network Sitemap" not in about, "Duplicate sitemap panel should be removed"
+          for kept in ("My Internet History", "About McRetro", "Make Contact", "Super Secret Recipes", "The Homepages That Came Before"):
+              assert kept in about, "Preserve About history/content: " + kept
           assert "Please browse through the menu and definitely drop by the" in homepage
           assert "page for some really cool links including the retro hardware photo gallery, homepages, and the file server." in homepage
           assert 'href="/goodies"' in homepage or 'href="/goodies/"' in homepage

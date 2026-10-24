@@ -1,0 +1,29 @@
+name: Center logo-text Pride burst (no deployment)
+
+on:
+  push:
+    branches:
+      - test/centre-pride-stars-on-logo-text-2026-10-24
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Validate script and burst behaviour
+        run: |
+          node --check assets/js/confetti.js
+          node tests/logo-pride-star-drift.mjs
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll without deploying
+        run: bundle exec jekyll build --destination _site

@@ -826,76 +826,54 @@ pre code {
   background: #fff;
 }
 /* Small five-pointed stars, retaining the original confetti colours. */
-/* Progress Pride stars use separate pseudo-elements for their shape and
-   rainbow streak, so the trail is never clipped to the five-point shape. */
-.confetti-particle {
+/* Flying retro hardware with vivid, tapered Progress Pride exhaust.
+   Hardware remains fully opaque and unrotated until it leaves the viewport. */
+.retro-tech-particle {
   position: fixed;
-  pointer-events: none;
   z-index: 9999;
-  opacity: 0;
-  isolation: isolate;
-  animation: confetti-fall linear forwards;
+  display: block;
+  pointer-events: none;
+  opacity: 1;
+  overflow: visible;
+  will-change: transform;
+  animation: retro-tech-cross linear both;
 }
-.confetti-particle::before {
+.retro-tech-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .55));
+}
+.retro-tech-particle::before {
   content: "";
   position: absolute;
-  inset: 0;
   z-index: 1;
-  background: var(--star-color);
-  clip-path: polygon(
-    50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
-    50% 71%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
-  );
-  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55));
-  animation: confetti-star-spin var(--duration) linear forwards;
-}
-.confetti-particle::after {
-  content: "";
-  position: absolute;
   left: 50%;
   top: 50%;
-  width: var(--trail-length, 55px);
-  height: 6px;
-  z-index: 0;
+  width: var(--trail-length, 145px);
+  height: var(--trail-width, 14px);
   transform-origin: 0 50%;
   transform: rotate(var(--trail-angle)) translateY(-50%);
-  border-radius: 10px;
-  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
-  background: linear-gradient(90deg,
-    #e40303 0%, #ff8c00 18%, #ffed00 35%,
-    #008026 51%, #004dff 69%, #750787 84%,
-    transparent 100%);
-  opacity: 0.75;
-  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.65));
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.88), rgba(255,255,255,0) 78%) center / 100% 21% no-repeat,
+    linear-gradient(90deg,
+      #e40303 0%, #ff8c00 14%, #ffed00 29%, #008026 43%,
+      #004dff 57%, #750787 70%, #f5a9b8 80%, #5bcefa 89%,
+      rgba(91,206,250,0) 100%);
+  border-radius: 9px;
+  clip-path: polygon(0 8%, 100% 50%, 0 92%);
+  mask-image: linear-gradient(90deg, black 0%, black 45%, transparent 100%);
+  filter: drop-shadow(0 0 5px rgba(250, 136, 230, .85));
 }
-.confetti-particle--glitter::before {
-  background: conic-gradient(
-    #fff 0deg, #f5a9b8 50deg, #ffed00 105deg,
-    #fff 160deg, #5bcefa 225deg, #750787 290deg, #fff 360deg
-  );
-  animation: confetti-star-spin var(--duration) linear forwards,
-    confetti-glitter-flash 0.32s ease-in-out infinite alternate;
-}
-.confetti-particle--glitter::after {
-  height: 8px;
-  opacity: 0.9;
-}
-@keyframes confetti-star-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(var(--rotation)); }
-}
-@keyframes confetti-glitter-flash {
-  from { filter: drop-shadow(0 0 2px #fff) brightness(1); opacity: 0.85; }
-  to { filter: drop-shadow(0 0 7px #ffed00) brightness(1.7); opacity: 1; }
-}
-@keyframes confetti-fall {
-  0% { opacity: 1; transform: translate(0, 0); }
-  100% { opacity: 0; transform: translate(var(--dx), var(--dy)); }
+@keyframes retro-tech-cross {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(var(--move-x), var(--move-y), 0); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .confetti-particle { display: none; animation: none; }
-  .confetti-particle::before,
-  .confetti-particle::after { animation: none; }
+  .retro-tech-particle { display: none; animation: none; }
 }
 
 /* ===========================

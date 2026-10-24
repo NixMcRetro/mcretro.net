@@ -1,64 +1,106 @@
-/* McRetro Progress Pride star confetti: one homepage welcome and logo-hover bursts.
-   No images or third-party libraries. Respect reduced-motion preferences. */
+/* McRetro flying retro hardware with Progress Pride rainbow exhaust.
+   Original images are untouched. Particles fly offscreen without fading. */
 document.addEventListener('DOMContentLoaded', () => {
   const logo = document.querySelector('.site-logo');
   if (!logo) return;
 
-  const colors = ['#E40303', '#FF8C00', '#FFED00', '#008026', '#004DFF', '#750787', '#000000', '#784F17', '#FFFFFF', '#F5A9B8', '#5BCEFA'];
-  const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const sprite = '/assets/images/effects/retro-tech-particles.svg#';
+  // Weighted to favour the iconic floppy disk.
+  const choices = [
+    { id: 'floppy-35', weight: 60 },
+    { id: 'floppy-525', weight: 15 },
+    { id: 'crt', weight: 10 },
+    { id: 'keyboard', weight: 10 },
+    { id: 'cdrom', weight: 5 }
+  ];
   const random = (min, max) => min + Math.random() * (max - min);
+  const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function makeStar(x, y, dx, dy, duration) {
-    const particle = document.createElement('span');
-    particle.classList.add('confetti-particle');
-    particle.setAttribute('aria-hidden', 'true');
-
-    // A few extra-large stars glitter like little disco balls.
-    const glitter = Math.random() < 0.09;
-    const size = glitter ? random(28, 42) : random(12, 24) + (Math.random() < 0.16 ? random(4, 8) : 0);
-    if (glitter) particle.classList.add('confetti-particle--glitter');
-    particle.style.width = size + 'px';
-    particle.style.height = size + 'px';
-    particle.style.setProperty('--star-color', colors[Math.floor(Math.random() * colors.length)]);
-    particle.style.left = x + 'px';
-    particle.style.top = y + 'px';
-    particle.style.setProperty('--dx', dx + 'px');
-    particle.style.setProperty('--dy', dy + 'px');
-    particle.style.setProperty('--rotation', random(-270, 270) + 'deg');
-    particle.style.setProperty('--duration', duration + 's');
-    particle.style.setProperty('--trail-length', random(32, window.innerWidth < 600 ? 54 : 78) + 'px');
-    // Trail points behind the star, opposite the direction of travel.
-    particle.style.setProperty('--trail-angle', (Math.atan2(dy, dx) * 180 / Math.PI + 180) + 'deg');
-    particle.style.animationDuration = duration + 's';
-
-    document.body.appendChild(particle);
-    particle.addEventListener('animationend', () => particle.remove(), { once: true });
-    // Also remove particles if their animation was interrupted or disabled.
-    setTimeout(() => particle.remove(), 2500);
+  function chooseHardware() {
+    let roll = Math.random() * 100;
+    for (const item of choices) {
+      roll -= item.weight;
+      if (roll < 0) return item.id;
+    }
+    return choices[0].id;
   }
 
-  function scatterStars(count) {
+  function launchHardware() {
     const width = window.innerWidth;
     const height = window.innerHeight;
-    // Spread particles across visible viewport cells, not only near the logo.
-    const columns = Math.max(1, Math.ceil(Math.sqrt(count * width / Math.max(height, 1))));
-    const rows = Math.ceil(count / columns);
-    for (let i = 0; i < count; i++) {
-      const col = i % columns;
-      const row = Math.floor(i / columns);
-      const x = (col + random(0.15, 0.85)) * width / columns;
-      const y = (row + random(0.15, 0.85)) * height / rows;
-      makeStar(x, y, random(-60, 60), random(25, 95), random(1.0, 1.8));
+    const size = random(width < 600 ? 23 : 29, width < 600 ? 38 : 48);
+    const trail = random(width < 600 ? 75 : 115, width < 600 ? 125 : 210);
+    const margin = size + trail + 24;
+    const edge = Math.floor(Math.random() * 4);
+
+    let startX, startY, dx, dy;
+    switch (edge) {
+      case 0: // left to right
+        startX = -margin;
+        startY = random(0, height);
+        dx = width + 2 * margin;
+        dy = random(-height * 0.22, height * 0.22);
+        break;
+      case 1: // right to left
+        startX = width + margin;
+        startY = random(0, height);
+        dx = -(width + 2 * margin);
+        dy = random(-height * 0.22, height * 0.22);
+        break;
+      case 2: // top to bottom
+        startX = random(0, width);
+        startY = -margin;
+        dx = random(-width * 0.22, width * 0.22);
+        dy = height + 2 * margin;
+        break;
+      default: // bottom to top
+        startX = random(0, width);
+        startY = height + margin;
+        dx = random(-width * 0.22, width * 0.22);
+        dy = -(height + 2 * margin);
     }
+
+    const duration = random(2.9, 4.5);
+    const particle = document.createElement('span');
+    particle.classList.add('retro-tech-particle');
+    particle.setAttribute('aria-hidden', 'true');
+    particle.style.left = startX + 'px';
+    particle.style.top = startY + 'px';
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
+    particle.style.setProperty('--move-x', dx + 'px');
+    particle.style.setProperty('--move-y', dy + 'px');
+    particle.style.setProperty('--trail-length', trail + 'px');
+    particle.style.setProperty('--trail-width', random(10, 17) + 'px');
+    particle.style.setProperty('--trail-angle', (Math.atan2(dy, dx) * 180 / Math.PI + 180) + 'deg');
+    particle.style.animationDuration = duration + 's';
+    // A small negative delay gives the initial burst coverage across the page.
+    particle.style.animationDelay = -random(0.05, duration * 0.58) + 's';
+
+    const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    icon.setAttribute('viewBox', '0 0 48 48');
+    icon.setAttribute('class', 'retro-tech-icon');
+    icon.setAttribute('focusable', 'false');
+    icon.setAttribute('aria-hidden', 'true');
+
+    const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+    use.setAttribute('href', sprite + chooseHardware());
+    icon.appendChild(use);
+    particle.appendChild(icon);
+    document.body.appendChild(particle);
+
+    particle.addEventListener('animationend', () => particle.remove(), { once: true });
+    // Safety net for interrupted animations or a tab being suspended.
+    setTimeout(() => particle.remove(), (duration + 2) * 1000);
   }
 
-  function scatterOnLogoHover() {
+  function flyPast(count) {
     if (reducedMotion()) return;
-    scatterStars(window.innerWidth < 600 ? 24 : 42);
+    for (let i = 0; i < count; i++) launchHardware();
   }
 
-  logo.addEventListener('mouseenter', scatterOnLogoHover);
+  logo.addEventListener('mouseenter', () => flyPast(window.innerWidth < 600 ? 12 : 22));
   if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-    if (!reducedMotion()) scatterStars(window.innerWidth < 600 ? 32 : 64);
+    flyPast(window.innerWidth < 600 ? 20 : 38);
   }
 });

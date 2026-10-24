@@ -1,0 +1,46 @@
+name: Pride Random and Mobile Menu Trial
+
+on:
+  push:
+    branches:
+      - test/pride-random-menu-stars-2026-10-25
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Check JavaScript syntax
+        run: |
+          node --check assets/js/confetti.js
+          node --check assets/js/mobile-navigation.js
+          node --check assets/js/random-post.js
+      - name: Verify Pride navigation and existing CSP/nav regressions
+        run: |
+          node --test .github/tests/pride-navigation-trial.mjs
+          node --test .github/tests/csp-preparation.mjs .github/tests/random-post.mjs .github/tests/footer-csp.mjs
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll
+        run: bundle exec jekyll build --destination _site
+      - name: Install locked Pagefind dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Generate search index
+        run: ./node_modules/.bin/pagefind --site _site --output-subdir pagefind
+      - name: Verify homepage and JavaScript assets
+        run: |
+          test -s _site/index.html
+          test -s _site/assets/js/confetti.js
+          test -s _site/assets/js/mobile-navigation.js
+          test -s _site/pagefind/pagefind-ui.js
+          grep -Fq '/assets/js/confetti.js' _site/index.html
+          node .github/tests/footer-csp-built.mjs _site/index.html

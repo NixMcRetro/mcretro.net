@@ -14,40 +14,32 @@
   margin-bottom: 0.2em;
 }
 
-/* Teal text on muted-teal headings for About, Channels and Goodies.
-   Keep cobalt links everywhere else on the site and original artwork unchanged. */
+/* Deeper, clearly teal headings for the About, Channels and Goodies
+   accordions. Preserve near-black labels and the site's cobalt links/focus. */
 .about-panel.panel--teal {
   border-color: #8fb6ac;
   border-left: 3px solid #018281;
 }
 .about-panel.panel--teal > summary {
-  background: #dceee7;
-  color: #065f5b;
+  background: #b8d9cf;
+  color: #1a1a1a;
 }
 .about-panel.panel--teal > summary:hover {
-  background: #c7e2d8;
+  background: #a6cec1;
 }
 .about-panel.panel--teal[open] > summary {
-  background: #cfe7de;
+  background: #a9d2c5;
   border-bottom-color: #8fb6ac;
 }
 .about-panel.panel--teal[open] > summary:hover {
-  background: #bcdbcf;
+  background: #95c3b5;
 }
+/* Keep the existing clearly visible cobalt keyboard focus outline. */
 .about-panel.panel--teal > summary:focus-visible {
-  background: #c7e2d8;
-  outline-color: #065f5b;
+  background: #a6cec1;
 }
 .about-panel.panel--teal[open] > summary:focus-visible {
-  background: #bcdbcf;
-}
-/* In expanded panels, use deeper teal links instead of site-wide cobalt. */
-.about-panel.panel--teal a,
-.about-panel.panel--teal a:visited {
-  color: #006561;
-}
-.about-panel.panel--teal a:hover {
-  color: #004c4b;
+  background: #95c3b5;
 }
 
 /* About page: limit these styles to the native expandable sections. */

@@ -1,5 +1,5 @@
 ---
-title: "Apple Macintosh LC 475 - Derating Tantalum Capacitors"
+title: "Apple Macintosh LC 475: Derating Tantalum Capacitors"
 author: "Nix McRetro"
 date: 2012-11-07T06:32:07.000+11:00
 last_modified_at: 2026-10-18

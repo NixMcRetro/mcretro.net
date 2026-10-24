@@ -1,5 +1,5 @@
 ---
-title: "Apple Macintosh LC 475 Game Demo - Hangman Plus"
+title: "Apple Macintosh LC 475: Hangman Plus Game Demo"
 author: "Nix McRetro"
 date: 2013-06-02T07:10:01.000+10:00
 categories: [apple, gaming, youtube]

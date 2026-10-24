@@ -28,7 +28,7 @@ So this is definitely not over yet. Revenge of the Microdrives will follow!
 
 ### Related posts
 
-- [MicroDrives: Revenge of the MicroDrives](/microdrives-revenge-of-the-microdrives/)
+- [MicroDrives: Revenge of the MicroDrives](/apple-macintosh-lc-475-revenge-of-the-microdrives/)
 
 ### Sources
 

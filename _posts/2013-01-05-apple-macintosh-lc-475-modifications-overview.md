@@ -1,5 +1,5 @@
 ---
-title: "Apple Macintosh LC 475 Modifications Overview"
+title: "Apple Macintosh LC 475: Modifications Overview"
 author: "Nix McRetro"
 date: 2013-01-05T14:00:57.000+11:00
 last_modified_at: 2026-10-18
@@ -33,10 +33,10 @@ Go team AppleTalk!
 
 ### Related posts
 
-- [Apple Macintosh LC 475 Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33mhz/)
-- [Apple Macintosh LC 475 RAM Utilisation and 32-Bit Addressing](/apple-macintosh-lc-475-ram-utilisation-and-32-bit-addressing/)
-- [Apple Macintosh LC 475 Mismatched VRAM Test](/apple-macintosh-lc-475-mismatched-vram-test/)
-- [Solid-State SCSI Storage in an LC 475 with a PCD-60B Card Reader](/solid-state-scsi-storage-in-an-lc-475-with-a-pcd-60b-card-reader/)
-- [Apple Macintosh LC 475 Online with PDS Ethernet](/apple-macintosh-lc-475-online-with-pds-ethernet/)
-- [Apple Macintosh LC 475 Slowing the Fan with a Resistor](/apple-macintosh-lc-475-slowing-the-fan-with-a-resistor/)
-- [Apple Macintosh LC 475 Tantalum Capacitor Replacement](/apple-macintosh-lc-475-tantalum-capacitor-replacement/)
+- [Apple Macintosh LC 475: Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33-mhz/)
+- [Apple Macintosh LC 475: RAM Utilisation and 32-Bit Addressing](/apple-macintosh-lc-475-ram-utilisation-and-32-bit-addressing/)
+- [Apple Macintosh LC 475: Mismatched VRAM Test](/apple-macintosh-lc-475-mismatched-vram-test/)
+- [Apple Macintosh LC 475: Solid-State SCSI Storage with a PCD-60B Card Reader](/apple-macintosh-lc-475-solid-state-scsi-storage-with-a-pcd-60b-card-reader/)
+- [Apple Macintosh LC 475: Online with PDS Ethernet](/apple-macintosh-lc-475-online-with-pds-ethernet/)
+- [Apple Macintosh LC 475: Slowing the Fan with a Resistor](/apple-macintosh-lc-475-slowing-the-fan-with-a-resistor/)
+- [Apple Macintosh LC 475: Tantalum Capacitor Replacement](/apple-macintosh-lc-475-tantalum-capacitor-replacement/)

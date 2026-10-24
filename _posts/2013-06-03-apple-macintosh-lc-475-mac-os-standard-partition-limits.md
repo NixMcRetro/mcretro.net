@@ -22,6 +22,6 @@ Fantastic! I'm glad we've finally got that one sorted!
 
 ### Related posts
 
-- [Apple Macintosh LC 475: 4 GB Hitachi Microdrive Testing](/apple-macintosh-lc-475-4gb-hitachi-microdrive-testing/)
-- [Solid-State SCSI Storage in an LC 475 with a PCD-60B Card Reader](/solid-state-scsi-storage-in-an-lc-475-with-a-pcd-60b-card-reader/)
-- [Apple Macintosh LC 475 Game Demo - Hangman Plus](/apple-macintosh-lc-475-game-demo-hangman-plus/)
+- [Apple Macintosh LC 475: 4 GB Hitachi Microdrive Testing](/apple-macintosh-lc-475-4-gb-hitachi-microdrive-testing/)
+- [Apple Macintosh LC 475: Solid-State SCSI Storage with a PCD-60B Card Reader](/apple-macintosh-lc-475-solid-state-scsi-storage-with-a-pcd-60b-card-reader/)
+- [Apple Macintosh LC 475: Hangman Plus Game Demo](/apple-macintosh-lc-475-hangman-plus-game-demo/)

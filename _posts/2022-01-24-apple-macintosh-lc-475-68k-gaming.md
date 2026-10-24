@@ -1,5 +1,5 @@
 ---
-title: "The Apple Macintosh LC 475 and 68k Gaming"
+title: "Apple Macintosh LC 475: 68k Gaming"
 author: "Nix McRetro"
 date: 2022-01-24T20:24:58.000+11:00
 categories: [apple, gaming]
@@ -45,6 +45,6 @@ On a brighter note, I was also able to fire up [SheepShaver](https://sheepshaver
 
 ### Related posts
 
-- [Apple Macintosh LC 475 Modifications Overview](/apple-macintosh-lc-475-modifications-overview/)
-- [Apple Macintosh LC 475 Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33mhz/)
-- [Apple Macintosh LC 475 Game Demo - Hangman Plus](/apple-macintosh-lc-475-game-demo-hangman-plus/)
+- [Apple Macintosh LC 475: Modifications Overview](/apple-macintosh-lc-475-modifications-overview/)
+- [Apple Macintosh LC 475: Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33-mhz/)
+- [Apple Macintosh LC 475: Hangman Plus Game Demo](/apple-macintosh-lc-475-hangman-plus-game-demo/)

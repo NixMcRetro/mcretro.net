@@ -16,6 +16,6 @@ Whether I've ended up with a mislabelled processor, a defective chip or somethin
 
 ### Related posts
 
-- [Removing the Socketed CPU from an Apple Macintosh LC 475](/removing-the-socketed-cpu-from-an-apple-macintosh-lc-475/)
-- [Apple Macintosh LC 475 Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33mhz/)
-- [Apple Macintosh LC 475 Modifications Overview](/apple-macintosh-lc-475-modifications-overview/)
+- [Apple Macintosh LC 475: Removing the Socketed CPU](/apple-macintosh-lc-475-removing-the-socketed-cpu/)
+- [Apple Macintosh LC 475: Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33-mhz/)
+- [Apple Macintosh LC 475: Modifications Overview](/apple-macintosh-lc-475-modifications-overview/)

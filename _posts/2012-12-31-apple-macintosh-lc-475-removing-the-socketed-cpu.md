@@ -1,5 +1,5 @@
 ---
-title: "Removing the Socketed CPU from an Apple Macintosh LC 475"
+title: "Apple Macintosh LC 475: Removing the Socketed CPU"
 author: "Nix McRetro"
 date: 2012-12-31T13:43:52.000+11:00
 last_modified_at: 2026-10-18
@@ -20,7 +20,7 @@ That upgrade leads directly into the next experiment: 33 MHz.
 
 ### Related posts
 
-- [Apple Macintosh LC 475 Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33mhz/)
+- [Apple Macintosh LC 475: Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33-mhz/)
 
 ### Sources
 

@@ -1,5 +1,5 @@
 ---
-title: "Microdrives: Revenge of the Microdrives"
+title: "Apple Macintosh LC 475: Revenge of the Microdrives"
 author: "Nix McRetro"
 date: 2013-01-18T10:51:27.000+11:00
 last_modified_at: 2026-10-18
@@ -18,4 +18,4 @@ Hopefully this one survives the trip through their servers looking slightly heal
 
 ### Related posts
 
-- [Apple Macintosh LC 475: 4 GB Hitachi Microdrive Testing](/apple-macintosh-lc-475-4gb-hitachi-microdrive-testing/)
+- [Apple Macintosh LC 475: 4 GB Hitachi Microdrive Testing](/apple-macintosh-lc-475-4-gb-hitachi-microdrive-testing/)

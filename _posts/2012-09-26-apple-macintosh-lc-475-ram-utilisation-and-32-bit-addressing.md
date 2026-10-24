@@ -1,5 +1,5 @@
 ---
-title: "Apple Macintosh LC 475 RAM Utilisation and 32-Bit Addressing"
+title: "Apple Macintosh LC 475: RAM Utilisation and 32-Bit Addressing"
 author: "Nix McRetro"
 date: 2012-09-26T12:17:56.000+10:00
 last_modified_at: 2026-10-18

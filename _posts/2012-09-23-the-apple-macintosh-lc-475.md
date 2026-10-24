@@ -36,8 +36,8 @@ Apple shipped it with a 25 MHz Motorola 68LC040, 8 KB of internal L1 cache and n
 
 ### Related posts
 
-- [Apple Macintosh LC 475 System Setup Demo](/apple-macintosh-lc-475-system-setup-demo/)
-- [Apple Macintosh LC 475 Overclocking to 33MHz](/apple-macintosh-lc-475-overclocking-to-33mhz/)
+- [Apple Macintosh LC 475: System Setup Demo](/apple-macintosh-lc-475-system-setup-demo/)
+- [Apple Macintosh LC 475 Overclocking to 33MHz](/apple-macintosh-lc-475-overclocking-to-33-mhz/)
 
 ### Sources
 

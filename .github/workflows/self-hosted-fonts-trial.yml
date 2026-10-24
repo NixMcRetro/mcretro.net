@@ -1,0 +1,47 @@
+name: Self-hosted Fonts Migration Trial
+
+on:
+  push:
+    branches:
+      - test/self-host-merriweather-montserrat-2026-10-25
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Check local fonts, licensing and website regressions
+        run: |
+          node --check .github/tests/self-hosted-fonts.mjs
+          node --test .github/tests/self-hosted-fonts.mjs .github/tests/csp-preparation.mjs .github/tests/random-post.mjs .github/tests/footer-csp.mjs
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build website
+        run: bundle exec jekyll build --destination _site
+      - name: Install locked Pagefind dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build Pagefind search index
+        run: ./node_modules/.bin/pagefind --site _site --output-subdir pagefind
+      - name: Verify built files and no third-party font references
+        run: |
+          test -s _site/index.html
+          test -s _site/assets/css/style.css
+          test -s _site/assets/fonts/montserrat/montserrat-latin-400-normal.woff2
+          test -s _site/assets/fonts/montserrat/montserrat-latin-700-normal.woff2
+          test -s _site/assets/fonts/merriweather/merriweather-latin-400-normal.woff2
+          test -s _site/assets/fonts/merriweather/merriweather-latin-700-normal.woff2
+          test -s _site/assets/fonts/merriweather/merriweather-latin-400-italic.woff2
+          test -s _site/assets/fonts/montserrat/OFL.txt
+          test -s _site/assets/fonts/merriweather/OFL.txt
+          test -s _site/pagefind/pagefind-ui.js
+          ! grep -Eq 'fonts\.googleapis\.com|fonts\.gstatic\.com' _site/index.html
+          node .github/tests/footer-csp-built.mjs _site/index.html

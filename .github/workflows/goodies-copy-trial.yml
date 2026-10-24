@@ -1,0 +1,35 @@
+name: Goodies Copy Trial
+
+on:
+  push:
+    branches:
+      - test/goodies-copy-layout-tidy-2026-10-25
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Goodies content regression checks
+        run: node --test .github/tests/goodies-copy-trial.mjs
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll
+        run: bundle exec jekyll build --destination _site
+      - name: Check built Goodies text and accordion
+        run: |
+          test -s _site/goodies/index.html
+          grep -Fq "Don't copy that floppy!" _site/goodies/index.html
+          grep -Fq 'filecopy.gif' _site/goodies/index.html
+          grep -Fq 'Still Under Construction' _site/goodies/index.html
+          ! grep -Fq 'No point pretending those pages are finished!' _site/goodies/index.html
+          ! grep -Fq 'The restored homepages and browser projects have found a home here too.' _site/goodies/index.html

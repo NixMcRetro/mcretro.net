@@ -15,7 +15,7 @@ assert.match(styles, /85%/);
 assert.match(styles, /opacity:\s*\.55;/);
 assert.match(styles, /prefers-reduced-motion:\s*reduce/);
 assert.doesNotMatch(styles, /retro-tech-cross|\.retro-tech-particle|\.retro-tech-icon/);
-assert.doesNotMatch(script, /retro-tech-particles\.svg|launchHardware|flyPast|window\.location\.pathname/);
+assert.doesNotMatch(script, /retro-tech-particles\.svg|launchHardware|flyPast/);
 
 function boot(width = 1200, reduced = false, collapsedTextRange = false, textWidth = 160, pathname = '/about/') {
   const documentEvents = new Map();

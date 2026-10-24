@@ -59,7 +59,6 @@ An old-fashioned nature homepage featuring a frog, a lizard and a few original p
 - **[File Server](/files/)**: Not ready yet. The promised 10 KB/s downloads remain a dream!
 - **[Photo Gallery](/photos/)**: The gallery is still being restored.
 
-
 </details>
 
 As for the other tools and experiments, they'll turn up here as they become ready.

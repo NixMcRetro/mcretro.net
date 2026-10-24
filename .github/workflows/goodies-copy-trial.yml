@@ -25,11 +25,22 @@ jobs:
           bundler-cache: true
       - name: Build Jekyll
         run: bundle exec jekyll build --destination _site
-      - name: Check built Goodies text and accordion
+      - name: Locate and inspect generated Goodies page
         run: |
-          test -s _site/goodies/index.html
-          grep -Fq "Don't copy that floppy!" _site/goodies/index.html
-          grep -Fq 'filecopy.gif' _site/goodies/index.html
-          grep -Fq 'Still Under Construction' _site/goodies/index.html
-          ! grep -Fq 'No point pretending those pages are finished!' _site/goodies/index.html
-          ! grep -Fq 'The restored homepages and browser projects have found a home here too.' _site/goodies/index.html
+          find _site -maxdepth 3 -iname '*goodies*' -print
+          if [ -s _site/goodies/index.html ]; then
+            GOODIES=_site/goodies/index.html
+          elif [ -s _site/goodies.html ]; then
+            GOODIES=_site/goodies.html
+          else
+            echo "Built Goodies file missing" >&2
+            exit 1
+          fi
+          echo "Checking $GOODIES"
+          grep -Fq "Don't copy that floppy!" "$GOODIES"
+          grep -Fq 'filecopy.gif' "$GOODIES"
+          grep -Fq 'Still Under Construction' "$GOODIES"
+          ! grep -Fq 'No point pretending those pages are finished!' "$GOODIES"
+          ! grep -Fq 'The restored homepages and browser projects have found a home here too.' "$GOODIES"
+      - name: Report remaining third-party asset references
+        run: node .github/tests/external-dependencies-report.mjs _site

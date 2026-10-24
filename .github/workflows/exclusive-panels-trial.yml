@@ -31,10 +31,10 @@ jobs:
               ("goodies", "mcretro-goodies", 3)
           ]:
               content = (Path("_site")/page/"index.html").read_text(encoding="utf-8")
-              panels = re.findall(r'<details\\b[^>]*class="about-panel panel--teal"[^>]*>', content)
+              panels = re.findall(r'<details\b[^>]*class="about-panel panel--teal"[^>]*>', content)
               assert len(panels)==count, f"{page}: expected {count}, got {len(panels)}"
               assert all(f'name="{name}"' in panel for panel in panels), f"{page}: incorrect grouping"
-              assert all(not re.search(r'\\bopen(?:\\s|>|=)', panel) for panel in panels), f"{page}: panel starts open"
+              assert all(not re.search(r'\bopen(?:\s|>|=)', panel) for panel in panels), f"{page}: panel starts open"
               print(f"PASS {page}: {count} panels in one native exclusive group")
           PY
       - uses: actions/setup-node@v6

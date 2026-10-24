@@ -14,32 +14,32 @@
   margin-bottom: 0.2em;
 }
 
-/* Light muted-teal headings and dark-grey borders for About, Channels
+/* Soft warm-mint headings and dark-grey borders for About, Channels
    and Goodies. Preserve near-black labels and the site's cobalt links/focus. */
 .about-panel.panel--teal {
   border-color: #555555;
   border-left: 3px solid #555555;
 }
 .about-panel.panel--teal > summary {
-  background: #d5ebdf;
+  background: #e6f0e5;
   color: #1a1a1a;
 }
 .about-panel.panel--teal > summary:hover {
-  background: #c6dfd2;
+  background: #d9e9d9;
 }
 .about-panel.panel--teal[open] > summary {
-  background: #cee6d9;
+  background: #dfecdf;
   border-bottom-color: #555555;
 }
 .about-panel.panel--teal[open] > summary:hover {
-  background: #bad8c9;
+  background: #cfe2d1;
 }
 /* Keep the existing clearly visible cobalt keyboard focus outline. */
 .about-panel.panel--teal > summary:focus-visible {
-  background: #c6dfd2;
+  background: #d9e9d9;
 }
 .about-panel.panel--teal[open] > summary:focus-visible {
-  background: #bad8c9;
+  background: #cfe2d1;
 }
 
 /* About page: limit these styles to the native expandable sections. */

@@ -47,6 +47,9 @@ jobs:
       - name: Run Pagefind
         run: ./node_modules/.bin/pagefind --site _site --output-subdir pagefind
 
+      - name: Verify generated site CSP requirements
+        run: node .github/tests/csp-built.mjs _site
+
       - name: Configure Pages
         uses: actions/configure-pages@v6
 

@@ -14,11 +14,11 @@
   margin-bottom: 0.2em;
 }
 
-/* Light muted-teal headings for About, Channels and Goodies.
-   Preserve near-black labels and the site's cobalt links/focus. */
+/* Light muted-teal headings and dark-grey borders for About, Channels
+   and Goodies. Preserve near-black labels and the site's cobalt links/focus. */
 .about-panel.panel--teal {
-  border-color: #8fb6ac;
-  border-left: 3px solid #018281;
+  border-color: #555555;
+  border-left: 3px solid #555555;
 }
 .about-panel.panel--teal > summary {
   background: #d5ebdf;
@@ -29,7 +29,7 @@
 }
 .about-panel.panel--teal[open] > summary {
   background: #cee6d9;
-  border-bottom-color: #8fb6ac;
+  border-bottom-color: #555555;
 }
 .about-panel.panel--teal[open] > summary:hover {
   background: #bad8c9;

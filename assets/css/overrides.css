@@ -611,3 +611,26 @@
   .archive-blog-list .post-content-preview { width: 100%; }
   .archive-blog-list .post-title { font-size: 1.25rem; }
 }
+
+/* Keep every main Blog excerpt and thumbnail on the same desktop column.
+   Category labels may wrap inside metadata but must never shift article content.
+   Monthly archives have their own layout and are deliberately excluded. */
+@media screen and (min-width: 751px) {
+  .blog-list:not(.archive-blog-list) .post-meta-row {
+    display: grid;
+    grid-template-columns: 175px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+  }
+  .blog-list:not(.archive-blog-list) .post-meta-row .post-meta {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .blog-list:not(.archive-blog-list) .post-meta .post-categories {
+    display: block;
+    width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+}

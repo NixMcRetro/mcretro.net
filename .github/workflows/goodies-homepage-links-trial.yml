@@ -42,10 +42,10 @@ jobs:
           assert "GeoCities" in goodies and "/homepages/geocities/" in goodies
           assert "/photos/" in goodies and "/files/" in goodies
           for name, html in (("Ready to Visit", goodies), ("Nix McRetro", channels)):
-              blocks = re.findall(r'<details\\b([^>]*)>\\s*<summary[^>]*>(.*?)</summary>', html, re.I | re.S)
+              blocks = re.findall(r'<details\b([^>]*)>\s*<summary[^>]*>(.*?)</summary>', html, re.I | re.S)
               matching = [(attrs, summary) for attrs, summary in blocks if name in summary]
               assert len(matching) == 1, "Missing or duplicate panel " + name
-              assert not re.search(r'\\bopen\\b', matching[0][0]), "Unexpected default open: " + name
+              assert not re.search(r'\bopen\b', matching[0][0]), "Unexpected default open: " + name
           restored = goodies.split("Restored Historical Homepages", 1)[1].split("</details>", 1)[0]
           names = ["Frank the Snake", "Pepper the Dog Blog", "Sonic the Hedgehog Homepage", "Space / Planets Webpage", "Super Nature World"]
           offsets = [restored.index(name) for name in names]

@@ -873,12 +873,16 @@ pre code {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(.65) rotate(0deg);
   }
-  28% {
+  20% {
     opacity: 1;
     transform: translate3d(var(--burst-x), var(--burst-y), 0) scale(1) rotate(0deg);
   }
-  75% {
-    opacity: .85;
+  /* Give the stars a longer, gentler fade as they fall. */
+  65% {
+    opacity: .96;
+  }
+  85% {
+    opacity: .55;
   }
   100% {
     opacity: 0;

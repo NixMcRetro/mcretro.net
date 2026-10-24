@@ -1,0 +1,29 @@
+name: Slower Progress Pride welcome burst (no deployment)
+
+on:
+  push:
+    branches:
+      - test/pride-logo-welcome-more-slower-stars-2026-10-24
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Validate syntax and star behaviour
+        run: |
+          node --check assets/js/confetti.js
+          node tests/logo-pride-star-drift.mjs
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build site without deploying
+        run: bundle exec jekyll build --destination _site

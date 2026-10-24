@@ -1,5 +1,5 @@
-/* McRetro logo-only Progress Pride confetti.
-   Stars burst outward and drift downward. No automatic page-load effect. */
+/* Progress Pride stars: one homepage welcome and logo-triggered bursts.
+   Stars pop outward, then slowly drift and fade down. */
 document.addEventListener('DOMContentLoaded', () => {
   const logo = document.querySelector('.site-logo');
   if (!logo) return;
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const centreX = rect.left + rect.width / 2;
     const centreY = rect.top + rect.height / 2;
     const mobile = window.innerWidth < 600;
-    const count = mobile ? 12 : 20;
+    const count = mobile ? 18 : 30;
     // Extend the circular burst from the middle of the text to just beyond
     // both ends of "McRetro.net". This adapts to actual text width on mobile.
     const burstRadius = Math.max(50, rect.width / 2 + (mobile ? 12 : 20));
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ? random(1.02, 1.12)
         : random(0.7, 1.08));
       const size = random(9, mobile ? 14 : 16);
-      const duration = random(1.9, 2.8);
+      const duration = random(3.2, 4.5);
       const star = document.createElement('span');
       star.classList.add('pride-star-particle');
       star.setAttribute('aria-hidden', 'true');
@@ -62,11 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.appendChild(star);
       star.addEventListener('animationend', () => star.remove(), { once: true });
       // Remove particles if an animation is interrupted or disabled mid-flight.
-      setTimeout(() => star.remove(), 3600);
+      setTimeout(() => star.remove(), 5600);
     }
   }
 
-  // Mouse and keyboard access; no continuous animation or homepage auto-burst.
+  // One welcome burst on the homepage, plus mouse or keyboard logo triggers.
   logo.addEventListener('mouseenter', burstFromLogo);
   logo.addEventListener('focus', burstFromLogo);
+  if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    burstFromLogo();
+  }
 });

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: The Goodies Page
+title: Goodies
 ---
 
 ## Goodies

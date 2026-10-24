@@ -21,17 +21,19 @@ layout: default
                 <source type="image/jxl" srcset="/assets/images/mcretro-author-portrait-192.jxl?v=20261018d">
                 <img src="/assets/images/mcretro-author-portrait-192.webp?v=20261018d" width="96" height="96" alt="" class="author-avatar" loading="lazy" decoding="async">
               </picture>
-              {% if post.author %}{{ post.author }}{% endif %}
-            </span>
-            <span class="post-date">
-              {% assign d = post.date | date: "%-d" | plus: 0 %}
-              {% case d %}
-                {% when 1 or 21 or 31 %}{% assign ordinal = "st" %}
-                {% when 2 or 22 %}{% assign ordinal = "nd" %}
-                {% when 3 or 23 %}{% assign ordinal = "rd" %}
-                {% else %}{% assign ordinal = "th" %}
-              {% endcase %}
-              {{ d }}{{ ordinal }} {{ post.date | date: "%B %Y" }}
+              <span class="archive-author-details">
+                {% if post.author %}<span class="archive-author-name">{{ post.author }}</span>{% endif %}
+                <span class="post-date">
+                  {% assign d = post.date | date: "%-d" | plus: 0 %}
+                  {% case d %}
+                    {% when 1 or 21 or 31 %}{% assign ordinal = "st" %}
+                    {% when 2 or 22 %}{% assign ordinal = "nd" %}
+                    {% when 3 or 23 %}{% assign ordinal = "rd" %}
+                    {% else %}{% assign ordinal = "th" %}
+                  {% endcase %}
+                  {{ d }}{{ ordinal }} {{ post.date | date: "%B %Y" }}
+                </span>
+              </span>
             </span>
 
             {% if post.categories.size > 0 %}

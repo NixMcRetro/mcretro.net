@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dy = -(height + 2 * margin);
     }
 
-    const duration = random(2.9, 4.5);
+    const duration = random(5.8, 9.0);
     const particle = document.createElement('span');
     particle.classList.add('retro-tech-particle');
     particle.setAttribute('aria-hidden', 'true');
@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
     particle.style.setProperty('--trail-width', random(10, 17) + 'px');
     particle.style.setProperty('--trail-angle', (Math.atan2(dy, dx) * 180 / Math.PI + 180) + 'deg');
     particle.style.animationDuration = duration + 's';
-    // A small negative delay gives the initial burst coverage across the page.
-    particle.style.animationDelay = -random(0.05, duration * 0.58) + 's';
+    // Keep the initial burst spread across the screen at the slower speed.
+    particle.style.animationDelay = -random(0.1, duration * 0.58) + 's';
 
     const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     icon.setAttribute('viewBox', '0 0 48 48');

@@ -850,7 +850,7 @@ pre code {
   border: 1px solid #000;
   background: #fff;
 }
-/* One original, unmodified pixel-art GIF runs beside the homepage logo.
+/* One original, unmodified pixel-art GIF runs along the main-nav top border.
    Fixed clipping lane avoids overflow; the effect never catches input. */
 .header-runner-lane {
   position: fixed;

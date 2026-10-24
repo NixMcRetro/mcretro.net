@@ -3,6 +3,12 @@ name: Deploy Jekyll site with Pagefind
 on:
   push:
     branches: ["main"]
+    paths-ignore:
+      - 'README.md'
+      - '.github/*.md'
+      - '.github/tests/**'
+      - '.github/workflows/link-audit.yml'
+      - '.github/workflows/op1-browser-tests.yml'
   workflow_dispatch:
 
 permissions:

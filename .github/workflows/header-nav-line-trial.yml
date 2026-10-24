@@ -1,0 +1,47 @@
+name: Header Nav Line Sprite Trial
+
+on:
+  push:
+    branches:
+      - test/header-nav-line-runner-2026-10-25
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Check sprite source and navigation regressions
+        run: |
+          node --check assets/js/confetti.js
+          node --check assets/js/mobile-navigation.js
+          node --test .github/tests/header-nav-line-trial.mjs
+          node --test .github/tests/csp-preparation.mjs .github/tests/random-post.mjs .github/tests/footer-csp.mjs
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll
+        run: bundle exec jekyll build --destination _site
+      - name: Install locked Pagefind dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Generate Pagefind index
+        run: ./node_modules/.bin/pagefind --site _site --output-subdir pagefind
+      - name: Verify unchanged GIF assets and built site
+        run: |
+          test -s _site/index.html
+          test -s _site/assets/js/confetti.js
+          test -s _site/assets/css/style.css
+          test -s _site/homepages/sonic/images/swalk.gif
+          test -s _site/homepages/sonic/images/twalk.gif
+          test -s _site/homepages/sonic/images/trun.gif
+          test -s _site/homepages/sonic/images/srun.gif
+          test -s _site/assets/images/about/0CATRUNY.gif
+          test -s _site/pagefind/pagefind-ui.js
+          node .github/tests/footer-csp-built.mjs _site/index.html

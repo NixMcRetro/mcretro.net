@@ -5,7 +5,7 @@ title: Channels
 
 ## Channels
 
-<details class="about-panel panel--teal" markdown="1" open>
+<details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 🎸 Nix McRetro</summary>
 
 The very first YouTube channel I started way back in March 2012 to help document all sorts of retro hardware. However, a lack of free time and funding we just kick around with what we have... tinkering and rambling. Lots of rambling, I love to ramble in these videos and I usually don't edit them down too much. Recently (2024) we've had the former channels, Fish Tank World and Channel Chirp have their videos join me here.

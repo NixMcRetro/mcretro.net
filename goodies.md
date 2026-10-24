@@ -15,7 +15,7 @@ Welcome to the Goodies page! This is where I keep all sorts of bits and pieces t
 
 The restored homepages and browser projects have found a home here too. Click a section below to have a look around!
 
-<details class="about-panel panel--teal" markdown="1" open>
+<details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Ready to Visit</summary>
 
 **🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**<br>
@@ -34,13 +34,14 @@ An old-school bowling league homepage with scores, averages and a leaderboard. C
 
 The original HTML and artwork from these restored sites have made it back onto McRetro.net. No modern makeover here; these are the old-style pages as they were, with just the paths fixed where necessary.
 
+**🐍 [Frank the Snake](/homepages/frank/)**<br>
+Frank's own homepage, snake facts and an original [photo gallery](/homepages/frank/gallery.html). A big snake with a big heart!
+
 **🐶 [Pepper the Dog Blog](/homepages/pepper/)**<br>
 Hello, I am Pepper the Dog! The original sausage dog homepage, complete with photographs, adventures and entries dating from 2016 to 2018. Woof!
 
-
-
-**🐍 [Frank the Snake](/homepages/frank/)**<br>
-Frank's own homepage, snake facts and an original [photo gallery](/homepages/frank/gallery.html). A big snake with a big heart!
+**🦔 [Sonic the Hedgehog Homepage](/homepages/sonic/)**<br>
+One of my earliest websites, dedicated to the Sonic the Hedgehog Saturday morning cartoon. Character biographies, original images, MIDI files and even a downloadable theme song. The guestbook link is a historical placeholder, and modern browsers may block automatic music playback.
 
 **🪐 [Space / Planets Webpage](/homepages/space/)**<br>
 Travel back to 1996 with a page full of planets, animated graphics and some wonderfully brief astronomical descriptions.
@@ -48,15 +49,12 @@ Travel back to 1996 with a page full of planets, animated graphics and some wond
 **🌳 [Super Nature World](/homepages/nature/)**<br>
 An old-fashioned nature homepage featuring a frog, a lizard and a few original placeholder pictures. Apparently not a place for fish or birds!
 
-**🦔 [Sonic the Hedgehog Homepage](/homepages/sonic/)**<br>
-One of my earliest websites, dedicated to the Sonic the Hedgehog Saturday morning cartoon. Character biographies, original images, MIDI files and even a downloadable theme song. The guestbook link is a historical placeholder, and modern browsers may block automatic music playback.
-
 </details>
 
 <details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Still Under Construction</summary>
 
-**Fish Tank World** and **GeoCities** still need their proper historical content restored. No point pretending those pages are finished!
+**[Fish Tank World](/homepages/fishtankworld/)** and **[GeoCities](/homepages/geocities/)** still need their proper historical content restored. No point pretending those pages are finished!
 
 - **[File Server](/files/)**: Not ready yet. The promised 10 KB/s downloads remain a dream!
 - **[Photo Gallery](/photos/)**: The gallery is still being restored.

@@ -866,7 +866,7 @@ pre code {
   filter: drop-shadow(0 0 1.5px rgba(0,0,0,.65));
   opacity: 0;
   will-change: transform, opacity;
-  animation: pride-star-burst 2.3s cubic-bezier(.2,.65,.35,1) forwards;
+  animation: pride-star-burst 4.5s ease-out forwards;
 }
 @keyframes pride-star-burst {
   0% {
@@ -877,12 +877,14 @@ pre code {
     opacity: 1;
     transform: translate3d(var(--burst-x), var(--burst-y), 0) scale(1) rotate(0deg);
   }
-  /* Give the stars a longer, gentler fade as they fall. */
+  /* Fall gradually after the outward pop, with a gentle, extended fade. */
   65% {
     opacity: .96;
+    transform: translate3d(var(--mid-x), var(--mid-y), 0) scale(.98) rotate(0deg);
   }
   85% {
     opacity: .55;
+    transform: translate3d(var(--late-x), var(--late-y), 0) scale(.92) rotate(0deg);
   }
   100% {
     opacity: 0;

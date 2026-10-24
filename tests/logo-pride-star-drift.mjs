@@ -13,6 +13,8 @@ assert.match(styles, /--fall-y/);
 assert.match(styles, /65%/);
 assert.match(styles, /85%/);
 assert.match(styles, /opacity:\s*\.55;/);
+assert.match(styles, /translate3d\(var\(--mid-x\), var\(--mid-y\), 0\)/);
+assert.match(styles, /translate3d\(var\(--late-x\), var\(--late-y\), 0\)/);
 assert.match(styles, /prefers-reduced-motion:\s*reduce/);
 assert.doesNotMatch(styles, /retro-tech-cross|\.retro-tech-particle|\.retro-tech-icon/);
 assert.doesNotMatch(script, /retro-tech-particles\.svg|launchHardware|flyPast/);
@@ -73,7 +75,7 @@ assert.equal(desktop.stars.length, 0, 'no automatic burst on load');
 assert.ok(desktop.logoEvents.has('mouseenter'), 'hover triggers confetti');
 assert.ok(desktop.logoEvents.has('focus'), 'keyboard focus triggers confetti');
 desktop.logoEvents.get('mouseenter')();
-assert.equal(desktop.stars.length, 30, 'desktop burst count');
+assert.equal(desktop.stars.length, 33, 'desktop burst count');
 const allColours = new Set();
 for (const s of desktop.stars) {
   assert.equal(s.className, 'pride-star-particle');
@@ -86,18 +88,32 @@ for (const s of desktop.stars) {
   assert.ok(s.style['--burst-y'].endsWith('px'));
   assert.ok(s.style['--drift-x'].endsWith('px'));
   assert.ok(Number.parseFloat(s.style['--fall-y']) > 0);
-  assert.ok(Number.parseFloat(s.style.animationDuration) >= 3.2);
-  assert.ok(Number.parseFloat(s.style.animationDuration) <= 4.5);
+  assert.ok(Number.parseFloat(s.style.animationDuration) >= 3.9);
+  assert.ok(Number.parseFloat(s.style.animationDuration) <= 5.4);
+  assert.ok(Math.abs(Number.parseFloat(s.style['--drift-x'])) <= 14, 'gentler sideways movement');
+  const fall = Number.parseFloat(s.style['--fall-y']);
+  assert.ok(fall >= 58 && fall <= 110, 'shorter desktop fall');
+  const burstY = Number.parseFloat(s.style['--burst-y']);
+  const middle = Number.parseFloat(s.style['--mid-y']);
+  const late = Number.parseFloat(s.style['--late-y']);
+  assert.ok(Math.abs(middle - burstY - fall * 0.35) < 1e-7, 'progressive middle position');
+  assert.ok(Math.abs(late - burstY - fall * 0.7) < 1e-7, 'progressive late position');
   allColours.add(s.style['--pride-colour']);
 }
 assert.equal(allColours.size, 11, 'all Progress Pride colours appear in one burst');
+const desktopCounts = new Map();
+for (const s of desktop.stars) {
+  const colour = s.style['--pride-colour'];
+  desktopCounts.set(colour, (desktopCounts.get(colour) || 0) + 1);
+}
+assert.ok([...desktopCounts.values()].every(n => n === 3), 'exactly three stars per colour on desktop');
 assert.ok(allColours.has('#000000') && allColours.has('#FFFFFF') && allColours.has('#F5A9B8') && allColours.has('#5BCEFA'));
 desktop.stars[0].handlers.get('animationend')();
 assert.equal(desktop.stars[0].removed, true);
 desktop.timers[1].fn();
 assert.equal(desktop.stars[1].removed, true, 'fallback cleanup');
 desktop.logoEvents.get('focus')();
-assert.equal(desktop.stars.length, 60, 'focus triggers a new burst');
+assert.equal(desktop.stars.length, 66, 'focus triggers a new burst');
 const collapsed = boot(1280, false, true);
 collapsed.logoEvents.get('mouseenter')();
 assertTextSpan(collapsed, 240, false);
@@ -109,13 +125,13 @@ for (const s of collapsed.stars) {
 // The rightward and leftward stars must travel a little beyond the rendered text.
 function assertTextSpan(booted, textWidth, mobile) {
   const radius = textWidth / 2 + (mobile ? 12 : 20);
-  const count = mobile ? 18 : 30;
+  const count = mobile ? 22 : 33;
   const right = Number.parseFloat(booted.stars[0].style['--burst-x']);
-  const left = Number.parseFloat(booted.stars[count / 2].style['--burst-x']);
+  const left = Number.parseFloat(booted.stars[Math.floor(count / 2)].style['--burst-x']);
   assert.ok(right >= radius * 1.02 - 0.001, 'right-side burst clears the logo text');
   assert.ok(left <= -radius * 1.02 + 0.001, 'left-side burst clears the logo text');
-  const upper = booted.stars.slice(1, count / 2);
-  const lower = booted.stars.slice(count / 2 + 1, count);
+  const upper = booted.stars.slice(1, Math.floor(count / 2));
+  const lower = booted.stars.slice(Math.floor(count / 2) + 1, count);
   assert.ok(upper.some(s => Number.parseFloat(s.style['--burst-y']) > 0), 'stars also burst downward');
   assert.ok(lower.some(s => Number.parseFloat(s.style['--burst-y']) < 0), 'stars also burst upward');
 }
@@ -130,19 +146,28 @@ assertTextSpan(narrow, 90, false);
 const mobile = boot(320);
 assert.equal(mobile.stars.length, 0, 'no automatic mobile burst');
 mobile.logoEvents.get('mouseenter')();
-assert.equal(mobile.stars.length, 18, 'mobile burst count');
+assert.equal(mobile.stars.length, 22, 'mobile burst count');
+const mobileCounts = new Map();
+for (const s of mobile.stars) {
+  const colour = s.style['--pride-colour'];
+  mobileCounts.set(colour, (mobileCounts.get(colour) || 0) + 1);
+  const fall = Number.parseFloat(s.style['--fall-y']);
+  assert.ok(fall >= 42 && fall <= 85, 'shorter mobile fall');
+}
+assert.equal(mobileCounts.size, 11, 'all 11 colours on mobile');
+assert.ok([...mobileCounts.values()].every(n => n === 2), 'exactly two stars per colour on mobile');
 assertTextSpan(mobile, 160, true);
 const homepage = boot(1200, false, false, 160, '/');
-assert.equal(homepage.stars.length, 30, 'homepage welcomes desktop visitor once');
+assert.equal(homepage.stars.length, 33, 'homepage welcomes desktop visitor once');
 assertTextSpan(homepage, 160, false);
 const homeIndex = boot(1200, false, false, 160, '/index.html');
-assert.equal(homeIndex.stars.length, 30, 'index.html welcomes visitor once');
+assert.equal(homeIndex.stars.length, 33, 'index.html welcomes visitor once');
 const homeMobile = boot(320, false, false, 160, '/');
-assert.equal(homeMobile.stars.length, 18, 'homepage mobile welcome');
+assert.equal(homeMobile.stars.length, 22, 'homepage mobile welcome');
 const reducedHomepage = boot(1280, true, false, 160, '/');
 assert.equal(reducedHomepage.stars.length, 0, 'reduced motion suppresses homepage welcome');
 const reduced = boot(1280, true);
 reduced.logoEvents.get('mouseenter')();
 reduced.logoEvents.get('focus')();
 assert.equal(reduced.stars.length, 0, 'reduced-motion preference disables effects');
-console.log('PASS: 30/18 Pride stars, homepage welcome, slower fall and fade, text-spanning burst, mobile and reduced motion');
+console.log('PASS: 33/22 Pride stars, exact 3/2 per colour, gentler graduated fall, homepage welcome, text-spanning burst, reduced motion');

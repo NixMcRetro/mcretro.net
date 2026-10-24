@@ -8,8 +8,6 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="bQ1OpqyHRXA" %}
 
-{% include youtube.html id="ERDbz3L6u_U" %}
-
 This is quite a long video about one of the poorer design choices Nintendo made with the Super Nintendo / Super Famicom. On this shell design, they attached the DC-in socket to the rear plastic panel, making it a pain to replace. Maybe they sold the replacement socket with the entire rear panel; that's the only thing I could think of that would make sense. Anyway, watch on and also enjoy some Biker Mice from Mars!
 
 Today's project involves a Super Famicom that's acquired a rather unpleasant-looking rear panel. I've got another motherboard with a much nicer panel attached, so I thought I'd simply swap the two over.
@@ -39,6 +37,8 @@ Time for a test on the Sony PVM. Chrono Trigger boots successfully, which is rat
 The SD2SNES also needs a little encouragement before it makes proper contact, but that settles down after reseating it. There's something particularly nice about putting a console back together and having it actually work!
 
 And now for a little bonus gaming. I've got Biker Mice from Mars running, although my driving skills probably leave a great deal to be desired. I seem to spend an extraordinary amount of time heading in completely the wrong direction.
+
+{% include youtube.html id="ERDbz3L6u_U" %}
 
 Never mind! The Super Famicom is back together, the rear panel looks much better and the cartridge slot is considerably cleaner.
 

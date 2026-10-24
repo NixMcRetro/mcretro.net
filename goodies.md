@@ -15,7 +15,7 @@ Welcome to the Goodies page! This is where I keep all sorts of bits and pieces t
 
 The restored homepages and browser projects have found a home here too. Click a section below to have a look around!
 
-<details class="about-panel panel--teal" markdown="1">
+<details class="about-panel panel--teal" name="mcretro-goodies" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Ready to Visit</summary>
 
 **🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**<br>
@@ -29,7 +29,7 @@ An old-school bowling league homepage with scores, averages and a leaderboard. C
 
 </details>
 
-<details class="about-panel panel--teal" markdown="1">
+<details class="about-panel panel--teal" name="mcretro-goodies" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Restored Historical Homepages</summary>
 
 The original HTML and artwork from these restored sites have made it back onto McRetro.net. No modern makeover here; these are the old-style pages as they were, with just the paths fixed where necessary.
@@ -51,7 +51,7 @@ An old-fashioned nature homepage featuring a frog, a lizard and a few original p
 
 </details>
 
-<details class="about-panel panel--teal" markdown="1">
+<details class="about-panel panel--teal" name="mcretro-goodies" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Still Under Construction</summary>
 
 **[Fish Tank World](/homepages/fishtankworld/)** and **[GeoCities](/homepages/geocities/)** still need their proper historical content restored. No point pretending those pages are finished!
@@ -64,3 +64,5 @@ An old-fashioned nature homepage featuring a frog, a lizard and a few original p
 As for the other tools and experiments, they'll turn up here as they become ready. No need to pretend everything works when it doesn't!
 
 **Don't copy that floppy!**
+
+{% include exclusive-panel-visibility.html %}

@@ -48,19 +48,18 @@
   </select>
 </div>
 
-<div class="widget mcretro-webring" data-mcretro-webring>
-  <h4 class="widgettitle">The McRetro Webring</h4>
-  <div class="mcretro-webring-window">
-    <p class="mcretro-webring-label">Current site</p>
-    <p class="mcretro-webring-name" data-webring-current aria-live="polite">Sonic the Hedgehog Homepage</p>
-    <p class="mcretro-webring-path" data-webring-url>/homepages/sonic/</p>
-    <div class="mcretro-webring-nav" role="group" aria-label="Choose a restored homepage">
-      <button type="button" data-webring-move="prev">◀ Previous</button>
-      <button type="button" data-webring-move="random">Random</button>
-      <button type="button" data-webring-move="next">Next ▶</button>
-    </div>
-    <a class="mcretro-webring-visit" href="/homepages/modem/?site=sonic" data-webring-visit>Visit this homepage</a>
-  </div>
+<div class="widget dial-homepage" data-dial-homepage>
+  <h4 class="widgettitle">Dial a Homepage</h4>
+  <p class="dial-homepage-intro">Take a random trip through McRetro's restored homepages.</p>
+  <a class="dial-homepage-random" href="/homepages/modem/?site=random" data-dial-site="random">Dial a random homepage...</a>
+  <p class="dial-homepage-label">Possible destinations:</p>
+  <ul class="dial-homepage-links">
+    <li><a href="/homepages/modem/?site=frank" data-dial-site="frank">Frank the Snake</a></li>
+    <li><a href="/homepages/modem/?site=pepper" data-dial-site="pepper">Pepper the Dog Blog</a></li>
+    <li><a href="/homepages/modem/?site=sonic" data-dial-site="sonic">Sonic the Hedgehog Homepage</a></li>
+    <li><a href="/homepages/modem/?site=space" data-dial-site="space">Space / Planets Webpage</a></li>
+    <li><a href="/homepages/modem/?site=nature" data-dial-site="nature">Super Nature World</a></li>
+  </ul>
 </div>
 
 <dialog id="mcretro-modem-dialog" class="mcretro-modem-dialog" aria-label="McRetro dial-up connection" data-modem-root>

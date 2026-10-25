@@ -125,7 +125,7 @@
     const status = root.querySelector('[data-modem-status]');
     if (status) status.textContent = site
       ? 'READY\nPress Connect to dial, or Skip to visit immediately.'
-      : 'ERROR: Unknown Webring destination.\nReturn to McRetro.net and select a homepage.';
+      : 'ERROR: Unknown homepage destination.\nReturn to McRetro.net and select a homepage.';
   }
 
   function startConnection(root) {
@@ -183,70 +183,47 @@
 
     const cancel = root.querySelector('[data-modem-cancel]');
     if (dialog) {
-      cancel.addEventListener('click', event => {
+      const closeDialog = event => {
         event.preventDefault();
         endRun();
         root.close();
         window.history.back();
-      });
-      root.addEventListener('cancel', event => {
-        event.preventDefault();
-        endRun();
-        root.close();
-        window.history.back();
-      });
+      };
+      cancel.addEventListener('click', closeDialog);
+      root.querySelector('[data-modem-close]').addEventListener('click', closeDialog);
+      root.addEventListener('cancel', closeDialog);
     }
     // The standalone page's Cancel is a regular home link, even without JS.
   }
 
-  const widget = document.querySelector('[data-mcretro-webring]');
+  const widget = document.querySelector('[data-dial-homepage]');
   const dialog = document.getElementById('mcretro-modem-dialog');
   const standalone = document.getElementById('mcretro-modem-page');
-  let selected = SITES.findIndex(site => site.slug === 'sonic');
-  if (selected < 0) selected = 0;
+  const randomSite = () => SITES[Math.floor(Math.random() * SITES.length)];
+  const resolveSite = slug => slug === 'random' ? randomSite() : findSite(slug);
 
   if (dialog) initModemRoot(dialog, true);
   if (standalone) {
     initModemRoot(standalone, false);
     const params = new URLSearchParams(window.location.search);
-    setDestination(standalone, findSite(params.get('site')));
+    setDestination(standalone, resolveSite(params.get('site')));
   }
 
   if (widget) {
-    const label = widget.querySelector('[data-webring-current]');
-    const url = widget.querySelector('[data-webring-url]');
-    const visit = widget.querySelector('[data-webring-visit]');
-
-    function renderSelected() {
-      const site = SITES[selected];
-      label.textContent = site.name;
-      url.textContent = site.path;
-      visit.href = modemURL(site);
-    }
-    widget.querySelectorAll('[data-webring-move]').forEach(button => {
-      button.addEventListener('click', () => {
-        const action = button.dataset.webringMove;
-        if (action === 'prev') selected = (selected + SITES.length - 1) % SITES.length;
-        if (action === 'next') selected = (selected + 1) % SITES.length;
-        if (action === 'random') {
-          selected = (selected + 1 + Math.floor(Math.random() * (SITES.length - 1))) % SITES.length;
-        }
-        renderSelected();
+    widget.querySelectorAll('[data-dial-site]').forEach(link => {
+      link.addEventListener('click', event => {
+        // Modified clicks retain the real interstitial URL, including random.
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey ||
+            event.ctrlKey || event.shiftKey || event.altKey ||
+            !dialog || typeof dialog.showModal !== 'function') return;
+        const site = resolveSite(link.dataset.dialSite);
+        if (!site) return;
+        event.preventDefault();
+        setDestination(dialog, site);
+        window.history.pushState({ mcretroModem: site.slug }, '', modemURL(site));
+        dialog.showModal();
+        startConnection(dialog);
       });
-    });
-    renderSelected();
-
-    visit.addEventListener('click', event => {
-      // Modifier-click, a new tab or old browsers use the real interstitial URL.
-      if (event.defaultPrevented || event.button !== 0 || event.metaKey ||
-          event.ctrlKey || event.shiftKey || event.altKey ||
-          !dialog || typeof dialog.showModal !== 'function') return;
-      event.preventDefault();
-      const site = SITES[selected];
-      setDestination(dialog, site);
-      window.history.pushState({ mcretroModem: site.slug }, '', modemURL(site));
-      dialog.showModal();
-      startConnection(dialog); // User-activated Web Audio continues through the modal.
     });
   }
 

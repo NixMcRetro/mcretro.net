@@ -1,20 +1,24 @@
 <div class="mcretro-modem-card">
   <div class="mcretro-modem-titlebar">
-    <span>☎ Dial-Up Networking</span>
-    <span aria-hidden="true">□ ×</span>
+    <span>McRetro Dial-Up Connection</span>
+    <a class="mcretro-modem-close" href="/" data-modem-close aria-label="Close dial-up connection">×</a>
   </div>
   <div class="mcretro-modem-body">
-    <p class="mcretro-modem-caption">Connecting to the McRetro Network</p>
-    <img class="mcretro-modem-photo" src="/homepages/nature/images/placeholder.jpg" alt="Historical placeholder image from Super Nature World. Modem photograph coming soon." loading="eager" decoding="async">
-    <p class="mcretro-modem-destination">Destination: <strong data-modem-destination>Restored homepage</strong></p>
+    <div class="mcretro-modem-identity">
+      <span class="mcretro-modem-icon" aria-hidden="true"><span class="mcretro-modem-monitor"></span><span class="mcretro-modem-phone">☎</span></span>
+      <div>
+        <p class="mcretro-modem-caption">Connecting to:</p>
+        <p class="mcretro-modem-destination"><strong data-modem-destination>Restored homepage</strong></p>
+      </div>
+    </div>
     <pre class="mcretro-modem-status" data-modem-status role="status" aria-live="polite">READY
 Press Connect to dial, or Skip to visit immediately.</pre>
     <div class="mcretro-modem-controls">
       <button type="button" data-modem-connect>Connect</button>
-      <button type="button" data-modem-mute aria-pressed="false">Mute</button>
       <button type="button" data-modem-skip>Skip</button>
       <a href="/" data-modem-cancel>Cancel</a>
+      <button type="button" data-modem-mute aria-pressed="false">Mute</button>
     </div>
-    <p class="mcretro-modem-note">No real modem connection is made. Sound is generated locally.</p>
+    <p class="mcretro-modem-note">Simulation only. No real telephone connection is made.</p>
   </div>
 </div>

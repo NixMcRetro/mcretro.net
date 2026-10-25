@@ -342,175 +342,166 @@
   }
 }
 
-/* Webring navigation in the style of a small 1990s homepage directory.
-   Keep it plain: square borders, serif title, monospace URL and text links. */
-.mcretro-webring {
-  margin-top: 0.15rem;
+/* Plain hand-linked homepage dialler. Existing widget separators supply the frame. */
+.dial-homepage { margin-top: 0.15rem; }
+.dial-homepage-intro {
+  margin: 0 0 0.45rem;
+  font-size: 0.86rem;
+  line-height: 1.55;
 }
-.mcretro-webring-window {
-  box-sizing: border-box;
-  border: 3px double #343434;
-  background: #fff8dc;
-  padding: 0.55rem 0.6rem 0.65rem;
-  text-align: center;
-}
-.mcretro-webring-label {
-  margin: 0 0 0.55rem;
-  padding-bottom: 0.35rem;
-  border-bottom: 1px solid #a39d88;
-  color: #424242;
-  font: 700 0.71rem/1.3 "Courier New", Courier, monospace;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-.mcretro-webring-name {
-  margin: 0 0 0.3rem;
-  color: #1b1b1b;
-  font: 700 1rem/1.3 Georgia, "Times New Roman", serif;
-}
-.mcretro-webring-path {
-  margin: 0 auto 0.65rem;
-  color: #545454;
-  font: 0.74rem/1.35 "Courier New", Courier, monospace;
-  letter-spacing: 0;
-  overflow-wrap: anywhere;
-}
-.mcretro-webring-nav {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 0;
-  margin: 0;
-  border-top: 1px solid #a39d88;
-  border-bottom: 1px solid #a39d88;
-}
-.mcretro-webring-nav button {
-  appearance: none;
-  flex: 1 1 0;
-  min-width: 0;
-  min-height: 36px;
-  margin: 0;
-  padding: 0.3rem 0.1rem;
-  border: 0;
-  background: transparent;
-  color: #0000aa;
-  cursor: pointer;
-  font: 400 0.76rem/1.2 Verdana, Arial, sans-serif;
-  text-decoration: underline;
-}
-.mcretro-webring-nav button + button {
-  border-left: 1px solid #c4bfad;
-}
-.mcretro-webring-nav button:hover,
-.mcretro-webring-nav button:focus-visible {
-  background: #ebe5cf;
-}
-.mcretro-webring-visit {
+.dial-homepage a { color: #0000aa; text-decoration: underline; }
+.dial-homepage a:hover { color: #551a8b; }
+.dial-homepage-random {
   display: inline-block;
-  margin: 0.65rem 0 0;
-  padding: 0.1rem 0;
-  border: 0;
-  background: transparent;
-  color: #0000aa;
-  font: 700 0.83rem/1.3 Georgia, "Times New Roman", serif;
-  text-decoration: underline;
+  font-size: 0.91rem;
+  line-height: 1.45;
+  font-weight: 700;
 }
-.mcretro-webring-visit:hover { color: #551a8b; }
-.mcretro-webring-nav button:focus-visible,
-.mcretro-webring-visit:focus-visible,
+.dial-homepage-label {
+  margin: 0.65rem 0 0.15rem;
+  font-size: 0.81rem;
+  line-height: 1.5;
+}
+.dial-homepage ul.dial-homepage-links {
+  list-style: disc outside;
+  padding-left: 1.35rem;
+  margin: 0;
+}
+.dial-homepage ul.dial-homepage-links li {
+  margin: 0 0 0.15rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  overflow-wrap: break-word;
+}
+.dial-homepage a:focus-visible,
+.mcretro-modem-close:focus-visible,
 .mcretro-modem-controls button:focus-visible,
 .mcretro-modem-controls a:focus-visible {
   outline: 2px solid #003d85;
   outline-offset: 2px;
 }
 
-/* Same connection card on the standalone page and in the modal. */
+/* Windows 95/98-inspired connection dialogue; locally simulated, never a real call. */
 .mcretro-modem-dialog {
-  width: min(94vw, 470px);
+  width: min(94vw, 500px);
   max-height: min(90vh, 750px);
   padding: 0;
-  border: 3px outset #dddddd;
-  background: #c7c7c7;
-  color: #111111;
+  border: 2px solid;
+  border-color: #fff #454545 #454545 #fff;
+  box-shadow: 2px 2px 0 #171717;
+  background: #c0c0c0;
+  color: #111;
   box-sizing: border-box;
   overflow: auto;
 }
-.mcretro-modem-dialog::backdrop { background: rgba(0, 0, 0, 0.7); }
+.mcretro-modem-dialog::backdrop { background: rgba(0, 0, 0, 0.48); }
 .mcretro-modem-page { max-width: 570px; margin: 0 auto; }
 .mcretro-modem-page > h1 { font-size: 1.6rem; }
 .mcretro-modem-page > p { margin-bottom: 1.2rem; }
 .mcretro-modem-card {
-  border: 3px outset #eeeeee;
-  background: #c7c7c7;
-  color: #111111;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  border: 2px solid;
+  border-color: #fff #707070 #707070 #fff;
+  background: #c0c0c0;
+  color: #111;
+  font: 0.875rem/1.35 Arial, Tahoma, sans-serif;
 }
 .mcretro-modem-titlebar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
   background: #000080;
-  color: white;
-  padding: 0.5rem 0.65rem;
-  font: 700 0.83rem/1.3 Montserrat, "Helvetica Neue", sans-serif;
+  color: #fff;
+  padding: 3px 4px 3px 7px;
+  font: 700 0.875rem/1.25 Arial, Tahoma, sans-serif;
 }
-.mcretro-modem-body { padding: 0.85rem; }
-.mcretro-modem-caption { margin: 0 0 0.8rem; font-size: 0.87rem; font-weight: 700; }
-.mcretro-modem-photo {
-  display: block;
-  max-width: 100%;
-  width: auto;
-  max-height: 200px;
-  margin: 0 auto 0.8rem;
-  object-fit: contain;
-  image-rendering: auto;
+.mcretro-modem-close {
+  flex: 0 0 21px;
+  height: 20px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px outset #eee;
+  background: #c0c0c0;
+  color: #000;
+  text-decoration: none;
+  font: bold 1rem/1 Arial, sans-serif;
 }
-.mcretro-modem-destination { font-size: 0.79rem; line-height: 1.5; overflow-wrap: anywhere; }
+.mcretro-modem-close:hover { color: #000; background: #dedede; }
+.mcretro-modem-body { padding: 1rem; }
+.mcretro-modem-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 52px;
+  margin-bottom: 0.8rem;
+}
+.mcretro-modem-icon { display: inline-flex; flex: 0 0 62px; align-items: center; gap: 3px; }
+.mcretro-modem-monitor {
+  display: inline-block;
+  position: relative;
+  width: 28px;
+  height: 25px;
+  box-sizing: border-box;
+  border: 3px ridge #fff;
+  background: #6e83ad;
+  box-shadow: inset 0 0 0 3px #292d33;
+}
+.mcretro-modem-monitor::after {
+  content: "";
+  position: absolute;
+  width: 23px;
+  height: 4px;
+  top: 23px;
+  left: -1px;
+  background: #e5e5e5;
+  border-bottom: 2px solid #555;
+}
+.mcretro-modem-phone { font: 30px/1 Georgia, serif; color: #242424; }
+.mcretro-modem-caption { margin: 0 0 0.2rem; font-weight: 400; }
+.mcretro-modem-destination { margin: 0; font-size: 0.875rem; line-height: 1.45; overflow-wrap: anywhere; }
 .mcretro-modem-status {
   background: #fff;
   color: #171717;
   border: 2px inset #ddd;
-  padding: 0.75rem;
-  min-height: 5.2rem;
+  padding: 0.65rem;
+  min-height: 6.5rem;
   box-sizing: border-box;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
-  font: 0.8rem/1.45 "Courier New", Courier, monospace;
+  font: 0.83rem/1.5 "Courier New", Courier, monospace;
 }
 .mcretro-modem-controls {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 0.35rem;
-  margin-top: 0.6rem;
+  gap: 0.45rem;
+  margin-top: 0.7rem;
 }
 .mcretro-modem-controls button,
 .mcretro-modem-controls a {
-  border: 2px outset #eeeeee;
-  background: #e5e5e5;
-  color: #111111;
+  border: 2px outset #eee;
+  background: #c0c0c0;
+  color: #111;
   border-radius: 0;
-  padding: 0.45rem 0.55rem;
-  min-height: 38px;
-  font: 700 0.75rem/1.2 Montserrat, "Helvetica Neue", sans-serif;
+  padding: 0.4rem 0.6rem;
+  min-height: 34px;
+  min-width: 66px;
+  font: 400 0.82rem/1.2 Arial, Tahoma, sans-serif;
   text-decoration: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
-.mcretro-modem-controls button:disabled { opacity: 0.6; cursor: default; }
+.mcretro-modem-controls button:disabled { color: #666; cursor: default; }
 .mcretro-modem-controls button:not(:disabled):hover,
-.mcretro-modem-controls a:hover { background: #d4e1ef; }
-.mcretro-modem-note {
-  font: 0.74rem/1.45 Montserrat, "Helvetica Neue", sans-serif;
-  margin: 0.75rem 0 0;
-  color: #3e3e3e;
-}
+.mcretro-modem-controls a:hover { background: #dedede; }
+.mcretro-modem-note { font: 0.73rem/1.45 Arial, Tahoma, sans-serif; margin: 0.75rem 0 0; color: #444; }
 @media (max-width: 360px) {
-  .mcretro-modem-body { padding: 0.6rem; }
+  .mcretro-modem-body { padding: 0.65rem; }
   .mcretro-modem-controls { justify-content: center; }
-  .mcretro-webring-nav button { font-size: 0.69rem; }
 }
 
 /* Month pages use the blog roll's author avatar and text-only excerpts. */
@@ -677,7 +668,7 @@
    The default .widget bottom padding is only 0.5rem; keep the good spacing
    on Search and Recent Posts unchanged. */
 .sidebar .archive-widget,
-.sidebar .mcretro-webring {
+.sidebar .dial-homepage {
   padding-bottom: 1.3rem;
 }
 

@@ -497,6 +497,9 @@
 }
 
 /* Month pages use the blog roll's author avatar and text-only excerpts. */
+.archive-month > .post-title {
+  margin-bottom: 0.25rem;
+}
 .archive-month-summary {
   font: 0.875rem/1.6 Montserrat, "Helvetica Neue", sans-serif;
   color: #3b3834;

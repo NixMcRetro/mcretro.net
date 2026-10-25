@@ -5,7 +5,7 @@ layout: default
   <h1 class="post-title">{{ page.date | date: "%B %Y" }}</h1>
   {% assign month_count = page.posts | size %}
   <p class="archive-month-summary">
-    {% if month_count == 1 %}1 article{% else %}{{ month_count }} articles{% endif %} from {{ page.date | date: "%B %Y" }}.
+    {% if month_count == 1 %}1 article{% else %}{{ month_count }} articles{% endif %}
   </p>
 
   <div class="blog-list archive-blog-list">

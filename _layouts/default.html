@@ -20,6 +20,7 @@
 </head>
 <body {% if page.pagefind == false %}data-pagefind-ignore="all"{% endif %}>
   {% include header.html %}
+  <script src="{{ '/assets/js/header-taglines.js' | relative_url }}"></script>
   <div class="site-content">
     <main class="content-area">
       {{ content }}

@@ -382,7 +382,7 @@ pre code {
   letter-spacing: 0.03em;
   color: #000;
   opacity: 0;
-  animation: phraseCycleLong 54s infinite;
+  animation: phraseCycleLong 60s infinite;
 }
 @keyframes phraseCycleLong {
   0%   { opacity: 0; }
@@ -391,15 +391,22 @@ pre code {
   10%  { opacity: 0; }
   100% { opacity: 0; }
 }
-.textcycle .phrase:nth-child(1)  { animation-delay: 0s; }
-.textcycle .phrase:nth-child(2)  { animation-delay: -6s; }
-.textcycle .phrase:nth-child(3)  { animation-delay: -12s; }
-.textcycle .phrase:nth-child(4)  { animation-delay: -18s; }
-.textcycle .phrase:nth-child(5)  { animation-delay: -24s; }
-.textcycle .phrase:nth-child(6)  { animation-delay: -30s; }
-.textcycle .phrase:nth-child(7)  { animation-delay: -36s; }
-.textcycle .phrase:nth-child(8)  { animation-delay: -42s; }
-.textcycle .phrase:nth-child(9)  { animation-delay: -48s; }
+.textcycle .phrase:nth-child(1) { animation-delay: 0s; }
+.textcycle .phrase:nth-child(2) { animation-delay: 6s; }
+.textcycle .phrase:nth-child(3) { animation-delay: 12s; }
+.textcycle .phrase:nth-child(4) { animation-delay: 18s; }
+.textcycle .phrase:nth-child(5) { animation-delay: 24s; }
+.textcycle .phrase:nth-child(6) { animation-delay: 30s; }
+.textcycle .phrase:nth-child(7) { animation-delay: 36s; }
+.textcycle .phrase:nth-child(8) { animation-delay: 42s; }
+.textcycle .phrase:nth-child(9) { animation-delay: 48s; }
+.textcycle .phrase:nth-child(10) { animation-delay: 54s; }
+
+/* Keep the first tagline readable when reduced motion is requested. */
+@media (prefers-reduced-motion: reduce) {
+  .textcycle .phrase { animation: none; }
+  .textcycle .phrase:first-child { opacity: 1; }
+}
 
 /* ===========================
    NAVIGATION (Desktop Base)

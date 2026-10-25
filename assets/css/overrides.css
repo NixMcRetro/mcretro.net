@@ -336,7 +336,7 @@
     display: none;
     animation: none;
   }
-  .textcycle .phrase:nth-child(2) {
+  .textcycle .phrase.mobile-tagline {
     display: block;
     opacity: 1;
   }

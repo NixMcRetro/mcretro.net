@@ -668,3 +668,11 @@
 .sidebar .widgettitle {
   text-transform: none;
 }
+
+/* Keep wrapped Recent Posts titles compact without altering date typography
+   or the spacing between separate sidebar entries. */
+.sidebar .recent-posts-list li > a {
+  display: block;
+  line-height: 1.25;
+  margin-bottom: 0.45rem;
+}

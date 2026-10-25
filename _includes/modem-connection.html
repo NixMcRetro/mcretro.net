@@ -14,20 +14,20 @@
       </div>
       <hr class="mcretro-modem-rule">
       <div class="mcretro-modem-fields">
-        <label for="mcretro-dial-username">User name:</label>
-        <input id="mcretro-dial-username" type="text" value="RetroJunkie" readonly spellcheck="false" autocomplete="off">
-        <label for="mcretro-dial-password">Password:</label>
-        <input id="mcretro-dial-password" type="password" value="******" readonly autocomplete="off" aria-label="Password, six masked characters; demonstration only">
+        <label for="mcretro-dial-username{{ include.id_suffix }}">User name:</label>
+        <input id="mcretro-dial-username{{ include.id_suffix }}" type="text" value="RetroJunkie" readonly spellcheck="false" autocomplete="off">
+        <label for="mcretro-dial-password{{ include.id_suffix }}">Password:</label>
+        <input id="mcretro-dial-password{{ include.id_suffix }}" type="password" value="******" readonly autocomplete="off" aria-label="Password, six masked characters; demonstration only">
         <span></span>
         <label class="mcretro-modem-save"><input type="checkbox" checked> Save password</label>
       </div>
       <hr class="mcretro-modem-rule">
       <div class="mcretro-modem-fields mcretro-modem-phone-fields">
-        <label for="mcretro-dial-number">Phone number:</label>
-        <input id="mcretro-dial-number" type="text" value="02 9373 5100" readonly spellcheck="false">
-        <label for="mcretro-dial-location">Dialling from:</label>
+        <label for="mcretro-dial-number{{ include.id_suffix }}">Phone number:</label>
+        <input id="mcretro-dial-number{{ include.id_suffix }}" type="text" value="02 9373 5100" readonly spellcheck="false">
+        <label for="mcretro-dial-location{{ include.id_suffix }}">Dialling from:</label>
         <span class="mcretro-modem-location">
-          <select id="mcretro-dial-location" disabled><option>New Location</option></select>
+          <select id="mcretro-dial-location{{ include.id_suffix }}" disabled><option>New Location</option></select>
           <button type="button" disabled>Dial Properties...</button>
         </span>
       </div>

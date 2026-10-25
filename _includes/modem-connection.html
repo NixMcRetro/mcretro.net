@@ -1,24 +1,54 @@
-<div class="mcretro-modem-card">
+<div class="mcretro-modem-card" data-modem-stage="setup">
   <div class="mcretro-modem-titlebar">
-    <span>McRetro Dial-Up Connection</span>
-    <a class="mcretro-modem-close" href="/" data-modem-close aria-label="Close dial-up connection">×</a>
+    <span data-modem-title>Connect To</span>
+    <span class="mcretro-modem-window-buttons">
+      <button type="button" data-modem-help class="mcretro-modem-help" aria-label="About this dial-up simulation" title="About this dial-up simulation">?</button>
+      <a class="mcretro-modem-close" href="/" data-modem-close aria-label="Close dial-up connection">×</a>
+    </span>
   </div>
   <div class="mcretro-modem-body">
-    <div class="mcretro-modem-identity">
-      <span class="mcretro-modem-icon" aria-hidden="true"><span class="mcretro-modem-monitor"></span><span class="mcretro-modem-phone">☎</span></span>
-      <div>
-        <p class="mcretro-modem-caption">Connecting to:</p>
-        <p class="mcretro-modem-destination"><strong data-modem-destination>Restored homepage</strong></p>
+    <div class="mcretro-modem-setup" data-modem-setup>
+      <div class="mcretro-modem-identity">
+        <span class="mcretro-modem-icon" aria-hidden="true"><span class="mcretro-modem-monitor"></span><span class="mcretro-modem-phone">☎</span></span>
+        <span class="mcretro-modem-destination" data-modem-destination>Restored homepage</span>
+      </div>
+      <hr class="mcretro-modem-rule">
+      <div class="mcretro-modem-fields">
+        <label for="mcretro-dial-username">User name:</label>
+        <input id="mcretro-dial-username" type="text" value="RetroJunkie" readonly spellcheck="false" autocomplete="off">
+        <label for="mcretro-dial-password">Password:</label>
+        <input id="mcretro-dial-password" type="password" value="******" readonly autocomplete="off" aria-label="Password, six masked characters; demonstration only">
+        <span></span>
+        <label class="mcretro-modem-save"><input type="checkbox" checked> Save password</label>
+      </div>
+      <hr class="mcretro-modem-rule">
+      <div class="mcretro-modem-fields mcretro-modem-phone-fields">
+        <label for="mcretro-dial-number">Phone number:</label>
+        <input id="mcretro-dial-number" type="text" value="02 9373 5100" readonly spellcheck="false">
+        <label for="mcretro-dial-location">Dialling from:</label>
+        <span class="mcretro-modem-location">
+          <select id="mcretro-dial-location" disabled><option>New Location</option></select>
+          <button type="button" disabled>Dial Properties...</button>
+        </span>
+      </div>
+      <hr class="mcretro-modem-rule">
+      <div class="mcretro-modem-controls">
+        <button type="button" class="mcretro-modem-primary" data-modem-connect>Connect</button>
+        <a href="/" data-modem-cancel>Cancel</a>
       </div>
     </div>
-    <pre class="mcretro-modem-status" data-modem-status role="status" aria-live="polite">READY
-Press Connect to dial, or Skip to visit immediately.</pre>
-    <div class="mcretro-modem-controls">
-      <button type="button" data-modem-connect>Connect</button>
-      <button type="button" data-modem-skip>Skip</button>
-      <a href="/" data-modem-cancel>Cancel</a>
-      <button type="button" data-modem-mute aria-pressed="false">Mute</button>
+
+    <div class="mcretro-modem-progress" data-modem-progress hidden>
+      <div class="mcretro-modem-progress-layout">
+        <span class="mcretro-modem-icon" aria-hidden="true"><span class="mcretro-modem-monitor"></span><span class="mcretro-modem-phone">☎</span></span>
+        <p class="mcretro-modem-progress-message" role="status" aria-live="polite"><span class="mcretro-modem-status-label">Status:</span> <span data-modem-status>Dialling...</span></p>
+        <a href="/" data-modem-progress-cancel>Cancel</a>
+      </div>
+      <div class="mcretro-modem-progress-extra">
+        <button type="button" data-modem-mute aria-pressed="false">Mute</button>
+        <button type="button" data-modem-skip>Skip connection</button>
+      </div>
     </div>
-    <p class="mcretro-modem-note">Simulation only. No real telephone connection is made.</p>
+    <p class="mcretro-modem-note" data-modem-note hidden>No telephone call or password authentication takes place. Audio is synthesised locally.</p>
   </div>
 </div>

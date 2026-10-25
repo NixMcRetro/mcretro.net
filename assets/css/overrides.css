@@ -381,127 +381,139 @@
   outline-offset: 2px;
 }
 
-/* Windows 95/98-inspired connection dialogue; locally simulated, never a real call. */
+/* Windows 95/98 Dial-Up Networking reconstruction. Square controls and system spacing. */
 .mcretro-modem-dialog {
-  width: min(94vw, 500px);
-  max-height: min(90vh, 750px);
+  width: min(96vw, 536px);
+  max-height: min(90vh, 720px);
   padding: 0;
   border: 2px solid;
-  border-color: #fff #454545 #454545 #fff;
-  box-shadow: 2px 2px 0 #171717;
+  border-color: #fff #414141 #414141 #fff;
   background: #c0c0c0;
-  color: #111;
+  box-shadow: 2px 2px 0 #161616;
+  color: #000;
   box-sizing: border-box;
   overflow: auto;
 }
-.mcretro-modem-dialog::backdrop { background: rgba(0, 0, 0, 0.48); }
+.mcretro-modem-dialog::backdrop { background: rgba(0,0,0,.45); }
 .mcretro-modem-page { max-width: 570px; margin: 0 auto; }
 .mcretro-modem-page > h1 { font-size: 1.6rem; }
 .mcretro-modem-page > p { margin-bottom: 1.2rem; }
 .mcretro-modem-card {
   border: 2px solid;
-  border-color: #fff #707070 #707070 #fff;
+  border-color: #fff #777 #777 #fff;
   background: #c0c0c0;
-  color: #111;
-  font: 0.875rem/1.35 Arial, Tahoma, sans-serif;
+  color: #000;
+  font: 14px/1.25 Arial, Tahoma, sans-serif;
+  letter-spacing: normal;
 }
 .mcretro-modem-titlebar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
+  min-height: 24px;
+  gap: 6px;
+  padding: 2px 3px 2px 6px;
   background: #000080;
   color: #fff;
-  padding: 3px 4px 3px 7px;
-  font: 700 0.875rem/1.25 Arial, Tahoma, sans-serif;
+  font: bold 14px/1.25 Arial, Tahoma, sans-serif;
 }
-.mcretro-modem-close {
-  flex: 0 0 21px;
-  height: 20px;
+.mcretro-modem-window-buttons { display: flex; gap: 2px; align-items: center; }
+.mcretro-modem-close, .mcretro-modem-help {
   box-sizing: border-box;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px outset #eee;
-  background: #c0c0c0;
-  color: #000;
-  text-decoration: none;
-  font: bold 1rem/1 Arial, sans-serif;
+  flex: 0 0 22px;
+  width: 22px; height: 21px;
+  align-items: center; justify-content: center;
+  border: 2px outset #fff;
+  border-radius: 0;
+  padding: 0;
+  background: #c0c0c0; color: #000;
+  font: bold 16px/1 Arial, sans-serif;
+  text-decoration: none; cursor: pointer;
 }
-.mcretro-modem-close:hover { color: #000; background: #dedede; }
-.mcretro-modem-body { padding: 1rem; }
+.mcretro-modem-close:hover, .mcretro-modem-help:hover { background: #ddd; color: #000; text-decoration: none; }
+.mcretro-modem-body { padding: 17px 20px 12px; }
 .mcretro-modem-identity {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  min-height: 52px;
-  margin-bottom: 0.8rem;
+  display: flex; align-items: center; gap: 17px;
+  min-height: 55px; margin-bottom: 12px;
 }
-.mcretro-modem-icon { display: inline-flex; flex: 0 0 62px; align-items: center; gap: 3px; }
+.mcretro-modem-destination { line-height: 1.3; overflow-wrap: anywhere; }
+.mcretro-modem-icon { display: inline-flex; flex: 0 0 68px; align-items: center; gap: 6px; }
 .mcretro-modem-monitor {
-  display: inline-block;
-  position: relative;
-  width: 28px;
-  height: 25px;
-  box-sizing: border-box;
-  border: 3px ridge #fff;
-  background: #6e83ad;
-  box-shadow: inset 0 0 0 3px #292d33;
+  display: inline-block; position: relative;
+  width: 27px; height: 27px; box-sizing: border-box;
+  border: 3px ridge #fff; background: #438a98;
+  box-shadow: inset 0 0 0 3px #2f3139;
 }
 .mcretro-modem-monitor::after {
-  content: "";
-  position: absolute;
-  width: 23px;
-  height: 4px;
-  top: 23px;
-  left: -1px;
-  background: #e5e5e5;
-  border-bottom: 2px solid #555;
+  content:""; position:absolute; top:25px; left:-4px;
+  width:28px; height:5px; background:#c0c0c0;
+  border: 1px solid #555; border-top-color: #fff;
 }
-.mcretro-modem-phone { font: 30px/1 Georgia, serif; color: #242424; }
-.mcretro-modem-caption { margin: 0 0 0.2rem; font-weight: 400; }
-.mcretro-modem-destination { margin: 0; font-size: 0.875rem; line-height: 1.45; overflow-wrap: anywhere; }
-.mcretro-modem-status {
-  background: #fff;
-  color: #171717;
-  border: 2px inset #ddd;
-  padding: 0.65rem;
-  min-height: 6.5rem;
-  box-sizing: border-box;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  font: 0.83rem/1.5 "Courier New", Courier, monospace;
+.mcretro-modem-phone { font: 30px/1 Georgia, serif; color: #303030; }
+.mcretro-modem-rule {
+  border: 0; height: 2px; margin: 0 0 13px;
+  background: linear-gradient(to bottom, #858585 0 1px, #fff 1px 2px);
 }
-.mcretro-modem-controls {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.45rem;
-  margin-top: 0.7rem;
+.mcretro-modem-fields {
+  display: grid;
+  grid-template-columns: 118px minmax(0,1fr);
+  column-gap: 8px; row-gap: 9px; align-items: center;
+  margin-bottom: 14px;
 }
+.mcretro-modem-fields > label { font-size: 14px; }
+.mcretro-modem-fields > input:not([type="checkbox"]), .mcretro-modem-fields select {
+  box-sizing: border-box; width:100%; min-width:0; height:29px;
+  border-radius:0; border:2px inset #fff; padding: 3px 6px;
+  background:#fff; color:#000;
+  font: 14px/1 Arial, Tahoma, sans-serif; letter-spacing: normal;
+}
+.mcretro-modem-fields > input:read-only { cursor: default; }
+.mcretro-modem-save { display:flex; gap:5px; align-items:center; }
+.mcretro-modem-save input { margin:0; accent-color:#fff; width:15px; height:15px; }
+.mcretro-modem-phone-fields { margin-bottom: 14px; }
+.mcretro-modem-location { display:flex; min-width:0; gap:6px; }
+.mcretro-modem-location select { flex:1 1 120px; }
+.mcretro-modem-controls { display:flex; justify-content:flex-end; gap:9px; margin: 10px 0 0; }
 .mcretro-modem-controls button,
-.mcretro-modem-controls a {
-  border: 2px outset #eee;
-  background: #c0c0c0;
-  color: #111;
-  border-radius: 0;
-  padding: 0.4rem 0.6rem;
-  min-height: 34px;
-  min-width: 66px;
-  font: 400 0.82rem/1.2 Arial, Tahoma, sans-serif;
-  text-decoration: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.mcretro-modem-controls a,
+.mcretro-modem-location button,
+.mcretro-modem-progress-layout > a,
+.mcretro-modem-progress-extra button {
+  border:2px outset #f2f2f2; border-radius:0; background:#c0c0c0;
+  box-sizing:border-box; min-height:29px; min-width:94px;
+  padding:4px 10px; color:#000;
+  font:14px/1.2 Arial, Tahoma, sans-serif;
+  text-align:center; text-decoration:none; cursor:pointer;
+  display:inline-flex; align-items:center; justify-content:center;
 }
-.mcretro-modem-controls button:disabled { color: #666; cursor: default; }
-.mcretro-modem-controls button:not(:disabled):hover,
-.mcretro-modem-controls a:hover { background: #dedede; }
-.mcretro-modem-note { font: 0.73rem/1.45 Arial, Tahoma, sans-serif; margin: 0.75rem 0 0; color: #444; }
-@media (max-width: 360px) {
-  .mcretro-modem-body { padding: 0.65rem; }
-  .mcretro-modem-controls { justify-content: center; }
+.mcretro-modem-controls .mcretro-modem-primary { outline: 1px solid #777; outline-offset:1px; }
+.mcretro-modem-location button { flex:0 0 auto; white-space:nowrap; font-size:12px; min-width:100px; }
+.mcretro-modem-location button:disabled, .mcretro-modem-location select:disabled { color:#777; cursor:default; }
+.mcretro-modem-controls a:hover, .mcretro-modem-progress-layout > a:hover,
+.mcretro-modem-controls button:hover, .mcretro-modem-progress-extra button:hover { background:#dedede; color:#000; text-decoration:none; }
+.mcretro-modem-progress-layout { display:grid; grid-template-columns: 68px minmax(0,1fr) 94px; gap:10px; align-items:start; padding: 2px 0 13px; min-height:80px; }
+.mcretro-modem-progress-message { margin:3px 0; line-height:1.45; }
+.mcretro-modem-status-label { margin-right:6px; }
+.mcretro-modem-progress-layout > a { align-self:start; }
+.mcretro-modem-progress-extra { display:flex; justify-content:flex-end; gap:9px; border-top:1px solid #888; padding-top:8px; }
+.mcretro-modem-progress-extra button { min-height:25px; font-size:12px; min-width:83px; }
+.mcretro-modem-note { margin: 9px 0 0; font: 11px/1.4 Arial, Tahoma, sans-serif; color:#404040; }
+.mcretro-modem-dialog [hidden], .mcretro-modem-page [hidden] { display:none !important; }
+.mcretro-modem-help:focus-visible, .mcretro-modem-close:focus-visible,
+.mcretro-modem-fields input:focus-visible, .mcretro-modem-controls button:focus-visible,
+.mcretro-modem-controls a:focus-visible, .mcretro-modem-progress-layout a:focus-visible,
+.mcretro-modem-progress-extra button:focus-visible { outline:2px solid #000; outline-offset:2px; }
+@media (max-width:480px) {
+  .mcretro-modem-body { padding: 12px 9px; }
+  .mcretro-modem-fields { grid-template-columns:92px minmax(0,1fr); gap:7px; }
+  .mcretro-modem-location { flex-wrap:wrap; }
+  .mcretro-modem-location button { flex:1 1 110px; }
+  .mcretro-modem-progress-layout { grid-template-columns: 48px minmax(0,1fr); }
+  .mcretro-modem-progress-layout > a { grid-column:2; justify-self:end; }
+  .mcretro-modem-icon { flex-basis:48px; gap:2px; }
+  .mcretro-modem-progress-message { min-width:0; overflow-wrap:anywhere; }
+  .mcretro-modem-controls button, .mcretro-modem-controls a { min-width:84px; }
 }
 
 /* Month pages use the blog roll's author avatar and text-only excerpts. */

@@ -663,3 +663,8 @@
 .sidebar .mcretro-webring {
   padding-bottom: 1.3rem;
 }
+
+/* Preserve Title Case in the sidebar, including McRetro branding. */
+.sidebar .widgettitle {
+  text-transform: none;
+}

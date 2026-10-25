@@ -634,3 +634,29 @@
     word-break: normal;
   }
 }
+
+/* Match monthly archive metadata to the Blog's compact desktop rhythm.
+   The archive is nested in .post-full, which otherwise applies tall article
+   line-height to the date, author and categories. Mobile is unchanged. */
+@media screen and (min-width: 751px) {
+  .archive-blog-list .post-meta {
+    flex: 0 0 175px;
+    gap: 0.15rem;
+    line-height: 1.5;
+  }
+  .archive-blog-list .post-meta .post-author,
+  .archive-blog-list .archive-author-details {
+    gap: 0.1rem;
+  }
+  .archive-blog-list .post-meta .author-avatar {
+    margin-bottom: 0.15rem;
+  }
+}
+
+/* Match the Search widget's breathing room above the sidebar separators.
+   The default .widget bottom padding is only 0.5rem; keep the good spacing
+   on Search and Recent Posts unchanged. */
+.sidebar .archive-widget,
+.sidebar .mcretro-webring {
+  padding-bottom: 1.3rem;
+}

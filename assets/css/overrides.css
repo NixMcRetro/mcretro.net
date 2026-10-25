@@ -669,10 +669,10 @@
   text-transform: none;
 }
 
-/* Keep wrapped Recent Posts titles compact without altering date typography
-   or the spacing between separate sidebar entries. */
+/* Give wrapped Recent Posts titles comfortable leading while keeping
+   dates close beneath them and preserving the gap between separate entries. */
 .sidebar .recent-posts-list li > a {
   display: block;
-  line-height: 1.25;
-  margin-bottom: 0.45rem;
+  line-height: 1.4;
+  margin-bottom: 0;
 }

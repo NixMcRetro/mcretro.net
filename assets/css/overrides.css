@@ -342,63 +342,80 @@
   }
 }
 
-/* McRetro Webring: local, compact, keyboard-accessible sidebar navigation. */
+/* Webring navigation in the style of a small 1990s homepage directory.
+   Keep it plain: square borders, serif title, monospace URL and text links. */
 .mcretro-webring {
   margin-top: 0.15rem;
 }
 .mcretro-webring-window {
-  border: 2px dashed #3b6585;
-  background: #fffaf0;
-  padding: 0.7rem 0.55rem;
+  box-sizing: border-box;
+  border: 3px double #343434;
+  background: #fff8dc;
+  padding: 0.55rem 0.6rem 0.65rem;
   text-align: center;
 }
+.mcretro-webring-label {
+  margin: 0 0 0.55rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #a39d88;
+  color: #424242;
+  font: 700 0.71rem/1.3 "Courier New", Courier, monospace;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
 .mcretro-webring-name {
-  font: 700 0.96rem/1.35 Montserrat, "Helvetica Neue", sans-serif;
-  color: #003d85;
-  min-height: 2.65em;
-  margin: 0.45rem 0;
-}
-.mcretro-webring-intro,
-.mcretro-webring-path {
-  font: 0.76rem/1.4 Montserrat, "Helvetica Neue", sans-serif;
-  margin: 0.25rem auto;
+  margin: 0 0 0.3rem;
+  color: #1b1b1b;
+  font: 700 1rem/1.3 Georgia, "Times New Roman", serif;
 }
 .mcretro-webring-path {
+  margin: 0 auto 0.65rem;
+  color: #545454;
+  font: 0.74rem/1.35 "Courier New", Courier, monospace;
+  letter-spacing: 0;
   overflow-wrap: anywhere;
-  color: #544b3c;
 }
 .mcretro-webring-nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
+  align-items: stretch;
   justify-content: center;
-  margin: 0.55rem 0;
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid #a39d88;
+  border-bottom: 1px solid #a39d88;
 }
 .mcretro-webring-nav button {
-  border: 1px solid #7b91aa;
-  background: #eaf0f6;
-  color: #003d85;
-  font: 700 0.73rem/1.25 Montserrat, "Helvetica Neue", sans-serif;
-  padding: 0.48rem 0.35rem;
+  appearance: none;
+  flex: 1 1 0;
+  min-width: 0;
   min-height: 36px;
   margin: 0;
+  padding: 0.3rem 0.1rem;
+  border: 0;
+  background: transparent;
+  color: #0000aa;
   cursor: pointer;
+  font: 400 0.76rem/1.2 Verdana, Arial, sans-serif;
+  text-decoration: underline;
+}
+.mcretro-webring-nav button + button {
+  border-left: 1px solid #c4bfad;
 }
 .mcretro-webring-nav button:hover,
 .mcretro-webring-nav button:focus-visible {
-  background: #d4e1ef;
+  background: #ebe5cf;
 }
 .mcretro-webring-visit {
-  display: block;
-  border: 1px outset #a3a3a3;
-  padding: 0.55rem 0.3rem;
-  margin-top: 0.7rem;
-  background: #e5e5e5;
-  color: #003d85;
-  font: 700 0.81rem/1.3 Montserrat, "Helvetica Neue", sans-serif;
-  text-decoration: none;
+  display: inline-block;
+  margin: 0.65rem 0 0;
+  padding: 0.1rem 0;
+  border: 0;
+  background: transparent;
+  color: #0000aa;
+  font: 700 0.83rem/1.3 Georgia, "Times New Roman", serif;
+  text-decoration: underline;
 }
-.mcretro-webring-visit:hover { background: #d4e1ef; text-decoration: underline; }
+.mcretro-webring-visit:hover { color: #551a8b; }
 .mcretro-webring-nav button:focus-visible,
 .mcretro-webring-visit:focus-visible,
 .mcretro-modem-controls button:focus-visible,

@@ -3,7 +3,7 @@ layout: post
 title: "VRAMpage MD: Bending Bits"
 author: "Nix McRetro"
 date: 2026-10-27T03:17:08+11:00
-categories: [programming, sega]
+categories: [ai-assisted, programming, sega]
 ---
 
 {% include youtube.html id="Prp6OLZkeD4" %}

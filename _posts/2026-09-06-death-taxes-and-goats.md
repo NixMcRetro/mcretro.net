@@ -94,7 +94,7 @@ statements.pdf
 
 ## The Human Tiebreaker
 
-The 9 disputed rows got adjudicated the old-fashioned way: I opened the original scans and looked. Eight were real, tiny monthly interest credits Textract's boxes had skipped. The ninth was a "Debit Interest Adjusted" entry for $0.31, so it was excluded from the interest-income dataset. The other 78 rows had independent agreement between both OCR pipelines. If I wanted to call every row individually "human verified", I would still need to compare those 75 against the source scans as well. For this extraction task I only needed assessable interest credited to the account.
+The 9 disputed rows got adjudicated the old-fashioned way: I opened the original scans and looked. Eight were real, tiny monthly interest credits Textract's boxes had skipped. The ninth was a "Debit Interest Adjusted" entry for $0.31, so it was excluded from the interest-income dataset. The other 78 rows had independent agreement between both OCR pipelines. If I wanted to call every row individually "human verified", I would still need to compare those 78 against the source scans as well. For this extraction task I only needed assessable interest credited to the account.
 
 | Financial year | Interest earned |
 | --- | --- |

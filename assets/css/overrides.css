@@ -238,7 +238,7 @@
 }
 
 .post-full .post-content > h2 {
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   line-height: 1.35;
   margin: 1.45em 0 0.55em;
 }
@@ -255,6 +255,23 @@
   font-size: 1.05rem;
   line-height: 1.4;
   margin: 1.2em 0 0.45em;
+}
+
+/* Tuck Markdown image captions under their images without affecting ordinary italics. */
+.post-full .post-content > p:has(> img:only-child):has(+ p > em:only-child) {
+  margin-bottom: 0.25rem;
+}
+
+.post-full .post-content > p:has(> img:only-child):has(+ p > em:only-child) > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.post-full .post-content > p:has(> img:only-child) + p:has(> em:only-child) {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0;
 }
 
 /* Use the same vertical rhythm for photos in figure elements as video embeds. */

@@ -7,6 +7,10 @@ categories: [ai-generated, programming]
 last_modified_at: 2026-10-27
 ---
 
+![oMLX running Chandra OCR 2 locally for the document transcription experiment](/assets/images/2026/09/death-taxes-and-goats/omlx-chandra-ocr2.jxl)
+
+*Chandra OCR 2 running locally in oMLX before I cross-checked the results against AWS Textract.*
+
 If I've been quiet lately, or if I've seemed perpetually distracted for the past twelve months, this is why. It's almost the one-year anniversary of my mother's death, and I am still drowning in paperwork. Grief, it turns out, is mostly just an endless series of administrative tasks.
 
 The Australian Taxation Office wanted her tax affairs regularised going back to 2018-19. The bank's automated deceased-estate data package only covered the last three years, and even then it was sparse. What I actually had was a ~200-page scanned PDF of her historical statements. What the ATO needed was every interest entry, categorised by financial year, in a form I could legally sign my name to.

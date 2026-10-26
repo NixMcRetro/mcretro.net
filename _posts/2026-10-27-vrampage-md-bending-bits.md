@@ -56,13 +56,13 @@ A hard lock is still possible. **Force Resume** tries to get the CPU moving; **C
 
 We checked the core with small original test programs that produce known pictures, audio and memory changes, then exercised the real WebAssembly build in browsers. That helped separate deliberate corruption from bugs we'd accidentally introduced ourselves.
 
-[VRAMpage MD is now live on McRetro.net](https://mcretro.net/homepages/vrampage-md/). Bring your own ROM; the file stays in your browser. The [source and complete browser download](https://github.com/NixMcRetro/VRAMpage-MD) are available too. No soldering iron required this time.
-
 ## Try the Test Pattern
 
 ![VRAMpage MD workbench running an original multicolour diagnostic pattern beside the four chip controls](/assets/images/2026/10/vrampage-md/01-workbench.jxl)
 
 *The real v0.5.0 workbench running the downloadable colour-test ROM, with all faults off.*
+
+[VRAMpage MD is now live on McRetro.net](https://mcretro.net/homepages/vrampage-md/). Bring your own ROM; the file stays in your browser. The [source and complete browser download](https://github.com/NixMcRetro/VRAMpage-MD) are available too. No soldering iron required this time.
 
 Don't have a game handy? [Download the original colour-test ROM](/assets/downloads/2026/10/vrampage-md/VRAMpage-MD-Colour-Test.bin), then open it with **Load ROM** in VRAMpage MD to get the pattern shown above. It uses original code and graphics, with no commercial game assets. It's silent, so use another cartridge for FM and PSG sound experiments.
 

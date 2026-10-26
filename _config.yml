@@ -28,6 +28,10 @@ plugins:
   - jekyll-include-cache
 
 # Not needed to send to the internet or something but optional to not do.
+# Preserve the complete released emulator and corresponding source, including dotfiles.
+include:
+  - homepages/vrampage-md/
+
 exclude:
   - Gemfile
   - Gemfile.lock

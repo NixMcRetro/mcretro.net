@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "emcc",
+            "includePath": [
+                "${workspaceFolder}/src/main/c/**",
+                "${env:EMSDK}/upstream/**"
+            ],
+            "defines": [
+                "LSB_FIRST",
+                "USE_32BPP_RENDERING",
+                "HAVE_YM3438_CORE",
+                "WASM_GENPLUS=1"
+            ],
+            "compilerPath": "${env:EMSDK}/upstream/emscripten/emcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

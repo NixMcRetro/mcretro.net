@@ -44,9 +44,9 @@ Even with the variations, the shape of the melody kept coming back. A little dro
 
 We measured the time between the shorter sung notes as well. Across Recordings #1, #2, #3, #4 and #6, which have identifiable note bursts, the median was about **0.225 seconds**. My real Avtek modem dialled at about **0.200 seconds** between tones. That’s not too shabby for something I last regularly heard more than twenty years ago.
 
-![Comparison chart showing vocal note cadence modem DTMF dialling and modem calling tones](/assets/images/2026/10/still-dialling-in-my-head/07_pulse_timing_across_recordings.jxl)
+![Measured cadence of five vocal recordings compared with Avtek DTMF dialling](/assets/images/2026/10/still-dialling-in-my-head/07_pulse_timing_across_recordings.jxl)
 
-*My sung cadence and the Avtek dialling are close together. The later calling tones are much slower.*
+*The five recordings with distinct notes have a similar cadence to the Avtek dialling. Recording #5 was a continuous melody, so it is not included in this comparison.*
 
 ## The Real Avtek Modem
 

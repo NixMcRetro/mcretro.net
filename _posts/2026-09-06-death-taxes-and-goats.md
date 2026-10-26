@@ -21,7 +21,6 @@ I wasn't about to sit there with a highlighter for three weeks, and I wasn't goi
 
 Here's how you digitise an analog life when the bureaucracy demands perfect fidelity.
 
-*Privacy note: Account references, example transactions, OCR row counts and financial amounts in this article have been changed to protect personal information. The sums are internally consistent, but they are not the figures submitted to the ATO.*
 
 ---
 

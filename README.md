@@ -56,7 +56,7 @@ The website itself has survived WordPress, Dropplets, FlatPress, Ghost, assorted
 [Dependabot](.github/dependabot.yml) checks the active root Ruby/npm dependencies
 and GitHub Actions weekly. Compatible Ruby and Action updates are grouped; major
 updates remain separate. Dependency and workflow PRs run the Jekyll/Pagefind build
-before merge. Security alerts and security updates are enabled separately in
+before merge. Security alerts and security updates are controlled separately in
 GitHub's repository settings. Preserved release source under `homepages/` is not
 a scheduled update target; its dependency findings need a coordinated source and
 package update rather than edits to an archived lockfile.

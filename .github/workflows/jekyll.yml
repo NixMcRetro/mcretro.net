@@ -13,9 +13,12 @@ on:
     paths:
       - 'Gemfile'
       - 'Gemfile.lock'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/dependabot.yml'
       - 'homepages/vrampage-md/**'
       - '_config.yml'
-      - '.github/workflows/jekyll.yml'
+      - '.github/workflows/**'
       - '.github/tests/vrampage-deployment.mjs'
   workflow_dispatch:
 

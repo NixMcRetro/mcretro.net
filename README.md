@@ -51,6 +51,16 @@ photos/       Photo archive
 
 The website itself has survived WordPress, Dropplets, FlatPress, Ghost, assorted Raspberry Pis and enough questionable architectural decisions to become another project in its own right.
 
+## Dependency Maintenance
+
+[Dependabot](.github/dependabot.yml) checks the active root Ruby/npm dependencies
+and GitHub Actions weekly. Compatible Ruby and Action updates are grouped; major
+updates remain separate. Dependency and workflow PRs run the Jekyll/Pagefind build
+before merge. Security alerts and security updates are enabled separately in
+GitHub's repository settings. Preserved release source under `homepages/` is not
+a scheduled update target; its dependency findings need a coordinated source and
+package update rather than edits to an archived lockfile.
+
 ## More Information
 
 Visit [McRetro.net](https://mcretro.net) to explore the archive, or read the [About page](https://mcretro.net/about/) for more of its history.

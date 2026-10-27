@@ -11,6 +11,8 @@ on:
       - '.github/workflows/op1-browser-tests.yml'
   pull_request:
     paths:
+      - 'Gemfile'
+      - 'Gemfile.lock'
       - 'homepages/vrampage-md/**'
       - '_config.yml'
       - '.github/workflows/jekyll.yml'

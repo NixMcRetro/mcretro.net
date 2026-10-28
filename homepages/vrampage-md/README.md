@@ -8,13 +8,12 @@ VRAMpage MD is a **cross-platform HTML/CSS/JavaScript/WebAssembly app** for mode
 browsers on Windows, macOS and Linux. A hosted build needs only a browser; a local
 copy needs **Python 3** to serve its files. macOS is not an app requirement.
 
-The **v0.5.0 browser release candidate** is being verified before publication.
-Its complete package is named **VRAMpage-MD-v0.5.0-browser.zip**. For review builds,
-open the matching successful [source-checks run](https://github.com/NixMcRetro/VRAMpage-MD/actions/workflows/source-checks.yml)
-and download **VRAMpage-MD-local-review** under Artifacts. GitHub may require sign-in
-and wrap the browser ZIP inside another ZIP; extract both. Check BUILD-INFO.json
-for the source commit. Artifacts expire and are not permanent release downloads.
-See the [candidate release notes](docs/RELEASE-NOTES-v0.5.0.md).
+The published [v0.5.0 release](https://github.com/NixMcRetro/VRAMpage-MD/releases/tag/v0.5.0)
+contains the complete browser app and matching modified emulator source.
+[Download the complete v0.5.0 browser ZIP](https://github.com/NixMcRetro/VRAMpage-MD/releases/download/v0.5.0/VRAMpage-MD-v0.5.0-browser.zip)
+or browse the [exact release source](https://github.com/NixMcRetro/VRAMpage-MD/tree/e9f366fb3985f11430d353c3b2589f076ff93128).
+McRetro.net hosts the playable browser runtime and notices. The corresponding source,
+build scripts and all original licences are preserved in the versioned download.
 
 1. Extract the complete package and open the **VRAMpage-MD** folder in a terminal.
 2. Start the included local server:
@@ -30,7 +29,7 @@ See the [candidate release notes](docs/RELEASE-NOTES-v0.5.0.md).
 4. Keep the terminal open while playing; press **Ctrl+C** there to stop the server.
 
 On macOS, double-clicking **START.command** remains a convenient alternative.
-See [cross-platform launch instructions and troubleshooting](docs/RUNNING-LOCALLY.md).
+See [cross-platform launch instructions and troubleshooting](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/RUNNING-LOCALLY.md).
 No Git, Emscripten or emulator compilation is needed for the complete package.
 GitHub's **Code → Download ZIP** is a source-only archive, not this runnable build.
 Open the app through HTTP rather than double-clicking site/index.html.
@@ -38,25 +37,25 @@ Open the app through HTTP rather than double-clicking site/index.html.
 The existing public **[v0.4.1 complete Mac ZIP](https://github.com/NixMcRetro/VRAMpage-MD/releases/download/v0.4.1/VRAMpage-MD-v0.4.1-macos.zip)**
 and its [release/checksum](https://github.com/NixMcRetro/VRAMpage-MD/releases/tag/v0.4.1)
 remain unchanged. Its filename reflects the historical Mac launcher packaging;
-it does not include the v0.5.0 candidate controls. [Other runnable versions and historical source releases](docs/RELEASE-HISTORY.md)
+it does not include the v0.5.0 release controls. [Other runnable versions and historical source releases](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/RELEASE-HISTORY.md)
 remain available for reproducing earlier experiments.
 
 **v0.3.0:** choose **Frame projection** or **Transaction** in the VRAM patchbay, then use the same legs and bridges. Transaction mode maps actual emulator VRAM accesses and exports separate model metadata and counters. Frame projection remains the default fallback. Both are digital approximations.
 
-**v0.4.0:** [audio input bridges](docs/AUDIO-BENDING.md) add independent PSG and FM D0-D7 pair controls, exact counters and experiment metadata. They change future chip-input writes before synthesis. Both the 68000 and Z80 routes are covered by synthetic tests; Z80 RAM/arbitration faults and physical electrical fidelity remain outside this model. Enable sound, choose a pair and apply it. Removing a bridge does not repair prior chip state; use clean restart when needed.
+**v0.4.0:** [audio input bridges](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/AUDIO-BENDING.md) add independent PSG and FM D0-D7 pair controls, exact counters and experiment metadata. They change future chip-input writes before synthesis. Both the 68000 and Z80 routes are covered by synthetic tests; Z80 RAM/arbitration faults and physical electrical fidelity remain outside this model. Enable sound, choose a pair and apply it. Removing a bridge does not repair prior chip state; use clean restart when needed.
 
-**v0.4.1:** [four compact chip diagrams](docs/CHIP-WORKBENCH.md) keep VRAM, Work RAM, FM and PSG visible together. Click legs to disconnect supported lines or join a pair within that chip. Audio cuts use a new stuck-low input model. [Configuration files](docs/CIRCUIT-CONFIGURATIONS.md) save masks and bridges; loading previews settings before explicit Apply. Older configuration files remain importable.
+**v0.4.1:** [four compact chip diagrams](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/CHIP-WORKBENCH.md) keep VRAM, Work RAM, FM and PSG visible together. Click legs to disconnect supported lines or join a pair within that chip. Audio cuts use a new stuck-low input model. [Configuration files](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/CIRCUIT-CONFIGURATIONS.md) save masks and bridges; loading previews settings before explicit Apply. Older configuration files remain importable.
 
-**v0.5.0 candidate:** coordinated fault removal clears every modeled domain while preserving play/pause after a confirmed complete clear. Failed or unverified clears pause for inspection. CPU recovery still clears RAM/VRAM faults and preserves audio faults. These candidate controls are not in the historical v0.4.1 ZIP above; see [recovery semantics](docs/CPU-RECOVERY.md).
+**v0.5.0 release:** coordinated fault removal clears every modeled domain while preserving play/pause after a confirmed complete clear. Failed or unverified clears pause for inspection. CPU recovery still clears RAM/VRAM faults and preserves audio faults. These release controls are not in the historical v0.4.1 ZIP above; see [recovery semantics](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/CPU-RECOVERY.md).
 
-The v0.5.0 candidate offers **Force Resume: On/Off** and **CPU Recovery: On/Off** beside Randomiser. Both start **On**, as requested. Two consecutive eligible HALT frames permit one Force Resume; if HALT persists for eight more completed frames (~0.13 s), CPU Recovery permits one CPU-only reset. A cleared HALT flag cancels escalation. Each fault experiment gets one sequence; a new fault action, toggle change or explicit Resume permits another. Switch both **Off** for unassisted experiments. Neither static pictures nor ordinary STOP trigger recovery. See [recovery semantics](docs/CPU-RECOVERY.md#development-source-ordered-recovery).
+The v0.5.0 release offers **Force Resume: On/Off** and **CPU Recovery: On/Off** beside Randomiser. Both start **On**, as requested. Two consecutive eligible HALT frames permit one Force Resume; if HALT persists for eight more completed frames (~0.13 s), CPU Recovery permits one CPU-only reset. A cleared HALT flag cancels escalation. Each fault experiment gets one sequence; a new fault action, toggle change or explicit Resume permits another. Switch both **Off** for unassisted experiments. Neither static pictures nor ordinary STOP trigger recovery. See [recovery semantics](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/CPU-RECOVERY.md#development-source-ordered-recovery).
 
-The v0.5.0 candidate adds **Save Checkpoint** and **Restore Checkpoint** in the advanced **Logic / SRAM (Work RAM)** panel. Save with all faults off and controller inputs released. The single checkpoint stays in this tab's current cartridge session; it is never written to a file or included in experiment JSON. Restore clears all fault domains, returns to the saved machine state and image without advancing a frame, and stays paused until **Resume**. CPU Reset keeps the slot; Clean Restart, a new cartridge or reloading the page discards it. Supported scope is ordinary Mega Drive cartridges, three- or six-button pads and validated ordinary SRAM; other mapper/peripheral/audio profiles are refused. A checkpoint can itself contain a broken game.
+The v0.5.0 release adds **Save Checkpoint** and **Restore Checkpoint** in the advanced **Logic / SRAM (Work RAM)** panel. Save with all faults off and controller inputs released. The single checkpoint stays in this tab's current cartridge session; it is never written to a file or included in experiment JSON. Restore clears all fault domains, returns to the saved machine state and image without advancing a frame, and stays paused until **Resume**. CPU Reset keeps the slot; Clean Restart, a new cartridge or reloading the page discards it. Supported scope is ordinary Mega Drive cartridges, three- or six-button pads and validated ordinary SRAM; other mapper/peripheral/audio profiles are refused. A checkpoint can itself contain a broken game.
 
 
-The v0.5.0 candidate also adds a [read-only comparison of two saved experiment exports](docs/EXPERIMENTS.md#compare-saved-exports-development-source). Inspect identities, settings and recorded results locally; loading an export never applies its settings or replays a run. Missing metadata remains unknown.
+The v0.5.0 release also adds a [read-only comparison of two saved experiment exports](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/EXPERIMENTS.md#compare-saved-exports-development-source). Inspect identities, settings and recorded results locally; loading an export never applies its settings or replays a run. Missing metadata remains unknown.
 
-The candidate [Randomiser](docs/CHIP-WORKBENCH.md#development-source-randomiser) has separate **PSG**, **FM** and **VRAM** buttons. Each selects cuts or a joined pair within that chip, leaving the other chips unchanged. Save the resulting configuration to keep a useful setup. The public v0.4.1 ZIP is preserved.
+The candidate [Randomiser](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/CHIP-WORKBENCH.md#development-source-randomiser) has separate **PSG**, **FM** and **VRAM** buttons. Each selects cuts or a joined pair within that chip, leaving the other chips unchanged. Save the resulting configuration to keep a useful setup. The public v0.4.1 ZIP is preserved.
 
 The same area includes **CPU Reset**, a copy of **Clean Restart** immediately to its right, and ten **RAM WRITE** pair buttons covering every combination within A11–A15. The default **Hold while pressed** keeps a write-only pair active only while its mouse button or shortcut key is held down; releasing it disconnects the pair. Choose **8-frame pulse** for a contact that disconnects after eight emulated frames. Contact expiry itself issues no CPU recovery; the automatic HALT policy may act on later frames if enabled. Neither mode has an affected-write cap. Removing a fault does not repair earlier corruption.
 
@@ -68,7 +67,7 @@ newer selection, and Clean Restart uses the last accepted cartridge. If core
 activation becomes uncertain, emulation stops explicitly; it does not pretend
 the previous machine state was restored.
 
-**RAM research:** a [reproducible bounded experiment](docs/RAM-STATUS-FOLLOWUP.md) now shows player-trajectory divergence while recorded demo inputs continue at the same phase. This uses the existing public core and does not establish physical electrical accuracy.
+**RAM research:** a [reproducible bounded experiment](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/RAM-STATUS-FOLLOWUP.md) now shows player-trajectory divergence while recorded demo inputs continue at the same phase. This uses the existing public core and does not establish physical electrical accuracy.
 
 ## What can it do?
 
@@ -86,14 +85,14 @@ The interface fits different window sizes, follows your system Light/Dark prefer
 
 | Topic | Where to start |
 | --- | --- |
-| Source code and contributor build | [Developer build instructions](docs/DEPLOYMENT.md) |
-| Transaction VRAM development | [Browser controls and handoff behavior](docs/LOGIC-BENDING.md#browser-transaction-vram-integration), [runtime build](docs/VRAM-RUNTIME-BUILD.md) and [model API](docs/VRAM-PUBLIC-MODEL-API.md) |
-| Technical architecture and fault assumptions | [Logic bending](docs/LOGIC-BENDING.md) · [Video output](docs/VIDEO-OUTPUT.md) |
-| Current verified state and experiments | [Development status](docs/DEVELOPMENT-STATUS.md) · [Experiment records](docs/EXPERIMENTS.md) · [RAM trace](docs/RAM-WRITE-TRACE.md) |
-| Roadmap and next work | [ROADMAP.md](ROADMAP.md) · [Work queue](docs/WORK-QUEUE.md) |
-| Automated and manual validation | [Testing guide](docs/TESTING.md) |
-| Release versions and provenance | [Release history](docs/RELEASE-HISTORY.md) · [Versioning policy](docs/VERSIONING.md) |
-| All technical documents | [Documentation index](docs/README.md) |
+| Source code and contributor build | [Developer build instructions](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/DEPLOYMENT.md) |
+| Transaction VRAM development | [Browser controls and handoff behavior](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/LOGIC-BENDING.md#browser-transaction-vram-integration), [runtime build](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/VRAM-RUNTIME-BUILD.md) and [model API](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/VRAM-PUBLIC-MODEL-API.md) |
+| Technical architecture and fault assumptions | [Logic bending](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/LOGIC-BENDING.md) · [Video output](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/VIDEO-OUTPUT.md) |
+| Current verified state and experiments | [Development status](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/DEVELOPMENT-STATUS.md) · [Experiment records](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/EXPERIMENTS.md) · [RAM trace](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/RAM-WRITE-TRACE.md) |
+| Roadmap and next work | [ROADMAP.md](ROADMAP.md) · [Work queue](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/WORK-QUEUE.md) |
+| Automated and manual validation | [Testing guide](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/TESTING.md) |
+| Release versions and provenance | [Release history](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/RELEASE-HISTORY.md) · [Versioning policy](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/VERSIONING.md) |
+| All technical documents | [Documentation index](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/README.md) |
 | Agent/development rules | [AGENTS.md](AGENTS.md) |
 
 ### Build from source

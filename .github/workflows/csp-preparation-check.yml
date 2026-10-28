@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - 'security/**'
       - security/csp-preparation-2026-10-24
       - security/random-post-no-inline-2026-10-24
       - security/footer-csp-workflow-main-2026-10-24

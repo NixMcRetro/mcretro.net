@@ -53,7 +53,7 @@ test('modern shared layout has only external scripts', () => {
   const scripts = scriptElements(layout);
   assert.ok(scripts.length >= 3);
   for (const match of scripts) {
-    assert.match(match.attributes, /\bsrc\s*=/);
+    assert.ok(match.parsedAttributes.has('src') && match.parsedAttributes.get('src').trim());
     assert.equal(match.body.trim(), '');
   }
   assert.ok(layout.includes("'/assets/js/random-post.js' | relative_url"));

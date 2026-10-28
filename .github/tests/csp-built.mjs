@@ -45,9 +45,9 @@ execFileSync(process.execPath, [fileURLToPath(new URL('./footer-csp-built.mjs', 
 // Jekyll SEO Tag emits inert JSON-LD structured data, not executable JS.
 // Reject genuine inline scripts while retaining the existing SEO metadata.
 const inlineExecutableScripts = scriptElements(home)
-  .filter(({ attributes, body }) =>
-    !/\bsrc\s*=/.test(attributes) &&
-    !/\btype\s*=\s*(['"])application\/ld\+json\1/i.test(attributes) &&
+  .filter(({ parsedAttributes: attrs, body }) =>
+    (!attrs.has('src') || !attrs.get('src').trim()) &&
+    (attrs.get('type') || '').trim().toLowerCase() !== 'application/ld+json' &&
     body.trim().length > 0);
 assert.equal(inlineExecutableScripts.length, 0, 'Inline executable script found in generated homepage');
 console.log('Generated site CSP assertions passed');

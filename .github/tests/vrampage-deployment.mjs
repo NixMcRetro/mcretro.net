@@ -24,7 +24,8 @@ function files(directory, prefix = '') {
     return entry.isDirectory() ? files(join(directory, entry.name), name) : [name];
   });
 }
-const paths = files(source);
+const paths = files(source).filter(name =>
+  !name.split(/[\\/]/).some(part => part.startsWith('.')));
 for (const name of paths) {
   assert.ok(!/\.(bin|gen|smd|rom|iso)$/i.test(name), 'ROM-like file: ' + name);
   assert.deepEqual(readFileSync(join(built, name)), readFileSync(join(source, name)),

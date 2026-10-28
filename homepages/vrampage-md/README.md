@@ -55,13 +55,13 @@ The v0.5.0 release adds **Save Checkpoint** and **Restore Checkpoint** in the ad
 
 The v0.5.0 release also adds a [read-only comparison of two saved experiment exports](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/EXPERIMENTS.md#compare-saved-exports-development-source). Inspect identities, settings and recorded results locally; loading an export never applies its settings or replays a run. Missing metadata remains unknown.
 
-The candidate [Randomiser](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/CHIP-WORKBENCH.md#development-source-randomiser) has separate **PSG**, **FM** and **VRAM** buttons. Each selects cuts or a joined pair within that chip, leaving the other chips unchanged. Save the resulting configuration to keep a useful setup. The public v0.4.1 ZIP is preserved.
+The v0.5.0 [Randomiser](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/CHIP-WORKBENCH.md#development-source-randomiser) has separate **PSG**, **FM** and **VRAM** buttons. Each selects cuts or a joined pair within that chip, leaving the other chips unchanged. Save the resulting configuration to keep a useful setup. The public v0.4.1 ZIP is preserved.
 
 The same area includes **CPU Reset**, a copy of **Clean Restart** immediately to its right, and ten **RAM WRITE** pair buttons covering every combination within A11–A15. The default **Hold while pressed** keeps a write-only pair active only while its mouse button or shortcut key is held down; releasing it disconnects the pair. Choose **8-frame pulse** for a contact that disconnects after eight emulated frames. Contact expiry itself issues no CPU recovery; the automatic HALT policy may act on later frames if enabled. Neither mode has an affected-write cap. Removing a fault does not repair earlier corruption.
 
-Candidate fault shortcuts **1–9** target the chip selected by **0**: **VRAM → WRAM → FM → PSG**. The text label identifies the keyboard target. An active fault gives its chip a pale green fill and outline; idle chips keep their normal theme colours. Shift holds a temporary contact until release. WRAM digits cover the first nine displayed A11–A15 pairs; the tenth remains available by button. Reconnect/disconnect buttons remain available; **0 now changes target**. Browser Control/Command/Alt shortcuts keep their normal behaviour.
+Version 0.5.0 fault shortcuts **1–9** target the chip selected by **0**: **VRAM → WRAM → FM → PSG**. The text label identifies the keyboard target. An active fault gives its chip a pale green fill and outline; idle chips keep their normal theme colours. Shift holds a temporary contact until release. WRAM digits cover the first nine displayed A11–A15 pairs; the tenth remains available by button. Reconnect/disconnect buttons remain available; **0 now changes target**. Browser Control/Command/Alt shortcuts keep their normal behaviour.
 
-The candidate also stages cartridge replacements: rejected files keep the
+The release also stages cartridge replacements: rejected files keep the
 current game and its identity intact, older asynchronous reads cannot replace a
 newer selection, and Clean Restart uses the last accepted cartridge. If core
 activation becomes uncertain, emulation stops explicitly; it does not pretend
@@ -89,11 +89,11 @@ The interface fits different window sizes, follows your system Light/Dark prefer
 | Transaction VRAM development | [Browser controls and handoff behavior](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/LOGIC-BENDING.md#browser-transaction-vram-integration), [runtime build](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/VRAM-RUNTIME-BUILD.md) and [model API](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/VRAM-PUBLIC-MODEL-API.md) |
 | Technical architecture and fault assumptions | [Logic bending](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/LOGIC-BENDING.md) · [Video output](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/VIDEO-OUTPUT.md) |
 | Current verified state and experiments | [Development status](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/DEVELOPMENT-STATUS.md) · [Experiment records](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/EXPERIMENTS.md) · [RAM trace](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/RAM-WRITE-TRACE.md) |
-| Roadmap and next work | [ROADMAP.md](ROADMAP.md) · [Work queue](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/WORK-QUEUE.md) |
+| Roadmap and next work | [ROADMAP.md](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/ROADMAP.md) · [Work queue](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/WORK-QUEUE.md) |
 | Automated and manual validation | [Testing guide](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/TESTING.md) |
 | Release versions and provenance | [Release history](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/RELEASE-HISTORY.md) · [Versioning policy](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/VERSIONING.md) |
 | All technical documents | [Documentation index](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/docs/README.md) |
-| Agent/development rules | [AGENTS.md](AGENTS.md) |
+| Agent/development rules | [AGENTS.md](https://github.com/NixMcRetro/VRAMpage-MD/blob/v0.5.0/AGENTS.md) |
 
 ### Build from source
 
@@ -110,4 +110,4 @@ python3 scripts/serve.py --no-browser
 
 The emulator uses `h1romas4/wasm-genplus` pinned at `6090aff9e9b2f578cd28882bd4571d2e35b1d674`, with modified Genesis Plus GX. See the [third-party notices](THIRD-PARTY-NOTICES.md): the upstream restrictions include **non-commercial distribution** and corresponding-source requirements. Runnable releases include the modified emulator source, notices, launcher and checksums; no Sega ROMs or commercial game assets.
 
-**Repository separation:** Development and releases belong to `NixMcRetro/VRAMpage-MD`. Nothing in this repository automatically deploys to [McRetro.net](https://mcretro.net/); website publication needs separate explicit approval.
+**Repository separation:** Development and releases belong to `NixMcRetro/VRAMpage-MD`. New development commits there do not automatically publish to [McRetro.net](https://mcretro.net/); hosting a new release requires separate review and approval.

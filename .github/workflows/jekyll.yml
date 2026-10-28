@@ -15,6 +15,7 @@ on:
       - '_config.yml'
       - '.github/workflows/jekyll.yml'
       - '.github/tests/vrampage-deployment.mjs'
+      - '.github/tests/vrampage-release-asset.sh'
   workflow_dispatch:
 
 permissions:
@@ -38,6 +39,10 @@ jobs:
         with:
           ruby-version: '3.2'
           bundler-cache: true
+
+      - name: Verify exact corresponding-source release
+        if: github.event_name == 'pull_request'
+        run: bash .github/tests/vrampage-release-asset.sh
 
       - name: Build site with Jekyll
         run: bundle exec jekyll build --destination _site

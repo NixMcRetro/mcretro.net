@@ -27,20 +27,10 @@ plugins:
   - jekyll-seo-tag
   - jekyll-include-cache
 
-# Not needed to send to the internet or something but optional to not do.
-# Preserve the complete released emulator and corresponding source, including dotfiles.
+# Publish the standalone VRAMpage MD runtime and notices.
+# The complete corresponding source is in the pinned v0.5.0 GitHub release ZIP.
 include:
   - homepages/vrampage-md/
-  - homepages/vrampage-md/core/.gitkeep
-  - homepages/vrampage-md/source/runtime-profile/.vrampage-site-runtime-profile
-  - homepages/vrampage-md/source/runtime-profile/source/wasm-genplus/.editorconfig
-  - homepages/vrampage-md/source/runtime-profile/source/wasm-genplus/.eslintrc.js
-  - homepages/vrampage-md/source/runtime-profile/source/wasm-genplus/.github/workflows/emscripten.yml
-  - homepages/vrampage-md/source/runtime-profile/source/wasm-genplus/.gitignore
-  - homepages/vrampage-md/source/runtime-profile/source/wasm-genplus/.gitpod.Dockerfile
-  - homepages/vrampage-md/source/runtime-profile/source/wasm-genplus/.gitpod.yml
-  - homepages/vrampage-md/source/runtime-profile/source/wasm-genplus/.vscode/c_cpp_properties.json
-  - homepages/vrampage-md/source/runtime-profile/source/wasm-genplus/.vscode/settings.json
 
 exclude:
   - Gemfile

@@ -1,12 +1,17 @@
 VRAMpage MD v0.5.0
 Live URL: https://mcretro.net/homepages/vrampage-md/
-Authoritative source: https://github.com/NixMcRetro/VRAMpage-MD
-Release: https://github.com/NixMcRetro/VRAMpage-MD/releases/tag/v0.5.0
-Source commit: e9f366fb3985f11430d353c3b2589f076ff93128
-Released browser ZIP SHA256: 6024ad1701d1cb58dc5da16ce4ae51db4fd03de7e9e1a6e26b3e6aff27ef0aad
-The site/ files are copied byte-for-byte from that immutable release.
-core/ includes the production JS/WASM; source/ includes corresponding modified
-emulator source, normal-core fallback, runtime build recipe and licence notices.
-See THIRD-PARTY-NOTICES.md for upstream non-commercial/source terms.
-No cartridge ROMs are supplied or uploaded; choose your own local file.
-Future updates must select and verify a new explicit release; no automatic sync.
+Authoritative development repository: https://github.com/NixMcRetro/VRAMpage-MD
+Pinned source commit: https://github.com/NixMcRetro/VRAMpage-MD/tree/e9f366fb3985f11430d353c3b2589f076ff93128
+Complete release: https://github.com/NixMcRetro/VRAMpage-MD/releases/tag/v0.5.0
+Source-inclusive browser download: https://github.com/NixMcRetro/VRAMpage-MD/releases/download/v0.5.0/VRAMpage-MD-v0.5.0-browser.zip
+Release ZIP SHA256: 6024ad1701d1cb58dc5da16ce4ae51db4fd03de7e9e1a6e26b3e6aff27ef0aad
+
+The site hosts the published HTML/CSS/JavaScript/WebAssembly runtime, with an
+added attribution/download link in the HTML, plus the release notices.
+The original runtime JS/CSS/WASM remains byte-for-byte unchanged.
+The extracted build-source tree is not hosted separately on McRetro.net.
+The exact corresponding modified source, build recipe, runtime build profile
+and third-party licence notices are in the pinned complete release ZIP.
+See THIRD-PARTY-NOTICES.md for the upstream non-commercial/source restrictions.
+No cartridge ROMs are included or uploaded.
+Future updates require selecting, verifying and documenting a new release.

@@ -30,7 +30,7 @@
 <div class="widget archive-widget">
   <h4 class="widgettitle">The Archives</h4>
   <label class="visually-hidden" for="archive-dropdown">Browse archives by month</label>
-  <select id="archive-dropdown" onchange="if (this.value) window.location.href=this.value">
+  <select id="archive-dropdown">
     <option value="">Select a month…</option>
     {% assign posts_by_month = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m'" %}
     {% assign months_sorted = posts_by_month | sort: "name" | reverse %}

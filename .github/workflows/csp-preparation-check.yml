@@ -12,6 +12,12 @@ on:
       - '_includes/footer.html'
       - 'assets/css/style.css'
       - '_layouts/default.html'
+      - '_includes/sidebar.html'
+      - 'Gemfile.lock'
+      - 'assets/js/archive-dropdown.js'
+      - '.github/tests/archive-dropdown.mjs'
+      - '.github/tests/script-tags.mjs'
+      - '.github/tests/script-tags.test.mjs'
       - 'search/index.html'
       - 'assets/js/mobile-navigation.js'
       - 'assets/js/search-page.js'
@@ -32,6 +38,12 @@ on:
       - '.github/tests/footer-csp-built.mjs'
       - '.github/tests/csp-built.mjs'
       - '_layouts/default.html'
+      - '_includes/sidebar.html'
+      - 'Gemfile.lock'
+      - 'assets/js/archive-dropdown.js'
+      - '.github/tests/archive-dropdown.mjs'
+      - '.github/tests/script-tags.mjs'
+      - '.github/tests/script-tags.test.mjs'
       - 'search/index.html'
       - 'assets/js/mobile-navigation.js'
       - 'assets/js/search-page.js'
@@ -60,9 +72,11 @@ jobs:
           node --check assets/js/mobile-navigation.js
           node --check assets/js/search-page.js
           node --check assets/js/random-post.js
+          node --check assets/js/archive-dropdown.js
+          node --check .github/tests/script-tags.mjs
           node --check .github/tests/csp-built.mjs
       - name: Run footer, navigation, search and random-post regression tests
-        run: node --test .github/tests/csp-preparation.mjs .github/tests/random-post.mjs .github/tests/footer-csp.mjs
+        run: node --test .github/tests/csp-preparation.mjs .github/tests/random-post.mjs .github/tests/footer-csp.mjs .github/tests/archive-dropdown.mjs .github/tests/script-tags.test.mjs
 
   # Full integration checks remain available on security review branches and on
   # manual dispatch, without repeating the production Jekyll/Pagefind build.

@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
+import { scriptElements } from './script-tags.mjs';
 
 const read = name => readFileSync(new URL('../../' + name, import.meta.url), 'utf8');
 const layout = read('_layouts/default.html');
@@ -49,11 +50,11 @@ function fixture(options = {}) {
 }
 
 test('modern shared layout has only external scripts', () => {
-  const scripts = [...layout.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)];
+  const scripts = scriptElements(layout);
   assert.ok(scripts.length >= 3);
   for (const match of scripts) {
-    assert.match(match[1], /\bsrc\s*=/);
-    assert.equal(match[2].trim(), '');
+    assert.match(match.attributes, /\bsrc\s*=/);
+    assert.equal(match.body.trim(), '');
   }
   assert.ok(layout.includes("'/assets/js/random-post.js' | relative_url"));
   assert.ok(!layout.includes('random-post-urls.html'));

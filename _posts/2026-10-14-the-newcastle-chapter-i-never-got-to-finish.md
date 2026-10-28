@@ -2,7 +2,7 @@
 title: "The Newcastle Chapter I Never Got to Finish"
 author: "Nix McRetro"
 date: 2026-10-14T10:32:00.000+10:00
-categories: [news, study]
+categories: [ai-assisted, news, study]
 ---
 
 ![The little birds perched together](/assets/images/2026/newcastle-2019-birds-perch.webp)

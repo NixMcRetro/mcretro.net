@@ -10,7 +10,7 @@ title: Blast Processed Since 199X
 
 ![Front page!](/assets/images/home/frontpage.jpg){: .box width="560" height="400" }
 
-Please browse through the menu and definitely drop by the 💾 [Goodies](/goodies) page for some really cool links including the retro hardware photo gallery, homepages, and the file server. <a rel="me" href="https://mastodon.social/@NixMcRetro"></a>
+Please have a browse through the ✏️[ Blog](/blog/) for my latest posts, have a look around the menus, and drop by the 💾 [Goodies](/goodies) page for some really cool links, including the retro hardware photo gallery, homepages, and the file server. <a rel="me" href="https://mastodon.social/@NixMcRetro"></a>
 
 Keep being awesome and thanks for stopping by! 🙂🙃🙂
 

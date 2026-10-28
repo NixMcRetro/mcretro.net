@@ -2,9 +2,16 @@
 
 ## Supported Versions
 
-Security maintenance is focused on the current version of [McRetro.net](https://mcretro.net/) deployed from the `main` branch and the latest published VRAMpage MD release.
+The following versions are supported for security maintenance:
 
-Older website versions, historical software, and archived third-party source snapshots are provided for reference. Reports affecting these materials are welcome, but fixes for historical versions cannot be guaranteed.
+| Component | Supported version |
+| --- | --- |
+| [McRetro.net](https://mcretro.net/) | Current live website deployed from `main` |
+| [VRAMpage MD](https://mcretro.net/homepages/vrampage-md/) | **v0.5.0**, the version currently hosted on McRetro.net |
+
+VRAMpage MD's development source and complete source-inclusive releases are maintained separately in [NixMcRetro/VRAMpage-MD](https://github.com/NixMcRetro/VRAMpage-MD). Reports affecting the hosted v0.5.0 application can be submitted here. Identify emulator-source or development-tooling issues as such so they can be handled in the authoritative repository.
+
+Older website versions, historical software, and archived third-party source snapshots are provided for reference. Reports affecting them are welcome, but fixes for historical versions cannot be guaranteed.
 
 ## Reporting a Vulnerability
 

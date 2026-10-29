@@ -10,7 +10,13 @@ last_modified_at: 2026-10-18
 
 This is the second one of these leaf-tailed geckos that has come into my home over the years. Possibly the same one!
 
-Southern leaf-tailed geckos are nocturnal, so wandering around and hunting at night is perfectly normal behaviour for the species.
+I don't know how these little visitors keep getting inside, but here's another gecko wandering around the place. Quite a magnificent little creature, with that wonderfully flattened body and extraordinary climbing ability.
+
+I thought I'd try to get the little visitor into a box so I could move them somewhere more suitable. Of course, convincing a gecko to go into a box is easier said than done. They were much more interested in climbing around than cooperating with me! Eventually we managed it. Such a clever little lizard.
+
+Southern leaf-tailed geckos are nocturnal, so wandering around and hunting at night is perfectly normal behaviour for the species. They're also remarkably good climbers, which certainly helps explain how this one managed to get about the house.
+
+I wonder whether this is the same gecko that visited before. There's no way for me to know, but I'd like to think I've got a little regular visitor.
 
 Smart gecko! :)
 

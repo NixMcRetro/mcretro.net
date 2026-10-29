@@ -8,13 +8,33 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="EM1SXr8sIIo" %}
 
-Received my XRGB-mini Framemeister today and had no cable to connect it... So I had to hack up some other random cable I had and... it worked, switched a bunch of pins around and it gave me lovely RGB video. I could not believe how clear the video was. I'll do some more video later in the week. Below are some photos of the connector before changing around all the leads.
+Received my XRGB-mini Framemeister today and had no cable to connect it... So I had to hack up some other random cable I had and... it worked, switched a bunch of pins around and it gave me lovely RGB video. I could not believe how clear the video was. I'll do some more video later in the week.
+
+The problem was that I'd received the Framemeister without a suitable Japanese RGB cable. The connector looked just like SCART, so I had a look around online and found a wiring guide for converting the adapter I had.
+
+One important Framemeister trap is that its supplied RGB adapter uses the Japanese RGB21 pinout, not EuroSCART. The connectors look similar but are wired differently, so EuroSCART should not be connected directly to the supplied RGB21 adapter. A correctly wired EuroSCART-to-Framemeister adapter is required.
+
+I'd already tried the Framemeister with composite video, and even that looked surprisingly good. The colours needed some adjustment, but it was enough to make me want to get proper RGB working as soon as possible.
+
+So out came the soldering iron. I rearranged the connections in the temporary adapter, making sure the RGB signals and grounds went to the appropriate pins. Nothing particularly glamorous about the wiring, but once it was connected to the Mega Drive, I had a picture. And what a picture!
+
+The Framemeister was taking the Mega Drive's 15 kHz RGB output and sending it to the television through HDMI. Even on my ordinary Toshiba television, the clarity was incredible. The camera really didn't do it justice.
+
+Of course, I immediately started playing with the menus. I managed to switch the output to 720p, find the English menu settings, and generally press every button on the remote to see what would happen.
+
+Then I discovered the scanline settings. And the sync-level settings. And a whole collection of ways to make the picture disappear again. Wonderful! Below are some photos of the connector before changing around all the leads.
 
 {% include youtube.html id="uUJa1zYH54g" %}
 
-I've since purchased a cable that runs from the XRGB-mini through to EuroSCART. From there I'll be able to use EuroSCART cables running from everything for RGB. I still need to find a suitable switcher to go between the sources. Mega Drive, Saturn and Dreamcast. Although reports have it that the Dreamcast is better at VGA (480p) vs SCART (480i). I guess whether I care much for VGA will be decided in the future when I get the SCART cables for everything.
+I've since purchased a cable that runs from the XRGB-mini through to EuroSCART. From there I'll be able to use EuroSCART cables running from everything for RGB. I still need to find a suitable switcher to go between the sources.
 
-One important Framemeister trap is that its supplied RGB adapter uses the Japanese RGB21 pinout, not EuroSCART. The connectors look similar but are wired differently, so EuroSCART should not be connected directly to the supplied RGB21 adapter. A correctly wired EuroSCART-to-Framemeister adapter is required.
+Mega Drive, Saturn and Dreamcast. Although reports have it that the Dreamcast is better at VGA (480p) vs SCART (480i). I guess whether I care much for VGA will be decided in the future when I get the SCART cables for everything.
+
+In this second recording, I was experimenting with the Framemeister on a Samsung television instead. It turns out the sync-level settings that worked on one television didn't necessarily work on the other. I had much better luck with the Samsung, running at 720p and 60 Hz. I could push the sync setting considerably higher before the picture started dropping out.
+
+I also tried the scanline controls again, adjusting the odd and even line settings to produce some rather thick, chunky scanlines. Add the retro picture effect, which darkens and curves the edges, and it starts looking remarkably CRT-like.
+
+I couldn't notice any serious lag myself while playing, although that's just my experience with this particular setup.
 
 For the Dreamcast comparison, what I was really weighing up was the usual 15 kHz RGB setup against the console's 31 kHz VGA mode at 480p. The important distinction is the signal mode rather than the physical SCART connector itself.
 

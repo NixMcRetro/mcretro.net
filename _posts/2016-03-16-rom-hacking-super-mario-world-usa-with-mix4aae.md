@@ -16,7 +16,7 @@ Open the Super Mario World (US) ROM in the utility. It reports a 0.5 MB, 4 Mbit 
 
 ![IPS patch and checksum repair](/assets/images/2016/img_0469.jpg)
 
-For the sake of being complete, we'll also fix up the checksum. No one likes a dirty checksum. I used [IpsAndSum](https://web.archive.org/web/20160225182328/http://www.romhacking.net/utilities/499). Open the newly patched file, select "Repair Snes CheckSum", accept the repair prompt and save the resulting ROM.
+For the sake of being complete, we'll also fix up the checksum. No one likes a dirty checksum. I used [IpsAndSum](https://web.archive.org/web/20160225182328/http://www.romhacking.net/utilities/499). Open the newly patched file, select "Repair Snes CheckSum", accept the repair prompt, and save the resulting ROM.
 
 ![MIX4AAE](/assets/images/2016/img_0467.jpg)
 
@@ -32,21 +32,27 @@ That 32 Mbit value is what Snes9x reported from the ROM metadata. The patched fi
 
 The original mask-ROM capacity is not the main concern once we're replacing that ROM with a larger flash device, but the donor PCB still matters. The board needs the appropriate LoROM mapping and save-memory hardware for the patched game, including suitable SRAM and battery support where required.
 
-The old [SNES PCB List-full.xls](/files) was useful for comparing donor boards. The current files page is a placeholder, so the spreadsheet still needs recovering.
+The old [SNES PCB List-full.xls](/files) was useful for comparing donor boards. The current files page is a placeholder, so the spreadsheet still needs recovering. You could technically use a Super Mario World cart. For other candidates, check that the PCB layout, mapping, and save hardware suit the patched game.
 
-You could technically use a Super Mario World cart. For other candidates, check that the PCB layout, mapping and save hardware suit the patched game.
-
-Once you find a suitable donor cart, also make sure the region matches or use appropriate region-modification hardware.
-
-From there it is a matter of getting the ROM data onto the TSOP flash chip and installing it in the cartridge. It is more complicated than it sounds; these videos might help.
+Once you find a suitable donor cart, also make sure the region matches or use appropriate region-modification hardware. From there it is a matter of getting the ROM data onto the TSOP flash chip and installing it in the cartridge. It is more complicated than it sounds; these videos might help.
 
 {% include youtube.html id="dV6J6cpVUfg" %}
 
 This first video shows part of the ROM flashing process using EarthBound as an example. EarthBound is a 24 Mbit game that fits inside a 32 Mbit TSOP40 flash chip.
 
+For that project I had a couple of donor cartridges, including NHL 96 and World Cup Striker, with the original ROM chips already removed. I was fitting sockets to the boards so I could work with the replacement hardware more easily. Some sockets had to be shortened to fit, which is always an entertaining way to start a project.
+
+The important thing is making sure the donor board and its wiring are suitable, rather than assuming that a flash chip will magically turn every cartridge into every other cartridge.
+
 {% include youtube.html id="w0vsgrKIE4E" %}
 
 The second video is a guide to soldering the TSOP device itself. At the time, I was planning a follow-up on programming.
+
+I used a TSOP adapter board, a good helping of flux, some fine solder, and desoldering braid. The technique is called drag soldering, where you work the solder across the fine-pitch pins and remove any bridges afterwards.
+
+Getting the chip aligned is the fiddly part. I used Blu-Tack to hold everything in place, although the particular Blu-Tack I had was more interested in sticking to absolutely everything than holding the chip neatly. Once the pins were soldered, I checked for bridges and cleaned up the excess.
+
+The adapter's jumper pads also needed bridging before it could be used. That video covers preparing the flash hardware, not a completed MIX4AAE cartridge test, but the same approach is useful when putting together a compatible SNES flash cart.
 
 **Update January 2020:** A later write-up from [The Poor Student Hobbyist](https://thepoorstudenthobbyist.com/2017/09/14/how-to-make-a-snes-reproduction-cartridge/#step7d) also goes through SNES reproduction-cartridge construction in much more detail, with several board and chip options.
 
@@ -56,6 +62,6 @@ And of course, remember to have fun! Good luck! :)
 
 - [NintendoAge - Converting a LoROM PCB cart to a HiROM PCB cart](https://web.archive.org/web/20191027015856/http://www.nintendoage.com/forum/messageview.cfm?catid=22&threadid=85308)
 
-### Related posts
+### Related Posts
 
 - [Drag Soldering a 29F032 TSOP Chip](/drag-soldering-a-29f032-tsop-chip/)

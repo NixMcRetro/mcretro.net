@@ -10,6 +10,8 @@ last_modified_at: 2026-10-18
 
 This modem was purchased through eBay in February 2023 and recapped in late May 2023 using whatever capacitors I had on hand. Thankfully, I had a bunch of Rubycons and Panasonics. If you order enough of them you always end up with spares.
 
+The CD900 is a beautiful little modem. It's similar in appearance to Avtek's faster 14.4K and 28.8K machines, although at 2400 bps it doesn't need quite as many fancy lights on the front. Look at those LEDs. They're arranged to make the letter A, for Avtek! I love little design touches like that.
+
 ![](/assets/images/2023/img_1045.jpg)
 
 Here's the brain of the modem: a Rockwell RC224ATF R6641-14 with a date code of week 30, 1992. I put more photos in the [photo gallery](/photos), which is currently unavailable.
@@ -39,6 +41,22 @@ The power supply was one of the three pictured here. Which one? I could not be s
 ![](/assets/images/2023/img_1050.jpg)
 
 I love the way they designed the front of the modem to make the LEDs shine through like the letter A (for Avtek). Last up, we have the results of probing the modem for information. Surprisingly short, as nothing beyond ATI3 registered anything apart from ERROR. Short and sweet! 😄
+
+With the modem back together, I hooked it into my dial-up arrangement through a Raspberry Pi running Asterisk and mgetty. The answering modem was a Banksia, connected over VoIP. Both were using Rockwell chipsets, which might have helped them get along.
+
+I had already left the connection running for about 199.5 minutes when I checked the session. The Linux counters showed data going in and out, and the error figure I calculated at that point was around 3.1%. That's much better than some of the other dial-up sessions I'd been seeing.
+
+Then it was time for a quick disconnect and redial. I created a CD900 profile for `wvdial`, using the initialisation strings reported by `wvdialconf`. After the familiar handshake, the carrier came back and the pings resumed. Beautiful!
+
+I also wanted to interrogate the modem itself. My first plan involved `socat`, which naturally wasn't installed. Then I tried Minicom, which I hadn't used in ages and was determined not to relearn in the middle of the recording.
+
+Naturally, I ended up relearning Minicom in the middle of the recording.
+
+Once I had the serial port and speed configured, I could issue the ATI commands and see what the modem had to say about itself. Not an enormous amount, as it turns out, but ATI3 at least gave me something more interesting than another error message.
+
+After that, I tried the modem through Windows 98 in VirtualBox. It connected at 2400 bps and attempted to browse the file server, although the pages were going to take rather longer to arrive than I had patience for. The connection was working; it was simply doing so at a pace more appropriate to the early 1990s than a modern web page.
+
+Last up, we have the results of probing the modem for information. Surprisingly short, as nothing beyond ATI3 registered anything apart from ERROR. Short and sweet! 😄
 
 ```
 ---------- 2023-05-28 15:36:54 +1000: Logging Started ----------

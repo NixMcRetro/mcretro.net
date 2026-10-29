@@ -6,45 +6,59 @@
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#dedbd2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#171c20" media="(prefers-color-scheme: dark)">
-  <title>VRAMpage MD v0.5.0 experimental | Mega Drive circuit bending</title>
+  <title>VRAMpage MD v0.5.1 experimental | Mega Drive circuit bending</title>
   <link rel="stylesheet" href="style.css">
   <script src="core/genplus.js" defer onerror="window.__coreMissing = true"></script>
   <script src="framebuffer.js" defer></script>
+  <script src="rgb-encoder.js" defer></script>
   <script src="circuit-config.js" defer></script>
   <script src="experiment-comparison.js" defer></script>
+  <script src="cartridges.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
   <main class="shell">
     <header class="masthead">
       <div>
-        <div class="brand"><h1>VRAMpage <span>MD</span></h1><span class="version">v0.5.0 experimental</span></div>
-        <p class="subtitle">Mega Drive memory experiments. NTSC / Model 1.</p>
+        <div class="brand"><h1>VRAMpage <span>MD</span></h1><span class="version">v0.5.1 experimental</span></div>
+        <p class="subtitle">Mega Drive memory experiments. Model 1 logical fault models.</p>
       </div>
       <div class="machine-status"><span class="led" id="powerLed"></span><span id="powerLabel">CORE NOT READY</span></div>
     </header>
 
     <div class="main-grid">
       <section class="screen-section" aria-label="Mega Drive emulator">
-        <div class="section-heading"><h2>01 <span>/</span> Game</h2><span>MODEL 1 &nbsp;·&nbsp; NTSC-U &nbsp;·&nbsp; 59.92 Hz</span></div>
+        <div class="section-heading"><h2>01 <span>/</span> Game</h2><span id="machineSummary">MODEL 1 · NTSC-U · 59.92 Hz</span></div>
         <div class="screen-well">
           <div class="screen-frame" id="displayViewport">
             <canvas id="screen" width="320" height="224" aria-label="Mega Drive video output"></canvas>
             <div id="screenPlaceholder" class="screen-placeholder">
               <strong id="placeholderTitle">NO CARTRIDGE</strong>
-              <p id="placeholderMessage">Load a local game ROM to begin. The emulator runs entirely in your browser.</p>
+              <p id="placeholderMessage">Choose a built-in cartridge or load your own ROM. The emulator runs entirely in your browser.</p>
             </div>
           </div>
         </div>
         <div class="screen-info"><span id="romName">NO CARTRIDGE INSERTED</span><span id="fpsIndicator">— FPS</span></div>
         <div class="video-options"><label><input id="rawVideoToggle" type="checkbox"> Raw Emulator Output</label><span id="videoStatus" role="status" aria-live="polite">Video: native pixels</span></div>
         <div class="toolbar">
-          <label class="load-btn" for="romFile">Load ROM</label>
+          <select id="cartridgeSelect" aria-label="Choose Cartridge" class="cartridge-select">
+            <option value="">Choose Cartridge</option>
+            <option value="local">Load Your Own ROM…</option>
+          </select>
           <input id="romFile" type="file" accept=".bin,.md,.gen,application/octet-stream" aria-label="Load Mega Drive ROM">
           <button id="resetBtn" type="button" disabled title="Disconnect faults and reboot from the same cartridge">Clean Restart</button>
           <button id="pauseBtn" type="button" disabled>Pause</button>
           <button id="soundBtn" type="button" disabled aria-pressed="false">Enable Sound</button>
           <button id="fullscreenBtn" type="button" aria-pressed="false">Fullscreen</button>
+        </div>
+        <div class="machine-options">
+          <label for="regionSelect">Region</label>
+          <select id="regionSelect" aria-describedby="regionStatus" disabled>
+            <option value="1">NTSC-U</option><option value="3">NTSC-J</option>
+            <option value="2">PAL (Europe)</option><option value="0">Auto (ROM Header)</option>
+            <option value="4">Japan PAL (Core Mode)</option>
+          </select>
+          <span id="regionStatus" role="status" aria-live="polite">Checking Region Support…</span>
         </div>
         <div class="instructions">
           <p><strong>PLAY</strong> Arrows / Z X C / Enter <span class="help-divider">|</span> <strong>FAULTS</strong> 1–9 toggle / Shift+1–9 hold / 0 next chip / P pause</p>
@@ -72,7 +86,11 @@
             <p id="vramModelStatus" class="chip-state" role="status" aria-live="polite">Frame projection is the default model.</p>
           </section>
           <section class="chip-card" data-keyboard-chip="WRAM" aria-label="SRAM (Work RAM) chip">
-            <h2>SRAM (Work RAM) <small>Logical Address Lines</small></h2>
+            <h2>SRAM (Work RAM)</h2>
+            <div class="ram-chip-options">
+              <select id="ramChipSignals" aria-label="Work RAM Signals" title="Work RAM Signals"><option value="1">Address</option><option value="2">Data</option><option value="3">Writes</option></select>
+              <select id="logicAccess" aria-label="Work RAM Access" title="Apply to Reads, Writes or Both"><option value="1">Read</option><option value="2">Write</option><option value="3">Read + Write</option></select>
+            </div>
             <label class="chip-compact-control">Leg Action
               <select id="ramLegAction"><option value="cut">Cut / Reconnect</option><option value="bridge">Bridge Pair</option></select>
             </label>
@@ -100,7 +118,7 @@
           </section>
         </div>
         <div class="logic-actions chip-workbench-actions">
-          <button id="disconnectAllFaultsBtn" type="button" disabled title="Attempts to clear VRAM, Work RAM, PSG and FM faults. Confirmed success preserves the current run state; any uncertainty pauses before the next frame.">Disconnect All Faults</button>
+          <button id="disconnectAllFaultsBtn" type="button" disabled title="Attempts to clear VRAM, Work RAM, Z80 RAM, PSG, FM and RGB encoder faults. Confirmed success preserves the current run state; any uncertainty pauses before the next frame.">Disconnect All Faults</button>
         </div>
         <div class="randomiser-row" role="group" aria-label="Randomiser chip controls">
           <strong>Randomiser</strong>
@@ -121,11 +139,30 @@
         </div>
         <p id="randomiserStatus" class="randomiser-status" role="status" aria-live="polite">Load a ROM to randomise a chip.</p>
         <p id="cpuRecoveryStatus" class="randomiser-status" role="status" aria-live="polite">Automatic Recovery Ready After ROM Load</p>
+        <div class="ram-frame-pairs z80-ram-controls" role="group" aria-label="Z80 Sound RAM Write Bridge" aria-describedby="z80RamBridgeStatus" title="Changes future sound-RAM writes. Removing a bridge leaves earlier stored corruption.">
+          <strong>Z80 RAM Write</strong>
+          <label>Address A <select id="z80RamBridgeA" disabled></select></label>
+          <label>Address B <select id="z80RamBridgeB" disabled></select></label>
+          <button id="z80RamBridgeApply" type="button" disabled>Apply Bridge</button>
+          <button id="z80RamBridgeRemove" type="button" disabled>Remove Bridge</button>
+        </div>
+        <p class="randomiser-status"><span id="z80RamBridgeStatus" role="status" aria-live="polite">Z80 RAM Write Off</span> <span id="z80RamBridgeCounts"></span></p>
+        <div id="rgbEncoderControls" class="ram-frame-pairs rgb-encoder-controls" role="group" aria-label="RGB Encoder Input Contacts" aria-describedby="rgbEncoderStatus" title="RGB input approximation: cuts terminate to black; a joined pair has equal source impedance. Composite video, sync and audio are not simulated.">
+          <strong>RGB Encoder</strong><span>Input Approximation</span>
+          <button type="button" data-rgb-cut="0" aria-pressed="false" disabled>Cut R</button>
+          <button type="button" data-rgb-cut="1" aria-pressed="false" disabled>Cut G</button>
+          <button type="button" data-rgb-cut="2" aria-pressed="false" disabled>Cut B</button>
+          <button type="button" data-rgb-pair="0,1" aria-pressed="false" disabled>Join R ↔ G</button>
+          <button type="button" data-rgb-pair="0,2" aria-pressed="false" disabled>Join R ↔ B</button>
+          <button type="button" data-rgb-pair="1,2" aria-pressed="false" disabled>Join G ↔ B</button>
+          <button id="rgbEncoderClear" type="button" disabled>Reconnect RGB</button>
+        </div>
+        <p id="rgbEncoderStatus" class="randomiser-status" role="status" aria-live="polite">Load a ROM for RGB Encoder Contacts.</p>
         <p id="disconnectAllFaultsStatus" class="logic-status" role="status" aria-live="polite">Load a ROM to disconnect all fault domains.</p>
         <details class="chip-settings" id="vramSettings">
           <summary>VRAM Presets, Counters and Model Notes</summary>
           <p id="vramModeHint" class="explain"></p>
-          <div class="presets-head"><h3>Presets</h3><button id="disconnectBtn" type="button">Reconnect All [0]</button></div>
+          <div class="presets-head"><h3>Presets</h3><button id="disconnectBtn" type="button">Reconnect All</button></div>
           <div id="presetGrid" class="preset-grid"></div>
           <div class="metrics">
             <div><span>Projected Differences</span><strong id="readCount">0</strong></div>
@@ -150,9 +187,6 @@
         <label>Line Type
           <select id="logicKind"><option value="1">Address</option><option value="2">Data</option></select>
         </label>
-        <label>Access
-          <select id="logicAccess"><option value="1">Read</option><option value="2">Write</option><option value="3">Read + Write</option></select>
-        </label>
         <label>Line A
           <select id="logicLineA"></select>
         </label>
@@ -160,7 +194,7 @@
           <select id="logicLineB"></select>
         </label>
       </div>
-      <p class="logic-note" id="chipExplanation"><strong>Address-line switches.</strong> Click a wire to toggle its × and force that signal low, using Access above. This applies immediately and stays active until reconnected or replaced by another fault. The chip is a conceptual address-bus diagram, not a physical pinout. “Disabled” uses a stuck-low model; a real open wire can float.</p>
+      <p class="logic-note" id="chipExplanation"><strong>Work RAM switches.</strong> Address/Data wires force selected signals low using Access; data bridges stay within D0–D7 or D8–D15. Writes inhibits the lower (/LWR) or upper (/UWR) byte's future stores, retaining its old contents. Inhibit models an inactive/high write-enable input, not a floating cut. These RAM faults replace one another. The two-byte Model 1 reference and drawing show logical signals; real open wires can float.</p>
       <div class="logic-actions">
         <button id="logicApplyBtn" type="button" disabled>Apply RAM Fault</button>
         <button id="logicDisconnectBtn" type="button" disabled>Disconnect RAM</button>
@@ -169,7 +203,7 @@
       <div class="logic-actions">
         <button id="manualForceResumeBtn" type="button" disabled>Disconnect and Force Resume</button>
       </div>
-        <p class="logic-note">CPU recovery disconnects RAM and VRAM faults, leaves PSG/FM faults unchanged, preserves corrupted RAM and may immediately stop again. CPU-only reset leaves other chips running. The Randomiser-row Force Resume and CPU Recovery switches start On. Two eligible HALT frames trigger one Force Resume; eight further HALT frames permit one CPU-only reset. Turning Force Resume Off skips directly to one CPU reset after two HALT frames. STOP alone does not trigger recovery. A new fault action, toggle change or explicit Resume permits another sequence. This does not detect software loops or a browser locked inside a frame. Disconnect All Faults pauses only when clearing a domain is unavailable, partial or unverified; Clean Restart fully reboots.</p>
+        <p class="logic-note">CPU recovery disconnects Work RAM, VRAM and Z80 RAM faults, leaves PSG/FM faults unchanged, preserves corrupted RAM and may immediately stop again. CPU-only reset leaves other chips running. The Randomiser-row Force Resume and CPU Recovery switches start On. Two eligible HALT frames trigger one Force Resume; eight further HALT frames permit one CPU-only reset. Turning Force Resume Off skips directly to one CPU reset after two HALT frames. STOP alone does not trigger recovery. A new fault action, toggle change or explicit Resume permits another sequence. This does not detect software loops or a browser locked inside a frame. Disconnect All Faults pauses only when clearing a domain is unavailable, partial or unverified; Clean Restart fully reboots.</p>
       <div class="logic-actions">
         <button id="saveCheckpointBtn" type="button" disabled>Save Checkpoint</button>
         <button id="restoreCheckpointBtn" type="button" disabled>Restore Checkpoint</button>
@@ -198,7 +232,7 @@
         <div><span>Activation Frame</span><strong id="logicActivationFrame">—</strong></div>
         <div class="cpu-state"><span>CPU Status Flags</span><strong id="logicCpuStatus">—</strong></div>
       </div>
-      <p class="logic-note"><strong>Model limits.</strong> This is an experimental transaction model, not an exact physical pin or cycle-level simulation. Read faults affect returned values; write faults alter stored RAM and those changes persist after disconnecting. CPU STOP/HALT indicators report flags only; automatic HALT recovery follows the switches above. Turn both Off for unassisted experiments. Data pairs must stay within D0–D7 or D8–D15. Only one fault domain (VRAM or logic/Work RAM) is active at a time.</p>
+      <p class="logic-note"><strong>Model limits.</strong> This is an experimental transaction model, not an exact physical pin or cycle-level simulation. Read faults affect returned values; write faults alter stored RAM and those changes persist after disconnecting. CPU STOP/HALT indicators report flags only; automatic HALT recovery follows the switches above. Turn both Off for unassisted experiments. Data pairs must stay within D0–D7 or D8–D15. VRAM and logic/Work RAM faults remain mutually exclusive; the Z80 RAM write bridge is independent.</p>
     </details>
 
     <section class="bottom-grid">
@@ -269,13 +303,13 @@
       </details>
       <details class="notes-block">
         <summary class="section-heading"><h2>04 <span>/</span> Build Notes</h2><span>Technical Details</span></summary>
-        <p>No ROM included. Your cartridge data stays in this browser.</p>
+        <p>Includes approved original homebrew cartridges. Your own cartridge files stay in this browser and are never uploaded.</p>
         <p>Sound is available with <strong>Enable Sound</strong>. The separate logic/Work RAM panel is an experimental 68000 transaction model.</p>
         <p class="small-note">The game display automatically fills consistently missing framebuffer rows. Select <strong>Raw Emulator Output</strong> to inspect untouched pixels. This does not alter emulated VRAM or hardware faults.</p>
-        <p class="small-note">Emulator: <a href="https://github.com/h1romas4/wasm-genplus" target="_blank" rel="noopener noreferrer">wasm-genplus</a> / <a href="https://github.com/ekeeke/Genesis-Plus-GX" target="_blank" rel="noopener noreferrer">Genesis Plus GX</a>. Full matching modified source is included in the <a href="https://github.com/NixMcRetro/VRAMpage-MD/releases/download/v0.5.0/VRAMpage-MD-v0.5.0-browser.zip">complete v0.5.0 download</a> (<a href="https://github.com/NixMcRetro/VRAMpage-MD/tree/e9f366fb3985f11430d353c3b2589f076ff93128">exact source commit</a>). Read the <a href="THIRD-PARTY-NOTICES.md">licence notices</a> before redistributing.</p>
+        <p class="small-note">Emulator: <a href="https://github.com/h1romas4/wasm-genplus" target="_blank" rel="noreferrer">wasm-genplus</a> / <a href="https://github.com/ekeeke/Genesis-Plus-GX" target="_blank" rel="noreferrer">Genesis Plus GX</a>. Redistributing a modified core requires its corresponding source and applicable licence notices.</p>
       </details>
     </section>
-    <footer><span>VRAMpage MD &nbsp;·&nbsp; v0.5.0 experimental</span><span>NTSC HARDWARE MODE &nbsp; / &nbsp; AUTOMATIC MISSING-LINE RECOVERY</span></footer>
+    <footer><a href="source-and-licences.html">Source Code &amp; Licences</a><span>VRAMpage MD &nbsp;·&nbsp; v0.5.1 experimental (review candidate)</span><span id="machineFooter">NTSC Hardware Mode / Automatic Missing-Line Recovery</span></footer>
   </main>
 </body>
 </html>

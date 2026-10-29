@@ -1,11 +1,34 @@
 import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
-// The hosted app carries only runtime files. Complete corresponding modified
-// source accompanies the exact release ZIP, checked on pull requests.
+// v0.5.1 carries a verified same-origin source ZIP. Keep the historical v0.5.0
+// checks below for that unchanged, separately published release.
 const source = resolve('homepages/vrampage-md');
 const built = resolve(process.argv[2] || '_site', 'homepages/vrampage-md');
+const hostedInfo = JSON.parse(readFileSync(join(source, 'build-info.json'), 'utf8'));
+if (hostedInfo.application_version === '0.5.1') {
+  for (const directory of [source, built]) {
+    execFileSync('python3', ['.github/tests/vrampage-package.py', directory], { stdio: 'inherit' });
+  }
+  const expected = files(source).sort();
+  assert.deepEqual(files(built).sort(), expected, 'Jekyll must publish the exact runtime/source allowlist');
+  for (const name of expected) {
+    assert.deepEqual(readFileSync(join(built, name)), readFileSync(join(source, name)),
+      'Jekyll omitted or modified runtime, ROM, source archive or licence: ' + name);
+  }
+  const wasm = readFileSync(join(built, 'core/genplus.wasm'));
+  assert.ok(WebAssembly.validate(wasm), 'Published WASM must validate');
+  const notices = WebAssembly.Module.customSections(new WebAssembly.Module(wasm), 'license.Musashi');
+  assert.equal(notices.length, 1, 'Published binary must contain one Musashi notice section');
+  const text = new TextDecoder().decode(notices[0]);
+  assert.ok(text.includes('Copyright Karl Stenerud.  All rights reserved.')
+    && text.includes('copyright notice remains unaltered'), 'Missing Musashi copyright terms inside WASM');
+  assert.ok(!readFileSync(join(built, 'index.html'), 'utf8').startsWith('---'), 'Standalone runtime must not have front matter');
+  console.log('VRAMpage v0.5.1: ' + expected.length + ' exact files, approved cartridges and complete same-origin source preserved');
+  process.exit(0);
+}
 const version = '0.5.0';
 const commit = 'e9f366fb3985f11430d353c3b2589f076ff93128';
 const releaseURL = 'https://github.com/NixMcRetro/VRAMpage-MD/releases/download/v0.5.0/VRAMpage-MD-v0.5.0-browser.zip';

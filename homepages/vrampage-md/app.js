@@ -1,14 +1,16 @@
 'use strict';
 // Standalone (no bundler) frontend for wasm-genplus with a custom C fault API.
-// No third-party JS, fonts, CDN, telemetry, or ROM downloads.
+// No third-party JS, fonts, CDN or telemetry. Built-in cartridges are same-origin.
 (() => {
   const $ = id => document.getElementById(id);
-  // WASM stores a 320x224 Sonic picture inside a 640x480 framebuffer.
+  // The native viewport is stored inside a 640x480 framebuffer.
   // Use native pixels with no scanline or smoothing effects.
   const SCREEN_WIDTH = 640, SCREEN_HEIGHT = 480;
   const GAME_WIDTH = 320, GAME_HEIGHT = 224;
   const NTSC_FPS = 59.92274;
-  const FRAME_MS = 1000 / NTSC_FPS;
+  let frameMs = 1000 / NTSC_FPS, targetFps=NTSC_FPS;
+  let videoWidth=GAME_WIDTH, videoHeight=GAME_HEIGHT;
+  let requestedRegion=1, activeRegionRequest=1;
   const AUDIO_RATE = 44100;
   const PRESETS = [[0,1], [0,2], [1,3], [2,4], [3,5], [4,6], [5,7], [6,7]];
   const QUICK_RAM_PAIRS = Array.from({length:5},(_,i)=>Array.from({length:4-i},(_,j)=>[i+10,i+11+j])).flat();
@@ -18,9 +20,12 @@
   const displayViewport = $('displayViewport');
   const ctx = canvas.getContext('2d', {alpha: false});
   ctx.imageSmoothingEnabled = false;
-  const imageData = ctx.createImageData(GAME_WIDTH, GAME_HEIGHT);
+  let imageData = ctx.createImageData(GAME_WIDTH, GAME_HEIGHT);
   const frameAdapter = window.VRAMpageFrame;
   if (!frameAdapter) throw new Error("Missing framebuffer.js: display adapter could not load");
+  const rgbEncoderApi=window.VRAMpageRgbEncoder;
+  if (!rgbEncoderApi) throw new Error('Missing rgb-encoder.js: RGB output model could not load');
+  let rgbEncoderPlan=rgbEncoderApi.create({cutMask:0,pair:null});
   let previousVideoStatus = "";
   const pressed = new Set();
   const checkpointBlockedKeys = new Set();
@@ -61,11 +66,130 @@
   let logicAddressMask = 0, addressLineChanges = [];
   let logicResetState = 'No cartridge loaded';
   let romLoadGeneration = 0;
+  let coreReadyPromise, cartridgeManifestPromise;
   let romIdentity = null;
   const CORE_PIN = '6090aff9e9b2f578cd28882bd4571d2e35b1d674';
-  const APPLICATION_VERSION = '0.5.0';
+  const APPLICATION_VERSION = '0.5.1';
   let buildInfo = {status:'unavailable',applicationVersion:APPLICATION_VERSION,sourceCommit:null};
   loadBuildInfo().then(info=>{buildInfo=info;});
+
+  const REGION_NAMES=['Auto (ROM Header)','NTSC-U','PAL (Europe)','NTSC-J','Japan PAL (Core Mode)'];
+  const EFFECTIVE_REGION_NAMES={0:'NTSC-J',64:'Japan PAL',128:'NTSC-U',192:'PAL (Europe)'};
+  function regionApiReady() {
+    return typeof emulator?._set_region_request==='function' && typeof emulator?._get_region_state==='function';
+  }
+  function readRegionState() {
+    if (!regionApiReady()) return null;
+    try {
+      const s=emulator._get_region_state();
+      if (!s || s.schemaVersion!==1 || s.available!==true || typeof s.loaded!=='boolean' ||
+          !Number.isInteger(s.requestedRegion) || s.requestedRegion<0 || s.requestedRegion>4) return null;
+      if (s.loaded && (![0,64,128,192].includes(s.regionCode) || typeof s.pal!=='boolean' ||
+          !Number.isFinite(s.masterClock)||s.masterClock<1000000||s.masterClock>100000000 ||
+          !Number.isFinite(s.frameRate)||s.frameRate<40||s.frameRate>70 ||
+          s.linesPerFrame!==(s.pal?313:262) || !Number.isInteger(s.width)||s.width<1||s.width>640 ||
+          !Number.isInteger(s.height)||s.height<1||s.height>480 || typeof s.interlaced!=='boolean')) return null;
+      return {schemaVersion:1,available:true,loaded:s.loaded,requestedRegion:s.requestedRegion,
+        regionCode:s.loaded?s.regionCode:null,pal:s.loaded?s.pal:null,
+        masterClock:s.loaded?s.masterClock:null,frameRate:s.loaded?s.frameRate:null,
+        linesPerFrame:s.loaded?s.linesPerFrame:null,width:s.loaded?s.width:null,
+        height:s.loaded?s.height:null,interlaced:s.loaded?s.interlaced:null};
+    } catch (_) {return null;}
+  }
+  function machineObservation() {
+    const s=readRegionState();
+    return {schemaVersion:1,available:!!(started&&s?.loaded),requestedRegion,
+      activeRequestedRegion:started?activeRegionRequest:null,
+      reason:!regionApiReady()?'api-unavailable':!s||started&&!s.loaded?'state-unavailable':!started?'no-cartridge':'none',
+      regionCode:started?s?.regionCode??null:null,pal:started?s?.pal??null:null,
+      masterClock:started?s?.masterClock??null:null,frameRate:started?s?.frameRate??null:null,
+      linesPerFrame:started?s?.linesPerFrame??null:null,width:started?s?.width??null:null,
+      height:started?s?.height??null:null,interlaced:started?s?.interlaced??null:null};
+  }
+  function setRegionText(id,text) { if($(id).textContent!==text)$(id).textContent=text; }
+  function refreshRegionState(requireLoaded=false) {
+    const supported=regionApiReady(),s=readRegionState();
+    if (requireLoaded && supported && !s?.loaded) throw new Error('Core region state is unavailable after cartridge activation.');
+    if(s)requestedRegion=s.requestedRegion;
+    $('regionSelect').disabled=!supported||!s;
+    $('regionSelect').value=String(requestedRegion);
+    if (s?.loaded) {
+      targetFps=s.frameRate;frameMs=1000/targetFps;
+      if (videoWidth!==s.width || videoHeight!==s.height) {
+        videoWidth=s.width;videoHeight=s.height;
+        canvas.width=videoWidth;canvas.height=videoHeight;ctx.imageSmoothingEnabled=false;
+        imageData=ctx.createImageData(videoWidth,videoHeight);
+        displayViewport.style.setProperty('--picture-ratio',String(videoWidth/videoHeight));
+        scheduleDisplayRefresh();
+      }
+      setRegionText('machineSummary',`MODEL 1 · ${EFFECTIVE_REGION_NAMES[s.regionCode]} · ${targetFps.toFixed(2)} Hz`);
+      setRegionText('machineFooter',`${s.pal?'PAL':'NTSC'} Hardware Mode / Automatic Missing-Line Recovery`);
+    }
+    setRegionText('regionStatus',!supported?'Region Selection Unavailable · Fixed NTSC-U Core':!s?'Region State Unavailable':
+      !started?`${REGION_NAMES[requestedRegion]} · Applied on ROM Load`:
+      requestedRegion!==activeRegionRequest?`${REGION_NAMES[requestedRegion]} Pending · Use Clean Restart`:
+      `${EFFECTIVE_REGION_NAMES[s.regionCode]} Active · ${videoWidth} × ${videoHeight}`);
+  }
+  function blockHeldInputs() {
+    for (const code of pressed) checkpointBlockedKeys.add(code);
+    if (keyboardHeld?.code) checkpointBlockedKeys.add(keyboardHeld.code);
+    pressed.clear();checkpointBlockGamepad=true;
+  }
+  function stageRegion() {
+    const value=$('regionSelect').value;
+    try {
+      if (!regionApiReady() || !/^[0-4]$/.test(value)) throw new Error('Region selection is unavailable or invalid.');
+      const choice=Number(value),status=emulator._set_region_request(choice);
+      if(status!==0)throw new Error(`Region request refused (status ${status}).`);
+      requestedRegion=choice;
+      refreshRegionState();
+    } catch(error) {
+      $('regionSelect').value=String(requestedRegion);
+      $('regionStatus').textContent=error.message;
+    }
+  }
+
+  function rgbEncoderSummary(config=rgbEncoderPlan.configuration) {
+    const cuts=['R','G','B'].filter((_,channel)=>config.cutMask&(1<<channel));
+    const joined=config.pair?config.pair.map(channel=>['R','G','B'][channel]).join(' ↔ '):'';
+    return [cuts.length?`Cut ${cuts.join(', ')}`:'',joined?`Join ${joined}`:''].filter(Boolean).join(' · ')||'Off';
+  }
+
+  function rgbEncoderState() {
+    const configured=rgbEncoderPlan.active;
+    const bypassed=$('rawVideoToggle').checked;
+    return {schemaVersion:1,available:true,modelVersion:rgbEncoderApi.modelVersion,
+      cutMask:rgbEncoderPlan.configuration.cutMask,pair:rgbEncoderPlan.configuration.pair,
+      configured,effective:started&&configured&&!bypassed,
+      reason:!started?'no-cartridge':!configured?'no-fault':bypassed?'raw-output-bypass':'active'};
+  }
+
+  function refreshRgbEncoderControls() {
+    const config=rgbEncoderPlan.configuration;
+    for (const button of document.querySelectorAll('[data-rgb-cut]')) {
+      button.disabled=!started;
+      button.setAttribute('aria-pressed',String(!!(config.cutMask&(1<<Number(button.dataset.rgbCut)))));
+    }
+    for (const button of document.querySelectorAll('[data-rgb-pair]')) {
+      button.disabled=!started;
+      button.setAttribute('aria-pressed',String(config.pair?.join(',')===button.dataset.rgbPair));
+    }
+    $('rgbEncoderClear').disabled=!started||!rgbEncoderPlan.active;
+    $('rgbEncoderStatus').textContent=!started?'Load a ROM for RGB Encoder Contacts.':
+      `RGB Encoder ${rgbEncoderSummary()}${rgbEncoderPlan.active&&$('rawVideoToggle').checked?' · Bypassed by Raw Output':''}`;
+  }
+
+  function setRgbEncoder(config,{silent=false}={}) {
+    if (!started) return false;
+    let next;
+    try { next=rgbEncoderApi.create(config); }
+    catch (_) { return false; }
+    rgbEncoderPlan=next;
+    refreshRgbEncoderControls();updateCheckpointControls();
+    ensureWasmViews();drawActiveVideo();
+    if (!silent) stamp(`RGB Encoder ${rgbEncoderSummary()} · Output approximation; game memory is unchanged.`);
+    return true;
+  }
 
   async function loadBuildInfo() {
     const unavailable = {status:'unavailable',applicationVersion:APPLICATION_VERSION,sourceCommit:null};
@@ -156,6 +280,86 @@
   function fmDataApiReady(core=emulator) {
     return typeof core?._set_fm_data_bridge==='function' &&
       typeof core?._get_fm_data_bridge_state==='function';
+  }
+
+  function z80RamApiReady(core=emulator) {
+    return typeof core?._set_z80_ram_bridge==='function' &&
+      typeof core?._get_z80_ram_bridge_state==='function';
+  }
+
+  function z80RamApiPresent() {
+    return typeof emulator?._set_z80_ram_bridge==='function' ||
+      typeof emulator?._get_z80_ram_bridge_state==='function';
+  }
+
+  function currentZ80RamState() {
+    if (!z80RamApiReady()) return null;
+    try {
+      const state=emulator._get_z80_ram_bridge_state();
+      if (!state || state.modelVersion!=='z80-ram-write-address-pair-v1' ||
+          typeof state.supported!=='boolean' || typeof state.configured!=='boolean' ||
+          !Number.isInteger(state.activationFrame) || state.activationFrame<0 || state.activationFrame>0xffffffff ||
+          state.effective!==(state.supported&&state.configured) ||
+          !Number.isInteger(state.bridgeA) || !Number.isInteger(state.bridgeB) ||
+          (state.configured ? state.bridgeA<0 || state.bridgeA>12 || state.bridgeB<0 ||
+            state.bridgeB>12 || state.bridgeA===state.bridgeB : state.bridgeA!==-1 || state.bridgeB!==-1) ||
+          !['ramWrites','changedAddresses','z80Writes','m68kWrites'].every(key=>
+            typeof state[key]==='string' && /^(0|[1-9][0-9]*)$/.test(state[key]))) return null;
+      return state;
+    } catch (_) { return null; }
+  }
+
+  function refreshZ80RamControls() {
+    const state=currentZ80RamState(), ready=started&&z80RamApiReady();
+    for (const id of ['z80RamBridgeA','z80RamBridgeB','z80RamBridgeApply'])
+      $(id).disabled=!ready || !state?.supported;
+    $('z80RamBridgeRemove').disabled=!ready || state?.configured===false;
+    $('z80RamBridgeStatus').textContent=!started?'Load a ROM for Z80 RAM Write.':
+      !z80RamApiPresent()?'Z80 RAM Write Unavailable in This Core':
+      !state?'Z80 RAM Write State Unavailable':!state.supported?'Z80 RAM Write Unsupported in This Profile':
+      !state.configured?'Z80 RAM Write Off':
+      `Z80 RAM Write A${state.bridgeA} ↔ A${state.bridgeB}`;
+    $('z80RamBridgeCounts').textContent=state?.configured
+      ? `· ${state.ramWrites} Writes · ${state.changedAddresses} Addresses Changed`:'';
+  }
+
+  function setZ80RamBridge(enabled,pairOverride,silent=false) {
+    if (!started || !z80RamApiReady()) return false;
+    const a=enabled?Number(pairOverride===undefined?$('z80RamBridgeA').value:pairOverride[0]):-1;
+    const b=enabled?Number(pairOverride===undefined?$('z80RamBridgeB').value:pairOverride[1]):-1;
+    const before=currentZ80RamState();
+    if (enabled && (!before?.supported || !Number.isInteger(a) || !Number.isInteger(b) ||
+        a<0 || a>12 || b<0 || b>12 || a===b)) {
+      $('z80RamBridgeStatus').textContent='Choose two distinct supported Z80 RAM address lines A0–A12.';
+      return false;
+    }
+    try {
+      const status=emulator._set_z80_ram_bridge(enabled?1:0,a,b);
+      const after=currentZ80RamState();
+      if (status!==0 || !after || after.configured!==enabled ||
+          (enabled && !samePair(canonical([after.bridgeA,after.bridgeB]),canonical([a,b]))))
+        throw new Error(`Z80 RAM Write ${status!==0?`request rejected (${status})`:'result could not be verified'}`);
+      if (enabled) { $('z80RamBridgeA').value=String(a);$('z80RamBridgeB').value=String(b); }
+      if (!silent) {
+        resetCpuRecoveryObservation();
+        stamp(enabled?`Z80 RAM write bridge A${a} ↔ A${b} applied.`:
+          'Z80 RAM write bridge removed; previously stored corruption remains.');
+      }
+      refreshZ80RamControls();updateCheckpointControls();
+      return true;
+    } catch (error) {
+      if (!paused) pauseToggle();
+      refreshZ80RamControls();
+      $('z80RamBridgeStatus').textContent=`${error.message}; emulation paused for inspection.`;
+      if (!silent) stamp($('z80RamBridgeStatus').textContent);
+      return false;
+    }
+  }
+
+  function clearZ80RamBridge() {
+    if (!z80RamApiPresent()) return true;
+    const state=currentZ80RamState();
+    return state?.configured===false || setZ80RamBridge(false,undefined,true);
   }
 
   function psgDataMaskApiReady(core=emulator) { return typeof core?._set_psg_data_mask==='function'; }
@@ -920,30 +1124,76 @@
       typeof emulator?._get_logic_address_mask === 'function';
   }
 
+  function dataMaskApiReady() {
+    return typeof emulator?._set_logic_data_mask==='function' &&
+      typeof emulator?._get_logic_data_mask==='function';
+  }
+
+  function currentRamDataMask() {
+    if (!dataMaskApiReady()) return null;
+    try {
+      const mask=emulator._get_logic_data_mask();
+      return Number.isInteger(mask) && mask>=0 && mask<=0xffff ? mask : null;
+    } catch (_) { return null; }
+  }
+
+  function trackedRamDataMask() {
+    return logicActive && activeRamConfiguration?.type==='data-mask' ? activeRamConfiguration.mask : 0;
+  }
+
+  function writeInhibitApiReady() {
+    return typeof emulator?._set_logic_write_inhibit==='function' &&
+      typeof emulator?._get_logic_write_inhibit==='function';
+  }
+
+  function currentRamWriteInhibit() {
+    if (!writeInhibitApiReady()) return null;
+    try {
+      const mask=emulator._get_logic_write_inhibit();
+      return Number.isInteger(mask) && mask>=0 && mask<=3 ? mask : null;
+    } catch (_) { return null; }
+  }
+
+  function trackedRamWriteInhibit() {
+    return logicActive && activeRamConfiguration?.type==='write-inhibit' ? activeRamConfiguration.mask : 0;
+  }
+
   function refreshChipControls() {
-    const ready=started && addressMaskApiReady();
+    const kind=Number($('ramChipSignals').value), data=kind===2, inhibit=kind===3;
+    const ready=started && (inhibit ? writeInhibitApiReady() : $('ramLegAction').value==='bridge' ? logicApiReady()
+      : data ? dataMaskApiReady() : addressMaskApiReady());
+    const mask=inhibit?trackedRamWriteInhibit():data?trackedRamDataMask():logicAddressMask;
+    const pair=logicActive && activeRamConfiguration?.type==='line-pair' && activeRamConfiguration.kind===kind
+      ? activeRamConfiguration : null;
     for (const button of document.querySelectorAll('[data-chip-line]')) {
-      const line=Number(button.dataset.chipLine), forced=!!(logicAddressMask & (1<<line));
-      const bridged=logicActive && activeRamConfiguration?.type==='line-pair' && activeRamConfiguration.kind===1 &&
-        [activeRamConfiguration.a,activeRamConfiguration.b].includes(line);
-      const pending=ramSelectedPin===line;
+      const line=Number(button.dataset.chipLine), forced=!!(mask & (1<<line));
+      const bridged=!!pair && [pair.a,pair.b].includes(line), pending=ramSelectedPin===line;
+      const name=logicLineName(kind,line);
       button.disabled=!ready;
       button.classList.toggle('cut',forced);
       button.classList.toggle('bridged',bridged);
       button.classList.toggle('selected',pending);
       button.querySelector('.chip-cut').textContent=forced?'×':bridged?'↔':'×';
       button.setAttribute('aria-pressed',String(forced||bridged||pending));
-      button.setAttribute('aria-label',`A${line+1}: ${forced?'forced low; reconnect':bridged?'bridged; select another leg action to change':'connected'}`);
+      button.setAttribute('aria-label',inhibit
+        ? `${line===0?'Lower':'Upper'} Byte Write Enable (${name}): ${forced?'inhibited, held inactive/high; restore writes':'writes enabled'}`
+        : `${name}: ${forced?'forced low; reconnect':bridged?'bridged; select another leg action to change':'connected'}`);
     }
-    $('chipRestoreBtn').disabled=!ready || (logicAddressMask===0 && !(logicActive && activeRamConfiguration?.type==='line-pair' && activeRamConfiguration.kind===1));
-    $('ramLegAction').disabled=!started || !logicApiReady();
-    $('ramChipState').textContent=logicAddressMask
-      ? `${Array.from({length:15},(_,i)=>i).filter(i=>logicAddressMask&(1<<i)).map(i=>`A${i+1}`).join(', ')} forced low`
-      : logicActive && activeRamConfiguration?.type==='line-pair' && activeRamConfiguration.kind===1
-        ? `A${activeRamConfiguration.a+1} ↔ A${activeRamConfiguration.b+1} bridge`
-        : logicActive && activeRamConfiguration?.type==='line-pair' && activeRamConfiguration.kind===2
-          ? `Data bridge D${activeRamConfiguration.a} ↔ D${activeRamConfiguration.b} active; see RAM settings.`
-          : 'Address lines are connected.';
+    $('chipRestoreBtn').disabled=!started || !logicApiReady() || (!mask && !pair);
+    $('chipRestoreBtn').textContent=inhibit?'Restore All Writes':data?'Reconnect All D Lines':'Reconnect All A Lines';
+    $('ramLegAction').disabled=inhibit || !started || !logicApiReady();
+    $('ramLegAction').parentElement.hidden=inhibit;
+    $('logicAccess').disabled=inhibit || !started || !logicApiReady();
+    if (inhibit) $('logicAccess').value='2';
+    $('ramChipState').textContent=mask
+      ? inhibit ? `${[mask&1?'Lower':null,mask&2?'Upper':null].filter(Boolean).join(' + ')} byte writes inhibited; old contents retained.`
+        : `${Array.from({length:data?16:15},(_,i)=>i).filter(i=>mask&(1<<i)).map(i=>logicLineName(kind,i)).join(', ')} forced low`
+      : pair ? data ? `Data bridge D${pair.a} ↔ D${pair.b} active`
+        : `${logicLineName(kind,pair.a)} ↔ ${logicLineName(kind,pair.b)} bridge`
+      : logicActive ? 'A fault is active in the other signal view.'
+      : inhibit ? started && !writeInhibitApiReady() ? 'Write inhibition requires an updated runtime core.' : 'Both byte writes are enabled.'
+      : data && !dataMaskApiReady() && started ? 'Data cuts require an updated runtime core; byte-local bridges remain available.'
+      : `${data?'Data':'Address'} lines are connected.`;
   }
 
   function chipTransitionSnapshot() {
@@ -956,62 +1206,91 @@
     logicAddressMask=mask;
   }
 
-  function applyAddressMask(mask, accessOverride=undefined) {
+  function applyRamMask(mask, accessOverride=undefined, type='address-mask') {
     resetCpuRecoveryObservation();
-    if (!started || !addressMaskApiReady()) return false;
-    const access=Number(accessOverride===undefined ? $('logicAccess').value : accessOverride);
-    if (!Number.isInteger(mask) || mask<0 || mask>0x7fff ||
+    const data=type==='data-mask', inhibit=type==='write-inhibit', label=inhibit?'write inhibit':data?'data':'address';
+    if (!started || !(inhibit?writeInhibitApiReady():data?dataMaskApiReady():addressMaskApiReady())) return false;
+    const access=inhibit?2:Number(accessOverride===undefined ? $('logicAccess').value : accessOverride);
+    if (!['address-mask','data-mask','write-inhibit'].includes(type) ||
+        !Number.isInteger(mask) || mask<0 || mask>(inhibit?3:data?0xffff:0x7fff) ||
         !Number.isInteger(access) || access<1 || access>3) {
-      setLogicStatus('Invalid RAM address mask; no fault was applied.');
+      setLogicStatus(`Invalid RAM ${label} mask; no fault was applied.`);
       return false;
     }
     const event=chipTransitionSnapshot();
-    if (mask===0) {
-      if (!disconnectLogic()) return false;
-      return true;
-    }
+    if (mask===0) return disconnectLogic();
     const handoff=prepareVramForRamFault('VRAM fault cleared before RAM fault activation');
     if (!handoff.ok) return false;
-    const status=emulator._set_logic_address_mask(mask,access);
+    const target=inhibit?{type,mask}:{type,mask,access};
+    let status;
+    try {
+      status=inhibit ? emulator._set_logic_write_inhibit(mask)
+        : data ? emulator._set_logic_data_mask(mask,access) : emulator._set_logic_address_mask(mask,access);
+    } catch (error) {
+      logicActive=true;activeRamConfiguration=target;
+      if (!paused) pauseToggle();
+      setLogicStatus(`RAM ${label} setter outcome is unknown (${error.message}); emulation paused. Disconnect before continuing.`);
+      return false;
+    }
     if (status!==0) {
-      const rollback=restoreVramAfterRamReject(handoff.snapshot,'restored after RAM address-line rejection');
-      recordRamHandoffRejection(handoff.snapshot,'RAM address-line setter rejected after VRAM clear',status,rollback);
+      const rollback=restoreVramAfterRamReject(handoff.snapshot,`restored after RAM ${label}-line rejection`);
+      recordRamHandoffRejection(handoff.snapshot,`RAM ${label}-line setter rejected after VRAM clear`,status,rollback);
       setLogicStatus(rollback.ok
-        ? `Address-line setting rejected (status ${status}); previous VRAM configuration restored.`
-        : `Address-line setting rejected (status ${status}); VRAM configuration restore failed.`);
-      stamp(rollback.ok
-        ? `RAM address-line request rejected (status ${status}); previous VRAM configuration restored.`
-        : `RAM address-line request rejected (status ${status}); VRAM restore also failed.`);
+        ? `${inhibit?'Write-inhibit':data?'Data-line':'Address-line'} setting rejected (status ${status}); previous VRAM configuration restored.`
+        : `${inhibit?'Write-inhibit':data?'Data-line':'Address-line'} setting rejected (status ${status}); VRAM configuration restore failed.`);
+      stamp(`RAM ${label}-line request rejected: core status ${status}; ${rollback.ok?'previous VRAM configuration restored':'VRAM restore also failed'}.`);
       return false;
     }
     abandonKeyboardHold('WRAM');
     ownedAddressHold=null;
-    cancelPulse('replaced by address-line switches');
-    recordAddressMask(mask,access,'address line toggled',event); logicActive=true; logicStatsRetained=false;
-    activeRamConfiguration={type:'address-mask',mask,access};
-    const lines=Array.from({length:15},(_,i)=>i).filter(i=>mask & (1<<i)).map(i=>`A${i+1}`);
+    cancelPulse(`replaced by ${label}-line switches`);
+    recordAddressMask(data||inhibit?0:mask,data||inhibit?0:access,`${label} line toggled`,event);
+    logicActive=true;logicStatsRetained=false;
+    activeRamConfiguration=target;
+    const lines=Array.from({length:inhibit?2:data?16:15},(_,i)=>i).filter(i=>mask & (1<<i)).map(i=>logicLineName(inhibit?3:data?2:1,i));
     const accessLabel=['','read','write','read + write'][access];
-    lastLogicExperiment={kind:'address-stuck-low',access:accessLabel,lines,addressMask:mask,
+    lastLogicExperiment={kind:inhibit?'write-inhibit':`${label}-stuck-low`,access:accessLabel,lines,
+      [inhibit?'writeInhibitMask':data?'dataMask':'addressMask']:mask,
       activationFrame:Number(emulator._get_logic_activation_frame()),resetState:logicResetState,
       currentFrame:event.frame,readCount:0,writeCount:0,cpuFlags:Number(emulator._get_logic_cpu_flags())};
-    setLogicStatus(`${lines.join(', ')} forced low on ${accessLabel}. Click crossed wires to reconnect; stored writes persist.`);
-    stamp(`Address lines forced low: ${lines.join(', ')} (${accessLabel})`);
+    if (dataMaskApiReady() && currentRamDataMask()!==(data?mask:0)) {
+      if (!paused) pauseToggle();
+      setLogicStatus('RAM data mask could not be confirmed; emulation paused. Disconnect before continuing.');
+      return false;
+    }
+    if (writeInhibitApiReady() && currentRamWriteInhibit()!==(inhibit?mask:0)) {
+      if (!paused) pauseToggle();
+      setLogicStatus('RAM write inhibit could not be confirmed; emulation paused. Disconnect before continuing.');
+      return false;
+    }
+    setLogicStatus(inhibit ? `${lines.join(', ')} writes inhibited (inactive/high); previous bytes are retained. Restore Writes permits future stores.`
+      : `${lines.join(', ')} forced low on ${accessLabel}. Click crossed wires to reconnect; stored writes persist.`);
+    stamp(inhibit?`Work RAM write inhibit: ${lines.join(', ')}`:`${data?'Data':'Address'} lines forced low: ${lines.join(', ')} (${accessLabel})`);
     return true;
   }
 
-  function setupAddressChip() {
-    for (let line=0;line<15;line++) {
+  function renderRamChip() {
+    const kind=Number($('ramChipSignals').value), data=kind===2, inhibit=kind===3;
+    $('ramChip').querySelectorAll('[data-chip-line]').forEach(button=>button.remove());
+    $('ramChip').setAttribute('aria-label',`Conceptual SRAM (Work RAM) ${inhibit?'write enables':data?'data':'address'} lines`);
+    $('ramChip').querySelector('small').textContent=inhibit?'Write Inhibit · Lower / Upper':data?'D0–D7 / D8–D15':'A1–A15';
+    for (let line=0;line<(inhibit?2:data?16:15);line++) {
       const button=document.createElement('button');
       button.type='button';button.className='chip-pin';button.dataset.chipLine=String(line);
-      button.style.gridColumn=line<8?'1':'3';button.style.gridRow=String(line<8?line+1:line-7);
-      const label=document.createElement('span');label.className='chip-signal';label.textContent=`A${line+1}`;
+      const left=inhibit?line===0:line<8;
+      button.style.gridColumn=left?'1':'3';button.style.gridRow=String(inhibit?4:line<8?line+1:line-7);
+      const label=document.createElement('span');label.className='chip-signal';label.textContent=logicLineName(kind,line);
       const wire=document.createElement('span');wire.className='chip-wire';wire.setAttribute('aria-hidden','true');
       const cut=document.createElement('span');cut.className='chip-cut';cut.textContent='×';wire.append(cut);
-      button.append(...(line<8?[wire,label]:[label,wire]));
+      button.append(...(left?[wire,label]:[label,wire]));
       button.addEventListener('click',()=>{
+        if (inhibit) {
+          applyRamMask(trackedRamWriteInhibit() ^ (1<<line),undefined,'write-inhibit');
+          refreshChipControls();return;
+        }
         if ($('ramLegAction').value==='cut') {
           ramSelectedPin=null;
-          applyAddressMask(logicAddressMask ^ (1<<line));
+          applyRamMask((data?trackedRamDataMask():logicAddressMask) ^ (1<<line),undefined,data?'data-mask':'address-mask');
           refreshChipControls();
           return;
         }
@@ -1019,19 +1298,30 @@
         else if (ramSelectedPin===line) ramSelectedPin=null;
         else {
           const first=ramSelectedPin;ramSelectedPin=null;
-          $('logicKind').value='1';configureLogicLines();
+          $('logicKind').value=String(kind);configureLogicLines();
           $('logicLineA').value=String(first);$('logicLineB').value=String(line);
-          applyLogicFault(null,{kind:1,access:Number($('logicAccess').value),a:first,b:line});
+          applyLogicFault(null,{kind,access:Number($('logicAccess').value),a:first,b:line});
         }
         refreshChipControls();
       });
       $('ramChip').append(button);
     }
+    refreshChipControls();
+  }
+
+  function setupAddressChip() {
+    renderRamChip();
     $('chipRestoreBtn').addEventListener('click',()=>{
       ramSelectedPin=null;
-      if (logicAddressMask) applyAddressMask(0);
-      else if (logicActive && activeRamConfiguration?.type==='line-pair' && activeRamConfiguration.kind===1) disconnectLogic();
+      const kind=Number($('ramChipSignals').value);
+      if ((kind===1 && logicAddressMask) || (kind===2 && trackedRamDataMask()) || (kind===3 && trackedRamWriteInhibit()) ||
+          (logicActive && activeRamConfiguration?.type==='line-pair' && activeRamConfiguration.kind===kind)) disconnectLogic();
       refreshChipControls();
+    });
+    $('ramChipSignals').addEventListener('change',()=>{
+      ramSelectedPin=null;
+      if ($('ramChipSignals').value!=='3') {$('logicKind').value=$('ramChipSignals').value;configureLogicLines();}
+      renderRamChip();
     });
     $('ramLegAction').addEventListener('change',()=>{ramSelectedPin=null;refreshChipControls();});
   }
@@ -1067,6 +1357,8 @@
     refreshLogicMetrics();
     refreshChipControls();
     refreshRandomiserControls();
+    refreshZ80RamControls();
+    refreshRgbEncoderControls();
     updateCheckpointControls();
   }
 
@@ -1122,6 +1414,9 @@
       if (!checkpointAvailability().supported) throw new Error('Checkpoint unavailable for this core or cartridge.');
       if (recoveryTransientActive() || pressed.size || logicActive || logicAddressMask)
         throw new Error('Release held contacts and controls, and disconnect faults before saving.');
+      if (rgbEncoderPlan.active) throw new Error('Reconnect RGB encoder contacts before saving.');
+      if (z80RamApiPresent() && currentZ80RamState()?.configured!==false)
+        throw new Error('Disconnect the Z80 RAM write bridge and verify its state before saving.');
       const vram=emulator._get_vram_fault_model_state();
       const audio=[currentPsgDataState(),currentFmDataState()];
       if (!vram || !Number.isInteger(vram.mask) || vram.mask!==0 ||
@@ -1163,9 +1458,7 @@
       if (!checkpointAvailability().ready) throw new Error('No compatible checkpoint in this cartridge session.');
       if (!paused) pauseToggle();
       cancelAutomaticRecovery();
-      for (const code of pressed) checkpointBlockedKeys.add(code);
-      if (keyboardHeld?.code) checkpointBlockedKeys.add(keyboardHeld.code);
-      pressed.clear();checkpointBlockGamepad=true;
+      blockHeldInputs();
       if (!disconnectAllFaults()) throw new Error('Checkpoint restore stopped: fault clearing was incomplete.');
       ensureWasmViews();pollControls();clearAudioQueue();
       event.nativeAttempted=true;event.status=emulator._restore_session_checkpoint();
@@ -1362,7 +1655,7 @@
     };
   }
 
-  function logicLineName(kind,line) { return kind===1 ? `A${line+1}` : `D${line}`; }
+  function logicLineName(kind,line) { return kind===3 ? ['/LWR','/UWR'][line] : kind===1 ? `A${line+1}` : `D${line}`; }
 
   function applyLogicFault(writeLimit=null, configOverride=null) {
     resetCpuRecoveryObservation();
@@ -1426,6 +1719,11 @@
       writeCount:Number(emulator._get_logic_writes()) || 0,
       cpuFlags:Number(emulator._get_logic_cpu_flags()) || 0
     };
+    if (writeInhibitApiReady() && currentRamWriteInhibit()!==0) {
+      if (!paused) pauseToggle();
+      setLogicStatus('RAM write-inhibit replacement could not be confirmed; emulation paused.');
+      return false;
+    }
     setLogicStatus(`Applied ${kindLabel} ${lineA} ↔ ${lineB} on ${accessLabel}.`);
     stamp(`LOGIC / Work RAM FAULT: ${kindLabel} ${lineA} ↔ ${lineB}, ${accessLabel}`);
     return true;
@@ -1446,6 +1744,16 @@
     const status=emulator._set_logic_fault(0,0,-1,-1);
     if (status!==0) {
       if (!silent) setLogicStatus(`Core could not disconnect the logic fault (status ${status}).`);
+      return false;
+    }
+    if (dataMaskApiReady() && currentRamDataMask()!==0) {
+      if (!paused) pauseToggle();
+      setLogicStatus('RAM data-mask clear could not be confirmed; emulation paused.');
+      return false;
+    }
+    if (writeInhibitApiReady() && currentRamWriteInhibit()!==0) {
+      if (!paused) pauseToggle();
+      setLogicStatus('RAM write-inhibit clear could not be confirmed; emulation paused.');
       return false;
     }
     abandonKeyboardHold('WRAM');
@@ -1488,6 +1796,12 @@
     const frame=Number(emulator._get_logic_frame());
     const flagsBefore=Number(emulator._get_logic_cpu_flags());
     const hadRamFault=logicActive;
+    if (!clearZ80RamBridge()) {
+      if (!paused) pauseToggle();
+      lastCpuRecoveryAttempt.reason='Z80 RAM clear rejected or unavailable';
+      setLogicStatus('Recovery stopped: could not verify Z80 RAM fault removal.');
+      return false;
+    }
     if (!disconnectLogic({silent:true,pulseReason:'manual CPU recovery'})) {
       lastCpuRecoveryAttempt.reason='RAM clear rejected or unavailable';
       setLogicStatus('Recovery stopped: could not disconnect RAM fault.');
@@ -1625,7 +1939,11 @@
     let pulseArmed=false, pulseStateUnknown=false;
     try { pulseArmed=typeof emulator._get_logic_pulse_state==='function' && Number(emulator._get_logic_pulse_state())===1; }
     catch (_) { pulseStateUnknown=true; }
-    if (!logicActive && !pendingPulse && !pulseArmed && !pulseStateUnknown) note('RAM','already off','no tracked RAM fault');
+    const dataMaskBefore=currentRamDataMask();
+    const dataMaskUnknown=dataMaskApiReady() && dataMaskBefore===null;
+    const inhibitBefore=currentRamWriteInhibit();
+    const inhibitUnknown=writeInhibitApiReady() && inhibitBefore===null;
+    if (!logicActive && !pendingPulse && !pulseArmed && !pulseStateUnknown && !dataMaskBefore && !dataMaskUnknown && !inhibitBefore && !inhibitUnknown) note('RAM','already off','no tracked RAM fault');
     else {
       try {
         let cleared;
@@ -1642,9 +1960,11 @@
             pulseAfterKnown=true;
           }
         } catch (_) { /* A telemetry failure cannot undo the clear attempt. */ }
-        const verifiedClear=cleared&&!logicActive&&pulseAfterKnown&&!pulseAfter;
+        const dataMaskAfterKnown=!dataMaskApiReady() || currentRamDataMask()===0;
+        const inhibitAfterKnown=!writeInhibitApiReady() || currentRamWriteInhibit()===0;
+        const verifiedClear=cleared&&!logicActive&&pulseAfterKnown&&!pulseAfter&&dataMaskAfterKnown&&inhibitAfterKnown;
         const ramResult=verifiedClear?'cleared':cleared
-          ? (pulseAfter?'clear accepted; pulse remains armed':'clear accepted; pulse state unknown')
+          ? (!inhibitAfterKnown?'clear accepted; write-inhibit state unverified':!dataMaskAfterKnown?'clear accepted; data-mask state unverified':pulseAfter?'clear accepted; pulse remains armed':'clear accepted; pulse state unknown')
           : 'clear failed';
         note('RAM',ramResult,cleared
           ? `no tracked RAM fault; core clear accepted${pulseAfter?'; core pulse remains armed while paused':!pulseAfterKnown?'; core pulse state unverified':''}`
@@ -1681,7 +2001,22 @@
     };
     clearAudio('PSG');
     clearAudio('FM');
+    if (!z80RamApiPresent()) note('Z80 RAM','already off','optional runtime API absent');
+    else {
+      const state=currentZ80RamState();
+      if (state?.configured===false) note('Z80 RAM','already off','no configured Z80 RAM fault');
+      else {
+        const cleared=clearZ80RamBridge();
+        const after=currentZ80RamState();
+        note('Z80 RAM',cleared&&after?.configured===false?'cleared':'clear failed or unverified',
+          !after?'runtime state unknown':after.configured?'configured fault remains':'no configured fault');
+      }
+    }
 
+    const hadRgb=rgbEncoderPlan.active;
+    const rgbCleared=setRgbEncoder({cutMask:0,pair:null},{silent:true});
+    note('RGB Encoder',rgbCleared&&!rgbEncoderPlan.active?hadRgb?'cleared':'already off':'clear failed',
+      rgbEncoderPlan.active?'configured output contacts remain':'no configured RGB input fault');
     const summary=results.map(item=>`${item.domain}: ${item.result} (${item.actual})`).join('; ');
     const allClear=results.every(item=>item.result==='already off'||item.result==='cleared');
     if (!allClear && !paused) pauseToggle();
@@ -1981,7 +2316,8 @@
 
   function resetLogicSelection() {
     $('logicKind').value='1'; $('logicAccess').value='1';
-    configureLogicLines();
+    $('ramChipSignals').value='1';ramSelectedPin=null;
+    configureLogicLines();renderRamChip();
   }
 
   function circuitPulseIsArmed() {
@@ -1998,7 +2334,16 @@
     if (circuitPulseIsArmed()) throw new Error('Wait for or cancel the active RAM pulse before saving a configuration.');
     if (logicActive && !activeRamConfiguration)
       throw new Error('The active RAM fault settings are unavailable; no file was created.');
-    let psg={pair:null,dataMask:0}, fm={pair:null,dataMask:0};
+    if (dataMaskApiReady() && currentRamDataMask()!==trackedRamDataMask())
+      throw new Error('RAM data-mask state is unavailable or differs from the app state; no file was created.');
+    if (writeInhibitApiReady() && currentRamWriteInhibit()!==trackedRamWriteInhibit())
+      throw new Error('RAM write-inhibit state is unavailable or differs from the app state; no file was created.');
+    let psg={pair:null,dataMask:0}, fm={pair:null,dataMask:0}, z80Ram={pair:null};
+    if (z80RamApiPresent()) {
+      const state=currentZ80RamState();
+      if (!state) throw new Error('Z80 RAM state is unavailable; no file was created.');
+      if (state.configured) z80Ram={pair:canonical([state.bridgeA,state.bridgeB])};
+    }
     if (psgDataApiReady()) {
       const state=currentPsgDataState();
       if (!state) throw new Error('PSG state is unavailable; no file was created.');
@@ -2024,7 +2369,7 @@
     }
     return api.validate({format:api.format,schemaVersion:api.version,configuration:{
       vram:{modelId:vramModelId,mask:vramAddressMask,pair},
-      ram:logicActive?{...activeRamConfiguration}:null,psg,fm
+      ram:logicActive?{...activeRamConfiguration}:null,psg,fm,z80Ram,rgbEncoder:rgbEncoderPlan.configuration
     }});
   }
 
@@ -2033,12 +2378,13 @@
     const vram=c.vram.pair?`VRAM AD${c.vram.pair[0]}↔AD${c.vram.pair[1]}`
       :c.vram.mask?`VRAM mask 0x${c.vram.mask.toString(16).toUpperCase()}`:'VRAM identity';
     const model=c.vram.modelId===2?'transaction':'frame projection';
-    const ram=!c.ram?'RAM off':c.ram.type==='address-mask'
-      ?`RAM address mask 0x${c.ram.mask.toString(16).toUpperCase()}, access ${c.ram.access}`
+    const ram=!c.ram?'RAM off':c.ram.type==='write-inhibit'?`RAM write inhibit ${c.ram.mask&1?'Lower ':''}${c.ram.mask&2?'Upper':''}`:['address-mask','data-mask'].includes(c.ram.type)
+      ?`RAM ${c.ram.type==='data-mask'?'data':'address'} mask 0x${c.ram.mask.toString(16).toUpperCase()}, access ${c.ram.access}`
       :`RAM ${c.ram.kind===1?'address':'data'} pair ${c.ram.a}↔${c.ram.b}, access ${c.ram.access}`;
     const audio=(name,target)=>target.pair?`${name} D${target.pair[0]}↔D${target.pair[1]}`
       :target.dataMask?`${name} ${maskLineNames(target.dataMask)} low`:`${name} off`;
-    return `${vram} (${model})\n${ram}\n${audio('PSG',c.psg)}\n${audio('FM',c.fm)}`;
+    const z80=c.z80Ram.pair?`Z80 RAM Write A${c.z80Ram.pair[0]}↔A${c.z80Ram.pair[1]}`:'Z80 RAM off';
+    return `${vram} (${model})\n${ram}\n${audio('PSG',c.psg)}\n${audio('FM',c.fm)}\n${z80}\nRGB Encoder ${rgbEncoderSummary(c.rgbEncoder)}`;
   }
 
   function refreshCircuitConfigControls() {
@@ -2080,7 +2426,7 @@
     const blob=new Blob([JSON.stringify(config,null,2)],{type:'application/json'});
     const url=URL.createObjectURL(blob);
     const link=document.createElement('a');
-    link.href=url; link.download='vram-page-md-circuit-v2.json';
+    link.href=url; link.download='vram-page-md-circuit-v6.json';
     document.body.append(link); link.click(); link.remove();
     setTimeout(()=>URL.revokeObjectURL(url),1000);
     $('circuitConfigStatus').textContent='Circuit configuration downloaded. ROM and execution history are not included.';
@@ -2121,6 +2467,10 @@
       return 'The active RAM fault cannot be safely identified or disconnected.';
     if (logicActive && vramFaultActive()) return 'RAM and VRAM faults are both active; no setters were called.';
     const c=config.configuration;
+    if (z80RamApiPresent() && !currentZ80RamState())
+      return 'Z80 RAM runtime state is unavailable; no setters were called.';
+    if (c.z80Ram.pair && (!z80RamApiReady() || !currentZ80RamState()?.supported))
+      return 'This core or profile does not support the requested Z80 RAM bridge.';
     let vram;
     try { vram=validateVramModel(c.vram.modelId,c.vram.mask,c.vram.pair); }
     catch (_) { return 'VRAM capability state is unavailable; no setters were called.'; }
@@ -2128,6 +2478,12 @@
     if (c.ram && !logicApiReady()) return 'This core cannot safely apply and clear the requested RAM model.';
     if (c.ram?.type==='address-mask' && !addressMaskApiReady())
       return 'This core cannot apply the requested RAM address-mask model.';
+    if (c.ram?.type==='data-mask' && (!dataMaskApiReady() || currentRamDataMask()===null))
+      return 'This core cannot apply or verify the requested RAM data-mask model.';
+    if (c.ram?.type==='write-inhibit' && (!writeInhibitApiReady() || currentRamWriteInhibit()===null))
+      return 'This core cannot apply or verify the requested RAM write-inhibit model.';
+    if (writeInhibitApiReady() && currentRamWriteInhibit()!==trackedRamWriteInhibit())
+      return 'Current RAM write-inhibit state is unavailable or differs from the app state; disconnect faults before applying.';
     for (const [name,target,ready,getState] of [
       ['PSG',c.psg,psgDataApiReady,currentPsgDataState],
       ['FM',c.fm,fmDataApiReady,currentFmDataState]
@@ -2148,7 +2504,9 @@
         JSON.stringify(c.vram.pair)!==JSON.stringify(canonical(actualPair()))) return false;
     if (!sameCircuitRam(c.ram,logicActive?activeRamConfiguration:null)) return false;
     return !circuitBridgeNeedsChange(c.psg,psgDataApiReady()?currentPsgDataState():null,psgDataApiReady()) &&
-      !circuitBridgeNeedsChange(c.fm,fmDataApiReady()?currentFmDataState():null,fmDataApiReady());
+      !circuitBridgeNeedsChange(c.fm,fmDataApiReady()?currentFmDataState():null,fmDataApiReady()) &&
+      !circuitBridgeNeedsChange(c.z80Ram,currentZ80RamState(),z80RamApiReady()) &&
+      JSON.stringify(c.rgbEncoder)===JSON.stringify(rgbEncoderPlan.configuration);
   }
 
   function syncCircuitSelectors(config) {
@@ -2156,8 +2514,10 @@
     $('vramModel').value=String(c.vram.modelId);
     $('vramMode').value=c.vram.pair?'bridge':'disconnect';
     if (c.ram) {
-      $('logicKind').value=String(c.ram.type==='address-mask'?1:c.ram.kind);
-      $('logicAccess').value=String(c.ram.access); configureLogicLines();
+      const inhibit=c.ram.type==='write-inhibit';
+      if (!inhibit) $('logicKind').value=String(c.ram.type==='address-mask'?1:c.ram.type==='data-mask'?2:c.ram.kind);
+      $('ramChipSignals').value=inhibit?'3':$('logicKind').value;renderRamChip();
+      $('logicAccess').value=String(inhibit?2:c.ram.access); configureLogicLines();
       if (c.ram.type==='line-pair') {
         $('logicLineA').value=String(c.ram.a); $('logicLineB').value=String(c.ram.b);
       }
@@ -2168,6 +2528,9 @@
     if (c.fm.pair) {
       $('fmBridgeA').value=String(c.fm.pair[0]); $('fmBridgeB').value=String(c.fm.pair[1]);$('fmLegMode').value='bridge';
     } else $('fmLegMode').value=c.fm.dataMask?'ground':'bridge';
+    if (c.z80Ram.pair) {
+      $('z80RamBridgeA').value=String(c.z80Ram.pair[0]);$('z80RamBridgeB').value=String(c.z80Ram.pair[1]);
+    }
     updateFaultUI(); updateLogicControls(); refreshPsgDataControls(); refreshFmDataControls();
   }
 
@@ -2186,7 +2549,10 @@
     const bridgeDescription=(state,name)=>state
       ? `${name} ${state.configured?(Number(state.dataMask||0)?`${maskLineNames(Number(state.dataMask))} low`:`D${state.bridgeA}↔D${state.bridgeB}`):'off'}`
       : `${name} state unavailable`;
-    const actual=`Observed state: ${vramDescription}; tracked RAM ${ram}; ${bridgeDescription(psg,'PSG')}; ${bridgeDescription(fm,'FM')}.`;
+    const z80=currentZ80RamState();
+    const z80Description=!z80RamApiPresent()?'Z80 RAM API absent':!z80?'Z80 RAM state unavailable':
+      z80.configured?`Z80 RAM A${z80.bridgeA}↔A${z80.bridgeB}`:'Z80 RAM off';
+    const actual=`Observed state: ${vramDescription}; tracked RAM ${ram}; ${bridgeDescription(psg,'PSG')}; ${bridgeDescription(fm,'FM')}; ${z80Description}; RGB Encoder ${rgbEncoderSummary()}.`;
     const message=`Apply stopped at ${domain}; earlier settings may have changed. ${actual} The staged file is retained and emulation is paused.`;
     $('circuitConfigStatus').textContent=message; stamp(message);
     updateFaultUI(); updateLogicControls(); refreshPsgDataControls(); refreshFmDataControls();
@@ -2199,15 +2565,15 @@
     }
     const config=stagedCircuitConfiguration;
     if (!config) return false;
-    cancelAutomaticRecovery();
     let error;
     try { error=preflightCircuitConfiguration(config); }
     catch (_) { error='Runtime state could not be read; no setters were called.'; }
-    if (error) { $('circuitConfigStatus').textContent=`Apply refused before mutation: ${error}`; return false; }
+    if (error) { cancelAutomaticRecovery();$('circuitConfigStatus').textContent=`Apply refused before mutation: ${error}`; return false; }
     let alreadyMatches;
     try { alreadyMatches=circuitTargetsMatch(config); }
-    catch (_) { $('circuitConfigStatus').textContent='Apply refused before mutation: runtime state could not be read.'; return false; }
+    catch (_) { cancelAutomaticRecovery();$('circuitConfigStatus').textContent='Apply refused before mutation: runtime state could not be read.'; return false; }
     if (alreadyMatches) {
+      cancelAutomaticRecovery();
       $('circuitConfigStatus').textContent='Configuration already matches. No setters were called; live counters were preserved.';
       stagedCircuitConfiguration=null; refreshCircuitConfigControls(); return true;
     }
@@ -2217,20 +2583,24 @@
       currentPsg=psgDataApiReady()?currentPsgDataState():null;
       currentFm=fmDataApiReady()?currentFmDataState():null;
     } catch (_) {
+      cancelAutomaticRecovery();
       $('circuitConfigStatus').textContent='Apply refused before mutation: runtime state could not be read.';
       return false;
     }
     const changePsg=circuitBridgeNeedsChange(c.psg,currentPsg,psgDataApiReady());
     const changeFm=circuitBridgeNeedsChange(c.fm,currentFm,fmDataApiReady());
+    const changeZ80=circuitBridgeNeedsChange(c.z80Ram,currentZ80RamState(),z80RamApiReady());
     const changeRam=!sameCircuitRam(c.ram,logicActive?activeRamConfiguration:null);
     const changeVram=c.vram.modelId!==vramModelId || c.vram.mask!==vramAddressMask ||
       JSON.stringify(c.vram.pair)!==JSON.stringify(canonical(actualPair()));
+    const changeRgb=JSON.stringify(c.rgbEncoder)!==JSON.stringify(rgbEncoderPlan.configuration);
+    if (changePsg||changeFm||changeZ80||changeRam||changeVram) cancelAutomaticRecovery();
     const vramActive=!!(c.vram.mask||c.vram.pair);
 
     const applyRamTarget=()=>{
       if (!changeRam) return true;
       if (!c.ram) return disconnectLogic({silent:true});
-      if (c.ram.type==='address-mask') return applyAddressMask(c.ram.mask,c.ram.access);
+      if (['address-mask','data-mask','write-inhibit'].includes(c.ram.type)) return applyRamMask(c.ram.mask,c.ram.access,c.ram.type);
       return applyLogicFault(null,{kind:c.ram.kind,access:c.ram.access,a:c.ram.a,b:c.ram.b});
     };
     let currentDomain='configuration';
@@ -2267,6 +2637,18 @@
     if (changeFm) { currentDomain='FM'; mutationStarted=true; }
     if (changeFm && !setFmCircuitTarget(c.fm)) {
       pauseAfterCircuitApplyFailure('FM'); return false;
+    }
+    if (changeZ80) {
+      currentDomain='Z80 RAM';mutationStarted=true;
+      if (!setZ80RamBridge(!!c.z80Ram.pair,c.z80Ram.pair, true)) {
+        pauseAfterCircuitApplyFailure('Z80 RAM');return false;
+      }
+    }
+    if (changeRgb) {
+      currentDomain='RGB Encoder';mutationStarted=true;
+      if (!setRgbEncoder(c.rgbEncoder,{silent:true})) {
+        pauseAfterCircuitApplyFailure('RGB Encoder');return false;
+      }
     }
     syncCircuitSelectors(config);
     stagedCircuitConfiguration=null;
@@ -2364,20 +2746,28 @@
     try { romSha256=await (exportIdentity?.hashPromise ?? Promise.resolve(null)); } catch (_) { /* Hashing failure never blocks emulation. */ }
     if (exportIdentity!==romIdentity) throw new Error('ROM changed while preparing export; download canceled.');
     if (!started || !emulator) throw new Error('Cartridge activation is uncertain; restart the last accepted cartridge before exporting.');
+    const ramDataMask=currentRamDataMask();
+    const ramWriteInhibit=currentRamWriteInhibit();
     const currentFrame=logicApiReady() ? Number(emulator._get_logic_frame()) || 0 : 0;
     const coreReads=logicApiReady() ? Number(emulator._get_logic_reads()) || 0 : 0;
     const coreWrites=logicApiReady() ? Number(emulator._get_logic_writes()) || 0 : 0;
     const reads=!logicActive && logicStatsRetained && lastLogicExperiment ? lastLogicExperiment.readCount : coreReads;
     const writes=!logicActive && logicStatsRetained && lastLogicExperiment ? lastLogicExperiment.writeCount : coreWrites;
-    const runtimeVramState=vramModelApiReady()?currentVramModelState():null;
+    let runtimeVramState=null;
+    if (vramModelApiReady()) {
+      try { runtimeVramState=emulator._get_vram_fault_model_state(); }
+      catch (_) { /* A display fallback is not observed runtime metadata. */ }
+    }
     const psgState=currentPsgDataState();
     const fmState=currentFmDataState();
+    const z80RamState=currentZ80RamState();
     const transactionCounts=runtimeVramState?.lastFrameCounts
       ? {...runtimeVramState.lastFrameCounts} : null;
     const data={
       schemaVersion:1,
+      machine:machineObservation(),
       build:{...buildInfo},
-      modelVersion:'0.5.0-experimental',
+      modelVersion:'0.5.1-experimental',
       vramFault:{kind:vramAddressMask?'address-stuck-low':actualPair()?'address-bridge':'none',
         addressMask:vramAddressMask,lines:vramLines(vramAddressMask),bridge:actualPair()?[...actualPair()]:null},
       vramAddressLineChanges:vramAddressLineChanges.map(entry=>({...entry})),
@@ -2396,7 +2786,10 @@
       resetState:logicResetState,
       currentFrame,readCount:reads,writeCount:writes,
       cpuFlags:logicApiReady() ? Number(emulator._get_logic_cpu_flags()) || 0 : null,
-      logic:{schemaVersion:1,modelVersion:'work-ram-transaction-v1',available:logicApiReady(),active:logicActive,
+      logic:{schemaVersion:writeInhibitApiReady()?3:dataMaskApiReady()?2:1,modelVersion:writeInhibitApiReady()?'work-ram-transaction-v3':dataMaskApiReady()?'work-ram-transaction-v2':'work-ram-transaction-v1',
+        referenceProfile:'model1-pal-va65-two-byte-v1',dataMaskAvailable:ramDataMask!==null,
+        writeInhibitAvailable:ramWriteInhibit!==null,writeInhibitMask:ramWriteInhibit,
+        dataMask:ramDataMask,available:logicApiReady(),active:logicActive,
         fault:lastLogicExperiment ? {...lastLogicExperiment} : null,
         readCount:reads,writeCount:writes,currentFrame,
         cpuFlags:logicApiReady() ? Number(emulator._get_logic_cpu_flags()) || 0 : null},
@@ -2432,6 +2825,14 @@
         dataMask:Number.isInteger(fmState?.dataMask)?fmState.dataMask:0,
         inputWrites:fmState?.inputWrites ?? '0',
         changedWrites:fmState?.changedWrites ?? '0'},
+      z80RamFault:{schemaVersion:1,available:!!z80RamState,
+        modelVersion:z80RamState?.modelVersion??null,supported:z80RamState?.supported??false,
+        configured:z80RamState?.configured??false,effective:z80RamState?.effective??false,
+        reason:z80RamState?.reason??'state-unavailable',bridgeA:z80RamState?.bridgeA??-1,
+        bridgeB:z80RamState?.bridgeB??-1,activationFrame:z80RamState?.activationFrame??null,
+        ramWrites:z80RamState?.ramWrites??null,changedAddresses:z80RamState?.changedAddresses??null,
+        z80Writes:z80RamState?.z80Writes??null,m68kWrites:z80RamState?.m68kWrites??null},
+      rgbEncoderFault:rgbEncoderState(),
       vramModelTransitions:vramModelTransitions.map(entry=>({...entry})),
       exportedAt:new Date().toISOString()
     };
@@ -2603,8 +3004,8 @@
         const expectedOwner=held.code.startsWith('Digit')?'numeric':'keyboard';
         if (ownedAddressHold && (ownedAddressHold.type!==expectedOwner || ownedAddressHold.code!==held.code || ownedAddressHold.key!==`${held.pair[0]},${held.pair[1]}`)) return;
         if (!applyKeyboardMutation(()=>disconnectLogic())) throw new Error('core refused RAM disconnect');
-        if (held.restore && !applyKeyboardMutation(()=>held.restore.type==='address-mask'
-          ? applyAddressMask(held.restore.mask,held.restore.access)
+        if (held.restore && !applyKeyboardMutation(()=>['address-mask','data-mask','write-inhibit'].includes(held.restore.type)
+          ? applyRamMask(held.restore.mask,held.restore.access,held.restore.type)
           : applyLogicFault(null,held.restore))) throw new Error('core rejected the prior RAM fault restoration');
         return;
       }
@@ -2742,11 +3143,14 @@
     // Display recovery fills only systematically missing, fully blank source
     // scanlines. It never changes the emulator's memory or signal simulation.
     const raw = $('rawVideoToggle').checked;
-    const result = frameAdapter.copyActiveFrame(frameView, imageData.data, {raw});
+    refreshRegionState();
+    const result = frameAdapter.copyActiveFrame(frameView, imageData.data, {raw,width:videoWidth,height:videoHeight});
+    if (!raw) rgbEncoderPlan.apply(imageData.data);
     ctx.putImageData(imageData, 0, 0);
-    const status = raw ? 'Video: raw core pixels' : result.repairedRows
+    const nativeStatus = raw ? 'Video: raw core pixels' : result.repairedRows
       ? `Video: ${result.repairedRows} missing output lines recovered`
       : 'Video: native pixels';
+    const status=nativeStatus+(!raw&&rgbEncoderPlan.active?' · RGB Encoder Input Approximation':'');
     if (status !== previousVideoStatus) {
       $('videoStatus').textContent = status;
       previousVideoStatus = status;
@@ -2773,6 +3177,7 @@
     refreshLogicMetrics();
     refreshPsgDataControls();
     refreshFmDataControls();
+    refreshZ80RamControls();
   }
 
   function animationFrame(time) {
@@ -2785,13 +3190,13 @@
     accumulated += Math.min(100,time-lastFrame);
     lastFrame = time;
     let done=0;
-    while (accumulated>=FRAME_MS && done<3 && started && !paused && !document.hidden) {
-      renderFrame(); accumulated-=FRAME_MS; done++;
+    while (accumulated>=frameMs && done<3 && started && !paused && !document.hidden) {
+      renderFrame(); accumulated-=frameMs; done++;
     }
     if (done===3) accumulated=0;
     if (time-measuredAt>=1000) {
       const fps=Math.round(frames*1000/(time-measuredAt));
-      $('fpsIndicator').textContent=`${fps} FPS / 59.92 TARGET`;
+      $('fpsIndicator').textContent=`${fps} FPS / ${targetFps.toFixed(2)} TARGET`;
       resetStats();
     }
   }
@@ -2842,7 +3247,9 @@
       const target=new Uint8Array(emulator.HEAPU8.buffer,ptr,bytes.length);
       if (typeof emulator._discard_session_checkpoint==='function') emulator._discard_session_checkpoint();
       sessionCheckpoint=null;checkpointEvents=[];checkpointSegment=0;
-      checkpointBlockedKeys.clear();checkpointBlockGamepad=false;checkpointMessage='No Session Checkpoint';
+      if(regionApiReady()&&requestedRegion!==activeRegionRequest)blockHeldInputs();
+      else {checkpointBlockedKeys.clear();checkpointBlockGamepad=false;}
+      checkpointMessage='No Session Checkpoint';
       target.set(bytes);
       // The accepted new image is about to replace core state; drain old audio
       // and cancel app-scheduled pulse work before native activation can throw.
@@ -2853,10 +3260,13 @@
       momentary=null; momentaryRestorePair=null; momentaryRestoreMask=0;
       coreMutated=true; // _start can mutate native state before it throws.
       emulator._start();
+      refreshRegionState(true);
+      activeRegionRequest=requestedRegion;
       if (typeof emulator._set_vram_short !== 'function')
         throw new Error('Core missing _set_vram_short. You must build the patched core (not the upstream prebuilt WASM).');
       frameView=null;
       started=true;
+      rgbEncoderPlan=rgbEncoderApi.create({cutMask:0,pair:null});
       cpuInterventions=[];
       faultPulses=[]; pendingPulse=null;
       ownedAddressHold=null;keyboardHeld=null;
@@ -2897,7 +3307,8 @@
       romIdentity={bytes,name,hashPromise};
       resetCpuRecoveryObservation();
       updateLogicControls();
-      stamp(`Cartridge inserted: ${name} (forced NTSC-U)`);
+      refreshRegionState();
+      stamp(`Cartridge inserted: ${name} (${regionApiReady()?EFFECTIVE_REGION_NAMES[readRegionState()?.regionCode]??'Region Unknown':'fixed NTSC-U'})`);
     } catch (error) {
       if (coreMutated) {
         started=false;
@@ -2912,21 +3323,90 @@
     // Browser audio is unlocked by a separate Sound button after user gesture.
   }
 
+  const CARTRIDGE_KEY='vrampage-cartridge-preference';
+  const CUSTOM_CHOSEN_KEY='vrampage-custom-rom-preferred';
+  function cartridgePreference() {
+    try {
+      return window.sessionStorage.getItem(CARTRIDGE_KEY) ||
+        (window.sessionStorage.getItem(CUSTOM_CHOSEN_KEY)==='1' ? 'local' : null);
+    } catch (_) { return null; }
+  }
+  function rememberCartridge(id) {
+    try {
+      window.sessionStorage.setItem(CARTRIDGE_KEY,id);
+      window.sessionStorage.setItem(CUSTOM_CHOSEN_KEY,id==='local'?'1':'0');
+    } catch (_) { /* Private browsing may block session storage. */ }
+  }
+  async function readCartridgeManifest() {
+    const response=await fetch('./cartridges.json',{credentials:'same-origin',cache:'no-cache'});
+    if (!response.ok) throw new Error(`Cartridge manifest HTTP ${response.status}`);
+    const manifest=window.VRAMpageCartridges.validateManifest(await response.json());
+    const select=$('cartridgeSelect');
+    for (const cart of manifest.cartridges) {
+      const option=new Option(`${cart.displayName} v${cart.version}`,cart.id);
+      select.insertBefore(option,select.querySelector('[value="local"]'));
+    }
+    return manifest;
+  }
+  function cartridgeLoadError(error,generation,builtIn=false) {
+    if (generation!==romLoadGeneration) return;
+    stamp(`ERROR: ${error.message}`);
+    if (!started && !error.cartridgeActivationUncertain)
+      message(builtIn?'BUILT-IN CARTRIDGE UNAVAILABLE':'CARTRIDGE COULD NOT START',
+        `${error.message}${builtIn?' Choose Cartridge to retry or load your own Mega Drive ROM.':''}`);
+  }
+  async function loadBuiltInCartridge(id,{automatic=false,generation=romLoadGeneration}={}) {
+    if (!automatic) { generation=++romLoadGeneration; rememberCartridge(id); }
+    try {
+      const manifest=await cartridgeManifestPromise;
+      if (generation!==romLoadGeneration) return;
+      const cart=manifest.cartridges.find(cart=>cart.id===id);
+      if (!cart) throw new Error('This built-in cartridge is not approved.');
+      stamp(`Loading ${cart.displayName} v${cart.version}…`);
+      const response=await fetch(`./${cart.path}`,{credentials:'same-origin'});
+      if (!response.ok) throw new Error(`Cartridge HTTP ${response.status}`);
+      const length=response.headers.get('content-length');
+      if (length!==null && !response.headers.get('content-encoding') && Number(length)!==cart.size) throw new Error('Built-in cartridge size does not match its approval.');
+      const bytes=new Uint8Array(await response.arrayBuffer());
+      if (generation!==romLoadGeneration) return;
+      await window.VRAMpageCartridges.verify(bytes,cart);
+      await coreReadyPromise;
+      if (generation!==romLoadGeneration) return;
+      await startCartridge(bytes,cart.displayName);
+    } catch(error) { cartridgeLoadError(error,generation,true); }
+  }
+  async function automaticCartridgeStartup(generation) {
+    try {
+      const [manifest]=await Promise.all([cartridgeManifestPromise,coreReadyPromise]);
+      if (generation!==romLoadGeneration || started || !emulator) return;
+      const id=cartridgePreference() ?? manifest.defaultCartridge;
+      if (id==='local') return;
+      await loadBuiltInCartridge(id,{automatic:true,generation});
+    } catch(error) { cartridgeLoadError(error,generation,true); }
+  }
   async function loadLocalRom(file) {
     if (!file) return;
     const generation=++romLoadGeneration;
+    rememberCartridge('local');
     try {
       stamp(`Loading local cartridge: ${file.name}`);
       if (file.size<0x200 || file.size>4*1024*1024)
         throw new Error('Expected a 512-byte to 4-MB uncompressed Mega Drive ROM.');
       const bytes=new Uint8Array(await file.arrayBuffer());
+      await coreReadyPromise;
       if (generation!==romLoadGeneration) return;
       await startCartridge(bytes,file.name);
-    } catch(e) {
-      if (generation!==romLoadGeneration) return;
-      stamp(`ERROR: ${e.message}`);
-      if (!started && !e.cartridgeActivationUncertain) message('CARTRIDGE COULD NOT START',e.message);
-    }
+    } catch(error) { cartridgeLoadError(error,generation); }
+  }
+  function chooseCartridge() {
+    const select=$('cartridgeSelect'), id=select.value;
+    select.value='';
+    if (!id) return;
+    if (id==='local') {
+      // Choosing the file picker cancels pending automatic/explicit loads even if dismissed.
+      ++romLoadGeneration; rememberCartridge('local');
+      $('romFile').click();
+    } else void loadBuiltInCartridge(id);
   }
 
   async function cleanRestart() {
@@ -3023,8 +3503,10 @@
       setRunning(false);
       if (!logicApiAvailable) logicStatusMessage='Rebuild core for logic faults';
       updateLogicControls();
-      message('INSERT YOUR CARTRIDGE','Choose a Sonic the Hedgehog ROM stored on your computer. The file is loaded only in this browser.');
-      stamp('NTSC-U core loaded; ready for local ROM.');
+      message('INSERT YOUR CARTRIDGE','Choose a built-in cartridge or load your own compatible Mega Drive ROM. Your file stays in this browser.');
+      refreshRegionState();
+      stamp('Core loaded; ready for cartridge.');
+
     } catch(e) {
       emulator=null;
       message('CORE INITIALISATION FAILED',e.message);
@@ -3041,7 +3523,7 @@
       // Use document coordinates so scrolling cannot grow/shrink the picture.
       // Very short windows retain a usable minimum and may scroll vertically.
       const chrome = section.height - frame.height;
-      const height = Math.max(96, Math.floor(window.innerHeight -
+      const height = Math.max(100, Math.floor(window.innerHeight -
         (section.top + window.scrollY) - chrome - 12));
       displayViewport.style.setProperty('--window-display-height', `${height}px`);
     }
@@ -3050,8 +3532,8 @@
     // Firefox can retain a stale canvas backing/compositor surface after a
     // fullscreen transition. Reset only the fixed-size canvas and repaint
     // the last emulated frame; emulator state and ROM remain untouched.
-    canvas.width = GAME_WIDTH;
-    canvas.height = GAME_HEIGHT;
+    canvas.width = videoWidth;
+    canvas.height = videoHeight;
     ctx.imageSmoothingEnabled = false;
     if (started) {
       ensureWasmViews();
@@ -3083,6 +3565,19 @@
   }
 
   function setup() {
+    for (const button of document.querySelectorAll('[data-rgb-cut]'))
+      button.addEventListener('click',()=>setRgbEncoder({...rgbEncoderPlan.configuration,
+        cutMask:rgbEncoderPlan.configuration.cutMask^(1<<Number(button.dataset.rgbCut))}));
+    for (const button of document.querySelectorAll('[data-rgb-pair]'))
+      button.addEventListener('click',()=>setRgbEncoder({...rgbEncoderPlan.configuration,
+        pair:rgbEncoderPlan.configuration.pair?.join(',')===button.dataset.rgbPair?null:button.dataset.rgbPair.split(',').map(Number)}));
+    $('rgbEncoderClear').addEventListener('click',()=>setRgbEncoder({cutMask:0,pair:null}));
+    refreshRgbEncoderControls();
+    for (const id of ['z80RamBridgeA','z80RamBridgeB'])
+      $(id).innerHTML=Array.from({length:13},(_,bit)=>`<option value="${bit}">A${bit}</option>`).join('');
+    $('z80RamBridgeA').value='0';$('z80RamBridgeB').value='1';
+    $('z80RamBridgeApply').addEventListener('click',()=>setZ80RamBridge(true));
+    $('z80RamBridgeRemove').addEventListener('click',()=>setZ80RamBridge(false));
     for (const id of ['psgBridgeA','psgBridgeB']) {
       const select=$(id);
       for (let bit=0;bit<8;bit++) {
@@ -3105,6 +3600,7 @@
     configureLogicLines();
     $('logicKind').addEventListener('change',()=>{
       configureLogicLines();
+      ramSelectedPin=null;$('ramChipSignals').value=$('logicKind').value;renderRamChip();
       setLogicStatus('Configuration changed; apply it to activate a fault.');
     });
     for (const id of ['logicAccess','logicLineA','logicLineB'])
@@ -3123,6 +3619,7 @@
     });
     $('saveCheckpointBtn').addEventListener('click',saveCheckpoint);
     $('restoreCheckpointBtn').addEventListener('click',restoreCheckpoint);
+    $('regionSelect').addEventListener('change',stageRegion);
     $('armCpuRecoveryBtn').addEventListener('click',()=>{
       cpuRecoveryEnabled=!cpuRecoveryEnabled;resetCpuRecoveryObservation();updateLogicControls();
     });
@@ -3145,7 +3642,9 @@
     $('rawVideoToggle').addEventListener('change', () => {
       previousVideoStatus = "";
       drawActiveVideo();
+      refreshRgbEncoderControls();
     });
+    $('cartridgeSelect').addEventListener('change',chooseCartridge);
     $('romFile').addEventListener('change',event=>{loadLocalRom(event.target.files?.[0]);event.target.value='';});
     $('resetBtn').addEventListener('click',cleanRestart);
     $('compactResetBtn').addEventListener('click',cleanRestart);
@@ -3164,7 +3663,10 @@
     updateLogicControls();
     resetStats();
     requestAnimationFrame(animationFrame);
-    initialiseCore();
+    const startupGeneration=romLoadGeneration;
+    cartridgeManifestPromise=readCartridgeManifest();
+    coreReadyPromise=initialiseCore();
+    void automaticCartridgeStartup(startupGeneration);
   }
   setup();
 })();

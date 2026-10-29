@@ -14,13 +14,31 @@ This is the first video in a two parter for the Banksia Bit Blitzer. This is qui
 
 Not the fastest, but the cool factor is pretty high on this modem. Look at all those LEDs! Everything was through-hole inside and it was amazing to replace the capacitors. This modem was purchased in May 2023 and was recapped, had the ROM dumped and was tested all in May 2023.
 
+The first recording is also a bit of a tour around my increasingly complicated dial-up setup. I'd cleared some space with a new set of drawers, although the top shelf wasn't quite aligned properly. Never mind that. The important thing was that I finally had somewhere to put all the modems!
+
+I was using an HPE MicroServer running Ubuntu as the computer dialling out. The BIT Blitzer connected through a USB serial adapter, then into a Cisco SPA112 VoIP adapter. On the other side, a Banksia Wave SP modem acted as the answering end.
+
+A Raspberry Pi running Asterisk and mgetty handled the other parts of the arrangement. There's a lot going on just to make two modems talk to each other, but hearing the analogue bleeps and bloops travel through all that modern equipment is half the fun.
+
 ![](/assets/images/2023/img_1026.jpg)
 
 The firmware reports `891210`, so 10th December 1989 if that field is a date. I dumped the ROM using a [TL866CS programmer](https://proghq.org/wiki/TL866) and originally shared it through the [file server](/files/dumps/), but the download is currently unavailable. The PCB has the markings Banksia Bit Blitzer 124E/1234E-A, which suggests a shared board design across models; it doesn't establish that every version had identical components.
 
+For the Linux connection I used `wvdialconf` to detect the modem and generate a starting configuration. After adding the dial-in details, I used `wvdial` to make the connection. The number I used was the old Sydney Internet Group number, **02 9373 5100**, which I'd rediscovered while browsing archived TIG and ihug pages. That certainly brought back memories of the old internet.
+
+The first attempt involved some fiddling with the initialisation strings and connection settings. At these speeds, there's plenty of opportunity to admire the LEDs while waiting for something to happen.
+
 {% include youtube.html id="As8rEfB5iCw" %}
 
 Above is part two following on from the video at the start of this post. Some of the component codes appear to point to mid-to-late 1990, which suggests this particular unit was assembled sometime after the firmware build if I am reading those codes correctly.
+
+For this second test I fired up Windows 98 inside VirtualBox and passed the serial modem through to the virtual machine. It was nice to find that Windows 98 could handle the modem without requiring an expedition through a mountain of driver discs.
+
+The connection managed 2400 bps, with the corresponding speed indicator lit on the modem. That's a theoretical maximum of about 300 bytes per second before all the overhead. A photograph would be a serious commitment at that speed!
+
+I tried browsing my own file server, and after several minutes Netscape finally produced a directory listing. It had transferred only a few tens of kilobytes. Looking through the file sizes and deciding what to download became a rather important part of the experience.
+
+The modem certainly wasn't in any hurry. But it connected, transferred data, and gave me a very convincing reminder of why text-only websites were such a good idea.
 
 ![](/assets/images/2023/img_1028.jpg)
 
@@ -125,6 +143,6 @@ This modem has been donated to the [Australian Computer Museum Society (ACMS)](h
 - [Rubycon - Aluminum Electrolytic Capacitor Technical Notes](https://www.rubycon.co.jp/wp-content/uploads/products-aluminum/al-technical-note_en.pdf)
 - [Panasonic - EEUFR1V330B FR-series capacitor specifications](https://industrial.panasonic.com/ww/products/pt/aluminum-cap-lead/models/EEUFR1V330B)
 
-### Related posts
+### Related Posts
 
 - [Banksia BIT Blitzer 124E Dial-up Modem - Dial Testing](/banksia-bit-blitzer-124e-dial-up-modem-dial-testing/)

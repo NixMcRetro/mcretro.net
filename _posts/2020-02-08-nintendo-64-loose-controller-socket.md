@@ -14,7 +14,9 @@ I've got a Japanese Nintendo 64 here with a rather annoying problem. Controller 
 
 The nice thing about *Mario Tennis* is that it gives you a great big warning when the controller isn't connected. Very handy for testing! Controller port two works every time, but port one is a different story. Maybe the first port has simply had a hard life, with twenty-odd years of people plugging controllers in and out.
 
-### Let's Have a Look Inside
+The warning screen is rather entertaining too, with Luigi standing there apparently waiting for somebody to reconnect the controller. I suppose it's one way of making sure I notice the problem immediately, rather than wondering why my character has suddenly decided to ignore me.
+
+**Let's Have a Look Inside**
 
 I suspect a cracked solder joint, so out come the Nintendo security bits and we can have a look at the motherboard. Of course, my dedicated electronics workbench has become a storage area for random junk. Isn't that always the way?
 
@@ -22,9 +24,11 @@ This particular Nintendo 64 originally came from Hex1gon over at ASSEMbler Games
 
 Once the case is apart, it's time to start removing screws. There are quite a few of them, and naturally Nintendo has hidden some longer ones around the Expansion Pak area. Just when you think you've found them all, another one appears. Eventually the motherboard comes free and I can inspect the controller socket connections.
 
+I'm rather impressed by how compact the Nintendo 64 is once you get inside it. There's no enormous collection of separate boards to fight with, but there are enough screws and pieces of shielding to keep things interesting. It also runs without an internal fan, which is always rather nice for a console that's spent so many years in service.
+
 Unfortunately, I'm not seeing an obvious dry solder joint. Hmm, that would have made things considerably easier! Looks like I might need to try replacing the entire controller socket instead.
 
-### The Donor Nintendo 64
+**The Donor Nintendo 64**
 
 Luckily, I've also got a PAL Nintendo 64 available for spare parts. Or at least that was the plan. This machine was originally sold as faulty, but after installing a Jumper Pak it started working. How inconsiderate! Now I'm going to feel bad about stealing parts from it.
 
@@ -32,7 +36,9 @@ It's had a rather unfortunate encounter with spray paint at some point in its li
 
 Time to get the desoldering gun warmed up. I'm using my Hakko, although naturally I've managed to start with the wrong nozzle size. A little more fiddling and we're ready to have a go. Hopefully those solder joints will be a little more cooperative than the screws!
 
-### To Be Continued
+Even after switching to the larger nozzle, the connections weren't coming free as nicely as I'd hoped. There's a fair amount of metal around these controller ports, and I don't particularly want to damage a perfectly good motherboard by pulling too hard. This is turning into a rather bigger job than I'd expected.
+
+**To Be Continued**
 
 Replacing the port is proving a little less straightforward than I expected. The solder connections aren't particularly cooperative, and I don't want to damage the board by forcing anything. I knew I should've stuck with Sega. ;)
 

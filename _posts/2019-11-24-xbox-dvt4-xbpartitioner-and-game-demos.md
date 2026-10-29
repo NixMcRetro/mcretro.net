@@ -14,9 +14,17 @@ With the 120 GB SSD installed and UnleashX running, I thought it was about time 
 
 After a little experimenting, I managed to create and format an F partition. Back in UnleashX, there it was! Excellent. Unfortunately, getting the official XDK Launcher to see everything on that partition was another matter entirely.
 
+The partitioning software had a few unusual button combinations, which took me a little while to work out. Once I'd finally committed the changes and formatted the partition, UnleashX was reporting the F drive. The additional space was now available, which was a lovely result after all the work installing the SSD.
+
 There followed a rather entertaining session of copying files, restarting the Xbox and trying to work out exactly where the games were supposed to go. Xbox Neighborhood wasn't making things particularly easy either. FTP proved much more reliable for transferring the files.
 
+I also found a little configuration file that appeared to be intended to expose the F drive through the development launcher. Naturally, copying it into place and rebooting didn't immediately give me the result I wanted. I spent considerably more time moving files around than actually playing anything.
+
+At one point, while copying data locally on the Xbox, I was seeing transfer speeds around 13 MB/s. That's not bad for the old thing! Unfortunately, the FTP client didn't always want to cooperate when I tried moving the same directories directly, so I ended up using the console's file manager for some of the work.
+
 Eventually I had games running from the SSD, although not every launcher or shortcut behaved exactly as expected. In-game reset wasn't particularly cooperative either, so occasionally it was back to switching the console off and on again.
+
+A couple of games were running nicely, and I had a look at some Japanese and North American titles. The DVT4 was perfectly happy to provide a little entertainment, even if getting everything arranged in the development environment was more troublesome than I'd expected.
 
 I'd also made an image of the original hard drive under Ubuntu. My old notes aren't clear about which imaging tool I used. I mentioned [fatxfs](https://github.com/mborgerson/fatx), but that utility lets us mount and explore the FATX filesystem on a drive or an existing raw image.
 
@@ -26,11 +34,13 @@ GNU ddrescue can create a raw image or rescue readable sectors, and Ubuntu packa
 
 So there we have it. The DVT4 is running with its replacement SSD, development software and a selection of games. Not bad for an old Xbox development kit!
 
-### Related posts
+If there's one thing I've learnt from this exercise, it's that FTP is considerably more dependable than some of the other file-transfer arrangements I've been trying.
+
+**Related Posts**
 
 - [Xbox DVT4 Running UnleashX](/xbox-dvt4-running-unleashx/)
 
-### Sources
+**Sources**
 
 - [fatxfs - FATX FUSE filesystem driver](https://github.com/mborgerson/fatx/blob/master/fatxfs/README.md)
 - [GNU ddrescue 1.24 manual (October 2019 capture)](https://web.archive.org/web/20191022060414/http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html)

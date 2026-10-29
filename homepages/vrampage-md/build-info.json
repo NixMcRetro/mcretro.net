@@ -9,10 +9,10 @@
   "package_format": 1,
   "source_archive": {
     "path": "source/VRAMpage-MD-v0.5.1-corresponding-source.zip",
-    "sha256": "c64cbf97f48c801fe2b04fd40e7658948ab0cb859c24e1b0b08dc4141081da20",
-    "size": 1279636
+    "sha256": "47d93c3b5c97892bd8ffe8c278dca431d82acdf4779cec60b0c9b9111208e8bf",
+    "size": 1279638
   },
-  "source_commit": "90dfd163906c93b2a08105af33e6c88539a8570d",
+  "source_commit": "bc7369c943f1f7cda5167632077235b7630ad41b",
   "version": "0.5.1",
   "wasm_genplus_commit": "6090aff9e9b2f578cd28882bd4571d2e35b1d674"
 }

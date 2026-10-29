@@ -1,6 +1,25 @@
 #!/usr/bin/env bash
 # Pull-request verification of the immutable source-inclusive release ZIP.
 set -euo pipefail
+version="$(python3 -c 'import json; print(json.load(open("homepages/vrampage-md/build-info.json"))["application_version"])')"
+if [[ "$version" == 0.5.1 ]]; then
+  # The exact source ZIP now accompanies the runtime on the same origin.
+  python3 .github/tests/vrampage-package.py homepages/vrampage-md
+  # Publication precedes website integration: verify the mirror is already
+  # available and byte-identical, rather than shipping a future/404 source link.
+  expected_source_sha="$(python3 -c 'import json; print(json.load(open(".github/vrampage-release.json"))["source_archive_sha256"])')"
+  source_url="https://github.com/NixMcRetro/VRAMpage-MD/releases/download/v0.5.1/VRAMpage-MD-v0.5.1-corresponding-source.zip"
+  source_temp="$(mktemp -d)"
+  trap 'rm -rf "$source_temp"' EXIT
+  curl --fail --location --retry 3 --retry-delay 2 --connect-timeout 20 --max-time 120 \
+    --output "$source_temp/source.zip" "$source_url"
+  printf '%s  %s\n' "$expected_source_sha" "$source_temp/source.zip" | sha256sum --check
+  cmp "$source_temp/source.zip" homepages/vrampage-md/source/VRAMpage-MD-v0.5.1-corresponding-source.zip
+  unzip -tq "$source_temp/source.zip" >/dev/null
+  echo 'Verified public GitHub source mirror equals the complete same-origin source ZIP.'
+  exit 0
+fi
+# Retain the original v0.5.0 release-asset checks without changing its assets.
 release_url="https://github.com/NixMcRetro/VRAMpage-MD/releases/download/v0.5.0/VRAMpage-MD-v0.5.0-browser.zip"
 release_sha256="6024ad1701d1cb58dc5da16ce4ae51db4fd03de7e9e1a6e26b3e6aff27ef0aad"
 tempdir="$(mktemp -d)"

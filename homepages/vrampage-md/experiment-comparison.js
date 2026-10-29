@@ -16,7 +16,7 @@
       ||key==='logic'&&!!value&&typeof value==='object'&&!Array.isArray(value)&&
         (value.schemaVersion===1||typeof value.active==='boolean'||value.fault===null||!!value.fault&&typeof value.fault==='object')
       ||key==='logicFault'&&!!value&&typeof value==='object'&&!Array.isArray(value)&&typeof value.kind==='string'
-      ||['fmInputFault','psgInputFault'].includes(key)&&!!value&&typeof value==='object'&&!Array.isArray(value)&&typeof value.available==='boolean'
+      ||['fmInputFault','psgInputFault','z80RamFault','rgbEncoderFault'].includes(key)&&!!value&&typeof value==='object'&&!Array.isArray(value)&&typeof value.available==='boolean'
       ||key==='corePin'&&typeof value==='string'&&/^[a-f0-9]{40}$/.test(value)
       ||key==='modelVersion'&&typeof value==='string'&&value.length>0;
     if (!Object.keys(data).some(key=>recognizable(key,data[key])))
@@ -57,7 +57,7 @@
   const isInteger=(value,min=0,max=Number.MAX_SAFE_INTEGER)=>Number.isInteger(value)&&value>=min&&value<=max;
   const isPair=value=>value===null||Array.isArray(value)&&value.length===2&&value.every(line=>isInteger(line,0,31));
   const isVramPair=value=>value===null||Array.isArray(value)&&value.length===2&&value.every(line=>isInteger(line,0,7))&&value[0]!==value[1];
-  const isLineList=value=>Array.isArray(value)&&value.every(line=>typeof line==='string'&&/^(A(?:[1-9]|1[0-5])|D(?:[0-9]|1[0-5]))$/.test(line));
+  const isLineList=value=>Array.isArray(value)&&value.every(line=>typeof line==='string'&&/^(A(?:[1-9]|1[0-5])|D(?:[0-9]|1[0-5])|\/(?:LWR|UWR))$/.test(line));
   const isRecord=value=>!!value&&typeof value==='object'&&!Array.isArray(value);
   const isCount=value=>typeof value==='string'&&/^\d+$/.test(value)||isInteger(value);
   const isString=value=>typeof value==='string';
@@ -79,6 +79,7 @@
       identity(a,b,'Application Version',['build','applicationVersion'],v=>/^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/.test(v)),
       identity(a,b,'Model Version',['modelVersion']),
       identity(a,b,'RAM Model Version',['logic','modelVersion']),
+      identity(a,b,'RAM Reference Profile',['logic','referenceProfile']),
       identity(a,b,'ROM Title',['rom','name'])
     ];
     const field=(label,keys,availability,valid=()=>true)=> {
@@ -91,6 +92,15 @@
       if(!hasPath(a,keys)||!hasPath(b,keys)||!valid(av)||!valid(bv)) { rows.push({label,a:valid(av)?show(av):'Unknown',b:valid(bv)?show(bv):'Unknown',status:'unknown'});return; }
       rows.push({label,a:show(av),b:show(bv),status:equal(av,bv)?'match':'mismatch'});
     };
+    for (const [key,label,valid] of [
+      ['requestedRegion','Requested Region',v=>isInteger(v,0,4)],
+      ['activeRequestedRegion','Active Region Request',v=>isInteger(v,0,4)],
+      ['regionCode','Effective Region',v=>[0,64,128,192].includes(v)],
+      ['pal','PAL Timing',isBoolean],['masterClock','Master Clock',v=>typeof v==='number'&&Number.isFinite(v)&&v>1000000],
+      ['frameRate','Frame Rate',v=>typeof v==='number'&&Number.isFinite(v)&&v>=40&&v<=70],
+      ['linesPerFrame','Lines Per Frame',v=>v===262||v===313],
+      ['width','Video Width',v=>isInteger(v,1,640)],['height','Video Height',v=>isInteger(v,1,480)],
+      ['interlaced','Interlaced',isBoolean]]) field(label,['machine',key],['machine','available'],valid);
     const audio=(name,key)=>{
       for(const [label,fieldName] of [['Configured','configured'],['Effective','effective'],['Data Mask','dataMask'],['Bridge A','bridgeA'],['Bridge B','bridgeB']]) {
         const valid=fieldName==='configured'||fieldName==='effective'?isBoolean:
@@ -100,9 +110,11 @@
     };
     const ramA=ramFault(a),ramB=ramFault(b);
     for(const [label,get,valid] of [
-      ['Kind',v=>v?.kind,value=>typeof value==='string'&&['address','data','address-stuck-low','address-mask','line-pair'].includes(value)],
+      ['Kind',v=>v?.kind,value=>typeof value==='string'&&['address','data','address-stuck-low','data-stuck-low','address-mask','line-pair','write-inhibit'].includes(value)],
       ['Access',v=>v?.access,value=>typeof value==='string'&&['read','write','read + write','both'].includes(value)],
       ['Address Mask',v=>v?.addressMask,value=>isInteger(value,0,32767)],
+      ['Data Mask',v=>v?.dataMask,value=>isInteger(value,0,65535)],
+      ['Write Inhibit Mask',v=>v?.writeInhibitMask,value=>isInteger(value,0,3)],
       ['Lines / Pair',v=>v?.lines??v?.linesPair,value=>isLineList(value)||isPair(value)],
       ['Activation Frame',v=>v?.activationFrame,value=>isInteger(value)]
     ]) {
@@ -118,7 +130,23 @@
       ['Transaction Bridge A',['vramTransaction','bridgeA'],value=>isInteger(value,-1,7)],
       ['Transaction Bridge B',['vramTransaction','bridgeB'],value=>isInteger(value,-1,7)]
     ]) field(`VRAM ${label}`,keys,keys[0]==='vramTransaction'?['vramTransaction','available']:null,valid);
+    field('RAM Data Mask',['logic','dataMask'],['logic','dataMaskAvailable'],value=>isInteger(value,0,65535));
+    field('RAM Write Inhibit Mask',['logic','writeInhibitMask'],['logic','writeInhibitAvailable'],value=>isInteger(value,0,3));
     audio('FM','fmInputFault'); audio('PSG','psgInputFault');
+    for (const [label,key,valid] of [
+      ['Configured','configured',isBoolean],['Effective','effective',isBoolean],
+      ['Bridge A','bridgeA',value=>isInteger(value,-1,12)],['Bridge B','bridgeB',value=>isInteger(value,-1,12)],
+      ['Model Version','modelVersion',isString],['Activation Frame','activationFrame',isInteger],
+      ['Recorded Writes','ramWrites',isCount],['Changed Addresses','changedAddresses',isCount],
+      ['Z80 Writes','z80Writes',isCount],['68000 Writes','m68kWrites',isCount]
+    ]) field(`Z80 RAM ${label}`,['z80RamFault',key],['z80RamFault','available'],valid);
+    for (const [label,key,valid] of [
+      ['Configured','configured',isBoolean],['Effective','effective',isBoolean],
+      ['Cut Mask','cutMask',value=>isInteger(value,0,7)],
+      ['Pair','pair',value=>value===null||Array.isArray(value)&&value.length===2&&
+        value.every(channel=>isInteger(channel,0,2))&&value[0]!==value[1]],
+      ['Model Version','modelVersion',isString],['Reason','reason',isString]
+    ]) field(`RGB Encoder ${label}`,['rgbEncoderFault',key],['rgbEncoderFault','available'],valid);
     for(const [name,key] of [['FM','fmInputFault'],['PSG','psgInputFault']]) {
       for(const [label,fieldName] of [['Model Version','modelVersion'],['Changed Writes','changedWrites']])
         field(`${name} ${label}`,[key,fieldName],[key,'available'],fieldName==='changedWrites'?isCount:isString);

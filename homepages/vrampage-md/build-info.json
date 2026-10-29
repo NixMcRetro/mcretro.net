@@ -1,6 +1,18 @@
 {
   "application": "VRAMpage MD",
-  "application_version": "0.5.0",
-  "source_commit": "e9f366fb3985f11430d353c3b2589f076ff93128",
-  "package_format": 1
+  "application_version": "0.5.1",
+  "core_sha256": {
+    "genplus.js": "e8da1c28303fd3900f35c032ce01802c76d1d041dc8a0d6cd57bdc97ee3af4d0",
+    "genplus.wasm": "08975cbf4d7bb0bbb050b94580d53283115e998995fb8ca35e1e2c8307f2442d"
+  },
+  "emscripten_version": "4.0.23",
+  "package_format": 1,
+  "source_archive": {
+    "path": "source/VRAMpage-MD-v0.5.1-corresponding-source.zip",
+    "sha256": "c64cbf97f48c801fe2b04fd40e7658948ab0cb859c24e1b0b08dc4141081da20",
+    "size": 1279636
+  },
+  "source_commit": "90dfd163906c93b2a08105af33e6c88539a8570d",
+  "version": "0.5.1",
+  "wasm_genplus_commit": "6090aff9e9b2f578cd28882bd4571d2e35b1d674"
 }

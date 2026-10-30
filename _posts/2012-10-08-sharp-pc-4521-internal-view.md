@@ -8,39 +8,29 @@ categories: [ibm-pc, repairs, youtube]
 
 {% include youtube.html id="dv3meSTSrdc" %}
 
-Here's something a little different: a Sharp PC-4521 from the PC-4500 portable-computer family.
+Here's something a little different: a Sharp PC-4521 from the PC-4500 portable-computer family. This one isn't mine. I just managed to have a poke around inside it while the owner was absent!
 
-This one isn't mine. I just managed to have a poke around inside it while the owner was absent.
+The PC-4521 was the hard-drive-equipped version of the series. It uses a NEC V40 processor running at 7.16 MHz, has 640 KB of RAM, a 720 KB floppy drive and a 20 MB hard drive. The display is a backlit monochrome LCD with a rather unusual resolution of 640 x 200 pixels. What an aspect ratio!
 
-The PC-4521 was the hard-drive-equipped version of the series. It uses an 80188-compatible NEC V40 running at 7.16 MHz, has 640 KB of RAM, a 720 KB 3.5-inch floppy drive and a 20 MB hard drive. The display is a backlit monochrome LCD running at 640 x 200 pixels.
+Inside, there's a collection of boards and connectors packed around the keyboard and storage hardware. The hard drive is particularly interesting because it uses a proprietary connection to an upright controller board. The original drive in this machine was made by JVC, and unfortunately it wasn't working properly.
 
-That explains the wonderfully strange proportions of the screen.
+I managed to get a closer look at the drive's behaviour during the recording. The spindle would start, but the head mechanism appeared to become stuck around its locking arrangement. I experimented with preventing the mechanism from locking again, but the drive still wasn't behaving reliably.
 
-Sadly, this machine's hard drive was already dead and the floppy drive seemed to be on its way out as well.
-
-Still, the hardware inside is worth documenting, and that long, wide display is fantastic.
-
-What an aspect ratio!
-
-### Sharp PC-4521 exterior and startup
+The floppy drive was also rather temperamental, although it worked well enough for occasional testing. The machine uses a sealed lead-acid battery, and there's plenty of other interesting hardware hidden beneath that wonderfully large keyboard.
 
 {% include youtube.html id="sibrJ_1otvs" %}
 
-And here's a look at the outside of the machine, along with a demonstration of it actually running.
+The second video shows the Sharp mostly back together, with a look at the outside and a demonstration of it running. The first thing that catches my attention is the enormous backlit screen. It has separate brightness and contrast controls, and the unusual dimensions make ordinary software look rather stretched.
 
-The first thing I notice is that enormous backlit screen. There's also a low-battery warning, which isn't surprising given the age of the sealed lead-acid battery. The machine can run from an external power supply, although the adapter I was using didn't appear to be providing enough current.
+There's also a low-battery warning during startup, which isn't particularly surprising for a machine of this age. I was experimenting with an external power adapter, but it didn't appear to provide the current the computer needed. Anyone restoring one of these should check the original electrical specifications rather than copying my improvised test arrangement.
 
-The hard drive isn't having a particularly good day either. The machine reports a `1701-C` error during startup, after which I turn my attention to the floppy drive. That's a 720 KB unit, and it seems to work when it feels like it.
+The hard-drive problem shows up as a `1701-C` error, after which the machine attempts to continue with its floppy drive. There's even a dedicated setup key above Escape, and the configuration screen offers a slower operating mode for compatibility with older software.
 
-Around the case we've got brightness and contrast controls, a rather questionable-looking power button and a collection of connectors. There's also a large connector tucked away behind a metal plate, although I haven't established exactly what it does.
+Around the case are a collection of ports, including a large connector hidden behind a metal plate. I haven't worked out exactly what that's for, but it certainly adds to the interesting collection of unusual features on this machine.
 
-I even try running a little software to show off the display. The rather unusual resolution makes everything look stretched when running in a conventional two-colour display mode, but that's part of the appeal of this peculiar old portable.
+Despite the storage trouble, it's a lovely old portable computer. The screen, keyboard and internal construction are all worth a closer look. It's just a shame that the hard drive has decided not to cooperate!
 
-For anyone trying to bring one of these back to life, the original power specifications and correct connector polarity need to be checked against the manufacturer's documentation. The improvised power arrangements shown in an old recording shouldn't be treated as instructions for testing another machine.
+**Sources**
 
-Still, what a wonderful old computer. Shame about the storage!
-
-### Sources
-
-- [Sharp - PC-4521 Portable Personal Computer brochure](https://bitsavers.trailing-edge.com/pdf/sharp/brochures/SharpPC-4521PortablePC.pdf) - January 1988 manufacturer specifications for the processor speed, RAM, storage and backlit display.
-- [IT History Society - Sharp PC-4500](https://ithistory.org/hardware/sharp-pc-4500) - secondary historical reference for the PC-4500 family specifications, including CPU, memory, display and storage.
+- [Sharp - PC-4521 Portable Personal Computer brochure](https://bitsavers.trailing-edge.com/pdf/sharp/brochures/SharpPC-4521PortablePC.pdf) - manufacturer specifications for the processor, memory, storage and display.
+- [IT History Society - Sharp PC-4500](https://ithistory.org/hardware/sharp-pc-4500) - historical reference for the PC-4500 family.

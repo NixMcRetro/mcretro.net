@@ -28,13 +28,25 @@ And here's the Texas Instruments processor intended to take its place. The marki
 
 Part two follows the soldering itself. I cleaned the pads, added flux and tried positioning the new processor. Naturally, I discovered rather late in the process that pressing the tip of my flux pen was necessary to make the thing dispense properly. Apparently reading the instructions would have been a good idea!
 
+![](/assets/images/2012/img_0234.jpg)
+
 Drag soldering turned out to be quite effective once I got the hang of it, although several pins were troublesome. I ended up checking continuity around the package and cleaning up bridges and bent legs as best I could.
+
+![](/assets/images/2012/img_0236.jpg)
 
 Some of the finest drag soldering this side of the 'verse. Well, perhaps not, but I'd certainly learned quite a bit by this stage.
 
+![](/assets/images/2012/img_0235.jpg)
+
 With the new chip finally in place, it was time for the moment of truth. I connected the motherboard to a power supply and display, switched it on and waited. No video. Wonderful. Twenty-nine minutes of hope and anticipation, crushed in the last minute!
 
+![](/assets/images/2012/img_0239.jpg)
+
+![](/assets/images/2012/img_0238.jpg)
+
 Looking back, the TI486SXLC2-G family requires a 3.3 V core supply despite having 5 V-tolerant I/O. Proper support also depends on the surrounding chipset, BIOS and other signals, not simply whether the processor fits the footprint. The rework may have damaged the board as well, so I can't pin the failed boot on one specific cause.
+
+![](/assets/images/2012/img_0237.jpg)
 
 The experiment wasn't a complete waste. I learned a great deal about removing and soldering QFP packages, even if the Mega PC motherboard paid the tuition fee. That board was subsequently stripped for useful components, with plenty of photographs taken before I finished. The working 486SLC board will be staying in the Mega PC instead.
 

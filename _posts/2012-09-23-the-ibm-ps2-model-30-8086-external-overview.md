@@ -32,7 +32,15 @@ And here's Prince of Persia running with the Sound Blaster installed. I didn't h
 
 Finally, a quick look at Space Harrier. It's certainly playable in the sense that the game runs, although the frame rate gives me plenty of time to think about my next move. The real challenge turned out to be working out how to stop the game once I'd finished!
 
+![](/assets/images/2012/img_0271.jpg)
+
+![](/assets/images/2012/img_0270.jpg)
+
 There are plenty more photographs in the [photo gallery](/goodies/), and I'll be taking a closer look at the internals and possible upgrades in the related articles.
+
+![](/assets/images/2012/img_0269.jpg)
+
+![](/assets/images/2012/img_0268.jpg)
 
 **Related Posts**
 

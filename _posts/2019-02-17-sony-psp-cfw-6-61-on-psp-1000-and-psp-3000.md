@@ -12,6 +12,8 @@ I stumbled onto a PSP-1000 (Phat) and PSP-3000 (Brite) to tinker with. When the 
 
 Both machines are now running firmware 6.61 with Infinity and PRO-C2, and I thought I'd give them a quick demonstration. The PSP-3000 is surprisingly light, especially without a UMD in the drive. It's remarkable how much of the machine's size is taken up by that optical mechanism. I suppose we're far enough into the future now that these things are becoming retro. That's a rather frightening thought!
 
+![](/assets/images/2019/img_0631.jpg)
+
 I've been experimenting with Memory Stick Pro Duo adapters that let me use ordinary microSD cards. One machine has a 64 GB card, while the other has a smaller one. That's quite a step up from the little Memory Sticks these machines originally shipped with, and it makes playing around with games and homebrew much more convenient.
 
 There's a collection of PlayStation games and homebrew installed, including a Super Nintendo emulator and *Harvest Moon*. I also discovered that one of my *Spyro* games was appearing under a slightly unexpected name. Just another little mystery to investigate!

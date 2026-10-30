@@ -6,26 +6,31 @@ last_modified_at: 2026-10-18
 categories: [apple, hacks, repairs]
 ---
 
-Here we have a video of me bringing a beautiful 17-inch MacBook Pro back to life with a heat gun. It did revive this particular machine. That is the firsthand result, and it should not be confused with a proper repair procedure.
 
 {% include youtube.html id="iP4HwYD9LaQ" %}
 
-These MacBook Pro models were among the machines Apple identified as potentially affected by failures involving the NVIDIA GeForce 8600M GT. Apple's notice directed affected owners to Apple or an authorised service provider for evaluation and repair.
+Here we have a beautiful 17-inch MacBook Pro from the mid-2007 to early-2008 era, and unfortunately it has developed a rather serious problem. The machine powers on, the optical drive resets and the front indicator lights up, but there is no display or startup chime. The caps lock key doesn't respond either, which suggests the machine isn't getting very far through startup.
 
-Back when I made this video, I wrote that the heat treatment might keep the machine running for somewhere between three and twelve months, and suggested that adding flux could make the result last longer. I do not have evidence for a predictable lifespan like that. Adding flux also does not turn uncontrolled heat-gun treatment into proper BGA rework.
+I tried removing the RAM to see whether the board would respond differently. Normally I'd expect some indication that the memory was missing, but there was still no useful response. With the RAM itself assumed to be functional, I suspected the problem was somewhere on the logic board.
 
-A handheld heat gun provides broad, poorly controlled heating and can damage nearby components, warp the board or create additional faults.
+These MacBook Pro models were among those Apple identified as potentially affected by failures involving the NVIDIA GeForce 8600M GT. Apple's service notice recommended having affected machines evaluated and repaired through Apple or an authorised service provider. Mine was already in a rather sorry state, complete with missing screws and a memory cover being held on with tape, so I decided to experiment.
 
-For this attempt, I didn't use the suggested foil shielding. I couldn't be bothered, and the machine still came back to life.
+The tool for this particular experiment was my Bosch PHG 630 DCE heat gun. I removed the logic board, cleared away the thermal paste and applied broad heat around the main chips before allowing everything to cool. I didn't bother with the foil shielding I'd previously suggested using, although that was another risk in an already rather uncontrolled experiment.
 
-**The heat treatment temporarily revived this particular failed MacBook Pro.**
+A handheld heat gun isn't a proper BGA rework tool. It doesn't provide the controlled heating, board support or temperature profile needed for a reliable repair, and there's plenty of opportunity to damage nearby components or the board itself. What I wanted to know was whether this particular machine would show any signs of life afterwards.
 
-I had also tried the same approach on a PC video card, and that came back to life too. In the original write-up, I was planning to try it on a PlayStation 3 and Xbox 360 in the coming months, with flux and possibly foil shielding.
+Once the logic board was back in the case, the first test was promising. Without RAM installed, the MacBook began responding differently from before. After reinstalling the memory and reconnecting everything, I finally got video output!
 
-That remains part of the historical experiment. It is not a recommendation to repair those machines this way.
+There wasn't a hard drive in the machine, so I used an optical disc to boot into Mac OS X. It took a fair while, but eventually the graphical interface appeared and there was no obvious video corruption. I also checked System Profiler and found the graphics connection reporting the expected PCI Express link width for this model.
 
-Still, temporarily seeing this MacBook Pro come back to life was rather satisfying.
+That's considerably better than a machine that wouldn't even complete its initial startup. I didn't have a spare hard drive available for extended testing, though, so I couldn't say how reliably it would behave in ordinary use.
 
-### Sources
+Back when I made the video, I suggested that a heat-gun treatment might last somewhere between three and twelve months, perhaps longer with flux. I don't have evidence for a predictable lifespan like that, and adding flux doesn't turn uncontrolled heating into a proper repair. The result here is simply that the heat treatment temporarily revived this particular MacBook Pro.
 
-- [Apple Support - MacBook Pro: Distorted video or no video issues (archived)](https://web.archive.org/web/20100105062655/http://support.apple.com/kb/TS2377) - archived Apple support notice for affected GeForce 8600M GT MacBook Pro systems and Apple's service response.
+I'd previously tried a similar experiment with a PC video card and was considering trying it on a PlayStation 3 and Xbox 360. Those ideas were part of my experiments at the time, not recommendations to repair other machines with a heat gun.
+
+Still, seeing this MacBook Pro boot again after arriving in such a poor state was rather satisfying! :)
+
+**Sources**
+
+- [Apple Support - MacBook Pro: Distorted Video or No Video Issues (Archived)](https://web.archive.org/web/20100105062655/http://support.apple.com/kb/TS2377) - archived Apple support notice covering affected GeForce 8600M GT MacBook Pro systems and Apple's service response.

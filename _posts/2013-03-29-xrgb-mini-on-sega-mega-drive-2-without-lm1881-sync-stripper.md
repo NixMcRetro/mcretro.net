@@ -10,13 +10,21 @@ categories: [hacks, sega]
 
 Interesting result from the Mega Drive 2 and Framemeister experiments. With this particular cable setup, everything works beautifully once the LM1881N sync stripper is removed. Leave the LM1881 in place and the XRGB-mini really does not seem happy.
 
-That does **not** mean the Framemeister universally dislikes sync strippers. The Mega Drive 2 can provide a native composite-sync signal with a correctly wired cable. An LM1881 is normally useful when you need to separate sync from composite video, so adding another sync-separation stage where one is not required can simply make the signal path more complicated. Different consoles, cable wiring and sync sources can behave differently.
+I had been experimenting with a rather unconventional RGB cable and was curious whether the sync-separation circuit was actually necessary. As it turns out, I managed to get a stable picture without it. That's certainly a better result than the blank screen I'd been staring at earlier!
 
-The useful result here is much narrower: **this Mega Drive 2, with this cable and this Framemeister setup, works better without the LM1881.**
+The cable wasn't a standard factory arrangement, and some of the wiring colours didn't mean what you might expect. In this case, the sync connection was running through a wire I'd normally have associated with something else.
 
-This particular cable came from [Retro Gaming Cables](https://www.retrogamingcables.co.uk/). There will be more to come on this. I still have SCART cables lying around in pieces everywhere!
+After sorting out the connection, the Framemeister detected the Mega Drive's RGB output and displayed it properly. I still needed to adjust the XRGB-mini's sync-level setting, but at least I had something to adjust!
 
-### Related posts
+To demonstrate how important that connection was, I disconnected the sync wire while the machine was running. Immediately the picture disappeared. The Framemeister briefly showed a blue screen before deciding there was no usable input. Connect the wire again, and the picture came back. Very scientific. And rather satisfying.
+
+That does **not** mean the Framemeister universally dislikes sync strippers. The Mega Drive 2 can provide a native composite-sync signal with a correctly wired cable. An LM1881 is normally useful when you need to separate sync from composite video, so adding another sync-separation stage where one is not required can simply make the signal path more complicated.
+
+Different consoles, cable wiring, and sync sources can behave differently. I certainly wouldn't assume that a random cable is wired correctly simply because somebody chose a nice colour for a particular conductor.
+
+The useful result here is much narrower: **this Mega Drive 2, with this cable and this Framemeister setup, works better without the LM1881.** This particular cable came from [Retro Gaming Cables](https://www.retrogamingcables.co.uk/). There will be more to come on this. I still have SCART cables lying around in pieces everywhere!
+
+### Related Posts
 
 - [Micomsoft XRGB-mini Framemeister Arrival](/micomsoft-xrgb-mini-framemeister-arrival/)
 - [Converting XRGB-mini Adapter to EuroSCART](/converting-xrgb-mini-adapter-to-euroscart/)

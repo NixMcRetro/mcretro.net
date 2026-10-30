@@ -8,11 +8,7 @@ categories: [apple, youtube]
 
 {% include youtube.html id="_FUteJfR-zo" %}
 
-Here's an overview of where the LC 475 project has ended up after the last few weeks of modifications. This started as a fairly ordinary 25 MHz 68LC040 pizza-box Macintosh.
-
-It is not particularly ordinary anymore.
-
-I've been working on this machine for a few days now, and although I haven't achieved absolutely everything I wanted, it's looking pretty good inside. There are a few crooked capacitors here and there, which I suppose gives the motherboard a little personality!
+Here's an overview of where the LC 475 project has ended up after the last few weeks of modifications. This started as a fairly ordinary 25 MHz 68LC040 pizza-box Macintosh, but I've been working on it long enough that there isn't much ordinary about it anymore. There are still a few crooked capacitors here and there, which I suppose gives the motherboard a little personality!
 
 By this point I've:
 
@@ -21,27 +17,19 @@ By this point I've:
 - Expanded and experimented with the VRAM
 - Installed 36 MB of system RAM
 - Replaced the mechanical SCSI hard drive with solid-state storage through the PCD-60B
-- Added PDS Ethernet
+- Added PDS ethernet
 - Reduced the fan speed and noise
 - Replaced the logic-board capacitors with tantalums
 
 The PCD-60B card reader is particularly handy. I've got a 2 GB CompactFlash card installed, which is acting as the machine's hard drive. I even trimmed one of the connector tabs so the power connector would sit a little more neatly. That's one less mechanical drive to worry about!
 
-The 36 MB RAM consists of 32 MB added memory and the 4 MB already onboard. I've also got 1 MB VRAM fitted, using two 512 KB chips, so the video side has received some attention too.
+The 36 MB of system RAM consists of 32 MB added memory and the 4 MB already onboard. I've also got 1 MB of VRAM fitted using two 512 KB chips, so the video side has received some attention too. The PDS ethernet card is showing up on my network at 10 Mbps, which is more than enough for this little machine. There's something satisfying about seeing an old Macintosh appear on a modern router.
 
-The PDS ethernet card is showing up on my network at 10 Mbps. Not exactly breathtaking by today's standards, but more than enough for this little machine. There's something particularly satisfying about seeing an old Macintosh appear on a modern router.
+I'm still running the original 25 MHz 68LC040 at 33 MHz. It runs a little warmer, so I've fitted a heatsink to help keep things under control. I've also slowed the fan down with a resistor in its power wiring, giving me a faster processor and a quieter machine. Not bad for a Macintosh I originally bought just to play around with!
 
-As for the overclock, I'm still running the original 25 MHz 68LC040 at 33 MHz. It runs a little warmer, so I've fitted a heatsink to help keep things under control. I've also slowed the fan down with a resistor in its power wiring. More speed from the processor and less noise from the fan. A reasonably good trade!
+There are still a few loose ends, particularly the questionable full 68040 replacement, but this is becoming a very usable retro Mac. One day I'll give it a proper software demonstration beyond the odd game of Maniac Mansion. For now I just need to load it full of games and we'll be away. Go team AppleTalk!
 
-Not bad for the little Macintosh I originally bought just to play around with.
-
-There are still a few loose ends, particularly the questionable full 68040 replacement, but as a usable retro Mac this thing is coming together very nicely. One day I'll give it a proper software demonstration beyond the odd game of Maniac Mansion.
-
-Now I just need to load it full of games and we'll be away.
-
-Go team AppleTalk!
-
-### Related Posts
+**Related Posts**
 
 - [Apple Macintosh LC 475: Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33-mhz/)
 - [Apple Macintosh LC 475: RAM Utilisation and 32-Bit Addressing](/apple-macintosh-lc-475-ram-utilisation-and-32-bit-addressing/)

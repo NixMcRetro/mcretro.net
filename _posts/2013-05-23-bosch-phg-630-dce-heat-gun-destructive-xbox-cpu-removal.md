@@ -6,26 +6,31 @@ last_modified_at: 2026-10-18
 categories: [hacks, microsoft, repairs]
 ---
 
-One, two, three... Lift!
 
 {% include youtube.html id="-7eQiuuvqsY" %}
 
-Up comes the Xbox CPU. It certainly shows that the heat gun outputs heat!
+I've picked up a few new tools for the workbench, including a decent pair of bent needle-nose pliers and some wire cutters. The pliers are particularly nice, even better than the pair I've been using at work. The most exciting purchase, though, is a Bosch PHG 630 DCE heat gun, which cost me around $100 Australian from Bunnings.
 
-This is absolutely **not** a demonstration of how to perform a proper BGA rework.
+It's quite a substantial tool, with a long power cable, three fan speeds and adjustable temperature control. There's even a display on the back so I can see what the gun is doing. Much nicer than the generic handheld heat gun I've been using previously.
 
-The motherboard was already dead and I only kept it as a donor because I wanted components from it, including RAM for a future 128 MB Xbox upgrade for playing debug games. The Bosch heat gun simply provides enough broad hot air to get the solder underneath the BGA package hot enough that I can remove the processor destructively.
+Naturally I had to find something to test it on. What better candidate than the dead Xbox motherboard sent to me by Hex1gon? This board was already beyond repair as far as I was concerned, but I wanted to keep it for donor components, including the RAM for a possible 128 MB Xbox upgrade in the future.
 
-A proper BGA removal and replacement process uses controlled heating, board support, appropriate temperature profiling and equipment designed for the job. Blasting a motherboard with a handheld heat gun can overheat nearby components, damage the PCB, lift pads or warp the board. None of that mattered very much to this particular donor.
+The idea was to see whether I could remove the CPU and have a look underneath the package. I turned the heat gun up and started applying hot air, with a small jeweller's screwdriver ready to lift the chip once the solder softened. The gun also appeared to reduce its output when I moved it too close to the board, which was an interesting feature to watch.
 
-What it **does** give us is a nice look underneath the Xbox CPU.
+One, two, three... Lift!
 
-BGA stands for ball grid array. Instead of visible leads running around the edge of the package, the electrical connections are arranged as a grid of solder balls underneath it.
+Up came the Xbox CPU! It certainly showed that the Bosch could produce plenty of heat, although the result wasn't particularly gentle. Some of the solder balls remained attached, while others tore away with parts of the connection underneath. The motherboard was already dead, so preserving those connections wasn't the aim of this experiment.
 
-Once the CPU is off the board, that grid becomes rather impressive. Complex little thing, isn't it?
+BGA stands for ball grid array. Instead of having visible leads along the sides of the chip, the connections are arranged as solder balls underneath the package. Once the CPU was removed, the whole grid was exposed, making it much easier to see how the processor was connected to the board.
 
-### Sources
+The temperature displayed on the heat gun was the gun's setting and feedback, not a measurement of the actual solder-joint temperature. This was a destructive demonstration on a scrap board, not a proper BGA rework procedure. Reliable removal and replacement requires controlled heating, support for the PCB and equipment designed for that job.
 
-- [Bosch - PHG 500-2 / PHG 600-3 / PHG 630 DCE original instructions](https://s.productreview.com.au/products/manuals/76006_565e3904f3136.pdf) - manufacturer manual in a third-party PDF mirror; English section on printed pages 12-17.
-- [Texas Instruments - 54-BGA Package](https://www.ti.com/lit/pdf/szza040) - generic BGA handling and controlled rework guidance, section 5.1 on printed page 14.
-- [Texas Instruments - MicroStar BGA Packaging Reference Guide](https://www.ti.com/lit/pdf/szza005) - generic BGA assembly guidance, including board support on printed page 18.
+I also talked about how solder joints can be affected by repeated heating and cooling. That can be relevant to some failures, although seeing a BGA package removed like this doesn't establish the cause of the Xbox 360's Red Ring of Death or the PlayStation 3's Yellow Light of Death. There are several possible failure mechanisms involved in those machines.
+
+For the moment, the dead Xbox motherboard can go back into the donor pile. I still want to recover some of the RAM and see whether I can put it to good use in another console. The Bosch heat gun seems like a useful workshop addition, even if this particular demonstration was rather rough on the poor old CPU.
+
+**Sources**
+
+- [Bosch - PHG 500-2 / PHG 600-3 / PHG 630 DCE Original Instructions](https://s.productreview.com.au/products/manuals/76006_565e3904f3136.pdf) - manufacturer instructions, English section on printed pages 12-17.
+- [Texas Instruments - 54-BGA Package](https://www.ti.com/lit/pdf/szza040) - generic BGA handling and controlled rework guidance.
+- [Texas Instruments - MicroStar BGA Packaging Reference Guide](https://www.ti.com/lit/pdf/szza005) - generic BGA assembly and board-support guidance.

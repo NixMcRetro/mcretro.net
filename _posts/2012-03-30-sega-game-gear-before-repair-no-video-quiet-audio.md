@@ -8,14 +8,16 @@ categories: [repairs, sega]
 
 {% include youtube.html id="spavBRX2bsU" %}
 
-Here's the little Game Gear before repair. As you can see above, it has very quiet sound and no usable video, although the inside of the unit is in reasonably good condition. Failing electrolytic capacitors are a common cause of low audio and display problems in ageing Game Gears, so replacing the capacitors is the obvious next diagnostic step. I'll replace them and retest everything. Hopefully the next video will contain a little more video.
+Here's my Sega Game Gear before repair. It's got a couple of problems: the sound is extremely quiet even with the volume turned right up, and there's a complete lack of usable video. The machine itself is in reasonably good condition inside, so I'm hoping it's something I can bring back to life.
 
-Stay tuned...
+Failing electrolytic capacitors are a common problem with these old Game Gears, and they can affect both the audio and display circuits. I'll start by replacing the capacitors and see what difference that makes before deciding whether anything else needs attention.
 
-### Related posts
+Hopefully the next recording will feature a Game Gear that actually has a picture to go with its sound!
+
+**Related Posts**
 
 - [Game Gear Capacitor, Backlight Repair and LED Mod](/game-gear-capacitor-backlight-repair-and-led-mod/)
 
-### Sources
+**Sources**
 
-- [iFixit - Sega Game Gear Capacitor Replacement](https://www.ifixit.com/Guide/Sega+Game+Gear+Capacitor+Replacement/113655) - documents leaking and failing capacitors as a common cause of low or missing audio and dim or failed display symptoms.
+- [iFixit - Sega Game Gear Capacitor Replacement](https://www.ifixit.com/Guide/Sega+Game+Gear+Capacitor+Replacement/113655) - covers common capacitor-related audio and display problems.

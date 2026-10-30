@@ -8,22 +8,24 @@ categories: [hacks, repairs, sega]
 
 {% include youtube.html id="EbIFteeC-GQ" %}
 
-One of my Game Gears had bad capacitors, so I replaced them. Then I discovered that the original fluorescent backlight tube was another part of the problem, so I decided to try the LED backlight mod. Then I found yet another problem: the DC-in socket was loose. At that point I stripped the clean battery contacts from it and moved them into my other functional Game Gear.
+One of my Game Gears had bad capacitors, so I replaced them. Then I discovered that the original fluorescent backlight was another part of the problem, which gave me a good excuse to try an LED conversion. Unfortunately, the DC-in socket was also loose. Apparently this Game Gear wasn't quite finished finding things to complain about!
 
-From two Game Gears, one was salvaged. I donated the other one to my boss, who might do something with it, or he might just let it rot under a pile of old Macs. Ha! I hope he tries to save it. Promises of tantalum capacitors instead of radial electrolytics just seem so far away.
+I've been following a period modification guide, removing some of the original backlight circuitry and preparing to fit a pair of white LEDs. These are rated at around 45,000 mcd, which is rather bright. I even ground down the rounded tops to help spread the light, using some concrete render because I didn't have a convenient piece of concrete nearby.
 
-Anyway, the LED mod itself was a success. I used two white LEDs rated at about 45,000 mcd with a 62-ohm resistor. I think I might have calculated that wrong, since I was using one resistor for two LEDs. Oh well!
+I also experimented with heat-shrink material as a diffuser. The idea was to spread the light from the LEDs more evenly across the screen, rather than ending up with two obvious bright spots. I thought the thicker material might work better than a drinking straw, but there was only one way to find out.
 
-That 62-ohm value describes this particular experiment, not a general Game Gear recommendation. The resistor required depends on the supply voltage, LED forward voltage, desired current and how the LEDs are wired. The period guide I was working from used different LEDs and a different resistor value, so recalculate rather than blindly copying mine.
+For this experiment I used a 62-ohm resistor with the two LEDs. Looking back, I'm not entirely convinced I calculated that correctly, particularly with one resistor shared between them. That value isn't a general recommendation for this modification, since the correct resistor arrangement depends on the supply voltage, LED characteristics and wiring.
 
-Proof of concept success! Be warned though: as much battery life as you may gain, you'll end up with a wonky-looking backlight unless you can get the diffusion right. Even using a diffuser from a broken LCD panel did not spread the light evenly enough.
+The backlight itself worked, but the light wasn't distributed as evenly as I'd hoped. Even trying a diffuser from a broken LCD panel didn't completely solve the problem. You might gain some battery life by replacing the fluorescent tube, but that isn't much consolation if the screen ends up looking blotchy!
 
-You can also see my terrible capacitor work above. Observe and do not copy this part. Polarised electrolytic capacitors have to be installed with the correct polarity. I managed to put some of mine in facing the wrong direction compared with the markings on the Game Gear motherboard. My bad!
+The capacitor work wasn't especially attractive either. Some of the replacement capacitors were awkwardly positioned and interfered with the case, and I'd installed a few with the polarity reversed relative to the motherboard markings. Definitely not the part of this experiment to copy.
 
-### Related posts
+In the end, I salvaged enough parts from two Game Gears to get one usable machine. I moved the clean battery contacts into the better unit and donated the other one to my boss. Perhaps he'll restore it, or perhaps it'll disappear under a mountain of old Macs. I hope he gives it a go!
+
+**Related Posts**
 
 - [Game Gear Capacitor, Backlight Repair and LED Mod](/game-gear-capacitor-backlight-repair-and-led-mod/)
 
-### Sources
+**Sources**
 
-- [Gamefrog - Game Gear LED Backlight Mod](https://xantufrog-games.blogspot.com/2009/05/game-gear-led-backlight-mod.html) - period LED conversion guide documenting the original fluorescent tube, inverter circuitry, directional LED hot spots and resistor selection.
+- [Gamefrog - Game Gear LED Backlight Mod](https://xantufrog-games.blogspot.com/2009/05/game-gear-led-backlight-mod.html) - period guide covering the original fluorescent backlight, LED conversion and diffusion problems.

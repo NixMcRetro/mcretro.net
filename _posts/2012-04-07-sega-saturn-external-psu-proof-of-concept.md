@@ -8,19 +8,27 @@ categories: [hacks, repairs, sega]
 
 {% include youtube.html id="TkwPwoOMudo" %}
 
-Success! It sure does taste sweet. Finally a proof of concept showing that this early Saturn PSU arrangement can be powered from an external DC supply feeding suitable DC-DC converters. This is very good news as it paves the way for me to spend some cash and invest in some proper DC-DC converters.
+Success! It sure does taste sweet. After the trouble I've been having with ageing Sega Saturn power supplies, I've managed to get an early Saturn running without its original internal PSU. This is only a rather messy proof of concept, but it's good enough to show that an external DC-powered arrangement is possible.
 
-For this early Saturn revision, a regulated 12V brick with enough power capacity would provide useful headroom for DC-DC converters producing the required 9V, 5V and 3.3V rails. The source and converters would need to be sized for the actual rail currents and conversion losses. If one of the required rails is missing, the console may show no signs of life or fail to operate correctly.
+At the moment I've got two external supplies and a collection of temporary wiring feeding the Saturn's required rails. The original arrangement needs 9 V, 5 V, and 3.3 V, although the equipment I'm experimenting with isn't exactly ideal. One supply is a cheap iPod-style adapter with a rather broad output range, and the nominal 3.3 V connection is measuring closer to 4.4 V. That's considerably higher than I'd like!
+
+The 5 V source also has less current capacity than the original supply arrangement calls for. I'm not going to pretend this collection of adapters is suitable for permanent use, but I wanted to establish whether the Saturn would respond before spending money on proper DC-DC converters.
+
+With everything connected, the console powers up and the CD mechanism responds to a disc. That's a very welcome result considering there's no original PSU inside the machine. I'll need better regulated supplies with adequate current capacity before thinking about a permanent replacement.
 
 {% include youtube.html id="KqML5KnUJqI" %}
 
-Now I can sleep at night not fearing that all my model 1 Saturns will die and never be resurrected. They all have the potential to live forever (or as long as their mainboards and CD decks choose to live for).
+Here's the follow-up test with the Saturn connected to a display. The machine boots, reaches its normal interface, and recognises an audio disc, which is considerably more encouraging than simply seeing the power light come on.
 
-### Related posts
+I'm still conscious that the temporary supplies aren't correctly rated for extended operation, but at least I know the idea is worth pursuing. My next step is to invest in proper converters and build something a little more respectable.
+
+Now I can sleep at night without worrying quite so much that all my Model 1 Saturns are destined to die when their original power supplies fail. Well, assuming the rest of the hardware chooses to cooperate!
+
+**Related Posts**
 
 - [Sega Saturn Model 1 Power Supply Issues](/sega-saturn-model-1-power-supply-issues/)
 - [Sega Saturn External PSU DC-DC Converter Test](/sega-saturn-external-psu-dc-dc-converter-test/)
 
-### Sources
+**Sources**
 
-- [Sega-16 Forums - Sega Saturn Revisions and Models Guide](https://www.sega-16forums.com/forum/general-discussion/tech-aid/24084-sega-saturn-revisions-and-models-guide/page4) - documents the Type A and Type B early Saturn PSU pinouts, including 3.3V, 5V and 9V rails, and the later Type C arrangement.
+- [Sega-16 Forums - Sega Saturn Revisions and Models Guide](https://www.sega-16forums.com/forum/general-discussion/tech-aid/24084-sega-saturn-revisions-and-models-guide/page4) - documents early Saturn PSU rail arrangements and revision differences.

@@ -8,54 +8,44 @@ categories: [repairs, sega]
 
 {% include youtube.html id="9nb4CfT9KuM" %}
 
-All those and more. We also have a new editor joining McRetro, focusing mainly on the Famicom. Please welcome Nick to the scene. He already has a Famicom on the way and is relatively new to the world of soldering and tinkering.
+Some great news, some even better news, and then some unreal news. I've got three Sega machines to play with: a TeraDrive Model 2, a Mega Drive 2, and a Genesis Nomad. Not all of them are working, naturally, but that just gives me something to investigate.
 
-He was also voted most silent person in the two top-ranking Counter LED videos:
+The TeraDrive is already looking particularly promising. In the video I'm playing Scorched Earth on the PC side and exploring the built-in Sega file manager. Silent Nick even discovered that I could launch the game directly through the menu without having to boot from the game disk. The red floppy-drive lights are rather spectacular too!
+
+We've also got a new editor joining McRetro, focusing mainly on the Nintendo Famicom. Please welcome SuperNick (Nick) to the scene. He's relatively new to soldering and tinkering, and he has a Famicom on the way.
+
+He was also voted the most silent person in our two top-ranking LED counter videos:
 
 {% include youtube.html id="dgUZsfS2seM" %}
 
 {% include youtube.html id="UgRTzCEkKGc" %}
 
-Some great news, some even better news and then some unreal news.
+### Sega Genesis Nomad
 
-As you can see above, we have three new arrivals: a Sega TeraDrive Model 2, a Sega Mega Drive 2 and a Sega Genesis Nomad.
+The Nomad is broken. It won't power on using either the AC adapter or the battery pack, and I haven't got a GameBit screwdriver handy to open it yet. That's reasonably good news, really, because it means I get to attempt a repair. Will victory be mine?
 
-#### Sega Genesis Nomad
+### Mega Drive 2
 
-The Nomad is broken. No power from the AC adaptor and no power from the battery pack. I don't have a GameBit to disassemble it at the moment. Good news, really, because it means I get to attempt to repair it. Will victory be mine?
+I'd actually bought a broken Mega Drive Model 1 to use with the Mega-CD and TeraDrive expansion connection, and to salvage parts for my more prized High Definition Model 1. The seller had other ideas and sent me a Model 2 instead.
 
-![](/assets/images/2012/img_0084.jpg)
+I contacted them about the mistake, and they've agreed to send the Model 1 while letting me keep or dispose of the Model 2. I think I'll keep it. Small victories!
 
-#### Mega Drive 2
+### TeraDrive Model 2
 
-Next up we have the Mega Drive 2. I had actually purchased a broken Mega Drive 1 to use with the Mega-CD/TeraDrive expansion connection and to scrounge together some parts for my more prized High Definition Mega Drive 1. The seller had other intentions and sent me a Model 2 instead. I contacted them and they are sending the Mega Drive 1 up to me, while telling me to keep or throw out the Mega Drive 2. Small victories!
+The TeraDrive has arrived from Japan in working condition, which is fantastic news. The PC side boots properly, and both floppy drives are functioning. I've already had Scorched Earth running, although my attempt to finish off the green tank in the video didn't go quite as planned!
 
-![](/assets/images/2012/img_0085.jpg)
+The Model 2 has two floppy drives and no internal hard drive, with Sega's original specifications listing 1 MB of RAM. The machine also has both 15 kHz and 31 kHz analogue RGB outputs, along with composite video.
 
-#### TeraDrive Model 2
+At the moment I haven't got a display suitable for the Mega Drive's 15 kHz RGB output, so that part will need to wait. The built-in Sega menu and file manager have already been interesting to explore, particularly the way the machine switches between its PC and Mega Drive functions.
 
-Last but certainly not least, the Sega TeraDrive Model 2 has been tested and the PC side works well. Both floppy drives are functional.
+I've also uploaded some of the original flyers and quick-reference material that accompanied the TeraDrive. They're in the [photo gallery](/goodies/) if you'd like a closer look at the machine and its paperwork. There'll be plenty more testing once I get the video side sorted out.
 
-![](/assets/images/2012/img_0080.jpg)
-
-![](/assets/images/2012/img_0083.jpg)
-
-![](/assets/images/2012/img_0081.jpg)
-
-![](/assets/images/2012/img_0082.jpg)
-
-Sega's own specifications describe the Model 2 as having 1 MB of RAM, two 3.5-inch floppy drives and no internal hard drive. The system provides both 15 kHz and 31 kHz analogue RGB output as well as composite video.
-
-At this point I had not yet tested the Mega Drive side with my available display setup, so that part remained unverified. I needed to sort out a suitable display or converter arrangement for the 15 kHz video side.
-
-I've also uploaded some of the flyers and the quick-reference guide that came with the TeraDrive. They're over in the [photo gallery](/goodies/).
-
-### Related posts
+**Related Posts**
 
 - [Humble Beginnings: Nintendo Famicom Incoming](/humble-beginnings-nintendo-famicom-incoming/)
 - [Sega TeraDrive Demo - Sonic 1 and Sega Menu](/sega-teradrive-demo-sonic-1-and-sega-menu/)
 - [Sega Genesis Nomad DC-in Jack Repair](/sega-genesis-nomad-dc-in-jack-repair/)
 
-### Sources
+**Sources**
 
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - Sega's historical hardware page documents the TeraDrive Model 2 specifications and video outputs.
+- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - official Model 2 specifications and supported video outputs.

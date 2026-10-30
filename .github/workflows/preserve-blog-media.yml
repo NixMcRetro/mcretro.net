@@ -1,0 +1,27 @@
+name: Preserve Blog Article Media
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, labeled, unlabeled]
+    paths:
+      - '_posts/**'
+      - 'scripts/check_post_media.py'
+      - '.github/workflows/preserve-blog-media.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  article-media-check:
+    name: Prevent Accidental Image and Video Removal
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify media from original articles remains
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          MEDIA_REMOVAL_APPROVED: ${{ contains(github.event.pull_request.labels.*.name, 'intentional-media-removal') }}
+        run: python3 scripts/check_post_media.py "$BASE_SHA" "$HEAD_SHA" "$MEDIA_REMOVAL_APPROVED"

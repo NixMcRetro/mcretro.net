@@ -30,7 +30,7 @@ Some of the things I could address by reverting my 117 hours of gameplay by roug
 
 But then again, some were broken from the very beginning, and others were out of reach in my playthrough because I hadn't saved my in-game cash from the start. Autojock trophy, I'm looking at you!
 
-![](/assets/images/2012/img_0138.jpg)
+![](/assets/images/2022/cyberpunk-2077-ps4-ce-34878-0-crash.jpg)
 
 How do I fix something that's bugged? I had to go back to the start, right back. Maybe I learnt from the best, CD Projekt RED when they broke the PS4 version of the game...
 

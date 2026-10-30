@@ -14,7 +14,7 @@ This GameCube was actually one I used to own years ago, probably around 2004. It
 
 I recognised it straight away thanks to the little label on the front, which was still crooked. I'd apparently tried to straighten it all those years ago and given up. Some things never change! The installation isn't actually that bad. I'll eventually do a video of the install as I have another GameCube to chip. It allows the drive firmware to boot compatible recordable media, including full-size and mini DVDs. Full-size discs need a replacement top shell because they physically do not fit through the stock lid. I'm just using mini DVDs.
 
-![](/assets/images/2018/img_0619.jpg)
+![](/assets/images/2018/02/gamecube-xeno-gc-install.jxl)
 
 DVD-R media can expose marginal drive behaviour, but a potentiometer adjustment is not automatically the first or only fix. Disc quality, a dirty lens and a worn optical assembly can all produce read errors. On this GameCube I adjusted the drive-board potentiometer while testing the media I actually had, and the drive became readable enough for those discs. There is no universal "magic" resistance value, and going lower than necessary is not a repair strategy I would recommend.
 

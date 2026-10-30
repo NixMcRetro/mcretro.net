@@ -65,7 +65,7 @@ Check every connection and check for shorts before powering the console. Use Wol
 
 ![](/assets/images/2013/img_0429.jpg)
 
-![](/assets/images/2013/img_0430.jpg)
+![](/assets/images/2013/10/supercic-f413a-installation.jxl)
 
 ![](/assets/images/2013/img_0431.jpg)
 

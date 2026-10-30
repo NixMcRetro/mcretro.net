@@ -57,7 +57,7 @@ All era-sensitive testing is completed on a [MiSTer FPGA](https://github.com/MiS
 
 Then there's the modems. I've got two Banksia Wave SP56 modems. Internally the boards are marked BT134 REV B and REV F. The REV F is cold as ice when running, REV B is toasty.
 
-![](/assets/images/2022/img_0828.jpg)
+![](/assets/images/2022/02/geocities-banksia-wave-sp56.jxl)
 
 We dial between two modems locally thanks to [this wonderful guide](https://dogemicrosystems.ca/wiki/Dial-up_pool). I'm using a Cisco SPA112 that I won in a raffle. This is coupled with an Asterisk server on a Raspberry Pi. All the bleeps and bloops without the cost of dialling outside my home.
 

@@ -14,11 +14,11 @@ Look, I know Cyberpunk 2077 1.31 wasn't perfect on the trusty old PlayStation 4 
 
 I mean I wasn't expecting to be able to get into this car - but here I am, inside the car.
 
-![](/assets/images/2012/img_0117.jpg)
+![](/assets/images/2022/cyberpunk-2077-ps4-car-explosion.jpg)
 
 Well, now the enemies can see me and I'm stuck in the car.
 
-![](/assets/images/2012/img_0118.jpg)
+![](/assets/images/2022/cyberpunk-2077-ps4-car-aftermath.jpg)
 
 At least the car radio works.
 
@@ -34,7 +34,7 @@ Then you boot it up again and it kind of works.
 
 Until it doesn't, again.
 
-![](/assets/images/2012/img_0136.jpg)
+![](/assets/images/2022/cyberpunk-2077-ps4-update-151-notification.jpg)
 
 But that pales in comparison to the latest 1.5 patch on PS4, appropriately named version 1.51. Did extra testing go in?
 

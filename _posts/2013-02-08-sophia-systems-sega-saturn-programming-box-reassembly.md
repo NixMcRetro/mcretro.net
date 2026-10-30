@@ -8,55 +8,41 @@ categories: [devkit, repairs, sega]
 
 {% include youtube.html id="f2DiGI8_7so" %}
 
-Above is a brief video of the Sophia going back together. Well, halfway. The mainboard is back in, but the RAM board is still out because I need to photograph it properly first.
+Here's a brief video of Sophia going back together. Well, halfway. The mainboard is back in, but the RAM board is still out because I need to photograph it properly first. Sophia has been sitting in pieces for months while I've been documenting the internals, cleaning the boards, and working out what makes this development system different from an ordinary Saturn.
 
-Sophia has been sitting in pieces for months. I've spent an extraordinary amount of time photographing the internals, cleaning the boards, and trying to document all the things that make this development system different from an ordinary Sega Saturn.
+The previous owner appears to have smoked around the machine. A lot. There was a thick layer of grime across the metalwork and fan grille, so I've been giving everything a proper clean. The grille is looking rather shiny now, although a few of the capacitors are another matter.
 
-The previous owner appears to have smoked around the machine. A lot. There was a thick layer of grime across the metalwork and fan grille, so I started giving everything a proper clean. The fan grille is looking rather shiny now! Unfortunately, the capacitors are another matter.
+Several surface-mount electrolytics look suspicious, particularly C69, which has residue around it. That's something I'll need to investigate before treating the machine as restored. The missing processor cards are still the bigger problem, though. My Sophia arrived without its removable SH-2 CPU boards, so I can't simply put it back together and expect it to boot.
 
-A few surface-mount electrolytics have started looking suspicious, particularly C69, which has residue around it. There are several other electrolytics scattered around the boards too. This is clearly something I'll need to investigate before treating the machine as fully restored.
-
-The missing processor cards remain the biggest problem. My Sophia arrived without its removable SH-2 CPU boards, so although I can reassemble the system and test the power, I can't simply expect it to run like a complete Saturn development kit.
-
-A normal dual-SH-2 configuration needs processor hardware in both positions, although development setups could also use specialised ICE or pod hardware instead of a second ordinary SH-2 board.
-
-At least once the case is closed I can reclaim some precious desk space. The Cross Products Mega-CD development unit is sitting there waiting for its turn, and I'd rather not have the remains of two enormous devkits scattered around the room simultaneously.
+A normal dual-SH-2 configuration needs processor hardware in both positions, although specialised ICE or pod hardware could be used in some development arrangements. For now, I can at least finish the photographs, reassemble the case, and reclaim some desk space. The Cross Products Mega-CD development unit is waiting for its turn, and I'd rather not have two enormous devkits scattered around the room simultaneously!
 
 {% include youtube.html id="3E4Gvue9Im8" %}
 
-And finally, after somewhere between six and eight months, I've finished photographing the internals of the Sophia Systems Sega Saturn Programming Box. Nearly 300 photos later, I can finally put the thing back together 
+And finally, after somewhere between six and eight months, I've finished photographing the internals of the Sophia Systems Sega Saturn Programming Box. Nearly 300 photographs later, I can finally get everything back inside.
 
-In the second video, the CPU-board area, RAM board, SH-1 board, and SCSI board are back inside. The CD drive is the last major part to reinstall after its own photographs are finished.
-
-A few of the board revisions are particularly interesting. One of the assemblies is marked revision 0.7 while the mainboard is revision 1.0, suggesting that at least some of the hardware layout was settled before the rest of the system reached that revision.
-
-The CD drive goes back in, the panels are fitted, and finally I can switch Sophia on without staring at its exposed internals.
-
-The fan spins, the lights respond, and the power switch has a wonderfully solid feel. It's a very satisfying thing to press, even if the machine is still missing the processor hardware needed for a proper boot.
-
-I also took a quick look around the ports and controls. There's serial, SCSI, AV output, controller connections, and the rather substantial expansion arrangements around the back.
-
-The unit runs from a 110 V supply, so I'm using an appropriate transformer here in Australia. One more enormous piece of equipment to go with the enormous devkit!
-
-So, as we retire Sophia to the bookshelf for the moment, we embark on a new journey with the Sega Mega-CD.
+The CPU-board area, RAM board, SH-1 board, and SCSI board are back in place. The CD drive is the last major part to reinstall after I've finished photographing it. A few board revisions caught my attention too, including an assembly marked revision 0.7 while the mainboard is revision 1.0.
 
 ![](/assets/images/2013/img_0363.jpg)
 
-If anyone comes across compatible SH-2 boards, please let me know. Lots more photos, nearly 300 of them, are in the [photo gallery](/goodies/).
+With the CD drive back inside and the panels fitted, I can finally switch Sophia on without staring at the exposed internals. The fan spins, the lights respond, and the power switch has a wonderfully solid feel. It's satisfying to press even if the machine still needs its processor hardware for a proper boot.
+
+The rear connections are worth another look, with serial, SCSI, AV output, controller ports, and some substantial expansion arrangements. Sophia also uses a 110 V supply, so I'm running it through an appropriate transformer here in Australia. One more enormous piece of equipment to accompany the enormous devkit!
 
 ![](/assets/images/2013/img_0363a.jpg)
 
+For the moment, Sophia is heading back to the bookshelf while I start investigating the Sega Mega-CD development hardware. If anyone comes across compatible SH-2 boards, please let me know. There are nearly 300 photographs of Sophia in the [photo gallery](/goodies/) for anyone who wants a closer look.
+
 ![](/assets/images/2013/img_0363b.jpg)
 
-Look at that! 171-6692B SH7095 SH-2 CPUs!
+Look at that! 171-6692B SH7095 SH-2 CPUs. Those are exactly the sort of processor cards I'm trying to track down.
 
-**Update:** Someone had some SH-2 CPUs and has since sold them to me! What a wonderful person! Stay tuned!
+**Update:** Someone has since sold me some SH-2 CPUs! What a wonderful person. That should give me something new to investigate when I return to Sophia.
 
-### Related Posts
+**Related Posts**
 
 - [Sega Saturn Sophia SH-2 CPU Cards: 171-6692B vs 171-6692D](/sega-saturn-sophia-sh-2-cpu-cards-171-6692b-vs-171-6692d/)
 - [Sophia Systems Sega Saturn Programming Box: Capacitor Restoration Complete](/sophia-systems-sega-saturn-programming-box-capacitor-restoration-complete/)
 
-### Sources
+**Sources**
 
 - [ASSEMbler Games Archive - Sophia Saturn setup](https://assemblergames-archive.com/archive/index.php/thread-18172.html) - surviving discussion of Sophia processor-board and development-hardware configurations.

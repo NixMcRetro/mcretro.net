@@ -5,9 +5,9 @@ date: 2024-09-13
 categories: [news]
 ---
 
-![Blåhaj plush shark on a desk with Pride flags and a laptop.](/assets/images/2024/09/choosing-to-live/2024-blahaj-pride-flags.jxl)
+**Content warning: Suicidal ideation and childhood trauma**
 
-*Content warning: Suicidal ideation and childhood trauma*
+![Blåhaj plush shark on a desk with Pride flags and a laptop.](/assets/images/2024/09/choosing-to-live/2024-blahaj-pride-flags.jxl)
 
 I've lived with suicidal ideation for as long as I can remember, largely owing to childhood trauma. Having a background in biomedical science probably didn't help matters. It gave me the knowledge to research things I really shouldn't have needed to. Even at my lowest, I had deliberately left a few pieces of the puzzle missing to prevent myself from making an impulsive decision.
 

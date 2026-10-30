@@ -10,7 +10,7 @@ last_modified_at: 2026-10-18
 
 For the past three years I've been vegan. A junk food vegan. Processed foods have always been my friend. They're cheap, full of energy and bad for you? Meat Loaf had it right when he said two out of three ain't bad.
 
-![](/assets/images/2013/img_0430.jpg)
+![](/assets/images/2023/img_0430.jpg)
 
 I've dusted off my old cognitive dissonance from storage. I guess once your eyes are opened to the ethical ["problems"](https://www.abc.net.au/news/2023-03-28/calls-for-investigation-after-pig-gassing-footage-aired/102155766) of a modern society it becomes difficult to close them again. Suffering does seem to be a keystone of our society.
 

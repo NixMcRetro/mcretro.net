@@ -42,7 +42,7 @@ The contacts were a bit corroded so I figured I'd fix it up.
 
 And fixed!
 
-![](/assets/images/2022/img_0828.jpg)
+![](/assets/images/2024/img_0828.jpg)
 
 I sourced a new third party power supply and it actually worked! Armed with a working controller, power adapter and functional console... there was only one thing left to do. Bend it to my will. It must play all the games! Mod time!
 

@@ -14,7 +14,7 @@ Over the course of the Australian 2022-2023 summer I did a little collecting. At
 
 Most of the shells were like this little one's: a Floury Baker (*Aleeta curvicosta*), named for the white markings. This particular cicada emerged during the day, which surprised me: published observations describe the usual emergence at dusk or at night. More on her another time.
 
-![](/assets/images/2013/img_0364.jpg)
+![](/assets/images/2023/img_0364.jpg)
 
 Finding an emerging cicada gives you a great opportunity to observe the beginning of its final stage of life and match the adult to its own shell. It's also one of the cicada's most vulnerable periods, so it's a moment to watch without disturbing it.
 

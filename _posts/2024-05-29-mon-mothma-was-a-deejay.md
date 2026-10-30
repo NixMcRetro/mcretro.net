@@ -56,7 +56,7 @@ Another one I found seemed to have problems with the two front pairs of legs. Po
 
 And look at that vector, Varroa destructor. By then the national response had already moved from eradication to management: in September 2023 the National Management Group concluded eradication was no longer technically feasible. I still called that the government giving up. The February 2024 transition plan was about slowing its spread and helping the honey-bee industry manage it. Australian native bees aren't affected by the mite itself.
 
-![](/assets/images/2018/img_0619.jpg)
+![](/assets/images/2024/img_0619.jpg)
 
 On the employment and study front, I do not miss trading my time for pay that has very little benefit. The balance sheet is broken. Too many cons, too few (if any) pros. The benefit is just not there anymore. My life goals have shifted and I can leave any time I want.
 

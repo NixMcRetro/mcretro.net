@@ -90,22 +90,22 @@ I eventually found the original driver disc and tried the Roadster in Windows 98
 The capacitors were replaced in this modem in September 2022. This is a record of this ST309 REV B board, not a universal AM5698 bill of materials. In particular, the C25 entry records the polarised replacement I fitted; it is not evidence that this was suitable for the original non-polar position. Check the circuit, capacitor type and polarity, capacitance, voltage and temperature ratings, ESR, ripple current and physical fit before choosing replacements. The parts listed below are manufacturer part numbers. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
 
 ```
-Location        Value        Voltage                Height        Width        Notes
-C50                        100uF        25V                        12mm        6mm                25YXF100MEFC6.3X11
-C67                        100uF        25V                        12mm        6mm                As above
-C25                        22uF        63V                        12mm        8mm                100YXM22MEFC8X11.5 - Non-polar but had silkscreen for polar, YXM Series, 100V upgrade.
-C30                        4.7uF        50V                        6mm                5mm                50YXF4R7MEFC5X11
+Location	Value	Voltage		Height	Width	Notes
+C50			100uF	25V			12mm	6mm		25YXF100MEFC6.3X11
+C67			100uF	25V			12mm	6mm		As above
+C25			22uF	63V			12mm	8mm		100YXM22MEFC8X11.5 - Non-polar but had silkscreen for polar, YXM Series, 100V upgrade.
+C30			4.7uF	50V			6mm		5mm		50YXF4R7MEFC5X11
 
-C65                        10uF        25V                        6mm                4mm                50YXF10MEFC5X11 - YXF Series, 50V upgrade.
-C64                        10uF        25V                        6mm                4mm                As above
-C63                        10uF        25V                        6mm                4mm                As above
-C62                        10uF        25V                        6mm                4mm                As above
-C15                        10uF        25V                        6mm                4mm                As above
-C16                        10uF        25V                        6mm                4mm                As above
-C17                        10uF        25V                        6mm                4mm                As above
+C65			10uF	25V			6mm		4mm		50YXF10MEFC5X11 - YXF Series, 50V upgrade.
+C64			10uF	25V			6mm		4mm		As above
+C63			10uF	25V			6mm		4mm		As above
+C62			10uF	25V			6mm		4mm		As above
+C15			10uF	25V			6mm		4mm		As above
+C16			10uF	25V			6mm		4mm		As above
+C17			10uF	25V			6mm		4mm		As above
 
-C18                        10uF        25V                        6mm                4mm                25ZLG10MEFC4X7 - Height restricted.
-C19                        10uF        25V                        6mm                4mm                As above
+C18			10uF	25V			6mm		4mm		25ZLG10MEFC4X7 - Height restricted.
+C19			10uF	25V			6mm		4mm		As above
 
 All electrolytic capacitors are radial.
 Lead spacing is 2-2.5mm on most.

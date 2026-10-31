@@ -715,3 +715,16 @@
   line-height: 1.4;
   margin-bottom: 0;
 }
+
+/* Compact the space around blog-post dividers on mobile only.
+   Leave monthly archives, individual posts and desktop spacing unchanged. */
+@media screen and (max-width: 750px) {
+  .blog-list:not(.archive-blog-list) .post-entry {
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .blog-list:not(.archive-blog-list) .read-more {
+    margin-bottom: 0;
+  }
+}

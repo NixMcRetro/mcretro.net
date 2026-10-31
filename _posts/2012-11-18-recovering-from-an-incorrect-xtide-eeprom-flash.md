@@ -8,17 +8,15 @@ categories: [ibm-pc, programming, youtube]
 
 {% include youtube.html id="UbKzfdFUt30" %}
 
-Well, I worked out how to flash the XTIDE card. I also worked out how to flash it incorrectly.
+Well, I worked out how to flash the XTIDE card. I also worked out how to flash it incorrectly. XTIDECFG can program the EEPROM while it is installed on supported XTIDE hardware, but after my first attempt the card stopped detecting the Disk on Module entirely.
 
-XTIDECFG can program the EEPROM while it is installed on supported XTIDE hardware, but after my first attempt the card stopped detecting the Disk on Module entirely.
-
-Conveniently, I had ordered two XTIDE cards. That gave me a known-good EEPROM to work from. I removed the chip from the working card, dumped it with the GQ-4X and used that image to recover the EEPROM from the card I had just murdered.
-
-Useful programmer already!
+Conveniently, I had ordered two XTIDE cards. That gave me a known-good EEPROM to work from. I removed the chip from the working card, dumped it with the GQ-4X and used that image to recover the EEPROM from the card I had just murdered. Useful programmer already!
 
 One configuration problem I found was the option-ROM address. This particular XTIDE card was configured for `C800h`, while I had been working from `D000h`. The correct address is not universal. The BIOS configuration has to match the ROM address selected by the actual XTIDE hardware. Once I corrected that, EEPROM programming behaved normally again.
 
-Now that I can recover from my own mistakes, it is time to get the XTIDE working properly in the TeraDrive.
+The TeraDrive had another trick waiting for me: its DOS-in-ROM menu kept getting in the way. I couldn't find a way to bypass that screen, but dropping to DOS let me get back to the XTIDE boot choices and start booting floppy disks again. Even the A: and B: drives appeared to be swapped, just to keep things entertaining.
+
+The Disk on Module (DOM) still wasn't being detected at the end of the recording, so the EEPROM recovery wasn't the end of the adventure. At least I could boot floppies and make another attempt without starting from a dead card.
 
 ### Related posts
 

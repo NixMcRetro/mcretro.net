@@ -10,7 +10,11 @@ categories: [hacks, repairs, sega]
 
 One day I'll use surface mounted electrolytic capacitors... one day, just not today! Close call on the most faulty (bad blocks!) of all the drives, but we were able to recover thanks to vias in the PCB. Not my best repair job ever...!
 
-The vias let me recover a damaged connection during the recap; that does not mean the bad blocks were repaired or caused by the capacitors.
+The solder pads on one drive were dull and corroded-looking, while those on another were still shiny. I could see signs of leaking capacitors, so this wasn't simply a case of changing parts for the fun of it. The camera also caught me briefly melting some anti-static bubble wrap with the soldering iron. Why did it smell like birthday candles?
+
+The close call came when a capacitor pad lifted off the PCB. Fortunately, there was a via beside it, so I ran a small red wire through, soldered it to the capacitor lead and checked continuity. Function over form, even if that little wire wasn't exactly a beautiful repair.
+
+The drive already had bad blocks, and the video doesn't turn it into a healthy drive. A later check showed no *new* bad sectors during that test, which was a relief, but the damaged connection and the drive's existing problems were two separate issues.
 
 ### Related posts
 

@@ -14,11 +14,13 @@ I had considered falling back onto a PSU replacement if replacing parts blindly 
 
 ![](/assets/images/2018/img_0608.jpg)
 
+The video shows the replacement supply actually powering a TeraDrive from 240 V, with a game running on the screen. I managed to fit the enclosed RD-65A in the old supply area, used crimped ring terminals and heat-shrink on the connections, and retained the front power switch. The original fan was still churning away rather noisily, but at least the machine was running again.
+
 Leading up to this, I had replaced a whole heap of components on the PSU. I finally received the last components I was waiting on, C3331 and M5237L, and threw them into the pile of bits to fit alongside B1274. The bad news: it didn't work. The useful part was that the behaviour changed enough to give me more to observe, but it still wasn't enough to identify a single root cause.
 
 ![](/assets/images/2018/img_0609.jpg)
 
-The non-functional unit, 0629, showed the readings below. At first I thought I had a no-power situation. Leaving it connected for around a minute eventually produced output, but the machine still would not operate. With no load, the 12V rail also wandered between roughly 10.3V and 10.9V every few seconds while the 5V rail stayed steadier. Those readings describe what this PSU was doing; they do not by themselves establish why it was doing it.
+The non-functional unit, 0629, showed the readings below. At first I thought I had a no-power situation. Leaving it connected for around a minute eventually produced output, but the machine still would not operate. With no load, the 12V rail also wandered between roughly 10.3V and 10.9V every few seconds while the 5V rail stayed steady. Those readings describe what this PSU was doing; they do not by themselves establish why it was doing it.
 
 | Rail and test condition | 1135 - working reference | 0629 - non-functional |
 | --- | --- | --- |
@@ -48,18 +50,17 @@ Q3    C3331
 ===========================================================================
 ```
 
-That was enough tinkering for me, especially with mains voltage, so I decided to terminate the Sega TeraDrive PSU repair and pass the units on to other folk. Not with a bang but a whimper. Mains-powered supplies can remain hazardous after disconnection, and any replacement needs proper mounting, insulation and earthing in its final installation.
+That was enough tinkering for me, especially with mains voltage, so I decided to stop trying to revive the original Sega TeraDrive PSU and pass the unrepaired units on to other folk. The replacement supply was working in the video, but it hadn't magically fixed the original PSU's faults. Not with a bang but a whimper. Mains-powered supplies can remain hazardous after disconnection, and any replacement needs proper mounting, insulation and earthing in its final installation.
 
 ![](/assets/images/2018/img_0607.jpg)
 
-For more information, check out [ASSEMBlergames](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/).
-
+For more information, check out [ASSEMbler Games](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/).
 
 ### Sources
 
 - [Mean Well - RD-65 Series: 65 W Dual Output Switching Power Supply datasheet](https://www.meanwell.com/Upload/PDF/RD-65/RD-65-SPEC.PDF)
 - [Mean Well - PT-65 Series: 65 W Triple Output Switching Power Supply datasheet](https://www.meanwell.com/Upload/PDF/PT-65/PT-65-SPEC.PDF)
-- [ASSEMblergames - Sega TeraDrive PSU Repair - Trinity! Help!](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/)
+- [ASSEMbler Games - Sega TeraDrive PSU Repair - Trinity! Help!](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/)
 
 ### Related posts
 

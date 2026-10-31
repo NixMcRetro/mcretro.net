@@ -24,11 +24,7 @@ Apart came the Nomad, and the problem became much clearer. The damaged DC-in jac
 
 For diagnosis, I traced the power input and temporarily connected one of the DC-DC step-down converters from my Saturn PSU project, adjusted to 9 V.
 
-Positive on red, ground on black and... bingo!
-
-Life!
-
-That was a diagnostic experiment rather than a general power-supply recommendation. Sega's own manual specifies compatible Genesis 2 and Game Gear power adaptors for normal use.
+Positive on red, ground on black and... bingo! Life! I had initially wired the DC-DC converter the wrong way around and got absolutely nowhere, although thankfully nothing appeared to have been damaged. In the recording, red runs to TP201 and black to TP202.
 
 ![](/assets/images/2012/img_0126.jpg)
 
@@ -46,11 +42,9 @@ On closer inspection I found that the DC-in jack from my Mega Drive 2 was compat
 
 I replaced the scratched front screen, cleaned the controller buttons, put everything back together and plonked in the nearest cartridge I could find. It works from the external battery pack as well.
 
-A great success!
-
-The video below shows the Nomad during the initial tests.
-
 {% include youtube.html id="X5LQolaXIL4" %}
+
+So overall... success! The video above shows the Nomad during the initial tests.
 
 ### Related posts
 

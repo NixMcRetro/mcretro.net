@@ -14,25 +14,23 @@ Sometimes it is good that things break. [CityEscaper](https://www.youtube.com/us
 
 ### Boot failure
 
-More importantly, pulling the machine out uncovered a storage problem. The SSD or Disk on Module setup was clearly involved in the boot failure. Returning the original 107 MB hard drive restored normal booting immediately. That told me the Mega PC itself was still capable of booting, but it did **not** isolate whether the problem was the DOM hardware, partitioning, BIOS geometry, boot configuration or some other compatibility issue.
+More importantly, pulling the machine out uncovered a storage problem. The hard-drive LED kept blinking while the display came and went, sometimes leaving me with no video, a frozen keyboard or even garbled characters in the BIOS. I briefly wondered about the real-time clock battery, but removing the Disk on Module made the machine behave again even before I put the old hard drive back in.
+
+The SSD or Disk on Module (DOM) setup was clearly involved in the boot failure. Returning the original 107 MB hard drive restored normal booting immediately. That told me the Mega PC itself was still capable of booting, but it did **not** isolate whether the problem was the DOM hardware, partitioning, BIOS geometry, boot configuration or some other compatibility issue.
 
 So we wind the clock back and join 1992 with a 107 MB hard drive.
 
-I've installed MS-DOS 6.22 alongside Windows for Workgroups 3.11 with a touch of Calmira.
+I've installed MS-DOS 6.22 alongside Windows for Workgroups 3.11 with a touch of Calmira, and the machine is running with 16 MB of RAM. I couldn't bring myself to end the recording before showing it booting properly again, so there is even a little Solitaire at the end.
 
 I also forgot to enable the CPU cache in the BIOS. Must remember that tomorrow. It makes an enormous difference on this 486SLC.
 
 ### Power supply
 
-I also got a chance to open the Mega PC power supply and document the internals. It is a Seasonic SSA-4065K, revision B1, rated at 65 W. Nothing immediately looks catastrophic.
+I also got a chance to open the Mega PC power supply and document the internals. It is a Seasonic SSA-4065K, revision B1, rated at 65 W. Nothing immediately looks catastrophic. Usual warning, opening a mains power supply exposes hazardous circuitry, and capacitors can retain charge after disconnection.
 
 ![](/assets/images/2012/img_0350.jpg)
 
-Opening a mains power supply exposes hazardous circuitry, and capacitors can retain charge after disconnection.
-
-I also took down the fan details because it is far too noisy. The fan is a 60 mm, 12 V unit wired directly into the PSU and carries a 1992 date stamp. That should make replacement fairly straightforward one day, provided the replacement fan's electrical and airflow characteristics are suitable.
-
-One day!
+I also took down the fan details because it is far too noisy. The fan is a 60 mm, 12 V unit wired directly into the PSU and carries a 1992 date stamp. That should make replacement fairly straightforward one day, provided the replacement fan's electrical and airflow characteristics are suitable. One day!
 
 ![](/assets/images/2012/img_0349.jpg)
 

@@ -10,7 +10,7 @@ categories: [devkit, sony, youtube]
 
 One of the admins over at [PSXDEV](http://www.psxdev.net/) sent me a BIOS chip from some old Sony PlayStation development hardware to dump. It's from a DTL-H2000, one of Sony's early ISA-bus development boards designed to live inside a PC.
 
-To be honest, I didn't know an awful lot about the DTL-H2000 when the chip arrived. Still, it's an EPROM, I've got a programmer, and that sounds like a perfectly good excuse to spend some time fiddling with old hardware! The sticker on top is dated **27th July 1994**, which makes this a rather interesting little piece of PlayStation history. The chip itself appears to have been manufactured in week 12 of 1995, so the EPROM is somewhat newer than the BIOS it contains.
+To be honest, I didn't know an awful lot about the DTL-H2000 when the chip arrived. Still, it's an EPROM, I've got a programmer, and that sounds like a perfectly good excuse to spend some time fiddling with old hardware! The sticker on top is dated 27th July 1994, which makes this a rather interesting little piece of PlayStation history. The chip itself appears to have been manufactured in week 12 of 1995, so the EPROM is somewhat newer than the BIOS it contains.
 
 ### Getting the GQ-4X Ready
 
@@ -18,11 +18,11 @@ Out comes the good old GQ-4X programmer, along with my ADP-054 adapter for these
 
 The chip is a Hitachi HN27C4000-series EPROM, and there are a couple of different device selections and socket arrangements available in the programmer software. I'll start with the first one and see what happens. The initial attempt produces some data, but subsequent reads aren't giving me consistent checksums. Hmm, that's not quite what we're after.
 
-I try another device selection, only to end up with a whole bunch of nothing. Wonderful! Perhaps it's time to move the chip into the other socket arrangement and see if that makes a difference.
+Consecutive reads with the first selection produced differing checksums, and the next device selection gave me a whole bunch of nothing. Wonderful! Moving the chip into the other socket arrangement was the turning point, so I gave it another read before deciding what to make of the result.
 
 ### That's More Like It!
 
-Well, what do you know? Suddenly we've got something that looks considerably more promising, including recognisable text mentioning **Sony Computer Entertainment** and **DTL-H2000**. That's exactly the sort of thing I was hoping to find!
+Well, what do you know? Suddenly we've got something that looks considerably more promising, including recognisable text mentioning Sony Computer Entertainment and DTL-H2000. That's exactly the sort of thing I was hoping to find!
 
 The checksum comes back as `EF7C`, so I read the chip again to see whether we get the same result. `EF7C` again! Much better. The data is consistent between those reads, the expected Sony text is present, and I can finally save the BIOS image.
 

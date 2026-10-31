@@ -16,6 +16,8 @@ Those old capacitors were way past their prime and couldn't even be found on the
 
 ![](/assets/images/2023/img_1000.jpg)
 
+The recording includes a slideshow of the card before and after the work. Some of the old capacitors were visibly bulging around their sleeves, and the PCB needed a clean as well as a recap. I used vinegar and bicarbonate of soda, made more of a mess than I'd intended, rinsed the board and left it drying for about a week. That's a record of what I did, rather than a recommended cleaning recipe for somebody else's sound card.
+
 More information on this card can be found in [AmoRetro's Miss Melody ES688 overview](https://amoretro.de/2011/06/miss-melody-ess-audiodrive-688-es688.html) and [VC Collection's AudioDrive ES688F overview](https://vccollection.ru/?page_id=4860). The [VOGONS discussion of ES688F cards](https://www.vogons.org/viewtopic.php?f=62&t=70102&start=20) is also a useful place to start looking for drivers, though the right driver and setup still depend on the card.
 
 The values below record this particular card. Before ordering replacements, check the actual board and fitted capacitor type, polarity, capacitance, voltage rating, ESR, ripple-current and temperature ratings, lead spacing and physical fit.
@@ -27,28 +29,28 @@ ES688 AudioDrive Caps
 Recapped 2022-10-31
 =============================================================================
 
-Location 	Rating	Voltage		Dimensions		Lead Spacing	Order Code
-C1			47uF	16V			7mm(h)x5mm(w)	2mm				8126747			
-C17			47uF	16V			7mm(h)x5mm(w)	2mm				As above
-C45			47uF	16V			7mm(h)x5mm(w)	2mm				As above
+Location         Rating        Voltage                Dimensions                Lead Spacing        Order Code
+C1                        47uF        16V                        7mm(h)x5mm(w)        2mm                                8126747                        
+C17                        47uF        16V                        7mm(h)x5mm(w)        2mm                                As above
+C45                        47uF        16V                        7mm(h)x5mm(w)        2mm                                As above
 
-C51			470uF	16V			15mm(h)x8mm(w)	3mm				2760329
-C50			470uF	16V			15mm(h)x8mm(w)	3mm				As above
+C51                        470uF        16V                        15mm(h)x8mm(w)        3mm                                2760329
+C50                        470uF        16V                        15mm(h)x8mm(w)        3mm                                As above
 
-C18			1uF		50V			7mm(h)x4mm(w)	2mm				2346264
-C46			1uF		50V			7mm(h)x4mm(w)	2mm				As above
-	
-C15			100uF	16V			7mm(h)x6mm(w)	3mm				1144620
-C35			100uF	16V			7mm(h)x6mm(w)	3mm				As above
-C34			100uF	16V			7mm(h)x6mm(w)	3mm				As above
-C36			100uF	16V			7mm(h)x6mm(w)	3mm				As above
-C85			100uF	16V			7mm(h)x6mm(w)	3mm				As above		
+C18                        1uF                50V                        7mm(h)x4mm(w)        2mm                                2346264
+C46                        1uF                50V                        7mm(h)x4mm(w)        2mm                                As above
+        
+C15                        100uF        16V                        7mm(h)x6mm(w)        3mm                                1144620
+C35                        100uF        16V                        7mm(h)x6mm(w)        3mm                                As above
+C34                        100uF        16V                        7mm(h)x6mm(w)        3mm                                As above
+C36                        100uF        16V                        7mm(h)x6mm(w)        3mm                                As above
+C85                        100uF        16V                        7mm(h)x6mm(w)        3mm                                As above                
 
-C74			10uF	25V			7mm(h)x4mm(w)	2mm				1281813
-C75			10uF	25V			7mm(h)x4mm(w)	2mm				As above
-C76			10uF	25V			7mm(h)x4mm(w)	2mm				As above
-C27			10uF	25V			7mm(h)x4mm(w)	2mm				As above
-C39			10uF	25V			7mm(h)x4mm(w)	2mm				As above
+C74                        10uF        25V                        7mm(h)x4mm(w)        2mm                                1281813
+C75                        10uF        25V                        7mm(h)x4mm(w)        2mm                                As above
+C76                        10uF        25V                        7mm(h)x4mm(w)        2mm                                As above
+C27                        10uF        25V                        7mm(h)x4mm(w)        2mm                                As above
+C39                        10uF        25V                        7mm(h)x4mm(w)        2mm                                As above
 
 =============================================================================
 Order codes are Element 14.
@@ -63,7 +65,7 @@ Note: 1144620 - Too big for the silkscreen but fits physically.
 
 ![](/assets/images/2023/img_1001.jpg)
 
-That's a good looking sound card!
+That's a good looking sound card! I cleaned the edge contacts and gave the little wheel potentiometer some attention too, but I still needed a suitable working PC before I could actually test the finished card. It looks the part, at least.
 
 ### Sources
 

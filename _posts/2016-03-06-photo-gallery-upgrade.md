@@ -18,7 +18,7 @@ I'll leave the old Picasa albums up for as long as they remain available. Who kn
 
 Hopefully the new arrangement will make it easier to browse all the old hardware photographs, repairs and assorted nonsense I've collected over the years. There are quite a few of them now, and I don't particularly fancy sorting through everything again!
 
-**Update 7th May 2022:** The Flickr account has been closed, and I planned to move the photo archive to the site's own [Photo Gallery](/photos). That destination currently shows a placeholder; the gallery has not been restored there.
+**Update 7th May 2022:** The Flickr account has been closed, and I planned to move the photo archive to the site's own [Photo Gallery](/goodies).
 
 **Sources**
 

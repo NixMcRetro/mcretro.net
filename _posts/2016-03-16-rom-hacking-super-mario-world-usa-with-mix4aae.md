@@ -32,7 +32,7 @@ That 32 Mbit value is what Snes9x reported from the ROM metadata. The patched fi
 
 The original mask-ROM capacity is not the main concern once we're replacing that ROM with a larger flash device, but the donor PCB still matters. The board needs the appropriate LoROM mapping and save-memory hardware for the patched game, including suitable SRAM and battery support where required.
 
-The old [SNES PCB List-full.xls](/files) was useful for comparing donor boards. The current files page is a placeholder, so the spreadsheet still needs recovering. You could technically use a Super Mario World cart. For other candidates, check that the PCB layout, mapping, and save hardware suit the patched game.
+The old [SNES PCB List-full.xls](/goodies) was useful for comparing donor boards. You could technically use a Super Mario World cart. For other candidates, check that the PCB layout, mapping, and save hardware suit the patched game.
 
 Once you find a suitable donor cart, also make sure the region matches or use appropriate region-modification hardware. From there it is a matter of getting the ROM data onto the TSOP flash chip and installing it in the cartridge. It is more complicated than it sounds; these videos might help.
 

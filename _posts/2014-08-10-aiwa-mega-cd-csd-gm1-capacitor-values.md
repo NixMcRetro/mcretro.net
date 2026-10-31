@@ -18,9 +18,7 @@ Anyone who has followed my earlier Aiwa repair adventures will know that getting
 
 ### Capacitor Spreadsheet
 
-I also made the capacitor record available as a spreadsheet through my old file server. It should come in handy for anyone else working on one of these rather unusual Sega machines, particularly if they've got a board that's been attacked by leaking capacitors.
-
-**Archive update, October 2026:** The original spreadsheet hasn't been recovered from the current website files, so I'm not going to recreate the capacitor list from memory. The [files section](/files) currently shows a placeholder, and the individual repair articles and photographs remain the best surviving record of the boards I worked on.
+I also made the capacitor record available as a [spreadsheet](/goodies). It should come in handy for anyone else working on one of these rather unusual Sega machines, particularly if they've got a board that's been attacked by leaking capacitors. The individual repair articles and photographs also record the boards I worked on.
 
 ### Related Posts
 

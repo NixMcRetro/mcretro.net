@@ -20,4 +20,4 @@ Licensed hardware makes things a little messy, but I suppose in the grand scheme
 
 ![](/assets/images/2023/img_1060.jpg)
 
-There will be some pretty neat stuff in there. At the time, the data was slowly going up in the [photo gallery](/photos), although the gallery is currently unavailable. Once I'm done uploading what I can, I'll probably move back onto processing modem videos for the next 3-4 years. Ha ha! 😅
+There will be some pretty neat stuff in there. At the time, the data was slowly going up in the [photo gallery](/goodies). Once I'm done uploading what I can, I'll probably move back onto processing modem videos for the next 3-4 years. Ha ha! 😅

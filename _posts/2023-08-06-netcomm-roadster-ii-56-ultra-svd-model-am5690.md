@@ -28,11 +28,11 @@ Poking around the board a bit more, I was delighted to see capacitors. Those who
 
 ![](/assets/images/2023/img_1067.jpg)
 
-I'd love to give Nichicon the benefit of the doubt, but those caps don't look too happy. Fair, it's been over two decades, and most of that time has probably been spent in storage. There's a reason I always recap with Rubycon and Panasonic branded capacitors: in my experience, they seem to last longer. Even the general-purpose Rubys or ELNA ones in Sega's hardware seem to do very well. Regardless, they were replaced. I also restocked the [photo gallery](/photos) to help quench your thirst for modems, although the gallery is currently unavailable.
+I'd love to give Nichicon the benefit of the doubt, but those caps don't look too happy. Fair, it's been over two decades, and most of that time has probably been spent in storage. There's a reason I always recap with Rubycon and Panasonic branded capacitors: in my experience, they seem to last longer. Even the general-purpose Rubys or ELNA ones in Sega's hardware seem to do very well. Regardless, they were replaced. I also restocked the [photo gallery](/goodies) to help quench your thirst for modems.
 
 {% include youtube.html id="mZaE4dVaeJ8" %}
 
-The exact initialisation string I used is, well... lost. Looking at the Windows drivers for this modem, it appears to have been the one below. Whether it's the best one... I couldn't say. Trial and error can be fun! As usual, I'll throw in some ATI (inquiry, information, or interrogation) results. I put the Windows drivers on the [file server](/files), which is currently unavailable.
+The exact initialisation string I used is, well... lost. Looking at the Windows drivers for this modem, it appears to have been the one below. Whether it's the best one... I couldn't say. Trial and error can be fun! As usual, I'll throw in some ATI (inquiry, information, or interrogation) results. I put the Windows drivers on the [file server](/goodies).
 
 ```
 ---------- 2021-11-07 16:53:19 +1100: Logging Started ----------
@@ -82,7 +82,7 @@ As hinted at above in ATI4, the firmware version is F02_V1.56 and fits neatly in
 
 ![](/assets/images/2023/img_1069.jpg)
 
-Unfortunately for me, the firmware upgrader, [am56906.exe](/files), was the same version as what I already had. The file server is currently unavailable. The AM29F002NB datasheet gives a minimum pattern-retention figure of 20 years at 125°C. That is a high-temperature retention specification, not an expiry date saying the flash forgets its contents after 20 ordinary years on a shelf. I reflashed it anyway because the updater was available and I was already in there. If it spent 20 years in a fire pit, we had bigger problems. 🤣
+Unfortunately for me, the firmware upgrader, [am56906.exe](/goodies), was the same version as what I already had. The AM29F002NB datasheet gives a minimum pattern-retention figure of 20 years at 125°C. That is a high-temperature retention specification, not an expiry date saying the flash forgets its contents after 20 ordinary years on a shelf. I reflashed it anyway because the updater was available and I was already in there. If it spent 20 years in a fire pit, we had bigger problems. 🤣
 
 ![](/assets/images/2023/img_1068.jpg)
 

@@ -36,7 +36,7 @@ Unfortunately, I hadn't kept the recovery log I really should have used, so I co
 
 ![Directory structure](/assets/images/2016/img_0471.jpg)
 
-The [disk image](/files) I originally shared was around 1 GB compressed and about 4.5 GB decompressed. The current files page is a placeholder, so the original image still needs recovering. World Series Baseball 2K2! Or WSB2K2 as it was known amongst the cool kids?
+The [disk image](/goodies) I originally shared was around 1 GB compressed and about 4.5 GB decompressed. World Series Baseball 2K2! Or WSB2K2 as it was known amongst the cool kids?
 
 The original [ASSEMbler Games thread](https://web.archive.org/web/20160707153456/http://assemblergames.com/l/threads/world-series-baseball-2k2-wsb2k2-dumping-from-hkt-0120.60534/) documenting the World Series Baseball 2K2 discovery is also preserved.
 

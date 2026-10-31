@@ -22,7 +22,7 @@ A Raspberry Pi running Asterisk and mgetty handled the other parts of the arrang
 
 ![](/assets/images/2023/img_1026.jpg)
 
-The firmware reports `891210`, so 10th December 1989 if that field is a date. I dumped the ROM using a [TL866CS programmer](https://proghq.org/wiki/TL866) and originally shared it through the [file server](/files/dumps/), but the download is currently unavailable. The PCB has the markings Banksia Bit Blitzer 124E/1234E-A, which suggests a shared board design across models; it doesn't establish that every version had identical components.
+The firmware reports `891210`, so 10th December 1989 if that field is a date. I dumped the ROM using a [TL866CS programmer](https://proghq.org/wiki/TL866) and originally shared it through the [file server](/goodies). The PCB has the markings Banksia Bit Blitzer 124E/1234E-A, which suggests a shared board design across models; it doesn't establish that every version had identical components.
 
 For the Linux connection I used `wvdialconf` to detect the modem and generate a starting configuration. After adding the dial-in details, I used `wvdial` to make the connection. The number I used was the old Sydney Internet Group number, **02 9373 5100**, which I'd rediscovered while browsing archived TIG and ihug pages. That certainly brought back memories of the old internet.
 
@@ -42,7 +42,7 @@ The modem certainly wasn't in any hurry. But it connected, transferred data, and
 
 ![](/assets/images/2023/img_1028.jpg)
 
-Here's the Arlec power supply that came with it: 240 V AC at 50 Hz in, 9 V AC at 500 mA out. Other markings on the power supply are APP. NO. V/79309/61227. I'd put more photos in the [photo gallery](/photos), though the gallery is currently offline.
+Here's the Arlec power supply that came with it: 240 V AC at 50 Hz in, 9 V AC at 500 mA out. Other markings on the power supply are APP. NO. V/79309/61227. I'd put more photos in the [photo gallery](/goodies).
 
 Next up we have data from the modem itself and the `AT&FS0=0V1X3` initialisation string I used, probably found thanks to [wvdialconf](https://wiki.archlinux.org/title/Wvdial). It reached `CONNECT 2400` in this test; that doesn't make it the best init string for every setup.
 

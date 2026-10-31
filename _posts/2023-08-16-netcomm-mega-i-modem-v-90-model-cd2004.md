@@ -96,7 +96,7 @@ All electrolytic capacitors are radial.
 Lead spacing is 2-2.5mm on most.
 ```
 
-I'd put more pictures, all two of them, in the [photo gallery](/photos), and the drivers, including an ISO image of the original driver disc, on the [file server](/files). The initialisation string in the log records what I used on this modem, although other setups might need different settings.
+I'd put more pictures, all two of them, in the [photo gallery](/goodies), and the drivers, including an ISO image of the original driver disc, on the [file server](/goodies). The initialisation string in the log records what I used on this modem, although other setups might need different settings.
 
 This modem has since been donated to the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/). At least it received a new set of capacitors and a successful dial test before heading off to its next home.
 

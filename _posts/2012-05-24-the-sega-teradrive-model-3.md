@@ -44,7 +44,7 @@ Not exactly the most important engineering discovery of the century, but there i
 
 Time to get a hard drive installed and see how far this one can go.
 
-Many more images can be found in the [photo gallery](/photos) filed under Sega TeraDrive Model 2 and Model 3.
+Many more images can be found in the [photo gallery](/goodies) filed under Sega TeraDrive Model 2 and Model 3.
 
 ### Related posts
 

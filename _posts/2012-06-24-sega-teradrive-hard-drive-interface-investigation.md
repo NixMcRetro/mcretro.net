@@ -24,7 +24,7 @@ If anyone stumbles upon this, I apologise for the lack of immediate success.
 
 [Nemesis](https://www.exodusemulator.com), author of the Exodus Emulation Platform, also believed there was more to uncover because several controller chips in the TeraDrive are closely related to hardware found in IBM-derived systems.
 
-I pulled together information from old XTA references and Vintage Computer Forum discussions and started comparing pinouts. An earlier version of this post also linked to the TeraDrive HD pinout spreadsheet on the [file server](/files/), but that download is not currently available.
+I pulled together information from old XTA references and Vintage Computer Forum discussions and started comparing pinouts. An earlier version of this post also linked to the TeraDrive HD pinout spreadsheet on the [file server](/goodies).
 
 ![](/assets/images/2012/img_0210.jpg)
 

@@ -24,7 +24,7 @@ The XT-IDE card is my own little addition. I had some purple PCBs made by OSH Pa
 
 There are a few limitations with the expansion slot too, so not every ISA card will necessarily behave as expected. Still, having a CompactFlash-based storage option makes experimenting with these old computers rather more convenient than relying entirely on their original hard drives.
 
-Next up I'll be getting back into the XT-IDE setup and seeing what else I can persuade these machines to do. They're lovely bits of IBM and Sega history, and I'm glad to have them out of storage again.
+Next up I'll be getting back into the XT-IDE setup and seeing what else I can persuade these machines to do. They're lovely bits of IBM and Sega history, and I'm glad to have them out of storage again. There are more photographs in the [photo gallery](/goodies).
 
 **Related Posts**
 

@@ -22,4 +22,4 @@ With everything back together, I gave the Dreamcast a test using a Bomberman bac
 
 The replacement case isn't a perfect match for the original, including some of the printed details, but I'm quite happy with how it turned out. The original yellowed shell can stay preserved rather than becoming another chemical experiment, and the translucent grey replacement looks pretty good anyway.
 
-There are more photos of the Dreamcast in the [photo gallery](/photos).
+There are more photos of the Dreamcast in the [photo gallery](/goodies).

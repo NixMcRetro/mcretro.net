@@ -12,7 +12,7 @@ Lots of people I know like [retrobright](https://en.wikipedia.org/wiki/Retrobrig
 
 ![](/assets/images/2021/img_0779.jpg)
 
-You can see more before and after shots in the [photo gallery](/photos) under the Banksia Wave SP56 modem serial 13412650. [Tim](https://pendleton115.net/) was kind enough to give it a shot with this method-
+You can see more before and after shots in the [photo gallery](/goodies) under the Banksia Wave SP56 modem serial 13412650. [Tim](https://pendleton115.net/) was kind enough to give it a shot with this method-
 
 > **Hydrogen peroxide and up**
 

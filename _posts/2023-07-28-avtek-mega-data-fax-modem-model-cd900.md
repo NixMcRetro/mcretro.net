@@ -14,7 +14,7 @@ The CD900 is a beautiful little modem. It's similar in appearance to Avtek's fas
 
 ![](/assets/images/2023/img_1045.jpg)
 
-Here's the brain of the modem: a Rockwell RC224ATF R6641-14 with a date code of week 30, 1992. I put more photos in the [photo gallery](/photos), which is currently unavailable.
+Here's the brain of the modem: a Rockwell RC224ATF R6641-14 with a date code of week 30, 1992. I put more photos in the [photo gallery](/goodies).
 
 ![](/assets/images/2023/img_1046.jpg)
 

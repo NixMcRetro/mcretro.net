@@ -21,7 +21,7 @@ Geez, that Daewoo one doesn't look too good. Haven't seen a Daewoo car in years 
 
 ![](/assets/images/2013/img_0409.jpg)
 
-I didn't keep particularly good notes on the capacitor replacements. I'd put more photos in the [photo gallery](/photos), though the gallery is currently offline. From the photographs, it looks as though I used Panasonic FM and FR series replacements in May 2022.
+I didn't keep particularly good notes on the capacitor replacements. I'd put more photos in the [photo gallery](/goodies). From the photographs, it looks as though I used Panasonic FM and FR series replacements in May 2022.
 
 ![](/assets/images/2023/img_1034.jpg)
 

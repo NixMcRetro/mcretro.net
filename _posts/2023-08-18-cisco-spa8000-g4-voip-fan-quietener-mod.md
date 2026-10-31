@@ -104,7 +104,7 @@ Thankfully, I wasn't alone: I found a [Cisco Community thread about the SPA8000 
 
 On this unit, the boot loop stopped when I disconnected Ethernet, which let me reach the AUX interface at 192.168.0.1 and continue recovery. I wouldn't turn that into a universal SPA8000 rule, but it was the condition that worked here. Another thing that was kicking me was the lack of a time server, so the date and time wouldn't update. Adding time.nist.gov as the primary time server in the advanced settings solved that.
 
-I put more photos of this device in the [photo gallery](/photos), if you are interested in that sort of thing. No judgement from this side of the table! 😄 I also put the firmware I used and some PDFs on configuring the SPA8000 onto the [file server](/files). Both are currently unavailable.
+I put more photos of this device in the [photo gallery](/goodies), if you are interested in that sort of thing. No judgement from this side of the table! 😄 I also put the firmware I used and some PDFs on configuring the SPA8000 onto the [file server](/goodies).
 
 ### Sources
 

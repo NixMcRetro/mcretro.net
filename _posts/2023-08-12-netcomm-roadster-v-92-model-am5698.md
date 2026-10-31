@@ -113,7 +113,7 @@ Use caution under the speaker as 11/12mm (h) capacitors will not have enough cle
 
 ```
 
-I put more pictures in the [photo gallery](/photos) and the drivers, including an ISO image of the entire driver disc, on the [file server](/files). The init string above records what I used on this modem; it isn't a guarantee for every setup.
+I put more pictures in the [photo gallery](/goodies) and the drivers, including an ISO image of the entire driver disc, on the [file server](/goodies). The init string above records what I used on this modem; it isn't a guarantee for every setup.
 
 This modem has been donated to the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/).
 

@@ -34,7 +34,7 @@ The firmware calls it a `Motorola Lifestyle 28.8 External 68356`, so there's goo
 
 ![](/assets/images/2023/img_1040.jpg)
 
-I will admit that I didn't really need this modem - or want it. With the clips failing and it being beige, we **_might_** not have done the best job on the capacitor replacement. We used on-hand caps, with pads lifting here and there. There are more photos in the [photo gallery](/photos) (surprise!) if you have a hunger for modem photos, though the gallery is currently offline.
+I will admit that I didn't really need this modem - or want it. With the clips failing and it being beige, we **_might_** not have done the best job on the capacitor replacement. We used on-hand caps, with pads lifting here and there. There are more photos in the [photo gallery](/goodies) (surprise!) if you have a hunger for modem photos.
 
 Below are the initialisation strings used, whether they are the best ones... I couldn't be sure. But I'll throw in some ATI (inquiry, information, or interrogation) results.
 

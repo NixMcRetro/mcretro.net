@@ -22,4 +22,4 @@ Here's our garden gnome in the present day. A little worn, but still looks like 
 
 He can live inside the computer as a 3D model or, thanks to [augmented reality](https://web.archive.org/web/20221111200747/https://www.apple.com/au/augmented-reality/), appear in my lounge room or even the kitchen sink (scale is no issue!). And of course, you can always 3D print more to carry around and throw at people... or whatever one would do with Pocket Gnomes (Patent pending).
 
-You can find more gnome photos in the [photo gallery](/photos) under Project Gnome. I'll likely be doing a future post on how all this came about as the photogrammetry software, Metashape, was quite interesting and very fun to work with! 😀
+You can find more gnome photos in the [photo gallery](/goodies) under Project Gnome. I'll likely be doing a future post on how all this came about as the photogrammetry software, Metashape, was quite interesting and very fun to work with! 😀

@@ -16,7 +16,7 @@ This machine has had the internal hard drive upgraded to a [RaSCSI](https://gith
 
 > **If the Red Power LED is not illuminated this means the supply voltage is inadequate. (The newer Pi have a well engineered power circuit, and may continue to function even if the input voltage is below spec; the same may not be true of peripherals).**
 
-This tech is not ready for mid-late 1990s internet. I just didn't realise just how incompatible early 1990s internet was! When setting up my web server I tried to make [GeoCities](/homepages/geocities), [RetroJunkie.net](https://web.archive.org/web/20220406134923/https://retrojunkie.net/) and even my [files archive](/files) as simple as possible to avoid issues. It all seemed to boil down to the old browsers missing something. My theory at the time was HTTP/0.9, but that turned out to be the wrong diagnosis. These browsers were capable of more than HTTP/0.9, and I later confirmed requests arriving at Apache as HTTP/1.0. The real problem was in how my modern hosting setup, name-based virtual hosts and proxying interacted with clients this old.
+This tech is not ready for mid-late 1990s internet. I just didn't realise just how incompatible early 1990s internet was! When setting up my web server I tried to make [GeoCities](/homepages/geocities), [RetroJunkie.net](https://web.archive.org/web/20220406134923/https://retrojunkie.net/) and even my [files archive](/goodies) as simple as possible to avoid issues. It all seemed to boil down to the old browsers missing something. My theory at the time was HTTP/0.9, but that turned out to be the wrong diagnosis. These browsers were capable of more than HTTP/0.9, and I later confirmed requests arriving at Apache as HTTP/1.0. The real problem was in how my modern hosting setup, name-based virtual hosts and proxying interacted with clients this old.
 
 ![](/assets/images/2022/img_0939.jpg)
 
@@ -44,7 +44,7 @@ Neither does Mosaic 1.0.3. At least they are giving similar results but I had to
 
 ![](/assets/images/2022/img_0929.jpg)
 
-And using Internet Explorer 5.0 grabbed Mosaic 1.0 from [my file server](/files).
+And using Internet Explorer 5.0 grabbed Mosaic 1.0 from [my file server](/goodies).
 
 ![](/assets/images/2022/img_0930.jpg)
 
@@ -56,7 +56,7 @@ Not the slowest download I've had. A couple of minutes later I was able to load 
 
 ![](/assets/images/2022/img_0933.jpg)
 
-And it seems that [retrojunkie.net](https://web.archive.org/web/20220406134923/https://retrojunkie.net/), [the files server](/files) and [google.com](https://www.google.com) were all giving the same errors. We'll try another browser again, shall we?
+And it seems that [retrojunkie.net](https://web.archive.org/web/20220406134923/https://retrojunkie.net/), [the files server](/goodies) and [google.com](https://www.google.com) were all giving the same errors. We'll try another browser again, shall we?
 
 ![](/assets/images/2022/img_0934.jpg)
 

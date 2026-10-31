@@ -12,7 +12,7 @@ categories: [repairs, sega]
 
 Today I received my white Japanese Model 2 Sega Saturn from Japan. Look at it. Isn't it just the cleanest-looking Saturn design you have seen? Well, compared with PAL Saturns at least.
 
-I've added it to the [photo gallery](/photos) too.
+I've added it to the [photo gallery](/goodies) too.
 
 It powers on without issue through the step-down converter, but the CD mechanism is very unhappy. It seems to have trouble working out where it is supposed to rest and makes some truly horrible clicking noises.
 

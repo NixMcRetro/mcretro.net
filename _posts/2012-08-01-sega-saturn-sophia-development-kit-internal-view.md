@@ -31,7 +31,7 @@ The CD drive has its own board attached underneath, and I spotted some marks on 
 
 One thing to watch if you ever take one of these apart is the little front-panel buttons. Several of them fell out while I was removing a board and promptly rolled underneath things. I managed to find them all, thankfully, but it was another reminder that this Sophia deserves a careful strip-down.
 
-I'll give her the best clean I can and make her shine again. Once that's done, I'll get some better photographs of the boards, chip markings and connectors for the gallery. It's a bit of a beast, and I rather wish Sega had made the retail Saturn this big!
+I'll give her the best clean I can and make her shine again. There are more photographs in the [photo gallery](/goodies). Once that's done, I'll get some better photographs of the boards, chip markings and connectors for the gallery. It's a bit of a beast, and I rather wish Sega had made the retail Saturn this big!
 
 **Related Posts**
 

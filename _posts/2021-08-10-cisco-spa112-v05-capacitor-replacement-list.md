@@ -8,7 +8,7 @@ last_modified_at: 2026-10-18
 
 ![](/assets/images/2021/img_0741.jpg)
 
-I did replace the capacitors in this one as they were... sus...pect (see photo below). And while there aren't many photos, the ones I do have are now in the [photo gallery](/photos) in case they are of use to anyone. The serial number on this SPA112 is YM191HWJI129A.
+I did replace the capacitors in this one as they were... sus...pect (see photo below). And while there aren't many photos, the ones I do have are now in the [photo gallery](/goodies) in case they are of use to anyone. The serial number on this SPA112 is YM191HWJI129A.
 
 ![](/assets/images/2021/img_0740.jpg)
 

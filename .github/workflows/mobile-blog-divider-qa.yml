@@ -1,0 +1,39 @@
+name: Mobile Blog and Footer Spacing QA
+on:
+  push:
+    branches:
+      - test/mobile-footer-spacing-qa-2026-10-31
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll
+        run: bundle exec jekyll build --destination _site
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Browser checks
+        run: |
+          python3 -m http.server 8784 --directory _site > /tmp/mobile-divider-qa.log 2>&1 &
+          node .github/tests/mobile-blog-divider-qa.mjs
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mobile-blog-footer-review-screenshots
+          path: /tmp/mobile-blog-divider-shots
+          if-no-files-found: ignore

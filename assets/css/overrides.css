@@ -720,8 +720,8 @@
    Leave monthly archives, individual posts and desktop spacing unchanged. */
 @media screen and (max-width: 750px) {
   .blog-list:not(.archive-blog-list) .post-entry {
-    padding-bottom: 0.75rem;
-    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
   }
 
   .blog-list:not(.archive-blog-list) .read-more {
@@ -755,4 +755,20 @@
 }
 .site-footer .footer-details > p > img {
   vertical-align: middle;
+}
+
+/* Stacked layout should have one intentional space before the sidebar,
+   not the 40px flex row-gap plus a second 40px sidebar margin. */
+@media screen and (max-width: 860px) {
+  .site-content { row-gap: 0; }
+  .site-content > .sidebar { margin-top: 1.25rem; }
+}
+
+/* On desktop the footer's three sentences sit on centred separate lines.
+   The 80%-wide footer-details container is inherited from style.css. */
+@media screen and (min-width: 861px) {
+  .site-footer .footer-detail-line { display: block; }
+  .site-footer .footer-detail-line + .footer-detail-line {
+    margin-top: 0.5rem;
+  }
 }

@@ -39,25 +39,18 @@
   <br>
 
   <div class="footer-details">
-    Established February 2012 and was last updated 
-    <a href="/changelog.txt">
-      {% assign d = site.time | date: "%-d" | plus: 0 %}
-      {% case d %}
-        {% when 1 or 21 or 31 %}{% assign ordinal = "st" %}
-        {% when 2 or 22 %}{% assign ordinal = "nd" %}
-        {% when 3 or 23 %}{% assign ordinal = "rd" %}
-        {% else %}{% assign ordinal = "th" %}
-      {% endcase %}
-      {{ d }}{{ ordinal }} of {{ site.time | date: "%B %Y" }}
-    </a>.
-    <br>
-    You are visitor number 
-    <img src="/assets/images/footer/counter.gif" alt="Counter" height="20" width="90"> 
-    since <i>sometime</i> in the mid-1990s.
-    <br>
-    We are powered by 
-    <a href="https://github.com/NixMcRetro/mcretro.net">GitHub Pages</a> and 
-    <a href="https://jekyllrb.com">Jekyll</a>.
+    {% assign d = site.time | date: "%-d" | plus: 0 %}
+    {% case d %}
+      {% when 1 or 21 or 31 %}{% assign ordinal = "st" %}
+      {% when 2 or 22 %}{% assign ordinal = "nd" %}
+      {% when 3 or 23 %}{% assign ordinal = "rd" %}
+      {% else %}{% assign ordinal = "th" %}
+    {% endcase %}
+    <p>
+      Established February 2012 and was last updated <a href="/changelog.txt">{{ d }}{{ ordinal }} of {{ site.time | date: "%B %Y" }}</a>.
+      You are visitor number <img src="/assets/images/footer/counter.gif" alt="Counter" height="20" width="90"> since <i>sometime</i> in the mid-1990s.
+      We are powered by <a href="https://github.com/NixMcRetro/mcretro.net">GitHub Pages</a>.
+    </p>
   </div>
 
   <div class="footer-pride">

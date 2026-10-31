@@ -743,5 +743,16 @@
 
   .site-footer .footer-details {
     margin: 0.6rem auto 0;
+    max-width: 100%;
+    min-width: 0;
   }
+}
+
+/* Let the three footer sentences flow as one paragraph, without the
+   browser's default paragraph margins. Desktop retains its 80% text width. */
+.site-footer .footer-details > p {
+  margin: 0;
+}
+.site-footer .footer-details > p > img {
+  vertical-align: middle;
 }

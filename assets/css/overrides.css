@@ -764,11 +764,8 @@
   .site-content > .sidebar { margin-top: 1.25rem; }
 }
 
-/* On desktop the footer's three sentences sit on centred separate lines.
-   The 80%-wide footer-details container is inherited from style.css. */
+/* On desktop each footer sentence occupies its own centred line.
+   Use the original 1.7 line-height, with no extra space between lines. */
 @media screen and (min-width: 861px) {
   .site-footer .footer-detail-line { display: block; }
-  .site-footer .footer-detail-line + .footer-detail-line {
-    margin-top: 0.5rem;
-  }
 }

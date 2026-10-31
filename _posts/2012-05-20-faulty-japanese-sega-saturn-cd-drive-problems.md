@@ -8,21 +8,15 @@ categories: [repairs, sega]
 
 {% include youtube.html id="49G-pKXLBy8" %}
 
-Yikes! Listen to that motor spin and click.
+Yikes! Listen to that motor spin and click. This white Japanese Sega Saturn was sold as faulty, and after watching its CD drive behave like this, I can see why. The spindle races away, the laser mechanism moves all over the place and the whole assembly sounds as though it's about to explode.
 
-The CD mechanism is clearly not behaving properly. The spindle runs unusually fast while the optical assembly repeatedly moves up, down and back and forth.
+The disc even appears to spin backwards, although I haven't worked out whether that's actually happening or just how it looks on camera. Either way, this isn't how a Saturn CD drive is supposed to behave. At least the machine is giving me plenty to investigate.
 
-In the video the disc even appeared to be spinning in the wrong direction, although from the recording alone I cannot establish that the spindle motor was genuinely being driven backwards. Either way, something in the deck control or mechanism was very unhappy.
-
-This is the same white Japanese Saturn that had just arrived with the noisy drive assembly.
-
-Time to work out what is actually wrong with it.
+Easy does it, little Saturn! I'll have to get inside the CD deck and work out what's making it behave so strangely before I can do much else with it.
 
 {% include youtube.html id="isTazHL7daI" %}
 
-We'll make you better, faster, stronger!
-
-Segata Sanshiro style!
+We'll make you better, faster, stronger! Segata Sanshiro style. Well, that's the plan anyway.
 
 ### Related posts
 

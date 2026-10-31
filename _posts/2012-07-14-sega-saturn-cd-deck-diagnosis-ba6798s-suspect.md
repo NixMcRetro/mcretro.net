@@ -8,17 +8,11 @@ categories: [repairs, sega]
 
 {% include youtube.html id="49G-pKXLBy8" %}
 
-You might remember the video above from a little while back if you're a regular.
+You might remember this rather unhappy Japanese Sega Saturn from a little while back. The disc appears to spin backwards while the laser assembly goes completely berserk, and the motor sounds like it's trying to escape from the CD deck. I've still got plenty of work ahead of me with this one.
 
-The disc appears to spin backwards while the laser mechanism goes completely berserk. From the video alone I still can't prove that the spindle is actually being driven in reverse, but something in the CD deck control system is clearly very unhappy.
+While looking over the drive board, I started wondering about the BA6798S on the left-hand side. ROHM describes it as a four-channel H-bridge BTL driver responsible for controlling motors and actuators in CD players. With several parts of this mechanism misbehaving at the same time, it's certainly worth investigating.
 
-Enter the BA6798S on the left side of the CD deck board.
-
-ROHM describes the BA6798S as a four-channel H-bridge BTL driver for CD-player motors and actuators. Since several parts of this mechanism are behaving strangely at the same time, that makes it a plausible common suspect.
-
-Plausible is not the same as proven though. The symptoms could still come from something elsewhere in the servo or control circuitry.
-
-So once more the white Saturn goes back onto the shelf while I wait for parts.
+That doesn't mean I've found the guilty component just yet. Something elsewhere in the servo or control circuitry could still be causing the trouble, and I haven't finished tracing the fault. For now, the white Saturn is going back onto the shelf while I wait for parts.
 
 ### Related posts
 

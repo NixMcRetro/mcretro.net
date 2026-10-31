@@ -8,11 +8,11 @@ categories: [ibm-pc, repairs, youtube]
 
 {% include youtube.html id="Kd9hdu-FFaA" %}
 
-Mission accomplished.
+We did it! After a couple of days of messing around with drivers, I've finally managed to get my Creative Labs CD-200 double-speed CD-ROM drive working under DOS. Something that ought to have been relatively straightforward turned into a surprisingly stubborn little project, mostly because finding useful information about this particular drive was a nightmare.
 
-If anyone from the future arrives here trying to get a Creative Labs CD-200 working under DOS, the breakthrough was finding a Creative driver that worked with this drive. `CCD.SYS` worked in my setup. Once the hardware driver is loaded, MSCDEX provides the DOS drive letter.
+The breakthrough came while I was downloading and trying assorted Creative drivers. I happened to notice a reference to the CD-200 in one of the packages and thought that was a rather promising coincidence. Sure enough, `CCD.SYS` turned out to be the driver that worked in my setup. Once that loads, MSCDEX gives DOS a drive letter and we can finally start accessing discs.
 
-The settings below are the exact configuration that worked in this particular machine. The port address and driver switches depend on the controller or sound card the CD-ROM is connected through, so don't assume every CD-200 will use precisely the same values.
+There was another trick hiding on the back of the drive. I'd fitted a jumper on one of the identifier positions, and MSCDEX kept freezing during startup. Removing that jumper got me past the problem, although I wouldn't assume the same configuration is right for every controller and drive combination. These are the settings that worked with my particular Sound Blaster and CD-200.
 
 ```
 CONFIG.SYS
@@ -28,9 +28,7 @@ C:\SBPRO\SBPSET /P /Q
 C:\SB16\DRV\MSCDEX.EXE /D:MSCD001 /V /M:15
 ```
 
-And there it is. A functioning double-speed Creative CD-ROM drive. After the desktop full of random drivers in the previous post, this was a particularly satisfying result.
-
-BBQ party successfully earned.
+With that configuration loaded, DOS recognised the CD-ROM and I could finally get at the disc. I was almost expecting another problem to appear when I tried it for the first time, but no, it actually worked! After staring at a desktop full of random drivers and wondering what I'd missed, that's a pretty satisfying result.
 
 ![](/assets/images/2012/img_0284.jpg)
 
@@ -41,6 +39,8 @@ BBQ party successfully earned.
 ![](/assets/images/2012/img_0287.jpg)
 
 ![](/assets/images/2012/img_0288.jpg)
+
+Thanks to everyone who helped me track this one down. A functioning double-speed Creative CD-ROM drive is now sitting in the Osborne, and I think that earns us a BBQ party!
 
 ### Related posts
 

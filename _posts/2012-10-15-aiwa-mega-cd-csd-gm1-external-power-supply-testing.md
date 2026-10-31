@@ -8,27 +8,21 @@ categories: [repairs, sega, youtube]
 
 {% include youtube.html id="6qr6_9mnZjI" %}
 
-I'm going to be late for work because of this Aiwa Mega-CD. But never mind, we've got more important things to investigate!
+I'm going to be late for work because of this Aiwa Mega-CD. But never mind, we've got more important things to investigate! The CSD-GM1 without the spectacular cracks running through its mainboard has now decided to stop powering on, and the transformer arrangement isn't looking particularly healthy either. It's sitting rather crookedly in its mounting, which certainly isn't encouraging.
 
-This time I'm working on the other CSD-GM1, the one without the spectacular cracks running through its mainboard. Unfortunately, this machine has recently lost power, and the original transformer arrangement is looking rather questionable.
+I started wondering whether I could get the machine running through its battery connections instead. It normally takes eight C-cell batteries, but I wasn't particularly keen on going out and buying a whole collection of those just for an experiment. Instead, I've connected an external 12 V supply through the battery circuit to see which parts of the Aiwa will respond.
 
-I started wondering whether the battery connections might provide another way of powering the machine. Rather than running out and buying eight C-cell batteries, I've decided to experiment with an external 12 V power supply connected through the battery circuit.
+I'd originally thought about using one of the little DC-DC stepdown modules left over from my Sega Saturn power supply experiments. That wasn't going to help with the available input voltage, so I've connected the supply directly to the battery contacts for this test. As you can see in the video, I've run out of sensible wire colours as well. Purple is negative and yellow is positive. Very conventional, I'm sure!
 
-And would you believe it? We're getting somewhere!
+And would you believe it? We're getting somewhere! Tape mode works, the radio plays and CD mode responds by showing a zero on the front display. The CD mechanism still isn't working properly, but at least the machine is showing signs of life again.
 
-Tape mode is working, the radio is playing, and the CD mode is responding well enough to display a zero on the front panel. The CD mechanism itself still isn't working properly, but at least some of the Aiwa's functions are alive again.
+Mega Drive mode is another story. Nothing! I'm beginning to suspect one of the regulators supplying the game hardware, although the original transformer arrangement also appears to provide higher voltages than the battery circuit. I'd seen readings around 20 V in the other machine, compared with the 12 V I'm feeding into this one, so I still need to work out how those different supplies are used.
 
-Mega Drive mode, however, is another story. Nothing!
+Naturally, I couldn't just leave the experiment there. I decided to connect the other Game Unit and see whether that would make any difference. I'm already late for work, so another few minutes won't hurt. Probably!
 
-I'm beginning to suspect the regulator supplying the game hardware might be causing trouble, although I haven't proved that yet. The original transformer arrangement also appears to supply higher voltages than the battery connection, so perhaps the game section simply isn't receiving everything it needs.
+Unfortunately, that didn't solve it either. The Mega Drive section still refused to start, although the tape and radio were behaving better than I expected. At least we've established which parts of this machine respond to the alternative power source, even if the game hardware remains stubbornly silent.
 
-Naturally, I can't leave it alone. I decide to connect the other Game Unit and see whether that makes any difference. I'm already late for work anyway, so another few minutes won't hurt. Probably!
-
-And... nothing. Still no Mega Drive.
-
-Oh well! At least the tape and radio are working, and we've learnt a little more about how this rather complicated machine behaves with an alternative power source. The game hardware is going to require some more investigation.
-
-Further testing required!
+Looks like I'll have to investigate the transformer and its associated power rails more closely. Further testing required!
 
 ### Related posts
 

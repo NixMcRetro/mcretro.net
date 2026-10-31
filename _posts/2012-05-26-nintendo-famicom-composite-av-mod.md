@@ -8,23 +8,23 @@ categories: [hacks, nintendo, youtube]
 
 ![](/assets/images/2012/img_0167.jpg)
 
-The Nintendo Family Computer. Ohhhh yeahhhh! Below are the first, second and third revisions of my attempt at an AV mod for the Famicom.
+The Nintendo Family Computer. Ohhhh yeahhhh! I've been experimenting with a composite AV modification for this Famicom, and after three revisions I've managed to get it working. This particular console actually belongs to somebody else, so the aim is to give its owner a usable video and audio output rather than relying on Japanese RF television reception.
 
 ![](/assets/images/2012/img_0148.jpg)
 
-The first attempt was a proof of concept, hence the mess of cables. Functional yet hideous.
+The first attempt was a proof of concept, hence the mess of cables. Functional yet hideous, but at least it gave me something to work from.
 
 ![](/assets/images/2012/img_0149.jpg)
 
-The second attempt used a slightly longer piece of prototyping board. I was building it with some fairly questionable parts, including a cable tie pressed into service as a wire for ground. It worked, but it was not what I wanted.
+The second attempt used a slightly longer piece of prototyping board. I was building it with some fairly questionable parts, including a cable tie pressed into service as a wire for ground. It worked, but I still wasn't happy with the arrangement.
 
 ![](/assets/images/2012/img_0157.jpg)
 
-The final version was shrunk down to fit on a much smaller piece of prototyping board. A much better piece of hardware.
+By the third revision I'd managed to shrink everything onto a much smaller piece of prototyping board. Much better! Now the modification is compact enough to tuck into the Famicom without leaving quite such a spectacular collection of wires hanging everywhere.
 
 ### Parts used
 
-This parts list documents the circuit that worked on this particular Famicom motherboard. Famicom board revisions differ, and later AV-mod designs use different component values and connection points, so treat this as a record of this build rather than a universal recipe.
+This is the circuit that worked on this particular Famicom motherboard. Board revisions differ, so the photographs and component values are a record of my build rather than a universal recipe for every Famicom.
 
 - 1 x 110 ohm resistor, 0.25 W, 1% tolerance
 - 1 x 300 ohm resistor, 0.5 W, 5% tolerance
@@ -51,9 +51,9 @@ To make it all come together and actually give us composite AV, read on!
 
 ![](/assets/images/2012/img_0145.jpg) A937Q D PNP transistor desoldered from the Famicom mainboard. It fell into the Famicom...
 
-Firstly, desolder the PNP transistor shown above from the mainboard. I originally used a small flatblade screwdriver to help lift it while heating the joints.
+First, the PNP transistor needs to come off the mainboard so it can be reused in the composite circuit. I originally used a small flatblade screwdriver to help lift it while heating the solder joints. The component eventually came free, although as you can see from the photographs, it even managed to fall inside the console at one point.
 
-I would be gentler doing this now. A desoldering pump, braid or proper desoldering tool puts much less mechanical stress on an ageing PCB. The important thing is getting the component out without overheating it or lifting the pads.
+I'd be gentler doing this now. A desoldering pump, braid or proper desoldering tool places much less mechanical stress on an ageing PCB, and the last thing you want is a lifted pad or a damaged transistor before you've even built the new circuit.
 
 ### Wiring the Famicom
 
@@ -69,33 +69,29 @@ I would be gentler doing this now. A desoldering pump, braid or proper desolderi
 
 ![](/assets/images/2012/img_0166.jpg)
 
-Next identify the four solder points required from the photos above. If your mainboard looks different, you have a different board revision. Sadly, I cannot help you with that one from these photos alone.
+Next, identify the four solder points shown above. These are the connections I used on this board revision, so if yours looks different, don't assume the same points will apply. Sadly, I can't help much with a different motherboard from these photographs alone.
 
 ![](/assets/images/2012/img_0162.jpg) +5 V source
 
-The purple cable taps into the voltage regulator, an LM7805, and provides the +5 V supply.
+The purple cable taps into the LM7805 voltage regulator and supplies +5 V to the modification. From there, the power goes into the resistor and transistor circuit on my little prototyping board.
 
 ![](/assets/images/2012/img_0159.jpg) Sound
 
-The orange cable is the audio signal source. The audio output also needs ground, which is the next connection.
+The orange cable carries the audio signal from the Famicom mainboard. It also needs a ground connection to complete the audio output, which brings us to the next wire.
 
 ![](/assets/images/2012/img_0160.jpg) Ground
 
-The black cable is the ground point. I ran a wire from it to the prototyping board and split it there for the other ground connections.
+The black cable is the ground point. I ran a wire from there to the prototyping board, where it branches out for the other ground connections. It's a bit easier to deal with everything in one place instead of trying to attach half a dozen wires directly to the Famicom.
 
 ![](/assets/images/2012/img_0161.jpg) Composite video
 
-The green cable is the composite-video signal. The RCA centre pin carries the signal and the outer connection goes to circuit ground.
+The green cable carries the composite-video signal from the mainboard into the amplifier circuit. The yellow output wire from the finished board goes to the centre pin of the video RCA connection, while the outer connection is grounded.
 
-Adding a little fresh solder and flux can make an old joint much easier to rework because it improves wetting and heat transfer. Melt the existing joint and add just enough fresh solder to get a clean connection.
-
-I usually add enough that I don't bother tinning the wires separately.
-
-Yes... I know... lazy, isn't it!
+Adding a little fresh solder and flux can make an old joint easier to rework because it helps the solder flow properly. Melt the existing joint and add just enough fresh solder to make a clean connection. I usually add enough that I don't bother tinning the wires separately. Yes... I know... lazy, isn't it!
 
 ### Building the composite board
 
-Once the four wires are installed, grab the prototyping board. I cut mine down to size with whatever seemed appropriate at the time, including a knife, flatblade screwdriver and, once, a hacksaw.
+Once the four wires are installed, grab the prototyping board. I cut mine down to size with whatever seemed appropriate at the time, including a knife, a flatblade screwdriver and, on one occasion, a hacksaw. A fine collection of precision engineering instruments, wouldn't you say?
 
 ![](/assets/images/2012/img_0151.jpg)
 
@@ -103,21 +99,17 @@ Once the four wires are installed, grab the prototyping board. I cut mine down t
 
 ![](/assets/images/2012/img_0155.jpg)
 
-The board I used is 5 x 7 holes. The photographs show the layout I built.
-
-Resistors are not polarised, but the electrolytic capacitors are. Make sure their polarity is correct.
+The finished board uses a 5 x 7-hole layout, as shown in the photographs. The resistors aren't polarised, but the electrolytic capacitors are, so their orientation matters. The original transistor also needs to go back into the circuit with the correct emitter, collector and base connections.
 
 ![](/assets/images/2012/img_0153.jpg) Cut this track on your prototyping board
 
-The copper track shown above has to be cut so the circuit sections are isolated correctly. I scraped through it with a flatblade screwdriver.
-
-Use a multimeter to make sure there is no continuity across the cut before powering the circuit.
+There's also a copper track on the underside that needs to be cut so the circuit sections are properly isolated. I scraped through it with a flatblade screwdriver. Check the break with a multimeter to make sure there is no continuity before applying power, because discovering a short circuit the exciting way is not particularly desirable.
 
 ![](/assets/images/2012/img_0165.jpg)
 
 ![](/assets/images/2012/img_0156.jpg)
 
-The cable colours in my build are:
+For reference, these are the cable colours I used:
 
 - Purple: +5 V from the LM7805
 - Green: composite video from the mainboard
@@ -130,7 +122,7 @@ The cable colours in my build are:
 
 ![](/assets/images/2012/img_0151.jpg)
 
-Make sure the transistor goes back into the new circuit with the correct emitter, collector and base orientation. If the modification does not behave as expected, switch the console off and disconnect the power adaptor before checking the wiring, transistor orientation and capacitor polarity.
+With the components in place, the little board is ready to connect to the Famicom. Take particular care with the transistor orientation and capacitor polarity. If the modification doesn't work as expected, switch everything off and disconnect the power adaptor before checking the wiring.
 
 ### Audio output
 
@@ -140,9 +132,9 @@ Make sure the transistor goes back into the new circuit with the correct emitter
 
 ![](/assets/images/2012/img_0154.jpg)
 
-The orange audio wire shown in the photographs runs into a 220 uF, 16 V electrolytic capacitor. In this build the positive side faces the mainboard and the negative side leads to the centre pin of the audio RCA socket.
+The orange audio wire runs into a 220 uF, 16 V electrolytic capacitor. In this build, the positive side faces the Famicom mainboard and the negative side runs towards the centre pin of the audio RCA connection. Add the ground connection and that's the sound output taken care of.
 
-Add a ground connection and that completes the audio output. Again, make sure the electrolytic capacitor polarity is correct.
+The owner decided to remove the second-player controller because the games being used were single-player. That also gave me a convenient route for the audio and video cables to leave the rear of the console. The modification board fits inside with enough cable slack to rearrange things later if necessary.
 
 ### Finished result
 
@@ -152,9 +144,11 @@ Add a ground connection and that completes the audio output. Again, make sure th
 
 ![](/assets/images/2012/img_0168.jpg)
 
-Now all that's left is to enjoy Kirby and Spelunker!
+Now all that's left is to enjoy Kirby and Spelunker! Composite video and audio are both working, although I haven't completely escaped the infamous jailbars. They're particularly noticeable in Kirby, and nobody likes jailbars. Not even people who are behind them!
 
-Below are some videos of the unit while it was in pieces, explaining where the wires run and how this particular build went together.
+I tried two ways of reducing them: connecting PPU pins 20 and 22, and adding connections to the PPU's +5 V and ground. Neither method helped on this machine, so for now the owner will have to live with the remaining interference. At least the Famicom itself is working through the new AV output.
+
+Below are three videos showing the board, its wiring and the finished result.
 
 {% include youtube.html id="zfdA--W3E5A" %}
 
@@ -162,7 +156,7 @@ Below are some videos of the unit while it was in pieces, explaining where the w
 
 {% include youtube.html id="VaGMn3mrMa4" %}
 
-A later guide covering improved Famicom AV modification and jailbar-reduction techniques can be found in [JPX72 - Famicom AV mod - NEW!](http://jpx72web.blogspot.com/2016/11/famicom-av-mod-new.html). It documents a related approach and useful schematics. I had no luck with the jailbar-reduction methods I tried. Your luck may vary. Good luck!
+**Update 2016:** A later guide covering improved Famicom AV modification and jailbar-reduction techniques can be found in [JPX72 - Famicom AV mod - NEW!](http://jpx72web.blogspot.com/2016/11/famicom-av-mod-new.html). It includes useful schematics and a related approach, although the jailbar-reduction methods I tried didn't work for me. Your luck may vary. Good luck!
 
 ### Related posts
 

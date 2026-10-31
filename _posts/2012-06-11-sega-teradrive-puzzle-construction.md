@@ -13,7 +13,7 @@ To kick things off here is a video of my faulty WDI-325Q. Listen to it grind! I'
 
 {% include youtube.html id="C8uMyyIT58E" %}
 
-Next up we have the mysterious Puzzle Construction software running on the Sega TeraDrive. This was one of the more interesting things I found while experimenting with the Model 3, mainly because it doesn't behave like ordinary PC software. The machine keeps switching between its PC and Mega Drive video output, and some of the graphics and sound are rather impressive for a humble 286.
+Next up we have the mysterious Puzzle Construction software running on the Sega TeraDrive. This was one of the more interesting things I found while experimenting with the Model 3, mainly because it doesn't behave like ordinary PC software. Just before Puzzle Construction loaded, there was a screen indicating that it was licensed by Sega. I remember wondering whether they'd embedded that message in the software itself. The machine keeps switching between its PC and Mega Drive video output, and some of the graphics and sound are rather impressive for a humble 286.
 
 The software includes several different games and editing tools. One of the games reminds me of Columns, although the aim is a little different and the levels have their own rules. It also requires a Mega Drive controller plugged into the TeraDrive, which I seem to forget about every time I want to play something.
 

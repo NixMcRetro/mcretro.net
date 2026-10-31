@@ -52,7 +52,7 @@ I used a TSOP adapter board, a good helping of flux, some fine solder, and desol
 
 Getting the chip aligned is the fiddly part. I used Blu-Tack to hold everything in place, although the particular Blu-Tack I had was more interested in sticking to absolutely everything than holding the chip neatly. Once the pins were soldered, I checked for bridges and cleaned up the excess.
 
-The adapter's jumper pads also needed bridging before it could be used. That video covers preparing the flash hardware, not a completed MIX4AAE cartridge test, but the same approach is useful when putting together a compatible SNES flash cart.
+The adapter's jumper pads also needed bridging before it could be used. That video covers preparing the flash hardware, not a completed MIX4AAE cartridge test, but the same approach is useful when putting together a compatible SNES flash cart. Back when I made these videos, I recommended [ASSEMbler Games](https://web.archive.org/web/20191206184256/https://assemblergames.com/) and [ROMhacking.net](https://www.romhacking.net/) as good places to ask questions if you got stuck.
 
 **Update January 2020:** A later write-up from [The Poor Student Hobbyist](https://thepoorstudenthobbyist.com/2017/09/14/how-to-make-a-snes-reproduction-cartridge/#step7d) also goes through SNES reproduction-cartridge construction in much more detail, with several board and chip options.
 

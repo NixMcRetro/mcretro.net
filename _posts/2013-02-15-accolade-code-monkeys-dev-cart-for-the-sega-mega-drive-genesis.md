@@ -16,7 +16,7 @@ The cable ends in a 9-pin connector, with what appears to be only one contact wi
 
 The cartridge itself is quite fashionable, especially for something made by a third-party publisher. There's an awful lot of black epoxy covering the components, which makes the circuitry difficult to inspect.
 
-Several capacitors sit close to the edge of the board, where they seem to have been catching on the cartridge-slot flaps over the years. One near C9 may already have been damaged. They appear to be 47 uF, 10 V electrolytics, so at least replacements shouldn't be difficult to find.
+Several capacitors sit close to the edge of the board, and a few of those on the front had come loose. I suspect they'd been catching on the cartridge-slot flaps over the years. One near C9 may already have been damaged. They appear to be 47 uF, 10 V electrolytics, so at least replacements shouldn't be difficult to find.
 
 I might put some protective tape over that area before inserting the cartridge too many more times. There are also two socketed EPROMs marked as 27256-class devices, which is nice to see. Socketed components are always a welcome sight when examining unusual hardware like this.
 

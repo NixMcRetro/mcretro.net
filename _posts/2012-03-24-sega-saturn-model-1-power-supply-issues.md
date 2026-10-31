@@ -10,7 +10,7 @@ categories: [repairs, sega]
 
 One of my Model 1 Sega Saturns has developed a rather annoying power supply problem. It becomes more noticeable after the console has been running for a while, so I left it operating for over an hour to get everything thoroughly warmed up. The built-in music player was more than sufficient for that experiment.
 
-Once the problem appeared, I made some recordings to help work out where the noise might be coming from. It's the sort of intermittent fault that's especially annoying because everything can appear perfectly normal when the machine is first switched on.
+Once the problem appeared, I recorded the noise in stereo to help narrow down which component was responsible. It's the sort of intermittent fault that's especially annoying because everything can appear perfectly normal when the machine is first switched on.
 
 {% include youtube.html id="h4uCTT9GqpE" %}
 

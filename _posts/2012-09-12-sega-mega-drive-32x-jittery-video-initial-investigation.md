@@ -8,33 +8,17 @@ categories: [repairs, sega]
 
 {% include youtube.html id="xOgntz8Z0mk" %}
 
-I picked up three 32X units from the internet, all sold as-is.
+I picked up three Sega Mega Drive 32X units from the internet, all sold as-is. Surprisingly, all three work to some degree, although I've been getting some rather unpleasant video problems. One of them originally produced no picture at all, but a good clean managed to bring it back to life. I'll upload a separate repair video covering that one.
 
-Surprisingly, all three work to some degree.
+The problem in the video above is a little more interesting. *Doom* starts up with a perfectly steady menu, but once the game begins, the graphics start shifting backwards and forwards across the screen. It doesn't happen immediately either. Things get worse after the hardware has been running for a while, and occasionally the colour drops out on the CRT.
 
-The bad news is the jittering and distorted video shown above. At this point it looked as though the same problem might be affecting every 32X I owned, which made me wonder whether the fault was somewhere else in the setup rather than inside each individual 32X.
+At first I wondered whether something inside the 32X itself was failing. Then again, with several units showing trouble, perhaps I ought to be looking somewhere else in the setup. VDP, VDU, whatever it wants to call itself, something isn't having a very good time. How am I supposed to shoot anything when the entire screen is jumping around? I even miss that terrible *Doom* music when the machine isn't behaving.
 
-One of the units originally produced no video at all. A good clean restored that one, and I'll upload a separate repair video showing what I did.
+In other repair news, I've received a Mega Drive 2 and Mega-CD 2 combination, both sold as dead. The Mega-CD looks like a relatively easy repair because its F301 fuse has failed, much like the problem I encountered on a Mega-CD Model 1. The nominal rating is 2.5 A, although the correct fuse type still depends on the actual board revision. Happily, the CD mechanism itself seems to be in excellent shape.
 
-In other repair news, I also received a Mega Drive 2 and Mega-CD 2 combination, both sold as dead.
+The Mega Drive 2 appeared completely dead at first, but eventually I noticed signs of life. Sure enough, another cracked solder joint on the DC-in socket! A quick resolder and it roared back into action with some Aleste. I even managed to finish the first level before remembering I'd left the soldering iron switched on in the other room. Whoops!
 
-The Mega-CD looks like an easy repair. Its F301 fuse has failed, much like the fuse problem I encountered in one of my Mega-CD Model 1 units. The nominal current rating is also 2.5 A, although the exact fuse type and board revision should still be checked rather than assuming both machines use an identical part.
-
-The CD mechanism itself seems to be working beautifully.
-
-The Mega Drive 2 appeared completely dead at first, but I eventually noticed signs of life.
-
-Sure enough, another cracked solder joint on the DC-in socket.
-
-Not the first time I've seen that!
-
-A quick resolder and it roared back to life with some Aleste.
-
-I managed to finish the first level before realising I'd left the soldering iron switched on in the other room.
-
-Whoops!
-
-More 32X testing to come. Until next time, keep powering on everyone!
+There's still plenty to investigate with these 32X units. If anyone has an idea about the jittering graphics, particularly why they get worse as the machine warms up, I'd be interested to hear it. Until next time, keep powering on everyone!
 
 **Update 6th February 2018:** I later learned that Sega had already documented a compatibility fault affecting PAL and Asian Model 1 VA4 Mega Drives used with the 32X in its 1994 and 1995 service bulletins. Poor EDCLK and VCLK signal quality on the host Mega Drive can cause 32X-rendered graphics to jitter, sound to slow down or the game to lock up as the hardware warms. In other words, the 32X itself was not necessarily the problem. Sega's service procedure modifies the Mega Drive motherboard. That fits the warm-up behaviour I was seeing considerably better than the theories I was working through at the time.
 

@@ -1,0 +1,39 @@
+name: Mobile Gaps and Footer Layout QA
+on:
+  push:
+    branches:
+      - test/mobile-gaps-desktop-footer-qa-2026-11-01
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll
+        run: bundle exec jekyll build --destination _site
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Browser regression tests
+        run: |
+          python3 -m http.server 8784 --directory _site > /tmp/mobile-footer-qa.log 2>&1 &
+          node .github/tests/mobile-gaps-footer-qa.mjs
+      - name: Upload review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mobile-gaps-footer-review
+          path: /tmp/mobile-gaps-footer-review/
+          if-no-files-found: ignore

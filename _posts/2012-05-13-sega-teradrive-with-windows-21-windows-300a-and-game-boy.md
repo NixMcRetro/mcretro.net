@@ -30,7 +30,7 @@ And here's the end result: a self-booting Windows 3.00a floppy using MS-DOS 6.22
 
 I also experimented with DOSBox to prepare the stripped-down Windows installation and work out which files were actually necessary. The TeraDrive's limited memory means I can't simply install a newer version of Windows without thinking about what will fit, so this has turned into a rather entertaining exercise in trimming things down.
 
-The next challenge is still getting a hard drive into this machine. There's an unusual 44-pin connector on the motherboard, and I might also be able to use an ISA expansion card. Either option would make life a lot easier than juggling floppy disks all evening. You can even see the change in daylight between the recordings; the sun had long since set by the time I finished!
+The next challenge is still getting a hard drive into this machine. There's an unusual 44-pin connector on the motherboard, and I might also be able to use an ISA expansion card. Either option would make life a lot easier than juggling floppy disks all evening. You can even see the change in daylight between the recordings; the sun had long since set by the time I finished! But never mind, we will be victorious!
 
 ![](/assets/images/2012/img_0092.jpg)
 

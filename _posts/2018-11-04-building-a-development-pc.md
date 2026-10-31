@@ -26,7 +26,7 @@ Windows 98, Windows 2000 and Windows XP were all possibilities. I'd always had a
 
 I eventually spent some time getting Windows 98 running, installing drivers and investigating the motherboard's chipset. The old MSI documentation was useful for identifying the AMD-751 and AMD-756 components, although finding archived BIOS files and drivers for obsolete motherboards can be a challenge in itself.
 
-There was plenty of unrelated rambling during the build, including my upcoming university examinations. As usual, I was wondering why I hadn't done quite as much study during the semester as I'd planned. It turns out that taking apart computers is substantially more interesting than revising for exams. Who could have guessed?
+There was plenty of unrelated rambling during the build, including my upcoming university examinations. As usual, I was wondering why I hadn't done quite as much study during the semester as I'd planned. Final exams were only a few weeks away, and I'd somehow let the previous 12 or 13 weeks disappear. I kept promising myself I'd be a better student, but attendance just wasn't my thing. It turns out that taking apart computers is substantially more interesting than revising for exams. Who could have guessed?
 
 
 

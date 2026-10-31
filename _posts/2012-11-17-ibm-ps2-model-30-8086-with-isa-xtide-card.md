@@ -26,7 +26,7 @@ Booting directly from the new storage was another matter. The machine wasn't qui
 
 Now I need to make the DOM bootable and move the experiment back into the TeraDrive. I also wondered whether the TeraDrive's two floppy drives might be contributing to the trouble, so there's another little test waiting for me there.
 
-I had originally planned to return the IBM PS/2 to an original-style hard drive. I ordered two drives and a 5.25-inch floppy drive from a seller who seemed increasingly dubious.
+I had originally planned to return the IBM PS/2 to an original-style hard drive. I ordered two drives and a 5.25-inch floppy drive from a seller who seemed increasingly dubious. At the time, I wondered whether he'd simply forgotten to charge me for shipping, so I wasn't particularly confident that anything would turn up.
 
 **Edit:** The seller never shipped anything and by the time PayPal became involved, it was too late. Scammers... dammit!
 

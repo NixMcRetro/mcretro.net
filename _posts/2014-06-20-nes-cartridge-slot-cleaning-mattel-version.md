@@ -25,7 +25,7 @@ The cartridge connector needs a slightly different approach. I wrapped some clea
 
 It's worth repeating the process until the material stops collecting grime. Remember to clean your game cartridges too, otherwise you're only going to put some of that dirt straight back into the connector. With how much trouble these machines can be to open, I'd rather not have to do it again next week.
 
-Replacement cartridge connectors were available for around $10 delivered on eBay at the time, although the example I handled didn't feel quite as sturdy as Nintendo's original. Its outer metal casing came away rather more easily than I'd have liked, so cleaning the original connector seems worth attempting before replacing it.
+Replacement cartridge connectors were available for around $10 delivered on eBay at the time, although the example I handled didn't feel quite as sturdy as Nintendo's original. Its outer metal casing came away rather more easily than I'd have liked, so cleaning the original connector seems worth attempting before replacing it. If I somehow managed to set the thing on fire, at least a replacement wouldn't break the bank!
 
 With the contacts cleaned, I'm ready to move on to the capacitors. I'll get the soldering iron out for the next part, then we can put everything back together and see how the machine behaves.
 

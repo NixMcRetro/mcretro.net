@@ -26,7 +26,7 @@ There was also another complication involving the console itself. This was a mac
 
 After a little more fiddling with the spindle hub and mechanism, I finally managed to get a game running. Final Fantasy VIII appeared on the screen, complete with its full-motion video. Much more like it!
 
-That doesn't mean everything was suddenly perfect, of course. I'd already encountered problems with replacement spindle hubs sitting at the wrong height or coming loose, and this experiment certainly didn't make me any more confident in some of those inexpensive replacement parts.
+That doesn't mean everything was suddenly perfect, of course. I'd already encountered problems with replacement spindle hubs sitting at the wrong height or coming loose, and this experiment certainly didn't make me any more confident in some of those inexpensive replacement parts. Some of the laser assemblies I'd received were corroded as well, which didn't exactly inspire confidence.
 
 Sony also used several KSM-440 optical-drive variants across the PlayStation family. The PS one commonly uses the KSM-440BAM, so it's important to check the actual mechanism, cable and mechanical fit rather than assuming every PlayStation laser is interchangeable.
 

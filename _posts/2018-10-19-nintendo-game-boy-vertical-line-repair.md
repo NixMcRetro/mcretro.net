@@ -20,7 +20,7 @@ And naturally, I started with the soldering iron far too hot! At around 350 degr
 
 After finally working out how to change the temperature setting on the Hakko, I reduced the heat substantially and tried again. With much gentler heat and careful positioning, the missing columns gradually began to reappear. It was rather satisfying watching the picture come back together after the earlier attempt had made such a mess.
 
-Once the display looked right, I gave it another test. Excellent news! The missing lines were gone and Tetris was once again looking like Tetris. I was surprised at how well it worked, particularly considering I'd been rather less gentle with the ribbon at the beginning of the experiment.
+Once the display looked right, I gave it another test. Excellent news! The missing lines were gone and Tetris was once again looking like Tetris. I was surprised at how well it worked, particularly considering I'd been rather less gentle with the ribbon at the beginning of the experiment. Perhaps I'd finally appeased the pixel gods!
 
 Reassembly turned into another little adventure when I realised I needed some thin double-sided tape. The sort with a thick foam layer wasn't what I wanted for keeping the LCD's surrounding parts neatly in place. A trip to the shops later, I finally had something suitable and could get the machine back together.
 

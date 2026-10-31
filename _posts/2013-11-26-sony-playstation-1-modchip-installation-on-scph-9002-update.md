@@ -8,7 +8,7 @@ categories: [hacks, sony, youtube]
 
 {% include youtube.html id="Udr_CFyVsYg" %}
 
-Make sure **Verify burn** is switched on, or you'll have more coasters than a beer hall in the Alps!
+Make sure **Verify burn** is switched on, or you'll end up with a pile of coasters!
 
 The CD burner I was using turned out to be faulty, and verification had either been disabled or ignored during some earlier burns. A failed test disc therefore wasn't enough to show that the modchip wiring or PIC programming was wrong.
 

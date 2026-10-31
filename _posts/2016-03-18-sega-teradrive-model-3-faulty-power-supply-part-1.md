@@ -15,13 +15,13 @@ One of the useful things about having more than one TeraDrive is that I can comp
 
 The symptom here is an awful buzzing noise from the TeraDrive's internal speaker, followed by the machine failing to start properly. I don't like hearing that sort of thing from an old computer, especially when the power supply is involved. I was rather quick to switch it off rather than risk damaging anything else.
 
-I suspect the power supply, but at this stage I haven't identified the actual faulty component. The connections aren't quite like those of a standard AT power supply, and I need to establish the correct voltages before drawing too many conclusions. Guessing based on wire colours probably isn't going to end particularly well.
+The current (ha!) power supply is my prime suspect, but at this stage I haven't identified the actual faulty component. The connections aren't quite like those of a standard AT power supply, and I need to establish the correct voltages before drawing too many conclusions. Guessing based on wire colours probably isn't going to end particularly well.
 
 The other TeraDrive gives me a useful comparison, although I'd prefer not to start swapping unknown or faulty power supplies between machines without first checking compatibility. I really don't want to turn one broken TeraDrive into two broken TeraDrives.
 
 Another thing I'd love to address eventually is the mains-voltage arrangement. Having to use a step-down transformer every time I want to run the machine is a nuisance, and a proper Australian-mains-compatible solution would make life considerably easier. Whether I can adapt the original supply or need something different remains to be seen.
 
-For now, the next job is to investigate the faulty power supply and work out why it behaves so badly under load. With any luck the problem will turn out to be something replaceable, rather than a more difficult component buried inside the supply.
+For now, the next job is to investigate the faulty power supply and work out why it behaves so badly under load. With any luck the problem will turn out to be something replaceable, rather than a more difficult component buried inside the supply. If we fail, well... let's not think about that!
 
 **Mains-voltage warning:** Power supplies can retain dangerous voltages after being disconnected, and internal testing or repairs require appropriate electrical expertise and safety equipment.
 

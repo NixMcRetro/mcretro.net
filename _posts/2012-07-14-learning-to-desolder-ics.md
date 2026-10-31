@@ -30,7 +30,7 @@ It's rather satisfying seeing the cleaned pads beside the ones I haven't touched
 
 I was still using the heat gun for some of this work, although a soldering iron is much more appropriate for cleaning individual pads with braid. Proper hot-air rework equipment would also give better control over the heat applied to a valuable multilayer board. These are practice experiments on scrap hardware, not necessarily techniques I'd recommend copying.
 
-Desoldering success! Now I just need to learn how to solder the chips back on again. That should be interesting.
+Desoldering success! Now I just need to learn how to solder the chips back on again. That should be interesting. Assuming I can find the energy to wake up before the afternoon, of course!
 
 **Related Posts**
 

@@ -27,7 +27,7 @@ That's considerably better than a machine that wouldn't even complete its initia
 
 Back when I made the video, I suggested that a heat-gun treatment might last somewhere between three and twelve months, perhaps longer with flux. I don't have evidence for a predictable lifespan like that, and adding flux doesn't turn uncontrolled heating into a proper repair. The result here is simply that the heat treatment temporarily revived this particular MacBook Pro.
 
-I'd previously tried a similar experiment with a PC video card and was considering trying it on a PlayStation 3 and Xbox 360. Those ideas were part of my experiments at the time, not recommendations to repair other machines with a heat gun.
+I'd previously tried a similar experiment with a PC video card, and that card had come back to life too. I don't have evidence of how long that result lasted. I was considering trying it on a PlayStation 3 and Xbox 360. Those ideas were part of my experiments at the time, not recommendations to repair other machines with a heat gun.
 
 Still, seeing this MacBook Pro boot again after arriving in such a poor state was rather satisfying! :)
 

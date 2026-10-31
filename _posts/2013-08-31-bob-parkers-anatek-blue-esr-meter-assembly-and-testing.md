@@ -8,7 +8,7 @@ categories: [guides, youtube]
 
 {% include youtube.html id="Lq9-9A8kn8Q" %}
 
-Here are the final steps of assembly and testing of my new Bob Parker Blue ESR meter from AnaTek. It can measure many capacitors for their equivalent series resistance (ESR) while they are still in the circuit! The low test voltage helps keep ordinary semiconductor junctions from conducting during a measurement.
+Here are the final steps of assembly and testing of my new Bob Parker Blue ESR meter from AnaTek. It can measure many capacitors for their equivalent series resistance (ESR) while they are still in the circuit! The low test voltage (below 100 mV) helps keep ordinary semiconductor junctions from conducting during a measurement.
 
 I picked this one up as a kit from the United States for around $79, before shipping. After assembling the board and getting everything into its little blue case, I thought I'd give it a proper workout with some of the capacitors I've removed from previous repair projects. There certainly isn't any shortage of those around here!
 

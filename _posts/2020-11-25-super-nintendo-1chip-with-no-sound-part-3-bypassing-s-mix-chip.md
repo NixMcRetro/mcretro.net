@@ -26,7 +26,7 @@ Sure, something *might* catch fire or burn out at a later date. That's a problem
 
 We're fast approaching the end of 2020, and what a year it has been. I've managed to offload most of my development hardware just in time to think about returning to university and finishing this degree. Working and studying at the same time should be interesting, assuming I can work out how many jobs I apparently have this week!
 
-There are a couple more videos to come before the new year, along with some old car repair footage I discovered while tidying up my hard drive. A Holden Commodore VY Series II handbrake replacement, anyone? Apparently my collection of things needing repairs extends well beyond game consoles.
+There are a couple more videos to come before the new year, along with some old car repair footage I discovered while tidying up my hard drive. A Holden Commodore VY Series II handbrake replacement, anyone? I also found footage of me messing around with the fan systems, so it wasn't just the handbrake keeping me occupied. Apparently my collection of things needing repairs extends well beyond game consoles.
 
 **Related Posts**
 

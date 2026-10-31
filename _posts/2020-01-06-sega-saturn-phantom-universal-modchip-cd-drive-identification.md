@@ -17,7 +17,7 @@ First, disconnect the console from power and make sure there's no disc left in t
 
 With the cover removed, we can identify the drive without taking the entire console apart. In this particular Saturn I found a JVC mechanism, which I checked using the markings on the drive assembly. The circuit board layout and chip arrangement can also provide clues, although the part markings are a more useful starting point.
 
-The important distinction is the ribbon cable. The common JVC arrangement uses a 21-pin connection, while the Sanyo version uses 20 pins. They aren't electrically interchangeable, even if the connectors look rather similar, so it's important to identify the drive before choosing the correct modchip installation instructions.
+The important distinction is the ribbon cable. Check the actual connector and consult the appropriate Phantom Universal installation manual for your particular Saturn model and CD drive mechanism before choosing the installation instructions. Rather than relying on a blanket JVC-versus-Sanyo pin-count rule, make sure the manual matches the hardware in front of you. Those connectors can look rather similar, and using the wrong instructions probably isn't going to end well.
 
 If you need to remove the drive assembly, the power and ribbon cables should be disconnected carefully. The drive sits on rubber mounts to reduce vibration, and the ribbon cable has exposed contacts on one side. I made a point of checking the orientation before removing it so everything could go back the same way.
 

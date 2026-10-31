@@ -51,7 +51,7 @@ The SMART statistics weren't particularly happy after several days of recovery a
 
 ![](/assets/images/2023/img_1117.jpg)
 
-After the recovery attempt I used [MHDD](https://hddguru.com/software/2005.10.02-MHDD/) to examine the drive further. It started showing warnings quite early on, and I also experimented with its erase function. That operation is destructive, so anything examined after that point can't tell us what recoverable data might have existed beforehand.
+Before the destructive erase, I also ran pattern searches against a disk image created with ddrescue, but found no signs of deleted data that hadn't been zeroed. After the recovery attempt I used [MHDD](https://hddguru.com/software/2005.10.02-MHDD/) to examine the drive further. It started showing warnings quite early on, and I also experimented with its erase function. That operation is destructive, so anything examined after that point can't tell us what recoverable data might have existed beforehand.
 
 ![](/assets/images/2023/img_1113.jpg)
 

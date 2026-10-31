@@ -8,7 +8,7 @@ categories: [repairs, sony, youtube]
 
 {% include youtube.html id="TgvHaJ4QY_Q" %}
 
-Grumble, grumble, grumble! I've been having a rather frustrating time with some replacement Sony PlayStation CD mechanisms I picked up from eBay. They looked like they would be just the thing for repairing a collection of faulty PlayStation consoles, but it turns out there's a fairly significant problem.
+Grumble, grumble, grumble! I've been having a rather frustrating time with some replacement Sony PlayStation CD mechanisms I picked up from eBay. They looked like they would be just the thing for repairing a collection of faulty PlayStation consoles, but it turns out there's a fairly significant problem. There are two videos because I thought I'd lost the first recording, made another, then found the missing one. Naturally!
 
 I've got several PlayStations with damaged optical drive assemblies, particularly around the spindle and the plastic hub that holds the disc in place. Rather than trying to repair every little part individually, I ordered a collection of complete replacement mechanisms. Seemed like a sensible idea at the time!
 

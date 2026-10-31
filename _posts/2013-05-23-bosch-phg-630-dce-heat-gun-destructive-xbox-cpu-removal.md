@@ -13,7 +13,7 @@ I've picked up a few new tools for the workbench, including a decent pair of ben
 
 It's quite a substantial tool, with a long power cable, three fan speeds and adjustable temperature control. There's even a display on the back so I can see what the gun is doing. Much nicer than the generic handheld heat gun I've been using previously.
 
-Naturally I had to find something to test it on. What better candidate than the dead Xbox motherboard sent to me by Hex1gon? This board was already beyond repair as far as I was concerned, but I wanted to keep it for donor components, including the RAM for a possible 128 MB Xbox upgrade in the future.
+Naturally I had to find something to test it on. What better candidate than the dead Xbox motherboard sent to me by Hex1gon? This board was already beyond repair as far as I was concerned, but I wanted to keep it for donor components, including the RAM for a possible 128 MB Xbox upgrade in the future. I had debug games in mind for that extra memory, assuming I ever got around to the upgrade.
 
 The idea was to see whether I could remove the CPU and have a look underneath the package. I turned the heat gun up and started applying hot air, with a small jeweller's screwdriver ready to lift the chip once the solder softened. The gun also appeared to reduce its output when I moved it too close to the board, which was an interesting feature to watch.
 

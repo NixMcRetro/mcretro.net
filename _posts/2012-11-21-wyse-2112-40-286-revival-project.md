@@ -24,7 +24,7 @@ Eventually I tried an Oak VGA card that included its own floppy and hard-drive c
 
 With very little documentation available, I experimented with the Oak card's jumpers until I found a combination that disabled its unwanted controller functions. Moving the relevant jumpers from positions 1-2 to 2-3 appeared to do the trick. I later identified the card as a Pine Technology PT-604, although at the time it was mostly trial and error.
 
-Once the controller conflict was sorted out, the original 720 KB floppy drive began working again. I could finally boot DOS and turn my attention to the hard drive.
+Once the controller conflict was sorted out, the original 720 KB floppy drive began working again. I'd also tried a borrowed 1.44 MB floppy mechanism from another PC, and the Wyse seemed happy enough to operate it. That didn't establish whether the machine could actually format or use 1.44 MB high-density disks, of course. I could finally boot DOS and turn my attention to the hard drive.
 
 The Seagate drive uses 820 cylinders, 17 sectors and 5 heads, but the BIOS didn't offer an exact match and the user-defined option wasn't cooperating. I ended up using drive type 8, which has matching heads and sectors but fewer cylinders. It cost me some capacity, bringing the usable space down to roughly 30 MB, but at least the drive became accessible.
 

@@ -14,7 +14,7 @@ I've got the Hakko 808 ready for another evening of desoldering. There's a mixtu
 
 The power supply was giving me some rather unpleasant voltage readings, so I thought replacing the ageing electrolytics might be worthwhile. There were some enormous 6800 uF capacitors rated at 10 V, along with a collection of smaller parts. Some of the replacements were considerably smaller than the originals, which is rather interesting when you see them sitting next to each other.
 
-The replacement parts have arrived, so I started removing the old electrolytics and inspecting the board as I went. A few came out fairly easily, but others were considerably more stubborn. Naturally, the largest capacitor was one of the least cooperative. I eventually decided to leave that one until later rather than spend the entire evening fighting with it.
+The replacement parts have arrived, so I started removing the old electrolytics and inspecting the board as I went. It probably looked as though I was desoldering them at random, but there was a plan in there somewhere! A few came out fairly easily, but others were considerably more stubborn. Naturally, the largest capacitor was one of the least cooperative. I eventually decided to leave that one until later rather than spend the entire evening fighting with it.
 
 Things became rather more interesting when I removed one of the Sanyo capacitors. There was obvious residue around its leads, and the surrounding board wasn't looking particularly healthy either. That's certainly the sort of thing I was hoping to find! The affected area was near part of the low-voltage circuitry, making it particularly interesting given the fault I'd been investigating.
 

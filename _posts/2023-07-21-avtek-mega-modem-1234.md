@@ -13,7 +13,7 @@ Back in May 2022 I picked up this Avtek Mega Modem 1234 (Serial 801452), capable
 
 ![](/assets/images/2023/img_1039.jpg)
 
-Inside were Elgen and Daewoo branded capacitors, both brands before my time. All I really know about Daewoo is that their cars used to be sold here in Australia for a period. Some of these capacitors were looking rather tired, which was enough encouragement to get the soldering iron out.
+Inside were Elgen and Daewoo branded capacitors, both brands before my time. All I really know about Daewoo is that their cars used to be sold here in Australia for a period. Some of these capacitors were visibly bulging, which was more than enough encouragement to get the soldering iron out.
 
 ![](/assets/images/2023/img_1038.jpg)
 

@@ -8,7 +8,7 @@ categories: [ibm-pc, repairs, sega]
 
 {% include youtube.html id="m_oP07ZiVmM" %}
 
-We're well into summertime here in Sydney, Australia. Time to throw another shrimp on the barbie, as they say. Not much relevance to this video, especially considering how long this repair has been waiting to be finished!
+We're well into summertime here in Sydney, Australia. Time to throw another shrimp on the barbie, as they say. Not much relevance to this video, especially considering how long this repair has been waiting to be finished! I recorded this one three years ago, like most of the videos I've finally got around to bombarding YouTube with. For your viewing pleasure, capacitor installation!
 
 The capacitors have now been replaced, and it's time to finish the soldering before giving the TeraDrive another test. Two of the particularly suspicious components were rated at 3300 uF and 6800 uF, both at 10 V. Those were among the capacitors showing signs of trouble.
 

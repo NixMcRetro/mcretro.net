@@ -28,7 +28,7 @@ Here's that first Pentium 600 MHz machine. I really do seem to have an impressiv
 
 The next machine was a 133 MHz something-or-other. I'm not sure whether it was a Cyrix, AMD, or Pentium, but it was sufficient for the experiment and fitted nicely into the case. Between the different PCs, software configurations, and DIP-switch settings, there was quite a bit of trial and error.
 
-Eventually I managed to get some video output and signs of communication from the development hardware. That was encouraging, although I still wasn't consistently getting the expected results. At least the unit was responding well enough to give me something to investigate further.
+Eventually I managed to get some video output and signs of communication from the development hardware. The SNASM2 PC interface initialised correctly and reported that it was ready to connect, which was certainly encouraging! I still wasn't consistently getting the expected results, but at least the unit was responding well enough to give me something to investigate further.
 
 ![](/assets/images/2013/img_0368.jpg)
 

@@ -34,3 +34,6 @@ After all that, the Wyse was finally running DOS and playing games. Not bad for 
 
 - [Stason - Wyse PC 286 Model 2112](https://www.stason.org/TULARC/pc/motherboards/W/WYSE-TECHNOLOGY-INC-286-WYSE-PC-286-MODEL-2112.html) - documents the 12.5 MHz 80286 configuration.
 - [GSETUP Boot Disk Guide](https://www.minuszerodegrees.net/5170/setup/5170_gsetup_720.htm) - IBM 5170 setup reference; compatibility with other BIOS implementations varies.
+- [VCFed - How to Get into BIOS, Tulip DC-286](https://forum.vcfed.org/index.php?threads/how-to-get-into-bios-tulip-dc-286.25006/) - historical discussion of alternative BIOS setup methods.
+- [VCFed - Seagate ST-251 MLC1 on IBM XT-286](https://forum.vcfed.org/index.php?threads/seagate-st-251-mlc1-on-ibm-xt-286.18735/) - the hard-drive geometry discussion referenced during my troubleshooting.
+- [Pine Technologies PT-604 Information (Archived)](https://web.archive.org/web/20010412185405/http://www.riceball.com/computertips/pt604.html) - archived information about the VGA/controller card.

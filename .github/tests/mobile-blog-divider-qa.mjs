@@ -86,7 +86,7 @@ try {
     assert.equal(result.paragraphCount,1,'Exactly one footer paragraph at '+width);
     assert.equal(result.footerLineBreakCount,0,'No forced line breaks at '+width);
     assert.equal(result.dotAdjacent,true,'Full stop directly follows date link at '+width);
-    assert.ok(/\\b\\d{4}\\. You are visitor number/.test(result.fullText),'No space before date full stop at '+width+': '+result.fullText);
+    assert.ok(result.fullText.includes(result.dateText+'. You are visitor number'),'No space before date full stop at '+width+': '+result.fullText);
     assert.ok(result.fullText.endsWith('We are powered by GitHub Pages.'),'No Jekyll suffix at '+width+': '+result.fullText);
     assert.ok(!result.fullText.includes('and Jekyll'),'Jekyll removed at '+width);
     assert.deepEqual(result.links,['/changelog.txt','https://github.com/NixMcRetro/mcretro.net'],'Both links retained');

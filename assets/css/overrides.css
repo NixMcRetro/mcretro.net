@@ -728,3 +728,20 @@
     margin-bottom: 0;
   }
 }
+
+/* In the single-column layout, the last sidebar widget no longer needs a
+   heavy divider before the footer. The footer's thin rule is retained. */
+@media screen and (max-width: 860px) {
+  .sidebar > .widget:last-of-type {
+    border-bottom: 0;
+  }
+
+  /* Replace the extra spacer line beneath the 88x31 badges with a small gap. */
+  .site-footer .footer-badges + br {
+    display: none;
+  }
+
+  .site-footer .footer-details {
+    margin: 0.6rem auto 0;
+  }
+}

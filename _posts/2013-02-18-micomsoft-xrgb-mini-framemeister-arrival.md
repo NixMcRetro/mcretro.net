@@ -22,7 +22,7 @@ I started exploring the menus, switching the output to 720p and finding the Engl
 
 I've since purchased a cable that runs from the XRGB-mini through to EuroSCART. That should let me use separate EuroSCART cables for the Mega Drive, Saturn and Dreamcast, although I still need a suitable switcher between the sources.
 
-For this second recording, I tried the Framemeister with a Samsung television instead. The sync-level settings that worked on the Toshiba didn't behave quite the same way here. I had better luck with the Samsung at 720p and 60 Hz, and could raise the sync setting considerably further before the picture dropped out.
+For this second recording, I tried the Framemeister with a Samsung television instead. The sync-level settings that worked on the Toshiba didn't behave quite the same way here. I had better luck with the Samsung at 720p and 60 Hz, and could raise the sync setting considerably further before the picture dropped out. The sync-level menu started at 9; I raised it to around 15 and then to 20, but the picture began dropping out as I approached 25. That was certainly different from the Toshiba!
 
 I played with the odd and even scanline controls too, making the lines much thicker than before. With the retro picture effect darkening and curving the edges, the result started looking remarkably CRT-like. I couldn't notice any serious lag while playing, although that's only an observation from this setup rather than a measured result.
 

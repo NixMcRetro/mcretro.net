@@ -13,13 +13,11 @@ Here's a closer look inside the Aiwa Mega-CD CSD-GM1 Game Unit, complete with en
 
 There's some cosmetic damage to deal with as well. The little flap doesn't close properly, which appears to be another souvenir from whatever unfortunate adventure this machine had before I acquired it. There's a metal frame inside the blue plastic housing that's been bent out of shape, so hopefully I can straighten that up without too much difficulty. Compared with replacing all those capacitors, it might even be the easy job!
 
-I've been comparing my two Game Units and reckon one was manufactured roughly 10 to 20 weeks after the other. To keep everything straight, I've labelled the older one **01-01** and the newer one **01-02**.
+I've been comparing my two Game Units and reckon one was manufactured roughly 10 to 20 weeks after the other. To keep everything straight, I've labelled the older one 01-01 and the newer one 01-02.
 
 ![](/assets/images/2012/img_0344.jpg)
 
-One interesting difference is that two capacitors which are black on the 01-01 board are blue Rubycons on 01-02. My first thought was that somebody might have replaced them at some point, although there's nothing to say they weren't fitted like that at the factory. They could simply be ordinary production differences between the two boards.
-
-Have a look at the [photo gallery](/goodies/) or the video and be the judge.
+One interesting difference is that two capacitors which are black on the 01-01 board are blue Rubycons on 01-02. My first thought was that somebody might have replaced them at some point, although there's nothing to say they weren't fitted like that at the factory. They could simply be ordinary production differences between the two boards. Have a look at the [photo gallery](/goodies/) or the video and be the judge.
 
 ![](/assets/images/2012/img_0343.jpg)
 

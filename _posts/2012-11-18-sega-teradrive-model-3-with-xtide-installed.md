@@ -23,9 +23,7 @@ I've personally confirmed IBM WDL-330P drives working in the TeraDrive. WDL-330P
 
 ![](/assets/images/2012/img_0360.jpg)
 
-Fresh date and time batteries, modern storage options and both TeraDrives booting properly. The Model 3 behaved like a gentleman and a scholar throughout the experiment, which is more than I can say for some of the hardware I've worked on recently.
-
-Hopefully nothing else will go wrong! Fingers crossed! :D
+Fresh date and time batteries, modern storage options and both TeraDrives booting properly. The Model 3 behaved like a gentleman and a scholar throughout the experiment, which is more than I can say for some of the hardware I've worked on recently. Hopefully nothing else will go wrong! Fingers crossed! :D
 
 ### Further Reading
 

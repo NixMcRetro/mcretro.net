@@ -21,9 +21,7 @@ In the meantime I've installed a 517 MB hard drive and got the machine running a
 
 The video also includes a demonstration of the Mega PC's AdLib-compatible FM synthesiser playing MIDI under Windows. I had to do a little more fiddling to get the audio working properly, but once the MIDI playback started, it was rather nice hearing those old tunes coming out of the machine again.
 
-I even got the network card talking well enough to ping [RetroJunkie.net](https://retrojunkie.net/) over ethernet. That's something I can investigate properly another day. For now, the Mega PC is running, the sound works and there's no more smoke coming out of the hard drive.
-
-All's well that ends well, I suppose. ;)
+I even got the network card talking well enough to ping [RetroJunkie.net](https://retrojunkie.net/) over ethernet. That's something I can investigate properly another day. For now, the Mega PC is running, the sound works and there's no more smoke coming out of the hard drive. All's well that ends well, I suppose. ;)
 
 ### Related posts
 

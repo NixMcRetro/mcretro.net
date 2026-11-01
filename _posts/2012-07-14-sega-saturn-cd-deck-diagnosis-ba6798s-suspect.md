@@ -6,13 +6,16 @@ last_modified_at: 2026-10-18
 categories: [repairs, sega]
 ---
 
+
 {% include youtube.html id="49G-pKXLBy8" %}
 
-You might remember this rather unhappy Japanese Sega Saturn from a little while back. The disc appears to spin backwards while the laser assembly goes completely berserk, and the motor sounds like it's trying to escape from the CD deck. I've still got plenty of work ahead of me with this one.
+You might remember this rather unhappy Japanese Sega Saturn from a little while back. The disc appears to spin backwards while the laser assembly goes completely berserk, and the motor sounds like it's trying to escape from the CD deck. I bought the poor thing as faulty, and it certainly hasn't disappointed in that department!
 
-While looking over the drive board, I started wondering about the BA6798S on the left-hand side. ROHM describes it as a four-channel H-bridge BTL driver responsible for controlling motors and actuators in CD players. With several parts of this mechanism misbehaving at the same time, it's certainly worth investigating.
+I've been having another look at the drive board to see whether I can work out what's making everything behave so strangely. One component that's caught my attention is the BA6798S on the left-hand side. It's a ROHM four-channel H-bridge BTL driver, which is responsible for driving various motors and actuators in CD mechanisms.
 
-That doesn't mean I've found the guilty component just yet. Something elsewhere in the servo or control circuitry could still be causing the trouble, and I haven't finished tracing the fault. For now, the white Saturn is going back onto the shelf while I wait for parts.
+That makes it rather interesting when I've got a CD deck with a spindle motor racing away and a laser assembly moving all over the place. Could it be the problem? Possibly! But I haven't proved anything yet, and there's still the servo and control circuitry to consider. It could just as easily be something else telling the driver to behave like a maniac.
+
+For now I'm putting the white Saturn back on the shelf while I wait for parts and work out what to investigate next. We'll make you better, faster, stronger! Or at least get the disc spinning the right way, which would be a pretty good start.
 
 ### Related posts
 

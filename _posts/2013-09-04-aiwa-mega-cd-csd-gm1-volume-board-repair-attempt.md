@@ -10,9 +10,9 @@ categories: [repairs, sega, youtube]
 
 This one didn't have much luck, but I have since found another way to fix this board because honestly, volume control is important!
 
-A suggestion from a YouTube viewer had me trying some contact cleaner on the troublesome VR802 volume control. It was a Friday night, I'd managed to arrive at the supermarket an hour after it closed, and somehow there was still an Aiwa Mega-CD repair to be done. Naturally!
+A suggestion from a YouTube viewer had me trying some contact cleaner on the troublesome VR802 volume control. It was a Friday night, I'd managed to arrive at the supermarket an hour after it closed, and somehow there was still an Aiwa Mega-CD repair to be done. Naturally! At least I had pizza on the way, although ordering dinner after nine o'clock was becoming another expensive little adventure.
 
-The cleaner certainly made the control easier to turn, although I did wonder whether some of that old grease was supposed to be there. After letting everything dry out, it was time to see whether we'd finally recovered proper control of the left audio channel.
+The contact cleaner came with some rather enthusiastic warnings about flammable vapour, so I took the cleaning outside and gave the control time to dry before applying power again. It certainly made the control easier to turn, although I did wonder whether some of that old grease was supposed to be there. Time to see whether we'd finally recovered proper control of the left audio channel.
 
 Unfortunately, no such luck. The static was reduced, which was something, but the actual volume problem remained. So out came the Hakko 808, and I removed the seven-pin potentiometer from the board to see what was going on inside.
 

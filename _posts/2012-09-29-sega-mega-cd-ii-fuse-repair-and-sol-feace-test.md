@@ -30,7 +30,9 @@ The replacement also needed enough clearance from the metal shielding when every
 
 Reassembly went reasonably well, apart from the usual business of remembering which screws belonged where. I also had to reconnect the cables and that grounding lead before fitting the shielding and closing everything up.
 
-With the Mega-CD II connected to its Mega Drive, I eventually managed to get *Sonic CD* running. Beautiful! That's a considerably better result than a machine that wouldn't power on at all.
+With the Mega-CD II connected to its Mega Drive, I started testing with Sonic CD. At first I couldn't get past the internal-RAM initialisation, so I tried Batman Returns instead. That worked, and I even managed to get myself thoroughly beaten up by Catwoman. At least the Mega-CD was doing something useful!
+
+Eventually I worked out that I'd been pressing START when I needed to press A to get to the memory management screen. Once I'd sorted that out, Sonic CD was running too. Beautiful! That's a considerably better result than a machine that wouldn't power on at all.
 
 The *Sol-Feace* footage at the top is a separate gameplay recording from another repaired Mega-CD, but it seemed a suitable way to celebrate having these lovely old machines back in action.
 

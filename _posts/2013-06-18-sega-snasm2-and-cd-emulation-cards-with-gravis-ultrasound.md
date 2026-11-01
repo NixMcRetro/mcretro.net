@@ -26,7 +26,7 @@ Moving down the chain even further brought us to the humble 486DX4-100. With the
 
 ![](/assets/images/2013/img_0408.jpg)
 
-I also discovered that the cards are rather particular about being seated correctly. Given the size of these things, that's not especially surprising. There were still some odd results while working through the SCSI link tests, so I wouldn't call the whole development arrangement completely sorted just yet.
+I also discovered that the cards are rather particular about being seated correctly. Given the size of these things, that's not especially surprising. There were still some odd results while working through the SCSI link tests, with tests 5, 6 and 7 not passing. Getting the card recognised by the 486 was progress, but it wasn't the same thing as having a fully working SCSI connection. I wouldn't call the whole development arrangement completely sorted just yet.
 
 The Gravis UltraSound was part of the grand plan for this workstation too. It's a beautiful card, although combining it with these enormous Sega boards certainly makes the inside of a PC interesting. I'll need to keep experimenting with the arrangement rather than assume all the hardware will cooperate at once.
 

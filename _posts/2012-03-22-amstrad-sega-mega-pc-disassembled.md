@@ -12,7 +12,7 @@ A quick look inside the Amstrad Mega PC with the system pulled apart. The Sega M
 
 I picked this one up from eBay for a pretty penny, and naturally it arrived with a few problems. The battery had leaked and damaged several tracks on the motherboard. Most of the corrosion has been cleaned away, with some additional repair work to reconnect the damaged tracks. Adrian has also been helping me work through the problems.
 
-One particularly annoying fault was the complete lack of video when the Mega Drive card wasn't installed. As it turns out, the card is part of the switching arrangement between PC and Mega Drive modes. You can use jumpers to bypass it and get the PC side working on its own. Adrian helped work out the jumper arrangement, and we finally had video!
+One particularly annoying fault was the complete lack of video when the Mega Drive card wasn't installed. As it turns out, the card is part of the switching arrangement between PC and Mega Drive modes. I'd ordered a replacement motherboard from the UK, and while its layout was slightly different, comparing the jumper arrangements helped Adrian work out how to bypass the switching and get the PC side working on its own. We finally had video!
 
 This particular Mega PC is a 386SX machine with an AMD-branded Intel compatible processor, 4 MB of RAM and an option to expand that to 16 MB. The video memory can also be expanded from 256 KB to 512 KB. Not bad for a machine that has been giving me so much grief!
 

@@ -20,7 +20,7 @@ Then came the mixing. We didn't have an electric mixer available, so everything 
 
 The little toaster oven was set to around 180 degrees Celsius, and we carefully distributed the mixture between the cupcake cases. Well, *carefully* might be overstating it slightly. We still managed to get batter in places where batter probably shouldn't go, and SuperNick (Nick) was doing a magnificent job of ensuring the entire process remained entertaining.
 
-After some experimenting with the oven's elements and the cooking time, we finally had something worth eating. They'd risen much more nicely, the centres were properly cake-like and there was none of the horrible omelette experience from version 1.0. Fantastic!
+After some experimenting with the oven's elements and the cooking time, we finally had something worth eating. They'd risen much more nicely, the centres were properly cake-like and there was none of the horrible omelette experience from version 1.0. The bottoms had browned a little more than I'd hoped, but these were actual cupcakes instead of an omelette in disguise. Fantastic!
 
 The revised recipe makes approximately 24 small cupcakes or 12 larger ones, depending on the size of the cases and how generously you fill them. Here's what we ended up using.
 
@@ -40,7 +40,7 @@ Put the ingredients into a large bowl and mix until reasonably combined. Divide 
 
 If you're using a small toaster oven like mine, keep a close eye on the elements because the tops and bottoms can brown unevenly. Different ovens behave differently, so use the temperature as a starting point and make sure the cakes are cooked before serving.
 
-The finished cupcakes were much better than the first batch, and SuperNick seemed rather pleased with the batter too. I think we can safely call version 2.0 a success. No more omelette cakes, thank you very much!
+The finished cupcakes were much better than the first batch, and SuperNick (Nick) seemed rather pleased with the batter too. I think we can safely call version 2.0 a success. No more omelette cakes, thank you very much!
 
 Victory will be yours, my friend. Just remember that measuring things properly is apparently quite useful when cooking.
 

@@ -18,11 +18,9 @@ The plan was to remove the original 25 MHz AMD 386SX processor and replace it wi
 
 I've never removed one of these four-sided QFP processors before, so the whole operation was a learning experience. There are 25 pins on each side, and after a fair bit of heating and carefully working around the package, the original processor finally came free. Unfortunately, one track appeared to have lifted during the process.
 
-Here's the area where the original 386SX had been sitting. I went over the pads with desoldering braid to remove the remaining solder, although even that took some experimentation before I got the technique working properly.
+With the old 386SX removed, I went over the pads with desoldering braid to clear the remaining solder. That took some experimentation of its own, but I eventually got the technique working well enough to prepare the board for the replacement. The original AMD processor survived the removal, which was good news. At least I had one small victory before attempting the considerably more difficult business of installing its successor.
 
-The original AMD processor survived the removal, which was good news. At least I had one small victory before attempting the considerably more difficult business of installing its replacement.
-
-And here's the Texas Instruments processor intended to take its place. The markings identify it as a TI486SXLC2-G50-PQ. On paper, its 25 MHz external bus and faster internal core made it an interesting upgrade candidate, although there were some important electrical differences I hadn't fully accounted for.
+The Texas Instruments processor intended to take its place was marked TI486SXLC2-G50-PQ. On paper, its 25 MHz external bus and faster internal core made it an interesting upgrade candidate, although there were some important electrical differences I hadn't fully accounted for. I'd soon find out whether my enthusiasm was justified.
 
 {% include youtube.html id="fX1gnqyfEj0" %}
 

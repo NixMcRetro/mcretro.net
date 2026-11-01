@@ -14,11 +14,11 @@ And that is where we stand today. The final collection update for 2012, with a f
 
 The two bookshelves are now sitting alongside each other, which makes it easier to see the entire collection without having to walk around the furniture. I've been thinking about organising them by console family, with the boxed Dreamcast and Saturn hardware along the lower shelves and the loose systems further up.
 
-The Sega Mega Drives have multiplied again, naturally. There's a recently repaired one in the collection, along with several other models and a few machines that still need attention. The Saturns are a little more under control now that I've sold the extra units I didn't need.
+The Sega Mega Drives have multiplied again, naturally. There are seven Mega Drive 2 consoles alone, including some that I've repaired or modified, along with several other models and a few machines that still need attention. The Saturns are a little more under control now that I've sold the extra units I didn't need.
 
 Then there are the Dreamcasts. I've still got at least one that needs to be opened up and photographed, and a few other interesting variants tucked away around the shelves. I'd like to have the boxed systems arranged neatly, but it's difficult when every new purchase requires finding another few centimetres of space.
 
-There's also the Aiwa Mega-CD project and the Apple Macintosh LC 475 machines, which are still very much works in progress. The Aiwa seems determined to require every kind of repair imaginable, while the old Macintoshes are providing a completely different collection of problems to investigate.
+There's also the Aiwa Mega-CD project, the Sophia Systems Sega Saturn programming box and the Apple Macintosh LC 475 machines, which are still very much works in progress. The Aiwa seems determined to require every kind of repair imaginable, while the Sophia hardware and old Macintoshes are providing completely different problems to investigate.
 
 Eventually I'd like a Pioneer LaserActive with the Sega Mega Drive pack as well. Where I'd put something that enormous is another question entirely. The entertainment unit might be the only reasonable option, assuming there's any room left by the time one turns up.
 
@@ -32,6 +32,4 @@ I also recently had some success testing an old SCSI card reader with a Pentium 
 
 There haven't been quite as many videos lately, but I've been updating the hardware information on RetroJunkie.net in the background. I'm hoping to document more of the collection and perhaps move along some of the spare PC hardware to people who can actually use it.
 
-So that's the state of the collection at the end of 2012. Thanks for watching, and here's to another year of strange retro hardware projects. Merry Christmas and a Happy New Year!
-
-Farewell, oversized CRT TV. I'll miss the light gun games, if not the amount of space you occupy.
+So that's the state of the collection at the end of 2012. Thanks for watching, and here's to another year of strange retro hardware projects. Merry Christmas and a Happy New Year! Farewell, oversized CRT TV. I'll miss the light gun games, if not the amount of space you occupy.

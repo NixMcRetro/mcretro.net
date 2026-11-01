@@ -6,9 +6,10 @@ last_modified_at: 2026-10-18
 categories: [sega, youtube]
 ---
 
+
 {% include youtube.html id="nt5E4DaJMxM" %}
 
-Here's a quick look inside the Mega Drive and Mega-CD Game Unit that attaches underneath the Aiwa CSD-GM1. Pretty useless by itself, unless you want a lead-weighted frisbee! Or so I thought.
+Here's a quick look inside the Mega Drive and Mega-CD Game Unit that attaches underneath the Aiwa CSD-GM1. It's a rather unusual little piece of hardware, and at first glance I wasn't sure what I'd be able to do with it away from the rest of the stereo. Pretty useless by itself, unless you want a lead-weighted frisbee! Or so I thought.
 
 ![](/assets/images/2012/img_0323.jpg)
 
@@ -16,17 +17,15 @@ Here's a quick look inside the Mega Drive and Mega-CD Game Unit that attaches un
 
 ![](/assets/images/2012/img_0324.jpg)
 
-The Game Unit contains the Mega Drive and Mega-CD game hardware, while the upper Aiwa section supplies power, the CD mechanism and the rest of the audio-system integration.
+The Game Unit contains the Mega Drive and Mega-CD hardware, while the upper section of the Aiwa supplies power, the CD mechanism and the rest of the audio-system connections. That makes the detachable unit interesting, but it also means there's rather more involved than simply plugging in a power adaptor and expecting the whole thing to work.
 
-Later testing showed that the Mega Drive side of this particular Game Unit can actually be powered independently with a suitable regulated 5 V supply. On the unit I tested, 5 V on pin 24 and ground on pin 12 were enough to boot Mega Drive cartridges without the boombox attached.
+Later testing showed that the Mega Drive section of this particular Game Unit could actually run independently. On the unit I tested, a suitable regulated 5 V supply connected to pin 24, with ground on pin 12, was enough to boot Mega Drive cartridges without the boombox attached. Quite a nice surprise, considering I'd originally been joking about using the thing as a frisbee!
 
-That pinout is based on my own hardware and should be verified before anybody applies power to another unit. Feeding the wrong voltage or polarity into rare hardware is a particularly expensive way to discover a numbering mistake.
+Those are the connections I found on my own hardware, so they shouldn't be treated as a universal pinout without checking the individual unit first. The last thing anyone wants to do is accidentally feed the wrong voltage into one of these rare machines. There's enough broken Sega hardware in my collection already!
 
-Without the Aiwa CD mechanism attached, the Mega-CD BIOS can begin its startup sequence but cannot proceed normally.
+The Mega-CD side is another story because it still depends on the CD mechanism in the Aiwa's upper section. Without that connected, the Mega-CD BIOS can begin starting up, but it can't proceed normally. So the Game Unit is capable of more on its own than I'd first expected, just not everything.
 
-So not a frisbee after all.
-
-As always, there are more photos in the [galleries or file server](/goodies/).
+As always, there are more photos in the [galleries or file server](/goodies/). At least we can cross the lead-weighted frisbee idea off the list for now!
 
 ### Related posts
 

@@ -6,13 +6,13 @@ last_modified_at: 2026-10-18
 categories: [devkit, gaming, sega]
 ---
 
-VBT over at ASSEMblergames has been working on getting Wolfenstein 3D running on the Sega Saturn. More specifically, this is early Saturn support for Wolf4SDL.
-
 {% include youtube.html id="9Rxxr97mrdE" %}
 
-This build seemed to work in emulators, but I could not get it behaving properly on my actual hardware.
+VBT over at ASSEMblergames has been working on getting Wolfenstein 3D running on the Sega Saturn. More specifically, this is early Saturn support for Wolf4SDL, and it already seems to work in emulators. Naturally, I wanted to see what would happen on the real hardware!
 
-Keep up the good work and I'll be playing W3D in no time!
+I started with my Sophia development hardware, but couldn't get much further than the licence screen. Trying an Action Replay Plus didn't improve matters either, so I decided to give a retail Saturn a go. That got a little further, which was encouraging, but something was still going wrong.
+
+I did wonder whether the modchip in the retail Saturn might be interfering, although I never established that. At least I was getting different results from the two machines, which gave me something else to investigate. Keep up the good work, VBT, and I'll be playing W3D in no time!
 
 **Update:** Apparently it should have worked, but it didn't in my case. Perhaps the strange development hardware I was using had something to do with it, although I never established that. :)
 

@@ -10,9 +10,15 @@ categories: [apple, reconstructed, youtube]
 
 The LC 475 is back for another round of experimentation! Remember that supposedly full 68040 processor I bought to replace the original 68LC040? The whole point was to gain the floating-point unit missing from the original processor, but things haven't been going quite according to plan.
 
-This time I'm using TattleTech to investigate exactly what the Macintosh thinks is installed. I've already had the machine running at 33 MHz, and now I'm having another look at what the replacement processor can actually do. Unfortunately, the results still aren't quite what I'd expected from a full 68040. Where's my FPU?!
+This time I'm using TattleTech to investigate exactly what the Macintosh thinks is installed. I've already had the machine running at 33 MHz, and I've got the jumper set so it identifies as a Quadra rather than an LC. Time to see what this replacement processor actually has to offer.
 
-Whether I've ended up with a mislabelled processor, a defective chip or something else entirely is another question. I can't really declare it counterfeit just because the results aren't what I wanted, but it's certainly suspicious. At least the LC 475 itself has been taking all these experiments rather well. If only the processor would cooperate!
+TattleTech has quite a useful collection of hardware information, but there's one entry I was particularly interested in: the FPU. Unfortunately, it reports **None**. So much for that supposedly full 68040! Where's my FPU?!
+
+I've also got a temporary heatsink sitting on the processor, although it isn't properly attached. The chip doesn't seem particularly warm at the moment, but that's hardly the result I was hoping to get from this experiment.
+
+Whether I've ended up with a mislabelled processor, a defective chip or something else entirely is another question. I can't really declare it counterfeit just because the results aren't what I wanted, but it's certainly suspicious. I'd like to get hold of a known-working full 68040 and test that in the same machine, just to see what happens.
+
+At least the LC 475 itself has been taking all these experiments rather well. If only the processor would cooperate! In the meantime, I've got a few more CompactFlash cards to play with, including an 8 GB one that should make for another interesting experiment.
 
 ### Related posts
 

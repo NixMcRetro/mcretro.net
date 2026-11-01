@@ -24,9 +24,7 @@ That gave me an excuse to drag out my old AMD Athlon 500 MHz machine, which I or
 
 And would you believe it? The Seagate was recognised and booted MS-DOS 5.0! There was even some old software on there, including *Wolfenstein 3D*. I had a go at *Monkey Island* as well, although that wasn't quite as cooperative.
 
-Finally, I copied a bunch of files over to make sure the drive could still do something useful. Everything appeared to be working nicely, and there wasn't a puff of smoke in sight.
-
-One repaired Seagate ST3120A, back from the dead. No smoke and mirrors on this one!
+Finally, I copied a bunch of files over to make sure the drive could still do something useful. Everything appeared to be working nicely, and there wasn't a puff of smoke in sight. One repaired Seagate ST3120A, back from the dead!
 
 **Related Posts**
 

@@ -12,6 +12,8 @@ I finally found enough bench space to power up the Cross Products SNASM Mega-CD 
 
 The development system uses a pair of ISA cards, including the SNASM2 interface and a rather enormous CD-emulation card. That second board is one of the longest cards I've seen in a long time! I've been experimenting with the DIP switches on the unit, trying to work out which configuration is needed for the PC interface.
 
+One thing I need to investigate is the power supply. According to the manual, the unit apparently wants a 3 A supply, while the supplies I had available were only rated at 1.2 A. That's another detail to sort out before I get too carried away with the rest of the setup.
+
 I installed DOS 6.22 and the Mega-CD SNASM2 software, along with some 32X-related tools. At first the software didn't seem particularly interested in cooperating. The utilities would start, but I was getting errors when selecting the target device and generally not getting very far.
 
 I also had a 32X attached to the console out of curiosity. Because why stop at one unusual piece of Sega hardware when we can connect several together?

@@ -16,7 +16,7 @@ Starting at the top, we've got my two Sega TeraDrives straight from Japan. There
 
 Next up we've got a Sega Mega Drive Model 1, Mega-CD Model 1 and 32X all stacked together. I've got another Mega-CD Model 1 as well, although I'm reluctant to put too much wear on either unit while replacement lasers remain difficult to find. Better to keep the things working for as long as possible.
 
-There are also several Game Gears, a Sega Nomad and that wonderful little Sega Digio digital camera. It's an interesting piece of equipment, even if the image quality isn't exactly spectacular by today's standards. Then we've got the Mega Drive 2, Mega-CD 2, another 32X and a Master System Converter II.
+There are also several Game Gears, a Sega Nomad and that wonderful little Sega Digio digital camera. It's an interesting piece of equipment, even if the image quality isn't exactly spectacular by today's standards. Then we've got the Mega Drive 2, Mega-CD 2, another 32X and a Master System Converter II. The Converter II won't work in that particular stack with the 32X attached, but it can certainly sit there looking the part!
 
 The Multi-Mega is another favourite. It's quite remarkable how much of the Mega Drive and Mega-CD hardware Sega managed to squeeze into that little machine. Down below we've got the Saturns, including both Model 1 and Model 2 systems, and a Video CD card waiting alongside them.
 

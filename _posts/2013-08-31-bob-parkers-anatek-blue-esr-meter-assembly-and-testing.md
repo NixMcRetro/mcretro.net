@@ -12,11 +12,13 @@ Here are the final steps of assembly and testing of my new Bob Parker Blue ESR m
 
 I picked this one up as a kit from the United States for around $79, before shipping. After assembling the board and getting everything into its little blue case, I thought I'd give it a proper workout with some of the capacitors I've removed from previous repair projects. There certainly isn't any shortage of those around here!
 
+Before getting carried away, I performed the initial current check recommended by the manual. A quick pulse on the multimeter suggested the circuit was doing something useful, and the meter's first power-on test looked promising. Beautiful! Now I just needed to find a few unsuspecting capacitors.
+
 The first thing I wanted to understand was the meter's display and the reference chart printed on the front. Different capacitor values have different expected ESR ranges, so the numbers don't mean very much unless you know what you're comparing them against. Fortunately, the chart makes that part reasonably straightforward.
 
-I've got a collection of removed electrolytics, including some from the Sega Saturn Sophia development hardware. A few are quite obviously past their best, while others still look perfectly reasonable. The interesting part is seeing how the measurements compare with their condition.
+I've got a collection of removed electrolytics, including some from the Sega Saturn Sophia development hardware. For the tests in this recording, though, I pulled out capacitors from my Aiwa Mega-CD repairs and compared them with newer replacements. A few were quite obviously past their best, while others still looked perfectly reasonable.
 
-One of the capacitors had leaked enough material to leave a rather unpleasant crust around its legs. Curiously, its ESR reading wasn't especially alarming. Just because a capacitor gives you a reasonable number on one test doesn't mean it's healthy in every other respect. I wouldn't be putting that one back into anything!
+One of the Aiwa capacitors had leaked enough material to leave a rather unpleasant crust around its legs. Curiously, its ESR reading wasn't especially alarming. Just because a capacitor gives you a reasonable number on one test doesn't mean it's healthy in every other respect. I wouldn't be putting that one back into anything!
 
 Some of the larger 470 uF capacitors also produced interesting comparisons. I measured older parts and newer Rubycon replacements, with several of the older components giving noticeably higher readings. Others were closer to the reference limits than I'd like. It's useful having a tool that can help sort out the questionable ones.
 

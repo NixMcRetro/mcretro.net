@@ -10,11 +10,9 @@ categories: [hacks, sega, youtube]
 
 The final test, dumping Sonic the Hedgehog through controller port 2 on a Mega Drive / Genesis, with the Mega-CD running the transfer software. Incredible, right?
 
-Remember that rather questionable cable I made in the first video? Well, it turns out the wiring might not have been the problem after all. I eventually discovered that my PC's parallel port was configured incorrectly, which explains why the transfers were going nowhere.
+Remember that rather questionable cable I made in the first video? Well, I became suspicious of the wiring when the transfers kept failing, so I ordered a properly made cable from Tototek. It's considerably tidier than having a collection of loose wires hanging out of everything, but it turns out the original cable might not have been the problem after all.
 
-I'd become rather suspicious of the original cable after the previous attempts, so I ordered a properly made one from Tototek. It's considerably tidier than having a collection of loose wires hanging out of everything. Unfortunately, I eventually discovered that my computer was still configured in a way that prevented the transfer software from working properly.
-
-The BIOS had the port set to ECP/EPP mode. After changing it to bidirectional mode, things started behaving considerably better. I'd also bought a properly made cable from Tototek by this stage, which was certainly tidier than my collection of loose wires!
+The PC's parallel port was configured incorrectly. The BIOS had the port set to ECP/EPP mode, and after changing it to bidirectional mode, things started behaving considerably better. That explains why the earlier transfers were going nowhere, regardless of which cable I was using.
 
 With the port configured correctly, I could finally get the PC and Mega-CD talking to each other more reliably. The software on the Mega-CD side was written by Mask of Destiny at RetroDev, and the PC receives the data through its parallel port. It's a rather clever way of getting cartridge data without removing any chips.
 

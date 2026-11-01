@@ -8,11 +8,11 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="-qdhKsm6jHw" %}
 
-There always needs to be a starting point. And this is where we are starting. An overview of the General Electric Model 4665 AM/FM Electronic Digital Clock Radio. One neat thing about this radio is that it has a vacuum fluorescent display (VFD) for the clock section.
+Here's where we start with the General Electric Model 4665 AM/FM Electronic Digital Clock Radio. One neat thing about this radio is that it has a vacuum fluorescent display (VFD) for the clock section, which makes it rather interesting before we've even got properly stuck into the electronics.
 
 ![](/assets/images/2022/img_0963.jpg)
 
-VFD has always been an arch-nemesis of [my precious Nixie clock](/chronix-nixie-clock-slot-machine-demo/). I don't think the technology was that much of an improvement and quite frankly love the glow of the Nixie tubes. Well that and probably some influence from Steins;Gate, courtesy of SuperNick (Nick). Yes, that Nick.
+VFD has always been an arch-nemesis of [my precious Nixie clock](/chronix-nixie-clock-slot-machine-demo/). I don't think the technology was that much of an improvement and quite frankly love the glow of the Nixie tubes. Well that and probably some influence from Steins;Gate, courtesy of SuperNick (Nick). Yes, that very same SuperNick (Nick).
 
 ![](/assets/images/2022/img_0964.jpg)
 
@@ -24,7 +24,7 @@ The radio section is another story. The tuning pointer is broken, and the old gr
 
 One of the internal wires had also come loose, so I'd soldered that back into place. There's quite a bit of hardware inside, with separate power and radio sections, and it's interesting to see how everything was arranged. Certainly not quite as compact as the digital radios we have today!
 
-Overall though, this radio has held up quite well. On closer inspection, the internal date code I found was `8004`, which I read as week 4 of 1980. That fits the era, but without manufacturer documentation I should treat the date-code decoding as an inference rather than a birth certificate. What a way to break in the 80s! I'm sure this jammed out a fair deal of [John Farnham](https://en.wikipedia.org/wiki/John_Farnham) back in the day. Imagine waking up to that every day of the week for 42 years. Pure bliss insanity.
+Overall though, this radio has held up quite well. On closer inspection, the internal date code I found was 8004, which I read as week 4 of 1980. That fits the era, but without manufacturer documentation I should treat the date-code decoding as an inference rather than a birth certificate. What a way to break in the 80s! I'm sure this jammed out a fair deal of [John Farnham](https://en.wikipedia.org/wiki/John_Farnham) back in the day. Imagine waking up to that every day of the week for 42 years. Pure bliss insanity.
 
 I'm particularly interested in getting the tuning indicator sorted out. It originally used a little fork-shaped piece, and the old lubricant appears to have made things rather difficult for it over the years. Hopefully I can find a way to reproduce the missing part without making a complete mess of the front panel.
 

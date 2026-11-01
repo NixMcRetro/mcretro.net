@@ -18,13 +18,11 @@ I also swapped between the two microphone amplifier boards to make sure the faul
 
 I've got the working revision 1 board here for comparison, so out comes the multimeter. After checking some transistor voltages and tracing the audio connections, I started comparing the resistance readings from the volume controls with the knobs turned fully up and down.
 
-Pins 4 and 7 were giving some rather suspicious results on the faulty board. One reading was jumping around all over the place, while another stayed at zero when it really shouldn't have. That certainly wasn't happening on the working board!
+Pins 4 and 7 were giving some rather suspicious results on the faulty board. Pin 4 wandered all over the place rather than settling on a consistent resistance, while pin 7 stayed at zero even with the volume turned up. That certainly wasn't happening on the working board!
 
 The volume control itself was also rather noisy when touched, which didn't exactly inspire confidence. It looks as though the B50K control may be responsible, although finding a suitable seven-pin replacement could be interesting. More investigating required!
 
-I took a closer look at the component and discovered six pins along one side, with a seventh connection tucked away separately. The resistance readings from the working board were fairly consistent, but on the faulty board pin 4 wandered all over the place. Pin 7 was particularly unhelpful, sitting at zero even with the volume turned up.
-
-Tracing those connections around the board led me to the nearby 1 uF capacitors and the wiring going back to the mainboard and microphone amplifier. The markings for the audio connections were useful too, particularly the left and right input and output connections. It's beginning to look as though the problem lies inside the actual volume control.
+A closer look showed six pins along one side, with a seventh connection tucked away separately. Tracing the connections around the board led me to the nearby 1 uF capacitors and the wiring going back to the mainboard and microphone amplifier. The markings for the audio connections were useful too, particularly the left and right input and output connections.
 
 Unfortunately, seven-pin controls aren't quite as easy to find as the usual six-pin dual-gang variety. I'm going to have to do a bit more hunting before I can replace it with something suitable. I suppose there's always another board somewhere waiting to donate its components!
 

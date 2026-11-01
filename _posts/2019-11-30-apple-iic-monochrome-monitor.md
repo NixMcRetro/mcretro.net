@@ -10,11 +10,11 @@ last_modified_at: 2026-10-18
 
 The glorious Apple //c monochrome monitor. Compact. Solid. Heavy. Beefcake. These are the words used to describe this beast. We go ahead and adjust some settings on the yoke with a near-enough, good-enough mentality. We're not perfectionists here, that's for sure!
 
-I've no idea where this particular monitor originally came from, although somebody has very thoughtfully engraved their details into it. That seems to have been quite the thing to do with Apple hardware back in the 1980s. At least it gives the monitor a little bit of history, even if I don't know the full story.
+I've no idea where this particular monitor originally came from, although somebody has very thoughtfully engraved their details into it. That seems to have been quite the thing to do with Apple hardware back in the 1980s. The monitor also carries a manufacture date from late August 1984, so it has certainly been around for a while!
 
 The picture was giving me trouble, with roughly an inch of unused space at the top of the screen. That's about 2.5 cm for those of us living in the wonderful world of metric measurements. The usual external adjustments weren't enough to get everything where I wanted it, so I investigated the centering rings around the CRT yoke.
 
-After moving those rings, the picture shifted into a more useful position. Unfortunately, correcting the top also changed where the image sat horizontally. It's one of those annoying situations where fixing one thing makes another part of the picture look a little less impressive.
+I used a plastic knitting needle while working near the adjustment area. Moving the rings shifted the picture into a more useful position. Unfortunately, correcting the top also changed where the image sat horizontally. It's one of those annoying situations where fixing one thing makes another part of the picture look a little less impressive.
 
 I was using a Raspberry Pi as a video source, with a suitable AV cable I'd found amongst my collection of miscellaneous leads. I even had a look at the old Pepper the Dog Blog while testing the display. Naturally, Pepper's blog provided some excellent material for seeing just how the monitor handled text and graphics.
 

@@ -18,7 +18,7 @@ My solution? A round 25%-off sticker! I placed it inside the clamp assembly to a
 
 There was still the other faulty drive to deal with. I swapped over the circuit board from the drive with the eject problem to the one that had been showing error 12, and that combination worked. Between the two faulty drives, I'd managed to get one functioning drive together. I'll take that as a result!
 
-This was an SDG-605 F revision, as fitted to one of the Xbox 1.6 machines I had here. If you've got a stuck tray, it's still worth checking the ordinary mechanical problems first, including the belt, dust and tray movement. The magnet was the troublesome bit in this particular case, not necessarily every Xbox DVD drive ever made.
+This was an SDG-605 F revision, as fitted to one of the Xbox 1.6 machines I had here. On another machine I'd still be checking the usual suspects, including the drive belt, dust and anything catching in the rails. This time, though, it was the magnet holding on a bit too enthusiastically. Not exactly a repair I expected to finish with a discount sticker!
 
 Sometimes all it takes is a sticker and a few spare parts. I wonder whether I've got any 50%-off stickers lying around?
 

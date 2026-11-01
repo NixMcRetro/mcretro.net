@@ -6,27 +6,28 @@ last_modified_at: 2026-10-18
 categories: [sega, youtube]
 ---
 
+
 {% include youtube.html id="IEjsam_FNSw" %}
 
-Here's a closer look inside the Aiwa Mega-CD CSD-GM1 Game Unit, complete with a truly impressive number of capacitors and some damage near the rear of the board. It is not every day you get to see inside one of these.
+Here's a closer look inside the Aiwa Mega-CD CSD-GM1 Game Unit, complete with enough capacitors to keep me busy for quite some time. There appears to be some damage around the rear of the mainboard, although I'm not entirely sure whether it's leaking capacitors or something else that's made a mess of things. One of the capacitors looks a little suspicious too, so I'm planning to recap the board and see whether that helps with the troublesome Mega Drive audio.
 
-Comparing my two Game Units, I estimated that one was roughly 10 to 20 weeks newer than the other. I labelled the older unit **01-01** and the newer unit **01-02** to keep track of them.
+There's some cosmetic damage to deal with as well. The little flap doesn't close properly, which appears to be another souvenir from whatever unfortunate adventure this machine had before I acquired it. There's a metal frame inside the blue plastic housing that's been bent out of shape, so hopefully I can straighten that up without too much difficulty. Compared with replacing all those capacitors, it might even be the easy job!
+
+I've been comparing my two Game Units and reckon one was manufactured roughly 10 to 20 weeks after the other. To keep everything straight, I've labelled the older one **01-01** and the newer one **01-02**.
 
 ![](/assets/images/2012/img_0344.jpg)
 
-One interesting difference is that two capacitors that are black on the 01-01 mainboard are blue Rubycons on the 01-02 board. My first thought was that perhaps somebody had replaced them. Colour and brand differences alone do not prove that though. They could just as easily represent an ordinary production change between the two units.
+One interesting difference is that two capacitors which are black on the 01-01 board are blue Rubycons on 01-02. My first thought was that somebody might have replaced them at some point, although there's nothing to say they weren't fitted like that at the factory. They could simply be ordinary production differences between the two boards.
 
 Have a look at the [photo gallery](/goodies/) or the video and be the judge.
 
 ![](/assets/images/2012/img_0343.jpg)
 
-The complete capacitor list is also available on the [file server](/goodies/).
+I've also put the complete capacitor list on the [file server](/goodies/), because there's certainly no shortage of them. While I've got the board apart, I'd like to replace the backup battery as well.
 
-The backup battery is a VL2020 with a three-terminal mounting arrangement. The VL2020 is a rechargeable 3 V vanadium-lithium cell with a nominal capacity of 20 mAh. That means an ordinary non-rechargeable CR2032 is not a direct electrical substitute. Any replacement needs to suit both the original charging circuit and the physical terminal arrangement.
+The original cell is a VL2020 with three terminals. It's a rechargeable 3 V vanadium-lithium battery rated at 20 mAh, which makes finding a suitable replacement slightly more complicated than grabbing an ordinary CR2032. The charging arrangement and terminal layout both need to be compatible, and I'm having trouble finding exactly what I want.
 
-I seem to be having trouble finding exactly what I want.
-
-The search continues...
+So that's the plan: capacitors, battery, a little cosmetic repair and hopefully some improvement in the sound department. The search continues!
 
 ### Related posts
 

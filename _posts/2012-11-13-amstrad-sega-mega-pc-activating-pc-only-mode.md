@@ -19,9 +19,7 @@ The board I'm showing here uses a Texas Instruments 486SLC rather than the origi
 
 Another welcome difference is the RAM-slot construction. My earlier 386 board used plastic retaining clips, which aren't particularly reassuring after twenty years of ageing. This 486 board has metal clips instead. At least somebody decided not to save a few cents there!
 
-The jumper configuration in the video is the one I've been using to get PC-side video without the Mega Drive card. Once that's sorted, I can carry on testing memory and the rest of the motherboard without wrestling with the entire rear assembly every time.
-
-As always, there are more photos in the [photo gallery](/goodies/).
+The jumper configuration in the video is the one I've been using to get PC-side video without the Mega Drive card. Once that's sorted, I can carry on testing memory and the rest of the motherboard without wrestling with the entire rear assembly every time. As always, there are more photos in the [photo gallery](/goodies/).
 
 ### Related posts
 

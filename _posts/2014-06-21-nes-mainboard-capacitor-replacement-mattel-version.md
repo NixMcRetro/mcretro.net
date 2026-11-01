@@ -28,7 +28,7 @@ Looking closely, it seemed that someone had gone to considerable effort to disab
 
 After putting everything back together, however, I wasn't getting anything particularly useful from the NES. Just white screens! I even reinstalled the original 2.2 uF capacitor to rule out my substitute, but that didn't solve the problem either.
 
-So I've ordered a replacement cartridge connector and a proper 2.2 uF capacitor. There's obviously more work to do before this Nintendo is behaving itself again. At least we now know what somebody did to the security chip, and I've got another excuse to pull the whole thing apart when the parts arrive. There's obviously more work to do before this Nintendo is behaving itself again.
+So I've ordered a replacement cartridge connector and a proper 2.2 uF capacitor. There's obviously more work to do before this Nintendo is behaving itself again. At least we now know what somebody did to the security chip, and I've got another excuse to pull the whole thing apart when the parts arrive.
 
 **Related Posts**
 

@@ -34,8 +34,6 @@ Some of the replacement mechanisms I'd seen had particularly troublesome spindle
 
 By the end, the PlayStation was considerably happier and actually loading a game. Another rather entertaining repair adventure, and another reminder that sometimes the little mechanical details cause more trouble than the electronics themselves.
 
-Another rather entertaining repair adventure, and another reminder that sometimes the little mechanical details cause more trouble than the electronics themselves.
-
 **Related Posts**
 
 - [Sony PS one Laser Assembly Disassembly and Removal](/sony-ps-one-laser-assembly-disassembly-and-removal/)

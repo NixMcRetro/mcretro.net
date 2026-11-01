@@ -12,11 +12,11 @@ This guide is by no means complete but might have some hints if you are stuck li
 
 The original dashboard has more or less disappeared, so it's time to see if we can put everything back together again. For this little adventure I've got an old PC running Windows XP Service Pack 3 sitting alongside the Xbox.
 
-I'm using **Ndure 3.1**, **XboxHDM 1.9**, an updated Ndure script and **ISO Recorder 2**. The idea is to build a bootable CD containing the files needed to get the Xbox hard drive back into a usable state.
+I'm using Ndure 3.1, XboxHDM 1.9, an updated Ndure script and ISO Recorder 2. The idea is to build a bootable CD containing the files needed to get the Xbox hard drive back into a usable state.
 
 **Getting Everything Ready**
 
-The first thing worth knowing is your Xbox kernel version. Mine is `5101`, but yours could be completely different. Normally you can find this information through the original Microsoft dashboard. Of course, if you've already managed to destroy the dashboard, that becomes a little more interesting!
+The first thing worth knowing is your Xbox kernel version. Mine is 5101, but yours could be completely different. Normally you can find this information through the original Microsoft dashboard. Of course, if you've already managed to destroy the dashboard, that becomes a little more interesting!
 
 After selecting the appropriate options in Ndure, I put together the XboxHDM files and created a bootable ISO. Then it's onto burning the CD and persuading the old PC to cooperate.
 
@@ -40,7 +40,7 @@ Unfortunately, the PS/2 keyboard cable is considerably shorter. Of course it is.
 
 With everything connected, I kept trying to catch the correct point in the boot process. The Xbox needed to unlock its drive while the computer was still ready to detect it. That meant a great deal of switching between the machines, pausing, unpausing and hoping I hadn't missed the moment. I was beginning to think this would be take number 73.
 
-At one stage XboxHDM reported that it couldn't find an Xbox partition table, while another screen gave me some confusing messages about the drive's lock state. So the procedure certainly wasn't cooperating immediately. That also means this recording shouldn't be mistaken for a guaranteed recipe for recovering every Xbox.
+At one stage XboxHDM reported that it couldn't find an Xbox partition table, while another screen gave me some confusing messages about the drive's lock state. Clearly the procedure wasn't cooperating immediately, and I certainly wouldn't assume that every troublesome Xbox will behave exactly like mine.
 
 After all that messing around, it's back to XboxHDM and trying to work out what the hard drive is doing. You can watch the whole process unfold in the video, including the parts where things don't quite cooperate.
 

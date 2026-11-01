@@ -28,8 +28,6 @@ That gave me a few ways to test what was going on. Paku Paku worked with the ord
 
 At least something was reaching the synthesizer. Unfortunately, what came out sounded rather like circuit bending, only considerably more frustrating.
 
-Even when the Mega PC audio was distorted, I could sometimes recognise the music well enough to know that something was reaching the synthesizer.
-
 ### A Misleading Cache-Jumper Detour
 
 The sound was extremely sensitive to the hardware being moved or bumped. Sometimes it was distorted; sometimes it disappeared completely. I cleaned the contacts, changed BIOS resource settings and came dangerously close to experimenting with unlabelled motherboard jumpers.

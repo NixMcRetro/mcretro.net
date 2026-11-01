@@ -8,25 +8,23 @@ categories: [hacks, nintendo, youtube]
 
 {% include youtube.html id="alj9g9DjjsE" %}
 
-This was a quick video to support the previous video on AM29F032 TSOP40 flashing, but it got cut because I forgot about it! We run *Super Bomberman 2* using a 27C801 EPROM on an *NHL 96* or perhaps *World Cup Striker* donor cartridge. They look the same, so I can't tell the difference!
+This was a quick video to support the previous video on AM29F032 TSOP40 flashing, but it got cut because I forgot about it! Here we're running *Super Bomberman 2* using a 27C801 EPROM on an *NHL 96* or perhaps *World Cup Striker* donor cartridge. They look the same, so I can't tell the difference!
 
-I'd been experimenting with creating my own SNES cartridges, using old game boards and replacement memory chips. Before fitting the more complicated TSOP40 flash memory, I wanted to make sure the donor cartridge and its wiring would actually work.
+I'd been experimenting with making my own SNES cartridges using old game boards and replacement memory chips. Before going anywhere near the more complicated TSOP40 flash chip, I wanted to make sure the donor cartridge and its wiring worked with something a little easier to handle.
 
-For this test I'd programmed a 27C801 EPROM with the PAL version of *Super Bomberman 2*. The 27C801 is an 8 Mbit device, equivalent to 1 MiB of storage. It was a convenient way to prove that the board could read my replacement ROM before I went any further.
+For this test I'd programmed a 27C801 EPROM with the PAL version of *Super Bomberman 2*. It's an 8 Mbit device, giving us 1 MiB of storage, which was just what I needed for a straightforward test.
 
-The cartridge had already been fitted with a socket, and I'd rearranged the connections involving pins 24 and 31 for the particular memory setup. Some of that wiring had to run underneath the board because the socket made the top side rather awkward.
+The cartridge already had a socket fitted, and I'd rearranged the connections involving pins 24 and 31 to suit the EPROM. Because the socket got in the way, the blue and yellow wires had to run underneath the board instead. Not the prettiest arrangement, perhaps, but it did the job.
 
-There was also a red wire on the back of the cartridge where I'd previously damaged a PCB trace. The original track had lifted near one of the capacitors, so I'd bridged the connection rather than abandon the donor board.
+There was also a red wire on the back of the cartridge where I'd previously managed to lift a PCB trace near one of the capacitors. Rather than abandon the donor board, I'd bridged the damaged connection and carried on. These cartridges are certainly getting their fair share of soldering practice!
 
-Fortunately, the game started successfully! *Super Bomberman 2* was running on the SNES from my modified cartridge, which was exactly what I'd hoped to see.
+With the EPROM installed, it was time to try the cartridge in the Super Nintendo. Remember to have the chips facing towards the back of the console, otherwise, as I rather helpfully pointed out in the video, it'll catch fire! Well, that's one way of making sure I remember which way around it goes.
 
-For anyone who hasn't played it, *Super Bomberman 2* is one of those wonderfully chaotic maze games where you run around dropping bombs, clearing obstacles and trying not to blow yourself up. It's even better when you've got other people playing, although occasionally it feels like everybody has decided to target you specifically.
+And would you believe it? *Super Bomberman 2* started successfully! There it was, running on the SNES from my modified donor cartridge. After all that fiddling with sockets, wires and replacement ROMs, it was rather nice to see an actual game on the screen.
 
-Getting the game running confirmed that this particular EPROM and donor-board arrangement was functioning. It didn't establish that every replacement ROM would work without further changes, but it was a useful starting point for the more complicated flash-memory experiment.
+This was exactly the test I wanted before moving on to the AMD flash chip. The EPROM arrangement was working on this donor board, so I could get back to the TSOP40 experiment with a little more confidence.
 
-The next step was to fit the AMD TSOP40 flash chip and find out whether the project would still cooperate. At least I'd managed to get a proper game running before making everything unnecessarily complicated again.
-
-One working homemade SNES cartridge! That's a rather satisfying result after all the soldering and wiring.
+Next up is fitting that tiny flash chip to its adapter PCB and seeing whether I can get the same sort of result. One working homemade cartridge is a good start. Let's see whether I can manage another without breaking anything!
 
 **Related Posts**
 

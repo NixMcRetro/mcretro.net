@@ -10,7 +10,7 @@ categories: [ibm-pc, repairs, youtube]
 
 I don't own this ASUS EeeBox B202 anymore, but this video is still useful if you need to get inside one. The B202 is one of ASUS's little Atom-era nettops, built around an Intel Atom N270 and the 945GSE (ICH7M) chipset. It is very compact, which naturally means getting to anything inside requires pulling quite a lot apart first.
 
-My reason for opening this one was to replace the wireless card. I'd previously installed a different card for another project, and that arrangement wasn't behaving with Windows. I wanted to return the machine to something a little more conventional, possibly for use as a small file server.
+My reason for opening this one was to replace the wireless card. I'd previously installed a different card for another project, and that arrangement wasn't behaving with Windows. I wanted to get the machine ready for use as an FTP server for the files and PDF downloads on RetroJunkie.net, rather than leave it sitting around doing nothing useful.
 
 Getting into the EeeBox begins with the hard drive and the screws around the outside of the case. A Phillips size 0 screwdriver was doing most of the work, although I'd recommend keeping a record of where everything came from. There are rather more screws inside than you'd expect from a computer this small.
 

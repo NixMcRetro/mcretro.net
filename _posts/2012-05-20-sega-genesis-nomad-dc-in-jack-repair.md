@@ -22,9 +22,7 @@ The Sega Genesis Nomad. What an amazing beast. It didn't work up until today, an
 
 Apart came the Nomad, and the problem became much clearer. The damaged DC-in jack was allowing positive and ground to short together. That also gave me a plausible explanation for why the machine would not run from the external battery pack.
 
-For diagnosis, I traced the power input and temporarily connected one of the DC-DC step-down converters from my Saturn PSU project, adjusted to 9 V.
-
-Positive on red, ground on black and... bingo! Life! I had initially wired the DC-DC converter the wrong way around and got absolutely nowhere, although thankfully nothing appeared to have been damaged. In the recording, red runs to TP201 and black to TP202.
+For diagnosis, I traced the power input and temporarily connected one of the DC-DC step-down converters from my Saturn PSU project, adjusted to 9 V. Positive on red, ground on black and... bingo! Life! I had initially wired the DC-DC converter the wrong way around and got absolutely nowhere, although thankfully nothing appeared to have been damaged. In the recording, red runs to TP201 and black to TP202.
 
 ![](/assets/images/2012/img_0126.jpg)
 

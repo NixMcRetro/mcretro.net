@@ -12,7 +12,7 @@ Success! It sure does taste sweet. After the trouble I've been having with agein
 
 At the moment I've got two external supplies and a collection of temporary wiring feeding the Saturn's required rails. The original arrangement needs 9 V, 5 V, and 3.3 V, although the equipment I'm experimenting with isn't exactly ideal. One supply is a cheap iPod-style adapter with a rather broad output range, and the nominal 3.3 V connection is measuring closer to 4.4 V. That's considerably higher than I'd like!
 
-The 5 V source also has less current capacity than the original supply arrangement calls for. I'm not going to pretend this collection of adapters is suitable for permanent use, but I wanted to establish whether the Saturn would respond before spending money on proper DC-DC converters.
+The 5 V source is rated for around 1.5 A, while I understood the original Saturn arrangement to require around 2 A on that rail. That's already a shortfall, especially with the other parts of my temporary setup drawing power too. I'm not going to pretend this collection of adapters is suitable for permanent use, but I wanted to establish whether the Saturn would respond before spending money on proper DC-DC converters.
 
 With everything connected, the console powers up and the CD mechanism responds to a disc. That's a very welcome result considering there's no original PSU inside the machine. I'll need better regulated supplies with adequate current capacity before thinking about a permanent replacement.
 

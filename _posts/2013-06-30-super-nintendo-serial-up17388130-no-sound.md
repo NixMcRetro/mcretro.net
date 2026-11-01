@@ -8,7 +8,7 @@ categories: [nintendo, repairs, youtube]
 
 {% include youtube.html id="ImC9B-0O1v4" %}
 
-Here's the first of three faulty Super Nintendo consoles I've come across recently. This one is serial \`UP17388130\`, and although the picture looks perfectly fine, there's absolutely no sound coming out of it. Not ideal when you're trying to enjoy a bit of *John Madden Football '93*!
+Here's the first of three faulty Super Nintendo consoles I've come across recently. This one is serial UP17388130, and although the picture looks perfectly fine, there's absolutely no sound coming out of it. Not ideal when you're trying to enjoy a bit of *John Madden Football '93*!
 
 I've hooked it up to the television for a quick demonstration. The game runs, the graphics look alright, but there's not a peep from the speakers. I suppose we could play the whole thing in silence, although that takes away some of the excitement. Not that John Madden needs much help in that department!
 

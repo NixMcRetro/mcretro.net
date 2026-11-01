@@ -9,7 +9,7 @@ categories: [sega, youtube]
 
 {% include youtube.html id="zBKg39WmFJE" %}
 
-It looks like I've been lucky enough to pick up a copy of the unreleased *Geist Force* prototype for the Sega Dreamcast! Well, not an original Sega release, of course. This is one of the limited reproduction copies being put together by the ASSEMbler Games community, and I'm rather looking forward to getting my hands on it.
+It looks like I've been lucky enough to pick up a copy of the unreleased <cite>Geist Force</cite> prototype for the Sega Dreamcast! Well, not an original Sega release, of course. This is one of the limited reproduction copies being put together by the ASSEMbler Games community, and I'm rather looking forward to getting my hands on it.
 
 *Geist Force* was never commercially released by Sega, so it's pretty interesting that people have managed to preserve the surviving unfinished build and get it working on ordinary retail Dreamcast hardware. There's been a fair bit of work involved in making that possible, and it's worth remembering that this is still an unfinished prototype rather than some long-lost completed game. That doesn't make it any less interesting to me!
 

@@ -8,7 +8,7 @@ categories: [devkit, repairs, sega]
 
 {% include youtube.html id="of_DXU96Ubg" %}
 
-Another Sega Saturn Sophia development kit in need of attention! This time it's a European SG4101 unit, serial **H417010070**, which runs directly from our local mains supply without needing the rather enormous voltage transformer I use with the Japanese machine. That's one less enormous box to have cluttering up the place.
+Another Sega Saturn Sophia development kit in need of attention! This time it's a European SG4101 unit, serial H417010070, which runs directly from our local mains supply without needing the rather enormous voltage transformer I use with the Japanese machine. That's one less enormous box to have cluttering up the place.
 
 Unfortunately, the thing isn't producing any video. The fan and other signs of life are there, but the television isn't receiving a useful signal. Having already dealt with capacitor problems in my original Sophia, I thought I'd start by examining the surface-mount electrolytics. Process of elimination!
 

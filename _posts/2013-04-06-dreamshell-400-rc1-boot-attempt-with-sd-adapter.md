@@ -24,9 +24,7 @@ The picture wasn't especially happy on my television, though. It appeared in bla
 
 The controller could be used to move the pointer, and there was even an on-screen keyboard. Unfortunately, the small SD card didn't have anything particularly useful on it, so this wasn't a demonstration of a game loading successfully. At least the interface itself was doing something.
 
-What I am seeing here does not tell me whether DreamShell itself is the problem. The SD card, adapter or some interaction between the two could just as easily be involved. I've therefore ordered another SD card and a different DreamShell adapter. We'll have to wait and see whether that behaves any better.
-
-Stay tuned! :)
+What I am seeing here does not tell me whether DreamShell itself is the problem. The SD card, adapter or some interaction between the two could just as easily be involved. I've therefore ordered another SD card and a different DreamShell adapter. We'll have to wait and see whether that behaves any better. Stay tuned! :)
 
 **Update:** Unfortunately, I don't appear to have documented the final outcome of this experiment in any later posts, so this one remains unresolved in the archive!
 

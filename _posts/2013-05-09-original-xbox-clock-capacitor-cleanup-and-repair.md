@@ -8,21 +8,31 @@ categories: [microsoft, repairs, youtube]
 
 {% include youtube.html id="D56_9VYWIIU" %}
 
-Back to the original Xbox from the previous assessment. The leaking clock capacitor has now become an actual repair rather than just something horrible to point at. I've been replacing the affected capacitors on the motherboard, and it's looking considerably more respectable than it did with a random 9 V battery and assorted wires rattling around inside!
+Back to the original Xbox from the previous assessment. The leaking clock capacitor has now become an actual repair rather than just something horrible to point at. After clearing out that random 9 V battery and all the mysterious wires, I've been replacing the affected capacitors and cleaning up the motherboard. It's beginning to look like an Xbox again!
 
-The original clock capacitor was a 2.5 V, 1 F "super" capacitor, and it had made quite a mess of the surrounding board. I fitted a replacement and also changed several nearby electrolytic capacitors, using Panasonic replacements for some of the work. I had a few spare capacitors left over from a multipack, so naturally I found a use for those too.
+I believe this is a revision 1.2 or 1.3 board, although I wasn't completely certain when recording. The original clock capacitor was a 2.5 V, 1 F supercapacitor, and it had made a fairly impressive mess of the area around it. That's the first one I replaced.
 
-Most of my attention went to the area around the leaking capacitor. There was corrosion on both sides of that section of the motherboard, and some of it proved rather difficult to remove. I cleaned things up as best I could, although I wasn't particularly keen on damaging more components while trying to make it look perfect.
+I also changed a collection of nearby electrolytic capacitors, including a couple of 3.3 uF, 10 V components. They came in a pack of five, so naturally I ended up with more than I actually needed. And what do you do when you've got spare capacitors sitting on the bench? Apparently you find somewhere to install them!
 
-We did have one casualty along the way. A tiny component marked C7G7 had disappeared from the board, presumably during the cleaning and repair work. Wonderful! I couldn't immediately tell what effect its absence might have, so the sensible thing was to finish inspecting the board and see whether the Xbox would actually start.
+There were three original 6.8 uF, 6.3 V capacitors nearby, and I decided to replace those using some of the 3.3 uF, 10 V Panasonic parts I had on hand. The capacitance isn't actually the same, so that's worth remembering when looking at what I did in this recording. I was making use of the parts available to me and would still have to see how the Xbox behaved.
 
-The important part of a leaking clock capacitor repair isn't simply removing the failed component. Its alkaline leakage can attack nearby copper traces and component leads over time, so the surrounding motherboard needs attention too. On a pre-1.6 Xbox like this one, the original clock capacitor isn't required for normal hardware operation, although older BIOS and softmod configurations can have their own clock-related complications.
+Elsewhere I replaced a 22 uF, 25 V capacitor and another 100 uF component. The latter turned out a little fatter than I'd expected, although at least it wasn't too tall to fit. There were quite a few smaller capacitors I left alone because my original plan was to concentrate on the damage around the leaking clock capacitor.
 
-With the capacitors replaced, I put everything back together for the first proper power-on test. I hadn't actually powered up this Xbox before the repair, so I wasn't entirely sure what to expect. Fortunately, the machine started, the fans came to life and we had a picture on the television. That's considerably better than a motherboard covered in corrosion!
+And there was plenty of damage to concentrate on! Corrosion had spread around the supercapacitor area and onto the other side of the board, making parts of it rather difficult to clean. I did what I could without pulling more components off the motherboard. At some point you have to accept that you're not going to make every damaged patch look brand new.
 
-But could it play games? Of course, that was the important question. I gave Burnout Revenge a go and it worked! Lots of crashing, flames and thoroughly enjoyable automotive destruction. Unfortunately, I managed to lose the gameplay recording, so the video only has a couple of screenshots to show for it. Typical!
+Unfortunately, we did have one casualty. A tiny component marked C7G7 had disappeared during the work, and I had absolutely no idea where it went. Wonderful! Hopefully it wasn't something essential, but I couldn't tell just by staring at the spot where it used to be.
 
-There are still other things I want to do with this Xbox, including some TSOP flashing experiments. For now, though, we've gone from a suspicious collection of wires and leaking capacitors to a machine that actually boots and plays Burnout Revenge. I'll take that!
+The original clock-capacitor leakage is particularly troublesome because it can damage copper tracks and component leads as well as the capacitor itself. On these older Xbox motherboard revisions, the clock capacitor isn't generally needed for the machine to operate, although the clock will no longer retain its time in the usual way once the console is unplugged. I'd chosen to fit a replacement while doing the rest of the repair.
+
+With everything cleaned up as far as I dared, it was time to put the Xbox back together and see whether it worked. I hadn't even powered this machine on before starting the repair, so there was a very real possibility I'd just spent all that time fixing something that was never going to boot.
+
+Power on. No flames, no smoke, and the fans started spinning. Then we got a picture on the television! Excellent! After the condition this machine had arrived in, that was a rather satisfying result.
+
+But could it play games? I gave *Burnout Revenge* a go, and yes, it worked! Lots of crashing, flames and the sort of destruction that makes a racing game wonderfully entertaining. I had a great time with it.
+
+Unfortunately, I managed to lose the video footage of the game actually running. Typical! All I had left were a couple of screenshots, which at least show that the game started and the Xbox was doing something considerably more useful than sitting in a pile of damaged wiring.
+
+There's still plenty I want to do with this machine, including having a play with TSOP flashing. For now, though, we've gone from a motherboard covered in corrosion to an Xbox that boots and plays *Burnout Revenge*. That's a result worth celebrating!
 
 **Related Posts**
 

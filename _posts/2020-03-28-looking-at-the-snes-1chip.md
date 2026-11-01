@@ -24,7 +24,7 @@ For this 1CHIP, capacitor replacement seemed like a reasonable next experiment. 
 
 Eventually I'd like to install an in-game reset arrangement and SuperCIC mod once the hardware is behaving. There's not much point adding modifications to a console that hasn't even got working sound yet, though. One job at a time!
 
-Today I'm actually adding RGB output to a Japanese Nintendo 64, which is quite straightforward if you've got the right revision. For the simple RGB-amp mod on these Japanese consoles, that means a VDC-NUS or VDC-NUS A chip.
+Of course, the SNES recording isn't what I've got spread across the bench today. I'm actually adding RGB output to a Japanese Nintendo 64, which is quite straightforward if you've got the right revision. For the simple RGB-amp mod on these Japanese consoles, that means a VDC-NUS or VDC-NUS A chip.
 
 I've opted against the HDMI console mods for now and am instead hedging my bets on MiSTer FPGA, or whatever eventually succeeds it, to keep bringing more of this hardware into the FPGA world.
 

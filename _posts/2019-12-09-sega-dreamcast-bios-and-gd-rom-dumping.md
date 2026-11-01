@@ -18,7 +18,9 @@ I spent rather more time than I'd like to admit pressing buttons and wondering w
 
 {% include youtube.html id="Hgy1C-p6Jnk" %}
 
-For the second attempt I switched over to XDP Browser v7. That was considerably more manageable, particularly because I could actually understand the menus. I configured the network connection using a manual IP address, then moved on to booting `httpd-ack`.
+For the second attempt I switched over to XDP Browser v7. That was considerably more manageable, particularly because I could actually understand the menus. I configured the network connection using a manual IP address, then took the opportunity to try browsing McRetro.net and some Sonic-related pages on the Dreamcast itself.
+
+The pages did load, but getting the images and CSS to display properly was another matter. It was an interesting diversion, and a reminder of just how much the web has changed since the Dreamcast was designed. After that little experiment I booted `httpd-ack` to get back to the actual dumping.
 
 Once the software was running, I could use a web browser on another computer to connect to the Dreamcast's IP address. I'm using a Windows XP machine for the demonstration, although the important part is that both systems can communicate over the network.
 

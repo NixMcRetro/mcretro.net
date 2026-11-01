@@ -14,11 +14,11 @@ I've been trying to get the sound working on this Super Nintendo 1CHIP motherboa
 
 My suspicion was around the S-MIX audio path, although I hadn't established whether the chip itself was faulty. Rather than continuing to replace components, I decided to experiment with routing the audio signals around that part of the circuit.
 
-I identified the left and right audio outputs on another chip and attached a couple of wires so I could test them independently. I chose blue and green wire, partly because apparently making life difficult for myself with unusual colour choices is more entertaining than using red for right audio!
+I identified the right and left audio outputs on another chip, using pins 1 and 4 for the experiment. I attached a couple of wires so I could test the channels independently. I chose blue and green wire, partly because apparently making life difficult for myself with unusual colour choices is more entertaining than using red for right audio!
 
 With the connections made, I tried the audio through the television. Would you believe it, there was sound! Both channels were producing game audio, which was considerably more than I'd been getting through the original output path.
 
-I then routed the connections towards the output area of the motherboard, using the existing board connections where possible. It isn't exactly an elegant restoration of the original circuit, but it got the game audio back and gave me something useful to work with.
+I then routed the connections towards the output area of the motherboard, using what I identified in the recording as pins 11 and 12. It isn't exactly an elegant restoration of the original circuit, but it got the game audio back and gave me something useful to work with.
 
 That doesn't establish whether the S-MIX chip itself was responsible for the failure. I haven't fully traced the original audio circuitry, and bypassing part of it may change the output characteristics or introduce other problems. For now, though, the console produces sound again.
 

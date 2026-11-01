@@ -26,6 +26,4 @@ Hmm. It feels rather cheap, to be perfectly frank. The shoulder buttons make an 
 
 Time to take the thing apart. With a little assistance from Frank the camera stand, we get the controller open and find a fairly ordinary circuit board inside. There's a glob-top chip, some basic components and a generous helping of hot glue securing the cable. The shoulder buttons are quite keen to escape while I'm working on it too.
 
-Nothing particularly spectacular, but it's still a curious piece of Sega history. I wonder how many of these were sold locally, and whether anyone preferred them to the normal Saturn controller.
-
-Whatever the reason for its existence, I'm glad this peculiar bit of Australian Sega hardware survived!
+Nothing particularly spectacular, but it's still a curious piece of Sega history. I wonder how many of these were sold locally, and whether anyone preferred them to the normal Saturn controller. Whatever the reason for its existence, I'm glad this wonderfully dodgy bit of Australian Sega hardware survived!

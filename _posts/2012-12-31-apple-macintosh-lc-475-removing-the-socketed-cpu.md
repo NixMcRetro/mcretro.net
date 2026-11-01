@@ -2,21 +2,21 @@
 title: "Apple Macintosh LC 475: Removing the Socketed CPU"
 author: "Nix McRetro"
 date: 2012-12-31T13:43:52.000+11:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-02
 categories: [apple, repairs, youtube]
 ---
 
 {% include youtube.html id="IcpjLEVPcMs" %}
 
-Just a quick video for anyone who has never removed the socketed processor from an LC 475 or one of the closely related machines. The CPU is removable rather than soldered directly to the logic board, which makes swapping the original 68LC040 for a full 68040 relatively straightforward compared with some of my other CPU experiments.
+Here's a quick demonstration of how to remove the socketed processor from an Apple Macintosh LC 475. Unlike a CPU soldered directly to the logic board, this one can be removed and replaced without turning the whole exercise into a major soldering project.
 
-That does not mean it is worth getting careless.
+I'm using a flat-blade screwdriver, carefully working it into the gap between the processor and its socket. The trick is to lift one side a little, move around to another side and keep working evenly until the chip comes free. It's tempting to lever one side straight out, but bent processor pins would rather spoil the fun.
 
-Work slowly and lift the processor as evenly as possible so the pins are not bent and the socket or surrounding board is not damaged. I've done this enough times that I was perhaps a little more casual in the video than I would recommend as general technique.
+The original 68LC040 was surprisingly hot when I removed it. I was replacing it with a full 68040, which should give me the floating-point unit missing from the original LC processor. At least, that was the plan when I bought the replacement.
 
-The reason I was removing it this time was not merely curiosity. I had specifically bought a full 68040 to replace the LC 475's original FPU-less 68LC040.
+Once the new CPU was seated properly, I borrowed the old heatsink and used some thermal paste for the initial testing. I intended to sort out a more permanent attachment using suitable thermal adhesive later. This was a quick experiment, not an invitation to leave a loose heatsink rattling around inside a Macintosh.
 
-That upgrade leads directly into the next experiment: 33 MHz.
+So that's the CPU swap. The next experiment is to get the LC 475 running at 33 MHz and see what happens.
 
 ### Related posts
 
@@ -24,4 +24,4 @@ That upgrade leads directly into the next experiment: 33 MHz.
 
 ### Sources
 
-- [Apple - Macintosh LC 475 Technical Specifications](https://support.apple.com/en-la/112204) - documents the LC 475's original 68LC040 processor.
+- [Apple - Macintosh LC 475 Technical Specifications](https://support.apple.com/en-la/112204) - documenting the original 68LC040 processor.

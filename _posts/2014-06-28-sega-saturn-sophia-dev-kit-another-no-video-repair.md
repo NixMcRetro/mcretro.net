@@ -8,7 +8,7 @@ categories: [devkit, repairs, sega]
 
 {% include youtube.html id="6IugPzgdExU" %}
 
-My third and final Sega Saturn Sophia development kit is in need of repair. This one is another European SG4101, serial **H417010020**, and just like the previous machine, it powers on without producing any video.
+My third and final Sega Saturn Sophia development kit is in need of repair. This one is another European SG4101, serial H417010020, and just like the previous machine, it powers on without producing any video.
 
 Unfortunately, this Sophia has also suffered some cosmetic damage. There's a mark on the casing that I'd rather not try to remove in case it damages the lovely Sega logo underneath. It's also missing one of the little front-panel buttons, so I'll need to find a suitable replacement for that eventually.
 

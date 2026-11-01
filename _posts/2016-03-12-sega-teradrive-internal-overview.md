@@ -22,7 +22,7 @@ One of the other things worth mentioning is the backup battery. I've fitted a BR
 
 The XT-IDE card is my own little addition. I had some purple PCBs made by OSH Park, complete with a McRetro.net logo and various settings printed on the board. The TeraDrive uses the C800 address for this arrangement, and I've got a 28C64 EEPROM fitted. I originally intended to use something larger, but apparently that didn't happen. Typical.
 
-There are a few limitations with the expansion slot too, so not every ISA card will necessarily behave as expected. Still, having a CompactFlash-based storage option makes experimenting with these old computers rather more convenient than relying entirely on their original hard drives.
+There are a few limitations with the expansion slot too. In particular, the negative voltage rails aren't available at the ISA connector, so cards that need those supplies won't necessarily behave as expected. The 286 processor imposes its own restrictions as well; Windows for Workgroups 3.11, for instance, requires a 386-class machine. Still, having a CompactFlash-based storage option makes experimenting with these old computers rather more convenient than relying entirely on their original hard drives.
 
 Next up I'll be getting back into the XT-IDE setup and seeing what else I can persuade these machines to do. They're lovely bits of IBM and Sega history, and I'm glad to have them out of storage again. There are more photographs in the [photo gallery](/goodies).
 

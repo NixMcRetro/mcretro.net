@@ -10,7 +10,7 @@ categories: [programming, youtube]
 
 Thanks to [Buranelectrix](https://web.archive.org/web/20131112015528/http://buranelectrix.com/) for creating this great little project based on the Atmel ATmega328P chip. I'll be making one on a proper fabricated PCB in the near future.
 
-The design runs at 16 MHz, with six buttons, five potentiometers and eight LEDs. Four individually generated 1-bit sounds are mixed through a 3-bit resistor DAC into a wonderfully compact little noise machine. The next post lets this one make some noise.
+The design runs at 16 MHz, with six buttons, five potentiometers and eight LEDs. Four individually generated 1-bit sounds are mixed through a 3-bit resistor DAC into a wonderfully compact little noise machine. There's a proper demonstration in the next post, but even this tangled prototype managed to produce a beat.
 
 Of course, my version isn't exactly what you'd call compact. The proper circuit boards hadn't arrived, and I was getting impatient, so I decided to wire the whole thing together using whatever bits I had available. There's an ATmega328P, a 74HC595 shift register, a pile of LEDs and resistors, and wires going in just about every direction.
 
@@ -22,7 +22,7 @@ After wiring in the op-amp and attaching a little speaker, I finally managed to 
 
 I also experimented with the audio output and found that removing one of the capacitors changed the sound considerably. I've still got plenty to learn about why this arrangement behaves the way it does, although I'm rather pleased with the noise it's making.
 
-Once the proper PCB arrives, I should be able to build something a little less... well, terrifying to look at. But for now, I'm guess I'm quite happy with this tangled collection of components. What a mess. It's beautiful!
+Once the proper PCB arrives, I should be able to build something a little less... well, terrifying to look at. But for now, I guess I'm quite happy with this tangled collection of components. What a mess. It's beautiful!
 
 **Sources**
 

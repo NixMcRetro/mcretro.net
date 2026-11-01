@@ -10,9 +10,9 @@ categories: [programming, youtube]
 
 Even more programming, under OS X nonetheless! This time I've actually managed to get somewhere with the Lunchbeat and PICkit 2 arrangement, rather than spending the entire afternoon wondering why one little microcontroller won't cooperate.
 
-I'd been trying to use the PICkit 2 programmer with the ATmega328P in the Lunchbeat, but the Windows-side software hadn't been giving me especially reliable results. Eventually I decided to return to Mac OS X and see whether I could make the whole arrangement work there instead.
+I'd been trying to use the PICkit 2 programmer with the ATmega328P in the Lunchbeat, but the Windows-side software hadn't been giving me especially reliable results. Eventually I decided to return to Mac OS X 10.8 Mountain Lion and see whether I could make the whole arrangement work there instead.
 
-The first part of the job was compiling a version of the PICkit 2 command-line software. I used Homebrew to get the dependencies sorted out, then worked through the build process. After a few attempts, I finally had the Mac communicating with the programmer and could control its LEDs from the command line. That's something!
+The first part of the job was compiling PICkit 2 command-line software version 3.0 Alpha 12. I used Homebrew rather than MacPorts to get the dependencies sorted out, then worked through the build process. After a few attempts, I finally had the Mac communicating with the programmer and could control its LEDs from the command line. That's something!
 
 The more exciting part was getting AVRDUDE to recognise the Atmel chip properly. Initially it still wasn't cooperating, even though the PICkit appeared to be responding. Then I noticed that I was using the wrong programmer setting. I'd been telling the software it was dealing with an AVR ISP device rather than a PICkit 2.
 

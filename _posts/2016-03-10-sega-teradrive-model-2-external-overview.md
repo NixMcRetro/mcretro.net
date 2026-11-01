@@ -14,11 +14,13 @@ The TeraDrive combines an IBM PC-compatible 80286 computer with Mega Drive hardw
 
 On the front there's a switch for selecting PC or Mega Drive mode, along with a panel covering the two Mega Drive controller ports. The Model 1 has a single floppy drive, while the Model 3 trades one of the floppies for a hard drive. Having two drives on this one is rather nice when you're playing around with DOS disks.
 
-Around the back are the usual PC connections, alongside the Mega Drive video outputs and an RGB/composite arrangement. There's also an expansion connector reminiscent of the early Mega Drive hardware. The TeraDrive's video switching is rather interesting, although not every modern monitor appreciates the signals it produces.
+Around the back are the usual PC connections, alongside the Mega Drive video outputs and an RGB/composite arrangement. There's also an expansion connector reminiscent of the early Mega Drive hardware. Sadly, the original serial-number label had disappeared before this particular machine came into my possession, so I can't show you that.
 
-My particular machine has also been fitted with extra RAM, bringing the displayed total to around 2.5 MB. The PC side uses a 286 running at about 10 MHz, which isn't exactly spectacular performance, but it's more than enough for a little DOS entertainment.
+The TeraDrive's video switching is rather interesting, although not every modern monitor appreciates the signals it produces. My particular machine has also been fitted with extra RAM, bringing the displayed total to around 2.5 MB. The PC side uses a 286 running at about 10 MHz, which isn't exactly spectacular performance, but it's more than enough for a little DOS entertainment.
 
-I've also fitted an XT-IDE compatible CompactFlash card. That allows the machine to boot from solid-state storage rather than relying on a mechanical hard drive. Unfortunately, the card I happened to have installed contained a version of Windows that wanted a 386 processor. Oh well. Wrong computer!
+I've also fitted an XT-IDE compatible CompactFlash card, based on the open-source XT-CF-Lite version 4.1 design. Rather than buying a completed card, I had the PCBs manufactured, ordered the components and soldered them together myself. That included drag-soldering the fine-pitch CompactFlash connector, which worked out rather better than I might have expected. I built three of the cards without running into trouble. How's that for a change?
+
+This one had a 2 GB CompactFlash card installed, with the XT-IDE interface using address C800h. The firmware displayed build R588, dated 15 September 2015. Unfortunately, the card contained a version of Windows that wanted a 386 processor. Oh well. Wrong computer!
 
 Testing the different video outputs was another adventure. Composite works, although the picture isn't especially pleasant for reading PC text. The RGB arrangement is much sharper when the display accepts it, but I spent a fair bit of time changing switches and being greeted by an out-of-range message.
 

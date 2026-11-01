@@ -20,7 +20,7 @@ A normal dual-SH-2 configuration needs processor hardware in both positions, alt
 
 And finally, after somewhere between six and eight months, I've finished photographing the internals of the Sophia Systems Sega Saturn Programming Box. Nearly 300 photographs later, I can finally get everything back inside.
 
-The CPU-board area, RAM board, SH-1 board, and SCSI board are back in place. The CD drive is the last major part to reinstall after I've finished photographing it. A few board revisions caught my attention too, including an assembly marked revision 0.7 while the mainboard is revision 1.0.
+The CPU-board area, RAM board, SH-1 board, and SCSI board are back in place. The CD drive is the last major part to reinstall after I've finished photographing it. A few board revisions caught my attention too, including an assembly marked revision 0.7 while the mainboard is revision 1.0. I still need to get hold of some 8 MB RAM chips for the empty sockets, so there's more to do on the memory side as well.
 
 ![](/assets/images/2013/img_0363.jpg)
 

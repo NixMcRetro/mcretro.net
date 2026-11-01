@@ -14,7 +14,7 @@ The first video follows me dismantling the Aiwa's detachable Game Unit. There ar
 
 The front section contains the controller ports and cartridge doors, which need a little care when removing. I've had trouble with those doors before, usually because the metal frame behind them gets bent and prevents them from moving freely.
 
-Once the mainboard was accessible, I located the BIOS chip. It's marked **MPR-15768-T**, with a date code indicating week 39 of 1994. Unfortunately, somebody had applied an enormous piece of double-sided foam tape around the area. After spending far too long removing the deteriorating material, I decided that my other Aiwa Game Unit might make a more cooperative patient.
+Once the mainboard was accessible, I located the BIOS chip. It's marked MPR-15768-T, with a date code indicating week 39 of 1994. Unfortunately, somebody had applied an enormous piece of double-sided foam tape around the area. After spending far too long removing the deteriorating material, I decided that my other Aiwa Game Unit might make a more cooperative patient.
 
 {% include youtube.html id="ff4KOWv1g9I" %}
 

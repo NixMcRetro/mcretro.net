@@ -10,7 +10,7 @@ last_modified_at: 2026-10-18
 
 Here we have some video of the Amstrad Mega PC, upgraded into what is effectively Mega PC Plus territory by replacing the PC7386SX 386SX motherboard with a PC7486SLC 486SLC motherboard. That's right, 486-style instructions with the raw processing power of a 386. Maybe that isn't quite selling it right.
 
-This particular machine has been in my collection for quite some time, although I've decided it's time for it to move on. I wanted to give it one final overview before sending it off to a new home. These licensed Sega machines are wonderful, but I'm gradually trying to reduce the number of old computers and consoles I've got scattered around the place.
+This particular machine had been in my collection for quite some time, but when I filmed the overview I'd decided it was time for it to move on. I wanted to give it one final look before selling it. I was also starting to rethink my collection, particularly all the licensed Sega hardware from companies such as Amstrad, JVC and Aiwa. Sticking more closely to first-party machines would certainly make downsizing easier, and perhaps I'd even recover some space in my room!
 
 ![](/assets/images/2018/img_0606.jpg)
 
@@ -48,7 +48,7 @@ There's also a volume control on the front for the Mega Drive side, with additio
 
 I gave both sides another test before preparing the machine for sale. DOS started up through the XT-IDE arrangement, and the Mega Drive side was still doing its thing. It's a lovely little computer, even if it takes up rather more space than I can comfortably justify keeping forever.
 
-This unit was sold to a friend in Japan (or back from Japan, depending on where he ended up) nearly two years ago. I hope it treats him well in the future!
+By the time I wrote this post, the machine had actually been sold nearly two years earlier. It went to a friend in Japan (or back from Japan, depending on where he ended up). I hope it treats him well in the future!
 
 ![](/assets/images/2018/img_0603.jpg)
 

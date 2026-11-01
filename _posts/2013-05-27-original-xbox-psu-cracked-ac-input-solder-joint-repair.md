@@ -6,15 +6,15 @@ last_modified_at: 2026-10-18
 categories: [microsoft, repairs, youtube]
 ---
 
-The Xbox power supply was arcing badly whenever mains power was connected. Once I had it apart, the problem was visible at the AC input connector: a cracked solder joint.
-
 {% include youtube.html id="HwhaiQaNJXk" %}
 
-I resoldered the failed joint with fresh solder, and the arcing stopped. So "reflow" is not really the best description of what happened here. I repaired a visibly cracked through-hole solder joint at the mains input.
+The Xbox power supply was making a nasty buzzing sound and arcing whenever mains power was connected. Once I opened it up for a closer look, the trouble was right there at the AC input connector: a cracked solder joint. As if this Xbox hadn't already given me enough to do!
 
-This is a mains-voltage power supply, so it should be disconnected from AC before inspection and treated as potentially charged even after being unplugged.
+I was already in the middle of working on the same machine's TSOP flash, so this became a little power-supply intermission. I added fresh solder to the damaged through-hole joint and got it properly connected again. That stopped the arcing, which was a much nicer result than listening to the thing buzz away.
 
-This is also not a universal diagnosis for every original Xbox power fault. Microsoft separately ran a power-cord replacement programme for early Xbox consoles because rare internal electrical component failures could create a fire hazard. That broader safety issue is useful context, but the cracked input joint shown here is the fault I actually observed and repaired on this particular PSU.
+Mains-voltage power supplies aren't something to poke around in casually. The supply needs to be disconnected before inspection, and its components can remain charged even after it has been unplugged.
+
+Microsoft also had a broader power-cord replacement programme for some early Xbox consoles, because certain internal electrical failures could create a fire hazard. It's worth knowing about, but not every Xbox power fault is the same. That programme dealt with a separate issue from the cracked input joint I actually found in this power supply.
 
 ### Sources
 

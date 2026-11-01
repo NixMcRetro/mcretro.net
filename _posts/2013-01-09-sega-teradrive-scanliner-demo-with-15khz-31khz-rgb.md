@@ -14,6 +14,8 @@ The setup is a little complicated. The RGB signal goes through the scanline gene
 
 Sega designed the TeraDrive's analogue RGB output to handle approximately 15 kHz and 31 kHz scan rates. The PC side uses the higher scan rate, while Mega Drive mode uses the lower, television-style signal. The scanline generator doesn't create that 15 kHz output; it's simply adding the visual effect before my external converter handles the display.
 
+The picture looked stretched when I briefly switched back to PC mode during the demonstration, so there was still a little display tweaking to do. I also noticed that the TeraDrive's onboard clock had retained the time, which made me wonder whether its backup battery was still doing its job. At least something was behaving itself!
+
 I'd never given the TeraDrive a proper RGB test before, and the picture looked fantastic once I switched into Mega Drive mode. The generator has several settings, from subtle scanlines to enormous dark bands, with one mode looking a little flickery. After experimenting with the combinations, I found something much closer to the CRT appearance I was after.
 
 I moved everything over to the big television for another test. As predicted, the picture was bigger! While the camera was running, I showed off the TeraDrive's slightly different Mega Drive boot screen and spent some time playing Sonic & Knuckles. The game was running nicely, and the RGB picture was lovely and clear.

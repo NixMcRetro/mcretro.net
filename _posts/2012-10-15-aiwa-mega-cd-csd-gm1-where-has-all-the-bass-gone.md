@@ -16,9 +16,7 @@ Of course, trying to insert a Mega Drive cartridge with one hand while holding t
 
 There's another interesting symptom too. I'm hearing a hum when certain bright or white screens appear. Between that and the rather unpleasant sound quality, I'm wondering whether something in the audio amplification circuitry isn't doing its job properly.
 
-But which part? And is it a problem with the Game Unit, the Aiwa's audio circuitry or something else entirely?
-
-Another mystery for another day, I suppose!
+But which part? And is it a problem with the Game Unit, the Aiwa's audio circuitry or something else entirely? Another mystery for another day, I suppose!
 
 ### Related posts
 

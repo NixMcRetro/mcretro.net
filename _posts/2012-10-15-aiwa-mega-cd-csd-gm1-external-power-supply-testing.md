@@ -20,9 +20,7 @@ Mega Drive mode is another story. Nothing! I'm beginning to suspect one of the r
 
 Naturally, I couldn't just leave the experiment there. I decided to connect the other Game Unit and see whether that would make any difference. I'm already late for work, so another few minutes won't hurt. Probably!
 
-Unfortunately, that didn't solve it either. The Mega Drive section still refused to start, although the tape and radio were behaving better than I expected. At least we've established which parts of this machine respond to the alternative power source, even if the game hardware remains stubbornly silent.
-
-Looks like I'll have to investigate the transformer and its associated power rails more closely. Further testing required!
+Unfortunately, that didn't solve it either. The Mega Drive section still refused to start, although the tape and radio were behaving better than I expected. At least we've established which parts of this machine respond to the alternative power source, even if the game hardware remains stubbornly silent. Looks like I'll have to investigate the transformer and its associated power rails more closely. Further testing required!
 
 ### Related posts
 

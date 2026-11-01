@@ -33,9 +33,7 @@ While everything was out, I managed to document both of my Model 1 Saturns with 
 
 One thing that really stands out with the VA0 is the size of the mainboard. It's a fairly substantial piece of hardware, and the controller ports are integrated directly onto it rather than being part of a separate assembly. I also spotted a `9524` marking, which I interpreted as a date code for the 24th week of 1995.
 
-But while I had one of the Saturns apart, I noticed something extremely familiar. The separate SH-1 CD-processing board looked remarkably like the one inside my Sega Saturn Sophia development unit. Considering how little documentation there is for the Sophia, that was too interesting to ignore.
-
-Time for a side-by-side comparison!
+But while I had one of the Saturns apart, I noticed something extremely familiar. The separate SH-1 CD-processing board looked remarkably like the one inside my Sega Saturn Sophia development unit. Considering how little documentation there is for the Sophia, that was too interesting to ignore. Time for a side-by-side comparison!
 
 {% include youtube.html id="MUfzJHk7atc" %}
 

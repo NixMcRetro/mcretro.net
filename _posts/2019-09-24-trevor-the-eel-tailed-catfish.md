@@ -17,6 +17,7 @@ First up, Eel-tailed Catfish Detected! Yes, apparently detecting fish is now a l
 ![Trevor as a youngster in September 2017](/assets/images/fish/2017/trevor-september-2017.jxl)
 
 *Trevor as a youngster, 3rd September 2017. This photograph was taken before I met Big Fish!*
+{: .media-caption }
 
 {% include youtube.html id="DjfgYXW20po" %}
 
@@ -25,6 +26,7 @@ It's rather fascinating looking back at these early photographs, knowing just ho
 ![Trevor as a youngster in October 2017](/assets/images/fish/2017/trevor-october-2017.jxl)
 
 *Another early photograph of Trevor, 21st October 2017. Still a youngster, long before Big Fish became quite so big!*
+{: .media-caption }
 
 {% include youtube.html id="4f07AWT7QpA" %}
 

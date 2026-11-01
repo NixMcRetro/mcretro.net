@@ -18,11 +18,7 @@ More importantly, pulling the machine out uncovered a storage problem. The hard-
 
 The SSD or Disk on Module (DOM) setup was clearly involved in the boot failure. Returning the original 107 MB hard drive restored normal booting immediately. That told me the Mega PC itself was still capable of booting, but it did **not** isolate whether the problem was the DOM hardware, partitioning, BIOS geometry, boot configuration or some other compatibility issue.
 
-So we wind the clock back and join 1992 with a 107 MB hard drive.
-
-I've installed MS-DOS 6.22 alongside Windows for Workgroups 3.11 with a touch of Calmira, and the machine is running with 16 MB of RAM. I couldn't bring myself to end the recording before showing it booting properly again, so there is even a little Solitaire at the end.
-
-I also forgot to enable the CPU cache in the BIOS. Must remember that tomorrow. It makes an enormous difference on this 486SLC.
+So we wind the clock back and join 1992 with a 107 MB hard drive. I've installed MS-DOS 6.22 alongside Windows for Workgroups 3.11 with a touch of Calmira, and the machine is running with 16 MB of RAM. I couldn't bring myself to end the recording before showing it booting properly again, so there is even a little Solitaire at the end. I also forgot to enable the CPU cache in the BIOS. Must remember that tomorrow. It makes an enormous difference on this 486SLC.
 
 ### Power supply
 

@@ -1,5 +1,5 @@
 ---
-title: "Nixie Clock 3.6V NiCad Battery Replacement NiMH Upgrade"
+title: "Nixie Clock 3.6 V NiCad Battery Replacement and NiMH Upgrade"
 author: "Nix McRetro"
 date: 2013-04-23T03:54:14.000+10:00
 categories: [guides, repairs, youtube]

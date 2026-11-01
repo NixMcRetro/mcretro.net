@@ -15,9 +15,7 @@ It's quite a substantial tool, with a long power cable, three fan speeds and adj
 
 Naturally I had to find something to test it on. What better candidate than the dead Xbox motherboard sent to me by Hex1gon? This board was already beyond repair as far as I was concerned, but I wanted to keep it for donor components, including the RAM for a possible 128 MB Xbox upgrade in the future. I had debug games in mind for that extra memory, assuming I ever got around to the upgrade.
 
-The idea was to see whether I could remove the CPU and have a look underneath the package. I turned the heat gun up and started applying hot air, with a small jeweller's screwdriver ready to lift the chip once the solder softened. The gun also appeared to reduce its output when I moved it too close to the board, which was an interesting feature to watch.
-
-One, two, three... Lift!
+The idea was to see whether I could remove the CPU and have a look underneath the package. I turned the heat gun up and started applying hot air, with a small jeweller's screwdriver ready to lift the chip once the solder softened. The gun also appeared to reduce its output when I moved it too close to the board, which was an interesting feature to watch. One, two, three... Lift!
 
 Up came the Xbox CPU! It certainly showed that the Bosch could produce plenty of heat, although the result wasn't particularly gentle. Some of the solder balls remained attached, while others tore away with parts of the connection underneath. The motherboard was already dead, so preserving those connections wasn't the aim of this experiment.
 

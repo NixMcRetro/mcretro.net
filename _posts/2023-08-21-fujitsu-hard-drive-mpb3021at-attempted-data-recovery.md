@@ -55,9 +55,7 @@ Before the destructive erase, I also ran pattern searches against a disk image c
 
 ![](/assets/images/2023/img_1113.jpg)
 
-Ultimately the data recovery was a bust. There either wasn't anything useful left, or the drive was too far gone for us to retrieve it. We didn't recover usable data before the destructive testing began, although it cost nothing to try and was interesting to hear the old Fujitsu clunking away for a few days.
-
-The takeaway? Make a backup today if you haven't already! 😎
+Ultimately the data recovery was a bust. There either wasn't anything useful left, or the drive was too far gone for us to retrieve it. We didn't recover usable data before the destructive testing began, although it cost nothing to try and was interesting to hear the old Fujitsu clunking away for a few days. The takeaway? Make a backup today if you haven't already! 😎
 
 **Sources**
 

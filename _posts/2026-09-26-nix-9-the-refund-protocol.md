@@ -10,6 +10,7 @@ permalink: /nix-9-the-refund-protocol/
 ![Nix-9 and her companion arrive in a rain-swept neon megacity](/assets/images/2026/09/nix-9-the-refund-protocol/prologue.jxl)
 
 *A true consumer dispute, retold as a cyberpunk quest. Featuring one terrible hotel room, a cancelled flight, several corporate scribes, and the most dangerous weapon in the known universe: arithmetic.*
+{: .media-caption }
 
 ## Prologue: A Thousand Credits
 

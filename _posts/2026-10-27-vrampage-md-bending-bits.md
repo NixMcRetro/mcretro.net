@@ -9,6 +9,7 @@ categories: [ai-assisted, programming, sega]
 {% include youtube.html id="Prp6OLZkeD4" %}
 
 *Some of [my earlier VRAM experiments](https://mcretro.net/circuit-bending-vram-on-a-sega-mega-drive-2/) on real hardware. The browser version came rather later!*
+{: .media-caption }
 
 I've spent plenty of time persuading Mega Drives to produce pictures they were never asked to draw. Usually this involved a length of wire and a console that wasn't especially pleased about it. VRAMpage MD brings that experiment into the browser, with considerably less opportunity to damage the actual machine.
 
@@ -17,6 +18,7 @@ I worked with Codex on a modified Genesis Plus GX emulator, compiled to WebAssem
 ![Conceptual illustration of a chip trailing rainbow pixels, memory blocks and a sound wave over an ivory workbench](/assets/images/2026/10/vrampage-md/05-bending-bits.jxl)
 
 *Bending bits, with the soldering iron left in the drawer. Conceptual illustration.*
+{: .media-caption }
 
 ## Part 1: SRAM and the Game's Working Memory
 
@@ -29,6 +31,7 @@ The write-only contacts became particularly useful. There are ten A11 to A15 pai
 ![A modelled A11 and A12 bridge maps FF0000, FF0800 and FF1000 to FF0000, while FF1800 stays unchanged](/assets/images/2026/10/vrampage-md/03-sram-addresses.jxl)
 
 *Three requested addresses can land on one location. Disconnecting the bridge does not undo values already written.*
+{: .media-caption }
 
 ## Part 2: VRAM and the Picture
 
@@ -39,6 +42,7 @@ The awkward part was the renderer. Emulators keep decoded graphics ready to draw
 ![Three real emulator frames show the original colour pattern, AD3 forced low and an AD2 to AD5 bridge](/assets/images/2026/10/vrampage-md/04-vram-comparison.jxl)
 
 *The same ROM with faults off, AD3 forced low, and AD2 bridged to AD5. Actual v0.5.0 output using the Transaction model.*
+{: .media-caption }
 
 ## Part 3: FM and PSG Sound
 
@@ -49,6 +53,7 @@ Both 68000 and Z80 routes needed coverage, because the sound driver doesn't have
 ![Three rows showing faults applied to Work RAM accesses, VRAM addressing and FM or PSG input writes before their outputs are produced](/assets/images/2026/10/vrampage-md/02-fault-paths.jxl)
 
 *Where the changes happen. These are simplified digital models, not a physical pinout or a reproduction of every electrical oddity on a real board.*
+{: .media-caption }
 
 ## Getting Back to Something Usable
 
@@ -61,6 +66,7 @@ We checked the core with small original test programs that produce known picture
 ![VRAMpage MD workbench running an original multicolour diagnostic pattern beside the four chip controls](/assets/images/2026/10/vrampage-md/01-workbench.jxl)
 
 *The real v0.5.0 workbench running the downloadable colour-test ROM, with all faults off.*
+{: .media-caption }
 
 [VRAMpage MD is now live on McRetro.net](https://mcretro.net/homepages/vrampage-md/). Bring your own ROM; the file stays in your browser. The [source and complete browser download](https://github.com/NixMcRetro/VRAMpage-MD) are available too. No soldering iron required this time.
 

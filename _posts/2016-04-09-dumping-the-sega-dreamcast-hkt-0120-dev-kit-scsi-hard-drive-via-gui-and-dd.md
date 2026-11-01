@@ -27,9 +27,7 @@ I tried the graphical recovery approach with R-Studio and then a raw copy using 
 
 A raw copy with `dd` is useful when a disk is healthy enough, but it isn't specialised recovery software. When a drive starts returning read errors, repeatedly hammering the bad areas isn't ideal. That's why the next part turns to recovery tools, including GNU ddrescue, which can recover readable areas first and keep track of what still needs attention.
 
-For now, I've got an image to work with and some rather interesting Dreamcast development files to investigate. I'll leave the detailed analysis to people who know more about WSB2K2. I just like playing with old hardware!
-
-And yes, at the time I was still trying to remember whether the program was called `ddrescue` or `dd_rescue`. :)
+For now, I've got an image to work with and some rather interesting Dreamcast development files to investigate. I'll leave the detailed analysis to people who know more about WSB2K2. I just like playing with old hardware! And yes, at the time I was still trying to remember whether the program was called `ddrescue` or `dd_rescue`. :)
 
 **Sources**
 

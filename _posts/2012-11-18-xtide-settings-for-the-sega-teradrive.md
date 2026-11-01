@@ -6,14 +6,22 @@ last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
 ---
 
+
 {% include youtube.html id="6UJEjvZq9a0" %}
 
-Here is a video of the XTIDE settings that seem to be best for the Sega TeraDrive. Please note I have used a slightly less than current version 2.0.0b1 instead of 2.0.0b2. As long as it works I do not feel the urge to upgrade just yet... Maybe once it is not a beta I will. The EEPROM BIOS dump for the TeraDrive can be found on the [File Server](/goodies/).
+Here are the XTIDE BIOS settings I've been using with the Sega TeraDrive. I thought I'd record a quick video going through the configuration, partly to help anyone else attempting the same thing and partly because I should probably make a record of it myself. Knowing my luck, I'll eventually break the setup and wonder what all the settings used to be!
 
-A terminology trap worth clearing up: the modern XTIDE project used here is not the same thing as the historical XTA, or XT Attachment, disk interface. XTIDE provides an 8-bit ISA route to ATA devices, while XTA was an older and incompatible storage interface that happened to acquire the nickname "XT-IDE" in some historical documentation.
+I'm loading the configuration from the EEPROM and going through the primary IDE controller settings first. The device type is set for XTIDE, with the other controller options configured as shown on screen. I've left block mode and the internal write cache disabled in this setup, and the slave-device options are also disabled. Not a particularly exciting-looking configuration page, but it gets the job done.
 
-Later project documentation warns that 2.0.0 beta 1 can use different logical CHS parameters from beta 2 and subsequent releases. Upgrading an existing installation can risk data corruption; the documentation calls for recreating and formatting the affected partitions after upgrading.
+The boot settings are rather more interesting. I've enabled the boot menu and configured the hard disk boot selection so I can choose between the TeraDrive's original floppy drives and the Disk on Module. This makes experimenting with different storage arrangements considerably easier than opening up the machine and changing connections every time.
 
+I'm using XTIDE Universal BIOS version 2.0.0 Beta 1 rather than Beta 2. As long as everything keeps working, I don't feel a tremendous urge to upgrade just yet. Perhaps once it isn't a beta I'll think about it! The TeraDrive EEPROM BIOS dump is available on the [File Server](/goodies/).
+
+One terminology trap worth clearing up is that the modern XTIDE project isn't the same thing as the historical XTA, or XT Attachment, disk interface. XTIDE provides an 8-bit ISA route to ATA storage, while XTA was an older, incompatible arrangement that sometimes acquired the nickname "XT-IDE" in historical documentation.
+
+**Update:** Later project documentation warns that XTIDE Universal BIOS 2.0.0 Beta 1 can present different logical CHS parameters from Beta 2 and subsequent releases. Upgrading an existing installation can risk data corruption, so the documentation calls for recreating and formatting the affected partitions after upgrading. Something worth remembering before fiddling with a perfectly good boot disk.
+
+Anyway, those are the settings that worked for me. Now perhaps I can go back to playing Paku Paku rather than spending all evening in a BIOS configuration utility!
 
 ### Related posts
 

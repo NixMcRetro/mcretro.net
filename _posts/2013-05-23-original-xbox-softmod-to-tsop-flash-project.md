@@ -8,15 +8,13 @@ categories: [hacks, microsoft, youtube]
 
 {% include youtube.html id="IOt3T3uMl78" %}
 
-The Xbox project continues...
-
-The goal is straightforward: get the existing softmod behaving, TSOP-flash the console, fit the 160 GB hard drive and finally play Burnout.
+The Xbox project continues... The goal is straightforward: get the existing softmod behaving, TSOP-flash the console, fit the 160 GB hard drive and finally play Burnout.
 
 Well, things hadn't gone quite according to plan. I'd attempted to flash the Xbox's onboard Winbond chip with an Xecuter2 BIOS, but the attempt had failed. My soldering might have been responsible, and there was a possibility I'd lifted a pad along the way. Unfortunately, I didn't have a multimeter handy to check the connections properly.
 
 After that came the HeXEn disc. I thought I was making progress until an attempt to clear things up and restore the machine's normal settings left me with a damaged or missing dashboard. Wonderful. The Xbox was now showing Error 21 instead of doing anything particularly useful.
 
-The terminology is worth keeping straight here. A **softmod** changes what the Xbox can boot without replacing or rewriting its onboard firmware. A **TSOP flash** is the later step where compatible original Xbox revisions have their onboard flash ROM made writable and reprogrammed with replacement firmware. The machine I am working on is from the flashable pre-1.6 hardware family.
+I'd been trying to get away from relying on the softmod and flash the onboard firmware instead. A softmod changes what the Xbox can boot without rewriting the onboard BIOS, while a TSOP flash involves making the original flash ROM writable and programming new firmware into it. This machine is from the earlier pre-1.6 family that can support that sort of modification, provided I can actually get the thing to work!
 
 Fortunately, I'd made backups of the original hard drive's contents and locking information before I started playing around with everything. I had a feeling this project might end in tears, and for once my pessimism had been rather useful.
 

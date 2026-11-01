@@ -8,13 +8,13 @@ categories: [nintendo, repairs, youtube]
 
 {% include youtube.html id="fvXOWPn8YXM" %}
 
-Here we go repairing the traces on Super Nintendo \`UP15971140\` that were corroded away by an unknown liquid, probably many eons ago. This is the one that was producing some rather spectacular video distortion, and after poking around with the multimeter I've managed to narrow things down to three damaged connections around PPU1, the picture processing unit.
+Here we go repairing the traces on Super Nintendo UP15971140 that were corroded away by an unknown liquid, probably many eons ago. This is the one that was producing some rather spectacular video distortion, and after poking around with the multimeter I've managed to narrow things down to three damaged connections around PPU1, the picture processing unit.
 
 Two of the connections weren't making it through from the chip to their corresponding points on the board, while another trace had been eaten away further along its path. The good news was that I could follow where they were supposed to go, so the plan was to bridge the damaged sections with wire and test the console after each repair.
 
 The first wire went in rather nicely. I scraped back a little of the board to expose the copper, and the solder managed to flow into the via and hold the new connection in place. Wonderful! Time to give the SNES another test with *Lemmings*.
 
-Straight away there was an improvement. We had colour again, and the television was correctly detecting PAL rather than jumping between video standards. The picture still wasn't right, but at least things were heading in the right direction. I also had to account for a previously blown fuse during testing, so there was still more electrical work to sort out beyond the video traces.
+Straight away there was an improvement. We had colour again, and the television was correctly detecting PAL rather than jumping between video standards. The picture still wasn't right, but at least things were heading in the right direction. I'd also temporarily bridged a previously blown fuse with wire for the test, which was rather risky and certainly wasn't a finished fuse repair.
 
 Next up was *John Madden Football '93*, which made the remaining faults rather obvious. The picture was still distorted, with text behaving strangely and some rather nasty vertical bars. After fitting the second connection to PPU1, those bars became noticeably thinner. Not quite a touchdown yet, but we're getting there!
 

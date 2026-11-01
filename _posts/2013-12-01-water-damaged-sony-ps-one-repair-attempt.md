@@ -10,7 +10,7 @@ categories: [repairs, sony, youtube]
 
 Water-damaged consoles are the worst of the bunch. Unpredictable and filthy... and then there's the rust!
 
-This little PS one, serial **T213259**, would power on, but it wouldn't recognise any discs. There was corrosion around the controller ports, near the power jack, and even underneath the metal shielding. Some of the mess was hiding beneath one of the main chips too, which wasn't particularly encouraging. The first thing to do was clean everything up and see what I was working with. There were a few suspicious solder joints near the power connection, and the power switch itself was in a rather sorry state.
+This little PS one, serial T213259, would power on, but it wouldn't recognise any discs. There was corrosion around the controller ports, near the power jack, and even underneath the metal shielding. Some of the mess was hiding beneath one of the main chips too, which wasn't particularly encouraging. The first thing to do was clean everything up and see what I was working with. There were a few suspicious solder joints near the power connection, and the power switch itself was in a rather sorry state.
 
 After cleaning up the board, I discovered that the switch had plenty of rust inside. Out it came, and in went a replacement switch I had lying around. Not exactly factory original, but it did the job!
 

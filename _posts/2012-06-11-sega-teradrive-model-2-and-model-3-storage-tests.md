@@ -10,7 +10,7 @@ categories: [repairs, sega, youtube]
 
 That's right, it's video time! I've finally got a hard drive installed and working in my Sega TeraDrive Model 3. It's a Western Digital WDL-330P with a capacity of 30 MB, which matches the original storage specification rather nicely.
 
-I picked up several of these old drives, although not all of them worked. Three were usable, with surface scans reporting different numbers of bad blocks. Naturally, I ended up installing the one with the most bad blocks, twelve of them, while the others had fewer. Perhaps that wasn't the most sensible choice, but the drive was already in its original packaging and seemed worth trying!
+I picked up several of these old drives, although not all of them worked. Three were usable, and the surface scans found twelve bad blocks on the one I installed, eight on another, and three on the best of the bunch. Naturally, I ended up choosing the one with twelve! Perhaps that wasn't the most sensible choice, but the drive was already in its original packaging and seemed worth trying.
 
 Windows is considerably more pleasant to use when it doesn't have to load everything from a floppy disk. I've got Windows 3.1 running on the Model 3, and even Solitaire feels wonderfully quick compared with my earlier TeraDrive floppy experiments.
 

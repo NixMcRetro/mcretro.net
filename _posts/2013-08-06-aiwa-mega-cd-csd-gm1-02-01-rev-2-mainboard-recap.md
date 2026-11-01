@@ -8,7 +8,7 @@ categories: [repairs, sega, youtube]
 
 {% include youtube.html id="QkpbVodA_gM" %}
 
-Back to the revision 2 Aiwa mainboard, silkscreened `02-01`. This is the one with some pretty serious damage and a whole collection of previous trace repairs running across the underside. At this point it's the only one of my two CSD-GM1 mainboards passing power through to the Game Unit section, so I'd rather like to keep it working!
+Back to the revision 2 Aiwa mainboard, silkscreened 02-01. This is the one with some pretty serious damage and a whole collection of previous trace repairs running across the underside. At this point it's the only one of my two CSD-GM1 mainboards passing power through to the Game Unit section, so I'd rather like to keep it working!
 
 Today's job is replacing the electrolytic capacitors. That sounds simple enough until you start finding previous repairs, great blobs of hot glue and components that don't quite match the other board. Even poor little resistor R51 had managed to get caught up in the glue. Out came the desoldering gun to rescue it.
 

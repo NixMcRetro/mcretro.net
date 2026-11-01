@@ -1,5 +1,5 @@
 ---
-title: "Sega TeraDrive 240V PSU Upgrade"
+title: "Sega TeraDrive 240 V PSU Upgrade"
 author: "Nix McRetro"
 date: 2018-01-27T14:50:26.000+11:00
 categories: [hacks, repairs, sega]
@@ -10,7 +10,7 @@ last_modified_at: 2026-10-18
 
 Previously, way back in August 2016, I [posted](/sega-teradrive-power-supply-problems/) about having power supply problems on my Sega TeraDrives.
 
-I had considered falling back onto a PSU replacement if replacing parts blindly failed. As it turned out, this was the plan I ended up following. Instead of the PicoPSU, I went with the [Mean Well RD-65A](https://www.meanwell.co.uk/power-supplies/enclosed-power-supplies/rd-65-series), which provides +5V and +12V outputs. Ronnie of ASSEMblergames used the [Mean Well PT-65B](https://www.meanwell.com/Upload/PDF/PT-65/PT-65-SPEC.PDF) for his own TeraDrive, which also provides a -12V rail and can therefore suit hardware that actually needs that negative supply.
+I had considered falling back onto a PSU replacement if replacing parts blindly failed. As it turned out, this was the plan I ended up following. Instead of the PicoPSU, I went with the [Mean Well RD-65A](https://www.meanwell.co.uk/power-supplies/enclosed-power-supplies/rd-65-series), which provides +5 V and +12 V outputs. Ronnie of ASSEMblergames used the [Mean Well PT-65B](https://www.meanwell.com/Upload/PDF/PT-65/PT-65-SPEC.PDF) for his own TeraDrive, which also provides a -12 V rail and can therefore suit hardware that actually needs that negative supply.
 
 ![](/assets/images/2018/img_0608.jpg)
 
@@ -20,7 +20,7 @@ Leading up to this, I had replaced a whole heap of components on the PSU. I fina
 
 ![](/assets/images/2018/img_0609.jpg)
 
-The non-functional unit, 0629, showed the readings below. At first I thought I had a no-power situation. Leaving it connected for around a minute eventually produced output, but the machine still would not operate. With no load, the 12V rail also wandered between roughly 10.3V and 10.9V every few seconds while the 5V rail stayed steady. Those readings describe what this PSU was doing; they do not by themselves establish why it was doing it.
+The non-functional unit, 0629, showed the readings below. At first I thought I had a no-power situation. Leaving it connected for around a minute eventually produced output, but the machine still would not operate. With no load, the 12 V rail also wandered between roughly 10.3 V and 10.9 V every few seconds while the 5 V rail stayed steady. Those readings describe what this PSU was doing; they do not by themselves establish why it was doing it.
 
 | Rail and test condition | 1135 - working reference | 0629 - non-functional |
 | --- | --- | --- |

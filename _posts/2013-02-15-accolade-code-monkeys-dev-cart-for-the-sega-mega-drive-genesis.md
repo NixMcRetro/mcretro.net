@@ -10,7 +10,7 @@ last_modified_at: 2026-10-18
 
 This development cartridge seems to have been used by The Code Monkeys and was made by Accolade. Quite an interesting piece of Mega Drive history! I haven't worked out exactly what it's supposed to do yet. When I insert it into a Mega Drive, it displays the Code Monkeys introduction, but there's also a strange cable hanging off the cartridge.
 
-The cable ends in a 9-pin connector, with what appears to be only one contact wired up. I initially wondered whether it might connect to the expansion port on an early Mega Drive or perhaps another piece of development equipment. I'm still not sure, so if anyone recognises the arrangement, I'd love to hear about it.
+The cable ends in a 9-pin connector, with what appears to be only one contact wired up. Another contact looked as though it might once have had solder on it, although I couldn't tell what had originally been connected there. I initially wondered whether it might connect to the expansion port on an early Mega Drive or perhaps another piece of development equipment. I'm still not sure, so if anyone recognises the arrangement, I'd love to hear about it.
 
 ![](/assets/images/2013/img_0370.jpg)
 

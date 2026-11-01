@@ -10,33 +10,35 @@ categories: [hacks, sony, youtube]
 
 What a mess! But I guess that's just the way I like it. :) After all those earlier attempts at programming and installing a PlayStation modchip, I've finally got MultiMode3 (MM3) running in the SCPH-9002. Hooray!
 
-I'd originally been trying to use a PIC12C508A, but eventually switched to a PIC12F629. It's a flash-based, reprogrammable device, which means I can erase it and try again when something goes wrong. Given the number of mistakes I've made during this project, that seemed like a rather sensible choice.
+I'd originally been trying to use a PIC12C508A, but eventually switched over to a PIC12F629. It's a flash-based, reprogrammable chip, which means I can erase it and start again if something goes wrong. Given how many mistakes I've made during this project, that's a rather attractive feature!
 
-The chips were also around the same price at the time, so there wasn't much incentive to keep sacrificing one-time-programmable devices. I'd much rather have something I could experiment with without worrying about ruining another PIC.
+The chips were around the same price too, so there wasn't much reason to keep sacrificing one-time-programmable PICs. I'd rather have a stack of chips I can reflash than another collection of expensive little mistakes.
 
-Programming the MM3 firmware was successful enough to produce a functioning modchip, although the GQ-4X still reported a configuration verification error at the end of the process. That was rather concerning, but the subsequent tests showed that the installed chip was doing its job.
+Programming the MM3 firmware went well enough, although the GQ-4X still gave me a configuration verification failure at the end. That was a little worrying, but I'd already decided to give the chip a try. As you'll see, the installation actually worked despite that message!
 
-The installation itself wasn't exactly going to win any awards. Some of the wires were a little shorter than I'd planned, so I couldn't position the chip where I'd originally intended. It ended up sitting on top of another Sony component, with a little Blu Tack temporarily helping to keep everything in place.
+The wiring certainly isn't going to win any awards. Some of the wires turned out shorter than I'd planned, so the modchip couldn't sit in the position I'd originally chosen. Instead, I've stuck it on top of another Sony chip with a bit of Blu Tack underneath. Classy. Very classy!
 
-Very classy. Very professional. Fortunately, none of the soldered connections had come loose while I'd been moving everything around. Considering how this project started, that was something worth celebrating!
+Fortunately, all the connections survived being moved around. I hadn't managed to pull any more tiny components off the motherboard, which was a pleasant change from the earlier installation attempt. The important thing was that the modification was functional, even if its appearance left plenty of room for improvement.
 
-I also added some Kapton tape for insulation and checked that the modchip wouldn't contact the metal shielding when the PlayStation was reassembled. Functionality was the priority, but I didn't particularly want an unexpected short circuit to spoil the occasion.
+I added some Kapton tape for insulation and worked out how to secure the modchip so it wouldn't touch the metal shielding. There was enough room inside this particular PlayStation for everything to fit, although I definitely want to make a tidier job of the next one. I've got plenty more PlayStations to practise on!
 
-With everything back together, it was time to try some games. First up was *Crash Bandicoot*, or at least a PAL-compatible version of it. The familiar Sony Computer Entertainment Europe screen appeared, followed by the game running successfully. Beautiful!
+With the console back together, it was time for some testing. First up was *Crash Bandicoot*, or at least a PAL-compatible version, and the familiar Sony Computer Entertainment Europe screen appeared. The game started properly, which was rather encouraging after all the trouble I'd had getting to this point.
 
-Of course, the next challenge was testing imports and other discs. Unfortunately, I was using a CD burner that had been producing rather questionable results, and a few of the discs hadn't been verified properly after burning.
+Of course, I couldn't leave it there. I had a pile of other discs to try, many of which weren't even labelled, and I was already having problems with the CD burner I'd used to make them. Some hadn't verified correctly, but naturally I decided to see what the PlayStation would make of them anyway.
 
-Some would display the Sony Computer Entertainment America screen before refusing to proceed. Others would get a little further, depending on the disc and the video mode involved. At first I wasn't certain whether I was dealing with bad media, an issue with the modification or the PAL console's video output.
+One disc reached the Sony Computer Entertainment America screen and then refused to go any further. That showed something was happening with the modchip, although it was hardly the result I'd been hoping for. Between the questionable discs and the PAL console's handling of NTSC video through composite, there were plenty of things that could go wrong.
 
-There were also complications around NTSC games running through a PAL PlayStation's composite video connection. A disc could get through its initial boot screens before the television stopped displaying a usable picture, which didn't necessarily mean the modchip had failed.
+Eventually I tried a PAL-patched version of *Final Fantasy VIII*, and this time we actually got into the game! Beautiful! I hadn't really worked out what I was supposed to be doing, but that didn't stop me from wandering around, making questionable decisions and getting into trouble.
 
-Eventually I managed to get a patched version of *Final Fantasy VIII* running, which was a rather satisfying way to celebrate. I might not have been entirely sure what I was doing in the game, but that certainly didn't stop me from playing it!
+Unfortunately, the fun didn't last. The disc already had reported CRC errors, and after a while the music started skipping and the game stopped behaving itself. I managed to get through some of the opening sections before it all came unstuck. I really needed a CD burner that could burn properly!
 
-I also repaired the little surface-mount component I'd knocked off during the earlier installation attempt. I believe it was a 10 kOhm resistor, although I wasn't absolutely certain of the value when recording. At least the machine was behaving itself again.
+Still, the PlayStation was booting the modified discs and the MM3 was doing its job. The troublesome gameplay was another matter, especially when some of those discs had already failed verification before I even put them into the console.
 
-So after a collection of failed programming attempts, questionable soldering, missing components and a whole pile of troublesome discs, the PlayStation finally had a functioning MultiMode3 installation.
+And yes, that tiny surface-mount component I'd knocked off during the original installation is back on the motherboard. I believe it was a 10 kOhm resistor, although I wasn't completely certain of its value in the recording. At least the PlayStation was behaving rather better than it had when I first started attacking it.
 
-**Update:** The CD burner I was using for the test games turned out to be faulty. In the excitement of getting everything working, **Verify burn** had either been switched off or ignored. Whoops! The follow-up explains that discovery, but it means those earlier disc failures weren't reliable evidence of a faulty modchip.
+So after all the failed programming attempts, missing components, untidy wires and troublesome discs, I've finally got a functioning MultiMode3 installation. It's not pretty, but it works. I'll take that!
+
+**Update:** The CD burner I was using for the test games turned out to be faulty. In the excitement of getting everything working, **Verify burn** had either been switched off or ignored. Whoops! The follow-up explains what I discovered, and it certainly accounts for why those discs were such a miserable collection of test candidates.
 
 **Sources**
 

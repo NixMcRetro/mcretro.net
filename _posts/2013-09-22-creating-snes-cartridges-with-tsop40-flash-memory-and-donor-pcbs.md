@@ -8,29 +8,41 @@ categories: [hacks, nintendo, youtube]
 
 {% include youtube.html id="dV6J6cpVUfg" %}
 
-Here we create a SNES cart using a donor cart, either NHL 96 or World Cup Striker. The plan is to flash EarthBound and Donkey Kong Country 3, although EarthBound is the one that gets most of the attention in this video. I've got two perfectly good sports games ready to sacrifice for the cause, so this should be entertaining!
+Here we create a SNES cart using a donor cart, either *NHL 96* or *World Cup Striker*. The plan is to flash *EarthBound* and *Donkey Kong Country 3*, although *EarthBound* is the one that gets most of the attention in this video. I've got two perfectly good sports games ready to sacrifice for the cause, so this should be entertaining!
 
-I'd already desoldered the original mask ROMs from the donor boards. The next job was fitting sockets so I could experiment without soldering and desoldering the chips every time. I only had 40-pin sockets available, so a little modification was needed to make them fit the 36-pin arrangement I was using.
+I'd already desoldered the original mask ROMs from the donor boards, and the next step was fitting sockets so I could experiment without having to solder and desolder the chips every time. I only had 40-pin sockets available, so I had to shorten them to suit the 36-pin arrangement. Beautifully professional so far!
 
-After fitting the sockets, I gave one of the donor boards a test using an original game ROM. It worked, which was a rather encouraging start given the amount of soldering still ahead. I was also beginning to realise that there wasn't going to be much spare room once all these adapters and chips were stacked inside a cartridge case.
+After fitting the sockets, I tried an original game ROM in one of the modified donor boards. I even managed to put the *NHL 96* chip into the *World Cup Striker* arrangement during testing, and it worked. That's a good sign, although I was already discovering that stacking sockets and adapters inside a SNES cartridge wasn't going to leave much room.
 
-The flash-memory arrangement uses a TSOP40 chip mounted on an adapter PCB, with the donor cartridge providing the supporting hardware. I'd ordered some lovely purple circuit boards manufactured by OSH Park, using a design shared through the RetroHacker forums. The idea was to connect the TSOP40 flash memory to the GQ-4X programmer, which would let me write a game image to the chip.
+The main project involved mounting a TSOP40 flash chip onto an adapter PCB, then using my GQ-4X programmer to write a game to it. I'd ordered some lovely purple PCBs from OSH Park, using a design shared through the RetroHacker forums. They looked fantastic, although the amount of soldering involved was beginning to look rather less fantastic.
 
-Before attempting anything too adventurous, I finished assembling the programmer adapter and tested it using the original World Cup Striker mask ROM. I managed to read the ROM, save it as a `.bin` file and identify it as the PAL 8 Mbit game. Better still, the image loaded in ZSNES. Excellent! At least that part of the homemade adapter was doing exactly what it should.
+I assembled the programmer adapter using the socket and the necessary wire connections, taking care to keep everything aligned. Some of the wiring was awkward to get at once the socket was fitted, so it was becoming quite obvious that the order of assembly mattered.
 
-Next came the wonderful world of fine-pitch soldering. The AM29F032 flash chip has some ridiculously small legs, and getting everything lined up was not particularly enjoyable. Lots of flux, a bit of drag soldering and some desoldering braid eventually got the job done, although I managed to make the chip sit slightly crooked on its adapter. Beautiful workmanship, obviously!
+Before soldering the flash chip, I wanted to make sure the programmer adapter was working. Rather than risk a brand-new TSOP40 device straight away, I used the original *World Cup Striker* mask ROM as a test. The GQ-4X managed to read it, and I saved the resulting image as a BIN file.
 
-The GQ-4X recognised the flash chip and I successfully wrote EarthBound to it. Unfortunately, the first test in the PAL Super Nintendo produced the familiar warning that the game wasn't designed for this Super Famicom or Super NES. That's what happens when you try to run the original NTSC game on a console that isn't expecting it.
+Better still, the image was identified as the PAL 8 Mbit *World Cup Striker*, and it loaded in ZSNES. Excellent! That meant the homemade adapter could read a known original cartridge ROM before I moved on to programming the flash memory. At least one part of the experiment was going exactly to plan.
 
-I then tried a PAL-converted version of the ROM. This got us into the game, although the picture didn't fill the entire screen and progress eventually stopped with an error. I suspected the ROM conversion was involved, but there was also discussion of save-memory size around that particular problem. Either way, it wasn't a completely working EarthBound cartridge just yet.
+Next came the wonderful world of fine-pitch soldering. The AM29F032 flash chip has some ridiculously small legs, and getting them aligned with the adapter pads was a challenge. I used plenty of flux, a bit of drag soldering and some desoldering braid to clean up the excess. The sound of the flux evaporating was lovely, even if the final result wasn't quite as beautiful as I'd hoped.
 
-My plan was to return to the original NTSC ROM and install a SuperCIC modification in the console, rather than continue fiddling with the converted version. The donor PCB had the sort of hardware I needed for EarthBound, but that doesn't make every SNES donor interchangeable. HiROM and LoROM cartridges can have different arrangements, and the memory and supporting circuitry still need to suit the intended game.
+I even used Blu Tack to help hold the chip in position, although somehow it still ended up sitting a little crooked. Naturally I'd also soldered some of the adapter legs before I really should have, making the job harder than necessary. Still, the GQ-4X recognised the chip, so perhaps my soldering wasn't entirely terrible after all!
 
-There was also the minor problem of getting the whole thing back into its plastic case. The socketed arrangement took up too much room, so I eventually abandoned the socket on one cartridge and made some adjustments to the shell. I also went back to the original battery arrangement for the moment, since the replacement holder was still causing clearance problems.
+Once the AM29F032 was programmed with *EarthBound*, I put the cartridge into the PAL Super Nintendo for a test. Unfortunately, up came the familiar warning that the game wasn't designed for this Super Famicom or Super NES. The original NTSC ROM wasn't going to cooperate with the unmodified PAL console, but at least the cartridge had been recognised.
 
-One flash-cartridge experiment had made some very real progress. The second wasn't so fortunate! I accidentally soldered a TSOP40 chip on upside down, and trying to remove it without suitable hot-air equipment ended with a damaged corner on the chip. Running out of flux probably didn't help either. Fine-pitch soldering can be an absolute monster.
+I then tried a PAL-converted version of *EarthBound*. This time we got into the game, although the picture didn't fill the entire screen, and eventually progress stopped with an error. I found some discussion suggesting that sort of error could involve incorrect SRAM size, but because I'd modified the ROM for PAL operation, I suspected the conversion might be the more likely problem.
 
-Still, we've managed to build and test the programmer adapter, read an original SNES ROM, program flash memory and get EarthBound running far enough to investigate the remaining compatibility problems. Donkey Kong Country 3 will have to wait its turn. Not bad for a weekend spent turning unwanted sports games into something considerably more interesting!
+My plan was to go back to the original NTSC ROM and install a SuperCIC modification in the console rather than continue wrestling with the converted version. The donor cartridge had a useful combination of HiROM and FastROM support, with the required memory arrangement for the *EarthBound* experiment, including 64 KB of SRAM. That made it suitable for what I was trying to build, although not every SNES donor board is wired the same way.
+
+I'd also been doing some work on the plastic cartridges themselves. The socketed arrangement sat so high that it was going to be difficult to fit everything inside the shell, and the replacement battery holder wasn't helping matters. Eventually I removed the socket on one cartridge, soldered the arrangement more directly and went back to the original battery setup for the moment.
+
+Even then, a little work with the Dremel was required to make room inside the cartridge case. Lovely! The idea was to end up with something I could actually close and use, rather than a tower of circuit boards hanging out of the back of the Super Nintendo.
+
+I also managed to demonstrate one of the modified cartridges running in a newly painted Super Nintendo. That was another rather satisfying moment in a weekend full of fiddly soldering, unusual colours and small victories. The casework and the cartridge experiments were both coming together.
+
+Unfortunately, the second flash chip wasn't so lucky. I managed to solder that one onto its adapter upside down, and removing it without a hot-air station proved extremely difficult. By the time I was done, a corner of the chip had been damaged. Running out of flux probably didn't help either!
+
+Still, we've managed to build and test the programmer adapter, read an original SNES ROM, program the flash memory and get *EarthBound* running far enough to investigate the remaining compatibility problem. The second chip might have suffered, but the first one worked! That's the opposite of how these things usually go for me.
+
+*Donkey Kong Country 3* will have to wait its turn. I've got more boards to order, more chips to solder and a SuperCIC modification to get through before I can finish this little adventure. Not bad for a weekend spent turning unwanted sports games into something considerably more interesting!
 
 **Related Posts**
 

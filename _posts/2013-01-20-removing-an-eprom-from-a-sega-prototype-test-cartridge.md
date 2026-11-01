@@ -10,18 +10,16 @@ categories: [guides, sega, youtube]
 
 So I was thinking, why not? What a fun little experiment this turned out to be!
 
-I'd been dumping EPROMs from a Sega cartridge containing *Monopoly*, and the board had four ROM chips fitted. That got me wondering what would happen if I removed one of them and tried running the cartridge with only three installed.
+I'd been dumping EPROMs from a Sega cartridge containing *Monopoly*, and the board had four ROM chips fitted. While working through them, I started wondering what would happen if I removed one and tried running the game with only three installed.
 
-Naturally, the next sensible step was to take out the EPROM in the bottom-right corner and give it a try. It wasn't an attempt to repair the cartridge or a recommended way to operate it. I was simply curious to see how the game would behave with part of its program data missing.
+Naturally, curiosity got the better of me. I pulled the EPROM from the bottom-right corner of the board, leaving the other three in place, and decided to see what the Mega Drive would make of that arrangement. There was only one way to find out!
 
-The interesting thing was that the game initially appeared to start. It didn't immediately refuse to boot, which was rather encouraging for an experiment that involved deliberately removing one of its memory chips.
+The surprising part was that the game appeared to start normally enough. There was no immediate refusal to boot, despite having a quarter of its ROM chips missing. That was encouraging, if only because it meant something interesting might happen next.
 
-Things became considerably more entertaining after pressing Start. The game was still doing something, but the results were rather strange. Apparently removing part of the ROM isn't particularly conducive to a normal game of *Monopoly*!
+And something interesting certainly did happen when I pressed Start! The game continued doing its thing, but what followed wasn't exactly a normal game of *Monopoly*. I could still move around, although the results were wonderfully strange.
 
-I imagine removing a different EPROM might produce a completely different set of problems, depending on what data was stored in each chip. I didn't test every possible combination, so there's no telling exactly how the others would have behaved.
+I imagine removing a different EPROM would produce a different collection of problems, depending on what data each chip contains. I only tried removing this particular one, so perhaps I'll have to experiment with the others another day.
 
-I described this at the time as a Sega prototype or test cartridge. The surviving recording shows the board and the missing ROM experiment, but it doesn't independently establish the cartridge's provenance, so I wouldn't treat the title alone as proof of a particular development history.
+I've been describing this as a Sega prototype or test cartridge, although I haven't established its exact development history. For now, it's an unusual Sega cartridge with four ROMs and an excellent excuse to see what happens when one of them goes missing.
 
-Still, it was a fun demonstration of how a game can partially run even when some of its ROM data is unavailable. It also gave me another excuse to play around with an unusual Sega cartridge when I probably should have been finishing something else.
-
-Now I'd better get back to dumping those EPROMs. There's always something else to investigate!
+Anyway, that's enough deliberate misbehaviour for one afternoon. I'd better get back to dumping those EPROMs before I find something else to pull apart!

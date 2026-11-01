@@ -8,7 +8,7 @@ categories: [nintendo, repairs, youtube]
 
 {% include youtube.html id="n1EwWgZlO98" %}
 
-Up next is Super Nintendo number two, serial \`UP15971140\`, and this one has some rather impressive video distortion. It was originally reported as having no power, but that doesn't appear to be the case. It actually turns on and produces a purple screen, which is more than I was expecting!
+Up next is Super Nintendo number two, serial UP15971140, and this one has some rather impressive video distortion. It was originally reported as having no power, but that doesn't appear to be the case. It actually turns on and produces a purple screen, which is more than I was expecting!
 
 With *John Madden Football '93* running, there's sound coming through, so at least part of the console is doing its job. The picture, however, is another story entirely. Sometimes it disappears, sometimes it flickers, and when we do get an image the text appears to be backwards or upside down. Poor John Madden!
 

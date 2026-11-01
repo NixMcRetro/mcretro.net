@@ -12,7 +12,7 @@ Back to the Aiwa Mega-CD CSD-GM1, and today we're going to see whether the casse
 
 I've got the working tape mechanism connected up for a test, so let's press Play and see what happens. And there it is! Music! Both speakers are producing sound, which is particularly good news considering the repairs I've been doing to the mainboard.
 
-I've also replaced that rather large 4700 µF capacitor I was talking about previously. The audio is coming through, although it sounds a little uneven. I'm wondering whether the cassette belts have seen better days, or whether I'm just too accustomed to listening to digital recordings. Either way, there's more to investigate.
+I've also replaced that rather large 4700 uF capacitor I was talking about previously. The audio is coming through, although it sounds a little uneven. I'm wondering whether the cassette belts have seen better days, or whether I'm just too accustomed to listening to digital recordings. Either way, there's more to investigate.
 
 The important thing is that at least part of this previously damaged mainboard is functioning. The tape player works, the amplifier is producing sound, and the repaired circuitry is doing something useful. The radio, on the other hand, still isn't working. That could be down to any number of components, so I'm not going to declare that problem solved just yet.
 

@@ -16,11 +16,11 @@ I'd already opened this unit previously to dump the BIOS, so a few screws were c
 
 The daughterboard comes away after removing its retaining screws and carefully separating the board-to-board connector. There are capacitors everywhere! Looking at the number of them, I suspect replacing the whole lot is going to take a while. Still, it's rather nice to see the hardware laid out like this.
 
-Getting the front panel off required a little more care. There were two additional screws hiding underneath, and I'm very glad I noticed them before trying to pull the plastic away. Snapping the front off a piece of hardware like this would have been a complete disaster! The controller ports are connected internally by cables, which I disconnected after noting their positions.
+Getting the front panel off required a little more care. There were two additional screws hiding underneath, and I'm very glad I noticed them before trying to pull the plastic away. Snapping the front off a piece of hardware like this would have been a complete disaster! The controller ports are connected internally by cables, with white to the right and an orangey-yellow one to the left. The first one even rhymes! I disconnected them after noting their positions.
 
 With the front removed, the mainboard can slide out of the metal frame once the remaining screws are out of the way. There are some interesting little details inside, including the battery, the familiar Sega processors and the BIOS EPROM. The markings on a few of the chips also suggest this particular unit dates from around 1993.
 
-There's a \`27C1024\` EPROM fitted for the BIOS, along with quite a collection of custom chips. I also spotted some fuse positions on the underside of the board that might relate to the Mega Drive and Mega-CD sections, although that's only a guess at this stage. I'd rather confirm their function than assume I've worked it out from the markings alone.
+There's a 27C1024 EPROM fitted for the BIOS, along with quite a collection of custom chips. I also spotted some fuse positions on the underside of the board that might relate to the Mega Drive and Mega-CD sections, although that's only a guess at this stage. I'd rather confirm their function than assume I've worked it out from the markings alone.
 
 The boards themselves look remarkably well put together. Unfortunately, all those capacitors are still waiting to be removed, and there's plenty of work ahead before this unit is ready to go back together.
 

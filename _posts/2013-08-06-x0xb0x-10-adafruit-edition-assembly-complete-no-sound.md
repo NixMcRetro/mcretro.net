@@ -14,17 +14,19 @@ The sequencer appears to be working, with LEDs lighting up and the different mod
 
 The problem now seems to be somewhere around the audio circuitry. I've got a multimeter handy, although I don't have a proper oscilloscope here, so I'm going to poke around and see what the voltages are doing. This should be exciting!
 
-One of the components I'm particularly interested in is the \`BA6110\` chip. During testing, I noticed that pin 4 wasn't receiving the voltage change I'd expected when pressing a note in keyboard mode. From what I could work out, that signal should allow the following circuitry to produce sound.
+One of the components I'm particularly interested in is the BA6110 chip. During testing, I noticed that pin 4 wasn't receiving the voltage change I'd expected when pressing a note in keyboard mode. I was expecting something around 1 to 1.2 V there, which should help activate the following circuitry and get some sound happening. Instead, nothing!
 
-I decided to investigate by applying a small external test voltage to the relevant part of the circuit and checking whether the audio section responded. This was a troubleshooting experiment on Nick's unfinished board, not a general repair procedure to try blindly on other synthesiser circuits.
+I decided to try feeding a small external voltage into that part of the circuit to see whether anything further along would respond. For the experiment I used a rechargeable battery providing approximately 1.2 V, connected to the test point and ground. A bit of bench troubleshooting to narrow down the problem, rather than a completed repair.
 
 And wouldn't you know it, the x0xb0x made a noise! A rather strange noise, but a noise nonetheless. Beautiful!
 
 With the test connection in place, I was even able to trigger some notes and get a little tune happening. I wouldn't exactly call it a masterpiece, but after all that silence it was wonderful to hear something coming from the machine.
 
-That points towards a problem involving the BA6110 or its associated control circuitry. The chip itself is looking rather suspicious, although a proper repair will still need to confirm the faulty component and restore normal operation without the external test voltage.
+The BA6110 is certainly looking suspicious, although I still need to work out whether the chip itself is faulty or whether the problem is with the signal feeding it. What we do know is that supplying the missing voltage made the audio circuitry respond. That's a pretty useful discovery, even if the synthesiser still won't behave on its own.
 
 Replacement chips seem to be available, but I'll want to make sure any new one is genuine and suitable before going any further. There's no point swapping one problem for another!
+
+I also owe a thank you to the people who have been documenting their own x0xb0x sound problems online. Some of their troubleshooting discussions helped point me in the right direction, and that's always appreciated when you're working through a circuit without all the equipment you'd ideally like to have.
 
 So the assembly is complete, and we've made a rather useful discovery about the audio fault. The synthesiser still isn't fully repaired, but we now know that at least part of the sound-generating circuitry can respond.
 

@@ -14,15 +14,15 @@ After a bit of reading, I decided to investigate the white ribbon cables inside 
 
 Getting to the cables means removing quite a bit of metal shielding. There's certainly no shortage of that inside a 32X! Once everything was accessible, I disconnected the ribbons from both ends and started cleaning the contacts.
 
-In the video I used a little fine sandpaper on the connectors and methylated spirits on the exposed ends of the cables. That was my approach at the time, although I wouldn't recommend using abrasive paper on plated contacts now. It can remove the plating and potentially cause more problems later. High-purity isopropyl alcohol, a lint-free swab and suitable electronics contact cleaner are much better places to start.
+In the video I used a little fine sandpaper on the connectors and methylated spirits on the exposed ends of the cables. That was my approach at the time, although I wouldn't reach for the sandpaper again today. It can wear away the plating on the contacts and potentially make things worse, so I'd start with suitable electronics contact cleaner and a lint-free swab instead.
 
 With the cables reconnected, it was time for a test. Out came *Doom*, which is probably not everybody's first choice for testing a sound system. The 32X initially rewarded me with another black screen. Oh, terrific!
 
 After a little more fiddling with the connection, however, the game finally appeared. We had video, we had sound, and pushing gently against the troublesome cable was no longer causing the machine to lose its picture. That's more like it!
 
-A quick restart confirmed it was still behaving. So this particular 32X seems to have been suffering from poor internal connections rather than something more serious. That's one machine working again, even if the other three still have their own peculiar video troubles.
+A quick restart confirmed it was still behaving. This particular 32X seems to have been suffering from poor internal connections rather than something more serious. That's one machine working again, even if the other three still have their own interesting video troubles.
 
-No life from your Sega Mega Drive 32X? It might just need a bit of TLC. Just remember that cleaning fixed this particular unit, and the same symptoms can have other causes.
+So this one only needed a bit of attention to its internal connections. I can't assume the others have exactly the same problem, but it's a rather nice result for a machine that was giving me absolutely nothing earlier!
 
 ### Related posts
 

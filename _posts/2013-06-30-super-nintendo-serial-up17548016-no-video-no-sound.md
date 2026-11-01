@@ -8,7 +8,7 @@ categories: [nintendo, repairs, youtube]
 
 {% include youtube.html id="L1Z0RHQWTGw" %}
 
-Lucky last! Here's Super Nintendo number three, serial \`UP17548016\`, and this one has managed to develop an even more exciting collection of faults than the other two.
+Lucky last! Here's Super Nintendo number three, serial UP17548016, and this one has managed to develop an even more exciting collection of faults than the other two.
 
 The good news is that it powers on. The bad news is that there's no picture and no sound, which doesn't leave us with an awful lot to look at! It's also missing the cover over the power LED, and the reset button is broken. Wonderful!
 

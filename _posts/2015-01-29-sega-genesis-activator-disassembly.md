@@ -14,7 +14,7 @@ The Activator was a motion-control peripheral released in 1993, based on the Lig
 
 Anyway, I've got the section with the power cable here, so let's open it up and see what's hiding inside. Out come the screws, and... wow! There's rather more circuitry than I was expecting.
 
-Inside we've got a main circuit board, a smaller board connected to it and a whole collection of components. There's a familiar \`7805\` voltage regulator, which suggests some of the circuitry needs a regulated 5-volt supply. There's also a larger \`80C51\`-family controller chip, along with plenty of resistors and other bits and pieces.
+Inside we've got a main circuit board, a smaller board connected to it and a whole collection of components. There's a familiar 7805 voltage regulator, which suggests some of the circuitry needs a regulated 5-volt supply. There's also a larger 80C51-family controller chip, along with plenty of resistors and other bits and pieces.
 
 The smaller board is secured with hot glue and appears to contain part of the infrared sensing arrangement. There are also some rather interesting soldering jobs on the boards. I've certainly seen neater work, although I suppose I can't complain too much given some of my own creations!
 

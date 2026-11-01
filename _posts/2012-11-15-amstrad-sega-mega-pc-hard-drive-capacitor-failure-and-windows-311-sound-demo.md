@@ -6,19 +6,24 @@ last_modified_at: 2026-10-18
 categories: [ibm-pc, sega, youtube]
 ---
 
+
 {% include youtube.html id="BKoCBsni6Ts" %}
 
-While trying to install MS-DOS 6.22 and Windows for Workgroups 3.11, the Mega PC suddenly appeared to develop a power short. I tried another power supply, switched it on and was rewarded with plumes of smoke rising from the machine.
+Never a dull moment with the Amstrad Mega PC! I was getting ready to install MS-DOS 6.22 and Windows for Workgroups 3.11 when the machine suddenly switched itself off. I tried turning it back on, but nothing happened. Fair enough, I thought, perhaps the power supply has decided to call it a day.
 
-After pulling everything apart, I found that a tantalum capacitor on the Seagate 107 MB hard drive had failed dramatically. The failed capacitor was the obvious source of the smoke and short-like behaviour, although I still need to inspect the surrounding circuit before assuming nothing else was damaged.
+I connected another supply to see whether that would get things moving again. Instead I was rewarded with an impressive puff of smoke from inside the machine. That's probably not a good sign! Time to pull everything apart and discover which unfortunate electronic component had just earned its wings.
 
-The original part is 15 uF, 25 V in a case-size D package. I've ordered a replacement. Capacitance, polarity and physical fit obviously matter. A replacement voltage rating can be equal to or higher than the original where the package and capacitor technology remain appropriate.
+The motherboard appeared to be in reasonable condition, and I couldn't immediately find anything burnt around it. That left the floppy and hard drives as possible suspects, so I kept digging. Eventually I found the culprit: a tantalum capacitor on the Seagate 107 MB hard drive had failed rather spectacularly.
 
-In the meantime I installed a 517 MB hard drive and got MS-DOS 6.22 and Windows for Workgroups 3.11 running again. The video above includes some Windows MIDI playback using the Mega PC's AdLib-compatible FM hardware.
+The original capacitor is a 15 uF, 25 V part in a case-size D package. I've ordered a replacement and may try repairing the drive, although I'll want to inspect the surrounding circuitry as well. The capacitor is clearly where the smoke came from, but I still don't know whether it failed on its own or whether something else contributed to the problem. At least the floppy drives appear to have survived.
 
-I also managed to get the network card talking far enough to ping [RetroJunkie.net](https://retrojunkie.net/) over Ethernet.
+In the meantime I've installed a 517 MB hard drive and got the machine running again. That's a ridiculous amount of space for some of the things I want to do on this Mega PC. DOS 6.22, Windows for Workgroups 3.11, the Entertainment Pack and probably a fair few games should keep it occupied. Monkey Island, anyone?
 
-That can become another project for another day. ;)
+The video also includes a demonstration of the Mega PC's AdLib-compatible FM synthesiser playing MIDI under Windows. I had to do a little more fiddling to get the audio working properly, but once the MIDI playback started, it was rather nice hearing those old tunes coming out of the machine again.
+
+I even got the network card talking well enough to ping [RetroJunkie.net](https://retrojunkie.net/) over ethernet. That's something I can investigate properly another day. For now, the Mega PC is running, the sound works and there's no more smoke coming out of the hard drive.
+
+All's well that ends well, I suppose. ;)
 
 ### Related posts
 

@@ -12,7 +12,7 @@ This is the preliminary setup for preserving the SCSI hard drive from the Sega D
 
 Fortunately, I'd picked up a Pentium 4 during a rubbish collection not long before this. It was looking for a purpose, and I needed a computer that could talk to an old SCSI hard drive. Perfect! Sometimes bringing home another unwanted PC actually pays off.
 
-The plan was to fit an Adaptec 2940U2 SCSI controller and use the machine to make a copy of the Dreamcast development kit's drive. I also had a large 2 TB SATA drive available for storing the image, which was rather more space than the old SCSI disk was ever likely to need.
+The plan was to fit an Adaptec 2940U2 SCSI controller and use the machine to make a copy of the Dreamcast development kit's drive. I also had a large 2 TB SATA drive available for storing the image, which was rather more space than the old SCSI disk was ever likely to need. I'd need to remove the SCSI disk from the development box and reuse the appropriate cable, since I no longer had a spare one lying around. Perhaps throwing away all those old cables wasn't such a wonderful idea after all.
 
 First, the Pentium 4 needed some attention. The thermal paste under its heatsink had dried out so badly that it was practically falling apart. I cleaned everything up, applied fresh paste and attempted to reinstall the original Intel cooler. Those plastic retaining clips really are dreadful.
 
@@ -20,7 +20,9 @@ Naturally, the computer wasn't particularly cooperative. It started producing an
 
 I also installed a CompactFlash-to-IDE adaptor with the intention of running Linux from a card. That would let me use the SATA drive as the destination for the Dreamcast data while avoiding another mechanical system disk. Debian 8 Jessie seemed like a suitable choice for the job.
 
-With the machine finally starting up, I could see the SCSI controller appearing during startup and the SATA disk being detected by the BIOS. The CPU temperature was also considerably better than before, although there were still a few questionable things happening with the old cooling system.
+With the machine finally starting up, I could see the SCSI controller appearing during startup and the SATA disk being detected by the BIOS. Interestingly, the old motherboard appeared to recognise only about 1 TB of the 2 TB drive. Still, that was plenty of room for what I intended to store on it, assuming the operating system could make use of the drive properly.
+
+The CPU temperature was also looking considerably healthier. I'd seen it running at around 94°C before working on the cooler, whereas the BIOS was now reporting approximately 50°C. Fresh thermal paste and a heatsink that was at least attached reasonably well had made quite a difference, even if I wasn't entirely convinced by those Intel retaining clips.
 
 Getting Debian installed meant dealing with another collection of boot settings, optical-drive noises and hardware that didn't particularly want to cooperate. I had to remind myself how much fun these old PCs can be when you're trying to make them do something useful.
 

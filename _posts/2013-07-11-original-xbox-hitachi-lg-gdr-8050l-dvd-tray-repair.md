@@ -8,7 +8,7 @@ categories: [hacks, microsoft, repairs]
 
 {% include youtube.html id="dpZEZIkFfWU" %}
 
-Here we have another original Xbox with a misbehaving DVD drive. This particular console is serial `206315452705`, a revision 1.6B machine, and the disc tray doesn't want to eject properly. Give the console a bump and sometimes it'll open, but that's hardly the most reliable method of getting a disc out!
+Here we have another original Xbox with a misbehaving DVD drive. This particular console is serial 206315452705, a revision 1.6B machine, and the disc tray doesn't want to eject properly. Give the console a bump and sometimes it'll open, but that's hardly the most reliable method of getting a disc out!
 
 I've already been experimenting with another Xbox DVD drive that had a similar problem, so I thought I'd try the same trick here. After pulling the drive out, I discovered that this one is a Hitachi-LG GDR-8050L rather than the Samsung drive I'd worked on previously.
 

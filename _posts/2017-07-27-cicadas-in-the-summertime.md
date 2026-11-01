@@ -12,7 +12,7 @@ Oh, hello there! It seems I shelved this entire website and YouTube while studyi
 
 The video above is something a little different from my usual collection of electronic failures. Cicadas! Big, noisy, magnificent little creatures. I've always had a soft spot for them, probably because they remind me of the summers I spent growing up around Sydney.
 
-In the footage, I'd been out early in the morning and found several cicadas sitting on the footpath along the main street. Quite a peculiar place for them to be, especially given how vulnerable they were to people walking past. One was already dead, unfortunately, but the others were very much alive. I gathered them up so I could release them somewhere safer.
+In the footage, I'd been out at seven in the morning looking for spice and Vegemite when I found several cicadas sitting on the footpath along the main street. Quite an interesting place for them to be, especially given how vulnerable they were to people walking past. One was already dead, unfortunately, but the others were very much alive. I gathered them up so I could release them somewhere safer.
 
 At first I thought they might be Black Princes, but after looking more closely I suspected they were Red Eyes. You can probably guess what made me think that. Those lovely red eyes! I remember the big green Grocers from my childhood as well, and I even used to give the ones I found names like Croaky the First, Second and Third. Very imaginative.
 
@@ -27,5 +27,3 @@ Anyway, while waiting for a lab at uni, I tried splicing together the above vide
 To put things into perspective, my home internet connection could manage a massive 80 kilobytes a second. Comparing those figures gives roughly 700 times the rate. I couldn't believe that a 2 GB upload could finish in under a minute instead of taking hours. Suddenly the footage backlog felt a lot less impossible!
 
 So the future is looking bright, maybe I will end up getting the [250-odd gigabytes of footage](/youtube-video-blitz/) uploaded yet! Stay tuned! :-)
-
-**Update:** Looks like this was the only post for 2017! Happy 2017 everyone! :)

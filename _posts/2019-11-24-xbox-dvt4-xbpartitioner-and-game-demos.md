@@ -12,9 +12,7 @@ And this video concludes the six-part Xbox DVT4 series. What a ride it has been!
 
 With the 120 GB SSD installed and UnleashX running, I thought it was about time to make use of some of that extra storage. Xbox Partitioner 1.3 was the next thing to investigate, although it wasn't entirely happy about running with the development kit's firmware.
 
-After a little experimenting, I managed to create and format an F partition. Back in UnleashX, there it was! Excellent. Unfortunately, getting the official XDK Launcher to see everything on that partition was another matter entirely.
-
-The partitioning software had a few unusual button combinations, which took me a little while to work out. Once I'd finally committed the changes and formatted the partition, UnleashX was reporting the F drive. The additional space was now available, which was a lovely result after all the work installing the SSD.
+After a little experimenting with the software's unusual button combinations, I managed to commit the changes and format an F partition. Back in UnleashX, there it was! Excellent. The additional space was now available, which was a lovely result after all the work installing the SSD. Unfortunately, getting the official XDK Launcher to see everything on that partition was another matter entirely.
 
 There followed a rather entertaining session of copying files, restarting the Xbox and trying to work out exactly where the games were supposed to go. Xbox Neighborhood wasn't making things particularly easy either. FTP proved much more reliable for transferring the files.
 
@@ -28,13 +26,11 @@ A couple of games were running nicely, and I had a look at some Japanese and Nor
 
 I'd also made an image of the original hard drive under Ubuntu. My old notes aren't clear about which imaging tool I used. I mentioned [fatxfs](https://github.com/mborgerson/fatx), but that utility lets us mount and explore the FATX filesystem on a drive or an existing raw image.
 
-Interestingly, the recovery software (`xdk 5849 (Xbox SDK Dec 2003).tar`) left the drive ATA-locked, making access via fatxfs somewhat less convenient. Once I'd unlocked it with Chimp 261812, it imaged without any issues.
+Interestingly, the recovery software (xdk 5849 (Xbox SDK Dec 2003).tar) left the drive ATA-locked, making access via fatxfs somewhat less convenient. Once I'd unlocked it with Chimp 261812, it imaged without any issues.
 
-GNU ddrescue can create a raw image or rescue readable sectors, and Ubuntu packages it as `gddrescue`, although the command itself is `ddrescue`. I'll probably do another video showing the process later on.
+GNU ddrescue can create a raw image or rescue readable sectors, and Ubuntu packages it as gddrescue, although the command itself is `ddrescue`. I'll probably do another video showing the process later on.
 
-So there we have it. The DVT4 is running with its replacement SSD, development software and a selection of games. Not bad for an old Xbox development kit!
-
-If there's one thing I've learnt from this exercise, it's that FTP is considerably more dependable than some of the other file-transfer arrangements I've been trying.
+So there we have it. The DVT4 is running with its replacement SSD, development software and a selection of games. Not bad for an old Xbox development kit! If there's one thing I've learnt from this exercise, it's that FTP is considerably more dependable than some of the other file-transfer arrangements I've been trying.
 
 **Related Posts**
 

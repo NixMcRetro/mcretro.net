@@ -22,9 +22,9 @@ The floppy drive was also rather temperamental, although it worked well enough f
 
 The second video shows the Sharp mostly back together, with a look at the outside and a demonstration of it running. The first thing that catches my attention is the enormous backlit screen. It has separate brightness and contrast controls, and the unusual dimensions make ordinary software look rather stretched.
 
-There's also a low-battery warning during startup, which isn't particularly surprising for a machine of this age. I was experimenting with an external power adapter, but it didn't appear to provide the current the computer needed. Anyone restoring one of these should check the original electrical specifications rather than copying my improvised test arrangement.
+There's also a low-battery warning during startup, which isn't particularly surprising for a machine of this age. I understood the computer to need a 6 V supply rated at around 3 A, but the external adapter I was experimenting with didn't seem to be providing enough current. Anyone restoring one of these should check the original electrical specifications, including polarity, rather than copying my improvised test arrangement.
 
-The hard-drive problem shows up as a `1701-C` error, after which the machine attempts to continue with its floppy drive. There's even a dedicated setup key above Escape, and the configuration screen offers a slower operating mode for compatibility with older software.
+The hard-drive problem shows up as a 1701-C error, after which the machine attempts to continue with its floppy drive. There's even a dedicated setup key above Escape, and the configuration screen offers a slower operating mode for compatibility with older software.
 
 Around the case are a collection of ports, including a large connector hidden behind a metal plate. I haven't worked out exactly what that's for, but it certainly adds to the interesting collection of unusual features on this machine.
 

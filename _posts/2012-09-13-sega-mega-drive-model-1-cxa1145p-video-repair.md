@@ -8,21 +8,25 @@ categories: [repairs, sega]
 
 {% include youtube.html id="bA2IFh3eIJM" %}
 
-Success! Replacing the Sony CXA1145P video encoder fixed the yellow and green flickering completely. This was the Mega Drive that behaved badly from a cold start and then settled down after warming up. As you can see in the original footage, Knuckles was having something of a disco party before I started pulling the machine apart.
+Success! Replacing the Sony CXA1145P video encoder fixed the yellow and green flickering completely. This was the Mega Drive that behaved badly from a cold start and gradually settled down after warming up. As you can see in the original footage, Knuckles was having something of a disco party before I started pulling the machine apart.
 
-I'd ordered a couple of replacement CXA1145P chips to find out whether the encoder was responsible for the problem. Sony designed this chip to convert the Mega Drive's analogue RGB signals into composite video, so it seemed like a reasonable suspect. Of course, ordering a replacement and actually getting the old chip off the motherboard are two very different things!
+I'd ordered a couple of replacement CXA1145P chips, hoping the video encoder might be responsible for the problem. It's the Sony chip that handles the Mega Drive's RGB-to-composite video encoding, so it seemed like a reasonable place to start. Of course, having a replacement chip and actually getting the old one off the motherboard are two very different things!
 
-Unfortunately, I was working away from home and didn't have all my usual equipment available. My soldering iron had a rather questionable neck, I was short on desoldering braid and the Hakko 808 vacuum desoldering tool would have been particularly useful. Getting that 24-pin DIP chip out of the board turned into quite an adventure.
+Unfortunately, I was working away from home and didn't have my usual collection of tools with me. The soldering iron I was using had a cracked neck and looked as though the end might fall off at any moment. I was also short on desoldering braid, and I could really have used my Hakko 808 vacuum desoldering tool. Naturally, I carried on anyway.
 
-The old chip didn't survive the removal particularly gracefully. Some of its legs broke off and remained stuck inside the PCB holes, which made fitting the replacement much more difficult. I eventually cleared enough of the connections to get the new chip installed, although I also managed to lift a trace around the third pin. Marvellous!
+Removing the old 24-pin DIP chip was an absolute monster. I ended up working a flat-blade tool underneath it, and several of the legs broke off and stayed behind in the motherboard. That made clearing the holes and installing the replacement considerably more entertaining than I'd hoped.
 
-Fortunately, the connection continued through to the other side of the board, so I was able to work around the damaged area and finish soldering the replacement. The new chip looked slightly different from the original, which made me wonder about its origins, but its appearance alone wasn't going to tell me whether it worked. Only one way to find out!
+Eventually I managed to get the new chip into position, although some of the stubborn solder made the job difficult. The replacement looked a little different from the original Sony chip, with a different-looking finish and notch. I wondered whether it might be a counterfeit, but there was no way to tell from appearance alone. Better see whether it worked!
 
-Back together went the Mega Drive, with Sonic & Knuckles ready for the test. Power on, and would you believe it? No more flickering reds, no more strange colour changes and Knuckles was behaving himself again. The picture looked lovely and stable, even after all the trouble I'd had getting that chip onto the board.
+And just to make things even more exciting, I managed to lift the trace around the third pin. Marvellous! Fortunately, the connection continued through to the other side of the board, so I added some extra solder and worked around the damaged area. It wasn't the prettiest job, but at least the new chip was fitted.
 
-Since the flickering disappeared after replacing the CXA1145P, the original encoder is the strongest culprit in this particular repair. I can't say exactly what failed inside the old chip, and the same symptoms on another Mega Drive could have a different cause. Still, at around five dollars for the replacement, it was a rather satisfying gamble.
+With everything back together, it was time to give *Sonic & Knuckles* another go. Power on, fingers crossed, and would you believe it? No more flickering reds, no strange colour changes and Knuckles was finally behaving himself again. The picture looked absolutely lovely!
 
-I broke the repaired Mega Drive in with some Metallic Uniframe Super Hybrid Armor. I'd also noticed some solder joints underneath that suggested somebody might have modified this machine before me. Nothing too surprising there, given the age of these things and the adventures they've probably had.
+The replacement chip had cost around five dollars on eBay, which made it a rather satisfying experiment. I certainly spent more than five dollars' worth of time trying to fit the thing, but after seeing the flickering disappear, I wasn't going to complain too much.
+
+I can't tell you what went wrong inside the old CXA1145P, but replacing it cured the problem on this Mega Drive. It was a good guess, especially given how little equipment I had available at the time.
+
+I broke the repaired machine in with some Metallic Uniframe Super Hybrid Armor. I'd also noticed a few solder joints underneath that suggested somebody might have modified this particular Mega Drive before me. Nothing too surprising there, given the age of these machines.
 
 ![](/assets/images/2012/img_0261.jpg)
 
@@ -34,7 +38,7 @@ I broke the repaired Mega Drive in with some Metallic Uniframe Super Hybrid Armo
 
 ![](/assets/images/2012/img_0257.jpg)
 
-As you can see, complete success, even with the fairly limited tools I had on hand. I could really have used my Hakko 808 vacuum desoldering tool for removing that 24-pin DIP cleanly. It would have made life considerably easier, but at least this Mega Drive is back to producing a beautiful picture. If only my Sega Saturn repairs went this well!
+As you can see, complete success, even with the rather limited tools I had on hand. My Hakko 808 would have made getting that old chip out a great deal easier, but at least I've managed to get this Mega Drive producing a beautiful picture again. If only my Sega Saturn repairs went this well!
 
 **Related Posts**
 

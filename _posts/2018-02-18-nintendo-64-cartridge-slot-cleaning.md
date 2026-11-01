@@ -10,9 +10,13 @@ last_modified_at: 2026-10-18
 
 Cartridge-slot cleaning is one of my favourite adventures to journey on. This was the method I was using at the time, but I would not present paper towel as the ideal material these days because it can leave fibres behind in the connector.
 
-This particular Nintendo 64 is a Japanese model I picked up fairly cheaply. Looking down into the cartridge slot revealed what appeared to be corrosion or contamination around some of the contacts. It certainly looked as though the machine might have suffered some liquid damage at some point, so I thought I'd give the slot a clean before pulling the entire console apart.
+This particular Nintendo 64 is a Japanese model I picked up on eBay for about $20.50, if I remember correctly. I felt a little sorry for the other bidder, who'd placed a bid shortly before the auction ended. I came along with a higher maximum bid and managed to win by just fifty cents. That's unfortunate for them, but now I get to tinker with it!
+
+Looking down into the cartridge slot revealed what appeared to be corrosion or contamination around some of the contacts. It certainly looked as though the machine might have suffered some liquid damage at some point, so I thought I'd give the slot a clean before pulling the entire console apart.
 
 I used a thin plastic card wrapped in paper towel, with some methylated spirits, to work along the contacts. It was a convenient arrangement with what I had on hand, although a lint-free material and appropriate electronics cleaner would be better. There's no point cleaning a cartridge connector only to leave bits of paper stuck inside it!
+
+One interesting thing about the Japanese Nintendo 64 is how closely related it is to the North American machine. Remove the physical cartridge-slot restriction and you can fit cartridges from either region, although the software's region compatibility is a separate matter. PAL cartridges are another story entirely, so this wasn't going to turn the console into a universal Nintendo 64.
 
 With the slot cleaned, I set everything up for a test. The Nintendo 64 also needs its Jumper Pak or Expansion Pak installed, so I demonstrated what happens when the Jumper Pak is missing. You get absolutely nothing useful on the screen. Reinstalling it made rather a dramatic difference!
 

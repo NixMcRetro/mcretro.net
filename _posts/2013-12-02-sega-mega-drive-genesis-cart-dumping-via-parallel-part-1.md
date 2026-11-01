@@ -12,9 +12,7 @@ Dumping Mega Drive / Genesis cartridges through controller port 2, with a Mega-C
 
 I've dragged out my old Athlon 500 PC for this experiment, mainly because it has something rather important on the back. A parallel port! The idea is to connect that to controller port 2 on the Mega Drive and use the transfer software to read a cartridge directly into the computer.
 
-Today's candidate is a PAL copy of Fatal Fury 2. Before we can get anywhere near dumping it, however, there's a cable to make. Out comes the multimeter so I can work out which coloured wire connects to which pin. Unfortunately, I wasn't having much luck with the wiring, and one of the wires managed to break while I was stripping it. Wonderful!
-
-I started by mapping the wires using the continuity function on my multimeter. That worked reasonably well until I discovered the probes were a little too large for the connections I was trying to test. I also managed to damage one of the wires despite having perfectly good wire strippers nearby. Sometimes I do wonder why I make things so difficult for myself.
+Today's candidate is a PAL copy of Fatal Fury 2. Before we can get anywhere near dumping it, however, there's a cable to make. I started mapping the coloured wires with the continuity function on my multimeter, which worked reasonably well until I discovered that the probes were a little too large for the connections. I also managed to break one of the wires while stripping it, despite having perfectly good wire strippers nearby. Wonderful!
 
 The Sega/Mega-CD runs the transfer software, while the PC receives the data over its parallel connection. There's also a little trick involving cartridge pin B32, which needs to be covered so the machine boots the Mega-CD software rather than the cartridge itself.
 

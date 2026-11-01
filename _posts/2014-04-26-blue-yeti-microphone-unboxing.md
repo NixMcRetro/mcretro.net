@@ -14,15 +14,19 @@ The Spark certainly sounded promising, but the construction of my particular uni
 
 First impressions? The packaging is rather nice. There are pictures of Yetis everywhere, along with plenty of information about the microphone's different recording patterns. It's all very professional-looking, although I suppose we'll have to get it out of the box before declaring victory!
 
-The microphone arrived this morning, and I've been looking forward to opening it. Naturally, trying to remove a rather large microphone from its packaging while holding a camera in one hand is proving to be a wonderful experience.
+The microphone arrived this morning, and I've been looking forward to opening it. Naturally, trying to remove a rather large microphone from its packaging while holding a camera in one hand is proving to be a wonderful experience. Nothing quite like an unboxing video where you can barely get the thing out of the box!
 
 Eventually, out it comes. Good grief, it's enormous! The Yeti is much larger and heavier than I expected, with a rather substantial metal stand. That was one of the things that attracted me to it, especially compared with some of the lighter plastic microphone stands I'd been looking at.
 
+There's plenty of polystyrene packaging to get through as well, which reminded me of those old strawberry boxes I used to encounter as a kid. I seem to remember riding a tricycle into them, of all things. Funny what an unboxing video can bring back!
+
 Inside the box we've got the microphone, a USB cable and the usual documentation. There's a headphone connection underneath, along with the USB socket, while the back has a gain control and a switch for choosing between the recording patterns.
 
-The different pickup modes were a big selling point for me. There's more than one microphone capsule inside, allowing it to operate in several different configurations depending on what you're trying to record. I'm particularly interested in seeing how those modes behave.
+The different pickup modes were a big selling point for me. There's more than one microphone capsule inside, allowing it to operate in several different configurations depending on what you're trying to record. I'm particularly interested in seeing how those modes behave, especially after looking at some of the reviews of this microphone.
 
-I've also got a pop filter ready to go, which rather conveniently arrived on the same day. Everything appears to be coming together!
+I'd also considered the Blue Nessie, but its plastic stand didn't particularly appeal to me. The Yeti feels considerably more substantial, and that weight makes the whole thing feel a bit more serious. The knobs are still plastic, but at least the stand is a lovely solid piece of metal.
+
+I've also got a pop filter ready to go, which rather conveniently arrived on the same day. Between that and the microphone finally being out of its packaging, everything appears to be coming together!
 
 The Yeti certainly feels better constructed than the Spark Digital I was disappointed with, although I haven't actually tested the sound quality yet. That'll have to wait until I've got everything connected and can try recording with the different settings.
 

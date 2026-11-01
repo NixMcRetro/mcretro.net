@@ -10,7 +10,7 @@ categories: [guides, repairs, youtube]
 
 As I was pulling apart an eMachines E732 for a friend, I realised I should make a video for anybody else unfortunate enough to be doing the same thing. These machines are reasonably straightforward to disassemble, with accessible RAM, hard drive and wireless card.
 
-The main jobs were replacing the storage drive and swapping the wireless card. I'd previously fitted an SSD, but this time the original 500 GB Seagate hard drive was going back in. The wireless adapter also needed some attention because the previous configuration hadn't been playing nicely with Debian.
+The main jobs were replacing the storage drive and swapping the wireless card. I'd previously fitted an SSD, but this time the original 500 GB Seagate hard drive was going back in. The original wireless card used a Broadcom chipset, which hadn't been getting along with Debian, so I'd previously swapped it for an Intel card. Unfortunately, the Intel card wasn't cooperating with the Windows setup I wanted to use later, so now I was putting the Broadcom card back. Around and around we go!
 
 Getting into the machine means removing the battery and rather a lot of screws. There are four smaller ones inside the battery compartment and another collection around the underside of the case. I started with a Phillips size 0 screwdriver, then switched to a size 1 for the larger screws. Keep track of them all!
 
@@ -18,7 +18,7 @@ With the lower cover removed, the RAM, hard drive and wireless card are easy eno
 
 The right-hand USB ports also rely on a cable that needs reconnecting before reassembly. Forget that and you'll find yourself with a rather familiar one-port situation. I've owned MacBooks, so perhaps I shouldn't complain!
 
-The wireless card is held in by a small screw and has its antenna connections clipped onto the top. Those tiny connectors can be surprisingly easy to damage, so I took my time removing and refitting them. Once the replacement was installed, it was time to put all the plastic and screws back where they belonged.
+The wireless card is held in by a small screw and has its antenna connections clipped onto the top. Those tiny connectors can be surprisingly easy to damage, so I took my time removing the Intel card and refitting the original Broadcom one. Once it was installed, it was time to put all the plastic and screws back where they belonged.
 
 I originally said the CPU might be replaceable "if it is socketed" because I hadn't checked. :P The service guide confirms that documented E732-family models use an rPGA processor package and includes a CPU replacement procedure. That doesn't mean every possible CPU upgrade will work, but at least the processor isn't permanently soldered down.
 

@@ -22,7 +22,7 @@ The board carries a date stamp from January 1992, so it's had plenty of time to 
 
 A bit of cleaning seems like the obvious first step. Unfortunately, that doesn't get us anywhere. Still a black screen. Oh well, on to the next idea!
 
-Rather than relying on the RF output, I thought it might be useful to see whether the video encoder is producing anything directly. With the CXA1145P datasheet handy, I can identify the composite-video output and a suitable ground connection for a temporary test lead.
+Rather than relying on the RF output, I thought it might be useful to see whether the video encoder is producing anything directly. With the CXA1145P datasheet handy, I can identify composite-video output on pin 20 and a nearby ground connection on pin 24. That should give me somewhere to attach a temporary test lead.
 
 A little soldering later and we've got a makeshift composite connection. I wouldn't call this a finished AV modification, but it should at least help establish whether the RF circuitry is responsible for the problem.
 
@@ -30,7 +30,7 @@ Unfortunately the result is still much the same. No useful picture. That rather 
 
 I've also got a spare CXA1145P from an earlier Mega Drive repair, so that's another possibility. I even try temporarily piggybacking the spare chip over the existing one to see whether anything changes. No luck there either.
 
-At this stage we still don't know exactly what's wrong with the Master System. There's enough happening electrically to justify further testing, but I haven't managed to get Alex Kidd onto the screen.
+At this stage we still don't know exactly what's wrong with the Master System. Cleaning the cartridge slot, trying composite output directly and piggybacking another encoder haven't got Alex Kidd onto the screen. There's more investigating to do before I can work out what's actually wrong with this one.
 
 I suppose that's what happens when you rescue a broken console from the gutter. Sometimes you get a bargain, and sometimes you get an entirely new troubleshooting adventure!
 

@@ -8,11 +8,7 @@ categories: [hacks, nintendo, repairs]
 
 {% include youtube.html id="-usr2BSPACY" %}
 
-Well, we made it look considerably less yellow with the power of RED AND BLACK SPRAY PAINT!
-
-This is the completed shell project from [SNES Spray Painting - When Retrobright isn't an Option (Part 1)](/snes-spray-painting-when-retrobright-isnt-an-option-part-1/).
-
-Two cases, red and black, with the parts mixed together into something considerably sassier than brittle yellow plastic.
+Well, we made it look considerably less yellow with the power of RED AND BLACK SPRAY PAINT! This is the completed shell project from [SNES Spray Painting - When Retrobright isn't an Option (Part 1)](/snes-spray-painting-when-retrobright-isnt-an-option-part-1/). Two cases, red and black, with the parts mixed together into something considerably sassier than brittle yellow plastic.
 
 It's getting a bit late in the day, but I thought I'd give you another look at how the painted Super Nintendo cases are turning out. I'm rather pleased with the colour combination. The red and black pieces give the machine something of a Super Famicom Disk System look, which is certainly an improvement on the yellowed plastic we started with!
 

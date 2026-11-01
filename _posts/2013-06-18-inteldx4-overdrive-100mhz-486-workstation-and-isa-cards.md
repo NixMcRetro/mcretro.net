@@ -14,7 +14,7 @@ This IntelDX4 OverDrive is running at 100 MHz, with the ISA development cards an
 
 The problem with putting together a computer like this is deciding what deserves the limited expansion space. Do I compromise on sound to get better graphics, or sacrifice a little video performance to fit the sound card I really want? Decisions, decisions!
 
-This tower is home to my Mega-CD development hardware, and it's becoming quite a collection of enormous ISA cards. The CD emulation board is particularly impressive. It's taller than most of the other cards, longer than the Gravis UltraSound and has already refused to fit properly in a couple of cases I've tried.
+This tower is home to my Mega-CD development hardware, and it's becoming quite a collection of enormous ISA cards. The front of the case has two 1.44 MB floppy drives and a pair of CD-ROM drives, but it's the hardware inside that's really fighting for space. The CD emulation board is particularly impressive. It's taller than most of the other cards, longer than the Gravis UltraSound and has already refused to fit properly in a couple of cases I've tried.
 
 The Gravis UltraSound is staying, though. I had originally considered an ordinary 8-bit Sound Blaster because it would have been easier to accommodate, but I really do like the UltraSound. If that means compromising a little on the video card, so be it!
 

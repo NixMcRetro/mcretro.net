@@ -20,9 +20,11 @@ After a fair bit of fiddling, all the surface-mounted electrolytic capacitors we
 
 Next came the larger radial capacitor and rechargeable backup battery. Out came the Hakko 808 desoldering tool, which made short work of the capacitor connections. The battery was more stubborn, though, and I ended up spending quite a while trying to clear its mounting holes without damaging anything.
 
-I also had a closer look at the battery specification. The one removed was marked \`ML2016\`, while some of the replacement information I'd found suggested a different rechargeable lithium cell. That's something I'll need to verify properly before fitting a replacement. The physical size alone doesn't tell us whether the chemistry and charging requirements are suitable.
+I also had a closer look at the battery specification. The one I removed was marked ML2016, but some of the replacement information I'd found pointed towards a different rechargeable lithium cell. I'm not convinced they're necessarily interchangeable, so I'll need to work out exactly what this circuit expects before fitting anything. Finding out by setting fire to a LaserActive would be a rather spectacular mistake!
 
-For the new electrolytic capacitors, I'm planning to use Panasonic surface-mounted parts and a Rubycon radial capacitor. Where suitable, I've selected replacements with higher voltage ratings while keeping the capacitance the same. They're much smaller these days, so that's rather convenient, although the other electrical specifications still need to match the circuit.
+For the new electrolytic capacitors, I'm planning to use Panasonic surface-mounted parts and a Rubycon radial capacitor. I've been able to choose higher voltage ratings in several places without changing the capacitance. For example, some of the 47 uF capacitors are going from 16 V to 35 V, the 100 uF parts from 6 V to 16 V, and the 10 uF parts from 16 V to 35 V.
+
+The newer capacitors are also smaller, which makes life rather convenient when working with these crowded boards. Of course, I'll still need to make sure the replacements are suitable for the circuit rather than simply choosing them because they fit. There's quite enough work here already without creating new problems!
 
 The old capacitors are now off the mainboard, and I've started cleaning away the grime and residue. There's still solder-pad preparation and replacement work to do, so I can't call this a completed recap just yet.
 

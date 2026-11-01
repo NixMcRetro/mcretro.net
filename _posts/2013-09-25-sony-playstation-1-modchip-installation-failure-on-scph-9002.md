@@ -20,11 +20,7 @@ The component was absolutely tiny. I put it beside an Australian one-dollar coin
 
 I did manage to get some of the other wires attached, but the routing wasn't particularly tidy. This was supposed to become a proper installation guide, and instead I'd created a rather convincing demonstration of how much trouble you can get yourself into with a soldering iron.
 
-There's also a second recording from this rather unsuccessful adventure, including my attempt at stop-motion editing in Final Cut Pro X.
-
-{% include youtube.html id="V6QhAZckY8w" %}
-
-Things can only get better! ;)
+There's also a second recording from this rather unsuccessful adventure, including my attempt at stop-motion editing in Final Cut Pro X. Things can only get better!
 
 ![Small surface-mount component beside an Australian one-dollar coin](/assets/images/2013/img_0419.jpg)
 

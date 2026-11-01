@@ -8,26 +8,28 @@ categories: [ibm-pc, youtube]
 
 {% include youtube.html id="hymoDdAKqxs" %}
 
-Sorry for the lack of updates lately! I've been away from my usual base of operations for about two weeks, although that hasn't stopped me collecting more bits and pieces to play with. Someone has very kindly donated a Unichip 486 WB 4407 revision 1.1 motherboard, so I thought I'd give it a quick look while I have the chance.
+Here's a Unichip 486 WB 4407 Rev 1.1 motherboard that was donated to me, complete with a 66 MHz 486DX2 processor and three VLB slots. It looks like another interesting addition to the collection, although I haven't actually powered it up yet. Whether it works is still anybody's guess!
 
-The board came with a 66 MHz 486DX2 processor and three VESA Local Bus slots. It reminds me of the 486 in my Osborne, although this CPU has a fan and heatsink assembly rather than just the heatsink fitted to my other machine. The cooler has an interesting frame that clips around the processor, so I might try using something similar with the DX4 once the heatsinks I've ordered turn up.
+The DX2 has a heatsink and fan assembly that clips around the processor, rather than the simpler passive heatsink fitted to the DX2 in my Osborne. I managed to pull the assembly off for a closer look, and it is quite an interesting arrangement. I might even be able to use it with my DX4, since the heatsinks I've ordered for that haven't arrived yet.
 
-As usual for an old 486 motherboard, the NiCd backup battery was in a dreadful state. I've already removed it, but I haven't powered the board on yet, so we'll have to see whether it still works. There's also a collection of memory sockets to investigate, and I was trying to work out their bank arrangement while filming.
+Being an old 486 motherboard, it also had one of those lovely NiCd batteries to contend with. The battery has already been removed, which is one less thing to worry about, but the board still needs a proper test. I also had a look at the RAM banks while showing the motherboard, although I haven't established exactly what memory is installed.
 
-The motherboard is marked Unichip 486 WB 4407, revision 1.1. The BIOS identification strings are worth preserving in case anyone else is trying to identify one of these boards:
+Apart from this motherboard, not too much has been happening over the last week or two. I've been working hard to keep on top of things at work, and I haven't had much time back at my usual base of operations. That hasn't stopped me ordering more gadgets to play with, of course. I've simply had very little time to use them!
+
+The BIOS identification strings are below:
 
 ~~~
 11/11/92 (C) 1992 American Megatrends Inc., All Rights Reserved
-40-0200-001107-00101111-111192-U4800VLX000-1-0000-00-00-0000-00-00-31L000-1-0000-00-00-0000-00-00-00-4
+40-0200-001107-00101111-111192-U4800VLX000-1-0000-00-00-0000-00-00-31L000-1-0000-00-00-00-4
 AMIBIOS (C)1992 American Megatrends Inc.
 4407 UNICHIP BIOS VER 1.0
 ~~~
 
-A later discussion on Elektroda reported the matching U4800VLX BIOS prefix, a DataExpert vendor identification and the same Unichip 4407 BIOS version. It's useful supporting information for identifying this particular motherboard, rather than proof of anything I hadn't yet tested in the video.
+A later Elektroda discussion reports the same U4800VLX BIOS prefix, a DataExpert vendor identification and 4407 UNICHIP BIOS VER 1.0. That is consistent with the board identification shown here.
 
-Work has been keeping me rather busy, but I've been ordering plenty of new gadgets in the meantime. I've also been quietly updating some of the guide and collection pages, and I'm still trying to settle on a sensible way to organise computers and consoles when the console collection contains so many duplicates.
+I've also been silently updating some of the guide pages and collection pages. I'm still trying to work out a suitable format for computers versus consoles, mainly because there are more consoles than computers and plenty of duplicates among them. I'll work something out eventually.
 
-With Christmas coming up, I should finally have a chance to get back to my projects and make some more videos. We might even see some Apple Lisa footage if anyone is interested. Stay tuned!
+With Christmas approaching, I should have more opportunities to get back to the equipment and make a few videos. There are plenty of little trinkets and doodads waiting for attention, and we might even have some Apple Lisa videos in the near future if anyone is interested. Stay tuned!
 
 ### Sources
 

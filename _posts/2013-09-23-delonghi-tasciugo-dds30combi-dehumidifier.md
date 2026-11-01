@@ -20,7 +20,7 @@ I've connected a drain hose so the water can make its way into the kitchen sink.
 
 Naturally, I've also got a power meter connected. When I first check it, the machine is drawing around 32 W. That's not too bad, although it isn't necessarily doing much dehumidifying at that particular moment.
 
-Switching modes makes the readings rather more interesting. There's a brief, much higher reading when I try the laundry setting, and later the machine switches into its louder operating mode. With what sounds like the refrigeration system running, the meter settles around 235 W.
+Switching modes makes the readings rather more interesting. There's a brief reading of around 1,300 W when I try the laundry setting, before the machine later switches into its louder operating mode. With what sounds like the refrigeration system running, the meter settles around 235 W.
 
 Ah. That's rather more electricity than the initial reading suggested. It's also making a fair bit of noise. Thankfully I've got it in the kitchen, because I don't particularly fancy trying to sleep with the thing running beside me.
 

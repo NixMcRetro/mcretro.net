@@ -8,7 +8,7 @@ categories: [repairs, sony, youtube]
 
 {% include youtube.html id="4ttfqPNa-Ks" %}
 
-Sadly, this repair did not have any success. The serial number of this unit was `02-27430367-2452398-CECHG02`. However, stay tuned... we have some mighty successes coming up!
+Sadly, this repair did not have any success. The serial number of this unit was 02-27430367-2452398-CECHG02. However, stay tuned... we have some mighty successes coming up!
 
 I'd been working on an Xbox 360 with the dreaded red ring of death around the same time, so I thought I'd have a go at a PlayStation 3 suffering from the yellow light of death. Apparently I wasn't content with having just one broken seventh-generation console to worry about.
 
@@ -26,9 +26,9 @@ The console still displayed the same green, yellow and blinking red light sequen
 
 After roughly an hour and a half of work, I was left with a very clean and still very broken PlayStation 3. The heat treatment hadn't achieved what I'd hoped, and I wasn't going to pretend otherwise. Oh well. We can't save them all!
 
-The yellow light itself didn't tell me which component had failed. I hadn't established whether this was a soldering problem, a faulty chip or something else, and there was no proper diagnosis to point towards a particular repair.
+I'd have liked to know exactly what had failed, but the yellow light wasn't going to tell me whether I had a faulty chip, a soldering problem or something else. I hadn't done the sort of diagnosis needed to narrow that down, so this one was staying on the broken pile.
 
-**Later note:** SYSCON error logging can provide more useful diagnostic information for a faulty PS3, but I didn't record any SYSCON codes during this attempt. Heating the board wasn't a substitute for finding out what had actually failed.
+**Later note:** SYSCON error logging can provide more useful clues about a faulty PS3. I didn't record any SYSCON codes during this attempt, and if I were tackling another one, I'd rather find out what it was complaining about before reaching for the heat gun again!
 
 **Related Posts**
 

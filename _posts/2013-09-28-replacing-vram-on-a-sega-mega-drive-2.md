@@ -16,7 +16,7 @@ Getting the old chip off was an adventure in itself. I tried using a piece of wi
 
 Once the old chip was off, I had the replacement ready to go. A little flux, a lot of patience and a reasonable amount of fiddling with the chip's position. I made sure the notch was facing towards the cartridge slot before securing it in place.
 
-The real entertainment began when I tried to solder all those tiny legs. I tacked the chip down, added some more flux and started working around the pins, clearing the inevitable excess solder with desoldering braid. There was quite a bit of it to clear, too.
+The real entertainment began when I tried to solder all those tiny legs. I tacked the chip down, including pins 20 and 40, which are the ground and supply connections mentioned in the video. Then I added some more flux and started working around the remaining pins, clearing the inevitable excess solder with desoldering braid. There was quite a bit of it to clear, too.
 
 Some pins were nicely attached while others were still looking rather suspicious. I could certainly understand why people charge so much for this sort of component-level repair. It's easy to get yourself into a spectacular mess if you aren't careful.
 

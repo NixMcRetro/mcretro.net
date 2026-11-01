@@ -22,7 +22,7 @@ One important discovery from my earlier attempts was that the PC's parallel port
 
 I'd been interested in dumping this particular cartridge because I hadn't seen much of the PAL release floating around. I also thought it might be a 32 Mbit cartridge, which would give us a 4 MB file. Thirty-two divided by eight. See, I can do mathematics when I put my mind to it... errr, except the transfer software had other plans.
 
-Running `DUMP.EXE` identified the cartridge as 24 Mbit, which meant a 3 MB dump instead. The transfer completed and produced an `OUTPUT.BIN` file, so the first job was to find out whether it actually contained something useful.
+Running `DUMP.EXE` identified the cartridge as 24 Mbit, which meant a 3 MB dump instead. The transfer completed and produced an OUTPUT.BIN file, so the first job was to find out whether it actually contained something useful.
 
 The ROM booted in Fusion, which was encouraging. Unfortunately, the emulator also reported an incorrect checksum. Not quite what I'd hoped for after all that fiddling around.
 

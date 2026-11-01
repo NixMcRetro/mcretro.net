@@ -30,10 +30,11 @@ At least the soldering was looking tidier by the end. Not perfect, mind you. I c
 
 This also reminded me why I'd become interested in alternatives such as the XT-IDE project. I'd acquired these old drives after discovering they worked natively with the TeraDrive, only to find myself wondering whether I really needed quite so many ageing mechanical hard drives after all.
 
-Still, that's all three WDL-330P drives recapped. The Model 3's main drive hasn't had a proper in-system test yet, so I'll find out whether the repair has done the job once the TeraDrive itself is ready.
+Still, that's all three WDL-330P drives recapped. I haven't had a chance to test the Model 3's main drive properly in the TeraDrive yet, so the damaged-pad repair will have to prove itself when the rest of the machine is ready.
 
 Next come the floppy drives. How difficult could they possibly be?
 
-Previous: [Sega TeraDrive Spare Drive WDL-330P #2 Recapping](/sega-teradrive-spare-drive-wdl-330p-2-recapping/)
+### Related Posts
 
-Next: [Sega TeraDrive WDL-330P Comparison](/sega-teradrive-wdl-330p-comparison/)
+- [Sega TeraDrive Spare Drive WDL-330P #2 Recapping](/sega-teradrive-spare-drive-wdl-330p-2-recapping/)
+- [Sega TeraDrive WDL-330P Comparison](/sega-teradrive-wdl-330p-comparison/)

@@ -16,13 +16,11 @@ The solution involved an old PC, a SCSI connection, a 300 GB external USB drive 
 
 The newer Knoppix discs I'd tried weren't particularly interested in booting on this machine, so I eventually settled on version 7.2.0. It fitted on a CD and, more importantly, actually worked. Always a useful feature in an operating system!
 
-With Knoppix running, `lsblk` showed the external destination drive as `sda` and the Dreamcast development drive as `sdb`. The SCSI disk was roughly 4.2 GB, with a FAT partition of around 2 GB. I wanted an image of the entire disk, not just that partition.
+With Knoppix running, `lsblk` showed the external destination drive as sda and the Dreamcast development drive as sdb. The SCSI disk was roughly 4.2 GB, with a FAT partition of around 2 GB. I wanted an image of the entire disk, not just that partition.
 
 Because the drive was reporting I/O errors, a straightforward copy with `dd` wasn't my preferred option. I wanted something capable of continuing past troublesome sectors and making another attempt at reading them.
 
-At the time I was still confusing `ddrescue` with the separate program `dd_rescue`. My original forum post names dd_rescue; the later update below records my GNU ddrescue preference. They are different programs, so the surviving notes do not establish that GNU ddrescue alone produced this dump.
-
-I'd started out expecting to use GNU ddrescue, complete with options for direct disk access, retries and a recovery log. Unfortunately, that wasn't the command available on this Knoppix installation. It had `dd_rescue` instead, which uses different options. So much for having everything worked out before turning on the camera.
+I'd started out expecting to use GNU ddrescue, complete with options for direct disk access, retries and a recovery log. Unfortunately, the command wasn't available on this Knoppix installation. It had `dd_rescue` instead, which uses different options. I'd been confusing the two programs, so naturally I had to stop and work out how to use the one I actually had!
 
 I also discovered that my original destination setup wasn't going to be suitable for a disk image larger than 4 GB. Rather than split the image into pieces, I reformatted the external destination with an ext3 filesystem.
 

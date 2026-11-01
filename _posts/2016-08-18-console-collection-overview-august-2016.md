@@ -22,7 +22,7 @@ One of my PlayStations is particularly special because it's the first one I ever
 
 The PlayStation section has a few different models to choose between, and there's also a PocketStation, which I hadn't really paid much attention to before. It's like a little handheld accessory crossed with a memory card. Rather wonderful!
 
-Then come the Dreamcasts. I'm trying to decide between a fairly ordinary white console and another fitted with a rather nice smokey aftermarket shell. Both have their advantages, and naturally I've managed to make the decision more difficult by fitting a Broadband Adapter.
+Then come the Dreamcasts. I'm trying to decide between a fairly ordinary white console and another fitted with a rather nice smokey aftermarket shell. Both have their advantages, and naturally I've managed to make the decision more difficult by fitting a Broadband Adapter. The smokey shell needed a little persuasion with a chisel because its modem opening was too small for the adapter. So much for simply plugging everything together!
 
 The Sega shelf has the usual favourites. A Mega Drive, Mega-CD, 32X and some of the other hardware that I really don't want to part with. The Karaoke unit is particularly lovely, although I've long since stopped pretending all this equipment is going to fit neatly together.
 

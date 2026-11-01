@@ -20,9 +20,9 @@ I also wanted to make sure the back of the modchip wouldn't short against the me
 
 The ribbon connectors weren't positioned quite as conveniently as I'd hoped, either. If they'd been facing the other way, the modchip could have sat much more neatly inside the machine. Instead, I had to work around the available space and make sure the cables weren't being crushed when I closed the lid.
 
-The 5 V connection came from the Saturn's power supply connector. That also meant working around a mains-powered assembly, so I kept clear of the exposed power-supply components and concentrated on the identified low-voltage connection.
+For power, I connected the modchip's 5 V wire to the second pin from the left on the Saturn power-supply connector, as shown in the recording. The early VA0 arrangement has its power supply in the lid, so I had to work around that and keep well clear of the mains side of the assembly. The low-voltage connection was all I needed for the modchip.
 
-As with any Saturn modchip installation, the board revision matters. This early 20-pin arrangement isn't the same as the later 21-pin CD boards, and a wiring layout intended for one version shouldn't automatically be copied onto another.
+This early Saturn also uses the 20-pin CD-board arrangement, rather than the 21-pin setup found on some later machines. Fortunately, Rob had supplied both ribbon types, so I could use the appropriate connections for this particular console without trying to make the later arrangement fit.
 
 Fortunately, the completed installation worked! I tested it with *Radiant Silvergun*, which I'd patched for use on my PAL Saturn, followed by *Guardian Heroes*. Both provided a rather nice demonstration of the machine running with the modchip installed.
 

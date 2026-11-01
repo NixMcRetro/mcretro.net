@@ -12,7 +12,7 @@ A quick dump of the old BIOS from the Pioneer LaserActive PAC-S1 revealed some i
 
 I'd pulled the Japanese PAC-S1 apart to have a look at its capacitors and general condition. These units are getting to the age where the old electrolytics can become troublesome, and I wanted to see what I was dealing with before doing any more work. While I was inside, I spotted a nice, big, socketed EPROM. Well, that's not something I'm going to ignore, is it?
 
-The chip has a sticker over the erase window marked `PIONEER PD6126E`. Underneath is a Fujitsu `MBM27C1024A-12Z`, dated to week 28 of 1993. The MBM27C1024A is a 1 Mbit UV-erasable EPROM in a 40-pin package.
+The chip has a sticker over the erase window marked PIONEER PD6126E. Underneath is a Fujitsu MBM27C1024A-12Z, dated to week 28 of 1993. The MBM27C1024A is a 1 Mbit UV-erasable EPROM in a 40-pin package.
 
 The PAC-S1 provides Mega Drive and Mega-CD functionality for the Pioneer LaserActive, including the rather wonderful Mega LD games. I was curious to see what was inside its boot ROM and whether I could get a useful image out of it.
 

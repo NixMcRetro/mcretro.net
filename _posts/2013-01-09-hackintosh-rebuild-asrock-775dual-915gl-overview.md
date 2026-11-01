@@ -8,7 +8,7 @@ categories: [apple, hacks, ibm-pc]
 
 {% include youtube.html id="awMk6Oz3sI0" %}
 
-We take a trip down memory lane to my first Hackintosh motherboard, the ASRock 775Dual-915GL. Powered by a wonderfully cheap single-core Celeron, it felt remarkably fast for what it cost and compared very favourably with some of the PowerPC Macs I was using around that period. It certainly cannot be generalised to every G4 and G5 system, especially the high-end dual and quad G5 machines Apple was shipping by late 2005.
+We take a trip down memory lane to my first Hackintosh motherboard, the ASRock 775Dual-915GL. Powered by a wonderfully cheap single-core Celeron, it felt remarkably fast for what it cost and compared very favourably with some of the PowerPC Macs I was using around that period. Quite an impressive little machine for something assembled on a budget!
 
 For this rebuild I've found a new case, although calling it a magnificent piece of engineering might be stretching things a little. The steel is extraordinarily thin, but it was cheap and it'll do the job. Inside we're fitting an NEC DVD writer rescued from an external FireWire enclosure, a Panasonic floppy drive, a Samsung 500 GB SATA hard drive and a 420 W power supply.
 
@@ -16,10 +16,11 @@ The motherboard has both AGP and PCI Express slots, along with two conventional 
 
 ![](/assets/images/2013/img_0361.jpg)
 
-The original I built was made back in late 2005 / early 2006. This was about six months after Apple announced the transition to Intel hardware. The motherboard was unusually close to Apple's 2005 Developer Transition Kit platform. The ASRock uses Intel's 915GL chipset with ICH6 and GMA 900 graphics, while the Apple development machine used the closely related 915G with ICH6 and GMA 900. Similar enough to be very interesting for early OSx86 experimentation, but not literally the same chipset. Sound, ethernet, graphics - all worked out of the box on my installation.
+The original I built was made back in late 2005 / early 2006. This was about six months after Apple announced the transition to Intel hardware. The motherboard was unusually close to Apple's 2005 Developer Transition Kit platform. The ASRock uses Intel's 915GL chipset with ICH6 and GMA 900 graphics, while the Apple development machine used the closely related 915G with ICH6 and GMA 900. Similar enough to be very interesting for early OSx86 experimentation, but not literally the same chipset. Sound, ethernet, graphics, all worked out of the box on my installation.
+
+Of course, my little Celeron wasn't going to compete with every G4 and G5 Apple had ever made. The high-end dual and quad G5 systems available by late 2005 were another matter entirely. Still, for the machines I was comparing it against at the time, this Hackintosh was a rather entertaining way to get Intel performance without spending a fortune.
 
 Mac OS X 10.4 Tiger was also the Mac OS X generation that bridged the PowerPC-to-Intel transition. Apple publicly demonstrated Intel Tiger and distributed developer-only Intel builds in 2005, while Mac OS X 10.4.4 shipped publicly with the first retail Intel Macs in January 2006.
-
 
 I actually have a spare 775Dual-915GL board, but one of its capacitors has failed. That can be a repair project for another day. The board I'm using here is equipped with a Celeron running at approximately 2.66 GHz, and I eventually discovered that the installed RAM was 1.5 GB rather than the 1 GB I'd first thought.
 

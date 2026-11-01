@@ -8,25 +8,35 @@ categories: [hacks, microsoft, repairs]
 
 {% include youtube.html id="0U5ThilUmRM" %}
 
-This is my attempt to repair the RROD Xbox 360 from the earlier assessment. It did not work. I hope you (and me) can learn from my mistakes and see if you can repair yours with more success.
+This is my attempt to repair the RROD Xbox 360 from the earlier assessment. It did not work. I hope you, and me, can learn from my mistakes and see if you can repair yours with more success!
 
-I thought I'd try something different for this video, so we've got high-speed footage of the repair with a voiceover added afterwards. Unfortunately, speeding the footage up eight times doesn't make the actual job any less tedious. I spent a ridiculous amount of time trying to work out how to remove the grey plastic clips, and that was only the beginning!
+I thought I'd try something a little different for this video, so we've got high-speed footage of the repair with a voiceover recorded afterwards. Unfortunately, speeding everything up eight times doesn't make the job any less tedious. Every minute of footage represents about eight minutes of me struggling with this thing!
 
-Once the outer plastics were finally off, there was the metal chassis to deal with. Lots of screws, various shields, the DVD drive and fans all had to come out before I could get to the motherboard. Naturally, just when I thought everything was loose, I discovered another screw hiding under the front section. I do love consoles that make you work for it.
+The first challenge was getting the grey plastic clips off the case. I spent a ridiculous amount of time trying to work out how to release them, and just when I thought I was getting somewhere, another part of the housing decided to hold everything together. Eventually the plastic covers came off and I could start working my way into the metal chassis.
 
-The next obstacle was the X-clamp arrangement holding the heatsinks to the processors. I'd been looking at the various Xbox 360 repair methods floating around the internet, and decided to try a combination of heating the board and replacing the original clamps with a screw-and-washer arrangement. In hindsight, perhaps choosing several experimental methods at once wasn't my finest idea.
+There were plenty more screws to remove, along with the shielding, DVD drive and cooling fans. Naturally, just when I thought the motherboard was ready to come out, I discovered another screw hiding beneath the front section. I do love consoles that make you work for it!
 
-Removing the heatsinks wasn't particularly pleasant either. The old thermal compound was extremely stubborn, almost as though somebody had mixed concrete into it. I eventually got everything separated, although cleaning up all the remaining material proved more difficult than expected.
+Next came the X-clamps holding the heatsinks onto the processors. I'd been looking at some of the Xbox 360 repair methods floating around the internet, and decided to have a go at replacing the original clamps with screws and washers. There was also the idea of heating the board with a heat gun. In hindsight, perhaps combining several experimental repair methods wasn't my finest moment.
 
-Then came the heat gun. Watching the footage back, you can actually see the motherboard flex as the heat is applied and again as it cools. That's not an encouraging sight! I may have heated the board for too long, and it wasn't supported as well as it should have been. There's a very good reason I wouldn't recommend copying that part of this experiment.
+Getting the clamps off was another adventure. I tried working around them with a small tool and came uncomfortably close to damaging the motherboard traces. A more suitable plastic tool would have been a better choice, but by this stage I was already committed to making everything unnecessarily difficult.
 
-The replacement X-clamp hardware caused another problem. The screw heads protruded too far beneath the motherboard, so the board wouldn't sit properly inside the metal chassis. There simply wasn't enough clearance for that particular arrangement. If I were attempting something similar again, I'd want to investigate the mounting dimensions and the actual fault much more carefully first.
+The old thermal compound wasn't particularly cooperative either. It was so stubborn that I wondered whether somebody had mixed concrete into it. Eventually I got the heatsinks off, although cleaning the remaining material proved rather harder than expected.
 
-Unfortunately, none of this brought the Xbox 360 back to life. The entire attempt was a failure, and I wasn't particularly enthusiastic about spending any more time on that console. The red-light indication by itself doesn't identify which component failed, and I didn't record a secondary error code that could have narrowed things down.
+Then came the heat gun. Have a look at the footage as the heat goes onto the motherboard. You can actually see the board flexing, and then moving again as it cools! That's not exactly what I wanted to see. I may have applied heat for too long, and the board wasn't supported particularly well during the attempt.
 
-The video is useful as a record of what I tried, but heat-gun treatment and improvised clamp replacements shouldn't be mistaken for a reliable RROD repair. Damaging the board with uncontrolled heat can easily leave you in a worse position than when you started. At least I got some interesting footage of the motherboard bending!
+It was a fairly spectacular demonstration of why uncontrolled heating can make an already faulty motherboard considerably worse. I wouldn't repeat that experiment the same way, especially without a proper diagnosis of what had failed in the first place.
 
-As a rule, I always upload the failures as well as the successes. There's not much point pretending every repair works first time, and perhaps somebody can avoid a few of my mistakes after watching this one. For now, I'll stick with real retro consoles from the 16-bit era! :)
+Unfortunately, the replacement X-clamp hardware caused another problem. The screw heads stuck out too far underneath the board, so the motherboard wouldn't sit flat inside the metal chassis. There simply wasn't enough clearance for the screws I'd chosen.
+
+I also had to deal with the original heatsink mounting fittings before the new hardware could be installed. There were nylon and steel washers involved, and plenty of opportunities to discover another reason the arrangement wasn't going to fit. Wonderful!
+
+So after all that dismantling, cleaning, heating and fiddling with the clamps, the Xbox 360 still didn't work. The repair was a complete failure, and I wasn't particularly enthusiastic about spending any more time trying to rescue it.
+
+I didn't record a secondary error code to narrow down the actual fault, so I can't tell you which component caused the original red-ring problem. What I can say is that my heat-gun and screw-and-washer adventure didn't fix it, and the motherboard flexing certainly wasn't a good sign.
+
+As a rule, I upload my failures as well as my successes. There's not much point pretending every repair works first time, and perhaps somebody watching this will avoid a few of the mistakes I made. Please learn from them. I insist!
+
+At least I got some interesting high-speed footage out of the whole disaster, along with a pair of X-clamps that look rather like ninja stars. For now, I think I'll go back to repairing something from the 16-bit era! :)
 
 **Related Posts**
 

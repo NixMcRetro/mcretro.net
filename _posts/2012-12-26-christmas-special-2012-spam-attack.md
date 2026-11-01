@@ -8,16 +8,16 @@ categories: [news, youtube]
 
 {% include youtube.html id="wlZMGR30BmM" %}
 
-Something a little different for Christmas! I'm still a thousand miles away from my usual retro gaming and retro computing gear, so rather than another hardware repair, today's experiment involves a can of SPAM with real bacon. What could possibly go wrong?
+Something a little different for a Christmas video! I'm still a thousand miles away from my retro gaming and retro computing gear, so naturally I've been reduced to a diet of SPAM and Coca-Cola. Not just any SPAM, either. This one has real bacon in it, which surely makes everything better.
 
-I was expecting it to be absolutely dreadful, but opening the can was a pleasant surprise. It actually smelled quite nice, rather like canned tuna. The texture was another matter entirely, and adding a little salt wasn't going to perform any Christmas miracles. Time to grab a fork and find out what this stuff is like.
+I decided to give it a try on Christmas Day. It actually smelled rather nice when I opened the can, although the smell reminded me a little of canned tuna. Things were looking surprisingly promising, so I found a fork, added a little salt and took my first mouthful.
 
-The first mouthful wasn't entirely awful, so naturally I went back for another one. Unfortunately, the more I ate, the less convinced I became. It had a strange, loaf-like consistency, and I was never particularly fond of that sort of thing to begin with. By the third taste I was wondering why I kept doing this to myself.
+Well, it wasn't completely terrible at first. Unfortunately, the more I ate, the less I liked it. The texture was particularly unpleasant, and I wasn't exactly a fan of the way it seemed to melt in my mouth. Naturally, I kept trying more of it, just to make absolutely sure I didn't like it!
 
-The packaging helpfully suggested making a SPAM burger. I would recommend against that, unless you're trying to come up with a particularly creative way to annoy someone. Merry Christmas, and may your enemies never be blessed with this stuff!
+By the end I was pretty well convinced that bacon-flavoured SPAM wasn't going to become a regular feature of my diet. The can even had directions for making a SPAM burger, although I don't think I'll be rushing to try that one. Consider this my Christmas culinary adventure, and perhaps a warning to anyone considering doing the same thing.
 
-I hope everyone had a wonderful Christmas break and is looking forward to 2013. We've achieved quite a lot over at [RetroJunkie.net](http://retrojunkie.net) since the site opened late last year. I'd like to think these posts and videos help someone out there, whether they're repairing an old machine, learning something new or simply looking for a bit of entertainment during the day.
+Anyway, I hope everyone had a great Christmas break and is ready for the new year ahead in 2013. We've achieved a fair bit on [RetroJunkie.net](http://retrojunkie.net) since opening late last year, even if I've spent this particular Christmas attacking a can of processed meat rather than repairing something electronic. I promise there will be some proper technology videos coming again soon.
 
-I've got plenty more proper technology videos planned for the coming weeks, once I make it back to my gear. In the meantime, thank you to everyone who's been reading and watching, and here's to another year of great retro parties!
+I'd like to think this blog helps a few people out there, whether it's getting them through their day or helping them repair some old vintage gear. Maybe it can be a useful learning tool as well. I just hope it has some meaning to someone other than myself.
 
-Now, if you'll excuse me, I think I've had quite enough SPAM for one Christmas.
+To everyone who reads this, thank you. I hope the new year brings you plenty more great retro parties, and preferably something a little nicer to eat!

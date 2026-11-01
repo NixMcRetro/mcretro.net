@@ -6,13 +6,16 @@ last_modified_at: 2026-10-18
 categories: [sega, youtube]
 ---
 
+
 {% include youtube.html id="zBKg39WmFJE" %}
 
-It looks like I've been lucky enough to pick up a copy from the limited ASSEMbler community reproduction run of the unreleased Geist Force prototype. Geist Force was never commercially released by Sega. The surviving unfinished Dreamcast build was preserved through the ASSEMbler community, with additional work required to make the prototype usable on normal retail Dreamcast hardware. So this isn't an official late Sega release. It is a community preservation and reproduction project built around an unfinished game prototype.
+It looks like I've been lucky enough to pick up a copy of the unreleased *Geist Force* prototype for the Sega Dreamcast! Well, not an original Sega release, of course. This is one of the limited reproduction copies being put together by the ASSEMbler Games community, and I'm rather looking forward to getting my hands on it.
 
-ASSEMbler himself certainly put a lot of work into this, as did the other people involved in getting the project into people's hands. Kudos to everyone over there!
+*Geist Force* was never commercially released by Sega, so it's pretty interesting that people have managed to preserve the surviving unfinished build and get it working on ordinary retail Dreamcast hardware. There's been a fair bit of work involved in making that possible, and it's worth remembering that this is still an unfinished prototype rather than some long-lost completed game. That doesn't make it any less interesting to me!
 
-Pretty neat, right? I should have a copy to play, or perhaps simply behold, in another 60-odd days or so. If I were ASSEMbler right now I'd be going crazy looking at all those copies that still need to be shrink-wrapped and posted out. Good luck, kind sir! :)
+ASSEMbler himself has certainly put a lot of work into this project, as have the other people involved in getting the copies into everyone's hands. Kudos to everyone over there! It's nice to see something like this being preserved instead of disappearing into obscurity.
+
+Pretty neat, right? I should have a copy to play, or perhaps simply behold, in another 60-odd days or so. If I were ASSEMbler right now, I'd be going crazy looking at all those copies that still need to be shrink-wrapped and posted out. Good luck, kind sir! :)
 
 ### Sources
 

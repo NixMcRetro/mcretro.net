@@ -16,7 +16,7 @@ With *Zero Wing* running, I began experimenting around the VRAM connections usin
 
 I also gave *Sonic the Hedgehog* a go to see what happened with a different game. Between the graphical corruption, unexpected resets and the Mega Drive's existing problems, there was no shortage of strange behaviour to watch.
 
-For this experiment I was avoiding pins 11, 20, 30 and 40, but that was simply how I approached the particular chip I was working with. It isn't a verified pinout or a list of connections that are safe to bridge on another board. Randomly shorting pins together can damage the VRAM or other parts of the console, and I certainly wouldn't recommend treating this as a universal modification guide.
+I was steering clear of pins 20 and 40 during this experiment, which I'd identified as the power and ground connections on the chip I was working with. It wasn't a carefully worked-out modification, and shorting the wrong connections could easily damage something. Given that this Mega Drive was already playing up before I touched it, half the challenge was working out which glitches I'd actually caused!
 
 In the end, circuit bending produced some pretty amusing visual effects, even if there wasn't much practical use for them. The Mega Drive was already rather temperamental, and I was beginning to wonder whether the VRAM itself might have something to do with its normal faults.
 

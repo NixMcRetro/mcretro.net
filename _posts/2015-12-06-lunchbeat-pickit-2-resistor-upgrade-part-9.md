@@ -22,7 +22,9 @@ The built-in sequencer is where things get particularly interesting. You can mov
 
 Of course, it's also possible to make something that sounds like a Geiger counter having a particularly bad day. That's half the fun of a little machine like this. I've been through quite a few adventures getting it programmed and assembled, but now I've actually got a functioning 1-bit groovebox making noises on the bench.
 
-There were moments during the programming work when I genuinely wondered whether I'd ever get the project finished. Working with the Atmel hardware and getting the programming tools behaving under macOS took a fair bit of persistence. I learned quite a lot along the way, and the end result is a rather delightful little techno dance machine.
+I should also give credit where it's due. I didn't design the Lunchbeat itself; the original creator did that work, and my adventure was getting my own build assembled and programmed. There were moments during the programming work when I genuinely wondered whether I'd ever get the project finished.
+
+Working with the Atmel hardware and getting the programming tools behaving under macOS took a fair bit of persistence. I learned quite a lot along the way, and the end result is a rather delightful little techno dance machine.
 
 ### Lunchbeat / PICkit 2 series
 

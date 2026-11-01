@@ -16,9 +16,7 @@ The software will happily let me create Mac OS Standard partitions approaching 4
 
 After experimenting with much smaller partitions and working my way back up, it appears that keeping them to around 2 GB is the answer. Files copy successfully, and after a reboot the setup is working! At least with this particular combination of hardware and software, 2 GB partitions seem to be where it's at. The partitioning utility might allow larger ones, but that doesn't make them particularly useful.
 
-So there we have it! An 8 GB CompactFlash card can still be used by dividing the space into smaller partitions. Two gigabytes per partition is an enormous amount of storage for a machine like this anyway. Even the 2 GB cards I've been using already offer more than enough room for a healthy collection of old Macintosh games.
-
-Fantastic! I'm glad we've finally got that one sorted!
+So there we have it! An 8 GB CompactFlash card can still be used by dividing the space into smaller partitions. Two gigabytes per partition is an enormous amount of storage for a machine like this anyway. Even the 2 GB cards I've been using already offer more than enough room for a healthy collection of old Macintosh games. Fantastic! I'm glad we've finally got that one sorted!
 
 ### Related posts
 

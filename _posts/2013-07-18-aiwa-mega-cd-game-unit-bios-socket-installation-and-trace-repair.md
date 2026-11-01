@@ -8,27 +8,31 @@ categories: [repairs, sega, youtube]
 
 {% include youtube.html id="Nxz84M6u57k" %}
 
-Here we are with the Aiwa Game Unit again and we are onto attempting the repair. It actually turned out quite well. Took a while to trace back all the connections, but we got there!
+Here we are with the Aiwa Game Unit again, and this time we're actually getting somewhere with the repair! I've been reconnecting the damaged traces around the BIOS chip and fitting a proper socket. It took a while to work out where everything needed to go, but the result is looking rather promising.
 
-The main task was repairing the damaged connections around the BIOS chip and fitting a proper socket. I'd been tracing the original copper tracks and replacing the missing connections with short pieces of wire. Not the prettiest job I've ever done, but at least the PCB is beginning to look like something that might work again.
+I'd already started tracing the original copper connections, and the next step was to replace the damaged sections with short pieces of wire. Unfortunately, I made some of those wires a little longer than they really needed to be. In hindsight I could have shortened them by about a centimetre and a half, but at least they reached their destinations!
 
 ![](/assets/images/2013/img_0413.jpg)
 
-I made a few of the wires a little longer than I would have liked. In hindsight, I could have shortened them by about a centimetre and a half and made the whole arrangement rather tidier. The important thing at this stage was making sure each connection went to the correct destination without accidentally joining anything it shouldn't.
+One particularly fiddly connection ran from a BIOS socket pin to a tiny via beside it. That via carries the signal through to the other side of the board, so I needed to get a good connection from both directions. Naturally, the camera decided there was absolutely no need to focus on anything that small. Thanks, camera!
 
-One particularly fiddly connection ran from a BIOS socket pin to a tiny via beside it. That via carried the signal through to the other side of the board, so I had to make sure the new solder connection was good from both directions. Naturally, the camera decided focusing on something that small wasn't particularly important. Thanks, camera!
+I ended up feeding a little more solder through the connection to make sure everything was joined properly. It wasn't the prettiest thing in the world, but there were quite a few traces to recover and I was more interested in getting the electrical connections right than winning any prizes for beautiful soldering.
 
-Once the soldering was finished, I went through the connections with the multimeter. I checked the repaired traces from one side of the board to the other and followed them through to the appropriate chip pins. Everything I checked showed continuity where it should, and I couldn't find any shorts between adjacent connections. Excellent!
+Once the work was finished, I went through the repaired traces with the multimeter. I checked continuity between the two sides of the board and followed the connections through to the appropriate chip pins. Everything I'd checked was connected where it should be, and I couldn't find any shorts between neighbouring pins.
+
+Which is good, because it's the middle of winter and you wouldn't want to be wearing shorts anyway! At least something about this repair was going to plan.
 
 ![](/assets/images/2013/img_0412.jpg)
 
-Of course, checking continuity isn't quite the same as proving the Game Unit works. I still needed to get the boombox section of the Aiwa into a better state before carrying out a proper test. There were capacitors waiting to be replaced, and I also wanted to sort out the appropriate EPROM or EEPROM for the BIOS socket.
+The next challenge is getting the rest of the Aiwa ready for testing. The boombox section still needs its own capacitor work, and I'll need a suitable EPROM or EEPROM for the new BIOS socket. There are still some decisions to make about the chip, particularly its pin compatibility, before I can go much further.
 
-Having two of these Aiwa units has been enormously useful, even though neither is exactly in perfect condition. One of them had been working well enough to help me work out where some of the damaged connections were supposed to go. That's the wonderful thing about having a spare example of obscure hardware, provided you can find another one!
+The Game Unit board itself will need recapping eventually as well, although it's nice to see the repaired traces and fresh battery arrangement looking more respectable. There's no point pretending the entire machine is fixed yet, but at least the parts I've been working on are behaving properly with the meter.
 
-The BIOS socket and trace repairs are looking promising, but the full system test still has to wait until the rest of the hardware is ready. I don't want to claim victory just because the meter says the tracks are connected. Still, we've made some proper progress and Sophia isn't the only complicated Sega-related machine keeping me entertained.
+Having two of these Aiwa units has been enormously useful. Neither one is exactly perfect, but one was working well enough to help me work out where the damaged connections should go. There's something wonderful about having another example of obscure hardware to compare against, provided you're lucky enough to find one!
 
-There will be more Aiwa repairs to come. There always are!
+I'm also planning to compare the BIOS socket connections with the other Game Unit board before attempting the full test. If everything lines up, perhaps we'll finally get this strange Mega-CD hardware doing something more entertaining than occupying half the workbench.
+
+There's still a fair bit to do, but the socket is installed, the damaged connections have been repaired and the continuity checks look good. More Aiwa repairs to come. There always are!
 
 **Related Posts**
 

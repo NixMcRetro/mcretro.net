@@ -8,9 +8,7 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="DRHxgm3wIPI" %}
 
-Picked up so many of the things, now I just need to give them a good cleanout and make sure as many of their innards as possible are working. Some have liquid damage but most seem to be OK. Compared with the Sega Saturn, these things are a breeze to work on.
-
-Welcome to the army of retro PlayStations! I've managed to accumulate a rather ridiculous pile of the original Sony consoles, all in various states of disrepair. Some work, some don't, and some look as though somebody has been having a particularly bad day with a screwdriver.
+Picked up so many of the things, now I just need to give them a good cleanout and see how many of their innards are still working. Welcome to the army of retro PlayStations! I've managed to accumulate a rather ridiculous pile of the original Sony consoles, all in various states of disrepair. Some work, some don't, and some look as though somebody has been having a particularly bad day with a screwdriver. Compared with the Sega Saturn, these things are a breeze to work on!
 
 The eject buttons seem to be a common annoyance. One console has its lid taped shut because it won't stay closed, while another is missing parts of the CD mechanism altogether. Who steals a PlayStation laser and leaves the rest of the machine behind? Honestly!
 

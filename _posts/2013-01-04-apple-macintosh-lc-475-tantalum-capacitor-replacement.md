@@ -22,9 +22,7 @@ The polarity markings are also worth watching. Unlike the old electrolytics, whe
 
 {% include youtube.html id="PaDyFWXIflo" %}
 
-First power-on with the new capacitors installed! There are nine 47 uF, 25 V capacitors and two 100 uF, 16 V capacitors, all in case size D.
-
-Note the lack of fire! ;)
+First power-on with the new capacitors installed! There are nine 47 uF, 25 V capacitors and two 100 uF, 16 V capacitors, all in case size D. Note the lack of fire! ;)
 
 The Macintosh gave me a startup chime, which was an excellent start, although the video didn't appear immediately. After a little more fiddling, we had a picture! I also checked the PRAM battery and discovered it was only producing around 1 V. That's not particularly useful, so I replaced it with another battery measuring approximately 3.6 V.
 
@@ -32,7 +30,7 @@ With that sorted, I connected the remaining hardware and gave the machine a prop
 
 What better way to test the sound than with a game of Maniac? I hooked up the stereo audio and had a rather enjoyable session, complete with some excellent music and a score of over 86,000 points. Probably one of my better games, and you got to watch it!
 
-The replacement capacitors came from element14. I selected 25 V parts for the 47 uF positions, replacing the original 16 V electrolytics with higher-rated tantalums to provide additional voltage headroom. The correct derating depends on the particular capacitor series, but these were the parts I'd chosen for this repair.
+The replacement capacitors came from element14. I used 25 V tantalums where the original 47 uF electrolytics were rated at 16 V. I wanted a bit more voltage headroom, although there's more to choosing a suitable tantalum than simply picking the next voltage rating up. That's something worth remembering the next time I tackle one of these old Macs.
 
 And there we have it. The LC 475 boots, the sound works, and nothing caught fire. Now that's a considerably better result than I was expecting after all that soldering!
 

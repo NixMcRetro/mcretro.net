@@ -10,13 +10,11 @@ last_modified_at: 2026-10-18
 
 After [three and a half years](/super-famicom-and-the-green-line-of-doom/) I can finally put this one to rest and purge it from my mind. Remember that ridiculous green line appearing on my Super Famicom? Well, it turns out things aren't quite as straightforward as a faulty motherboard.
 
-The original recording shows my Japanese Super Famicom with an SNS-CPU-GPM-02 motherboard. I've got plans to install an in-game reset modification and make the machine region-free, but first there's this rather annoying video problem to deal with.
+Here's my Japanese Super Famicom with an SNS-CPU-GPM-02 motherboard. I've got plans to install an in-game reset modification and make the machine region-free, but first there's this rather annoying video problem to deal with.
 
 When I fire up Chrono Trigger, a green line appears across part of the picture. It isn't there all the time, and depending on what's happening on the screen it can be considerably more noticeable. Wonderful! That's exactly what you want from a console that's otherwise quite capable of working properly.
 
-Naturally, my first thought was that something on the motherboard had failed. I've already been working on the console, so I swapped in another motherboard of the same revision. Surely that would get rid of the problem?
-
-Nope. The green line was still there.
+Naturally, my first thought was that something on the motherboard had failed. I've already been working on the console, so I swapped in another motherboard of the same revision. Surely that would get rid of the problem? Nope. The green line was still there.
 
 I tried a different AV cable as well, with much the same result. Even Super Mario World shows the problem during certain parts of its startup sequence, particularly when the picture changes. At other times the image looks perfectly normal, which makes the whole thing rather frustrating.
 

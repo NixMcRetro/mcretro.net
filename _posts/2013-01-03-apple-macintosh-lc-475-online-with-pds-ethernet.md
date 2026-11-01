@@ -20,9 +20,9 @@ I also tried YouTube, which was probably asking a bit much. The browser was chew
 
 I eventually tried Netscape Communicator 4.08 as well. Seeing RetroJunkie.net loading with the old Netscape animations and my Dreamcast logo was rather entertaining. Scrolling around the website was another exercise in patience, but at least it worked!
 
-For light period web browsing it works surprisingly well. Subjectively, it feels somewhere around the same general level as browsing on one of my 486DX2-66 systems. Even the Netscape experience is fairly similar.
+For light period web browsing it works surprisingly well. If I had to compare it with anything, browsing feels a lot like using one of my 486DX2-66 systems. Even Netscape is similarly slow, but I rather like seeing the old software running.
 
-Obviously this is not the machine to choose if you want anything resembling a fully featured modern web browser. But getting a 68K Macintosh onto the network and browsing my own website at all? I'll take it.
+No one's going to mistake this for a modern web browser, especially after watching it struggle with my own website. Still, I've got a 68K Macintosh on the internet. I'll take it!
 
 ### Related posts
 

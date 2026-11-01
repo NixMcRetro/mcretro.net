@@ -12,7 +12,7 @@ This video might be a little out of order as I am sure I have already uploaded a
 
 Have you ever wondered where the name Set 5.24 comes from? Well, I've spotted something interesting on my Dreamcast development hardware. Down on the floor, alongside a few other machines that really deserve some attention, is the rather magnificent development unit itself.
 
-The label on top appears to carry the Set 5.24 designation, along with another number that looks like a serial number. That might explain part of the naming, although I certainly wouldn't claim to understand Sega's entire development-kit revision system from one sticker!
+Look at the label on top. There's a PS 524 marking, followed by an S and a number that looks like a serial number. Maybe that gives us a clue as to where Set 5.24 came from! I wonder whether the other revisions have similar markings.
 
 There's plenty to look at around the back too. We've got video and audio connections, a collection of other ports, the power input and a fuse. The power-supply label also indicates a fairly wide input-voltage range, which is handy for a machine that might find itself travelling between Japan and Australia.
 

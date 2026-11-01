@@ -6,17 +6,20 @@ last_modified_at: 2026-10-20
 categories: [ibm-pc, reconstructed, youtube]
 ---
 
+
 {% include youtube.html id="t1swG5Owro0" %}
 
-Another 5.25-inch floppy drive, another adventure! This time I've got a Mitsumi Newtronics 1.2 MB drive that's been giving me all sorts of trouble. It's not reading properly, and I'm beginning to wonder whether the thing is ever going to cooperate.
+Another 5.25-inch floppy drive, another adventure! This time I've got a Mitsumi Newtronics D509V3 1.2 MB drive that I picked up for a couple of dollars on eBay. It has a rather nice green activity LED on the front, but unfortunately it hasn't been doing much in the way of reading disks. I've cleaned the heads and given the drive a general tidy-up without much success.
 
-After a little more investigation, I discover that the edge connector isn't quite lined up correctly. A slight misalignment, and apparently that's enough to cause all this trouble! Once I correct the connection, would you believe it? The drive starts working!
+Then I discovered something interesting about the edge connector. The cable wasn't making proper contact with all the pins, and apparently that was enough to make the drive behave as though it was completely dead. Once I corrected the connection, would you believe it? I could actually access the disk!
 
-Things are looking rather promising, so I go ahead and format a floppy disk. Success! With the disk formatted, I transfer \`COMMAND.COM\` and the other system files across. It's all going beautifully, and for a moment there I think we've actually got ourselves a functioning floppy drive.
+Just to be sure, I decided to format a floppy and see how far we could get. The format completed, so I transferred `COMMAND.COM` and the other system files across. Everything seemed to be working beautifully, and for a brief moment I thought I'd managed to rescue another troublesome drive with nothing more complicated than fixing a connection.
 
-And then, right at the end of the video, it stops working again! Haha! Apparently I was celebrating a little too early. The drive had managed to format a disk and copy files, but that doesn't mean the underlying problem was permanently resolved.
+Of course, it wouldn't be one of my floppy-drive adventures without a final surprise. Right at the end of the recording, the machine starts reporting errors again, including a bad track zero and an unusable disk. The motor doesn't look particularly happy either, which makes me wonder whether there's another mechanical problem hiding in there.
 
-Oh well. At least we got to see the thing work for a little while! Perhaps the next troublesome floppy drive will be more cooperative. I wouldn't bet on it, though!
+So the drive managed to format a disk and copy files, but that obviously wasn't the end of its troubles. I've had enough odd experiences with these old 5.25-inch drives to know that a brief moment of success doesn't necessarily mean they're going to keep working.
+
+Oh well. At least we got to see it cooperate for a little while! Floppy drives. What do you do with them?
 
 ### Related posts
 

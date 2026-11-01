@@ -769,3 +769,69 @@
 @media screen and (min-width: 861px) {
   .site-footer .footer-detail-line { display: block; }
 }
+
+/* Article-only quotations and Markdown tables.
+   Preserve the original text, links, headings and semantic HTML. */
+.post-full .post-content blockquote {
+  margin: 1.35em 0;
+  padding: 0.85em 1.1em;
+  border-left: 4px solid #018281;
+  background: #edf2e8;
+  color: #242424;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.post-full .post-content blockquote > :first-child { margin-top: 0; }
+.post-full .post-content blockquote > :last-child { margin-bottom: 0; }
+.post-full .post-content blockquote p + p { margin-top: 0.7em; }
+
+.post-full .post-content table {
+  width: 100%;
+  max-width: 100%;
+  margin: 1.25em 0 1.4em;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-top: 3px solid #018281;
+  border-bottom: 1px solid #a9b2a5;
+  font-size: 0.94em;
+  line-height: 1.45;
+  text-align: left;
+}
+.post-full .post-content table th,
+.post-full .post-content table td {
+  padding: 0.6em 0.75em;
+  border-bottom: 1px solid #d2d8cb;
+  overflow-wrap: anywhere;
+  vertical-align: top;
+  text-align: left;
+}
+.post-full .post-content table thead th {
+  background: #e3eee7;
+  color: #202820;
+  font-weight: 700;
+  border-bottom: 2px solid #859e90;
+}
+.post-full .post-content table tbody tr:nth-child(even) {
+  background: #f4f1e4;
+}
+.post-full .post-content table tbody tr:nth-child(odd) {
+  background: #fffaf0;
+}
+.post-full .post-content table tbody tr:last-child td {
+  border-bottom: 0;
+}
+@media screen and (max-width: 500px) {
+  .post-full .post-content blockquote {
+    margin: 1.1em 0;
+    padding: 0.75em 0.85em;
+  }
+  .post-full .post-content table {
+    table-layout: fixed;
+    font-size: 0.86em;
+  }
+  .post-full .post-content table th,
+  .post-full .post-content table td {
+    padding: 0.5em 0.4em;
+  }
+}

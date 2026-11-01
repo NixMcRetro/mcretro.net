@@ -28,11 +28,11 @@ Dammit! That speaker does not have the clearance it needs. I need the ultra shor
 
 ![](/assets/images/2023/img_1080.jpg)
 
-Perfect! Most of the affected originals were 10 µF, 25 V parts. I replaced some with 50 V parts, which increased the voltage rating but also made the cans too tall for the space under the speaker. That is not "derating" the capacitor; derating means operating a component below its rating. The shorter ZLG parts solved the mechanical problem. 😅 C25 was a 22 µF, 63 V part, with another little surprise waiting for me.
+Perfect! Most of the affected originals were 10 uF, 25 V parts. I replaced some with 50 V parts, which increased the voltage rating but also made the cans too tall for the space under the speaker. That is not "derating" the capacitor; derating means operating a component below its rating. The shorter ZLG parts solved the mechanical problem. 😅 C25 was a 22 uF, 63 V part, with another little surprise waiting for me.
 
 ![](/assets/images/2023/img_1081.jpg)
 
-C25 was the odd one out: the fitted 22 µF, 63 V capacitor was bipolar or non-polar. [Jon](https://damntechnology.blogspot.com) suggested that the factory might simply have used what it had on hand, and I took the polarity mark on the PCB as confirmation. That was a theory, not a circuit check. A non-polar electrolytic may be deliberate where the voltage can reverse, so a polar replacement should only be used after checking the circuit and confirming the actual voltage polarity.
+C25 was the odd one out: the fitted 22 uF, 63 V capacitor was bipolar or non-polar. [Jon](https://damntechnology.blogspot.com) suggested that the factory might simply have used what it had on hand, and I took the polarity mark on the PCB as confirmation. That was a theory, not a circuit check. A non-polar electrolytic may be deliberate where the voltage can reverse, so a polar replacement should only be used after checking the circuit and confirming the actual voltage polarity.
 
 Next up we have the ATI (inquiry, information, or interrogation) results. These give us the active firmware version. I didn't dump it because I didn't have much interest in doing so at the time. An update might be somewhere on [archive.org](http://archive.org), but I haven't tracked down a matching file.
 

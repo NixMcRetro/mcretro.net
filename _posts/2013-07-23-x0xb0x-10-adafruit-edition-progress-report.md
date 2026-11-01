@@ -12,7 +12,7 @@ Back again with the x0xb0x! SuperNick (Nick) has been making some more progress 
 
 We've been experimenting with the analogue circuitry, particularly the sawtooth waveform. There's a temporary test arrangement with a small power supply, a potentiometer and a capacitor connected to part of the board. It's not exactly the finished product just yet, but it gives us something to work with while the remaining components are installed.
 
-The square-wave testing is still to come at this stage, although we're making some encouraging progress with the sawtooth signal. Hopefully we'll eventually have some proper synthesiser sounds coming out of the thing rather than just staring at waveforms!
+We haven't tested the square wave yet, but the sawtooth results are encouraging. Hopefully we'll eventually have some proper synthesiser sounds coming out of the thing rather than just staring at waveforms!
 
 Looking over the board, quite a few more components have been fitted since the last video. There are resistors, capacitors and transistors all over the place, although there's still a large section waiting to be populated. Not exactly a five-minute assembly job, this one.
 

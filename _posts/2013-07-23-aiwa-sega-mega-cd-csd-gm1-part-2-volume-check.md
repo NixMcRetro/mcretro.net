@@ -16,9 +16,9 @@ I'm currently feeding 12 V into some adjustable voltage regulators to provide th
 
 Next comes the CD player. This particular unit has already had its laser replaced, so I'm hoping the mechanism will be reasonably cooperative. The display is interesting too, with its track-number indicator using an additional dot when the count gets into double digits. A rather clever way of making a small display do a little more!
 
-Time for some KISS! The CD section gives us something to work with, but I'm still trying to establish which parts of the machine are behaving themselves and which aren't. After all, there's also the Sega Mega Drive game unit underneath, and I'd rather get the basic Aiwa functions sorted before tackling that.
+Time for some KISS! Keep It Simple, Stupid. The CD section gives us something to work with, but I'm still trying to establish which parts of the machine are behaving themselves and which aren't. After all, there's also the Sega Mega Drive game unit underneath, and I'd rather get the basic Aiwa functions sorted before tackling that.
 
-Unfortunately, things don't all spring to life by the end of the test. Another attempt gets me nowhere, so it's back to the multimeter and more troubleshooting. There's still the low-volume problem to investigate properly, along with the other sections that aren't cooperating.
+Unfortunately, things don't all spring to life by the end of the test. A later attempt gets me absolutely nowhere, so there's clearly more to investigate. Back to the multimeter, then! There's still the original low-volume problem to verify properly, along with the other sections that aren't cooperating.
 
 Never mind, we've made some progress with the recap and at least know a little more about what this thing is doing. On to the next part, where I can dig out my notes and try to remember what I've already done!
 

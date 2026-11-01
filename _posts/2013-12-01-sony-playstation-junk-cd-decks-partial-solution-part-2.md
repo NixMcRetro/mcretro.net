@@ -22,7 +22,7 @@ And there it is! A disc-retaining hub removed in one piece, ready to be fitted o
 
 Of course, the height still matters. Push the hub too far down and the disc may rub against the mechanism. Leave it sitting too high and the laser can have trouble focusing properly. So it's not simply a matter of pushing the thing on as far as it will go.
 
-I'll need to experiment with the positioning and make sure the repaired mechanisms actually read discs correctly. This is a partial solution rather than proof that every damaged PlayStation CD deck can now be rescued.
+I'll need to fiddle with the positioning and then see whether the thing will actually read discs. At least I now know how to get the hub off without destroying it. That's a step in the right direction, even if I haven't got a fully working drive to show for it just yet.
 
 Still, after breaking a few of those blasted plastic hubs, it's rather nice to find a way of removing one without destroying it.
 

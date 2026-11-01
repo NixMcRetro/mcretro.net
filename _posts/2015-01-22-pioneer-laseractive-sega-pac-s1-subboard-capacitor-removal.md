@@ -14,9 +14,9 @@ Most of them appear to be 10 uF capacitors, although there are also some 47 uF a
 
 I'm using the same gripping and wiggling method that worked rather well on the mainboard. The idea is to loosen the metal legs while leaving the solder pads attached to the circuit board. It worked nicely on the first few. What could possibly go wrong?
 
-Well, almost immediately, one of the solder pads lifted off the board. Oh dear. That was \`C21\`, and fortunately it looked as though the connection might be to ground, which should make the repair a little easier. I'll need to trace it properly before deciding exactly how to reconnect it.
+Well, almost immediately, one of the solder pads lifted off the board. Oh dear. That was C21, and fortunately it looked as though the connection might be to ground, which should make the repair a little easier. I'll need to trace it properly before deciding exactly how to reconnect it.
 
-A little further along, another pad came away at \`C104\`. Then there were more. Much more! This board is certainly a different beast from the mainboard. Some capacitors were lifting cleanly, while others were bringing their pads along for the ride, even when I thought I'd been rather careful.
+A little further along, another pad came away at C104. Then there were more. Much more! This board is certainly a different beast from the mainboard. Some capacitors were lifting cleanly, while others were bringing their pads along for the ride, even when I thought I'd been rather careful.
 
 There was also plenty of suspicious residue beneath the capacitors. Some of it initially looked like it might have been glue, but after removing a few more components it became rather obvious that at least some had leaked. The larger 47 uF and 100 uF parts were particularly unappealing.
 

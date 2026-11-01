@@ -40,8 +40,6 @@ The power supply was one of the three pictured here. Which one? I could not be s
 
 ![](/assets/images/2023/img_1050.jpg)
 
-I love the way they designed the front of the modem to make the LEDs shine through like the letter A (for Avtek). Last up, we have the results of probing the modem for information. Surprisingly short, as nothing beyond ATI3 registered anything apart from ERROR. Short and sweet! 😄
-
 With the modem back together, I hooked it into my dial-up arrangement through a Raspberry Pi running Asterisk and mgetty. The answering modem was a Banksia, connected over VoIP. Both were using Rockwell chipsets, which might have helped them get along.
 
 I had already left the connection running for about 199.5 minutes when I checked the session. The Linux counters showed data going in and out, and the error figure I calculated at that point was around 3.1%. That's much better than some of the other dial-up sessions I'd been seeing.

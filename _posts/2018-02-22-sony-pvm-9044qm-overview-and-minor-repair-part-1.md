@@ -8,27 +8,31 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="Kc5zI0yAkYQ" %}
 
-Today we have a peek inside a marvel from the 90s, a Sony PVM-9044QM monitor. These are great for broadcasting if you happen to be a television studio, but they're also great for their RGB capabilities and retrogaming. With most television studios moving to that flat panel junk, it frees up the world supply of CRT PVMs!
+Today we're having a peek inside a marvel from the 90s, the Sony PVM-9044QM. These little monitors were intended for professional video work, but they're also lovely for retro gaming thanks to their RGB capabilities. With television studios getting rid of their old CRT equipment in favour of flat-panel displays, there's still some interesting hardware turning up for the rest of us!
 
-This little Sony arrived from the United Kingdom, and I'm rather pleased it survived the trip in one piece. The seller actually used a cardboard box around the bubble wrap, which is always encouraging! Unfortunately, the rear casing had clearly taken a knock, and there was a rather suspicious gap around the front bezel.
+This particular PVM arrived from the United Kingdom, and I'm rather pleased it survived the journey. The seller had even used a cardboard box around the bubble wrap, which is always reassuring when somebody is shipping a little glass picture tube halfway around the world.
 
-Before going any further, I had a look at the connections on the back. There's RGB input with external sync, composite-video connections and the usual collection of controls. It also supports 4:3 and 16:9 display modes. I was going to need some BNC connectors before I could give it a proper RGB test, but there was plenty to investigate in the meantime.
+Unfortunately, the monitor had clearly taken a knock at some point. There was a suspicious gap around the front bezel and the rear casing wasn't sitting quite as neatly as it should. So before giving it a proper workout, I thought I'd open it up and see what was going on.
 
-Inside, the monitor is wonderfully compact. There's an April 1996 marking on the internal hardware, and the whole assembly is packed rather tightly around the little Trinitron tube. Sony certainly managed to squeeze a remarkable amount of electronics into this thing. I also spotted plenty of familiar capacitor manufacturers while looking over the boards, including Elna.
+Around the back we've got RGB with external sync, composite-video connections and the usual collection of controls. The monitor also supports 4:3 and 16:9 modes, which makes it rather useful for trying different bits of hardware. I still needed some suitable BNC connectors before I could give the RGB input a proper test.
 
-Unfortunately, the impact damage was worse than the outside suggested. Some of the rear metalwork had bent, and the CRT mounting arrangement wasn't sitting quite where it should. That explained the gap around the bezel. There was even a loose screw inside the machine, which is never something I particularly enjoy finding!
+Inside, everything is packed rather tightly around the little Trinitron tube. I spotted an April 1996 marking on the internal hardware, along with plenty of familiar component manufacturers, including Elna. Sony certainly squeezed an impressive amount of electronics into something this small!
 
-After investigating the mounting hardware, I managed to improve the alignment so the bezel would sit much more neatly against the front of the tube. The board around the CRT neck also needed attention because it wasn't sitting properly after the assembly had been disturbed. I was rather relieved to get everything back into position without causing any further damage.
+The shipping damage was more obvious once I could see the mounting hardware. Some of the metalwork had bent, and the tube assembly wasn't sitting quite where it should. That explained the gap around the bezel. I also found a loose screw inside, which is never particularly encouraging when you're opening an old monitor.
 
-As always with CRT equipment, there's a serious high-voltage hazard inside, even after the mains has been disconnected. This isn't a job I'd recommend attempting without the proper training and equipment. Sony specifies servicing by qualified personnel, and there's nothing quite like a picture tube to remind you why.
+I had to work around the CRT mounting arrangement and the board attached to the neck of the tube, taking care not to disturb anything I didn't need to. These machines contain dangerous high voltages, and the picture tube and associated circuitry can retain charge after the mains is disconnected. It's certainly not the sort of equipment to poke around inside without the proper training.
 
-With everything reassembled, I gave the monitor another power-on test. Good news! It still powered up, and the display responded to the controls, including the underscan setting. There were no flames, no horrible noises and nothing obviously worse than before. Considering how much damage the shipping had done to the mechanical parts, that's a rather encouraging result.
+Fortunately, most of the problem appeared to involve the mechanical mounting rather than a collection of broken circuit boards. After investigating the brackets and getting the displaced parts back into position, I managed to improve the alignment considerably. The front bezel was finally sitting much more neatly against the tube.
 
-I still hadn't connected a proper RGB source by the end of this recording, so the picture quality would have to wait for another day. At least the little Sony is sitting together properly again, and we've had a good look at its internals.
+With everything back together, it was time for another power-on test. No flames, no horrible noises and the monitor still responded to its controls. Excellent! I was even able to get a response from the underscan setting, which was reassuring after all that fiddling around with the internals.
 
-Anyway, enjoy me rambling, avoiding anode caps, zappy caps, and [POG](https://en.wikipedia.org/wiki/Milk_caps_\(game\)) caps. Just kidding, no one avoids POG caps! They are great fun! Alright, alright, fine. That includes you Caps The Game and Tazos too I guess!
+I still hadn't connected a proper RGB source, so the picture quality would have to wait for another day. At least the little Sony was sitting together properly again, and we'd had a good look at what was inside.
 
-Next: [Sony PVM-9044QM Overview and Minor Repair (Part 2)](/sony-pvm-9044qm-overview-and-minor-repair-part-2/)
+Anyway, enjoy me rambling, avoiding anode caps, zappy caps and [POG](https://en.wikipedia.org/wiki/Milk_caps_\(game\)) caps. Just kidding, nobody avoids POG caps! They're great fun! Alright, alright, fine. That includes you, Caps The Game and Tazos too, I suppose.
+
+**Related Posts**
+
+- [Sony PVM-9044QM Overview and Minor Repair (Part 2)](/sony-pvm-9044qm-overview-and-minor-repair-part-2/)
 
 **Sources**
 

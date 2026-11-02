@@ -835,3 +835,7 @@
     padding: 0.5em 0.4em;
   }
 }
+/* Single original January 2016 JXL hero, always above the exclusive accordion chapters. */
+.post-content .darknet-hero-wrap { margin: 0 0 1rem; padding: 0; }
+.post-content img.darknet-hero { display: block; width: 100%; max-width: 1536px; height: auto; margin: 0 auto; border-radius: 4px; }
+.post-content details[name="mcretro-darknet"] { scroll-margin-top: 0.75rem; }

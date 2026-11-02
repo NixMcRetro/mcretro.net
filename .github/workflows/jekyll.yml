@@ -70,6 +70,9 @@ jobs:
       - name: Build site with Jekyll
         run: bundle exec jekyll build --destination _site
 
+      - name: Verify Darknet guide chapter redirects and original JPEG XL image
+        run: python3 .github/tests/check-darknet-consolidation.py _site
+
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:

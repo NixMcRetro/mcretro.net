@@ -8,7 +8,9 @@ categories: [repairs, sega, youtube]
 
 {% include youtube.html id="UvVXEGuSYbU" %}
 
-A very quick reassembly of the front panel part of the Sega TeraDrive, this was in pieces for the good folk at [Sega-16](https://www.sega-16.com/) - something to do with the Yamaha sound chip from what I recall! Check out my other videos for more TeraDrive internals.
+Here's a very quick, sped-up reassembly of the front panel of my Sega TeraDrive. I had it in pieces for the good folk at [Sega-16](https://www.sega-16.com/), something to do with the Yamaha sound chip from what I recall! Now it's time to put the front panel back where it belongs.
+
+If you're after more of the internals, check out my other TeraDrive videos. There's certainly been plenty of poking around inside this machine!
 
 ### Related posts
 

@@ -8,9 +8,17 @@ categories: [hacks, programming, sony]
 
 {% include youtube.html id="Yg8A5agB0j4" %}
 
-Not sure why my GQ-4X is reporting configuration failure when programming PIC12F629s for PS1 modchips, but I programmed one with a little LED-blinking test without issues. That shows this test worked; it doesn't establish why the modchip programming failed.
+Not sure why my GQ-4X is reporting a configuration failure when I try programming PIC12F629s for PS1 modchips. The funny thing is that I can program one with a simple LED-blinking test without any trouble, and it blinks away quite happily. So why won't the modchip programming work? One mystery at a time!
 
-The PIC12F629 is Flash-based and reprogrammable, which is handy for mistakes. Here's the result, with some 90s nostalgia and lunch thrown in.
+I've put together a little test rig using a 5 V Nokia charger, a 220-ohm resistor, a two-colour LED and a switch. The charger is centre-positive, with the positive supply going to pin 1 of the PIC12F629 and ground to pin 8. The switch lets me choose which colour of the LED lights up, while the chip does the blinking.
+
+There's a little program on the PIC that switches its output on and off every second or so. Don't forget the resistor, unless you fancy burning out your LED! I used 220 ohms, but something a little higher will do the job too, with a slightly dimmer result. A suitable 5 V USB supply could also power the arrangement.
+
+Naturally, the one thing I couldn't find was a dark room to test it in, so I stuck the whole thing inside a kitchen utensil holder instead. The LED blinks away nicely, and flicking the switch changes the colour. Excellent! Might even put together a little guide so you can try the test yourself.
+
+The PIC12F629 is Flash-based and reprogrammable, which is rather handy when you're experimenting. Unfortunately, somewhere in the middle of all this I got distracted by McCain Pizza Pockets. That advert has been stuck in my head for about twenty years, and apparently it's not going anywhere!
+
+Here's the result, with some 1990s nostalgia and lunch thrown in. At least I know I can program a PIC12F629 to blink an LED. Now I just need to sort out that annoying PS1 modchip configuration failure!
 
 ### Sources
 

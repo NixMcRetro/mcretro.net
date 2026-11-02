@@ -8,19 +8,19 @@ categories: [guides, programming]
 
 ![](/assets/images/2013/img_0435.jpg)
 
-PICkit 2 is a Microchip programmer/debugger designed primarily for PIC chips. The fun part is that AVRDUDE can also use it as an ISP programmer for supported AVR microcontrollers, including the ATmega328P I was working with here. That AVR support comes from AVRDUDE rather than Microchip's PICkit 2 application.
+PICkit 2 is a Microchip programmer/debugger designed primarily for PIC chips. The fun part is that AVRDUDE can also use it as an ISP programmer for supported AVR microcontrollers, including the ATmega328P I'm working with here. That AVR support comes from AVRDUDE rather than Microchip's PICkit 2 application.
 
-At the time, Atmel was a separate competitor, and I thought Microchip might have stopped supporting PICkit 2 because people were using it to program Atmel chips. After all, you wouldn't want your open-source hardware funding sales of your biggest competitor! That explanation was speculation, though; I don't have evidence for the connection.
+Atmel is one of Microchip's competitors, so I have to wonder whether that's why Microchip doesn't seem particularly interested in supporting the PICkit 2 anymore. After all, you wouldn't want your own programmer helping sell your biggest competitor's chips! That's just my theory, of course.
 
 What I used:
 
 - PICkit 2
 - the programmer / adapter hardware linked from [obddiag.net](https://web.archive.org/web/20140217175948/http://www.obddiag.net/picprog.html) in the original post
-- [PIC12F508](http://ww1.microchip.com/downloads/en/DeviceDoc/41236E.pdf), useful for checking that the PICkit 2 setup was functioning
+- [PIC12F508](http://ww1.microchip.com/downloads/en/DeviceDoc/41236E.pdf), useful for checking that the PICkit 2 setup is functioning
 - [ATmega328P](https://web.archive.org/web/20130928215235/http://www.atmel.com/Images/doc8161.pdf) as the AVR target
 - AVRDUDE on the Mac
 
-Compiling all of this was particularly entertaining because I had very little idea what I was doing! 😅 More to come when I find the time...
+Compiling all of this has been particularly entertaining because I have very little idea what I'm doing! 😅 More to come when I find the time...
 
 **Update 2023:** I'll probably never find the time. However, it's worth mentioning that this was all done for the Lunchbeat project. More of that hot mess can be found in the Projects folder in the [photo gallery](/goodies). Enjoy! 🙃
 

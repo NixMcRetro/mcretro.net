@@ -14,13 +14,15 @@ This time I'm working on the newer of the two Japanese Sega Channel adapters. Wi
 
 With the sockets fitted, it was time to put everything back together and see whether the adapter still worked. I connected it to a Mega Drive 2 and fired up the XRGB to have a look at the output. Unfortunately, the XRGB wasn't particularly interested in finding the signal at first.
 
-After another attempt, up came the Sega Channel selection screen. Excellent! I didn't have a cable connection to actually use the service, but the adapter would still display its menus and let me move through the channel selections.
+After another attempt, up came the Sega Channel selection screen. Excellent! I don't have a cable connection to actually use the service, but the adapter still displays its menus and lets me move through the channel selections.
 
-I eventually found a suitable controller and had a little poke around. There was even a rather lovely Sonic animation, although I wasn't having much success understanding the Japanese menu options. I certainly wasn't going to let that stop me pressing buttons!
+I eventually found a Mega Stick controller and had a little poke around. There are plenty of channels to scroll through, although understanding the Japanese menu options is another matter entirely. I certainly wasn't going to let that stop me pressing buttons!
 
-Leaving the adapter alone for a while also brought up another menu. There was still plenty to explore, but the important thing was that the hardware appeared to be working after the socket installation.
+There's also a rather lovely Sonic animation. For some reason half of Sonic's hedgehog spines seem to disappear at one point. How did that get through quality testing? Never mind, at least the tune is catchy!
 
-At this stage, I was planning to send the chip off to the UK to have its contents dumped, since my GQ-4X programmer didn't appear capable of handling it. That would turn into another interesting little adventure, as you'll discover in the following videos!
+Leaving the adapter alone for a while brings up another menu, so there's still plenty to investigate. The important thing is that the hardware appears to be working after the socket installation. That's one less thing to worry about!
+
+I'm planning to send the chip off to the UK to have its contents dumped, since my GQ-4X programmer doesn't appear capable of handling it. More Sega Channel adventures to come!
 
 ### Sega Channel Japan series
 

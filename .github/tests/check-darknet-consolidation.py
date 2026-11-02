@@ -13,7 +13,13 @@ assert page.count(f'src="{hero}"') == 1, 'A single original JXL hero is required
 assert page.index(f'src="{hero}"') < page.index('id="part-1"'), 'JXL must appear before all accordion sections'
 assert (site / hero.lstrip('/')).stat().st_size == 149747, 'Original JXL changed or is missing'
 assert page.count('name="mcretro-darknet"') == 14, 'Expected fourteen mutually-exclusive accordion panels'
-assert 'not paste-ready Apache configuration' in page, 'Part 9 safety warning lost'
+assert 'Historical reconstruction note:' in page, 'Part 9 reconstruction notice missing'
+assert 'not as tested, paste-ready Apache or security instructions' in page, 'Part 9 archive safety warning missing'
+part9_source = Path('_posts/2016-01-04-take-back-the-darknet-part-9.md').read_text(encoding='utf-8')
+for path in ['/var/www', '/var/www/blog', '/var/www/files/public']:
+    assert part9_source.count(f'<Directory {path}>') == 3, f'Expected reconstructed Apache directory {path} in each host'
+assert part9_source.count('</Directory>') == 9, 'Reconstructed Directory tags must be balanced'
+assert '\u201d' not in part9_source, 'Typographic smart quotes must not remain in Apache examples'
 assert 'Raspberry Pi OS stopped creating that account automatically in April 2022' in page, 'Part 2 historical note lost'
 assert '/assets/js/darknet-accordion.js' in page and (site / 'assets/js/darknet-accordion.js').is_file(), 'Deep-link script missing'
 for chapter in range(1, 15):

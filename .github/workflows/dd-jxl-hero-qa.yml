@@ -35,16 +35,15 @@ jobs:
           class Article(HTMLParser):
               def __init__(self):
                   super().__init__()
-                  self.in_content = False
                   self.tags = []
               def handle_starttag(self, tag, attrs):
-                  p = dict(attrs)
-                  if tag == 'div' and 'post-content' in p.get('class','').split():
-                      self.in_content = True
-                  if self.in_content and tag in ('img', 'source', 'picture', 'p'):
-                      self.tags.append((tag,p))
+                  if tag in ('img', 'source', 'picture', 'p'):
+                      self.tags.append((tag,dict(attrs)))
+          page_html = html.read_text()
+          assert '<div class="post-content">' in page_html, 'Article body container missing'
+          article_html = page_html.split('<div class="post-content">',1)[1].split('</div>',1)[0]
           parser = Article()
-          parser.feed(html.read_text())
+          parser.feed(article_html)
           image_tags = [(tag,p) for tag,p in parser.tags if tag=='img']
           assert len(image_tags) == 1, f'Expected one post image: {image_tags}'
           assert image_tags[0][1].get('src') == '/' + img, 'Wrong image reference'

@@ -8,9 +8,13 @@ categories: [news, youtube]
 
 {% include youtube.html id="NlHiusHukV0" %}
 
-Welcome to the RetroJunkie YouTube channel with your host Nix McRetro! Feel free to browse the selection of videos previously uploaded, there's plenty! See you in the latest video!
+Welcome to the RetroJunkie YouTube channel with your host Nix McRetro! Feel free to browse the selection of videos I've uploaded. There's plenty to get stuck into!
 
-This trailer is preserved as part of the channel's history. McRetro channel links can be found on the [Channels](/channels/) page.
+Well, we've reached the magic number of subscribers required to open the gates of hell. Congratulations! You opened the gate, and now you're all going to die! Don't forget to subscribe while you're at it. Nothing like a bit of impending doom to encourage a few more subscribers!
+
+Of course, be on the lookout for more videos from myself and SuperNick (Nick). Don't know where he's wandered off to, but I'm sure he'll turn up somewhere! Subscribe, and I'll see you in the comments. You're all going to die!
+
+This trailer is preserved as part of the channel's history. McRetro channel links can be found on the [Channels](/channels/) page. See you in the latest video!
 
 ### Channel trailers
 

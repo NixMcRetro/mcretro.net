@@ -8,7 +8,11 @@ categories: [youtube]
 
 {% include youtube.html id="5foajQkIkUI" %}
 
-Well, well, well. If it isn't under-sugared doughnuts! Let's see what we can do to fix that!
+Well, well, well. If it isn't under-sugared doughnuts! Nothing quite kick-starts the day like some good old cinnamon doughnuts, but these ones are a bit lacking in the sugar department. Let's see what we can do to fix that!
+
+Fortunately, I've still got a bag of caster sugar left over from the cupcake adventures. A whole bag, minus two cups! So naturally, the solution to doughnuts without enough sugar is to put more sugar on the doughnuts. Amazing how that works!
+
+Sprinkle a bit over the top, and suddenly they're looking a lot more like proper cinnamon doughnuts. You can even eat them just like regular doughnuts. Fantastic!
 
 ### Cooking with McRetro
 

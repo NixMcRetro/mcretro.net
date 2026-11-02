@@ -8,4 +8,10 @@ categories: [youtube]
 
 {% include youtube.html id="45BVe_RSHDo" %}
 
-What is wrong with wildlife? I know it's spring, but why nature! Why! Also, it was quite hot, I found an empty birdbath nearby, filled it up with water and kicked over the half-filled bucket. No more trapped birds for me today!
+What is wrong with wildlife? I know it's spring, but why nature! Why! Honestly, I might as well work for the RSPCA at this rate. I keep finding birds in places where they really shouldn't be.
+
+This time I've found another little bird stuck in a bucket of water, some sort of honeyeater by the looks of it. No webbed feet, of course, so the poor thing can't exactly paddle its way out. Luckily I happened to walk past and spot it before it was too late!
+
+I've let it dry off for a while and then set it free. It's a wonder how these little buggers survived on the driest continent, only for humans to come along and leave buckets of water everywhere. Whoops! Still, it's the bird's lucky day.
+
+It was quite hot, so I found an empty birdbath nearby and filled it with water. I also kicked over the half-filled bucket. No more trapped birds for me today!

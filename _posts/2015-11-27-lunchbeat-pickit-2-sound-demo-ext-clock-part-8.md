@@ -8,13 +8,17 @@ categories: [programming, youtube]
 
 {% include youtube.html id="dt0s9hSIgiI" %}
 
-This was the final AVRDUDE flash of the [Lunchbeat by Buranelectrix](https://web.archive.org/web/20131112015528/http://buranelectrix.com/). We also reminisce about how good SuperNick (Nick) was at holding down buttons while flashing things. Whether this was entirely necessary throughout the flash... I can't remember.
+This is the final AVRDUDE flash of the [Lunchbeat by Buranelectrix](https://web.archive.org/web/20131112015528/http://buranelectrix.com/). We've got everything connected, with the Lunchbeat getting its power from the PICkit 2 rather than a battery. Hopefully it's all going to behave!
 
-Just sit back and listen to the tunes. They sure can be catchy, and you can join multiple Lunchbeats together if you have two or more. Just think of the possibilities!
+We also reminisce about how good SuperNick (Nick) is at holding down buttons while flashing things. Whether that's entirely necessary throughout the flash... I can't remember. Still, the PICkit 2 is doing its thing, and after a little waiting we're all done!
 
-I believed the earlier setup had effectively been running at around 1 MHz before moving to the external 16 MHz crystal, and the change certainly made the sound playback behave much better. That earlier clock source was the ATmega328P's internal RC oscillator, not a crystal.
+As it turns out, I was doing it wrong before. I hadn't set the fuses to use the external 16 MHz crystal, so the ATmega328P was still running from its internal clock. That lovely crystal sitting on the board was effectively just decoration! Whoops!
 
-That's what happens when I hack about with things beyond my understanding. Quite a fun little project. One more video to come.
+With the clock settings sorted out, the sound playback is much better. I've made a little tune to demonstrate it, and the Lunchbeat is finally doing something a bit closer to what it's supposed to do. Just sit back and listen. They sure can be catchy!
+
+We've actually got three of these machines assembled, and this particular Lunchbeat belongs to SuperNick (Nick). There are still a couple of little things to tidy up, including the battery holder and the on/off switch arrangement, but the important part is working.
+
+You can even connect multiple Lunchbeats together if you've got two or more. Just think of the possibilities! That's what happens when I hack about with things beyond my understanding. Quite a fun little project, and one more video to come.
 
 ### Sources
 

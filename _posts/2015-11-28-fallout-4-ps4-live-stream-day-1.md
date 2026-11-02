@@ -8,11 +8,11 @@ categories: [gaming, livestream, youtube]
 
 {% include youtube.html id="2awj-XT2E7Y" %}
 
-Today was the big day: I gave live streaming a test with the shiny new Fallout 4. Unfortunately, the roughly 1 Mbps uplink on this ADSL connection simply isn't enough for much beyond 360p. Maybe 480p if I'm really lucky.
+Today was the big day: I gave live streaming a test with the shiny new Fallout 4. Unfortunately, the roughly 1 Mbps uplink on this ADSL connection simply isn't enough for much beyond 360p. Maybe 480p if I'm really lucky. Welcome to the wonderful world of Australian internet!
 
-We were expecting NBN availability in this area sometime in early 2016. What I expected locally was a 25/5 service, lifting the upload side from about 1 Mbps to about 5 Mbps. I'd been hoping for 40 Mbps up, so five still sounded disappointing.
+We're expecting NBN availability around here sometime in early 2016, which should be an improvement. Unfortunately, the service I'm expecting is only 25/5, taking my upload speed from about 1 Mbps to roughly 5 Mbps. I'd been hoping for something closer to 40 Mbps up, so five is a bit disappointing!
 
-That 25/5 figure was the service I expected here, not an NBN-wide ceiling. Higher 50/20 and 100/40 tiers existed, though actual speeds depended on the line and service.
+There are faster NBN plans, of course, including 50/20 and 100/40, but what actually turns up at your house is another matter. For the moment, 25/5 looks like what we're getting locally. At least it'll be quicker than this ADSL connection!
 
 What a disappointment. Good job Australia. 25/5 for the next 10, maybe 50 years? Girt by sea and run by those in the ID-10t club.
 

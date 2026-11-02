@@ -1,0 +1,49 @@
+name: Newcastle Article Image Move QA
+on:
+  push:
+    branches:
+      - qa/newcastle-image-relocation-2026-11-02
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll
+        run: bundle exec jekyll build --destination _site
+      - name: Check relocated image paths and original bytes
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import subprocess,re
+          new_base='assets/images/2026/10/the-newcastle-chapter-i-never-got-to-finish/'
+          names = [
+            ('newcastle-2019-birds-perch.webp','200516acaf825a601c912fede6f74fcbef23d1a2'),
+            ('newcastle-2019-birds.webp','e74d5b5f7c0d61f1a08a9bc5b2ff6dd466a668c0'),
+            ('newcastle-2019-train.webp','5db56e1c5ded5ed9d4fd6ffbee17a08718cbf3f5'),
+            ('newcastle-2019-chem-notes.webp','87cdd6f3c21345101a09f3a9a8ae98ddc967581e'),
+          ]
+          article=Path('_posts/2026-10-14-the-newcastle-chapter-i-never-got-to-finish.md').read_text()
+          html=Path('_site/the-newcastle-chapter-i-never-got-to-finish/index.html').read_text()
+          for name, sha in names:
+            old='assets/images/2026/'+name
+            new=new_base+name
+            src=Path(new)
+            built=Path('_site') / new
+            assert src.exists() and built.exists(), f'Missing source or deployed image: {name}'
+            assert subprocess.check_output(['git','hash-object',new],text=True).strip()==sha, f'Changed image bytes: {name}'
+            assert src.read_bytes()==built.read_bytes(), f'Jekyll changed image bytes: {name}'
+            assert not Path(old).exists() and not (Path('_site')/old).exists(), f'Old path still exists: {name}'
+            assert article.count('/'+new)==1 and '/'+old not in article, f'Incorrect article reference: {name}'
+            assert f'src="/{new}"' in html, f'Incorrect rendered image reference: {name}'
+          assert article.startswith('---\n'), 'Missing frontmatter'
+          print('PASS: four WebP files moved byte-identically, four article references updated, original paths absent')
+          PY

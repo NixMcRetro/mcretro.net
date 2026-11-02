@@ -10,9 +10,17 @@ categories: [programming, youtube]
 
 In this video we finally give the Lunchbeat a chance to play some phat tunes. Something isn't quite right, though. If you guessed that it isn't using the external crystal and is instead running from the internal clock source, you'd be correct! :D
 
-I had the right idea about using the internal clock, but it is an RC oscillator rather than a crystal. Close in spirit, wrong in silicon. With the ATmega328P's factory clock settings, the 8 MHz oscillator is divided by eight to give a 1 MHz system clock. That could explain why everything sounds a little... relaxed.
+The Lunchbeat is making some rather wonderful noises. There are knobs for changing the sounds and their timing, and I've managed to get something that sounds like a laser beam being fired next to a Geiger counter. Lovely! One of the noises even reminds me of something exploding in Scorched Earth.
 
-The external 16 MHz crystal gets its turn in the next sound demo.
+The sequencer is working too, although I'm still figuring out which buttons do what. I've managed to find myself in some sort of programming mode without knowing how I got there. That's what happens when you rely on guesswork instead of reading the instructions!
+
+After a bit more button pressing, I've got a pattern playing and can adjust the tempo. There's quite a bit you can do with this little machine, even when you have absolutely no idea what you're doing. I'm not a professional DJ, as you can probably tell!
+
+The clock settings are making a difference to the sound. The ATmega328P has an internal 8 MHz RC oscillator, but its factory clock settings divide that by eight, leaving us with a 1 MHz system clock. That might explain why some of these sounds are a little on the relaxed side. The external 16 MHz crystal hasn't had its turn yet.
+
+I can also get into the configuration menu to change the clock settings and synchronisation options. Apparently you have to hold the button down for quite a while! Maybe I should've read that part of the documentation first.
+
+It's a fantastic little project, even if most of my musical creations sound like a laser beam, drum and bass, or some terrible combination of both. I'll make another video once I manage to produce something resembling actual music. Then again, perhaps I've already invented techno!
 
 ### Sources
 

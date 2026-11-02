@@ -8,9 +8,15 @@ categories: [programming, youtube]
 
 {% include youtube.html id="PhpF1AXMBZg" %}
 
-This time I'm programming the PIC18F2550 that forms the heart of the PICkit 2 programmer. That is separate from the AVR microcontroller in the Lunchbeat itself.
+This time I'm programming the PIC18F2550 that forms the heart of the PICkit 2 programmer. That's separate from the AVR microcontroller in the Lunchbeat itself, which is another adventure entirely!
 
-The bonus challenge is still to program the Atmel chip with the PICkit 2 and AVRDUDE... just for kicks... in OS X!
+I've managed to get quite a few components installed on the boards, although I'm still waiting for some more parts to arrive. I also managed to order the wrong number of transistors. Whoops! Apparently counting the things you need before placing an order is a useful skill.
+
+The good news is that the PIC18F2550 fits straight into my GQ-4X programmer. I'd been expecting to run wires from the socket to the chip legs, but there's no need for any of that nonsense. It just fits. Fantastic!
+
+I've loaded the firmware into the programming software and let the GQ-4X do its thing. The VCC and VPP indicators are hard at work, and after a bit of waiting the chip is programmed. Nice and easy! That's one more piece of the PICkit 2 build sorted out.
+
+There are still some resistors and capacitors to arrive, including the 2.7 kΩ resistors I'm waiting on. Once everything is assembled, the bonus challenge is still to use the PICkit 2 with AVRDUDE to program the Atmel chip in the Lunchbeat... just for kicks... in OS X!
 
 ### Sources
 

@@ -8,9 +8,17 @@ categories: [programming, youtube]
 
 {% include youtube.html id="wikkB21uws0" %}
 
-We're getting closer! Some components have now been installed, but I'm still waiting for more parts to arrive. Here's hoping they do!
+We're getting closer! Some components have now been installed, but I'm still waiting for more parts to arrive. We're encountering some strong resistance from component manufacturers, and getting everything in stock is proving rather interesting. Hopefully the remaining parts will turn up soon!
 
-The bonus challenge is still to program the Atmel chip with the PICkit 2 and AVRDUDE... just for kicks... in OS X!
+Both the Lunchbeat and PICkit 2 boards are looking pretty complete now. The PICkit 2 is being recognised when I plug it in, and I've already managed to program the PIC18F2550 with the GQ-4X. Excellent! Now I just need everything else to arrive so we can get on with the next stage.
+
+I'm still waiting for some 2.7 kΩ resistors, a few capacitors, LEDs and the battery holder. I've also fitted some of the headers, although I'd like to use right-angle ones in a couple of places to make the cable arrangement a little tidier. Why make things easy when you can spend half the day deciding which way a connector should face?
+
+I've gone with black buttons along the bottom and a red reset button. The red button doesn't stick out quite as far as the others, so reset seems like a good job for it. I've also used a couple of surface-mount 22 pF capacitors and fitted a 0.33 uF capacitor near the 7805 regulator.
+
+There are a few wire links scattered around the boards too, including one hiding underneath a chip socket. I nearly missed that one! That would've been an entertaining fault to track down later.
+
+Once the remaining parts arrive, the idea is to use the PICkit 2 to program the Atmel AVR in the Lunchbeat. For now, everything is coming together rather nicely. Stay tuned for more updates!
 
 ### Lunchbeat / PICkit 2 series
 

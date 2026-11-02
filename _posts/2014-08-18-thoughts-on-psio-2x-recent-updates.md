@@ -8,7 +8,13 @@ categories: [sony, youtube]
 
 {% include youtube.html id="7-_8NkEE1qw" %}
 
-With all the incredible work done on the 1.1 prototype, the 2.x prototype was racing along! The development updates were reporting CDDA and XA support. Full audio and a whole lot of bugs squashed! My firsthand testing was still on 1.1, so this was excitement about the updates rather than a 2.x test.
+With all the incredible work done on the PSIO 1.1 prototype, the 2.x prototype is racing along! I've uploaded about thirty PSIO videos so far, and the developers are reporting roughly 81% completion. An oddly precise number, but I'll take it!
+
+The really exciting news is that CDDA and XA audio playback are now working according to the development updates. Those were two of the big missing features on the 1.1 hardware, particularly when trying to play games with CD audio and full-motion video. There are still bugs to squash and plenty of optimisation underway, but it's fantastic seeing things move forward.
+
+The latest updates also mention direct booting from the PSIO menu and improvements to XA playback alongside SPU RAM-based audio. I haven't got my hands on the 2.x hardware yet, so this is all coming from the team's progress reports rather than my own tests. I'm looking forward to seeing how it behaves!
+
+Of course, I do have to go to work every day. As much as I'd rather stay home playing with all this wonderful hardware, somebody has to earn the money to pay for it! I'll bring you more updates as they come along.
 
 Be sure to visit [PSIO](https://ps-io.com/) for the latest up-to-the-minute information!
 

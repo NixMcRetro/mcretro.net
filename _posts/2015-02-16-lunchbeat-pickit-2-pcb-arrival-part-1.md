@@ -10,7 +10,15 @@ categories: [programming, youtube]
 
 The Lunchbeat / PICkit 2 adventure begins! The Lunchbeat is Buranelectrix's neg-fi groovemachine with 1-bit sounds, and now the properly fabricated PCB has arrived for the next round.
 
-As a bonus challenge, we'll be programming the Atmel chip with a PICkit 2 and AVRDUDE... just for kicks... in OS X! I think this is a **nine-part** series and we'll be cranking out the videos over the next few weeks.
+I've ordered some lovely purple circuit boards from OSH Park. The postman turned up with purple parcels containing purple PCBs, which is rather satisfying! Unfortunately, I'd barely ordered the Lunchbeat boards before the designer went ahead and released a kit. Wonderful timing. We probably could've saved ourselves a bit of trouble!
+
+The Lunchbeat board looks pretty good, complete with a little anime mascot on the back. Someone else suggested that addition, so we had a fiddle around in EAGLE and managed to get it onto the silkscreen. It's come out rather nicely! One of the switch holes looks a little crooked, but I don't think that'll cause too much trouble.
+
+I've also got boards for building a PICkit 2 programmer. The idea is to use the PICkit 2 with AVRDUDE to program the Atmel chip in the Lunchbeat, just for kicks... in OS X! There are easier ways of doing things, but where's the fun in that?
+
+Most of the components are still on order, so there's only so much assembling I can do at the moment. I've got some sockets, but there are plenty more little bits to arrive. Hopefully everything turns up soon and we can get these boards doing something interesting!
+
+I think this is going to be a **nine-part** series, with more videos appearing over the next few weeks. Stay tuned!
 
 ### Sources
 

@@ -10,9 +10,19 @@ categories: [gaming, sony, youtube]
 
 Wipeout! All of them. So many Wipeouts. I didn't realise there were that many alternative names. If I did, I wouldn't have done them all at once since they nearly burst out the side of the YouTube video!
 
-Not much luck with Wipeout sadly. The 2.x development updates were talking about further work on PSIO's hardware, firmware and software, so I'm hoping for much better compatibility.
+Not much luck with Wipeout sadly. The 2.x development updates are talking about further work on PSIO's hardware, firmware and software, so I'm hoping for much better compatibility.
 
-Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
+First up, I'm trying to work out what I've actually got in the game list. The filenames are rather short, thanks to the old 8.3 naming convention, so some of them aren't particularly obvious. Whatever the first one is, it gives me a black screen. A wonderful start!
+
+Let's try the original Wipeout instead. At least this one brings up some full-motion video, although there's no sound. That's not particularly surprising on the 1.1 prototype. Unfortunately, it doesn't get much further before appearing to lock up.
+
+Wipeout XL, or Wipeout 2097 depending on where you live, isn't having a great day either. We get more introductory video without audio, followed by a loading screen that doesn't seem interested in going anywhere. Another one for the list!
+
+That leaves Wipeout 3, or Wip3out if we're being fancy. I actually manage to get a little further with this one, even reaching what looks like the start of a time trial. For a moment I'm thinking we might get somewhere, but it eventually locks up too. So close!
+
+It's worth remembering that some of the game images I'm testing might have problems of their own, so there are a few things to consider when something refuses to load. Even so, it's clear that the Wipeout games aren't particularly happy with this prototype setup.
+
+There's still a lot of work being done on the 2.x hardware and software, so hopefully we'll have better luck when the next revision comes along. For now, if you're desperate to play Wipeout, you might want to stick with your original discs!
 
 You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 
@@ -22,7 +32,6 @@ You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am 
 - PSIO software: 1.1A
 - PlayStation: PAL SCPH-5502
 - CD deck: removed
-
 
 ### Related PSIO prototype posts
 

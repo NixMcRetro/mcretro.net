@@ -8,7 +8,9 @@ categories: [gaming, nintendo, youtube]
 
 {% include youtube.html id="Geaa7ALiVl4" %}
 
-Spelunker began as Tim Martin and Micro Graphic Image's 1983 computer game. Irem later ported it to the Famicom / NES, releasing the Japanese version in 1985. Brøderbund published the North American NES release in 1987. This video is a look at that NES version.
+Time for some Spelunker on the NES! This one started life as Tim Martin and Micro Graphic Image's 1983 computer game, before Irem brought it to the Famicom in Japan in 1985. Brøderbund later published the North American NES version in 1987.
+
+Here's a look at that NES release. Another old game to add to the Extreme Plays collection!
 
 ### Sources
 

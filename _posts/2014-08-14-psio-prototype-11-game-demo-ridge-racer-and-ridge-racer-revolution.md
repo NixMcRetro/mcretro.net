@@ -12,7 +12,13 @@ Raaaaaaaaaaacing around those corners like a freaking pinball in a pinball machi
 
 Ridge Racer and Ridge Racer Revolution both worked pretty well in the parts I tested on this PSIO 1.1 prototype. I'm hoping the new 2.x hardware will sort out the remaining prototype weirdness!
 
-Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
+First up is the original Ridge Racer, and I'm already bouncing off the walls like an expert. There's something wonderfully ridiculous about the way these old racing games handle. I'm sure I've made a video about this one before, although I can't remember there being quite so many helicopters!
+
+The game is running, and I'm able to get stuck into the racing. Unfortunately, the background music isn't working, which is rather noticeable in a Ridge Racer game. The missing CD audio is still one of the things to sort out on this prototype.
+
+Next up is Ridge Racer Revolution, which is giving me another chance to demonstrate my extraordinary driving abilities. I'm bouncing around corners, chasing the cars in front and generally wondering who thought putting this many bends on a racetrack was a good idea. I'm doing the best I can here!
+
+The game seems to be playing nicely enough, apart from the missing music. At least we've got the racing itself working, which is more than I can say for some of the other games I've been trying on the PSIO!
 
 You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 
@@ -22,7 +28,6 @@ You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am 
 - PSIO software: 1.1A
 - PlayStation: PAL SCPH-5502
 - CD deck: removed
-
 
 ### Related PSIO prototype posts
 

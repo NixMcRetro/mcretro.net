@@ -8,7 +8,9 @@ categories: [gaming, sega, youtube]
 
 {% include youtube.html id="gqT2MrqWwQc" %}
 
-Dead Angle began as a 1988 arcade shooter developed by Seibu Kaihatsu. FabTek handled the North American arcade release, but the 1989 Master System conversion was reprogrammed and published by Sega. Funnily enough, this is not a Light Phaser game! It uses the control pad instead. This is an arcade port and looks to be quite a thriller. Enjoy the video!
+Here's Dead Angle on the Sega Master System, a rather interesting-looking arcade conversion. It started out as a 1988 arcade shooter developed by Seibu Kaihatsu, with FabTek handling the North American arcade release. Sega reprogrammed and published the Master System version in 1989.
+
+Funnily enough, this isn't a Light Phaser game! You use the control pad instead. It looks to be quite a thriller, so let's get stuck in. Enjoy the video!
 
 ### Sources
 

@@ -10,7 +10,13 @@ categories: [gaming, sony, youtube]
 
 Gran Turismo 2 did not have much luck on this PSIO 1.1 prototype setup. I'm hoping the improvements in the upcoming 2.x PCB hardware will bring much better compatibility!
 
-Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
+First up is the GT2 Simulation disc, which doesn't seem particularly interested in starting. I tried it again after powering everything down and restarting the PSIO software, but unfortunately there's still no dice. Wonderful!
+
+The GT2 Arcade disc behaves a little better. At least it gets far enough to display something, although that isn't quite the same thing as getting into a race. I can tell it's a car game because it mentions cars on the screen. That's progress, isn't it?
+
+While I'm here, I might as well give the original Gran Turismo a try too. It manages to show some video, although I'm not getting any audio, and it doesn't appear to progress much further. Looks like my racing career will have to wait!
+
+There are still plenty of things being worked on for the next prototype revision, so I'm hoping compatibility improves as the PSIO hardware and software develop. For now, the Gran Turismo games are proving rather troublesome on this particular setup.
 
 You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 

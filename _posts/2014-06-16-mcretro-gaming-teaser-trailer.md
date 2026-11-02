@@ -12,6 +12,8 @@ I've just made a channel dedicated to retro gaming! Check out [McRetro Gaming](h
 
 It's the spiritual successor to Xtreme Retro Gaming, now defunct. Gameplay, hints and tips will all be provided by me, Nix McRetro! Lucky you! So get over there and pick up a subscription. I'll be sure to upload more videos in the future.
 
+I'm concentrating on the older systems here, pretty much anything before the Dreamcast and GameCube era. Definitely no PlayStation 2! If that sounds like your sort of gaming, jump aboard and have a look. Leave a comment while you're there, although I suppose you'd have to watch a video first to do that!
+
 And yes, that's the Aiwa Mega-CD CSD-GM1 in the background too!
 
 ### Related posts

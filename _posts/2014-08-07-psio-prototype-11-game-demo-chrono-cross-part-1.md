@@ -10,7 +10,17 @@ categories: [gaming, sony, youtube]
 
 This game seems to run so well on the 1.1 prototype hardware it would seem like it's final! Many of the Square and Enix (and Square Enix) titles ran out of the box in my tests on this prototype.
 
-Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
+First I've got to get everything fired up. The XRGB-mini is outputting at 480p and 60 Hz, and once the PSIO software is running I can select Chrono Cross from the game list. A bit of blinking from the PSIO, a moment of waiting, and there it is. Excellent!
+
+The XRGB-mini isn't particularly quick at switching between resolutions, so there are a few black screens along the way. I've also managed to get some rather jittery video by choosing the wrong output settings. My bad! At least that doesn't stop me getting into the game.
+
+Chrono Cross is looking pretty good. I've made it through the opening, wandered around for a while and even got myself into a few battles. I keep getting lost, naturally. There are bats everywhere, and I seem to spend half the time working out where I've already been!
+
+The controls are behaving, including the analogue stick, although I'm not particularly fond of using it here. There's even a bit of controller vibration, which had me wondering why my leg was twitching. Turns out it wasn't my leg at all!
+
+It's a good result for such an early prototype. The game is running and I'm able to play through part of it, which is rather encouraging. Whether the whole game behaves is another matter, but so far I'm having a pretty good time.
+
+Please remember that this is prototype hardware. These tests are on revision 1.1, and there's still more work going into the hardware and software.
 
 You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 

@@ -8,7 +8,7 @@ categories: [gaming, nintendo, youtube]
 
 {% include youtube.html id="CO7Uq2UF--k" %}
 
-The NES version of Snow Bros. is based on Toaplan's arcade game. MobyGames credits Sol Corporation with the NES port, and Capcom published the North American release in 1991.
+Here's Snow Bros. on the NES! It started out as Toaplan's arcade game, with Sol Corporation handling the NES conversion and Capcom publishing the North American release in 1991. Time to get stuck into some snowball action!
 
 ### Sources
 

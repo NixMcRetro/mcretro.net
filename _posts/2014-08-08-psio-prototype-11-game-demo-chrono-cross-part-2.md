@@ -10,7 +10,15 @@ categories: [gaming, sony, youtube]
 
 More Chrono Cross on the PSIO 1.1 prototype. This game seems to run so well it would seem like it's final! Many of the Square and Enix (and Square Enix) titles ran out of the box in my tests on this prototype.
 
-Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
+One thing worth pointing out is that I can disconnect the USB cable once the game has booted. The computer is used for the initial loading process, but the game isn't continuously streaming from it while I'm playing. I'm sure I've mentioned that a million times already, but it never hurts to be thorough!
+
+This time I'm wandering around the village, talking to everyone and doing a remarkably good job of getting lost. I always seem to get caught up exploring these RPGs, even when I've got somewhere I'm supposed to be. There are huts, people who won't stop talking, and a fair bit of running around while I work out what I'm doing.
+
+Eventually I find myself heading towards Lizard Rock, although I wasn't paying enough attention when I agreed to go there. What did I just sign myself up for? Never mind, there are lizards to investigate, and apparently some scales to collect.
+
+The game is still behaving nicely on the prototype, and I'm able to continue exploring and getting into battles. So far, so good! There's plenty more Chrono Cross to get through, but that's enough wandering around for one video.
+
+Please remember that this is prototype hardware. These tests are on revision 1.1, and future hardware and software changes may behave differently.
 
 You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 

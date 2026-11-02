@@ -10,7 +10,15 @@ categories: [gaming, sony, youtube]
 
 Grandia, so close to working on the 1.1 prototype! I bet it's been nailed on 2.x hardware, but this recording is from 1.1. Any progress is progress, and the team at [PSIO](https://ps-io.com/) have been hammering along.
 
-Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
+I'm not terribly familiar with Grandia, so let's fire it up and see what happens. We get the opening full-motion video, which is rather nice, although there's no audio to accompany it. That's one of the things still missing on this particular hardware and software revision, so it's not entirely unexpected.
+
+There's some rather lovely artwork, plenty of anime-looking characters and what appears to be some sort of flying ship. I'm beginning to think I've seen this game before. Unfortunately, I can't seem to skip the opening, so we're going to have to sit through it in silence!
+
+Eventually we get a bit further and some audio starts playing. Excellent! Well, excellent until the game starts repeating the same dialogue over and over while a character seems to be permanently facepalming. Not exactly what I had in mind!
+
+I've tried Grandia before and managed to reach a slightly different point, but the result was much the same. Another lock-up, and another game that isn't quite ready for action on the 1.1 prototype. At least we're getting further than a blank screen!
+
+There's still plenty of work underway on PSIO, and I'm hoping the next hardware revision sorts out some of these compatibility issues. For now, Grandia is going to have to wait.
 
 You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 

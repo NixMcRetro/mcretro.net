@@ -10,9 +10,13 @@ categories: [gaming, sony, youtube]
 
 I fired the PSIO prototype up back in March 2014, recorded some video, moved house multiple times, and eventually rediscovered the footage. Essentially, it's an overview of how everything is connected up to the prototype PSIO device.
 
-Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
+I've got the PlayStation connected through the good old XRGB-mini Framemeister using RGB, with HDMI running out to the television. The PSIO hardware itself plugs into the PlayStation's parallel port, and the CD deck has been removed. No discs are going in this one!
 
-We're using the good old XRGB-mini with RGB to overcome the lack of colour on composite when playing NTSC games on this PAL SCPH-5502. Something to do with needing a colour-correction mod on PAL hardware. RGB avoids that composite colour-encoding issue. It's all gravy though, as RGB is far superior!
+The computer handles choosing and loading the games through the PSIO software, which I'm running inside a virtual machine. The game images are stored on a microSD card that slots into the back of the prototype, next to its two little LEDs. It's a slightly involved arrangement, but it works well enough for getting some testing done.
+
+The XRGB-mini also helps me get around the lack of colour on composite when running NTSC games on this PAL SCPH-5502. Something to do with needing a colour-correction modification on PAL hardware. It's all gravy though, as RGB is far superior!
+
+I've got a selection of games lined up, including Chrono Cross, Grandia, Gran Turismo, Mega Man Legends, Ridge Racer, Soul Blade and the Wipeout games. This is still early prototype hardware, so there's no guarantee they'll all behave themselves. That's what we're here to find out!
 
 You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 

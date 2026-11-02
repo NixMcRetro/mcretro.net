@@ -8,11 +8,15 @@ categories: [gaming, sony, youtube]
 
 {% include youtube.html id="AUr1WM6gHco" %}
 
-The game that led to SoulCalibur. Not too bad! It still reminds me a little of Virtua Fighter on the old Sega. From what I could see here, the game ran well on PSIO 1.1, but the background music was missing. I'm hoping the upcoming 2.x hardware will fix that!
+The game that led to SoulCalibur. Not too bad! It still reminds me a little of Virtua Fighter on the old Sega. From what I can see here, the game runs well on PSIO 1.1, but the background music is missing. I'm hoping the upcoming 2.x hardware will fix that!
 
 Soul Edge is the first game in what became the Soulcalibur series. The PlayStation version retained the Soul Edge name in Japan and was released as Soul Blade outside Japan.
 
-Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
+I've fired up Soul Blade and managed to get straight into a fight. Excellent! The graphics are working, the controls respond and we've even got the regular sound effects. It's just the background music that's missing, which is rather unfortunate for a fighting game.
+
+Naturally, I'm spending a fair bit of time being hit with swords and occasionally falling out of the ring. This is what happens when you start pressing buttons without having the faintest idea what all the moves are. Still, the game is playing nicely enough, and I'm getting through some fights!
+
+It's a pretty good result for the 1.1 prototype. The missing music is something I'm hoping will improve with the newer hardware and software, but at least there's plenty of fighting to be done in the meantime.
 
 You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 
@@ -22,7 +26,6 @@ You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am 
 - PSIO software: 1.1A
 - PlayStation: PAL SCPH-5502
 - CD deck: removed
-
 
 ### Sources
 

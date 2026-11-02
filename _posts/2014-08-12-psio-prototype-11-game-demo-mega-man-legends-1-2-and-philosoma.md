@@ -10,7 +10,13 @@ categories: [gaming, sony, youtube]
 
 I was really hoping for some Capcom kicking and punching in Mega Man Legends and some shmup action in Philosoma, but not today! Mega Man Legends, Mega Man Legends 2 and Philosoma did not seem to work correctly on the PSIO 1.1 prototype in this test. With 2.x hardware underway, I'm hoping for better compatibility... I can't wait!
 
-Please remember that this is prototype hardware. These results, including game compatibility, may not reflect later revisions or the final product.
+Mega Man Legends is first up, although it doesn't seem interested in loading. Nothing! Let's power everything down, reset the PSIO software and try Mega Man Legends 2 instead. Unfortunately, that isn't having much luck either. So much for my Mega Man adventures!
+
+Next up is Philosoma, which at least manages to get a little further. We get some rather exciting-looking spacecraft and explosions, and for a moment it looks as though things might actually work. Then the XRGB-mini decides to have its own little adventure with the video signal!
+
+I'm still getting used to the Framemeister, and the picture keeps changing between looking reasonable and being completely out of sync. At one point it even reports an invalid format, which is a new one on me. A bit more fiddling eventually gets the picture back, but the game isn't much happier.
+
+I can reach some of the menus and see a bit of the game, but it doesn't seem to get properly underway. Never mind! We've got prototype hardware, a pile of games and plenty of opportunities to find things that don't work. That's testing for you!
 
 You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am but a mere tester and don't understand the technology behind this wonderful invention.
 

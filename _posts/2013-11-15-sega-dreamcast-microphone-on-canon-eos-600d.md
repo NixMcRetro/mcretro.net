@@ -8,4 +8,12 @@ categories: [hacks, sega, youtube]
 
 {% include youtube.html id="EMbs15C313I" %}
 
-Oh, you probably should know that I did mix the mono signal into both channels instead of just the left channel too. Anyway, there are some exciting things in the pipeline, but while I was away it looks like YouTube broke the commenting system... hmmm... :)
+Here's something a little different. I've taken the microphone from Sega's Dreamcast Planet Ring package and connected it to my Canon EOS 600D to see how it sounds. You can probably tell that the voice quality is a bit different from my usual recordings. Isn't this a fantastic microphone?
+
+The Dreamcast microphone wasn't exactly designed for this sort of thing, but I thought it would be interesting to give it a go. I've also mixed the mono signal into both audio channels instead of having it come through only the left side. At least everyone should be able to hear me!
+
+I'm actually looking for a better microphone for future videos, so if you've got any suggestions, feel free to leave a comment. I've been considering a few Shure microphones and one of those Blue Yeti models, although I'd prefer to keep things analogue rather than using USB. I've got my reasons for that, which I'll probably explain another time.
+
+There are some exciting things in the pipeline, but while I've been away it looks like YouTube has managed to break the commenting system. Wonderful timing! I'll certainly read your suggestions, although replying to everything might be another matter entirely.
+
+Anyway, let me know what you think of the audio. Hopefully the next microphone experiment will sound a little better! :)

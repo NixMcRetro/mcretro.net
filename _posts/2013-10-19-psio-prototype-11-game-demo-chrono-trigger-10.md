@@ -8,9 +8,17 @@ categories: [gaming, sony, youtube]
 
 {% include youtube.html id="S0HOeJvV2hc" %}
 
-Chrono Trigger 1.0 seems to run well. There is no audio on the FMV, but the gameplay and other sounds and music seem to work quite well indeed! Always a plus in my book.
+Next up on the PSIO prototype is Chrono Trigger 1.0. I've never actually played this one before, but I've heard plenty about the time travelling, so I thought I'd give it a go. There are two versions to test, 1.0 and 1.1, and starting with the first one seems sensible enough!
 
-Please remember that this is a prototype device and these results do not necessarily reflect the final hardware or game compatibility. You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I am but a mere tester. I do not understand the technology behind this wonderful invention.
+The opening sequence appears, although there's no audio accompanying the full-motion video. That's a bit disappointing, but once I get into the game itself, the sound effects and music seem to be working quite nicely. It's already a better result than some of the other PlayStation games I've been testing.
+
+Before long I'm wandering around the Millennial Fair, talking to people and generally trying to work out what I'm supposed to be doing. I've already met a few characters, found a pendant and almost named somebody Dr. Emmett Brown. Seemed appropriate for a game about time travel!
+
+There are battles to fight, things to buy and plenty of people to talk to. Eventually I came across a teleporter, which looked like an excellent idea until somebody disappeared into a rather unpleasant-looking vortex. Naturally, I decided to follow. What could possibly go wrong?
+
+After a bit more exploring and fighting, the game is still running. We've even made it to the year 600 AD, which seems like a reasonable place to end this little test. The gameplay, sound effects and music have all been behaving well enough, even if the opening FMV was missing its audio.
+
+So Chrono Trigger 1.0 looks promising on this PSIO prototype. Remember that I'm testing hardware 1.1 with software 1.1A, and these results don't necessarily reflect later hardware or the finished product. You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I'm but a mere tester!
 
 **Prototype test conditions**
 

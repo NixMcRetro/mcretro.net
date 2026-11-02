@@ -8,9 +8,17 @@ categories: [gaming, sony, youtube]
 
 {% include youtube.html id="MYzZAY3syUI" %}
 
-Version 1.1 of Chrono Trigger consistently locks up during the opening FMV on this PSIO setup. This video compares 1.0 and 1.1 to see if the lockup was consistent, and it was! I did not establish what changed between the revisions or why they behaved differently.
+After having some success with Chrono Trigger 1.0, I thought I'd give version 1.1 a go on the PSIO prototype. It might behave exactly the same way as the first version, but there's only one way to find out. Besides, it never hurts to test these things properly!
 
-Please remember that this is a prototype device and these results do not necessarily reflect the final hardware or game compatibility. You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I am but a mere tester. I do not understand the technology behind this wonderful invention.
+The game starts loading, and everything looks reasonably promising at first. Then we get a rather awkwardly long black screen. I gave it some time in case it was simply being slow, but unfortunately it didn't seem particularly interested in recovering.
+
+Time for another attempt! I rebooted the PlayStation, loaded Chrono Trigger 1.1 again and waited to see whether it would get any further. No luck. It stopped at the same point, which is annoying, but at least it's a consistent problem.
+
+I tried it again to make sure, then went back to version 1.0 for comparison. That version continued past the troublesome section, just as it had in the earlier test. So the difference between the two versions appears to be repeatable on this particular setup.
+
+I haven't established exactly what changed between Chrono Trigger 1.0 and 1.1, or why the newer version locks up here. It could be something in the way the game loads its opening sequence, but that's only a possibility. For now, version 1.0 works in my tests and version 1.1 is a no-go.
+
+Please remember this is PSIO prototype hardware 1.1 running software 1.1A, so these results don't necessarily apply to later revisions. You can find out more about the project at [ps-io.com](https://ps-io.com/).
 
 **Prototype test conditions**
 

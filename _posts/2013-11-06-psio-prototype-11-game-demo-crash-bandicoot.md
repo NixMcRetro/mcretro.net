@@ -8,9 +8,19 @@ categories: [gaming, sony, youtube]
 
 {% include youtube.html id="cPZOVBjCRT0" %}
 
-Crrrrrrashhhhh Bandicoot (pronounce with a Cortex-like accent) is one of the best platformer series for the PlayStation 1, and what do you know, it works a charm in this PSIO test.
+Crrrrrrashhhhh Bandicoot! You'll have to imagine me saying that in my best Doctor Cortex voice. This is one of the best platformer series on the original PlayStation, and I'm pleased to report that the first game seems to work a charm on the PSIO prototype.
 
-Please remember that this is a prototype device and these results do not necessarily reflect the final hardware or game compatibility. You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I am but a mere tester. I do not understand the technology behind this wonderful invention.
+The opening cutscenes are playing nicely, complete with sound, and before long I'm running around Insanity Beach collecting Wumpa fruit and generally trying not to fall off things. The graphics and gameplay are looking good so far.
+
+Unfortunately, there's nothing PSIO can do about my ability to play the game. I've already managed to fall down holes, miss jumps and get myself into all sorts of trouble. I've also been reminded that jumping onto TNT crates isn't usually a particularly clever idea!
+
+I kept playing through the level, dodging enemies and trying to remember which way I was supposed to go. There's plenty of classic Crash Bandicoot platforming here, and everything seems to be behaving normally in what I've tested.
+
+I've even got a memory card in the console, so the game can use its normal saving arrangements. That's another useful thing to have working while I continue testing different games on the prototype.
+
+So Crash Bandicoot gets a big tick from me. It seems to be working very nicely on PSIO hardware 1.1 with software 1.1A, although of course I'm only reporting what I've tested, not claiming to have finished the whole game.
+
+You can find out more about the project at [ps-io.com](https://ps-io.com/), since I'm just the tester and not the person responsible for making this wonderful invention work.
 
 **Prototype test conditions**
 

@@ -8,9 +8,17 @@ categories: [gaming, sony, youtube]
 
 {% include youtube.html id="TuTwc8MRlnU" %}
 
-Another fantastic Square title that seems to work perfectly in this PSIO test!
+Another fantastic Square title to try on the PSIO prototype, and this time it's Final Fantasy IX. So far I've been having rather good luck with the Final Fantasy games, and this one doesn't seem to be an exception. The game loads and runs nicely, which is exactly what I was hoping for!
 
-Please remember that this is a prototype device and these results do not necessarily reflect the final hardware or game compatibility. You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I am but a mere tester. I do not understand the technology behind this wonderful invention.
+I've been playing around with the opening sections and generally making a mess of the controls. Still, everything I've tested so far seems to be working. I'm rather impressed with how many of these games are running on such early hardware.
+
+One thing I've mentioned before is that the USB cable isn't needed once the game has finished loading through the bootloader. The prototype still needs the computer connection to select another game, but during gameplay it can carry on without it.
+
+Then I thought I'd see what happened if I removed the microSD card while the game was running. Not a particularly useful thing to do during an actual game, but it's an interesting experiment. Unfortunately, the game didn't recover properly afterwards. There's a lesson for you: don't pull out the microSD card while you're playing!
+
+Of course, I hadn't saved my progress before trying that little experiment. Wonderful! Now I get to go through everything again. At least Final Fantasy IX appears to work well under normal conditions in this particular test.
+
+Please remember that this is PSIO hardware 1.1 with software 1.1A, so these results don't necessarily reflect the eventual finished product. You can find more information at [ps-io.com](https://ps-io.com/).
 
 **Prototype test conditions**
 

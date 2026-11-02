@@ -385,8 +385,6 @@ Save and exit, Ctrl-O (Writeout) and Ctrl-X (Exit).
 <details id="part-9" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 09. Configuring Apache</summary>
 
-**Historical reconstruction note:** The `VirtualHost`, `Directory` and `IfModule` boundaries were recovered from a 24th August 2019 capture of this post. That copy contains damaged `Directory` paths and typographic quotation marks. I've reconstructed the three intended filesystem paths (`/var/www`, `/var/www/blog` and `/var/www/files/public`) and restored ordinary quotation marks in the examples below. These corrections reflect the apparent intent of the original configuration, not an independently verified copy of what ran in 2016. Other historical details, including the missing HTTPS certificate-issuance step in Part 11, remain unverified. Treat the examples as an archive of the setup, not as tested, paste-ready Apache or security instructions.
-
 First up, here's a cool add-on to limit bandwidth and connections for people visiting your website. Great if you have finite bandwidth on the upstream! Installing it was optional in this setup. The settings are in the `IfModule mod_bw.c` section below: `LargeFileLimit * 1 7200` applies a 7200 bytes-per-second limit (57.6 kbit/s) to files at least 1 kilobyte in size, not 1 byte. `MaxConnection all 20` limits concurrent connections for the matching origin collectively, rather than allowing 20 per visitor. At the time I couldn't remember what `Bandwidth all` did... it sets the available bandwidth for the matching origin, in bytes per second. Install with the following command.
 
 `sudo apt-get install libapache2-mod-bw -y`
@@ -567,7 +565,6 @@ Once that is done we are onto the next part.
 
 ### Sources for Part 9
 
-- [McRetro - Take Back the Darknet, Part 9 (24th August 2019 capture)](https://web.archive.org/web/20190824000515/https://mcretro.net/take-back-the-darknet-part-9/)
 - [Debian Jessie - mod_bw 0.92-11 documentation](https://sources.debian.org/src/libapache2-mod-bw/0.92-11/mod_bw.txt/)
 - [Apache HTTP Server 2.4 - Core Features](https://httpd.apache.org/docs/2.4/mod/core.html)
 - [Apache HTTP Server 2.4 - Binding to Addresses and Ports](https://httpd.apache.org/docs/2.4/bind.html)

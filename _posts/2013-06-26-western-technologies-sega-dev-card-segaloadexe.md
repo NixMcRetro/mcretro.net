@@ -8,7 +8,7 @@ categories: [devkit, hacks, sega]
 
 {% include youtube.html id="dHOHttUf32E" %}
 
-More on the Western Technologies Sega Development Card and the software used to run it. `SEGALOAD.EXE` is the PC-side object-code downloader for the SegaDev hardware, sending a compiled image from the development PC into SRAM on the cartridge attached to the Mega Drive.
+More on the Western Technologies Sega Development Card and the software used to run it. SEGALOAD.EXE is the PC-side object-code downloader for the SegaDev hardware, sending a compiled image from the development PC into SRAM on the cartridge attached to the Mega Drive.
 
 After trying out the SegaDev RAM test, I thought I'd have a go at loading Zero Wing. Unfortunately, that wasn't particularly successful. The file was in Super Magic Drive format, and simply renaming it didn't get us anywhere.
 

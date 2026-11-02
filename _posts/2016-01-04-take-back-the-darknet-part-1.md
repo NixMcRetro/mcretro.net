@@ -385,7 +385,7 @@ Save and exit, Ctrl-O (Writeout) and Ctrl-X (Exit).
 <details id="part-9" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 09. Configuring Apache</summary>
 
-**Formatting warning:** The `VirtualHost`, `Directory` and `IfModule` boundaries below have been recovered from a 24th August 2019 capture of this post. That copy already has malformed `Directory` arguments and smart quotes in the HTTPS and onion configurations. Those defects remain unresolved, so these are incomplete historical fragments, not paste-ready Apache configuration.
+**Historical reconstruction note:** The `VirtualHost`, `Directory` and `IfModule` boundaries were recovered from a 24th August 2019 capture of this post. That copy contains damaged `Directory` paths and typographic quotation marks. I've reconstructed the three intended filesystem paths (`/var/www`, `/var/www/blog` and `/var/www/files/public`) and restored ordinary quotation marks in the examples below. These corrections reflect the apparent intent of the original configuration, not an independently verified copy of what ran in 2016. Other historical details, including the missing HTTPS certificate-issuance step in Part 11, remain unverified. Treat the examples as an archive of the setup, not as tested, paste-ready Apache or security instructions.
 
 First up, here's a cool add-on to limit bandwidth and connections for people visiting your website. Great if you have finite bandwidth on the upstream! Installing it was optional in this setup. The settings are in the `IfModule mod_bw.c` section below: `LargeFileLimit * 1 7200` applies a 7200 bytes-per-second limit (57.6 kbit/s) to files at least 1 kilobyte in size, not 1 byte. `MaxConnection all 20` limits concurrent connections for the matching origin collectively, rather than allowing 20 per visitor. At the time I couldn't remember what `Bandwidth all` did... it sets the available bandwidth for the matching origin, in bytes per second. Install with the following command.
 
@@ -417,22 +417,22 @@ ServerName http://tim.net
 ServerAdmin webmaster@tim.net
 DocumentRoot /var/www
 ErrorDocument 404 /404/
-<directory var www>
+<Directory /var/www>
 Options -Indexes +FollowSymLinks
 AllowOverride None
 Require all granted
-</directory>
-<directory var www blog>
+</Directory>
+<Directory /var/www/blog>
 AllowOverride All
-</directory>
-<directory var www files public>
+</Directory>
+<Directory /var/www/files/public>
 Options +FollowSymLinks +Multiviews +Indexes
 AllowOverride None
 AuthType basic
 AuthName "tim File Server"
 AuthUserFile /etc/htpasswd/.htpasswd
 Require valid-user
-</directory>
+</Directory>
 <ifmodule mod_bw.c>
 BandwidthModule On
 ForceBandWidthModule On
@@ -455,27 +455,27 @@ ErrorDocument 404 /404/
 SSLEngine on
 SSLCertificateFile /etc/ssl/certs/tim.crt
 SSLCertificateKeyFile /etc/ssl/private/tim.key
-<directory var www>
+<Directory /var/www>
 Options -Indexes +FollowSymLinks
 AllowOverride None
 Require all granted
-</directory>
-<directory var www blog>
+</Directory>
+<Directory /var/www/blog>
 AllowOverride All
-</directory>
-<directory var www files public>
+</Directory>
+<Directory /var/www/files/public>
 Options +FollowSymLinks +Multiviews +Indexes
 AllowOverride None
 AuthType basic
-AuthName ”tim File Server”
+AuthName "tim File Server"
 AuthUserFile /etc/htpasswd/.htpasswd
 Require valid-user
-</directory>
+</Directory>
 <ifmodule mod_bw.c>
 BandwidthModule On
 ForceBandWidthModule On
-Bandwidth all ”52428800”
-MaxConnection all ”20”
+Bandwidth all "52428800"
+MaxConnection all "20"
 LargeFileLimit * 1 7200
 BandWidthError 510
 </ifmodule>
@@ -492,27 +492,27 @@ ServerName http://tim35qepy5cy.onion/
 ServerAdmin webmaster@tim.net
 DocumentRoot /var/www
 ErrorDocument 404 /404/
-<directory var www>
+<Directory /var/www>
 Options -Indexes +FollowSymLinks
 AllowOverride None
 Require all granted
-</directory>
-<directory var www blog>
+</Directory>
+<Directory /var/www/blog>
 AllowOverride All
-</directory>
-<directory var www files public>
+</Directory>
+<Directory /var/www/files/public>
 Options +FollowSymLinks +Multiviews +Indexes
 AllowOverride None
 AuthType basic
-AuthName ”tim File Server”
+AuthName "tim File Server"
 AuthUserFile /etc/htpasswd/.htpasswd
 Require valid-user
-</directory>
+</Directory>
 <ifmodule mod_bw.c>
 BandwidthModule On
 ForceBandWidthModule On
-Bandwidth all ”52428800”
-MaxConnection all ”20”
+Bandwidth all "52428800"
+MaxConnection all "20"
 LargeFileLimit * 1 7200
 BandWidthError 510
 </ifmodule>

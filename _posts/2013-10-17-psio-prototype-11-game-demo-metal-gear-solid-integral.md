@@ -8,11 +8,19 @@ categories: [gaming, sony, youtube]
 
 {% include youtube.html id="f23SWWruyYA" %}
 
-Metal Gear Solid: Integral, or MGS:I, is an expanded Japanese edition of the original game, with English voice acting and additional VR training. It appears to work well in what I tested here.
+After giving the original Metal Gear Solid a go, it's time to try Metal Gear Solid: Integral. This is an expanded Japanese edition of the game, with English voice acting, Japanese subtitles and additional VR training. It looks rather familiar, but there are a few differences to keep things interesting.
 
-Please remember that this is a prototype device. These results apply to hardware 1.1 and software 1.1A, rather than later PSIO revisions or the final product.
+I've loaded the game through the PSIO prototype and, after the usual PlayStation startup, the Konami introduction appears. Before long we're back in Alaska with Snake, trying to avoid being spotted by a collection of guards who seem determined to ruin my afternoon.
 
-You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I am but a mere tester. I do not understand the technology behind this wonderful invention.
+The game is running rather nicely so far. The opening sequences and dialogue are working, and I can move through the early areas without any obvious problems from PSIO itself. That doesn't mean I'm particularly good at playing it, of course!
+
+I've already forgotten half the controls, and the guards keep appearing exactly where I don't want them. There I am trying to sneak around, and before I know it I'm running away again. As it turns out, PSIO doesn't improve your chances of actually winning the game at all!
+
+One interesting point about this prototype is that the computer connection isn't required for the whole time a game is running. Once the game has loaded past the bootloader, I can disconnect it. If I want to choose another game, though, I'll need to reconnect the PC. That's simply how this early arrangement works.
+
+So Metal Gear Solid: Integral appears to be working well in what I've tested here. Just remember these results are from PSIO hardware 1.1 and software 1.1A, not later versions or the final product.
+
+You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I'm but a mere tester. I don't understand the technology behind this wonderful invention!
 
 **Prototype test conditions**
 

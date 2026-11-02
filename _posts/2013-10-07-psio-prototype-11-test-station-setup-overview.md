@@ -8,11 +8,19 @@ categories: [gaming, sony, youtube]
 
 {% include youtube.html id="0XlxDn-m8eQ" %}
 
-An overview of how everything is connected up to the prototype PSIO device. Please remember that this is a prototype; its hardware and game compatibility may differ from the final product.
+Here's a quick overview of my PSIO prototype test station before I start putting a collection of PlayStation games through their paces. I've got a PAL SCPH-5502 with the CD deck removed, and the PSIO hardware 1.1 connected to the parallel I/O port on the back. This should be interesting!
 
-We're using the good old XRGB-mini to overcome the lack of colour on composite when playing NTSC games on PAL hardware. RGB bypasses the composite PAL/NTSC colour encoding responsible for that problem, so this setup doesn't need a composite colour correction mod. It's all gravy though, as RGB is far superior!
+The PlayStation is connected through RGB to the good old XRGB-mini Framemeister, which then feeds the television over HDMI. The Framemeister is a fantastic little bit of hardware in its own right, and it also helps me avoid the missing-colour problem that can occur when playing NTSC games through composite video on PAL equipment.
 
-You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I am but a mere tester. I do not understand the technology behind this wonderful invention.
+RGB bypasses the PAL/NTSC composite colour encoding, so I don't need a separate composite colour correction modification for this arrangement. It's all gravy, really. RGB looks considerably better anyway!
+
+I've also got the PSIO connected to the computer for loading games. This particular prototype still needs that connection for the loader, although there's talk of later hardware handling things more independently. I haven't got that version here, so we'll concentrate on what this one can actually do.
+
+For the tests I've prepared a 16 GB card containing a selection of game images, mostly BIN files and associated image data. Some had already given me trouble in an emulator, so it will be interesting to see whether they behave any differently on the prototype. I've got quite a few games to work through!
+
+Another interesting detail is that PSIO handles the PlayStation's disc-open or disc-closed state through software. The Systems Console gives me access to the game list, and from there I can select an image to try. Let's start with Tekken and see what happens.
+
+Please remember that this is prototype hardware, so the game compatibility and behaviour may differ substantially from the final product. You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I am but a mere tester. I don't understand all the technology behind this wonderful invention.
 
 **Test hardware**
 

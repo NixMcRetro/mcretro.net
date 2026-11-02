@@ -8,11 +8,13 @@ categories: [news, youtube]
 
 {% include youtube.html id="UwgsJDlktiU" %}
 
-**XRG - Xtreme Retro Gaming** was our side gaming channel. It was almost a Let's Play channel, but with a twist: we were very bad at games. The idea was to play a whole heap of different titles (some in English, some not) to get an idea of what gaming has been since the dawn of home consoles. With that said, very long easy right, baby!
+XRG, or Xtreme Retro Gaming, was our little side gaming channel. The idea was to play a whole heap of different games, from the early days of home consoles onwards, and generally have a good time doing it. Some of the games were in English, some weren't, and quite a few of them left us wondering what on earth we were supposed to be doing!
 
-Sadly, the channel eventually closed down through neglect. Sorry about that!
+It was almost a Let's Play channel, but with a twist: we were very bad at games. That's part of the fun, though. We weren't trying to demonstrate perfect gameplay, just explore the games and have a laugh along the way. With that said, very long easy right, baby!
 
-Of course, Nix McRetro was not going anywhere soon, and there would always be more excitement here on your local RetroJunkie channel.
+Sadly, XRG eventually closed down through neglect. We got busy with other things and the channel never really received the attention it needed. Sorry about that!
+
+Of course, Nix McRetro isn't going anywhere soon. There will always be more excitement here on your local RetroJunkie channel, and plenty more old games and strange hardware to keep us entertained.
 
 ### Related posts
 

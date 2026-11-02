@@ -8,9 +8,7 @@ categories: [gaming, livestream, youtube]
 
 {% include youtube.html id="dGwivJW9zV0" %}
 
-We clear the Corvega factory of raiders and get very, very over-encumbered.
-
-It's all MINE!
+We clear the Corvega factory of raiders and get very, very over-encumbered. It's all MINE!
 
 Sadly we're still stuck at 360p. The uplink is less than 80 kB/sec here, which is terrible for video. H.265 maybe? One day? Definitely. "PlayStation 5" and "Xbox Two", here we come!
 

@@ -12,7 +12,7 @@ categories: [guides, raspberry-pi]
 
 To get Tor up and running we need to install it with the following. `sudo apt-get install tor -y`
 
-And just like that Tor is installed and establishing Tor circuits. `sudo service tor stop`
+And just like that, Tor is installed and establishing Tor circuits. Now let's stop the service while we sort out the configuration. `sudo service tor stop`
 
 Let's stop Apache as well. `sudo service apache2 stop`
 

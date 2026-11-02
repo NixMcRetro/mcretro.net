@@ -10,11 +10,13 @@ categories: [hacks, sega, youtube]
 
 I've been sorting through some of my Sega collection and getting a Mega-CD Model 1 ready to pass on. It's paired with a VA4 Mega Drive Model 1, and I've decided to install a region-free BIOS while I've got everything apart. Unfortunately, programming the thing has been giving me all sorts of trouble!
 
-The BIOS image came from the folk at Assembler Games, but my first attempt failed because I'd forgotten to byte-swap the data. I tried another programmer, only to end up with complete gibberish when I read the chip back using my GQ-4X. Wonderful!
+The BIOS image came from the folk at ASSEMbler Games, but my first attempt failed because I'd forgotten to byte-swap the data. I tried another programmer, only to end up with complete gibberish when I read the chip back using my GQ-4X. Wonderful!
 
 After a bit more investigating, I discovered that a tiny jumper on the ADP-054 adapter board had been causing at least some of my problems. I'd previously moved it while troubleshooting bad ROM dumps, and removing it finally got things behaving again. Months of trouble over a little jumper!
 
 I also managed to burn an image intended for a 27C1024 onto a one-time-programmable 27C4096. Naturally, that one went straight in the bin. At least I'm getting plenty of practice at programming things incorrectly!
+
+I was also hoping to replace the erasable EPROM in this Mega-CD with a one-time-programmable chip before passing it on. Unfortunately, three of the 27C1024 chips I'd ordered had gone missing, and I'm saving the last one for my own Mega-CD. That particular job will have to wait!
 
 The good news is that the Mega-CD now boots with the new BIOS. Holding C on the controller brings up the CD player, which is a lovely sight after all that messing around. I probably should have tested whether it actually accepts games from other regions, given that's the entire point of the modification. I haven't done that part yet. Whoops!
 

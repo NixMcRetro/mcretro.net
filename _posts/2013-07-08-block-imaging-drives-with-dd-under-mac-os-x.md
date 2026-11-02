@@ -6,6 +6,11 @@ last_modified_at: 2026-10-18
 categories: [apple, guides, raspberry-pi]
 ---
 
+![Illustration of Mac OS X Terminal using dd to image a disk, with a source drive and disk image file](/assets/images/2013/07/block-imaging-drives-with-dd-under-mac-os-x/dd-disk-imaging-terminal.jxl)
+
+*Illustrative disk imaging workflow in Terminal. Always verify the source disk identifier before running dd.*
+{: .media-caption }
+
 I've found dd extremely useful when dealing with old disks and filesystems that Mac OS X doesn't necessarily understand. Sometimes all I want is a complete image of a drive, without worrying about whether the Mac can read the files sitting on it.
 
 Mac OS X 10.6 Snow Leopard was particularly awkward with Mac OS Standard / HFS media, since it treated that filesystem as read-only. I've also used dd to make images of Raspberry Pi storage containing Linux filesystems that OS X couldn't natively access. That's the nice thing about working with the disk at block level: I don't need to mount the filesystem to copy the whole thing.

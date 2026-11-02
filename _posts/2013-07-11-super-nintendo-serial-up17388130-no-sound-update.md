@@ -8,9 +8,13 @@ categories: [nintendo, repairs, youtube]
 
 {% include youtube.html id="nLMw_Uv4IzU" %}
 
-Found that the S-MIX chip at U10 has a little bit of a problem: visible physical damage. Might explain why there is no sound. It's amazing what you can find when you really focus on the problem. Even still, it's good to have new capacitors on there.
+Here's another look at the Super Nintendo with no sound, serial UP17388130. We've already replaced the capacitors, hoping that might get things working again, but unfortunately it hasn't solved the problem. Time to have another look and see what I've missed!
 
-I expected the fresh capacitors to stay leak-free for at least 15-20 years. That is not a guaranteed lifetime; it depends on the parts and their operating conditions.
+I was going through some photographs when I spotted what looked like a strange reflection on the chip at U10. On closer inspection it wasn't a reflection at all. There's an actual hole blown through the top of the S-MIX chip, complete with what looks like a bit of powder around the damage. Lovely!
+
+That might explain why we've got no audio. I was already looking for another way to get sound out of the board, so finding such obvious physical damage gives me something definite to investigate. I'll need to find a suitable replacement or work out another way around the problem.
+
+At least the new capacitors are fitted. I'm hoping they'll stay leak-free for another 15 to 20 years, although of course that depends on the parts and their operating conditions. For now, the sound problem remains, and the S-MIX chip has moved right to the top of my list.
 
 ### Related posts
 

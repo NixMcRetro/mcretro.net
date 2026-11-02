@@ -8,7 +8,9 @@ categories: [youtube]
 
 {% include youtube.html id="eVmm5ynZjsU" %}
 
-Well, my camera isn't too good at high res slow motion, 320x240 it is! Had these left over from something that was long destroyed, so I figured I might as well blow them up with a power adapter rated for 1100 mA (1.1 A). That rating is the adapter's available current capacity, not a measured current through the fuse; how quickly a fuse opens depends on the overcurrent and its time-current characteristic.
+Well, my camera isn't particularly good at high-resolution slow motion, so 320x240 it is! I've got a few old 250 mA fuses left over from something that was destroyed long ago, and I figured I might as well see what happens when they burn out in slow motion.
+
+I'm using a power adapter rated for 1100 mA (1.1 A), although that's the current the adapter can supply, not a measurement of what's actually passing through the fuse. How quickly a fuse opens depends on the current flowing through it and the characteristics of the fuse itself. Still, it's rather interesting watching these little things give up in slow motion!
 
 Music created with cgMusic and retuned with Gashisoft GXSCC.
 

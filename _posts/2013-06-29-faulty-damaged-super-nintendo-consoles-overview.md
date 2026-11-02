@@ -8,9 +8,13 @@ categories: [nintendo, repairs, youtube]
 
 {% include youtube.html id="7nFvlEY5XE8" %}
 
-Three faulty Super Nintendo consoles. The first step is assessing the damage: look for obvious corrosion or damaged components, then test each unit to see its current state. After that? Replace all capacitors, right? No one likes old SMD electrolytic caps!
+It's a dark, rainy and stormy night, and I've got three faulty Super Nintendo consoles to keep me entertained. They've all got slightly different problems, ranging from no video or sound to video without any audio. Sounds like a good excuse to get the screwdrivers out!
 
-Replacing deteriorated capacitors can help, but age alone does not establish the cause of a fault. Stay tuned, we'll have more up on what each unit does and hopefully get them repaired in the near future!
+Two of the boards look fairly similar, but the third is a noticeably different revision. The components aren't all in the same places, and the heatsink arrangement is quite different too. I'll need to work through each console separately and see what sort of trouble we're dealing with.
+
+First I'll be looking for obvious corrosion, damaged parts and anything else that shouldn't be there. After that, it's time to test them and see what still works. I've also got my eye on those old surface-mount electrolytic capacitors, because I've seen enough leaking examples to be rather suspicious of them.
+
+Replacing deteriorated capacitors might help, but I haven't established what's causing each fault yet. Hopefully we'll get all three consoles running again. Stay tuned, because there's plenty more Super Nintendo repair work to come!
 
 ### Related posts
 

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-04T22:31:12.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, raspberry-pi]
+redirect_to: /take-back-the-darknet/#part-5
+sitemap: false
 ---
 
 **Part 5 - Installing Apache 2.4 HTTP Server**

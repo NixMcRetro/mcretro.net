@@ -26,6 +26,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-include-cache
+  - jekyll-redirect-from
 
 # Publish the standalone VRAMpage MD runtime and notices.
 # Complete matching source accompanies the runtime as one versioned ZIP.

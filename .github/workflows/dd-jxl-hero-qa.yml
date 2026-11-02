@@ -1,0 +1,55 @@
+name: dd Mac OS X JPEG XL Hero QA
+on:
+  push:
+    branches:
+      - qa/dd-mac-os-x-jxl-hero-2026-11-02
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll
+        run: bundle exec jekyll build --destination _site
+      - name: Verify JPEG XL image, placement and byte preservation
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          import hashlib
+          img = 'assets/images/2013/07/block-imaging-drives-with-dd-under-mac-os-x/dd-disk-imaging-terminal.jxl'
+          source = Path(img)
+          published = Path('_site') / img
+          assert source.is_file() and published.is_file(), 'Source or published image missing'
+          assert source.stat().st_size == 150108, 'Unexpected image byte size'
+          assert source.read_bytes() == published.read_bytes(), 'Build modified JPEG XL bytes'
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == '00929ac9dbe0c046bb9c0232612268ac003c85b56f9c864d18d4a603cadf8d3f', 'JPEG XL hash mismatch'
+          html = Path('_site/block-imaging-drives-with-dd-under-mac-os-x/index.html')
+          assert html.is_file(), 'Built article not found'
+          class Article(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.in_content = False
+                  self.tags = []
+              def handle_starttag(self, tag, attrs):
+                  p = dict(attrs)
+                  if tag == 'div' and 'post-content' in p.get('class','').split():
+                      self.in_content = True
+                  if self.in_content and tag in ('img', 'source', 'picture', 'p'):
+                      self.tags.append((tag,p))
+          parser = Article()
+          parser.feed(html.read_text())
+          image_tags = [(tag,p) for tag,p in parser.tags if tag=='img']
+          assert len(image_tags) == 1, f'Expected one post image: {image_tags}'
+          assert image_tags[0][1].get('src') == '/' + img, 'Wrong image reference'
+          assert 'Terminal' in image_tags[0][1].get('alt',''), 'Missing descriptive alt text'
+          assert not any(tag in ('source','picture') for tag,p in parser.tags), 'Unexpected fallback markup'
+          assert parser.tags[0][0]=='p' and image_tags[0] == parser.tags[1], 'Image is not first article paragraph content'
+          print('PASS: Jekyll build, byte-identical 150108-byte JXL, image at top, no fallback')
+          PY

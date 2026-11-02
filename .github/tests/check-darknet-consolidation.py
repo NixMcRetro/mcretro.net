@@ -13,9 +13,12 @@ assert page.count(f'src="{hero}"') == 1, 'A single original JXL hero is required
 assert page.index(f'src="{hero}"') < page.index('id="part-1"'), 'JXL must appear before all accordion sections'
 assert (site / hero.lstrip('/')).stat().st_size == 149747, 'Original JXL changed or is missing'
 assert page.count('name="mcretro-darknet"') == 14, 'Expected fourteen mutually-exclusive accordion panels'
-assert 'Historical reconstruction note:' in page, 'Part 9 reconstruction notice missing'
-assert 'not as tested, paste-ready Apache or security instructions' in page, 'Part 9 archive safety warning missing'
+assert 'Historical reconstruction note:' not in page, 'Removed Part 9 note must not reappear'
+removed_source = 'https://web.archive.org/web/20190824000515/https://mcretro.net/take-back-the-darknet-part-9/'
+assert removed_source not in page, 'Removed Part 9 Wayback citation must not reappear'
 part9_source = Path('_posts/2016-01-04-take-back-the-darknet-part-9.md').read_text(encoding='utf-8')
+assert removed_source not in part9_source, 'Archived source still cites removed Part 9 Wayback link'
+assert 'Historical reconstruction note:' not in part9_source, 'Archived source still has removed warning'
 for path in ['/var/www', '/var/www/blog', '/var/www/files/public']:
     assert part9_source.count(f'<Directory {path}>') == 3, f'Expected reconstructed Apache directory {path} in each host'
 assert part9_source.count('</Directory>') == 9, 'Reconstructed Directory tags must be balanced'

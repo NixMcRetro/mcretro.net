@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-04T22:18:34.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, raspberry-pi]
+redirect_to: /take-back-the-darknet/#part-2
+sitemap: false
 ---
 
 **Part 2 - Image Raspbian, Basic Settings and Updates**

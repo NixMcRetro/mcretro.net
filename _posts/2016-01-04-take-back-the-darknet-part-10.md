@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-04T23:37:16.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, raspberry-pi]
+redirect_to: /take-back-the-darknet/#part-10
+sitemap: false
 ---
 
 **Part 10 - Configuring Tor**

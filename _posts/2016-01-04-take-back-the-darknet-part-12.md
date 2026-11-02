@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-04T23:39:58.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, raspberry-pi]
+redirect_to: /take-back-the-darknet/#part-12
+sitemap: false
 ---
 
 **Part 12 - Preparing Website Directories**

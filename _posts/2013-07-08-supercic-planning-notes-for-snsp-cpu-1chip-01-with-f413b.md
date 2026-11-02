@@ -10,11 +10,11 @@ categories: [guides, hacks, nintendo]
 
 This will be the article on how to install SuperCIC for switchless region-free gaming. Provided I can find the time.
 
-The board I'm working with is an `SNSP-CPU-1CHIP-01`, featuring the PAL `F413B` lockout chip at U8. The idea is to install a SuperCIC and hopefully get around some of those annoying region restrictions without having to install a great big switch hanging out the back of the console.
+The board I'm working with is an SNSP-CPU-1CHIP-01, featuring the PAL F413B lockout chip at U8. The idea is to install a SuperCIC and hopefully get around some of those annoying region restrictions without having to install a great big switch hanging out the back of the console.
 
 SuperCIC uses a programmed PIC microcontroller to replace the original Nintendo lockout system. It can also provide automatic region selection and allow switching between 50 Hz and 60 Hz. Quite clever for such a tiny little chip!
 
-I've been looking at [Wolfsoft's SuperCIC installation guide](https://wolfsoft.de/blog/2010/05/10/supercic-snes-switchless-mod/), but there's a little problem. Their example uses the older `F413A` arrangement with separate PPU chips, while this particular Super Nintendo is one of the later 1CHIP models. Naturally, the wiring isn't quite the same.
+I've been looking at [Wolfsoft's SuperCIC installation guide](https://wolfsoft.de/blog/2010/05/10/supercic-snes-switchless-mod/), but there's a little problem. Their example uses the older F413A arrangement with separate PPU chips, while this particular Super Nintendo is one of the later 1CHIP models. Naturally, the wiring isn't quite the same.
 
 The first job is working out how to deal with the original F413B lockout chip. Then there's the business of connecting everything else correctly, particularly the video mode selection. I don't fancy lifting pins and soldering little wires everywhere only to discover I've connected something to entirely the wrong place!
 

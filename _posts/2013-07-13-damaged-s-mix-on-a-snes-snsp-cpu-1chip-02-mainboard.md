@@ -8,9 +8,11 @@ categories: [nintendo, repairs]
 
 ![](/assets/images/2013/img_0411.jpg)
 
-As you can see there is a hole blown through the S-MIX chip at U10. The following repair attempt will proceed in the next few weeks.
+As you can see, there's a hole blown straight through the S-MIX chip at U10. That's probably not what you want to find on a Super Nintendo with no sound! I'm going to have a closer look at the circuitry and see whether there's a way to get this board making some noise again.
 
-I originally labelled this board `SNSP-CPU-02`. In my 2016 follow-up, I identified the photographed board as `SNSP-CPU-1CHIP-02`; the photo also shows its S-APU at U2.
+I originally labelled this board SNSP-CPU-02, but in my 2016 follow-up I identified the photographed board as SNSP-CPU-1CHIP-02. You can also see the S-APU at U2 in the photograph, which helps distinguish it from the older board arrangement.
+
+I've been looking at the LM324 quad operational amplifier as a possible substitute for the damaged S-MIX. Here is the LM324 pinout I've been using for comparison:
 
 ```
      +---+--+---+
@@ -25,13 +27,15 @@ VCC  |4       11| VEE
 
 ```
 
-Above is the pinout of the LM324. I am hoping the S-MIX chip is the same. I'll be able to test and compare outputs from a known working S-MIX chip and from a known working LM324. With a bit of luck, they will be pin compatible and we'll have sound.
+Both the S-MIX and the amplifier used on some earlier boards occupy U10, which got me wondering whether they might be electrically similar. Earlier PAL SNSP-CPU-02 boards used a quad op-amp there, while this later board has S-MIX. Of course, finding two chips in the same position doesn't mean their pins do the same thing!
 
-Reasons I thought it might work - both types tend to be at U10. Earlier PAL SNSP-CPU-02 boards used a quad op-amp there, while this damaged board has S-MIX. The same board position does not establish pin compatibility. Does S-MIX have some changes under the hood? Or was it simply masked? Time will tell. Sooner or later, time will tell.
+My plan was to compare the outputs from a working S-MIX against a known-working LM324 and see whether a substitution might be possible. Was S-MIX simply a differently packaged or customised version of something familiar, or did Nintendo change rather more under the hood? Time will tell. Sooner or later, time will tell.
 
-**EDIT:** Turns out it doesn't work! The LM324 substitution did not work in my test, so there you go! You can, however, bypass the audio mixing completely, which worked well enough here if you were just after some sound. That bypass does not reproduce the original mixing circuit. At the time I wondered whether driving the output directly might put extra strain on the preceding audio circuitry, but I hadn't established that. Still, what are you going to do, game in silence? Unacceptable! ;)
+**EDIT:** Turns out it doesn't work! My LM324 substitution attempt failed, so that idea went out the window. I did manage to bypass the original audio mixing circuit and get some sound out of the console, which was a much nicer result than silence.
 
-I came back to the same S-MIX problem in [S-MIX on the SNES SNSP-CPU-1CHIP-01 / SNSP-CPU-1CHIP-02](/s-mix-on-the-snes-snsp-cpu-1chip-01-snsp-cpu-1chip-02/).
+The bypass isn't the same as repairing the original mixing circuit, of course. I also wondered whether driving the output that way might put extra strain on the preceding audio circuitry, although I hadn't established that. Still, what are you going to do, game in silence? Unacceptable! ;)
+
+I came back to the same problem in [S-MIX on the SNES SNSP-CPU-1CHIP-01 / SNSP-CPU-1CHIP-02](/s-mix-on-the-snes-snsp-cpu-1chip-01-snsp-cpu-1chip-02/).
 
 ### Related posts
 

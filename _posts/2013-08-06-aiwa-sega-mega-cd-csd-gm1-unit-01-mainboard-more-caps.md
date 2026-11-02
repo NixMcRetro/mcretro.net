@@ -8,9 +8,15 @@ categories: [repairs, sega, youtube]
 
 {% include youtube.html id="9pupCizxXtE" %}
 
-Discovered I was shipped a wrong-value capacitor by Element14. Same physical size, but not the same electrical properties! Lucky I decided to use a 16 V-rated replacement or I may have never noticed. Would it have made a difference in the long term, who knows! This is the revision 1 mainboard, marked `01-01`.
+Another weekend, another chance to work on the Aiwa Mega-CD CSD-GM1. This time I'm back on the revision 1 mainboard, marked 01-01, replacing a few more capacitors. I've decided to use 16 V-rated replacements for some of the original 10 V parts, since there are several different supply voltages running around this thing and I'd rather give myself a little more room to breathe.
 
-Matching physical size does not make two capacitors electrically equivalent. The intended capacitance still needs to match, while the voltage rating may be equal to or higher than the original where the replacement type and application are otherwise suitable.
+I've got a mixture of 470 uF, 220 uF and 100 uF capacitors to change, and most of the work has been going fairly smoothly. Then I noticed something rather odd while comparing the replacement parts with my reference board and spreadsheet.
+
+One capacitor looked just like the others from above, but it was marked 47 uF at 50 V. That's a bit different from the 220 uF capacitor that was supposed to be there! It looks like Element14 shipped me the wrong value, and I hadn't noticed because the physical size was so similar. Lesson learned: check the actual markings, even when the parts come from a major supplier!
+
+Fortunately, I had the correct 220 uF replacement available, so that went in instead. Whether the incorrectly supplied component had caused any problems during my earlier testing, I don't know. The board had appeared to be working reasonably well, but I'll certainly be checking my capacitor orders a bit more carefully from now on.
+
+The mainboard is now recapped apart from one small capacitor I forgot to order. I've also got some transistor and voltage-regulator work coming up once the remaining parts arrive. There's still plenty to do before I can call either of these Aiwas properly repaired!
 
 ### Related posts
 

@@ -8,9 +8,7 @@ categories: [devkit, sega]
 
 ![Accolade Mega Drive development cartridge and cable](/assets/images/2013/img_0373.jpg)
 
-Just leaving this here as a reminder for myself...
-
-I've been looking into SGDK, the Sega Genesis Development Kit, which allows you to write software for the Sega Mega Drive / Genesis using C. Much easier than having to write absolutely everything in Motorola 68000 assembly, or at least that's the theory!
+Just leaving this here as a reminder for myself... I've been looking into SGDK, the Sega Genesis Development Kit, which allows you to write software for the Sega Mega Drive / Genesis using C. Much easier than having to write absolutely everything in Motorola 68000 assembly, or at least that's the theory!
 
 Before anything useful can happen, Windows needs to know where SGDK is installed. That's where environment variables come in.
 
@@ -27,9 +25,7 @@ Under System variables, create the following two entries:
 | `GDK` | `C:/SGDK` |
 | `GDK_WIN` | `C:\SGDK` |
 
-Yes, both variables point to exactly the same directory. The difference is that `GDK` uses forward slashes for the Unix-style tools, while `GDK_WIN` uses the usual Windows backslashes.
-
-Why have one variable when you can have two?
+Yes, both variables point to exactly the same directory. The difference is that `GDK` uses forward slashes for the Unix-style tools, while `GDK_WIN` uses the usual Windows backslashes. Why have one variable when you can have two?
 
 Now find the existing `Path` variable and add the following to the end, separated from the previous entry by a semicolon:
 
@@ -64,9 +60,7 @@ From there, it's possible to compile a Mega Drive project by opening a Command P
 %GDK_WIN%\bin\make -f %GDK_WIN%\makefile.gen
 ```
 
-The resulting ROM should appear as `out\rom.bin`, ready to try in a Mega Drive emulator or on the original hardware with a flash cartridge.
-
-Of course, getting the development environment working and actually writing a game are two completely different things. One problem at a time!
+The resulting ROM should appear as `out\rom.bin`, ready to try in a Mega Drive emulator or on the original hardware with a flash cartridge. Of course, getting the development environment working and actually writing a game are two completely different things. One problem at a time!
 
 **Sources**
 

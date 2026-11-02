@@ -6,11 +6,13 @@ last_modified_at: 2026-10-18
 categories: [apple, guides, raspberry-pi]
 ---
 
-I've found `dd` extremely useful when dealing with older or otherwise inconvenient disk formats. This was particularly handy for Mac OS Standard / HFS media because OS X 10.6 Snow Leopard treated HFS as read-only. I also used it for Raspberry Pi media containing Linux filesystems that OS X did not natively understand: block imaging does not require the Mac to understand the filesystem. Using the raw-device form, `rdisk` rather than `disk`, made the copy much quicker in my tests.
+I've found dd extremely useful when dealing with old disks and filesystems that Mac OS X doesn't necessarily understand. Sometimes all I want is a complete image of a drive, without worrying about whether the Mac can read the files sitting on it.
 
-I tried Paragon ExtFS around this period, but in my setup it seemed to corrupt disks fairly quickly. That was my experience, not a general finding about every version of the software.
+Mac OS X 10.6 Snow Leopard was particularly awkward with Mac OS Standard / HFS media, since it treated that filesystem as read-only. I've also used dd to make images of Raspberry Pi storage containing Linux filesystems that OS X couldn't natively access. That's the nice thing about working with the disk at block level: I don't need to mount the filesystem to copy the whole thing.
 
-The blocks below preserve my original working notes, including the example `disk3`, root shell and `/test.img` path. They mix commands with instructions and are not paste-ready. **The wrong `dd` output device will overwrite the wrong disk.** Identify the actual device with `diskutil list`, unmount its volumes before imaging or restoring, and verify the input and output paths. Do not copy `disk3` literally.
+Using the raw-device form, rdisk rather than disk, made a considerable difference to the speed in my tests. I also tried Paragon ExtFS around this period, but it seemed to corrupt disks rather quickly in my setup. I can't speak for every version of the software, but that was enough to send me looking for another approach!
+
+Below are my original working notes. They're a mixture of instructions and commands, not something to paste straight into Terminal without reading. My example drive was disk3, but yours probably won't be. Check the device with diskutil list, make sure the relevant volumes are unmounted, and double-check which path is the input and which is the output. Getting those backwards can overwrite a perfectly good disk. That would rather defeat the purpose!
 
 **Copy original USB device to disk image**
 

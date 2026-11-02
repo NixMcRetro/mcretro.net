@@ -12,7 +12,7 @@ I've got a 21.5-inch Mid 2011 Apple iMac here for a hard drive replacement, so I
 
 I'm replacing the original 3.5-inch Seagate hard drive with a smaller 2.5-inch drive fitted into an Icy Dock adapter. I've also got an OWC temperature-sensor cable, which is rather important on these iMacs unless you particularly enjoy listening to the fans running at full speed.
 
-The glass front panel is held in place magnetically, so a suction cup makes getting it off considerably easier. Behind that is the LCD itself, secured with a collection of Torx screws. Naturally, the magnets are more than happy to grab hold of those screws while you're trying to remove them.
+The glass front panel is held in place magnetically, so a suction cup makes getting it off considerably easier. Behind that is the LCD itself, secured with eight T10 Torx screws. The screws mounted on the hard drive use T8, so naturally there's a fair bit of swapping screwdrivers. The magnets are more than happy to grab hold of those screws while you're trying to remove them.
 
 These machines also have an exposed power supply inside, so this isn't something to tackle casually. Even with the iMac unplugged, stored electrical charge is a concern, and the display connections are particularly easy to damage if you're not careful. I've seen some rather unfortunate results from people attempting these repairs!
 

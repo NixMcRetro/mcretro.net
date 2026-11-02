@@ -4,8 +4,9 @@ title: "Still Dialling in My Head"
 author: "Nix McRetro"
 date: 2026-10-26T16:54:00.000+11:00
 categories:
-  - modems
+  - ai-assisted
   - ibm-pc
+  - modems
 ---
 
 ![Actual Avtek modem dialling spectrogram showing eight dual-tone pulses](/assets/images/2026/10/still-dialling-in-my-head/01_actual_avtek_dtmf_spectrogram.jxl)

@@ -3,7 +3,7 @@ title: "Death, Taxes, and Goats"
 permalink: /death-taxes-and-goats/
 author: "Nix McRetro"
 date: 2026-09-06T09:00:00.000+10:00
-categories: [ai-generated, programming]
+categories: [ai-assisted, programming]
 last_modified_at: 2026-10-27
 ---
 

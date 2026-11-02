@@ -6,6 +6,11 @@ categories: [ai-generated, programming]
 last_modified_at: 2026-10-18
 ---
 
+![Illustrated Odyssey Stealer analysis overview showing the disguised Patch.app, Mach-O string decryption, targeted data, ZIP staging and C2 communications](/assets/images/2026/07/odyssey-stealer-technical-analysis/odyssey-stealer-analysis-overview.jxl)
+
+*Illustrative overview of Odyssey Stealer's obfuscation, targeted data and collection workflow.*
+{: .media-caption }
+
 ## Executive Summary
 
 In mid-July 2026, I obtained a macOS infostealer trojan disguised as a software licensing tool (`Patch.app`). The sample is a Mach-O universal binary (x86_64 + arm64) that uses a custom xorshift32 PRNG-based XOR cipher to obfuscate **379 embedded strings**. Its recovered code targets **14 browsers**, **16 software-wallet locations**, the macOS Keychain, Apple Notes and Safari cookies, and includes Ledger and Trezor application ZIP names. It packages collected data into a ZIP archive and contains an HTTP upload command. Those capabilities describe this sample; what was actually collected depended on the contents of each analysis system.

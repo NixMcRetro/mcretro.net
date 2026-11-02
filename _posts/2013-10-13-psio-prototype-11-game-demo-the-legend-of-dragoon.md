@@ -8,11 +8,17 @@ categories: [gaming, sony, youtube]
 
 {% include youtube.html id="TMXZwy1BV08" %}
 
-The Legend of Dragoon: this one we didn't have too much success with.
+Next up on the PSIO prototype test list is The Legend of Dragoon. I've heard plenty about this game, so let's see whether we can get it running on the PlayStation. First job, remember to turn the console on. That usually helps!
 
-Please remember that this is a prototype device. These results apply to hardware 1.1 and software 1.1A, rather than later PSIO revisions or the final product.
+The game starts loading, but unfortunately it doesn't get very far. I wondered whether it might be trying to load a video sequence or something else the prototype wasn't handling properly, although that's just a possibility at this stage.
 
-You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I am but a mere tester. I do not understand the technology behind this wonderful invention.
+I tried rebooting and pressing a few buttons to see whether I could skip past the troublesome section. No luck there either. It seems determined to stop at much the same point, no matter how much encouragement I give it.
+
+Then I tried the European version as well, hoping for a different result. Unfortunately, that was just as uneventful as the American one. So much for that idea!
+
+This is still very early prototype hardware, with PSIO 1.1 and software 1.1A, so I'm not particularly surprised that some games have difficulties. It would be nice to see this one progressing further, but for now The Legend of Dragoon is a no-go in my tests.
+
+You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I'm but a mere tester. I don't understand the technology behind this wonderful invention!
 
 **Prototype test conditions**
 

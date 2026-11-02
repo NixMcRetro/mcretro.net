@@ -1,0 +1,56 @@
+name: Odyssey Stealer JPEG XL QA
+on:
+  push:
+    branches:
+      - qa/odyssey-stealer-jxl-2026-11-02
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Jekyll production-style build
+        run: bundle exec jekyll build --destination _site
+      - name: Verify original JXL bytes and direct image markup
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          import hashlib
+
+          path = 'assets/images/2026/07/odyssey-stealer-technical-analysis/odyssey-stealer-analysis-overview.jxl'
+          source = Path(path)
+          published = Path('_site') / path
+          expected_sha256 = '5c1152f67e66cd4e7b3717e9191870bfa419eccfde553e867f1e5a22ffc4628d'
+          assert source.is_file() and published.is_file(), 'Image absent from source or output'
+          assert source.read_bytes() == published.read_bytes(), 'JXL bytes changed in build'
+          assert source.stat().st_size == 374106, 'Unexpected JXL file size'
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == expected_sha256, 'JXL mismatch'
+          assert source.read_bytes()[:2] == b'\xff\x0a', 'Not a JPEG XL codestream'
+
+          class Images(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.tags = []
+              def handle_starttag(self, tag, attrs):
+                  if tag in ('img', 'source', 'picture'):
+                      self.tags.append((tag, dict(attrs)))
+          html = Path('_site/odyssey-stealer-technical-analysis-of-a-macos-infostealer/index.html')
+          assert html.exists(), 'Article page missing'
+          parsed = Images()
+          parsed.feed(html.read_text())
+          imgs = [props for tag, props in parsed.tags if tag == 'img' and props.get('src', '').endswith('odyssey-stealer-analysis-overview.jxl')]
+          assert len(imgs) == 1, 'Expected exactly one direct JXL img'
+          assert imgs[0]['src'] == '/' + path, 'Image points to wrong asset'
+          assert 'Illustrated Odyssey Stealer' in imgs[0]['alt'], 'Descriptive alt text missing'
+          assert not any(tag in ('picture', 'source') for tag, _ in parsed.tags), 'Unexpected format fallback'
+          print('PASS: Jekyll build, byte-identical JXL, correct image markup, no fallback')
+          PY

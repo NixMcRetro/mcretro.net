@@ -6,17 +6,11 @@ last_modified_at: 2026-10-22
 categories: [guides, sony]
 ---
 
-First up, a little information on the PlayStation modchips and programmers I was experimenting with around 2016. A lot of this came from educated guesses, forum posts, things I read on the *internet* of all places, and my own trial and error.
-
-Probably shouldn't be taken as gospel! ;)
+First up, a little information on the PlayStation modchips and programmers I was experimenting with around 2016. A lot of this came from educated guesses, forum posts, things I read on the *internet* of all places, and my own trial and error!
 
 **Programmers**
 
-My GQ-4X gave me trouble programming some of these PIC devices, particularly around configuration data. That's what happened in my setup, not proof that every GQ-4X behaves the same way.
-
-The MiniPro TL866CS became my weapon of choice for these chips.
-
-My K150 kept "exploding", by which I mean repeatedly losing communication while I tried to program things. Why? Who knows!
+My GQ-4X gave me trouble programming some of these PIC devices, particularly around configuration data. That's what happened in my setup, not proof that every GQ-4X behaves the same way. My K150 kept "exploding", by which I mean repeatedly losing communication while I tried to program things. Why? Who knows! The MiniPro TL866CS became my weapon of choice for these chips.
 
 I originally wrote that PICkit 2 supported the PIC12F508 but not the PIC12F629. That was wrong: Microchip's PICkit 2 Programmer Application v2.61 device list includes both. The older PIC12C508 does not appear in that list.
 
@@ -34,7 +28,7 @@ OneChip is specifically aimed at the PAL PS one and includes the additional boot
 
 ![TL866CS](/assets/images/2016/img_0450.jpg)
 
-**Later discovery, 5th February 2016:** I worked out why the Mayumi-programmed PIC12C508A and PIC12F508 chips would not read back normally: the original Mayumi v4 code had code protection enabled. That was why the readback differed from some of the MultiMode3 chips I had programmed. The protected readback did not, by itself, mean programming had failed.
+**Update 5th Feb 2016:** I worked out why the Mayumi-programmed PIC12C508A and PIC12F508 chips would not read back normally: the original Mayumi v4 code had code protection enabled. That was why the readback differed from some of the MultiMode3 chips I had programmed. The protected readback did not, by itself, mean programming had failed.
 
 It's amazing what you learn after going back to what you were already supposed to know.
 
@@ -45,7 +39,7 @@ Thanks again to Master991 and Bad_Ad84 for helping me work out what was happenin
 - [ConsoleMods - PS1 Modchips](https://consolemods.org/wiki/PS1:Modchips)
 - [Microchip - PICkit 2 v2.61 release notes and device support list](https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ProductDocuments/SoftwareLibraries/Firmware/PICkit2Readmev2-61-00%28a%29.txt)
 - [FatCat - PSone Information](http://www.fatcat.co.nz/psx/ps1.html)
-- [Assembler Games - Mayumi v4 on PIC12C508A / PIC12F508](https://web.archive.org/web/20170701144345/https://www.assemblergames.com/threads/mayumi-v4-on-the-pic12c508a-pic12f508.59924/)
+- [ASSEMbler Games - Mayumi v4 on PIC12C508A / PIC12F508](https://web.archive.org/web/20170701144345/https://www.assemblergames.com/threads/mayumi-v4-on-the-pic12c508a-pic12f508.59924/)
 
 ### Related posts
 

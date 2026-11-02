@@ -10,9 +10,7 @@ categories: [gaming, youtube]
 
 I had a look at *Lunatic Dawn* on the NEC PC-FX, and what an interesting little system that is. The PC-FX was NEC's successor to the PC Engine, arriving around the same period as the Sony PlayStation and Sega Saturn. Unfortunately, NEC wasn't particularly interested in giving the machine a proper polygon graphics processor.
 
-Instead, the PC-FX was rather good at playing back video and pre-rendered graphics. Some of the full-motion video in this game looks lovely, particularly the animated character sequences.
-
-Then I got to the actual game, and things went downhill rather quickly.
+Instead, the PC-FX was rather good at playing back video and pre-rendered graphics. Some of the full-motion video in this game looks lovely, particularly the animated character sequences. Then I got to the actual game, and things went downhill rather quickly.
 
 I hadn't the faintest idea what was going on! Everything was in Japanese, which didn't help matters, and the gameplay felt rather clunky. I managed to find a map with some flags on it and discovered that I could travel between them. That's something, I suppose!
 

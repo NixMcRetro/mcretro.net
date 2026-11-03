@@ -2,7 +2,7 @@
 title: "My Weight Loss Rate - July 2016"
 author: "Nix McRetro"
 date: 2016-07-30T10:18:33.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-03
 categories: [news]
 ---
 
@@ -16,6 +16,6 @@ The sharp little movement around the blood donation is interesting, but I should
 
 So why not average everything since my first recorded weigh-in in late October 2008? On my rough calculation, that gives around 0.017948718 kg per week. All that weight gain in between? Clearly just part of the master plan to lose weight at a slower average rate. 0.02 kg is about four servings of Vegemite per week in weight.
 
-Maybe I'm using the wrong sort of average. Oh, that's right. I purged all that information from my mind when the university bridging course ended six months ago. Whoops! Did I mention I'm at 81.2 kg? 200 g outside the BMI category I was aiming for. Muahahaha! :D
+Maybe I'm using the wrong sort of average. Oh, that's right. I purged all that information from my mind when the university bridging course ended six months ago.
 
-This is a record of what I was doing in 2016, not a target rate for somebody else's weight loss.
+Did I mention I'm at 81.2 kg? 200 g outside the BMI category I was aiming for. Muahahaha! :D

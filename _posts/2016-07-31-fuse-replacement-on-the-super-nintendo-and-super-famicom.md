@@ -2,15 +2,17 @@
 title: "Fuse Replacement on the Super Nintendo and Super Famicom"
 author: "Nix McRetro"
 date: 2016-07-31T08:48:33.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-03
 categories: [nintendo, repairs]
 ---
 
 ![4466233](/assets/images/2016/img_0506.jpg)
 
-Back in March 2012 I replaced a fuse in a [Sega Mega-CD](/fuse-replacement-on-the-sega-mega-cd-model-1/), and the good news is these PICO parts are still around. The parts I was considering here have a different current rating. Before replacing a blown SNES or Super Famicom fuse, first confirm that the original fuse is actually open with a multimeter and consider why it failed.
+Back in March 2012 I replaced a fuse in a [Sega Mega-CD](/fuse-replacement-on-the-sega-mega-cd-model-1/), and the good news is these PICO parts are still around. The parts I was looking at this time have a different current rating.
 
-I originally wrote that PAL consoles wanted 250 V fuses because Australia uses high-voltage mains, while NTSC consoles wanted 125 V parts. That's not how this fuse rating works. The console fuse is in the low-voltage circuit after the external power supply. A fuse's voltage rating is the **maximum circuit voltage it can safely interrupt**. A 250 V rated fuse can be used in a much lower-voltage circuit, provided its other ratings and characteristics suit that circuit. It does not mean 250 V is flowing through the SNES.
+Before replacing a blown SNES or Super Famicom fuse, I'd first confirm that the original fuse is actually open with a multimeter and consider why it failed.
+
+I originally figured PAL consoles needed 250 V fuses because we have high-voltage mains in Australia, while NTSC consoles wanted 125 V parts. Nope! That's not how this fuse rating works. The console fuse is in the low-voltage circuit after the external power supply. A fuse's voltage rating is the **maximum circuit voltage it can safely interrupt**. A 250 V rated fuse can be used in a much lower-voltage circuit, provided its other ratings and characteristics suit that circuit. It does not mean 250 V is flowing through the SNES.
 
 For a replacement, the important things include:
 

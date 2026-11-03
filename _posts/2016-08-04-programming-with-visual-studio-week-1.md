@@ -2,15 +2,19 @@
 title: "Programming with Visual Studio - Week 1"
 author: "Nix McRetro"
 date: 2016-08-04T19:13:23.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-03
 categories: [news, programming]
 ---
 
 ![vs2015](/assets/images/2016/img_0510.jpg)
 
-I've begun my journey into the world of programming. Apart from some HTML and CSS hackery, I have basically no experience, so off I go on another adventure. Below is the first program I wrote in full. I actually made another one that calculated BMI properly, but that has been lost for now. If I dig it up I'll post the source code. Either way, this one is commented to hell and back so I can remember what's happening. I'm starting with Visual Basic to get a feel for programming logic before moving onto Java, I believe.
+I've begun my journey into the world of programming. Apart from some HTML and CSS hackery, I have basically no experience, so off I go on another adventure.
 
-The downside is that I won't have much time for retro repairs for a while. This course also collides with my university course starting next year, so I hope I can get a good grasp of it before that happens. Maybe, just maybe, I'll be able to juggle both, or perhaps study programming more part-time. This also means the shop will be very short lived. I've opened shipping worldwide and slashed the prices below cost to move the stock so I can move on. Anyway, enjoy the colourful code below!
+Below is the first program I wrote in full. I actually made another one that calculated BMI properly, but that has been lost for now. If I dig it up I'll post the source code. Either way, this one is commented to hell and back so I can remember what's happening. I'm starting with Visual Basic to get a feel for programming logic before moving onto Java, I believe.
+
+The downside is that I won't have much time for retro repairs for a while. This course also collides with my university course starting next year, so I hope I can get a good grasp of it before that happens.
+
+Maybe, just maybe, I'll be able to juggle both, or perhaps study programming more part-time. This also means the shop will be very short lived. I've opened shipping worldwide and slashed the prices below cost to move the stock so I can move on. Anyway, enjoy the colourful code below!
 
 ```
 Module Module1

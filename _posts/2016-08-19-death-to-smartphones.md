@@ -2,19 +2,13 @@
 title: "Death to Smartphones!"
 author: "Nix McRetro"
 date: 2016-08-19T07:39:20.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-03
 categories: [apple]
 ---
 
 ![iPhone 5s](/assets/images/2016/img_0539.jpg)
 
-That's it, I'm sick of mobile phones and always being switched on in the digital world. Modern phones are such a joke with their [60-minute-man-like](https://en.wikipedia.org/wiki/Sixty_Minute_Man) batteries.
-
-{% include youtube.html id="09EarjR-UPU" %}
-
-All I use my phone for is SMS and that's usually just 2FA rubbish. Don't get me wrong, I love getting almost two days out of my phone, but it's time to move backwards.
-
-Enter the Nokia 301.
+That's it, I'm sick of mobile phones and always being switched on in the digital world. Modern phones are such a joke with their [60-minute-man-like](https://en.wikipedia.org/wiki/Sixty_Minute_Man) batteries. All I use my phone for is SMS and that's usually just 2FA rubbish. Don't get me wrong, I love getting almost two days out of my phone, but it's time to move backwards. Enter the Nokia 301.
 
 ![Nokia 301 Blue](/assets/images/2016/img_0538.jpg)
 

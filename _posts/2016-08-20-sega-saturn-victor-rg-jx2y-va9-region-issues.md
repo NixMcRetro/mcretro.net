@@ -2,7 +2,7 @@
 title: "Sega Saturn Victor RG-JX2(Y) VA9 Region Issues"
 author: "Nix McRetro"
 date: 2016-08-20T07:40:18.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-03
 categories: [repairs, sega]
 ---
 
@@ -10,9 +10,11 @@ categories: [repairs, sega]
 
 How did I get to this point? Error after error: "Cartridge unsuitable for this system" and "Game disk unsuitable for this system". Stop whining already, Segata! The console was also asking for its language every time it powered on rather than behaving like a normal Japanese unit.
 
-This particular Victor RG-JX2(Y) VA9 appeared to have been left in a strange state, possibly after previous modification work was removed. Before fixing it, both the Action Replay and GameShark produced "Cartridge unsuitable for this system", while retail NTSC-U, NTSC-J and PAL game discs produced "Game disk unsuitable for this system". Audio CDs still worked normally. That combination was one of the clues that the console's region configuration had been left in a strange state rather than the optical drive simply being unable to read discs.
+This particular Victor RG-JX2(Y) VA9 appeared to have been left in a strange state, possibly after previous modification work was removed. Before fixing it, both the Action Replay and GameShark produced "Cartridge unsuitable for this system", while retail NTSC-U, NTSC-J and PAL game discs produced "Game disk unsuitable for this system". Audio CDs still worked normally.
 
-Saturn region selection is controlled by a group of motherboard jumpers. Different high / low combinations identify the console's region. With help from Nopileus on ASSEMblerGames, I restored the Japanese jumper configuration on this particular VA9 by bridging JP6 and JP11 with bare Kynar wire... so just... wire. The photographs show what I did on this board.
+That combination was one of the clues that the console's region configuration had been left in a strange state rather than the optical drive simply being unable to read discs.
+
+Saturn region selection is controlled by a group of motherboard jumpers. Different high / low combinations identify the console's region. With help from Nopileus on [ASSEMblergames.com](https://web.archive.org/web/20191113141823/https://assemblergames.com/threads/sega-saturn-victor-va9-modchip-mess.62691/), I restored the Japanese jumper configuration on this particular VA9 by bridging JP6 and JP11 with bare Kynar wire... so just... wire. The photographs show what I did on this board.
 
 ![before](/assets/images/2016/img_0542.jpg)
 
@@ -26,7 +28,7 @@ TriMesh also discussed the wider set of Saturn region combinations. He described
 
 ### Sources
 
-- [ASSEMblerGames - Sega Saturn (Victor) VA9 Modchip Mess](https://web.archive.org/web/20191113141823/https://assemblergames.com/threads/sega-saturn-victor-va9-modchip-mess.62691/)
+- [ASSEMblergames.com - Sega Saturn (Victor) VA9 Modchip Mess](https://web.archive.org/web/20191113141823/https://assemblergames.com/threads/sega-saturn-victor-va9-modchip-mess.62691/)
 - [Sega Saturn UK - Game disk unsuitable for this system](https://segasaturngroup.proboards.com/thread/1393/game-disk-unsuitable-system)
 - [Wolfsoft - Sega Saturn switchless MOD Pal bigger mainboard](http://wolfsoft.de/wordpress/?p=354)
 - [Sebastian Kienzl - The ultimate Sega Saturn Switchless Mod](https://knzl.at/saturnmod/)

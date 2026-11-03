@@ -2,15 +2,15 @@
 title: "My Weight Loss Rate - July 2016"
 author: "Nix McRetro"
 date: 2016-07-30T10:18:33.000+10:00
-last_modified_at: 2026-11-03
+last_modified_at: 2026-11-04
 categories: [news]
 ---
 
 ![jul_2016_end](/assets/images/2016/img_0503.jpg)
 
-I had been using roughly 500 g to 1 kg per week as my own target rate. My running average for this year's weight-loss effort was around **1.13 kg per week**.
+I've been using roughly 500 g to 1 kg per week as my target for losing weight. So far this year's running average is around 1.13 kg per week, which is a little faster than I'd planned.
 
-The sharp little movement around the blood donation is interesting, but I should not have described the graph as directly showing plasma disappearing and being rebuilt. Body weight can move around over short periods because of fluid balance, food, glycogen and plenty of other things. The scale does not tell me which of those caused a particular little bump.
+There's a curious little movement in the graph around my blood donation. I wonder how much of that is simply fluid balance changing? Between water, food, glycogen and everything else, the scale can't really tell me exactly what's responsible for a particular bump. Interesting to watch, though!
 
 ![jul_2016_end2](/assets/images/2016/img_0504.jpg)
 
@@ -18,4 +18,4 @@ So why not average everything since my first recorded weigh-in in late October 2
 
 Maybe I'm using the wrong sort of average. Oh, that's right. I purged all that information from my mind when the university bridging course ended six months ago.
 
-Did I mention I'm at 81.2 kg? 200 g outside the BMI category I was aiming for. Muahahaha! :D
+Did I mention I'm at 81.2 kg? Just 200 g outside the BMI category I've been aiming for. Muahahaha! :D

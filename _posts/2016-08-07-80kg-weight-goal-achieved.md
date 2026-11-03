@@ -2,7 +2,7 @@
 title: "80kg Weight Goal Achieved!"
 author: "Nix McRetro"
 date: 2016-08-07T08:20:43.000+10:00
-last_modified_at: 2026-11-03
+last_modified_at: 2026-11-04
 categories: [news]
 ---
 
@@ -16,7 +16,9 @@ Dots, lots and lots of dots. Above is the six-month look back. I'll update the b
 
 ![2016-08-07\_80kg\_3month](/assets/images/2016/img_0512.jpg)
 
-Above is the last three months. One important thing for me was eating food I actually wanted to eat, not sacrificing chicken for celery. No one wants to eat salad. If they do, there's probably a screw loose or a crossed wire. Salad ain't got no energy... well except maybe the dressing, so why not just have chicken with mayo? Peri-peri mayo, that is. That's what made my own 2016 diet feel sustainable to me, anyway. I wasn't laying down some universal law of nutrition.
+Above is the last three months. One important thing for me is eating food I actually want to eat, not sacrificing chicken for celery. No one wants to eat salad. If they do, there's probably a screw loose or a crossed wire!
+
+Salad ain't got no energy... well except maybe the dressing, so why not just have chicken with mayo? Peri-peri mayo, that is. That's the sort of food that's making this whole thing a lot easier to stick with. ;)
 
 ![Goal Achieved](/assets/images/2016/img_0515.jpg)
 

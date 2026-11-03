@@ -2,13 +2,15 @@
 title: "The Shop is Closed!"
 author: "Nix McRetro"
 date: 2016-09-02T12:18:57.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-04
 categories: [news]
 ---
 
 ![closed_sign](/assets/images/2016/img_0550.jpg)
 
-Thanks to everyone who purchased from McRetro.net! It was an interesting experience, but selling things isn't nearly as fun as playing with them. As a result, effective immediately, the shop is closed and the database has been purged. This won't affect anything else on the website, so you can still enjoy great YouTube videos, the photo gallery and... drum roll... this blog! :-)
+Thanks to everyone who purchased from McRetro.net! Running the shop was an interesting experience, but selling things just isn't nearly as much fun as playing with them. So that's it: effective immediately, the shop is closed and the database has been purged.
+
+Nothing else on the website is going anywhere, though. You can still enjoy great YouTube videos, the [photo gallery](/goodies/) and... drum roll... [this blog!](/blog/) :-)
 
 ### McRetro Gaming Shop
 
@@ -16,4 +18,3 @@ Thanks to everyone who purchased from McRetro.net! It was an interesting experie
 - [eBay - Open for Business](/ebay-open-for-business/)
 - [McRetro Gaming Shop Grand Opening!](/mcretro-gaming-shop-grand-opening/)
 - [eBay, You Glorious Beast](/ebay-you-glorious-beast/)
-

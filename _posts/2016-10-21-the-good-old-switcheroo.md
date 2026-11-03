@@ -20,7 +20,6 @@ My main requirements for a computer are:
 - No CD drive.
 - A 2.5" hard drive.
 
-{% include youtube.html id="_wO8toxinoc" %}
 
 Well, it's just like Meat Loaf always said, 3 out of 5 ain't bad!
 

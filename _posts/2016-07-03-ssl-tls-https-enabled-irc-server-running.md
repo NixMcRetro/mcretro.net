@@ -18,9 +18,9 @@ As a side effect of getting the IRC server encrypted and prettied up, I ended up
 
 ![](/assets/images/2016/img_0483.jpg)
 
-And here is Irssi connected to the IRC server on its TLS listener, port `6697`, with NickServ ready to go.
+And here is Irssi connected to the IRC server on its TLS listener, port 6697, with NickServ ready to go.
 
-But right now the new shop is looking promising and I've even worked out that I can ship to New Zealand with relative ease and for the right price too. So update your links, the shop has moved to [/shop/](/) and will probably be live early August if all goes well. Might even have a few more items to put in there too. :)
+But right now the new shop is looking promising and I've even worked out that I can ship to New Zealand with relative ease and for the right price too. So update your links, the shop has moved to [/shop/](https://mcretro.net/goodies/) and will probably be live early August if all goes well. Might even have a few more items to put in there too. :)
 
 ### Sources
 

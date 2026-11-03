@@ -2,25 +2,29 @@
 title: "Circuit Bending - Sonic the Hedgehog"
 author: "Nix McRetro"
 date: 2016-08-12T07:44:45.000+10:00
-last_modified_at: 2026-11-03
+last_modified_at: 2026-11-04
 categories: [guides, hacks, sega]
 ---
 
 {% include youtube.html id="_cXIrhNazys" %}
 
-I finally got around to doing some soldering on a somewhat faulty Mega Drive 2 I had lying about. I started from the old [gieskes.nl](https://web.archive.org/web/20160219222212/http://www.gieskes.nl/) circuit-bending diagram, but after checking the VRAM pinout properly I deliberately stayed away from the VCC and VSS power pins.
+I finally got around to doing some soldering on a somewhat faulty Mega Drive 2 I had lying about. I've been having a look at the old [gieskes.nl](https://web.archive.org/web/20160219222212/http://www.gieskes.nl/) circuit-bending diagram and the VRAM pinout, trying to work out which signals might produce some interesting results.
+
+One thing I'm definitely staying away from is the VCC and VSS power pins. Shorting those isn't my idea of a particularly entertaining experiment, even on a console I'm deliberately trying to make behave strangely!
 
 ![VRAM_pinout_Circuit Bending](/assets/images/2016/img_0470.jpg)
 
-On the VRAM I concentrated on address inputs, grounding them to get results. The pinout above labels them **A0 through A7**; my original A0-to-A8 description went one address line too far. Interfering with those signals can produce wonderfully broken graphics. This is deliberately abusive experimentation, not a repair technique, and neighbouring pins should not be assumed safe just because they are close together.
+On the VRAM I've been concentrating on the address inputs, grounding them to see what happens. The pinout above labels the address lines A0 through A7, and interfering with them produces some wonderfully broken graphics.
 
-Then I started messing with the Z80 RAM, particularly address lines A8, A9, A10 and A11, and whatever `/OE` is. Possibly with a dash of `/CE1`. Those last two are control signals, not address lines.
+Of course, this is circuit bending, not repairing anything. I'm deliberately interfering with the signals, and just because one pin produces an interesting effect doesn't mean the one next to it is safe to short. Best not to confuse a successful glitch with a good electrical idea!
+
+Next up is the Z80 RAM. I've been playing around with address lines A8, A9, A10 and A11, along with /OE and possibly a dash of /CE1. Those last two are control signals rather than address lines, so there's quite a bit more to investigate here.
 
 ![Z80 RAM](/assets/images/2016/img_0532.jpg)
 
-Messing with the data lines tended to hang the console and require a power cycle. Plenty more address lines to play with there, though.
+Messing with the data lines tends to hang the console completely, which means turning it off and back on again. Plenty more address lines to play with there, though. Let's see just how much of a mess I can make!
 
-I've decided to put circuit bending over on the McRetro Gaming YouTube channel since technically it's some sort of gaming. I'll be doing one of these a week if I remember and people show enough interest in staring at all the pretty patterns and odd sounds. It will be very interesting to see what each game can do.
+I've decided to put circuit bending over on the McRetro Gaming YouTube channel since technically it's some sort of gaming. I'll be doing one of these a week if I remember and people show enough interest in staring at all the pretty patterns and odd sounds. It'll be very interesting to see what each game can do.
 
 ![Sonic1_Glitch](/assets/images/2016/img_0531.jpg)
 
@@ -31,7 +35,7 @@ Big thanks to [Console5](https://console5.com/store/) for the pinout reference.
 - [Gijs Gieskes - Personal Home-Page (archived)](https://web.archive.org/web/20160219222212/http://www.gieskes.nl/)
 - [Sega - Genesis II / Mega Drive II Service Manual, 1993 supplements](https://consolemods.org/wiki/images/9/9e/Sega_Genesis_Model_2_VA1_Service_Manual.pdf)
 
-### Related posts
+### Related Posts
 
 - [Circuit Bending a Sega Mega Drive 2](/circuit-bending-a-sega-mega-drive-2/)
 - [Circuit Bending VRAM on a Sega Mega Drive / Genesis 2](/circuit-bending-vram-on-a-sega-mega-drive-genesis-2/)

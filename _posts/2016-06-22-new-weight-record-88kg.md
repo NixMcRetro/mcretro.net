@@ -1,5 +1,5 @@
 ---
-title: "New Weight Record - 88kg"
+title: "New Weight Record - 88 kg"
 author: "Nix McRetro"
 date: 2016-06-22T09:30:42.000+10:00
 last_modified_at: 2026-10-18
@@ -8,7 +8,7 @@ categories: [news]
 
 ![2016-06-22_weight1](/assets/images/2016/img_0477.jpg)
 
-Mission accomplished. Today on the 22nd June 2016 I have finally reached 88.0kg. This puts me at the lowest weight in my recorded history. Records date back to October 2008, a mere eight years ago. Alright, almost eight, and maybe not that mere. Chicken and milk. That's how it was _mostly_ done.
+Mission accomplished. Today on the 22nd June 2016 I have finally reached 88.0 kg. This puts me at the lowest weight in my recorded history. Records date back to October 2008, a mere eight years ago. Alright, almost eight, and maybe not that mere. Chicken and milk. That's how it was _mostly_ done.
 
 Let's have a look at some more cool screen caps though. First up, the last six months (or thereabouts) of lean / fat percentages. I like where the trends are heading.
 
@@ -16,7 +16,7 @@ Let's have a look at some more cool screen caps though. First up, the last six m
 
 ![Screen Shot 2016-06-22 at 9.13.37 AM](/assets/images/2016/img_0480.jpg)
 
-The body-fat and lean-mass figures here come from my consumer body-composition scale, so I am mainly interested in the trend rather than treating the absolute numbers as clinical measurements.
+You'll have to take those lean / fat percentages with a pinch of salt, though. They're coming from my consumer body-composition scale, and I'm much more interested in watching the lines head in the right direction than pretending the exact numbers are medical measurements.
 
 Next we have the weight history since late 2008 crammed onto tiny charts to make it look dramatic, alongside the more recent body-composition readings.
 
@@ -24,7 +24,7 @@ Next we have the weight history since late 2008 crammed onto tiny charts to make
 
 ![Screen Shot 2016-06-22 at 9.14.58 AM](/assets/images/2016/img_0482.jpg)
 
-Up next is the last six months where I sat at a massive 114.7kg and have shed 26.7kg to date.
+Up next is the last six months where I sat at a massive 114.7 kg and have shed 26.7 kg to date.
 
 ![2016-06-22_weight2](/assets/images/2016/img_0478.jpg)
 

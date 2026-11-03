@@ -10,6 +10,8 @@ categories: [devkit, sega, youtube]
 
 We'll be taking a proper look into Sega Dreamcast development hardware. I did not actually own a retail Dreamcast at this point. I did, however, own an **HKT-0120 Dreamcast / Katana development box**. Curious.
 
+It's quite a sizeable beast, and there's even a Sega of America asset tag on the top. Not something you see every day! I thought this was going to make for an interesting couple of weeks.
+
 The HKT-0120 belongs to Sega's later Set 5 development hardware and was designed to work with a host PC over SCSI as part of the Dreamcast development environment.
 
 Before trying to make the unit useful again, I wanted a raw copy of the internal hard drive in case there were any goodies hiding on it. You know, potentially interesting development material. ;) The next videos will therefore focus on imaging that drive before I start making changes to the machine.

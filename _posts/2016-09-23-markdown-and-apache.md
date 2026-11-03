@@ -2,19 +2,21 @@
 title: "Markdown and Apache"
 author: "Nix McRetro"
 date: 2016-09-23T21:18:35.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-04
 categories: [hacks]
 ---
 
 ![2016-09-23](/assets/images/2016/img_0563.jpg)
 
-More specifically: Markdown, Apache and the darknet. The old McRetro v2 onion address was loading, but Apache served the Markdown source files as plain text. Baby steps, at least the site was somewhat functional... right?
+More specifically: Markdown, Apache and the darknet. I've got the old McRetro onion address loading, but Apache is serving up the Markdown files as plain text. Baby steps! At least the site's somewhat functional... right?
 
-I was wondering whether an Apache module, Perl script, Ruby script or PHP script could translate it on demand. In hindsight, Apache serving a static `.md` file does not automatically transform Markdown into HTML: something needs to render or build it first. With Jekyll, another approach is to build the Markdown into the generated HTML site and have Apache serve that output.
+I've been wondering whether there's an Apache module, Perl script, Ruby script or PHP script that can translate everything on demand. Of course, serving up a `.md` file isn't going to magically turn it into HTML. Something needs to do the rendering first.
 
-A later clarification: the old `mcretro35qepy5cy.onion` address shown here was a Tor **v2** onion address. Tor retired that 16-character address format in 2021, so the historical link no longer works on the modern Tor network.
+Jekyll might be the answer here. It can build the Markdown into HTML, leaving Apache to serve the finished website rather than trying to translate everything as it's requested. That sounds a bit more sensible than reinventing the whole thing myself!
 
 **Update:** My GitHub Pages / Jekyll setup doesn't support lots of the fancy mods I want... maybe this was a bad idea! :-D
+
+**Update 2026:** The original address was [http://mcretro35qepy5cy.onion](/goodies/), a Tor v2 onion service. That address format was retired in 2021, so the link now leads to the Goodies page instead.
 
 ### Sources
 
@@ -22,7 +24,7 @@ A later clarification: the old `mcretro35qepy5cy.onion` address shown here was a
 - [Tor Project - Onion Service version 2 deprecation timeline](https://blog.torproject.org/v2-deprecation-timeline/)
 - [GitHub Docs - About GitHub Pages and Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll)
 
-### Related posts
+### Related Posts
 
 - [The Birth of Eleventy7.net](/the-birth-of-eleventy7-net/)
 - [McRetro.net Rebooted](/mcretro-net-rebooted/)

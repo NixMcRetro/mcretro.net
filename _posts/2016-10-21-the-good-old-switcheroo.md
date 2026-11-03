@@ -2,57 +2,65 @@
 title: "The Good Old Switcheroo"
 author: "Nix McRetro"
 date: 2016-10-21T22:48:09.000+11:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-04
 categories: [linux, microsoft]
 ---
 
 ![hp-stream-11](/assets/images/2016/img_0576.jpg)
 
-What's this we have here? The HP Stream 11 - an ultra portable laptop with a decent keyboard for AU$215. That's US$164 at the time of writing. It was outdated and ultimately not really suitable for everything I do day-to-day, but I was very curious about whether I could migrate easily from my Mac to a Linux-based machine. Turns out I couldn't, but now I can.
+What's this we have here? The HP Stream 11, an ultraportable laptop with a decent keyboard for AU$215. That's US$164 at the time of writing. It's outdated and ultimately not suitable for everything I do day-to-day, but I've been curious about how easily I could migrate from my Mac to a Linux-based machine.
+
+Turns out I couldn't, but now I can!
 
 My main requirements for a computer are:
 
 - A decent-sized keyboard with properly sized keys and no quirky key configurations.
 - A 13" or 14" screen with a resolution that doesn't cause "flyscreening".
-- Lightweight, at around 1.5kg.
+- Lightweight, at around 1.5 kg.
 - No CD drive.
 - A 2.5" hard drive.
 
 {% include youtube.html id="_wO8toxinoc" %}
 
-Well it's just like Meat Loaf always said, 3 out of 5 ain't bad!
+Well, it's just like Meat Loaf always said, 3 out of 5 ain't bad!
 
-I compromised on the 13"/14" screen size with 11" and swapped the requirement for a 2.5" hard drive for 32GB of eMMC storage. In all honesty though, these requirements would be for replacing my MacBook Air with a full blown PC.
+I've compromised on the 13"/14" screen size by getting an 11" machine, and swapped the requirement for a 2.5" hard drive for 32 GB of eMMC storage. In all honesty though, those requirements are really for replacing my MacBook Air with a full-blown PC.
 
-The HP Stream excels in having a great keyboard (compared to some of the other offerings on the market) and a trackpad that is not too bad once you realise you don't have to rest your thumb on the trackpad (thanks Apple for teaching me to do that with your oversized trackpad!)
+The HP Stream has a great keyboard compared with some of the other offerings on the market. The trackpad isn't too bad either, once you realise you don't have to rest your thumb on it. Thanks Apple for teaching me to do that with your oversized trackpads!
 
-The 11" screen doesn't have any flyscreening owing to the resolution not being stretched out to 14" like it was on some of the other models on display, but Windows 10? Well that had to go in the bin, or rather onto a recovery drive in case I ever decide to part with this laptop. Calling that "WIMBoot" was misleading: WIMBoot is a Windows 8.1 deployment feature, not just another name for a recovery image.
+The 11" screen doesn't have any flyscreening because the resolution isn't being stretched out to 14", as it was on some of the other models on display. Windows 10, though? Well, that had to go in the bin. Or rather, onto a recovery drive in case I ever decide to part with this laptop. WIMBoot is a Windows 8.1 deployment feature, so I'm keeping that separate from the recovery image.
 
-Windows 10 on a cold boot was using half of the 2GB of RAM. 2GB. So tiny! I tried Lubuntu, Xubuntu, Ubuntu (full blown!), Debian and even Arch. The Ubuntu variants are Debian-based; Arch is a separate distribution. The best one so far with a good compromise on RAM usage versus usability is Xubuntu. Lubuntu feels a little too dumbed down with the whole LXDE thing going on, while Xubuntu (using Xfce) feels quite homey.
+Windows 10 on a cold boot was using half of the 2 GB of RAM. Two gigabytes! So tiny! I've tried Lubuntu, Xubuntu, full-blown Ubuntu, Debian and even Arch. The Ubuntu variants are Debian-based, whereas Arch is a separate distribution.
 
-In my rough cold-boot checks, Xubuntu used something like 270MB of RAM, Ubuntu used around 1GB with Unity in full swing, and Debian with GNOME 3 came in around 500MB. I noted Lubuntu as "pretty similar", without recording a clear comparison. These were observations of my installations, not a controlled benchmark. Arch was just too much hassle to set up for me. I must admit though I can see the attraction to it. If I had more time I would certainly reinstall the OS a few dozen times to get the hang of it.
+The best compromise I've found between RAM usage and usability is Xubuntu. Lubuntu feels a little too dumbed down with the whole LXDE thing going on, while Xubuntu, using Xfce, feels quite homey.
 
-But Xubuntu had my attention with everything working out of the box. Next I had to go on the search for equivalent programs to what I use on the Mac side of things. Most important is probably the web browser. Hmmm... there's no Safari available for Linux so all my iCloud bookmarks didn't sync... in the bin with Safari! Moved over to Firefox with Firefox Sync. Slapped Classic Theme Restorer in and suddenly it doesn't look so bad (why use all those curved tabs taking up most of my screen?).
+In my rough cold-boot checks, Xubuntu used something like 270 MB of RAM. Ubuntu used around 1 GB with Unity in full swing, and Debian with GNOME 3 came in around 500 MB. Lubuntu was pretty similar in my notes, although I didn't record a proper comparison. These aren't exactly controlled benchmarks, but they give me a fair idea of what each installation is doing.
 
-One great advantage to switching to Firefox is having the extensions I wanted: Disconnect, HTTPS Everywhere and uBlock Origin. Finally! So that's the browser side of things handled.
+Arch was simply too much hassle for me to set up. I must admit I can see the attraction, though. If I had more time I'd probably reinstall the operating system a few dozen times just to get the hang of it!
 
-I tend to like using a dedicated email client, so I've gone with Mozilla Thunderbird, which also has a calendar. It doesn't delete emails like... ummm... oh! Evolution does! Or at least that was the rumour. I wasn't taking that risk.
+Xubuntu has my attention because just about everything works out of the box. Next comes the search for equivalent programs to what I use on the Mac, starting with the web browser.
 
-Coming from OS X (Yes I am still on 10.11) I needed to make things a little bit prettier. Enter Numix. Numix solved that very well. Thank you Numix!
+Hmmm... no Safari for Linux, which means my iCloud bookmarks won't sync. In the bin with Safari! I've moved over to Firefox with Firefox Sync, slapped Classic Theme Restorer in, and suddenly it doesn't look so bad. Why use all those curved tabs taking up most of the screen?
 
-Contact syncing was fairly straight forward to move from iCloud to Google, same for calendars as well. Reminders I am still working on, although this is probably an opportunity to switch over to Notes on the Mac and merge my long term to do list into Notes. Notes does sync with Google, but I am not sure where they are syncing to... I need to look into that further.
+Another advantage of Firefox is having the extensions I want: Disconnect, HTTPS Everywhere and uBlock Origin. Finally! That's the browser side of things handled.
 
-Rhythmbox looks promising as a music player. AirPlay works via a recompiled PulseAudio with RAOP2 (pulseaudio-raop2) compiled in, the original raop version does not work for me at all, or rather it jitters along with a smidgen of the song every few seconds.
+I like having a dedicated email client, so I've gone with Mozilla Thunderbird, which also has a calendar. It doesn't delete emails like... ummm... oh! Evolution does! Or at least that was the rumour. I'm not taking that risk.
 
-Encrypted folders are something I've started looking into with Cryptkeeper, a GUI for EncFS. It is not the same thing as opening macOS encrypted sparsebundles, but it gives me a similar encrypted-folder workflow. Whole-disk encryption is just as easy as on a Mac though, which is fantastic. The prompt to decrypt isn't even ugly like Debian or Arch... :)
+Coming from OS X, and yes, I'm still on 10.11, I need to make things look a little prettier. Enter Numix. Numix solves that problem rather nicely. Thank you, Numix!
 
-For backing up my data (all 32GB of it), I could probably get away with rsync or grsync onto an encrypted microSD card. Yes, I do still like a GUI! If I ever moved to a machine with a 2.5" drive, I'd be sure to grab an SSD and have a better backup plan than an unreliable SD card.
+Contact syncing has been fairly straightforward to move from iCloud to Google, and calendars have come across as well. Reminders are still a work in progress. Perhaps this is an opportunity to switch over to Notes on the Mac and merge my long-term to-do list into Notes. Notes seems to be syncing with Google, but I'm not entirely sure where the notes are going. Something else to investigate!
 
-Taking all of the above into account, I'm now more ready than ever to switch to Linux when the time comes (i.e. my Mac dies). It's nearly three years old now but still seems to be going strong. I'll probably end up replacing my phone before I replace my laptop.
+Rhythmbox looks promising as a music player. I've even got AirPlay working through a recompiled version of PulseAudio with RAOP2 support (`pulseaudio-raop2`). The original RAOP implementation doesn't work for me at all. Or rather, it jitters along, giving me a smidgen of a song every few seconds. Lovely.
 
-On that note I am also currently testing whether Android can accept my current setup. For the most part it can, Gmail, contacts, calendars and Firefox bookmarks all sync well. I believe I could survive with a hardy 3.5" or 4" phone. It's incredible that 4.5-5" is now considered "small". Where did we go wrong?
+Encrypted folders are another thing I've started investigating, this time with Cryptkeeper, a GUI for EncFS. It's not the same as opening macOS encrypted sparsebundles, but it gives me a similar encrypted-folder workflow. Whole-disk encryption seems just as straightforward as on a Mac, which is fantastic. The decryption prompt isn't even ugly like Debian or Arch! :)
 
-With all that said, here's hoping I don't have to actually switch computers or phones for a while yet but when I do, I'll be ready to make the move! ;)
+For backing up my data, all 32 GB of it, I could probably get away with `rsync` or `grsync` onto an encrypted microSD card. Yes, I do still like a GUI! If I eventually move to a machine with a 2.5" drive, I'll be sure to grab an SSD and arrange something more reliable than backing everything up to an SD card.
+
+Taking all of that into account, I'm more ready than ever to switch to Linux when the time comes. That'll probably be when my Mac dies, although it's nearly three years old and still going strong. Chances are I'll replace my phone before my laptop.
+
+On that note, I'm also testing whether Android can handle my current setup. For the most part it can. Gmail, contacts, calendars and Firefox bookmarks are all syncing quite nicely. I reckon I could survive with a hardy 3.5" or 4" phone. Incredible that 4.5-5" is now considered small. Where did we go wrong?
+
+With all that said, here's hoping I don't actually have to switch computers or phones for a while yet. But when I do, I'll be ready to make the move! ;)
 
 ### Sources
 

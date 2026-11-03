@@ -2,7 +2,7 @@
 title: "Circuit Bending - Sonic the Hedgehog"
 author: "Nix McRetro"
 date: 2016-08-12T07:44:45.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-03
 categories: [guides, hacks, sega]
 ---
 
@@ -18,7 +18,9 @@ Then I started messing with the Z80 RAM, particularly address lines A8, A9, A10 
 
 ![Z80 RAM](/assets/images/2016/img_0532.jpg)
 
-Messing with the data lines tended to hang the console and require a power cycle. Plenty more address lines to play with there, though. I've decided to put circuit bending over on the McRetro Gaming YouTube channel since technically it's some sort of gaming. I'll be doing one of these a week if I remember and people show enough interest in staring at all the pretty patterns and odd sounds. It will be very interesting to see what each game can do.
+Messing with the data lines tended to hang the console and require a power cycle. Plenty more address lines to play with there, though.
+
+I've decided to put circuit bending over on the McRetro Gaming YouTube channel since technically it's some sort of gaming. I'll be doing one of these a week if I remember and people show enough interest in staring at all the pretty patterns and odd sounds. It will be very interesting to see what each game can do.
 
 ![Sonic1_Glitch](/assets/images/2016/img_0531.jpg)
 

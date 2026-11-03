@@ -2,7 +2,7 @@
 title: "Trout is Salmon, Salmon is Life"
 author: "Nix McRetro"
 date: 2016-08-11T20:42:39.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-03
 categories: [news]
 ---
 
@@ -22,7 +22,9 @@ Trout is just like salmon and can often be used in place of a rifle. While only 
 
 In my thoroughly unscientific fish battlefield, salmon is such a terrible predatory creature that it gets eaten by trout. Eaten by a fish it could have shot!
 
-There is one real fact hiding underneath it. The diagram above is a historical illustration of mercury moving through the food chain, not a current eating guide. The mercury figures I quoted came from the FDA's 1990-2012 monitoring table: fresh/frozen salmon had a **median** mercury concentration of **0.015 ppm**, while freshwater trout had a median of **0.025 ppm**. Those are medians across sampled fish, not universal mercury concentrations for every salmon and trout in existence. The corresponding means were **0.022 ppm** for fresh/frozen salmon and **0.071 ppm** for freshwater trout.
+There is one real fact hiding underneath all this fish-related nonsense. The diagram above is a historical illustration of mercury moving through the food chain, not a current eating guide.
+
+The mercury figures I quoted came from the FDA's 1990-2012 monitoring table: fresh/frozen salmon had a **median** mercury concentration of **0.015 ppm**, while freshwater trout had a median of **0.025 ppm**. Those are medians across sampled fish, not universal mercury concentrations for every salmon and trout in existence. The corresponding means were **0.022 ppm** for fresh/frozen salmon and **0.071 ppm** for freshwater trout.
 
 I still vote salmon. Mostly because it tastes better and appears to be more effective as a fictional rifle substitute.
 

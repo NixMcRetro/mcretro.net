@@ -2,7 +2,7 @@
 title: "80kg Weight Goal Achieved!"
 author: "Nix McRetro"
 date: 2016-08-07T08:20:43.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-03
 categories: [news]
 ---
 
@@ -12,11 +12,11 @@ Look at that! I don't need to slap a red line on this one. The goal line in gree
 
 ![2016-08-07\_80kg\_6month](/assets/images/2016/img_0513.jpg)
 
-Dots, lots and lots of dots. Above is the six-month look back. I'll update the blog with my current diet as of August in the next few hours. It's quite interesting to see what 60% of an 8200kJ diet consists of. Most of the things are delicious, as in I could eat them every day!
+Dots, lots and lots of dots. Above is the six-month look back. I'll update the blog with my current diet as of August in the next few hours. It's quite interesting to see what 60% of an 8200 kJ diet consists of. Most of the things are delicious, as in I could eat them every day!
 
 ![2016-08-07\_80kg\_3month](/assets/images/2016/img_0512.jpg)
 
-Above is the last three months. One important thing for me was eating food I actually wanted to eat, not sacrificing chicken for celery. No one wants to eat salad. If they do, there's probably a screw loose or a crossed wire. Salad ain't got no energy... well except maybe the dressing, so why not just have chicken with mayo? Peri-peri mayo, that is. That's me describing what made my own 2016 diet feel sustainable, not announcing a universal law of nutrition.
+Above is the last three months. One important thing for me was eating food I actually wanted to eat, not sacrificing chicken for celery. No one wants to eat salad. If they do, there's probably a screw loose or a crossed wire. Salad ain't got no energy... well except maybe the dressing, so why not just have chicken with mayo? Peri-peri mayo, that is. That's what made my own 2016 diet feel sustainable to me, anyway. I wasn't laying down some universal law of nutrition.
 
 ![Goal Achieved](/assets/images/2016/img_0515.jpg)
 

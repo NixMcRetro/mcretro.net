@@ -10,7 +10,7 @@ categories: [hacks, news]
 
 Well, I'm back on the wagon again. GQ-4X in hand, with a spare MiniPro TL866CS, K150 and Wellon VP-390. Overkill? Very much so. The GQ-4X had become so familiar that I couldn't live without one anymore. Dammit!
 
-I also finally gave my Willem-to-TSOP adapter a proper try. Some flash chips sold or marked as AMD AM29F032B identified in my setup as ST M29F032D devices instead. The screenshot records **20AC**, consistent with the M29F032D electronic signature. That strongly suggests they had been remarked, although I cannot reconstruct the complete provenance of those chips now.
+I also finally gave my Willem-to-TSOP adapter a proper try. Some flash chips sold or marked as AMD AM29F032B identified in my setup as ST M29F032D devices instead. The screenshot records **20AC**, consistent with the M29F032D electronic signature. That certainly made me suspicious they'd been remarked, although I couldn't say for certain how they'd ended up with those markings.
 
 Fortunately, both AM29F032B and M29F032D TSOP40 devices are supported by the GQ-4X v4 / GQ-4x4 with the appropriate adapter, and both worked for the SNES flash-cart project I was building.
 

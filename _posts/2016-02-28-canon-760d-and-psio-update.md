@@ -12,7 +12,11 @@ It looks like [PSIO](https://psio.cybdyn-systems.com.au/) will be "Re-Available 
 
 I wasn't sure what the "re-available" bit meant. I could have sworn I'd seen a 1st February pre-order date before it flicked over to March, but that was just what I remembered. Either way, glad to see the project seeing the light of day.
 
-In other news, I've picked up an expensive new Canon EOS 760D so I can document more consoles and record even more videos.
+In other news, I've picked up an expensive new Canon EOS 760D so I can document more consoles and record even more videos. Naturally, my first test subjects were some macadamia nuts and a handful of flash chips. The touchscreen lets me pick a focus point, and the autofocus follows it as I move things around. That should be rather handy for soldering videos!
+
+The STM lens focuses quite quietly too, which is lovely when you're trying to record a close-up. I've got some fine-pitch chips for the SNES flash-cart boards lined up for a future soldering video, so the camera should get a proper workout then. Today I'm just playing around with the focus and seeing what it can do.
+
+The NBN is also meant to reach this area soon. With a bit of luck, that might mean enough upload bandwidth to get more videos online. Time will tell!
 
 I also picked up two IBM Model M keyboards, one with a black logo and one with a blue logo. I initially thought the blue logo and drainage holes meant Lexmark, but IBM also made blue-logo Model Ms with drainage holes. Logo colour alone does not identify the manufacturer.
 

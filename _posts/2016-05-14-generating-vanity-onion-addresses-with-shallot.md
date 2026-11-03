@@ -8,23 +8,29 @@ categories: [guides, hacks, raspberry-pi]
 
 ![Shallot](/assets/images/2016/img_0472.jpg)
 
-Back in 2016 I used **Shallot 0.0.3-alpha** to generate a vanity version 2 onion address for McRetro. My old address was mcretro35qepy5cy.onion. This is now historical documentation: Shallot generates the old 16-character **v2 onion addresses**, and Tor removed support for those services in 2021. Modern version 3 onion addresses are 56 characters long and require modern v3-compatible vanity tools.
+I've been playing around with Shallot 0.0.3-alpha to generate a vanity onion address for McRetro. My old address was [http://mcretro35qepy5cy.onion](https://mcretro.net/goodies/), and I thought I'd see what else I could come up with. Time for a little tinkering!
 
-For the old Ubuntu 16.04 (64-bit) setup I was using, Shallot needed the OpenSSL development headers. Without them I hit **"fatal error: openssl/bn.h: No such file or directory"** when trying to build it. My commands were:
+For this experiment I'm using Ubuntu 16.04 (64-bit). Shallot needs the OpenSSL development headers to build, something I discovered after running into the rather cheerful error **"fatal error: openssl/bn.h: No such file or directory"**. Right. That explains a few things.
+
+First, update the package lists:
 
 `sudo apt-get update`
 
+Then install the missing development headers:
+
 `sudo apt-get install libssl-dev`
 
-Then:
+With those out of the way, build Shallot:
 
 `./configure && make`
 
-Running `./shallot cat` searched for a v2 address containing `cat`. Running `./shallot ^cat` searched for one beginning with `cat`, thanks to our good friend the caret. Again, those examples only apply to the obsolete v2 address format.
+Now for the fun part. Running `./shallot cat` searches for an onion address containing `cat`, while `./shallot ^cat` looks for one beginning with `cat`. The caret is doing its usual job of anchoring the match to the beginning of the string. Simple enough!
 
-The generated private key was the identity of the onion service, so losing control of that key meant losing control of that address. The screenshot includes a private key generated for an example v2 address. Since it was published here, it must not be reused as a service key. Keep the private key of any real onion service private.
+There's one important catch, though. Shallot generates a private key along with the address, and that key is what identifies the onion service. The screenshot above includes an example key, but because I've published it here, that particular key should never be used for a real service. Keep the private keys for your actual onion services private!
 
-For a modern onion service, use current Tor v3 documentation and tooling instead.
+**Update (2026):** This was written for the old 16-character version 2 onion address format. Tor removed support for v2 onion services in 2021, so Shallot is no longer suitable for setting up a modern onion service. Version 3 onion addresses are 56 characters long and require v3-compatible tooling. The commands above are preserved as historical documentation, not instructions for creating a current onion service.
+
+For a modern onion service, refer to the current Tor documentation and tools instead.
 
 ### Sources
 

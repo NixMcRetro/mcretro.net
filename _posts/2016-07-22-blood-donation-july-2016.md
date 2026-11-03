@@ -16,9 +16,9 @@ At my largest recorded weight, 115.4 kg, this calculator estimated my blood volu
 
 ![... and after](/assets/images/2016/img_0496.jpg)
 
-At 82.6 kg, the same calculator gave 6.195 L, a difference of 2.46 L between its estimates. It used a fixed 75 mL/kg formula, so these were not measurements of my circulating blood volume. Assuming a 500 mL donation gives the rough 5.8% and 8.1% figures I quoted, but that arithmetic does not establish my actual blood volume or explain why I felt faint.
+At 82.6 kg, the same calculator gives me 6.195 L, a difference of 2.46 L between the two estimates. Mind you, it's simply using a fixed 75 mL/kg formula, not actually measuring the blood sloshing around inside me. With a 500 mL donation, that gives the rough 5.8% and 8.1% figures I originally quoted. Interesting numbers, but they don't tell me for certain why I nearly fainted.
 
-This particular donation did not go quite as smoothly. About half an hour after getting home I was checking emails and chatting away on the old ASSEMblerGames forums when I realised I'd been drinking so much water that my bladder was about to explode. Naturally, off to the bathroom.
+This particular donation did not go quite as smoothly. About half an hour after getting home I was checking emails and chatting away on the old [ASSEMblergames.com](https://web.archive.org/web/20170628092428/https://assemblergames.com/) forums when I realised I'd been drinking so much water that my bladder was about to explode. Naturally, off to the bathroom.
 
 Partway through I felt a sudden rush leave my head. I looked in the mirror, noticed my pupils looked rather dilated, then my vision started fading towards black and my ears began ringing. Instinctively I headed back to the bedroom and flopped onto the bed. Consciousness was never lost.
 
@@ -26,9 +26,7 @@ I noted the time, 3:46 pm, and spent the next 20 minutes lying there listening t
 
 At the time I thought 150 g of salmon and Savoury Shapes hadn't been enough to eat beforehand. I also wrote that one of my lessons should be to reduce or skip my propranolol dose before donating.
 
-Nope.
-
-That is not something I should have decided for myself. Prescription medication should not be adjusted for a blood donation without checking with the prescriber and donor service. The much more sensible lesson is to follow Lifeblood's preparation and aftercare instructions, tell them about medications and previous reactions, and let the staff know if anything starts going strange.
+Nope. That wasn't something I should have decided for myself. Prescription medication isn't something to adjust on a whim before donating blood, and I should have checked with my prescriber and the donor service instead. Following Lifeblood's preparation and aftercare instructions, discussing medications and previous reactions, and telling the staff when something feels wrong make a lot more sense.
 
 ![Mmmm Cookie!](/assets/images/2016/img_0495.jpg)
 

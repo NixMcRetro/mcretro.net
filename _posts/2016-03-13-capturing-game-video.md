@@ -12,9 +12,7 @@ I tend to upload all my videos at 1080p these days. I used to be a 720p person, 
 
 YouTube's upload recommendations are useful here. For standard frame rates (24, 25 or 30 fps), they recommend roughly 8 Mbps for 1080p, 16 Mbps for 1440p and 35 to 45 Mbps for 4K. That's a lot of bits!
 
-For video captures themselves, I had been trying [ScreenFlow](https://www.telestream.net/screenflow/) or the open-source alternative [OBS](https://obsproject.com/), then doing the final encode in Final Cut Pro X. OBS did a sensible job and was free, but recently I had been giving ScreenFlow a go and it was quite powerful.
-
-One 2560 x 1440 ScreenFlow recording produced around 17 GB of source material.
+For video captures themselves, I had been trying [ScreenFlow](https://www.telestream.net/screenflow/) or the open-source alternative [OBS](https://obsproject.com/), then doing the final encode in Final Cut Pro X. OBS did a sensible job and was free, but recently I had been giving ScreenFlow a go and it was quite powerful. One 2560 x 1440 ScreenFlow recording produced around 17 GB of source material.
 
 Exporting a roughly 30-minute 1080p version gave me:
 
@@ -22,9 +20,9 @@ Exporting a roughly 30-minute 1080p version gave me:
 - ProRes 422 HQ: roughly 50 GB and just under real-time to encode
 - H.264: slow enough on this machine that I eventually cancelled it
 
-I originally took the larger ProRes file to mean I wasn't sacrificing the source, but file size alone doesn't establish that. ProRes 422 HQ is still a compressed codec, but Apple designed it for very high visual fidelity and multigeneration editing. ProRes 4444 can preserve 4:4:4 colour and alpha-channel information, which is useful for compositing but unnecessary for plenty of ordinary video workflows.
+With files that large, I initially figured a bigger ProRes export meant I wasn't sacrificing anything from the source, but file size alone doesn't establish that. ProRes 422 HQ is still a compressed codec, but Apple designed it for very high visual fidelity and multigeneration editing. ProRes 4444 can preserve 4:4:4 colour and alpha-channel information, which is useful for compositing but unnecessary for plenty of ordinary video workflows.
 
-For this particular screen-capture workflow, 422 HQ was already enormous. ProRes 4444 was super-incredible-overkill-2000. My little dual-core i7 was doing its best; I believed it was a fourth-generation model.
+For this particular screen-capture workflow, 422 HQ was already enormous. ProRes 4444 was super-incredible-overkill-2000. My little dual-core i7 was doing its best; I think it was a fourth-generation model.
 
 ### Sources
 

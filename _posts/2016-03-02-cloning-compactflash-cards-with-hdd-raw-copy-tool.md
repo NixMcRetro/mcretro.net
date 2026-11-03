@@ -18,6 +18,4 @@ One important warning with any raw-disk cloning tool: double-check which device 
 
 ![](/assets/images/2016/img_0459.bmp)
 
-Maybe I just like that Prairie Wind background tile. Either way, the goal was a working backup so I could thoroughly destroy an XTIDE configuration and restore it instead of starting over. With those read errors in the GIF, I would need to check the image and test a restore before relying on it.
-
-Dammit, that is a nice tile. 🙃
+Maybe I just like that Prairie Wind background tile. Either way, the goal was a working backup so I could thoroughly destroy an XTIDE configuration and restore it instead of starting over. With those read errors in the GIF, I would need to check the image and test a restore before relying on it. Dammit, that is a nice tile. 🙃

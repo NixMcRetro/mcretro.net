@@ -2,7 +2,7 @@
 title: "Panasonic SMD Caps - FP Series"
 author: "Nix McRetro"
 date: 2016-09-08T06:57:50.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-04
 categories: [guides]
 ---
 
@@ -16,9 +16,7 @@ Just a little reminder for myself the next time I'm trying to work out the volta
 - `E` = 25 V
 - `V` = 35 V
 
-Useful! I should still check the correct manufacturer and series datasheet rather than assuming every SMD electrolytic uses the same letters. Back to replacing capacitors I go.
-
-Tra-la-la-la-la-li! :-)
+Useful! I should still check the correct manufacturer and series datasheet rather than assuming every SMD electrolytic uses the same letters. Back to replacing capacitors I go. Tra-la-la-la-la-li! :-)
 
 ### Sources
 

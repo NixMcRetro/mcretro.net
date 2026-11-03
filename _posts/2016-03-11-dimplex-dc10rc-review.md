@@ -8,7 +8,9 @@ categories: [news, youtube]
 
 {% include youtube.html id="Ws7BdhqYU0U" %}
 
-Ever sit back and wish your room was only 27 degrees? This particular Dimplex DC10RC was doing an extremely poor job of getting me there. In my room I was seeing something like a two-degree reduction compared with the outside temperature, despite using it in a room smaller than the space I expected it to handle.
+Ever sit back and wish your room was only 27 degrees? This particular Dimplex DC10RC was doing an extremely poor job of getting me there. The room is only about 12 square metres, and I'd had the unit running since around 8 am to get ahead of the heat. By early afternoon I was seeing something like a two-degree reduction compared with the outside temperature. Not exactly impressive for a room smaller than the space I expected it to handle!
+
+The fan is quite noisy, even when I try the sleep setting, and the exhaust tube doesn't seem to seal terribly well where it connects. Hot air escaping around the tube isn't helping matters. At least I don't need a separate drainage pipe in this setup, although that doesn't make the room any cooler.
 
 I originally pointed to the manual's **43°C** figure as if that guaranteed a particular temperature drop. The manual actually gives a cooling-mode ambient operating range of **17°C to 43°C**, not a guarantee of how many degrees it will pull a particular room down.
 

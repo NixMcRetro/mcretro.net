@@ -2,27 +2,27 @@
 title: "Sega Saturn Power Supply Swapping"
 author: "Nix McRetro"
 date: 2016-08-25T19:52:49.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-04
 categories: [hacks, repairs, sega]
 ---
 
 ![SS - 0801](/assets/images/2016/img_0544.jpg)
 
-Sega Saturn power supplies generally fall into three broad form factors, commonly called Type A, Type B and Type C.
+Sega Saturn power supplies are an interesting bunch. As if the different motherboard revisions weren't enough, Sega also managed to use three broad power supply designs, commonly known as Type A, Type B and Type C. So much for swapping them around without a second thought!
 
 **Type B:** Used through roughly VA1 to VA5. This is the long five-pin supply pictured above. Typical pins: `GND, GND, 3.3 V, 5 V, 9 V`.
 
 ![SS - 0802](/assets/images/2016/img_0545.jpg)
 
-**Type C:** Used on later boards. NTSC machines generally have four pins: `GND, GND, 5 V, 5 V`. PAL machines have an additional output, nominally 9 V or 12 V depending on the supply: `GND, GND, 5 V, 5 V, 9 V / 12 V`. Check the actual supply markings rather than assuming every PAL unit is the same.
+**Type C:** Used on later boards. NTSC machines generally have four pins: `GND, GND, 5 V, 5 V`. PAL machines have an additional output, nominally 9 V or 12 V depending on the supply: `GND, GND, 5 V, 5 V, 9 V / 12 V`. Best check the markings rather than assume every PAL machine is the same.
 
 **Type A:** Used on VA0 boards and mounted to the upper casing. Typical connector positions: `GND, GND, 3.3 V, 5 V, NC, 9 V`.
 
-I originally described that extra PAL rail as being for "SCART RGB switching or something along those lines". Don't quote me on that though. On PAL Saturns, the extra rail appears at the AV connector for SCART automatic switching. It is not part of the RGB video signal itself. Composite or bust! ;)
+That extra PAL rail is an interesting one. It feeds through to the AV connector for SCART automatic switching, rather than carrying the RGB video signal itself. Composite or bust! ;)
 
-Like-for-like physical format and pinout matter when swapping supplies. Do not assume that two Saturn PSUs are interchangeable simply because both fit somewhere inside a Saturn case. The replacement supply must also be rated for the local mains voltage.
+Of course, finding a power supply that physically fits is only part of the problem. The connector pinout and electrical requirements have to match as well, and there's also the local mains voltage to consider. I'd rather not find out I've got the wrong one by watching a Saturn go up in smoke!
 
-**Treat these as mains-voltage power supplies, not ordinary low-voltage console boards.**
+These are mains-voltage power supplies, so definitely not something to treat like an ordinary low-voltage console board.
 
 ### Sources
 

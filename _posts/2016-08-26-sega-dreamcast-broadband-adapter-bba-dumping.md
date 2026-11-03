@@ -2,15 +2,15 @@
 title: "Sega Dreamcast Broadband Adapter (BBA) Dumping"
 author: "Nix McRetro"
 date: 2016-08-26T10:19:25.000+10:00
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-04
 categories: [hacks, sega]
 ---
 
 ![crazy_taxi1](/assets/images/2016/img_0546.jpg)
 
-The Dreamcast Broadband Adapter is one of the most awesome pieces of technology you can bolt onto a Dreamcast. Software such as **httpd-ack** can transfer GD-ROM tracks over the network and dump the console's BIOS. GD-R development media can also be dumped through suitable System Disc 2 / disc-swap workflows.
+The Dreamcast Broadband Adapter is one of the most awesome pieces of technology you can bolt onto a Dreamcast. With software such as httpd-ack, it's possible to transfer GD-ROM tracks over the network and dump the console's BIOS. Suitable System Disc 2 and disc-swap workflows can also be used for dumping GD-R development media.
 
-I had four unlabeled pressed Sega discs, or "silvers", all NTSC-U:
+I've got four unlabeled pressed Sega discs, or "silvers", all NTSC-U. A very late beta, perhaps? Wouldn't that be interesting!
 
 - ChuChu Rocket!
 - Space Channel 5
@@ -19,15 +19,21 @@ I had four unlabeled pressed Sega discs, or "silvers", all NTSC-U:
 
 ![crazy_taxi2](/assets/images/2016/img_0547.jpg)
 
-I originally described an unlabeled pressed Sega disc as "a very late beta if you will". That was me getting excited. An unlabeled pressed disc tells me that the physical media is unusual, but it does not establish whether the software is a beta, review build, final mastering copy or something else. For ChuChu Rocket!, Space Channel 5 and Crazy Taxi, I compared CRC32 values from my dumps with the retail data represented in Redump and found matches. So apparently I had nothing special. Mighty boring. It never hurts to check though!
+There's only one way to find out if these are something special, and that's to start dumping and comparing them. For ChuChu Rocket!, Space Channel 5 and Crazy Taxi, I compared the CRC32 values from my dumps against the retail data represented in Redump. All three matched.
+
+So apparently I had nothing special. Mighty boring! It never hurts to check though, and an unlabeled pressed disc could just as easily be a retail mastering copy as something more interesting.
 
 ![virtua_striker](/assets/images/2016/img_0549.jpg)
 
-Virtua Striker 2 Ver. 2000.1 was not represented in the database I was checking at the time, so I went hunting through a contemporary scene image and searched for `SEGAKATANA` in a hex editor to locate the Dreamcast header inside the CDI file. That suggested I was looking at the retail build, but it is weaker evidence than a full verified byte-for-byte retail dump comparison.
+Virtua Striker 2 Ver. 2000.1 wasn't represented in the database I was checking, so I went hunting through a contemporary scene image instead. Searching for `SEGAKATANA` in a hex editor helped me locate the Dreamcast header inside the CDI file.
+
+That suggests I'm dealing with the retail build, although it's not quite as convincing as a verified byte-for-byte comparison against a known retail dump. Close enough to satisfy my curiosity for now!
 
 ![system_disc](/assets/images/2016/img_0548.jpg)
 
-I also compared two System Disc 2 copies, S-2XXX and S-3XXX, and the data I dumped from those two copies matched each other. XDP Browser was useful for setting a static BBA IP address before using httpd-ack.
+I also compared two System Disc 2 copies, S-2XXX and S-3XXX, and the data I dumped from them matched. XDP Browser was useful for getting a static BBA IP address configured before using httpd-ack.
+
+Not a bad result for an afternoon spent rummaging through Dreamcast discs. :)
 
 ### Sources
 

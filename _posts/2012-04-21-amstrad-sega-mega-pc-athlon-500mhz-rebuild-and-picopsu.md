@@ -8,9 +8,7 @@ categories: [ibm-pc, repairs, sega]
 
 ![The Amstrad Mega PC](/assets/images/2012/img_0067a.jpg)
 
-After loading Windows 95 onto the Amstrad Mega PC, it became quite clear that leaving it running like a broken-down horse-drawn buggy was not the best idea.
-
-Poking around the internet, Windows 3.11 looks like a much better fit. Lightweight, but still capable of being dressed up to behave more like a modern Windows environment. Enter [Calmira](http://www.calmira.de/).
+After loading Windows 95 onto the Amstrad Mega PC, it became quite clear that leaving it running like a broken-down horse-drawn buggy was not the best idea. Poking around the internet, Windows 3.11 looks like a much better fit. Lightweight, but still capable of being dressed up to behave more like a modern Windows environment. Enter [Calmira](http://www.calmira.de/).
 
 I also found Counterpoint while hunting around for the original Amstrad software. Counterpoint is not really an operating system of its own. It is Amstrad's graphical DOS front end, and the Mega PC originally shipped with MS-DOS 5.0 underneath it.
 
@@ -20,9 +18,7 @@ Have a look at this [Internet Archive capture](https://web.archive.org/web/20080
 
 #### The Athlon 500 MHz project
 
-In other news, my side project, the Athlon 500 MHz Project, came to life today. I managed to get the Athlon coupled with an ASUS K7V Rev 1.01 and install Windows XP. Very happy with that result.
-
-Now I just need a rockin' case for it, with some horns if possible.
+In other news, my side project, the Athlon 500 MHz Project, came to life today. I managed to get the Athlon coupled with an ASUS K7V Rev 1.01 and install Windows XP. Very happy with that result. Now I just need a rockin' case for it, with some horns if possible.
 
 This particular CPU has significant sentimental value. It was used in the first PC I put together as a teenager back in 2000. According to the warranty sticker, February 2000. I remember that day well. We were looking for a faster CPU but the entry-level 500 MHz was all they had. I was not leaving empty handed.
 
@@ -34,9 +30,7 @@ The markings on this particular 500 MHz Athlon appeared to identify a 650 MHz-ra
 
 I ran into some trouble with the BIOS and one of the many old-PC hard-drive size barriers. I ended up using a drive-overlay program, much like I had on the Mega PC, and managed to recover most of the 160 GB drive.
 
-There is still the familiar 28-bit LBA ceiling at roughly 128 GiB, or 137 GB in decimal terms. Creating another partition does not get around that limit. Access beyond it requires 48-bit LBA support somewhere through the relevant hardware, BIOS or driver path and operating system.
-
-That is still well beyond the roughly 33 GB limit I was hitting through the BIOS itself.
+There is still the familiar 28-bit LBA ceiling at roughly 128 GiB, or 137 GB in decimal terms. Creating another partition does not get around that limit. Access beyond it requires 48-bit LBA support somewhere through the relevant hardware, BIOS or driver path and operating system. That is still well beyond the roughly 33 GB limit I was hitting through the BIOS itself.
 
 ![](/assets/images/2012/img_0069.jpg)
 
@@ -48,11 +42,9 @@ Who cares! It works, and it runs much quieter than my other PATA drives.
 
 #### picoPSU
 
-I also tested the [picoPSU-80](https://www.mini-box.com/picoPSU-80) that arrived from the US a few days ago, and it seems to work a charm.
+I also tested the [picoPSU-80](https://www.mini-box.com/picoPSU-80) that arrived from the US a few days ago, and it seems to work a charm. I'm not sure what I'll ultimately use it for, although I'm toying with the idea of getting the old Mega PC 386SX motherboard powered up and functional as a spare old PC.
 
-I'm not sure what I'll ultimately use it for. I'm toying with the idea of getting the old Mega PC 386SX motherboard powered up and functional as a spare old PC. I'd just need a small Disk on Module, a safe replacement for the original rechargeable NiCad backup battery and the picoPSU... perhaps!
-
-An ordinary non-rechargeable AA or AAA battery must not be connected directly to a charging circuit, so any external battery holder would need appropriate isolation or a compatible rechargeable arrangement.
+I'd just need a small Disk on Module, a safe replacement for the original rechargeable NiCad backup battery and the picoPSU... perhaps! An ordinary non-rechargeable AA or AAA battery must not be connected directly to a charging circuit, so any external battery holder would need appropriate isolation or a compatible rechargeable arrangement.
 
 ### Related posts
 

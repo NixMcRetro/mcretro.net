@@ -12,9 +12,7 @@ categories: [ibm-pc, repairs, sega]
 
 ![](/assets/images/2012/img_0056.jpg)
 
-The PC7486SLC-based Mega PC upgrade really is running at 33 MHz.
-
-Great news: the math coprocessor for the 486SLC has arrived and is recognised perfectly. It is a ULSI Advanced Math Coprocessor SX/SLC rated at 33 MHz, part US83S87. The diagnostic software also identifies it as a ULSI 84x87.
+The PC7486SLC-based Mega PC upgrade really is running at 33 MHz. Great news: the math coprocessor for the 486SLC has arrived and is recognised perfectly. It is a ULSI Advanced Math Coprocessor SX/SLC rated at 33 MHz, part US83S87. The diagnostic software also identifies it as a ULSI 84x87.
 
 ![](/assets/images/2012/img_0059.jpg)
 
@@ -22,15 +20,11 @@ Great news: the math coprocessor for the 486SLC has arrived and is recognised pe
 
 ![](/assets/images/2012/img_0058.jpg)
 
-I've also been able to run MEMTEST 4.10 across the full 16 MB of RAM I installed, and it passed with no errors.
+I've also been able to run MEMTEST 4.10 across the full 16 MB of RAM I installed, and it passed with no errors. MEMTEST 4.20 does not run though. It simply restarts when I try to boot it from the floppy.
 
 Sixteen megabytes also makes sense as the ceiling here. Texas Instruments documents the TI486SLC as directly addressing 16 MB of physical memory through its 24-bit address bus. That does not tell us every detail of the PC7486SLC motherboard's memory implementation, but it does explain why there is no point expecting this CPU to directly address 32 MB.
 
-MEMTEST 4.20 does not run though. It simply restarts when I try to boot it from the floppy.
-
-For now I am still waiting on the replacement RTC module to arrive from Hong Kong. A couple more weeks to go.
-
-I've also ordered a 4 GB Disk on Module using SLC flash rather than MLC. Hopefully the BIOS will recognise it and I can boot DOS and Windows from it without too much drama. Time will tell! :D
+For now I am still waiting on the replacement RTC module to arrive from Hong Kong. A couple more weeks to go. I've also ordered a 4 GB Disk on Module using SLC flash rather than MLC. Hopefully the BIOS will recognise it and I can boot DOS and Windows from it without too much drama. Time will tell! :D
 
 ### Related posts
 

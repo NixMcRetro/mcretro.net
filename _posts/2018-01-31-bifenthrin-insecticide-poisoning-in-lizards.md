@@ -10,9 +10,9 @@ last_modified_at: 2026-10-18
 
 I found this footage from April 2016 and wanted to get the word out about how bad this insecticide was for the lizards around my house. The trees had been sprayed with bifenthrin to stop a bug from killing them, and afterwards I started finding lizards twitching and stumbling around. While invertebrates *may* not feel pain, I have a feeling these poor little lizards did.
 
-Pyrethroids affect the nervous system by interfering with sodium channels in nerve cells. Bifenthrin is a Type I pyrethroid, and poisoning can produce neurological effects including twitching, tremors and loss of coordination - very much like what I was seeing in these lizards. Those signs are consistent with poisoning, although the footage alone cannot confirm the chemical or dose involved.
+Pyrethroids interfere with sodium channels in nerve cells, which can cause all sorts of neurological trouble. Bifenthrin is a Type I pyrethroid, and the twitching, tremors and loss of coordination associated with poisoning sound very much like what I was seeing. Those signs are consistent with poisoning, although I can't establish the exact chemical or dose involved from the footage alone.
 
-Lizards are ectotherms, and temperature can affect pesticide toxicity. A 2005 study of green anoles exposed to natural pyrethrins found higher mortality at lower test temperatures. That was a different pesticide, so it does not establish the temperature response of bifenthrin in the lizards around my house.
+Temperature can also affect pesticide toxicity in lizards because they're ectotherms. A 2005 study of green anoles exposed to natural pyrethrins found higher mortality at lower test temperatures. That was a different pesticide, though, so it doesn't tell us exactly how bifenthrin would behave in the lizards around my house.
 
 The following video explains the mode of action for these pyrethroids.
 

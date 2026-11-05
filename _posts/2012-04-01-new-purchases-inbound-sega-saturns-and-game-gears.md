@@ -8,7 +8,7 @@ categories: [sega]
 
 I've got four Sega Saturns from two owners on the way: three functional and one broken. Broken in what way? Even the seller didn't know. Should be very interesting. Three of them are Model 1s and one is a Model 2. I already have two functional Model 2 Saturns, but I guess another one can't hurt.
 
-The Model 1 Saturns I had encountered so far seemed to be showing more age-related faults than my Model 2 units, although Saturn internals vary considerably by motherboard and PSU revision. It'll be interesting to see just how functional the three "working" Saturns actually are. They also come with a bunch of games, which is always good.
+The Model 1 Saturns I've come across so far seem to be showing their age a bit more than my Model 2s. It'll be interesting to see just how functional the three "working" Saturns actually are. They also come with a bunch of games, which is always good.
 
 On the Game Gear front, I discovered a badly leaking capacitor near the LCD area in my current machine. That is a likely contributor to the missing display, so capacitor kits are on order and should arrive in the next week or so.
 

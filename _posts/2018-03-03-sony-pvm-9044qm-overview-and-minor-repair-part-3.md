@@ -8,7 +8,11 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="x6EnMkOPQKM" %}
 
-Always ground your ground! In this case, that meant connecting the video ground properly. That's the lesson learnt here! Nice and simple. That picture looks amazing. Here's to the next 20 years of that screen working without any intervention! :P
+Always ground your ground! I should have been in bed at about 1 a.m., but I was still chasing the Sony PVM-9044QM's washed-out colours. I even added more capacitors, thinking that might help. Turns out I'd missed something rather more basic: the video ground wasn't connected properly.
+
+I was using oscilloscope probes for the video signals, and once I connected one of the probe ground clips to ground at the power jack, the picture became crisp and clear. Brilliant! I had a play with the display controls as well, including underscan and a rather frightening setting I dubbed "ghost mode". There's a little screen burn, but otherwise the picture looks amazing. Proper cables would probably have saved me some bother, so I'll have to pick some up.
+
+Here's to the next 20 years of that screen working without any intervention! :P
 
 {% include youtube.html id="96iRRmjoBME" %}
 

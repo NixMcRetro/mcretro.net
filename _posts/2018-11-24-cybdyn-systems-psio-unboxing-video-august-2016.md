@@ -10,9 +10,11 @@ last_modified_at: 2026-10-18
 
 Today we take a peek at the PSIO and the way it is packaged, what is on the packaging and the packaging itself. Yes, you got me. It's a damn unboxing video. But to be fair, it is a PSIO unboxing making it infinitely cooler than just a regular unboxing video.
 
+The box lists support for SD cards up to 32 GB, multiple-disc images, CD-DA and XA audio, and loading software images over USB. Inside I found the PSIO cartridge, a little switchboard, some wire and the paperwork. The cartridge itself has an SD card slot and mini-USB connection, and I even managed to spot a 69 in the serial number. Because of course I did! I still had to decide which PlayStation would be the best one to install it in, so this was very much an unboxing rather than an installation.
+
 And wow, does this one take me back! Two years back... to when I was two years younger. I hadn't even started my bachelor degree at university, yikes! I had just started isotretinoin (Roaccutane) for the acne breakouts I'd been having on and off for about 20 years. It ended up working well for me, but that is my personal experience rather than a recommendation - isotretinoin is a prescription medicine with important safety precautions.
 
-You can find a million stories about it online, good and bad. But would you really write a letter _to the internet_ if it worked as advertised? Mine happened to be a good experience, not a guarantee of how it will work for anyone else. I don't complain about my toaster working well, but you can bet your bottom dollar it is kicking along toasting me up some [acetyl tetrahydropyridine](https://en.wikipedia.org/wiki/6-Acetyl-2,3,4,5-tetrahydropyridine). My hair, which had gone curly while I was taking isotretinoin, has also straightened out again. What a time to be alive! :P
+You can find a million stories about it online, good and bad. But would you really write a letter *to the internet* if it worked as advertised? Mine happened to be a good experience, not a guarantee of how it will work for anyone else. I don't complain about my toaster working well, but you can bet your bottom dollar it is kicking along toasting me up some [acetyl tetrahydropyridine](https://en.wikipedia.org/wiki/6-Acetyl-2,3,4,5-tetrahydropyridine). My hair, which had gone curly while I was taking isotretinoin, has also straightened out again. What a time to be alive! :P
 
 ### Sources
 

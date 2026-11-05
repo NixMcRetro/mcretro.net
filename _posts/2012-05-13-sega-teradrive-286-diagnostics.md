@@ -14,9 +14,9 @@ Figured I should hit the Sega TeraDrive up with some diagnostics and found out s
 
 ![](/assets/images/2012/img_0098.jpg)
 
-1\. The embedded SEGA startup environment appears to be based on PC DOS 3.x, and the version running here reports PC DOS 3.30. This is separate from the IBM DOS J4.0/V software Sega supplied with the TeraDrive.
+**1.** The embedded SEGA startup environment appears to be based on PC DOS 3.x, and this one reports PC DOS 3.30. That's separate from the IBM DOS J4.0/V software Sega supplied with the TeraDrive.
 
-PC DOS 3.30 was released on 2nd April 1987 and added support for 1.44 MB 3.5-inch floppy disks. My TeraDrive Model 2 is equipped with two of those drives.
+PC DOS 3.30 dates back to 2 April 1987 and added support for 1.44 MB 3.5-inch floppy disks. My TeraDrive Model 2 has two of those drives, so that all fits rather nicely.
 
 ![](/assets/images/2012/img_0093.jpg)
 
@@ -24,27 +24,25 @@ PC DOS 3.30 was released on 2nd April 1987 and added support for 1.44 MB 3.5-inc
 
 ![](/assets/images/2012/img_0087.jpg)
 
-2\. My TeraDrive documentation has a date of May 1991 inside the cover of both books. The chips inside the TeraDrive are timestamped week 09 1991, week 48 1990, week 06 1991 and week 08 1991. The IBM-branded BIOS is dated 22nd March 1991. These component date codes place the machine firmly in the TeraDrive's launch period, but they cannot establish its exact final assembly date.
+**2.** There's a May 1991 date inside the cover of both TeraDrive manuals. The chips I've checked are marked week 09 1991, week 48 1990, week 06 1991 and week 08 1991, while the IBM-branded BIOS is dated 22 March 1991. Everything points towards a machine built around the TeraDrive's launch period, although I can't pin down its exact assembly date from those markings.
 
 ![](/assets/images/2012/img_0099.jpg)
 
 ![](/assets/images/2012/img_0095.jpg)
 
-3\. The SEGA startup environment exposes a small RAM disk or virtual drive that is 242,176 bytes large. There is even 87,552 bytes free on this drive. The label is LOADER 1.0. It reports 1 head, 16 sectors and 130 cylinders. Pretty neat. Read speed seems to be around 1300 KB to 1400 KB/sec.
+**3.** Here's something rather neat. The SEGA startup environment exposes a small RAM disk or virtual drive labelled LOADER 1.0. It's 242,176 bytes in size, with 87,552 bytes still free, and reports 1 head, 16 sectors and 130 cylinders. Read speed seems to be somewhere around 1300 KB to 1400 KB/sec.
 
 ![](/assets/images/2012/img_0097.jpg)
 
 ![](/assets/images/2012/img_0096.jpg)
 
-4\. The diagnostic reference I was using associated one beep with a DRAM refresh failure and nine beeps with a ROM BIOS checksum failure. Those mappings are standard AMI BIOS codes, however, and I have not found model-specific documentation confirming that the TeraDrive's IBM-branded BIOS uses the same POST beep scheme.
+**4.** The diagnostic reference I was looking at associates one beep with a DRAM refresh failure and nine beeps with a ROM BIOS checksum failure. Those are familiar AMI BIOS beep codes, but whether the IBM-branded TeraDrive BIOS uses the same meanings is another question. I'll need something more specific to this machine before trusting that list.
 
 ![](/assets/images/2012/img_0094.jpg)
 
-5\. The diagnostic software identified the VGA controller as a Paradise/Western Digital WD90C22. Later hardware documentation identifies the actual chip fitted to the TeraDrive as a Western Digital WD90C10-LR, so the diagnostic appears to have identified a compatible controller family rather than the exact device.
+**5.** The diagnostics identify the VGA controller as a Paradise/Western Digital WD90C22, which is interesting because the TeraDrive hardware is documented as using a Western Digital WD90C10-LR. Perhaps the software is recognising the general graphics-controller family rather than the exact chip.
 
-Sega officially specifies 256 KB of VGA VRAM. The actual WD90C10 hardware is therefore more useful evidence than the software identification string.
-
-The full set of Sega TeraDrive Model 2 and Model 3 photos can be found in the [photo gallery](/goodies/).
+Sega specifies 256 KB of VGA VRAM for the TeraDrive. That's another useful detail to keep in mind while I'm poking around in there. The full set of Sega TeraDrive Model 2 and Model 3 photos can be found in the [photo gallery](/goodies/).
 
 ### Related posts
 

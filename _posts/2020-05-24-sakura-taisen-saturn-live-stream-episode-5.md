@@ -10,7 +10,7 @@ last_modified_at: 2026-10-18
 
 Sumire and Kanna get off to a bad start in the play! Good thing Ogami is here to try and patch things up between them... just need to find that anti-venom... I know it's around this spooky mansion somewhere! Satan and Miroku are the two survivors of the Hive of Darkness's four villains. Today we go up against Miroku to try and defeat her and... her crab people? This was quite a long episode, but well worth it!
 
-### Related posts
+### Related Posts
 
-- Previous: [Sakura Taisen (1996, Saturn Live Stream, Episode 4)](/sakura-taisen-saturn-live-stream-episode-4/)
-- Next: [Sakura Taisen (1996, Saturn Live Stream, Episode 6)](/sakura-taisen-saturn-live-stream-episode-6/)
+- [Sakura Taisen (1996, Saturn Live Stream, Episode 4)](/sakura-taisen-saturn-live-stream-episode-4/)
+- [Sakura Taisen (1996, Saturn Live Stream, Episode 6)](/sakura-taisen-saturn-live-stream-episode-6/)

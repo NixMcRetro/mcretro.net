@@ -13,8 +13,8 @@ I finally got around to putting together my MiSTer FPGA. Below is a list of all 
 ### Hardware
 
 - Terasic DE10-Nano
-- Noctua 40mm NF-A4x10 5V fan
-- 128MB SDRAM XSD (v2.5)
+- Noctua 40 mm NF-A4x10 5 V fan
+- 128 MB SDRAM XSD (v2.5)
 - I/O board (v6.0)
 - PCB bottom plate
 - Wi-Fi dongle
@@ -25,13 +25,13 @@ I finally got around to putting together my MiSTer FPGA. Below is a list of all 
 - real-time clock board (v1.3)
 - audio tape input (v1.1)
 - USB bracket connector
-- 5V 4A power supply
+- 5 V 4 A power supply
 - inline power switch
 - power-supply splitter cable
 
 Overall I was very impressed with the hardware, enough that I had started selling off original consoles and related FPGA carts such as my Terraonion gear. Playing Earth Defence Force on the Super Famicom, you really get hit by slowdown when too many sprites are dancing around the screen, which tends to happen in a shmup. On my setup the same slowdown appeared in the same sort of places on MiSTer, which absolutely made my day. Past cool!
 
-### Related posts
+### Related Posts
 
 - [SD2SNES Glitching with Added Scanlines](/sd2snes-glitching-with-added-scanlines/)
 - [Looking at the SNES 1CHIP](/looking-at-the-snes-1chip/)

@@ -10,8 +10,6 @@ Oh trusty old Nintendo Wii, how I had forgotten about thee. Looking through my "
 
 LetterBomb specifically targets System Menu 4.3 and uses the Wii Message Board, an SD card and the console's MAC address to deliver the exploit. No video on this one because apparently I followed the guide and it worked first time. Rare, but it can happen! ;)
 
-This records the process I used at the time rather than serving as a current step-by-step Wii softmod guide.
-
 ### Sources
 
 - [GroovyPost - How to Easily Jailbreak Your Old Nintendo Wii](https://www.groovypost.com/howto/softmod-nintendo-wii-easy/)

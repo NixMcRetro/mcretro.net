@@ -10,13 +10,11 @@ categories: [ibm-pc, repairs, sega]
 
 The time has come. We wish you a safe journey, AMD 386SX CPU. You have served us well. Armed with a heat gun and flux, work begins on my attempt to create a 50 MHz Amstrad Mega PC.
 
-That 50 MHz target needs a little explanation. The original Am386SX does not run its core at the full CLK2 input frequency. A 50 MHz CLK2 signal corresponds to a 25 MHz 386SX core. The replacement chip shown in the later repair photographs is marked TI486SXLC2-G50-PQ. It belongs to TI's clock-doubled SXLC2-G family, designed for a 50 MHz internal core from a 25 MHz external bus in a 100-pin QFP package. So the idea was not to force the entire Mega PC motherboard to run at a 50 MHz external bus speed.
+Now, that 50 MHz target needs a little explaining. The original Am386SX runs its core at half the CLK2 input frequency, so a 50 MHz CLK2 signal gives it a 25 MHz core speed. The replacement TI486SXLC2-G50-PQ, shown in the repair photographs, is a clock-doubled processor designed for a 50 MHz internal core with a 25 MHz external bus. I'm not trying to make the entire Mega PC motherboard run at a 50 MHz external bus frequency!
 
-Looking back, similar clocks and packaging do not automatically make a CPU a drop-in replacement. The SXLC2-G needs a 3.3 V core supply, despite having 5 V-tolerant I/O. The supply voltages, motherboard chipset, BIOS, cache-control signals, pin compatibility and surrounding circuitry all have to cooperate as well.
+Of course, there is more to a CPU swap than getting the old chip off and soldering another one in its place. The SXLC2-G needs a 3.3 V core supply, even though its I/O can tolerate 5 V, and the chipset, BIOS, cache-control signals and surrounding circuitry all need to cooperate. Similar-looking processors with similar clocks aren't necessarily interchangeable. Plenty of opportunity for things to go horribly wrong, then!
 
-This was very much an experiment.
-
-I was also using a general-purpose heat gun for the removal. Having now spent more time doing this sort of work, controlled hot-air rework equipment with proper temperature and airflow control is a much better tool for removing a soldered QFP CPU from a vintage multilayer board.
+I'm using a general-purpose heat gun for the removal, which is hardly the ideal tool for a soldered QFP processor on a vintage multilayer motherboard. Proper temperature-controlled hot-air rework equipment would be a much better choice. Still, this is very much an experiment, and the AMD 386SX's journey is about to begin.
 
 **Edit:** Everything is on fire! What have I done! Flames everywhere!
 

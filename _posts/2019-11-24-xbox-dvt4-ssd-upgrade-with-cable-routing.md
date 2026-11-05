@@ -16,9 +16,9 @@ After looping the cable around and folding some of the excess back on itself, I 
 
 Eventually everything was tucked away and the machine was ready for testing. I connected it to the television, switched it on and was greeted by the development dashboard. Excellent! The SSD appeared to be working, so at least all that folding and rearranging hadn't been for nothing.
 
-There's still plenty to do with the development software and getting some games onto the machine, but the storage upgrade has passed its first test. Onwards to the next instalment!
+By the end, Tillie had joined in with a chorus of chirping. Apparently an Xbox hardware video also needs a live conure soundtrack! There's still plenty to do with the development software and getting some games onto the machine, but the storage upgrade has passed its first test. Onwards to the next instalment!
 
-### Related posts
+### Related Posts
 
 - [Inside the Xbox DVT4 Development Kit](/inside-the-xbox-dvt4-development-kit/)
 - [Xbox DVT4 Factory Restore (XDK Recovery 5849)](/xbox-dvt4-factory-restore-recovery-5849/)

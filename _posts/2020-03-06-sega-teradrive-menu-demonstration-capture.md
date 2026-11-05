@@ -10,7 +10,7 @@ last_modified_at: 2026-10-18
 
 Today we bumble around the Sega TeraDrive menus. They were quite exciting to play with. If only they had managed to get a 486-class CPU in the sucker, it would have been the best retrogaming experience ever! Instead we end up with a 286 that almost can! Thanks for trying Sega!
 
-### Related posts
+### Related Posts
 
 - [Sega TeraDrive Demo: Sonic 1 and Sega Menu](/sega-teradrive-demo-sonic-1-and-sega-menu/)
 - [Accessing the Sega / IBM TeraDrive Built-in Setup Program](/accessing-the-sega-ibm-teradrive-built-in-setup-program/)

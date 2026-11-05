@@ -12,6 +12,6 @@ The attached PDF is a rough translation of a [Japanese TeraDrive message-board t
 
 The PDF is here: [Terra Drive](/assets/uploads/Terra-Drive.pdf)
 
-### Related posts
+### Related Posts
 
 - [Miscellaneous TeraDrive Information](/miscellaneous-teradrive-information/)

@@ -28,9 +28,9 @@ A Cyrix 486 upgrade for the TeraDrive? Now that would be something! According to
 
 The floppy-drive information might also come in handy. The TeraDrive uses some rather unusual arrangements, particularly around its original storage hardware, so any surviving documentation is welcome. Even a few details about the cables and connectors can save quite a bit of head-scratching.
 
-There's also an interesting reference to memory upgrades and somebody apparently running 8 MB using `MEMORY.EXE`. The original Japanese suggests that larger memory configurations weren't necessarily as restricted as people might have assumed. Certainly something worth investigating if I ever get around to experimenting with more memory.
+There's also an interesting reference to memory upgrades and somebody apparently running 8 MB using MEMORY.EXE. The original Japanese suggests that larger memory configurations weren't necessarily as restricted as people might have assumed. Certainly something worth investigating if I ever get around to experimenting with more memory.
 
-The translation has a couple of peculiarities too. `NDEV` should read `NIF`, and the final sentence isn't saying the TeraDrive can only use a small amount of memory. Quite the opposite, in fact! Machine translation is a wonderful thing when it works, and occasionally rather entertaining when it doesn't.
+The translation has a couple of peculiarities too. NDEV should read NIF, and the final sentence isn't saying the TeraDrive can only use a small amount of memory. Quite the opposite, in fact! Machine translation is a wonderful thing when it works, and occasionally rather entertaining when it doesn't.
 
 ### The ISA Bus Mystery
 

@@ -10,7 +10,7 @@ last_modified_at: 2026-10-18
 
 We battle on and discover more about The Hive of Darkness! They will not take our newly built communications tower from us! It is an important part of our daily lives! Go Ogami!
 
-### Related posts
+### Related Posts
 
-- Previous: [Sakura Taisen (1996, Saturn Live Stream, Episode 1)](/sakura-taisen-saturn-live-stream-episode-1/)
-- Next: [Sakura Taisen (1996, Saturn Live Stream, Episode 3)](/sakura-taisen-saturn-live-stream-episode-3/)
+- [Sakura Taisen (1996, Saturn Live Stream, Episode 1)](/sakura-taisen-saturn-live-stream-episode-1/)
+- [Sakura Taisen (1996, Saturn Live Stream, Episode 3)](/sakura-taisen-saturn-live-stream-episode-3/)

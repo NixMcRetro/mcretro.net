@@ -19,7 +19,7 @@ Other great games like Final Fantasy VII were also being remade for modern conso
 - [SEGA - Sega Saturn software catalogue](https://www.sega.jp/history/hard/segasaturn/software.html)
 - [NoahSteam - Sakura Wars English translation release submission on SegaXtreme](https://segaxtreme.net/threads/sega-saturn-25th-anniversary-game-competition.24462/page-2)
 
-### Related posts
+### Related Posts
 
-- Next: [Sakura Taisen (1996, Saturn Live Stream, Episode 2)](/sakura-taisen-saturn-live-stream-episode-2/)
+- [Sakura Taisen (1996, Saturn Live Stream, Episode 2)](/sakura-taisen-saturn-live-stream-episode-2/)
 - [Sakura Wars Complete Song Box](/sakura-wars-complete-song-box/)

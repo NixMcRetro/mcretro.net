@@ -12,7 +12,7 @@ categories: [ibm-pc, repairs, sega]
 
 ![](/assets/images/2012/img_0179.jpg)
 
-It worked and it worked! I can't really complain about that. Picked up 3x IBM WDL-330P drives for the TeraDrive Model 3 of mine that didn't have a hard drive and they all work well.
+It worked and it worked! I can't really complain about that. Picked up three IBM WDL-330P drives for my TeraDrive Model 3, which arrived without a hard drive, and all three work well.
 
 ![](/assets/images/2012/img_0181.jpg)
 
@@ -20,7 +20,9 @@ It worked and it worked! I can't really complain about that. Picked up 3x IBM WD
 
 ![](/assets/images/2012/img_0186.jpg)
 
-The drives had 3, 8 and 12 bad sectors between them. Not too bad for 20 year old drives. All three had very similar startup sounds, which was reassuring, although sound alone cannot establish the health of a hard drive. The surface scans were much more useful evidence. SpeedStor 6.5 was the best program I could track down to scan the drives for defects and partition / format them properly. I would have liked to have tried an earlier version of SpinRite, but I could not track down a copy.
+The drives had 3, 8 and 12 bad sectors between them. Not too bad for 20-year-old drives! All three made very similar sounds during startup, which was reassuring, but I wanted to give them proper surface scans rather than judge them by ear.
+
+SpeedStor 6.5 was the best program I could track down to scan the drives for defects and partition / format them properly. I would have liked to have tried an earlier version of SpinRite, but I could not track down a copy.
 
 ![](/assets/images/2012/img_0183.jpg)
 
@@ -28,7 +30,7 @@ The drives had 3, 8 and 12 bad sectors between them. Not too bad for 20 year old
 
 ![](/assets/images/2012/img_0184.jpg)
 
-The drives report different amounts of free space. Bad sectors reduce usable space, but these readings alone do not establish how much of the difference comes from bad sectors rather than files or formatting.
+The drives also report different amounts of free space. Bad sectors will account for some of that, although files and formatting could also explain why the readings differ. In any case, all three are working, which is the important part!
 
 ![](/assets/images/2012/img_0191.jpg)
 
@@ -62,7 +64,9 @@ However, it was not all good and well. The WDI-325Q I picked up does not work pr
 
 ![](/assets/images/2012/img_0199.jpg)
 
-The 44 pin cables I picked up tested OK which was great news. They are slightly longer than the TeraDrive original hard drive cable which is great as well - more slack! Also the 512K onboard RAM... I wondered if it could be upgraded with a little bit of desoldering and resoldering. Sega's official specification confirms that the Model 3's supported main-memory configuration tops out at 2.5MB, so this machine was already at its documented maximum. Preservation is key for hardware like this.
+The 44-pin cables I picked up tested OK, which was great news. They're slightly longer than the original TeraDrive hard-drive cable as well, so there's a little more slack!
+
+I also wondered whether the 512 KB of onboard RAM could be upgraded with some desoldering and resoldering. Sega's specifications put the Model 3's supported main memory at a maximum of 2.5 MB, though, which is what I've already got. Preservation is key for hardware like this.
 
 ![](/assets/images/2012/img_0202.jpg)
 
@@ -70,10 +74,9 @@ The 44 pin cables I picked up tested OK which was great news. They are slightly 
 
 ![](/assets/images/2012/img_0201.jpg)
 
-So overall a great success and we have some poor IBM PS/2s to thank for the hard drive cables and the hard drives. Not really a surprise since Sega officially describes the TeraDrive as a joint development with IBM Japan. Very convenient in this particular case.
+So overall, a great success, and we have some poor IBM PS/2s to thank for the hard drives and cables. Not really a surprise, since Sega and IBM Japan developed the TeraDrive together. Very convenient in this particular case!
 
 There's even more photos in the [photo gallery](/goodies/) under the album Sega TeraDrive Model 3 100006271.
-
 
 ### Sources
 

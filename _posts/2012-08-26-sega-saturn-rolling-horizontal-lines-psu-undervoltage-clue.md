@@ -14,17 +14,13 @@ The best clues always seem to arrive by accident.
 
 I had been testing my Japanese Saturn through a 240 V to 120 V step-down transformer. That particular project failed, more on that later, so afterwards I started going through my other Saturns to document their CD decks and power supplies.
 
-Something did not make sense.
-
-The Saturns with the supposedly bad PSUs were no longer showing the rolling-line problem, even after being left running for quite a while.
+Something didn't make sense. The Saturns with the supposedly bad PSUs were no longer showing the rolling-line problem, even after being left running for quite a while.
 
 I packed everything away and went to bed with an uneasy feeling. Turned off the light and then a giant light bulb activated inside my big fat head.
 
-I had forgotten to unplug the step-down transformer. In other words, I had accidentally been feeding my PAL Saturn power supplies roughly half their intended mains voltage.
+I had forgotten to unplug the step-down transformer. In other words, I'd accidentally been feeding my PAL Saturn power supplies roughly half their intended mains voltage!
 
-That is **not** a safe repair or recommended operating condition. PAL Saturn PSUs are designed for roughly 220 to 240 V AC input. Running one at around 120 V is severe undervoltage.
-
-Still, the fact that the interference changed was a useful diagnostic clue.
+These power supplies are designed for roughly 220 to 240 V AC, not 120 V. Severe undervoltage certainly isn't a safe or sensible way to run them, but it does leave me with a rather interesting clue about those rolling lines.
 
 I connected a power meter and recorded the following:
 
@@ -46,11 +42,9 @@ Power:        14 W
 Current:      0.08 A
 ```
 
-The Saturn actually ran at the lower input voltage, which surprised me.
+The Saturn actually ran at the lower input voltage, which surprised me. That doesn't mean it was operating properly, and I certainly wouldn't call this a fix!
 
-Running is not the same as operating correctly though.
-
-I would not use 120 V as a "fix". What this experiment suggests is that the interference is sensitive to the behaviour of the power supply under different input conditions. That makes regulation, filtering or another PSU-related fault worth investigating, but it does not identify the failed component by itself.
+What interests me is that changing the input voltage also changed the interference. Perhaps there's something going on with the regulation or filtering inside these PSUs. I haven't isolated the faulty component, but at least I've got somewhere to investigate next.
 
 More testing required.
 

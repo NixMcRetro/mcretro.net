@@ -14,9 +14,7 @@ categories: [repairs, sega]
 
 I was going to sell this Mega Drive for scrap, but some more testing made the fault considerably more interesting. The yellow and green video flicker only happens from a cold boot. After the console has been running for around thirty minutes, the picture settles down and the flickering disappears.
 
-One suspect is the Sony CXA1145P video encoder. Sony designed the CXA1145P to take the console's analogue RGB signals and generate composite video, so a fault there could plausibly affect the colours reaching the television.
-
-Plausible is not the same as proven, of course.
+One suspect is the Sony CXA1145P video encoder. It takes the console's analogue RGB signals and produces composite video, so it could certainly have something to do with the strange colours. I won't know for sure until I try replacing it.
 
 I've ordered a couple of replacement CXA1145Ps to find out. Are they a good investment? Who cares? They're about $3 each!
 

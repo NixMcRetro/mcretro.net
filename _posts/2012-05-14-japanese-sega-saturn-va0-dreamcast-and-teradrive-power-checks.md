@@ -10,13 +10,9 @@ categories: [repairs, sega]
 
 #### Japanese Sega Saturn
 
-Today I received my white Japanese Model 2 Sega Saturn from Japan. Look at it. Isn't it just the cleanest-looking Saturn design you have seen? Well, compared with PAL Saturns at least.
+Today I received my white Japanese Model 2 Sega Saturn from Japan. Look at it. Isn't it just the cleanest-looking Saturn design you have seen? Well, compared with PAL Saturns at least. I've added it to the [photo gallery](/goodies) too.
 
-I've added it to the [photo gallery](/goodies) too.
-
-It powers on without issue through the step-down converter, but the CD mechanism is very unhappy. It seems to have trouble working out where it is supposed to rest and makes some truly horrible clicking noises.
-
-I bought it mainly for the case, but perhaps there is still hope of repairing it...
+It powers on without issue through the step-down converter, but the CD mechanism is very unhappy. It seems to have trouble working out where it is supposed to rest and makes some truly horrible clicking noises. I bought it mainly for the case, but perhaps there is still hope of repairing it...
 
 ![](/assets/images/2012/img_0105.jpg)
 
@@ -26,11 +22,7 @@ I bought it mainly for the case, but perhaps there is still hope of repairing it
 
 #### VA0 Dreamcast
 
-And here is the Dreamcast I received. It appears to be a VA0 revision. The metal fan and heatpipe cooling arrangement are characteristic of those early machines.
-
-What are the chances? Very unreal, and the box was in immaculate condition. Lots of paperwork and documents as well.
-
-I've added a new gallery for it under Sega Dreamcast 058007003298.
+And here is the Dreamcast I received. It appears to be a VA0 revision, complete with the metal fan and heatpipe cooling arrangement found in those early machines. What are the chances? Very unreal, and the box was in immaculate condition. Lots of paperwork and documents as well. I've added a new gallery for it under Sega Dreamcast 058007003298.
 
 ![](/assets/images/2012/img_0101.jpg)
 
@@ -51,9 +43,7 @@ Black - Ground
 Black - Ground
 ```
 
-Perfect. Those readings match the familiar PC convention of red for +5 V, yellow for +12 V and black for ground.
-
-I would still verify the voltages with a meter rather than relying on wire colour alone, especially on hardware this unusual.
+Perfect. The readings match the familiar PC wiring colours, with red for +5 V, yellow for +12 V and black for ground. Nice to know, although I certainly wouldn't trust wire colours alone on something as unusual as the TeraDrive. That's why the multimeter came out in the first place!
 
 This makes life a little easier if I eventually investigate replacing the internal PSU with something like a picoPSU.
 

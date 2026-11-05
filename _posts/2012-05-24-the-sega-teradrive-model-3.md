@@ -12,11 +12,7 @@ categories: [repairs, sega]
 
 ![](/assets/images/2012/img_0132.jpg)
 
-Finally got a chance to test the Sega TeraDrive Model 3 that arrived a few days ago.
-
-Sega sold the Model 3 as the top configuration, with 2.5 MB of RAM, one 3.5-inch floppy drive and a 30 MB internal hard drive.
-
-Mine arrived without its hard drive. Thankfully the original cable, screws and hard-drive sled are still present, and it boots Windows 3.11 from floppy just like my Model 2.
+Finally got a chance to test the Sega TeraDrive Model 3 that arrived a few days ago. Sega sold the Model 3 as the top configuration, with 2.5 MB of RAM, one 3.5-inch floppy drive and a 30 MB internal hard drive. Mine arrived without its hard drive, but thankfully the original cable, screws and hard-drive sled are still present. It boots Windows 3.11 from floppy just like my Model 2.
 
 ![](/assets/images/2012/img_0136.jpg)
 
@@ -24,11 +20,7 @@ Mine arrived without its hard drive. Thankfully the original cable, screws and h
 
 ![](/assets/images/2012/img_0137.jpg)
 
-At this point I was trying to work out exactly what sort of replacement drive the TeraDrive wanted.
-
-The connector uses 44 pins, but it is not standard laptop IDE. Later investigation linked it to the unusual proprietary storage arrangement used in some early IBM PS/2 systems.
-
-I found information about the similarly unusual hard-drive arrangement in early IBM PS/2 Model 25 and Model 30 systems. Older references often call these drives XT IDE or XTA, while later preservation work describes the interface more carefully as a proprietary direct-bus-attachment design.
+The next problem is working out exactly what sort of replacement hard drive the TeraDrive wants. The connector has 44 pins, but it isn't standard laptop IDE. I've been digging through information on early IBM PS/2 Model 25 and Model 30 hard drives, which use a similarly unusual arrangement. Some older references call these drives XT IDE or XTA, while the storage design is more accurately described as a proprietary direct-bus-attachment interface.
 
 ![](/assets/images/2012/img_0138.jpg)
 
@@ -36,15 +28,11 @@ I found information about the similarly unusual hard-drive arrangement in early 
 
 ![](/assets/images/2012/img_0139.jpg)
 
-I am still waiting on the ISA IDE controller card from the UK for the Model 2. In the meantime, I need to find a compatible drive to get the Model 3 back to its proper configuration.
+I'm still waiting on the ISA IDE controller card from the UK for the Model 2. In the meantime, I need to find a compatible drive to get the Model 3 back to its proper configuration.
 
-Another thing I noticed is that the trace wiring on the Model 3 travels to slightly different locations from my Model 2. The Model 3 also has much nicer-looking yellow wiring, while the Model 2 uses mostly green.
+Another thing I noticed is that the trace wiring on the Model 3 travels to slightly different locations from my Model 2. The Model 3 also has much nicer-looking yellow wiring, while the Model 2 uses mostly green. Not exactly the most important engineering discovery of the century, but there it is!
 
-Not exactly the most important engineering discovery of the century, but there it is.
-
-Time to get a hard drive installed and see how far this one can go.
-
-Many more images can be found in the [photo gallery](/goodies) filed under Sega TeraDrive Model 2 and Model 3.
+Time to get a hard drive installed and see how far this one can go. Many more images can be found in the [photo gallery](/goodies) filed under Sega TeraDrive Model 2 and Model 3.
 
 ### Related posts
 

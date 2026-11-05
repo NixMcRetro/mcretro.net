@@ -16,47 +16,37 @@ One idea is to convert both the Sega TeraDrive CPU and Amstrad Mega PC CPU to so
 
 ### 2. Socketed clock oscillators
 
-Replacing a CPU does not automatically mean the system clock needs to change. If a replacement processor is compatible with the existing clock, it can simply run at that speed. Changing the clock source only becomes necessary if I want to change the actual processor or bus frequency, and at that point the rest of the motherboard has to tolerate the new timing as well. The math coprocessor in the Mega PC would have to be considered too.
+Another idea is to fit socketed clock oscillators, so I can experiment with different frequencies without having to desolder them every time. Of course, simply replacing a CPU doesn't automatically mean I need to change its clock. A compatible replacement could run at the existing speed, but if I want to go faster, the motherboard, memory and other components will have to keep up. The Mega PC's math coprocessor would need some attention too.
 
-![](/assets/images/2012/img_0208.jpg) What appears to be a 386SX-derived Amstrad motherboard fitted with a 486SLC CPU and BIOS.
+![](/assets/images/2012/img_0208.jpg)
+
+What appears to be a 386SX-derived Amstrad motherboard fitted with a 486SLC CPU and BIOS.
 
 ### The Mega PC Plus mystery
 
-This idea came back to me when I looked again at a photograph I had saved of what appeared to be a 386SX-derived Amstrad motherboard fitted with a 486SLC CPU and matching BIOS. The silkscreen still refers to VSC386SXD, yet there is a TX486SLC fitted.
-
-It is extremely interesting in the context of the Mega PC Plus, but this photograph by itself is not enough to prove that the board is a factory Mega PC Plus motherboard.
+This idea came back to me when I looked again at a photograph I had saved of what appeared to be a 386SX-derived Amstrad motherboard fitted with a 486SLC CPU and matching BIOS. The silkscreen still refers to VSC386SXD, yet there is a TX486SLC fitted. Very interesting when you consider the Amstrad Mega PC Plus, although the photograph alone isn't enough to identify it as genuine factory Mega PC Plus hardware.
 
 ![](/assets/images/2012/img_0042.jpg)
 
-My replacement PC7486SLC board uses a TI486SLC/E. Texas Instruments produced 25 MHz and 33 MHz versions, while AMD produced Am386SX parts at several rated speeds.
+My replacement PC7486SLC board uses a TI486SLC/E. Texas Instruments made 25 MHz and 33 MHz versions, while AMD offered several Am386SX variants at different speeds. There are also voltage and clock differences between some of these processors, so I can't just assume they'll all swap around happily.
 
-Voltage and clock requirements depend on the exact processor variant and suffix, so this is not a situation where every 386SX or 486SLC can simply be swapped around.
-
-If I wanted a faster compatible CPU to run at its intended frequency, I would likely need to change the relevant clock source as well. Leaving the original clock in place could cause a compatible replacement CPU to run below its rated speed, while an incompatible part might not operate correctly at all.
+If I manage to find a faster compatible CPU, changing the clock oscillator could let it run closer to its intended speed. Leaving the original clock in place might simply leave the new processor running slower than expected. That would be a rather disappointing overclock!
 
 ### Finding the CPU clocks
 
 ![](/assets/images/2012/img_0203.jpg)
 
-The TeraDrive contains a 10 MHz 80286 and I found a 20 MHz clock source nearby. That relationship makes sense because the 80286 uses a system clock at twice the processor's internal frequency.
+The TeraDrive has a 10 MHz 80286, and I found a 20 MHz clock source nearby. That makes sense, since the 80286 takes a clock at twice the processor's internal frequency.
 
-I also found a 14.31818 MHz reference clock. That frequency has been part of PC hardware since the original IBM PC, where it was used as a base timing frequency and divided down for other functions. It therefore should not be mistaken for the TeraDrive CPU's direct clock source.
+There's also a 14.31818 MHz reference clock, a frequency that has been around since the original IBM PC. It gets divided down for various timing functions, so it isn't the direct 10 MHz CPU clock I'm looking for.
 
-On the Mega PC boards, the likely CPU clock sources line up much more neatly: 50 MHz for the 25 MHz 386SX and 66 MHz for the 33 MHz 486SLC.
-
-One terminology correction as well: those little DIP-4 metal cans are oscillator modules, not bare crystals.
+On the Mega PC boards, the likely CPU clock sources line up rather nicely: 50 MHz for the 25 MHz 386SX and 66 MHz for the 33 MHz 486SLC. And while I'm thinking about components, those little DIP-4 metal cans are oscillator modules, not bare crystals.
 
 ### So, what do I actually want to do?
 
-A socketed CPU and socketed clock oscillator would make experimenting much easier. But changing the clock potentially affects much more than the CPU. The chipset, memory timing, expansion buses and coprocessor all have to remain happy as well.
+Socketed CPUs and clock oscillators would make future experimenting much easier. The TeraDrive's 286 still looks tempting, but I don't want to forget about chipset timing, memory, expansion buses and coprocessors simply because I've managed to change the CPU clock.
 
-For the TeraDrive, a socketed 286 experiment still looks tempting.
-
-The Mega PC will need more thought because I already have the processors and boards I want to preserve.
-
-In any case, I'll start collecting the parts and eventually put some of these ideas into action.
-
-You'll know when it happens because I'll almost certainly write far too much about it here.
+The Mega PC needs a little more thought because I've already got processors and boards I'd like to preserve. For now I'll start collecting the parts and eventually put some of these ideas into action. You'll know when it happens because I'll almost certainly write far too much about it here.
 
 ### Sources
 

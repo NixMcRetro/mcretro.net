@@ -12,19 +12,15 @@ categories: [ibm-pc, repairs, sega]
 
 ![](/assets/images/2012/img_0213.jpg)
 
-Above are some photos of a Sega TeraDrive hard drive. When I wrote this in 2012 I was trying to work out exactly what the interface was. IDE? ESDI? XTA? Something else entirely?
+Above are some photos of a Sega TeraDrive hard drive. I've been trying to work out exactly what sort of interface this thing uses. IDE? ESDI? XTA? Something else entirely?
 
-The connector has 44 pins and carries both data and power, but the pinout does not match standard ATA/IDE.
+The connector has 44 pins and carries both data and power, but the pinout doesn't match standard ATA/IDE. I was originally wondering whether the number of signal lines might point towards an 8-bit or 16-bit interface, although that alone doesn't tell me much about what is actually going on.
 
-At the time I wondered whether the reduced number of apparent signal lines implied some kind of 8-bit versus 16-bit distinction. That observation alone was nowhere near enough to identify the bus.
+Sure, I could install an ISA hard-drive controller. But where is the fun in that? The motherboard connector is sitting there waiting to be understood!
 
-Sure, I could install an ISA hard-drive controller. But where is the fun in that? The motherboard connector is sitting there waiting to be understood.
+I've also been talking with [Nemesis](https://www.exodusemulator.com), author of the Exodus Emulation Platform, who reckons there's more to uncover here. Several controller chips in the TeraDrive are closely related to hardware found in IBM-derived systems, so I've been looking through old XTA references and Vintage Computer Forum discussions and comparing pinouts.
 
-If anyone stumbles upon this, I apologise for the lack of immediate success.
-
-[Nemesis](https://www.exodusemulator.com), author of the Exodus Emulation Platform, also believed there was more to uncover because several controller chips in the TeraDrive are closely related to hardware found in IBM-derived systems.
-
-I pulled together information from old XTA references and Vintage Computer Forum discussions and started comparing pinouts. An earlier version of this post also linked to the TeraDrive HD pinout spreadsheet on the [file server](/goodies).
+An earlier version of this article also linked to my TeraDrive HD pinout spreadsheet on the [file server](/goodies). If anyone else has been investigating this peculiar interface, I'd be very interested to hear what you've found.
 
 ![](/assets/images/2012/img_0210.jpg)
 
@@ -34,13 +30,11 @@ I pulled together information from old XTA references and Vintage Computer Forum
 
 ### What the interface actually appears to be
 
-Later IBM preservation work gives us a much better description. The closely related drives used in early IBM PS/2 Model 25 and Model 30 systems are proprietary direct-bus-attachment devices. They are not standard ESDI, and they are not normal ATA/IDE drives.
+The early IBM PS/2 Model 25 and Model 30 systems used some rather unusual hard drives. The interface is generally described in preservation documentation as a proprietary direct-bus-attachment arrangement, rather than standard ESDI or ATA/IDE.
 
-The TeraDrive's confirmed compatibility with IBM WDL-330P drives strongly links it to this same unusual IBM storage family.
+That fits rather nicely with the Sega TeraDrive. I've successfully tested several IBM WDL-330P drives, which gives me a solid reason to investigate this particular IBM storage family. Older references sometimes call these drives XTA or XT IDE, but those names can be confusing when you're trying to work out what will actually plug in and operate.
 
-I would therefore no longer label the TeraDrive interface simply "IDE", "ESDI" or "XTA". Those names are useful history because they show what I was investigating, but "proprietary IBM-family direct-bus storage interface" is a much safer modern description.
-
-The 44-pin connector carries both data and power, including 5 V and 12 V rails.
+The 44-pin connector carries both data and power, including 5 V and 12 V rails. At least I've got some clues now. Time to see what other drives might be compatible.
 
 ### Drives tested or investigated
 

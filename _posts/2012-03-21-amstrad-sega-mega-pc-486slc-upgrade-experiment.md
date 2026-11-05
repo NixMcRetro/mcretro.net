@@ -16,9 +16,7 @@ Browsing the internet, I came across an Amstrad PC7486SLC motherboard. I couldn'
 
 My Mega PC is fitted with an AMD-compatible 386SX running at 25 MHz. Amstrad's published Mega PC specification calls for a 25 MHz 80386SX, so the AMD chip is simply what happens to be fitted in my particular machine.
 
-The PC7486SLC-33 uses a Texas Instruments TI486SLC running at 33 MHz. It's an interesting bridge between generations: the processor keeps a 386SX-compatible external interface while adding a 486-compatible instruction set and 1 KB of on-chip cache.
-
-In other words, exactly the sort of strange transitional CPU I find interesting.
+The PC7486SLC-33 uses a Texas Instruments TI486SLC running at 33 MHz. It's an interesting bridge between generations: the processor keeps a 386SX-compatible external interface while adding a 486-compatible instruction set and 1 KB of on-chip cache. In other words, exactly the sort of strange transitional CPU I find interesting.
 
 ![](/assets/images/2012/img_0039.jpg)
 
@@ -28,11 +26,7 @@ In other words, exactly the sort of strange transitional CPU I find interesting.
 
 #### The Mega Plus question
 
-The PC7486SLC-33 board I bought appears to have come from a beige Amstrad PC rather than a Mega PC, but it looks extremely similar to the sort of 486SLC platform associated with the elusive Mega Plus.
-
-At the time, the Mega Plus felt almost like an urban legend because I could find very little information about it. Period listings do show an Amstrad Mega Plus 486SLC-33 being advertised, so there was clearly more to the story than internet folklore.
-
-My PC7486SLC conversion should still be treated as an experiment inspired by the Mega Plus, not proof that this exact motherboard was factory Mega Plus hardware.
+The PC7486SLC-33 board I bought appears to have come from a beige Amstrad PC rather than a Mega PC, but it looks extremely similar to the sort of 486SLC platform associated with the elusive Mega Plus. The Mega Plus feels almost like an urban legend because I can find very little information about it. Period listings do show an Amstrad Mega Plus 486SLC-33 being advertised, although that still doesn't prove my particular motherboard was factory Mega Plus hardware. For now, this is an experiment inspired by the Mega Plus rather than a confirmed conversion using genuine Mega Plus parts.
 
 ![](/assets/images/2012/img_0037.jpg)
 
@@ -52,11 +46,11 @@ Here's a little demonstration of those jumper settings on the original 386SX boa
 
 #### Memory
 
-The board has four SIMM positions and I couldn't get it beyond 16 MB. I even considered "borrowing" a few RAM slots from another motherboard, although that sounded like an awful lot of effort for very little payoff. That limit makes considerably more sense now: the TI486SLC itself can directly address up to 16 MB of physical memory. That doesn't prove every PC7486SLC motherboard supports every possible 16 MB configuration, but it does explain why adding sockets would not get this CPU to 32 MB.
+The board has four SIMM positions and I couldn't get it beyond 16 MB. I even considered "borrowing" a few RAM slots from another motherboard, although that sounded like an awful lot of effort for very little payoff.
 
-The two biggest attractions of the replacement board are simple: it doesn't appear to have NiCad leakage all over it, and it gives me a 33 MHz 486SLC instead of the 25 MHz 386SX.
+That limit makes considerably more sense now: the TI486SLC itself can directly address up to 16 MB of physical memory. That doesn't prove every PC7486SLC motherboard supports every possible 16 MB configuration, but it does explain why adding sockets would not get this CPU to 32 MB.
 
-Let's see whether the Mega Drive card agrees.
+The two biggest attractions of the replacement board are simple: it doesn't appear to have NiCad leakage all over it, and it gives me a 33 MHz 486SLC instead of the 25 MHz 386SX. Let's see whether the Mega Drive card agrees.
 
 ### Sources
 

@@ -8,13 +8,9 @@ categories: [gaming, sega, youtube]
 
 {% include youtube.html id="RoizJTzZnjc" %}
 
-Time for a bit of Space Harrier on the Sega Mega Drive 32X!
+Time for a bit of Space Harrier on the Sega Mega Drive 32X! The arcade original appeared back in 1985, and the 32X received a rather impressive conversion in 1994. Sega's little add-on didn't have the longest commercial life, but it certainly had some interesting games.
 
-Space Harrier originally appeared in the arcades back in 1985, and the 32X received a rather impressive conversion in 1994. Sega's short-lived little add-on might not have had the longest commercial life, but it certainly had some interesting games.
-
-The original arcade game was all about flying into the screen, blasting enemies and avoiding whatever happened to be coming your way. Lots of colourful sprites, scaling effects and general chaos. Just the sort of thing that makes for a good demonstration of what the 32X could do.
-
-I've had my fair share of adventures getting Mega Drive and 32X hardware to cooperate over the years. At least this time we're looking at a game instead of another circuit board!
+Space Harrier sends you flying straight into the screen, blasting enemies and dodging whatever's coming your way. Colourful sprites, scaling effects and plenty of chaos! It's a pretty good way of showing off what the 32X could do, which makes a nice change from all the time I've spent trying to get Mega Drive and 32X hardware to cooperate. At least this time we're looking at a game instead of another circuit board!
 
 **Related Posts**
 

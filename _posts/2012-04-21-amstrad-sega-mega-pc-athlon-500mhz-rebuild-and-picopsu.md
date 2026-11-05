@@ -18,11 +18,11 @@ Have a look at this [Internet Archive capture](https://web.archive.org/web/20080
 
 #### The Athlon 500 MHz project
 
-In other news, my side project, the Athlon 500 MHz Project, came to life today. I managed to get the Athlon coupled with an ASUS K7V Rev 1.01 and install Windows XP. Very happy with that result. Now I just need a rockin' case for it, with some horns if possible.
+In other news, my side project, the Athlon 500 MHz Project, came to life today. It can be seen here with a bonus 750 MHz CPU included with the motherboard running. I managed to get the Athlon coupled with an ASUS K7V Rev 1.01 and install Windows XP. Very happy with that result. Now I just need a rockin' case for it, with some horns if possible.
 
-This particular CPU has significant sentimental value. It was used in the first PC I put together as a teenager back in 2000. According to the warranty sticker, February 2000. I remember that day well. We were looking for a faster CPU but the entry-level 500 MHz was all they had. I was not leaving empty handed.
+This 500 MHz Athlon CPU has significant sentimental value. The 750 MHz, not so much. It was used in the first PC I put together as a teenager back in 2000. According to the warranty sticker, February 2000. I remember that day well. We were looking for a faster CPU but the entry-level 500 MHz was all they had. I was not leaving empty handed.
 
-The markings on this particular 500 MHz Athlon appeared to identify a 650 MHz-rated core. There were contemporary reports of some early Slot A 500 MHz Athlons containing higher-marked cores, but that does not mean AMD guaranteed those processors to operate at the higher speed.
+Years ago I removed the casing and markings inside this particular 500 MHz Athlon identified a 650 MHz-rated core! There were reports of some early Slot A 500 MHz Athlons containing higher-marked cores, no guarantee they'd run at those speeds, but maybe the market was in the entry-level - especially against Intel in the early days!
 
 ![](/assets/images/2012/img_0068.jpg)
 
@@ -36,15 +36,13 @@ There is still the familiar 28-bit LBA ceiling at roughly 128 GiB, or 137 GB in 
 
 ![](/assets/images/2012/img_0070.jpg)
 
-Another oddity was a Samsung 250 GB drive pulled from an el cheapo PVR. It only identified as 160 GB instead of the 250 GB printed on the label. I never established why. It could have involved firmware, capacity limiting or configuration, but I didn't investigate it far enough to know.
-
-Who cares! It works, and it runs much quieter than my other PATA drives.
+Another oddity was a Samsung 250 GB drive pulled from an el cheapo PVR. It only identified as 160 GB instead of the 250 GB printed on the label. I never established why. It could have involved firmware, capacity limiting or configuration, but I didn't investigate it far enough to know. Who cares! It works, and it runs much quieter than my other PATA drives.
 
 #### picoPSU
 
 I also tested the [picoPSU-80](https://www.mini-box.com/picoPSU-80) that arrived from the US a few days ago, and it seems to work a charm. I'm not sure what I'll ultimately use it for, although I'm toying with the idea of getting the old Mega PC 386SX motherboard powered up and functional as a spare old PC.
 
-I'd just need a small Disk on Module, a safe replacement for the original rechargeable NiCad backup battery and the picoPSU... perhaps! An ordinary non-rechargeable AA or AAA battery must not be connected directly to a charging circuit, so any external battery holder would need appropriate isolation or a compatible rechargeable arrangement.
+I'd just need a small Disk on Module, a replacement for the original rechargeable NiCad backup battery and the picoPSU... perhaps! The battery side needs a bit of thought, though. If I use an ordinary non-rechargeable AA or AAA cell, I'll have to isolate it from the charging circuit so the motherboard doesn't try to charge it, or use a suitable rechargeable arrangement instead.
 
 ### Related posts
 

@@ -24,9 +24,11 @@ The PC7486SLC-33 uses a Texas Instruments TI486SLC running at 33 MHz. It's an in
 
 ![](/assets/images/2012/img_0038.jpg)
 
-#### The Mega Plus question
+#### The Amstrad Mega PC Plus question
 
-The PC7486SLC-33 board I bought appears to have come from a beige Amstrad PC rather than a Mega PC, but it looks extremely similar to the sort of 486SLC platform associated with the elusive Mega Plus. The Mega Plus feels almost like an urban legend because I can find very little information about it. Period listings do show an Amstrad Mega Plus 486SLC-33 being advertised, although that still doesn't prove my particular motherboard was factory Mega Plus hardware. For now, this is an experiment inspired by the Mega Plus rather than a confirmed conversion using genuine Mega Plus parts.
+The PC7486SLC-33 board I bought appears to have come from a beige Amstrad PC rather than a Mega PC, but it looks extremely similar to the sort of 486SLC platform associated with the elusive Amstrad Mega PC Plus. I can find so little information about the Amstrad Mega PC Plus that it's starting to feel like an urban legend.
+
+Period listings do advertise an Amstrad Mega PC Plus with a 486SLC-33, although they don't tell me whether my particular motherboard was ever factory Amstrad Mega PC Plus hardware. For now, this is an experiment inspired by the Amstrad Mega PC Plus rather than a confirmed conversion using genuine Amstrad Mega PC Plus parts.
 
 ![](/assets/images/2012/img_0037.jpg)
 
@@ -48,7 +50,7 @@ Here's a little demonstration of those jumper settings on the original 386SX boa
 
 The board has four SIMM positions and I couldn't get it beyond 16 MB. I even considered "borrowing" a few RAM slots from another motherboard, although that sounded like an awful lot of effort for very little payoff.
 
-That limit makes considerably more sense now: the TI486SLC itself can directly address up to 16 MB of physical memory. That doesn't prove every PC7486SLC motherboard supports every possible 16 MB configuration, but it does explain why adding sockets would not get this CPU to 32 MB.
+That limit makes more sense when you look at the TI486SLC. The processor can directly address up to 16 MB of physical memory, so borrowing extra sockets wasn't going to get me to 32 MB anyway.
 
 The two biggest attractions of the replacement board are simple: it doesn't appear to have NiCad leakage all over it, and it gives me a 33 MHz 486SLC instead of the 25 MHz 386SX. Let's see whether the Mega Drive card agrees.
 

@@ -8,7 +8,7 @@ categories: [ibm-pc, repairs]
 
 ![](/assets/images/2012/img_0332.jpg)
 
-Looks like I am not the only one who has a virus at the moment. The trusty old Osborne ended up with what appeared to be an MBR or boot-sector infection. The Sound Blaster 16 installation disks I had been using were also detected as infected. At the time I assumed those disks had infected the PC. I cannot actually prove the direction of transmission though. Without a known-clean copy of the disks from before they entered the Osborne, the PC could just as easily have infected them.
+Looks like I'm not the only one who has a virus at the moment. The trusty old Osborne ended up with what appeared to be an MBR or boot-sector infection, and the Sound Blaster 16 installation disks I'd been using were also detected as infected. I originally assumed the disks had infected the PC, although without a known-clean copy from before they entered the Osborne, it's just as possible the machine infected the disks.
 
 ![](/assets/images/2012/img_0333.jpg)
 
@@ -16,11 +16,9 @@ I only discovered the problem after using the disks in the Osborne and then brin
 
 ![](/assets/images/2012/img_0334.jpg)
 
-F-PROT 3.16f saved the day. The scan report identified `ABCD.A` in the master boot sector. The archive I used was `fprot_dos_316f.zip`, with virus definitions dating into 2009. F-PROT 3.16f was the final DOS version and is perfectly at home on a 486.
+F-PROT 3.16f saved the day. The scan report identified ABCD.A in the master boot sector. The archive I used was fprot_dos_316f.zip, with virus definitions dating into 2009. F-PROT 3.16f was the final DOS version and is perfectly at home on a 486.
 
-For this sort of boot-sector cleanup, the important part is starting the infected computer from known-clean media rather than booting from the compromised hard disk. Ideally that rescue floppy should also be write-protected so the infected system cannot modify it.
-
-Windows 95 is now installed as well, and the next challenge is getting this thing onto the internet to some degree.
+For this sort of boot-sector cleanup, you really want to start the infected computer from known-clean media rather than letting the compromised hard disk boot. Ideally the rescue floppy should be write-protected too, so the infected machine can't modify it. Windows 95 is now installed as well, and the next challenge is getting this thing onto the internet to some degree.
 
 ### Related posts
 

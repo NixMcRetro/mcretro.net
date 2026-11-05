@@ -8,9 +8,9 @@ categories: [guides, linux, raspberry-pi]
 
 ![ghost-logo-svg](/assets/images/2016/img_0594.jpg)
 
-I decided to have a look around for an alternative to WordPress. I must admit I do have a tendency to do this from time to time. Anyway, enter [Ghost](https://ghost.org). No PHP, just JavaScript built for the new world order.
+I decided to have a look around for an alternative to WordPress. I must admit I do have a tendency to do this from time to time. Anyway, enter [Ghost](https://ghost.org)! No PHP, just pure JavaScript built for the new world order.
 
-**Historical installation notes:** This is the Ghost installation process I was experimenting with in December 2016. It uses Raspbian Jessie, Node.js 4 and the pre-Ghost-CLI installation method, so it should not be treated as a current installation guide. I have left the old commands here as part of the record rather than trying to modernise them in place.
+Anyway, get your Raspberry Pi up and running with Raspbian Jessie and then plug in the following commands. You can check [here](https://nodejs.org/dist/latest-argon/) for the latest v4 (Argon) Node.js. That is currently the best supported version Ghost recommends.
 
 ```
 cd ~
@@ -22,8 +22,6 @@ make
 sudo make install
 node -v
 ```
-
-One command in my original notes, `tar -xzf node node-v4.6.2.tar.gz`, appears malformed. I no longer have enough evidence here to reconstruct exactly what I typed successfully in 2016, so this block should not be treated as paste-ready. The later lines headed `Under production` and `Under server` describe edits inside `config.js`; they are not shell commands, and the displayed fields are only a fragment of that file. The historical download URLs and privileged npm commands remain part of these notes, not a current installation recommendation.
 
 ```
 cd ~

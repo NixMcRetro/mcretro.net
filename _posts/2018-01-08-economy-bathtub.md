@@ -9,6 +9,4 @@ historical_source_url: "https://channelchirp.com/economy-bathtub/"
 
 {% include youtube.html id="TW0PkU4Hc8Y" %}
 
-Apparently the luxury bathtub is in for repairs. Something about millet jammed in the plug hole, although I explained to the repairer that this simply couldn't be right. Only water goes down the drain in this household! Honestly, the accusations people make about perfectly respectable conures.
-
-Tillie wasn't going to wait for the plumbing to be sorted out, so the drinking-water bowl became an economy bathtub instead. It's an improvised bathing arrangement, certainly, but our little parrot seems determined to make the most of it. The first drinking-bowl bath of many, perhaps?
+The luxury bathtub was in for repairs. The repairer said there was millet jammed in the plug hole, but I told him that wasn't possible, as only water goes down the drain in this household. Anyway, Tillie decided to have a first bath in the drinking water. A sign of things to come!

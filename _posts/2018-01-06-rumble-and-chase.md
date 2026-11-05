@@ -9,6 +9,10 @@ historical_source_url: "https://channelchirp.com/rumble-and-chase/"
 
 {% include youtube.html id="AHGQs_0hBSE" %}
 
-It hasn't even been a week since Pudge and Tillie arrived at their new home, and already they're getting up to mischief! The two green-cheeked conures have been making themselves at home, and apparently the rooftop is a perfectly reasonable place to have a bit of a rumble.
+After a quick rumble on the rooftop, Pudge and Tillie chase the cameraman back into the kitchen to cook up some veggies for dinner. But there's quite a bit of mischief going on before we get that far!
 
-After all that excitement, the pair chase the person behind the camera back into the kitchen, where it's time to prepare some vegetables for dinner. Whether they're helping with the cooking or simply supervising proceedings is another matter entirely. These two little turkeys certainly know how to keep everyone busy!
+Got you pinned down! Or perhaps not. Now somebody's found a peanut, and I certainly didn't give you any. Where did that come from? Oh, you've dropped it. No more peanut!
+
+And apparently my fingers are fair game too. You think I'm a seed? I'm a bit nutty, but come on! Eventually there's a bird rummaging around in the seed box, which gives me an excuse for a terrible computer joke. I'm going to call you Torrent, because you're in a seed box. Seeding... torrents... get it? :-)
+
+After all that chasing, nibbling and general bird business, it's time to sort out some vegetables for dinner. These little turkeys certainly know how to keep everyone busy!

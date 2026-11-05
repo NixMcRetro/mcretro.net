@@ -9,6 +9,4 @@ historical_source_url: "https://channelchirp.com/rope-climbing/"
 
 {% include youtube.html id="8n-geRAbzx4" %}
 
-Rope climbing isn't just for the gym or the military, you know. Apparently it's an important part of the daily routine for Tillie and Pudge as well! The two conures have a newly made rope running from the bottom of their cage up towards the top, and they're determined to put it to good use.
-
-Up they go, one little foot after another. Between all the climbing, toy attacks and general bird business, I don't think these two need a gym membership. Who knew the household fitness programme would be run by a couple of tiny green parrots?
+It's not just something for the gym or the army, rope climbing is very important for Pudge and Tillie too! Watch them scale their newly made rope from the bottom of the cage, right back up to the top!

@@ -65,7 +65,7 @@ Will it continue to work through the [copy](https://tcrf.net/EarthBound) [protec
 - [SNES - Help - SuperCIC](https://web.archive.org/web/20190311181602/https://www.cs.umb.edu/~bazz/snes/helpful/SuperCIC.html)
 - [NesDev - Supercic 12F629 in SFC cart? (make it play on pal console)](https://web.archive.org/web/20231014233041/https://forums.nesdev.org/viewtopic.php?t=8884)
 
-### Related posts
+### Related Posts
 
 - [SNES SuperCIC Switchless Modchip - Installation (Part 1)](/snes-supercic-switchless-modchip-installation-part-1/)
 - [SNES SuperCIC Switchless Modchip - The Test (Part 2)](/snes-supercic-switchless-modchip-the-test-part-2/)

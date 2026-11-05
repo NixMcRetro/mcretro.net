@@ -16,23 +16,15 @@ I have also received some boxed Japanese Saturn accessories, including a floppy 
 
 ![](/assets/images/2012/img_0175.jpg)
 
-In other news, the Nintendo Famicom has been successfully AV modded.
-
-Jailbars are still present. At the time I was experimenting with capacitor-based fixes, including adding a large decoupling capacitor. Later Famicom work has shown that jailbar severity and reduction depend heavily on motherboard revision, PCB routing and interference, so there isn't one magic capacitor value that fixes every console.
+In other news, the Nintendo Famicom has been successfully AV modded. The jailbars are still present, though, and I've been trying a few capacitor-based fixes, including a large decoupling capacitor. Unfortunately, there doesn't seem to be one magic capacitor value that fixes every Famicom. The motherboard layout, routing and interference all have something to do with it.
 
 I'll report back on how it all goes. In the meantime, the photos are in the [photo gallery](/goodies/) under Nintendo Famicom H10865915.
 
-Oh, and I zapped myself on the Sega TeraDrive.
-
-Well, technically it was the open AT power supply I was using while trying to power a hard drive through an ISA controller card.
-
-Nothing useful came from that experiment except a reminder that an exposed AT PSU contains hazardous mains-voltage circuitry. Working around one while it is energised is not something to attempt unless you are appropriately qualified.
+Oh, and I zapped myself on the Sega TeraDrive. Well, technically it was the open AT power supply I was using while trying to power a hard drive through an ISA controller card. Not exactly a brilliant experiment to be doing around exposed mains-voltage circuitry, and certainly not one to repeat with the PSU energised!
 
 Since the ISA experiment was getting nowhere, I picked up a few IBM WDL-330P 30 MB hard drives and an IBM WDI-325Q 20 MB drive. The WDL-330P drives should fit nicely into the Model 3 TeraDrive that arrived without its hard drive. I also picked up some matching cables.
 
-At this stage I hoped an ordinary IDE drive might somehow be adapted to the TeraDrive with enough rewiring. I later discovered that the storage interface is much stranger than that.
-
-I have a 40 MB Conner Peripherals drive around for more experiments too.
+I was hoping I might be able to adapt an ordinary IDE drive with enough rewiring, but the TeraDrive's storage interface is proving to be rather stranger than ordinary IDE. I've got a 40 MB Conner Peripherals drive around for more experiments too, so there's still plenty to play with.
 
 Stay tuned for some great pictures and video of retro goodies late this week and early next!
 

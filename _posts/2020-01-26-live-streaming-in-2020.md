@@ -35,6 +35,6 @@ All in all, things are looking up! Stay tuned (on the McRetro Gaming channel, no
 - [OBS - Hardware Encoding](https://obsproject.com/kb/hardware-encoding)
 - [VideoGamePerfection - OSSC Pro is coming! (18th January 2020)](https://videogameperfection.com/2020/01/18/ossc-pro-is-coming/)
 
-### Related posts
+### Related Posts
 
 - [NUC8i7BEH Hackintosh Catalina Overview](/nuc8i7beh-hackintosh-catalina-overview/)

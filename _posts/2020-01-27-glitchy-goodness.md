@@ -39,6 +39,6 @@ I am pretty sure this was done on a Mega Drive Model 2. However, I don't seem to
 - [Annotated VRAM pinout (40-pin SOJ)](/assets/uploads/2017-05-09-0002-dragged.pdf)
 - [Annotated SRAM pinout (28-pin)](/assets/uploads/2017-05-09-0002-dragged-1.pdf)
 
-### Related posts
+### Related Posts
 
 - [Circuit Bending on the Mega Drive](/circuit-bending-on-the-mega-drive/)

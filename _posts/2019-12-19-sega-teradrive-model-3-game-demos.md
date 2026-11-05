@@ -14,7 +14,7 @@ After all that work replacing capacitors, it's about time we actually ran a few 
 
 We're also running on an original TeraDrive power supply, although it's actually the one from the Model 2. Don't tell anyone! This was probably one of the last times I had the Model 3 running with an otherwise fairly native hardware setup before the power-supply troubles returned.
 
-First up is The Incredible Machine, a game I remember playing back in primary school. I also remember copying it onto floppy disks so I could take it home. Ah, the good old days!
+First up is The Incredible Machine, a game I remember playing back in primary school. I also remember copying it onto floppy disks so I could take it home. My first act of piracy, apparently, happened a bit earlier than I remembered! Good thing I've been a good citizen ever since. I even discovered that the arrow keys could move the mouse, which was rather handy while I was poking around.
 
 I've got the TeraDrive connected to a couple of displays, including a Sony PVM. Unfortunately, it isn't particularly happy with all the video modes. Sometimes the picture disappears, sometimes it's out of range, and switching between composite and RGB produces a few interesting results.
 
@@ -24,7 +24,7 @@ So there you have it, a little gaming session on the TeraDrive after all those h
 
 We'll return to the power-supply problems in a future video. For now, I think it's time to take a break from the TeraDrive and see what other troublesome hardware is waiting around the corner.
 
-### Related posts
+### Related Posts
 
 - [Recapping the Sega TeraDrive Model 3 Floppy Drive](/recapping-the-sega-teradrive-model-3-floppy-drive/)
 - [Recapping the Sega TeraDrive Model 2 Floppy Drives](/recapping-the-sega-teradrive-model-2-floppy-drives/)

@@ -18,11 +18,9 @@ Sega Mega CD Karaoke - Top View
 
 Sega Mega CD Karaoke Microphone HAA-2932
 
-Just a quick update. I received the Sega Mega-CD Karaoke add-on today, gave it a test and found that there is a buzzing noise from the unit while it is powered up.
+Just a quick update. I received the Sega Mega-CD Karaoke add-on today, gave it a test and found that there is a buzzing noise from the unit while it is powered up. More annoyingly, the microphone does not work. I pulled it apart, with more photos in the [photo gallery](/goodies/), and the microphone cartridge appears to be dead.
 
-More annoyingly, the microphone does not work. I pulled it apart, with more photos in the [photo gallery](/goodies/), and the microphone cartridge appears to be dead.
-
-I've gone ahead and bought a $10 600-ohm BG-58 microphone cartridge from eBay as a candidate replacement. It'll be a few weeks before it arrives, so at this point I don't know whether it will be electrically and mechanically suitable.
+I've gone ahead and bought a $10 600-ohm BG-58 microphone cartridge from eBay to try as a replacement. It'll be a few weeks before it arrives, so whether it'll actually fit and work in this thing is still anyone's guess.
 
 ![](/assets/images/2012/img_0079.jpg)
 
@@ -32,13 +30,11 @@ I've gone ahead and bought a $10 600-ohm BG-58 microphone cartridge from eBay as
 
 In the meantime, I've purchased a very nice-looking boxed Yukawa Dreamcast, my first NTSC-J Dreamcast.
 
-The Yukawa packaging is part of the early Japanese Dreamcast story rather than a fundamentally different Dreamcast hardware model. Sega executive Hidekazu Yukawa featured heavily in the Japanese launch advertising and appeared on launch-era packaging.
+The Yukawa packaging is one of those oddities of the early Japanese Dreamcast launch. It's still the familiar Dreamcast hardware underneath, but Sega executive Hidekazu Yukawa appeared all over the Japanese launch advertising and even on the packaging.
 
 I am still waiting on the Genesis Nomad from the US. The good news is that it has reached Australia, so it shouldn't be more than a few days before I am gaming on the go!
 
-Regular visitors might also have noticed that the menu bar has slipped up to the very top of the page. I'm still tweaking the banner and alignment, but it is good enough for now.
-
-Here's to the week ahead!
+Regular visitors might also have noticed that the menu bar has slipped up to the very top of the page. I'm still tweaking the banner and alignment, but it is good enough for now. Here's to the week ahead!
 
 ### Related posts
 

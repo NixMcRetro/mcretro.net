@@ -16,13 +16,13 @@ With XDK 5933 installed, I wanted to get UnleashX running on the development kit
 
 I fired up Xbox Neighborhood under Windows 7 and started moving some files around. Unfortunately, Neighborhood was having a wonderful time freezing, crashing and generally refusing to cooperate. At least I was getting plenty of practice opening new windows!
 
-Eventually I discovered that I'd put one of the necessary files in the wrong location. A closer look at the instructions, a little more copying and another reboot later, UnleashX finally appeared. Success!
+Eventually I discovered that I'd put xboxrom.bin in the wrong place. It needed to be in the root of the B drive, not buried in the directory where I'd been fiddling around. A closer look at the instructions, a little more copying and another reboot later, UnleashX finally appeared. Success!
 
 I also switched the network configuration over to DHCP so the console could obtain an IP address. That would make transferring files over FTP rather more convenient, especially since Xbox Neighborhood wasn't exactly winning any reliability awards.
 
 Next up, we'll investigate the extra storage available on that 120 GB SSD and see whether we can get a few games running.
 
-### Related posts
+### Related Posts
 
 - [Xbox DVT4 Network Update (XDK 5933)](/xbox-dvt4-network-update-xdk-5849-5933/)
 - [Xbox DVT4 XBpartitioner and Game Demos](/xbox-dvt4-xbpartitioner-and-game-demos/)

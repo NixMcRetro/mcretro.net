@@ -9,8 +9,8 @@ historical_source_url: "https://channelchirp.com/homework-time/"
 
 {% include youtube.html id="7suRQM6e04E" %}
 
-Homework time! Pudge and Tillie have decided to help out with the iPad, although I suspect their idea of homework has rather more to do with eating apples than getting anything useful done. Apple iPad, apple snack. Close enough, right? I'm sure this will work out just fine!
+We love to do our homework on the Apple iPad... but we also like eating apple. I'm sure this will work out well!
 
 {% include youtube.html id="vWBErrqJgRc" %}
 
-Oh, never mind. Apparently this sort of homework is boring, and the birds have found a much better way to put a stop to it. Their next suggestion is to find some money for movie tickets and go and see RoboCop at the local cinemas. I have questions, little parrots. So many questions!
+Oh wait, this type of homework is boring. I think this is the best way to stop doing it! Let's find some money for movie tickets and watch RoboCop at the local mall.

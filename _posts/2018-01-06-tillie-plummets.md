@@ -9,6 +9,4 @@ historical_source_url: "https://channelchirp.com/tillie-plummets/"
 
 {% include youtube.html id="aF_HER0Yc44" %}
 
-Tillie has only been in the new household for a few days, and already playtime is turning into quite an adventure. One moment there's a bird enjoying a bit of fun, and the next there's a sudden plummet towards the floor!
-
-Luckily, Tillie's quick reflexes turn the incident into a landing on my exposed toes instead. No dramatic rescue required, just an unexpected tickle courtesy of a tiny green parrot. Those toes weren't prepared for this!
+Tillie has plummeted while in play mode! Luckily, those quick reflexes caused a landing on my exposed toes and tickled them quite dangerously!

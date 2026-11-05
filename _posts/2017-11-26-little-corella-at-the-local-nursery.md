@@ -8,12 +8,12 @@ categories: [parrots, reconstructed, youtube]
 
 {% include youtube.html id="8Mv4RHgfovs" %}
 
-We've found ourselves at the local nursery with a Little Corella (*Cacatua (Licmetis) sanguinea*)! This was before I owned parrots, but apparently I was already quite happy to stand around filming them. First up, a bit of slow motion! This little bird isn't so little up close but watching it do a head bob is amusing enough at normal speed, but slowed right down? Even better! Just wait for it!
+We've found ourselves at the local nursery with a Little Corella (*Cacatua (Licmetis) sanguinea*)! First up, a bit of slow motion. This bird isn't so little up close, and watching it do a head bob is amusing enough at normal speed. Slowed right down? Even better! Just wait for it!
 
 {% include youtube.html id="t1ksOEpZUxo" %}
 
-Let's speed it back up to a regular-speed version of the same head-bobbing performance. Now we can see those movements without the slow-motion treatment. I don't know what the corella was thinking, but it certainly made for entertaining footage. Quite a performance for a trip to the nursery!
+Let's speed it back up to regular speed for the same head-bobbing performance. Now we can see those movements without the slow-motion treatment. I don't know what the corella is thinking, but it certainly makes for entertaining footage. Quite a performance for a trip to the nursery!
 
 {% include youtube.html id="mxBfN5pH5rg" %}
 
-More head bobbing and head-shaking gestures from our little (well... large) feathered friend. Looking back at these recordings from before I had parrots of my own, perhaps my interest in these ridiculous birds wasn't quite as sudden as it might have seemed!
+More head bobbing and head-shaking gestures from our little (well... large) feathered friend. Three videos from one trip to the nursery, all featuring a rather expressive corella. These birds certainly know how to make themselves entertaining!

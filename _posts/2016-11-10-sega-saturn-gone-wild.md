@@ -10,8 +10,6 @@ categories: [sega]
 
 Let's go through some of the different types of Sega Saturns. The eleven internal photographs and original catalogue notes are courtesy of [Zyrobs](https://imgur.com/a/dMbRj). Thank you Zyrobs! And who knew the Sega Saturn had so many revisions. How Sega managed this... well I suppose they didn't... too soon? Ahhh, it's been twenty-something years folks! :-)
 
-This is a selection of photographed consoles, not a complete list of Saturn revisions. The details below follow the original catalogue, with source discrepancies called out where the surviving evidence shows them. The PSU pinouts describe these units; they are not a guarantee that supplies can be swapped between machines. Local mains-voltage compatibility still matters.
-
 * * *
 
 ![01-sega-saturn-model-1-pal-va1](/assets/images/2016/img_0581.jpg)
@@ -148,6 +146,6 @@ Power supply: 4-pin Type C (GND, GND, 5V, 5V)
 
 - [Zyrobs - Sega Saturns Gone Wild](https://imgur.com/a/dMbRj)
 
-### Related posts
+### Related Posts
 
 - [Sega Saturn Power Supply Swapping](/sega-saturn-power-supply-swapping/)

@@ -9,6 +9,6 @@ historical_source_url: "https://channelchirp.com/rattle-ball-wars/"
 
 {% include youtube.html id="fsQAEsUUoZw" %}
 
-The rattle ball wars have begun! Tillie has apparently been sent back through time disguised as a cyborg assassin, and poor Pudge is the latest target. Does anyone know where Kyle Reese has got to? We could probably use some help around here.
+Disguised as a bird, a cyborg assassin known as Tillie travels from 2029 to 1984 to attack Pudge. Sent to protect Pudge is Kyle Reese, who divulges the coming of Skynet, an artificial intelligence system that will spark a nuclear holocaust. Pudge is targeted because Skynet knows that Pudge's unborn son will lead the fight against them. With the virtually unstoppable Tillie in hot pursuit, Pudge and Kyle attempt to escape.
 
-At this rate, Skynet is going to have a whole army of tiny green Terminators. Never mind protecting the future of humanity, somebody needs to save that rattle ball! Watch out, Pudge!
+Meanwhile, back in the rattle ball wars, I'm offering up the green one and trying to work out where it's gone. Where's it gone? There it is! Now there are two balls in play, and these little feathered Terminators are keeping me rather busy. Watch out, Pudge!

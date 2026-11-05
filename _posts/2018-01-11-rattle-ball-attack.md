@@ -9,6 +9,4 @@ historical_source_url: "https://channelchirp.com/rattle-ball-attack/"
 
 {% include youtube.html id="cS46g6KZ9B0" %}
 
-Rattle balls! The natural enemy of the wild conure. Well, according to Tillie and Pudge, anyway. Our two little green-cheeked conures have a fine collection of these suspicious round objects, and apparently the best way to deal with them is to run about and give them a proper going-over.
-
-The birds have only been home for a little over a week, and already we're watching an all-out toy battle. Never mind the wild, these two have plenty of adventure right here in the living room. Those rattle balls never stood a chance!
+Rattle balls! The natural enemy of the wild conure. Luckily, these two non-wild conures get to have them just to make sure they can feel like they are really in the wild... running around with rattle balls!

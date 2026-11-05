@@ -8,7 +8,11 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="NsKZTus88kg" %}
 
-These two Game Boys were just waiting to be played. I wish I had been able to source a link cable to battle myself at Tetris. Unfortunate, but I guess I can just play both Game Boys and compare scores at the end of the battle. That makes sense, right? Anyway, the Game Boy with vertical lines missing on the display will be repaired in a future video. It was surprisingly easy given how strange the method to repair actually is. Stay tuned to see some more of that action! That repair later became [Nintendo Game Boy Vertical Line Repair](/nintendo-game-boy-vertical-line-repair/).
+These two Game Boys were just waiting to be played. I wish I had been able to source a link cable to battle myself at Tetris. Unfortunate, but I guess I can just play both Game Boys and compare scores at the end of the battle. That makes sense, right?
+
+I'm a fan of the Type B Tetris music, one of my darkest secrets! The contrast on one of those screens is dreadful, although perhaps that's just a convenient excuse for how badly I was playing. I also have to thank the original Game Boy for being such an excellent toilet pastime. Fifteen to thirty minutes can disappear rather quickly when you're trying to clear lines!
+
+Anyway, the Game Boy with vertical lines missing on the display will be repaired in a future video. It was surprisingly easy given how strange the method to repair actually is. Stay tuned to see some more of that action! That repair later became [Nintendo Game Boy Vertical Line Repair](/nintendo-game-boy-vertical-line-repair/).
 
 In other news, I've been keeping my grades up in school with only the occasional slip. Things will really go into hyperdrive over the next month or two with final exams coming up. One has a pass requirement (booo!) and the others are going to need somewhere between 20% and 40% on the final exam to pass the course overall. Hope for the best, plan for the worst.
 

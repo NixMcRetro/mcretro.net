@@ -12,7 +12,7 @@ Incredible news, I can see the clearing up ahead where these recapping videos di
 
 This time we're working on the two floppy drives from the Sega TeraDrive Model 2. They're serial numbers 03464 and 03465, a rather lovely little pair! Unlike many ordinary floppy drives, these don't have a separate power connector on the back. Instead, power is integrated into the TeraDrive's own cabling arrangement.
 
-Each drive has two electrolytic capacitors to replace, one 47 µF and one 10 µF. These are older than the Model 3 drive we worked on previously, and unfortunately the corrosion around the original components was considerably worse.
+Each drive has two electrolytic capacitors to replace, one 47 uF and one 10 uF. These are older than the Model 3 drive we worked on previously, and unfortunately the corrosion around the original components was considerably worse.
 
 I tried using the desoldering tweezers again, but the leaky capacitors weren't particularly cooperative. The heat was doing a wonderful job of making a mess of the old components and their plastic housings. Perhaps these tweezers weren't quite the miracle I'd hoped for!
 
@@ -24,7 +24,7 @@ In other sad news, we've lost ASSEMblergames.com. Everyone can now head to [Obsc
 
 In some ways it still lives on. Not as the monster it became, but as the fountain of knowledge and wonderful folk who came to sip and share their own. Here's to you!
 
-### Related posts
+### Related Posts
 
 - [Recapping the Sega TeraDrive Model 3 Floppy Drive](/recapping-the-sega-teradrive-model-3-floppy-drive/)
 - [Sega TeraDrive Model 3 Extreme ScanDisk](/sega-teradrive-model-3-extreme-scandisk/)

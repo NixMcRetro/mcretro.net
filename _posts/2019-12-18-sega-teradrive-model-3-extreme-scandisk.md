@@ -10,11 +10,11 @@ categories: [ibm-pc, sega, youtube]
 
 With everything recapped, we scan the disks... with ScanDisk... in real time! Because nothing says quality entertainment quite like watching a thirty-megabyte hard drive slowly work its way through a surface scan.
 
-I've booted the Sega TeraDrive Model 3 using a floppy disk and started ScanDisk on the C drive. This is one of the WDL-330P hard drives we've been working on, and now it's time to see how the storage is behaving after all those capacitor replacements.
+I've booted the Sega TeraDrive Model 3 using a floppy disk and started ScanDisk on the C drive. C, I believe, stands for cabbage. Don't quote me on that one! This is one of the WDL-330P hard drives we've been working on, and now it's time to see how the storage is behaving after all those capacitor replacements.
 
 Straight away, ScanDisk shows some bad clusters that had already been marked. That's not particularly surprising for a drive of this age, although it certainly isn't something I'd ignore if there were important files sitting on it.
 
-Fortunately, the scan continues without immediately discovering a whole collection of new problems. The drive takes its time, of course. We're talking about a 30 MB hard drive here, not something that's going to be winning any speed competitions!
+Fortunately, the scan continues without immediately discovering a whole collection of new problems. The drive takes its time, of course. We're talking about a 30 MB hard drive here, not something that's going to be winning any speed competitions! This thing is slower than time itself.
 
 There's even a little activity light on the front of the drive. Unfortunately, you don't get to see much of that while we're staring at ScanDisk. Never mind, I'm sure watching little blocks change on the screen is almost as exciting.
 
@@ -24,7 +24,7 @@ I've got two more drives to check, so for a change of pace we'll speed up the fo
 
 Next up we'll put the TeraDrive through something slightly more entertaining. Games! Actual games! I'm sure that'll be a welcome change after all these capacitors and hard drives.
 
-### Related posts
+### Related Posts
 
 - [Recapping the Sega TeraDrive Model 3 Floppy Drive](/recapping-the-sega-teradrive-model-3-floppy-drive/)
 - [Recapping the Sega TeraDrive Model 2 Floppy Drives](/recapping-the-sega-teradrive-model-2-floppy-drives/)

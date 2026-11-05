@@ -23,7 +23,9 @@ These settings are summarised from the IS-NITRO-CAPTURE Users Manual, version 20
 7. AVOUT1: ON combines both DS screens; OFF shows only the upper screen.
 8. AVOUT2: ON combines both DS screens; OFF shows only the lower screen.
 
-Next: [IS Nitro Capture DS Lite Internal Overview](/is-nitro-capture-ds-lite-internal-overview/)
+### Related Posts
+
+- [IS Nitro Capture DS Lite Internal Overview](/is-nitro-capture-ds-lite-internal-overview/)
 
 ### Sources
 

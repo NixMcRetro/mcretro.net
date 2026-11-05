@@ -10,7 +10,7 @@ categories: [devkit, nintendo, youtube]
 
 We have a look at what the IS Nitro Capture can actually do, why you should buy one and why I originally purchased one. Then again, perhaps I didn't touch on any of that in the video. Watch on to find out!
 
-After pulling the whole thing apart in the previous video, I thought it might be a good idea to show what this rather expensive blue box actually does. I'd paid somewhere around $300 for it, and it was designed to capture footage and screenshots from Nintendo DS hardware.
+After pulling the whole thing apart in the previous video, I thought it might be a good idea to show what this rather expensive blue box actually does. I'd paid somewhere around $300 for it, and it was designed to capture footage and screenshots from Nintendo DS hardware. I later sold it for about $200, because apparently I make a loss on just about everything I sell. Not in it for the profit!
 
 With the capture software running over USB, you can save screenshots as bitmap files or record video directly from the device. The software was in Japanese, which made things a little more entertaining. Video capture also seemed to stutter on my setup, although I wasn't entirely sure whether to blame the virtual machine or the computer playing it back.
 
@@ -20,7 +20,7 @@ I fired up Harvest Moon to show things working, with the game appearing on the e
 
 So there you go, a Nintendo DS with a great big blue box attached, ready to capture screenshots and video. Not exactly the sort of thing you'd find underneath the television in an ordinary household!
 
-### Related posts
+### Related Posts
 
 - [IS Nitro Capture Teardown](/is-nitro-capture-teardown/)
 - [IS Nitro Capture Recorded Footage](/is-nitro-capture-recorded-footage/)

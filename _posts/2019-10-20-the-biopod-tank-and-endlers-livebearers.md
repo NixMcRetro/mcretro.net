@@ -10,7 +10,9 @@ categories: [fish, reconstructed, youtube]
 
 Meet the BioPod! First up, on the 12th August 2019, we've got ourselves a tank full of Endler's livebearers! Guppies! Well, sort of. Endler's are closely related to ordinary guppies, and the two can even interbreed. It's practically a fish family reunion, only with more swimming and considerably fewer awkward conversations! These colourful little fellows certainly make for an interesting aquarium, and there's always something happening when you've got a whole collection of fish to keep an eye on.
 
-Of course, Fish Tank World wasn't entirely about sitting around watching fish. There was also the exciting world of aquarium water chemistry! The original BioPod records from the 12th August 2019 show an ammonium (NH4+) reading of 0 ppm, nitrite between 0.25 and 0.5 ppm, nitrate at the test kit's upper limit of 160 ppm, and pH down at 6.0. Yikes! That's quite a collection of numbers, and not all of them particularly encouraging. Ideally, nitrite should be sitting at zero. Too much of the stuff can interfere with a fish's ability to carry oxygen in its blood, which is bad when breathing is something fish generally like doing! The nitrate reading wasn't particularly impressive either. Apparently keeping a little collection of fish also means becoming an amateur chemist!
+Of course, Fish Tank World wasn't entirely about sitting around watching fish. There was also the exciting world of aquarium water chemistry! The original BioPod records from the 12th August 2019 show an ammonium (NH4+) reading of 0 ppm, nitrite between 0.25 and 0.5 ppm, nitrate at the test kit's upper limit of 160 ppm, and pH down at 6.0. Yikes! That's quite a collection of numbers, and not all of them particularly encouraging.
+
+Ideally, nitrite should be sitting at zero. Too much of the stuff can interfere with a fish's ability to carry oxygen in its blood, which is bad when breathing is something fish generally like doing! The nitrate reading wasn't particularly impressive either. Apparently keeping a little collection of fish also means becoming an amateur chemist!
 
 {% include youtube.html id="M_LYaAnma8o" %}
 

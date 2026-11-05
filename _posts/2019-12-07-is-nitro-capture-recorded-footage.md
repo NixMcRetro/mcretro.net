@@ -10,4 +10,6 @@ last_modified_at: 2026-10-18
 
 Here's what the IS Nitro Capture could do. This footage is incredible! If you intend on watching any video today, make sure this is the one you view!
 
-Previous: [IS Nitro Capture Functional Overview](/is-nitro-capture-functional-overview/)
+### Related Posts
+
+- [IS Nitro Capture Functional Overview](/is-nitro-capture-functional-overview/)

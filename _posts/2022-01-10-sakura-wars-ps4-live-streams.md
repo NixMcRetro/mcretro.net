@@ -19,7 +19,7 @@ On that topic, the video at the top of this post starts the PS4 playthrough with
 - [PlayStation Store - Sakura Wars](https://store.playstation.com/en-au/product/EP0177-CUSA16429_00-SAKURAWARS000000)
 - [SEGA on PlayStation Blog - The art of Sakura Wars: how an all-star team of guest artists brought the action RPG to life](https://blog.playstation.com/archive/2020/04/28/the-art-of-sakura-wars-how-an-all-star-team-of-guest-artists-brought-the-action-rpg-to-life/)
 
-### Related posts
+### Related Posts
 
 - Earlier PS4 stream: [Sakura Wars (2020, PS4 Live Stream, Chapter 1)](/sakura-wars-ps4-live-stream-chapter-1/)
 - Earlier Saturn playthrough: [Sakura Taisen (1996, Saturn Live Stream, Episode 1)](/sakura-taisen-saturn-live-stream-episode-1/)

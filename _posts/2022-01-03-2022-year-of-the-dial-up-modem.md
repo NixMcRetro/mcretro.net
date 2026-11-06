@@ -23,7 +23,7 @@ For me, modems are going to be needed for browsing the [GeoCities Archives](/hom
 - [ITU-T V.32bis](https://www.itu.int/rec/T-REC-V.32bis/)
 - [ITU-T V.34](https://www.itu.int/rec/T-REC-V.34/)
 
-### Related posts
+### Related Posts
 
 - [Avtek MegaPlus V.32bis - First Connection Attempt](/avtek-megaplus-v-32bis-first-connection-attempt/)
 - [Avtek MegaPlus V.32bis - Resetting the Linksys PAP2T](/avtek-megaplus-v-32bis-resetting-the-linksys-pap2t/)

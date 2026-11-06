@@ -24,7 +24,7 @@ One of the reasons I had trouble with Cloudflare SSL was that it would get stuck
 
 ![](/assets/images/2022/img_0814.jpg)
 
-As I now understand the underlying mechanism through trial and error, naturally, my precious onions work. The clearnet site could sit behind Cloudflare while the `.onion` service remained a separate route to equivalent content. Cloudflare was not what made the onion service work; it protected and cached the public web side. Took a little while to get the configuration right but it works for now.
+As I now understand the underlying mechanism through trial and error, naturally, my precious onions work. The clearnet site could sit behind Cloudflare while the .onion service remained a separate route to equivalent content. Cloudflare was not what made the onion service work; it protected and cached the public web side. Took a little while to get the configuration right but it works for now.
 
 ![](/assets/images/2022/img_0816.jpg)
 
@@ -37,7 +37,7 @@ Everything said, it should mean a faster website, better uptime (in theory), and
 - [Cloudflare - Announcing the CSAM Scanning Tool, Free for All Cloudflare Customers](https://blog.cloudflare.com/the-csam-scanning-tool/)
 - [ddclient - v3.9.1 source with Cloudflare support](https://raw.githubusercontent.com/ddclient/ddclient/v3.9.1/ddclient)
 
-### Related posts
+### Related Posts
 
 - [Cloudflare CDN](/cloudflare-cdn/)
 - [The GeoCities Archive Rebuild Goes Live](/the-geocities-archive-rebuild-goes-live/)

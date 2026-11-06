@@ -8,7 +8,7 @@ last_modified_at: 2026-10-18
 
 ![](/assets/images/2020/img_0685.jpg)
 
-Carriage returns (CR) and line feeds (LF). CRLF! Get those line endings wrong and PSIO will get angry at you by reading all the discs as one line - a recipe for disaster on my Mac. `MULTIDISC.LST` needed plain text with CRLF between disc entries in the setup I was using; Windows just gave me an easy way to save it that way. One catch with the screenshot above: the first line ends in CRLF, but the second shows only CR. Use CRLF between entries rather than copying that mismatch!
+Carriage returns (CR) and line feeds (LF). CRLF! Get those line endings wrong and PSIO will get angry at you by reading all the discs as one line - a recipe for disaster on my Mac. MULTIDISC.LST needed plain text with CRLF between disc entries in the setup I was using; Windows just gave me an easy way to save it that way. One catch with the screenshot above: the first line ends in CRLF, but the second shows only CR. Use CRLF between entries rather than copying that mismatch!
 
 I tried using BBEdit to make it zap into the correct format like Notepad++, with no success. The path of least resistance? Using virtualisation on my shiny new M1 Mac with Windows 10 on Arm in the Technical Preview of Parallels 16. Windows 10 on Arm had x86 emulation available, and somehow it all came together and worked properly - very unexpected! Get that plain-text disc list right and you'll be ready to game on!
 

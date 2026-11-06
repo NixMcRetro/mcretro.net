@@ -10,9 +10,9 @@ last_modified_at: 2026-10-18
 
 Wow! What a long episode! We lost Ayame, who turned out to be Ay-ame?!?! A double agent for Lord Satan!?!? And now they have our secret weapon, stolen straight from under our troupe - The Pandemonium Regalia! I still can't believe that Ayame is a faithful servant of Lord Satan... it just seems too unreal!
 
-Next up... The Finale... Stay tuned!:)
+Next up... The Finale... Stay tuned! :)
 
-### Related posts
+### Related Posts
 
-- Previous: [Sakura Taisen (1996, Saturn Live Stream, Episode 8)](/sakura-taisen-saturn-live-stream-episode-8/)
-- Next: [Sakura Taisen (1996, Saturn Live Stream, Episode 10, Part 1)](/sakura-taisen-saturn-live-stream-episode-10-part-1/)
+- [Sakura Taisen (1996, Saturn Live Stream, Episode 8)](/sakura-taisen-saturn-live-stream-episode-8/)
+- [Sakura Taisen (1996, Saturn Live Stream, Episode 10, Part 1)](/sakura-taisen-saturn-live-stream-episode-10-part-1/)

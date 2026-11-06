@@ -12,6 +12,8 @@ These things are supposed to be limited to 18 inches. I had no issues in my test
 
 With the power of a super-long 24-inch, 80-conductor IDE/PATA cable, we get to work. I just hope the cable you have... has the connectors in the correct orientation!
 
+In the video I've got the motherboard connector at one end, the DVD drive connector in the middle and the adapter connection at the other end. The extra length folds behind the DVD drive, with part of the cable tucking underneath it. There's still a fair bit of slack to manage, but it actually came out rather nicely! I wasn't about to take everything apart again just to show it off.
+
 {% include youtube.html id="PzYaKbfWQ44" %}
 
 I referenced the above cable-folding video by Mod-Heure when routing this around the Xbox. This is an 80-conductor IDE/PATA cable with 40-pin connectors.

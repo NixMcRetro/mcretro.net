@@ -18,7 +18,7 @@ My plan is to host these on my local network only and resolve them through my lo
 
 Related to that, I've taken down assembler.mcretro.net as I haven't been able to have enough free time to look through the data and tidy it up any more. Thankfully we have [assemblergames.org](https://assemblergames.org) as an archive and [obscuregamers.com](https://www.obscuregamers.com) as the spiritual successor.
 
-### Related posts
+### Related Posts
 
 - [2022: Year of the Dial-up Modem](/2022-year-of-the-dial-up-modem/)
 - [Avtek MegaPlus V.32bis - First Connection Attempt](/avtek-megaplus-v-32bis-first-connection-attempt/)

@@ -18,7 +18,7 @@ The next step of course is to use the PAP2T as a VoIP phone exchange emulator. A
 
 - [Linksys/Cisco - PAP2T Internet Phone Adapter User Guide, Interactive Voice Response Menu and factory reset](https://www.cisco.com/c/dam/en/us/td/docs/voice_ip_comm/csbpvga/pap2t/administration/guide/pap2t_user.pdf)
 
-### Related posts
+### Related Posts
 
 - [2022: Year of the Dial-up Modem](/2022-year-of-the-dial-up-modem/)
 - Earlier: [Avtek MegaPlus V.32bis - First Connection Attempt](/avtek-megaplus-v-32bis-first-connection-attempt/)

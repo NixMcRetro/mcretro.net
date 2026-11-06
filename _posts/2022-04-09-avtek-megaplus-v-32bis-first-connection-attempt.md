@@ -12,7 +12,7 @@ Another test of the Avtek MegaPlus V.32bis Modem (Model CD950). We're performing
 
 In a future video, after we reset the VoIP box (PAP2T or similar), we should be able to dial another modem. We'll work it out down the track. This at least shows us that the modem is functional enough to attempt to dial out.
 
-### Related posts
+### Related Posts
 
 - Earlier: [2022: Year of the Dial-up Modem](/2022-year-of-the-dial-up-modem/)
 - Next: [Avtek MegaPlus V.32bis - Resetting the Linksys PAP2T](/avtek-megaplus-v-32bis-resetting-the-linksys-pap2t/)

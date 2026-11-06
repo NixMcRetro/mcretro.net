@@ -19,7 +19,7 @@ Next up we'll try to get the modem to dial and maintain a connection. Right now 
 - [Linksys/Cisco - PAP2T Internet Phone Adapter User Guide, front-panel phone LEDs](https://www.cisco.com/c/dam/en/us/td/docs/voice_ip_comm/csbpvga/pap2t/administration/guide/pap2t_user.pdf)
 - [ITU-T - Recommendation V.32bis (February 1991), modem signalling rates up to 14,400 bit/s](https://www.itu.int/rec/T-REC-V.32bis-199102-I/en)
 
-### Related posts
+### Related Posts
 
 - [2022: Year of the Dial-up Modem](/2022-year-of-the-dial-up-modem/)
 - [Avtek MegaPlus V.32bis - First Connection Attempt](/avtek-megaplus-v-32bis-first-connection-attempt/)

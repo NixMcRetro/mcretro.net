@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
         Date.now() - lastFinishedAt < cooldownMs) return;
 
     // Position the 48px-tall sprite with its feet on the thin top border.
-    // Start just left of the navigation and exit just beyond its right edge.
+    // Start at the navigation's left edge and exit at its right edge.
     const rect = mainNav.getBoundingClientRect();
     if (rect.width <= 0) return;
     const selected = runners[Math.floor(Math.random() * runners.length)];
-    const startX = rect.left - 110;
-    const endX = rect.right + 110;
+    const startX = rect.left;
+    const endX = rect.right;
     const y = Math.max(0, rect.top - 48);
     const seconds = Math.max(3.5, Math.min(8.5, (endX - startX) / selected.speed));
 

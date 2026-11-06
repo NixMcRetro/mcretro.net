@@ -1,0 +1,73 @@
+name: Blog Active Navigation QA
+on:
+  push:
+    branches:
+      - qa/blog-active-nav-on-posts-2026-11-07
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Jekyll build
+        run: bundle exec jekyll build --destination _site
+      - name: Verify active Blog navigation across page types
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+
+          class Nav(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.nav_depth = 0
+                  self.blog_classes = []
+                  self.active_links = []
+                  self.current_href = ''
+              def handle_starttag(self, tag, attrs):
+                  p = dict(attrs)
+                  if tag=='nav' and p.get('id')=='primary-navigation':
+                      self.nav_depth = 1
+                  elif self.nav_depth and tag=='nav':
+                      self.nav_depth += 1
+                  if self.nav_depth and tag=='a':
+                      self.current_href = p.get('href','')
+                      if self.current_href == '/blog/' and p.get('id') != 'random-post-link':
+                          self.blog_classes.append(set(p.get('class','').split()))
+                      if 'active' in p.get('class','').split():
+                          self.active_links.append(self.current_href)
+              def handle_endtag(self,tag):
+                  if self.nav_depth and tag=='nav':
+                      self.nav_depth -= 1
+
+          checks = {
+              '_site/index.html': False,
+              '_site/blog/index.html': True,
+              '_site/integrity-and-extracting-the-geocities-archive-rebuild-v5/index.html': True,
+              '_site/still-dialling-in-my-head/index.html': True,
+              '_site/archive/2026/10/index.html': True,
+              '_site/about/index.html': False,
+          }
+          for path,expected in checks.items():
+              file=Path(path)
+              assert file.exists(),f'Expected generated page absent: {path}'
+              parser=Nav()
+              parser.feed(file.read_text())
+              assert len(parser.blog_classes)==1,f'Blog link missing or duplicated: {path}'
+              actual='active' in parser.blog_classes[0]
+              assert actual == expected,f'Unexpected Blog active state for {path}: {actual}, expected {expected}'
+              if expected:
+                  assert parser.active_links == ['/blog/'],f'Wrong simultaneous active nav on {path}: {parser.active_links}'
+              else:
+                  assert '/blog/' not in parser.active_links,f'Blog should not be active on {path}'
+              print(f'PASS {path}: Blog active={actual}')
+          css=Path('assets/css/style.css').read_text()
+          assert '.main-nav a.active' in css and 'font-weight: bold;' in css
+          print('PASS: all six page types, inherited active-link bold styling')
+          PY

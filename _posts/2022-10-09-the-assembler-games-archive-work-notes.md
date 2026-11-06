@@ -149,6 +149,6 @@ I never got around to looking into it too far though. It's been good. Assembler 
 - [Unix & Linux Stack Exchange - Delete files with names that appear to begin with '?' in command line](https://unix.stackexchange.com/questions/463913/delete-files-with-names-that-appear-to-begin-with-in-command-line)
 - [Apache HTTP Server - Binding to Addresses and Ports](https://httpd.apache.org/docs/2.4/bind.html)
 
-### Related posts
+### Related Posts
 
 - [The ASSEMbler Games Archive](/the-assembler-games-archive/)

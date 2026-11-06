@@ -16,7 +16,7 @@ This was a preowned game and the data disc had no issues installing. I took onbo
 
 ![](/assets/images/2022/img_0920.jpg)
 
-Uhhhhh, hmmm, this gash is a feature, not a bug, right? And those specks or holes? Probably not good. Given the visible damage, the disc was a very plausible culprit for the repeatable crash at that point, even if that didn't prove exactly what had failed.
+Uhhhhh, hmmm, this gash is a feature, not a bug, right? And those specks or holes? Probably not good. With damage like that, I wouldn't be surprised if the disc was responsible for the crash.
 
 ![](/assets/images/2022/img_0921.jpg)
 
@@ -24,7 +24,7 @@ I guess it will have to go back to the store. That one will not buff out, especi
 
 ![](/assets/images/2022/img_0922.jpg)
 
-After having a bit of a read I learnt why damage on the read side of a Blu-ray Disc matters so much. The recording layers sit close to the read surface compared with older optical formats, which is why Blu-ray media relies heavily on a hard protective coating. Whatever caused this gouge, being able to see light through the damaged area was not encouraging.
+After having a bit of a read I learnt why damage on the read side of a Blu-ray Disc matters so much. The recording layers sit close to the read surface compared with older optical formats, which is why Blu-ray media relies heavily on a hard protective coating. Being able to see light through the damaged area certainly wasn't encouraging!
 
 {% include youtube.html id="Al1srs-pGxI" %}
 

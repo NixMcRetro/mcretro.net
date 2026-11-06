@@ -36,6 +36,6 @@ So for now we must once again say goodbye to Ness and his friends, smiles and te
 - [Coto - SNEmulDS source as it stood in January 2022](https://github.com/cotodevel/snemulds/tree/e9f853e942a721e69efcf297d23080f1a5936ceb)
 - [OpenEmu - Snes9x core version at the time of this post](https://raw.githubusercontent.com/OpenEmu/SNES9x-Core/652dd3ec0a3b4f3a984bb5af0a3d009252fbe48d/Info.plist)
 
-### Related posts
+### Related Posts
 
 - [EarthBound Completed on a Nintendo DS Lite with SNEmulDS](/earthbound-completed-on-nintendo-ds-lite-with-snemulds/)

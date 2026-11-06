@@ -18,7 +18,7 @@ I'll eventually get to putting the entire work log on here as well. I'm still tr
 
 Anyway, there's a lot of weird sites to be found in the archive, but there's also gems like this one frozen in time. Incredible. Best viewed on a Windows 95/98 machine running Internet Explorer 5.x or Netscape 4.x. I hope you enjoy your stay!
 
-### Related posts
+### Related Posts
 
 - [The GeoCities Archive Rebuild Blog](/the-geocities-archive-rebuild-blog/)
 - [Multimeter, MiSTer and GeoCities](/multimeter-mister-and-geocities/)

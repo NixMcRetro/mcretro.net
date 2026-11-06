@@ -28,9 +28,9 @@ I feel bad for my poor PlayStation 4, it's not your fault this game somehow made
 
 - [CD Projekt Red - Patch 1.31](https://www.cyberpunk.net/en/news/39334/patch-1-31)
 
-### Related posts
+### Related Posts
 
-- Earlier: [Cyberpunk 2077 (2020, PS4 Live Stream, Day 1)](/cyberpunk-2077-ps4-live-stream-day-1/)
-- Next: [Cyberpunk 2077 PS4 1.51 Patch Update](/cyberpunk-2077-ps4-1-51-patch-update/)
+- [Cyberpunk 2077 (2020, PS4 Live Stream, Day 1)](/cyberpunk-2077-ps4-live-stream-day-1/)
+- [Cyberpunk 2077 PS4 1.51 Patch Update](/cyberpunk-2077-ps4-1-51-patch-update/)
 - [Cyberpunk 2077 PS4 1.51 Patch Update... Update](/cyberpunk-2077-ps4-1-51-patch-update-update/)
 - [Cyberpunk 2077 PS4 Final Thoughts](/cyberpunk-2077-ps4-final-thoughts/)

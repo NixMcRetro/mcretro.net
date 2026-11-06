@@ -43,7 +43,7 @@ On a brighter note, I was also able to fire up [SheepShaver](https://sheepshaver
 - [Apple - Macintosh LC 475: Technical Specifications](https://support.apple.com/en-us/112204)
 - [Apple Tech Info Library - Macintosh LC 475: Specifications (8/95), preserved by Savage Taylor](https://savagetaylor.com/til/KB013575.html)
 
-### Related posts
+### Related Posts
 
 - [Apple Macintosh LC 475: Modifications Overview](/apple-macintosh-lc-475-modifications-overview/)
 - [Apple Macintosh LC 475: Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33-mhz/)

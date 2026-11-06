@@ -12,7 +12,7 @@ Welcome back to the community tank! It's the 10th June 2020, and we've got anoth
 
 {% include youtube.html id="6udc04VnKsw" %}
 
-On the 17th June, it's time for something a little different! A driftwood catfish discovers an eel-tailed catfish! Now there's an interesting combination. We've spent plenty of time watching Trevor, but there are other catfish friends keen to meet Trevor as well. Just another short episode in the underwater story.
+On the 17th June, it's time for something a little different! A driftwood catfish discovers an eel-tailed catfish! Now there's an interesting combination. We've spent plenty of time watching Trevor, but there are other catfish friends keen to meet Trevor as well. Big Fish was looking pretty bewildered by the visitor! Just another short episode in the underwater story.
 
 {% include youtube.html id="_dN-MDvY6eY" %}
 

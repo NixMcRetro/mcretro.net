@@ -12,6 +12,6 @@ This is the perfect example of why you save in _at least_ two save slots... the 
 
 Probably should note that this was running a translation-patched version of the original from [TrekkiesUnite118 (archived GitHub release folder)](https://web.archive.org/web/20220219061029/https://github.com/TrekkiesUnite118/GrandiaTranslation/tree/master/Releases/Disc%201). Maybe it has a bug, or maybe I broke it. Either way, doesn't matter! Saturn Satiator is on the way!
 
-### Related posts
+### Related Posts
 
-- Previous: [Grandia (1999, PS1 Live Stream, Day 1)](/grandia-ps1-live-stream-day-1/)
+- [Grandia (1999, PS1 Live Stream, Day 1)](/grandia-ps1-live-stream-day-1/)

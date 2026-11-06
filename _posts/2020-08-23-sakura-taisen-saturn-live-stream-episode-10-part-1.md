@@ -10,7 +10,7 @@ last_modified_at: 2026-10-18
 
 This is the finale. This is it. Well not this one since I fell asleep while playing it.
 
-### Related posts
+### Related Posts
 
-- Previous: [Sakura Taisen (1996, Saturn Live Stream, Episode 9)](/sakura-taisen-saturn-live-stream-episode-9/)
-- Next: [Sakura Taisen (1996, Saturn Live Stream, Episode 10, Part 2)](/sakura-taisen-saturn-live-stream-episode-10-part-2/)
+- [Sakura Taisen (1996, Saturn Live Stream, Episode 9)](/sakura-taisen-saturn-live-stream-episode-9/)
+- [Sakura Taisen (1996, Saturn Live Stream, Episode 10, Part 2)](/sakura-taisen-saturn-live-stream-episode-10-part-2/)

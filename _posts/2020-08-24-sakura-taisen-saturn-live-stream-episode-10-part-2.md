@@ -10,6 +10,6 @@ last_modified_at: 2026-10-18
 
 This is it. This is the second half of the finale and the end of Episode 10 - Final Judgement. We have learnt a lot throughout this dramatic adventure, about ourselves and those around us. Overall this has been a great game and I look forward to playing the reboot by Sega on my PlayStation 4, which is M.I.A, or perhaps the upcoming PlayStation 5.
 
-### Related posts
+### Related Posts
 
-- Previous: [Sakura Taisen (1996, Saturn Live Stream, Episode 10, Part 1)](/sakura-taisen-saturn-live-stream-episode-10-part-1/)
+- [Sakura Taisen (1996, Saturn Live Stream, Episode 10, Part 1)](/sakura-taisen-saturn-live-stream-episode-10-part-1/)

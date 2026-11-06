@@ -12,7 +12,7 @@ The Koubu broke! Without spirit armour what defence do we have? That's right, we
 
 Fun fact: Sorry for the long break, but the VA15 Saturn I use to capture this video has finally been recapped and the video flicker I was chasing is gone. I hadn't isolated a particular bad capacitor, but at least this Saturn was happy again. Segata Sanshiro demands... perhaps a little diagnosis first! ;)
 
-### Related posts
+### Related Posts
 
-- Previous: [Sakura Taisen (1996, Saturn Live Stream, Episode 7)](/sakura-taisen-saturn-live-stream-episode-7/)
-- Next: [Sakura Taisen (1996, Saturn Live Stream, Episode 9)](/sakura-taisen-saturn-live-stream-episode-9/)
+- [Sakura Taisen (1996, Saturn Live Stream, Episode 7)](/sakura-taisen-saturn-live-stream-episode-7/)
+- [Sakura Taisen (1996, Saturn Live Stream, Episode 9)](/sakura-taisen-saturn-live-stream-episode-9/)

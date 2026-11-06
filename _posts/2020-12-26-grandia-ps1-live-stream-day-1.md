@@ -12,6 +12,6 @@ I can't believe it didn't let me empty the memory card... as a result I couldn't
 
 {% include youtube.html id="wguc_0t6FdI" %}
 
-### Related posts
+### Related Posts
 
-- Next: [Grandia (1997, Saturn Live Stream, Day 1)](/grandia-saturn-live-stream-day-1/)
+- [Grandia (1997, Saturn Live Stream, Day 1)](/grandia-saturn-live-stream-day-1/)

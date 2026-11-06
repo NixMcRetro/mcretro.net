@@ -14,7 +14,7 @@ Of course it wasn't perfect and I knew that. So since then I've tried to reboot 
 
 ![](/assets/images/2022/img_0975.jpg)
 
-Ideally, I wanted to use macOS instead of Ubuntu, but the archive hit macOS pathname limits. I originally called this a "1024-character filename limit". More precisely, an individual filename component can be up to 255 characters, while the traditional macOS pathname limit is less than 1024 characters. The recursive GeoCities paths below were the problem. Linux handled these particular deeply nested paths without hitting the same limit, which made the rebuild much less painful.
+Ideally, I wanted to use macOS instead of Ubuntu, but the archive ran straight into a pathname limit. I originally called it a "1024-character filename limit", but it was the full path causing the trouble. An individual filename component can be up to 255 characters, while the complete macOS pathname traditionally has to stay under 1024. Have a look at all those nested dino directories! Linux handled these particular paths without the same problem, which made the rebuild a lot less painful.
 
 ![](/assets/images/2022/img_0978.jpg)
 
@@ -28,7 +28,7 @@ I did find what appears to be a typo in the [despens GitHub](https://github.com/
 
 `$GEO_SCRIPTS/filer-indexes.pl` should probably be `$GEO_SCRIPTS/filter-indexes.pl`. Don't worry, I'll fix it in post.
 
-The following is just for my reference and was more related to the pre-004 steps in despens' instructions under macOS. The block below is my 2022 working notebook, preserved as-is. It is not a current install guide: some lines mix commands with notes, and the package versions, paths and destructive cleanup commands are historical. You can see at the end where the recursive path hit the macOS pathname limit and I headed back to Ubuntu 22.04.
+Here are my notes from the steps before 004 in despens' instructions on macOS. It's a mixture of 2022 commands, package versions and reminders rather than a current install guide, so don't run the cleanup commands blindly! The ridiculous pathname at the end was what sent me back to Ubuntu 22.04.
 
 ```
 Verify and complete your Geocities Download
@@ -107,7 +107,7 @@ Mac OS limit of ~1024 characters
 - [One Terabyte of Kilobyte Age - Verify and complete your Geocities Download via HTTP](https://blog.geocities.institute/archives/3209)
 - [One Terabyte of Kilobyte Age - Resolving conflicts](https://blog.geocities.institute/archives/3288)
 
-### Related posts
+### Related Posts
 
 - [The GeoCities Rebuild Worklog](/the-geocities-rebuild-worklog/)
 - [RetroChallenge 2022/10 - GeoCities Rebuild on Dial-up at 14.4k](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-14-4k/)

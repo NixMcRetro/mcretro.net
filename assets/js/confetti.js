@@ -1,16 +1,11 @@
-/* Desktop homepage welcome and logo-hover animations use the original
-   Sonic, Tails or cat GIFs along the top of the main navigation bar. */
+/* Desktop homepage: a randomly chosen original Sonic, Tails or cat GIF
+   follows the top border of the main navigation bar. No mobile effects. */
 document.addEventListener('DOMContentLoaded', () => {
   const mainNav = document.querySelector('.main-nav');
-  const siteLogo = document.querySelector('.site-logo');
   if (!mainNav) return;
 
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const mobileMenu = () => window.matchMedia('(max-width: 750px)').matches;
-  const desktopMouse = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  const cooldownMs = 2000;
-  let activeLane = null;
-  let lastFinishedAt = -Infinity;
 
   // Keep the original GIFs exactly as stored in the repository.
   // Walking characters move more slowly than running ones.
@@ -23,8 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   function runHeaderSprite() {
-    if (reducedMotion() || mobileMenu() || activeLane ||
-        Date.now() - lastFinishedAt < cooldownMs) return;
+    if (reducedMotion() || mobileMenu()) return;
 
     // Position the 48px-tall sprite with its feet on the thin top border.
     // Start at the navigation's left edge and exit at its right edge.
@@ -51,26 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
     sprite.style.animationDuration = seconds + 's';
     lane.appendChild(sprite);
     document.body.appendChild(lane);
-    activeLane = lane;
-
-    function finishRunner() {
-      if (activeLane !== lane) return;
-      lane.remove();
-      activeLane = null;
-      lastFinishedAt = Date.now();
-    }
-
-    sprite.addEventListener('animationend', finishRunner, { once: true });
-    setTimeout(finishRunner, 9500);
-  }
-
-  // An intentional mouse hover retriggers the runner on any page.
-  // The logo keeps its original home link and the sprite stays click-through.
-  if (siteLogo) {
-    siteLogo.addEventListener('pointerenter', (event) => {
-      if (event.pointerType !== 'mouse' || !desktopMouse()) return;
-      runHeaderSprite();
-    });
+    sprite.addEventListener('animationend', () => lane.remove(), { once: true });
+    setTimeout(() => lane.remove(), 9500);
   }
 
   // One welcome animation on the homepage, only above the mobile breakpoint.

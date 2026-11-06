@@ -42,6 +42,6 @@ END
 - [Australian Government - ATAGI advice on COVID-19 vaccines and outbreak settings, 13th July 2021](https://www.health.gov.au/news/atagi-statement-on-use-of-covid-19-vaccines-in-an-outbreak-setting)
 - [Better Health Channel - Fever](https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/fever)
 
-### Related posts
+### Related Posts
 
-- Previous: [AstraZeneca Dose 1](/covid-19-vaccination-astrazeneca-dose-1/)
+- [AstraZeneca Dose 1](/covid-19-vaccination-astrazeneca-dose-1/)

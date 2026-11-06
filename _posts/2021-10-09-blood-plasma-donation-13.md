@@ -8,7 +8,7 @@ last_modified_at: 2026-10-18
 
 ![](/assets/images/2021/img_0761.jpg)
 
-Today was plasma donation #13 and my 33rd donation overall. Nothing went wrong, as usual. I'll be getting my iron stores checked before the next whole blood donation in roughly a month. My haemoglobin was rocking 159g/L, back where I wanted it. That's a separate measurement from iron stores, though. And what's this?
+Today was plasma donation #13 and my 33rd donation overall. Nothing went wrong, as usual. I'll be getting my iron stores checked before the next whole blood donation in roughly a month. My haemoglobin was rocking 159 g/L, back where I wanted it. That's a separate measurement from iron stores, though. And what's this?
 
 ![](/assets/images/2021/img_0758.jpg)
 
@@ -40,13 +40,13 @@ We aren't feeding the birds, so they look ragged like this poor fellow. We stood
 
 ![](/assets/images/2021/img_0759.jpg)
 
-It all came from a "grab bag" keycap kit. Mostly misprints and a tonne of F12 keys. It has helped determine what profile would suit the upcoming [YamPAD](https://github.com/mattdibi/yampad) project. I think the lower profiles would suit better. Oh, look! You can also see the [GeoCities](/homepages/geocities) proxy server hanging by an Ethernet cable in the background.
+It all came from a "grab bag" keycap kit. Mostly misprints and a tonne of F12 keys. It has helped determine what profile would suit the upcoming [YamPAD](https://github.com/mattdibi/yampad) project. I think the lower profiles would suit better. Oh, look! You can also see the [GeoCities](/homepages/geocities) proxy server hanging by an ethernet cable in the background.
 
 ### Sources
 
 - [Australian Red Cross Lifeblood - Haemoglobin, iron health and blood donation](https://www.lifeblood.com.au/donors/blood-plasma-platelets/learn/iron-health)
 
-### Related posts
+### Related Posts
 
-- Previous donation: [Blood Plasma Donation #12](/blood-plasma-donation-12/)
+- [Blood Plasma Donation #12](/blood-plasma-donation-12/)
 - Calculator build: [Tentaku Mechanical Calculator](/tentaku-mechanical-calculator/)

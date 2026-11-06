@@ -10,6 +10,8 @@ last_modified_at: 2026-10-18
 
 It's impressive that with only 17 seconds of footage I was able to create this. I want to say masterpiece, but that might be blowing my own horn! While this may have been a filler video, we are still working on things in the backend.
 
+There are some rather nasty vertical lines in the Mega Drive footage, particularly against certain colours. Even when I slowed things down to half speed and then a quarter, those jailbars were still there, especially across the purple hills. Maybe it's something to do with the video encoder, but I wasn't entirely sure what was causing them.
+
 We're on our way. [The GeoCities Archive](/homepages/geocities) is coming along. The plan was plain HTTP by design for old browsers, a shuffle script for wandering through random sites, native Windows 9x-era browser support, physical dial-up through an SPA112, MiSTer livestreaming, and an onion-service route for extra silliness.
 
 At this stage I was still trying to decode and piece together GeoCities' structure. The Archive Team torrent was published in October 2010, and it took long enough just to unpack all the case-sensitive folders. I discovered the case sensitivity after the torrent repeatedly refused to verify.
@@ -30,7 +32,7 @@ I'll keep chipping away on the GeoCities website for the time being. I can proba
 - [Archive Team - News archive, October 2010 GeoCities torrent announcement](https://wiki.archiveteam.org/index.php/Archiveteam:News/Archive)
 - [docker-library/php - Segmentation Fault with curl call, issue #1176](https://github.com/docker-library/php/issues/1176)
 
-### Related posts
+### Related Posts
 
 - Earlier dial-up setup: [Dial-up on Windows 95 on the MiSTer FPGA](/dial-up-on-windows-95-on-the-mister-fpga/)
 - Next GeoCities update: [Internal Inspection of the Sega Mega-CD (VA0) HAA-2910](/internal-inspection-of-the-sega-mega-cd-va0-haa-2910/)

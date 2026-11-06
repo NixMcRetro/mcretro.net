@@ -19,9 +19,9 @@ FTDI USB Serial Device converter now attached to ttyUSB0
 
 This means I don't need to compile a kernel driver thing. One thing led to another and I was able to connect one computer to another and download/upload between two modems, with Windows 95 running on MiSTer's ao486 core at 28,800 bps! It's insane the number of levels here. I love it! ❤️
 
-I am working toward being able to browse the olden-days internet, with no HTTPS/TLS, on some self-hosted GeoCities homepages. It's a massive bunch of data and I have no idea of what the quality will be. 640GB. It's just another fun project in itself.
+I am working toward being able to browse the olden-days internet, with no HTTPS/TLS, on some self-hosted GeoCities homepages. It's a massive bunch of data and I have no idea of what the quality will be. 640 GB. It's just another fun project in itself.
 
-Another major step was realising that, on my RPi3, the forwarding rules I'd put in UFW weren't active while UFW was disabled. No packets were getting through my `ppp0` connection. I enabled UFW and it came to life: ping was working!
+Another major step was realising that, on my RPi3, the forwarding rules I'd put in UFW weren't active while UFW was disabled. No packets were getting through my ppp0 connection. I enabled UFW and it came to life: ping was working!
 
  
 
@@ -46,7 +46,7 @@ Another major step was realising that, on my RPi3, the forwarding rules I'd put 
 - [MiSTer documentation - Computer core networking](https://mister-devel.github.io/MkDocs_MiSTer/advanced/computer/)
 - [Ubuntu Server documentation - Firewalls](https://ubuntu.com/server/docs/how-to/security/firewalls/)
 
-### Related posts
+### Related Posts
 
 - [MiSTer FPGA on the DE10-Nano](/mister-fpga-on-the-de10-nano/)
 - Later project update: [The GeoCities Archive Rebuild Blog](/the-geocities-archive-rebuild-blog/)

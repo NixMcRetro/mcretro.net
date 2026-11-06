@@ -10,6 +10,10 @@ last_modified_at: 2026-10-18
 
 A quick stroll around the internals of the Sega Mega-CD HAA-2910. This one is a VA0 revision, making it an early Mega-CD. Launch-day console? I can't prove that from the board revision alone. Sega launched the Mega-CD in Japan on 12th December 1991. Definitely in time for Christmas - probably.
 
+I've had this unit for about four years and have been meaning to recap it for most of that time. There is some corrosion hanging about, but thankfully it doesn't seem to have become much worse. One of the EPROM sockets is empty too, and I can't remember what I did with the chip. It's probably hiding somewhere in the collection. Hopefully!
+
+The CD drive mechanism also has a problem with rather too much free play, so I've got a donor mechanism ready. The audio and power board has plenty of electrolytics waiting for attention, including one hiding underneath. The capacitors on the main board don't look as though they've deteriorated much since I got it, but there is still a fair bit of work ahead.
+
 In other news [geocities.mcretro.net](/homepages/geocities) has had a little bit of work done. Mostly in the way the term "geocities.com" and "www.geocities.com" are handled. Turns out Apache2 has a module called mod_substitute and it appears to work well. Not much is online yet while I primarily use [the Athens root](/homepages/geocities) as a test bed to find obvious issues and try and fix them server-side before pushing more data online.
 
 One of the more exciting things I've come across is the way GeoCities stored pictures, images and line bars: `/pictures/`, `/pictures/icons/` and `/pictures/icons/lines/`. Lines are inside icons. I mean sure, I guess? Why not!
@@ -28,7 +32,7 @@ Slowly but surely I'll piece together bits and bobs from here, there and everywh
 
 - [Sega - Mega-CD hardware history](https://www.sega.jp/history/hard/mega-cd/)
 
-### Related posts
+### Related Posts
 
 - Earlier inspection: [Internal Inspection of the Sega Mega Modem HAA-2951](/internal-inspection-of-the-sega-mega-modem-haa-2951/)
 - Earlier inspection: [Internal Inspection of the Sega Mega Drive Model 1 (VA0) HAA-2510](/internal-inspection-of-the-sega-mega-drive-model-1-va0-haa-2510/)

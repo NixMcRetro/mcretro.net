@@ -10,6 +10,8 @@ last_modified_at: 2026-10-18
 
 These car keys with batteries in them are ticking time bombs. Batteries do not last forever, and this one was well overdue for replacement. Enter the KF200. I like to think of it as the King Flasher 200. It was kind enough to let me program a new key head. I think the key head was AU$47.30! Isn't technology great? Picked it up from Autobarn somewhere north of Sydney a few years back. Here's the video that documents that journey!
 
+The battery in the old key had gone flat, and rather than risk losing the connection while fiddling with it, I decided to replace the key head. It wasn't even my car! In the video I turned the existing key to ON, plugged the KF200 into the diagnostic socket under the steering column and watched the light blink away. Orange while it was working, then green for success! After removing the programmer, the car started. Beautiful!
+
 {% include youtube.html id="lcB4IqKWdXQ" %}
 
 ### Sources
@@ -18,9 +20,9 @@ These car keys with batteries in them are ticking time bombs. Batteries do not l
 - [Supercheap Auto - MAP KF200 key programming tool for Holden Commodore VS-VZ](https://www.supercheapauto.com.au/p/map-map-key-programming-tool---suits-holden-commodore-vs-vz-kf200/370798.html)
 - [Just Commodores - Reprogramming a VT Commodore key](https://forums.justcommodores.com.au/threads/re-programming-vt-commodore-key.165194/page-3)
 
-### Related posts
+### Related Posts
 
 - [Chapter 1 - The Handbrake](/holden-vy-commodore-car-repair-chapter-1-the-handbrake/)
 - [Chapter 2 - Vacuum Actuator](/holden-vy-commodore-car-repair-chapter-2-vacuum-actuator/)
-- Previous: [Chapter 3 - Locating the Cabin Temperature Sensor](/holden-vy-commodore-car-repair-chapter-3-locating-the-cabin-temperature-sensor/)
-- Next: [Chapter 5 - Cabin Temperature Sensor Replacement](/holden-vy-commodore-car-repair-chapter-5-cabin-temperature-sensor-replacement/)
+- [Chapter 3 - Locating the Cabin Temperature Sensor](/holden-vy-commodore-car-repair-chapter-3-locating-the-cabin-temperature-sensor/)
+- [Chapter 5 - Cabin Temperature Sensor Replacement](/holden-vy-commodore-car-repair-chapter-5-cabin-temperature-sensor-replacement/)

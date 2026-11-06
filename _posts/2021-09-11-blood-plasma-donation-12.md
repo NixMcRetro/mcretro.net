@@ -14,7 +14,7 @@ First up, a bit of background. Back in May I donated some platelets, a first for
 
 Anyway, I am a squish ball donor. I've never had much luck with the "alternative" methods of getting enough blood to my cold, dead hands. I tell them very firmly that I will not roll the squish ball. I will not even _**\*try\***_ to roll a heat pack around in my hand either. Every time I've done that the machine beeps at me with insufficient blood flow. _**Squish ball to maximum.**_ That's my motto! It's worked for 32 donations so far, with squish ball having been there every step of the way. Squeezing and relaxing still need to follow the staff's instructions, whatever my motto says.
 
-Today, I witnessed two donors with similar issues. One, a lady to my left, had her donation cut short. My collection target this time was 824mL of plasma. I got 825mL in - take that [the system](https://en.wikipedia.org/wiki/The_Matrix_Resurrections)! Poor lady only got through 217mL of her ~600mL before being released due to too much pressure. I wondered whether it was the vein, but I couldn't tell from the next chair. I know when I let the nurses loose they **_usually_** pick the right one. Left arm, middle vein - that's my mainstay. My right arm, middle vein has a little pain, so I reserve it for whole blood donations since mine only last eight minutes instead of 40 minutes. Anyway, after they had bandaged her arm up she queried,
+Today, I witnessed two donors with similar issues. One, a lady to my left, had her donation cut short. My collection target this time was 824 mL of plasma. I got 825 mL in - take that [the system](https://en.wikipedia.org/wiki/The_Matrix_Resurrections)! Poor lady only got through 217 mL of her ~600 mL before being released due to too much pressure. I wondered whether it was the vein, but I couldn't tell from the next chair. I know when I let the nurses loose they **_usually_** pick the right one. Left arm, middle vein - that's my mainstay. My right arm, middle vein has a little pain, so I reserve it for whole blood donations since mine only last eight minutes instead of 40 minutes. Anyway, after they had bandaged her arm up she queried,
 
 "They can still use it, right?"
 
@@ -52,6 +52,6 @@ Crak Oz. Yep. Rumour had it they were made in China or contained no Australian i
 - [Australian Red Cross Lifeblood - Know the risks](https://www.lifeblood.com.au/donors/blood-plasma-platelets/making-a-donation/prepare-and-aftercare/know-the-risks)
 - [National Blood Authority - National Report on the Issue and Use of Immunoglobulin (Ig), Annual Report 2020-21](https://www.blood.gov.au/sites/default/files/documents/2025-06/Report%20on%20the%20Issue%20and%20Use%20of%20Ig%202020-21%20Revised%20V2.pdf)
 
-### Related posts
+### Related Posts
 
-- Next donation: [Blood Plasma Donation #13](/blood-plasma-donation-13/)
+- [Blood Plasma Donation #13](/blood-plasma-donation-13/)

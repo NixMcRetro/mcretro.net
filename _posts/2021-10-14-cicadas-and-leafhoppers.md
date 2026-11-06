@@ -12,7 +12,7 @@ I love cicada season! Giant bugs. Everyone loves giant bugs! I think these shell
 
 ![](/assets/images/2021/img_0768.jpg)
 
-These shells would be around 1-1.5cm long. Hang on, what's this guy got on his head? Enhance!
+These shells would be around 1-1.5 cm long. Hang on, what's this guy got on his head? Enhance!
 
 ![](/assets/images/2021/img_0769.jpg)
 

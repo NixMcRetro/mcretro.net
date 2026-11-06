@@ -20,7 +20,7 @@ Here's a bit of circuitry, nice and simple.
 
 ![](/assets/images/2021/img_0750.jpg)
 
-Powered by 1x AAA battery, just don't forget to remove it when it isn't in use!
+Powered by one AAA battery, just don't forget to remove it when it isn't in use!
 
 ![](/assets/images/2021/img_0751.jpg)
 
@@ -42,6 +42,6 @@ Assembly was straightforward. A&N Laboratory's build video above goes through th
 
 - [A&N Laboratory - Mechanical Switch Calculator TENTAKU DIY Kit](https://anlabo.booth.pm/items/1069765)
 
-### Related posts
+### Related Posts
 
 - Later keycap experiment: [Blood Plasma Donation #13](/blood-plasma-donation-13/)

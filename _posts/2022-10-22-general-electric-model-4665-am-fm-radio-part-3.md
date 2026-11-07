@@ -8,15 +8,15 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="VnlHDE-nyTU" %}
 
-In this video we've taken a first-generation Raspberry Pi and used it as a radio transmitter. I grabbed [Bit Shift by Kevin MacLeod](https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1600045&Search=Search) and popped it onto the SD card after following [Make:'s Raspberry Pirate Radio guide](https://makezine.com/projects/raspberry-pirate-radio/). The article is a little dated, but that's exactly how old this Raspberry Pi is!
+In this video I've used a first-generation Raspberry Pi as a little FM transmitter for the General Electric Model 4665 clock radio I just fixed. I followed [Make:'s Raspberry Pirate Radio guide](https://makezine.com/projects/raspberry-pirate-radio/), put [Bit Shift by Kevin MacLeod](https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1600045&Search=Search) onto the SD card and picked 94.5 MHz for the experiment. I found this old Raspberry Pi Model B lying around, complete with a few missing GPIO pins, and rather surprisingly it still worked! The guide is a little dated, but so is the Raspberry Pi.
 
-One important caveat for anyone reading this as more than a 2022 experiment: a bare Raspberry Pi GPIO is not automatically a compliant little broadcast transmitter. Australian low-power radio use is covered by the LIPD class-licence rules, with limits on frequency, power and equipment. I was using this for very short-range bench testing, not starting Radio McRetro across Sydney.
+Before anyone is tempted to set up Radio McRetro across Sydney, this was just a very short-range bench experiment. A bare Raspberry Pi GPIO pin isn't automatically a compliant broadcast transmitter, and Australia's LIPD class-licence rules set limits on frequency, power and equipment. Worth checking those rules before attempting anything similar.
 
 ![](/assets/images/2022/img_0979.jpg)
 
-The old capacitors that were replaced are on top of the radio in this image and the transmitter antenna is the blue wire.
+The old capacitors I replaced are sitting on top of the radio in this photo, and the blue wire is the transmitter antenna.
 
-The surviving command below was mangled during an old site conversion and is not paste-ready. I'm leaving it as part of the historical notes rather than guessing at the exact command I originally ran.
+Unfortunately, an old site conversion mangled the command below, so don't copy and paste it expecting magic. I'm keeping it here for historical reference rather than guessing at the exact command I originally ran.
 
 ```
 youtube-dl -x --audio-format mp3 "{% include youtube.html id="tbkOZTSvrHs" %}"
@@ -30,7 +30,7 @@ I was surprised at how good Bit Shift sounds on a 42-year-old piece of hardware.
 
 - [ACMA - Low Interference Potential Devices (LIPD) class licence](https://www.acma.gov.au/licences/low-interference-potential-devices-lipd-class-licence)
 
-### Related posts
+### Related Posts
 
 - [General Electric Model 4665 AM/FM Radio - Part 1: Overview](/general-electric-model-4665-am-fm-radio-part-1/)
 - [General Electric Model 4665 AM/FM Radio - Part 2: Tuning](/general-electric-model-4665-am-fm-radio-part-2/)

@@ -10,9 +10,11 @@ last_modified_at: 2026-10-18
 
 Here I was thinking I had an 11-minute voiceover but I misread the timeline. I'll never use a script, I'm too lazy. Enjoy my half-completed thoughts above. You'll work it out. The protocol I was wrestling with was HTTP/0.9, not "HTML/0.9". HTML is the document format; HTTP is the protocol carrying it. The following issues we encountered are in no particular order - it adds to the fun! 😉
 
+Most of this tinkering goes back to around April 2022, and here we are in May 2023. I wanted to get the photos and notes up because somebody else might find them useful when trying to get an old computer onto the internet. If nothing else, they might save someone from chasing a few of the same problems!
+
 ![](/assets/images/2023/img_1016.jpg)
 
-Let's start with the innocent [NCSA Mosaic](https://en.wikipedia.org/wiki/NCSA_Mosaic). At this stage we were running on a [Macintosh Classic](https://web.archive.org/web/20210304075849/https://support.apple.com/kb/SP198?locale=en_US). The splash screen works well.
+Let's start with the innocent [NCSA Mosaic](https://en.wikipedia.org/wiki/NCSA_Mosaic). At this stage we were running on a [Macintosh Classic](https://web.archive.org/web/20210304075849/https://support.apple.com/kb/SP198?locale=en_US), complete with its Motorola 68000 and black-and-white screen. Its original hard drive had failed and we'd been trying RaSCSI, so this wasn't exactly the most straightforward internet machine. Give me an LC 475 any day! Still, the Mosaic splash screen works well.
 
 ![](/assets/images/2023/img_1015.jpg)
 
@@ -32,7 +34,9 @@ Forbidden address. Ahhh yes. I believe this was caused by Cloudflare doing somet
 
 ![](/assets/images/2023/img_1018.jpg)
 
-So I resorted to telnet, which is very old-internet friendly it turns out. A simple `GET /` sent to retrojunkie.net resulted in... a bad request... with a sprinkling of Cloudflare, which was supposed to be disabled. The screenshot catches that in all its glory. A true HTTP/0.9 request is just that one-line `GET` with no HTTP version token or request headers. It has no `Host` header, so it can't select between name-based virtual hosts. I messed with the proxy settings a bit more, possibly disabling Cloudflare completely for testing and...
+So I resorted to telnet, which is very old-internet friendly it turns out. A simple `GET /` sent to retrojunkie.net resulted in... a bad request... with a sprinkling of Cloudflare, which was supposed to be disabled. The screenshot catches that in all its glory.
+
+A proper HTTP/0.9 request is just a one-line `GET` with no HTTP version token or request headers. There's no `Host` header either, so it can't choose between name-based virtual hosts. I messed with the proxy settings a bit more, possibly disabling Cloudflare completely for testing and...
 
 ![](/assets/images/2023/img_1019.jpg)
 
@@ -52,7 +56,7 @@ And it works a charm.
 
 ![](/assets/images/2023/img_1011.jpg)
 
-Well, close enough to a charm. Especially given `charset=UTF-8` wasn't yet the rage and ISO-8859-1 would rule supreme for a while longer.
+Well, close enough to a charm. Especially given charset=UTF-8 wasn't yet the rage and ISO-8859-1 would rule supreme for a while longer.
 
 `sudo tail -f /var/log/apache2/access.log`
 
@@ -64,13 +68,13 @@ MacWeb/F2.0 uses libwww/2.17 - There's that F for French again...
 
 ![](/assets/images/2023/img_1022.jpg)
 
-Mosaic identifies itself in this log as `MacMosaicB6 libwww2.09`. Our copy is version 1.0.3, as the splash screen shows. That user-agent string tells us what this copy reported; it doesn't establish that every pre-2.0 Mac Mosaic version used the same string.
+Mosaic identifies itself in the log as MacMosaicB6 libwww2.09. The splash screen calls our copy version 1.0.3, so at least we know what this particular setup was reporting. That doesn't mean every earlier Mac Mosaic version necessarily sent the same user-agent string.
 
 ![](/assets/images/2023/img_1017.jpg)
 
-And our Windows Netscape 1.0 identifies itself as `Mozilla/1.0 (Windows)`.
+And our Windows Netscape 1.0 identifies itself as Mozilla/1.0 (Windows).
 
-What's perhaps most interesting in these examples is the request protocol recorded by Apache. The old clients were reaching the server as HTTP/1.0. A real HTTP/0.9 request would just be a one-line `GET /path` with no HTTP version token and no request headers. Apache was not detecting an "HTML version" here at all; I had been mixing up the page format with the transport protocol.
+What's perhaps most interesting in these examples is the request protocol recorded by Apache. The old clients were reaching the server as HTTP/1.0. A real HTTP/0.9 request would just be a one-line `GET /path` with no HTTP version token and no request headers. Apache wasn't detecting an "HTML version" here at all. I'd been mixing up the page format with the transport protocol.
 
 This also corrects my earlier [Macintosh Classic, RaSCSI and The Internet](/macintosh-classic-rascsi-and-the-internet/) theory that the browsers were failing because they only supported HTTP/0.9. That conclusion did not survive testing, which is exactly why documenting the wrong turns is useful.
 
@@ -86,6 +90,6 @@ Here's some of the pages I followed to get this to work, a big thanks to each of
 - [RFC 7230, Appendix A.2 - Changes from RFC 2616](https://datatracker.ietf.org/doc/html/rfc7230#appendix-A.2)
 - [RFC 1945 - Hypertext Transfer Protocol HTTP/1.0, Sections 4 and 5](https://www.rfc-editor.org/rfc/rfc1945.html#section-4)
 
-### Related posts
+### Related Posts
 
 - [Macintosh Classic, RaSCSI and The Internet](/macintosh-classic-rascsi-and-the-internet/)

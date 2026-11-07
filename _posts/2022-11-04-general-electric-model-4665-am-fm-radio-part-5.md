@@ -8,7 +8,9 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="02wIXkOE1Wk" %}
 
-All good things eventually come to an end. You're probably here because you've watched all four videos in the series so far. This is the fifth and final video on this alarm clock radio. Below are the capacitor values I recorded from my unit. The missing stickers meant I couldn't confirm whether it was the A or B revision, so this is a record of my board rather than a universal Model 4665 parts list. Before ordering replacements, check what's actually fitted, including capacitor type, polarity, capacitance, voltage and temperature ratings, ESR, ripple-current requirements and physical fit.
+All good things eventually come to an end. If you've watched the previous four videos, this is the fifth and final instalment of my alarm clock radio adventure. Below is the capacitor list I recorded while working on it.
+
+The stickers on my unit had disappeared, so I couldn't work out whether I had the A or B revision. These are the values from my actual board, not a parts list for every Model 4665 ever made. If you're recapping one yourself, check what's fitted, including the capacitor type, polarity, capacitance, voltage and temperature ratings, ESR, ripple-current requirements and physical fit.
 
 ![](/assets/images/2022/img_0982.jpg)
 
@@ -20,7 +22,7 @@ Note that all capacitor markings are underneath the capacitors. On this unit the
 
 ![](/assets/images/2022/img_0983.jpg)
 
-You can either [download the PDF version](/assets/uploads/General-Electric-Alarm-Clock.pdf) or copy and paste the list below into a plain text file. The "Upgraded" notes record the higher voltage ratings I fitted; a higher voltage rating alone doesn't establish that a replacement meets all the other requirements above.
+You can either [download the PDF version](/assets/uploads/General-Electric-Alarm-Clock.pdf) or copy and paste the list below into a plain text file. Where I've written "Upgraded", I fitted a capacitor with a higher voltage rating. That doesn't automatically make it a suitable replacement, of course, since all the other requirements still matter.
 
   
 
@@ -44,7 +46,7 @@ C29	470uF	16V	10mm	20mm	3254036	Same specifications
 -----------------------------------------------------------------
 ```
 
-### Related posts
+### Related Posts
 
 - [General Electric Model 4665 AM/FM Radio - Part 1: Overview](/general-electric-model-4665-am-fm-radio-part-1/)
 - [General Electric Model 4665 AM/FM Radio - Part 2: Tuning](/general-electric-model-4665-am-fm-radio-part-2/)

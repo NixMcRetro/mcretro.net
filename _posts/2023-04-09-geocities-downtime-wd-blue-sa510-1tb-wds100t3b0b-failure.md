@@ -8,7 +8,7 @@ last_modified_at: 2026-10-18
 
 ![](/assets/images/2023/img_1002.jpg)
 
-Back in late December, and I'm talking right on 31st December 2022, GeoCities crashed hard. Its SSD had become unusable for normal writes while running firmware 52008100. Firmware, I'm looking at you! It was a very relevant suspect, though this one failed drive doesn't prove it was the only possible cause.
+Back in late December, and I'm talking right on 31st December 2022, GeoCities crashed hard. Its SSD had become unusable for normal writes while running firmware 52008100. Firmware, I'm looking at you! It was certainly high on the list of suspects, even if one dead drive can't tell us everything about why it failed.
 
 ![](/assets/images/2023/img_1003.jpg)
 
@@ -16,7 +16,9 @@ The failed drive powering GeoCities was a WD Blue SA510 1 TB M.2 SATA SSD, model
 
 ![](/assets/images/2023/img_1007.jpg)
 
-The drive reported 606 power-on hours and 43 power cycles, and it was behaving as read-only. GeoCities data was still there when read with [iBored](https://apps.tempel.org/iBored/). I could read it in Ubuntu and macOS, but couldn't get at the data in my Windows setup, even though WD Dashboard could see the drive. Being overly cautious, I had another drive ready to go. The bad news is, that other drive was of the same vintage. This was the drive I'd been using for [RetroChallenge 2022/10](https://www.retrochallenge.org/2022/11/finish-line.html); its reported power-on hours aren't a measure of the calendar time since then.
+The drive reported 606 power-on hours and 43 power cycles, and it was behaving as read-only. GeoCities data was still there when read with [iBored](https://apps.tempel.org/iBored/). I could read it in Ubuntu and macOS, but couldn't get at the data in my Windows setup, even though WD Dashboard could see the drive.
+
+Being overly cautious, I had another drive ready to go. The bad news is, that other drive was of the same vintage. This was the drive I'd been using for [RetroChallenge 2022/10](https://www.retrochallenge.org/2022/11/finish-line.html). Those reported power-on hours tell you how long the SSD had been running, not how many months had passed since the challenge.
 
 ![](/assets/images/2023/img_1006.jpg)
 
@@ -39,7 +41,7 @@ Not too long later I received a replacement and copied GeoCities back across, co
 - [Western Digital - WD Blue SA510 SATA SSDs Critical Firmware Update Available](https://web.archive.org/web/20230519165540/https://support-en.wd.com/app/answers/detailweb/a_id/50208)
 - [Western Digital / SanDisk - WD Blue SA510 SATA SSD Critical Firmware Update and release history](https://support-en.sandisk.com/app/answers/detailweb/a_id/50208/~/wd-blue-sa510-sata-ssd-critical-firmware-update)
 
-### Related posts
+### Related Posts
 
 - [The GeoCities Rebuild Worklog](/the-geocities-rebuild-worklog/)
 - [Rebuilding GeoCities on macOS 12](/rebuilding-geocities-on-macos-12/)

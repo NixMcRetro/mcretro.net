@@ -97,15 +97,15 @@ def audit(root: Path) -> int:
         "| --- | ---: |",
     ]
     for name, size in areas.most_common():
-        report.append(f"| \`{name}\` | {mb(size)} |")
+        report.append(f"| `{name}` | {mb(size)} |")
 
     report += ["", "## Image directories", "| Directory | Size |", "| --- | ---: |"]
     for name, size in image_years.most_common():
-        report.append(f"| \`assets/images/{name}\` | {mb(size)} |")
+        report.append(f"| `assets/images/{name}` | {mb(size)} |")
 
     report += ["", "## Largest published files", "| File | Size |", "| --- | ---: |"]
     for size, name in largest:
-        report.append(f"| \`{name}\` | {mb(size)} |")
+        report.append(f"| `{name}` | {mb(size)} |")
 
     passed = total <= PAGES_LIMIT_BYTES
     report += [

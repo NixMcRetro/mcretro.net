@@ -55,6 +55,8 @@ The website itself has survived WordPress, Dropplets, FlatPress, Ghost, assorted
 
 Visit [McRetro.net](https://mcretro.net) to explore the archive, or read the [About page](https://mcretro.net/about/) for more of its history.
 
+**Accessibility:** See the [Accessibility Statement](ACCESSIBILITY.md) for supported environments, known limitations and how to report accessibility problems.
+
 ## License
 
 No repository-wide licence is currently declared. Unless a file or included project states otherwise, please do not assume that its contents are freely licensed for redistribution.

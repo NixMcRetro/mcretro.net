@@ -95,7 +95,7 @@ University has shown me even more great people and I just love being around them
 - [NHMRC - Nutrient Reference Values: Vitamin D](https://www.eatforhealth.gov.au/nutrient-reference-values/nutrients/vitamin-d)
 - [Healthdirect Australia - Vitamin D deficiency](https://www.healthdirect.gov.au/vitamin-d)
 
-### Related posts
+### Related Posts
 
 - [Third Time's a Charm; University Begins... Again](/third-times-a-charm-university-begins-again/)
-- [The People at University are Amazing](/the-people-at-university-are-amazing/)
+- [The People at University Are Amazing](/the-people-at-university-are-amazing/)

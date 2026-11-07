@@ -44,7 +44,7 @@ Realistically, I wanted to discuss another route of administration. Getting arou
 - [Profiles of plasma estrogens, progesterone and their metabolites after oral or vaginal administration of estradiol or progesterone](https://pubmed.ncbi.nlm.nih.gov/8515718/)
 - [Allopregnanolone in premenstrual dysphoric disorder (PMDD): Evidence for dysregulated sensitivity to GABA-A receptor modulating neuroactive steroids across the menstrual cycle](https://pmc.ncbi.nlm.nih.gov/articles/PMC7231988/)
 
-### Related posts
+### Related Posts
 
 - [Me, Myself and Progesterone](/me-myself-and-progesterone/)
 - [Depression, Debt, Bees and Lizards](/depression-debt-bees-and-lizards/)

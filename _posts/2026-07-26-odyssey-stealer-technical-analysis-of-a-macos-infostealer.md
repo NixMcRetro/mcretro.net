@@ -30,7 +30,11 @@ In mid-July 2026, I obtained a macOS infostealer trojan disguised as a software 
 
 All indicators of compromise have been reported to the ACSC, AFP, and relevant abuse contacts. This writeup documents the complete analysis.
 
----
+**Jump to:** [Detection Scripts](#odyssey-detection) · [Indicators of Compromise](#odyssey-iocs) · [Remediation](#odyssey-response)
+
+
+<details class="about-panel panel--teal odyssey-panel" id="odyssey-acquisition" markdown="1">
+<summary markdown="span">Sample Acquisition &amp; Binary Overview</summary>
 
 ## 1. Sample Acquisition
 
@@ -63,13 +67,17 @@ A second infection was later analysed on a separate machine (user `m2`), confirm
 
 The binary is a C++ application that makes heavy use of `std::string` for path construction and data manipulation. C++ streams are prominent in its file handling, while the binary also imports C stdio functions including `_fopen` and `_fwrite`. Shell commands are executed through `_system()`.
 
----
+
+</details>
+
+<details class="about-panel panel--teal odyssey-panel" id="odyssey-decryption" markdown="1">
+<summary markdown="span">String Decryption &amp; Target Analysis</summary>
 
 ## 3. String Obfuscation: xorshift32
 
 The strings recovered from this sample - file paths, shell commands, URLs, wallet names, browser identifiers - are protected using a custom scheme derived from the **xorshift32** pseudorandom number generator.
 
-### 3.1 The cipher
+### 3.1 The Cipher
 
 The sample uses per-string state values with a xorshift32-derived byte stream. In my extraction workflow, candidate 4-byte seeds were recovered from `__TEXT,__const` and tested against candidate ciphertext regions identified during reverse engineering. The offsets below are specific to this sample and slice. The decryption primitive proceeds as follows:
 
@@ -90,7 +98,7 @@ uint32_t xorshift32(uint32_t state) {
 }
 ```
 
-### 3.2 Decryption methodology
+### 3.2 Decryption Methodology
 
 I developed a Python-based extraction workflow that retained **379** unique decrypted strings after automated filtering and manual review. Interestingly, that count independently matches the 379 strings recovered by 0xlibris from a closely related Odyssey sample, although configuration values differ between builds:
 
@@ -205,7 +213,7 @@ false
 
 The AppleScript backdoor reads `.bhost` as `botHost` and uses the raw IP for its bot API calls. It reads `.phost` as `panelAddr` and sends that value in the `panel_addr:` header for the repeat-script request. That separates the backdoor's connection destination from its panel label. The first-stage archive upload is a different request: section 4.6 shows it using `http://ukdsopas.at/log`. The domain therefore still matters to that exfiltration path.
 
-### 4.2 Anti‑analysis
+### 4.2 Anti-Analysis
 
 ```
 USER
@@ -348,7 +356,7 @@ system_profiler SPSoftwareDataType SPHardwareDataType SPDisplaysDataType
 
 The macOS version check gates the Chrome master password extraction - the malware only attempts it on versions greater than 26.3.
 
-### 4.11 Browser Targets (14 browsers)
+### 4.11 Browser Targets (14 Browsers)
 
 | Browser | Path |
 |---|---|
@@ -476,7 +484,11 @@ ammjlinfekkoockogfhdkgcohjlbhmff
 | Safari cookies | Direct file copy of `Cookies.binarycookies` |
 | Hardware/software info | `system_profiler` |
 
----
+
+</details>
+
+<details class="about-panel panel--teal odyssey-panel" id="odyssey-timeline" markdown="1">
+<summary markdown="span">Attack Timeline, C2 &amp; Persistence</summary>
 
 ## 5. Attack Timeline (User: m1 - Initial Infection)
 
@@ -579,7 +591,7 @@ A 2,048-byte encrypted file named `.IuN79Kxxpn` was recorded at 22:40:49. My pre
 
 ---
 
-## 8. The Two Infections: `m1` and `m2`
+## 8. The Two Infections: m1 and m2
 
 Two separate infections were analysed. Both carried the same sample configuration, C2 server and affiliate/panel username (`newooble`). That links the observed configuration; a shared account identifier does not establish that one individual operated both infections.
 
@@ -596,7 +608,11 @@ Two separate infections were analysed. Both carried the same sample configuratio
 
 The `m2` infection provided a recovered `.botid`, and later manual polling returned valid responses. The C2 service was reachable at those observed times. Registration and responses alone do not show whether an operator was actively managing the channel.
 
----
+
+</details>
+
+<details class="about-panel panel--teal odyssey-panel" id="odyssey-artifacts" markdown="1">
+<summary markdown="span">Recovered Forensic Evidence</summary>
 
 ## 9. Forensic Artifacts Recovered
 
@@ -634,7 +650,11 @@ The kernel logs confirmed successful C2 communication:
 
 Every 60 seconds, a `curl` process connected to `192.253.248.181:80`, matching the `delay 60` loop.
 
----
+
+</details>
+
+<details class="about-panel panel--teal odyssey-panel" id="odyssey-detection" markdown="1">
+<summary markdown="span">Detection &amp; Forensic Scripts</summary>
 
 ## 10. Detection and Cleanup Script
 
@@ -1329,7 +1349,11 @@ Usage:
 sudo ./detect_external_mac.sh "/Volumes/MyDrive"
 ```
 
----
+
+</details>
+
+<details class="about-panel panel--teal odyssey-panel" id="odyssey-iocs" markdown="1">
+<summary markdown="span">Indicators of Compromise</summary>
 
 ## 12. Indicators of Compromise
 
@@ -1374,7 +1398,11 @@ sudo ./detect_external_mac.sh "/Volumes/MyDrive"
 | app_id | `xxxblyat` |
 | botid | `19a9ff38c1b24ffe8e5c54a91af203c8` |
 
----
+
+</details>
+
+<details class="about-panel panel--teal odyssey-panel" id="odyssey-response" markdown="1">
+<summary markdown="span">Disclosure, Remediation &amp; Conclusions</summary>
 
 ## 13. Response and Disclosure
 
@@ -1433,6 +1461,8 @@ The sample and all associated IOCs have been submitted to VirusTotal, URLhaus, a
 
 *The author is an independent security researcher based in Australia. This analysis combined controlled execution tests with examination of preserved forensic evidence. The views expressed here are the author's own. IOCs and samples are available to verified researchers on request.*
 
+</details>
+
 ### Sources
 
 - [0xlibris - Odyssey infostealer infection chain](https://0xlibris.net/posts/odyssey_infostealer/)
@@ -1440,3 +1470,5 @@ The sample and all associated IOCs have been submitted to VirusTotal, URLhaus, a
 - [Jamf Threat Labs - Signed and stealing: uncovering new insights on Odyssey Infostealer](https://www.jamf.com/blog/signed-and-stealing-uncovering-new-insights-on-odyssey-infostealer/)
 - [Red Canary - A taxonomy of Mac stealers: Distinguishing Atomic, Odyssey, and Poseidon](https://redcanary.com/blog/threat-intelligence/atomic-odyssey-poseidon-stealers/)
 - [Malwarebytes - Run and schedule scans in Malwarebytes for Windows and Mac](https://help.malwarebytes.com/hc/en-us/articles/31589496411291-Run-and-schedule-scans-in-Malwarebytes-for-Windows-and-Mac)
+
+<script src="/assets/js/odyssey-sections.js" defer></script>

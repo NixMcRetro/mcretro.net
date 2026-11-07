@@ -1,5 +1,5 @@
 ---
-title: "Mon Mothma was a Deejay"
+title: "Mon Mothma Was a Deejay"
 author: "Nix McRetro"
 date: 2024-05-29T16:44:08.000+10:00
 categories: [nature, news, study]
@@ -16,7 +16,7 @@ My transgender journey continues. I'd be lying if I said I was on top of this. T
 
 ![](/assets/images/2024/img_1299.jpg)
 
-Gender marker changes, i.e. male to female, were proving a bit more difficult. In May 2024 NSW still required a sex affirmation procedure and two medical declarations to change a NSW birth certificate. **Even Queensland** had passed legislation moving away from that, although it wouldn't start until 24th June 2024. Yes, the one with all the crocodiles. NSW eventually removed its medical-procedure requirement from 1st July 2025.
+Gender marker changes, i.e. male to female, were proving a bit more difficult. In May 2024 NSW still required a sex affirmation procedure and two medical declarations to change a NSW birth certificate. **Even Queensland** had passed legislation moving away from that, although it wouldn't start until 24th June 2024. Yes, the one with all the crocodiles.
 
 ![](/assets/images/2024/img_1304.jpg)
 
@@ -48,11 +48,11 @@ A positive side effect of being vegan means I have to stop eating bees. This mea
 
 ![](/assets/images/2024/img_1308.jpg)
 
-Not all is well though, the most common failure pattern I have seen so far looks neurological: all the legs spasm, work normally for a while, then spasm again. At the time I suspected pesticide poisoning, but those signs are not specific enough for me to know the cause just by looking at a bee. To prevent prolonged suffering, these little ones are mechanically destroyed. It hurts. **Every. Single. Time.**
+Not all is well though, the most common failure pattern I have seen so far looks neurological: all the legs spasm, work normally for a while, then spasm again. Could it be pesticide poisoning? Those signs aren't specific enough for me to know just by looking at a bee. To prevent prolonged suffering, these little ones are mechanically destroyed. It hurts. **Every. Single. Time.**
 
 ![](/assets/images/2024/img_1302.jpg)
 
-Another one I found seemed to have problems with the two front pairs of legs. Poor thing couldn't clean itself. A little bit of digging led me to [slow bee paralysis virus (SBPV)](https://en.wikipedia.org/wiki/Slow_bee_paralysis_virus), which can cause front-leg paralysis and be transmitted by Varroa destructor. Was that what I was seeing? I couldn't tell just by looking. Later Australian national baseline testing in 2025 found no evidence of SBPV in the samples tested.
+Another one I found seemed to have problems with the two front pairs of legs. Poor thing couldn't clean itself. A little bit of digging led me to [slow bee paralysis virus (SBPV)](https://en.wikipedia.org/wiki/Slow_bee_paralysis_virus), which can cause front-leg paralysis and be transmitted by Varroa destructor. Was that what I was seeing? I couldn't tell just by looking.
 
 And look at that vector, Varroa destructor. By then the national response had already moved from eradication to management: in September 2023 the National Management Group concluded eradication was no longer technically feasible. I still called that the government giving up. The February 2024 transition plan was about slowing its spread and helping the honey-bee industry manage it. Australian native bees aren't affected by the mite itself.
 
@@ -68,6 +68,8 @@ With that in mind, I guess I'll head back to university for the 18th time. I've 
 
 **Footnote:** I picked up some fully hectic debt. And now I'm trying to kick pregabalin again. Incredible how quickly physiological dependence seemed to happen **for me**. Withdrawal symptoms after both short- and long-term pregabalin use are recognised, so this was another reminder that "prescribed" does not mean "effortless to stop". I can rest, errr-somewhat-uneasily-thanks-to-pregabalin-withdrawal-induced-insomnia, knowing that the psychiatrist who prescribed them **for sleep** is now retired. I think I'll be ready for mid-year intake at uni in... late July. I best do some exposure therapy at the uni before my first day there... bring it on! 🦎
 
+**Update 2025:** NSW removed its medical-procedure requirement for changing a birth certificate from 1st July 2025. Australian national baseline testing in 2025 also found no evidence of slow bee paralysis virus in the samples tested.
+
 ### Sources
 
 - [NSW Births, Deaths and Marriages Registration Act 1995 - historical version](https://legislation.nsw.gov.au/view/whole/pdf/inforce/2024-11-08/act-1995-062)
@@ -78,6 +80,6 @@ With that in mind, I guess I'll head back to university for the 18th time. I've 
 - [National Varroa Mite Management Program - National Baseline Project](https://www.varroa.org.au/baseline)
 - [TGA - Pregabalin and gabapentin](https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/pregabalin-and-gabapentin)
 
-### Related posts
+### Related Posts
 
 - [Depression, Debt, Bees and Lizards](/depression-debt-bees-and-lizards/)

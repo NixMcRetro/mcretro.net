@@ -57,6 +57,8 @@ Visit [McRetro.net](https://mcretro.net) to explore the archive, or read the [Ab
 
 **Accessibility:** See the [Accessibility Statement](ACCESSIBILITY.md) for supported environments, known limitations and how to report accessibility problems.
 
-## License
+## Licence
 
-No repository-wide licence is currently declared. Unless a file or included project states otherwise, please do not assume that its contents are freely licensed for redistribution.
+No repository-wide licence is currently declared. Original written prose authored by Nix McRetro is available under [CC BY-NC-ND 4.0](CONTENT-LICENSE.md) where I own or control the relevant copyright.
+
+The licence does not automatically cover photographs, videos, source code, archived websites, software, disk images or third-party material. See the [Content Licence](CONTENT-LICENSE.md) for full details and exclusions.

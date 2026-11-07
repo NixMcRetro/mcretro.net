@@ -6,6 +6,28 @@ https://retrojunkie.net
 To Do
 - Image cycle on front page (randomised).
 
+2026-11-07
+- Hundreds of articles reviewed and enriched using archived YouTube transcripts.
+- Added accessibility, community and contribution documentation.
+- Clarified licensing for original written content.
+
+2026-10-31
+- Consolidated old galleries and file archives under Goodies.
+- Added checks to prevent accidental image and video loss.
+- Restored missing photographs from the archives.
+
+2026-10-25
+- Replaced Webring with Dial-a-Homepage, complete with Australian modem sounds.
+- Overhauled mobile navigation, sidebars and monthly archives.
+
+2026-10-24
+- Redesigned site information pages with collapsible panels.
+- Self-hosted fonts and improved Jekyll, Pagefind and deployment workflows.
+
+2026-10-22
+- Restored historical homepages and added a dedicated directory.
+- More old websites rescued from obscurity!
+
 2026-09-28
 - Using AI to fix bad sources, broken links, etc.
 - Anything touched is usually attributed correctly.

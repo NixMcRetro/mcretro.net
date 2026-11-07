@@ -16,11 +16,11 @@ Using [the Open Source CPAP Analysis Reporter](https://www.sleepfiles.com/OSCAR/
 
 ![](/assets/images/2023/img_1134.jpg)
 
-We'll start off with longer periods of recorded data. Above is the 17th August. Many nights were only a few hours of data because the mask itself would cause me to wake up. The machine flagged a lot of clear-airway events. I was calling these central apnoeas, but a PAP device flag is not the same thing as a sleep-study diagnosis. If we disregard the earlier data in the night while I was still trying to get to sleep, we can see some of those flags.
+We'll start off with longer periods of recorded data. Above is the 17th August. Many nights were only a few hours of data because the mask itself would cause me to wake up. The machine kept flagging clear-airway events. I was calling these central apnoeas at the time, although they were machine flags rather than something confirmed by a sleep study. If we disregard the earlier data in the night while I was still trying to get to sleep, we can see some of those flags.
 
 ![](/assets/images/2023/img_1133.jpg)
 
-The machine flagged a clear-airway event lasting about 21 seconds. Interesting. That duration doesn't tell me what caused it, or whether I was actually asleep for the whole event.
+The machine flagged a clear-airway event lasting about 21 seconds. Interesting. The number alone couldn't tell me what caused it, or whether I'd actually been asleep the whole time.
 
 ![](/assets/images/2023/img_1136.jpg)
 
@@ -28,15 +28,15 @@ Here's the 18th August, and the machine has flagged some obstructive apnoeas (OA
 
 ![](/assets/images/2023/img_1135.jpg)
 
-How does the machine distinguish between clear-airway and obstructive events though? The AirSense 10 uses small pressure oscillations during an apnoea to estimate whether the airway is open or closed. That is useful machine data, but it still is not the same thing as polysomnography. What's also interesting is that central events can appear after treatment of obstructive sleep apnoea begins, known as treatment-emergent central sleep apnoea.
+How does the machine distinguish between clear-airway and obstructive events though? The AirSense 10 uses small pressure oscillations during an apnoea to estimate whether the airway is open or closed. That's the machine's estimate, of course, not the same as a proper sleep study. What's also interesting is that central events can appear after treatment of obstructive sleep apnoea begins, known as treatment-emergent central sleep apnoea.
 
 ![](/assets/images/2023/img_1138.jpg)
 
-Here's some data from the 19th August. The machine-reported apnoea-hypopnoea index (AHI) was below five on most days and never exceeded eight. It counts flagged events per hour of mask-on therapy, which is not necessarily the same as an hour asleep. I found the numbers reassuring, but they weren't a diagnosis.
+Here's some data from the 19th August. The machine-reported apnoea-hypopnoea index (AHI) was below five on most days and never exceeded eight. It counts flagged events per hour of mask-on therapy, not necessarily per hour asleep. I found the numbers reassuring, even if I still didn't have a diagnosis.
 
 ![](/assets/images/2023/img_1137.jpg)
 
-A few more clear-airway flags. I originally assumed the 20+ second ones were automatically more concerning than the 10-second ones, but event duration alone is not enough for me to make that judgement from CPAP data.
+A few more clear-airway flags. I originally assumed a 20+ second event must automatically be more concerning than a 10-second one, but it turns out it's not that simple from the CPAP graphs alone.
 
 ![](/assets/images/2023/img_1140.jpg)
 
@@ -44,7 +44,7 @@ Jumping forward a week to the 26th August we have more data. This one has it all
 
 ![](/assets/images/2023/img_1139.jpg)
 
-There's a hypopnoea. In plain English, that is a partial reduction in breathing rather than a complete apnoea. The machine is inferring these events from its flow and pressure data.
+There's a hypopnoea. In plain English, that is a partial reduction in breathing rather than a complete apnoea. That's the label the machine has assigned based on the flow and pressure data.
 
 ![](/assets/images/2023/img_1141.jpg)
 
@@ -54,11 +54,11 @@ What have I learnt from this? While my snoring might be an issue to any roommate
 
 ![](/assets/images/2023/img_1142.jpg)
 
-However, I did not feel more rested. What's worse is there were at least three days where I woke up sweat drenched. This was one of the things I was trying to solve: night sweats. The CPAP trial did not make them disappear, but that does not tell me what was causing them.
+However, I did not feel more rested. What's worse is there were at least three days where I woke up sweat drenched. This was one of the things I was trying to solve: night sweats. The CPAP trial certainly hadn't made them disappear, and I was still none the wiser about what was causing them.
 
 ![](/assets/images/2023/img_1144.gif)
 
-Did APAP or CPAP solve the night sweats during this trial? For me, no. That was the practical question I wanted answered. I still had a proper sleep study in the future, which mattered because this trial could not diagnose or rule out sleep apnoea. With the sweats showing up on only about 3 of 14 nights, I was also worried a single night might not capture that symptom. That does not mean a sleep study could not still find sleep-disordered breathing.
+Did APAP or CPAP solve the night sweats during this trial? For me, no. That was the practical question I wanted answered. I still had a proper sleep study ahead of me because two weeks of machine data couldn't diagnose or rule out sleep apnoea. With the sweats showing up on only about 3 of 14 nights, I was also worried a single night might not capture that symptom. Still, a sleep study could find breathing problems even if the night sweats didn't show up.
 
 ![](/assets/images/2023/img_1143.gif)
 

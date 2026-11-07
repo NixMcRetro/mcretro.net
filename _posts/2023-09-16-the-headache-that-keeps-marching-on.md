@@ -16,7 +16,7 @@ I've been on and off pregabalin since January 2021. I had previously had a run-i
 
 ![](/assets/images/2023/img_1159.jpg)
 
-[Pregabalin is indicated for anxiety disorders](https://www.nhs.uk/medicines/pregabalin/) in the UK. Pregabalin is also indicated for neuropathic pain, which my headache was beginning to feel more and more like each day. Of course, what pain feels like to me does not establish what is causing it.
+Over in the UK, [pregabalin is indicated for anxiety disorders](https://www.nhs.uk/medicines/pregabalin/). It's also indicated for neuropathic pain, which was interesting because my headache was feeling more and more like nerve pain each day. Mind you, feeling like nerve pain and actually knowing what's causing it are two different things.
 
 ![](/assets/images/2023/img_1161.jpg)
 
@@ -34,7 +34,9 @@ The fact that I have been able to write all this out means I can continue gettin
 
 ![](/assets/images/2023/img_1158.jpg)
 
-I suppose I owe it to the pregabalin, which had been escalated to 600mg per day that morning. That's the top of the usual range in the Australian information for immediate-release capsules, normally taken in two divided doses. I usually took mine in the evening to avoid drowsiness, but that day I tried one dose in the morning and planned another in the evening. Changes like this need to be worked through with the prescriber. It does make things a little **_fuzzy_**, but it seems to let words flow better.
+I suppose I owe it to the pregabalin, which had been escalated to 600 mg per day that morning. That's the top of the usual range in the Australian information for immediate-release capsules, normally taken in two divided doses.
+
+I usually took mine in the evening to avoid drowsiness, but that day I tried one dose in the morning and planned another in the evening. That's something to work through with the prescriber, of course. It does make things a little **_fuzzy_**, but it seems to let words flow better.
 
 That said, if this continues on much longer I think getting stabbed by a needle in the back of my head is not sounding quite so bad. Can't work out the pain? Maybe a nerve block is something to discuss with the neurologist. My sanity can only take this for so long.
 

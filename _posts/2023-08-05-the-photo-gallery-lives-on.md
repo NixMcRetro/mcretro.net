@@ -12,7 +12,7 @@ Unemployment is both a blessing and a curse. The blessing? Catch up time to clea
 
 ![](/assets/images/2023/img_1063.jpg)
 
-So focus on what you can change. For me, that's the photo gallery. I've been making progress at long last! I'm still working on getting the directory structure more... structured.
+The photo gallery is at least something I can actually work on. I've been making progress at long last! I'm still working on getting the directory structure more... structured.
 
 ![](/assets/images/2023/img_1061.jpg)
 
@@ -20,4 +20,4 @@ Licensed hardware makes things a little messy, but I suppose in the grand scheme
 
 ![](/assets/images/2023/img_1060.jpg)
 
-There will be some pretty neat stuff in there. At the time, the data was slowly going up in the [photo gallery](/goodies). Once I'm done uploading what I can, I'll probably move back onto processing modem videos for the next 3-4 years. Ha ha! 😅
+There will be some pretty neat stuff in there. The data is slowly going up in the [photo gallery](/goodies). Once I'm done uploading what I can, I'll probably move back onto processing modem videos for the next 3-4 years. Ha ha! 😅

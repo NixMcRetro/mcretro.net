@@ -36,7 +36,7 @@ So my plan was to discuss bringing pregabalin back, possibly alongside the loraz
 
 ![](/assets/images/2024/img_1334.jpg)
 
-Way back in 2021 when I was attending UNSW while working... I was on something around 300mg pregabalin per day. The one course I did, I scored a High Distinction (97). I remember almost nothing about it. Was pregabalin part of that? The timing made me suspicious. So yeah, memory might break. Ughhh!
+Way back in 2021 when I was attending UNSW while working... I was on something around 300 mg pregabalin per day. The one course I did, I scored a High Distinction (97). I remember almost nothing about it. Was pregabalin part of that? The timing made me suspicious. So yeah, memory might break. Ughhh!
 
 ![](/assets/images/2024/img_1332.jpg)
 
@@ -47,8 +47,8 @@ I suppose in an absolute worst case, I end up dropping the course and deferring 
 - [TGA - Pregabalin and gabapentin](https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/pregabalin-and-gabapentin)
 - [Australian Commission on Safety and Quality in Health Care - Ativan consumer medicine information](https://www.safetyandquality.gov.au/medicine-finder/ativan)
 
-### Related posts
+### Related Posts
 
 - [Depression, Debt, Bees and Lizards](/depression-debt-bees-and-lizards/)
-- [The People at University are Amazing](/the-people-at-university-are-amazing/)
+- [The People at University Are Amazing](/the-people-at-university-are-amazing/)
 - [Thirty Days Has September](/thirty-days-has-september/)

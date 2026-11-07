@@ -1,5 +1,5 @@
 ---
-title: "The People at University are Amazing"
+title: "The People at University Are Amazing"
 author: "Nix McRetro"
 date: 2024-08-24T05:18:28.000+10:00
 categories: [news, study]
@@ -65,7 +65,7 @@ I'm also trying to detangle some of my life from the Apple ecosystem (I'm lookin
 
 ![](/assets/images/2024/img_1341.jpg)
 
-We held a successful BBQ party with an appearance from Nick, I was very glad he could make it. Sadly Lilly had a viral infection but that's OK!
+We held a successful BBQ party with an appearance from SuperNick (Nick), I was very glad he could make it. Sadly Lilly had a viral infection but that's OK!
 
 ![](/assets/images/2024/img_1346.jpg)
 
@@ -80,7 +80,7 @@ I guess I technically started UTS for the spring period and am still finding bee
 - [TGA - Pregabalin and gabapentin safety alert](https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/pregabalin-and-gabapentin)
 - [Australian Commission on Safety and Quality in Health Care - Rivotril consumer medicine information](https://www.safetyandquality.gov.au/medicine-finder/rivotril)
 
-### Related posts
+### Related Posts
 
 - [Third Time's a Charm; University Begins... Again](/third-times-a-charm-university-begins-again/)
 - [Thirty Days Has September](/thirty-days-has-september/)

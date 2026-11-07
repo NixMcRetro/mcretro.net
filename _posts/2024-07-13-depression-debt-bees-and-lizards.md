@@ -44,11 +44,11 @@ What an excellent segue into the medication side of things for being a transgend
 
 ![](/assets/images/2024/img_1319.jpg)
 
-[Progesterone](https://en.wikipedia.org/wiki/Progesterone_(medication)) is expensive and I am poor. So I had been comparing compounded progesterone with commercial Prometrium. At 400mg/day split twice daily and measured in the trough, the compounded version gave me slightly higher numbers on one set of tests. Nice on paper, but that couldn't tell me whether the products were equivalent. Food, formulation and release characteristics can all change what gets absorbed and when.
+[Progesterone](https://en.wikipedia.org/wiki/Progesterone_(medication)) is expensive and I am poor. So I had been comparing compounded progesterone with commercial Prometrium. At 400 mg/day split twice daily and measured in the trough, the compounded version gave me slightly higher numbers on one set of tests. Nice on paper, but that couldn't tell me whether the products were equivalent. Food, formulation and release characteristics can all change what gets absorbed and when.
 
 ![](/assets/images/2024/img_1312.jpg)
 
-However, there was one unexpected effect I appreciated. When I took oil-based Prometrium 200mg with food, I got a short-lived sedated, mildly euphoric feeling that reminded me of 4-5mg of diazepam. The food part matters: it increases absorption, and the Prometrium leaflet says not to take it with food. I also noticed the effect after stopping finasteride. My best guess involved progesterone-derived neurosteroids such as [allopregnanolone](https://en.wikipedia.org/wiki/Allopregnanolone), though I hadn't measured those.
+However, there was one unexpected effect I appreciated. When I took oil-based Prometrium 200 mg with food, I got a short-lived sedated, mildly euphoric feeling that reminded me of 4-5 mg of diazepam. The food part matters: it increases absorption, and the Prometrium leaflet says not to take it with food. I also noticed the effect after stopping finasteride. My best guess involved progesterone-derived neurosteroids such as [allopregnanolone](https://en.wikipedia.org/wiki/Allopregnanolone), though I hadn't measured those.
 
 ![](/assets/images/2024/img_1313.jpg)
 
@@ -56,7 +56,7 @@ For a few hours each day, at a big hit to my wallet, I can leave my anxiety behi
 
 ![](/assets/images/2024/img_1322.jpg)
 
-One of the reasons for retesting my baseline was a pretty big confounding factor: I was now taking modified-release compounded progesterone. Comparing that with immediate-release Prometrium was getting messy. Over one week I increased the modified-release dose to 800mg/day to see whether anything changed. Nothing. No positive mental effects, no negative ones either. That was a very high dose, and any further dose experiments needed to go through my prescriber. It still didn't tell me whether the formulations were equivalent.
+One of the reasons for retesting my baseline was a pretty big confounding factor: I was now taking modified-release compounded progesterone. Comparing that with immediate-release Prometrium was getting messy. Over one week I increased the modified-release dose to 800 mg/day to see whether anything changed. Nothing. No positive mental effects, no negative ones either. That was a very high dose, and any further dose experiments needed to go through my prescriber. It still didn't tell me whether the formulations were equivalent.
 
 ![](/assets/images/2024/img_1326.jpg)
 
@@ -64,7 +64,7 @@ I'm also checking serum [DHT](https://en.wikipedia.org/wiki/Dihydrotestosterone)
 
 ![](/assets/images/2024/img_1320.jpg)
 
-It was also neat to see what my [estradiol](https://en.wikipedia.org/wiki/Estradiol_(medication)) levels were soon after another set of pellets was implanted. I scored just over 1500pmol/L at about one week, compared with roughly 700pmol/L before the newest implants, and around 1200pmol/L another three weeks later. I'd called anything above 400pmol/L "gravy", but more isn't automatically better. The Australian guidance I was using targeted roughly 250 to 600pmol/L, adjusted to clinical response, so those early post-implant levels were above that range.
+It was also neat to see what my [estradiol](https://en.wikipedia.org/wiki/Estradiol_(medication)) levels were soon after another set of pellets was implanted. I scored just over 1500 pmol/L at about one week, compared with roughly 700 pmol/L before the newest implants, and around 1200 pmol/L another three weeks later. I'd called anything above 400 pmol/L "gravy", but more isn't automatically better. The Australian guidance I was using targeted roughly 250 to 600 pmol/L, adjusted to clinical response, so those early post-implant levels were above that range.
 
 ![](/assets/images/2024/img_1323.jpg)
 
@@ -77,9 +77,9 @@ See what the bupropion made me do? This post is massive. Oh well, until next tim
 - [A position statement on the hormonal management of adult transgender and gender diverse individuals](https://auspath.org.au/wp-content/uploads/2023/01/mja250259-position-statement-adult-transgender-2022.pdf)
 - [Standards of Care for the Health of Transgender and Gender Diverse People, Version 8](https://pmc.ncbi.nlm.nih.gov/articles/PMC9553112/)
 
-### Related posts
+### Related Posts
 
-- [Mon Mothma was a Deejay](/mon-mothma-was-a-deejay/)
+- [Mon Mothma Was a Deejay](/mon-mothma-was-a-deejay/)
 - [Me, Myself and Progesterone](/me-myself-and-progesterone/)
 - [Progesterone Consumer Medicines Information (CMI)](/progesterone-consumer-medicines-information-cmi/)
 - [Third Time's a Charm; University Begins... Again](/third-times-a-charm-university-begins-again/)

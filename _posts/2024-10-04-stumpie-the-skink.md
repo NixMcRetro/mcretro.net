@@ -14,9 +14,13 @@ I suspect my earlier lawn mowing adventures might have been involved, although I
 
 I've become rather reluctant to mow the lawn since moving here. Apart from removing the insects that the lizards eat, there's always the possibility of accidentally injuring someone hiding amongst the grass. I've already had a couple of rather upsetting experiences with that, so I'd much rather leave the garden a little overgrown.
 
+Blackbirds don't help either. I've watched them swoop down and carry lizards away in their beaks, so a bit of overgrown grass might at least give the little fellows somewhere to hide.
+
 On this particular occasion I found Stumpie before mowing and brought them inside temporarily to keep them out of harm's way. Stumpie always seems to have a rather surprised expression, as though wondering what on Earth is going on.
 
 There are plenty of other skinks living around the garden too, including some with much more pronounced pale stripes. I've also spotted quite a few youngsters appearing amongst the plants, so there's certainly no shortage of little lizards wandering about.
+
+The white pebbles along the side of the house are another nuisance. They need constant weeding, and naturally the skinks love hiding in there, precisely where I have to put my feet.
 
 Once I'd finished mowing, I returned Stumpie to the garden. Getting a tiny skink to cooperate isn't particularly easy, but we managed it!
 

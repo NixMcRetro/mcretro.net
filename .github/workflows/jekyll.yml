@@ -13,6 +13,7 @@ on:
       - 'homepages/vrampage-md/**'
       - '_config.yml'
       - '.github/workflows/jekyll.yml'
+      - 'scripts/audit_pages_site.py'
       - '.github/tests/vrampage-deployment.mjs'
       - '.github/tests/vrampage-release-asset.sh'
       - '.github/tests/vrampage-package.py'
@@ -93,16 +94,21 @@ jobs:
       - name: Verify generated site CSP requirements
         run: node .github/tests/csp-built.mjs _site
 
+      - name: Audit generated site size and file inventory
+        run: python3 scripts/audit_pages_site.py _site
+
       - name: Configure Pages
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v6
 
       - name: Upload artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: [build, release-source]
     runs-on: ubuntu-latest
     environment:

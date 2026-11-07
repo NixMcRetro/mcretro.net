@@ -14,9 +14,9 @@ test('shared footer has no inline styles', () => {
   }
 });
 
-test('eight historical footer badges retain their source images', () => {
+test('eight footer badges retain their source images', () => {
   const names = [
-    'creative.gif', 'nsnow3.gif', 'ie4get.gif', 'icqdl.gif',
+    'cc-by-nc-nd.svg', 'nsnow3.gif', 'ie4get.gif', 'icqdl.gif',
     'debian.gif', 'tor.gif', 'mircnow.gif', 'dogecoin.gif'
   ];
   const badges = [...footer.matchAll(/<img\b[^>]*class="footer-badge"[^>]*>/g)];

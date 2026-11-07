@@ -352,3 +352,8 @@ http://retro56qdosu3zuisr5tiuh7ihpn6owzpwjwvs7djlweiqb3mcspahyd.onion (V3, retir
 
 
 "There's nothing I want to do. There's nothing I want to be. That's probably not the best way to be... but you know what, that probably doesn't matter." - FLCL
+
+Licence information (updated 2026-11-07)
+- Original written content by Nix McRetro is licensed under CC BY-NC-ND 4.0 where I own or control the copyright.
+- Photos, video, code, restored websites, software archives and third-party material are not automatically covered.
+- Full details: https://github.com/NixMcRetro/mcretro.net/blob/main/CONTENT-LICENSE.md

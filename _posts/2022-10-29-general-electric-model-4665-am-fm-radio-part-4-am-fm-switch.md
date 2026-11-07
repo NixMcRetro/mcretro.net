@@ -8,16 +8,18 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="ObjJ0Mp_GWE" %}
 
-The AM/FM switch felt stuck down and spongy - on AM. Maybe FM wasn't used much at all on this radio, and dust had worked its way into the switch over the years. The great news is that a tiny bit of CRC 2-26 loosened it up quite well. That stuff really worked wonders on this gummed-up switch. Listen to that new click! ✅
+The AM/FM switch felt stuck down and spongy on AM. Maybe FM hadn't been used much on this radio and dust had worked its way into the switch over the years. The great news is that a tiny bit of CRC 2-26 loosened it up quite well. Listen to that new click! ✅
 
-If you're doing this yourself, unplug the radio before working inside it and remember that capacitors can retain charge. CRC 2-26 is flammable, so follow the product instructions and let the solvent evaporate before powering the radio up again.
+And it wasn't just a nicer click. I switched the radio over to FM and actually got FM reception again! That stuff really worked wonders on this gummed-up switch, and I was rather pleased with the result.
+
+If you're doing this yourself, unplug the radio before working inside it. Those capacitors can retain charge, and CRC 2-26 is flammable, so follow the product instructions and let the solvent evaporate before powering everything up again.
 
 ### Sources
 
 - [CRC Industries Australia - CRC 2-26 Electrical technical data sheet](https://crcindustries.com.au/media/tds/crc_aus/tds-10001.pdf)
 - [Nichicon - Aluminum electrolytic capacitor technical notes](https://www.nichicon.co.jp/english/products/pdf/aluminum.pdf)
 
-### Related posts
+### Related Posts
 
 - [General Electric Model 4665 AM/FM Radio - Part 1: Overview](/general-electric-model-4665-am-fm-radio-part-1/)
 - [General Electric Model 4665 AM/FM Radio - Part 2: Tuning](/general-electric-model-4665-am-fm-radio-part-2/)

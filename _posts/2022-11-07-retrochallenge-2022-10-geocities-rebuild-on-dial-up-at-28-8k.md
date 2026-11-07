@@ -18,7 +18,7 @@ We were using the Spirit Viper V.34 external modem on the client-side. These wer
 
 The Spirit Viper V.34 is a nice looking modem internally too. Those capacitors at the front touch the plastic top. If they vent, they'll be melting through the top. I'm still waiting for a backorder to arrive with potentially suitable replacements, but as we all know, the chip shortage continues.
 
-### Related posts
+### Related Posts
 
 - [The GeoCities Rebuild Worklog](/the-geocities-rebuild-worklog/)
 - [Rebuilding GeoCities on macOS 12](/rebuilding-geocities-on-macos-12/)

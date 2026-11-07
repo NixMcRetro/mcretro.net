@@ -24,6 +24,8 @@ Here's the fan controller I used. Relatively simple and cheap. I swapped the 50 
 
 ![](/assets/images/2023/img_1103.jpg)
 
+I didn't want to destroy the original fan connector in the process, so I kept it intact. Getting the new header in place was a bit of a fight, thanks in part to the lead-free solder refusing to leave the holes alone.
+
 Some of the case needed to be dremelled to fit the potentiometer through. I put Kapton tape on the underside of the controller PCB to prevent shorts.
 
 ![](/assets/images/2023/img_1105.jpg)
@@ -35,6 +37,8 @@ Doesn't look too bad with the dial attached.
 And you can hardly even notice it from the front.
 
 ![](/assets/images/2023/img_1106.jpg)
+
+The original fan was rated at 12 V, 0.13 A, while the replacement was rated at 12 V, 0.043 A. I could slow the replacement fan down, but slowing it too far isn't much use if it stops moving enough air. The fan's alignment with the grille probably wasn't helping the noise either.
 
 I mean, it looks neat. That's not like me at all. I'd want the fan on at all times, even at the lowest setting, for peace of mind. Reducing fan speed also reduces cooling, so this sort of modification should be validated with temperatures under the actual load and ambient conditions. Even after the modification, I still found the fan noisy at its lowest speed. Probably that grille blocking airflow and increasing turbulence. Definitely a deciding factor in moving to the Cisco SPA112 instead - no fan!
 
@@ -98,7 +102,7 @@ The [quick start guide](https://web.archive.org/web/20250417145553/https://www.c
 
 ![](/assets/images/2023/img_1097.jpg)
 
-Thankfully, I wasn't alone: I found a [Cisco Community thread about the SPA8000 boot loop](https://community.cisco.com/t5/voice-systems-and-accessories-small-business/spa8000-stuck-in-a-boot-loop/td-p/1675301). That thread was useful at the time, although it currently returns a site-unavailable page.
+Thankfully, I wasn't alone: I found a [Cisco Community thread about the SPA8000 boot loop](https://community.cisco.com/t5/voice-systems-and-accessories-small-business/spa8000-stuck-in-a-boot-loop/td-p/1675301?utm_source=chatgpt.com). At least I wasn't the only one fighting with this thing!
 
 ![](/assets/images/2023/img_1098.jpg)
 

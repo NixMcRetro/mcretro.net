@@ -25,7 +25,7 @@ tar cvf - Rebuild_v5/ | split --bytes=1GB - "/media/ubuntu/GC_2TB/REBUILD/GeoCit
 
 ```
 
-That produced consecutive decimal 1GB chunks. GNU `split` interprets `GB` here as 1,000,000,000 bytes. The finished archive ended up as 794 chunks: `.000` through `.793`, with the last chunk smaller than 1GB. Then we generated a SHA-256 checksum for every chunk on a machine with ECC RAM.
+That produced consecutive decimal 1 GB chunks. GNU `split` interprets `GB` here as 1,000,000,000 bytes. The finished archive ended up as 794 chunks: `.000` through `.793`, with the last chunk smaller than 1 GB. Then we generated a SHA-256 checksum for every chunk on a machine with ECC RAM.
 
  
 
@@ -126,7 +126,7 @@ cat GeoCities_Rebuild.tar.* | tar xf - --directory=/media/ubuntu/CHONK/
 
 Even more \*things\*
 
-The next block is preserved from my original notes. One correction before anyone trusts it: `du` does not confirm that two datasets are identical. It reports filesystem space usage here, not file-by-file content equality.
+The next block comes straight from my original notes. One thing worth correcting: `du` reports filesystem space usage, not whether two datasets contain the same files. It's not a proper file-by-file comparison.
 
  
 
@@ -148,7 +148,7 @@ sudo du -s -h --si -B1
 
 ```
 
-The notes above also say 793 files, but the checksum list runs from `.000` through `.793`, which is 794 chunks in total. Treat these `du` totals as a rough sanity check only. The `sha256sum -c` checks above are the actual content-integrity test for the split tar pieces, and the archive test checks that the reconstructed tar can be read. Do not delete the source copies solely because the `du` totals look similar.
+My notes say 793 files, but `.000` through `.793` is 794 chunks. The `du` totals were a rough sanity check, nothing more. The real content check for those chunks was `sha256sum -c`, while the archive test checked whether the rebuilt tar could actually be read. I wouldn't bin the originals just because two `du` totals look similar.
 
 Below are the SHA-256 hashes generated for each split archive piece. The chunks themselves were not publicly available from me; this was primarily my own integrity record.
 

@@ -26,7 +26,9 @@ So I queried them: where is my 60-day notice period? They sent back the screensh
 
 They assumed I'm still on a "fixed term of less than 2 years that set out a rent increase". I'm not - they let it lapse. And even if I was, the expired lease did not set out this rent increase. They've read the situation wrong. I hate legislation but I also hate landlords who can't do their "job" properly.
 
-The relevant law in August 2023 was Section 41 of the [Residential Tenancies Act 2010](https://legislation.nsw.gov.au/view/whole/pdf/inforce/2023-10-13/act-2010-042). One thing I got wrong in my original notes was quoting an older version. The 2020 reforms had added an exception for fixed terms under two years where the agreement itself specified the date and amount of the increase. That was what their screenshot referred to, but it still didn't fit my situation: my fixed term had expired and I was on a periodic agreement, which required at least 60 days' written notice before the increase became payable. Section 42 also required an increase during a fixed term of not more than two years to be set out in the agreement as an amount or a method of calculation.
+The relevant law in August 2023 was Section 41 of the [Residential Tenancies Act 2010](https://legislation.nsw.gov.au/view/whole/pdf/inforce/2023-10-13/act-2010-042). One thing I got wrong in my original notes was quoting an older version. The 2020 reforms had added an exception for fixed terms under two years where the agreement itself specified the date and amount of the increase.
+
+Fine, but that was what their screenshot referred to, and it still didn't fit my situation. My fixed term had expired, which meant I was on a periodic agreement and still needed at least 60 days' written notice before the increased rent became payable. Section 42 also required an increase during a fixed term of not more than two years to be set out in the agreement as an amount or a method of calculation.
 
 ## Mistake 2
 

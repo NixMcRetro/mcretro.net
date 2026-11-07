@@ -30,7 +30,7 @@ The Rockwell chipset is notably absent and we have a Motorola chipset instead. T
 
 {% include youtube.html id="P3bVila54tk" %}
 
-The firmware calls it a `Motorola Lifestyle 28.8 External 68356`, so there's good reason to call this a Motorola-based Avtek. That string doesn't tell us who manufactured the finished modem, though, so I can't call it a straight rebadge on that alone. Cost cutting perhaps, or an attempt to diversify maybe. This Avtek still doesn't feel like an Avtek.
+The firmware calls it a Motorola Lifestyle 28.8 External 68356, so there's good reason to call this a Motorola-based Avtek. That string doesn't tell us who manufactured the finished modem, though, so I can't call it a straight rebadge on that alone. Cost cutting perhaps, or an attempt to diversify maybe. This Avtek still doesn't feel like an Avtek.
 
 ![](/assets/images/2023/img_1040.jpg)
 
@@ -91,6 +91,8 @@ CONNECT 115200
 ```
 
 Whoops, that final `CONNECT 115200` isn't a 115.2 kbit/s telephone-line connection from a 28.8 modem. It's a serial-side reporting or configuration artefact, not a measurement of the modem-to-modem line speed. I couldn't pin down the exact setting from this log alone. Oh well, at least externally it looks OK, as long as you don't try to pick it up.
+
+I also put it through some dial-up testing under Linux and Windows 98. I managed a 26,400 bps connection, although it wasn't exactly smooth sailing: there were intermittent errors, and I found myself restarting mgetty while trying to get things going. At least the old modem was still capable of getting online!
 
 Next is a listing of the capacitors replaced, with order numbers from Element 14 Australia. The capacitors were replaced in this modem in September 2022. This records my work on CD1500M serial 601000266, including some awkward fits and surface-mount parts replaced with radials. Before copying it, check the actual board and fitted capacitor type, polarity, capacitance, voltage rating, ESR, ripple-current and temperature ratings, lead spacing and physical fit. A higher voltage rating alone doesn't establish a suitable replacement. The formatting isn't too web friendly; copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
 

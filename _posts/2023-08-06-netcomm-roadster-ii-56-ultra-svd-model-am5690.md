@@ -78,11 +78,13 @@ CONNECT 28800
 
 ```
 
+For the dial-up testing, I had a Raspberry Pi running Asterisk and mgetty on one side, with Windows 98 on the other. The modem connected at 28,800 bps, and I even managed to browse the GeoCities archive over the connection. Getting the Windows 98 drivers going was another matter: there was a blue-screen crash along the way. Ah, the joys of old computers!
+
 As hinted at above in ATI4, the firmware version is F02_V1.56 and fits neatly inside the 2 Mbit flash chip, the AM29F002NB. Thanks to Gough Lui's excellent post on [flashing a dial-up modem using Flashcom](https://goughlui.com/2016/03/11/tech-flashback-flashing-a-dial-up-modem-using-flashcom/), we can use [SRecord](https://srecord.sourceforge.net) to convert these pesky .S37 files into something with \*some\* human-readable code, following the commands in his guide.
 
 ![](/assets/images/2023/img_1069.jpg)
 
-Unfortunately for me, the firmware upgrader, [am56906.exe](/goodies), was the same version as what I already had. The AM29F002NB datasheet gives a minimum pattern-retention figure of 20 years at 125°C. That is a high-temperature retention specification, not an expiry date saying the flash forgets its contents after 20 ordinary years on a shelf. I reflashed it anyway because the updater was available and I was already in there. If it spent 20 years in a fire pit, we had bigger problems. 🤣
+Unfortunately for me, the firmware upgrader, [am56906.exe](/goodies), was the same version as what I already had. The AM29F002NB datasheet gives a minimum pattern-retention figure of 20 years at 125°C. That is a high-temperature retention specification, not an expiry date saying the flash forgets its contents after 20 ordinary years on a shelf. I backed up the original firmware before proceeding, then reflashed it anyway because the updater was available and I was already in there. If it spent 20 years in a fire pit, we had bigger problems. 🤣
 
 ![](/assets/images/2023/img_1068.jpg)
 

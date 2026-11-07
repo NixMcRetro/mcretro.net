@@ -9,7 +9,7 @@ historical_source_url: "https://www.youtube.com/watch?v=iDnK-XNniJ4"
 
 {% include youtube.html id="iDnK-XNniJ4" %}
 
-There was also the question of identifying suitable branches. My notes wandered through elm, birch and various leaf guides, but that isn't enough to identify a tree with confidence. I wasn't about to pretend otherwise.
+Working out which branches were suitable for Flicky was another question entirely. I'd been working my way through leaf guides, elm, birch and anything else that might help, but none of it gave me enough to identify the tree with confidence. Not much point in pretending I knew what I was looking at when I was trying to find something she could feed from.
 
 **Sources**
 

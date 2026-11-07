@@ -88,6 +88,6 @@ Maybe I'll just live in some broken ceramic pots - a potential lizard lounge may
 - [Aussie Bee - Flowers Loved by Native Bees](https://www.aussiebee.com.au/flowerslovedbybees.html)
 - [Royal Botanic Gardens, Kew - Lavandula](https://powo.science.kew.org/taxon/20960-1)
 
-### Related posts
+### Related Posts
 
 - [The Garden, Lizards and Bees](/the-garden-lizards-and-bees/)

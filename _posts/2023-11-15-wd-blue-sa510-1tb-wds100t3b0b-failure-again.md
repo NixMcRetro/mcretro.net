@@ -12,11 +12,11 @@ Oh my sweet WD Blue SA510 M.2 SATA 2280 blade drives. [You are such trash](/geoc
 
 ![](/assets/images/2023/img_1204.jpg)
 
-Yeahhh, DriveDx was displaying 824.6TB under NAND Writes TLC and 824.9TB under NAND Writes SLC. Those are two separate displayed counters, not a combined total, and I haven't independently verified their vendor-specific decoding. NAND activity is also different from the 1.8TB of host writes reported below: firmware can move data internally for caching and garbage collection. Even so, those numbers looked absolutely wild. Those retired blocks weren't exactly filling me with confidence either. Digging a little deeper we find...
+Yeahhh, DriveDx was displaying 824.6 TB under NAND Writes TLC and 824.9 TB under NAND Writes SLC. Two separate counters, not something I was going to add together and call total writes. I also wasn't sure how accurately DriveDx was decoding those particular WD values. NAND writes aren't the same as host writes either, thanks to things like caching and garbage collection. Still, those numbers looked absolutely wild compared with the 1.8 TB of host writes reported below. And retired blocks? Not exactly filling me with confidence. Digging a little deeper we find...
 
 ![](/assets/images/2023/img_1205.jpg)
 
-A massive 1.8TB of host writes, basically the GeoCities dataset copied twice. The drive is rated for 400TBW, but that does **not** mean WD expected it to fail at 400TB. TBW is an endurance and warranty specification, not a predicted death date. Either way, 1.8TB of host writes was nowhere remotely close to that figure. Guess I better hook it into the old WD Dashboard and see what it says.
+A massive 1.8 TB of host writes, basically the GeoCities dataset copied twice. The drive is rated for 400 TBW, but that isn't some magical number where WD expects it to drop dead. It's an endurance and warranty specification, and 1.8 TB isn't even remotely close. Guess I better hook it into the old WD Dashboard and see what it says.
 
 ![](/assets/images/2023/img_1207.jpg)
 
@@ -28,15 +28,15 @@ So firmware 52020100 should solve a pretty big issue, not being able to see the 
 
 > **May 25, 2023 - Firmware v52046100 Addresses an issue in which a drive may enter a read-only state.**
 
-Hmmm right. Read-only is at least a safer failure mode than silently eating writes. More importantly, my host-write count was nowhere near the drive's 400TBW endurance rating, so I can't explain what I was seeing as simple write-endurance exhaustion. The later firmware fix makes firmware a very relevant suspect, just as it was with the first failed SA510, but it still doesn't prove every weird SMART value here came from firmware. Good thing there's a five year warranty and I have consumer rights against dud hardware.
+Hmmm right. Read-only is at least a safer failure mode than silently eating writes. With just 1.8 TB of host writes, I certainly wasn't blaming this on wearing out the drive through normal use. Firmware was looking like a pretty good suspect, especially after what happened with my first SA510. Whether it also explained the strange SMART values was another question. Good thing there's a five-year warranty and I have consumer rights against dud hardware.
 
 ![](/assets/images/2023/img_1209.jpg)
 
-Through the motions we go. Updated firmware OK, but WD Dashboard reported only 40% health. The earlier DriveDx screenshot had shown 100%, so the two tools weren't agreeing. A firmware update doesn't replace flash hardware, but these screenshots don't establish how either tool calculated its health figure or whether the NAND-write figures were decoded correctly.
+Through the motions we go. Updated firmware OK, but WD Dashboard reported only 40% health. DriveDx had shown 100% earlier. Wonderful, even the software can't agree on how healthy this thing is! Updating firmware doesn't replace the flash memory, and without knowing how either tool was calculating its figures I wasn't going to pretend the screenshots explained everything.
 
 ![](/assets/images/2023/img_1210.jpg)
 
-At least this second drive had accumulated 6586 power-on hours before I noticed trouble, compared with only 606 hours on the first failed drive. That's more than ten times the runtime, but two dodgy SSDs are not exactly an endurance study. It still only had 59 power cycles because its main job was hosting GeoCities - lots of reading.
+At least this second drive had accumulated 6,586 power-on hours before I noticed trouble, compared with only 606 hours on the first failed drive. That's more than ten times the runtime, but two dodgy SSDs are hardly an endurance study. It still only had 59 power cycles because its main job was hosting GeoCities - lots of reading.
 
 ![](/assets/images/2023/img_1206.jpg)
 
@@ -49,7 +49,7 @@ Tech support was less than useful, directing me to India when I was trying to di
 - [Western Digital - WD Blue SA510 SATA SSD product brief, October 2023](https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/western-digital/product/internal-drives/wd-blue-ssd/product-brief-wd-blue-sa510-sata-ssd.pdf)
 - [Western Digital - S.M.A.R.T. Self-Monitoring Analysis and Reporting Technology](https://support-en.wd.com/app/answers/detailweb/a_id/12163)
 
-### Related posts
+### Related Posts
 
 - [GeoCities Downtime - WD Blue SA510 1TB WDS100T3B0B Failure](/geocities-downtime-wd-blue-sa510-1tb-wds100t3b0b-failure/)
 - [GeoCities Archive Retired, Dockerisation Abandoned](/geocities-archive-retired-dockerisation-abandoned/)

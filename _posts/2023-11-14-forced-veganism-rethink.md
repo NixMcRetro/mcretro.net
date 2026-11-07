@@ -32,6 +32,6 @@ Onward to [the decline](https://en.wikipedia.org/wiki/Holocene_extinction). 🫠
 
 - [Institute of Marine Research - Feed and nutrition](https://www.hi.no/en/hi/temasider/aquaculture/feed-and-nutrition)
 
-### Related posts
+### Related Posts
 
 - [New Year, New Something That Rhymes with Year](/new-year-new-something-that-rhymes-with-year/)

@@ -19,7 +19,7 @@ I initially thought it should be as simple as pressing a few different buttons f
 - [RFC 6888 - Common Requirements for Carrier-Grade NATs](https://www.rfc-editor.org/info/rfc6888/)
 - [Cloudflare - Always Online](https://developers.cloudflare.com/cache/how-to/always-online/)
 
-### Related posts
+### Related Posts
 
 - [HTTP/0.9 Request and Other One-Liners](/http-0-9-request-and-other-one-liners/)
 - [Maintenance Complete - User Is Online!](/maintenance-complete-user-is-online/)

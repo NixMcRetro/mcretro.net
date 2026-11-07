@@ -74,7 +74,7 @@ Sure, I could have killed myself easily enough but chose to do the paradigm shif
 
 Better go and check the garden is still there and get my 30 minutes of exercise in. Target weight is set at 75 kg this time around. Roughly 20 kg of weight loss to go, and while transitioning. Should be one heck of a ride. 🤷‍♀️
 
-### Related posts
+### Related Posts
 
 - [Forced Veganism Rethink](/forced-veganism-rethink/)
 - [The Garden, Lizards and Bees](/the-garden-lizards-and-bees/)

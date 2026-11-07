@@ -35,7 +35,7 @@ The good news? Material I found that appeared to violate the original GeoCities 
 - [Yahoo! - GeoCities acquisition closing filing](https://www.sec.gov/Archives/edgar/data/1011006/000091205799005431/0000912057-99-005431-d2.html)
 - [Cloudflare - The CSAM Scanning Tool](https://blog.cloudflare.com/the-csam-scanning-tool/)
 
-### Related posts
+### Related Posts
 
 - [The GeoCities Archive Rebuild Blog](/the-geocities-archive-rebuild-blog/)
 - [The GeoCities Archive Rebuild Goes Live](/the-geocities-archive-rebuild-goes-live/)

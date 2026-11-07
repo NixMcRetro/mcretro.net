@@ -16,7 +16,9 @@ Stumpie continues to appear intermittently. He's doing quite well, but I've seen
 
 ![](/assets/images/2024/img_1254.jpg)
 
-But what to do with the dog food? Well, since Bluey hasn't shown up, I thought maybe the bar-sided skinks would like a taste. And yes, they really do. The one I had captured earlier must have been a baby because this one living inside the walls is huge! They liked it, but that didn't make dog food a good choice for wild lizards. NSW guidance generally discourages feeding native wildlife because it can change their behaviour, encourage dependency and cause nutrition or disease problems. Better to make the garden attractive enough that the skinks can feed themselves.
+But what to do with the dog food? Well, since Bluey hasn't shown up, I thought maybe the bar-sided skinks would like a taste. And yes, they really do. The one I had captured earlier must have been a baby because this one living inside the walls is huge!
+
+That said, feeding wild skinks dog food probably wasn't one of my brighter ideas. NSW wildlife advice generally discourages feeding native animals because it can change their behaviour, encourage dependency and cause health problems. Better to make the garden attractive enough for them to find their own dinner. Plenty of bugs around here anyway!
 
 ![](/assets/images/2024/img_1255.jpg)
 
@@ -31,6 +33,6 @@ There's at least two that frequent the purple flowers here. I love them. Especia
 
 - [NSW Government - Living with native animals](https://www.environment.nsw.gov.au/topics/animals-and-plants/native-animals/living-with-native-animals)
 
-### Related posts
+### Related Posts
 
 - [New Year, New Something That Rhymes with Year](/new-year-new-something-that-rhymes-with-year/)

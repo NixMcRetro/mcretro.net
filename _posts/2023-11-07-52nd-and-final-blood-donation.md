@@ -10,6 +10,8 @@ last_modified_at: 2026-10-18
 
 A few months ago I decided I was finished with donating blood. A few things went into that decision.
 
+Unfortunately for anyone watching the video, I managed to make this a very long slideshow. Somewhere along the way I'd set the photos to stay up for seven seconds each instead of four. Forty-odd minutes of blood donation photos and me rambling away. You're welcome! 😅
+
 1. [The way our blood service ran in Australia](https://theconversation.com/how-australia-can-fix-the-market-for-plasma-and-save-millions-101609). Australia collected plasma locally as well as importing plasma-derived products made from overseas donations, including paid donors. That difference in how donors were compensated bothered me. Well, see number two.
 
 2. I wasn't paid for donating, and it didn't cover my iron pills, travel or time. Perhaps I am desensitised to that fuzzy warm feeling of cold saline hitting my vein when giving plasma.
@@ -18,25 +20,29 @@ A few months ago I decided I was finished with donating blood. A few things went
 
 ![](/assets/images/2023/img_1191.jpg)
 
-I reached the 50 donation milestone. I was vegan at the time and got a block of Cadbury Dairy Milk Chocolate Block. Too bad it wasn't a Whittaker's Oat Milk Chocolate Block. I had to decline and being socially anxious made me more uncomfortable than usual for the donation.
+I reached the 50 donation milestone. And what did I get? A block of Cadbury Dairy Milk chocolate. As a vegan, that was incredibly useful! Too bad it wasn't a Whittaker's Oat Milk Chocolate Block. I had to decline it, which made the whole thing even more awkward thanks to social anxiety.
+
+And I did find one rather excellent typo while reading about iron: a paper said something about taking it for at least "six to nine moths". Naturally I had to put some actual moths into the video. I mean, I can talk about blood and iron all day, but there's always room for insects.
 
 ![](/assets/images/2023/img_1192.jpg)
 
 And at the very end here we have the 52nd, and final donation! Whole blood was a good way to go out as whole blood is how it all started back in October 2014 in a mobile blood van. For now I'll roll my sleeves down and keep my iron stores self-contained. Plus I get to keep all those [PFAS chemicals](https://en.wikipedia.org/wiki/Per-_and_polyfluoroalkyl_substances) that I would usually lose through plasma.
 
-Weirdly enough, there was some science hiding behind that joke. A 2022 Australian trial in firefighters with elevated PFAS found that regular blood or plasma donation reduced some serum PFAS concentrations, with plasma having the larger effect. That does **not** make donation a general PFAS treatment for everyone, but at least the joke had a paper behind it.
+The final donation also came with one of those round hand-squeeze balls. I hated the things! The longer ones were much easier to squeeze or roll, whereas with the round ones I kept struggling to get the blood moving properly. It might be a small thing, but after 52 donations I was pretty sick of it.
+
+Weirdly enough, there was some science hiding behind that joke. A 2022 Australian trial in firefighters with elevated PFAS found that regular blood or plasma donation reduced some serum PFAS concentrations, with plasma having the larger effect.
 
 ![](/assets/images/2023/img_1195.gif)
 
-Here's the tip zone, with a correction to my old donor maths. A whole-blood donation removes roughly 250mg of iron, so four donations would remove about 1000mg across the year. Haemoglobin screening can still be normal while iron stores are low, meaning frequent donors can run down ferritin without failing the pre-donation test. How quickly that iron is replaced varies, and supplements aren't automatically the answer for every donor. Whether they're appropriate depends on iron status, diet, other blood loss, donation frequency and clinical advice.
+A whole-blood donation removes roughly 250 mg of iron, so four donations would remove about 1,000 mg across the year. Haemoglobin screening can still be normal while iron stores are low, meaning frequent donors can run down ferritin without failing the pre-donation test. How quickly that iron is replaced varies, and supplements aren't automatically the answer for every donor. Whether they're appropriate depends on iron status, diet, other blood loss and donation frequency.
 
-I got the plasma maths badly wrong. Lifeblood lists approximate iron loss as about 10mg for a plasma donation and 48mg for a platelet donation, compared with about 250mg for whole blood. Twelve plasma donations would therefore be roughly 120mg of iron loss, not 750mg; 18 would be about 180mg, not 1100mg. The red cells being returned is why plasma donation has a much smaller effect on iron stores than whole blood.
+Lifeblood lists approximate iron loss as about 10 mg for a plasma donation and 48 mg for a platelet donation, compared with about 250 mg for whole blood. Twelve plasma donations would therefore be roughly 120 mg of iron loss; 18 would be about 180 mg. The red cells being returned is why plasma donation has a much smaller effect on iron stores than whole blood.
 
 ![](/assets/images/2023/img_1193.jpg)
 
 Alternate between plasma and whole blood? Whole blood is still the big iron hit. Lifeblood's [Anaemia and iron deficiency in blood donors](https://www.lifeblood.com.au/health-professionals/clinical-practice/clinical-indications/iron-deficiency-anaemia/blood-donors) gives a useful summary. [How do we manage iron deficiency after blood donation?](https://onlinelibrary.wiley.com/doi/full/10.1111/bjh.15136) was useful too, but I had applied the numbers too broadly.
 
-Another thing I had been reading about was alternate-day iron. Studies in iron-depleted or iron-deficient women found that oral iron can raise hepcidin for about 24 hours, and that a greater fraction may be absorbed with alternate-day dosing. That doesn't make 100 to 200mg of elemental iron every other day a prescription for every donor. Vitamin C can help with non-haem iron absorption, but I had overstated it as simply "overriding" hepcidin. The dose and schedule still depend on iron status, diet, tolerance and advice from a GP or pharmacist.
+Another thing I had been reading about was alternate-day iron. Studies in iron-depleted or iron-deficient women found that oral iron can raise hepcidin for about 24 hours, and that a greater fraction may be absorbed with alternate-day dosing. Vitamin C can help with non-haem iron absorption.
 
 ![](/assets/images/2023/img_1194.jpg)
 

@@ -35,7 +35,7 @@ Big thanks to [Tim Smith](https://tsmith.co/2023/protecting-wordpress-admin-logi
 - [Cloudflare - HTTP request headers](https://developers.cloudflare.com/fundamentals/reference/http-headers/)
 - [Cloudflare - One-time PIN authentication](https://developers.cloudflare.com/cloudflare-one/integrations/identity-providers/one-time-pin/)
 
-### Related posts
+### Related Posts
 
 - [HTTP/0.9 Request and Other One-Liners](/http-0-9-request-and-other-one-liners/)
 - [Downtime - Planned Maintenance](/downtime-planned-maintenance/)

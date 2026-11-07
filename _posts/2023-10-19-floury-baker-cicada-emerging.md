@@ -36,6 +36,6 @@ Finally, we have the shell itself. Who would have thought [incomplete metamorpho
 
 It's always a little bittersweet writing this up knowing she is gone. I guess the only comfort I have is the possibility that she passed on her genetics to future cicadas. Catch you at the [rainbow bridge](https://en.wikipedia.org/wiki/Rainbow_Bridge_(pets)), little one!
 
-### Related posts
+### Related Posts
 
 - [Exuviae Variation Among Australian Cicadas](/exuviae-variation-among-australian-cicadas/)

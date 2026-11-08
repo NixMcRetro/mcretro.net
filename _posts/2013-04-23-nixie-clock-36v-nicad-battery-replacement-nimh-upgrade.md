@@ -38,7 +38,7 @@ The power supply details I recorded were:
 - Supply current rating: 300 mA or greater
 - Polarity: centre positive
 
-I'd ordered an [XP Power ACM12US09](https://www.xppower.com/portals/0/pdfs/SF_ACM12.pdf), which I hoped would do the trick nicely. At the time, I hadn't found a Mean Well AC-to-DC power adaptor with a 2.5 mm plug, only 2.1 mm. They offered an adaptor, but then I'd need to remember what the adaptor... adaptor is for.
+I'd ordered an [XP Power ACM12US09](https://www.xppower.com/portals/0/pdfs/SF_ACM12.pdf), which I hoped would do the trick nicely. At the time, I hadn't found a Mean Well AC-to-DC power adapter with a 2.5 mm plug, only 2.1 mm. They offered an adapter, but then I'd need to remember what the adapter... adapter is for.
 
 **Sources**
 

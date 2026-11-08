@@ -24,7 +24,7 @@ Moving the files across involved a rather convoluted arrangement. I used Paralle
 
 ![](/assets/images/2012/img_0263.jpg)
 
-The games run nicely, although the mouse could certainly be better. I've also got the usual collection of old Macintosh quirks to contend with, including the ADB keyboard and mouse connectors. Even the display needs a suitable Macintosh video adaptor, and not every monitor is happy with the resolutions these machines produce.
+The games run nicely, although the mouse could certainly be better. I've also got the usual collection of old Macintosh quirks to contend with, including the ADB keyboard and mouse connectors. Even the display needs a suitable Macintosh video adapter, and not every monitor is happy with the resolutions these machines produce.
 
 For the moment I'm using an older 4:3 screen, which suits the machine well enough. Jigsaw also made an appearance, although I seemed to spend an unreasonable amount of time working out where the pieces belonged. Perhaps a computer can be too good at keeping me distracted.
 

@@ -44,10 +44,10 @@ I replaced the scratched front screen, cleaned the controller buttons, put every
 
 So overall... success! The video above shows the Nomad during the initial tests.
 
-### Related posts
-
-- [Sega TeraDrive Model 2, Genesis Nomad and Mega Drive 2](/sega-teradrive-model-2-genesis-nomad-and-mega-drive-2/)
-
 ### Sources
 
-- [Sega Genesis Nomad instruction manual](https://manualzilla.com/doc/6982054/sega-genesis-nomad-instruction-manual) - documents compatibility with the Genesis 2 and Game Gear AC adaptors and the Nomad's external power arrangement.
+- [Sega Genesis Nomad Instruction Manual](https://manualzilla.com/doc/6982054/sega-genesis-nomad-instruction-manual)
+
+### Related Posts
+
+- [Sega TeraDrive Model 2, Genesis Nomad and Mega Drive 2](/sega-teradrive-model-2-genesis-nomad-and-mega-drive-2/)

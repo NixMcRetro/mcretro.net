@@ -45,7 +45,4 @@ Good times with Tetris and Super Mario Land, not to mention Snow Brothers on my 
 **Related Posts**
 
 - [Sega TeraDrive Model 2 with Windows 3.11 in a RAM Disk](/sega-teradrive-model-2-with-windows-311-in-a-ram-disk/)
-
-**Further Reading**
-
-- [Sega TeraDrive Hard Drive Interface Investigation](/sega-teradrive-hard-drive-interface-investigation/) - my later investigation into the TeraDrive's unusual 44-pin hard-drive interface.
+- [Sega TeraDrive Hard Drive Interface Investigation](/sega-teradrive-hard-drive-interface-investigation/)

@@ -22,7 +22,7 @@ One little mystery was solved along the way. The missing front-panel LED hadn't 
 
 Further down into the hardware we find more boards, plenty of connectors and even a little corrosion on one of the assemblies. Nothing particularly obvious appeared to have leaked onto it, so that was another curiosity to investigate.
 
-There are some rather interesting board markings in here too, including what appears to be a monitor board, a CPU board and an additional wireless adaptor section. I also found a little backup battery hidden rather deep inside the assembly. Wonderful place to put something that will eventually need attention!
+There are some rather interesting board markings in here too, including what appears to be a monitor board, a CPU board and an additional wireless adapter section. I also found a little backup battery hidden rather deep inside the assembly. Wonderful place to put something that will eventually need attention!
 
 The component selection is quite interesting as well. There are Rubycon capacitors on several of the boards, along with a collection of programmable logic and other devices. One of the chips appeared to have a 2007 date code, which fits nicely with the era of the Nintendo DS development hardware.
 

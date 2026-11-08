@@ -30,7 +30,7 @@ The original 386SX motherboard had suffered badly from a leaking NiCad backup ba
 
 ![](/assets/images/2012/img_0038.jpg)
 
-The upgraded PC side now runs at 33 MHz, compared with the original 25 MHz 386SX arrangement. It's fitted with 16 MB of RAM and an XT-IDE compatible CompactFlash adaptor, which makes booting DOS considerably more convenient. There's also still a regular hard drive, although the older BIOS has its own limitations.
+The upgraded PC side now runs at 33 MHz, compared with the original 25 MHz 386SX arrangement. It's fitted with 16 MB of RAM and an XT-IDE compatible CompactFlash adapter, which makes booting DOS considerably more convenient. There's also still a regular hard drive, although the older BIOS has its own limitations.
 
 And here we have the wonderful, just-as-gorgeous-486-version, the Amstrad PC7486SLC. If only more of the Mega PC Plus would have seen the light of day I'm certain the world we live in would be a better place! :)
 

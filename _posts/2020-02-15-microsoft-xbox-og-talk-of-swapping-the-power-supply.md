@@ -8,7 +8,7 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="Wm9SglIGCFY" %}
 
-Today we have a little chat about the Xbox OG PSU and how to swap it around. Will I get around to actually doing it though? Well, not in this video! I've got a rather lovely Kasumi Xbox that I picked up from Hex1gon, but being a Japanese console means dealing with a step-down transformer whenever I want to use it here in Australia.
+Today we have a little chat about the Xbox OG PSU and how to swap it around. Will I get around to actually doing it though? Well, not in this video! I've got a rather lovely Kasumi Xbox that I picked up from [HEX1GON](https://hexigon.blogspot.com/), but being a Japanese console means dealing with a step-down transformer whenever I want to use it here in Australia.
 
 I don't particularly like having consoles that need extra transformers. I prefer to pick something up, plug it in and have it work without hunting around for another box and a collection of cables. I'm lazy, what can I say? The Kasumi is worth keeping, so I thought I'd investigate whether one of my other Xbox power supplies might be suitable.
 

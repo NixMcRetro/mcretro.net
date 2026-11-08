@@ -18,9 +18,9 @@ First on the list of things to investigate was the clock battery. Fortunately, i
 
 Breaking through the original seals wasn't something I particularly enjoyed doing, especially on a development kit. Still, given the reputation of ageing Xbox clock capacitors and batteries, I thought it was better to inspect the hardware than leave a potential problem sitting there unnoticed.
 
-I'd already been experimenting with a 120 GB SSD using a SATA-to-IDE adaptor. The drive fitted rather nicely, although getting the cables arranged inside the Xbox was becoming another matter entirely. I'd picked up a longer 80-conductor IDE cable to help with the installation.
+I'd already been experimenting with a 120 GB SSD using a SATA-to-IDE adapter. The drive fitted rather nicely, although getting the cables arranged inside the Xbox was becoming another matter entirely. I'd picked up a longer 80-conductor IDE cable to help with the installation.
 
-There's a rather awkward arrangement of cables inside this machine, including a separate connection for the optical drive. The original Thomson drive isn't in the best condition either, so I wasn't particularly worried about designing everything around continued use of that mechanism. The SSD itself fitted rather nicely in its adaptor, which was encouraging.
+There's a rather awkward arrangement of cables inside this machine, including a separate connection for the optical drive. The original Thomson drive isn't in the best condition either, so I wasn't particularly worried about designing everything around continued use of that mechanism. The SSD itself fitted rather nicely in its adapter, which was encouraging.
 
 The original hard drive also provided a little entertainment when I accidentally put it into another Xbox and discovered that it would boot. There was plenty more to explore with the development firmware, recovery discs and drive configurations, but that's what the rest of this series is for.
 

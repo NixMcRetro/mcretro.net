@@ -12,7 +12,7 @@ Back in mid-2022 I was given this modem as a gift, and while I wasn't looking fo
 
 ![](/assets/images/2023/img_1079.jpg)
 
-Externally it is marked as a NetComm Roadster V.92 model AM5698, serial T510001CN0251. The label specifies 7.5 V DC, 450 mA, and I recorded the input as centre-positive. That's this unit's setup, rather than a specification for every NetComm AM56XX or Banksia Wave SP modem. The video even shows how irritating the power plugs can be: one other Roadster plug was loose in this socket, while the plug from this modem wouldn't fit the other unit at all. So much for keeping a single convenient power adaptor for the modem shelf.
+Externally it is marked as a NetComm Roadster V.92 model AM5698, serial T510001CN0251. The label specifies 7.5 V DC, 450 mA, and I recorded the input as centre-positive. That's this unit's setup, rather than a specification for every NetComm AM56XX or Banksia Wave SP modem. The video even shows how irritating the power plugs can be: one other Roadster plug was loose in this socket, while the plug from this modem wouldn't fit the other unit at all. So much for keeping a single convenient power adapter for the modem shelf.
 
 ![](/assets/images/2023/img_1076.jpg)
 

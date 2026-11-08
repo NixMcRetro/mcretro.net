@@ -34,11 +34,11 @@ I'm also planning to compare the BIOS socket connections with the other Game Uni
 
 There's still a fair bit to do, but the socket is installed, the damaged connections have been repaired and the continuity checks look good. More Aiwa repairs to come. There always are!
 
+**Sources**
+
+- [ASSEMblergames Archive - Region Free BIOS for Mega-CD version 2.00](https://web.archive.org/web/20191113105414/https://assemblergames.com/threads/region-free-bios-for-mega-cd-version-2-00.54254/)
+
 **Related Posts**
 
 - [Aiwa Mega-CD CSD-GM1 BIOS Dump: MPR-15768-T](/aiwa-mega-cd-csd-gm1-bios-dump-mpr-15768-t/)
 - [Aiwa Mega-CD Game Unit BIOS Socket Preparation](/aiwa-mega-cd-game-unit-bios-socket-preparation/)
-
-**Sources**
-
-- [ASSEMblergames Archive - Region Free BIOS for Mega-CD version 2.00](https://web.archive.org/web/20191113105414/https://assemblergames.com/threads/region-free-bios-for-mega-cd-version-2-00.54254/)

@@ -48,13 +48,13 @@ Here are half of the notes I kept along the way, the rest were lost in a feveris
 
 Just keep at it and never give up. I didn't! ;)
 
-**Related Posts**
-
-- [Original Xbox Softmod to TSOP Flash Project](/original-xbox-softmod-to-tsop-flash-project/)
-- [Original Xbox TSOP Flash Overview](/xbox-original-tsop-flash-overview/)
-
 **Sources**
 
 - [XboxDevWiki - EEPROM](https://xboxdevwiki.net/EEPROM)
 - [ConsoleMods Wiki - Xbox Drive Locking](https://consolemods.org/wiki/Xbox:Drive_Locking)
 - [ConsoleMods Wiki - Xbox TSOP Flashing](https://consolemods.org/wiki/Xbox:TSOP_Flashing)
+
+**Related Posts**
+
+- [Original Xbox Softmod to TSOP Flash Project](/original-xbox-softmod-to-tsop-flash-project/)
+- [Original Xbox TSOP Flash Overview](/xbox-original-tsop-flash-overview/)

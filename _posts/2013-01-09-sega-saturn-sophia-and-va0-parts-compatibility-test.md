@@ -26,11 +26,11 @@ So we've confirmed that the Sophia CD mechanism can run a commercial Saturn game
 
 I'll also be taking more detailed photographs as everything goes back together. Yes, I am that slow at the moment. At least I've got another excuse to pull Sophia apart and have a good look at all those lovely Sega chips!
 
+**Sources**
+
+- [ConsoleMods - Saturn Model Differences](https://consolemods.org/wiki/Saturn:Saturn_Model_Differences)
+
 **Related Posts**
 
 - [Sega Saturn Sophia SH-2 CPU Cards: 171-6692B vs 171-6692D](/sega-saturn-sophia-sh-2-cpu-cards-171-6692b-vs-171-6692d/)
 - [Sophia Systems Sega Saturn Programming Box: Capacitor Restoration Complete](/sophia-systems-sega-saturn-programming-box-capacitor-restoration-complete/)
-
-**Sources**
-
-- [ConsoleMods - Saturn Model Differences](https://consolemods.org/wiki/Saturn:Saturn_Model_Differences)

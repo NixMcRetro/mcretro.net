@@ -38,10 +38,10 @@ I even found references to Microsoft Works and Prodigy among the possible startu
 
 Unfortunately, `CONFIGUR.EXE` was rather less cooperative. It promptly informed me that it wasn't designed to run on this system. I haven't established whether any of my changes were saved successfully, but these utilities give me a few more things to investigate while I continue working on the TeraDrive's hard drive interface.
 
-**Related Posts**
-
-- [Sega TeraDrive Hard Drive Interface Investigation](/sega-teradrive-hard-drive-interface-investigation/)
-
 **Sources**
 
 - [MAME - Sega TeraDrive driver notes](https://github.com/mamedev/mame/blob/master/src/mame/pc/teradrive.cpp)
+
+**Related Posts**
+
+- [Sega TeraDrive Hard Drive Interface Investigation](/sega-teradrive-hard-drive-interface-investigation/)

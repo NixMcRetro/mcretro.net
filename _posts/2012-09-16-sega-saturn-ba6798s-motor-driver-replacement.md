@@ -28,11 +28,11 @@ So that's one possible culprit investigated and another unsuccessful Saturn repa
 
 I suppose that's canned tuna for dinner instead of pizza.
 
+**Sources**
+
+- [ROHM BA6798S Datasheet](https://www.alldatasheet.com/datasheet-pdf/pdf/36119/ROHM/BA6798S.html)
+
 **Related Posts**
 
 - [Sega Saturn CD Deck Diagnosis: BA6798S Suspect](/sega-saturn-cd-deck-diagnosis-ba6798s-suspect/)
 - [Faulty Japanese Sega Saturn: CD Drive Problems](/faulty-japanese-sega-saturn-cd-drive-problems/)
-
-**Sources**
-
-- [ROHM BA6798S Datasheet](https://www.alldatasheet.com/datasheet-pdf/pdf/36119/ROHM/BA6798S.html)

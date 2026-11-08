@@ -38,10 +38,10 @@ As a rule, I upload my failures as well as my successes. There's not much point 
 
 At least I got some interesting high-speed footage out of the whole disaster, along with a pair of X-clamps that look rather like ninja stars. For now, I think I'll go back to repairing something from the 16-bit era! :)
 
-**Related Posts**
-
-- [Microsoft Xbox 360 RROD Initial Assessment](/microsoft-xbox-360-initial-assessment-rrod/)
-
 **Sources**
 
 - [XenonLibrary - Xbox 360 Errors](https://xenonlibrary.com/wiki/Errors)
+
+**Related Posts**
+
+- [Microsoft Xbox 360 RROD Initial Assessment](/microsoft-xbox-360-initial-assessment-rrod/)

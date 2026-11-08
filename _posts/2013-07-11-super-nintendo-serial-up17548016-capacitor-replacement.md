@@ -28,11 +28,11 @@ Capacitor life depends on the particular part and its operating conditions, so r
 
 The Super Nintendo was back in action, and I even managed to get distracted by Urban Strike and its rather grubby cartridge contacts. Some things never change!
 
+**Sources**
+
+- [Nichicon - Aluminium Electrolytic Capacitors Technical Notes](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)
+
 **Related Posts**
 
 - [Super Nintendo Serial UP17548016 - Repaired](/super-nintendo-serial-up17548016-repaired/)
 - [Super Nintendo Dual Capacitor Replacement High-Speed](/super-nintendo-dual-capacitor-replacement-high-speed/)
-
-**Sources**
-
-- [Nichicon - Aluminium Electrolytic Capacitors Technical Notes](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)

@@ -38,10 +38,10 @@ The *Sol-Feace* footage at the top is a separate gameplay recording from another
 
 And as for *Sol-Feace*, I think I'll need considerably more practice. Apparently owning an enormous collection of Sega hardware doesn't automatically make you good at the games.
 
-**Related Posts**
-
-- [Fuse Replacement on the Sega Mega-CD Model 1](/fuse-replacement-on-the-sega-mega-cd-model-1/)
-
 **Sources**
 
 - [Sega Mega-CD II service manual](https://manualzz.com/doc/23428729/sega-ii-cd-ii-cd--ii-mega-cd-ii-mega-cd-service-manual)
+
+**Related Posts**
+
+- [Fuse Replacement on the Sega Mega-CD Model 1](/fuse-replacement-on-the-sega-mega-cd-model-1/)

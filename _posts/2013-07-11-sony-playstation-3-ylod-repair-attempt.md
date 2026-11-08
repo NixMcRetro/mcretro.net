@@ -30,11 +30,11 @@ I'd have liked to know exactly what had failed, but the yellow light wasn't goin
 
 **Later note:** SYSCON error logging can provide more useful clues about a faulty PS3. I didn't record any SYSCON codes during this attempt, and if I were tackling another one, I'd rather find out what it was complaining about before reaching for the heat gun again!
 
-**Related Posts**
-
-- [Sony PlayStation 3 - Initial Assessment YLOD](/sony-playstation-3-initial-assessment-ylod/)
-
 **Sources**
 
 - [PS3 Developer Wiki - Boot modes: YLOD](https://www.psdevwiki.com/ps3/Boot_modes)
 - [PS3 Developer Wiki - Syscon Error Codes](https://www.psdevwiki.com/ps3/Syscon_Error_Codes)
+
+**Related Posts**
+
+- [Sony PlayStation 3 - Initial Assessment YLOD](/sony-playstation-3-initial-assessment-ylod/)

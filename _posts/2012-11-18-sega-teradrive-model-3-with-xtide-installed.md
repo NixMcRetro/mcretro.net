@@ -25,12 +25,12 @@ I've personally confirmed IBM WDL-330P drives working in the TeraDrive. WDL-330P
 
 Fresh date and time batteries, modern storage options and both TeraDrives booting properly. The Model 3 behaved like a gentleman and a scholar throughout the experiment, which is more than I can say for some of the hardware I've worked on recently. Hopefully nothing else will go wrong! Fingers crossed! :D
 
-### Further Reading
+### Sources
+
+- [Sega Hardware Archive: TeraDrive (Model 3, 30 MB HDD)](https://www.sega.jp/fb/segahard/md/tera.html)
+- [IBM Files: PS/2 Model 25 (Direct-Bus HDD Interface)](https://www.ibmfiles.com/pages/ps2model25.htm)
+
+### Related Posts
 
 - [Sega TeraDrive Hard Drive Interface Investigation](/sega-teradrive-hard-drive-interface-investigation/)
 - [Sega TeraDrive Model 3 Hard Drive Replacement](/sega-teradrive-model-3-hard-drive-replacement/)
-
-### Sources
-
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - documents the Model 3 with a 30 MB internal hard drive and the Model 2 without one.
-- [IBM Files - PS/2 Model 25](https://www.ibmfiles.com/pages/ps2model25.htm) - documents the related proprietary direct-bus-attachment storage arrangement.

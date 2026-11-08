@@ -8,7 +8,7 @@ categories: [ibm-pc, repairs, sega]
 
 {% include youtube.html id="oGvDwl04crs" %}
 
-Before attempting anything particularly ambitious with the Amstrad Mega PC, I thought I'd practice removing a few chips from an old RAM board. I've been experimenting with a heat gun at around 320 degrees Celsius, and the first attempts were surprisingly successful. Once the solder softened, the little chips came away without obvious damage to the tracks.
+Before attempting anything particularly ambitious with the Amstrad Mega PC, I thought I'd practice removing a few chips from an old RAM board. I've been experimenting with a heat gun at around 320°C, and the first attempts were surprisingly successful. Once the solder softened, the little chips came away without obvious damage to the tracks.
 
 That was encouraging, although a scrap memory board is a rather different proposition from the Mega PC motherboard. A general-purpose heat gun isn't exactly ideal for delicate electronics work, but I wanted to see what I could manage with the equipment I had available.
 
@@ -50,11 +50,11 @@ The experiment wasn't a complete waste. I learned a great deal about removing an
 
 There are more photographs of both motherboards in the [photo gallery](/goodies/).
 
-**Further Reading**
-
-- [Amstrad Sega Mega PC 386SX CPU Replacement Attempt](/amstrad-sega-mega-pc-386sx-cpu-replacement-attempt/) - the earlier investigation and upgrade plans.
-
 **Sources**
 
-- [Texas Instruments TI486SXLC and TI486SXL Microprocessors Reference Guide](https://www.bitsavers.org/components/ti/TI486/1994_TI486SXLC_and_TI486SXL_Microprocessors_Reference_Guide.pdf) - documents the SXLC2 family and 100-pin QFP package.
-- [Texas Instruments - Designing With the TI486SXL2-G](https://www.bitsavers.org/components/ti/TI486/SRZA004_Designing_With_The_TI486SCL2-G_199502.pdf) - covers power requirements and hardware compatibility considerations.
+- [Texas Instruments: TI486SXLC/SXL Reference Guide (100-Pin QFP)](https://www.bitsavers.org/components/ti/TI486/1994_TI486SXLC_and_TI486SXL_Microprocessors_Reference_Guide.pdf)
+- [Texas Instruments: Designing with TI486SXL2-G (Power and Compatibility)](https://www.bitsavers.org/components/ti/TI486/SRZA004_Designing_With_The_TI486SCL2-G_199502.pdf)
+
+**Related Posts**
+
+- [Amstrad Sega Mega PC 386SX CPU Replacement Attempt](/amstrad-sega-mega-pc-386sx-cpu-replacement-attempt/)

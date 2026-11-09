@@ -38,10 +38,10 @@ There's still the question of the audio. At first I was only getting very faint 
 
 For now, though, it's fantastic to have the Mega Drive section running on its own. At least I can test the Game Units without having the entire Aiwa spread across the bench every time!
 
-### Related posts
-
-- [Aiwa Mega-CD CSD-GM1 Unit-02 Mainboard Cross-Test with Both Game Units](/aiwa-mega-cd-csd-gm1-unit-02-mainboard-cross-test-with-both-game-units/)
-
 ### Sources
 
 - [MEAN WELL - Notes on LED Drivers & Luminaires, Note 1.5](https://led.meanwell.com/productPre.aspx)
+
+### Related Posts
+
+- [Aiwa Mega-CD CSD-GM1 Unit-02 Mainboard Cross-Test with Both Game Units](/aiwa-mega-cd-csd-gm1-unit-02-mainboard-cross-test-with-both-game-units/)

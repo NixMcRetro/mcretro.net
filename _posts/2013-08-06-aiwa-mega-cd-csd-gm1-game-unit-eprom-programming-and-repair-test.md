@@ -22,7 +22,7 @@ And there it was, the Mega-CD BIOS screen appeared. Beautiful! After all those d
 
 That gives me some good news about the trace repairs and the programmed chip. There's still more work to do on these Aiwa units, but at least this particular experiment went in the right direction.
 
-### Related posts
+### Related Posts
 
 - [Aiwa Mega-CD CSD-GM1 BIOS Dump: MPR-15768-T](/aiwa-mega-cd-csd-gm1-bios-dump-mpr-15768-t/)
 - [Aiwa Mega-CD Game Unit BIOS Socket Installation and Trace Repair](/aiwa-mega-cd-game-unit-bios-socket-installation-and-trace-repair/)

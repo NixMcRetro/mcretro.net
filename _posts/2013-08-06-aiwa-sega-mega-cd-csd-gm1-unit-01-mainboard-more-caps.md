@@ -18,11 +18,11 @@ Fortunately, I had the correct 220 uF replacement available, so that went in ins
 
 The mainboard is now recapped apart from one small capacitor I forgot to order. I've also got some transistor and voltage-regulator work coming up once the remaining parts arrive. There's still plenty to do before I can call either of these Aiwas properly repaired!
 
-### Related posts
-
-- [Aiwa Sega Mega-CD CSD-GM1 01-01 Mainboard (Part 1: Capacitor Replacement)](/aiwa-sega-mega-cd-csd-gm1-01-01-mainboard-part-1-capacitor-replacement/)
-- [Aiwa Mega-CD CSD-GM1 Capacitor Values](/aiwa-mega-cd-csd-gm1-capacitor-values/)
-
 ### Sources
 
 - [Nichicon - Aluminum Electrolytic Capacitor Technical Notes](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)
+
+### Related Posts
+
+- [Aiwa Sega Mega-CD CSD-GM1 01-01 Mainboard (Part 1: Capacitor Replacement)](/aiwa-sega-mega-cd-csd-gm1-01-01-mainboard-part-1-capacitor-replacement/)
+- [Aiwa Mega-CD CSD-GM1 Capacitor Values](/aiwa-mega-cd-csd-gm1-capacitor-values/)

@@ -32,4 +32,4 @@ I'm rather pleased with this little instrument. Next time Sophia or one of her s
 
 **Sources**
 
-- [Bob Parker and Alltronics/AnaTek - Blue ESR Meter Kit Assembly, Use & Troubleshooting Manual (May 2024 edition, hosted copy)](https://manuals.plus/m/de1ab2bcb96fda46b2015c3cd9b3aee9bdb5b7727ff944b908d73a81ac5070f4_optim.pdf)
+- [Bob Parker and Alltronics/AnaTek: Blue ESR Meter Manual (May 2024 Hosted Edition)](https://manuals.plus/m/de1ab2bcb96fda46b2015c3cd9b3aee9bdb5b7727ff944b908d73a81ac5070f4_optim.pdf)

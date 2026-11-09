@@ -26,6 +26,6 @@ Still, we have a cassette deck playing music and sound coming from both speakers
 
 The good news is, I have a solution for the damaged mechanism in mind. Stay tuned for more on this as it unfolds day by day, month by month!
 
-### Related posts
+### Related Posts
 
 - [Aiwa CSD-EX80 vs Aiwa Mega-CD CSD-GM1: Donor Comparison](/aiwa-csd-ex80-vs-aiwa-mega-cd-csd-gm1-donor-comparison/)

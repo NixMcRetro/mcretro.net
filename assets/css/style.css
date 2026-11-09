@@ -495,9 +495,11 @@ pre code {
   text-decoration: none;
 }
 /* Merged Hover & Active States */
-.main-nav a:hover {
+.main-nav a:hover,
+.main-nav a:focus-visible {
   color: var(--link);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
 }
 .main-nav a.active {
   color: var(--text);
@@ -1320,9 +1322,12 @@ pre code {
     font-weight: 500;
     transition: background 0.2s ease, color 0.2s ease;
   }
-  .nav-list li a:hover {
+  .nav-list li a:hover,
+  .nav-list li a:focus-visible {
     background: var(--button-bg);
     color: var(--button-text);
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
   }
   .main-nav[data-nav="open"] .nav-list {
     max-height: 600px;

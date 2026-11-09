@@ -24,7 +24,7 @@ Of course I still had to work out how to slap all of this onto a Raspberry Pi 2 
 - [ZeroNet - Frequently Asked Questions](https://github.com/HelloZeroNet/Documentation/blob/master/docs/en/faq.md)
 - [Namecoin](https://www.namecoin.org/)
 
-### Related posts
+### Related Posts
 
 - [The Darknet (Day 36)](/the-darknet-day-36/)
 - [Take Back the Darknet (Part 1)](/take-back-the-darknet-part-1/)

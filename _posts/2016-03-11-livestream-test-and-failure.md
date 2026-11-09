@@ -14,7 +14,7 @@ The fun starts in 45 minutes. Let's see if I can configure all this software for
 
 All that aside, happy fourth birthday to the Nix McRetro Show! Four years on YouTube today. Look at those early videos... incredible quality, amazing content! Not much has changed, I suppose. ;)
 
-### Related posts
+### Related Posts
 
 - [4th Year Anniversary on YouTube](/4th-year-anniversary-on-youtube/)
 - [Doom Live Stream Test - 360p Success!](/doom-live-stream-test-360p-success/)

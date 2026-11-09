@@ -16,6 +16,6 @@ The second one is a Duron 650 with about 393 MB of RAM and bulging capacitors al
 
 The timing was also useful because I was looking for an AT or ATX power supply for the Sega TeraDrive experiments. Apparently I needed 5 A on the 12 V rail. Or was it the 5 V rail... Yeah, clearly I hadn't confirmed that part yet. :P So don't take that as a TeraDrive power specification. That's another video for the near future.
 
-### Related posts
+### Related Posts
 
 - [Sega TeraDrive Model 3 Power Supply Failure](/sega-teradrive-model-3-power-supply-failure/)

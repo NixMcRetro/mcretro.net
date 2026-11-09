@@ -26,14 +26,14 @@ And below we have *another* silly video from the old Fallout 4!
 
 {% include youtube.html id="_IBaS93jBTQ" %}
 
-### Related posts
+### Sources
+
+- [Sergey's Projects - XT-CF-Lite V4](https://web.archive.org/web/20151122024219/http://www.malinov.com/Home/sergeys-projects/xt-cf-lite)
+- [Lo-tech - XT-CF-lite rev.2](https://www.lo-tech.co.uk/product/xt-cf-lite-rev-2-pcb/)
+
+### Related Posts
 
 - [XTIDE Settings for the Sega TeraDrive](/xtide-settings-for-the-sega-teradrive/)
 - [Cloning CompactFlash Cards with HDD Raw Copy Tool](/cloning-compactflash-cards-with-hdd-raw-copy-tool/)
 - [Sega TeraDrive Model 2 External Overview](/sega-teradrive-model-2-external-overview/)
 - [Sega TeraDrive Model 3 Power Supply Failure](/sega-teradrive-model-3-power-supply-failure/)
-
-### Sources
-
-- [Sergey's Projects - XT-CF-Lite V4](https://web.archive.org/web/20151122024219/http://www.malinov.com/Home/sergeys-projects/xt-cf-lite)
-- [Lo-tech - XT-CF-lite rev.2](https://www.lo-tech.co.uk/product/xt-cf-lite-rev-2-pcb/)

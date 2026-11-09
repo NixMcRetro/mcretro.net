@@ -20,6 +20,6 @@ Something still seemed wrong with the performance of this particular unit, and t
 
 - [Dimplex - DC10RC / DC12RCBW / DC15RCBW instruction manual](https://www.dimplex.com.au/sites/g/files/emiian331/files/2020-08/DC10RC_DC12RCBW_DC15RCBW_Instruction_Manual_yiilzy.pdf)
 
-### Related posts
+### Related Posts
 
 - [The Dimplex DC15RCBW Reverse Cycle Air Conditioner](/the-dimplex-dc15rcbw-reverse-cycle-air-conditioner/)

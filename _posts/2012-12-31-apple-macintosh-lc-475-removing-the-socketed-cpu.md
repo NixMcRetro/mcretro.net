@@ -18,10 +18,10 @@ Once the new CPU was seated properly, I borrowed the old heatsink and used some 
 
 So that's the CPU swap. The next experiment is to get the LC 475 running at 33 MHz and see what happens.
 
-### Related posts
-
-- [Apple Macintosh LC 475: Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33-mhz/)
-
 ### Sources
 
-- [Apple - Macintosh LC 475 Technical Specifications](https://support.apple.com/en-la/112204) - documenting the original 68LC040 processor.
+- [Apple: Macintosh LC 475 Technical Specifications (Stock 68LC040)](https://support.apple.com/en-la/112204)
+
+### Related Posts
+
+- [Apple Macintosh LC 475: Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33-mhz/)

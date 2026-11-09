@@ -26,10 +26,10 @@ After repartitioning and formatting one of the drives with the HP USB Formatter 
 
 So this is definitely not over yet. Revenge of the Microdrives will follow!
 
-### Related posts
-
-- [MicroDrives: Revenge of the MicroDrives](/apple-macintosh-lc-475-revenge-of-the-microdrives/)
-
 ### Sources
 
-- [Hitachi Global Storage Technologies - Microdrive product information](https://www.hitachigst.com/portal/site/en/products/microdrive/) - historical product information for Hitachi Microdrive storage devices.
+- [Hitachi Global Storage Technologies: Microdrive Product Information](https://www.hitachigst.com/portal/site/en/products/microdrive/)
+
+### Related Posts
+
+- [MicroDrives: Revenge of the MicroDrives](/apple-macintosh-lc-475-revenge-of-the-microdrives/)

@@ -24,11 +24,11 @@ For light period web browsing it works surprisingly well. If I had to compare it
 
 No one's going to mistake this for a modern web browser, especially after watching it struggle with my own website. Still, I've got a 68K Macintosh on the internet. I'll take it!
 
-### Related posts
+### Sources
+
+- [Apple: Macintosh LC 475 Technical Specifications (LC III PDS)](https://support.apple.com/en-la/112204)
+
+### Related Posts
 
 - [The Apple Macintosh LC 475](/the-apple-macintosh-lc-475/)
 - [Osborne 486 5.25-inch Floppy Drive Addition](/osborne-486-525-inch-floppy-drive-addition/)
-
-### Sources
-
-- [Apple - Macintosh LC 475 Technical Specifications](https://support.apple.com/en-la/112204) - documents the LC 475 hardware, LC III PDS expansion slot and supported system software range.

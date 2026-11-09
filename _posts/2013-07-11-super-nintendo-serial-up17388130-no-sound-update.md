@@ -16,11 +16,11 @@ That might explain why we've got no audio. I was already looking for another way
 
 At least the new capacitors are fitted. I'm hoping they'll stay leak-free for another 15 to 20 years, although of course that depends on the parts and their operating conditions. For now, the sound problem remains, and the S-MIX chip has moved right to the top of my list.
 
-### Related posts
+### Sources
+
+- [Nichicon: Aluminum Electrolytic Capacitors (Technical Notes)](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)
+
+### Related Posts
 
 - [Super Nintendo Serial UP17388130 - No Sound](/super-nintendo-serial-up17388130-no-sound/)
 - [Damaged S-MIX on a SNES SNSP-CPU-1CHIP-02 Mainboard](/damaged-s-mix-on-a-snes-snsp-cpu-1chip-02-mainboard/)
-
-### Sources
-
-- [Nichicon - General Descriptions of Aluminum Electrolytic Capacitors (Technical Notes)](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)

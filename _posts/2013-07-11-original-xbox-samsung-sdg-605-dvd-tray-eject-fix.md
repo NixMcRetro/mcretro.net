@@ -22,10 +22,10 @@ This was an SDG-605 F revision, as fitted to one of the Xbox 1.6 machines I had 
 
 Sometimes all it takes is a sticker and a few spare parts. I wonder whether I've got any 50%-off stickers lying around?
 
-### Related posts
-
-- [Original Xbox Hitachi-LG GDR-8050L DVD Tray Repair](/original-xbox-hitachi-lg-gdr-8050l-dvd-tray-repair/)
-
 ### Sources
 
 - [ConsoleMods Wiki - Xbox DVD-ROM](https://consolemods.org/wiki/Xbox:DVDROM)
+
+### Related Posts
+
+- [Original Xbox Hitachi-LG GDR-8050L DVD Tray Repair](/original-xbox-hitachi-lg-gdr-8050l-dvd-tray-repair/)

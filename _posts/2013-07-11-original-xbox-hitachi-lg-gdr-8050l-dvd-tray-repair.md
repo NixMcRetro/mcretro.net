@@ -26,11 +26,11 @@ With this one working, I've now got three functioning Xbox consoles out of four.
 
 Not bad considering these consoles were only about ten dollars each. Shipping them was another matter entirely. Those things are heavy!
 
-### Related posts
-
-- [Original Xbox Samsung SDG-605 DVD Tray Eject Fix](/original-xbox-samsung-sdg-605-dvd-tray-eject-fix/)
-
 ### Sources
 
 - [XboxDevWiki - Hardware Revisions](https://xboxdevwiki.net/Hardware_Revisions)
 - [ConsoleMods Wiki - Xbox DVD-ROM](https://consolemods.org/wiki/Xbox:DVDROM)
+
+### Related Posts
+
+- [Original Xbox Samsung SDG-605 DVD Tray Eject Fix](/original-xbox-samsung-sdg-605-dvd-tray-eject-fix/)

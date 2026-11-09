@@ -22,13 +22,13 @@ So this remains a collection of notes rather than a complete installation guide.
 
 One problem at a time. Preferably without setting fire to anything. :)
 
-### Related posts
-
-- [SuperCIC Installation Notes for SNSP-CPU-02 with F413A](/supercic-installation-notes-snsp-cpu-02-f413a/)
-- [SNES SuperCIC Switchless Modchip - Installation (Part 1)](/snes-supercic-switchless-modchip-installation-part-1/)
-- [SNES SuperCIC Switchless Modchip - The Test (Part 2)](/snes-supercic-switchless-modchip-the-test-part-2/)
-
 ### Sources
 
 - [Wolfsoft - SuperCIC SNES Switchless MOD (PAL)](https://wolfsoft.de/blog/2010/05/10/supercic-snes-switchless-mod/)
 - [ikari - SuperCIC Project and Firmware](https://sd2snes.de/blog/cool-stuff/supercic)
+
+### Related Posts
+
+- [SuperCIC Installation Notes for SNSP-CPU-02 with F413A](/supercic-installation-notes-snsp-cpu-02-f413a/)
+- [SNES SuperCIC Switchless Modchip - Installation (Part 1)](/snes-supercic-switchless-modchip-installation-part-1/)
+- [SNES SuperCIC Switchless Modchip - The Test (Part 2)](/snes-supercic-switchless-modchip-the-test-part-2/)

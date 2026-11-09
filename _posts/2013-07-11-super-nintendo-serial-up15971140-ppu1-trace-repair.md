@@ -24,6 +24,6 @@ I took the board downstairs afterwards for a better look at the soldering work. 
 
 Issue resolved! This one was fun.
 
-### Related posts
+### Related Posts
 
 - [Super Nintendo Serial UP15971140 - Video Distortion](/super-nintendo-serial-up15971140-video-distortion/)

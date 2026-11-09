@@ -47,5 +47,5 @@ Wait a long time, check Activity Monitor for disk activity.
 
 ### Sources
 
-- [Apple - File System Programming Guide: File System Details](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemDetails/FileSystemDetails.html) - documents Mac OS Standard / HFS support limitations in later OS X releases.
-- [Apple Open Source - dd manual](https://github.com/apple-oss-distributions/file_cmds/blob/main/dd/dd.1) - documents the input, output and block-size operands.
+- [Apple: File System Programming Guide (Mac OS Standard / HFS Support)](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemDetails/FileSystemDetails.html)
+- [Apple Open Source: dd Manual (Input, Output and Block Size)](https://github.com/apple-oss-distributions/file_cmds/blob/main/dd/dd.1)

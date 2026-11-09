@@ -20,4 +20,4 @@ You can't win them all, but it's nice when there's a nearby via or solder point 
 
 ### Sources
 
-- [Nichicon - General Descriptions of Aluminum Electrolytic Capacitors (Technical Notes)](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)
+- [Nichicon: Aluminum Electrolytic Capacitors (Technical Notes)](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)

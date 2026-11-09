@@ -24,13 +24,13 @@ So where do we go from here? I've got some spare chips from another water-damage
 
 Stay tuned, because we've got more experiments coming up, including VRAM replacement and some other rather interesting attempts to bring this Mega Drive back to life.
 
-### Related posts
+### Sources
+
+- [Sega Retro - Sega Mega Drive PCB Revisions](https://segaretro.org/Sega_Mega_Drive_PCB_revisions)
+
+### Related Posts
 
 - [Let's Sing Karaoke: Pac-Panic (1993)](/lets-sing-karaoke-pac-panic-1993/)
 - [Voltage Drop on a Sega Mega Drive 2](/voltage-drop-on-a-sega-mega-drive-2/)
 - [Replacing VRAM on a Sega Mega Drive 2](/replacing-vram-on-a-sega-mega-drive-2/)
 - [Replacing the Video Encoder Chip and AV Socket on a Mega Drive 2](/replacing-the-video-encoder-chip-and-av-socket-on-a-mega-drive-2/)
-
-### Sources
-
-- [Sega Retro - Sega Mega Drive PCB Revisions](https://segaretro.org/Sega_Mega_Drive_PCB_revisions)

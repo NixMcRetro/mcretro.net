@@ -29,7 +29,7 @@ For now, though, it's nice to have this one making noise again! Big thanks to [S
 - [Console5 TechWiki - UPD6379](https://console5.com/wiki/UPD6379)
 - [NEC - UPD6379, 6379A, 6379L, 6379AL datasheet](https://wiki.console5.com/tw/images/9/98/UPD6379.pdf)
 - [NintendoAge - SNES 1chip with no sound (archived)](https://web.archive.org/web/20191029031401/http://nintendoage.com/forum/messageview.cfm?catid=8&threadid=156634)
-- [ASSEMblerGames - SNES mainboard repair, no sound (serial UP17372657) (archived)](https://web.archive.org/web/20191112060628/https://assemblergames.com/threads/snes-mainboard-repair-no-sound-serial-up17372657.63061/)
+- [ASSEMblerGames Archive: SNES No-Sound Mainboard Repair (Serial UP17372657)](https://web.archive.org/web/20191112060628/https://assemblergames.com/threads/snes-mainboard-repair-no-sound-serial-up17372657.63061/)
 
 ### Related Posts
 

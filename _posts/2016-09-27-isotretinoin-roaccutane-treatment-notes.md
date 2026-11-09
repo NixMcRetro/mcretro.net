@@ -55,7 +55,7 @@ I'll have to see how things go. I've certainly done enough spreadsheet work for 
 ### Sources
 
 - [Australian Commission on Safety and Quality in Health Care - Roaccutane](https://www.safetyandquality.gov.au/medicine-finder/roaccutane)
-- [PubMed - Effect of dietary fish oil on hyperlipidaemia due to isotretinoin and etretinate](https://pubmed.ncbi.nlm.nih.gov/2954894/)
+- [PubMed: Fish Oil and Retinoid-Associated Hyperlipidaemia (Isotretinoin/Etretinate)](https://pubmed.ncbi.nlm.nih.gov/2954894/)
 
 ### Related Posts
 

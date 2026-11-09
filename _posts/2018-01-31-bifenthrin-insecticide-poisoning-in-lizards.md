@@ -23,4 +23,4 @@ I don't think I'll hire anyone to spray the garden for anything ever again.
 ### Sources
 
 - [National Pesticide Information Center - Bifenthrin Technical Fact Sheet](https://npic.orst.edu/factsheets/archive/biftech.html)
-- [Larry G. Talent - Effect of temperature on toxicity of a natural pyrethrin pesticide to green anole lizards (Anolis carolinensis), 2005](https://onlinelibrary.wiley.com/doi/10.1897/05-053R.1)
+- [Larry G. Talent: Temperature and Natural Pyrethrin Toxicity in Green Anole Lizards (2005)](https://onlinelibrary.wiley.com/doi/10.1897/05-053R.1)

@@ -30,6 +30,6 @@ Perhaps the PSIO project will eventually make dealing with these ancient CD mech
 
 For now, I'm left with a collection of replacement drives that aren't quite as useful as I'd hoped. What a disappointment!
 
-### Related posts
+### Related Posts
 
 - [Sony PlayStation Junk CD Decks - Partial Solution (Part 2)](/sony-playstation-junk-cd-decks-partial-solution-part-2/)

@@ -24,12 +24,12 @@ So there you go, a quick look inside the mechanism. With a little patience, you 
 
 Unfortunately, the spindle hubs on some of these replacements are still another story entirely!
 
-### Related posts
-
-- [Sony PS one Replacement Laser Assembly Spindle Hub Height Issues](/sony-ps-one-replacement-laser-assembly-spindle-hub-height-issues/)
-- [Sony PS one Laser Replacement with Extra Issues](/sony-ps-one-laser-replacement-with-extra-issues/)
-
 ### Sources
 
 - [Sony - SCPH-100 Series Service Manual, Main Block](https://www.manualslib.com/manual/3843741/Sony-Psone-Scph-102.html?page=4)
 - [Sony - SCPH-5500/5501/5502/5503 Service Manual](https://delta-island.com/downloads/sony-ps1/service-manual/playstation-ps1-service-manual-SCPH-5500_5501_5502_5503.pdf)
+
+### Related Posts
+
+- [Sony PS one Replacement Laser Assembly Spindle Hub Height Issues](/sony-ps-one-replacement-laser-assembly-spindle-hub-height-issues/)
+- [Sony PS one Laser Replacement with Extra Issues](/sony-ps-one-laser-replacement-with-extra-issues/)

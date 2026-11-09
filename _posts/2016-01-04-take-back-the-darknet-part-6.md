@@ -78,9 +78,9 @@ sudo chgrp -R www-data /var/www/
 
 Which will lead us on to hardening some more things in the next step.
 
+Advance onward to [Part 7](/take-back-the-darknet-part-7/) or head back to the table of contents on [Part 1](/take-back-the-darknet-part-1/).
+
 ### Sources
 
 - [McRetro - Take Back the Darknet, Part 6 (15th July 2019 capture)](https://web.archive.org/web/20190715200901/https://mcretro.net/take-back-the-darknet-part-6/)
 - [Samba - smb.conf manual](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html)
-
-Advance onward to [part 7](/take-back-the-darknet-part-7/) or head back to the table of contents on [page 1](/take-back-the-darknet-part-1/).

@@ -16,7 +16,7 @@ Sadly, XRG eventually closed down through neglect. We got busy with other things
 
 Of course, Nix McRetro isn't going anywhere soon. There will always be more excitement here on your local RetroJunkie channel, and plenty more old games and strange hardware to keep us entertained.
 
-### Related posts
+### Related Posts
 
 - [McRetro Gaming Teaser Trailer](/mcretro-gaming-teaser-trailer/)
 - [Cancelled Channel - Xtreme Retro Gaming](/cancelled-channel-xtreme-retro-gaming/)

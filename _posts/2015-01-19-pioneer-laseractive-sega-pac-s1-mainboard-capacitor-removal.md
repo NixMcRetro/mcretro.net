@@ -30,7 +30,7 @@ The old capacitors are now off the mainboard, and I've started cleaning away the
 
 Mainboard capacitor removal, perfectly done for once! Now for the other board. Oh dear.
 
-### Related posts
+### Related Posts
 
 - [Pioneer LaserActive PAC-S1 EPROM BIOS Dump](/pioneer-laseractive-pac-s1-eprom-bios-dump/)
 - [Pioneer LaserActive Sega PAC-S1 Disassembly](/pioneer-laseractive-sega-pac-s1-disassembly/)

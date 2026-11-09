@@ -28,11 +28,11 @@ So there you go. No successful laser replacement, no miraculous PlayStation reco
 
 I suppose I could have saved myself rather a lot of trouble by checking the laser models beforehand. But then we wouldn't have this lovely video of me discovering all the things that don't fit together. Another successful failure!
 
-**Related Posts**
-
-- [Sony PlayStation 2 Laser Replacement Failure (Short)](/sony-playstation-2-laser-replacement-failure-short/)
-
 **Sources**
 
 - [PS2 Developer Wiki - Pickups](https://www.psdevwiki.com/ps2/Pickups)
 - [ZedLabz - PS2 Laser Compatibility Guide](https://www.zedlabz.com/blogs/news/laser-compatibility-guide-for-sony-ps2-ps2-slim)
+
+**Related Posts**
+
+- [Sony PlayStation 2 Laser Replacement Failure (Short)](/sony-playstation-2-laser-replacement-failure-short/)

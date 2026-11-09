@@ -10,6 +10,6 @@ categories: [repairs, sega, youtube]
 
 Kick it into high gear, here's a Sega Master System going back together. This is the one I need to poke at to make work properly. It's on the shelf for now, but soon it will be back out and we'll be playing great games in no time... on the new channel!
 
-### Related posts
+### Related Posts
 
 - [Sega Master System II in 8-bit Mayhem](/sega-master-system-ii-in-8-bit-mayhem/)

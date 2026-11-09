@@ -46,9 +46,9 @@ Logging in with SSH (**S**ecure **SH**ell) is now slightly different because we 
 
 `ssh tim@xxx.xxx.xxx.xxx -p 38192`
 
+Advance onward to [Part 8](/take-back-the-darknet-part-8/) or head back to the table of contents on [Part 1](/take-back-the-darknet-part-1/).
+
 ### Sources
 
 - [Apache HTTP Server 2.4 - Core Features](https://httpd.apache.org/docs/2.4/mod/core.html)
 - [OpenSSH - sshd_config](https://man.openbsd.org/sshd_config)
-
-Advance onward to [part 8](/take-back-the-darknet-part-8/) or head back to the table of contents on [page 1](/take-back-the-darknet-part-1/).

@@ -28,6 +28,6 @@ Please remember that I'm using PSIO hardware 1.1 with software 1.1 revision 1.2,
 - PSIO software: 1.1, revision 1.2
 - PlayStation: PAL SCPH-5502
 
-### Related posts
+### Related Posts
 
 - [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)

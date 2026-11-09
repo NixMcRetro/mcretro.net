@@ -27,4 +27,4 @@ See anything you recognise? Pipe up in the comments if you do! I rather enjoyed 
 ### Sources
 
 - [Sega - Activator Instruction Guide (1993)](https://www.manualslib.com/manual/4230014/Sega-Activator.html)
-- [Asaf Gurner and Oded Zur - Dynamically-activated optical instrument for producing control signals (EP0557111A1)](https://patents.google.com/patent/EP0557111A1/en)
+- [Asaf Gurner and Oded Zur: Optical Control Instrument Patent EP0557111A1](https://patents.google.com/patent/EP0557111A1/en)

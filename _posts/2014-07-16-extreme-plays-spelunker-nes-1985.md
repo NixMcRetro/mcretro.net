@@ -17,7 +17,7 @@ Here's a look at that NES release. Another old game to add to the Extreme Plays 
 - [Brøderbund - Spelunker NES Instruction Manual](https://www.digitpress.com/library/manuals/nes/Spelunker.pdf)
 - [MobyGames - Spelunker releases and credits](https://www.mobygames.com/game/13582/spelunker/releases/)
 
-### Extreme Plays
+### Related Posts
 
 - [Extreme Plays! Snow Bros. (NES, 1991)](/extreme-plays-snow-bros-nes-1991/)
 - [Extreme Plays! Dead Angle (Master System, 1989)](/extreme-plays-dead-angle-sms-1989/)

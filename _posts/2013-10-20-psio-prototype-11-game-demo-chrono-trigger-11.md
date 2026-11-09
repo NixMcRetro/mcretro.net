@@ -27,7 +27,7 @@ Please remember this is PSIO prototype hardware 1.1 running software 1.1A, so th
 - PlayStation: SCPH-5502
 - CD deck: removed
 
-### Related posts
+### Related Posts
 
 - [PSIO Prototype 1.1 Game Demo: Chrono Trigger 1.0](/psio-prototype-11-game-demo-chrono-trigger-10/)
 - [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)

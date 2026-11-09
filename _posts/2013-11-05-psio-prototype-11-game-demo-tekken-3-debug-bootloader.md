@@ -26,7 +26,7 @@ Version 2.0 is just over the hill, and it certainly looks like it'll be a marvel
 - PlayStation: SCPH-5502
 - CD deck: removed
 
-### Related posts
+### Related Posts
 
 - [PSIO Prototype 1.1 Game Demo: Tekken 3](/psio-prototype-11-game-demo-tekken-3/)
 - [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)

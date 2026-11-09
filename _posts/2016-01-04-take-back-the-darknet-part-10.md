@@ -72,11 +72,11 @@ sudo chmod -R 700 /var/lib/tor/website2/
 
 Now to deal with SSL keys (if you are going down the HTTPS / SSL path).
 
+Advance onward to [Part 11](/take-back-the-darknet-part-11/) or head back to the table of contents on [Part 1](/take-back-the-darknet-part-1/).
+
 ### Sources
 
 - [McRetro - Take Back the Darknet, Part 10 (24th August 2019 capture)](https://web.archive.org/web/20190824013219/https://mcretro.net/take-back-the-darknet-part-10/)
 - [Debian Jessie - tor(1)](https://manpages.debian.org/jessie/tor/tor.1.en.html)
 - [Tor Project - Onion Service version 2 deprecation timeline](https://blog.torproject.org/v2-deprecation-timeline/)
 - [Tor Project - Set up Your Onion Service](https://community.torproject.org/onion-services/setup/)
-
-Advance onward to [part 11](/take-back-the-darknet-part-11/) or head back to the table of contents on [page 1](/take-back-the-darknet-part-1/).

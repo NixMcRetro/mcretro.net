@@ -26,6 +26,6 @@ It's a shame, because the microphone itself looks rather nice, and the audio qua
 
 I ended up ordering a Blue Yeti microphone instead. Hopefully that'll be a little more impressive!
 
-### Related posts
+### Related Posts
 
 - [Blue Yeti Microphone Unboxing](/blue-yeti-microphone-unboxing/)

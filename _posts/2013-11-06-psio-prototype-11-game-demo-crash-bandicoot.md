@@ -29,6 +29,6 @@ You can find out more about the project at [ps-io.com](https://ps-io.com/), sinc
 - PlayStation: SCPH-5502
 - CD deck: removed
 
-### Related posts
+### Related Posts
 
 - [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)

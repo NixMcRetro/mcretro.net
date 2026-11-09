@@ -14,6 +14,6 @@ I looked at a few alternatives, including FlatPress, but at this point I found i
 
 Did I mention this post was authored with GNU Nano? Way past cool, right?
 
-### Related posts
+### Related Posts
 
 - [Blog Resurrection](/blog-resurrection/)

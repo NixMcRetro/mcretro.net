@@ -32,7 +32,7 @@ Please remember that these results apply to prototype hardware 1.1 and software 
 
 - [_ODainton_ - Rage Racer FAQ](https://gamefaqs.gamespot.com/ps/198393-rage-racer/faqs/4093)
 
-### Related posts
+### Related Posts
 
 - [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)
 - [Thoughts on PSIO 2.x Recent Updates](/thoughts-on-psio-2x-recent-updates/)

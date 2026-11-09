@@ -26,11 +26,11 @@ So we're not quite there yet. At least the basic hardware and software are runni
 
 I'll keep investigating the cable and communications setup before trying again. Ideally I'd also like to make a proper cartridge-reading arrangement one day, rather than having quite so many wires hanging out of everything.
 
+**Sources**
+
+- [RetroDev - Sega CD Transfer Suite](https://www.retrodev.com/transfer.html)
+
 **Related Posts**
 
 - [Sega Mega Drive / Genesis Cart Dumping via Parallel (Part 2)](/sega-mega-drive-genesis-cart-dumping-via-parallel-part-2/)
 - [Sega Mega Drive / Genesis Cart Dumping via Parallel (Part 3)](/sega-mega-drive-genesis-cart-dumping-via-parallel-part-3/)
-
-**Sources**
-
-- [RetroDev - Sega CD Transfer Suite](https://www.retrodev.com/transfer.html)

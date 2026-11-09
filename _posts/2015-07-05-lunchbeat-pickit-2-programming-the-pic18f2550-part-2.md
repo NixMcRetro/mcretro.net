@@ -23,7 +23,7 @@ There are still some resistors and capacitors to arrive, including the 2.7 kΩ r
 - [Microchip - PICkit 2 Programmer/Debugger User's Guide](https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/UserGuides/51553E.pdf)
 - [AVRDUDE - Version 6.0 Manual (2013)](https://download-mirror.savannah.gnu.org/releases/avrdude/avrdude-doc-6.0.1.pdf)
 
-### Lunchbeat / PICkit 2 series
+### Related Posts
 
 - [Lunchbeat / PICkit 2 - PCB Arrival (Part 1)](/lunchbeat-pickit-2-pcb-arrival-part-1/)
 - [Lunchbeat / PICkit 2 - Update (Part 3)](/lunchbeat-pickit-2-update-part-3/)

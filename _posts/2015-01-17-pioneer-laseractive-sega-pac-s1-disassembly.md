@@ -30,7 +30,7 @@ What a lovely piece of hardware, though. Incredible! Just fantastic!
 
 - [ConsoleMods - LaserActive: PAC-S10](https://consolemods.org/wiki/LaserActive:PAC-S10)
 
-### Related posts
+### Related Posts
 
 - [Pioneer LaserActive PAC-S1 EPROM BIOS Dump](/pioneer-laseractive-pac-s1-eprom-bios-dump/)
 - [Pioneer LaserActive Sega PAC-S1 Mainboard Capacitor Removal](/pioneer-laseractive-sega-pac-s1-mainboard-capacitor-removal/)

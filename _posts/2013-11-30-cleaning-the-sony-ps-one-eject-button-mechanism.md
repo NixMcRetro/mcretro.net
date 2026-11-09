@@ -24,10 +24,10 @@ The improvement is immediate. The button moves much more smoothly, and after rea
 
 I've also had a look at the power button. It's not quite as troublesome, but there's certainly some gunk in there too. Another PlayStation that doesn't need its buttons wiggled every time you want to use it!
 
-### Related posts
-
-- [Sony PlayStation 1 Eject Button Maintenance](/sony-playstation-1-eject-button-maintenance/)
-
 ### Sources
 
 - [Gamopat Forum - PS one Eject Button Repair](https://www.gamopat-forum.com/t63633-tutopsone-reparer-le-probleme-du-bouton-eject-qui-coince)
+
+### Related Posts
+
+- [Sony PlayStation 1 Eject Button Maintenance](/sony-playstation-1-eject-button-maintenance/)

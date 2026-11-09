@@ -190,6 +190,8 @@ to:
 
 Once that is done we are onto the next part.
 
+Advance onward to [Part 10](/take-back-the-darknet-part-10/) or head back to the table of contents on [Part 1](/take-back-the-darknet-part-1/).
+
 ### Sources
 
 - [Debian Jessie - mod_bw 0.92-11 documentation](https://sources.debian.org/src/libapache2-mod-bw/0.92-11/mod_bw.txt/)
@@ -198,5 +200,3 @@ Once that is done we are onto the next part.
 - [Apache HTTP Server 2.4 - Authentication and Authorization](https://httpd.apache.org/docs/2.4/howto/auth.html)
 - [Debian Jessie - a2ensite(8)](https://manpages.debian.org/jessie/apache2/a2ensite.8.en.html)
 - [W3C - Choosing and applying a character encoding](https://www.w3.org/International/questions/qa-choosing-encodings)
-
-Advance onward to [part 10](/take-back-the-darknet-part-10/) or head back to the table of contents on [page 1](/take-back-the-darknet-part-1/).

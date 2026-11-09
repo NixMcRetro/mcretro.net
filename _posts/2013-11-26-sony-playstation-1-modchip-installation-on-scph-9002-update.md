@@ -26,6 +26,6 @@ The important discovery is that the unsuccessful burns had been confusing the di
 
 So that's another lesson learned. When you're testing a modification that depends on reading a disc, make sure the disc is actually good before you decide the hardware is broken. And always verify those burns!
 
-### Related posts
+### Related Posts
 
 - [Sony PlayStation 1 Modchip Installation Success on SCPH-9002](/sony-playstation-1-modchip-installation-success-on-scph-9002/)

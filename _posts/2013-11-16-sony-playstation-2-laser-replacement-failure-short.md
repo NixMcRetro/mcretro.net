@@ -26,6 +26,6 @@ Anyway, that's the short version of an unsuccessful attempt. No repaired laser, 
 
 If you want to see how the whole disaster unfolded, there's a much longer version too. Hopefully the next repair involves considerably less destruction!
 
-### Related posts
+### Related Posts
 
 - [Sony PlayStation 2 Laser Replacement Failure (Long)](/sony-playstation-2-laser-replacement-failure-long/)

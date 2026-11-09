@@ -32,7 +32,7 @@ Of course, that doesn't necessarily mean every no-video fault on a Sophia will b
 
 Now, what shall we repair next? TeraDrives? Aiwa Mega-CDs? Pioneer LaserActives? There's certainly no shortage of things waiting for attention!
 
-### Related posts
+### Related Posts
 
 - [Two Faulty Sega Saturn Sophia Development Kits: Initial Assessment](/two-faulty-sega-saturn-sophia-development-kits-initial-assessment/)
 - [Sega Saturn Sophia Development Kit - No Video Repair](/sega-saturn-sophia-dev-kit-no-video-repair/)

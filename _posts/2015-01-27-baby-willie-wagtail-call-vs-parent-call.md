@@ -12,6 +12,6 @@ Just a quick video comparing the sounds of the young Willie Wagtail with the par
 
 They had been living in the backyard until recently, but the youngster has since flown away!
 
-### Related posts
+### Related Posts
 
 - [Newly Hatched Willie Wagtail Chicks](/newly-hatched-willie-wagtail-chicks/)

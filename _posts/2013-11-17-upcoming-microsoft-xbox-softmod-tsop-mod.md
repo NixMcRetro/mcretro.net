@@ -20,7 +20,7 @@ The ultimate goal is to get the softmod working and then look into flashing the 
 
 Hopefully, I'll document the whole thing properly this time. More Xbox adventures coming soon! :)
 
-### Related posts
+### Related Posts
 
 - [Original Xbox Softmod to TSOP Flash Project](/original-xbox-softmod-to-tsop-flash-project/)
 - [XBOX (Original) Softmod Recovery](/xbox-original-softmod-recovery/)

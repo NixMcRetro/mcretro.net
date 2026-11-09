@@ -30,6 +30,6 @@ Please remember that this is early prototype hardware and the results don't nece
 
 - [Sony Computer Entertainment - Crash Team Racing Instruction Booklet](https://api.regvault.org/api/v1/game/psx/9f175b75193972a2acc8cce312a38c14/manual)
 
-### Related posts
+### Related Posts
 
 - [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)

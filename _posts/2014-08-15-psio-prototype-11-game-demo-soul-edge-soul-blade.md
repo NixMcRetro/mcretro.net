@@ -32,7 +32,7 @@ You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am 
 - [Bandai Namco - Soul Edge for PlayStation (Japanese product page)](https://www.bandainamcoent.co.jp/cs/list/souledge/)
 - [MobyGames - Soul Blade releases](https://www.mobygames.com/game/3676/soul-blade/releases/)
 
-### Related PSIO prototype posts
+### Related Posts
 
 - [PSIO Prototype 1.1 Test Station Setup Overview - March 2014](/psio-prototype-11-test-station-setup-overview-march-2014/)
 - [PSIO Prototype 1.1 Game Demo: Chrono Cross (Part 1)](/psio-prototype-11-game-demo-chrono-cross-part-1/)

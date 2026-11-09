@@ -35,9 +35,9 @@ Listen 127.0.0.1:9071
 
 Save and exit, Ctrl-O (Writeout) and Ctrl-X (Exit).
 
+Up next we configure Apache even more! Advance onward to [Part 9](/take-back-the-darknet-part-9/) or head back to the table of contents on [Part 1](/take-back-the-darknet-part-1/).
+
 ### Sources
 
 - [Apache HTTP Server 2.4 - Binding to Addresses and Ports](https://httpd.apache.org/docs/2.4/bind.html)
 - [Tor Project - Set up Your Onion Service](https://community.torproject.org/onion-services/setup/)
-
-Up next we configure Apache even more! Advance onward to [part 9](/take-back-the-darknet-part-9/) or head back to the table of contents on [page 1](/take-back-the-darknet-part-1/).

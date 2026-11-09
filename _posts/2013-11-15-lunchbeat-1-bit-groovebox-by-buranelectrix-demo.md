@@ -17,6 +17,6 @@ Another musical instrument created! Thanks to [Buranelectrix.com](https://web.ar
 - [Buranelectrix - DIY Noisemaking and Related Devices](https://web.archive.org/web/20131112015528/http://buranelectrix.com/)
 - [Analogue Haven - Buranelectrix Lunchbeat](https://www.analoguehaven.com/buranelectrix/lunchbeat/)
 
-### Related posts
+### Related Posts
 
 - [Lunchbeat 1-bit Groovebox by Buranelectrix: Introduction](/lunchbeat-1-bit-groovebox-by-buranelectrix-introduction/)

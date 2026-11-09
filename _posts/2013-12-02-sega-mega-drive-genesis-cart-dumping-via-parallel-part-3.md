@@ -30,11 +30,11 @@ So at long last we've managed to dump a Mega Drive cartridge through controller 
 
 I think I may have recorded this before the Fatal Fury 2 demonstration, so the order of these videos might be a little muddled. Either way, it gives us a good look at how the whole arrangement works.
 
+**Sources**
+
+- [RetroDev - Sega CD Transfer Suite](https://www.retrodev.com/transfer.html)
+
 **Related Posts**
 
 - [Sega Mega Drive / Genesis Cart Dumping via Parallel (Part 1)](/sega-mega-drive-genesis-cart-dumping-via-parallel-part-1/)
 - [Sega Mega Drive / Genesis Cart Dumping via Parallel (Part 2)](/sega-mega-drive-genesis-cart-dumping-via-parallel-part-2/)
-
-**Sources**
-
-- [RetroDev - Sega CD Transfer Suite](https://www.retrodev.com/transfer.html)

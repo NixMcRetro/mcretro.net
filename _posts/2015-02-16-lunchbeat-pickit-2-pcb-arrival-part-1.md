@@ -25,7 +25,7 @@ I think this is going to be a **nine-part** series, with more videos appearing o
 - [Buranelectrix - Lunchbeat: 1bit groovebox](https://web.archive.org/web/20131112013520/http://buranelectrix.com/lunchbeat/lunchbeat.php)
 - [AVRDUDE - Version 6.0 Manual (2013)](https://download-mirror.savannah.gnu.org/releases/avrdude/avrdude-doc-6.0.1.pdf)
 
-### Lunchbeat / PICkit 2 series
+### Related Posts
 
 - [Lunchbeat / PICkit 2 - Programming the PIC18F2550 (Part 2)](/lunchbeat-pickit-2-programming-the-pic18f2550-part-2/)
 - [Lunchbeat / PICkit 2 - Update (Part 3)](/lunchbeat-pickit-2-update-part-3/)
@@ -35,8 +35,5 @@ I think this is going to be a **nine-part** series, with more videos appearing o
 - [Lunchbeat / PICkit 2 - Sound Demo Int. Clock (Part 7)](/lunchbeat-pickit-2-sound-demo-int-clock-part-7/)
 - [Lunchbeat / PICkit 2 - Sound Demo Ext. Clock (Part 8)](/lunchbeat-pickit-2-sound-demo-ext-clock-part-8/)
 - [Lunchbeat / PICkit 2 - Resistor Upgrade (Part 9)](/lunchbeat-pickit-2-resistor-upgrade-part-9/)
-
-### Related posts
-
 - [Lunchbeat 1-bit Groovebox by Buranelectrix: Introduction](/lunchbeat-1-bit-groovebox-by-buranelectrix-introduction/)
 - [Programming Atmel AVR Chips with a PICkit 2 and AVRDUDE on a Mac](/programming-atmel-avr-chips-with-pickit-2-and-avrdude-on-a-mac/)

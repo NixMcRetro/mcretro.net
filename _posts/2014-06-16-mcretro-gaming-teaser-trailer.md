@@ -16,13 +16,10 @@ I'm concentrating on the older systems here, pretty much anything before the Dre
 
 And yes, that's the Aiwa Mega-CD CSD-GM1 in the background too!
 
-### Related posts
+### Related Posts
 
 - [XRG - Xtreme Retro Gaming, Now Closed](/xrg-xtreme-retro-gaming-now-closed/)
 - [Cancelled Channel - Xtreme Retro Gaming](/cancelled-channel-xtreme-retro-gaming/)
-
-### Channel trailers
-
 - [Subscribe Today! (Version 1.0)](/subscribe-today-version-10/)
 - [Subscribe Today! (Version 2.0)](/subscribe-today-version-20/)
 - [Subscribe Today! (Version 3.0)](/subscribe-today-version-30/)

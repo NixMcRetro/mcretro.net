@@ -27,7 +27,7 @@ So Chrono Trigger 1.0 looks promising on this PSIO prototype. Remember that I'm 
 - PlayStation: SCPH-5502
 - CD deck: removed
 
-### Related posts
+### Related Posts
 
 - [PSIO Prototype 1.1 Game Demo: Chrono Trigger 1.1](/psio-prototype-11-game-demo-chrono-trigger-11/)
 - [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)

@@ -16,13 +16,13 @@ Back in 2016 I used [**Shallot**](https://web.archive.org/web/20150916172316/htt
 
 Shallot belongs to the old v2 onion-service era: its addresses had 16 characters before .onion, and Tor retired v2 services in 2021. Modern v3 addresses have 56 characters before .onion and require different tooling, so a Shallot-generated v2 key cannot be used for a current onion service.
 
+Advance onward to [Part 14](/take-back-the-darknet-part-14/) or head back to the table of contents on [Part 1](/take-back-the-darknet-part-1/).
+
 ### Sources
 
 - [Tor Project - Onion Service version 2 deprecation timeline](https://blog.torproject.org/v2-deprecation-timeline/)
 - [Tor Project - Vanity Addresses](https://community.torproject.org/onion-services/advanced/vanity-addresses/)
 
-### Related posts
+### Related Posts
 
 - [Generating Vanity Onion Addresses with Shallot](/generating-vanity-onion-addresses-with-shallot/)
-
-Advance onward to [Part 14](/take-back-the-darknet-part-14/) or head back to the table of contents on [Part 1](/take-back-the-darknet-part-1/).

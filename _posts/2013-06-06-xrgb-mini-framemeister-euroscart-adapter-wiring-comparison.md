@@ -20,11 +20,11 @@ My own rewired adapter was much simpler, without a sync-stripping circuit at all
 
 This is particularly relevant to the Framemeister because its supplied 21-pin RGB adapter uses the Japanese RGB21 arrangement rather than EuroSCART. The connectors look extremely similar from the outside, but the pin assignments are not the same. I've already covered the actual repinning work separately, so this recording is more about showing what is inside the different cables.
 
-### Related posts
-
-- [Converting XRGB-mini Adapter to EuroSCART](/converting-xrgb-mini-adapter-to-euroscart/)
-
 ### Sources
 
-- [Micomsoft - Framemeister manual](https://www.micomsoft.co.jp/XRGB-mini_m2.pdf) - manufacturer warning on printed page 58 distinguishes the PAL and NTSC 21-pin wiring.
-- [Micomsoft - XRGB-mini Framemeister specifications](https://micomsoft.co.jp/xrgb-mini_spec.htm) - official specifications for the Framemeister's 21-pin RGB input.
+- [Micomsoft: Framemeister Manual (PAL/NTSC RGB21 Wiring, p. 58)](https://www.micomsoft.co.jp/XRGB-mini_m2.pdf)
+- [Micomsoft: XRGB-mini Framemeister Specifications (21-Pin RGB)](https://micomsoft.co.jp/xrgb-mini_spec.htm)
+
+### Related Posts
+
+- [Converting XRGB-mini Adapter to EuroSCART](/converting-xrgb-mini-adapter-to-euroscart/)

@@ -28,7 +28,7 @@ The 486DX4-100 system still works much more happily without this nonsense, altho
 
 Who would have thought a CPU cache setting could cause so much trouble? Any and all speculation is welcome in the comments!
 
-### Related posts
+### Related Posts
 
 - [Sega SNASM2 and CD Emulation Cards with Gravis UltraSound](/sega-snasm2-and-cd-emulation-cards-with-gravis-ultrasound/)
 - [SNASM2 Sega Mega-CD Emulation Card on a 486DX4-100](/snasm2-mega-cd-emulation-card-on-a-486dx4-100mhz/)

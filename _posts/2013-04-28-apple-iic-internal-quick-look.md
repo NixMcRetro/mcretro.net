@@ -24,4 +24,4 @@ This is only a quick internal look rather than a full restoration. I'll give the
 
 **Sources**
 
-- [Apple II History - The Apple IIc](https://www.apple2history.org/history/ah08/) - historical overview of the IIc hardware and integrated features.
+- [Apple II History: The Apple IIc](https://www.apple2history.org/history/ah08/)

@@ -32,4 +32,4 @@ Right, where's the super glue?
 
 ### Sources
 
-- [Noctua - Fan troubleshooting and starting voltage](https://www.noctua.at/en/support/faqs/my-fan-is-not-working-as-intended-is-it-faulty) - explains why fans need sufficient voltage to start reliably.
+- [Noctua: Fan Starting Voltage and Troubleshooting](https://www.noctua.at/en/support/faqs/my-fan-is-not-working-as-intended-is-it-faulty)

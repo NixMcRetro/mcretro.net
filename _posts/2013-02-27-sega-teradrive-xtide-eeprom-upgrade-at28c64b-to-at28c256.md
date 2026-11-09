@@ -33,5 +33,5 @@ Four times the space for future experiments.
 
 ### Sources
 
-- [Microchip - AT28C64B](https://www.microchip.com/en-us/product/AT28C64B) - 64 Kbit EEPROM organised as 8K x 8, giving 8 KiB.
-- [Microchip - AT28C256](https://www.microchip.com/en-us/product/AT28C256) - 256 Kbit EEPROM organised as 32K x 8, giving 32 KiB.
+- [Microchip: AT28C64B EEPROM (64 Kbit, 8K x 8, 8 KiB)](https://www.microchip.com/en-us/product/AT28C64B)
+- [Microchip: AT28C256 EEPROM (256 Kbit, 32K x 8, 32 KiB)](https://www.microchip.com/en-us/product/AT28C256)

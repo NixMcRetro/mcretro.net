@@ -30,7 +30,7 @@ I'm also curious how the Dreamcast will compare over its 15 kHz RGB output versu
 
 **Sources**
 
-- [Micomsoft - Framemeister official product page](https://www.micomsoft.co.jp/xrgb-mini.html) - official specifications for the XRGB-mini Framemeister and its 21-pin RGB input.
-- [Micomsoft - Framemeister manual](https://www.micomsoft.co.jp/XRGB-mini_m2.pdf) - official warning against connecting EuroSCART wiring directly to the Japanese RGB21 input.
+- [Micomsoft: XRGB-mini Framemeister Product Specifications (Japanese RGB21)](https://www.micomsoft.co.jp/xrgb-mini.html)
+- [Micomsoft: Framemeister Manual (Japanese RGB21 vs EuroSCART Warning)](https://www.micomsoft.co.jp/XRGB-mini_m2.pdf)
 - [Classic Console Upscaler Wiki - XRGB-mini Framemeister](https://www.junkerhq.net/xrgb/index.php/XRGB-mini_FRAMEMEISTER)
 - [Classic Console Upscaler Wiki - Dreamcast](https://www.junkerhq.net/xrgb/index.php/Dreamcast)

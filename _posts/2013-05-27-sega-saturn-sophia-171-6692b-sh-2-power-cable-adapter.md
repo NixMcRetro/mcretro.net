@@ -22,7 +22,7 @@ Visually, the differences between the 171-6692B and 171-6692D are easy to spot. 
 
 More Sophia devkit photos can be found in the [Photo Gallery](/goodies).
 
-### Related posts
+### Related Posts
 
 - [Sega Saturn Sophia SH-2 CPU Cards: 171-6692B vs 171-6692D](/sega-saturn-sophia-sh-2-cpu-cards-171-6692b-vs-171-6692d/)
 - [Sega Sophia Target Box PAL Switch Settings and Hardware Notes](/sega-sophia-target-box-pal-switch-settings-and-hardware-notes/)

@@ -16,7 +16,7 @@ By this point I'd finally sorted out the RGB21 versus EuroSCART adapter wiring a
 
 Unfortunately, I have since sold it on. I hope somebody somewhere is putting it to good use! At least I produced far too many videos about it first.
 
-### Related posts
+### Related Posts
 
 - [Micomsoft XRGB-mini Framemeister Arrival](/micomsoft-xrgb-mini-framemeister-arrival/)
 - [Converting XRGB-mini Adapter to EuroSCART](/converting-xrgb-mini-adapter-to-euroscart/)

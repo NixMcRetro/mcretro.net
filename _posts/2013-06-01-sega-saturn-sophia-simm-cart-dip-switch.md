@@ -53,5 +53,5 @@ More information can be found in the archived [ASSEMblergames discussion](https:
 
 **Sources**
 
-- [Sega Saturn Developer FAQ - Simple CD simulator and SIMM system](http://docs.exodusemulator.com/Archives/SSDDV25/segahtml/faq/devl/p08_10.htm) - documents the Programming Box SIMM address mappings for `SIMMCART` OFF and ON.
-- [Sega Saturn Developer's Information STN-47](https://www.infochunk.com/saturn/segahtml_en/info/hon/stn47.htm) - documents the extended RAM cartridge address-space overlap and the cartridge-ID limitation when `SIMMCART` is OFF.
+- [Sega Saturn Developer FAQ: SIMMCART ON/OFF Address Mapping](http://docs.exodusemulator.com/Archives/SSDDV25/segahtml/faq/devl/p08_10.htm)
+- [Sega Saturn Developer Information STN-47: SIMMCART OFF RAM and Cartridge-ID Limitations](https://www.infochunk.com/saturn/segahtml_en/info/hon/stn47.htm)

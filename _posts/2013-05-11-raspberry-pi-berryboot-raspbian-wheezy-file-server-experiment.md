@@ -24,5 +24,5 @@ Whether the Raspberry Pi is actually going to enjoy that job remains to be seen.
 
 ### Sources
 
-- [Raspberry Pi - New SD card image](https://www.raspberrypi.com/news/new-sd-card-image/) - official 30th October 2012 announcement documenting the period Raspbian Wheezy release.
-- [BerryBoot documentation](https://www.berryterminal.com/doku.php/berryboot) - documents BerryBoot's multi-boot OS installer and storage options for the Raspberry Pi.
+- [Raspberry Pi: Raspbian Wheezy SD Card Image Announcement (30 October 2012)](https://www.raspberrypi.com/news/new-sd-card-image/)
+- [BerryBoot: Raspberry Pi Multiboot Installer and Storage Documentation](https://www.berryterminal.com/doku.php/berryboot)

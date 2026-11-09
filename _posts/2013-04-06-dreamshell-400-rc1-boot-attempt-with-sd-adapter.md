@@ -30,4 +30,4 @@ What I am seeing here does not tell me whether DreamShell itself is the problem.
 
 **Sources**
 
-- [DC-SWAT - DreamShell 4.0 RC1 discussion](https://dc-swat.ru/www/forum/thread-1787-post-21648.html) - contemporary DreamShell RC1 discussion and boot-method context.
+- [DC-SWAT: DreamShell 4.0 RC1 Discussion and Boot Methods](https://dc-swat.ru/www/forum/thread-1787-post-21648.html)

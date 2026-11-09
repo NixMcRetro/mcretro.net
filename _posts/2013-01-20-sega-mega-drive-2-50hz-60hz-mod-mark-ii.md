@@ -32,11 +32,11 @@ So that's two Mega Drive modifications down, and this one is definitely the nice
 
 You can catch The Damo Monster above as well. His original guide was one of the references I was using for this modification.
 
+**Sources**
+
+- [Damo Monster: Mega Drive Model 2 Region Modification (2012 Archive)](https://web.archive.org/web/20121209141749/http://www.damomonster.com/Mod_Pages/SegaMegaDriveM2.html)
+- [ConsoleMods: Genesis Region Information (Language and Video Frequency)](https://consolemods.org/wiki/Genesis:Region_Information)
+
 **Related Posts**
 
 - [Drilling Region-Switch Holes in a Sega Mega Drive 2](/drilling-region-switch-holes-in-a-sega-mega-drive-2/)
-
-**Sources**
-
-- [Damo Monster - Sega Mega Drive Model 2 region modification](https://web.archive.org/web/20121209141749/http://www.damomonster.com/Mod_Pages/SegaMegaDriveM2.html) - archived contemporary guide used for this modification.
-- [ConsoleMods - Genesis Region Information](https://consolemods.org/wiki/Genesis:Region_Information) - documents Mega Drive language and video-frequency region configuration.

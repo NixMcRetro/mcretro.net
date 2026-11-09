@@ -22,6 +22,6 @@ I really do like SCART connectors, though. They're easy to dismantle and reconfi
 
 **Sources**
 
-- [Micomsoft - Framemeister manual](https://www.micomsoft.co.jp/XRGB-mini_m2.pdf) - the manufacturer warning on printed page 58 distinguishes the PAL and NTSC 21-pin wiring.
-- [Micomsoft - Framemeister official product page](https://www.micomsoft.co.jp/xrgb-mini.html) - official specifications for the XRGB-mini and its 21-pin analogue RGB input.
+- [Micomsoft: Framemeister Manual (PAL/NTSC RGB21 Wiring, p. 58)](https://www.micomsoft.co.jp/XRGB-mini_m2.pdf)
+- [Micomsoft: XRGB-mini Framemeister Product Specifications (21-Pin RGB)](https://www.micomsoft.co.jp/xrgb-mini.html)
 - [Classic Console Upscaler Wiki - XRGB-mini Framemeister](https://www.junkerhq.net/xrgb/index.php/XRGB-mini_FRAMEMEISTER)

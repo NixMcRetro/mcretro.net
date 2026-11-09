@@ -38,11 +38,11 @@ Look at that! 171-6692B SH7095 SH-2 CPUs. Those are exactly the sort of processo
 
 **Update:** Someone has since sold me some SH-2 CPUs! What a wonderful person. That should give me something new to investigate when I return to Sophia.
 
+**Sources**
+
+- [ASSEMbler Games Archive: Sophia Saturn Setup Discussion](https://assemblergames-archive.com/archive/index.php/thread-18172.html)
+
 **Related Posts**
 
 - [Sega Saturn Sophia SH-2 CPU Cards: 171-6692B vs 171-6692D](/sega-saturn-sophia-sh-2-cpu-cards-171-6692b-vs-171-6692d/)
 - [Sophia Systems Sega Saturn Programming Box: Capacitor Restoration Complete](/sophia-systems-sega-saturn-programming-box-capacitor-restoration-complete/)
-
-**Sources**
-
-- [ASSEMbler Games Archive - Sophia Saturn setup](https://assemblergames-archive.com/archive/index.php/thread-18172.html) - surviving discussion of Sophia processor-board and development-hardware configurations.

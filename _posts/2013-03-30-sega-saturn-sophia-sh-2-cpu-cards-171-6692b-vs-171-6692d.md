@@ -34,12 +34,12 @@ I suppose if I got the wiring completely wrong, I could always say I'd owned a S
 
 These really are beautiful little boards, and I'm very grateful to the person who sent them over. With any luck they'll get me another step closer to bringing Sophia back to life. Time to see what I can make of them!
 
+**Sources**
+
+- [Sega DTS Archive: ST-4001 Saturn Programming Target Box (171-6692D SH-2)](http://docs.exodusemulator.com/Archives/SegaDTSMirror/hardware/core/PBOX.HTM)
+
 **Related Posts**
 
 - [Sega Saturn Sophia Programming Box Mainboard Repairs](/sega-saturn-sophia-programming-box-mainboard-repairs/)
 - [Sophia Systems Sega Saturn Programming Box: Capacitor Restoration Complete](/sophia-systems-sega-saturn-programming-box-capacitor-restoration-complete/)
 - [Sega Sophia Target Box PAL Switch Settings and Hardware Notes](/sega-sophia-target-box-pal-switch-settings-and-hardware-notes/)
-
-**Sources**
-
-- [Sega DTS Archive - ST-4001 Saturn Programming Target Box](http://docs.exodusemulator.com/Archives/SegaDTSMirror/hardware/core/PBOX.HTM) - surviving Sega development documentation identifying the 171-6692D SH-2 CPU board and target-box processor configuration.

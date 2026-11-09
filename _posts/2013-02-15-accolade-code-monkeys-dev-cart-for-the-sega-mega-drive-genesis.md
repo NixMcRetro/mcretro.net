@@ -42,7 +42,7 @@ I've also seen what looks like a similar cartridge in old Sega development foota
 
 **Sources**
 
-- [Accolade - The Sega Development System, version 2.0 (21st February 1991)](https://drive.google.com/file/d/1C_T91q6Pf_TTA5Bl5IUbqscrgapqxAq8/view) - original setup instructions describe the PC and console connections; they do not identify this cartridge's loose lead.
+- [Accolade: The Sega Development System v2.0 (21 February 1991)](https://drive.google.com/file/d/1C_T91q6Pf_TTA5Bl5IUbqscrgapqxAq8/view)
 - [Exodus Emulator TechDocs - Sega Mega Drive Development Hardware](https://techdocs.exodusemulator.com/Console/SegaMegaDrive/Hardware.html)
 - [Technopop - Zero Tolerance / 2-Player Network Link Cable](http://www.technopop.net/)
 - [Sega-16 - Tech Talk: Zero Tolerance Link Cable](https://www.sega-16.com/2009/12/sega-gear-zero-tolerance-link-cable/)

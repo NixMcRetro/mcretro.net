@@ -38,4 +38,4 @@ For more context on the derating rule I was using at the time, see [Apple Macint
 
 ### Sources
 
-- [KYOCERA AVX - Voltage Derating Rules for Solid Tantalum and Niobium Capacitors](https://www.kyocera-avx.com/news/voltage-derating-rules-for-solid-tantalum-and-niobium-capacitors/) - explains why derating guidance depends on capacitor technology and application.
+- [KYOCERA AVX: Voltage Derating for Solid Tantalum and Niobium Capacitors](https://www.kyocera-avx.com/news/voltage-derating-rules-for-solid-tantalum-and-niobium-capacitors/)

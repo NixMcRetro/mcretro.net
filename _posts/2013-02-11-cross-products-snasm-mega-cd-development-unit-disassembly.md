@@ -24,11 +24,11 @@ Inside, there's all sorts of extra wiring, tape, and modifications that make it 
 
 At this point I'm beginning to wonder whether I'll ever get the thing back together! I'll probably finish photographing everything later this month or early next, with the results eventually finding their way into the [photo gallery](/goodies/). I hope you enjoy poking around inside this one as much as I'll enjoy trying to remember where all the screws went. Errr... just kidding?
 
+**Sources**
+
+- [Exodus Emulator TechDocs: SNASM Mega-CD Hardware and CD Emulation](https://techdocs.exodusemulator.com/Console/SegaMegaDrive/Hardware.html)
+
 **Related Posts**
 
 - [Cross Products SNASM Mega-CD Development Unit](/cross-products-snasm-mega-cd-development-unit/)
 - [Cross Products SNASM Mega-CD Development Unit Power-Up](/cross-products-snasm-mega-cd-development-unit-power-up/)
-
-**Sources**
-
-- [Exodus Emulator TechDocs - Sega Mega Drive Development Hardware](https://techdocs.exodusemulator.com/Console/SegaMegaDrive/Hardware.html) - documents the SNASM Mega-CD as modified retail Mega Drive and Mega-CD hardware with additional development circuitry and CD-emulation support.

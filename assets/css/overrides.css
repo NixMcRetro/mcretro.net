@@ -397,13 +397,18 @@
   font-size: 0.86rem;
   line-height: 1.55;
 }
-.dial-homepage a { color: var(--link); text-decoration: underline; }
-.dial-homepage a:hover { color: var(--link-hover); }
+.dial-homepage a { color: var(--link); text-decoration: none; }
+.dial-homepage a:hover,
+.dial-homepage a:focus-visible {
+  color: var(--link-hover);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
 .dial-homepage-random {
   display: inline-block;
-  font-size: 0.91rem;
+  font-size: 0.86rem;
   line-height: 1.45;
-  font-weight: 700;
+  font-weight: 400;
 }
 .dial-homepage-label {
   margin: 0.65rem 0 0.15rem;
@@ -895,49 +900,111 @@
 }
 
 
-/* Four-column original-style archive calendar, scoped to the shared sidebar. */
-.sidebar .archive-calendar { max-width: 100%; font-family: Montserrat, "Helvetica Neue", sans-serif; }
+/* Compact four-column archive calendar: the blue year bar matches Search,
+   while quieter month tiles sit alongside Recent Posts and Dial-a-Homepage. */
+.sidebar .archive-calendar {
+  max-width: 100%;
+  border: 1px solid var(--border-soft);
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+}
 .sidebar .archive-calendar-nav {
-  display: grid; grid-template-columns: 2.4rem minmax(0, 1fr) 2.4rem;
-  min-height: 2.65rem; background: var(--archive-tile); color: #fff;
-  border-radius: 5px 5px 0 0; overflow: hidden;
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr) 2.25rem;
+  min-height: 2.45rem;
+  background: var(--archive-tile);
+  color: #fff;
+  overflow: hidden;
 }
 .sidebar .archive-calendar-nav button {
-  display: flex; justify-content: center; align-items: center;
-  min-width: 0; padding: 0; margin: 0; border: 0; border-radius: 0;
-  background: var(--archive-tile); color: #fff; font: 700 1.35rem/1 Montserrat, "Helvetica Neue", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--archive-tile);
+  color: #fff;
+  font: 700 1.15rem/1 Montserrat, "Helvetica Neue", sans-serif;
+  cursor: pointer;
 }
 .sidebar .archive-calendar-nav button:hover:not(:disabled) { background: var(--archive-hover); }
 .sidebar .archive-calendar-nav button:disabled { opacity: .38; cursor: default; }
 .sidebar .archive-calendar-nav select {
-  width: 100%; min-width: 0; margin: 0; padding: .35rem .2rem;
-  border: 0; border-left: 1px solid #ffffff45; border-right: 1px solid #ffffff45;
-  border-radius: 0; color: #fff; background: var(--archive-tile);
-  font: 700 .94rem/1.2 Montserrat, "Helvetica Neue", sans-serif;
-  text-align: center; text-align-last: center; cursor: pointer;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: .3rem .2rem;
+  border: 0;
+  border-left: 1px solid #ffffff45;
+  border-right: 1px solid #ffffff45;
+  border-radius: 0;
+  color: #fff;
+  background: var(--archive-tile);
+  font: 700 .88rem/1.2 Montserrat, "Helvetica Neue", sans-serif;
+  text-align: center;
+  text-align-last: center;
+  cursor: pointer;
 }
 .sidebar .archive-calendar-nav select option { color: #111; background: #fff; }
 .sidebar .archive-calendar-nav button:focus-visible,
-.sidebar .archive-calendar-nav select:focus-visible { outline: 3px solid #fff; outline-offset: -3px; }
+.sidebar .archive-calendar-nav select:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: -3px;
+}
 .sidebar .archive-calendar-grid {
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px; border: 1px solid var(--border-soft); border-top: 0;
-  border-radius: 0 0 4px 4px; overflow: hidden; background: var(--border-soft);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  border-top: 1px solid var(--border-soft);
+  overflow: hidden;
+  background: var(--border-soft);
 }
 .sidebar .archive-calendar-month {
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
-  min-width: 0; min-height: 3.6rem; padding: .35rem .1rem; line-height: 1.25;
-  text-align: center; text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 3.2rem;
+  padding: .4rem .12rem;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
 }
-.sidebar a.archive-calendar-month.has-posts { color: #fff; background: var(--archive-tile); }
-.sidebar a.archive-calendar-month.has-posts:hover { background: var(--archive-hover); }
+.sidebar a.archive-calendar-month.has-posts {
+  color: var(--archive-filled-text);
+  background: var(--archive-filled);
+  box-shadow: inset 0 3px 0 var(--archive-accent);
+}
+.sidebar a.archive-calendar-month.has-posts:hover {
+  color: var(--archive-filled-text);
+  background: var(--archive-filled-hover);
+  text-decoration: none;
+}
+.sidebar a.archive-calendar-month.has-posts:hover .archive-calendar-month-name,
+.sidebar a.archive-calendar-month.has-posts:focus-visible .archive-calendar-month-name {
+  text-decoration: underline;
+  text-underline-offset: .12em;
+}
 .sidebar a.archive-calendar-month.has-posts:focus-visible {
-  position: relative; z-index: 1; outline: 3px solid #ffc857; outline-offset: -3px;
+  position: relative;
+  z-index: 1;
+  outline: 3px solid #ffc857;
+  outline-offset: -3px;
 }
-.sidebar .archive-calendar-month.is-empty { color: var(--text); background: var(--archive-empty); }
-.sidebar .archive-calendar-month-name { font: 700 1rem/1.2 Georgia, "Times New Roman", serif; }
+.sidebar .archive-calendar-month.is-empty {
+  color: var(--muted);
+  background: var(--archive-empty);
+}
+.sidebar .archive-calendar-month-name {
+  font: 700 .86rem/1.2 Montserrat, "Helvetica Neue", sans-serif;
+}
+.sidebar .archive-calendar-month.is-empty .archive-calendar-month-name { font-weight: 500; }
 .sidebar .archive-calendar-month-count {
-  margin-top: .2rem; font: 500 .67rem/1.3 Montserrat, "Helvetica Neue", sans-serif;
+  margin-top: .22rem;
+  font: 500 .67rem/1.3 Montserrat, "Helvetica Neue", sans-serif;
   white-space: nowrap;
 }
 

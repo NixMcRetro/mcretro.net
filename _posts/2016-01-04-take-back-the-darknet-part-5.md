@@ -24,9 +24,9 @@ We will also be using PHP alongside Apache's basic HTML support. The `php5` and 
 
 Next up we'll install Samba.
 
+Advance onward to [Part 6](/take-back-the-darknet-part-6/) or head back to the table of contents on [Part 1](/take-back-the-darknet-part-1/).
+
 ### Sources
 
 - [Apache HTTP Server 2.4 - Binding to Addresses and Ports](https://httpd.apache.org/docs/2.4/bind.html)
 - [Tor Project - How do Onion Services work?](https://community.torproject.org/onion-services/overview/)
-
-Advance onward to [part 6](/take-back-the-darknet-part-6/) or head back to the table of contents on [page 1](/take-back-the-darknet-part-1/).

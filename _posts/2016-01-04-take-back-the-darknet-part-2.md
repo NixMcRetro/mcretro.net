@@ -59,9 +59,9 @@ Once the updates have installed, reboot for good measure:
 
 `sudo reboot`
 
+Advance onward to [Part 3](/take-back-the-darknet-part-3/) or head back to the table of contents on [Part 1](/take-back-the-darknet-part-1/).
+
 ### Sources
 
 - [Raspberry Pi - An update to Raspberry Pi OS Bullseye](https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/)
 - [Microchip - Universal Serial Bus (USB) Technology](https://developerhelp.microchip.com/xwiki/bin/view/applications/usb/technology/)
-
-Advance onward to [part 3](/take-back-the-darknet-part-3/) or head back to the table of contents on [page 1](/take-back-the-darknet-part-1/).

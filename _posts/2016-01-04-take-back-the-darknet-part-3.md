@@ -36,9 +36,9 @@ Save and exit, Ctrl-O (Writeout / Save) and Ctrl-X (Exit) and reboot. `sudo rebo
 
 You'll be logged out of your terminal / PuTTY session and ready for the next step.
 
+Advance onward to [Part 4](/take-back-the-darknet-part-4/) or head back to the table of contents on [Part 1](/take-back-the-darknet-part-1/).
+
 ### Sources
 
 - [Debian Jessie - dhcpcd.conf(5)](https://manpages.debian.org/jessie/dhcpcd5/dhcpcd.conf.5.en.html)
 - [Debian Jessie - sudoers(5)](https://manpages.debian.org/jessie/sudo/sudoers.5.en.html)
-
-Advance onward to [part 4](/take-back-the-darknet-part-4/) or head back to the table of contents on [page 1](/take-back-the-darknet-part-1/).

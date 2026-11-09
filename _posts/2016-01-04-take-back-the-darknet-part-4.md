@@ -60,9 +60,9 @@ and then:
 
 Pretty cool! Now we've got a new user and a few things configured. We will revisit hardening later on (Metapod used Harden!) for other pieces of software yet to be installed.
 
+Advance onward to [Part 5](/take-back-the-darknet-part-5/) or head back to the table of contents on [Part 1](/take-back-the-darknet-part-1/).
+
 ### Sources
 
 - [Debian Jessie - adduser(8)](https://manpages.debian.org/jessie/adduser/adduser.8.en.html)
 - [Debian Jessie - sudoers(5)](https://manpages.debian.org/jessie/sudo/sudoers.5.en.html)
-
-Advance onward to [part 5](/take-back-the-darknet-part-5/) or head back to the table of contents on [page 1](/take-back-the-darknet-part-1/).

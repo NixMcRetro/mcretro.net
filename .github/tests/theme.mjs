@@ -201,3 +201,21 @@ test('calendar keeps four month columns with compact themed filled and empty til
   assert.match(overrides, /\.sidebar \.archive-calendar-month\.is-empty\s*\{[^}]*color:\s*var\(--muted\)/);
   assert.match(overrides, /\.sidebar a\.archive-calendar-month\.has-posts:focus-visible\s*\{[^}]*outline:\s*3px solid #ffc857/);
 });
+
+
+test('About portrait reuses blog media-caption markup and compact photo spacing', () => {
+  const about = read('about.md');
+  const expectedCaption = [
+    '![Future Lost](/assets/images/about/futurelost.jxl){: width="600" }',
+    '',
+    '*An artefact from a timeline that never existed.*',
+    '{: .media-caption }'
+  ].join(String.fromCharCode(10));
+  assert.ok(about.includes(expectedCaption), 'About uses the same Kramdown caption class as blog images');
+  assert.ok(overrides.includes('.about-panel > .center > p:has(> img:only-child):has(+ p.media-caption)'));
+  assert.ok(overrides.includes('.about-panel > .center > p:has(> img:only-child) + p.media-caption'));
+  assert.ok(overrides.includes('margin-inline: auto;'), 'photo stays centred when displayed as a block');
+  assert.ok(overrides.includes('margin-bottom: 0.25rem;'), 'reuses the compact blog caption gap');
+  assert.ok(!about.includes('Me-1988.jpg'));
+  assert.ok(!about.includes('<picture>') && !about.includes('srcset='), 'no JXL fallback is added');
+});

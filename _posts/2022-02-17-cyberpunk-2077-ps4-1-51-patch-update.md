@@ -54,11 +54,11 @@ I guess for now all I can do is sit here with my pre-ordered v1.00 discs and wai
 
 ### Sources
 
-- [CD Projekt Red - Cannot start the application: corrupted-data error after updating to 1.5/1.51 (archived 17th February 2022)](https://web.archive.org/web/20220217065632/https://support.cdprojektred.com/en/cyberpunk/playstation/sp-technical/issue/2090/cannot-start-the-application-the-data-is-corrupted-error-after-updating-1)
+- [CD Projekt Red: Cyberpunk 2077 PS4 Corrupted-Data Launch Error (Patch 1.5/1.51, Archived 17 February 2022)](https://web.archive.org/web/20220217065632/https://support.cdprojektred.com/en/cyberpunk/playstation/sp-technical/issue/2090/cannot-start-the-application-the-data-is-corrupted-error-after-updating-1)
 
 ### Related Posts
 
 - [Cyberpunk 2077 (2020, PS4 Live Stream, Day 1)](/cyberpunk-2077-ps4-live-stream-day-1/)
-- Earlier: [Cyberpunk 2077 (2020, PS4 Live Stream) - The 2022 Update](/cyberpunk-2077-the-2022-update/)
-- Next: [Cyberpunk 2077 PS4 1.51 Patch Update... Update](/cyberpunk-2077-ps4-1-51-patch-update-update/)
+- [Cyberpunk 2077 (2020, PS4 Live Stream) - The 2022 Update](/cyberpunk-2077-the-2022-update/)
+- [Cyberpunk 2077 PS4 1.51 Patch Update... Update](/cyberpunk-2077-ps4-1-51-patch-update-update/)
 - [Cyberpunk 2077 PS4 Final Thoughts](/cyberpunk-2077-ps4-final-thoughts/)

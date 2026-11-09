@@ -20,7 +20,7 @@ GeoCities did quite well and is up and running. The MiSTer is still running alon
 
 ### Sources
 
-- [WHO - Classification of Omicron as a SARS-CoV-2 variant of concern](https://www.who.int/news/item/26-11-2021-classification-of-omicron-(b.1.1.529)-sars-cov-2-variant-of-concern)
+- [WHO: Classification of Omicron (B.1.1.529) as a Variant of Concern (26 November 2021)](https://www.who.int/news/item/26-11-2021-classification-of-omicron-(b.1.1.529)-sars-cov-2-variant-of-concern)
 - [RetroRGB - PlayStation 1 MiSTer Core Update and beta demonstration](https://retrorgb.com/playstation-1-mister-core-update.html)
 
 ### Related Posts

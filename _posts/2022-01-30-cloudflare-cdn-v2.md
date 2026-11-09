@@ -34,7 +34,7 @@ Everything said, it should mean a faster website, better uptime (in theory), and
 
 - [Cloudflare - Full (strict) SSL/TLS mode](https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/full-strict/)
 - [Cloudflare - Always Online](https://developers.cloudflare.com/cache/how-to/always-online/)
-- [Cloudflare - Announcing the CSAM Scanning Tool, Free for All Cloudflare Customers](https://blog.cloudflare.com/the-csam-scanning-tool/)
+- [Cloudflare: CSAM Scanning Tool for Customers](https://blog.cloudflare.com/the-csam-scanning-tool/)
 - [ddclient - v3.9.1 source with Cloudflare support](https://raw.githubusercontent.com/ddclient/ddclient/v3.9.1/ddclient)
 
 ### Related Posts

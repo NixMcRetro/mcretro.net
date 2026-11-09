@@ -41,7 +41,7 @@ On a brighter note, I was also able to fire up [SheepShaver](https://sheepshaver
 ### Sources
 
 - [Apple - Macintosh LC 475: Technical Specifications](https://support.apple.com/en-us/112204)
-- [Apple Tech Info Library - Macintosh LC 475: Specifications (8/95), preserved by Savage Taylor](https://savagetaylor.com/til/KB013575.html)
+- [Apple Tech Info Library: Macintosh LC 475 Specifications (August 1995, Savage Taylor Archive)](https://savagetaylor.com/til/KB013575.html)
 
 ### Related Posts
 

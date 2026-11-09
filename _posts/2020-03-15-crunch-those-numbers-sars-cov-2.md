@@ -14,7 +14,7 @@ There are times when I miss university and getting to learn more about how all t
 
 Rosetta@home uses the Rosetta software platform for protein structure prediction and protein design, while Folding@home runs distributed molecular simulations. Both were contributing to coronavirus research in March 2020, although they were doing different kinds of calculations and not every work unit was necessarily about SARS-CoV-2.
 
-Both are important in different ways. Both now run on my Intel NUC, the NUC8I7BEH. Soon I will upgrade to a fanless solution as the whine of that little fan is driving me crazy. The good news? It tends to stabilise with all four cores chugging along at 3.2GHz at load. Jump on board for science!
+Both are important in different ways. Both now run on my Intel NUC, the NUC8I7BEH. Soon I will upgrade to a fanless solution as the whine of that little fan is driving me crazy. The good news? It tends to stabilise with all four cores chugging along at 3.2 GHz at load. Jump on board for science!
 
 See my progress [here](https://web.archive.org/web/20231014233339/https://boinc.netsoft-online.com/e107_plugins/boinc/get_user.php?cpid=676f3c4f4f9d35dfd294f5a778fb4eaf)!
 
@@ -25,4 +25,4 @@ See my progress [here](https://web.archive.org/web/20231014233339/https://boinc.
 - [Folding@home - Folding@home update on SARS-CoV-2 (10th Mar 2020)](https://www.foldingathome.org/news/covid19-update)
 - [Institute for Protein Design - Rosetta's role in fighting coronavirus](https://www.ipd.uw.edu/2020/02/rosettas-role-in-fighting-coronavirus/)
 - [Rosetta@home](https://boinc.bakerlab.org/rosetta/)
-- [Science - Cryo-EM structure of the 2019-nCoV spike in the prefusion conformation](https://web.archive.org/web/20210831052250/https://science.sciencemag.org/content/367/6483/1260)
+- [Science: Cryo-EM Structure of the 2019-nCoV Prefusion Spike](https://web.archive.org/web/20210831052250/https://science.sciencemag.org/content/367/6483/1260)

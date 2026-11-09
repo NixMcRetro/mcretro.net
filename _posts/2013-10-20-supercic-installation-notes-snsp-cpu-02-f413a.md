@@ -20,7 +20,7 @@ The console-side SuperCIC lock uses a programmed PIC16F630 and provides switchle
 - 30 AWG Kynar wire
 - X-Acto knife or fine jeweller's flat-blade screwdriver for lifting pins
 - PIC programmer (I used a GQ-4X)
-- 5mm dual-colour LED
+- 5 mm dual-colour LED
 - suitable current-limiting resistors for the LED
 
 ### Board connections
@@ -77,7 +77,7 @@ Check every connection and check for shorts before powering the console. Use Wol
 
 ### LED
 
-I chose a 5mm red/green dual-colour LED and had 220 ohm resistors on hand, which worked well. The SuperCIC uses the LED to indicate the selected operating mode.
+I chose a 5 mm red/green dual-colour LED and had 220 ohm resistors on hand, which worked well. The SuperCIC uses the LED to indicate the selected operating mode.
 
 ### Sources
 
@@ -86,7 +86,7 @@ I chose a 5mm red/green dual-colour LED and had 220 ohm resistors on hand, which
 - [Wolfsoft - SuperCIC SNES switchless MOD (PAL)](https://web.archive.org/web/20130906130345/http://wolfsoft.de:80/wordpress/?p=603)
 - [LED calculator for single LEDs](https://web.archive.org/web/20131016112311/http://led.linear1.org:80/1led.wiz)
 
-### Related posts
+### Related Posts
 
 - [SNES SuperCIC Switchless Modchip - Installation (Part 1)](/snes-supercic-switchless-modchip-installation-part-1/)
 - [SNES SuperCIC Switchless Modchip - The Test (Part 2)](/snes-supercic-switchless-modchip-the-test-part-2/)

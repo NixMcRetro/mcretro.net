@@ -19,7 +19,7 @@ I ended up reading quite a bit about keeping branches alive, cicadas feeding on 
 The ten original daily video diaries are collected below. Open a day to read the complete entry and watch its video.
 
 <details id="day-1" class="about-panel panel--teal" name="mcretro-flicky" markdown="1">
-<summary markdown="span">01. Meeting Flicky (27 February 2023)</summary>
+<summary markdown="span">01. Meeting Flicky - 27 February 2023</summary>
 
 {% include youtube.html id="inaf1T782e4" %}
 
@@ -32,7 +32,7 @@ I didn't really know the answer at that point. But with flying out of the questi
 </details>
 
 <details id="day-2" class="about-panel panel--teal" name="mcretro-flicky" markdown="1">
-<summary markdown="span">02. A Little More Time with Flicky (28 February 2023)</summary>
+<summary markdown="span">02. A Little More Time with Flicky - 28 February 2023</summary>
 
 {% include youtube.html id="4kexAmtZprk" %}
 
@@ -47,7 +47,7 @@ There was certainly plenty to learn, and I'd barely scratched the surface!
 </details>
 
 <details id="day-3" class="about-panel panel--teal" name="mcretro-flicky" markdown="1">
-<summary markdown="span">03. Looking After Flicky (1 March 2023)</summary>
+<summary markdown="span">03. Looking After Flicky - 1 March 2023</summary>
 
 {% include youtube.html id="au51dyfSsyw" %}
 
@@ -62,7 +62,7 @@ What started as a question about looking after one little cicada had turned into
 </details>
 
 <details id="day-4" class="about-panel panel--teal" name="mcretro-flicky" markdown="1">
-<summary markdown="span">04. The Tree Branch Question (2 March 2023)</summary>
+<summary markdown="span">04. The Tree Branch Question - 2 March 2023</summary>
 
 {% include youtube.html id="ylVdX7cuG-U" %}
 
@@ -77,7 +77,7 @@ I'd started out wanting to keep a little cicada comfortable, and now I was spend
 </details>
 
 <details id="day-5" class="about-panel panel--teal" name="mcretro-flicky" markdown="1">
-<summary markdown="span">05. Branches and Leaves (3 March 2023)</summary>
+<summary markdown="span">05. Branches and Leaves - 3 March 2023</summary>
 
 {% include youtube.html id="iDnK-XNniJ4" %}
 
@@ -88,7 +88,7 @@ Flicky wasn't always making the job particularly easy either. At one point she s
 </details>
 
 <details id="day-6" class="about-panel panel--teal" name="mcretro-flicky" markdown="1">
-<summary markdown="span">06. Flicky and the Eggs (4 March 2023)</summary>
+<summary markdown="span">06. Flicky and the Eggs - 4 March 2023</summary>
 
 {% include youtube.html id="APQOxmmoPkU" %}
 
@@ -105,7 +105,7 @@ I wasn't about to start cutting open branches to count eggs, either. Much better
 </details>
 
 <details id="day-7" class="about-panel panel--teal" name="mcretro-flicky" markdown="1">
-<summary markdown="span">07. The Next Generation (5 March 2023)</summary>
+<summary markdown="span">07. The Next Generation - 5 March 2023</summary>
 
 {% include youtube.html id="9U64Pu1CoJ0" %}
 
@@ -138,7 +138,7 @@ Looking after a cicada is surprisingly involved, especially when you've also got
 </details>
 
 <details id="day-8" class="about-panel panel--teal" name="mcretro-flicky" markdown="1">
-<summary markdown="span">08. Still Learning About Cicadas (6 March 2023)</summary>
+<summary markdown="span">08. Still Learning About Cicadas - 6 March 2023</summary>
 
 {% include youtube.html id="Pc8eGAHuEuc" %}
 
@@ -179,7 +179,7 @@ Eight days already. Who would have thought one little cicada could keep me this 
 </details>
 
 <details id="day-9" class="about-panel panel--teal" name="mcretro-flicky" markdown="1">
-<summary markdown="span">09. Still Laying Eggs! (7 March 2023)</summary>
+<summary markdown="span">09. Still Laying Eggs! - 7 March 2023</summary>
 
 {% include youtube.html id="NlZ-JLDtDvg" %}
 
@@ -220,7 +220,7 @@ For now, Flicky is still active, still investigating the branches and apparently
 </details>
 
 <details id="day-10" class="about-panel panel--teal" name="mcretro-flicky" markdown="1">
-<summary markdown="span">10. Goodbye, Flicky (8 March 2023)</summary>
+<summary markdown="span">10. Goodbye, Flicky - 8 March 2023</summary>
 
 {% include youtube.html id="TJcM_pNHOSw" %}
 

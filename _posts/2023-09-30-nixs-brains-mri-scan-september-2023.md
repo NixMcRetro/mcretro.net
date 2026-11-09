@@ -35,7 +35,7 @@ I'm just glad there **_is_** a way to treat the symptoms. Indometacin is not exa
 ### Sources
 
 - [International Classification of Headache Disorders 3 - Hemicrania continua](https://ichd-3.org/3-trigeminal-autonomic-cephalalgias/3-4-hemicrania-continua/)
-- [Australian Commission on Safety and Quality in Health Care - Indocid capsule and suppository consumer medicine information](https://www.safetyandquality.gov.au/medicine-finder/indocid-suppositories)
+- [Australian Commission on Safety and Quality in Health Care: Indocid Suppositories Consumer Medicine Information](https://www.safetyandquality.gov.au/medicine-finder/indocid-suppositories)
 
 ### Related Posts
 

@@ -69,10 +69,10 @@ I was starting to wonder whether stress and anxiety were part of the picture, bu
 ### Sources
 
 - [ResMed - AirFit N20 nasal mask](https://www.resmed.com/en-us/products/cpap/masks/airfit-n20/)
-- [ResMed - AirSense 10 AutoSet, AutoSet for Her, Elite and CPAP Clinical Guide](https://www.resmed.com.au/hubfs/airsense-10-autoset-afh-elite-cpap-clinical-guide-apac-eng.pdf)
+- [ResMed: AirSense 10 Clinical Guide (AutoSet, AutoSet for Her, Elite and CPAP)](https://www.resmed.com.au/hubfs/airsense-10-autoset-afh-elite-cpap-clinical-guide-apac-eng.pdf)
 - [Healthdirect Australia - Obstructive sleep apnoea](https://www.healthdirect.gov.au/obstructive-sleep-apnoea)
 - [Treatment-emergent central sleep apnea: a unique sleep-disordered breathing](https://pmc.ncbi.nlm.nih.gov/articles/PMC7725531/)
 
-### Related posts
+### Related Posts
 
 - [Sleep Hygiene and Sleep Health](/sleep-hygiene-and-sleep-health/)

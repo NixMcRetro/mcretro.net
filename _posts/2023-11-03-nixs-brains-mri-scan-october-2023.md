@@ -32,8 +32,8 @@ A headache that won't go away, unemployment, and an overall lack of purpose. I g
 ### Sources
 
 - [RadiologyInfo.org - Contrast Materials](https://www.radiologyinfo.org/en/info/safety-contrast)
-- [Australian Commission on Safety and Quality in Health Care - Indocid capsule and suppository consumer medicine information](https://www.safetyandquality.gov.au/medicine-finder/indocid-suppositories)
-- [Australian Commission on Safety and Quality in Health Care - Lyrica consumer medicine information](https://www.safetyandquality.gov.au/medicine-finder/lyrica)
+- [Australian Commission on Safety and Quality in Health Care: Indocid Suppositories Consumer Medicine Information](https://www.safetyandquality.gov.au/medicine-finder/indocid-suppositories)
+- [Australian Commission on Safety and Quality in Health Care: Lyrica Consumer Medicine Information](https://www.safetyandquality.gov.au/medicine-finder/lyrica)
 
 ### Related Posts
 

@@ -87,7 +87,7 @@ test('blocked localStorage still permits a page-only manual choice', () => {
 test('two stable button positions, WCAG labels and CSS colour tokens', () => {
   assert.match(style,/\.theme-toggle[\s\S]*width: 40px/);
   assert.match(style,/@media screen and \(max-width: 750px\) \{\s*\.theme-toggle/);
-  for(const value of ['#FFF8DC','#191D27','#0009B5','#78D0C3','#005E63','#115B60','#FFFDF2','#242B38'])assert.ok(style.includes(value),value);
+  for(const value of ['#FFF8DC','#191D27','#0009B5','#78D0C3','#064584','#115B60','#FFFDF2','#242B38'])assert.ok(style.includes(value),value);
   assert.match(style,/:root\[data-theme="dark"\]/);
 });
 
@@ -108,6 +108,25 @@ test('Dial-a-Homepage links and monthly archive counts follow the active theme',
   assert.match(overrides, /\.dial-homepage a:hover \{ color: var\(--link-hover\); \}/);
   assert.match(overrides, /\.dial-homepage a:focus-visible\s*\{[^}]*var\(--focus\)/);
   assert.match(overrides, /\.archive-month-summary\s*\{[^}]*color: var\(--muted\)/);
+  assert.match(overrides, /\.mcretro-modem-titlebar[\s\S]*background: #000080/);
+});
+
+
+test('sidebar Search and archive calendar share classic blue only in Light mode', () => {
+  const light = style.split(':root[data-theme="dark"]')[0];
+  const dark = style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
+  for (const token of ['--sidebar-button-bg: #064584;', '--sidebar-button-hover: #00346D;', '--archive-tile: #064584;', '--archive-hover: #00346D;']) {
+    assert.ok(light.includes(token), token);
+  }
+  for (const token of ['--sidebar-button-bg: #78D0C3;', '--sidebar-button-hover: #A5E5D9;', '--archive-tile: #115B60;', '--archive-hover: #19757B;']) {
+    assert.ok(dark.includes(token), token);
+  }
+  assert.match(style, /\.sidebar \.inline-search-form button\s*\{[^}]*background:\s*var\(--sidebar-button-bg\);/);
+  assert.match(style, /\.sidebar \.inline-search-form button:hover\s*\{[^}]*background:\s*var\(--sidebar-button-hover\);/);
+  assert.match(overrides, /\.sidebar a\.archive-calendar-month\.has-posts \{[^}]*background: var\(--archive-tile\);/);
+  assert.match(overrides, /\.sidebar a\.archive-calendar-month\.has-posts:hover \{[^}]*background: var\(--archive-hover\);/);
+  assert.match(style, /--link:\s*#0009B5;/);
+  assert.match(style, /--retro-teal:\s*#008080;/);
   assert.match(overrides, /\.mcretro-modem-titlebar[\s\S]*background: #000080/);
 });
 

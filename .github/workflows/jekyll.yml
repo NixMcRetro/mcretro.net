@@ -22,6 +22,7 @@ on:
       - '.github/tests/vrampage-live.py'
       - '.github/tests/vrampage-live.test.py'
       - '.github/tests/check-darknet-consolidation.py'
+      - '.github/tests/check-flicky-consolidation.py'
       - '_posts/*-take-back-the-darknet-part-*.md'
       - 'assets/images/2016/01/take-back-the-darknet/**'
       - 'assets/js/darknet-accordion.js'
@@ -77,6 +78,9 @@ jobs:
 
       - name: Verify Darknet guide chapter redirects and original JPEG XL image
         run: python3 .github/tests/check-darknet-consolidation.py _site
+
+      - name: Verify Flicky diary consolidation and original media
+        run: python3 .github/tests/check-flicky-consolidation.py _site
 
       - name: Setup Node.js
         uses: actions/setup-node@v6

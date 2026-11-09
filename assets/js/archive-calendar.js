@@ -49,6 +49,15 @@
     year.selectedIndex = index;
     show();
   }
+  // Jekyll supplies a publication year for posts and monthly archives.
+  // A post's permalink is /:title/, so the year cannot be read from its URL.
+  // Only choose a known option; the validated year still builds archive hrefs.
+  const contextYear = document.body?.dataset?.archiveContextYear;
+  if (contextYear && /^\d{4}$/.test(contextYear)) {
+    const contextIndex = Array.from(year.options).findIndex(
+      option => option.value === contextYear);
+    if (contextIndex !== -1) year.selectedIndex = contextIndex;
+  }
   year.disabled = false;
   older.addEventListener('click', () => step(1));
   newer.addEventListener('click', () => step(-1));

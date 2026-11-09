@@ -52,5 +52,27 @@ for (let i = 0; i < 12; i++) {
   assert.equal(initialGrid.includes('href="' + url + '"'), firstCounts[i] > 0,
     'Initial grid link disagrees with latest-year count for ' + year + '-' + month);
 }
+// The page layout should expose the publication year even for title-based posts.
+const year2012 = options.find(([, archiveYear]) => archiveYear === '2012');
+assert.ok(year2012, 'Expected a 2012 archive year');
+const counts2012 = year2012[2].trim().replace(/\s+/g, '').split(',').map(Number);
+const sampleMonth = counts2012.findIndex(count => count > 0);
+assert.ok(sampleMonth >= 0, 'Expected at least one published month in 2012');
+const archivePath2012 = join(site, 'archive', '2012',
+  String(sampleMonth + 1).padStart(2, '0'), 'index.html');
+const html2012 = readFileSync(archivePath2012, 'utf8');
+assert.match(html2012, /<body\b[^>]*data-archive-context-year="2012"/,
+  'A 2012 monthly archive should initialise the sidebar to 2012');
+const articleUrl2012 = html2012.match(/<h2 class="post-title"><a href="([^"]+)"/)?.[1];
+assert.ok(articleUrl2012 && /^\/[^?#]+\/$/.test(articleUrl2012),
+  'Expected an article link in the 2012 monthly archive');
+const articlePath2012 = join(site, articleUrl2012.slice(1), 'index.html');
+assert.ok(existsSync(articlePath2012), 'Expected article page: ' + articleUrl2012);
+const articleHtml2012 = readFileSync(articlePath2012, 'utf8');
+assert.match(articleHtml2012, /<body\b[^>]*data-archive-context-year="2012"/,
+  'A 2012 article should initialise the sidebar to its year');
+assert.doesNotMatch(home, /data-archive-context-year=/,
+  'The undated homepage should keep the latest year as the default');
+
 console.log('PASS: ' + options.length + ' years and ' + archiveMonths +
   ' published monthly archives have matching sidebar counts; Jan–Sep validated.');

@@ -6,7 +6,7 @@ const read = path => readFileSync(new URL('../../' + path, import.meta.url), 'ut
 const sidebar = read('_includes/sidebar.html'), layout = read('_layouts/default.html');
 const code = read('assets/js/archive-calendar.js'), css = read('assets/css/overrides.css');
 
-function fixture() {
+function fixture(contextYear) {
   const handlers = {};
   class El {
     constructor(tag) { this.tag = tag; this.children = []; this.attrs = {}; }
@@ -28,7 +28,8 @@ function fixture() {
     '[data-archive-newer]': newer, '[data-archive-months]': grid };
   runInNewContext(code, { document: { querySelector: x =>
     x === '[data-archive-calendar]' ? { querySelector: k => els[k] } : null,
-    createElement: tag => new El(tag) } });
+    createElement: tag => new El(tag),
+    body: { dataset: { archiveContextYear: contextYear } } } });
   return { grid, select, newer, older, handlers };
 }
 test('sidebar order and no redundant navigation', () => {
@@ -75,6 +76,34 @@ test('year navigation, 12 tiles, blue links and zero-month disabled cells', () =
   f.handlers.newer();
   assert.equal(f.select.selectedIndex, 1);
 });
+test('archive and article pages select the dated year', () => {
+  for (const selectedYear of ['2012', '2016', '2026']) {
+    const f = fixture(selectedYear);
+    assert.equal(f.select.options[f.select.selectedIndex].value, selectedYear);
+    assert.equal(f.grid.attrs['aria-label'], selectedYear + ' monthly archives');
+    assert.equal(f.grid.children.length, 12);
+  }
+  const f = fixture('2012');
+  assert.equal(f.older.disabled, true);
+  assert.equal(f.newer.disabled, false);
+  assert.equal(f.grid.children[2].href, '/archive/2012/03/');
+  f.handlers.newer();
+  assert.equal(f.select.options[f.select.selectedIndex].value, '2016');
+});
+
+test('undated pages and unknown or malformed years select the latest year', () => {
+  for (const selectedYear of [undefined, '', '1900', '20<script>', '2012/10',
+    'javascript:alert(1)', '0000']) {
+    const f = fixture(selectedYear);
+    assert.equal(f.select.selectedIndex, 0);
+    assert.equal(f.grid.children[0].href, '/archive/2026/01/');
+  }
+  assert.match(layout, /data-archive-context-year="{{ page.date \| date: '%Y' }}"/);
+  assert.match(layout, /\{% if page.date %\}/);
+  assert.match(code, /option\.value === contextYear/);
+  assert.doesNotMatch(code, /cell\.href = [^\n]*contextYear/);
+});
+
 test('DOM year values are normalised before becoming archive links', () => {
   const f = fixture();
   for (const untrusted of [

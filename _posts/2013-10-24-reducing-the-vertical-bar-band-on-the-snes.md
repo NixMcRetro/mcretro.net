@@ -12,7 +12,7 @@ The vertical bar on my Super Nintendo didn't bother me too much while I was play
 
 I'd been noticing a rather prominent vertical band running down the picture, particularly against certain background colours. It's one of those things you can ignore for a while, but once somebody points it out, your eyes seem determined to find it every time you switch the machine on.
 
-Thanks to MaxWar over at ASSEMbler Games for the information that sent me down this particular path. The idea was to improve filtering on the Super Nintendo's 5 V supply, including the power going to the video encoder, and see whether that would make the picture any cleaner.
+Thanks to MaxWar over at [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) for the information that sent me down this particular path. The idea was to improve filtering on the Super Nintendo's 5 V supply, including the power going to the video encoder, and see whether that would make the picture any cleaner.
 
 The machine on the bench was a PAL CPU-02 Super Nintendo, which had already seen a few repairs. I'd replaced the fuse previously too, so there was no shortage of reasons to be poking around inside it again.
 

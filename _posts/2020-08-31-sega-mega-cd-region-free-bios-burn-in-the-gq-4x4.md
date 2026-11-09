@@ -14,7 +14,7 @@ I'm using my GQ-4X4 programmer for this job, along with its 16-bit EPROM adapter
 
 The chip is a 27C1024, a 1 Mbit EPROM organised as 64K x 16. That's 1,048,576 bits, or 131,072 bytes (128 KiB), which is rather a lot of space for a console BIOS from the early 1990s. These are 16-bit devices, which is why the correct adapter is important when using this programmer.
 
-For the software side, I loaded the patched region-free BIOS image into the GQ-4X4 application as a binary file. This particular image came from the community around ASSEMbler Games, where people have been doing some rather entertaining things with Mega-CD hardware for years.
+For the software side, I loaded the patched region-free BIOS image into the GQ-4X4 application as a binary file. This particular image came from the community around [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/), where people have been doing some rather entertaining things with Mega-CD hardware for years.
 
 The interesting complication is byte order. The image can appear perfectly normal when loaded into the programmer's buffer, but the Sega Mega-CD expects its 16-bit data arranged correctly for the hardware. The programmer provides a byte-swap function, which changes the order of the bytes within each 16-bit word. It's rather amusing seeing the readable text in the buffer turn into nonsense when the byte order is swapped!
 

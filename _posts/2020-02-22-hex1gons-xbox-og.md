@@ -8,7 +8,7 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="sOxopR6_JCM" %}
 
-You've got to love the community! I picked up an Xbox OG or three from Hex of ASSEMbler Games a few years back, while it was not busy being defunct, and from memory I think he threw in a bonus Xbox! Amazing guy! If you somehow see this, thanks Hex! I've got no idea where you are now!
+You've got to love the community! I picked up an Xbox OG or three from Hex of [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) a few years back, while it was not busy being defunct, and from memory I think he threw in a bonus Xbox! Amazing guy! If you somehow see this, thanks Hex! I've got no idea where you are now!
 
 One of those machines has made its way back onto the workbench, and there are a few interesting things going on inside. It's got some aftermarket LEDs around the front, which look rather nice but make the usual Xbox status lights a little difficult to interpret. When everything decides to flash the same colour, it's not particularly helpful for working out what the console is trying to tell me!
 

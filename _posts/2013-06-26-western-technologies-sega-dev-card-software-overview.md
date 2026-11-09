@@ -16,7 +16,7 @@ Once connected, the software offers access to the Mega Drive's VRAM, CRAM and VS
 
 There's also a file transfer utility called SEGALOAD, which sends code from the PC through its parallel connection into SRAM on the development cartridge. The documentation calls this downloading, although from the PC's point of view it feels rather more like uploading. Potato, potato!
 
-A gentleman on ASSEMbler Games kindly supplied the software, which made this little experiment possible. I haven't reached the stage of compiling my own programs yet, but getting the tools connected and seeing the interface working is an excellent start.
+A gentleman on [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) kindly supplied the software, which made this little experiment possible. I haven't reached the stage of compiling my own programs yet, but getting the tools connected and seeing the interface working is an excellent start.
 
 It reminded me a little of the Mega EverDrive, which could load game images from an SD card or transfer them from a PC over USB. Different hardware, of course, but a similarly convenient way to get new code running on a Mega Drive without burning another EPROM.
 

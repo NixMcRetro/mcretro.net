@@ -8,7 +8,7 @@ categories: [repairs, sega, youtube]
 
 {% include youtube.html id="qhnMKumXz3U" %}
 
-A member of the ASSEMbler Games forums asked whether I could try some of the Sophia hardware in an ordinary retail VA0 Saturn. Naturally I had to find out. The Sophia is still missing its SH-2 processor cards, which makes testing the complete machine rather difficult, so this seemed like an excellent opportunity to find out whether some of its other components actually worked.
+A member of the [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) forums asked whether I could try some of the Sophia hardware in an ordinary retail VA0 Saturn. Naturally I had to find out. The Sophia is still missing its SH-2 processor cards, which makes testing the complete machine rather difficult, so this seemed like an excellent opportunity to find out whether some of its other components actually worked.
 
 I've got a retail VA0 Saturn on the bench, complete with its rather unusual CD drive arrangement. The power supply is mounted to the upper case, and the CD hardware uses a separate SH-1 daughterboard. That makes it a particularly interesting machine for this experiment, since the Sophia development hardware has a somewhat similar arrangement.
 

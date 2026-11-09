@@ -26,7 +26,7 @@ I also tried a smaller desktop case, but there wasn't enough clearance. At least
 
 I've heard there can also be compatibility problems involving certain Sound Blaster cards, although I haven't established whether that applies to this particular setup. For now I'm leaving the old Creative card installed and concentrating on getting the Sega hardware working.
 
-A big thank you to Jackhead over at ASSEMbler Games, who helped me with the hardware and supplied the motherboard I'm using here. It's been quite a learning experience getting these development cards to cooperate.
+A big thank you to Jackhead over at [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/), who helped me with the hardware and supplied the motherboard I'm using here. It's been quite a learning experience getting these development cards to cooperate.
 
 So there we have it. A 486DX4-100, a collection of rather interesting ISA cards, and a working connection to the Sega Mega-CD development hardware. This machine is a beast!
 

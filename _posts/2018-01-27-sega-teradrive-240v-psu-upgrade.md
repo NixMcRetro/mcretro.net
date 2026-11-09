@@ -10,7 +10,7 @@ last_modified_at: 2026-10-18
 
 Previously, way back in August 2016, I [posted](/sega-teradrive-power-supply-problems/) about having power supply problems on my Sega TeraDrives.
 
-I had considered falling back onto a PSU replacement if replacing parts blindly failed. As it turned out, this was the plan I ended up following. Instead of the PicoPSU, I went with the [Mean Well RD-65A](https://www.meanwell.co.uk/power-supplies/enclosed-power-supplies/rd-65-series), which provides +5 V and +12 V outputs. Ronnie of ASSEMblergames used the [Mean Well PT-65B](https://www.meanwell.com/Upload/PDF/PT-65/PT-65-SPEC.PDF) for his own TeraDrive, which also provides a -12 V rail and can therefore suit hardware that actually needs that negative supply.
+I had considered falling back onto a PSU replacement if replacing parts blindly failed. As it turned out, this was the plan I ended up following. Instead of the PicoPSU, I went with the [Mean Well RD-65A](https://www.meanwell.co.uk/power-supplies/enclosed-power-supplies/rd-65-series), which provides +5 V and +12 V outputs. Ronnie of [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) used the [Mean Well PT-65B](https://www.meanwell.com/Upload/PDF/PT-65/PT-65-SPEC.PDF) for his own TeraDrive, which also provides a -12 V rail and can therefore suit hardware that actually needs that negative supply.
 
 ![](/assets/images/2018/img_0608.jpg)
 
@@ -54,7 +54,7 @@ That was enough tinkering for me, especially with mains voltage, so I decided to
 
 ![](/assets/images/2018/img_0607.jpg)
 
-For more information, check out [ASSEMbler Games](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/).
+For more information, check out [ASSEMblergames.com](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/).
 
 ### Sources
 

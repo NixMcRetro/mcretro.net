@@ -15,7 +15,7 @@ The problem had been incorrect voltages under load, accompanied by an unpleasant
 
 There it is! The incorrect voltage returned, and I shut the machine down rather than leave it running like that. The problem was still present, including when testing the Mega Drive side of the hardware. Not exactly wonderful news for the TeraDrive, but at least I wasn't chasing a fault that had mysteriously disappeared.
 
-I've also been discussing this with Ronnie and some of the knowledgeable people over on ASSEMbler Games. Ronnie has done some rather impressive work with the TeraDrive hardware, including modifications that are well beyond what I'm attempting here. His suggestions helped narrow down a few places to investigate in the power supply.
+I've also been discussing this with Ronnie and some of the knowledgeable people over on [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/). Ronnie has done some rather impressive work with the TeraDrive hardware, including modifications that are well beyond what I'm attempting here. His suggestions helped narrow down a few places to investigate in the power supply.
 
 With the supply removed, I started identifying the components that might need attention. There are approximately nine electrolytic capacitors, along with several transistors, diodes and other semiconductors. One Nichicon capacitor on the low-voltage side looked particularly suspicious, although that doesn't establish it as the faulty component.
 

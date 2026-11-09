@@ -8,7 +8,7 @@ categories: [hacks, repairs, sega]
 
 {% include youtube.html id="sBpigjWEE8M" %}
 
-Someone on the ASSEMbler Games forums pointed out that the Aiwa Mega-CD CSD-GM1 BIOS didn't appear to have been dumped. Well, that's a good enough excuse to pull another machine apart! This became a three-part project involving disassembling the Game Unit, removing the BIOS ROM, and dumping its contents.
+Someone on the [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) forums pointed out that the Aiwa Mega-CD CSD-GM1 BIOS didn't appear to have been dumped. Well, that's a good enough excuse to pull another machine apart! This became a three-part project involving disassembling the Game Unit, removing the BIOS ROM, and dumping its contents.
 
 The first video follows me dismantling the Aiwa's detachable Game Unit. There are screws all over the place, including several underneath and around the upper casing. Naturally, I'd forgotten exactly how some of it came apart.
 

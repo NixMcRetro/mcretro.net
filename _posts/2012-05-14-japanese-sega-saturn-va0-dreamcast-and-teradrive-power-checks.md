@@ -47,7 +47,7 @@ Perfect. The readings match the familiar PC wiring colours, with red for +5 V, y
 
 This makes life a little easier if I eventually investigate replacing the internal PSU with something like a picoPSU.
 
-I've been messaging back and forth with Nemesis via the ASSEMblergames forums and comparing his photos with my Sega TeraDrive Model 2 and Model 3. They use the same controller chips. [Hacking-Cult.org](http://nemesis.hacking-cult.org/MegaDrive/TeraDrive/Pictures/) is where his photos are hosted, and there is an active thread on [SpritesMind.net](http://gendev.spritesmind.net/forum/viewtopic.php?p=15182).
+I've been messaging back and forth with Nemesis via the [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) forums and comparing his photos with my Sega TeraDrive Model 2 and Model 3. They use the same controller chips. [Hacking-Cult.org](http://nemesis.hacking-cult.org/MegaDrive/TeraDrive/Pictures/) is where his photos are hosted, and there is an active thread on [SpritesMind.net](http://gendev.spritesmind.net/forum/viewtopic.php?p=15182).
 
 ### Sources
 

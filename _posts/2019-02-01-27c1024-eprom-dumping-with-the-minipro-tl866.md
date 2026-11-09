@@ -12,7 +12,7 @@ Ah yes, the ways of the 16-bit chip. Here we dump a Mega-CD BIOS several times t
 
 The programmer for this experiment is my MiniPro TL866CS, which I've used for quite a few different EPROM and microcontroller projects. It's a fairly small USB device, but it can handle an impressive collection of chips. Thankfully, the AMD 27C1024 is one of them.
 
-The chip itself arrived from somebody on ASSEMbler Games, who wanted to check an existing Sega CD BIOS dump. There were a couple of slightly bent pins from its journey through the post, so I straightened those before putting the EPROM into the programmer.
+The chip itself arrived from somebody on [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/), who wanted to check an existing Sega CD BIOS dump. There were a couple of slightly bent pins from its journey through the post, so I straightened those before putting the EPROM into the programmer.
 
 The 27C1024 is a 16-bit EPROM in a 40-pin DIP package. That makes it rather different from the smaller 8-bit devices I've worked with in other projects, but the process is much the same once the correct chip has been selected in the software.
 

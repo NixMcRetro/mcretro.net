@@ -8,7 +8,7 @@ last_modified_at: 2026-10-18
 
 ![](/assets/images/2018/img_0613.jpg)
 
-Here's a historical community-compiled list of known Sega Dreamcast hardware part numbers. It was copied from [ASSEMblergames](https://web.archive.org/web/20170812094245/https://www.assemblergames.com/threads/dreamcast-hardware-list.22804/), so thanks to Quzar, DreamCaster and everyone else who contributed! I have preserved the original question marks and uncertain translations rather than pretending every entry has been independently verified.
+Here's a historical community-compiled list of known Sega Dreamcast hardware part numbers. It was copied from [ASSEMblergames.com](https://web.archive.org/web/20170812094245/https://www.assemblergames.com/threads/dreamcast-hardware-list.22804/), so thanks to Quzar, DreamCaster and everyone else who contributed! I have preserved the original question marks and uncertain translations rather than pretending every entry has been independently verified.
 
 These first models often appear simply as HKT-0x rather than HKT-0xy0
 

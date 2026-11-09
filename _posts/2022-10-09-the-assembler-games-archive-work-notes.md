@@ -127,7 +127,7 @@ As the forums were upgraded over the years we saw a shift in the way the URLs we
 
 ![](/assets/images/2022/img_0971.jpg)
 
-Something simple I had on my cleanup list was to track down 0-byte files and delete them, though I never did get around to it. The root folder is quite chaotic owing to all the other sites that were ripped along with ASSEMbler Games. This can be good in some ways, as images of hardware in threads were captured. I'm not sure how well implemented this was though.
+Something simple I had on my cleanup list was to track down 0-byte files and delete them, though I never did get around to it. The root folder is quite chaotic owing to all the other sites that were ripped along with [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/). This can be good in some ways, as images of hardware in threads were captured. I'm not sure how well implemented this was though.
 
 Another curiosity I never worked out was this one. On the following link: **https://assembler.mcretro.net/members/sonicdude10.65150/index.html** you were able to see a link that references either the /l/threads or /threads.
 
@@ -139,7 +139,7 @@ try / 		THEN try 		/l/ 	THEN fail with 404
 try /l/		THEN try 		/	THEN fail with 404
 ```
 
-I never got around to looking into it too far though. It's been good. Assembler Games was where I tended to hang around when I had free time during the mid 2010s. They ignited my love of retrogaming once more and gave me reason. They will be missed. All the best Kevin! :-)
+I never got around to looking into it too far though. It's been good. [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) was where I tended to hang around when I had free time during the mid 2010s. They ignited my love of retrogaming once more and gave me reason. They will be missed. All the best Kevin! :-)
 
 ### Sources
 

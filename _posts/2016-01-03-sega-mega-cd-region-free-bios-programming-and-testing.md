@@ -10,7 +10,7 @@ categories: [hacks, sega, youtube]
 
 I've been sorting through some of my Sega collection and getting a Mega-CD Model 1 ready to pass on. It's paired with a VA4 Mega Drive Model 1, and I've decided to install a region-free BIOS while I've got everything apart. Unfortunately, programming the thing has been giving me all sorts of trouble!
 
-The BIOS image came from the folk at ASSEMbler Games, but my first attempt failed because I'd forgotten to byte-swap the data. I tried another programmer, only to end up with complete gibberish when I read the chip back using my GQ-4X. Wonderful!
+The BIOS image came from the folk at [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/), but my first attempt failed because I'd forgotten to byte-swap the data. I tried another programmer, only to end up with complete gibberish when I read the chip back using my GQ-4X. Wonderful!
 
 After a bit more investigating, I discovered that a tiny jumper on the ADP-054 adapter board had been causing at least some of my problems. I'd previously moved it while troubleshooting bad ROM dumps, and removing it finally got things behaving again. Months of trouble over a little jumper!
 

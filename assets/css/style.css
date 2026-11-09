@@ -273,9 +273,9 @@
   --panel-hover: #F0EAD9;
   --text: #1A1A1A;
   --muted: #535A5D;
-  --link: #006B69;
-  --link-hover: #004D4B;
-  --focus: #006B69;
+  --link: #0009B5;
+  --link-hover: #000080;
+  --focus: #0009B5;
   --border: #525D5B;
   --border-soft: #BBC8BF;
   --code-bg: #F0EAD9;
@@ -619,6 +619,11 @@ pre code {
   font-size: 0.85rem;
   line-height: 1;
   text-decoration: none;
+}
+.recent-posts-list li a:hover,
+.recent-posts-list li a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
 }
 .post-date-sidebar {
   display: block;

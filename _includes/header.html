@@ -35,12 +35,12 @@
       
   <!-- Navigation list (same as before) -->
       <ul class="nav-list">
-        <li><a href="/" {% if page.url == "/" or page.url == "/index.html" %}class="active"{% endif %}>🏡 Home</a></li>
-        <li><a href="/blog/" {% if page.url contains "/blog/" or page.layout == "post" or page.layout == "archive" %}class="active"{% endif %}>✏️ Blog</a></li>
-        <li><a href="/channels/" {% if page.url contains "/channels/" %}class="active"{% endif %}>📺 Channels</a></li>
-        <li><a href="/goodies/" {% if page.url contains "/goodies/" %}class="active"{% endif %}>💾 Goodies</a></li>
-        <li><a href="/blog/" id="random-post-link">🌏 Random</a></li>
-        <li><a href="/about/" {% if page.url contains "/about/" %}class="active"{% endif %}>📡 About</a></li>
+        <li><a href="/" {% if page.url == "/" or page.url == "/index.html" %}class="active"{% endif %}><span class="nav-emoji" aria-hidden="true">🏡</span> <span class="nav-text">Home</span></a></li>
+        <li><a href="/blog/" {% if page.url contains "/blog/" or page.layout == "post" or page.layout == "archive" %}class="active"{% endif %}><span class="nav-emoji" aria-hidden="true">✏️</span> <span class="nav-text">Blog</span></a></li>
+        <li><a href="/channels/" {% if page.url contains "/channels/" %}class="active"{% endif %}><span class="nav-emoji" aria-hidden="true">📺</span> <span class="nav-text">Channels</span></a></li>
+        <li><a href="/goodies/" {% if page.url contains "/goodies/" %}class="active"{% endif %}><span class="nav-emoji" aria-hidden="true">💾</span> <span class="nav-text">Goodies</span></a></li>
+        <li><a href="/blog/" id="random-post-link"><span class="nav-emoji" aria-hidden="true">🌏</span> <span class="nav-text">Random</span></a></li>
+        <li><a href="/about/" {% if page.url contains "/about/" %}class="active"{% endif %}><span class="nav-emoji" aria-hidden="true">📡</span> <span class="nav-text">About</span></a></li>
       </ul>
     </nav>
     <div class="nav-overlay"></div>

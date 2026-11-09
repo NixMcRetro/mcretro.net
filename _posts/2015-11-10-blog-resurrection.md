@@ -20,6 +20,6 @@ I'm looking forward to fixing all the broken imported posts. For now they live u
 
 What a busy time ahead. Stay tuned! ;)
 
-### Related posts
+### Related Posts
 
 - [New Blog Ready for Action - Dropplets](/new-blog-ready-for-action-dropplets/)

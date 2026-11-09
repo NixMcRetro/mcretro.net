@@ -28,7 +28,7 @@ Next up is cleaning the exposed pads and removing the remaining bits of capacito
 
 Not quite as excellent as I'd hoped, but I'll work it out. This little board has certainly made the job more interesting!
 
-### Related posts
+### Related Posts
 
 - [Pioneer LaserActive PAC-S1 EPROM BIOS Dump](/pioneer-laseractive-pac-s1-eprom-bios-dump/)
 - [Pioneer LaserActive Sega PAC-S1 Disassembly](/pioneer-laseractive-sega-pac-s1-disassembly/)

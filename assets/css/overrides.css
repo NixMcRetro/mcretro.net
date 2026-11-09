@@ -1,4 +1,5 @@
 /* Keep post-end link sections at the size of bold body text. */
+.post-content #resources,
 .post-content #sources,
 .post-content #related-posts {
   font-family: inherit;

@@ -12,6 +12,13 @@ on:
     paths:
       - '_posts/**'
       - 'assets/css/**'
+      - 'about.md'
+      - 'channels.md'
+      - 'goodies.md'
+      - '_layouts/default.html'
+      - '_includes/exclusive-panel-visibility.html'
+      - 'assets/js/accordion-navigation.js'
+      - '.github/tests/check-accordion-navigation.mjs'
       - 'homepages/vrampage-md/**'
       - '_config.yml'
       - '.github/workflows/jekyll.yml'
@@ -86,6 +93,9 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '24'
+
+      - name: Verify shared accordion navigation across published pages
+        run: node .github/tests/check-accordion-navigation.mjs _site
 
       - name: Install Pagefind
         run: npm ci --no-audit --no-fund

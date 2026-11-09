@@ -104,7 +104,7 @@ Mac OS limit of ~1024 characters
 
 - [Apple - Mac OS X intro(2): file and pathname limits](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man2/intro.2.html)
 - [despens - GeoCities rebuild repository and README](https://github.com/despens/Geocities)
-- [One Terabyte of Kilobyte Age - Verify and complete your Geocities Download via HTTP](https://blog.geocities.institute/archives/3209)
+- [One Terabyte of Kilobyte Age: Verify and Complete a GeoCities Download via HTTP](https://blog.geocities.institute/archives/3209)
 - [One Terabyte of Kilobyte Age - Resolving conflicts](https://blog.geocities.institute/archives/3288)
 
 ### Related Posts

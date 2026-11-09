@@ -49,5 +49,5 @@ Thanks to our failings in social security, i.e. Centrelink, I am just forever wa
 
 ### Sources
 
-- [NSW Residential Tenancies Act 2010 - historical version covering August 2023](https://legislation.nsw.gov.au/view/whole/pdf/inforce/2023-10-13/act-2010-042)
+- [NSW Legislation: Residential Tenancies Act 2010 (Historical Version, 13 October 2023)](https://legislation.nsw.gov.au/view/whole/pdf/inforce/2023-10-13/act-2010-042)
 - [NSW Fair Trading - Rent](https://web.archive.org/web/20230812202356/https://www.fairtrading.nsw.gov.au/housing-and-property/renting/during-a-tenancy/rent)

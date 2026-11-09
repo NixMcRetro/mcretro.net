@@ -287,10 +287,12 @@
   --button-bg: #006B69;
   --button-hover: #004D4B;
   --button-text: #FFFFFF;
+  --sidebar-button-bg: #064584;
+  --sidebar-button-hover: #00346D;
   --nav-button-bg: #1A1A1A;
   --nav-button-text: #FFFFFF;
-  --archive-tile: #005E63;
-  --archive-hover: #004B50;
+  --archive-tile: #064584;
+  --archive-hover: #00346D;
   --archive-empty: #FFFDF2;
   --retro-teal: #008080;
 }
@@ -315,6 +317,8 @@
   --button-bg: #78D0C3;
   --button-hover: #A5E5D9;
   --button-text: #191D27;
+  --sidebar-button-bg: #78D0C3;
+  --sidebar-button-hover: #A5E5D9;
   --nav-button-bg: #78D0C3;
   --nav-button-text: #191D27;
   --archive-tile: #115B60;
@@ -608,6 +612,13 @@ pre code {
 }
 .inline-search-form button:hover {
   background: var(--button-hover);
+}
+/* Keep sidebar Search in step with the archive calendar, without recolouring other buttons. */
+.sidebar .inline-search-form button {
+  background: var(--sidebar-button-bg);
+}
+.sidebar .inline-search-form button:hover {
+  background: var(--sidebar-button-hover);
 }
 .search-widget {
   padding-top: 0.8rem;

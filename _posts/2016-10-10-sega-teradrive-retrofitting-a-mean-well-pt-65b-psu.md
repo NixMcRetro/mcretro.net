@@ -10,7 +10,7 @@ categories: [hacks, ibm-pc, sega]
 
 I've been noticing a few people looking for ways to replace failed Sega TeraDrive power supplies. Others are simply trying to get away from having to run a Japanese machine through a large external step-down transformer. I'm firmly in that second group!
 
-DeChief over on ASSEMblerGames has come up with an interesting solution using a Mean Well PT-65B power supply fitted inside the original TeraDrive PSU housing. The photos here are courtesy of DeChief and show his installation rather than one I've carried out myself.
+DeChief over on [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) has come up with an interesting solution using a Mean Well PT-65B power supply fitted inside the original TeraDrive PSU housing. The photos here are courtesy of DeChief and show his installation rather than one I've carried out myself.
 
 The PT-65B is a 65 W triple-output switching supply, giving us:
 

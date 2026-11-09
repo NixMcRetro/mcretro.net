@@ -8,7 +8,7 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="6L58APMhOyw" %}
 
-A deeper dive into the installation of the Phantom Universal. After ASSEMbler Games burnt down, Bad_Ad84 was selling these through Retro Gamer Stuff, which [later closed](https://web.archive.org/web/20250820045546/https://retrogamerstuff.com/blogs/news/a-farewell). I was very happy with the Phantom, especially paired with a region-bypass option such as Pseudo Saturn Kai.
+A deeper dive into the installation of the Phantom Universal. After [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) burnt down, Bad_Ad84 was selling these through Retro Gamer Stuff, which [later closed](https://web.archive.org/web/20250820045546/https://retrogamerstuff.com/blogs/news/a-farewell). I was very happy with the Phantom, especially paired with a region-bypass option such as Pseudo Saturn Kai.
 
 The console for this adventure is my Japanese This is COOL Saturn. Apparently Sega thought people needed to be reminded that their Saturn was cool, which I suppose is fair enough. The smokey case is lovely, and I've managed to keep this one around despite my occasional attempts to reduce the collection.
 

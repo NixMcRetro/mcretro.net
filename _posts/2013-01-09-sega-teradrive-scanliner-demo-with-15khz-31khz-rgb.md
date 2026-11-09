@@ -8,7 +8,7 @@ categories: [repairs, sega, youtube]
 
 {% include youtube.html id="SY35O0Kryhs" %}
 
-Scanlines make the world go round. This was my first proper test of the VGA scanline generator I picked up through [ASSEMbler Games](https://web.archive.org/web/20130109203054/http://www.assemblergames.com:80/forums/showthread.php?42388-Dreamcast-VGA-box-amp-Scanline-generator). I'd promised the creator a demonstration, and what better machine to try it with than the Sega TeraDrive? I've got my Model 2 sitting here with Sonic & Knuckles ready to go and a QuickShot Pro controller. It's not that Pro, but it'll do!
+Scanlines make the world go round. This was my first proper test of the VGA scanline generator I picked up through [ASSEMblergames.com](https://web.archive.org/web/20130109203054/http://www.assemblergames.com:80/forums/showthread.php?42388-Dreamcast-VGA-box-amp-Scanline-generator). I'd promised the creator a demonstration, and what better machine to try it with than the Sega TeraDrive? I've got my Model 2 sitting here with Sonic & Knuckles ready to go and a QuickShot Pro controller. It's not that Pro, but it'll do!
 
 The setup is a little complicated. The RGB signal goes through the scanline generator and then another converter to make it suitable for my display. I wanted to use the TeraDrive without its original monitor, and my Amstrad Mega PC screen wasn't behaving properly at the time either.
 

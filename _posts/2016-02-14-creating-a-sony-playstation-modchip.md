@@ -20,7 +20,7 @@ The MultiMode3 code appeared to program and read back quite happily. Mayumi, on 
 
 The PIC12F629 was interesting too, with a different memory arrangement and considerably more space than the older devices. I managed to get code written and verified, but there was one small problem. I didn't actually have a PlayStation available to test the chips at the time. Typical!
 
-Then came the breakthrough. With some help from the wonderful people at ASSEMbler Games, I discovered that the apparent Mayumi readback failure was related to the PIC's code-protection configuration. Disabling that setting allowed the programmed contents to be read back correctly. All that trouble over one little configuration bit!
+Then came the breakthrough. With some help from the wonderful people at [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/), I discovered that the apparent Mayumi readback failure was related to the PIC's code-protection configuration. Disabling that setting allowed the programmed contents to be read back correctly. All that trouble over one little configuration bit!
 
 That was rather satisfying, particularly after spending so much time questioning the programmer, the chips and probably my own sanity. It also reminded me that a successful programming message and a confusing readback don't necessarily mean the chip has been written incorrectly.
 

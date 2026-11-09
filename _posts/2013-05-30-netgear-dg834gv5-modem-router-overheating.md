@@ -10,7 +10,7 @@ categories: [hacks, youtube]
 
 I've been having a look inside my Netgear DG834Gv5 ADSL modem router, and I'm beginning to suspect the poor thing is getting a little too warm. The underside of the white plastic case has started turning brown, which is generally a good indication that something inside is getting rather toasty!
 
-After a suggestion from someone on the ASSEMbler Games forums, I decided to open it up and have a look. There's quite a bit of discolouration around one corner of the case, particularly near a group of three components on the circuit board. Lovely!
+After a suggestion from someone on the [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) forums, I decided to open it up and have a look. There's quite a bit of discolouration around one corner of the case, particularly near a group of three components on the circuit board. Lovely!
 
 Fortunately, there's a fair bit of clearance inside the housing, so I reckon I could fit some small heatsinks over the troublesome area. I've just got to find some suitable ones and work out how best to attach them.
 

@@ -20,7 +20,7 @@ I tried fitting the 32X's shielding clips and some of the other metalwork I'd ne
 
 Some worked perfectly, others developed the fault almost immediately, and a few waited until they'd been running for a while. My Mega Drive 2 didn't seem to have the same problem, which was interesting. Every time I thought I'd narrowed it down, another combination behaved differently. At least Doom was getting a thorough workout!
 
-**Update:** I later came across Sega's original 32X service bulletins through [ASSEMbler Games](https://web.archive.org/web/20191111135932/https://assemblergames.com/threads/sega-mega-32x-video-flickering-distortion.41947/). They describe EDCLK and VCLK problems affecting Model 1 VA4 Mega Drives when used with the 32X. The PAL VA4 EDCLK bulletin even mentions screen shaking, slowing game sound, and lockups as the console warms up. Hmm, that sounds rather familiar!
+**Update:** I later came across Sega's original 32X service bulletins through [ASSEMblergames.com](https://web.archive.org/web/20191111135932/https://assemblergames.com/threads/sega-mega-32x-video-flickering-distortion.41947/). They describe EDCLK and VCLK problems affecting Model 1 VA4 Mega Drives when used with the 32X. The PAL VA4 EDCLK bulletin even mentions screen shaking, slowing game sound, and lockups as the console warms up. Hmm, that sounds rather familiar!
 
 The fixes are made to the **Mega Drive motherboard**, rather than the 32X itself, which certainly changes where I'd start looking. The symptoms are a good match, although I hadn't isolated the exact fault on my particular board during these tests.
 

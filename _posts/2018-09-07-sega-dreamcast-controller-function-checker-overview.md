@@ -30,6 +30,6 @@ I even wondered whether I could insert an ordinary Mega Drive game and persuade 
 
 The cartridge also appears to be involved in supplying or switching power to part of the system, which makes the internal arrangement a little more complicated than I'd first imagined. I'd rather investigate those connections properly before assuming this can be turned back into an ordinary Mega Drive.
 
-I've also been [informed](https://web.archive.org/web/20191113062008/https://assemblergames.com/threads/dreamcast-arcade-stick-checker-version-2-00-bios.69805/) by Durandal of ASSEMbler Games that there is at least one other in existence. Perhaps it has the 1.00 firmware or maybe even a 0.xx firmware... ;)
+I've also been [informed](https://web.archive.org/web/20191113062008/https://assemblergames.com/threads/dreamcast-arcade-stick-checker-version-2-00-bios.69805/) by Durandal of [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) that there is at least one other in existence. Perhaps it has the 1.00 firmware or maybe even a 0.xx firmware... ;)
 
 Quite a remarkable bit of Sega development hardware, even if it's not something I can easily find a place for in the cabinet!

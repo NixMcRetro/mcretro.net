@@ -14,4 +14,4 @@ Fortunately, a very kind member of the System11 forums came to the rescue. I now
 
 ![](/assets/images/2013/img_0407.jpg)
 
-Much better! At least now the remote makes a bit more sense, and I can get on with actually using the Framemeister. There's more information over at [Assembler Games](https://web.archive.org/web/20190806060722/https://assemblergames.com/threads/フレームマイスター-framemister-xrgb-mini-english-firmware-39000-yen-shipped.44220/).
+Much better! At least now the remote makes a bit more sense, and I can get on with actually using the Framemeister. There's more information over at [ASSEMblergames.com](https://web.archive.org/web/20190806060722/https://assemblergames.com/threads/フレームマイスター-framemister-xrgb-mini-english-firmware-39000-yen-shipped.44220/).

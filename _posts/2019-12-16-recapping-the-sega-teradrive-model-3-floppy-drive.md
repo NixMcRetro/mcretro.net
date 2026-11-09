@@ -8,7 +8,7 @@ categories: [ibm-pc, repairs, sega]
 
 {% include youtube.html id="l9BqOA9fe7Q" %}
 
-The hard drives are all recapped, so we move along to the floppy drives. Ronnie from ASSEMbler Games had warned me about their leaky capacitors, and given how much work I've already put into these TeraDrives, I'd rather get them replaced before they cause any more trouble.
+The hard drives are all recapped, so we move along to the floppy drives. Ronnie from [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) had warned me about their leaky capacitors, and given how much work I've already put into these TeraDrives, I'd rather get them replaced before they cause any more trouble.
 
 The Model 3 has just one floppy drive, so this should be a reasonably simple introduction before we tackle the two drives in the Model 2. Simple, of course, is a relative term when you're dealing with thirty-year-old electronics.
 

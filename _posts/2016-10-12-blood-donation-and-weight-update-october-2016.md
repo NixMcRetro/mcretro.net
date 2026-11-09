@@ -30,7 +30,7 @@ This might be my last blood donation for a little while, too. I'm preparing to s
 
 One particularly nice thing is that the blood service has started sending out text messages telling donors where their blood has gone. It's rather satisfying knowing that something you've donated has actually been used somewhere useful. I've been trying to encourage other people to donate as well, even if not everybody is able to do it.
 
-In other news, I've been clearing out some of the excess computers and consoles from my collection. One of my Sega TeraDrives has gone to RetroSwin, while the Amstrad Mega PC has moved on to DeChief from ASSEMblerGames. Slowly but surely, I'm getting the collection down to something a little more manageable.
+In other news, I've been clearing out some of the excess computers and consoles from my collection. One of my Sega TeraDrives has gone to RetroSwin, while the Amstrad Mega PC has moved on to DeChief from [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/). Slowly but surely, I'm getting the collection down to something a little more manageable.
 
 The grand plan is to get everything else arranged neatly inside a bookcase. I've even rearranged the room to make space for the couch. Whether all the computers will actually fit where I want them is another question entirely!
 

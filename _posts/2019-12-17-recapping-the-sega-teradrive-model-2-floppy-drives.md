@@ -20,7 +20,7 @@ There was also a small incident involving one of the ribbon cables. I managed to
 
 Eventually both floppy drives were reassembled with their replacement capacitors. The corrosion was certainly concerning, but at least we've made another little bit of progress. We'll give the drives a proper test in a future video and find out whether everything is behaving itself.
 
-In other sad news, we've lost ASSEMblergames.com. Everyone can now head to [ObscureGamers.com](https://www.obscuregamers.com/), where some of the community regrouped and ASSEMblergames material was being preserved.
+In other sad news, we've lost [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/). Everyone can now head to [ObscureGamers.com](https://www.obscuregamers.com/), where some of the community regrouped and [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) material was being preserved.
 
 In some ways it still lives on. Not as the monster it became, but as the fountain of knowledge and wonderful folk who came to sip and share their own. Here's to you!
 

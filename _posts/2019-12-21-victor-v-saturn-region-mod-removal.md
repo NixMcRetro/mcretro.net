@@ -14,7 +14,7 @@ Unfortunately, the console had been left in a rather confused state. It wasn't r
 
 The VA9 board in this machine is a 171-7291C. There are a few variations of these boards around, and I was interested to see exactly how Victor had configured this one. I'd already removed the wiring associated with the previous modification, so the job was to restore the original Japanese region settings.
 
-With help from information on ASSEMbler Games, I restored the Japanese region configuration by bridging JP6 and JP11. I also checked continuity around the reset-switch area, where one of the modification wires had previously been attached. Thankfully, that part still appeared to be connected properly.
+With help from information on [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/), I restored the Japanese region configuration by bridging JP6 and JP11. I also checked continuity around the reset-switch area, where one of the modification wires had previously been attached. Thankfully, that part still appeared to be connected properly.
 
 One of the nice things about these VA9 boards is how small some of the components are compared with earlier Saturn revisions. Those SH-2 processors really are tiny! Not that this made accessing the underside of the board any more enjoyable.
 

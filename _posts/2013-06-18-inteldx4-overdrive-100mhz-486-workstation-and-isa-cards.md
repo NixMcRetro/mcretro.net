@@ -22,7 +22,7 @@ For graphics I've got a smaller Trident card with 512 KB of memory. There was a 
 
 There's also a Winbond-based hard-drive controller, complete with a flash-based storage module, along with the usual floppy, serial and other connections. I've managed to fit 64 MB of RAM into the machine as well, which is rather generous for a 486.
 
-The CPU itself is the IntelDX4 OverDrive running at 100 MHz, kindly provided by Jackhead from ASSEMbler Games. It's a lovely little upgrade and certainly gives the machine a bit more enthusiasm than an ordinary early 486.
+The CPU itself is the IntelDX4 OverDrive running at 100 MHz, kindly provided by Jackhead from [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/). It's a lovely little upgrade and certainly gives the machine a bit more enthusiasm than an ordinary early 486.
 
 One of my other concerns is keeping the enormous development cards from touching things they shouldn't. The CD emulation board sits rather close to the metalwork, so I've fitted a little rubber foot to prevent an accidental short. Not exactly glamorous engineering, but it gets the job done!
 

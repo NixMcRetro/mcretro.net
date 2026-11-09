@@ -24,7 +24,7 @@ There were other little markings to compare too, including 44001, which appeared
 
 Of course, there's still the possibility that the problem isn't with the CPU cards at all. I've had enough adventures with this Sophia to know there are plenty of other boards that could be causing trouble, including the mainboard and A-Bus board. Even if these SH-2 cards are perfectly good, something else in the box could still prevent it from starting.
 
-I also came across some interesting variations of Saturn development hardware while searching around the internet and ASSEMbler Games. Some of the SH-2 boards appeared to have sections of the PCB cut down, and the identifying stickers weren't always the same colour. Quite why Sega made so many variations is anybody's guess, but it's fascinating looking at all these unusual pieces of hardware.
+I also came across some interesting variations of Saturn development hardware while searching around the internet and [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/). Some of the SH-2 boards appeared to have sections of the PCB cut down, and the identifying stickers weren't always the same colour. Quite why Sega made so many variations is anybody's guess, but it's fascinating looking at all these unusual pieces of hardware.
 
 I was also wondering whether these B boards might have come from ST-V equipment or another development configuration. I hadn't found enough information to establish that, though. The important thing was that I'd finally obtained two more SH-2 boards, and they looked close enough to the Sophia versions to make further investigation worthwhile.
 

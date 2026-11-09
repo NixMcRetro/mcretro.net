@@ -18,12 +18,12 @@ Eventually everything was tucked away and the machine was ready for testing. I c
 
 By the end, Tillie had joined in with a chorus of chirping. Apparently an Xbox hardware video also needs a live conure soundtrack! There's still plenty to do with the development software and getting some games onto the machine, but the storage upgrade has passed its first test. Onwards to the next instalment!
 
-### Related Posts
-
-- [Inside the Xbox DVT4 Development Kit](/inside-the-xbox-dvt4-development-kit/)
-- [Xbox DVT4 Factory Restore (XDK Recovery 5849)](/xbox-dvt4-factory-restore-recovery-5849/)
-
 ### Sources
 
 - [ConsoleMods Wiki - Upgrading your Hard Drive](https://consolemods.org/wiki/Upgrading_your_Hard_Drive)
 - [Seagate - Serial ATA Unleashes the Power of ATA (April 2003)](https://download.microsoft.com/download/5/b/5/5b5bec17-ea71-4653-9539-204a672f11cf/Seagate_sata.pdf)
+
+### Related Posts
+
+- [Inside the Xbox DVT4 Development Kit](/inside-the-xbox-dvt4-development-kit/)
+- [Xbox DVT4 Factory Restore (XDK Recovery 5849)](/xbox-dvt4-factory-restore-recovery-5849/)

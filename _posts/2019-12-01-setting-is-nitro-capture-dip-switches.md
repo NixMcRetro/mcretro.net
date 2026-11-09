@@ -23,10 +23,10 @@ These settings are summarised from the IS-NITRO-CAPTURE Users Manual, version 20
 7. AVOUT1: ON combines both DS screens; OFF shows only the upper screen.
 8. AVOUT2: ON combines both DS screens; OFF shows only the lower screen.
 
+### Sources
+
+- [Intelligent Systems and Nintendo: IS-NITRO-CAPTURE User Manual (27 January 2005, Sections 2 and 4.2)](https://twlsdk.randommeaninglesscharacters.com/download/IntelligentSystems/IS-NITRO-CAPTURE/IS-NITRO-CAPTURE_Users_20050127.pdf)
+
 ### Related Posts
 
 - [IS Nitro Capture DS Lite Internal Overview](/is-nitro-capture-ds-lite-internal-overview/)
-
-### Sources
-
-- [Intelligent Systems and Nintendo - IS-NITRO-CAPTURE Users Manual, version 2005-01-27, sections 2 and 4.2](https://twlsdk.randommeaninglesscharacters.com/download/IntelligentSystems/IS-NITRO-CAPTURE/IS-NITRO-CAPTURE_Users_20050127.pdf)

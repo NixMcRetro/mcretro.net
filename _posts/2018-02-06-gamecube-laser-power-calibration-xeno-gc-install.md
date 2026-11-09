@@ -45,4 +45,4 @@ Still, it's good to have this particular GameCube working again. I wasn't expect
 ### Sources
 
 - [GC-Forever Wiki - Laser Tuning](https://www.gc-forever.com/wiki/index.php?title=Laser_Tuning)
-- [Nintendo Support - What Is the Difference between the Models of Wii Consoles?](https://en-americas-support.nintendo.com/app/answers/detail/a_id/2650/~/what-is-the-difference-between-the-models-of-wii-consoles)
+- [Nintendo Support: Differences Between Wii Console Models](https://en-americas-support.nintendo.com/app/answers/detail/a_id/2650/~/what-is-the-difference-between-the-models-of-wii-consoles)

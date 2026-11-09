@@ -30,10 +30,10 @@ I still hadn't connected a proper RGB source, so the picture quality would have 
 
 Anyway, enjoy me rambling, avoiding anode caps, zappy caps and [POG](https://en.wikipedia.org/wiki/Milk_caps_\(game\)) caps. Just kidding, nobody avoids POG caps! They're great fun! Alright, alright, fine. That includes you, Caps The Game and Tazos too, I suppose.
 
+**Sources**
+
+- [Sony: PVM-9044QM/9041QM and PVM-9040ME Operating Instructions (1992, 3-754-506-21)](https://www.manualslib.com/manual/3292529/Sony-Trinitron-Pvm-9044qm.html)
+
 **Related Posts**
 
 - [Sony PVM-9044QM Overview and Minor Repair (Part 2)](/sony-pvm-9044qm-overview-and-minor-repair-part-2/)
-
-**Sources**
-
-- [Sony - PVM-9044QM/9041QM and PVM-9040ME Operating Instructions (3-754-506-21, 1992)](https://www.manualslib.com/manual/3292529/Sony-Trinitron-Pvm-9044qm.html)

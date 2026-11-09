@@ -20,12 +20,12 @@ Back at the development dashboard, everything appeared to be working properly. I
 
 Not bad for hardware that's been sitting around for so many years. Now to see what else we can make this development kit do!
 
-### Related posts
-
-- [Xbox DVT4 Factory Restore (XDK Recovery 5849)](/xbox-dvt4-factory-restore-recovery-5849/)
-- [Xbox DVT4 Running UnleashX](/xbox-dvt4-running-unleashx/)
-
 ### Sources
 
 - [ConsoleMods Wiki - Xbox Debug](https://consolemods.org/wiki/Xbox%3ADebug)
 - [xboxdevwiki - Microsoft XDK](https://xboxdevwiki.net/Microsoft_XDK)
+
+### Related Posts
+
+- [Xbox DVT4 Factory Restore (XDK Recovery 5849)](/xbox-dvt4-factory-restore-recovery-5849/)
+- [Xbox DVT4 Running UnleashX](/xbox-dvt4-running-unleashx/)

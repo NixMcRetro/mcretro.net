@@ -28,11 +28,11 @@ As for the SD cards and those troublesome 4 GB Microdrives, well, there's still 
 
 There is still hope. A glimmer of hope, anyway!
 
-### Related posts
+### Sources
+
+- [MPC Forums: PCD-60B SCSI Reader Discussion (December 2014; Later Compatibility Context)](https://www.mpc-forums.com/viewtopic.php?p=1669532)
+
+### Related Posts
 
 - [Apple Macintosh LC 475: Solid-State SCSI Storage with a PCD-60B Card Reader](/apple-macintosh-lc-475-solid-state-scsi-storage-with-a-pcd-60b-card-reader/)
 - [Apple Macintosh LC 475: 4 GB Hitachi Microdrive Testing](/apple-macintosh-lc-475-4-gb-hitachi-microdrive-testing/)
-
-### Sources
-
-- [MPC Forums - SCSI problem](https://www.mpc-forums.com/viewtopic.php?p=1669532) - December 2014 discussion of PCD-60B card-reader use with MPC samplers; later compatibility context, not evidence of this Macintosh test.

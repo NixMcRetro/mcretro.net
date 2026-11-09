@@ -24,6 +24,6 @@ It didn't work. Nothing ever works. I give up! Well, until the next experiment, 
 
 The previous video also suffered from some dreadful blockiness after YouTube finished processing it, so hopefully this upload comes out looking a little better. The drives might not be cooperating, but there's no reason the video has to join them.
 
-### Related posts
+### Related Posts
 
 - [Apple Macintosh LC 475: 4 GB Hitachi Microdrive Testing](/apple-macintosh-lc-475-4-gb-hitachi-microdrive-testing/)

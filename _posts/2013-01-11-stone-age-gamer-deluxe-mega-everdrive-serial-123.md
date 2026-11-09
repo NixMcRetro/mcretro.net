@@ -20,10 +20,10 @@ Unfortunately, there's one small problem with demonstrating this lovely cartridg
 
 I rather like the shipping box too, with its Sega-themed touches and references to blast processing. Stone Age Gamer have clearly put some effort into making the package feel special. Thanks to them for putting it together, and of course to Krikzz for making the Mega EverDrive. Now I just need a Mega Drive to put it in.
 
+**Sources**
+
+- [Krikzz: Mega EverDrive User Manual (23 March 2012; PCB v1.00; Experimental Snapshots)](https://manualzz.com/doc/7240363/krikzz-mega-everdrive-user-manual)
+
 **Related Posts**
 
 - [Mega-CD BIOS Loading for the Amstrad Mega PC and Sega TeraDrive](/mega-cd-bios-loading-for-the-amstrad-mega-pc-and-sega-teradrive/)
-
-**Sources**
-
-- [Krikzz - Mega EverDrive User Manual (23rd March 2012)](https://manualzz.com/doc/7240363/krikzz-mega-everdrive-user-manual) - the period manual covers PCB revision v1.00 and its features, including the experimental snapshot function.

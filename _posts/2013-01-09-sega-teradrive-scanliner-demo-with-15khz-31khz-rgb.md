@@ -24,4 +24,4 @@ Switching off the scanline effect made a useful comparison. The picture still lo
 
 **Sources**
 
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - Sega's official specifications document the TeraDrive's 15 kHz and 31 kHz analogue RGB output modes.
+- [Sega Hardware Archive: TeraDrive RGB Output (15 kHz and 31 kHz)](https://www.sega.jp/fb/segahard/md/tera.html)

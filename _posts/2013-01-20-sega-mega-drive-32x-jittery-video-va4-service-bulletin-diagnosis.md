@@ -26,12 +26,12 @@ The fixes are made to the **Mega Drive motherboard**, rather than the 32X itself
 
 For anyone investigating the same problem, I've linked Sega's service bulletins and an illustrated guide below. Otherwise, avoiding an affected VA4 Mega Drive when using the 32X might save quite a bit of trouble.
 
+**Sources**
+
+- [Sega: 32X Service Bulletins 008 (PAL VA4 EDCLK) and 012 (VA4 VCLK)](https://consolemods.org/wiki/images/8/8b/Sega_32X_Service_Bulletins.pdf)
+- [ConsoleMods: 32X Service Bulletin Fixes](https://consolemods.org/wiki/Genesis:32X_Service_Bulletin_Fixes)
+
 **Related Posts**
 
 - [Sega Mega Drive 32X Jittery Video: Initial Investigation](/sega-mega-drive-32x-jittery-video-initial-investigation/)
 - [Sega Mega Drive 32X Distorted Video Part 2: Testing the Grounding Theory](/sega-mega-drive-32x-distorted-video-part-2-grounding-theory/)
-
-**Sources**
-
-- [Sega - 32X Service Bulletins](https://consolemods.org/wiki/images/8/8b/Sega_32X_Service_Bulletins.pdf) - bulletin 008 covers the PAL VA4 EDCLK fault; bulletin 012 covers the VA4 VCLK lockup fault.
-- [ConsoleMods - 32X Service Bulletin Fixes](https://consolemods.org/wiki/Genesis:32X_Service_Bulletin_Fixes) - illustrated guide to the documented service modifications.

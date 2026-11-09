@@ -384,8 +384,8 @@
   font-size: 0.86rem;
   line-height: 1.55;
 }
-.dial-homepage a { color: #0000aa; text-decoration: underline; }
-.dial-homepage a:hover { color: #551a8b; }
+.dial-homepage a { color: var(--link); text-decoration: underline; }
+.dial-homepage a:hover { color: var(--link-hover); }
 .dial-homepage-random {
   display: inline-block;
   font-size: 0.91rem;
@@ -408,7 +408,10 @@
   line-height: 1.45;
   overflow-wrap: break-word;
 }
-.dial-homepage a:focus-visible,
+.dial-homepage a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
 .mcretro-modem-close:focus-visible,
 .mcretro-modem-controls button:focus-visible,
 .mcretro-modem-controls a:focus-visible {
@@ -557,7 +560,7 @@
 }
 .archive-month-summary {
   font: 0.875rem/1.6 Montserrat, "Helvetica Neue", sans-serif;
-  color: #3b3834;
+  color: var(--muted);
   margin: 0 0 1.4rem;
 }
 .archive-blog-list .post-entry {

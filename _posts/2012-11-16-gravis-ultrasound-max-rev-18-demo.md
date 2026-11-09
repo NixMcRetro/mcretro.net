@@ -25,6 +25,6 @@ I didn't take many photos of GUX, so enjoy the video and the great sounds of a g
 
 ### Sources
 
-- [Advanced Gravis - UltraSound Software Development Kit, version 2.22](https://www.infania.net/misc1/GUS/docs/UltraSound%20Lowlevel%20ToolKit%20v2.22%20%2821%20December%201994%29.pdf) - PDF pages 7-8 describe sample RAM and onboard mixing; PDF page 127 describes the MAX codec's recording and mixing functions.
-- [Crystal Semiconductor - CS4231A Parallel Interface, Multimedia Audio Codec](https://www.ardent-tool.com/datasheets/Crystal_CS4231A_alt.pdf) - page 1 documents Windows Sound System compatibility, recording and analogue mixing.
-- [Retronn - Gravis UltraSound MAX](https://retronn.de/imports/hwgal/hw_sound_card_gravis_ultrasound_max_front.html) - identifies the GF1 and Crystal CS4231A hardware used on the UltraSound MAX.
+- [Advanced Gravis: UltraSound SDK v2.22 (Sample Mixing and MAX Codec)](https://www.infania.net/misc1/GUS/docs/UltraSound%20Lowlevel%20ToolKit%20v2.22%20%2821%20December%201994%29.pdf)
+- [Crystal Semiconductor: CS4231A Codec (Windows Sound System, Recording)](https://www.ardent-tool.com/datasheets/Crystal_CS4231A_alt.pdf)
+- [Retronn: Gravis UltraSound MAX (GF1 and CS4231A)](https://retronn.de/imports/hwgal/hw_sound_card_gravis_ultrasound_max_front.html)

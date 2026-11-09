@@ -21,10 +21,10 @@ Another welcome difference is the RAM-slot construction. My earlier 386 board us
 
 The jumper configuration in the video is the one I've been using to get PC-side video without the Mega Drive card. Once that's sorted, I can carry on testing memory and the rest of the motherboard without wrestling with the entire rear assembly every time. As always, there are more photos in the [photo gallery](/goodies/).
 
-### Related posts
-
-- [Amstrad Sega Mega PC AdLib Sound Repair: Card Alignment](/amstrad-sega-mega-pc-adlib-sound-repair-card-alignment/)
-
 ### Sources
 
-- [Centre for Computing History - Amstrad Mega PC](https://www.computinghistory.org.uk/det/2534/Amstrad-Mega-PC/) - historical hardware reference for the Mega PC's integrated PC and Mega Drive architecture.
+- [Centre for Computing History: Amstrad Mega PC (Integrated PC/Mega Drive)](https://www.computinghistory.org.uk/det/2534/Amstrad-Mega-PC/)
+
+### Related Posts
+
+- [Amstrad Sega Mega PC AdLib Sound Repair: Card Alignment](/amstrad-sega-mega-pc-adlib-sound-repair-card-alignment/)

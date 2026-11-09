@@ -21,7 +21,7 @@ I was even considering whether the heads could be brought a little closer togeth
 
 So we're not quite at the point of calling this a repair. We've got a floppy drive that occasionally reads disks when I press on the head, which is ridiculous but rather interesting all the same. These old drives certainly know how to keep me entertained!
 
-### Related posts
+### Related Posts
 
 - [Miscellaneous ISA and PCI Cards](/miscellaneous-isa-and-pci-cards/)
 - [Osborne 486 5.25-inch Floppy Drive Addition](/osborne-486-525-inch-floppy-drive-addition/)

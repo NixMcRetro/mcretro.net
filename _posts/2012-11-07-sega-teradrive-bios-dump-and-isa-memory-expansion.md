@@ -24,11 +24,11 @@ Now **that** has my attention. I have an ISA RAM card at work, so naturally I wa
 
 It also makes me wonder whether some of that extra memory could be turned into another RAM disk, similar to my earlier Windows experiments. The ISA card itself is only memory, of course. It doesn't magically become a bootable disk, so I'd need suitable RAM-disk software or another memory-management arrangement to make that happen. Another TeraDrive experiment for the list!
 
-### Related posts
-
-- [Sega TeraDrive Model 2 with Windows 3.11 in a RAM Disk](/sega-teradrive-model-2-with-windows-311-in-a-ram-disk/)
-
 ### Sources
 
-- [Luckyboy - TeraDrive configuration](http://www.tvt.ne.jp/~luckyboy/room.html) - documents a TeraDrive with 6.5 MB total RAM, including a 4 MB I-O DATA PIO-AX34F ISA memory card and QRAM.
-- [MESS Wiki archive - Dump BIOS using DEBUG](https://web.archive.org/web/20160306064823/https://www.mess.org/dumping/dump_bios_using_debug) - archived reference for using DOS DEBUG to dump PC BIOS contents.
+- [Luckyboy: TeraDrive Configuration (6.5 MB, PIO-AX34F ISA RAM)](http://www.tvt.ne.jp/~luckyboy/room.html)
+- [MESS Wiki Archive: Dump BIOS Using DOS DEBUG](https://web.archive.org/web/20160306064823/https://www.mess.org/dumping/dump_bios_using_debug)
+
+### Related Posts
+
+- [Sega TeraDrive Model 2 with Windows 3.11 in a RAM Disk](/sega-teradrive-model-2-with-windows-311-in-a-ram-disk/)

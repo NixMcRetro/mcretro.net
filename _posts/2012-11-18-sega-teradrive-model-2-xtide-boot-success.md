@@ -27,13 +27,13 @@ Next stop: MS-DOS 6.22 and Windows 3.1. Ever notice that 6.22 is DOUBLE that of 
 
 The XTIDE card really is an amazing piece of hardware. Thanks to the Vintage Computer community and the XTIDE developers for giving old machines like this a practical way to use modern storage. Considering how many failed controller experiments came before this one, I'm rather pleased to have it working.
 
+**Sources**
+
+- [Sega Hardware Archive: TeraDrive (Model 2, Two Floppies)](https://www.sega.jp/fb/segahard/md/tera.html)
+- [XTIDE Universal BIOS (ATA Storage for Older PCs)](https://www.xtideuniversalbios.org/)
+
 **Related Posts**
 
 - [Sega TeraDrive Model 2 and Model 3 Storage Tests](/sega-teradrive-model-2-and-model-3-storage-tests/)
 - [XTIDE Settings for the Sega TeraDrive](/xtide-settings-for-the-sega-teradrive/)
 - [Sega TeraDrive Model 2: Installing Windows 3.1 with XTIDE](/sega-teradrive-model-2-installing-windows-31-with-xtide/)
-
-**Sources**
-
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - Sega's official specifications show the Model 2 with two floppy drives and no hard drive.
-- [XTIDE Universal BIOS](https://www.xtideuniversalbios.org/) - documents the XTIDE BIOS and support for ATA storage on older PCs.

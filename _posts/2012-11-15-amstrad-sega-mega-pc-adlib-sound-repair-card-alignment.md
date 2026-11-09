@@ -60,11 +60,11 @@ Still, the important thing is that it works. I can switch between the Mega Drive
 
 You can follow the original troubleshooting discussion in the archived [ASSEMbler Games thread](https://web.archive.org/web/20191110053354/https://assemblergames.com/threads/adlib-compatible-sound-in-the-amstrad-mega-pc.42694/).
 
+### Sources
+
+- [Amstrad: Mega PC Owners Manual (AdLib Sound, p. 9)](https://acpc.me/ACME/AMSTRAD_PRO/AMSTRAD_PC/LITTERATURE/MANUELS/MEGA_PC_Manual%5BENG%5D.pdf)
+- [Jason M. Knight: Paku Paku 1.6 README and Pascal Source (/adlib)](https://www.classicdosgames.com/files/games/jasonmknight/paku_1_6.rar)
+
 ### Related Posts
 
 - [Amstrad Sega Mega PC: Activating PC-Only Mode](/amstrad-sega-mega-pc-activating-pc-only-mode/)
-
-### Sources
-
-- [Amstrad - Mega PC Owners Manual, PC Sound System](https://acpc.me/ACME/AMSTRAD_PRO/AMSTRAD_PC/LITTERATURE/MANUELS/MEGA_PC_Manual%5BENG%5D.pdf) - printed page 9 describes the built-in AdLib-compatible FM synthesizer.
-- [Jason M. Knight - Paku Paku 1.6 README and Turbo Pascal source](https://www.classicdosgames.com/files/games/jasonmknight/paku_1_6.rar) - the original distribution documents the /adlib option and implements automatic AdLib detection.

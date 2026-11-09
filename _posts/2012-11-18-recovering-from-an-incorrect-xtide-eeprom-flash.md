@@ -18,11 +18,11 @@ The TeraDrive had another trick waiting for me: its DOS-in-ROM menu kept getting
 
 The Disk on Module (DOM) still wasn't being detected at the end of the recording, so the EEPROM recovery wasn't the end of the adventure. At least I could boot floppies and make another attempt without starting from a dead card.
 
-### Related posts
+### Sources
+
+- [XTIDE Universal BIOS (XTIDECFG and Option-ROM Addresses)](https://xtideuniversalbios.org/)
+
+### Related Posts
 
 - [GQ-4X EEPROM and EPROM Programmer Test](/gq-4x-eeprom-and-eprom-programmer-test/)
 - [XTIDE Settings for the Sega TeraDrive](/xtide-settings-for-the-sega-teradrive/)
-
-### Sources
-
-- [XTIDE Universal BIOS](https://xtideuniversalbios.org/) - documents XTIDECFG EEPROM programming and configurable option-ROM segment addresses.

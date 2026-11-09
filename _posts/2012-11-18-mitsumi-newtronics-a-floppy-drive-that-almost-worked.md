@@ -21,7 +21,7 @@ So the drive managed to format a disk and copy files, but that obviously wasn't 
 
 Oh well. At least we got to see it cooperate for a little while! Floppy drives. What do you do with them?
 
-### Related posts
+### Related Posts
 
 - [Miscellaneous ISA and PCI Cards](/miscellaneous-isa-and-pci-cards/)
 - [Osborne 486 5.25-inch Floppy Drive Addition](/osborne-486-525-inch-floppy-drive-addition/)

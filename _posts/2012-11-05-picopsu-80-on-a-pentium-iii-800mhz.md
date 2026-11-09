@@ -21,15 +21,13 @@ Load monitoring is quite important. The picoPSU-80 has an 80 W overall rating, b
 
 The hard drive wasn't booting properly during the demonstration either. A quick `FDISK /MBR` got it going again, and I finally had a working DOS prompt. Not a full benchmark by any means, but a useful little experiment.
 
-
-### Related posts
-
-
-- [Amstrad Sega Mega PC with picoPSU and a Dual-Screen Setup](/amstrad-sega-mega-pc-with-picopsu-and-a-dual-screen-setup/)
-
-
 ### Sources
 
 
-- [Mini-Box - picoPSU-80](https://www.mini-box.com/picoPSU-80) - manufacturer specifications for the 80 W DC-DC ATX supply and 12 V input.
-- [Mini-Box - picoPSU-80 Quick Installation Guide, version 1.0d](https://resources.mini-box.com/online/PWR-PICOPSU-80/PWR-PICOPSU-80-manual.pdf) - lists the individual rail limits, regulated 12 V input and ventilation requirements.
+- [Mini-Box: picoPSU-80 Specifications (80 W, 12 V Input)](https://www.mini-box.com/picoPSU-80)
+- [Mini-Box: picoPSU-80 Quick Installation Guide v1.0d (Rail Limits and Ventilation)](https://resources.mini-box.com/online/PWR-PICOPSU-80/PWR-PICOPSU-80-manual.pdf)
+
+### Related Posts
+
+
+- [Amstrad Sega Mega PC with picoPSU and a Dual-Screen Setup](/amstrad-sega-mega-pc-with-picopsu-and-a-dual-screen-setup/)

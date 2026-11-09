@@ -23,11 +23,11 @@ The video also includes a demonstration of the Mega PC's AdLib-compatible FM syn
 
 I even got the network card talking well enough to ping [RetroJunkie.net](https://retrojunkie.net/) over ethernet. That's something I can investigate properly another day. For now, the Mega PC is running, the sound works and there's no more smoke coming out of the hard drive. All's well that ends well, I suppose. ;)
 
-### Related posts
+### Sources
+
+- [Amstrad: Mega PC Owners Manual (AdLib Sound, p. 9)](https://acpc.me/ACME/AMSTRAD_PRO/AMSTRAD_PC/LITTERATURE/MANUELS/MEGA_PC_Manual%5BENG%5D.pdf)
+
+### Related Posts
 
 - [Amstrad Sega Mega PC AdLib Sound Repair: Card Alignment](/amstrad-sega-mega-pc-adlib-sound-repair-card-alignment/)
 - [Amstrad Sega Mega PC Boot Failure: DOM and Hard Drive Troubleshooting](/amstrad-sega-mega-pc-boot-failure-dom-and-hard-drive-troubleshooting/)
-
-### Sources
-
-- [Amstrad - Mega PC Owners Manual, PC Sound System](https://acpc.me/ACME/AMSTRAD_PRO/AMSTRAD_PC/LITTERATURE/MANUELS/MEGA_PC_Manual%5BENG%5D.pdf) - printed page 9 describes the built-in AdLib-compatible FM synthesizer.

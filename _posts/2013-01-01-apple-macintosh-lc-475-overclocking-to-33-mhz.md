@@ -40,12 +40,12 @@ The important thing is that the replacement never demonstrated the FPU functiona
 
 Baby steps. One successful overclock and one mysterious processor are quite enough for New Year's Day.
 
-### Related posts
+### Sources
+
+- [Apple: Macintosh LC 475 Specifications (Stock 25 MHz 68LC040)](https://support.apple.com/en-la/112204)
+- [NXP: MC68040 Processor (Integrated FPU)](https://www.nxp.com/products/MC68040)
+
+### Related Posts
 
 - [Apple Macintosh LC 475: Removing the Socketed CPU](/apple-macintosh-lc-475-removing-the-socketed-cpu/)
 - [Apple Macintosh LC 475: Modifications Overview](/apple-macintosh-lc-475-modifications-overview/)
-
-### Sources
-
-- [Apple - Macintosh LC 475 Technical Specifications](https://support.apple.com/en-la/112204) - documenting the stock 25 MHz 68LC040 configuration.
-- [NXP - MC68040](https://www.nxp.com/products/MC68040) - documenting the full MC68040 processor family and its floating-point unit.

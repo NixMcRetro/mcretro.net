@@ -23,14 +23,14 @@ If you're trying something similar, the [Vintage Computer XTIDE support thread](
 
 The little TeraDrive is finally starting to feel like a real PC rather than an elaborate floppy-disk endurance test. Now perhaps I can start using the thing instead of watching it load!
 
-### Related posts
+### Sources
+
+- [Microsoft KB Q83210: Windows 3.1 Hardware Compatibility (286 Standard Mode)](https://jeffpar.github.io/kbarchive/kb/083/Q83210/)
+- [Sega Hardware Archive: TeraDrive (10 MHz 80286)](https://www.sega.jp/fb/segahard/md/tera.html)
+- [XTIDE Universal BIOS (Configuration and ATA Storage)](https://www.xtideuniversalbios.org/)
+
+### Related Posts
 
 - [Sega TeraDrive Model 2 XTIDE Boot Success](/sega-teradrive-model-2-xtide-boot-success/)
 - [XTIDE Settings for the Sega TeraDrive](/xtide-settings-for-the-sega-teradrive/)
 - [Sega TeraDrive Model 2 with Windows 3.11 in a RAM Disk](/sega-teradrive-model-2-with-windows-311-in-a-ram-disk/)
-
-### Sources
-
-- [Microsoft - Windows 3.1 Hardware Compatibility List, Q83210](https://jeffpar.github.io/kbarchive/kb/083/Q83210/) - the archived Microsoft article distinguishes Standard Mode on 80286 systems from Standard and 386 Enhanced Mode on 80386/80486 systems.
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - Sega's specifications identify the PC CPU as a 10 MHz 80286.
-- [XTIDE Universal BIOS](https://www.xtideuniversalbios.org/) - project documentation for XTIDE BIOS configuration and ATA storage support.

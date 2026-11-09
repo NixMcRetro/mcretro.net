@@ -29,11 +29,11 @@ Finally, here's XTIDECFG programming the onboard EEPROM. The screen shows `ide_a
 
 So there we go, a TeraDrive Model 2 booting from modern storage without relying on a pile of floppy disks. One of my quickest demonstrations yet! Or it would have been if I hadn't carried on talking until after the two-minute mark.
 
-### Related posts
+### Sources
+
+- [XTIDE Universal BIOS Documentation (Beta 1/Beta 2 Logical CHS Warning)](https://www.xtideuniversalbios.org/)
+
+### Related Posts
 
 - [XTIDE Settings for the Sega TeraDrive](/xtide-settings-for-the-sega-teradrive/)
 - [Sega TeraDrive Model 2 XTIDE Boot Success](/sega-teradrive-model-2-xtide-boot-success/)
-
-### Sources
-
-- [XTIDE Universal BIOS - project documentation](https://www.xtideuniversalbios.org/) - documents the BIOS builds and the later logical CHS compatibility warning when upgrading from Beta 1 or older releases to Beta 2 or later.

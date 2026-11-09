@@ -26,14 +26,14 @@ This was exactly the test I wanted before moving on to the AMD flash chip. The E
 
 Next up is fitting that tiny flash chip to its adapter PCB and seeing whether I can get the same sort of result. One working homemade cartridge is a good start. Let's see whether I can manage another without breaking anything!
 
-**Related Posts**
-
-- [GQ-4X Flashing EarthBound onto TSOP40 AM29F032B Flash Memory](/gq-4x-flashing-earthbound-onto-tsop40-am29f032b-flash-memory/)
-- [Creating SNES Cartridges with TSOP40 Flash Memory and Donor PCBs](/creating-snes-cartridges-with-tsop40-flash-memory-and-donor-pcbs/)
-
 **Sources**
 
 - [STMicroelectronics - M27C801: 8 Mbit UV EPROM and OTP EPROM](https://media.digikey.com/pdf/Data%20Sheets/ST%20Microelectronics%20PDFS/M27C801.pdf)
 - [NesDev Forums - SNES Cartmodding Information Overview and Questions](https://web.archive.org/web/20231014212226/https://forums.nesdev.org/viewtopic.php?t=8289)
 - [NesDev Forums - cartmod questions swapbin related](https://web.archive.org/web/20231014212232/https://forums.nesdev.org/viewtopic.php?t=7778)
 - [Xtronics - How EPROMs Work](https://xtronics.com/wiki/How_EPROMS_Work.html)
+
+**Related Posts**
+
+- [GQ-4X Flashing EarthBound onto TSOP40 AM29F032B Flash Memory](/gq-4x-flashing-earthbound-onto-tsop40-am29f032b-flash-memory/)
+- [Creating SNES Cartridges with TSOP40 Flash Memory and Donor PCBs](/creating-snes-cartridges-with-tsop40-flash-memory-and-donor-pcbs/)

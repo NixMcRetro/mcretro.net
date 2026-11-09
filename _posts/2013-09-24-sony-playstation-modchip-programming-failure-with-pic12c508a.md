@@ -30,12 +30,12 @@ I promise to upload a video where I do successfully flash the... I think they ar
 
 **Update January 2015:** It turned out my GQ-4X was dying slowly and randomly. I bought another model with no issues! That gives this failed attempt another possible explanation, rather than proving the PIC12C508A was incompatible.
 
-**Related Posts**
-
-- [Sony PlayStation 1 Modchip Installation Success on SCPH-9002](/sony-playstation-1-modchip-installation-success-on-scph-9002/)
-- [Mayumi 4: PIC12F629, SCPH-7502 (PU-22)](/mayumi-4-pic12f629-scph-7502-pu-22/)
-
 **Sources**
 
 - [Microchip - PIC12C5XX: 8-Pin, 8-Bit CMOS Microcontrollers](https://ww1.microchip.com/downloads/en/devicedoc/40139e.pdf)
 - [Microchip - PIC12F629/675 Data Sheet](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/41190G.pdf)
+
+**Related Posts**
+
+- [Sony PlayStation 1 Modchip Installation Success on SCPH-9002](/sony-playstation-1-modchip-installation-success-on-scph-9002/)
+- [Mayumi 4: PIC12F629, SCPH-7502 (PU-22)](/mayumi-4-pic12f629-scph-7502-pu-22/)

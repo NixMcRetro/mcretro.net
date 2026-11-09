@@ -22,11 +22,11 @@ Once the write completed, I ran the verification step to check the programmed co
 
 So there you have it. One more step towards an EarthBound cartridge, and another reminder to check that the chip is seated properly before deciding the programmer has gone completely mad!
 
-### Related posts
-
-- [Creating SNES Cartridges with TSOP40 Flash Memory and Donor PCBs](/creating-snes-cartridges-with-tsop40-flash-memory-and-donor-pcbs/)
-
 ### Sources
 
 - [AMD / Spansion - Am29F032B Data Sheet](https://www.farnell.com/datasheets/492274.pdf)
 - [NesDev Forums - GQ-4X4 Rewriting 29F032B does not work (2016)](https://forums.nesdev.org/viewtopic.php?t=13705)
+
+### Related Posts
+
+- [Creating SNES Cartridges with TSOP40 Flash Memory and Donor PCBs](/creating-snes-cartridges-with-tsop40-flash-memory-and-donor-pcbs/)

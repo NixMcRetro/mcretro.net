@@ -14,7 +14,7 @@ I tried using BBEdit to make it zap into the correct format like Notepad++, with
 
 ### Sources
 
-- [Cybdyn Systems - PSIO Systems Manual R30, Multi-Disc section, pages 29 to 30 (Stone Age Gamer-hosted copy)](https://stoneagegamer.com/content/flash/psio/PSIO%20Systems%20Manual%20%28R30%29.pdf)
+- [Cybdyn Systems: PSIO Systems Manual R30 (Multi-Disc, pp. 29–30; Stone Age Gamer Copy)](https://stoneagegamer.com/content/flash/psio/PSIO%20Systems%20Manual%20%28R30%29.pdf)
 - [Parallels - Parallels Desktop for Mac with Apple M1 chip](https://www.parallels.com/blogs/parallels-desktop-apple-silicon-mac/)
 - [Cybdyn Systems forum - MULTIDISC.LST](https://www.cybdyn-systems.com.au/forum/viewtopic.php?t=998)
 - [Using Notepad++ to change end of line characters (CRLF to LF) (archived)](https://web.archive.org/web/20221130144657/http://sql313.com/index.php/43-main-blogs/maincat-dba/62-using-notepad-to-change-end-of-line-characters)

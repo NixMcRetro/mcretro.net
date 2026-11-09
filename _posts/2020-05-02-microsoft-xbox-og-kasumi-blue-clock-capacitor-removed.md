@@ -20,6 +20,6 @@ This is the same Kasumi Blue I had identified as containing a v1.0 motherboard, 
 
 - [ConsoleMods Wiki - Xbox Clock Capacitor](https://consolemods.org/wiki/Xbox%3AClock_Capacitor)
 
-### Related posts
+### Related Posts
 
 - [The Jewel of the Xbox](/the-jewel-of-the-xbox/)

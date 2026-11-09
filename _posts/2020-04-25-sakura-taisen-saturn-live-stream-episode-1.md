@@ -17,7 +17,7 @@ Other great games like Final Fantasy VII were also being remade for modern conso
 ### Sources
 
 - [SEGA - Sega Saturn software catalogue](https://www.sega.jp/history/hard/segasaturn/software.html)
-- [NoahSteam - Sakura Wars English translation release submission on SegaXtreme](https://segaxtreme.net/threads/sega-saturn-25th-anniversary-game-competition.24462/page-2)
+- [NoahSteam: Sakura Wars Saturn English Translation Submission (SegaXtreme)](https://segaxtreme.net/threads/sega-saturn-25th-anniversary-game-competition.24462/page-2)
 
 ### Related Posts
 

@@ -27,11 +27,11 @@ All this would not have been possible without the following websites:
 - [Sam Hobbs](https://samhobbs.co.uk/2014/04/ssl-certificate-signing-cacert-raspberry-pi-ubuntu-debian)
 - [Shallot](https://web.archive.org/web/20150916172316/https://github.com/katmagic/Shallot)
 
+That's all there is! I hope this helped you out! :)
+
+This documents the v2 onion-service setup I used in 2016. The address format and several parts of the software stack are obsolete now, so head back to [Part 1](/take-back-the-darknet-part-1/) for the archive warning and complete historical series.
+
 ### Sources
 
 - [Tor Project - Onion Services](https://community.torproject.org/onion-services/)
 - [Tor Project - Onion Service version 2 deprecation timeline](https://blog.torproject.org/v2-deprecation-timeline/)
-
-That's all there is! I hope this helped you out! :)
-
-This documents the v2 onion-service setup I used in 2016. The address format and several parts of the software stack are obsolete now, so head back to [Part 1](/take-back-the-darknet-part-1/) for the archive warning and complete historical series.

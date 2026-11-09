@@ -115,10 +115,10 @@ And naturally, that is not the end of the story. The article finishes by teasing
 
 **Sources**
 
-- [Schwarzschild Cafe / FunkyGoods - Decadent PC-Compatible Hobby, Part 32: PS/55 Type 5510 Disassembly (21st February 2010), original Japanese article](https://funkygoods.com/schwarzschild/2010_02/2010_02_21.html)
-- [Schwarzschild Cafe / FunkyGoods - Part 31: Discovering the PS/55 Type 5510 (23rd January 2010), original Japanese article](https://funkygoods.com/schwarzschild/2010_01/2010_01_23.html)
-- [Schwarzschild Cafe / FunkyGoods - Part 33: The Mysterious Hard Disk Card (27th February 2010), original Japanese article](https://funkygoods.com/schwarzschild/2010_02/2010_02_27.html)
-- [IBM - Personal System/2 and IBM Personal Computer Product Reference, Version 4.0 (April 1987), page 49](https://bitsavers.org/pdf/ibm/pc/PS2_and_IBM_PC_Product_Reference_Version_4.0_Apr87.pdf)
+- [Schwarzschild Cafe / FunkyGoods: PS/55 5510 Disassembly (Part 32, 21 February 2010, Japanese)](https://funkygoods.com/schwarzschild/2010_02/2010_02_21.html)
+- [Schwarzschild Cafe / FunkyGoods: PS/55 5510 Discovery (Part 31, 23 January 2010, Japanese)](https://funkygoods.com/schwarzschild/2010_01/2010_01_23.html)
+- [Schwarzschild Cafe / FunkyGoods: PS/55 5510 Hard Disk Card (Part 33, 27 February 2010, Japanese)](https://funkygoods.com/schwarzschild/2010_02/2010_02_27.html)
+- [IBM: Personal System/2 and IBM Personal Computer Product Reference (v4.0, April 1987, p. 49)](https://bitsavers.org/pdf/ibm/pc/PS2_and_IBM_PC_Product_Reference_Version_4.0_Apr87.pdf)
 
 **Related Posts**
 

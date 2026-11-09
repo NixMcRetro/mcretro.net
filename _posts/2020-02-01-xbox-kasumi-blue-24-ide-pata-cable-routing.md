@@ -32,6 +32,6 @@ So there you have it. If you're using a longer 80-conductor IDE cable in an orig
 
 Not bad for a few bits of folded plastic and copper!
 
-### Related posts
+### Related Posts
 
 - [Xbox OG 24" Super IDE PATA Cable Folding and Routing](/xbox-og-24-super-ide-pata-cable-folding-and-routing/)

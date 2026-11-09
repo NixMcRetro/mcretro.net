@@ -18,7 +18,7 @@ I also noticed a different arrangement of internal cables and wondered what had 
 
 Apart from the unusual connections and the D-pad requiring attention, the internals were looking reasonably good. Next up, we'll move on to the big blue box itself and find out what Intelligent Systems has managed to fit inside that thing.
 
-### Related posts
+### Related Posts
 
 - [Setting IS Nitro Capture DIP Switches](/setting-is-nitro-capture-dip-switches/)
 - [IS Nitro Capture Teardown](/is-nitro-capture-teardown/)

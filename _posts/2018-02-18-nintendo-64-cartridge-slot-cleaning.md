@@ -28,4 +28,4 @@ The only problem is that I've now got two working Japanese Nintendo 64 consoles.
 
 **Sources**
 
-- [Nintendo Support - Health & Safety Precautions: Cartridge-Based Consoles (NES, Super NES, and Nintendo 64)](https://en-americas-support.nintendo.com/app/answers/detail/a_id/54157/p/50)
+- [Nintendo Support: Cartridge Console Health and Safety (NES, Super NES, Nintendo 64)](https://en-americas-support.nintendo.com/app/answers/detail/a_id/54157/p/50)

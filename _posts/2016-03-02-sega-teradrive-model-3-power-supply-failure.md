@@ -23,7 +23,7 @@ Anyway, here are some useful links to helpful software.
 - [XTIDECFG (r588)](https://drive.google.com/file/d/0B3Rk2eO8E26va0d0d1NqZU15X1U/view?usp=drive_web)
 - XTIDE [ide_xt r588](https://drive.google.com/file/d/0B3Rk2eO8E26veXVkb3BVeGJ3SW8/view?usp=drive_web), compiled to play nicely with CF cards and show the attractive boot menu.
 
-### Related posts
+### Related Posts
 
 - [Sega TeraDrive Model 3 - Faulty Power Supply (Part 1)](/sega-teradrive-model-3-faulty-power-supply-part-1/)
 - [Sega TeraDrive Model 3 - Faulty Power Supply (Part 2)](/sega-teradrive-model-3-faulty-power-supply-part-2/)

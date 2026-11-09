@@ -21,7 +21,7 @@ Still, it's a useful trick to know about. I'll have to give it a proper test one
 ### Sources
 
 - [NESdev - A question about programming AM29F032B chips (archived)](https://web.archive.org/web/20231014225637/https://forums.nesdev.org/viewtopic.php?t=8913)
-- [ElOtroLado - Programar diferentes memorias en un TL866CS (2014 community report)](https://www.elotrolado.net/hilo_aporte-programar-diferentes-memorias-en-un-tl866cs_2022489)
+- [ElOtroLado: TL866CS Memory Programming Community Report (2014)](https://www.elotrolado.net/hilo_aporte-programar-diferentes-memorias-en-un-tl866cs_2022489)
 
 ### Related Posts
 

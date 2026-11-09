@@ -38,7 +38,7 @@ For a modern onion service, refer to the current Tor documentation and tools ins
 - [Tor Project - Vanity Addresses](https://community.torproject.org/onion-services/advanced/vanity-addresses/)
 - [Shallot developer README (archived GitHub repository)](https://web.archive.org/web/20230331011246/https://github.com/katmagic/Shallot)
 
-### Related posts
+### Related Posts
 
 - [Take Back the Darknet (Part 13)](/take-back-the-darknet-part-13/)
 - [The Darknet (Day 36)](/the-darknet-day-36/)

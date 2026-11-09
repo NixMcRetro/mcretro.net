@@ -50,7 +50,7 @@ Still, it's an interesting alternative to the original supply, and certainly som
 
 ### Sources
 
-- [Mean Well - PT-65 Series: 65 W Triple Output Switching Power Supply datasheet](https://www.meanwell.com/Upload/PDF/PT-65/PT-65-SPEC.PDF)
+- [Mean Well: PT-65 Series 65 W Triple-Output PSU Datasheet](https://www.meanwell.com/Upload/PDF/PT-65/PT-65-SPEC.PDF)
 
 ### Related Posts
 

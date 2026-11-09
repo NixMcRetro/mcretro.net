@@ -21,7 +21,7 @@ Before trying to make the unit useful again, I wanted a raw copy of the internal
 - [SEGAKatana - HKT-0120 Development Box](https://segakatana.com/hardware/dcdev/hkt01/)
 - [Sega - Getting Started with Dreamcast R10 (preserved SDK document)](https://github.com/Kochise/dreamcast-docs/blob/master/SDK/EXES/INSTALL%20KATANA%20SDK/INPUT/R10.1_000518/GetStart.txt)
 
-### Related posts
+### Related Posts
 
 - [Preparing to Dump the Sega Dreamcast HKT-0120 Dev Kit SCSI Hard Drive](/preparing-to-dump-the-sega-dreamcast-hkt-0120-dev-kit-scsi-hard-drive/)
 - [Dumping the Sega Dreamcast HKT-0120 Dev Kit SCSI Hard Drive via GUI and dd](/dumping-the-sega-dreamcast-hkt-0120-dev-kit-scsi-hard-drive-via-gui-and-dd/)

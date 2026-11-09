@@ -34,6 +34,6 @@ I'll keep chipping away on the GeoCities website for the time being. I can proba
 
 ### Related Posts
 
-- Earlier dial-up setup: [Dial-up on Windows 95 on the MiSTer FPGA](/dial-up-on-windows-95-on-the-mister-fpga/)
-- Next GeoCities update: [Internal Inspection of the Sega Mega-CD (VA0) HAA-2910](/internal-inspection-of-the-sega-mega-cd-va0-haa-2910/)
-- Later worklog: [The GeoCities Archive Rebuild Blog](/the-geocities-archive-rebuild-blog/)
+- [Dial-up on Windows 95 on the MiSTer FPGA](/dial-up-on-windows-95-on-the-mister-fpga/)
+- [Internal Inspection of the Sega Mega-CD (VA0) HAA-2910](/internal-inspection-of-the-sega-mega-cd-va0-haa-2910/)
+- [The GeoCities Archive Rebuild Blog](/the-geocities-archive-rebuild-blog/)

@@ -20,7 +20,7 @@ In the meantime, I'll be trying to make the regular McRetro.net site, the new ol
 
 I figured I had to purge the Raspberry Pi of all that IRC server stuff I'd been playing around with anyway. Enjoy! :)
 
-### Related posts
+### Related Posts
 
 - [McRetro.net Rebooted](/mcretro-net-rebooted/)
 - [Markdown and Apache](/markdown-and-apache/)

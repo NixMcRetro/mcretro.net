@@ -28,6 +28,13 @@ Most of this footage is quite, let's say... aged. By June 2020 there were alread
 
 I've also ordered a bunch of capacitors to recap a VA15 This is COOL Saturn. Strangely, they're all through-hole caps, and I was delighted to see only one SH-2 package! Both SH-2 CPUs are still there, integrated into the single 315-6018 package rather than the two separate packages on earlier revisions.
 
+**Sources**
+
+- [Phantom Universal - Model 1 Installation Guide](/assets/uploads/PhantomUniversal_Model1_Install-Guide.pdf)
+- [GDEMU - Enter Rhea](https://gdemu.wordpress.com/2014/09/30/enter-rhea/)
+- [Fenrir - Firmware version history](https://www.fenrir-ode.fr/firmware/)
+- [ConsoleMods Wiki - Saturn Model Differences](https://consolemods.org/wiki/Saturn%3ASaturn_Model_Differences)
+
 **Related Posts**
 
 - [Sega Saturn Phantom Universal Modchip CD Drive Identification](/sega-saturn-phantom-universal-modchip-cd-drive-identification/)
@@ -36,10 +43,3 @@ I've also ordered a bunch of capacitors to recap a VA15 This is COOL Saturn. Str
 - [Sega Saturn Phantom Universal Modchip Installation](/sega-saturn-phantom-universal-modchip-installation/)
 - [Sega Saturn Phantom Universal Modchip Testing & Region Lock](/sega-saturn-phantom-universal-modchip-testing-region-lock/)
 - [Sega Saturn Phantom Universal Modchip - Testing, Testing!](/sega-saturn-phantom-universal-modchip-testing-testing/)
-
-**Sources**
-
-- [Phantom Universal - Model 1 Installation Guide](/assets/uploads/PhantomUniversal_Model1_Install-Guide.pdf)
-- [GDEMU - Enter Rhea](https://gdemu.wordpress.com/2014/09/30/enter-rhea/)
-- [Fenrir - Firmware version history](https://www.fenrir-ode.fr/firmware/)
-- [ConsoleMods Wiki - Saturn Model Differences](https://consolemods.org/wiki/Saturn%3ASaturn_Model_Differences)

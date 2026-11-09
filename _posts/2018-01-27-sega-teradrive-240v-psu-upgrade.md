@@ -59,9 +59,9 @@ For more information, check out [ASSEMbler Games](https://web.archive.org/web/20
 ### Sources
 
 - [Mean Well - RD-65 Series: 65 W Dual Output Switching Power Supply datasheet](https://www.meanwell.com/Upload/PDF/RD-65/RD-65-SPEC.PDF)
-- [Mean Well - PT-65 Series: 65 W Triple Output Switching Power Supply datasheet](https://www.meanwell.com/Upload/PDF/PT-65/PT-65-SPEC.PDF)
+- [Mean Well: PT-65 Series 65 W Triple-Output PSU Datasheet](https://www.meanwell.com/Upload/PDF/PT-65/PT-65-SPEC.PDF)
 - [ASSEMbler Games - Sega TeraDrive PSU Repair - Trinity! Help!](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/)
 
-### Related posts
+### Related Posts
 
 - [Sega TeraDrive - Retrofitting a Mean Well PT-65B PSU](/sega-teradrive-retrofitting-a-mean-well-pt-65b-psu/)

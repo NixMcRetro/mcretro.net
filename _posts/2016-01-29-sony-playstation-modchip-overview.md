@@ -41,7 +41,7 @@ Thanks again to Master991 and Bad_Ad84 for helping me work out what was happenin
 - [FatCat - PSone Information](http://www.fatcat.co.nz/psx/ps1.html)
 - [ASSEMbler Games - Mayumi v4 on PIC12C508A / PIC12F508](https://web.archive.org/web/20170701144345/https://www.assemblergames.com/threads/mayumi-v4-on-the-pic12c508a-pic12f508.59924/)
 
-### Related posts
+### Related Posts
 
 - [Mayumi 4: PIC12F629, SCPH-7502 (PU-22)](/mayumi-4-pic12f629-scph-7502-pu-22/)
 - [Mayumi 4: PIC12C508A, SCPH-7502 (PU-22)](/mayumi-4-pic12c508a-scph-7502-pu-22/)

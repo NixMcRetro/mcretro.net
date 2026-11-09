@@ -32,4 +32,4 @@ I vote salmon. Mostly because it tastes better and appears to be more effective 
 
 ### Sources
 
-- [US Food and Drug Administration - Mercury Levels in Commercial Fish and Shellfish (1990-2012)](https://www.fda.gov/food/environmental-contaminants-food/mercury-levels-commercial-fish-and-shellfish-1990-2012)
+- [US FDA: Mercury Levels in Commercial Fish and Shellfish (1990–2012)](https://www.fda.gov/food/environmental-contaminants-food/mercury-levels-commercial-fish-and-shellfish-1990-2012)

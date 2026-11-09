@@ -23,4 +23,4 @@ The nutrition panels above show more fibre and energy per 5 g serve in this salt
 ### Sources
 
 - [Bega Cheese Limited - Annual Report 2017](https://begagroup.com.au/wp-content/uploads/2017/08/2017-Bega-Annual-Report.pdf)
-- [NIH Office of Dietary Supplements - Vitamin B12 - Health Professional Fact Sheet](https://ods.od.nih.gov/factsheets/Vitaminb12-HealthProfessional/)
+- [NIH Office of Dietary Supplements: Vitamin B12 Health Professional Fact Sheet](https://ods.od.nih.gov/factsheets/Vitaminb12-HealthProfessional/)

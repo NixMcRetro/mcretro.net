@@ -12,4 +12,4 @@ Another year, another round of trouble - better make it double! We revisit Ginza
 
 ### Related Posts
 
-- Full PS4 playthrough, collected later: [Sakura Wars (2020, PS4 Live Streams)](/sakura-wars-ps4-live-streams/)
+- [Sakura Wars (2020, PS4 Live Streams)](/sakura-wars-ps4-live-streams/)

@@ -32,10 +32,6 @@ GNU ddrescue can create a raw image or rescue readable sectors, and Ubuntu packa
 
 So there we have it. The DVT4 is running with its replacement SSD, development software and a selection of games. Not bad for an old Xbox development kit! If there's one thing I've learnt from this exercise, it's that FTP is considerably more dependable than some of the other file-transfer arrangements I've been trying.
 
-**Related Posts**
-
-- [Xbox DVT4 Running UnleashX](/xbox-dvt4-running-unleashx/)
-
 **Sources**
 
 - [fatxfs - FATX FUSE filesystem driver](https://github.com/mborgerson/fatx/blob/master/fatxfs/README.md)
@@ -44,3 +40,7 @@ So there we have it. The DVT4 is running with its replacement SSD, development s
 - [S-Config - Original XBox Debug Console: It lives again!](https://www.s-config.com/original-xbox-debug-console/)
 - [ASSEMblergames - DVT4 Slow at loading XDK Launcher](https://web.archive.org/web/20191124074925/https://assemblergames.com/threads/dvt4-slow-at-loading-xdk-launcher.58694/)
 - [ASSEMblergames - Cloning an Xbox Hard Drive](https://web.archive.org/web/20191108232644/https://assemblergames.com/threads/cloning-an-xbox-hard-drive.59787/)
+
+**Related Posts**
+
+- [Xbox DVT4 Running UnleashX](/xbox-dvt4-running-unleashx/)

@@ -26,11 +26,11 @@ It would certainly be handy having a few more clues the next time one of these c
 
 Actually, this might be useful in working out some circuit bending for the SNES... stay tuned ;)
 
-### Related posts
-
-- [Super Nintendo Serial UP15971140 - Video Distortion](/super-nintendo-serial-up15971140-video-distortion/)
-- [Super Nintendo Serial UP15971140 PPU1 Trace Repair](/super-nintendo-serial-up15971140-ppu1-trace-repair/)
-
 ### Sources
 
 - [DogP - Nintendo Super System and SNES Repair Logs](https://www.projectvb.com/nss/logs.htm)
+
+### Related Posts
+
+- [Super Nintendo Serial UP15971140 - Video Distortion](/super-nintendo-serial-up15971140-video-distortion/)
+- [Super Nintendo Serial UP15971140 PPU1 Trace Repair](/super-nintendo-serial-up15971140-ppu1-trace-repair/)

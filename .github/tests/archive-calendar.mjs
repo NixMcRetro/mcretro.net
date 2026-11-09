@@ -42,6 +42,8 @@ test('Jekyll supplies 12 months per year and direct archive links', () => {
   assert.ok(sidebar.includes('group_by_exp: "post", "post.date | date: \'%Y\'"'));
   assert.ok(sidebar.includes('group_by_exp: "post", "post.date | date: \'%m\'"'));
   assert.ok(sidebar.includes('for m in (1..12)'));
+  assert.equal((sidebar.match(/numeric_month == m/g) || []).length, 2);
+  assert.ok(!sidebar.includes("where: 'name', month_key"));
   assert.ok(sidebar.includes('data-counts='));
   assert.ok(sidebar.includes('if count > 0'));
   assert.ok(sidebar.includes('class="archive-calendar-month is-empty"'));

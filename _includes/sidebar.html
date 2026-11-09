@@ -21,8 +21,15 @@
           {% assign year_months = year.items | group_by_exp: "post", "post.date | date: '%m'" %}
           <option value="{{ year.name }}" data-counts="{% for m in (1..12) -%}
             {%- assign month_key = m | prepend: '0' | slice: -2, 2 -%}
-            {%- assign group = year_months | where: 'name', month_key | first -%}
-            {%- if group -%}{{- group.items.size -}}{%- else -%}0{%- endif -%}
+            {%- assign count = 0 -%}
+            {%- for month_group in year_months -%}
+              {%- assign numeric_month = month_group.name | plus: 0 -%}
+              {%- if numeric_month == m -%}
+                {%- assign count = month_group.items | size -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {{- count -}}
             {%- unless forloop.last -%},{%- endunless -%}
           {%- endfor %}">{{ year.name }}</option>
         {% endfor %}
@@ -33,9 +40,14 @@
       {% assign current_months = latest_year.items | group_by_exp: "post", "post.date | date: '%m'" %}
       {% for m in (1..12) %}
         {% assign month_key = m | prepend: '0' | slice: -2, 2 %}
-        {% assign group = current_months | where: 'name', month_key | first %}
         {% assign count = 0 %}
-        {% if group %}{% assign count = group.items.size %}{% endif %}
+        {% for month_group in current_months %}
+          {% assign numeric_month = month_group.name | plus: 0 %}
+          {% if numeric_month == m %}
+            {% assign count = month_group.items | size %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
         {% assign date_key = latest_year.name | append: '-' | append: month_key | append: '-01' %}
         {% assign month_short = date_key | date: '%b' %}
         {% assign month_long = date_key | date: '%B' %}

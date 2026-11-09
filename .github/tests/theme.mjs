@@ -104,8 +104,8 @@ test('recent sidebar post links underline on hover and keyboard focus', () => {
   assert.match(style, /\.recent-posts-list li a:hover,\s*\.recent-posts-list li a:focus-visible\s*\{[^}]*text-decoration:\s*underline;/);
 });
 test('Dial-a-Homepage links and monthly archive counts follow the active theme', () => {
-  assert.match(overrides, /\.dial-homepage a \{ color: var\(--link\); text-decoration: underline; \}/);
-  assert.match(overrides, /\.dial-homepage a:hover \{ color: var\(--link-hover\); \}/);
+  assert.match(overrides, /\.dial-homepage a \{ color: var\(--link\); text-decoration: none; \}/);
+  assert.match(overrides, /\.dial-homepage a:hover,\s*\.dial-homepage a:focus-visible\s*\{[^}]*color: var\(--link-hover\);[^}]*text-decoration:\s*underline;/);
   assert.match(overrides, /\.dial-homepage a:focus-visible\s*\{[^}]*var\(--focus\)/);
   assert.match(overrides, /\.archive-month-summary\s*\{[^}]*color: var\(--muted\)/);
   assert.match(overrides, /\.mcretro-modem-titlebar[\s\S]*background: #000080/);
@@ -123,8 +123,8 @@ test('sidebar Search and archive calendar share classic blue only in Light mode'
   }
   assert.match(style, /\.sidebar \.inline-search-form button\s*\{[^}]*background:\s*var\(--sidebar-button-bg\);/);
   assert.match(style, /\.sidebar \.inline-search-form button:hover\s*\{[^}]*background:\s*var\(--sidebar-button-hover\);/);
-  assert.match(overrides, /\.sidebar a\.archive-calendar-month\.has-posts \{[^}]*background: var\(--archive-tile\);/);
-  assert.match(overrides, /\.sidebar a\.archive-calendar-month\.has-posts:hover \{[^}]*background: var\(--archive-hover\);/);
+  assert.match(overrides, /\.sidebar a\.archive-calendar-month\.has-posts \{[^}]*background: var\(--archive-filled\);/);
+  assert.match(overrides, /\.sidebar a\.archive-calendar-month\.has-posts:hover \{[^}]*background: var\(--archive-filled-hover\);/);
   assert.match(style, /--link:\s*#0009B5;/);
   assert.match(style, /--retro-teal:\s*#008080;/);
   assert.match(overrides, /\.mcretro-modem-titlebar[\s\S]*background: #000080/);
@@ -151,8 +151,8 @@ test('accordion headers restore distinct mint Light and teal Dark hover/open sta
 });
 
 test('desktop and mobile menus underline on pointer hover and keyboard focus', () => {
-  assert.match(style, /\.main-nav a:hover,\s*\.main-nav a:focus-visible\s*\{[^}]*text-decoration:\s*underline;/);
-  assert.match(style, /\.nav-list li a:hover,\s*\.nav-list li a:focus-visible\s*\{[^}]*text-decoration:\s*underline;/);
+  assert.match(style, /\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{[^}]*font-weight:\s*700;[^}]*text-decoration:\s*underline;/);
+  assert.match(style, /\.nav-list li a:hover,\s*\.nav-list li a:focus-visible\s*\{[^}]*text-decoration:\s*none;/);
 });
 
 test('Channels keeps emoji and links, without old summary siren GIFs', () => {
@@ -166,4 +166,33 @@ test('Channels keeps emoji and links, without old summary siren GIFs', () => {
     assert.ok(channels.includes(handle), handle);
   }
   assert.match(overrides, /\.mcretro-modem-titlebar[\s\S]*background: #000080/);
+});
+
+
+test('navigation hover bolds and underlines words, never emoji, on desktop and mobile', () => {
+  for(const [emoji, word] of [['🏡','Home'],['✏️','Blog'],['📺','Channels'],['💾','Goodies'],['🌏','Random'],['📡','About']]) {
+    assert.ok(header.includes('<span class="nav-emoji" aria-hidden="true">' + emoji + '</span> <span class="nav-text">' + word + '</span>'), word);
+  }
+  assert.equal((header.match(/class="nav-text"/g) || []).length, 6);
+  assert.match(style, /\.main-nav a:hover,\s*\.main-nav a:focus-visible\s*\{[^}]*text-decoration:\s*none;/);
+  assert.match(style, /\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{[^}]*font-weight:\s*700;[^}]*text-decoration:\s*underline;/);
+  assert.match(style, /\.nav-list li a:hover,\s*\.nav-list li a:focus-visible\s*\{[^}]*text-decoration:\s*none;/);
+});
+
+test('Dial-a-Homepage link behaves as an ordinary unbolded link', () => {
+  assert.match(overrides, /\.dial-homepage a \{ color: var\(--link\); text-decoration: none; \}/);
+  assert.match(overrides, /\.dial-homepage-random\s*\{[^}]*font-weight:\s*400;/);
+  assert.match(overrides, /\.dial-homepage a:hover,\s*\.dial-homepage a:focus-visible\s*\{[^}]*text-decoration:\s*underline;/);
+});
+
+test('calendar keeps four month columns with compact themed filled and empty tiles', () => {
+  const light=style.split(':root[data-theme="dark"]')[0];
+  const dark=style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
+  for(const token of ['--archive-tile: #064584;', '--archive-filled: #EAF2FF;', '--archive-filled-hover: #D5E6FF;', '--archive-filled-text: #064584;'])assert.ok(light.includes(token),token);
+  for(const token of ['--archive-tile: #115B60;', '--archive-filled: #293C46;', '--archive-filled-hover: #345563;', '--archive-filled-text: #B9EEE6;'])assert.ok(dark.includes(token),token);
+  assert.match(overrides, /grid-template-columns: repeat\(4, minmax\(0, 1fr\)\)/);
+  assert.match(overrides, /min-height:\s*3\.2rem/);
+  assert.match(overrides, /\.sidebar a\.archive-calendar-month\.has-posts \{[^}]*color:\s*var\(--archive-filled-text\);[^}]*background:\s*var\(--archive-filled\)/);
+  assert.match(overrides, /\.sidebar \.archive-calendar-month\.is-empty\s*\{[^}]*color:\s*var\(--muted\)/);
+  assert.match(overrides, /\.sidebar a\.archive-calendar-month\.has-posts:focus-visible\s*\{[^}]*outline:\s*3px solid #ffc857/);
 });

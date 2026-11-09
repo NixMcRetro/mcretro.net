@@ -25,4 +25,9 @@ for source in [
 ]:
     assert source in html, f"Missing historical source {source}"
 assert "38°C" in html, "Previously approved Celsius correction missing"
+source_path = Path('_posts/2024-03-10-flicky-the-floury-baker-cicada.md')
+source = source_path.read_text(encoding='utf-8')
+assert '\u2014' not in source and '\u2013' not in source, 'Disallowed em/en dash in Flicky article'
+assert source.count('<summary markdown="span">') == 10, 'Expected ten original dated headings'
+assert not list(Path('_posts').glob('*-flicky-the-floury-baker-day-*.md')), 'Unpublished Flicky Markdown should be removed'
 print("PASS: original hero, 10 exclusive chapters, 10 videos, 6 sources, no redirects, original R08 correction.")

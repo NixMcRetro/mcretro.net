@@ -15,7 +15,10 @@ assert page.count('name="mcretro-darknet"') == 14, 'Expected fourteen mutually-e
 assert 'Historical reconstruction note:' not in page, 'Removed Part 9 note must not reappear'
 removed_source = 'https://web.archive.org/web/20190824000515/https://mcretro.net/take-back-the-darknet-part-9/'
 assert removed_source not in page, 'Removed Part 9 Wayback citation must not reappear'
-part9_source = Path('_posts/2016-01-04-take-back-the-darknet-part-9.md').read_text(encoding='utf-8')
+canonical_source = Path('_posts/2016-01-04-take-back-the-darknet-part-1.md').read_text(encoding='utf-8')
+part9_marker = '<details id="part-9"'
+assert canonical_source.count(part9_marker) == 1, 'Original Part 9 section must exist exactly once'
+part9_source = canonical_source.split(part9_marker, 1)[1].split('</details>', 1)[0]
 assert removed_source not in part9_source, 'Archived source still cites removed Part 9 Wayback link'
 assert 'Historical reconstruction note:' not in part9_source, 'Archived source still has removed warning'
 for path in ['/var/www', '/var/www/blog', '/var/www/files/public']:
@@ -28,4 +31,8 @@ for chapter in range(1, 15):
     assert f'id="part-{chapter}"' in page, f"Missing chapter {chapter}"
     old = site / f'take-back-the-darknet-part-{chapter}' / 'index.html'
     assert not old.exists(), f"Legacy address for part {chapter} must not publish or redirect"
+    if chapter > 1:
+        source_date = '2016-01-05' if chapter == 14 else '2016-01-04'
+        old_source = Path('_posts') / f'{source_date}-take-back-the-darknet-part-{chapter}.md'
+        assert not old_source.exists(), f'Unpublished legacy Markdown must be removed: {old_source}'
 print('PASS: original JXL, 14 exclusive panels, absent legacy URLs, and historical warnings.')

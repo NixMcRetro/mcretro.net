@@ -346,6 +346,7 @@ a {
   text-decoration: none;
 }
 a:hover {
+  color: var(--link-hover);
   text-decoration: underline;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -563,8 +564,8 @@ pre code {
 .widget button {
   padding: 8px 16px;
   margin-top: 5px;
-  background: var(--link);
-  color: #fff;
+  background: var(--button-bg);
+  color: var(--button-text);
   border: none;
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
@@ -586,7 +587,8 @@ pre code {
   font-family: inherit;
   font-size: 0.9rem;
   line-height: 1.2;
-  background: #fff;
+  background: var(--input-bg);
+  color: var(--text);
   border-radius: 0;
 }
 .inline-search-form button {
@@ -594,7 +596,7 @@ pre code {
   outline: none;
   padding: 10px 20px;
   background: var(--button-bg);
-  color: #fff;
+  color: var(--button-text);
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
@@ -641,7 +643,8 @@ pre code {
   font-family: Montserrat, "Helvetica Neue", sans-serif;
   font-size: 0.9rem;
   border: 1px solid var(--border);
-  background: #fff;
+  background: var(--input-bg);
+  color: var(--text);
   cursor: pointer;
 }
 
@@ -659,7 +662,7 @@ pre code {
 
 /* Preserve footer spacing and historical image styling without inline CSS. */
 .site-footer .footer-rule {
-  border: 0.5px solid black;
+  border: 0.5px solid var(--border);
   text-align: center;
   margin: 0 auto 30px;
   width: 100%;
@@ -899,7 +902,7 @@ pre code {
 }
 .arrow-link:hover {
   background: var(--link);
-  color: var(--page-bg);
+  color: var(--button-text);
   text-decoration: none;
 }
 .arrow-icon {
@@ -1006,6 +1009,15 @@ pre code {
   max-width: 100%;
 }
 
+/* Pagefind's own stylesheet inherits colours even when loaded later. */
+#search {
+  --pagefind-ui-primary: var(--link);
+  --pagefind-ui-text: var(--text);
+  --pagefind-ui-background: var(--panel);
+  --pagefind-ui-border: var(--border-soft);
+  --pagefind-ui-tag: var(--panel-hover);
+}
+
 /* ===========================
    SEARCH PAGE STYLING
    =========================== */
@@ -1022,13 +1034,15 @@ pre code {
   padding: 10px 12px;
   font-size: 1rem;
   border: 1px solid var(--border);
+  background: var(--input-bg);
+  color: var(--text);
   border-radius: 0;
 }
 #search .pagefind-ui__search-input button {
   padding: 10px 20px;
   font-size: 1rem;
-  background: var(--link);
-  color: #fff;
+  background: var(--button-bg);
+  color: var(--button-text);
   border: none;
   cursor: pointer;
   white-space: nowrap;
@@ -1143,7 +1157,7 @@ pre code {
 .box {
   padding: 1px;
   border: 1px solid var(--text);
-  background: #fff;
+  background: var(--panel);
 }
 /* One original, unmodified pixel-art GIF runs along the main-nav top border.
    Fixed clipping lane avoids overflow; the effect never catches input. */
@@ -1221,7 +1235,7 @@ pre code {
     gap: 4px;
     width: 44px;
     height: 44px;
-    background: var(--text);
+    background: var(--nav-button-bg);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -1233,13 +1247,13 @@ pre code {
     transform: translateY(-50%);
   }
   .nav-toggle:hover {
-    background: var(--text);
+    background: var(--button-hover);
   }
   .nav-toggle span {
     display: block;
     width: 22px;
     height: 2px;
-    background: #fff;
+    background: var(--nav-button-text);
     border-radius: 2px;
     transition: all 0.3s ease;
   }
@@ -1254,7 +1268,7 @@ pre code {
   }
   
   .logo-area {
-    padding-right: 30px;
+    padding-right: 110px;
     position: relative;
   }
   .main-nav ul {
@@ -1271,7 +1285,7 @@ pre code {
     top: 100%;
     left: 0;
     width: 100%;
-    background: var(--page-bg);
+    background: var(--panel);
     margin: 0;
     padding: 0.8rem 0;
     list-style: none;
@@ -1302,8 +1316,8 @@ pre code {
     transition: background 0.2s ease, color 0.2s ease;
   }
   .nav-list li a:hover {
-    background: rgba(1, 130, 129, 1.0);
-    color: #fff;
+    background: var(--button-bg);
+    color: var(--button-text);
   }
   .main-nav[data-nav="open"] .nav-list {
     max-height: 600px;

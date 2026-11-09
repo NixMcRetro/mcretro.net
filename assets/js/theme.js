@@ -3,13 +3,14 @@
   'use strict';
   var key = 'mcretro-theme';
   var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : { matches: false };
+  var sessionChoice = null; // Fallback when localStorage is blocked.
 
   function savedTheme() {
     try {
       var value = window.localStorage.getItem(key);
       return value === 'light' || value === 'dark' ? value : null;
     } catch (error) {
-      return null; // Private browsing or blocked storage: use the device preference.
+      return sessionChoice; // Preserve a manual choice within the page.
     }
   }
 
@@ -36,16 +37,9 @@
     if (button) {
       button.addEventListener('click', function () {
         var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        try { window.localStorage.setItem(key, next); } catch (error) { /* Still switch for this page. */ }
-        document.documentElement.setAttribute('data-theme', next);
-        // Re-apply only the button and browser chrome when storage is unavailable.
-        if (savedTheme() === next) applyTheme();
-        else {
-          var browserColour = document.querySelector('meta[name="theme-color"]');
-          if (browserColour) browserColour.setAttribute('content', next === 'dark' ? '#191D27' : '#FFF8DC');
-          button.setAttribute('aria-pressed', String(next === 'dark'));
-          button.setAttribute('title', 'Switch to ' + (next === 'dark' ? 'light' : 'dark') + ' theme');
-        }
+        try { window.localStorage.setItem(key, next); }
+        catch (error) { sessionChoice = next; }
+        applyTheme();
       });
     }
     applyTheme();

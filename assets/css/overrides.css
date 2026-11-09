@@ -16,7 +16,7 @@
 }
 
 /* Soft warm-mint headings, dark-grey outlines, and a teal left accent.
-   Preserve near-black labels and the site's cobalt links/focus. */
+   Preserve readable labels and theme-sensitive focus colours. */
 .about-panel.panel--teal {
   border-color: var(--border);
   border-left: 3px solid var(--retro-teal);
@@ -35,7 +35,7 @@
 .about-panel.panel--teal[open] > summary:hover {
   background: var(--panel-hover);
 }
-/* Keep the existing clearly visible cobalt keyboard focus outline. */
+/* Keep a clearly visible keyboard focus treatment. */
 .about-panel.panel--teal > summary:focus-visible {
   background: var(--panel-hover);
 }
@@ -125,7 +125,7 @@
   border: 0;
 }
 
-/* Restore a visible keyboard focus indicator without changing the theme. */
+/* Restore a visible keyboard focus indicator using the active theme. */
 .inline-search-form:focus-within,
 #archive-dropdown:focus-visible,
 .nav-toggle:focus-visible,

@@ -40,6 +40,6 @@ For a modern onion service, refer to the current Tor documentation and tools ins
 
 ### Related Posts
 
-- [Take Back the Darknet (Part 13)](/take-back-the-darknet-part-13/)
+- [Take Back the Darknet: The Complete 2016 Guide](/take-back-the-darknet/#part-13)
 - [The Darknet (Day 36)](/the-darknet-day-36/)
 - [ZeroNet, BitTorrent and Another Darknet](/zeronet-bittorrent-and-another-darknet/)

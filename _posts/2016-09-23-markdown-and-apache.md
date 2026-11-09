@@ -28,4 +28,4 @@ Jekyll might be the answer here. It can build the Markdown into HTML, leaving Ap
 
 - [The Birth of Eleventy7.net](/the-birth-of-eleventy7-net/)
 - [McRetro.net Rebooted](/mcretro-net-rebooted/)
-- [Take Back the Darknet (Part 1)](/take-back-the-darknet-part-1/)
+- [Take Back the Darknet: The Complete 2016 Guide](/take-back-the-darknet/)

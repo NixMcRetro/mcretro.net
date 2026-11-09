@@ -54,13 +54,13 @@ The photographs above also show the jumper settings for bypassing the Mega Drive
 
 Thanks American Megatrends!
 
-### Related posts
+### Sources
+
+- [Transcend: PATA PTM820 Flash Module](https://au.transcend-info.com/embedded/product/embedded-flash-solutions/ptm820)
+- [Analog Devices: DS12887 Real-Time Clock (DS1287 Family)](https://www.analog.com/en/products/ds12887.html)
+- [Epson: ActionTower 2000 User Manual (83S87 and 486SLC)](https://files.support.epson.com/pdf/at2k__/at2k__u1.pdf)
+
+### Related Posts
 
 - [Amstrad Sega Mega PC 486SLC Upgrade Experiment](/amstrad-sega-mega-pc-486slc-upgrade-experiment/)
 - [Math Coprocessors and You](/math-coprocessors-and-you/)
-
-### Sources
-
-- [Transcend - PATA PTM820 Flash Module](https://au.transcend-info.com/embedded/product/embedded-flash-solutions/ptm820) - manufacturer description of a PATA flash module that connects directly to an IDE/PATA interface and replaces a conventional hard disk.
-- [Analog Devices - DS12887 real-time clock](https://www.analog.com/en/products/ds12887.html) - documents the encapsulated RTC design with integrated crystal, battery and battery-backed RAM, and its relationship to the DS1287 family.
-- [Epson ActionTower 2000 user manual](https://files.support.epson.com/pdf/at2k__/at2k__u1.pdf) - period documentation showing clock-matched 83S87 coprocessors used with 486SLC systems.

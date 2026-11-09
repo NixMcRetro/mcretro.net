@@ -24,12 +24,12 @@ I tried compatible power supplies from two of my Model 2 Saturns, and neither re
 
 I'd quite happily buy another suitable power supply if I could track one down, but they're becoming harder to find. This is also giving me a good excuse to investigate an alternative using an external DC supply and suitable converters. If I can get that working, perhaps these early Saturns won't have to rely entirely on their ageing original power supplies.
 
+**Sources**
+
+- [Sega Saturn Instruction Manual (Electrical Safety)](https://www.manualslib.com/manual/4140863/Sega-Saturn.html)
+- [Sega-16 Forums: Sega Saturn Revisions and Models Guide](https://www.sega-16forums.com/forum/general-discussion/tech-aid/24084-sega-saturn-revisions-and-models-guide/page4)
+
 **Related Posts**
 
 - [Sega Saturn Laser Tune-up Success](/sega-saturn-laser-tune-up-success/)
 - [Sega Saturn External PSU Proof of Concept](/sega-saturn-external-psu-proof-of-concept/)
-
-**Sources**
-
-- [Sega Saturn instruction manual](https://www.manualslib.com/manual/4140863/Sega-Saturn.html) - Sega's warnings about opening the console and electric-shock hazards.
-- [Sega-16 Forums - Sega Saturn Revisions and Models Guide](https://www.sega-16forums.com/forum/general-discussion/tech-aid/24084-sega-saturn-revisions-and-models-guide/page4) - documents the different Saturn PSU arrangements and their compatibility.

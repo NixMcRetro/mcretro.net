@@ -24,11 +24,11 @@ I also love the enormous little cube-shaped LEDs on the front. They're ridiculou
 
 I'll get everything back together and take some more photographs of the repair work. For now, I'm just happy to have both sides of this unusual machine doing something useful. A PC and a Mega Drive in one beige box. That's what I call technology!
 
+**Sources**
+
+- [ConsoleMods: Genesis Buying Guide (Amstrad Mega PC)](https://consolemods.org/wiki/Genesis:Buying_Guide#Amstrad_Mega_PC)
+
 **Related Posts**
 
 - [Amstrad Sega Mega PC 386SX Arrival](/amstrad-sega-mega-pc-386sx-arrival/)
 - [Amstrad Sega Mega PC Repair](/amstrad-sega-mega-pc-repair/)
-
-**Sources**
-
-- [ConsoleMods - Genesis Buying Guide: Amstrad Mega PC](https://consolemods.org/wiki/Genesis:Buying_Guide#Amstrad_Mega_PC) - describes the Mega PC's PC architecture and ISA card carrying the Mega Drive hardware.

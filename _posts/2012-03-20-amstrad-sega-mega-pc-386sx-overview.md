@@ -20,11 +20,11 @@ Switching back to PC mode works nicely, although the system battery is dead and 
 
 Above is the Mega PC with its original monitor connected. The supplied display can handle the different scan rates used by the PC and Mega Drive sides, which is a big part of what makes the complete setup so interesting. It's a rather wonderful combination of an Amstrad computer and Sega hardware, even with a few repairs still waiting to be finished.
 
+**Sources**
+
+- [Centre for Computing History: Amstrad Mega PC 386SX](https://www.computinghistory.org.uk/det/2534/amstrad-mega-pc-386sx/)
+
 **Related Posts**
 
 - [Amstrad Sega Mega PC 386SX Arrival](/amstrad-sega-mega-pc-386sx-arrival/)
 - [Amstrad Sega Mega PC Repair](/amstrad-sega-mega-pc-repair/)
-
-**Sources**
-
-- [Centre for Computing History - Amstrad Mega PC 386SX](https://www.computinghistory.org.uk/det/2534/amstrad-mega-pc-386sx/) - documents the Mega PC's 386SX system and original dual-sync monitor.

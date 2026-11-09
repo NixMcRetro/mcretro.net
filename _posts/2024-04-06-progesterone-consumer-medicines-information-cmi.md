@@ -38,11 +38,11 @@ Realistically, I wanted to discuss another route of administration. Getting arou
 
 ### Sources
 
-- [Prometrium 100 and 200 mg - Consumer Medicine Information, published by MIMS May 2022](/assets/uploads/prometrium-100-and-200-mg-published-by-mims-may-2022.pdf)
-- [The absorption of oral micronized progesterone: the effect of food, dose proportionality, and comparison with intramuscular progesterone](https://pubmed.ncbi.nlm.nih.gov/8513955/)
-- [Pharmacokinetics of progesterone and its metabolites allopregnanolone and pregnanolone after oral administration of low-dose progesterone](https://pubmed.ncbi.nlm.nih.gov/16406399/)
-- [Profiles of plasma estrogens, progesterone and their metabolites after oral or vaginal administration of estradiol or progesterone](https://pubmed.ncbi.nlm.nih.gov/8515718/)
-- [Allopregnanolone in premenstrual dysphoric disorder (PMDD): Evidence for dysregulated sensitivity to GABA-A receptor modulating neuroactive steroids across the menstrual cycle](https://pmc.ncbi.nlm.nih.gov/articles/PMC7231988/)
+- [Prometrium 100 mg and 200 mg: Consumer Medicine Information (MIMS, May 2022)](/assets/uploads/prometrium-100-and-200-mg-published-by-mims-may-2022.pdf)
+- [Oral Micronised Progesterone Absorption (Food, Dose and Intramuscular Comparison)](https://pubmed.ncbi.nlm.nih.gov/8513955/)
+- [Low-Dose Oral Progesterone Pharmacokinetics (Allopregnanolone and Pregnanolone)](https://pubmed.ncbi.nlm.nih.gov/16406399/)
+- [Estradiol and Progesterone Metabolite Profiles (Oral vs Vaginal Administration)](https://pubmed.ncbi.nlm.nih.gov/8515718/)
+- [Allopregnanolone, PMDD and GABA-A Receptor Sensitivity](https://pmc.ncbi.nlm.nih.gov/articles/PMC7231988/)
 
 ### Related Posts
 

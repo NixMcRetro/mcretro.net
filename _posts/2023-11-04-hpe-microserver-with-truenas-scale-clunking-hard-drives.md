@@ -46,6 +46,6 @@ Cobia hasn't really shown any issues which has been nice. I was expecting going 
 
 ### Sources
 
-- [TrueNAS Community - New WD Red Pros clicking every 5 seconds, described as Preventive Wear Leveling](https://www.truenas.com/community/threads/new-wd-red-pros-clicking-every-5-seconds-preventive-wear-leveling-firmware-feature.105866/)
+- [TrueNAS Community: WD Red Pro Clicking Every Five Seconds (Preventive Wear Leveling Discussion)](https://www.truenas.com/community/threads/new-wd-red-pros-clicking-every-5-seconds-preventive-wear-leveling-firmware-feature.105866/)
 - [TrueNAS Documentation - Disks](https://www.truenas.com/docs/scale/storage/disks/disksscreen/)
 - [hdparm 9.65 manual - Standby timeout (-S)](https://sources.debian.org/src/hdparm/9.65%2Bds-1/hdparm.8/)

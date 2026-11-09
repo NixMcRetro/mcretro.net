@@ -92,13 +92,13 @@ The calculated free testosterone was also low, recorded as 9 pmol/L on this test
 
 - [UCSF - Overview of feminizing hormone therapy](https://transcare.ucsf.edu/guidelines/feminizing-hormone-therapy)
 - [Australian Prescriber - Prescribing for transgender patients](https://australianprescriber.tg.org.au/articles/prescribing-for-transgender-patients.html)
-- [Spirulina supplementation improves bone structural strength and stiffness in streptozocin-induced diabetic rats](https://pmc.ncbi.nlm.nih.gov/articles/PMC9039118/)
-- [Influence of Estrogen Therapy on Calcium, Phosphorus, and Other Regulatory Hormones in Postmenopausal Women: The MESA Study](https://pmc.ncbi.nlm.nih.gov/articles/PMC3849680/)
-- [Iron absorption from supplements is greater with alternate day than with consecutive day dosing in iron-deficient anemic women](https://haematologica.org/article/view/9379)
-- [The Efficacy and Safety of Vitamin C for Iron Supplementation in Adult Patients With Iron Deficiency Anemia: A Randomized Clinical Trial](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2772395)
+- [Spirulina Supplementation and Bone Strength in Streptozocin-Induced Diabetic Rats](https://pmc.ncbi.nlm.nih.gov/articles/PMC9039118/)
+- [MESA Study: Estrogen Therapy and Calcium/Phosphorus Regulation in Postmenopausal Women](https://pmc.ncbi.nlm.nih.gov/articles/PMC3849680/)
+- [Alternate-Day Versus Consecutive-Day Iron Supplementation (Absorption Study in Iron-Deficient Women)](https://haematologica.org/article/view/9379)
+- [Vitamin C with Iron Supplementation in Adults with Iron Deficiency Anaemia (Randomised Trial)](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2772395)
 - [LactMed - Milk Thistle](https://www.ncbi.nlm.nih.gov/sites/books/NBK501771/?report=printable)
 - [MedlinePlus - Serum progesterone](https://medlineplus.gov/ency/article/003714.htm)
-- [Effects of low-dose oral micronised progesterone on sleep, psychological distress, and breast development in transgender individuals undergoing feminising hormone therapy: a prospective controlled study](https://pubmed.ncbi.nlm.nih.gov/35521814/)
+- [Low-Dose Oral Micronised Progesterone: Sleep, Distress and Breast Development in Feminising Hormone Therapy (Prospective Study)](https://pubmed.ncbi.nlm.nih.gov/35521814/)
 - [National Cancer Institute - Pregabalin](https://www.cancer.gov/publications/dictionaries/cancer-drug/def/pregabalin)
 - [DailyMed - Finasteride tablet prescribing information](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3fe7bdaa-b027-4da9-94ee-550bf28c63e1)
 

@@ -47,7 +47,7 @@ Tech support was less than useful, directing me to India when I was trying to di
 
 - [Western Digital - WD Blue SA510 SATA SSD critical firmware update](https://web.archive.org/web/20231015000448/https://support-en.wd.com/app/answers/detailweb/a_id/50208)
 - [Western Digital - WD Blue SA510 SATA SSD product brief, October 2023](https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/western-digital/product/internal-drives/wd-blue-ssd/product-brief-wd-blue-sa510-sata-ssd.pdf)
-- [Western Digital - S.M.A.R.T. Self-Monitoring Analysis and Reporting Technology](https://support-en.wd.com/app/answers/detailweb/a_id/12163)
+- [Western Digital: S.M.A.R.T. (Self-Monitoring, Analysis and Reporting Technology)](https://support-en.wd.com/app/answers/detailweb/a_id/12163)
 
 ### Related Posts
 

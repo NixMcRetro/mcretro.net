@@ -52,6 +52,6 @@ And there we have it, the end of an era. 25 whole blood, 25 plasma, 2 platelets.
 ### Sources
 
 - [National Blood Authority - Annual Report 2022-23](https://www.blood.gov.au/sites/default/files/documents/nba-annual-report-2022-23.pdf)
-- [Australian Red Cross Lifeblood - Anaemia and iron deficiency in blood donors](https://www.lifeblood.com.au/health-professionals/clinical-practice/clinical-indications/iron-deficiency-anaemia/blood-donors)
-- [Effect of Plasma and Blood Donations on Levels of Perfluoroalkyl and Polyfluoroalkyl Substances in Firefighters in Australia: A Randomized Clinical Trial](https://pubmed.ncbi.nlm.nih.gov/35394514/)
-- [Iron absorption from supplements is greater with alternate day than with consecutive day dosing in iron-deficient anemic women](https://pubmed.ncbi.nlm.nih.gov/31413088/)
+- [Australian Red Cross Lifeblood: Anaemia and Iron Deficiency in Blood Donors](https://www.lifeblood.com.au/health-professionals/clinical-practice/clinical-indications/iron-deficiency-anaemia/blood-donors)
+- [PFAS Levels and Blood/Plasma Donations in Australian Firefighters (Randomised Clinical Trial)](https://pubmed.ncbi.nlm.nih.gov/35394514/)
+- [Alternate-Day Versus Consecutive-Day Iron Supplementation (Absorption Study in Iron-Deficient Women)](https://pubmed.ncbi.nlm.nih.gov/31413088/)

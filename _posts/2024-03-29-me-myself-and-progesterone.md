@@ -82,9 +82,9 @@ Anyway, that was one heck of an info dump. I think that sums everything up that 
 
 ### Sources
 
-- [Standards of Care for the Health of Transgender and Gender Diverse People, Version 8](https://pmc.ncbi.nlm.nih.gov/articles/PMC9553112/)
-- [Allopregnanolone in premenstrual dysphoric disorder (PMDD): Evidence for dysregulated sensitivity to GABA-A receptor modulating neuroactive steroids across the menstrual cycle](https://pmc.ncbi.nlm.nih.gov/articles/PMC7231988/)
-- [Effects of low-dose oral micronised progesterone on sleep, psychological distress, and breast development in transgender individuals undergoing feminising hormone therapy: a prospective controlled study](https://pubmed.ncbi.nlm.nih.gov/35521814/)
+- [Standards of Care for Transgender and Gender Diverse Health (Version 8)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9553112/)
+- [Allopregnanolone, PMDD and GABA-A Receptor Sensitivity](https://pmc.ncbi.nlm.nih.gov/articles/PMC7231988/)
+- [Low-Dose Oral Micronised Progesterone: Sleep, Distress and Breast Development in Feminising Hormone Therapy (Prospective Study)](https://pubmed.ncbi.nlm.nih.gov/35521814/)
 - [Progesterone - Friend or foe?](https://uu.diva-portal.org/smash/get/diva2%3A1547372/FULLTEXT01.pdf)
 
 ### Related Posts

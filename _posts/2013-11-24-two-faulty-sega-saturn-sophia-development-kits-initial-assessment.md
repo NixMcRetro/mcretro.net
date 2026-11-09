@@ -20,7 +20,7 @@ The second unit isn't producing video either, and it's missing one of its little
 
 Worst case, I might be able to borrow a power supply from one of them to get another going. For now, though, there's plenty to investigate. Sophia repair channel signing out!
 
-### Related posts
+### Related Posts
 
 - [Sega Saturn Sophia Development Kit - No Video Repair](/sega-saturn-sophia-dev-kit-no-video-repair/)
 - [Sega Saturn Sophia Development Kit - Another No Video Repair](/sega-saturn-sophia-dev-kit-another-no-video-repair/)

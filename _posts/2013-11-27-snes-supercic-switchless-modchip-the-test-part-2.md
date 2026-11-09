@@ -26,7 +26,7 @@ I'd followed the Wolfsoft information for the installation, and there's more tes
 
 For now, it's alive, it's changing video modes, and John Madden is having the time of his life!
 
-### Related posts
+### Related Posts
 
 - [SNES SuperCIC Switchless Modchip - Installation (Part 1)](/snes-supercic-switchless-modchip-installation-part-1/)
 - [SNES SuperCIC Switchless Modchip - More Testing (Part 3)](/snes-supercic-switchless-modchip-more-testing-part-3/)

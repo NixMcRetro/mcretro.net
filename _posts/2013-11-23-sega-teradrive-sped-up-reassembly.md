@@ -12,6 +12,6 @@ Here's a very quick, sped-up reassembly of the front panel of my Sega TeraDrive.
 
 If you're after more of the internals, check out my other TeraDrive videos. There's certainly been plenty of poking around inside this machine!
 
-### Related posts
+### Related Posts
 
 - [YM3438 on the Sega TeraDrive: Sonic Spinball Demo](/ym3438-on-the-sega-teradrive-sonic-spinball-demo/)

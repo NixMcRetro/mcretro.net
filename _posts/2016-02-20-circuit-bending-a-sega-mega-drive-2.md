@@ -20,6 +20,6 @@ We'll come back to this with a more careful VRAM-specific experiment later.
 
 - [Console5 - 512 Kbit VRAM pinout](https://console5.com/techwiki/index.php?title=File:VRAM_512Kb_64K_x_8-bit_DIP_SOJ-pinout.jpg)
 
-### Related posts
+### Related Posts
 
 - [Circuit Bending VRAM on a Sega Mega Drive / Genesis 2](/circuit-bending-vram-on-a-sega-mega-drive-genesis-2/)

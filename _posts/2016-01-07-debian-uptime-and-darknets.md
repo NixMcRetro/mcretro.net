@@ -33,6 +33,6 @@ I guess the full Jessie image was getting a bit too beefy for 4 GB cards with al
 - [Debian Jessie - lsb_release(1)](https://manpages.debian.org/jessie/lsb-release/lsb_release.1.en.html)
 - [Debian Jessie - hostnamectl(1)](https://manpages.debian.org/jessie/systemd/hostnamectl.1.en.html)
 
-### Related posts
+### Related Posts
 
 - [Take Back the Darknet (Part 1)](/take-back-the-darknet-part-1/)

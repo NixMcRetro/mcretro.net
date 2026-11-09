@@ -21,6 +21,6 @@ I still wonder how much data Cloudflare is harvesting and what they're doing wit
 - [Cloudflare - Proxy DNS Records](https://developers.cloudflare.com/dns/proxy-status/)
 - [Cloudflare - Protect Your Origin Server](https://developers.cloudflare.com/fundamentals/security/protect-your-origin-server/)
 
-### Related posts
+### Related Posts
 
 - [Moved (Back) to WordPress](/moved-back-to-wordpress/)

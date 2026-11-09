@@ -21,7 +21,7 @@ The next challenge was getting the onion-service mirror working properly again. 
 
 Apparently changing blogging platforms three times was not enough.
 
-### Related posts
+### Related Posts
 
 - [New Blog Ready for Action - Dropplets](/new-blog-ready-for-action-dropplets/)
 - [Blog Resurrection](/blog-resurrection/)

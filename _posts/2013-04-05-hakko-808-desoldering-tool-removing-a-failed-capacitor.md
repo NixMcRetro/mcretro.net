@@ -28,4 +28,4 @@ The nozzle gets extremely hot, so naturally it deserves the same care as any oth
 
 ### Sources
 
-- [Hakko 808 instruction manual](https://www.hakko.com/english/support/doc/result.php?mode=download&seq=4508), official operating and safety documentation.
+- [Hakko: 808 Desoldering Tool Instruction Manual](https://www.hakko.com/english/support/doc/result.php?mode=download&seq=4508)

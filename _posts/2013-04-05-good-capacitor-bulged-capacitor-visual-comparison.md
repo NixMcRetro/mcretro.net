@@ -20,5 +20,5 @@ The replacement is actually the same brand and rating as the failed capacitor. N
 
 **Sources**
 
-- [Nippon Chemi-Con - Precautions and Guidelines for Aluminium Electrolytic Capacitors](https://www.chemi-con.co.jp/products/relatedfiles/capacitor/catalog/al-precaution-e.pdf) - manufacturer guidance covering operating conditions and pressure-vent operation.
-- [United Chemi-Con - Failure Modes](https://chemi-con.com/failure-modes/) - manufacturer discussion of electrolyte evaporation, capacitance loss, increased losses, and vent failures.
+- [Nippon Chemi-Con: Aluminium Electrolytic Capacitor Precautions (Pressure Vents)](https://www.chemi-con.co.jp/products/relatedfiles/capacitor/catalog/al-precaution-e.pdf)
+- [United Chemi-Con: Aluminium Electrolytic Capacitor Failure Modes](https://chemi-con.com/failure-modes/)

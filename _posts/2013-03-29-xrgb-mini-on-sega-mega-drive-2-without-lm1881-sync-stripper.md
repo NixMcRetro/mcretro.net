@@ -20,13 +20,13 @@ That doesn't mean the Framemeister universally dislikes sync strippers. The Mega
 
 The result here is specific to my Mega Drive 2, this cable, and my Framemeister setup. The cable came from [Retro Gaming Cables](https://www.retrogamingcables.co.uk/), and I'll be doing more experiments once I get everything wired up properly. At the moment I've still got SCART cables lying around in pieces everywhere!
 
+**Sources**
+
+- [Texas Instruments: LM1881 Video Sync Separator](https://www.ti.com/product/LM1881)
+- [Retro Gaming Cables: CSYNC RGB SCART Cable Guide](https://www.retrogamingcables.co.uk/CSYNC-RGB-SCART-CABLES)
+- [Classic Console Upscaler Wiki: XRGB-mini Framemeister](https://www.junkerhq.net/xrgb/index.php/XRGB-mini_FRAMEMEISTER)
+
 **Related Posts**
 
 - [Micomsoft XRGB-mini Framemeister Arrival](/micomsoft-xrgb-mini-framemeister-arrival/)
 - [Converting XRGB-mini Adapter to EuroSCART](/converting-xrgb-mini-adapter-to-euroscart/)
-
-**Sources**
-
-- [Texas Instruments - LM1881 Video Sync Separator](https://www.ti.com/product/LM1881) - manufacturer description of extracting sync signals from composite video.
-- [Retro Gaming Cables - CSYNC RGB SCART cables](https://www.retrogamingcables.co.uk/CSYNC-RGB-SCART-CABLES) - specialist reference explaining native composite sync and sync separation in retro-console RGB cabling.
-- [Classic Console Upscaler Wiki - XRGB-mini Framemeister](https://www.junkerhq.net/xrgb/index.php/XRGB-mini_FRAMEMEISTER) - specialist Framemeister setup and compatibility reference.

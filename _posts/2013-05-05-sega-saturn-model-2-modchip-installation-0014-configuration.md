@@ -26,10 +26,10 @@ But then the disc booted and the game was running. Excellent! One more Saturn wi
 
 Sorry about the missing footage and sound in places. I don't think I was originally planning to upload this one, but I figured it might still be useful to somebody with the same Saturn configuration. At least you get to see the important bits, including the rather satisfying result!
 
+**Sources**
+
+- [SegaXtreme: 21-Pin Saturn Modchip Installation (0014 Configuration)](https://segaxtreme.net/threads/how-to-mod-a-21-pin-saturn.2939/)
+
 **Related Posts**
 
 - [Sega Saturn Modchip Installation Guides](/sega-saturn-modchip-installation-guides/)
-
-**Sources**
-
-- [SegaXtreme - How to mod a 21 pin Saturn](https://segaxtreme.net/threads/how-to-mod-a-21-pin-saturn.2939/) - contemporary discussion of 21-pin Saturn modchip installations and the 0014 configuration.

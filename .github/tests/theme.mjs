@@ -87,6 +87,26 @@ test('blocked localStorage still permits a page-only manual choice', () => {
 test('two stable button positions, WCAG labels and CSS colour tokens', () => {
   assert.match(style,/\.theme-toggle[\s\S]*width: 40px/);
   assert.match(style,/@media screen and \(max-width: 750px\) \{\s*\.theme-toggle/);
-  for(const value of ['#FFF8DC','#191D27','#006B69','#78D0C3','#005E63','#115B60','#FFFDF2','#242B38'])assert.ok(style.includes(value),value);
+  for(const value of ['#FFF8DC','#191D27','#0009B5','#78D0C3','#005E63','#115B60','#FFFDF2','#242B38'])assert.ok(style.includes(value),value);
   assert.match(style,/:root\[data-theme="dark"\]/);
+});
+
+test('original blue is restored only in Light mode; Dark links remain teal', () => {
+  const light = style.split(':root[data-theme="dark"]')[0];
+  const dark = style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
+  assert.match(light, /--link:\s*#0009B5;/);
+  assert.match(light, /--link-hover:\s*#000080;/);
+  assert.match(light, /--focus:\s*#0009B5;/);
+  assert.match(dark, /--link:\s*#78D0C3;/);
+  assert.match(dark, /--link-hover:\s*#A5E5D9;/);
+});
+test('recent sidebar post links underline on hover and keyboard focus', () => {
+  assert.match(style, /\.recent-posts-list li a:hover,\s*\.recent-posts-list li a:focus-visible\s*\{[^}]*text-decoration:\s*underline;/);
+});
+test('Dial-a-Homepage links and monthly archive counts follow the active theme', () => {
+  assert.match(overrides, /\.dial-homepage a \{ color: var\(--link\); text-decoration: underline; \}/);
+  assert.match(overrides, /\.dial-homepage a:hover \{ color: var\(--link-hover\); \}/);
+  assert.match(overrides, /\.dial-homepage a:focus-visible\s*\{[^}]*var\(--focus\)/);
+  assert.match(overrides, /\.archive-month-summary\s*\{[^}]*color: var\(--muted\)/);
+  assert.match(overrides, /\.mcretro-modem-titlebar[\s\S]*background: #000080/);
 });

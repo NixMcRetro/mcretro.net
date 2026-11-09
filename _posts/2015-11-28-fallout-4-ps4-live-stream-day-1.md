@@ -19,9 +19,9 @@ What a disappointment. Good job Australia. 25/5 for the next 10, maybe 50 years?
 ### Sources
 
 - [NBN Co - Corporate Plan 2016 (2015), page 64: Wholesale speed tier mix](https://www.nbnco.com.au/content/dam/nbnco2/documents/nbn-corporate-plan-2016.pdf)
-- [Australian Competition and Consumer Commission - Optus to compensate customers for slow NBN speeds](https://www.accc.gov.au/media-release/optus-to-compensate-customers-for-slow-nbn-speeds)
+- [ACCC: Optus Compensation for Slow NBN Speeds](https://www.accc.gov.au/media-release/optus-to-compensate-customers-for-slow-nbn-speeds)
 
-### Fallout 4 live streams
+### Related Posts
 
 - [Fallout 4 (PS4 Live Stream, Day 2)](/fallout-4-ps4-live-stream-day-2/)
 - [Fallout 4 (PS4 Live Stream, Day 3)](/fallout-4-ps4-live-stream-day-3/)

@@ -72,11 +72,11 @@ sudo chown root:root /etc/ssl/certs/tim.crt
 sudo chmod 644 /etc/ssl/certs/tim.crt
 ~~~
 
+Advance onward to [Part 12](/take-back-the-darknet-part-12/) or head back to the table of contents on [Part 1](/take-back-the-darknet-part-1/).
+
 ### Sources
 
 - [McRetro - Take Back the Darknet, Part 11 (24th August 2019 capture)](https://web.archive.org/web/20190824013202/https://mcretro.net/take-back-the-darknet-part-11/)
 - [Sam Hobbs - SSL certificate signing with CAcert](https://samhobbs.co.uk/2014/04/ssl-certificate-signing-cacert-raspberry-pi-ubuntu-debian)
 - [CAcert - Browser Client / Root Certificate Trust Information](https://web.archive.org/web/20151230164623/http://wiki.cacert.org/FAQ/BrowserClients)
 - [Let's Encrypt - Entering Public Beta, 3rd December 2015](https://letsencrypt.org/2015/12/03/entering-public-beta)
-
-Advance onward to [part 12](/take-back-the-darknet-part-12/) or head back to the table of contents on [page 1](/take-back-the-darknet-part-1/).

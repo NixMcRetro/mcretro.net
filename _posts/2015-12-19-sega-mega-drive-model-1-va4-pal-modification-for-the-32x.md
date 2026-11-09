@@ -18,12 +18,12 @@ I haven't got the 32X connected for this particular test, so we'll still need to
 
 They're an absolute pain to dismantle, thanks to all the shielding crammed into such a small enclosure. Thank you, FCC! Anyway, that's the VA4 modification completed. We'll see how it goes when the 32X gets another turn.
 
-**Related Posts**
-
-- [Sega Mega Drive 32X Jittery Video: VA4 Service Bulletin Diagnosis](/sega-mega-drive-32x-jittery-video-va4-service-bulletin-diagnosis/)
-- [Sega Mega Drive 32X Jittery Video: Initial Investigation](/sega-mega-drive-32x-jittery-video-initial-investigation/)
-
 **Sources**
 
 - [Sega 32X Service Bulletins](https://consolemods.org/wiki/images/8/8b/Sega_32X_Service_Bulletins.pdf)
 - [ConsoleMods: 32X Service Bulletin Fixes](https://consolemods.org/wiki/Genesis:32X_Service_Bulletin_Fixes)
+
+**Related Posts**
+
+- [Sega Mega Drive 32X Jittery Video: VA4 Service Bulletin Diagnosis](/sega-mega-drive-32x-jittery-video-va4-service-bulletin-diagnosis/)
+- [Sega Mega Drive 32X Jittery Video: Initial Investigation](/sega-mega-drive-32x-jittery-video-initial-investigation/)

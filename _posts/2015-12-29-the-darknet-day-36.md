@@ -32,6 +32,6 @@ It's gone out for a walk!
 
 - [Tor Project - Onion Service version 2 deprecation timeline](https://blog.torproject.org/v2-deprecation-timeline/)
 
-### Related posts
+### Related Posts
 
 - [Take Back the Darknet (Part 1)](/take-back-the-darknet-part-1/)

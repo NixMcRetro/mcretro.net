@@ -25,7 +25,7 @@ You can even connect multiple Lunchbeats together if you've got two or more. Jus
 - [Buranelectrix - Lunchbeat: 1bit groovebox](https://web.archive.org/web/20131112013520/http://buranelectrix.com/lunchbeat/lunchbeat.php)
 - [Microchip - ATmega328P Datasheet](https://ww1.microchip.com/downloads/en/devicedoc/atmel-7810-automotive-microcontrollers-atmega328p_datasheet.pdf)
 
-### Lunchbeat / PICkit 2 series
+### Related Posts
 
 - [Lunchbeat / PICkit 2 - PCB Arrival (Part 1)](/lunchbeat-pickit-2-pcb-arrival-part-1/)
 - [Lunchbeat / PICkit 2 - Programming the PIC18F2550 (Part 2)](/lunchbeat-pickit-2-programming-the-pic18f2550-part-2/)

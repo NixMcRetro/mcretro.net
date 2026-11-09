@@ -1,5 +1,5 @@
 ---
-title: "65kg Weight Goal Achieved!"
+title: "65 kg Weight Goal Achieved!"
 author: "Nix McRetro"
 date: 2016-12-28T09:25:52.000+11:00
 last_modified_at: 2026-10-18

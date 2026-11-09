@@ -1,5 +1,5 @@
 ---
-title: "Sega Mega Drive PAL 60Hz Full Colour Mod"
+title: "Sega Mega Drive PAL 60 Hz Full Colour Mod"
 author: "Nix McRetro"
 date: 2020-05-07T04:45:08.000+10:00
 categories: [sega]

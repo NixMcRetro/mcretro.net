@@ -131,7 +131,7 @@ What I keep coming back to is that "archival fidelity" was never about which eng
 
 The ATO gets their numbers. I keep the archive, every statement, searchable, forever. The analog ghosts are at rest now, and the digital debris is organised.
 
-I'm going to take a few days off the terminal. Keep being awesome 🙂
+I'm going to take a few days off the terminal. Keep being awesome! 🙂
 
 ### **Sources**
 

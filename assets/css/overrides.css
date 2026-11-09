@@ -840,3 +840,15 @@
 .post-content .darknet-hero-wrap { margin: 0 0 1rem; padding: 0; }
 .post-content img.darknet-hero { display: block; width: 100%; max-width: 1536px; height: auto; margin: 0 auto; border-radius: 4px; }
 .post-content details[name="mcretro-darknet"] { scroll-margin-top: 0.75rem; }
+/* Enlarged closing creature emojis on the November 2023 downtime post only. */
+.post-full .post-content > p.creature-signoff {
+  font-size: 2.25rem;
+  line-height: 1.45;
+  letter-spacing: 0.12em;
+}
+@media screen and (max-width: 500px) {
+  .post-full .post-content > p.creature-signoff {
+    font-size: 1.85rem;
+    letter-spacing: 0.08em;
+  }
+}

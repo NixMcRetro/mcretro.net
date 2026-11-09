@@ -151,7 +151,7 @@ test('accordion headers restore distinct mint Light and teal Dark hover/open sta
 });
 
 test('desktop and mobile menus underline on pointer hover and keyboard focus', () => {
-  assert.match(style, /\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{[^}]*font-weight:\s*700;[^}]*text-decoration:\s*underline;/);
+  assert.match(style, /\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{\s*text-decoration:\s*underline;\s*text-underline-offset:\s*0\.12em;\s*\}/);
   assert.match(style, /\.nav-list li a:hover,\s*\.nav-list li a:focus-visible\s*\{[^}]*text-decoration:\s*none;/);
 });
 
@@ -169,13 +169,18 @@ test('Channels keeps emoji and links, without old summary siren GIFs', () => {
 });
 
 
-test('navigation hover bolds and underlines words, never emoji, on desktop and mobile', () => {
+test('navigation hover underlines words without bolding or shifting adjacent items', () => {
   for(const [emoji, word] of [['🏡','Home'],['✏️','Blog'],['📺','Channels'],['💾','Goodies'],['🌏','Random'],['📡','About']]) {
     assert.ok(header.includes('<span class="nav-emoji" aria-hidden="true">' + emoji + '</span> <span class="nav-text">' + word + '</span>'), word);
   }
   assert.equal((header.match(/class="nav-text"/g) || []).length, 6);
+  const labelHoverRule = style.match(/\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{([^}]*)\}/)?.[1];
+  assert.ok(labelHoverRule, 'text-only nav hover and focus rule exists');
+  assert.doesNotMatch(labelHoverRule, /font-weight\s*:/, 'hover must not change font weight or item widths');
+  assert.match(style, /\.main-nav a\s*\{[^}]*font-weight:\s*normal;/, 'regular menu links remain normal weight');
+  assert.match(style, /\.main-nav a\.active\s*\{[^}]*font-weight:\s*bold;/, 'current-page highlight remains unchanged');
   assert.match(style, /\.main-nav a:hover,\s*\.main-nav a:focus-visible\s*\{[^}]*text-decoration:\s*none;/);
-  assert.match(style, /\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{[^}]*font-weight:\s*700;[^}]*text-decoration:\s*underline;/);
+  assert.match(style, /\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{\s*text-decoration:\s*underline;\s*text-underline-offset:\s*0\.12em;\s*\}/);
   assert.match(style, /\.nav-list li a:hover,\s*\.nav-list li a:focus-visible\s*\{[^}]*text-decoration:\s*none;/);
 });
 

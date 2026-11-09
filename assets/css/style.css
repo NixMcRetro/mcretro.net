@@ -514,7 +514,6 @@ pre code {
 }
 .main-nav a:hover .nav-text,
 .main-nav a:focus-visible .nav-text {
-  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 0.12em;
 }

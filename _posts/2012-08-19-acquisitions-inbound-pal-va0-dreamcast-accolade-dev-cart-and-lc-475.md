@@ -46,13 +46,13 @@ The regional differences will make things interesting. PAL 32X units are configu
 
 Sorry about the lack of photos in this post. Most of this stuff hasn't arrived yet! Real life commitments, otherwise known as work, keep getting in the way. Such is life!
 
-### Related posts
+### Sources
+
+- [ConsoleMods: Dreamcast Model Differences (VA0 Cooling)](https://consolemods.org/wiki/Dreamcast:Dreamcast_Model_Differences)
+- [ConsoleMods: 32X Region Mod (50/60 Hz)](https://consolemods.org/wiki/Genesis:32X_Region_Mod)
+
+### Related Posts
 
 - [Accolade Code Monkeys Dev Cart for the Sega Mega Drive / Genesis](/accolade-code-monkeys-dev-cart-for-the-sega-mega-drive-genesis/)
 - [The Apple Macintosh LC 475](/the-apple-macintosh-lc-475/)
 - [Sega Mega Drive 32X Photos](/sega-mega-drive-32x-photos/)
-
-### Sources
-
-- [ConsoleMods - Dreamcast Model Differences](https://consolemods.org/wiki/Dreamcast:Dreamcast_Model_Differences) - documents VA0 Dreamcast cooling hardware and revision differences.
-- [ConsoleMods - 32X Region Mod](https://consolemods.org/wiki/Genesis:32X_Region_Mod) - documents 50 Hz and 60 Hz configuration differences between regional 32X hardware.

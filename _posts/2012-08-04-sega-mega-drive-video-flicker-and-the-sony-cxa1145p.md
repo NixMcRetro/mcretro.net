@@ -24,10 +24,10 @@ Aaaand the volume slider that fell off... I thought I'd lost it! Turns out I kne
 
 **Edit:** The replacement Sony CXA1145P fixed the flickering green and yellow!
 
-### Related posts
-
-- [Sega Mega Drive Model 1 CXA1145P Video Repair](/sega-mega-drive-model-1-cxa1145p-video-repair/)
-
 ### Sources
 
-- [Sony CXA1145P datasheet](https://datasheet4u.com/datasheet-pdf/Sony-Corporation/CXA1145P/pdf.php?id=199042) - documents the CXA1145P as an RGB encoder producing composite video.
+- [Sony: CXA1145P Datasheet (RGB-to-Composite Encoder)](https://datasheet4u.com/datasheet-pdf/Sony-Corporation/CXA1145P/pdf.php?id=199042)
+
+### Related Posts
+
+- [Sega Mega Drive Model 1 CXA1145P Video Repair](/sega-mega-drive-model-1-cxa1145p-video-repair/)

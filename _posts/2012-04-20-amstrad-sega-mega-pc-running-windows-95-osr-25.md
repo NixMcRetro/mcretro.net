@@ -38,4 +38,4 @@ More to come one day, including a detailed video of how to mod the Dallas DS1287
 
 **Sources**
 
-- [Microsoft Knowledge Base Archive - Windows 95 Installation Requirements](https://jeffpar.github.io/kbarchive/kb/138/Q138349/) - Microsoft's published minimum specifies a 386DX or higher processor and 4 MB of RAM, with a 486 recommended.
+- [Microsoft KB Archive: Windows 95 Installation Requirements](https://jeffpar.github.io/kbarchive/kb/138/Q138349/)

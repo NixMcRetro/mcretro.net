@@ -26,7 +26,7 @@ So there you have it, a lovely little Sega accessory back in action with a ten-d
 
 In other news, I received another ASUS K7-class motherboard today with a 900 MHz Athlon attached. Looking forward to testing that later in the week as well.
 
-### Related posts
+### Related Posts
 
 - [Sega Mega-CD Karaoke Accessory and Yukawa Dreamcast](/sega-mega-cd-karaoke-accessory-and-yukawa-dreamcast/)
 - [Sega Mega-CD Karaoke Microphone - Faulty](/sega-mega-cd-karaoke-microphone-faulty/)

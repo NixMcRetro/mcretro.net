@@ -16,5 +16,5 @@ I also bought another Game Gear to steal the D-pad from because the one in my cu
 
 ### Sources
 
-- [Sega-16 Forums - Sega Saturn Revisions and Models Guide](https://www.sega-16forums.com/forum/general-discussion/tech-aid/24084-sega-saturn-revisions-and-models-guide/page4) - documents the range of motherboard and PSU revisions found across Model 1 and Model 2 Saturns.
-- [iFixit - Sega Game Gear Capacitor Replacement](https://www.ifixit.com/Guide/Sega+Game+Gear+Capacitor+Replacement/113655) - documents capacitor leakage and failure as common causes of Game Gear audio and display faults.
+- [Sega-16 Forums: Sega Saturn Revisions and Models Guide](https://www.sega-16forums.com/forum/general-discussion/tech-aid/24084-sega-saturn-revisions-and-models-guide/page4)
+- [iFixit: Sega Game Gear Capacitor Replacement](https://www.ifixit.com/Guide/Sega+Game+Gear+Capacitor+Replacement/113655)

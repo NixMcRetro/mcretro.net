@@ -18,4 +18,4 @@ Unfortunately, in my eyes at least, it is also one of the worst Sega controller 
 
 ### Sources
 
-- [Amstrad Mega PC service manual](https://consolemods.org/wiki/images/a/a4/Amstrad_Mega_PC_Service_Manual.pdf) - lists the Paddle SP-7 as Amstrad part number 273991 and documents other Mega PC peripherals.
+- [Amstrad Mega PC Service Manual (Paddle SP-7)](https://consolemods.org/wiki/images/a/a4/Amstrad_Mega_PC_Service_Manual.pdf)

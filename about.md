@@ -81,6 +81,7 @@ The place you're visiting right now. We've got a blog, historical videos, repair
 ![Future Lost](/assets/images/about/futurelost.jxl){: width="600" }
 
 *An artefact from a timeline that never existed.*
+{: .media-caption }
 
 </div>
 

@@ -26,11 +26,11 @@ There's also a rather large 2200 uF, 25 V capacitor near the power circuitry, wi
 
 Not a bad little exploration, and I didn't even manage to cut myself this time! Next up we'll have a closer look at the cartridge connector, because those things can be particularly troublesome after a few decades of use. For now, at least, I've got a much better idea of how the Australian Mattel NES is put together.
 
+**Sources**
+
+- [Powerhouse Collection: NES Packaging (Nintendo Co Ltd)](https://collection.powerhouse.com.au/object/475998)
+
 **Related Posts**
 
 - [NES Cartridge Slot Cleaning - Mattel Version](/nes-cartridge-slot-cleaning-mattel-version/)
 - [NES Mainboard Capacitor Replacement - Mattel Version](/nes-mainboard-capacitor-replacement-mattel-version/)
-
-**Sources**
-
-- [Powerhouse Collection - Packaging for 'NES' video game console by Nintendo Co Ltd](https://collection.powerhouse.com.au/object/475998)

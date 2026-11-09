@@ -32,6 +32,6 @@ The Yeti certainly feels better constructed than the Spark Digital I was disappo
 
 For now, it's a rather impressive-looking microphone. It also looks quite nice sitting on a bookcase, although I should probably do something more useful with it!
 
-### Related posts
+### Related Posts
 
 - [Blue Spark Digital Microphone Disassembly](/blue-spark-digital-microphone-disassembly/)

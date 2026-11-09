@@ -18,7 +18,7 @@ Funnily enough, this isn't a Light Phaser game! You use the control pad instead.
 - [Sega - Dead Angle US Instruction Manual, transcribed at SMS Power!](https://www.smspower.org/Manuals/DeadAngle-SMS-US)
 - [MobyGames - Dead Angle releases](https://www.mobygames.com/game/13347/dead-angle/releases/)
 
-### Extreme Plays
+### Related Posts
 
 - [Extreme Plays! Snow Bros. (NES, 1991)](/extreme-plays-snow-bros-nes-1991/)
 - [Extreme Plays! Spelunker (NES, 1985)](/extreme-plays-spelunker-nes-1985/)

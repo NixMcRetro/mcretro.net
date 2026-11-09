@@ -34,7 +34,7 @@ Still, I'd managed to extract recognisable firmware from a rather interesting Se
 
 **Sources**
 
-- [Fujitsu - MBM27C1024A-10/-12/-15 CMOS 1M-BIT UV EPROM Datasheet (August 1993, Edition 2.0)](https://datasheet.datasheetarchive.com/originals/scans/Scans-052/DSAIH00044256.pdf)
+- [Fujitsu: MBM27C1024A-10/-12/-15 1 Mbit EPROM Datasheet (August 1993, Ed. 2.0)](https://datasheet.datasheetarchive.com/originals/scans/Scans-052/DSAIH00044256.pdf)
 
 **Related Posts**
 

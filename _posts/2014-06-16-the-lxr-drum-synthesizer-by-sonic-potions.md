@@ -14,6 +14,6 @@ The LXR is a digital drum synthesiser with a built-in sequencer and six instrume
 
 There's even a performance mode for playing around with rolls and changing sounds while a pattern is running. Quite a clever little machine, especially if you're planning to do more with it than make clap noises. Perhaps I'm easily entertained!
 
-### Related posts
+### Related Posts
 
 - [XRG - Xtreme Retro Gaming, Now Closed](/xrg-xtreme-retro-gaming-now-closed/)

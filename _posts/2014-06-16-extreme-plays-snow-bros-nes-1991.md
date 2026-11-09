@@ -15,7 +15,7 @@ Here's Snow Bros. on the NES! It started out as Toaplan's arcade game, with Sol 
 - [Capcom - Snow Brothers NES Instruction Manual](https://www.thegameisafootarcade.com/wp-content/uploads/2017/03/Snow-Brothers-Game-Manual.pdf)
 - [MobyGames - Snow Bros. Nick & Tom NES releases and port credits](https://www.mobygames.com/game/12076/snow-bros-nick-tom/releases/nes/)
 
-### Extreme Plays
+### Related Posts
 
 - [Extreme Plays! Dead Angle (Master System, 1989)](/extreme-plays-dead-angle-sms-1989/)
 - [Extreme Plays! Spelunker (NES, 1985)](/extreme-plays-spelunker-nes-1985/)

@@ -20,12 +20,12 @@ F-PROT 3.16f saved the day. The scan report identified ABCD.A in the master boot
 
 For this sort of boot-sector cleanup, you really want to start the infected computer from known-clean media rather than letting the compromised hard disk boot. Ideally the rescue floppy should be write-protected too, so the infected machine can't modify it. Windows 95 is now installed as well, and the next challenge is getting this thing onto the internet to some degree.
 
-### Related posts
+### Sources
+
+- [DOS Days: Anti-Virus Utilities (F-PROT 3.16f)](https://www.dosdays.co.uk/topics/antivirus_utilities.php)
+- [FRISK Software: F-PROT 3.16f (316F.NEW, SCAN.TXT, VIRUS.TXT)](https://www.dosdays.co.uk/media/frisk/3.16f/f-prot.zip)
+
+### Related Posts
 
 - [Osborne Australia 486DX2-66 Overview](/osborne-australia-486dx2-66-overview/)
 - [Osborne 486 Windows 95 Installation Demo](/osborne-486-windows-95-installation-demo/)
-
-### Sources
-
-- [DOS Days - Anti-Virus Utilities](https://www.dosdays.co.uk/topics/antivirus_utilities.php) - preserves F-PROT 3.16f packages and historical virus definitions.
-- [FRISK Software - F-PROT for DOS 3.16f documentation](https://www.dosdays.co.uk/media/frisk/3.16f/f-prot.zip) - the mirrored package includes 316F.NEW, SCAN.TXT and VIRUS.TXT, covering the expected last DOS release, clean-media scanning and boot-sector infection behaviour.

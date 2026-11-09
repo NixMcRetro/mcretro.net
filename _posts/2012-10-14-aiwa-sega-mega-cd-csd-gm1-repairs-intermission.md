@@ -47,7 +47,7 @@ Tis but a scratch... or maybe it's just a flesh wound! :D There's still an awful
 
 Next on the list is working out the power supply arrangement and finding out why the audio circuitry is being so uncooperative. If I can manage that without another machine deciding to die in the meantime, I'll be quite happy!
 
-### Related posts
+### Related Posts
 
 - [Aiwa Sega Mega-CD CSD-GM1 Initial Damage Report](/aiwa-sega-mega-cd-csd-gm1-initial-damage-report/)
 - [Aiwa Sega Mega-CD CSD-GM1 Repairs Part 1: Power Restored](/aiwa-sega-mega-cd-csd-gm1-repairs-part-1-power-restored/)

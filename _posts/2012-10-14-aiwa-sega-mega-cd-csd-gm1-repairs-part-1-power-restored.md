@@ -35,7 +35,7 @@ Power is still the bigger mystery. I've been comparing the regulator outputs bet
 
 I'll need to map those power rails properly before going much further. I certainly don't want to fry any microchips after all this work! Still, the Mega Drive section has power, the picture is working, and even the damaged board is beginning to show signs of life. That's progress as far as I'm concerned.
 
-### Related posts
+### Related Posts
 
 - [Aiwa Sega Mega-CD CSD-GM1 Initial Damage Report](/aiwa-sega-mega-cd-csd-gm1-initial-damage-report/)
 - [Aiwa Sega Mega-CD CSD-GM1 Repairs Intermission](/aiwa-sega-mega-cd-csd-gm1-repairs-intermission/)

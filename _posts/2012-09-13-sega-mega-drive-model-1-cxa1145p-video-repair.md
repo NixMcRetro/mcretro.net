@@ -40,11 +40,11 @@ I broke the repaired machine in with some Metallic Uniframe Super Hybrid Armor. 
 
 As you can see, complete success, even with the rather limited tools I had on hand. My Hakko 808 would have made getting that old chip out a great deal easier, but at least I've managed to get this Mega Drive producing a beautiful picture again. If only my Sega Saturn repairs went this well!
 
+**Sources**
+
+- [Sony: CXA1145P Datasheet (RGB-to-Composite Encoder)](https://datasheet4u.com/datasheet-pdf/Sony-Corporation/CXA1145P/pdf.php?id=199042)
+- [Hakko: 808 Vacuum Desoldering Tool](https://www.hakko.com/english/products/hakko_808.html)
+
 **Related Posts**
 
 - [Sega Mega Drive Video Flicker and the Sony CXA1145P](/sega-mega-drive-video-flicker-and-the-sony-cxa1145p/)
-
-**Sources**
-
-- [Sony CXA1145P datasheet](https://datasheet4u.com/datasheet-pdf/Sony-Corporation/CXA1145P/pdf.php?id=199042) - documents the CXA1145P as an RGB encoder producing composite video.
-- [Hakko 808 Desoldering Tool documentation](https://www.hakko.com/english/products/hakko_808.html) - identifies the Hakko 808 as a vacuum desoldering tool.

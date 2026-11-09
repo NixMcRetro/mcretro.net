@@ -42,10 +42,6 @@ With that configuration loaded, DOS recognised the CD-ROM and I could finally ge
 
 Thanks to everyone who helped me track this one down. A functioning double-speed Creative CD-ROM drive is now sitting in the Osborne, and I think that earns us a BBQ party!
 
-### Related posts
-
-- [Creative Labs CD-200 2x CD-ROM Driver Hunt](/creative-labs-cd-200-2x-cd-rom-driver-hunt/)
-
 ### Resources
 
 - [VOGONS Vintage Driver Library](https://www.vogonsdrivers.com)
@@ -56,4 +52,8 @@ Thanks to everyone who helped me track this one down. A functioning double-speed
 
 ### Sources
 
-- [Creative CD-ROM driver package README.TXT](https://driverzone.com/drivers/creative/cdrom/crccd.htm) - describes updating CCD.SYS/CRCCD.SYS and installing MSCDEX separately. The configuration above records what worked in my machine.
+- [Creative: CD-ROM Driver README.TXT (CCD.SYS/CRCCD.SYS and MSCDEX)](https://driverzone.com/drivers/creative/cdrom/crccd.htm)
+
+### Related Posts
+
+- [Creative Labs CD-200 2x CD-ROM Driver Hunt](/creative-labs-cd-200-2x-cd-rom-driver-hunt/)

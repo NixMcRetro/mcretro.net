@@ -14,12 +14,12 @@ With 36 MB installed, it looked as though System 7 had developed an absolutely e
 
 In other news, my copy of Geist Force for the Dreamcast arrived today. Thanks to the ASSEMbler Games community and everyone who helped make that prototype release happen. Here's to many more preserved releases in the future!
 
-### Related posts
+### Sources
+
+- [Apple: Macintosh LC 475 Specifications (24/32-bit, 36 MB)](https://support.apple.com/en-ca/112204)
+- [MicroMac: LC475 Logic Board Upgrade FAQ (32-bit Addressing)](https://www.micromac.com/FAQ/faq_lc475_upgrade.html)
+
+### Related Posts
 
 - [The Apple Macintosh LC 475](/the-apple-macintosh-lc-475/)
 - [Geist Force Prototype Reproduction for Sega Dreamcast](/geist-force-prototype-reproduction-for-sega-dreamcast/)
-
-### Sources
-
-- [Apple - Macintosh LC 475 Technical Specifications](https://support.apple.com/en-ca/112204) - documents support for both 24-bit and 32-bit addressing and Apple's specified maximum of 36 MB RAM.
-- [MicroMac - 68040 LC475 Logic Board Upgrade FAQ](https://www.micromac.com/FAQ/faq_lc475_upgrade.html) - explains the misleading System memory allocation when 32-bit addressing is disabled.

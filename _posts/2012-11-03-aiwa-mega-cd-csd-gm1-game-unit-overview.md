@@ -27,11 +27,11 @@ The original cell is a VL2020 with three terminals. It's a rechargeable 3 V vana
 
 So that's the plan: capacitors, battery, a little cosmetic repair and hopefully some improvement in the sound department. The search continues!
 
-### Related posts
+### Sources
+
+- [Panasonic: VL2020 Rechargeable Coin Cell (3 V, 20 mAh)](https://energy.panasonic.com/jp/business/products/coin-rechargeable/vl/models/VL2020)
+
+### Related Posts
 
 - [Inside the Aiwa Mega-CD CSD-GM1 Game Unit](/inside-the-aiwa-mega-cd-csd-gm1-game-unit/)
 - [Aiwa Sega Mega-CD CSD-GM1 Game Unit in Standalone Mode](/aiwa-sega-mega-cd-csd-gm1-game-unit-in-standalone-mode/)
-
-### Sources
-
-- [Panasonic VL2020 rechargeable coin battery](https://energy.panasonic.com/jp/business/products/coin-rechargeable/vl/models/VL2020) - identifies the VL2020 as a rechargeable 3 V vanadium-lithium coin cell with a nominal 20 mAh capacity and provides charging specifications.

@@ -30,6 +30,6 @@ I've also got machines with Dallas-style RTC modules and others using replaceabl
 
 **Sources**
 
-- [Saft - Nickel-cadmium block battery: Technical manual](https://manualmachine.com/saft/nickelcadmiumblockbattery/28659126-technical-manual/) - describes the alkaline electrolyte used in nickel-cadmium batteries.
-- [Analog Devices - DS12887 Real-Time Clock](https://www.analog.com/en/products/ds12887.html) - details the encapsulated battery arrangement used by Dallas-style RTC modules.
-- [Panasonic Energy - Battery FAQ](https://www.panasonic.com/global/energy/products/eneloop/en/faq.html) - explains the distinction between rechargeable and primary cells.
+- [Saft: Nickel-Cadmium Battery Manual (Alkaline Electrolyte)](https://manualmachine.com/saft/nickelcadmiumblockbattery/28659126-technical-manual/)
+- [Analog Devices: DS12887 Real-Time Clock (Encapsulated Battery)](https://www.analog.com/en/products/ds12887.html)
+- [Panasonic Energy: Battery FAQ (Rechargeable vs Primary Cells)](https://www.panasonic.com/global/energy/products/eneloop/en/faq.html)

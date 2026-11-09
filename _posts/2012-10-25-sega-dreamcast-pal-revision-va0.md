@@ -32,11 +32,11 @@ Enjoy the photos and don't forget to check the [photo gallery](/goodies/).
 
 Next up I'll pull it apart properly and compare the internals with my Japanese VA0 and ordinary PAL VA1 machines.
 
-### Related posts
-
-- [Sega Dreamcast PAL VA0 Internal Update](/sega-dreamcast-pal-va0-internal-update/)
-
 ### Sources
 
-- [ConsoleMods - Dreamcast Model Differences](https://consolemods.org/wiki/Dreamcast:Dreamcast_Model_Differences) - summarises revision differences and links back to this machine's photographs as evidence of PAL VA0 hardware.
-- [TSSZ News - Dreamcast Launch in Europe Delayed](https://lastminutecontinue.com/news/dreamcast-launch-in-europe-delayed/) - reproduces Sega Europe's 27th August 1999 announcement of the 14th October launch.
+- [ConsoleMods: Dreamcast Model Differences (PAL VA0; McRetro Photos)](https://consolemods.org/wiki/Dreamcast:Dreamcast_Model_Differences)
+- [TSSZ News: Dreamcast European Launch Delay (14 October 1999)](https://lastminutecontinue.com/news/dreamcast-launch-in-europe-delayed/)
+
+### Related Posts
+
+- [Sega Dreamcast PAL VA0 Internal Update](/sega-dreamcast-pal-va0-internal-update/)

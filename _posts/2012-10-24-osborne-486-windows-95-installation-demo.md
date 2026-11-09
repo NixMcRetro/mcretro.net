@@ -33,7 +33,7 @@ Eventually the familiar teal Windows 95 desktop appears. Even better, the sound 
 
 The old machine may not be particularly quick, and I've still got a few things to fix, but Windows 95 is installed, the CD drive works and we're making progress. Slow progress, admittedly. Very slow progress!
 
-### Related posts
+### Related Posts
 
 - [Osborne Australia 486DX2-66 Overview](/osborne-australia-486dx2-66-overview/)
 - [Osborne 486 Boot-Sector Virus Cleanup with F-PROT](/osborne-486-boot-sector-virus-cleanup-with-f-prot/)

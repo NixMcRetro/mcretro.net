@@ -49,11 +49,11 @@ I'm not entirely sure what I'll do with the Osborne next, but I definitely inten
 
 Uh ohhh... another trip down memory lane. Sure is crowded in here! ;)
 
-### Related posts
-
-- [Osborne 486 Windows 95 Installation Demo](/osborne-486-windows-95-installation-demo/)
-
 ### Sources
 
-- [Intel - Microprocessor Quick Reference Guide](https://www.intel.com/pressroom/kits/quickreffam.htm) - historical Intel reference for 486 processor families and clock rates.
-- [Intel486 DX2 Microprocessor datasheet, February 1992](https://www.dosdays.co.uk/media/intel/486DX2_Data_Sheet_Feb92.pdf) - documents the core and bus clocks, floating-point unit and 8 KB on-chip cache.
+- [Intel: Microprocessor Quick Reference Guide (486 Family)](https://www.intel.com/pressroom/kits/quickreffam.htm)
+- [Intel: 486DX2 Datasheet (February 1992; Core/Bus Clocking)](https://www.dosdays.co.uk/media/intel/486DX2_Data_Sheet_Feb92.pdf)
+
+### Related Posts
+
+- [Osborne 486 Windows 95 Installation Demo](/osborne-486-windows-95-installation-demo/)

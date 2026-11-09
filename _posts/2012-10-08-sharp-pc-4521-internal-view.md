@@ -32,5 +32,5 @@ Despite the storage trouble, it's a lovely old portable computer. The screen, ke
 
 **Sources**
 
-- [Sharp - PC-4521 Portable Personal Computer brochure](https://bitsavers.trailing-edge.com/pdf/sharp/brochures/SharpPC-4521PortablePC.pdf) - manufacturer specifications for the processor, memory, storage and display.
-- [IT History Society - Sharp PC-4500](https://ithistory.org/hardware/sharp-pc-4500) - historical reference for the PC-4500 family.
+- [Sharp: PC-4521 Portable Personal Computer Brochure](https://bitsavers.trailing-edge.com/pdf/sharp/brochures/SharpPC-4521PortablePC.pdf)
+- [IT History Society: Sharp PC-4500 Family](https://ithistory.org/hardware/sharp-pc-4500)

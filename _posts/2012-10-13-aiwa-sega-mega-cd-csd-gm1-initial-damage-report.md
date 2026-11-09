@@ -32,11 +32,11 @@ Don't forget to check the [photo gallery](/goodies/) and my [YouTube videos](/yo
 
 ![](/assets/images/2012/img_0297.jpg)
 
-### Related posts
+### Sources
+
+- [Aiwa America: Optical Pickup Cleaning Bulletin 91-97-003 (KSS-210/212/213)](https://manualmachine.com/aiwa/kss210/5846041-service-manual/)
+
+### Related Posts
 
 - [Aiwa Sega Mega-CD CSD-GM1 Repairs Part 1: Power Restored](/aiwa-sega-mega-cd-csd-gm1-repairs-part-1-power-restored/)
 - [Aiwa Sega Mega-CD CSD-GM1 KSS-210B Laser Replacement](/aiwa-sega-mega-cd-csd-gm1-kss-210b-laser-replacement/)
-
-### Sources
-
-- [Aiwa America - Optical pick-up cleaning, Service Technical Information Bulletin 91-97-003](https://manualmachine.com/aiwa/kss210/5846041-service-manual/) - explains how dust can cause skipping and other CD problems in KSS-210, KSS-212 and KSS-213 pickups, with cleaning guidance.

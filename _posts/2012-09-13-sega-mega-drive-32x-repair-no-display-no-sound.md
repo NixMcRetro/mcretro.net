@@ -24,6 +24,6 @@ A quick restart confirmed it was still behaving. This particular 32X seems to ha
 
 So this one only needed a bit of attention to its internal connections. I can't assume the others have exactly the same problem, but it's a rather nice result for a machine that was giving me absolutely nothing earlier!
 
-### Related posts
+### Related Posts
 
 - [Sega Mega Drive 32X Jittery Video: Initial Investigation](/sega-mega-drive-32x-jittery-video-initial-investigation/)

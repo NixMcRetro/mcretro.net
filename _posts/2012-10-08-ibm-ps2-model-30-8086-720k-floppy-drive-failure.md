@@ -26,4 +26,4 @@ Hit and a miss. Maybe next time I'll have more luck! :)
 
 ### Sources
 
-- [IBM Files - PS/2 Model 25 and Model 30 storage notes](https://www.ibmfiles.com/pages/ps2model25.htm) - documents the proprietary storage hardware used across early PS/2 systems, including 720KB floppy configurations.
+- [IBM Files: PS/2 Models 25 and 30 Storage (720 KB Floppy)](https://www.ibmfiles.com/pages/ps2model25.htm)

@@ -22,7 +22,7 @@ Naturally, I couldn't just leave the experiment there. I decided to connect the 
 
 Unfortunately, that didn't solve it either. The Mega Drive section still refused to start, although the tape and radio were behaving better than I expected. At least we've established which parts of this machine respond to the alternative power source, even if the game hardware remains stubbornly silent. Looks like I'll have to investigate the transformer and its associated power rails more closely. Further testing required!
 
-### Related posts
+### Related Posts
 
 - [Aiwa Sega Mega-CD CSD-GM1 Repairs Intermission](/aiwa-sega-mega-cd-csd-gm1-repairs-intermission/)
 - [Aiwa Sega Mega-CD CSD-GM1 Repairs Part 1: Power Restored](/aiwa-sega-mega-cd-csd-gm1-repairs-part-1-power-restored/)

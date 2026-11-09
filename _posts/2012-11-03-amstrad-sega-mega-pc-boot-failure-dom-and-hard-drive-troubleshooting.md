@@ -36,11 +36,11 @@ I also took down the fan details because it is far too noisy. The fan is a 60 mm
 
 ![](/assets/images/2012/img_0346.jpg)
 
-### Related posts
+### Sources
+
+- [HSE: Electrical Safety FAQ (Isolation and Stored Energy)](https://www.hse.gov.uk/electricity/faq.htm)
+
+### Related Posts
 
 - [Amstrad Sega Mega PC 486SLC Upgrade Experiment](/amstrad-sega-mega-pc-486slc-upgrade-experiment/)
 - [Amstrad Sega Mega PC 486SLC: Coprocessor and 16 MB RAM](/amstrad-sega-mega-pc-486slc-coprocessor-and-16mb-ram/)
-
-### Sources
-
-- [HSE - Electrical safety: Frequently asked questions](https://www.hse.gov.uk/electricity/faq.htm) - explains safe isolation and the need to release stored energy before electrical work.

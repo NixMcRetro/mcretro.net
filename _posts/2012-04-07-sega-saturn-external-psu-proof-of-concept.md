@@ -24,11 +24,11 @@ I'm still conscious that the temporary supplies aren't correctly rated for exten
 
 Now I can sleep at night without worrying quite so much that all my Model 1 Saturns are destined to die when their original power supplies fail. Well, assuming the rest of the hardware chooses to cooperate!
 
+**Sources**
+
+- [Sega-16 Forums: Sega Saturn Revisions and Models Guide](https://www.sega-16forums.com/forum/general-discussion/tech-aid/24084-sega-saturn-revisions-and-models-guide/page4)
+
 **Related Posts**
 
 - [Sega Saturn Model 1 Power Supply Issues](/sega-saturn-model-1-power-supply-issues/)
 - [Sega Saturn External PSU DC-DC Converter Test](/sega-saturn-external-psu-dc-dc-converter-test/)
-
-**Sources**
-
-- [Sega-16 Forums - Sega Saturn Revisions and Models Guide](https://www.sega-16forums.com/forum/general-discussion/tech-aid/24084-sega-saturn-revisions-and-models-guide/page4) - documents early Saturn PSU rail arrangements and revision differences.

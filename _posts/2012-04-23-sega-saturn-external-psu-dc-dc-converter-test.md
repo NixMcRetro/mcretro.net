@@ -16,11 +16,11 @@ For this first test I've wired an LED to one of the converter outputs just to ch
 
 This is only a quick bench test. I still need to establish how the converters behave with a proper load, particularly their voltage regulation and current capacity. Once I've got those details sorted out, I'll be able to try them with the Saturn rather than relying on the collection of temporary supplies from my earlier experiment.
 
+**Sources**
+
+- [Keysight: DC-DC Converter Testing with Power Analyzers](https://www.keysight.com/au/en/assets/7018-05723/application-notes/5992-2278.pdf)
+
 **Related Posts**
 
 - [Sega Saturn Model 1 Power Supply Issues](/sega-saturn-model-1-power-supply-issues/)
 - [Sega Saturn External PSU Proof of Concept](/sega-saturn-external-psu-proof-of-concept/)
-
-**Sources**
-
-- [Keysight - Performing DC-DC Converter Test Using DC Power Analyzers](https://www.keysight.com/au/en/assets/7018-05723/application-notes/5992-2278.pdf) - discusses additional testing needed to characterise converter performance beyond a simple power-on check.

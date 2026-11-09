@@ -22,10 +22,10 @@ The capacitor work wasn't especially attractive either. Some of the replacement 
 
 In the end, I salvaged enough parts from two Game Gears to get one usable machine. I moved the clean battery contacts into the better unit and donated the other one to my boss. Perhaps he'll restore it, or perhaps it'll disappear under a mountain of old Macs. I hope he gives it a go! I'd been dreaming about replacing those awkward radial electrolytics with tantalum capacitors one day, but that was still a long way off.
 
+**Sources**
+
+- [Gamefrog: Game Gear LED Backlight Mod (2009)](https://xantufrog-games.blogspot.com/2009/05/game-gear-led-backlight-mod.html)
+
 **Related Posts**
 
 - [Game Gear Capacitor, Backlight Repair and LED Mod](/game-gear-capacitor-backlight-repair-and-led-mod/)
-
-**Sources**
-
-- [Gamefrog - Game Gear LED Backlight Mod](https://xantufrog-games.blogspot.com/2009/05/game-gear-led-backlight-mod.html) - period guide covering the original fluorescent backlight, LED conversion and diffusion problems.

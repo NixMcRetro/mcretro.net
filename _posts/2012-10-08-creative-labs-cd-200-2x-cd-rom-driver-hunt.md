@@ -32,10 +32,10 @@ And the search continues... The second recording follows the same ongoing invest
 
 Once I get this beast working, let's have a BBQ party. It will be a lovely day!
 
+**Sources**
+
+- [Creative: CRCCD/CCD Driver README (DriverZone Mirror; MSCDEX)](https://driverzone.com/drivers/creative/cdrom/crccd.htm)
+
 **Related Posts**
 
 - [Creative Labs CD-200 2x CD-ROM Driver Success](/creative-labs-cd-200-2x-cd-rom-driver-success/)
-
-**Sources**
-
-- [Creative - CRCCD/CCD driver README (DriverZone mirror)](https://driverzone.com/drivers/creative/cdrom/crccd.htm) - describes CCD.SYS and CRCCD.SYS installation and the separate MSCDEX requirement.

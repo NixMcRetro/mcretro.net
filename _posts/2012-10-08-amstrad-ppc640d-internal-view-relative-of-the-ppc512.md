@@ -16,4 +16,4 @@ I've got plenty more to look into when I find the time, including the various ju
 
 ### Sources
 
-- [SeaSIP - Amstrad PPC Technical Manual, Section 1](https://www.seasip.info/AmstradXT/ppctech/section1.html) - preserves Amstrad technical documentation for the PPC512/PPC640 architecture, processor, memory and expansion bus.
+- [SeaSIP: Amstrad PPC Technical Manual, Section 1 (PPC512/640)](https://www.seasip.info/AmstradXT/ppctech/section1.html)

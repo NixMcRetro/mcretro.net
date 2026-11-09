@@ -29,12 +29,12 @@ There are also alternative power-supply arrangements worth investigating if the 
 
 **Mains-voltage warning:** This is an open power supply containing potentially dangerous voltages, including stored charge after disconnection. Internal repairs require appropriate electrical expertise and safety equipment.
 
+**Sources**
+
+- [iFixit - Device Safety](https://www.ifixit.com/Info/Device_Safety)
+
 **Related Posts**
 
 - [Sega TeraDrive Model 3 - Faulty Power Supply (Part 1)](/sega-teradrive-model-3-faulty-power-supply-part-1/)
 - [Sega TeraDrive Model 3 - Faulty Power Supply (Part 2)](/sega-teradrive-model-3-faulty-power-supply-part-2/)
 - [Sega TeraDrive Model 3 - Faulty Power Supply (Part 4)](/sega-teradrive-model-3-faulty-power-supply-part-4/)
-
-**Sources**
-
-- [iFixit - Device Safety](https://www.ifixit.com/Info/Device_Safety)

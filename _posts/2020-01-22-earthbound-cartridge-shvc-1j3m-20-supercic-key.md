@@ -52,7 +52,7 @@ Will it continue to work through the [copy](https://tcrf.net/EarthBound) [protec
 
 ### Sources
 
-- [DBWBP - SNES Cart region-free modification (Replacing CIC lockout-chip with SuperCIC)](https://www.dbwbp.com/index.php/10-electronic-projects/24-snes-cart-region-free-modification-replacing-cic-lockout-chip-with-supercic)
+- [DBWBP: SNES Cartridge Region-Free SuperCIC Modification](https://www.dbwbp.com/index.php/10-electronic-projects/24-snes-cart-region-free-modification-replacing-cic-lockout-chip-with-supercic)
 - [SuperCIC - ikari's project page and firmware](https://sd2snes.de/blog/cool-stuff/supercic)
 - [HackMii - The weird and wonderful CIC](https://hackmii.com/2010/01/the-weird-and-wonderful-cic/)
 - [ROM Laboratory - Example SNES Carts List (DBWBP mirror)](https://romlaboratory.dbwbp.com/romlab/cart_types.htm)

@@ -17,5 +17,5 @@ This concerns the affected BIOS implementations, not every Gigabyte DualBIOS boa
 ### Sources
 
 - [Franc Zabkar - HDD Capacity FAQ](https://web.archive.org/web/20181216211558/http://www.users.on.net/~fzabkar/HDD/HDD_Capacity_FAQ.html)
-- [Gigabyte - Why is my HDD size is around 2MB~6MB less when using with GIGABYTE m/bs?](https://www.gigabyte.com/bz/Support/FAQ/597)
+- [GIGABYTE: BIOS Rescue and Xpress Recovery HDD Space Use (2–6 MB)](https://www.gigabyte.com/bz/Support/FAQ/597)
 - [HDAT2 - FAQ](https://www.hdat2.com/hdat2_faq.html)

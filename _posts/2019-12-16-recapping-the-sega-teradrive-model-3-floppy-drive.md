@@ -36,11 +36,11 @@ That's one floppy drive recapped, with two more to go. I haven't established whe
 
 Next up are the two drives from the Model 2. Hopefully they'll be a little easier to work on?
 
+**Sources**
+
+- [SEGA - TeraDrive (Sega Hard Encyclopedia)](https://www.sega.jp/fb/segahard/md/tera.html)
+
 **Related Posts**
 
 - [Sega TeraDrive WDL-330P Comparison](/sega-teradrive-wdl-330p-comparison/)
 - [Recapping the Sega TeraDrive Model 2 Floppy Drives](/recapping-the-sega-teradrive-model-2-floppy-drives/)
-
-**Sources**
-
-- [SEGA - TeraDrive (Sega Hard Encyclopedia)](https://www.sega.jp/fb/segahard/md/tera.html)

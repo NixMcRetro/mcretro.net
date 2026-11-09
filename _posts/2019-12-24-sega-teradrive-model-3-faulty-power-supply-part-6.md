@@ -26,7 +26,7 @@ It has been an entertaining project, even if the ending wasn't quite what I want
 
 And on another completely unrelated topic, I think I've finally got Facebook working properly again for sharing links. Time will tell. Sooner or later. Time will tell!
 
-### Related posts
+### Related Posts
 
 - [Sega TeraDrive Model 3 Power Supply Failure](/sega-teradrive-model-3-power-supply-failure/)
 - [Sega TeraDrive Model 3 - Faulty Power Supply (Part 3)](/sega-teradrive-model-3-faulty-power-supply-part-3/)

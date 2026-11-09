@@ -22,7 +22,7 @@ For now, the important thing is that the temporary microphone works. I've ordere
 
 Hopefully we can restore this thing to its former glory! There's also a large box of goodies due to arrive on Monday, so that should keep me occupied in the meantime.
 
-### Related posts
+### Related Posts
 
 - [Sega Mega-CD Karaoke Accessory and Yukawa Dreamcast](/sega-mega-cd-karaoke-accessory-and-yukawa-dreamcast/)
 - [Sega Mega-CD Karaoke Microphone Repaired](/sega-mega-cd-karaoke-microphone-repaired/)

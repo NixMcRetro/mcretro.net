@@ -56,7 +56,7 @@ The two biggest attractions of the replacement board are simple: it doesn't appe
 
 ### Sources
 
-- [Amstrad Mega PC instruction manual](https://manualzz.com/doc/68157046/amstrad-megapc-instruction-manual) - documents the PC7386SX platform and memory expansion up to 16 MB.
-- [Texas Instruments TI486 Microprocessor Reference Guide](https://studylib.net/doc/25873245/1993-ti486-microprocessor-reference-guide) - documents the TI486SLC architecture, 1 KB cache, 386SX-compatible interface and 16 MB physical address space.
-- [DOS Days - Typical PCs in 1993](https://www.dosdays.co.uk/topics/1993.php) - reproduces a period listing for an Amstrad Mega Plus 486SLC-33 configuration.
-- [Retro Isle - Amstrad PC](https://www.retroisle.com/amstrad/pcs/general.php) - later historical summary of the Mega PC and Mega Plus.
+- [Amstrad Mega PC Instruction Manual (PC7386SX, 16 MB RAM)](https://manualzz.com/doc/68157046/amstrad-megapc-instruction-manual)
+- [Texas Instruments: TI486 Microprocessor Reference Guide](https://studylib.net/doc/25873245/1993-ti486-microprocessor-reference-guide)
+- [DOS Days: Typical PCs in 1993 (Amstrad Mega Plus 486SLC-33)](https://www.dosdays.co.uk/topics/1993.php)
+- [Retro Isle: Amstrad PC (Mega PC and Mega Plus)](https://www.retroisle.com/amstrad/pcs/general.php)

@@ -36,11 +36,11 @@ Close, but no cigar. I suspected a conflict with the TeraDrive motherboard, alth
 
 And what day would be complete without a little retro gaming? Unfortunately, the little TeraDrive wasn't quite keeping up with everything I wanted to throw at it. Still, I'm rather pleased to have the Model 3 running from a hard drive and the Model 2 showing at least some promise with its storage experiments.
 
+**Sources**
+
+- [Sega Hardware Archive: TeraDrive (Models 1–3)](https://www.sega.jp/fb/segahard/md/tera.html)
+
 **Related Posts**
 
 - [Sega TeraDrive Model 3 Hard Drive Replacement](/sega-teradrive-model-3-hard-drive-replacement/)
 - [Sega TeraDrive Model 2 XTIDE Boot Success](/sega-teradrive-model-2-xtide-boot-success/)
-
-**Sources**
-
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - Sega's original specifications for the Model 1, Model 2 and hard-drive-equipped Model 3.

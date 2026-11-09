@@ -44,5 +44,5 @@ Played a bit of Pier Solar, but was unable to get to the caves! Where are the da
 
 ### Sources
 
-- [GameFAQs - Sega 32X FAQ](https://gamefaqs.gamespot.com/sega32x/916394-sega-32x/faqs/2755) - preserves the commonly quoted 32X performance figure of around 50,000 texture-mapped polygons per second.
-- [Sega Retro - Sega Neptune](https://segaretro.org/Sega_Neptune) - documents Sega's unreleased integrated Mega Drive/Genesis and 32X project.
+- [GameFAQs: Sega 32X FAQ (Quoted 50,000 Polygons/s Figure)](https://gamefaqs.gamespot.com/sega32x/916394-sega-32x/faqs/2755)
+- [Sega Retro: Sega Neptune (Unreleased Mega Drive/32X)](https://segaretro.org/Sega_Neptune)

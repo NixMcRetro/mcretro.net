@@ -12,4 +12,4 @@ Received my Sega Mega-CD Model 1 from Germany yesterday, so naturally I pulled i
 
 ### Sources
 
-- [Sega-16 Forums - Sega CD systems repair thread](https://www.sega-16forums.com/forum/general-discussion/tech-aid/21805-sega-cd-systems-repair-thread) - identifies JVC Optima-5 and Sony KSS-240A optical pickups used in Model 1 Sega CD/Mega-CD hardware.
+- [Sega-16 Forums: Sega CD Systems Repair (JVC Optima-5 and Sony KSS-240A)](https://www.sega-16forums.com/forum/general-discussion/tech-aid/21805-sega-cd-systems-repair-thread)

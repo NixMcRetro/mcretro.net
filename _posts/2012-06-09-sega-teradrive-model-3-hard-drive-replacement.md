@@ -80,4 +80,4 @@ There's even more photos in the [photo gallery](/goodies/) under the album Sega 
 
 ### Sources
 
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - Sega's official specifications list the Model 3 with 2.5MB main memory and describe the TeraDrive as a joint development with IBM Japan.
+- [Sega Hardware Archive: TeraDrive (Model 3, 2.5 MB; IBM Japan)](https://www.sega.jp/fb/segahard/md/tera.html)

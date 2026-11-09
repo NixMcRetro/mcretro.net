@@ -25,4 +25,4 @@ I was very pleased to see that most of the Mega Drive Model 1s have Rubycon capa
 
 ### Sources
 
-- [Sega Retro - Mega Drive PCB revisions](https://segaretro.org/Sega_Mega_Drive_PCB_revisions) - documents the many board and component revisions used across Mega Drive Model 1 production.
+- [Sega Retro: Mega Drive PCB Revisions (Model 1)](https://segaretro.org/Sega_Mega_Drive_PCB_revisions)

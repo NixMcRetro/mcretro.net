@@ -14,4 +14,4 @@ Of course, that doesn't magically connect a Mega-CD to either machine. I'd still
 
 ### Sources
 
-- [Mega EverDrive user manual](https://manualzz.com/doc/7240363/krikzz-mega-everdrive-user-manual) - period documentation for Mega-CD BIOS loading and the Run CD function.
+- [Mega EverDrive User Manual (Mega-CD BIOS and Run CD)](https://manualzz.com/doc/7240363/krikzz-mega-everdrive-user-manual)

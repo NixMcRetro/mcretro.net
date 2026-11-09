@@ -33,6 +33,6 @@ Later reverse-engineering work documents how the PC side can access the Mega Dri
 
 **Sources**
 
-- [BlastEm - TeraDrive Hardware Notes](https://www.retrodev.com/blastem/trac/wiki/TeradriveHardwareNotes) - later reverse-engineering notes documenting the bus-switch interface and PC-side access to Mega Drive hardware.
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - Sega's official TeraDrive page identifies Puzzle Construction as dedicated software for the system.
-- [MAME - Sega TeraDrive Driver](https://github.com/mamedev/mame/blob/master/src/mame/pc/teradrive.cpp) - documents the emulated communication path between the TeraDrive PC side and Mega Drive hardware used by dedicated software.
+- [BlastEm: TeraDrive Hardware Notes (PC/Mega Drive Bus Interface)](https://www.retrodev.com/blastem/trac/wiki/TeradriveHardwareNotes)
+- [Sega Hardware Archive: TeraDrive (Puzzle Construction)](https://www.sega.jp/fb/segahard/md/tera.html)
+- [MAME: Sega TeraDrive Driver (PC/Mega Drive Interface)](https://github.com/mamedev/mame/blob/master/src/mame/pc/teradrive.cpp)

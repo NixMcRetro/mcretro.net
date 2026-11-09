@@ -34,12 +34,12 @@ Another thing I noticed is that the trace wiring on the Model 3 travels to sligh
 
 Time to get a hard drive installed and see how far this one can go. Many more images can be found in the [photo gallery](/goodies) filed under Sega TeraDrive Model 2 and Model 3.
 
-### Related posts
+### Sources
+
+- [Sega Hardware Archive: TeraDrive (Model 3 Specifications)](https://www.sega.jp/fb/segahard/md/tera.html)
+- [IBM Files: PS/2 Model 25/30 (Proprietary Hard Drive Interface)](https://www.ibmfiles.com/pages/ps2model25.htm)
+
+### Related Posts
 
 - [Sega TeraDrive Model 3 Hard Drive Replacement](/sega-teradrive-model-3-hard-drive-replacement/)
 - [Sega TeraDrive Hard Drive Interface Investigation](/sega-teradrive-hard-drive-interface-investigation/)
-
-### Sources
-
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - Sega's official specifications list the Model 3 with 2.5 MB RAM, one floppy drive and a 30 MB hard drive.
-- [IBM Files - PS/2 Model 25 / 30](https://www.ibmfiles.com/pages/ps2model25.htm) - documents the proprietary hard-drive arrangement used in early PS/2 systems and distinguishes it from standard IDE.

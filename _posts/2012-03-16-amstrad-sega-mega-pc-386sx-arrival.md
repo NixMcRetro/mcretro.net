@@ -27,5 +27,5 @@ And the CPU in this particular machine is AMD, my favourite underdog! Published 
 
 ### Sources
 
-- [Centre for Computing History - Amstrad Mega PC 386SX](https://www.computinghistory.org.uk/det/2534/amstrad-mega-pc-386sx/) - published Mega PC specifications, including the 25 MHz 80386SX PC side.
-- [AMD Am386SX datasheet](https://www.alldatasheet.com/html-pdf/122244/AMD/AM386SX/114/2/AM386SX.html) - documents the Am386SX family and 386SX compatibility.
+- [Centre for Computing History: Amstrad Mega PC 386SX](https://www.computinghistory.org.uk/det/2534/amstrad-mega-pc-386sx/)
+- [AMD: Am386SX Datasheet](https://www.alldatasheet.com/html-pdf/122244/AMD/AM386SX/114/2/AM386SX.html)

@@ -33,12 +33,12 @@ One thing to watch if you ever take one of these apart is the little front-panel
 
 I'll give her the best clean I can and make her shine again. There are more photographs in the [photo gallery](/goodies). Once that's done, I'll get some better photographs of the boards, chip markings and connectors for the gallery. It's a bit of a beast, and I rather wish Sega had made the retail Saturn this big!
 
+**Sources**
+
+- [Sega DTS Archive: ST-4001 Saturn Programming Target Box (SH-2 Boards)](https://docs.exodusemulator.com/Archives/SegaDTSMirror/hardware/core/PBOX.HTM)
+- [Shane Battye: Saturn Sophia SH-2 171-6692D Board Reproduction (2018)](https://assemblergames-archive.com/archive/index.php/thread-59865.html)
+
 **Related Posts**
 
 - [Sega Saturn Sophia SH-2 CPU Cards: 171-6692B vs 171-6692D](/sega-saturn-sophia-sh-2-cpu-cards-171-6692b-vs-171-6692d/)
 - [Sophia Systems Sega Saturn Programming Box: Capacitor Restoration Complete](/sophia-systems-sega-saturn-programming-box-capacitor-restoration-complete/)
-
-**Sources**
-
-- [Sega DTS Archive - ST-4001 Saturn Programming Target Box](https://docs.exodusemulator.com/Archives/SegaDTSMirror/hardware/core/PBOX.HTM) - original Sega description listing the supplied SH-2 board and the additional board required without an in-circuit emulator.
-- [Shane Battye - Sega Saturn Sophia SH-2 171-6692D Board Reproduction Project](https://assemblergames-archive.com/archive/index.php/thread-59865.html) - later firsthand reproduction and testing notes from 2018, preserved in the ASSEMbler Games Archive.

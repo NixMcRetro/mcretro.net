@@ -19,5 +19,5 @@ Pretty neat, right? I should have a copy to play, or perhaps simply behold, in a
 
 ### Sources
 
-- [The Dreamcast Junkyard - Geist Force is out](https://www.thedreamcastjunkyard.co.uk/2012/08/geist-force-is-out.html) - contemporary coverage of the ASSEMbler community release of the unfinished Dreamcast prototype.
-- [Dreamcast-Talk - Geist Force reproduction discussion](https://www.dreamcast-talk.com/forum/viewtopic.php?t=4208) - period community discussion of the prototype and reproduction release.
+- [The Dreamcast Junkyard: Geist Force Is Out (2012)](https://www.thedreamcastjunkyard.co.uk/2012/08/geist-force-is-out.html)
+- [Dreamcast-Talk: Geist Force Reproduction Discussion](https://www.dreamcast-talk.com/forum/viewtopic.php?t=4208)

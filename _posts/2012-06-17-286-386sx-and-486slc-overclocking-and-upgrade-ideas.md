@@ -50,8 +50,8 @@ The Mega PC needs a little more thought because I've already got processors and 
 
 ### Sources
 
-- [AMD Am80286 datasheet](https://www.bitsavers.org/components/amd/x86/_dataSheets/1985_80286.pdf) - documents the 80286 clock input running at twice the internal processor frequency.
-- [AMD Am386SX/SXL/SXLV Microprocessors Data Sheet](https://www.amd.com/content/dam/amd/en/documents/archived-tech-docs/datasheets/21020.pdf) - documents the Am386SX CLK2 relationship and distinguishes standard and low-voltage variants.
-- [Texas Instruments TI486 Microprocessor Reference Guide](https://www.bitsavers.org/components/ti/TI486/1993_TI486_Microprocessor_Reference_Guide.pdf) - documents TI486SLC/E clocking, 25 MHz and 33 MHz operation, and voltage variants.
-- [PCjs - IBM PC technical reference material](https://www.pcjs.org/documents/manuals/ibm/) - background on the IBM PC's 14.31818 MHz base timing reference.
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - official background on the TeraDrive and its IBM Japan collaboration.
+- [AMD: Am80286 Datasheet (2× Clock Input)](https://www.bitsavers.org/components/amd/x86/_dataSheets/1985_80286.pdf)
+- [AMD: Am386SX/SXL/SXLV Datasheet (CLK2 and Voltage Variants)](https://www.amd.com/content/dam/amd/en/documents/archived-tech-docs/datasheets/21020.pdf)
+- [Texas Instruments: TI486 Reference Guide (SLC/E Clocking and Voltage)](https://www.bitsavers.org/components/ti/TI486/1993_TI486_Microprocessor_Reference_Guide.pdf)
+- [PCjs: IBM PC Technical References (14.31818 MHz Timing)](https://www.pcjs.org/documents/manuals/ibm/)
+- [Sega Hardware Archive: TeraDrive (IBM Japan Collaboration)](https://www.sega.jp/fb/segahard/md/tera.html)

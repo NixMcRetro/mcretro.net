@@ -32,12 +32,12 @@ Look at that. It's detected a disc! Even better, it plays, and I can seek betwee
 
 The Japanese Saturn may still have a broken CD-control board, but at least its laser has helped get another machine going again. That's a pretty good result, and I'll happily take the win. A functioning PAL Saturn and one slightly less useful donor machine. I can live with that!
 
+**Sources**
+
+- [Sega Saturn Service Manual (Optical Pickup and Laser Adjustment)](https://www.manualshelf.com/manual/sega/saturn/service-manual.html)
+
 **Related Posts**
 
 - [Faulty Japanese Sega Saturn: CD Drive Problems](/faulty-japanese-sega-saturn-cd-drive-problems/)
 - [Sega Saturn CD Deck Diagnosis: BA6798S Suspect](/sega-saturn-cd-deck-diagnosis-ba6798s-suspect/)
 - [Sega Saturn Laser Tune-up Success](/sega-saturn-laser-tune-up-success/)
-
-**Sources**
-
-- [Sega Saturn Service Manual](https://www.manualshelf.com/manual/sega/saturn/service-manual.html) - documents the optical pickup and cautions concerning laser adjustment.

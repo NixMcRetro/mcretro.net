@@ -16,4 +16,4 @@ It's not really surprising but those who I would consider to be social butterfli
 
 ### Sources
 
-- [Australian Government - ATAGI statement on Omicron and COVID-19 booster vaccination](https://www.health.gov.au/news/atagi-statement-on-the-omicron-variant-and-the-timing-of-covid-19-booster-vaccination?language=en)
+- [Australian Government: ATAGI Statement on Omicron and COVID-19 Booster Timing](https://www.health.gov.au/news/atagi-statement-on-the-omicron-variant-and-the-timing-of-covid-19-booster-vaccination?language=en)

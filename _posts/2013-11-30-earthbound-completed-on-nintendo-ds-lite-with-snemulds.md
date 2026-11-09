@@ -13,6 +13,6 @@ After I nuked my SNES save game, I realised I wanted to back up my save games! E
 Anyway, here is the ending to EarthBound, completed at 3 or maybe 4 am on a weekday. Wow! So scare! Much spoiler! Music is a bit glitchy, of course; the emulator isn't 100%, but it was good enough to complete the entire game! :D
 
 
-### Related posts
+### Related Posts
 
 - [I Found Ness! EarthBound Revisited](/i-found-ness-earthbound-revisited/)

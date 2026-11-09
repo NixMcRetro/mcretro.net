@@ -28,6 +28,6 @@ Still, after breaking a few of those blasted plastic hubs, it's rather nice to f
 
 Where is that [PSIO](https://psio.cybdyn-systems.com.au/) project anyway? I'm beginning to think life without all these troublesome PlayStation CD mechanisms would be considerably easier!
 
-### Related posts
+### Related Posts
 
 - [Sony PlayStation Junk CD Decks - The Discovery (Part 1)](/sony-playstation-junk-cd-decks-the-discovery-part-1/)

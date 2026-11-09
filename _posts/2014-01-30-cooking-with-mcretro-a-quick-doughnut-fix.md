@@ -21,6 +21,6 @@ Sprinkle a bit over the top, and suddenly they're looking a lot more like proper
 - [McRetro & Friends: Making Cupcakes (Version 2.0)](/mcretro-friends-making-cupcakes-version-20/)
 - [Cooking with McRetro: McMuffin Madness](/cooking-with-mcretro-mcmuffin-madness/)
 
-### Related posts
+### Related Posts
 
 - [A Quick Doughnut Fix: Behind the Scenes - Post Production](/a-quick-doughnut-fix-behind-the-scenes-post-production/)

@@ -34,13 +34,13 @@ Some of the replacement mechanisms I'd seen had particularly troublesome spindle
 
 By the end, the PlayStation was considerably happier and actually loading a game. Another rather entertaining repair adventure, and another reminder that sometimes the little mechanical details cause more trouble than the electronics themselves.
 
+**Sources**
+
+- [Sony - SCPH-100 Series Service Manual (2nd edition), Main Block](https://gamingdoc.org/wp-content/uploads/2021/03/sony-ps1-scph-100_series_service_manual_2nd_ed.pdf)
+- [PS1 Developer Wiki - CD Drive](https://www.psdevwiki.com/ps1/CD_drive)
+
 **Related Posts**
 
 - [Sony PS one Laser Assembly Disassembly and Removal](/sony-ps-one-laser-assembly-disassembly-and-removal/)
 - [Sony PS one Replacement Laser Assembly Spindle Hub Height Issues](/sony-ps-one-replacement-laser-assembly-spindle-hub-height-issues/)
 - [Water-Damaged Sony PS one Repair Attempt](/water-damaged-sony-ps-one-repair-attempt/)
-
-**Sources**
-
-- [Sony - SCPH-100 Series Service Manual (2nd edition), Main Block](https://gamingdoc.org/wp-content/uploads/2021/03/sony-ps1-scph-100_series_service_manual_2nd_ed.pdf)
-- [PS1 Developer Wiki - CD Drive](https://www.psdevwiki.com/ps1/CD_drive)

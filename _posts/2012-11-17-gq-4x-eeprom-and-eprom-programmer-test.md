@@ -35,4 +35,4 @@ Eventually I want to use this for Dreamcast and Saturn BIOS work, region modific
 
 **Sources**
 
-- [MCUmall - GQ USB Universal Programmer User Guide, revision 4.11](https://www.mcumall.com/download/TrueUSBWillem/GQ_USB_User_Guide.PDF) - the September 2015 guide covers GQ-2X, GQ-3X and GQ-4X; pages 5-6 describe USB power and the 9 V, at-least-200 mA, centre-positive 2.1 mm external supply.
+- [MCUmall: GQ USB Programmer Guide Rev 4.11 (9 V Centre-Positive, 2.1 mm)](https://www.mcumall.com/download/TrueUSBWillem/GQ_USB_User_Guide.PDF)

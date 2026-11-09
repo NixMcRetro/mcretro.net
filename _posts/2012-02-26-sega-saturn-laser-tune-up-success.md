@@ -34,6 +34,6 @@ I also need to get image uploads working so I can actually show pictures of all 
 
 ### Sources
 
-- [Sega Saturn Service Manual](https://www.manualshelf.com/manual/sega/saturn/service-manual.html) - documents the optical pickup laser adjustment and warns against field adjustment.
-- [Sega-16 Forums - Sega Saturn Revisions and Models Guide](https://www.sega-16forums.com/forum/general-discussion/tech-aid/24084-sega-saturn-revisions-and-models-guide/page4) - documents Saturn PSU rail arrangements across revisions.
-- [Fluke - How to measure resistance](https://www.fluke.com/en-au/learn/blog/digital-multimeters/how-to-measure-resistance) - explains limitations of in-circuit resistance measurements.
+- [Sega Saturn Service Manual (Laser Adjustment)](https://www.manualshelf.com/manual/sega/saturn/service-manual.html)
+- [Sega-16 Forums: Sega Saturn Revisions and Models Guide](https://www.sega-16forums.com/forum/general-discussion/tech-aid/24084-sega-saturn-revisions-and-models-guide/page4)
+- [Fluke: How to Measure Resistance](https://www.fluke.com/en-au/learn/blog/digital-multimeters/how-to-measure-resistance)

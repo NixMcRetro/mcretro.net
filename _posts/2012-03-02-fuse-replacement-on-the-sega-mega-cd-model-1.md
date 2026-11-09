@@ -25,4 +25,4 @@ Anyway, [element14](https://au.element14.com/littelfuse/026302-5mxl/fuse-pcb-2-5
 
 ### Sources
 
-- [Littelfuse - 263 Series PICO II Fuse datasheet](https://www.littelfuse.com/assetdocs/littelfuse-fuse-263-datasheet?assetguid=bc110884-dddd-4484-99b4-3f33344a7afa) - manufacturer specifications for the 026302.5MXL fuse.
+- [Littelfuse: 263 Series PICO II Fuse Datasheet](https://www.littelfuse.com/assetdocs/littelfuse-fuse-263-datasheet?assetguid=bc110884-dddd-4484-99b4-3f33344a7afa)

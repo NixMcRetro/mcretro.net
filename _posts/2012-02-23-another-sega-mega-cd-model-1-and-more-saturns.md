@@ -20,12 +20,12 @@ I also received two Sega Saturn Model 1s in the mail. One apparently had a dead 
 
 The two Saturns have different mainboards. One uses the later 64-pin CD-board arrangement also found in some Model 2 Saturns. More spares for one day in the distant future. Long live '90s gaming!
 
-### Related posts
+### Sources
+
+- [Sega-16 Forums: Sega CD Systems Repair (JVC Optima-5 and Sony KSS-240A)](https://www.sega-16forums.com/forum/general-discussion/tech-aid/21805-sega-cd-systems-repair-thread)
+- [Sega-16 Forums: Sega Saturn Revisions and Models Guide](https://www.sega-16forums.com/forum/general-discussion/tech-aid/24084-sega-saturn-revisions-and-models-guide/page4)
+
+### Related Posts
 
 - [Sega Mega-CD Model 1 Acquired](/sega-mega-cd-model-1-acquired/)
 - [Fuse Replacement on the Sega Mega-CD Model 1](/fuse-replacement-on-the-sega-mega-cd-model-1/)
-
-### Sources
-
-- [Sega-16 Forums - Sega CD systems repair thread](https://www.sega-16forums.com/forum/general-discussion/tech-aid/21805-sega-cd-systems-repair-thread) - documents JVC Optima-5 and Sony KSS-240A Model 1 mechanisms and notes that complete drive assemblies can be swapped, with compatibility caveats.
-- [Sega-16 Forums - Sega Saturn Revisions and Models Guide](https://www.sega-16forums.com/forum/general-discussion/tech-aid/24084-sega-saturn-revisions-and-models-guide/page4) - documents Saturn motherboard, PSU and CD-drive revisions, including 64-pin drives used across late Model 1 and Model 2 hardware.

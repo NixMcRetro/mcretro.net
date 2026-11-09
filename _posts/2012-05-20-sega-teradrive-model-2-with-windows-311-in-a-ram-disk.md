@@ -63,12 +63,12 @@ Still, it boots and runs, which was the whole point of the experiment. With 612 
 
 The storage problem eventually had a much better solution. Later that year I got an XTIDE card working in the TeraDrive Model 2 and finally booted the machine from proper storage. You can find all the files in the [file server](/goodies/) and photos in the [photo gallery](/goodies/).
 
+**Sources**
+
+- [Microsoft KB Archive: Windows for Workgroups 3.1 Minimum Requirements (80286)](https://jeffpar.github.io/kbarchive/kb/089/Q89333/)
+- [Microsoft KB Archive: Windows Problems on AST Premium/286 (Standalone Windows 3.11)](https://jeffpar.github.io/kbarchive/kb/081/Q81855/)
+
 **Related Posts**
 
 - [Sega TeraDrive with Windows 2.1, Windows 3.00a and Game Boy](/sega-teradrive-with-windows-21-windows-300a-and-game-boy/)
 - [Sega TeraDrive Model 2 XTIDE Boot Success](/sega-teradrive-model-2-xtide-boot-success/)
-
-**Sources**
-
-- [Microsoft Knowledge Base Archive - Minimum System Requirements for Windows for Workgroups](https://jeffpar.github.io/kbarchive/kb/089/Q89333/) - documents 80286 support for Windows for Workgroups 3.1.
-- [Microsoft Knowledge Base Archive - Windows Problems on AST Premium/286](https://jeffpar.github.io/kbarchive/kb/081/Q81855/) - documents standalone Windows 3.11 operation on 286-class systems in Standard Mode.

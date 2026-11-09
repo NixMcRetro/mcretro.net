@@ -18,7 +18,7 @@ Easy does it, little Saturn! I'll have to get inside the CD deck and work out wh
 
 We'll make you better, faster, stronger! Segata Sanshiro style. Well, that's the plan anyway.
 
-### Related posts
+### Related Posts
 
 - [Japanese Sega Saturn, VA0 Dreamcast and TeraDrive Power Checks](/japanese-sega-saturn-va0-dreamcast-and-teradrive-power-checks/)
 

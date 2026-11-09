@@ -849,6 +849,17 @@
 .post-content .darknet-hero-wrap { margin: 0 0 1rem; padding: 0; }
 .post-content img.darknet-hero { display: block; width: 100%; max-width: 1536px; height: auto; margin: 0 auto; border-radius: 4px; }
 .post-content details[name="mcretro-darknet"] { scroll-margin-top: 0.75rem; }
+
+/* Keep Flicky's 16:9 YouTube embeds inside the accordion's text margins.
+   The global video container is width:100% plus 1rem side margins, which
+   clips the right edge inside an overflow:hidden details panel. */
+.post-full .post-content details[name="mcretro-flicky"] > .video-container {
+  width: auto;
+  height: auto;
+  padding-bottom: 0;
+  aspect-ratio: 16 / 9;
+}
+
 /* Enlarged closing creature emojis on the November 2023 downtime post only. */
 .post-full .post-content > p.creature-signoff {
   font-size: 2.25rem;

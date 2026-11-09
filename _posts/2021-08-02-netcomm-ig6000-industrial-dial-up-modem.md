@@ -22,7 +22,7 @@ To make things extra interesting, everything appears to be covered in a protecti
 
 ![](/assets/images/2021/img_0735.jpg)
 
-Unfortunately for the IG6000, one of the capacitors I was replacing intercepted a patched-up hack of some sort that wouldn't fit on the PCB (pictured above). A 1uF 50V capacitor joined to a resistor, attached to a lifted leg on what appeared to be a Fairchild PG8SB chip with V574 and some obscured letters. It _looked_ to be a 20-pin TSSOP. That's right, past tense - uh oh.
+Unfortunately for the IG6000, one of the capacitors I was replacing intercepted a patched-up hack of some sort that wouldn't fit on the PCB (pictured above). A 1 uF 50 V capacitor joined to a resistor, attached to a lifted leg on what appeared to be a Fairchild PG8SB chip with V574 and some obscured letters. It _looked_ to be a 20-pin TSSOP. That's right, past tense - uh oh.
 
 ![](/assets/images/2021/img_0736.jpg)
 

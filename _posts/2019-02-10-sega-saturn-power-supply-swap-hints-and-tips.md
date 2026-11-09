@@ -8,7 +8,7 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="IM84C8cBlmk" %}
 
-Here's a few of the potential pitfalls to watch out for when swapping power supplies between Sega Saturn revisions. In this video I'm fitting a compatible 240V PSU to a Japanese "This is COOL" Skeleton Saturn so I can use it directly from Australian mains. That is a power-supply swap, not a modification that magically turns any 100V Saturn PSU into a 240V one, and the replacement still has to match the console's motherboard revision and required output rails.
+Here's a few of the potential pitfalls to watch out for when swapping power supplies between Sega Saturn revisions. In this video I'm fitting a compatible 240 V PSU to a Japanese "This is COOL" Skeleton Saturn so I can use it directly from Australian mains. That is a power-supply swap, not a modification that magically turns any 100 V Saturn PSU into a 240 V one, and the replacement still has to match the console's motherboard revision and required output rails.
 
 My Skeleton Saturn used the shorter Type C power supply, while the PAL Saturns I had available were fitted with Type B boards. Those weren't suitable replacements for this particular machine, so I asked around on ASSEMbler Games and somebody kindly came to the rescue with a compatible Type C supply. The mains connector was also keyed differently, something else I needed to account for. The number of pins alone isn't enough to establish that two Saturn power supplies are interchangeable.
 

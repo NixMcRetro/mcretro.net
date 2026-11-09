@@ -11,7 +11,7 @@ historical_source_url: "https://www.youtube.com/watch?v=Pc8eGAHuEuc"
 
 There was an awful lot to read about the cicada life cycle, especially what happens after hatching. The little nymphs need to get to the soil and find roots. I hoped Flicky's eggs might eventually get that far.
 
-We're now eight days into this unexpected adventure with Flicky the Floury Baker, and she's still spending time on the branches I've provided. One of those branches has already been used for egg laying, and I was rather interested in how she seemed to remember exactly where she'd been working. It had been exceptionally hot, around 38 degrees Celsius, and I'd even taken Flicky along to work rather than leave her in the heat without being able to check on her.
+We're now eight days into this unexpected adventure with Flicky the Floury Baker, and she's still spending time on the branches I've provided. One of those branches has already been used for egg laying, and I was rather interested in how she seemed to remember exactly where she'd been working. It had been exceptionally hot, around 38°C, and I'd even taken Flicky along to work rather than leave her in the heat without being able to check on her.
 
 During the night I'd moved her onto another part of the arrangement, only to find that she made her way back towards the same section of branch. Perhaps she was recognising something about the wood, or perhaps it was simply the most suitable place available. She seemed particularly interested in a small section of twig where she'd already laid eggs, which made me wonder whether cicadas have some way of keeping track of where they've been.
 

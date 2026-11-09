@@ -24,7 +24,7 @@ Failure to stem this bleeding will likely result in homelessness. This is the co
 
 ![](/assets/images/2023/img_1200.jpg)
 
-But unfortunately for salmon, salmon is a nutrient-dense meal and I was still willing to make that exception. Farmed Atlantic salmon feed has reduced its reliance on marine ingredients over time, but that does not make salmon farming environmentally benign. For my rough maths, take a 5kg salmon and assume 60% edible yield. That's about 3kg of flesh, or roughly 26 meals at 115g each. Those are my estimates, not a standard yield for every fish. So that's still one entire salmon slaughtered every 26 meals.
+But unfortunately for salmon, salmon is a nutrient-dense meal and I was still willing to make that exception. Farmed Atlantic salmon feed has reduced its reliance on marine ingredients over time, but that does not make salmon farming environmentally benign. For my rough maths, take a 5 kg salmon and assume 60% edible yield. That's about 3 kg of flesh, or roughly 26 meals at 115 g each. Those are my estimates, not a standard yield for every fish. So that's still one entire salmon slaughtered every 26 meals.
 
 Onward to [the decline](https://en.wikipedia.org/wiki/Holocene_extinction). 🫠
 

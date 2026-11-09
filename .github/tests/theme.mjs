@@ -129,3 +129,41 @@ test('sidebar Search and archive calendar share classic blue only in Light mode'
   assert.match(style, /--retro-teal:\s*#008080;/);
   assert.match(overrides, /\.mcretro-modem-titlebar[\s\S]*background: #000080/);
 });
+
+
+test('accordion headers restore distinct mint Light and teal Dark hover/open states', () => {
+  const light = overrides.split(':root[data-theme="dark"]')[0];
+  const dark = overrides.split(':root[data-theme="dark"]')[1].split('\n/*')[0];
+  for (const token of [
+    '--accordion-neutral-bg: #F3EAC9;', '--accordion-neutral-hover: #E9DDB1;',
+    '--accordion-teal-bg: #E6F0E5;', '--accordion-teal-hover: #D9E9D9;',
+    '--accordion-teal-open: #DFECDF;', '--accordion-teal-open-hover: #CFE2D1;'
+  ]) assert.ok(light.includes(token), token);
+  for (const token of [
+    '--accordion-neutral-bg: #2E4142;', '--accordion-neutral-hover: #3B5D5A;',
+    '--accordion-teal-bg: #274A46;', '--accordion-teal-hover: #35665E;',
+    '--accordion-teal-open: #2F554F;', '--accordion-teal-open-hover: #3B7368;'
+  ]) assert.ok(dark.includes(token), token);
+  assert.match(overrides, /\.about-panel\.panel--teal > summary:hover,\s*\.about-panel\.panel--teal > summary:focus-visible\s*\{\s*background:\s*var\(--accordion-teal-hover\)/);
+  assert.match(overrides, /\.about-panel\.panel--teal\[open\] > summary:hover,\s*\.about-panel\.panel--teal\[open\] > summary:focus-visible\s*\{\s*background:\s*var\(--accordion-teal-open-hover\)/);
+  assert.match(overrides, /\.about-panel > summary:focus-visible\s*\{\s*outline:\s*2px solid var\(--focus\)/);
+  assert.match(overrides, /\.content-area details\.about-panel > summary\s*\{\s*scroll-margin-top:\s*1rem;/);
+});
+
+test('desktop and mobile menus underline on pointer hover and keyboard focus', () => {
+  assert.match(style, /\.main-nav a:hover,\s*\.main-nav a:focus-visible\s*\{[^}]*text-decoration:\s*underline;/);
+  assert.match(style, /\.nav-list li a:hover,\s*\.nav-list li a:focus-visible\s*\{[^}]*text-decoration:\s*underline;/);
+});
+
+test('Channels keeps emoji and links, without old summary siren GIFs', () => {
+  const channels = read('channels.md');
+  assert.ok(!channels.includes('/assets/images/about/siren.gif'));
+  assert.equal((channels.match(/<summary markdown="span">/g) || []).length, 4);
+  for (const name of ['🎸 Nix McRetro', '👾 McRetro Gaming', '🪲 Super Nature World', '🦜 Channel Chirp']) {
+    assert.ok(channels.includes(name), name);
+  }
+  for (const handle of ['@NixMcRetro', '@McRetroGaming', '@SuperNatureWorld', '@ChannelChirp']) {
+    assert.ok(channels.includes(handle), handle);
+  }
+  assert.match(overrides, /\.mcretro-modem-titlebar[\s\S]*background: #000080/);
+});

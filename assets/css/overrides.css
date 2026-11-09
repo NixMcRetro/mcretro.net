@@ -15,32 +15,45 @@
   margin-bottom: 0.2em;
 }
 
-/* Soft warm-mint headings, dark-grey outlines, and a teal left accent.
-   Preserve readable labels and theme-sensitive focus colours. */
+/* Separate accordion surface colours restore the original mint and hover feedback.
+   Dark mode uses contrasting teal shades; keep historic Win95 colours independent. */
+:root {
+  --accordion-neutral-bg: #F3EAC9;
+  --accordion-neutral-hover: #E9DDB1;
+  --accordion-teal-bg: #E6F0E5;
+  --accordion-teal-hover: #D9E9D9;
+  --accordion-teal-open: #DFECDF;
+  --accordion-teal-open-hover: #CFE2D1;
+}
+:root[data-theme="dark"] {
+  --accordion-neutral-bg: #2E4142;
+  --accordion-neutral-hover: #3B5D5A;
+  --accordion-teal-bg: #274A46;
+  --accordion-teal-hover: #35665E;
+  --accordion-teal-open: #2F554F;
+  --accordion-teal-open-hover: #3B7368;
+}
+
+/* Shared About/Channels/Goodies and article accordions retain their teal accent. */
 .about-panel.panel--teal {
   border-color: var(--border);
   border-left: 3px solid var(--retro-teal);
 }
 .about-panel.panel--teal > summary {
-  background: var(--panel-hover);
+  background: var(--accordion-teal-bg);
   color: var(--text);
 }
-.about-panel.panel--teal > summary:hover {
-  background: var(--panel-hover);
+.about-panel.panel--teal > summary:hover,
+.about-panel.panel--teal > summary:focus-visible {
+  background: var(--accordion-teal-hover);
 }
 .about-panel.panel--teal[open] > summary {
-  background: var(--panel-hover);
+  background: var(--accordion-teal-open);
   border-bottom-color: var(--border);
 }
-.about-panel.panel--teal[open] > summary:hover {
-  background: var(--panel-hover);
-}
-/* Keep a clearly visible keyboard focus treatment. */
-.about-panel.panel--teal > summary:focus-visible {
-  background: var(--panel-hover);
-}
+.about-panel.panel--teal[open] > summary:hover,
 .about-panel.panel--teal[open] > summary:focus-visible {
-  background: var(--panel-hover);
+  background: var(--accordion-teal-open-hover);
 }
 
 /* About page: limit these styles to the native expandable sections. */
@@ -57,7 +70,7 @@
   gap: 0.65rem;
   padding: 0.85rem 1rem;
   cursor: pointer;
-  background: var(--panel-hover);
+  background: var(--accordion-neutral-bg);
   font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
   font-weight: 700;
   line-height: 1.4;
@@ -70,7 +83,7 @@
 
 .about-panel > summary:hover,
 .about-panel > summary:focus-visible {
-  background: var(--panel-hover);
+  background: var(--accordion-neutral-hover);
 }
 .about-panel > summary:focus-visible {
   outline: 2px solid var(--focus);

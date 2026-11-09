@@ -205,7 +205,13 @@ test('calendar keeps four month columns with compact themed filled and empty til
 
 test('About portrait reuses blog media-caption markup and compact photo spacing', () => {
   const about = read('about.md');
-  assert.ok(about.includes('![Future Lost](/assets/images/about/futurelost.jxl){: width="600" }\\n\\n*An artefact from a timeline that never existed.*\\n{: .media-caption }'.replaceAll('\\n', '\n')));
+  const expectedCaption = [
+    '![Future Lost](/assets/images/about/futurelost.jxl){: width="600" }',
+    '',
+    '*An artefact from a timeline that never existed.*',
+    '{: .media-caption }'
+  ].join(String.fromCharCode(10));
+  assert.ok(about.includes(expectedCaption), 'About uses the same Kramdown caption class as blog images');
   assert.ok(overrides.includes('.about-panel > .center > p:has(> img:only-child):has(+ p.media-caption)'));
   assert.ok(overrides.includes('.about-panel > .center > p:has(> img:only-child) + p.media-caption'));
   assert.ok(overrides.includes('margin-inline: auto;'), 'photo stays centred when displayed as a block');

@@ -28,9 +28,9 @@ test('eight footer badges retain their source images', () => {
   assert.match(footer, /counter\.gif/);
 });
 
-test('CSS preserves all original inline footer values', () => {
+test('CSS preserves original footer spacing and theme-aware divider', () => {
   const expected = new Map([
-    ['footer-rule', ['border: 0.5px solid black;', 'text-align: center;', 'margin: 0 auto 30px;', 'width: 100%;']],
+    ['footer-rule', ['border: 0.5px solid var(--border);', 'text-align: center;', 'margin: 0 auto 30px;', 'width: 100%;']],
     ['footer-badges', ['text-align: center;']],
     ['footer-badge', ['margin: 2px 1px;']],
     ['footer-details', ['max-width: 80%;', 'min-width: 50%;', 'margin: auto;', 'text-align: center;']],

@@ -23,12 +23,12 @@ I've noticed that some Mega Drives seem to develop the problem faster than other
 
 The EDCLK issue can become more noticeable as the machine warms up, making 32X-generated graphics jitter and eventually causing lockups. The important discovery was that Sega's repair modifies the **Mega Drive motherboard**, not the 32X itself. That explains the behaviour I was seeing across different 32X units far better than my earlier grounding-plate theory.
 
-### Related posts
+### Sources
+
+- [Sega: 32X Service Bulletins (VA4 EDCLK 1994, VCLK 1995)](https://consolemods.org/wiki/images/8/8b/Sega_32X_Service_Bulletins.pdf)
+- [ConsoleMods: 32X Service Bulletin Fixes (PAL/Asian VA4)](https://consolemods.org/wiki/Genesis:32X_Service_Bulletin_Fixes)
+
+### Related Posts
 
 - [Sega Mega Drive 32X Jittery Video: Initial Investigation](/sega-mega-drive-32x-jittery-video-initial-investigation/)
 - [Sega Mega Drive 32X Jittery Video: VA4 Service Bulletin Diagnosis](/sega-mega-drive-32x-jittery-video-va4-service-bulletin-diagnosis/)
-
-### Sources
-
-- [Sega - 32X Service Bulletins](https://consolemods.org/wiki/images/8/8b/Sega_32X_Service_Bulletins.pdf) - includes the PAL VA4 EDCLK bulletin of 13th December 1994 and VA4 VCLK bulletin of 28th March 1995.
-- [ConsoleMods - 32X Service Bulletin Fixes](https://consolemods.org/wiki/Genesis:32X_Service_Bulletin_Fixes) - summarises Sega service procedures for PAL and Asian VA4 Mega Drive clock-signal instability when used with 32X hardware.

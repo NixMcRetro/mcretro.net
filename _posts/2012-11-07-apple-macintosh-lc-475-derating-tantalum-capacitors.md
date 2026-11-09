@@ -26,6 +26,6 @@ The table I was using came from KEMET's 2011 training module, hosted by Digi-Key
 
 ### Sources
 
-- [KEMET - Derating Guidelines for Surface Mount Tantalum Capacitors](https://www.digikey.com/en/ptm/k/kemet/derating-guidelines-for-surface-mount-tantalum-capacitors) - the 2011 training module hosted by Digi-Key; slide 19 contains the application-voltage table reproduced above.
-- [AVX - Voltage Derating Rules for Solid Tantalum and Niobium Capacitors](https://www.kyocera-avx.com/docs/techinfo/Tantalum-NiobiumCapacitors/voltaged.pdf) - the 2003 technical paper explains the traditional 50% derating rule and why the application, capacitor construction and series matter.
-- [MacDat - Macintosh LC 475 capacitor reference](https://www.macdat.net/repair/cap_reference/apple/lc/lc475.php) - documents original LC 475 logic-board capacitor values and ratings.
+- [KEMET: Tantalum Derating Guidelines (2011, Slide 19)](https://www.digikey.com/en/ptm/k/kemet/derating-guidelines-for-surface-mount-tantalum-capacitors)
+- [AVX: Tantalum and Niobium Voltage Derating Rules (2003)](https://www.kyocera-avx.com/docs/techinfo/Tantalum-NiobiumCapacitors/voltaged.pdf)
+- [MacDat: Macintosh LC 475 Capacitor Reference (Values and Ratings)](https://www.macdat.net/repair/cap_reference/apple/lc/lc475.php)

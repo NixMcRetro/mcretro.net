@@ -24,4 +24,4 @@ I also installed the replacement power supply I ordered from the US a few weeks 
 ### Sources
 
 
-- [Apple - Macintosh LC 475 Technical Specifications](https://support.apple.com/en-ca/112204) - documents the supported matched VRAM configurations for the LC 475.
+- [Apple: Macintosh LC 475 Specifications (Matched VRAM Pairs)](https://support.apple.com/en-ca/112204)

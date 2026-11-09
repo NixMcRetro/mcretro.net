@@ -30,12 +30,12 @@ Running a proper CD+G disc is considerably more pleasant than relying on the acc
 
 I really wish my Karaoke Unit wasn't boxed so I could leave it displayed alongside the Mega Drive and Mega-CD all the time. What can you do!
 
+**Sources**
+
+- [Sega Hardware Encyclopedia: Mega-CD (CD+G)](https://www.sega.jp/history/hard/mega-cd/index.html)
+- [Sega Hardware Encyclopedia: Mega-CD Peripherals (Karaoke Unit)](https://www.sega.jp/history/hard/mega-cd/devices.html)
+
 **Related Posts**
 
 - [Sega Mega-CD Karaoke Accessory and Yukawa Dreamcast](/sega-mega-cd-karaoke-accessory-and-yukawa-dreamcast/)
 - [Sega Mega-CD Karaoke Microphone Repaired](/sega-mega-cd-karaoke-microphone-repaired/)
-
-**Sources**
-
-- [Sega Hardware Encyclopedia - Mega-CD](https://www.sega.jp/history/hard/mega-cd/index.html) - documents the Mega-CD and CD+G functionality.
-- [Sega Hardware Encyclopedia - Mega-CD peripherals](https://www.sega.jp/history/hard/mega-cd/devices.html) - describes the karaoke accessory, microphone mixing and vocal effects.

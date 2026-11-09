@@ -294,6 +294,10 @@
   --archive-tile: #064584;
   --archive-hover: #00346D;
   --archive-empty: #FFFDF2;
+  --archive-filled: #EAF2FF;
+  --archive-filled-hover: #D5E6FF;
+  --archive-filled-text: #064584;
+  --archive-accent: #064584;
   --retro-teal: #008080;
 }
 :root[data-theme="dark"] {
@@ -324,6 +328,10 @@
   --archive-tile: #115B60;
   --archive-hover: #19757B;
   --archive-empty: #242B38;
+  --archive-filled: #293C46;
+  --archive-filled-hover: #345563;
+  --archive-filled-text: #B9EEE6;
+  --archive-accent: #78D0C3;
 }
 
 html {
@@ -502,6 +510,11 @@ pre code {
 .main-nav a:hover,
 .main-nav a:focus-visible {
   color: var(--link);
+  text-decoration: none; /* Only the label is underlined, never the emoji. */
+}
+.main-nav a:hover .nav-text,
+.main-nav a:focus-visible .nav-text {
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 0.12em;
 }
@@ -1337,8 +1350,7 @@ pre code {
   .nav-list li a:focus-visible {
     background: var(--button-bg);
     color: var(--button-text);
-    text-decoration: underline;
-    text-underline-offset: 0.12em;
+    text-decoration: none; /* Leave the emoji undecorated on mobile as well. */
   }
   .main-nav[data-nav="open"] .nav-list {
     max-height: 600px;

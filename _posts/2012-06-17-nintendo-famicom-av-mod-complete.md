@@ -44,7 +44,7 @@ This is the same composite modification documented in the full guide, although d
 
 There's more photos in the [photo gallery](/goodies/).
 
-### Related posts
+### Related Posts
 
 - [Humble Beginnings: Nintendo Famicom Incoming](/humble-beginnings-nintendo-famicom-incoming/)
 - [Nintendo Famicom Composite AV Mod](/nintendo-famicom-composite-av-mod/)

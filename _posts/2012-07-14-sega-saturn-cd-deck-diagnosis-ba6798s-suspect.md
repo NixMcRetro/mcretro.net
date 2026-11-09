@@ -17,10 +17,10 @@ That makes it rather interesting when I've got a CD deck with a spindle motor ra
 
 For now I'm putting the white Saturn back on the shelf while I wait for parts and work out what to investigate next. We'll make you better, faster, stronger! Or at least get the disc spinning the right way, which would be a pretty good start.
 
-### Related posts
-
-- [Faulty Japanese Sega Saturn: CD Drive Problems](/faulty-japanese-sega-saturn-cd-drive-problems/)
-
 ### Sources
 
-- [ROHM BA6798S datasheet](https://www.alldatasheet.com/datasheet-pdf/pdf/36119/ROHM/BA6798S.html) - identifies the BA6798S as a four-channel H-bridge BTL driver for CD-player motors and actuators.
+- [ROHM: BA6798S Datasheet (Four-Channel H-Bridge BTL Driver)](https://www.alldatasheet.com/datasheet-pdf/pdf/36119/ROHM/BA6798S.html)
+
+### Related Posts
+
+- [Faulty Japanese Sega Saturn: CD Drive Problems](/faulty-japanese-sega-saturn-cd-drive-problems/)

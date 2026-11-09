@@ -64,11 +64,11 @@ The 44-pin connector carries both data and power, including 5 V and 12 V rails. 
 **40 MB ST-151L**
 - Candidate only. Reported as a 40 MB relative of the ST-125L.
 
-### Related posts
+### Sources
+
+- [IBM Files: PS/2 Model 25/30 (Direct-Bus HDD, Not IDE/ESDI)](https://www.ibmfiles.com/pages/ps2model25.htm)
+
+### Related Posts
 
 - [The Sega TeraDrive Model 3](/the-sega-teradrive-model-3/)
 - [Sega TeraDrive Model 3 Hard Drive Replacement](/sega-teradrive-model-3-hard-drive-replacement/)
-
-### Sources
-
-- [IBM Files - PS/2 Model 25 / 30](https://www.ibmfiles.com/pages/ps2model25.htm) - documents the proprietary direct-bus-attachment hard-drive arrangement used in early PS/2 systems and distinguishes it from standard IDE and ESDI.

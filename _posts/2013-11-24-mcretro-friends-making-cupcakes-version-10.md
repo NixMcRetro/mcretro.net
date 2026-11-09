@@ -20,7 +20,7 @@ We also learned that tsp stands for teaspoon, which is useful information to pos
 
 The flour situation wasn't especially promising either. I'd bought plain flour because the organic variety happened to be cheaper, and I was relying on baking powder to provide the rise. Unfortunately, I wasn't entirely confident about the measurements, and the mixture became increasingly runny as everything went into the bowl.
 
-I'd also forgotten to clean the baking trays, so we made do with layers of cupcake paper cases. With the little oven preheating to around 180 degrees Celsius, we spooned the mixture into the cases and hoped for the best. Naturally, I filled some of them much higher than recommended. They looked wonderful before cooking, which is the important part, isn't it?
+I'd also forgotten to clean the baking trays, so we made do with layers of cupcake paper cases. With the little oven preheating to around 180°C, we spooned the mixture into the cases and hoped for the best. Naturally, I filled some of them much higher than recommended. They looked wonderful before cooking, which is the important part, isn't it?
 
 The toaster oven didn't make matters any easier. Some cakes seemed to be cooking more quickly than others, and turning on the upper element produced an impressive amount of browning. A knife served as our testing instrument when I wanted to check whether the centres were cooked.
 

@@ -10,7 +10,7 @@ last_modified_at: 2026-10-18
 
 The Sega Mega Modem, model HAA-2951, sure was cutting-edge technology for 1990! This Japanese Mega Drive accessory used the telephone line for services such as game downloads. An early taste of Sega console networking, long before the Saturn and Dreamcast!
 
-Getting inside wasn't terribly dramatic. There are two clips, two screws and the long plastic mounting screw that holds the unit to the Mega Drive. Inside I found plenty of through-hole Rubycon electrolytics, mostly 100 uF and 10 uF, all rated at 85 °C. None of them appeared to have leaked, which was a pleasant discovery! Recapping them was still on my list, just not a job for this particular video.
+Getting inside wasn't terribly dramatic. There are two clips, two screws and the long plastic mounting screw that holds the unit to the Mega Drive. Inside I found plenty of through-hole Rubycon electrolytics, mostly 100 uF and 10 uF, all rated at 85°C. None of them appeared to have leaked, which was a pleasant discovery! Recapping them was still on my list, just not a job for this particular video.
 
 On the underside there's also an 8 Ω, 0.4 W speaker for enjoying the wonderful sounds of a modem. A cable tie helps keep things secured, which is the kind of practical decision I can appreciate. Sensible Sega indeed!
 
@@ -22,5 +22,5 @@ Enjoy the video. I also have a couple inspecting the internals of my Japanese Me
 
 ### Related Posts
 
-- Later inspection: [Internal Inspection of the Sega Mega Drive Model 1 (VA0) HAA-2510](/internal-inspection-of-the-sega-mega-drive-model-1-va0-haa-2510/)
-- Later inspection: [Internal Inspection of the Sega Mega-CD (VA0) HAA-2910](/internal-inspection-of-the-sega-mega-cd-va0-haa-2910/)
+- [Internal Inspection of the Sega Mega Drive Model 1 (VA0) HAA-2510](/internal-inspection-of-the-sega-mega-drive-model-1-va0-haa-2510/)
+- [Internal Inspection of the Sega Mega-CD (VA0) HAA-2910](/internal-inspection-of-the-sega-mega-cd-va0-haa-2910/)

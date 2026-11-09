@@ -12,7 +12,7 @@ We haven't done a _Cooking with_ segment in quite some time. As you can see not 
 
 This time I've decided to make something resembling a McDonald's McMuffin, except with a hash brown thrown in for good measure. I've got English muffins, eggs, cheese and a packet of frozen hash browns. Surely this can't be too difficult. It's just breakfast food, after all!
 
-The hash browns went into the oven at around 220 degrees Celsius, which gave me half an hour to work out the rest of the recipe. The muffins were straightforward enough, although I wasn't entirely sure whether I should toast one side or both. Then came the eggs. I've eaten plenty of them, but actually cooking one properly is another matter entirely.
+The hash browns went into the oven at around 220°C, which gave me half an hour to work out the rest of the recipe. The muffins were straightforward enough, although I wasn't entirely sure whether I should toast one side or both. Then came the eggs. I've eaten plenty of them, but actually cooking one properly is another matter entirely.
 
 Finding the right equipment turned into an adventure. I had an egg ring that looked promising until I noticed some of its coating was coming away, so that one wasn't going anywhere near my breakfast. Then there was the important business of finding a frying pan that looked reasonably suitable.
 

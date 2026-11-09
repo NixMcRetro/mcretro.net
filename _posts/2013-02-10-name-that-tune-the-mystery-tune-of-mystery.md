@@ -8,7 +8,7 @@ categories: [music, youtube]
 
 {% include youtube.html id="EVim5fFjMJk" %}
 
-Here's the faster version of a little musical mystery that I still haven't managed to solve. I first uploaded the tune in August 2012, then wondered in February 2013 whether it might sound different if it came from an old game running at PAL 50Hz or NTSC 60Hz. Some older games tied their music playback to the refresh rate, and developers didn't always account for the difference. So I sped it up to see if it sounded any more familiar. Or possibly even wrong(er).
+Here's the faster version of a little musical mystery that I still haven't managed to solve. I first uploaded the tune in August 2012, then wondered in February 2013 whether it might sound different if it came from an old game running at PAL 50 Hz or NTSC 60 Hz. Some older games tied their music playback to the refresh rate, and developers didn't always account for the difference. So I sped it up to see if it sounded any more familiar. Or possibly even wrong(er).
 
 ### Original Recording: August 2012
 

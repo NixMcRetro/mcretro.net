@@ -59,8 +59,8 @@ An old-fashioned nature homepage featuring a frog, a lizard and a few original p
 
 - **[Fish Tank World](/homepages/fishtankworld/)**: Still needs its proper historical content restored.
 - **[GeoCities](/homepages/geocities/)**: Still needs its proper historical content restored.
-- **[File Server](/files/)**: Not ready yet. The promised 10 KB/s downloads remain a dream!
-- **[Photo Gallery](/photos/)**: The gallery is still being restored.
+- **File Server**: Not ready yet. The promised 10 KB/s downloads remain a dream!
+- **Photo Gallery**: The gallery is still being restored.
 
 </details>
 

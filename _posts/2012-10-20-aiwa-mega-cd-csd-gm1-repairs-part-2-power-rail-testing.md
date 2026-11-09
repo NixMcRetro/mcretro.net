@@ -89,12 +89,12 @@ I've also got a replacement optical pickup for the CD mechanism, so perhaps I'll
 
 Thanks again to Dutchy over on the [ASSEMbler Games forum](https://web.archive.org/web/20130920141927/http://www.assemblergames.com/forums/showthread.php?42186-Aiwa-Mega-CD-CSD-GM1-Mainboard-Repair) for reminding me that voltage regulators need some headroom above their regulated output. That little reminder may have saved the day!
 
-### Related posts
+### Sources
+
+- [STMicroelectronics: L78 Datasheet (L7806A, 2 V Typical Dropout at 1 A)](https://www.st.com/resource/en/datasheet/l78.pdf)
+- [HSE: Electrical Safety FAQ (Live Work and Stored Energy)](https://www.hse.gov.uk/electricity/faq.htm)
+
+### Related Posts
 
 - [Aiwa Sega Mega-CD CSD-GM1 Repairs Part 1: Power Restored](/aiwa-sega-mega-cd-csd-gm1-repairs-part-1-power-restored/)
 - [Aiwa Sega Mega-CD CSD-GM1 KSS-210B Laser Replacement](/aiwa-sega-mega-cd-csd-gm1-kss-210b-laser-replacement/)
-
-### Sources
-
-- [STMicroelectronics - L78: Positive voltage regulator ICs](https://www.st.com/resource/en/datasheet/l78.pdf) - the L7806A electrical-characteristics table gives a typical 2 V dropout at 1 A and 25 °C; actual headroom depends on the part and operating conditions.
-- [HSE - Electrical safety: Frequently asked questions](https://www.hse.gov.uk/electricity/faq.htm) - explains the hazards of live electrical work and the need to isolate supplies and release stored energy.

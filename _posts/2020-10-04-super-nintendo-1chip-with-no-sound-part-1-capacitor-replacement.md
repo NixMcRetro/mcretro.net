@@ -16,7 +16,7 @@ Once the motherboard was removed from the case, I had a closer look at the compo
 
 The capacitors looked physically present, which is a start, but that doesn't necessarily mean they're electrically healthy. I've already got most of the replacement parts on hand, so I decided to get on with removing the old ones. There were a couple of 33 uF capacitors still on order, which meant the job wouldn't be completely finished today.
 
-I had much better luck removing the surface-mount capacitors with the soldering iron set to around 300 degrees Celsius rather than 350. The pads came away looking surprisingly tidy, and I didn't manage to turn any of the capacitors into tiny fireworks. Always a bonus!
+I had much better luck removing the surface-mount capacitors with the soldering iron set to around 300°C rather than 350. The pads came away looking surprisingly tidy, and I didn't manage to turn any of the capacitors into tiny fireworks. Always a bonus!
 
 There was also a large replacement capacitor that didn't quite fit within the original board markings. Fortunately, there appeared to be enough clearance for it to sit without interfering with the surrounding components. I replaced the fuse as well while everything was apart.
 
@@ -26,5 +26,5 @@ We'll finish those remaining capacitors in the next part and see whether the Sup
 
 **Related Posts**
 
-- Next: [Super Nintendo 1CHIP with No Sound - Part 2 Final Capacitors](/super-nintendo-1chip-with-no-sound-part-2-final-capacitors/)
+- [Super Nintendo 1CHIP with No Sound - Part 2 Final Capacitors](/super-nintendo-1chip-with-no-sound-part-2-final-capacitors/)
 - [Super Nintendo 1CHIP with No Sound - Part 3 Bypassing S-MIX Chip](/super-nintendo-1chip-with-no-sound-part-3-bypassing-s-mix-chip/)

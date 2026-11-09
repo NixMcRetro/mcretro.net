@@ -20,7 +20,7 @@ I was delighted to see Arnott's Jatz back on the menu after those terrible uncoo
 
 ![](/assets/images/2021/img_0763.jpg)
 
-I not only managed to have the big clunker pause on one of the return cycles at 666mL donated but my camera decided to capture in synthwave-esque colours instead of the expected boring blue. Awesome!
+I not only managed to have the big clunker pause on one of the return cycles at 666 mL donated but my camera decided to capture in synthwave-esque colours instead of the expected boring blue. Awesome!
 
 ![](/assets/images/2021/img_0762.jpg)
 
@@ -44,9 +44,9 @@ It all came from a "grab bag" keycap kit. Mostly misprints and a tonne of F12 ke
 
 ### Sources
 
-- [Australian Red Cross Lifeblood - Haemoglobin, iron health and blood donation](https://www.lifeblood.com.au/donors/blood-plasma-platelets/learn/iron-health)
+- [Australian Red Cross Lifeblood: Haemoglobin and Iron Health](https://www.lifeblood.com.au/donors/blood-plasma-platelets/learn/iron-health)
 
 ### Related Posts
 
 - [Blood Plasma Donation #12](/blood-plasma-donation-12/)
-- Calculator build: [Tentaku Mechanical Calculator](/tentaku-mechanical-calculator/)
+- [Tentaku Mechanical Calculator](/tentaku-mechanical-calculator/)

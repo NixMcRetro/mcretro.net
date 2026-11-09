@@ -8,7 +8,7 @@ categories: [news]
 
 ![weight-2016-nov](/assets/images/2016/img_0593.jpg)
 
-Now that I've lost over 45kg from my starting weight of 114.7kg, yes that's under 70kg, I should write down some key points that helped me lose weight. I'm not a medical doctor of any sort. This has been based on my personal experience - yours will vary.
+Now that I've lost over 45 kg from my starting weight of 114.7 kg, yes that's under 70 kg, I should write down some key points that helped me lose weight. I'm not a medical doctor of any sort. This has been based on my personal experience - yours will vary.
 
 10% energy is used by digestion processes. 20% energy is used by exercise. 70% energy is used by the body maintaining itself.
 
@@ -16,7 +16,7 @@ What did I do? I typically over the course of the past 10 months stuck to anywhe
 
 Carbs, protein, and fats all need to be consumed in a good ratio. For the most part, I have been using 40-50% energy from fat, 20% from carbs, 30% from protein. Note this is energy from each group, not weight. Fat has almost twice the energy of carbs and protein per gram. Carbs and protein are virtually the same, how cool is that? Also, avoid alcohol, it's got more energy in it than life itself.
 
-**Protein** is a tricky one as having too much of it can cause damage to the kidneys. Too little results in insufficient repair/maintenance parts for your body. I've been sticking to somewhere between the RDI and double the RDI (64-120g) per day split over three meals - at least 20g per meal.
+**Protein** is a tricky one as having too much of it can cause damage to the kidneys. Too little results in insufficient repair/maintenance parts for your body. I've been sticking to somewhere between the RDI and double the RDI (64-120 g) per day split over three meals - at least 20 g per meal.
 
 **Fats** are important and are great at satisfying hunger. Avoid trans and saturated fats. Some saturated fats are good though, no need to eliminate them completely. The body can always make saturated fats if it needs them. Trans fats, on the other hand, are useless. Polyunsaturated fats are the best (salmon), monounsaturated come in at second place and are fine to eat lots of. Get those polyunsaturated fats though, they are the best of the bunch.
 

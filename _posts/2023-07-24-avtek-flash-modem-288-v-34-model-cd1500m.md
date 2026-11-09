@@ -22,7 +22,7 @@ Here's a surface-mount capacitor I'm pretty sure I didn't replace because it was
 
 ![](/assets/images/2023/img_1041.jpg)
 
-At least the power supply was well built (solid). It's a NetComm 9V AC 1A (240V AC 50Hz) with markings WW069 and N14311.
+At least the power supply was well built (solid). It's a NetComm 9 V AC 1 A (240 V AC 50 Hz) with markings WW069 and N14311.
 
 ![](/assets/images/2023/img_1043.jpg)
 

@@ -21,7 +21,7 @@ Here's just a quick test on some 7806 voltage regulators. I've been getting ques
 - 7815: 15 V
 
 
-A 7806 should produce roughly 6 V with a suitable input supply and load. As a linear regulator, it dissipates the input-to-output voltage difference as heat and needs voltage headroom. For the ST L7806C, the datasheet gives a typical dropout of 2 V at 1 A and a junction temperature of 25 °C; that is not a guaranteed value for every 7806 or operating condition.
+A 7806 should produce roughly 6 V with a suitable input supply and load. As a linear regulator, it dissipates the input-to-output voltage difference as heat and needs voltage headroom. For the ST L7806C, the datasheet gives a typical dropout of 2 V at 1 A and a junction temperature of 25°C; that is not a guaranteed value for every 7806 or operating condition.
 
 
 The ST L78 family includes current limiting, thermal shutdown and safe-area protection, and can deliver over 1 A with adequate heatsinking. Those protections do not make every part or test setup immune to damage.
@@ -39,6 +39,6 @@ The same family includes the 5 V 7805 regulators used in Super Nintendo and Mega
 ### Sources
 
 
-- [STMicroelectronics - L78 Positive Voltage Regulator ICs](https://www.st.com/resource/en/datasheet/l78.pdf) - manufacturer datasheet, including the L7806C characteristics and test conditions.
-- [SnesLab - 7805](https://sneslab.net/wiki/7805) - SNES-specific 5 V regulator context.
-- [ConsoleMods Wiki - Comparison of Power Supplies](https://consolemods.org/wiki/Comparison_of_Power_Supplies) - retro-console power-supply context.
+- [STMicroelectronics: L78 Datasheet (L7806C Characteristics and Test Conditions)](https://www.st.com/resource/en/datasheet/l78.pdf)
+- [SnesLab: 7805 Voltage Regulator (SNES, 5 V)](https://sneslab.net/wiki/7805)
+- [ConsoleMods: Retro Console Power Supply Comparison](https://consolemods.org/wiki/Comparison_of_Power_Supplies)

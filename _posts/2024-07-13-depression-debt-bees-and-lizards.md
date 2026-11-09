@@ -72,10 +72,10 @@ See what the bupropion made me do? This post is massive. Oh well, until next tim
 
 ### Sources
 
-- [Efficacy of bupropion and the selective serotonin reuptake inhibitors in the treatment of major depressive disorder with high levels of anxiety (anxious depression): a pooled analysis of 10 studies](https://pubmed.ncbi.nlm.nih.gov/18605812/)
-- [Prometrium 100 and 200 mg - Consumer Medicine Information, published by MIMS May 2022](/assets/uploads/prometrium-100-and-200-mg-published-by-mims-may-2022.pdf)
-- [A position statement on the hormonal management of adult transgender and gender diverse individuals](https://auspath.org.au/wp-content/uploads/2023/01/mja250259-position-statement-adult-transgender-2022.pdf)
-- [Standards of Care for the Health of Transgender and Gender Diverse People, Version 8](https://pmc.ncbi.nlm.nih.gov/articles/PMC9553112/)
+- [Bupropion Versus SSRIs for Anxious Depression (Pooled Analysis of 10 Studies)](https://pubmed.ncbi.nlm.nih.gov/18605812/)
+- [Prometrium 100 mg and 200 mg: Consumer Medicine Information (MIMS, May 2022)](/assets/uploads/prometrium-100-and-200-mg-published-by-mims-may-2022.pdf)
+- [AusPATH: Hormonal Management of Transgender and Gender Diverse Adults (Position Statement)](https://auspath.org.au/wp-content/uploads/2023/01/mja250259-position-statement-adult-transgender-2022.pdf)
+- [Standards of Care for Transgender and Gender Diverse Health (Version 8)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9553112/)
 
 ### Related Posts
 

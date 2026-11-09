@@ -44,4 +44,4 @@ Assembly was straightforward. A&N Laboratory's build video above goes through th
 
 ### Related Posts
 
-- Later keycap experiment: [Blood Plasma Donation #13](/blood-plasma-donation-13/)
+- [Blood Plasma Donation #13](/blood-plasma-donation-13/)

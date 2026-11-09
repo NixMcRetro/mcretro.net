@@ -26,6 +26,6 @@ Unfortunately, it seems we are living in interesting times. It's time to protect
 
 ### Sources
 
-- [Children's Health Queensland - Health Service Directive: Treatment of gender dysphoria in children (FAQs, updated 30th January 2025)](https://www.childrens.health.qld.gov.au/__data/assets/pdf_file/0034/354499/QCH_QCGS_FAQs_Health-Service-Directive_Gender-care.pdf)
-- [Children's Health Queensland - Queensland Children's Gender Service External Clinical Service Evaluation](https://www.childrens.health.qld.gov.au/__data/assets/pdf_file/0036/289719/Queensland-Childrens-Gender-Service-External-Clinical-Services-Evaluation.pdf)
+- [Children's Health Queensland: Gender Care Health Service Directive FAQs (Updated 30 January 2025)](https://www.childrens.health.qld.gov.au/__data/assets/pdf_file/0034/354499/QCH_QCGS_FAQs_Health-Service-Directive_Gender-care.pdf)
+- [Children's Health Queensland: Queensland Children's Gender Service External Evaluation](https://www.childrens.health.qld.gov.au/__data/assets/pdf_file/0036/289719/Queensland-Childrens-Gender-Service-External-Clinical-Services-Evaluation.pdf)
 - [ABC News - Meta Hateful Conduct policy changes](https://www.abc.net.au/news/2025-01-10/meta-hateful-conduct-policy-changes-alarm-lgbtq-advocates/104800042)

@@ -14,7 +14,7 @@ In a future video, after we reset the VoIP box (PAP2T or similar), we should be 
 
 ### Related Posts
 
-- Earlier: [2022: Year of the Dial-up Modem](/2022-year-of-the-dial-up-modem/)
-- Next: [Avtek MegaPlus V.32bis - Resetting the Linksys PAP2T](/avtek-megaplus-v-32bis-resetting-the-linksys-pap2t/)
+- [2022: Year of the Dial-up Modem](/2022-year-of-the-dial-up-modem/)
+- [Avtek MegaPlus V.32bis - Resetting the Linksys PAP2T](/avtek-megaplus-v-32bis-resetting-the-linksys-pap2t/)
 - [Avtek MegaPlus V.32bis - Failed Negotiation](/avtek-megaplus-v-32bis-failed-negotiation/)
 - [Avtek MegaPlus V.32bis - Carrier Detect](/avtek-megaplus-v-32bis-carrier-detect/)

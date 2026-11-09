@@ -47,4 +47,4 @@ Del.
 - [Cyberpunk 2077 (2020, PS4 Live Stream, Day 1)](/cyberpunk-2077-ps4-live-stream-day-1/)
 - [Cyberpunk 2077 (2020, PS4 Live Stream) - The 2022 Update](/cyberpunk-2077-the-2022-update/)
 - [Cyberpunk 2077 PS4 1.51 Patch Update](/cyberpunk-2077-ps4-1-51-patch-update/)
-- Earlier: [Cyberpunk 2077 PS4 1.51 Patch Update... Update](/cyberpunk-2077-ps4-1-51-patch-update-update/)
+- [Cyberpunk 2077 PS4 1.51 Patch Update... Update](/cyberpunk-2077-ps4-1-51-patch-update-update/)

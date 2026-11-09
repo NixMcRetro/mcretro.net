@@ -34,7 +34,7 @@ Slowly but surely I'll piece together bits and bobs from here, there and everywh
 
 ### Related Posts
 
-- Earlier inspection: [Internal Inspection of the Sega Mega Modem HAA-2951](/internal-inspection-of-the-sega-mega-modem-haa-2951/)
-- Earlier inspection: [Internal Inspection of the Sega Mega Drive Model 1 (VA0) HAA-2510](/internal-inspection-of-the-sega-mega-drive-model-1-va0-haa-2510/)
-- Earlier GeoCities update: [Sega Mega Drive Jailbars: A Filler Video](/sega-mega-drive-jailbars-a-filler-video/)
-- Later worklog: [The GeoCities Archive Rebuild Blog](/the-geocities-archive-rebuild-blog/)
+- [Internal Inspection of the Sega Mega Modem HAA-2951](/internal-inspection-of-the-sega-mega-modem-haa-2951/)
+- [Internal Inspection of the Sega Mega Drive Model 1 (VA0) HAA-2510](/internal-inspection-of-the-sega-mega-drive-model-1-va0-haa-2510/)
+- [Sega Mega Drive Jailbars: A Filler Video](/sega-mega-drive-jailbars-a-filler-video/)
+- [The GeoCities Archive Rebuild Blog](/the-geocities-archive-rebuild-blog/)

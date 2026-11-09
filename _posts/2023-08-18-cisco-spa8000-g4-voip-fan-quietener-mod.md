@@ -114,6 +114,6 @@ I put more photos of this device in the [photo gallery](/goodies), if you are in
 
 - [Nichicon - Application Guidelines for Aluminum Electrolytic Capacitors](https://www.nichicon.co.jp/english/series_items/catalog_pdf/e-aluminum.pdf)
 
-### Related posts
+### Related Posts
 
 - [Cisco SPA8000-G4 8-Port IP Telephony Gateway Recap Overview](/cisco-spa8000-g4-8-port-ip-telephony-gateway-recap-overview/)

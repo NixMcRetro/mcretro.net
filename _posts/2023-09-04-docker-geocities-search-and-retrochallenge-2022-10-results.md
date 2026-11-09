@@ -41,7 +41,7 @@ Regardless, dockerising it has been tricky, but fun. I am definitely making prog
 - [Apache Nutch](https://nutch.apache.org/)
 - [Project Blacklight](https://projectblacklight.org/)
 
-### Related posts
+### Related Posts
 
 - [The GeoCities Archive Rebuild Blog](/the-geocities-archive-rebuild-blog/)
 - [The GeoCities Archive Rebuild Goes Live](/the-geocities-archive-rebuild-goes-live/)

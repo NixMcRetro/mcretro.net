@@ -48,11 +48,11 @@ Every time I would visit this area there'd be other people eating hot dogs. I gu
 
 ### Sources
 
-- [CD Projekt Red - PS4 system update addresses the corrupted-data launch error (archived 2nd April 2022)](https://web.archive.org/web/20220402195154/https://support.cdprojektred.com/en/cyberpunk/playstation/sp-technical/issue/2090/ps4-system-update-addresses-cannot-start-the-application-the-data-is-corrupted-issue-occuring-after-updating-to-1-5)
+- [CD Projekt Red: PS4 System Update for Cyberpunk 2077 Corrupted-Data Error (Archived 2 April 2022)](https://web.archive.org/web/20220402195154/https://support.cdprojektred.com/en/cyberpunk/playstation/sp-technical/issue/2090/ps4-system-update-addresses-cannot-start-the-application-the-data-is-corrupted-issue-occuring-after-updating-to-1-5)
 
 ### Related Posts
 
 - [Cyberpunk 2077 (2020, PS4 Live Stream, Day 1)](/cyberpunk-2077-ps4-live-stream-day-1/)
 - [Cyberpunk 2077 (2020, PS4 Live Stream) - The 2022 Update](/cyberpunk-2077-the-2022-update/)
-- Earlier: [Cyberpunk 2077 PS4 1.51 Patch Update](/cyberpunk-2077-ps4-1-51-patch-update/)
-- Next: [Cyberpunk 2077 PS4 Final Thoughts](/cyberpunk-2077-ps4-final-thoughts/)
+- [Cyberpunk 2077 PS4 1.51 Patch Update](/cyberpunk-2077-ps4-1-51-patch-update/)
+- [Cyberpunk 2077 PS4 Final Thoughts](/cyberpunk-2077-ps4-final-thoughts/)

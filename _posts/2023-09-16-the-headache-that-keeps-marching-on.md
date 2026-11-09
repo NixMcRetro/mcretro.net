@@ -43,9 +43,9 @@ That said, if this continues on much longer I think getting stabbed by a needle 
 ### Sources
 
 - [NHS - Pregabalin](https://www.nhs.uk/medicines/pregabalin/)
-- [Australian Commission on Safety and Quality in Health Care - Lyrica consumer medicine information](https://www.safetyandquality.gov.au/medicine-finder/lyrica)
+- [Australian Commission on Safety and Quality in Health Care: Lyrica Consumer Medicine Information](https://www.safetyandquality.gov.au/medicine-finder/lyrica)
 
-### Related posts
+### Related Posts
 
 - [Nix's Brains! CT Scan - September 2023](/nixs-brains-ct-scan-september-2023/)
 - [Nix's Brains! MRI Scan - September 2023](/nixs-brains-mri-scan-september-2023/)

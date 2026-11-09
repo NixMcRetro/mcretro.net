@@ -146,7 +146,7 @@ I never got around to looking into it too far though. It's been good. Assembler 
 - [Apple - Mac OS X intro(2): file and pathname limits](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man2/intro.2.html)
 - [GNU Findutils - Hard Links](https://www.gnu.org/software/findutils/manual/html_node/find_html/Hard-Links.html)
 - [GNU Coreutils - rm invocation](https://www.gnu.org/s/coreutils/manual/html_node/rm-invocation.html)
-- [Unix & Linux Stack Exchange - Delete files with names that appear to begin with '?' in command line](https://unix.stackexchange.com/questions/463913/delete-files-with-names-that-appear-to-begin-with-in-command-line)
+- [Unix & Linux Stack Exchange: Deleting Filenames Appearing to Begin with '?'](https://unix.stackexchange.com/questions/463913/delete-files-with-names-that-appear-to-begin-with-in-command-line)
 - [Apache HTTP Server - Binding to Addresses and Ports](https://httpd.apache.org/docs/2.4/bind.html)
 
 ### Related Posts

@@ -960,7 +960,7 @@ e38cbd8ec0e8b12aaead0bf85951b17b02d19f38bc7315eeb37d8743ec64e759  GeoCities_Rebu
 - [GNU Coreutils - du invocation](https://www.gnu.org/software/coreutils/manual/html_node/du-invocation.html)
 - [Tecmint - 21 Useful Tar Command Examples for Every Linux Sysadmin](https://web.archive.org/web/20230324065846/https://www.tecmint.com/18-tar-command-examples-in-linux/)
 
-### Related posts
+### Related Posts
 
 - [The GeoCities Archive Rebuild Blog](/the-geocities-archive-rebuild-blog/)
 - [The GeoCities Archive Rebuild Goes Live](/the-geocities-archive-rebuild-goes-live/)

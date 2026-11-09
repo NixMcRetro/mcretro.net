@@ -31,7 +31,7 @@ The rush is on to get as much video processed as possible and uploaded to YouTub
 ### Sources
 
 - [MDN - Evolution of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP)
-- [RFC 1945 - Hypertext Transfer Protocol, including the HTTP/0.9 simple request](https://www.rfc-editor.org/rfc/rfc1945.html)
+- [RFC Editor: RFC 1945, HTTP/1.0 (Section 4.1, HTTP/0.9 Simple Requests)](https://www.rfc-editor.org/rfc/rfc1945.html)
 
 ### Related Posts
 

@@ -40,5 +40,5 @@ Writing this in August 2023, I'm expecting the next local cicada season to start
 
 ### Sources
 
-- [Harvey and Thompson (2006) - Energetics of emergence in the cicadas, Cyclochila australasiae and Abricta curvicosta](https://doi.org/10.1016/j.jinsphys.2006.05.006)
+- [Harvey and Thompson (2006): Cicada Emergence Energetics (Cyclochila australasiae and Abricta curvicosta)](https://doi.org/10.1016/j.jinsphys.2006.05.006)
 - [Lindsay Popple - Silver Princess, Yoyetta celis](https://dr-pop.net/celis-481.htm)

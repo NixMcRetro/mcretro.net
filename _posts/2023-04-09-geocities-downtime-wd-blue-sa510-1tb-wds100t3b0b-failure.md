@@ -38,8 +38,8 @@ Not too long later I received a replacement and copied GeoCities back across, co
 
 ### Sources
 
-- [Western Digital - WD Blue SA510 SATA SSDs Critical Firmware Update Available](https://web.archive.org/web/20230519165540/https://support-en.wd.com/app/answers/detailweb/a_id/50208)
-- [Western Digital / SanDisk - WD Blue SA510 SATA SSD Critical Firmware Update and release history](https://support-en.sandisk.com/app/answers/detailweb/a_id/50208/~/wd-blue-sa510-sata-ssd-critical-firmware-update)
+- [Western Digital Archive: WD Blue SA510 SATA SSD Critical Firmware Update (19 May 2023)](https://web.archive.org/web/20230519165540/https://support-en.wd.com/app/answers/detailweb/a_id/50208)
+- [Western Digital / SanDisk: WD Blue SA510 Critical Firmware Update and Release History](https://support-en.sandisk.com/app/answers/detailweb/a_id/50208/~/wd-blue-sa510-sata-ssd-critical-firmware-update)
 
 ### Related Posts
 

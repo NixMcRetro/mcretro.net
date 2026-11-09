@@ -70,6 +70,6 @@ I could honestly research these for years, the end result being analysis paralys
 - [Healthdirect Australia - Antidepressants](https://www.healthdirect.gov.au/antidepressants)
 - [Healthdirect Australia - Obstructive sleep apnoea](https://www.healthdirect.gov.au/obstructive-sleep-apnoea)
 
-### Related posts
+### Related Posts
 
 - [Sleep Hygiene and Sleep Health - The Data](/sleep-hygiene-and-sleep-health-the-data/)

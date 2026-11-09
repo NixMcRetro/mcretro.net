@@ -45,7 +45,7 @@ I suppose in an absolute worst case, I end up dropping the course and deferring 
 ### Sources
 
 - [TGA - Pregabalin and gabapentin](https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/pregabalin-and-gabapentin)
-- [Australian Commission on Safety and Quality in Health Care - Ativan consumer medicine information](https://www.safetyandquality.gov.au/medicine-finder/ativan)
+- [Australian Commission on Safety and Quality in Health Care: Ativan Consumer Medicine Information](https://www.safetyandquality.gov.au/medicine-finder/ativan)
 
 ### Related Posts
 

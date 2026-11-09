@@ -53,7 +53,7 @@ Interestingly, the falx was not the finding the radiologist actually wanted foll
 - [Falx Cerebri Ossification: CT and MRI Evaluation](https://pubmed.ncbi.nlm.nih.gov/24351265/)
 - [Imaging of the septum pellucidum: normal, variants and pathology](https://pmc.ncbi.nlm.nih.gov/articles/PMC10607410/)
 
-### Related posts
+### Related Posts
 
 - [The Headache That Keeps Marching On](/the-headache-that-keeps-marching-on/)
 - [Nix's Brains! MRI Scan - September 2023](/nixs-brains-mri-scan-september-2023/)

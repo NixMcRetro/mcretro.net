@@ -78,7 +78,7 @@ I guess I technically started UTS for the spring period and am still finding bee
 ### Sources
 
 - [TGA - Pregabalin and gabapentin safety alert](https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/pregabalin-and-gabapentin)
-- [Australian Commission on Safety and Quality in Health Care - Rivotril consumer medicine information](https://www.safetyandquality.gov.au/medicine-finder/rivotril)
+- [Australian Commission on Safety and Quality in Health Care: Rivotril Consumer Medicine Information](https://www.safetyandquality.gov.au/medicine-finder/rivotril)
 
 ### Related Posts
 

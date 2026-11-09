@@ -83,7 +83,7 @@ This also corrects my earlier [Macintosh Classic, RaSCSI and The Internet](/maci
 Here's some of the pages I followed to get this to work, a big thanks to each of the authors! RFC 1945 also spells out the difference between the simple HTTP/0.9 request and a full HTTP/1.0 request.
 
 - [MDN - Evolution of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP)
-- [Metalbabble - The final frontier: connecting a Macintosh SE to the Internet with a Raspberry Pi](https://metalbabble.wordpress.com/2020/02/08/the-final-frontier-connecting-a-macintosh-se-to-the-internet-with-a-raspberry-pi/)
+- [Metalbabble: Connecting a Macintosh SE to the Internet with a Raspberry Pi (2020)](https://metalbabble.wordpress.com/2020/02/08/the-final-frontier-connecting-a-macintosh-se-to-the-internet-with-a-raspberry-pi/)
 - [Web browsers for antique Macs](http://www.mirrorservice.org/sites/browsers.evolt.org/browsers/macweb/macweb.htm)
 - [Kafsemo - Talking HTTP/0.9, 1.0, 1.1](http://www.kafsemo.org/2015/01/03_talking-HTTP-0.9%2C1.0%2C1.1.html)
 - [Toby Mackenzie - Supporting HTTP 0.9](http://www.tobymackenzie.com/blog/2018/02/18/supporting-http-0-9)

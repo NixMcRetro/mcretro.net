@@ -36,12 +36,12 @@ Eventually I managed to get some video output and signs of communication from th
 
 Doesn't that silkscreen look attractive on the back of the SNASM2 card? I've barely started getting the hardware running, and already I'm planning to pull it apart again. Next on the list are disassembly, chip dumping, and a lot more photography.
 
+**Sources**
+
+- [Exodus Emulator TechDocs: SNASM Mega-CD and SNASM2 PC Interface](https://techdocs.exodusemulator.com/Console/SegaMegaDrive/Hardware.html)
+
 **Related Posts**
 
 - [Cross Products SNASM Mega-CD Development Unit Disassembly](/cross-products-snasm-mega-cd-development-unit-disassembly/)
 - [SNASM2 Sega Mega-CD Emulation Card on a 486DX4 100MHz](/snasm2-mega-cd-emulation-card-on-a-486dx4-100mhz/)
 - [SNASM2 ISA Card on a Pentium-class Motherboard](/snasm2-isa-card-on-a-pentium-class-motherboard/)
-
-**Sources**
-
-- [Exodus Emulator TechDocs - Sega Mega Drive Development Hardware](https://techdocs.exodusemulator.com/Console/SegaMegaDrive/Hardware.html) - documents the SNASM Mega-CD and SNASM2 PC-interface architecture.

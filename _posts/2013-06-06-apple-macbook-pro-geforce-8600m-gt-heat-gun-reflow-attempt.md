@@ -31,4 +31,4 @@ I'd previously tried a similar experiment with a PC video card, and that card ha
 
 **Sources**
 
-- [Apple Support - MacBook Pro: Distorted Video or No Video Issues (Archived)](https://web.archive.org/web/20100105062655/http://support.apple.com/kb/TS2377) - archived Apple support notice covering affected GeForce 8600M GT MacBook Pro systems and Apple's service response.
+- [Apple Support Archive: MacBook Pro GeForce 8600M GT Video Issues (TS2377)](https://web.archive.org/web/20100105062655/http://support.apple.com/kb/TS2377)

@@ -20,14 +20,14 @@ The comparison to a Mega EverDrive is about loading game code without constantly
 
 So there you go, a working Western Technologies Genesis Development Card, revision D. There's certainly more to explore here, and I'm rather pleased we've managed to get something running on it.
 
-### Related posts
+### Sources
+
+- [Genesis Programming FAQ: SegaDev Card and SEGALOAD.EXE](https://gamefaqs.gamespot.com/genesis/916377-genesis/faqs/9755)
+- [Mega EverDrive User Manual, March 2012](https://stoneagegamer.com/content/flash/legacy/megaed/Mega_EverDrive_Manual_ENGLISH_PCBv1.00_FWv2_OSv1.pdf)
+- [Charles MacDonald and Bock: SegaDev Hardware and Original Software](https://www.smspower.org/forums/12038-ZAXZ80HInCircuitEmulatorER308ERX308PWasWhatsInADevkitAnyway)
+
+### Related Posts
 
 - [Western Technologies Sega Dev Card Software Overview](/western-technologies-sega-dev-card-software-overview/)
 - [Western Technologies Sega Dev Card SEGALOAD.EXE](/western-technologies-sega-dev-card-segaloadexe/)
 - [Western Technologies Sega Dev Card Demo Code](/western-technologies-sega-dev-card-demo-code/)
-
-### Sources
-
-- [Genesis Programming FAQ - Western Technologies SegaDev Card and SEGALOAD.EXE](https://gamefaqs.gamespot.com/genesis/916377-genesis/faqs/9755)
-- [Mega EverDrive User Manual, March 2012](https://stoneagegamer.com/content/flash/legacy/megaed/Mega_EverDrive_Manual_ENGLISH_PCBv1.00_FWv2_OSv1.pdf)
-- [Charles MacDonald and Bock - SegaDev hardware inspection and original software](https://www.smspower.org/forums/12038-ZAXZ80HInCircuitEmulatorER308ERX308PWasWhatsInADevkitAnyway)

@@ -23,7 +23,7 @@ Please remember that these results apply to the PSIO 1.1 hardware and 1.1A softw
 - PlayStation: SCPH-5502
 - CD deck: removed
 
-### Related posts
+### Related Posts
 
 - [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)
 - [PSIO Prototype 1.1 Game Demo: Tekken 3 (Debug Bootloader)](/psio-prototype-11-game-demo-tekken-3-debug-bootloader/)

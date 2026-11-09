@@ -34,10 +34,10 @@ It can still fade or discolour, though. And if there's dust settling on your Meg
 
 The paint was looking encouraging by the end of this first session, but the finished consoles would have to wait until everything had dried properly and I could put the cases back together.
 
-**Related Posts**
-
-- [Super NES Spray Painting Completed](/super-nes-spray-painting-completed/)
-
 **Sources**
 
 - [Canadian Conservation Institute - Caring for plastics and rubbers](https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/caring-plastics-rubbers.html)
+
+**Related Posts**
+
+- [Super NES Spray Painting Completed](/super-nes-spray-painting-completed/)

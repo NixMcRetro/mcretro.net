@@ -20,6 +20,6 @@ This is an older motherboard rather than a 1CHIP model, and the capacitors are a
 
 At this stage I'm not entirely sure what's causing the distortion. The corrosion is certainly suspicious, but we'll have to investigate further before declaring anything fixed.
 
-### Related posts
+### Related Posts
 
 - [Super Nintendo Serial UP15971140 PPU1 Trace Repair](/super-nintendo-serial-up15971140-ppu1-trace-repair/)

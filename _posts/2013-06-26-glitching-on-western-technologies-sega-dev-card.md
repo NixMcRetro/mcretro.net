@@ -18,7 +18,7 @@ The development software was apparently an early alpha or beta version, so that 
 
 So enjoy ten minutes of Sonic doing things that Sonic was probably never intended to do. Be sure to listen to the audio glitches as well. Some of them are absolutely ridiculous!
 
-### Related posts
+### Related Posts
 
 - [Western Technologies Sega Dev Card Demo](/western-technologies-sega-dev-card-demo/)
 - [Western Technologies Sega Dev Card SEGALOAD.EXE](/western-technologies-sega-dev-card-segaloadexe/)

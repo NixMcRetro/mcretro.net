@@ -30,7 +30,7 @@ A big thank you to Jackhead over at ASSEMbler Games, who helped me with the hard
 
 So there we have it. A 486DX4-100, a collection of rather interesting ISA cards, and a working connection to the Sega Mega-CD development hardware. This machine is a beast!
 
-### Related posts
+### Related Posts
 
 - [Sega SNASM2 and CD Emulation Cards with Gravis UltraSound](/sega-snasm2-and-cd-emulation-cards-with-gravis-ultrasound/)
 - [IntelDX4 OverDrive 100 MHz 486 Workstation and ISA Cards](/inteldx4-overdrive-100mhz-486-workstation-and-isa-cards/)

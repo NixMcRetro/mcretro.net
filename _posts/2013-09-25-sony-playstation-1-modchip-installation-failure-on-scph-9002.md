@@ -34,12 +34,12 @@ So this wasn't a successful installation, and I'm certainly not going to pretend
 
 That's the power of flash! Or, in this particular case, the power of learning from a spectacularly unsuccessful afternoon.
 
+**Sources**
+
+- [Microchip - PIC12F629/675 Data Sheet](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/41190G.pdf)
+
 **Related Posts**
 
 - [Sony PlayStation Modchip Programming Failure with a PIC12C508A](/sony-playstation-modchip-programming-failure-with-pic12c508a/)
 - [Sony PlayStation 1 Modchip Installation on SCPH-9002 Update](/sony-playstation-1-modchip-installation-on-scph-9002-update/)
 - [Sony PlayStation 1 Modchip Installation Success on SCPH-9002](/sony-playstation-1-modchip-installation-success-on-scph-9002/)
-
-**Sources**
-
-- [Microchip - PIC12F629/675 Data Sheet](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/41190G.pdf)

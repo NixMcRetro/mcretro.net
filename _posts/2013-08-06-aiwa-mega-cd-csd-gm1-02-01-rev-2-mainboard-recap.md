@@ -22,6 +22,6 @@ The capacitor work was progressing nicely, but there were still a couple of outs
 
 Came across a few problems on this one, never fear there are always more parts on order. One day these units will shine with perfection. Well maybe not exactly perfection, but they'll function alright!
 
-### Related posts
+### Related Posts
 
 - [Aiwa Mega-CD CSD-GM1 Unit-02 Mainboard Cross-Test with Both Game Units](/aiwa-mega-cd-csd-gm1-unit-02-mainboard-cross-test-with-both-game-units/)

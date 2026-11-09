@@ -32,10 +32,10 @@ This particular recording stops at the end of the capacitor replacement. I hadn'
 
 And for the most part, I think we can label this one as a partial win? I mean we got the CD drive LED to light up? On to the next part, Volume check!
 
-**Related Posts**
-
-- [Aiwa Sega Mega-CD CSD-GM1 (Part 2: Volume Check)](/aiwa-sega-mega-cd-csd-gm1-part-2-volume-check/)
-
 **Sources**
 
 - [Nichicon - Aluminum Electrolytic Capacitor Technical Notes](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)
+
+**Related Posts**
+
+- [Aiwa Sega Mega-CD CSD-GM1 (Part 2: Volume Check)](/aiwa-sega-mega-cd-csd-gm1-part-2-volume-check/)

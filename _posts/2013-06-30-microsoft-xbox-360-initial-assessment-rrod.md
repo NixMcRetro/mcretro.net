@@ -22,10 +22,10 @@ For now, this is just the initial assessment. I haven't recorded a secondary err
 
 Hopefully we'll get this little machine back into action and playing some *Burnout Revenge*. That would be rather nice!
 
-### Related posts
-
-- [Xbox 360 RROD Repair Attempt Serial 072261382807](/xbox-360-rrod-repair-attempt-serial-072261382807/)
-
 ### Sources
 
 - [XenonLibrary - Xbox 360 Errors](https://xenonlibrary.com/wiki/Errors)
+
+### Related Posts
+
+- [Xbox 360 RROD Repair Attempt Serial 072261382807](/xbox-360-rrod-repair-attempt-serial-072261382807/)

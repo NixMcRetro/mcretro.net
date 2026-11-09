@@ -28,13 +28,13 @@ These drives are also old enough that a few bad blocks aren't particularly surpr
 
 Just another little trip through early IBM and Sega computer history. The past is where we all came from. The future is doomed!
 
+**Sources**
+
+- [IBM Files - Personal System/2 Model 25 and 30](https://www.ibmfiles.com/pages/ps2model25.htm)
+
 **Related Posts**
 
 - [Sega TeraDrive Hard Drive Interface Investigation](/sega-teradrive-hard-drive-interface-investigation/)
 - [Sega TeraDrive WDL-330P Hard Drive Capacitor Replacement](/sega-teradrive-wdl-330p-hard-drive-capacitor-replacement/)
 - [Current State of the WDL-330P 30MB Hard Drives](/current-state-of-the-wdl-330p-30mb-hard-drives/)
 - [Sega TeraDrive WDL-330P Comparison](/sega-teradrive-wdl-330p-comparison/)
-
-**Sources**
-
-- [IBM Files - Personal System/2 Model 25 and 30](https://www.ibmfiles.com/pages/ps2model25.htm)

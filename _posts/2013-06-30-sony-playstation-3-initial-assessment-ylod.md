@@ -18,11 +18,11 @@ I've ordered a repair kit from the UK, so hopefully it'll arrive in a couple of 
 
 **Later technical note:** YLOD is a failure indication rather than a diagnosis of one particular component. Shims and hard-drive replacement aren't universal fixes, and modern PS3 troubleshooting can use SYSCON error logs to help narrow down the underlying problem. I wasn't using that method in this initial 2013 assessment.
 
-### Related posts
-
-- [Sony PlayStation 3 YLOD Repair Attempt](/sony-playstation-3-ylod-repair-attempt/)
-
 ### Sources
 
 - [PS3 Developer Wiki - Boot modes: YLOD](https://www.psdevwiki.com/ps3/Boot_modes)
 - [PS3 Developer Wiki - Syscon Error Codes](https://www.psdevwiki.com/ps3/Syscon_Error_Codes)
+
+### Related Posts
+
+- [Sony PlayStation 3 YLOD Repair Attempt](/sony-playstation-3-ylod-repair-attempt/)

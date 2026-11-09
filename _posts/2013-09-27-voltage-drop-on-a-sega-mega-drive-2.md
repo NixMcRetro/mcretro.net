@@ -18,6 +18,6 @@ By the time the supply was down around 4.5 V, the console powered off. Bringing 
 
 Some of the effects looked rather familiar after my earlier Aiwa Mega-CD experiments, where insufficient supply voltage had caused problems on the Mega Drive side. Similar-looking corruption doesn't necessarily mean the two machines have the same fault, but it's an interesting comparison.
 
-### Related posts
+### Related Posts
 
 - [Aiwa Mega-CD CSD-GM1 Repairs Part 2: Power Rail Testing](/aiwa-mega-cd-csd-gm1-repairs-part-2-power-rail-testing/)

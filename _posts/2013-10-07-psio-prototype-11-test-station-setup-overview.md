@@ -30,10 +30,10 @@ Please remember that this is prototype hardware, so the game compatibility and b
 - CD deck: removed
 - video processing: Micomsoft XRGB-mini Framemeister
 
-### Related posts
-
-- [PSIO Prototype Hardware 1.1 Overview](/psio-prototype-hardware-11-overview/)
-
 ### Sources
 
 - [PSX-SPX - Mods - PAL/NTSC Color Mods](https://psx-spx.consoledev.net/ps1/pinouts/mods-pal-ntsc-color-mods/)
+
+### Related Posts
+
+- [PSIO Prototype Hardware 1.1 Overview](/psio-prototype-hardware-11-overview/)

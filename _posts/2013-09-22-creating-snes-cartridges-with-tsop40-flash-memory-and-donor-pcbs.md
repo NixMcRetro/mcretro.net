@@ -44,13 +44,13 @@ Still, we've managed to build and test the programmer adapter, read an original 
 
 *Donkey Kong Country 3* will have to wait its turn. I've got more boards to order, more chips to solder and a SuperCIC modification to get through before I can finish this little adventure. Not bad for a weekend spent turning unwanted sports games into something considerably more interesting!
 
-**Related Posts**
-
-- [GQ-4X Flashing EarthBound onto TSOP40 AM29F032B Flash Memory](/gq-4x-flashing-earthbound-onto-tsop40-am29f032b-flash-memory/)
-- [27C801 EPROM SNES Donor Cartridge Demo: Super Bomberman 2](/27c801-eprom-snes-donor-cartridge-demo-super-bomberman-2/)
-
 **Sources**
 
 - [NesDev Forums - What kind of eproms do snes games use?](https://web.archive.org/web/20231014212322/https://forums.nesdev.org/viewtopic.php?t=5605)
 - [RetroHacker - Mounting 29F032 on TSOP adapter](https://web.archive.org/web/20160313064923/http://retrohacker.info/viewtopic.php?f=13&t=6)
 - [RetroHacker - Swapbin EPROM Method](https://web.archive.org/web/20140921210156/http://retrohacker.info/viewtopic.php?f=13&t=18)
+
+**Related Posts**
+
+- [GQ-4X Flashing EarthBound onto TSOP40 AM29F032B Flash Memory](/gq-4x-flashing-earthbound-onto-tsop40-am29f032b-flash-memory/)
+- [27C801 EPROM SNES Donor Cartridge Demo: Super Bomberman 2](/27c801-eprom-snes-donor-cartridge-demo-super-bomberman-2/)

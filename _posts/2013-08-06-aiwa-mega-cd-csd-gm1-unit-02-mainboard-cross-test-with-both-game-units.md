@@ -20,7 +20,7 @@ There are still some patterns and interference running through the picture, thou
 
 Still, both Game Units have now given me something useful to look at on the same mainboard. Not a bad result for a collection of parts that's been fighting me for so long!
 
-### Related posts
+### Related Posts
 
 - [Aiwa Mega-CD CSD-GM1 02-01 Rev 2 Mainboard Recap](/aiwa-mega-cd-csd-gm1-02-01-rev-2-mainboard-recap/)
 - [Aiwa Mega-CD Game Unit BIOS Socket Installation and Trace Repair](/aiwa-mega-cd-game-unit-bios-socket-installation-and-trace-repair/)

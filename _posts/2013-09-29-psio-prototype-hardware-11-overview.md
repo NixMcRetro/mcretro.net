@@ -20,6 +20,6 @@ I've already got a list of games I'd like to try with it. The next step will be 
 
 For now, it's rather exciting to have an early PSIO prototype to experiment with. Let's see how it goes!
 
-### Related posts
+### Related Posts
 
 - [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)

@@ -18,10 +18,10 @@ There's also a MAD-1 chip and 64K of SRAM on the board, along with another capac
 
 This is for the upcoming EarthBound cartridge I'm making from terrible EA Sports games. If you object, you have no soul! Let's face it, your old saves probably weren't that good anyway. Do better this time, you've got ten years... Go!
 
-### Related posts
-
-- [GQ-4X Flashing EarthBound onto TSOP40 AM29F032B Flash Memory](/gq-4x-flashing-earthbound-onto-tsop40-am29f032b-flash-memory/)
-
 ### Sources
 
 - [SNESdev Wiki - Save File Formats](https://snes.nesdev.org/wiki/Save_file_formats)
+
+### Related Posts
+
+- [GQ-4X Flashing EarthBound onto TSOP40 AM29F032B Flash Memory](/gq-4x-flashing-earthbound-onto-tsop40-am29f032b-flash-memory/)

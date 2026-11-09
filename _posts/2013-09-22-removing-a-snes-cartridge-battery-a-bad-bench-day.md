@@ -20,10 +20,10 @@ The holder sat much too high, leaving a rather ridiculous gap where the two halv
 
 SNES cartridges that use battery-backed SRAM rely on the battery to retain their save data while the cartridge is unpowered. If the old save matters, back it up before deliberately disconnecting the battery. As for this particular cartridge, I'll have to find a holder with a better profile before giving the whole exercise another go.
 
-**Related Posts**
-
-- [Super Nintendo / SNES Cartridge Battery Holder Installation](/super-nintendo-snes-cartridge-battery-holder-installation/)
-
 **Sources**
 
 - [SNESdev Wiki - Save File Formats](https://snes.nesdev.org/wiki/Save_file_formats)
+
+**Related Posts**
+
+- [Super Nintendo / SNES Cartridge Battery Holder Installation](/super-nintendo-snes-cartridge-battery-holder-installation/)

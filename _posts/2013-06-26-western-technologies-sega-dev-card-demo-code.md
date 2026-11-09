@@ -14,7 +14,7 @@ The software includes an example program and its corresponding source files, whi
 
 Unfortunately, I haven't got the compiler set up yet, so we're just having a look at the example as it stands. There's plenty of potential here, even if my first programming masterpiece ends up being nothing more than a different line of text!
 
-### Related posts
+### Related Posts
 
 - [Western Technologies Sega Dev Card Software Overview](/western-technologies-sega-dev-card-software-overview/)
 - [Western Technologies Sega Dev Card Demo](/western-technologies-sega-dev-card-demo/)

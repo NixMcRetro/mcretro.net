@@ -32,7 +32,7 @@ So the assembly is complete, and we've made a rather useful discovery about the 
 
 See if you can spot the moment where the raving cats appear. Hopefully the next time we visit this project, SuperNick (Nick) will have a fully working x0xb0x and we can make some proper tunes!
 
-### Related posts
+### Related Posts
 
 - [x0xb0x 1.0 Adafruit Edition: Quick Peek](/x0xb0x-10-adafruit-edition-quick-peek/)
 - [x0xb0x 1.0 Adafruit Edition - Progress Report](/x0xb0x-10-adafruit-edition-progress-report/)

@@ -22,6 +22,6 @@ Sadly, replacing the capacitors didn't actually solve the original faults affect
 
 I eventually ran out of "film" while recording, because my camera needs a new, bigger SD card. Apparently a weekend full of PlayStation, Xbox and Super Nintendo repair videos uses rather more space than I expected!
 
-### Related posts
+### Related Posts
 
 - [Super Nintendo Serial UP17548016 Capacitor Replacement](/super-nintendo-serial-up17548016-capacitor-replacement/)

@@ -10,7 +10,7 @@ categories: [repairs, sega, youtube]
 
 Another why not video? This time I replaced the video encoder and AV socket on Mega Drive 2 serial **440005313**, but it didn't fix my issues. Rather than bore you with 45 minutes of film that doesn't achieve the goal I had hoped for, enjoy the shortened version! ;)
 
-### Related posts
+### Related Posts
 
 - [Sega Mega Drive 2 Video Distortion (Serial 440005313)](/sega-mega-drive-2-video-distortion-serial-440005313/)
 - [Replacing VRAM on a Sega Mega Drive 2](/replacing-vram-on-a-sega-mega-drive-2/)

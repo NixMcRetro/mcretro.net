@@ -16,7 +16,7 @@ The close call came when a capacitor pad lifted off the PCB. Fortunately, there 
 
 The drive already had bad blocks, and the video doesn't turn it into a healthy drive. A later check showed no *new* bad sectors during that test, which was a relief, but the damaged connection and the drive's existing problems were two separate issues.
 
-### Related posts
+### Related Posts
 
 - [Sega TeraDrive IBM WDL-330P 30 MB Hard Drive Overview](/sega-teradrive-ibm-wdl-330p-30mb-hard-drive-overview/)
 - [Current State of the WDL-330P 30MB Hard Drives](/current-state-of-the-wdl-330p-30mb-hard-drives/)

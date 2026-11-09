@@ -16,12 +16,12 @@ First I'll be looking for obvious corrosion, damaged parts and anything else tha
 
 Replacing deteriorated capacitors might help, but I haven't established what's causing each fault yet. Hopefully we'll get all three consoles running again. Stay tuned, because there's plenty more Super Nintendo repair work to come!
 
-### Related posts
+### Sources
+
+- [Nichicon: Aluminum Electrolytic Capacitors (Technical Notes)](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)
+
+### Related Posts
 
 - [Super Nintendo Serial UP15971140 PPU1 Trace Repair](/super-nintendo-serial-up15971140-ppu1-trace-repair/)
 - [Damaged S-MIX on a SNES SNSP-CPU-1CHIP-02 Mainboard](/damaged-s-mix-on-a-snes-snsp-cpu-1chip-02-mainboard/)
 - [Super Nintendo Serial UP17548016 - Repaired](/super-nintendo-serial-up17548016-repaired/)
-
-### Sources
-
-- [Nichicon - General Descriptions of Aluminum Electrolytic Capacitors (Technical Notes)](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)

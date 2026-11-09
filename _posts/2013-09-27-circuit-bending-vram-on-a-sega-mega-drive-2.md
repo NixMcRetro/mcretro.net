@@ -22,6 +22,6 @@ In the end, circuit bending produced some pretty amusing visual effects, even if
 
 Sometimes there's nothing better to do on a Sunday than poke around with an old game console and see what happens. Preferably one that's already broken!
 
-### Related posts
+### Related Posts
 
 - [Circuit Bending a Sega Mega Drive 2](/circuit-bending-a-sega-mega-drive-2/)

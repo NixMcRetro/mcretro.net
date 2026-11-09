@@ -32,7 +32,7 @@ So that's the current state of my 486 Mega-CD development tower. A decent amount
 
 Who needs a sensible computer anyway?
 
-### Related posts
+### Related Posts
 
 - [SNASM2 Sega Mega-CD Emulation Card on a 486DX4-100](/snasm2-mega-cd-emulation-card-on-a-486dx4-100mhz/)
 - [Sega SNASM2 and CD Emulation Cards with Gravis UltraSound](/sega-snasm2-and-cd-emulation-cards-with-gravis-ultrasound/)

@@ -28,11 +28,11 @@ Mmmm. No external L2 cache on this 68K... yay!
 
 Apple shipped the LC 475 with a 25 MHz Motorola 68LC040, 8 KB of internal L1 cache and no external L2 cache. The LC version of the 68040 also lacks the full 68040's integrated floating-point unit. Mine is still stock CPU-wise at this point, but I've got a feeling there will be more experimenting with this little Macintosh.
 
-### Related posts
-
-- [Apple Macintosh LC 475: System Setup Demo](/apple-macintosh-lc-475-system-setup-demo/)
-- [Apple Macintosh LC 475 Overclocking to 33MHz](/apple-macintosh-lc-475-overclocking-to-33-mhz/)
-
 ### Sources
 
-- [Apple - Macintosh LC 475 Technical Specifications](https://support.apple.com/en-la/112204) - lists the 25 MHz 68LC040 processor, 8 KB L1 cache, no external L2 cache and no FPU.
+- [Apple: Macintosh LC 475 Technical Specifications (68LC040)](https://support.apple.com/en-la/112204)
+
+### Related Posts
+
+- [Apple Macintosh LC 475: System Setup Demo](/apple-macintosh-lc-475-system-setup-demo/)
+- [Apple Macintosh LC 475: Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33-mhz/)

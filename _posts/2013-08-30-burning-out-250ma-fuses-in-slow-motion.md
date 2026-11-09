@@ -1,5 +1,5 @@
 ---
-title: "Burning Out 250mA Fuses in Slow Motion"
+title: "Burning Out 250 mA Fuses in Slow Motion"
 author: "Nix McRetro"
 date: 2013-08-30T15:42:33.000+10:00
 last_modified_at: 2026-10-18

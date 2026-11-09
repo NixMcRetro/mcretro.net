@@ -1,5 +1,5 @@
 ---
-title: "75kg Weight Goal Achieved!"
+title: "75 kg Weight Goal Achieved!"
 author: "Nix McRetro"
 date: 2016-09-13T07:18:45.000+10:00
 last_modified_at: 2026-11-04
@@ -34,4 +34,4 @@ As for cholesterol and blood glucose, I suppose eating less carbohydrate and sug
 
 ### Sources
 
-- [Bosy-Westphal et al. - Accuracy of bioelectrical impedance consumer devices for measurement of body composition (2008)](https://pubmed.ncbi.nlm.nih.gov/20054195/)
+- [Bosy-Westphal et al.: Bioelectrical Impedance Consumer Device Accuracy (2008)](https://pubmed.ncbi.nlm.nih.gov/20054195/)

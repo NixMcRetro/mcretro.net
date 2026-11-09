@@ -1,5 +1,5 @@
 ---
-title: "3.6V Lithium Battery Corrosion Damage"
+title: "3.6 V Lithium Battery Corrosion Damage"
 author: "Nix McRetro"
 date: 2013-01-14T10:43:59.000+11:00
 categories: [apple, ibm-pc, repairs]

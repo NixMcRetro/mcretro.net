@@ -15,6 +15,7 @@ Here comes the downtime. As my NBN connection regresses to 4G home internet, exp
 I initially thought it should be as simple as pressing a few different buttons from the ones I normally press when installing ddclient on my server. Not quite. `ddclient` can keep a DNS record pointed at a changing public address, but it cannot punch an inbound connection through a carrier's NAT that I don't control. I couldn't really test alternatives until the new network was up and running. I guess stay tuned and, if [Cloudflare's Always Online](https://www.cloudflare.com/en-au/always-online/) has an archived copy available, enjoy this page in the meantime. Until we next meet, be excellent to each other and to other creatures too! 🙃
 
 🪲 🐌 🪳 🐟 🦎 🦗
+{: .creature-signoff }
 
 ### Sources
 

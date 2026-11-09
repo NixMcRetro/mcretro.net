@@ -34,11 +34,11 @@ Unfortunately, I managed to lose the video footage of the game actually running.
 
 There's still plenty I want to do with this machine, including having a play with TSOP flashing. For now, though, we've gone from a motherboard covered in corrosion to an Xbox that boots and plays *Burnout Revenge*. That's a result worth celebrating!
 
+**Sources**
+
+- [ConsoleMods: Original Xbox Clock Capacitor Leakage and Trace Damage](https://consolemods.org/wiki/Xbox:Clock_Capacitor)
+
 **Related Posts**
 
 - [Original Xbox Initial Damage Assessment](/original-xbox-initial-damage-assessment/)
 - [Original Xbox Softmod to TSOP Flash Project](/original-xbox-softmod-to-tsop-flash-project/)
-
-**Sources**
-
-- [ConsoleMods Wiki - Xbox Clock Capacitor](https://consolemods.org/wiki/Xbox:Clock_Capacitor) - documents the alkaline leakage problem and trace damage associated with the older clock capacitors.

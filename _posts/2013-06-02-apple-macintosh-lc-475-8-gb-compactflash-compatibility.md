@@ -20,7 +20,7 @@ I've also got a 2 GB CompactFlash card running a cut-down Disk Tools system, whi
 
 Eight gigabytes in a Macintosh LC 475! A rather ridiculous amount of storage for a computer of this vintage, but that's hardly going to stop me from trying. The card is recognised, so now I just need to get it properly formatted. With a bit of luck, and possibly quite a few more attempts, I'll get there!
 
-### Related posts
+### Related Posts
 
 - [Apple Macintosh LC 475: Solid-State SCSI Storage with a PCD-60B Card Reader](/apple-macintosh-lc-475-solid-state-scsi-storage-with-a-pcd-60b-card-reader/)
 - [Apple Macintosh LC 475: 4 GB Hitachi Microdrive Testing](/apple-macintosh-lc-475-4-gb-hitachi-microdrive-testing/)

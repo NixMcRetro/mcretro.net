@@ -18,4 +18,4 @@ Microsoft also had a broader power-cord replacement programme for some early Xbo
 
 ### Sources
 
-- [Microsoft - Microsoft Announces Power Cord Replacement for Xbox](https://news.microsoft.com/source/2005/02/17/microsoft-announces-power-cord-replacement-for-xbox/) - historical context for Microsoft's power-cord replacement programme and the broader electrical safety issue affecting some early Xbox consoles.
+- [Microsoft: Xbox Power Cord Replacement Announcement (17 February 2005)](https://news.microsoft.com/source/2005/02/17/microsoft-announces-power-cord-replacement-for-xbox/)

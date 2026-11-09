@@ -40,11 +40,11 @@ There's also the small matter of finally playing *Burnout 3: Takedown*. I'd been
 
 Since playing with the Raspberry Pi, I have also become considerably less hostile towards Linux. I'll need to find another operating system to be bitter about. Windows 8, perhaps?
 
+**Sources**
+
+- [ConsoleMods: Original Xbox FAQ (Softmods, TSOP Flashing and Board Revisions)](https://consolemods.org/wiki/Xbox:Frequently_Asked_Questions_(FAQ)/en)
+
 **Related Posts**
 
 - [XBOX (Original) Softmod Recovery](/xbox-original-softmod-recovery/)
 - [Original Xbox TSOP Flash Overview](/xbox-original-tsop-flash-overview/)
-
-**Sources**
-
-- [ConsoleMods Wiki - Xbox FAQ](https://consolemods.org/wiki/Xbox:Frequently_Asked_Questions_(FAQ)/en) - distinguishes softmods from firmware modification and documents flashable original Xbox revisions.

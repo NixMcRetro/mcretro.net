@@ -18,7 +18,7 @@ After experimenting with much smaller partitions and working my way back up, it 
 
 So there we have it! An 8 GB CompactFlash card can still be used by dividing the space into smaller partitions. Two gigabytes per partition is an enormous amount of storage for a machine like this anyway. Even the 2 GB cards I've been using already offer more than enough room for a healthy collection of old Macintosh games. Fantastic! I'm glad we've finally got that one sorted!
 
-### Related posts
+### Related Posts
 
 - [Apple Macintosh LC 475: 4 GB Hitachi Microdrive Testing](/apple-macintosh-lc-475-4-gb-hitachi-microdrive-testing/)
 - [Apple Macintosh LC 475: Solid-State SCSI Storage with a PCD-60B Card Reader](/apple-macintosh-lc-475-solid-state-scsi-storage-with-a-pcd-60b-card-reader/)

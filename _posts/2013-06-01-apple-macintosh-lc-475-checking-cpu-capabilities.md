@@ -20,7 +20,7 @@ Whether I've ended up with a mislabelled processor, a defective chip or somethin
 
 At least the LC 475 itself has been taking all these experiments rather well. If only the processor would cooperate! In the meantime, I've got a few more CompactFlash cards to play with, including an 8 GB one that should make for another interesting experiment.
 
-### Related posts
+### Related Posts
 
 - [Apple Macintosh LC 475: Removing the Socketed CPU](/apple-macintosh-lc-475-removing-the-socketed-cpu/)
 - [Apple Macintosh LC 475: Overclocking to 33 MHz](/apple-macintosh-lc-475-overclocking-to-33-mhz/)

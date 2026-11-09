@@ -27,6 +27,6 @@ Please remember that this is PSIO hardware 1.1 with software 1.1A, so these resu
 - PlayStation: SCPH-5502
 - CD deck: removed
 
-### Related posts
+### Related Posts
 
 - [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)

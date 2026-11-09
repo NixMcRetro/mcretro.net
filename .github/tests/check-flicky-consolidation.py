@@ -29,5 +29,20 @@ source_path = Path('_posts/2024-03-10-flicky-the-floury-baker-cicada.md')
 source = source_path.read_text(encoding='utf-8')
 assert '\u2014' not in source and '\u2013' not in source, 'Disallowed em/en dash in Flicky article'
 assert source.count('<summary markdown="span">') == 10, 'Expected ten original dated headings'
+expected_dates = [
+    '27th February 2023', '28th February 2023',
+    '1st March 2023', '2nd March 2023', '3rd March 2023',
+    '4th March 2023', '5th March 2023', '6th March 2023',
+    '7th March 2023', '8th March 2023',
+]
+summary_headings = [
+    line.split('<summary markdown="span">', 1)[1].split('</summary>', 1)[0]
+    for line in source.splitlines() if '<summary markdown="span">' in line
+]
+assert len(summary_headings) == len(expected_dates), 'Expected ten Flicky chapter dates'
+for day, (heading, date) in enumerate(zip(summary_headings, expected_dates), 1):
+    assert heading.startswith(f'{day:02d}. ') and heading.endswith(f' - {date}'), (
+        f'Incorrect heading punctuation or ordinal date for Flicky day {day}: {heading}'
+    )
 assert not list(Path('_posts').glob('*-flicky-the-floury-baker-day-*.md')), 'Unpublished Flicky Markdown should be removed'
 print("PASS: original hero, 10 exclusive chapters, 10 videos, 6 sources, no redirects, original R08 correction.")

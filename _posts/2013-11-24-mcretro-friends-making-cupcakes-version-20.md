@@ -18,7 +18,7 @@ We began with the self-raising flour and caster sugar, followed by the butter, e
 
 Then came the mixing. We didn't have an electric mixer available, so everything had to be stirred by hand. That takes a little longer, particularly when the butter isn't completely cooperative, but the resulting mixture was considerably thicker than our first effort. Already a promising sign!
 
-The little toaster oven was set to around 180 degrees Celsius, and we carefully distributed the mixture between the cupcake cases. Well, *carefully* might be overstating it slightly. We still managed to get batter in places where batter probably shouldn't go, and SuperNick (Nick) was doing a magnificent job of ensuring the entire process remained entertaining.
+The little toaster oven was set to around 180°C, and we carefully distributed the mixture between the cupcake cases. Well, *carefully* might be overstating it slightly. We still managed to get batter in places where batter probably shouldn't go, and SuperNick (Nick) was doing a magnificent job of ensuring the entire process remained entertaining.
 
 After some experimenting with the oven's elements and the cooking time, we finally had something worth eating. They'd risen much more nicely, the centres were properly cake-like and there was none of the horrible omelette experience from version 1.0. The bottoms had browned a little more than I'd hoped, but these were actual cupcakes instead of an omelette in disguise. Fantastic!
 
@@ -36,7 +36,7 @@ The revised recipe makes approximately 24 small cupcakes or 12 larger ones, depe
 
 **Method**
 
-Put the ingredients into a large bowl and mix until reasonably combined. Divide the mixture between cupcake cases, leaving enough room for them to rise. Bake in a preheated oven at approximately 180 degrees Celsius until cooked through, checking the centres rather than relying entirely on the clock.
+Put the ingredients into a large bowl and mix until reasonably combined. Divide the mixture between cupcake cases, leaving enough room for them to rise. Bake in a preheated oven at approximately 180°C until cooked through, checking the centres rather than relying entirely on the clock.
 
 If you're using a small toaster oven like mine, keep a close eye on the elements because the tops and bottoms can brown unevenly. Different ovens behave differently, so use the temperature as a starting point and make sure the cakes are cooked before serving.
 

@@ -16,7 +16,7 @@ Inside, the original Game Boy is a lovely little piece of hardware. There are se
 
 The missing vertical lines seemed to be coming from the connection between the LCD ribbon and the display, rather than the entire screen being faulty. I'd read about carefully warming the bonded connection to restore contact, so I thought I'd give it a go.
 
-Naturally, I started with the soldering iron far too hot. At around 350 degrees Celsius, I managed to soften some of the material more than I'd intended, and the lines actually became worse. Wonderful! That's a rather convincing way to discover that a delicate LCD connection doesn't appreciate being attacked with excessive heat.
+Naturally, I started with the soldering iron far too hot. At around 350°C, I managed to soften some of the material more than I'd intended, and the lines actually became worse. Wonderful! That's a rather convincing way to discover that a delicate LCD connection doesn't appreciate being attacked with excessive heat.
 
 After eventually working out how to adjust the temperature on the Hakko, I turned it down considerably and tried again. This time I used much gentler heat, carefully working along the affected area of the ribbon connection and watching what happened to the display.
 

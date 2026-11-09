@@ -20,7 +20,7 @@ Model number: MK-80200-50
 Serial number: AD51165249  
 Motherboard type: VA1 PAL  
 CD drive type: JVC ENR-007D (20-pin)  
-Power supply: 5-pin Type B (GND, GND, 3.3V, 5V, 9V)
+Power supply: 5-pin Type B (GND, GND, 3.3 V, 5 V, 9 V)
 
 * * *
 
@@ -32,7 +32,7 @@ Model number: HST-3210
 Serial number: P52031710  
 Motherboard type: VA SG (VA2)  
 CD drive type: JVC ENR-011A  
-Power supply: 5-pin Type B (GND, GND, 3.3V, 5V, 9V)
+Power supply: 5-pin Type B (GND, GND, 3.3 V, 5 V, 9 V)
 
 * * *
 
@@ -44,7 +44,7 @@ Model number: RG-JX2(X)
 Serial number: 13127071  
 Motherboard type: VA SG (VA4)  
 CD drive type: JVC ENR-011A  
-Power supply: 5-pin Type B (GND, GND, 3.3V, 5V, 9V)
+Power supply: 5-pin Type B (GND, GND, 3.3 V, 5 V, 9 V)
 
 * * *
 
@@ -56,7 +56,7 @@ Model number: MK-80200A-50
 Serial number: 165046630  
 Motherboard type: VA PAL SD (VA5)  
 CD drive type: JVC ENR-011A  
-Power supply: 5-pin Type B (GND, GND, 3.3V, 5V, 9V)
+Power supply: 5-pin Type B (GND, GND, 3.3 V, 5 V, 9 V)
 
 * * *
 
@@ -68,7 +68,7 @@ Model number: MK-80200A-50
 Serial number: 167015869  
 Motherboard type: VA7 PAL  
 CD drive type: JVC ENR-013A in the album caption; visible PCB marked SANYO 610-6185-20 (complete assembly identification unresolved)  
-Power supply: 5-pin Type C (GND, GND, 5V, 5V, 12V)
+Power supply: 5-pin Type C (GND, GND, 5 V, 5 V, 12 V)
 
 * * *
 
@@ -80,7 +80,7 @@ Model number: MK-80000A
 Serial number: AF67091875 (album image filename; not visible in this photograph)  
 Motherboard type: VA7 USA SD  
 CD drive type: JVC ENR-013A in the album caption; visible PCB marked SANYO 610-6185-20 (complete assembly identification unresolved)  
-Power supply: 4-pin Type C (GND, GND, 5V, 5V)
+Power supply: 4-pin Type C (GND, GND, 5 V, 5 V)
 
 * * *
 
@@ -92,7 +92,7 @@ Model number: MMP-11
 Serial number: B69006875  
 Motherboard type: VA9  
 CD drive type: JVC ENR-013A in the album caption; visible PCB marked SANYO 610-6185-20 (complete assembly identification unresolved)  
-Power supply: 4-pin Type C (GND, GND, 5V, 5V)
+Power supply: 4-pin Type C (GND, GND, 5 V, 5 V)
 
 * * *
 
@@ -104,7 +104,7 @@ Model number: MK-80200A-50
 Serial number: 179000021  
 Motherboard type: VA9  
 CD drive type: Sanyo 610-6185-30 with Trap Board  
-Power supply: 5-pin Type C (GND, GND, 5V, 5V, 12V)
+Power supply: 5-pin Type C (GND, GND, 5 V, 5 V, 12 V)
 
 * * *
 
@@ -116,7 +116,7 @@ Model number: MK-80200A-50
 Serial number: AD69035903  
 Motherboard type: VA9  
 CD drive type: JVC ENR-013A in the album caption; visible PCB marked SANYO 610-6185-20 (complete assembly identification unresolved)  
-Power supply: 5-pin Type C (GND, GND, 5V, 5V, 12V)
+Power supply: 5-pin Type C (GND, GND, 5 V, 5 V, 12 V)
 
 * * *
 
@@ -128,7 +128,7 @@ Model number: MK-80000A
 Serial number: BF7A003080  
 Motherboard type: VA10 OCU (USA)  
 CD drive type: Sanyo 610-6294-30 with Trap Board  
-Power supply: 4-pin Type C (GND, GND, 5V, 5V)
+Power supply: 4-pin Type C (GND, GND, 5 V, 5 V)
 
 * * *
 
@@ -140,7 +140,7 @@ Model number: RG-JX2(Z)
 Serial number: 09295551  
 Motherboard type: VA13 (JPN)  
 CD drive type: JVC HQA-001A  
-Power supply: 4-pin Type C (GND, GND, 5V, 5V)
+Power supply: 4-pin Type C (GND, GND, 5 V, 5 V)
 
 ### Sources
 

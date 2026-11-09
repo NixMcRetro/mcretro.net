@@ -744,7 +744,7 @@ There's now a GeoCities favicon.ico in the title bar. It looks like the favicon 
 
 Since just before 7am we have been rebuilding the sitemap.xml to reflect the lack of empty folders and blank index.html files. This will likely take the rest of the day.
 
-After this has completed, I've allocated some time to spend browsing the GeoCities via [Jump™](/homepages/geocities). I'll live stream this browsing session over one of my [YouTube channels](/channels). This will be done with the MiSTer which feels like a 486 running at 33MHz. Armed with Windows 98 and Internet Explorer 5.0, I'll dial into the world wide web (WWW) through my two Banksia SP56 modems at ~28.8k. I've got an [MT32-pi](https://github.com/dwhinham/mt32-pi) hooked up so I'll be rocking out to any MIDIs I come across. Stay tuned! :city_sunrise:
+After this has completed, I've allocated some time to spend browsing the GeoCities via [Jump™](/homepages/geocities). I'll live stream this browsing session over one of my [YouTube channels](/channels). This will be done with the MiSTer which feels like a 486 running at 33 MHz. Armed with Windows 98 and Internet Explorer 5.0, I'll dial into the world wide web (WWW) through my two Banksia SP56 modems at ~28.8k. I've got an [MT32-pi](https://github.com/dwhinham/mt32-pi) hooked up so I'll be rocking out to any MIDIs I come across. Stay tuned! :city_sunrise:
 
 * * *
 
@@ -940,7 +940,7 @@ And all is well... Well, not found because it isn’t supposed to be showing all
 - [Apache HTTP Server - mod_status](https://httpd.apache.org/docs/2.4/mod/mod_status.html)
 - [GeoCities Rebuild for Older Browsers - ACMS Forum](https://forum.acms.org.au/t/geocities-rebuild-for-older-browsers/83)
 
-### Related posts
+### Related Posts
 
 - [The GeoCities Archive Rebuild Blog](/the-geocities-archive-rebuild-blog/)
 - [The GeoCities Archive Rebuild Goes Live](/the-geocities-archive-rebuild-goes-live/)

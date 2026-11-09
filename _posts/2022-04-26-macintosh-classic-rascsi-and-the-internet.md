@@ -8,7 +8,7 @@ last_modified_at: 2026-10-18
 
 {% include youtube.html id="hO2O4d3ZtaI" %}
 
-A Macintosh Classic! What a great platform to test [GeoCities](/homepages/geocities). No, just no. Stop right there. No way. Let's dig a little deeper. Perhaps some background would help. First came the Macintosh Plus (Jan 1986 - Oct 1990). The Macintosh Classic (Oct 1990 - Sept 1992) followed on from there. Both were powered by Motorola 68000s at 8MHz with up to 4MB of RAM.
+A Macintosh Classic! What a great platform to test [GeoCities](/homepages/geocities). No, just no. Stop right there. No way. Let's dig a little deeper. Perhaps some background would help. First came the Macintosh Plus (Jan 1986 - Oct 1990). The Macintosh Classic (Oct 1990 - Sept 1992) followed on from there. Both were powered by Motorola 68000s at 8 MHz with up to 4 MB of RAM.
 
 ![](/assets/images/2022/img_0926.jpg)
 
@@ -72,7 +72,7 @@ While it would be nice to be able to do things on a 68000 powered Mac, we're jus
 
 ### Sources
 
-- [RFC 1945 - Hypertext Transfer Protocol: HTTP/1.0, section 4.1 on HTTP/0.9 simple requests](https://www.rfc-editor.org/rfc/rfc1945)
+- [RFC Editor: RFC 1945, HTTP/1.0 (Section 4.1, HTTP/0.9 Simple Requests)](https://www.rfc-editor.org/rfc/rfc1945)
 - [RFC 7230 - HTTP/1.1 Message Syntax and Routing](https://www.rfc-editor.org/rfc/rfc7230)
 - [Raspberry Pi Documentation - Power supply warnings](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#power-supply-warnings)
 - [Chris Adams - Web browsers for antique Macs, MacWeb notes](https://ia800100.us.archive.org/0/items/macweb-evolt_browsers/macweb.htm)
@@ -87,5 +87,5 @@ While it would be nice to be able to do things on a 68000 powered Mac, we're jus
 
 ### Related Posts
 
-- Earlier: [Apple Macintosh LC 475 Online with PDS Ethernet](/apple-macintosh-lc-475-online-with-pds-ethernet/)
-- Later: [Mac Web Browsers from the 90s and HTTP/0.9](/mac-web-browsers-from-the-90s-and-http-0-9/)
+- [Apple Macintosh LC 475: Online with PDS Ethernet](/apple-macintosh-lc-475-online-with-pds-ethernet/)
+- [Mac Web Browsers from the 90s and HTTP/0.9](/mac-web-browsers-from-the-90s-and-http-0-9/)

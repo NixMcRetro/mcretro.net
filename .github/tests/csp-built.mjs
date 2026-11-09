@@ -16,7 +16,7 @@ for (const path of [
   'assets/js/mobile-navigation.js',
   'assets/js/search-page.js',
   'assets/js/random-post.js',
-  'assets/js/archive-dropdown.js',
+  'assets/js/archive-calendar.js',
   'assets/data/random-post-urls.json',
   'search/index.html',
   'pagefind/pagefind-ui.js'
@@ -33,7 +33,9 @@ const home = readFileSync(homePath, 'utf8');
 assert.ok(search.includes('/assets/js/search-page.js'), 'Missing external search script');
 assert.ok(home.includes('/assets/js/mobile-navigation.js'), 'Missing external navigation script');
 assert.ok(home.includes('/assets/js/random-post.js'), 'Missing external random-post script');
-assert.ok(home.includes('/assets/js/archive-dropdown.js'), 'Missing external archive script');
+assert.ok(home.includes('/assets/js/archive-calendar.js'), 'Missing external archive script');
+assert.ok(home.includes('data-archive-calendar'), 'Calendar missing');
+assert.ok(home.includes('data-counts="'), 'Archive counts missing');
 assert.ok(!home.includes('onchange='), 'Inline archive event handler present');
 
 // Preserve the existing footer structural regression test.

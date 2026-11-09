@@ -2,6 +2,7 @@
 title: "Flicky the Floury Baker, Day 6: Flicky and the Eggs"
 author: "Nix McRetro"
 date: 2023-03-04
+published: false
 last_modified_at: 2026-10-18
 categories: [nature, reconstructed, youtube]
 historical_source_url: "https://www.youtube.com/watch?v=APQOxmmoPkU"

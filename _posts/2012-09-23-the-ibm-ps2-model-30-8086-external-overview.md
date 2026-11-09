@@ -42,11 +42,11 @@ There are plenty more photographs in the [photo gallery](/goodies/), and I'll be
 
 ![](/assets/images/2012/img_0268.jpg)
 
+**Sources**
+
+- [IBM Files: PS/2 Models 25 and 30 (Storage)](https://www.ibmfiles.com/pages/ps2model25.htm)
+
 **Related Posts**
 
 - [IBM PS/2 Model 30 8086 Disassembly](/ibm-ps2-model-30-8086-disassembly/)
 - [IBM PS/2 Model 30 8086 Sound, Video and CPU Upgrades](/ibm-ps2-model-30-8086-sound-video-and-cpu-upgrades/)
-
-**Sources**
-
-- [IBM Files - PS/2 Model 25 and Model 30](https://www.ibmfiles.com/pages/ps2model25.htm) - documents the original Model 30 architecture and available storage configurations.

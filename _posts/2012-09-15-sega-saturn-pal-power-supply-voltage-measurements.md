@@ -17,7 +17,7 @@ A word of caution, because I'm working around exposed mains-powered circuitry in
 
 So we've got some numbers to work with, but the Saturn still refuses to cooperate. Looks like I'll have to investigate a little further and see what else I can find!
 
-### Related posts
+### Related Posts
 
 - [Sega Saturn Model 1 Power Supply Issues](/sega-saturn-model-1-power-supply-issues/)
 - [Sega Saturn External PSU Proof of Concept](/sega-saturn-external-psu-proof-of-concept/)

@@ -50,10 +50,10 @@ Getting DOS 3.3 to boot was another matter. I kept getting disk boot failures an
 
 With the machine back in one piece, I gave the Sound Blaster a workout with Prince of Persia and had a go at Monkey Island. Monkey Island ran, although all those animations could make the poor 8086 struggle a little. By this point I'd said thanks for watching more times than I could count and even promised that one cut would be the last. Famous last words! The machine was back together and working from floppy, and I'd learnt a few things along the way. Now I just need a camera that knows how to focus.
 
+### Sources
+
+- [IBM Files: PS/2 Models 25 and 30 (8-bit ISA)](https://www.ibmfiles.com/pages/ps2model25.htm)
+
 ### Related Posts
 
 - [IBM PS/2 Model 30 8086: External Overview](/the-ibm-ps2-model-30-8086-external-overview/)
-
-### Sources
-
-- [IBM Files - PS/2 Model 25 and Model 30](https://www.ibmfiles.com/pages/ps2model25.htm) - documents the original Model 30's 8-bit ISA expansion architecture.

@@ -22,14 +22,14 @@ There's still plenty to investigate with these 32X units. If anyone has an idea 
 
 **Update 6th February 2018:** I later learned that Sega had already documented a compatibility fault affecting PAL and Asian Model 1 VA4 Mega Drives used with the 32X in its 1994 and 1995 service bulletins. Poor EDCLK and VCLK signal quality on the host Mega Drive can cause 32X-rendered graphics to jitter, sound to slow down or the game to lock up as the hardware warms. In other words, the 32X itself was not necessarily the problem. Sega's service procedure modifies the Mega Drive motherboard. That fits the warm-up behaviour I was seeing considerably better than the theories I was working through at the time.
 
-### Related posts
+### Sources
+
+- [ConsoleMods: 32X Service Bulletin Fixes (PAL/Asian VA4)](https://consolemods.org/wiki/Genesis:32X_Service_Bulletin_Fixes)
+
+- [Sega: Service Bulletin 008 (13 December 1994, EDCLK, PAL VA4)](https://drive.google.com/file/d/1gUPVeXch-TWNjwld4bYFWFZG23_RJ9Be/view)
+- [Sega: Service Bulletin 012 (28 March 1995, VCLK, MD/32X VA4)](https://drive.google.com/file/d/1sOElKt5W6S89mjgpqdoGD3c4R3beXH_q/view)
+
+### Related Posts
 
 - [Sega Mega Drive 32X Repair: No Display, No Sound](/sega-mega-drive-32x-repair-no-display-no-sound/)
 - [Sega Mega Drive 32X Jittery Video: VA4 Service Bulletin Diagnosis](/sega-mega-drive-32x-jittery-video-va4-service-bulletin-diagnosis/)
-
-### Sources
-
-- [ConsoleMods - 32X Service Bulletin Fixes](https://consolemods.org/wiki/Genesis:32X_Service_Bulletin_Fixes) - summarises Sega service bulletins for PAL and Asian VA4 Mega Drive clock-signal instability with 32X hardware.
-
-- [Sega - Service Bulletin 008: Mega Drive 1 VA4 PAL, 13th December 1994](https://drive.google.com/file/d/1gUPVeXch-TWNjwld4bYFWFZG23_RJ9Be/view) - documents the EDCLK modification for screen shake, slowing sound and lockups as the hardware warms.
-- [Sega - Service Bulletin 012: MD 32X / MD 1 (VA4), 28th March 1995](https://drive.google.com/file/d/1sOElKt5W6S89mjgpqdoGD3c4R3beXH_q/view) - documents the VCLK modification on the Mega Drive motherboard.

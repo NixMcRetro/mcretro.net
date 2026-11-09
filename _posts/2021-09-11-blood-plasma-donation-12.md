@@ -48,9 +48,9 @@ Crak Oz. Yep. Rumour had it they were made in China or contained no Australian i
 
 ### Sources
 
-- [Australian Red Cross Lifeblood - Haemoglobin, iron health and blood donation](https://www.lifeblood.com.au/donors/blood-plasma-platelets/learn/iron-health)
+- [Australian Red Cross Lifeblood: Haemoglobin and Iron Health](https://www.lifeblood.com.au/donors/blood-plasma-platelets/learn/iron-health)
 - [Australian Red Cross Lifeblood - Know the risks](https://www.lifeblood.com.au/donors/blood-plasma-platelets/making-a-donation/prepare-and-aftercare/know-the-risks)
-- [National Blood Authority - National Report on the Issue and Use of Immunoglobulin (Ig), Annual Report 2020-21](https://www.blood.gov.au/sites/default/files/documents/2025-06/Report%20on%20the%20Issue%20and%20Use%20of%20Ig%202020-21%20Revised%20V2.pdf)
+- [National Blood Authority: Immunoglobulin Issue and Use Report 2020–21 (Revised)](https://www.blood.gov.au/sites/default/files/documents/2025-06/Report%20on%20the%20Issue%20and%20Use%20of%20Ig%202020-21%20Revised%20V2.pdf)
 
 ### Related Posts
 

@@ -19,6 +19,7 @@ on:
       - '_includes/sidebar.html'
       - 'assets/js/archive-calendar.js'
       - '.github/tests/archive-calendar.mjs'
+      - '.github/tests/archive-calendar-built.mjs'
       - '.github/tests/csp-built.mjs'
       - '_includes/exclusive-panel-visibility.html'
       - 'assets/js/accordion-navigation.js'
@@ -97,6 +98,9 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '24'
+
+      - name: Verify published archive calendar counts against monthly archive pages
+        run: node .github/tests/archive-calendar-built.mjs _site
 
       - name: Verify shared accordion navigation across published pages
         run: node .github/tests/check-accordion-navigation.mjs _site

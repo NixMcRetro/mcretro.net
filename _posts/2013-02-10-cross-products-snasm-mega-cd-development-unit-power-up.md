@@ -43,5 +43,5 @@ Doesn't that silkscreen look attractive on the back of the SNASM2 card? I've bar
 **Related Posts**
 
 - [Cross Products SNASM Mega-CD Development Unit Disassembly](/cross-products-snasm-mega-cd-development-unit-disassembly/)
-- [SNASM2 Sega Mega-CD Emulation Card on a 486DX4 100MHz](/snasm2-mega-cd-emulation-card-on-a-486dx4-100mhz/)
+- [SNASM2 Sega Mega-CD Emulation Card on a 486DX4-100](/snasm2-mega-cd-emulation-card-on-a-486dx4-100mhz/)
 - [SNASM2 ISA Card on a Pentium-class Motherboard](/snasm2-isa-card-on-a-pentium-class-motherboard/)

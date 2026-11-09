@@ -29,11 +29,11 @@ You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since 
 - PlayStation: SCPH-5502
 - CD deck: removed
 
-### Related posts
-
-- [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)
-- [PSIO Prototype 1.1 Game Demo: Metal Gear Solid](/psio-prototype-11-game-demo-metal-gear-solid/)
-
 ### Sources
 
 - [Konami - Metal Gear Solid: Integral](https://www.konami.com/mg/archive/integral/whats/index.html)
+
+### Related Posts
+
+- [PSIO Prototype 1.1 Test Station Setup Overview](/psio-prototype-11-test-station-setup-overview/)
+- [PSIO Prototype 1.1 Game Demo: Metal Gear Solid](/psio-prototype-11-game-demo-metal-gear-solid/)

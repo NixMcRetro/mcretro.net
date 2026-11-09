@@ -18,6 +18,6 @@ A few presses to spread the grease around, and what a difference! The button was
 
 Sometimes the simplest repairs are the most satisfying.
 
-### Related posts
+### Related Posts
 
 - [Cleaning the Sony PS one Eject Button Mechanism](/cleaning-the-sony-ps-one-eject-button-mechanism/)

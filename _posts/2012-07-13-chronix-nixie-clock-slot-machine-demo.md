@@ -21,4 +21,4 @@ I should have some more photos and documentation up this weekend, so hopefully I
 
 ### Related Posts
 
-- [Nixie Clock 3.6V NiCad Battery Replacement NiMH Upgrade](/nixie-clock-36v-nicad-battery-replacement-nimh-upgrade/)
+- [Nixie Clock 3.6 V NiCad Battery Replacement and NiMH Upgrade](/nixie-clock-36v-nicad-battery-replacement-nimh-upgrade/)

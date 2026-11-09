@@ -26,11 +26,11 @@ The 16 MB ceiling makes sense, too. The TI486SLC has a 24-bit address bus and ca
 
 For now I am still waiting on the replacement RTC module to arrive from Hong Kong. A couple more weeks to go. I've also ordered a 4 GB Disk on Module using SLC flash rather than MLC. Hopefully the BIOS will recognise it and I can boot DOS and Windows from it without too much drama. Time will tell! :D
 
-### Related posts
-
-- [Amstrad Sega Mega PC Boot Failure: DOM and Hard Drive Troubleshooting](/amstrad-sega-mega-pc-boot-failure-dom-and-hard-drive-troubleshooting/)
-
 ### Sources
 
-- [Texas Instruments TI486 Microprocessor Reference Guide](https://studylib.net/doc/25873245/1993-ti486-microprocessor-reference-guide) - documents the TI486SLC architecture and 16 MB physical address space.
-- [Epson ActionTower 2000 user manual](https://files.support.epson.com/pdf/at2k__/at2k__u1.pdf) - period documentation showing the 83S87-33 coprocessor used with a 486SLC-33 system.
+- [Texas Instruments: TI486 Microprocessor Reference Guide](https://studylib.net/doc/25873245/1993-ti486-microprocessor-reference-guide)
+- [Epson: ActionTower 2000 User Manual (83S87-33 and 486SLC-33)](https://files.support.epson.com/pdf/at2k__/at2k__u1.pdf)
+
+### Related Posts
+
+- [Amstrad Sega Mega PC Boot Failure: DOM and Hard Drive Troubleshooting](/amstrad-sega-mega-pc-boot-failure-dom-and-hard-drive-troubleshooting/)

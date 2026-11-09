@@ -22,10 +22,10 @@ The PC side also works over composite video, although the picture is considerabl
 
 The machine still has plenty of surprises. I haven't explored all the Sega menu options yet, and the floppy drives are getting quite a workout. For now, though, I'm enjoying Sonic at 60 Hz and having a proper look at what this unusual little IBM and Sega combination can do.
 
+**Sources**
+
+- [ConsoleMods: Genesis Region Information](https://consolemods.org/wiki/Genesis:Region_Information)
+
 **Related Posts**
 
 - [Sega TeraDrive Model 2, Genesis Nomad and Mega Drive 2](/sega-teradrive-model-2-genesis-nomad-and-mega-drive-2/)
-
-**Sources**
-
-- [ConsoleMods - Genesis Region Information](https://consolemods.org/wiki/Genesis:Region_Information) - explains Mega Drive and Genesis region signalling and game-specific checks.

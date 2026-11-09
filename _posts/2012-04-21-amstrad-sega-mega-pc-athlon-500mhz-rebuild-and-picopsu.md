@@ -44,14 +44,14 @@ I also tested the [picoPSU-80](https://www.mini-box.com/picoPSU-80) that arrived
 
 I'd just need a small Disk on Module, a replacement for the original rechargeable NiCad backup battery and the picoPSU... perhaps! The battery side needs a bit of thought, though. If I use an ordinary non-rechargeable AA or AAA cell, I'll have to isolate it from the charging circuit so the motherboard doesn't try to charge it, or use a suitable rechargeable arrangement instead.
 
-### Related posts
-
-- [Amstrad Sega Mega PC with picoPSU and a Dual-Screen Setup](/amstrad-sega-mega-pc-with-picopsu-and-a-dual-screen-setup/)
-
 ### Sources
 
-- [Amstrad Mega PC manual](https://acpc.me/ACME/AMSTRAD_PRO/AMSTRAD_PC/LITTERATURE/MANUELS/MEGA_PC_Manual%5BENG%5D.pdf) - documents MS-DOS and Counterpoint as separate parts of the Mega PC software environment.
-- [ASUS K7V motherboard manual](https://dlcdnet.asus.com/pub/ASUS/mb/slota/k7v/k7v-101.pdf) - documents support for Slot A AMD Athlon processors, including models up to 1 GHz.
-- [Seagate - Windows 137GB Capacity Barrier](https://www.seagate.com/support/kb/disc/tp/137gb.pdf) - explains the 28-bit LBA limit and the need for 48-bit addressing to access capacity beyond 137 GB decimal.
-- [Mini-Box - picoPSU-80](https://www.mini-box.com/picoPSU-80) - manufacturer specifications for the regulated 12 V-input DC-DC ATX supply.
-- [Duracell - Battery FAQ](https://duracell.com/faq) - warns that non-rechargeable batteries must not be recharged because they can leak or rupture.
+- [Amstrad Mega PC Manual (MS-DOS and Counterpoint)](https://acpc.me/ACME/AMSTRAD_PRO/AMSTRAD_PC/LITTERATURE/MANUELS/MEGA_PC_Manual%5BENG%5D.pdf)
+- [ASUS: K7V Motherboard Manual (Slot A Athlon up to 1 GHz)](https://dlcdnet.asus.com/pub/ASUS/mb/slota/k7v/k7v-101.pdf)
+- [Seagate: 137 GB Capacity Barrier (28-bit/48-bit LBA)](https://www.seagate.com/support/kb/disc/tp/137gb.pdf)
+- [Mini-Box: picoPSU-80 (12 V Input)](https://www.mini-box.com/picoPSU-80)
+- [Duracell: Battery FAQ (Non-rechargeable Battery Safety)](https://duracell.com/faq)
+
+### Related Posts
+
+- [Amstrad Sega Mega PC with picoPSU and a Dual-Screen Setup](/amstrad-sega-mega-pc-with-picopsu-and-a-dual-screen-setup/)

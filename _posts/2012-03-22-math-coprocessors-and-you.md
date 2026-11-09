@@ -22,12 +22,12 @@ For the original 386SX-based motherboard I went with a ULSI Math Co SX Advanced 
 
 In summary, get one if you can. They are getting rarer as the days tick on by. They were most useful in software that actually performed substantial floating-point work, but I mostly wanted to fill the empty socket anyway!
 
-### Related posts
-
-- [Amstrad Sega Mega PC 486SLC Upgrade Experiment](/amstrad-sega-mega-pc-486slc-upgrade-experiment/)
-
 ### Sources
 
-- [Norbert Juffa - Everything You Always Wanted to Know About Math Coprocessors](https://dougx.net/gaming/coproc.html) - identifies the ULSI 83S87 family, package types and SX/DX coprocessor distinctions.
-- [Epson ActionTower 2000 user manual](https://files.support.epson.com/pdf/at2k__/at2k__u1.pdf) - documents 486SLC systems using clock-matched 83S87 coprocessors.
-- [DOS Days - Math Coprocessors](https://www.dosdays.co.uk/topics/math_coprocessors.php) - background on software that benefited from x87-compatible floating-point hardware.
+- [Norbert Juffa: Math Coprocessors (ULSI 83S87)](https://dougx.net/gaming/coproc.html)
+- [Epson: ActionTower 2000 User Manual (486SLC and 83S87)](https://files.support.epson.com/pdf/at2k__/at2k__u1.pdf)
+- [DOS Days: Math Coprocessors](https://www.dosdays.co.uk/topics/math_coprocessors.php)
+
+### Related Posts
+
+- [Amstrad Sega Mega PC 486SLC Upgrade Experiment](/amstrad-sega-mega-pc-486slc-upgrade-experiment/)

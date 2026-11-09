@@ -24,11 +24,11 @@ Sega's specifications list the Model 2 with 1 MB of RAM and two 3.5-inch floppy 
 
 I've got plenty of testing and disassembly ahead of me once the step-down converter arrives. The combination of an IBM-compatible PC and Mega Drive hardware should make this a particularly interesting machine to investigate.
 
+**Sources**
+
+- [Sega Hardware Archive: TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html)
+
 **Related Posts**
 
 - [New Purchases: 28th April 2012](/new-purchases-28-april-2012/)
 - [Sega TeraDrive Model 2, Genesis Nomad and Mega Drive 2](/sega-teradrive-model-2-genesis-nomad-and-mega-drive-2/)
-
-**Sources**
-
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - official release date and model specifications.

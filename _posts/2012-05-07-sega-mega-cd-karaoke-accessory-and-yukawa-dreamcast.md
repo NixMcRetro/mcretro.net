@@ -36,11 +36,11 @@ I am still waiting on the Genesis Nomad from the US. The good news is that it ha
 
 Regular visitors might also have noticed that the menu bar has slipped up to the very top of the page. I'm still tweaking the banner and alignment, but it is good enough for now. Here's to the week ahead!
 
-### Related posts
+### Sources
+
+- [Sega Retro: Dreamcast Models (Hidekazu Yukawa Packaging)](https://segaretro.org/Dreamcast_models)
+
+### Related Posts
 
 - [Sega Mega-CD Karaoke Microphone - Faulty](/sega-mega-cd-karaoke-microphone-faulty/)
 - [Sega Mega-CD Karaoke Microphone Repaired](/sega-mega-cd-karaoke-microphone-repaired/)
-
-### Sources
-
-- [Sega Retro - Dreamcast Models](https://segaretro.org/Dreamcast_models) - documents Japanese launch-era Dreamcast packaging variants featuring Sega executive Hidekazu Yukawa.

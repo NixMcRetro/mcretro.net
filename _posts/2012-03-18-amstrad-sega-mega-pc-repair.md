@@ -60,11 +60,11 @@ I thought I was close with that FDISK result above, but partitioning still faile
 
 Overall, though, a good result. The Sega side works perfectly and the PC side works somewhat. I'm very much looking forward to receiving the other Amstrad motherboard so I can finally work out what is going on with the hard drive.
 
-### Related posts
+### Sources
+
+- [Energizer: Nickel Cadmium Application Manual](https://data.energizer.com/pdfs/nickelcadmium_appman.pdf)
+
+### Related Posts
 
 - [Amstrad Sega Mega PC 386SX Arrival](/amstrad-sega-mega-pc-386sx-arrival/)
 - [Amstrad Sega Mega PC 386SX Overview](/amstrad-sega-mega-pc-386sx-overview/)
-
-### Sources
-
-- [Energizer - Nickel Cadmium Application Manual](https://data.energizer.com/pdfs/nickelcadmium_appman.pdf) - documents the alkaline potassium hydroxide electrolyte used in nickel-cadmium cells.

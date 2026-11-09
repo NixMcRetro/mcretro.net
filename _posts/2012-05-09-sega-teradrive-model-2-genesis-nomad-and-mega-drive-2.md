@@ -52,12 +52,12 @@ At the moment I haven't got a display suitable for the Mega Drive's 15 kHz RGB o
 
 I've also uploaded some of the original flyers and quick-reference material that accompanied the TeraDrive. They're in the [photo gallery](/goodies/) if you'd like a closer look at the machine and its paperwork. There'll be plenty more testing once I get the video side sorted out.
 
+**Sources**
+
+- [Sega Hardware Archive: TeraDrive (Model 2 Specifications)](https://www.sega.jp/fb/segahard/md/tera.html)
+
 **Related Posts**
 
 - [Humble Beginnings: Nintendo Famicom Incoming](/humble-beginnings-nintendo-famicom-incoming/)
 - [Sega TeraDrive Demo - Sonic 1 and Sega Menu](/sega-teradrive-demo-sonic-1-and-sega-menu/)
 - [Sega Genesis Nomad DC-in Jack Repair](/sega-genesis-nomad-dc-in-jack-repair/)
-
-**Sources**
-
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - official Model 2 specifications and supported video outputs.

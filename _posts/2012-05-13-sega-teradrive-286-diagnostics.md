@@ -44,13 +44,13 @@ PC DOS 3.30 dates back to 2 April 1987 and added support for 1.44 MB 3.5-inch fl
 
 Sega specifies 256 KB of VGA VRAM for the TeraDrive. That's another useful detail to keep in mind while I'm poking around in there. The full set of Sega TeraDrive Model 2 and Model 3 photos can be found in the [photo gallery](/goodies/).
 
-### Related posts
-
-- [Sega TeraDrive Demo: Sonic 1 and Sega Menu](/sega-teradrive-demo-sonic-1-and-sega-menu/)
-
 ### Sources
 
-- [PCjs - IBM PC DOS 3.30](https://www.pcjs.org/software/pcx86/sys/dos/ibm/3.30/) - documents the 2nd April 1987 release and 1.44 MB 3.5-inch floppy support.
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - Sega's official TeraDrive specifications, including the 31st May 1991 release, supplied IBM DOS J4.0/V software and 256 KB VGA memory.
-- [MAME - Sega TeraDrive driver](https://github.com/mamedev/mame/blob/master/src/mame/pc/teradrive.cpp) - models the TeraDrive's Western Digital WD90C10 VGA hardware.
-- [Microsoft Knowledge Base Archive - BIOS beep codes](https://www.betaarchive.com/wiki/index.php/Microsoft_KB_Archive/85636) - documents common AMI BIOS beep-code meanings, including one beep for DRAM refresh failure and nine for ROM BIOS checksum failure.
+- [PCjs: IBM PC DOS 3.30 (2 April 1987; 1.44 MB Floppies)](https://www.pcjs.org/software/pcx86/sys/dos/ibm/3.30/)
+- [Sega Hardware Archive: TeraDrive (31 May 1991; IBM DOS J4.0/V)](https://www.sega.jp/fb/segahard/md/tera.html)
+- [MAME: Sega TeraDrive Driver (Western Digital WD90C10)](https://github.com/mamedev/mame/blob/master/src/mame/pc/teradrive.cpp)
+- [Microsoft KB Archive: AMI BIOS Beep Codes](https://www.betaarchive.com/wiki/index.php/Microsoft_KB_Archive/85636)
+
+### Related Posts
+
+- [Sega TeraDrive Demo: Sonic 1 and Sega Menu](/sega-teradrive-demo-sonic-1-and-sega-menu/)

@@ -16,11 +16,11 @@ Sega offered three TeraDrive configurations. The Model 2 sits in the middle of t
 
 I now have my new Canon EOS 600D for photos, so I should be updating the [galleries](/goodies/) later on. In the next few days I also hope to complete another Sega Game Gear repair attempt and get one functioning properly.
 
-### Related posts
+### Sources
+
+- [Sega Hardware Archive: TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html)
+
+### Related Posts
 
 - [Sega TeraDrive Model 2, Genesis Nomad and Mega Drive 2](/sega-teradrive-model-2-genesis-nomad-and-mega-drive-2/)
 - [Sega TeraDrive Demo - Sonic 1 and Sega Menu](/sega-teradrive-demo-sonic-1-and-sega-menu/)
-
-### Sources
-
-- [Sega Hardware Archive - TeraDrive](https://www.sega.jp/fb/segahard/md/tera.html) - Sega's historical hardware page documents the TeraDrive model configurations and specifications.

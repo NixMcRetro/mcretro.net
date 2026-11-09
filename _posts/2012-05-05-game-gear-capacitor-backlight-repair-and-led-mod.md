@@ -42,11 +42,11 @@ The LED backlight was also producing light, although it had two rather obvious b
 
 I've fixed it up darned well considering the number of problems it had, although there is still work to do. The battery bay is missing terminals and the DC power connection is bad. Maybe I'll hard-wire it into a power adapter? Seems a waste of an LED mod though.
 
+### Sources
+
+- [iFixit: Sega Game Gear Capacitor Replacement (Board Revisions and Polarity)](https://www.ifixit.com/Guide/Sega+Game+Gear+Capacitor+Replacement/113655)
+
 ### Related Posts
 
 - [Sega Game Gear Before Repair: No Video, Quiet Audio](/sega-game-gear-before-repair-no-video-quiet-audio/)
 - [Sega Game Gear LED Backlight Mod](/sega-game-gear-led-backlight-mod/)
-
-### Sources
-
-- [iFixit - Sega Game Gear Capacitor Replacement](https://www.ifixit.com/Guide/Sega+Game+Gear+Capacitor+Replacement/113655) - documents capacitor replacement across Game Gear board revisions, including capacitor locations and polarity.

@@ -12,10 +12,10 @@ Here's my Sega Game Gear before repair. It's got a couple of problems: the sound
 
 Failing electrolytic capacitors are a common problem with these old Game Gears, and they can affect both the audio and display circuits. I'll start by replacing the capacitors and see what difference that makes before deciding whether anything else needs attention. Hopefully the next recording will feature a Game Gear that actually has a picture to go with its sound!
 
+**Sources**
+
+- [iFixit: Sega Game Gear Capacitor Replacement](https://www.ifixit.com/Guide/Sega+Game+Gear+Capacitor+Replacement/113655)
+
 **Related Posts**
 
 - [Game Gear Capacitor, Backlight Repair and LED Mod](/game-gear-capacitor-backlight-repair-and-led-mod/)
-
-**Sources**
-
-- [iFixit - Sega Game Gear Capacitor Replacement](https://www.ifixit.com/Guide/Sega+Game+Gear+Capacitor+Replacement/113655) - covers common capacitor-related audio and display problems.

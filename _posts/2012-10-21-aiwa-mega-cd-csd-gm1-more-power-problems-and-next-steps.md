@@ -26,7 +26,7 @@ So what's next? More voltage measurements, some regulator investigation, and pro
 
 First, though, I think I'll try getting rid of this cold. The Aiwa can have the rest of the weekend off!
 
-### Related posts
+### Related Posts
 
 - [Aiwa Mega-CD CSD-GM1 Repairs Part 2: Power Rail Testing](/aiwa-mega-cd-csd-gm1-repairs-part-2-power-rail-testing/)
 - [Aiwa Sega Mega-CD CSD-GM1 Repairs Intermission](/aiwa-sega-mega-cd-csd-gm1-repairs-intermission/)

@@ -23,7 +23,7 @@ One particularly useful discovery was a PDS ethernet card for the Macintosh LC 4
 
 Now I just need to track down a less rusty power supply and repair those broken PSU retaining clips so the Macintosh stops rattling around. There's always something else to fix, isn't there?
 
-### Related posts
+### Related Posts
 
 - [Osborne Australia 486DX2-66 Overview](/osborne-australia-486dx2-66-overview/)
 - [Apple Macintosh LC 475 Online with PDS Ethernet](/apple-macintosh-lc-475-online-with-pds-ethernet/)

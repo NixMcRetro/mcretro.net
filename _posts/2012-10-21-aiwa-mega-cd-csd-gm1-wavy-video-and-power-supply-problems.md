@@ -21,7 +21,7 @@ I'm particularly interested in this result because even the damaged Aiwa mainboa
 
 So if anyone has any ideas, I'm all ears! The Aiwa is at least running well enough for me to worry about video quality now, which is a considerable improvement over having a completely dead machine sitting on the workbench.
 
-### Related posts
+### Related Posts
 
 - [Aiwa Mega-CD CSD-GM1 Repairs Part 2: Power Rail Testing](/aiwa-mega-cd-csd-gm1-repairs-part-2-power-rail-testing/)
 - [Aiwa Sega Mega-CD CSD-GM1 Repairs Part 1: Power Restored](/aiwa-sega-mega-cd-csd-gm1-repairs-part-1-power-restored/)

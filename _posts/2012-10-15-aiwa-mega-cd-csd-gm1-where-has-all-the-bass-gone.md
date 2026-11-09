@@ -18,7 +18,7 @@ There's another interesting symptom too. I'm hearing a hum when certain bright o
 
 But which part? And is it a problem with the Game Unit, the Aiwa's audio circuitry or something else entirely? Another mystery for another day, I suppose!
 
-### Related posts
+### Related Posts
 
 - [Aiwa Mega-CD CSD-GM1 and Mega Drive 32X Issues](/aiwa-mega-cd-csd-gm1-and-mega-drive-32x-issues/)
 - [Aiwa Sega Mega-CD CSD-GM1 Repairs Part 1: Power Restored](/aiwa-sega-mega-cd-csd-gm1-repairs-part-1-power-restored/)

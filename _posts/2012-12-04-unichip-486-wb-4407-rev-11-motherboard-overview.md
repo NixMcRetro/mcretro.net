@@ -12,7 +12,7 @@ Here's a Unichip 486 WB 4407 Rev 1.1 motherboard that was donated to me, complet
 
 The DX2 has a heatsink and fan assembly that clips around the processor, rather than the simpler passive heatsink fitted to the DX2 in my Osborne. I managed to pull the assembly off for a closer look, and it is quite an interesting arrangement. I might even be able to use it with my DX4, since the heatsinks I've ordered for that haven't arrived yet.
 
-Being an old 486 motherboard, it also had one of those lovely NiCd batteries to contend with. The battery has already been removed, which is one less thing to worry about, but the board still needs a proper test. I also had a look at the RAM banks while showing the motherboard, although I haven't established exactly what memory is installed.
+Being an old 486 motherboard, it also had one of those lovely NiCad batteries to contend with. The battery has already been removed, which is one less thing to worry about, but the board still needs a proper test. I also had a look at the RAM banks while showing the motherboard, although I haven't established exactly what memory is installed.
 
 Apart from this motherboard, not too much has been happening over the last week or two. I've been working hard to keep on top of things at work, and I haven't had much time back at my usual base of operations. That hasn't stopped me ordering more gadgets to play with, of course. I've simply had very little time to use them!
 
@@ -33,4 +33,4 @@ With Christmas approaching, I should have more opportunities to get back to the 
 
 ### Sources
 
-- [Elektroda - GMB-486 UNP - Bios do BARDZO starej płyty głównej, post 26](https://www.elektroda.pl/rtvforum/topic3694152.html) - the 20th May 2020 post reports the matching BIOS prefix, DataExpert vendor identification and Unichip 4407 BIOS version.
+- [Elektroda: GMB-486 UNP, Post 26 (2020, DataExpert/Unichip 4407)](https://www.elektroda.pl/rtvforum/topic3694152.html)

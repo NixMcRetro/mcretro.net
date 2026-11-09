@@ -28,15 +28,12 @@ I was hoping I might be able to adapt an ordinary IDE drive with enough rewiring
 
 Stay tuned for some great pictures and video of retro goodies late this week and early next!
 
-### Related posts
+### Sources
+
+- [NESdev Forums: Famicom Jailbar Discussion (Board Revisions and Decoupling)](https://forums.nesdev.org/viewtopic.php?t=18508)
+
+### Related Posts
 
 - [Nintendo Famicom Composite AV Mod](/nintendo-famicom-composite-av-mod/)
 - [Sega TeraDrive Model 3 Hard Drive Replacement](/sega-teradrive-model-3-hard-drive-replacement/)
-
-### Further Reading
-
-- [Sega TeraDrive Hard Drive Interface Investigation](/sega-teradrive-hard-drive-interface-investigation/) - my later investigation into compatible drives and the TeraDrive's unusual 44-pin hard-drive interface.
-
-### Sources
-
-- [NESdev Forums - Famicom jailbar discussion](https://forums.nesdev.org/viewtopic.php?t=18508) - documents how jailbar reduction depends on board revision, signal routing and decoupling rather than a single universal capacitor value.
+- [Sega TeraDrive Hard Drive Interface Investigation](/sega-teradrive-hard-drive-interface-investigation/)

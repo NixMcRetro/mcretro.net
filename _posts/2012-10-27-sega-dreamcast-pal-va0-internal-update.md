@@ -23,11 +23,11 @@ What I'd really like to know is how this PAL VA0 compares with the Japanese and 
 
 And while we're at it, how many PAL VA0 Dreamcasts are still out there? Probably not many! I'd love to hear from anyone else who's managed to find one.
 
-### Further Reading
-
-- [Sega Dreamcast PAL Revision VA0](/sega-dreamcast-pal-revision-va0/)
-
 ### Sources
 
-- [Dreamcast Wiki - Hardware Variations](https://dreamcast.wiki/Hardware_variations) - documents VA0 hardware characteristics and regional revision differences.
-- [TSSZ News - Dreamcast Launch in Europe Delayed](https://lastminutecontinue.com/news/dreamcast-launch-in-europe-delayed/) - reproduces Sega Europe's 27th August 1999 announcement of the 14th October launch.
+- [Dreamcast Wiki: Hardware Variations (PAL VA0)](https://dreamcast.wiki/Hardware_variations)
+- [TSSZ News: Dreamcast European Launch Delay (14 October 1999)](https://lastminutecontinue.com/news/dreamcast-launch-in-europe-delayed/)
+
+### Related Posts
+
+- [Sega Dreamcast PAL Revision VA0](/sega-dreamcast-pal-revision-va0/)

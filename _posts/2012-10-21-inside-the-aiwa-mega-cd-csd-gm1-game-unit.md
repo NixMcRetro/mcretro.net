@@ -17,7 +17,7 @@ Here's a quick look inside the Mega Drive and Mega-CD Game Unit that attaches un
 
 ![](/assets/images/2012/img_0324.jpg)
 
-The Game Unit contains the Mega Drive and Mega-CD hardware, while the upper section of the Aiwa supplies power, the CD mechanism and the rest of the audio-system connections. That makes the detachable unit interesting, but it also means there's rather more involved than simply plugging in a power adaptor and expecting the whole thing to work.
+The Game Unit contains the Mega Drive and Mega-CD hardware, while the upper section of the Aiwa supplies power, the CD mechanism and the rest of the audio-system connections. That makes the detachable unit interesting, but it also means there's rather more involved than simply plugging in a power adapter and expecting the whole thing to work.
 
 Later testing showed that the Mega Drive section of this particular Game Unit could actually run independently. On the unit I tested, a suitable regulated 5 V supply connected to pin 24, with ground on pin 12, was enough to boot Mega Drive cartridges without the boombox attached. Quite a nice surprise, considering I'd originally been joking about using the thing as a frisbee!
 
@@ -27,10 +27,10 @@ The Mega-CD side is another story because it still depends on the CD mechanism i
 
 As always, there are more photos in the [galleries or file server](/goodies/). At least we can cross the lead-weighted frisbee idea off the list for now!
 
-### Related posts
-
-- [Aiwa Sega Mega-CD CSD-GM1 Game Unit in Standalone Mode](/aiwa-sega-mega-cd-csd-gm1-game-unit-in-standalone-mode/)
-
 ### Sources
 
-- [Mega-CD.de - Aiwa CSD-GM1](https://www.mega-cd.de/japmcd2.htm) - historical reference describing the detachable lower Game Unit containing the Mega Drive and Mega-CD hardware.
+- [Mega-CD.de: Aiwa CSD-GM1 (Detachable Game Unit)](https://www.mega-cd.de/japmcd2.htm)
+
+### Related Posts
+
+- [Aiwa Sega Mega-CD CSD-GM1 Game Unit in Standalone Mode](/aiwa-sega-mega-cd-csd-gm1-game-unit-in-standalone-mode/)

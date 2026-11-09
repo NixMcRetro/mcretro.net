@@ -18,7 +18,7 @@ First, the Pentium 4 needed some attention. The thermal paste under its heatsink
 
 Naturally, the computer wasn't particularly cooperative. It started producing an alarming collection of beeps, and I spent a while removing components to work out what had upset it. Pressing down on the heatsink eventually helped it boot, which wasn't exactly reassuring. Perhaps that's why somebody threw it away!
 
-I also installed a CompactFlash-to-IDE adaptor with the intention of running Linux from a card. That would let me use the SATA drive as the destination for the Dreamcast data while avoiding another mechanical system disk. Debian 8 Jessie seemed like a suitable choice for the job.
+I also installed a CompactFlash-to-IDE adapter with the intention of running Linux from a card. That would let me use the SATA drive as the destination for the Dreamcast data while avoiding another mechanical system disk. Debian 8 Jessie seemed like a suitable choice for the job.
 
 With the machine finally starting up, I could see the SCSI controller appearing during startup and the SATA disk being detected by the BIOS. Interestingly, the old motherboard appeared to recognise only about 1 TB of the 2 TB drive. Still, that was plenty of room for what I intended to store on it, assuming the operating system could make use of the drive properly.
 

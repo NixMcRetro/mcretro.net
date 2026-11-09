@@ -12,7 +12,7 @@ A bit of fiddling and we finally get Bluetooth working on the NUC8i7BEH, running
 
 This little Intel NUC has become something of a project in itself. I've fitted 32 GB of RAM, which is probably a rather ridiculous amount for what I actually use it for, and installed the whole arrangement into a lovely fanless enclosure. The machine sits not far from my head, so not having a fan whining away all day is a definite advantage.
 
-Getting the wireless hardware sorted out took rather more effort than I'd hoped. I'm using an Apple-compatible Wi-Fi and Bluetooth card through a PCI Express adaptor, with external antennas because of the enclosure. The Bluetooth data connections needed to be wired separately to an internal USB header before that side of things would behave itself.
+Getting the wireless hardware sorted out took rather more effort than I'd hoped. I'm using an Apple-compatible Wi-Fi and Bluetooth card through a PCI Express adapter, with external antennas because of the enclosure. The Bluetooth data connections needed to be wired separately to an internal USB header before that side of things would behave itself.
 
 I wanted Bluetooth working properly, partly for the sake of having a complete Hackintosh and partly because I thought it might be nice to use some of Apple's Continuity features. Do I desperately need them? Probably not. But I've come this far, and leaving something half-working would be rather annoying.
 

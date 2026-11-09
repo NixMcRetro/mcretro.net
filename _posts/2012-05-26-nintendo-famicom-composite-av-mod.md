@@ -122,7 +122,7 @@ For reference, these are the cable colours I used:
 
 ![](/assets/images/2012/img_0151.jpg)
 
-With the components in place, the little board is ready to connect to the Famicom. Take particular care with the transistor orientation and capacitor polarity. If the modification doesn't work as expected, switch everything off and disconnect the power adaptor before checking the wiring.
+With the components in place, the little board is ready to connect to the Famicom. Take particular care with the transistor orientation and capacitor polarity. If the modification doesn't work as expected, switch everything off and disconnect the power adapter before checking the wiring.
 
 ### Audio output
 
@@ -158,17 +158,17 @@ Below are three videos showing the board, its wiring and the finished result.
 
 **Update 2016:** A later guide covering improved Famicom AV modification and jailbar-reduction techniques can be found in [JPX72 - Famicom AV mod - NEW!](http://jpx72web.blogspot.com/2016/11/famicom-av-mod-new.html). It includes useful schematics and a related approach, although the jailbar-reduction methods I tried didn't work for me. Your luck may vary. Good luck!
 
-### Related posts
-
-- [Humble Beginnings: Nintendo Famicom Incoming](/humble-beginnings-nintendo-famicom-incoming/)
-- [Nintendo Famicom AV Mod Complete](/nintendo-famicom-av-mod-complete/)
-
 ### Resources
 
 - [McRetro Photo Gallery](/goodies)
 
 ### Sources
 
-- [JPX72 - Famicom AV mod - NEW!](http://jpx72web.blogspot.com/2016/11/famicom-av-mod-new.html) - a later guide, published in 2016, covering Famicom AV modification and jailbar reduction.
-- [ConsoleMods - NES Top Loader AV Mod](https://consolemods.org/wiki/NES:Top_Loader_AV_Mod) - documents a closely related PNP-transistor composite amplifier topology used in Nintendo RF-only hardware.
-- [Ctrl-Alt-Rees - Nintendo Famicom Composite Video Output Mod](https://ctrl-alt-rees.com/2019-01-26-nintendo-famicom-composite-video-output-mod.html) - documents Famicom board-revision differences and later composite-mod approaches.
+- [JPX72: Famicom AV Mod - NEW! (2016)](http://jpx72web.blogspot.com/2016/11/famicom-av-mod-new.html)
+- [ConsoleMods: NES Top Loader AV Mod (PNP Amplifier)](https://consolemods.org/wiki/NES:Top_Loader_AV_Mod)
+- [Ctrl-Alt-Rees: Nintendo Famicom Composite Video Output Mod (Board Revisions)](https://ctrl-alt-rees.com/2019-01-26-nintendo-famicom-composite-video-output-mod.html)
+
+### Related Posts
+
+- [Humble Beginnings: Nintendo Famicom Incoming](/humble-beginnings-nintendo-famicom-incoming/)
+- [Nintendo Famicom AV Mod Complete](/nintendo-famicom-av-mod-complete/)

@@ -22,7 +22,7 @@ One side of the chip came free more easily than the other. I eventually managed 
 
 The chip was marked NEC D23C4000SCZ, so I started experimenting with compatible device selections in the GQ-4X programmer. After a few unsuccessful attempts, selecting D27C4000 with the 16-bit adapter gave me something readable.
 
-I had to remember the correct socket arrangement on the GQ-4X too, since the 16-bit adaptor adds another little complication. Once the programmer was configured and the chip was properly seated, the reading process was remarkably straightforward. It's everything that happens afterwards that gets interesting!
+I had to remember the correct socket arrangement on the GQ-4X too, since the 16-bit adapter adds another little complication. Once the programmer was configured and the chip was properly seated, the reading process was remarkably straightforward. It's everything that happens afterwards that gets interesting!
 
 Using the byte-swap function revealed some recognisable information, including a July 1994 date and BIOS version 2.11J. That was encouraging! The problem was that the dumps weren't producing consistent checksums, so I couldn't yet trust the resulting file as an accurate copy.
 

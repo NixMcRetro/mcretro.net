@@ -10,6 +10,7 @@ on:
       - '.github/workflows/op1-browser-tests.yml'
   pull_request:
     paths:
+      - '_posts/**'
       - 'homepages/vrampage-md/**'
       - '_config.yml'
       - '.github/workflows/jekyll.yml'

@@ -18,7 +18,7 @@ Next I opened up the Master System converter to see what was inside. It's a rath
 
 I also tried loading Master System games through the Mega EverDrive, but that didn't get me much further. Again, I was seeing a blank screen rather than a working game. That had me wondering whether the necessary Master System mode signal was connected to the TeraDrive cartridge slot in the first place, much like the difficulties I'd encountered with the Genesis Nomad.
 
-Sega's documentation says the original Japanese Mega Adaptor cannot be fitted to the TeraDrive because of its shape. That certainly explains the physical problem, but it doesn't answer whether a properly adapted converter could be made to work electrically.
+Sega's documentation says the original Japanese Mega Adapter cannot be fitted to the TeraDrive because of its shape. That certainly explains the physical problem, but it doesn't answer whether a properly adapted converter could be made to work electrically.
 
 We didn't have much luck with this one. If anyone knows what might need connecting or modifying to make a Master System converter work on the TeraDrive, feel free to leave a comment. I always read your comments! :)
 

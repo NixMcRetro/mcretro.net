@@ -26,7 +26,7 @@ The Xbox optical drive was also giving me trouble, so I temporarily connected an
 
 Once the dashboard was sorted, I had UnleashX 0.39 running and the larger hard drive available. I even started copying Burnout 3 from a backup disc, although the original optical drive was painfully slow. At times it was managing less than 1 MB per second. Good grief!
 
-The machine had come a long way from refusing to boot past error messages. It was now running a replacement BIOS, a useful dashboard and a much larger hard drive. A very satisfying result considering how much trouble I'd managed to create with a few little solder pads. A very big thank you to Hexagon over at ASSEMbler Games for helping me get there!
+The machine had come a long way from refusing to boot past error messages. It was now running a replacement BIOS, a useful dashboard and a much larger hard drive. A very satisfying result considering how much trouble I'd managed to create with a few little solder pads. A very big thank you to [HEX1GON](https://hexigon.blogspot.com/) over at ASSEMbler Games for helping me get there!
 
 I'll get around to putting a guide up eventually, but there's still a lot to be done on this website...
 

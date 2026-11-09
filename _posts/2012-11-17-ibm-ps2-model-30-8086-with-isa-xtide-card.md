@@ -12,7 +12,7 @@ This was originally just a quick test to prove that the XTIDE card itself worked
 
 The Model 30 is a lovely old IBM computer, and I thought it would be a useful way of eliminating some of the variables. If the XTIDE card worked here, at least I'd know the card wasn't completely hopeless before going back to the TeraDrive.
 
-The experiment involved an ISA XTIDE adaptor and a 4 GB Disk on Module. It's a rather ridiculous amount of storage for an 8086 computer, especially one that would normally have been dealing with much smaller hard drives. Still, why not?
+The experiment involved an ISA XTIDE adapter and a 4 GB Disk on Module. It's a rather ridiculous amount of storage for an 8086 computer, especially one that would normally have been dealing with much smaller hard drives. Still, why not?
 
 The card was detected by the IBM, and the XTIDE Universal BIOS appeared during startup. That's exactly what I wanted to see. I could also access the drive from the DOS command prompt, although getting the partitioning and formatting sorted out took a little more effort.
 
@@ -30,11 +30,11 @@ I had originally planned to return the IBM PS/2 to an original-style hard drive.
 
 **Edit:** The seller never shipped anything and by the time PayPal became involved, it was too late. Scammers... dammit!
 
+**Sources**
+
+- [XTIDE Universal BIOS (8086/8088 XT Builds and ATA Storage)](https://www.xtideuniversalbios.org/)
+
 **Related Posts**
 
 - [IBM PS/2 Model 30 8086 Sound, Video and CPU Upgrades](/ibm-ps2-model-30-8086-sound-video-and-cpu-upgrades/)
 - [Sega TeraDrive Model 2 XTIDE Boot Success](/sega-teradrive-model-2-xtide-boot-success/)
-
-**Sources**
-
-- [XTIDE Universal BIOS](https://www.xtideuniversalbios.org/) - documents XT builds for 8086 and 8088 systems and support for modern ATA storage.

@@ -20,7 +20,7 @@ The warning screen is rather entertaining too, with Luigi standing there apparen
 
 I suspect a cracked solder joint, so out come the Nintendo security bits and we can have a look at the motherboard. Of course, my dedicated electronics workbench has become a storage area for random junk. Isn't that always the way?
 
-This particular Nintendo 64 originally came from Hex1gon over at ASSEMbler Games. Lovely chap! I've also been doing a little cosmetic work on the machine, including replacing the upper section of the shell. Now let's see what sort of condition the electronics are in.
+This particular Nintendo 64 originally came from [HEX1GON](https://hexigon.blogspot.com/) over at ASSEMbler Games. Lovely chap! I've also been doing a little cosmetic work on the machine, including replacing the upper section of the shell. Now let's see what sort of condition the electronics are in.
 
 Once the case is apart, it's time to start removing screws. There are quite a few of them, and naturally Nintendo has hidden some longer ones around the Expansion Pak area. Just when you think you've found them all, another one appears. Eventually the motherboard comes free and I can inspect the controller socket connections.
 

@@ -8,11 +8,13 @@
   <link rel="shortcut icon" href="{{ '/assets/favicon/favicon.ico' | relative_url }}?v=20261018b">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | relative_url }}?v=20261018b">
   <link rel="manifest" href="{{ '/assets/favicon/site.webmanifest' | relative_url }}?v=20261018b">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#FFF8DC">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.type == 'month' %}{{ page.date | date: "%B %Y" }}{% elsif page.title %}{{ page.title }}{% endif %} - {{ site.title }}</title>
   <meta data-pagefind-meta="title[content]" content="{% if page.type == 'month' %}{{ page.date | date: "%B %Y" }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
+  <!-- Blocking external script: resolves system/manual preference before first paint (CSP safe). -->
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/overrides.css">
   <script src="{{ '/assets/js/accordion-navigation.js' | relative_url }}" defer></script>

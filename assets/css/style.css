@@ -265,6 +265,63 @@
   font-display: swap;
 }
 
+/* Shared modern-site colours; deliberately excludes Windows 95 UI, media and artwork. */
+:root {
+  color-scheme: light;
+  --page-bg: #FFF8DC;
+  --panel: #FFFDF2;
+  --panel-hover: #F0EAD9;
+  --text: #1A1A1A;
+  --muted: #535A5D;
+  --link: #006B69;
+  --link-hover: #004D4B;
+  --focus: #006B69;
+  --border: #525D5B;
+  --border-soft: #BBC8BF;
+  --code-bg: #F0EAD9;
+  --quote-bg: #EDF2E8;
+  --table-head: #E3EEE7;
+  --table-even: #F4F1E4;
+  --table-odd: #FFFAF0;
+  --input-bg: #FFFFFF;
+  --button-bg: #006B69;
+  --button-hover: #004D4B;
+  --button-text: #FFFFFF;
+  --nav-button-bg: #1A1A1A;
+  --nav-button-text: #FFFFFF;
+  --archive-tile: #005E63;
+  --archive-hover: #004B50;
+  --archive-empty: #FFFDF2;
+  --retro-teal: #008080;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #191D27;
+  --panel: #242B38;
+  --panel-hover: #303A48;
+  --text: #F5F0E4;
+  --muted: #B9C5CB;
+  --link: #78D0C3;
+  --link-hover: #A5E5D9;
+  --focus: #A5E5D9;
+  --border: #88969C;
+  --border-soft: #4B5A63;
+  --code-bg: #303A48;
+  --quote-bg: #2A3B40;
+  --table-head: #304642;
+  --table-even: #222C38;
+  --table-odd: #273240;
+  --input-bg: #242B38;
+  --button-bg: #78D0C3;
+  --button-hover: #A5E5D9;
+  --button-text: #191D27;
+  --nav-button-bg: #78D0C3;
+  --nav-button-text: #191D27;
+  --archive-tile: #115B60;
+  --archive-hover: #19757B;
+  --archive-empty: #242B38;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -272,12 +329,12 @@ html {
   box-sizing: inherit;
 }
 body {
-  background-color: #fff8dc;
+  background-color: var(--page-bg);
   margin: 0;
   font-family: 'Merriweather', Georgia, serif;
   font-size: 16px;
   line-height: 1.7;
-  color: #1a1a1a;
+  color: var(--text);
   letter-spacing: 0.025em;
 }
 
@@ -285,7 +342,7 @@ body {
    LINKS & TYPOGRAPHY
    =========================== */
 a {
-  color: #0009b5;
+  color: var(--link);
   text-decoration: none;
 }
 a:hover {
@@ -301,11 +358,11 @@ h2 {
   margin-bottom: 0em;
 }
 h2 a {
-  color: #000;
+  color: var(--text);
   text-decoration: none;
 }
 h2 a:hover {
-  color: #0009b5;
+  color: var(--link);
   text-decoration: none;
 }
 
@@ -316,7 +373,7 @@ h2 a:hover {
 code {
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.85rem;
-  background: #f4f4f4;
+  background: var(--code-bg);
   padding: 0.2em 0.4em;
   border-radius: 3px;
 }
@@ -324,7 +381,7 @@ pre code {
   display: block;
   padding: 1rem;
   font-size: 0.85rem;
-  background: #f4f4f4;
+  background: var(--code-bg);
   border-radius: 6px;
   overflow-x: auto;
 }
@@ -333,7 +390,7 @@ pre code {
    HEADER
    =========================== */
 .site-header {
-  background: #fff8dc;
+  background: var(--page-bg);
   border-bottom: none;
 }
 .header-inner {
@@ -356,12 +413,12 @@ pre code {
   font-weight: 300;
   letter-spacing: 0.15em;
   font-size: 2.2rem;
-  color: #000;
+  color: var(--text);
   text-decoration: none;
 }
 .site-logo:hover {
   text-decoration: none;
-  color: #0009b5;
+  color: var(--link);
 }
 
 /* ---- Animated subtitle ---- */
@@ -380,7 +437,7 @@ pre code {
   white-space: nowrap;
   font-size: 1.1rem;
   letter-spacing: 0.03em;
-  color: #000;
+  color: var(--text);
   opacity: 0;
   animation: phraseCycleLong 60s infinite;
 }
@@ -414,8 +471,8 @@ pre code {
 .main-nav {
   width: 100%;
   margin-top: 12px;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--text);
   padding: 8px 0;
   position: relative;
 }
@@ -433,16 +490,16 @@ pre code {
   font-weight: normal;
   font-size: 0.95rem;
   text-transform: none;
-  color: #000;
+  color: var(--text);
   text-decoration: none;
 }
 /* Merged Hover & Active States */
 .main-nav a:hover {
-  color: #0009b5;
+  color: var(--link);
   text-decoration: none;
 }
 .main-nav a.active {
-  color: #000;
+  color: var(--text);
   font-weight: bold;
 }
 
@@ -467,7 +524,7 @@ pre code {
 .sidebar {
   width: 300px;
   flex-shrink: 0;
-  border-top: 4px solid #000;
+  border-top: 4px solid var(--text);
   padding-top: 0.5rem;
 }
 
@@ -476,7 +533,7 @@ pre code {
    =========================== */
 .widget {
   margin-bottom: 1rem;
-  border-bottom: 4px solid #000;
+  border-bottom: 4px solid var(--text);
   padding-bottom: 0.5rem;
 }
 .widgettitle {
@@ -506,7 +563,7 @@ pre code {
 .widget button {
   padding: 8px 16px;
   margin-top: 5px;
-  background: #0009b5;
+  background: var(--link);
   color: #fff;
   border: none;
   font-family: 'Montserrat', sans-serif;
@@ -516,7 +573,7 @@ pre code {
 /* Inline search form */
 .inline-search-form {
   display: flex;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
   border-radius: 0;
   overflow: hidden;
 }
@@ -536,7 +593,7 @@ pre code {
   border: none;
   outline: none;
   padding: 10px 20px;
-  background: #003d85;
+  background: var(--button-bg);
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
@@ -548,7 +605,7 @@ pre code {
   margin: 0;
 }
 .inline-search-form button:hover {
-  background: #002a5c;
+  background: var(--button-hover);
 }
 .search-widget {
   padding-top: 0.8rem;
@@ -583,7 +640,7 @@ pre code {
   padding: 8px;
   font-family: Montserrat, "Helvetica Neue", sans-serif;
   font-size: 0.9rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
   background: #fff;
   cursor: pointer;
 }
@@ -631,7 +688,7 @@ pre code {
 .post-entry {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 0.5px solid #000;
+  border-bottom: 0.5px solid var(--text);
 }
 .post-entry:last-child {
   border-bottom: none;
@@ -640,10 +697,10 @@ pre code {
   margin-bottom: 1.5rem;
 }
 .post-entry h2 a {
-  color: #000;
+  color: var(--text);
 }
 .post-entry .post-date {
-  color: #000;
+  color: var(--text);
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
@@ -653,17 +710,17 @@ pre code {
   font-size: 1.75rem;
 }
 .post-title a {
-  color: #000;
+  color: var(--text);
   text-decoration: none;
 }
 .post-title a:hover {
-  color: #0009b5;
+  color: var(--link);
   text-decoration: none;
 }
 .post-full .post-title {
   font-size: 1.75rem;
   margin-bottom: 0.8em;
-  color: #000;
+  color: var(--text);
 }
 
 /* Meta Row & Meta */
@@ -681,10 +738,10 @@ pre code {
   font-size: 0.8125rem;
   line-height: 1.5;
   margin-bottom: 1.5rem;
-  color: #000;
+  color: var(--text);
 }
 .meta-sep {
-  color: #000;
+  color: var(--text);
   font-weight: 400;
   font-size: inherit;
   font-family: inherit;
@@ -695,11 +752,11 @@ pre code {
   white-space: nowrap;
 }
 .post-meta a {
-  color: #000;
+  color: var(--text);
   text-decoration: none;
 }
 .post-meta a:hover {
-  color: #0009b5;
+  color: var(--link);
   text-decoration: underline;
 }
 .post-meta .post-author,
@@ -767,7 +824,7 @@ pre code {
 /* Merged Read More */
 .read-more {
   display: inline-block;
-  color: #0009b5;
+  color: var(--link);
   text-decoration: none;
   margin-bottom: 2em;
 }
@@ -790,7 +847,7 @@ pre code {
   margin-bottom: 2rem;
 }
 .pagination-bar {
-  border-top: 4px solid #000;
+  border-top: 4px solid var(--text);
   padding-top: 0;
   display: flex;
   justify-content: space-between;
@@ -806,7 +863,7 @@ pre code {
 .pagination-gap {
   font-family: Montserrat, "Helvetica Neue", sans-serif;
   font-size: 1.2rem;
-  color: #0009b5;
+  color: var(--link);
   text-decoration: none;
   font-weight: 500;
   line-height: 1;
@@ -815,12 +872,12 @@ pre code {
   text-decoration: underline;
 }
 .pagination-gap {
-  color: #666;
+  color: var(--muted);
   cursor: default;
 }
 .current-page {
   font-weight: 700;
-  color: #000;
+  color: var(--text);
   cursor: default;
 }
 .pagination-arrows {
@@ -833,16 +890,16 @@ pre code {
   justify-content: center;
   width: 3.2em;
   height: 3.2em;
-  background: #000;
-  color: #fff8dc;
+  background: var(--text);
+  color: var(--page-bg);
   text-decoration: none;
   font-weight: 400;
   font-size: 1rem;
   transition: background 0.2s ease, color 0.2s ease;
 }
 .arrow-link:hover {
-  background: #0009b5;
-  color: #fff8dc;
+  background: var(--link);
+  color: var(--page-bg);
   text-decoration: none;
 }
 .arrow-icon {
@@ -861,7 +918,7 @@ pre code {
    SINGLE POST NAVIGATION
    =========================== */
 .post-navigation {
-  border-top: 4px solid #000;
+  border-top: 4px solid var(--text);
   padding-top: 1rem;
   margin-top: 3rem;
   display: flex;
@@ -878,7 +935,7 @@ pre code {
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: #000;
+  color: var(--text);
   margin-bottom: 0.3rem;
 }
 .nav-title {
@@ -886,13 +943,13 @@ pre code {
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.3;
-  color: #000;
+  color: var(--text);
   text-decoration: none;
   display: inline-block;
   margin-bottom: 0.5rem;
 }
 .nav-title:hover {
-  color: #0009b5;
+  color: var(--link);
   text-decoration: bold;
 }
 
@@ -964,13 +1021,13 @@ pre code {
   flex: 1;
   padding: 10px 12px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
   border-radius: 0;
 }
 #search .pagefind-ui__search-input button {
   padding: 10px 20px;
   font-size: 1rem;
-  background: #0009b5;
+  background: var(--link);
   color: #fff;
   border: none;
   cursor: pointer;
@@ -1001,9 +1058,9 @@ pre code {
   box-shadow: none;
 }
 #search .pagefind-ui__result:hover {
-  background: #fffae8;
-  border: 1px solid #e2e8f0;
-  border-left: 3px solid #0009b5;
+  background: var(--panel);
+  border: 1px solid var(--border-soft);
+  border-left: 3px solid var(--link);
   box-shadow: 0 6px 15px rgba(0,0,0,0.06);
   transform: translateY(-2px);
   cursor: pointer;
@@ -1013,39 +1070,39 @@ pre code {
   font-size: 1.35rem;
   line-height: 1.3;
   font-weight: 700;
-  color: #1a202c;
+  color: var(--text);
   transition: color 0.3s ease;
 }
 #search .pagefind-ui__result:hover .pagefind-ui__result-title {
-  color: #0009b5; 
+  color: var(--link); 
 }
 #search .pagefind-ui__result-excerpt {
   margin: 0 0 1rem 0;
   line-height: 1.6;
-  color: #000;
+  color: var(--text);
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 #search .pagefind-ui__result:hover .pagefind-ui__result-excerpt {
-  color: #2d3748; 
+  color: var(--text); 
 }
 #search .pagefind-ui__result-url {
   margin: 0;
   font-size: 0.8rem;
-  color: #a0aec0;
+  color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 #search .pagefind-ui__result:hover .pagefind-ui__result-url {
-  color: #0009b5;
+  color: var(--link);
 }
 
 #search .pagefind-ui__button {
   background: transparent;
-  border: 1px solid #cbd5e0;
-  color: #1a202c;
+  border: 1px solid var(--border);
+  color: var(--text);
   padding: 0.75rem 1.75rem;
   font-size: 1rem;
   font-weight: 600;
@@ -1062,9 +1119,9 @@ pre code {
   box-shadow: none;
 }
 #search .pagefind-ui__button:hover {
-  background: #fffae8;
-  border: 1px solid #0009b5;
-  color: #0009b5;
+  background: var(--panel);
+  border: 1px solid var(--link);
+  color: var(--link);
   box-shadow: 0 6px 15px rgba(0,0,0,0.06);
   transform: translateY(-2px);
 }
@@ -1085,7 +1142,7 @@ pre code {
 }
 .box {
   padding: 1px;
-  border: 1px solid #000;
+  border: 1px solid var(--text);
   background: #fff;
 }
 /* One original, unmodified pixel-art GIF runs along the main-nav top border.
@@ -1145,7 +1202,7 @@ pre code {
     padding: 0;
     margin: 0;
     margin-top: 0.69rem;
-    border-top: 1px solid #000;
+    border-top: 1px solid var(--text);
     border-bottom: none;
     background: transparent;
     overflow: visible;
@@ -1164,7 +1221,7 @@ pre code {
     gap: 4px;
     width: 44px;
     height: 44px;
-    background: #000;
+    background: var(--text);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -1176,7 +1233,7 @@ pre code {
     transform: translateY(-50%);
   }
   .nav-toggle:hover {
-    background: #1a1a1a;
+    background: var(--text);
   }
   .nav-toggle span {
     display: block;
@@ -1214,7 +1271,7 @@ pre code {
     top: 100%;
     left: 0;
     width: 100%;
-    background: #fff8dc;
+    background: var(--page-bg);
     margin: 0;
     padding: 0.8rem 0;
     list-style: none;
@@ -1229,7 +1286,7 @@ pre code {
   }
   .nav-list li {
     margin: 0 3%;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--text);
   }
   .nav-list li:last-child {
     border-bottom: none;
@@ -1237,7 +1294,7 @@ pre code {
   .nav-list li a {
     display: block;
     padding: 1rem 5%;
-    color: #000;
+    color: var(--text);
     text-decoration: none;
     font-family: Montserrat, "Helvetica Neue", sans-serif;
     font-size: 1rem;
@@ -1270,7 +1327,7 @@ pre code {
     font-family: Montserrat, "Helvetica Neue", sans-serif;
     font-size: 0.8125rem;
     line-height: 1.5;
-    color: #000;
+    color: var(--text);
     margin-bottom: 0.8em;
     white-space: nowrap;
   }
@@ -1284,7 +1341,7 @@ pre code {
     white-space: nowrap;
   }
   .meta-sep {
-    color: #999;
+    color: var(--muted);
     font-weight: 400;
     font-size: inherit;
     font-family: inherit;
@@ -1376,3 +1433,34 @@ pre code {
     padding-bottom: 10px;
   }
 }
+/* Light/Dark toggle is in the branding row, outside the mobile menu. */
+.theme-toggle {
+  position: absolute;
+  top: 0.25rem;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+  z-index: 11;
+}
+.theme-toggle:hover { background: var(--panel-hover); color: var(--link); }
+.theme-toggle:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.theme-icon { width: 22px; height: 22px; }
+.theme-icon--moon { display: none; }
+:root[data-theme="dark"] .theme-icon--moon { display: block; }
+:root[data-theme="dark"] .theme-icon--sun { display: none; }
+@media screen and (max-width: 750px) {
+  .theme-toggle {
+    right: 54px; top: 50%; transform: translateY(-50%);
+  }
+}
+/* Do not allow inherited dark native-control styling into the Windows 95 modem. */
+.mcretro-modem-dialog, .mcretro-modem-card { color-scheme: light; }

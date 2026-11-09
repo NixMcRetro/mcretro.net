@@ -21,6 +21,6 @@ Willie Wagtails (*Rhipidura leucophrys*) actively defend their territory, which 
 - [Australian Museum - Willie Wagtail](https://australian.museum/learn/animals/birds/willie-wagtail/)
 - [BirdLife Australia - Willie Wagtail](https://birdlife.org.au/bird-profiles/willie-wagtail/)
 
-### Related posts
+### Related Posts
 
 - [Baby Willie Wagtail Call vs Parent Call](/baby-willie-wagtail-call-vs-parent-call/)

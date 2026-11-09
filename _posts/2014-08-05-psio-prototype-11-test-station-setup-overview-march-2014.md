@@ -32,7 +32,7 @@ You can hit up [PSIO](https://ps-io.com/) if you have any questions, since I am 
 - [PS1 Developer Wiki - SKU Models](https://www.psdevwiki.com/ps1/SKU_Models)
 - [PlayStation Specifications - Mods - PAL/NTSC Color Mods](https://psx-spx.consoledev.net/ps1/pinouts/mods-pal-ntsc-color-mods/)
 
-### Related PSIO prototype posts
+### Related Posts
 
 - [PSIO Prototype 1.1 Game Demo: Chrono Cross (Part 1)](/psio-prototype-11-game-demo-chrono-cross-part-1/)
 - [PSIO Prototype 1.1 Game Demo: Chrono Cross (Part 2)](/psio-prototype-11-game-demo-chrono-cross-part-2/)

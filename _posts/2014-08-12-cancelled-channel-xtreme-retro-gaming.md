@@ -10,7 +10,7 @@ categories: [news, youtube]
 
 Sifting through my old video footage, I came across XRG and PRG... originally what this channel was supposed to be before I figured we could make it better. More gameplay to come in the next few weeks! ;)
 
-### Related posts
+### Related Posts
 
 - [XRG - Xtreme Retro Gaming, Now Closed](/xrg-xtreme-retro-gaming-now-closed/)
 - [McRetro Gaming Teaser Trailer](/mcretro-gaming-teaser-trailer/)

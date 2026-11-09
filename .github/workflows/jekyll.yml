@@ -11,6 +11,7 @@ on:
   pull_request:
     paths:
       - '_posts/**'
+      - 'assets/css/**'
       - 'homepages/vrampage-md/**'
       - '_config.yml'
       - '.github/workflows/jekyll.yml'

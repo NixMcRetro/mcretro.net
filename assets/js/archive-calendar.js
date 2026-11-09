@@ -14,14 +14,19 @@
   function show() {
     const index = year.selectedIndex, option = year.options[index];
     if (!option || !/^\d{4}$/.test(option.value)) return;
+    // Convert the DOM attribute to a validated integer before constructing URLs.
+    // No raw DOM text should reach href or other generated labels.
+    const numericYear = Number(option.value);
+    if (!Number.isSafeInteger(numericYear) || numericYear < 1000 || numericYear > 9999) return;
+    const archiveYear = String(numericYear);
     const counts = (option.dataset.counts || '').split(',').map(Number);
     if (counts.length !== 12 || counts.some(n => !Number.isSafeInteger(n) || n < 0)) return;
     const tiles = counts.map((count, i) => {
       const cell = document.createElement(count ? 'a' : 'span');
       cell.className = 'archive-calendar-month ' + (count ? 'has-posts' : 'is-empty');
       if (count) {
-        cell.href = '/archive/' + option.value + '/' + String(i + 1).padStart(2, '0') + '/';
-        cell.setAttribute('aria-label', full[i] + ' ' + option.value + ': ' +
+        cell.href = '/archive/' + archiveYear + '/' + String(i + 1).padStart(2, '0') + '/';
+        cell.setAttribute('aria-label', full[i] + ' ' + archiveYear + ': ' +
           count + (count === 1 ? ' post' : ' posts'));
       }
       const name = document.createElement('span');
@@ -34,7 +39,7 @@
       return cell;
     });
     grid.replaceChildren(...tiles);
-    grid.setAttribute('aria-label', option.value + ' monthly archives');
+    grid.setAttribute('aria-label', archiveYear + ' monthly archives');
     older.disabled = index === year.options.length - 1;
     newer.disabled = index === 0;
   }

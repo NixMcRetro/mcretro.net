@@ -5,7 +5,6 @@ date: 2016-01-04T20:53:39.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, raspberry-pi]
 permalink: /take-back-the-darknet/
-redirect_from: /take-back-the-darknet-part-1/
 ---
 <figure class="darknet-hero-wrap">
   <img class="darknet-hero" src="/assets/images/2016/01/take-back-the-darknet/take-back-the-darknet.jxl" alt="Take Back the Darknet, original January 2016 guide artwork" width="1536" height="1024" fetchpriority="high" decoding="async">

@@ -35,4 +35,4 @@ I guess the full Jessie image was getting a bit too beefy for 4 GB cards with al
 
 ### Related Posts
 
-- [Take Back the Darknet (Part 1)](/take-back-the-darknet-part-1/)
+- [Take Back the Darknet: The Complete 2016 Guide](/take-back-the-darknet/)

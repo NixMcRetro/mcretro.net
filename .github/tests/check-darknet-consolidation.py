@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Fail the Jekyll build if 2016 guide content, chapter links or original JXL are lost."""
 from pathlib import Path
-import re
 import sys
 
 site = Path(sys.argv[1]) if len(sys.argv) > 1 else Path('_site')
@@ -26,12 +25,7 @@ assert '\u201d' not in part9_source, 'Typographic smart quotes must not remain i
 assert 'Raspberry Pi OS stopped creating that account automatically in April 2022' in page, 'Part 2 historical note lost'
 assert '/assets/js/darknet-accordion.js' in page and (site / 'assets/js/darknet-accordion.js').is_file(), 'Deep-link script missing'
 for chapter in range(1, 15):
-    assert f'id="part-{chapter}"' in page, f'Missing chapter {chapter}'
+    assert f'id="part-{chapter}"' in page, f"Missing chapter {chapter}"
     old = site / f'take-back-the-darknet-part-{chapter}' / 'index.html'
-    assert old.is_file(), f'Legacy address for part {chapter} is missing'
-    redirect = old.read_text(encoding='utf-8')
-    assert re.search('http-equiv=["\\\']refresh', redirect, re.I), f'Part {chapter} did not produce an HTML redirect'
-    assert '/take-back-the-darknet/' in redirect, f'Part {chapter} does not redirect to the canonical guide'
-    if chapter != 1:
-        assert f'#part-{chapter}' in redirect, f'Part {chapter} redirect does not target the chapter'
-print('PASS: original JXL, 14 exclusive panels, all 14 legacy redirects, and historical warnings.')
+    assert not old.exists(), f"Legacy address for part {chapter} must not publish or redirect"
+print('PASS: original JXL, 14 exclusive panels, absent legacy URLs, and historical warnings.')

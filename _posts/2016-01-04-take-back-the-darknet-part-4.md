@@ -4,7 +4,7 @@ author: "Nix McRetro"
 date: 2016-01-04T22:24:12.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, raspberry-pi]
-redirect_to: /take-back-the-darknet/#part-4
+published: false
 sitemap: false
 ---
 

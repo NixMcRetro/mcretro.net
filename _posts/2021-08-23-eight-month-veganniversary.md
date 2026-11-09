@@ -33,4 +33,4 @@ Raise your 15-avocado-baby-sushis and celebrate with me as I forge ahead into th
 ### Sources
 
 - [Healthdirect Australia - Vegetarian and vegan diets](https://www.healthdirect.gov.au/vegetarian-and-vegan-diets)
-- [Agriculture Victoria - Code of Accepted Farming Practice for the Welfare of Poultry, chicken meat production](https://agriculture.vic.gov.au/livestock-and-animals/animal-welfare-victoria/pocta-act-1986/victorian-codes-of-practice-for-animal-welfare/code-of-accepted-farming-practice-for-the-welfare-of-poultry)
+- [Agriculture Victoria: Code of Accepted Farming Practice for Poultry Welfare (Chicken Meat Production)](https://agriculture.vic.gov.au/livestock-and-animals/animal-welfare-victoria/pocta-act-1986/victorian-codes-of-practice-for-animal-welfare/code-of-accepted-farming-practice-for-the-welfare-of-poultry)

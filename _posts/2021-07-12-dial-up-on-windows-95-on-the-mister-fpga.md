@@ -49,4 +49,4 @@ Another major step was realising that, on my RPi3, the forwarding rules I'd put 
 ### Related Posts
 
 - [MiSTer FPGA on the DE10-Nano](/mister-fpga-on-the-de10-nano/)
-- Later project update: [The GeoCities Archive Rebuild Blog](/the-geocities-archive-rebuild-blog/)
+- [The GeoCities Archive Rebuild Blog](/the-geocities-archive-rebuild-blog/)

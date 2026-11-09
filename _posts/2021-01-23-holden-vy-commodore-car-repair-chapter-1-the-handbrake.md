@@ -33,7 +33,7 @@ The Commodore is also due for work on the inlet manifold gaskets, so there's sti
 
 **Related Posts**
 
-- Next: [Chapter 2 - Vacuum Actuator](/holden-vy-commodore-car-repair-chapter-2-vacuum-actuator/)
+- [Holden VY Commodore Car Repair: Chapter 2 - Vacuum Actuator](/holden-vy-commodore-car-repair-chapter-2-vacuum-actuator/)
 - [Chapter 3 - Locating the Cabin Temperature Sensor](/holden-vy-commodore-car-repair-chapter-3-locating-the-cabin-temperature-sensor/)
 - [Chapter 4 - Key Programming with the KF200](/holden-vy-commodore-car-repair-chapter-4-key-programming-with-the-kf200/)
 - [Chapter 5 - Cabin Temperature Sensor Replacement](/holden-vy-commodore-car-repair-chapter-5-cabin-temperature-sensor-replacement/)

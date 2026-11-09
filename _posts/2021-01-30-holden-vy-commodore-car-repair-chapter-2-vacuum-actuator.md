@@ -28,14 +28,14 @@ I suspect the other actuator may still need attention, but getting to that one l
 
 **Sources**
 
-- [Holden VY Service Information - Section 2D, HVAC Occupant Climate Control (Auto A/C), Description and Operation](https://holden.wiki/docs/gmh_sip1/service%20information/vy%20commodore/section%202/vy2d/vy2d.html)
-- [Holden VY Series II Service Information - Section 2D, Auto A/C carry-over information and revised HVAC units](https://holden.wiki/docs/gmh_sip1/service%20information/my04%20vy%20series%20ii/section%202/04vy2d/04vy2d.html)
+- [Holden VY Service Information: Section 2D, Automatic Climate Control (Description and Operation)](https://holden.wiki/docs/gmh_sip1/service%20information/vy%20commodore/section%202/vy2d/vy2d.html)
+- [Holden VY Series II Service Information: Section 2D, Automatic Climate Control Revisions](https://holden.wiki/docs/gmh_sip1/service%20information/my04%20vy%20series%20ii/section%202/04vy2d/04vy2d.html)
 - [Just Commodores - A/C issue under acceleration](https://forums.justcommodores.com.au/threads/a-c-issue-under-acceleration.183080/)
 - [Just Commodores - X symbol in the climate-control display panel](https://forums.justcommodores.com.au/threads/holden-vt-berlina-2k-x-symbol-in-the-right-hand-side-of-climate-control-display-pan.152757/)
 
 **Related Posts**
 
-- Previous: [Chapter 1 - The Handbrake](/holden-vy-commodore-car-repair-chapter-1-the-handbrake/)
-- Next: [Chapter 3 - Locating the Cabin Temperature Sensor](/holden-vy-commodore-car-repair-chapter-3-locating-the-cabin-temperature-sensor/)
+- [Holden VY Commodore Car Repair: Chapter 1 - The Handbrake](/holden-vy-commodore-car-repair-chapter-1-the-handbrake/)
+- [Holden VY Commodore Car Repair: Chapter 3 - Locating the Cabin Temperature Sensor](/holden-vy-commodore-car-repair-chapter-3-locating-the-cabin-temperature-sensor/)
 - [Chapter 4 - Key Programming with the KF200](/holden-vy-commodore-car-repair-chapter-4-key-programming-with-the-kf200/)
 - [Chapter 5 - Cabin Temperature Sensor Replacement](/holden-vy-commodore-car-repair-chapter-5-cabin-temperature-sensor-replacement/)

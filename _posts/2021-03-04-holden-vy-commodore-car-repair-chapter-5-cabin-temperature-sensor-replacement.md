@@ -29,4 +29,4 @@ We've now worked through a handbrake replacement, vacuum actuator repairs, key p
 - [Chapter 1 - The Handbrake](/holden-vy-commodore-car-repair-chapter-1-the-handbrake/)
 - [Chapter 2 - Vacuum Actuator](/holden-vy-commodore-car-repair-chapter-2-vacuum-actuator/)
 - [Chapter 3 - Locating the Cabin Temperature Sensor](/holden-vy-commodore-car-repair-chapter-3-locating-the-cabin-temperature-sensor/)
-- Previous: [Chapter 4 - Key Programming with the KF200](/holden-vy-commodore-car-repair-chapter-4-key-programming-with-the-kf200/)
+- [Holden VY Commodore Car Repair: Chapter 4 - Key Programming with the KF200](/holden-vy-commodore-car-repair-chapter-4-key-programming-with-the-kf200/)

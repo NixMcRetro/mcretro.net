@@ -18,8 +18,8 @@ We picked up an "Interior Air Temp Temperature Sensor" which appeared to be comp
 
 ### Sources
 
-- [Holden VY Service Information - Section 2D, HVAC Occupant Climate Control (Auto A/C), Description and Operation](https://holden.wiki/docs/gmh_sip1/service%20information/vy%20commodore/section%202/vy2d/vy2d.html)
-- [Holden VY Series II Service Information - Section 2D, Auto A/C carry-over information and revised HVAC units](https://holden.wiki/docs/gmh_sip1/service%20information/my04%20vy%20series%20ii/section%202/04vy2d/04vy2d.html)
+- [Holden VY Service Information: Section 2D, Automatic Climate Control (Description and Operation)](https://holden.wiki/docs/gmh_sip1/service%20information/vy%20commodore/section%202/vy2d/vy2d.html)
+- [Holden VY Series II Service Information: Section 2D, Automatic Climate Control Revisions](https://holden.wiki/docs/gmh_sip1/service%20information/my04%20vy%20series%20ii/section%202/04vy2d/04vy2d.html)
 - [Just Commodores - Climate control changing temperature](https://forums.justcommodores.com.au/threads/climate-control-changing-temperature.125295/)
 - [Just Commodores - Ambient temperature sensor location](https://forums.justcommodores.com.au/threads/ambient-temperature-sensor-location.87618/)
 - [Just Commodores - VY II (Calais) climate control problem](https://forums.justcommodores.com.au/threads/vy-ii-calais-climate-control-problem.195751/)

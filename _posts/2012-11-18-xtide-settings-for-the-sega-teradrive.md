@@ -23,12 +23,12 @@ One terminology trap worth clearing up is that the modern XTIDE project isn't th
 
 Anyway, those are the settings that worked for me. Now perhaps I can go back to playing Paku Paku rather than spending all evening in a BIOS configuration utility!
 
-### Related posts
+### Sources
+
+- [XTIDE Universal BIOS: Configuration (2.0.0 Beta 1/Beta 2 CHS Warning)](https://www.xtideuniversalbios.org/)
+- [Nerdly Pleasures: Original 8-bit IDE Interface (XTA vs XTIDE)](https://nerdlypleasures.blogspot.com/2014/04/the-original-8-bit-ide-interface.html)
+
+### Related Posts
 
 - [Recovering from an Incorrect XTIDE EEPROM Flash](/recovering-from-an-incorrect-xtide-eeprom-flash/)
 - [Sega TeraDrive Model 2 XTIDE Boot Success](/sega-teradrive-model-2-xtide-boot-success/)
-
-### Sources
-
-- [XTIDE Universal BIOS - Installation and Configuration Documentation](https://www.xtideuniversalbios.org/) - the later project documentation explains the logical CHS compatibility warning when upgrading from 2.0.0 beta 1 to beta 2 or subsequent releases.
-- [Nerdly Pleasures - The Original 8-bit IDE Interface](https://nerdlypleasures.blogspot.com/2014/04/the-original-8-bit-ide-interface.html) - distinguishes the historical XTA interface from the modern XTIDE project.

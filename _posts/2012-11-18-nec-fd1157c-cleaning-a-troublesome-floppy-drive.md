@@ -22,7 +22,7 @@ Looking back, I'm not particularly impressed with the way I was going about clea
 I did connect it to my Pentium III test machine afterwards. The motor spun and the drive light came on, but it still couldn't read the disk, exactly as before the cleaning. So much for a miraculous comeback! At least the experiment showed that dirty heads weren't the whole story.
 
 
-### Related posts
+### Related Posts
 
 
 - [Miscellaneous ISA and PCI Cards](/miscellaneous-isa-and-pci-cards/)

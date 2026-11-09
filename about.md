@@ -78,9 +78,9 @@ The place you're visiting right now. We've got a blog, historical videos, repair
 
 <div class="center" markdown="1">
 
-![Self Portrait of McRetro (1988)](/assets/images/about/Me-1988.jpg){: width="298" height="396"}
+![Future Lost](/assets/images/about/futurelost.jxl){: width="600" }
 
-*"Self Portrait of McRetro (1988)"*
+*An artefact from a timeline that never existed.*
 
 </div>
 

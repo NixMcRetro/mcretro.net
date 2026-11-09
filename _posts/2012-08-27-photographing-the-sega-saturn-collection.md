@@ -49,11 +49,11 @@ Of course, looking alike doesn't necessarily mean the boards are electrically in
 
 Still, with so little documentation available for these development units, I thought the comparison was worth recording. At least we've got another useful clue about how closely related the early Saturn hardware is to Sophia. And if nothing else, I've finally got some decent photographs of the collection!
 
-### Related posts
+### Sources
+
+- [ConsoleMods: Saturn Model Differences (VA0 CD Daughterboard)](https://consolemods.org/wiki/Saturn:Saturn_Model_Differences)
+
+### Related Posts
 
 - [Sega Saturn Sophia Development Kit: Internal View](/sega-saturn-sophia-development-kit-internal-view/)
 - [Sega Saturn Sophia and VA0 Parts Compatibility Test](/sega-saturn-sophia-and-va0-parts-compatibility-test/)
-
-### Sources
-
-- [ConsoleMods - Saturn Model Differences](https://consolemods.org/wiki/Saturn:Saturn_Model_Differences) - documents the separate CD-processing daughterboard arrangement used in early VA0 Saturn hardware.

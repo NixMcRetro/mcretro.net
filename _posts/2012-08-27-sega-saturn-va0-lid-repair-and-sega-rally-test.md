@@ -22,7 +22,7 @@ My magnificent driving career eventually comes to an end, but the Saturn itself 
 
 So there we go. One working VA0 Sega Saturn and one extremely questionable performance at *Sega Rally*. The hardware is back in action, even if my driving skills still need a little work.
 
-### Related posts
+### Related Posts
 
 - [Photographing the Sega Saturn Collection](/photographing-the-sega-saturn-collection/)
 - [Sega Saturn Model 1 VA0 Modchip Installation](/sega-saturn-model-1-va0-modchip-installation/)

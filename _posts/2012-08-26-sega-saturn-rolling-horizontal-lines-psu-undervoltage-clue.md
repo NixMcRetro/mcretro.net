@@ -48,10 +48,10 @@ What interests me is that changing the input voltage also changed the interferen
 
 More testing required.
 
-### Related posts
-
-- [Sega Saturn Model 1 Power Supply Issues](/sega-saturn-model-1-power-supply-issues/)
-
 ### Sources
 
-- [ConsoleMods - Comparison of Power Supplies](https://consolemods.org/wiki/Comparison_of_Power_Supplies) - documents regional Sega Saturn mains-input ranges and PSU differences.
+- [ConsoleMods: Comparison of Power Supplies (Regional Saturn PSU)](https://consolemods.org/wiki/Comparison_of_Power_Supplies)
+
+### Related Posts
+
+- [Sega Saturn Model 1 Power Supply Issues](/sega-saturn-model-1-power-supply-issues/)

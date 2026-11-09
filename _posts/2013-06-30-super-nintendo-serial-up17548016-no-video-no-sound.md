@@ -18,6 +18,6 @@ The plan is to replace the electrolytic capacitors and see whether anything chan
 
 So that's three faulty Super Nintendo consoles, each with a slightly different problem. Between these, the PlayStation and the Xbox repairs I've been working on, I've certainly got enough to keep myself occupied!
 
-### Related posts
+### Related Posts
 
 - [Super Nintendo Serial UP17548016 - Repaired](/super-nintendo-serial-up17548016-repaired/)

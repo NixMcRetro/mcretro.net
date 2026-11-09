@@ -20,11 +20,11 @@ I'll replace the capacitors anyway after all these years, as a separate bit of m
 
 **Update:** I recorded the capacitor replacement in a later post on 11th July, after getting this console running again.
 
-### Related posts
+### Sources
+
+- [Nichicon: Aluminum Electrolytic Capacitors (Technical Notes)](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)
+
+### Related Posts
 
 - [Super Nintendo Serial UP17548016 - No Video, No Sound](/super-nintendo-serial-up17548016-no-video-no-sound/)
 - [Super Nintendo Serial UP17548016 Capacitor Replacement](/super-nintendo-serial-up17548016-capacitor-replacement/)
-
-### Sources
-
-- [Nichicon - General Descriptions of Aluminum Electrolytic Capacitors (Technical Notes)](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)

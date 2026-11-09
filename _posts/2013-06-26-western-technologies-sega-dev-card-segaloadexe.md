@@ -18,13 +18,13 @@ Unfortunately, the game eventually froze. Whether that was caused by the develop
 
 There's obviously more investigating to do, but at least we've made some progress with loading games onto this unusual piece of Mega Drive development hardware.
 
-### Related posts
+### Sources
+
+- [Charles MacDonald and Bock: SegaDev Hardware and Original Software](https://www.smspower.org/forums/12038-ZAXZ80HInCircuitEmulatorER308ERX308PWasWhatsInADevkitAnyway)
+- [Genesis Programming FAQ: SegaDev Card and SEGALOAD.EXE](https://gamefaqs.gamespot.com/genesis/916377-genesis/faqs/9755)
+
+### Related Posts
 
 - [Western Technologies Sega Dev Card Software Overview](/western-technologies-sega-dev-card-software-overview/)
 - [Western Technologies Sega Dev Card Demo Code](/western-technologies-sega-dev-card-demo-code/)
 - [Glitching on Western Technologies Sega Dev Card](/glitching-on-western-technologies-sega-dev-card/)
-
-### Sources
-
-- [Charles MacDonald and Bock - SegaDev hardware inspection and original software](https://www.smspower.org/forums/12038-ZAXZ80HInCircuitEmulatorER308ERX308PWasWhatsInADevkitAnyway)
-- [Genesis Programming FAQ - Western Technologies SegaDev Card and SEGALOAD.EXE](https://gamefaqs.gamespot.com/genesis/916377-genesis/faqs/9755)

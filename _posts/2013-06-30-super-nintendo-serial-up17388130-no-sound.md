@@ -20,7 +20,7 @@ One nice discovery is that parts of the casing can be swapped around using the p
 
 Fresh capacitors first, more troubleshooting if required. Hopefully this one will be making some noise again before too long!
 
-### Related posts
+### Related Posts
 
 - [Super Nintendo Serial UP17388130 - No Sound Update](/super-nintendo-serial-up17388130-no-sound-update/)
 - [Damaged S-MIX on a SNES SNSP-CPU-1CHIP-02 Mainboard](/damaged-s-mix-on-a-snes-snsp-cpu-1chip-02-mainboard/)

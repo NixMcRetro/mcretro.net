@@ -20,13 +20,13 @@ A gentleman on ASSEMbler Games kindly supplied the software, which made this lit
 
 It reminded me a little of the Mega EverDrive, which could load game images from an SD card or transfer them from a PC over USB. Different hardware, of course, but a similarly convenient way to get new code running on a Mega Drive without burning another EPROM.
 
-### Related posts
+### Sources
+
+- [Genesis Programming FAQ: SegaDev Card and SEGALOAD.EXE](https://gamefaqs.gamespot.com/genesis/916377-genesis/faqs/9755)
+- [Mega EverDrive User Manual, March 2012](https://stoneagegamer.com/content/flash/legacy/megaed/Mega_EverDrive_Manual_ENGLISH_PCBv1.00_FWv2_OSv1.pdf)
+- [Charles MacDonald and Bock: SegaDev Hardware and Original Software](https://www.smspower.org/forums/12038-ZAXZ80HInCircuitEmulatorER308ERX308PWasWhatsInADevkitAnyway)
+
+### Related Posts
 
 - [Western Technologies Sega Dev Card Demo](/western-technologies-sega-dev-card-demo/)
 - [Western Technologies Sega Dev Card SEGALOAD.EXE](/western-technologies-sega-dev-card-segaloadexe/)
-
-### Sources
-
-- [Genesis Programming FAQ - Western Technologies SegaDev Card and SEGALOAD.EXE](https://gamefaqs.gamespot.com/genesis/916377-genesis/faqs/9755)
-- [Mega EverDrive User Manual, March 2012](https://stoneagegamer.com/content/flash/legacy/megaed/Mega_EverDrive_Manual_ENGLISH_PCBv1.00_FWv2_OSv1.pdf)
-- [Charles MacDonald and Bock - SegaDev hardware inspection and original software](https://www.smspower.org/forums/12038-ZAXZ80HInCircuitEmulatorER308ERX308PWasWhatsInADevkitAnyway)

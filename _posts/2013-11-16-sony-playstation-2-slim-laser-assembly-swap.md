@@ -24,12 +24,12 @@ Different PS2 revisions can use different laser pickups, so it's worth checking 
 
 At least we've got one more PlayStation 2 working. Considering how the earlier repair attempts went, I'll take that as a victory!
 
-### Related posts
-
-- [Sony PlayStation 2 Laser Replacement Failure (Long)](/sony-playstation-2-laser-replacement-failure-long/)
-- [Sony PlayStation 2 Laser Replacement Failure (Short)](/sony-playstation-2-laser-replacement-failure-short/)
-
 ### Sources
 
 - [PS2 Developer Wiki - Pickups](https://www.psdevwiki.com/ps2/Pickups)
 - [iFixit - PlayStation 2 Slimline PVR-802W Laser Replacement](https://www.ifixit.com/Guide/PlayStation+2+Slimline+PVR-802W+Laser+Replacement/135413)
+
+### Related Posts
+
+- [Sony PlayStation 2 Laser Replacement Failure (Long)](/sony-playstation-2-laser-replacement-failure-long/)
+- [Sony PlayStation 2 Laser Replacement Failure (Short)](/sony-playstation-2-laser-replacement-failure-short/)

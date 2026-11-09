@@ -34,6 +34,6 @@ At this stage we still don't know exactly what's wrong with the Master System. C
 
 I suppose that's what happens when you rescue a broken console from the gutter. Sometimes you get a bargain, and sometimes you get an entirely new troubleshooting adventure!
 
-### Related posts
+### Related Posts
 
 - [Sega Master System Reassembly in High Speed](/sega-master-system-reassembly-in-high-speed/)

@@ -238,6 +238,15 @@
   margin: 0 0 1.15em;
 }
 
+/* Keep article body lists close to their introductory paragraphs.
+   Preserve the established compact Sources/Related Posts label spacing. */
+.post-full .post-content > p:not(:has(> strong:only-child)):has(+ :is(ul, ol)) {
+  margin-bottom: 0.25em;
+}
+.post-full .post-content > p:not(:has(> strong:only-child)) + ol {
+  margin-top: 0;
+}
+
 .post-full .post-content > h2 {
   font-size: 1.375rem;
   line-height: 1.35;

@@ -65,14 +65,14 @@ Between the graphics card, sound card and original tape-controller card, the ISA
 
 That's about as upgraded as this machine is going to get for the moment. Not bad for an old 8086, even if it isn't technically running an Intel 8086 anymore!
 
+**Sources**
+
+- [IBM: PS/2 Model 30 Technical Reference (8086-2, 8-bit ISA)](https://www.ibmfiles.com/ibmfiles/ps2/25/model30tr.pdf)
+- [NEC: uPD70116 (V30) Datasheet (8 MHz)](https://ardent-tool.com/CPU/docs/NEC/V20-V30/NEC_uPD70116.pdf)
+- [Oracle: Sound Blaster 16, AWE32 and Vibra 16 (8-bit/16-bit DMA)](https://docs.oracle.com/cd/E19504-01/805-0037/6j03u2hrk/index.html)
+
 **Related Posts**
 
 - [IBM PS/2 Model 30 8086: External Overview](/the-ibm-ps2-model-30-8086-external-overview/)
 - [IBM PS/2 Model 30 8086 Disassembly](/ibm-ps2-model-30-8086-disassembly/)
 - [IBM PS/2 Model 30 8086 with ISA XTIDE Card](/ibm-ps2-model-30-8086-with-isa-xtide-card/)
-
-**Sources**
-
-- [IBM Personal System/2 Model 30 Technical Reference](https://www.ibmfiles.com/ibmfiles/ps2/25/model30tr.pdf) - documents the 8 MHz 8086-2, coprocessor support and 8-bit I/O expansion channel.
-- [NEC uPD70116 (V30) 16-bit Microprocessor Datasheet](https://ardent-tool.com/CPU/docs/NEC/V20-V30/NEC_uPD70116.pdf) - documents the V30 pinout and 8 MHz variant.
-- [Oracle - Creative Labs Sound Blaster 16, Sound Blaster AWE32, Sound Blaster Vibra 16](https://docs.oracle.com/cd/E19504-01/805-0037/6j03u2hrk/index.html) - documents separate 8-bit and 16-bit DMA resources used by Sound Blaster 16-family hardware.

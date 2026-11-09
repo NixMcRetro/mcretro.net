@@ -44,11 +44,11 @@ I also discovered that a `crc32` utility was available in my Mac OS X terminal e
 
 CRC32 is handy for recognising known ROM images and spotting accidental changes, although it isn't a cryptographic integrity check. For my Dreamcast BIOS, it gave me another way to compare the result against a known revision. Just like that, checksum generated. Free of charge! :)
 
+**Sources**
+
+- [Dreamcast Wiki: BIOS (PAL MPR-21871 v1.01c, CRC32 2f551bc5)](https://dreamcast.wiki/BIOS)
+- [Debian Manpage: crc32(1) (Perl Archive::Zip)](https://manpages.debian.org/testing/libarchive-zip-perl/crc32.1.en.html)
+
 **Related Posts**
 
 - [Sega Dreamcast BIOS and GD-ROM Dumping](/sega-dreamcast-bios-and-gd-rom-dumping/)
-
-**Sources**
-
-- [Dreamcast Wiki - BIOS](https://dreamcast.wiki/BIOS) - lists MPR-21871 as PAL BIOS v1.01c with CRC32 2f551bc5.
-- [crc32(1) - Compute CRC-32 Checksums for the Given Files](https://manpages.debian.org/testing/libarchive-zip-perl/crc32.1.en.html) - documents the crc32 utility supplied with Perl Archive::Zip.

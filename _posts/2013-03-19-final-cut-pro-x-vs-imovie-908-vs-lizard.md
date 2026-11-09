@@ -18,6 +18,6 @@ Of course, the real star of the video above isn't either editing application. It
 
 **Update 8th February 2018:** Background music was a terrible idea...
 
-### Related posts
+### Related Posts
 
 - [Roadside PC Rescue: Core 2 Quad Q8400 and Radeon HD 5770](/roadside-pc-rescue-core-2-quad-q8400-and-radeon-hd-5770/)

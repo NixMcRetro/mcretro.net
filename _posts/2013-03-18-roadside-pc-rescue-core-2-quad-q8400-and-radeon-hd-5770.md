@@ -33,6 +33,6 @@ Still, for a computer retrieved from the side of the road after spending a wet n
 
 ### Sources
 
-- [GIGABYTE - GA-G41MT-S2P Rev. 1.3 specifications](https://www.gigabyte.com/Motherboard/GA-G41MT-S2P-rev-13/sp), documenting the G41 chipset, processor support, DDR3 memory and expansion layout.
-- [Intel - Core 2 Extreme Processor and Core 2 Quad Processor Specification Update](https://www.intel.com/content/dam/www/public/us/en/documents/specification-updates/core-2-extreme-quad-45nm-process-spec-update.pdf), listing the Q8400 specifications.
-- [GIGABYTE - GV-R577UD-1GD specifications](https://www.gigabyte.com/Graphics-Card/GV-R577UD-1GD/sp), documenting the Radeon HD 5770 graphics card.
+- [GIGABYTE: GA-G41MT-S2P Rev. 1.3 Specifications (G41, DDR3)](https://www.gigabyte.com/Motherboard/GA-G41MT-S2P-rev-13/sp)
+- [Intel: Core 2 Extreme / Core 2 Quad Specification Update (Q8400)](https://www.intel.com/content/dam/www/public/us/en/documents/specification-updates/core-2-extreme-quad-45nm-process-spec-update.pdf)
+- [GIGABYTE: GV-R577UD-1GD (Radeon HD 5770) Specifications](https://www.gigabyte.com/Graphics-Card/GV-R577UD-1GD/sp)

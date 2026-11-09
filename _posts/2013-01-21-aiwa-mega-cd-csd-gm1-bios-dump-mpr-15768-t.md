@@ -38,12 +38,12 @@ At the time, I believed this was the first public dump of the Aiwa BIOS. MAME no
 
 I later returned to the Game Unit to install a BIOS socket, repair damaged traces, and program replacement EPROMs. Those adventures are covered in the related posts below. More details about this original investigation are also preserved in the archived [ASSEMbler Games thread](https://web.archive.org/web/20191111212702/https://assemblergames.com/threads/aiwa-mega-cd-game-unit-bios-dump-mpr-15768-t-2-11c.43866/).
 
+**Sources**
+
+- [Atmel: AT27C1024 Datasheet (1 Mbit, 64K x 16)](https://ww1.microchip.com/downloads/en/DeviceDoc/doc0019.pdf)
+- [MAME: Aiwa ROM mpr-15768-t.bin (0x020000 bytes / 128 KiB; CRC32 8052c7a0)](https://github.com/mamedev/mame/blob/master/src/mame/sega/mdconsole.cpp)
+
 **Related Posts**
 
 - [Aiwa Mega-CD Game Unit BIOS Socket Installation and Trace Repair](/aiwa-mega-cd-game-unit-bios-socket-installation-and-trace-repair/)
 - [Aiwa Mega-CD CSD-GM1 Game Unit EPROM Programming and Repair Test](/aiwa-mega-cd-csd-gm1-game-unit-eprom-programming-and-repair-test/)
-
-**Sources**
-
-- [Atmel - AT27C1024 Datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/doc0019.pdf) - documents the 1 Mbit, 64K x 16 organisation; this does not itself establish the Aiwa mask ROM's compatibility.
-- [MAME - Aiwa Mega-CD ROM definition in mdconsole.cpp](https://github.com/mamedev/mame/blob/master/src/mame/sega/mdconsole.cpp) - lists `mpr-15768-t.bin`, a load size of `0x020000` bytes (128 KiB), and CRC32 `8052c7a0`.

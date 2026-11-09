@@ -22,13 +22,13 @@ This particular unit appears to have some connection with Code Monkeys, and it a
 
 I haven't received all the PC interface boards yet, which means I can't explore the complete development setup. There are still some interesting identification labels and numbers to investigate as well. For now, I've got plenty to keep me occupied: power-up tests, disassembly, photographs, and figuring out exactly what survived inside.
 
+**Sources**
+
+- [Exodus Emulator TechDocs: SNASM Mega-CD Development Hardware (SNASM2, ICOM)](https://techdocs.exodusemulator.com/Console/SegaMegaDrive/Hardware.html)
+- [Exodus Emulator TechDocs: Sega SNASM-CD and SNASM2 Documentation](https://techdocs.exodusemulator.com/Console/SegaMegaDrive/Documentation.html)
+
 **Related Posts**
 
 - [Cross Products SNASM Mega-CD Development Unit Power-Up](/cross-products-snasm-mega-cd-development-unit-power-up/)
 - [Cross Products SNASM Mega-CD Development Unit Disassembly](/cross-products-snasm-mega-cd-development-unit-disassembly/)
 - [Sega SNASM2 and CD Emulation Cards with Gravis UltraSound](/sega-snasm2-and-cd-emulation-cards-with-gravis-ultrasound/)
-
-**Sources**
-
-- [Exodus Emulator TechDocs - Sega Mega Drive Development Hardware](https://techdocs.exodusemulator.com/Console/SegaMegaDrive/Hardware.html) - documents the Cross Products SNASM Mega-CD, its modified retail hardware, SNASM2 upgrade path, and ICOM CD-emulation interface.
-- [Exodus Emulator TechDocs - Sega Mega Drive System Documentation](https://techdocs.exodusemulator.com/Console/SegaMegaDrive/Documentation.html) - catalogues surviving Sega SNASM-CD and SNASM2 development documentation.

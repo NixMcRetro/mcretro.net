@@ -26,6 +26,6 @@ Perhaps I should move to more capable editing software at some point, but I stil
 
 Enjoy the videos, admire those lovely scanlines and try not to judge my Zero Wing skills too harshly. I'm clearly much better at fixing the consoles than surviving the games.
 
-### Related posts
+### Related Posts
 
 - [Micomsoft XRGB-mini Framemeister Arrival](/micomsoft-xrgb-mini-framemeister-arrival/)

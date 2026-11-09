@@ -14,6 +14,7 @@ function requiredFile(relativePath) {
 }
 for (const path of [
   'assets/js/mobile-navigation.js',
+  'assets/js/theme.js',
   'assets/js/search-page.js',
   'assets/js/random-post.js',
   'assets/js/archive-calendar.js',
@@ -32,6 +33,9 @@ const homePath = requiredFile('index.html');
 const home = readFileSync(homePath, 'utf8');
 assert.ok(search.includes('/assets/js/search-page.js'), 'Missing external search script');
 assert.ok(home.includes('/assets/js/mobile-navigation.js'), 'Missing external navigation script');
+assert.ok(home.includes('/assets/js/theme.js'), 'Missing early theme script');
+assert.ok(home.includes('data-theme-toggle'), 'Theme toggle missing');
+assert.ok(home.indexOf('/assets/js/theme.js') < home.indexOf('/assets/css/style.css'), 'Theme script must precede styles');
 assert.ok(home.includes('/assets/js/random-post.js'), 'Missing external random-post script');
 assert.ok(home.includes('/assets/js/archive-calendar.js'), 'Missing external archive script');
 assert.ok(home.includes('data-archive-calendar'), 'Calendar missing');

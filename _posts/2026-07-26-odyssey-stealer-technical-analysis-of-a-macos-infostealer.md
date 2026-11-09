@@ -1467,8 +1467,8 @@ The sample and all associated IOCs have been submitted to VirusTotal, URLhaus, a
 
 - [0xlibris - Odyssey infostealer infection chain](https://0xlibris.net/posts/odyssey_infostealer/)
 - [Censys - Odyssey Stealer: Inside a macOS Crypto-Stealing Operation](https://censys.com/blog/odyssey-stealer-inside-a-macos-crypto-stealing-operation/)
-- [Jamf Threat Labs - Signed and stealing: uncovering new insights on Odyssey Infostealer](https://www.jamf.com/blog/signed-and-stealing-uncovering-new-insights-on-odyssey-infostealer/)
-- [Red Canary - A taxonomy of Mac stealers: Distinguishing Atomic, Odyssey, and Poseidon](https://redcanary.com/blog/threat-intelligence/atomic-odyssey-poseidon-stealers/)
+- [Jamf Threat Labs: New Insights on Odyssey Infostealer (Signed and Stealing)](https://www.jamf.com/blog/signed-and-stealing-uncovering-new-insights-on-odyssey-infostealer/)
+- [Red Canary: Mac Infostealer Taxonomy (Atomic, Odyssey and Poseidon)](https://redcanary.com/blog/threat-intelligence/atomic-odyssey-poseidon-stealers/)
 - [Malwarebytes - Run and schedule scans in Malwarebytes for Windows and Mac](https://help.malwarebytes.com/hc/en-us/articles/31589496411291-Run-and-schedule-scans-in-Malwarebytes-for-Windows-and-Mac)
 
 <script src="/assets/js/odyssey-sections.js" defer></script>

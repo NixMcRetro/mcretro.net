@@ -74,7 +74,7 @@ With that in mind, I guess I'll head back to university for the 18th time. I've 
 
 - [NSW Births, Deaths and Marriages Registration Act 1995 - historical version](https://legislation.nsw.gov.au/view/whole/pdf/inforce/2024-11-08/act-1995-062)
 - [NSW Government - Change of sex](https://www.nsw.gov.au/family-and-relationships/name-changes-and-corrections/change-of-sex)
-- [Queensland Births, Deaths and Marriages Registration Act 2023 - as at 24th June 2024](https://www.legislation.qld.gov.au/view/pdf/2024-06-24/act-2023-017)
+- [Queensland: Births, Deaths and Marriages Registration Act 2023 (Version 24 June 2024)](https://www.legislation.qld.gov.au/view/pdf/2024-06-24/act-2023-017)
 - [NSW DPI - Varroa mite](https://www.dpi.nsw.gov.au/emergencies/biosecurity/current-situation/varroa-mite-emergency-response)
 - [USDA APHIS - Slow Bee Paralysis Virus case definition](https://www.aphis.usda.gov/sites/default/files/slow-bee-paralysis-virus-case-definition.pdf)
 - [National Varroa Mite Management Program - National Baseline Project](https://www.varroa.org.au/baseline)

@@ -29,6 +29,6 @@ Arranging to get rid of them feels like turning another corner. It won't undo th
 
 Today, I am choosing to live.
 
-**Related posts**
+### Related Posts
 
 - [Great News, I'm Transgender!](/great-news-im-transgender/)

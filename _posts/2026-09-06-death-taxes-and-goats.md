@@ -131,11 +131,11 @@ What I keep coming back to is that "archival fidelity" was never about which eng
 
 The ATO gets their numbers. I keep the archive, every statement, searchable, forever. The analog ghosts are at rest now, and the digital debris is organised.
 
+I'm going to take a few days off the terminal. Keep being awesome 🙂
+
 ### **Sources**
 
-- [Datalab - Announcing Chandra OCR 2: 90+ Languages, Top Benchmarks](https://api.datalab.to/blog/chandra-2) - model capabilities, structured output, and bounding boxes.
-- [AWS - Amazon Textract pricing](https://aws.amazon.com/textract/pricing/) - current AnalyzeDocument/TABLES pricing and Free Tier allowances.
-- [AWS - Tables in Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-tables.html) - cell, row/column, confidence, and geometry output.
-- [ATO - Registering a deceased estate trust and lodging returns](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/when-and-how-to-lodge-returns-for-a-deceased-estate) - distinction between the deceased person's return and later estate trust returns.
-
-I'm going to take a few days off the terminal. Keep being awesome 🙂
+- [Datalab: Chandra OCR 2 (90+ Languages)](https://api.datalab.to/blog/chandra-2) - model capabilities, structured output, and bounding boxes.
+- [AWS: Amazon Textract Pricing](https://aws.amazon.com/textract/pricing/) - current AnalyzeDocument/TABLES pricing and Free Tier allowances.
+- [AWS: Tables in Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-tables.html) - cell, row/column, confidence, and geometry output.
+- [ATO: Deceased Estate Trust Returns (Registration and Lodgement)](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/when-and-how-to-lodge-returns-for-a-deceased-estate) - distinction between the deceased person's return and later estate trust returns.

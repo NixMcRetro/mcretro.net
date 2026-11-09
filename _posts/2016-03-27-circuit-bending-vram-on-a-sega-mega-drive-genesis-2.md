@@ -18,6 +18,6 @@ I've updated the earlier Mega Drive circuit-bending post to make that distinctio
 
 - [Console5 - 512 Kbit VRAM pinout](https://console5.com/techwiki/index.php?title=File:VRAM_512Kb_64K_x_8-bit_DIP_SOJ-pinout.jpg)
 
-### Related posts
+### Related Posts
 
 - [Circuit Bending a Sega Mega Drive 2](/circuit-bending-a-sega-mega-drive-2/)

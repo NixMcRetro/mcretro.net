@@ -42,7 +42,7 @@ Replace those caps, you know you want to! ...after actually diagnosing the probl
 
 ### Sources
 
-- [Littelfuse - 263 Series, PICO II 250 Volt, Very Fast-Acting Fuse (2013 datasheet)](https://docs.rs-online.com/d2e5/0900766b8146424d.pdf)
+- [Littelfuse: PICO II 263 Series 250 V Very Fast-Acting Fuse (2013 Datasheet)](https://docs.rs-online.com/d2e5/0900766b8146424d.pdf)
 - [Littelfuse - Fuseology Selection Guide](https://www.littelfuse.com/assetdocs/fuseology-selection-guide?assetguid=e0a12d55-c89a-4e06-94e0-9fe3281f889f)
 
 ### Related Posts

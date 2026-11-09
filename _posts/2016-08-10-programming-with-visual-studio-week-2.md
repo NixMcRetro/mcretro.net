@@ -47,7 +47,7 @@ So my conclusion that 0.00 must therefore round to -1 was, surprisingly, not how
 
 - [Microsoft Learn - Type Conversion Functions (Visual Basic)](https://learn.microsoft.com/en-au/dotnet/visual-basic/language-reference/functions/type-conversion-functions)
 
-### Visual Studio programming
+### Related Posts
 
 - [Programming with Visual Studio - Week 1](/programming-with-visual-studio-week-1/)
 - [Programming with Visual Studio - Abandoned!](/programming-with-visual-studio-abandoned/)

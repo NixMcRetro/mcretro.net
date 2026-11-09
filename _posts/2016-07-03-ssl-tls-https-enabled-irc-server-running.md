@@ -29,7 +29,7 @@ But right now the new shop is looking promising and I've even worked out that I 
 - [Namecheap - Configuring Host for DynDNS](https://www.namecheap.com/support/knowledgebase/article.aspx/43/11/how-do-i-set-up-a-host-for-dynamic-dns)
 - [Namecheap - Configuring ddclient](https://www.namecheap.com/support/knowledgebase/article.aspx/583/11/how-do-i-configure-ddclient)
 
-### McRetroNet IRC server
+### Related Posts
 
 - [Initial Tests for a McRetroNet IRC Server](/initial-tests-for-a-mcretronet-irc-server/)
 - [IRC RIP in Peace](/irc-rip-in-peace/)

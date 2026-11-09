@@ -38,4 +38,4 @@ Plus you get all those junk foods! :) Cheat day!
 
 - [Australian Red Cross Lifeblood - Fainting or feeling faint](https://www.lifeblood.com.au/donors/blood-plasma-platelets/making-a-donation/prepare-and-aftercare/fainting)
 - [Australian Red Cross Lifeblood - Prepare and aftercare](https://www.lifeblood.com.au/donors/blood-plasma-platelets/making-a-donation/prepare-and-aftercare)
-- [Australian Red Cross Lifeblood - What prescribed medications will prevent me from donating?](https://www.lifeblood.com.au/faq/eligibility/medications-vaccines-treatments/prescribed-medication)
+- [Australian Red Cross Lifeblood: Prescribed Medications and Donation Eligibility](https://www.lifeblood.com.au/faq/eligibility/medications-vaccines-treatments/prescribed-medication)

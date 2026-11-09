@@ -21,4 +21,4 @@ I referenced the above cable-folding video by Mod-Heure when routing this around
 ### Sources
 
 - [Seagate - Medalist ATA installation guide (18-inch cable limit)](https://www.seagate.com/staticfiles/support/disc/iguides/ata/k33igb.pdf)
-- [Intel - 855GME and 6300ESB Embedded Platform Design Guide (80-conductor IDE cable, page 195)](https://download.intel.com/design/intarch/designgd/30066905.pdf)
+- [Intel: 855GME/6300ESB Platform Design Guide (80-Conductor IDE Cable, p. 195)](https://download.intel.com/design/intarch/designgd/30066905.pdf)

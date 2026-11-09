@@ -28,5 +28,5 @@ I should do a video on blood donation in Australia. There's more to the supply s
 
 ### Sources
 
-- [Australian Government Department of Health - Blood and blood products in Australia](https://www.health.gov.au/topics/blood-and-blood-products/blood-and-blood-products-in-australia)
-- [National Blood Authority - Report on the Issue and Use of Immunoglobulin 2019 to 2020 (revised, page 14)](https://www.blood.gov.au/sites/default/files/documents/2025-06/Report%20on%20the%20Issue%20and%20Use%20of%20Ig%202019-20%20Revised%20V2.pdf)
+- [Australian Government Department of Health: Blood and Blood Products in Australia](https://www.health.gov.au/topics/blood-and-blood-products/blood-and-blood-products-in-australia)
+- [National Blood Authority: Immunoglobulin Issue and Use 2019–20 (Revised Report, p. 14)](https://www.blood.gov.au/sites/default/files/documents/2025-06/Report%20on%20the%20Issue%20and%20Use%20of%20Ig%202019-20%20Revised%20V2.pdf)

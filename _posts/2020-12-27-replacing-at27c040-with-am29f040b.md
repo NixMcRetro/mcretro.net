@@ -40,6 +40,6 @@ There was also a SwapEndian.zip included in the folder, so here it is - [SwapEnd
 - [Atmel - AT27C040 datasheet (Microchip-hosted copy)](https://ww1.microchip.com/downloads/en/DeviceDoc/doc0189.pdf)
 - [AMD - Am29F040B datasheet (Futurlec-hosted copy)](https://www.futurlec.com/Datasheet/Memory/29F040.pdf)
 - [Sega Master System Development Cartridge (archived wiring reference)](https://web.archive.org/web/20030308205428/http://cgfm2.emuviews.com/devcart.htm)
-- [ASSEMblergames - Retrieving and combining BIN from prototype Mega Drive EPROMs (archived)](https://web.archive.org/web/20191108232552/http://assemblergames.com/threads/retrieving-and-combining-bin-from-proto-sega-mega-drives-eproms.60644/)
+- [ASSEMblerGames Archive: Retrieving and Combining Mega Drive Prototype EPROM BIN Files](https://web.archive.org/web/20191108232552/http://assemblergames.com/threads/retrieving-and-combining-bin-from-proto-sega-mega-drives-eproms.60644/)
 - [SMS Power! - Combining Sega EPROM data to BIN suitable for emulator use](https://www.smspower.org/forums/16018-CombiningSegaEpromDataToBinSuitableForEmulatorUse)
 - [C64 Magic Desk 1024K](https://github.com/msolajic/c64-magic-desk-1024k)

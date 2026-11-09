@@ -75,6 +75,40 @@ test('year navigation, 12 tiles, blue links and zero-month disabled cells', () =
   f.handlers.newer();
   assert.equal(f.select.selectedIndex, 1);
 });
+test('DOM year values are normalised before becoming archive links', () => {
+  const f = fixture();
+  for (const untrusted of [
+    'javascript:alert(1)',
+    '2026"><img src=x onerror=alert(1)>',
+    '2026/../../evil',
+    '//attacker.example',
+    '2026 ',
+    '02026',
+    '0000',
+    '0099',
+    ''
+  ]) {
+    f.select.options[0].value = untrusted;
+    const before = f.grid.children;
+    f.handlers.change();
+    assert.equal(f.grid.children, before, 'Invalid year must not redraw: ' + untrusted);
+  }
+  f.select.options[0].value = '2026';
+  f.handlers.change();
+  assert.equal(f.grid.children.length, 12);
+  assert.equal(f.grid.children[0].href, '/archive/2026/01/');
+  assert.equal(f.grid.children[0].attrs['aria-label'], 'January 2026: 2 posts');
+  assert.equal(f.grid.attrs['aria-label'], '2026 monthly archives');
+});
+
+test('all displayed URLs use a numeric year, not direct DOM text or HTML insertion', () => {
+  assert.match(code, /const numericYear = Number\(option\.value\)/);
+  assert.match(code, /const archiveYear = String\(numericYear\)/);
+  assert.match(code, /cell\.href = '\/archive\/' \+ archiveYear/);
+  assert.doesNotMatch(code, /cell\.href = [^\n]*option\.value/);
+  assert.doesNotMatch(code, /\.innerHTML|\.outerHTML|document\.write\(/);
+});
+
 test('invalid data or missing calendar is safe', () => {
   assert.doesNotThrow(() => runInNewContext(code, { document: { querySelector: () => null } }));
   const f = fixture(), before = f.grid.children;

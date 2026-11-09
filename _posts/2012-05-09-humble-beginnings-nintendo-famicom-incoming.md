@@ -16,11 +16,11 @@ I'll be documenting my progress as best I can and hopefully come up with a defin
 
 _Originally posted by SuperNick (Nick) many eons ago._
 
-### Related posts
+### Sources
+
+- [8Bitplus: Nintendo Famicom AV Mod (NTSC Composite)](https://8bitplus.co.uk/projects/famicom-av-mod-nintendo/)
+
+### Related Posts
 
 - [Nintendo Famicom Composite AV Mod](/nintendo-famicom-composite-av-mod/)
 - [Nintendo Famicom AV Mod Complete](/nintendo-famicom-av-mod-complete/)
-
-### Sources
-
-- [8Bitplus - Nintendo Famicom AV Mod](https://8bitplus.co.uk/projects/famicom-av-mod-nintendo/) - documents composite AV modification of the original Famicom and the console's native NTSC video output.

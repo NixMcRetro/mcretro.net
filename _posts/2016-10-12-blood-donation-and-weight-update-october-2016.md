@@ -41,5 +41,5 @@ Oh well. At least I've got a new couch to sit on while I think about it. Anyway,
 ### Related Posts
 
 - [Blood Donation July 2016](/blood-donation-july-2016/)
-- [75kg Weight Goal Achieved!](/75kg-weight-goal-achieved/)
-- [70kg Weight Goal Achieved!](/70kg-weight-goal-achieved/)
+- [75 kg Weight Goal Achieved!](/75kg-weight-goal-achieved/)
+- [70 kg Weight Goal Achieved!](/70kg-weight-goal-achieved/)

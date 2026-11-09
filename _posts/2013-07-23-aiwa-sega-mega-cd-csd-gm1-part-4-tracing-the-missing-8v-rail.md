@@ -25,7 +25,7 @@ Comparing the two boards revealed some differences between their revisions. The 
 The next challenge is tracking down a suitable replacement for the suspect component and seeing whether that gets things moving again. Another instalment of troubleshooting 101, otherwise known as poking things with a stick.
 
 
-### Related posts
+### Related Posts
 
 
 - [Aiwa Sega Mega-CD CSD-GM1 (Part 3: Reviewing the Situation)](/aiwa-sega-mega-cd-csd-gm1-part-3-reviewing-the-situation/)

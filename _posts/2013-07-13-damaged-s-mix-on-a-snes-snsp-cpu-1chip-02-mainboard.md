@@ -37,12 +37,12 @@ The bypass isn't the same as repairing the original mixing circuit, of course. I
 
 I came back to the same problem in [S-MIX on the SNES SNSP-CPU-1CHIP-01 / SNSP-CPU-1CHIP-02](/s-mix-on-the-snes-snsp-cpu-1chip-01-snsp-cpu-1chip-02/).
 
-### Related posts
-
-- [Super Nintendo Serial UP17388130 - No Sound Update](/super-nintendo-serial-up17388130-no-sound-update/)
-
 ### Sources
 
 - [Console5 Wiki - Quad Op Amp](https://console5.com/wiki/OpAmp_-_Quad)
 - [Console5 Wiki - SNES](https://console5.com/wiki/SNES)
 - [Texas Instruments - LM324 Quadruple Operational Amplifiers datasheet](https://www.ti.com/lit/ds/symlink/lm324.pdf)
+
+### Related Posts
+
+- [Super Nintendo Serial UP17388130 - No Sound Update](/super-nintendo-serial-up17388130-no-sound-update/)

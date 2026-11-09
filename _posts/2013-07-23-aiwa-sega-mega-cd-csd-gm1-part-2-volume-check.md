@@ -22,7 +22,7 @@ Unfortunately, things don't all spring to life by the end of the test. A later a
 
 Never mind, we've made some progress with the recap and at least know a little more about what this thing is doing. On to the next part, where I can dig out my notes and try to remember what I've already done!
 
-### Related posts
+### Related Posts
 
 - [Aiwa Sega Mega-CD CSD-GM1 01-01 Mainboard (Part 1: Capacitor Replacement)](/aiwa-sega-mega-cd-csd-gm1-01-01-mainboard-part-1-capacitor-replacement/)
 - [Aiwa Sega Mega-CD CSD-GM1 (Part 3: Reviewing the Situation)](/aiwa-sega-mega-cd-csd-gm1-part-3-reviewing-the-situation/)

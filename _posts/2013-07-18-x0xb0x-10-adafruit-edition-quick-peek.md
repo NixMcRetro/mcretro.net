@@ -24,11 +24,11 @@ If we are lucky he'll make me up some tunes to go with some of these videos. I s
 
 For now, this is very much a work in progress rather than a finished synthesiser demonstration. The later testing of parts of the circuit was encouraging, but there was still plenty to do before the whole thing could make music. I reckon SuperNick (Nick) is doing a pretty good job of it so far.
 
+**Sources**
+
+- [Adafruit - x0xb0x Synth Kit by Ladyada - PCB Set](https://www.adafruit.com/product/3603)
+
 **Related Posts**
 
 - [x0xb0x 1.0 Adafruit Edition - Progress Report](/x0xb0x-10-adafruit-edition-progress-report/)
 - [x0xb0x 1.0 Adafruit Edition: Assembly Complete, No Sound](/x0xb0x-10-adafruit-edition-assembly-complete-no-sound/)
-
-**Sources**
-
-- [Adafruit - x0xb0x Synth Kit by Ladyada - PCB Set](https://www.adafruit.com/product/3603)

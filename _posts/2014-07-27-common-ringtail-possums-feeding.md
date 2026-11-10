@@ -8,7 +8,7 @@ categories: [youtube]
 
 {% include youtube.html id="tFNSKdC_fbc" %}
 
-Here we have some Common Ringtail Possums, also known as Eastern Ringtail Possums (*Pseudocheirus peregrinus*), feeding at around 6 pm in the middle of winter in Sydney on the balcony at the boss's home. They look like rats to me, but they are marsupials, not rodents, and are not to be confused with the pesky home-invading Common Brushtail Possums!
+Here we have some Common Ringtail Possums, also known as Eastern Ringtail Possums (*Pseudocheirus peregrinus*), feeding at around 6 pm in the middle of winter in Sydney on the balcony at some random's house. They look like rats to me, but they are marsupials, not rodents, and are not to be confused with the pesky home-invading Common Brushtail Possums!
 
 ### Sources
 

@@ -1143,15 +1143,38 @@
 .post-full .post-share + .post-navigation {
   margin-top: 1.75rem;
 }
+/* Match the RSS link's gap to the heading-to-first-post rhythm,
+   while leaving a little breathing room above the next widget's rule. */
+.sidebar .recent-posts-list li:last-child {
+  margin-bottom: 0;
+}
+.sidebar .recent-posts-widget {
+  padding-bottom: 1rem;
+}
 .sidebar .sidebar-rss-link {
-  margin: 0.9rem 0 0.15rem;
+  margin: 0.5rem 0 0;
   font-size: 0.875rem;
   line-height: 1.4;
 }
 .sidebar .sidebar-rss-link a {
   color: var(--link);
+  text-decoration: none;
+}
+.sidebar .sidebar-rss-link a:hover,
+.sidebar .sidebar-rss-link a:focus-visible {
+  color: var(--link-hover);
   text-decoration: underline;
   text-underline-offset: 0.12em;
+}
+
+/* Keep the retro telephone outside the hyperlink so it never underlines.
+   Reduce the dial widget's oversized bottom gap to match its top spacing. */
+.sidebar .dial-homepage {
+  padding-bottom: 0.7rem;
+}
+.dial-homepage-icon {
+  font-size: 0.86rem;
+  line-height: 1;
 }
 @media screen and (max-width: 500px) {
   .post-share__links { gap: 0.4rem; }

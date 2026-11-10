@@ -11,6 +11,11 @@ on:
   pull_request:
     paths:
       - '_posts/**'
+      - 'blog/index.html'
+      - '_layouts/archive.html'
+      - '_plugins/without_media_captions.rb'
+      - '.github/tests/caption-excerpts.test.rb'
+      - '.github/tests/caption-excerpts-built.mjs'
       - 'assets/css/**'
       - 'about.md'
       - 'channels.md'
@@ -83,6 +88,9 @@ jobs:
           python3 .github/tests/vrampage-package.test.py
           python3 .github/tests/vrampage-live.test.py
 
+      - name: Verify caption filtering with Ruby regression tests
+        run: bundle exec ruby .github/tests/caption-excerpts.test.rb
+
       - name: Build site with Jekyll
         run: bundle exec jekyll build --destination _site
 
@@ -90,6 +98,9 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '24'
+
+      - name: Verify generated blog, archives, metadata and feed captions
+        run: node .github/tests/caption-excerpts-built.mjs _site
 
       - name: Verify published archive calendar counts against monthly archive pages
         run: node .github/tests/archive-calendar-built.mjs _site

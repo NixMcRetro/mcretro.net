@@ -15,15 +15,17 @@
   margin-bottom: 0.2em;
 }
 
-/* Separate accordion surface colours restore the original mint and hover feedback.
-   Dark mode uses contrasting teal shades; keep historic Win95 colours independent. */
+/* Shared accordions follow Archives blues in Light mode and retain the
+   existing teal surfaces in Dark mode. The historic panel--teal class name is
+   intentionally preserved so articles and exclusive-panel scripts need no edits. */
 :root {
   --accordion-neutral-bg: #F3EAC9;
   --accordion-neutral-hover: #E9DDB1;
-  --accordion-teal-bg: #E6F0E5;
-  --accordion-teal-hover: #D9E9D9;
-  --accordion-teal-open: #DFECDF;
-  --accordion-teal-open-hover: #CFE2D1;
+  --accordion-teal-bg: var(--archive-filled);
+  --accordion-teal-hover: var(--archive-filled-hover);
+  --accordion-teal-open: #DBEAFD;
+  --accordion-teal-open-hover: #C7DCFA;
+  --accordion-accent: var(--archive-accent);
 }
 :root[data-theme="dark"] {
   --accordion-neutral-bg: #2E4142;
@@ -32,12 +34,13 @@
   --accordion-teal-hover: #35665E;
   --accordion-teal-open: #2F554F;
   --accordion-teal-open-hover: #3B7368;
+  --accordion-accent: var(--retro-teal);
 }
 
-/* Shared About/Channels/Goodies and article accordions retain their teal accent. */
+/* Applies consistently to About, Channels, Goodies and article accordions. */
 .about-panel.panel--teal {
   border-color: var(--border);
-  border-left: 3px solid var(--retro-teal);
+  border-left: 3px solid var(--accordion-accent);
 }
 .about-panel.panel--teal > summary {
   background: var(--accordion-teal-bg);

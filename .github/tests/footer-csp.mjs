@@ -50,10 +50,10 @@ test('RSS feed uses a themed inline SVG in the footer, not the sidebar', () => {
   assert.match(footer, /class="footer-rss-link" href="\{\{ '\/feed\.xml' \| relative_url \}\}"/);
   assert.match(footer, /<svg class="footer-rss-icon"[^>]*aria-hidden="true"/);
   const finalLine = footer.slice(footer.lastIndexOf('<span class="footer-detail-line">'), footer.indexOf('</p>', footer.lastIndexOf('<span class="footer-detail-line">')));
-  assert.ok(finalLine.indexOf('footer-rss-link') < finalLine.indexOf('We are powered by'));
-  assert.match(finalLine, /<span class="footer-rss-text">RSS Feed<\/span><\/a>\. We are powered by/);
+  assert.ok(finalLine.indexOf('We are powered by') < finalLine.indexOf('footer-rss-link'));
+  assert.match(finalLine, /GitHub Pages<\/a>\.\s*<a class="footer-rss-link"/);
+  assert.match(finalLine, /<span class="footer-rss-text">RSS Feed<\/span><\/a>\./);
   assert.doesNotMatch(finalLine, /<span aria-hidden="true"> · <\/span>/);
-  assert.match(finalLine, /GitHub Pages<\/a>\./);
   assert.doesNotMatch(sidebar, /sidebar-rss-link|Subscribe via RSS/);
   assert.match(footer, /since sometime in the mid-1990s\./);
   assert.doesNotMatch(footer, /<i>sometime<\/i>/);

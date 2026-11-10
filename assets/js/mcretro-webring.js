@@ -8,7 +8,7 @@
 
   const MODEM_ROUTE = '/homepages/modem/';
   const DIAL_NUMBER = '0293735100';
-  const HANDSHAKE_AUDIO = '/assets/audio/mcretro-australian-modem-handshake.ogg';
+  const HANDSHAKE_AUDIO = '/assets/audio/mcretro-australian-modem-handshake.mp3';
   const HANDSHAKE_START = 10.6;
   const TOTAL_MS = 27000;
   const SITES = Object.freeze([

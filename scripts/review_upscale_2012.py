@@ -88,7 +88,16 @@ def main():
         encode_lossless(final_rgb, output)
         preview = REVIEW / f"{name}-upscaled-preview.png"
         final_rgb.save(preview, optimize=True)
-        variants = [str(output.relative_to(ROOT))]
+        # Approved 1,800px-wide version: scale the original grain-preserving
+        # FSRCNN x2 preview with Lanczos; no generative reconstruction.
+        wide_width = 1800
+        wide_height = round(final_rgb.height * wide_width / final_rgb.width)
+        wide_rgb = final_rgb.resize((wide_width, wide_height), Image.Resampling.LANCZOS)
+        wide_output = output.with_name(f"{name}-wide-1800.jxl")
+        encode_lossless(wide_rgb, wide_output)
+        wide_preview = REVIEW / f"{name}-wide-1800-preview.png"
+        wide_rgb.save(wide_preview, optimize=True)
+        variants = [str(output.relative_to(ROOT)), str(wide_output.relative_to(ROOT))]
         if name == "img_0071":
             alpha = make_alpha(original).resize(final_rgb.size, Image.Resampling.LANCZOS)
             rgba = final_rgb.convert("RGBA")

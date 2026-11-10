@@ -1073,8 +1073,7 @@
    Branded marks are inline SVG (Simple Icons CC0), not image fallbacks. */
 .post-full .post-share {
   margin-top: 1.65rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid var(--border-soft);
+  padding-top: 0;
 }
 .post-full .post-share h2 {
   font-family: Montserrat, "Helvetica Neue", sans-serif;
@@ -1141,12 +1140,10 @@
 .post-share__feedback:empty {
   display: none;
 }
-/* The thin rule above Share already separates article content from the
-   footer controls. Don't stack the old 4px post-navigation rule below it. */
+/* Keep the site's traditional 4px section divider before Previous/Next.
+   The extra thin rule above Share is removed instead. */
 .post-full .post-share + .post-navigation {
-  margin-top: 1.75rem;
-  border-top: 0;
-  padding-top: 0;
+  margin-top: 1.5rem;
 }
 
 /* Only the share icons get a quieter Light-mode palette. The site's main

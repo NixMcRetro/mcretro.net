@@ -1,13 +1,16 @@
 /* McRetro.net's local Australian dial-up simulation. Nothing is dialled or sent.
    AU PSTN tone: 425 Hz amplitude-modulated at 25 Hz (AS/CA S002 Appendix A).
    DTMF key pairs use standard 697/770/852/941 + 1209/1336/1477 Hz.
-   The late-1990s modem handshake is deliberately an approximation, not an archive recording. */
+   The handshake is resynthesised in-browser from recording-derived frequency and
+   noise envelopes. The older synthetic handshake remains as an error fallback. */
 (() => {
   'use strict';
 
   const MODEM_ROUTE = '/homepages/modem/';
   const DIAL_NUMBER = '0293735100';
-  const TOTAL_MS = 20000;
+  const HANDSHAKE_PROFILE = '/assets/data/mcretro-handshake-profile.json';
+  const HANDSHAKE_START = 10.6;
+  const TOTAL_MS = 27000;
   const SITES = Object.freeze([
     Object.freeze({slug:'frank',name:'Frank the Snake',path:'/homepages/frank/'}),
     Object.freeze({slug:'pepper',name:'Pepper the Dog Blog',path:'/homepages/pepper/'}),
@@ -93,22 +96,50 @@
         for(const freq of [400,425,450]) tone(freq,offset,0.4,0.09);
       }
 
-      // Approximate 33.6 kbps negotiation: answer tone, phase breaks, short training
-      // chirps and a rising/noisy sequence (not intended as exact V.34 waveforms).
-      for(let i=0;i<6;i++) tone(2100,10.6+i*0.46,0.43,0.12);
-      tone(1300,13.45,0.36,0.15);
-      tone(1750,13.9,0.36,0.15);
-      tone(980,14.35,0.3,0.13);
-      for(let i=0;i<24;i++){
-        const at=14.8+i*0.095;
-        tone(700+(i*317)%2050,at,0.086,0.10,i%4===0?'triangle':'sine');
-        if(i%3===0) tone(1150+(i*213)%1300,at,0.074,0.065);
-      }
-      tone(1800,17.2,0.5,0.11);
+      // Keep the AU dial tone, DTMF digits and ringback exactly as before.
+      // The next 16.3 seconds are synthesized from spectral parameters
+      // derived from the owner's reference recording, not played from a file.
+      let stopped=false;
+      const fallbackHandshake=()=>{
+        if(stopped || context.currentTime > time+18) return;
+        // Previous synthetic handshake, retained for unsupported codecs or failed loads.
+        for(let i=0;i<6;i++) tone(2100,10.6+i*0.46,0.43,0.12);
+        tone(1300,13.45,0.36,0.15);
+        tone(1750,13.9,0.36,0.15);
+        tone(980,14.35,0.3,0.13);
+        for(let i=0;i<24;i++){
+          const at=14.8+i*0.095;
+          tone(700+(i*317)%2050,at,0.086,0.10,i%4===0?'triangle':'sine');
+          if(i%3===0) tone(1150+(i*213)%1300,at,0.074,0.065);
+        }
+        tone(1800,17.2,0.5,0.11);
+      };
       context.resume().catch(()=>{});
+      Promise.all([
+        import('/assets/js/mcretro-handshake-synth.js'),
+        fetch(HANDSHAKE_PROFILE).then(response=>{
+          if(!response.ok) throw new Error('Handshake profile unavailable');
+          return response.json();
+        })
+      ])
+        .then(([synth,profile])=>{
+          if(stopped) return;
+          // Render ordinary PCM locally from oscillator and noise envelopes.
+          // No original recording or decoded audio is downloaded.
+          const buffer=synth.renderHandshake(context,profile);
+          if(stopped) return;
+          const handshake=context.createBufferSource();
+          handshake.buffer=buffer;
+          handshake.connect(master);
+          const scheduled=time+HANDSHAKE_START;
+          const startsAt=Math.max(scheduled,context.currentTime+0.02);
+          const offset=startsAt-scheduled;
+          if(offset<buffer.duration) handshake.start(startsAt,offset);
+        })
+        .catch(fallbackHandshake);
       return {
         mute(value) { master.gain.setTargetAtTime(value?0:0.05,context.currentTime,0.02); },
-        stop() { context.close().catch(()=>{}); }
+        stop() { stopped=true; context.close().catch(()=>{}); }
       };
     } catch(error) {
       return null; // Audio errors must never prevent navigating a homepage.
@@ -122,7 +153,6 @@
     if(progress) progress.hidden=stage!=='progress';
     root.querySelector('[data-modem-title]').textContent =
       stage==='progress' ? 'Connecting to '+(root._mcretroSite?.name||'McRetro Network') : 'Connect To';
-    root.querySelector('[data-modem-help]').hidden=stage==='progress';
     root.dataset.modemStage=stage;
   }
 
@@ -137,7 +167,6 @@
     root.querySelector('[data-modem-connect]').disabled=!site;
     root.querySelector('[data-modem-skip]').disabled=!site;
     root.querySelector('[data-modem-status]').textContent=site?'Ready to dial.':'Unknown homepage.';
-    root.querySelector('[data-modem-note]').hidden=true;
     setStage(root,'setup');
   }
 
@@ -147,8 +176,6 @@
     endRun();
     setStage(root,'progress');
     const status=root.querySelector('[data-modem-status]');
-    const note=root.querySelector('[data-modem-note]');
-    note.hidden=false;
     const sound=makeSound(root);
     const run={root,site,sound,timers:[]};
     currentRun=run;
@@ -158,8 +185,8 @@
       [5200,'Waiting for answer...'],
       [10200,'Negotiating protocols...'],
       [13700,'Handshaking with remote modem...'],
-      [17800,'Verifying user name and password...'],
-      [19300,'Connected at 33600 bps.']
+      [24800,'Verifying user name and password...'],
+      [26300,'Connected at 33600 bps.']
     ];
     steps.forEach(([delay,message])=>{
       run.timers.push(window.setTimeout(()=>{
@@ -189,10 +216,6 @@
       button.textContent=muted?'Unmute':'Mute';
       button.setAttribute('aria-pressed',String(muted));
       if(currentRun?.sound) currentRun.sound.mute(muted);
-    });
-    root.querySelector('[data-modem-help]').addEventListener('click',()=>{
-      const note=root.querySelector('[data-modem-note]');
-      note.hidden=!note.hidden;
     });
 
     if(modal) {

@@ -1,5 +1,5 @@
 /* Copy links are the only script needed for the post sharing panel.
-   Social sharing and RSS remain ordinary links when JavaScript is disabled. */
+   Social sharing remains ordinary links when JavaScript is disabled. */
 (function () {
   'use strict';
 
@@ -46,6 +46,8 @@
 
       var copied = await copyText(url);
       if (label) label.textContent = copied ? 'Copied!' : 'Copy Link';
+      button.title = copied ? 'Copied!' : 'Copy Link';
+      button.classList.toggle('is-copied', copied);
       if (status) status.textContent = copied
         ? 'Article link copied to clipboard.'
         : 'Could not copy automatically. Copy the URL from your address bar.';
@@ -53,6 +55,8 @@
       clearTimeout(resetTimer);
       resetTimer = setTimeout(function () {
         if (label) label.textContent = 'Copy Link';
+        button.title = 'Copy Link';
+        button.classList.remove('is-copied');
         if (status) status.textContent = '';
       }, 2500);
       button.focus();

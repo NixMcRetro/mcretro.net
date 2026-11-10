@@ -852,6 +852,27 @@
   .site-footer .footer-detail-line { display: block; }
 }
 
+/* Compact inline RSS link; preserve the footer's layout and theme-aware text links. */
+.site-footer .footer-rss-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  vertical-align: middle;
+}
+.site-footer .footer-rss-icon {
+  width: 1em;
+  height: 1em;
+  flex: none;
+  color: #B85800;
+}
+:root[data-theme="dark"] .site-footer .footer-rss-icon {
+  color: #FFA65A;
+}
+.site-footer .footer-rss-link:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
 /* Article-only quotations and Markdown tables.
    Preserve the original text, links, headings and semantic HTML. */
 .post-full .post-content blockquote {
@@ -1111,8 +1132,7 @@
   color: var(--link-hover);
   text-decoration: none;
 }
-.post-full .post-share__action:focus-visible,
-.sidebar .sidebar-rss-link a:focus-visible {
+.post-full .post-share__action:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
@@ -1201,22 +1221,6 @@
 .sidebar .recent-posts-widget {
   padding-bottom: 1rem;
 }
-.sidebar .sidebar-rss-link {
-  margin: 0.5rem 0 0;
-  font-size: 0.875rem;
-  line-height: 1.4;
-}
-.sidebar .sidebar-rss-link a {
-  color: var(--link);
-  text-decoration: none;
-}
-.sidebar .sidebar-rss-link a:hover,
-.sidebar .sidebar-rss-link a:focus-visible {
-  color: var(--link-hover);
-  text-decoration: underline;
-  text-underline-offset: 0.12em;
-}
-
 /* Keep the retro telephone outside the hyperlink so it never underlines.
    Reduce the dial widget's oversized bottom gap to match its top spacing. */
 .sidebar .dial-homepage {

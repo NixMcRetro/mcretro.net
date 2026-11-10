@@ -1130,19 +1130,22 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+/* Show a tick inside Copy Link for its existing 2.5-second success state. */
+.post-share__icon--check {
+  display: none;
+}
+.post-share__action.is-copied .post-share__icon--link {
+  display: none;
+}
+.post-share__action.is-copied .post-share__icon--check {
+  display: block;
+}
 .post-full .post-share__action.is-copied {
   border-color: var(--link);
   background: var(--panel-hover);
 }
-.post-share__feedback {
-  margin: 0.5rem 0 0;
-  font-size: 0.83rem;
-  line-height: 1.4;
-  color: var(--muted);
-}
-.post-share__feedback:empty {
-  display: none;
-}
+/* The copy result is announced to assistive technology, not shown as a
+   separate paragraph under the sharing buttons. */
 /* Keep the site's traditional 4px section divider before Previous/Next.
    The extra thin rule above Share is removed instead. */
 .post-full .post-share + .post-navigation {

@@ -1146,20 +1146,23 @@
   margin-top: 1.5rem;
 }
 
-/* Only the share icons get a quieter Light-mode palette. The site's main
-   link blue and Dark-mode teal remain unchanged. */
+/* Match the Light-mode Archives calendar: navy icons over pale blue tiles,
+   with a slightly stronger blue on hover and when a link is copied.
+   Dark mode and ordinary link colours retain their existing palettes. */
 :root:not([data-theme="dark"]) .post-full .post-share__action {
-  color: #456779;
+  color: var(--archive-filled-text);
+  background: var(--archive-filled);
+  border-color: #A8BCCF;
 }
 :root:not([data-theme="dark"]) .post-full .post-share__action:hover {
-  color: #225E64;
-  background: #E7F1EA;
-  border-color: #90AFA5;
+  color: var(--archive-hover);
+  background: var(--archive-filled-hover);
+  border-color: var(--archive-accent);
 }
 :root:not([data-theme="dark"]) .post-full .post-share__action.is-copied {
-  color: #225E64;
-  background: #E7F1EA;
-  border-color: #90AFA5;
+  color: var(--archive-hover);
+  background: var(--archive-filled-hover);
+  border-color: var(--archive-accent);
 }
 /* Match the RSS link's gap to the heading-to-first-post rhythm,
    while leaving a little breathing room above the next widget's rule. */

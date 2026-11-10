@@ -55,5 +55,10 @@ test('RSS feed uses a themed inline SVG in the footer, not the sidebar', () => {
   assert.match(finalLine, /GitHub Pages<\/a>\./);
   assert.doesNotMatch(sidebar, /sidebar-rss-link|Subscribe via RSS/);
   assert.match(overrides, /\.site-footer \.footer-rss-icon \{/);
+  const rssLinkCss = overrides.match(/\.site-footer \.footer-rss-link \{([^}]+)\}/)?.[1] || '';
+  const rssIconCss = overrides.match(/\.site-footer \.footer-rss-icon \{([^}]+)\}/)?.[1] || '';
+  assert.match(rssLinkCss, /display: inline;/);
+  assert.doesNotMatch(rssLinkCss, /inline-flex|vertical-align: middle/);
+  assert.match(rssIconCss, /vertical-align: -0\.12em;/);
   assert.match(overrides, /:root\[data-theme="dark"\] \.site-footer \.footer-rss-icon \{/);
 });

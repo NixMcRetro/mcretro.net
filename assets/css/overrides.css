@@ -1069,11 +1069,11 @@
 :root[data-theme="dark"] .about-panel.panel--teal > summary,
 :root[data-theme="dark"] .about-panel > summary { color: var(--text); }
 
-/* Small, no-tracker sharing panel for individual blog posts.
-   Use the site's own colour tokens so Light/Dark and retro UI remain intact. */
+/* Compact, accessible icons for article sharing; no third-party scripts or images.
+   Branded marks are inline SVG (Simple Icons CC0), not image fallbacks. */
 .post-full .post-share {
-  margin-top: 2.25rem;
-  padding-top: 1.15rem;
+  margin-top: 1.65rem;
+  padding-top: 0.9rem;
   border-top: 1px solid var(--border-soft);
 }
 .post-full .post-share h2 {
@@ -1081,67 +1081,68 @@
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.35;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.65rem;
 }
 .post-share__links {
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch;
+  align-items: center;
   gap: 0.5rem;
 }
 .post-full .post-share__action {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
-  min-height: 40px;
-  padding: 0.5rem 0.7rem;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
   border: 1px solid var(--border-soft);
-  border-radius: 3px;
+  border-radius: 4px;
   background: var(--panel);
   color: var(--link);
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.25;
-  text-decoration: none;
   cursor: pointer;
 }
 .post-full .post-share__action:hover {
   background: var(--panel-hover);
-  border-color: var(--border);
+  border-color: var(--link);
   color: var(--link-hover);
-  text-decoration: underline;
-  text-underline-offset: 0.13em;
+  text-decoration: none;
 }
 .post-full .post-share__action:focus-visible,
-.post-share__subscribe a:focus-visible,
 .sidebar .sidebar-rss-link a:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
 .post-share__icon {
-  font-size: 1rem;
-  line-height: 1;
+  width: 22px;
+  height: 22px;
+  display: block;
+  flex: 0 0 auto;
+  fill: currentColor;
 }
-.post-share__icon--tumblr {
-  font-family: Georgia, serif;
-  font-size: 1.15rem;
-  font-weight: 700;
+.post-share__icon--outline {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
-.post-full .post-share__subscribe {
-  margin: 1rem 0 0;
-  font-size: 0.875rem;
-  line-height: 1.5;
+.post-full .post-share__action.is-copied {
+  border-color: var(--link);
+  background: var(--panel-hover);
+}
+.post-share__feedback {
+  margin: 0.5rem 0 0;
+  font-size: 0.83rem;
+  line-height: 1.4;
   color: var(--muted);
 }
-.post-share__subscribe a {
-  color: var(--link);
-  text-decoration: underline;
-  text-underline-offset: 0.12em;
+.post-share__feedback:empty {
+  display: none;
 }
 .post-full .post-share + .post-navigation {
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
 }
 /* Match the RSS link's gap to the heading-to-first-post rhythm,
    while leaving a little breathing room above the next widget's rule. */
@@ -1175,8 +1176,4 @@
 .dial-homepage-icon {
   font-size: 0.86rem;
   line-height: 1;
-}
-@media screen and (max-width: 500px) {
-  .post-share__links { gap: 0.4rem; }
-  .post-full .post-share__action { padding: 0.5rem 0.65rem; }
 }

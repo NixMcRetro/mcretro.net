@@ -70,8 +70,9 @@ We checked the core with small original test programs that produce known picture
 *The real v0.5.0 workbench running the downloadable colour-test ROM, with all faults off.*
 {: .media-caption }
 
-[VRAMpage MD is now live on McRetro.net](https://mcretro.net/homepages/vrampage-md/). Bring your own ROM; the file stays in your browser. The [source and complete browser download](https://github.com/NixMcRetro/VRAMpage-MD) are available too. No soldering iron required this time.
+Want to give it a go? [Open VRAMpage MD](https://mcretro.net/homepages/vrampage-md/) and pick one of the two original homebrew ROMs from **Choose Cartridge**. You don't need to hunt down a game, although you can load your own compatible Mega Drive ROM too. Files you choose stay in your browser.
 
-Don't have a game handy? [Download the original colour-test ROM](/assets/downloads/2026/10/vrampage-md/VRAMpage-MD-Colour-Test.bin), then open it with **Load ROM** in VRAMpage MD to get the pattern shown above. It uses original code and graphics, with no commercial game assets. It's silent, so use another cartridge for FM and PSG sound experiments.
+- **[Colour Test ROM](/assets/downloads/2026/10/vrampage-md/VRAMpage-MD-Colour-Test.bin):** The silent multicolour pattern pictured above. A good starting point for experimenting with VRAM glitches. You can also [download the ROM and its Python source as a ZIP](/assets/downloads/2026/10/vrampage-md/VRAMpage-MD-Colour-Test.zip).
+- **[Demo Cart v0.3.5](/homepages/vrampage-md/demo/VRAMpage-MD-Demo-Cart-v0.3.5.bin):** A more elaborate demonstration with animated effects and an interactive Chroma Reactor scene. Use the Mega Drive **A**, **B** and **C** controls to bend or restore the picture. It's an early prototype, not the finished music show.
 
-[Download the ROM and Python source as a ZIP](/assets/downloads/2026/10/vrampage-md/VRAMpage-MD-Colour-Test.zip).
+The Colour Test doesn't produce audio, so you'll need a ROM with sound to experiment with FM and PSG. The [project source and complete browser download](https://github.com/NixMcRetro/VRAMpage-MD) are on GitHub if you'd rather explore the code or run it locally. No soldering iron required this time.

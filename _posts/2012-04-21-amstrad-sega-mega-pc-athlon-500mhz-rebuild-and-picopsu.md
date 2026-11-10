@@ -6,7 +6,7 @@ last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
 ---
 
-![The Amstrad Mega PC](/assets/images/2012/img_0067a.jpg)
+![The Amstrad Mega PC](/assets/images/2012/04/amstrad-sega-mega-pc-athlon-500mhz-rebuild-and-picopsu/img_0067a-wide-1800.jxl)
 
 After loading Windows 95 onto the Amstrad Mega PC, it became quite clear that leaving it running like a broken-down horse-drawn buggy was not the best idea. Poking around the internet, Windows 3.11 looks like a much better fit. Lightweight, but still capable of being dressed up to behave more like a modern Windows environment. Enter [Calmira](http://www.calmira.de/).
 

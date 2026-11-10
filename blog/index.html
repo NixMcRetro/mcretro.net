@@ -53,7 +53,7 @@ pagefind: false
       <div class="post-content-preview">
         {% include auto-thumbnail.html content=post.content url=post.url title=post.title %}
         <div class="post-excerpt">
-          {% assign excerpt_text = post.content | strip_html | normalize_whitespace | truncatewords: 50 %}
+          {% assign excerpt_text = post.content | without_media_captions | strip_html | normalize_whitespace | truncatewords: 50 %}
           {% if excerpt_text != blank %}
             {{ excerpt_text }}
           {% else %}

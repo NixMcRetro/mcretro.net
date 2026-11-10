@@ -49,6 +49,10 @@ test('RSS feed uses a themed inline SVG in the footer, not the sidebar', () => {
   const overrides = read('assets/css/overrides.css');
   assert.match(footer, /class="footer-rss-link" href="\{\{ '\/feed\.xml' \| relative_url \}\}"/);
   assert.match(footer, /<svg class="footer-rss-icon"[^>]*aria-hidden="true"/);
+  const finalLine = footer.slice(footer.lastIndexOf('<span class="footer-detail-line">'), footer.indexOf('</p>', footer.lastIndexOf('<span class="footer-detail-line">')));
+  assert.ok(finalLine.indexOf('footer-rss-link') < finalLine.indexOf('We are powered by'));
+  assert.match(finalLine, /<span aria-hidden="true"> · <\/span>We are powered by/);
+  assert.match(finalLine, /GitHub Pages<\/a>\./);
   assert.doesNotMatch(sidebar, /sidebar-rss-link|Subscribe via RSS/);
   assert.match(overrides, /\.site-footer \.footer-rss-icon \{/);
   assert.match(overrides, /:root\[data-theme="dark"\] \.site-footer \.footer-rss-icon \{/);

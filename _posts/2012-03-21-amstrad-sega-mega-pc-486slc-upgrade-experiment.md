@@ -24,17 +24,17 @@ My Mega PC is fitted with an AMD-compatible 386SX running at 25 MHz. Amstrad's p
 
 The PC7486SLC-33 uses a Texas Instruments TI486SLC running at 33 MHz. It's an interesting bridge between generations: the processor keeps a 386SX-compatible external interface while adding a 486-compatible instruction set and 1 KB of on-chip cache. In other words, exactly the sort of strange transitional CPU I find interesting.
 
-![Grainy photograph of a closed beige desktop PC with a flat horizontal case and front-panel drive openings.](/assets/images/2012/img_0039.jpg)
+![Grainy photograph of a closed beige desktop PC with a flat horizontal case and front-panel drive openings.](/assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0039-wide-1800.jxl)
 
 *Beige case, hardly the most exciting-looking computer in the world. The motherboard was another matter.*
 {: .media-caption }
 
-![Grainy photograph of a beige desktop computer with its cover opened, showing the internal board and metal chassis.](/assets/images/2012/img_0040.jpg)
+![Grainy photograph of a beige desktop computer with its cover opened, showing the internal board and metal chassis.](/assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0040-wide-1800.jxl)
 
 *With the cover open, the interesting part becomes a bit easier to see - similar to the Amstrad Mega PC design.*
 {: .media-caption }
 
-![Grainy overhead view of an opened beige PC showing its power supply, cabling and motherboard.](/assets/images/2012/img_0038.jpg)
+![Grainy overhead view of an opened beige PC showing its power supply, cabling and motherboard.](/assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0038-wide-1800.jxl)
 
 *Another look under the lid. The motherboard and riser card is the reason I'm interested, not the beige box.*
 {: .media-caption }

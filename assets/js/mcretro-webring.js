@@ -1,14 +1,14 @@
 /* McRetro.net's local Australian dial-up simulation. Nothing is dialled or sent.
    AU PSTN tone: 425 Hz amplitude-modulated at 25 Hz (AS/CA S002 Appendix A).
    DTMF key pairs use standard 697/770/852/941 + 1209/1336/1477 Hz.
-   The handshake uses an audio extract supplied by the site owner; if audio decoding
-   fails, the existing approximate synthetic negotiation remains available. */
+   The handshake is resynthesised in-browser from recording-derived frequency and
+   noise envelopes. The older synthetic handshake remains as an error fallback. */
 (() => {
   'use strict';
 
   const MODEM_ROUTE = '/homepages/modem/';
   const DIAL_NUMBER = '0293735100';
-  const HANDSHAKE_AUDIO = '/assets/audio/mcretro-australian-modem-handshake.mp3';
+  const HANDSHAKE_PROFILE = '/assets/data/mcretro-handshake-profile.json';
   const HANDSHAKE_START = 10.6;
   const TOTAL_MS = 27000;
   const SITES = Object.freeze([
@@ -97,8 +97,8 @@
       }
 
       // Keep the AU dial tone, DTMF digits and ringback exactly as before.
-      // Playback starts at 10.6 seconds; the source is a 16.3-second extract
-      // of the owner's recorded modem negotiation (no new dialling sounds).
+      // The next 16.3 seconds are synthesized from spectral parameters
+      // derived from the owner's reference recording, not played from a file.
       let stopped=false;
       const fallbackHandshake=()=>{
         if(stopped || context.currentTime > time+18) return;
@@ -115,21 +115,22 @@
         tone(1800,17.2,0.5,0.11);
       };
       context.resume().catch(()=>{});
-      fetch(HANDSHAKE_AUDIO)
-        .then(response=>{
-          if(!response.ok) throw new Error('Handshake recording unavailable');
-          return response.arrayBuffer();
+      Promise.all([
+        import('/assets/js/mcretro-handshake-synth.js'),
+        fetch(HANDSHAKE_PROFILE).then(response=>{
+          if(!response.ok) throw new Error('Handshake profile unavailable');
+          return response.json();
         })
-        .then(audio=>context.decodeAudioData(audio))
-        .then(buffer=>{
+      ])
+        .then(([synth,profile])=>{
+          if(stopped) return;
+          // Render ordinary PCM locally from oscillator and noise envelopes.
+          // No original recording or decoded audio is downloaded.
+          const buffer=synth.renderHandshake(context,profile);
           if(stopped) return;
           const handshake=context.createBufferSource();
-          const recordedGain=context.createGain();
           handshake.buffer=buffer;
-          // The original recording is quieter than our synthesised dial tones.
-          recordedGain.gain.value=8;
-          handshake.connect(recordedGain);
-          recordedGain.connect(master);
+          handshake.connect(master);
           const scheduled=time+HANDSHAKE_START;
           const startsAt=Math.max(scheduled,context.currentTime+0.02);
           const offset=startsAt-scheduled;

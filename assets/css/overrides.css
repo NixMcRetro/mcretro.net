@@ -856,6 +856,16 @@
 .site-footer .footer-rss-link {
   display: inline;
   white-space: nowrap;
+  text-decoration: none;
+}
+.site-footer .footer-rss-link:hover,
+.site-footer .footer-rss-link:focus-visible {
+  text-decoration: none;
+}
+.site-footer .footer-rss-link:hover .footer-rss-text,
+.site-footer .footer-rss-link:focus-visible .footer-rss-text {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
 }
 .site-footer .footer-rss-icon {
   display: inline-block;

@@ -57,7 +57,7 @@ I cleaned everything up as best I could with some isopropyl alcohol, then mapped
 
 From the maps above it looked as though most of the damage affected at least one of the serial ports. Serial? Pffft, I have PS/2 connectors.
 
-Unfortunately, one of the main power tracks from the power connector was damaged as well. I handed the board over to Big Boss and he did some soldering while I stood around eating candy.
+Unfortunately, one of the main power tracks from the power connector was damaged as well. I handed the board over to a guy with a red shirt and he did some soldering while I stood around eating candy.
 
 ![Close-up of the cleaned battery area, nearby diodes and exposed trace on the Mega PC motherboard.](/assets/images/2012/img_0025.jpg)
 

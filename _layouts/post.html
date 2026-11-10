@@ -40,6 +40,8 @@ layout: default
   </div>
 
   
+  {% include post-share.html %}
+
   <nav class="post-navigation" data-pagefind-ignore="all">
     <div class="nav-previous">
       {% if page.previous %}
@@ -55,3 +57,4 @@ layout: default
     </div>
   </nav>
 </article>
+<script src="{{ '/assets/js/post-share.js' | relative_url }}" defer></script>

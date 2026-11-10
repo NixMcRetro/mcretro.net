@@ -1170,6 +1170,29 @@
   background: var(--archive-filled-hover);
   border-color: var(--archive-accent);
 }
+/* Make the header Light/Dark toggle match the sharing icon buttons.
+   Keep its existing size, position, icon, focus outline and switch behaviour. */
+:root:not([data-theme="dark"]) .theme-toggle {
+  color: var(--archive-filled-text);
+  background: var(--archive-filled);
+  border-color: #A8BCCF;
+}
+:root:not([data-theme="dark"]) .theme-toggle:hover {
+  color: var(--archive-hover);
+  background: var(--archive-filled-hover);
+  border-color: var(--archive-accent);
+}
+:root[data-theme="dark"] .theme-toggle {
+  color: var(--link);
+  background: var(--panel);
+  border-color: var(--border-soft);
+}
+:root[data-theme="dark"] .theme-toggle:hover {
+  color: var(--link-hover);
+  background: var(--panel-hover);
+  border-color: var(--border);
+}
+
 /* Match the RSS link's gap to the heading-to-first-post rhythm,
    while leaving a little breathing room above the next widget's rule. */
 .sidebar .recent-posts-list li:last-child {

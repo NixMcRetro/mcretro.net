@@ -107,7 +107,7 @@ jobs:
         run: node --test .github/tests/share-descriptions.test.mjs
 
       - name: Verify generated social sharing links and email drafts
-        run: node --test .github/tests/share-descriptions-built.mjs _site
+        run: node --test .github/tests/share-descriptions-built.mjs
 
       - name: Verify generated blog, archives, metadata and feed captions
         run: node .github/tests/caption-excerpts-built.mjs _site

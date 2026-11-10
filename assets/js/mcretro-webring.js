@@ -152,7 +152,6 @@
     if(progress) progress.hidden=stage!=='progress';
     root.querySelector('[data-modem-title]').textContent =
       stage==='progress' ? 'Connecting to '+(root._mcretroSite?.name||'McRetro Network') : 'Connect To';
-    root.querySelector('[data-modem-help]').hidden=stage==='progress';
     root.dataset.modemStage=stage;
   }
 
@@ -167,7 +166,6 @@
     root.querySelector('[data-modem-connect]').disabled=!site;
     root.querySelector('[data-modem-skip]').disabled=!site;
     root.querySelector('[data-modem-status]').textContent=site?'Ready to dial.':'Unknown homepage.';
-    root.querySelector('[data-modem-note]').hidden=true;
     setStage(root,'setup');
   }
 
@@ -177,8 +175,6 @@
     endRun();
     setStage(root,'progress');
     const status=root.querySelector('[data-modem-status]');
-    const note=root.querySelector('[data-modem-note]');
-    note.hidden=false;
     const sound=makeSound(root);
     const run={root,site,sound,timers:[]};
     currentRun=run;
@@ -219,10 +215,6 @@
       button.textContent=muted?'Unmute':'Mute';
       button.setAttribute('aria-pressed',String(muted));
       if(currentRun?.sound) currentRun.sound.mute(muted);
-    });
-    root.querySelector('[data-modem-help]').addEventListener('click',()=>{
-      const note=root.querySelector('[data-modem-note]');
-      note.hidden=!note.hidden;
     });
 
     if(modal) {

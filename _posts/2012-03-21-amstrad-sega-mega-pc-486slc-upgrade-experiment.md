@@ -6,11 +6,17 @@ last_modified_at: 2026-10-21
 categories: [ibm-pc, repairs, sega]
 ---
 
-![](/assets/images/2012/img_0033.jpg)
+![Amstrad 486SLC motherboard on a white background, with expansion connectors, white SIMM sockets and an empty square chip socket.](/assets/images/2012/img_0033.jpg)
+
+*This PC7486SLC motherboard looked suspiciously similar to the one in my Mega PC. Naturally, I had to investigate.*
+{: .media-caption }
 
 Browsing the internet, I came across an Amstrad PC7486SLC motherboard. I couldn't help noticing how similar it looked to the Mega PC motherboard. Since my Mega PC was already giving me grief with its hard-drive controller, having another related Amstrad motherboard around for spare parts seemed like a pretty good idea.
 
-![](/assets/images/2012/img_0034.jpg)
+![Close-up of the AMD Am386 SX/SXL-25 processor seated on a green motherboard.](/assets/images/2012/img_0034.jpg)
+
+*Here's the 25 MHz AMD 386SX that started this whole upgrade idea.*
+{: .media-caption }
 
 #### Why the 486SLC?
 
@@ -18,11 +24,20 @@ My Mega PC is fitted with an AMD-compatible 386SX running at 25 MHz. Amstrad's p
 
 The PC7486SLC-33 uses a Texas Instruments TI486SLC running at 33 MHz. It's an interesting bridge between generations: the processor keeps a 386SX-compatible external interface while adding a 486-compatible instruction set and 1 KB of on-chip cache. In other words, exactly the sort of strange transitional CPU I find interesting.
 
-![](/assets/images/2012/img_0039.jpg)
+![Grainy photograph of a closed beige desktop PC with a flat horizontal case and front-panel drive openings.](/assets/images/2012/img_0039.jpg)
 
-![](/assets/images/2012/img_0040.jpg)
+*Beige case, hardly the most exciting-looking computer in the world. The motherboard was another matter.*
+{: .media-caption }
 
-![](/assets/images/2012/img_0038.jpg)
+![Grainy photograph of a beige desktop computer with its cover opened, showing the internal board and metal chassis.](/assets/images/2012/img_0040.jpg)
+
+*With the cover open, the interesting part becomes a bit easier to see - similar to the Amstrad Mega PC design.*
+{: .media-caption }
+
+![Grainy overhead view of an opened beige PC showing its power supply, cabling and motherboard.](/assets/images/2012/img_0038.jpg)
+
+*Another look under the lid. The motherboard and riser card is the reason I'm interested, not the beige box.*
+{: .media-caption }
 
 #### The Amstrad Mega PC Plus question
 
@@ -30,9 +45,15 @@ The PC7486SLC-33 board I bought appears to have come from a beige Amstrad PC rat
 
 Period listings do advertise an Amstrad Mega PC Plus with a 486SLC-33, although they don't tell me whether my particular motherboard was ever factory Amstrad Mega PC Plus hardware. For now, this is an experiment inspired by the Amstrad Mega PC Plus rather than a confirmed conversion using genuine Amstrad Mega PC Plus parts.
 
-![](/assets/images/2012/img_0037.jpg)
+![Close-up of five blue jumper caps fitted along a pin header on the Amstrad 386SX motherboard, beside the feature connector.](/assets/images/2012/img_0037.jpg)
 
-![](/assets/images/2012/img_0036.jpg)
+*Five blue jumpers next to the feature connector. Rather important for such tiny bits of plastic coated metal.*
+{: .media-caption }
+
+![Close-up of the same Amstrad motherboard header with its blue jumper caps removed, leaving the metal pins exposed.](/assets/images/2012/img_0036.jpg)
+
+*And here's the same header without those jumpers. The arrangement turned out to be very important for video output.*
+{: .media-caption }
 
 #### Video passthrough
 
@@ -44,7 +65,10 @@ We copied the jumper settings from the PC7486SLC board onto my PC7386SX Mega PC 
 
 Here's a little demonstration of those jumper settings on the original 386SX board. The camera doesn't seem particularly interested in focusing on the jumpers, but once everything is configured, switch the machine on and there's your PC video! No Mega Drive card required.
 
-![](/assets/images/2012/img_0035.jpg)
+![Amstrad motherboard close-up showing four white SIMM sockets, four empty memory-bank footprints and nearby chips.](/assets/images/2012/img_0035.jpg)
+
+*Four SIMM sockets and a 16 MB ceiling. Borrowing extra slots wasn't going to solve that one.*
+{: .media-caption }
 
 #### Memory
 

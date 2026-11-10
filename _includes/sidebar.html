@@ -67,7 +67,7 @@
   </div>
 </div>
 
-<div class="widget">
+<div class="widget recent-posts-widget">
   <h4 class="widgettitle">Recent Posts</h4>
   <ul class="recent-posts-list">
     {% for post in site.posts limit:3 %}
@@ -86,13 +86,13 @@
       </li>
     {% endfor %}
   </ul>
-  <p class="sidebar-rss-link"><a href="{{ '/feed.xml' | relative_url }}">📡 Subscribe via RSS</a></p>
+  <p class="sidebar-rss-link"><span aria-hidden="true">📡</span> <a href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a></p>
 </div>
 
 <div class="widget dial-homepage" data-dial-homepage>
   <h4 class="widgettitle">Dial-a-Homepage</h4>
   <p class="dial-homepage-intro">Take a random trip through McRetro's restored homepages.</p>
-  <a class="dial-homepage-random" href="/homepages/modem/?site=random" data-dial-site="random">Dial a random homepage...</a>
+  <span class="dial-homepage-icon" aria-hidden="true">☎️</span> <a class="dial-homepage-random" href="/homepages/modem/?site=random" data-dial-site="random">Dial a random homepage</a>
 </div>
 
 <dialog id="mcretro-modem-dialog" class="mcretro-modem-dialog" aria-label="McRetro dial-up connection" data-modem-root>

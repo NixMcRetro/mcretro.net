@@ -49,7 +49,7 @@
       button.title = copied ? 'Copied!' : 'Copy Link';
       button.classList.toggle('is-copied', copied);
       if (status) status.textContent = copied
-        ? 'Article link copied to clipboard.'
+        ? 'Link copied.'
         : 'Could not copy automatically. Copy the URL from your address bar.';
 
       clearTimeout(resetTimer);

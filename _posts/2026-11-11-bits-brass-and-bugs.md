@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bits, Brass and Bugs"
+title: "Bits, Brass, and Bugs"
 author: "Nix McRetro"
 date: 2026-11-11T04:33:00+11:00
 categories: [ai-assisted, nature, news]

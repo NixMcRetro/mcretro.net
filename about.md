@@ -16,6 +16,22 @@ Ahhh yes, the About page. A staple of every gloriously overengineered homepage. 
 Click a section below to explore the wreckage!
 
 <details class="about-panel panel--teal" name="mcretro-about" markdown="1">
+<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> About McRetro</summary>
+
+<div class="center" markdown="1">
+
+![Future Lost](/assets/images/about/futurelost.jxl){: width="600" }
+
+*An artefact from a timeline that never existed.*
+{: .media-caption }
+
+</div>
+
+Recently I realised that my gender identity aligns better with that of a woman. That makes me a transgender woman. I've got a lot of work to do. I still enjoy a relatively (junk-food) [vegan lifestyle](https://en.wikipedia.org/wiki/Veganism). I have two aloe vera plants that aren't dead. I believe in quality over quantity of life.
+
+</details>
+
+<details class="about-panel panel--teal" name="mcretro-about" markdown="1">
 <summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> My Internet History</summary>
 
 <div class="center" markdown="1">
@@ -23,6 +39,7 @@ Click a section below to explore the wreckage!
 ![Zap it here](/assets/images/about/zap_it_here.jpg)
 
 *"Zap it here"*
+{: .media-caption }
 
 </div>
 
@@ -70,22 +87,6 @@ RetroJunkie.net hosted an array of information. Well, mainly YouTube videos! Muc
 July 2015 to the present incarnation
 
 The place you're visiting right now. We've got a blog, historical videos, repairs, projects and a collection of other things I probably should have thrown away years ago.
-
-</details>
-
-<details class="about-panel panel--teal" name="mcretro-about" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> About McRetro</summary>
-
-<div class="center" markdown="1">
-
-![Future Lost](/assets/images/about/futurelost.jxl){: width="600" }
-
-*An artefact from a timeline that never existed.*
-{: .media-caption }
-
-</div>
-
-Recently I realised that my gender identity aligns better with that of a woman. That makes me a transgender woman. I've got a lot of work to do. I still enjoy a relatively (junk-food) [vegan lifestyle](https://en.wikipedia.org/wiki/Veganism). I have two aloe vera plants that aren't dead. I believe in quality over quantity of life.
 
 </details>
 

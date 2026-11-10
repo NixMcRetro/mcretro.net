@@ -1,13 +1,16 @@
 /* McRetro.net's local Australian dial-up simulation. Nothing is dialled or sent.
    AU PSTN tone: 425 Hz amplitude-modulated at 25 Hz (AS/CA S002 Appendix A).
    DTMF key pairs use standard 697/770/852/941 + 1209/1336/1477 Hz.
-   The late-1990s modem handshake is deliberately an approximation, not an archive recording. */
+   The handshake uses an audio extract supplied by the site owner; if audio decoding
+   fails, the existing approximate synthetic negotiation remains available. */
 (() => {
   'use strict';
 
   const MODEM_ROUTE = '/homepages/modem/';
   const DIAL_NUMBER = '0293735100';
-  const TOTAL_MS = 20000;
+  const HANDSHAKE_AUDIO = '/assets/audio/mcretro-australian-modem-handshake.ogg';
+  const HANDSHAKE_START = 10.6;
+  const TOTAL_MS = 27000;
   const SITES = Object.freeze([
     Object.freeze({slug:'frank',name:'Frank the Snake',path:'/homepages/frank/'}),
     Object.freeze({slug:'pepper',name:'Pepper the Dog Blog',path:'/homepages/pepper/'}),
@@ -93,22 +96,49 @@
         for(const freq of [400,425,450]) tone(freq,offset,0.4,0.09);
       }
 
-      // Approximate 33.6 kbps negotiation: answer tone, phase breaks, short training
-      // chirps and a rising/noisy sequence (not intended as exact V.34 waveforms).
-      for(let i=0;i<6;i++) tone(2100,10.6+i*0.46,0.43,0.12);
-      tone(1300,13.45,0.36,0.15);
-      tone(1750,13.9,0.36,0.15);
-      tone(980,14.35,0.3,0.13);
-      for(let i=0;i<24;i++){
-        const at=14.8+i*0.095;
-        tone(700+(i*317)%2050,at,0.086,0.10,i%4===0?'triangle':'sine');
-        if(i%3===0) tone(1150+(i*213)%1300,at,0.074,0.065);
-      }
-      tone(1800,17.2,0.5,0.11);
+      // Keep the AU dial tone, DTMF digits and ringback exactly as before.
+      // Playback starts at 10.6 seconds; the source is a 16.3-second extract
+      // of the owner's recorded modem negotiation (no new dialling sounds).
+      let stopped=false;
+      const fallbackHandshake=()=>{
+        if(stopped || context.currentTime > time+18) return;
+        // Previous synthetic handshake, retained for unsupported codecs or failed loads.
+        for(let i=0;i<6;i++) tone(2100,10.6+i*0.46,0.43,0.12);
+        tone(1300,13.45,0.36,0.15);
+        tone(1750,13.9,0.36,0.15);
+        tone(980,14.35,0.3,0.13);
+        for(let i=0;i<24;i++){
+          const at=14.8+i*0.095;
+          tone(700+(i*317)%2050,at,0.086,0.10,i%4===0?'triangle':'sine');
+          if(i%3===0) tone(1150+(i*213)%1300,at,0.074,0.065);
+        }
+        tone(1800,17.2,0.5,0.11);
+      };
       context.resume().catch(()=>{});
+      fetch(HANDSHAKE_AUDIO)
+        .then(response=>{
+          if(!response.ok) throw new Error('Handshake recording unavailable');
+          return response.arrayBuffer();
+        })
+        .then(audio=>context.decodeAudioData(audio))
+        .then(buffer=>{
+          if(stopped) return;
+          const handshake=context.createBufferSource();
+          const recordedGain=context.createGain();
+          handshake.buffer=buffer;
+          // The original recording is quieter than our synthesised dial tones.
+          recordedGain.gain.value=8;
+          handshake.connect(recordedGain);
+          recordedGain.connect(master);
+          const scheduled=time+HANDSHAKE_START;
+          const startsAt=Math.max(scheduled,context.currentTime+0.02);
+          const offset=startsAt-scheduled;
+          if(offset<buffer.duration) handshake.start(startsAt,offset);
+        })
+        .catch(fallbackHandshake);
       return {
         mute(value) { master.gain.setTargetAtTime(value?0:0.05,context.currentTime,0.02); },
-        stop() { context.close().catch(()=>{}); }
+        stop() { stopped=true; context.close().catch(()=>{}); }
       };
     } catch(error) {
       return null; // Audio errors must never prevent navigating a homepage.
@@ -158,8 +188,8 @@
       [5200,'Waiting for answer...'],
       [10200,'Negotiating protocols...'],
       [13700,'Handshaking with remote modem...'],
-      [17800,'Verifying user name and password...'],
-      [19300,'Connected at 33600 bps.']
+      [24800,'Verifying user name and password...'],
+      [26300,'Connected at 33600 bps.']
     ];
     steps.forEach(([delay,message])=>{
       run.timers.push(window.setTimeout(()=>{

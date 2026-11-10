@@ -62,7 +62,8 @@ test('unmigrated posts retain the title-and-link fallback', () => {
   const url = 'https://mcretro.net/welcome-to-the-retro-zone/';
   const section = share(url);
   const bluesky = new URL(href(section, 'Share on Bluesky'));
-  assert.ok(bluesky.searchParams.get('text').endsWith(' - ' + url));
+  assert.ok(bluesky.searchParams.get('text').endsWith(' - ' + url),
+    'Fallback text was: ' + JSON.stringify(bluesky.searchParams.get('text')));
   const tumblr = new URL(href(section, 'Share on Tumblr'));
   assert.equal(tumblr.searchParams.get('caption'), null);
   const email = new URL(href(section, 'Share by email'));

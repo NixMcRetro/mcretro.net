@@ -18,9 +18,7 @@ Picked this up on eBay from the UK and gave it a bit of a clean. It has become m
 *There it is in the plastic: Games Paddle SP-7, for Mega PCs only.*
 {: .media-caption }
 
-It should go nicely with the Amstrad Mega PC. I still need to track down an Amstrad mouse, keyboard and joystick though.
-
-Unfortunately, in my eyes at least, it is also one of the worst Sega controller designs. The D-pad isn't very responsive at all. At least it is a great beige-cream colour!
+It should go nicely with the Amstrad Mega PC. I still need to track down an Amstrad mouse, keyboard and joystick though. Unfortunately, in my eyes at least, it is also one of the worst Sega controller designs. The D-pad isn't very responsive at all. At least it is a great beige-cream colour!
 
 ### Sources
 

@@ -852,17 +852,16 @@
   .site-footer .footer-detail-line { display: block; }
 }
 
-/* Compact inline RSS link; preserve the footer's layout and theme-aware text links. */
+/* Keep the RSS link on the same text baseline as the GitHub Pages credit. */
 .site-footer .footer-rss-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3em;
-  vertical-align: middle;
+  display: inline;
+  white-space: nowrap;
 }
 .site-footer .footer-rss-icon {
+  display: inline-block;
   width: 1em;
   height: 1em;
-  flex: none;
+  vertical-align: -0.12em;
   color: #B45200;
 }
 :root[data-theme="dark"] .site-footer .footer-rss-icon {

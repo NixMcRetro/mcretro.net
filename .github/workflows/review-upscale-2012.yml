@@ -1,0 +1,57 @@
+name: Review 2012 AI upscales (no publication)
+
+on:
+  push:
+    branches:
+      - review/2012-image-upscales-jxl
+    paths:
+      - scripts/review_upscale_2012.py
+      - .github/workflows/review-upscale-2012.yml
+
+permissions:
+  contents: write
+
+jobs:
+  build-review-previews:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install lossless JPEG XL tools and AI upscale dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libjxl-tools
+          python -m pip install --disable-pip-version-check "opencv-contrib-python-headless==4.12.0.88" "numpy>=2,<3" "Pillow>=11,<13"
+      - name: Retrieve pretrained FSRCNN x2 neural model
+        run: |
+          mkdir -p _review
+          curl --fail --location --silent --show-error --retry 3 \
+            https://raw.githubusercontent.com/Saafke/FSRCNN_Tensorflow/master/models/FSRCNN_x2.pb \
+            -o _review/FSRCNN_x2.pb
+          test "$(wc -c < _review/FSRCNN_x2.pb)" -gt 30000
+      - name: Create and verify lossless JPEG XL review candidates
+        run: python scripts/review_upscale_2012.py
+      - name: Publish review files on this non-deploying branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/images/2012/03/ assets/images/2012/04/ _review/upscale-previews/
+          git diff --cached --check
+          git diff --cached --quiet && exit 0
+          git commit -m "Add five lossless JXL candidates and review-only PNG previews"
+          git push origin "HEAD:$GITHUB_REF_NAME"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: 2012-upscale-review
+          path: |
+            _review/upscale-previews/
+            assets/images/2012/03/
+            assets/images/2012/04/
+          if-no-files-found: warn
+          retention-days: 14

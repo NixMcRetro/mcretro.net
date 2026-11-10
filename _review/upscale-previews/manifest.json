@@ -12,7 +12,8 @@
     ],
     "preview": "_review/upscale-previews/img_0039-upscaled-preview.png",
     "candidates": [
-      "assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0039-upscaled-2x.jxl"
+      "assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0039-upscaled-2x.jxl",
+      "assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0039-wide-1800.jxl"
     ],
     "ai_method": "OpenCV FSRCNN x2, 85%; Lanczos x2, 15%",
     "jxl_encoding": "lossless distance=0, decoded pixel exact"
@@ -30,7 +31,8 @@
     ],
     "preview": "_review/upscale-previews/img_0040-upscaled-preview.png",
     "candidates": [
-      "assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0040-upscaled-2x.jxl"
+      "assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0040-upscaled-2x.jxl",
+      "assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0040-wide-1800.jxl"
     ],
     "ai_method": "OpenCV FSRCNN x2, 85%; Lanczos x2, 15%",
     "jxl_encoding": "lossless distance=0, decoded pixel exact"
@@ -48,7 +50,8 @@
     ],
     "preview": "_review/upscale-previews/img_0038-upscaled-preview.png",
     "candidates": [
-      "assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0038-upscaled-2x.jxl"
+      "assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0038-upscaled-2x.jxl",
+      "assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0038-wide-1800.jxl"
     ],
     "ai_method": "OpenCV FSRCNN x2, 85%; Lanczos x2, 15%",
     "jxl_encoding": "lossless distance=0, decoded pixel exact"
@@ -66,7 +69,8 @@
     ],
     "preview": "_review/upscale-previews/img_0067a-upscaled-preview.png",
     "candidates": [
-      "assets/images/2012/04/amstrad-sega-mega-pc-athlon-500mhz-rebuild-and-picopsu/img_0067a-upscaled-2x.jxl"
+      "assets/images/2012/04/amstrad-sega-mega-pc-athlon-500mhz-rebuild-and-picopsu/img_0067a-upscaled-2x.jxl",
+      "assets/images/2012/04/amstrad-sega-mega-pc-athlon-500mhz-rebuild-and-picopsu/img_0067a-wide-1800.jxl"
     ],
     "ai_method": "OpenCV FSRCNN x2, 85%; Lanczos x2, 15%",
     "jxl_encoding": "lossless distance=0, decoded pixel exact"
@@ -85,6 +89,7 @@
     "preview": "_review/upscale-previews/img_0071-upscaled-preview.png",
     "candidates": [
       "assets/images/2012/04/new-camera-canon-eos-600d/img_0071-upscaled-2x.jxl",
+      "assets/images/2012/04/new-camera-canon-eos-600d/img_0071-wide-1800.jxl",
       "assets/images/2012/04/new-camera-canon-eos-600d/img_0071-upscaled-2x-transparent.jxl"
     ],
     "ai_method": "OpenCV FSRCNN x2, 85%; Lanczos x2, 15%",

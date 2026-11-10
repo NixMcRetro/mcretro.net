@@ -4,6 +4,8 @@ title: "Bits, Brass, and Bugs"
 author: "Nix McRetro"
 date: 2026-11-11T04:33:00+11:00
 categories: [ai-assisted, nature, news]
+share_description: >-
+  Old Macs, local AI experiments, dial-up tinkering, jazz and the first cicadas of summer. Somehow there is still room for another side project! 🖥️
 ---
 
 ![Stylised illustration of a retro Macintosh workbench, connected Mac minis and a brass trumpet, with green grocer and black prince cicadas on a gum tree outside an open window at sunset.](/assets/images/2026/11/bits-brass-and-bugs/01-bits-brass-and-bugs.jxl)

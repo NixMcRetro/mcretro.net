@@ -5,6 +5,8 @@ date: 2026-09-26T09:00:00.000+10:00
 categories: [ai-generated]
 last_modified_at: 2026-10-26
 permalink: /nix-9-the-refund-protocol/
+share_description: >-
+  A real travel refund dispute retold as a cyberpunk quest. One bad hotel, a cancelled flight and a netrunner armed with receipts, percentages and persistence. 💾
 ---
 
 ![Nix-9 and her companion arrive in a rain-swept neon megacity](/assets/images/2026/09/nix-9-the-refund-protocol/prologue.jxl)

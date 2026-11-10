@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2025-02-09T12:33:14.000+11:00
 categories: [activism, news]
 last_modified_at: 2026-10-18
+share_description: >-
+  A first protest rally, Project 491 and a personal account of standing up for transgender young people during a debate over access to gender-affirming care. 🏳️‍⚧️
 ---
 
 ![](/assets/images/2025/img_1372.jpg)

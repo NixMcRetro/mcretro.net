@@ -12,6 +12,10 @@ on:
     paths:
       - '_posts/**'
       - 'blog/index.html'
+      - '_includes/post-share.html'
+      - '.github/share-description-manifest.json'
+      - '.github/tests/share-descriptions.test.mjs'
+      - '.github/tests/share-descriptions-built.mjs'
       - '_layouts/archive.html'
       - '_plugins/without_media_captions.rb'
       - '.github/tests/caption-excerpts.test.rb'
@@ -98,6 +102,12 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '24'
+
+      - name: Verify approved share descriptions and Bluesky limits
+        run: node --test .github/tests/share-descriptions.test.mjs
+
+      - name: Verify generated social sharing links and email drafts
+        run: node --test .github/tests/share-descriptions-built.mjs _site
 
       - name: Verify generated blog, archives, metadata and feed captions
         run: node .github/tests/caption-excerpts-built.mjs _site

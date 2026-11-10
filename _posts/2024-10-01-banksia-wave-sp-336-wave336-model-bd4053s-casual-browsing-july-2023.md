@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-10-01T20:02:55.000+10:00
 categories: [modems, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Banksia Wave SP 336 modem, a 28.8 kbps connection, Linux, Windows 98 and a stubborn trip through old websites. Dial-up nostalgia with packet errors included. 📡
 ---
 
 {% include youtube.html id="rInuSikkXms" %}

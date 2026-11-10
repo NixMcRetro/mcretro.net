@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2026-07-26T17:08:14.000+11:00
 categories: [ai-generated, programming]
 last_modified_at: 2026-10-18
+share_description: >-
+  Inside a macOS infostealer disguised as a licensing tool: encrypted strings, browser and wallet targets, and what the Odyssey Stealer analysis uncovered. 🔍
 ---
 
 ![Illustrated Odyssey Stealer analysis overview showing the disguised Patch.app, Mach-O string decryption, targeted data, ZIP staging and C2 communications](/assets/images/2026/07/odyssey-stealer-technical-analysis/odyssey-stealer-analysis-overview.jxl)

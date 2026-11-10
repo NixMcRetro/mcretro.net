@@ -5,6 +5,8 @@ author: "Nix McRetro"
 date: 2026-09-06T09:00:00.000+10:00
 categories: [ai-assisted, programming]
 last_modified_at: 2026-10-27
+share_description: >-
+  Two OCR engines, old financial statements and a very unexpected goat hallucination. A lesson in cross-checking AI against actual records. 🐐
 ---
 
 ![oMLX running Chandra OCR 2 locally for the document transcription experiment](/assets/images/2026/09/death-taxes-and-goats/omlx-chandra-ocr2.jxl)

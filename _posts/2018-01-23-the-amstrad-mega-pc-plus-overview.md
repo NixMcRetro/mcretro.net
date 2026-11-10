@@ -28,19 +28,19 @@ Above is what the Mega PC looks like without a Mega Drive inside it, a hideous b
 
 The original 386SX motherboard had suffered badly from a leaking NiCad backup battery. The corrosion had reached various tracks and connections, which wasn't something I wanted to experience again. The replacement 486SLC board uses a Dallas RTC arrangement instead, making it a rather more pleasant proposition for keeping the machine alive.
 
-![](/assets/images/2012/img_0038.jpg)
+![](/assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0038-wide-1800.jxl)
 
 The upgraded PC side now runs at 33 MHz, compared with the original 25 MHz 386SX arrangement. It's fitted with 16 MB of RAM and an XT-IDE compatible CompactFlash adapter, which makes booting DOS considerably more convenient. There's also still a regular hard drive, although the older BIOS has its own limitations.
 
 And here we have the wonderful, just-as-gorgeous-486-version, the Amstrad PC7486SLC. If only more of the Mega PC Plus would have seen the light of day I'm certain the world we live in would be a better place! :)
 
-![](/assets/images/2012/img_0040.jpg)
+![](/assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0040-wide-1800.jxl)
 
 The Mega Drive side remains much the same as before. You can insert a cartridge, change the front switch and enjoy a little Sega gaming without dragging out a separate console. I tried Pac-Panic during the overview, although the monitor I had connected wasn't particularly happy displaying the Mega Drive signal properly.
 
 The original Amstrad monitor was designed to handle both the PC and console video arrangements, which makes it rather important to the experience. Trying to use a modern display for both modes can be a bit of a nuisance. One moment you've got a readable PC screen, the next you're looking at something rolling across the display.
 
-![](/assets/images/2012/img_0039.jpg)
+![](/assets/images/2012/03/amstrad-sega-mega-pc-486slc-upgrade-experiment/img_0039-wide-1800.jxl)
 
 There's also a volume control on the front for the Mega Drive side, with additional audio and serial connections at the rear. The machine's power supply and internal layout are fairly typical of Amstrad computers from the period, apart from the small matter of having a Sega Mega Drive installed alongside everything else.
 

@@ -20,7 +20,7 @@ The backlight itself worked, but the light wasn't distributed as evenly as I'd h
 
 The capacitor work wasn't especially attractive either. Some of the replacement capacitors were awkwardly positioned and interfered with the case, and I'd installed a few with the polarity reversed relative to the motherboard markings. Definitely not the part of this experiment to copy.
 
-In the end, I salvaged enough parts from two Game Gears to get one usable machine. I moved the clean battery contacts into the better unit and gave the other away in a raffle. Perhaps he'll restore it, or perhaps it'll disappear under a mountain of old Macs. I hope he gives it a go! I'd been dreaming about replacing those awkward radial electrolytics with tantalum capacitors one day, but that was still a long way off.
+In the end, I salvaged enough parts from two Game Gears to get one usable machine. I moved the clean battery contacts into the better unit and gave the other away in a raffle. Perhaps they'll restore it, or perhaps it'll disappear under a mountain of old Macs. I hope they'll give it a go! I'd been dreaming about replacing those awkward radial electrolytics with tantalum capacitors one day, but that was still a long way off.
 
 **Sources**
 

@@ -1073,8 +1073,7 @@
    Branded marks are inline SVG (Simple Icons CC0), not image fallbacks. */
 .post-full .post-share {
   margin-top: 1.65rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid var(--border-soft);
+  padding-top: 0;
 }
 .post-full .post-share h2 {
   font-family: Montserrat, "Helvetica Neue", sans-serif;
@@ -1141,8 +1140,26 @@
 .post-share__feedback:empty {
   display: none;
 }
+/* Keep the site's traditional 4px section divider before Previous/Next.
+   The extra thin rule above Share is removed instead. */
 .post-full .post-share + .post-navigation {
   margin-top: 1.5rem;
+}
+
+/* Only the share icons get a quieter Light-mode palette. The site's main
+   link blue and Dark-mode teal remain unchanged. */
+:root:not([data-theme="dark"]) .post-full .post-share__action {
+  color: #456779;
+}
+:root:not([data-theme="dark"]) .post-full .post-share__action:hover {
+  color: #225E64;
+  background: #E7F1EA;
+  border-color: #90AFA5;
+}
+:root:not([data-theme="dark"]) .post-full .post-share__action.is-copied {
+  color: #225E64;
+  background: #E7F1EA;
+  border-color: #90AFA5;
 }
 /* Match the RSS link's gap to the heading-to-first-post rhythm,
    while leaving a little breathing room above the next widget's rule. */

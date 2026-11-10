@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-10-04
 last_modified_at: 2026-10-22
 categories: [nature, youtube]
+share_description: >-
+  Meet Stumpie, a garden skink recovering from a missing tail. A little lizard, plenty of personality and a very good reason to be careful with the mower. 🦎
 ---
 
 {% include youtube.html id="ETbSicK5skM" %}

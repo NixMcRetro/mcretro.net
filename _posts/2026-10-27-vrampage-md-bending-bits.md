@@ -4,6 +4,8 @@ title: "VRAMpage MD: Bending Bits"
 author: "Nix McRetro"
 date: 2026-10-27T03:17:08+11:00
 categories: [ai-assisted, programming, sega]
+share_description: >-
+  Mega Drive circuit bending goes digital! Explore SRAM, VRAM and sound-chip glitches in a browser, with considerably less risk to the original hardware. 🎮
 ---
 
 {% include youtube.html id="Prp6OLZkeD4" %}

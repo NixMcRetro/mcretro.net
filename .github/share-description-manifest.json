@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "source": "McRetro Share Descriptions - Owner Review, Review Queue, Batch 01",
+  "note": "Owner approved text is stored only in each post's front matter. This list enforces which posts must retain a description.",
+  "posts": [
+    {
+      "post_id": "POST-0955",
+      "path": "_posts/2024-10-01-banksia-wave-sp-336-wave336-model-bd4053s-casual-browsing-july-2023.md",
+      "url": "https://mcretro.net/banksia-wave-sp-336-wave336-model-bd4053s-casual-browsing-july-2023/",
+      "batch_id": "SHARE-0010"
+    },
+    {
+      "post_id": "POST-0956",
+      "path": "_posts/2024-10-04-stumpie-the-skink.md",
+      "url": "https://mcretro.net/stumpie-the-skink/",
+      "batch_id": "SHARE-0009"
+    },
+    {
+      "post_id": "POST-0957",
+      "path": "_posts/2025-02-09-my-first-rally-trans-rights-project-491.md",
+      "url": "https://mcretro.net/my-first-rally-trans-rights-project-491/",
+      "batch_id": "SHARE-0008"
+    },
+    {
+      "post_id": "POST-0958",
+      "path": "_posts/2026-07-26-odyssey-stealer-technical-analysis-of-a-macos-infostealer.md",
+      "url": "https://mcretro.net/odyssey-stealer-technical-analysis-of-a-macos-infostealer/",
+      "batch_id": "SHARE-0007"
+    },
+    {
+      "post_id": "POST-0959",
+      "path": "_posts/2026-09-06-death-taxes-and-goats.md",
+      "url": "https://mcretro.net/death-taxes-and-goats/",
+      "batch_id": "SHARE-0006"
+    },
+    {
+      "post_id": "POST-0960",
+      "path": "_posts/2026-09-26-nix-9-the-refund-protocol.md",
+      "url": "https://mcretro.net/nix-9-the-refund-protocol/",
+      "batch_id": "SHARE-0005"
+    },
+    {
+      "post_id": "POST-0961",
+      "path": "_posts/2026-10-14-the-newcastle-chapter-i-never-got-to-finish.md",
+      "url": "https://mcretro.net/the-newcastle-chapter-i-never-got-to-finish/",
+      "batch_id": "SHARE-0004"
+    },
+    {
+      "post_id": "POST-0962",
+      "path": "_posts/2026-10-26-still-dialling-in-my-head.md",
+      "url": "https://mcretro.net/still-dialling-in-my-head/",
+      "batch_id": "SHARE-0003"
+    },
+    {
+      "post_id": "POST-0963",
+      "path": "_posts/2026-10-27-vrampage-md-bending-bits.md",
+      "url": "https://mcretro.net/vrampage-md-bending-bits/",
+      "batch_id": "SHARE-0002"
+    },
+    {
+      "post_id": "POST-0964",
+      "path": "_posts/2026-11-11-bits-brass-and-bugs.md",
+      "url": "https://mcretro.net/bits-brass-and-bugs/",
+      "batch_id": "SHARE-0001"
+    }
+  ]
+}

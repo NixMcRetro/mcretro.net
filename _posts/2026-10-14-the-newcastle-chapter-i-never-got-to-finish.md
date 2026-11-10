@@ -3,6 +3,8 @@ title: "The Newcastle Chapter I Never Got to Finish"
 author: "Nix McRetro"
 date: 2026-10-14T10:32:00.000+10:00
 categories: [ai-assisted, news, study]
+share_description: >-
+  A look back at a difficult Newcastle chapter in 2019, when housing upheaval, university plans and heartbreaking decisions about beloved birds collided. 🐦
 ---
 
 ![The little birds perched together](/assets/images/2026/10/the-newcastle-chapter-i-never-got-to-finish/newcastle-2019-birds-perch.webp)

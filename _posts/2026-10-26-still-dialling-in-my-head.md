@@ -7,6 +7,8 @@ categories:
   - ai-assisted
   - ibm-pc
   - modems
+share_description: >-
+  Can a half-remembered dial-up melody reveal an old Sydney internet number? Modems, spectrograms and some questionable singing join the investigation. ☎️
 ---
 
 ![Actual Avtek modem dialling spectrogram showing eight dual-tone pulses](/assets/images/2026/10/still-dialling-in-my-head/01_actual_avtek_dtmf_spectrogram.jxl)

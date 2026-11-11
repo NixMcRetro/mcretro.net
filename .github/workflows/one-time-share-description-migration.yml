@@ -1,0 +1,46 @@
+name: One-time approved share-description consolidation
+'on':
+  push:
+    branches:
+      - chore/share-descriptions-frontmatter-2026-11-11
+    paths:
+      - '.github/workflows/one-time-share-description-migration.yml'
+permissions:
+  contents: write
+jobs:
+  migrate:
+    if: github.repository == 'NixMcRetro/mcretro.net' && github.ref == 'refs/heads/chore/share-descriptions-frontmatter-2026-11-11'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dedicated migration branch
+        uses: actions/checkout@v5
+      - name: Set up Ruby and Jekyll
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Build unmodified baseline social sharing
+        run: bundle exec jekyll build --destination "$RUNNER_TEMP/mcretro-share-before"
+      - name: Move all approved descriptions into YAML front matter
+        run: node scripts/one-time-share-description-migration.mjs migrate
+      - name: Build migrated Jekyll site
+        run: bundle exec jekyll build --destination _site
+      - name: Verify source, generated links, unchanged article bodies and before/after sharing output
+        run: |
+          node --test .github/tests/share-descriptions.test.mjs
+          node --test .github/tests/share-descriptions-built.mjs
+          node scripts/one-time-share-description-migration.mjs verify "$RUNNER_TEMP/mcretro-share-before" _site
+          git diff --check
+      - name: Commit to feature branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- _posts/ .github/share-description-manifest.json _data/share_descriptions.json _includes/post-share.html .github/tests/share-descriptions.test.mjs .github/tests/share-descriptions-built.mjs
+          test "$(git diff --cached --name-only | wc -l | tr -d ' ')" = "959"
+          git diff --cached --check
+          git commit -m "Consolidate 964 approved share descriptions into post front matter"
+          git push origin HEAD:refs/heads/chore/share-descriptions-frontmatter-2026-11-11

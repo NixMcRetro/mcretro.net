@@ -87,18 +87,23 @@ test('blocked localStorage still permits a page-only manual choice', () => {
 test('two stable button positions, WCAG labels and CSS colour tokens', () => {
   assert.match(style,/\.theme-toggle[\s\S]*width: 40px/);
   assert.match(style,/@media screen and \(max-width: 750px\) \{\s*\.theme-toggle/);
-  for(const value of ['#FFF8DC','#191D27','#0009B5','#78D0C3','#064584','#115B60','#FFFDF2','#242B38'])assert.ok(style.includes(value),value);
+  for(const value of ['#FFF8DC','#191D27','#0009B5','#93C5FD','#064584','#244D78','#FFFDF2','#242B38'])assert.ok(style.includes(value),value);
   assert.match(style,/:root\[data-theme="dark"\]/);
 });
 
-test('original blue is restored only in Light mode; Dark links remain teal', () => {
+test('classic blue stays in Light mode; Dark links use soft sky blue', () => {
   const light = style.split(':root[data-theme="dark"]')[0];
   const dark = style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
   assert.match(light, /--link:\s*#0009B5;/);
   assert.match(light, /--link-hover:\s*#000080;/);
   assert.match(light, /--focus:\s*#0009B5;/);
-  assert.match(dark, /--link:\s*#78D0C3;/);
-  assert.match(dark, /--link-hover:\s*#A5E5D9;/);
+  assert.match(dark, /--link:\s*#93C5FD;/);
+  assert.match(dark, /--link-hover:\s*#BFDBFE;/);
+  assert.match(dark, /--focus:\s*#BFDBFE;/);
+  assert.match(dark, /--button-bg:\s*#93C5FD;/);
+  assert.match(dark, /--button-hover:\s*#BFDBFE;/);
+  assert.match(dark, /--nav-button-bg:\s*#93C5FD;/);
+  assert.doesNotMatch(dark, /#78D0C3|#A5E5D9|#115B60|#19757B|#B9EEE6/);
 });
 test('recent sidebar post links underline on hover and keyboard focus', () => {
   assert.match(style, /\.recent-posts-list li a:hover,\s*\.recent-posts-list li a:focus-visible\s*\{[^}]*text-decoration:\s*underline;/);
@@ -112,13 +117,13 @@ test('Dial-a-Homepage links and monthly archive counts follow the active theme',
 });
 
 
-test('sidebar Search and archive calendar share classic blue only in Light mode', () => {
+test('sidebar Search and archive calendar use matching blue palettes in both themes', () => {
   const light = style.split(':root[data-theme="dark"]')[0];
   const dark = style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
   for (const token of ['--sidebar-button-bg: #064584;', '--sidebar-button-hover: #00346D;', '--archive-tile: #064584;', '--archive-hover: #00346D;']) {
     assert.ok(light.includes(token), token);
   }
-  for (const token of ['--sidebar-button-bg: #78D0C3;', '--sidebar-button-hover: #A5E5D9;', '--archive-tile: #115B60;', '--archive-hover: #19757B;']) {
+  for (const token of ['--sidebar-button-bg: #93C5FD;', '--sidebar-button-hover: #BFDBFE;', '--archive-tile: #244D78;', '--archive-hover: #2A527F;']) {
     assert.ok(dark.includes(token), token);
   }
   assert.match(style, /\.sidebar \.inline-search-form button\s*\{[^}]*background:\s*var\(--sidebar-button-bg\);/);
@@ -205,7 +210,7 @@ test('calendar keeps four month columns with compact themed filled and empty til
   const light=style.split(':root[data-theme="dark"]')[0];
   const dark=style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
   for(const token of ['--archive-tile: #064584;', '--archive-filled: #EAF2FF;', '--archive-filled-hover: #D5E6FF;', '--archive-filled-text: #064584;'])assert.ok(light.includes(token),token);
-  for(const token of ['--archive-tile: #115B60;', '--archive-filled: #293C46;', '--archive-filled-hover: #345563;', '--archive-filled-text: #B9EEE6;'])assert.ok(dark.includes(token),token);
+  for(const token of ['--archive-tile: #244D78;', '--archive-filled: #293A55;', '--archive-filled-hover: #2B405E;', '--archive-filled-text: #BFDBFE;'])assert.ok(dark.includes(token),token);
   assert.match(overrides, /grid-template-columns: repeat\(4, minmax\(0, 1fr\)\)/);
   assert.match(overrides, /min-height:\s*3\.2rem/);
   assert.match(overrides, /\.sidebar a\.archive-calendar-month\.has-posts \{[^}]*color:\s*var\(--archive-filled-text\);[^}]*background:\s*var\(--archive-filled\)/);

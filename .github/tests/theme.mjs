@@ -136,7 +136,7 @@ test('sidebar Search and archive calendar use matching blue palettes in both the
 });
 
 
-test('accordion headers use Archives blue in Light mode and teal in Dark mode', () => {
+test('accordion headers use Archives blues in both modes without changing panel markup', () => {
   const light = overrides.split(':root[data-theme="dark"]')[0];
   const dark = overrides.split(':root[data-theme="dark"]')[1].split('\n/*')[0];
   const lightPalette = style.split(':root[data-theme="dark"]')[0];
@@ -154,11 +154,13 @@ test('accordion headers use Archives blue in Light mode and teal in Dark mode', 
     '--accordion-accent: var(--archive-accent);'
   ]) assert.ok(light.includes(token), token);
   for (const token of [
-    '--accordion-neutral-bg: #2E4142;', '--accordion-neutral-hover: #3B5D5A;',
-    '--accordion-teal-bg: #274A46;', '--accordion-teal-hover: #35665E;',
-    '--accordion-teal-open: #2F554F;', '--accordion-teal-open-hover: #3B7368;',
-    '--accordion-accent: var(--retro-teal);'
+    '--accordion-neutral-bg: #2C3546;', '--accordion-neutral-hover: #39485E;',
+    '--accordion-teal-bg: var(--archive-filled);', '--accordion-teal-hover: var(--archive-filled-hover);',
+    '--accordion-teal-open: #304762;', '--accordion-teal-open-hover: #395575;',
+    '--accordion-accent: var(--archive-accent);'
   ]) assert.ok(dark.includes(token), token);
+  // Historical class names stay for compatibility, but the dark palette must be blue.
+  assert.doesNotMatch(dark, /#2E4142|#3B5D5A|#274A46|#35665E|#2F554F|#3B7368|--accordion-accent: var\(--retro-teal\)/);
   assert.match(overrides, /\.about-panel\.panel--teal\s*\{[^}]*border-left:\s*3px solid var\(--accordion-accent\)/);
   assert.match(overrides, /\.about-panel\.panel--teal > summary:hover,\s*\.about-panel\.panel--teal > summary:focus-visible\s*\{\s*background:\s*var\(--accordion-teal-hover\)/);
   assert.match(overrides, /\.about-panel\.panel--teal\[open\] > summary:hover,\s*\.about-panel\.panel--teal\[open\] > summary:focus-visible\s*\{\s*background:\s*var\(--accordion-teal-open-hover\)/);

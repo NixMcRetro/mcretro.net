@@ -15,9 +15,8 @@
   margin-bottom: 0.2em;
 }
 
-/* Shared accordions follow Archives blues in Light mode and retain the
-   existing teal surfaces in Dark mode. The historic panel--teal class name is
-   intentionally preserved so articles and exclusive-panel scripts need no edits. */
+/* Shared accordions follow Archives blues in both themes. The historic
+   panel--teal class name is preserved for articles and exclusive-panel scripts. */
 :root {
   --accordion-neutral-bg: #F3EAC9;
   --accordion-neutral-hover: #E9DDB1;
@@ -28,13 +27,13 @@
   --accordion-accent: var(--archive-accent);
 }
 :root[data-theme="dark"] {
-  --accordion-neutral-bg: #2E4142;
-  --accordion-neutral-hover: #3B5D5A;
-  --accordion-teal-bg: #274A46;
-  --accordion-teal-hover: #35665E;
-  --accordion-teal-open: #2F554F;
-  --accordion-teal-open-hover: #3B7368;
-  --accordion-accent: var(--retro-teal);
+  --accordion-neutral-bg: #2C3546;
+  --accordion-neutral-hover: #39485E;
+  --accordion-teal-bg: var(--archive-filled);
+  --accordion-teal-hover: var(--archive-filled-hover);
+  --accordion-teal-open: #304762;
+  --accordion-teal-open-hover: #395575;
+  --accordion-accent: var(--archive-accent);
 }
 
 /* Applies consistently to About, Channels, Goodies and article accordions. */

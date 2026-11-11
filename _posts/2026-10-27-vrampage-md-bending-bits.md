@@ -70,8 +70,12 @@ We checked the core with small original test programs that produce known picture
 *The real v0.5.0 workbench running the downloadable colour-test ROM, with all faults off.*
 {: .media-caption }
 
-[VRAMpage MD is now live on McRetro.net](https://mcretro.net/homepages/vrampage-md/). Bring your own ROM; the file stays in your browser. The [source and complete browser download](https://github.com/NixMcRetro/VRAMpage-MD) are available too. No soldering iron required this time.
+Want to give it a go? [Open VRAMpage MD](https://mcretro.net/homepages/vrampage-md/). The **Choose Cartridge** menu has two original homebrew ROMs built in, and you can load a compatible Mega Drive ROM of your own. Your files stay in your browser.
 
-Don't have a game handy? [Download the original colour-test ROM](/assets/downloads/2026/10/vrampage-md/VRAMpage-MD-Colour-Test.bin), then open it with **Load ROM** in VRAMpage MD to get the pattern shown above. It uses original code and graphics, with no commercial game assets. It's silent, so use another cartridge for FM and PSG sound experiments.
+Here are three original ROMs to try:
 
-[Download the ROM and Python source as a ZIP](/assets/downloads/2026/10/vrampage-md/VRAMpage-MD-Colour-Test.zip).
+- **[Colour Test ROM](/assets/downloads/2026/10/vrampage-md/VRAMpage-MD-Colour-Test.bin):** The silent multicolour pattern pictured above. A good place to start experimenting with VRAM glitches. There's also a [ZIP containing the ROM and its Python source](/assets/downloads/2026/10/vrampage-md/VRAMpage-MD-Colour-Test.zip).
+- **[Demo Cart v0.3.5](/homepages/vrampage-md/demo/VRAMpage-MD-Demo-Cart-v0.3.5.bin):** The earlier built-in demo, with animated effects and an interactive Chroma Reactor scene. Try **A** and **C** to bend the picture, or **B** to restore it.
+- **Demo Cart v0.3.8 (latest released):** A full three-minute show with six visual scenes and original FM/PSG music. It's included in the [VRAMpage MD v0.5.2 browser ZIP](https://github.com/NixMcRetro/VRAMpage-MD/releases/download/v0.5.2/VRAMpage-MD-v0.5.2-browser.zip). Extract `demo/VRAMpage-MD-Demo-Cart-v0.3.8.bin` and select **Load Your Own ROM** in the online workbench. Enable sound to hear the music. This newer version isn't built into the hosted site yet.
+
+The Colour Test doesn't produce sound, so try a cartridge with audio if you want to experiment with the FM and PSG controls. The [project source and complete browser downloads](https://github.com/NixMcRetro/VRAMpage-MD) are available on GitHub too. No soldering iron required this time.

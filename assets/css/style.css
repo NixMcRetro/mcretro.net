@@ -1329,15 +1329,15 @@ pre code {
     transition: max-height 0.6s ease, opacity 0.5s ease;
   }
   .nav-list li {
-    margin: 0 3%;
-    border-bottom: 1px solid var(--text);
+    margin: 0;
+    border-bottom: 1px solid var(--border);
   }
   .nav-list li:last-child {
     border-bottom: none;
   }
   .nav-list li a {
     display: block;
-    padding: 1rem 5%;
+    padding: 1rem 8%;
     color: var(--text);
     text-decoration: none;
     font-family: Montserrat, "Helvetica Neue", sans-serif;
@@ -1466,7 +1466,7 @@ pre code {
     height: 2px;
   }
   .nav-list li a {
-    padding: 0.8rem 5%;
+    padding: 0.8rem 8%;
     font-size: 0.9rem;
   }
   body {

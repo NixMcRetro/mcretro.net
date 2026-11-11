@@ -5,6 +5,8 @@ date: 2018-05-15
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/the-breakout/"
+share_description: >-
+  The crime-bird gang escapes the slammer after a failed playground heist. Pudge, Tillie and Chip are on the run, with imaginary disaster following behind. 🦜
 ---
 
 {% include youtube.html id="3B30sHWSCCE" %}

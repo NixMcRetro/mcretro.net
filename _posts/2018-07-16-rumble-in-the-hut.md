@@ -5,6 +5,8 @@ date: 2018-07-16
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/rumble-in-the-hut/"
+share_description: >-
+  Tillie and Chip meet in the bird hut for another wrestling match. No rules, no referee and absolutely no sensible way of declaring a winner. 🦜
 ---
 
 {% include youtube.html id="cfWPg5xQ8Lg" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-12T12:39:05.000+10:00
 categories: [linux, modems, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  A NetComm Roadster V.92 AM5698 gets opened, recapped and documented. Even supposedly interchangeable modem power plugs can't agree on a size. 📞
 ---
 
 {% include youtube.html id="bOloActkN2Q" %}

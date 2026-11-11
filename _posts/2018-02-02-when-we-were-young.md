@@ -5,6 +5,8 @@ date: 2018-02-02
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/when-we-were-young/"
+share_description: >-
+  Tillie and Pudge enjoy their seeds before the arrival of a new baby conure named Chip. One last quiet moment before the household grows! 🦜
 ---
 
 {% include youtube.html id="yXDujF3hMxo" %}

@@ -5,6 +5,8 @@ date: 2018-01-11
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/tunnel-ball/"
+share_description: >-
+  An off-brand Christmas-hamper Pringles tube finds a second life as a tiny bird tunnel. Pudge and Tillie test their new escape route. 🦜
 ---
 
 {% include youtube.html id="pWXUdSTvFGw" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-18T02:13:57.000+10:00
 last_modified_at: 2026-10-18
 categories: [sega, youtube]
+share_description: >-
+  Three IBM WDL-330P 30 MB drives offer a rare look at the TeraDrive's unusual storage hardware. There's a 1991 mechanism and plenty of capacitors to inspect. 💾
 ---
 
 {% include youtube.html id="pEyJgkUdXFo" %}

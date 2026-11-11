@@ -5,6 +5,8 @@ date: 2018-06-08
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://www.youtube.com/watch?v=TLn8B2XGNfg"
+share_description: >-
+  Maximum preening mode engaged! Tillie, Pudge and Chip have important feather maintenance, and nobody should disturb the grooming department. 🦜
 ---
 
 {% include youtube.html id="TLn8B2XGNfg" %}

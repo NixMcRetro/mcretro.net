@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-09-30
 last_modified_at: 2026-10-22
 categories: [gaming, sega, youtube]
+share_description: >-
+  Space Harrier on the Sega 32X brings colourful sprites, scaling effects and arcade chaos. For once the add-on is being used for games instead of endless repairs. 🎮
 ---
 
 {% include youtube.html id="RoizJTzZnjc" %}

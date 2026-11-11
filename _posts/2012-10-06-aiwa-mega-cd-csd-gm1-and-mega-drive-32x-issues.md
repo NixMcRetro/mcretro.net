@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-06T02:57:30.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  Two rare Aiwa Mega-CD CSD-GM1 machines arrive with problems, including cracked circuit boards and bad audio. Meanwhile the 32X video mystery points towards the host Mega Drive. 🔧
 ---
 
 ![](/assets/images/2012/img_0280.jpg)

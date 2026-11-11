@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-11-21T14:55:32.000+11:00
 last_modified_at: 2026-10-18
 categories: [programming, youtube]
+share_description: >-
+  The Lunchbeat makes gloriously peculiar noises using its internal clock. Laser beams meet Geiger counters while the external crystal waits its turn. 🎵
 ---
 
 {% include youtube.html id="4Zxtn0eLWYw" %}

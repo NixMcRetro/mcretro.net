@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-09-13T07:18:45.000+10:00
 last_modified_at: 2026-11-04
 categories: [news]
+share_description: >-
+  Another 2016 milestone: 75 kg on the scale, with Withings graphs showing a long downward trend. Now to slow things down and aim for maintenance. 📉
 ---
 
 ![75kg_sept2016_3month](/assets/images/2016/img_0556.jpg)

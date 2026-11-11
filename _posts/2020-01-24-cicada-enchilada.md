@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-01-24T23:04:26.000+11:00
 categories: [youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Cicadas take over the Australian summer with sap-sucking mouths and air-breathing spiracles. Don't let one mistake you for a tree! 🪲
 ---
 
 {% include youtube.html id="ajPZux7uFh0" %}

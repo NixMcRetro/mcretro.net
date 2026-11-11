@@ -4,6 +4,8 @@ author: "Nick"
 date: 2012-06-17T02:31:57.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo]
+share_description: >-
+  A Nintendo Famicom now has working composite video and audio thanks to a compact homemade board. The jailbars survived the repair, but Spelunker is ready for another go. 🎮
 ---
 
 {% include youtube.html id="zfdA--W3E5A" %}

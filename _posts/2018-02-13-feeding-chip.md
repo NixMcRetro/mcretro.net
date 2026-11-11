@@ -5,6 +5,8 @@ date: 2018-02-13
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/feeding-chip/"
+share_description: >-
+  Baby Borb Chip's warm feeding session ends with a full crop, food everywhere and an urgent escape from the cleanup crew. Typical Chippy! 🦜
 ---
 
 {% include youtube.html id="KpCsAVLO8bI" %}

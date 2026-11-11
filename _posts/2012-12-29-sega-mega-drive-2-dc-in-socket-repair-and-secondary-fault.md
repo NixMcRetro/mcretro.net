@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-12-29T12:33:06.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  A Mega Drive 2 gets its cracked DC-in solder joint repaired, only to reveal strange video, white screens and resets. One fix uncovers another problem. 🔧
 ---
 
 {% include youtube.html id="s_RzUkCA7Pc" %}

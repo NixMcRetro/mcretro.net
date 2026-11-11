@@ -5,6 +5,8 @@ date: 2018-06-04
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/chip-enjoys-the-new-hut/"
+share_description: >-
+  Chip inspects a lovely new fluffy hut. Is it for sleeping, hiding or plotting? The Baby Borb has important housing decisions ahead! 🦜
 ---
 
 {% include youtube.html id="SPJzA6wNVpE" %}

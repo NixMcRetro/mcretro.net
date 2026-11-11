@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-18T09:15:04.000+10:00
 last_modified_at: 2026-10-18
 categories: [devkit, programming, sega]
+share_description: >-
+  SNASM2 Sega development cards are too enormous for one PC and fail their SCSI link test in another. A 486 starts looking like the sensible option. 💾
 ---
 
 {% include youtube.html id="SzAiboKontg" %}

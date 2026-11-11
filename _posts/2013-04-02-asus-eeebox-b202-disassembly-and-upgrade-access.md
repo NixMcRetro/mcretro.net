@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-04-02T19:44:57.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, youtube]
+share_description: >-
+  An ASUS EeeBox B202 gets opened up to reach its wireless card and other components. Tiny Atom-era PC, enormous collection of screws and fragile clips. 🪛
 ---
 
 {% include youtube.html id="dD5ZS0zvNU4" %}

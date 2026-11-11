@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-01T05:10:14.000+11:00
 categories: [devkit, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Dreamcast Katana Set 5.24 devkit gets a quick hardware tour, from labels and connectors to that handy fold-out stand. More mysteries await. 🎮
 ---
 
 {% include youtube.html id="oFTq9D2wLAo" %}

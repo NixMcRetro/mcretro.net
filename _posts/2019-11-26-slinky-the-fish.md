@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-11-26T21:57:22.000+11:00
 categories: [news, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Slinky the Senegal bichir absolutely loves aquarium bubbles. Lungs, gills and a talent for zooming around make this little fish quite the character. 🐟
 ---
 
 {% include youtube.html id="fYEU9928XaM" %}

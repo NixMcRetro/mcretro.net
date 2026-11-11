@@ -5,6 +5,8 @@ date: 2018-07-07
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/sleepy-time/"
+share_description: >-
+  After a long day of playing and biting the people, little Chip is finally ready for sleep. Recharge now, cause more chaos tomorrow. 💤
 ---
 
 {% include youtube.html id="yI-nKpqSwIU" %}

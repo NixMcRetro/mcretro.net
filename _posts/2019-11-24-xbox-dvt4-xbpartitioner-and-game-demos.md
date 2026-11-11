@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-11-24T18:59:04.000+11:00
 last_modified_at: 2026-10-22
 categories: [devkit, microsoft, youtube]
+share_description: >-
+  Xbox Partitioner finally creates an F drive on a DVT4 SSD, and some games run through UnleashX. The official XDK Launcher isn't quite so happy. 🎮
 ---
 
 {% include youtube.html id="5LL4LrlK2DM" %}

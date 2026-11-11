@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-11-24T13:28:52.000+11:00
 last_modified_at: 2026-10-22
 categories: [devkit, microsoft, youtube]
+share_description: >-
+  A 120 GB SSD, SATA-to-IDE adapter and 24-inch ATA cable squeeze into the Xbox DVT4. The routing is ridiculous, but the dev dashboard boots. 💾
 ---
 
 {% include youtube.html id="IEBjUIhHr6s" %}

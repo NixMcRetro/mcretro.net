@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-06-10T08:16:08.000+10:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  A Withings graph shows the 2016 trend heading down, while the blog, shop and Raspberry Pi darknet mirror keep finding new ways to occupy my time. 📉
 ---
 
 ![2016-06-10\_weight](/assets/images/2016/img_0475.jpg)

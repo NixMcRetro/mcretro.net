@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-04-02T14:53:48.000+10:00
 categories: [repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Miss Melody ES688 sound card gets fresh Panasonic and Rubycon capacitors. It looks magnificent, but there's still no working PC to test it in. 🎵
 ---
 
 {% include youtube.html id="TU2rRy1BW78" %}

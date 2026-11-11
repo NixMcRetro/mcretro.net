@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-23T08:01:00.000+10:00
 categories: [nature]
 last_modified_at: 2026-10-18
+share_description: >-
+  An injured elegant snake-eyed skink arrives from a warehouse, thin and lethargic. I try to help, but never learn whether the little lizard recovered. 🦎
 ---
 
 {% include youtube.html id="NFE7FeZihVY" %}

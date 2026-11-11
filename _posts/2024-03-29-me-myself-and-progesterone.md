@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-03-29T11:52:43.000+11:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Progesterone, restless nights and a strange brain-on-fire sensation make for a difficult experiment. The cause remains uncertain, even with plenty of reading. 🧠
 ---
 
 ![](/assets/images/2024/img_1288.jpg)

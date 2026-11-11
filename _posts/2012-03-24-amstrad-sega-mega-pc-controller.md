@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-03-24T12:37:19.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, sega]
+share_description: >-
+  A beige Amstrad Mega PC controller arrives from the UK. The SP-7 pad looks wonderfully retro, even if its unresponsive D-pad makes it less wonderful to use. 🎮
 ---
 
 ![Front of a beige Amstrad Mega PC game controller with grey directional pad, A, B and C buttons and a reddish pink Start button.](/assets/images/2012/img_0045.jpg)

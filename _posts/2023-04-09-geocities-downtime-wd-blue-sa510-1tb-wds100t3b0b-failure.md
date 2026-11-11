@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-04-09T13:15:37.000+10:00
 categories: [raspberry-pi]
 last_modified_at: 2026-10-18
+share_description: >-
+  GeoCities goes offline when a WD Blue SA510 1 TB SSD becomes read-only after just 606 power-on hours. Firmware is suspect, but not proven guilty. 💾
 ---
 
 ![](/assets/images/2023/img_1002.jpg)

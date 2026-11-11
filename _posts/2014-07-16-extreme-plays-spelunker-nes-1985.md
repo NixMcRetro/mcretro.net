@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-07-16T22:31:52.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, nintendo, youtube]
+share_description: >-
+  Spelunker takes Extreme Plays back to the NES, via a 1983 computer game and its 1985 Japanese Famicom port. Time for some questionable cave exploration! 🎮
 ---
 
 {% include youtube.html id="Geaa7ALiVl4" %}

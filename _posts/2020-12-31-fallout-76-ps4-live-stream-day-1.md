@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-12-31T12:43:17.000+11:00
 categories: [gaming, livestream, sony]
 last_modified_at: 2026-10-18
+share_description: >-
+  Fallout 76 returns to my PS4 for some post-apocalyptic exploring. Two livestream recordings, a former vault dweller and new adventures ahead. 🎮
 ---
 
 {% include youtube.html id="q3M4XFIyI90" %}

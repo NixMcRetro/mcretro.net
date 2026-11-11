@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-11T22:13:17.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  Four years on YouTube brings 25,040 views and 78,046 minutes watched in the last month. That's a lot of people watching me break old computers. 🎉
 ---
 
 ![](/assets/images/2016/img_0465.jpg)

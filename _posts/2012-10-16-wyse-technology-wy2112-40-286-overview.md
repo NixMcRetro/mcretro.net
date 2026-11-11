@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-16
 last_modified_at: 2026-10-21
 categories: [ibm-pc, youtube]
+share_description: >-
+  A gigantic Wyse 2112-40 houses a 12.5 MHz 286, eight slots and a hefty Seagate hard drive. It won't boot properly yet, but there's plenty of hardware to explore. 💻
 ---
 
 {% include youtube.html id="id53sUTPWLE" %}

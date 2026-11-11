@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-07T11:37:19.000+11:00
 last_modified_at: 2026-10-18
 categories: [raspberry-pi]
+share_description: >-
+  After 41 days uptime, my Raspberry Pi server gets rebuilt with Raspbian Jessie Lite. Handy commands reveal whether it's running Wheezy or Jessie. 🥧
 ---
 
 This one has always been tricky for me, remembering which Raspberry Pi was running which version of Raspbian / Debian.

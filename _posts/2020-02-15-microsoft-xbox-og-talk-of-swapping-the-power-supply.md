@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-02-15T14:56:32.000+11:00
 categories: [microsoft, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Japanese Kasumi Xbox could lose its step-down transformer with a suitable PSU swap. Revision and pinout compatibility matter; this is planning only. ⚡
 ---
 
 {% include youtube.html id="Wm9SglIGCFY" %}

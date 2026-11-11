@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-11-18T10:35:56.000+11:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  One month after realising I'm transgender, I've begun gender-affirming hormone therapy and started finding the language to describe myself. A new chapter! 🏳️‍⚧️
 ---
 
 ![](/assets/images/2023/img_1222.jpg)

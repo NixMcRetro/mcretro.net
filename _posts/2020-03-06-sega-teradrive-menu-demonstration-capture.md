@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-03-06T09:28:38.000+11:00
 categories: [ibm-pc, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Exploring the Sega TeraDrive menus makes me wish it had a 486 instead of a 286. Such a strange, wonderful IBM-Sega machine! 🖥️
 ---
 
 {% include youtube.html id="Kp18Ee3-0as" %}

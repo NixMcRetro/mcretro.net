@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-01T05:16:58.000+10:00
 last_modified_at: 2026-10-18
 categories: [devkit, repairs, sega]
+share_description: >-
+  Sega Saturn Sophia's SIMM CART DIP switch isn't a simple cartridge selector. It changes memory mapping, with side effects for external RAM cartridges. 🔧
 ---
 
 {% include youtube.html id="BRctWGCd0h4" %}

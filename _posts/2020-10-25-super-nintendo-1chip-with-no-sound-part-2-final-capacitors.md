@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-10-25T18:14:23.000+11:00
 categories: [nintendo, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The last two 33 uF capacitors complete the SNES 1CHIP recap. Desert Fighter boots, nothing catches fire, but the speakers remain stubbornly silent. 🔧
 ---
 
 {% include youtube.html id="IXO1WYXIuSw" %}

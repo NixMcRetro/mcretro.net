@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-29T04:13:40.000+10:00
 last_modified_at: 2026-10-18
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  Three faulty Super Nintendo consoles arrive on a dark, stormy night, each with a different combination of audio and video faults. Let the recapping begin. 🔧
 ---
 
 {% include youtube.html id="7nFvlEY5XE8" %}

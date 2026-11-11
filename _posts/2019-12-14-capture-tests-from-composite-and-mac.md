@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-14T22:07:15.000+11:00
 categories: [gaming, nintendo, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  Mario Tennis, Super Strike Eagle and Super Turrican put an old composite USB capture stick through its paces. Catalina later kills the 32-bit software. 🎮
 ---
 
 {% include youtube.html id="geYkmf2ZGTw" %}

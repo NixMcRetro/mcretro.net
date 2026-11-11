@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-03T13:54:58.000+11:00
 last_modified_at: 2026-10-18
 categories: [apple, hacks, youtube]
+share_description: >-
+  A resistor makes the LC 475's extra cooling fan quieter, though some values stop it starting at all. The wiring works, but airflow and clearance still matter. 🔧
 ---
 
 {% include youtube.html id="cllZ5zuXryI" %}

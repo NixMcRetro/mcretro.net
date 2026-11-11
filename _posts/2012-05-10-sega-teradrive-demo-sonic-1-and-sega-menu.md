@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-10T21:06:12.000+10:00
 last_modified_at: 2026-10-18
 categories: [sega, youtube]
+share_description: >-
+  Sonic runs at 60 Hz on the Japanese Sega TeraDrive, while its built-in menu lets a Mega Drive controller launch DOS programs. The PC and console sides make an odd couple. 🎮
 ---
 
 {% include youtube.html id="keB8LXJg8ys" %}

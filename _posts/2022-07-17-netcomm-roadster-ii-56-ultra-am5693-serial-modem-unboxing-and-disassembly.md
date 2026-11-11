@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-07-17T22:03:11.000+10:00
 categories: [ibm-pc, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A new-old-stock NetComm AM5693 modem arrives in a gorgeous translucent blue shell. Unboxing it is half the fun; the internals are even better. 📞
 ---
 
 {% include youtube.html id="RmtcMSIBuBI" %}

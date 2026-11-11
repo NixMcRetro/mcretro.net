@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-06-26T18:52:46.000+10:00
 categories: [gaming, livestream, news]
 last_modified_at: 2026-10-18
+share_description: >-
+  A PS5 finally fits under the television and delivers glorious 1080p60 streams. Also: redundancy, modems, cicadas and a rather eventful June 2023. 🎮
 ---
 
 {% include youtube.html id="6biKPJ_JXDw" %}

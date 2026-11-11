@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-24
 last_modified_at: 2026-10-21
 categories: [gaming, youtube]
+share_description: >-
+  Lunatic Dawn has lovely animated sequences on the NEC PC-FX, but baffling Japanese menus and clunky combat earn it a mighty 1.8 McRetro units. 🎮
 ---
 
 {% include youtube.html id="mHitkX_LmJ0" %}

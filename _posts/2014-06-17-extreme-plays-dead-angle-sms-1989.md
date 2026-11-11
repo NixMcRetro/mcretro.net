@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-17T22:23:34.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sega, youtube]
+share_description: >-
+  Dead Angle on the Sega Master System turns a 1988 arcade shooter into a 1989 control-pad adventure. No Light Phaser required for this thriller. 🎮
 ---
 
 {% include youtube.html id="gqT2MrqWwQc" %}

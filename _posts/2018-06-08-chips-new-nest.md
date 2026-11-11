@@ -5,6 +5,8 @@ date: 2018-06-08
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/chips-new-nest/"
+share_description: >-
+  Chip discovers that a person's hair can double as a very convenient nest. Building materials wash themselves, which could be a design problem! 🦜
 ---
 
 {% include youtube.html id="1hhDTv3ttq0" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-01-13T11:59:07.000+11:00
 categories: [guides, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Inside a smokey This is COOL Saturn, the Phantom Universal modchip awaits installation. JVC drive, ribbon cable and selectable jumper deserve attention. 🎮
 ---
 
 {% include youtube.html id="6L58APMhOyw" %}

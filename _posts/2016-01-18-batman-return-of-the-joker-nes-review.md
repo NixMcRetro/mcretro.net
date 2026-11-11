@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-18
 last_modified_at: 2026-10-21
 categories: [gaming, nintendo, youtube]
+share_description: >-
+  Batman: Return of the Joker looks fantastic for the NES, so naturally I review it using a scientific scoring system measured in Batmans. Music score included! 🦇
 ---
 
 {% include youtube.html id="HcwfIrxTJpg" %}

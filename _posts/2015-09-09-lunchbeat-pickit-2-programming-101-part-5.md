@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-09-09T21:15:35.000+10:00
 last_modified_at: 2026-10-18
 categories: [programming, youtube]
+share_description: >-
+  The Lunchbeat's ATmega328P is detected through a PICkit 2 with PK2AVRISP, but programming still refuses to cooperate. Buttons, resets and firmware mysteries. 💻
 ---
 
 {% include youtube.html id="yLU5i_mNRek" %}

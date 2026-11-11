@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-01-06T11:23:45.000+11:00
 categories: [guides, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Before fitting a Phantom Universal modchip to a Saturn, identify the actual CD drive and ribbon connector. A JVC sticker alone isn't enough. 🎮
 ---
 
 

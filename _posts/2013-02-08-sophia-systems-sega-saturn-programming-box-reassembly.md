@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-02-08T10:16:00.000+11:00
 last_modified_at: 2026-10-18
 categories: [devkit, repairs, sega]
+share_description: >-
+  Months of cleaning and nearly 300 photographs bring the Sega Saturn Sophia devkit closer to reassembly. Missing SH-2 CPU boards remain the main obstacle. 🔧
 ---
 
 {% include youtube.html id="f2DiGI8_7so" %}

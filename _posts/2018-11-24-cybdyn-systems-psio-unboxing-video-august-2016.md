@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-11-24T16:21:57.000+11:00
 categories: [sony, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  An August 2016 PSIO unboxing features an SD slot, switchboard, USB and a suspiciously memorable serial number. Installation can wait; admire the packaging! 🎮
 ---
 
 {% include youtube.html id="GUq2e3mzvl4" %}

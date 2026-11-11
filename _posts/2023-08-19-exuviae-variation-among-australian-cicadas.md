@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-19T11:35:01.000+10:00
 categories: [nature, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Cicada exuviae from a Sydney summer reveal a remarkable range of shapes and sizes. Some species IDs are guesses, but the shells are glorious! 🪲
 ---
 
 {% include youtube.html id="6tkfGKqaS_M" %}

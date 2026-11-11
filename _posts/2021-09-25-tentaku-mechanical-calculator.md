@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-09-25T15:53:52.000+10:00
 categories: [guides]
 last_modified_at: 2026-10-18
+share_description: >-
+  The Tentaku mechanical calculator has two seven-segment displays, satisfying Glorious Panda switches and enough digits for some extremely mature jokes. 🔢
 ---
 
 ![](/assets/images/2021/img_0747.jpg)

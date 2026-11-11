@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-06T08:54:03.000+10:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  A December 2013 tour of my console collection reveals TeraDrives, three Sophias, Aiwa Mega-CDs and too many shelves. Downsizing is apparently a relative term. 🎮
 ---
 
 {% include youtube.html id="cmaR_xTeHIs" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-13T18:32:30.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  Master System controller Button 2 stops misbehaving after a clean with methylated spirits. The rubber contacts survive, and Wonder Boy gets another outing. 🎮
 ---
 
 {% include youtube.html id="Ssc_tgvd910" %}

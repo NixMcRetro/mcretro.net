@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-12-28T09:25:52.000+11:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  December 2016 brings another recorded weight milestone and a stack of graphs. The big question now is maintaining it, preferably with cake. 🎂
 ---
 
 ![](/assets/images/2016/img_0599.jpg)

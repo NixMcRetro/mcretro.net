@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-23T01:43:49.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  After recapping an Aiwa CSD-GM1, the radio plays and the CD mechanism shows signs of life. The low-volume problem and unreliable power remain unsolved. 🎵
 ---
 
 {% include youtube.html id="8SnKaozD_rs" %}

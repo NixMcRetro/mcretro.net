@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-10-14T17:10:10.000+11:00
 categories: [nature]
 last_modified_at: 2026-10-18
+share_description: >-
+  Tiny cicada shells reveal an even smaller mystery perched on top. Could it be a leafhopper exuvia? Australian insect detective work begins! 🪲
 ---
 
 ![](/assets/images/2021/img_0767.jpg)

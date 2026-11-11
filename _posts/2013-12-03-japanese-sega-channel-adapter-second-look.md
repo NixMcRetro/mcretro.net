@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-03T21:27:41.000+11:00
 last_modified_at: 2026-10-22
 categories: [sega, youtube]
+share_description: >-
+  A second Japanese Sega Channel look reveals different labels, a menu button and a stubborn cable search. Without Japanese cable TV, there's only so far to go. 📺
 ---
 
 {% include youtube.html id="vJGMsLXpifI" %}

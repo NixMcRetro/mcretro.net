@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-05T23:54:39.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  Two Game Gears, two very different repair stories: one recapped and back to life, the other rescued from bad soldering with audio restored but power problems remaining. 🔧
 ---
 
 {% include youtube.html id="6R1JY72DdTk" %}

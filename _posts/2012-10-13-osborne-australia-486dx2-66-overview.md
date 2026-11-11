@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-13T04:21:57.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, youtube]
+share_description: >-
+  An Australian-made Osborne 486DX2-66 brings back childhood memories, with 64 MB RAM, a Sound Blaster Pro 2 and an enormous beige case. The CD-ROM finally works too. 💻
 ---
 
 

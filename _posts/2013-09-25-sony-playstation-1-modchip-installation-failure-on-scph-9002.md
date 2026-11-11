@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-25T00:25:12.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, sony, youtube]
+share_description: >-
+  A PlayStation SCPH-9002 modchip installation goes sideways when a tiny surface-mount part comes off the board. An accidental lesson in soldering restraint. 🎮
 ---
 
 {% include youtube.html id="bA2Xc0uRxZY" %}

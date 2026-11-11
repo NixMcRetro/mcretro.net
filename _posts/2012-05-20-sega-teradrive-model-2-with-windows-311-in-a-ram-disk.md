@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-20T11:19:53.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  Windows 3.11 boots from a floppy and RAM disk on a 286-powered Sega TeraDrive Model 2. It works, but with 2.5 MB of RAM, Solitaire isn't in any particular hurry. 💾
 ---
 
 

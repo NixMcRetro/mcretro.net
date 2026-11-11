@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-01-20T09:58:52.000+11:00
 categories: [guides, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Burning Rangers, NiGHTS and other discs test a Phantom Universal Saturn modchip. CD-R authentication works, but region protection needs its own bypass. 🎮
 ---
 
 {% include youtube.html id="mI_V0MdpCL4" %}

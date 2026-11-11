@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-03-30T00:57:06.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
+share_description: >-
+  Two 171-6692B SH-2 CPU cards finally arrive for Sega's Sophia devkit. They're close to the expected D revision, but missing power headers and jumpers complicate things. 🔧
 ---
 
 {% include youtube.html id="JZEb9LceRBs" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-11-04T20:47:44.000+11:00
 categories: [devkit, sega, study]
 last_modified_at: 2026-10-18
+share_description: >-
+  A new-old-stock MSI Slot A motherboard becomes an AMD Athlon 500 MHz PC for Dreamcast development work. Two ISA slots, a 3dfx card and a CPU mix-up. 🖥️
 ---
 
 {% include youtube.html id="NmhDKQmf_kc" %}

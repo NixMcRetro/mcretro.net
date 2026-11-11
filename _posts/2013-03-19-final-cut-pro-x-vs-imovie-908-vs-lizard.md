@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-03-19T09:58:58.000+11:00
 last_modified_at: 2026-11-02
 categories: [news, youtube]
+share_description: >-
+  Final Cut Pro X isn't winning me over, iMovie 9.0.8 is buggy but familiar, and the surprise star is a lizard rescued from a roadside PC's power supply. 🎬
 ---
 
 {% include youtube.html id="y61c5Uz9Sdw" %}

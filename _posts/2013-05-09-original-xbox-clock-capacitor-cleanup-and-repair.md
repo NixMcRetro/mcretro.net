@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-09T04:00:35.000+10:00
 last_modified_at: 2026-10-18
 categories: [microsoft, repairs, youtube]
+share_description: >-
+  A leaking clock capacitor gets cleaned up inside an original Xbox, along with other damaged components. The machine boots and plays Burnout Revenge again. 🎮
 ---
 
 {% include youtube.html id="D56_9VYWIIU" %}

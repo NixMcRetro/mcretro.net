@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-07-03T05:38:17.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  Seven Mega Drives get opened for a photo session. A Thailand-built Model 1 hides a Hitachi CPU, different screws and a reminder that Sega hardware varies more than it looks. 🖥️
 ---
 
 ![](/assets/images/2012/img_0216.jpg)

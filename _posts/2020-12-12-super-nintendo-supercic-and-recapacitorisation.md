@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-12-12T21:33:34.000+11:00
 categories: [nintendo, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  An older SuperCIC SNES returns for tidier SMD capacitors, repaired traces and a half-finished region LED. My past soldering deserves some scrutiny! 🔧
 ---
 
 {% include youtube.html id="-ZXgG5M7SVA" %}

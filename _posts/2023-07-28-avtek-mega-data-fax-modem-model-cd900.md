@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-07-28T18:30:23.000+10:00
 categories: [linux, modems, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  A 1992-era Avtek CD900 gets new capacitors, cleaned corrosion and a look at its delightfully arranged LEDs. Another 2400 bps survivor. 📞
 ---
 
 {% include youtube.html id="ScKgwIrByFU" %}

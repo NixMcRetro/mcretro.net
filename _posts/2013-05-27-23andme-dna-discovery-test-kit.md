@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-27
 last_modified_at: 2026-10-22
 categories: [youtube]
+share_description: >-
+  A 23andMe DNA kit gets unboxed, registered and prepared for its trip to the US. Saliva collection has never looked so glamorous. Results still to come. 🧬
 ---
 
 {% include youtube.html id="eN-wSzHWVnQ" %}

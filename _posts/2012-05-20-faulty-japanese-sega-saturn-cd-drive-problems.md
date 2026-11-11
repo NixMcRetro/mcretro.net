@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-20T11:23:48.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  A white Japanese Saturn's CD drive spins, clicks and shudders in alarming ways. Is the disc really turning backwards? Diagnosis is still ahead, and the noises aren't encouraging. 💿
 ---
 
 {% include youtube.html id="49G-pKXLBy8" %}

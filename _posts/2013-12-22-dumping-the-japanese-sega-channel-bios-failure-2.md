@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-22T23:23:33.000+11:00
 last_modified_at: 2026-10-22
 categories: [programming, sega, youtube]
+share_description: >-
+  Recognisable Sega Channel BIOS text appears after byte swapping, but repeated dumps have different checksums. GQ-4X, why must you do this to me? 💾
 ---
 
 {% include youtube.html id="LQViF0ci6_0" %}

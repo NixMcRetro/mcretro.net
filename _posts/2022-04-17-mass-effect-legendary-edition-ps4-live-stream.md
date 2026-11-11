@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-04-17T09:45:29.000+10:00
 categories: [gaming, livestream, sony]
 last_modified_at: 2026-10-18
+share_description: >-
+  Mass Effect Legendary Edition crashes on PS4, and a badly gouged preowned Blu-ray looks suspicious. So it's back to a much happier Horizon Zero Dawn. 💿
 ---
 
 {% include youtube.html id="qLOn0WC_7xk" %}

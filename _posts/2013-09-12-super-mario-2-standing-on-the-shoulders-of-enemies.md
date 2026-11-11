@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-12T23:05:17.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, nintendo, youtube]
+share_description: >-
+  Super Mario Bros. 2 on Super Mario All-Stars has me standing on enemies instead of flattening them. Why did Nintendo change the rules? 🎮
 ---
 
 {% include youtube.html id="kn3SPGmoiv8" %}

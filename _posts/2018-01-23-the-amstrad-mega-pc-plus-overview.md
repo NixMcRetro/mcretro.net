@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-01-23T18:19:58.000+11:00
 categories: [ibm-pc, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  An Amstrad Mega PC gains a 486SLC motherboard and becomes effectively a Mega PC Plus. One last tour before this unusual Sega hybrid heads overseas. 🖥️
 ---
 
 {% include youtube.html id="npSQS8hBbGI" %}

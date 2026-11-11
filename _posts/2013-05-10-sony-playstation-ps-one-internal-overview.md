@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-10T04:02:26.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, sony, youtube]
+share_description: >-
+  A Sony PS one gets opened up to revisit a modchip installed back in high school. The old soldering and spaghetti wiring have held up rather nicely. 🎮
 ---
 
 {% include youtube.html id="M5uTyK_Z9aM" %}

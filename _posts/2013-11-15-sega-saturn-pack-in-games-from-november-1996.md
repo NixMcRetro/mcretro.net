@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-15T18:49:11.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sega, youtube]
+share_description: >-
+  A sealed 1996 Sega Saturn pack-in bundle yields Virtua Fighter 2, Virtua Cop, Daytona USA and a glorious promotional poster. What do I do with the box? 🎮
 ---
 
 {% include youtube.html id="631U5wmAYfQ" %}

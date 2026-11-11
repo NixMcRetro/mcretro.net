@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-08-19T11:25:05.000+10:00
 last_modified_at: 2026-10-18
 categories: [apple, repairs, sega]
+share_description: >-
+  An unusual PAL VA0 Dreamcast bears a display-only warning, while an Accolade development cart and Macintosh LC 475 join the queue. There's a Neptune-style 32X plan too. 🎮
 ---
 
 A few interesting things are making their way into the collection.

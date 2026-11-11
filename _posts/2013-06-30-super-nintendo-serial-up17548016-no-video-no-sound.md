@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-30T04:37:45.000+10:00
 last_modified_at: 2026-10-22
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  SNES UP17548016 powers up without video or sound, sporting a broken reset button and missing LED cover. The repair work is only beginning. 🎮
 ---
 
 {% include youtube.html id="L1Z0RHQWTGw" %}

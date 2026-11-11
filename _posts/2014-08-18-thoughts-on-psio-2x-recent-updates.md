@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-08-18T20:43:42.000+10:00
 last_modified_at: 2026-10-18
 categories: [sony, youtube]
+share_description: >-
+  PSIO 2.x development reports claim working CDDA and XA audio and roughly 81% progress. Exciting news, but these are developer updates, not my own hardware tests. 🎮
 ---
 
 {% include youtube.html id="7-_8NkEE1qw" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-07-31T08:48:33.000+10:00
 last_modified_at: 2026-11-04
 categories: [nintendo, repairs]
+share_description: >-
+  Super Nintendo and Super Famicom PICO fuses raise a question: 125 V or 250 V? The actual circuit, interrupt rating and fuse speed matter. 🔧
 ---
 
 ![4466233](/assets/images/2016/img_0506.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-20T10:15:57.000+11:00
 last_modified_at: 2026-10-22
 categories: [gaming, ibm-pc, sega]
+share_description: >-
+  Another XTIDE and XT-CF-Lite session puts CompactFlash storage into the Sega TeraDrive. Configuring the BIOS takes longer than anyone would like. 💾
 ---
 
 {% include youtube.html id="_b8o-BT5HpA" %}

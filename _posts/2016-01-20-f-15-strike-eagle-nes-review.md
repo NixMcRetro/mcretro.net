@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-20
 last_modified_at: 2026-10-21
 categories: [gaming, nintendo, youtube]
+share_description: >-
+  F-15 Strike Eagle on NES gets a review measured in eagles, including one upside-down eagle for terrible music. Final result: about 4.4 eagles. ✈️
 ---
 
 {% include youtube.html id="uV5KD-Gf05k" %}

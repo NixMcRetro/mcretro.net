@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-08-10T20:36:36.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Grandia gets its opening FMV running on PSIO 1.1 without sound, then locks into repeated dialogue. Another RPG that's tantalisingly close to playable. 🎮
 ---
 
 {% include youtube.html id="gGvRpLrJ9Yc" %}

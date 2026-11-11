@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-04-05T03:32:41.000+11:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  Sophia's A-Bus board gets six fresh 220 uF capacitors with help from a Hakko 808. The soldering goes well, but the Saturn devkit still refuses to boot. 🔧
 ---
 
 {% include youtube.html id="PSiZzTdsUVw" %}

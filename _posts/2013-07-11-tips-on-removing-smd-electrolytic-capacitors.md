@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-11T15:13:59.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, youtube]
+share_description: >-
+  Removing old SMD electrolytics by rocking them loose can lift pads, especially on corroded boards. This old workshop method deserves a clear warning. ⚠️
 ---
 
 {% include youtube.html id="Y1l7qSezFDQ" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-03-29T10:21:03.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  The Amstrad Mega PC's 33 MHz 486SLC upgrade gets a working ULSI maths coprocessor and 16 MB of tested RAM. Now for that elusive replacement clock module! 🖥️
 ---
 
 ![](/assets/images/2012/img_0041.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-04-12T12:54:02.000+10:00
 categories: [nintendo, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  An official Nintendo 64 power supply chirps like a bird and sometimes cuts out. Swapping consoles confirms the noise follows the PSU, but no fix yet. ⚡
 ---
 
 {% include youtube.html id="cj4MRjQ95gI" %}

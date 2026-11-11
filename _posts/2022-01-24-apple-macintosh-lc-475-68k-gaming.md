@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-01-24T20:24:58.000+11:00
 categories: [apple, gaming]
 last_modified_at: 2026-10-18
+share_description: >-
+  Basilisk II on an M1 Mac revives my old LC 475 disk image and 68k favourites like Munchies and Brickles Plus. Childhood gaming returns! 🍎
 ---
 
 ![](/assets/images/2022/img_0798.gif)

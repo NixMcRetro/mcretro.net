@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-12-10T16:25:00.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, livestream, youtube]
+share_description: >-
+  The Minutemen finally storm the Castle in Fallout 4 live stream day six. Reclaiming a fortress from monsters seems like a reasonable afternoon. 🎮
 ---
 
 {% include youtube.html id="Cojdgf_j978" %}

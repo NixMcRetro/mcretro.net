@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-02-23T11:31:02.000+11:00
 last_modified_at: 2026-10-18
 categories: [sega]
+share_description: >-
+  Another Mega-CD, two Sega Saturns and a worrying amount of corrosion. A solder-blobbed fuse and some power-supply swapping make this a proper retro haul. 🎮
 ---
 
 ![](/assets/images/2012/img_0003.jpg)

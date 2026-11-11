@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-04-06T03:35:16.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, sega, youtube]
+share_description: >-
+  DreamShell 4.0.0 RC1 sometimes recognises an SD adapter, sometimes complains about the file system. No reliable Dreamcast game boot yet, and the outcome stays unresolved. 💾
 ---
 
 {% include youtube.html id="ILqrG6tCvtE" %}

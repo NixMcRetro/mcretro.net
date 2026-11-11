@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-03-17T21:18:43.000+11:00
 categories: [nature]
 last_modified_at: 2026-10-18
+share_description: >-
+  If this garden were mine, it would be full of grevilleas, native daisies, blue-banded bees and happy skinks. Buffalo grass need not apply. 🌼
 ---
 
 ![A photo of Grevillea Juniperina Gold](/assets/images/2024/img_1282.jpg)

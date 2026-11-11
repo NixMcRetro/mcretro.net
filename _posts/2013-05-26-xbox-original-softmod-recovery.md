@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-26T04:08:57.000+10:00
 last_modified_at: 2026-10-22
 categories: [hacks, microsoft, youtube]
+share_description: >-
+  An Xbox dashboard disappears after a troubled softmod and TSOP experiment. Ndure and XboxHDM provide the tools for a recovery attempt, with backups proving vital. 💾
 ---
 
 {% include youtube.html id="F0NbBUJh2kc" %}

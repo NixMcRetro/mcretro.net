@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-10-23
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
+share_description: >-
+  Slinky the Senegal bichir has little dorsal finlets, lungs and a remarkable talent for aquarium exploration. Not your everyday fish, that's for sure! 🐟
 ---
 
 {% include youtube.html id="LhuGVwFRhm0" %}

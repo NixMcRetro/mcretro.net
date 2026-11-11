@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-21T07:31:14.000+10:00
 last_modified_at: 2026-11-04
 categories: [news]
+share_description: >-
+  Fifteen positive eBay ratings, a giant roll of bubble wrap and console auctions starting at 99 cents. Now if only that outstanding payment would arrive! 📦
 ---
 
 ![Screen Shot 2016-08-15 at 4.29.33 pm](/assets/images/2016/img_0543.jpg)

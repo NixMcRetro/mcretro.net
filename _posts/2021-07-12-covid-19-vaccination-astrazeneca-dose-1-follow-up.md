@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-07-12T20:56:59.000+10:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  After AstraZeneca dose one, a 40.9°C fever makes for a rather unpleasant night. My 2021 symptom log is a cautionary tale, not medical advice. 🌡️
 ---
 
 ![](/assets/images/2021/img_0730.jpg)

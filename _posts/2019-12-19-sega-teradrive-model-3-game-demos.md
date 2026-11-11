@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-19T08:07:39.000+11:00
 last_modified_at: 2026-10-22
 categories: [ibm-pc, sega, youtube]
+share_description: >-
+  After all that recapping, the TeraDrive Model 3 finally plays The Incredible Machine and Crystal Caves. The displays are less cooperative. 🎮
 ---
 
 {% include youtube.html id="-d5lfW8Vf9Q" %}

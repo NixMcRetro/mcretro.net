@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-07-21T13:42:40.000+10:00
 categories: [linux, modems, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  An Avtek Mega Modem 1234 gets fresh capacitors and makes a triumphant CONNECT 2400. Decades old and still ready for the slow lane! 📞
 ---
 
 

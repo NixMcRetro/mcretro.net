@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-24T10:35:30.000+10:00
 categories: [ibm-pc, linux, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Windows 98 on the MiSTer ao486 dials through real modems, VoIP and Asterisk. Up to 31,200 bps of glorious, unnecessarily complicated networking. 📞
 ---
 
 {% include youtube.html id="0JuVKWFa0yg" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-23T07:32:00.000+11:00
 last_modified_at: 2026-10-22
 categories: [programming, sega, youtube]
+share_description: >-
+  Finally! Tweaking the GQ-4X device VCC setting produces repeated matching Sega Channel BIOS checksums. Dr. Eggfan and a little persistence save the day. 💾
 ---
 
 

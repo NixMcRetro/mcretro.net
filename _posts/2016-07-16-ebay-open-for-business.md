@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-07-16T12:00:20.000+10:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  McRetro's eBay venture begins with a ten-item seller limit, some odd household listings and plans for gaming stock. Also, Winamp 2.95 still plays! 🛍️
 ---
 
 ![Winamp](/assets/images/2016/img_0491.jpg)

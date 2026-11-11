@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-08-15T20:41:48.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Soul Edge, also known as Soul Blade, plays nicely through PSIO 1.1 with working combat and effects. Missing background music doesn't stop the sword fights. ⚔️
 ---
 
 {% include youtube.html id="AUr1WM6gHco" %}

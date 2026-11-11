@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-11T10:47:35.000+11:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  A Deluxe Mega EverDrive arrives from Stone Age Gamer, beautifully packaged and numbered 123. Only problem: there's no Mega Drive handy to test it! 🎁
 ---
 
 {% include youtube.html id="4G0LLAGV1g0" %}

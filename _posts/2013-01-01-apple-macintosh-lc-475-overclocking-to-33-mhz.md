@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-01T13:45:33.000+11:00
 last_modified_at: 2026-11-02
 categories: [apple, hacks, youtube]
+share_description: >-
+  Two tiny resistor moves take an LC 475 from 25 MHz to 33 MHz. The Macintosh boots and benchmarks improve, although a replacement 68040's FPU remains a puzzle. 🍎
 ---
 
 {% include youtube.html id="GbJmgxy_Kb0" %}

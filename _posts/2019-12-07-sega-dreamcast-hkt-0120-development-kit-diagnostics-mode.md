@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-07T22:37:23.000+11:00
 last_modified_at: 2026-10-22
 categories: [devkit, sega, youtube]
+share_description: >-
+  Dreamcast HKT-0120 Set5 Checker explores video modes, hardware tests and development-kit switches. Plenty works, and plenty remains mysterious. 🎮
 ---
 
 {% include youtube.html id="x6z55gkKjoI" %}

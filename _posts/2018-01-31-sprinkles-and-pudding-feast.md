@@ -5,6 +5,8 @@ date: 2018-01-31
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://www.youtube.com/watch?v=vMrGQV8SvqQ"
+share_description: >-
+  Sprinkles and Pudding, also known as Tillie and Pudge, investigate a feast of fruits, vegetables and pellets. Much of it ends up on me. 🦜
 ---
 
 {% include youtube.html id="vMrGQV8SvqQ" %}

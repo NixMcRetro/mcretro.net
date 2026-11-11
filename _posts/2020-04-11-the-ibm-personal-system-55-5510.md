@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-04-11T10:00:55.000+10:00
 categories: [ibm-pc, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  An IBM PS/55 Type 5510 reveals onboard VGA, ISA riser slots and delightfully peculiar wiring. A translated Japanese teardown, not one of my own. 🖥️
 ---
 
 While looking into the Sega TeraDrive Model 2, I came across a fascinating Japanese look inside IBM's PS/55 Type 5510. It is one of those machines that looks familiar at first, until you start paying attention to the motherboard and cables. There is some wonderfully peculiar hardware in here!

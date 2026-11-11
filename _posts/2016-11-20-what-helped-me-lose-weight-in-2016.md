@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-11-20T07:42:26.000+11:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  After a dramatic 2016 weight change, I document the foods, routines and energy calculations I used. A personal account, not a one-size-fits-all diet. 📝
 ---
 
 ![weight-2016-nov](/assets/images/2016/img_0593.jpg)

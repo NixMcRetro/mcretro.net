@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-04-04T09:47:48.000+11:00
 categories: [programming]
 last_modified_at: 2026-10-18
+share_description: >-
+  MiSTer FPGA finally takes shape around a DE10-Nano, SDRAM, fan and a mountain of add-on boards. Authentic shmup slowdown? Past cool! 🎮
 ---
 
 ![](/assets/images/2020/img_0665.jpg)

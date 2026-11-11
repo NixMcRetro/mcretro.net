@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-09-29T23:04:23.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  A dead Mega-CD II gets a proper replacement for its blown F301 fuse. Batman Returns and Sonic CD run again, with a little Sol-Feace gameplay to celebrate. 🔧
 ---
 
 {% include youtube.html id="CA13Nyxmz-0" %}

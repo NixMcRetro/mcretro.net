@@ -5,6 +5,8 @@ date: 2018-02-20
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/learning-to-eat/"
+share_description: >-
+  Baby Borb Chip graduates from mush towards seeds, peanuts and sultanas. Meanwhile Tillie appears to have rediscovered the drinking-water bath. 🦜
 ---
 
 {% include youtube.html id="NYzaSGiOD7Y" %}

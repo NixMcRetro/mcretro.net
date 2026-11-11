@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-04-06T10:52:23.000+10:00
 last_modified_at: 2026-10-22
 categories: [devkit, sega]
+share_description: >-
+  SGDK, GENDEV and Sega Saturn SDK offer plenty of ways to program classic Sega hardware. Actually writing a game is the trickier part. 💻
 ---
 
 ![](/assets/images/2020/img_0666.jpg)

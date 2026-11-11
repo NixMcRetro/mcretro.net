@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-11-25T21:19:21.000+11:00
 categories: [hacks, nintendo, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  Bypassing part of a silent SNES 1CHIP's S-MIX audio path brings game sound back! A useful workaround, but the original fault remains unproven. 🔊
 ---
 
 {% include youtube.html id="7XT6kErqjfo" %}

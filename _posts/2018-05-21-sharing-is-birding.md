@@ -5,6 +5,8 @@ date: 2018-05-21
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/sharing-is-birding/"
+share_description: >-
+  Tillie and Chip investigate a scrap of sultana-box packaging and argue over who gets it. Sharing is birding, but disagreement is inevitable! 🦜
 ---
 
 {% include youtube.html id="WBJWiYGJJDk" %}

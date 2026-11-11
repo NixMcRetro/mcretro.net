@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-09T12:04:15.000+11:00
 categories: [guides, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Dreamcast BIOS and GD-ROM dumping via Broadband Adapter and httpd-ack gets a workout. Japanese menus slow me down, but the backups work. 💾
 ---
 
 {% include youtube.html id="LAPMhDfUF6c" %}

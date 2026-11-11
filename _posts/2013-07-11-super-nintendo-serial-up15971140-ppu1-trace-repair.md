@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-11T20:05:58.000+10:00
 last_modified_at: 2026-10-22
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  Three corrosion-damaged traces around a Super Nintendo's PPU1 get bridged with wire. The bizarre graphics steadily improve until the picture looks normal. 🎮
 ---
 
 {% include youtube.html id="fvXOWPn8YXM" %}

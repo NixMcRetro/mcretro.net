@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-28T06:58:02.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs]
+share_description: >-
+  Leaking NiCad barrel batteries leave ugly corrosion on two vintage 486 motherboards. The cells come out, and both boards still show signs of life. Not bad! 🔧
 ---
 
 {% include youtube.html id="VTKAVvqteMM" %}

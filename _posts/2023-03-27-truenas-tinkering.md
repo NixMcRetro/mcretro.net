@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-03-27T16:38:07.000+11:00
 categories: [ibm-pc, nature]
 last_modified_at: 2026-10-18
+share_description: >-
+  TrueNAS SCALE brings ZFS, RAIDZ2 and 64 TB of raw drives into the McRetro world. Half is reserved for redundancy, not an excuse to skip backups. 💾
 ---
 
 ![](/assets/images/2023/img_0994.jpg)

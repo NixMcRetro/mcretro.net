@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-02-08T12:44:45.000+11:00
 last_modified_at: 2026-10-22
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  Nintendo 64 controller port one disconnects whenever it feels like it, while port two is fine. Removing the stubborn socket remains unfinished. 🔧
 ---
 
 {% include youtube.html id="E_I0r7KpI7E" %}

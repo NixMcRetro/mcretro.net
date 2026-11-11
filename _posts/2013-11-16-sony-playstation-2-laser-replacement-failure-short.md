@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-16T18:53:50.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sony, youtube]
+share_description: >-
+  The short version of a failed PlayStation 2 optical pickup repair features levering, one ominous crunch and a shower of broken parts. No victory music today. 💥
 ---
 
 {% include youtube.html id="X4tDwBOwHm0" %}

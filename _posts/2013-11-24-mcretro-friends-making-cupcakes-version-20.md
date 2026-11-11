@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-24T21:18:32.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, youtube]
+share_description: >-
+  SuperNick and I return with self-raising flour, fewer eggs and a slightly improved recipe. The second cupcake attempt actually tastes like cupcakes! 🧁
 ---
 
 {% include youtube.html id="VVPnLXDjBVY" %}

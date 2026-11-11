@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-03T20:26:01.000+11:00
 last_modified_at: 2026-10-22
 categories: [sega, youtube]
+share_description: >-
+  Two Japanese Sega Channel adapters arrive for inspection. One has an angry-looking startup screen, a catchy tune and an enormous casing. BIOS dumping awaits. 🎮
 ---
 
 {% include youtube.html id="kzJM6c0nW7U" %}

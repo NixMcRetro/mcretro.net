@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-10-06T18:10:00.000+11:00
 categories: [gaming, news, study]
 last_modified_at: 2026-10-18
+share_description: >-
+  A dusty console collection shrinks towards mini Japanese releases and an arcade-style desktop cabinet. More space for hobbies, or just more keyboards? 🎮
 ---
 
 ![](/assets/images/2019/img_0635.jpg)

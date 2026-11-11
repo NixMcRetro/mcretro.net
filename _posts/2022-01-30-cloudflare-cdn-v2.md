@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-01-30T09:41:48.000+11:00
 categories: [linux, news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Cloudflare returns to my home-hosted GeoCities and ASSEMblergames archives, with caching, HTTPS and Always Online to ease the burden. 🌐
 ---
 
 ![](/assets/images/2022/img_0811.jpg)

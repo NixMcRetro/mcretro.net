@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-05T18:17:20.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  A debug bootloader gets Tekken 3 further on PSIO 1.1 than before, but the game runs painfully slowly. Progress, yes. Playable fighting, not quite. 🎮
 ---
 
 {% include youtube.html id="8-HXWR3l4UU" %}

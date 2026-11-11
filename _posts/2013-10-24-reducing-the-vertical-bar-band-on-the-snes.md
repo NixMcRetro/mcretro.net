@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-24T18:08:23.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo, youtube]
+share_description: >-
+  Two 220 uF capacitors reduce the SNES vertical bar, but a wiring mishap costs more than fifteen hours of EarthBound saves. Cleaner video, very expensive lesson. 🎮
 ---
 
 {% include youtube.html id="TGVn9sRoV-g" %}

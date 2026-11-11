@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-19T17:56:18.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Chrono Trigger 1.0 reaches the year 600 AD on PSIO 1.1, with working gameplay and music but silent opening FMV. Time travel seems easier than troubleshooting. ⏳
 ---
 
 {% include youtube.html id="S0HOeJvV2hc" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-06-03T07:25:27.000+10:00
 last_modified_at: 2026-10-18
 categories: [nintendo, repairs, sega]
+share_description: >-
+  A Famicom AV mod is working, though jailbars remain. Add a haul of Japanese Saturn accessories, stubborn TeraDrive storage experiments and one deeply unwise PSU encounter. 🔧
 ---
 
 ![](/assets/images/2012/img_0176.jpg)

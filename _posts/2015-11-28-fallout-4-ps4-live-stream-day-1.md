@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-11-28T09:31:08.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, livestream, youtube]
+share_description: >-
+  Fallout 4 streaming begins on PS4, but a roughly 1 Mbps ADSL upload restricts the video to 360p. Australian internet, you've done it again. 🎮
 ---
 
 {% include youtube.html id="2awj-XT2E7Y" %}

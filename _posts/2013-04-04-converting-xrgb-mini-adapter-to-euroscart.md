@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-04-04T03:26:01.000+11:00
 categories: [guides, hacks, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Japanese RGB21 and EuroSCART look identical but aren't wired alike. The Framemeister adapter gets traced with a multimeter and rewired for European RGB cables. 🔌
 ---
 
 {% include youtube.html id="IjVLwkI85zY" %}

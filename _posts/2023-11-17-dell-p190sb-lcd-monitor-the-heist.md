@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-11-17T12:17:33.000+11:00
 categories: [ibm-pc, news]
 last_modified_at: 2026-10-18
+share_description: >-
+  A discarded Dell P190Sb survives weeks by the roadside, a dramatic nighttime rescue and overnight testing. The heist has a happy ending! 🖥️
 ---
 
 ![](/assets/images/2023/img_1211.jpg)

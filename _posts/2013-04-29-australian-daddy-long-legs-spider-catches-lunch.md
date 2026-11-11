@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-04-29
 last_modified_at: 2026-10-22
 categories: [nature, youtube]
+share_description: >-
+  An Australian daddy long legs spider catches its lunch. Also, a reminder that cellar spiders, harvestmen and crane flies shouldn't all be confused. 🕷️
 ---
 
 {% include youtube.html id="BtosdHsIEzc" %}

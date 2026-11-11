@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-08-06T18:33:53.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
+share_description: >-
+  The Aiwa Mega-CD Game Unit runs Mega Drive cartridges without the boombox when powered from a properly regulated 5 V supply. One fewer enormous bench setup! 🎮
 ---
 
 {% include youtube.html id="VkRdAXYt9x4" %}

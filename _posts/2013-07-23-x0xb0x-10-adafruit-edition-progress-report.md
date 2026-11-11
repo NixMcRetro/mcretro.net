@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-23T21:21:38.000+10:00
 last_modified_at: 2026-10-23
 categories: [youtube]
+share_description: >-
+  SuperNick's Adafruit x0xb0x takes another step towards making music. Sawtooth waveform tests are promising, but the synth isn't finished yet. 🎵
 ---
 
 {% include youtube.html id="Z1Yc27t23iY" %}

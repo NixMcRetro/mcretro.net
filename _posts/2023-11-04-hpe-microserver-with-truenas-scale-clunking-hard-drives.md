@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-11-04T12:46:01.000+11:00
 categories: [guides, news, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Three or four WD Red Pro drives in my TrueNAS MicroServer clunk every five seconds. Preventive Wear Leveling is plausible, but not confirmed. 💾
 ---
 
 {% include youtube.html id="ph_s2SxldPE" %}

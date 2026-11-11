@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-12-31T13:43:52.000+11:00
 last_modified_at: 2026-11-02
 categories: [apple, repairs, youtube]
+share_description: >-
+  Removing the socketed 68LC040 from a Macintosh LC 475 makes way for a full 68040 experiment. Careful levering beats bent pins, and cooling needs attention too. 🍎
 ---
 
 {% include youtube.html id="IcpjLEVPcMs" %}

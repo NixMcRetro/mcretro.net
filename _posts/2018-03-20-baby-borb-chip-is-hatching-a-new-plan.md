@@ -5,6 +5,8 @@ date: 2018-03-20
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/baby-borb-chip-is-hatching-a-new-plan/"
+share_description: >-
+  After being stepped on during the conure Stomp musical, Baby Borb Chip appears to be plotting revenge. Tillie and Pudge had better watch out! 🦜
 ---
 
 {% include youtube.html id="ouy59lWnyf4" %}

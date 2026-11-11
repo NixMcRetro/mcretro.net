@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-07T08:20:43.000+10:00
 last_modified_at: 2026-11-04
 categories: [news]
+share_description: >-
+  The 80 kg goal arrives in August 2016 after months of tracking, with celebratory graphs and a promise to get back to making YouTube videos. 🎉
 ---
 
 ![2016-08-07\_80kg\_alltime](/assets/images/2016/img_0514.jpg)

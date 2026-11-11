@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-11T14:19:30.000+10:00
 last_modified_at: 2026-10-22
 categories: [hacks, microsoft, repairs]
+share_description: >-
+  An original Xbox Hitachi-LG DVD tray won't eject until a 25%-off sticker becomes an unlikely spacer in its magnetic clamp. Discount engineering works! 💿
 ---
 
 {% include youtube.html id="dpZEZIkFfWU" %}

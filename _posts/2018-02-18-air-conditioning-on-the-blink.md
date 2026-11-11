@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-18T09:01:06.000+11:00
 categories: [youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Samsung air conditioner starts throwing ice at my head and growing frost on its cooling fins. Cleaning the filters seems like a sensible first move. ❄️
 ---
 
 {% include youtube.html id="va1gsR1FYmQ" %}

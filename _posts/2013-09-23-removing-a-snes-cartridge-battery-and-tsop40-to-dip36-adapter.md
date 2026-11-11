@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-23T01:18:55.000+10:00
 last_modified_at: 2026-10-18
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  Lower-profile SNES cartridge battery holders look more promising, alongside new TSOP40 flash adapters. No triumphant installation to report just yet. 💾
 ---
 
 {% include youtube.html id="K7TmJlJ4f44" %}

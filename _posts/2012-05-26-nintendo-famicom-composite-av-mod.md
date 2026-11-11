@@ -4,6 +4,8 @@ author: "Nick"
 date: 2012-05-26T19:18:06.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo, youtube]
+share_description: >-
+  Three revisions turn a tangle of wires into a compact composite AV board for a Nintendo Famicom. Picture and sound work, although the infamous jailbars remain. 🔧
 ---
 
 ![](/assets/images/2012/img_0167.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-06-20T20:56:25.000+10:00
 categories: [ibm-pc, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A 1990s NetComm AutoModem 2400 calls an Acer 56K modem and connects at a blistering 2400 bps. Welcome back to the slow information superhighway! 📞
 ---
 
 {% include youtube.html id="2rogYD1Kiks" %}

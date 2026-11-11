@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-06-11T01:15:08.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  The TeraDrive Model 3 is happily running Windows from a 30 MB hard drive, while a Promise controller on the Model 2 detects a drive but still can't boot it. Close, but not quite. 💾
 ---
 
 {% include youtube.html id="mDXXutfmcyI" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-22T02:02:46.000+10:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  A 10% rent increase arrives without the required notice on my NSW periodic tenancy. I do some reading and challenge the landlord's paperwork. 🏠
 ---
 
 ![](/assets/images/2023/img_1124.jpg)

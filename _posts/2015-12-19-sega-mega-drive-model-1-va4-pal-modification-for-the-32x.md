@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-12-19
 last_modified_at: 2026-10-21
 categories: [repairs, sega, youtube]
+share_description: >-
+  Sega's 1995 service bulletin inspires a clock-signal modification to a PAL Mega Drive VA4. Mega-CD video looks stable, but the 32X still needs testing. 🔧
 ---
 
 {% include youtube.html id="RLcIBnCmXcs" %}

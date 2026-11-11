@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-15T17:10:46.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, sega, youtube]
+share_description: >-
+  A Master System converter won't physically fit the Sega TeraDrive. An Action Replay extension and Mega EverDrive produce black screens, not Wonder Boy. 🎮
 ---
 
 {% include youtube.html id="KgRT8cOA0No" %}

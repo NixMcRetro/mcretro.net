@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-24T19:22:10.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo, repairs]
+share_description: >-
+  Two brittle, yellowed Super Nintendo shells get prepared for red and black vinyl spray paint. Early coats look promising, with reassembly still ahead. 🎨
 ---
 
 {% include youtube.html id="yTKKoFaxi7s" %}

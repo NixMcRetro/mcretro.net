@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-10-23T05:32:57.000+11:00
 categories: [activism, news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Looking back at Australia's 2023 Voice referendum, the result, the campaign and my own unsuccessful attempt to vote. A difficult reflection. 🗳️
 ---
 
 ![](/assets/images/2023/img_1169.jpg)

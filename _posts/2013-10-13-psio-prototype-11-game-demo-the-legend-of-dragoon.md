@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-13T17:51:46.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  The Legend of Dragoon refuses to progress on PSIO prototype 1.1, even after restarts and a European version test. Another compatibility mystery for the list. 🎮
 ---
 
 {% include youtube.html id="TMXZwy1BV08" %}

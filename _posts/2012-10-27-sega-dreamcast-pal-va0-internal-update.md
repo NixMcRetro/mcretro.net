@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-27T06:52:40.000+11:00
 last_modified_at: 2026-10-18
 categories: [sega, youtube]
+share_description: >-
+  Inside a rare PAL VA0 Dreamcast, the motherboard markings confirm the early revision. Its heatpipe hardware and unusual connectors invite more questions than answers. 🔧
 ---
 
 

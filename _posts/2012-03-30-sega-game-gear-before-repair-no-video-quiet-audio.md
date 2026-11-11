@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-03-30T11:08:27.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  A Sega Game Gear with barely audible sound and no usable picture heads for repair. Could its ageing capacitors be responsible for the handheld's troubles? 🎮
 ---
 
 {% include youtube.html id="spavBRX2bsU" %}

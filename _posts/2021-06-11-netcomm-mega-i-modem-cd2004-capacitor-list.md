@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-06-11T17:06:19.000+10:00
 categories: [modems, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  A late-model NetComm Mega-i-Modem CD2004 gets an eleven-capacitor parts list. Lovely through-hole components, but check your own board before ordering. 🔧
 ---
 
 ![](/assets/images/2021/img_0727.jpg)

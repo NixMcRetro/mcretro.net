@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-26T00:23:47.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, sony, youtube]
+share_description: >-
+  After earlier disasters, MultiMode3 finally runs on a PlayStation SCPH-9002 using a PIC12F629 and some remarkably untidy wiring. Blu Tack included. 🎮
 ---
 
 {% include youtube.html id="cCzbp0DwzGY" %}

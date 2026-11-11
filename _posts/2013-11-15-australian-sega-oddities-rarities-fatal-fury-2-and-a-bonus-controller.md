@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-15T08:48:09.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sega, youtube]
+share_description: >-
+  An unusual Australian Sega Saturn controller and a PAL Fatal Fury 2 cartridge get a closer look. Sega Ozisoft certainly knew how to make odd accessories. 🎮
 ---
 
 {% include youtube.html id="_yXXo2L2AbE" %}

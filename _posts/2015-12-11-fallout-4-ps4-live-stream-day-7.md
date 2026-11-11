@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-12-11T21:26:14.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, livestream, youtube]
+share_description: >-
+  Fallout 4 day seven means settlement building, shooting ghouls and gradually turning the wasteland into something resembling civilisation. 🎮
 ---
 
 {% include youtube.html id="-KwcVrrN4yg" %}

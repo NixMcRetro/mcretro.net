@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-01-30T03:41:44.000+11:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  Doughnuts without enough cinnamon sugar? The solution is revolutionary: sprinkle on more caster sugar. Cooking with McRetro reaches new culinary heights! 🍩
 ---
 
 {% include youtube.html id="5foajQkIkUI" %}

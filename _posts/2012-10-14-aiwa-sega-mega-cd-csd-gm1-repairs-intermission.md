@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-14T19:01:43.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  One smashed Aiwa Mega-CD regains power and runs Mega Turrican with borrowed parts. The CD and audio faults remain, and now its supposedly good twin has stopped working. 🔧
 ---
 
 

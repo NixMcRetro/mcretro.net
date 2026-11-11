@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-16T20:00:32.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, youtube]
+share_description: >-
+  McRetro Gaming launches as the spiritual successor to Xtreme Retro Gaming, with classic games, questionable skills and lots of videos still to come. 🎮
 ---
 
 {% include youtube.html id="dWwJVX7W3mM" %}

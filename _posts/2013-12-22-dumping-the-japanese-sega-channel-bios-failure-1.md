@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-22T20:30:06.000+11:00
 last_modified_at: 2026-10-22
 categories: [programming, sega, youtube]
+share_description: >-
+  A Japanese Sega Channel ROM is removed for dumping, but repeated reads don't agree. Having a file is not the same as having a reliable preservation copy. 💾
 ---
 
 {% include youtube.html id="pol0XohsHqw" %}

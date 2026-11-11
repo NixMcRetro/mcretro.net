@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-30T23:31:48.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, nintendo, youtube]
+share_description: >-
+  After losing my SNES EarthBound saves, I finish the game on a Nintendo DS Lite with SNEmulDS. Slightly glitchy music, very late nights, actual victory! 🎮
 ---
 
 {% include youtube.html id="yzi0jyRo7xU" %}

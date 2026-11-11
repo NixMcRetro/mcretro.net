@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-08-24T05:18:28.000+10:00
 categories: [news, study]
 last_modified_at: 2026-10-18
+share_description: >-
+  University's queer community brings welcome friendships and support, even as anxiety treatment complicates concentration. Finding a workable balance. 🎓
 ---
 
 ![](/assets/images/2024/img_1347.jpg)

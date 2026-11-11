@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-20T20:08:36.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, hacks, nintendo]
+share_description: >-
+  SuperCIC installation notes for a PAL SNSP-CPU-02 with F413A, including PIC16F630 wiring and photographs. Useful reference, not a complete standalone guide. 🔧
 ---
 
 These are my SuperCIC installation notes and photographs for an SNSP-CPU-02 board with the PAL F413A CIC. The original article left the PIC programming instructions and circuit diagram as placeholders, so it is not a complete standalone guide. Use Wolfsoft's installation guide and the SuperCIC project documentation linked below alongside these photographs.

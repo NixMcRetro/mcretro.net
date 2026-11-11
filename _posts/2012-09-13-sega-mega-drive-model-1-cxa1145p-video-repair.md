@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-09-13T21:16:09.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  Replacing the Sony CXA1145P video encoder cures a Mega Drive's yellow and green flicker. The soldering gets messy, but Knuckles is finally out of disco mode. 🎮
 ---
 
 {% include youtube.html id="bA2IFh3eIJM" %}

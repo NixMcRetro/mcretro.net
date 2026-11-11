@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-04-06T03:36:48.000+11:00
 last_modified_at: 2026-10-22
 categories: [devkit, repairs, sega]
+share_description: >-
+  Replacing electrolytics on Sega's Sophia mainboard finally brings a video signal and a clock-setting screen. Progress at last, though plenty of repairs remain. 🔧
 ---
 
 {% include youtube.html id="OBpd2jAA6E8" %}

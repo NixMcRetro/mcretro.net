@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-02-06T21:40:46.000+11:00
 categories: [guides, linux, programming]
 last_modified_at: 2026-10-18
+share_description: >-
+  The GeoCities rebuild worklog preserves the 2021 archive experiments, dead ends and dangerous shell commands. History, not a paste-ready guide. 💻
 ---
 
 **Historical worklog:** These are my 2021-2022 working notes for the GeoCities rebuild, complete with experiments, dead ends and destructive shell commands. Some command sequences and Apache configuration examples have lost their line breaks or contain escaped characters from the old page conversion. I have preserved those damaged fragments rather than guessed how to repair them. This is not a current paste-ready deployment guide. Check the original evidence, every path and the command syntax before reusing anything.

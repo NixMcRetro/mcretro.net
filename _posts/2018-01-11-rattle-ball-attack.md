@@ -5,6 +5,8 @@ date: 2018-01-11
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/rattle-ball-attack/"
+share_description: >-
+  Rattle balls are the natural enemies of wild conures, apparently. Tillie and Pudge prepare for battle in the safety of their new home. 🦜
 ---
 
 {% include youtube.html id="cS46g6KZ9B0" %}

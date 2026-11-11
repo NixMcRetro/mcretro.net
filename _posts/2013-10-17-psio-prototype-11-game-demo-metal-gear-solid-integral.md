@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-17T17:54:06.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Metal Gear Solid: Integral boots and plays well on PSIO 1.1, with English voices and extra Japanese features. Sadly, the guards still keep catching me. 🎮
 ---
 
 {% include youtube.html id="f23SWWruyYA" %}

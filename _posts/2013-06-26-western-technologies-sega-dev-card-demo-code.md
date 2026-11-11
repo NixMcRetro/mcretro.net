@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-26T19:59:47.000+10:00
 last_modified_at: 2026-10-22
 categories: [devkit, hacks, sega]
+share_description: >-
+  A Western Technologies Sega development kit includes example code and source files. The compiler isn't ready yet, but changing the demo text is on the wish list. 💻
 ---
 
 {% include youtube.html id="1olZOTVJ4VY" %}

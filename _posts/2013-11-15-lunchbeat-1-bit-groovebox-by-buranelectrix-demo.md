@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-15T07:44:44.000+11:00
 last_modified_at: 2026-10-18
 categories: [programming, youtube]
+share_description: >-
+  A tiny ATmega328P-based Lunchbeat groovebox makes a glorious racket. The improvised prototype works, and a proper printed circuit board is on the wish list. 🎵
 ---
 
 {% include youtube.html id="PyKShyPkm2Q" %}

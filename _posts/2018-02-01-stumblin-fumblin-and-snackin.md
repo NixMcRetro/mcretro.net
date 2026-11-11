@@ -5,6 +5,8 @@ date: 2018-02-01
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/stumblin-fumblin-and-snackin/"
+share_description: >-
+  Ten seconds of Tillie and Pudge running, stumbling and stopping for snacks. Somehow these two pack a full adventure into a tiny video. 🦜
 ---
 
 {% include youtube.html id="XC97PY9If6s" %}

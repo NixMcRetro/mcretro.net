@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-12T21:09:50.000+11:00
 last_modified_at: 2026-10-18
 categories: [apple, hacks, repairs]
+share_description: >-
+  Mixing 256 KB and 512 KB VRAM SIMMs makes an LC 475 display go spectacularly wrong. A replacement power supply works nicely, at least. Science achieved. 🍎
 ---
 
 

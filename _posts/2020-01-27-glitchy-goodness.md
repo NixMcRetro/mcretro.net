@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-01-27T12:51:07.000+11:00
 categories: [hacks, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  Circuit-bent Mega Drive screenshots turn Sonic into psychedelic chaos. Casino Night Zone has clearly been somewhere it shouldn't. Glitchy goodness! 🎮
 ---
 
 ![](/assets/images/2020/img_0656.jpg)

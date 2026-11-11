@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-06-13T20:30:30.000+10:00
 categories: [ibm-pc, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Success! The Avtek MegaPlus V.32bis finally completes a handshake through the Linksys PAP2T. Speed unknown, but carrier detect is glorious. 📞
 ---
 
 {% include youtube.html id="5OegQTDf_hk" %}

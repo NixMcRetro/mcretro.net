@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-21T12:58:38.000+11:00
 last_modified_at: 2026-10-18
 categories: [sega, youtube]
+share_description: >-
+  The detachable Aiwa CSD-GM1 Game Unit isn't quite a useless frisbee. Its Mega Drive section can run independently, but the Mega-CD still needs the stereo's CD mechanism. 🎮
 ---
 
 

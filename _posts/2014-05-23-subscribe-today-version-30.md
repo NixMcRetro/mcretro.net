@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-05-23T19:47:21.000+10:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  RetroJunkie channel trailer 3.0 advertises old hardware videos and the McRetro Gaming sister channel. Apparently the backlog of retro madness never ends. 📺
 ---
 
 {% include youtube.html id="q_EQTZKb7a8" %}

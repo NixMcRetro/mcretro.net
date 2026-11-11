@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-20T20:12:00.000+10:00
 last_modified_at: 2026-10-22
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  The Mattel NES cartridge connector gets a clean with isopropyl and a cloth-wrapped card. Dirty contacts are suspect, but the recap is still ahead. 🎮
 ---
 
 

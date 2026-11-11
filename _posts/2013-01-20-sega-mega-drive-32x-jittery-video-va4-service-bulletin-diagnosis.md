@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-20T11:06:24.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  The jittery Sega 32X picture isn't necessarily a faulty add-on. Sega's service bulletins point to unstable EDCLK and VCLK signals on affected Mega Drive VA4 boards. 🔧
 ---
 
 {% include youtube.html id="Fz7UrdLMM1s" %}

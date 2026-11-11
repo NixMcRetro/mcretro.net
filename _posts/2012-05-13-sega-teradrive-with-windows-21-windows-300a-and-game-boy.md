@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-13T00:13:41.000+10:00
 last_modified_at: 2026-10-21
 categories: [ibm-pc, nintendo, sega]
+share_description: >-
+  Windows 2.1 and 3.00a squeeze onto floppies for the 286-powered Sega TeraDrive, with a RAM disk speeding up Solitaire. A classic Game Boy joins the collection too. 💾
 ---
 
 {% include youtube.html id="bWKMif9u-5g" %}

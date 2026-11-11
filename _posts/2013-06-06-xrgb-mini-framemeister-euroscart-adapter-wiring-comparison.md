@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-06T19:39:47.000+10:00
 last_modified_at: 2026-10-22
 categories: [youtube]
+share_description: >-
+  Three XRGB-mini EuroSCART adapters get opened up and compared. One is messy, one is neatly built, and the DIY cable skips the troublesome sync stripper. 🔌
 ---
 
 {% include youtube.html id="YHVazjlkvq0" %}

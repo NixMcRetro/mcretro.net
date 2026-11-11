@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-15
 last_modified_at: 2026-10-21
 categories: [news, youtube]
+share_description: >-
+  Expensive retro repairs give way to PS4 clips and gloriously nonsensical game reviews. New scores, new ideas and absolutely no sensible rating scale. 🎮
 ---
 
 ![Game Reviews collage](/assets/images/2016/game-reviews-collage.jxl)

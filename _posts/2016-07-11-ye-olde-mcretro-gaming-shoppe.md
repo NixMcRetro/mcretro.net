@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-07-11T12:51:27.000+10:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  Ye Olde McRetro Gaming Shoppe gets ready for an August launch, starting with a few XenoGC chips and a WooCommerce store. OpenCart was too much. 🛒
 ---
 
 ![shop1](/assets/images/2016/img_0488.jpg)

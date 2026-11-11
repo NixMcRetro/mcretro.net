@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-07-24T19:23:36.000+10:00
 categories: [sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Inside a Japanese Mega Drive Model 1 VA0: early Sega chips, a curious oscillator daughterboard and capacitors queued for a future recap. 🎮
 ---
 
 {% include youtube.html id="0Mby1nNvStk" %}

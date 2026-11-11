@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-11-21T22:30:37.000+11:00
 categories: [ibm-pc, linux, microsoft]
 last_modified_at: 2026-10-18
+share_description: >-
+  Netscape 1.0 reaches its welcome screen inside a Windows 11 VM. Meanwhile, an old modem diagnostic utility joins the compatibility adventure. 🌐
 ---
 
 ![](/assets/images/2021/img_0775.jpg)

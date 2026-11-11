@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-07-04T21:07:36.000+10:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  McRetro returns with a new home at McRetro.net, a Raspberry Pi 2 serving pages at near dial-up speeds and a huge backlog of videos. Smoke in the intro! 🌐
 ---
 
 {% include youtube.html id="ASvZmTxq4es" %}

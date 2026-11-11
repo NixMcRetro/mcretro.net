@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-29T16:37:59.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  An early PSIO prototype revision 1.1 arrives with a Cyclone III FPGA and MicroSD slot. A hardware tour first, actual PlayStation game tests later. 🎮
 ---
 
 {% include youtube.html id="J503k5lQmJ4" %}

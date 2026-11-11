@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-04-04T03:22:30.000+11:00
 categories: [gaming, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  An exclusive VHS from the first Official Sega Saturn Magazine shows off Virtua Fighter 2, Sega Rally, Virtua Cop and more. A slice of 1995 Sega hype preserved. 📼
 ---
 
 {% include youtube.html id="3jH7JXDY_io" %}

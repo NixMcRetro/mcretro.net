@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-22T08:57:17.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  A new KSS-210B optical pickup lets an Aiwa Mega-CD recognise all 13 tracks on a disc. Playback still skips, but at least the laser replacement made real progress. 💿
 ---
 
 {% include youtube.html id="zTvW6ZARAik" %}

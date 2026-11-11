@@ -5,6 +5,8 @@ date: 2018-02-25
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/food-frenzy-with-chip/"
+share_description: >-
+  Corn, apple, sultanas and seeds: Baby Borb Chip is growing up and discovering the world of proper food. Very important conure business! 🦜
 ---
 
 {% include youtube.html id="1CykFVWSbAY" %}

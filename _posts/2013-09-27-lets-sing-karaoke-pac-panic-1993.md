@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-27T17:31:54.000+10:00
 last_modified_at: 2026-10-18
 categories: [sega, youtube]
+share_description: >-
+  Pac-Panic karaoke with Jason and some questionable singing turns a Friday into a Sega-flavoured music video. Songwriting remains harder than it looks. 🎤
 ---
 
 {% include youtube.html id="MrDwuTH5nuY" %}

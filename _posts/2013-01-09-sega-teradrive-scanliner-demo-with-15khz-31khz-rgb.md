@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-09T14:06:03.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  A VGA scanline generator gives the Sega TeraDrive's 15 kHz Mega Drive RGB output an old-school CRT look. Sonic & Knuckles has never looked so good. 🎮
 ---
 
 {% include youtube.html id="SY35O0Kryhs" %}

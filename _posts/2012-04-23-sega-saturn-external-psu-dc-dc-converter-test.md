@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-04-23T21:08:18.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
+share_description: >-
+  Three DC-DC converters arrive for the Sega Saturn external PSU project. An LED lights up in the first bench test, but proper voltage and load checks come next. 🔌
 ---
 
 {% include youtube.html id="rkyVIng0x90" %}

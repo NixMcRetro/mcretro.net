@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-16
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
+share_description: >-
+  Big Fish Trevor returns for more hiding, swimming and aquarium adventures. An eel-tailed catfish can make even a routine afternoon entertaining. 🐟
 ---
 
 {% include youtube.html id="1RVrEzJiFW4" %}

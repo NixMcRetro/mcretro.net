@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-04-18T09:59:52.000+10:00
 categories: [guides, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A modem replaces the missing telephone handset to reset a Linksys PAP2T. Some carefully timed dial tones get the VoIP experiment moving. 📞
 ---
 
 {% include youtube.html id="NQq7oI-WboE" %}

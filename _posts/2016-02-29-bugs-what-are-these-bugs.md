@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-02-29
 last_modified_at: 2026-10-22
 categories: [nature, youtube]
+share_description: >-
+  Bagworms chew through a privacy hedge, but bifenthrin treatment has horrific consequences for nearby lizards. Never again. 🦎
 ---
 
 {% include youtube.html id="BleZuhW1LGk" %}

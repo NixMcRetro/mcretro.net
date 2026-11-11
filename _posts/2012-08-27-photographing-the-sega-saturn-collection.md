@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-08-27T08:52:03.000+10:00
 last_modified_at: 2026-10-20
 categories: [devkit, sega, youtube]
+share_description: >-
+  A photo session with early VA0 Saturns reveals striking similarities between their SH-1 CD boards and those inside the Sophia development kit. Compatibility is untested. 📷
 ---
 
 

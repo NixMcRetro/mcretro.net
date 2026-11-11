@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-10T15:54:28.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, news]
+share_description: >-
+  A replacement GQ-4X v4 joins the programmer collection, while suspiciously marked flash chips identify as ST M29F032D parts. More SNES cart tinkering awaits. 💾
 ---
 
 ![GQ-4X v4 programmer](/assets/images/2016/img_0464.jpg)

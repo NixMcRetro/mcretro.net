@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-07-13T12:50:17.000+10:00
 categories: [nature, news, study]
 last_modified_at: 2026-10-18
+share_description: >-
+  University is approaching, but social anxiety, difficult medication side effects and financial pressure make the path back complicated. Bees help. 🐝
 ---
 
 ![](/assets/images/2024/img_1311.jpg)

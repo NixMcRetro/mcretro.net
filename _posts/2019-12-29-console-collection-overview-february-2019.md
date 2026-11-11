@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-29T07:46:59.000+11:00
 categories: [news, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A February 2019 collection tour shows what survived the great downsizing: Sega, Nintendo, Sony and miniature consoles packed into one bookcase. 🎮
 ---
 
 {% include youtube.html id="nBtQPjH4Bfk" %}

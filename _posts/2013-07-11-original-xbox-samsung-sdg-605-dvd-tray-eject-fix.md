@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-11T04:55:02.000+10:00
 last_modified_at: 2026-10-22
 categories: [microsoft, repairs, youtube]
+share_description: >-
+  A stubborn Samsung SDG-605 Xbox DVD tray gets a discount-sticker spacer, while a drive-board swap rescues another mechanism. One working drive from two. 💿
 ---
 
 {% include youtube.html id="mRRqyVdPZJc" %}

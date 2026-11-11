@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-12-27T22:51:25.000+11:00
 categories: [guides, hacks, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  Replacing an AT27C040 EPROM with Am29F040B flash isn't plug-and-play. Pins 1 and 31 have different jobs, so the Sonic cartridge needs rerouting. 💾
 ---
 
 ![](/assets/images/2020/img_0683.jpg)

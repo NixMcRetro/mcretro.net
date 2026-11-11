@@ -5,6 +5,8 @@ date: 2018-02-11
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/chips-power-nap/"
+share_description: >-
+  Baby Borb Chip curls up beside a sock friend after a lovely big feed. Being a tiny green-cheeked conure is exhausting work, apparently. 💤
 ---
 
 {% include youtube.html id="3pIRCiHLvi4" %}

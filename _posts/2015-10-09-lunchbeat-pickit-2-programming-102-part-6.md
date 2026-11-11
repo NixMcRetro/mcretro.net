@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-10-09T22:18:17.000+11:00
 last_modified_at: 2026-10-18
 categories: [programming, youtube]
+share_description: >-
+  Mac OS X 10.8, AVRDUDE and the PICkit 2 finally communicate with the Lunchbeat ATmega328P. The trick involves the right programmer setting. 💾
 ---
 
 {% include youtube.html id="VW1VT0bMG_c" %}

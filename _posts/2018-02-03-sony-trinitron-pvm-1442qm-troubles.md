@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-03T10:59:34.000+11:00
 categories: [repairs, sony, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Sony PVM-1442QM survives shipping from the UK, but cracked plastic supports leave a board loose. Cable ties help, while an old capacitor deserves attention. 📺
 ---
 
 {% include youtube.html id="PE55x33hBqg" %}

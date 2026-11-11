@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-04-28T03:55:00.000+10:00
 last_modified_at: 2026-10-18
 categories: [apple, youtube]
+share_description: >-
+  Inside a faulty Apple IIc: a tidy 65C02 computer, integrated floppy hardware and an unresolved power problem. A quick tour before the camera battery dies. 🍎
 ---
 
 {% include youtube.html id="rVRI49OMY5o" %}

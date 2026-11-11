@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-12-24T22:18:44.000+11:00
 categories: [guides, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The Saturn Phantom Universal boots PAL Nights and a Burning Rangers backup. An NTSC game still needs Action Replay to bypass the region lock. 🎮
 ---
 
 {% include youtube.html id="TwBHt3qeMU4" %}

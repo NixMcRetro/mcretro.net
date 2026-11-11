@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-15
 last_modified_at: 2026-10-20
 categories: [repairs, sega, youtube]
+share_description: >-
+  Where has all the bass gone? An Aiwa Mega-CD sounds thin and tinny, with a mysterious hum on bright screens. The audio fault remains an unsolved puzzle. 🎵
 ---
 
 {% include youtube.html id="BIS8lC1eapc" %}

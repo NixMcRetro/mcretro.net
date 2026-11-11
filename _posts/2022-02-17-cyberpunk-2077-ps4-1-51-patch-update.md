@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-02-17T18:25:56.000+11:00
 categories: [gaming, sony, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Cyberpunk 2077 patch 1.51 makes my PS4 copy even worse: instead of crashing during gameplay, the supposedly corrupted game won't start at all. 🎮
 ---
 
 ![](/assets/images/2022/img_0905.jpg)

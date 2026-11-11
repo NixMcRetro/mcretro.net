@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-23T00:17:30.000+10:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  A DeLonghi dehumidifier tries to rescue a house full of cardboard and retro hardware from humidity. The noise and electricity use are less impressive. 💧
 ---
 
 {% include youtube.html id="qMqbEGJCP5c" %}

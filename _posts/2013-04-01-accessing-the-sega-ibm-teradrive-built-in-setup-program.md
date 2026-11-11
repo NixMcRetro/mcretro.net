@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-04-01T10:53:52.000+11:00
 categories: [sega]
 last_modified_at: 2026-10-21
+share_description: >-
+  Need the Sega TeraDrive's built-in setup? Choose DOS, then press F1 during PC startup. Three humble settings, including a power-on beep, await your attention. 💾
 ---
 
 {% include youtube.html id="FwCTTdzpFkc" %}

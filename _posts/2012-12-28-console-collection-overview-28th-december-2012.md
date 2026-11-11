@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-12-28T12:24:39.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  The Sega collection gets rearranged into side-by-side shelves for a final 2012 tour. Somehow there are seven Mega Drive 2s and even less room to move. 🎮
 ---
 
 {% include youtube.html id="p5eE1FryhO4" %}

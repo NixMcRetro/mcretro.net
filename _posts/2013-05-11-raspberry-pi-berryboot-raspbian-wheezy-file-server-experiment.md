@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-11T04:03:09.000+10:00
 last_modified_at: 2026-10-18
 categories: [raspberry-pi, youtube]
+share_description: >-
+  BerryBoot and Raspbian Wheezy get a Raspberry Pi running, with plans for FTP, remote access and a retro file server. The server jobs are still ahead. 🥧
 ---
 
 {% include youtube.html id="R_LGuh5mqmo" %}

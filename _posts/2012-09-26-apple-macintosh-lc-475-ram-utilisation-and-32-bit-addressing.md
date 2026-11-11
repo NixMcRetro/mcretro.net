@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-09-26T12:17:56.000+10:00
 last_modified_at: 2026-10-18
 categories: [apple, sega]
+share_description: >-
+  System 7 makes a 36 MB Macintosh LC 475 look absurdly hungry for RAM. Switching from 24-bit to 32-bit addressing makes the missing memory properly usable. 🍎
 ---
 
 ![](/assets/images/2012/img_0278.jpg)

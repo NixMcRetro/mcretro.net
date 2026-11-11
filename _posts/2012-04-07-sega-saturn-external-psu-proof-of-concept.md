@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-04-07T04:52:52.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
+share_description: >-
+  A Sega Saturn boots without its original internal power supply! The external DC experiment works as a proof of concept, but proper regulation still awaits. 🔌
 ---
 
 {% include youtube.html id="TkwPwoOMudo" %}

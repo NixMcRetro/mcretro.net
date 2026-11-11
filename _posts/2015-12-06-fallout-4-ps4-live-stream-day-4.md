@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-12-06T22:22:42.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, livestream, youtube]
+share_description: >-
+  Fallout 4 day four visits Tenpines Bluff in glorious 360p, with skill points to assign and some questionable wasteland commentary. 🎮
 ---
 
 {% include youtube.html id="ioKz-5oFXuk" %}

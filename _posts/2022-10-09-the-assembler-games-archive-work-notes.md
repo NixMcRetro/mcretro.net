@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-10-09T22:15:11.000+11:00
 categories: [guides, programming, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Old ASSEMblergames.com archive notes tackle enormous macOS pathnames, strange filenames and a stubborn mirror. Historical commands, not a how-to. 💻
 ---
 
 ![](/assets/images/2022/img_0973.gif)

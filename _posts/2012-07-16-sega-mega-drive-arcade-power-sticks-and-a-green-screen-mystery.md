@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-07-16T12:40:02.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  Two Mega Drive Arcade Power Sticks get a clean, while a Model 1 develops a green screen and rolling lines. Removing its shielding makes the fault vanish. Mystery unsolved. 🎮
 ---
 
 ![](/assets/images/2012/img_0221.jpg)

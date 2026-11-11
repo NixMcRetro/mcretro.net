@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-05-31T21:52:24.000+10:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  Helping with a PhD survey turns into a LimeSurvey version rollback, while WordPress and my onion mirror fall out again. Such a peaceful hobby. 🌐
 ---
 
 ![](/assets/images/2016/img_0474.jpg)

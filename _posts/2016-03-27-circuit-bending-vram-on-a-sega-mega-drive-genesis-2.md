@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-27T10:49:02.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, hacks, sega]
+share_description: >-
+  Mega Drive 2 VRAM circuit bending can make spectacular glitches, but pins 11, 20, 30 and 40 are power or ground on this chip. Not targets! ⚠️
 ---
 
 ![VRAM pinout for circuit bending](/assets/images/2016/img_0470.jpg)

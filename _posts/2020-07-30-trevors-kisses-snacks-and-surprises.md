@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-07-30
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
+share_description: >-
+  Trevor the Big Fish shares kisses, gum, snack refusals and lazy Saturdays across June and July 2020. Even eel-tailed catfish have their moods. 🐟
 ---
 
 {% include youtube.html id="wEpVw1h57_A" %}

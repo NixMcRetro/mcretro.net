@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-02-20T15:16:46.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, hacks, sega]
+share_description: >-
+  A Mega Drive 2 circuit-bending diagram promises glorious VRAM glitches. The catch? There are more power pins than I first thought. Check the datasheet! ⚠️
 ---
 
 ![Circuit Bent Sega Mega Drive 2](/assets/images/2016/img_0456.jpg)

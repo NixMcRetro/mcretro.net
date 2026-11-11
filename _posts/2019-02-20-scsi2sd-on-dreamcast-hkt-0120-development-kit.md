@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-02-20T15:23:04.000+11:00
 categories: [apple, devkit, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  A SCSI2SD on a 3D-printed sled replaces the mechanical drive in a Dreamcast HKT-0120. Old Macintosh computers could use this trick too. 💾
 ---
 
 ![](/assets/images/2019/img_0633.jpg)

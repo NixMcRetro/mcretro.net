@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-03T13:44:28.000+11:00
 last_modified_at: 2026-10-18
 categories: [sega, youtube]
+share_description: >-
+  Two Aiwa Mega-CD Game Units reveal different capacitor colours and a rechargeable VL2020 backup battery. A recap is planned, but the audio mystery persists. 🔧
 ---
 
 

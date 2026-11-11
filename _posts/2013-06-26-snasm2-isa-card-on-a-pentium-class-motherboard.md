@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-26T15:50:33.000+10:00
 last_modified_at: 2026-10-23
 categories: [devkit, programming, sega]
+share_description: >-
+  A Pentium motherboard finally passes SNASM2 tests when its internal CPU cache is disabled. Excellent for Sega development, dreadful for playing Doom. 💾
 ---
 
 {% include youtube.html id="zb2928JnKEg" %}

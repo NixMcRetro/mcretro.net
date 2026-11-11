@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-03-15T13:27:35.000+11:00
 categories: [study]
 last_modified_at: 2026-10-18
+share_description: >-
+  Folding@home and Rosetta@home put my Intel NUC to work on 2020 coronavirus research. The fanless case gives my ears a welcome break. 🧬
 ---
 
 ![](/assets/images/2020/img_0664.jpg)

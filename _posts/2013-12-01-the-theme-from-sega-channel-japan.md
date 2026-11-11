@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-01T02:58:15.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sega, youtube]
+share_description: >-
+  The Japanese Sega Channel theme gets a direct Mega Drive Model 1 recording and slideshow. Vintage game-service music, captured on a Canon EOS 600D. 🎵
 ---
 
 {% include youtube.html id="qrWJIo-Gopk" %}

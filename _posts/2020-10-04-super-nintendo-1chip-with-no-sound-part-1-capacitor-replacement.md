@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-10-04T16:45:11.000+11:00
 categories: [nintendo, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A silent PAL SNES 1CHIP gets most of its electrolytics and fuse replaced. Two missing 33 uF capacitors mean the final sound test must wait. 🔧
 ---
 
 {% include youtube.html id="UAU8Cx7G7io" %}

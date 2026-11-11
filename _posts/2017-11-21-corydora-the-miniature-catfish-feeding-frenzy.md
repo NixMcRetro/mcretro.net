@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2017-11-21
 last_modified_at: 2026-10-22
 categories: [fish, youtube]
+share_description: >-
+  SuperNick's Corydoras catfish emerge from their aquarium hiding places for an enthusiastic feeding frenzy. Tiny fish, impressive appetite! 🐟
 ---
 
 {% include youtube.html id="-g_xaJ_Q2zk" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-08-24T12:52:15.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, sega, youtube]
+share_description: >-
+  A Mega EverDrive can load Mega-CD BIOS software for an Amstrad Mega PC or Sega TeraDrive experiment. Making the physical expansion connection work is another challenge. 💾
 ---
 
 {% include youtube.html id="O0ZESM1KHAg" %}

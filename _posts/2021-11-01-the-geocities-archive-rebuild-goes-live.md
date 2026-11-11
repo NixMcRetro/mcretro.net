@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-11-01T16:08:21.000+11:00
 categories: [guides, programming, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The first GeoCities rebuild goes live from a Raspberry Pi 3. Netscape 4 and Internet Explorer 5 can finally wander through those old neighbourhoods. 🌐
 ---
 
 {% include youtube.html id="DlTSRySpEx8" %}

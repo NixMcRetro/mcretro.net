@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-12-26T12:06:58.000+11:00
 last_modified_at: 2026-11-02
 categories: [news, youtube]
+share_description: >-
+  Christmas Day brings a very questionable bacon-flavoured SPAM taste test instead of vintage hardware repairs. The verdict? Please bring back the computers. 🎄
 ---
 
 {% include youtube.html id="wlZMGR30BmM" %}

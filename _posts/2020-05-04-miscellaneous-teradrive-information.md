@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-05-04T10:27:28.000+10:00
 last_modified_at: 2026-10-22
 categories: [ibm-pc, sega]
+share_description: >-
+  A rough 1994 Japanese TeraDrive translation mentions Cyrix 486 upgrades, SIMMs and floppy hardware. An intriguing lead, not confirmed documentation. 💻
 ---
 
 ![](/assets/images/2012/img_0133.jpg)

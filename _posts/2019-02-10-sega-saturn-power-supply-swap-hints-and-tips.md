@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-02-10T10:02:16.000+11:00
 categories: [hacks, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Japanese Skeleton Saturn gets a compatible 240 V Type C power supply. Type B boards aren't substitutes, and pin count alone doesn't establish safety. ⚡
 ---
 
 {% include youtube.html id="IM84C8cBlmk" %}

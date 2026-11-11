@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-04T18:15:48.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Resident Evil refuses to run properly on the early PSIO prototype, even after multiple restarts. No B-grade voice acting for me today. Prototype woes! 🧟
 ---
 
 {% include youtube.html id="Mesw2XeHn30" %}

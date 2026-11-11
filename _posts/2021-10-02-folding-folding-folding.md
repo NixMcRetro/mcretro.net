@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-10-02T18:57:31.000+10:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Folding@home gets a team switch from Curecoin to Dogecoin after 1,422 work units. It's about protein research, not getting rich on meme coins. 🐕
 ---
 
 ![](/assets/images/2021/img_0755.jpg)

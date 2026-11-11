@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-11-14T10:11:38.000+11:00
 categories: [nature, news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Three years of vegan eating collide with rising rent and shrinking savings. An uncomfortable rethink of food, ethics and what I can afford. 🌱
 ---
 
 ![](/assets/images/2023/img_1201.jpg)

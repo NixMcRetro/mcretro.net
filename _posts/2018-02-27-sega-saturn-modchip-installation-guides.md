@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-27T21:24:50.000+11:00
 categories: [guides, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  Phantom Universal Sega Saturn modchip installation guides cover Model 1, Model 2 JVC and Sanyo drives. Identify the actual board before soldering. 🎮
 ---
 
 ![](/assets/images/2018/img_0622.gif)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-10-09T21:30:03.000+11:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Plasma donation thirteen brings a colourful bandage, Jatz crackers, a 666 mL pause and a camera suddenly obsessed with synthwave colours. 🩸
 ---
 
 ![](/assets/images/2021/img_0761.jpg)

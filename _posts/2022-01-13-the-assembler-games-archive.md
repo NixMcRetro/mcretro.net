@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-01-13T20:56:33.000+11:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Nemesis's saved ASSEMblergames.com archive briefly gets a home on my Raspberry Pi. Search indexing and broken navigation are another adventure. 🌐
 ---
 
 ![](/assets/images/2022/img_0790.jpg)

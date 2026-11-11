@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-14T12:42:34.000+10:00
 last_modified_at: 2026-11-04
 categories: [nintendo, repairs, sega]
+share_description: >-
+  An Element14 capacitor order for TeraDrive and SNES repairs turns into a giant list of values, board revisions and the usual opportunity to buy the wrong parts. 🔧
 ---
 
 ![cap\_definition](/assets/images/2016/img_0533.jpg)

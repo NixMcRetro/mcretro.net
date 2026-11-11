@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-13T02:49:20.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  A temporary microphone brings a Sega Mega-CD Karaoke box back into the conversation, confirming the original capsule is faulty. The real replacement is still on its way. 🎤
 ---
 
 {% include youtube.html id="LNgEk73TgFA" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-22T23:23:06.000+10:00
 categories: [repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The Hakko 808 makes removing a 100 uF through-hole capacitor delightfully easy. Heat, suction, and no half-hour battle with desoldering braid. 🔧
 ---
 
 {% include youtube.html id="pCIeg36WKuI" %}

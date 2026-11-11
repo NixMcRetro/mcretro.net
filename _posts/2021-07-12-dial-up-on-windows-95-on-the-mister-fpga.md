@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-07-12T21:11:21.000+10:00
 categories: [hacks, livestream, raspberry-pi]
 last_modified_at: 2026-10-18
+share_description: >-
+  Windows 95 on a MiSTer ao486 dials another modem at 28,800 bps using an FTDI serial adapter. Even the Raspberry Pi firewall joins the party! 📞
 ---
 
 {% include youtube.html id="i-k2nwFDKoU" %}

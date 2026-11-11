@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-07T06:16:24.000+11:00
 last_modified_at: 2026-11-02
 categories: [gaming, youtube]
+share_description: >-
+  A chat with MasterControl90 becomes an Italian-language interview about Sega, retro computers and gaming memories. My fifteen minutes of fame have arrived! 🎮
 ---
 
 Without further delay, hurry over to [ChimeraRevo](https://web.archive.org/web/20190821224017/https://www.chimerarevo.com/guide/giochi/gaming-unallegra-chiaccherata-con-un-amico-113635/) to enjoy my first appearance there, and hopefully not the last! My good YouTube friend MasterControl90 invited me along for a chat about retro computers, video games and just about everything else that makes us want to spend our spare time surrounded by old hardware.

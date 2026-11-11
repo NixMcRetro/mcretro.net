@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-11-07T18:40:55.000+11:00
 categories: [raspberry-pi, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  GeoCities at 28.8 kbit/s! A Spirit Viper V.34 and Banksia Wave provide four hours of glorious dial-up browsing, all twelve megabytes of it. 📞
 ---
 
 {% include youtube.html id="MnZkWuE0UmM" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-09-15
 last_modified_at: 2026-10-20
 categories: [repairs, sega, youtube]
+share_description: >-
+  A faulty PAL Sega Saturn still refuses to start, even though its PSU measures roughly 3.36 V, 9.25 V and 5 V. Decent readings, but not yet a diagnosis. 🔧
 ---
 
 

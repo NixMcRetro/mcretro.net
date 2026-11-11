@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-01-27T14:50:26.000+11:00
 categories: [hacks, repairs, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Mean Well RD-65A finally powers a Sega TeraDrive from 240 V without the original Japanese PSU. Actual game footage proves this retrofit runs. ⚡
 ---
 
 {% include youtube.html id="FAY_UUh2dNI" %}

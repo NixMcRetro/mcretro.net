@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-20T07:40:18.000+10:00
 last_modified_at: 2026-11-03
 categories: [repairs, sega]
+share_description: >-
+  A Victor RG-JX2(Y) VA9 Sega Saturn rejects every game and cartridge until its Japanese region jumpers are restored. Strange problem, satisfying fix! 🎮
 ---
 
 ![IMG_0808 2](/assets/images/2016/img_0540.jpg)

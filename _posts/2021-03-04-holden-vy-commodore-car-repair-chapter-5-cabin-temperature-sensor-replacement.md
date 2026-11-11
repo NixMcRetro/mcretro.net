@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-03-04T22:01:55.000+11:00
 categories: [repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The Holden VY's cabin temperature sensor gets replaced and cooling briefly improves. Unfortunately, the climate-control fault isn't fully cured. 🔧
 ---
 
 {% include youtube.html id="qd5SNM056a4" %}

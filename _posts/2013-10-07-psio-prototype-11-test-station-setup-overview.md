@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-07T17:45:27.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  A PAL SCPH-5502 without its CD drive becomes the PSIO 1.1 test station, complete with XRGB-mini and PC-based loading. Let the game compatibility chaos begin! 🎮
 ---
 
 {% include youtube.html id="0XlxDn-m8eQ" %}

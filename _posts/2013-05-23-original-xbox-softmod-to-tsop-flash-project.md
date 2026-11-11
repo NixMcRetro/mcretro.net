@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-23T04:08:23.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, microsoft, youtube]
+share_description: >-
+  An original Xbox TSOP flash attempt goes wrong, leaving the softmod broken and Error 21 on screen. Fortunately, the hard drive and EEPROM were backed up. 🎮
 ---
 
 {% include youtube.html id="IOt3T3uMl78" %}

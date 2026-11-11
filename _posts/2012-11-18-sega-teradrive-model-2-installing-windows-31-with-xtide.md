@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-18T01:33:10.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, microsoft, sega]
+share_description: >-
+  Windows 3.1 finally installs on a 10 MHz Sega TeraDrive Model 2, using XTIDE and a 2 GB Disk on Module instead of a heroic collection of floppy disks. 🪟
 ---
 
 

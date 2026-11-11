@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-19T20:10:04.000+10:00
 last_modified_at: 2026-10-22
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  An Australian Mattel PAL-A NES gives up its metal shielding, unusual cartridge loader and secrets for a thorough teardown. Nintendo loves screws. 🔧
 ---
 
 {% include youtube.html id="Y9LdwBGV1Lw" %}

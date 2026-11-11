@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-14T07:39:43.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  Jumper wires bring an Aiwa CSD-GM1 mainboard back to life, and a borrowed CD mechanism reaches the Sega startup screen. Video works, but audio and CD still need help. 🎮
 ---
 
 

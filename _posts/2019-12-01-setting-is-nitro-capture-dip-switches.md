@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-01T06:30:36.000+11:00
 categories: [devkit, nintendo, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  IS Nitro Capture DIP switches control DS wireless mode, firmware recovery, border colours and AV outputs. Remember to power down before changing them. 🎮
 ---
 
 ![](/assets/images/2019/img_0636.jpg)

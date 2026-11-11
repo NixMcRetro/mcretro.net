@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-09-30T17:55:36.000+10:00
 categories: [news, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  An ongoing headache reaches day 25 as an MRI and neurologist appointment bring a possible diagnosis, but not yet a definitive answer. 🧠
 ---
 
 {% include youtube.html id="qI1r7S1O9O4" %}

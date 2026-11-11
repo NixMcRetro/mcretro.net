@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-07T03:59:31.000+10:00
 last_modified_at: 2026-10-18
 categories: [microsoft, repairs]
+share_description: >-
+  An original Xbox arrives with mystery wires, a taped-in 9 V battery, damaged controller ports and a leaking clock capacitor. What happened to this poor console? 🔧
 ---
 
 {% include youtube.html id="ImMqvVFw1VY" %}

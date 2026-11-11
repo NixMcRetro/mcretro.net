@@ -3,6 +3,8 @@ title: "Choosing to Live"
 author: "Nix McRetro"
 date: 2024-09-13
 categories: [news]
+share_description: >-
+  A deeply personal account of surviving suicidal thoughts, coming out as transgender and choosing a future. October 2023 became a turning point. ❤️
 ---
 
 **Content warning: Suicidal ideation and childhood trauma**

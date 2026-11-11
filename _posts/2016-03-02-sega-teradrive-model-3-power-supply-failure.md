@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-02T22:11:47.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  My Sega TeraDrive Model 3 buzzes and refuses to POST. Swapping the power supply moves the fault, but doesn't identify the failed component. 🔧
 ---
 
 ![Sega TeraDrive Model 3 PSU](/assets/images/2016/img_0457.jpg)

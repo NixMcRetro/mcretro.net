@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-02T21:21:40.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, programming, sega]
+share_description: >-
+  A proper Tototek cable and bidirectional parallel port finally let a Mega-CD dump PAL Fatal Fury 2. Sometimes buying the right cable is worth it! 💾
 ---
 
 {% include youtube.html id="-0Q-WPvYtwU" %}

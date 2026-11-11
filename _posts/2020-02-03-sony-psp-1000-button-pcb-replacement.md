@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-02-03T06:06:32.000+11:00
 categories: [guides, sony, youtube]
 last_modified_at: 2026-10-22
+share_description: >-
+  A cheap PSP-1000 replacement button board causes more trouble than it fixes. Putting the original board back finally restores the X button. 🎮
 ---
 
 {% include youtube.html id="8Uwagtdv6wc" %}

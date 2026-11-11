@@ -5,6 +5,8 @@ date: 2018-05-18
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/chirpy-chirps-live-stream-microphone-test/"
+share_description: >-
+  Three microphone tests try to get the conure livestream ready. Six hours of Tillie, Pudge and Chip without their chirps would be a tragedy! 🎤
 ---
 
 {% include youtube.html id="kg9apjHlsWw" %}

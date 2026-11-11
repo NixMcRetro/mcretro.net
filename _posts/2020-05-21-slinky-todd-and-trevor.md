@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-05-21
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
+share_description: >-
+  Slinky gets snacks, Todd the Cod visits with friends, and Trevor returns for a despeckling update. Another busy month in the aquarium department! 🐟
 ---
 
 {% include youtube.html id="6hBKuTcukng" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-11-17T03:21:54.000+11:00
 categories: [apple, guides]
 last_modified_at: 2026-10-18
+share_description: >-
+  macOS disk cloning with dd gets a proper progress display thanks to Pipe Viewer. Just don't confuse your input and output disks. Seriously. 💾
 ---
 
 ![](/assets/images/2022/img_0989.jpg)

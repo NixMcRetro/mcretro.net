@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-11-05T22:03:25.000+11:00
 categories: [repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  A leaky-battery AideTek VC97+ multimeter gets a cheap replacement holder and works again. SuperNick fixes the broken stand before I touch superglue. 🔧
 ---
 
 ![](/assets/images/2021/img_0773.jpg)

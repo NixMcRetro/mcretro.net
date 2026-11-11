@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-27T04:12:16.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, microsoft]
+share_description: >-
+  Burnout 3 refuses to start on a TSOP-flashed Xbox, while Burnout Revenge works. The eventual culprit isn't the console after all, but a bad game file. 🎮
 ---
 
 {% include youtube.html id="w7e3JzAubZ0" %}

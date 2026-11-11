@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-10-16T01:07:23.000+11:00
 categories: [repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  General Electric's Model 4665 plays AM happily, but FM only appears when I fiddle with the selector. Could dust and old grease be the villains? 📻
 ---
 
 {% include youtube.html id="y4XzhdhweuY" %}

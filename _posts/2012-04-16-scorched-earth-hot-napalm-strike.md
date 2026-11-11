@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-04-16
 last_modified_at: 2026-10-22
 categories: [gaming, youtube]
+share_description: >-
+  Tiny tanks, absurd weapons and one very satisfying napalm strike. A quick visit to Scorched Earth, the classic DOS artillery game where subtlety takes a holiday. 💥
 ---
 
 {% include youtube.html id="UaIuu7DuI0s" %}

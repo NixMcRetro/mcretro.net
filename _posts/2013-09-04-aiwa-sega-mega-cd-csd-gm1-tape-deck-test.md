@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-04T16:57:20.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  An Aiwa Mega-CD cassette deck finally plays music through both speakers, while the radio still fails and the other tape mechanism needs mechanical repairs. 📼
 ---
 
 {% include youtube.html id="Emcj8z5cClo" %}

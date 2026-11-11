@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-09-23T21:18:35.000+10:00
 last_modified_at: 2026-11-04
 categories: [hacks]
+share_description: >-
+  Apache can serve Markdown files, but it won't magically turn them into HTML. Jekyll might help build a proper website for the old Tor mirror. 🌐
 ---
 
 ![2016-09-23](/assets/images/2016/img_0563.jpg)

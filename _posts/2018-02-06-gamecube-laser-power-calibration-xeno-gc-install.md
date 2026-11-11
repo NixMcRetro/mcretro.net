@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-06T10:20:26.000+11:00
 categories: [hacks, nintendo, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  A GameCube from around 2004 gets a Xeno GC install and careful laser adjustment. It finally reads the mini DVD-Rs, with no magic resistance value. 🎮
 ---
 
 {% include youtube.html id="IJAYSkW387w" %}

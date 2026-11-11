@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-17T10:49:35.000+11:00
 last_modified_at: 2026-10-18
 categories: [apple, hacks, youtube]
+share_description: >-
+  A 256 MB PCMCIA flash card gets a more encouraging workout in the LC 475's PCD-60B SCSI reader, while SD cards and Microdrives continue to resist. 💾
 ---
 
 {% include youtube.html id="bHaYgYzdaOI" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-26T04:10:00.000+10:00
 last_modified_at: 2026-10-18
 categories: [microsoft, repairs, youtube]
+share_description: >-
+  Damaged solder pads complicate an original Xbox Winbond TSOP flash, but a little jumper-wire repair leads to a successful Xecuter2 BIOS installation. 🎮
 ---
 
 {% include youtube.html id="ODRL3Em4s2o" %}

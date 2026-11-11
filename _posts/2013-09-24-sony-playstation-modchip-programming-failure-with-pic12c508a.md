@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-24T23:23:15.000+10:00
 last_modified_at: 2026-10-22
 categories: [programming, sony, youtube]
+share_description: >-
+  A PIC12C508A refuses to verify properly after programming for a PlayStation modchip. The configuration or calibration may be wrong; no working chip yet. 🔧
 ---
 
 {% include youtube.html id="8LhzuYNXMhs" %}

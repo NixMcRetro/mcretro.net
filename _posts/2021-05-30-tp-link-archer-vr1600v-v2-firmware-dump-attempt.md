@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-05-30T09:37:17.000+10:00
 categories: [guides]
 last_modified_at: 2026-10-18
+share_description: >-
+  A five-day attempt to dump TP-Link Archer VR1600v V2 firmware teaches me plenty about UART and flash chips, but fails to produce a shareable image. 💻
 ---
 
 ![](/assets/images/2021/img_0686.jpg)

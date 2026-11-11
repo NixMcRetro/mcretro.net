@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-08T19:54:26.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  A 32X flicker mystery prompts experiments with grounding plates and Mega-CD video. Later Sega bulletins point to VA4 Mega Drive timing faults instead. 🔧
 ---
 
 

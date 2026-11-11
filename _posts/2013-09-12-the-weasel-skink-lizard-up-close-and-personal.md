@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-12T16:00:14.000+10:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  A cold and sluggish weasel skink spends the night in a luxury DVD-spindle shelter before being released. Also, 500 YouTube subscribers! 🦎
 ---
 
 {% include youtube.html id="1fUXNFCMuwA" %}

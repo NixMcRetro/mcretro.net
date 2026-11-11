@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-21T07:17:22.000+11:00
 categories: [youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A January 2017 bushfire near home in the Hunter brings helicopters water-bombing the flames. Thankfully the fire moves away from nearby houses. 🚁
 ---
 
 {% include youtube.html id="--ZU8a1T4lQ" %}

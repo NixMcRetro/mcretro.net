@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-04-06T12:43:13.000+10:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  The larger Dimplex DC15RCBW actually cools a room to 20°C, unlike its disappointing little sibling. A portable air conditioner that works! 🌬️
 ---
 
 {% include youtube.html id="Ws7BdhqYU0U" %}

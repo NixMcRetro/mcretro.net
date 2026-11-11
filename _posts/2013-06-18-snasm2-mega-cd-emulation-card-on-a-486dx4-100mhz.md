@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-18T15:30:06.000+10:00
 last_modified_at: 2026-10-23
 categories: [devkit, sega, youtube]
+share_description: >-
+  Success at last! A 486DX4-100 with 64 MB RAM gets the SNASM2 Mega-CD development card communicating. Huge ISA cards, happy DOS workstation. 🎮
 ---
 
 {% include youtube.html id="14gpE2PKm5M" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-22T18:06:23.000+11:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  Some boysenberry plants arrive with grand plans for a berry hedge. First I need to keep them alive. Also, Final Cut Pro apparently lets me set plants on fire. 🌱
 ---
 
 {% include youtube.html id="kSy-AmY8gnQ" %}

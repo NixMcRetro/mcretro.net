@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-08T19:50:29.000+11:00
 last_modified_at: 2026-10-18
 categories: [sega, youtube]
+share_description: >-
+  The repaired Mega-CD karaoke microphone gets another workout with CD+G graphics, echo effects and questionable singing. Four power adapters required. 🎤
 ---
 
 {% include youtube.html id="KKL8g0ujW08" %}

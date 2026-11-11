@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-30T19:56:43.000+11:00
 last_modified_at: 2026-10-22
 categories: [hacks, repairs, sony]
+share_description: >-
+  A sticky PS one eject button gets dismantled and cleaned, revealing something resembling chocolate syrup. Happily it works again without extra grease. 🔧
 ---
 
 {% include youtube.html id="SJP3cIVO-RI" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-12T08:04:22.000+11:00
 categories: [ibm-pc, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The first spare WDL-330P gets neat Panasonic SMD capacitors instead of my old radial monsters. Looking better isn't the same as a tested repair. 💾
 ---
 
 {% include youtube.html id="d4Z5MtPzrVM" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-02-10T10:43:51.000+11:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  Cloudflare comes to the rescue of a Raspberry Pi website with a dreadful upload connection. Caching and proxying sound lovely; data harvesting, less so. 🌐
 ---
 
 ![Cloudflare](/assets/images/2016/img_0455.jpg)

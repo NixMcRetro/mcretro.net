@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-08-07T20:30:59.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Chrono Cross gets a promising PSIO 1.1 test, with battles, controller vibration and beautiful scenery. The hardest part is remembering where I'm going. 🎮
 ---
 
 {% include youtube.html id="X-3Aui2387Y" %}

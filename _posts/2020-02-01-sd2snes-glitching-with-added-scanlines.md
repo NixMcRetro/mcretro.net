@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-02-01T21:40:27.000+11:00
 categories: [nintendo]
 last_modified_at: 2026-10-18
+share_description: >-
+  EarthBound and Earth Defense Force look gorgeous with scanlines, but the SD2SNES starts showing gibberish in its menu. Intermittent cart trouble. 🎮
 ---
 
 ![](/assets/images/2020/img_0662.jpg)

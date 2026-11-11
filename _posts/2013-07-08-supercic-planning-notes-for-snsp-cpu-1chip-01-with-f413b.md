@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-08T19:06:30.000+10:00
 last_modified_at: 2026-10-22
 categories: [guides, hacks, nintendo]
+share_description: >-
+  SuperCIC sounds perfect for switchless region selection on a 1CHIP SNES, but the F413B lockout wiring differs from older guides. Still planning, not installed. 🎮
 ---
 
 ![](/assets/images/2013/img_0410.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-02-21T10:15:12.000+11:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Three months into hormone therapy, a February 2024 blood test brings questions about calcium, phosphate, ALT and progesterone. More investigation ahead. 🧪
 ---
 
 ![](/assets/images/2024/img_1257.jpg)

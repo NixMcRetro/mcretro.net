@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-16T20:52:10.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  Xtreme Retro Gaming was a wonderfully chaotic side channel for badly played games and questionable commentary. Sadly, it eventually closed through neglect. 🎮
 ---
 
 {% include youtube.html id="UwgsJDlktiU" %}

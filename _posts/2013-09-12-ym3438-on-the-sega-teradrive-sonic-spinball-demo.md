@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-12T21:03:17.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sega, youtube]
+share_description: >-
+  The Sega TeraDrive's original YM3438 keeps Sonic Spinball music playing after the options menu. A modified Mega Drive's audio issue remains a mystery. 🎵
 ---
 
 {% include youtube.html id="e42dS2LIxLc" %}

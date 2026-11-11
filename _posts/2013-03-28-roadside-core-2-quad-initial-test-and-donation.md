@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-03-28T00:34:01.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, youtube]
+share_description: >-
+  A roadside Core 2 Quad survives its wet adventure, with onboard video and Radeon HD 5770 both working. The rescued computer gets donated to a Linux enthusiast. 🖥️
 ---
 
 {% include youtube.html id="Djl025J69bw" %}

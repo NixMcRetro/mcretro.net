@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-09-26
 last_modified_at: 2026-10-21
 categories: [gaming, sega, youtube]
+share_description: >-
+  The unreleased Dreamcast game Geist Force finally arrives as a beautiful community reproduction. The packaging arrives rather mangled, but the prototype lives on. 🎮
 ---
 
 {% include youtube.html id="uYvKI5uXYrs" %}

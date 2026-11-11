@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-05-19T06:37:56.000+10:00
 categories: [gaming, livestream, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  Sakura Taisen episode four brings another battle and a fix for stuttering capture audio. The Saturn's video flicker later disappears after a recap. 🎮
 ---
 
 {% include youtube.html id="sFAyJvtKiVg" %}

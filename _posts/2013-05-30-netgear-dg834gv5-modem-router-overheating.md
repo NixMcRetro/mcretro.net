@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-30
 last_modified_at: 2026-10-21
 categories: [hacks, youtube]
+share_description: >-
+  A Netgear DG834Gv5 router develops browned plastic, occasional crashes and weak Wi-Fi. Heatsinks look promising, but the cooling mod hasn't happened yet. 🌡️
 ---
 
 {% include youtube.html id="17pa8p8uCMA" %}

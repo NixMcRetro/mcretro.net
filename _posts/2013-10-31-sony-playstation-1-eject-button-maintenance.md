@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-31T18:10:49.000+11:00
 last_modified_at: 2026-10-22
 categories: [hacks, repairs, sony]
+share_description: >-
+  A sticky original PlayStation eject button gets cleaned and lightly greased. It finally opens and closes smoothly, without the usual wiggle and encouragement. 🔧
 ---
 
 {% include youtube.html id="cELlhwRplwg" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-23T04:05:18.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, microsoft, repairs]
+share_description: >-
+  A Bosch heat gun gets tested on an already-dead Xbox motherboard, lifting the CPU in a decidedly destructive experiment. Salvage, not a proper repair. 🔥
 ---
 
 

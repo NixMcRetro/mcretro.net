@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-01-19T02:52:56.000+11:00
 categories: [devkit, repairs, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  DA-Check and GDWorkshop finally communicate with a Dreamcast HKT-0120 devkit and GD writer. The recovered baseball game remains less cooperative. 🎮
 ---
 
 {% include youtube.html id="iMvG31AtV0U" %}

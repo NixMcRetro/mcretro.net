@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-18T07:55:32.000+11:00
 last_modified_at: 2026-10-22
 categories: [ibm-pc, sega, youtube]
+share_description: >-
+  ScanDisk crawls across a 30 MB WDL-330P hard drive in the TeraDrive Model 3. Old bad clusters remain, but no new ones appear in this run. 💾
 ---
 
 {% include youtube.html id="PtVHTuisVQ0" %}

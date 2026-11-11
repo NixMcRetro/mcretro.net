@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-02T07:10:01.000+10:00
 categories: [apple, gaming, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Hangman Plus 2.0 returns on the Macintosh LC 475, complete with animal categories, dreadful guesses and far too much trouble identifying a turkey. 🎮
 ---
 
 {% include youtube.html id="THo1iVk2nPA" %}

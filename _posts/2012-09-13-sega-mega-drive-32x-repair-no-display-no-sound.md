@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-09-13T21:11:55.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  A Sega 32X that showed no picture or sound responds to a clean-up of its internal ribbon connections. Doom finally appears, while three other units still need answers. 🔧
 ---
 
 {% include youtube.html id="VO0ow_fYduU" %}

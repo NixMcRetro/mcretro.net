@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-01-02T09:13:58.000+11:00
 categories: [apple, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  An old Mid 2013 MacBook Air's display repair leaves its antenna cables looking suspiciously badly routed. Also, remember Apple's butterfly keyboards? 🍎
 ---
 
 {% include youtube.html id="QeRVAgpA5lg" %}

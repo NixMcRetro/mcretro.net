@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-08-31T16:45:40.000+10:00
 last_modified_at: 2026-10-18
 categories: [guides, repairs, youtube]
+share_description: >-
+  A pencil eraser makes grubby Super Nintendo cartridge contacts look shiny again. It also removes material, so this isn't something to overdo. 🎮
 ---
 
 {% include youtube.html id="KHMgBsf9KAM" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-05T03:57:19.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  Sophia's capacitor restoration is finally complete after months of work. Fresh components across multiple boards help bring the Sega Saturn devkit back to life. 🔧
 ---
 
 {% include youtube.html id="CWiCEyuIc7A" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-10-10T17:31:52.000+11:00
 last_modified_at: 2026-11-04
 categories: [hacks, ibm-pc, sega]
+share_description: >-
+  A Mean Well PT-65B fits inside a Sega TeraDrive PSU housing in another hobbyist's retrofit. Universal mains sounds handy, but this isn't my own install. ⚡
 ---
 
 ![td_header](/assets/images/2016/img_0575.jpg)

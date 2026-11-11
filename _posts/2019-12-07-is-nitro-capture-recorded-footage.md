@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-07T10:43:46.000+11:00
 categories: [devkit, nintendo, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  IS Nitro Capture footage finally shows what this expensive Nintendo DS development capture box can record. The results speak for themselves! 🎮
 ---
 
 {% include youtube.html id="5SkLZDTf1C8" %}

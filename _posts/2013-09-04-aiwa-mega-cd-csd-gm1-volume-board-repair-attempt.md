@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-04T15:56:06.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  Contact cleaner reduces crackle in the Aiwa CSD-GM1 volume control but doesn't fix its faulty left channel. Time to take the seven-pin control apart. 🔧
 ---
 
 {% include youtube.html id="KgLFaMKH2B8" %}

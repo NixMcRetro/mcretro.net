@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-10-12
 last_modified_at: 2026-11-04
 categories: [news, youtube]
+share_description: >-
+  An October 2016 blood donation brings home a haul of free snacks, a new couch and yet another update on old videos and the Withings scale. 🍪
 ---
 
 {% include youtube.html id="Q4OuqhCcbls" %}

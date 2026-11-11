@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-04-02T16:59:59.000+11:00
 categories: [gaming, sony, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  After a PS4 system update finally fixes Cyberpunk's launch error, I rewind hours of saves to chase the platinum trophy. Painful, but achieved! 🏆
 ---
 
 ![](/assets/images/2022/img_0913.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-09-28T22:51:43.000+10:00
 categories: [gaming, sony, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  After moving house and binging some anime, I finally finish Stray on my PS4 Slim. Boxes are wonderful; weird headcrabs and crashes, less so. 🐈
 ---
 
 {% include youtube.html id="rpQX0S7XpyU" %}

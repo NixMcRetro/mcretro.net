@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-08-02T12:42:37.000+10:00
 last_modified_at: 2026-10-18
 categories: [sega, youtube]
+share_description: >-
+  An unfinished Geist Force prototype gets a limited Dreamcast reproduction through the ASSEMblergames community. Preservation wins, even if the game was never completed. 🎮
 ---
 
 

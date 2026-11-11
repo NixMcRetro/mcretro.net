@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-23T02:21:25.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  An ordinary Aiwa CSD-EX80 looks suspiciously like the CSD-GM1 Mega-CD boombox. Its working volume control, tape deck and aerial make it a promising donor. 📻
 ---
 
 {% include youtube.html id="BIg69IzAJec" %}

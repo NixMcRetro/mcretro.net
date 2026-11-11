@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-15T00:50:42.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  An Amstrad Mega PC has missing or distorted AdLib sound. The problem isn't a missing DOS driver, so the investigation turns to the Sega card's connections and alignment. 🔊
 ---
 
 {% include youtube.html id="AOF9JyYnzXg" %}

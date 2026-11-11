@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-13T19:14:56.000+10:00
 last_modified_at: 2026-10-18
 categories: [nintendo, repairs]
+share_description: >-
+  The SNES S-MIX audio chip has a hole in it. An LM324 substitution doesn't work, but bypassing the mixer produces some sound. Not a full repair. 🎵
 ---
 
 ![](/assets/images/2013/img_0411.jpg)

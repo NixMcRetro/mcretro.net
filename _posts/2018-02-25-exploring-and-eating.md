@@ -5,6 +5,8 @@ date: 2018-02-25
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/exploring-and-eating/"
+share_description: >-
+  Chip munches a seed-stick treat while Tillie and Pudge investigate a giant sunflower seed bell. Three busy birds, mountains of snacks. 🦜
 ---
 
 {% include youtube.html id="6CyKl7WJvLU" %}

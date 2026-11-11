@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-08T21:54:15.000+11:00
 last_modified_at: 2026-10-21
 categories: [ibm-pc, repairs, youtube]
+share_description: >-
+  A Sharp PC-4521 portable gets an internal tour, revealing a NEC V40, an unusually wide LCD and a stubborn JVC hard drive. Not mine, but too interesting to ignore. 💻
 ---
 
 {% include youtube.html id="dv3meSTSrdc" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-01T09:03:00.000+11:00
 last_modified_at: 2026-10-22
 categories: [repairs, sony, youtube]
+share_description: >-
+  A Sony PS one optical pickup swap becomes an adventure in rails, little plastic guides and stubborn gears. The mechanics are almost more trouble than the laser. 🔧
 ---
 
 {% include youtube.html id="9O9Fwi8uKPo" %}

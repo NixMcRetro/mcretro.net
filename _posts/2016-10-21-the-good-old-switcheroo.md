@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-10-21T22:48:09.000+11:00
 last_modified_at: 2026-11-04
 categories: [linux, microsoft]
+share_description: >-
+  A cheap HP Stream 11 becomes my Linux escape plan, with a surprisingly nice keyboard, modest eMMC storage and plenty of compromises. 💻
 ---
 
 ![hp-stream-11](/assets/images/2016/img_0576.jpg)

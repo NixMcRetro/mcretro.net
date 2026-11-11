@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-02T19:13:27.000+11:00
 last_modified_at: 2026-10-22
 categories: [guides, sony, youtube]
+share_description: >-
+  A Sony PS one replacement laser mechanism gets taken apart, revealing tiny guide pieces and dubious spindle hubs. Not every cheap replacement fits as advertised. 🔧
 ---
 
 {% include youtube.html id="PflMmHx0epA" %}

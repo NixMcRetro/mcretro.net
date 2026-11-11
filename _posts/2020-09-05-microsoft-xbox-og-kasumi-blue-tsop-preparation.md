@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-09-05T09:05:55.000+10:00
 categories: [microsoft, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Preparing a Kasumi Blue Xbox for TSOP flashing means bridging tiny write-enable points and fitting a compatible Australian PSU. Flashing comes later. 🔧
 ---
 
 

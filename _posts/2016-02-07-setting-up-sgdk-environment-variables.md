@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-02-07T01:50:15.000+11:00
 last_modified_at: 2026-10-22
 categories: [devkit, sega]
+share_description: >-
+  Getting the Sega Genesis Development Kit ready on Windows means GDK, GDK_WIN and a PATH entry. Then comes the harder part: actually writing a game. 💻
 ---
 
 ![Accolade Mega Drive development cartridge and cable](/assets/images/2013/img_0373.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-12-06T01:32:07.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, livestream, youtube]
+share_description: >-
+  Day three of Fallout 4 introduces Preston Garvey, the Minutemen and that first glorious Fusion Core. Power armour time! 🎮
 ---
 
 {% include youtube.html id="9NdXfNAbE-E" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-08-06T15:29:07.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  Another recap of the Aiwa CSD-GM1 revision 1 board reveals a mislabeled replacement capacitor. Always read the markings, even when the parts look identical. 🔧
 ---
 
 {% include youtube.html id="9pupCizxXtE" %}

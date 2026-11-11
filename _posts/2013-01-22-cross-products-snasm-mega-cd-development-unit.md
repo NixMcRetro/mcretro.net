@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-22T18:40:38.000+11:00
 last_modified_at: 2026-10-18
 categories: [devkit, repairs, sega]
+share_description: >-
+  A rare Cross Products SNASM Mega-CD development unit joins the collection, complete with extra connectors, switches and PC development hardware to investigate. 🖥️
 ---
 
 {% include youtube.html id="aD8kCGBi4wI" %}

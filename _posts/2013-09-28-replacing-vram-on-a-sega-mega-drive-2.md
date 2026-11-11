@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-28T16:35:01.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  Replacing the VRAM on Mega Drive 2 serial 440005313 requires some heroic soldering and produces plenty of new glitches, but not the repair I wanted. 🔧
 ---
 
 {% include youtube.html id="yejMg25Mr6Y" %}

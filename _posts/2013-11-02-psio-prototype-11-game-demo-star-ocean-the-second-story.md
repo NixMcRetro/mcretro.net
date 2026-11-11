@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-02T18:11:49.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Star Ocean: The Second Story gets a promising PSIO 1.1 test, including FMV sound, music and battles. Unfortunately I keep forgetting to use a weapon. 🎮
 ---
 
 {% include youtube.html id="LJ73iecHjkY" %}

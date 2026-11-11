@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-11-24T18:05:35.000+11:00
 categories: [news, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  McRetro tries making a McMuffin with eggs, cheese and an oven-baked hash brown. The first attempt is messy, but breakfast improves on round two. 🍳
 ---
 
 {% include youtube.html id="WlDI7G7q-Qo" %}

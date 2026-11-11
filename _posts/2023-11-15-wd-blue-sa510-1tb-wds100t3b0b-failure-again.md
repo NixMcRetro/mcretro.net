@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-11-15T13:36:30.000+11:00
 categories: [raspberry-pi]
 last_modified_at: 2026-10-18
+share_description: >-
+  Another WD Blue SA510 SSD acts suspiciously, with baffling SMART counters and a new critical firmware update. The GeoCities drives strike again. 💾
 ---
 
 ![](/assets/images/2023/img_1208.jpg)

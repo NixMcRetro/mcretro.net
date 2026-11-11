@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-02-16T22:03:28.000+11:00
 last_modified_at: 2026-10-18
 categories: [programming, youtube]
+share_description: >-
+  Purple OSH Park boards arrive for the Lunchbeat groovebox and PICkit 2 clone. Even the anime mascot made it onto the silkscreen. Parts still on order. 💜
 ---
 
 {% include youtube.html id="3364kAlhw2w" %}

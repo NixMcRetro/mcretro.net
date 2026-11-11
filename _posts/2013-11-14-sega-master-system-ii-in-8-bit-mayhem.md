@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-14T18:35:56.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  A rescued Sega Master System II stubbornly shows a black screen instead of Alex Kidd. Corrosion, composite video and a spare encoder offer no easy answer. 🔧
 ---
 
 {% include youtube.html id="FspdE2O2lng" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-11-30T13:01:07.000+11:00
 categories: [apple, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  An Apple IIc monochrome CRT gets its picture recentered using yoke rings. Alignment improves, but there's still a gap on the right. High voltage, mind! 🍎
 ---
 
 {% include youtube.html id="OrJjQBkgE6k" %}

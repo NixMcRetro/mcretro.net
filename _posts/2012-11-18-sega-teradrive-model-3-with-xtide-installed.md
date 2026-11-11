@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-18T01:44:56.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  Both the original 30 MB hard drive and XTIDE storage boot in a TeraDrive Model 3. Even better, its Model 2 sibling now has working modern storage too. 💾
 ---
 
 

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-02-07T11:30:01.000+11:00
 categories: [devkit, microsoft, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  Fishing line finally straightens the crooked jewel on a Kasumi Blue Xbox. No cinnamon-flavoured dental floss required, although the blue really is lovely. 🎮
 ---
 
 ![](/assets/images/2019/img_0628.jpg)

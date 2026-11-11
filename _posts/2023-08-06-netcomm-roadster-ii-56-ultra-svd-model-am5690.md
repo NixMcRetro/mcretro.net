@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-06T16:27:02.000+10:00
 categories: [linux, modems, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  NetComm's AM5690 Roadster shares surprising PCB DNA with a Banksia Wave SP 56. Same family resemblance, different case and connectors. 📞
 ---
 
 {% include youtube.html id="414Of8sLJlc" %}

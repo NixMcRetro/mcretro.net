@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-22T21:14:57.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo, youtube]
+share_description: >-
+  A modified SNES donor cartridge boots Super Bomberman 2 from a programmed 27C801 EPROM. Crooked wires aside, the proof of concept works! 💾
 ---
 
 {% include youtube.html id="alj9g9DjjsE" %}

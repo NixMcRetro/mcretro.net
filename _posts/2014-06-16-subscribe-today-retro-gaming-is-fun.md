@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-16T22:20:14.000+10:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  McRetro Gaming's early channel trailer promises retro gameplay videos by the bucketful. Subscribe for the old consoles, stay for the inevitable chaos! 🎮
 ---
 
 {% include youtube.html id="UprMHeQF-kE" %}

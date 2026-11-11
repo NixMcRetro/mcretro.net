@@ -5,6 +5,8 @@ date: 2018-05-09
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/play-time-for-crime-birds/"
+share_description: >-
+  Tillie, Chip and Pudge plot to steal all the playground equipment. A classic bird-brained heist, with cooperation unlikely. 🦜
 ---
 
 {% include youtube.html id="VgnRp0uDgdU" %}

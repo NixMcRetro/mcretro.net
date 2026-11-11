@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-08-24T13:19:12.000+10:00
 categories: [gaming, livestream, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  Episode ten finally concludes Sakura Taisen's Saturn adventure. Final Judgement, plenty of drama and a promise to try Sega's newer PlayStation revival. 🎮
 ---
 
 {% include youtube.html id="Z04L1WJNB_s" %}

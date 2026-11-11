@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-08-23T21:04:28.000+10:00
 categories: [livestream, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Sakura Taisen reaches its grand finale on Saturn, except I fall asleep while playing the first half. The Flower Division deserved a better commander! 💤
 ---
 
 {% include youtube.html id="PJYkPVg-on8" %}

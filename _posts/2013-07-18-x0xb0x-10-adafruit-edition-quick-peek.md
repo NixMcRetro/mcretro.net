@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-18T03:57:23.000+10:00
 last_modified_at: 2026-10-18
 categories: [programming, youtube]
+share_description: >-
+  SuperNick's x0xb0x analogue synthesiser is still being assembled, but the Adafruit-era board looks wonderful. No finished music machine just yet. 🎵
 ---
 
 {% include youtube.html id="tLCHwp8Nhm0" %}

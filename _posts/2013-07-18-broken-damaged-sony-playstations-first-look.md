@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-18T04:26:44.000+10:00
 categories: [repairs, sony, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A bargain pile of faulty original PlayStations brings broken lids, missing lasers, liquid damage and mystery modchips. At least donor parts are plentiful. 🎮
 ---
 
 {% include youtube.html id="DRHxgm3wIPI" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-07-13T14:20:03.000+10:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  A Chronix Nixie clock puts on a glowing slot-machine display to keep its cathodes exercised. The spinning digits are a surprisingly entertaining bit of tube maintenance. ⏰
 ---
 
 

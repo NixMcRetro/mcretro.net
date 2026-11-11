@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-06T21:08:37.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  Two Aiwa CSD-GM1 units, bad transformers, cracked boards and barely audible sound. June 2013 is a repair checkpoint, not a victory lap. 🔧
 ---
 
 {% include youtube.html id="0JPgm7M9QfM" %}

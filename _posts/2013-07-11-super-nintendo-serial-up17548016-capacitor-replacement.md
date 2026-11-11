@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-11T18:49:01.000+10:00
 last_modified_at: 2026-10-18
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  A previously repaired SNES UP17548016 gets a maintenance recap using radial electrolytics. The reset switch, not the capacitors, fixed its original fault. 🔧
 ---
 
 {% include youtube.html id="_m73rfrLd5s" %}

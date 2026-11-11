@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-08-23T21:12:37.000+10:00
 last_modified_at: 2026-10-18
 categories: [programming, youtube]
+share_description: >-
+  LEDs finally light up on the PICkit 2 and Lunchbeat boards. One wrong transistor and retina-burning blue LEDs keep the soldering adventure going. 💡
 ---
 
 {% include youtube.html id="EoG5tyq1vC0" %}

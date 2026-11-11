@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-20T08:13:38.000+11:00
 categories: [youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Fats Domino records bring back memories of childhood, from that rainbow-coloured Philips label to Blue Monday. Music nostalgia takes over McRetro! 🎵
 ---
 
 {% include youtube.html id="ipC9T862eLQ" %}

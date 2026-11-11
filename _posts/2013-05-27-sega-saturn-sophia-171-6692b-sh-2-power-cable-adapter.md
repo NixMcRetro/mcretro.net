@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-27T04:44:44.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
+share_description: >-
+  Sophia's 171-6692B SH-2 boards lack the usual power header. A custom cable adapts the 2.0 mm connectors so these unusual CPU cards can work. 🔌
 ---
 
 ![](/assets/images/2013/img_0403.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-04T19:13:23.000+10:00
 last_modified_at: 2026-11-03
 categories: [news, programming]
+share_description: >-
+  My first Visual Basic project in Visual Studio introduces Glenmatic 2000, a chatty program with far too many comments. Programming adventures begin. 💻
 ---
 
 ![vs2015](/assets/images/2016/img_0510.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-11T13:47:24.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, sega, youtube]
+share_description: >-
+  Another ambitious livestream ends in failure as the internet refuses even a reliable 240p broadcast. Happy fourth birthday, McRetro Show! 📺
 ---
 
 {% include youtube.html id="XfBBHZIPwqU" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-01-19T15:44:58.000+11:00
 categories: [guides, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Sega Saturn Phantom Universal gets its JVC jumpers, ribbon cable and 5 V power wire connected. At last, the modchip installation itself! 🔧
 ---
 
 {% include youtube.html id="PLh8V7IQtBs" %}

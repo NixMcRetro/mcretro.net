@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-29T05:15:06.000+10:00
 last_modified_at: 2026-10-18
 categories: [devkit, gaming, sega]
+share_description: >-
+  An early Wolfenstein 3D Saturn port runs in emulators but proves stubborn on Sophia and retail hardware. The real-console experiment remains unresolved. 🎮
 ---
 
 {% include youtube.html id="9Rxxr97mrdE" %}

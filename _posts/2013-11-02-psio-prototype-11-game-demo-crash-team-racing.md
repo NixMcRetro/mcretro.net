@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-02T17:39:18.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Crash Team Racing runs nicely on the early PSIO prototype, even letting me win a race. Working hardware and competent driving in one video? Unprecedented! 🏁
 ---
 
 {% include youtube.html id="WbxWJjvxvdw" %}

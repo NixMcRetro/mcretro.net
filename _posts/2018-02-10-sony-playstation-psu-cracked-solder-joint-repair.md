@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-10T09:52:26.000+11:00
 categories: [repairs, sony, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Cracked solder joints at an original PlayStation's figure-eight mains socket get repaired. A tidy PSU, but mains-voltage work demands care. ⚡
 ---
 
 {% include youtube.html id="89grG2WEKSg" %}

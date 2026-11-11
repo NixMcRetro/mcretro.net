@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-10-20
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
+share_description: >-
+  Endler's livebearers brighten the BioPod tank, while water tests reveal worrying nitrite and nitrate. Fishkeeping apparently requires a chemistry degree. 🐟
 ---
 
 {% include youtube.html id="8Y67p4P_30U" %}

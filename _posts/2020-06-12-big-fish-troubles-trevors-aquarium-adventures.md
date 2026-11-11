@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-06-12
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
+share_description: >-
+  Trevor the eel-tailed catfish is back with bubble hunting, new moves, swimming, playtime and snacky cakes. June is very busy in Big Fish land! 🐟
 ---
 
 {% include youtube.html id="qd8f8ydwI2s" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-01-06T19:09:10.000+11:00
 categories: [livestream, sony, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Cyberpunk 2077 reaches patch 1.31 on my PS4 Slim and still crashes. Unreadable text and shiny aluminium-foil mirrors aren't helping either. 🎮
 ---
 
 {% include youtube.html id="EFdTpHnZzDs" %}

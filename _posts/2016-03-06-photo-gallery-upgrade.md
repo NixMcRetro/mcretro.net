@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-06T12:48:09.000+11:00
 last_modified_at: 2026-10-22
 categories: [news]
+share_description: >-
+  Google retires Picasa, so McRetro photos head towards Flickr and Facebook. By 2022 the Flickr experiment is over and a local gallery is the plan. 📸
 ---
 
 ![Flickr Gallery](/assets/images/2016/img_0462.jpg)

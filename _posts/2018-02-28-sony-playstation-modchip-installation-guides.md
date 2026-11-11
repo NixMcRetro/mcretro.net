@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-28T21:16:31.000+11:00
 last_modified_at: 2026-10-22
 categories: [guides, sony]
+share_description: >-
+  Mayumi 4 PlayStation modchip guides gather the PIC firmware and wiring examples for PU-18 and PU-22 motherboards. The exact revision matters. 🎮
 ---
 
 ![](/assets/images/2018/img_0622.gif)

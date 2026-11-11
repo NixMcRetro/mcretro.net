@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-29T11:19:22.000+10:00
 last_modified_at: 2026-11-04
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  One last C59 capacitor gets replaced in a PAL SNSP-CPU-01 SNES, with a warning that board revisions use different polarity arrangements. 🔧
 ---
 
 {% include youtube.html id="UsNQNxMeQok" %}

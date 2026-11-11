@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-09T00:29:53.000+11:00
 last_modified_at: 2026-10-22
 categories: [repairs, sony, youtube]
+share_description: >-
+  Out of eight cheap PS one laser assemblies, only two seem to hold their spindle hubs properly. One pickup reads discs, but the mechanical quality is dreadful. 💿
 ---
 
 {% include youtube.html id="Y25gnJ8iJ7I" %}

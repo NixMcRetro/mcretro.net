@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-10-29T23:25:46.000+11:00
 categories: [guides, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A little CRC 2-26 loosens the gummed-up GE radio AM/FM switch, and FM reception returns! One satisfying click after years of neglect. 🔧
 ---
 
 {% include youtube.html id="ObjJ0Mp_GWE" %}

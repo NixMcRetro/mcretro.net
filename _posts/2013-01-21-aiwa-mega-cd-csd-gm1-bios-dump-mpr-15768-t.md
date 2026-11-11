@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-21T10:56:01.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
+share_description: >-
+  An Aiwa CSD-GM1 BIOS ROM gets removed and dumped for preservation. The elusive MPR-15768-T finally has a digital backup, after some adventurous desoldering. 💾
 ---
 
 {% include youtube.html id="sBpigjWEE8M" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-24T09:05:05.000+11:00
 categories: [youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A lucky blue-tongue lizard survives a close encounter with a lawnmower in the garden. One lizard and one mower, both still operational! 🦎
 ---
 
 {% include youtube.html id="5IX6BPPorMY" %}

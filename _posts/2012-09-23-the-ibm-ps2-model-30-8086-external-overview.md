@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-09-23T13:33:14.000+10:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, youtube]
+share_description: >-
+  An Australian-made IBM PS/2 Model 30 brings an 8 MHz 8086, Sound Blaster audio and a hard drive full of bad sectors. Prince of Persia still gets a workout. 💾
 ---
 
 {% include youtube.html id="LtMtfqpCdV4" %}

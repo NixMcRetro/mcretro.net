@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-03-24T23:05:20.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  A Model 1 Sega Saturn develops a strange noise after warming up. PSU swapping narrows the suspects, but the exact fault is still refusing to confess. 🔧
 ---
 
 {% include youtube.html id="ru07hk_idHY" %}

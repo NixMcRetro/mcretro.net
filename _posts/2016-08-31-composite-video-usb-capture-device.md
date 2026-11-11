@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-31T12:08:54.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, hacks, sega]
+share_description: >-
+  A $25 USB composite capture dongle replaces filming CRTs with a camera, making Mega Drive glitch videos easier and less full of rolling bars. 📹
 ---
 
 {% include youtube.html id="oFfXh8Jjfk4" %}

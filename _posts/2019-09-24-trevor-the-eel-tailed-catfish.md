@@ -6,6 +6,8 @@ date: 2019-09-24
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
 historical_source_url: "https://www.youtube.com/watch?v=bGbYMYOX_tM"
+share_description: >-
+  Meet Trevor, the friendly Australian eel-tailed catfish who outgrew the aquarium. A wonderful fish, and a reminder that big fish need big homes. 🐟
 ---
 
 {% include youtube.html id="bGbYMYOX_tM" %}

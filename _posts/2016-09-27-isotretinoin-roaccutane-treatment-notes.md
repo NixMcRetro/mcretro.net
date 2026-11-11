@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-09-27T21:28:04.000+10:00
 last_modified_at: 2026-11-04
 categories: [news]
+share_description: >-
+  Preparing for isotretinoin in 2016 means reading about side effects and getting lost in fish-oil spreadsheets. Personal research, not medical instructions. 🧪
 ---
 
 ![isotretinoin-molecule](/assets/images/2016/img_0564.jpg)

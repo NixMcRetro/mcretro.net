@@ -5,6 +5,8 @@ date: 2018-01-06
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/rumble-and-chase/"
+share_description: >-
+  Pudge and Tillie wrestle on the rooftop, hunt peanuts and chase the cameraman towards the kitchen. Vegetable dinner can wait for bird business! 🦜
 ---
 
 {% include youtube.html id="AHGQs_0hBSE" %}

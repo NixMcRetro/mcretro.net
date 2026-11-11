@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-03T18:14:37.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Final Fantasy IX runs nicely on PSIO 1.1 until I pull out the microSD card mid-game. Unsurprisingly it doesn't recover, and I hadn't saved my progress. 🎮
 ---
 
 {% include youtube.html id="TuTwc8MRlnU" %}

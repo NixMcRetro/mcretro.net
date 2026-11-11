@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-14T19:57:58.000+10:00
 last_modified_at: 2026-10-18
 categories: [sony, youtube]
+share_description: >-
+  An 8 MB PlayStation 2 memory card gets opened for a look at the tiny PCB inside. The iPhone can zoom, but focusing is apparently a different story. 💾
 ---
 
 {% include youtube.html id="SZVWxVPZ2Qw" %}

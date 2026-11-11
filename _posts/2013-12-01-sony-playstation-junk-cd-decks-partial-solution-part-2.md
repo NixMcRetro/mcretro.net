@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-01T20:00:16.000+11:00
 last_modified_at: 2026-10-23
 categories: [repairs, sony, youtube]
+share_description: >-
+  Cheap replacement PlayStation disc hubs keep breaking, but two plastic cards help lift one intact. Getting the spindle height right is still another job. 💿
 ---
 
 {% include youtube.html id="v3aLDiDC6rQ" %}

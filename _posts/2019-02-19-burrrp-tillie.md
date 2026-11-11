@@ -5,6 +5,8 @@ date: 2019-02-19
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://www.youtube.com/watch?v=Z5JoLWXzpxY"
+share_description: >-
+  Tillie unveils another entry in the conure dictionary: BURRRP! Who knew such a small green parrot could have such an extensive sound department? 🦜
 ---
 
 {% include youtube.html id="Z5JoLWXzpxY" %}

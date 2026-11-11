@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-07-03T18:14:24.000+10:00
 last_modified_at: 2026-10-18
 categories: [news, raspberry-pi]
+share_description: >-
+  The McRetroNet IRC server finally gets TLS via Let's Encrypt, while the website and a tiny WooCommerce shop also benefit from HTTPS. 🌐
 ---
 
 ![Screen Shot 2016-07-03 at 5.55.40 PM](/assets/images/2016/img_0485.jpg)

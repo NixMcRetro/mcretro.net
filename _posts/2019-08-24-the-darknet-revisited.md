@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-08-24T18:38:26.000+10:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  RetroJunkie.net's Tor mirror returns on Debian Buster with v3 onion addresses and some gloriously silly vanity names. Onion-related adventures continue. 🌐
 ---
 
 ![](/assets/images/2019/img_0634.jpg)

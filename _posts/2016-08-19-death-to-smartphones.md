@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-19T07:39:20.000+10:00
 last_modified_at: 2026-11-03
 categories: [apple]
+share_description: >-
+  Smartphone fatigue inspires a return to the Nokia 301 candybar phone and its advertised 39-day standby. My iPhone 5s can take a holiday. 📱
 ---
 
 ![iPhone 5s](/assets/images/2016/img_0539.jpg)

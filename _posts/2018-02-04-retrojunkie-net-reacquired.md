@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-04T09:37:27.000+11:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  RetroJunkie.net returns to my ownership and becomes a home for old-school, low-bandwidth sites. Dust off your Netscape and dial-up modem! 🌐
 ---
 
 ![](/assets/images/2018/img_0616.jpg)

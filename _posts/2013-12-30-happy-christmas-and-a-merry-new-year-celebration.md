@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-30T20:38:01.000+11:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  Happy Christmas from the land down under! Moving house, terrible upload speeds and a rather noisy neighbourhood put the retro videos on pause for a while. 🎄
 ---
 
 {% include youtube.html id="Cliotl9Sv80" %}

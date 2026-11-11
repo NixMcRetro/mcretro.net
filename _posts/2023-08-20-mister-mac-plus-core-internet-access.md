@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-20T09:07:02.000+10:00
 categories: [apple, modems, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A MiSTer Mac Plus core reaches the internet through a real modem, MacTCP and Config PPP. Eight megahertz of vintage Mac networking magic! 🍎
 ---
 
 {% include youtube.html id="W9TQBRUclFc" %}

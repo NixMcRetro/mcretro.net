@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-24T03:13:41.000+11:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  Cupcake attempt 1.0 combines too many eggs, plain flour and questionable measurements into something flat and omelette-like. Version 2.0 is required! 🧁
 ---
 
 {% include youtube.html id="ZIbTl4CNrS8" %}

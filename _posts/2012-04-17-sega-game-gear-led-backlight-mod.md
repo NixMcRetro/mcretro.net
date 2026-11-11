@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-04-17T04:59:10.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
+share_description: >-
+  A Sega Game Gear gets new capacitors and an experimental LED backlight. The screen glows again, but uneven lighting and awkward repairs bring mixed results. 🔧
 ---
 
 {% include youtube.html id="EbIFteeC-GQ" %}

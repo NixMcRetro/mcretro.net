@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-03-28T00:35:57.000+11:00
 categories: [youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A southern leaf-tailed gecko pays another visit indoors and refuses to cooperate with the relocation box. Such a clever little wizard lizard. 🦎
 ---
 
 {% include youtube.html id="maaVVGdLdOw" %}

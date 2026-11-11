@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-17T01:16:29.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  An IBM PS/2 Model 30 recognises an ISA XTIDE controller and a wildly oversized 4 GB Disk on Module. DOS can access the storage, after some partitioning adventures. 💾
 ---
 
 {% include youtube.html id="h6eXHUqOZZ0" %}

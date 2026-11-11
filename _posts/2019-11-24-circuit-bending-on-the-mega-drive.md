@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-11-24T21:36:16.000+11:00
 categories: [hacks, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Recovered 2016 Mega Drive circuit-bending footage shows Sonic 1 happily glitching while Sonic 3 resists the chaos. No evidence of an intentional safeguard. 🎮
 ---
 
 {% include youtube.html id="EewO0dM1VgA" %}

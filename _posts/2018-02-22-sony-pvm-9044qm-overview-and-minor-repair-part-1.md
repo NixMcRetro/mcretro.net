@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-22T10:36:33.000+11:00
 categories: [repairs, sony, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Sony PVM-9044QM from the UK gets opened for an inspection after a rough journey. This tiny Trinitron has plenty of RGB potential. 📺
 ---
 
 {% include youtube.html id="Kc5zI0yAkYQ" %}

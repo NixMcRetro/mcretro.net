@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-12-06T01:11:42.000+11:00
 last_modified_at: 2026-10-18
 categories: [programming, youtube]
+share_description: >-
+  The Lunchbeat's eye-searing LEDs get bigger resistors and a new red-and-orange colour scheme. A dodgy audio cable provides one final fake failure. 🎵
 ---
 
 {% include youtube.html id="hJ1wHtEFg7E" %}

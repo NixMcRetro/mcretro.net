@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-08-31T22:46:25.000+10:00
 last_modified_at: 2026-10-18
 categories: [guides, youtube]
+share_description: >-
+  A DIY AnaTek Blue ESR meter gets assembled and tested on old Aiwa capacitors. Some readings are surprisingly normal, even on parts that look dreadful. 🔧
 ---
 
 {% include youtube.html id="Lq9-9A8kn8Q" %}

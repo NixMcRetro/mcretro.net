@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-13T07:56:36.000+11:00
 categories: [ibm-pc, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The second spare WDL-330P hard drive receives proper SMD capacitors. Two down, one to go, and real TeraDrive testing still awaits. 💾
 ---
 
 {% include youtube.html id="2qVSt72haVc" %}

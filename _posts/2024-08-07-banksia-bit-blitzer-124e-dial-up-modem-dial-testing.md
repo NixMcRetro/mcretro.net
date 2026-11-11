@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-08-07T00:10:19.000+10:00
 categories: [linux, modems, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  The Banksia BIT Blitzer 124E connects at a magnificent 2400 bps through Linux, VoIP and Asterisk. Slow internet has never sounded so good! 📞
 ---
 
 {% include youtube.html id="EoxHrmKY5hM" %}

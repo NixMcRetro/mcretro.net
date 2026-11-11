@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-08-04T12:27:10.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  A Mega Drive's yellow and green video flicker disappears after warming up. The Sony CXA1145P encoder looks suspicious, and a later replacement confirms the diagnosis. 🔧
 ---
 
 ![](/assets/images/2012/img_0243.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-07-04T22:47:09.000+10:00
 categories: [guides, linux, programming]
 last_modified_at: 2026-10-18
+share_description: >-
+  Tor Browser's Onion-Location feature offers a handy shortcut from an HTTPS site to its .onion counterpart. Purple buttons, less address memorising! 🌐
 ---
 
 ![](/assets/images/2020/img_0679.jpg)

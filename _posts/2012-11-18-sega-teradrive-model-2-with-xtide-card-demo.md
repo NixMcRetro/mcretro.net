@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-18T01:48:27.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  A quick demonstration of the Sega TeraDrive Model 2 booting through XTIDE to a Disk on Module, with a 286, 2.5 MB RAM and rather more storage than Sega intended. 💾
 ---
 
 

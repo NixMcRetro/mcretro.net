@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-01-19T13:04:51.000+11:00
 categories: [nature, news]
 last_modified_at: 2026-10-18
+share_description: >-
+  A new home finally brings outdoor space, a hammock, dandelions, bees and lizards. There's even a barbecue, although the lavender didn't survive. 🌱
 ---
 
 ![](/assets/images/2024/img_1236.jpg)

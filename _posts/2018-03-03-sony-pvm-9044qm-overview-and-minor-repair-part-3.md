@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-03-03T08:07:58.000+11:00
 categories: [repairs, sony, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The Sony PVM's washed-out Mega Drive RGB turns crisp after I finally connect video ground. One basic cable problem beats all those capacitor theories! 📺
 ---
 
 {% include youtube.html id="x6EnMkOPQKM" %}

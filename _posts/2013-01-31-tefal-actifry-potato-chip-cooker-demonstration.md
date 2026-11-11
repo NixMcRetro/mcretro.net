@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-31
 last_modified_at: 2026-10-22
 categories: [youtube]
+share_description: >-
+  A Tefal ActiFry turns four potatoes into decent chips with a spoonful of oil. The timer sounds dreadful, but dinner on an A4 sheet of paper is a success. 🍟
 ---
 
 {% include youtube.html id="ckJ7AKlfUVw" %}

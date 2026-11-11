@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-01T12:02:49.000+11:00
 categories: [nintendo, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Super Famicom's DC-in socket is annoyingly attached to its rear panel. A donor panel swap eventually works, followed by Biker Mice from Mars. 🔧
 ---
 
 {% include youtube.html id="bQ1OpqyHRXA" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-11-10T15:06:18.000+11:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  Dropplets doesn't last long. FlatPress takes over the Raspberry Pi 2 blog, with working search, old posts to import and another mountain of fiddling. 🌐
 ---
 
 The blog came back to life and was extinguished again within a week or so. [Dropplets](https://web.archive.org/web/20151104110559/http://dropplets.com:80/) just doesn't do what I want it to. I'm sure if I messed about with the code enough it probably would have... Where does that leave this blog? **[FlatPress!](https://www.flatpress.org/)**

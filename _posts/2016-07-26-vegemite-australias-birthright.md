@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-07-26T13:38:45.000+10:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  Salt Reduced Vegemite adds vitamins B6 and B12 to Australia's favourite spread. More science on the label, but does it still taste like Vegemite? 🍞
 ---
 
 ![Vegemite!](/assets/images/2016/img_0499.jpg)

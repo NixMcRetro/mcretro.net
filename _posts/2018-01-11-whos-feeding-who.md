@@ -5,6 +5,8 @@ date: 2018-01-11
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/whos-feeding-who/"
+share_description: >-
+  Tillie and Pudge take turns feeding each other, then getting annoyed about it. Romance, drama and an unreasonable amount of conure behaviour! 🦜
 ---
 
 {% include youtube.html id="3eNs2s4MWaY" %}

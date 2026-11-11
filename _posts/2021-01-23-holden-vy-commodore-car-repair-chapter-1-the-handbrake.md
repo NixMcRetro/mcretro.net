@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-01-23T11:00:04.000+11:00
 categories: [repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Holden VY Series II gets a replacement handbrake assembly after its plastic ratchet fails. Hidden bolts, grease and an unfortunate pot plant! 🔧
 ---
 
 {% include youtube.html id="adPZNT3w7oA" %}

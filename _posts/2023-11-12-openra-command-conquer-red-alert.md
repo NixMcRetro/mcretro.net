@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-11-12T08:17:41.000+11:00
 categories: [gaming]
 last_modified_at: 2026-10-18
+share_description: >-
+  Command & Conquer: Red Alert returns through OpenRA, with ant missions, flamethrowers and an AI nuke that destroys my precious MCV. Silos needed! 🎮
 ---
 
 ![](/assets/images/2023/img_1196.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-18T10:33:16.000+11:00
 categories: [nintendo, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Japanese Nintendo 64 with a filthy cartridge connector gets a clean. Two working consoles emerge from what was supposed to be a donor project. 🎮
 ---
 
 {% include youtube.html id="-wrgkwdt5_s" %}

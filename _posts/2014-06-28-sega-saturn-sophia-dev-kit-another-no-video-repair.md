@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-28T20:18:21.000+10:00
 last_modified_at: 2026-10-22
 categories: [devkit, repairs, sega]
+share_description: >-
+  A third Sega Saturn Sophia gets fresh capacitors and finally displays its clock screen. Three devkits showing video again! Now, what needs fixing next? 🎮
 ---
 
 {% include youtube.html id="6IugPzgdExU" %}

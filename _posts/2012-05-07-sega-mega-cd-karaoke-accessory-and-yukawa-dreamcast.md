@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-07T12:57:09.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  The Sega Mega-CD Karaoke box arrives with a dead microphone and an annoying buzz. A replacement cartridge is on order, alongside a boxed Yukawa Dreamcast from Japan. 🎤
 ---
 
 ![](/assets/images/2012/img_0075.jpg)

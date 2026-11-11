@@ -4,6 +4,8 @@ author: "Nick"
 date: 2012-05-09T07:28:02.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo]
+share_description: >-
+  A boxed Japanese Famicom and a couple of games are on the way. The next challenge is a composite AV mod to bypass its RF output, with no guarantees and plenty to learn. 🎮
 ---
 
 ![](/assets/images/2012/img_0086.jpg)

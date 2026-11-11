@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-27T19:29:01.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo, youtube]
+share_description: >-
+  A SuperCIC switchless mod goes into a PAL Super Nintendo with a PIC16F630, lifted CIC pins and tiny PPU connections. Solder bridges keep things interesting. 🔧
 ---
 
 {% include youtube.html id="xsNbIkLImV0" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-30T00:44:43.000+10:00
 last_modified_at: 2026-10-22
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  SNES UP17388130 plays John Madden Football '93 with perfectly good video and absolutely no sound. First idea: replace the ageing capacitors. 🔧
 ---
 
 {% include youtube.html id="ImC9B-0O1v4" %}

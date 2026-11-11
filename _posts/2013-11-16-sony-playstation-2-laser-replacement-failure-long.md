@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-16T18:51:29.000+11:00
 last_modified_at: 2026-10-22
 categories: [repairs, sony, youtube]
+share_description: >-
+  A PlayStation 2 laser swap spirals into 24 minutes of incompatible mechanisms, screws and disappointment. Perhaps checking pickup models first would've helped. 🔧
 ---
 
 {% include youtube.html id="t9a_YJifnTA" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-04-25T18:46:23.000+10:00
 categories: [gaming, livestream, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  Sakura Taisen arrives on the Saturn with an English fan patch, RGB through an OSSC and 6% scanlines. Time to see what the Imperial Combat Revue can do! 🎮
 ---
 
 {% include youtube.html id="rYFg_xpyukA" %}

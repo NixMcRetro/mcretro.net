@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-08-06T21:36:01.000+10:00
 last_modified_at: 2026-10-22
 categories: [news, youtube]
+share_description: >-
+  SuperNick's x0xb0x is fully assembled but silent. A temporary voltage test coaxes out some sound, pointing towards the audio circuitry. Repair still pending. 🎵
 ---
 
 {% include youtube.html id="S2i51mFvv0g" %}

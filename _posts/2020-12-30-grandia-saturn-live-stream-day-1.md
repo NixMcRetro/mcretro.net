@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-12-30T09:04:24.000+11:00
 categories: [gaming, livestream, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  Grandia on Saturn freezes during a save and destroys the first slot. Translation patch, memory card or bad luck? At least I have another save. 🎮
 ---
 
 {% include youtube.html id="HWzc2tmNPjg" %}

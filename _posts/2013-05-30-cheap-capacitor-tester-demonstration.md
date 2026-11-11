@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-30
 last_modified_at: 2026-10-21
 categories: [repairs, youtube]
+share_description: >-
+  A cheap capacitor tester produces some convincing readings and some wildly suspicious ones. ESR and capacitance are useful, but this gadget may need testing itself. 🔧
 ---
 
 {% include youtube.html id="6o3FzXO_ZCA" %}

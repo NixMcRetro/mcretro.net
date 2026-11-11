@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-03-28T13:33:31.000+11:00
 categories: [nintendo, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A PAL SNES 1CHIP board has clear video but no sound. It's already come back from the dead somewhat, with capacitor work still on the list. 🎮
 ---
 
 {% include youtube.html id="1F007E4l-H4" %}

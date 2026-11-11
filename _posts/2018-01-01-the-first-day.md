@@ -5,6 +5,8 @@ date: 2018-01-01
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/the-first-day/"
+share_description: >-
+  Two young green-cheeked conure siblings arrive at their new home on New Year's Day 2018. Names to come, crackers perhaps, mischief guaranteed. 🦜
 ---
 
 {% include youtube.html id="6GGHFzctsFc" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-07-17T12:43:56.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sega]
+share_description: >-
+  Eight discs of Sakura Wars songs were wonderful enough, then I discovered another eight-disc collection. Sixteen discs, and I've never played the games! 🎵
 ---
 
 ![Sakura 2006](/assets/images/2016/img_0494.jpg)

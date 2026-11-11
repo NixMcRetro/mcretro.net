@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-21T18:05:26.000+11:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  A cuckoo bird gets a DIY perch made from an old Sega Activator box. Finally, a practical use for one of Sega's most spectacularly awkward accessories! 🐦
 ---
 
 {% include youtube.html id="-nUpIaJ4s9s" %}

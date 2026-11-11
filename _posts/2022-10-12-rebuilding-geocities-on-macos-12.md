@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-10-12T08:27:53.000+11:00
 categories: [guides, news, raspberry-pi]
 last_modified_at: 2026-10-18
+share_description: >-
+  Rebuilding GeoCities on macOS 12 hits full-path length limits, duplicate files and checksum problems. Linux handles the archive somewhat better. 🌐
 ---
 
 ![](/assets/images/2022/img_0976.jpg)

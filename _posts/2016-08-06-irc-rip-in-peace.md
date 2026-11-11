@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-06T20:07:08.000+10:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  After getting InspIRCd, TLS and services running, McRetroNet IRC quietly shuts down. A fine experiment, even if nobody ever joined the party. 💬
 ---
 
 ![IRC ASCII](/assets/images/2016/img_0511.jpg)

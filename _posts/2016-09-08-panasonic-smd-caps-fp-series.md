@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-09-08T06:57:50.000+10:00
 last_modified_at: 2026-11-04
 categories: [guides]
+share_description: >-
+  Panasonic FP SMD capacitors use letter codes for voltage ratings. A handy reference, but always check the actual series datasheet before soldering. 🔧
 ---
 
 ![fp_series_caps](/assets/images/2016/img_0553.jpg)

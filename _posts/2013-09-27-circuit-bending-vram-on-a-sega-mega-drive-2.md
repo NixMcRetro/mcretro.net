@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-27T20:32:40.000+10:00
 last_modified_at: 2026-10-22
 categories: [hacks, sega, youtube]
+share_description: >-
+  Deliberately bridging Mega Drive 2 VRAM signals produces wild Zero Wing and Sonic glitches. Hard to tell which faults were already there, though. 🎮
 ---
 
 {% include youtube.html id="Prp6OLZkeD4" %}

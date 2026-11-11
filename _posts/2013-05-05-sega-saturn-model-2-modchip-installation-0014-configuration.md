@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-05T03:58:05.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
+share_description: >-
+  A Japanese Model 2 Saturn gets a modchip configured for its 0014 CD board. A little soldering and insulation later, the test game actually boots. 🎮
 ---
 
 {% include youtube.html id="iveyeLJkNAg" %}

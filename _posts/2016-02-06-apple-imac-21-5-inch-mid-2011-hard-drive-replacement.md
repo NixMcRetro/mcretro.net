@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-02-06
 last_modified_at: 2026-10-21
 categories: [apple, repairs, youtube]
+share_description: >-
+  A charity's Mid 2011 iMac gets its Seagate hard drive replaced with a 2.5-inch disk, Icy Dock adapter and OWC fan-sensor cable. Plenty of screws! 🍎
 ---
 
 {% include youtube.html id="S4vNBQY6SoI" %}

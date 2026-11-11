@@ -5,6 +5,8 @@ date: 2018-05-18
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/the-chirpy-chirps-live-stream/"
+share_description: >-
+  Six hours of Tillie, Pudge and Chip on a live bird broadcast! Everything works except, rather unfortunately, the sound. Silent conures indeed. 📺
 ---
 
 {% include youtube.html id="mxGeJObegHE" %}

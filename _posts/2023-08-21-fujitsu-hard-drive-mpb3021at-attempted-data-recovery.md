@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-21T08:39:31.000+10:00
 categories: [hacks, linux, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  A battered Fujitsu MPB3021AT gets a replacement oscillator and starts clicking, but ddrescue can't recover useful data. Back up your disks! 💾
 ---
 
 

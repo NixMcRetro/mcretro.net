@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-08-12T22:32:45.000+10:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  Old Xtreme Retro Gaming footage resurfaces, including plans that eventually became McRetro Gaming. Some channel ideas live on even after cancellation. 🎮
 ---
 
 {% include youtube.html id="pTwhpqJf1Cg" %}

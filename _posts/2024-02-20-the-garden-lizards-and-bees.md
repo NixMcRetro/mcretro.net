@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-02-20T14:15:00.000+11:00
 categories: [nature]
 last_modified_at: 2026-10-18
+share_description: >-
+  A blue-tongue visitor, enormous bar-sided skinks and goofy blue-banded bees turn the garden into a tiny wildlife documentary. More footage ahead! 🦎
 ---
 
 ![](/assets/images/2024/img_1253.jpg)

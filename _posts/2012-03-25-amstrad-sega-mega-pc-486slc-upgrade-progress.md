@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-03-25T00:42:58.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  The 486SLC motherboard boots and finally recognises hard drives in the Amstrad Mega PC. Then a flat real-time clock battery brings the tinkering to a halt. 💾
 ---
 
 ![](/assets/images/2012/img_0046.jpg)

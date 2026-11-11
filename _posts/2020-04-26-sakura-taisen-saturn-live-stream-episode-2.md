@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-04-26T07:41:15.000+10:00
 categories: [gaming, livestream, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  The Hive of Darkness threatens a newly built communications tower in Sakura Taisen episode two. Ogami and the Flower Division have work to do! 🎮
 ---
 
 {% include youtube.html id="pdnX3YtBAVw" %}

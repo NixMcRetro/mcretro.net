@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-02T15:52:14.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  My cheap multimeter probes decide to fall apart mid-Aiwa repair, leaving the power-supply detective work on hold. Naturally there's also a random cat. 🐈
 ---
 
 {% include youtube.html id="WL86W0UgDTI" %}

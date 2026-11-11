@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-07T18:25:00.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Crash Bash boots on an early PSIO revision with music and playable minigames. The prototype behaves; my inability to follow the instructions is another matter. 🎮
 ---
 
 {% include youtube.html id="S6wtg-UtP7M" %}

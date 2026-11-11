@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-26T19:04:06.000+10:00
 last_modified_at: 2026-10-22
 categories: [devkit, hacks, sega]
+share_description: >-
+  SEGALOAD sends a Sonic binary from a DOS PC to SRAM on a Western Technologies Mega Drive development cart. Sonic actually runs! A rather satisfying test. 🎮
 ---
 
 {% include youtube.html id="A9zQueGP4iI" %}

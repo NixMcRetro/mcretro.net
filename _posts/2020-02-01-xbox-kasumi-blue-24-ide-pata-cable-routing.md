@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-02-01T15:06:25.000+11:00
 categories: [guides, microsoft, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A 24-inch 80-conductor IDE ribbon cable snakes around a Kasumi Blue Xbox with a 1 TB drive. Folding the excess neatly is an art form. 💾
 ---
 
 {% include youtube.html id="hjcbPIL0CzY" %}

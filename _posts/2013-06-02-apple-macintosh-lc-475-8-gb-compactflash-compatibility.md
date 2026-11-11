@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-02
 last_modified_at: 2026-10-20
 categories: [apple, reconstructed, youtube]
+share_description: >-
+  An 8 GB CompactFlash card appears in the LC 475's PCD-60B SCSI reader, but formatting it is another story. Recognised doesn't mean ready to use! 🍎
 ---
 
 {% include youtube.html id="akvSA5NTqps" %}

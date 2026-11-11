@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-08T21:59:31.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs]
+share_description: >-
+  The Creative Labs CD-200 plays music but refuses to read data under DOS. Its deceptively IDE-like Panasonic interface sends the driver hunt into another round. 💿
 ---
 
 {% include youtube.html id="VepV0tWWzyU" %}

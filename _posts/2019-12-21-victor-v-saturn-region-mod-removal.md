@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-21T08:24:41.000+11:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  A Victor V-Saturn gets its Japanese region jumpers restored after an old mod is removed. Menus, retail discs and Action Replay work again. 🎮
 ---
 
 {% include youtube.html id="QG5TlmiN_qY" %}

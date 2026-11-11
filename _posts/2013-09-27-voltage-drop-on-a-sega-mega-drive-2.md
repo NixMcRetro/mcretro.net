@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-27T21:33:46.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  Turning down a Mega Drive 2's supply voltage makes its audio fade, colours vanish and games crash. Familiar symptoms from the Aiwa Mega-CD experiments. ⚡
 ---
 
 {% include youtube.html id="BKexZKjhAIk" %}

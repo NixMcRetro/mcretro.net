@@ -5,6 +5,8 @@ date: 2018-02-03
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/chips-ride-home/"
+share_description: >-
+  Baby Chip, a cinnamon green-cheeked conure, comes home in a tissue box. Tiny passenger, big personality, and an introduction to the bird family awaits. 🦜
 ---
 
 {% include youtube.html id="C0cyH3HK1_c" %}

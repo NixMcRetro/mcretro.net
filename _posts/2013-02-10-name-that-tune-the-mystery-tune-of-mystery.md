@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-02-10
 last_modified_at: 2026-10-22
 categories: [music, youtube]
+share_description: >-
+  An unidentified tune from an old recording gets a 50 Hz versus 60 Hz speed experiment. Keygen music, Amiga, Commodore 64? The mystery remains unsolved. 🎵
 ---
 
 {% include youtube.html id="EVim5fFjMJk" %}

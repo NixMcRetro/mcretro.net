@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-01-04T10:41:51.000+11:00
 categories: [hacks, nintendo, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The mysterious green line on a Super Famicom survives motherboard and AV cable swaps, then vanishes on another TV. Perhaps it was Samsung all along! 📺
 ---
 
 {% include youtube.html id="o0qtSegQm94" %}

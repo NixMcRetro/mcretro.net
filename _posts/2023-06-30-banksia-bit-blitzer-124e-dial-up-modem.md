@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-06-30T22:31:21.000+10:00
 categories: [linux, modems, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  A 2400 bps Banksia BIT Blitzer 124E gets a recap, firmware dump and dial test. So many LEDs, so few bits per second. Magnificent! 📞
 ---
 
 {% include youtube.html id="cyZtVOeXYCg" %}

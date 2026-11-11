@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-08-28
 last_modified_at: 2026-10-20
 categories: [repairs, sega, youtube]
+share_description: >-
+  A donor laser from a faulty Japanese Saturn rescues a PAL machine that wouldn't read discs. The optical pickup swap finally delivers a working drive and a welcome repair win. 🔧
 ---
 
 {% include youtube.html id="cltqcHBYl8s" %}

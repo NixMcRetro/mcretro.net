@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-11-12T08:56:30.000+11:00
 categories: [nature, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A childhood concrete gnome riding a pig becomes a photogrammetry model and a tiny PLA print. Pocket Gnomes are the future, apparently! 🧙
 ---
 
 {% include youtube.html id="e6kyW1GmWlk" %}

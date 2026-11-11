@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-29
 last_modified_at: 2026-10-22
 categories: [gaming, youtube]
+share_description: >-
+  An old Angry Birds iPad ranking puts me among the top 220 players. No gameplay footage, but Pepper the sausage dog makes a welcome blooper appearance. 🐶
 ---
 
 {% include youtube.html id="cK68vVxM6xA" %}

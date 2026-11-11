@@ -3,6 +3,8 @@ title: "Nokia 301 Unboxing and My Last Attempt to Leave Apple"
 author: "Nix McRetro"
 date: 2018-12-12
 categories: [apple, nokia]
+share_description: >-
+  The Nokia 301 promises glorious battery life, but its spongy keys and awkward size lose out to Apple's ecosystem. Another smartphone escape thwarted. 📱
 ---
 
 {% include youtube.html id="-2RVtFwLWLo" %}

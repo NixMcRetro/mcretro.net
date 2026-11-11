@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-08-26T00:45:37.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
+share_description: >-
+  Rolling lines on PAL Sega Saturns mysteriously vanish when fed the wrong mains voltage. An accidental undervoltage test offers a clue, absolutely not a repair method. ⚡
 ---
 
 ![](/assets/images/2012/img_0247.jpg)

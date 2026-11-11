@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-02-27T08:25:34.000+11:00
 last_modified_at: 2026-11-02
 categories: [gaming, sega, youtube]
+share_description: >-
+  Zero Wing on the Mega Drive looks glorious through the Framemeister's scanlines. Surviving past the first stage is another matter. All your base! 🎮
 ---
 
 {% include youtube.html id="86xuKg32k9g" %}

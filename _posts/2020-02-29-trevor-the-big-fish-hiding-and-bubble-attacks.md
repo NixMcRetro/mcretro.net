@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-02-29
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
+share_description: >-
+  Trevor the friendly eel-tailed catfish hides from the camera, battles bubbles and celebrates leap day with more Big Fish adventures. 🐟
 ---
 
 {% include youtube.html id="fwDo2fRlb7U" %}

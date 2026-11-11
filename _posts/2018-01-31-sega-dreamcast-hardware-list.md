@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-01-31T11:16:41.000+11:00
 categories: [sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  A community-preserved list of Sega Dreamcast HKT and HIT part numbers covers Katana devkits, accessories, consoles and odd peripherals. Some entries remain uncertain. 🎮
 ---
 
 ![](/assets/images/2018/img_0613.jpg)

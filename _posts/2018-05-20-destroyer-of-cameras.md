@@ -5,6 +5,8 @@ date: 2018-05-20
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/destroyer-of-cameras/"
+share_description: >-
+  The feathered Destroyer of Cameras declares all recording equipment must go. Chip, however, would rather concentrate on the bird seed. 🦜
 ---
 
 {% include youtube.html id="VmzJwzKvJ2I" %}

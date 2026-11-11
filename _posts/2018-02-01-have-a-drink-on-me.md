@@ -5,6 +5,8 @@ date: 2018-02-01
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/have-a-drink-on-me/"
+share_description: >-
+  A freshly cleaned cage and a bowl of water are irresistible to Tillie and Pudge. Drinking is optional; bird-related splashing is inevitable. 🦜
 ---
 
 {% include youtube.html id="NEJ3FhTAITU" %}

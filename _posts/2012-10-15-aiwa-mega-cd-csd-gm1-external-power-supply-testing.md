@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-15
 last_modified_at: 2026-10-20
 categories: [repairs, sega, youtube]
+share_description: >-
+  An external 12 V supply wakes the Aiwa CSD-GM1's radio and tape sections, but the Mega Drive hardware stays silent. There's more power-rail detective work ahead. ⚡
 ---
 
 {% include youtube.html id="6qr6_9mnZjI" %}

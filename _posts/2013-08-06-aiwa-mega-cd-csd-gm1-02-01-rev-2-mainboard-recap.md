@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-08-06T15:30:17.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  The cracked revision 2 Aiwa CSD-GM1 board gets a recap, but differing capacitor values and old trace repairs keep the parts list growing. 🔧
 ---
 
 {% include youtube.html id="QkpbVodA_gM" %}

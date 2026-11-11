@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-07T17:47:03.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Tekken 3 starts loading on the PSIO 1.1 prototype, then refuses to progress beyond early activity. One sound effect and a lot of waiting. More testing needed. 🎮
 ---
 
 {% include youtube.html id="hS2d1002k-M" %}

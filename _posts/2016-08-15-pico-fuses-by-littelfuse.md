@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-15T07:53:43.000+10:00
 last_modified_at: 2026-11-04
 categories: [repairs]
+share_description: >-
+  A 1.5 A PICO fuse marked 125 V isn't just for US consoles. Voltage rating is about safe interruption, not the country's mains voltage. ⚡
 ---
 
 ![Littelfuse_Fuse_Pico_CL](/assets/images/2016/img_0534.jpg)

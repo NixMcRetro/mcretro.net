@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-30T06:37:36.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sony, youtube]
+share_description: >-
+  A PlayStation 3 arrives with the Yellow Light of Death and absolutely no picture. Shims and other ideas can wait until the fault is understood. 🎮
 ---
 
 {% include youtube.html id="_AczgKBnbjk" %}

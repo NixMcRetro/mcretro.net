@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-07-18T17:01:59.000+10:00
 categories: [hacks, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  My childhood Mickey Mouse watch gets its stuck mechanism replaced while keeping the original dial and case. Tiny parts, enormous nostalgia. ⌚
 ---
 
 {% include youtube.html id="9XrVg3lC6Vk" %}

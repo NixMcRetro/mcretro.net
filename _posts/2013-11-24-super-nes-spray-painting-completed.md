@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-24T05:15:21.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo, repairs]
+share_description: >-
+  Two badly yellowed SNES shells are now an extremely sassy red-and-black combination. Some paint still scratches and a few grey details remain, but look at them! 🎨
 ---
 
 {% include youtube.html id="-usr2BSPACY" %}

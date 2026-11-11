@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-02T19:05:56.000+10:00
 last_modified_at: 2026-11-03
 categories: [hacks, news, sega]
+share_description: >-
+  A translucent smokey-grey Dreamcast shell gets a tidy Dremel modification to accommodate the Broadband Adapter's ethernet socket. For once it works! 🎮
 ---
 
 ![aDHqaUYR](/assets/images/2016/img_0509.jpg)

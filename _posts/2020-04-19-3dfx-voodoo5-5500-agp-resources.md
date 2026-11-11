@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-04-19T04:15:53.000+10:00
 last_modified_at: 2026-10-22
 categories: [ibm-pc]
+share_description: >-
+  Two VSA-100 chips, 64 MB of split memory and glorious anti-aliasing. A little collection of Voodoo5 5500 AGP references for future retro PC adventures. 🎮
 ---
 
 ![](/assets/images/2020/img_0677.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-14T16:24:33.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sega, youtube]
+share_description: >-
+  Pier Solar finally comes out of its collector's box, complete with lovely Dreamcast packaging. Small issue: I've already sold my Dreamcasts. 🎮
 ---
 
 {% include youtube.html id="37aYGQF0-1w" %}

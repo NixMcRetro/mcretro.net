@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-24T00:12:54.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo, repairs]
+share_description: >-
+  Finding a low-profile SNES cartridge battery holder becomes a saga of shell clearance, awkward pins and green Kynar wire. A Panasonic part finally fits. 💾
 ---
 
 {% include youtube.html id="cLWFrJOefj8" %}

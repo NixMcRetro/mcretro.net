@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-01-15T19:08:39.000+11:00
 categories: [nature, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Two tiny Silver Princess cicadas moult on a windy summer evening. By the next morning, only their empty shells remain. Enjoy the sun, little bugs! 🪲
 ---
 
 {% include youtube.html id="C2-AExK36Xk" %}

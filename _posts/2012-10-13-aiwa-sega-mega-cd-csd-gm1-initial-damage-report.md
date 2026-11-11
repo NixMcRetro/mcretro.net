@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-13T04:36:31.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  One Aiwa CSD-GM1 works poorly; the other has enormous cracks, broken traces and a missing chunk of PCB. Restoring power is only the beginning of this rescue. 🔧
 ---
 
 {% include youtube.html id="tZTX5pHOTAQ" %}

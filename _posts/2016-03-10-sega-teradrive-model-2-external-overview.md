@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-10T08:22:55.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, sega, youtube]
+share_description: >-
+  An external tour of the Sega TeraDrive Model 2 reveals dual floppy drives, PC/Mega Drive switching and an upgraded 2.5 MB of RAM. Lovely IBM-Sega oddity. 🖥️
 ---
 
 {% include youtube.html id="_XxiT0X8Ob8" %}

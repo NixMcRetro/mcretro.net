@@ -5,6 +5,8 @@ date: 2018-02-04
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/baby-borb-live-stream-camera-testing/"
+share_description: >-
+  Baby Borb Chip gets an infrared-camera test and a separate lag test. Future bird livestreams deserve better picture quality than this! 📹
 ---
 
 {% include youtube.html id="hIwma3fqhdc" %}

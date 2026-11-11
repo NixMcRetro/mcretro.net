@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-11-22T03:09:55.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, news, sony]
+share_description: >-
+  PSIO edges closer to its first pre-orders in November 2015. Another little progress update while we wait to see the finished PlayStation hardware. 🎮
 ---
 
 ![Screen Shot 2015-11-22 at 2.22.40 AM](/assets/images/2015/img_0444.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-27T16:30:14.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  Mega Drive 2 serial 440005313 produces corrupted video even after a DC-in repair. Pressing on a Sega chip temporarily steadies the picture. A clue, not a fix. 🔧
 ---
 
 {% include youtube.html id="JufGCibXPpI" %}

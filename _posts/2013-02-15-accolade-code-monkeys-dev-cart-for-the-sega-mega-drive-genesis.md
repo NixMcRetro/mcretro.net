@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-02-15T08:09:40.000+11:00
 categories: [devkit, gaming, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  An Accolade development cartridge linked to The Code Monkeys boots an introduction on the Mega Drive, but its mysterious 9-pin cable still needs explaining. 🎮
 ---
 
 {% include youtube.html id="m-UYDH0lgdM" %}

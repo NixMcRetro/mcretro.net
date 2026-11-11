@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-02T22:22:41.000+11:00
 last_modified_at: 2026-10-22
 categories: [hacks, sega, youtube]
+share_description: >-
+  The Sega CD Transfer Suite dumps Sonic through a Mega Drive controller port and a PC parallel connection. ECP/EPP settings had been the real nuisance. 💾
 ---
 
 {% include youtube.html id="o-jvLz7hsoE" %}

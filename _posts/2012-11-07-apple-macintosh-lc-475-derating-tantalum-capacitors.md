@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-07T06:32:07.000+11:00
 last_modified_at: 2026-10-18
 categories: [apple, repairs, youtube]
+share_description: >-
+  Planning a Macintosh LC 475 recap means thinking about tantalum capacitor voltage derating, package sizes and reliability. No capacitors replaced just yet. 🔧
 ---
 
 {% include youtube.html id="zOi3xcUsYgc" %}

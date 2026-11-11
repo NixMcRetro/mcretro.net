@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-01-29T10:53:00.000+11:00
 categories: [sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  A rare XO 7-in-1 Sega Saturn GameShark offers RAM, Action Replay and save-memory modes. Its six switch positions are finally decoded. 🎮
 ---
 
 ![](/assets/images/2018/img_0611.jpg)

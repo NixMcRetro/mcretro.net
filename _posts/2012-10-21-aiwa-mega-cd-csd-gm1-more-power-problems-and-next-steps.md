@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-21
 last_modified_at: 2026-10-20
 categories: [repairs, sega, youtube]
+share_description: >-
+  A rotten cold interrupts the Aiwa Mega-CD repairs, but the to-do list keeps growing: power regulators, distorted video, missing audio and temperamental CD drives. 🤧
 ---
 
 {% include youtube.html id="OkrtqOHkM5o" %}

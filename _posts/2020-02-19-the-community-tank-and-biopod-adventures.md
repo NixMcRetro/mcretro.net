@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-02-19
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
+share_description: >-
+  The Juwel Rio 125 community tank and separate BioPod return with Todd, Slinky and lots of Endler's livebearers. Feeding frenzy time! 🐟
 ---
 
 {% include youtube.html id="sm-GK6DdtL0" %}

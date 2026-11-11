@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-11-07T11:23:40.000+11:00
 categories: [news, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  After 52 blood donations, it's time to retire the needle. Iron concerns, donation costs and a 40-minute slideshow mark the end of an era. 🩸
 ---
 
 {% include youtube.html id="Naa0iiIw0FE" %}

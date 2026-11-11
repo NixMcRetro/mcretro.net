@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-19T17:58:20.000+10:00
 categories: [ibm-pc, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Doom 1.666 supplies the soundtrack as a Gravis UltraSound MAX battles a Sound Blaster 32. The music is lovely; finding room for both cards is not. 🎵
 ---
 
 {% include youtube.html id="diW3-y40wP0" %}

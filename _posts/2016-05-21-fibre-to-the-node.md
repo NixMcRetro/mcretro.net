@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-05-21T01:00:09.000+10:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  Fibre to the Node gives friends faster NBN, but the final stretch of ancient copper still bothers me. I'd rather have fibre all the way. 🌐
 ---
 
 ![FTTN copper connection](/assets/images/2016/img_0473.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-11T19:12:26.000+10:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  Stargate SG-1 borrows Der Waffle Haus from Dead Like Me, but Daniel Jackson doesn't eat a waffle. A terrible waste of a perfectly good set! 📺
 ---
 
 ![daniel](/assets/images/2016/img_0526.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-25T16:57:35.000+11:00
 categories: [news, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Happy holidays from McRetro, complete with gloriously off-key singing. May your Christmas be full of retro hardware and considerably better music! 🎄
 ---
 
 {% include youtube.html id="ykko6dZOTdw" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-01-19T21:54:36.000+11:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  All the old electrolytics come off a Pioneer LaserActive PAC-S1 mainboard, with obvious leakage under one. Removal is done; replacement still lies ahead. 🔧
 ---
 
 {% include youtube.html id="aP6n-3nCfkQ" %}

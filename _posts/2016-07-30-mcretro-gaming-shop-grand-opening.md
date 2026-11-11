@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-07-30T11:09:55.000+10:00
 last_modified_at: 2026-10-18
 categories: [news, sega, sony]
+share_description: >-
+  McRetro's little gaming shop officially opens in July 2016, selling console modchips and accessories. Operators are standing by! Ribbon cut. 🎮
 ---
 
 ![shop_day1](/assets/images/2016/img_0505.jpg)

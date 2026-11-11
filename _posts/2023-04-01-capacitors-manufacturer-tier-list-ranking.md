@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-04-01T08:52:20.000+11:00
 categories: [repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  Capacitor brand rankings get their own McRetro gist after a famous tier list leaves too many manufacturers out. A gist list, if you will! 🔧
 ---
 
 ![](/assets/images/2023/img_0998.jpg)

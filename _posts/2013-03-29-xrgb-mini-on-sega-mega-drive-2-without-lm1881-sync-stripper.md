@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-03-29T00:52:36.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, sega]
+share_description: >-
+  Removing an LM1881 sync stripper from a custom Mega Drive 2 RGB cable finally gets a stable picture on the Framemeister. This wiring doesn't need it. 📺
 ---
 
 {% include youtube.html id="9_ALl1W0Mbg" %}

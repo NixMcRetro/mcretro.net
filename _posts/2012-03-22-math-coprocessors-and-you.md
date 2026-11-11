@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-03-22T02:22:02.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  An empty maths coprocessor socket is an invitation! The Amstrad Mega PC's 386SX and 486SLC boards get a closer look at ULSI chips and clock speeds. 🧮
 ---
 
 ![Empty square PLCC coprocessor socket on a motherboard beside part of a Texas Instruments 486SLC chip.](/assets/images/2012/img_0043.jpg)

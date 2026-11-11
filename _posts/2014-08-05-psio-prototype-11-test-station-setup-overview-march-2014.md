@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-08-05T20:29:11.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  A March 2014 PSIO 1.1 setup gets revisited: PAL SCPH-5502, XRGB-mini, microSD and a virtualised PC loader. Plenty more games to put through their paces. 🎮
 ---
 
 {% include youtube.html id="vUPamzKPADo" %}

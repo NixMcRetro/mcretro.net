@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-02T01:08:19.000+11:00
 last_modified_at: 2026-10-22
 categories: [devkit, nintendo, youtube]
+share_description: >-
+  The DS Lite attached to an IS Nitro Capture box looks familiar inside, except for its unusual cables and spongey D-pad. Next stop: the blue box. 🎮
 ---
 
 {% include youtube.html id="YdpZPcR5yDc" %}

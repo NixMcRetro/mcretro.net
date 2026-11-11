@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-03-16T02:10:45.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  An Amstrad Mega PC arrives with a 386SX, a built-in Mega Drive and a nasty surprise: leaking NiCad battery corrosion. The AMD processor is a welcome consolation. 🖥️
 ---
 
 ![](/assets/images/2012/img_0014.jpg)

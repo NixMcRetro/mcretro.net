@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-26T21:34:30.000+10:00
 last_modified_at: 2026-10-22
 categories: [devkit, hacks, sega]
+share_description: >-
+  The Western Technologies Sega development card turns Sonic into a beautiful mess of corrupted graphics, strange music and occasional illegal instructions. 🎮
 ---
 
 {% include youtube.html id="AP1DQ4fj0Qc" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-07-29T18:49:34.000+10:00
 categories: [news, study]
 last_modified_at: 2026-10-18
+share_description: >-
+  University orientation arrives with crowded halls, anxiety and more medication questions. The goal is still to study, even if the route changes. 🎓
 ---
 
 ![](/assets/images/2024/img_1335.jpg)

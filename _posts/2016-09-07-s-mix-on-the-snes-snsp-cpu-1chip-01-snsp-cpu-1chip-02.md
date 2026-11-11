@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-09-07T06:45:38.000+10:00
 last_modified_at: 2026-11-04
 categories: [hacks, nintendo, repairs]
+share_description: >-
+  Another no-sound 1CHIP SNES gets audio by bypassing the S-MIX chip and wiring the DAC output directly. It works, but long-term safety is uncertain. 🔊
 ---
 
 ![s-mix](/assets/images/2016/img_0552.jpg)

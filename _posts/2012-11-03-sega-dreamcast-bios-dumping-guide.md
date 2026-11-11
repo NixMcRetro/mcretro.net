@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-03T13:58:05.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, sega, youtube]
+share_description: >-
+  A Dreamcast Broadband Adapter and httpd-ack retrieve a PAL MPR-21871 BIOS dump over the network. The CRC32 matches revision 1.01c. Preservation achieved! 💾
 ---
 
 

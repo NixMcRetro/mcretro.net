@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-04-09T21:16:21.000+10:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  A Sega Nomad, Dreamcast mouse, ISA network cards and Saturn power converters join the shopping list. Also, a rather intriguing early Saturn motherboard. 📦
 ---
 
 ![](/assets/images/2012/img_0060.jpg)

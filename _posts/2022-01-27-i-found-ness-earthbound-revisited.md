@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-01-27T07:54:42.000+11:00
 categories: [gaming, nintendo]
 last_modified_at: 2026-10-18
+share_description: >-
+  Lost 2013 EarthBound saves reappear on an old drive, including Ness at levels 75 and 97. SNEmulDS memories, now revisited in OpenEmu. 🎮
 ---
 
 ![](/assets/images/2022/img_0806.jpg)

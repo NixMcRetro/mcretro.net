@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-10-01T17:09:40.000+10:00
 categories: [ibm-pc, news, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  Australian Sonic the Hedgehog caps return from my 1990s collection, including glow-in-the-dark Series 2 discs and a magnificently rare misprint. 🎮
 ---
 
 {% include youtube.html id="bsDjlV9rObk" %}

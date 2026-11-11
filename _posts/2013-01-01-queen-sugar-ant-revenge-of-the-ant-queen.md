@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-01
 last_modified_at: 2026-11-02
 categories: [nature, youtube]
+share_description: >-
+  An enormous sugar ant turns up indoors and might be a queen. It's certainly got an attitude! Identification remains uncertain, but it's going back outside. 🐜
 ---
 
 {% include youtube.html id="riSbvjZMUW4" %}

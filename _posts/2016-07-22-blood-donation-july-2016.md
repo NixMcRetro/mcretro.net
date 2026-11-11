@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-07-22T09:42:04.000+10:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  A July 2016 blood donation leads to a frightening near-fainting spell afterwards. A reminder that donation aftercare matters, even when free snacks await. 🩸
 ---
 
 ![Red Cross Blood Service](/assets/images/2016/img_0498.jpg)

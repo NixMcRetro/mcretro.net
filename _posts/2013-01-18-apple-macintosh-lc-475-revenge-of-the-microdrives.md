@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-18T10:51:27.000+11:00
 last_modified_at: 2026-11-02
 categories: [apple, hacks, youtube]
+share_description: >-
+  The Hitachi Microdrives return for more Macintosh LC 475 formatting experiments. Mac OS X, disk images and stubborn partitions still can't make them work. 💾
 ---
 
 {% include youtube.html id="GyWr8_HJZGc" %}

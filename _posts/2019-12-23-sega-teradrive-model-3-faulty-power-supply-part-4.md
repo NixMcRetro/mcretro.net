@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-23T09:48:01.000+11:00
 last_modified_at: 2026-10-22
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  Leaking Sanyo electrolytics turn up inside the TeraDrive PSU during a recap. Plenty of soldering, but there's no proof yet that the original fault is solved. 🔧
 ---
 
 {% include youtube.html id="rYOPxp6v70A" %}

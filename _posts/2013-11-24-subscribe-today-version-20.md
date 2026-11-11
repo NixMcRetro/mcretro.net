@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-24T19:17:32.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  RetroJunkie's second channel trailer celebrates more subscribers, impending doom and videos with SuperNick. Don't forget to subscribe before the gates open! 🔥
 ---
 
 {% include youtube.html id="NlHiusHukV0" %}

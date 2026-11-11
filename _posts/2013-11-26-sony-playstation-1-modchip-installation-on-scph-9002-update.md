@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-26T19:25:54.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, sony, youtube]
+share_description: >-
+  PlayStation SCPH-9002 modchip testing improves after discovering badly burned CDs. Verify your discs before blaming the chip! Composite video still has issues. 💿
 ---
 
 {% include youtube.html id="Udr_CFyVsYg" %}

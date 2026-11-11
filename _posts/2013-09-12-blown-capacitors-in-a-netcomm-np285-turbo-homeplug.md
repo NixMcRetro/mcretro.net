@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-12T18:01:07.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, youtube]
+share_description: >-
+  Two NetComm NP285 HomePlug ethernet adapters reveal very different capacitor choices. One has bulging SamXon parts; the cause is not yet established. 🔌
 ---
 
 {% include youtube.html id="5GsIWy-iJy4" %}

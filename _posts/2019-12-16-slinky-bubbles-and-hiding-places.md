@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-16
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
+share_description: >-
+  Slinky the Senegal bichir explores hiding plants, swims through bubbles and generally acts like the king of the community aquarium. Fish rock! 🐟
 ---
 
 {% include youtube.html id="agcc18w58Ls" %}

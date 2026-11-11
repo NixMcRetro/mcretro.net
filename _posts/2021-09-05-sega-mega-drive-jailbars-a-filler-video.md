@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-09-05T14:19:09.000+10:00
 categories: [youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Seventeen seconds of Mega Drive jailbars become a gloriously unnecessary filler video. Behind the scenes, the GeoCities archive project grows. 🎮
 ---
 
 {% include youtube.html id="JbZ_0qu1i1w" %}

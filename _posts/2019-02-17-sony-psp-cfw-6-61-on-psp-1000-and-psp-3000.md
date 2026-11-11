@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-02-17T10:45:57.000+11:00
 categories: [hacks, sony, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Two PSPs, a 1000 and a 3000, get firmware 6.61, PRO-C2 and Infinity. microSD adapters make their little Memory Sticks feel positively ancient. 🎮
 ---
 
 {% include youtube.html id="pZ-7n9UnD58" %}

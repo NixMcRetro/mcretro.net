@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-16T13:26:35.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo, youtube]
+share_description: >-
+  An IPS patch turns Super Mario World into MIX4AAE, expanding the ROM from 4 to 24 Mbit. Check the header and checksum before flashing a SNES cart. 💾
 ---
 
 ![SMW_MIX4AAE](/assets/images/2016/img_0468.jpg)

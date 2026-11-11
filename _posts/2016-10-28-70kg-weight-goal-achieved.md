@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-10-28T07:54:51.000+11:00
 last_modified_at: 2026-11-04
 categories: [news]
+share_description: >-
+  An October 2016 milestone reaches 70 kg, with another set of Withings graphs. Now to see what the scale does next and eventually tackle those videos. 📉
 ---
 
 ![2016-10-28\_70kg\_goal](/assets/images/2016/img_0578.jpg)

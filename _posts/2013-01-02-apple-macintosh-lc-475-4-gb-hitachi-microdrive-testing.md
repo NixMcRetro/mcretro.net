@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-02T13:49:57.000+11:00
 last_modified_at: 2026-10-18
 categories: [apple, hacks, youtube]
+share_description: >-
+  Two 4 GB Hitachi Microdrives refuse to cooperate with an LC 475's SCSI card reader. CompactFlash works, so the investigation moves to formatting and drive geometry. 💾
 ---
 
 {% include youtube.html id="GVqcfOrbSKA" %}

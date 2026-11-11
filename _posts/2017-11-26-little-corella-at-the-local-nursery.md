@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2017-11-26
 last_modified_at: 2026-10-20
 categories: [parrots, reconstructed, youtube]
+share_description: >-
+  A Little Corella at a local nursery puts on three gloriously silly head-bobbing performances, in slow motion and at regular speed. What a show! 🦜
 ---
 
 {% include youtube.html id="8Mv4RHgfovs" %}

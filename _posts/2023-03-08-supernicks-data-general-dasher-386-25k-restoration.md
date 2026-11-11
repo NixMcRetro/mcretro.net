@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-03-08
 last_modified_at: 2026-10-22
 categories: [ibm-pc, repairs, youtube]
+share_description: >-
+  SuperNick's corroded Data General Dasher 386-25K needs heroic restoration. Firmware gets preserved, but the huge old machine won't boot yet. 🖥️
 ---
 
 {% include youtube.html id="HhseM_QsTrs" %}

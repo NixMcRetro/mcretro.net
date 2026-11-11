@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-10T19:56:02.000+10:00
 last_modified_at: 2026-11-03
 categories: [programming]
+share_description: >-
+  Visual Basic week two brings FizzBuzz, Roman numerals and the mystery of banker's rounding. At least the code works, mostly! 💻
 ---
 
 ![vb\_romans](/assets/images/2016/img_0523.jpg)

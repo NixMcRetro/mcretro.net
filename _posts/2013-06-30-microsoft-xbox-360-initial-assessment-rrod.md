@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-30T06:04:48.000+10:00
 last_modified_at: 2026-10-22
 categories: [microsoft, repairs, youtube]
+share_description: >-
+  An Xbox 360 from 2008 shows the dreaded three red lights and no video. Dust, missing faceplate and a suspicious rattle greet the first inspection. 🎮
 ---
 
 {% include youtube.html id="ExnVypmX_bU" %}

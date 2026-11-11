@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-08-13
 last_modified_at: 2026-10-22
 categories: [youtube]
+share_description: >-
+  Baldwin 5917 is a magnificent 1952 steam locomotive that spent decades hauling NSW freight. No microprocessors, just a rather wonderful mountain of machinery. 🚂
 ---
 
 {% include youtube.html id="Bg_IX8njatA" %}

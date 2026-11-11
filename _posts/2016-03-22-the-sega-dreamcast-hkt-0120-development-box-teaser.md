@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-22T15:03:06.000+11:00
 last_modified_at: 2026-10-18
 categories: [devkit, sega, youtube]
+share_description: >-
+  A Sega of America-tagged Dreamcast HKT-0120 Katana development box arrives. Before playing with it, there's an old SCSI hard drive to preserve. 🎮
 ---
 
 {% include youtube.html id="I9jRJ40c9Uc" %}

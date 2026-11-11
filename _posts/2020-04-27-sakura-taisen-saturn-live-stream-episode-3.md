@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-04-27T16:54:35.000+10:00
 categories: [gaming, livestream, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  Sakura Taisen episode three welcomes a new Flower Division member while the Hive of Darkness meddles with the team. Leadership is hard work! 🎮
 ---
 
 {% include youtube.html id="aiLFiC2aLdU" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-03-01
 last_modified_at: 2026-10-20
 categories: [fish, reconstructed, youtube]
+share_description: >-
+  Meet Toga the enormous Saratoga at UNSW Sydney! Three aquarium videos and a later visit confirm that this magnificent fish still has room to swim. 🐟
 ---
 
 {% include youtube.html id="jfEvvfrjWA8" %}

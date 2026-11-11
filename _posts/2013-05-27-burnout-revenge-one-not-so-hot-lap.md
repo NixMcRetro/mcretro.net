@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-27T04:13:08.000+10:00
 categories: [gaming, microsoft, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Burnout Revenge delivers one not-so-hot lap and a silver medal. Shortcuts are a lie, apparently. Or perhaps the driving just needs a little work. 🏎️
 ---
 
 {% include youtube.html id="SYU5QIcE4Ww" %}

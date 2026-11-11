@@ -5,6 +5,8 @@ date: 2018-02-13
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/chips-first-bath/"
+share_description: >-
+  Baby Borb Chip discovers the joys of a proper bath, with Tillie and Pudge supervising. Coordination needs work, but enthusiasm is unmatched! 🛁
 ---
 
 {% include youtube.html id="wzPSWOqyFC8" %}

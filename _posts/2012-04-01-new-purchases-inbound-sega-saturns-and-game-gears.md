@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-04-01T13:19:49.000+10:00
 last_modified_at: 2026-10-18
 categories: [sega]
+share_description: >-
+  Four more Sega Saturns, another Game Gear and a stack of repair parts are on the way. Will the so-called working consoles live up to their description? 📦
 ---
 
 I've got four Sega Saturns from two owners on the way: three functional and one broken. Broken in what way? Even the seller didn't know. Should be very interesting. Three of them are Model 1s and one is a Model 2. I already have two functional Model 2 Saturns, but I guess another one can't hurt.

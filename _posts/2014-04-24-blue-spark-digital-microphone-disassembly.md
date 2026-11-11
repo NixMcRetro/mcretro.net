@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-04-24T19:42:16.000+10:00
 last_modified_at: 2026-10-22
 categories: [youtube]
+share_description: >-
+  A $250 Blue Spark Digital microphone has a loose connector, awkward stand and questionable internal assembly. The sound is decent, when it stays connected. 🎤
 ---
 
 {% include youtube.html id="svHhhgr_Ox0" %}

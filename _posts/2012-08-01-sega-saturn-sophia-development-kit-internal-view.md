@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-08-01T12:21:04.000+10:00
 last_modified_at: 2026-10-18
 categories: [devkit, repairs, sega]
+share_description: >-
+  A Sega Saturn Sophia development kit gets an internal tour, revealing stacked boards, vintage chips and missing SH-2 processor cards. Cleaning comes first; testing must wait. 🖥️
 ---
 
 

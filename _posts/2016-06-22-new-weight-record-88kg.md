@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-06-22T09:30:42.000+10:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  A June 2016 milestone: 88 kg, my lowest recorded weight since tracking began in 2008. Plenty of graphs and a reminder that body-composition scales estimate. 📉
 ---
 
 ![2016-06-22_weight1](/assets/images/2016/img_0477.jpg)

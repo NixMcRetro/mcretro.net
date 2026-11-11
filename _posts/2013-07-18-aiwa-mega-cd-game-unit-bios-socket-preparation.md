@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-18T13:04:18.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  Removing the Aiwa Mega-CD BIOS for preservation left damaged connections behind. Socket preparation begins with a multimeter, trace maps and cautious optimism. 💾
 ---
 
 {% include youtube.html id="HAYwlG-0ojo" %}

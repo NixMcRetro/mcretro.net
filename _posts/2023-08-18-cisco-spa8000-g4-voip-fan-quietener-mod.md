@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-18T08:43:38.000+10:00
 categories: [hacks, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Cisco SPA8000-G4 gets a quieter fan controller after the recap. Tiny fans are annoying, but this VoIP gateway is a rather impressive box. 🔧
 ---
 
 {% include youtube.html id="h9isDzHVapY" %}

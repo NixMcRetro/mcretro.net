@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-12-07T21:40:21.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, livestream, youtube]
+share_description: >-
+  Fallout 4 day five clears the Corvega factory, collects far too much loot and loses the commentary audio. 360p and 900-plus pounds of regret! 🎮
 ---
 
 {% include youtube.html id="dGwivJW9zV0" %}

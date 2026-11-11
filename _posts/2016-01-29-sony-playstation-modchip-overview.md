@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-29T19:39:47.000+11:00
 last_modified_at: 2026-10-22
 categories: [guides, sony]
+share_description: >-
+  Mayumi 4, MultiMode3 and ONEchip all have their place in PlayStation modding. A look back at PIC programmers, troublesome config bits and lessons learnt. 💾
 ---
 
 First up, a little information on the PlayStation modchips and programmers I was experimenting with around 2016. A lot of this came from educated guesses, forum posts, things I read on the *internet* of all places, and my own trial and error!

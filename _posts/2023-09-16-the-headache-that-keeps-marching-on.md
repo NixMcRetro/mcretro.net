@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-09-16T15:52:24.000+10:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  An eleven-day headache resists the usual painkillers while a CT report prompts an MRI. A personal progress note, not a diagnosis. 🧠
 ---
 
 ![](/assets/images/2023/img_1162.jpg)

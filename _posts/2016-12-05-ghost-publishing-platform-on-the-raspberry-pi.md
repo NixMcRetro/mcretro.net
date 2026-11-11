@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-12-05T17:48:59.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, linux, raspberry-pi]
+share_description: >-
+  Ghost replaces WordPress for another Raspberry Pi website experiment. Node.js 4, Raspbian Jessie and lots of 2016 commands make this an archive, not a current guide. 🌐
 ---
 
 ![ghost-logo-svg](/assets/images/2016/img_0594.jpg)

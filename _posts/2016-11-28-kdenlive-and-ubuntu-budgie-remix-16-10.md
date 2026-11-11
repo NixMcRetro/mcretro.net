@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-11-28T22:52:41.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  An AU$215 HP Stream 11 runs Ubuntu Budgie and even edits video in Kdenlive. The hardware struggles, but it's a fascinating Linux experiment. 🐧
 ---
 
 {% include youtube.html id="FUKmoqScHs4" %}

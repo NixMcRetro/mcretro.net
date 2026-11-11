@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-02-01T07:42:35.000+11:00
 categories: [guides, programming, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A MiniPro TL866 reads a 27C1024 Sega CD BIOS EPROM repeatedly to check consistency. Version 1.10 appears, but matching dumps matter more than one success. 💾
 ---
 
 {% include youtube.html id="ZfEeTAFjEug" %}

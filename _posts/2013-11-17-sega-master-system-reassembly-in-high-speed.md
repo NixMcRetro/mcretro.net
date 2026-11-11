@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-17T07:06:01.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  A Sega Master System goes back together at high speed. The actual console still needs repair, but at least the screws are finally where they belong. 🔧
 ---
 
 {% include youtube.html id="mBtiQ-FuZeU" %}

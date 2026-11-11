@@ -5,6 +5,8 @@ date: 2018-01-11
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/the-charity-ball/"
+share_description: >-
+  Pudge and Tillie host the fanciest charity gala in Conureville. Formal feathers, absurd invitations and, naturally, a rattle ball. 🎩
 ---
 
 {% include youtube.html id="Dt55yhiupOQ" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-09T14:17:00.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  Can Sega Saturn Sophia development-kit CD hardware run in a retail VA0 Saturn? A mechanism swap and laser adjustment produce promising results, with caveats. 🔧
 ---
 
 {% include youtube.html id="qhnMKumXz3U" %}

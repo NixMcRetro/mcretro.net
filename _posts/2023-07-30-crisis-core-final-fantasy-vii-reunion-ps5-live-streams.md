@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-07-30T19:06:35.000+10:00
 categories: [gaming, livestream, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Seventy-three hours of Crisis Core Reunion on PS5, complete with Zack, cactuars and an emotional ending. Not a bad way to use a new SSD. 🎮
 ---
 
 {% include youtube.html id="lYVVaK_hgV4" %}

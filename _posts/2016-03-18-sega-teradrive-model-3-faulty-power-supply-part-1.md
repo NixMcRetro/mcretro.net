@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-18T08:43:45.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  The TeraDrive Model 3 makes an awful speaker buzz and refuses to boot. Power supply suspected, but the correct outputs and actual fault still need checking. ⚡
 ---
 
 

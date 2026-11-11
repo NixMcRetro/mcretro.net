@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-12-25T19:25:22.000+11:00
 categories: [news, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Christmas 2021 involves isolation, a very slow PCR result and plenty of unfinished modem videos. At least the Sega TeraDrive files are back online. 🎄
 ---
 
 {% include youtube.html id="qNrWHFk33c8" %}

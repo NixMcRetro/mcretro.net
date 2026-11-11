@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-06-20T15:15:15.000+10:00
 last_modified_at: 2026-10-18
 categories: [raspberry-pi]
+share_description: >-
+  McRetroNet's InspIRCd server can finally host a conversation with myself. NickServ, ChanServ and the web client still need convincing. 💬
 ---
 
 ![irc_test](/assets/images/2016/img_0476.jpg)

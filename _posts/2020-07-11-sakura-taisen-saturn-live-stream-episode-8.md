@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-07-11T22:12:21.000+10:00
 categories: [livestream, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The Koubu breaks, but the Flower Division has the Jinbu ready for battle. Better still, my recapped Saturn VA15 finally stops flickering. 🎮
 ---
 
 {% include youtube.html id="9Ri4o0WzFcU" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-02T09:45:27.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, microsoft]
+share_description: >-
+  Windows XP and HDD Raw Copy Tool make XTIDE CompactFlash images, but source read errors complicate the backup. Don't mix up source and destination! 💾
 ---
 
 ![](/assets/images/2016/img_0458.gif)

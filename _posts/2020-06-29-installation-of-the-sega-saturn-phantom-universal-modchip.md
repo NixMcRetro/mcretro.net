@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-06-29T12:30:35.000+10:00
 categories: [guides, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Phantom Universal modchip goes into a PAL Model 2 Sega Saturn. The soldering is manageable; the ribbon-cable origami is considerably less so. 🔧
 ---
 
 {% include youtube.html id="t2gWT1esQAw" %}

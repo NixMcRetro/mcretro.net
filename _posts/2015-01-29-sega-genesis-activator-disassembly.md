@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-01-29T22:02:38.000+11:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  Inside the Sega Genesis Activator: infrared sensors, an 80C51-family controller, a 7805 regulator and plenty of wires. Gaming with your whole body was a choice. 🎮
 ---
 
 {% include youtube.html id="eYI_idZHT3A" %}

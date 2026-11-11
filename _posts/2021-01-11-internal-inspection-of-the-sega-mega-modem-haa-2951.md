@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-01-11T08:40:53.000+11:00
 categories: [sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Inside Sega's 1990 Mega Modem HAA-2951: Rubycon capacitors, a little speaker and wonderfully chunky telephone-era networking hardware. 📞
 ---
 
 {% include youtube.html id="e1mpUmBoMBA" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-22T16:08:28.000+10:00
 last_modified_at: 2026-10-18
 categories: [sega, youtube]
+share_description: >-
+  Two Sega Dreamcast arcade sticks look nearly identical until you inspect the logos and labels. PAL and NTSC manufacturing clues remain a guessing game. 🎮
 ---
 
 {% include youtube.html id="WPnHoST6QGw" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-09-07T09:38:52.000+10:00
 categories: [gaming, livestream, sony]
 last_modified_at: 2026-10-18
+share_description: >-
+  Final Fantasy XVI gives me 62 hours of gorgeous PS5 action. The story is excellent, even if the late side quests start to feel like homework. 🎮
 ---
 
 [![](/assets/images/2023/img_1152.jpg)](https://www.youtube.com/playlist?list=PLLJI5UKuYtwVAVaH6ywsjtI3atRdiJ5lO)

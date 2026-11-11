@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-10-31T16:47:12.000+11:00
 categories: [raspberry-pi, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  RetroChallenge 2022/10 resurrects GeoCities on vintage-era Ubuntu, then browses the pages through real modems at a leisurely 14.4 kbit/s. 🌐
 ---
 
 {% include youtube.html id="nhbe7veKQ78" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-15T06:39:39.000+11:00
 last_modified_at: 2026-10-18
 categories: [programming, youtube]
+share_description: >-
+  An ATmega328P, six buttons, five knobs and a forest of loose wires become a working Lunchbeat 1-bit groovebox prototype. Messy, noisy and beautiful. 🎶
 ---
 
 {% include youtube.html id="xiE_-fCGows" %}

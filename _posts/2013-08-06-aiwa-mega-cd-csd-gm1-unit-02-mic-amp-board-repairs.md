@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-08-06T22:37:13.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  Two tiny broken traces on an Aiwa microphone amplifier board finally get bridged, restoring amplified sound. Naturally a separate volume problem appears. 🔧
 ---
 
 {% include youtube.html id="-zlB79E64Ns" %}

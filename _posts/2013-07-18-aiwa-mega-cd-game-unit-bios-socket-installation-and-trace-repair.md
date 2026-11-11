@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-18T13:55:52.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  An Aiwa Mega-CD Game Unit gets a proper BIOS socket and carefully bridged damaged traces. Continuity checks pass; the larger repair saga continues. 🔧
 ---
 
 {% include youtube.html id="Nxz84M6u57k" %}

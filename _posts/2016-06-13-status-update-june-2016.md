@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-06-13T21:27:16.000+10:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  June 2016 brings a catch-up on weight goals, university plans, a stalled Dreamcast devkit and a TeraDrive PSU. McRetro is still here! 🎮
 ---
 
 {% include youtube.html id="RFRlwWoXoc4" %}

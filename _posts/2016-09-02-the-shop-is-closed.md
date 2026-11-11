@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-09-02T12:18:57.000+10:00
 last_modified_at: 2026-11-04
 categories: [news]
+share_description: >-
+  The McRetro Gaming Shop shuts after a short run. Selling hardware isn't nearly as entertaining as tinkering with it, but the blog and videos remain. 🛍️
 ---
 
 ![closed_sign](/assets/images/2016/img_0550.jpg)

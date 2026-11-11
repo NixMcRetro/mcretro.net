@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-27T10:35:38.000+10:00
 last_modified_at: 2026-10-18
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  A Super Famicom's mysterious green vertical line survives a 7805 regulator swap. The console boots, but the cause of its video fault remains unknown. 📺
 ---
 
 {% include youtube.html id="hI2PWPEuFB0" %}

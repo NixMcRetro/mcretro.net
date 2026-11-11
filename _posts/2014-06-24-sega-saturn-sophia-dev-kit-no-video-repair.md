@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-24T20:15:55.000+10:00
 last_modified_at: 2026-10-22
 categories: [devkit, repairs, sega]
+share_description: >-
+  A European Sega Saturn Sophia has no video despite signs of life. Capacitor work and switch tests bring progress, though another kit still needs attention. 🔧
 ---
 
 {% include youtube.html id="of_DXU96Ubg" %}

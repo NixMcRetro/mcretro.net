@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-03-10T09:42:03.000+11:00
 categories: [nature]
 last_modified_at: 2026-11-09
+share_description: >-
+  Flicky the injured Floury Baker cicada spent ten remarkable days laying eggs and being cared for. Her complete daily video diary is preserved here. 🪲
 ---
 
 ![](/assets/images/2024/img_1266.jpg)

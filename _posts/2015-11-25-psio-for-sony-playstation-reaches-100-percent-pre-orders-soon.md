@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-11-25T19:22:37.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, sony]
+share_description: >-
+  PSIO's progress bar finally reaches 100% in November 2015, with the first 50 pre-orders expected soon. A milestone, not a claim about today's availability. 🎮
 ---
 
 ![](/assets/images/2015/img_0446.jpg)

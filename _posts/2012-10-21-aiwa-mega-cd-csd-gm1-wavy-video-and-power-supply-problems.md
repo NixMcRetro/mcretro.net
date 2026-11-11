@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-21
 last_modified_at: 2026-10-20
 categories: [repairs, sega, youtube]
+share_description: >-
+  An Aiwa Mega-CD develops wavy video when powered by an external supply. The picture cleans up with the original transformer, leaving another electrical mystery to solve. 📺
 ---
 
 

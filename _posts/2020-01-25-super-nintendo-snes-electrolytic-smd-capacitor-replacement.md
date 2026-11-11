@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-01-25T20:39:54.000+11:00
 last_modified_at: 2026-10-22
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  A spare SNS-CPU-GPM-02 SNES gets a partial recap, 7805 swap and fuse replacement. Two 33 uF capacitors remain missing, so the fault isn't fixed. 🔧
 ---
 
 {% include youtube.html id="yHJldf2AmMc" %}

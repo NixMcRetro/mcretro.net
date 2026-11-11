@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-09-04T14:57:22.000+10:00
 categories: [hacks, news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Winning RetroChallenge's grand prize is lovely, but building portable GeoCities search with Docker, Nutch and Solr is another adventure entirely. 🏆
 ---
 
 ![](/assets/images/2023/img_1149.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-09-23T13:38:14.000+10:00
 last_modified_at: 2026-10-18
 categories: [apple, repairs]
+share_description: >-
+  An Apple Macintosh LC 475 gets a fresh system and some classic games. The pizza-box Mac works, despite a damaged case, rust and a hard drive making horrible noises. 🍎
 ---
 
 ![](/assets/images/2012/img_0267.jpg)

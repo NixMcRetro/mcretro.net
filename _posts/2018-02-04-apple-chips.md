@@ -5,6 +5,8 @@ date: 2018-02-04
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/apple-chips/"
+share_description: >-
+  New arrival Chip has only been home a day and already wants apple, sultanas and whatever else fits into that tiny beak. Corn can wait! 🦜
 ---
 
 {% include youtube.html id="9OWk5A6CxTY" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-10-27T21:46:25.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  Newly hatched Willie Wagtails are adorable, but their swooping parents make the backyard a no-go zone. The family eventually moves on. 🐦
 ---
 
 {% include youtube.html id="NTaFlFftJrU" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-09-10T07:04:09.000+10:00
 last_modified_at: 2026-11-04
 categories: [programming]
+share_description: >-
+  An AMD-labelled TSOP40 flash chip identifies as an ST M29F032D in the GQ-4X4. Remarked? Quite possibly, although both chips work for SNES carts. 💾
 ---
 
 ![st-micro-m29f032d-tsop40](/assets/images/2016/img_0555.jpg)

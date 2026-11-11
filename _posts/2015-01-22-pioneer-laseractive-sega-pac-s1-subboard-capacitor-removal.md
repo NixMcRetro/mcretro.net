@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-01-22T21:58:41.000+11:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  Roughly forty capacitors on the LaserActive PAC-S1 subboard should be easy to remove. Several lifted pads later, this board has other ideas. 🔧
 ---
 
 {% include youtube.html id="N4OYQTUKXaU" %}

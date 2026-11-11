@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-05-25T19:51:35.000+10:00
 last_modified_at: 2026-10-18
 categories: [programming, youtube]
+share_description: >-
+  A Teenage Engineering OP-1 synthesiser makes lovely music, but sadly it belongs to somebody else. One can dream while the video backlog clears. 🎹
 ---
 
 {% include youtube.html id="vsmLxjGTAw8" %}

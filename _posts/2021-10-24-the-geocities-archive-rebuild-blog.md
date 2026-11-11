@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-10-24T11:52:58.000+11:00
 categories: [guides, programming, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The GeoCities rebuild begins turning hundreds of thousands of archived files into websites suitable for dial-up and vintage browsers. Hello, 1990s! 🌐
 ---
 
 {% include youtube.html id="e6ZckJ2HD9A" %}

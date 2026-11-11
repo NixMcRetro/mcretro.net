@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-02-08T22:13:41.000+11:00
 categories: [hacks, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Denon DCD-F101 ejects again after a temporary rubber-band replacement for its failed drive belt. Black elastic is more professional than coloured, surely! 💿
 ---
 
 {% include youtube.html id="9QK3DWSGjSY" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-01-17T21:51:32.000+11:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  The Pioneer LaserActive PAC-S1 comes apart to reveal Mega Drive and Mega-CD hardware covered in ageing capacitors. More than seventy replacements may be ahead. 🔧
 ---
 
 {% include youtube.html id="SDZ8r4jbXuQ" %}

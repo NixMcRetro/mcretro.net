@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-11-04T19:51:59.000+11:00
 categories: [repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  The fifth and final GE 4665 radio instalment shares a photo slideshow and capacitor list. Check your own board revision before copying anything. 📻
 ---
 
 {% include youtube.html id="02wIXkOE1Wk" %}

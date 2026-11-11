@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-10-19T08:54:01.000+11:00
 categories: [nature, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A rescued female Floury Baker cicada emerges in daylight, narrowly escapes a butcherbird and leaves an astonishingly detailed shell behind. 🪲
 ---
 
 {% include youtube.html id="KJDxxvHXkN0" %}

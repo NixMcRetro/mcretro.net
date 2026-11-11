@@ -1,9 +1,6 @@
 {% assign share_post_url = page.url | absolute_url %}
 {% assign share_email_title = page.title | replace: '—', '-' | replace: '–', '-' %}
 {% assign share_description = page.share_description | default: '' | strip %}
-{% if share_description == '' %}
-  {% assign share_description = site.data.share_descriptions[page.url] | default: '' | strip %}
-{% endif %}
 {% if share_description != '' %}
 {% capture share_post_text %}{{ share_description }}
 

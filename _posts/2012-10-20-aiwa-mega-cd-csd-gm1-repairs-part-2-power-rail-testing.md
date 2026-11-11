@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-20T04:17:40.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
+share_description: >-
+  The Aiwa Mega-CD's power rails get traced through transformer wiring and DC-DC converters. The game side is only seeing about 3.3 V, and the video looks awful. ⚡
 ---
 
 

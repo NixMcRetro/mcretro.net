@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-27T04:07:08.000+10:00
 last_modified_at: 2026-10-18
 categories: [microsoft, repairs, youtube]
+share_description: >-
+  An original Xbox power supply buzzes and arcs at the AC input. A cracked solder joint is repaired, stopping the arcing, but mains circuitry demands care. ⚡
 ---
 
 {% include youtube.html id="HwhaiQaNJXk" %}

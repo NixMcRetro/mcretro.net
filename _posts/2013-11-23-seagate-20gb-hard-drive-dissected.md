@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-23T19:09:54.000+11:00
 last_modified_at: 2026-10-22
 categories: [ibm-pc, youtube]
+share_description: >-
+  A dead Seagate 20 GB hard drive gets dissected for science. Shiny platter, tiny heads and a reminder that backups matter more than shiny metal. 💾
 ---
 
 {% include youtube.html id="kXszkxVC9ec" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-07T10:41:41.000+11:00
 last_modified_at: 2026-10-22
 categories: [devkit, nintendo, youtube]
+share_description: >-
+  IS Nitro Capture takes Nintendo DS screenshots and AVI recordings, plus separate AV outputs. A delightful blue box, but my video capture stutters. 📹
 ---
 
 {% include youtube.html id="cDvUDa9WSyA" %}

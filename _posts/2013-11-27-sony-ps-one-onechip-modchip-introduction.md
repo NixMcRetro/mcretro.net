@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-27T01:27:11.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, sony, youtube]
+share_description: >-
+  ONEchip promises import support for a PAL PS one SCPH-102, where MultiMode3 alone can't bypass the extra boot-ROM check. Wrong PICs delay installation. 🎮
 ---
 
 {% include youtube.html id="KOO84WW6fSs" %}

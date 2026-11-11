@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-30T05:43:56.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, programming]
+share_description: >-
+  A PICkit 2 can program supported Atmel AVR chips through AVRDUDE on a Mac, including the Lunchbeat's ATmega328P. Compiling it is another adventure. 💻
 ---
 
 ![](/assets/images/2013/img_0435.jpg)

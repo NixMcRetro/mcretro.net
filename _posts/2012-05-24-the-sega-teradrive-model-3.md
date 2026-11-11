@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-24T12:25:50.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  A Sega TeraDrive Model 3 arrives without its 30 MB hard drive. Windows runs from floppy, but finding a compatible replacement for that unusual 44-pin interface is another matter. 💾
 ---
 
 ![](/assets/images/2012/img_0133.jpg)

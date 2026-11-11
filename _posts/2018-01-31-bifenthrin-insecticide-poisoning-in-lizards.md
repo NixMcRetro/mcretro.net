@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-01-31T09:14:10.000+11:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Bifenthrin treatment saves a hedge but leaves nearby lizards stumbling and dying. A distressing look at potential pyrethroid poisoning. 🦎
 ---
 
 {% include youtube.html id="4vWaEu3mUhw" %}

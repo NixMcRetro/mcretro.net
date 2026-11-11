@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-18T17:54:49.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  MediEvil II loads on PSIO 1.1 with missing audio and stalls at a ghostly sequence. Avoiding that moment gets further, but compatibility is far from perfect. 🎮
 ---
 
 {% include youtube.html id="j6FXqcUsTWE" %}

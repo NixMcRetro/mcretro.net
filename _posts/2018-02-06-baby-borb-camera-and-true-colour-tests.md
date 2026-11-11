@@ -5,6 +5,8 @@ date: 2018-02-06
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/baby-borb-live-stream-true-colour-camera-testing/"
+share_description: >-
+  More Baby Borb camera tests try to capture Chip in true colour, but interference keeps ruining the picture. The star is ready, at least. 🦜
 ---
 
 {% include youtube.html id="oitXlHe8pWk" %}

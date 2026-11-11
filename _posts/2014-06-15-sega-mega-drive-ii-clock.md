@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-15T19:58:50.000+10:00
 last_modified_at: 2026-10-22
 categories: [hacks, sega, youtube]
+share_description: >-
+  An old Mega Drive II becomes a wall clock with misplaced drill holes, Blu Tack and some questionable engineering. At least it has Blast Processing! ⏰
 ---
 
 {% include youtube.html id="1vgHTpsaxss" %}

@@ -5,6 +5,8 @@ date: 2018-01-11
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/sprinkles-and-pudding/"
+share_description: >-
+  Sprinkles and Pudding are actually Tillie and Pudge, the household's two mischievous green-cheeked conures. A formal introduction to upside-down birds! 🦜
 ---
 
 {% include youtube.html id="-ORTQl0ZSgw" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-25T19:52:49.000+10:00
 last_modified_at: 2026-11-04
 categories: [hacks, repairs, sega]
+share_description: >-
+  Type A, B and C Sega Saturn power supplies have different connectors and rails. Physically fitting doesn't mean electrically compatible. ⚡
 ---
 
 ![SS - 0801](/assets/images/2016/img_0544.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-01-30T21:48:33.000+11:00
 categories: [repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The VY Commodore's airflow keeps switching to the windscreen under engine load. A vacuum actuator gets replaced, but other leaks remain possible. 🚗
 ---
 
 {% include youtube.html id="bWN9F-c_gEg" %}

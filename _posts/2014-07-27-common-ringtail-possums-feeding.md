@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-07-27T20:25:14.000+10:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  Common Ringtail Possums visit a Sydney balcony at 6 pm in winter, eating away like little furry rats. They're marsupials, though, not rodents! 🐾
 ---
 
 {% include youtube.html id="tFNSKdC_fbc" %}

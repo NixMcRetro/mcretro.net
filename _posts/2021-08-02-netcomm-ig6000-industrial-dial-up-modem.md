@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-08-02T18:03:55.000+10:00
 categories: [modems, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  A NetComm IG6000 industrial dial-up modem gets recapped, but a fragile factory patch doesn't survive the job. Farewell, mysterious black box. 🔧
 ---
 
 ![](/assets/images/2021/img_0731.jpg)

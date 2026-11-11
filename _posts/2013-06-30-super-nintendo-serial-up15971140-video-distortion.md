@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-30T03:06:05.000+10:00
 last_modified_at: 2026-10-22
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  SNES UP15971140 has sound but its image is purple, flickering and sometimes backwards. Corrosion and leaking capacitors look suspicious, not yet conclusive. 📺
 ---
 
 {% include youtube.html id="n1EwWgZlO98" %}

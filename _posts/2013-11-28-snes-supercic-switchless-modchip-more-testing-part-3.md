@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-28T19:31:02.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo, youtube]
+share_description: >-
+  A homemade SNES cartridge without its original CIC runs EarthBound under SuperCIC testing. Fourteen hours of quality assurance later, I may need sleep. 🎮
 ---
 
 {% include youtube.html id="Nt16y4l6Hcg" %}

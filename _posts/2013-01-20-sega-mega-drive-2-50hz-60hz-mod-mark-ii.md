@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-20T10:54:39.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
+share_description: >-
+  A second attempt at a Mega Drive 2 region mod brings tidy toggle switches and working 50 Hz / 60 Hz selection, without the previous console's blue rolling lines. 🎮
 ---
 
 {% include youtube.html id="CnRq9yR02_Y" %}

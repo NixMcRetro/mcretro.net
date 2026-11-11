@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-12-26T09:00:04.000+11:00
 categories: [gaming, livestream, sony]
 last_modified_at: 2026-10-18
+share_description: >-
+  Grandia on the PlayStation starts promisingly, until the full memory card stops me saving. Perhaps the Saturn version will treat me more kindly. 🎮
 ---
 
 {% include youtube.html id="RmxDK9B2cTo" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-01T01:47:19.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, repairs, youtube]
+share_description: >-
+  An old Mega Drive 2 cartridge slot gets cleaned using high-purity isopropyl alcohol and a cloth-wrapped card. The grime coming out is rather impressive. 🎮
 ---
 
 {% include youtube.html id="RU4Qb4g3hwY" %}

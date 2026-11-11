@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-17T14:18:20.000+10:00
 last_modified_at: 2026-10-18
 categories: [programming, study]
+share_description: >-
+  After two Visual Basic weeks, the programming course gets abandoned when its timing clashes with university plans. At least the windowed app works! 💻
 ---
 
 ![program2](/assets/images/2016/img_0537.jpg)

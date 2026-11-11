@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-01-03T09:10:15.000+11:00
 categories: [livestream, sega, sony]
 last_modified_at: 2026-10-18
+share_description: >-
+  Sakura Wars returns on PS4 with Ginza, the Imperial Combat Revue and a faster battle system. I missed a few Japanese-only sequels, apparently! 🎮
 ---
 
 {% include youtube.html id="b2BYj72A3h8" %}

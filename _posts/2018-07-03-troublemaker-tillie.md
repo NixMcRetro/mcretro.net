@@ -5,6 +5,8 @@ date: 2018-07-03
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/troublemaker-tillie/"
+share_description: >-
+  Tillie is making trouble again, with poor little Chip nearby to learn all the wrong lessons. So much attitude in one green bird! 🦜
 ---
 
 {% include youtube.html id="e0z5ocDz8MM" %}

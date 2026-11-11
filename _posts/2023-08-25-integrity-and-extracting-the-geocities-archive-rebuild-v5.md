@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-25T04:12:21.000+10:00
 categories: [guides]
 last_modified_at: 2026-10-18
+share_description: >-
+  GeoCities rebuild v5 gets split into 794 tar chunks with SHA-256 checksums. The boring archive-integrity work is also the most important part. 💾
 ---
 
 ![](/assets/images/2023/img_1130.jpg)

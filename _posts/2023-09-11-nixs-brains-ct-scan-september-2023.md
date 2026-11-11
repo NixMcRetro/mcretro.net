@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-09-11T15:22:31.000+10:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  A week-long headache leads to a CT scan and an incidental-looking brain anatomy mystery. Radiology, brain windows and a follow-up MRI ahead. 🧠
 ---
 
 {% include youtube.html id="wkTBQv1y65M" %}

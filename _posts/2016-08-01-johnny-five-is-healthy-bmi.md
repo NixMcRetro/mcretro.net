@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-01T08:14:23.000+10:00
 last_modified_at: 2026-11-04
 categories: [news]
+share_description: >-
+  Johnny Five is alive! A 2016 BMI milestone arrives, with plans to increase food gradually and maintain the progress. The scale isn't the whole story. 🤖
 ---
 
 ![start_aug1](/assets/images/2016/img_0507.jpg)

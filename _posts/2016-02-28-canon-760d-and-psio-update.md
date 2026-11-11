@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-02-28T18:22:38.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, sony, youtube]
+share_description: >-
+  The Canon EOS 760D arrives to film tiny solder joints, while PSIO pre-orders are supposedly returning in March 2016. Also, two glorious Model M keyboards. 📷
 ---
 
 {% include youtube.html id="lmKF96uNZQo" %}

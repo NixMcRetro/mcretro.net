@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-06-24T12:26:38.000+10:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  The Sega TeraDrive's 44-pin hard-drive connector isn't ordinary IDE. A deep dive into IBM PS/2 storage reveals working WDL-330P drives and plenty of unanswered questions. 💾
 ---
 
 ![](/assets/images/2012/img_0211.jpg)

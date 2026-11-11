@@ -5,6 +5,8 @@ date: 2018-03-20
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/stomp-the-musical/"
+share_description: >-
+  Tillie and Pudge turn the cage into a performance of Stomp, with Baby Borb Chip somehow ending up underfoot. The musical needs better stage management. 🦜
 ---
 
 {% include youtube.html id="nk5Xr7D1cT0" %}

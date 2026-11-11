@@ -5,6 +5,8 @@ date: 2018-02-19
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/chip-on-your-shoulder/"
+share_description: >-
+  There's a Chip on your shoulder! Our tiny Baby Borb discovers the joys of nesting in human hair and preparing for a career as a pirate. 🏴‍☠️
 ---
 
 {% include youtube.html id="ZaE7EOeAHLU" %}

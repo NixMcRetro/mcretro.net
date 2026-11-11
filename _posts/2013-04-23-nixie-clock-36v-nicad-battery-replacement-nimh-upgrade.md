@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-04-23T03:54:14.000+10:00
 categories: [guides, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Chronix Nixie clock swaps its 3.6 V NiCad backup battery for a NiMH pack. The experiment works in this clock, but charging compatibility matters. ⏰
 ---
 
 

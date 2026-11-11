@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-07-04T20:59:42.000+10:00
 categories: [nature, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A rescued woodlouse discovers that sweet potato is the finest meal on Earth. Over an hour of buggo eating footage, because of course I recorded it. 🍠
 ---
 
 {% include youtube.html id="bicIANJbHXo" %}

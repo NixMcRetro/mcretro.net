@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-12-24T08:53:09.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  A Christmas video-blitz plan involves 250 GB of unedited footage, Final Cut Pro X and terrible ADSL uploads. Perhaps the university connection can save me. 🎬
 ---
 
 {% include youtube.html id="O9UJH4cP0b0" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-10-02T14:36:17.000+11:00
 last_modified_at: 2026-11-04
 categories: [news]
+share_description: >-
+  Stopping minocycline before isotretinoin involves careful timing, prescribing advice and blood-donation rules. The skin improvements don't last long. 🩺
 ---
 
 ![](/assets/images/2016/img_0565.jpg)

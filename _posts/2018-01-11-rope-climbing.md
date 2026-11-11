@@ -5,6 +5,8 @@ date: 2018-01-11
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/rope-climbing/"
+share_description: >-
+  Tillie and Pudge scale their new rope from the bottom of the cage all the way to the top. Apparently bird gymnastics start at home. 🦜
 ---
 
 {% include youtube.html id="8n-geRAbzx4" %}

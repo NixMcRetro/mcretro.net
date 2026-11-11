@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-10T17:50:33.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  R4: Ridge Racer Type 4 runs in Time Attack on PSIO 1.1, but Grand Prix hangs and some audio is absent. The driving, meanwhile, is alarmingly creative. 🏎️
 ---
 
 {% include youtube.html id="QoqVEV3w3JE" %}

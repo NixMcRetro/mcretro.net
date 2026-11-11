@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-08-10T18:26:42.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega]
+share_description: >-
+  An Aiwa Mega-CD CSD-GM1 capacitor spreadsheet records values from two mainboard revisions. Handy for repairs, but not a definitive factory parts list. 🔧
 ---
 
 ![](/assets/images/2014/img_0440.jpg)

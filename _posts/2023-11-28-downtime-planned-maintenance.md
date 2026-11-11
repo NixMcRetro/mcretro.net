@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-11-28T18:20:51.000+11:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Moving to 4G home internet means CG-NAT, lost inbound access and a temporary McRetro shutdown. Even ddclient can't solve carrier-side NAT. 🌐
 ---
 
 ![](/assets/images/2023/img_1229.jpg)

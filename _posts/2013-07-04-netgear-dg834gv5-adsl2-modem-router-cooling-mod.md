@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-04T13:05:48.000+10:00
 last_modified_at: 2026-10-22
 categories: [hacks, youtube]
+share_description: >-
+  A fan, heatsinks and a little plastic surgery cool a toasty Netgear DG834Gv5. Running the fan around 9 V keeps the noise more civilised. 🌬️
 ---
 
 {% include youtube.html id="46GEuVSulwA" %}

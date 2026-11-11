@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-04T13:05:33.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, raspberry-pi]
+share_description: >-
+  After getting a Tor onion mirror working, I explore ZeroNet, Namecoin and .bit domains on a Raspberry Pi. More decentralised experiments, more headaches. 🌐
 ---
 
 ![Namecoin Logo](/assets/images/2016/img_0460.jpg)

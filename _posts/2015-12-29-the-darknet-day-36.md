@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-12-29T22:14:47.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  SomeOrdinaryGamers finds the Tor onion mirror of McRetro.net, bringing new subscribers and a laugh at my Hackers references. Raspberry Pi uptime: 36 days. 🌐
 ---
 
 {% include youtube.html id="PVGQ6vy444A" %}

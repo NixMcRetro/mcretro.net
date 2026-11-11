@@ -5,6 +5,8 @@ date: 2018-03-20
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/dancing-in-the-cage/"
+share_description: >-
+  Chip, Tillie and Pudge get together for a conure dance party around the cage. Pellets after the performance, naturally. What a show! 🦜
 ---
 
 {% include youtube.html id="8Tu7uj_jZZw" %}

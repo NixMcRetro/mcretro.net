@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-11T19:01:24.000+11:00
 categories: [gaming, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  McRetro Gaming resurfaces with forgotten footage and dreams of playing an unpatched Fallout 4, back when the ridiculous bugs were half the fun. 🎮
 ---
 
 {% include youtube.html id="87X0Hjsdawo" %}

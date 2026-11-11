@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-03
 last_modified_at: 2026-10-22
 categories: [youtube]
+share_description: >-
+  A childhood Navir Super Optic Wonder turns up with a torch, whistle, compass, sundial and binoculars. One leaked battery and half a monocular later, it still has charm. 🔦
 ---
 
 {% include youtube.html id="r9gKGN5Jw7U" %}

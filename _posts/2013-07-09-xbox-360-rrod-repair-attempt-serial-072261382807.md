@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-09T04:58:38.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, microsoft, repairs]
+share_description: >-
+  An Xbox 360 RROD repair attempt involving X-clamps, screws and a heat gun ends in failure. The fast-forward footage is entertaining, at least. 🔧
 ---
 
 {% include youtube.html id="0U5ThilUmRM" %}

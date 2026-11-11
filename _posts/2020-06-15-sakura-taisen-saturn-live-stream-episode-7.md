@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-06-15T21:55:12.000+10:00
 categories: [gaming, livestream, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  Sakura Taisen episode seven sends four Koubus into the enemy lair on disc two. Meanwhile, my Saturn VA15's flickering video still needs attention. 🎮
 ---
 
 {% include youtube.html id="rRClZvbO4U0" %}

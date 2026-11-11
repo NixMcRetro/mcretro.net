@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-30T07:39:27.000+11:00
 last_modified_at: 2026-10-22
 categories: [sega, youtube]
+share_description: >-
+  A yellowed Dreamcast gets a translucent smokey-grey replacement shell. The original case is preserved, and the rebuild even survives a collapsing camera tripod. 🎮
 ---
 
 {% include youtube.html id="RxLbBJuIxWY" %}

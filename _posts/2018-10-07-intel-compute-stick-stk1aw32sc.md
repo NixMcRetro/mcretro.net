@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-10-07T13:10:52.000+11:00
 categories: [guides, raspberry-pi, study]
 last_modified_at: 2026-10-18
+share_description: >-
+  An Intel Compute Stick runs Xubuntu 18.04 for speeding up university lecture videos. Only 2 GB RAM, but Linuxium's HDMI audio workaround saves the day. 💻
 ---
 
 ![](/assets/images/2018/img_0626.jpg)

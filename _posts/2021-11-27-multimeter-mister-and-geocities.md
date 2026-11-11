@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-11-27T22:36:09.000+11:00
 categories: [ibm-pc, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Banksia modem, MiSTer Windows 95, Linksys PAP and Raspberry Pi recreate a 28.8 kbit/s connection. GeoCities has never loaded so slowly! 📞
 ---
 
 {% include youtube.html id="2AoXWdPaqis" %}

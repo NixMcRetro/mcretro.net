@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-05T23:39:25.000+10:00
 last_modified_at: 2026-10-18
 categories: [sega]
+share_description: >-
+  An LED counter races along at 50 Hz using a hacked Mega Drive controller, while a Sega TeraDrive Model 2 finally arrives from Japan. One excellent day for unusual hardware. 💡
 ---
 
 {% include youtube.html id="dgUZsfS2seM" %}

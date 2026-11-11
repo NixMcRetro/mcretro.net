@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-12-31T12:16:08.000+11:00
 categories: [livestream, sony, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Horizon Forbidden West runs beautifully on my PS4 Slim, with a great story and almost no glitches. Cyberpunk 2077 could learn a thing or ten! 🎮
 ---
 
 {% include youtube.html id="D2v8C6uGGds" %}

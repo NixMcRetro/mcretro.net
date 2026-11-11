@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-13T11:45:06.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, youtube]
+share_description: >-
+  ScreenFlow, OBS and Final Cut Pro X turn a half-hour video into giant ProRes files. The 115 GB export is impressive, but wildly unnecessary. 🎬
 ---
 
 ![Video capture experiment](/assets/images/2016/img_0466.jpg)

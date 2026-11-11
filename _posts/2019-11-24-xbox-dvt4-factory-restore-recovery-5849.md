@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-11-24T17:06:58.000+11:00
 last_modified_at: 2026-10-22
 categories: [devkit, microsoft, youtube]
+share_description: >-
+  An XDK Recovery 5849 disc restores an Xbox DVT4 development kit onto a 120 GB SSD. The XDK Launcher returns, and a network update is next. 💾
 ---
 
 {% include youtube.html id="5MsQyTo8NeU" %}

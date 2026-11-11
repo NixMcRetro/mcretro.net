@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-04-22T21:59:19.000+10:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  COVID-19 hits several colleagues in April 2022, while my home tests remain negative. A little workplace anxiety and some very bad Photoshop. 🧪
 ---
 
 ![](/assets/images/2022/img_0924.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-09-05T19:35:27.000+10:00
 categories: [sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  The Dreamcast Arcade Stick Checker Version 2.00 ROM finally gets dumped and preserved. The hunt for Version 1.00, of course, continues. 💾
 ---
 
 ![](/assets/images/2018/img_0624.jpg)

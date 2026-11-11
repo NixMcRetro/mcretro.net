@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-01-09T21:48:10.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  2015 arrives with study plans, a smaller retro collection and the end of RetroJunkie.net. Where's that Back to the Future hoverboard, Mattel? 🎮
 ---
 
 {% include youtube.html id="crFHc23IQC0" %}

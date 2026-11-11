@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-01-19T23:14:36.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, study]
+share_description: >-
+  More than 400 broken McRetro image links get fixed after Picasa's demise. With university work finished, the video archive can finally get attention. 🌐
 ---
 
 ![](/assets/images/2018/img_0601.jpg)

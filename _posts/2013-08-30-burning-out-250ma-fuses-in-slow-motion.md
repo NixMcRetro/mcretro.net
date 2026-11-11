@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-08-30T15:42:33.000+10:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  Watch a few tiny 250 mA fuses give up in gloriously grainy 320×240 slow motion. The power adapter's rating isn't the actual fuse current. ⚡
 ---
 
 {% include youtube.html id="eVmm5ynZjsU" %}

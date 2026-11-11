@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-01-19T20:02:19.000+11:00
 categories: [hacks, programming, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  An old 2016 Mega Drive ROM experiment resurfaces, complete with v1.00, v1.01, SGDK source code and a wonderfully belated blog post. 🎮
 ---
 
 ![](/assets/images/2022/img_0797.gif)

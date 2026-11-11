@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-22T15:08:37.000+10:00
 last_modified_at: 2026-10-18
 categories: [guides, youtube]
+share_description: >-
+  A 7806 voltage regulator delivers roughly 6 V on the test bench, including the one suspected in an Aiwa repair. The fault must be elsewhere. ⚡
 ---
 
 

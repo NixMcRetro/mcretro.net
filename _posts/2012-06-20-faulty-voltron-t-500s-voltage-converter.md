@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-06-20
 last_modified_at: 2026-10-22
 categories: [repairs, youtube]
+share_description: >-
+  A Voltron T-500S converter arrives with a dodgy switch, worrying buzz, fake ventilation slots and a spelling mistake. Quite a collection for a mains-powered device. 🔌
 ---
 
 {% include youtube.html id="EMV7tzKd0PY" %}

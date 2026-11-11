@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-13T05:14:14.000+10:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, sega]
+share_description: >-
+  Diagnostics on a Sega TeraDrive Model 2 reveal PC DOS 3.30, a curious RAM disk, 1991 component dates and a Western Digital video controller. Even its BIOS has mysteries. 💾
 ---
 
 ![](/assets/images/2012/img_0089.jpg)

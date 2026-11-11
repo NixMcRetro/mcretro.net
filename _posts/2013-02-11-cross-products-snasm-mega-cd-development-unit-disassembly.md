@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-02-11T08:00:55.000+11:00
 last_modified_at: 2026-10-18
 categories: [devkit, sega]
+share_description: >-
+  Inside a rare Cross Products SNASM Mega-CD development unit: modified Sega hardware, extra boards and a forest of connectors. Getting it apart is half the adventure. 🔧
 ---
 
 ![](/assets/images/2013/img_0369.jpg)

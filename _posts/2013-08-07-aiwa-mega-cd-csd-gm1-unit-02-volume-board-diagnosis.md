@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-08-07T00:38:10.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  The Aiwa CSD-GM1's left channel keeps playing when the volume is turned down. A troublesome seven-pin B50K control becomes the next suspect. 🎵
 ---
 
 {% include youtube.html id="U2P3Orbi2_I" %}

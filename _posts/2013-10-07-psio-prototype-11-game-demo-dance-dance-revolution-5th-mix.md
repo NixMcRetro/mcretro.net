@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-07T18:48:14.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  PSIO prototype 1.1 loads Dance Dance Revolution 5th Mix, but some music goes missing and RGB gives a blank screen. Composite works in monochrome. Fancy footwork optional. 🎮
 ---
 
 {% include youtube.html id="SN5szKa-NmU" %}

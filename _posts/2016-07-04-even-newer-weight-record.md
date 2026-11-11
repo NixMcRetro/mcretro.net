@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-07-04T11:10:24.000+10:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  More Withings graphs, more downward progress and another little 2016 checkpoint. The six-month chart makes the story easier to see. 📊
 ---
 
 ![All time weight chart](/assets/images/2016/img_0485a.jpg)

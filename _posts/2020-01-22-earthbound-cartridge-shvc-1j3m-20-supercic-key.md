@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-01-22T21:14:51.000+11:00
 categories: [hacks, nintendo, programming]
 last_modified_at: 2026-10-18
+share_description: >-
+  EarthBound gets a SuperCIC key made from a PIC12F629 to replace its missing cartridge CIC. Once I remember the clock line, the Super Famicom boots! 🎮
 ---
 
 ![](/assets/images/2020/img_0643.jpg)

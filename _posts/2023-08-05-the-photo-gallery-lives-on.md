@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-05T10:48:13.000+10:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Years of scattered photos finally head towards a properly organised McRetro gallery. Sega oddities, modem pictures and forgotten treasures await! 📸
 ---
 
 ![](/assets/images/2023/img_1062.jpg)

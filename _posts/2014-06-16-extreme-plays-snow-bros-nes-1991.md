@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-16T22:22:06.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, nintendo, youtube]
+share_description: >-
+  Snow Bros. on the NES brings arcade snowball action to Extreme Plays. Toaplan's frosty classic makes for a welcome change from repair disasters. ❄️
 ---
 
 {% include youtube.html id="CO7Uq2UF--k" %}

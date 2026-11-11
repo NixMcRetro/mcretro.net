@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-28T07:02:27.000+11:00
 categories: [news, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Two bookcases, two TeraDrives and a frankly unreasonable amount of Sega hardware. An October 2012 collection tour proves that the real upgrade needed is more shelving. 🎮
 ---
 
 {% include youtube.html id="2gD60B1CCYs" %}

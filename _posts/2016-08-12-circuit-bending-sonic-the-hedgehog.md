@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-12T07:44:45.000+10:00
 last_modified_at: 2026-11-04
 categories: [guides, hacks, sega]
+share_description: >-
+  Circuit bending a faulty Mega Drive 2 makes Sonic glitch beautifully by disturbing VRAM and Z80 RAM signals. Power and ground pins stay off limits. 🎮
 ---
 
 {% include youtube.html id="_cXIrhNazys" %}

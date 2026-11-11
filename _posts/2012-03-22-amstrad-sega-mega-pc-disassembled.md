@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-03-22T13:09:58.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  An Amstrad Mega PC in pieces reveals its Mega Drive ISA card, corroded tracks and some very clever video switching. Progress at last, with plenty still to fix. 🖥️
 ---
 
 {% include youtube.html id="MyKHXU0ikFY" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-11-03T12:01:25.000+11:00
 categories: [news, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Another MRI, this time with contrast, accompanies a headache approaching two months. Medical answers remain elusive, but Katsu Jazz Fridays survive. 🧠
 ---
 
 {% include youtube.html id="r6eyBCCyiyc" %}

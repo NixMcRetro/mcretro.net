@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-12-18T13:06:33.000+11:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  McRetro returns online through Cloudflare Tunnel, despite a WordPress login lockout along the way. Cloudflare Access provides some welcome relief. 🌐
 ---
 
 ![](/assets/images/2023/img_1234.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-26
 last_modified_at: 2026-10-21
 categories: [gaming, sony, youtube]
+share_description: >-
+  Tony Hawk's Pro Skater 4 pulls off some impressive skateboarding on the original PlayStation, with an excellent soundtrack and a McRetro score of 7.8. 🛹
 ---
 
 {% include youtube.html id="V53kDjaz_3Y" %}

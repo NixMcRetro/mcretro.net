@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-13T19:56:27.000+10:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  Moving house with a mountain of retro hardware means mystery boxes, packed-away consoles and drawers full of cables instead of clothes. Priorities! 📦
 ---
 
 {% include youtube.html id="jaFDUxo0rpw" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-20T17:57:19.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Chrono Trigger 1.1 repeatedly hangs at a black screen on PSIO 1.1, while version 1.0 gets further. A strangely specific early-prototype compatibility problem. 🎮
 ---
 
 {% include youtube.html id="MYzZAY3syUI" %}

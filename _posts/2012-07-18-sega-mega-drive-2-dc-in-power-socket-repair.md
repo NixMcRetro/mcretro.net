@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-07-18T22:53:08.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  A Mega Drive 2 loses power whenever its cable moves. The culprit is a cracked DC-in solder joint, and a quick reflow gets the console reliably running again. 🔧
 ---
 
 {% include youtube.html id="01Tx26wi1Zg" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-26T19:45:22.000+10:00
 last_modified_at: 2026-10-22
 categories: [devkit, hacks, sega]
+share_description: >-
+  Converting Zero Wing from SMD to BIN lets SEGALOAD start it on a Sega development cartridge. It freezes later, but the software transfer works. 💾
 ---
 
 {% include youtube.html id="dHOHttUf32E" %}

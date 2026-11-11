@@ -5,6 +5,8 @@ date: 2018-02-11
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/feeding-baby-borb/"
+share_description: >-
+  Warm bird mush, two feeding videos and a tiny crop to fill. Baby Borb Chip knows exactly how to operate the human food dispenser. 🦜
 ---
 
 {% include youtube.html id="ugwareUoIL4" %}

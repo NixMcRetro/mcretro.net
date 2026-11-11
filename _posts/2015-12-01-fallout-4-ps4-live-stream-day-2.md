@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-12-01T22:33:25.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, livestream, youtube]
+share_description: >-
+  Fallout 4 live stream day two brings more wasteland adventures, Sony and YouTube, plus a Sydney day so hot even lunch and dinner join in. ☀️
 ---
 
 {% include youtube.html id="jbweu3QLcGQ" %}

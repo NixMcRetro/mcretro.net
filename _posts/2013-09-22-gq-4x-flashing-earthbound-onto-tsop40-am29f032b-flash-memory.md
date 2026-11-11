@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-22T18:12:02.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo, youtube]
+share_description: >-
+  An AM29F032B TSOP40 chip finally accepts an EarthBound image through the GQ-4X after a reseat. Programming verified; cartridge assembly is a separate job. 💾
 ---
 
 {% include youtube.html id="vET3hOFtoq0" %}

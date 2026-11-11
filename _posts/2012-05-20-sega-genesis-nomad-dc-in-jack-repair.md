@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-20T10:32:14.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  A broken Genesis Nomad comes back to life after its shorting DC-in jack is replaced with one borrowed from a Mega Drive 2. New screen, clean buttons, actual handheld gaming. 🎮
 ---
 
 ![](/assets/images/2012/img_0060.jpg)

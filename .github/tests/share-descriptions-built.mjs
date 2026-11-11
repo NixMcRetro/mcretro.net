@@ -5,14 +5,9 @@ import path from 'node:path';
 
 const site = process.argv[2] || '_site';
 const manifest = JSON.parse(fs.readFileSync('.github/share-description-manifest.json', 'utf8'));
-const data = JSON.parse(fs.readFileSync('_data/share_descriptions.json', 'utf8'));
 
 function description(entry) {
-  if (entry.storage === 'jekyll_data') {
-    const text = data[new URL(entry.url).pathname];
-    assert.equal(typeof text, 'string');
-    return text;
-  }
+  assert.equal(entry.storage, 'frontmatter', 'Description must be in article YAML');
   const source = fs.readFileSync(entry.path, 'utf8');
   const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   assert.ok(match);

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-09-30T19:28:49.000+10:00
 categories: [microsoft, news, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  September brings a university withdrawal, a clearer understanding of autism, therapy and new plans for study. Life admin continues, naturally. 🌱
 ---
 
 ![](/assets/images/2024/img_1358.jpg)

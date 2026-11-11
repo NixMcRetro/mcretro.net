@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-01
 last_modified_at: 2026-10-20
 categories: [apple, reconstructed, youtube]
+share_description: >-
+  A supposedly full 68040 in an LC 475 reports no FPU in TattleTech. The 33 MHz Mac still runs, but what exactly was inside that replacement CPU? 🍎
 ---
 
 {% include youtube.html id="rafNQf4PCh4" %}

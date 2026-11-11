@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-05T22:48:22.000+10:00
 last_modified_at: 2026-10-18
 categories: [apple, repairs]
+share_description: >-
+  An LC 475 gets System 7.5.3, floppy transfers and a few beloved old games. Its hard drive sounds dreadful, but this Macintosh has finally become usable again. 🍎
 ---
 
 {% include youtube.html id="yOQIPCMttiI" %}

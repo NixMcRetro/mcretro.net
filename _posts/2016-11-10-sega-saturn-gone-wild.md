@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-11-10T16:43:26.000+11:00
 last_modified_at: 2026-10-18
 categories: [sega]
+share_description: >-
+  Eleven photographs catalogue Sega Saturn motherboard revisions, CD drives and power supplies from VA1 to VA13. Thanks, Zyrobs, for the detective work! 🎮
 ---
 
 ![sega-saturn-console-set-mk1](/assets/images/2016/img_0592.jpg)

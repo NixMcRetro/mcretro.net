@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-02-01
 last_modified_at: 2026-10-21
 categories: [hacks, nintendo, youtube]
+share_description: >-
+  Six 27C040 EPROMs and some DIP-switch experimenting get EarthBound running on a real SNES developer cartridge. Copy protection remains a concern. 💾
 ---
 
 {% include youtube.html id="L_1cBbgMgG4" %}

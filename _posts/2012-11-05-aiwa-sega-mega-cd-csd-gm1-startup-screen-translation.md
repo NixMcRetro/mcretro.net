@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-05T07:02:59.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  What is the Japanese Aiwa Mega-CD startup screen saying? A community translation reveals prompts to press Start, check the disc and wait a little bit. Finally! 🎮
 ---
 
 ![](/assets/images/2012/img_0351.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-02-28
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
+share_description: >-
+  Slinky the Senegal bichir spends early 2020 eating pellets, dried worms and occasionally rampaging around the aquarium. What a fish! 🐟
 ---
 
 {% include youtube.html id="qdN7sJcBImQ" %}

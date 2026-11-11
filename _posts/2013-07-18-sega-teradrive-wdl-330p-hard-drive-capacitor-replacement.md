@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-18T03:12:37.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, repairs, sega]
+share_description: >-
+  Leaky capacitors get replaced on a Sega TeraDrive WDL-330P drive, with a lifted pad rescued by a small wire. Existing bad blocks remain, sadly. 🔧
 ---
 
 {% include youtube.html id="P6V_MS09rHo" %}

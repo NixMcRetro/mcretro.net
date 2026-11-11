@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-04-29
 last_modified_at: 2026-10-22
 categories: [youtube]
+share_description: >-
+  Meet Pepper, a clever little sausage dog who already knows their name. Coco and Prinny make brief appearances, but this puppy steals the show. 🐶
 ---
 
 {% include youtube.html id="9t-FO4ys4VE" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-02-23T11:03:19.000+11:00
 categories: [news, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Eight years after RetroJunkie2020 began, McRetro catches up on archived videos, the OSSC, MiSTer and streaming. Thank you, subscribers! 🎮
 ---
 
 {% include youtube.html id="LOIdG46Lgb0" %}

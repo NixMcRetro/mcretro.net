@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-11-17
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
+share_description: >-
+  Todd, Slinky, Plankers, Whiskers and friends return for a tour of the Juwel Rio 125 community tank. Plenty of bubbles, hiding and aquarium chemistry. 🐟
 ---
 
 {% include youtube.html id="xlpuNfwaijI" %}

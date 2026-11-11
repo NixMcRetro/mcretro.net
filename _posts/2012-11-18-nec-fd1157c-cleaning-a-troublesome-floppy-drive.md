@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-18
 last_modified_at: 2026-10-20
 categories: [ibm-pc, reconstructed, youtube]
+share_description: >-
+  Cleaning the heads of an NEC FD1157C 1.2 MB floppy drive reveals a filthy mechanism, but the drive still refuses to read disks. No miracle repair today. 🔧
 ---
 
 

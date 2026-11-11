@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-29T10:19:43.000+10:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Two weeks of CPAP trial data meet OSCAR graphs, interrupted sleep and uncertain machine flags. Interesting measurements, not a confirmed diagnosis. 😴
 ---
 
 ![](/assets/images/2023/img_1093.jpg)

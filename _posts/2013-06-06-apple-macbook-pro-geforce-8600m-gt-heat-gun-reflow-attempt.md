@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-06T23:22:24.000+10:00
 last_modified_at: 2026-10-18
 categories: [apple, hacks, repairs]
+share_description: >-
+  A dead 17-inch MacBook Pro gets an uncontrolled heat-gun experiment around its GeForce 8600M GT. It boots again, but the result isn't a reliable repair method. 🔥
 ---
 
 

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-12-21T10:14:18.000+11:00
 categories: [hacks, modems, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  Tim retrobrights a yellowed Banksia Wave SP56 shell. The plastic lightens, but so does the coloured lettering. Retrobright or retroblight? 🤔
 ---
 
 ![](/assets/images/2021/img_0778.jpg)

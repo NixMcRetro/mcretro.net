@@ -5,6 +5,8 @@ date: 2018-02-19
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/chip-scritches/"
+share_description: >-
+  A very little Chippy enjoys some luxurious head scritches after weeks of exploring, feeding and napping. No grand adventure needed today. 🦜
 ---
 
 {% include youtube.html id="NKUC_oWf9Ws" %}

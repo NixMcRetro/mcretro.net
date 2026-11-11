@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-04-26T19:43:05.000+10:00
 last_modified_at: 2026-10-22
 categories: [youtube]
+share_description: >-
+  The enormous Blue Yeti arrives from the Apple Store after a disappointing Blue Spark Digital. First impressions are solid, but audio testing comes later. 🎤
 ---
 
 {% include youtube.html id="uzgqSPezYAA" %}

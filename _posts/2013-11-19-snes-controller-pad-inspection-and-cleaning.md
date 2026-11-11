@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-19T19:07:11.000+11:00
 last_modified_at: 2026-10-22
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  A genuine SNES controller gets fresh button membranes salvaged from a dreadful three-dollar knockoff. EarthBound feels much better after the clean-up. 🎮
 ---
 
 {% include youtube.html id="UB6YRB819P0" %}

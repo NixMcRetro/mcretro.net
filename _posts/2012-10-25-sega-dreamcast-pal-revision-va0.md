@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-25T13:06:33.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, sega]
+share_description: >-
+  A rare PAL VA0 Dreamcast has an April 1999 shell date and a display-only warning label. It may be a pre-launch unit, but its original purpose remains unproven. 🎮
 ---
 
 ![](/assets/images/2012/img_0339.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-11T20:42:39.000+10:00
 last_modified_at: 2026-11-04
 categories: [news]
+share_description: >-
+  Salmon versus trout in a completely serious battle of fish with imaginary rifles. Also, actual FDA mercury figures. I vote salmon. 🐟
 ---
 
 ![Screen Shot 2016-08-11 at 8.26.38 pm](/assets/images/2016/img_0525.jpg)

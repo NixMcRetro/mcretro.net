@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-09-19T21:05:35.000+10:00
 last_modified_at: 2026-11-04
 categories: [programming]
+share_description: >-
+  Importing 566 WordPress posts into Jekyll leaves a forest of unwanted metadata. OS X find, xargs and sed offer cleanup, with plenty of foot-gun potential. 💻
 ---
 
 ![hackers1](/assets/images/2016/img_0562.jpg)

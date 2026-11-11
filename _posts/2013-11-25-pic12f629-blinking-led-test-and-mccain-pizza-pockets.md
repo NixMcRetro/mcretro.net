@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-25T19:22:44.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, programming, sony]
+share_description: >-
+  A PIC12F629 happily blinks a two-colour LED from a Nokia charger, but still refuses to verify the PlayStation modchip firmware. Also, McCain Pizza Pockets. 💡
 ---
 
 {% include youtube.html id="Yg8A5agB0j4" %}

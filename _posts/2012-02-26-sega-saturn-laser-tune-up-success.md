@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-02-26T01:49:26.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  A supposedly dead Sega Saturn reads games again after a tiny laser adjustment. Meanwhile, a troublesome power supply refuses to join the celebration. 🔧
 ---
 
 ![](/assets/images/2012/img_0005.jpg)

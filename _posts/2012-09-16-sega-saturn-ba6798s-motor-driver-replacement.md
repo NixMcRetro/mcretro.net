@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-09-16
 last_modified_at: 2026-10-20
 categories: [repairs, sega, youtube]
+share_description: >-
+  A five-dollar BA6798S motor driver goes into a deranged Sega Saturn CD deck. The soldering succeeds, but the drive is still completely berserk. Pizza cancelled. 🔧
 ---
 
 {% include youtube.html id="mfV-A0R-ctA" %}

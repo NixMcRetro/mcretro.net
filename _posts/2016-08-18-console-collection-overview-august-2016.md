@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-18T07:13:37.000+10:00
 last_modified_at: 2026-10-18
 categories: [nintendo, sega, sony]
+share_description: >-
+  August 2016 means downsizing to one console per generation, except the devkits and TeraDrives won't fit that plan. Fewer machines, somehow. 🎮
 ---
 
 {% include youtube.html id="L5dvP53bE-0" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-10T12:57:46.000+11:00
 last_modified_at: 2026-10-22
 categories: [nintendo, repairs]
+share_description: >-
+  CPU, PPU, VRAM or corroded traces? A collection of Nintendo Super System repair photos shows how different SNES hardware faults can look. 🔧
 ---
 
 ![Super Nintendo motherboard from an earlier McRetro repair](/assets/images/2013/img_0421.jpg)

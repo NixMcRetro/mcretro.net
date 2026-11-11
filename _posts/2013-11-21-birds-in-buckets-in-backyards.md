@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-21T19:08:13.000+11:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  A little honeyeater gets rescued from a water-filled bucket, dried off and released. Then the bucket gets tipped over. Hopefully that's the last one! 🐦
 ---
 
 {% include youtube.html id="45BVe_RSHDo" %}

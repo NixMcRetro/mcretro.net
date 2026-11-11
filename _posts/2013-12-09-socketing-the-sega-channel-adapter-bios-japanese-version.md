@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-09T20:29:00.000+11:00
 last_modified_at: 2026-10-22
 categories: [hacks, sega, youtube]
+share_description: >-
+  Socketing the Japanese Sega Channel adapter's BIOS makes future dumps easier. The menus and Sonic animation still work afterwards. Not bad at all! 🔧
 ---
 
 {% include youtube.html id="4k-ZCdzI_40" %}

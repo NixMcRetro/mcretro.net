@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-05-11T19:46:14.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  One thousand subscribers! Time to dismantle a Sega Master System Converter II, including its Model 2 spacer, Pause button and surprising lack of circuitry. 🎮
 ---
 
 {% include youtube.html id="4sFgL5LTbDM" %}

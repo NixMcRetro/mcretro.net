@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-03-15
 last_modified_at: 2026-10-21
 categories: [hacks, sega, youtube]
+share_description: >-
+  A Sega Genesis Nomad looks beautiful through the XRGB-mini Framemeister, while the Mega Drive 2 refuses to display. Time to investigate the RGB sync wiring. 🎮
 ---
 
 {% include youtube.html id="8YOu2tAiCNg" %}

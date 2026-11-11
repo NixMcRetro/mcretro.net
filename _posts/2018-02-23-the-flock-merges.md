@@ -5,6 +5,8 @@ date: 2018-02-23
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/the-flock-merges/"
+share_description: >-
+  Chip begins meeting Pudge and Tillie after time apart. The newest Baby Borb joins the flock gradually, with plenty of little bird politics. 🦜
 ---
 
 {% include youtube.html id="uOgLduurno0" %}

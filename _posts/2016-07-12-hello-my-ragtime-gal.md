@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-07-12T16:20:35.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sega, youtube]
+share_description: >-
+  Tom Brier turns Sonic the Hedgehog tunes into magnificent ragtime piano. Casino Night Zone has never sounded so wonderfully old-fashioned. 🎹
 ---
 
 {% include youtube.html id="xVX5MLiDxms" %}

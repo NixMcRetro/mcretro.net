@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-02T20:19:08.000+11:00
 last_modified_at: 2026-10-22
 categories: [hacks, sega, youtube]
+share_description: >-
+  Making a Mega Drive cartridge dumper with a Mega-CD, controller port 2 and a PC parallel cable sounds brilliant. The first home-made transfer doesn't work. 💾
 ---
 
 {% include youtube.html id="ON2eUAP6yz4" %}

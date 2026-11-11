@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-27T04:24:27.000+10:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  The Framemeister's Japanese remote gets a labelled vinyl overlay courtesy of a forum member. Beautiful RGB pictures are nicer when you know what the buttons do. 📺
 ---
 
 ![](/assets/images/2013/img_0402.jpg)

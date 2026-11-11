@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-08T21:28:32.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Rage Racer plays on PSIO 1.1, but the background music is missing and some scenery looks odd. I can hit every barrier at impressive speed, though! 🏎️
 ---
 
 {% include youtube.html id="A6ndDJIb_bc" %}

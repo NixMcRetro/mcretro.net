@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-04-04T03:16:24.000+11:00
 categories: [gaming, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A 1992 Mean Machines Sega VHS previews the Mega-CD with Night Trap, Sewer Shark, Batman Returns and more. The tape survives, though the audio stutters. 📼
 ---
 
 {% include youtube.html id="CLYfrhCWUx0" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-15
 last_modified_at: 2026-10-20
 categories: [repairs, sega, youtube]
+share_description: >-
+  Cracked traces on an Aiwa CSD-GM1 mainboard get bridged with colourful wires. After plenty of continuity checks, the red power light returns. One victory, many faults left. 🔧
 ---
 
 

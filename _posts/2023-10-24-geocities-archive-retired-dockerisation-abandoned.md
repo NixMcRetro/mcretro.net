@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-10-24T04:48:06.000+11:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  The GeoCities rebuild is retired after archive moderation problems overwhelm the Docker migration plan. Preserving the old web isn't simple. 🌐
 ---
 
 ![](/assets/images/2023/img_1180.jpg)

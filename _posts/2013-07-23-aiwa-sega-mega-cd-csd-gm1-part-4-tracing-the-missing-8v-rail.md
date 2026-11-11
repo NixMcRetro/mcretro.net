@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-23T15:27:51.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega, youtube]
+share_description: >-
+  A missing 8 V rail leads to a suspicious transistor stage on the Aiwa CSD-GM1. One board has 7.7 V in and almost nothing out, but the cause isn't confirmed. ⚡
 ---
 
 

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-10-04T22:15:39.000+10:00
 categories: [news, nintendo, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Two original Game Boys tackle Tetris without a link cable. The screens and my scores leave something to be desired, but Type B music is magnificent. 🎮
 ---
 
 {% include youtube.html id="NsKZTus88kg" %}

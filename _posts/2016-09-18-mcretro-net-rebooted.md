@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-09-18T20:59:46.000+10:00
 last_modified_at: 2026-11-04
 categories: [news]
+share_description: >-
+  McRetro.net returns to Markdown and Jekyll with 566 imported posts. Surely this platform will last forever! Spoiler: WordPress returns a month later. 🌐
 ---
 
 ![jekyll-logo](/assets/images/2016/img_0561.jpg)

@@ -5,6 +5,8 @@ date: 2018-03-08
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/preening-party/"
+share_description: >-
+  Tillie and Pudge give Baby Borb Chip a thorough preening session. Two videos of serious feather maintenance in pursuit of the cleanest little bird. 🦜
 ---
 
 {% include youtube.html id="BjObhrSDxYg" %}

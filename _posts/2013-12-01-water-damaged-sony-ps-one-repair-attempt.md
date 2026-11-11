@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-12-01T21:01:56.000+11:00
 last_modified_at: 2026-10-22
 categories: [repairs, sony, youtube]
+share_description: >-
+  A water-damaged PS one gets a replacement power switch, cleaned connectors and revived controller ports. The CD drive still refuses to read discs. 🔧
 ---
 
 {% include youtube.html id="cp9d2UZO5A0" %}

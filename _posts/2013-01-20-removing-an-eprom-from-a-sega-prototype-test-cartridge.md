@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-20T11:04:43.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, sega, youtube]
+share_description: >-
+  Removing one EPROM from a four-chip Sega Monopoly cartridge doesn't stop it booting, but gameplay gets wonderfully weird. An unusual little experiment. 🎮
 ---
 
 {% include youtube.html id="UT7zmAk3wg8" %}

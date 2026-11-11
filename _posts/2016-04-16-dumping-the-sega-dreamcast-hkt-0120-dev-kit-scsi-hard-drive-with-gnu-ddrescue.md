@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-04-16T13:12:53.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, sega, youtube]
+share_description: >-
+  GNU ddrescue takes over from ordinary disk-copy tools to preserve a failing Dreamcast HKT-0120 SCSI drive, including its historically interesting files. 💾
 ---
 
 {% include youtube.html id="QHFQhVVaCm8" %}

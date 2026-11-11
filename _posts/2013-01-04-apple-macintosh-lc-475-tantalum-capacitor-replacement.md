@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-04T14:00:49.000+11:00
 last_modified_at: 2026-10-18
 categories: [apple, repairs, youtube]
+share_description: >-
+  Leaking capacitors on an LC 475 logic board get replaced with tantalums. The soldering is educational, but the Macintosh boots and the sound still works. 🍎
 ---
 
 {% include youtube.html id="XvC7XDLE49U" %}

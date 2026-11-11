@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-05T14:00:57.000+11:00
 last_modified_at: 2026-10-18
 categories: [apple, youtube]
+share_description: >-
+  After weeks of tinkering, the LC 475 has 33 MHz speed, 36 MB RAM, 1 MB VRAM, CompactFlash storage, ethernet and new capacitors. Not so stock anymore. 🍎
 ---
 
 {% include youtube.html id="_FUteJfR-zo" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-01-31T09:25:12.000+11:00
 categories: [guides, nintendo, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  PAL SNES and Japanese Super Famicom power plugs look alike, but the inner barrel and AC/DC requirements differ. Callipers to the rescue! 🔌
 ---
 
 {% include youtube.html id="qnwGjuxfcf8" %}

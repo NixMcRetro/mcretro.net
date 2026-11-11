@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-08-14T20:39:26.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Ridge Racer and Ridge Racer Revolution race along on PSIO 1.1, missing their background music. The cars still bounce off walls like pinballs, at least. 🏁
 ---
 
 {% include youtube.html id="PXG-3entSNM" %}

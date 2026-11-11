@@ -5,6 +5,8 @@ date: 2019-08-31
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
 historical_source_url: "https://www.youtube.com/watch?v=Io-zIP06F18"
+share_description: >-
+  Striped talking catfish love hiding, but sinking pellets bring them out. Unfortunately Slinky and Todd the Cod are already hunting the same dinner. 🐟
 ---
 
 {% include youtube.html id="Io-zIP06F18" %}

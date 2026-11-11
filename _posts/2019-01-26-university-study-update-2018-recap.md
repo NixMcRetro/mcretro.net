@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-01-26T22:28:51.000+11:00
 categories: [study]
 last_modified_at: 2026-10-18
+share_description: >-
+  Two years of university study yield a 6.1 overall GPA, despite a spectacular habit of leaving revision until the last minute. Exams: my favourite nightmare. 🎓
 ---
 
 | GPA Results | GPA |

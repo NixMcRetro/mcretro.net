@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-04-05T03:29:23.000+11:00
 last_modified_at: 2026-11-02
 categories: [guides, repairs, youtube]
+share_description: >-
+  The Hakko 808 desoldering gun makes removing a dead through-hole capacitor almost enjoyable. Hot nozzle, vacuum pump and a far cleaner board afterwards. 🔧
 ---
 
 {% include youtube.html id="dfhA-j-oX-Y" %}

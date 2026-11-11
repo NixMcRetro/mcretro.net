@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-16T16:07:09.000+10:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  How many retro consoles are too many? A crowded Sega collection prompts some difficult decisions about duplicates, motherboard revisions and shelf space. 🎮
 ---
 
 {% include youtube.html id="gRz-IRPKZgg" %}

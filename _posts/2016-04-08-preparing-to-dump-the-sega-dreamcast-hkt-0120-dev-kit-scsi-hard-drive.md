@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-04-08T12:54:25.000+10:00
 last_modified_at: 2026-10-18
 categories: [devkit, sega, youtube]
+share_description: >-
+  A roadside Pentium 4, Adaptec SCSI card and 2 TB drive are pressed into service to preserve the Dreamcast HKT-0120 devkit hard disk. 💾
 ---
 
 {% include youtube.html id="pJwbkRcOp7s" %}

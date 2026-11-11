@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-07T21:33:42.000+10:00
 categories: [modems, news, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A 31,200 bps dial-up handshake becomes a colourful spectrogram. Turns out looking at modem noises is almost as entertaining as listening to them. 📊
 ---
 
 {% include youtube.html id="_5ZUPU5NHyM" %}

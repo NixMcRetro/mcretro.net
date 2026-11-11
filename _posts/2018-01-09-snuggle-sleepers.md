@@ -5,6 +5,8 @@ date: 2018-01-09
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/snuggle-sleepers/"
+share_description: >-
+  After a long day exploring their new home, Tillie and Pudge settle down together for a thoroughly adorable little conure snuggle session. 🦜
 ---
 
 {% include youtube.html id="66yfAyvsCqE" %}

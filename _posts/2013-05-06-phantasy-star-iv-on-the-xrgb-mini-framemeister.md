@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-05-06T03:58:27.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sega, youtube]
+share_description: >-
+  Phantasy Star IV looks gorgeous through the Framemeister on a Mega Drive 2. The RGB is sharp, even if navigating the academy is less successful. 🎮
 ---
 
 {% include youtube.html id="rwYJWTBa4yI" %}

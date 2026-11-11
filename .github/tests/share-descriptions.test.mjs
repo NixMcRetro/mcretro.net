@@ -4,7 +4,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const manifest = JSON.parse(fs.readFileSync('.github/share-description-manifest.json', 'utf8'));
-const data = JSON.parse(fs.readFileSync('_data/share_descriptions.json', 'utf8'));
 const length = value => [...new Intl.Segmenter('en', { granularity: 'grapheme' }).segment(value)].length;
 
 function frontMatter(file) {
@@ -26,32 +25,19 @@ function frontMatterDescription(lines) {
 }
 
 function descriptionFor(entry) {
-  const key = new URL(entry.url).pathname;
-  const lines = frontMatter(entry.path);
-  const hasFrontMatter = lines.some(line => /^share_description:/.test(line));
-  if (entry.storage === 'frontmatter') {
-    assert.ok(hasFrontMatter, 'Missing front-matter description in ' + entry.path);
-    assert.equal(data[key], undefined, 'Duplicate data entry for ' + entry.path);
-    return frontMatterDescription(lines);
-  }
-  assert.equal(entry.storage, 'jekyll_data', 'Unrecognised description storage');
-  assert.equal(hasFrontMatter, false, 'Description defined twice in ' + entry.path);
-  assert.equal(typeof data[key], 'string', 'Missing JSON description for ' + key);
-  return data[key];
+  assert.equal(entry.storage, 'frontmatter', 'Descriptions must be in article YAML');
+  return frontMatterDescription(frontMatter(entry.path));
 }
 
 test('manifest contains unique approved post identifiers and canonical URLs', () => {
   assert.equal(manifest.schema_version, 2);
-  assert.ok(manifest.posts.length >= 964);
+  assert.equal(manifest.posts.length, 964);
   for (const field of ['post_id', 'path', 'url', 'batch_id']) {
     const values = manifest.posts.map(entry => entry[field]);
     assert.ok(values.every(Boolean), 'Empty ' + field);
     assert.equal(new Set(values).size, values.length, 'Duplicate ' + field);
   }
-  const dataEntries = manifest.posts.filter(entry => entry.storage === 'jekyll_data');
-  assert.equal(dataEntries.length, Object.keys(data).length, 'Untracked or missing data descriptions');
-  const expected = new Set(dataEntries.map(entry => new URL(entry.url).pathname));
-  assert.deepEqual(new Set(Object.keys(data)), expected, 'Data keys do not match approved URLs');
+  assert.ok(manifest.posts.every(entry => entry.storage === 'frontmatter'));
 });
 
 for (const entry of manifest.posts) {
@@ -73,7 +59,7 @@ for (const entry of manifest.posts) {
   });
 }
 
-test('every front-matter or JSON description is tracked exactly once', () => {
+test('every article has exactly one tracked front-matter description', () => {
   const tracked = new Map(manifest.posts.map(entry => [entry.path, entry]));
   for (const filename of fs.readdirSync('_posts').filter(name => name.endsWith('.md'))) {
     const file = path.posix.join('_posts', filename);

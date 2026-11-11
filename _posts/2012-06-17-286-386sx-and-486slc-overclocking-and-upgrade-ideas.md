@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-06-17T11:31:02.000+10:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs]
+share_description: >-
+  Socketed CPUs, switchable clock oscillators and faster 286, 386SX and 486SLC chips are on the drawing board. These are upgrade ideas, not finished overclocks. 🔧
 ---
 
 ![](/assets/images/2012/img_0204.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-24
 last_modified_at: 2026-10-21
 categories: [gaming, nintendo, youtube]
+share_description: >-
+  Mega Man 4 brings beautiful NES graphics and cracking music, especially Skull Man's stage. The difficulty is less charming, but it still scores 6.3. 🎮
 ---
 
 {% include youtube.html id="PSE_QVh7U8k" %}

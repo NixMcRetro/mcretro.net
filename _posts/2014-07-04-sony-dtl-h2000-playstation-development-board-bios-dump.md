@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-07-04T20:20:24.000+10:00
 last_modified_at: 2026-10-22
 categories: [devkit, sony, youtube]
+share_description: >-
+  A Sony DTL-H2000 PlayStation ISA development-board EPROM comes in for a BIOS dump. GQ-4X device settings and inconsistent reads complicate preservation. 💾
 ---
 
 {% include youtube.html id="fp75Ondsu4M" %}

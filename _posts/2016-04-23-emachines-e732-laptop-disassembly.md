@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-04-23T12:50:13.000+10:00
 last_modified_at: 2026-10-18
 categories: [guides, repairs, youtube]
+share_description: >-
+  An eMachines E732 laptop comes apart for a hard-drive and Wi-Fi card swap. Debian and Windows disagree over the best adapter, naturally. 💻
 ---
 
 {% include youtube.html id="kotGMiHalws" %}

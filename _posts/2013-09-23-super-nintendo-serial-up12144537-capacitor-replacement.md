@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-23T01:30:02.000+10:00
 last_modified_at: 2026-10-22
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  A supposedly spare-parts SNES UP12144537 actually works! New capacitors go in, while its horribly yellowed case awaits a more colourful future. 🎮
 ---
 
 {% include youtube.html id="BQojKrZkvII" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-05-14T23:25:26.000+10:00
 last_modified_at: 2026-10-18
 categories: [guides, hacks, raspberry-pi]
+share_description: >-
+  Shallot on Ubuntu 16.04 generates fancy v2 Tor onion addresses, including one starting with cat. Historical only: v2 onion services are obsolete. 🐈
 ---
 
 ![Shallot](/assets/images/2016/img_0472.jpg)

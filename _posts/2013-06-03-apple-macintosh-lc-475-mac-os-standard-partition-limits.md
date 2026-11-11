@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-03
 last_modified_at: 2026-10-20
 categories: [apple, reconstructed, youtube]
+share_description: >-
+  An 8 GB CompactFlash card finally behaves in the LC 475 when split into roughly 2 GB Mac OS Standard partitions. Bigger partitions weren't cooperating. 💾
 ---
 
 {% include youtube.html id="6qrE_3GwjMs" %}

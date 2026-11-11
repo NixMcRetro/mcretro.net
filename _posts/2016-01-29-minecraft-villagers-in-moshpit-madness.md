@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-29
 last_modified_at: 2026-10-22
 categories: [gaming, youtube]
+share_description: >-
+  Minecraft villagers keep asking for emeralds, so I respond by flooding the town and adding lava. Entirely reasonable PS4 gaming behaviour, surely. 🔥
 ---
 
 {% include youtube.html id="Pf_N-9KAFaQ" %}

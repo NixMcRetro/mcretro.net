@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-22
 last_modified_at: 2026-10-21
 categories: [gaming, nintendo, youtube]
+share_description: >-
+  Kirby's Adventure makes the NES look wonderful, from colourful graphics to fantastic music. Even my button confusion can't stop it earning an 8.7. 🌟
 ---
 
 {% include youtube.html id="IqLRNHWIOYk" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-09-27T10:47:31.000+10:00
 categories: [guides, microsoft, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Folding a 24-inch, 80-conductor IDE cable through an original Xbox is surprisingly satisfying. It worked here, despite exceeding the usual length limit. 💾
 ---
 
 {% include youtube.html id="oHE2vqzA61g" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-06-05T20:29:46.000+10:00
 categories: [news, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  New McRetro videos move into 4K HDR, with more vivid footage on compatible screens. Bigger files and brighter colours, because why not? 📹
 ---
 
 ![](/assets/images/2022/img_0948.jpg)

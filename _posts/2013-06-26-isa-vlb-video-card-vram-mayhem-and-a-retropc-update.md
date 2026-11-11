@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-26T14:41:57.000+10:00
 last_modified_at: 2026-10-22
 categories: [ibm-pc, youtube]
+share_description: >-
+  A one-dollar ISA video card resists every VRAM swap, while a more cooperative Trident card reaches 2 MB. The 486 workstation gets some useful rearranging. 🖥️
 ---
 
 {% include youtube.html id="3uTllzL53Jw" %}

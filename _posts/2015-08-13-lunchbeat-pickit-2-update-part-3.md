@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-08-13T21:11:04.000+10:00
 last_modified_at: 2026-10-18
 categories: [programming, youtube]
+share_description: >-
+  The PICkit 2 clone is recognised and the Lunchbeat is taking shape, but resistors, headers and a few missing parts keep both projects unfinished. 🔧
 ---
 
 {% include youtube.html id="wikkB21uws0" %}

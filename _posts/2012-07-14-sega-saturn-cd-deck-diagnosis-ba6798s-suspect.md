@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-07-14T11:55:30.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  A Japanese Sega Saturn's runaway CD mechanism puts the ROHM BA6798S motor driver under suspicion. It's a plausible lead, not a confirmed fix, so the search continues. 🔧
 ---
 
 

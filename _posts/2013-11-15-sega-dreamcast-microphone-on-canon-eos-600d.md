@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-15T04:38:06.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, sega, youtube]
+share_description: >-
+  A Sega Dreamcast Planet Ring microphone gets pressed into service on a Canon EOS 600D. Mono audio goes to both channels; the next microphone may be better. 🎤
 ---
 
 {% include youtube.html id="EMbs15C313I" %}

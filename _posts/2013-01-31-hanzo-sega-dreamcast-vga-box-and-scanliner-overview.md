@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-31
 last_modified_at: 2026-10-21
 categories: [gaming, sega, youtube]
+share_description: >-
+  The HANZO VGA box gives a Dreamcast crisp video and adjustable scanlines, with enough switches to cause confusion. Sonic Adventure 2 provides the test. 🎮
 ---
 
 {% include youtube.html id="XiCsiZFs6DE" %}

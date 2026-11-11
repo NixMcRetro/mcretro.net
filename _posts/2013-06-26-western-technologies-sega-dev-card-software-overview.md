@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-26T17:51:55.000+10:00
 last_modified_at: 2026-10-22
 categories: [devkit, programming, sega]
+share_description: >-
+  SegaDev software talks to a Western Technologies Mega Drive development cartridge, exposing VRAM, CRAM, VSRAM and VDP registers. Programming comes later. 🎮
 ---
 
 {% include youtube.html id="ak-G2ouUytk" %}

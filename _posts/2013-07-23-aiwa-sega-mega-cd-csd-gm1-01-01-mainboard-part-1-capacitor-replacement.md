@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-23T00:24:32.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  An Aiwa CSD-GM1 boom box mainboard gets a sea of fresh capacitors and a 7806 regulator. A hairline PCB crack needs checking, and testing is still ahead. 🔧
 ---
 
 {% include youtube.html id="p3uQaLUmliM" %}

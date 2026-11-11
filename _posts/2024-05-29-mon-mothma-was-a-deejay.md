@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-05-29T16:44:08.000+10:00
 categories: [nature, news, study]
 last_modified_at: 2026-10-18
+share_description: >-
+  A new name, progress in my transition, tiny garden visitors and plenty of life-admin chaos. Apparently Mon Mothma used to be a deejay too! 🦜
 ---
 
 ![](/assets/images/2024/img_1298.jpg)

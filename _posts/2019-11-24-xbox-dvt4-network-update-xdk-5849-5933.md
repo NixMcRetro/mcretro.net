@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-11-24T18:18:03.000+11:00
 last_modified_at: 2026-10-22
 categories: [devkit, microsoft, youtube]
+share_description: >-
+  Windows 7 in Parallels finally updates an Xbox DVT4 from XDK 5849 to 5933 over the network. Bridged networking saves the day. 🎮
 ---
 
 {% include youtube.html id="WDFh2T2vEuY" %}

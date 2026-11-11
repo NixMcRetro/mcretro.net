@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-08-16T20:42:41.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Wipeout, Wipeout 2097 and Wip3out take turns stalling on PSIO 1.1. Silent opening videos and black screens make for a less-than-speedy racing session. 🏎️
 ---
 
 {% include youtube.html id="VJ5ju6lQTvU" %}

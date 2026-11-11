@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-17T01:04:29.000+11:00
 last_modified_at: 2026-10-22
 categories: [microsoft, repairs, youtube]
+share_description: >-
+  Two original Xbox consoles await softmod and TSOP experiments, with Splinter Cell, a USB cable hack and a questionable hard drive. What could go wrong? 🎮
 ---
 
 {% include youtube.html id="S7-TPhXDDzY" %}

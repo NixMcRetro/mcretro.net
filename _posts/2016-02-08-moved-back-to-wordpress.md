@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-02-08T11:18:27.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, raspberry-pi]
+share_description: >-
+  FlatPress is out and WordPress is back on my Raspberry Pi 2, with nicer sidebar menus and Cloudflare plans. The Tor mirror has other ideas. 🌐
 ---
 
 ![WordPress logo](/assets/images/2016/img_0453.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-02-19T08:52:55.000+11:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  It all began in February 2012: a new retro-computing blog, a pile of old hardware and the small matter of choosing a theme. Stand by for more! 🖥️
 ---
 
 ![](/assets/images/2012/img_0001.jpg)

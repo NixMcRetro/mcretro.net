@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-09-14T20:57:11.000+10:00
 last_modified_at: 2026-11-04
 categories: [guides, nintendo, programming]
+share_description: >-
+  A community workaround may let the MiniPro TL866 program AM29F032B chips by selecting a Fujitsu device and skipping ID checks. Not tested by me yet. 💾
 ---
 
 ![type-ii](/assets/images/2016/img_0560.jpg)

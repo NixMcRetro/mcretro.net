@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-24T08:16:18.000+11:00
 last_modified_at: 2026-10-22
 categories: [devkit, repairs, sega]
+share_description: >-
+  Two more UK Sega Saturn Sophia development kits join the bench, both without video. Three Sophias, six SH-2 boards and a rather intimidating repair queue. 🔧
 ---
 
 {% include youtube.html id="K3VN0_r4xIE" %}

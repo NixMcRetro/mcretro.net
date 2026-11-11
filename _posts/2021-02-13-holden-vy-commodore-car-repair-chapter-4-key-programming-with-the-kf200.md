@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-02-13T09:50:28.000+11:00
 categories: [repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A KF200 programs a replacement Holden Commodore key head after the original battery dies. Orange light, green light, engine starts. Success! 🔑
 ---
 
 {% include youtube.html id="Qcu62UTN-7c" %}

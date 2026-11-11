@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-22T23:16:10.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo, repairs]
+share_description: >-
+  Removing an old SNES cartridge battery turns into a burnt-finger adventure, followed by the discovery that the new holder is too tall. Not a good bench day. 🔧
 ---
 
 {% include youtube.html id="J16jDbr7zaU" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-01-10T08:52:02.000+11:00
 categories: [livestream, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The 2020 Sakura Wars reboot gets a PS4 playthrough, with faster battles, alternate-history Tokyo and a sizeable gap in my Sakura education. 🎮
 ---
 
 {% include youtube.html id="b2BYj72A3h8" %}

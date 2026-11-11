@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-14T11:39:02.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  A white Japanese Saturn powers on but its CD mechanism clicks ominously, while an early VA0 Dreamcast arrives in lovely condition. The TeraDrive's power rails get checked too. 🔧
 ---
 
 ![](/assets/images/2012/img_0104.jpg)

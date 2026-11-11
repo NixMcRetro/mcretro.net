@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-08-08T21:33:21.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  More Chrono Cross on the PSIO prototype, this time exploring a village and heading for Lizard Rock. The game behaves, even when I get spectacularly lost. 🎮
 ---
 
 {% include youtube.html id="Raajas_N0j8" %}

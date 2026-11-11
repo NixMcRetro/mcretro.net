@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-12T19:55:18.000+10:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  Council rubbish collection delivers a floppy disk box, Nintendo AV cable and a very heavy speaker. Not all the roadside electronics are worth repairing. 🖥️
 ---
 
 {% include youtube.html id="l2VGt6H-MnI" %}

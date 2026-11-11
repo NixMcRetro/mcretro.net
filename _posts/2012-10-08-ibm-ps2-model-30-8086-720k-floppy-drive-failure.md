@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-10-08T21:56:17.000+11:00
 last_modified_at: 2026-10-22
 categories: [ibm-pc, repairs, youtube]
+share_description: >-
+  A $10 replacement floppy drive for an IBM PS/2 Model 30 costs around $60 to ship. It looks compatible, but DOS won't boot and the machine keeps dropping into BASIC. 💾
 ---
 
 {% include youtube.html id="NH10FOOgm1k" %}

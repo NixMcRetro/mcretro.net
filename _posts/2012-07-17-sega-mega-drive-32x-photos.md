@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-07-17T11:17:56.000+10:00
 last_modified_at: 2026-10-18
 categories: [sega]
+share_description: >-
+  A boxed Sega 32X gets a photographic tour, from its curious AV connections to a towering Mega Drive and Mega-CD stack. There's even a Neptune-style mod on the wish list. 🎮
 ---
 
 ![](/assets/images/2012/img_0222.jpg)

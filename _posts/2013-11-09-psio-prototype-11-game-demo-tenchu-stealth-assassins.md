@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-09T18:31:05.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Tenchu starts its opening video on PSIO prototype 1.1, minus the soundtrack, then stops at a black screen. So much for ninja stealth practice. 🎮
 ---
 
 {% include youtube.html id="hdztprc9tNU" %}

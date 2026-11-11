@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-07-28
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
+share_description: >-
+  One last tour of the community tank, with Todd, Slinky, Plankers, Whiskers and a guest driftwood catfish. Goodbye, wonderful underwater chaos! 🐟
 ---
 
 {% include youtube.html id="-TW1V0K3js8" %}

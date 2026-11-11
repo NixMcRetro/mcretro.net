@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-16T20:02:43.000+11:00
 last_modified_at: 2026-10-22
 categories: [repairs, sony, youtube]
+share_description: >-
+  Two faulty PS2 Slim consoles donate enough parts for one machine that reads PS1 games. A mysterious green picture turns out to be the video output setting. 🎮
 ---
 
 {% include youtube.html id="NEl8Dkl4964" %}

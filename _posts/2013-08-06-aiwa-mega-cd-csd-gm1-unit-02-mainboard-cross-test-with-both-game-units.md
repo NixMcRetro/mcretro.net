@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-08-06T16:31:09.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  Both Aiwa Mega-CD Game Units produce video on the same revision 2 mainboard. The BIOS works, but interference and missing amplified audio still need attention. 🎮
 ---
 
 {% include youtube.html id="kf9iPRKccZA" %}

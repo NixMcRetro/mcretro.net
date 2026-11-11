@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-08-12T20:37:57.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Mega Man Legends 1 and 2 won't load on PSIO 1.1, while Philosoma makes it a little further before faltering. Three more games for the compatibility list. 🎮
 ---
 
 {% include youtube.html id="ikIB0oX4wiU" %}

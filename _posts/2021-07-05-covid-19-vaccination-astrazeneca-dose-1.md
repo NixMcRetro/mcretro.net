@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-07-05T12:05:29.000+10:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  A first AstraZeneca vaccination in July 2021 brings relief, concerns about rare TTS risks and frustration at Australia's confusing rollout advice. 💉
 ---
 
 ![](/assets/images/2021/img_0728.jpg)

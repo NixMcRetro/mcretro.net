@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-07T21:08:36.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, sega]
+share_description: >-
+  A Sega TeraDrive PC BIOS gets preserved with DOS DEBUG. Another owner's 6.5 MB RAM setup sparks ideas about ISA memory cards and future RAM-disk experiments. 💾
 ---
 
 ![](/assets/images/2012/img_0355.jpg)

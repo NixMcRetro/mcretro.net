@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-10-19T22:34:24.000+11:00
 categories: [nintendo, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Missing vertical lines on a classic Game Boy screen prompt a delicate ribbon-connection repair. Too much heat makes it worse before things improve. 🔧
 ---
 
 {% include youtube.html id="iZMFbLUsZJc" %}

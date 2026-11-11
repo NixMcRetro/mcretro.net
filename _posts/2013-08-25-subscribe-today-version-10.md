@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-08-25T15:40:49.000+10:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  The first RetroJunkie YouTube channel trailer invites everyone to browse an alarming number of videos about retro computers, games and hardware chaos. 📺
 ---
 
 {% include youtube.html id="yf4CvKXRPMw" %}

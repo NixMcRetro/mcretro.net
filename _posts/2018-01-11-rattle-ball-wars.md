@@ -5,6 +5,8 @@ date: 2018-01-11
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/rattle-ball-wars/"
+share_description: >-
+  Pudge and Tillie face the rattle-ball apocalypse, complete with time-travelling cyborgs and a suspiciously familiar Terminator plot. 🎬
 ---
 
 {% include youtube.html id="fsQAEsUUoZw" %}

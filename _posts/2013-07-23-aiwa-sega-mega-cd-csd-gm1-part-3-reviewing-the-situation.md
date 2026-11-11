@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-23T02:26:53.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  An Aiwa Mega-CD's CD player unexpectedly plays 13 tracks, but bumps, wavy video and missing Game Unit power keep the repair saga alive. 🔧
 ---
 
 {% include youtube.html id="fsViina4K_w" %}

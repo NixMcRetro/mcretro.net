@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-09-07T09:07:57.000+10:00
 categories: [devkit, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  A rare Sega Dreamcast Controller Function Checker hides a modified Mega Drive beneath its test boards. Almost 30 cm deep, it's too big for my display cabinet! 🎮
 ---
 
 {% include youtube.html id="bGCq5aMfNZo" %}

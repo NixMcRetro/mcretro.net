@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-04-03T15:48:33.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, sega, youtube]
+share_description: >-
+  An April 2016 catch-up brings a used N64 power supply, a Dreamcast GD-Writer, a new oscilloscope and more TeraDrive work. Too many projects? Never! 🔧
 ---
 
 {% include youtube.html id="LJOjLavVnaA" %}

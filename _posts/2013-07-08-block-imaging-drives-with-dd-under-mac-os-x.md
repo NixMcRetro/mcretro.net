@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-08T11:23:30.000+10:00
 last_modified_at: 2026-10-18
 categories: [apple, guides, raspberry-pi]
+share_description: >-
+  Using dd on Mac OS X to make raw disk images of classic Macintosh and Raspberry Pi media. Check the device number: copying the wrong way is not forgiving. 💾
 ---
 
 ![Illustration of Mac OS X Terminal using dd to image a disk, with a source drive and disk image file](/assets/images/2013/07/block-imaging-drives-with-dd-under-mac-os-x/dd-disk-imaging-terminal.jxl)

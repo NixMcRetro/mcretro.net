@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-18T19:02:29.000+10:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, youtube]
+share_description: >-
+  A 100 MHz IntelDX4 OverDrive PC packs Sega Mega-CD development cards, Gravis UltraSound and 64 MB RAM. Expansion slots have officially become a contact sport. 🖥️
 ---
 
 {% include youtube.html id="sYNxrJih4vg" %}

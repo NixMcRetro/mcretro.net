@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-01-26T18:13:54.000+11:00
 categories: [youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  OBS crashes on the Mac, but Windows 10 behaves. A cheap composite capture stick gives way to StarTech USB3HDCAP and plans for an OSSC. 📺
 ---
 
 {% include youtube.html id="L1Gymf9TCTc" %}

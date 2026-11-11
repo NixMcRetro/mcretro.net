@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-09-12T11:46:32.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  Three used Sega 32X units develop strange video issues, including Doom graphics that jitter after warm-up. A later Sega service bulletin points towards Mega Drive VA4 timing. 🎮
 ---
 
 {% include youtube.html id="xOgntz8Z0mk" %}

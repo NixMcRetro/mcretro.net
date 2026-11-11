@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-09T03:29:04.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  A working TeraDrive runs Scorched Earth, a Genesis Nomad refuses to power on, and the wrong Mega Drive turns up. Three Sega machines, no shortage of tinkering. 🎮
 ---
 
 {% include youtube.html id="9nb4CfT9KuM" %}

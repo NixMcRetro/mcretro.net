@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-01-16T09:56:56.000+11:00
 categories: [nature]
 last_modified_at: 2026-10-18
+share_description: >-
+  An Eastern Water Skink, Tree Skink and Lychee Stink Bug get the maximum-saturation photo treatment. Australian wildlife, now with extra colour! 🦎
 ---
 
 ![](/assets/images/2022/img_0792.jpg)

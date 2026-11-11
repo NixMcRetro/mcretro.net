@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-09-19T18:37:50.000+10:00
 categories: [sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  An early Japanese Mega-CD VA0 gets an internal tour before a much-needed recap. Corrosion, an empty EPROM socket and a loose CD mechanism await. 🔧
 ---
 
 {% include youtube.html id="tAXBUDGAPD8" %}

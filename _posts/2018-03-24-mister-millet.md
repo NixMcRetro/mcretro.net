@@ -5,6 +5,8 @@ date: 2018-03-24
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/mister-millet/"
+share_description: >-
+  Tillie and Pudge get to work on a millet snack while Baby Borb Chip catches some rest in the background. A perfectly balanced bird schedule. 🦜
 ---
 
 {% include youtube.html id="MtHEq1oIpLo" %}

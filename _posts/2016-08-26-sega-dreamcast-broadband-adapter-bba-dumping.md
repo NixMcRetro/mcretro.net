@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-26T10:19:25.000+10:00
 last_modified_at: 2026-11-04
 categories: [hacks, sega]
+share_description: >-
+  Four unlabelled Dreamcast GD-ROMs get dumped over the Broadband Adapter. Three match retail CRC32s; Virtua Striker 2 looks retail too. 💾
 ---
 
 ![crazy_taxi1](/assets/images/2016/img_0546.jpg)

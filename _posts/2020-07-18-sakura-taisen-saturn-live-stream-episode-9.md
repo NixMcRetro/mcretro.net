@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-07-18T22:20:37.000+10:00
 categories: [livestream, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Ayame's allegiance to Lord Satan is revealed, and the enemy steals the Pandemonium Regalia. Sakura Taisen's finale is getting alarmingly close! 🎮
 ---
 
 {% include youtube.html id="ynsn5rnW0Rw" %}

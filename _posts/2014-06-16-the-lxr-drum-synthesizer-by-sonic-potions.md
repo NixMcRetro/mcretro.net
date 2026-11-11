@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-16T19:59:41.000+10:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  SuperNick's Sonic Potions LXR drum synth has six voices, a sequencer and a ridiculous amount of soldering. I'm mostly here for the clap sounds. 🥁
 ---
 
 {% include youtube.html id="tqGJNgNiRek" %}

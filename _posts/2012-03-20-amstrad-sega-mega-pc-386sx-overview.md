@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-03-20T23:05:33.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, sega, youtube]
+share_description: >-
+  A tour of the Amstrad Mega PC, where a 386SX and Sega Mega Drive share one beige box. Switching between the two is fun, even while the hard drives protest. 🎮
 ---
 
 {% include youtube.html id="RcYopRrDFU0" %}

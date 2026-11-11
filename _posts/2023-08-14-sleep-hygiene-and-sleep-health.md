@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-14T11:41:18.000+10:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Sleep data, night sweats and a CPAP trial make for a complicated 2023 health project. I'm investigating possibilities, not diagnosing myself. 😴
 ---
 
 ![](/assets/images/2023/img_1091.jpg)

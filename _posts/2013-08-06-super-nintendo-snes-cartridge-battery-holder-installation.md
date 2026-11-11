@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-08-06T17:31:58.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo, repairs]
+share_description: >-
+  An NHL '96 SNES cartridge gets a CR2032 battery-holder experiment for an EarthBound project. The holder works in theory, but the shell won't close. 💾
 ---
 
 {% include youtube.html id="ZgqkgjBNXLI" %}

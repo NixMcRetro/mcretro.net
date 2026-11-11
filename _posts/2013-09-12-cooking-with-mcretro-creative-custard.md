@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-12T19:02:25.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, youtube]
+share_description: >-
+  Cooking with McRetro combines thick custard and an unreasonable quantity of chocolate chips. One forgotten spoon and a questionable dinner choice later... 🍮
 ---
 
 {% include youtube.html id="juhHBBdVj9k" %}

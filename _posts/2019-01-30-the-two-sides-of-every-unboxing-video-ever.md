@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-01-30T18:08:31.000+11:00
 categories: [sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A smokey-grey Dreamcast controller gets two unboxing videos: one careful, one involving a total cardboard massacre. May the packaging rest in pieces. 🎮
 ---
 
 {% include youtube.html id="T4rjjfcMceg" %}

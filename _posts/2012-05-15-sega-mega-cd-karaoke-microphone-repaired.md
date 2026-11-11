@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-15T09:47:19.000+10:00
 last_modified_at: 2026-10-22
 categories: [repairs, sega]
+share_description: >-
+  A $10 BG-58 cartridge brings a faulty Sega Mega-CD Karaoke microphone back to life. Two solder joints, a slightly awkward fit and one accessory ready to sing again. 🎤
 ---
 
 {% include youtube.html id="rqCaIP3Mdsw" %}

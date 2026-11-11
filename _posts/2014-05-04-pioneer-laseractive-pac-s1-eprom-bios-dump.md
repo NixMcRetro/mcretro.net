@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-05-04T19:45:19.000+10:00
 last_modified_at: 2026-10-18
 categories: [programming, sega, youtube]
+share_description: >-
+  A Pioneer LaserActive PAC-S1 yields a socketed Fujitsu EPROM and some curious BIOS data. Inconsistent GQ-4X reads make the preservation job less simple. 💾
 ---
 
 {% include youtube.html id="TdQUt0x3RHw" %}

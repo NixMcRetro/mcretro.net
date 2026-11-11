@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-12-27T14:31:16.000+11:00
 categories: [youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  My original Teenage Engineering OP-1 demo track is finally here, complete with questionable ambitions of becoming an electronic music superstar. 🎹
 ---
 
 {% include youtube.html id="qolj2Fu0mR0" %}

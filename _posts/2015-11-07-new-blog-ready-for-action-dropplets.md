@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-11-07T10:03:42.000+11:00
 last_modified_at: 2026-10-18
 categories: [news]
+share_description: >-
+  WordPress feels too heavy for a Raspberry Pi, so Dropplets and Markdown get a trial run. The next challenge is importing years of old blog posts. 🌐
 ---
 
 ![](/assets/images/2015/img_0441.jpg)

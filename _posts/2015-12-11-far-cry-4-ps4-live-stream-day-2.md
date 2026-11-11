@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-12-11T05:33:44.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, livestream, youtube]
+share_description: >-
+  Far Cry 4 live stream day two returns to Kyrat, Pagan Min and the rather complicated question of what to do with my in-game mother's ashes. 🎮
 ---
 
 {% include youtube.html id="C6x5MyJp0-k" %}

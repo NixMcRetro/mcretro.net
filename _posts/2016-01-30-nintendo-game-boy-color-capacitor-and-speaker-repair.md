@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-30
 last_modified_at: 2026-10-21
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  Mum's Game Boy Color flickers and dies until three new Rubycon capacitors bring it back. A thinner replacement speaker finishes the rescue. 🎮
 ---
 
 {% include youtube.html id="z1wtCZbrwQI" %}

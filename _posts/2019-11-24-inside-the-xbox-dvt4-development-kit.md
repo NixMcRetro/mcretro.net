@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-11-24T11:49:38.000+11:00
 last_modified_at: 2026-10-22
 categories: [devkit, microsoft, youtube]
+share_description: >-
+  An Xbox DVT4 development kit opens up to reveal unusual ports, MCPX2 hardware and an ageing clock capacitor. A 120 GB SSD upgrade is on the agenda. 🎮
 ---
 
 {% include youtube.html id="YUe_6ys5-kA" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-21T20:13:41.000+10:00
 last_modified_at: 2026-10-22
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  Three NES mainboard electrolytics are replaced, but the console still shows white screens. A new cartridge connector and proper 2.2 uF part are on order. 🔧
 ---
 
 {% include youtube.html id="F_YxoAKun_k" %}

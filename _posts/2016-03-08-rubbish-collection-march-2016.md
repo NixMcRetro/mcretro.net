@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-08T17:23:42.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, youtube]
+share_description: >-
+  Two roadside PCs show up with no drives: a 3.2 GHz Pentium 4 with a broken USB port and a Duron 650 with bulging capacitors. Bargain! 🖥️
 ---
 
 {% include youtube.html id="SJGra46IWGc" %}

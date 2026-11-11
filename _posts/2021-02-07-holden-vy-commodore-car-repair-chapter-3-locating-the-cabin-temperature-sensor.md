@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-02-07T07:59:12.000+11:00
 categories: [repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A dusty cabin temperature sensor hides behind the VY Commodore's dashboard trim. Locating it is easy; proving it's the A/C culprit is another matter. 🌡️
 ---
 
 {% include youtube.html id="v2J9TSXUNsk" %}

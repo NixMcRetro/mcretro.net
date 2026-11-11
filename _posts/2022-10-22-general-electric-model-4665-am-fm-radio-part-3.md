@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-10-22T08:47:58.000+11:00
 categories: [hacks, raspberry-pi, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Raspberry Pi Model B becomes a tiny FM transmitter for a vintage GE clock radio. It works for a short-range bench test, not a broadcast station. 📻
 ---
 
 {% include youtube.html id="VnlHDE-nyTU" %}

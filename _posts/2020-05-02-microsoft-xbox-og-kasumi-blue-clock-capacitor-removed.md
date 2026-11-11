@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-05-02T12:54:10.000+10:00
 categories: [microsoft, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The Kasumi Blue Xbox loses its leaking 1 F clock supercapacitor before it eats the motherboard. Early v1.0 hardware gets a little preventative care. 🔋
 ---
 
 {% include youtube.html id="HVsIA9OQO3A" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-08-23T14:53:48.000+10:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Eight months on a vegan diet, I look back at chicken, salmon, animal welfare and a surprisingly delicious fake burger. Celebratory avocado sushi! 🌱
 ---
 
 ![](/assets/images/2021/img_0742.jpg)

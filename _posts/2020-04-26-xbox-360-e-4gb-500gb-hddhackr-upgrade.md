@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-04-26T04:29:29.000+10:00
 categories: [guides, microsoft]
 last_modified_at: 2026-10-18
+share_description: >-
+  An Xbox 360 E's 4 GB of onboard storage gets company: a compatible 500 GB WD Blue drive prepared using HDDHackr and a matching security sector. 💾
 ---
 
 

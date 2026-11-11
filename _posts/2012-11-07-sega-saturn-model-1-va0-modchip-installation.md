@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-11-07T11:50:53.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, news, sega]
+share_description: >-
+  An early PAL VA0 Sega Saturn gets a 20-pin-compatible modchip, careful insulation and a successful test with Radiant Silvergun and Guardian Heroes. 🎮
 ---
 
 {% include youtube.html id="4xHgHW-2eNQ" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-11T02:08:12.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs, sony, youtube]
+share_description: >-
+  A PlayStation 3 YLOD repair attempt involving heat, shims and enough thermal paste to decorate the bench ends without success. Diagnosis still needed. 🔧
 ---
 
 {% include youtube.html id="4ttfqPNa-Ks" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-07-05T21:10:03.000+10:00
 last_modified_at: 2026-10-18
 categories: [programming, youtube]
+share_description: >-
+  The PIC18F2550 for my PICkit 2 clone programs successfully with the GQ-4X. Now I just need the missing parts before the Lunchbeat can join the fun. 💾
 ---
 
 {% include youtube.html id="PhpF1AXMBZg" %}

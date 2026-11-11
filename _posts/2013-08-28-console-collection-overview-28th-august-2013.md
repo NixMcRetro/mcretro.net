@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-08-28T15:58:31.000+10:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  August 2013 brings more Sega consoles, Super Nintendos, PlayStations and stray Xboxes than one home should reasonably contain. Another collection tour! 🎮
 ---
 
 {% include youtube.html id="80zSNIalnvY" %}

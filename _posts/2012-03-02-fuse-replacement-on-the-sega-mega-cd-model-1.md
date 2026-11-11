@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-03-02T23:36:31.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega]
+share_description: >-
+  A Sega Mega-CD with a blown fuse and someone's rather creative solder bypass. Time to find a proper replacement and give that overcurrent protection another chance. 🔧
 ---
 
 ![](/assets/images/2012/img_0008.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2024-04-06T13:54:54.000+11:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Two progesterone medicine leaflets give very different warnings about food. A closer look at absorption, sleep and my own experience raises questions. 🧪
 ---
 
 ![](/assets/images/2024/img_1292.jpg)

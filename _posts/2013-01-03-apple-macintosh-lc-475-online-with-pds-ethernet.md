@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-03T13:57:39.000+11:00
 last_modified_at: 2026-10-18
 categories: [apple, youtube]
+share_description: >-
+  A PDS ethernet card puts the Macintosh LC 475 online with Mac OS 7.6.1. Netscape loads the old website, slowly, and YouTube is understandably a bit much. 🌐
 ---
 
 {% include youtube.html id="tFf12tlTIvw" %}

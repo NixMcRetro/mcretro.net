@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-11-29T19:53:36.000+11:00
 categories: [linux, news, raspberry-pi]
 last_modified_at: 2026-10-18
+share_description: >-
+  Reordering Certbot's domain arguments puts mcretro.net first in Safari's certificate display. Purely cosmetic, but rather satisfying. 🔒
 ---
 
 ![](/assets/images/2021/img_0777.jpg)

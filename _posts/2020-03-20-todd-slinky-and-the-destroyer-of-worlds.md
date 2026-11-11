@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-03-20
 last_modified_at: 2026-10-19
 categories: [fish, reconstructed, youtube]
+share_description: >-
+  Todd the Cod, who is actually a gudgeon, joins Slinky for fishy adventures. The Senegal bichir then earns the title Destroyer of Worlds! 🐟
 ---
 
 {% include youtube.html id="P_mf5Gfbj9A" %}

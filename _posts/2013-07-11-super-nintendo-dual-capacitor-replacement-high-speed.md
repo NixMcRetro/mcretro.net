@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-11T06:12:25.000+10:00
 last_modified_at: 2026-10-22
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  Two Super Nintendo motherboards get their electrolytics replaced at twenty times normal video speed. One lifted pad is repaired, but the original faults remain. 🔧
 ---
 
 {% include youtube.html id="Lub4Bh-b2Ag" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-06-21T23:14:30.000+10:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  RetroJunkie wants you! Another vintage channel trailer advertises McRetro Gaming, old electronics and more video madness than anyone reasonably needs. 📺
 ---
 
 {% include youtube.html id="tMiB4tDUxCw" %}

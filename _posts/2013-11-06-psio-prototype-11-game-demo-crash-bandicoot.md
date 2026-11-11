@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-06T18:22:43.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Crash Bandicoot boots and plays beautifully on PSIO 1.1, complete with cutscene sound and save support. Sadly it can't prevent me jumping onto TNT crates. 🎮
 ---
 
 {% include youtube.html id="cPZOVBjCRT0" %}

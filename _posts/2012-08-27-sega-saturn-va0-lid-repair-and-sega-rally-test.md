@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-08-27
 last_modified_at: 2026-10-20
 categories: [repairs, sega, youtube]
+share_description: >-
+  A replacement CD lid gets an early VA0 Sega Saturn detecting discs again. The hardware behaves beautifully during Sega Rally, even if the driving is considerably less polished. 🏁
 ---
 
 {% include youtube.html id="_Vfuegi4HdY" %}

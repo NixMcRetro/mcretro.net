@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-02-14T23:10:18.000+11:00
 last_modified_at: 2026-10-22
 categories: [hacks, sony, youtube]
+share_description: >-
+  Making PlayStation modchips with Mayumi 4 and MultiMode3 means wrestling PICs, programmer errors and code-protected readbacks. The MiniPro gets a turn. 💾
 ---
 
 {% include youtube.html id="2rLbI1Ltbso" %}

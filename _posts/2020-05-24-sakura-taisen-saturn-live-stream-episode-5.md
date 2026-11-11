@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-05-24T20:35:53.000+10:00
 categories: [gaming, livestream, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  Sumire and Kanna fall out during Sakura Taisen's play, while Ogami searches for antivenom and battles Miroku's crab people. Theatre is exhausting! 🎭
 ---
 
 {% include youtube.html id="1Uyogq9Jphs" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-11T18:23:43.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  A Dimplex DC10RC struggles to cool a tiny room, with noisy fans and disappointing temperatures. Time for a more capable air conditioner. 🥵
 ---
 
 {% include youtube.html id="Ws7BdhqYU0U" %}

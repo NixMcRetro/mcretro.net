@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-03-27T19:03:37.000+11:00
 categories: [youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A year of Australian Lifeblood donations means whole blood, plasma, my 25-donation badge and, most importantly, an impressive supply of pretzels. 🩸
 ---
 
 {% include youtube.html id="Fo0fdnoqXIM" %}

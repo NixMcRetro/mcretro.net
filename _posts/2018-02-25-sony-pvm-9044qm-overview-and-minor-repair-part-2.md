@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-25T06:44:51.000+11:00
 categories: [repairs, sony, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  The Sony PVM-9044QM displays Mega Drive RGB using oscilloscope probes, but the colours look wrong. Is it the 1x/10x switches or something else? 📺
 ---
 
 {% include youtube.html id="U5Fz1iYT_CY" %}

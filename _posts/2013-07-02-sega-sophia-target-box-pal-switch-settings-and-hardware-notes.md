@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-02T12:01:49.000+10:00
 last_modified_at: 2026-10-18
 categories: [guides, repairs, sega]
+share_description: >-
+  PAL switch settings and SIMM details from my Sega Saturn Sophia Target Box, including an 8 MB module. These are observed settings, not universal factory defaults. 💾
 ---
 
 ![](/assets/images/2013/img_0409.jpg)

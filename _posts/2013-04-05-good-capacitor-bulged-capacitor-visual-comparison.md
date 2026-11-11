@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-04-05T03:31:32.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, youtube]
+share_description: >-
+  Two 680 uF capacitors, one healthy and one bulging around its base. A useful visual comparison, with a reminder that failed capacitors don't always look damaged. 🔧
 ---
 
 {% include youtube.html id="d7BCx9OLfOw" %}

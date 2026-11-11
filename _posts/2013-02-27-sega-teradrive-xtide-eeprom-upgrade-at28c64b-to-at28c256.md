@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-02-27T07:51:50.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, sega]
+share_description: >-
+  Upgrading XTIDE EEPROMs from AT28C64B to AT28C256 gives the Sega TeraDrive cards four times the ROM space. A new BIOS build gets things moving again. 💾
 ---
 
 ![](/assets/images/2013/img_0378.jpg)

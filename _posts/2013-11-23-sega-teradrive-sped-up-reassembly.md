@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-23T21:11:23.000+11:00
 last_modified_at: 2026-10-18
 categories: [repairs, sega, youtube]
+share_description: >-
+  The Sega TeraDrive front panel goes back together in speedy fashion after a Yamaha sound-chip investigation. More vintage screws, less vintage patience. 🔧
 ---
 
 {% include youtube.html id="UvVXEGuSYbU" %}

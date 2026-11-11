@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-14T17:52:52.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Metal Gear Solid runs nicely through the early stages on PSIO prototype 1.1. Snake is sneaky; the person holding the controller is considerably less so. 🎮
 ---
 
 {% include youtube.html id="fhJNDNcIz9Y" %}

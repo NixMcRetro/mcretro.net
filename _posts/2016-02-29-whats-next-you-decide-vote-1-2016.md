@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-02-29T16:03:51.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, youtube]
+share_description: >-
+  A YouTube poll lets viewers choose my next project: Mega Drive region mod, SNES TSOP soldering or another batch of rather ridiculous game reviews. 🎮
 ---
 
 {% include youtube.html id="BN2viLsIrws" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-01-03
 last_modified_at: 2026-10-21
 categories: [hacks, sega, youtube]
+share_description: >-
+  A region-free Mega-CD BIOS finally boots after byte-swapping mistakes and a troublesome programmer jumper. At least some old fuses get a proper replacement. 💾
 ---
 
 {% include youtube.html id="NbuhtCiAkx0" %}

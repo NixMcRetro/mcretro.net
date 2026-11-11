@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-01-03T15:34:48.000+11:00
 categories: [youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  2022 begins with an Avtek MegaPlus V.32bis modem, a nostalgic power-up and plans to reconnect old computers to GeoCities over actual dial-up. 📞
 ---
 
 {% include youtube.html id="2VtskjEJ4Ao" %}

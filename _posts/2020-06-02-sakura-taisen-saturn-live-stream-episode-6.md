@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-06-02T21:31:27.000+10:00
 categories: [gaming, livestream, sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  The Hive of Darkness invades the Imperial Theatre, and Sakura must confront her fear of thunder. Can the Flower Division regroup in time for dinner? 🎮
 ---
 
 {% include youtube.html id="HawXDPZmBSk" %}

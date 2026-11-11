@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-02-10T07:55:55.000+11:00
 last_modified_at: 2026-10-18
 categories: [devkit, sega, youtube]
+share_description: >-
+  A Cross Products SNASM Mega-CD development unit powers up for PC interface experiments. DOS utilities, huge ISA cards and power requirements still need sorting. 💾
 ---
 
 {% include youtube.html id="STpdeioICpk" %}

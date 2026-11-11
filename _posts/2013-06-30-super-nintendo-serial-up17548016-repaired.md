@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-06-30T07:48:31.000+10:00
 last_modified_at: 2026-10-18
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  A dead-looking SNES UP17548016 springs to life after a bent contact in its reset switch is repositioned. Video and sound return without a recap. 🔧
 ---
 
 {% include youtube.html id="69Hgg-TRZ5U" %}

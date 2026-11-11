@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-02-10T12:00:00.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, linux, programming]
+share_description: >-
+  MiSTer, old modems and GeoCities spark a lively discussion on the ACMS forum. Sometimes you need actual dial-up noises to complete the experience! 📞
 ---
 
 Last October I was working on my [GeoCities Rebuild](https://mcretro.net/the-geocities-rebuild-worklog/) as part of RetroChallenge 2021/10. Most of the technical details made it into the worklog, but I was also posting updates over on the Australian Computer Museum Society forum. There were a few replies and slightly off-topic conversations that I never got around to including.

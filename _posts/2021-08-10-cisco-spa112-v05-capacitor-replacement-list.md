@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-08-10T21:51:46.000+10:00
 categories: [modems, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  Four replacement electrolytics bring a Cisco SPA112 V05 back to form. Also included: modem-driven IVR reset commands from my dial-up experiments. 📞
 ---
 
 ![](/assets/images/2021/img_0741.jpg)

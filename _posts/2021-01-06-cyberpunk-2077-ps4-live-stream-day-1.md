@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-01-06T21:52:13.000+11:00
 categories: [gaming, livestream, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Cyberpunk 2077 on PS4 patch 1.06 brings dull first impressions and magnificent glitches, including a body inside solid scenery and a hovergun. 🎮
 ---
 
 {% include youtube.html id="Cxmp701XKY0" %}

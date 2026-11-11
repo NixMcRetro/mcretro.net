@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-10-09T17:49:14.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Final Fantasy VII gets a promising PSIO 1.1 test, with opening scenes, sound, battles and reactor escape all working. Pizza helps, naturally. Not a full-game test. 🎮
 ---
 
 {% include youtube.html id="sipPHpPxM4o" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-08-31T13:29:25.000+10:00
 categories: [guides, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A 27C1024 EPROM receives a region-free Mega-CD BIOS via the GQ-4X4 and its 16-bit adapter. Byte-swapping and verification make the difference. 💾
 ---
 
 {% include youtube.html id="XlMTqFnDd2g" %}

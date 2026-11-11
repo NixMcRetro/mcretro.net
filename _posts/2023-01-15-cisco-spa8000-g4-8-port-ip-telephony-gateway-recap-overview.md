@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-01-15T19:11:57.000+11:00
 categories: [repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  An eight-port Cisco SPA8000-G4 gets Panasonic capacitors after its firmware boot trouble. Lovely new parts, with a little fan noise still to tame. 🔧
 ---
 
 {% include youtube.html id="BRzDQn9LpF0" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-01-11T18:52:47.000+11:00
 categories: [nature, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A spur-legged phasmid, Didymuria violescens, turns up on an Officeworks sign. A tempting new roommate, but this little buggo goes back outdoors. 🪲
 ---
 
 {% include youtube.html id="838vUIPhqH0" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-11-26T04:42:21.000+11:00
 categories: [modems, nature, raspberry-pi]
 last_modified_at: 2026-10-18
+share_description: >-
+  Can an old Macintosh Classic browse a modern website? HTTP/0.9 experiments, direct Apache connections and a few vintage browser surprises await. 🌐
 ---
 
 {% include youtube.html id="dcrzWnWNCVs" %}

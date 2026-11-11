@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-02-20T20:39:14.000+11:00
 last_modified_at: 2026-10-18
 categories: [sega]
+share_description: >-
+  A Sega Mega-CD Model 1 arrives from Germany and immediately gets opened up for inspection. Inside lurks a JVC Optima-5 laser, with replacements hard to find. 💿
 ---
 
 ![](/assets/images/2012/img_0002.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-09-22T21:13:37.000+10:00
 last_modified_at: 2026-10-18
 categories: [hacks, nintendo, youtube]
+share_description: >-
+  Two sacrificial sports-game cartridges become SNES flash-memory experiments, with TSOP40 adapters, sockets and a lot of fine-pitch soldering ahead. 🎮
 ---
 
 {% include youtube.html id="dV6J6cpVUfg" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-07-30T10:18:33.000+10:00
 last_modified_at: 2026-11-04
 categories: [news]
+share_description: >-
+  A July 2016 weight graph gets a ridiculously precise average, a blood-donation blip and some outrageous Vegemite maths. That's how science works, right? 📊
 ---
 
 ![jul_2016_end](/assets/images/2016/img_0503.jpg)

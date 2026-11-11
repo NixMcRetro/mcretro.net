@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-05T10:38:01.000+11:00
 last_modified_at: 2026-10-18
 categories: [guides, repairs, youtube]
+share_description: >-
+  Drag soldering a 0.5 mm-pitch TSOP40 flash chip onto a SNES adapter takes flux, patience and a great deal of braid. Soldered isn't the same as verified. 🔧
 ---
 
 {% include youtube.html id="w0vsgrKIE4E" %}

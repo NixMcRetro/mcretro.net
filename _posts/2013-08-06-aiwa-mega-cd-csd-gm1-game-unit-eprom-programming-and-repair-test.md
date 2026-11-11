@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-08-06T19:34:57.000+10:00
 last_modified_at: 2026-10-22
 categories: [programming, repairs, sega]
+share_description: >-
+  An erased and reprogrammed 27C1024 EPROM brings the Aiwa Mega-CD BIOS screen back to life. Those earlier socket and trace repairs might be paying off. 💾
 ---
 
 {% include youtube.html id="aCXFbQXa6tI" %}

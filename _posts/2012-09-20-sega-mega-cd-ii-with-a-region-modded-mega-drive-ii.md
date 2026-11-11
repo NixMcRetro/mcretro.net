@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-09-20
 last_modified_at: 2026-10-21
 categories: [hacks, sega, youtube]
+share_description: >-
+  Region switches on a Mega Drive II get a workout with the Mega-CD II. Changing to 60 Hz gets things moving, although the audio and video timing still have surprises. 🎮
 ---
 
 {% include youtube.html id="EG7KbMvLtb8" %}

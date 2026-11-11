@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-07-14T13:42:52.000+10:00
 last_modified_at: 2026-10-18
 categories: [repairs]
+share_description: >-
+  Practising IC removal on a scrap RAM board leads to liberated chips, a sulking heat gun and a few hard-earned lessons before tackling an Amstrad Mega PC processor. 🔧
 ---
 
 {% include youtube.html id="MMkzERI0ET8" %}

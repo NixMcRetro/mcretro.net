@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-07-11T14:39:08.000+10:00
 last_modified_at: 2026-10-18
 categories: [nintendo, repairs, youtube]
+share_description: >-
+  SNES UP17388130 remains silent after a recap. A closer look reveals a hole blown through its S-MIX chip, moving the audio investigation somewhere new. 🔧
 ---
 
 {% include youtube.html id="nLMw_Uv4IzU" %}

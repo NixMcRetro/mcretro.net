@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-01-27T22:01:06.000+11:00
 last_modified_at: 2026-10-18
 categories: [apple, youtube]
+share_description: >-
+  An iMac G3 with a dead analogue board develops an even worse problem: hundreds of ants nesting inside! The little tenants move out before recycling. 🐜
 ---
 
 {% include youtube.html id="CjGVLPFFTz8" %}

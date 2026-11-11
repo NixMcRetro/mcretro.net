@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-12-28T07:44:17.000+11:00
 categories: [guides, sony]
 last_modified_at: 2026-10-18
+share_description: >-
+  PSIO's MULTIDISC.LST needs proper CRLF line endings or every disc looks like one entry. A Windows VM on my M1 Mac finally sorts it out. 💾
 ---
 
 ![](/assets/images/2020/img_0685.jpg)

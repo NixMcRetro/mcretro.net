@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-02-23T20:41:24.000+11:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  A one-minute doughnut video somehow requires 16 minutes of editing in Final Cut Pro X on an old Core 2 Duo Mac. Behind the scenes of great nonsense. 🎬
 ---
 
 {% include youtube.html id="r7TbMK0xlUc" %}

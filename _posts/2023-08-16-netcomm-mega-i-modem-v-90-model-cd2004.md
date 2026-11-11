@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-08-16T17:49:56.000+10:00
 categories: [linux, modems, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  A late-era NetComm Mega-i-Modem CD2004 comes out of its sealed box for a recap and dial test. ICQ-era marketing and a whole lot of nostalgia! 📞
 ---
 
 

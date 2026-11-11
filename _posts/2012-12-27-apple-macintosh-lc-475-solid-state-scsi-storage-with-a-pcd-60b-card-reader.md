@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-12-27T12:14:00.000+11:00
 last_modified_at: 2026-11-02
 categories: [apple, hacks, youtube]
+share_description: >-
+  A PCD-60B SCSI card reader and CompactFlash card give the Macintosh LC 475 silent solid-state boot storage. A far nicer alternative to its noisy old hard drive. 🍎
 ---
 
 {% include youtube.html id="05efwlfmVnk" %}

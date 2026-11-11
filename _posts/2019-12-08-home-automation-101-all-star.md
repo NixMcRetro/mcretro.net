@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-08T10:28:50.000+11:00
 categories: [apple, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Home Assistant broadcasts All Star lyrics to a Chromecast from a Raspberry Pi 3. An absolutely essential home-automation achievement, obviously. 🎶
 ---
 
 {% include youtube.html id="9PQTTGOHswU" %}

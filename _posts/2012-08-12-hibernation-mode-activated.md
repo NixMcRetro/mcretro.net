@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-08-12T00:52:19.000+10:00
 last_modified_at: 2026-10-18
 categories: [news, repairs, sega]
+share_description: >-
+  House-moving and winter weather put the retro projects on a slower setting. Parts are still arriving, and a troublesome Mega Drive gets its LED and volume slider repaired. 🖥️
 ---
 
 ![](/assets/images/2012/img_0246.jpg)

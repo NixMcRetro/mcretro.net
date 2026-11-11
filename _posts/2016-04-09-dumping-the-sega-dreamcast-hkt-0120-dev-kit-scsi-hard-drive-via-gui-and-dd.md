@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-04-09T13:03:38.000+10:00
 last_modified_at: 2026-10-18
 categories: [sega, youtube]
+share_description: >-
+  A 4.5 GB SCSI drive from a Sega Dreamcast Katana devkit gets tested with Linux tools and dd. Bad sectors make the preservation job interesting. 💾
 ---
 
 

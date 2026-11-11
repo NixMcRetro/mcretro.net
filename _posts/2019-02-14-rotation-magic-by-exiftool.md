@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-02-14T09:34:48.000+11:00
 categories: [youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  ExifTool fixes the display rotation of sideways iPhone videos by updating MP4 metadata. No re-encoding, no quality loss, if the player honours it. 📹
 ---
 
 ![](/assets/images/2019/img_0630.jpg)

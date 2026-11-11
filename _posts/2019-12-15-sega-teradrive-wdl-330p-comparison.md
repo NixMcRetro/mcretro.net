@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-15T07:16:38.000+11:00
 categories: [ibm-pc, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Three WDL-330P hard drives line up for a comparison of IBM labels, connectors and mounting details. More similarities than differences, naturally. 💾
 ---
 
 {% include youtube.html id="wdDHfLlJdfk" %}

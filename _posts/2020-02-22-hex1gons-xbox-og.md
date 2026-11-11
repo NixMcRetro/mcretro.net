@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-02-22T18:53:27.000+11:00
 categories: [microsoft, repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  HEX1GON's original Xbox gets donor-part troubleshooting and comes back to life. A clean-looking clock capacitor is still worth replacing. 🎮
 ---
 
 {% include youtube.html id="sOxopR6_JCM" %}

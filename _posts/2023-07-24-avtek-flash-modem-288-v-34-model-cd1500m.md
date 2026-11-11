@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2023-07-24T17:02:18.000+10:00
 categories: [linux, modems, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  The Avtek CD1500M V.34 modem arrives with brittle plastic, unhappy capacitors and a Motorola chipset. Opening it costs every retaining clip. 📞
 ---
 
 {% include youtube.html id="ikJBM0HyRdM" %}

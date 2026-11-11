@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-11-27T18:20:47.000+11:00
 last_modified_at: 2026-10-18
 categories: [programming, youtube]
+share_description: >-
+  Correcting the ATmega328P fuses lets the Lunchbeat use its external 16 MHz crystal. The music sounds much better, even if the power switch still needs work. 🎵
 ---
 
 {% include youtube.html id="dt0s9hSIgiI" %}

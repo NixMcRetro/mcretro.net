@@ -5,6 +5,8 @@ date: 2018-05-22
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/cute-little-tillie-noises/"
+share_description: >-
+  Tillie makes a spectacular collection of little conure noises while trying to locate the birds on the television. We may need a translation dictionary. 🦜
 ---
 
 {% include youtube.html id="9P24OqgbC4U" %}

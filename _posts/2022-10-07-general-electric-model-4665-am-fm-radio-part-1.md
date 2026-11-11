@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-10-07T23:07:35.000+11:00
 categories: [repairs, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A General Electric 4665 clock radio brings a lovely VFD, a backwards-setting clock and a very stubborn AM/FM selector. The repair saga begins. 📻
 ---
 
 {% include youtube.html id="-qdhKsm6jHw" %}

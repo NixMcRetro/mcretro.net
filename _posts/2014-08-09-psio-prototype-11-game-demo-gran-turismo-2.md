@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2014-08-09T20:34:51.000+10:00
 last_modified_at: 2026-10-18
 categories: [gaming, sony, youtube]
+share_description: >-
+  Gran Turismo 2's Simulation disc refuses to boot on PSIO 1.1, while Arcade barely gets further. The original Gran Turismo doesn't fare much better. 🏎️
 ---
 
 {% include youtube.html id="LiZAKQfxbRQ" %}

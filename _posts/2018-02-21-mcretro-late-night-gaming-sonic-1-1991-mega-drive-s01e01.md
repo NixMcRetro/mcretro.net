@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-21T15:06:56.000+11:00
 categories: [gaming, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  Sonic the Hedgehog opens McRetro Late Night Gaming, minus the original music and with my own questionable replacement soundtrack. What could go wrong? 🎮
 ---
 
 {% include youtube.html id="DUwrEZQz3KM" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-05-07T04:45:08.000+10:00
 categories: [sega]
 last_modified_at: 2026-10-18
+share_description: >-
+  A bookmarked PAL Mega Drive 60 Hz colour-mod circuit finally finds a home in the archive. It was a plan for the CXA1145, not a mod I completed. 🎮
 ---
 
 ![](/assets/images/2020/img_0678.jpg)

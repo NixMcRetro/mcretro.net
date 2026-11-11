@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2018-02-12T12:08:21.000+11:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Certbot brings HTTPS back to McRetro while the old RetroJunkie darknet mirror returns. A bit of Tor nostalgia, not a current v2 address. 🌐
 ---
 
 ![](/assets/images/2018/img_0621.jpg)

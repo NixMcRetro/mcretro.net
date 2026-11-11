@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-02-18T08:10:11.000+11:00
 categories: [gaming, hacks]
 last_modified_at: 2026-10-18
+share_description: >-
+  The XRGB-mini Framemeister arrives, but the Japanese RGB21 adapter needs rewiring for EuroSCART. A little soldering delivers wonderfully crisp Mega Drive RGB over HDMI. 📺
 ---
 
 {% include youtube.html id="EM1SXr8sIIo" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-12-12T21:26:19.000+11:00
 last_modified_at: 2026-10-18
 categories: [gaming, livestream, youtube]
+share_description: >-
+  Fallout 4 day eight finally reaches 720p streaming! Now we can build towns and talk nonsense in high definition. The gameplay remains wonderfully dubious. 🎮
 ---
 
 {% include youtube.html id="irKsH8Kxr6s" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-04-26T01:25:17.000+10:00
 categories: [apple, hacks, repairs]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Macintosh Classic gains RaSCSI storage and tries to browse my GeoCities archive. An 8 MHz 68000 makes early web compatibility quite the adventure. 🍎
 ---
 
 {% include youtube.html id="hO2O4d3ZtaI" %}

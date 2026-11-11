@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-11-27T23:29:51.000+11:00
 last_modified_at: 2026-10-22
 categories: [hacks, nintendo, youtube]
+share_description: >-
+  The SuperCIC finally changes a PAL SNES between 50 Hz and 60 Hz. John Madden sounds hilariously fast, although the first tests need a little tidying. 🎮
 ---
 
 {% include youtube.html id="5wpRU_xeyAI" %}

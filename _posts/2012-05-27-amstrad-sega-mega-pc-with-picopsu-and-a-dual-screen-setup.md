@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2012-05-27T23:36:44.000+10:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, repairs, sega]
+share_description: >-
+  A tiny picoPSU powers an Amstrad Mega PC mainboard on the lounge-room floor, while a dual-screen Sega Saturn setup gets a workout. Keyboard problems still block proper testing. 🖥️
 ---
 
 {% include youtube.html id="iw3vIXuEOjk" %}

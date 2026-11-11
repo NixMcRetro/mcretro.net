@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2022-05-30T11:00:50.000+10:00
 categories: [sony]
 last_modified_at: 2026-10-18
+share_description: >-
+  Cyberpunk 2077's PS4 saga ends with a platinum trophy earned through bugs and offline reinstalling. I still prefer Horizon Zero Dawn. 🎮
 ---
 
 {% include youtube.html id="-n95rMK4AnY" %}

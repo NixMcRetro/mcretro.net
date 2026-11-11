@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2013-01-18T10:53:42.000+11:00
 last_modified_at: 2026-10-18
 categories: [hacks, sega, youtube]
+share_description: >-
+  Two Mega Drive 2 region mods need neatly drilled switch holes. A damaged shell becomes the practice target, with sock puppetry and video interference thrown in. 🔧
 ---
 
 {% include youtube.html id="XMRSOB7uCV8" %}

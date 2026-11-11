@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-01-05T21:59:02.000+11:00
 categories: [apple]
 last_modified_at: 2026-10-18
+share_description: >-
+  An Apple Mac Classic 341-0813 mask ROM gets dumped with a compatible EPROM read profile. The verified image works in Mini vMac, after some byte swapping. 💾
 ---
 
 ![](/assets/images/2020/img_0640.jpg)

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-11-24T18:38:42.000+11:00
 last_modified_at: 2026-10-22
 categories: [devkit, microsoft, youtube]
+share_description: >-
+  UnleashX refuses to start on an Xbox DVT4 until xboxrom.bin reaches the correct B-drive location. FTP is easier than a crashing Xbox Neighborhood. 🎮
 ---
 
 {% include youtube.html id="auBZlw0l5qw" %}

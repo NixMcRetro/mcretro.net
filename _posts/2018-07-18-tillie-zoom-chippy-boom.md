@@ -5,6 +5,8 @@ date: 2018-07-18
 last_modified_at: 2026-10-18
 categories: [parrots, reconstructed, youtube]
 historical_source_url: "https://channelchirp.com/tillie-zoom-chippy-boom/"
+share_description: >-
+  Tillie zooms around for scritches while Chippy decides it's time for a fight. It's another day of speed, mischief and tiny conure drama! 🦜
 ---
 
 {% include youtube.html id="zvJDdabLreQ" %}

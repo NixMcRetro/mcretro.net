@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-03-12T09:18:02.000+11:00
 last_modified_at: 2026-10-18
 categories: [ibm-pc, sega, youtube]
+share_description: >-
+  Inside the Sega TeraDrive Model 2 and Model 3: integrated 286 and Mega Drive hardware, unusual wiring and the promise of CompactFlash storage. 🔧
 ---
 
 {% include youtube.html id="Z4efR-a4p7E" %}

@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2015-11-21T01:02:15.000+11:00
 last_modified_at: 2026-10-18
 categories: [news, sony, youtube]
+share_description: >-
+  PSIO's 2015 progress bar reaches 98%, with the old prototype returned to its developers. Metal Gear Solid footage reminds us how far it came. 🎮
 ---
 
 ![](/assets/images/2015/img_0443.jpg)

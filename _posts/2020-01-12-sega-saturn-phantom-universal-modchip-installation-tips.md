@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2020-01-12T10:57:53.000+11:00
 categories: [guides, sega, youtube]
 last_modified_at: 2026-10-18
+share_description: >-
+  A Phantom Universal modchip fits a Victor V-Saturn with neat ribbon routing and tape insulation. CD-R support works separately from region unlocking. 🎮
 ---
 
 {% include youtube.html id="bJWDRq0tUf8" %}

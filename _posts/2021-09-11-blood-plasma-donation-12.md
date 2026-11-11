@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2021-09-11T21:04:03.000+10:00
 categories: [news]
 last_modified_at: 2026-10-18
+share_description: >-
+  Plasma donation number twelve brings squish-ball adventures, low iron-store concerns and an interesting afternoon at Australian Lifeblood. 🩸
 ---
 
 ![](/assets/images/2021/img_0745.jpg)

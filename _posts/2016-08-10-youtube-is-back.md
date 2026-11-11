@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2016-08-10T20:51:46.000+10:00
 last_modified_at: 2026-10-18
 categories: [youtube]
+share_description: >-
+  YouTube returns with a long personal update about old computers, frustrating programming lessons and a ridiculous pile of unfinished projects. 📺
 ---
 
 {% include youtube.html id="8CS1097Fz1c" %}

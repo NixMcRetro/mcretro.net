@@ -4,6 +4,8 @@ author: "Nix McRetro"
 date: 2019-12-07T10:40:25.000+11:00
 last_modified_at: 2026-10-22
 categories: [devkit, nintendo, youtube]
+share_description: >-
+  The IS Nitro Capture blue box reveals stacked PCBs, connectors, a backup battery and a bent LED. Please do not eat this forbidden electronics sandwich. 🔧
 ---
 
 {% include youtube.html id="UMlHSkAW9N0" %}

@@ -307,31 +307,31 @@
   --panel-hover: #303A48;
   --text: #F5F0E4;
   --muted: #B9C5CB;
-  --link: #78D0C3;
-  --link-hover: #A5E5D9;
-  --focus: #A5E5D9;
+  --link: #93C5FD;
+  --link-hover: #BFDBFE;
+  --focus: #BFDBFE;
   --border: #88969C;
   --border-soft: #4B5A63;
   --code-bg: #303A48;
-  --quote-bg: #2A3B40;
-  --table-head: #304642;
+  --quote-bg: #2B364B;
+  --table-head: #30405B;
   --table-even: #222C38;
   --table-odd: #273240;
   --input-bg: #242B38;
-  --button-bg: #78D0C3;
-  --button-hover: #A5E5D9;
+  --button-bg: #93C5FD;
+  --button-hover: #BFDBFE;
   --button-text: #191D27;
-  --sidebar-button-bg: #78D0C3;
-  --sidebar-button-hover: #A5E5D9;
-  --nav-button-bg: #78D0C3;
+  --sidebar-button-bg: #93C5FD;
+  --sidebar-button-hover: #BFDBFE;
+  --nav-button-bg: #93C5FD;
   --nav-button-text: #191D27;
-  --archive-tile: #115B60;
-  --archive-hover: #19757B;
+  --archive-tile: #244D78;
+  --archive-hover: #2A527F;
   --archive-empty: #242B38;
-  --archive-filled: #293C46;
-  --archive-filled-hover: #345563;
-  --archive-filled-text: #B9EEE6;
-  --archive-accent: #78D0C3;
+  --archive-filled: #293A55;
+  --archive-filled-hover: #2B405E;
+  --archive-filled-text: #BFDBFE;
+  --archive-accent: #93C5FD;
 }
 
 html {

@@ -1,2 +1,3 @@
 b919f0dede640f699b9fec17e826de13a2f8d661d81616fbb6903a9a7e1d40c9  VRAMpage-MD-Colour-Test.bin
 1baf324f8f997029513cea9855856148589df91882e7ae5d0c2a3b8906da5ffc  VRAMpage-MD-Demo-Cart-v0.3.8.bin
+89faaace638c1ccae7062e96cef02d5350059488a35acb372f1e4b5d4dec277f  VRAMpage-MD-Demo-Cart-v0.3.5.bin

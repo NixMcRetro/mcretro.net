@@ -1,3 +1,17 @@
+VRAMpage MD Original Cartridge Downloads
+
+All three standalone ROMs mentioned in the article are here:
+- VRAMpage-MD-Colour-Test.bin: silent original colour/memory test
+- VRAMpage-MD-Demo-Cart-v0.3.5.bin: earlier interactive demo
+- VRAMpage-MD-Demo-Cart-v0.3.8.bin: full show with original FM/PSG music
+
+Use Choose Cartridge / Load Your Own ROM in the live VRAMpage MD workbench:
+https://mcretro.net/homepages/vrampage-md/
+
+The hosted workbench keeps its separate built-in v0.3.5 copy; the downloadable
+v0.3.5 is byte-for-byte the same ROM. The standalone v0.3.8 does not replace
+that default. SHA256SUMS.txt records the exact download identities.
+
 VRAMpage MD Original Colour Test
 
 Load VRAMpage-MD-Colour-Test.bin using Load ROM in VRAMpage MD.

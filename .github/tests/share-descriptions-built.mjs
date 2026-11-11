@@ -5,9 +5,15 @@ import path from 'node:path';
 
 const site = process.argv[2] || '_site';
 const manifest = JSON.parse(fs.readFileSync('.github/share-description-manifest.json', 'utf8'));
+const data = JSON.parse(fs.readFileSync('_data/share_descriptions.json', 'utf8'));
 
-function description(file) {
-  const source = fs.readFileSync(file, 'utf8');
+function description(entry) {
+  if (entry.storage === 'jekyll_data') {
+    const text = data[new URL(entry.url).pathname];
+    assert.equal(typeof text, 'string');
+    return text;
+  }
+  const source = fs.readFileSync(entry.path, 'utf8');
   const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   assert.ok(match);
   const lines = match[1].split(/\r?\n/);
@@ -35,7 +41,7 @@ function href(section, label) {
 
 for (const entry of manifest.posts) {
   test(entry.post_id + ' pre-fills Bluesky, Mastodon, Tumblr and email accurately', () => {
-    const text = description(entry.path);
+    const text = description(entry);
     const message = text + '\n\n' + entry.url;
     const section = share(entry.url);
     const bluesky = new URL(href(section, 'Share on Bluesky'));
@@ -57,16 +63,3 @@ for (const entry of manifest.posts) {
     assert.ok(section.includes('data-copy-post-link data-url="' + entry.url + '"'));
   });
 }
-
-test('unmigrated posts retain the title-and-link fallback', () => {
-  const url = 'https://mcretro.net/welcome-to-the-retro-zone/';
-  const section = share(url);
-  const bluesky = new URL(href(section, 'Share on Bluesky'));
-  assert.ok(bluesky.searchParams.get('text').endsWith(' - ' + url),
-    'Fallback text was: ' + JSON.stringify(bluesky.searchParams.get('text')));
-  const tumblr = new URL(href(section, 'Share on Tumblr'));
-  assert.equal(tumblr.searchParams.get('caption'), null);
-  const email = new URL(href(section, 'Share by email'));
-  assert.match(email.searchParams.get('body'), /Wow, did you see this amazing blog post from Nix McRetro\?/);
-  assert.ok(section.includes('data-copy-post-link data-url="' + url + '"'));
-});

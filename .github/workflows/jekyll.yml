@@ -14,6 +14,7 @@ on:
       - 'blog/index.html'
       - '_includes/post-share.html'
       - '.github/share-description-manifest.json'
+      - '_data/share_descriptions.json'
       - '.github/tests/share-descriptions.test.mjs'
       - '.github/tests/share-descriptions-built.mjs'
       - '_layouts/archive.html'

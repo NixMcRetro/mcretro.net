@@ -8,10 +8,7 @@ share_description: >-
   🏳️‍⚧️ With Trans Day of Resistance approaching, I've donated to AusPATH and the Trans Justice Project. Fight the good fight! Donate if you can! 💜
 ---
 
-![Bold black lettering reading "TRANS DAY OF RESISTANCE" over jagged white flame shapes on a vivid magenta background.](/assets/images/2026/11/supporting-trans-day-of-resistance/01-trans-day-of-resistance.jxl)
-
-*Cropped from the [Trans Day of Resistance rally and march flyer](https://www.greenleft.org.au/2026-11/event/trans-day-resistance-rally-and-march), as shared by Green Left.*
-{: .media-caption }
+![Handmade-style protest poster with rough black lettering reading "TRANS DAY OF RESISTANCE" on torn cream paper, framed by bright pink and blue paint, halftone dots, tape, and staples.](/assets/images/2026/11/supporting-trans-day-of-resistance/01-trans-day-of-resistance.jxl)
 
 With [Trans Day of Resistance](https://www.instagram.com/reel/DfRB8wFzpOS/) coming up on 21st November 2026, I've been trying to find ways to contribute to the Sydney march and rally.
 

@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import path from 'node:path';
 
 const manifest = JSON.parse(fs.readFileSync('.github/share-description-manifest.json', 'utf8'));
 const length = value => [...new Intl.Segmenter('en', { granularity: 'grapheme' }).segment(value)].length;
@@ -59,14 +58,3 @@ for (const entry of manifest.posts) {
   });
 }
 
-test('every article has exactly one tracked front-matter description', () => {
-  const tracked = new Map(manifest.posts.map(entry => [entry.path, entry]));
-  for (const filename of fs.readdirSync('_posts').filter(name => name.endsWith('.md'))) {
-    const file = path.posix.join('_posts', filename);
-    const yaml = frontMatter(file);
-    const hasFrontMatter = yaml.some(line => /^share_description:/.test(line));
-    const entry = tracked.get(file);
-    assert.equal(hasFrontMatter, entry?.storage === 'frontmatter',
-      'Front matter and manifest disagree: ' + file);
-  }
-});

@@ -10,6 +10,9 @@ share_description: >-
 
 ![Handmade-style protest poster with rough black lettering reading "TRANS DAY OF RESISTANCE" on torn cream paper, framed by bright pink and blue paint, halftone dots, tape, and staples.](/assets/images/2026/11/supporting-trans-day-of-resistance/01-trans-day-of-resistance.jxl)
 
+*A little DIY resistance. Loud colours, rough edges, and absolutely no intention of keeping quiet. 🏳️‍⚧️*
+{: .media-caption }
+
 With [Trans Day of Resistance](https://www.instagram.com/reel/DfRB8wFzpOS/) coming up on 21st November 2026, I've been trying to find ways to contribute to the Sydney march and rally.
 
 I'm still waiting for confirmation from my university's student representative council about our proposed contribution, and I haven't heard back from Pride in Protest (PIP) about how to donate directly. Giving money away shouldn't be this difficult! Rather than wait around, I decided to donate to two other trans organisations. I mean, the proverbial institutional wheel would probably just crush us when it finally turns anyway.

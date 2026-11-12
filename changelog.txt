@@ -32,6 +32,11 @@ To Do
 - Using AI to fix bad sources, broken links, etc.
 - Anything touched is usually attributed correctly.
 
+2026-05-31
+- Permanently shut down the self-hosted web server.
+- Retired all nine Tor onion websites: Sonic, Space, Frank, Fish Tank World, Channel Chirp, Pepper, RetroJunkie, McRetro and GeoCities.
+- The former onion addresses are now historical records rather than active services.
+
 2026-05-25
 - So many broken links, so many redirects...
 - Lychee is now running, built and deployed the site.

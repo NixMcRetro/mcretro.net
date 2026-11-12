@@ -3,6 +3,8 @@ title: "Farewell to the Darknet... Once More!"
 author: "Nix McRetro"
 date: 2026-06-21T12:00:00+10:00
 categories: [news]
+share_description: >-
+  After years of tinkering with Tor, Apache and a rather overworked home server, I retired all nine onion websites on 31st May 2026. Farewell, darknet! 🧅🥲
 ---
 
 ![A retro synthwave illustration of a Raspberry Pi web server shutdown, with a CRT screen listing retired Tor onion services and the words “The End of My Self-Hosted Web Server - A Final Farewell”.](/assets/images/2026/06/farewell-to-the-darknet-once-more/farewell-to-the-darknet-once-more-hero.jxl)

@@ -5,7 +5,10 @@ date: 2026-06-21T12:00:00+10:00
 categories: [news]
 ---
 
-<!-- Opening photograph or screenshot from the original Tor web server to be selected before publication. -->
+![A retro synthwave illustration of a Raspberry Pi web server shutdown, with a CRT screen listing retired Tor onion services and the words “The End of My Self-Hosted Web Server - A Final Farewell”.](/assets/images/2026/06/farewell-to-the-darknet-once-more/farewell-to-the-darknet-once-more-hero.jxl)
+
+*Farewell to the self-hosted era - the Raspberry Pi web server, Tor onion services, and nine retired websites, all switched off on 31st May 2026.*
+{: .media-caption }
 
 Well, that's that then. On 31st May 2026, I permanently shut down my self-hosted web server, taking all nine of my Tor onion websites with it. I mentioned back on 22nd May that the onions weren't going to survive the move to GitHub Pages, but now it's official. Farewell, darknet! 🧅
 

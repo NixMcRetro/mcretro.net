@@ -1,8 +1,16 @@
 {
   "schema_version": 2,
-  "source": "McRetro Share Descriptions - Owner Review, Review Queue, Batches 01-22",
-  "note": "All 964 approved article share descriptions are stored in post YAML front matter. The original 954 JSON-backed descriptions were migrated without editorial changes and the ten existing pilot descriptions were preserved. Historical reviewed source SHA records remain unchanged. Article bodies were not modified.",
+  "source": "McRetro Share Descriptions - Owner Review, Review Queue, Batches 01-22; plus a directly owner-approved June 2026 farewell post",
+  "note": "All 964 approved article share descriptions are stored in post YAML front matter. The original 954 JSON-backed descriptions were migrated without editorial changes and the ten existing pilot descriptions were preserved. Historical reviewed source SHA records remain unchanged. Article bodies were not modified. A further directly owner-approved June 2026 farewell article is tracked as POST-0965.",
   "posts": [
+    {
+      "post_id": "POST-0965",
+      "path": "_posts/2026-06-21-farewell-to-the-darknet-once-more.md",
+      "url": "https://mcretro.net/farewell-to-the-darknet-once-more/",
+      "batch_id": "SHARE-0965",
+      "storage": "frontmatter",
+      "source_sha": "bb7ff66d851d3b791e4f739f978ef3d1d390c737"
+    },
     {
       "post_id": "POST-0964",
       "path": "_posts/2026-11-11-bits-brass-and-bugs.md",

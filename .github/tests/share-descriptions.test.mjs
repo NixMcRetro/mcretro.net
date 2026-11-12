@@ -31,7 +31,7 @@ function descriptionFor(entry) {
 
 test('manifest contains unique approved post identifiers and canonical URLs', () => {
   assert.equal(manifest.schema_version, 2);
-  assert.equal(manifest.posts.length, 964);
+  assert.equal(manifest.posts.length, 965);
   for (const field of ['post_id', 'path', 'url', 'batch_id']) {
     const values = manifest.posts.map(entry => entry[field]);
     assert.ok(values.every(Boolean), 'Empty ' + field);

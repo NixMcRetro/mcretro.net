@@ -3,7 +3,7 @@ title: "Seagate ST3120A Hard Drive Capacitor Repair"
 author: "Nix McRetro"
 date: 2013-06-01
 last_modified_at: 2026-10-21
-categories: [ibm-pc, repairs, youtube]
+categories: [computing, repairs, youtube]
 share_description: >-
   The Amstrad Mega PC's smoky Seagate ST3120A gets two new tantalum capacitors. No fireworks this time, and the 107 MB drive boots DOS 5.0 again. 💾
 ---

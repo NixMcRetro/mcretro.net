@@ -2,7 +2,7 @@
 title: "3.6 V Lithium Battery Corrosion Damage"
 author: "Nix McRetro"
 date: 2013-01-14T10:43:59.000+11:00
-categories: [apple, ibm-pc, repairs]
+categories: [apple, computing, repairs]
 last_modified_at: 2026-10-18
 share_description: >-
   A leaking 3.6 V lithium battery has spread corrosion across somebody else's Macintosh LC 475 motherboard. A nasty reminder to inspect old PRAM cells. 🔋

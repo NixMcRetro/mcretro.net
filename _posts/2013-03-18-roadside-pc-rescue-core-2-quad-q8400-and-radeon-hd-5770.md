@@ -3,7 +3,7 @@ title: "Roadside PC Rescue: Core 2 Quad Q8400 and Radeon HD 5770"
 author: "Nix McRetro"
 date: 2013-03-18T10:54:19.000+11:00
 last_modified_at: 2026-11-02
-categories: [ibm-pc]
+categories: [computing]
 share_description: >-
   A rain-soaked PC rescued from the roadside comes with a Core 2 Quad, Radeon HD 5770, cockroaches and a fleeing lizard. The original PSU goes straight in the bin. 🦎
 ---

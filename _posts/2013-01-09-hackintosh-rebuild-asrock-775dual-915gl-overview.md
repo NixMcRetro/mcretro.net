@@ -3,7 +3,7 @@ title: "Hackintosh Rebuild ASRock 775Dual-915GL Overview"
 author: "Nix McRetro"
 date: 2013-01-09T14:10:10.000+11:00
 last_modified_at: 2026-10-18
-categories: [apple, hacks, ibm-pc]
+categories: [apple, computing, hacks]
 share_description: >-
   An ASRock 775Dual-915GL motherboard returns for a Hackintosh nostalgia rebuild, complete with a cheap case, Celeron-era memories and a pile of old PC parts. 🖥️
 ---

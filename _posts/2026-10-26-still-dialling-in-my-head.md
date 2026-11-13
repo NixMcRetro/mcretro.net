@@ -5,7 +5,7 @@ author: "Nix McRetro"
 date: 2026-10-26T16:54:00.000+11:00
 categories:
   - ai-assisted
-  - ibm-pc
+  - computing
   - modems
 share_description: >-
   Can a half-remembered dial-up melody reveal an old Sydney internet number? Modems, spectrograms and some questionable singing join the investigation. ☎️

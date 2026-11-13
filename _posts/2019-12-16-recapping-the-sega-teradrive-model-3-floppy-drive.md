@@ -3,7 +3,7 @@ title: "Recapping the Sega TeraDrive Model 3 Floppy Drive"
 author: "Nix McRetro"
 date: 2019-12-16T08:40:09.000+11:00
 last_modified_at: 2026-10-22
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   The TeraDrive Model 3 floppy drive gets fresh 47 uF and 10 uF capacitors. One drive done, but whether it reads disks after reassembly is still unknown. 💾
 ---

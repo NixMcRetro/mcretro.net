@@ -2,7 +2,7 @@
 title: "Gigabyte Xpress Recovery and the Host Protected Area"
 author: "Nix McRetro"
 date: 2019-12-31T15:14:21.000+11:00
-categories: [ibm-pc]
+categories: [computing]
 last_modified_at: 2026-10-18
 share_description: >-
   Some Gigabyte Xpress Recovery BIOS bugs can hide most of a hard drive through the Host Protected Area. Back up before altering HPA settings. 💾

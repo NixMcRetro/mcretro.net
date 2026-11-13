@@ -3,7 +3,7 @@ title: "Sega TeraDrive Model 3 - Faulty Power Supply (Part 6)"
 author: "Nix McRetro"
 date: 2019-12-24T17:49:41.000+11:00
 last_modified_at: 2026-10-22
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   After years of trying, the TeraDrive Model 3 PSU still won't work reliably. A modern replacement looks wiser, and the machine goes to another collector. 🔧
 ---

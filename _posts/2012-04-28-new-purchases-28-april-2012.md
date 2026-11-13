@@ -8,13 +8,19 @@ share_description: >-
   A Sega TeraDrive Model 2 is on its way from Japan, with a Genesis Nomad still inbound from the US. A new Canon EOS 600D is ready for hardware photos. 🖥️
 ---
 
-![](/assets/images/2012/img_0072.jpg)
+![Scanned Japanese magazine page titled TeraDrive Fan, with an illustrated character, game-making screenshots and Sonic the Hedgehog sprites.](/assets/images/2012/img_0072.jpg)
+
+*While I wait for the TeraDrive Model 2 to arrive from Japan, here's TeraDrive Fan showing off some rather ambitious puzzle-game-making software.*
+{: .media-caption }
 
 I have picked up a Sega TeraDrive Model 2 and it is on the way to me from Japan. It should still be a few weeks before it arrives.
 
 Sega offered three TeraDrive configurations. The Model 2 sits in the middle of the range with 1 MB of RAM and two 3.5-inch floppy drives, but no internal hard drive. Exactly the sort of strange Sega and IBM hybrid I need occupying more space. I am also still waiting on my Sega Genesis Nomad to arrive from the United States.
 
-![](/assets/images/2012/img_0073.jpg)
+![Second Japanese TeraDrive Fan magazine page showing character creation, screen layout, sound creation, rules and stage setup.](/assets/images/2012/img_0073.jpg)
+
+*More from the TeraDrive Fan spread, including graphics, music, stage design and a sneak peek at future software. Quite the little ecosystem!*
+{: .media-caption }
 
 I now have my new Canon EOS 600D for photos, so I should be updating the [galleries](/goodies/) later on. In the next few days I also hope to complete another Sega Game Gear repair attempt and get one functioning properly.
 

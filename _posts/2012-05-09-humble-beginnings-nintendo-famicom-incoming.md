@@ -8,7 +8,10 @@ share_description: >-
   A boxed Japanese Famicom and a couple of games are on the way. The next challenge is a composite AV mod to bypass its RF output, with no guarantees and plenty to learn. 🎮
 ---
 
-![](/assets/images/2012/img_0086.jpg)
+![Red-and-white Nintendo Family Computer console with two red wired controllers arranged on a white background.](/assets/images/2012/img_0086.jpg)
+
+*The original red-and-white Famicom. When it arrives from Japan, the plan is to bypass the RF output with a composite AV mod.*
+{: .media-caption }
 
 I have just purchased a boxed Famicom from Japan. A rather nice and very white one for under $100, along with a couple of games: Hoshi no Kirby and Spelunker.
 

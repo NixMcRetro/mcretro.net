@@ -26,7 +26,10 @@ He was also voted the most silent person in our two top-ranking LED counter vide
 
 The Nomad is broken. It won't power on using either the AC adapter or the battery pack, and I haven't got a GameBit screwdriver handy to open it yet. That's reasonably good news, really, because it means I get to attempt a repair. Will victory be mine?
 
-![](/assets/images/2012/img_0084.jpg)
+![Black Sega Genesis Nomad handheld console on a speckled tabletop, with scratches visible across its unlit screen.](/assets/images/2012/img_0084.jpg)
+
+*The Nomad has arrived, but it refuses to power on with the battery pack or AC adapter. Time to find a GameBit screwdriver!*
+{: .media-caption }
 
 ### Mega Drive 2
 
@@ -34,23 +37,38 @@ I'd actually bought a broken Mega Drive Model 1 to use with the Mega-CD and Tera
 
 I contacted them about the mistake, and they've agreed to send the Model 1 while letting me keep or dispose of the Model 2. I think I'll keep it. Small victories!
 
-![](/assets/images/2012/img_0085.jpg)
+![Top view of a black Sega Mega Drive II console showing cartridge slot, orange power and reset buttons and scuffs on the casing.](/assets/images/2012/img_0085.jpg)
+
+*I ordered a broken Model 1 and got a Mega Drive 2 instead. The seller's sending the right one and letting me keep this one. Bonus!*
+{: .media-caption }
 
 ### TeraDrive Model 2
 
 The TeraDrive has arrived from Japan in working condition, which is fantastic news. The PC side boots properly, and both floppy drives are functioning. I've already had Scorched Earth running, although my attempt to finish off the green tank in the video didn't go quite as planned!
 
-![](/assets/images/2012/img_0080.jpg)
+![Front of a Sega TeraDrive Model 2 with two floppy drives, an attached keyboard, lit power light and plugged-in cables.](/assets/images/2012/img_0080.jpg)
+
+*The TeraDrive Model 2 has made it over from Japan. Both floppy drives work and the PC side boots!*
+{: .media-caption }
 
 The Model 2 has two floppy drives and no internal hard drive, with Sega's original specifications listing 1 MB of RAM. The machine also has both 15 kHz and 31 kHz analogue RGB outputs, along with composite video.
 
-![](/assets/images/2012/img_0083.jpg)
+![Close-up of the TeraDrive front panel showing two floppy drives, a yellow power indicator, orange power button and purple connector.](/assets/images/2012/img_0083.jpg)
+
+*Two floppy drives, a glowing power light and that wonderful TeraDrive badge. Very pleased it's working!*
+{: .media-caption }
 
 At the moment I haven't got a display suitable for the Mega Drive's 15 kHz RGB output, so that part will need to wait. The built-in Sega menu and file manager have already been interesting to explore, particularly the way the machine switches between its PC and Mega Drive functions.
 
-![](/assets/images/2012/img_0081.jpg)
+![Sega TeraDrive blue graphical main menu displayed on a monitor, with six large icons including DOS, a floppy disk and a magnifying glass.](/assets/images/2012/img_0081.jpg)
 
-![](/assets/images/2012/img_0082.jpg)
+*Sega's wonderfully blue built-in menu. A friendlier place to start than a bare DOS prompt!*
+{: .media-caption }
+
+![Sega TeraDrive file manager on a monitor listing DOS files including CONFIG.SYS, AUTOEXEC.BAT and FDISK.EXE on drive A:.](/assets/images/2012/img_0082.jpg)
+
+*Even the file manager gets the TeraDrive blue-box treatment. There's CONFIG.SYS and AUTOEXEC.BAT, right where they should be.*
+{: .media-caption }
 
 I've also uploaded some of the original flyers and quick-reference material that accompanied the TeraDrive. They're in the [photo gallery](/goodies/) if you'd like a closer look at the machine and its paperwork. There'll be plenty more testing once I get the video side sorted out.
 

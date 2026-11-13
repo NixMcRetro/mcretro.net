@@ -14,7 +14,10 @@ Now I see why minimum requirements are called minimum requirements. Microsoft's 
 
 I've managed to get the old Amstrad Sega Mega PC into a rather useful state, with both its PC and Mega Drive sides functioning. It's had a few changes along the way, including the upgraded motherboard, a network card and some attention to that delightful Dallas real-time clock arrangement. At least it now boots when I ask it to!
 
-![](/assets/images/2012/img_0064.jpg)
+![Netscape Communicator 4.8 About page open on a Windows 95 desktop displayed on a monitor.](/assets/images/2012/img_0064.jpg)
+
+*Netscape 4.8 on Windows 95. It takes its time, but at least the old Mega PC can get online!*
+{: .media-caption }
 
 For storage I'm using a 4 GB Disk on Module, although the BIOS doesn't particularly appreciate drives of that size. It appears to have the familiar 504 MB limitation, so I've used OnTrack's Dynamic Drive Overlay to make the additional capacity accessible. It's a rather ridiculous amount of storage for this old machine, but that's half the fun.
 
@@ -22,7 +25,10 @@ The DOM hasn't been completely trouble-free either. Its power connector managed 
 
 I've installed MS-DOS 7.1 and Windows 95 OSR 2.5, the final major OEM release of Windows 95. Windows 98 might be asking a bit too much from this setup, especially with the relatively modest processor. Even Windows 95 gives the machine plenty to think about, although it does eventually get where it's going.
 
-![](/assets/images/2012/img_0065.jpg)
+![Windows 95 NE2000 Compatible network adapter properties reporting 'This device is working properly'.](/assets/images/2012/img_0065.jpg)
+
+*Finally a network card that behaves! Windows 95 is perfectly happy with the NE2000-compatible adapter.*
+{: .media-caption }
 
 The network card is working nicely too. The first card I bought for the machine didn't cooperate, but thankfully I had another one available. With Netscape 4.8 installed, I can actually get the old Mega PC onto the internet. Well, after giving Netscape a little while to contemplate the meaning of life.
 
@@ -30,7 +36,10 @@ I managed to visit Google and even loaded my own website, although the page form
 
 Gaming is still a much better reason to use this machine. Scorched Earth behaved well during testing, and I can load other DOS-era favourites such as Lemmings. There's even MIDI music playback, although I wouldn't expect the poor thing to be decoding MP3s while doing anything else useful.
 
-![](/assets/images/2012/img_0066.jpg)
+![Internet Explorer 3.0 About window on Windows 95, showing version 4.70.1158 and a licence to Nix, with a webpage visible behind it.](/assets/images/2012/img_0066.jpg)
+
+*Internet Explorer 3.0 on the Mega PC, browsing my website. The formatting is a bit of a mess, but it works!*
+{: .media-caption }
 
 I think I will kick it back to Windows 3.11, or perhaps dual boot with two 2 GB partitions. It will be interesting to get the network cranking under Windows 3.11 so I can do some web browsing.
 

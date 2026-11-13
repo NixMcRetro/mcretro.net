@@ -8,19 +8,37 @@ share_description: >-
   The Amstrad Mega PC's 33 MHz 486SLC upgrade gets a working ULSI maths coprocessor and 16 MB of tested RAM. Now for that elusive replacement clock module! 🖥️
 ---
 
-![](/assets/images/2012/img_0041.jpg)
+![ULSI US83S87 Advanced Math Coprocessor marked SX/SLC installed in a square socket on the Mega PC 486SLC motherboard.](/assets/images/2012/img_0041.jpg)
 
-![](/assets/images/2012/img_0057.jpg)
+*Finally, the empty coprocessor socket has company. And it's even recognised correctly!*
+{: .media-caption }
 
-![](/assets/images/2012/img_0056.jpg)
+![Diagnostic CPU information screen identifying a 33 MHz Cyrix/TI/SGS 486-class processor and ULSI 84x87 floating-point unit.](/assets/images/2012/img_0057.jpg)
+
+*Diagnostic software picks up the ULSI as an 84x87. Good enough for me!*
+{: .media-caption }
+
+![MAXUM Processor Clock Speed Test result showing 34 MHz in large white digits on a black screen.](/assets/images/2012/img_0056.jpg)
+
+*MAXUM reckons 34 MHz. Close enough to the 33 MHz it is supposed to be running at!*
+{: .media-caption }
 
 The PC7486SLC-based Amstrad Mega PC Plus upgrade really is running at 33 MHz. Great news: the math coprocessor for the 486SLC has arrived and is recognised perfectly. It is a ULSI Advanced Math Coprocessor SX/SLC rated at 33 MHz, part US83S87. The diagnostic software also identifies it as a ULSI 84x87.
 
-![](/assets/images/2012/img_0059.jpg)
+![Memtest86 v2.00 screen testing 16 MB of RAM and showing zero errors while a test is in progress.](/assets/images/2012/img_0059.jpg)
 
-![](/assets/images/2012/img_0054.jpg)
+*Sixteen whole megabytes! Memtest has plenty to chew through, and I eventually got a clean pass.*
+{: .media-caption }
 
-![](/assets/images/2012/img_0058.jpg)
+![Four installed SIMM modules beside an empty square coprocessor socket on the 486SLC motherboard.](/assets/images/2012/img_0054.jpg)
+
+*Four SIMM modules in their slots, and the coprocessor socket still empty in this earlier photo. The full 16 MB upgrade is now working.*
+{: .media-caption }
+
+![AMIBIOS system information showing 640 KB base memory and 15,232 KB extended memory.](/assets/images/2012/img_0058.jpg)
+
+*AMIBIOS reports 640 KB base memory and 15,232 KB extended. Not a bad amount of RAM for this little machine!*
+{: .media-caption }
 
 I've also been able to run MEMTEST 4.10 across the full 16 MB of RAM I installed, and it passed with no errors. MEMTEST 4.20 does not run though. It simply restarts when I try to boot it from the floppy.
 

@@ -220,7 +220,7 @@ test('sidebar sections use the same 1.3rem spacing before their dividers', () =>
   const common = overrides.match(/\.sidebar \.archive-widget,\s*\.sidebar \.recent-posts-widget,\s*\.sidebar \.dial-homepage\s*\{([^}]*)\}/)?.[1];
   assert.ok(common, 'Archives, Recent Posts and Dial-a-Homepage share one spacing rule');
   assert.match(common, /padding-bottom:\s*1\.3rem;/);
-  assert.equal((overrides.match(/\.sidebar \.recent-posts-widget\s*\{/g) || []).length, 1, 'No later Recent Posts override');
+  assert.doesNotMatch(overrides, /\.sidebar \.recent-posts-widget\s*\{/, 'No later Recent Posts override');
   assert.equal((overrides.match(/\.sidebar \.dial-homepage\s*\{/g) || []).length, 1, 'No later Dial-a-Homepage override');
 });
 

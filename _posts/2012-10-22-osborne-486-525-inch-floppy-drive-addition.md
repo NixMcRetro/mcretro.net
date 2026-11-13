@@ -3,7 +3,7 @@ title: "Osborne 486 5.25-inch Floppy Drive Addition"
 author: "Nix McRetro"
 date: 2012-10-22T11:14:54.000+11:00
 last_modified_at: 2026-10-18
-categories: [apple, ibm-pc, youtube]
+categories: [apple, computing, youtube]
 share_description: >-
   A 5.25-inch floppy drive from a Wyse 286 boots the Osborne 486 beautifully. An LC 475 ethernet card also joins the growing pile of useful retro parts. 💾
 ---

@@ -3,7 +3,7 @@ title: "IBM PS/2 Model 30 8086 Disassembly"
 author: "Nix McRetro"
 date: 2012-09-24T22:44:16.000+10:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs]
+categories: [computing, repairs]
 share_description: >-
   An hour-long IBM PS/2 Model 30 teardown reveals unusual storage connections, a battered hard drive and plenty of 1987 engineering. Floppy booting survives the rebuild. 🔧
 ---

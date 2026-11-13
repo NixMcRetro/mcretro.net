@@ -3,7 +3,7 @@ title: "Amstrad Sega Mega PC 486SXLC CPU Upgrade Failure"
 author: "Nix McRetro"
 date: 2012-07-26T01:17:04.000+10:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   A 386SX comes off an Amstrad Mega PC and a TI486SXLC2 goes in, but the board won't boot. Plenty learnt about QFP soldering, at a rather expensive hardware cost. 💥
 ---

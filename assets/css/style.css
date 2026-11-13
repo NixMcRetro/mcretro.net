@@ -666,6 +666,37 @@ pre code {
   margin-bottom: 0.5rem;
 }
 
+/* A quiet secondary link below the three recent entries. */
+.recent-posts-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45em;
+  min-height: 2.4rem;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--link);
+  border-radius: 0;
+  background: var(--archive-empty);
+  color: var(--link);
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+}
+.recent-posts-more:hover,
+.recent-posts-more:focus-visible {
+  background: var(--archive-filled);
+  color: var(--link-hover);
+  border-color: var(--link-hover);
+  text-decoration: none;
+}
+.recent-posts-more:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
 /* Archive dropdown */
 #archive-dropdown {
   width: 100%;

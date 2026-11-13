@@ -3,7 +3,7 @@ title: "Osborne 486 Boot-Sector Virus Cleanup with F-PROT"
 author: "Nix McRetro"
 date: 2012-10-23T05:56:45.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs]
+categories: [computing, repairs]
 share_description: >-
   The Osborne 486 has a boot-sector visitor: F-PROT detects ABCD.A in the MBR. Infected floppies complicate the story, but the cleanup tool gives this old PC a chance. 🦠
 ---

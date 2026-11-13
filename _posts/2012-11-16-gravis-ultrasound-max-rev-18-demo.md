@@ -3,7 +3,7 @@ title: "Gravis UltraSound MAX Rev 1.8 Demo"
 author: "Nix McRetro"
 date: 2012-11-16T01:01:12.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, youtube]
+categories: [computing, youtube]
 share_description: >-
   The Gravis UltraSound MAX Rev 1.8 gets a MIDI demonstration, complete with sample-based sound and the occasional crackle. It's enormous, and there's more to learn. 🎵
 ---

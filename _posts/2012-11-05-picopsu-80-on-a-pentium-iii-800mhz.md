@@ -3,7 +3,7 @@ title: "picoPSU-80 on a Pentium III 800 MHz"
 author: "Nix McRetro"
 date: 2012-11-05T19:32:48.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   A picoPSU-80 runs a Pentium III 800 MHz computer at about 37 to 38 W from the wall. Promising numbers, though a proper full-load test is still needed. ⚡
 ---

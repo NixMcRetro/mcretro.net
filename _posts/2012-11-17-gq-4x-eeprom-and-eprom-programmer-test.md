@@ -3,7 +3,7 @@ title: "GQ-4X EEPROM and EPROM Programmer Test"
 author: "Nix McRetro"
 date: 2012-11-17T01:12:50.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, programming, sega]
+categories: [computing, programming, sega]
 share_description: >-
   A USB GQ-4X programmer starts reading modem ROMs and the Amstrad Mega PC BIOS. A useful addition for future EPROM experiments, despite one missing adapter. 💾
 ---

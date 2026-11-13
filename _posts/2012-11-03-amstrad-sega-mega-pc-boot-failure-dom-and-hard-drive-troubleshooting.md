@@ -3,7 +3,7 @@ title: "Amstrad Sega Mega PC Boot Failure: DOM and Hard Drive Troubleshooting"
 author: "Nix McRetro"
 date: 2012-11-03T14:28:42.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, youtube]
+categories: [computing, repairs, youtube]
 share_description: >-
   An Amstrad Mega PC misbehaves with a Disk on Module, then boots normally from its original 107 MB hard drive. The exact DOM fault remains a mystery. 💾
 ---

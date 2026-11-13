@@ -3,7 +3,7 @@ title: "IBM PS/2 Model 30 8086 Sound, Video and CPU Upgrades"
 author: "Nix McRetro"
 date: 2012-10-25T03:12:20.000+11:00
 last_modified_at: 2026-10-21
-categories: [ibm-pc, youtube]
+categories: [computing, youtube]
 share_description: >-
   An IBM PS/2 Model 30 gets an NEC V30, 8087 maths coprocessor, VGA and Sound Blaster upgrades. Monkey Island is rather happier on the improved 8 MHz machine. 💾
 ---

@@ -7,7 +7,7 @@ share_description: >-
   🖥️ An Apollo workstation, a vintage oscilloscope, and a spectroradiometer in UTS e-waste. Then I spotted the same instrument on display at UNSW!
 ---
 
-![Vintage Tektronix Type 561A oscilloscope beside a green e-waste bin in a university service area.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1600.jxl)
+![Vintage Tektronix Type 561A oscilloscope beside a green e-waste bin in a university service area.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1600.jxl)
 
 *An old Tektronix oscilloscope sitting beside an e-waste bin. Not exactly what I expected to find on campus!*
 {: .media-caption }
@@ -18,7 +18,7 @@ What really caught my attention was the age of some of this equipment. A few pie
 
 ## It Started With a Spectroradiometer
 
-![Beige Analytical Spectral Devices FieldSpec Pro spectroradiometer resting on blue upholstered furniture, with a connected cable and illuminated green power indicator.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_5211.jxl)
+![Beige Analytical Spectral Devices FieldSpec Pro spectroradiometer resting on blue upholstered furniture, with a connected cable and illuminated green power indicator.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_5211.jxl)
 
 *An ASD FieldSpec Pro spectroradiometer, found in UTS e-waste in November 2025. A rather expensive-looking piece of scientific equipment!*
 {: .media-caption }
@@ -33,7 +33,7 @@ I have no idea what this particular unit was originally used for at UTS, or why 
 
 ## February's E-Waste Discoveries
 
-![Self-portrait beside an open university e-waste bin with a sign asking people not to remove items.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1400.jxl)
+![Self-portrait beside an open university e-waste bin with a sign asking people not to remove items.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1400.jxl)
 
 *Me, an e-waste bin, and a sign asking people not to remove anything. This story was already getting interesting.*
 {: .media-caption }
@@ -42,7 +42,7 @@ By February, I'd started noticing some considerably older equipment in the unive
 
 The area already had signs asking people not to remove anything, and I wasn't responsible for putting any of the equipment there in the first place. What interested me was its history, so I started documenting what I could with photographs before it potentially disappeared for good.
 
-![Blue Tektronix Type 561A oscilloscope amongst discarded electronics inside a green bin.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1598.jxl)
+![Blue Tektronix Type 561A oscilloscope amongst discarded electronics inside a green bin.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1598.jxl)
 
 *The Tektronix oscilloscope amongst the discarded equipment. The old NSWIT labels were particularly interesting.*
 {: .media-caption }
@@ -51,7 +51,7 @@ One of the larger finds was a blue and grey Tektronix oscilloscope. It was a won
 
 ### The Tektronix Type 561A
 
-![Front view of a Tektronix Type 561A oscilloscope on a table, showing its CRT display, knobs, and plug-in modules.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1603.jxl)
+![Front view of a Tektronix Type 561A oscilloscope on a table, showing its CRT display, knobs, and plug-in modules.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1603.jxl)
 
 *The Tektronix Type 561A, looking rather more dignified on a table than it did beside the bins.*
 {: .media-caption }
@@ -64,7 +64,7 @@ Either way, it represents technology from the early 1960s, and it was apparently
 
 ## An Apollo Computer From Another Era
 
-![Beige Apollo Domain workstation enclosure lying amongst other electronics in an e-waste bin.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1599.jxl)
+![Beige Apollo Domain workstation enclosure lying amongst other electronics in an e-waste bin.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1599.jxl)
 
 *An Apollo Domain workstation. Not something you expect to casually stumble across in 2026.*
 {: .media-caption }
@@ -73,14 +73,14 @@ The oscilloscope wasn't the only thing worth looking at. There was also a large 
 
 These weren't ordinary home computers. The Domain 3500 used a 25 MHz Motorola 68030 processor with a 68882 floating-point coprocessor, and Apollo's July 1988 price list had disk-equipped configurations ranging from US$12,500 to US$28,900. That's quite a lot of money to spend on a computer with less memory than a modern web browser tab would probably like!
 
-![Rear of an Apollo Domain Series 3500 workstation showing its identification plate, cooling fan, and multiple expansion connectors.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1606.jxl)
+![Rear of an Apollo Domain Series 3500 workstation showing its identification plate, cooling fan, and multiple expansion connectors.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1606.jxl)
 
 *The identification plate confirms it as a Domain Series 3500. Look at all those expansion connectors!*
 {: .media-caption }
 
 The rear identification plate confirmed the model, and the machine had an impressive assortment of expansion connectors. I rather like the construction of these older workstations. They were built for specialised applications, often with hardware and expansion systems quite different from the IBM-compatible PCs that eventually became the standard.
 
-![Open Apollo workstation chassis showing expansion slots, circuit boards, ribbon cables, and its internal power supply.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1604.jxl)
+![Open Apollo workstation chassis showing expansion slots, circuit boards, ribbon cables, and its internal power supply.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1604.jxl)
 
 *Inside the Apollo workstation. A rather satisfying collection of boards, ribbon cables, and metalwork.*
 {: .media-caption }
@@ -89,14 +89,14 @@ Inside, there's a substantial metal chassis, plenty of ribbon cables, a large po
 
 ### An Apollo With ISA Slots?
 
-![Four vintage ISA expansion cards from the Apollo workstation, arranged vertically with their chips and connectors visible.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1711.jxl)
+![Four vintage ISA expansion cards from the Apollo workstation, arranged vertically with their chips and connectors visible.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1711.jxl)
 
 *Four ISA expansion cards from the Apollo workstation. The Weitek chip is particularly interesting.*
 {: .media-caption }
 
 Amongst the Apollo's hardware were several ISA expansion cards, which might seem a little strange considering that this was a Motorola-based workstation rather than an IBM-compatible PC. As it turns out, Apollo's own documentation confirms that the Domain 3500 included a **seven-slot IBM PC AT-compatible expansion bus**. Who said you needed an Intel processor to have ISA slots?
 
-![Three additional ISA expansion cards from the Apollo workstation showing their components, memory chips, and edge connectors.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1713.jxl)
+![Three additional ISA expansion cards from the Apollo workstation showing their components, memory chips, and edge connectors.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1713.jxl)
 
 *More of the Apollo's ISA hardware. There's quite a bit to identify here!*
 {: .media-caption }
@@ -105,7 +105,7 @@ Some of the cards have interesting markings of their own. One carries an Archive
 
 ## Hard Drives the Size of Bricks
 
-![Front drive bay of the Apollo Domain workstation showing a large black storage assembly marked PA/380.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1605.jxl)
+![Front drive bay of the Apollo Domain workstation showing a large black storage assembly marked PA/380.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1605.jxl)
 
 *The Apollo's storage assembly, marked PA/380. That's a lot of physical space for a few hundred megabytes!*
 {: .media-caption }
@@ -116,7 +116,7 @@ The XT-4380E was a 5.25-inch, full-height hard drive with approximately 338 MB o
 
 ### One Drive, Two Sides, and a Lot of Chips
 
-![Top of a vintage hard drive showing a University of Technology Sydney asset barcode and a printed disk defect map.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1712.jxl)
+![Top of a vintage hard drive showing a University of Technology Sydney asset barcode and a printed disk defect map.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1712.jxl)
 
 *The top of an old hard drive, complete with a UTS asset barcode and factory defect map.*
 {: .media-caption }
@@ -125,31 +125,31 @@ One of the drives I photographed had a UTS asset label, numbered 0057867AN, alon
 
 The defect map also contains references to head 14, which would be consistent with a drive having 15 data heads, like the Maxtor XT-4380E. That's an interesting clue, although I still need to confirm the model from the actual manufacturer's label.
 
-![Underside of the same vintage hard drive, exposing its densely populated Maxtor controller circuit board.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1726.jxl)
+![Underside of the same vintage hard drive, exposing its densely populated Maxtor controller circuit board.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1726.jxl)
 
 *Flip the drive over and there's the Maxtor controller board. A rather impressive amount of electronics!*
 {: .media-caption }
 
 Flip the drive over and things get even more interesting. The underside has a densely populated controller board with Maxtor components, large integrated circuits, and enough supporting electronics to make a modern SSD look positively boring. Both photographs are of the same physical drive, so we can connect its UTS asset number and defect map directly to the Maxtor electronics.
 
-![Close-up of the Maxtor hard-drive controller showing integrated circuits, connectors, and densely populated electronics.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1727.jxl)
+![Close-up of the Maxtor hard-drive controller showing integrated circuits, connectors, and densely populated electronics.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1727.jxl)
 
 *The underside of the Maxtor drive. Quite a bit more going on here than your average modern SSD!*
 {: .media-caption }
 
-![Detailed photograph of Maxtor controller electronics, including large chips and smaller supporting components.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1728.jxl)
+![Detailed photograph of Maxtor controller electronics, including large chips and smaller supporting components.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1728.jxl)
 
 *Another close-up of the Maxtor controller. Plenty of chips to investigate.*
 {: .media-caption }
 
 There's something rather satisfying about older electronics like this. You can see individual chips, follow the traces around the board, and sometimes work out quite a bit about how something operates simply by looking closely. Modern electronics are impressive, but there's not quite the same appeal to staring at a single black chip with everything hidden inside it.
 
-![Close-up of integrated circuits, component markings, and traces on the Maxtor hard-drive controller board.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1729.jxl)
+![Close-up of integrated circuits, component markings, and traces on the Maxtor hard-drive controller board.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1729.jxl)
 
 *More of the controller circuitry. Some of those part numbers might have interesting stories of their own.*
 {: .media-caption }
 
-![Detail of one corner of the Maxtor controller board showing large integrated circuits and surrounding components.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1730.jxl)
+![Detail of one corner of the Maxtor controller board showing large integrated circuits and surrounding components.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1730.jxl)
 
 *One last look at the Maxtor hardware. There's enough here to keep me occupied for hours.*
 {: .media-caption }
@@ -158,7 +158,7 @@ This was the drive fitted to the Apollo and was labelled PA/380 on the front of 
 
 ## The Recycling Area and Its Signs
 
-![Wide view of the university's basement recycling area showing large bins, exposed pipes, concrete columns, and signage.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1722.jxl)
+![Wide view of the university's basement recycling area showing large bins, exposed pipes, concrete columns, and signage.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1722.jxl)
 
 *The recycling area where the equipment was being kept. Not quite the atmosphere of a computer museum.*
 {: .media-caption }
@@ -167,7 +167,7 @@ The equipment itself was fascinating, but the location wasn't exactly what you'd
 
 Universities must accumulate enormous amounts of equipment over the decades, and eventually things get upgraded, moved into storage, or disposed of. I'm certainly not suggesting that every old computer needs to be kept forever. Still, there ought to be a difference between an ordinary obsolete office PC and something with an interesting connection to the university's own history.
 
-![University recycling-area partition showing security camera notices and a no-access sign, with personal contact details redacted.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1753-redacted.jxl)
+![University recycling-area partition showing security camera notices and a no-access sign, with personal contact details redacted.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1753-redacted.jxl)
 
 *Security and access notices around the recycling area. Personal contact details have been redacted.*
 {: .media-caption }
@@ -178,14 +178,14 @@ What I'd really like to know is whether there is a process for recognising histo
 
 ## Silicon Graphics, Control Data, and More Ancient Storage
 
-![Inside a green e-waste bin containing several black vintage hard-drive assemblies and other discarded electronic equipment.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1792.jxl)
+![Inside a green e-waste bin containing several black vintage hard-drive assemblies and other discarded electronic equipment.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1792.jxl)
 
 *More old storage hardware, photographed during another visit to the e-waste area.*
 {: .media-caption }
 
 A few days later, another collection of storage hardware caught my attention. There were several large black hard-drive assemblies amongst the discarded equipment, some of which still carried their original manufacturer and part-number labels. Fortunately, those labels turned out to be rather useful for identifying what I'd photographed.
 
-![Two large vintage hard-drive assemblies showing SGI and Control Data identification labels.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_1793.jxl)
+![Two large vintage hard-drive assemblies showing SGI and Control Data identification labels.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1793.jxl)
 
 *Two of the old drives, carrying SGI and Control Data markings. Their part numbers turned out to reveal rather more than I expected.*
 {: .media-caption }
@@ -200,7 +200,7 @@ Whether these drives originally belonged to systems used alongside the Apollo, o
 
 ## And Then I Went to UNSW...
 
-![Beige Analytical Spectral Devices FieldSpec Pro spectroradiometer displayed upright behind glass at UNSW, with laboratory equipment visible in the background.](/assets/images/2026/07/computer-museum-ewaste-bin/IMG_3080.jxl)
+![Beige Analytical Spectral Devices FieldSpec Pro spectroradiometer displayed upright behind glass at UNSW, with laboratory equipment visible in the background.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_3080.jxl)
 
 *An ASD FieldSpec Pro on display behind glass at UNSW, July 2026. Look familiar?*
 {: .media-caption }

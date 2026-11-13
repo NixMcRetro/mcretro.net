@@ -23,7 +23,7 @@ The original 14 chapters are now together in one place. Click any chapter below 
 ### Kickass Darknet Web Server TOC
 
 <details id="part-1" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 01. Preamble and Requirements</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">📋</span> 01. Preamble and Requirements</summary>
 
 **Objective: Host a darknet website on a Raspberry Pi.**
 
@@ -58,7 +58,7 @@ The practical goal is simple: learn how Tor onion services work by self-hosting 
 </details>
 
 <details id="part-2" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 02. Image Raspbian, Basic Settings and Updates</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">💾</span> 02. Image Raspbian, Basic Settings and Updates</summary>
 
 **Historical detail:** The Jessie image used here had the old default `pi` account. Raspberry Pi OS stopped creating that account automatically in April 2022, so the login steps below belong specifically to this historical image.
 
@@ -117,7 +117,7 @@ Once the updates have installed, reboot for good measure:
 </details>
 
 <details id="part-3" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 03. Setting a Static IP Address</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🌐</span> 03. Setting a Static IP Address</summary>
 
 As we are using this Raspbian Jessie image, both sudo and Nano are installed by default. Nano is a simple text editor, think Notepad for the command line. Easier to navigate than Vim. Sudo lets an authorised user run commands with elevated privileges, usually as root in this setup. Very handy to have!
 
@@ -151,7 +151,7 @@ You'll be logged out of your terminal / PuTTY session and ready for the next ste
 </details>
 
 <details id="part-4" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 04. Hardening Your Pi</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🛡️</span> 04. Hardening Your Pi</summary>
 
 [Hardening](https://en.wikipedia.org/wiki/Hardening_(computing)), important for the sake of reducing attack vectors! First off we'll create a new user and then delete the "pi" user that comes preinstalled.
 
@@ -209,7 +209,7 @@ Pretty cool! Now we've got a new user and a few things configured. We will revis
 </details>
 
 <details id="part-5" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 05. Installing Apache 2.4 HTTP Server</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🖥️</span> 05. Installing Apache 2.4 HTTP Server</summary>
 
 For a clearnet site hosted behind your home router's NAT, forward TCP port 80 for HTTP and port 443 if you are also serving HTTPS. One of the wonderful things about a Tor onion service is that it does not need inbound router port forwarding: Tor connects out to the network.
 
@@ -231,7 +231,7 @@ Next up we'll install Samba.
 </details>
 
 <details id="part-6" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 06. Installing Samba Server</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">📁</span> 06. Installing Samba Server</summary>
 
 We need a way to gain access to the files on the Raspberry Pi so we can update your new website. Samba allows sharing across Windows, OS X and Linux. Very useful. An alternative is FTP but isn't covered in this guide.
 
@@ -307,7 +307,7 @@ Which will lead us on to hardening some more things in the next step.
 </details>
 
 <details id="part-7" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 07. Hardening Apache and Secure Shell</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🔒</span> 07. Hardening Apache and Secure Shell</summary>
 
 Next up we harden Apache and OpenSSH for the glass is always half empty. Start off by editing the security configuration file for Apache2. `sudo nano /etc/apache2/conf-available/security.conf`
 
@@ -351,7 +351,7 @@ Logging in with SSH (**S**ecure **SH**ell) is now slightly different because we 
 </details>
 
 <details id="part-8" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 08. Installing Tor</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🧅</span> 08. Installing Tor</summary>
 
 To get Tor up and running we need to install it with the following. `sudo apt-get install tor -y`
 
@@ -384,7 +384,7 @@ Save and exit, Ctrl-O (Writeout) and Ctrl-X (Exit).
 </details>
 
 <details id="part-9" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 09. Configuring Apache</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">⚙️</span> 09. Configuring Apache</summary>
 
 First up, here's a cool add-on to limit bandwidth and connections for people visiting your website. Great if you have finite bandwidth on the upstream! Installing it was optional in this setup. The settings are in the `IfModule mod_bw.c` section below: `LargeFileLimit * 1 7200` applies a 7200 bytes-per-second limit (57.6 kbit/s) to files at least 1 kilobyte in size, not 1 byte. `MaxConnection all 20` limits concurrent connections for the matching origin collectively, rather than allowing 20 per visitor. At the time I couldn't remember what `Bandwidth all` did... it sets the available bandwidth for the matching origin, in bytes per second. Install with the following command.
 
@@ -576,7 +576,7 @@ Once that is done we are onto the next part.
 </details>
 
 <details id="part-10" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 10. Configuring Tor</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🎛️</span> 10. Configuring Tor</summary>
 
 Stop the Tor service from running while we tinker. `sudo service tor stop`
 
@@ -648,7 +648,7 @@ Now to deal with SSL keys (if you are going down the HTTPS / SSL path).
 </details>
 
 <details id="part-11" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 11. Configuring HTTPS (SSL)</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🔐</span> 11. Configuring HTTPS (SSL)</summary>
 
 This was the HTTPS route I was experimenting with in January 2016: OpenSSL created a private key and certificate-signing request, with CAcert intended as the certificate authority. The walkthrough I was following is preserved [here](https://samhobbs.co.uk/2014/04/ssl-certificate-signing-cacert-raspberry-pi-ubuntu-debian).
 
@@ -720,7 +720,7 @@ sudo chmod 644 /etc/ssl/certs/tim.crt
 </details>
 
 <details id="part-12" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 12. Preparing Website Directories</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🗂️</span> 12. Preparing Website Directories</summary>
 
 For multiple onion services in this historical setup, this is where I prepared separate web-root directories. If you are only using `/var/www/`, adjust the paths accordingly.
 
@@ -763,7 +763,7 @@ Next we get to the vanity onion-address experiment and then finally test the sit
 </details>
 
 <details id="part-13" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 13. Generating a Vanity Onion Address</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🎯</span> 13. Generating a Vanity Onion Address</summary>
 
 Back in 2016 I used [**Shallot**](https://web.archive.org/web/20150916172316/https://github.com/katmagic/Shallot) to generate a vanity onion address and its corresponding private key.
 
@@ -781,7 +781,7 @@ Shallot belongs to the old v2 onion-service era: its addresses had 16 characters
 </details>
 
 <details id="part-14" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> 14. Testing the Waters</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🧪</span> 14. Testing the Waters</summary>
 
 Time to get some content onto the web server. In this setup I could use the Samba share configured earlier or create files directly from the terminal. Type anything you want into Notepad, TextEdit, Nano or another text editor, save it as `index.html` and place it in the website directory.
 

@@ -3,7 +3,7 @@ title: "Osborne 486 Windows 95 Installation Demo"
 author: "Nix McRetro"
 date: 2012-10-24T02:33:38.000+11:00
 last_modified_at: 2026-10-21
-categories: [ibm-pc, youtube]
+categories: [computing, youtube]
 share_description: >-
   Windows 95 finally starts on the Osborne 486, complete with sound and a very fussy Creative CD-ROM. Some CD-Rs work, others freeze it. Vintage computing bliss. 💻
 ---

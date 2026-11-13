@@ -3,7 +3,7 @@ title: "Wyse 2112-40 286 Revival Project"
 author: "Nix McRetro"
 date: 2012-11-21T21:43:56.000+11:00
 last_modified_at: 2026-10-18
-categories: [hacks, ibm-pc, repairs]
+categories: [computing, hacks, repairs]
 share_description: >-
   A Wyse 2112-40 286 escapes the parts pile and boots DOS again. Its hard drive, keyboard and speed-switching features are working, with Paku Paku as the reward. 🖥️
 ---

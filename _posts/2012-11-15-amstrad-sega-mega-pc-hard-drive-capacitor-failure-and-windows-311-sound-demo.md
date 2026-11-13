@@ -3,7 +3,7 @@ title: "Amstrad Sega Mega PC Hard Drive Capacitor Failure and Windows for Workgr
 author: "Nix McRetro"
 date: 2012-11-15T07:52:51.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, sega, youtube]
+categories: [computing, sega, youtube]
 share_description: >-
   A tantalum capacitor on the Mega PC's 107 MB Seagate drive goes up in smoke. A replacement disk gets DOS and Windows for Workgroups 3.11 running again. 💥
 ---

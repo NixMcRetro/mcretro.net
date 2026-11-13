@@ -3,7 +3,7 @@ title: "Amstrad PPC640D Internal View - Relative of the PPC512"
 author: "Nix McRetro"
 date: 2012-10-08T21:50:43.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, youtube]
+categories: [computing, repairs, youtube]
 share_description: >-
   An Amstrad PPC640D gets opened up for a look at its twin boards, floppy mechanism and removable modem. Under the lid lurks an 8 MHz 8086 and 640 KB of RAM. 💻
 ---

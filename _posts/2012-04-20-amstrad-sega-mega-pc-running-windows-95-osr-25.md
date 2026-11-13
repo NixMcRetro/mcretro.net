@@ -3,7 +3,7 @@ title: "Amstrad Sega Mega PC Running Windows 95 OSR 2.5"
 author: "Nix McRetro"
 date: 2012-04-20T01:10:18.000+10:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   Windows 95 OSR 2.5 running on an Amstrad Sega Mega PC? Yes, slowly! A 4 GB Disk on Module, Netscape 4.8 and old-school gaming make for a memorable experiment. 🖥️
 ---

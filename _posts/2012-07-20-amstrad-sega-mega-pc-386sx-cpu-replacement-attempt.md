@@ -3,7 +3,7 @@ title: "Amstrad Sega Mega PC 386SX CPU Replacement Attempt"
 author: "Nix McRetro"
 date: 2012-07-20T19:01:55.000+10:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   The Amstrad Mega PC's AMD 386SX is earmarked for removal in a bold TI486SXLC2 upgrade experiment. Clock rates, voltage requirements and a heat gun complicate the plan. 🔧
 ---

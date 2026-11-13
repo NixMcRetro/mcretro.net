@@ -3,7 +3,7 @@ title: "Amstrad PPC640D Portable 8086 Overview"
 author: "Nix McRetro"
 date: 2012-11-27T11:00:57.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, youtube]
+categories: [computing, repairs, youtube]
 share_description: >-
   An accidental eBay bid brings home an Amstrad PPC640D with dual 720 KB floppy drives, an 8 MHz 8086 and a display with truly dreadful viewing angles. 💻
 ---

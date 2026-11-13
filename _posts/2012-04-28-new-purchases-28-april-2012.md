@@ -3,7 +3,7 @@ title: "New Purchases: 28th April 2012"
 author: "Nix McRetro"
 date: 2012-04-28T21:49:07.000+10:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, news, sega]
+categories: [computing, news, sega]
 share_description: >-
   A Sega TeraDrive Model 2 is on its way from Japan, with a Genesis Nomad still inbound from the US. A new Canon EOS 600D is ready for hardware photos. 🖥️
 ---

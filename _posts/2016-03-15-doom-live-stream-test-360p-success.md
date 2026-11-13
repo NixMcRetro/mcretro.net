@@ -3,7 +3,7 @@ title: "Doom (1993, PC Live Stream Test) - 360p Success!"
 author: "Nix McRetro"
 date: 2016-03-15T13:10:05.000+11:00
 last_modified_at: 2026-10-18
-categories: [gaming, ibm-pc, livestream]
+categories: [computing, gaming, livestream]
 share_description: >-
   Doom finally streams successfully in glorious 360p! Now if only Twitch and YouTube could agree on how to handle the background music. 🎮
 ---

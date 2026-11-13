@@ -2,7 +2,7 @@
 title: "Mac Web Browsers from the 90s and HTTP/0.9"
 author: "Nix McRetro"
 date: 2023-05-30T21:26:09.000+10:00
-categories: [ibm-pc, youtube]
+categories: [computing, youtube]
 last_modified_at: 2026-10-18
 share_description: >-
   NCSA Mosaic, Netscape and MacWeb battle HTTP/0.9, modern Apache and a cranky Macintosh Classic. The old internet was never this complicated! 🌐

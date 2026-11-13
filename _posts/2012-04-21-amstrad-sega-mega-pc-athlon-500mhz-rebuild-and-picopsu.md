@@ -3,7 +3,7 @@ title: "Amstrad Sega Mega PC, Athlon 500 MHz Rebuild and picoPSU"
 author: "Nix McRetro"
 date: 2012-04-21T11:39:33.000+10:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   An Amstrad Mega PC gets another rethink while a treasured Slot A Athlon 500 MHz system returns to life. There's also a tiny picoPSU and lots of storage drama. 💾
 ---

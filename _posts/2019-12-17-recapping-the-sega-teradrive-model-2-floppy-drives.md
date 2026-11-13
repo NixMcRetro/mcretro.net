@@ -3,7 +3,7 @@ title: "Recapping the Sega TeraDrive Model 2 Floppy Drives"
 author: "Nix McRetro"
 date: 2019-12-17T07:52:00.000+11:00
 last_modified_at: 2026-10-22
-categories: [ibm-pc, sega, youtube]
+categories: [computing, sega, youtube]
 share_description: >-
   Both Model 2 TeraDrive floppy drives get recapped, with corroded capacitors and one unfortunate ribbon cable casualty. Testing comes later. 🔧
 ---

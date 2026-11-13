@@ -3,7 +3,7 @@ title: "Black Mesa Quick Demo"
 author: "Nix McRetro"
 date: 2013-06-26T17:02:11.000+10:00
 last_modified_at: 2026-10-18
-categories: [gaming, ibm-pc]
+categories: [computing, gaming]
 share_description: >-
   Black Mesa includes Office Space jokes and a beige PC that looks suspiciously like mine. Naturally I pick it up. That's my computer now, thanks! 🎮
 ---

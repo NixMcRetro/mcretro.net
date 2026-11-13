@@ -3,7 +3,7 @@ title: "IBM Model M Keyboard Frenzy (10x Multiplier!)"
 author: "Nix McRetro"
 date: 2016-03-16T13:24:03.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, youtube]
+categories: [computing, youtube]
 share_description: >-
   Ten times the IBM Model M keyboard racket! The trilogy ends in magnificent clicky chaos, with an even more ridiculous 100x audio mix lurking elsewhere. ⌨️
 ---

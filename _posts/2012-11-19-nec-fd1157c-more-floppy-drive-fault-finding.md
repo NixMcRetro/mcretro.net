@@ -3,7 +3,7 @@ title: "NEC FD1157C: More Floppy Drive Fault Finding"
 author: "Nix McRetro"
 date: 2012-11-19
 last_modified_at: 2026-10-20
-categories: [ibm-pc, reconstructed, youtube]
+categories: [computing, reconstructed, youtube]
 share_description: >-
   An NEC FD1157C floppy drive sometimes reads disks when pressure is applied to its head, then returns to errors. A clue, perhaps, but certainly not a repair. 💾
 ---

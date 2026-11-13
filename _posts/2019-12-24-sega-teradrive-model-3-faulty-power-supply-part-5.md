@@ -3,7 +3,7 @@ title: "Sega TeraDrive Model 3 - Faulty Power Supply (Part 5)"
 author: "Nix McRetro"
 date: 2019-12-24T09:24:40.000+11:00
 last_modified_at: 2026-10-22
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   Fresh capacitors improve some TeraDrive PSU readings, yet the Model 3 still won't display properly and its speaker buzzes. This repair isn't over. ⚡
 ---

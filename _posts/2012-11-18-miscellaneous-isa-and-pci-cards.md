@@ -3,7 +3,7 @@ title: "Miscellaneous ISA and PCI Cards"
 author: "Nix McRetro"
 date: 2012-11-18T01:41:07.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, youtube]
+categories: [computing, youtube]
 share_description: >-
   Gravis UltraSound, Sound Blaster, 3dfx, SCSI, modems and enough ISA and PCI cards to furnish a museum. Now to find enough working PCs to install them in. 🖥️
 ---

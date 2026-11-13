@@ -3,7 +3,7 @@ title: "IBM Model M Keyboard Frenzy (1x Multiplier)"
 author: "Nix McRetro"
 date: 2016-03-15T23:38:58.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, youtube]
+categories: [computing, youtube]
 share_description: >-
   One IBM Model M keyboard clicks away in glorious mechanical isolation. This is the calm before five and ten keyboards join the buckling-spring orchestra. ⌨️
 ---

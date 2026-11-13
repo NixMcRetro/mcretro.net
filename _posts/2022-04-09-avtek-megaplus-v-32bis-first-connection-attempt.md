@@ -2,7 +2,7 @@
 title: "Avtek MegaPlus V.32bis - First Connection Attempt"
 author: "Nix McRetro"
 date: 2022-04-09T12:36:33.000+10:00
-categories: [ibm-pc, youtube]
+categories: [computing, youtube]
 last_modified_at: 2026-10-18
 share_description: >-
   The Avtek MegaPlus V.32bis dials from my Mac, but there's nobody at the other end yet. At least it makes the right noises while we prepare the VoIP box. 📞

@@ -3,7 +3,7 @@ title: "Creative Labs CD-200 2x CD-ROM Driver Success"
 author: "Nix McRetro"
 date: 2012-10-12T11:16:56.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, youtube]
+categories: [computing, repairs, youtube]
 share_description: >-
   Success! The Creative Labs CD-200 finally reads discs under DOS using CCD.SYS and MSCDEX. Removing one troublesome jumper helps end the driver nightmare. 💿
 ---

@@ -3,7 +3,7 @@ title: "New Camera - Canon EOS 600D"
 author: "Nix McRetro"
 date: 2012-04-22T10:15:57.000+10:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, news, sega]
+categories: [computing, news, sega]
 share_description: >-
   A Canon EOS 600D DSLR is on order to improve the blog's hardware photos. Meanwhile, the search for matching Amstrad Mega PC accessories continues. 📷
 ---

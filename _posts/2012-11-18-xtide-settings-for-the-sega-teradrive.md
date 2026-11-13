@@ -3,7 +3,7 @@ title: "XTIDE Settings for the Sega TeraDrive"
 author: "Nix McRetro"
 date: 2012-11-18T01:38:18.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   XTIDE BIOS settings for the Sega TeraDrive get documented, from controller options to the boot menu. Hopefully that saves a future evening of firmware archaeology. 💾
 ---

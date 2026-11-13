@@ -3,7 +3,7 @@ title: "Sega TeraDrive Model 2 XTIDE Boot Success"
 author: "Nix McRetro"
 date: 2012-11-18T01:29:16.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, sega, youtube]
+categories: [computing, sega, youtube]
 share_description: >-
   Victory for the Sega TeraDrive Model 2: repartitioning a Disk on Module and rebuilding the MBR finally lets XTIDE boot straight into MS-DOS 6.22. 💾
 ---

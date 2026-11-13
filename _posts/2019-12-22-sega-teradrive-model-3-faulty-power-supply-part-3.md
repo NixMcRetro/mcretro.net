@@ -3,7 +3,7 @@ title: "Sega TeraDrive Model 3 - Faulty Power Supply (Part 3)"
 author: "Nix McRetro"
 date: 2019-12-22T09:18:56.000+11:00
 last_modified_at: 2026-10-22
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   The TeraDrive Model 3 PSU still buzzes and produces wrong voltages under load. A fresh round of fault-finding finds suspicious capacitors, not yet a fix. ⚡
 ---

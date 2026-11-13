@@ -3,7 +3,7 @@ title: "Unichip 486 WB 4407 Rev 1.1 Motherboard Overview"
 author: "Nix McRetro"
 date: 2012-12-04T10:51:54.000+11:00
 last_modified_at: 2026-11-02
-categories: [ibm-pc, youtube]
+categories: [computing, youtube]
 share_description: >-
   A donated Unichip 486 motherboard arrives with a DX2-66, three VLB slots and its NiCad battery already removed. It looks promising, but hasn't been power-tested. 🖥️
 ---

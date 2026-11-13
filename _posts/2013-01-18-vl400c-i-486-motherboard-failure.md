@@ -3,7 +3,7 @@ title: "VL400C-I 486 Motherboard Failure"
 author: "Nix McRetro"
 date: 2013-01-18T10:52:36.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, youtube]
+categories: [computing, repairs, youtube]
 share_description: >-
   A VL400C-I 486 board briefly looks promising after changing a Gate A20 jumper, then starts losing extended memory again. Another motherboard for the scrap pile. 💻
 ---

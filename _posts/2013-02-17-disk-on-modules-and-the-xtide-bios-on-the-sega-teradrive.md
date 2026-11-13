@@ -2,7 +2,7 @@
 title: "Disk on Modules and the XTIDE BIOS on the Sega TeraDrive"
 author: "Nix McRetro"
 date: 2013-02-17T19:11:53.000+11:00
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 last_modified_at: 2026-11-02
 share_description: >-
   Three Disk on Modules, three different headaches on a Sega TeraDrive. XTIDE recognises some, powers others, and reminds us that compatibility isn't guaranteed. 💾

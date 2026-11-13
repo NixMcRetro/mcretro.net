@@ -3,7 +3,7 @@ title: "Amstrad Sega Mega PC: Activating PC-Only Mode"
 author: "Nix McRetro"
 date: 2012-11-13T21:14:24.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, sega, youtube]
+categories: [computing, sega, youtube]
 share_description: >-
   A jumper forces an Amstrad Mega PC into PC-only mode without its Mega Drive ISA card, making RAM tests on a 486SLC replacement board rather easier. 💻
 ---

@@ -3,7 +3,7 @@ title: "Sega TeraDrive Power Supply Problems"
 author: "Nix McRetro"
 date: 2016-08-08T19:07:41.000+10:00
 last_modified_at: 2026-11-04
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   A Sega TeraDrive power supply buzzes and stops the machine booting. Swapping with a known-good unit confirms the faulty module, not the exact component. ⚡
 ---

@@ -3,7 +3,7 @@ title: "Mitsumi Newtronics 5.25-inch Floppy Drive Failure"
 author: "Nix McRetro"
 date: 2012-11-18
 last_modified_at: 2026-10-20
-categories: [ibm-pc, reconstructed, youtube]
+categories: [computing, reconstructed, youtube]
 share_description: >-
   A Mitsumi Newtronics 5.25-inch drive briefly springs to life after fixing a bad edge-connector contact, then starts reporting track-zero errors again. Almost! 💾
 ---

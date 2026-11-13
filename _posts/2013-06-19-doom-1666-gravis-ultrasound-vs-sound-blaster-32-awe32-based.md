@@ -2,7 +2,7 @@
 title: "Doom 1.666 Gravis UltraSound vs Sound Blaster 32 (AWE32 Based)"
 author: "Nix McRetro"
 date: 2013-06-19T17:58:20.000+10:00
-categories: [ibm-pc, youtube]
+categories: [computing, youtube]
 last_modified_at: 2026-10-18
 share_description: >-
   Doom 1.666 supplies the soundtrack as a Gravis UltraSound MAX battles a Sound Blaster 32. The music is lovely; finding room for both cards is not. 🎵

@@ -3,7 +3,7 @@ title: "IBM Model M Keyboard Frenzy (5x Multiplier!)"
 author: "Nix McRetro"
 date: 2016-03-16T09:06:23.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, youtube]
+categories: [computing, youtube]
 share_description: >-
   Five IBM Model M keyboards click together for a wonderfully excessive soundtrack. One keyboard wasn't enough, and ten are coming next. ⌨️
 ---

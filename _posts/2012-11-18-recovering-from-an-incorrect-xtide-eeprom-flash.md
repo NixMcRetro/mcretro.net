@@ -3,7 +3,7 @@ title: "Recovering from an Incorrect XTIDE EEPROM Flash"
 author: "Nix McRetro"
 date: 2012-11-18T01:23:03.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, programming, youtube]
+categories: [computing, programming, youtube]
 share_description: >-
   One incorrect XTIDE EEPROM flash stops a Disk on Module being detected. A GQ-4X and a known-good chip recover the firmware, but storage still needs work. 💾
 ---

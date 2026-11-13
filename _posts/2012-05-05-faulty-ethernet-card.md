@@ -3,7 +3,7 @@ title: "Faulty Ethernet Card"
 author: "Nix McRetro"
 date: 2012-05-05
 last_modified_at: 2026-10-21
-categories: [ibm-pc, youtube]
+categories: [computing, youtube]
 share_description: >-
   A sub-$3 ethernet card proves that even an RJ45 socket can go spectacularly wrong. The cable won't click in, the contacts look corroded, and it passed quality control. 🔌
 ---

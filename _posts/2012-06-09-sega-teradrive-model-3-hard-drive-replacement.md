@@ -3,7 +3,7 @@ title: "Sega TeraDrive Model 3 Hard Drive Replacement"
 author: "Nix McRetro"
 date: 2012-06-09T03:58:09.000+10:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   Three IBM WDL-330P hard drives pass testing in a Sega TeraDrive Model 3, with DOS 6.22 and Windows 3.11 installed. One other drive sounds like a freight train. 💾
 ---

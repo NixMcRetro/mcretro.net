@@ -3,7 +3,7 @@ title: "Sega TeraDrive Puzzle Construction"
 author: "Nix McRetro"
 date: 2012-06-11T22:07:32.000+10:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   Sega's Puzzle Construction on the TeraDrive mixes PC software with Mega Drive graphics, music and controller input. Its sound editor is a strange and delightful bonus. 🎵
 ---

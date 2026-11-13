@@ -666,8 +666,8 @@ pre code {
   margin-bottom: 0.5rem;
 }
 
-/* A quiet secondary link below the three recent entries. */
-.recent-posts-more {
+/* Matching sidebar action links in light and dark themes. */
+.sidebar-action-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -685,14 +685,14 @@ pre code {
   line-height: 1.25;
   text-decoration: none;
 }
-.recent-posts-more:hover,
-.recent-posts-more:focus-visible {
+.sidebar-action-link:hover,
+.sidebar-action-link:focus-visible {
   background: var(--archive-filled);
   color: var(--link-hover);
   border-color: var(--link-hover);
   text-decoration: none;
 }
-.recent-posts-more:focus-visible {
+.sidebar-action-link:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 2px;
 }

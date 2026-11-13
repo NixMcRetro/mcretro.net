@@ -3,7 +3,7 @@ title: "Amstrad Sega Mega PC Repair"
 author: "Nix McRetro"
 date: 2012-03-18T09:33:45.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   A leaking NiCad battery has been chewing through an Amstrad Mega PC motherboard. Repairs get things moving, but the hard-drive controller remains a mystery. 🔧
 ---

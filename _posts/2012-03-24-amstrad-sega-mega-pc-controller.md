@@ -3,7 +3,7 @@ title: "Amstrad Sega Mega PC Controller"
 author: "Nix McRetro"
 date: 2012-03-24T12:37:19.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, sega]
+categories: [computing, sega]
 share_description: >-
   A beige Amstrad Mega PC controller arrives from the UK. The SP-7 pad looks wonderfully retro, even if its unresponsive D-pad makes it less wonderful to use. 🎮
 ---

@@ -3,7 +3,7 @@ title: "Amstrad Sega Mega PC 486SLC Upgrade Experiment"
 author: "Nix McRetro"
 date: 2012-03-21T02:56:26.000+11:00
 last_modified_at: 2026-10-21
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   Could a 33 MHz TI486SLC motherboard give an Amstrad Mega PC a speed boost? Similar boards, crucial jumper settings and plenty of questions about compatibility. 💾
 ---

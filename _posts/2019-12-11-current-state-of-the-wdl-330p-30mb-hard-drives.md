@@ -2,7 +2,7 @@
 title: "Current State of the WDL-330P 30MB Hard Drives"
 author: "Nix McRetro"
 date: 2019-12-11T08:11:20.000+11:00
-categories: [ibm-pc, sega, youtube]
+categories: [computing, sega, youtube]
 last_modified_at: 2026-10-18
 share_description: >-
   Three Sega TeraDrive WDL-330P drives return to the bench. Those old radial-capacitor repairs are being replaced with proper surface-mount parts. 🔧

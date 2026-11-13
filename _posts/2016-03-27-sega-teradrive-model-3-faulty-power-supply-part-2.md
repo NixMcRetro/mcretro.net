@@ -3,7 +3,7 @@ title: "Sega TeraDrive Model 3 - Faulty Power Supply (Part 2)"
 author: "Nix McRetro"
 date: 2016-03-27T09:41:21.000+11:00
 last_modified_at: 2026-10-18
-categories: [ibm-pc, repairs, sega]
+categories: [computing, repairs, sega]
 share_description: >-
   TeraDrive power-supply comparisons reveal a suspiciously low 12 V rail, but unloaded voltage readings aren't enough to diagnose the buzzing and boot failure. ⚡
 ---

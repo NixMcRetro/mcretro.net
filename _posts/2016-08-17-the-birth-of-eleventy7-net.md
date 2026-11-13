@@ -3,7 +3,7 @@ title: "The Birth of Eleventy7.net"
 author: "Nix McRetro"
 date: 2016-08-17T18:32:39.000+10:00
 last_modified_at: 2026-11-03
-categories: [ibm-pc, news]
+categories: [computing, news]
 share_description: >-
   Eleventy7.net is born: a retro HTML 2.0-friendly website for old PCs and browsers. Netscape 3, 800×600 and no fancy CSS required. 🌐
 ---

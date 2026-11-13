@@ -2,7 +2,7 @@
 title: "Sega TeraDrive Model 3 WDL-330P Hard Drive Recapping"
 author: "Nix McRetro"
 date: 2019-12-14T09:44:42.000+11:00
-categories: [ibm-pc, sega, youtube]
+categories: [computing, sega, youtube]
 last_modified_at: 2026-10-18
 share_description: >-
   All three TeraDrive WDL-330P drives have new SMD capacitors, including one with a lifted pad and jumper wire. Proper testing still awaits. 💾

@@ -5,6 +5,7 @@ import { runInNewContext } from 'node:vm';
 const read = name => readFileSync(new URL('../../' + name, import.meta.url), 'utf8');
 const code = read('assets/js/theme.js');
 const header = read('_includes/header.html');
+const sidebar = read('_includes/sidebar.html');
 const layout = read('_layouts/default.html');
 const style = read('assets/css/style.css');
 const overrides = read('assets/css/overrides.css');
@@ -108,10 +109,10 @@ test('classic blue stays in Light mode; Dark links use soft sky blue', () => {
 test('recent sidebar post links underline on hover and keyboard focus', () => {
   assert.match(style, /\.recent-posts-list li a:hover,\s*\.recent-posts-list li a:focus-visible\s*\{[^}]*text-decoration:\s*underline;/);
 });
-test('Dial-a-Homepage links and monthly archive counts follow the active theme', () => {
-  assert.match(overrides, /\.dial-homepage a \{ color: var\(--link\); text-decoration: none; \}/);
-  assert.match(overrides, /\.dial-homepage a:hover,\s*\.dial-homepage a:focus-visible\s*\{[^}]*color: var\(--link-hover\);[^}]*text-decoration:\s*underline;/);
-  assert.match(overrides, /\.dial-homepage a:focus-visible\s*\{[^}]*var\(--focus\)/);
+test('sidebar action links and monthly archive counts follow the active theme', () => {
+  assert.match(style, /\.sidebar-action-link\s*\{[^}]*color:\s*var\(--link\);/);
+  assert.match(style, /\.sidebar-action-link:hover,\s*\.sidebar-action-link:focus-visible\s*\{[^}]*color:\s*var\(--link-hover\);/);
+  assert.match(style, /\.sidebar-action-link:focus-visible\s*\{[^}]*outline:\s*2px solid var\(--focus\)/);
   assert.match(overrides, /\.archive-month-summary\s*\{[^}]*color: var\(--muted\)/);
   assert.match(overrides, /\.mcretro-modem-titlebar[\s\S]*background: #000080/);
 });
@@ -202,10 +203,16 @@ test('navigation hover underlines words without bolding or shifting adjacent ite
   assert.match(style, /\.nav-list li a:hover,\s*\.nav-list li a:focus-visible\s*\{[^}]*text-decoration:\s*none;/);
 });
 
-test('Dial-a-Homepage link behaves as an ordinary unbolded link', () => {
-  assert.match(overrides, /\.dial-homepage a \{ color: var\(--link\); text-decoration: none; \}/);
-  assert.match(overrides, /\.dial-homepage-random\s*\{[^}]*font-weight:\s*400;/);
-  assert.match(overrides, /\.dial-homepage a:hover,\s*\.dial-homepage a:focus-visible\s*\{[^}]*text-decoration:\s*underline;/);
+test('blog and dial-up sidebar links share bold, aligned square-button styling', () => {
+  assert.match(sidebar, /class="recent-posts-more sidebar-action-link" href="\/blog\/"/);
+  assert.match(sidebar, /class="dial-homepage-random sidebar-action-link" href="\/homepages\/modem\/\?site=random" data-dial-site="random"/);
+  assert.match(sidebar, /class="sidebar-action-link__icon" aria-hidden="true">📚<\/span>/u);
+  assert.match(sidebar, /class="sidebar-action-link__icon" aria-hidden="true">☎️<\/span>/u);
+  assert.equal((sidebar.match(/class="sidebar-action-link__label"/g) || []).length, 2);
+  assert.match(style, /\.sidebar-action-link\s*\{[^}]*font-weight:\s*700;/);
+  assert.match(style, /\.sidebar-action-link\s*\{[^}]*border-radius:\s*0;/);
+  assert.match(style, /\.sidebar-action-link__icon\s*\{[^}]*align-items:\s*center;[^}]*justify-content:\s*center;/);
+  assert.doesNotMatch(overrides, /\.dial-homepage-random\s*\{[^}]*font-weight:/);
 });
 
 test('calendar keeps four month columns with compact themed filled and empty tiles', () => {

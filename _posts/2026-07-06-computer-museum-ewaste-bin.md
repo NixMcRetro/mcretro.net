@@ -2,7 +2,7 @@
 title: "The Computer Museum in the E-Waste Bin"
 author: "Nix McRetro"
 date: 2026-07-06
-categories: [computing, history, uts]
+categories: [news, study]
 share_description: >-
   🖥️ An Apollo workstation, a vintage oscilloscope, and a spectroradiometer in UTS e-waste. Then I spotted the same instrument on display at UNSW!
 ---

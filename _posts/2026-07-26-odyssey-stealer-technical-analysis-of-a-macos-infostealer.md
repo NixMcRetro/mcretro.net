@@ -36,7 +36,7 @@ All indicators of compromise have been reported to the ACSC, AFP, and relevant a
 
 
 <details class="about-panel panel--teal odyssey-panel" id="odyssey-acquisition" markdown="1">
-<summary markdown="span">Sample Acquisition &amp; Binary Overview</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🔬</span> Sample Acquisition &amp; Binary Overview</summary>
 
 ## 1. Sample Acquisition
 
@@ -73,7 +73,7 @@ The binary is a C++ application that makes heavy use of `std::string` for path c
 </details>
 
 <details class="about-panel panel--teal odyssey-panel" id="odyssey-decryption" markdown="1">
-<summary markdown="span">String Decryption &amp; Target Analysis</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🧩</span> String Decryption &amp; Target Analysis</summary>
 
 ## 3. String Obfuscation: xorshift32
 
@@ -490,7 +490,7 @@ ammjlinfekkoockogfhdkgcohjlbhmff
 </details>
 
 <details class="about-panel panel--teal odyssey-panel" id="odyssey-timeline" markdown="1">
-<summary markdown="span">Attack Timeline, C2 &amp; Persistence</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">📡</span> Attack Timeline, C2 &amp; Persistence</summary>
 
 ## 5. Attack Timeline (User: m1 - Initial Infection)
 
@@ -614,7 +614,7 @@ The `m2` infection provided a recovered `.botid`, and later manual polling retur
 </details>
 
 <details class="about-panel panel--teal odyssey-panel" id="odyssey-artifacts" markdown="1">
-<summary markdown="span">Recovered Forensic Evidence</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🧾</span> Recovered Forensic Evidence</summary>
 
 ## 9. Forensic Artifacts Recovered
 
@@ -656,7 +656,7 @@ Every 60 seconds, a `curl` process connected to `192.253.248.181:80`, matching t
 </details>
 
 <details class="about-panel panel--teal odyssey-panel" id="odyssey-detection" markdown="1">
-<summary markdown="span">Detection &amp; Forensic Scripts</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🛠️</span> Detection &amp; Forensic Scripts</summary>
 
 ## 10. Detection and Cleanup Script
 
@@ -1355,7 +1355,7 @@ sudo ./detect_external_mac.sh "/Volumes/MyDrive"
 </details>
 
 <details class="about-panel panel--teal odyssey-panel" id="odyssey-iocs" markdown="1">
-<summary markdown="span">Indicators of Compromise</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🚩</span> Indicators of Compromise</summary>
 
 ## 12. Indicators of Compromise
 
@@ -1404,7 +1404,7 @@ sudo ./detect_external_mac.sh "/Volumes/MyDrive"
 </details>
 
 <details class="about-panel panel--teal odyssey-panel" id="odyssey-response" markdown="1">
-<summary markdown="span">Disclosure, Remediation &amp; Conclusions</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🛡️</span> Disclosure, Remediation &amp; Conclusions</summary>
 
 ## 13. Response and Disclosure
 

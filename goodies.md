@@ -16,7 +16,7 @@ title: Goodies
 Welcome to the Goodies page! This is where I keep all sorts of bits and pieces that don't quite fit anywhere else. There's a mix of old favourites, restored pages and experiments I've tinkered with over the years.
 
 <details class="about-panel panel--teal" name="mcretro-goodies" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Ready to Visit</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">✅</span> Ready to Visit</summary>
 
 **🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**<br>
 A browser-based music maker originally created for SuperNick. Make some noise with synthesizers, keyboards, rhythms and songs. Bleep, bloop, bleep!
@@ -33,7 +33,7 @@ Bend the bits of a Sega Mega Drive right in your browser! Load your own game ROM
 </details>
 
 <details class="about-panel panel--teal" name="mcretro-goodies" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Restored Historical Homepages</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🗃️</span> Restored Historical Homepages</summary>
 
 The original HTML and artwork from these restored sites have made it back onto McRetro.net. No modern makeover here; these are the old-style pages as they were, with just the paths fixed where necessary.
 
@@ -55,7 +55,7 @@ An old-fashioned nature homepage featuring a frog, a lizard and a few original p
 </details>
 
 <details class="about-panel panel--teal" name="mcretro-goodies" markdown="1">
-<summary markdown="span"><img src="/assets/images/about/siren.gif" alt="" width="16" height="16" /> Still Under Construction</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🚧</span> Still Under Construction</summary>
 
 - **[Fish Tank World](/homepages/fishtankworld/)**: Still needs its proper historical content restored.
 - **[GeoCities](/homepages/geocities/)**: Still needs its proper historical content restored.

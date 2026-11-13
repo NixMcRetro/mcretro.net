@@ -422,19 +422,6 @@
   font-size: 0.86rem;
   line-height: 1.55;
 }
-.dial-homepage a { color: var(--link); text-decoration: none; }
-.dial-homepage a:hover,
-.dial-homepage a:focus-visible {
-  color: var(--link-hover);
-  text-decoration: underline;
-  text-underline-offset: 0.12em;
-}
-.dial-homepage-random {
-  display: inline-block;
-  font-size: 0.86rem;
-  line-height: 1.45;
-  font-weight: 400;
-}
 .dial-homepage-label {
   margin: 0.65rem 0 0.15rem;
   font-size: 0.81rem;
@@ -1229,14 +1216,10 @@
 .sidebar .recent-posts-widget {
   padding-bottom: 1rem;
 }
-/* Keep the retro telephone outside the hyperlink so it never underlines.
-   Reduce the dial widget's oversized bottom gap to match its top spacing. */
+/* Keep the dial widget's lower divider gap compact. Both sidebar
+   action links now use their shared rules in style.css. */
 .sidebar .dial-homepage {
   padding-bottom: 0.7rem;
-}
-.dial-homepage-icon {
-  font-size: 0.86rem;
-  line-height: 1;
 }
 
 /* Match the mobile menu control to the 40px Light/Dark toggle.

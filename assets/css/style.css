@@ -697,6 +697,21 @@ pre code {
   outline-offset: 2px;
 }
 
+/* Give different platform emoji the same space and text alignment. */
+.sidebar-action-link__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 1.3em;
+  width: 1.3em;
+  height: 1.3em;
+  font-size: 1.1em;
+  line-height: 1;
+}
+.sidebar-action-link__label {
+  white-space: nowrap;
+}
+
 /* Archive dropdown */
 #archive-dropdown {
   width: 100%;

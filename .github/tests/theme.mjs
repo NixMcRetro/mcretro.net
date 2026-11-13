@@ -215,6 +215,15 @@ test('blog and dial-up sidebar links share bold, aligned square-button styling',
   assert.doesNotMatch(overrides, /\.dial-homepage-random\s*\{[^}]*font-weight:/);
 });
 
+test('sidebar sections use the same 1.3rem spacing before their dividers', () => {
+  assert.match(style, /\.search-widget\s*\{[^}]*padding-bottom:\s*1\.3rem;/);
+  const common = overrides.match(/\.sidebar \.archive-widget,\s*\.sidebar \.recent-posts-widget,\s*\.sidebar \.dial-homepage\s*\{([^}]*)\}/)?.[1];
+  assert.ok(common, 'Archives, Recent Posts and Dial-a-Homepage share one spacing rule');
+  assert.match(common, /padding-bottom:\s*1\.3rem;/);
+  assert.doesNotMatch(overrides, /\.sidebar \.recent-posts-widget\s*\{/, 'No later Recent Posts override');
+  assert.equal((overrides.match(/\.sidebar \.dial-homepage\s*\{/g) || []).length, 1, 'No later Dial-a-Homepage override');
+});
+
 test('calendar keeps four month columns with compact themed filled and empty tiles', () => {
   const light=style.split(':root[data-theme="dark"]')[0];
   const dark=style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];

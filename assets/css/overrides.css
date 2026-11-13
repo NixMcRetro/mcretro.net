@@ -744,10 +744,10 @@
   }
 }
 
-/* Match the Search widget's breathing room above the sidebar separators.
-   The default .widget bottom padding is only 0.5rem; keep the good spacing
-   on Search and Recent Posts unchanged. */
+/* Match the Search widget's 1.3rem breathing room before each divider.
+   Apply the same spacing to Archives, Recent Posts and Dial-a-Homepage. */
 .sidebar .archive-widget,
+.sidebar .recent-posts-widget,
 .sidebar .dial-homepage {
   padding-bottom: 1.3rem;
 }
@@ -1208,18 +1208,9 @@
   border-color: var(--border);
 }
 
-/* Match the RSS link's gap to the heading-to-first-post rhythm,
-   while leaving a little breathing room above the next widget's rule. */
+/* The last recent post should not add an extra list-item margin. */
 .sidebar .recent-posts-list li:last-child {
   margin-bottom: 0;
-}
-.sidebar .recent-posts-widget {
-  padding-bottom: 1rem;
-}
-/* Keep the dial widget's lower divider gap compact. Both sidebar
-   action links now use their shared rules in style.css. */
-.sidebar .dial-homepage {
-  padding-bottom: 0.7rem;
 }
 
 /* Match the mobile menu control to the 40px Light/Dark toggle.

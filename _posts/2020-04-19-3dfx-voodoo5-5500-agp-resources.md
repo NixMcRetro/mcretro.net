@@ -3,7 +3,7 @@ title: "3dfx Voodoo5 5500 AGP Resources"
 author: "Nix McRetro"
 date: 2020-04-19T04:15:53.000+10:00
 last_modified_at: 2026-10-22
-categories: [ibm-pc]
+categories: [computing]
 share_description: >-
   Two VSA-100 chips, 64 MB of split memory and glorious anti-aliasing. A little collection of Voodoo5 5500 AGP references for future retro PC adventures. 🎮
 ---

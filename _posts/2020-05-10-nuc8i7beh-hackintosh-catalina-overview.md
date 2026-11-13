@@ -2,7 +2,7 @@
 title: "NUC8i7BEH Hackintosh Catalina Overview"
 author: "Nix McRetro"
 date: 2020-05-10T18:32:43.000+10:00
-categories: [apple, ibm-pc, youtube]
+categories: [apple, computing, youtube]
 last_modified_at: 2026-10-18
 share_description: >-
   A fanless Intel NUC8i7BEH runs macOS Catalina 10.15.4 with 32 GB RAM and Bluetooth finally working. The expensive little Raspberry Pi lives! 🍎

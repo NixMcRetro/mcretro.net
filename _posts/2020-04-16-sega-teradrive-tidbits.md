@@ -2,7 +2,7 @@
 title: "Sega TeraDrive Tidbits"
 author: "Nix McRetro"
 date: 2020-04-16T10:32:35.000+10:00
-categories: [ibm-pc, sega]
+categories: [computing, sega]
 last_modified_at: 2026-10-18
 share_description: >-
   A Japanese TeraDrive discussion thread offers odd little clues about Sega's IBM hybrid. Useful historical chatter, not a verified service manual. 💾

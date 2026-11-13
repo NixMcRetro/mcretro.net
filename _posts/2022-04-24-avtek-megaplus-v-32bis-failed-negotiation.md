@@ -2,7 +2,7 @@
 title: "Avtek MegaPlus V.32bis - Failed Negotiation"
 author: "Nix McRetro"
 date: 2022-04-24T21:52:01.000+10:00
-categories: [ibm-pc, youtube]
+categories: [computing, youtube]
 last_modified_at: 2026-10-18
 share_description: >-
   The Avtek MegaPlus V.32bis dials through a Linksys PAP2T but can't finish its handshake. No carrier detect yet, though the modems are getting closer. 📞

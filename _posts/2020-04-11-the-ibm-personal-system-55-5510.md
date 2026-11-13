@@ -2,7 +2,7 @@
 title: "The IBM Personal System/55 5510"
 author: "Nix McRetro"
 date: 2020-04-11T10:00:55.000+10:00
-categories: [ibm-pc, sega]
+categories: [computing, sega]
 last_modified_at: 2026-10-18
 share_description: >-
   An IBM PS/55 Type 5510 reveals onboard VGA, ISA riser slots and delightfully peculiar wiring. A translated Japanese teardown, not one of my own. 🖥️

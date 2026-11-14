@@ -1331,6 +1331,26 @@ a.page-number:hover,
 
 /* Hamburger Menu & Mobile Meta */
 @media screen and (max-width: 750px) {
+  /* Stack every rotating phrase in one auto-sized grid cell. The longest
+     wrapped phrase determines the height, so none are cut off or shrunken. */
+  .textcycle {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .textcycle .phrase {
+    position: static;
+    grid-column: 1;
+    grid-row: 1;
+    transform: none;
+    align-self: center;
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
+    line-height: 1.35;
+    text-wrap: balance;
+  }
+
   .header-inner {
     flex-direction: column;
     align-items: stretch;

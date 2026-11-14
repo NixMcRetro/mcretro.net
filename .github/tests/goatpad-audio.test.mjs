@@ -181,17 +181,17 @@ test('a failed initial sound can be retried with the same AudioContext', async (
 test('an unvisited pad fetches its sample on demand, then plays after eight steps', async () => {
   const app = fixture();
   await app.start();
-  await app.click(35); // pad 44, not among the initial eight
+  await app.click(27); // pad 44, not among the initial eight
   assert.equal(app.requests.length, 9);
   assert.equal(app.requests.at(-1), './audio/44.opus');
-  assert.ok(app.pads[35].classList.contains('active'));
+  assert.ok(app.pads[27].classList.contains('active'));
   assert.equal(app.timers.size, 1);
   for (let i = 0; i < 7; i++) app.tick();
   assert.equal(app.played.length, 0);
   app.tick();
   assert.deepEqual(app.played, [44]);
   assert.equal(app.counters.filter(x => x.classList.contains('active')).length, 1);
-  await app.click(35);
+  await app.click(27);
   assert.equal(app.timers.size, 0);
   for (let i = 0; i < 8; i++) app.tick();
   assert.deepEqual(app.played, [44]);
@@ -211,12 +211,11 @@ test('byte-identical pad aliases reuse the same decoded Opus sound', async () =>
 test('one failed on-demand request does not poison the cache; pad retries on click', async () => {
   const app = fixture({ failOnce: 54 });
   await app.start();
-  await app.click(35 + 10); // pad 56, not 54; test a same-category selection
-  await app.click(43); // pad 54
-  assert.ok(!app.pads[43].classList.contains('active'));
+  await app.click(35); // pad 54, not in initial preload
+  assert.ok(!app.pads[35].classList.contains('active'));
   assert.match(app.audioStatus.textContent, /retry/);
-  await app.click(43);
-  assert.ok(app.pads[43].classList.contains('active'));
+  await app.click(35);
+  assert.ok(app.pads[35].classList.contains('active'));
   assert.equal(app.requests.filter(x => x === './audio/54.opus').length, 2);
 });
 

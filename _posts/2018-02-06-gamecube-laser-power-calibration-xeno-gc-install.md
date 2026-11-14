@@ -32,13 +32,19 @@ The Xeno GC installation itself was relatively straightforward, although I was a
 
 At least a GameCube-compatible Wii would give me another way to play the games. Note to self: Get a Wii! ;)
 
-![](/assets/images/2018/img_0617.jpg)
+![Close-up of a green Nintendo GameCube mainboard with several small silver electrolytic capacitors beside two metal connector housings, labelled C116, C115, C3 and C2.](/assets/images/2018/img_0617.jpg)
+
+*The little electrolytic capacitors on the GameCube mainboard. With everything apart, I thought I'd have a closer look at them.*
+{: .media-caption }
 
 While I had this one open I took some snaps of the electrolytic capacitors. These are the caps on the mainboard. They're getting old enough to keep an eye on, but age alone does not prove they are about to fail or leak all over the things. How some of my Mega Drives haven't leaked yet, I do not know!
 
 The little battery on the board looked like a CR2032, so that's another thing to investigate while the machine is apart.
 
-![](/assets/images/2018/img_0618.jpg)
+![Green TDK 2.0 GameCube power circuit board with three silver electrolytic capacitors, several blue-rimmed inductors, a black connector and a white two-wire plug.](/assets/images/2018/img_0618.jpg)
+
+*And here are the capacitors on the GameCube's DC-in power board. Getting down to this board involved rather a lot of screws!*
+{: .media-caption }
 
 And these are the capacitors on the power board (DC-in area). Looking forward to replacing them one day! There were an awful lot of screws involved in getting this far, too. Nintendo really went to town with them. Screws, screws, and more screws.
 

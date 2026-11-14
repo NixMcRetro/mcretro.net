@@ -417,11 +417,33 @@
   }
 }
 
-/* At 320px, keep the logo legible beside the fixed-size header controls. */
+/* Very narrow screens: balance wordmark and buttons without reducing the
+   tagline font or introducing wrapping. Wider phones keep the 40px controls. */
 @media screen and (max-width: 360px) {
+  .logo-area {
+    grid-template-columns: minmax(0, 1fr) 36px 36px;
+    column-gap: 6px;
+  }
   .site-logo {
-    font-size: clamp(1.125rem, 5.6vw, 1.3rem);
-    letter-spacing: 0.08em;
+    font-size: clamp(1.23rem, 6.2vw, 1.38rem);
+    letter-spacing: 0.045em;
+  }
+  .theme-toggle,
+  .nav-toggle {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+  .theme-icon { width: 19px; height: 19px; }
+  .site-header .nav-toggle span { width: 17px; }
+}
+
+/* Match the homepage's main heading to the available phone width, without
+   changing desktop typography or the rotating header taglines. */
+@media screen and (max-width: 500px) {
+  .home-headline {
+    font-size: clamp(1.3rem, 6.2vw, 1.75rem);
+    line-height: 1.25;
   }
 }
 

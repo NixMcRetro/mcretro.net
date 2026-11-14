@@ -37,6 +37,10 @@ const loading = new Map();
 const columnSelection = new WeakMap();
 let audioContext;
 let buttonsLoaded = false;
+// Upstream 27 June 2026 timing fix: 69 BPM, anchored to the audio clock.
+const BEAT_SECONDS = 60 / 69;
+const BEAT_INTERVAL = BEAT_SECONDS * 1000;
+let nextBeatTime = 0;
 let sequencerTimer = null;
 let completedBars = 0;
 
@@ -98,22 +102,36 @@ function refreshTimer() {
     if (active && sequencerTimer === null) {
         completedBars = 0;
         resetCounter();
-        sequencerTimer = setInterval(tick, 860);
+        nextBeatTime = audioContext.currentTime + BEAT_SECONDS;
+        sequencerTimer = setTimeout(tick, BEAT_INTERVAL);
     } else if (!active && sequencerTimer !== null) {
-        clearInterval(sequencerTimer);
+        clearTimeout(sequencerTimer);
         sequencerTimer = null;
+        nextBeatTime = 0;
         completedBars = 0;
         resetCounter();
     }
 }
 
 function tick() {
-    if (!buttonsLoaded) return;
+    if (!buttonsLoaded || sequencerTimer === null) return;
     const activeCounters = document.querySelectorAll(".counter.active");
     if (activeCounters.length < 8) {
         activeCounters[activeCounters.length - 1].nextElementSibling.classList.add("active");
-        return;
+    } else {
+        playBar();
+        resetCounter();
     }
+    nextBeatTime += BEAT_SECONDS;
+    // Do not fire a burst of catch-up beats after a tab was suspended.
+    if (audioContext.currentTime - nextBeatTime > BEAT_SECONDS) {
+        nextBeatTime = audioContext.currentTime + BEAT_SECONDS;
+    }
+    const delay = Math.max(0, (nextBeatTime - audioContext.currentTime) * 1000);
+    sequencerTimer = setTimeout(tick, delay);
+}
+
+function playBar() {
     const shortOnly = completedBars % 2 === 1;
     for (const button of document.querySelectorAll("button.active")) {
         const key = Number(button.dataset.sample);
@@ -126,7 +144,6 @@ function tick() {
         source.start(0);
     }
     completedBars++;
-    resetCounter();
 }
 
 function togglePad(button) {

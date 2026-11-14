@@ -227,7 +227,104 @@
   const taskbar = document.getElementById('mcretro-modem-taskbar');
   const dialog = document.getElementById('mcretro-modem-dialog');
   const standalone = document.getElementById('mcretro-modem-page');
+  const newConnectionDialog = document.getElementById('mcretro-modem-new-connection');
+  const PRESETS_STORAGE = 'mcretro-dialup-presets-v1';
   let durationTicker = null;
+
+  // Simulated counters, not measurements of genuine network traffic. The peaks
+  // stay at or below 900 bytes per 250ms, equivalent to 28,800 bits per second.
+  // Short pauses and asymmetric receive/send activity mimic a 1990s connection.
+  const RECEIVE_BURSTS = Object.freeze([280,540,750,0,620,850,340,580,720,0,670,820,600,480,900,320]);
+  const SEND_BURSTS = Object.freeze([28,65,115,12,84,105,35,60,120,10,73,100,45,91,110,20]);
+
+  function simulatedCount(bursts, ticks) {
+    const cycles = Math.floor(ticks / bursts.length);
+    let perCycle = 0, partial = 0;
+    for (let i = 0; i < bursts.length; i++) {
+      perCycle += bursts[i];
+      if (i < ticks % bursts.length) partial += bursts[i];
+    }
+    return cycles * perCycle + partial;
+  }
+
+  function simulatedTraffic(startedAt) {
+    const ticks = Math.max(0, Math.floor((Date.now() - startedAt) / 250));
+    return {
+      received: simulatedCount(RECEIVE_BURSTS, ticks),
+      sent: simulatedCount(SEND_BURSTS, ticks)
+    };
+  }
+
+  // Move the connected window only. Setup/progress remain native dialogs.
+  function positionConnected(root, x, y) {
+    if (!root || !root.style || !root.getBoundingClientRect) return;
+    const bounds = root.getBoundingClientRect();
+    root.style.left = Math.max(0, Math.min(window.innerWidth - bounds.width, x)) + 'px';
+    root.style.top = Math.max(0, Math.min(window.innerHeight - bounds.height, y)) + 'px';
+    root.style.right = 'auto';
+    root.style.bottom = 'auto';
+  }
+
+  function saveWindowPosition(root) {
+    const data = readConnected();
+    if (!data || !root.getBoundingClientRect) return;
+    const rect = root.getBoundingClientRect();
+    data.x = Math.round(rect.left);
+    data.y = Math.round(rect.top);
+    saveConnected(data);
+  }
+
+  function resetWindowPosition(root) {
+    if (!root || !root.style) return;
+    root.style.left = '';
+    root.style.top = '';
+    root.style.right = '';
+    root.style.bottom = '';
+  }
+
+  function installConnectedDrag(root) {
+    const titlebar = root.querySelector('.mcretro-modem-titlebar');
+    if (!titlebar) return;
+    let drag = null;
+    titlebar.addEventListener('pointerdown', event => {
+      if (root.dataset.modemStage !== 'connected' ||
+          (event.pointerType === 'mouse' && event.button !== 0) ||
+          event.target?.closest?.('button, a')) return;
+      const rect = root.getBoundingClientRect();
+      drag = { id: event.pointerId, dx: event.clientX - rect.left, dy: event.clientY - rect.top };
+      titlebar.setPointerCapture?.(event.pointerId);
+      event.preventDefault?.();
+    });
+    titlebar.addEventListener('pointermove', event => {
+      if (!drag || drag.id !== event.pointerId) return;
+      positionConnected(root, event.clientX - drag.dx, event.clientY - drag.dy);
+    });
+    const finish = event => {
+      if (!drag || drag.id !== event.pointerId) return;
+      drag = null;
+      saveWindowPosition(root);
+      if (titlebar.hasPointerCapture?.(event.pointerId)) titlebar.releasePointerCapture(event.pointerId);
+    };
+    titlebar.addEventListener('pointerup', finish);
+    titlebar.addEventListener('pointercancel', finish);
+    titlebar.addEventListener('keydown', event => {
+      if (root.dataset.modemStage !== 'connected' ||
+          !['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.key)) return;
+      const bounds = root.getBoundingClientRect();
+      const step = event.shiftKey ? 5 : 20;
+      const x = bounds.left + (event.key === 'ArrowLeft' ? -step : event.key === 'ArrowRight' ? step : 0);
+      const y = bounds.top + (event.key === 'ArrowUp' ? -step : event.key === 'ArrowDown' ? step : 0);
+      positionConnected(root, x, y);
+      saveWindowPosition(root);
+      event.preventDefault?.();
+    });
+    window.addEventListener('resize', () => {
+      if (root.dataset.modemStage !== 'connected' || !root.open || !root.style?.left) return;
+      const b = root.getBoundingClientRect();
+      positionConnected(root, b.left, b.top);
+      saveWindowPosition(root);
+    });
+  }
 
   function readConnected() {
     try {
@@ -275,24 +372,22 @@
     root.querySelector('[data-modem-minimize]').hidden = stage !== 'connected';
     root.querySelector('[data-modem-title]').textContent =
       stage === 'connected' ? 'Connected To McRetro.net' :
-      stage === 'progress' ? 'Connecting To ' + (root._mcretroSite?.name || 'McRetro.net') : 'Connect To';
+      stage === 'progress' ? 'Connecting To ' + (root._mcretroLabel || root._mcretroSite?.name || 'McRetro.net') : 'Connect To';
     root.dataset.modemStage = stage;
   }
 
-  function setDestination(root, site) {
+  function setDestination(root, site, label) {
     endRun();
     root._mcretroSite = site;
+    root._mcretroLabel = label || site?.name || 'McRetro.net';
     root.dataset.muted = 'false';
     const mute = root.querySelector('[data-modem-mute]');
     mute.textContent = 'Mute';
     mute.setAttribute('aria-pressed', 'false');
-    root.querySelector('[data-modem-destination]').textContent = site ? site.name : 'Unknown Homepage';
+    root.querySelector('[data-modem-destination]').textContent = site ? root._mcretroLabel : 'Unknown Homepage';
     root.querySelector('[data-modem-connect]').disabled = !site;
     root.querySelector('[data-modem-skip]').disabled = !site;
     root.querySelector('[data-modem-status]').textContent = site ? 'Ready To Dial.' : 'Unknown Homepage.';
-    root.querySelectorAll('[data-modem-choice]').forEach(choice => {
-      choice.checked = choice.value === (site?.slug === BLOG_RANDOM.slug ? 'blog-random' : 'random');
-    });
     setStage(root, 'setup');
   }
 
@@ -301,15 +396,27 @@
     root.querySelector('[data-modem-connected-destination]').textContent = data.name;
     root.querySelector('[data-modem-visit]').href = data.path || MODEM_ROUTE;
     const duration = root.querySelector('[data-modem-duration]');
-    const update = () => { duration.textContent = formatDuration(data.startedAt); };
+    const received = root.querySelector('[data-modem-bytes-received]');
+    const sent = root.querySelector('[data-modem-bytes-sent]');
+    const update = () => {
+      duration.textContent = formatDuration(data.startedAt);
+      const traffic = simulatedTraffic(data.startedAt);
+      received.textContent = traffic.received.toLocaleString('en-AU');
+      sent.textContent = traffic.sent.toLocaleString('en-AU');
+    };
     setStage(root, 'connected');
     if (root.open) root.close();
     if (typeof root.show === 'function') root.show(); // Modeless: users can browse behind it.
     else if (typeof root.showModal === 'function') root.showModal();
+    if (Number.isFinite(data.x) && Number.isFinite(data.y)) {
+      positionConnected(root, data.x, data.y);
+    } else {
+      resetWindowPosition(root);
+    }
     if (taskbar) taskbar.hidden = true;
     stopDuration();
     update();
-    durationTicker = window.setInterval(update, 1000);
+    durationTicker = window.setInterval(update, 250);
   }
 
   function minimiseConnected(root) {
@@ -392,7 +499,7 @@
       if (currentRun !== run) return;
       run.destinationPromise.then(path => {
         if (currentRun !== run) return;
-        const data = { name: site.name, phone, path, startedAt: Date.now(), minimised: false };
+        const data = { name: root._mcretroLabel || site.name, phone, path, startedAt: Date.now(), minimised: false };
         endRun();
         saveConnected(data);
         // Keep the connection window in this tab. Some restored homepages are
@@ -419,6 +526,7 @@
 
   function initModemRoot(root) {
     root.dataset.muted = 'false';
+    installConnectedDrag(root);
     root.querySelector('[data-modem-connect]').addEventListener('click', () => startConnection(root));
     root.querySelector('[data-modem-skip]').addEventListener('click', () => {
       const site = root._mcretroSite;
@@ -453,21 +561,67 @@
       event.currentTarget.textContent = panel.hidden ? 'Details >>' : 'Details <<';
       event.currentTarget.setAttribute('aria-expanded', String(!panel.hidden));
     });
-    root.querySelectorAll('[data-modem-choice]').forEach(choice => {
-      choice.addEventListener('change', () => {
-        if (!choice.checked) return;
-        const site = resolveSite(choice.value);
-        if (!site) return;
-        setDestination(root, site);
-        if (root === standalone) {
-          window.history.replaceState(null, '', choice.value === 'random'
-            ? MODEM_ROUTE : modemURL(site));
-        }
-      });
-    });
     root.querySelector('[data-modem-number]').addEventListener('input', event => {
       if (typeof event.currentTarget.setCustomValidity === 'function') event.currentTarget.setCustomValidity('');
     });
+  }
+
+  if (dialog) initModemRoot(dialog);
+  // Saved custom dial-up shortcuts live only in this browser, not on a server.
+  // All destinations remain the two approved internal routes.
+  function loadPresets() {
+    try {
+      const raw = window.localStorage?.getItem(PRESETS_STORAGE);
+      const list = raw ? JSON.parse(raw) : [];
+      if (!Array.isArray(list)) return [];
+      return list.filter(item => item && typeof item.id === 'string' &&
+        typeof item.name === 'string' && item.name.length > 0 && item.name.length <= 40 &&
+        (item.target === 'random' || item.target === 'blog-random') &&
+        typeof item.phone === 'string' && /^[0-9()+. -]+$/.test(item.phone) &&
+        item.phone.replace(/\\D/g,'').length >= 1 &&
+        item.phone.replace(/\\D/g,'').length <= MAX_DIAL_DIGITS).slice(0, 12);
+    } catch (_) { return []; }
+  }
+
+  function savePresets(list) {
+    try { window.localStorage?.setItem(PRESETS_STORAGE, JSON.stringify(list)); }
+    catch (_) { /* Still works for the current page, without permanent storage. */ }
+  }
+
+  function openConnection(target, phone = '02 9373 5100', label = null) {
+    if (!standalone || typeof standalone.showModal !== 'function') return;
+    const site = resolveSite(target);
+    if (!site) return;
+    if (standalone.open) standalone.close();
+    setDestination(standalone, site, label);
+    standalone.querySelector('[data-modem-number]').value = phone;
+    standalone.showModal();
+  }
+
+  function addPresetIcon(preset) {
+    const folder = document.querySelector('[data-modem-shortcut-list]');
+    if (!folder) return;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'mcretro-modem-shortcut mcretro-modem-custom-shortcut';
+    button.setAttribute('aria-label', 'Connect To ' + preset.name);
+    const art = document.createElement('span');
+    art.className = 'mcretro-modem-shortcut-art';
+    art.setAttribute('aria-hidden', 'true');
+    const monitor = document.createElement('span');
+    monitor.className = 'mcretro-modem-pixel-monitor';
+    const phone = document.createElement('span');
+    phone.className = 'mcretro-modem-pixel-phone';
+    phone.textContent = '☎';
+    art.appendChild(monitor);
+    art.appendChild(phone);
+    const title = document.createElement('span');
+    title.className = 'mcretro-modem-shortcut-name';
+    title.textContent = preset.name;
+    button.appendChild(art);
+    button.appendChild(title);
+    button.addEventListener('click', () => openConnection(preset.target, preset.phone, preset.name));
+    folder.appendChild(button);
   }
 
   if (dialog) initModemRoot(dialog);
@@ -476,17 +630,59 @@
     const params = new URLSearchParams(window.location.search);
     const requested = params.get('site');
     setDestination(standalone, resolveSite(requested || 'random') || randomSite());
+
     document.querySelectorAll('[data-modem-launch]').forEach(link => {
       link.addEventListener('click', event => {
         if (event.defaultPrevented || event.button !== 0 || event.metaKey ||
             event.ctrlKey || event.shiftKey || event.altKey ||
             typeof standalone.showModal !== 'function') return;
         event.preventDefault();
-        disconnectConnected(dialog);
-        if (standalone.open) standalone.close();
-        standalone.showModal();
+        openConnection(link.dataset.modemTarget || requested || 'random');
       });
     });
+
+    const presets = loadPresets();
+    presets.forEach(addPresetIcon);
+    const count = document.querySelector('[data-modem-explorer-count]');
+    const updateCount = () => {
+      if (count) count.textContent = (3 + presets.length) + ' Object(s)';
+    };
+    updateCount();
+
+    const makeNew = document.querySelector('[data-modem-new]');
+    makeNew?.addEventListener('click', () => {
+      if (!newConnectionDialog || typeof newConnectionDialog.showModal !== 'function') return;
+      const error = newConnectionDialog.querySelector('[data-modem-new-error]');
+      error.hidden = true;
+      if (!newConnectionDialog.open) newConnectionDialog.showModal();
+    });
+    if (newConnectionDialog) {
+      newConnectionDialog.querySelectorAll('[data-modem-new-cancel]').forEach(button => {
+        button.addEventListener('click', () => newConnectionDialog.close());
+      });
+      newConnectionDialog.querySelector('[data-modem-create-form]').addEventListener('submit', event => {
+        event.preventDefault();
+        const name = newConnectionDialog.querySelector('[data-modem-new-name]').value.trim();
+        const target = newConnectionDialog.querySelector('[data-modem-new-target]').value;
+        const phone = newConnectionDialog.querySelector('[data-modem-new-number]').value.trim();
+        const digits = phone.replace(/\\D/g, '');
+        const error = newConnectionDialog.querySelector('[data-modem-new-error]');
+        if (!name || name.length > 40 || !['random','blog-random'].includes(target) ||
+            !/^[0-9()+. -]+$/.test(phone) ||
+            digits.length === 0 || digits.length > MAX_DIAL_DIGITS || presets.length >= 12) {
+          error.textContent = presets.length >= 12 ? 'Maximum Of 12 Saved Connections.' : 'Check The Connection Name And Phone Number.';
+          error.hidden = false;
+          return;
+        }
+        const preset = { id: String(Date.now()) + '-' + presets.length, name, target, phone };
+        presets.push(preset);
+        savePresets(presets);
+        addPresetIcon(preset);
+        updateCount();
+        newConnectionDialog.close();
+        openConnection(target, phone, name);
+      });
+    }
   }
 
   // Sidebar links still open the same dialler in a Windows 95 modal.

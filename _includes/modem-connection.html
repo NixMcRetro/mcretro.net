@@ -1,5 +1,5 @@
 <div class="mcretro-modem-card" data-modem-stage="setup">
-  <div class="mcretro-modem-titlebar">
+  <div class="mcretro-modem-titlebar" tabindex="0" aria-label="Connected Window Title Bar">
     <span data-modem-title>Connect To</span>
     <span class="mcretro-modem-window-buttons">
       <button type="button" class="mcretro-modem-minimize" data-modem-minimize aria-label="Minimise Connection" hidden>_</button>
@@ -13,12 +13,6 @@
         <span class="mcretro-modem-icon" aria-hidden="true"><span class="mcretro-modem-monitor"></span><span class="mcretro-modem-phone">☎</span></span>
         <span class="mcretro-modem-destination" data-modem-destination>Restored Homepage</span>
       </div>
-
-      <fieldset class="mcretro-modem-targets">
-        <legend>Destination</legend>
-        <label><input type="radio" name="mcretro-modem-target{{ include.id_suffix }}" value="random" data-modem-choice checked> Random Homepage</label>
-        <label><input type="radio" name="mcretro-modem-target{{ include.id_suffix }}" value="blog-random" data-modem-choice> Random Blog Post</label>
-      </fieldset>
 
       <hr class="mcretro-modem-rule">
       <div class="mcretro-modem-fields">
@@ -62,8 +56,8 @@
         <dl class="mcretro-modem-connected-stats">
           <div><dt>Connected At:</dt><dd>28,800 bps</dd></div>
           <div><dt>Duration:</dt><dd data-modem-duration>00:00:00</dd></div>
-          <div><dt>Bytes Received:</dt><dd>0</dd></div>
-          <div><dt>Bytes Sent:</dt><dd>0</dd></div>
+          <div><dt>Bytes Received:</dt><dd data-modem-bytes-received>0</dd></div>
+          <div><dt>Bytes Sent:</dt><dd data-modem-bytes-sent>0</dd></div>
         </dl>
         <div class="mcretro-modem-connected-buttons">
           <a class="mcretro-modem-visit" href="/homepages/modem/" target="_blank" rel="noopener" data-modem-visit>Visit Site</a>

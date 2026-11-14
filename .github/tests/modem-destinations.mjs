@@ -5,90 +5,99 @@ import { runInNewContext } from 'node:vm';
 
 const code = readFileSync(new URL('../../assets/js/mcretro-dialup.js', import.meta.url), 'utf8');
 
+function makeControl(value = '') {
+  const listeners = {};
+  return {
+    listeners, textContent: '', value,
+    disabled: false, hidden: false,
+    style: {}, children: [],
+    className: '', type: 'button', attributes: {},
+    setAttribute(name, value) { this.attributes[name] = value; },
+    setCustomValidity(message) { this.validationMessage = message; },
+    reportValidity() { this.reportedInvalid = true; return false; },
+    addEventListener(type, handler) { listeners[type] = handler; },
+    appendChild(element) { this.children.push(element); },
+    click(event = null) {
+      const e = event || { button: 0, defaultPrevented: false, preventDefault() { this.defaultPrevented = true; } };
+      if (listeners.click) listeners.click(e);
+      return e.defaultPrevented;
+    }
+  };
+}
 function makeRoot() {
   const controls = new Map();
   function control(selector) {
     if (!controls.has(selector)) {
-      const listeners = {};
-      controls.set(selector, {
-        listeners,
-        textContent: '',
-        value: selector === '[data-modem-number]' ? '02 9373 5100' : '',
-        disabled: false,
-        hidden: false,
-        setAttribute() {},
-        setCustomValidity(message) { this.validationMessage = message; },
-        reportValidity() { this.reportedInvalid = true; return false; },
-        addEventListener(type, handler) { listeners[type] = handler; }
-      });
+      const initial = {
+        '[data-modem-number]': '02 9373 5100',
+        '[data-modem-new-name]': 'My Connection',
+        '[data-modem-new-target]': 'random',
+        '[data-modem-new-number]': '02 9373 5100'
+      }[selector] || '';
+      controls.set(selector, makeControl(initial));
     }
     return controls.get(selector);
   }
-  const choices = ['blog-random', 'random'].map(value => {
-    const listeners = {};
-    return {
-      value, checked: false, listeners,
-      addEventListener(type, handler) { listeners[type] = handler; },
-      select() { choices.forEach(choice => { choice.checked = choice === this; }); this.listeners.change(); }
-    };
-  });
-  return {
-    dataset: {}, open: false, control, choices,
+  const style = {};
+  const root = {
+    dataset: {}, open: false, style, control,
     querySelector: control,
     querySelectorAll(selector) {
-      assert.equal(selector, '[data-modem-choice]');
-      return choices;
+      if (selector === '[data-modem-new-cancel]') return [control('[data-modem-new-cancel-a]'),control('[data-modem-new-cancel-b]')];
+      assert.fail('Unexpected root selector: ' + selector);
+    },
+    getBoundingClientRect() {
+      return { left: parseFloat(style.left) || 18, top: parseFloat(style.top) || 18, width: 430, height: 225 };
     },
     addEventListener() {},
     showModal() { this.open = true; },
     show() { this.open = true; },
     close() { this.open = false; }
   };
+  return root;
+}
+function makeLink(dataset = {}) {
+  const link = makeControl();
+  link.dataset = dataset;
+  return link;
 }
 
 function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'],
                    fetchFails = false, withDialog = true, withStandalone = true,
-                   captureAudio = false, storage = new Map() } = {}) {
+                   captureAudio = false, storage = new Map(), local = new Map() } = {}) {
   const dialog = withDialog ? makeRoot() : null;
   const standalone = withStandalone ? makeRoot() : null;
+  const newDialog = withStandalone ? makeRoot() : null;
   const navigations = [], pushes = [], replacements = [], requests = [], timers = [], intervals = [];
   const audioEvents = [];
-  const taskbar = {
-    hidden: true, listeners: {},
-    addEventListener(type, fn) { this.listeners[type] = fn; },
-    click() { this.listeners.click(); }
-  };
-  function linkWithClick(dialSite = null) {
-    const listeners = {};
-    return {
-      dataset: { dialSite }, listeners,
-      addEventListener(type, fn) { listeners[type] = fn; },
-      click() {
-        const event = {
-          button: 0, defaultPrevented: false,
-          preventDefault() { this.defaultPrevented = true; }
-        };
-        if (listeners.click) listeners.click(event);
-        return event.defaultPrevented;
-      }
-    };
-  }
-  const links = ['blog-random', 'random'].map(linkWithClick);
-  const launch = linkWithClick();
+  const taskbar = makeControl();
+  taskbar.hidden = true;
+  const links = ['blog-random', 'random'].map(dialSite => makeLink({ dialSite }));
+  const launches = ['blog-random', 'random'].map(modemTarget => makeLink({ modemTarget }));
+  const newButton = makeControl(), folder = makeControl(), count = makeControl();
   const document = {
     querySelectorAll(selector) {
       if (selector === 'a[data-dial-site]') return links;
-      if (selector === '[data-modem-launch]') return withStandalone ? [launch] : [];
+      if (selector === '[data-modem-launch]') return withStandalone ? launches : [];
       assert.fail('Unexpected document selector: ' + selector);
     },
+    querySelector(selector) {
+      if (selector === '[data-modem-shortcut-list]') return withStandalone ? folder : null;
+      if (selector === '[data-modem-explorer-count]') return withStandalone ? count : null;
+      if (selector === '[data-modem-new]') return withStandalone ? newButton : null;
+      return null;
+    },
+    createElement() { return makeControl(); },
     getElementById(id) {
       if (id === 'mcretro-modem-dialog') return dialog;
       if (id === 'mcretro-modem-page') return standalone;
       if (id === 'mcretro-modem-taskbar') return taskbar;
+      if (id === 'mcretro-modem-new-connection') return newDialog;
       return null;
     }
   };
   const window = {
+    innerWidth: 1024, innerHeight: 768,
     location: {
       search: '?site=' + encodeURIComponent(site),
       pathname: '/homepages/modem/',
@@ -98,6 +107,11 @@ function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'
       getItem(key) { return storage.get(key) ?? null; },
       setItem(key, value) { storage.set(key, value); },
       removeItem(key) { storage.delete(key); }
+    },
+    localStorage: {
+      getItem(key) { return local.get(key) ?? null; },
+      setItem(key, value) { local.set(key, value); },
+      removeItem(key) { local.delete(key); }
     },
     history: {
       pushState(state, _title, path) { pushes.push({ state, path }); },
@@ -142,10 +156,11 @@ function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'
     return Promise.resolve({ ok: true, json: () => Promise.resolve(urls) });
   }
   runInNewContext(code, {
-    document, window, fetch, URLSearchParams, Promise,
-    Math: { floor: Math.floor, round: Math.round, max: Math.max, random: () => 0 }
+    document, window, fetch, URLSearchParams, Promise, Date,
+    Math: { floor: Math.floor, round: Math.round, max: Math.max, min: Math.min, random: () => 0 }
   });
-  return { dialog, standalone, taskbar, launch, storage, links,
+  return { dialog, standalone, newDialog, newButton, folder, count,
+    taskbar, launches, storage, local, links,
     navigations, pushes, replacements, requests, timers, intervals, audioEvents };
 }
 
@@ -211,51 +226,63 @@ test('links preserve normal navigation if a modal dialog is unavailable', () => 
   assert.equal(f.pushes.length, 0);
 });
 
-test('the clean modem URL defaults to the restored-homepage choice', () => {
+test('the clean modem URL defaults to a restored homepage', () => {
   const f = fixture({ site: '', withDialog: false });
-  assert.equal(f.standalone.choices[1].checked, true);
-  assert.equal(f.standalone.choices[0].checked, false);
   assert.equal(f.standalone.control('[data-modem-connect]').disabled, false);
   assert.equal(f.standalone.control('[data-modem-destination]').textContent, 'Frank the Snake');
+  assert.equal(f.count.textContent, '3 Object(s)');
 });
 
-test('standalone destination choices switch modes without opening another page', async () => {
+test('Explorer icons open the right destination without changing the default number', () => {
   const f = fixture({ site: 'random', withDialog: false });
-  assert.equal(f.standalone.choices[1].checked, true);
-  f.standalone.choices[0].select();
-  assert.equal(f.standalone.control('[data-modem-destination]').textContent,
-    'Random McRetro blog post');
-  assert.deepEqual(f.replacements, ['/homepages/modem/?site=blog-random']);
-  f.standalone.control('[data-modem-skip]').listeners.click();
-  await tick();
-  assert.deepEqual(f.navigations, ['/first-post/']);
-  assert.equal(f.pushes.length, 0);
-});
-
-test('the homepage choice restores the clean modem URL', () => {
-  const f = fixture({ site: 'blog-random', withDialog: false });
-  assert.equal(f.standalone.choices[0].checked, true);
-  f.standalone.choices[1].select();
+  assert.equal(f.launches[0].click(), true);
+  assert.equal(f.standalone.open, true);
+  assert.equal(f.standalone.control('[data-modem-destination]').textContent, 'Random McRetro blog post');
+  assert.equal(f.standalone.control('[data-modem-number]').value, '02 9373 5100');
+  assert.equal(f.launches[1].click(), true);
   assert.equal(f.standalone.control('[data-modem-destination]').textContent, 'Frank the Snake');
-  assert.deepEqual(f.replacements, ['/homepages/modem/']);
 });
 
-test('Goodies links to the modem page rather than separately listing dial modes', () => {
+test('Make New Connection saves a real editable shortcut and opens its dialler', () => {
+  const local = new Map();
+  const f = fixture({ site: 'random', withDialog: false, local });
+  f.newButton.click();
+  assert.equal(f.newDialog.open, true);
+  f.newDialog.control('[data-modem-new-name]').value = 'My Old ISP';
+  f.newDialog.control('[data-modem-new-number]').value = '555 1234';
+  f.newDialog.control('[data-modem-new-target]').value = 'blog-random';
+  f.newDialog.control('[data-modem-create-form]').listeners.submit({ preventDefault() {} });
+  assert.equal(f.newDialog.open, false);
+  assert.equal(f.count.textContent, '4 Object(s)');
+  assert.equal(f.folder.children.length, 1);
+  assert.equal(f.standalone.control('[data-modem-number]').value, '555 1234');
+  assert.equal(f.standalone.control('[data-modem-destination]').textContent, 'My Old ISP');
+  assert.equal(JSON.parse(local.get('mcretro-dialup-presets-v1'))[0].target, 'blog-random');
+  const reloaded = fixture({ withDialog: false, local });
+  assert.equal(reloaded.folder.children.length, 1);
+  reloaded.folder.children[0].click();
+  assert.equal(reloaded.standalone.control('[data-modem-number]').value, '555 1234');
+  assert.equal(reloaded.standalone.control('[data-modem-destination]').textContent, 'My Old ISP');
+});
+
+test('Goodies and Explorer preserve approved dial destinations', () => {
   const goodies = readFileSync(new URL('../../goodies.md', import.meta.url), 'utf8');
   const modem = readFileSync(new URL('../../homepages/modem/index.html', import.meta.url), 'utf8');
-  assert.match(goodies, /\[Dial-Up Networking\]\(\/homepages\/modem\/\)/);
-  assert.doesNotMatch(goodies, /data-dial-site="(?:blog-random|random)"/);
   const connection = readFileSync(new URL('../../_includes/modem-connection.html', import.meta.url), 'utf8');
-  assert.ok(modem.includes('McRetro.net Dial-Up'));
-  assert.match(modem, /data-modem-launch/);
-  assert.match(modem, /id="mcretro-modem-page"/);
-  assert.match(connection, /value="blog-random" data-modem-choice/);
-  assert.match(connection, /value="random" data-modem-choice/);
+  assert.ok(goodies.includes('[Dial-Up Networking](/homepages/modem/)'));
+  assert.match(modem, /data-modem-new/);
+  assert.match(modem, /data-modem-target="blog-random"/);
+  assert.match(modem, /data-modem-target="random"/);
+  assert.match(modem, /Make New Connection/);
+  assert.match(modem, /Random Blog Post/);
+  assert.match(modem, /Retro Homepage/);
   assert.match(connection, /data-modem-number[^>]+value="02 9373 5100"/);
+  assert.doesNotMatch(connection, /data-modem-choice/);
   assert.ok(connection.includes('Connected At:</dt><dd>28,800 bps</dd>'));
   assert.match(connection, /target="_blank" rel="noopener" data-modem-visit/);
+  assert.match(connection, /data-modem-bytes-received/);
+  assert.match(connection, /data-modem-bytes-sent/);
 });
-
 
 test('V6.7 schedules three complete beep then double-ring cycles before handshake', () => {
   const f = fixture({ site: 'random', withDialog: false, captureAudio: true });
@@ -285,10 +312,10 @@ test('V6.7 schedules three complete beep then double-ring cycles before handshak
   assert.ok(f.timers.some(timer => timer.delay === 31750));
 });
 
-test('Windows 95 shortcut opens the editable dialler on one click', () => {
+test('Windows 95 shortcuts open the editable dialler on one click', () => {
   const f = fixture({ site: 'random' });
   assert.equal(f.standalone.open, false);
-  assert.equal(f.launch.click(), true);
+  assert.equal(f.launches[1].click(), true);
   assert.equal(f.standalone.open, true);
   assert.equal(f.standalone.dataset.modemStage, 'setup');
   assert.equal(f.standalone.control('[data-modem-number]').value, '02 9373 5100');
@@ -349,4 +376,53 @@ test('connected window keeps the visit link, survives navigation, minimises and 
   destination.dialog.control('[data-modem-disconnect]').listeners.click();
   assert.equal(destination.dialog.open, false);
   assert.equal(storage.size, 0);
+});
+
+test('Connected window can be dragged and stays inside the viewport', async () => {
+  const f = fixture({ site: 'random' });
+  f.standalone.control('[data-modem-connect]').listeners.click();
+  f.timers.find(timer => timer.delay === 31750).callback();
+  await tick();
+  const title = f.standalone.control('.mcretro-modem-titlebar');
+  const baseEvent = {
+    pointerId: 3, pointerType: 'mouse', button: 0,
+    clientX: 38, clientY: 38,
+    target: { closest() { return null; } },
+    preventDefault() {}
+  };
+  title.listeners.pointerdown(baseEvent);
+  title.listeners.pointermove({ ...baseEvent, clientX: 212, clientY: 190 });
+  title.listeners.pointerup(baseEvent);
+  assert.equal(f.standalone.style.left, '192px');
+  assert.equal(f.standalone.style.top, '170px');
+  const data = JSON.parse(f.storage.get('mcretro-dialup-connected-v1'));
+  assert.equal(data.x, 192);
+  assert.equal(data.y, 170);
+  title.listeners.pointerdown({ ...baseEvent, clientX: 212, clientY: 190 });
+  title.listeners.pointermove({ ...baseEvent, clientX: 9000, clientY: 9000 });
+  title.listeners.pointerup(baseEvent);
+  assert.equal(f.standalone.style.left, '594px');
+  assert.equal(f.standalone.style.top, '543px');
+});
+
+test('Connected byte counters increase with simulated bursts and pause when minimised', async () => {
+  const f = fixture({ site: 'random' });
+  f.standalone.control('[data-modem-connect]').listeners.click();
+  f.timers.find(timer => timer.delay === 31750).callback();
+  await tick();
+  const rx = f.standalone.control('[data-modem-bytes-received]');
+  const tx = f.standalone.control('[data-modem-bytes-sent]');
+  assert.equal(f.intervals.at(-1).delay, 250);
+  const first = Number(rx.textContent.replace(/,/g, ''));
+  const second = Number(tx.textContent.replace(/,/g, ''));
+  const stored = JSON.parse(f.storage.get('mcretro-dialup-connected-v1'));
+  stored.startedAt = Date.now() - 5000;
+  f.storage.set('mcretro-dialup-connected-v1', JSON.stringify(stored));
+  f.standalone.control('[data-modem-minimize]').listeners.click();
+  f.taskbar.click();
+  const newRx = Number(f.dialog.control('[data-modem-bytes-received]').textContent.replace(/,/g, ''));
+  const newTx = Number(f.dialog.control('[data-modem-bytes-sent]').textContent.replace(/,/g, ''));
+  assert.ok(newRx > first);
+  assert.ok(newTx > second);
+  assert.equal(f.intervals.at(-1).delay, 250);
 });

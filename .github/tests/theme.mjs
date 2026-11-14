@@ -277,7 +277,7 @@ test('Blog pagination is compact, accessible and retains numbered URLs', () => {
   assert.match(blog, /href="\/blog\/page\{\{ page \}\}\/" class="page-number"/);
   assert.match(blog, /href="\/blog\/page\{\{ paginator.total_pages \}\}\/" class="page-number"/);
   assert.match(style, /\.pagination-bar\s*\{[^}]*border-top: 4px solid var\(--text\);/, 'blog pagination rule matches the sidebar dividers');
-  assert.match(style, /\.pagination-wrapper\s*\{[^}]*margin-bottom: 0\.75rem;/);
+  assert.match(style, /\.pagination-wrapper\s*\{[^}]*margin-top: 2rem;[^}]*margin-bottom: 0\.75rem;/);
   assert.match(style, /\.pagination-controls\s*\{[^}]*justify-content: space-between;[^}]*align-items: flex-start;/);
   assert.match(style, /\.pagination-numbers\s*\{[^}]*justify-content: flex-start;/);
   assert.match(style, /\.pagination-arrows\s*\{[^}]*display: flex;/);
@@ -285,6 +285,10 @@ test('Blog pagination is compact, accessible and retains numbered URLs', () => {
   assert.match(style, /\.site-footer \.footer-rule\s*\{[^}]*border: 0\.5px solid var\(--border\);/);
   assert.match(style, /\.current-page\s*\{[^}]*background: var\(--archive-filled\);[^}]*border-top: 0;[^}]*border-radius: 0 0 4px 4px;/);
   assert.match(style, /\.arrow-link\s*\{[^}]*border-top: 0;[^}]*border-radius: 0 0 4px 4px;/);
+  assert.match(style, /\.arrow-icon\s*\{[^}]*font-size: 1\.1rem;[^}]*transform: scaleX\(0\.85\);/);
+  assert.match(style, /:root\[data-theme="dark"\] \.pagination-arrows \.arrow-link\s*\{[^}]*background: var\(--archive-filled\);[^}]*border-color: var\(--archive-accent\);[^}]*color: var\(--archive-filled-text\);/);
+  assert.match(style, /:root\[data-theme="dark"\] \.pagination-arrows \.arrow-link:hover\s*\{[^}]*background: var\(--archive-filled-hover\);[^}]*color: var\(--link-hover\);/);
+  assert.doesNotMatch(style, /:root\[data-theme="light"\] \.pagination-arrows \.arrow-link/, 'Light mode retains its previous button styling');
   assert.match(style, /\.page-number:focus-visible,\s*\.arrow-link:focus-visible\s*\{[^}]*outline: 3px solid var\(--focus\);/);
   assert.match(overrides, /\.pagination-controls\s*\{[^}]*grid-template-columns: 2\.75rem minmax\(0, 1fr\) 2\.75rem;/);
   assert.match(overrides, /\.pagination-arrows\s*\{[^}]*display: contents;/);

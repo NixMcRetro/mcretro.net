@@ -113,8 +113,8 @@ jobs:
       - name: Ensure the Opus encoder is available
         run: command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
 
-      - name: Replace published GOATPAD source audio with 64 kbps Opus
-        run: python3 .github/tests/prepare-goatpad-opus.py --site _site --bitrate 64
+      - name: Replace published GOATPAD source audio with 24 kbps Opus
+        run: python3 .github/tests/prepare-goatpad-opus.py --site _site --bitrate 24
 
       - name: Verify the built GOATPAD site contains Opus audio only
         run: python3 .github/tests/prepare-goatpad-opus.py --site _site --verify

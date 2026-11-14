@@ -1,227 +1,377 @@
+/*
+ * GOATPAD 1337 - game-HUD presentation based on the original in-game panel.
+ * The eight-by-eight grid, Opus playback, and historical button mapping stay intact.
+ * Shared CSS dimensions keep beat lights aligned with their sound columns.
+ */
 :root {
-    --button-size: calc(6em * (min(90vh, 90vw) / 1080));
-    --counter-size: calc(5em * (min(90vh, 90vw) / 1080));
-    --counter-margin: auto;
-    --metronome-width: calc(20em * (min(90vh, 90vw) / 1080));
+    --pad-width: clamp(44px, 7vh, 54px);
+    --pad-height: clamp(40px, 6.5vh, 48px);
+    --column-gap: 14px;
+    --chevron-offset: 7px;
+    --row-gap: 9px;
 }
 
 body {
-    background-color: #181319;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-    overflow: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background:
+        radial-gradient(ellipse at 50% 45%, #29212c 0, #17111c 48%, #0d0b12 100%);
+    color: #ddd7e0;
+    font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
 }
 
 .container {
+    box-sizing: border-box;
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 1em;
-    width: 100%;
-    height: 100%;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 0;
     align-items: center;
     justify-items: center;
-}
-
-.metronome {
-    width: var(--metronome-width);
-    border: 1px solid #9a9299;
-    border-radius: .3em;
-    background-color: #000000;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.counter {
-    width: var(--counter-size);
-    height: var(--counter-size);
-    border-radius: 50%;
-    background-color: #39512c;
-    border: 2px solid #28381e;
-    box-sizing: border-box;
-    margin: var(--counter-margin);
-}
-
-.counter.active {
-    border: 2px solid #97f85d;
-    background-color: #d8ff8e;
-    box-shadow: rgba(151, 248, 93, 1) 0 0 20px 0px;
-}
-
-.soundboard {
-    border: 1px solid #9a9299;
-    border-radius: .3em;
-    background-color: #000000;
-}
-
-.buttonArea {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 1.5rem 1rem;
 }
 
 .column {
     display: flex;
     flex-direction: column;
-    margin: 10px;
-    gap: 1em;
     align-items: center;
     position: relative;
 }
 
-.column button {
-    border: 2px solid black;
-    border-radius: 0%;
-    width: 6em;
-    height: 6em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.side-column {
+    min-width: 0;
+}
+
+.soundboard-column {
+    min-width: 0;
+}
+
+.soundboard {
+    box-sizing: border-box;
     position: relative;
+    width: max-content;
+    max-width: calc(100vw - 2rem);
+    padding: 14px 14px 9px;
+    border: 1px solid #85808b;
+    border-radius: 5px;
+    background:
+        linear-gradient(155deg, rgba(255, 255, 255, .055), transparent 22%),
+        linear-gradient(180deg, #211b25 0%, #0d0b12 25%, #09090e 80%, #1d1922 100%);
+    box-shadow:
+        0 0 0 2px #302b35,
+        0 0 0 4px #15121b,
+        inset 0 0 0 1px #3d3745,
+        inset 0 1px 12px rgba(255, 255, 255, .07),
+        0 18px 48px rgba(0, 0, 0, .68);
 }
 
-.buttonArea .column button {
-    width: var(--button-size);
-    height: var(--button-size);
-}
-
-
-.column button::before {
-    content: '';
+.soundboard::before {
+    content: "";
     position: absolute;
-    width: 2px;
-    height: calc(50% + 2px);
-    background: #878188;
-    /* Line color */
-    top: calc(100% + 2px);
-    /* Start at the bottom of the button */
-    left: 50%;
-    transform: translateX(-50%);
+    inset: 5px;
+    border: 1px solid rgba(174, 169, 186, .19);
+    border-radius: 3px;
+    pointer-events: none;
 }
 
-.column button:last-child::before {
-    display: none;
-    /* Hide bottom line for the last button */
+.sequence-viewport {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 8px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #39343f;
+    border-radius: 3px;
+    background: linear-gradient(180deg, #100e14, #030305 30%, #09080c);
+    box-shadow:
+        inset 0 4px 12px rgba(0, 0, 0, .8),
+        0 1px 0 rgba(214, 207, 223, .08);
 }
 
-.column button:disabled {
-    color: black;
+.sequence-viewport:focus-visible {
+    outline: 2px solid #d8ff8e;
+    outline-offset: 2px;
 }
 
-.glow {
-    transition: .15s ease-in-out;
-}
-
-.drums.glow {
-    background: radial-gradient(circle, rgba(255, 211, 255, 1) 0%, rgba(255, 166, 255, 1) 100%);
-    border-color: #ffa6ff !important;
-    box-shadow: rgba(253, 128, 197, 1) 0 0 20px 5px;
-}
-
-.fx.glow {
-    background: radial-gradient(circle, rgba(242, 216, 255, 1) 0%, rgba(224, 143, 255, 1) 100%);
-    border-color: #e08fff !important;
-    box-shadow: rgba(168, 120, 255, 1) 0 0 20px 5px;
-}
-
-.bass.glow {
-    background: radial-gradient(circle, rgba(217, 255, 208, 1) 0%, rgba(180, 255, 157, 1) 100%);
-    border-color: #b4ff9d !important;
-    box-shadow: rgba(139, 236, 84, 1) 0 0 20px 5px;
-}
-
-.goatsoul.glow {
-    background: radial-gradient(circle, rgba(255, 240, 169, 1) 0%, rgba(255, 216, 70, 1) 100%);
-    border-color: #ffd846 !important;
-    box-shadow: rgba(255, 201, 108, 1) 0 0 20px 5px;
-}
-
-.melody.glow {
-    background: radial-gradient(circle, rgba(166, 255, 255, 1) 0%, rgba(91, 229, 255, 1) 100%);
-    border-color: #5be5ff !important;
-    box-shadow: rgba(76, 189, 255, 1) 0 0 20px 5px;
-}
-
-.drums {
-    border-color: #66395f !important;
-    background: radial-gradient(circle, rgba(123, 50, 104, 1) 0%, rgba(106, 34, 88, 1) 100%);
-}
-
-.fx {
-    border-color: #7448ab !important;
-    background: radial-gradient(circle, rgba(130, 75, 203, 1) 0%, rgba(104, 44, 174, 1) 100%);
-}
-
-.bass {
-    border-color: #45543f !important;
-    background: radial-gradient(circle, rgba(76, 100, 62, 1) 0%, rgba(55, 91, 40, 1) 100%);
-}
-
-.goatsoul {
-    border-color: #766655 !important;
-    background: radial-gradient(circle, rgba(142, 115, 97, 1) 0%, rgba(105, 81, 62, 1) 100%);
-}
-
-.melody {
-    border-color: #365972 !important;
-    background: radial-gradient(circle, rgba(52, 104, 134, 1) 0%, rgba(25, 78, 117, 1) 100%);
-}
-
-.column p {
-    font-weight: bold;
-}
-
-.arrows {
+.sequence-inner {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-left: 10px;
+    width: max-content;
+    min-width: 100%;
 }
 
-.arrows p {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: white;
+/* The eight counter lights share the exact column widths/gaps with the pads. */
+.metronome,
+.buttonArea {
+    display: grid;
+    grid-template-columns: repeat(8, var(--pad-width));
+    column-gap: var(--column-gap);
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+}
+
+.metronome {
+    box-sizing: content-box;
+    min-height: 38px;
+    margin: 0 0 11px;
+    padding: 5px 0;
+    border: 1px solid #89838f;
+    border-radius: 7px;
+    background: linear-gradient(180deg, #19151e, #08070b 70%);
+    box-shadow:
+        inset 0 2px 7px rgba(0, 0, 0, .95),
+        inset 0 0 0 1px rgba(255, 255, 255, .06),
+        0 1px 3px rgba(255, 255, 255, .12);
+}
+
+.counter {
+    box-sizing: border-box;
+    width: clamp(23px, calc(var(--pad-width) * .58), 32px);
+    aspect-ratio: 1;
+    height: auto;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid #283722;
+    background: radial-gradient(circle at 40% 35%, #42653a, #223820 54%, #111812 100%);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, .58), 0 0 5px rgba(51, 94, 44, .28);
+}
+
+.counter.active {
+    border-color: #95ec68;
+    background: radial-gradient(circle at 42% 34%, #eaffb0, #a3ff66 47%, #6be03d 80%, #377925);
+    box-shadow:
+        0 0 8px 2px rgba(137, 255, 93, .75),
+        0 0 17px rgba(111, 255, 85, .55),
+        inset 0 1px 4px rgba(245, 255, 226, .8);
+}
+
+.buttonArea {
+    align-items: start;
+}
+
+.buttonArea .column {
+    width: var(--pad-width);
+    margin: 0;
+    gap: var(--row-gap);
+}
+
+.buttonArea .column button {
+    box-sizing: border-box;
+    flex: none;
+    width: var(--pad-width);
+    height: var(--pad-height);
+    min-width: 0;
+    min-height: 0;
+    padding: 2px 1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--pad-outline);
+    border-radius: 1px;
+    background: linear-gradient(150deg, var(--pad-top), var(--pad-bottom));
+    color: #1a1320;
+    font-family: inherit;
+    cursor: pointer;
+    touch-action: manipulation;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .26),
+        inset 0 -1px 1px rgba(0, 0, 0, .2),
+        0 2px 5px rgba(0, 0, 0, .65);
+    transition: filter .15s ease, box-shadow .15s ease;
+}
+
+.buttonArea .column button p {
+    margin: 0;
+    max-width: 100%;
+    text-align: center;
+    font: 800 clamp(.53rem, 1.04vh, .66rem)/1.04 "Arial Narrow", Arial, sans-serif;
+    letter-spacing: -.025em;
+    overflow-wrap: normal;
+    text-shadow: 0 1px rgba(255, 255, 255, .14);
+}
+
+/* Fine vertical wires connect the eight pads in each original sound lane. */
+.buttonArea .column button::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: var(--row-gap);
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(#77717d, #39333d);
+    pointer-events: none;
+}
+
+.buttonArea .column button:last-child::before {
+    display: none;
+}
+
+/* Tiny horizontal chevrons recreate the in-game step-to-step HUD detail. */
+.buttonArea .column:not(:last-child) button::after {
+    content: "››";
+    position: absolute;
+    top: 50%;
+    left: calc(100% + var(--chevron-offset));
+    transform: translate(-50%, -54%);
+    color: #9c97a6;
+    font: 800 .73rem/1 Arial, sans-serif;
+    letter-spacing: -.13em;
+    text-shadow: 0 1px 3px #000;
+    pointer-events: none;
+}
+
+.drums {
+    --pad-top: #b96e9e;
+    --pad-bottom: #985184;
+    --pad-outline: #9e638f;
+    --pad-glow: rgba(253, 128, 197, .7);
+}
+.fx {
+    --pad-top: #b48be1;
+    --pad-bottom: #8252bc;
+    --pad-outline: #996bd0;
+    --pad-glow: rgba(168, 120, 255, .7);
+}
+.bass {
+    --pad-top: #89ac77;
+    --pad-bottom: #658a55;
+    --pad-outline: #779768;
+    --pad-glow: rgba(139, 236, 84, .7);
+}
+.goatsoul {
+    --pad-top: #c6ae8c;
+    --pad-bottom: #a1866a;
+    --pad-outline: #b6a086;
+    --pad-glow: rgba(255, 201, 108, .6);
+}
+.melody {
+    --pad-top: #68b0c8;
+    --pad-bottom: #3b819f;
+    --pad-outline: #5795af;
+    --pad-glow: rgba(76, 189, 255, .7);
+}
+
+.buttonArea .column button.glow {
+    filter: brightness(1.25) saturate(1.12);
+    border-color: #f5eaf9;
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, .72),
+        0 0 9px 1px var(--pad-glow),
+        0 2px 5px rgba(0, 0, 0, .55);
+}
+
+.buttonArea .column button:hover:not(:disabled) {
+    filter: brightness(1.17);
+}
+
+.buttonArea .column button.glow:hover:not(:disabled) {
+    filter: brightness(1.32) saturate(1.12);
+}
+
+.buttonArea .column button:focus-visible {
+    outline: 2px solid #d8ff8e;
+    outline-offset: 2px;
+    z-index: 2;
+}
+
+.buttonArea .column button:disabled {
+    opacity: .78;
+    cursor: progress;
+}
+
+/* The original metallic logo is part of the instrument's lower housing. */
+.brand-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    margin-top: 9px;
+    padding: 5px 8px 3px;
+    border-top: 1px solid rgba(180, 173, 191, .32);
+    border-bottom: 1px solid rgba(0, 0, 0, .75);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .055), rgba(0, 0, 0, .16));
 }
 
 .title {
-    height: 1.5em;
-    margin: 10px;
+    display: block;
+    width: auto;
+    height: 31px;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px #000);
+}
+
+#audioStatus {
+    margin: .5rem .75rem;
+    color: #d8ff8e;
+    font: .8rem/1.4 system-ui, sans-serif;
+    text-align: center;
+}
+#audioStatus:empty {
+    display: none;
+}
+
+.goatpad-credit {
+    margin: .5rem .4rem .1rem;
+    color: #b9b2be;
+    font: .67rem/1.4 system-ui, sans-serif;
+    text-align: center;
+}
+.goatpad-credit a {
+    color: #d8ff8e;
+}
+.goatpad-credit a:focus-visible {
+    outline: 2px solid #d8ff8e;
+    outline-offset: 2px;
+}
+
+.mobile-scroll-hint {
+    display: none;
 }
 
 #loadingScreen {
     position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
+    inset: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 1rem;
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
-    z-index: 1000;
+    background: rgba(4, 3, 7, .93);
+    color: white;
+    font-size: 1.4rem;
 }
 
 .hidden {
     display: none !important;
 }
-/* User-gesture audio start, preserving the original soundboard beneath. */
+
 .loading-inner {
     max-width: 24rem;
-    padding: 1.5rem;
+    padding: 1rem;
     text-align: center;
     font-family: system-ui, sans-serif;
 }
+
 #startAudio {
-    padding: 0.75rem 1.25rem;
+    min-height: 44px;
+    padding: .75rem 1.25rem;
     border: 2px solid #97f85d;
     background: #263e25;
     color: #f3ffe9;
@@ -236,188 +386,99 @@ body {
     outline-offset: 3px;
 }
 #startAudio:disabled {
-    opacity: 0.6;
+    opacity: .6;
     cursor: progress;
 }
 #loadingMessage {
-    font-size: 0.75em;
+    font-size: .75em;
     line-height: 1.5;
 }
 
-/* Status is visible only while a new Opus sample is loading or needs retrying. */
-#audioStatus {
-    color: #d8ff8e;
-    font: 0.8rem/1.4 system-ui, sans-serif;
-    text-align: center;
-    margin: 0.5rem 1rem;
-}
-#audioStatus:empty { display: none; }
-
-/* Small, unobtrusive attribution for the original fan-made software. */
-.goatpad-credit { color: #b8b7b9; font: 0.7rem/1.35 system-ui, sans-serif; text-align: center; margin: 0.25rem 0.8rem 0.75rem; }
-.goatpad-credit a { color: #d8ff8e; }
-.goatpad-credit a:focus-visible { outline: 2px solid #d8ff8e; outline-offset: 2px; }
-
-
-/* Keep the original eight-column layout together rather than shrinking pads
-   to illegible sizes. The viewport is horizontally scrollable on narrow phones. */
-.sequence-viewport {
-    max-width: 100%;
-}
-.sequence-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.metronome {
-    box-sizing: border-box;
-    margin: 0.45em auto 0.35em;
-}
-.buttonArea .column button {
-    color: #fff;
-    touch-action: manipulation;
-    cursor: pointer;
-}
-.buttonArea .column button.glow {
-    color: #141414;
-}
-.buttonArea .column button p {
-    margin: 0;
-    text-align: center;
-    font-size: 0.8rem;
-    line-height: 1.1;
-}
-.title {
-    display: block;
-    max-width: calc(100% - 1rem);
-    margin: 0.6rem auto;
-}
-.mobile-scroll-hint {
-    display: none;
-}
-
+/* Keep every sound accessible at touch-friendly size without mobile zoom. */
 @media (max-width: 720px), (max-height: 520px) and (pointer: coarse) {
-    body {
-        display: block;
-        width: 100%;
-        height: auto;
-        min-height: 100vh;
-        min-height: 100dvh;
-        overflow-x: hidden;
-        overflow-y: auto;
+    :root {
+        --pad-width: 44px;
+        --pad-height: 44px;
+        --column-gap: 12px;
+        --chevron-offset: 6px;
+        --row-gap: 6px;
     }
     .container {
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        width: 100%;
-        height: auto;
         min-height: 100vh;
         min-height: 100dvh;
-        box-sizing: border-box;
-        padding: 1rem 0.5rem;
-        gap: 0;
+        padding: 1rem .5rem;
     }
     .side-column {
         display: none;
     }
     .soundboard-column {
-        box-sizing: border-box;
         width: min(100%, 640px);
-        margin: 0;
-        gap: 0;
     }
     .soundboard {
-        box-sizing: border-box;
         width: 100%;
         max-width: 100%;
-        padding: 0.4rem 0 0.6rem;
+        padding: 10px 7px 7px;
     }
     .sequence-viewport {
-        width: 100%;
-        overflow-x: auto;
-        overflow-y: hidden;
-        overscroll-behavior-x: contain;
-        scrollbar-width: thin;
-        -webkit-overflow-scrolling: touch;
+        padding: 7px 5px 6px;
     }
-    .sequence-inner {
-        width: max-content;
-        min-width: 100%;
+    .metronome {
+        min-height: 30px;
+        padding: 3px 0;
+        margin-bottom: 8px;
     }
-    .buttonArea .column {
-        margin: 0 2px;
-        gap: 5px;
+    .counter {
+        width: 25px;
     }
     .buttonArea .column button {
-        box-sizing: border-box;
         width: 44px;
         height: 44px;
-        flex: 0 0 44px;
-    }
-    .buttonArea .column button::before {
-        top: 100%;
-        height: 5px;
     }
     .buttonArea .column button p {
         font-size: 0;
     }
     .buttonArea .column button p::after {
         content: attr(data-short);
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.01em;
+        font-size: .67rem;
+        font-weight: 800;
+        letter-spacing: 0;
     }
-    .metronome {
-        box-sizing: border-box;
-        width: 100%;
-        height: 32px;
-        padding: 2px 0;
-        margin: 0 auto 0.5rem;
+    .buttonArea .column:not(:last-child) button::after {
+        font-size: .67rem;
     }
-    .counter {
-        box-sizing: border-box;
-        width: 24px;
-        height: 24px;
-        margin: auto;
-        flex: 0 0 auto;
+    .brand-bar {
+        min-height: 31px;
+        margin-top: 6px;
+        padding: 3px 7px;
     }
     .title {
-        height: 30px;
-        max-width: calc(100% - 1rem);
-        object-fit: contain;
-    }
-    #audioStatus {
-        margin: 0.5rem 0.75rem;
+        height: 27px;
     }
     .goatpad-credit {
-        max-width: 32rem;
-        margin: 0.4rem auto 0;
-        padding: 0 0.75rem;
-        font-size: 0.72rem;
+        margin: .45rem .4rem .2rem;
+        font-size: .7rem;
         line-height: 1.45;
     }
     #loadingScreen {
-        box-sizing: border-box;
-        height: 100vh;
-        height: 100dvh;
-        padding: 1rem;
         font-size: 1.1rem;
     }
-    .loading-inner {
-        padding: 1rem;
-    }
-    #startAudio {
-        min-height: 44px;
-    }
 }
-/* The 44px pads need a small horizontal swipe on the narrowest phones. */
-@media (max-width: 400px) {
+
+@media (max-width: 480px) {
     .mobile-scroll-hint {
         display: block;
-        margin: 0.4rem 0.5rem 0;
+        margin: .45rem .5rem 0;
         color: #d8ff8e;
-        font: 0.72rem/1.4 system-ui, sans-serif;
+        font: .72rem/1.4 system-ui, sans-serif;
         text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .buttonArea .column button {
+        transition: none;
     }
 }

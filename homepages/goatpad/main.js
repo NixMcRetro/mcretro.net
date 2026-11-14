@@ -212,19 +212,3 @@ buttonMapping.forEach((sounds, columnIndex) => {
     soundboard.appendChild(column);
 });
 
-function updateSizes() {
-    const root = document.documentElement;
-    const viewport = Math.min(window.innerHeight, window.innerWidth);
-    root.style.setProperty("--button-size", "calc(6em * (" + viewport + " / 1080))");
-    root.style.setProperty("--counter-size", "calc(5em * (" + viewport + " / 1080))");
-    const area = document.querySelector(".buttonArea");
-    const counter = document.querySelector(".counter");
-    if (area && counter) {
-        root.style.setProperty("--counter-margin",
-            "calc((" + area.offsetWidth + "px - " + counter.offsetWidth * 8 + "px) / 16)");
-        root.style.setProperty("--metronome-width", area.offsetWidth + "px");
-    }
-}
-window.addEventListener("resize", updateSizes);
-window.addEventListener("fullscreenchange", updateSizes);
-window.addEventListener("load", updateSizes);

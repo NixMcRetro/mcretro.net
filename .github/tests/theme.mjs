@@ -383,8 +383,8 @@ test('Goodies links to the Windows 95 dial-up folder with all destinations', () 
   assert.match(header, /🛸 Never give up, never surrender!<\/span>/u);
   assert.match(header, /🦭 It's time to seal the deal!!!<\/span>/u);
   // Mobile taglines must wrap at their existing font size, never clip on one line.
-  assert.match(style, /@media screen and \\(max-width: 750px\\) \\{\\s*\\.textcycle \\{\\s*display: grid;/);
-  assert.match(style, /\\.textcycle \\.phrase \\{[^}]*grid-row: 1;[^}]*white-space: normal;[^}]*overflow-wrap: break-word;/);
+  assert.match(style, /@media screen and \(max-width: 750px\) \{\s*\.textcycle \{\s*display: grid;/);
+  assert.match(style, /\.textcycle \.phrase \{[^}]*grid-row: 1;[^}]*white-space: normal;[^}]*overflow-wrap: break-word;/);
 
   assert.doesNotMatch(header, /🦭 It's time to seal the deal<\/span>/u);
 });

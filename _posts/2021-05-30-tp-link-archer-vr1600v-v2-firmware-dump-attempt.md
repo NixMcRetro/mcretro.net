@@ -3,7 +3,7 @@ title: "TP-Link Archer VR1600v V2 Firmware Dump Attempt"
 author: "Nix McRetro"
 date: 2021-05-30T09:37:17.000+10:00
 categories: [guides]
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-15
 share_description: >-
   A five-day attempt to dump TP-Link Archer VR1600v V2 firmware teaches me plenty about UART and flash chips, but fails to produce a shareable image. 💻
 ---
@@ -36,7 +36,8 @@ I found that the auto-update functionality could be disabled on this firmware by
 
 Our goal now becomes, how to extract the existing firmware from the modem. We were running firmware version 0.1.0 0.9.1 v5006.0 build 190228 rel.72265n on our donor modem. Apparently [TPG changed the super user password](https://forums.whirlpool.net.au/archive/3yz2q0n9#r67949962) - which is good but also bad. Bad actors knowing your router super user password is bad, not being able to configure VoIP is bad though.
 
-## Day 1
+<details id="day-1" class="about-panel panel--teal" name="mcretro-tplink" markdown="1">
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🔌</span> Day 1</summary>
 
 Most of day one was tracking down the serial TTL port / UART header location. First I had to learn about serial and how on earth I was meant to extract anything from it.
 
@@ -1511,7 +1512,10 @@ Above is a quick peek inside the file being dumped. Why, that's HTML from the we
 
 It was definitely doing something, so I left it to run overnight. [This guide](https://openwrt.org/docs/techref/hardware/soc/soc.broadcom.bcm63xx) was the key.
 
-## Day 2
+</details>
+
+<details id="day-2" class="about-panel panel--teal" name="mcretro-tplink" markdown="1">
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">💻</span> Day 2</summary>
 
 ![Terminal window showing a NAND dump's progress reaching 99% of 33,554,432 bytes.](/assets/images/2021/img_0711.jpg)
 
@@ -1579,7 +1583,10 @@ Viewing the code we are trying to dump is easier than dumping it, or so it would
 
 Eventually, I entered a command that looked like it might do something. Full of hubris, I entered the file name as **_nand\_winner.img_** and left it running overnight.
 
-## Day 3
+</details>
+
+<details id="day-3" class="about-panel panel--teal" name="mcretro-tplink" markdown="1">
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🔍</span> Day 3</summary>
 
 ![Ubuntu terminal after bcm_cfedump reports 65,536 of 65,536 pages and 128.0 MB, returning to the shell prompt.](/assets/images/2021/img_0715.jpg)
 
@@ -1650,7 +1657,10 @@ continue
 
 ```
 
-## Day 4
+</details>
+
+<details id="day-4" class="about-panel panel--teal" name="mcretro-tplink" markdown="1">
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🧪</span> Day 4</summary>
 
 ![Dark terminal showing bcm_cfedump completing 65,536 pages and listing nand_v2.img alongside nand_winner.img.](/assets/images/2021/img_0717.jpg)
 
@@ -1684,6 +1694,8 @@ And that's it, that's as far as I got. Because the firmware has my credentials i
 {: .media-caption }
 
 I certainly learnt a lot from this exercise. Would I do it again? Probably not, but now the information is here if I ever do! 😄
+
+</details>
 
 ### Sources
 

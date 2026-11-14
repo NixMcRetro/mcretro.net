@@ -18,11 +18,11 @@ Welcome to the Goodies page! This is where I keep all sorts of bits and pieces t
 <details class="about-panel panel--teal" name="mcretro-goodies" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">✅</span> Ready to Visit</summary>
 
-**☎️ [Dial-Up Networking](/homepages/modem/)**<br>
-Hear the old-school modem connection, then dial into either a randomly selected McRetro article or one of the restored historical homepages.
-
 **🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**<br>
 A browser-based music maker originally created for SuperNick. Make some noise with synthesizers, keyboards, rhythms and songs. Bleep, bloop, bleep!
+
+**☎️ [Dial-Up Networking](/homepages/modem/)**<br>
+Hear the old-school modem connection, then dial into either a randomly selected McRetro article or one of the restored historical homepages.
 
 **🐐 [GOATPAD 1337](/homepages/goatpad/)**<br>
 A 64-pad browser soundboard and sequencer from 2024, with drums, effects, bass, GOAT SOUL, and melodies. A strange little musical time capsule!

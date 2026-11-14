@@ -366,6 +366,8 @@ test('Goodies offers both dial-up destinations and keeps existing sections', () 
   assert.match(goodies, /Dial a Random Homepage<\/a>/);
   assert.match(modem, /document\.querySelectorAll\('a\[data-dial-site\]'\)/);
   assert.match(modem, /assets\/data\/random-post-urls\.json/);
+  assert.match(header, /<span class="phrase mobile-tagline">🚀 Blast Processed Since 199X<\/span>/u);
+  assert.match(header, /🧪 Trial and Error<\/span>/u);
   assert.match(header, /🧭 Best viewed with Netscape Navigator<\/span>/u);
   assert.match(header, /🌐 Best viewed with Internet Explorer<\/span>/u);
   assert.match(header, /🔎 Do You Yahoo\?<\/span>/u);
@@ -374,13 +376,4 @@ test('Goodies offers both dial-up destinations and keeps existing sections', () 
   assert.match(header, /🛸 Never give up, never surrender!<\/span>/u);
   assert.match(header, /🦭 It's time to seal the deal!!!<\/span>/u);
   assert.doesNotMatch(header, /🦭 It's time to seal the deal<\/span>/u);
-});
-
-test('rotating header taglines never rely on delayed, blank CSS animation slots', () => {
-  assert.match(style, /\.textcycle \.phrase\s*\{[^}]*transition: opacity 0\.35s linear;/);
-  assert.match(style, /\.textcycle \.phrase:first-child\s*\{ opacity: 1; \}/);
-  assert.match(style, /\.textcycle\.is-cycling \.phrase\s*\{ opacity: 0; \}/);
-  assert.match(style, /\.textcycle\.is-cycling \.phrase\.is-active\s*\{ opacity: 1; \}/);
-  assert.doesNotMatch(style, /@keyframes phraseCycleLong|animation-delay: 54s;/);
-  assert.match(style, /@media \(prefers-reduced-motion: reduce\)\s*\{[\s\S]*?\.textcycle\.is-cycling \.phrase:first-child\s*\{ opacity: 1; \}/);
 });

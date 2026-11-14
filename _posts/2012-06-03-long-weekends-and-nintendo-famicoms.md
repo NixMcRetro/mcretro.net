@@ -8,15 +8,24 @@ share_description: >-
   A Famicom AV mod is working, though jailbars remain. Add a haul of Japanese Saturn accessories, stubborn TeraDrive storage experiments and one deeply unwise PSU encounter. 🔧
 ---
 
-![](/assets/images/2012/img_0176.jpg)
+![White-and-red Nintendo Famicom with a pink Kirby's Adventure cartridge inserted; loose wires and components sit beside the console.](/assets/images/2012/img_0176.jpg)
+
+*The Famicom is back on the bench, Kirby cartridge and all. There's still some fiddling to do with the picture.*
+{: .media-caption }
 
 Some good news, and some more good news. It looks like I am going to have Thursday through Monday (inclusive!) off work. This means nothing but organising and sorting through my console collection.
 
 I have also received some boxed Japanese Saturn accessories, including a floppy drive, keyboard, mouse, modem and RF cable. There may be more, but that's everything that comes to mind at the moment. It appears I will now need to find a boxed Japanese Model 2 Saturn to match all these cool accessories!
 
-![](/assets/images/2012/img_0177.jpg)
+![Television displaying Kirby's Adventure gameplay, with Kirby on a green platform and a score and six lives shown along the bottom.](/assets/images/2012/img_0177.jpg)
 
-![](/assets/images/2012/img_0175.jpg)
+*Kirby is up and running on the modded Famicom. Now, if only the jailbars would take a holiday too!*
+{: .media-caption }
+
+![Close-up of loose soldered wiring above a Famicom, with two blue resistors and a small black three-legged component.](/assets/images/2012/img_0175.jpg)
+
+*One of my rather improvised wiring experiments for the Famicom. It's certainly not the tidiest little arrangement!*
+{: .media-caption }
 
 In other news, the Nintendo Famicom has been successfully AV modded. The jailbars are still present, though, and I've been trying a few capacitor-based fixes, including a large decoupling capacitor. Unfortunately, there doesn't seem to be one magic capacitor value that fixes every Famicom. The motherboard layout, routing and interference all have something to do with it.
 

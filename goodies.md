@@ -66,8 +66,8 @@ An old-fashioned nature homepage featuring a frog, a lizard and a few original p
 <details class="about-panel panel--teal" name="mcretro-goodies" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🚧</span> Still Under Construction</summary>
 
-- **[GeoCities](/homepages/geocities/)**: Still needs its proper historical content restored.
 - **File Server**: Not ready yet. The promised 10 KB/s downloads remain a dream!
+- **[GeoCities](/homepages/geocities/)**: Still needs its proper historical content restored.
 - **Photo Gallery**: The gallery is still being restored.
 
 </details>

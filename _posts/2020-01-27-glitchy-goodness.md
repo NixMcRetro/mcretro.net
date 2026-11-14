@@ -8,9 +8,9 @@ share_description: >-
   Circuit-bent Mega Drive screenshots turn Sonic into psychedelic chaos. Casino Night Zone has clearly been somewhere it shouldn't. Glitchy goodness! 🎮
 ---
 
-![Sonic the Hedgehog 2 title screen with Sonic and the logo partly visible beneath dense purple, blue and orange horizontal glitches.](/assets/images/2020/img_0656.jpg)
+![Sonic the Hedgehog 1 title screen with Sonic and the logo partly visible beneath dense purple, blue and orange horizontal glitches.](/assets/images/2020/img_0656.jpg)
 
-*The Sonic 2 title screen after a spot of circuit bending. I'm not sure this was the effect Sega had in mind!*
+*The Sonic 1 title screen after a spot of circuit bending. I'm not sure this was the effect Sega had in mind!*
 {: .media-caption }
 
 Circuit bending.

@@ -672,7 +672,9 @@
 .archive-card-meta .post-categories { min-width: 0; overflow-wrap: anywhere; }
 .archive-card-meta-sep { color: var(--muted); }
 .archive-blog-list .post-excerpt { font-size: 0.91rem; line-height: 1.55; overflow-wrap: anywhere; }
-.archive-blog-list .read-more { display: inline-block; margin: 0.4rem 0 0; }
+/* An inline continuation must share the excerpt line-height; margins on an
+   inline-block distort the preceding line when the link wraps. */
+.archive-blog-list .read-more { display: inline; margin: 0; }
 
 /* Archive landing page: year disclosures and familiar calendar month tiles. */
 .archive-index > .post-title { margin-bottom: 0.5rem; }
@@ -706,6 +708,8 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
 .archive-index-month.is-empty { background: var(--archive-empty); color: var(--muted); }
 
 @media screen and (max-width: 750px) {
+  /* Keep the current month near its breadcrumb trail on narrow screens. */
+  .archive-month .archive-breadcrumbs { margin-bottom: 0.5rem; }
   .archive-index-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media screen and (max-width: 600px) {

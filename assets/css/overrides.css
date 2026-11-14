@@ -346,6 +346,19 @@
   margin-top: 0;
 }
 
+/* Keep explicit image and video captions tucked beneath their media, but
+   separate the completed media/caption group from the next image, video,
+   paragraph or heading. This also covers captions inside article panels. */
+.post-full .post-content p.media-caption {
+  margin-bottom: 1.75rem;
+}
+@media screen and (max-width: 600px) {
+  .post-full .post-content p.media-caption {
+    margin-bottom: 1.35rem;
+  }
+}
+
+
 /* Keep the five approved 2012 grain-preserving JXL photographs at full
    available article width, without changing other images or video embeds. */
 .post-full .post-content img[src$="-wide-1800.jxl"] {

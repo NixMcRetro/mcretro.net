@@ -355,9 +355,22 @@ test('monthly Archives use a matching heading/subheading, breadcrumb and article
   assert.match(overrides, /\.archive-breadcrumbs \[aria-current="page"\]\s*\{\s*color: var\(--text\);\s*\}/);
   assert.match(overrides, /\.archive-month-header\s*\{[^}]*border-bottom: 0\.5px solid var\(--text\);/);
   assert.match(overrides, /\.archive-month-count\s*\{[^}]*font: 700 1\.25rem\/1\.3 Montserrat/);
-  assert.match(overrides, /\.archive-card-layout\s*\{[^}]*display: flex/);
+  assert.match(overrides, /\.archive-card-layout\s*\{[^}]*display: grid;[^}]*grid-template-columns: 160px minmax\(0, 1fr\);/);
   assert.match(overrides, /\.archive-card-media \.post-thumbnail-img\s*\{[^}]*object-fit: contain/);
-  assert.match(overrides, /\.archive-card-layout\s*\{ flex-direction: column/);
+  assert.match(overrides, /\.archive-card-layout:not\(:has\(\.archive-card-media\)\)\s*\{[^}]*grid-template-areas: "title" "meta" "excerpt";/);
+  assert.match(overrides, /@media screen and \(max-width: 600px\)[\s\S]*?grid-template-areas: "title" "meta" "media" "excerpt";/);
+  assert.match(overrides, /\.archive-card-media \{ width: min\(100%, 380px\);/);
+  assert.match(archive, /class="archive-card-meta-sep" aria-hidden="true">\/\/<\/span>/);
+  assert.doesNotMatch(archive, /class="archive-card-body"/);
+  const card = archive.slice(archive.indexOf('<div class="archive-card-layout">'), archive.indexOf('</article>'));
+  const cardOrder = [
+    '<h2 class="post-title">',
+    '<div class="archive-card-meta">',
+    '<div class="archive-card-media">',
+    '<div class="post-excerpt">'
+  ].map(part => card.indexOf(part));
+  assert.ok(cardOrder.every(position => position >= 0));
+  assert.ok(cardOrder.every((position, i) => i === 0 || position > cardOrder[i - 1]), 'archive source reading order must be title, meta, image, excerpt');
   assert.match(index, /permalink: \/archive\//);
   assert.match(index, /<details id="year-\{\{ year\.name \}\}" class="archive-index-year about-panel panel--teal" name="mcretro-archive-years"/);
   assert.ok(archive.includes("href=\"/archive/#year-{{ page.date | date: '%Y' }}\""));

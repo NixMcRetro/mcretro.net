@@ -1345,6 +1345,8 @@ a.page-number:hover,
     grid-column: 1;
     grid-row: 1;
     min-width: 0;
+    /* Avoid wordmark/button collisions around the 500px breakpoint. */
+    font-size: clamp(1.7rem, 6.7vw, 2.2rem);
   }
   .textcycle {
     grid-column: 1 / -1;

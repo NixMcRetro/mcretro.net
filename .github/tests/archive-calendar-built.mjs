@@ -5,6 +5,11 @@ import { resolve, join } from 'node:path';
 // Check real Jekyll output, not the mock month counts used by JS unit tests.
 // Every calendar month must agree with its actual /archive/YYYY/MM/ page.
 const site = resolve(process.argv[2] || '_site');
+const landing = readFileSync(join(site, 'archive', 'index.html'), 'utf8');
+assert.match(landing, /<h1 class="post-title">Archives<\/h1>/);
+assert.match(landing, /<details class="archive-index-year" open>/,
+  'Latest archive year should be expanded initially');
+
 const home = readFileSync(join(site, 'index.html'), 'utf8');
 const select = home.match(/<select\b[^>]*\bid="archive-calendar-year"[^>]*>[\s\S]*?<\/select>/)?.[0];
 assert.ok(select, 'Generated sidebar year selector missing');
@@ -25,18 +30,35 @@ for (const [, year, rawCounts] of options) {
       : 0;
     assert.equal(counts[i], actual,
       year + '-' + month + ': sidebar says ' + counts[i] + ', monthly archive contains ' + actual);
+    // The landing-page tile must agree with the real archive count for every year.
+    const tile = landing.match(new RegExp('<(a|span) class="archive-index-month (has-posts|is-empty)" ' +
+      'data-archive-month="' + year + '-' + month + '" data-article-count="(\\d+)"([^>]*)>'));
+    assert.ok(tile, year + '-' + month + ': landing tile missing');
+    assert.equal(Number(tile[3]), actual, year + '-' + month + ': landing tile count mismatch');
+    assert.equal(tile[1], actual ? 'a' : 'span',
+      year + '-' + month + ': only populated months may be links');
+    if (actual) {
+      assert.ok(tile[4].includes('href="/archive/' + year + '/' + month + '/"'),
+        year + '-' + month + ': archive link wrong');
+    } else {
+      assert.ok(!tile[4].includes('href='), year + '-' + month + ': empty month must not link');
+    }
     if (actual) {
       archiveMonths++;
       const archiveHtml = readFileSync(htmlFile, 'utf8');
-      const heading = archiveHtml.match(/<h1 class="post-title">([\s\S]*?)<\/h1>/)?.[1];
-      assert.ok(heading, year + '-' + month + ': archive heading missing');
+      const heading = archiveHtml.match(/<h1 class="post-title">([^<]+)<\/h1>/)?.[1]?.trim();
+      const subtitle = archiveHtml.match(/<p class="archive-month-count">([\s\S]*?)<\/p>/)?.[1]
+        ?.replace(/\s+/g, ' ').trim();
       const monthName = new Date(Date.UTC(Number(year), i, 1))
         .toLocaleString('en-AU', {month: 'long', timeZone: 'UTC'});
-      const expectedHeading = monthName + ' ' + year +
-        ' <span class="archive-month-count">- ' + actual +
-        ' article' + (actual === 1 ? '' : 's') + '</span>';
-      assert.equal(heading.replace(/\s+/g, ' ').trim(), expectedHeading,
-        year + '-' + month + ': heading must show its actual count inline');
+      assert.equal(heading, monthName + ' ' + year,
+        year + '-' + month + ': month/year should be its own heading');
+      assert.equal(subtitle, actual + ' article' + (actual === 1 ? '' : 's'),
+        year + '-' + month + ': subheading should use the correct count');
+      assert.match(archiveHtml, /<nav class="archive-breadcrumbs" aria-label="Breadcrumb">/,
+        year + '-' + month + ': breadcrumb missing');
+      assert.match(archiveHtml, /<a href="\/archive\/">Archives<\/a>/,
+        year + '-' + month + ': breadcrumb must lead to the landing page');
       assert.doesNotMatch(archiveHtml, /class="archive-month-summary"/,
         year + '-' + month + ': no duplicate count paragraph');
     }

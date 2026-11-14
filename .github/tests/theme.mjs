@@ -114,7 +114,7 @@ test('sidebar action links and monthly archive counts follow the active theme', 
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*color:\s*var\(--link\);/);
   assert.match(style, /\.sidebar-action-link:hover,\s*\.sidebar-action-link:focus-visible\s*\{[^}]*color:\s*var\(--link-hover\);/);
   assert.match(style, /\.sidebar-action-link:focus-visible\s*\{[^}]*outline:\s*2px solid var\(--focus\)/);
-  assert.match(overrides, /\.archive-month-count\s*\{\s*white-space: nowrap;\s*\}/);
+  assert.match(overrides, /\.archive-month-count\s*\{[^}]*font: 700 1\.25rem\/1\.3 Montserrat/);
   assert.match(overrides, /\.mcretro-modem-titlebar[\s\S]*background: #000080/);
 });
 
@@ -211,7 +211,9 @@ test('blog and dial-up sidebar links share bold, aligned square-button styling',
   assert.match(sidebar, /<span class="sidebar-action-link__label">More articles<\/span>/);
   assert.doesNotMatch(sidebar, /More articles\s*<span[^>]*>→<\/span>/);
   assert.match(sidebar, /class="sidebar-action-link__icon" aria-hidden="true">☎️<\/span>/u);
-  assert.equal((sidebar.match(/class="sidebar-action-link__label"/g) || []).length, 2);
+  assert.match(sidebar, /class="archive-all-link sidebar-action-link" href="\/archive\/"/);
+  assert.match(sidebar, /<span class="sidebar-action-link__label">Browse all archives<\/span>/);
+  assert.equal((sidebar.match(/class="sidebar-action-link__label"/g) || []).length, 3);
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*font-weight:\s*700;/);
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*border-radius:\s*0;/);
   assert.match(style, /\.sidebar-action-link__icon\s*\{[^}]*align-items:\s*center;[^}]*justify-content:\s*center;/);
@@ -320,10 +322,29 @@ test('interactive hover backgrounds use themed blue without recolouring neutral 
   assert.doesNotMatch(style + overrides, /--panel-hover|var\(--panel-hover\)/, 'no interactive control uses the old neutral hover token');
 });
 
-test('monthly archive count is attached to the heading, with pluralisation', () => {
+test('monthly Archives use a matching heading/subheading, breadcrumb and article media', () => {
   const archive = read('_layouts/archive.html');
-  assert.match(archive, /<h1 class="post-title">[\s\S]*<span class="archive-month-count">- \{% if month_count == 1 %\}1 article\{% else %\}\{\{ month_count \}\} articles\{% endif %\}<\/span><\/h1>/);
-  assert.doesNotMatch(archive, /class="archive-month-summary"/);
-  assert.match(overrides, /\.archive-month > \.post-title\s*\{[^}]*margin-bottom: 1\.4rem;/);
-  assert.match(overrides, /\.archive-month-count\s*\{\s*white-space: nowrap;\s*\}/, 'count must inherit font size, family, weight, and colour');
+  const index = read('archive/index.html');
+  assert.match(archive, /<nav class="archive-breadcrumbs" aria-label="Breadcrumb">/);
+  assert.match(archive, /<a href="\/archive\/">Archives<\/a>/);
+  assert.match(archive, /<h1 class="post-title">\{\{ page\.date \| date: "%B %Y" \}\}<\/h1>/);
+  assert.match(archive, /<p class="archive-month-count">\{% if month_count == 1 %\}1 article\{% else %\}\{\{ month_count \}\} articles\{% endif %\}<\/p>/);
+  assert.doesNotMatch(archive, /<span class="archive-month-count">|class="archive-month-summary"/);
+  assert.match(archive, /capture archive_thumbnail/);
+  assert.match(archive, /include auto-thumbnail\.html content=post\.content url=post\.url title=post\.title/);
+  assert.match(archive, /unless archive_thumbnail == blank/);
+  assert.doesNotMatch(archive, /class="author-avatar"/);
+  assert.match(archive, /<time class="post-date" datetime=/);
+  assert.match(archive, /class="post-categories"/);
+  assert.match(overrides, /\.archive-month-header\s*\{[^}]*border-bottom: 0\.5px solid var\(--text\);/);
+  assert.match(overrides, /\.archive-month-count\s*\{[^}]*font: 700 1\.25rem\/1\.3 Montserrat/);
+  assert.match(overrides, /\.archive-card-layout\s*\{[^}]*display: flex/);
+  assert.match(overrides, /\.archive-card-media \.post-thumbnail-img\s*\{[^}]*object-fit: contain/);
+  assert.match(overrides, /\.archive-card-layout\s*\{ flex-direction: column/);
+  assert.match(index, /permalink: \/archive\//);
+  assert.match(index, /<details class="archive-index-year"/);
+  assert.match(index, /data-archive-month="\{\{ year\.name \}\}-\{\{ month_key \}\}"/);
+  assert.match(sidebar, /class="archive-all-link sidebar-action-link" href="\/archive\/"/);
+  assert.match(header, /page\.url contains "\/archive\/"/);
+  assert.match(overrides, /\.archive-index-grid\s*\{[^}]*grid-template-columns: repeat\(4/);
 });

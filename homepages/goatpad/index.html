@@ -19,18 +19,23 @@
     <div class="container">
         <div class="column side-column"></div>
         <div class="column soundboard-column">
-            <div class="metronome">
-                <div class="counter active"></div>
-                <div class="counter"></div>
-                <div class="counter"></div>
-                <div class="counter"></div>
-                <div class="counter"></div>
-                <div class="counter"></div>
-                <div class="counter"></div>
-                <div class="counter"></div>
-            </div>
             <div class="soundboard">
-                <div class="buttonArea"></div>
+                <div class="sequence-viewport" role="region" aria-label="Eight-column soundboard. Scroll sideways to reach every pad." tabindex="0">
+                    <div class="sequence-inner">
+                        <div class="metronome" aria-hidden="true">
+                        <div class="counter active"></div>
+                        <div class="counter"></div>
+                        <div class="counter"></div>
+                        <div class="counter"></div>
+                        <div class="counter"></div>
+                        <div class="counter"></div>
+                        <div class="counter"></div>
+                        <div class="counter"></div>
+                        </div>
+                        <div class="buttonArea"></div>
+                    </div>
+                </div>
+                <p class="mobile-scroll-hint">Swipe sideways to reach all eight columns.</p>
                 <img class="title" src="./title.png" alt="GOATPAD 1337">
                 <p id="audioStatus" role="status" aria-live="polite"></p>
                 <p class="goatpad-credit">Fan recreation by <a href="https://github.com/insertusernamed/Goatpad-1337">insertusernamed</a> · Based on Goat MMO Simulator · <a href="./LICENSE">MIT licence</a></p>

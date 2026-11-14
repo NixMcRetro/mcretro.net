@@ -360,12 +360,15 @@ test('Goodies links to the dial-up page with both choices and keeps existing sec
   const goodies = read('goodies.md');
   const modem = read('assets/js/mcretro-dialup.js');
   const modemPage = read('homepages/modem/index.html');
+  const connection = read('_includes/modem-connection.html');
   const header = read('_includes/header.html');
   assert.match(goodies, /\[Dial-Up Networking\]\(\/homepages\/modem\/\)/);
   assert.doesNotMatch(goodies, /data-dial-site=/);
-  assert.match(modemPage, /value="blog-random" data-modem-choice/);
-  assert.match(modemPage, /value="random" data-modem-choice/);
-  assert.match(modem, /standalone\.querySelectorAll\('\[data-modem-choice\]'\)/);
+  assert.match(modemPage, /data-modem-launch/);
+  assert.match(modemPage, /include modem-connection\.html/);
+  assert.match(connection, /value="blog-random" data-modem-choice/);
+  assert.match(connection, /value="random" data-modem-choice/);
+  assert.match(modem, /root\.querySelectorAll\('\[data-modem-choice\]'\)/);
   assert.match(modem, /assets\/data\/random-post-urls\.json/);
   assert.match(header, /<span class="phrase mobile-tagline">🚀 Blast Processed Since 199X<\/span>/u);
   assert.match(header, /🧪 Trial and Error<\/span>/u);

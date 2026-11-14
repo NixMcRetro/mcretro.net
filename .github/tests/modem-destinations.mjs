@@ -143,7 +143,7 @@ function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'
   }
   runInNewContext(code, {
     document, window, fetch, URLSearchParams, Promise,
-    Math: { floor: Math.floor, round: Math.round, random: () => 0 }
+    Math: { floor: Math.floor, round: Math.round, max: Math.max, random: () => 0 }
   });
   return { dialog, standalone, taskbar, launch, storage, links,
     navigations, pushes, replacements, requests, timers, intervals, audioEvents };
@@ -301,7 +301,7 @@ test('entered digits change DTMF duration without changing the V6.7 sound order'
     .filter(event => event.frequency === frequency)
     .map(event => Math.round(event.at * 1000));
   // Seven DTMF digits instead of ten shorten only the dialling section by 540 ms.
-  assert.equal(atHz(1336).length, 3);
+  assert.equal(atHz(1336).length, 4);
   assert.deepEqual(atHz(1300), [5340, 8340, 11340]);
   assert.deepEqual(atHz(400), [6140, 6740, 9140, 9740, 12140, 12740]);
   assert.ok(f.timers.some(timer => timer.delay === 31210));

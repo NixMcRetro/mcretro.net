@@ -8,7 +8,10 @@ share_description: >-
   ScreenFlow, OBS and Final Cut Pro X turn a half-hour video into giant ProRes files. The 115 GB export is impressive, but wildly unnecessary. 🎬
 ---
 
-![Video capture experiment](/assets/images/2016/img_0466.jpg)
+![Screenshot of Doom gameplay with red ceiling lights, enemies ahead, a weapon firing and the game's health, armour and ammunition indicators along the bottom.](/assets/images/2016/img_0466.jpg)
+
+*Some gloriously pixelated Doom action while I was experimenting with screen capture. At least those red lights are hard to miss!*
+{: .media-caption }
 
 I tend to upload all my videos at 1080p these days. I used to be a 720p person, but 4K was starting to appear everywhere and apparently resolution inflation is unavoidable. My internet connection is bad enough that uploading 4K regularly would be an exercise in suffering, so 1080p it is.
 

@@ -629,12 +629,15 @@ pre code {
 .inline-search-form button:hover {
   background: var(--button-hover);
 }
-/* Keep sidebar Search in step with the archive calendar, without recolouring other buttons. */
+/* Search keeps its solid blue resting state. On hover and keyboard focus,
+   use the same accessible themed blue highlight as other site controls. */
 .sidebar .inline-search-form button {
   background: var(--sidebar-button-bg);
 }
-.sidebar .inline-search-form button:hover {
-  background: var(--sidebar-button-hover);
+.sidebar .inline-search-form button:hover,
+.sidebar .inline-search-form button:focus-visible {
+  background: var(--interactive-hover);
+  color: var(--archive-filled-text);
 }
 .search-widget {
   padding-top: 0.8rem;

@@ -48,33 +48,61 @@ body {
 
 .soundboard-column {
     min-width: 0;
+    position: relative;
+    isolation: isolate;
+}
+
+/* Twin black leads travel off-screen behind the upper-right panel. */
+.goatpad-cable {
+    position: absolute;
+    z-index: 0;
+    width: 150px;
+    height: 240px;
+    top: -193px;
+    right: 15px;
+    overflow: visible;
+    pointer-events: none;
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .7));
+}
+.cable-shadow {
+    fill: none;
+    stroke: #07060a;
+    stroke-width: 9;
+    stroke-linecap: round;
+}
+.cable-highlight {
+    fill: none;
+    stroke: #343039;
+    stroke-width: 1.6;
+    stroke-linecap: round;
 }
 
 .soundboard {
     box-sizing: border-box;
     position: relative;
+    z-index: 1;
     width: max-content;
     max-width: calc(100vw - 2rem);
-    padding: 14px 14px 9px;
-    border: 1px solid #85808b;
-    border-radius: 5px;
+    padding: 10px 10px 7px;
+    border: 1px solid #ada9b5;
+    border-radius: 3px;
     background:
-        linear-gradient(155deg, rgba(255, 255, 255, .055), transparent 22%),
+        linear-gradient(155deg, rgba(255, 255, 255, .07), transparent 22%),
         linear-gradient(180deg, #211b25 0%, #0d0b12 25%, #09090e 80%, #1d1922 100%);
     box-shadow:
-        0 0 0 2px #302b35,
-        0 0 0 4px #15121b,
-        inset 0 0 0 1px #3d3745,
-        inset 0 1px 12px rgba(255, 255, 255, .07),
+        0 0 0 1px rgba(221, 216, 230, .32),
+        0 0 0 3px #1c1822,
+        inset 0 0 0 1px rgba(246, 242, 255, .12),
+        inset 0 1px 12px rgba(255, 255, 255, .08),
         0 18px 48px rgba(0, 0, 0, .68);
 }
 
 .soundboard::before {
     content: "";
     position: absolute;
-    inset: 5px;
-    border: 1px solid rgba(174, 169, 186, .19);
-    border-radius: 3px;
+    inset: 4px;
+    border: 1px solid rgba(231, 228, 239, .36);
+    border-radius: 2px;
     pointer-events: none;
 }
 
@@ -82,18 +110,19 @@ body {
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
-    padding: 10px 8px 8px;
+    padding: 8px 6px 7px;
     overflow-x: auto;
     overflow-y: hidden;
     overscroll-behavior-x: contain;
     scrollbar-width: thin;
     -webkit-overflow-scrolling: touch;
-    border: 1px solid #39343f;
-    border-radius: 3px;
+    border: 1px solid #dedbe5;
+    border-radius: 2px;
     background: linear-gradient(180deg, #100e14, #030305 30%, #09080c);
     box-shadow:
-        inset 0 4px 12px rgba(0, 0, 0, .8),
-        0 1px 0 rgba(214, 207, 223, .08);
+        inset 0 4px 12px rgba(0, 0, 0, .82),
+        inset 0 0 0 1px rgba(245, 240, 252, .08),
+        0 0 0 1px rgba(225, 220, 234, .12);
 }
 
 .sequence-viewport:focus-visible {
@@ -124,15 +153,15 @@ body {
 .metronome {
     box-sizing: content-box;
     min-height: 38px;
-    margin: 0 0 11px;
-    padding: 5px 0;
-    border: 1px solid #89838f;
-    border-radius: 7px;
+    margin: 0 0 10px;
+    padding: 4px 0;
+    border: 1px solid #e1dde8;
+    border-radius: 6px;
     background: linear-gradient(180deg, #19151e, #08070b 70%);
     box-shadow:
         inset 0 2px 7px rgba(0, 0, 0, .95),
-        inset 0 0 0 1px rgba(255, 255, 255, .06),
-        0 1px 3px rgba(255, 255, 255, .12);
+        inset 0 0 0 1px rgba(255, 255, 255, .07),
+        0 0 0 1px rgba(240, 234, 249, .12);
 }
 
 .counter {
@@ -211,7 +240,8 @@ body {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(#77717d, #39333d);
+    background: linear-gradient(#faf8fd, #c5bfce);
+    box-shadow: 0 0 2px rgba(255, 255, 255, .28);
     pointer-events: none;
 }
 
@@ -226,10 +256,10 @@ body {
     top: 50%;
     left: calc(100% + var(--chevron-offset));
     transform: translate(-50%, -54%);
-    color: #9c97a6;
+    color: #f1edf8;
     font: 800 .73rem/1 Arial, sans-serif;
     letter-spacing: -.13em;
-    text-shadow: 0 1px 3px #000;
+    text-shadow: 0 1px 3px #000, 0 0 2px rgba(255, 255, 255, .25);
     pointer-events: none;
 }
 
@@ -296,22 +326,31 @@ body {
 .brand-bar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: .75rem;
     min-height: 36px;
-    margin-top: 9px;
+    margin-top: 7px;
     padding: 5px 8px 3px;
-    border-top: 1px solid rgba(180, 173, 191, .32);
+    border-top: 1px solid rgba(255, 255, 255, .28);
     border-bottom: 1px solid rgba(0, 0, 0, .75);
-    background: linear-gradient(180deg, rgba(255, 255, 255, .055), rgba(0, 0, 0, .16));
+    background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(0, 0, 0, .16));
 }
 
 .title {
     display: block;
     width: auto;
-    height: 31px;
-    max-width: 100%;
+    height: 29px;
+    max-width: calc(100% - 34px);
     object-fit: contain;
     filter: drop-shadow(0 1px 2px #000);
+}
+
+/* Three-part white circle shown to the right of the original GOATPAD wordmark. */
+.brand-emblem {
+    width: 25px;
+    height: 25px;
+    flex: 0 0 auto;
+    filter: drop-shadow(0 1px 3px rgba(244, 240, 251, .35));
 }
 
 #audioStatus {
@@ -412,6 +451,9 @@ body {
         padding: 1rem .5rem;
     }
     .side-column {
+        display: none;
+    }
+    .goatpad-cable {
         display: none;
     }
     .soundboard-column {

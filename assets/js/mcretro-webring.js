@@ -274,7 +274,24 @@
   if(standalone) {
     initModemRoot(standalone,false);
     const params=new URLSearchParams(window.location.search);
-    setDestination(standalone,resolveSite(params.get('site')));
+    const requested=params.get('site');
+    // The clean modem URL defaults to a random restored homepage. Preserve
+    // the old ?site=... deep links, including links to individual homepages.
+    setDestination(standalone,resolveSite(requested||'random')||randomSite());
+
+    // Destination choices live on this page, not as separate Goodies links.
+    // Switching modes updates the existing dialler without a page reload.
+    standalone.querySelectorAll('[data-modem-choice]').forEach(choice=>{
+      choice.checked=choice.value===(requested==='blog-random'?'blog-random':'random');
+      choice.addEventListener('change',()=>{
+        if(!choice.checked) return;
+        const site=resolveSite(choice.value);
+        if(!site) return;
+        setDestination(standalone,site);
+        window.history.replaceState(null,'',choice.value==='random'
+          ? MODEM_ROUTE : modemURL(site));
+      });
+    });
   }
   // Any in-page dial link (sidebar or Goodies) can open the same modal.
   // Modified clicks and browsers without <dialog> keep the standalone URL.

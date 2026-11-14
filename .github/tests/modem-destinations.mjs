@@ -21,11 +21,24 @@ function makeRoot() {
     }
     return controls.get(selector);
   }
+  const choices = ['blog-random', 'random'].map(value => {
+    const listeners = {};
+    return {
+      value, checked: false, listeners,
+      addEventListener(type, handler) { listeners[type] = handler; },
+      select() { choices.forEach(choice => { choice.checked = choice === this; }); this.listeners.change(); }
+    };
+  });
   return {
     dataset: {},
     open: false,
     control,
+    choices,
     querySelector: control,
+    querySelectorAll(selector) {
+      assert.equal(selector, '[data-modem-choice]');
+      return choices;
+    },
     addEventListener() {},
     showModal() { this.open = true; },
     close() { this.open = false; }
@@ -36,7 +49,7 @@ function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'
                    fetchFails = false, withDialog = true, withStandalone = true } = {}) {
   const dialog = withDialog ? makeRoot() : null;
   const standalone = withStandalone ? makeRoot() : null;
-  const navigations = [], pushes = [], requests = [], timers = [];
+  const navigations = [], pushes = [], replacements = [], requests = [], timers = [];
   const links = ['blog-random', 'random'].map(dialSite => {
     const listeners = {};
     return {
@@ -71,7 +84,11 @@ function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'
       pathname: '/homepages/modem/',
       replace(path) { navigations.push(path); }
     },
-    history: { pushState(state, _title, path) { pushes.push({ state, path }); }, back() {} },
+    history: {
+      pushState(state, _title, path) { pushes.push({ state, path }); },
+      replaceState(_state, _title, path) { replacements.push(path); },
+      back() {}
+    },
     setTimeout(callback, delay) { timers.push({ callback, delay }); return timers.length; },
     clearTimeout() {},
     addEventListener() {}
@@ -85,7 +102,7 @@ function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'
     document, window, fetch, URLSearchParams, Promise,
     Math: { floor: Math.floor, random: () => 0 }
   });
-  return { dialog, standalone, links, navigations, pushes, requests, timers };
+  return { dialog, standalone, links, navigations, pushes, replacements, requests, timers };
 }
 
 const tick = () => new Promise(resolve => setImmediate(resolve));
@@ -148,4 +165,42 @@ test('links preserve normal navigation if a modal dialog is unavailable', () => 
   const f = fixture({ withDialog: false, withStandalone: false });
   assert.equal(f.links[0].click(), false);
   assert.equal(f.pushes.length, 0);
+});
+
+test('the clean modem URL defaults to the restored-homepage choice', () => {
+  const f = fixture({ site: '', withDialog: false });
+  assert.equal(f.standalone.choices[1].checked, true);
+  assert.equal(f.standalone.choices[0].checked, false);
+  assert.equal(f.standalone.control('[data-modem-connect]').disabled, false);
+  assert.equal(f.standalone.control('[data-modem-destination]').textContent, 'Frank the Snake');
+});
+
+test('standalone destination choices switch modes without opening another page', async () => {
+  const f = fixture({ site: 'random', withDialog: false });
+  assert.equal(f.standalone.choices[1].checked, true);
+  f.standalone.choices[0].select();
+  assert.equal(f.standalone.control('[data-modem-destination]').textContent,
+    'Random McRetro blog post');
+  assert.deepEqual(f.replacements, ['/homepages/modem/?site=blog-random']);
+  f.standalone.control('[data-modem-skip]').listeners.click();
+  await tick();
+  assert.deepEqual(f.navigations, ['/first-post/']);
+  assert.equal(f.pushes.length, 0);
+});
+
+test('the homepage choice restores the clean modem URL', () => {
+  const f = fixture({ site: 'blog-random', withDialog: false });
+  assert.equal(f.standalone.choices[0].checked, true);
+  f.standalone.choices[1].select();
+  assert.equal(f.standalone.control('[data-modem-destination]').textContent, 'Frank the Snake');
+  assert.deepEqual(f.replacements, ['/homepages/modem/']);
+});
+
+test('Goodies links to the modem page rather than separately listing dial modes', () => {
+  const goodies = readFileSync(new URL('../../goodies.md', import.meta.url), 'utf8');
+  const modem = readFileSync(new URL('../../homepages/modem/index.html', import.meta.url), 'utf8');
+  assert.match(goodies, /\[Dial-Up Networking\]\(\/homepages\/modem\/\)/);
+  assert.doesNotMatch(goodies, /data-dial-site="(?:blog-random|random)"/);
+  assert.match(modem, /value="blog-random" data-modem-choice/);
+  assert.match(modem, /value="random" data-modem-choice/);
 });

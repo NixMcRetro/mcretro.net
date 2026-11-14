@@ -8,6 +8,23 @@ permalink: /homepages/modem/
 <div class="mcretro-modem-page" id="mcretro-modem-page" data-modem-root>
   <h1>McRetro Dial-Up Networking</h1>
   <p>Back in the days when the Internet made a racket before you could get online...</p>
+  <fieldset class="mcretro-modem-choices">
+    <legend>Choose a destination</legend>
+    <label class="mcretro-modem-choice">
+      <input type="radio" name="mcretro-modem-target" value="blog-random" data-modem-choice>
+      <span>
+        <strong>☎️ Dial a Random Blog Post</strong>
+        <span class="mcretro-modem-choice-description">Hear the old-school dial-up connection, then land on a randomly selected McRetro article.</span>
+      </span>
+    </label>
+    <label class="mcretro-modem-choice">
+      <input type="radio" name="mcretro-modem-target" value="random" data-modem-choice checked>
+      <span>
+        <strong>📞 Dial a Random Homepage</strong>
+        <span class="mcretro-modem-choice-description">Dial into one of McRetro's restored historical homepages, chosen at random.</span>
+      </span>
+    </label>
+  </fieldset>
   {% include modem-connection.html id_suffix="-page" %}
   <p class="mcretro-modem-back"><a href="/">← Return to McRetro.net</a></p>
 </div>

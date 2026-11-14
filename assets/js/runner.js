@@ -15,8 +15,42 @@ document.addEventListener('DOMContentLoaded', () => {
     { src: '/homepages/sonic/images/trun.gif', speed: 205 },
     { src: '/homepages/sonic/images/srun.gif', speed: 205 },
     { src: '/assets/images/about/0CATRUNY.gif', speed: 205 },
-    { src: '/assets/images/about/seal-flop.gif', speed: 90, height: 42 }
+    { src: '/assets/images/about/seal-flop.gif', speed: 90, height: 42, flop: true }
   ];
+
+  // The seal GIF has eight 150ms frames. It lifts for frames 1-3,
+  // propels forward in frames 4-6, then rests during frames 7-8.
+  // Move only during that propulsion phase, with each hop on the
+  // same 1.2-second rhythm as the GIF. Other runners stay linear.
+  function animateSealFlops(sprite, startX, endX, speed, lane) {
+    const frameMs = 150;
+    const loopMs = 8 * frameMs;
+    const stride = speed * loopMs / 1000;
+    const hops = Math.ceil((endX - startX) / stride);
+    const durationMs = hops * loopMs;
+    const translate = (x) => `translate3d(${x}px, 0, 0)`;
+    const keyframes = [{ offset: 0, transform: translate(startX) }];
+
+    for (let hop = 0; hop < hops; hop += 1) {
+      const baseMs = hop * loopMs;
+      const fromX = Math.min(endX, startX + hop * stride);
+      const toX = Math.min(endX, fromX + stride);
+      keyframes.push({
+        offset: (baseMs + 3 * frameMs) / durationMs,
+        transform: translate(fromX),
+        easing: 'ease-in-out'
+      });
+      keyframes.push({
+        offset: (baseMs + 6 * frameMs) / durationMs,
+        transform: translate(toX)
+      });
+    }
+
+    keyframes.push({ offset: 1, transform: translate(endX) });
+    const animation = sprite.animate(keyframes, { duration: durationMs, fill: 'forwards' });
+    animation.finished.then(() => lane.remove(), () => lane.remove());
+    return durationMs;
+  }
 
   function runHeaderSprite() {
     if (reducedMotion() || mobileMenu()) return;
@@ -46,11 +80,23 @@ document.addEventListener('DOMContentLoaded', () => {
       lane.setAttribute('aria-hidden', 'true');
       sprite.style.height = spriteHeight + 'px';
       sprite.style.setProperty('--runner-start-x', startX + 'px');
-      sprite.style.animationDuration = seconds + 's';
+      const useFlopMotion = selected.flop && typeof sprite.animate === 'function';
+      if (useFlopMotion) {
+        // Disable the usual continuous CSS translation for the seal only.
+        sprite.style.animation = 'none';
+      } else {
+        sprite.style.animationDuration = seconds + 's';
+      }
       lane.appendChild(sprite);
       mainNav.appendChild(lane);
-      sprite.addEventListener('animationend', () => lane.remove(), { once: true });
-      setTimeout(() => lane.remove(), Math.ceil(seconds * 1000) + 2000);
+
+      let durationMs = seconds * 1000;
+      if (useFlopMotion) {
+        durationMs = animateSealFlops(sprite, startX, viewportWidth, selected.speed, lane);
+      } else {
+        sprite.addEventListener('animationend', () => lane.remove(), { once: true });
+      }
+      setTimeout(() => lane.remove(), Math.ceil(durationMs) + 2000);
     }, { once: true });
 
     sprite.src = selected.src;

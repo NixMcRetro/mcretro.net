@@ -417,11 +417,8 @@
   }
 }
 
-/* At 320px, reserve room for the full-size hamburger without covering the logo. */
+/* At 320px, keep the logo legible beside the fixed-size header controls. */
 @media screen and (max-width: 360px) {
-  .logo-area {
-    padding-right: 110px;
-  }
   .site-logo {
     font-size: 1.3rem;
     letter-spacing: 0.1em;

@@ -8,7 +8,10 @@ share_description: >-
   My first Visual Basic project in Visual Studio introduces Glenmatic 2000, a chatty program with far too many comments. Programming adventures begin. 💻
 ---
 
-![vs2015](/assets/images/2016/img_0510.jpg)
+![Purple Visual Studio logo and the words 'Visual Studio' on a white background.](/assets/images/2016/img_0510.jpg)
+
+*Visual Studio: the beginning of my adventures with Visual Basic and the gloriously chatty Glenmatic 2000.*
+{: .media-caption }
 
 I've begun my journey into the world of programming. Apart from some HTML and CSS hackery, I have basically no experience, so off I go on another adventure.
 

@@ -8,7 +8,10 @@ share_description: >-
   Super Nintendo and Super Famicom PICO fuses raise a question: 125 V or 250 V? The actual circuit, interrupt rating and fuse speed matter. 🔧
 ---
 
-![4466233](/assets/images/2016/img_0506.jpg)
+![Small green axial-leaded electronic fuse with a cylindrical body and straight metal wire leads extending from each end.](/assets/images/2016/img_0506.jpg)
+
+*One of those little axial PICO-style fuses. The shape is familiar, but selecting a replacement means checking more than just the current rating!*
+{: .media-caption }
 
 Back in March 2012 I replaced a fuse in a [Sega Mega-CD](/fuse-replacement-on-the-sega-mega-cd-model-1/), and the good news is these PICO parts are still around. This time I'm looking at the fuses used in the Super Nintendo and Super Famicom, and there's an interesting difference in the ratings.
 

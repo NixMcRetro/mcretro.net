@@ -8,7 +8,10 @@ share_description: >-
   Johnny Five is alive! A 2016 BMI milestone arrives, with plans to increase food gradually and maintain the progress. The scale isn't the whole story. 🤖
 ---
 
-![start_aug1](/assets/images/2016/img_0507.jpg)
+![Withings all-time weight chart from 2008 to 1st August 2016, showing 80.6 kg and a BMI of 24.9.](/assets/images/2016/img_0507.jpg)
+
+*The all-time graph on 1st August 2016 finally reached a BMI of 24.9. Johnny Five is alive!*
+{: .media-caption }
 
 Johnny Five is alive!
 
@@ -18,7 +21,10 @@ For most adults, the healthy BMI category runs from 18.5 to 24.9. BMI isn't the 
 
 In my head, this means I've reached a nice place to live for the rest of my salmon, chicken, milk, high-grain and low-carb-bread days. At least I'm enjoying what I'm eating!
 
-![start_aug2](/assets/images/2016/img_0508.jpg)
+![Withings three-month weight graph from May to 1st August 2016, falling to 80.6 kg, with a BMI of 24.9.](/assets/images/2016/img_0508.jpg)
+
+*The last three months, ending at 80.6 kg. Time to see whether gently increasing the food intake would make things level out.*
+{: .media-caption }
 
 Above is a snapshot of the last three months. My master plan is to start putting the brakes on by gradually increasing my energy intake, 5% at a time, until my weight stabilises.
 

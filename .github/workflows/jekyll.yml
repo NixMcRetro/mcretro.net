@@ -27,6 +27,7 @@ on:
       - 'homepages/fishtankworld/**'
       - 'homepages/goatpad/**'
       - '.github/tests/restore-fishtank-gallery.py'
+      - '.github/tests/goatpad-audio.test.mjs'
       - '_layouts/default.html'
       - '_includes/sidebar.html'
       - 'assets/js/archive-calendar.js'

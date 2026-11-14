@@ -1568,7 +1568,9 @@ a.page-number:hover,
 /* Very Small Screens (e.g. iPhone SE) */
 @media screen and (max-width: 500px) {
   .site-logo {
-    font-size: 1.7rem;
+    /* Keep the 1.7rem wordmark on larger phones; reduce slightly only
+       as needed for very narrow viewports, never the tagline itself. */
+    font-size: clamp(1.3rem, 6.5vw, 1.7rem);
   }
   .textcycle .phrase {
     font-size: 0.9rem;

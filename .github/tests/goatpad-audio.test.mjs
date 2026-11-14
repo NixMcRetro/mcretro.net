@@ -55,6 +55,17 @@ class Element {
       });
     };
     visit(this);
+    if (this.classList.contains('column')) {
+      // Native querySelectorAll returns a NodeList, which is iterable and has
+      // forEach, but does NOT have Array.prototype.some/filter/find.
+      const nodes = {
+        length: output.length,
+        forEach: callback => output.forEach(callback),
+        [Symbol.iterator]: () => output[Symbol.iterator]()
+      };
+      output.forEach((element, i) => { nodes[i] = element; });
+      return nodes;
+    }
     return output;
   }
 }
@@ -169,7 +180,8 @@ function fixture({ failOnce = null } = {}) {
     pendingGoatCallback() {
       return timers.get(sandbox.__goatTimerId())?.callback;
     },
-    hideDocument() { document.hidden = true; docListeners.visibilitychange(); },
+    hideDocument() { document.hidden = true; docListeners.visibilitychange?.(); },
+    showDocument() { document.hidden = false; docListeners.visibilitychange?.(); },
     tick() {
       const first = timers.entries().next().value;
       if (!first) return;
@@ -273,7 +285,12 @@ test('Auto Goat only selects a pad after visible physical contact', async () => 
   app.toggleGoat();
   assert.equal(app.autoGoat['aria-pressed'], 'true');
   assert.equal(app.goatSprite.hidden, false);
+  assert.equal(typeof app.pads[0].parentElement.querySelectorAll('button').some,
+    'undefined', 'Fake DOM must reproduce native NodeList semantics');
+  const startingPosition = app.goatSprite.style.transform;
   await app.goatStep(); // Approach begins, no pad change yet
+  assert.notEqual(app.goatSprite.style.transform, startingPosition,
+    'The goat should actually leave its initial corner to approach a pad');
   assert.equal(app.pads.filter(pad => pad.classList.contains('active')).length, 0);
   assert.match(app.goatSprite.style.transform, /rotate\(/);
   assert.match(app.goatSprite.style.transform, /rotateY\(/);
@@ -328,9 +345,16 @@ test('Auto Goat mixes with one pad per lane, no more than six lanes, and foregro
   assert.ok(hitCount > 0, 'The goat should change the music after landing');
   assert.ok(sawForeground, 'The goat should sometimes jump towards the viewer');
   app.hideDocument();
+  assert.equal(app.autoGoat['aria-pressed'], 'true',
+    'Switching browser tabs must not disable Auto Goat');
+  assert.equal(app.goatSprite.hidden, false);
+  assert.equal(typeof app.pendingGoatCallback(), 'function',
+    'A planned goat hop must survive a hidden tab');
+  await app.goatStep();
+  app.showDocument();
+  assert.equal(app.autoGoat['aria-pressed'], 'true');
+  app.toggleGoat();
   assert.equal(app.autoGoat['aria-pressed'], 'false');
-  assert.equal(app.goatSprite.hidden, true);
-  assert.ok([...app.timers.values()].every(timer => timer.ms < 2000));
 });
 
 test('Start loads eight Opus files, not all 64, with user-gesture audio', async () => {

@@ -1276,11 +1276,15 @@ a.page-number:hover,
   border: 1px solid var(--text);
   background: var(--panel);
 }
-/* One original, unmodified pixel-art GIF runs along the main-nav top border.
-   Fixed clipping lane avoids overflow; the effect never catches input. */
+/* A pixel-art visitor travels along the main-nav top border.
+   Keep the lane anchored to the nav when the page is scrolled. */
 .header-runner-lane {
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  top: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 48px;
   overflow: hidden;
   pointer-events: none;
   z-index: 20;
@@ -1298,8 +1302,8 @@ a.page-number:hover,
   animation: header-runner-cross 6s linear both;
 }
 @keyframes header-runner-cross {
-  from { transform: translate3d(var(--runner-start-x), var(--runner-y), 0); }
-  to { transform: translate3d(var(--runner-end-x), var(--runner-y), 0); }
+  from { transform: translate3d(var(--runner-start-x), 0, 0); }
+  to { transform: translate3d(100vw, 0, 0); }
 }
 @media screen and (max-width: 750px), (prefers-reduced-motion: reduce) {
   .header-runner-lane { display: none; }

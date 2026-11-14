@@ -8,7 +8,10 @@ share_description: >-
   A replacement GQ-4X v4 joins the programmer collection, while suspiciously marked flash chips identify as ST M29F032D parts. More SNES cart tinkering awaits. 💾
 ---
 
-![GQ-4X v4 programmer](/assets/images/2016/img_0464.jpg)
+![GQ-4X v4 USB Universal Programmer software showing an M29F032D TSOP40 read at 83% with a log of chip-ID checks.](/assets/images/2016/img_0464.jpg)
+
+*The GQ-4X software reading an M29F032D TSOP40 device. There are a few failed ID checks in the log too, just to keep things interesting!*
+{: .media-caption }
 
 Well, I'm back on the wagon again. GQ-4X in hand, with a spare MiniPro TL866CS, K150 and Wellon VP-390. Overkill? Very much so. The GQ-4X had become so familiar that I couldn't live without one anymore. Dammit!
 

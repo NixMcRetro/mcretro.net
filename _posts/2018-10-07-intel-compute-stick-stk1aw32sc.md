@@ -8,11 +8,17 @@ share_description: >-
   An Intel Compute Stick runs Xubuntu 18.04 for speeding up university lecture videos. Only 2 GB RAM, but Linuxium's HDMI audio workaround saves the day. 💻
 ---
 
-![](/assets/images/2018/img_0626.jpg)
+![Pop-art illustration of two office workers in shirts and ties carrying cardboard boxes of belongings against a teal dotted background.](/assets/images/2018/img_0626.jpg)
+
+*A little stock-style illustration of packing up and moving on. The actual Intel Compute Stick is in the next picture!*
+{: .media-caption }
 
 When I revise for university exams I seem to be in a habit of falling asleep rewatching lecture recordings. Heck, I nearly fall asleep during lectures I attend. I've found the only way to stay engaged with the material is to speed the lectures up somewhere between 1.2x and 1.5x. Kodi on Raspberry Pi has some support for this but tends to forget that it is being sped up if you pause. Pausing is something I do frequently to make sure the knowledge soaks in.
 
-![](/assets/images/2018/img_0625.jpg)
+![Two labelled side views of an Intel Compute Stick showing its HDMI connector, power LED, microSD slot, security slot, USB ports and 5 V power input.](/assets/images/2018/img_0625.jpg)
+
+*The tiny Intel Compute Stick and its ports. Not much room for a computer, but just enough to speed through a few university lectures!*
+{: .media-caption }
 
 Enter the Intel Compute Stick STK1AW32SC. It runs Linux thanks _(many, many thanks)_ to [Linuxium](https://linuxiumcomau.blogspot.com/) and his [great work](/assets/uploads/isorespin.zip) on making Ubuntu (and various flavours) available for [Cherry Trail-based](https://www.intel.com/content/www/us/en/ark/products/codename/46629/products-formerly-cherry-trail.html) hardware. I use this as my daily driver for watching lecture recordings and it has been fantastic.
 

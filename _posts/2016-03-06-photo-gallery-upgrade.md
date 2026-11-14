@@ -8,7 +8,10 @@ share_description: >-
   Google retires Picasa, so McRetro photos head towards Flickr and Facebook. By 2022 the Flickr experiment is over and a local gallery is the plan. 📸
 ---
 
-![Flickr Gallery](/assets/images/2016/img_0462.jpg)
+![Historic gallery screenshot displaying eight thumbnail albums of Nintendo, Xbox and Sega hardware, each labelled with titles and photo counts.](/assets/images/2016/img_0462.jpg)
+
+*A peek at the old photo gallery, with console repairs, development cartridges and plenty of assorted hardware. At least they were all organised somewhere!*
+{: .media-caption }
 
 Well, Google has decided it's time to send Picasa off into retirement. Fantastic! Just when I had everything nicely organised, it's time to find somewhere else to dump all my photographs.
 

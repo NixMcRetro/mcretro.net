@@ -25,7 +25,21 @@ for (const [, year, rawCounts] of options) {
       : 0;
     assert.equal(counts[i], actual,
       year + '-' + month + ': sidebar says ' + counts[i] + ', monthly archive contains ' + actual);
-    if (actual) archiveMonths++;
+    if (actual) {
+      archiveMonths++;
+      const archiveHtml = readFileSync(htmlFile, 'utf8');
+      const heading = archiveHtml.match(/<h1 class="post-title">([\s\S]*?)<\/h1>/)?.[1];
+      assert.ok(heading, year + '-' + month + ': archive heading missing');
+      const monthName = new Date(Date.UTC(Number(year), i, 1))
+        .toLocaleString('en-AU', {month: 'long', timeZone: 'UTC'});
+      const expectedHeading = monthName + ' ' + year +
+        ' <span class="archive-month-count">- ' + actual +
+        ' article' + (actual === 1 ? '' : 's') + '</span>';
+      assert.equal(heading.replace(/\s+/g, ' ').trim(), expectedHeading,
+        year + '-' + month + ': heading must show its actual count inline');
+      assert.doesNotMatch(archiveHtml, /class="archive-month-summary"/,
+        year + '-' + month + ': no duplicate count paragraph');
+    }
   }
 }
 assert.ok(archiveMonths > 20, 'Expected real published monthly archives to be checked');

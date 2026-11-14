@@ -151,6 +151,8 @@ async function selectPad(button) {
     }
     const key = Number(button.dataset.sample);
     try {
+        // Resume within the pad click, before awaiting a new network request.
+        if (audioContext.state === "suspended") await audioContext.resume();
         if (!buffers.has(canonical(key))) {
             button.disabled = true;
             audioStatus.textContent = "Loading sound " + key + "...";
@@ -158,7 +160,6 @@ async function selectPad(button) {
         }
         // A newer click in the same column takes precedence.
         if (columnSelection.get(column) !== token) return;
-        if (audioContext.state === "suspended") await audioContext.resume();
         togglePad(button);
         audioStatus.textContent = "";
     } catch (error) {

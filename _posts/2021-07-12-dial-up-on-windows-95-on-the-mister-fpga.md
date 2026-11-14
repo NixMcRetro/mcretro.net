@@ -27,7 +27,10 @@ Another major step was realising that, on my RPi3, the forwarding rules I'd put 
 
  
 
-![](/assets/images/2021/img_0729.jpg)
+![Windows 95 shutdown screen with orange text on black reading 'It's now safe to turn off your computer.'](/assets/images/2021/img_0729.jpg)
+
+*Windows 95 on the MiSTer ao486. In this adventure, even the shutdown screen is a little nostalgic.*
+{: .media-caption }
 
  
 

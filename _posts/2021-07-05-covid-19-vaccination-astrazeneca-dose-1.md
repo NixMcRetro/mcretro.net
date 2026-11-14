@@ -8,7 +8,10 @@ share_description: >-
   A first AstraZeneca vaccination in July 2021 brings relief, concerns about rare TTS risks and frustration at Australia's confusing rollout advice. 💉
 ---
 
-![](/assets/images/2021/img_0728.jpg)
+![Vaccination meme with an AstraZeneca vial, cartoon characters and the text 'I'm get vaccine' and 'Ok then. That was always allowed.'](/assets/images/2021/img_0728.jpg)
+
+*My July 2021 interpretation of Australia's AstraZeneca messaging. The vial was easier to understand than the rollout advice.*
+{: .media-caption }
 
 Well, I'm on the way to having some vaccination powers. I now need my immune system to do its thing, then in just 12 short weeks I can get dose two. For me, AstraZeneca was my weapon of choice after weighing the known risks. The rare complication was thrombosis with thrombocytopenia syndrome (TTS), involving unusual clotting and low platelets. Something, something platelet factor 4 (PF4): antibodies against it were found in many cases. There were similarities to heparin-induced thrombocytopenia, but this was a distinct syndrome and the exact mechanism was still being investigated.
 

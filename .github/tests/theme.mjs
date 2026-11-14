@@ -211,7 +211,9 @@ test('blog and dial-up sidebar links share bold, aligned square-button styling',
   assert.match(sidebar, /<span class="sidebar-action-link__label">More articles<\/span>/);
   assert.doesNotMatch(sidebar, /More articles\s*<span[^>]*>→<\/span>/);
   assert.match(sidebar, /class="sidebar-action-link__icon" aria-hidden="true">☎️<\/span>/u);
-  assert.equal((sidebar.match(/class="sidebar-action-link__label"/g) || []).length, 2);
+  assert.match(sidebar, /class="archive-all-link sidebar-action-link" href="\/archive\/"/);
+  assert.match(sidebar, /<span class="sidebar-action-link__label">Browse all archives<\/span>/);
+  assert.equal((sidebar.match(/class="sidebar-action-link__label"/g) || []).length, 3);
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*font-weight:\s*700;/);
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*border-radius:\s*0;/);
   assert.match(style, /\.sidebar-action-link__icon\s*\{[^}]*align-items:\s*center;[^}]*justify-content:\s*center;/);

@@ -8,7 +8,10 @@ share_description: >-
   Apache can serve Markdown files, but it won't magically turn them into HTML. Jekyll might help build a proper website for the old Tor mirror. 🌐
 ---
 
-![2016-09-23](/assets/images/2016/img_0563.jpg)
+![Early McRetro website displayed in a browser, with a photograph of a circuit board above introductory text and a link to the darknet mirror.](/assets/images/2016/img_0563.jpg)
+
+*An early version of McRetro showing the circuit board header and a mention of the darknet mirror. Quite a different look!*
+{: .media-caption }
 
 More specifically: Markdown, Apache and the darknet. I've got the old McRetro onion address loading, but Apache is serving up the Markdown files as plain text. Baby steps! At least the site's somewhat functional... right?
 

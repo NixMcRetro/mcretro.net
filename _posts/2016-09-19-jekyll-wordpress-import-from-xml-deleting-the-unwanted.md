@@ -8,7 +8,10 @@ share_description: >-
   Importing 566 WordPress posts into Jekyll leaves a forest of unwanted metadata. OS X find, xargs and sed offer cleanup, with plenty of foot-gun potential. 💻
 ---
 
-![hackers1](/assets/images/2016/img_0562.jpg)
+![macOS Terminal window showing a long-format file listing of retro-computing and console folders, including Sega, Nintendo and Commodore.](/assets/images/2016/img_0562.jpg)
+
+*A Terminal directory listing from the old modding files. It isn't glamorous, but neither is cleaning up hundreds of imported posts!*
+{: .media-caption }
 
 Well, I've managed to get hundreds of posts imported from WordPress into Jekyll. All 566 of them, apparently! Unfortunately, WordPress has left quite a bit of unnecessary rubbish behind in the Markdown files. Lovely.
 

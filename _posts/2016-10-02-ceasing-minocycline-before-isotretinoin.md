@@ -8,7 +8,10 @@ share_description: >-
   Stopping minocycline before isotretinoin involves careful timing, prescribing advice and blood-donation rules. The skin improvements don't last long. 🩺
 ---
 
-![](/assets/images/2016/img_0565.jpg)
+![Two-dimensional chemical structure of minocycline, showing connected rings and labelled oxygen, hydroxyl, nitrogen and amide groups.](/assets/images/2016/img_0565.jpg)
+
+*The chemical structure of minocycline, the antibiotic I was stopping before beginning isotretinoin.*
+{: .media-caption }
 
 Well, that's four weeks of minocycline out of the way, and I've decided to stop taking it. I can't say I've particularly enjoyed taking an antibiotic just to sort out my skin, even if the results have been rather impressive!
 

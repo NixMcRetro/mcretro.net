@@ -8,7 +8,10 @@ share_description: >-
   A Mean Well PT-65B fits inside a Sega TeraDrive PSU housing in another hobbyist's retrofit. Universal mains sounds handy, but this isn't my own install. ⚡
 ---
 
-![td_header](/assets/images/2016/img_0575.jpg)
+![SEGA TeraDrive wordmark in blue and black lettering with blue square graphics on a white background.](/assets/images/2016/img_0575.jpg)
+
+*The TeraDrive logo. Time for another look at keeping these unusual machines powered!*
+{: .media-caption }
 
 I've been noticing a few people looking for ways to replace failed Sega TeraDrive power supplies. Others are simply trying to get away from having to run a Japanese machine through a large external step-down transformer. I'm firmly in that second group!
 
@@ -22,7 +25,10 @@ The PT-65B is a 65 W triple-output switching supply, giving us:
 
 It also accepts a universal 90 to 264 V AC input, which is rather convenient when dealing with Japanese computers in Australia. No more enormous transformer just to turn the thing on? Now that sounds appealing!
 
-![photo1](/assets/images/2016/img_0566.jpg)
+![Open TeraDrive PSU metal housing with a replacement circuit board, heatsink, large capacitors and several loose power leads.](/assets/images/2016/img_0566.jpg)
+
+*DeChief's power supply retrofit inside the original metal housing. There's surprisingly little wasted space.*
+{: .media-caption }
 
 As you can see, the replacement board fits remarkably well inside the original housing. It's quite a tidy way of approaching the problem, especially if you're trying to keep the TeraDrive looking as original as possible from the outside.
 
@@ -30,21 +36,45 @@ One interesting difference is that the PT-65B has a -12 V output. The stock Tera
 
 Of course, having -12 V available on the power supply doesn't mean it can simply be connected to an ISA slot without checking the machine's wiring. That's another part of the modification that would need to be worked out properly.
 
-![photo2](/assets/images/2016/img_0567.jpg)
+![Close-up of a dark rectangular electrical component mounted through the TeraDrive PSU bracket, with yellow and grey wires attached.](/assets/images/2016/img_0567.jpg)
 
-![photo3](/assets/images/2016/img_0568.jpg)
+*A close-up of the PSU's bracket-mounted component and wiring in DeChief's retrofit.*
+{: .media-caption }
 
-![photo4](/assets/images/2016/img_0569.jpg)
+![Close-up of the replacement PSU board showing a copper-wound coil, large black capacitor, silver heatsink and yellow and grey wires.](/assets/images/2016/img_0568.jpg)
 
-![photo5](/assets/images/2016/img_0570.jpg)
+*The view inside DeChief's PSU retrofit, with the winding, heatsink and other components packed together.*
+{: .media-caption }
 
-![photo6](/assets/images/2016/img_0571.jpg)
+![Close-up of the mains lead entering the metal PSU housing beside blue disc components, a grey rectangular component and a screw.](/assets/images/2016/img_0569.jpg)
 
-![photo7](/assets/images/2016/img_0572.jpg)
+*A closer look at the cable entry and nearby board components in the TeraDrive PSU housing.*
+{: .media-caption }
 
-![photo8](/assets/images/2016/img_0573.jpg)
+![Black cable passing through the TeraDrive PSU metal bracket, beside a separate wire ending in a blue-insulated ring terminal.](/assets/images/2016/img_0570.jpg)
 
-![photo9](/assets/images/2016/img_0574.jpg)
+*One of DeChief's wiring details, including the ring terminal beside the metal housing.*
+{: .media-caption }
+
+![Side view of an open TeraDrive PSU housing with its power cables and a hand holding a two-pin mains plug in front.](/assets/images/2016/img_0571.jpg)
+
+*The power plug and the open housing, showing how the retrofitted unit is arranged. Photo courtesy of DeChief.*
+{: .media-caption }
+
+![Close-up of a broad finned aluminium heatsink inside the PSU housing, with a cardboard spacer visible underneath the circuit board.](/assets/images/2016/img_0572.jpg)
+
+*A side-on view of the retrofit's heatsink and the material supporting the board inside the housing.*
+{: .media-caption }
+
+![Cluster of cylindrical capacitors and a wrapped transformer inside the PSU housing, with red and brown wires feeding a white connector.](/assets/images/2016/img_0573.jpg)
+
+*Capacitors, transformer and output wiring tucked into DeChief's PSU retrofit.*
+{: .media-caption }
+
+![Bundle of coloured PSU wires joined under black sleeving and ending in a white multi-pin plastic connector on a dark tabletop.](/assets/images/2016/img_0574.jpg)
+
+*The retrofit's cable harness and white connector laid out for a closer look.*
+{: .media-caption }
 
 There's one rather important consideration here: the PT-65B is an open-frame mains power supply. The photographs are a useful look at the physical arrangement, but they aren't a complete set of electrical installation instructions. Earthing, fusing, insulation, clearances and mains wiring all need to be dealt with correctly.
 

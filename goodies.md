@@ -30,7 +30,7 @@ A 64-pad browser soundboard and sequencer from 2024, with drums, effects, bass, 
 **🎵 [Lunchbeat](/homepages/lunchbeat/)**<br>
 An original 1-bit groovebox running in your web browser, with an electronics project behind it. Sometimes the simplest sounds are the most entertaining!
 
-**🎳 [Nix's Cyber Lanes](/homepages/bowling/)**<br>
+**🎳 [The Cyber Lanes](/homepages/bowling/)**<br>
 An old-school bowling league homepage with scores, averages and a leaderboard. Check out those lanes!
 
 **🎮 [VRAMpage MD](/homepages/vrampage-md/)**<br>

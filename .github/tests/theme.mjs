@@ -279,4 +279,6 @@ test('Blog pagination is compact, accessible and retains numbered URLs', () => {
   assert.match(style, /\.page-number:focus-visible,\s*\.arrow-link:focus-visible\s*\{[^}]*outline: 3px solid var\(--focus\);/);
   assert.match(overrides, /\.pagination-controls\s*\{[^}]*grid-template-columns: 2\.75rem minmax\(0, 1fr\) 2\.75rem;/);
   assert.doesNotMatch(style, /\.pagination-bar a:hover\s*\{[^}]*font-weight:/);
+  assert.match(style, /a\.page-number:hover,\s*\.arrow-link:hover\s*\{/);
+  assert.doesNotMatch(style, /^\.page-number:hover,/m, "active page should not change on hover");
 });

@@ -207,6 +207,8 @@ test('blog and dial-up sidebar links share bold, aligned square-button styling',
   assert.match(sidebar, /class="recent-posts-more sidebar-action-link" href="\/blog\/"/);
   assert.match(sidebar, /class="dial-homepage-random sidebar-action-link" href="\/homepages\/modem\/\?site=random" data-dial-site="random"/);
   assert.match(sidebar, /class="sidebar-action-link__icon" aria-hidden="true">📚<\/span>/u);
+  assert.match(sidebar, /<span class="sidebar-action-link__label">More articles<\/span>/);
+  assert.doesNotMatch(sidebar, /More articles\s*<span[^>]*>→<\/span>/);
   assert.match(sidebar, /class="sidebar-action-link__icon" aria-hidden="true">☎️<\/span>/u);
   assert.equal((sidebar.match(/class="sidebar-action-link__label"/g) || []).length, 2);
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*font-weight:\s*700;/);
@@ -227,7 +229,7 @@ test('sidebar sections use the same 1.3rem spacing before their dividers', () =>
 test('Recent Posts and Dial-a-Homepage share the same content-to-button gap', () => {
   assert.match(style, /\.widget ul\.recent-posts-list\s*\{[^}]*margin-bottom:\s*0;/);
   assert.match(overrides, /\.dial-homepage-intro\s*\{[^}]*margin:\s*0;/);
-  assert.match(style, /\.sidebar-action-link\s*\{[^}]*margin-top:\s*0\.5rem;/);
+  assert.match(style, /\.sidebar-action-link\s*\{[^}]*margin-top:\s*1rem;/);
   assert.match(overrides, /\.sidebar \.recent-posts-list li:last-child\s*\{[^}]*margin-bottom:\s*0;/);
 });
 

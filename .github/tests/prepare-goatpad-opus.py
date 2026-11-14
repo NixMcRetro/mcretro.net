@@ -108,7 +108,7 @@ def verify(site: Path, bitrate: int | None = None) -> None:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--site", default="_site", help="Jekyll output directory")
-    parser.add_argument("--bitrate", type=int, choices=(48, 64), default=64)
+    parser.add_argument("--bitrate", type=int, choices=(24, 32, 48, 64), default=24)
     parser.add_argument("--verify", action="store_true")
     args = parser.parse_args()
     try:

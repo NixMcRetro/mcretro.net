@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges" aria-hidden="true">
+<title>Windows 95-style Make New Connection shortcut</title>
+<!-- Modem wizard shortcut: blue-violet telephone tile matching the 1995 UI -->
+<path d="M4 3h23v2h2v22H27v2H4v-2H2V5h2z" fill="#000"/>
+<path d="M4 4h23v2H4z" fill="#fff"/>
+<path d="M4 6h23v21H4z" fill="#9599b7"/>
+<rect x="6" y="7" width="19" height="17" fill="#292e75"/>
+<path d="M7 8h17v2H7z" fill="#7482c3"/><path d="M7 10h2v12H7z" fill="#595f9c"/>
+<!-- Little rotary telephone in the dark tile -->
+<path d="M11 12h10v2h2v2h-3v-2h-8v2H9v-2h2z" fill="#050505"/>
+<path d="M11 12h10v1H11z" fill="#b2b4c4"/>
+<rect x="12" y="15" width="9" height="6" fill="#d0d1d9" stroke="#050505" stroke-width="1"/>
+<rect x="14" y="16" width="5" height="4" fill="#555e95"/>
+<rect x="15" y="17" width="3" height="2" fill="#dcdde7"/>
+<path d="M4 25h23v2H4z" fill="#626688"/>
+<!-- Bent cord -->
+<path d="M21 18h3v2h-2v3h3" fill="none" stroke="#030303" stroke-width="1"/>
+</svg>

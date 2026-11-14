@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges" aria-hidden="true">
+<title>Windows 95-style dial-up computer and telephone</title>
+<!-- Desktop monitor, heavy 1px borders and the familiar teal CRT -->
+<rect x="1" y="7" width="16" height="17" fill="#000"/>
+<path d="M2 8h14v14H2z" fill="#dfdfdf"/><path d="M3 9h12v11H3z" fill="#fff"/>
+<rect x="4" y="10" width="10" height="9" fill="#080808"/><rect x="5" y="11" width="8" height="7" fill="#147d84"/>
+<path d="M6 12h5v2H6z" fill="#3eb4ab"/><path d="M4 21h10v1H4z" fill="#777"/>
+<rect x="6" y="24" width="7" height="2" fill="#888"/><rect x="3" y="26" width="13" height="2" fill="#000"/>
+<rect x="4" y="26" width="11" height="1" fill="#dfdfdf"/>
+<!-- Keyboard -->
+<path d="M0 29h19v2H0z" fill="#000"/><path d="M1 29h17v1H1z" fill="#fff"/>
+<!-- Yellow handset and telephone unit -->
+<path d="M20 6h7v2h2v3h1v10h-1v2H17v-3h2V9h1z" fill="#000"/>
+<path d="M20 8h7v3h1v9H19v-3h1z" fill="#f5d500"/>
+<path d="M21 9h5v2h1v2h-7v-2h1z" fill="#ffff85"/>
+<path d="M20 13h8v2h-8z" fill="#000080"/><path d="M21 14h6v1h-6z" fill="#1358b7"/>
+<rect x="21" y="16" width="2" height="2" fill="#222"/><rect x="25" y="16" width="2" height="2" fill="#222"/>
+<rect x="23" y="19" width="2" height="1" fill="#333"/>
+<!-- Plug and cable -->
+<path d="M18 21v5h3v2h-3v2h7v-3h-2v-2h-3v-4z" fill="#000"/>
+<path d="M19 23v3h3v2h2" fill="none" stroke="#bcbcbc" stroke-width="1"/>
+</svg>

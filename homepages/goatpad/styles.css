@@ -7,6 +7,7 @@
     --pad-width: clamp(44px, 7vh, 54px);
     --pad-height: clamp(40px, 6.5vh, 48px);
     --column-gap: 14px;
+    --chevron-offset: 7px;
     --row-gap: 9px;
 }
 
@@ -223,7 +224,7 @@ body {
     content: "››";
     position: absolute;
     top: 50%;
-    left: calc(100% + var(--column-gap) / 2);
+    left: calc(100% + var(--chevron-offset));
     transform: translate(-50%, -54%);
     color: #9c97a6;
     font: 800 .73rem/1 Arial, sans-serif;
@@ -399,6 +400,7 @@ body {
         --pad-width: 44px;
         --pad-height: 44px;
         --column-gap: 12px;
+        --chevron-offset: 6px;
         --row-gap: 6px;
     }
     .container {

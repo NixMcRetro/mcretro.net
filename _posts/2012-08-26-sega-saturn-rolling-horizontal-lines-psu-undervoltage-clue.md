@@ -8,7 +8,10 @@ share_description: >-
   Rolling lines on PAL Sega Saturns mysteriously vanish when fed the wrong mains voltage. An accidental undervoltage test offers a clue, absolutely not a repair method. ⚡
 ---
 
-![](/assets/images/2012/img_0247.jpg)
+![Black Sega Saturn console viewed from above on a wooden table, with its disc lid, cartridge port, Power, Open and Reset buttons visible.](/assets/images/2012/img_0247.jpg)
+
+*One of the Saturns on the bench while I chased those rolling horizontal lines. The strange behaviour was in the picture, not the case!*
+{: .media-caption }
 
 Two Sega Saturns. Two copies of the same game. Two power supplies that produce rolling horizontal lines.
 

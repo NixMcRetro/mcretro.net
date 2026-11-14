@@ -14,11 +14,20 @@ Got a bad feeling about your DC-in power socket on your Mega Drive 2? Well, here
 
 After taking the console apart and having a look at the DC-in socket, I found the problem. One of the solder joints had cracked around the connection to the mainboard. The two outer connections looked alright, but the rear connection on the centre pin had clearly seen better days. Fortunately, this particular Mega Drive 2 was otherwise in rather good condition.
 
-![](/assets/images/2012/img_0231.jpg)
+![Close-up of the underside of a Sega Mega Drive 2 motherboard, showing three solder pads next to the DC power socket on pink antistatic material.](/assets/images/2012/img_0231.jpg)
 
-![](/assets/images/2012/img_0232.jpg)
+*Here's the DC-in socket solder area before the repair. The trouble was in one of these connections, so out came the iron.*
+{: .media-caption }
 
-![](/assets/images/2012/img_0233.jpg)
+![Underside of the Mega Drive 2 board showing the power and video connectors, the DC socket's three solder pads and a small wired capacitor.](/assets/images/2012/img_0232.jpg)
+
+*Another angle on the DC-in connections, with the nearby capacitor and AV socket in view.*
+{: .media-caption }
+
+![Close-up of the Mega Drive 2 power-socket solder pads with fresh, rounded solder covering all three connections.](/assets/images/2012/img_0233.jpg)
+
+*A bit generous with the solder, perhaps, but the DC-in connection was back in business!*
+{: .media-caption }
 
 So it's off to the soldering station. Well, what passes for my soldering station anyway. Alongside the soldering iron we've got an oven, a toasted sandwich maker, a milkshake machine and some random hard drives. All the essentials!
 

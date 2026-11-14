@@ -8,7 +8,10 @@ share_description: >-
   House-moving and winter weather put the retro projects on a slower setting. Parts are still arriving, and a troublesome Mega Drive gets its LED and volume slider repaired. 🖥️
 ---
 
-![](/assets/images/2012/img_0246.jpg)
+![Close-up of an AMD Athlon computer-case sticker beside a dated warranty-void inspection label and a small handwritten sticker.](/assets/images/2012/img_0246.jpg)
+
+*An old Athlon sticker to keep me company while moving house puts the retro projects into hibernation mode.*
+{: .media-caption }
 
 It's pretty cold here at the moment and I am in the process of moving house, so things have slowed down significantly. I am currently looking into purchasing an old PC from my youth. When I was a child I had a computer that was quite fast at the time. No, I am not talking about the Athlon 500. Something I didn't create, but was the beginning of a life dedicated to computers and electronics. Once she is won, I'll post pictures and a breakdown of her.
 

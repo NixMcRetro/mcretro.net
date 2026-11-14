@@ -8,7 +8,10 @@ share_description: >-
   Windows XP and HDD Raw Copy Tool make XTIDE CompactFlash images, but source read errors complicate the backup. Don't mix up source and destination! 💾
 ---
 
-![](/assets/images/2016/img_0458.gif)
+![Animated Windows XP capture of HDD Raw Copy Tool 1.10 beginning at its source-device selection dialog with a Windows XP SSD and USB flash reader listed.](/assets/images/2016/img_0458.gif)
+
+*HDD Raw Copy Tool 1.10 on Windows XP, starting with the source drive selection. Do make sure you know which device you're copying from!*
+{: .media-caption }
 
 While dealing with XTIDE and CompactFlash cards, I was using [HDD Raw Copy Tool](https://hddguru.com/software/HDD-Raw-Copy-Tool/) version 1.10 under Windows XP. I could also have done this with `dd` under Linux or Mac OS, but this time I decided to use Windows XP inside a virtual machine.
 

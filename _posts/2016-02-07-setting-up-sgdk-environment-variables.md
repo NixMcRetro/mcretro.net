@@ -8,7 +8,10 @@ share_description: >-
   Getting the Sega Genesis Development Kit ready on Windows means GDK, GDK_WIN and a PATH entry. Then comes the harder part: actually writing a game. 💻
 ---
 
-![Accolade Mega Drive development cartridge and cable](/assets/images/2013/img_0373.jpg)
+![Black Sega Mega Drive console with an exposed development cartridge board plugged into the top slot, loose coloured wires and a controller alongside.](/assets/images/2013/img_0373.jpg)
+
+*An old Mega Drive development cartridge setup while I'm getting SGDK organised. Getting the software environment ready is only half the battle!*
+{: .media-caption }
 
 Just leaving this here as a reminder for myself... I've been looking into SGDK, the Sega Genesis Development Kit, which allows you to write software for the Sega Mega Drive / Genesis using C. Much easier than having to write absolutely everything in Motorola 68000 assembly, or at least that's the theory!
 

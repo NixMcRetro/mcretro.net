@@ -8,7 +8,10 @@ share_description: >-
   A Mega Drive 2 circuit-bending diagram promises glorious VRAM glitches. The catch? There are more power pins than I first thought. Check the datasheet! ⚠️
 ---
 
-![Circuit Bent Sega Mega Drive 2](/assets/images/2016/img_0456.jpg)
+![Circuit-bending diagram of an opened Sega Mega Drive 2 showing wires connected to a motherboard RAM chip, with an enlarged wiring close-up and Gijs' notes.](/assets/images/2016/img_0456.jpg)
+
+*Gijs' Mega Drive 2 circuit-bending diagram. Some gloriously broken graphics are possible, but the original note leaves out other power pins, so don't follow it blindly!*
+{: .media-caption }
 
 Here's a little infographic on circuit bending the Mega Drive / Genesis Model 2, originally from Gijs at [gieskes.nl](https://web.archive.org/web/20160219222212/http://www.gieskes.nl/).
 

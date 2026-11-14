@@ -8,7 +8,10 @@ share_description: >-
   A community-preserved list of Sega Dreamcast HKT and HIT part numbers covers Katana devkits, accessories, consoles and odd peripherals. Some entries remain uncertain. 🎮
 ---
 
-![](/assets/images/2018/img_0613.jpg)
+![White Sega Dreamcast console with its matching controller, colourful face buttons and Visual Memory Unit inserted, photographed against a plain white background.](/assets/images/2018/img_0613.jpg)
+
+*A classic Dreamcast and controller to accompany that rather enormous list of Sega hardware part numbers.*
+{: .media-caption }
 
 Here's a historical community-compiled list of known Sega Dreamcast hardware part numbers. It was copied from [ASSEMblergames.com](https://web.archive.org/web/20170812094245/https://www.assemblergames.com/threads/dreamcast-hardware-list.22804/), so thanks to Quzar, DreamCaster and everyone else who contributed! I have preserved the original question marks and uncertain translations rather than pretending every entry has been independently verified.
 

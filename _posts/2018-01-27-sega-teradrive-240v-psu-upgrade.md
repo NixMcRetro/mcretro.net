@@ -14,13 +14,19 @@ Previously, way back in August 2016, I [posted](/sega-teradrive-power-supply-pro
 
 I had considered falling back onto a PSU replacement if replacing parts blindly failed. As it turned out, this was the plan I ended up following. Instead of the PicoPSU, I went with the [Mean Well RD-65A](https://www.meanwell.co.uk/power-supplies/enclosed-power-supplies/rd-65-series), which provides +5 V and +12 V outputs. Ronnie of [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) used the [Mean Well PT-65B](https://www.meanwell.com/Upload/PDF/PT-65/PT-65-SPEC.PDF) for his own TeraDrive, which also provides a -12 V rail and can therefore suit hardware that actually needs that negative supply.
 
-![](/assets/images/2018/img_0608.jpg)
+![Enclosed metal switching power supply on a green workbench with its terminal block, capacitors and internal components visible through an open end.](/assets/images/2018/img_0608.jpg)
+
+*The Mean Well supply before fitting it to the TeraDrive. A much more practical way forward than guessing which component had failed in the old one.*
+{: .media-caption }
 
 The video shows the replacement supply actually powering a TeraDrive from 240 V, with a game running on the screen. I managed to fit the enclosed RD-65A in the old supply area, used crimped ring terminals and heat-shrink on the connections, and retained the front power switch. The original fan was still churning away rather noisily, but at least the machine was running again.
 
 Leading up to this, I had replaced a whole heap of components on the PSU. I finally received the last components I was waiting on, C3331 and M5237L, and threw them into the pile of bits to fit alongside B1274. The bad news: it didn't work. The useful part was that the behaviour changed enough to give me more to observe, but it still wasn't enough to identify a single root cause.
 
-![](/assets/images/2018/img_0609.jpg)
+![Overhead view of an open Sega TeraDrive computer showing its original metal-cased power supply, ribbon cables, circuit boards and loose coloured wires.](/assets/images/2018/img_0609.jpg)
+
+*Here's the original TeraDrive power supply and the wires I've been wrestling with. It had certainly put up a fight!*
+{: .media-caption }
 
 The non-functional unit, 0629, showed the readings below. At first I thought I had a no-power situation. Leaving it connected for around a minute eventually produced output, but the machine still would not operate. With no load, the 12 V rail also wandered between roughly 10.3 V and 10.9 V every few seconds while the 5 V rail stayed steady. Those readings describe what this PSU was doing; they do not by themselves establish why it was doing it.
 
@@ -54,7 +60,10 @@ Q3    C3331
 
 That was enough tinkering for me, especially with mains voltage, so I decided to stop trying to revive the original Sega TeraDrive PSU and pass the unrepaired units on to other folk. The replacement supply was working in the video, but it hadn't magically fixed the original PSU's faults. Not with a bang but a whimper. Mains-powered supplies can remain hazardous after disconnection, and any replacement needs proper mounting, insulation and earthing in its final installation.
 
-![](/assets/images/2018/img_0607.jpg)
+![Inside a Sega TeraDrive, a metal-cased original power supply sits above a second supply's exposed screw-terminal connections, with black, red, green and yellow wires attached.](/assets/images/2018/img_0607.jpg)
+
+*The replacement supply fitted into the TeraDrive, with the connections tucked into the old PSU area. The video shows the actual running result.*
+{: .media-caption }
 
 For more information, check out [ASSEMblergames.com](https://web.archive.org/web/20191113051221/https://assemblergames.com/threads/sega-teradrive-psu-repair-trinity-help.62709/).
 

@@ -10,7 +10,10 @@ share_description: >-
 
 The blog came back to life and was extinguished again within a week or so. [Dropplets](https://web.archive.org/web/20151104110559/http://dropplets.com:80/) just doesn't do what I want it to. I'm sure if I messed about with the code enough it probably would have... Where does that leave this blog? **[FlatPress!](https://www.flatpress.org/)**
 
-![](/assets/images/2015/img_0442.jpg)
+![Screenshot of the FlatPress blogging interface with a red header, sample posts, right-hand navigation, archives and a search box.](/assets/images/2015/img_0442.jpg)
+
+*FlatPress running with the sidebar search box in place. A little more fiddling and this blog might actually stay alive!*
+{: .media-caption }
 
 I'll have more on FlatPress and the plugins I've used to make the site functional. It's been quite an experience, from modifying Python scripts to salsa dancing.
 

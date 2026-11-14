@@ -345,7 +345,10 @@ test('monthly Archives use a matching heading/subheading, breadcrumb and article
   assert.match(overrides, /\.archive-card-media \.post-thumbnail-img\s*\{[^}]*object-fit: contain/);
   assert.match(overrides, /\.archive-card-layout\s*\{ flex-direction: column/);
   assert.match(index, /permalink: \/archive\//);
-  assert.match(index, /<details class="archive-index-year about-panel panel--teal" name="mcretro-archive-years"/);
+  assert.match(index, /<details id="year-\{\{ year\.name \}\}" class="archive-index-year about-panel panel--teal" name="mcretro-archive-years"/);
+  assert.ok(archive.includes("href=\"/archive/#year-{{ page.date | date: '%Y' }}\""));
+  assert.ok(archive.includes('<span aria-current="page">{{ page.date | date: "%B" }}</span>'));
+  assert.ok(index.includes('<script src="/assets/js/archive-year-deeplink.js"></script>'));
   assert.match(index, /<summary><span class="about-panel-icon" aria-hidden="true">📅<\/span>/u);
   assert.doesNotMatch(index, /open\{% endif %\}>/, 'all archive years must begin collapsed');
   assert.match(index, /name="mcretro-archive-years">/, 'keep single-open accordion semantics');
@@ -354,6 +357,50 @@ test('monthly Archives use a matching heading/subheading, breadcrumb and article
   assert.match(sidebar, /class="archive-all-link sidebar-action-link" href="\/archive\/"/);
   assert.match(header, /page\.url contains "\/archive\/"/);
   assert.match(overrides, /\.archive-index-grid\s*\{[^}]*grid-template-columns: repeat\(4/);
+});
+
+test('archive year deep links open only the requested year', () => {
+  const source = read('assets/js/archive-year-deeplink.js');
+  const setup = (hash) => {
+    const calls = [], frames = [], listeners = {};
+    const summary = { scrollIntoView: options => calls.push(options) };
+    const panel = {
+      open: false,
+      matches: selector => selector === 'details.archive-index-year',
+      querySelector: selector => selector === 'summary' ? summary : null
+    };
+    const years = { contains: candidate => candidate === panel };
+    const document = {
+      querySelector: selector => selector === '.archive-index-years' ? years : null,
+      getElementById: id => id === 'year-2012' ? panel : null
+    };
+    const window = {
+      location: { hash },
+      addEventListener: (type, handler) => { listeners[type] = handler; }
+    };
+    runInNewContext(source, { document, window, requestAnimationFrame: cb => frames.push(cb) });
+    return { panel, calls, frames, listeners, window };
+  };
+
+  const normal = setup('');
+  assert.equal(normal.panel.open, false);
+  assert.equal(normal.frames.length, 0);
+
+  const linked = setup('#year-2012');
+  assert.equal(linked.panel.open, true);
+  assert.equal(linked.frames.length, 1);
+  linked.frames.shift()();
+  assert.equal(linked.calls[0].block, 'start');
+
+  const invalid = setup('#year-unknown');
+  assert.equal(invalid.panel.open, false);
+  const absent = setup('#year-1999');
+  assert.equal(absent.panel.open, false);
+
+  // Deep links also work if the fragment changes after the page has loaded.
+  normal.window.location.hash = '#year-2012';
+  normal.listeners.hashchange();
+  assert.equal(normal.panel.open, true);
 });
 
 test('Goodies links to the Windows 95 dial-up folder with all destinations', () => {

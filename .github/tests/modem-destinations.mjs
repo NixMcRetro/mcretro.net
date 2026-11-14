@@ -1,0 +1,151 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { runInNewContext } from 'node:vm';
+
+const code = readFileSync(new URL('../../assets/js/mcretro-webring.js', import.meta.url), 'utf8');
+
+function makeRoot() {
+  const controls = new Map();
+  function control(selector) {
+    if (!controls.has(selector)) {
+      const listeners = {};
+      controls.set(selector, {
+        listeners,
+        textContent: '',
+        disabled: false,
+        hidden: false,
+        setAttribute() {},
+        addEventListener(type, handler) { listeners[type] = handler; }
+      });
+    }
+    return controls.get(selector);
+  }
+  return {
+    dataset: {},
+    open: false,
+    control,
+    querySelector: control,
+    addEventListener() {},
+    showModal() { this.open = true; },
+    close() { this.open = false; }
+  };
+}
+
+function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'],
+                   fetchFails = false, withDialog = true, withStandalone = true } = {}) {
+  const dialog = withDialog ? makeRoot() : null;
+  const standalone = withStandalone ? makeRoot() : null;
+  const navigations = [], pushes = [], requests = [], timers = [];
+  const links = ['blog-random', 'random'].map(dialSite => {
+    const listeners = {};
+    return {
+      dataset: { dialSite },
+      listeners,
+      addEventListener(type, fn) { listeners[type] = fn; },
+      click() {
+        const event = {
+          button: 0,
+          defaultPrevented: false,
+          preventDefault() { this.defaultPrevented = true; }
+        };
+        listeners.click(event);
+        return event.defaultPrevented;
+      }
+    };
+  });
+  const document = {
+    querySelectorAll(selector) {
+      assert.equal(selector, 'a[data-dial-site]');
+      return links;
+    },
+    getElementById(id) {
+      if (id === 'mcretro-modem-dialog') return dialog;
+      if (id === 'mcretro-modem-page') return standalone;
+      return null;
+    }
+  };
+  const window = {
+    location: {
+      search: '?site=' + encodeURIComponent(site),
+      pathname: '/homepages/modem/',
+      replace(path) { navigations.push(path); }
+    },
+    history: { pushState(state, _title, path) { pushes.push({ state, path }); }, back() {} },
+    setTimeout(callback, delay) { timers.push({ callback, delay }); return timers.length; },
+    clearTimeout() {},
+    addEventListener() {}
+  };
+  function fetch(url, init) {
+    requests.push({ url, init });
+    if (fetchFails) return Promise.reject(new Error('Offline'));
+    return Promise.resolve({ ok: true, json: () => Promise.resolve(urls) });
+  }
+  runInNewContext(code, {
+    document, window, fetch, URLSearchParams, Promise,
+    Math: { floor: Math.floor, random: () => 0 }
+  });
+  return { dialog, standalone, links, navigations, pushes, requests, timers };
+}
+
+const tick = () => new Promise(resolve => setImmediate(resolve));
+
+test('standalone blog dialler picks an internal post using the existing URL index', async () => {
+  const f = fixture();
+  assert.equal(f.standalone.control('[data-modem-destination]').textContent,
+    'Random McRetro blog post');
+  f.standalone.control('[data-modem-skip]').listeners.click();
+  await tick();
+  assert.deepEqual(f.navigations, ['/first-post/']);
+  assert.equal(f.requests.length, 1);
+  assert.equal(f.requests[0].url, '/assets/data/random-post-urls.json');
+  assert.equal(f.requests[0].init.credentials, 'same-origin');
+});
+
+test('blog dialler falls back to /blog/ if its random-post index is unavailable', async () => {
+  const f = fixture({ fetchFails: true });
+  f.standalone.control('[data-modem-skip]').listeners.click();
+  await tick();
+  assert.deepEqual(f.navigations, ['/blog/']);
+});
+
+test('a malicious or empty random-post list cannot redirect off-site', async () => {
+  const f = fixture({ urls: ['//other.example/', '/\\evil/', '\r\n/evil/', '/safe-post/'] });
+  f.standalone.control('[data-modem-skip]').listeners.click();
+  await tick();
+  assert.deepEqual(f.navigations, ['/safe-post/']);
+  const empty = fixture({ urls: [] });
+  empty.standalone.control('[data-modem-skip]').listeners.click();
+  await tick();
+  assert.deepEqual(empty.navigations, ['/blog/']);
+});
+
+test('Goodies link opens the modal and Connect then Skip keeps its chosen post', async () => {
+  const f = fixture({ withStandalone: false });
+  assert.equal(f.links[0].click(), true);
+  assert.equal(f.dialog.open, true);
+  assert.equal(f.pushes[0].path, '/homepages/modem/?site=blog-random');
+  assert.equal(f.dialog.control('[data-modem-destination]').textContent,
+    'Random McRetro blog post');
+  f.dialog.control('[data-modem-connect]').listeners.click();
+  assert.ok(f.timers.length > 0, 'The original timed connection remains available');
+  f.dialog.control('[data-modem-skip]').listeners.click();
+  await tick();
+  assert.deepEqual(f.navigations, ['/first-post/']);
+  assert.equal(f.requests.length, 1);
+});
+
+test('random homepage mode still selects only a restored homepage', async () => {
+  const f = fixture({ site: 'random' });
+  assert.equal(f.standalone.control('[data-modem-destination]').textContent, 'Frank the Snake');
+  f.standalone.control('[data-modem-skip]').listeners.click();
+  await tick();
+  assert.deepEqual(f.navigations, ['/homepages/frank/']);
+  assert.equal(f.requests.length, 0);
+});
+
+test('links preserve normal navigation if a modal dialog is unavailable', () => {
+  const f = fixture({ withDialog: false, withStandalone: false });
+  assert.equal(f.links[0].click(), false);
+  assert.equal(f.pushes.length, 0);
+});

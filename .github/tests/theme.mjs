@@ -366,10 +366,15 @@ test('monthly Archives use a matching heading/subheading, breadcrumb and article
   assert.match(archive, /class="post-categories"/);
   assert.match(overrides, /\.archive-breadcrumbs \[aria-current="page"\]\s*\{\s*color: var\(--text\);\s*\}/);
   assert.match(overrides, /\.archive-month-header\s*\{[^}]*border-bottom: 0\.5px solid var\(--text\);/);
-  // Breadcrumb compression applies only to monthly archives at phone/tablet
-  // widths. Read-more must remain inline to avoid enlarging excerpt line boxes.
-  assert.match(overrides, /@media screen and \(max-width: 750px\) \{[^}]*\.archive-month \.archive-breadcrumbs \{\s*margin-bottom: 0\.5rem;\s*\}/);
+  // Both archive landing and monthly breadcrumb trails are compact on
+  // phones; desktop and unrelated pages keep their existing spacing.
+  assert.match(overrides, /@media screen and \(max-width: 750px\) \{[^}]*\.archive-month \.archive-breadcrumbs,\s*\.archive-index > \.archive-breadcrumbs \{\s*margin-bottom: 0\.5rem;\s*\}/);
+  assert.match(overrides, /\.archive-index > \.post-title \{\s*margin-bottom: 0\.25rem;\s*\}/);
+  assert.match(overrides, /\.archive-index > \.archive-index-intro \{\s*margin-bottom: 0\.75rem;\s*\}/);
+  assert.match(overrides, /\.archive-index-years > \.archive-index-year:first-child \{\s*margin-top: 0\.5rem;\s*\}/);
+  assert.match(overrides, /\.archive-index-year \{\s*margin-bottom: 0\.65rem;\s*\}/);
   assert.match(overrides, /\.archive-blog-list \.read-more \{\s*display: inline;\s*margin: 0;\s*\}/);
+
   assert.doesNotMatch(overrides, /\.archive-blog-list \.read-more \{[^}]*inline-block/);
   assert.match(overrides, /\.archive-month-count\s*\{[^}]*font: 700 1\.25rem\/1\.3 Montserrat/);
   assert.match(overrides, /\.archive-card-layout\s*\{[^}]*display: grid;[^}]*grid-template-columns: 160px minmax\(0, 1fr\);/);

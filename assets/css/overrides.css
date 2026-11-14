@@ -721,8 +721,13 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
 .archive-index-month.is-empty { background: var(--archive-empty); color: var(--muted); }
 
 @media screen and (max-width: 750px) {
-  /* Keep the current month near its breadcrumb trail on narrow screens. */
-  .archive-month .archive-breadcrumbs { margin-bottom: 0.5rem; }
+  /* Keep archive navigation compact on phones without changing the shared
+     accordion component or the desktop layout. */
+  .archive-month .archive-breadcrumbs,
+  .archive-index > .archive-breadcrumbs { margin-bottom: 0.5rem; }
+  .archive-index > .post-title { margin-bottom: 0.25rem; }
+  .archive-index > .archive-index-intro { margin-bottom: 0.75rem; }
+  .archive-index-years > .archive-index-year:first-child { margin-top: 0.5rem; }
   .archive-index-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media screen and (max-width: 600px) {

@@ -56,32 +56,32 @@ To make it all come together and actually give us composite AV, read on!
 ![Close-up of an A937Q D transistor partly lifted from a Famicom circuit board, beside emitter, collector and base markings.](/assets/images/2012/img_0143.jpg)
 
 *The A937Q D transistor is half-desoldered and still hanging on. The PCB helpfully labels E, C, and B for its three legs.*
-{: .media-caption } Half-desoldered A937Q D PNP transistor on the Famicom mainboard. Note the ECB on the mainboard. Emitter, Collector and Base.
+{: .media-caption }
 
 ![Soldering iron tip pressed against three solder joints on the underside of a green Famicom circuit board, with a screwdriver beneath it.](/assets/images/2012/img_0141.jpg)
 
 *Heating the joints from underneath to free that transistor. A proper desoldering tool would have been kinder to the board.*
-{: .media-caption } Desoldering the A937Q D PNP transistor from the Famicom mainboard.
+{: .media-caption }
 
 ![Wider view of a soldering iron heating three joints along the lower edge of a green Famicom circuit board, with a screwdriver underneath.](/assets/images/2012/img_0142.jpg)
 
 *Another look at the soldering iron on the transistor's joints. This wasn't exactly the most delicate operation!*
-{: .media-caption } Desoldering the A937Q D PNP transistor from the Famicom mainboard.
+{: .media-caption }
 
 ![Small black A937Q D three-legged transistor lying loose on a pale surface, with solder residue on its leads.](/assets/images/2012/img_0147.jpg)
 
 *The A937Q D transistor is finally out of the board. Now to reuse it in the composite circuit.*
-{: .media-caption } A937Q D PNP transistor desoldered from the Famicom mainboard.
+{: .media-caption }
 
 ![Soldering iron touching a row of three joints near the edge of the green Famicom motherboard, with a flat-blade screwdriver underneath.](/assets/images/2012/img_0144.jpg)
 
 *Yes, more soldering. I was determined to get this tiny transistor out without wrecking the board.*
-{: .media-caption } Desoldering the A937Q D PNP transistor from the Famicom mainboard.
+{: .media-caption }
 
 ![Small black three-legged transistor lying inside the cream plastic Famicom case beneath the raised circuit board.](/assets/images/2012/img_0145.jpg)
 
 *And there it goes - the transistor dropped straight into the Famicom case. Helpful!*
-{: .media-caption } A937Q D PNP transistor desoldered from the Famicom mainboard. It fell into the Famicom...
+{: .media-caption }
 
 First, the PNP transistor needs to come off the mainboard so it can be reused in the composite circuit. I originally used a small flatblade screwdriver to help lift it while heating the solder joints. The component eventually came free, although as you can see from the photographs, it even managed to fall inside the console at one point.
 
@@ -124,28 +124,28 @@ Next, identify the four solder points shown above. These are the connections I u
 ![Annotated close-up of a Famicom power board showing a purple wire soldered to a pad outlined by a yellow rectangle.](/assets/images/2012/img_0162.jpg)
 
 *Here's the +5 V connection for my AV board, with the purple wire and its solder point highlighted.*
-{: .media-caption } +5 V source
+{: .media-caption }
 
 The purple cable taps into the LM7805 voltage regulator and supplies +5 V to the modification. From there, the power goes into the resistor and transistor circuit on my little prototyping board.
 
 ![Annotated underside of the Famicom mainboard showing an orange wire soldered to a point highlighted in yellow.](/assets/images/2012/img_0159.jpg)
 
 *The orange wire picks up sound from this mainboard. I've boxed the solder point so it's a little easier to find.*
-{: .media-caption } Sound
+{: .media-caption }
 
 The orange cable carries the audio signal from the Famicom mainboard. It also needs a ground connection to complete the audio output, which brings us to the next wire.
 
 ![Annotated Famicom motherboard underside with a black wire soldered beside a printed GND marking, highlighted in yellow.](/assets/images/2012/img_0160.jpg)
 
 *There's the ground connection for the black lead, helpfully marked GND on the board. One less point to guess at!*
-{: .media-caption } Ground
+{: .media-caption }
 
 The black cable is the ground point. I ran a wire from there to the prototyping board, where it branches out for the other ground connections. It's a bit easier to deal with everything in one place instead of trying to attach half a dozen wires directly to the Famicom.
 
 ![Annotated close-up of a green wire soldered to the Famicom motherboard, with the joint framed in yellow.](/assets/images/2012/img_0161.jpg)
 
 *And here's where I took composite video from this mainboard using the green lead. Your board revision may be different.*
-{: .media-caption } Composite video
+{: .media-caption }
 
 The green cable carries the composite-video signal from the mainboard into the amplifier circuit. The yellow output wire from the finished board goes to the centre pin of the video RCA connection, while the outer connection is grounded.
 
@@ -175,7 +175,7 @@ The finished board uses a 5 x 7-hole layout, as shown in the photographs. The re
 ![Copper underside of a small stripboard with a short blue line marking where one track is to be cut.](/assets/images/2012/img_0153.jpg)
 
 *The blue mark shows which copper track I cut to separate the circuit sections. A flatblade screwdriver did the honours.*
-{: .media-caption } Cut this track on your prototyping board
+{: .media-caption }
 
 There's also a copper track on the underside that needs to be cut so the circuit sections are properly isolated. I scraped through it with a flatblade screwdriver. Check the break with a multimeter to make sure there is no continuity before applying power, because discovering a short circuit the exciting way is not particularly desirable.
 

@@ -8,7 +8,10 @@ share_description: >-
   IS Nitro Capture DIP switches control DS wireless mode, firmware recovery, border colours and AV outputs. Remember to power down before changing them. 🎮
 ---
 
-![](/assets/images/2019/img_0636.jpg)
+![IS-NITRO-CAPTURE Windows software screenshot showing a Japanese capture-information dialog and a GAMELOFT Software Planning preview.](/assets/images/2019/img_0636.jpg)
+
+*The IS-NITRO-CAPTURE software with a capture-information window open. This shows the capture program, not the physical DIP switch positions.*
+{: .media-caption }
 
 A few videos are coming up on the IS Nitro Capture device, including hardware teardowns and some of the capture results in both AVI and BMP. In the meantime, here are the DIP switch settings for the blue box. Of particular interest to me were the AV output options.
 

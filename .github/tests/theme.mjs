@@ -93,6 +93,19 @@ test('two stable button positions, WCAG labels and CSS colour tokens', () => {
   assert.match(style,/:root\[data-theme="dark"\]/);
 });
 
+test('320px homepage proportions are tuned without changing larger mobile widths', () => {
+  const home = read('index.md');
+  assert.match(home, /<h2 class="center home-headline">Blast Processed Since 199X<\/h2>/);
+  assert.match(overrides, /@media screen and \(max-width: 360px\) \{\s*\.logo-area \{[^}]*grid-template-columns: minmax\(0, 1fr\) 36px 36px;[^}]*column-gap: 6px;/);
+  assert.match(overrides, /\.site-header \.theme-toggle,\s*\.site-header \.nav-toggle \{[^}]*width: 36px;[^}]*height: 36px;/);
+  assert.match(overrides, /\.site-header \.nav-toggle span \{ width: 17px; \}/);
+  assert.match(overrides, /@media screen and \(max-width: 500px\) \{\s*\.home-headline \{[^}]*font-size: clamp\(1\.3rem, 6\.2vw, 1\.75rem\);/);
+  // At 376px and 390px the original 40px controls and rotating text remain.
+  assert.match(style, /grid-template-columns: minmax\(0, 1fr\) 40px 40px;/);
+  assert.match(style, /\.textcycle \.phrase \{\s*white-space: nowrap;/);
+  assert.match(overrides, /@media screen and \(max-width: 375px\) \{\s*\.textcycle \.phrase \{[^}]*display: none;/);
+});
+
 test('classic blue stays in Light mode; Dark links use soft sky blue', () => {
   const light = style.split(':root[data-theme="dark"]')[0];
   const dark = style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
@@ -445,7 +458,7 @@ test('Goodies links to the Windows 95 dial-up folder with all destinations', () 
   assert.doesNotMatch(style + overrides, /padding-right:\s*110px;/);
   assert.match(mobileHeader, /font-size: clamp\(1\.7rem, 6\.7vw, 2\.2rem\);/);
   assert.match(style, /font-size: clamp\(1\.3rem, 6vw, 1\.7rem\);/);
-  assert.match(overrides, /font-size: clamp\(1\.125rem, 5\.6vw, 1\.3rem\);/);
+  assert.match(overrides, /font-size: clamp\(1\.23rem, 6\.2vw, 1\.38rem\);/);
 
   assert.doesNotMatch(header, /🦭 It's time to seal the deal<\/span>/u);
 });

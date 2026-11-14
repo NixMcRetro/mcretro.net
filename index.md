@@ -2,7 +2,7 @@
 layout: default
 title: Blast Processed Since 199X
 ---
-<h2 class="center">Blast Processed Since 199X</h2>
+<h2 class="center home-headline">Blast Processed Since 199X</h2>
 
 <div class="center" markdown="1">
 

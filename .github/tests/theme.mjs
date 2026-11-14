@@ -283,6 +283,18 @@ test('About portrait reuses blog media-caption markup and compact photo spacing'
 });
 
 
+test('article image and video captions separate cleanly from following content', () => {
+  // This must not disturb the existing compact gap immediately beneath
+  // photographs and YouTube video containers.
+  assert.match(overrides, /\.post-full \.post-content > p:has\(> img:only-child\):has\(\+ p\.media-caption\),/);
+  assert.match(overrides, /\.post-full \.post-content > \.video-container:has\(\+ p\.media-caption\),/);
+  assert.match(overrides, /\.post-full \.post-content p\.media-caption \{\s*margin-bottom: 1\.75rem;\s*\}/);
+  assert.match(overrides, /@media screen and \(max-width: 600px\) \{\s*\.post-full \.post-content p\.media-caption \{\s*margin-bottom: 1\.35rem;/);
+  assert.match(read('_includes/youtube.html'), /<div class="video-container">/);
+  const teradrive = read('_posts/2012-06-09-sega-teradrive-model-3-hard-drive-replacement.md');
+  assert.match(teradrive, /\*Getting the TeraDrive back together,[^\n]*\*\n\{:\s*\.media-caption \}/);
+});
+
 test('Blog pagination is compact, accessible and retains numbered URLs', () => {
   assert.match(blog, /<nav class="pagination-wrapper" aria-label="Blog pagination">/);
   assert.match(blog, /class="page-number current-page" aria-current="page"/);

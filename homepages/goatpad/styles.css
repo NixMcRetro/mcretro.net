@@ -213,3 +213,33 @@ body {
 .hidden {
     display: none !important;
 }
+/* User-gesture audio start, preserving the original soundboard beneath. */
+.loading-inner {
+    max-width: 24rem;
+    padding: 1.5rem;
+    text-align: center;
+    font-family: system-ui, sans-serif;
+}
+#startAudio {
+    padding: 0.75rem 1.25rem;
+    border: 2px solid #97f85d;
+    background: #263e25;
+    color: #f3ffe9;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+#startAudio:hover:not(:disabled),
+#startAudio:focus-visible {
+    background: #39512c;
+    outline: 2px solid #d8ff8e;
+    outline-offset: 3px;
+}
+#startAudio:disabled {
+    opacity: 0.6;
+    cursor: progress;
+}
+#loadingMessage {
+    font-size: 0.75em;
+    line-height: 1.5;
+}

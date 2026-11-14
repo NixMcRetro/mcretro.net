@@ -225,37 +225,150 @@ buttonMapping.forEach((sounds, columnIndex) => {
 });
 
 
-/* Auto Goat deliberately uses the normal pad-selection path. All sounds are still
- * loaded on demand, each column remains exclusive, and manual taps still work. */
+/* Auto Goat always lands visibly before changing a sound. It uses the normal
+ * selectPad path so original column exclusivity, loading and timing are kept. */
 function goatReducedMotion() {
     return Boolean(window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches);
 }
 
-function positionGoat(x, y, scale = 1) {
-    // Fixed positioning allows the goat to leave the soundboard and approach the viewer.
-    const left = Math.max(0, Math.min(window.innerWidth - 40, x));
-    const top = Math.max(0, Math.min(window.innerHeight - 52, y));
-    goatSprite.style.transform = "translate3d(" + Math.round(left) + "px, " +
-        Math.round(top) + "px, 0) scale(" + scale + ")";
+function goatActive(session) {
+    return goatRunning && session === goatSession && buttonsLoaded;
 }
 
-function showGoatAtPad(button) {
-    const viewport = goatViewport.getBoundingClientRect();
-    let rect = button.getBoundingClientRect();
-    const margin = 28;
-    // On phones, follow the goat across the horizontally scrollable keyboard.
-    if (rect.left < viewport.left + margin || rect.right > viewport.right - margin) {
-        const delta = rect.left + rect.width / 2 - (viewport.left + viewport.width / 2);
+// Only one Auto Goat timer is outstanding. Stopping cancels even a mid-flight hit.
+function scheduleGoat(session, callback, delay) {
+    if (!goatActive(session)) return;
+    if (goatTimer !== null) clearTimeout(goatTimer);
+    goatTimer = setTimeout(() => {
+        goatTimer = null;
+        if (goatActive(session)) return callback();
+    }, Math.max(0, delay));
+}
+
+function moveGoat(x, y, scale, rotation = 0, flip = false, duration = 0) {
+    const left = Math.max(-35, Math.min(window.innerWidth + 35, x));
+    const top = Math.max(-35, Math.min(window.innerHeight + 35, y));
+    goatSprite.style.transitionDuration = (goatReducedMotion() ? 0 : duration) + "ms";
+    // The glyph's lower middle is its contact point, rather than its top-left.
+    goatSprite.style.transform = "translate3d(" + Math.round(left) + "px, " +
+        Math.round(top) + "px, 0) translate(-50%, -78%) rotate(" +
+        Math.round(rotation) + "deg) rotateY(" + (flip ? 180 : 0) + "deg) scale(" +
+        scale.toFixed(2) + ")";
+}
+
+function pickGoatTarget() {
+    const columns = Array.from(soundboard.children);
+    const activeColumns = columns.filter(column =>
+        column.querySelectorAll("button").some(button => button.classList.contains("active")));
+    // Once six lanes are playing, change or remove one of those instead of piling on.
+    const choices = activeColumns.length >= 6 ? activeColumns : columns;
+    let index = Math.floor(Math.random() * choices.length);
+    let column = choices[index];
+    if (choices.length > 1 && columns.indexOf(column) === goatPreviousColumn) {
+        column = choices[(index + 1) % choices.length];
+    }
+    goatPreviousColumn = columns.indexOf(column);
+    const pads = Array.from(column.querySelectorAll("button"));
+    const current = pads.find(button => button.classList.contains("active"));
+    const others = pads.filter(button => !button.classList.contains("active") && !button.disabled);
+    // Some landings turn a lane off entirely, like a mischievous hoof.
+    if (current && Math.random() < .24) return current;
+    return others[Math.floor(Math.random() * others.length)] || current;
+}
+
+function descendOnPad(session, button) {
+    if (!goatActive(session)) return;
+    const rect = button.getBoundingClientRect();
+    const time = goatReducedMotion() ? 0 : 850 + Math.random() * 680;
+    const scale = .55 + Math.random() * .6;
+    const spin = (Math.random() - .5) * 720;
+    const flip = Math.random() < .5;
+    // The hoof/contact anchor lands directly on the button's centre.
+    moveGoat(rect.left + rect.width / 2, rect.top + rect.height / 2,
+        scale, spin, flip, time);
+    scheduleGoat(session, () => landGoat(session, button), time + 60);
+}
+
+function approachPad(session, button) {
+    if (!goatActive(session)) return;
+    const visible = goatViewport.getBoundingClientRect();
+    const rect = button.getBoundingClientRect();
+    const margin = 18;
+    if (rect.left < visible.left + margin || rect.right > visible.right - margin) {
+        const delta = rect.left + rect.width / 2 -
+            (visible.left + visible.width / 2);
         if (typeof goatViewport.scrollBy === "function") {
-            goatViewport.scrollBy({ left: delta, behavior: goatReducedMotion() ? "instant" : "smooth" });
+            goatViewport.scrollBy({
+                left: delta,
+                behavior: goatReducedMotion() ? "instant" : "smooth"
+            });
         } else {
             goatViewport.scrollLeft += delta;
         }
-        // The scroll may still be animating; put the goat near the visible target.
-        rect = { left: viewport.left + (viewport.width - rect.width) / 2,
-            top: rect.top, width: rect.width, height: rect.height };
+        // Read the *real* pad position after scrolling, not a guessed one.
+        scheduleGoat(session, () => descendOnPad(session, button),
+            goatReducedMotion() ? 0 : 520);
+    } else {
+        descendOnPad(session, button);
     }
-    positionGoat(rect.left + rect.width / 2 - 18, rect.top - 37, 1);
+}
+
+function leapTowardsViewer(session, button) {
+    const time = 850 + Math.random() * 550;
+    moveGoat(
+        window.innerWidth * (.22 + Math.random() * .55),
+        window.innerHeight * (.25 + Math.random() * .48),
+        1.8 + Math.random() * 1.1,
+        (Math.random() - .5) * 720, Math.random() < .5, time
+    );
+    scheduleGoat(session, () => approachPad(session, button), time + 90);
+}
+
+let goatLandingPad = null;
+
+function landGoat(session, button) {
+    if (!goatActive(session) || button.disabled) {
+        scheduleGoat(session, () => roamGoat(session), 450);
+        return;
+    }
+    // The visual stomp precedes the actual pad change. No invisible button hits.
+    goatLandingPad = button;
+    goatSprite.classList.add("goat-landing");
+    button.classList.add("goat-hit");
+    scheduleGoat(session, () => hitPad(session, button),
+        goatReducedMotion() ? 0 : 190);
+}
+
+async function hitPad(session, button) {
+    try {
+        if (goatActive(session) && !button.disabled) {
+            await selectPad(button, () => goatActive(session));
+        }
+    } finally {
+        button.classList.remove("goat-hit");
+        if (goatLandingPad === button) goatLandingPad = null;
+        goatSprite.classList.remove("goat-landing");
+    }
+    if (goatActive(session)) {
+        scheduleGoat(session, () => roamGoat(session), 420 + Math.random() * 780);
+    }
+}
+
+function roamGoat(session) {
+    if (!goatActive(session)) return;
+    goatHops++;
+    const target = pickGoatTarget();
+    if (!target || target.disabled) {
+        scheduleGoat(session, () => roamGoat(session), 500);
+        return;
+    }
+    // Tumbling, reversals and perspective changes; every fourth jump comes
+    // forward at the viewer before the goat returns to physically land.
+    if (!goatReducedMotion() && (goatHops % 4 === 0 || Math.random() < .27)) {
+        leapTowardsViewer(session, target);
+    } else {
+        approachPad(session, target);
+    }
 }
 
 function stopAutoGoat() {
@@ -263,48 +376,15 @@ function stopAutoGoat() {
     goatSession++;
     if (goatTimer !== null) clearTimeout(goatTimer);
     goatTimer = null;
+    if (goatLandingPad) {
+        goatLandingPad.classList.remove("goat-hit");
+        goatLandingPad = null;
+    }
+    goatSprite.classList.remove("goat-landing");
     goatButton.setAttribute("aria-pressed", "false");
     goatButton.textContent = "🐐 Auto Goat: Off";
     goatSprite.hidden = true;
-    // Leave the current mix intact for manual tweaking.
-}
-
-async function roamGoat(session) {
-    if (!goatRunning || session !== goatSession || !buttonsLoaded) return;
-    goatTimer = null;
-    goatHops++;
-
-    // Every fifth hop the goat bounces out towards the screen, then returns.
-    if (goatHops % 5 === 0 && !goatReducedMotion()) {
-        positionGoat(window.innerWidth * .48, window.innerHeight * .69, 2.25);
-    } else {
-        const columns = Array.from(soundboard.children);
-        const active = columns.filter(column =>
-            column.querySelectorAll("button").some(button => button.classList.contains("active")));
-        // Avoid an eight-layer wall of sound: favour changing active lanes above six.
-        const choices = active.length >= 6 ? active : columns;
-        let index = Math.floor(Math.random() * choices.length);
-        let column = choices[index];
-        if (choices.length > 1 && columns.indexOf(column) === goatPreviousColumn) {
-            column = choices[(index + 1) % choices.length];
-        }
-        goatPreviousColumn = columns.indexOf(column);
-        const pads = Array.from(column.querySelectorAll("button"));
-        const current = pads.find(pad => pad.classList.contains("active"));
-        const alternatives = pads.filter(pad => !pad.classList.contains("active") && !pad.disabled);
-        // Occasionally lift a hoof without replacing the sound, creating room in the mix.
-        const removing = current && Math.random() < .18;
-        const target = removing ? current :
-            alternatives[Math.floor(Math.random() * alternatives.length)];
-        if (target && !target.disabled) {
-            showGoatAtPad(target);
-            await selectPad(target, () => goatRunning && session === goatSession);
-        }
-    }
-
-    if (goatRunning && session === goatSession) {
-        goatTimer = setTimeout(() => roamGoat(session), 3600 + Math.random() * 2400);
-    }
+    // Leave the music alone, including when Auto Goat was stopped mid-flight.
 }
 
 function toggleAutoGoat() {
@@ -312,7 +392,7 @@ function toggleAutoGoat() {
         stopAutoGoat();
         return;
     }
-    if (!buttonsLoaded) return; // Never attempt autoplay before the Start gesture.
+    if (!buttonsLoaded) return; // Explicit audio-start click is still required.
     goatRunning = true;
     const session = ++goatSession;
     goatHops = 0;
@@ -320,11 +400,13 @@ function toggleAutoGoat() {
     goatSprite.hidden = false;
     goatButton.setAttribute("aria-pressed", "true");
     goatButton.textContent = "🐐 Auto Goat: On";
-    goatTimer = setTimeout(() => roamGoat(session), 650);
+    const board = goatViewport.getBoundingClientRect();
+    // Start out beyond one corner so the first landing visibly crosses the board.
+    moveGoat(board.left - 20, board.top - 15, .55, -35, false, 0);
+    scheduleGoat(session, () => roamGoat(session), 350);
 }
 
 goatButton.addEventListener("click", toggleAutoGoat);
-// Don't continue changing samples unseen when the browser tab is backgrounded.
 document.addEventListener("visibilitychange", () => {
     if (document.hidden && goatRunning) stopAutoGoat();
 });

@@ -3,47 +3,42 @@ layout: default
 ---
 <section class="post-full archive-month" data-pagefind-ignore="all">
   {% assign month_count = page.posts | size %}
-  <h1 class="post-title">{{ page.date | date: "%B %Y" }} <span class="archive-month-count">- {% if month_count == 1 %}1 article{% else %}{{ month_count }} articles{% endif %}</span></h1>
+  <header class="archive-month-header">
+    <nav class="archive-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="/archive/">Archives</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
+      <span aria-current="page">{{ page.date | date: "%B %Y" }}</span>
+    </nav>
+    <h1 class="post-title">{{ page.date | date: "%B %Y" }}</h1>
+    <p class="archive-month-count">{% if month_count == 1 %}1 article{% else %}{{ month_count }} articles{% endif %}</p>
+  </header>
 
   <div class="blog-list archive-blog-list">
     {% assign month_posts = page.posts | sort: 'date' | reverse %}
     {% for post in month_posts %}
       <article class="post-entry">
-        <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-
-        <div class="post-meta-row">
-          <div class="post-meta">
-            <span class="post-author">
-              <picture>
-                <source type="image/jxl" srcset="/assets/images/mcretro-author-portrait-192.jxl?v=20261018d">
-                <img src="/assets/images/mcretro-author-portrait-192.webp?v=20261018d" width="96" height="96" alt="" class="author-avatar" loading="lazy" decoding="async">
-              </picture>
-              <span class="archive-author-details">
-                {% if post.author %}<span class="archive-author-name">{{ post.author }}</span>{% endif %}
-                <span class="post-date">
-                  {% assign d = post.date | date: "%-d" | plus: 0 %}
-                  {% case d %}
-                    {% when 1 or 21 or 31 %}{% assign ordinal = "st" %}
-                    {% when 2 or 22 %}{% assign ordinal = "nd" %}
-                    {% when 3 or 23 %}{% assign ordinal = "rd" %}
-                    {% else %}{% assign ordinal = "th" %}
-                  {% endcase %}
-                  {{ d }}{{ ordinal }} {{ post.date | date: "%B %Y" }}
-                </span>
-              </span>
-            </span>
-
-            {% if post.categories.size > 0 %}
-              <span class="post-categories">
-                <span class="category-label">Categories:</span>
-                {% for cat in post.categories %}
-                  {{ site.data.categories[cat] | default: cat }}{% unless forloop.last %}, {% endunless %}
-                {% endfor %}
-              </span>
-            {% endif %}
-          </div>
-
-          <div class="post-content-preview">
+        <div class="archive-card-layout">
+          {% capture archive_thumbnail %}{% include auto-thumbnail.html content=post.content url=post.url title=post.title %}{% endcapture %}
+          {% assign archive_thumbnail = archive_thumbnail | strip %}
+          {% unless archive_thumbnail == blank %}
+            <div class="archive-card-media">{{ archive_thumbnail }}</div>
+          {% endunless %}
+          <div class="archive-card-body">
+            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <div class="archive-card-meta">
+              {% assign d = post.date | date: "%-d" | plus: 0 %}
+              {% case d %}
+                {% when 1 or 21 or 31 %}{% assign ordinal = "st" %}
+                {% when 2 or 22 %}{% assign ordinal = "nd" %}
+                {% when 3 or 23 %}{% assign ordinal = "rd" %}
+                {% else %}{% assign ordinal = "th" %}
+              {% endcase %}
+              <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ d }}{{ ordinal }} {{ post.date | date: "%B %Y" }}</time>
+              {% if post.categories.size > 0 %}
+                <span class="archive-card-meta-sep" aria-hidden="true">·</span>
+                <span class="post-categories"><span class="visually-hidden">Categories: </span>{% for cat in post.categories %}{{ site.data.categories[cat] | default: cat }}{% unless forloop.last %}, {% endunless %}{% endfor %}</span>
+              {% endif %}
+            </div>
             <div class="post-excerpt">
               {% assign excerpt_text = post.content | without_media_captions | strip_html | normalize_whitespace | truncatewords: 50 %}
               {% if excerpt_text != blank %}

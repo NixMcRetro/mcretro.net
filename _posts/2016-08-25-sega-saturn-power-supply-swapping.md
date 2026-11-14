@@ -8,13 +8,19 @@ share_description: >-
   Type A, B and C Sega Saturn power supplies have different connectors and rails. Physically fitting doesn't mean electrically compatible. ⚡
 ---
 
-![SS - 0801](/assets/images/2016/img_0544.jpg)
+![Long Sega Saturn power-supply board inside a clear plastic bag with a red label reading Longer.](/assets/images/2016/img_0544.jpg)
+
+*The longer Saturn power-supply board, one of the different forms Sega used. A matching connector shape isn't proof of electrical compatibility.*
+{: .media-caption }
 
 Sega Saturn power supplies are an interesting bunch. As if the different motherboard revisions weren't enough, Sega also managed to use three broad power supply designs, commonly known as Type A, Type B and Type C. So much for swapping them around without a second thought!
 
 **Type B:** Used through roughly VA1 to VA5. This is the long five-pin supply pictured above. Typical pins: `GND, GND, 3.3 V, 5 V, 9 V`.
 
-![SS - 0802](/assets/images/2016/img_0545.jpg)
+![Shorter Sega Saturn power-supply board inside a clear plastic bag with a red label reading Shorter.](/assets/images/2016/img_0545.jpg)
+
+*And here's the shorter Saturn supply for comparison. Definitely worth checking the rails and pinout before swapping anything!*
+{: .media-caption }
 
 **Type C:** Used on later boards. NTSC machines generally have four pins: `GND, GND, 5 V, 5 V`. PAL machines have an additional output, nominally 9 V or 12 V depending on the supply: `GND, GND, 5 V, 5 V, 9 V / 12 V`. Best check the markings rather than assume every PAL machine is the same.
 

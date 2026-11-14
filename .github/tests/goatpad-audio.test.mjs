@@ -199,6 +199,19 @@ test('the in-game HUD keeps lights aligned, original branding, and touch-friendl
   assert.doesNotMatch(source, /function updateSizes\(/);
 });
 
+test('reference frame uses decorative twin leads, white rails, and left/right footer elements', () => {
+  const styles = readFileSync(new URL('../../homepages/goatpad/styles.css', import.meta.url), 'utf8');
+  assert.match(markup, /class="goatpad-cable"/);
+  assert.match(markup, /class="brand-emblem"/);
+  assert.match(markup, /class="brand-bar"[\s\S]*class="title"[\s\S]*class="brand-emblem"/);
+  assert.match(styles, /\.goatpad-cable\s*\{[^}]*position:\s*absolute;/);
+  assert.match(styles, /\.brand-bar\s*\{[^}]*justify-content:\s*space-between;/);
+  assert.match(styles, /\.sequence-viewport\s*\{[^}]*border:\s*1px solid #dedbe5;/);
+  assert.match(styles, /\.buttonArea \.column button::before\s*\{[^}]*#faf8fd/);
+  assert.match(styles, /\.buttonArea \.column:not\(:last-child\) button::after\s*\{[^}]*#f1edf8/);
+  assert.match(styles, /\.goatpad-cable\s*\{\s*display:\s*none;/);
+});
+
 test('Start loads eight Opus files, not all 64, with user-gesture audio', async () => {
   const app = fixture();
   await app.start();

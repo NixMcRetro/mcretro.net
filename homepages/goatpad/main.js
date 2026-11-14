@@ -25,34 +25,60 @@ const shortAudio = [
     14, 15, 16, 17, 18, 22, 23, 24, 25, 26, 27, 28, 32, 34, 37, 38, 41, 44, 45, 46, 48, 57,
     64, 67, 71, 72, 74, 75, 77, 87, 88
 ];
+const loadingScreen = document.getElementById("loadingScreen");
+const loadingMessage = document.getElementById("loadingMessage");
+const startButton = document.getElementById("startAudio");
+
+// Creating or resuming Web Audio must begin in a genuine user gesture.
+// The original page created a suspended AudioContext on load, leaving the
+// disabled sound pads with no reliable way to start audio in some browsers.
 const loadAudioFile = async (url) => {
     const response = await fetch(url);
-    const arrayBuffer = await response.arrayBuffer();
-    return audioContext.decodeAudioData(arrayBuffer);
+    if (!response.ok) throw new Error(`Couldn't load ${url}: HTTP ${response.status}`);
+    return audioContext.decodeAudioData(await response.arrayBuffer());
 };
 
-
 const loadAllAudioFiles = async () => {
-    for (let i = 1; i <= 8; i++) {
-        for (let j = 1; j <= 8; j++) {
-            const audioKey = `${i}${j}`;
-            audioBuffers[audioKey] = await loadAudioFile(`./audio/${audioKey}.ogg`);
-        }
+    for (let row = 1; row <= 8; row++) {
+        const keys = Array.from({ length: 8 }, (_, index) => `${row}${index + 1}`);
+        const decoded = await Promise.all(keys.map(async key => ({
+            key,
+            buffer: await loadAudioFile(`./audio/${key}.ogg`)
+        })));
+        decoded.forEach(({ key, buffer }) => {
+            audioBuffers[key] = buffer;
+        });
+        loadingMessage.textContent = `Loading original sounds: ${row * 8}/64`;
     }
-    // Enable buttons after audio files are loaded
-    document.querySelectorAll('button').forEach(button => {
+
+    document.querySelectorAll(".buttonArea button").forEach(button => {
         button.disabled = false;
     });
-    document.getElementById('loadingScreen').classList.add('hidden');
     buttonsLoaded = true;
+    loadingScreen.classList.add("hidden");
 };
 
 const initializeAudioContext = async () => {
-    if (!audioContext) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    startButton.disabled = true;
+    loadingMessage.textContent = "Starting audio...";
+
+    try {
+        if (!audioContext) {
+            const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+            if (!AudioContextClass) throw new Error("Web Audio is not supported in this browser");
+            audioContext = new AudioContextClass();
+        }
+        // Resume immediately after the Start click, before any network awaits.
+        if (audioContext.state === "suspended") await audioContext.resume();
         await loadAllAudioFiles();
+    } catch (error) {
+        console.error("GOATPAD audio failed to initialise:", error);
+        loadingMessage.textContent = "Unable to load sounds. Check your connection and try again.";
+        startButton.disabled = false;
     }
 };
+
+startButton.addEventListener("click", initializeAudioContext);
 
 let columnCount = 1;
 const soundboard = document.querySelector(".buttonArea");
@@ -65,9 +91,13 @@ buttonMapping.forEach((element) => {
         const buttonElement = document.createElement("button");
         buttonElement.disabled = true;
         buttonElement.addEventListener("click", async () => {
-            await initializeAudioContext();
-            if (audioContext.state === "suspended") await audioContext.resume();
-            soundboardButtonClicked(buttonElement);
+            if (!buttonsLoaded || !audioContext) return;
+            try {
+                if (audioContext.state === "suspended") await audioContext.resume();
+                soundboardButtonClicked(buttonElement);
+            } catch (error) {
+                console.error("GOATPAD could not resume audio:", error);
+            }
         });
         const p = document.createElement("p");
 
@@ -207,7 +237,4 @@ window.addEventListener('resize', updateSizes);
 window.addEventListener('fullscreenchange', updateSizes);
 
 // Initialize sizes on page load
-window.addEventListener('load', () => {
-    initializeAudioContext();
-    updateSizes();
-});
+window.addEventListener('load', updateSizes);

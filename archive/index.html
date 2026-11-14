@@ -17,7 +17,7 @@ pagefind: false
     {% for year in archive_years %}
       {% assign year_months = year.items | group_by_exp: "post", "post.date | date: '%m'" %}
       {% assign year_count = year.items | size %}
-      <details class="archive-index-year about-panel panel--teal" name="mcretro-archive-years">
+      <details id="year-{{ year.name }}" class="archive-index-year about-panel panel--teal" name="mcretro-archive-years">
         <summary><span class="about-panel-icon" aria-hidden="true">📅</span><span class="archive-index-year-name">{{ year.name }}</span><span class="archive-index-year-count">{{ year_count }} {% if year_count == 1 %}article{% else %}articles{% endif %}</span></summary>
         <div class="archive-index-grid" role="group" aria-label="{{ year.name }} monthly archives">
           {% for m in (1..12) %}
@@ -50,3 +50,4 @@ pagefind: false
     {% endfor %}
   </div>
 </section>
+<script src="/assets/js/archive-year-deeplink.js"></script>

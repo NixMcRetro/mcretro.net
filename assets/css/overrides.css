@@ -428,8 +428,8 @@
     font-size: clamp(1.23rem, 6.2vw, 1.38rem);
     letter-spacing: 0.045em;
   }
-  .theme-toggle,
-  .nav-toggle {
+  .site-header .theme-toggle,
+  .site-header .nav-toggle {
     width: 36px;
     height: 36px;
     border-radius: 8px;

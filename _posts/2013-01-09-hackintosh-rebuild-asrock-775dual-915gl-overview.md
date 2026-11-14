@@ -16,7 +16,10 @@ For this rebuild I've found a new case, although calling it a magnificent piece 
 
 The motherboard has both AGP and PCI Express slots, along with two conventional PCI slots. One of those is destined for a SCSI card. There's also a rather awkwardly placed power connector sitting towards the middle of the board. Lovely place for it, especially when you've got an enormous CPU heatsink taking up the surrounding space!
 
-![](/assets/images/2013/img_0361.jpg)
+![Side view into an open beige PC tower containing an ASRock motherboard, large blue CPU fan, power supply and bundled drive cables; loose drives lie on the desk.](/assets/images/2013/img_0361.jpg)
+
+*The budget Hackintosh rebuild is coming together. The case may be flimsy, but at least everything fits!*
+{: .media-caption }
 
 The original I built was made back in late 2005 / early 2006. This was about six months after Apple announced the transition to Intel hardware. The motherboard was unusually close to Apple's 2005 Developer Transition Kit platform. The ASRock uses Intel's 915GL chipset with ICH6 and GMA 900 graphics, while the Apple development machine used the closely related 915G with ICH6 and GMA 900. Similar enough to be very interesting for early OSx86 experimentation, but not literally the same chipset. Sound, ethernet, graphics, all worked out of the box on my installation.
 

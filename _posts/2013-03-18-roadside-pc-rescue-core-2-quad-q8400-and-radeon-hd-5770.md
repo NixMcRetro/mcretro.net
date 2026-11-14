@@ -8,7 +8,10 @@ share_description: >-
   A rain-soaked PC rescued from the roadside comes with a Core 2 Quad, Radeon HD 5770, cockroaches and a fleeing lizard. The original PSU goes straight in the bin. 🦎
 ---
 
-![](/assets/images/2013/img_0380.jpg)
+![Gigabyte motherboard on a workbench with two DDR3 memory modules and a large blue-bladed CPU cooler; another circuit board lies behind it.](/assets/images/2013/img_0380.jpg)
+
+*The rescued PC's Gigabyte board has cleaned up enough for a closer look. Two sticks of DDR3 and that rather striking blue fan!*
+{: .media-caption }
 
 There's nothing more exciting than finding electronic rubbish on the side of the road. This morning, while leaving for work, I spotted a PC sitting out the front of my home. It had been raining overnight and the machine looked rather wet, but something caught my attention: two DVI ports occupying the space above two expansion slots. A double-width video card!
 
@@ -20,7 +23,10 @@ The power supply went straight out. Between the overnight rain and the rather en
 
 Judging by the components, much of the machine appears to date from somewhere around the late 2000s to early 2010s. I'm not going to pretend I can pin down the exact year from the surviving hardware, but there's still some interesting equipment in here.
 
-![](/assets/images/2013/img_0381.jpg)
+![Rear edge of a Gigabyte motherboard showing PS/2, serial, VGA, USB, network and audio ports, with VGA and USB cables plugged in.](/assets/images/2013/img_0381.jpg)
+
+*A closer look at the motherboard's rear connections. Plenty of useful ports on this roadside find.*
+{: .media-caption }
 
 Here's what I found:
 

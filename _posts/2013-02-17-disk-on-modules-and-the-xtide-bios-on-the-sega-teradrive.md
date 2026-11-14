@@ -8,7 +8,10 @@ share_description: >-
   Three Disk on Modules, three different headaches on a Sega TeraDrive. XTIDE recognises some, powers others, and reminds us that compatibility isn't guaranteed. 💾
 ---
 
-![](/assets/images/2013/img_0377.jpg)
+![Three IDE Disk on Module devices laid side by side on a metal case, labelled TopSSD 4 GB, Transcend 4 GB and KingSpec Industrial.](/assets/images/2013/img_0377.jpg)
+
+*Three Disk on Modules, three different compatibility headaches. Naturally the one I want is the difficult one to find!*
+{: .media-caption }
 
 So many types of Disk on Module, so little time! I've been trying to find a suitable solid-state storage solution for my Sega TeraDrive, and what sounded like a fairly simple exercise has turned into another adventure in hardware compatibility.
 
@@ -34,9 +37,15 @@ It's worth keeping the XTIDE manual's warning in context. That passage specifica
 
 So I've managed to find three different ways for this little project to be troublesome. There can't possibly be a fourth, right? RIGHT?!?!?! :D
 
-![](/assets/images/2013/img_0375.jpg)
+![Open Sega TeraDrive showing a KingSpec Industrial Disk on Module connected to a green XTIDE ISA card among large chips and ribbon cables.](/assets/images/2013/img_0375.jpg)
 
-![](/assets/images/2013/img_0376.jpg)
+*The KingSpec module fitted to XTIDE inside the TeraDrive. Recognised by the BIOS, but its power arrangement isn't what I wanted.*
+{: .media-caption }
+
+![Close-up of the KingSpec Disk on Module plugged into the XTIDE controller inside the Sega TeraDrive, with red jumpers and rows of ICs.](/assets/images/2013/img_0376.jpg)
+
+*A closer look at the KingSpec installation and those familiar XTIDE jumpers. So close to the storage setup I want!*
+{: .media-caption }
 
 ### Sources
 

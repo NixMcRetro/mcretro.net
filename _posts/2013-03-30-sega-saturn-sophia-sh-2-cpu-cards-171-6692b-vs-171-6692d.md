@@ -12,7 +12,10 @@ share_description: >-
 
 You heard correctly. These are 171-6692B SH-2 CPU boards, not the better-documented 171-6692D boards. Thanks to the generosity of an unnamed member from the forums, I've now got two of these lovely little things to experiment with. Fingers crossed they might help get my Sega Saturn Sophia Programming Box up and running again!
 
-![](/assets/images/2013/img_0382.jpg)
+![Two green Sega 171-6692B SH-2 CPU cards mounted side by side inside a Sophia programming box, with SH7095 processors and red-and-black wiring.](/assets/images/2013/img_0382.jpg)
+
+*The two 171-6692B SH-2 cards inside Sophia. They look promising, although the missing headers and jumpers still need investigating.*
+{: .media-caption }
 
 Both boards arrived safely and appear to be identical. They've got the SH7095 SH-2 processors I was looking for, although the part number isn't quite what I expected. I needed the 171-6692D version, but what I've received is the 171-6692B. B for Bob, not D for Dob! Close enough to be interesting.
 

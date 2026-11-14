@@ -34,7 +34,10 @@ My first attempt used a 27C4096 setting and produced a 512 KiB image. That seeme
 
 A 27C1024-class device stores 1 megabit as 64K x 16 bits, so that size made sense. I loaded the resulting BIOS through a Mega EverDrive and up came the Aiwa screen, reporting version 2.11c! After all the desoldering trouble, it was wonderful seeing the dump actually work.
 
-![](/assets/images/2013/img_0362.jpg)
+![Close-up of a black Sega mask ROM marked 'MPR-15768-T' on a green Aiwa Mega-CD Game Unit circuit board, beside other chips and a ribbon cable.](/assets/images/2013/img_0362.jpg)
+
+*There it is, the elusive MPR-15768-T BIOS ROM before the desoldering adventure. Forty pins of entertainment!*
+{: .media-caption }
 
 At the time, I believed this was the first public dump of the Aiwa BIOS. MAME now catalogues `mpr-15768-t.bin` at 128 KiB with CRC32 `8052c7a0`, although that doesn't tell us who made the first public release.
 

@@ -164,6 +164,28 @@ test('only Opus is referenced, PNG favicon used, and page load is network-idle',
   assert.equal(app.timers.size, 0);
 });
 
+test('responsive soundboard preserves all 64 full accessible names and short mobile labels', () => {
+  const styles = readFileSync(new URL('../../homepages/goatpad/styles.css', import.meta.url), 'utf8');
+  assert.match(markup, /class="sequence-viewport"[^>]+tabindex="0"/);
+  assert.match(markup, /class="mobile-scroll-hint"/);
+  assert.match(styles, /overflow-x:\\s*auto;/);
+  assert.match(styles, /width:\\s*44px;/);
+  assert.match(styles, /overflow-y:\\s*auto;/);
+
+  const app = fixture();
+  const labels = new Map([
+    ['DRUMS', 'DRM'], ['FX', 'FX'], ['BASS', 'BASS'],
+    ['GOAT SOUL', 'SOUL'], ['MELODY', 'MEL']
+  ]);
+  assert.equal(app.pads.length, 64);
+  for (const button of app.pads) {
+    const [category, sample] = button['aria-label'].split(', sample ');
+    assert.ok(labels.has(category), 'Original accessible category is retained');
+    assert.equal(button.children[0].dataset.short, labels.get(category));
+    assert.equal(Number(sample), Number(button.dataset.sample));
+  }
+});
+
 test('Start loads eight Opus files, not all 64, with user-gesture audio', async () => {
   const app = fixture();
   await app.start();

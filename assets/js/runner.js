@@ -1,5 +1,5 @@
-/* Desktop homepage: a randomly chosen original Sonic, Tails or cat GIF
-   follows the top border of the main navigation bar. No mobile effects. */
+/* Desktop homepage: a random Sonic, Tails, cat or seal GIF travels along
+   the main navigation's top border. No mobile effects. */
 document.addEventListener('DOMContentLoaded', () => {
   const mainNav = document.querySelector('.main-nav');
   if (!mainNav) return;
@@ -7,14 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const mobileMenu = () => window.matchMedia('(max-width: 750px)').matches;
 
-  // Keep the original GIFs exactly as stored in the repository.
-  // Walking characters move more slowly than running ones.
+  // Preserve the original Sonic, Tails and cat GIFs.
+  // Walking characters and the flopping seal travel more slowly than runners.
   const runners = [
     { src: '/homepages/sonic/images/swalk.gif', speed: 125 },
     { src: '/homepages/sonic/images/twalk.gif', speed: 125 },
     { src: '/homepages/sonic/images/trun.gif', speed: 205 },
     { src: '/homepages/sonic/images/srun.gif', speed: 205 },
-    { src: '/assets/images/about/0CATRUNY.gif', speed: 205 }
+    { src: '/assets/images/about/0CATRUNY.gif', speed: 205 },
+    { src: '/assets/images/about/seal-flop.gif', speed: 90 }
   ];
 
   function runHeaderSprite() {
@@ -31,26 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const rect = mainNav.getBoundingClientRect();
       if (rect.width <= 0) return;
 
-      // Travel across the complete visible page, not just the centred nav.
-      // Keep the 48px-tall sprite's feet on the navigation's top border.
+      // Match the sprite's feet to the navigation border. The lane itself
+      // is anchored to the nav, so scrolling keeps them together.
       const spriteWidth = Math.ceil(48 * sprite.naturalWidth / sprite.naturalHeight);
       const startX = -spriteWidth;
-      const endX = document.documentElement.clientWidth;
-      const y = Math.max(0, rect.top - 48);
-      const seconds = Math.max(3.5, Math.min(8.5, (endX - startX) / selected.speed));
+      const viewportWidth = window.innerWidth;
+      const seconds = (viewportWidth - startX) / selected.speed;
 
-      // The fixed lane clips the sprite without blocking clicks or scrolling.
+      // Clip the sprite to the viewport without blocking navigation clicks.
       const lane = document.createElement('div');
       lane.classList.add('header-runner-lane');
       lane.setAttribute('aria-hidden', 'true');
       sprite.style.setProperty('--runner-start-x', startX + 'px');
-      sprite.style.setProperty('--runner-end-x', endX + 'px');
-      sprite.style.setProperty('--runner-y', y + 'px');
       sprite.style.animationDuration = seconds + 's';
       lane.appendChild(sprite);
-      document.body.appendChild(lane);
+      mainNav.appendChild(lane);
       sprite.addEventListener('animationend', () => lane.remove(), { once: true });
-      setTimeout(() => lane.remove(), 9500);
+      setTimeout(() => lane.remove(), Math.ceil(seconds * 1000) + 2000);
     }, { once: true });
 
     sprite.src = selected.src;

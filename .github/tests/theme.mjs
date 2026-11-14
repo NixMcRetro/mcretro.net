@@ -356,7 +356,7 @@ test('monthly Archives use a matching heading/subheading, breadcrumb and article
   assert.match(overrides, /\.archive-index-grid\s*\{[^}]*grid-template-columns: repeat\(4/);
 });
 
-test('Goodies links to the dial-up page with both choices and keeps existing sections', () => {
+test('Goodies links to the Windows 95 dial-up folder with all destinations', () => {
   const goodies = read('goodies.md');
   const modem = read('assets/js/mcretro-dialup.js');
   const modemPage = read('homepages/modem/index.html');
@@ -366,9 +366,12 @@ test('Goodies links to the dial-up page with both choices and keeps existing sec
   assert.doesNotMatch(goodies, /data-dial-site=/);
   assert.match(modemPage, /data-modem-launch/);
   assert.match(modemPage, /include modem-connection\.html/);
-  assert.match(connection, /value="blog-random" data-modem-choice/);
-  assert.match(connection, /value="random" data-modem-choice/);
-  assert.match(modem, /root\.querySelectorAll\('\[data-modem-choice\]'\)/);
+  assert.match(modemPage, /data-modem-new/);
+  assert.match(modemPage, /data-modem-target="blog-random"/);
+  assert.match(modemPage, /data-modem-target="random"/);
+  assert.match(modemPage, /Make New Connection/);
+  assert.doesNotMatch(connection, /data-modem-choice/);
+  assert.match(modem, /function openConnection\(/);
   assert.match(modem, /assets\/data\/random-post-urls\.json/);
   assert.match(header, /<span class="phrase mobile-tagline">🚀 Blast Processed Since 199X<\/span>/u);
   assert.match(header, /🧪 Trial and Error<\/span>/u);

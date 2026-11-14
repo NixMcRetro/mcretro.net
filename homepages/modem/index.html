@@ -7,28 +7,64 @@ permalink: /homepages/modem/
 
 <div class="mcretro-modem-page">
   <h1>McRetro Dial-Up Networking</h1>
-  <p class="mcretro-modem-intro">Choose a connection, press Connect, and hear the internet wake up.</p>
+  <p class="mcretro-modem-intro">Choose a connection and listen to the internet wake up.</p>
 
   <section class="mcretro-modem-explorer" aria-label="Dial-Up Networking">
     <div class="mcretro-modem-explorer-titlebar">
-      <span class="mcretro-modem-explorer-title"><span aria-hidden="true">☎</span> Dial-Up Networking</span>
+      <span class="mcretro-modem-explorer-title"><span class="mcretro-win95-small-icon" aria-hidden="true">☎</span> Dial-Up Networking</span>
       <span class="mcretro-modem-explorer-chrome" aria-hidden="true"><span>_</span><span>□</span><span>×</span></span>
     </div>
-    <div class="mcretro-modem-explorer-menu" aria-hidden="true"><span>File</span><span>Edit</span><span>View</span><span>Go</span><span>Favorites</span></div>
+    <div class="mcretro-modem-explorer-menu" aria-hidden="true"><span><u>F</u>ile</span><span><u>E</u>dit</span><span><u>V</u>iew</span><span><u>G</u>o</span><span>F<u>a</u>vorites</span></div>
+    <div class="mcretro-modem-explorer-toolbar" aria-hidden="true">
+      <span class="mcretro-modem-toolbar-grip"></span>
+      <span class="mcretro-modem-tool-icon">◀</span><span class="mcretro-modem-tool-icon">▶</span>
+      <span class="mcretro-modem-tool-separator"></span>
+      <span class="mcretro-modem-tool-icon">⌂</span><span class="mcretro-modem-tool-icon">▤</span>
+      <span class="mcretro-modem-tool-separator"></span>
+      <span class="mcretro-modem-tool-icon">✂</span><span class="mcretro-modem-tool-icon">▣</span>
+    </div>
     <div class="mcretro-modem-explorer-address">
       <span>Address</span>
-      <span class="mcretro-modem-explorer-path"><span aria-hidden="true">📁</span> Dial-Up Networking</span>
+      <span class="mcretro-modem-explorer-path"><span class="mcretro-win95-small-icon" aria-hidden="true">☎</span> Dial-Up Networking</span>
+      <span class="mcretro-modem-address-arrow" aria-hidden="true">▼</span>
     </div>
-    <div class="mcretro-modem-explorer-files">
-      <a href="/homepages/modem/" class="mcretro-modem-shortcut" data-modem-launch aria-haspopup="dialog" aria-controls="mcretro-modem-page">
-        <span class="mcretro-modem-shortcut-icon" aria-hidden="true"><span class="mcretro-modem-monitor"></span><span class="mcretro-modem-phone">☎</span></span>
-        <span class="mcretro-modem-shortcut-name">McRetro.net Dial-Up</span>
+    <div class="mcretro-modem-explorer-files" data-modem-shortcut-list>
+      <button type="button" class="mcretro-modem-shortcut" data-modem-new>
+        <span class="mcretro-modem-shortcut-art mcretro-modem-shortcut-art--new" aria-hidden="true">
+          <span class="mcretro-modem-pixel-monitor"></span><span class="mcretro-modem-pixel-phone">☎</span>
+        </span>
+        <span class="mcretro-modem-shortcut-name">Make New Connection</span>
+      </button>
+      <a href="/homepages/modem/?site=blog-random" class="mcretro-modem-shortcut" data-modem-launch data-modem-target="blog-random" aria-haspopup="dialog" aria-controls="mcretro-modem-page">
+        <span class="mcretro-modem-shortcut-art" aria-hidden="true"><span class="mcretro-modem-pixel-monitor"></span><span class="mcretro-modem-pixel-phone">☎</span></span>
+        <span class="mcretro-modem-shortcut-name">Random Blog Post</span>
+      </a>
+      <a href="/homepages/modem/?site=random" class="mcretro-modem-shortcut" data-modem-launch data-modem-target="random" aria-haspopup="dialog" aria-controls="mcretro-modem-page">
+        <span class="mcretro-modem-shortcut-art" aria-hidden="true"><span class="mcretro-modem-pixel-monitor"></span><span class="mcretro-modem-pixel-phone">☎</span></span>
+        <span class="mcretro-modem-shortcut-name">Retro Homepage</span>
       </a>
     </div>
-    <div class="mcretro-modem-explorer-status">1 Object(s)</div>
+    <div class="mcretro-modem-explorer-status"><span data-modem-explorer-count>3 Object(s)</span><span>My Computer</span></div>
   </section>
 
   <p class="mcretro-modem-back"><a href="/goodies/">Return to Goodies</a></p>
+
+  <dialog id="mcretro-modem-new-connection" class="mcretro-modem-dialog mcretro-modem-create-dialog" aria-label="Make New Connection">
+    <div class="mcretro-modem-card">
+      <div class="mcretro-modem-titlebar"><span>Make New Connection</span><button type="button" class="mcretro-modem-close" data-modem-new-cancel aria-label="Close Make New Connection">×</button></div>
+      <form class="mcretro-modem-create-form" data-modem-create-form>
+        <div class="mcretro-modem-create-heading"><span class="mcretro-modem-shortcut-art" aria-hidden="true"><span class="mcretro-modem-pixel-monitor"></span><span class="mcretro-modem-pixel-phone">☎</span></span><span>Create a Connection</span></div>
+        <label for="mcretro-modem-new-name">Connection Name:</label>
+        <input type="text" id="mcretro-modem-new-name" data-modem-new-name value="My Connection" maxlength="40" required>
+        <label for="mcretro-modem-new-target">Destination:</label>
+        <select id="mcretro-modem-new-target" data-modem-new-target><option value="random">Retro Homepage</option><option value="blog-random">Random Blog Post</option></select>
+        <label for="mcretro-modem-new-number">Phone Number:</label>
+        <input type="tel" id="mcretro-modem-new-number" data-modem-new-number value="02 9373 5100" maxlength="30" pattern="[0-9()+. -]*" required>
+        <p data-modem-new-error hidden role="alert"></p>
+        <div class="mcretro-modem-create-actions"><button type="submit">Finish</button><button type="button" data-modem-new-cancel>Cancel</button></div>
+      </form>
+    </div>
+  </dialog>
 
   <dialog id="mcretro-modem-page" class="mcretro-modem-dialog" aria-label="McRetro Dial-Up Connection" data-modem-root>
     {% include modem-connection.html id_suffix="-page" %}

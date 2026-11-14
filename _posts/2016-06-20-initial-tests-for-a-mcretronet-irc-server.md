@@ -8,7 +8,10 @@ share_description: >-
   McRetroNet's InspIRCd server can finally host a conversation with myself. NickServ, ChanServ and the web client still need convincing. 💬
 ---
 
-![irc_test](/assets/images/2016/img_0476.jpg)
+![IRC chat log showing several nicknames, join and quit notices, and conversation messages in alternating highlighted rows.](/assets/images/2016/img_0476.jpg)
+
+*McRetroNet IRC working well enough for a bit of conversation. Getting the channel services behaving was another matter entirely!*
+{: .media-caption }
 
 Well, for the most part it seemed to work for a while and I was able to join in on my conversation with myself a few times. IRC might be a good way of having an instant chat running on the rock-solid Raspberry Pi.
 

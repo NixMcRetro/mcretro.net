@@ -8,7 +8,10 @@ share_description: >-
   Shallot on Ubuntu 16.04 generates fancy v2 Tor onion addresses, including one starting with cat. Historical only: v2 onion services are obsolete. 🐈
 ---
 
-![Shallot](/assets/images/2016/img_0472.jpg)
+![Ubuntu terminal showing a Shallot vanity onion-address search and the generated RSA private key output.](/assets/images/2016/img_0472.jpg)
+
+*Shallot finding an old-style vanity .onion address in Ubuntu. The private key shown here was only an example and must never be reused!*
+{: .media-caption }
 
 I've been playing around with Shallot 0.0.3-alpha to generate a vanity onion address for McRetro. My old address was [http://mcretro35qepy5cy.onion](https://mcretro.net/goodies/), and I thought I'd see what else I could come up with. Time for a little tinkering!
 

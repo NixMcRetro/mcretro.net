@@ -34,7 +34,10 @@ The recovery took long enough for me to go to sleep. When I returned, the operat
 
 Unfortunately, I hadn't kept the recovery log I really should have used, so I couldn't go back and examine exactly which sectors had failed. Still, I now had a useful image of the drive instead of relying entirely on the original ageing hardware. Below is the directory structure of the last main folder.
 
-![Directory structure](/assets/images/2016/img_0471.jpg)
+![File-browser directory tree from the recovered Dreamcast development hard drive, including Baseball folders, FMV files and WSB2K2.BIN.](/assets/images/2016/img_0471.jpg)
+
+*A look inside the recovered Dreamcast development drive. There's WSB2K2 and a rather interesting collection of Baseball files!*
+{: .media-caption }
 
 The [disk image](/goodies) I originally shared was around 1 GB compressed and about 4.5 GB decompressed. World Series Baseball 2K2! Or WSB2K2 as it was known amongst the cool kids?
 

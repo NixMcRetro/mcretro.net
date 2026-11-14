@@ -933,10 +933,15 @@ pre code {
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
 }
+/* The full-width rule anchors the two ends of the blog-column navigation,
+   echoing the 4px sidebar dividers instead of competing with the footer. */
+.pagination-bar {
+  border-top: 4px solid var(--text);
+}
 .pagination-controls {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   gap: 1rem;
 }
@@ -944,13 +949,13 @@ pre code {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: center;
-  gap: 0.2rem;
+  align-items: flex-start;
+  gap: 0.45rem;
 }
 .pagination-arrows {
   display: flex;
   flex: 0 0 auto;
-  gap: 0.45rem;
+  gap: 0.25rem;
 }
 .arrow-placeholder {
   display: block;
@@ -997,6 +1002,8 @@ a.page-number:hover,
 .current-page {
   background: var(--archive-filled);
   border-color: var(--archive-accent);
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
   color: var(--archive-filled-text);
   font-weight: 700;
   cursor: default;
@@ -1004,6 +1011,8 @@ a.page-number:hover,
 .arrow-link {
   background: var(--panel);
   border-color: var(--border-soft);
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
 }
 .arrow-icon {
   font-size: 1.2rem;

@@ -25,13 +25,19 @@ I'd also remembered that I had an Oak Technology ISA VGA card sitting around. Th
 
 The card uses an OTI067 VGA chip and also includes floppy and hard-drive controller hardware. Those extra features didn't appear to interfere with the Model 30's onboard controllers, although I still haven't been able to find the jumper settings for this particular Oak card. If anyone knows them, please let me know!
 
-![](/assets/images/2012/img_0337.jpg)
+![Brown Oak Technology ISA VGA expansion card with an OTI VGA BIOS chip, UMC controller and multiple headers along its top edge.](/assets/images/2012/img_0337.jpg)
+
+*The Oak VGA card that gave the old IBM's display a welcome upgrade. I still need to figure out all those jumper settings.*
+{: .media-caption }
 
 The real test was Monkey Island. Previously it had been painfully slow on this machine, especially during scenes with a lot happening on the screen. With the new hardware installed, the scrolling and animation were considerably better. I suspect the VGA card made a particularly big difference here, although the V30 was also helping things along.
 
 Later I tried a Trident VGA card and that worked as well. Both cards physically have the extended 16-bit ISA connector, while the Model 30 only provides an 8-bit ISA bus. In these particular cards, enough of the VGA functionality was available through the original 8-bit portion of the connector for them to operate.
 
-![](/assets/images/2012/img_0338.jpg)
+![Green Trident ISA VGA card showing a large Trident graphics chip, TVGA9000 BIOS ROM and extended edge connector.](/assets/images/2012/img_0338.jpg)
+
+*The Trident VGA card was another pleasant surprise in the Model 30's 8-bit ISA slot.*
+{: .media-caption }
 
 The Trident card also seemed rather quick in Monkey Island, although I didn't have a controlled benchmark comparing the two VGA cards. It was impressive enough watching the animation move smoothly on an old machine that had previously struggled with the same game.
 
@@ -43,7 +49,10 @@ Sound Blaster 16-family cards can use the extended connector for features such a
 
 Monkey Island detected the card without much trouble, and I didn't even need to define a BLASTER environment variable for the software I tested. Hearing proper game audio from this old IBM was rather satisfying. I should really try an ESS card next.
 
-![](/assets/images/2012/img_0336.jpg)
+![Close-up of a green Creative CT2810 sound card circuit board, with a metal oscillator marked 24.0 and a long IDE-interface header.](/assets/images/2012/img_0336.jpg)
+
+*A closer look at the Sound Blaster 16 ViBRA. Useful sound in the Model 30, even without every 16-bit ISA feature.*
+{: .media-caption }
 
 ### Still Waiting for Storage
 
@@ -51,7 +60,10 @@ I'm still waiting for the replacement hard drives. At the rate the seller is pro
 
 Chances are I'll end up lodging a PayPal dispute before the deadline expires. The seller was completely silent until yesterday, when they promised to get onto it tomorrow. Which is yesterday. Ahhh, time zones...
 
-![](/assets/images/2012/img_0335.jpg)
+![ViewSonic monitor displaying a pixel-art pirate tavern scene from The Secret of Monkey Island, with dialogue across the top.](/assets/images/2012/img_0335.jpg)
+
+*Monkey Island looking rather happier on the upgraded IBM. I could finally enjoy the animation instead of waiting for it!*
+{: .media-caption }
 
 ### Another Look at the Upgrades
 

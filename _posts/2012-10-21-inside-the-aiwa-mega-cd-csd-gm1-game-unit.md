@@ -13,11 +13,20 @@ share_description: >-
 
 Here's a quick look inside the Mega Drive and Mega-CD Game Unit that attaches underneath the Aiwa CSD-GM1. It's a rather unusual little piece of hardware, and at first glance I wasn't sure what I'd be able to do with it away from the rest of the stereo. Pretty useless by itself, unless you want a lead-weighted frisbee! Or so I thought.
 
-![](/assets/images/2012/img_0323.jpg)
+![Green component-side circuit board inside the detached Aiwa Mega-CD Game Unit, showing large Sega and Motorola chips, capacitors and edge connectors.](/assets/images/2012/img_0323.jpg)
 
-![](/assets/images/2012/img_0325.jpg)
+*Inside the Aiwa Game Unit at last. It is a proper little Sega computer in there!*
+{: .media-caption }
 
-![](/assets/images/2012/img_0324.jpg)
+![Close-up of a cluster of upright blue electrolytic capacitors beside large integrated circuits on the Aiwa Game Unit motherboard.](/assets/images/2012/img_0325.jpg)
+
+*A very close look at the capacitors on the Game Unit board. There is plenty of vintage electronics packed into this thing.*
+{: .media-caption }
+
+![Two blue electrolytic capacitors and a black three-pin component on the green Aiwa Game Unit board, surrounded by Sega chips.](/assets/images/2012/img_0324.jpg)
+
+*Another little patch of the Game Unit motherboard, with the capacitors, chips and power components in full view.*
+{: .media-caption }
 
 The Game Unit contains the Mega Drive and Mega-CD hardware, while the upper section of the Aiwa supplies power, the CD mechanism and the rest of the audio-system connections. That makes the detachable unit interesting, but it also means there's rather more involved than simply plugging in a power adapter and expecting the whole thing to work.
 

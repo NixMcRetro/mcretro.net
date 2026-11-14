@@ -12,7 +12,10 @@ share_description: >-
 
 Sometimes it is good that things break. [CityEscaper](https://www.youtube.com/user/CityEscaper) asked whether I could pull the Mega PC out and test it on some different displays around the house. The video output works on my Samsung LCD TV and on my ViewSonic computer LCD from around 2004 to 2005. My newer Toshiba LCD TV wants nothing to do with it. Fair enough.
 
-![](/assets/images/2012/img_0345.jpg)
+![Open Amstrad Sega Mega PC case with its motherboard, upright expansion board, looped ribbon cable and removed front-panel assembly visible.](/assets/images/2012/img_0345.jpg)
+
+*Back inside the Mega PC, chasing a storage problem that turned out to involve the Disk on Module setup.*
+{: .media-caption }
 
 ### Boot failure
 
@@ -26,17 +29,32 @@ So we wind the clock back and join 1992 with a 107 MB hard drive. I've installed
 
 I also got a chance to open the Mega PC power supply and document the internals. It is a Seasonic SSA-4065K, revision B1, rated at 65 W. Nothing immediately looks catastrophic. Usual warning, opening a mains power supply exposes hazardous circuitry, and capacitors can retain charge after disconnection.
 
-![](/assets/images/2012/img_0350.jpg)
+![Seasonic SSA-4065K revision B1 power supply label, listing a 65 W DC output and individual voltage rail ratings.](/assets/images/2012/img_0350.jpg)
+
+*The power supply's specifications, photographed before I work out what to do about its noisy fan.*
+{: .media-caption }
 
 I also took down the fan details because it is far too noisy. The fan is a 60 mm, 12 V unit wired directly into the PSU and carries a 1992 date stamp. That should make replacement fairly straightforward one day, provided the replacement fan's electrical and airflow characteristics are suitable. One day!
 
-![](/assets/images/2012/img_0349.jpg)
+![Black square cooling fan beside a yellow tape measure spanning approximately 60 mm across its frame.](/assets/images/2012/img_0349.jpg)
 
-![](/assets/images/2012/img_0348.jpg)
+*Measuring the original fan before finding a quieter replacement for the Mega PC.*
+{: .media-caption }
 
-![](/assets/images/2012/img_0347.jpg)
+![Close-up of a black ADDA brushless cooling fan labelled AD0612MS-C70, 12 V and 0.08 A, mounted against a metal power supply case.](/assets/images/2012/img_0348.jpg)
 
-![](/assets/images/2012/img_0346.jpg)
+*The original ADDA fan's model and electrical ratings are clear enough to make replacement shopping a little easier.*
+{: .media-caption }
+
+![Inside the opened Seasonic power supply: yellow-labelled transformer, several cylindrical capacitors, metal heatsink and bundled wires.](/assets/images/2012/img_0347.jpg)
+
+*A closer look inside the Seasonic. Nothing obviously exploded, but that's not a health check for a mains PSU.*
+{: .media-caption }
+
+![Overhead view of the opened Seasonic power supply, showing its transformer, capacitors, AC input wiring and attached cooling fan.](/assets/images/2012/img_0346.jpg)
+
+*The whole 65 W supply laid open for documentation. Mains power supplies deserve more caution than the usual retro card.*
+{: .media-caption }
 
 ### Sources
 

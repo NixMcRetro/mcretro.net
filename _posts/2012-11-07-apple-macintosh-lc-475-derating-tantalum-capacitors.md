@@ -20,7 +20,10 @@ So how do we do it? Look at the table below for which voltage would be best for 
 
 I've been looking at capacitors and choosing a higher rated voltage to give the part plenty of headroom. Polymer tantalums weren't really viable for me at this point due to their even higher cost than regular tantalum caps.
 
-![](/assets/images/2012/img_0354.jpg)
+![Table comparing application voltage with traditional manganese-dioxide and polymer tantalum capacitor ratings. At 5 V application, it lists 10 V and 6.3 V respectively; at 12 V, 25 V and 16 V.](/assets/images/2012/img_0354.jpg)
+
+*The KEMET voltage-derating table I was using while planning the LC 475 recap. The exact component datasheet still gets the final say.*
+{: .media-caption }
 
 In the video I also measured a position using a 6 V capacitor on a 5 V rail. That was rather close to the part's rated voltage, and exactly the sort of thing I wanted to think through before ordering replacements. This was the planning and measuring stage, not a demonstration of a completed LC 475 recap.
 

@@ -8,15 +8,24 @@ share_description: >-
   The Osborne 486 has a boot-sector visitor: F-PROT detects ABCD.A in the MBR. Infected floppies complicate the story, but the cleanup tool gives this old PC a chance. 🦠
 ---
 
-![](/assets/images/2012/img_0332.jpg)
+![Beige Osborne desktop PC on a table, with a front floppy drive and Creative-branded CD-ROM drive.](/assets/images/2012/img_0332.jpg)
+
+*The Osborne looks innocent enough from the outside. Its boot sector had other ideas.*
+{: .media-caption }
 
 Looks like I'm not the only one who has a virus at the moment. The trusty old Osborne ended up with what appeared to be an MBR or boot-sector infection, and the Sound Blaster 16 installation disks I'd been using were also detected as infected. I originally assumed the disks had infected the PC, although without a known-clean copy from before they entered the Osborne, it's just as possible the machine infected the disks.
 
-![](/assets/images/2012/img_0333.jpg)
+![ViewSonic monitor showing Windows 95 Setup copying files at 10%, with the 'Easier to use' information panel.](/assets/images/2012/img_0333.jpg)
+
+*Windows 95 setup making its way through the file-copying stage after the boot-sector drama.*
+{: .media-caption }
 
 I only discovered the problem after using the disks in the Osborne and then bringing them back to another machine to reformat and re-image. So a big thanks to Avast under Windows XP for sounding the alarm, and to Caluser2000 over at the [Vintage Computer forums](https://forum.vcfed.org/index.php?threads/recommendations-on-antivirus-software-for-486-class-pcs.34252/#post419712) for pointing me towards a DOS-era cleanup tool.
 
-![](/assets/images/2012/img_0334.jpg)
+![Blue F-PROT Antivirus 3.16f scan screen with an alert reading 'Master Boot Sector Infection: ABCD.A' and a disinfect prompt.](/assets/images/2012/img_0334.jpg)
+
+*There it is! F-PROT finds ABCD.A in the master boot sector and offers to disinfect it.*
+{: .media-caption }
 
 F-PROT 3.16f saved the day. The scan report identified ABCD.A in the master boot sector. The archive I used was fprot_dos_316f.zip, with virus definitions dating into 2009. F-PROT 3.16f was the final DOS version and is perfectly at home on a 486.
 

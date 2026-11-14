@@ -17,11 +17,17 @@ There's some cosmetic damage to deal with as well. The little flap doesn't close
 
 I've been comparing my two Game Units and reckon one was manufactured roughly 10 to 20 weeks after the other. To keep everything straight, I've labelled the older one 01-01 and the newer one 01-02.
 
-![](/assets/images/2012/img_0344.jpg)
+![Underside of a blue Aiwa Game Unit shell, with two ventilation grilles, screw bosses and a black Japanese-language product label.](/assets/images/2012/img_0344.jpg)
+
+*The underside of one of the Aiwa Game Units. Another little set of details to compare between the pair.*
+{: .media-caption }
 
 One interesting difference is that two capacitors which are black on the 01-01 board are blue Rubycons on 01-02. My first thought was that somebody might have replaced them at some point, although there's nothing to say they weren't fitted like that at the factory. They could simply be ordinary production differences between the two boards. Have a look at the [photo gallery](/goodies/) or the video and be the judge.
 
-![](/assets/images/2012/img_0343.jpg)
+![Disassembled Aiwa Mega-CD Game Unit circuit board with numerous blue-topped electrolytic capacitors, Sega chips, a coin-cell battery and ribbon cable.](/assets/images/2012/img_0343.jpg)
+
+*The Game Unit board certainly isn't short of capacitors. I've got my recap list ready!*
+{: .media-caption }
 
 I've also put the complete capacitor list on the [file server](/goodies/), because there's certainly no shortage of them. While I've got the board apart, I'd like to replace the backup battery as well.
 

@@ -188,6 +188,8 @@ async function selectPad(button) {
 }
 
 const names = { 1: "DRUMS", 2: "FX", 3: "BASS", 4: "GOAT SOUL", 5: "MELODY" };
+// Compact visible labels on phones. Full names remain in each pad's accessible name.
+const shortNames = { 1: "DRM", 2: "FX", 3: "BASS", 4: "SOUL", 5: "MEL" };
 const styles = { 1: "drums", 2: "fx", 3: "bass", 4: "goatsoul", 5: "melody" };
 buttonMapping.forEach((sounds, columnIndex) => {
     const column = document.createElement("div");
@@ -200,6 +202,7 @@ buttonMapping.forEach((sounds, columnIndex) => {
         button.dataset.sample = String(key);
         const label = document.createElement("p");
         label.innerText = names[category];
+        label.dataset.short = shortNames[category];
         button.classList.add(styles[category], String(buttonIndex + 1));
         button.setAttribute("aria-label", names[category] + ", sample " + key);
         button.addEventListener("click", () => selectPad(button));

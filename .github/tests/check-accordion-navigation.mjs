@@ -18,6 +18,7 @@ const pages = [
   ['channels', 'mcretro-channels', 4],
   ['goodies', 'mcretro-goodies', 3],
   ['flicky-the-floury-baker-cicada', 'mcretro-flicky', 10],
+  ['tp-link-archer-vr1600v-v2-firmware-dump-attempt', 'mcretro-tplink', 4],
   ['take-back-the-darknet', 'mcretro-darknet', 14],
   ['odyssey-stealer-technical-analysis-of-a-macos-infostealer', null, 7],
 ];
@@ -77,4 +78,4 @@ frames.shift()();
 onClick({ target: new MockElement() });
 assert.equal(frames.length, 0);
 assert.equal(calls.length, 1);
-console.log('PASS: six published accordion pages, shared CSS, one script per page, deep links and click-to-scroll behaviour.');
+console.log('PASS: seven published accordion pages, shared CSS, one script per page, deep links and click-to-scroll behaviour.');

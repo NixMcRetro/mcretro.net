@@ -8,7 +8,10 @@ share_description: >-
   A bookmarked PAL Mega Drive 60 Hz colour-mod circuit finally finds a home in the archive. It was a plan for the CXA1145, not a mod I completed. 🎮
 ---
 
-![](/assets/images/2020/img_0678.jpg)
+![Small circuit assembled on perforated board, with a metal-can crystal, red wire, yellow coil and protruding component leads.](/assets/images/2020/img_0678.jpg)
+
+*Zipplet's example PAL colour-mod circuit on a bit of perforated board. Not one of my own completed modifications!*
+{: .media-caption }
 
 I've had this page bookmarked for something close to five years now. The site I referenced not only changed its links so much that I couldn't find the darned thing, but then went bust! I really need to be more proactive with linking to things before they disappear off the face of the earth.
 

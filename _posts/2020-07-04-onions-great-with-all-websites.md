@@ -8,11 +8,17 @@ share_description: >-
   Tor Browser's Onion-Location feature offers a handy shortcut from an HTTPS site to its .onion counterpart. Purple buttons, less address memorising! 🌐
 ---
 
-![](/assets/images/2020/img_0679.jpg)
+![Tor Browser showing the Channel Chirp homepage at its HTTPS address, with a purple '.onion available' button in the address bar.](/assets/images/2020/img_0679.jpg)
+
+*Channel Chirp in Tor Browser, with the handy purple .onion available prompt appearing beside the regular address.*
+{: .media-caption }
 
 See that little purple ".onion available" note? Thanks to the Tor Project's Onion-Location feature, an HTTPS clearnet site can advertise its .onion counterpart to Tor Browser. The ordinary site is already being accessed through Tor; clicking that purple pill takes you to its onion counterpart. Pretty neat work from the Tor Project!
 
-![](/assets/images/2020/img_0680.jpg)
+![Tor Browser displaying the Channel Chirp homepage after switching to a long .onion address, with the onion icon in the address bar.](/assets/images/2020/img_0680.jpg)
+
+*And there it is, Channel Chirp at its onion address. One click rather than having to remember all those characters!*
+{: .media-caption }
 
 And... onion activated! One click, or the appropriate preference, and Tor Browser can move you onto the onion counterpart instead. Pretty neat. No more remembering chirpys54 soda something as the address!
 

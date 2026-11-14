@@ -8,7 +8,10 @@ share_description: >-
   Two VSA-100 chips, 64 MB of split memory and glorious anti-aliasing. A little collection of Voodoo5 5500 AGP references for future retro PC adventures. 🎮
 ---
 
-![](/assets/images/2020/img_0677.jpg)
+![3dfx Voodoo5 5500 AGP graphics card on an antistatic bag, with two black cooling fans, a blue VGA connector and gold AGP contacts.](/assets/images/2020/img_0677.jpg)
+
+*The Voodoo5 5500 AGP and its twin fans. Two graphics processors on one board was certainly a statement!*
+{: .media-caption }
 
 While sorting through some old documents, I came across my old Voodoo5 card and some interesting [VOGONS](https://www.vogons.org/) threads. I figured they should be somewhere on here, even if I don't have a retro PC anymore!
 

@@ -14,7 +14,7 @@ The photographs and hands-on observations below come from [Schwarzschild Cafe / 
 
 ## Inside the PS/55 Type 5510
 
-![IBM PS/55 Type 5510-Z02 with its cover removed](/assets/images/2020/img_0667.jpg)
+![Overhead view of an open IBM PS/55 Type 5510, with its motherboard, ribbon cables, long power supply and two floppy drives.](/assets/images/2020/img_0667.jpg)
 
 *The PS/55 Type 5510-Z02 with the case removed. The long enclosure across the top is its power supply. This particular configuration has two floppy drives and no internal hard drive.*
 {: .media-caption }
@@ -41,22 +41,22 @@ This is a 12 MHz 80286-era system. Its functions are distributed across a consid
 
 The article describes chips dated to the latter part of 1990 and an IBM-branded onboard memory arrangement. Four 30-pin SIMM sockets provide additional memory expansion. They were empty when the author acquired the machine, but suitable modules from their collection were recognised when fitted.
 
-![Overview of the IBM PS/55 motherboard](/assets/images/2020/img_0668.jpg)
+![Close-up of the IBM PS/55 motherboard showing a long ISA riser connector, four populated SIMM sockets, yellow jumper wires and a coin-cell battery.](/assets/images/2020/img_0668.jpg)
 
 *An overview of the motherboard. The long connector near the centre accepts the ISA riser. A standard CR2032 battery handles CMOS retention, which is rather convenient for a machine of this vintage. The author also found a 3rd April 1991 date stamp inside the case.*
 {: .media-caption }
 
-![Intel 80286 CPU and 80287 coprocessor](/assets/images/2020/img_0669.jpg)
+![IBM PS/55 motherboard close-up with a purple-and-gold Intel 80287XL coprocessor, adjacent Intel 80286 chip and yellow jumper wires.](/assets/images/2020/img_0669.jpg)
 
 *The 12 MHz 80286 and the optional 80287 coprocessor. The coprocessor's ceramic package and gold lid are particularly striking. A hand-added jumper wire is visible nearby.*
 {: .media-caption }
 
-![Onboard memory and SIMM expansion sockets](/assets/images/2020/img_0670.jpg)
+![Four green IBM PS/55 SIMM memory modules above onboard IBM memory chips and a Western Digital WD76C10 controller.](/assets/images/2020/img_0670.jpg)
 
 *IBM-branded onboard RAM alongside the 30-pin SIMM sockets. The photograph also shows the WD76C10 system controller and Intel 8042 keyboard controller.*
 {: .media-caption }
 
-![Motherboard video and I/O components](/assets/images/2020/img_0671.jpg)
+![IBM PS/55 motherboard close-up showing Western Digital WD76C30 and WD90C10 chips, yellow jumper wires and a rainbow ribbon-cable connector.](/assets/images/2020/img_0671.jpg)
 
 *The WD76C30 handles serial/parallel I/O and clock-related duties. The WD90C10 VGA chip, video memory and DAC are also visible. That colourful ribbon cable will become important shortly.*
 {: .media-caption }
@@ -71,29 +71,29 @@ Does that mean the floppy drive itself is unusual? Apparently not. The actual dr
 
 The article also considers whether the extra pins might have been reserved for three-mode floppy-drive signals. That is a theory, not a confirmed explanation. Why IBM chose this arrangement remains an interesting little mystery. What sort of enthusiast *wouldn't* want to know?
 
-![Hand-added jumper wires near the system controller](/assets/images/2020/img_0672.jpg)
+![Close-up of yellow hand-added wires soldered near the WD76C10 system controller and CR2032 battery on an IBM PS/55 board.](/assets/images/2020/img_0672.jpg)
 
 *Detail of the wiring around the system controller. The handwork is unusually prominent for something that otherwise looks like a neatly engineered production motherboard.*
 {: .media-caption }
 
-![Three-slot ISA riser card](/assets/images/2020/img_0673.jpg)
+![Green IBM PS/55 ISA riser card photographed separately, showing three long black expansion slots and a gold edge connector.](/assets/images/2020/img_0673.jpg)
 
 *The ISA riser has three expansion slots, reinforcing the machine's PC/AT-compatible design.*
 {: .media-caption }
 
-![ISA riser installed in the PS/55](/assets/images/2020/img_0674.jpg)
+![Three-slot ISA riser installed upright in the IBM PS/55, above its populated SIMM memory sockets and motherboard chips.](/assets/images/2020/img_0674.jpg)
 
 *With the riser fitted, the system can accommodate three full-length ISA expansion boards.*
 {: .media-caption }
 
-![Unusual IBM PS/55 floppy disk ribbon cable](/assets/images/2020/ps_55_18.jpg)
+![Close-up of a grey 40-position floppy-drive connector with a narrower bundle of multicoloured ribbon conductors leaving unused contacts at one end.](/assets/images/2020/ps_55_18.jpg)
 
 *The unusually wide motherboard-side floppy header, compared with the 34 conductors actually used by the drive cable. The six extra positions are visible at one end.*
 {: .media-caption }
 
 ## A familiar Western Digital design
 
-![WD76C20 reference block diagram](/assets/images/2020/img_0675.jpg)
+![Monochrome Western Digital system block diagram showing an 80286 processor, WD76C10 controller, WD76C20 floppy interface and WD90C10 VGA chip.](/assets/images/2020/img_0675.jpg)
 
 *The original author found a WD76C20 floppy-controller block diagram whose overall arrangement resembled the PS/55 motherboard. The video DAC was one noted difference. This is a design comparison, not proof that every circuit follows the reference exactly.*
 {: .media-caption }
@@ -102,7 +102,7 @@ With the system controller, floppy controller, serial and parallel functions, an
 
 ## How does it compare with an IBM PC/AT?
 
-![IBM Personal Computer AT Type 5170 motherboard for comparison](/assets/images/2020/img_0676.jpg)
+![Overhead photograph of an IBM PC/AT Type 5170 motherboard with rows of black chips and multiple long ISA expansion slots.](/assets/images/2020/img_0676.jpg)
 
 *An IBM PC/AT Type 5170 motherboard, included in the Japanese article as a comparison. The older design has a very different layout and lacks the PS/55's integrated VGA and serial/parallel functions.*
 {: .media-caption }

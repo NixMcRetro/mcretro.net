@@ -8,7 +8,10 @@ share_description: >-
   PSIO's MULTIDISC.LST needs proper CRLF line endings or every disc looks like one entry. A Windows VM on my M1 Mac finally sorts it out. 💾
 ---
 
-![](/assets/images/2020/img_0685.jpg)
+![Text-editor screenshot of a two-disc Oddworld: Abe's Exoddus PSIO list, with CRLF after line one but only CR after line two.](/assets/images/2020/img_0685.jpg)
+
+*The PSIO MULTIDISC.LST example. Spot the little line-ending trap: CRLF on the first line and only CR on the second!*
+{: .media-caption }
 
 Carriage returns (CR) and line feeds (LF). CRLF! Get those line endings wrong and PSIO will get angry at you by reading all the discs as one line - a recipe for disaster on my Mac. MULTIDISC.LST needed plain text with CRLF between disc entries in the setup I was using; Windows just gave me an easy way to save it that way. One catch with the screenshot above: the first line ends in CRLF, but the second shows only CR. Use CRLF between entries rather than copying that mismatch!
 

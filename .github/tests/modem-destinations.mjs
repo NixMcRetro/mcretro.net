@@ -269,7 +269,7 @@ test('Goodies and Explorer preserve approved dial destinations', () => {
   const goodies = readFileSync(new URL('../../goodies.md', import.meta.url), 'utf8');
   const modem = readFileSync(new URL('../../homepages/modem/index.html', import.meta.url), 'utf8');
   const connection = readFileSync(new URL('../../_includes/modem-connection.html', import.meta.url), 'utf8');
-  assert.match(goodies, /\\[Dial-Up Networking\\]\\(\\/homepages\\/modem\\/\\)/);
+  assert.ok(goodies.includes('[Dial-Up Networking](/homepages/modem/)'));
   assert.match(modem, /data-modem-new/);
   assert.match(modem, /data-modem-target="blog-random"/);
   assert.match(modem, /data-modem-target="random"/);

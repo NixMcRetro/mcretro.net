@@ -7,9 +7,11 @@ import { resolve, join } from 'node:path';
 const site = resolve(process.argv[2] || '_site');
 const landing = readFileSync(join(site, 'archive', 'index.html'), 'utf8');
 assert.match(landing, /<h1 class="post-title">Archives<\/h1>/);
-const archiveDisclosures = [...landing.matchAll(/<details class="archive-index-year about-panel panel--teal" name="mcretro-archive-years"([^>]*)>/g)];
+const archiveDisclosures = [...landing.matchAll(/<details id="year-(\d{4})" class="archive-index-year about-panel panel--teal" name="mcretro-archive-years"([^>]*)>/g)];
 assert.ok(archiveDisclosures.length >= 3, 'Historical year accordions missing');
-assert.ok(archiveDisclosures.every(([, attrs]) => !/\bopen(?:\s|=|$)/.test(attrs)),
+assert.equal(new Set(archiveDisclosures.map(([, year]) => year)).size, archiveDisclosures.length,
+  'Every archive year must have its own unique deep-link target');
+assert.ok(archiveDisclosures.every(([, , attrs]) => !/\bopen(?:\s|=|$)/.test(attrs)),
   'Every archive year must begin collapsed');
 
 const home = readFileSync(join(site, 'index.html'), 'utf8');

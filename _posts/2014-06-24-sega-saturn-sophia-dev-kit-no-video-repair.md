@@ -26,11 +26,17 @@ My first soldering approach wasn't particularly elegant either, so out came the 
 
 ### Before
 
-![](/assets/images/2014/img_0436.jpg)
+![Before-repair view of a Sega Saturn Sophia circuit board with several silver surface-mount electrolytic capacitors near IC44 and a Yamaha chip.](/assets/images/2014/img_0436.jpg)
+
+*Before replacing the suspect capacitors on the European Sophia. Those little cans are tucked away beneath the other boards.*
+{: .media-caption }
 
 ### After
 
-![](/assets/images/2014/img_0437.jpg)
+![After-repair close-up of a Sega Saturn Sophia board with replacement electrolytic capacitors soldered in around C69, C70 and nearby components.](/assets/images/2014/img_0437.jpg)
+
+*After the recap, with the replacement capacitors standing a little taller. The video eventually came back, though the region switches added their own mystery!*
+{: .media-caption }
 
 And would you believe it, we have video!
 

@@ -8,7 +8,10 @@ share_description: >-
   An Aiwa Mega-CD CSD-GM1 capacitor spreadsheet records values from two mainboard revisions. Handy for repairs, but not a definitive factory parts list. 🔧
 ---
 
-![](/assets/images/2014/img_0440.jpg)
+![Two partially dismantled blue Aiwa stereo units and their removed circuit boards, plastic housings and Mega-CD game hardware spread across a turquoise worktable.](/assets/images/2014/img_0440.jpg)
+
+*Not a spreadsheet, but a table full of Aiwa Mega-CD parts! Recording capacitor values seemed wise before I forgot where half of them went.*
+{: .media-caption }
 
 I've been replacing capacitors in my Aiwa Mega-CD CSD-GM1, and naturally there are quite a few of the little guys scattered throughout the machine. Rather than keep going back to the circuit boards every time I need to work out which capacitor goes where, I've been keeping a record of the values as I remove and replace them. Hopefully this will save a bit of work the next time I decide to pull one of these things apart!
 

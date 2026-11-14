@@ -8,7 +8,10 @@ share_description: >-
   The SNES S-MIX audio chip has a hole in it. An LM324 substitution doesn't work, but bypassing the mixer produces some sound. Not a full repair. 🎵
 ---
 
-![](/assets/images/2013/img_0411.jpg)
+![SNES SNSP-CPU-1CHIP-02 motherboard close-up showing the small S-MIX chip at U10 near the S-APU, with capacitors and soldered connections around it.](/assets/images/2013/img_0411.jpg)
+
+*Here's the unfortunate S-MIX area at U10. The chip damage meant an audio workaround, not a simple drop-in LM324 replacement.*
+{: .media-caption }
 
 As you can see, there's a hole blown straight through the S-MIX chip at U10. That's probably not what you want to find on a Super Nintendo with no sound! I'm going to have a closer look at the circuitry and see whether there's a way to get this board making some noise again.
 

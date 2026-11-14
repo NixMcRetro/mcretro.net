@@ -14,7 +14,10 @@ Here we are with the Aiwa Game Unit again, and this time we're actually getting 
 
 I'd already started tracing the original copper connections, and the next step was to replace the damaged sections with short pieces of wire. Unfortunately, I made some of those wires a little longer than they really needed to be. In hindsight I could have shortened them by about a centimetre and a half, but at least they reached their destinations!
 
-![](/assets/images/2013/img_0413.jpg)
+![Annotated Aiwa Sega Mega-CD circuit board showing empty BIOS chip footprints, fine copper traces and red boxes and lines marking repair connections.](/assets/images/2013/img_0413.jpg)
+
+*Those little red boxes mark the traces I was tracking around the Aiwa BIOS position. Plenty of fiddly work in that corner of the board!*
+{: .media-caption }
 
 One particularly fiddly connection ran from a BIOS socket pin to a tiny via beside it. That via carries the signal through to the other side of the board, so I needed to get a good connection from both directions. Naturally, the camera decided there was absolutely no need to focus on anything that small. Thanks, camera!
 
@@ -24,7 +27,10 @@ Once the work was finished, I went through the repaired traces with the multimet
 
 Which is good, because it's the middle of winter and you wouldn't want to be wearing shorts anyway! At least something about this repair was going to plan.
 
-![](/assets/images/2013/img_0412.jpg)
+![Close-up of Aiwa Mega-CD Game Unit board with a long black BIOS socket, thin red jumper wires and grey ribbon cable beside socketed chips.](/assets/images/2013/img_0412.jpg)
+
+*The BIOS socket and those rather enthusiastic red jumper wires. Not the prettiest repair, but the connections were finally coming together.*
+{: .media-caption }
 
 The next challenge is getting the rest of the Aiwa ready for testing. The boombox section still needs its own capacitor work, and I'll need a suitable EPROM or EEPROM for the new BIOS socket. There are still some decisions to make about the chip, particularly its pin compatibility, before I can go much further.
 

@@ -614,13 +614,9 @@
 .archive-month > .post-title {
   margin-bottom: 1.4rem;
 }
-/* The count belongs to the month heading, not a separate metadata line.
-   Keep it together on narrow screens while letting the heading wrap. */
+/* The count inherits the month heading's exact typography and colour.
+   Keep "- N articles" together when the heading wraps on smaller screens. */
 .archive-month-count {
-  color: var(--muted);
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
-  font-size: 0.55em;
-  font-weight: 500;
   white-space: nowrap;
 }
 .archive-blog-list .post-entry {

@@ -114,7 +114,7 @@ test('sidebar action links and monthly archive counts follow the active theme', 
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*color:\s*var\(--link\);/);
   assert.match(style, /\.sidebar-action-link:hover,\s*\.sidebar-action-link:focus-visible\s*\{[^}]*color:\s*var\(--link-hover\);/);
   assert.match(style, /\.sidebar-action-link:focus-visible\s*\{[^}]*outline:\s*2px solid var\(--focus\)/);
-  assert.match(overrides, /\.archive-month-count\s*\{[^}]*color: var\(--muted\)/);
+  assert.match(overrides, /\.archive-month-count\s*\{\s*white-space: nowrap;\s*\}/);
   assert.match(overrides, /\.mcretro-modem-titlebar[\s\S]*background: #000080/);
 });
 
@@ -325,5 +325,5 @@ test('monthly archive count is attached to the heading, with pluralisation', () 
   assert.match(archive, /<h1 class="post-title">[\s\S]*<span class="archive-month-count">- \{% if month_count == 1 %\}1 article\{% else %\}\{\{ month_count \}\} articles\{% endif %\}<\/span><\/h1>/);
   assert.doesNotMatch(archive, /class="archive-month-summary"/);
   assert.match(overrides, /\.archive-month > \.post-title\s*\{[^}]*margin-bottom: 1\.4rem;/);
-  assert.match(overrides, /\.archive-month-count\s*\{[^}]*font-family: Montserrat,[^}]*white-space: nowrap;/);
+  assert.match(overrides, /\.archive-month-count\s*\{\s*white-space: nowrap;\s*\}/, 'count must inherit font size, family, weight, and colour');
 });

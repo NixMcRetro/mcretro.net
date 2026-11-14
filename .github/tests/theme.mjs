@@ -129,7 +129,7 @@ test('sidebar Search and archive calendar use matching blue palettes in both the
     assert.ok(dark.includes(token), token);
   }
   assert.match(style, /\.sidebar \.inline-search-form button\s*\{[^}]*background:\s*var\(--sidebar-button-bg\);/);
-  assert.match(style, /\.sidebar \.inline-search-form button:hover\s*\{[^}]*background:\s*var\(--sidebar-button-hover\);/);
+  assert.match(style, /\.sidebar \.inline-search-form button:hover,\s*\.sidebar \.inline-search-form button:focus-visible\s*\{[^}]*background:\s*var\(--interactive-hover\);[^}]*color:\s*var\(--archive-filled-text\);/);
   assert.match(overrides, /\.sidebar a\.archive-calendar-month\.has-posts \{[^}]*background: var\(--archive-filled\);/);
   assert.match(overrides, /\.sidebar a\.archive-calendar-month\.has-posts:hover \{[^}]*background: var\(--archive-filled-hover\);/);
   assert.match(style, /--link:\s*#0009B5;/);
@@ -219,7 +219,8 @@ test('Recent Posts has four entries and paired More articles / Dial-up buttons',
   assert.equal((sidebar.match(/class="sidebar-action-link__label"/g) || []).length, 3);
   assert.doesNotMatch(sidebar, /class="widget dial-homepage"/);
   assert.match(sidebar, /<dialog id="mcretro-modem-dialog"/);
-  assert.match(overrides, /\.recent-posts-actions\s*\{[^}]*display: flex;[^}]*flex-wrap: wrap;/);
+  assert.match(overrides, /\.recent-posts-actions\s*\{[^}]*display: flex;[^}]*flex-wrap: wrap;[^}]*justify-content: center;/);
+  assert.match(overrides, /\.sidebar \.archive-all-link\s*\{[^}]*display: flex;[^}]*width: fit-content;[^}]*margin-inline: auto;/);
   assert.match(overrides, /\.recent-posts-actions \.sidebar-action-link\s*\{ margin-top: 0; \}/);
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*font-weight:\s*700;/);
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*border-radius:\s*0;/);
@@ -344,7 +345,8 @@ test('monthly Archives use a matching heading/subheading, breadcrumb and article
   assert.match(index, /permalink: \/archive\//);
   assert.match(index, /<details class="archive-index-year about-panel panel--teal" name="mcretro-archive-years"/);
   assert.match(index, /<summary><span class="about-panel-icon" aria-hidden="true">📅<\/span>/u);
-  assert.match(index, /open\{% endif %\}>/);
+  assert.doesNotMatch(index, /open\{% endif %\}>/, 'all archive years must begin collapsed');
+  assert.match(index, /name="mcretro-archive-years">/, 'keep single-open accordion semantics');
   assert.doesNotMatch(overrides, /\.archive-index-year > summary:hover/, 'Archives use the shared accordion hover palette');
   assert.match(index, /data-archive-month="\{\{ year\.name \}\}-\{\{ month_key \}\}"/);
   assert.match(sidebar, /class="archive-all-link sidebar-action-link" href="\/archive\/"/);

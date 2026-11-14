@@ -705,11 +705,19 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   margin-bottom: 0;
 }
 
-/* The two Recent Posts actions share one row and wrap on narrow sidebars. */
+/* Centre all sidebar action buttons without resizing them.
+   The Recent Posts pair remains on a row when space allows and wraps if needed. */
+.sidebar .archive-all-link {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+}
 .recent-posts-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
   margin-top: 1rem;
 }

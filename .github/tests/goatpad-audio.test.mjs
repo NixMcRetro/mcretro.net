@@ -271,6 +271,9 @@ test('reference frame uses one decorative cable, white rails, and left/right foo
   assert.equal((markup.match(/class="cable-shadow"/g) || []).length, 1);
   assert.equal((markup.match(/class="cable-highlight"/g) || []).length, 1);
   assert.match(markup, /preserveAspectRatio="none"/);
+  assert.match(markup, /viewBox="0 0 220 1000"/);
+  assert.match(markup, /M140 1030 C200 935 55 840 130 750 C210 655 55 555 133 450/);
+  assert.match(styles, /\.goatpad-cable\s*\{[^}]*width:\s*220px;/);
   assert.match(styles, /height: calc\(100dvh \+ 160px\)/);
   assert.match(styles, /bottom: calc\(100% - 24px\)/);
   assert.match(markup, /class="brand-emblem"/);
@@ -366,19 +369,30 @@ test('Auto Goat mixes with one pad per lane, no more than six lanes, and foregro
   assert.equal(app.autoGoat['aria-pressed'], 'false');
 });
 
-test('goat visits all eight rows before repeating, including top and bottom pads', async () => {
+test('Auto Goat visits all eight columns, including both edges, without overfilling', async () => {
   const app = fixture();
   await app.start();
-  const landings = [];
-  for (let i = 0; i < 100 && landings.length < 8; i++) {
+  const landedColumns = [];
+  let sawSixLanes = false;
+  for (let stage = 0; stage < 150 && new Set(landedColumns).size < 8; stage++) {
     await app.goatStep();
     const contacted = app.pads.find(pad => pad.classList.contains('goat-hit'));
-    if (contacted) landings.push(Number(contacted.dataset.sample) % 10);
+    if (contacted) {
+      landedColumns.push(Math.floor(Number(contacted.dataset.sample) / 10));
+    }
+    const active = app.pads.filter(pad => pad.classList.contains('active'));
+    if (active.length === 6) sawSixLanes = true;
+    assert.ok(active.length <= 6, 'Auto Goat must physically free a lane before adding another');
+    assert.equal(new Set(active.map(pad => Math.floor(Number(pad.dataset.sample) / 10))).size,
+      active.length, 'At most one sound per column');
   }
-  assert.equal(landings.length, 8, 'Goat must make eight visible landings');
-  assert.equal(new Set(landings).size, 8, 'Each of the eight rows should get a visit before reshuffling');
-  assert.ok(landings.includes(1), 'Row 1 is included');
-  assert.ok(landings.includes(8), 'Row 8 is included');
+  assert.equal(new Set(landedColumns).size, 8,
+    'Every column must receive a physical visit before any is permanently neglected');
+  assert.ok(landedColumns.includes(1), 'The leftmost column must be visited');
+  assert.ok(landedColumns.includes(8), 'The rightmost column must be visited');
+  assert.ok(sawSixLanes, 'The goat must exercise its six-lane cap');
+  assert.ok(landedColumns.length <= 10,
+    'An eight-column cycle may include two physical release stomps, but not indefinite detours');
   app.toggleGoat();
 });
 

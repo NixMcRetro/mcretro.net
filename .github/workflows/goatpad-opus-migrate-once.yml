@@ -1,0 +1,74 @@
+name: One-time GOATPAD Opus source migration
+
+# Runs only on the review branch when this temporary workflow is added.
+# All publishing remains controlled by PR #220; this job cannot touch main.
+on:
+  push:
+    branches:
+      - feature/goatpad-opus-only-20261114
+    paths:
+      - '.github/workflows/goatpad-opus-migrate-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  encode-and-commit:
+    if: github.ref == 'refs/heads/feature/goatpad-opus-only-20261114'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the review branch
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: true
+
+      - name: Verify Opus encoding tools
+        run: command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+
+      - name: Encode 56 unique recordings as Opus and remove the 64 archived Ogg files
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import subprocess
+          from pathlib import Path
+
+          path = Path("homepages/goatpad/audio")
+          aliases = {28:16,23:18,36:21,32:22,37:25,88:38,64:46,62:47}
+          expected = {r*10+c for r in range(1,9) for c in range(1,9)}
+          originals = {int(f.stem) for f in path.glob("*.ogg")}
+          assert originals == expected, (len(originals), sorted(expected-originals))
+          for alias, canonical in aliases.items():
+              source = (path / f"{alias}.ogg").read_bytes()
+              target = (path / f"{canonical}.ogg").read_bytes()
+              assert hashlib.sha256(source).digest() == hashlib.sha256(target).digest(), (alias,canonical)
+
+          total = 0
+          for key in sorted(expected-set(aliases)):
+              source = path / f"{key}.ogg"
+              output = path / f"{key}.opus"
+              command = ["ffmpeg","-nostdin","-hide_banner","-loglevel","error","-y",
+                         "-i",str(source),"-map","0:a:0","-c:a","libopus",
+                         "-b:a","24k","-vbr","on","-compression_level","8",
+                         "-application","audio","-f","opus",str(output)]
+              subprocess.run(command, check=True)
+              data = output.read_bytes()
+              assert data.startswith(b"OggS") and b"OpusHead" in data[:128], key
+              total += len(data)
+          assert len(list(path.glob("*.opus"))) == 56
+          for source in path.glob("*.ogg"):
+              source.unlink()
+          assert len(list(path.glob("*.ogg"))) == 0
+          print(f"GOATPAD source migrated: 56 Opus files, {total:,} bytes; 64 legacy Ogg files removed.")
+          PY
+
+      - name: Commit Opus files and remove legacy recordings from the current branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A homepages/goatpad/audio
+          git diff --cached --stat
+          git commit -m "Store only 24 kbps Opus samples in current GOATPAD sources"
+          git push origin HEAD:feature/goatpad-opus-only-20261114

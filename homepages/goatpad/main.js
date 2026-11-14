@@ -258,8 +258,10 @@ function moveGoat(x, y, scale, rotation = 0, flip = false, duration = 0) {
 
 function pickGoatTarget() {
     const columns = Array.from(soundboard.children);
+    // querySelectorAll returns a NodeList in real browsers, not an Array.
+    // Convert it before using Array methods (the test DOM used to hide this).
     const activeColumns = columns.filter(column =>
-        column.querySelectorAll("button").some(button => button.classList.contains("active")));
+        Array.from(column.querySelectorAll("button")).some(button => button.classList.contains("active")));
     // Once six lanes are playing, change or remove one of those instead of piling on.
     const choices = activeColumns.length >= 6 ? activeColumns : columns;
     let index = Math.floor(Math.random() * choices.length);
@@ -407,6 +409,5 @@ function toggleAutoGoat() {
 }
 
 goatButton.addEventListener("click", toggleAutoGoat);
-document.addEventListener("visibilitychange", () => {
-    if (document.hidden && goatRunning) stopAutoGoat();
-});
+// Keep Auto Goat enabled across tab switches. Browsers may throttle timers
+// while the tab is hidden, but the pending hop survives and continues on return.

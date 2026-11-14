@@ -12,7 +12,10 @@ share_description: >-
 
 I knew I'd eventually get around to setting up some sort of gaming live stream!
 
-![](/assets/images/2020/img_0651.jpg)
+![OBS Studio 24.0.6 on macOS showing a retro game in its preview, streaming controls, audio meters and a dropped-frames count of 521 (15.3%).](/assets/images/2020/img_0651.jpg)
+
+*OBS on the Mac, with a retro game on screen and 521 dropped frames showing in the status bar. Those streaming experiments were certainly educational!*
+{: .media-caption }
 
 Too bad OBS on my Mac doesn't run terribly well and tends to crash when in the background. Yet when booted to Windows 10, it's perfect! As a result I'm on the hunt for a small form factor streaming PC. I figured I just needed a bunch of CPU cores to handle processing. That's useful for software encoding, but a supported hardware encoder can take much of that load off the CPU.
 

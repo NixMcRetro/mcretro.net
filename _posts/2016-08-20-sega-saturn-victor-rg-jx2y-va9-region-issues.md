@@ -8,7 +8,10 @@ share_description: >-
   A Victor RG-JX2(Y) VA9 Sega Saturn rejects every game and cartridge until its Japanese region jumpers are restored. Strange problem, satisfying fix! 🎮
 ---
 
-![IMG_0808 2](/assets/images/2016/img_0540.jpg)
+![Opened Sega Saturn console on a desk, with an Action Replay cartridge installed and a television displaying Japanese date and time settings.](/assets/images/2016/img_0540.jpg)
+
+*The Victor Saturn asking for its date and language settings again. Something about that region configuration was not behaving properly!*
+{: .media-caption }
 
 How did I get to this point? Error after error: "Cartridge unsuitable for this system" and "Game disk unsuitable for this system". Stop whining already, Segata! The console was also asking for its language every time it powered on rather than behaving like a normal Japanese unit.
 
@@ -18,9 +21,15 @@ That combination was one of the clues that the console's region configuration ha
 
 Saturn region selection is controlled by a group of motherboard jumpers. Different high / low combinations identify the console's region. With help from Nopileus on [ASSEMblergames.com](https://web.archive.org/web/20191113141823/https://assemblergames.com/threads/sega-saturn-victor-va9-modchip-mess.62691/), I restored the Japanese jumper configuration on this particular VA9 by bridging JP6 and JP11 with bare Kynar wire... so just... wire. The photographs show what I did on this board.
 
-![before](/assets/images/2016/img_0542.jpg)
+![Macro photograph of a Sega Saturn motherboard region jumper area with pads labelled JP6 through JP13 and nearby resistor positions.](/assets/images/2016/img_0542.jpg)
 
-![after](/assets/images/2016/img_0541.jpg)
+*The region jumpers on the Saturn VA9 motherboard before the fix, with the JP6 and JP11 areas visible.*
+{: .media-caption }
+
+![Same Sega Saturn jumper-pad photograph with red lines drawn across two solder-bridge positions to indicate the restored region configuration.](/assets/images/2016/img_0541.jpg)
+
+*The same jumper area with two red lines marking the bridges used to restore this particular console's Japanese region configuration.*
+{: .media-caption }
 
 Once that was restored, the console returned to Japanese behaviour and the cartridge / game-region errors disappeared. Perfect! This is the repair record for **this particular VA9 board**, not an instruction to bridge those same points blindly on every Saturn revision.
 

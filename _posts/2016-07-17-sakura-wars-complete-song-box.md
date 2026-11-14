@@ -8,11 +8,17 @@ share_description: >-
   Eight discs of Sakura Wars songs were wonderful enough, then I discovered another eight-disc collection. Sixteen discs, and I've never played the games! 🎵
 ---
 
-![Sakura 2006](/assets/images/2016/img_0494.jpg)
+![Illustrated Sakura Wars 2002-2006 song-collection cover with several anime characters and Japanese title lettering.](/assets/images/2016/img_0494.jpg)
+
+*The Sakura Wars 2002-2006 collection. Eight lovely discs, and I thought that was the complete story!*
+{: .media-caption }
 
 The box above is the **Sakura Wars 2002-2006 song collection**, released in December 2006, with eight discs of amazing music. But what's this next image?
 
-![Sakura 2002](/assets/images/2016/img_0493.jpg)
+![Pink illustrated Sakura Wars Complete Song Box cover, with a central character in a kimono, other characters and Japanese title lettering.](/assets/images/2016/img_0493.jpg)
+
+*And then I discovered the earlier Sakura Wars Complete Song Box. Another eight discs! How had I missed this?*
+{: .media-caption }
 
 You can imagine my delight when I discovered I'd only been listening to the second eight-disc collection. There was another eight-disc **Sakura Wars Complete Song Box**, released in December 2002, covering the earlier material. So yes: **sixteen discs.** Absolutely amazing music to listen to.
 

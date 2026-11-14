@@ -8,23 +8,38 @@ share_description: >-
   December 2016 brings another recorded weight milestone and a stack of graphs. The big question now is maintaining it, preferably with cake. 🎂
 ---
 
-![](/assets/images/2016/img_0599.jpg)
+![Withings all-time weight graph ending at 65.0 kg and BMI 20.1 on 28th December 2016, after a steep decline during that year.](/assets/images/2016/img_0599.jpg)
+
+*The all-time graph reaches 65.0 kg on 28th December 2016. The history is certainly dramatic!*
+{: .media-caption }
 
 Incredible, isn't it? 50 kg down. That's 43% of my initial mass melted away.
 
-![](/assets/images/2016/img_0596.jpg)
+![Withings estimated fat-mass percentage chart declining across 2016 to 11.6% on 28th December.](/assets/images/2016/img_0596.jpg)
+
+*The scale's estimated fat-mass percentage, recorded at 11.6% in late December 2016.*
+{: .media-caption }
 
 Fat mass is down, down, down!
 
-![](/assets/images/2016/img_0597.jpg)
+![Withings estimated lean-mass percentage chart rising through 2016 to 88.4% on 28th December.](/assets/images/2016/img_0597.jpg)
+
+*Estimated lean-mass percentage climbed to 88.4%. That's a proportion, not proof of tissue gained.*
+{: .media-caption }
 
 Which means that my estimated lean-mass percentage is up, up, up!
 
-![](/assets/images/2016/img_0598.jpg)
+![Withings estimated muscle-mass percentage chart gradually rising to 83.9% on 28th December 2016.](/assets/images/2016/img_0598.jpg)
+
+*The scale's estimated muscle-mass percentage reached 83.9%. More numbers for the 2016 archive.*
+{: .media-caption }
 
 Lean mass is a combination of muscle mass (as above) and...
 
-![](/assets/images/2016/img_0595.jpg)
+![Withings estimated bone-mass percentage chart showing a gradual increase to 4.4% on 28th December 2016.](/assets/images/2016/img_0595.jpg)
+
+*And finally, the bone-mass estimate at 4.4%. Another scale-generated figure to take with a pinch of salt.*
+{: .media-caption }
 
 Bone mass!
 

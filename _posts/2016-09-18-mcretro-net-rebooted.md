@@ -8,7 +8,10 @@ share_description: >-
   McRetro.net returns to Markdown and Jekyll with 566 imported posts. Surely this platform will last forever! Spoiler: WordPress returns a month later. 🌐
 ---
 
-![jekyll-logo](/assets/images/2016/img_0561.jpg)
+![Stylised black Jekyll wordmark on white with a glass laboratory test tube containing red liquid in place of the final letter.](/assets/images/2016/img_0561.jpg)
+
+*McRetro.net's 2016 Jekyll era began with a giant pile of imported Markdown. All 566 posts made it across, somehow!*
+{: .media-caption }
 
 [GitHub](https://github.com), [Markdown](https://daringfireball.net/projects/markdown/) and a splash of [Jekyll](https://jekyllrb.com/docs/). Let's see how this goes! I've decided to give McRetro.net another reboot, which means finding out whether I can get everything working the way I want it.
 

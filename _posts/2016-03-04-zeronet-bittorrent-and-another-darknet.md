@@ -8,7 +8,10 @@ share_description: >-
   After getting a Tor onion mirror working, I explore ZeroNet, Namecoin and .bit domains on a Raspberry Pi. More decentralised experiments, more headaches. 🌐
 ---
 
-![Namecoin Logo](/assets/images/2016/img_0460.jpg)
+![Namecoin logo with a white stylised N inside a blue circle beside the grey lowercase namecoin wordmark.](/assets/images/2016/img_0460.jpg)
+
+*Namecoin and .bit domains were my next decentralised rabbit hole after Tor. Apparently one darknet wasn't enough!*
+{: .media-caption }
 
 Just a few days ago I managed to get WordPress playing nicely with the Tor onion mirror of this website, then hosted at **mcretro35qepy5cy.onion**. Magnificent! That got me wondering what other decentralised networks I could experiment with. First up: **Namecoin** and `.bit` names.
 

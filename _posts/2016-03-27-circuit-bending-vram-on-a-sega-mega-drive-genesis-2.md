@@ -8,7 +8,10 @@ share_description: >-
   Mega Drive 2 VRAM circuit bending can make spectacular glitches, but pins 11, 20, 30 and 40 are power or ground on this chip. Not targets! ⚠️
 ---
 
-![VRAM pinout for circuit bending](/assets/images/2016/img_0470.jpg)
+![Pinout diagram of a 40-pin SOJ video RAM chip, with VCC pins 11 and 20 and VSS pins 30 and 40 outlined in red.](/assets/images/2016/img_0470.jpg)
+
+*The 40-pin VRAM pinout, with the power and ground pins highlighted. Definitely not the legs to poke at for amusing glitches!*
+{: .media-caption }
 
 After actually reading the RAM datasheet properly, I realised that disturbing the power pins might explain some of my earlier random resets. On the 40-pin SOJ pinout shown here, VCC is on pins 11 and 20, and VSS on pins 30 and 40. Those are not pins I want to be casually shorting or disturbing during circuit-bending experiments.
 

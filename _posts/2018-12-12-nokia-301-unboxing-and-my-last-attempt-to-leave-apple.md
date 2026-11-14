@@ -9,7 +9,10 @@ share_description: >-
 
 {% include youtube.html id="-2RVtFwLWLo" %}
 
-![Nokia 301 Blue](/assets/images/2016/img_0538.jpg)
+![Front and rear product views of a blue Nokia 301 mobile phone showing its colour display, physical keypad, rear camera and speaker grille.](/assets/images/2016/img_0538.jpg)
+
+*The blue Nokia 301, complete with a proper keypad. I was hoping its glorious standby time would help me escape smartphones, but the keys didn't win me over.*
+{: .media-caption }
 
 Remember when I decided I'd had enough of smartphones? I wrote about that little experiment in [Death to Smartphones!](/death-to-smartphones/), when the Nokia 301 seemed like a rather appealing alternative to constantly charging an iPhone. Nokia advertised up to 39 days of standby time, which sounded absolutely wonderful. More than a month! What could possibly go wrong?
 

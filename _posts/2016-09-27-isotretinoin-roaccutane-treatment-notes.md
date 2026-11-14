@@ -8,7 +8,10 @@ share_description: >-
   Preparing for isotretinoin in 2016 means reading about side effects and getting lost in fish-oil spreadsheets. Personal research, not medical instructions. 🧪
 ---
 
-![isotretinoin-molecule](/assets/images/2016/img_0564.jpg)
+![Three-dimensional ball-and-stick model of the isotretinoin molecule on a black background, with grey, white and red atoms.](/assets/images/2016/img_0564.jpg)
+
+*A molecular model of isotretinoin, the medicine I was researching before starting treatment.*
+{: .media-caption }
 
 I'm preparing to start isotretinoin, better known as Roaccutane, and naturally I've been looking into the various side effects. Wouldn't it be nice if I could avoid at least some of them? Time to get the spreadsheets out and see what I can find!
 

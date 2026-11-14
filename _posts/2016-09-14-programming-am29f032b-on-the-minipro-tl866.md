@@ -8,7 +8,10 @@ share_description: >-
   A community workaround may let the MiniPro TL866 program AM29F032B chips by selecting a Fujitsu device and skipping ID checks. Not tested by me yet. 💾
 ---
 
-![type-ii](/assets/images/2016/img_0560.jpg)
+![Two-sided green TSOP adapter printed circuit board marked buyICnow.com on a red surface, with through-holes and a central IC footprint.](/assets/images/2016/img_0560.jpg)
+
+*A two-sided TSOP adapter board like the ones used in my flash-chip adventures. More tiny pins to deal with!*
+{: .media-caption }
 
 I've found an interesting little workaround on the NESdev forums for programming AM29F032B chips with the MiniPro TL866. The MiniPro software doesn't officially list the AM29F032B, but apparently there's a way around that!
 

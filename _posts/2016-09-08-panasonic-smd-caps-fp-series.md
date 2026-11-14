@@ -8,7 +8,10 @@ share_description: >-
   Panasonic FP SMD capacitors use letter codes for voltage ratings. A handy reference, but always check the actual series datasheet before soldering. 🔧
 ---
 
-![fp_series_caps](/assets/images/2016/img_0553.jpg)
+![Panasonic capacitor marking diagram using TG-series examples to show polarity, capacitance, voltage code and a code-to-voltage table.](/assets/images/2016/img_0553.jpg)
+
+*This marking guide actually illustrates TG-series capacitors. Useful for understanding Panasonic's voltage codes, but the FP series still needs its own datasheet.*
+{: .media-caption }
 
 Just a little reminder for myself the next time I'm trying to work out the voltage rating from the markings on Panasonic FP-series SMD capacitors. The saved marking illustration uses a TG-series example; Panasonic's FP datasheet confirms the FP voltage codes below:
 

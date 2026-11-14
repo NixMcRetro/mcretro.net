@@ -8,7 +8,10 @@ share_description: >-
   RetroJunkie.net's Tor mirror returns on Debian Buster with v3 onion addresses and some gloriously silly vanity names. Onion-related adventures continue. 🌐
 ---
 
-![](/assets/images/2019/img_0634.jpg)
+![Tor Browser displaying the old McRetro.net homepage at a long .onion address, with an under-construction notice, hardware photograph and recent-posts sidebar.](/assets/images/2019/img_0634.jpg)
+
+*McRetro.net visiting itself over a v3 onion address, complete with the old under-construction homepage. The darknet was back!*
+{: .media-caption }
 
 The darknet, what wonders exist there? Why not check out [retrojunkie.net](https://web.archive.org/web/20190824033151/https://retrojunkie.net/) for your gateway into the lighter side of the darknet! Thanks to a free weekend (or two), I finally got the onion (Tor) side of things running at 100% on Debian Buster too. This time I was using v3 onion services, with their wonderfully enormous 56-character addresses, and picked up some cool vanity onions while I was at it!
 

@@ -8,7 +8,10 @@ share_description: >-
   Certbot brings HTTPS back to McRetro while the old RetroJunkie darknet mirror returns. A bit of Tor nostalgia, not a current v2 address. 🌐
 ---
 
-![](/assets/images/2018/img_0621.jpg)
+![Browser screenshot of an old RetroJunkie.net Tor onion directory with a black-and-white Sega banner, Tor Network heading and a table of clearnet and darknet links.](/assets/images/2018/img_0621.jpg)
+
+*The old RetroJunkie.net darknet landing page, complete with a directory of other onion sites. Those 16-character v2 addresses are firmly in the history books now.*
+{: .media-caption }
 
 I love tinkering with my website, and I've been doing a whole lot of it over the past few weeks. First, I fixed all the broken links and images. Then I went through and cleaned up each post, which had become mangled from an import many eons ago. Finally, I got SSL working again through [Certbot](https://certbot.eff.org).
 

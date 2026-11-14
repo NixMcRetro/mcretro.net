@@ -8,7 +8,10 @@ share_description: >-
   A translucent smokey-grey Dreamcast shell gets a tidy Dremel modification to accommodate the Broadband Adapter's ethernet socket. For once it works! 🎮
 ---
 
-![aDHqaUYR](/assets/images/2016/img_0509.jpg)
+![Translucent dark-grey Sega Dreamcast console beside a translucent black Sega Saturn 'This is COOL' edition on a wooden shelf.](/assets/images/2016/img_0509.jpg)
+
+*The new translucent grey Dreamcast next to my 'This is COOL' Saturn. A little Dremel work made room for the Broadband Adapter's ethernet socket!*
+{: .media-caption }
 
 I've moved a smoke (and sun) discoloured Dreamcast into a fresh translucent grey shell. It fits in pretty well with the This is COOL Saturn.
 

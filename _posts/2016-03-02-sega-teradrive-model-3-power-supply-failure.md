@@ -8,7 +8,10 @@ share_description: >-
   My Sega TeraDrive Model 3 buzzes and refuses to POST. Swapping the power supply moves the fault, but doesn't identify the failed component. 🔧
 ---
 
-![Sega TeraDrive Model 3 PSU](/assets/images/2016/img_0457.jpg)
+![Close-up of the Sanyo SPS-356JU TeraDrive power supply label showing AC 100-120 V input and +5 V / +12 V DC outputs.](/assets/images/2016/img_0457.jpg)
+
+*The SPS-356JU supply from the TeraDrive Model 3. Swapping modules moved the fault with this PSU, but the label won't tell me what has failed inside!*
+{: .media-caption }
 
 Oh dear! My Sega TeraDrive Model 3 power supply, an SPS-356JU, has given up. It may have been dead for a while without me noticing because the machine had mostly been sitting on a shelf looking tidy.
 

@@ -8,7 +8,10 @@ share_description: >-
   Phantom Universal Sega Saturn modchip installation guides cover Model 1, Model 2 JVC and Sanyo drives. Identify the actual board before soldering. 🎮
 ---
 
-![](/assets/images/2018/img_0622.gif)
+![White universal chip programmer topped with a green adapter board, blue chip socket and a black integrated circuit plugged into the socket.](/assets/images/2018/img_0622.gif)
+
+*A chip programmer and adapter to accompany the Saturn modchip guides. First identify the Saturn's actual board and optical drive before choosing an installation diagram.*
+{: .media-caption }
 
 Use the model-identification guide first, then choose the matching Phantom Universal installation guide by Zer0-2k11. Some oval-button Saturns have Model 2 internals, so check the board and drive rather than relying on the case alone.
 

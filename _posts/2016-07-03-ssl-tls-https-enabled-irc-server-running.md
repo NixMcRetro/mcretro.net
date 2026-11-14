@@ -8,17 +8,26 @@ share_description: >-
   The McRetroNet IRC server finally gets TLS via Let's Encrypt, while the website and a tiny WooCommerce shop also benefit from HTTPS. 🌐
 ---
 
-![Screen Shot 2016-07-03 at 5.55.40 PM](/assets/images/2016/img_0485.jpg)
+![Textual IRC client certificate window showing an encrypted TLS 1.2 connection to irc.mcretro.net with a valid Let's Encrypt certificate.](/assets/images/2016/img_0485.jpg)
+
+*Textual connected to McRetroNet with a valid Let's Encrypt certificate. Finally, encrypted IRC without all that certificate nonsense!*
+{: .media-caption }
 
 Nailed it! I knew I could work out how to get a darned IRC server up and running. Now you can spam my name into the chat and it will alert me like mad that you're trying to chat, unless I've turned off the volume or remembered to type `/away`.
 
 The IRC server now supports TLS using a [Let's Encrypt](https://letsencrypt.org/) certificate, so IRC clients configured to use the TLS listener can encrypt their connection to the server. I found it much easier to configure than [CAcert.org](http://www.cacert.org/), and just as cheap (free). But what's this?
 
-![Screen Shot 2016-07-03 at 5.55.17 PM](/assets/images/2016/img_0484.jpg)
+![Safari certificate information window showing an encrypted connection to mcretro.net and a valid Let's Encrypt certificate.](/assets/images/2016/img_0484.jpg)
+
+*Safari confirmed that McRetro.net had a valid certificate too. Getting HTTPS working on the site was a nice bonus.*
+{: .media-caption }
 
 As a side effect of getting the IRC server encrypted and prettied up, I ended up getting a certificate for McRetro.net as well. Just in time for the shop to open. Unfortunately, OpenCart is overcomplicated for what I need it to do, which is sell two or three products. So I've moved back to WooCommerce. One of the big problems I couldn't get over was losing the admin interface of OpenCart when TLS was enabled. Sort of a showstopper.
 
-![](/assets/images/2016/img_0483.jpg)
+![Irssi terminal connected to irc.mcretro.net on port 6697, with the McRetroNet welcome banner, SSL cipher message and NickServ notices.](/assets/images/2016/img_0483.jpg)
+
+*Irssi chatting away to McRetroNet over port 6697, complete with its welcome banner and NickServ. It's alive!*
+{: .media-caption }
 
 And here is Irssi connected to the IRC server on its TLS listener, port 6697, with NickServ ready to go.
 

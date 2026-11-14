@@ -8,12 +8,18 @@ share_description: >-
   A SCSI2SD on a 3D-printed sled replaces the mechanical drive in a Dreamcast HKT-0120. Old Macintosh computers could use this trick too. 💾
 ---
 
-![](/assets/images/2019/img_0633.jpg)
+![White Sega Dreamcast development box beside a television displaying Sonic gameplay, with a Dreamcast controller on the table.](/assets/images/2019/img_0633.jpg)
+
+*My enormous white Dreamcast development box in action, with Sonic on screen. The solid-state SCSI drive work was going on inside!*
+{: .media-caption }
 
 I ended up mounting the [SCSI2SD](https://web.archive.org/web/20190217042647/http://www.codesrc.com/mediawiki/index.php?title=SCSI2SD) in my recently sold Sega Dreamcast Katana into a [3D printed sled](https://web.archive.org/web/20190217042332/https://68kmla.org/forums/index.php?/topic/24466-scsi2sd-mounting-bracket-for-se30/). I've just noticed now that there are plenty of caddies that help them fit into the space of a 3.5" hard drive. If I did it all again, I'd do it slightly differently now!
 
 This follows on from the earlier HKT-0120 hard-drive work, including [dumping the SCSI drive with GNU ddrescue](/dumping-the-sega-dreamcast-hkt-0120-dev-kit-scsi-hard-drive-with-gnu-ddrescue/).
 
-![](/assets/images/2019/img_0632.jpg)
+![Red SCSI2SD circuit board mounted inside a Sega Dreamcast development kit, with a microSD card, ribbon cables and nearby connectors.](/assets/images/2019/img_0632.jpg)
+
+*The red SCSI2SD board tucked into the Katana development kit with a microSD card. Much nicer than relying on an ageing mechanical drive!*
+{: .media-caption }
 
 I was happy to see SCSI2SD development continuing at the time, with newer boards using a full-sized SD card and a larger PCB. Makes sense in my eyes as it is replacing, in almost all cases, the form factor of a 3.5" hard drive - pretty darned roomy! On the topic of 50-pin SCSI though, old school Macs must love this solid state solution too. It's times like this I wish I had my old LC475, but then I remember how much space it took up and how brittle all the plastic was on it. One problem at a time!

@@ -8,7 +8,10 @@ share_description: >-
   After a dramatic 2016 weight change, I document the foods, routines and energy calculations I used. A personal account, not a one-size-fits-all diet. 📝
 ---
 
-![weight-2016-nov](/assets/images/2016/img_0593.jpg)
+![Withings year-long weight chart declining from above 110 kg to 69.4 kg, with a BMI of 21.4 recorded on 4th November 2016.](/assets/images/2016/img_0593.jpg)
+
+*The 2016 weight trend, finishing at 69.4 kg on this screenshot. Quite a dramatic year in the graph.*
+{: .media-caption }
 
 Now that I've lost over 45 kg from my starting weight of 114.7 kg, yes that's under 70 kg, I should write down some key points that helped me lose weight. I'm not a medical doctor of any sort. This has been based on my personal experience - yours will vary.
 

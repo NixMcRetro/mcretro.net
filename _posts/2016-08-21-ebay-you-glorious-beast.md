@@ -8,7 +8,10 @@ share_description: >-
   Fifteen positive eBay ratings, a giant roll of bubble wrap and console auctions starting at 99 cents. Now if only that outstanding payment would arrive! 📦
 ---
 
-![Screen Shot 2016-08-15 at 4.29.33 pm](/assets/images/2016/img_0543.jpg)
+![McRetro Gaming eBay profile screenshot showing 15 positive feedback ratings and 100% positive feedback.](/assets/images/2016/img_0543.jpg)
+
+*Fifteen positive eBay feedbacks and not a negative one in sight. Apparently accurate descriptions and decent packing help!*
+{: .media-caption }
 
 15 positive feedbacks! Apparently describing things accurately and taking lots of photos is a good way to keep people happy. Who knew? Which reminds me, I can finally move onto selling some of the consoles. I've also received a giant roll of bubble wrap, so hopefully everything will make it from point to point without being smashed to pieces. That would be nice!
 

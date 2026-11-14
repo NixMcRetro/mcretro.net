@@ -8,11 +8,17 @@ share_description: >-
   The Dreamcast Arcade Stick Checker Version 2.00 ROM finally gets dumped and preserved. The hunt for Version 1.00, of course, continues. 💾
 ---
 
-![](/assets/images/2018/img_0624.jpg)
+![Red Dreamcast Arcade Stick Checker Version 2.00 screen in the Exodus emulator showing large N and G letters and a down-stream timeout error.](/assets/images/2018/img_0624.jpg)
+
+*Dreamcast Arcade Stick Checker Version 2.00 running in Exodus, with a great big error message. Not quite the glorious green light I'd hoped for!*
+{: .media-caption }
 
 At long last, the Dreamcast Arcade Stick Checker Version 2.00 ROM is free of the black box it has been living in for the past twenty years. The hunt for 1.00 begins, and the betas? Will the search never end? In other news, I have some 4K videos of the HKT-0120 to process and upload as well as that big backlog of footage I never did anything with.
 
-![](/assets/images/2018/img_0623.jpg)
+![Hex and text editor displaying a Dreamcast Arcade Stick Checker ROM dump with readable SEGA and Version 2.00 strings among binary data.](/assets/images/2018/img_0623.jpg)
+
+*The ROM dump opened up in a hex editor. There it is in the data: Dreamcast Arcade Stick Checker Version 2.00!*
+{: .media-caption }
 
 I don't have any photos of the actual unit on hand, but you can see photos of this type of checker over at [Sega Retro](https://segaretro.org/Dreamcast_Controller_Function_Checker). The ROM identifies itself as Dreamcast Arcade Stick Checker Version 2.00. So very specific, so very beautiful. Grab the freshly dumped ROM in [1998_08_DCC_ROM.zip](/assets/uploads/1998_08_DCC_ROM.zip) to hack around with!
 

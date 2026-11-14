@@ -8,7 +8,10 @@ share_description: >-
   An IPS patch turns Super Mario World into MIX4AAE, expanding the ROM from 4 to 24 Mbit. Check the header and checksum before flashing a SNES cart. 💾
 ---
 
-![SMW_MIX4AAE](/assets/images/2016/img_0468.jpg)
+![SFC/SNES ROM Utility window showing the MIX4AAE patched Super Mario World ROM as a 3.00 MB file, with LoROM and NTSC metadata.](/assets/images/2016/img_0468.jpg)
+
+*The patched MIX4AAE ROM in SFC/SNES ROM Utility. It's 3 MB on disk, despite the 32 Mbit figure reported in the ROM header.*
+{: .media-caption }
 
 I had a request for some help on getting [MIX4AAE](https://w.atwiki.jp/sm4wiki_mix/pages/64.html) working on a flash cart. So I figured sure, why not! :)
 
@@ -16,11 +19,17 @@ First up we take the Super Mario World (US) ROM which weighs in at 512 kB, makin
 
 Open the Super Mario World (US) ROM in the utility. It reports a 0.5 MB, 4 Mbit NTSC LoROM. Select the IPS Patch option and choose the MIX4AAE IPS file. In my original walkthrough I answered Yes to the headered-ROM prompt; that choice needs to match the patch and source ROM, rather than being a universal Yes. The patched file grows to about **3.00 MB**, which is **24 Mbit** of data. It still fits comfortably inside the **32 Mbit / 4 MB** AM29F032B or M29F032D flash chips I was using.
 
-![IPS patch and checksum repair](/assets/images/2016/img_0469.jpg)
+![IpsAndSum checksum utility window displaying the original and repaired SNES ROM checksum and complement values, with LoROM selected.](/assets/images/2016/img_0469.jpg)
+
+*IpsAndSum showing the checksum repair for MIX4AAE. No one likes a dirty checksum!*
+{: .media-caption }
 
 For the sake of being complete, we'll also fix up the checksum. No one likes a dirty checksum. I used [IpsAndSum](https://web.archive.org/web/20160225182328/http://www.romhacking.net/utilities/499). Open the newly patched file, select "Repair Snes CheckSum", accept the repair prompt, and save the resulting ROM.
 
-![MIX4AAE](/assets/images/2016/img_0467.jpg)
+![Snes9x emulator window showing the MIX4AAE ROM boot screen, with a 'VIPPER PRESENTS' logo and technical ROM information on a black background.](/assets/images/2016/img_0467.jpg)
+
+*MIX4AAE booting up in Snes9x. Better to test the ROM here before attempting a cartridge build!*
+{: .media-caption }
 
 Now fire up an emulator to test that the patched ROM actually works. I used Snes9x 1.53 on the Mac. It also reported the information I needed for finding a suitable donor cartridge:
 

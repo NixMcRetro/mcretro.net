@@ -8,7 +8,10 @@ share_description: >-
   Cloudflare comes to the rescue of a Raspberry Pi website with a dreadful upload connection. Caching and proxying sound lovely; data harvesting, less so. 🌐
 ---
 
-![Cloudflare](/assets/images/2016/img_0455.jpg)
+![Cloudflare logo showing a large orange cloud with a yellow sunburst above the black CLOUDFLARE wordmark.](/assets/images/2016/img_0455.jpg)
+
+*Cloudflare to the rescue of my poor Raspberry Pi web server and its equally miserable upload connection. At least, that was the plan!*
+{: .media-caption }
 
 CDN means **Content Delivery Network**. They are marvellous things! Putting Cloudflare in front of this little Raspberry Pi web server sounded extremely useful.
 

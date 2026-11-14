@@ -8,7 +8,10 @@ share_description: >-
   A cheap HP Stream 11 becomes my Linux escape plan, with a surprisingly nice keyboard, modest eMMC storage and plenty of compromises. 💻
 ---
 
-![hp-stream-11](/assets/images/2016/img_0576.jpg)
+![Blue HP Stream 11 laptop with a white keyboard and Windows 10 desktop on screen, pictured open against a white background.](/assets/images/2016/img_0576.jpg)
+
+*My blue HP Stream 11. The keyboard was a pleasant surprise, even if the tiny storage meant a few compromises!*
+{: .media-caption }
 
 What's this we have here? The HP Stream 11, an ultraportable laptop with a decent keyboard for AU$215. That's US$164 at the time of writing. It's outdated and ultimately not suitable for everything I do day-to-day, but I've been curious about how easily I could migrate from my Mac to a Linux-based machine.
 

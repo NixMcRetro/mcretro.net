@@ -8,13 +8,19 @@ share_description: >-
   CPU, PPU, VRAM or corroded traces? A collection of Nintendo Super System repair photos shows how different SNES hardware faults can look. 🔧
 ---
 
-![Super Nintendo motherboard from an earlier McRetro repair](/assets/images/2013/img_0421.jpg)
+![Macro photograph of a Super Nintendo motherboard showing Nintendo S-PPU1 and S-PPU2 chips, fine soldered pins and circuit traces.](/assets/images/2013/img_0421.jpg)
+
+*A close-up of the two SNES picture-processing chips from one of my earlier repairs. Sometimes the problem is the chip, and sometimes it's the traces nearby.*
+{: .media-caption }
 
 I've been looking through some rather interesting Super Nintendo repair information today. It all started with a YouTube comment pointing me towards something I'd never even heard of before: the Nintendo Super System!
 
 It's an arcade machine based on Super Nintendo hardware, and naturally it has its own collection of faults to keep people entertained. DogP has been kind enough to document a whole bunch of repairs, complete with photographs showing what happens when various chips decide they've had enough.
 
-![](/assets/images/2018/img_0620.jpg)
+![Photographed Super Mario World title screen with the logo and sprites broken into severe horizontal graphical corruption above green hills.](/assets/images/2018/img_0620.jpg)
+
+*One of DogP's Nintendo Super System repair examples. That is an impressive amount of graphical chaos, but the picture alone doesn't tell us which component has failed.*
+{: .media-caption }
 
 Image borrowed from [DogP's Nintendo Super System repair log](https://www.projectvb.com/nss/logs.htm). Thank you to whoever pointed me to this site, and a big thank you to DogP for keeping such a detailed repair log!
 

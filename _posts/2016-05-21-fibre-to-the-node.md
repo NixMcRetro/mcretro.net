@@ -8,7 +8,10 @@ share_description: >-
   Fibre to the Node gives friends faster NBN, but the final stretch of ancient copper still bothers me. I'd rather have fibre all the way. 🌐
 ---
 
-![FTTN copper connection](/assets/images/2016/img_0473.jpg)
+![Open hole in a grassy verge beside a pavement, exposing bundled old copper telephone wires and cables.](/assets/images/2016/img_0473.jpg)
+
+*Behold the glorious copper that was supposed to carry our modern internet connections. Doesn't it look ancient?*
+{: .media-caption }
 
 Some friends recently had their NBN Fibre to the Node connection installed, and compared with the old connections I'd been dealing with, it felt extremely fast. This website was even being hosted there for a while, which might explain some of the downtime. ;)
 

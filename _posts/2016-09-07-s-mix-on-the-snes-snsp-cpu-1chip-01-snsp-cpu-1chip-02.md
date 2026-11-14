@@ -8,13 +8,19 @@ share_description: >-
   Another no-sound 1CHIP SNES gets audio by bypassing the S-MIX chip and wiring the DAC output directly. It works, but long-term safety is uncertain. 🔊
 ---
 
-![s-mix](/assets/images/2016/img_0552.jpg)
+![Close-up photograph of a Super Nintendo motherboard with a small surface-mounted integrated circuit, nearby capacitors and labelled circuit traces.](/assets/images/2016/img_0552.jpg)
+
+*A close look at the SNES audio circuitry around the small SMD chip and surrounding components. Time for another attempt at getting sound out of it!*
+{: .media-caption }
 
 Long-time readers might remember the S-MIX chip with a physical hole blown in it on my old SNSP-CPU-1CHIP-02 Super Nintendo mainboard. That was quite a sight! Now I've got another 1CHIP Super Nintendo with no sound, so perhaps it's time to revisit the idea.
 
 Rather than go hunting for another S-MIX chip, I've been looking at whether I can get audio directly from the UPD6379A DAC at U6. If I can bypass the troublesome part of the circuit, I might at least be able to get the machine making some noise again.
 
-![img_0969](/assets/images/2016/img_0551.jpg)
+![Close-up of a Super Nintendo motherboard showing blue and green wires routed between small surface-mounted components near the audio circuitry.](/assets/images/2016/img_0551.jpg)
+
+*The added wires on the SNES motherboard show the experimental audio bypass. It worked on this board, though that doesn't prove it's safe as a permanent fix.*
+{: .media-caption }
 
 I reversed the polarity! ...I kid, I kid. What I've actually done is run audio from the DAC to the AV output on the underside of the board, bypassing the S-MIX path. Some 30 AWG Kynar wire fits rather nicely through the vias, which makes the whole arrangement a little easier to put together.
 

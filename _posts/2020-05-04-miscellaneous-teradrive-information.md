@@ -8,7 +8,10 @@ share_description: >-
   A rough 1994 Japanese TeraDrive translation mentions Cyrix 486 upgrades, SIMMs and floppy hardware. An intriguing lead, not confirmed documentation. 💻
 ---
 
-![](/assets/images/2012/img_0133.jpg)
+![Grey Sega TeraDrive seen from the front, with its floppy drive, cartridge opening, headphone socket and orange power button.](/assets/images/2012/img_0133.jpg)
+
+*The front of my TeraDrive, illustrating another dive into early Japanese accounts of its unusual PC hardware.*
+{: .media-caption }
 
 There's something about the Sega TeraDrive that keeps me looking for more information. Perhaps it's the rather unusual combination of an IBM-compatible PC and a Mega Drive, or perhaps it's simply because the documentation isn't always particularly easy to find. Either way, I've stumbled across another little piece of TeraDrive history, this time from a Japanese blog entry dated **27th April 1994**.
 

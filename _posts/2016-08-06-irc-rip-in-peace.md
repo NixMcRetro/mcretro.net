@@ -8,7 +8,10 @@ share_description: >-
   After getting InspIRCd, TLS and services running, McRetroNet IRC quietly shuts down. A fine experiment, even if nobody ever joined the party. 💬
 ---
 
-![IRC ASCII](/assets/images/2016/img_0511.jpg)
+![McRetroNet IRC message-of-the-day screen with large block-letter ASCII art and a welcome message.](/assets/images/2016/img_0511.jpg)
+
+*Farewell, McRetroNet IRC! At least that block-letter welcome banner lived up to the occasion.*
+{: .media-caption }
 
 Running an IRC server was an interesting experiment, and I eventually got the whole thing working properly. It is now defunct and has been removed from the McRetro.net server. Nothing much happened on it and it was taking up space in my dock, so with very little regret we bid the McRetroNET IRC Server farewell.
 

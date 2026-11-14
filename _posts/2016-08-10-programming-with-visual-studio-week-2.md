@@ -8,7 +8,10 @@ share_description: >-
   Visual Basic week two brings FizzBuzz, Roman numerals and the mystery of banker's rounding. At least the code works, mostly! 💻
 ---
 
-![vb\_romans](/assets/images/2016/img_0523.jpg)
+![Black Windows console window prompting for a number between 1 and 10 for Roman numerals, with an error response to the input 11.](/assets/images/2016/img_0523.jpg)
+
+*My Roman numeral program knew exactly what to say to an input of 11: 'Jolly joker, that's not a number between 1 and 10...'*
+{: .media-caption }
 
 Ohhh those Romans! With so many Ifs and ElseIfs it feels like I'm typing in circles, but hey! My code worked for a few of the examples, even if it wasn't the same as the listed solution. There are many ways to do the same thing, and I honestly think mine was more efficient and answered the question better... which is odd, given they wrote both the question and the answer!
 

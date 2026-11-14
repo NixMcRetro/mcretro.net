@@ -8,7 +8,10 @@ share_description: >-
   Folding@home and Rosetta@home put my Intel NUC to work on 2020 coronavirus research. The fanless case gives my ears a welcome break. 🧬
 ---
 
-![](/assets/images/2020/img_0664.jpg)
+![Molecular rendering of SARS-CoV-2 receptor-binding domain in red interacting with human ACE2 in pale blue on a white background.](/assets/images/2020/img_0664.jpg)
+
+*Folding@home's March 2020 illustration of the viral binding domain and human ACE2. A fitting image for some science-driven number crunching!*
+{: .media-caption }
 
 [SARS-CoV-2 receptor-binding domain modelled in complex with human ACE2, from Folding@home's March 2020 update](https://www.foldingathome.org/news/covid19-update)
 

@@ -8,7 +8,10 @@ share_description: >-
   SGDK, GENDEV and Sega Saturn SDK offer plenty of ways to program classic Sega hardware. Actually writing a game is the trickier part. 💻
 ---
 
-![](/assets/images/2020/img_0666.jpg)
+![Black Sega Mega Drive Model 1 console with a wired three-button controller on a white background.](/assets/images/2020/img_0666.jpg)
+
+*The Mega Drive, a good place to start when thinking about SGDK and writing a bit of Sega software.*
+{: .media-caption }
 
 I've been looking at a few different ways to get software running on Sega consoles. There's quite a bit of development software floating around out there, so I thought I'd collect some of the more interesting projects in one place.
 

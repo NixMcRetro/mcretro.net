@@ -20,7 +20,12 @@ At this stage I was still trying to decode and piece together GeoCities' structu
 
 The to-do list was still fairly grim: find and remove objectionable material, index filenames, and work out whether broken links could be repaired server-side.
 
-![](/assets/images/2021/img_0744.jpg) In other news, Docker had been driving me mad with segmentation faults matching [this issue](https://github.com/docker-library/php/issues/1176). The known issue involved older libssl versions in native arm64 containers on Apple Silicon when connecting to some TLS servers. I don't want to run amd64 images on arm64 - the problem is most of my images are built upon Ubuntu 20.04 LTS, not 18.04 or 22.04 (we're not there yet). I guess I'll have to look for alternatives once macOS 12 Monterey is released. As a workaround I was able to stop the (daily) forced snooze nags for Docker updates by adding the following custom rule to AdGuard Home: `||desktop.docker.com^$important`
+![Screenshot headed 'Known issues' warning that older libssl versions in native Apple Silicon arm64 containers may crash when connecting to some TLS servers.](/assets/images/2021/img_0744.jpg)
+
+*The Docker issue that had me chasing segmentation faults. Nothing quite like a side quest during a Sega project.*
+{: .media-caption }
+
+In other news, Docker had been driving me mad with segmentation faults matching [this issue](https://github.com/docker-library/php/issues/1176). The known issue involved older libssl versions in native arm64 containers on Apple Silicon when connecting to some TLS servers. I don't want to run amd64 images on arm64 - the problem is most of my images are built upon Ubuntu 20.04 LTS, not 18.04 or 22.04 (we're not there yet). I guess I'll have to look for alternatives once macOS 12 Monterey is released. As a workaround I was able to stop the (daily) forced snooze nags for Docker updates by adding the following custom rule to AdGuard Home: `||desktop.docker.com^$important`
 
 {% include youtube.html id="RnrVCqL5rdk" %}
 

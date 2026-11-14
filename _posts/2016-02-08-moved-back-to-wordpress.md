@@ -8,7 +8,10 @@ share_description: >-
   FlatPress is out and WordPress is back on my Raspberry Pi 2, with nicer sidebar menus and Cloudflare plans. The Tor mirror has other ideas. 🌐
 ---
 
-![WordPress logo](/assets/images/2016/img_0453.jpg)
+![Black WordPress W logo within a circular outline above the blue-and-black WordPress wordmark on a white background.](/assets/images/2016/img_0453.jpg)
+
+*Back to WordPress yet again! FlatPress had its charms, but I missed those handy little sidebar features.*
+{: .media-caption }
 
 If you can see this post, it means I managed to get the website working sufficiently well under WordPress on a Raspberry Pi 2.
 

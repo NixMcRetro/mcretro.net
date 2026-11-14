@@ -8,7 +8,10 @@ share_description: >-
   A 1.5 A PICO fuse marked 125 V isn't just for US consoles. Voltage rating is about safe interruption, not the country's mains voltage. ⚡
 ---
 
-![Littelfuse_Fuse_Pico_CL](/assets/images/2016/img_0534.jpg)
+![Illustration of several green axial-leaded Littelfuse PICO-style fuses on a white background.](/assets/images/2016/img_0534.jpg)
+
+*An assortment of green PICO-style fuses. Matching the current rating isn't the only thing to check when choosing a replacement.*
+{: .media-caption }
 
 There I was sitting at my workbench replacing a fuse in a Super Famicom when I noticed the original part was marked **1.5 A, 125 V**. My first thought was: "125 V? But this is Australia! We have 250 V fuses here!"
 

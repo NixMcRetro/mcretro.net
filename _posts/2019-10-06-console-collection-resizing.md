@@ -8,7 +8,10 @@ share_description: >-
   A dusty console collection shrinks towards mini Japanese releases and an arcade-style desktop cabinet. More space for hobbies, or just more keyboards? 🎮
 ---
 
-![](/assets/images/2019/img_0635.jpg)
+![Wooden bookcase containing miniature Famicom, Super Famicom, Mega Drive and PlayStation consoles alongside larger Sega and Nintendo systems.](/assets/images/2019/img_0635.jpg)
+
+*The console collection before the big tidy-up. Tiny Famicom, Super Famicom, Mega Drive and PlayStation systems had started taking over the shelves!*
+{: .media-caption }
 
 It's been a busy year with study at university and a bit of freelance photo work on the side. I want to thank the gaming giants of yesteryear for releasing these magnificent little consoles. It's given me the ability to help move on and away from original hardware.
 

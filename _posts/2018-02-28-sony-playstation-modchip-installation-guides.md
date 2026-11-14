@@ -8,7 +8,10 @@ share_description: >-
   Mayumi 4 PlayStation modchip guides gather the PIC firmware and wiring examples for PU-18 and PU-22 motherboards. The exact revision matters. 🎮
 ---
 
-![](/assets/images/2018/img_0622.gif)
+![White universal chip programmer topped with a green adapter board, blue chip socket and a black integrated circuit plugged into the socket.](/assets/images/2018/img_0622.gif)
+
+*The programmer is a familiar sight, but the correct firmware and connections depend on the PlayStation motherboard and PIC model. Check both before reaching for the iron!*
+{: .media-caption }
 
 Here's a little collection of Sony PlayStation modchip installation guides. I've experimented with a few different PIC microcontrollers and Mayumi 4 configurations over the years, so it's probably about time I put the useful information together in one place!
 

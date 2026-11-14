@@ -8,7 +8,10 @@ share_description: >-
   Eight months on a vegan diet, I look back at chicken, salmon, animal welfare and a surprisingly delicious fake burger. Celebratory avocado sushi! 🌱
 ---
 
-![](/assets/images/2021/img_0742.jpg)
+![Brown plant-based burger patty on a slice of toasted seeded bread, topped with a dollop of pale vegan mayonnaise and pepper.](/assets/images/2021/img_0742.jpg)
+
+*My magnificently low-effort vegan burger: patty, toast and fake mayo. Fine dining is not my speciality.*
+{: .media-caption }
 
 I've been called a lot of things in my time. Handsome, attractive, portly? But I have never been called a great cook. The above image is one of those fancy non-meat burgers, coupled with fake mayo on a healthy piece of toast. I started to test the waters with the vegan project back in late 2020.
 
@@ -28,7 +31,10 @@ Health was not the main driver for this shift. I had never eaten much red meat a
 **Old Age**
 Maybe this is just what happens when you get older. You start to crave sushi, fake mayonnaise, plant-based burger patties and the like. Or perhaps it is the sum of my experiences and a dear flexitarian friend showing me that other possibilities existed. While I didn't realise it at the time, it seems that maybe they were on to something. In hindsight, I am glad to have been shown that path and am very happy to continue along.
 
-![](/assets/images/2021/img_0743.jpg)
+![Clear takeaway tray of avocado sushi rolls, with soy sauce, wasabi and ginger beside a white computer keyboard.](/assets/images/2021/img_0743.jpg)
+
+*Avocado sushi to celebrate eight months of vegan eating. There are worse ways to mark an anniversary!*
+{: .media-caption }
 
 Raise your 15-avocado-baby-sushis and celebrate with me as I forge ahead into the unknown toward my one-year veganniversary. Perhaps I will see you there one day! 🙂
 

@@ -8,7 +8,10 @@ share_description: >-
   Helping with a PhD survey turns into a LimeSurvey version rollback, while WordPress and my onion mirror fall out again. Such a peaceful hobby. 🌐
 ---
 
-![](/assets/images/2016/img_0474.jpg)
+![LimeSurvey administration screen showing green tiles for creating and listing surveys, global settings, updates, label sets and the template editor.](/assets/images/2016/img_0474.jpg)
+
+*LimeSurvey's administration dashboard. After my adventures with the newer branch, the older software was looking much more appealing!*
+{: .media-caption }
 
 Where on earth have I been? It's like I fell down the rabbit hole with [Alice](https://en.wikipedia.org/wiki/Alice_in_Wonderland_(1976_film)). Wait, not that Alice. Do not click that link.
 

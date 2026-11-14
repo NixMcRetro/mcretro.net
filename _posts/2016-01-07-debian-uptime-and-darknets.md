@@ -14,17 +14,26 @@ Two handy commands from this period were:
 
 `lsb_release -da`
 
-![Screen Shot 2016-01-07 at 10.38.56 PM](/assets/images/2016/img_0448.jpg)
+![Terminal screenshot of the lsb_release -da command reporting Debian GNU/Linux 7.8, release 7.8 and codename wheezy.](/assets/images/2016/img_0448.jpg)
+
+*The older server reports Debian 7.8 Wheezy. That explains which version of Debian I was looking at here!*
+{: .media-caption }
 
 and:
 
 `hostnamectl`
 
-![Screen Shot 2016-01-07 at 10.38.58 PM](/assets/images/2016/img_0449.jpg)
+![Terminal screenshot of hostnamectl reporting Raspbian GNU/Linux 8 (jessie), Linux kernel 4.1.13-v7+ and ARM architecture.](/assets/images/2016/img_0449.jpg)
+
+*The hostnamectl output from the Jessie machine. Two commands, two different installations, and now I can finally keep track of which is which!*
+{: .media-caption }
 
 They overlap a little, but they are not exactly the same thing. `lsb_release` focuses on Linux distribution information, while `hostnamectl` also reports hostname and operating-system details on systems using systemd. The captures show different releases: Debian GNU/Linux 7.8 (Wheezy) above the Raspbian GNU/Linux 8 (Jessie) capture.
 
-![Screen Shot 2016-01-04 at 2.01.25 PM](/assets/images/2016/img_0447.jpg)
+![Server Stats dashboard dated 4 January 2016 showing 41 days 19 hours 50 minutes uptime, 43.31 °C CPU temperature and 70.10% RAM usage beneath a cartoon computer.](/assets/images/2016/img_0447.jpg)
+
+*41 days, 19 hours and 50 minutes of uptime before I decided to rebuild the server. Because apparently I can't leave a perfectly good setup alone!*
+{: .media-caption }
 
 In other news, we hit **41 days uptime** before I decided to rebuild the server using Raspbian Jessie Lite. The smaller Lite image suited this little Raspberry Pi web-server setup much better than the larger desktop image I had been using.
 

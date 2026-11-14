@@ -28,7 +28,10 @@ Mayumi V4 uses the PlayStation's mechacon clock on supported motherboards, givin
 
 OneChip is specifically aimed at the PAL PS one and includes the additional boot-ROM patch needed for that machine.
 
-![TL866CS](/assets/images/2016/img_0450.jpg)
+![MiniPro v6.50 programmer software on Windows XP, with PIC12F508 selected, a hexadecimal memory table and TL866CS interface version shown.](/assets/images/2016/img_0450.jpg)
+
+*MiniPro running on the TL866CS with a PIC12F508 selected. After all my adventures with PIC programmers, this little setup was looking rather attractive!*
+{: .media-caption }
 
 **Update 5th Feb 2016:** I worked out why the Mayumi-programmed PIC12C508A and PIC12F508 chips would not read back normally: the original Mayumi v4 code had code protection enabled. That was why the readback differed from some of the MultiMode3 chips I had programmed. The protected readback did not, by itself, mean programming had failed.
 

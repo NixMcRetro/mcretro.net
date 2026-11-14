@@ -8,11 +8,17 @@ share_description: >-
   Smartphone fatigue inspires a return to the Nokia 301 candybar phone and its advertised 39-day standby. My iPhone 5s can take a holiday. 📱
 ---
 
-![iPhone 5s](/assets/images/2016/img_0539.jpg)
+![Black and silver iPhone 5s pictured from the front, narrow side and rear, with app icons visible on its screen.](/assets/images/2016/img_0539.jpg)
+
+*The iPhone 5s, pictured from three angles. A very clever little smartphone that I was rather tired of having to keep charged.*
+{: .media-caption }
 
 That's it, I'm sick of mobile phones and always being switched on in the digital world. Modern phones are such a joke with their [60-minute-man-like](https://en.wikipedia.org/wiki/Sixty_Minute_Man) batteries. All I use my phone for is SMS and that's usually just 2FA rubbish. Don't get me wrong, I love getting almost two days out of my phone, but it's time to move backwards. Enter the Nokia 301.
 
-![Nokia 301 Blue](/assets/images/2016/img_0538.jpg)
+![Blue Nokia 301 candybar phone shown from the front with a physical keypad and from the back with its rear camera.](/assets/images/2016/img_0538.jpg)
+
+*The Nokia 301 in blue, complete with actual buttons. A feature phone with a very ambitious advertised standby time!*
+{: .media-caption }
 
 Nokia quoted up to **39 days of standby** for the single-SIM Nokia 301 on a 3G network. Actual battery life depends on network conditions, signal strength, battery age and what you do with the phone, but more than a month was the advertised maximum. One month or MORE! Thank you, candybar phones!
 

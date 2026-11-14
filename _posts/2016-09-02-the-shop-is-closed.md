@@ -8,7 +8,10 @@ share_description: >-
   The McRetro Gaming Shop shuts after a short run. Selling hardware isn't nearly as entertaining as tinkering with it, but the blog and videos remain. 🛍️
 ---
 
-![closed_sign](/assets/images/2016/img_0550.jpg)
+![Red-and-white sign with large lettering reading Sorry We're Closed.](/assets/images/2016/img_0550.jpg)
+
+*The shop is closed! Selling retro hardware turned out to be rather less entertaining than tinkering with it.*
+{: .media-caption }
 
 Thanks to everyone who purchased from McRetro.net! Running the shop was an interesting experience, but selling things just isn't nearly as much fun as playing with them. So that's it: effective immediately, the shop is closed and the database has been purged.
 

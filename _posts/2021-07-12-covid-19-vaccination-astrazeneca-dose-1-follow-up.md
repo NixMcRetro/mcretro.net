@@ -8,7 +8,10 @@ share_description: >-
   After AstraZeneca dose one, a 40.9°C fever makes for a rather unpleasant night. My 2021 symptom log is a cautionary tale, not medical advice. 🌡️
 ---
 
-![](/assets/images/2021/img_0730.jpg)
+![Modified AstraZeneca vaccination meme adding 'and now maybe don't wait 12 weeks because delta is spreading... fast!' beneath the original cartoon.](/assets/images/2021/img_0730.jpg)
+
+*Same meme, different week. Delta was spreading and the second-dose timetable was suddenly looking shorter.*
+{: .media-caption }
 
 Delta is spreading around Sydney, and we've entered another lockdown. I can see why, but if businesses close, how are people meant to pay the bills? I hope the governments work out the financial support soon, because I'm worried about this spreading into every state and territory as people leave NSW.
 

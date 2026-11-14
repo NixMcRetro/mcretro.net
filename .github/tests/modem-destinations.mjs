@@ -100,7 +100,7 @@ function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'
   }
   runInNewContext(code, {
     document, window, fetch, URLSearchParams, Promise,
-    Math: { floor: Math.floor, random: () => 0 }
+    Math: { floor: Math.floor, round: Math.round, random: () => 0 }
   });
   return { dialog, standalone, links, navigations, pushes, replacements, requests, timers };
 }
@@ -204,3 +204,4 @@ test('Goodies links to the modem page rather than separately listing dial modes'
   assert.match(modem, /value="blog-random" data-modem-choice/);
   assert.match(modem, /value="random" data-modem-choice/);
 });
+

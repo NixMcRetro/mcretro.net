@@ -9,8 +9,25 @@
   const MODEM_ROUTE = '/homepages/modem/';
   const DIAL_NUMBER = '0293735100';
   const HANDSHAKE_PROFILE = '/assets/data/mcretro-handshake-profile.json';
-  const HANDSHAKE_START = 10.6;
-  const TOTAL_MS = 27000;
+  const AUDIO_LEAD = 0.03;
+  const OUTPUT_GAIN = 0.90;
+  const HANDSHAKE_GAIN = 1.75;
+  const DIAL_TONE_SECONDS = 2.61;
+  const PRE_DIAL_SILENCE = 0.50;
+  const DIALLING_START = DIAL_TONE_SECONDS + PRE_DIAL_SILENCE;
+  const DIGIT_SECONDS = 0.120;
+  const DIGIT_GAP = 0.060;
+  const DIGIT_PERIOD = DIGIT_SECONDS + DIGIT_GAP;
+  const DIALLING_END = DIALLING_START + (DIAL_NUMBER.length - 1) * DIGIT_PERIOD + DIGIT_SECONDS;
+  const RING_START = DIALLING_END + 1.00;
+  const RING_COUNT = 2;
+  const RING_BURST = 0.40;
+  const RING_INNER_GAP = 0.20;
+  const RING_PAIR = 2 * RING_BURST + RING_INNER_GAP;
+  const RING_PERIOD = RING_PAIR + 2.00;
+  const ANSWER_LEAD = 0.30; // Answer just before the next ring would start.
+  const HANDSHAKE_START = RING_START + RING_COUNT * RING_PERIOD - ANSWER_LEAD;
+  const TOTAL_MS = Math.round((AUDIO_LEAD + HANDSHAKE_START + 16.30 + 0.07) * 1000);
   const SITES = Object.freeze([
     Object.freeze({slug:'frank',name:'Frank the Snake',path:'/homepages/frank/'}),
     Object.freeze({slug:'pepper',name:'Pepper the Dog Blog',path:'/homepages/pepper/'}),
@@ -77,73 +94,80 @@
       const context=new Context();
       const master=context.createGain();
       const muted=root.dataset.muted==='true';
-      master.gain.value=muted ? 0 : 0.05;
+      master.gain.value=muted ? 0 : OUTPUT_GAIN;
       master.connect(context.destination);
-      const time=context.currentTime+0.03;
+      const time=context.currentTime+AUDIO_LEAD;
 
-      function tone(freq,offset,duration,volume=0.2,type='sine') {
+      function tone(freq,offset,duration,volume=0.2,type='sine',attack=0.012,release=0.025) {
         const osc=context.createOscillator(), envelope=context.createGain();
         const from=time+offset, until=from+duration;
         osc.type=type;
         osc.frequency.setValueAtTime(freq,from);
         envelope.gain.setValueAtTime(0,from);
-        envelope.gain.linearRampToValueAtTime(volume,from+0.012);
-        envelope.gain.setValueAtTime(volume,until-0.025);
+        envelope.gain.linearRampToValueAtTime(volume,from+attack);
+        envelope.gain.setValueAtTime(volume,until-release);
         envelope.gain.linearRampToValueAtTime(0,until);
         osc.connect(envelope);
         envelope.connect(master);
         osc.start(from);
         osc.stop(until+0.01);
       }
-      // Australian 425 x 25 Hz dial tone, continuous for the first 1.7 seconds.
-      const start=time, length=1.7;
+      // Australian 425 x 25 Hz dial tone, continuous for the first 2.61 seconds.
+      const start=time, length=DIAL_TONE_SECONDS;
       const carrier=context.createOscillator(), lfo=context.createOscillator();
       const amplitude=context.createGain(), modulation=context.createGain();
+      const dialEnvelope=context.createGain();
       carrier.frequency.value=425;
       lfo.frequency.value=25;
       modulation.gain.value=0.32;
-      amplitude.gain.setValueAtTime(0,start);
-      amplitude.gain.setValueAtTime(0.65,start+0.015);
-      amplitude.gain.setValueAtTime(0.65,start+length-0.025);
-      amplitude.gain.linearRampToValueAtTime(0,start+length);
+      amplitude.gain.value=0.65;
+      // Fade the complete modulated signal so the 25 Hz component also reaches silence.
+      dialEnvelope.gain.setValueAtTime(0,start);
+      dialEnvelope.gain.linearRampToValueAtTime(0.50,start+0.015);
+      dialEnvelope.gain.setValueAtTime(0.50,start+length-0.025);
+      dialEnvelope.gain.linearRampToValueAtTime(0,start+length);
       lfo.connect(modulation);
       modulation.connect(amplitude.gain);
       carrier.connect(amplitude);
-      amplitude.connect(master);
+      amplitude.connect(dialEnvelope);
+      dialEnvelope.connect(master);
       carrier.start(start);
       lfo.start(start);
       carrier.stop(start+length+0.01);
       lfo.stop(start+length+0.01);
 
-      // Ten real DTMF digit pairs for 02 9373 5100, 190 ms per key + 95 ms gap.
+      // Ten real DTMF pairs for 02 9373 5100. Short fades keep each digit distinct.
       Array.from(DIAL_NUMBER).forEach((digit,index) => {
-        const when=1.95+index*0.285;
-        DTMF[digit].forEach(freq=>tone(freq,when,0.19,0.22));
+        const when=DIALLING_START+index*DIGIT_PERIOD;
+        DTMF[digit].forEach(freq=>tone(freq,when,DIGIT_SECONDS,0.26,'sine',0.006,0.012));
       });
 
       // Australian ringback: 0.4s on, 0.2s off, 0.4s on, 2s off.
       // 400+425+450Hz is an accepted Australian PSTN ringback frequency combination.
-      for(const offset of [5.35,5.95,8.35]) {
-        for(const freq of [400,425,450]) tone(freq,offset,0.4,0.09);
+      for(let ring=0;ring<RING_COUNT;ring++) {
+        const first=RING_START+ring*RING_PERIOD;
+        const second=first+RING_BURST+RING_INNER_GAP;
+        for(const offset of [first,second]) {
+          for(const freq of [400,425,450]) tone(freq,offset,RING_BURST,0.16);
+        }
       }
 
-      // Keep the AU dial tone, DTMF digits and ringback exactly as before.
-      // The next 16.3 seconds are synthesized from spectral parameters
-      // derived from the owner's reference recording, not played from a file.
+      // Answer during the quiet interval after two complete double rings, 300 ms before the third would start.
+      // The 16.3-second handshake is generated from spectral parameters.
       let stopped=false;
       const fallbackHandshake=()=>{
-        if(stopped || context.currentTime > time+18) return;
+        if(stopped || context.currentTime > time+18.95) return;
         // Previous synthetic handshake, retained for unsupported codecs or failed loads.
-        for(let i=0;i<6;i++) tone(2100,10.6+i*0.46,0.43,0.12);
-        tone(1300,13.45,0.36,0.15);
-        tone(1750,13.9,0.36,0.15);
-        tone(980,14.35,0.3,0.13);
+        for(let i=0;i<6;i++) tone(2100,HANDSHAKE_START+i*0.46,0.43,0.12);
+        tone(1300,14.40,0.36,0.15);
+        tone(1750,14.85,0.36,0.15);
+        tone(980,15.30,0.3,0.13);
         for(let i=0;i<24;i++){
-          const at=14.8+i*0.095;
+          const at=15.75+i*0.095;
           tone(700+(i*317)%2050,at,0.086,0.10,i%4===0?'triangle':'sine');
           if(i%3===0) tone(1150+(i*213)%1300,at,0.074,0.065);
         }
-        tone(1800,17.2,0.5,0.11);
+        tone(1800,18.15,0.5,0.11);
       };
       context.resume().catch(()=>{});
       Promise.all([
@@ -161,7 +185,10 @@
           if(stopped) return;
           const handshake=context.createBufferSource();
           handshake.buffer=buffer;
-          handshake.connect(master);
+          const handshakeLevel=context.createGain();
+          handshakeLevel.gain.value=HANDSHAKE_GAIN;
+          handshake.connect(handshakeLevel);
+          handshakeLevel.connect(master);
           const scheduled=time+HANDSHAKE_START;
           const startsAt=Math.max(scheduled,context.currentTime+0.02);
           const offset=startsAt-scheduled;
@@ -169,7 +196,7 @@
         })
         .catch(fallbackHandshake);
       return {
-        mute(value) { master.gain.setTargetAtTime(value?0:0.05,context.currentTime,0.02); },
+        mute(value) { master.gain.setTargetAtTime(value?0:OUTPUT_GAIN,context.currentTime,0.02); },
         stop() { stopped=true; context.close().catch(()=>{}); }
       };
     } catch(error) {
@@ -212,12 +239,12 @@
     currentRun=run;
     const steps=[
       [0,'Initialising modem...'],
-      [1000,'Dialling 02 9373 5100...'],
-      [5200,'Waiting for answer...'],
-      [10200,'Negotiating protocols...'],
-      [13700,'Handshaking with remote modem...'],
-      [24800,'Verifying user name and password...'],
-      [26300,'Connected at 33600 bps.']
+      [Math.round((AUDIO_LEAD+DIALLING_START)*1000),'Dialling 02 9373 5100...'],
+      [Math.round((AUDIO_LEAD+DIALLING_END)*1000),'Waiting for answer...'],
+      [Math.round((AUDIO_LEAD+HANDSHAKE_START)*1000),'Negotiating protocols...'],
+      [14650,'Handshaking with remote modem...'],
+      [25750,'Verifying user name and password...'],
+      [27250,'Connected at 33600 bps.']
     ];
     steps.forEach(([delay,message])=>{
       run.timers.push(window.setTimeout(()=>{
@@ -318,3 +345,4 @@
     });
   }
 })();
+

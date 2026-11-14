@@ -375,8 +375,8 @@ test('Goodies links to the Windows 95 dial-up folder with all destinations', () 
   assert.match(modem, /assets\/data\/random-post-urls\.json/);
   assert.match(header, /<span class="phrase mobile-tagline">🚀 Blast Processed Since 199X<\/span>/u);
   assert.match(header, /🧪 Trial and Error<\/span>/u);
-  assert.match(header, /🧭 Best viewed with Netscape Navigator<\/span>/u);
-  assert.match(header, /🌐 Best viewed with Internet Explorer<\/span>/u);
+  assert.match(header, /<span class="phrase">Best viewed with Netscape Navigator<\/span>/u);
+  assert.match(header, /<span class="phrase">Best viewed with Internet Explorer<\/span>/u);
   assert.match(header, /🔎 Do You Yahoo\?<\/span>/u);
   assert.match(header, /🌍 Hack the Planet!<\/span>/u);
   assert.match(header, /💣 Somebody set up us the bomb<\/span>/u);

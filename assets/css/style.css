@@ -436,7 +436,10 @@ pre code {
   color: var(--link);
 }
 
-/* ---- Animated subtitle ---- */
+/* ---- Animated subtitle ----
+   The previous staggered 60s animation faded each phrase out before the
+   next started, creating a blank 1.2s gap every six seconds. The shuffle
+   script now crossfades active phrases directly instead of using delays. */
 .textcycle {
   position: relative;
   height: auto;
@@ -454,30 +457,18 @@ pre code {
   letter-spacing: 0.03em;
   color: var(--text);
   opacity: 0;
-  animation: phraseCycleLong 60s infinite;
+  transition: opacity 0.35s linear;
 }
-@keyframes phraseCycleLong {
-  0%   { opacity: 0; }
-  1%   { opacity: 1; }
-  9%   { opacity: 1; }
-  10%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-.textcycle .phrase:nth-child(1) { animation-delay: 0s; }
-.textcycle .phrase:nth-child(2) { animation-delay: 6s; }
-.textcycle .phrase:nth-child(3) { animation-delay: 12s; }
-.textcycle .phrase:nth-child(4) { animation-delay: 18s; }
-.textcycle .phrase:nth-child(5) { animation-delay: 24s; }
-.textcycle .phrase:nth-child(6) { animation-delay: 30s; }
-.textcycle .phrase:nth-child(7) { animation-delay: 36s; }
-.textcycle .phrase:nth-child(8) { animation-delay: 42s; }
-.textcycle .phrase:nth-child(9) { animation-delay: 48s; }
-.textcycle .phrase:nth-child(10) { animation-delay: 54s; }
+/* Visible even if JavaScript fails or loads slowly. */
+.textcycle .phrase:first-child { opacity: 1; }
+.textcycle.is-cycling .phrase { opacity: 0; }
+.textcycle.is-cycling .phrase.is-active { opacity: 1; }
 
-/* Keep the first tagline readable when reduced motion is requested. */
+/* Static first phrase for people who request reduced motion. */
 @media (prefers-reduced-motion: reduce) {
-  .textcycle .phrase { animation: none; }
-  .textcycle .phrase:first-child { opacity: 1; }
+  .textcycle .phrase { transition: none; }
+  .textcycle.is-cycling .phrase.is-active:not(:first-child) { opacity: 0; }
+  .textcycle.is-cycling .phrase:first-child { opacity: 1; }
 }
 
 /* ===========================
@@ -629,15 +620,18 @@ pre code {
 .inline-search-form button:hover {
   background: var(--button-hover);
 }
-/* Search keeps its solid blue resting state. On hover and keyboard focus,
-   use the same accessible themed blue highlight as other site controls. */
+/* Match sidebar action links: neutral/pale surface and blue text normally,
+   then the same themed blue tile on hover and keyboard focus. */
 .sidebar .inline-search-form button {
-  background: var(--sidebar-button-bg);
+  background: var(--archive-empty);
+  color: var(--link);
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 .sidebar .inline-search-form button:hover,
 .sidebar .inline-search-form button:focus-visible {
-  background: var(--interactive-hover);
-  color: var(--archive-filled-text);
+  background: var(--archive-filled);
+  color: var(--link-hover);
 }
 .search-widget {
   padding-top: 0.8rem;

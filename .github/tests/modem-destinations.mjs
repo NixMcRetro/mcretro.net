@@ -253,6 +253,7 @@ test('Goodies links to the modem page rather than separately listing dial modes'
   assert.match(connection, /value="random" data-modem-choice/);
   assert.match(connection, /data-modem-number[^>]+value="02 9373 5100"/);
   assert.ok(connection.includes('Connected At:</dt><dd>28,800 bps</dd>'));
+  assert.match(connection, /target="_blank" rel="noopener" data-modem-visit/);
 });
 
 
@@ -321,13 +322,14 @@ test('invalid or empty dial numbers cannot start a connection', () => {
   assert.equal(f.timers.length, 0);
 });
 
-test('connected window persists across navigation, minimises, restores and disconnects', async () => {
+test('connected window keeps the visit link, survives navigation, minimises and disconnects', async () => {
   const storage = new Map();
   const f = fixture({ site: 'random', storage });
   f.standalone.control('[data-modem-connect]').listeners.click();
   f.timers.find(timer => timer.delay === 31750).callback();
   await tick();
-  assert.deepEqual(f.navigations, ['/homepages/frank/']);
+  assert.deepEqual(f.navigations, []); // The status must remain visible.
+  assert.equal(f.standalone.control('[data-modem-visit]').href, '/homepages/frank/');
   assert.equal(f.standalone.dataset.modemStage, 'connected');
   const saved = JSON.parse(storage.get('mcretro-dialup-connected-v1'));
   assert.equal(saved.name, 'Frank the Snake');

@@ -299,6 +299,7 @@
   function displayConnected(root, data) {
     root.querySelector('[data-modem-connected-number]').textContent = data.phone;
     root.querySelector('[data-modem-connected-destination]').textContent = data.name;
+    root.querySelector('[data-modem-visit]').href = data.path || MODEM_ROUTE;
     const duration = root.querySelector('[data-modem-duration]');
     const update = () => { duration.textContent = formatDuration(data.startedAt); };
     setStage(root, 'connected');
@@ -339,6 +340,7 @@
     setStage(dialog, 'connected');
     dialog.querySelector('[data-modem-connected-number]').textContent = data.phone;
     dialog.querySelector('[data-modem-connected-destination]').textContent = data.name;
+    dialog.querySelector('[data-modem-visit]').href = data.path || MODEM_ROUTE;
     if (data.minimised) {
       if (taskbar) taskbar.hidden = false;
     } else {
@@ -390,13 +392,14 @@
       if (currentRun !== run) return;
       run.destinationPromise.then(path => {
         if (currentRun !== run) return;
-        const data = { name: site.name, phone, startedAt: Date.now(), minimised: false };
+        const data = { name: site.name, phone, path, startedAt: Date.now(), minimised: false };
         endRun();
         saveConnected(data);
+        // Keep the connection window in this tab. Some restored homepages are
+        // standalone historical HTML without the shared McRetro layout, so an
+        // automatic redirect would make the Connected window disappear.
+        // The Visit Site link opens the selected destination in a new tab.
         displayConnected(root, data);
-        // Preserve the original automatic destination navigation. The window
-        // is restored from sessionStorage on the destination page.
-        window.location.replace(path);
       });
     }, timing.totalMs));
   }

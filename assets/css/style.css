@@ -975,7 +975,7 @@ pre code {
   color: var(--link);
   text-decoration: none;
 }
-.page-number:hover,
+a.page-number:hover,
 .arrow-link:hover {
   background: var(--panel-hover);
   color: var(--link-hover);

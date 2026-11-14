@@ -26,7 +26,14 @@
   const RING_PAIR = 2 * RING_BURST + RING_INNER_GAP;
   const RING_PERIOD = RING_PAIR + 2.00;
   const ANSWER_LEAD = 0.30; // Answer just before the next ring would start.
-  const HANDSHAKE_START = RING_START + RING_COUNT * RING_PERIOD - ANSWER_LEAD;
+  const CALLING_START = RING_START + RING_COUNT * RING_PERIOD - ANSWER_LEAD;
+  const CALLING_COUNT = 3;
+  const CALLING_FREQUENCY = 1300;
+  const CALLING_SECONDS = 0.60;
+  const CALLING_PERIOD = 2.35; // 0.60 seconds on, 1.75 seconds off in the reference.
+  const CALLING_GAIN = 0.247; // Reference level scaled to the approved handshake mix.
+  const CALLING_SEQUENCE_SECONDS = 6.34;
+  const HANDSHAKE_START = CALLING_START + CALLING_SEQUENCE_SECONDS;
   const TOTAL_MS = Math.round((AUDIO_LEAD + HANDSHAKE_START + 16.30 + 0.07) * 1000);
   const SITES = Object.freeze([
     Object.freeze({slug:'frank',name:'Frank the Snake',path:'/homepages/frank/'}),
@@ -152,22 +159,29 @@
         }
       }
 
-      // Answer during the quiet interval after two complete double rings, 300 ms before the third would start.
+      // Begin calling during silence after the second double ring, before an omitted third ring.
+      // V.25 calling tone: three procedural 1300 Hz bursts, with gentle click-free edges.
+      for(let call=0;call<CALLING_COUNT;call++) {
+        tone(CALLING_FREQUENCY,CALLING_START+call*CALLING_PERIOD,
+          CALLING_SECONDS,CALLING_GAIN,'sine',0.008,0.012);
+      }
+
+      // Preserve the approved exchange after the calling sequence, including the final 1.04s pause.
       // The 16.3-second handshake is generated from spectral parameters.
       let stopped=false;
       const fallbackHandshake=()=>{
-        if(stopped || context.currentTime > time+18.95) return;
+        if(stopped || context.currentTime > time+HANDSHAKE_START+7.40) return;
         // Previous synthetic handshake, retained for unsupported codecs or failed loads.
         for(let i=0;i<6;i++) tone(2100,HANDSHAKE_START+i*0.46,0.43,0.12);
-        tone(1300,14.40,0.36,0.15);
-        tone(1750,14.85,0.36,0.15);
-        tone(980,15.30,0.3,0.13);
+        tone(1300,HANDSHAKE_START+2.85,0.36,0.15);
+        tone(1750,HANDSHAKE_START+3.30,0.36,0.15);
+        tone(980,HANDSHAKE_START+3.75,0.3,0.13);
         for(let i=0;i<24;i++){
-          const at=15.75+i*0.095;
+          const at=HANDSHAKE_START+4.20+i*0.095;
           tone(700+(i*317)%2050,at,0.086,0.10,i%4===0?'triangle':'sine');
           if(i%3===0) tone(1150+(i*213)%1300,at,0.074,0.065);
         }
-        tone(1800,18.15,0.5,0.11);
+        tone(1800,HANDSHAKE_START+6.60,0.5,0.11);
       };
       context.resume().catch(()=>{});
       Promise.all([
@@ -241,10 +255,11 @@
       [0,'Initialising modem...'],
       [Math.round((AUDIO_LEAD+DIALLING_START)*1000),'Dialling 02 9373 5100...'],
       [Math.round((AUDIO_LEAD+DIALLING_END)*1000),'Waiting for answer...'],
+      [Math.round((AUDIO_LEAD+CALLING_START)*1000),'Calling remote modem...'],
       [Math.round((AUDIO_LEAD+HANDSHAKE_START)*1000),'Negotiating protocols...'],
-      [14650,'Handshaking with remote modem...'],
-      [25750,'Verifying user name and password...'],
-      [27250,'Connected at 33600 bps.']
+      [Math.round((AUDIO_LEAD+HANDSHAKE_START+3.07)*1000),'Handshaking with remote modem...'],
+      [Math.round((AUDIO_LEAD+HANDSHAKE_START+14.17)*1000),'Verifying user name and password...'],
+      [Math.round((AUDIO_LEAD+HANDSHAKE_START+15.67)*1000),'Connected at 33600 bps.']
     ];
     steps.forEach(([delay,message])=>{
       run.timers.push(window.setTimeout(()=>{

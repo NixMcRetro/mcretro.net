@@ -418,7 +418,8 @@
 /* Plain hand-linked homepage dialler. Existing widget separators supply the frame. */
 .dial-homepage { margin-top: 0.15rem; }
 .dial-homepage-intro {
-  margin: 0 0 0.45rem;
+  /* The shared action link supplies the gap, as it does after Recent Posts. */
+  margin: 0;
   font-size: 0.86rem;
   line-height: 1.55;
 }

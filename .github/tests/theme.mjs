@@ -224,6 +224,13 @@ test('sidebar sections use the same 1.3rem spacing before their dividers', () =>
   assert.equal((overrides.match(/\.sidebar \.dial-homepage\s*\{/g) || []).length, 1, 'No later Dial-a-Homepage override');
 });
 
+test('Recent Posts and Dial-a-Homepage share the same content-to-button gap', () => {
+  assert.match(style, /\.widget ul\.recent-posts-list\s*\{[^}]*margin-bottom:\s*0;/);
+  assert.match(overrides, /\.dial-homepage-intro\s*\{[^}]*margin:\s*0;/);
+  assert.match(style, /\.sidebar-action-link\s*\{[^}]*margin-top:\s*0\.5rem;/);
+  assert.match(overrides, /\.sidebar \.recent-posts-list li:last-child\s*\{[^}]*margin-bottom:\s*0;/);
+});
+
 test('calendar keeps four month columns with compact themed filled and empty tiles', () => {
   const light=style.split(':root[data-theme="dark"]')[0];
   const dark=style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];

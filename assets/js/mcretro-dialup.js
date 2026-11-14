@@ -19,19 +19,19 @@
   const DIGIT_GAP = 0.060;
   const DIGIT_PERIOD = DIGIT_SECONDS + DIGIT_GAP;
   const DIALLING_END = DIALLING_START + (DIAL_NUMBER.length - 1) * DIGIT_PERIOD + DIGIT_SECONDS;
-  // V6.6: two beep / Australian double-ring pairs, then the approved handshake.
+  // V6.7: three beep / Australian double-ring pairs, then the approved handshake.
   const CALLING_START = DIALLING_END + 1.00; // Preserve the pause after dialling.
   const CALLING_FREQUENCY = 1300;
   const CALLING_SECONDS = 0.60;
   const CALLING_GAIN = 0.247;
   const CALLING_TO_RING_GAP = 0.20;
-  const RING_COUNT = 2;
+  const RING_COUNT = 3;
   const RING_BURST = 0.40;
   const RING_INNER_GAP = 0.20;
   const RING_PAIR = 2 * RING_BURST + RING_INNER_GAP;
   const RING_PERIOD = RING_PAIR + 2.00;
   const RING_START = CALLING_START + CALLING_SECONDS + CALLING_TO_RING_GAP;
-  const ANSWER_LEAD = 0.30; // Start handshake before a hypothetical third double ring.
+  const ANSWER_LEAD = 0.30; // Start handshake before a hypothetical fourth double ring.
   const HANDSHAKE_START = RING_START + RING_COUNT * RING_PERIOD - ANSWER_LEAD;
   const TOTAL_MS = Math.round((AUDIO_LEAD + HANDSHAKE_START + 16.30 + 0.07) * 1000);
   const SITES = Object.freeze([
@@ -148,7 +148,7 @@
         DTMF[digit].forEach(freq=>tone(freq,when,DIGIT_SECONDS,0.26,'sine',0.006,0.012));
       });
 
-      // V6.6 experiment: beep, double ring, beep, double ring, then handshake.
+      // V6.7: beep, double ring, beep, double ring, beep, double ring, then handshake.
       // The calling beeps do not overlap the rings: 0.6s at 1300 Hz, then 0.2s quiet.
       // Australian ringback: 0.4s on, 0.2s off, 0.4s on, then 2s off.
       // 400+425+450Hz is an accepted Australian PSTN ringback frequency combination.

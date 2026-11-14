@@ -218,7 +218,13 @@
   .blog-list + .pagination-wrapper .pagination-numbers {
     grid-column: 2;
     grid-row: 1;
+    justify-content: center;
     gap: 0.15rem;
+  }
+
+  /* Unwrap the desktop arrow group for the mobile three-column grid. */
+  .blog-list + .pagination-wrapper .pagination-arrows {
+    display: contents;
   }
 
   .blog-list + .pagination-wrapper .pagination-prev {

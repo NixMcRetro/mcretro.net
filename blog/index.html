@@ -73,11 +73,6 @@ pagefind: false
 <nav class="pagination-wrapper" aria-label="Blog pagination">
   <div class="pagination-bar">
     <div class="pagination-controls">
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}" class="arrow-link pagination-prev" rel="prev" aria-label="Previous page">
-          <span class="arrow-icon" aria-hidden="true">&larr;</span>
-        </a>
-      {% endif %}
       <div class="pagination-numbers">
         {% assign window_size = 5 %}
         {% assign half = window_size | divided_by: 2 %}
@@ -127,13 +122,23 @@ pagefind: false
           <a href="/blog/page{{ paginator.total_pages }}/" class="page-number" aria-label="Page {{ paginator.total_pages }}">{{ paginator.total_pages }}</a>
         {% endif %}
       </div>
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}" class="arrow-link pagination-next" rel="next" aria-label="Next page">
-          <span class="arrow-icon" aria-hidden="true">&rarr;</span>
-        </a>
-      {% endif %}
+      <div class="pagination-arrows">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path }}" class="arrow-link pagination-prev" rel="prev" aria-label="Previous page">
+            <span class="arrow-icon" aria-hidden="true">&larr;</span>
+          </a>
+        {% else %}
+          <span class="arrow-placeholder pagination-prev" aria-hidden="true"></span>
+        {% endif %}
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path }}" class="arrow-link pagination-next" rel="next" aria-label="Next page">
+            <span class="arrow-icon" aria-hidden="true">&rarr;</span>
+          </a>
+        {% else %}
+          <span class="arrow-placeholder pagination-next" aria-hidden="true"></span>
+        {% endif %}
+      </div>
     </div>
-    <p class="pagination-status">Page {{ paginator.page }} of {{ paginator.total_pages }}</p>
   </div>
 </nav>
 {% endif %}

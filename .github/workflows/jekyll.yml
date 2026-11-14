@@ -24,6 +24,9 @@ on:
       - 'about.md'
       - 'channels.md'
       - 'goodies.md'
+      - 'homepages/fishtankworld/**'
+      - 'homepages/goatpad/**'
+      - '.github/tests/restore-fishtank-gallery.py'
       - '_layouts/default.html'
       - '_includes/sidebar.html'
       - 'assets/js/archive-calendar.js'
@@ -98,8 +101,14 @@ jobs:
       - name: Verify caption filtering with Ruby regression tests
         run: bundle exec ruby .github/tests/caption-excerpts.test.rb
 
+      - name: Reassemble and check original Fish Tank World gallery photographs
+        run: python3 .github/tests/restore-fishtank-gallery.py
+
       - name: Build site with Jekyll
         run: bundle exec jekyll build --destination _site
+
+      - name: Verify all restored photographs are present in the built site
+        run: python3 .github/tests/restore-fishtank-gallery.py --verify-built _site
 
       - name: Setup Node.js
         uses: actions/setup-node@v6

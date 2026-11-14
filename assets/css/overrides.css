@@ -1244,3 +1244,157 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
     background: var(--archive-filled-hover);
   }
 }
+
+/* McRetro Dial-Up Networking: compact Windows 95 explorer and editable dialler. */
+.mcretro-modem-page { max-width: 620px; }
+.mcretro-modem-page > h1 { margin-bottom: .45rem; }
+.mcretro-modem-page .mcretro-modem-intro { margin: 0 0 1rem; }
+.mcretro-modem-page .mcretro-modem-back { margin-top: 1.2rem; }
+.mcretro-modem-explorer {
+  box-sizing: border-box;
+  width: min(100%, 440px);
+  border: 2px solid #c0c0c0;
+  outline: 1px solid #303030;
+  box-shadow: inset 1px 1px #fff, inset -1px -1px #606060, 2px 2px 0 #777;
+  background: #c0c0c0; color: #000; color-scheme: light;
+  font: 12px/1.25 Tahoma, "MS Sans Serif", Arial, sans-serif;
+}
+.mcretro-modem-explorer-titlebar {
+  min-height: 24px; box-sizing: border-box; display: flex;
+  align-items: center; justify-content: space-between; gap: 7px;
+  padding: 2px 3px 2px 5px; background: #000080; color: #fff; font-weight: bold;
+}
+.mcretro-modem-explorer-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mcretro-modem-explorer-chrome { display: flex; align-items: center; gap: 2px; }
+.mcretro-modem-explorer-chrome span {
+  box-sizing: border-box; display: grid; place-items: center; height: 18px; width: 18px;
+  background: #c0c0c0; border: 2px outset #fff; color: #000;
+  font: bold 12px/1 Tahoma, Arial, sans-serif;
+}
+.mcretro-modem-explorer-menu {
+  display: flex; gap: 18px; padding: 7px 10px 5px; border-bottom: 1px solid #888;
+}
+.mcretro-modem-explorer-address {
+  display: flex; align-items: center; gap: 8px; padding: 5px 6px;
+  border-bottom: 1px solid #7a7a7a;
+}
+.mcretro-modem-explorer-path {
+  display: block; flex: 1; background: #fff; padding: 3px 6px;
+  border: 2px inset #eee; min-width: 0; color: #000;
+}
+.mcretro-modem-explorer-files {
+  min-height: 188px; padding: 14px; background: #fff;
+  border: 2px inset #f0f0f0;
+}
+.mcretro-modem-shortcut {
+  display: flex !important; width: 118px; min-height: 92px;
+  flex-direction: column; align-items: center; justify-content: flex-start;
+  gap: 5px; padding: 6px 5px; border: 1px dotted transparent;
+  box-sizing: border-box; text-align: center; color: #000 !important;
+  text-decoration: none !important; font: 12px/1.15 Tahoma, Arial, sans-serif;
+}
+.mcretro-modem-shortcut:hover, .mcretro-modem-shortcut:focus-visible {
+  border-color: #333; background: #d9e5fb;
+}
+.mcretro-modem-shortcut:focus-visible { outline: 2px solid #000080; outline-offset: 2px; }
+.mcretro-modem-shortcut-name { padding: 2px 3px; }
+.mcretro-modem-shortcut:hover .mcretro-modem-shortcut-name,
+.mcretro-modem-shortcut:focus-visible .mcretro-modem-shortcut-name { background: #000080; color: #fff; }
+.mcretro-modem-shortcut-icon { display: flex; align-items: center; gap: 4px; height: 36px; }
+.mcretro-modem-shortcut-icon .mcretro-modem-phone { font-size: 25px; }
+.mcretro-modem-explorer-status { padding: 4px 7px; border-top: 1px solid #fff; }
+.mcretro-modem-dialog { width: min(96vw, 500px); }
+.mcretro-modem-dialog .mcretro-modem-card { font: 13px/1.25 Tahoma, "MS Sans Serif", Arial, sans-serif; }
+.mcretro-modem-dialog .mcretro-modem-body { padding: 13px 16px 12px; }
+.mcretro-modem-dialog .mcretro-modem-identity { min-height: 42px; margin-bottom: 9px; }
+.mcretro-modem-dialog .mcretro-modem-targets {
+  display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 0 0 12px;
+  padding: 7px 10px 9px; border: 1px groove #fff; color: #000;
+}
+.mcretro-modem-dialog .mcretro-modem-targets legend { padding: 0 4px; font-size: 13px; }
+.mcretro-modem-dialog .mcretro-modem-targets label { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+.mcretro-modem-dialog .mcretro-modem-targets input { accent-color: #000080; }
+.mcretro-modem-dialog .mcretro-modem-fields { margin-bottom: 10px; }
+.mcretro-modem-dialog .mcretro-modem-rule { margin-bottom: 10px; }
+.mcretro-modem-dialog .mcretro-modem-fields > input:not([type=checkbox]) { font: 13px/1 Tahoma, Arial, sans-serif; }
+.mcretro-modem-dialog .mcretro-modem-minimize {
+  box-sizing: border-box; display: inline-flex; width: 22px; height: 21px;
+  align-items: center; justify-content: center;
+  border: 2px outset #fff; border-radius: 0;
+  padding: 0; background: #c0c0c0; color: #000;
+  font: bold 16px/1 Arial, sans-serif; cursor: pointer;
+}
+.mcretro-modem-dialog .mcretro-modem-controls button,
+.mcretro-modem-dialog .mcretro-modem-progress-layout > button,
+.mcretro-modem-dialog .mcretro-modem-connected-buttons button {
+  display: inline-flex; align-items: center; justify-content: center;
+  box-sizing: border-box; min-width: 85px; min-height: 28px;
+  border: 2px outset #f2f2f2; border-radius: 0;
+  padding: 3px 9px; background: #c0c0c0; color: #000;
+  text-decoration: none; font: 13px/1.2 Tahoma, Arial, sans-serif;
+  cursor: pointer;
+}
+.mcretro-modem-dialog .mcretro-modem-progress-layout > button { align-self: start; }
+.mcretro-modem-dialog .mcretro-modem-controls button:active,
+.mcretro-modem-dialog .mcretro-modem-progress-layout > button:active,
+.mcretro-modem-dialog .mcretro-modem-connected-buttons button:active,
+.mcretro-modem-dialog .mcretro-modem-minimize:active { border-style: inset; }
+.mcretro-modem-dialog button:focus-visible,
+.mcretro-modem-dialog input:focus-visible,
+.mcretro-modem-dialog select:focus-visible { outline: 2px dotted #000; outline-offset: 2px; }
+.mcretro-modem-dialog .mcretro-modem-connected-layout {
+  display: grid; grid-template-columns: 58px minmax(0,1fr) 92px;
+  align-items: start; gap: 12px;
+}
+.mcretro-modem-connected-stats { margin: 0; font: 12px/1.4 Tahoma, Arial, sans-serif; }
+.mcretro-modem-connected-stats > div { display: flex; gap: 5px; margin: 0 0 4px; }
+.mcretro-modem-connected-stats dt { white-space: nowrap; font-weight: normal; }
+.mcretro-modem-connected-stats dd { margin: 0; font-variant-numeric: tabular-nums; }
+.mcretro-modem-connected-buttons { display: flex; flex-direction: column; gap: 6px; }
+.mcretro-modem-dialog .mcretro-modem-connected-buttons button { min-width: 0; width: 100%; }
+.mcretro-modem-connected-details {
+  padding: 9px 0 0; margin: 8px 0 0; border-top: 1px solid #777;
+  font: 12px/1.5 Tahoma, Arial, sans-serif;
+}
+.mcretro-modem-connected-details > div { overflow-wrap: anywhere; }
+.mcretro-modem-dialog[data-modem-stage="connected"] {
+  position: fixed; top: 18px; right: 18px; left: auto; bottom: auto; margin: 0;
+  width: min(94vw, 430px); z-index: 9000;
+}
+.mcretro-modem-taskbar {
+  position: fixed; bottom: 14px; left: 14px; z-index: 9000;
+  border: 2px outset #fff; border-radius: 0;
+  padding: 6px 10px; background: #c0c0c0; color: #000; color-scheme: light;
+  box-shadow: 1px 2px #555; cursor: pointer;
+  font: bold 12px/1.2 Tahoma, Arial, sans-serif;
+}
+.mcretro-modem-taskbar:hover { background: #dadada; }
+.mcretro-modem-taskbar:focus-visible { outline: 2px dotted #000080; outline-offset: 2px; }
+.mcretro-modem-dialog [hidden], .mcretro-modem-taskbar[hidden] { display: none !important; }
+@media (max-width: 530px) {
+  .mcretro-modem-dialog .mcretro-modem-connected-layout { grid-template-columns: 47px minmax(0,1fr); }
+  .mcretro-modem-dialog .mcretro-modem-connected-buttons {
+    grid-column: 1 / -1; flex-direction: row; justify-content: flex-end;
+  }
+  .mcretro-modem-dialog .mcretro-modem-connected-buttons button { width: auto; min-width: 84px; }
+  .mcretro-modem-dialog[data-modem-stage="connected"] { top: 8px; right: 8px; }
+}
+
+/* Visit Site is a real link, styled as a Windows 95 push button. */
+.mcretro-modem-dialog .mcretro-modem-connected-buttons .mcretro-modem-visit {
+  display: inline-flex; align-items: center; justify-content: center;
+  box-sizing: border-box; min-width: 0; width: 100%; min-height: 28px;
+  border: 2px outset #f2f2f2; border-radius: 0;
+  padding: 3px 9px; background: #c0c0c0; color: #000 !important;
+  text-decoration: none !important; font: 13px/1.2 Tahoma, Arial, sans-serif;
+  cursor: pointer;
+}
+.mcretro-modem-dialog .mcretro-modem-visit:active { border-style: inset; }
+.mcretro-modem-dialog .mcretro-modem-visit:focus-visible {
+  outline: 2px dotted #000080; outline-offset: 2px;
+}
+@media (max-width: 530px) {
+  .mcretro-modem-dialog .mcretro-modem-connected-buttons .mcretro-modem-visit {
+    width: auto; min-width: 84px;
+  }
+}

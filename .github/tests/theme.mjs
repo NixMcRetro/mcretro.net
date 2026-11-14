@@ -362,6 +362,9 @@ test('Goodies offers both dial-up destinations and keeps existing sections', () 
   assert.match(goodies, /Dial a Random Homepage<\/a>/);
   assert.match(modem, /document\.querySelectorAll\('a\[data-dial-site\]'\)/);
   assert.match(modem, /assets\/data\/random-post-urls\.json/);
+  assert.match(header, /🌍 Hack the Planet!<\/span>/u);
+  assert.match(header, /💣 Somebody set up us the bomb<\/span>/u);
+  assert.match(header, /🛸 Never give up, never surrender!<\/span>/u);
   assert.match(header, /🦭 It's time to seal the deal!!!<\/span>/u);
   assert.doesNotMatch(header, /🦭 It's time to seal the deal<\/span>/u);
 });

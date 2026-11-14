@@ -8,7 +8,10 @@ share_description: >-
   A late-model NetComm Mega-i-Modem CD2004 gets an eleven-capacitor parts list. Lovely through-hole components, but check your own board before ordering. 🔧
 ---
 
-![](/assets/images/2021/img_0727.jpg)
+![Black NetComm Mega-i-Modem V.90 external dial-up modem with ventilation slots and labelled front status lights, on a workbench.](/assets/images/2021/img_0727.jpg)
+
+*The late-2008 Mega-i-Modem CD2004. Eleven electrolytic capacitors to document, and a rather tidy external case.*
+{: .media-caption }
 
 One of the best parts about having retro gear pass through your hands is the chance to document it and do a little preventative maintenance. Lovely little through-hole capacitors! Here's my list for the NetComm Mega-i-Modem, aka CD2004. There's a few models of this fellow; mine was a very late 2008 (!) unit. Check what's actually fitted to your board before ordering replacements, including polarity, capacitance, voltage rating, ESR, ripple-current requirements and physical size.
 

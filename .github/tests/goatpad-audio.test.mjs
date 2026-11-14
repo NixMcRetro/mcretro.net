@@ -186,6 +186,19 @@ test('responsive soundboard preserves all 64 full accessible names and short mob
   }
 });
 
+test('the in-game HUD keeps lights aligned, original branding, and touch-friendly mobile controls', () => {
+  const styles = readFileSync(new URL('../../homepages/goatpad/styles.css', import.meta.url), 'utf8');
+  assert.match(markup, /class="brand-bar"/);
+  assert.match(markup, /class="metronome" aria-hidden="true"/);
+  assert.equal((markup.match(/class="counter(?: active)?"/g) || []).length, 8);
+  assert.match(styles, /grid-template-columns:\s*repeat\(8,\s*var\(--pad-width\)\)/);
+  assert.match(styles, /\.buttonArea \.column:not\(:last-child\) button::after/);
+  assert.match(styles, /\.buttonArea \.column button:focus-visible/);
+  assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);
+  assert.match(styles, /--pad-width:\s*44px;/);
+  assert.doesNotMatch(source, /function updateSizes\(/);
+});
+
 test('Start loads eight Opus files, not all 64, with user-gesture audio', async () => {
   const app = fixture();
   await app.start();

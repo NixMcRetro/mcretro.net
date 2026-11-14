@@ -2,38 +2,45 @@
   <div class="mcretro-modem-titlebar">
     <span data-modem-title>Connect To</span>
     <span class="mcretro-modem-window-buttons">
-      <a class="mcretro-modem-close" href="/" data-modem-close aria-label="Close dial-up connection">×</a>
+      <button type="button" class="mcretro-modem-minimize" data-modem-minimize aria-label="Minimise Connection" hidden>_</button>
+      <button type="button" class="mcretro-modem-close" data-modem-close aria-label="Close Connection">×</button>
     </span>
   </div>
+
   <div class="mcretro-modem-body">
     <div class="mcretro-modem-setup" data-modem-setup>
       <div class="mcretro-modem-identity">
         <span class="mcretro-modem-icon" aria-hidden="true"><span class="mcretro-modem-monitor"></span><span class="mcretro-modem-phone">☎</span></span>
-        <span class="mcretro-modem-destination" data-modem-destination>Restored homepage</span>
+        <span class="mcretro-modem-destination" data-modem-destination>Restored Homepage</span>
       </div>
+
+      <fieldset class="mcretro-modem-targets">
+        <legend>Destination</legend>
+        <label><input type="radio" name="mcretro-modem-target{{ include.id_suffix }}" value="random" data-modem-choice checked> Random Homepage</label>
+        <label><input type="radio" name="mcretro-modem-target{{ include.id_suffix }}" value="blog-random" data-modem-choice> Random Blog Post</label>
+      </fieldset>
+
       <hr class="mcretro-modem-rule">
       <div class="mcretro-modem-fields">
-        <label for="mcretro-dial-username{{ include.id_suffix }}">User name:</label>
-        <input id="mcretro-dial-username{{ include.id_suffix }}" type="text" value="RetroJunkie" readonly spellcheck="false" autocomplete="off">
+        <label for="mcretro-dial-username{{ include.id_suffix }}">User Name:</label>
+        <input id="mcretro-dial-username{{ include.id_suffix }}" type="text" value="RetroJunkie" spellcheck="false" autocomplete="off">
         <label for="mcretro-dial-password{{ include.id_suffix }}">Password:</label>
-        <input id="mcretro-dial-password{{ include.id_suffix }}" type="password" value="******" readonly autocomplete="off" aria-label="Password, six masked characters; demonstration only">
+        <input id="mcretro-dial-password{{ include.id_suffix }}" type="password" value="******" autocomplete="off">
         <span></span>
-        <label class="mcretro-modem-save"><input type="checkbox" checked> Save password</label>
+        <label class="mcretro-modem-save"><input type="checkbox" checked> Save Password</label>
       </div>
+
       <hr class="mcretro-modem-rule">
       <div class="mcretro-modem-fields mcretro-modem-phone-fields">
-        <label for="mcretro-dial-number{{ include.id_suffix }}">Phone number:</label>
-        <input id="mcretro-dial-number{{ include.id_suffix }}" type="text" value="02 9373 5100" readonly spellcheck="false">
-        <label for="mcretro-dial-location{{ include.id_suffix }}">Dialling from:</label>
-        <span class="mcretro-modem-location">
-          <select id="mcretro-dial-location{{ include.id_suffix }}" disabled><option>New Location</option></select>
-          <button type="button" disabled>Dial Properties...</button>
-        </span>
+        <label for="mcretro-dial-number{{ include.id_suffix }}">Phone Number:</label>
+        <input id="mcretro-dial-number{{ include.id_suffix }}" data-modem-number type="tel" inputmode="tel" value="02 9373 5100" maxlength="30" pattern="[0-9()+. -]*" required spellcheck="false" autocomplete="off">
+        <label for="mcretro-dial-location{{ include.id_suffix }}">Dialling From:</label>
+        <span class="mcretro-modem-location"><select id="mcretro-dial-location{{ include.id_suffix }}" disabled><option>New Location</option></select><button type="button" disabled>Dial Properties...</button></span>
       </div>
       <hr class="mcretro-modem-rule">
       <div class="mcretro-modem-controls">
         <button type="button" class="mcretro-modem-primary" data-modem-connect>Connect</button>
-        <a href="/" data-modem-cancel>Cancel</a>
+        <button type="button" data-modem-cancel>Cancel</button>
       </div>
     </div>
 
@@ -41,11 +48,32 @@
       <div class="mcretro-modem-progress-layout">
         <span class="mcretro-modem-icon" aria-hidden="true"><span class="mcretro-modem-monitor"></span><span class="mcretro-modem-phone">☎</span></span>
         <p class="mcretro-modem-progress-message" role="status" aria-live="polite"><span class="mcretro-modem-status-label">Status:</span> <span data-modem-status>Dialling...</span></p>
-        <a href="/" data-modem-progress-cancel>Cancel</a>
+        <button type="button" data-modem-progress-cancel>Cancel</button>
       </div>
       <div class="mcretro-modem-progress-extra">
         <button type="button" data-modem-mute aria-pressed="false">Mute</button>
-        <button type="button" data-modem-skip>Skip connection</button>
+        <button type="button" data-modem-skip>Skip Connection</button>
+      </div>
+    </div>
+
+    <div class="mcretro-modem-connected" data-modem-connected hidden>
+      <div class="mcretro-modem-connected-layout">
+        <span class="mcretro-modem-icon" aria-hidden="true"><span class="mcretro-modem-monitor"></span><span class="mcretro-modem-phone">☎</span></span>
+        <dl class="mcretro-modem-connected-stats">
+          <div><dt>Connected At:</dt><dd>28,800 bps</dd></div>
+          <div><dt>Duration:</dt><dd data-modem-duration>00:00:00</dd></div>
+          <div><dt>Bytes Received:</dt><dd>0</dd></div>
+          <div><dt>Bytes Sent:</dt><dd>0</dd></div>
+        </dl>
+        <div class="mcretro-modem-connected-buttons">
+          <button type="button" data-modem-connected-ok>OK</button>
+          <button type="button" data-modem-disconnect>Disconnect</button>
+          <button type="button" data-modem-details aria-expanded="false">Details &gt;&gt;</button>
+        </div>
+      </div>
+      <div class="mcretro-modem-connected-details" data-modem-details-panel hidden>
+        <div><strong>Destination:</strong> <span data-modem-connected-destination>McRetro.net</span></div>
+        <div><strong>Phone Number:</strong> <span data-modem-connected-number>02 9373 5100</span></div>
       </div>
     </div>
   </div>

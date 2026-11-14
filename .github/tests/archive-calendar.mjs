@@ -35,8 +35,10 @@ function fixture(contextYear) {
 test('sidebar order and no redundant navigation', () => {
   assert.ok(sidebar.indexOf('search-widget') < sidebar.indexOf('archive-widget'));
   assert.ok(sidebar.indexOf('archive-widget') < sidebar.indexOf('Recent Posts'));
-  assert.ok(sidebar.indexOf('Recent Posts') < sidebar.indexOf('Dial-a-Homepage'));
-  assert.ok(sidebar.includes('site.posts limit:3'));
+  assert.ok(sidebar.includes('site.posts limit:4'));
+  assert.ok(sidebar.includes('recent-posts-actions'));
+  assert.ok(!sidebar.includes('Dial-a-Homepage'));
+  assert.ok(sidebar.indexOf('Recent Posts') < sidebar.indexOf('mcretro-modem-dialog'));
   assert.ok(!sidebar.includes('View All Posts') && !sidebar.includes('archive-dropdown'));
 });
 test('Jekyll supplies 12 months per year and direct archive links', () => {

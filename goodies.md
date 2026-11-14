@@ -18,6 +18,12 @@ Welcome to the Goodies page! This is where I keep all sorts of bits and pieces t
 <details class="about-panel panel--teal" name="mcretro-goodies" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">✅</span> Ready to Visit</summary>
 
+**☎️ <a href="/homepages/modem/?site=blog-random" data-dial-site="blog-random">Dial a Random Blog Post</a>**<br>
+Hear the old-school dial-up connection, then land on a randomly selected McRetro article.
+
+**📞 <a href="/homepages/modem/?site=random" data-dial-site="random">Dial a Random Homepage</a>**<br>
+Dial into one of McRetro's restored historical homepages, chosen at random.
+
 **🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**<br>
 A browser-based music maker originally created for SuperNick. Make some noise with synthesizers, keyboards, rhythms and songs. Bleep, bloop, bleep!
 

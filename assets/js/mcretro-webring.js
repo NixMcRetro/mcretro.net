@@ -18,13 +18,44 @@
     Object.freeze({slug:'space',name:'Space / Planets Webpage',path:'/homepages/space/'}),
     Object.freeze({slug:'nature',name:'Super Nature World',path:'/homepages/nature/'})
   ]);
+  const BLOG_RANDOM = Object.freeze({
+    slug: 'blog-random',
+    name: 'Random McRetro blog post',
+    path: '/blog/'
+  });
+  let blogUrlsPromise = null;
+
+  // Share the same generated article list as the primary Random navigation.
+  // An unavailable or empty list must never trap visitors in the dial-up UI.
+  function pickBlogPost() {
+    if (!blogUrlsPromise) {
+      blogUrlsPromise = fetch('/assets/data/random-post-urls.json', { credentials: 'same-origin' })
+        .then(response => {
+          if (!response.ok) throw new Error('Random blog post list unavailable');
+          return response.json();
+        })
+        .then(urls => {
+          if (!Array.isArray(urls)) throw new Error('Invalid blog post list');
+          return urls.filter(url => typeof url === 'string' &&
+            /^\/(?![\/\\])/.test(url) && !/[\r\n]/.test(url));
+        })
+        .catch(() => []);
+    }
+    return blogUrlsPromise.then(urls =>
+      urls.length ? urls[Math.floor(Math.random() * urls.length)] : '/blog/');
+  }
+
+  const destinationPath = site =>
+    site.slug === BLOG_RANDOM.slug ? pickBlogPost() : Promise.resolve(site.path);
+
   const DTMF = Object.freeze({
     '0':[941,1336], '1':[697,1209], '2':[697,1336], '3':[697,1477],
     '4':[770,1209], '5':[770,1336], '6':[770,1477],
     '7':[852,1209], '8':[852,1336], '9':[852,1477]
   });
 
-  const findSite = slug => SITES.find(site => site.slug === slug) || null;
+  const findSite = slug => slug === BLOG_RANDOM.slug
+    ? BLOG_RANDOM : (SITES.find(site => site.slug === slug) || null);
   const randomSite = () => SITES[Math.floor(Math.random()*SITES.length)];
   const resolveSite = slug => slug === 'random' ? randomSite() : findSite(slug);
   const modemURL = site => MODEM_ROUTE+'?site='+encodeURIComponent(site.slug);
@@ -177,7 +208,7 @@
     setStage(root,'progress');
     const status=root.querySelector('[data-modem-status]');
     const sound=makeSound(root);
-    const run={root,site,sound,timers:[]};
+    const run={root,site,sound,timers:[],destinationPromise:destinationPath(site)};
     currentRun=run;
     const steps=[
       [0,'Initialising modem...'],
@@ -196,7 +227,7 @@
     run.timers.push(window.setTimeout(()=>{
       if(currentRun!==run) return;
       endRun();
-      window.location.replace(site.path);
+      run.destinationPromise.then(path => window.location.replace(path));
     },TOTAL_MS));
   }
 
@@ -206,8 +237,10 @@
     root.querySelector('[data-modem-skip]').addEventListener('click',()=>{
       const site=root._mcretroSite;
       if(!site) return;
+      const destinationPromise = currentRun?.root === root
+        ? currentRun.destinationPromise : destinationPath(site);
       endRun();
-      window.location.replace(site.path);
+      destinationPromise.then(path => window.location.replace(path));
     });
     root.querySelector('[data-modem-mute]').addEventListener('click',event=>{
       const muted=root.dataset.muted!=='true';
@@ -235,7 +268,6 @@
     }
   }
 
-  const widget=document.querySelector('[data-dial-homepage]');
   const dialog=document.getElementById('mcretro-modem-dialog');
   const standalone=document.getElementById('mcretro-modem-page');
   if(dialog) initModemRoot(dialog,true);
@@ -244,20 +276,20 @@
     const params=new URLSearchParams(window.location.search);
     setDestination(standalone,resolveSite(params.get('site')));
   }
-  if(widget) {
-    widget.querySelectorAll('[data-dial-site]').forEach(link=>{
-      link.addEventListener('click',event=>{
-        if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||
-           event.shiftKey||event.altKey||!dialog||typeof dialog.showModal!=='function') return;
-        const site=resolveSite(link.dataset.dialSite);
-        if(!site) return;
-        event.preventDefault();
-        setDestination(dialog,site);
-        window.history.pushState({mcretroModem:site.slug},'',modemURL(site));
-        dialog.showModal(); // The visitor presses Connect to start the actual sound.
-      });
+  // Any in-page dial link (sidebar or Goodies) can open the same modal.
+  // Modified clicks and browsers without <dialog> keep the standalone URL.
+  document.querySelectorAll('a[data-dial-site]').forEach(link=>{
+    link.addEventListener('click',event=>{
+      if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||
+         event.shiftKey||event.altKey||!dialog||typeof dialog.showModal!=='function') return;
+      const site=resolveSite(link.dataset.dialSite);
+      if(!site) return;
+      event.preventDefault();
+      setDestination(dialog,site);
+      window.history.pushState({mcretroModem:site.slug},'',modemURL(site));
+      dialog.showModal(); // The visitor presses Connect to start the actual sound.
     });
-  }
+  });
   if(dialog) {
     window.addEventListener('popstate',event=>{
       endRun();

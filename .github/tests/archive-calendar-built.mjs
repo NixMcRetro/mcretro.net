@@ -7,7 +7,7 @@ import { resolve, join } from 'node:path';
 const site = resolve(process.argv[2] || '_site');
 const landing = readFileSync(join(site, 'archive', 'index.html'), 'utf8');
 assert.match(landing, /<h1 class="post-title">Archives<\/h1>/);
-assert.match(landing, /<details class="archive-index-year" open>/,
+assert.match(landing, /<details class="archive-index-year about-panel panel--teal" name="mcretro-archive-years" open>/,
   'Latest archive year should be expanded initially');
 
 const home = readFileSync(join(site, 'index.html'), 'utf8');

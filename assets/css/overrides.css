@@ -440,34 +440,6 @@
   }
 }
 
-/* Plain hand-linked homepage dialler. Existing widget separators supply the frame. */
-.dial-homepage { margin-top: 0.15rem; }
-.dial-homepage-intro {
-  /* The shared action link supplies the gap, as it does after Recent Posts. */
-  margin: 0;
-  font-size: 0.86rem;
-  line-height: 1.55;
-}
-.dial-homepage-label {
-  margin: 0.65rem 0 0.15rem;
-  font-size: 0.81rem;
-  line-height: 1.5;
-}
-.dial-homepage ul.dial-homepage-links {
-  list-style: disc outside;
-  padding-left: 1.35rem;
-  margin: 0;
-}
-.dial-homepage ul.dial-homepage-links li {
-  margin: 0 0 0.15rem;
-  font-size: 0.82rem;
-  line-height: 1.45;
-  overflow-wrap: break-word;
-}
-.dial-homepage a:focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
-}
 .mcretro-modem-close:focus-visible,
 .mcretro-modem-controls button:focus-visible,
 .mcretro-modem-controls a:focus-visible {
@@ -650,17 +622,17 @@
 .archive-index > .post-title { margin-bottom: 0.5rem; }
 .archive-index-intro { margin: 0 0 1.25rem; }
 .archive-index-year { margin-bottom: 0.65rem; }
-.archive-index-year > summary {
-  padding: 0.7rem 0.65rem; border-top: 0.5px solid var(--text);
-  font: 700 1.15rem/1.4 Montserrat, "Helvetica Neue", sans-serif;
-  color: var(--text); cursor: pointer;
-}
-.archive-index-year > summary::marker { color: var(--link); }
-.archive-index-year > summary:hover { background: var(--interactive-hover); }
-.archive-index-year > summary:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+/* The shared About/Goodies accordions own backgrounds, borders, hover
+   colours, keyboard focus and exclusive-open behaviour. */
+.archive-index-year > summary { flex-wrap: wrap; }
 .archive-index-year-count {
-  float: right; margin-left: 0.6rem; color: var(--muted);
-  font: 400 0.8rem/2 Montserrat, "Helvetica Neue", sans-serif;
+  margin-left: auto;
+  color: var(--muted);
+  font: 400 0.8rem/1.4 Montserrat, "Helvetica Neue", sans-serif;
+}
+.archive-index-year > .archive-index-grid {
+  margin-bottom: 1rem;
+  padding-bottom: 0;
 }
 .archive-index-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem; padding: 0.7rem 0 1.1rem; }
 .archive-index-month {
@@ -688,7 +660,6 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
 }
 @media screen and (max-width: 400px) {
   .archive-index-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .archive-index-year-count { float: none; display: block; margin: 0 0 0 1.25rem; }
 }
 
 /* Keep every main Blog excerpt and thumbnail on the same desktop column.
@@ -714,11 +685,10 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   }
 }
 
-/* Match the Search widget's 1.3rem breathing room before each divider.
-   Apply the same spacing to Archives, Recent Posts and Dial-a-Homepage. */
+/* Match the Search widget's 1.3rem breathing room before each divider
+   in both Archives and Recent Posts. */
 .sidebar .archive-widget,
-.sidebar .recent-posts-widget,
-.sidebar .dial-homepage {
+.sidebar .recent-posts-widget {
   padding-bottom: 1.3rem;
 }
 
@@ -734,6 +704,16 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   line-height: 1.4;
   margin-bottom: 0;
 }
+
+/* The two Recent Posts actions share one row and wrap on narrow sidebars. */
+.recent-posts-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.recent-posts-actions .sidebar-action-link { margin-top: 0; }
 
 /* Compact the space around blog-post dividers on mobile only.
    Leave monthly archives, individual posts and desktop spacing unchanged. */

@@ -204,35 +204,35 @@ test('navigation hover underlines words without bolding or shifting adjacent ite
   assert.match(style, /\.nav-list li a:hover,\s*\.nav-list li a:focus-visible\s*\{[^}]*text-decoration:\s*none;/);
 });
 
-test('blog and dial-up sidebar links share bold, aligned square-button styling', () => {
+test('Recent Posts has four entries and paired More articles / Dial-up buttons', () => {
+  assert.match(sidebar, /\{% for post in site\.posts limit:4 %\}/);
+  assert.match(sidebar, /<div class="recent-posts-actions">/);
   assert.match(sidebar, /class="recent-posts-more sidebar-action-link" href="\/blog\/"/);
-  assert.match(sidebar, /class="dial-homepage-random sidebar-action-link" href="\/homepages\/modem\/\?site=random" data-dial-site="random"/);
+  assert.match(sidebar, /class="recent-posts-dial sidebar-action-link" href="\/homepages\/modem\/\?site=random" data-dial-site="random"/);
   assert.match(sidebar, /class="sidebar-action-link__icon" aria-hidden="true">📚<\/span>/u);
   assert.match(sidebar, /<span class="sidebar-action-link__label">More articles<\/span>/);
+  assert.match(sidebar, /<span class="sidebar-action-link__label">Dial-up<\/span>/);
   assert.doesNotMatch(sidebar, /More articles\s*<span[^>]*>→<\/span>/);
   assert.match(sidebar, /class="sidebar-action-link__icon" aria-hidden="true">☎️<\/span>/u);
   assert.match(sidebar, /class="archive-all-link sidebar-action-link" href="\/archive\/"/);
   assert.match(sidebar, /<span class="sidebar-action-link__label">Browse all archives<\/span>/);
   assert.equal((sidebar.match(/class="sidebar-action-link__label"/g) || []).length, 3);
+  assert.doesNotMatch(sidebar, /class="widget dial-homepage"/);
+  assert.match(sidebar, /<dialog id="mcretro-modem-dialog"/);
+  assert.match(overrides, /\.recent-posts-actions\s*\{[^}]*display: flex;[^}]*flex-wrap: wrap;/);
+  assert.match(overrides, /\.recent-posts-actions \.sidebar-action-link\s*\{ margin-top: 0; \}/);
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*font-weight:\s*700;/);
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*border-radius:\s*0;/);
-  assert.match(style, /\.sidebar-action-link__icon\s*\{[^}]*align-items:\s*center;[^}]*justify-content:\s*center;/);
-  assert.doesNotMatch(overrides, /\.dial-homepage-random\s*\{[^}]*font-weight:/);
 });
 
-test('sidebar sections use the same 1.3rem spacing before their dividers', () => {
+test('sidebar sections retain divider breathing room without obsolete dial widget', () => {
   assert.match(style, /\.search-widget\s*\{[^}]*padding-bottom:\s*1\.3rem;/);
-  const common = overrides.match(/\.sidebar \.archive-widget,\s*\.sidebar \.recent-posts-widget,\s*\.sidebar \.dial-homepage\s*\{([^}]*)\}/)?.[1];
-  assert.ok(common, 'Archives, Recent Posts and Dial-a-Homepage share one spacing rule');
+  const common = overrides.match(/\.sidebar \.archive-widget,\s*\.sidebar \.recent-posts-widget\s*\{([^}]*)\}/)?.[1];
+  assert.ok(common, 'Archives and Recent Posts share their divider spacing');
   assert.match(common, /padding-bottom:\s*1\.3rem;/);
-  assert.doesNotMatch(overrides, /\.sidebar \.recent-posts-widget\s*\{/, 'No later Recent Posts override');
-  assert.equal((overrides.match(/\.sidebar \.dial-homepage\s*\{/g) || []).length, 1, 'No later Dial-a-Homepage override');
-});
-
-test('Recent Posts and Dial-a-Homepage share the same content-to-button gap', () => {
+  assert.doesNotMatch(overrides, /\.sidebar \.dial-homepage\s*\{/);
   assert.match(style, /\.widget ul\.recent-posts-list\s*\{[^}]*margin-bottom:\s*0;/);
-  assert.match(overrides, /\.dial-homepage-intro\s*\{[^}]*margin:\s*0;/);
-  assert.match(style, /\.sidebar-action-link\s*\{[^}]*margin-top:\s*1rem;/);
+  assert.match(overrides, /\.recent-posts-actions\s*\{[^}]*margin-top: 1rem;/);
   assert.match(overrides, /\.sidebar \.recent-posts-list li:last-child\s*\{[^}]*margin-bottom:\s*0;/);
 });
 
@@ -342,9 +342,32 @@ test('monthly Archives use a matching heading/subheading, breadcrumb and article
   assert.match(overrides, /\.archive-card-media \.post-thumbnail-img\s*\{[^}]*object-fit: contain/);
   assert.match(overrides, /\.archive-card-layout\s*\{ flex-direction: column/);
   assert.match(index, /permalink: \/archive\//);
-  assert.match(index, /<details class="archive-index-year"/);
+  assert.match(index, /<details class="archive-index-year about-panel panel--teal" name="mcretro-archive-years"/);
+  assert.match(index, /<summary><span class="about-panel-icon" aria-hidden="true">📅<\/span>/u);
+  assert.match(index, /open\{% endif %\}>/);
+  assert.doesNotMatch(overrides, /\.archive-index-year > summary:hover/, 'Archives use the shared accordion hover palette');
   assert.match(index, /data-archive-month="\{\{ year\.name \}\}-\{\{ month_key \}\}"/);
   assert.match(sidebar, /class="archive-all-link sidebar-action-link" href="\/archive\/"/);
   assert.match(header, /page\.url contains "\/archive\/"/);
   assert.match(overrides, /\.archive-index-grid\s*\{[^}]*grid-template-columns: repeat\(4/);
+});
+
+test('Goodies offers both dial-up destinations and keeps existing sections', () => {
+  const goodies = read('goodies.md');
+  const modem = read('assets/js/mcretro-webring.js');
+  const header = read('_includes/header.html');
+  assert.match(goodies, /Dial a Random Blog Post<\/a>/);
+  assert.match(goodies, /href="\/homepages\/modem\/\?site=blog-random" data-dial-site="blog-random"/);
+  assert.match(goodies, /href="\/homepages\/modem\/\?site=random" data-dial-site="random"/);
+  assert.match(goodies, /Dial a Random Homepage<\/a>/);
+  assert.match(modem, /document\.querySelectorAll\('a\[data-dial-site\]'\)/);
+  assert.match(modem, /assets\/data\/random-post-urls\.json/);
+  assert.match(header, /🧭 Best viewed with Netscape Navigator<\/span>/u);
+  assert.match(header, /🌐 Best viewed with Internet Explorer<\/span>/u);
+  assert.match(header, /🔎 Do You Yahoo\?<\/span>/u);
+  assert.match(header, /🌍 Hack the Planet!<\/span>/u);
+  assert.match(header, /💣 Somebody set up us the bomb<\/span>/u);
+  assert.match(header, /🛸 Never give up, never surrender!<\/span>/u);
+  assert.match(header, /🦭 It's time to seal the deal!!!<\/span>/u);
+  assert.doesNotMatch(header, /🦭 It's time to seal the deal<\/span>/u);
 });

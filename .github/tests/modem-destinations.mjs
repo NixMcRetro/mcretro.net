@@ -68,6 +68,7 @@ function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'
   const dialog = withDialog ? makeRoot() : null;
   const standalone = withStandalone ? makeRoot() : null;
   const newDialog = withStandalone ? makeRoot() : null;
+  const explorer = withStandalone ? makeRoot() : null;
   const navigations = [], pushes = [], replacements = [], requests = [], timers = [], intervals = [];
   const audioEvents = [];
   const taskbar = makeControl();
@@ -82,6 +83,7 @@ function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'
       assert.fail('Unexpected document selector: ' + selector);
     },
     querySelector(selector) {
+      if (selector === '.mcretro-modem-explorer') return explorer;
       if (selector === '[data-modem-shortcut-list]') return withStandalone ? folder : null;
       if (selector === '[data-modem-explorer-count]') return withStandalone ? count : null;
       if (selector === '[data-modem-new]') return withStandalone ? newButton : null;
@@ -159,7 +161,7 @@ function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'
     document, window, fetch, URLSearchParams, Promise, Date,
     Math: { floor: Math.floor, round: Math.round, max: Math.max, min: Math.min, random: () => 0 }
   });
-  return { dialog, standalone, newDialog, newButton, folder, count,
+  return { dialog, standalone, newDialog, explorer, newButton, folder, count,
     taskbar, launches, storage, local, links,
     navigations, pushes, replacements, requests, timers, intervals, audioEvents };
 }
@@ -282,6 +284,12 @@ test('Goodies and Explorer preserve approved dial destinations', () => {
   assert.match(connection, /target="_blank" rel="noopener" data-modem-visit/);
   assert.match(connection, /data-modem-bytes-received/);
   assert.match(connection, /data-modem-bytes-sent/);
+  assert.match(modem, /data-modem-drag-handle/);
+  assert.match(connection, /data-modem-drag-handle/);
+  for (const name of ['win95-dialup-connection', 'win95-new-connection', 'win95-dialup-folder']) {
+    assert.match(modem, new RegExp(name + '\\.svg'));
+  }
+  assert.ok(connection.includes('win95-dialup-connection.svg'));
 });
 
 test('V6.7 schedules three complete beep then double-ring cycles before handshake', () => {
@@ -383,10 +391,10 @@ test('Connected window can be dragged and stays inside the viewport', async () =
   f.standalone.control('[data-modem-connect]').listeners.click();
   f.timers.find(timer => timer.delay === 31750).callback();
   await tick();
-  const title = f.standalone.control('.mcretro-modem-titlebar');
+  const title = f.standalone.control('[data-modem-drag-handle]');
   const baseEvent = {
     pointerId: 3, pointerType: 'mouse', button: 0,
-    clientX: 38, clientY: 38,
+    clientX: 317, clientY: 292,
     target: { closest() { return null; } },
     preventDefault() {}
   };
@@ -425,4 +433,89 @@ test('Connected byte counters increase with simulated bursts and pause when mini
   assert.ok(newRx > first);
   assert.ok(newTx > second);
   assert.equal(f.intervals.at(-1).delay, 250);
+});
+
+test('sidebar Dial-Up recentres and restores the existing connection instead of disconnecting', () => {
+  const storage = new Map();
+  const startedAt = Date.now() - 62000;
+  storage.set('mcretro-dialup-connected-v1', JSON.stringify({
+    name: 'Retro Homepage', phone: '02 9373 5100', path: '/homepages/frank/',
+    startedAt, minimised: false, x: 9999, y: 9999
+  }));
+  const f = fixture({ withStandalone: false, storage });
+  assert.equal(f.dialog.open, true);
+  assert.equal(f.dialog.style.left, '594px');
+  assert.equal(f.dialog.style.top, '543px');
+  const before = f.intervals.length;
+  assert.equal(f.links[0].click(), true);
+  const saved = JSON.parse(storage.get('mcretro-dialup-connected-v1'));
+  assert.equal(f.dialog.open, true);
+  assert.equal(f.dialog.dataset.modemStage, 'connected');
+  assert.equal(f.dialog.style.left, '297px');
+  assert.equal(f.dialog.style.top, '272px');
+  assert.equal(saved.startedAt, startedAt);
+  assert.equal(saved.name, 'Retro Homepage');
+  assert.equal(saved.minimised, false);
+  assert.equal(f.pushes.length, 0, 'No new dial-up URL should be pushed');
+  assert.equal(f.timers.length, 0, 'No new dial sequence may start');
+  assert.ok(f.intervals.length > before, 'The existing duration and byte ticker restarts');
+  assert.equal(f.dialog.control('[data-modem-visit]').href, '/homepages/frank/');
+});
+
+test('sidebar moves an active on-page Connected window into the centred shared window', async () => {
+  const f = fixture({ site: 'random' });
+  f.standalone.control('[data-modem-connect]').listeners.click();
+  f.timers.find(timer => timer.delay === 31750).callback();
+  await tick();
+  const before = JSON.parse(f.storage.get('mcretro-dialup-connected-v1'));
+  assert.equal(f.standalone.open, true);
+  assert.equal(f.links[0].click(), true);
+  assert.equal(f.standalone.open, false);
+  assert.equal(f.dialog.open, true);
+  assert.equal(f.dialog.style.left, '297px');
+  assert.equal(f.dialog.style.top, '272px');
+  assert.equal(JSON.parse(f.storage.get('mcretro-dialup-connected-v1')).startedAt, before.startedAt);
+});
+
+test('Explorer folder and dial-up setup and wizard can all be moved by their title bars', () => {
+  const f = fixture({ site: 'random' });
+  const mouse = {
+    pointerId: 4, pointerType: 'mouse', button: 0,
+    clientX: 38, clientY: 38,
+    target: { closest() { return null; } },
+    preventDefault() {}
+  };
+  const moveExplorer = f.explorer.control('[data-modem-drag-handle]');
+  moveExplorer.listeners.pointerdown(mouse);
+  moveExplorer.listeners.pointermove({ ...mouse, clientX: 148, clientY: 118 });
+  moveExplorer.listeners.pointerup(mouse);
+  assert.equal(f.explorer.style.left, '110px');
+  assert.equal(f.explorer.style.top, '80px');
+
+  f.launches[1].click();
+  const setup = f.standalone.control('[data-modem-drag-handle]');
+  setup.listeners.keydown({ key: 'ArrowRight', shiftKey: false, preventDefault() {} });
+  assert.equal(f.standalone.style.left, '38px');
+  setup.listeners.keydown({ key: 'ArrowDown', shiftKey: true, preventDefault() {} });
+  assert.equal(f.standalone.style.top, '23px');
+  assert.equal(f.standalone.dataset.modemStage, 'setup');
+
+  f.newButton.click();
+  const wizard = f.newDialog.control('[data-modem-drag-handle]');
+  wizard.listeners.pointerdown(mouse);
+  wizard.listeners.pointermove({ ...mouse, clientX: 108, clientY: 98 });
+  wizard.listeners.pointerup(mouse);
+  assert.equal(f.newDialog.style.left, '88px');
+  assert.equal(f.newDialog.style.top, '78px');
+});
+
+test('restored connections previously positioned beyond the screen are clamped back into view', () => {
+  const storage = new Map();
+  storage.set('mcretro-dialup-connected-v1', JSON.stringify({
+    name: 'Random Blog Post', phone: '02 9373 5100', path: '/blog/',
+    startedAt: Date.now() - 1000, minimised: false, x: 20000, y: 20000
+  }));
+  const f = fixture({ withStandalone: false, storage });
+  assert.equal(f.dialog.style.left, '594px');
+  assert.equal(f.dialog.style.top, '543px');
 });

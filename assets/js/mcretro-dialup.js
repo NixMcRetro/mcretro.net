@@ -256,16 +256,39 @@
   }
 
   // Move the connected window only. Setup/progress remain native dialogs.
+  // Every Windows 95 surface moves by its blue title bar. Native <dialog>
+  // elements are fixed after the first drag; the Explorer folder stays in flow.
   function positionConnected(root, x, y) {
-    if (!root || !root.style || !root.getBoundingClientRect) return;
-    const bounds = root.getBoundingClientRect();
-    root.style.left = Math.max(0, Math.min(window.innerWidth - bounds.width, x)) + 'px';
-    root.style.top = Math.max(0, Math.min(window.innerHeight - bounds.height, y)) + 'px';
+    if (!root?.style || !root.getBoundingClientRect) return;
+    const rect = root.getBoundingClientRect();
+    const width = Math.max(0, window.innerWidth - rect.width);
+    const height = Math.max(0, window.innerHeight - rect.height);
+    root.style.position = 'fixed';
+    root.style.margin = '0';
+    root.style.left = Math.round(Math.max(0, Math.min(width, x))) + 'px';
+    root.style.top = Math.round(Math.max(0, Math.min(height, y))) + 'px';
     root.style.right = 'auto';
     root.style.bottom = 'auto';
   }
 
+  function centerWindow(root) {
+    if (!root?.getBoundingClientRect) return;
+    const rect = root.getBoundingClientRect();
+    positionConnected(root, (window.innerWidth - rect.width) / 2,
+      (window.innerHeight - rect.height) / 2);
+  }
+
+  function positionExplorer(root, x, y) {
+    if (!root?.style || !root.getBoundingClientRect) return;
+    const rect = root.getBoundingClientRect();
+    const left = Math.max(0, Math.min(Math.max(0, window.innerWidth - rect.width), x));
+    const top = Math.max(0, Math.min(Math.max(0, window.innerHeight - rect.height), y));
+    root.style.left = ((parseFloat(root.style.left) || 0) + left - rect.left) + 'px';
+    root.style.top = ((parseFloat(root.style.top) || 0) + top - rect.top) + 'px';
+  }
+
   function saveWindowPosition(root) {
+    if (root?.dataset?.modemStage !== 'connected') return;
     const data = readConnected();
     if (!data || !root.getBoundingClientRect) return;
     const rect = root.getBoundingClientRect();
@@ -275,21 +298,22 @@
   }
 
   function resetWindowPosition(root) {
-    if (!root || !root.style) return;
-    root.style.left = '';
-    root.style.top = '';
-    root.style.right = '';
-    root.style.bottom = '';
+    if (!root?.style) return;
+    for (const prop of ['left', 'top', 'right', 'bottom', 'position', 'margin']) {
+      root.style[prop] = '';
+    }
   }
 
-  function installConnectedDrag(root) {
-    const titlebar = root.querySelector('.mcretro-modem-titlebar');
+  function installWindowDrag(root, explorer = false) {
+    if (!root) return;
+    const titlebar = root.querySelector('[data-modem-drag-handle]') ||
+      root.querySelector('.mcretro-modem-titlebar');
     if (!titlebar) return;
     let drag = null;
+    const move = (x, y) => explorer ? positionExplorer(root, x, y) : positionConnected(root, x, y);
     titlebar.addEventListener('pointerdown', event => {
-      if (root.dataset.modemStage !== 'connected' ||
-          (event.pointerType === 'mouse' && event.button !== 0) ||
-          event.target?.closest?.('button, a')) return;
+      if (event.pointerType === 'mouse' && event.button !== 0) return;
+      if (event.target?.closest?.('button, a, input, select')) return;
       const rect = root.getBoundingClientRect();
       drag = { id: event.pointerId, dx: event.clientX - rect.left, dy: event.clientY - rect.top };
       titlebar.setPointerCapture?.(event.pointerId);
@@ -297,7 +321,7 @@
     });
     titlebar.addEventListener('pointermove', event => {
       if (!drag || drag.id !== event.pointerId) return;
-      positionConnected(root, event.clientX - drag.dx, event.clientY - drag.dy);
+      move(event.clientX - drag.dx, event.clientY - drag.dy);
     });
     const finish = event => {
       if (!drag || drag.id !== event.pointerId) return;
@@ -308,20 +332,19 @@
     titlebar.addEventListener('pointerup', finish);
     titlebar.addEventListener('pointercancel', finish);
     titlebar.addEventListener('keydown', event => {
-      if (root.dataset.modemStage !== 'connected' ||
-          !['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.key)) return;
-      const bounds = root.getBoundingClientRect();
+      if (!['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      const rect = root.getBoundingClientRect();
       const step = event.shiftKey ? 5 : 20;
-      const x = bounds.left + (event.key === 'ArrowLeft' ? -step : event.key === 'ArrowRight' ? step : 0);
-      const y = bounds.top + (event.key === 'ArrowUp' ? -step : event.key === 'ArrowDown' ? step : 0);
-      positionConnected(root, x, y);
+      move(rect.left + (event.key === 'ArrowLeft' ? -step : event.key === 'ArrowRight' ? step : 0),
+        rect.top + (event.key === 'ArrowUp' ? -step : event.key === 'ArrowDown' ? step : 0));
       saveWindowPosition(root);
       event.preventDefault?.();
     });
     window.addEventListener('resize', () => {
-      if (root.dataset.modemStage !== 'connected' || !root.open || !root.style?.left) return;
-      const b = root.getBoundingClientRect();
-      positionConnected(root, b.left, b.top);
+      if (!explorer && !root.open) return;
+      if (!root.style?.left) return;
+      const rect = root.getBoundingClientRect();
+      move(rect.left, rect.top);
       saveWindowPosition(root);
     });
   }
@@ -391,7 +414,7 @@
     setStage(root, 'setup');
   }
 
-  function displayConnected(root, data) {
+  function displayConnected(root, data, recenter = false) {
     root.querySelector('[data-modem-connected-number]').textContent = data.phone;
     root.querySelector('[data-modem-connected-destination]').textContent = data.name;
     root.querySelector('[data-modem-visit]').href = data.path || MODEM_ROUTE;
@@ -408,10 +431,11 @@
     if (root.open) root.close();
     if (typeof root.show === 'function') root.show(); // Modeless: users can browse behind it.
     else if (typeof root.showModal === 'function') root.showModal();
-    if (Number.isFinite(data.x) && Number.isFinite(data.y)) {
-      positionConnected(root, data.x, data.y);
+    if (recenter || !Number.isFinite(data.x) || !Number.isFinite(data.y)) {
+      centerWindow(root);
+      saveWindowPosition(root);
     } else {
-      resetWindowPosition(root);
+      positionConnected(root, data.x, data.y);
     }
     if (taskbar) taskbar.hidden = true;
     stopDuration();
@@ -526,7 +550,7 @@
 
   function initModemRoot(root) {
     root.dataset.muted = 'false';
-    installConnectedDrag(root);
+    installWindowDrag(root);
     root.querySelector('[data-modem-connect]').addEventListener('click', () => startConnection(root));
     root.querySelector('[data-modem-skip]').addEventListener('click', () => {
       const site = root._mcretroSite;
@@ -566,7 +590,6 @@
     });
   }
 
-  if (dialog) initModemRoot(dialog);
   // Saved custom dial-up shortcuts live only in this browser, not on a server.
   // All destinations remain the two approved internal routes.
   function loadPresets() {
@@ -592,7 +615,18 @@
     if (!standalone || typeof standalone.showModal !== 'function') return;
     const site = resolveSite(target);
     if (!site) return;
+    const existing = readConnected();
+    if (existing) {
+      if (dialog?.open) dialog.close();
+      existing.minimised = false;
+      delete existing.x;
+      delete existing.y;
+      saveConnected(existing);
+      displayConnected(standalone, existing, true);
+      return;
+    }
     if (standalone.open) standalone.close();
+    resetWindowPosition(standalone);
     setDestination(standalone, site, label);
     standalone.querySelector('[data-modem-number]').value = phone;
     standalone.showModal();
@@ -627,6 +661,7 @@
   if (dialog) initModemRoot(dialog);
   if (standalone) {
     initModemRoot(standalone);
+    installWindowDrag(document.querySelector('.mcretro-modem-explorer'), true);
     const params = new URLSearchParams(window.location.search);
     const requested = params.get('site');
     setDestination(standalone, resolveSite(requested || 'random') || randomSite());
@@ -654,9 +689,13 @@
       if (!newConnectionDialog || typeof newConnectionDialog.showModal !== 'function') return;
       const error = newConnectionDialog.querySelector('[data-modem-new-error]');
       error.hidden = true;
-      if (!newConnectionDialog.open) newConnectionDialog.showModal();
+      if (!newConnectionDialog.open) {
+        resetWindowPosition(newConnectionDialog);
+        newConnectionDialog.showModal();
+      }
     });
     if (newConnectionDialog) {
+      installWindowDrag(newConnectionDialog);
       newConnectionDialog.querySelectorAll('[data-modem-new-cancel]').forEach(button => {
         button.addEventListener('click', () => newConnectionDialog.close());
       });
@@ -695,7 +734,20 @@
       const site = resolveSite(link.dataset.dialSite);
       if (!site) return;
       event.preventDefault();
-      disconnectConnected(dialog);
+      const connected = readConnected();
+      if (connected) {
+        // Clicking Dial-Up again restores the current session instead of
+        // disconnecting it, even if it was dragged or minimised off-centre.
+        if (standalone?.open && standalone.dataset.modemStage === 'connected') standalone.close();
+        connected.minimised = false;
+        delete connected.x;
+        delete connected.y;
+        saveConnected(connected);
+        displayConnected(dialog, connected, true);
+        return;
+      }
+      if (dialog.open && dialog.dataset.modemStage === 'connected') dialog.close();
+      resetWindowPosition(dialog);
       setDestination(dialog, site);
       window.history.pushState({ mcretroModem: site.slug }, '', modemURL(site));
       dialog._mcretroHistoryEntry = true;

@@ -1582,3 +1582,188 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   .mcretro-modem-create-form { grid-template-columns: 1fr; }
   .mcretro-modem-create-heading, .mcretro-modem-create-actions { grid-column: 1; }
 }
+
+/* Windows 95 fidelity pass, based on the owner's Dial-Up Networking screenshots.
+   The folder, connection, progress and wizard windows all have draggable titlebars. */
+.mcretro-modem-page .mcretro-modem-explorer {
+  position: relative;
+  width: min(100%, 362px);
+  border: 2px solid;
+  border-color: #fff #404040 #404040 #fff;
+  outline: 1px solid #000;
+  box-shadow: inset -1px -1px #808080, inset 1px 1px #dfdfdf, 1px 1px 0 #333;
+  background: #c0c0c0;
+  border-radius: 0;
+  font: 11px/1.2 Tahoma, "MS Sans Serif", Arial, sans-serif;
+}
+.mcretro-modem-explorer .mcretro-modem-explorer-titlebar,
+.mcretro-modem-dialog .mcretro-modem-titlebar {
+  min-height: 20px;
+  height: auto;
+  box-sizing: border-box;
+  padding: 2px 3px 2px 4px;
+  background: #000080;
+  color: #fff;
+  font: 700 12px/1.25 Tahoma, "MS Sans Serif", Arial, sans-serif;
+  text-shadow: none;
+  cursor: move;
+  touch-action: none;
+  user-select: none;
+}
+.mcretro-modem-title-content { display: inline-flex; align-items: center; gap: 4px; min-width: 0; }
+.mcretro-modem-title-content [data-modem-title] {
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+.mcretro-win95-title-icon, .mcretro-modem-dialog-icon, .mcretro-modem-shortcut-image,
+.mcretro-win95-small-icon, .mcretro-modem-tool-icon img {
+  display: inline-block; object-fit: contain; flex-shrink: 0;
+  image-rendering: pixelated;
+}
+.mcretro-modem-dialog-icon { width: 32px; height: 32px; }
+.mcretro-modem-shortcut-image { width: 32px; height: 32px; margin: 1px auto 0; }
+.mcretro-win95-title-icon { width: 16px; height: 16px; vertical-align: middle; }
+.mcretro-modem-explorer .mcretro-win95-small-icon {
+  display: inline-block; width: 16px; height: 16px; padding: 0; background: transparent;
+  border: 0; box-shadow: none;
+}
+.mcretro-modem-explorer .mcretro-modem-explorer-titlebar { height: 22px; }
+.mcretro-modem-explorer .mcretro-modem-explorer-chrome span {
+  width: 17px; height: 17px; background: #c0c0c0;
+  border: 2px solid; border-color: #fff #333 #333 #fff;
+  box-shadow: inset -1px -1px #808080;
+  font: bold 12px/1 Tahoma, Arial, sans-serif;
+}
+.mcretro-modem-explorer .mcretro-modem-explorer-menu {
+  height: 21px; min-height: 21px;
+  display: flex; align-items: center; gap: 13px;
+  padding: 2px 9px; border: 0; border-bottom: 1px solid #fff;
+  font: 11px/1 Tahoma, Arial, sans-serif;
+}
+.mcretro-modem-explorer .mcretro-modem-explorer-toolbar {
+  height: 29px; padding: 2px 5px; gap: 2px;
+  border-top: 1px solid #808080; border-bottom: 1px solid #fff;
+}
+.mcretro-modem-explorer .mcretro-modem-tool-icon {
+  width: 24px; height: 23px;
+  font: 700 13px/1 Tahoma, Arial, sans-serif;
+  text-shadow: 1px 1px #fff;
+}
+.mcretro-modem-explorer .mcretro-modem-tool-icon--forward { color: #808080; }
+.mcretro-modem-explorer .mcretro-modem-tool-separator {
+  margin: 0 3px; height: 18px;
+}
+.mcretro-modem-explorer .mcretro-modem-explorer-address {
+  height: 26px; gap: 7px; padding: 2px 5px;
+  border-top: 1px solid #808080;
+}
+.mcretro-modem-explorer .mcretro-modem-explorer-path {
+  height: 21px; font: 11px/1.1 Tahoma, Arial, sans-serif;
+}
+.mcretro-modem-explorer .mcretro-modem-explorer-files {
+  grid-template-columns: repeat(3, minmax(0, 105px));
+  grid-auto-rows: minmax(82px, auto);
+  gap: 5px 0; justify-content: start;
+  min-height: 170px; padding: 7px 7px 9px;
+}
+.mcretro-modem-explorer .mcretro-modem-shortcut {
+  width: 99px; max-width: 100%; min-height: 79px;
+  padding: 3px 2px; gap: 4px;
+  font: 11px/1.16 Tahoma, "MS Sans Serif", Arial, sans-serif;
+}
+.mcretro-modem-explorer .mcretro-modem-shortcut-name {
+  max-width: 94px; padding: 1px 2px;
+  text-align: center; overflow-wrap: normal; word-break: normal;
+}
+.mcretro-modem-explorer .mcretro-modem-shortcut:focus .mcretro-modem-shortcut-name,
+.mcretro-modem-explorer .mcretro-modem-shortcut:hover .mcretro-modem-shortcut-name {
+  background: #000080; color: #fff;
+}
+.mcretro-modem-explorer .mcretro-modem-explorer-status {
+  height: 21px; min-height: 21px;
+  box-sizing: border-box; padding: 3px 5px;
+  border-top: 1px solid #fff; border-bottom: 1px solid #808080;
+  background: #c0c0c0;
+}
+.mcretro-modem-explorer .mcretro-modem-explorer-status span:first-child {
+  padding-left: 2px; border-left: 1px solid #808080;
+}
+.mcretro-modem-explorer [data-modem-drag-handle]:focus-visible,
+.mcretro-modem-dialog [data-modem-drag-handle]:focus-visible {
+  outline: 1px dotted #fff; outline-offset: -3px;
+}
+.mcretro-modem-dialog {
+  width: min(96vw, 392px);
+  color: #000; color-scheme: light;
+  border: 2px solid; border-color: #fff #404040 #404040 #fff;
+  box-shadow: inset -1px -1px #808080, inset 1px 1px #dfdfdf, 2px 2px 0 #333;
+  border-radius: 0; background: #c0c0c0;
+}
+.mcretro-modem-dialog .mcretro-modem-card {
+  font: 12px/1.25 Tahoma, "MS Sans Serif", Arial, sans-serif;
+}
+.mcretro-modem-dialog .mcretro-modem-body { padding: 11px 12px 12px; }
+.mcretro-modem-dialog .mcretro-modem-titlebar {
+  gap: 4px; min-height: 21px; padding: 2px 3px 2px 4px;
+}
+.mcretro-modem-dialog .mcretro-modem-window-buttons button,
+.mcretro-modem-dialog .mcretro-modem-titlebar > .mcretro-modem-close {
+  height: 17px; width: 18px; min-height: 17px; min-width: 18px; flex-basis: 18px;
+  box-sizing: border-box;
+  background: #c0c0c0; border: 2px solid; border-color: #fff #333 #333 #fff;
+  color: #000; box-shadow: inset -1px -1px #808080;
+  font: bold 13px/1 Tahoma, Arial, sans-serif; padding: 0;
+}
+.mcretro-modem-dialog .mcretro-modem-identity { min-height: 42px; gap: 8px; }
+.mcretro-modem-dialog .mcretro-modem-fields {
+  grid-template-columns: 108px minmax(0, 1fr);
+  font: 12px/1.25 Tahoma, Arial, sans-serif;
+}
+.mcretro-modem-dialog .mcretro-modem-fields > label {
+  font-size: 12px;
+}
+.mcretro-modem-dialog .mcretro-modem-fields > input:not([type="checkbox"]),
+.mcretro-modem-dialog .mcretro-modem-fields select {
+  font: 12px/1 Tahoma, Arial, sans-serif;
+  height: 25px;
+}
+.mcretro-modem-dialog .mcretro-modem-connected-layout {
+  grid-template-columns: 36px minmax(0, 1fr) 88px;
+  gap: 9px;
+}
+.mcretro-modem-dialog .mcretro-modem-connected-stats { font: 11px/1.4 Tahoma, Arial, sans-serif; }
+.mcretro-modem-dialog .mcretro-modem-connected-buttons { gap: 6px; }
+.mcretro-modem-dialog .mcretro-modem-connected-buttons button,
+.mcretro-modem-dialog .mcretro-modem-connected-buttons .mcretro-modem-visit {
+  min-height: 25px; height: 25px; padding: 2px 4px; font: 11px/1 Tahoma, Arial, sans-serif;
+}
+.mcretro-modem-dialog[data-modem-stage="connected"] {
+  width: min(94vw, 365px);
+  max-height: min(90vh, 480px);
+  overflow-y: auto;
+}
+.mcretro-modem-dialog .mcretro-modem-progress-layout {
+  grid-template-columns: 38px minmax(0,1fr) 83px; gap: 8px;
+}
+.mcretro-modem-dialog .mcretro-modem-progress-layout > button { min-width: 81px; }
+.mcretro-modem-dialog .mcretro-modem-progress-message { font-size: 12px; }
+.mcretro-modem-create-dialog { width: min(94vw, 386px); }
+.mcretro-modem-create-dialog .mcretro-modem-create-form {
+  padding: 14px 12px 12px; font: 12px/1.25 Tahoma, Arial, sans-serif;
+}
+@media (max-width: 390px) {
+  .mcretro-modem-explorer .mcretro-modem-explorer-files {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .mcretro-modem-dialog .mcretro-modem-connected-layout {
+    grid-template-columns: 35px minmax(0, 1fr); gap: 8px;
+  }
+  .mcretro-modem-dialog .mcretro-modem-connected-buttons {
+    grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; justify-content: flex-end;
+  }
+  .mcretro-modem-dialog .mcretro-modem-connected-buttons button,
+  .mcretro-modem-dialog .mcretro-modem-connected-buttons .mcretro-modem-visit {
+    width: auto; min-width: 74px;
+  }
+  .mcretro-modem-dialog .mcretro-modem-progress-layout { grid-template-columns: 36px 1fr; }
+  .mcretro-modem-dialog .mcretro-modem-progress-layout > button { grid-column: 2; justify-self: end; }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
+<title>Windows 95-style dial-up networking folder</title>
+<path d="M1 3h6l2 2h6v9H1z" fill="#000"/>
+<path d="M2 4h5l2 2h5v7H2z" fill="#ffe26a"/>
+<path d="M2 7h12v6H2z" fill="#f7d638"/>
+<path d="M3 8h10v1H3z" fill="#fff0a8"/>
+<path d="M4 9h5v1h1v1H9v1H5v-1H4z" fill="#152d72"/>
+<rect x="5" y="10" width="4" height="1" fill="#3b65bd"/>
+</svg>

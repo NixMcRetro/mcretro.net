@@ -235,7 +235,7 @@ test('Goodies links to the modem page rather than separately listing dial modes'
 });
 
 
-test('V6.6 schedules beep, double ring, beep, double ring before handshake', () => {
+test('V6.7 schedules three complete beep then double-ring cycles before handshake', () => {
   const f = fixture({ site: 'random', withDialog: false, captureAudio: true });
   f.standalone.control('[data-modem-connect]').listeners.click();
 
@@ -243,13 +243,14 @@ test('V6.6 schedules beep, double ring, beep, double ring before handshake', () 
     .filter(event => event.frequency === frequency)
     .map(event => Math.round(event.at * 1000));
 
-  // Two 1300 Hz beeps lead the complete Australian 400/425/450 Hz double rings.
-  assert.deepEqual(atHz(1300), [5880, 8880]);
-  assert.deepEqual(atHz(400), [6680, 7280, 9680, 10280]);
-  assert.deepEqual(atHz(450), [6680, 7280, 9680, 10280]);
+  // Three 1300 Hz beeps each lead complete Australian 400/425/450 Hz double rings.
+  assert.deepEqual(atHz(1300), [5880, 8880, 11880]);
+  assert.deepEqual(atHz(400), [6680, 7280, 9680, 10280, 12680, 13280]);
+  assert.deepEqual(atHz(450), [6680, 7280, 9680, 10280, 12680, 13280]);
   const expectedSequence = [
     ['beep', 5880], ['ring', 6680], ['ring', 7280],
-    ['beep', 8880], ['ring', 9680], ['ring', 10280]
+    ['beep', 8880], ['ring', 9680], ['ring', 10280],
+    ['beep', 11880], ['ring', 12680], ['ring', 13280]
   ];
   const actualSequence = [
     ...atHz(1300).map(at => ['beep', at]),
@@ -257,7 +258,7 @@ test('V6.6 schedules beep, double ring, beep, double ring before handshake', () 
   ].sort((a, b) => a[1] - b[1]);
   assert.deepEqual(actualSequence, expectedSequence);
   // The last 400 ms ring burst ends before the original 16.3 s handshake begins.
-  assert.ok(10280 + 400 < 12380);
-  assert.ok(f.timers.some(timer => timer.delay === 12380));
-  assert.ok(f.timers.some(timer => timer.delay === 28750));
+  assert.ok(13280 + 400 < 15380);
+  assert.ok(f.timers.some(timer => timer.delay === 15380));
+  assert.ok(f.timers.some(timer => timer.delay === 31750));
 });

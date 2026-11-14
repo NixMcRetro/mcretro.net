@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/png" href="./icon.png">
     <title>GOATPAD 1337</title>
 </head>
 
@@ -13,7 +13,7 @@
     <div id="loadingScreen">
         <div class="loading-inner">
             <button id="startAudio" type="button">Start GOATPAD 1337</button>
-            <p id="loadingMessage" role="status" aria-live="polite">Click to load the original 64 sounds.</p>
+            <p id="loadingMessage" role="status" aria-live="polite">Click to prepare the first eight sounds. Other sounds load when selected.</p>
         </div>
     </div>
     <div class="container">
@@ -32,6 +32,8 @@
             <div class="soundboard">
                 <div class="buttonArea"></div>
                 <img class="title" src="./title.png" alt="GOATPAD 1337">
+                <p id="audioStatus" role="status" aria-live="polite"></p>
+                <p class="goatpad-credit">Fan recreation by <a href="https://github.com/insertusernamed/Goatpad-1337">insertusernamed</a> · Based on Goat MMO Simulator · <a href="./LICENSE">MIT licence</a></p>
             </div>
         </div>
         <div class="column side-column"></div>

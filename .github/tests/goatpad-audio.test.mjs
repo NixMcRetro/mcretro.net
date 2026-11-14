@@ -8,12 +8,11 @@ const markup = readFileSync(new URL('../../homepages/goatpad/index.html', import
 
 class ClassList {
   constructor(...names) { this.items = new Set(names); }
-  add(...names) { names.forEach(name => this.items.add(String(name))); }
-  remove(...names) { names.forEach(name => this.items.delete(String(name))); }
+  add(...names) { names.forEach(x => this.items.add(String(x))); }
+  remove(...names) { names.forEach(x => this.items.delete(String(x))); }
   contains(name) { return this.items.has(String(name)); }
   [Symbol.iterator]() { return this.items[Symbol.iterator](); }
 }
-
 class Element {
   constructor(tag = 'div') {
     this.tagName = tag;
@@ -21,199 +20,243 @@ class Element {
     this.children = [];
     this.parentElement = null;
     this.listeners = {};
+    this.dataset = {};
     this.disabled = false;
     this.offsetWidth = 480;
     this.textContent = '';
-    this.style = { values: {}, setProperty(key, value) { this.values[key] = value; } };
+    this.style = { setProperty() {} };
   }
+  setAttribute(name, value) { this[name] = value; }
   addEventListener(type, handler) { this.listeners[type] = handler; }
-  appendChild(child) {
-    child.parentElement = this;
-    this.children.push(child);
-    return child;
-  }
+  appendChild(child) { child.parentElement = this; this.children.push(child); }
   get nextElementSibling() {
     if (!this.parentElement) return null;
     return this.parentElement.children[this.parentElement.children.indexOf(this) + 1] || null;
   }
   querySelectorAll(selector) {
-    const nodes = [];
-    function visit(node) {
-      for (const child of node.children) {
-        if (selector === 'button' && child.tagName === 'button') nodes.push(child);
+    assert.equal(selector, 'button');
+    const output = [];
+    const visit = node => {
+      node.children.forEach(child => {
+        if (child.tagName === 'button') output.push(child);
         visit(child);
-      }
-    }
+      });
+    };
     visit(this);
-    return nodes;
+    return output;
   }
 }
-
-function makeFixture({ failOnce = null } = {}) {
+function fixture({ failOnce = null } = {}) {
   const loadingScreen = new Element();
   const loadingMessage = new Element('p');
   const startAudio = new Element('button');
+  const audioStatus = new Element('p');
   const buttonArea = new Element();
-  const soundboard = new Element();
-  const counterContainer = new Element();
-  const counters = Array.from({ length: 8 }, (_, index) => {
-    const el = new Element();
-    el.classList.add('counter');
-    if (index === 0) el.classList.add('active');
-    counterContainer.appendChild(el);
-    return el;
+  const counters = Array.from({ length: 8 }, (_, i) => {
+    const counter = new Element();
+    counter.classList.add('counter');
+    if (i === 0) counter.classList.add('active');
+    return counter;
   });
+  const counterHolder = new Element();
+  counters.forEach(x => counterHolder.appendChild(x));
   const root = new Element('html');
-  const windowListeners = {};
-  const requests = [], decodes = [], started = [], tickers = [];
-  let resumeCount = 0;
-  let audioContextCount = 0;
-  let failureUsed = false;
-
-  class MockAudioContext {
-    constructor() {
-      audioContextCount++;
-      this.state = 'suspended';
-      this.destination = {};
-    }
-    async resume() { resumeCount++; this.state = 'running'; }
-    async decodeAudioData(bytes) {
-      const key = new Uint8Array(bytes)[0];
-      decodes.push(key);
+  const requests = [], decoded = [], played = [];
+  const timers = new Map();
+  let nextTimerId = 0, audioContexts = 0, resumes = 0, failed = false;
+  let clock = 0;
+  class AudioContext {
+    constructor() { audioContexts++; this.state = 'suspended'; this.destination = {}; }
+    get currentTime() { return clock; }
+    async resume() { resumes++; this.state = 'running'; }
+    async decodeAudioData(data) {
+      const key = new Uint8Array(data)[0];
+      decoded.push(key);
       return { key };
     }
     createBufferSource() {
       return {
         buffer: null,
         connect(destination) { assert.ok(destination); },
-        start() {
-          assert.ok(this.buffer, 'Cannot play an undecoded sample');
-          started.push(this.buffer.key);
-        }
+        start() { assert.ok(this.buffer); played.push(this.buffer.key); }
       };
     }
   }
-
   const document = {
     documentElement: root,
-    createElement(tag) { return new Element(tag); },
+    createElement: tag => new Element(tag),
     getElementById(id) {
-      return { loadingScreen, loadingMessage, startAudio }[id] ?? null;
+      return { loadingScreen, loadingMessage, startAudio, audioStatus }[id] || null;
     },
     querySelector(selector) {
       if (selector === '.buttonArea') return buttonArea;
       if (selector === '.counter') return counters[0];
-      if (selector === '.soundboard') return soundboard;
-      throw new Error('Unexpected selector: ' + selector);
+      throw Error('Unknown selector: ' + selector);
     },
     querySelectorAll(selector) {
       if (selector === '.buttonArea button') return buttonArea.querySelectorAll('button');
       if (selector === '.counter.active') return counters.filter(x => x.classList.contains('active'));
-      if (selector === 'button.active') return buttonArea.querySelectorAll('button').filter(x => x.classList.contains('active'));
-      throw new Error('Unexpected selector: ' + selector);
+      if (selector === 'button.active')
+        return buttonArea.querySelectorAll('button').filter(x => x.classList.contains('active'));
+      throw Error('Unknown selector: ' + selector);
     }
-  };
-  const window = {
-    AudioContext: MockAudioContext,
-    innerHeight: 900,
-    innerWidth: 1440,
-    addEventListener(event, handler) { windowListeners[event] = handler; }
   };
   async function fetch(url) {
     requests.push(url);
-    const match = /^\.\/audio\/([1-8][1-8])\.ogg$/.exec(url);
-    assert.ok(match, 'Unexpected audio URL: ' + url);
-    const sample = Number(match[1]);
-    if (sample === failOnce && !failureUsed) {
-      failureUsed = true;
-      return { ok: false, status: 404 };
+    const match = /^\.\/audio\/([1-8][1-8])\.opus$/.exec(url);
+    assert.ok(match, 'Only numbered Opus files are permitted: ' + url);
+    const key = Number(match[1]);
+    if (key === failOnce && !failed) {
+      failed = true;
+      return { ok: false, status: 503 };
     }
-    return { ok: true, arrayBuffer: async () => Uint8Array.of(sample).buffer };
+    return { ok: true, arrayBuffer: async () => Uint8Array.of(key).buffer };
   }
+  const window = {
+    AudioContext, innerHeight: 900, innerWidth: 1400,
+    addEventListener() {}
+  };
   runInNewContext(source, {
     document, window, fetch, Promise, console,
-    setInterval(fn, milliseconds) {
-      assert.equal(milliseconds, 860);
-      tickers.push(fn);
-    }
-  }, { timeout: 3000 });
+    setTimeout(callback, ms) {
+      assert.ok(ms >= 0 && ms <= 2 * (60000 / 69), '69 BPM scheduler drifted: ' + ms);
+      const id = ++nextTimerId;
+      timers.set(id, { callback, ms });
+      return id;
+    },
+    clearTimeout(id) { timers.delete(id); }
+  }, { timeout: 4000 });
   return {
-    document, windowListeners, startAudio, loadingMessage, loadingScreen,
-    counters, requests, decodes, started,
-    pads: document.querySelectorAll('.buttonArea button'),
     start: () => startAudio.listeners.click(),
-    tick: () => tickers[0](),
-    get resumeCount() { return resumeCount; },
-    get audioContextCount() { return audioContextCount; }
+    click: index => buttonArea.querySelectorAll('button')[index].listeners.click(),
+    tick() {
+      const first = timers.entries().next().value;
+      if (!first) return;
+      const [id, timer] = first;
+      timers.delete(id);
+      clock += timer.ms / 1000;
+      timer.callback();
+    },
+    advance(ms) { clock += ms / 1000; },
+    get nextDelay() { return timers.values().next().value?.ms ?? null; },
+    get pads() { return buttonArea.querySelectorAll('button'); },
+    get requests() { return requests; },
+    get decoded() { return decoded; },
+    get played() { return played; },
+    get timers() { return timers; },
+    get audioContexts() { return audioContexts; },
+    get resumes() { return resumes; },
+    startAudio, loadingScreen, loadingMessage, audioStatus, counters
   };
 }
 
-test('historical app has a real start control and makes no audio requests on load', () => {
+test('only Opus is referenced, PNG favicon used, and page load is network-idle', () => {
   assert.match(markup, /id="startAudio"/);
-  assert.match(markup, /id="loadingMessage"[^>]*role="status"/);
-  const app = makeFixture();
+  assert.match(markup, /id="audioStatus"/);
+  assert.match(markup, /href="\.\/icon\.png"/);
+  assert.match(source, /\.opus/);
+  assert.doesNotMatch(source, /\.(ogg|mp3|wav)/);
+  const app = fixture();
   assert.equal(app.pads.length, 64);
-  assert.ok(app.pads.every(pad => pad.disabled));
+  assert.ok(app.pads.every(button => button.disabled));
   assert.equal(app.requests.length, 0);
-  assert.equal(app.audioContextCount, 0);
-  app.tick();
-  assert.equal(app.started.length, 0);
+  assert.equal(app.audioContexts, 0);
+  assert.equal(app.timers.size, 0);
 });
 
-test('one user gesture resumes Web Audio, loads all 64 samples and enables the pads', async () => {
-  const app = makeFixture();
+test('Start loads eight Opus files, not all 64, with user-gesture audio', async () => {
+  const app = fixture();
   await app.start();
-  assert.equal(app.audioContextCount, 1);
-  assert.equal(app.resumeCount, 1);
-  assert.equal(app.requests.length, 64);
-  assert.equal(new Set(app.requests).size, 64);
-  assert.equal(app.decodes.length, 64);
-  assert.equal(app.loadingMessage.textContent, 'Loading original sounds: 64/64');
-  assert.ok(app.pads.every(pad => !pad.disabled));
+  assert.equal(app.audioContexts, 1);
+  assert.equal(app.resumes, 1);
+  assert.equal(app.requests.length, 8);
+  assert.equal(new Set(app.requests).size, 8);
+  assert.equal(app.decoded.length, 8);
+  assert.ok(app.pads.every(button => !button.disabled));
   assert.ok(app.loadingScreen.classList.contains('hidden'));
+  assert.equal(app.timers.size, 0, 'Idle sequencer must not poll in the background');
 });
 
-test('a failed sample keeps pads disabled and permits a complete retry', async () => {
-  const app = makeFixture({ failOnce: 33 });
+test('a failed initial sound can be retried with the same AudioContext', async () => {
+  const app = fixture({ failOnce: 11 });
   await app.start();
   assert.equal(app.startAudio.disabled, false);
-  assert.ok(app.pads.every(pad => pad.disabled));
-  assert.equal(app.loadingScreen.classList.contains('hidden'), false);
-  assert.match(app.loadingMessage.textContent, /Unable to load sounds/);
+  assert.ok(app.pads.every(button => button.disabled));
+  assert.ok(!app.loadingScreen.classList.contains('hidden'));
   await app.start();
-  assert.ok(app.pads.every(pad => !pad.disabled));
-  assert.ok(app.loadingScreen.classList.contains('hidden'));
-  assert.equal(app.audioContextCount, 1, 'Retry must reuse the audio context');
+  assert.ok(app.pads.every(button => !button.disabled));
+  assert.equal(app.audioContexts, 1);
+  assert.equal(app.requests.filter(x => x === './audio/11.opus').length, 2);
 });
 
-test('the eight-step sequencer plays the selected original sample', async () => {
-  const app = makeFixture();
+test('an unvisited pad fetches its sample on demand, then plays after eight steps', async () => {
+  const app = fixture();
   await app.start();
-  await app.pads[0].listeners.click();
-  assert.ok(app.pads[0].classList.contains('active'));
-  for (let index = 0; index < 7; index++) app.tick();
-  assert.equal(app.started.length, 0, 'Sequencer must not play prematurely');
+  await app.click(27); // pad 44, not among the initial eight
+  assert.equal(app.requests.length, 9);
+  assert.equal(app.requests.at(-1), './audio/44.opus');
+  assert.ok(app.pads[27].classList.contains('active'));
+  assert.equal(app.timers.size, 1);
+  for (let i = 0; i < 7; i++) app.tick();
+  assert.equal(app.played.length, 0);
   app.tick();
-  assert.deepEqual(app.started, [11]);
-  assert.equal(app.counters.filter(counter => counter.classList.contains('active')).length, 1);
-  await app.pads[0].listeners.click();
-  assert.ok(!app.pads[0].classList.contains('active'), 'Clicking a selected pad toggles it off');
-  for (let index = 0; index < 8; index++) app.tick();
-  assert.deepEqual(app.started, [11], 'Deselected pads must not play');
+  assert.deepEqual(app.played, [44]);
+  assert.equal(app.counters.filter(x => x.classList.contains('active')).length, 1);
+  await app.click(27);
+  assert.equal(app.timers.size, 0);
+  for (let i = 0; i < 8; i++) app.tick();
+  assert.deepEqual(app.played, [44]);
 });
 
-test('selecting another pad in the same column replaces the previous sound', async () => {
-  const app = makeFixture();
+test('byte-identical pad aliases reuse the same decoded Opus sound', async () => {
+  const app = fixture();
   await app.start();
-  await app.pads[0].listeners.click();
-  await app.pads[1].listeners.click();
+  await app.click(5); // pad 16, preloaded
+  await app.click(15); // pad 28 aliases pad 16
+  assert.equal(app.requests.length, 8);
+  assert.equal(app.timers.size, 1);
+  for (let i = 0; i < 8; i++) app.tick();
+  assert.deepEqual(app.played, [16, 16]);
+});
+
+test('one failed on-demand request does not poison the cache; pad retries on click', async () => {
+  const app = fixture({ failOnce: 54 });
+  await app.start();
+  await app.click(35); // pad 54, not in initial preload
+  assert.ok(!app.pads[35].classList.contains('active'));
+  assert.match(app.audioStatus.textContent, /retry/);
+  await app.click(35);
+  assert.ok(app.pads[35].classList.contains('active'));
+  assert.equal(app.requests.filter(x => x === './audio/54.opus').length, 2);
+});
+
+test('same-column selection is exclusive and the original alternating rhythm remains', async () => {
+  const app = fixture();
+  await app.start();
+  await app.click(0);
+  await app.click(1);
   assert.ok(!app.pads[0].classList.contains('active'));
   assert.ok(app.pads[1].classList.contains('active'));
-  for (let index = 0; index < 8; index++) app.tick();
-  assert.deepEqual(app.started, [12]);
+  for (let i = 0; i < 8; i++) app.tick();
+  assert.deepEqual(app.played, [12]);
+  for (let i = 0; i < 8; i++) app.tick();
+  assert.deepEqual(app.played, [12], 'Full-length sounds skip the alternate bar');
 });
 
-test('Goodies links preserve the restored destination pages', () => {
+test('upstream 69 BPM scheduler corrects drift after tab throttling', async () => {
+  const app = fixture();
+  await app.start();
+  await app.click(0);
+  assert.ok(Math.abs(app.nextDelay - 60000 / 69) < 0.001, 'Should use 69 BPM');
+  app.advance(16000); // Simulate a tab suspended for sixteen seconds
+  app.tick();
+  assert.ok(Math.abs(app.nextDelay - 60000 / 69) < 0.001,
+    'Throttling should not produce rapid catch-up beats');
+  await app.click(0);
+  assert.equal(app.timers.size, 0, 'Deselected pads stop the clock entirely');
+});
+
+test('historical Goodies links remain intact', () => {
   const goodies = readFileSync(new URL('../../goodies.md', import.meta.url), 'utf8');
   assert.match(goodies, /\[GOATPAD 1337\]\(\/homepages\/goatpad\/\)/);
   assert.match(goodies, /\[Fish Tank World\]\(\/homepages\/fishtankworld\/\)/);

@@ -1,240 +1,227 @@
 /*
-
-1 - DRUMS
-2 - FX
-3 - BASS
-4 - GOAT SOUL
-5 - MELODY
-
-*/
+ * GOATPAD 1337: historical eight-column sequencer.
+ * Playback uses only Opus, loads on demand, and reuses eight identical sounds.
+ */
 const buttonMapping = [
     [1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1, 2],
+    [1, 1, 1, 1, 1, 1, 1, 1],
     [3, 3, 3, 3, 3, 4, 5, 2],
     [5, 5, 5, 5, 5, 5, 5, 5],
     [5, 5, 4, 4, 4, 4, 5, 4],
     [4, 2, 4, 5, 2, 5, 5, 5],
     [5, 4, 4, 4, 4, 4, 5, 5],
 ];
+// The last pad in column 3 is FX, as on the original soundboard.
+buttonMapping[2][7] = 2;
 
-let audioContext;
-let buttonsLoaded = false;
-const audioBuffers = {};
-const shortAudio = [
-    14, 15, 16, 17, 18, 22, 23, 24, 25, 26, 27, 28, 32, 34, 37, 38, 41, 44, 45, 46, 48, 57,
-    64, 67, 71, 72, 74, 75, 77, 87, 88
-];
+const shortAudio = new Set([
+    14, 15, 16, 17, 18, 22, 23, 24, 25, 26, 27, 28, 32, 34, 37, 38,
+    41, 44, 45, 46, 48, 57, 64, 67, 71, 72, 74, 75, 77, 87, 88
+]);
+// Hashes of the historical source files confirm these are identical pairs.
+const identicalSounds = {
+    28: 16, 23: 18, 36: 21, 32: 22,
+    37: 25, 88: 38, 64: 46, 62: 47
+};
+const canonical = key => identicalSounds[key] || key;
+
 const loadingScreen = document.getElementById("loadingScreen");
 const loadingMessage = document.getElementById("loadingMessage");
 const startButton = document.getElementById("startAudio");
+const audioStatus = document.getElementById("audioStatus");
+const soundboard = document.querySelector(".buttonArea");
 
-// Creating or resuming Web Audio must begin in a genuine user gesture.
-// The original page created a suspended AudioContext on load, leaving the
-// disabled sound pads with no reliable way to start audio in some browsers.
-const loadAudioFile = async (url) => {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`Couldn't load ${url}: HTTP ${response.status}`);
-    return audioContext.decodeAudioData(await response.arrayBuffer());
-};
+const buffers = new Map();
+const loading = new Map();
+const columnSelection = new WeakMap();
+let audioContext;
+let buttonsLoaded = false;
+// Upstream 27 June 2026 timing fix: 69 BPM, anchored to the audio clock.
+const BEAT_SECONDS = 60 / 69;
+const BEAT_INTERVAL = BEAT_SECONDS * 1000;
+let nextBeatTime = 0;
+let sequencerTimer = null;
+let completedBars = 0;
 
-const loadAllAudioFiles = async () => {
-    for (let row = 1; row <= 8; row++) {
-        const keys = Array.from({ length: 8 }, (_, index) => `${row}${index + 1}`);
-        const decoded = await Promise.all(keys.map(async key => ({
-            key,
-            buffer: await loadAudioFile(`./audio/${key}.ogg`)
-        })));
-        decoded.forEach(({ key, buffer }) => {
-            audioBuffers[key] = buffer;
-        });
-        loadingMessage.textContent = `Loading original sounds: ${row * 8}/64`;
+async function loadSound(key) {
+    const id = canonical(Number(key));
+    if (buffers.has(id)) return buffers.get(id);
+    if (loading.has(id)) return loading.get(id);
+    const request = (async () => {
+        const response = await fetch("./audio/" + id + ".opus");
+        if (!response.ok) throw new Error("Unable to load sound " + id + ": HTTP " + response.status);
+        const buffer = await audioContext.decodeAudioData(await response.arrayBuffer());
+        buffers.set(id, buffer);
+        return buffer;
+    })();
+    loading.set(id, request);
+    try {
+        return await request;
+    } finally {
+        loading.delete(id);
     }
+}
 
-    document.querySelectorAll(".buttonArea button").forEach(button => {
-        button.disabled = false;
-    });
-    buttonsLoaded = true;
-    loadingScreen.classList.add("hidden");
-};
-
-const initializeAudioContext = async () => {
+async function startAudio() {
     startButton.disabled = true;
-    loadingMessage.textContent = "Starting audio...";
-
+    loadingMessage.textContent = "Starting the original GOATPAD sequencer...";
     try {
         if (!audioContext) {
             const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-            if (!AudioContextClass) throw new Error("Web Audio is not supported in this browser");
+            if (!AudioContextClass) throw new Error("Web Audio is unavailable");
             audioContext = new AudioContextClass();
         }
-        // Resume immediately after the Start click, before any network awaits.
+        // Create/resume audio only inside a genuine user click.
         if (audioContext.state === "suspended") await audioContext.resume();
-        await loadAllAudioFiles();
+        let loaded = 0;
+        await Promise.all(Array.from({ length: 8 }, (_, i) => i + 11).map(async key => {
+            await loadSound(key);
+            loadingMessage.textContent = "Preparing sounds: " + (++loaded) + "/8";
+        }));
+        document.querySelectorAll(".buttonArea button").forEach(button => {
+            button.disabled = false;
+        });
+        buttonsLoaded = true;
+        loadingScreen.classList.add("hidden");
     } catch (error) {
-        console.error("GOATPAD audio failed to initialise:", error);
-        loadingMessage.textContent = "Unable to load sounds. Check your connection and try again.";
+        console.error("GOATPAD start failed:", error);
+        loadingMessage.textContent = "Couldn't start the sounds. Check your connection and try again.";
         startButton.disabled = false;
     }
-};
+}
+startButton.addEventListener("click", startAudio);
 
-startButton.addEventListener("click", initializeAudioContext);
-
-let columnCount = 1;
-const soundboard = document.querySelector(".buttonArea");
-buttonMapping.forEach((element) => {
-    const column = document.createElement("div");
-    column.classList.add("column");
-    column.classList.add(columnCount);
-    let buttonCount = 1;
-    element.forEach((button) => {
-        const buttonElement = document.createElement("button");
-        buttonElement.disabled = true;
-        buttonElement.addEventListener("click", async () => {
-            if (!buttonsLoaded || !audioContext) return;
-            try {
-                if (audioContext.state === "suspended") await audioContext.resume();
-                soundboardButtonClicked(buttonElement);
-            } catch (error) {
-                console.error("GOATPAD could not resume audio:", error);
-            }
-        });
-        const p = document.createElement("p");
-
-        if (button === 1) {
-            p.innerText = "DRUMS";
-            buttonElement.classList.add("drums");
-        } else if (button === 2) {
-            p.innerText = "FX";
-            buttonElement.classList.add("fx");
-        } else if (button === 3) {
-            p.innerText = "BASS";
-            buttonElement.classList.add("bass");
-        } else if (button === 4) {
-            p.innerText = "GOAT SOUL";
-            buttonElement.classList.add("goatsoul");
-        } else if (button === 5) {
-            p.innerText = "MELODY";
-            buttonElement.classList.add("melody");
-        }
-
-        buttonElement.classList.add(buttonCount);
-        buttonCount++;
-        buttonElement.appendChild(p);
-        column.appendChild(buttonElement);
-    });
-    soundboard.appendChild(column);
-    columnCount++;
-});
-
-function soundboardButtonClicked(button) {
-    // If the button is already active, remove the active class and return
-    if (button.classList.contains("active")) {
-        button.classList.remove("active");
-        button.classList.remove("glow");
-        return;
-    }
-    // Get the parent column of the clicked button
-    const column = button.parentElement;
-
-    // Loop through all buttons in the column
-    const buttons = column.querySelectorAll("button");
-    buttons.forEach((btn) => {
-        // Remove the active class from each button
-        btn.classList.remove("glow");
-        btn.classList.remove("active");
-    });
-
-    // Add the active class to the clicked button
-    button.classList.add("active");
-    button.classList.add("glow");
+function resetCounter() {
+    document.querySelectorAll(".counter.active").forEach(element => element.classList.remove("active"));
+    document.querySelector(".counter").classList.add("active");
 }
 
-let interval = 0;
-setInterval(() => {
-    if (!buttonsLoaded) return;
-    const activeButtons = document.querySelectorAll('.counter.active');
-    if (activeButtons.length < 8) {
-        const lastButton = activeButtons[activeButtons.length - 1];
-        const nextButton = lastButton.nextElementSibling;
-        nextButton.classList.add('active');
+function refreshTimer() {
+    const active = document.querySelectorAll("button.active").length > 0;
+    if (active && sequencerTimer === null) {
+        completedBars = 0;
+        resetCounter();
+        nextBeatTime = audioContext.currentTime + BEAT_SECONDS;
+        sequencerTimer = setTimeout(tick, BEAT_INTERVAL);
+    } else if (!active && sequencerTimer !== null) {
+        clearTimeout(sequencerTimer);
+        sequencerTimer = null;
+        nextBeatTime = 0;
+        completedBars = 0;
+        resetCounter();
+    }
+}
+
+function tick() {
+    if (!buttonsLoaded || sequencerTimer === null) return;
+    const activeCounters = document.querySelectorAll(".counter.active");
+    if (activeCounters.length < 8) {
+        activeCounters[activeCounters.length - 1].nextElementSibling.classList.add("active");
     } else {
-        // Play audio if any button is active
-        const activeSoundButtons = document.querySelectorAll('button.active');
-        if (activeSoundButtons.length === 0) {
-            interval = 0;
-        } else if (activeSoundButtons.length != 0) {
-            if (interval === 2) {
-                interval = 0
-            }
-            if (interval < 2) {
-                const audiosToPlay = [];
-                activeSoundButtons.forEach(button => {
-                    // Getting the number of the parent column
-                    const parent = button.parentElement;
-                    const parentClasses = parent.classList;
-                    const parentClassesNumber = Array.from(parentClasses)[1];
-
-                    // Getting the number of the button
-                    const buttonClasses = button.classList;
-                    const buttonClassesNumber = Array.from(buttonClasses)[1];
-
-                    // Playing the audio
-                    if (interval === 1 && shortAudio.includes(parseInt(`${parentClassesNumber}${buttonClassesNumber}`))) {
-                        audiosToPlay.push(audioBuffers[`${parentClassesNumber}${buttonClassesNumber}`]);
-                    } else if (interval === 0) {
-                        audiosToPlay.push(audioBuffers[`${parentClassesNumber}${buttonClassesNumber}`]);
-                    }
-                });
-                audiosToPlay.forEach(buffer => {
-                    const source = audioContext.createBufferSource();
-                    source.buffer = buffer;
-                    source.connect(audioContext.destination);
-                    source.start(0);
-                });
-                interval++;
-            } else {
-                interval++;
-            }
-        }
-
-        // Make the first counter active
-        activeButtons.forEach(button => {
-            button.classList.remove('active');
-        });
-        const firstButton = document.querySelector('.counter');
-        firstButton.classList.add('active');
+        playBar();
+        resetCounter();
     }
-}, 860); // Technically it needs to be every 869.6ms but 860 will give the audio a bit of time to load
+    nextBeatTime += BEAT_SECONDS;
+    // Do not fire a burst of catch-up beats after a tab was suspended.
+    if (audioContext.currentTime - nextBeatTime > BEAT_SECONDS) {
+        nextBeatTime = audioContext.currentTime + BEAT_SECONDS;
+    }
+    const delay = Math.max(0, (nextBeatTime - audioContext.currentTime) * 1000);
+    sequencerTimer = setTimeout(tick, delay);
+}
 
-const updateSizes = () => {
+function playBar() {
+    const shortOnly = completedBars % 2 === 1;
+    for (const button of document.querySelectorAll("button.active")) {
+        const key = Number(button.dataset.sample);
+        if (shortOnly && !shortAudio.has(key)) continue;
+        const buffer = buffers.get(canonical(key));
+        if (!buffer) continue;
+        const source = audioContext.createBufferSource();
+        source.buffer = buffer;
+        source.connect(audioContext.destination);
+        source.start(0);
+    }
+    completedBars++;
+}
+
+function togglePad(button) {
+    if (button.classList.contains("active")) {
+        button.classList.remove("active", "glow");
+    } else {
+        const column = button.parentElement;
+        column.querySelectorAll("button").forEach(other => other.classList.remove("active", "glow"));
+        button.classList.add("active", "glow");
+    }
+    refreshTimer();
+}
+
+async function selectPad(button) {
+    if (!buttonsLoaded) return;
+    const column = button.parentElement;
+    const token = Symbol();
+    columnSelection.set(column, token);
+    if (button.classList.contains("active")) {
+        togglePad(button);
+        return;
+    }
+    const key = Number(button.dataset.sample);
+    try {
+        // Resume within the pad click, before awaiting a new network request.
+        if (audioContext.state === "suspended") await audioContext.resume();
+        if (!buffers.has(canonical(key))) {
+            button.disabled = true;
+            audioStatus.textContent = "Loading sound " + key + "...";
+            await loadSound(key);
+        }
+        // A newer click in the same column takes precedence.
+        if (columnSelection.get(column) !== token) return;
+        togglePad(button);
+        audioStatus.textContent = "";
+    } catch (error) {
+        console.error("GOATPAD sound loading failed:", error);
+        audioStatus.textContent = "Couldn't load sound " + key + ". Click its pad to retry.";
+    } finally {
+        button.disabled = false;
+    }
+}
+
+const names = { 1: "DRUMS", 2: "FX", 3: "BASS", 4: "GOAT SOUL", 5: "MELODY" };
+const styles = { 1: "drums", 2: "fx", 3: "bass", 4: "goatsoul", 5: "melody" };
+buttonMapping.forEach((sounds, columnIndex) => {
+    const column = document.createElement("div");
+    column.classList.add("column", String(columnIndex + 1));
+    sounds.forEach((category, buttonIndex) => {
+        const key = (columnIndex + 1) * 10 + buttonIndex + 1;
+        const button = document.createElement("button");
+        button.type = "button";
+        button.disabled = true;
+        button.dataset.sample = String(key);
+        const label = document.createElement("p");
+        label.innerText = names[category];
+        button.classList.add(styles[category], String(buttonIndex + 1));
+        button.setAttribute("aria-label", names[category] + ", sample " + key);
+        button.addEventListener("click", () => selectPad(button));
+        button.appendChild(label);
+        column.appendChild(button);
+    });
+    soundboard.appendChild(column);
+});
+
+function updateSizes() {
     const root = document.documentElement;
-    const viewportHeight = window.innerHeight;
-    const viewportWidth = window.innerWidth;
-    const minViewportDimension = Math.min(viewportHeight, viewportWidth);
-
-    const buttonSize = `calc(6em * (${minViewportDimension} / 1080))`;
-    const counterSize = `calc(5em * (${minViewportDimension} / 1080))`;
-    root.style.setProperty('--button-size', buttonSize);
-    root.style.setProperty('--counter-size', counterSize);
-
-    const soundboard = document.querySelector('.buttonArea');
-    if (soundboard) {
-        const soundboardWidth = soundboard.offsetWidth;
-
-        const counter = document.querySelector('.counter');
-        if (counter) {
-            const counterWidth = counter.offsetWidth;
-            const counterMargin = `calc((${soundboardWidth}px - ${counterWidth * 8}px) / 16)`;
-            root.style.setProperty('--counter-margin', counterMargin);
-            root.style.setProperty('--metronome-width', `${soundboardWidth}px`);
-        }
+    const viewport = Math.min(window.innerHeight, window.innerWidth);
+    root.style.setProperty("--button-size", "calc(6em * (" + viewport + " / 1080))");
+    root.style.setProperty("--counter-size", "calc(5em * (" + viewport + " / 1080))");
+    const area = document.querySelector(".buttonArea");
+    const counter = document.querySelector(".counter");
+    if (area && counter) {
+        root.style.setProperty("--counter-margin",
+            "calc((" + area.offsetWidth + "px - " + counter.offsetWidth * 8 + "px) / 16)");
+        root.style.setProperty("--metronome-width", area.offsetWidth + "px");
     }
-};
-
-// Update sizes on window resize
-window.addEventListener('resize', updateSizes);
-window.addEventListener('fullscreenchange', updateSizes);
-
-// Initialize sizes on page load
-window.addEventListener('load', updateSizes);
+}
+window.addEventListener("resize", updateSizes);
+window.addEventListener("fullscreenchange", updateSizes);
+window.addEventListener("load", updateSizes);

@@ -28,6 +28,7 @@ on:
       - 'homepages/goatpad/**'
       - '.github/tests/restore-fishtank-gallery.py'
       - '.github/tests/goatpad-audio.test.mjs'
+      - '.github/tests/verify-goatpad-opus.py'
       - '.github/tests/fishtankworld-built.mjs'
       - '_layouts/default.html'
       - '_includes/sidebar.html'
@@ -108,6 +109,9 @@ jobs:
 
       - name: Build site with Jekyll
         run: bundle exec jekyll build --destination _site
+
+      - name: Verify committed GOATPAD 24 kbps Opus audio and MIT notice
+        run: python3 .github/tests/verify-goatpad-opus.py --site _site
 
       - name: Verify all restored photographs are present in the built site
         run: python3 .github/tests/restore-fishtank-gallery.py --verify-built _site

@@ -8,7 +8,10 @@ share_description: >-
   Ghost replaces WordPress for another Raspberry Pi website experiment. Node.js 4, Raspbian Jessie and lots of 2016 commands make this an archive, not a current guide. 🌐
 ---
 
-![ghost-logo-svg](/assets/images/2016/img_0594.jpg)
+![Grey Ghost publishing-platform wordmark with a block-style symbol to the left on a pale grey background.](/assets/images/2016/img_0594.jpg)
+
+*The Ghost publishing logo. Another platform to experiment with on the Raspberry Pi!*
+{: .media-caption }
 
 I decided to have a look around for an alternative to WordPress. I must admit I do have a tendency to do this from time to time. Anyway, enter [Ghost](https://ghost.org)! No PHP, just pure JavaScript built for the new world order.
 

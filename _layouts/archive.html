@@ -2,11 +2,8 @@
 layout: default
 ---
 <section class="post-full archive-month" data-pagefind-ignore="all">
-  <h1 class="post-title">{{ page.date | date: "%B %Y" }}</h1>
   {% assign month_count = page.posts | size %}
-  <p class="archive-month-summary">
-    {% if month_count == 1 %}1 article{% else %}{{ month_count }} articles{% endif %}
-  </p>
+  <h1 class="post-title">{{ page.date | date: "%B %Y" }} <span class="archive-month-count">- {% if month_count == 1 %}1 article{% else %}{{ month_count }} articles{% endif %}</span></h1>
 
   <div class="blog-list archive-blog-list">
     {% assign month_posts = page.posts | sort: 'date' | reverse %}

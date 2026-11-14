@@ -243,3 +243,12 @@ body {
     font-size: 0.75em;
     line-height: 1.5;
 }
+
+/* Status is visible only while a new Opus sample is loading or needs retrying. */
+#audioStatus {
+    color: #d8ff8e;
+    font: 0.8rem/1.4 system-ui, sans-serif;
+    text-align: center;
+    margin: 0.5rem 1rem;
+}
+#audioStatus:empty { display: none; }

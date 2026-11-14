@@ -270,7 +270,7 @@
   color-scheme: light;
   --page-bg: #FFF8DC;
   --panel: #FFFDF2;
-  --panel-hover: #F0EAD9;
+  --panel-subtle: #F0EAD9;
   --text: #1A1A1A;
   --muted: #535A5D;
   --link: #0009B5;
@@ -296,6 +296,7 @@
   --archive-empty: #FFFDF2;
   --archive-filled: #EAF2FF;
   --archive-filled-hover: #D5E6FF;
+  --interactive-hover: var(--archive-filled-hover);
   --archive-filled-text: #064584;
   --archive-accent: #064584;
   --retro-teal: #008080;
@@ -304,7 +305,7 @@
   color-scheme: dark;
   --page-bg: #191D27;
   --panel: #242B38;
-  --panel-hover: #303A48;
+  --panel-subtle: #303A48;
   --text: #F5F0E4;
   --muted: #B9C5CB;
   --link: #93C5FD;
@@ -330,6 +331,7 @@
   --archive-empty: #242B38;
   --archive-filled: #293A55;
   --archive-filled-hover: #2B405E;
+  --interactive-hover: var(--archive-filled-hover);
   --archive-filled-text: #BFDBFE;
   --archive-accent: #93C5FD;
 }
@@ -984,7 +986,7 @@ pre code {
 }
 a.page-number:hover,
 .arrow-link:hover {
-  background: var(--panel-hover);
+  background: var(--interactive-hover);
   color: var(--link-hover);
   text-decoration: none;
 }
@@ -1028,7 +1030,7 @@ a.page-number:hover,
   color: var(--archive-filled-text);
 }
 :root[data-theme="dark"] .pagination-arrows .arrow-link:hover {
-  background: var(--archive-filled-hover);
+  background: var(--interactive-hover);
   color: var(--link-hover);
 }
 
@@ -1130,7 +1132,7 @@ a.page-number:hover,
   --pagefind-ui-text: var(--text);
   --pagefind-ui-background: var(--panel);
   --pagefind-ui-border: var(--border-soft);
-  --pagefind-ui-tag: var(--panel-hover);
+  --pagefind-ui-tag: var(--panel-subtle);
 }
 
 /* ===========================
@@ -1582,7 +1584,7 @@ a.page-number:hover,
   cursor: pointer;
   z-index: 11;
 }
-.theme-toggle:hover { background: var(--panel-hover); color: var(--link); }
+.theme-toggle:hover { background: var(--interactive-hover); color: var(--link); }
 .theme-toggle:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
 .theme-icon { width: 22px; height: 22px; }
 .theme-icon--moon { display: none; }

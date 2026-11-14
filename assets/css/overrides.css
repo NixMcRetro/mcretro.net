@@ -19,7 +19,7 @@
    panel--teal class name is preserved for articles and exclusive-panel scripts. */
 :root {
   --accordion-neutral-bg: #F3EAC9;
-  --accordion-neutral-hover: #E9DDB1;
+  --accordion-neutral-hover: var(--interactive-hover);
   --accordion-teal-bg: var(--archive-filled);
   --accordion-teal-hover: var(--archive-filled-hover);
   --accordion-teal-open: #DBEAFD;
@@ -28,7 +28,7 @@
 }
 :root[data-theme="dark"] {
   --accordion-neutral-bg: #2C3546;
-  --accordion-neutral-hover: #39485E;
+  --accordion-neutral-hover: var(--interactive-hover);
   --accordion-teal-bg: var(--archive-filled);
   --accordion-teal-hover: var(--archive-filled-hover);
   --accordion-teal-open: #304762;
@@ -1148,7 +1148,7 @@
   cursor: pointer;
 }
 .post-full .post-share__action:hover {
-  background: var(--panel-hover);
+  background: var(--interactive-hover);
   border-color: var(--link);
   color: var(--link-hover);
   text-decoration: none;
@@ -1183,7 +1183,7 @@
 }
 .post-full .post-share__action.is-copied {
   border-color: var(--link);
-  background: var(--panel-hover);
+  background: var(--interactive-hover);
 }
 /* The copy result is announced to assistive technology, not shown as a
    separate paragraph under the sharing buttons. */
@@ -1230,7 +1230,7 @@
 }
 :root[data-theme="dark"] .theme-toggle:hover {
   color: var(--link-hover);
-  background: var(--panel-hover);
+  background: var(--interactive-hover);
   border-color: var(--border);
 }
 
@@ -1276,7 +1276,7 @@
   }
   :root[data-theme="dark"] .nav-toggle:hover {
     color: var(--link-hover);
-    background: var(--panel-hover);
+    background: var(--interactive-hover);
     border-color: var(--border);
   }
 

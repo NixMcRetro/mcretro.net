@@ -30,7 +30,6 @@ on:
       - 'assets/js/mcretro-webring.js'
       - 'assets/js/header-taglines.js'
       - '.github/tests/modem-destinations.mjs'
-      - '.github/tests/header-taglines.mjs'
       - 'assets/data/random-post-urls.json'
       - '.github/tests/random-post.mjs'
       - '.github/tests/csp-preparation.mjs'
@@ -63,7 +62,6 @@ on:
       - 'assets/js/mcretro-webring.js'
       - 'assets/js/header-taglines.js'
       - '.github/tests/modem-destinations.mjs'
-      - '.github/tests/header-taglines.mjs'
       - 'assets/data/random-post-urls.json'
       - '.github/tests/random-post.mjs'
       - '.github/tests/csp-preparation.mjs'
@@ -91,14 +89,12 @@ jobs:
           node --check assets/js/search-page.js
           node --check assets/js/random-post.js
           node --check assets/js/mcretro-webring.js
-          node --check assets/js/header-taglines.js
-          node --check .github/tests/header-taglines.mjs
           node --check assets/js/archive-calendar.js
           node --check .github/tests/modem-destinations.mjs
           node --check .github/tests/script-tags.mjs
           node --check .github/tests/csp-built.mjs
       - name: Run footer, navigation, search and random-post regression tests
-        run: node --test .github/tests/csp-preparation.mjs .github/tests/random-post.mjs .github/tests/modem-destinations.mjs .github/tests/header-taglines.mjs .github/tests/footer-csp.mjs .github/tests/archive-calendar.mjs .github/tests/script-tags.test.mjs .github/tests/theme.mjs
+        run: node --test .github/tests/csp-preparation.mjs .github/tests/random-post.mjs .github/tests/modem-destinations.mjs .github/tests/footer-csp.mjs .github/tests/archive-calendar.mjs .github/tests/script-tags.test.mjs .github/tests/theme.mjs
 
   # Full integration checks remain available on security review branches and on
   # manual dispatch, without repeating the production Jekyll/Pagefind build.

@@ -8,11 +8,17 @@ share_description: >-
   Four replacement electrolytics bring a Cisco SPA112 V05 back to form. Also included: modem-driven IVR reset commands from my dial-up experiments. 📞
 ---
 
-![](/assets/images/2021/img_0741.jpg)
+![Black Cisco SPA112 analogue telephone adaptor product image, with Cisco logo, status icons and vented sides.](/assets/images/2021/img_0741.jpg)
+
+*The little Cisco SPA112. Two phone ports, four electrolytics, and plenty of dial-up testing ahead.*
+{: .media-caption }
 
 I did replace the capacitors in this one as they were... sus...pect (see photo below). And while there aren't many photos, the ones I do have are now in the [photo gallery](/goodies) in case they are of use to anyone. The serial number on this SPA112 is YM191HWJI129A.
 
-![](/assets/images/2021/img_0740.jpg)
+![Inside a Cisco SPA112 analogue telephone adaptor, showing its green circuit board, black Suscon capacitors and chips.](/assets/images/2021/img_0740.jpg)
+
+*Inside my SPA112. Those Suscon electrolytics looked suspicious enough to earn a replacement.*
+{: .media-caption }
 
 Capacitor replacement was quite straightforward. Whether they are the best capacitors for the job, I couldn't tell you. These are the capacitors I fitted to SPA112 serial YM191HWJI129A. They worked in this unit, but this is not a universal SPA112 bill of materials: verify the actual board revision, capacitance, voltage, polarity, ESR, ripple-current requirements and physical size before copying the list. Right, Cisco?
 

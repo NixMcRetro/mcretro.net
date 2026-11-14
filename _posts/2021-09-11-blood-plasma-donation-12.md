@@ -8,7 +8,10 @@ share_description: >-
   Plasma donation number twelve brings squish-ball adventures, low iron-store concerns and an interesting afternoon at Australian Lifeblood. 🩸
 ---
 
-![](/assets/images/2021/img_0745.jpg)
+![Wide view of an Australian blood donation centre waiting area with partitioned donation bays, information signs and a television overhead.](/assets/images/2021/img_0745.jpg)
+
+*Back at the donation centre for plasma number twelve. The squish ball was ready for another workout.*
+{: .media-caption }
 
 With all my vaccinations up to date and my iron bolstered, it's back to my relatively regular, varied (and somewhat) scheduled programming. I stopped by the local blood donation centre (see above) and had a rather interesting visit today. Interesting enough to write a blog post on.
 
@@ -44,7 +47,10 @@ It also reminded me that Australia was relying quite heavily on imported plasma-
 
 Although some of the penny pinching is starting to show. When I started donating in 2014 they gave [Byron Bay Cookies](https://cookie.com.au). They disappeared a few years ago now but made a brief comeback. Since then I have become vegan, so the point is a little bit moot now with all the milk and butter involved in a cookie. But now they're messing with my beloved Arnott's Jatz three-pack, replacing it with...
 
-![](/assets/images/2021/img_0746.jpg)
+![Packet of Gumnut Crak'Oz dry crackers on a table, marked 10 g, Australian Made and Australian Owned.](/assets/images/2021/img_0746.jpg)
+
+*Crak'Oz crackers took the place of my beloved Jatz three-pack. An unexpected downgrade in the donor snack department!*
+{: .media-caption }
 
 Crak Oz. Yep. Rumour had it they were made in China or contained no Australian ingredients, but all I can actually show here is the front of the packet. Either way, they are no substitute for... Oh. That slogan makes a lot of sense now. My lucky 13th plasma donation is in a month. Let's go! #teamplasma
 

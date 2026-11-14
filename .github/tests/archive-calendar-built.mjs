@@ -50,6 +50,20 @@ for (const [, year, rawCounts] of options) {
     if (actual) {
       archiveMonths++;
       const archiveHtml = readFileSync(htmlFile, 'utf8');
+      // Visual grids must never reverse the DOM reading order, including for
+      // archives with no thumbnail on one or more posts.
+      const archiveCards = [...archiveHtml.matchAll(/<article class="post-entry">([\s\S]*?)<\/article>/g)];
+      assert.equal(archiveCards.length, actual, year + '-' + month + ': archive card count mismatch');
+      for (const [, card] of archiveCards) {
+        const title = card.indexOf('<h2 class="post-title">');
+        const meta = card.indexOf('class="archive-card-meta"');
+        const media = card.indexOf('class="archive-card-media"');
+        const excerpt = card.indexOf('class="post-excerpt"');
+        assert.ok(title >= 0 && meta > title && excerpt > meta,
+          year + '-' + month + ': title, meta and excerpt must stay in reading order');
+        assert.ok(media < 0 || (media > meta && media < excerpt),
+          year + '-' + month + ': media must follow meta and precede excerpt');
+      }
       const heading = archiveHtml.match(/<h1 class="post-title">([^<]+)<\/h1>/)?.[1]?.trim();
       const subtitle = archiveHtml.match(/<p class="archive-month-count">([\s\S]*?)<\/p>/)?.[1]
         ?.replace(/\s+/g, ' ').trim();

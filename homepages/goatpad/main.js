@@ -31,6 +31,9 @@ const loadingMessage = document.getElementById("loadingMessage");
 const startButton = document.getElementById("startAudio");
 const audioStatus = document.getElementById("audioStatus");
 const soundboard = document.querySelector(".buttonArea");
+const goatButton = document.getElementById("autoGoat");
+const goatSprite = document.getElementById("goatSprite");
+const goatViewport = document.querySelector(".sequence-viewport");
 
 const buffers = new Map();
 const loading = new Map();
@@ -43,6 +46,14 @@ const BEAT_INTERVAL = BEAT_SECONDS * 1000;
 let nextBeatTime = 0;
 let sequencerTimer = null;
 let completedBars = 0;
+
+// Optional Auto Goat mode: deliberately slow, one pad edit per hop.
+// The historical sequencer and its audio-clock timing remain untouched.
+let goatRunning = false;
+let goatSession = 0;
+let goatTimer = null;
+let goatHops = 0;
+let goatPreviousColumn = -1;
 
 async function loadSound(key) {
     const id = canonical(Number(key));
@@ -83,6 +94,7 @@ async function startAudio() {
             button.disabled = false;
         });
         buttonsLoaded = true;
+        goatButton.disabled = false;
         loadingScreen.classList.add("hidden");
     } catch (error) {
         console.error("GOATPAD start failed:", error);
@@ -157,8 +169,8 @@ function togglePad(button) {
     refreshTimer();
 }
 
-async function selectPad(button) {
-    if (!buttonsLoaded) return;
+async function selectPad(button, stillWanted = () => true) {
+    if (!buttonsLoaded || !stillWanted()) return;
     const column = button.parentElement;
     const token = Symbol();
     columnSelection.set(column, token);
@@ -176,7 +188,7 @@ async function selectPad(button) {
             await loadSound(key);
         }
         // A newer click in the same column takes precedence.
-        if (columnSelection.get(column) !== token) return;
+        if (columnSelection.get(column) !== token || !stillWanted()) return;
         togglePad(button);
         audioStatus.textContent = "";
     } catch (error) {
@@ -212,3 +224,107 @@ buttonMapping.forEach((sounds, columnIndex) => {
     soundboard.appendChild(column);
 });
 
+
+/* Auto Goat deliberately uses the normal pad-selection path. All sounds are still
+ * loaded on demand, each column remains exclusive, and manual taps still work. */
+function goatReducedMotion() {
+    return Boolean(window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches);
+}
+
+function positionGoat(x, y, scale = 1) {
+    // Fixed positioning allows the goat to leave the soundboard and approach the viewer.
+    const left = Math.max(0, Math.min(window.innerWidth - 40, x));
+    const top = Math.max(0, Math.min(window.innerHeight - 52, y));
+    goatSprite.style.transform = "translate3d(" + Math.round(left) + "px, " +
+        Math.round(top) + "px, 0) scale(" + scale + ")";
+}
+
+function showGoatAtPad(button) {
+    const viewport = goatViewport.getBoundingClientRect();
+    let rect = button.getBoundingClientRect();
+    const margin = 28;
+    // On phones, follow the goat across the horizontally scrollable keyboard.
+    if (rect.left < viewport.left + margin || rect.right > viewport.right - margin) {
+        const delta = rect.left + rect.width / 2 - (viewport.left + viewport.width / 2);
+        if (typeof goatViewport.scrollBy === "function") {
+            goatViewport.scrollBy({ left: delta, behavior: goatReducedMotion() ? "instant" : "smooth" });
+        } else {
+            goatViewport.scrollLeft += delta;
+        }
+        // The scroll may still be animating; put the goat near the visible target.
+        rect = { left: viewport.left + (viewport.width - rect.width) / 2,
+            top: rect.top, width: rect.width, height: rect.height };
+    }
+    positionGoat(rect.left + rect.width / 2 - 18, rect.top - 37, 1);
+}
+
+function stopAutoGoat() {
+    goatRunning = false;
+    goatSession++;
+    if (goatTimer !== null) clearTimeout(goatTimer);
+    goatTimer = null;
+    goatButton.setAttribute("aria-pressed", "false");
+    goatButton.textContent = "🐐 Auto Goat: Off";
+    goatSprite.hidden = true;
+    // Leave the current mix intact for manual tweaking.
+}
+
+async function roamGoat(session) {
+    if (!goatRunning || session !== goatSession || !buttonsLoaded) return;
+    goatTimer = null;
+    goatHops++;
+
+    // Every fifth hop the goat bounces out towards the screen, then returns.
+    if (goatHops % 5 === 0 && !goatReducedMotion()) {
+        positionGoat(window.innerWidth * .48, window.innerHeight * .69, 2.25);
+    } else {
+        const columns = Array.from(soundboard.children);
+        const active = columns.filter(column =>
+            column.querySelectorAll("button").some(button => button.classList.contains("active")));
+        // Avoid an eight-layer wall of sound: favour changing active lanes above six.
+        const choices = active.length >= 6 ? active : columns;
+        let index = Math.floor(Math.random() * choices.length);
+        let column = choices[index];
+        if (choices.length > 1 && columns.indexOf(column) === goatPreviousColumn) {
+            column = choices[(index + 1) % choices.length];
+        }
+        goatPreviousColumn = columns.indexOf(column);
+        const pads = Array.from(column.querySelectorAll("button"));
+        const current = pads.find(pad => pad.classList.contains("active"));
+        const alternatives = pads.filter(pad => !pad.classList.contains("active") && !pad.disabled);
+        // Occasionally lift a hoof without replacing the sound, creating room in the mix.
+        const removing = current && Math.random() < .18;
+        const target = removing ? current :
+            alternatives[Math.floor(Math.random() * alternatives.length)];
+        if (target && !target.disabled) {
+            showGoatAtPad(target);
+            await selectPad(target, () => goatRunning && session === goatSession);
+        }
+    }
+
+    if (goatRunning && session === goatSession) {
+        goatTimer = setTimeout(() => roamGoat(session), 3600 + Math.random() * 2400);
+    }
+}
+
+function toggleAutoGoat() {
+    if (goatRunning) {
+        stopAutoGoat();
+        return;
+    }
+    if (!buttonsLoaded) return; // Never attempt autoplay before the Start gesture.
+    goatRunning = true;
+    const session = ++goatSession;
+    goatHops = 0;
+    goatPreviousColumn = -1;
+    goatSprite.hidden = false;
+    goatButton.setAttribute("aria-pressed", "true");
+    goatButton.textContent = "🐐 Auto Goat: On";
+    goatTimer = setTimeout(() => roamGoat(session), 650);
+}
+
+goatButton.addEventListener("click", toggleAutoGoat);
+// Don't continue changing samples unseen when the browser tab is backgrounded.
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden && goatRunning) stopAutoGoat();
+});

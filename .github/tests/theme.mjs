@@ -354,15 +354,16 @@ test('monthly Archives use a matching heading/subheading, breadcrumb and article
   assert.match(overrides, /\.archive-index-grid\s*\{[^}]*grid-template-columns: repeat\(4/);
 });
 
-test('Goodies offers both dial-up destinations and keeps existing sections', () => {
+test('Goodies links to the dial-up page with both choices and keeps existing sections', () => {
   const goodies = read('goodies.md');
   const modem = read('assets/js/mcretro-webring.js');
+  const modemPage = read('homepages/modem/index.html');
   const header = read('_includes/header.html');
-  assert.match(goodies, /Dial a Random Blog Post<\/a>/);
-  assert.match(goodies, /href="\/homepages\/modem\/\?site=blog-random" data-dial-site="blog-random"/);
-  assert.match(goodies, /href="\/homepages\/modem\/\?site=random" data-dial-site="random"/);
-  assert.match(goodies, /Dial a Random Homepage<\/a>/);
-  assert.match(modem, /document\.querySelectorAll\('a\[data-dial-site\]'\)/);
+  assert.match(goodies, /\[Dial-Up Networking\]\(\/homepages\/modem\/\)/);
+  assert.doesNotMatch(goodies, /data-dial-site=/);
+  assert.match(modemPage, /value="blog-random" data-modem-choice/);
+  assert.match(modemPage, /value="random" data-modem-choice/);
+  assert.match(modem, /standalone\.querySelectorAll\('\[data-modem-choice\]'\)/);
   assert.match(modem, /assets\/data\/random-post-urls\.json/);
   assert.match(header, /🧭 Best viewed with Netscape Navigator<\/span>/u);
   assert.match(header, /🌐 Best viewed with Internet Explorer<\/span>/u);

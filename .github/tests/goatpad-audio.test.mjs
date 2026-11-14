@@ -70,12 +70,12 @@ class Element {
   }
 }
 function fixture({ failOnce = null } = {}) {
-  const loadingScreen = new Element();
-  const loadingMessage = new Element('p');
   const startAudio = new Element('button');
+  startAudio.hidden = false;
   const audioStatus = new Element('p');
   const autoGoat = new Element('button');
   autoGoat.disabled = true;
+  autoGoat.hidden = true;
   const goatSprite = new Element('div');
   goatSprite.hidden = true;
   const goatViewport = new Element('div');
@@ -117,7 +117,7 @@ function fixture({ failOnce = null } = {}) {
     addEventListener(type, handler) { docListeners[type] = handler; },
     createElement: tag => new Element(tag),
     getElementById(id) {
-      return { loadingScreen, loadingMessage, startAudio, audioStatus, autoGoat, goatSprite }[id] || null;
+      return { startAudio, audioStatus, autoGoat, goatSprite }[id] || null;
     },
     querySelector(selector) {
       if (selector === '.buttonArea') return buttonArea;
@@ -199,13 +199,18 @@ function fixture({ failOnce = null } = {}) {
     get timers() { return timers; },
     get audioContexts() { return audioContexts; },
     get resumes() { return resumes; },
-    startAudio, loadingScreen, loadingMessage, audioStatus, counters, autoGoat,
+    startAudio, audioStatus, counters, autoGoat,
     goatSprite, goatViewport
   };
 }
 
 test('only Opus is referenced, PNG favicon used, and page load is network-idle', () => {
-  assert.match(markup, /id="startAudio"/);
+  assert.match(markup, /id="startAudio"[^>]*>🏆 Music Non Stop 🏆<\/button>/);
+  assert.doesNotMatch(markup, /id="loadingScreen"/);
+  assert.doesNotMatch(markup, /id="loadingMessage"/);
+  assert.doesNotMatch(source, /Loading sound \s*["'+]/);
+  const styles = readFileSync(new URL('../../homepages/goatpad/styles.css', import.meta.url), 'utf8');
+  assert.match(styles, /#audioStatus\s*\{[^}]*position:\s*fixed;/);
   assert.match(markup, /id="audioStatus"/);
   assert.match(markup, /href="\.\/icon\.png"/);
   assert.match(source, /\.opus/);
@@ -282,7 +287,6 @@ test('Auto Goat only selects a pad after visible physical contact', async () => 
   assert.equal(app.goatSprite.hidden, true);
   assert.equal(app.requests.length, 0);
   await app.start();
-  app.toggleGoat();
   assert.equal(app.autoGoat['aria-pressed'], 'true');
   assert.equal(app.goatSprite.hidden, false);
   assert.equal(typeof app.pads[0].parentElement.querySelectorAll('button').some,
@@ -313,7 +317,6 @@ test('Auto Goat only selects a pad after visible physical contact', async () => 
 test('Stopping mid-air prevents even an already-planned hoof hit', async () => {
   const app = fixture();
   await app.start();
-  app.toggleGoat();
   await app.goatStep(); // An approach timer exists
   const staleFlight = app.pendingGoatCallback();
   assert.equal(typeof staleFlight, 'function');
@@ -328,7 +331,6 @@ test('Stopping mid-air prevents even an already-planned hoof hit', async () => {
 test('Auto Goat mixes with one pad per lane, no more than six lanes, and foreground leaps', async () => {
   const app = fixture();
   await app.start();
-  app.toggleGoat();
   let sawForeground = false;
   let hitCount = 0;
   let previousActive = 0;
@@ -357,8 +359,11 @@ test('Auto Goat mixes with one pad per lane, no more than six lanes, and foregro
   assert.equal(app.autoGoat['aria-pressed'], 'false');
 });
 
-test('Start loads eight Opus files, not all 64, with user-gesture audio', async () => {
+test('Music Non Stop click unlocks eight sounds and enables Auto Goat immediately', async () => {
   const app = fixture();
+  assert.equal(app.startAudio.hidden, false);
+  assert.equal(app.autoGoat.hidden, true);
+  assert.equal(app.requests.length, 0, 'No audio downloads before explicit click');
   await app.start();
   assert.equal(app.audioContexts, 1);
   assert.equal(app.resumes, 1);
@@ -366,25 +371,38 @@ test('Start loads eight Opus files, not all 64, with user-gesture audio', async 
   assert.equal(new Set(app.requests).size, 8);
   assert.equal(app.decoded.length, 8);
   assert.ok(app.pads.every(button => !button.disabled));
-  assert.ok(app.loadingScreen.classList.contains('hidden'));
-  assert.equal(app.timers.size, 0, 'Idle sequencer must not poll in the background');
+  assert.equal(app.startAudio.hidden, true);
+  assert.equal(app.autoGoat.hidden, false);
+  assert.equal(app.autoGoat['aria-pressed'], 'true');
+  assert.equal(app.goatSprite.hidden, false);
+  assert.equal(app.audioStatus.textContent, '');
+  assert.equal(app.timers.size, 1, 'Only Auto Goat is scheduled before the first hoof hit');
+  assert.equal(typeof app.pendingGoatCallback(), 'function');
+  app.toggleGoat();
+  assert.equal(app.timers.size, 0, 'Stopping should clear the Auto Goat timer');
 });
 
-test('a failed initial sound can be retried with the same AudioContext', async () => {
+test('failed initial audio shows an unobtrusive retryable error', async () => {
   const app = fixture({ failOnce: 11 });
   await app.start();
   assert.equal(app.startAudio.disabled, false);
+  assert.equal(app.startAudio.hidden, false);
+  assert.equal(app.autoGoat.hidden, true);
   assert.ok(app.pads.every(button => button.disabled));
-  assert.ok(!app.loadingScreen.classList.contains('hidden'));
+  assert.match(app.audioStatus.textContent, /try again/);
   await app.start();
   assert.ok(app.pads.every(button => !button.disabled));
+  assert.equal(app.audioStatus.textContent, '');
+  assert.equal(app.autoGoat['aria-pressed'], 'true');
   assert.equal(app.audioContexts, 1);
   assert.equal(app.requests.filter(x => x === './audio/11.opus').length, 2);
+  app.toggleGoat();
 });
 
 test('an unvisited pad fetches its sample on demand, then plays after eight steps', async () => {
   const app = fixture();
   await app.start();
+  app.toggleGoat(); // Manual sequencer test: disable the default automatic mixer.
   await app.click(27); // pad 44, not among the initial eight
   assert.equal(app.requests.length, 9);
   assert.equal(app.requests.at(-1), './audio/44.opus');
@@ -404,6 +422,7 @@ test('an unvisited pad fetches its sample on demand, then plays after eight step
 test('byte-identical pad aliases reuse the same decoded Opus sound', async () => {
   const app = fixture();
   await app.start();
+  app.toggleGoat(); // Manual sequencer test: disable the default automatic mixer.
   await app.click(5); // pad 16, preloaded
   await app.click(15); // pad 28 aliases pad 16
   assert.equal(app.requests.length, 8);
@@ -415,6 +434,7 @@ test('byte-identical pad aliases reuse the same decoded Opus sound', async () =>
 test('one failed on-demand request does not poison the cache; pad retries on click', async () => {
   const app = fixture({ failOnce: 54 });
   await app.start();
+  app.toggleGoat(); // Manual sequencer test: disable the default automatic mixer.
   await app.click(35); // pad 54, not in initial preload
   assert.ok(!app.pads[35].classList.contains('active'));
   assert.match(app.audioStatus.textContent, /retry/);
@@ -426,6 +446,7 @@ test('one failed on-demand request does not poison the cache; pad retries on cli
 test('same-column selection is exclusive and the original alternating rhythm remains', async () => {
   const app = fixture();
   await app.start();
+  app.toggleGoat(); // Manual sequencer test: disable the default automatic mixer.
   await app.click(0);
   await app.click(1);
   assert.ok(!app.pads[0].classList.contains('active'));
@@ -439,6 +460,7 @@ test('same-column selection is exclusive and the original alternating rhythm rem
 test('upstream 69 BPM scheduler corrects drift after tab throttling', async () => {
   const app = fixture();
   await app.start();
+  app.toggleGoat(); // Manual sequencer test: disable the default automatic mixer.
   await app.click(0);
   assert.ok(Math.abs(app.nextDelay - 60000 / 69) < 0.001, 'Should use 69 BPM');
   app.advance(16000); // Simulate a tab suspended for sixteen seconds

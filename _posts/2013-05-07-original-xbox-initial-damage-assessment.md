@@ -12,19 +12,28 @@ share_description: >-
 
 Here's something for the *modern* gamers out there. A friend dug this original Xbox out of his garage and handed it over for an assessment. There are a few things going on here, and I'm not entirely sure what the person who last worked on it had in mind!
 
-![](/assets/images/2013/img_0396.jpg)
+![Open original Xbox with a red-taped Eveready 9 V battery resting on the motherboard amid loose coloured wiring, fans and the exposed power supply.](/assets/images/2013/img_0396.jpg)
+
+*Whoever worked on this Xbox before me left quite a surprise. A taped-in 9 V battery and wires everywhere!*
+{: .media-caption }
 
 Interesting placement of a random 9 V battery, isn't it? It was sitting inside the Xbox wrapped in tape, surrounded by a collection of cut wires and what appeared to be the remains of an LED modification. There was even a switch fitted to the rear of the machine, which made the whole arrangement considerably more mysterious.
 
 After clearing away some of the mess, it became apparent that the battery was supplying power to the extra LEDs, with the rear switch turning them on and off. That seems like a terribly inefficient way of lighting up an Xbox! At least I now had some idea what the thing was supposed to do.
 
-![](/assets/images/2013/img_0398.jpg)
+![Close-up of a red Eveready 9 V battery taped inside an original Xbox, surrounded by red, white, green and yellow wires.](/assets/images/2013/img_0398.jpg)
+
+*A closer look at that mysterious 9 V battery, wired into the Xbox for the extra LEDs. What a way to do it!*
+{: .media-caption }
 
 These wires look like they should be connected to something... somewhere! Two of the controller-port cable assemblies had been cut, affecting players two and four, while players one and three were still intact. The fourth controller socket looked particularly unhappy, and one of the tracks around the second port had lifted from the board.
 
 Fortunately, replacement controller-port assemblies were available on eBay, so I wouldn't necessarily have to rebuild every damaged connection by hand. I removed the loose wiring that I wasn't going to use, rather than leave stripped wires floating around inside the machine. Some of them were rather close to the power supply, which wasn't particularly encouraging!
 
-![](/assets/images/2013/img_0397.jpg)
+![Original Xbox motherboard close-up showing electrolytic capacitors and dark crusty corrosion around the clock-capacitor area.](/assets/images/2013/img_0397.jpg)
+
+*And here's the leaking clock-capacitor mess. The corrosion around those nearby components needs a proper clean-up.*
+{: .media-caption }
 
 The problem we definitely cannot blame on the previous owner is the clock capacitor: a busted "super" cap. It has failed and leaked onto the motherboard. This particular capacitor was marked 2.5 V, 1 F, and there was a fair amount of corrosion around the surrounding components.
 

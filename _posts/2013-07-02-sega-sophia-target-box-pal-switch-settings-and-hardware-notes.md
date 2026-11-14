@@ -8,7 +8,10 @@ share_description: >-
   PAL switch settings and SIMM details from my Sega Saturn Sophia Target Box, including an 8 MB module. These are observed settings, not universal factory defaults. 💾
 ---
 
-![](/assets/images/2013/img_0409.jpg)
+![Close-up of a Sega circuit board with several black electrolytic capacitors, a horizontally mounted capacitor, a 7806 regulator and two SN74HC259N chips.](/assets/images/2013/img_0409.jpg)
+
+*A close look at Sophia's board components. The PAL switch notes are elsewhere; this photograph is of the circuitry, not the DIP-switch banks.*
+{: .media-caption }
 
 Here are the PAL switch settings and hardware notes I recorded from my Sega Saturn Sophia Programming Box. I originally called these the "factory settings", but I have not established that they were universal PAL factory defaults.
 

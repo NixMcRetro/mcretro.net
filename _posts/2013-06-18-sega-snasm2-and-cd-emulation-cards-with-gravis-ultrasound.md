@@ -16,7 +16,10 @@ The first machine was built around a Gigabyte GA-6VXC7-4X motherboard I'd picked
 
 Then I tried fitting the SNASM2 cards into the case. Oh dear. One of the cards was so long that it ran straight into the power supply, which was not quite what I'd planned. I even compared it with my Gravis UltraSound, another famously oversized ISA card, and the Sega hardware managed to make that look almost reasonable.
 
-![](/assets/images/2013/img_0366.jpg)
+![Open beige desktop PC containing long ISA expansion cards and grey ribbon cables, beside an IBM keyboard and a black Sega Mega-CD development unit.](/assets/images/2013/img_0366.jpg)
+
+*Here's the sort of monster PC setup I was trying to fit the Sega SNASM2 development cards into. Not exactly compact!*
+{: .media-caption }
 
 So we worked our way down the food chain to a Pentium 100 MHz. This machine had a rather more accommodating case, three ISA slots and a motherboard tray that reminded me just how differently computers used to be assembled. I also fitted a disk-on-module for storage, along with floppy and CD-ROM drives.
 
@@ -26,7 +29,10 @@ Unfortunately, the Pentium wasn't entirely cooperative. With the Sega cards inst
 
 Moving down the chain even further brought us to the humble 486DX4-100. With the development hardware properly seated, the card was recognised and I was able to make more progress with the test software. It certainly seemed happier with this older machine than it had been with the Pentium.
 
-![](/assets/images/2013/img_0408.jpg)
+![Long green Sega and N.I. Innovations ISA development card marked 837-8209 REV B, with DIP switches, multiple integrated circuits and a rear connector.](/assets/images/2013/img_0408.jpg)
+
+*One of those enormous Sega development cards laid out on the bench. No wonder finding a suitable PC case was a challenge.*
+{: .media-caption }
 
 I also discovered that the cards are rather particular about being seated correctly. Given the size of these things, that's not especially surprising. There were still some odd results while working through the SCSI link tests, with tests 5, 6 and 7 not passing. Getting the card recognised by the 486 was progress, but it wasn't the same thing as having a fully working SCSI connection. I wouldn't call the whole development arrangement completely sorted just yet.
 

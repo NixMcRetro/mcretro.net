@@ -20,7 +20,10 @@ Naturally, I sat down to configure the thing with a mouse and no keyboard, becau
 
 The real end goal is a little more McRetro-specific: I want this machine to become the [File Server](/goodies/) for material that needs preserving for future generations. I'm also aiming for a static network address that's easy to remember, rather than having to hunt for the Pi whenever I want to connect to it.
 
-![](/assets/images/2013/img_0399.jpg)
+![Samsung monitor displaying a Raspberry Pi Raspbian desktop with a large Raspberry Pi logo and shortcuts for LXTerminal, Python and other utilities.](/assets/images/2013/img_0399.jpg)
+
+*Raspbian Wheezy has made it to the desktop. Now to persuade the little Pi to become a useful file server!*
+{: .media-caption }
 
 Whether the Raspberry Pi is actually going to enjoy that job remains to be seen. But it is small, cheap, quiet and considerably more power efficient than leaving some old desktop running around the clock. Time to see how far an ARM board and unreasonable optimism can take us.
 

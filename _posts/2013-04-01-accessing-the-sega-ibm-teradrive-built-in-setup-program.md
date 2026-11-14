@@ -16,15 +16,24 @@ I discovered this while investigating my Model 2 TeraDrive, which has two floppy
 
 The key is to press F1 during the PC startup sequence, not from an already-running DOS prompt. The menu contains options for keyboard type, power-on beep, and a window-address setting that I wasn't especially keen to experiment with. I tried enabling the beep and changing the keyboard selection. The beep worked immediately!
 
-![](/assets/images/2013/img_0383.jpg)
+![Blue IBM TeraDrive SETUP MENU showing Keyboard Type set to Japan, Power On Beep set to Disable and Window Address CE000H-CFFFFH.](/assets/images/2013/img_0383.jpg)
+
+*There it is, the TeraDrive's built-in setup menu. Three options, and the power-on beep is currently disabled!*
+{: .media-caption }
 
 Above is the setup screen itself. I couldn't tell whether changing the keyboard selection made much difference, but it's nice knowing the option is there. There's not an enormous amount to configure, although it's another part of the TeraDrive I hadn't explored before.
 
-![](/assets/images/2013/img_0385.jpg)
+![Sega TeraDrive OS-in-ROM welcome screen with six large blue menu tiles, including DOS, and a clock in the top-right corner.](/assets/images/2013/img_0385.jpg)
+
+*The TeraDrive's rather elaborate OS-in-ROM welcome screen. DOS is only one of the choices on offer.*
+{: .media-caption }
 
 This is the usual welcome screen when the TeraDrive is first powered on, the Sega TeraDrive OS-in-ROM. I've also been told there's a jumper on the motherboard that can disable this screen and start the PC side directly, although I haven't demonstrated that modification here.
 
-![](/assets/images/2013/img_0384.jpg)
+![Puzzle Construction software menu with six colourful square icons beneath an orange Puzzle Construction heading and an EXIT button.](/assets/images/2013/img_0384.jpg)
+
+*And here's Puzzle Construction, with its lovely big colourful buttons. Quite a change from the austere IBM setup screen!*
+{: .media-caption }
 
 And here's the Puzzle Construction menu once it's loaded. Create your own Sega game and more! It looks remarkably similar to the startup screen, doesn't it? The TeraDrive has since been implemented in MAME, whose driver notes also record F1 during POST as the way into the setup program.
 

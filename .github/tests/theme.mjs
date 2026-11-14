@@ -273,7 +273,7 @@ test('Blog pagination is compact, accessible and retains numbered URLs', () => {
   assert.match(blog, /class="pagination-status">Page \{\{ paginator.page \}\} of \{\{ paginator.total_pages \}\}/);
   assert.match(blog, /href="\/blog\/page\{\{ page \}\}\/" class="page-number"/);
   assert.match(blog, /href="\/blog\/page\{\{ paginator.total_pages \}\}\/" class="page-number"/);
-  assert.match(style, /\.pagination-bar\s*\{[^}]*border-top: 2px solid var\(--border-soft\);/);
+  assert.match(style, /\.pagination-bar\s*\{[^}]*border-top: 1px solid var\(--text\);/);
   assert.match(style, /\.pagination-controls\s*\{[^}]*justify-content: center;/);
   assert.match(style, /\.current-page\s*\{[^}]*background: var\(--archive-filled\);/);
   assert.match(style, /\.page-number:focus-visible,\s*\.arrow-link:focus-visible\s*\{[^}]*outline: 3px solid var\(--focus\);/);

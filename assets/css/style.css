@@ -934,7 +934,7 @@ pre code {
   margin-bottom: 2rem;
 }
 .pagination-bar {
-  border-top: 2px solid var(--border-soft);
+  border-top: 1px solid var(--text);
   padding-top: 1.25rem;
   display: flex;
   flex-direction: column;

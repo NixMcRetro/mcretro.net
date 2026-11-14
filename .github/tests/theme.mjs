@@ -339,6 +339,7 @@ test('monthly Archives use a matching heading/subheading, breadcrumb and article
   assert.doesNotMatch(archive, /class="author-avatar"/);
   assert.match(archive, /<time class="post-date" datetime=/);
   assert.match(archive, /class="post-categories"/);
+  assert.match(overrides, /\.archive-breadcrumbs \[aria-current="page"\]\s*\{\s*color: var\(--text\);\s*\}/);
   assert.match(overrides, /\.archive-month-header\s*\{[^}]*border-bottom: 0\.5px solid var\(--text\);/);
   assert.match(overrides, /\.archive-month-count\s*\{[^}]*font: 700 1\.25rem\/1\.3 Montserrat/);
   assert.match(overrides, /\.archive-card-layout\s*\{[^}]*display: flex/);

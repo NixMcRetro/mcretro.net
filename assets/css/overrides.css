@@ -609,6 +609,8 @@
   font: 400 0.8rem/1.5 Montserrat, "Helvetica Neue", sans-serif;
 }
 .archive-breadcrumbs a { color: var(--link); text-decoration: none; }
+/* Current-page breadcrumb text should not inherit the low-contrast muted label colour. */
+.archive-breadcrumbs [aria-current="page"] { color: var(--text); }
 .archive-breadcrumbs a:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 0.12em; }
 .archive-breadcrumbs a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .archive-breadcrumb-sep { color: var(--muted); }

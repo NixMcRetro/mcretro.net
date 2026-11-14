@@ -14,7 +14,10 @@ I finally got around to doing some soldering on a somewhat faulty Mega Drive 2 I
 
 One thing I'm definitely staying away from is the VCC and VSS power pins. Shorting those isn't my idea of a particularly entertaining experiment, even on a console I'm deliberately trying to make behave strangely!
 
-![VRAM_pinout_Circuit Bending](/assets/images/2016/img_0470.jpg)
+![40-pin SOJ video RAM chip pinout diagram with VCC pins 11 and 20 and VSS pins 30 and 40 outlined in red.](/assets/images/2016/img_0470.jpg)
+
+*The 40-pin VRAM pinout again, with the power and ground pins highlighted. Circuit bending should not involve randomly shorting those!*
+{: .media-caption }
 
 On the VRAM I've been concentrating on the address inputs, grounding them to see what happens. The pinout above labels the address lines A0 through A7, and interfering with them produces some wonderfully broken graphics.
 
@@ -22,13 +25,19 @@ Of course, this is circuit bending, not repairing anything. I'm deliberately int
 
 Next up is the Z80 RAM. I've been playing around with address lines A8, A9, A10 and A11, along with /OE and possibly a dash of /CE1. Those last two are control signals rather than address lines, so there's quite a bit more to investigate here.
 
-![Z80 RAM](/assets/images/2016/img_0532.jpg)
+![28-pin Z80 RAM pinout diagram labelling address lines A0-A12, data lines D0-D7 and control pins including /OE and /CE1.](/assets/images/2016/img_0532.jpg)
+
+*Here is the Z80 RAM pinout, with address lines and separate control signals marked. Another source of wonderfully unpredictable glitches!*
+{: .media-caption }
 
 Messing with the data lines tends to hang the console completely, which means turning it off and back on again. Plenty more address lines to play with there, though. Let's see just how much of a mess I can make!
 
 I've decided to put circuit bending over on the McRetro Gaming YouTube channel since technically it's some sort of gaming. I'll be doing one of these a week if I remember and people show enough interest in staring at all the pretty patterns and odd sounds. It'll be very interesting to see what each game can do.
 
-![Sonic1_Glitch](/assets/images/2016/img_0531.jpg)
+![Sony CRT television displaying a heavily corrupted Sonic the Hedgehog game screen with purple, green and red graphics.](/assets/images/2016/img_0531.jpg)
+
+*Sonic the Hedgehog in a magnificent state of graphical disrepair on the old Sony CRT. Glorious purple chaos!*
+{: .media-caption }
 
 Big thanks to [Console5](https://console5.com/store/) for the pinout reference.
 

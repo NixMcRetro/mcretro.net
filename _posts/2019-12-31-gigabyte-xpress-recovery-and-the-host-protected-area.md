@@ -8,7 +8,10 @@ share_description: >-
   Some Gigabyte Xpress Recovery BIOS bugs can hide most of a hard drive through the Host Protected Area. Back up before altering HPA settings. 💾
 ---
 
-![](/assets/images/2019/img_0637.jpg)
+![Blue Award Software CMOS Setup Utility menu listing standard BIOS features, boot options, peripherals and PC health settings.](/assets/images/2019/img_0637.jpg)
+
+*A classic Award CMOS Setup Utility screen. The Gigabyte HPA issue described in the article concerns affected BIOS behaviour, not a setting shown in this menu.*
+{: .media-caption }
 
 Some Gigabyte boards with an Xpress Recovery BIOS were apparently affected by a rather nasty capacity-reporting bug! The explanation below comes from Franc Zabkar's HDD Capacity FAQ.
 

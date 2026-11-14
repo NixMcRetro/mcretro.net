@@ -8,11 +8,17 @@ share_description: >-
   After two Visual Basic weeks, the programming course gets abandoned when its timing clashes with university plans. At least the windowed app works! 💻
 ---
 
-![program2](/assets/images/2016/img_0537.jpg)
+![Small Windows program titled Shane's MEGA Program with Show and Hide buttons, a blue abstract background and a greeting for Shane.](/assets/images/2016/img_0537.jpg)
+
+*Shane's MEGA Program with the abstract background switched on. Who needs fancy software when you have Show and Hide buttons?*
+{: .media-caption }
 
 Oh! Looky! I made a Visual Basic program with some sort of windowed interface! What a feat! Pressing the Hide button hides the background, Prairie Wind, and Show makes it appear again. Change your name in the text box and it even greets you. How human-like! However, all is not well...
 
-![program1](/assets/images/2016/img_0536.jpg)
+![The same Shane's MEGA Program window with its abstract background hidden and the Show and Hide buttons still visible.](/assets/images/2016/img_0536.jpg)
+
+*And now with the background hidden. The greeting still works, so I reckon that's a successful day of Visual Basic!*
+{: .media-caption }
 
 Jump ship everyone! Well, it's as the age-old saying goes...
 

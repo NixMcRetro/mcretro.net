@@ -8,7 +8,10 @@ share_description: >-
   Eleventy7.net is born: a retro HTML 2.0-friendly website for old PCs and browsers. Netscape 3, 800×600 and no fancy CSS required. 🌐
 ---
 
-![lofi](/assets/images/2016/img_0535.jpg)
+![Retro-style cream-coloured website splash page with ASCII-art lettering, under-construction notice, blue links, Netscape 3.x advice and a visitor counter.](/assets/images/2016/img_0535.jpg)
+
+*The old-school Eleventy7.net-style splash page: ASCII art, a visitor counter and a warning about needing Netscape 3.x. Beautifully primitive!*
+{: .media-caption }
 
 My WordPress setup wasn't playing nicely with the darknet version due to something, something. What were those somethings? I've already forgotten. However, it led me on a new journey to create **Eleventy7.net**: not the hip Christian rock band or anything to do with *The Hobbit*, but a website dedicated to the old.
 

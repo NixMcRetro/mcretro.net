@@ -8,7 +8,10 @@ share_description: >-
   An Element14 capacitor order for TeraDrive and SNES repairs turns into a giant list of values, board revisions and the usual opportunity to buy the wrong parts. 🔧
 ---
 
-![cap\_definition](/assets/images/2016/img_0533.jpg)
+![Dictionary-style definition of capacitor describing a device that stores electric charge using conductors separated by an insulator.](/assets/images/2016/img_0533.jpg)
+
+*A dictionary definition of a capacitor, just in case I needed reminding what all those little components do before ordering a mountain of them.*
+{: .media-caption }
 
 Capacitors, there's nothing more fun than replacing capacitors. Time for another order from my local friendly Element14 / Farnell! The TeraDrive power supply is on the list, along with four Super Nintendo / Super Famicoms, so I've got quite a few parts to track down.
 

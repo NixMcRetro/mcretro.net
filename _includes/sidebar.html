@@ -71,7 +71,7 @@
 <div class="widget recent-posts-widget">
   <h4 class="widgettitle">Recent Posts</h4>
   <ul class="recent-posts-list">
-    {% for post in site.posts limit:3 %}
+    {% for post in site.posts limit:4 %}
       <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
         <span class="post-date-sidebar">
@@ -87,13 +87,10 @@
       </li>
     {% endfor %}
   </ul>
-  <a class="recent-posts-more sidebar-action-link" href="/blog/"><span class="sidebar-action-link__icon" aria-hidden="true">📚</span><span class="sidebar-action-link__label">More articles</span></a>
-</div>
-
-<div class="widget dial-homepage" data-dial-homepage>
-  <h4 class="widgettitle">Dial-a-Homepage</h4>
-  <p class="dial-homepage-intro">Take a random trip through McRetro's restored homepages.</p>
-  <a class="dial-homepage-random sidebar-action-link" href="/homepages/modem/?site=random" data-dial-site="random"><span class="sidebar-action-link__icon" aria-hidden="true">☎️</span><span class="sidebar-action-link__label">Dial-up now!</span></a>
+  <div class="recent-posts-actions">
+    <a class="recent-posts-more sidebar-action-link" href="/blog/"><span class="sidebar-action-link__icon" aria-hidden="true">📚</span><span class="sidebar-action-link__label">More articles</span></a>
+    <a class="recent-posts-dial sidebar-action-link" href="/homepages/modem/?site=random" data-dial-site="random"><span class="sidebar-action-link__icon" aria-hidden="true">☎️</span><span class="sidebar-action-link__label">Dial-up</span></a>
+  </div>
 </div>
 
 <dialog id="mcretro-modem-dialog" class="mcretro-modem-dialog" aria-label="McRetro dial-up connection" data-modem-root>

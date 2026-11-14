@@ -7,7 +7,8 @@ layout: default
     <nav class="archive-breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
       <a href="/archive/">Archives</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
-      <span aria-current="page">{{ page.date | date: "%B %Y" }}</span>
+      <a href="/archive/#year-{{ page.date | date: '%Y' }}">{{ page.date | date: "%Y" }}</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
+      <span aria-current="page">{{ page.date | date: "%B" }}</span>
     </nav>
     <h1 class="post-title">{{ page.date | date: "%B %Y" }}</h1>
     <p class="archive-month-count">{% if month_count == 1 %}1 article{% else %}{{ month_count }} articles{% endif %}</p>

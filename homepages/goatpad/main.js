@@ -27,6 +27,7 @@ const identicalSounds = {
 const canonical = key => identicalSounds[key] || key;
 
 const startButton = document.getElementById("startAudio");
+const goatStartScreen = document.getElementById("goatStartScreen");
 const audioStatus = document.getElementById("audioStatus");
 const soundboard = document.querySelector(".buttonArea");
 const goatButton = document.getElementById("autoGoat");
@@ -52,6 +53,7 @@ let goatSession = 0;
 let goatTimer = null;
 let goatHops = 0;
 let goatPreviousColumn = -1;
+let goatRowsToVisit = [];
 
 async function loadSound(key) {
     const id = canonical(Number(key));
@@ -73,7 +75,7 @@ async function loadSound(key) {
 }
 
 async function startAudio() {
-    // Keep the full soundboard visible: this click unlocks audio and Auto Goat.
+    // The start curtain covers only the pad grid until this click unlocks audio.
     startButton.disabled = true;
     startButton.setAttribute("aria-busy", "true");
     audioStatus.textContent = "";
@@ -92,6 +94,8 @@ async function startAudio() {
         buttonsLoaded = true;
         goatButton.disabled = false;
         goatButton.hidden = false;
+        goatViewport.inert = false;
+        goatStartScreen.hidden = true;
         startButton.hidden = true;
         startButton.setAttribute("aria-busy", "false");
         // One click starts the chaos; the Auto Goat button remains a manual toggle.
@@ -257,6 +261,18 @@ function moveGoat(x, y, scale, rotation = 0, flip = false, duration = 0) {
         scale.toFixed(2) + ")";
 }
 
+// Shuffle all eight rows once per cycle so no row gets repeatedly neglected.
+function nextGoatRow() {
+    if (goatRowsToVisit.length === 0) {
+        goatRowsToVisit = [0, 1, 2, 3, 4, 5, 6, 7];
+        for (let i = goatRowsToVisit.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [goatRowsToVisit[i], goatRowsToVisit[j]] = [goatRowsToVisit[j], goatRowsToVisit[i]];
+        }
+    }
+    return goatRowsToVisit.pop();
+}
+
 function pickGoatTarget() {
     const columns = Array.from(soundboard.children);
     // querySelectorAll returns a NodeList in real browsers, not an Array.
@@ -272,11 +288,10 @@ function pickGoatTarget() {
     }
     goatPreviousColumn = columns.indexOf(column);
     const pads = Array.from(column.querySelectorAll("button"));
-    const current = pads.find(button => button.classList.contains("active"));
-    const others = pads.filter(button => !button.classList.contains("active") && !button.disabled);
-    // Some landings turn a lane off entirely, like a mischievous hoof.
-    if (current && Math.random() < .24) return current;
-    return others[Math.floor(Math.random() * others.length)] || current;
+    const target = pads[nextGoatRow()];
+    // A landing on an active button turns it off. Otherwise, replace that
+    // column's current sound. All eight rows take turns before reshuffling.
+    return target && !target.disabled ? target : pads.find(button => !button.disabled) || null;
 }
 
 function descendOnPad(session, button) {
@@ -400,6 +415,7 @@ function toggleAutoGoat() {
     const session = ++goatSession;
     goatHops = 0;
     goatPreviousColumn = -1;
+    goatRowsToVisit = [];
     goatSprite.hidden = false;
     goatButton.setAttribute("aria-pressed", "true");
     goatButton.textContent = "🐐 Auto Goat: On";

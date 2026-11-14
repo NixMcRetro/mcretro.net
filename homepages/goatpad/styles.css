@@ -56,13 +56,13 @@ body {
 .goatpad-cable {
     position: absolute;
     z-index: 0;
-    width: 150px;
-    /* Anchor at the device, extend beyond the viewport at any desktop height. */
+    width: 220px;
+    /* A single winding lead anchored to the machine, longer than the window. */
     height: calc(100vh + 160px);
     height: calc(100dvh + 160px);
     top: auto;
     bottom: calc(100% - 24px);
-    right: 15px;
+    right: -12px;
     overflow: visible;
     pointer-events: none;
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .7));

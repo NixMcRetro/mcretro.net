@@ -48,6 +48,15 @@ class CaptionPreviewChecks
     prose = '<p><em>Emphasis is part of the article.</em></p>'
     check(without_media_captions(prose) == prose, 'regular italic paragraph untouched')
     check(without_media_captions(nil) == '', 'nil input safe')
+    # The original Famicom guide placed legacy captions on image lines.
+    # Kramdown's IAL must be a standalone line, never followed by old text.
+    famicom = File.read(File.expand_path('../../_posts/2012-05-26-nintendo-famicom-composite-av-mod.md', __dir__))
+    bad = famicom.lines.each_with_index.filter_map do |line, i|
+      i + 1 if line.match?(/^\{:\s*\.media-caption\s*\}[ \t]+\S/)
+    end
+    check(bad.empty?, "Famicom captions have no trailing text after IAL (lines: #{bad.join(', ')})")
+    check(famicom.scan(/^\{:\s*\.media-caption\s*\}[ \t]*$/).length == 35,
+          'all 35 Famicom captions use standalone IAL markers')
     puts "Caption preview filter passed #{@checks} checks."
   end
 end

@@ -46,10 +46,12 @@ function makeRoot() {
 }
 
 function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'],
-                   fetchFails = false, withDialog = true, withStandalone = true } = {}) {
+                   fetchFails = false, withDialog = true, withStandalone = true,
+                   captureAudio = false } = {}) {
   const dialog = withDialog ? makeRoot() : null;
   const standalone = withStandalone ? makeRoot() : null;
   const navigations = [], pushes = [], replacements = [], requests = [], timers = [];
+  const audioEvents = [];
   const links = ['blog-random', 'random'].map(dialSite => {
     const listeners = {};
     return {
@@ -93,6 +95,33 @@ function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'
     clearTimeout() {},
     addEventListener() {}
   };
+  if (captureAudio) {
+    // Record the Web Audio oscillator schedule, not just its visual/status timers.
+    window.AudioContext = class {
+      currentTime = 0;
+      destination = {};
+      createGain() {
+        return {
+          gain: {
+            value: 0,
+            setValueAtTime() {}, linearRampToValueAtTime() {}, setTargetAtTime() {}
+          },
+          connect() {}
+        };
+      }
+      createOscillator() {
+        return {
+          frequency: {
+            value: 0,
+            setValueAtTime(frequency, at) { audioEvents.push({ frequency, at }); }
+          },
+          connect() {}, start() {}, stop() {}
+        };
+      }
+      resume() { return Promise.resolve(); }
+      close() { return Promise.resolve(); }
+    };
+  }
   function fetch(url, init) {
     requests.push({ url, init });
     if (fetchFails) return Promise.reject(new Error('Offline'));
@@ -102,7 +131,7 @@ function fixture({ site = 'blog-random', urls = ['/first-post/', '/second-post/'
     document, window, fetch, URLSearchParams, Promise,
     Math: { floor: Math.floor, round: Math.round, random: () => 0 }
   });
-  return { dialog, standalone, links, navigations, pushes, replacements, requests, timers };
+  return { dialog, standalone, links, navigations, pushes, replacements, requests, timers, audioEvents };
 }
 
 const tick = () => new Promise(resolve => setImmediate(resolve));
@@ -205,3 +234,30 @@ test('Goodies links to the modem page rather than separately listing dial modes'
   assert.match(modem, /value="random" data-modem-choice/);
 });
 
+
+test('V6.6 schedules beep, double ring, beep, double ring before handshake', () => {
+  const f = fixture({ site: 'random', withDialog: false, captureAudio: true });
+  f.standalone.control('[data-modem-connect]').listeners.click();
+
+  const atHz = frequency => f.audioEvents
+    .filter(event => event.frequency === frequency)
+    .map(event => Math.round(event.at * 1000));
+
+  // Two 1300 Hz beeps lead the complete Australian 400/425/450 Hz double rings.
+  assert.deepEqual(atHz(1300), [5880, 8880]);
+  assert.deepEqual(atHz(400), [6680, 7280, 9680, 10280]);
+  assert.deepEqual(atHz(450), [6680, 7280, 9680, 10280]);
+  const expectedSequence = [
+    ['beep', 5880], ['ring', 6680], ['ring', 7280],
+    ['beep', 8880], ['ring', 9680], ['ring', 10280]
+  ];
+  const actualSequence = [
+    ...atHz(1300).map(at => ['beep', at]),
+    ...atHz(400).map(at => ['ring', at])
+  ].sort((a, b) => a[1] - b[1]);
+  assert.deepEqual(actualSequence, expectedSequence);
+  // The last 400 ms ring burst ends before the original 16.3 s handshake begins.
+  assert.ok(10280 + 400 < 12380);
+  assert.ok(f.timers.some(timer => timer.delay === 12380));
+  assert.ok(f.timers.some(timer => timer.delay === 28750));
+});

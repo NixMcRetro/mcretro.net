@@ -19,21 +19,20 @@
   const DIGIT_GAP = 0.060;
   const DIGIT_PERIOD = DIGIT_SECONDS + DIGIT_GAP;
   const DIALLING_END = DIALLING_START + (DIAL_NUMBER.length - 1) * DIGIT_PERIOD + DIGIT_SECONDS;
-  const RING_START = DIALLING_END + 1.00;
+  // V6.6: two beep / Australian double-ring pairs, then the approved handshake.
+  const CALLING_START = DIALLING_END + 1.00; // Preserve the pause after dialling.
+  const CALLING_FREQUENCY = 1300;
+  const CALLING_SECONDS = 0.60;
+  const CALLING_GAIN = 0.247;
+  const CALLING_TO_RING_GAP = 0.20;
   const RING_COUNT = 2;
   const RING_BURST = 0.40;
   const RING_INNER_GAP = 0.20;
   const RING_PAIR = 2 * RING_BURST + RING_INNER_GAP;
   const RING_PERIOD = RING_PAIR + 2.00;
-  const ANSWER_LEAD = 0.30; // Answer just before the next ring would start.
-  const CALLING_START = RING_START + RING_COUNT * RING_PERIOD - ANSWER_LEAD;
-  const CALLING_COUNT = 3;
-  const CALLING_FREQUENCY = 1300;
-  const CALLING_SECONDS = 0.60;
-  const CALLING_PERIOD = 2.35; // 0.60 seconds on, 1.75 seconds off in the reference.
-  const CALLING_GAIN = 0.247; // Reference level scaled to the approved handshake mix.
-  const CALLING_SEQUENCE_SECONDS = 6.34;
-  const HANDSHAKE_START = CALLING_START + CALLING_SEQUENCE_SECONDS;
+  const RING_START = CALLING_START + CALLING_SECONDS + CALLING_TO_RING_GAP;
+  const ANSWER_LEAD = 0.30; // Start handshake before a hypothetical third double ring.
+  const HANDSHAKE_START = RING_START + RING_COUNT * RING_PERIOD - ANSWER_LEAD;
   const TOTAL_MS = Math.round((AUDIO_LEAD + HANDSHAKE_START + 16.30 + 0.07) * 1000);
   const SITES = Object.freeze([
     Object.freeze({slug:'frank',name:'Frank the Snake',path:'/homepages/frank/'}),
@@ -149,24 +148,21 @@
         DTMF[digit].forEach(freq=>tone(freq,when,DIGIT_SECONDS,0.26,'sine',0.006,0.012));
       });
 
-      // Australian ringback: 0.4s on, 0.2s off, 0.4s on, 2s off.
+      // V6.6 experiment: beep, double ring, beep, double ring, then handshake.
+      // The calling beeps do not overlap the rings: 0.6s at 1300 Hz, then 0.2s quiet.
+      // Australian ringback: 0.4s on, 0.2s off, 0.4s on, then 2s off.
       // 400+425+450Hz is an accepted Australian PSTN ringback frequency combination.
-      for(let ring=0;ring<RING_COUNT;ring++) {
-        const first=RING_START+ring*RING_PERIOD;
+      for(let cycle=0;cycle<RING_COUNT;cycle++) {
+        tone(CALLING_FREQUENCY,CALLING_START+cycle*RING_PERIOD,
+          CALLING_SECONDS,CALLING_GAIN,'sine',0.008,0.012);
+        const first=RING_START+cycle*RING_PERIOD;
         const second=first+RING_BURST+RING_INNER_GAP;
         for(const offset of [first,second]) {
           for(const freq of [400,425,450]) tone(freq,offset,RING_BURST,0.16);
         }
       }
 
-      // Begin calling during silence after the second double ring, before an omitted third ring.
-      // V.25 calling tone: three procedural 1300 Hz bursts, with gentle click-free edges.
-      for(let call=0;call<CALLING_COUNT;call++) {
-        tone(CALLING_FREQUENCY,CALLING_START+call*CALLING_PERIOD,
-          CALLING_SECONDS,CALLING_GAIN,'sine',0.008,0.012);
-      }
-
-      // Preserve the approved exchange after the calling sequence, including the final 1.04s pause.
+      // Preserve the approved handshake PCM and its final 1.04s pause unchanged.
       // The 16.3-second handshake is generated from spectral parameters.
       let stopped=false;
       const fallbackHandshake=()=>{
@@ -256,6 +252,9 @@
       [Math.round((AUDIO_LEAD+DIALLING_START)*1000),'Dialling 02 9373 5100...'],
       [Math.round((AUDIO_LEAD+DIALLING_END)*1000),'Waiting for answer...'],
       [Math.round((AUDIO_LEAD+CALLING_START)*1000),'Calling remote modem...'],
+      [Math.round((AUDIO_LEAD+RING_START)*1000),'Waiting for answer...'],
+      [Math.round((AUDIO_LEAD+CALLING_START+RING_PERIOD)*1000),'Calling remote modem...'],
+      [Math.round((AUDIO_LEAD+RING_START+RING_PERIOD)*1000),'Waiting for answer...'],
       [Math.round((AUDIO_LEAD+HANDSHAKE_START)*1000),'Negotiating protocols...'],
       [Math.round((AUDIO_LEAD+HANDSHAKE_START+3.07)*1000),'Handshaking with remote modem...'],
       [Math.round((AUDIO_LEAD+HANDSHAKE_START+14.17)*1000),'Verifying user name and password...'],

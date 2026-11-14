@@ -430,5 +430,22 @@ test('Goodies links to the Windows 95 dial-up folder with all destinations', () 
   assert.match(header, /💣 Somebody set up us the bomb<\/span>/u);
   assert.match(header, /🛸 Never give up, never surrender!<\/span>/u);
   assert.match(header, /🦭 It's time to seal the deal!!!<\/span>/u);
+  // Mobile controls must occupy the logo row, leaving the entire second
+  // row for unchanged, single-line, emoji-prefixed rotating taglines.
+  const mobileHeader = style.slice(
+    style.indexOf('/* Hamburger Menu & Mobile Meta */'),
+    style.indexOf('/* Very Small Screens')
+  );
+  assert.match(mobileHeader, /\.logo-area \{[^}]*display: grid;[^}]*grid-template-columns: minmax\(0, 1fr\) 40px 40px;[^}]*grid-template-rows: auto auto;/);
+  assert.match(mobileHeader, /\.textcycle \{[^}]*grid-column: 1 \/ -1;[^}]*grid-row: 2;/);
+  assert.match(mobileHeader, /\.textcycle \.phrase \{\s*white-space: nowrap;/);
+  assert.match(mobileHeader, /\.nav-toggle \{[^}]*position: static;[^}]*grid-column: 3;[^}]*grid-row: 1;[^}]*transform: none;/);
+  assert.match(style, /@media screen and \(max-width: 750px\) \{\s*\.theme-toggle \{[^}]*position: static;[^}]*grid-column: 2;[^}]*grid-row: 1;[^}]*transform: none;/);
+  assert.doesNotMatch(mobileHeader, /\.textcycle \.phrase \{[^}]*white-space: normal;/);
+  assert.doesNotMatch(style + overrides, /padding-right:\s*110px;/);
+  assert.match(mobileHeader, /font-size: clamp\(1\.7rem, 6\.7vw, 2\.2rem\);/);
+  assert.match(style, /font-size: clamp\(1\.3rem, 6vw, 1\.7rem\);/);
+  assert.match(overrides, /font-size: clamp\(1\.125rem, 5\.6vw, 1\.3rem\);/);
+
   assert.doesNotMatch(header, /🦭 It's time to seal the deal<\/span>/u);
 });

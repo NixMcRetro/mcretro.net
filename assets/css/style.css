@@ -1331,6 +1331,32 @@ a.page-number:hover,
 
 /* Hamburger Menu & Mobile Meta */
 @media screen and (max-width: 750px) {
+  /* Visually unchanged mobile header: controls live beside the logo,
+     while rotating taglines span the entire second row, below the buttons. */
+  .logo-area {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 40px 40px;
+    grid-template-rows: auto auto;
+    column-gap: 8px;
+    padding-right: 0;
+    align-items: center;
+  }
+  .site-logo {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    /* Avoid wordmark/button collisions around the 500px breakpoint. */
+    font-size: clamp(1.7rem, 6.7vw, 2.2rem);
+  }
+  .textcycle {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    min-width: 0;
+  }
+  .textcycle .phrase {
+    white-space: nowrap;
+  }
+
   .header-inner {
     flex-direction: column;
     align-items: stretch;
@@ -1367,10 +1393,10 @@ a.page-number:hover,
     cursor: pointer;
     z-index: 10;
     transition: background 0.2s ease;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    position: static;
+    grid-column: 3;
+    grid-row: 1;
+    transform: none;
   }
   .nav-toggle:hover {
     background: var(--button-hover);
@@ -1393,10 +1419,6 @@ a.page-number:hover,
     transform: rotate(-45deg) translate(5px, -5px);
   }
   
-  .logo-area {
-    padding-right: 110px;
-    position: relative;
-  }
   .main-nav ul {
     flex-wrap: nowrap;
     margin-top: 0;
@@ -1548,7 +1570,9 @@ a.page-number:hover,
 /* Very Small Screens (e.g. iPhone SE) */
 @media screen and (max-width: 500px) {
   .site-logo {
-    font-size: 1.7rem;
+    /* Keep the 1.7rem wordmark on larger phones; reduce slightly only
+       as needed for very narrow viewports, never the tagline itself. */
+    font-size: clamp(1.3rem, 6vw, 1.7rem);
   }
   .textcycle .phrase {
     font-size: 0.9rem;
@@ -1601,7 +1625,10 @@ a.page-number:hover,
 :root[data-theme="dark"] .theme-icon--sun { display: none; }
 @media screen and (max-width: 750px) {
   .theme-toggle {
-    right: 54px; top: 50%; transform: translateY(-50%);
+    position: static;
+    grid-column: 2;
+    grid-row: 1;
+    transform: none;
   }
 }
 /* Do not allow inherited dark native-control styling into the Windows 95 modem. */

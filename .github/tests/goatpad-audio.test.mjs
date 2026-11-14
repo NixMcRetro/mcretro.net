@@ -247,8 +247,8 @@ test('reference frame uses one decorative cable, white rails, and left/right foo
   assert.equal((markup.match(/class="cable-shadow"/g) || []).length, 1);
   assert.equal((markup.match(/class="cable-highlight"/g) || []).length, 1);
   assert.match(markup, /preserveAspectRatio="none"/);
-  assert.match(styles, /height: calc\\(100dvh \\+ 160px\\)/);
-  assert.match(styles, /bottom: calc\\(100% - 24px\\)/);
+  assert.match(styles, /height: calc\(100dvh \+ 160px\)/);
+  assert.match(styles, /bottom: calc\(100% - 24px\)/);
   assert.match(markup, /class="brand-emblem"/);
   assert.match(markup, /class="brand-bar"[\s\S]*class="title"[\s\S]*class="brand-emblem"/);
   assert.match(styles, /\.goatpad-cable\s*\{[^}]*position:\s*absolute;/);
@@ -263,8 +263,8 @@ test('Auto Goat only selects a pad after visible physical contact', async () => 
   const styles = readFileSync(new URL('../../homepages/goatpad/styles.css', import.meta.url), 'utf8');
   assert.match(markup, /id="autoGoat"[^>]*aria-pressed="false"/);
   assert.match(markup, /id="goatSprite"[^>]*aria-hidden="true" hidden/);
-  assert.match(styles, /\\.goat-sprite\\.goat-landing \\.goat-glyph/);
-  assert.match(styles, /\\.buttonArea \\.column button\\.goat-hit/);
+  assert.match(styles, /\.goat-sprite\.goat-landing \.goat-glyph/);
+  assert.match(styles, /\.buttonArea \.column button\.goat-hit/);
   const app = fixture();
   assert.equal(app.autoGoat.disabled, true);
   assert.equal(app.goatSprite.hidden, true);
@@ -275,8 +275,8 @@ test('Auto Goat only selects a pad after visible physical contact', async () => 
   assert.equal(app.goatSprite.hidden, false);
   await app.goatStep(); // Approach begins, no pad change yet
   assert.equal(app.pads.filter(pad => pad.classList.contains('active')).length, 0);
-  assert.match(app.goatSprite.style.transform, /rotate\\(/);
-  assert.match(app.goatSprite.style.transform, /rotateY\\(/);
+  assert.match(app.goatSprite.style.transform, /rotate\(/);
+  assert.match(app.goatSprite.style.transform, /rotateY\(/);
   await app.goatStep(); // Goat lands, pad visibly depresses
   assert.ok(app.goatSprite.classList.contains('goat-landing'));
   const hit = app.pads.filter(pad => pad.classList.contains('goat-hit'));
@@ -323,7 +323,7 @@ test('Auto Goat mixes with one pad per lane, no more than six lanes, and foregro
     assert.ok(active.length <= 6, 'Too many lanes in the goat mix');
     assert.equal(new Set(active.map(pad => Math.floor(Number(pad.dataset.sample) / 10))).size,
       active.length, 'More than one sound in a column');
-    if (/scale\\(2\\./.test(app.goatSprite.style.transform)) sawForeground = true;
+    if (/scale\(2\./.test(app.goatSprite.style.transform)) sawForeground = true;
   }
   assert.ok(hitCount > 0, 'The goat should change the music after landing');
   assert.ok(sawForeground, 'The goat should sometimes jump towards the viewer');

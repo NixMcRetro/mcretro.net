@@ -276,14 +276,15 @@ test('Blog pagination is compact, accessible and retains numbered URLs', () => {
   assert.match(blog, /class="arrow-placeholder pagination-next" aria-hidden="true"/);
   assert.match(blog, /href="\/blog\/page\{\{ page \}\}\/" class="page-number"/);
   assert.match(blog, /href="\/blog\/page\{\{ paginator.total_pages \}\}\/" class="page-number"/);
-  assert.doesNotMatch(style, /\.pagination-bar\s*\{/, 'no extra divider above pagination');
+  assert.match(style, /\.pagination-bar\s*\{[^}]*border-top: 4px solid var\(--text\);/, 'blog pagination rule matches the sidebar dividers');
   assert.match(style, /\.pagination-wrapper\s*\{[^}]*margin-bottom: 0\.75rem;/);
-  assert.match(style, /\.pagination-controls\s*\{[^}]*justify-content: space-between;/);
+  assert.match(style, /\.pagination-controls\s*\{[^}]*justify-content: space-between;[^}]*align-items: flex-start;/);
   assert.match(style, /\.pagination-numbers\s*\{[^}]*justify-content: flex-start;/);
   assert.match(style, /\.pagination-arrows\s*\{[^}]*display: flex;/);
   assert.match(style, /\.arrow-placeholder\s*\{[^}]*width: 2\.75rem;/);
   assert.match(style, /\.site-footer \.footer-rule\s*\{[^}]*border: 0\.5px solid var\(--border\);/);
-  assert.match(style, /\.current-page\s*\{[^}]*background: var\(--archive-filled\);/);
+  assert.match(style, /\.current-page\s*\{[^}]*background: var\(--archive-filled\);[^}]*border-top: 0;[^}]*border-radius: 0 0 4px 4px;/);
+  assert.match(style, /\.arrow-link\s*\{[^}]*border-top: 0;[^}]*border-radius: 0 0 4px 4px;/);
   assert.match(style, /\.page-number:focus-visible,\s*\.arrow-link:focus-visible\s*\{[^}]*outline: 3px solid var\(--focus\);/);
   assert.match(overrides, /\.pagination-controls\s*\{[^}]*grid-template-columns: 2\.75rem minmax\(0, 1fr\) 2\.75rem;/);
   assert.match(overrides, /\.pagination-arrows\s*\{[^}]*display: contents;/);

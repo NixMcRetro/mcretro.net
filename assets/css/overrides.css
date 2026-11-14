@@ -612,12 +612,16 @@
 
 /* Month pages use the blog roll's author avatar and text-only excerpts. */
 .archive-month > .post-title {
-  margin-bottom: 0.25rem;
+  margin-bottom: 1.4rem;
 }
-.archive-month-summary {
-  font: 0.875rem/1.6 Montserrat, "Helvetica Neue", sans-serif;
+/* The count belongs to the month heading, not a separate metadata line.
+   Keep it together on narrow screens while letting the heading wrap. */
+.archive-month-count {
   color: var(--muted);
-  margin: 0 0 1.4rem;
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-size: 0.55em;
+  font-weight: 500;
+  white-space: nowrap;
 }
 .archive-blog-list .post-entry {
   margin-bottom: 1.2rem;

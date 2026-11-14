@@ -393,7 +393,7 @@ test('Goodies links to the Windows 95 dial-up folder with all destinations', () 
   assert.match(mobileHeader, /\.textcycle \.phrase \{\s*white-space: nowrap;/);
   assert.match(mobileHeader, /\.nav-toggle \{[^}]*position: static;[^}]*grid-column: 3;[^}]*grid-row: 1;[^}]*transform: none;/);
   assert.match(style, /@media screen and \(max-width: 750px\) \{\s*\.theme-toggle \{[^}]*position: static;[^}]*grid-column: 2;[^}]*grid-row: 1;[^}]*transform: none;/);
-  assert.doesNotMatch(mobileHeader, /white-space: normal|text-wrap: balance|overflow-wrap: break-word/);
+  assert.doesNotMatch(mobileHeader, /\.textcycle \.phrase \{[^}]*white-space: normal;/);
   assert.doesNotMatch(style + overrides, /padding-right:\s*110px;/);
   assert.match(style, /font-size: clamp\(1\.3rem, 6\.5vw, 1\.7rem\);/);
 

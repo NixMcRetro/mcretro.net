@@ -436,10 +436,7 @@ pre code {
   color: var(--link);
 }
 
-/* ---- Animated subtitle ----
-   The previous staggered 60s animation faded each phrase out before the
-   next started, creating a blank 1.2s gap every six seconds. The shuffle
-   script now crossfades active phrases directly instead of using delays. */
+/* ---- Animated subtitle ---- */
 .textcycle {
   position: relative;
   height: auto;
@@ -457,18 +454,30 @@ pre code {
   letter-spacing: 0.03em;
   color: var(--text);
   opacity: 0;
-  transition: opacity 0.35s linear;
+  animation: phraseCycleLong 60s infinite;
 }
-/* Visible even if JavaScript fails or loads slowly. */
-.textcycle .phrase:first-child { opacity: 1; }
-.textcycle.is-cycling .phrase { opacity: 0; }
-.textcycle.is-cycling .phrase.is-active { opacity: 1; }
+@keyframes phraseCycleLong {
+  0%   { opacity: 0; }
+  1%   { opacity: 1; }
+  9%   { opacity: 1; }
+  10%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+.textcycle .phrase:nth-child(1) { animation-delay: 0s; }
+.textcycle .phrase:nth-child(2) { animation-delay: 6s; }
+.textcycle .phrase:nth-child(3) { animation-delay: 12s; }
+.textcycle .phrase:nth-child(4) { animation-delay: 18s; }
+.textcycle .phrase:nth-child(5) { animation-delay: 24s; }
+.textcycle .phrase:nth-child(6) { animation-delay: 30s; }
+.textcycle .phrase:nth-child(7) { animation-delay: 36s; }
+.textcycle .phrase:nth-child(8) { animation-delay: 42s; }
+.textcycle .phrase:nth-child(9) { animation-delay: 48s; }
+.textcycle .phrase:nth-child(10) { animation-delay: 54s; }
 
-/* Static first phrase for people who request reduced motion. */
+/* Keep the first tagline readable when reduced motion is requested. */
 @media (prefers-reduced-motion: reduce) {
-  .textcycle .phrase { transition: none; }
-  .textcycle.is-cycling .phrase.is-active:not(:first-child) { opacity: 0; }
-  .textcycle.is-cycling .phrase:first-child { opacity: 1; }
+  .textcycle .phrase { animation: none; }
+  .textcycle .phrase:first-child { opacity: 1; }
 }
 
 /* ===========================

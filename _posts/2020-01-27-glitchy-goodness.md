@@ -36,9 +36,9 @@ Sega!
 
 CONIC TEOM, GAROC ONTC!
 
-![Sonic 2 title screen with Sonic's face and parts of its logo covered by repeated blue, white and orange checkerboard glitches.](/assets/images/2020/img_0653.jpg)
+![Sonic 1 title screen with Sonic's face and parts of its logo covered by repeated blue, white and orange checkerboard glitches.](/assets/images/2020/img_0653.jpg)
 
-*A Sonic 2 title screen thoroughly scrambled into checkerboards and coloured tiles. Beautifully broken!*
+*A Sonic 1 title screen thoroughly scrambled into checkerboards and coloured tiles. Beautifully broken!*
 {: .media-caption }
 
 Blue streak? More like garbled blue smudge!

@@ -293,7 +293,7 @@
       });
     });
   }
-  // Any in-page dial link (sidebar or Goodies) can open the same modal.
+  // In-page dial links, such as the sidebar shortcut, can still open the modal.
   // Modified clicks and browsers without <dialog> keep the standalone URL.
   document.querySelectorAll('a[data-dial-site]').forEach(link=>{
     link.addEventListener('click',event=>{

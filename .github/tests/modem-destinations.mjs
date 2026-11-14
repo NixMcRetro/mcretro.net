@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
 
-const code = readFileSync(new URL('../../assets/js/mcretro-webring.js', import.meta.url), 'utf8');
+const code = readFileSync(new URL('../../assets/js/mcretro-dialup.js', import.meta.url), 'utf8');
 
 function makeRoot() {
   const controls = new Map();

@@ -27,7 +27,7 @@ on:
       - '_layouts/default.html'
       - '_includes/sidebar.html'
       - 'assets/js/archive-calendar.js'
-      - 'assets/js/mcretro-webring.js'
+      - 'assets/js/mcretro-dialup.js'
       - 'assets/js/header-taglines.js'
       - '.github/tests/modem-destinations.mjs'
       - '.github/tests/archive-calendar.mjs'

@@ -356,7 +356,7 @@ test('monthly Archives use a matching heading/subheading, breadcrumb and article
 
 test('Goodies links to the dial-up page with both choices and keeps existing sections', () => {
   const goodies = read('goodies.md');
-  const modem = read('assets/js/mcretro-webring.js');
+  const modem = read('assets/js/mcretro-dialup.js');
   const modemPage = read('homepages/modem/index.html');
   const header = read('_includes/header.html');
   assert.match(goodies, /\[Dial-Up Networking\]\(\/homepages\/modem\/\)/);

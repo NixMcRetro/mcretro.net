@@ -52,7 +52,7 @@ body {
     isolation: isolate;
 }
 
-/* Twin black leads travel off-screen behind the upper-right panel. */
+/* One black cable leaves the upper-right instrument panel. */
 .goatpad-cable {
     position: absolute;
     z-index: 0;
@@ -522,5 +522,87 @@ body {
 @media (prefers-reduced-motion: reduce) {
     .buttonArea .column button {
         transition: none;
+    }
+}
+
+/* Opt-in Auto Goat controls sit beneath the historical HUD wordmark. */
+.goat-controls {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    margin: .35rem .35rem 0;
+}
+#autoGoat {
+    min-height: 40px;
+    min-width: 132px;
+    padding: .35rem .7rem;
+    border: 1px solid #797381;
+    border-radius: 4px;
+    background: linear-gradient(#302a36, #16131d);
+    box-shadow: inset 0 1px rgba(255, 255, 255, .13);
+    color: #eee9f3;
+    font: 700 .8rem/1.25 system-ui, sans-serif;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+#autoGoat[aria-pressed="true"] {
+    border-color: #a6e976;
+    background: linear-gradient(#36502a, #21351e);
+    color: #e9ffcb;
+    box-shadow: inset 0 1px rgba(255, 255, 255, .18), 0 0 7px rgba(142, 233, 98, .18);
+}
+#autoGoat:hover:not(:disabled) {
+    filter: brightness(1.18);
+}
+#autoGoat:focus-visible {
+    outline: 2px solid #d8ff8e;
+    outline-offset: 3px;
+}
+#autoGoat:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+/* An emoji sprite is deliberately separate from the interactive board. */
+.goat-sprite {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 60;
+    pointer-events: none;
+    user-select: none;
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    line-height: 1;
+    transform-origin: center center;
+    transform: translate3d(0, 0, 0) scale(1);
+    transition: transform 2100ms cubic-bezier(.22, .67, .2, 1);
+    filter: drop-shadow(0 7px 4px rgba(0, 0, 0, .8));
+    will-change: transform;
+}
+.goat-sprite[hidden] {
+    display: none !important;
+}
+.goat-glyph {
+    display: block;
+    animation: goat-hop 1.7s ease-in-out infinite;
+}
+@keyframes goat-hop {
+    0%, 100% { transform: translateY(0) rotate(-6deg); }
+    50% { transform: translateY(-15px) rotate(7deg); }
+}
+@media (max-width: 720px), (max-height: 520px) and (pointer: coarse) {
+    #autoGoat {
+        min-height: 44px;
+        font-size: .76rem;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .goat-sprite {
+        transition: none !important;
+        will-change: auto;
+    }
+    .goat-glyph {
+        animation: none !important;
     }
 }

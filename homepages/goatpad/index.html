@@ -10,12 +10,6 @@
 </head>
 
 <body>
-    <div id="loadingScreen">
-        <div class="loading-inner">
-            <button id="startAudio" type="button">Start GOATPAD 1337</button>
-            <p id="loadingMessage" role="status" aria-live="polite">Click to prepare the first eight sounds. Other sounds load when selected.</p>
-        </div>
-    </div>
     <div class="container">
         <div class="column side-column"></div>
         <div class="column soundboard-column">
@@ -55,7 +49,8 @@
                     </svg>
                 </div>
                 <div class="goat-controls">
-                    <button id="autoGoat" type="button" aria-pressed="false" aria-controls="goatSprite" title="Let a wandering goat choose sounds automatically. Press again to keep the current mix." disabled>🐐 Auto Goat: Off</button>
+                    <button id="startAudio" type="button" aria-label="Start GOATPAD music and Auto Goat">🏆 Music Non Stop 🏆</button>
+                    <button id="autoGoat" type="button" aria-pressed="false" aria-controls="goatSprite" title="Let a wandering goat choose sounds automatically. Press again to keep the current mix." disabled hidden>🐐 Auto Goat: Off</button>
                 </div>
                 <p id="audioStatus" role="status" aria-live="polite"></p>
                 <p class="goatpad-credit">Fan recreation by <a href="https://github.com/insertusernamed/Goatpad-1337">insertusernamed</a> · Based on Goat MMO Simulator · <a href="./LICENSE">MIT licence</a></p>

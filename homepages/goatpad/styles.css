@@ -357,10 +357,23 @@ body {
 }
 
 #audioStatus {
-    margin: .5rem .75rem;
+    position: fixed;
+    z-index: 110;
+    left: 50%;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    width: max-content;
+    max-width: calc(100vw - 2rem);
+    padding: .65rem .9rem;
+    margin: 0;
+    border: 1px solid #d8ff8e;
+    border-radius: 5px;
+    background: rgba(20, 16, 25, .97);
     color: #d8ff8e;
-    font: .8rem/1.4 system-ui, sans-serif;
+    font: .82rem/1.4 system-ui, sans-serif;
     text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .55);
 }
 #audioStatus:empty {
     display: none;
@@ -384,42 +397,21 @@ body {
     display: none;
 }
 
-#loadingScreen {
-    position: fixed;
-    inset: 0;
-    box-sizing: border-box;
-    min-height: 100vh;
-    min-height: 100dvh;
-    padding: 1rem;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(4, 3, 7, .93);
-    color: white;
-    font-size: 1.4rem;
-}
 
-.hidden {
-    display: none !important;
-}
 
-.loading-inner {
-    max-width: 24rem;
-    padding: 1rem;
-    text-align: center;
-    font-family: system-ui, sans-serif;
-}
 
 #startAudio {
+    box-sizing: border-box;
     min-height: 44px;
-    padding: .75rem 1.25rem;
+    min-width: 190px;
+    padding: .55rem 1rem;
     border: 2px solid #97f85d;
-    background: #263e25;
+    border-radius: 4px;
+    background: linear-gradient(#36502a, #21351e);
     color: #f3ffe9;
-    font: inherit;
-    font-weight: bold;
+    font: 700 .85rem/1.3 system-ui, sans-serif;
     cursor: pointer;
+    touch-action: manipulation;
 }
 #startAudio:hover:not(:disabled),
 #startAudio:focus-visible {
@@ -430,10 +422,6 @@ body {
 #startAudio:disabled {
     opacity: .6;
     cursor: progress;
-}
-#loadingMessage {
-    font-size: .75em;
-    line-height: 1.5;
 }
 
 /* Keep every sound accessible at touch-friendly size without mobile zoom. */
@@ -507,9 +495,6 @@ body {
         font-size: .7rem;
         line-height: 1.45;
     }
-    #loadingScreen {
-        font-size: 1.1rem;
-    }
 }
 
 @media (max-width: 480px) {
@@ -534,12 +519,15 @@ body {
     z-index: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 48px;
     margin: .35rem .35rem 0;
 }
 #autoGoat {
-    min-height: 40px;
-    min-width: 132px;
-    padding: .35rem .7rem;
+    box-sizing: border-box;
+    min-height: 44px;
+    min-width: 190px;
+    padding: .45rem 1rem;
     border: 1px solid #797381;
     border-radius: 4px;
     background: linear-gradient(#302a36, #16131d);
@@ -548,6 +536,9 @@ body {
     font: 700 .8rem/1.25 system-ui, sans-serif;
     cursor: pointer;
     touch-action: manipulation;
+}
+.goat-controls button[hidden] {
+    display: none !important;
 }
 #autoGoat[aria-pressed="true"] {
     border-color: #a6e976;

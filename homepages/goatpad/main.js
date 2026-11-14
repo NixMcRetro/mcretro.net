@@ -26,8 +26,6 @@ const identicalSounds = {
 };
 const canonical = key => identicalSounds[key] || key;
 
-const loadingScreen = document.getElementById("loadingScreen");
-const loadingMessage = document.getElementById("loadingMessage");
 const startButton = document.getElementById("startAudio");
 const audioStatus = document.getElementById("audioStatus");
 const soundboard = document.querySelector(".buttonArea");
@@ -75,31 +73,34 @@ async function loadSound(key) {
 }
 
 async function startAudio() {
+    // Keep the full soundboard visible: this click unlocks audio and Auto Goat.
     startButton.disabled = true;
-    loadingMessage.textContent = "Starting the original GOATPAD sequencer...";
+    startButton.setAttribute("aria-busy", "true");
+    audioStatus.textContent = "";
     try {
         if (!audioContext) {
             const AudioContextClass = window.AudioContext || window.webkitAudioContext;
             if (!AudioContextClass) throw new Error("Web Audio is unavailable");
             audioContext = new AudioContextClass();
         }
-        // Create/resume audio only inside a genuine user click.
+        // Web Audio only starts after the visitor explicitly presses Music Non Stop.
         if (audioContext.state === "suspended") await audioContext.resume();
-        let loaded = 0;
-        await Promise.all(Array.from({ length: 8 }, (_, i) => i + 11).map(async key => {
-            await loadSound(key);
-            loadingMessage.textContent = "Preparing sounds: " + (++loaded) + "/8";
-        }));
+        await Promise.all(Array.from({ length: 8 }, (_, i) => loadSound(i + 11)));
         document.querySelectorAll(".buttonArea button").forEach(button => {
             button.disabled = false;
         });
         buttonsLoaded = true;
         goatButton.disabled = false;
-        loadingScreen.classList.add("hidden");
+        goatButton.hidden = false;
+        startButton.hidden = true;
+        startButton.setAttribute("aria-busy", "false");
+        // One click starts the chaos; the Auto Goat button remains a manual toggle.
+        toggleAutoGoat();
     } catch (error) {
         console.error("GOATPAD start failed:", error);
-        loadingMessage.textContent = "Couldn't start the sounds. Check your connection and try again.";
+        audioStatus.textContent = "Couldn't start the sounds. Check your connection and try again.";
         startButton.disabled = false;
+        startButton.setAttribute("aria-busy", "false");
     }
 }
 startButton.addEventListener("click", startAudio);
@@ -184,7 +185,7 @@ async function selectPad(button, stillWanted = () => true) {
         if (audioContext.state === "suspended") await audioContext.resume();
         if (!buffers.has(canonical(key))) {
             button.disabled = true;
-            audioStatus.textContent = "Loading sound " + key + "...";
+            // No progress text: it used to shift the entire instrument layout.
             await loadSound(key);
         }
         // A newer click in the same column takes precedence.

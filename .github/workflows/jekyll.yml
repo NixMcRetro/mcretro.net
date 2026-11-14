@@ -115,6 +115,9 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Verify GOATPAD audio startup, sample loading and sequencer behaviour
+        run: node --test .github/tests/goatpad-audio.test.mjs
+
       - name: Verify generated blog, archives, metadata and feed captions
         run: node .github/tests/caption-excerpts-built.mjs _site
 

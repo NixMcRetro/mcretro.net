@@ -72,6 +72,8 @@ class Element {
 function fixture({ failOnce = null } = {}) {
   const startAudio = new Element('button');
   startAudio.hidden = false;
+  const goatStartScreen = new Element('div');
+  goatStartScreen.hidden = false;
   const audioStatus = new Element('p');
   const autoGoat = new Element('button');
   autoGoat.disabled = true;
@@ -79,6 +81,7 @@ function fixture({ failOnce = null } = {}) {
   const goatSprite = new Element('div');
   goatSprite.hidden = true;
   const goatViewport = new Element('div');
+  goatViewport.inert = true;
   const buttonArea = new Element();
   const counters = Array.from({ length: 8 }, (_, i) => {
     const counter = new Element();
@@ -117,7 +120,7 @@ function fixture({ failOnce = null } = {}) {
     addEventListener(type, handler) { docListeners[type] = handler; },
     createElement: tag => new Element(tag),
     getElementById(id) {
-      return { startAudio, audioStatus, autoGoat, goatSprite }[id] || null;
+      return { startAudio, goatStartScreen, audioStatus, autoGoat, goatSprite }[id] || null;
     },
     querySelector(selector) {
       if (selector === '.buttonArea') return buttonArea;
@@ -199,7 +202,7 @@ function fixture({ failOnce = null } = {}) {
     get timers() { return timers; },
     get audioContexts() { return audioContexts; },
     get resumes() { return resumes; },
-    startAudio, audioStatus, counters, autoGoat,
+    startAudio, goatStartScreen, audioStatus, counters, autoGoat,
     goatSprite, goatViewport
   };
 }
@@ -208,9 +211,13 @@ test('only Opus is referenced, PNG favicon used, and page load is network-idle',
   assert.match(markup, /id="startAudio"[^>]*>🏆 Music Non Stop 🏆<\/button>/);
   assert.doesNotMatch(markup, /id="loadingScreen"/);
   assert.doesNotMatch(markup, /id="loadingMessage"/);
+  assert.match(markup, /class="sequence-viewport"[^>]*inert/);
+  assert.match(markup, /class="sequence-frame"[\s\S]*class="goat-start-screen"[\s\S]*id="startAudio"/);
   assert.doesNotMatch(source, /Loading sound \s*["'+]/);
   const styles = readFileSync(new URL('../../homepages/goatpad/styles.css', import.meta.url), 'utf8');
   assert.match(styles, /#audioStatus\s*\{[^}]*position:\s*fixed;/);
+  assert.match(styles, /\.goat-start-screen\s*\{[^}]*position:\s*absolute;/);
+  assert.match(styles, /\.goat-start-screen\[hidden\]\s*\{[^}]*display:\s*none/);
   assert.match(markup, /id="audioStatus"/);
   assert.match(markup, /href="\.\/icon\.png"/);
   assert.match(source, /\.opus/);
@@ -264,6 +271,9 @@ test('reference frame uses one decorative cable, white rails, and left/right foo
   assert.equal((markup.match(/class="cable-shadow"/g) || []).length, 1);
   assert.equal((markup.match(/class="cable-highlight"/g) || []).length, 1);
   assert.match(markup, /preserveAspectRatio="none"/);
+  assert.match(markup, /viewBox="0 0 220 1000"/);
+  assert.match(markup, /M140 1030 C200 935 55 840 130 750 C210 655 55 555 133 450/);
+  assert.match(styles, /\.goatpad-cable\s*\{[^}]*width:\s*220px;/);
   assert.match(styles, /height: calc\(100dvh \+ 160px\)/);
   assert.match(styles, /bottom: calc\(100% - 24px\)/);
   assert.match(markup, /class="brand-emblem"/);
@@ -359,9 +369,38 @@ test('Auto Goat mixes with one pad per lane, no more than six lanes, and foregro
   assert.equal(app.autoGoat['aria-pressed'], 'false');
 });
 
+test('Auto Goat visits all eight columns, including both edges, without overfilling', async () => {
+  const app = fixture();
+  await app.start();
+  const landedColumns = [];
+  let sawSixLanes = false;
+  for (let stage = 0; stage < 150 && new Set(landedColumns).size < 8; stage++) {
+    await app.goatStep();
+    const contacted = app.pads.find(pad => pad.classList.contains('goat-hit'));
+    if (contacted) {
+      landedColumns.push(Math.floor(Number(contacted.dataset.sample) / 10));
+    }
+    const active = app.pads.filter(pad => pad.classList.contains('active'));
+    if (active.length === 6) sawSixLanes = true;
+    assert.ok(active.length <= 6, 'Auto Goat must physically free a lane before adding another');
+    assert.equal(new Set(active.map(pad => Math.floor(Number(pad.dataset.sample) / 10))).size,
+      active.length, 'At most one sound per column');
+  }
+  assert.equal(new Set(landedColumns).size, 8,
+    'Every column must receive a physical visit before any is permanently neglected');
+  assert.ok(landedColumns.includes(1), 'The leftmost column must be visited');
+  assert.ok(landedColumns.includes(8), 'The rightmost column must be visited');
+  assert.ok(sawSixLanes, 'The goat must exercise its six-lane cap');
+  assert.ok(landedColumns.length <= 10,
+    'An eight-column cycle may include two physical release stomps, but not indefinite detours');
+  app.toggleGoat();
+});
+
 test('Music Non Stop click unlocks eight sounds and enables Auto Goat immediately', async () => {
   const app = fixture();
   assert.equal(app.startAudio.hidden, false);
+  assert.equal(app.goatStartScreen.hidden, false);
+  assert.equal(app.goatViewport.inert, true, 'Pad grid starts blocked by the splash');
   assert.equal(app.autoGoat.hidden, true);
   assert.equal(app.requests.length, 0, 'No audio downloads before explicit click');
   await app.start();
@@ -372,6 +411,8 @@ test('Music Non Stop click unlocks eight sounds and enables Auto Goat immediatel
   assert.equal(app.decoded.length, 8);
   assert.ok(app.pads.every(button => !button.disabled));
   assert.equal(app.startAudio.hidden, true);
+  assert.equal(app.goatStartScreen.hidden, true, 'Curtain disappears once audio is ready');
+  assert.equal(app.goatViewport.inert, false, 'The underlying pad grid becomes interactive');
   assert.equal(app.autoGoat.hidden, false);
   assert.equal(app.autoGoat['aria-pressed'], 'true');
   assert.equal(app.goatSprite.hidden, false);
@@ -387,6 +428,8 @@ test('failed initial audio shows an unobtrusive retryable error', async () => {
   await app.start();
   assert.equal(app.startAudio.disabled, false);
   assert.equal(app.startAudio.hidden, false);
+  assert.equal(app.goatStartScreen.hidden, false, 'Failed startup leaves retry available');
+  assert.equal(app.goatViewport.inert, true);
   assert.equal(app.autoGoat.hidden, true);
   assert.ok(app.pads.every(button => button.disabled));
   assert.match(app.audioStatus.textContent, /try again/);

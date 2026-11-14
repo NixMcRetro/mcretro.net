@@ -27,6 +27,7 @@ const identicalSounds = {
 const canonical = key => identicalSounds[key] || key;
 
 const startButton = document.getElementById("startAudio");
+const goatStartScreen = document.getElementById("goatStartScreen");
 const audioStatus = document.getElementById("audioStatus");
 const soundboard = document.querySelector(".buttonArea");
 const goatButton = document.getElementById("autoGoat");
@@ -51,7 +52,8 @@ let goatRunning = false;
 let goatSession = 0;
 let goatTimer = null;
 let goatHops = 0;
-let goatPreviousColumn = -1;
+let goatColumnsToVisit = [];
+let goatPendingColumn = null;
 
 async function loadSound(key) {
     const id = canonical(Number(key));
@@ -73,7 +75,7 @@ async function loadSound(key) {
 }
 
 async function startAudio() {
-    // Keep the full soundboard visible: this click unlocks audio and Auto Goat.
+    // The start curtain covers only the pad grid until this click unlocks audio.
     startButton.disabled = true;
     startButton.setAttribute("aria-busy", "true");
     audioStatus.textContent = "";
@@ -92,6 +94,8 @@ async function startAudio() {
         buttonsLoaded = true;
         goatButton.disabled = false;
         goatButton.hidden = false;
+        goatViewport.inert = false;
+        goatStartScreen.hidden = true;
         startButton.hidden = true;
         startButton.setAttribute("aria-busy", "false");
         // One click starts the chaos; the Auto Goat button remains a manual toggle.
@@ -257,26 +261,49 @@ function moveGoat(x, y, scale, rotation = 0, flip = false, duration = 0) {
         scale.toFixed(2) + ")";
 }
 
+// Shuffle destination columns without replacement. Every lane, including both
+// edges (1 and 8), receives a visit before the next eight-column cycle begins.
+function nextGoatColumn() {
+    if (goatPendingColumn !== null) return goatPendingColumn;
+    if (goatColumnsToVisit.length === 0) {
+        goatColumnsToVisit = [0, 1, 2, 3, 4, 5, 6, 7];
+        for (let i = goatColumnsToVisit.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [goatColumnsToVisit[i], goatColumnsToVisit[j]] =
+                [goatColumnsToVisit[j], goatColumnsToVisit[i]];
+        }
+    }
+    goatPendingColumn = goatColumnsToVisit.pop();
+    return goatPendingColumn;
+}
+
 function pickGoatTarget() {
     const columns = Array.from(soundboard.children);
-    // querySelectorAll returns a NodeList in real browsers, not an Array.
-    // Convert it before using Array methods (the test DOM used to hide this).
-    const activeColumns = columns.filter(column =>
-        Array.from(column.querySelectorAll("button")).some(button => button.classList.contains("active")));
-    // Once six lanes are playing, change or remove one of those instead of piling on.
-    const choices = activeColumns.length >= 6 ? activeColumns : columns;
-    let index = Math.floor(Math.random() * choices.length);
-    let column = choices[index];
-    if (choices.length > 1 && columns.indexOf(column) === goatPreviousColumn) {
-        column = choices[(index + 1) % choices.length];
-    }
-    goatPreviousColumn = columns.indexOf(column);
+    const index = nextGoatColumn();
+    const column = columns[index];
     const pads = Array.from(column.querySelectorAll("button"));
-    const current = pads.find(button => button.classList.contains("active"));
-    const others = pads.filter(button => !button.classList.contains("active") && !button.disabled);
-    // Some landings turn a lane off entirely, like a mischievous hoof.
-    if (current && Math.random() < .24) return current;
-    return others[Math.floor(Math.random() * others.length)] || current;
+    const activeColumns = columns.filter(candidate =>
+        Array.from(candidate.querySelectorAll("button")).some(button =>
+            button.classList.contains("active")));
+    const thisColumnActive = pads.some(button => button.classList.contains("active"));
+
+    if (!thisColumnActive && activeColumns.length >= 6) {
+        // The goat must physically turn one lane OFF before adding a seventh.
+        // Keep the destination queued so the next hoof hit can activate it.
+        // Spare the two edge columns when possible, so they stay in the mix.
+        const middle = activeColumns.filter(candidate =>
+            columns.indexOf(candidate) !== 0 && columns.indexOf(candidate) !== 7);
+        const donors = middle.length ? middle : activeColumns;
+        const donor = donors[Math.floor(Math.random() * donors.length)];
+        return Array.from(donor.querySelectorAll("button")).find(button =>
+            button.classList.contains("active")) || null;
+    }
+
+    // Pick any of the eight rows inside the chosen column. Hitting the active
+    // pad may turn that lane OFF; another pad replaces it as usual.
+    goatPendingColumn = null;
+    const available = pads.filter(button => !button.disabled);
+    return available[Math.floor(Math.random() * available.length)] || null;
 }
 
 function descendOnPad(session, button) {
@@ -399,7 +426,8 @@ function toggleAutoGoat() {
     goatRunning = true;
     const session = ++goatSession;
     goatHops = 0;
-    goatPreviousColumn = -1;
+    goatColumnsToVisit = [];
+    goatPendingColumn = null;
     goatSprite.hidden = false;
     goatButton.setAttribute("aria-pressed", "true");
     goatButton.textContent = "🐐 Auto Goat: On";

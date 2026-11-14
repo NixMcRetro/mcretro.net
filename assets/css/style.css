@@ -930,7 +930,7 @@ pre code {
   margin-bottom: 0;
 }
 .pagination-wrapper {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
 /* The full-width rule anchors the two ends of the blog-column navigation,
@@ -1015,8 +1015,21 @@ a.page-number:hover,
   border-radius: 0 0 4px 4px;
 }
 .arrow-icon {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1;
+  transform: scaleX(0.85);
+}
+
+/* Dark mode arrows share the current-page blue rather than neutral grey.
+   Light mode buttons and both themes' focus states remain unchanged. */
+:root[data-theme="dark"] .pagination-arrows .arrow-link {
+  background: var(--archive-filled);
+  border-color: var(--archive-accent);
+  color: var(--archive-filled-text);
+}
+:root[data-theme="dark"] .pagination-arrows .arrow-link:hover {
+  background: var(--archive-filled-hover);
+  color: var(--link-hover);
 }
 
 /* ===========================

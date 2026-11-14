@@ -57,8 +57,11 @@ body {
     position: absolute;
     z-index: 0;
     width: 150px;
-    height: 240px;
-    top: -193px;
+    /* Anchor at the device, extend beyond the viewport at any desktop height. */
+    height: calc(100vh + 160px);
+    height: calc(100dvh + 160px);
+    top: auto;
+    bottom: calc(100% - 24px);
     right: 15px;
     overflow: visible;
     pointer-events: none;
@@ -574,9 +577,9 @@ body {
     user-select: none;
     font-size: clamp(2.4rem, 5vw, 3.5rem);
     line-height: 1;
-    transform-origin: center center;
-    transform: translate3d(0, 0, 0) scale(1);
-    transition: transform 2100ms cubic-bezier(.22, .67, .2, 1);
+    transform-origin: center 78%;
+    transform: translate3d(0, 0, 0) translate(-50%, -78%) scale(1);
+    transition: transform 1200ms cubic-bezier(.16, .78, .25, 1.04);
     filter: drop-shadow(0 7px 4px rgba(0, 0, 0, .8));
     will-change: transform;
 }
@@ -585,11 +588,27 @@ body {
 }
 .goat-glyph {
     display: block;
-    animation: goat-hop 1.7s ease-in-out infinite;
+    animation: goat-hop .7s ease-in-out infinite;
 }
 @keyframes goat-hop {
-    0%, 100% { transform: translateY(0) rotate(-6deg); }
-    50% { transform: translateY(-15px) rotate(7deg); }
+    0%, 100% { transform: translateY(0) rotate(-10deg); }
+    48% { transform: translateY(-14px) rotate(11deg); }
+}
+.goat-sprite.goat-landing .goat-glyph {
+    animation: goat-stomp .38s cubic-bezier(.18, .75, .22, 1) both;
+}
+@keyframes goat-stomp {
+    0% { transform: translateY(-8px) scale(1.05); }
+    55% { transform: translateY(5px) scale(1.22, .64); }
+    100% { transform: translateY(0) scale(1); }
+}
+/* A visible, physical pad impact accompanies the actual sample selection. */
+.buttonArea .column button.goat-hit {
+    filter: brightness(1.42);
+    outline: 2px solid #f8ffe4;
+    outline-offset: 0;
+    box-shadow: 0 0 14px 3px #d8ff8e, inset 0 0 6px #fff;
+    z-index: 2;
 }
 @media (max-width: 720px), (max-height: 520px) and (pointer: coarse) {
     #autoGoat {
@@ -603,6 +622,9 @@ body {
         will-change: auto;
     }
     .goat-glyph {
+        animation: none !important;
+    }
+    .goat-sprite.goat-landing .goat-glyph {
         animation: none !important;
     }
 }

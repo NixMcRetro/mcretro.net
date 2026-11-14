@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { src: '/homepages/sonic/images/trun.gif', speed: 205 },
     { src: '/homepages/sonic/images/srun.gif', speed: 205 },
     { src: '/assets/images/about/0CATRUNY.gif', speed: 205 },
-    { src: '/assets/images/about/seal-flop.gif', speed: 90 }
+    { src: '/assets/images/about/seal-flop.gif', speed: 90, height: 42 }
   ];
 
   function runHeaderSprite() {
@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Match the sprite's feet to the navigation border. The lane itself
       // is anchored to the nav, so scrolling keeps them together.
-      const spriteWidth = Math.ceil(48 * sprite.naturalWidth / sprite.naturalHeight);
+      const spriteHeight = selected.height || 48;
+      const spriteWidth = Math.ceil(spriteHeight * sprite.naturalWidth / sprite.naturalHeight);
       const startX = -spriteWidth;
       const viewportWidth = window.innerWidth;
       const seconds = (viewportWidth - startX) / selected.speed;
@@ -43,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const lane = document.createElement('div');
       lane.classList.add('header-runner-lane');
       lane.setAttribute('aria-hidden', 'true');
+      sprite.style.height = spriteHeight + 'px';
       sprite.style.setProperty('--runner-start-x', startX + 'px');
       sprite.style.animationDuration = seconds + 's';
       lane.appendChild(sprite);

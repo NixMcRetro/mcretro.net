@@ -16,7 +16,10 @@ Unfortunately, I managed to make rather a mess of some of the solder pads while 
 
 The wires were a little longer than I would have liked, but they weren't touching any neighbouring connections. I also used insulating tape to keep things from accidentally shorting against other parts of the board. With that sorted, it was finally time to see whether I could flash the Winbond chip.
 
-![](/assets/images/2013/img_0400.jpg)
+![Close-up of an original Xbox motherboard showing small jumper-wire repairs held under translucent yellow tape beside flash-memory chips.](/assets/images/2013/img_0400.jpg)
+
+*A couple of tiny pads didn't survive the TSOP work, so jumper wires and insulating tape came to the rescue.*
+{: .media-caption }
 
 It's essentially a modchip, without a modchip. That also leaves you without a backup if something goes wrong. A work of genius! This Xbox has a 256 KB TSOP flash ROM. Older Xbox models (1.0 and 1.1) used a 1 MB TSOP, but the retail BIOS image itself is 256 KB and is mirrored four times on the 1 MB flash.
 
@@ -24,7 +27,10 @@ The flash was successful, and the Xbox ended up running an Xecuter2 BIOS. From t
 
 The Xbox optical drive was also giving me trouble, so I temporarily connected another DVD drive while getting the software installed. That involved some rather creative cabling and an external power supply. Not especially pretty, but it was useful for getting the installation media read.
 
-![](/assets/images/2013/img_0401.jpg)
+![Samsung monitor showing Slayer's EvoX Auto-Installer menu for an original Xbox, with hard-drive install options, system information and temperature readings.](/assets/images/2013/img_0401.jpg)
+
+*Slayer's EvoX Auto-Installer on screen while setting up the Xbox hard drive. Not quite finished, but we're getting somewhere!*
+{: .media-caption }
 
 Once the dashboard was sorted, I had UnleashX 0.39 running and the larger hard drive available. I even started copying Burnout 3 from a backup disc, although the original optical drive was painfully slow. At times it was managing less than 1 MB per second. Good grief!
 

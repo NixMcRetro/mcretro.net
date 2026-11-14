@@ -18,7 +18,10 @@ I'd already checked the region switch settings after the discovery with the prev
 
 ### Before
 
-![](/assets/images/2014/img_0438.jpg)
+![Before-repair view inside a Sega Saturn Sophia development kit, showing surface-mount electrolytic capacitors, red jumper-like components and a socketed chip.](/assets/images/2014/img_0438.jpg)
+
+*The third Sophia's board before another round of capacitor replacement. By now I knew this neighbourhood rather well.*
+{: .media-caption }
 
 Fortunately, the repair process was becoming rather familiar by this stage. I removed the old capacitors, cleaned the solder pads and installed the replacements. The new capacitors sit a little taller than the originals, but there's enough space for them to fit without causing trouble.
 
@@ -26,7 +29,10 @@ After putting everything back together, it was time for the moment of truth. Pow
 
 ### After
 
-![](/assets/images/2014/img_0439.jpg)
+![After-repair close-up of a Sega Saturn Sophia board with several silver cylindrical replacement capacitors around the IC43 area.](/assets/images/2014/img_0439.jpg)
+
+*Fresh capacitors fitted in the third Sophia. This time the clock-setting screen came back after reassembly. Three for three!*
+{: .media-caption }
 
 Excellent! That's three Sophias with video output again. In this particular case, replacing the surface-mount capacitors made the difference, since changing the switch configuration hadn't restored the display.
 

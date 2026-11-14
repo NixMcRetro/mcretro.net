@@ -8,11 +8,20 @@ share_description: >-
   A Mega Drive's yellow and green video flicker disappears after warming up. The Sony CXA1145P encoder looks suspicious, and a later replacement confirms the diagnosis. 🔧
 ---
 
-![](/assets/images/2012/img_0243.jpg)
+![Black Sega Mega Drive Model 1 console viewed from above, showing its circular cartridge slot, 16-BIT badge, volume slider and power controls.](/assets/images/2012/img_0243.jpg)
 
-![](/assets/images/2012/img_0244.jpg)
+*Here's the Mega Drive that was giving me green and yellow flickering from a cold boot. Looks perfectly innocent sitting on the bench!*
+{: .media-caption }
 
-![](/assets/images/2012/img_0245.jpg)
+![Close-up of the raised silver 16-BIT badge and power-indicator area on a black Sega Mega Drive console.](/assets/images/2012/img_0244.jpg)
+
+*A closer look at the Mega Drive's 16-BIT badge. Nice and ordinary outside, decidedly less ordinary on the television!*
+{: .media-caption }
+
+![Shallow-focus close-up of a black dual-inline integrated circuit soldered to a green Mega Drive circuit board, with its metal pins visible.](/assets/images/2012/img_0245.jpg)
+
+*A look inside the suspect video circuitry. I had my eye on the CXA1145P, but only a replacement test would tell the tale.*
+{: .media-caption }
 
 I was going to sell this Mega Drive for scrap, but some more testing made the fault considerably more interesting. The yellow and green video flicker only happens from a cold boot. After the console has been running for around thirty minutes, the picture settles down and the flickering disappears.
 

@@ -8,7 +8,10 @@ share_description: >-
   Socketed CPUs, switchable clock oscillators and faster 286, 386SX and 486SLC chips are on the drawing board. These are upgrade ideas, not finished overclocks. 🔧
 ---
 
-![](/assets/images/2012/img_0204.jpg)
+![Close-up of an Amstrad Mega PC 386SX case badge, with green Power and amber Turbo indicators illuminated.](/assets/images/2012/img_0204.jpg)
+
+*The Mega PC 386SX is giving me plenty of ideas. Now to work out which ones are actually sensible!*
+{: .media-caption }
 
 Wow! My mind has been racing at 1000 miles an hour. I can barely keep up with all the ideas for future mods. I have more tabs open than a Firefox enthusiast right now! This is basically the notebook beside my computer turned into a blog post. These are ideas and experiments, not finished upgrade instructions.
 
@@ -20,7 +23,10 @@ One idea is to convert both the Sega TeraDrive CPU and Amstrad Mega PC CPU to so
 
 Another idea is to fit socketed clock oscillators, so I can experiment with different frequencies without having to desolder them every time. Of course, simply replacing a CPU doesn't automatically mean I need to change its clock. A compatible replacement could run at the existing speed, but if I want to go faster, the motherboard, memory and other components will have to keep up. The Mega PC's math coprocessor would need some attention too.
 
-![](/assets/images/2012/img_0208.jpg)
+![Overhead photograph of an Amstrad VSC386SXD motherboard, including a Quadtel BIOS chip, empty square socket and a 66.000 MHz oscillator module.](/assets/images/2012/img_0208.jpg)
+
+*The Amstrad board photo that restarted my Mega PC Plus detective work. There's plenty here to investigate before making any claims about its origins.*
+{: .media-caption }
 
 What appears to be a 386SX-derived Amstrad motherboard fitted with a 486SLC CPU and BIOS.
 
@@ -28,7 +34,10 @@ What appears to be a 386SX-derived Amstrad motherboard fitted with a 486SLC CPU 
 
 This idea came back to me when I looked again at a photograph I had saved of what appeared to be a 386SX-derived Amstrad motherboard fitted with a 486SLC CPU and matching BIOS. The silkscreen still refers to VSC386SXD, yet there is a TX486SLC fitted. Very interesting when you consider the Amstrad Mega PC Plus, although the photograph alone isn't enough to identify it as genuine factory Mega PC Plus hardware.
 
-![](/assets/images/2012/img_0042.jpg)
+![Close-up of a Texas Instruments TX486SLC/E-33MAB processor on a circuit board, with its fine pins visible along all four edges.](/assets/images/2012/img_0042.jpg)
+
+*The TI486SLC/E on my replacement board. Faster chip experiments are tempting, but compatibility comes first.*
+{: .media-caption }
 
 My replacement PC7486SLC board uses a TI486SLC/E. Texas Instruments made 25 MHz and 33 MHz versions, while AMD offered several Am386SX variants at different speeds. There are also voltage and clock differences between some of these processors, so I can't just assume they'll all swap around happily.
 
@@ -36,7 +45,10 @@ If I manage to find a faster compatible CPU, changing the clock oscillator could
 
 ### Finding the CPU clocks
 
-![](/assets/images/2012/img_0203.jpg)
+![Close-up of an Amstrad WB486SLC motherboard showing a bank of black jumper caps, header pins and surrounding components.](/assets/images/2012/img_0203.jpg)
+
+*A look at the jumpers on the Amstrad WB486SLC board. There's rather more to these upgrades than swapping one chip.*
+{: .media-caption }
 
 The TeraDrive has a 10 MHz 80286, and I found a 20 MHz clock source nearby. That makes sense, since the 80286 takes a clock at twice the processor's internal frequency.
 

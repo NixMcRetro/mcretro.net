@@ -8,7 +8,10 @@ share_description: >-
   The Amstrad Mega PC's AMD 386SX is earmarked for removal in a bold TI486SXLC2 upgrade experiment. Clock rates, voltage requirements and a heat gun complicate the plan. 🔧
 ---
 
-![](/assets/images/2012/img_0013.jpg)
+![Close-up of an AMD Am386SX/SXL-25 processor soldered onto a green Mega PC motherboard, with fine pins on all four sides.](/assets/images/2012/img_0013.jpg)
+
+*The AMD 386SX before its rather adventurous removal. It served the Mega PC well, even if I had other plans for it!*
+{: .media-caption }
 
 The time has come. We wish you a safe journey, AMD 386SX CPU. You have served us well. Armed with a heat gun and flux, work begins on my attempt to create a 50 MHz Amstrad Mega PC.
 

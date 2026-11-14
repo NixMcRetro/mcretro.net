@@ -8,13 +8,19 @@ share_description: >-
   RetroJunkie.net returns to my ownership and becomes a home for old-school, low-bandwidth sites. Dust off your Netscape and dial-up modem! 🌐
 ---
 
-![](/assets/images/2018/img_0616.jpg)
+![Black-to-grey gradient RetroJunkie.net website banner with white script reading 'RetroJunkie.net' and 'Get Your Fix!'.](/assets/images/2018/img_0616.jpg)
+
+*The old RetroJunkie.net banner and its 'Get Your Fix!' tagline. Nice to have the name back!*
+{: .media-caption }
 
 After allowing [RetroJunkie.net](https://web.archive.org/web/20141217232524/http://retrojunkie.net/) to [lapse](https://web.archive.org/web/20150227093449/http://retrojunkie.net/), somebody else acquired the domain and used it for [their own site](https://web.archive.org/web/20161017235125/http://www.retrojunkie.net/). I was quite disappointed and had no one to blame but myself. A lack of motivation drove me not to bother with it. My bad! That said, it gave birth to McRetro.net, which is by far a shorter web address! :D
 
 The good news is, I got it back! And now I can use that website as my [Lo-Fi](https://web.archive.org/web/20180115202352/http://retrojunkie.net/) website for hosting all my old websites from the past. Nothing of real use there yet, but eventually it will be a goldmine for browsing on old PC hardware.
 
-![](/assets/images/2018/img_0616a.jpg)
+![RetroJunkie.net banner with a dark gradient and white 'Get Your Fix!' lettering, plus a black Sega console and controller on the right.](/assets/images/2018/img_0616a.jpg)
+
+*And another RetroJunkie banner with some Sega hardware thrown in. That's more like it. :)*
+{: .media-caption }
 
 I really do like the old style of banner, maybe I should see if I can track down the original files in my backups sometime! Anyhow, crack out your old modems folks! We're going to get dialled up! :)
 

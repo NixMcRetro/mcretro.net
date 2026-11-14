@@ -14,7 +14,10 @@ This development cartridge seems to have been used by The Code Monkeys and was m
 
 The cable ends in a 9-pin connector, with what appears to be only one contact wired up. Another contact looked as though it might once have had solder on it, although I couldn't tell what had originally been connected there. I initially wondered whether it might connect to the expansion port on an early Mega Drive or perhaps another piece of development equipment. I'm still not sure, so if anyone recognises the arrangement, I'd love to hear about it.
 
-![](/assets/images/2013/img_0370.jpg)
+![Green Sega Mega Drive development cartridge PCB largely covered in black epoxy, with two socketed EPROM chips and a gold edge connector.](/assets/images/2013/img_0370.jpg)
+
+*Two socketed EPROMs amid all that black epoxy. The mystery cartridge is certainly interesting to look at!*
+{: .media-caption }
 
 The cartridge itself is quite fashionable, especially for something made by a third-party publisher. There's an awful lot of black epoxy covering the components, which makes the circuitry difficult to inspect.
 
@@ -22,23 +25,35 @@ Several capacitors sit close to the edge of the board, and a few of those on the
 
 I might put some protective tape over that area before inserting the cartridge too many more times. There are also two socketed EPROMs marked as 27256-class devices, which is nice to see. Socketed components are always a welcome sight when examining unusual hardware like this.
 
-![](/assets/images/2013/img_0374.jpg)
+![Television showing a red, white and black 'THE CODE MONKEYS' introduction logo on a black background.](/assets/images/2013/img_0374.jpg)
+
+*It actually displays The Code Monkeys introduction when plugged into a Mega Drive. At least the cartridge does something!*
+{: .media-caption }
 
 Above is the Code Monkeys intro displayed by the cartridge in a working Mega Drive. The cart is clearly doing something, but I haven't established whether this is simply a test ROM or part of a larger PC-controlled development setup.
 
-![](/assets/images/2013/img_0372.jpg)
+![Close-up of the edge of a green Accolade cartridge PCB with gold contacts and two electrolytic capacitors near black epoxy-covered components.](/assets/images/2013/img_0372.jpg)
+
+*A pair of capacitors right by the cartridge edge. No wonder I'm worried about them catching on the slot flaps.*
+{: .media-caption }
 
 Next up is the Accolade silkscreen on the PCB. It had been blacked out with what looks like a marker pen, so I wasn't initially sure who'd made the board. After cleaning around the marking, the Accolade name became much easier to recognise.
 
 The Code Monkeys connection is interesting too, particularly because I've encountered references to them in the paperwork that accompanied my Cross Products Mega-CD development unit.
 
-![](/assets/images/2013/img_0371.jpg)
+![Overhead view of an epoxy-covered Mega Drive cartridge PCB with two socketed Mitsubishi EPROMs, a gold edge connector and a separate four-pin lead.](/assets/images/2013/img_0371.jpg)
+
+*Another view of the unusual cartridge, including its two EPROMs and the loose connector lead. Still not sure where that cable belongs!*
+{: .media-caption }
 
 One YouTube commenter suggested that the unusual 9-pin lead might be related to [Zero Tolerance](https://en.wikipedia.org/wiki/Zero_Tolerance_(video_game)). That game supported connecting two Mega Drives through their second controller ports, using a special link cable. Technopop later published the wiring needed to build one, but I don't know whether it has anything to do with this cartridge.
 
 Accolade's development manual describes a PC-to-console connection as part of its development system, which offers another possibility. Neither that manual nor Zero Tolerance's multiplayer feature tells me what this particular lead was used for, so I'll keep the mystery open for now.
 
-![](/assets/images/2013/img_0373.jpg)
+![Black Sega Mega Drive console on a desk with an exposed development cartridge standing in its slot, loose wires and taped handwritten labels.](/assets/images/2013/img_0373.jpg)
+
+*The odd development cart plugged into the Mega Drive. It certainly isn't an ordinary retail cartridge!*
+{: .media-caption }
 
 I've also seen what looks like a similar cartridge in old Sega development footage, with comparable epoxy-covered circuitry. Another little clue, although it doesn't tell me exactly how the hardware was used. If anyone knows more about these Accolade or Code Monkeys cartridges, please feel free to get in touch! :-)
 

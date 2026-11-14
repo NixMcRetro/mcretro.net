@@ -8,7 +8,10 @@ share_description: >-
   SuperCIC sounds perfect for switchless region selection on a 1CHIP SNES, but the F413B lockout wiring differs from older guides. Still planning, not installed. 🎮
 ---
 
-![](/assets/images/2013/img_0410.jpg)
+![Close-up of a Super Nintendo motherboard marked SNSP-CPU-1CHIP-01, showing the Nintendo F413B lockout chip at U8 and nearby RESET SW connector.](/assets/images/2013/img_0410.jpg)
+
+*The SNSP-CPU-1CHIP-01 board and its F413B chip, which is where the SuperCIC planning gets a bit more complicated. No installation yet!*
+{: .media-caption }
 
 This will be the article on how to install SuperCIC for switchless region-free gaming. Provided I can find the time.
 

@@ -14,7 +14,10 @@ Electrolytic capacitors can deteriorate with age, heat and use, and these Aiwas 
 
 The board is absolutely covered in capacitors, which is probably not surprising for an audio system. I've got the replacements ready, mostly Panasonic and Rubycon parts, and it's time to bring out the mighty Hakko 808 desoldering gun. I do love this thing, even if I need a transformer to run it here in Australia.
 
-![](/assets/images/2013/img_0412a.jpg)
+![Aiwa boombox circuit board turned solder-side up on pink bubble wrap, beside a Hakko 808 desoldering gun, loose capacitors and a step-down transformer.](/assets/images/2013/img_0412a.jpg)
+
+*The Aiwa board on the bench, with a small mountain of replacement capacitors and my trusty Hakko 808. Here we go again!*
+{: .media-caption }
 
 Rather than removing everything at once, I've been working through the board a little at a time. Take out a capacitor, check the value and orientation, install the replacement and move on. That way there's rather less chance of forgetting what was where. Which is always a good thing!
 
@@ -26,7 +29,10 @@ One of the old capacitors also left behind an unpleasant amount of residue. Than
 
 There were plenty more capacitors to change after that. I also replaced the 7806 voltage regulator while I had the board on the bench. With any luck, that might help with some of the power problems this Aiwa has been having.
 
-![](/assets/images/2013/img_0412b.jpg)
+![Partially dismantled Aiwa Sega Mega-CD boombox on a workbench, its upper CD assembly lifted above the front panel, with headphones and a Shonen Knife CD nearby.](/assets/images/2013/img_0412b.jpg)
+
+*The Aiwa boombox spread out for the recap, with the CD unit perched above the front panel. It really is a project in itself.*
+{: .media-caption }
 
 Once everything had been soldered in, I trimmed the excess leads and inspected the underside of the board. The joints were looking reasonably tidy, although I did find a few capacitors that could use straightening. It's quite satisfying seeing the board with all those shiny new components in place.
 

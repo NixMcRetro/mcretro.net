@@ -14,7 +14,10 @@ Here we have some video of the Amstrad Mega PC, upgraded into what is effectivel
 
 This particular machine had been in my collection for quite some time, but when I filmed the overview I'd decided it was time for it to move on. I wanted to give it one final look before selling it. I was also starting to rethink my collection, particularly all the licensed Sega hardware from companies such as Amstrad, JVC and Aiwa. Sticking more closely to first-party machines would certainly make downsizing easier, and perhaps I'd even recover some space in my room!
 
-![](/assets/images/2018/img_0606.jpg)
+![Close-up of the beige Amstrad PC7386SX80 model badge on the front of a computer case.](/assets/images/2018/img_0606.jpg)
+
+*The PC7386SX80 badge on the original Amstrad Mega PC. Thanks to WorldOfBrainFreeze for the photograph!*
+{: .media-caption }
 
 Image provided by [WorldOfBrainFreeze](https://www.youtube.com/user/WorldOfBrainFreeze)
 
@@ -22,7 +25,10 @@ The motherboard swap is possible because the original PC7386SX and later PC7486S
 
 The front switch selects between the PC and Mega Drive video, with the circuitry beneath the bezel handling the changeover. The Mega Drive card itself occupies much of the available space inside the case. It's a rather neat way of combining two completely different machines in one beige box.
 
-![](/assets/images/2018/img_0605.jpg)
+![Open Amstrad Mega PC desktop computer showing its floppy drive, internal power supply, empty card space and exposed circuit boards.](/assets/images/2018/img_0605.jpg)
+
+*Lid off, with the Mega Drive card removed. Still an enormous amount of beige PC hardware to look at!*
+{: .media-caption }
 
 Image provided by [WorldOfBrainFreeze](https://www.youtube.com/user/WorldOfBrainFreeze)
 
@@ -46,13 +52,19 @@ The original Amstrad monitor was designed to handle both the PC and console vide
 
 There's also a volume control on the front for the Mega Drive side, with additional audio and serial connections at the rear. The machine's power supply and internal layout are fairly typical of Amstrad computers from the period, apart from the small matter of having a Sega Mega Drive installed alongside everything else.
 
-![](/assets/images/2018/img_0604.jpg)
+![Photograph of a vintage Amstrad Mega PC advertisement comparing a 386SX system at £599 with a Mega PC Plus 486SLC system at £799.](/assets/images/2018/img_0604.jpg)
+
+*Some period advertising for the 386SX Mega PC and the much swankier 486SLC Mega Plus. Those prices were no joke!*
+{: .media-caption }
 
 I gave both sides another test before preparing the machine for sale. DOS started up through the XT-IDE arrangement, and the Mega Drive side was still doing its thing. It's a lovely little computer, even if it takes up rather more space than I can comfortably justify keeping forever.
 
 By the time I wrote this post, the machine had actually been sold nearly two years earlier. It went to a friend in Japan (or back from Japan, depending on where he ended up). I hope it treats him well in the future!
 
-![](/assets/images/2018/img_0603.jpg)
+![Close-up of a vintage advertisement for the Amstrad Mega Plus 486SLC, showing a beige desktop setup and a £799 headline price.](/assets/images/2018/img_0603.jpg)
+
+*And here's the Mega Plus getting its own big £799 headline. A 486SLC was serious business in that advert!*
+{: .media-caption }
 
 Farewell Amstrad Mega PC! :D
 

@@ -15,15 +15,24 @@ Here's a quick demonstration of the Sega TeraDrive Model 2 running from an XTIDE
 
 Starting from a cold boot, the TeraDrive goes through its usual checks and presents the familiar DOS-in-ROM screen. I haven't worked out how to bypass that part yet, so I exit to DOS and let the XTIDE Universal BIOS take over. From there I can choose a floppy drive or the Disk on Module as the boot device. Naturally, I'll be choosing the module, because I've had quite enough of booting everything from floppy disks.
 
-![](/assets/images/2012/img_0356.jpg)
+![ViewSonic monitor showing the blue XTIDE Universal BIOS 2.0.0 Beta 1 boot menu, with a TOPSSD drive selected and a capacity of 3831.6 MiB.](/assets/images/2012/img_0356.jpg)
+
+*The Model 2 can finally choose the TopSSD module from XTIDE's boot menu. Much more civilised than juggling floppies!*
+{: .media-caption }
 
 Above is XTIDE Universal BIOS 2.0.0 Beta 1 running the XT build and giving me the boot menu on the Model 2. The machine still has its 2.5 MB of RAM, but at least the storage situation is looking considerably more civilised.
 
-![](/assets/images/2012/img_0357.jpg)
+![Open Sega TeraDrive showing a green XTIDE ISA controller card and a black TOPSSD Disk on Module beside bundled grey ribbon cables.](/assets/images/2012/img_0357.jpg)
+
+*Here's the XTIDE card and TopSSD module fitted inside the Model 2. Lovely when the hardware finally plays nicely together.*
+{: .media-caption }
 
 Here's the XTIDE card itself, complete with its TopSSD Disk on Module. This is a revision-two card, with the appropriate jumper set to power the module, and there's an Atmel EEPROM holding the BIOS. There are plenty of variations on the basic XTIDE idea, with different board sizes, connectors and quantities of blinking LEDs. This particular arrangement works, which is presently my favourite feature.
 
-![](/assets/images/2012/img_0358.jpg)
+![Monitor showing the XTIDE configuration and flashing program writing ide_at.bin version 2.0.0 Beta 2, with EEPROM type 2864 and a progress bar.](/assets/images/2012/img_0358.jpg)
+
+*A separate XTIDECFG session flashing the EEPROM with the Beta 2 build. Not the same version as the earlier boot menu!*
+{: .media-caption }
 
 Finally, here's XTIDECFG programming the onboard EEPROM. The screen shows `ide_at.bin`, version 2.0.0 Beta 2, dated 19 September 2012. This is separate from the Beta 1 boot-menu screenshot above, so don't mistake the two versions for a single screen.
 

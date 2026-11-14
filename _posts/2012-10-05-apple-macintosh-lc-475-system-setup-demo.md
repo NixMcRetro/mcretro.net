@@ -18,19 +18,28 @@ I used Disk Copy 6.3 to restore the floppy image, then moved on to installing Sy
 
 The LC 475 itself is still a bit rough around the edges. Two of the power supply mounting connections have snapped, there's some rust underneath the supply, and the hard drive makes noises that really don't inspire confidence. The motherboard looks rather better, thankfully, and the floppy drive is working.
 
-![](/assets/images/2012/img_0265.jpg)
+![LG monitor showing the classic Mac OS startup splash screen with the smiling Mac icon, 'Starting up...' message and progress bar.](/assets/images/2012/img_0265.jpg)
+
+*The LC 475 starting System 7 again. Seeing that familiar face after the floppy juggling is a lovely sight!*
+{: .media-caption }
 
 Once System 7.5.3 was installed, I started getting some games onto the machine. Munchies and Maniac were two I wanted to try, partly because I remember playing Munchies when I was young. There's something wonderful about seeing old shareware running on the hardware it was made for.
 
 Moving the files across involved a rather convoluted arrangement. I used Parallels with Windows XP, HFVExplorer to transfer files onto Macintosh-formatted floppy disks, and StuffIt Expander 4 to unpack them on the LC 475. Not exactly drag and drop from one modern computer to another, but it worked!
 
-![](/assets/images/2012/img_0263.jpg)
+![System 7.5.3 installation progress window on a Macintosh desktop, reading 'System Morsels' while installing onto a disk named 'untitled'.](/assets/images/2012/img_0263.jpg)
+
+*Installing System 7.5.3 from the assembled files. Nineteen separate parts were a bit of a nuisance, but we got there!*
+{: .media-caption }
 
 The games run nicely, although the mouse could certainly be better. I've also got the usual collection of old Macintosh quirks to contend with, including the ADB keyboard and mouse connectors. Even the display needs a suitable Macintosh video adapter, and not every monitor is happy with the resolutions these machines produce.
 
 For the moment I'm using an older 4:3 screen, which suits the machine well enough. Jigsaw also made an appearance, although I seemed to spend an unreasonable amount of time working out where the pieces belonged. Perhaps a computer can be too good at keeping me distracted.
 
-![](/assets/images/2012/img_0279.jpg)
+![Close-up of the Apple Computer label on a Quantum ProDrive LPS, identifying a 160 MB internal 3.5-inch SCSI hard drive with 1993 firmware.](/assets/images/2012/img_0279.jpg)
+
+*The 160 MB Quantum ProDrive SCSI hard drive making all that awful noise. Somehow, it was still hanging in there!*
+{: .media-caption }
 
 There's still work to do on the hardware, but I'm pleased to have System 7.5.3 installed and a few of my favourite old games running. The original hard drive is somehow still hanging in there, even if it sounds like it's having a terrible time. Not a bad result for a Macintosh that's been making such alarming noises!
 

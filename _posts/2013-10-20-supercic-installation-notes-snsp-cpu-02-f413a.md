@@ -29,25 +29,43 @@ The console-side SuperCIC lock uses a programmed PIC16F630 and provides switchle
 
 Locate PPU1, PPU2 and the F413A CIC. Don't mind the red wires leaving my PPU1. They were already there to repair corroded traces near the reset switch.
 
-![](/assets/images/2013/img_0421.jpg)
+![Close-up of a Nintendo S-PPU2 chip on a Super Nintendo mainboard, with its fine soldered legs and neighbouring S-PPU1 chip visible.](/assets/images/2013/img_0421.jpg)
 
-![](/assets/images/2013/img_0422.jpg)
+*Here's PPU2 on the SNSP-CPU-02 board, one of the chips that needs attention for the SuperCIC video mode wiring.*
+{: .media-caption }
 
-![](/assets/images/2013/img_0420.jpg)
+![Nintendo S-PPU1 chip on a green Super Nintendo circuit board beside red jumper wires and a black connector.](/assets/images/2013/img_0422.jpg)
+
+*PPU1 and those existing red wires. They were already repairing corroded traces near the reset switch before this SuperCIC adventure.*
+{: .media-caption }
+
+![Close-up of a Super Nintendo board's F413A Nintendo CIC chip at U8 beside a larger S-CPU chip and a small electrolytic capacitor.](/assets/images/2013/img_0420.jpg)
+
+*There's the original F413A CIC at U8, before the fun begins with isolating its pins.*
+{: .media-caption }
 
 ### F413A CIC
 
 On this installation I left the original F413A on the board and lifted pins 1, 2, 10 and 11 so that they no longer contacted their pads. Wolfsoft's guide describes this as one of two approaches; the other removes the original CIC completely.
 
-![](/assets/images/2013/img_0423.jpg)
+![Angled close-up of an F413A Nintendo CIC chip beside the S-CPU and metal shielding on a Super Nintendo mainboard.](/assets/images/2013/img_0423.jpg)
+
+*A closer look at that tiny F413A. I left it on the board and isolated the required pins rather than removing the chip entirely.*
+{: .media-caption }
 
 ### Video mode connections
 
 On this multi-chip board, lift PPU1 pin 24 and PPU2 pin 30 so that both are isolated from their original board connections before wiring them to the SuperCIC.
 
-![](/assets/images/2013/img_0424.jpg)
+![Macro photograph of an S-PPU2 chip and its densely spaced pins on a green Super Nintendo circuit board.](/assets/images/2013/img_0424.jpg)
 
-![](/assets/images/2013/img_0425.jpg)
+*PPU2 and its rather intimidating row of tiny pins. Pin 30 is the one discussed in the video mode connections.*
+{: .media-caption }
+
+![Angled photograph of the Nintendo S-PPU1 chip with a red wire soldered near its legs and a black connector alongside.](/assets/images/2013/img_0425.jpg)
+
+*And here's PPU1 with the red wiring already in place. Tiny pins, steady hands, and no shortage of patience required.*
+{: .media-caption }
 
 ### PIC placement
 
@@ -55,27 +73,51 @@ I mounted the PIC16F630 over the CPU. It doesn't have blast processing so it sho
 
 If you are confident your chip has been programmed successfully, consider trimming the legs down. In this example I simply bent them outward slightly. Note the notch on the chip is at the top facing the back of the console.
 
-![](/assets/images/2013/img_0426.jpg)
+![PIC16F630 microcontroller with its legs bent outward, positioned over the Super Nintendo CPU chip on the mainboard.](/assets/images/2013/img_0426.jpg)
+
+*The PIC16F630 perched over the CPU. No blast processing here, so I wasn't too worried about it getting hot. ;)*
+{: .media-caption }
 
 ### Wiring
 
 Check every connection and check for shorts before powering the console. Use Wolfsoft's guide and the SuperCIC documentation for the wiring diagram missing from my original article; these photographs record my installation.
 
-![](/assets/images/2013/img_0427.jpg)
+![Super Nintendo mainboard with a PIC microcontroller mounted over the CPU and thin red, blue and yellow wires soldered to nearby components.](/assets/images/2013/img_0427.jpg)
 
-![](/assets/images/2013/img_0428.jpg)
+*The SuperCIC wiring is beginning to take shape, with the PIC sitting over the CPU and the first coloured wires in place.*
+{: .media-caption }
 
-![](/assets/images/2013/img_0429.jpg)
+![Partially rewired Super Nintendo mainboard with a PIC chip over the CPU and coloured jumper wires running to nearby chips.](/assets/images/2013/img_0428.jpg)
+
+*A few more connections added. It's starting to look like the usual tangle of colourful Kynar wire!*
+{: .media-caption }
+
+![Close-up of Nintendo S-PPU2 and S-PPU1 chips with thin green and yellow wires soldered to pins on a Super Nintendo mainboard.](/assets/images/2013/img_0429.jpg)
+
+*The new video mode connections running to PPU1 and PPU2. Best not to confuse those pins halfway through soldering.*
+{: .media-caption }
 
 ![](/assets/images/2013/10/supercic-f413a-installation.jxl)
 
-![](/assets/images/2013/img_0431.jpg)
+![Close-up of the SNES mainboard showing the S-WRAM chip, two Nintendo picture-processing chips and coloured wires connected to the PIC assembly.](/assets/images/2013/img_0431.jpg)
 
-![](/assets/images/2013/img_0432.jpg)
+*Another angle on the wiring, this time showing the RAM and the connections leading towards the PIC.*
+{: .media-caption }
 
-![](/assets/images/2013/img_0433.jpg)
+![Overhead view of a Super Nintendo mainboard with a PIC microcontroller and a network of red, green, blue, purple and yellow wires across its chips.](/assets/images/2013/img_0432.jpg)
 
-![](/assets/images/2013/img_0434.jpg)
+*A wider look at the installation. Plenty of coloured wires, but at least the layout is easier to see from above.*
+{: .media-caption }
+
+![Angled close-up of a PIC microcontroller mounted over the CPU on a Super Nintendo board, surrounded by many thin coloured wires.](/assets/images/2013/img_0433.jpg)
+
+*One last angled look at that PIC wiring. It certainly doesn't look factory-fitted, but that's half the charm of these projects.*
+{: .media-caption }
+
+![Overhead photograph of a wired Super Nintendo mainboard showing the PIC chip, both PPU chips and multiple coloured jumper wires.](/assets/images/2013/img_0434.jpg)
+
+*The completed-looking wiring layout from above. I'd still check every joint and look for shorts before powering it up.*
+{: .media-caption }
 
 ### LED
 

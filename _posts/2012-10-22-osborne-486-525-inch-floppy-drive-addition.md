@@ -17,7 +17,10 @@ I gave it a proper test by copying the DOS system files onto a floppy and attemp
 
 I do get a little annoyed when eBay sellers describe untested drives as working, then cover themselves by saying they're sold as-is. If it hasn't been tested, just say so. But what can you do? At least I've finally got a functioning 5.25-inch drive in the Osborne.
 
-![](/assets/images/2012/img_0331.jpg)
+![Dozens of PCI and ISA expansion cards arranged in rows on a wooden floor, including several large multi-slot boards at the back.](/assets/images/2012/img_0331.jpg)
+
+*The latest haul of expansion cards spread across the floor. Somewhere in that lot is more retro PC trouble waiting to happen!*
+{: .media-caption }
 
 Which reminds me, I've also picked up a huge pile of old PCI and ISA cards, floppy drives and assorted bits and pieces from someone south of the border. They've become a very good source of retro PC hardware, although I may eventually need another room just to store all this stuff.
 

@@ -8,11 +8,20 @@ share_description: >-
   The Sega TeraDrive's 44-pin hard-drive connector isn't ordinary IDE. A deep dive into IBM PS/2 storage reveals working WDL-330P drives and plenty of unanswered questions. 💾
 ---
 
-![](/assets/images/2012/img_0211.jpg)
+![Underside of an IBM hard-drive circuit board, showing dense green traces, small components and a long gold-finger edge connector.](/assets/images/2012/img_0211.jpg)
 
-![](/assets/images/2012/img_0212.jpg)
+*First, the underside of the IBM drive board and all those traces. No wonder I wanted a proper look at the interface.*
+{: .media-caption }
 
-![](/assets/images/2012/img_0213.jpg)
+![Top of a black IBM WDL-330P hard drive labelled 30 MB, with its circuit-board edge connector protruding on the right.](/assets/images/2012/img_0212.jpg)
+
+*The 30 MB WDL-330P and its unusual connector. I've got working examples, but that doesn't make the interface standard IDE.*
+{: .media-caption }
+
+![Close-up of the IBM drive board's gold edge contacts, three cylindrical capacitors and a small black connector.](/assets/images/2012/img_0213.jpg)
+
+*A closer look at the edge contacts. The 44-pin arrangement is part of the mystery, not proof that this is ordinary IDE.*
+{: .media-caption }
 
 Above are some photos of a Sega TeraDrive hard drive. I've been trying to work out exactly what sort of interface this thing uses. IDE? ESDI? XTA? Something else entirely?
 
@@ -24,11 +33,20 @@ I've also been talking with [Nemesis](https://www.exodusemulator.com), author of
 
 An earlier version of this article also linked to my TeraDrive HD pinout spreadsheet on the [file server](/goodies). If anyone else has been investigating this peculiar interface, I'd be very interested to hear what you've found.
 
-![](/assets/images/2012/img_0210.jpg)
+![Five grey ribbon cables with blue and grey connectors spread across an IBM keyboard on a workbench.](/assets/images/2012/img_0210.jpg)
 
-![](/assets/images/2012/img_0209.jpg)
+*More cable possibilities lined up on the keyboard while I try to work out what this TeraDrive interface actually wants.*
+{: .media-caption }
 
-![](/assets/images/2012/img_0214.jpg)
+![IBM WDL-330P 30 MB hard drive beside a handwritten note reading '12 Bad Blocks', 'DOS 6.22 Installed' and 'SpeedStor Diags = Pass'.](/assets/images/2012/img_0209.jpg)
+
+*One of the WDL-330P test drives with my handwritten notes beside it. Twelve bad blocks, DOS installed and a SpeedStor pass - plenty to keep track of.*
+{: .media-caption }
+
+![Open Sega TeraDrive showing the IBM WDL-330P hard drive installed beside its floppy drive, with ribbon cables and power supply exposed.](/assets/images/2012/img_0214.jpg)
+
+*The WDL-330P fitted inside the Model 3. At least this IBM drive family has proved useful while I chase the pinout.*
+{: .media-caption }
 
 ### What the interface actually appears to be
 

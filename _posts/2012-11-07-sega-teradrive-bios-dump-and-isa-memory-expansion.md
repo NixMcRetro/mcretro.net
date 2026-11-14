@@ -8,7 +8,10 @@ share_description: >-
   A Sega TeraDrive PC BIOS gets preserved with DOS DEBUG. Another owner's 6.5 MB RAM setup sparks ideas about ISA memory cards and future RAM-disk experiments. 💾
 ---
 
-![](/assets/images/2012/img_0355.jpg)
+![Black Sega TeraDrive console-computer on a desk with two floppy disks and stacked cases on top, connected cables and an HP keyboard in front.](/assets/images/2012/img_0355.jpg)
+
+*Another TeraDrive experiment on the bench. The BIOS dump is done, and now I'm curious about ISA RAM expansion.*
+{: .media-caption }
 
 Another little piece of TeraDrive preservation today. I've dumped the machine's PC BIOS using DOS DEBUG.COM and uploaded the result to the [File Server](/goodies/). If anyone feels like pulling this dump apart and finding something interesting, please do!
 

@@ -8,7 +8,10 @@ share_description: >-
   System 7 makes a 36 MB Macintosh LC 475 look absurdly hungry for RAM. Switching from 24-bit to 32-bit addressing makes the missing memory properly usable. 🍎
 ---
 
-![](/assets/images/2012/img_0278.jpg)
+![Beige Macintosh LC 475 photographed from above, showing the long ventilation slits, floppy slot and front Macintosh badge, with loose cables beside it.](/assets/images/2012/img_0278.jpg)
+
+*This LC 475 has 36 MB installed, but System 7 was treating most of it rather strangely. The culprit turned out to be 24-bit addressing.*
+{: .media-caption }
 
 I found out that this LC 475 was still running in 24-bit addressing mode. That explains the rather ridiculous memory display! In that mode, System 7 can only make 8 MB of physical RAM available for normal use. Anything installed above that gets accounted for as though it belongs to the System heap, even though applications can't actually use it.
 

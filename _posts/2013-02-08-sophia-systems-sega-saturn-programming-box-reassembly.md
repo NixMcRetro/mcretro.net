@@ -24,17 +24,26 @@ And finally, after somewhere between six and eight months, I've finished photogr
 
 The CPU-board area, RAM board, SH-1 board, and SCSI board are back in place. The CD drive is the last major part to reinstall after I've finished photographing it. A few board revisions caught my attention too, including an assembly marked revision 0.7 while the mainboard is revision 1.0. I still need to get hold of some 8 MB RAM chips for the empty sockets, so there's more to do on the memory side as well.
 
-![](/assets/images/2013/img_0363.jpg)
+![Partly reassembled Sophia Systems Sega Saturn Programming Box with front connectors, orange power switch and black top-loading CD drive; a side opening still exposes a circuit board.](/assets/images/2013/img_0363.jpg)
+
+*Sophia is nearly back together at last. The top still has an opening, but the CD mechanism and front panel are back in place.*
+{: .media-caption }
 
 With the CD drive back inside and the panels fitted, I can finally switch Sophia on without staring at the exposed internals. The fan spins, the lights respond, and the power switch has a wonderfully solid feel. It's satisfying to press even if the machine still needs its processor hardware for a proper boot.
 
 The rear connections are worth another look, with serial, SCSI, AV output, controller ports, and some substantial expansion arrangements. Sophia also uses a 110 V supply, so I'm running it through an appropriate transformer here in Australia. One more enormous piece of equipment to accompany the enormous devkit!
 
-![](/assets/images/2013/img_0363a.jpg)
+![Close-up of a green Sega circuit board marked '171-6834C 1994 MADE IN JAPAN' with a handwritten 'Rev 0.7' sticker and rows of chips.](/assets/images/2013/img_0363a.jpg)
+
+*Another revision to document: this board is marked 171-6834C and has a 0.7 revision sticker. The photo archive keeps growing!*
+{: .media-caption }
 
 For the moment, Sophia is heading back to the bookshelf while I start investigating the Sega Mega-CD development hardware. If anyone comes across compatible SH-2 boards, please let me know. There are nearly 300 photographs of Sophia in the [photo gallery](/goodies/) for anyone who wants a closer look.
 
-![](/assets/images/2013/img_0363b.jpg)
+![Two green Sega 171-6692B processor cards lying side by side, each carrying an SH7095 chip and small electrolytic capacitors.](/assets/images/2013/img_0363b.jpg)
+
+*Now those are the SH-2 processor cards I've been hunting for! Two 171-6692B boards, side by side.*
+{: .media-caption }
 
 Look at that! 171-6692B SH7095 SH-2 CPUs. Those are exactly the sort of processor cards I'm trying to track down.
 

@@ -32,15 +32,30 @@ C:\SB16\DRV\MSCDEX.EXE /D:MSCD001 /V /M:15
 
 With that configuration loaded, DOS recognised the CD-ROM and I could finally get at the disc. I was almost expecting another problem to appear when I tried it for the first time, but no, it actually worked! After staring at a desktop full of random drivers and wondering what I'd missed, that's a pretty satisfying result.
 
-![](/assets/images/2012/img_0284.jpg)
+![ViewSonic monitor showing an MS-DOS startup screen where MSCDEX reports 'Drive D: = Driver MSCD001 unit 0'.](/assets/images/2012/img_0284.jpg)
 
-![](/assets/images/2012/img_0285.jpg)
+*Success! MSCDEX has finally assigned drive D: to the Creative CD-ROM. After all that driver hunting, what a relief!*
+{: .media-caption }
 
-![](/assets/images/2012/img_0286.jpg)
+![Creative CD-200 drive resting on an open Osborne computer with a blue floppy disk partly inserted in the machine's floppy drive.](/assets/images/2012/img_0285.jpg)
 
-![](/assets/images/2012/img_0287.jpg)
+*The CD-200 back on the Osborne while I finish sorting the boot disks and drivers. I'm finally getting somewhere!*
+{: .media-caption }
 
-![](/assets/images/2012/img_0288.jpg)
+![Close-up of the Creative CD-200 top label showing 'MODEL CD-200', '+5V 1A', 'MADE IN SINGAPORE' and Class 1 laser warnings.](/assets/images/2012/img_0286.jpg)
+
+*The CD-200's own label, complete with its model number and laser warnings. At least we know exactly which drive we're dealing with!*
+{: .media-caption }
+
+![Rear of the Creative CD-200 CD-ROM drive showing a grey ribbon cable and printed connector labels for audio, drive ID, interface and DC power.](/assets/images/2012/img_0287.jpg)
+
+*The connectors that caused so much head-scratching. That 40-pin ribbon cable looks deceptively familiar, but this isn't ordinary IDE.*
+{: .media-caption }
+
+![Creative CD-200 drive mounted in the front bay of a beige Osborne computer, with its yellow BUSY indicator illuminated.](/assets/images/2012/img_0288.jpg)
+
+*And now the CD-200 is actually in the Osborne's front bay. After all that trouble, it looks right at home!*
+{: .media-caption }
 
 Thanks to everyone who helped me track this one down. A functioning double-speed Creative CD-ROM drive is now sitting in the Osborne, and I think that earns us a BBQ party!
 

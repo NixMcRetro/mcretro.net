@@ -20,21 +20,33 @@ I installed DOS 6.22 and the Mega-CD SNASM2 software, along with some 32X-relate
 
 I also had a 32X attached to the console out of curiosity. Because why stop at one unusual piece of Sega hardware when we can connect several together?
 
-![](/assets/images/2013/img_0367.jpg)
+![Front of a black Sega Genesis and Mega-CD-based Cross Products development unit, with DIP-switch banks, red indicator lights and main/sub CPU controls.](/assets/images/2013/img_0367.jpg)
+
+*The SNASM Mega-CD devkit finally on the bench, with its extra switches and lights. Nothing subtle about this thing!*
+{: .media-caption }
 
 The setup in the video is running from a Pentium III 800 MHz machine, but that wasn't the first computer I tried. I'd started with a Pentium 600 MHz system and then experimented with some considerably older hardware.
 
-![](/assets/images/2013/img_0365.jpg)
+![Open Pentium-era PC motherboard on a desk with two very long vertical ISA development cards, another expansion card, CPU fan and cables.](/assets/images/2013/img_0365.jpg)
+
+*The first Pentium test setup, with those enormous SNASM interface cards sticking out of the board. Plenty of desk space required!*
+{: .media-caption }
 
 Here's that first Pentium 600 MHz machine. I really do seem to have an impressive collection of old PCs hanging around the place, which comes in handy when you're trying to get ISA development cards working.
 
-![](/assets/images/2013/img_0366.jpg)
+![Open beige PC tower with ribbon cables and expansion cards inside, next to a black Sega Mega-CD development unit and an IBM keyboard.](/assets/images/2013/img_0366.jpg)
+
+*Another PC pressed into SNASM duty. At least there's room in the tower for those very long cards!*
+{: .media-caption }
 
 The next machine was a 133 MHz something-or-other. I'm not sure whether it was a Cyrix, AMD, or Pentium, but it was sufficient for the experiment and fitted nicely into the case. Between the different PCs, software configurations, and DIP-switch settings, there was quite a bit of trial and error.
 
 Eventually I managed to get some video output and signs of communication from the development hardware. The SNASM2 PC interface initialised correctly and reported that it was ready to connect, which was certainly encouraging! I still wasn't consistently getting the expected results, but at least the unit was responding well enough to give me something to investigate further.
 
-![](/assets/images/2013/img_0368.jpg)
+![Exposed PC motherboard on a table with multiple vertical ISA expansion cards, including a black card covered with white angular silkscreen graphics and an attached VGA cable.](/assets/images/2013/img_0368.jpg)
+
+*That decorative silkscreen on the back of the SNASM2 card deserves its own photograph. Shame I still need to pull everything apart again!*
+{: .media-caption }
 
 Doesn't that silkscreen look attractive on the back of the SNASM2 card? I've barely started getting the hardware running, and already I'm planning to pull it apart again. Next on the list are disassembly, chip dumping, and a lot more photography.
 

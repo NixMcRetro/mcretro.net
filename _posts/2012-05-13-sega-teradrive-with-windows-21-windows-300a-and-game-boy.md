@@ -34,15 +34,24 @@ I also experimented with DOSBox to prepare the stripped-down Windows installatio
 
 The next challenge is still getting a hard drive into this machine. There's an unusual 44-pin connector on the motherboard, and I might also be able to use an ISA expansion card. Either option would make life a lot easier than juggling floppy disks all evening. You can even see the change in daylight between the recordings; the sun had long since set by the time I finished! But never mind, we will be victorious!
 
-![](/assets/images/2012/img_0092.jpg)
+![Close-up of an original Nintendo Game Boy displaying the Super Mario Land title screen.](/assets/images/2012/img_0092.jpg)
+
+*A Game Boy on the Super Mario Land title screen. Nice to have this little grey brick in the collection again.*
+{: .media-caption }
 
 In other news, please welcome Nintendo Game Boy to the family. I had one of these back in primary school, I think, although that was a very long time ago now.
 
-![](/assets/images/2012/img_0090.jpg)
+![Front view of an original grey Nintendo Game Boy with a blank screen, black D-pad, and magenta buttons.](/assets/images/2012/img_0090.jpg)
+
+*The original Game Boy in all its glory, complete with that blank greenish screen and the proper magenta buttons.*
+{: .media-caption }
 
 Good times with Tetris and Super Mario Land, not to mention Snow Brothers on my dodgy 10-in-1 pirate cartridge. There's something lovely about having one of these little grey bricks around again.
 
-![](/assets/images/2012/img_0091.jpg)
+![Back of Nintendo Game Boy model DMG-01 with battery cover and identification label.](/assets/images/2012/img_0091.jpg)
+
+*Here's the back of the Game Boy, labelled DMG-01 and still wearing its battery cover.*
+{: .media-caption }
 
 **Related Posts**
 

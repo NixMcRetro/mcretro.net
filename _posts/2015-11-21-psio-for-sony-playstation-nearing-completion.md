@@ -8,7 +8,10 @@ share_description: >-
   PSIO's 2015 progress bar reaches 98%, with the old prototype returned to its developers. Metal Gear Solid footage reminds us how far it came. 🎮
 ---
 
-![](/assets/images/2015/img_0443.jpg)
+![Screenshot of a PSIO project status page showing 98% total progress above a photograph of PSIO packaging and a cartridge on PlayStation game cases.](/assets/images/2015/img_0443.jpg)
+
+*PSIO at 98% back in November 2015. So close I could almost hear the PlayStation disc drive celebrating!*
+{: .media-caption }
 
 Incredible! I look away for a few days, or maybe weeks... months?... and the PSIO status page is showing **98% complete**. I'd been speaking with Shadow over email and he definitely seemed to be in top gear. What he and Cybdyn had managed was nothing short of amazing, and I was absolutely looking forward to the fruits of their labour.
 

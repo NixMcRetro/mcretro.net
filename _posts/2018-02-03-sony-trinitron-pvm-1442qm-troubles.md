@@ -16,13 +16,19 @@ The seller had packed the monitor in what appeared to be an enormous quantity of
 
 The PVM-1442QM is a professional video monitor from Sony, with considerably more connections than you'd find on the average household television. There are enough video inputs and outputs around the back to make it quite a useful bit of equipment for old computers and consoles.
 
-![](/assets/images/2018/img_0614.jpg)
+![Grey Sony Trinitron professional CRT monitor with a dark screen, side ventilation slots and control buttons along its lower front edge.](/assets/images/2018/img_0614.jpg)
+
+*The PVM-1442QM in all its chunky grey glory. Pretty good after a trip from the UK, damaged mounting clips notwithstanding.*
+{: .media-caption }
 
 With the damaged case opened, I could see how the internal boards were mounted. Some of the plastic supports had failed, allowing a board near the side of the CRT to move around rather more than it should. I secured the loose assembly using cable ties, which wasn't especially elegant but kept it from flopping about.
 
 There were also plenty of components to inspect. Some of the date markings suggested the late 1980s, which would certainly explain why the plastic wasn't particularly happy after such a long journey. I'd also found some rather large capacitors in the power circuitry. Not exactly the sort of thing I'd want to be poking around casually. Functional for how long, though? The bulging capacitor on the mainboard doesn't fill me with much long-term confidence about the longevity of this monitor!
 
-![](/assets/images/2018/img_0615.jpg)
+![Close-up of the Sony PVM-1442QM's rear connection panel showing BNC video and RGB inputs, audio sockets, a Y/C connector and a digital RGB port.](/assets/images/2018/img_0615.jpg)
+
+*Just look at all those inputs and outputs! Plenty of options for old consoles, even if the monitor has a few issues inside.*
+{: .media-caption }
 
 The capacitor was buried in an awkward part of the assembly, and I wasn't particularly interested in dismantling the entire monitor to reach it at the time. I made a note of the problem rather than attempting another major repair just for the sake of it.
 

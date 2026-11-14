@@ -8,7 +8,10 @@ share_description: >-
   A PICkit 2 can program supported Atmel AVR chips through AVRDUDE on a Mac, including the Lunchbeat's ATmega328P. Compiling it is another adventure. 💻
 ---
 
-![](/assets/images/2013/img_0435.jpg)
+![Two black electronics boards joined by a rainbow ribbon cable, one carrying lit blue and green LEDs, knobs and buttons, and the other connected by USB.](/assets/images/2013/img_0435.jpg)
+
+*The Lunchbeat electronics on the bench, complete with a rainbow ribbon cable and plenty of glowing LEDs. Getting the programming side working was another story!*
+{: .media-caption }
 
 PICkit 2 is a Microchip programmer/debugger designed primarily for PIC chips. The fun part is that AVRDUDE can also use it as an ISP programmer for supported AVR microcontrollers, including the ATmega328P I'm working with here. That AVR support comes from AVRDUDE rather than Microchip's PICkit 2 application.
 

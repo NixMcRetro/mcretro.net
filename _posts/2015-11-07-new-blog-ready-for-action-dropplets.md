@@ -8,7 +8,10 @@ share_description: >-
   WordPress feels too heavy for a Raspberry Pi, so Dropplets and Markdown get a trial run. The next challenge is importing years of old blog posts. 🌐
 ---
 
-![](/assets/images/2015/img_0441.jpg)
+![Black Sega Mega-CD Karaoke accessory attached to a Mega-CD unit, showing vocal cancel, chorus, echo and key-control buttons beside a compact disc.](/assets/images/2015/img_0441.jpg)
+
+*A bit of Sega Mega-CD Karaoke hardware while I ramble about rebuilding the blog. Apparently I can't stay away from Sega even when I'm writing Markdown!*
+{: .media-caption }
 
 I've finally made some time to configure my blog. Now comes the arduous task of importing and tidying up all the posts from the past. For the moment they'll mostly be text because there simply isn't time to sort all the images yet. I've decided to give Markdown and a flat-file system a try instead of running WordPress with a MySQL database.
 

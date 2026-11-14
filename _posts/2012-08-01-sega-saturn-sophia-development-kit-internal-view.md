@@ -17,19 +17,28 @@ The bigger problem is that this particular Sophia arrived without its SH-2 proce
 
 Sega's original Programming Box description lists one SH-2 card as supplied and says an additional SH-2 card is required when the box is used without an in-circuit emulator. If anyone has compatible Sophia SH-2 boards lying around, I'd be more than happy to take them off your hands and see how far she gets.
 
-![](/assets/images/2012/img_0240.jpg)
+![Close-up of the beige Sophia Systems Sega Saturn Programming Box nameplate, above its labelled front-panel buttons.](/assets/images/2012/img_0240.jpg)
+
+*The Sophia badge up close. She's a substantial bit of Sega development hardware, and I haven't even started cleaning her out yet.*
+{: .media-caption }
 
 With the top removed, there's a large collection of interconnected boards, sockets and cables to examine. Some of the chips carry date codes from the early 1990s, while one of the boards is marked revision 0.7 and the mainboard itself is revision 1.0. There's certainly plenty to photograph and document.
 
 I started removing the upper boards to see what was underneath. One socketed chip was sitting rather crookedly, which was worth discovering before attempting to apply power. Considering the missing processor cards, it's probably a good thing I wasn't in a position to try switching it on straight away.
 
-![](/assets/images/2012/img_0241.jpg)
+![Front and top of the beige Sega Saturn Sophia Programming Box, with its black CD drive, control ports, switches and illuminated orange power button.](/assets/images/2012/img_0241.jpg)
+
+*The whole Sophia Programming Box on the bench, with its front-panel connections and that rather imposing case. Plenty to investigate inside!*
+{: .media-caption }
 
 Underneath the next board is another collection of Sega, Motorola and Yamaha chips. The fan is a Mitsubishi unit and has collected an impressive amount of dirt over the years. The power supply also appears to live further down in the case, although I haven't stripped everything out to reach it yet.
 
 The CD drive has its own board attached underneath, and I spotted some marks on one of the cables while looking around the assembly. There's also a smaller board mounted towards the side of the machine, so the whole thing is a little more involved than it first appears.
 
-![](/assets/images/2012/img_0242.jpg)
+![Open black CD drive on top of the beige Sophia Programming Box, showing its disc spindle and empty tray.](/assets/images/2012/img_0242.jpg)
+
+*A look at the Sophia's top-mounted CD drive with the lid open. The rest of the machine is proving rather more complicated!*
+{: .media-caption }
 
 One thing to watch if you ever take one of these apart is the little front-panel buttons. Several of them fell out while I was removing a board and promptly rolled underneath things. I managed to find them all, thankfully, but it was another reminder that this Sophia deserves a careful strip-down.
 

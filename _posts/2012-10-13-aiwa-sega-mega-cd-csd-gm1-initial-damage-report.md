@@ -26,13 +26,25 @@ There are plenty of reasons to give this machine a chance. The CSD-GM1 is an int
 
 Don't forget to check the [photo gallery](/goodies/) and my [YouTube videos](/youtube-is-back/). Sometimes I forget to post individual updates for everything that ends up there!
 
-![](/assets/images/2012/img_0295.jpg)
+![Solder side of a green Aiwa AW4CD-10 circuit board, showing dense copper tracks, many solder joints, a black jumper wire and a small white connector.](/assets/images/2012/img_0295.jpg)
 
-![](/assets/images/2012/img_0298.jpg)
+*The underside of one of the Aiwa boards. A lot of traces to follow, and far too many places where things could go wrong.*
+{: .media-caption }
 
-![](/assets/images/2012/img_0296.jpg)
+![Component side of an Aiwa AW4CD-10 circuit board showing capacitors, resistors, a gear mechanism, switches and wiring on a brown board.](/assets/images/2012/img_0298.jpg)
 
-![](/assets/images/2012/img_0297.jpg)
+*The other side of that Aiwa board, with the controls and little gears exposed. Not quite the simple repair I was hoping for!*
+{: .media-caption }
+
+![Close-up of a cracked green Aiwa circuit board near switch pads labelled SW101, with a split crossing copper traces and solder joints.](/assets/images/2012/img_0296.jpg)
+
+*The crack running straight through the board and its tracks. There's going to be some careful soldering ahead!*
+{: .media-caption }
+
+![Close-up of the damaged underside of an Aiwa circuit board, with a black repair wire, corroded-looking solder joints and scraped green tracks.](/assets/images/2012/img_0297.jpg)
+
+*Another ugly patch of damage and wiring on the Aiwa. This is why getting power back is only the beginning.*
+{: .media-caption }
 
 ### Sources
 

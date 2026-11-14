@@ -27,7 +27,10 @@ Then it occurred to me that I probably should have tested whether the battery wo
 
 Now you might say, a NiMH battery isn't automatically a drop-in replacement for NiCad in equipment that charges the battery internally. You'd be right. The charging current and charging method still need to suit the new cells, since the two chemistries have different requirements. This particular replacement worked in my clock, but voltage alone isn't enough to establish compatibility for another design.
 
-![](/assets/images/2013/img_0389.jpg)
+![IN-12A and IN-12B Nixie tube pinout diagram showing twelve base pins and noting that pin 12 controls the decimal dot on the IN-12B.](/assets/images/2013/img_0389.jpg)
+
+*A handy IN-12A and IN-12B pinout reference. The IN-12B's dot uses pin 12, which the IN-12A leaves unconnected.*
+{: .media-caption }
 
 **Update 17th April 2022:** The battery was replaced again in late 2021. A couple of other details are worth keeping here for future reference. The IN-12B tube has a dot, while the IN-12A does not.
 

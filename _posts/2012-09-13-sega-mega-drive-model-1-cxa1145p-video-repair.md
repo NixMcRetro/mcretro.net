@@ -30,15 +30,30 @@ I can't tell you what went wrong inside the old CXA1145P, but replacing it cured
 
 I broke the repaired machine in with some Metallic Uniframe Super Hybrid Armor. I'd also noticed a few solder joints underneath that suggested somebody might have modified this particular Mega Drive before me. Nothing too surprising there, given the age of these machines.
 
-![](/assets/images/2012/img_0261.jpg)
+![Close-up of a Mega Drive motherboard showing blue electrolytic capacitors, Yamaha and Sega chips, black headers and fine green traces.](/assets/images/2012/img_0261.jpg)
 
-![](/assets/images/2012/img_0260.jpg)
+*Back inside the troublesome Mega Drive, with the video circuitry and all those capacitors laid bare before the encoder swap.*
+{: .media-caption }
 
-![](/assets/images/2012/img_0259.jpg)
+![Removed black Sony CXA1145P 24-pin chip on a grey tabletop, with several legs bent or broken.](/assets/images/2012/img_0260.jpg)
 
-![](/assets/images/2012/img_0258.jpg)
+*The old CXA1145P, finally freed from the board. Removing it was far more entertaining than I would have liked!*
+{: .media-caption }
 
-![](/assets/images/2012/img_0257.jpg)
+![Underside of a removed dual-inline chip, showing bent, uneven and partly broken metal legs against a grey surface.](/assets/images/2012/img_0259.jpg)
+
+*Those poor chip legs. Desoldering the original encoder without my usual tools was not exactly graceful.*
+{: .media-caption }
+
+![Macro view of the solder side of a green Mega Drive circuit board, with rows of solder joints and small surface-mounted components around the reworked area.](/assets/images/2012/img_0258.jpg)
+
+*The underside after my soldering adventures. It took quite a bit of fiddling to get the replacement fitted.*
+{: .media-caption }
+
+![Sony CXA1145P video-encoder chip installed on a green Mega Drive motherboard, surrounded by light-blue capacitors and resistors.](/assets/images/2012/img_0257.jpg)
+
+*The replacement CXA1145P finally in place. Best of all, the green and yellow flickering was gone!*
+{: .media-caption }
 
 As you can see, complete success, even with the rather limited tools I had on hand. My Hakko 808 would have made getting that old chip out a great deal easier, but at least I've managed to get this Mega Drive producing a beautiful picture again. If only my Sega Saturn repairs went this well!
 

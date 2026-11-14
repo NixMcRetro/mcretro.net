@@ -8,11 +8,17 @@ share_description: >-
   PSIO's progress bar finally reaches 100% in November 2015, with the first 50 pre-orders expected soon. A milestone, not a claim about today's availability. 🎮
 ---
 
-![](/assets/images/2015/img_0446.jpg)
+![Screenshot of PSIO's green 100% progress bar and a November 2015 pre-order countdown, above cartoon game characters holding cartridges beside a PlayStation.](/assets/images/2015/img_0446.jpg)
+
+*PSIO finally hit 100%! The first 50 pre-orders were on the horizon, although the countdown needed a little correcting.*
+{: .media-caption }
 
 It's taken a while, but it's great to see the project's status bar finally turn green and reach **100%**. Congratulations [Team PSIO](https://psio.cybdyn-systems.com.au/)! I don't doubt those first 50 pre-orders will disappear quickly.
 
-![](/assets/images/2015/img_0445.jpg)
+![Photograph of a brown PSIO cardboard box and grey PSIO cartridge resting on a spread of original PlayStation game cases.](/assets/images/2015/img_0445.jpg)
+
+*The PSIO box and cartridge among a pile of PlayStation games. It certainly looked ready for the big time!*
+{: .media-caption }
 
 Looks good, doesn't it? Don't forget to drop by my [PSIO YouTube playlist](https://www.youtube.com/playlist?list=PLJAZP-TLMPj7dBOErfc4g8Rj0vqPnbBUF) to see the project in action.
 

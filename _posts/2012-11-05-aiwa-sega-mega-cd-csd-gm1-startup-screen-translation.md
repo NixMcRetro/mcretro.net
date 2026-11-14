@@ -8,15 +8,24 @@ share_description: >-
   What is the Japanese Aiwa Mega-CD startup screen saying? A community translation reveals prompts to press Start, check the disc and wait a little bit. Finally! 🎮
 ---
 
-![](/assets/images/2012/img_0351.jpg)
+![Samsung television showing a Japanese message beneath the Sega Mega-CD startup artwork, asking the player to press the Start button.](/assets/images/2012/img_0351.jpg)
+
+*First translation: 'Please press the Start button.' Now I know what the Aiwa is asking me to do!*
+{: .media-caption }
 
 ...Please Press the Start Button...
 
-![](/assets/images/2012/img_0352.jpg)
+![Samsung television displaying the Sega Mega-CD startup image and the Japanese disc-checking message at the bottom.](/assets/images/2012/img_0352.jpg)
+
+*Second translation: 'Checking the disc.' A rather useful message when the CD mechanism is being stubborn.*
+{: .media-caption }
 
 ...Checking the Disc...
 
-![](/assets/images/2012/img_0353.jpg)
+![Close-up of a television with the Sega Mega-CD startup background and Japanese text reading a request to wait.](/assets/images/2012/img_0353.jpg)
+
+*Third translation: 'Please wait a little bit.' Very polite for a machine that's giving me so much grief.*
+{: .media-caption }
 
 ...Please Wait a Little Bit...
 

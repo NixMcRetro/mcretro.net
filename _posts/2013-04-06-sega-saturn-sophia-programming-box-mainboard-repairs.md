@@ -12,7 +12,10 @@ share_description: >-
 
 After the A-Bus capacitor replacement failed to improve Sophia's condition, I moved on to the mainboard. I've now replaced most of the electrolytic capacitors there, and the results are considerably more promising. The Hakko 808 works wonders on these old boards, although I'd been operating on very little sleep when I decided to tackle this one. Always an excellent start to an evening of soldering!
 
-![](/assets/images/2013/img_0388.jpg)
+![Partially disassembled Sega Saturn Sophia programming box showing its large green mainboard, two empty CPU-card sockets, power-supply fan and wiring.](/assets/images/2013/img_0388.jpg)
+
+*Sophia's mainboard laid bare for more capacitor work. There is still quite a lot of machine to put back together!*
+{: .media-caption }
 
 I hadn't finished replacing every capacitor. There were still some 47 uF, 16 V components, a 330 uF, 6.3 V capacitor, and a couple of 220 uF, 10 V parts waiting for replacements. I also hadn't tackled the other electrolytics on the SH-1 board and another assembly.
 
@@ -20,7 +23,10 @@ Still, with most of the mainboard capacitors replaced, I wanted to give Sophia a
 
 At first there was no signal, just as before. Then the television started detecting something from Sophia, which was already more than I'd been getting previously. I tried some different DIP-switch settings and carefully reassembled enough of the hardware to test it again.
 
-![](/assets/images/2013/img_0386.jpg)
+![Sega Saturn Sophia programming box with its front panel fitted and top cover removed, exposing the mainboard and wiring behind the controls.](/assets/images/2013/img_0386.jpg)
+
+*Front panel back on, but the lid is still off. Sophia is in no condition to hide all that repair work just yet!*
+{: .media-caption }
 
 And then, would you believe it, Sophia actually came to life and asked me to set the clock! After all this time, there was finally something recognisable on the screen. Absolutely wonderful!
 
@@ -30,7 +36,10 @@ It was also encouraging to see the machine running with the SH-2 CPU cards and r
 
 Unfortunately, the CD mechanism remained another problem. Sophia recognised changes in the drive's state, and the laser assembly was moving, but the system continued reporting that the drive was empty. I'd already encountered trouble with that mechanism while testing it in a retail VA0 Saturn, so it looks like there's still a separate repair to tackle.
 
-![](/assets/images/2013/img_0387.jpg)
+![Angled view into the open Sophia programming box, showing the green mainboard, rows of connectors, capacitors and copper-shielded rear assemblies.](/assets/images/2013/img_0387.jpg)
+
+*Another look at the mainboard before everything goes back in. A lot of small capacitors for one enormous Saturn devkit.*
+{: .media-caption }
 
 I should probably inspect the power-supply boards while I'm this deep into the machine too. Apparently there's no such thing as replacing just one capacitor on Sophia! At least she's finally showing signs of life again, and I've got a much better starting point for the remaining repairs.
 

@@ -28,21 +28,39 @@ This particular Famicom belongs to SuperNick (Nick), and he decided to remove th
 
 And finally, some Spelunker. What an enjoyable game it can be when you put your mind to it. Really put your mind to it. Meld it. Meld your mind with it. Naturally, I still managed to run into a ghost. I'm terrible!
 
-![](/assets/images/2012/img_0207.jpg)
+![Nintendo Famicom with a Spelunker cartridge inserted, one red controller beside it and an empty front controller socket.](/assets/images/2012/img_0207.jpg)
 
-![](/assets/images/2012/img_0167.jpg)
+*The Famicom back together for testing, with Spelunker ready to go and the second controller removed to make room for the AV leads.*
+{: .media-caption }
 
-![](/assets/images/2012/img_0149.jpg)
+![Close-up of the Famicom's cream-and-red front panel, showing the Power, Eject and Reset controls and an empty front connector opening.](/assets/images/2012/img_0167.jpg)
+
+*A closer look at the front of the Famicom after the controller arrangement was changed.*
+{: .media-caption }
+
+![Two small brown perforated circuit boards side by side; one has attached wires and a capacitor, while the other carries a resistor, capacitor and black component.](/assets/images/2012/img_0149.jpg)
+
+*The earlier bit of wiring beside the neater little board. Much better than leaving everything floating about inside the console!*
+{: .media-caption }
 
 I was able to shrink the first two versions of the circuit down onto a much smaller piece of prototyping board. That lets it tuck into the corner of the Famicom case instead of floating around inside like an electronics science experiment. Amazing what such a small piece of hardware can do.
 
 This is the same composite modification documented in the full guide, although different Famicom motherboard revisions may need different connection points or component values. Best to check which board you've got before copying everything exactly!
 
-![](/assets/images/2012/img_0165.jpg)
+![Compact perforated AV circuit board mounted inside a Famicom case, with a capacitor, blue resistor, black component and several coloured wires.](/assets/images/2012/img_0165.jpg)
 
-![](/assets/images/2012/img_0205.jpg)
+*The compact AV board sitting neatly in the Famicom case. At least the wiring has somewhere sensible to live now.*
+{: .media-caption }
 
-![](/assets/images/2012/img_0206.jpg)
+![Close-up inside the Famicom corner showing loops of purple wiring, orange and yellow leads, and a green circuit board with solder joints.](/assets/images/2012/img_0205.jpg)
+
+*The AV wiring tucked into the corner of the case, with a little slack left if anything needs moving later.*
+{: .media-caption }
+
+![LG television displaying Japanese Kirby's Adventure gameplay, with Kirby in front of tall brown hills and a Japanese text box at the bottom.](/assets/images/2012/img_0206.jpg)
+
+*Kirby's on the screen again. The composite output works, even if those pesky jailbars haven't entirely disappeared.*
+{: .media-caption }
 
 There's more photos in the [photo gallery](/goodies/).
 

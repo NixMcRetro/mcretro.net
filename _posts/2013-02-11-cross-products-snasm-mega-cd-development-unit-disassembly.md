@@ -8,7 +8,10 @@ share_description: >-
   Inside a rare Cross Products SNASM Mega-CD development unit: modified Sega hardware, extra boards and a forest of connectors. Getting it apart is half the adventure. 🔧
 ---
 
-![](/assets/images/2013/img_0369.jpg)
+![Black Cross Products SNASM Mega-CD development unit with a Genesis-shaped top, front DIP switches, indicator lamps and a Mega-CD disc tray.](/assets/images/2013/img_0369.jpg)
+
+*The SNASM Mega-CD unit before the next round of disassembly. An impressive amount of hardware packed into one box!*
+{: .media-caption }
 
 The Cross Products SNASM Mega-CD development unit, serial MCD01/0174, is our next target for disassembly and photography. This is one beefy devkit! I've spent a bit of time experimenting with the software side of the system, and now it's time to see what's actually inside.
 

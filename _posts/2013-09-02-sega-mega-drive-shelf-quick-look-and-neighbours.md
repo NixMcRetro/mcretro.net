@@ -8,7 +8,10 @@ share_description: >-
   An old Sega Mega Drive shelf overview has vanished from the archive, leaving only a substitute devkit image and an unexpected soundtrack of neighbourhood bongo drums. 🥁
 ---
 
-![The original video could not be found... so have this](/assets/images/2013/img_0366.jpg)
+![Open beige PC tower with long ISA expansion cards, an IBM keyboard and black Sega Mega-CD development equipment on the workbench.](/assets/images/2013/img_0366.jpg)
+
+*The original Mega Drive shelf video has disappeared, so here's a photograph of my development hardware instead. Close enough for now!*
+{: .media-caption }
 
 Neighbours, everybody needs good neighbours. So why do mine play bongo drums? I live under a very thin roof/floor and my neighbours are inconsiderate. Please suggest some ways to get back at them!
 

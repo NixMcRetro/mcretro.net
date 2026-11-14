@@ -629,15 +629,18 @@ pre code {
 .inline-search-form button:hover {
   background: var(--button-hover);
 }
-/* Search keeps its solid blue resting state. On hover and keyboard focus,
-   use the same accessible themed blue highlight as other site controls. */
+/* Match sidebar action links: neutral/pale surface and blue text normally,
+   then the same themed blue tile on hover and keyboard focus. */
 .sidebar .inline-search-form button {
-  background: var(--sidebar-button-bg);
+  background: var(--archive-empty);
+  color: var(--link);
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 .sidebar .inline-search-form button:hover,
 .sidebar .inline-search-form button:focus-visible {
-  background: var(--interactive-hover);
-  color: var(--archive-filled-text);
+  background: var(--archive-filled);
+  color: var(--link-hover);
 }
 .search-widget {
   padding-top: 0.8rem;

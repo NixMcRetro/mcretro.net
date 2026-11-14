@@ -8,19 +8,31 @@ share_description: >-
   A five-day attempt to dump TP-Link Archer VR1600v V2 firmware teaches me plenty about UART and flash chips, but fails to produce a shareable image. 💻
 ---
 
-![](/assets/images/2021/img_0686.jpg)
+![TP-Link Archer VR1600v white modem router pictured on a table beside a lamp and small plants, with the AC1600 product name at left.](/assets/images/2021/img_0686.jpg)
+
+*The Archer VR1600v V2, the unfortunate volunteer for five days of firmware-dumping experiments.*
+{: .media-caption }
 
 The [TP-Link Archer VR1600v VDSL/ADSL Modem Router](https://www.tp-link.com/au/service-provider/xdsl/archer-vr1600v/). Just a word of warning, this post **_does not_** result in a successful firmware dump. Over five days I had a look into how to dump the firmware off a spare modem I had. This wasn't my main modem, it wasn't even my backup modem - for me, there was no risk of loss if I had to bin the modem.
 
-![](/assets/images/2021/img_0693.jpg)
+![TP-Link Archer router's Advanced OpenVPN page showing VPN server options, a port setting and certificate controls.](/assets/images/2021/img_0693.jpg)
+
+*The OpenVPN settings on the older firmware. That is the feature I was trying to preserve.*
+{: .media-caption }
 
 Why did I even try this? It turns out someone I knew was actively using the OpenVPN software built into this TPG-supplied modem. A firmware update was reportedly removing that option. I was interested to see if I could force-flash the older firmware and disable automatic updates. Of course, hanging onto old firmware could also mean hanging onto its security holes...
 
-![](/assets/images/2021/img_0692.jpg)
+![Screenshot of a forum comment reporting that a provider-pushed firmware update would remove the router's VPN settings.](/assets/images/2021/img_0692.jpg)
+
+*The forum warning that prompted the experiment: update the modem and apparently lose the VPN option.*
+{: .media-caption }
 
 I found that the auto-update functionality could be disabled on this firmware by logging in with [the hidden super user password](https://www.marcelvarallo.com/so-we-cracked-the-archer-vr1600v-v2-super-user-password/), which TPG did not provide to the end user. The reported update was pushed through TR-069/CWMP, and the complaint was that OpenVPN disappeared afterwards. My spare (offline) modem still had the old firmware though. This phrase stuck - "anti-user behaviour".
 
-![](/assets/images/2021/img_0694.jpg)
+![TP-Link Archer VR1600v V2 Firmware Upgrade screen showing the installed 190228 firmware build and a Browse button for local upgrades.](/assets/images/2021/img_0694.jpg)
+
+*The donor modem's original firmware build, with its local upgrade interface ready and waiting.*
+{: .media-caption }
 
 Our goal now becomes, how to extract the existing firmware from the modem. We were running firmware version 0.1.0 0.9.1 v5006.0 build 190228 rel.72265n on our donor modem. Apparently [TPG changed the super user password](https://forums.whirlpool.net.au/archive/3yz2q0n9#r67949962) - which is good but also bad. Bad actors knowing your router super user password is bad, not being able to configure VoIP is bad though.
 
@@ -30,11 +42,17 @@ Most of day one was tracking down the serial TTL port / UART header location. Fi
 
 The OpenWrt Project provided a fair amount of knowledge on [serial ports](https://openwrt.org/docs/techref/hardware/port.serial), [debricking](https://openwrt.org/docs/guide-user/troubleshooting/generic.debrick) and [Broadcom BCM63xx hardware](https://openwrt.org/docs/techref/hardware/soc/soc.broadcom.bcm63xx). devttys0's [Reverse Engineering Serial Ports](https://web.archive.org/web/20210522202158/http://www.devttys0.com/2012/11/reverse-engineering-serial-ports/) helped too. [This Reddit comment thread](https://www.reddit.com/r/HomeNetworking/comments/cz1fus/archer_vr1600v_modem_router_can_i_install_openwrt/) helped me work out the chipset used. [Googling a bit](https://www.google.com/search?q=UART+port+on+TP+LINK) helped of course, it's all about keywords. CyberArk's [Accessing and Dumping Firmware Through UART](https://web.archive.org/web/20210418170153/https://www.cyberark.com/resources/threat-research-blog/accessing-and-dumping-firmware-through-uart) gave great insight into how the dumping process should look. [Router Serial or UART Port: How to find and Configure](https://web.archive.org/web/20210310093438/https://router-mod.blogspot.com/2018/09/router-serial-or-uart-port-how-to-find.html) gave me some valuable hints. No way! [DD-WRT serial-port pinouts](https://wiki.dd-wrt.com/wiki/index.php/Serial_port_pinouts#TP-Link_TL-WR941ND_v3) too?
 
-![](/assets/images/2021/img_0695.jpg)
+![Close-up of four empty through-hole pads on a green router board next to component markings C317, R283 and R279.](/assets/images/2021/img_0695.jpg)
+
+*Four likely UART pads, with nearby empty component footprints. The beginning of the soldering adventure.*
+{: .media-caption }
 
 This looks to be the UART header with solder pads for components C317, R283 and R279 nearby. Next was to guess as to [what the values might have been](https://forum.openwrt.org/t/tplink-ac1750-v4-serial-resistors-capacitor-values-solved/26364/9) or whether just to bridge them. I went with a wire bridge to start thanks to [this OpenWrt forum post](https://forum.openwrt.org/t/tplink-ac1750-v4-serial-resistors-capacitor-values-solved/26364/6). [This blog post](https://www.zerodayinitiative.com/blog/2019/9/2/mindshare-hardware-reversing-with-the-tp-link-tl-wr841n-router) had a great image half-way down. Ha ha!
 
-![](/assets/images/2021/img_0726.jpg)
+![Open TP-Link Archer VR1600v V1 board showing a Broadcom chip inside a metal frame, wireless circuitry and a row of yellow network sockets.](/assets/images/2021/img_0726.jpg)
+
+*A helpful V1 teardown photograph from another site. Similar to my V2, but definitely not the same revision.*
+{: .media-caption }
 
 Above is a V1 revision of the VR1600v taken from [the world's shittiest teardown](https://www.marcelvarallo.com/so-i-tore-apart-my-archer-vr1600v/) - which helped greatly, thank you! However, of course mine is a V2. Note the date code on the PCBs. V1 is 1850, that's Week 50 of 2018. My V2 date code is 2010, i.e. Week 10 of 2020. Overall the boards look **_very_** similar. Using the multimeter, we get the following on the likely serial header location.
 
@@ -59,43 +77,76 @@ RX (receive) will be less active.
 
 ```
 
-![](/assets/images/2021/img_0724.jpg)
+![Annotated circuit-board close-up marking four serial pads as TX, RX, ground and 3.3 V, with a suggested short between nearby pads.](/assets/images/2021/img_0724.jpg)
 
-![](/assets/images/2021/img_0725.jpg)
+*One of the serial-port reference images I used. Useful clues, but not a guaranteed pinout for my V2.*
+{: .media-caption }
+
+![Annotated TP-Link circuit board close-up with a four-pad serial port and a separate two-pad antenna connection identified by coloured labels.](/assets/images/2021/img_0725.jpg)
+
+*Another board layout to compare against, with the serial-port pads helpfully labelled.*
+{: .media-caption }
 
 Let's attach a header and make some bridges at the TX and RX pins. The two images above were useful clues from other TP-Link boards, but I still needed to check my V2 rather than assume its pinout matched.
 
-![](/assets/images/2021/img_0687.jpg)
+![Router PCB close-up showing a four-pin header and rough solder joints bridging pads marked R283 and R279.](/assets/images/2021/img_0687.jpg)
+
+*The first attempt at bridging the missing resistor positions. Yes, that is a bread tie!*
+{: .media-caption }
 
 Yes, the first bridge is a bread tie.
 
-![](/assets/images/2021/img_0688.jpg)
+![Wider view of a four-pin header soldered onto the router PCB, with a dark solder blob around two nearby component pads.](/assets/images/2021/img_0688.jpg)
+
+*The second bridge was hardly a masterpiece. At least the header was in place.*
+{: .media-caption }
 
 It was better than the second bridge... which just looks to be a blob of solder. I really need to not do things late at night on a work day.
 
-![](/assets/images/2021/img_0689.jpg)
+![Open TP-Link router with a small four-wire serial connector attached near its large black heatsink and several network ports.](/assets/images/2021/img_0689.jpg)
+
+*TX, RX and ground connected to the little header. Now to see whether anything useful comes down the line.*
+{: .media-caption }
 
 Looks good from the other side though! 😅 Connecting TX, RX and GND were all that mattered in my setup; I left the USB serial adapter's VCC disconnected. The header measured about 3.36 V, so I treated it as 3.3 V logic. Do not assume another board has the same pinout or voltage levels: verify them before connecting an adapter. The two resistor bridges were now bridged. Are TX and RX beaming anything down over serial from the Broadcom SoC now?
 
-![](/assets/images/2021/img_0696.jpg)
+![Terminal window filled with fragmented, overlapping 'read' messages and scattered zeros from a failed serial-output attempt.](/assets/images/2021/img_0696.jpg)
 
-![](/assets/images/2021/img_0697.jpg)
+*My first serial output looked less like useful data and more like somebody dropped a keyboard.*
+{: .media-caption }
+
+![Minicom terminal displaying overlapping router startup messages, garbled network text and misaligned characters.](/assets/images/2021/img_0697.jpg)
+
+*More serial gibberish. It looked as though something was there, just not where it ought to be!*
+{: .media-caption }
 
 Alright that isn't quite right. Flow settings maybe? Perhaps it's just a software setting in Minicom.
 
-![](/assets/images/2021/img_0698.jpg)
+![Minicom serial-port settings window showing /dev/ttyUSB0, 115200 8N1 and both hardware and software flow control set to No.](/assets/images/2021/img_0698.jpg)
+
+*Back into Minicom's serial settings. I hoped 115200 8N1 and disabled flow control might help.*
+{: .media-caption }
 
 Rejiggered some Minicom settings, trying again.
 
-![](/assets/images/2021/img_0699.jpg)
+![Minicom screen with badly misaligned router boot messages, partly readable NAND-related lines and a status bar at 115200 8N1.](/assets/images/2021/img_0699.jpg)
+
+*A whole lot of boot text, still wearing its scrambled trousers. Time to check the soldering.*
+{: .media-caption }
 
 Oh my goodness, it's still a mess. Let's revisit my incredible soldering and use a multimeter to probe.
 
-![](/assets/images/2021/img_0700.jpg)
+![Screenshot of an ohmmeter reference table with red notes comparing measured ground, VCC, TX and RX resistances and an open-line warning.](/assets/images/2021/img_0700.jpg)
+
+*The resistance checks suggested the RX connection was open. That was not an encouraging sign for my soldering.*
+{: .media-caption }
 
 Something wasn't right, see the first column, why is my RX open line? Bad soldering. Not surprised with the amount of flux on the board and I have no isopropyl on hand to clean it. A quick reflow and...
 
-![](/assets/images/2021/img_0701.jpg)
+![Readable Minicom output from the router showing Linux startup messages, DSP interrupt information and endpoint errors.](/assets/images/2021/img_0701.jpg)
+
+*A quick reflow later and suddenly the serial log was readable. I was rather pleased with that!*
+{: .media-caption }
 
 Well, I'll be damned. We have readable, formatted output. The full output is below.
 
@@ -1242,7 +1293,10 @@ open DNS error: No such file or directory
 
 Nailed it! Somehow. The boot log reports 134217728 bytes of RAM, or 128 MiB, and identifies the NAND as an ESMT F59L1G81MA with 131072 KiB, or 128 MiB, capacity. It identifies the SoC as BCM63167D0; BCM963268 is the CFE platform target, not evidence of a second main chip. Remember this is a TP-Link Archer VR1600v V2 (AU).
 
-![](/assets/images/2021/img_0702.jpg)
+![Minicom serial console displaying repeated 'Archer VR1600v login:' prompts beneath the router boot log.](/assets/images/2021/img_0702.jpg)
+
+*A login prompt! Great news, except I didn't actually have a working login.*
+{: .media-caption }
 
 Well that's promising, a login prompt. Except it's not useful without a valid login. One of the threads above had a potential login for another model. I don't remember trying it, but we need even root-ier access. Looking back at the boot code above we find this.
 
@@ -1253,13 +1307,19 @@ Well that's promising, a login prompt. Except it's not useful without a valid lo
 
 0.1 seconds to stop auto run. Sure why not! Let's see what happens.
 
-![](/assets/images/2021/img_0703.jpg)
+![Minicom boot log ending at a Broadcom CFE prompt with a long string of t characters after the short stop-auto-run window.](/assets/images/2021/img_0703.jpg)
+
+*The very short boot-interrupt window met a slightly excessive number of t presses. CFE at last!*
+{: .media-caption }
 
 I might have spammed the t key a little too much. That's new, a [CFE prompt](https://openwrt.org/docs/techref/bootloader/cfe).
 
 > **Common Firmware Environment, sometimes pronounced as 'cafe', is a firmware interface and bootloader developed by Broadcom for 32-bit and 64-bit system-on-a-chip systems.**
 
-![](/assets/images/2021/img_0704.jpg)
+![Broadcom CFE bootloader help screen listing commands including dn for dumping NAND and fb for finding bad blocks.](/assets/images/2021/img_0704.jpg)
+
+*CFE's help list looked promising. The dn command seemed like a place to start.*
+{: .media-caption }
 
 Running the help command gives us the lowdown on what's available. Let's start with something basic: `dn` for dumping the NAND.
 
@@ -1437,33 +1497,57 @@ CFE>
 
 The next part gets a little messy. Alright, messier. After trying [FlashDumpScript](https://github.com/waldo-irc/IOTToolkit/tree/master/FlashDumpScript) and getting tangled up in Python 2 versus Python 3 issues, I came across [this Polish forum discussion](https://web.archive.org/web/20230823000243/https://openrouter.info/forum/viewtopic.php?f=24&t=4818&start=0&_x_tr_sl=pl&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=sc). With [Google Translate's help](https://web.archive.org/web/20230822235816/https://openrouter-info.translate.goog/forum/viewtopic.php?f=24&t=4818&start=0&_x_tr_sl=pl&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=sc), it led me to [danitool's bootloader-dump-tools](https://github.com/danitool/bootloader-dump-tools) and [Depau's bcm-cfedump](https://github.com/Depau/bcm-cfedump).
 
-![](/assets/images/2021/img_0709.jpg)
+![Hexadecimal output with readable HTML tags and JavaScript text from the router's web-interface files in the ASCII column.](/assets/images/2021/img_0709.jpg)
+
+*Well, look at that: some HTML from the router's web interface. At least the data wasn't all nonsense!*
+{: .media-caption }
 
 Above is a quick peek inside the file being dumped. Why, that's HTML from the web interface.
 
-![](/assets/images/2021/img_0710.jpg)
+![Ubuntu terminal windows showing a Python dumping script starting an output file, with progress increasing from zero toward 1%.](/assets/images/2021/img_0710.jpg)
+
+*A firmware-dumping script finally started doing something. Time to leave it alone and see what appeared.*
+{: .media-caption }
 
 It was definitely doing something, so I left it to run overnight. [This guide](https://openwrt.org/docs/techref/hardware/soc/soc.broadcom.bcm63xx) was the key.
 
 ## Day 2
 
-![](/assets/images/2021/img_0711.jpg)
+![Terminal window showing a NAND dump's progress reaching 99% of 33,554,432 bytes.](/assets/images/2021/img_0711.jpg)
 
-![](/assets/images/2021/img_0712.jpg)
+*The first attempt got as far as 99% of its 32 MiB target. Was it the right data? Not so fast.*
+{: .media-caption }
+
+![Ubuntu directory listing including a test.bin file of 33,554,432 bytes alongside Python dump utilities.](/assets/images/2021/img_0712.jpg)
+
+*The first test.bin file had appeared. Only 32 MiB, which wasn't the full NAND capacity.*
+{: .media-caption }
 
 Hmmm, something was dumped. The output file was 33,554,432 bytes.
 
-![](/assets/images/2021/img_0720.jpg)
+![Web conversion tool showing that 32 megabytes equals 32,000,000 decimal bytes or 33,554,432 binary bytes.](/assets/images/2021/img_0720.jpg)
+
+*A quick number check confirmed the test file was 32 MiB, not 128 MiB.*
+{: .media-caption }
 
 And the winner is 32 MiB. The boot log reports 128 MiB of NAND, so this was clearly only a partial dump. Is it the right part of the firmware? Also probably not. Well, at least we know we can dump things somewhat.
 
-![](/assets/images/2021/img_0713.jpg)
+![Hex Fiend displaying test.bin and a search for bcm963xx_fs_kernel, with matching bytes highlighted deep in the file.](/assets/images/2021/img_0713.jpg)
 
-![](/assets/images/2021/img_0714.jpg)
+*A familiar boot-related string turned up in test.bin, although not at the offset I expected.*
+{: .media-caption }
+
+![Hex Fiend showing a downloaded Archer VR600v V2 firmware file with a highlighted bcm963xx_fs_kernel string near the start.](/assets/images/2021/img_0714.jpg)
+
+*The VR600v firmware had a similar boot string, but at a very different offset. A useful clue, not a match.*
+{: .media-caption }
 
 I couldn't find firmware for the TP-Link Archer VR1600v V2 online at the time, apart from that pesky auto-download function (TR-069) we were trying to work around. So I did a quick compare with some available firmware for the TP-Link Archer VR600v V2 and found similarities, albeit at different offsets. Progress is still progress.
 
-![](/assets/images/2021/img_0705.jpg)
+![Two terminal windows showing the cfenand.py script in GNU nano above raw CFE dn command output, including repeating 7D bytes.](/assets/images/2021/img_0705.jpg)
+
+*Comparing the script's expectations with the modem's CFE output. Those repeated 7Ds caught my eye.*
+{: .media-caption }
 
 One thing I did notice while poking around in cfenand.py via the dn command and our [VR600v firmware](https://www.tp-link.com/au/support/download/archer-vr600v/#Firmware) was the repeating pattern:
 
@@ -1474,21 +1558,33 @@ One thing I did notice while poking around in cfenand.py via the dn command and 
 
 This wasn't in the test.bin from day 1, but is definitely in the firmware from TP-Link for the Archer VR600v and it's right near the top.
 
-![](/assets/images/2021/img_0706.jpg)
+![Hex Fiend view of Archer VR600v V2 firmware highlighting repeated '7D' characters within an early bootloader-data region.](/assets/images/2021/img_0706.jpg)
+
+*There was the repeating 7D pattern in the VR600v file. At least some of the numbers looked familiar!*
+{: .media-caption }
 
 That's good, more similarities - and it shows I probably was dumping the (very) wrong way.
 
-![](/assets/images/2021/img_0707.jpg)
+![Full-width hex-editor view of nand.img showing CFE-style bootloader data and a readable bcm963xx_fs_kernel string in its ASCII column.](/assets/images/2021/img_0707.jpg)
+
+*It was rather easier to inspect the bootloader-looking bytes than to get a trustworthy dump out of the modem.*
+{: .media-caption }
 
 Viewing the code we are trying to dump is easier than dumping it, or so it would seem.
 
-![](/assets/images/2021/img_0708.jpg)
+![Ubuntu terminal launching bcm_cfedump with a nand_winner.img output file, reporting 667 of 65,536 pages read and a long estimated duration.](/assets/images/2021/img_0708.jpg)
+
+*I optimistically named it nand_winner.img and left another overnight run to do its thing.*
+{: .media-caption }
 
 Eventually, I entered a command that looked like it might do something. Full of hubris, I entered the file name as **_nand\_winner.img_** and left it running overnight.
 
 ## Day 3
 
-![](/assets/images/2021/img_0715.jpg)
+![Ubuntu terminal after bcm_cfedump reports 65,536 of 65,536 pages and 128.0 MB, returning to the shell prompt.](/assets/images/2021/img_0715.jpg)
+
+*The overnight run reached its reported 128 MiB target. That still didn't tell me if the bytes were correct.*
+{: .media-caption }
 
 It had dumped something overnight, with the progress display reporting 1.2 bytes per second... but we need to compare. Let's take the VR600v firmware again, as I still don't have a known-good VR1600v V2 dump to compare against. So far, we have these three versions to compare with nand\_winner.img.
 
@@ -1499,19 +1595,31 @@ Archer_VR600vV2_1.2.0_0.9.1_up_boot(200625)_2020-06-25_16.19.17.bin
 
 ```
 
-![](/assets/images/2021/img_0721.gif)
+![Animated hex-editor comparison cycling through three Archer VR600v V2 firmware versions, highlighting differing bootloader bytes including repeated 7D values.](/assets/images/2021/img_0721.gif)
+
+*Three VR600v firmware versions, one after another. The 7D patterns were similar, but not identical.*
+{: .media-caption }
 
 Hmm, there's differences in those fancy 7Ds we saw earlier. I should compare my firmware dump with all three and see if we have any large contiguous blocks in common.
 
-![](/assets/images/2021/img_0723.gif)
+![Animated hex-editor view switching between nand_winner.img and three Archer VR600v V2 firmware versions to compare nearby hexadecimal patterns.](/assets/images/2021/img_0723.gif)
+
+*Putting my candidate NAND dump alongside the three VR600v files. A few familiar patterns, with plenty of differences.*
+{: .media-caption }
 
 In common? Definitely, let's adjust the offset by 512 bytes.
 
-![](/assets/images/2021/img_0722.gif)
+![Animated hex-editor comparison cycling between nand_winner.img and three VR600v firmware versions at shifted offsets.](/assets/images/2021/img_0722.gif)
+
+*Another pass through the hex views, this time comparing the patterns with the offsets shifted.*
+{: .media-caption }
 
 Well we've definitely got something that [resembles](https://fma.fandom.com/wiki/Resembool) firmware. The early differences might include model-specific or configuration data, especially because searching the dump found my own TPG username. Comparing a VR1600v dump with VR600v firmware could not tell me what each changed region represented, though. Time for a factory restore and another overnight dump.
 
-![](/assets/images/2021/img_0716.jpg)
+![Dark terminal showing a second bcm_cfedump session writing nand_v2.img, with 3,266 of 65,536 pages reported.](/assets/images/2021/img_0716.jpg)
+
+*Another overnight attempt after the factory reset, this time into nand_v2.img.*
+{: .media-caption }
 
 Probably worth mentioning that inside [bcm\_cfedump.py](https://github.com/Depau/bcm-cfedump) the only settings I changed were the following. They were also in effect for the nand\_winner.img above. They may not be correct as I am using **_a lot_** of guess work. Here's our command and the changes we made to the code.
 
@@ -1544,21 +1652,36 @@ continue
 
 ## Day 4
 
-![](/assets/images/2021/img_0717.jpg)
+![Dark terminal showing bcm_cfedump completing 65,536 pages and listing nand_v2.img alongside nand_winner.img.](/assets/images/2021/img_0717.jpg)
 
-![](/assets/images/2021/img_0718.jpg)
+*Both overnight dumps were now on disk. Time to see how well they agreed.*
+{: .media-caption }
+
+![Dark Ubuntu terminal listing two 134,217,728-byte files named nand_v2.img and nand_winner.img.](/assets/images/2021/img_0718.jpg)
+
+*Same 128 MiB file size for both NAND dumps. Unfortunately, size alone doesn't mean matching contents.*
+{: .media-caption }
 
 The second dump has completed. Filesizes are the same, which should be expected. Comparing the two dumps in [Hex Fiend](https://hexfiend.com) shows the following:
 
-![](/assets/images/2021/img_0719.jpg)
+![Hex Fiend file comparison of nand_winner.img and nand_v2.img, highlighting a 16 KiB difference between the two files.](/assets/images/2021/img_0719.jpg)
+
+*Hex Fiend found a 16 KiB block of differences after the factory reset. So much for a perfectly clean slate!*
+{: .media-caption }
 
 Hmmm, that's not identical. Hex Fiend shows a 16 KiB region of differences between the two dumps. The factory restore certainly didn't give me the clean slate I was hoping for: my TPG username is still in there... 🤔
 
-![](/assets/images/2021/img_0690.jpg)
+![MacBook Pro displaying a serial terminal next to a dismantled TP-Link modem router with a black heatsink and network ports.](/assets/images/2021/img_0690.jpg)
+
+*The actual workbench: a laptop full of terminal messages beside the open donor router.*
+{: .media-caption }
 
 And that's it, that's as far as I got. Because the firmware has my credentials in it, I can't release it but hopefully some of the above might help you if you are trying to do something similar.
 
-![](/assets/images/2021/img_0691.jpg)
+![Open TP-Link Archer router inside its white plastic housing, showing the large black heatsink, four yellow network sockets, a blue socket and attached wires.](/assets/images/2021/img_0691.jpg)
+
+*Five days later and the modem was still in pieces. Plenty learnt, but no firmware image I could safely share.*
+{: .media-caption }
 
 I certainly learnt a lot from this exercise. Would I do it again? Probably not, but now the information is here if I ever do! 😄
 

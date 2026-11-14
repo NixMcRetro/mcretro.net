@@ -24,6 +24,11 @@ on:
       - 'about.md'
       - 'channels.md'
       - 'goodies.md'
+      - 'homepages/fishtankworld/**'
+      - 'homepages/goatpad/**'
+      - '.github/tests/restore-fishtank-gallery.py'
+      - '.github/tests/goatpad-audio.test.mjs'
+      - '.github/tests/fishtankworld-built.mjs'
       - '_layouts/default.html'
       - '_includes/sidebar.html'
       - 'assets/js/archive-calendar.js'
@@ -98,13 +103,25 @@ jobs:
       - name: Verify caption filtering with Ruby regression tests
         run: bundle exec ruby .github/tests/caption-excerpts.test.rb
 
+      - name: Reassemble and check original Fish Tank World gallery photographs
+        run: python3 .github/tests/restore-fishtank-gallery.py
+
       - name: Build site with Jekyll
         run: bundle exec jekyll build --destination _site
+
+      - name: Verify all restored photographs are present in the built site
+        run: python3 .github/tests/restore-fishtank-gallery.py --verify-built _site
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: '24'
+
+      - name: Verify Fish Tank World pages and built-site internal links
+        run: node .github/tests/fishtankworld-built.mjs _site
+
+      - name: Verify GOATPAD audio startup, sample loading and sequencer behaviour
+        run: node --test .github/tests/goatpad-audio.test.mjs
 
       - name: Verify generated blog, archives, metadata and feed captions
         run: node .github/tests/caption-excerpts-built.mjs _site

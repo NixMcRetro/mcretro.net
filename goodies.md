@@ -24,6 +24,9 @@ Hear the old-school modem connection, then dial into either a randomly selected 
 **🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**<br>
 A browser-based music maker originally created for SuperNick. Make some noise with synthesizers, keyboards, rhythms and songs. Bleep, bloop, bleep!
 
+**🐐 [GOATPAD 1337](/homepages/goatpad/)**<br>
+A 64-pad browser soundboard and sequencer from 2024, with drums, effects, bass, GOAT SOUL, and melodies. A strange little musical time capsule!
+
 **🎵 [Lunchbeat](/homepages/lunchbeat/)**<br>
 An original 1-bit groovebox running in your web browser, with an electronics project behind it. Sometimes the simplest sounds are the most entertaining!
 
@@ -39,6 +42,9 @@ Bend the bits of a Sega Mega Drive right in your browser! Load your own game ROM
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🗃️</span> Restored Historical Homepages</summary>
 
 The original HTML and artwork from these restored sites have made it back onto McRetro.net. No modern makeover here; these are the old-style pages as they were, with just the paths fixed where necessary.
+
+**🐟 [Fish Tank World](/homepages/fishtankworld/)**<br>
+The original aquarium homepage, with fish biographies, tank readings, animated artwork, and a restored [photo gallery](/homepages/fishtankworld/gallery/). Splash!
 
 **🐍 [Frank the Snake](/homepages/frank/)**<br>
 Frank's own homepage, snake facts and an original [photo gallery](/homepages/frank/gallery.html). A big snake with a big heart!
@@ -60,7 +66,6 @@ An old-fashioned nature homepage featuring a frog, a lizard and a few original p
 <details class="about-panel panel--teal" name="mcretro-goodies" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🚧</span> Still Under Construction</summary>
 
-- **[Fish Tank World](/homepages/fishtankworld/)**: Still needs its proper historical content restored.
 - **[GeoCities](/homepages/geocities/)**: Still needs its proper historical content restored.
 - **File Server**: Not ready yet. The promised 10 KB/s downloads remain a dream!
 - **Photo Gallery**: The gallery is still being restored.

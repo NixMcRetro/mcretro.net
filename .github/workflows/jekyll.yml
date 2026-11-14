@@ -30,7 +30,6 @@ on:
       - 'assets/js/mcretro-webring.js'
       - 'assets/js/header-taglines.js'
       - '.github/tests/modem-destinations.mjs'
-      - '.github/tests/header-taglines.mjs'
       - '.github/tests/archive-calendar.mjs'
       - '.github/tests/archive-calendar-built.mjs'
       - '.github/tests/csp-built.mjs'

@@ -12,6 +12,9 @@ on:
     paths:
       - '_posts/**'
       - 'blog/index.html'
+      - 'archive/index.html'
+      - '_includes/header.html'
+      - '_includes/auto-thumbnail.html'
       - '_includes/post-share.html'
       - '_layouts/archive.html'
       - '_plugins/without_media_captions.rb'

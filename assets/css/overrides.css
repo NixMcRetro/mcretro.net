@@ -420,8 +420,8 @@
 /* At 320px, keep the logo legible beside the fixed-size header controls. */
 @media screen and (max-width: 360px) {
   .site-logo {
-    font-size: 1.3rem;
-    letter-spacing: 0.1em;
+    font-size: clamp(1.125rem, 5.6vw, 1.3rem);
+    letter-spacing: 0.08em;
   }
 }
 

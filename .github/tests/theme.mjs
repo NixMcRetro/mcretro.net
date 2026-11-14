@@ -148,7 +148,7 @@ test('accordion headers use Archives blues in both modes without changing panel 
     '--archive-accent: #064584;'
   ]) assert.ok(lightPalette.includes(token), token);
   for (const token of [
-    '--accordion-neutral-bg: #F3EAC9;', '--accordion-neutral-hover: #E9DDB1;',
+    '--accordion-neutral-bg: #F3EAC9;', '--accordion-neutral-hover: var(--interactive-hover);',
     '--accordion-teal-bg: var(--archive-filled);',
     '--accordion-teal-hover: var(--archive-filled-hover);',
     '--accordion-teal-open: #DBEAFD;',
@@ -156,7 +156,7 @@ test('accordion headers use Archives blues in both modes without changing panel 
     '--accordion-accent: var(--archive-accent);'
   ]) assert.ok(light.includes(token), token);
   for (const token of [
-    '--accordion-neutral-bg: #2C3546;', '--accordion-neutral-hover: #39485E;',
+    '--accordion-neutral-bg: #2C3546;', '--accordion-neutral-hover: var(--interactive-hover);',
     '--accordion-teal-bg: var(--archive-filled);', '--accordion-teal-hover: var(--archive-filled-hover);',
     '--accordion-teal-open: #304762;', '--accordion-teal-open-hover: #395575;',
     '--accordion-accent: var(--archive-accent);'
@@ -296,4 +296,26 @@ test('Blog pagination is compact, accessible and retains numbered URLs', () => {
   assert.doesNotMatch(style, /\.pagination-bar a:hover\s*\{[^}]*font-weight:/);
   assert.match(style, /a\.page-number:hover,\s*\.arrow-link:hover\s*\{/);
   assert.doesNotMatch(style, /^\.page-number:hover,/m, "active page should not change on hover");
+});
+
+test('interactive hover backgrounds use themed blue without recolouring neutral surfaces', () => {
+  const light = style.split(':root[data-theme="dark"]')[0];
+  const dark = style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
+  assert.match(light, /--panel-subtle:\s*#F0EAD9;/);
+  assert.match(dark, /--panel-subtle:\s*#303A48;/);
+  assert.match(light, /--interactive-hover:\s*var\(--archive-filled-hover\);/);
+  assert.match(dark, /--interactive-hover:\s*var\(--archive-filled-hover\);/);
+  assert.match(style, /--code-bg:\s*#F0EAD9;/);
+  assert.match(style, /--pagefind-ui-tag:\s*var\(--panel-subtle\);/);
+  assert.match(style, /a\.page-number:hover,\s*\.arrow-link:hover\s*\{[^}]*background:\s*var\(--interactive-hover\);/);
+  assert.match(style, /\.theme-toggle:hover\s*\{\s*background:\s*var\(--interactive-hover\);/);
+  assert.match(style, /:root\[data-theme="dark"\] \.pagination-arrows \.arrow-link:hover\s*\{[^}]*background:\s*var\(--interactive-hover\);/);
+  assert.match(overrides, /\.post-full \.post-share__action:hover\s*\{[^}]*background:\s*var\(--interactive-hover\);/);
+  assert.match(overrides, /\.post-full \.post-share__action\.is-copied\s*\{[^}]*background:\s*var\(--interactive-hover\);/);
+  assert.match(overrides, /:root\[data-theme="dark"\] \.theme-toggle:hover\s*\{[^}]*background:\s*var\(--interactive-hover\);/);
+  assert.match(overrides, /:root\[data-theme="dark"\] \.nav-toggle:hover\s*\{[^}]*background:\s*var\(--interactive-hover\);/);
+  assert.match(overrides, /--accordion-neutral-hover:\s*var\(--interactive-hover\);/);
+  assert.match(overrides, /:root:not\(\[data-theme="dark"\]\) \.theme-toggle:hover\s*\{[^}]*background:\s*var\(--archive-filled-hover\);/);
+  assert.match(overrides, /\.mcretro-modem-close:hover/, 'Windows-style modem controls remain independently styled');
+  assert.doesNotMatch(style + overrides, /--panel-hover|var\(--panel-hover\)/, 'no interactive control uses the old neutral hover token');
 });

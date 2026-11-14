@@ -24,7 +24,10 @@ I did manage to get some of the other wires attached, but the routing wasn't par
 
 There's also a second recording from this rather unsuccessful adventure, including my attempt at stop-motion editing in Final Cut Pro X. Things can only get better!
 
-![Small surface-mount component beside an Australian one-dollar coin](/assets/images/2013/img_0419.jpg)
+![Tiny black surface-mount electronic component lying beside an Australian one-dollar coin with kangaroos for size comparison.](/assets/images/2013/img_0419.jpg)
+
+*And that's the microscopic component I knocked off the PlayStation board, next to a dollar coin for scale. Oops!*
+{: .media-caption }
 
 As with the previous programming attempt, the lack of a successfully programmed modchip meant there was only so far I could get anyway. Even perfectly installed wiring wasn't going to make much difference without a chip that actually worked.
 

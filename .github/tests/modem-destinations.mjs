@@ -289,7 +289,7 @@ test('Goodies and Explorer preserve approved dial destinations', () => {
   for (const name of ['win95-dialup-connection', 'win95-new-connection', 'win95-dialup-folder']) {
     assert.match(modem, new RegExp(name + '\\.svg'));
   }
-  assert.match(connection, /win95-dialup-connection\\.svg/);
+  assert.ok(connection.includes('win95-dialup-connection.svg'));
 });
 
 test('V6.7 schedules three complete beep then double-ring cycles before handshake', () => {

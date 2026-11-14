@@ -29,6 +29,18 @@ class Element {
   setAttribute(name, value) { this[name] = value; }
   addEventListener(type, handler) { this.listeners[type] = handler; }
   appendChild(child) { child.parentElement = this; this.children.push(child); }
+  getBoundingClientRect() {
+    const sample = Number(this.dataset.sample);
+    if (sample) {
+      const col = Math.floor(sample / 10) - 1;
+      const row = sample % 10 - 1;
+      const left = 100 + col * 60;
+      const top = 160 + row * 50;
+      return { left, top, right: left + 44, bottom: top + 44, width: 44, height: 44 };
+    }
+    return { left: 50, top: 100, right: 530, bottom: 600, width: 480, height: 500 };
+  }
+  scrollBy({ left }) { this.scrollLeft = (this.scrollLeft || 0) + left; }
   get nextElementSibling() {
     if (!this.parentElement) return null;
     return this.parentElement.children[this.parentElement.children.indexOf(this) + 1] || null;
@@ -51,6 +63,11 @@ function fixture({ failOnce = null } = {}) {
   const loadingMessage = new Element('p');
   const startAudio = new Element('button');
   const audioStatus = new Element('p');
+  const autoGoat = new Element('button');
+  autoGoat.disabled = true;
+  const goatSprite = new Element('div');
+  goatSprite.hidden = true;
+  const goatViewport = new Element('div');
   const buttonArea = new Element();
   const counters = Array.from({ length: 8 }, (_, i) => {
     const counter = new Element();
@@ -82,15 +99,19 @@ function fixture({ failOnce = null } = {}) {
       };
     }
   }
+  const docListeners = {};
   const document = {
     documentElement: root,
+    hidden: false,
+    addEventListener(type, handler) { docListeners[type] = handler; },
     createElement: tag => new Element(tag),
     getElementById(id) {
-      return { loadingScreen, loadingMessage, startAudio, audioStatus }[id] || null;
+      return { loadingScreen, loadingMessage, startAudio, audioStatus, autoGoat, goatSprite }[id] || null;
     },
     querySelector(selector) {
       if (selector === '.buttonArea') return buttonArea;
       if (selector === '.counter') return counters[0];
+      if (selector === '.sequence-viewport') return goatViewport;
       throw Error('Unknown selector: ' + selector);
     },
     querySelectorAll(selector) {
@@ -119,7 +140,7 @@ function fixture({ failOnce = null } = {}) {
   runInNewContext(source, {
     document, window, fetch, Promise, console,
     setTimeout(callback, ms) {
-      assert.ok(ms >= 0 && ms <= 2 * (60000 / 69), '69 BPM scheduler drifted: ' + ms);
+      assert.ok(ms >= 0 && ms <= 6100, 'Unexpected sequencer or Auto Goat timer: ' + ms);
       const id = ++nextTimerId;
       timers.set(id, { callback, ms });
       return id;
@@ -129,6 +150,16 @@ function fixture({ failOnce = null } = {}) {
   return {
     start: () => startAudio.listeners.click(),
     click: index => buttonArea.querySelectorAll('button')[index].listeners.click(),
+    toggleGoat: () => autoGoat.listeners.click(),
+    async goatStep() {
+      const entry = [...timers.entries()].find(([, t]) => t.ms === 650 || t.ms >= 3600);
+      assert.ok(entry, 'Auto Goat hop must be scheduled');
+      const [id, timer] = entry;
+      timers.delete(id);
+      clock += timer.ms / 1000;
+      await timer.callback();
+    },
+    hideDocument() { document.hidden = true; docListeners.visibilitychange(); },
     tick() {
       const first = timers.entries().next().value;
       if (!first) return;
@@ -146,7 +177,8 @@ function fixture({ failOnce = null } = {}) {
     get timers() { return timers; },
     get audioContexts() { return audioContexts; },
     get resumes() { return resumes; },
-    startAudio, loadingScreen, loadingMessage, audioStatus, counters
+    startAudio, loadingScreen, loadingMessage, audioStatus, counters, autoGoat,
+    goatSprite, goatViewport
   };
 }
 
@@ -199,9 +231,11 @@ test('the in-game HUD keeps lights aligned, original branding, and touch-friendl
   assert.doesNotMatch(source, /function updateSizes\(/);
 });
 
-test('reference frame uses decorative twin leads, white rails, and left/right footer elements', () => {
+test('reference frame uses one decorative cable, white rails, and left/right footer elements', () => {
   const styles = readFileSync(new URL('../../homepages/goatpad/styles.css', import.meta.url), 'utf8');
   assert.match(markup, /class="goatpad-cable"/);
+  assert.equal((markup.match(/class="cable-shadow"/g) || []).length, 1);
+  assert.equal((markup.match(/class="cable-highlight"/g) || []).length, 1);
   assert.match(markup, /class="brand-emblem"/);
   assert.match(markup, /class="brand-bar"[\s\S]*class="title"[\s\S]*class="brand-emblem"/);
   assert.match(styles, /\.goatpad-cable\s*\{[^}]*position:\s*absolute;/);
@@ -210,6 +244,51 @@ test('reference frame uses decorative twin leads, white rails, and left/right fo
   assert.match(styles, /\.buttonArea \.column button::before\s*\{[^}]*#faf8fd/);
   assert.match(styles, /\.buttonArea \.column:not\(:last-child\) button::after\s*\{[^}]*#f1edf8/);
   assert.match(styles, /\.goatpad-cable\s*\{\s*display:\s*none;/);
+});
+
+test('Auto Goat is opt-in, has an accessible toggle and preserves existing audio startup', async () => {
+  const styles = readFileSync(new URL('../../homepages/goatpad/styles.css', import.meta.url), 'utf8');
+  assert.match(markup, /id="autoGoat"[^>]*aria-pressed="false"/);
+  assert.match(markup, /id="goatSprite"[^>]*aria-hidden="true" hidden/);
+  assert.match(styles, /\.goat-sprite\[hidden\]/);
+  assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);
+  const app = fixture();
+  assert.equal(app.autoGoat.disabled, true);
+  assert.equal(app.goatSprite.hidden, true);
+  assert.equal(app.requests.length, 0);
+  await app.start();
+  assert.equal(app.autoGoat.disabled, false);
+  app.toggleGoat();
+  assert.equal(app.autoGoat['aria-pressed'], 'true');
+  assert.equal(app.goatSprite.hidden, false);
+  await app.goatStep();
+  assert.ok(app.pads.some(pad => pad.classList.contains('active')),
+    'First goat hop should select a pad');
+  assert.match(app.goatSprite.style.transform, /translate3d\(/);
+  app.toggleGoat();
+  assert.equal(app.autoGoat['aria-pressed'], 'false');
+  assert.equal(app.goatSprite.hidden, true);
+  assert.ok(app.pads.some(pad => pad.classList.contains('active')),
+    'Stopping Auto Goat leaves the mix available for manual editing');
+  assert.ok([...app.timers.values()].every(timer => timer.ms < 2000),
+    'Stopping removes all pending Auto Goat timers');
+});
+
+test('Auto Goat keeps each column exclusive, never exceeds six lanes and stops when hidden', async () => {
+  const app = fixture();
+  await app.start();
+  app.toggleGoat();
+  for (let i = 0; i < 18; i++) {
+    await app.goatStep();
+    const active = app.pads.filter(pad => pad.classList.contains('active'));
+    assert.ok(active.length <= 6, 'Too many competing lanes in goat mix');
+    assert.equal(new Set(active.map(pad => Math.floor(Number(pad.dataset.sample) / 10))).size,
+      active.length, 'Auto Goat selected more than one pad per column');
+  }
+  app.hideDocument();
+  assert.equal(app.autoGoat['aria-pressed'], 'false');
+  assert.equal(app.goatSprite.hidden, true);
+  assert.ok([...app.timers.values()].every(timer => timer.ms < 2000));
 });
 
 test('Start loads eight Opus files, not all 64, with user-gesture audio', async () => {

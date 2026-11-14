@@ -119,7 +119,7 @@ test('sidebar action links and monthly archive counts follow the active theme', 
 });
 
 
-test('sidebar Search and archive calendar use matching blue palettes in both themes', () => {
+test('sidebar Search follows action-button colours and the archive calendar keeps its blue palette', () => {
   const light = style.split(':root[data-theme="dark"]')[0];
   const dark = style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
   for (const token of ['--sidebar-button-bg: #064584;', '--sidebar-button-hover: #00346D;', '--archive-tile: #064584;', '--archive-hover: #00346D;']) {
@@ -128,8 +128,10 @@ test('sidebar Search and archive calendar use matching blue palettes in both the
   for (const token of ['--sidebar-button-bg: #93C5FD;', '--sidebar-button-hover: #BFDBFE;', '--archive-tile: #244D78;', '--archive-hover: #2A527F;']) {
     assert.ok(dark.includes(token), token);
   }
-  assert.match(style, /\.sidebar \.inline-search-form button\s*\{[^}]*background:\s*var\(--sidebar-button-bg\);/);
-  assert.match(style, /\.sidebar \.inline-search-form button:hover,\s*\.sidebar \.inline-search-form button:focus-visible\s*\{[^}]*background:\s*var\(--interactive-hover\);[^}]*color:\s*var\(--archive-filled-text\);/);
+  assert.match(style, /\.sidebar \.inline-search-form button\s*\{[^}]*background:\s*var\(--archive-empty\);[^}]*color:\s*var\(--link\);[^}]*font-weight:\s*700;/);
+  assert.match(style, /\.sidebar \.inline-search-form button:hover,\s*\.sidebar \.inline-search-form button:focus-visible\s*\{[^}]*background:\s*var\(--archive-filled\);[^}]*color:\s*var\(--link-hover\);/);
+  assert.match(style, /\.sidebar-action-link\s*\{[^}]*background:\s*var\(--archive-empty\);[^}]*color:\s*var\(--link\);/);
+  assert.match(style, /\.sidebar-action-link:hover,\s*\.sidebar-action-link:focus-visible\s*\{[^}]*background:\s*var\(--archive-filled\);/);
   assert.match(overrides, /\.sidebar a\.archive-calendar-month\.has-posts \{[^}]*background: var\(--archive-filled\);/);
   assert.match(overrides, /\.sidebar a\.archive-calendar-month\.has-posts:hover \{[^}]*background: var\(--archive-filled-hover\);/);
   assert.match(style, /--link:\s*#0009B5;/);
@@ -372,4 +374,13 @@ test('Goodies offers both dial-up destinations and keeps existing sections', () 
   assert.match(header, /🛸 Never give up, never surrender!<\/span>/u);
   assert.match(header, /🦭 It's time to seal the deal!!!<\/span>/u);
   assert.doesNotMatch(header, /🦭 It's time to seal the deal<\/span>/u);
+});
+
+test('rotating header taglines never rely on delayed, blank CSS animation slots', () => {
+  assert.match(style, /\.textcycle \.phrase\s*\{[^}]*transition: opacity 0\.35s linear;/);
+  assert.match(style, /\.textcycle \.phrase:first-child\s*\{ opacity: 1; \}/);
+  assert.match(style, /\.textcycle\.is-cycling \.phrase\s*\{ opacity: 0; \}/);
+  assert.match(style, /\.textcycle\.is-cycling \.phrase\.is-active\s*\{ opacity: 1; \}/);
+  assert.doesNotMatch(style, /@keyframes phraseCycleLong|animation-delay: 54s;/);
+  assert.match(style, /@media \(prefers-reduced-motion: reduce\)\s*\{[\s\S]*?\.textcycle\.is-cycling \.phrase:first-child\s*\{ opacity: 1; \}/);
 });

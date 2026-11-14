@@ -9,6 +9,7 @@ const sidebar = read('_includes/sidebar.html');
 const layout = read('_layouts/default.html');
 const style = read('assets/css/style.css');
 const overrides = read('assets/css/overrides.css');
+const blog = read('blog/index.html');
 function fixture(systemDark = false, stored = null, storageFails = false) {
   const handlers = {}, docHandlers = {}, mediaHandlers = {}, attrs = {};
   const btnAttrs = {}, metaAttrs = {};
@@ -261,4 +262,23 @@ test('About portrait reuses blog media-caption markup and compact photo spacing'
   assert.ok(overrides.includes('margin-bottom: 0.25rem;'), 'reuses the compact blog caption gap');
   assert.ok(!about.includes('Me-1988.jpg'));
   assert.ok(!about.includes('<picture>') && !about.includes('srcset='), 'no JXL fallback is added');
+});
+
+
+test('Blog pagination is compact, accessible and retains numbered URLs', () => {
+  assert.match(blog, /<nav class="pagination-wrapper" aria-label="Blog pagination">/);
+  assert.match(blog, /class="page-number current-page" aria-current="page"/);
+  assert.match(blog, /class="arrow-link pagination-prev" rel="prev" aria-label="Previous page"/);
+  assert.match(blog, /class="arrow-link pagination-next" rel="next" aria-label="Next page"/);
+  assert.match(blog, /class="pagination-status">Page \{\{ paginator.page \}\} of \{\{ paginator.total_pages \}\}/);
+  assert.match(blog, /href="\/blog\/page\{\{ page \}\}\/" class="page-number"/);
+  assert.match(blog, /href="\/blog\/page\{\{ paginator.total_pages \}\}\/" class="page-number"/);
+  assert.match(style, /\.pagination-bar\s*\{[^}]*border-top: 1px solid var\(--text\);/);
+  assert.match(style, /\.pagination-controls\s*\{[^}]*justify-content: center;/);
+  assert.match(style, /\.current-page\s*\{[^}]*background: var\(--archive-filled\);/);
+  assert.match(style, /\.page-number:focus-visible,\s*\.arrow-link:focus-visible\s*\{[^}]*outline: 3px solid var\(--focus\);/);
+  assert.match(overrides, /\.pagination-controls\s*\{[^}]*grid-template-columns: 2\.75rem minmax\(0, 1fr\) 2\.75rem;/);
+  assert.doesNotMatch(style, /\.pagination-bar a:hover\s*\{[^}]*font-weight:/);
+  assert.match(style, /a\.page-number:hover,\s*\.arrow-link:hover\s*\{/);
+  assert.doesNotMatch(style, /^\.page-number:hover,/m, "active page should not change on hover");
 });

@@ -921,76 +921,97 @@ pre code {
 /* ===========================
    PAGINATION
    =========================== */
+/* Reduce the cumulative whitespace below the final blog excerpt. */
+.blog-list:not(.archive-blog-list) .post-entry:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.blog-list:not(.archive-blog-list) .post-entry:last-child .read-more {
+  margin-bottom: 0;
+}
 .pagination-wrapper {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   margin-bottom: 2rem;
 }
 .pagination-bar {
-  border-top: 4px solid var(--text);
-  padding-top: 0;
+  border-top: 1px solid var(--text);
+  padding-top: 1.25rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  gap: 0.65rem;
+}
+.pagination-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.45rem;
+  max-width: 100%;
 }
 .pagination-numbers {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
 }
 .page-number,
-.pagination-gap {
+.pagination-gap,
+.arrow-link {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0.35rem 0.45rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
   font-family: Montserrat, "Helvetica Neue", sans-serif;
-  font-size: 1.2rem;
-  color: var(--link);
-  text-decoration: none;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1;
+  color: var(--link);
+  text-decoration: none;
 }
-.page-number:hover {
-  text-decoration: underline;
+a.page-number:hover,
+.arrow-link:hover {
+  background: var(--panel-hover);
+  color: var(--link-hover);
+  text-decoration: none;
+}
+.page-number:focus-visible,
+.arrow-link:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
 }
 .pagination-gap {
+  min-width: 1.25rem;
+  padding-inline: 0;
   color: var(--muted);
   cursor: default;
 }
 .current-page {
+  background: var(--archive-filled);
+  border-color: var(--archive-accent);
+  color: var(--archive-filled-text);
   font-weight: 700;
-  color: var(--text);
   cursor: default;
 }
-.pagination-arrows {
-  display: flex;
-  gap: 4px;
-}
 .arrow-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.2em;
-  height: 3.2em;
-  background: var(--text);
-  color: var(--page-bg);
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 1rem;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-.arrow-link:hover {
-  background: var(--link);
-  color: var(--button-text);
-  text-decoration: none;
+  background: var(--panel);
+  border-color: var(--border-soft);
 }
 .arrow-icon {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
-.pagination-bar a:hover {
-  text-decoration: none;
-  font-weight: bold;
+.pagination-status {
+  margin: 0;
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-size: 0.8125rem;
+  color: var(--muted);
 }
 
 /* ===========================

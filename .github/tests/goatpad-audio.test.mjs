@@ -137,8 +137,11 @@ function fixture({ failOnce = null } = {}) {
     AudioContext, innerHeight: 900, innerWidth: 1400,
     addEventListener() {}
   };
-  runInNewContext(source, {
-    document, window, fetch, Promise, console,
+  // A test-only timer reader isolates the Auto Goat motion timer from the audio clock.
+  const math = Object.create(Math);
+  math.random = () => .5;
+  const sandbox = {
+    document, window, fetch, Promise, console, Math: math,
     setTimeout(callback, ms) {
       assert.ok(ms >= 0 && ms <= 6100, 'Unexpected sequencer or Auto Goat timer: ' + ms);
       const id = ++nextTimerId;
@@ -146,18 +149,25 @@ function fixture({ failOnce = null } = {}) {
       return id;
     },
     clearTimeout(id) { timers.delete(id); }
-  }, { timeout: 4000 });
+  };
+  runInNewContext(source + '\nglobalThis.__goatTimerId = () => goatTimer;', sandbox,
+    { timeout: 4000 });
   return {
     start: () => startAudio.listeners.click(),
     click: index => buttonArea.querySelectorAll('button')[index].listeners.click(),
     toggleGoat: () => autoGoat.listeners.click(),
     async goatStep() {
-      const entry = [...timers.entries()].find(([, t]) => t.ms === 650 || t.ms >= 3600);
-      assert.ok(entry, 'Auto Goat hop must be scheduled');
-      const [id, timer] = entry;
+      const id = sandbox.__goatTimerId();
+      assert.ok(id !== null, 'Auto Goat stage must be scheduled');
+      const timer = timers.get(id);
+      assert.ok(timer, 'Auto Goat timer must exist');
       timers.delete(id);
       clock += timer.ms / 1000;
       await timer.callback();
+      return timer.ms;
+    },
+    pendingGoatCallback() {
+      return timers.get(sandbox.__goatTimerId())?.callback;
     },
     hideDocument() { document.hidden = true; docListeners.visibilitychange(); },
     tick() {
@@ -236,6 +246,9 @@ test('reference frame uses one decorative cable, white rails, and left/right foo
   assert.match(markup, /class="goatpad-cable"/);
   assert.equal((markup.match(/class="cable-shadow"/g) || []).length, 1);
   assert.equal((markup.match(/class="cable-highlight"/g) || []).length, 1);
+  assert.match(markup, /preserveAspectRatio="none"/);
+  assert.match(styles, /height: calc\\(100dvh \\+ 160px\\)/);
+  assert.match(styles, /bottom: calc\\(100% - 24px\\)/);
   assert.match(markup, /class="brand-emblem"/);
   assert.match(markup, /class="brand-bar"[\s\S]*class="title"[\s\S]*class="brand-emblem"/);
   assert.match(styles, /\.goatpad-cable\s*\{[^}]*position:\s*absolute;/);
@@ -246,45 +259,74 @@ test('reference frame uses one decorative cable, white rails, and left/right foo
   assert.match(styles, /\.goatpad-cable\s*\{\s*display:\s*none;/);
 });
 
-test('Auto Goat is opt-in, has an accessible toggle and preserves existing audio startup', async () => {
+test('Auto Goat only selects a pad after visible physical contact', async () => {
   const styles = readFileSync(new URL('../../homepages/goatpad/styles.css', import.meta.url), 'utf8');
   assert.match(markup, /id="autoGoat"[^>]*aria-pressed="false"/);
   assert.match(markup, /id="goatSprite"[^>]*aria-hidden="true" hidden/);
-  assert.match(styles, /\.goat-sprite\[hidden\]/);
-  assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);
+  assert.match(styles, /\\.goat-sprite\\.goat-landing \\.goat-glyph/);
+  assert.match(styles, /\\.buttonArea \\.column button\\.goat-hit/);
   const app = fixture();
   assert.equal(app.autoGoat.disabled, true);
   assert.equal(app.goatSprite.hidden, true);
   assert.equal(app.requests.length, 0);
   await app.start();
-  assert.equal(app.autoGoat.disabled, false);
   app.toggleGoat();
   assert.equal(app.autoGoat['aria-pressed'], 'true');
   assert.equal(app.goatSprite.hidden, false);
-  await app.goatStep();
-  assert.ok(app.pads.some(pad => pad.classList.contains('active')),
-    'First goat hop should select a pad');
-  assert.match(app.goatSprite.style.transform, /translate3d\(/);
+  await app.goatStep(); // Approach begins, no pad change yet
+  assert.equal(app.pads.filter(pad => pad.classList.contains('active')).length, 0);
+  assert.match(app.goatSprite.style.transform, /rotate\\(/);
+  assert.match(app.goatSprite.style.transform, /rotateY\\(/);
+  await app.goatStep(); // Goat lands, pad visibly depresses
+  assert.ok(app.goatSprite.classList.contains('goat-landing'));
+  const hit = app.pads.filter(pad => pad.classList.contains('goat-hit'));
+  assert.equal(hit.length, 1);
+  assert.ok(!hit[0].classList.contains('active'),
+    'A pad must not toggle until the goat has physically landed on it');
+  await app.goatStep(); // Goat hit changes the sound
+  assert.ok(hit[0].classList.contains('active'));
+  assert.ok(!hit[0].classList.contains('goat-hit'));
   app.toggleGoat();
   assert.equal(app.autoGoat['aria-pressed'], 'false');
   assert.equal(app.goatSprite.hidden, true);
-  assert.ok(app.pads.some(pad => pad.classList.contains('active')),
-    'Stopping Auto Goat leaves the mix available for manual editing');
-  assert.ok([...app.timers.values()].every(timer => timer.ms < 2000),
-    'Stopping removes all pending Auto Goat timers');
+  assert.ok(hit[0].classList.contains('active'),
+    'Stopping leaves the current mix intact');
 });
 
-test('Auto Goat keeps each column exclusive, never exceeds six lanes and stops when hidden', async () => {
+test('Stopping mid-air prevents even an already-planned hoof hit', async () => {
   const app = fixture();
   await app.start();
   app.toggleGoat();
-  for (let i = 0; i < 18; i++) {
+  await app.goatStep(); // An approach timer exists
+  const staleFlight = app.pendingGoatCallback();
+  assert.equal(typeof staleFlight, 'function');
+  app.toggleGoat();
+  assert.equal(app.autoGoat['aria-pressed'], 'false');
+  await staleFlight(); // Simulate a callback racing with cancellation
+  assert.equal(app.pads.filter(pad => pad.classList.contains('active')).length, 0);
+  assert.equal(app.goatSprite.hidden, true);
+  assert.ok([...app.timers.values()].every(timer => timer.ms < 2000));
+});
+
+test('Auto Goat mixes with one pad per lane, no more than six lanes, and foreground leaps', async () => {
+  const app = fixture();
+  await app.start();
+  app.toggleGoat();
+  let sawForeground = false;
+  let hitCount = 0;
+  let previousActive = 0;
+  for (let i = 0; i < 85; i++) {
     await app.goatStep();
     const active = app.pads.filter(pad => pad.classList.contains('active'));
-    assert.ok(active.length <= 6, 'Too many competing lanes in goat mix');
+    if (active.length !== previousActive) hitCount++;
+    previousActive = active.length;
+    assert.ok(active.length <= 6, 'Too many lanes in the goat mix');
     assert.equal(new Set(active.map(pad => Math.floor(Number(pad.dataset.sample) / 10))).size,
-      active.length, 'Auto Goat selected more than one pad per column');
+      active.length, 'More than one sound in a column');
+    if (/scale\\(2\\./.test(app.goatSprite.style.transform)) sawForeground = true;
   }
+  assert.ok(hitCount > 0, 'The goat should change the music after landing');
+  assert.ok(sawForeground, 'The goat should sometimes jump towards the viewer');
   app.hideDocument();
   assert.equal(app.autoGoat['aria-pressed'], 'false');
   assert.equal(app.goatSprite.hidden, true);

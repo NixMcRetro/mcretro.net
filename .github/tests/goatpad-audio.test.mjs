@@ -72,6 +72,8 @@ class Element {
 function fixture({ failOnce = null } = {}) {
   const startAudio = new Element('button');
   startAudio.hidden = false;
+  const goatStartScreen = new Element('div');
+  goatStartScreen.hidden = false;
   const audioStatus = new Element('p');
   const autoGoat = new Element('button');
   autoGoat.disabled = true;
@@ -79,6 +81,7 @@ function fixture({ failOnce = null } = {}) {
   const goatSprite = new Element('div');
   goatSprite.hidden = true;
   const goatViewport = new Element('div');
+  goatViewport.inert = true;
   const buttonArea = new Element();
   const counters = Array.from({ length: 8 }, (_, i) => {
     const counter = new Element();
@@ -117,7 +120,7 @@ function fixture({ failOnce = null } = {}) {
     addEventListener(type, handler) { docListeners[type] = handler; },
     createElement: tag => new Element(tag),
     getElementById(id) {
-      return { startAudio, audioStatus, autoGoat, goatSprite }[id] || null;
+      return { startAudio, goatStartScreen, audioStatus, autoGoat, goatSprite }[id] || null;
     },
     querySelector(selector) {
       if (selector === '.buttonArea') return buttonArea;
@@ -199,7 +202,7 @@ function fixture({ failOnce = null } = {}) {
     get timers() { return timers; },
     get audioContexts() { return audioContexts; },
     get resumes() { return resumes; },
-    startAudio, audioStatus, counters, autoGoat,
+    startAudio, goatStartScreen, audioStatus, counters, autoGoat,
     goatSprite, goatViewport
   };
 }
@@ -208,9 +211,13 @@ test('only Opus is referenced, PNG favicon used, and page load is network-idle',
   assert.match(markup, /id="startAudio"[^>]*>🏆 Music Non Stop 🏆<\/button>/);
   assert.doesNotMatch(markup, /id="loadingScreen"/);
   assert.doesNotMatch(markup, /id="loadingMessage"/);
+  assert.match(markup, /class="sequence-viewport"[^>]*inert/);
+  assert.match(markup, /class="sequence-frame"[\s\S]*class="goat-start-screen"[\s\S]*id="startAudio"/);
   assert.doesNotMatch(source, /Loading sound \s*["'+]/);
   const styles = readFileSync(new URL('../../homepages/goatpad/styles.css', import.meta.url), 'utf8');
   assert.match(styles, /#audioStatus\s*\{[^}]*position:\s*fixed;/);
+  assert.match(styles, /\.goat-start-screen\s*\{[^}]*position:\s*absolute;/);
+  assert.match(styles, /\.goat-start-screen\[hidden\]\s*\{[^}]*display:\s*none/);
   assert.match(markup, /id="audioStatus"/);
   assert.match(markup, /href="\.\/icon\.png"/);
   assert.match(source, /\.opus/);
@@ -359,9 +366,27 @@ test('Auto Goat mixes with one pad per lane, no more than six lanes, and foregro
   assert.equal(app.autoGoat['aria-pressed'], 'false');
 });
 
+test('goat visits all eight rows before repeating, including top and bottom pads', async () => {
+  const app = fixture();
+  await app.start();
+  const landings = [];
+  for (let i = 0; i < 100 && landings.length < 8; i++) {
+    await app.goatStep();
+    const contacted = app.pads.find(pad => pad.classList.contains('goat-hit'));
+    if (contacted) landings.push(Number(contacted.dataset.sample) % 10);
+  }
+  assert.equal(landings.length, 8, 'Goat must make eight visible landings');
+  assert.equal(new Set(landings).size, 8, 'Each of the eight rows should get a visit before reshuffling');
+  assert.ok(landings.includes(1), 'Row 1 is included');
+  assert.ok(landings.includes(8), 'Row 8 is included');
+  app.toggleGoat();
+});
+
 test('Music Non Stop click unlocks eight sounds and enables Auto Goat immediately', async () => {
   const app = fixture();
   assert.equal(app.startAudio.hidden, false);
+  assert.equal(app.goatStartScreen.hidden, false);
+  assert.equal(app.goatViewport.inert, true, 'Pad grid starts blocked by the splash');
   assert.equal(app.autoGoat.hidden, true);
   assert.equal(app.requests.length, 0, 'No audio downloads before explicit click');
   await app.start();
@@ -372,6 +397,8 @@ test('Music Non Stop click unlocks eight sounds and enables Auto Goat immediatel
   assert.equal(app.decoded.length, 8);
   assert.ok(app.pads.every(button => !button.disabled));
   assert.equal(app.startAudio.hidden, true);
+  assert.equal(app.goatStartScreen.hidden, true, 'Curtain disappears once audio is ready');
+  assert.equal(app.goatViewport.inert, false, 'The underlying pad grid becomes interactive');
   assert.equal(app.autoGoat.hidden, false);
   assert.equal(app.autoGoat['aria-pressed'], 'true');
   assert.equal(app.goatSprite.hidden, false);
@@ -387,6 +414,8 @@ test('failed initial audio shows an unobtrusive retryable error', async () => {
   await app.start();
   assert.equal(app.startAudio.disabled, false);
   assert.equal(app.startAudio.hidden, false);
+  assert.equal(app.goatStartScreen.hidden, false, 'Failed startup leaves retry available');
+  assert.equal(app.goatViewport.inert, true);
   assert.equal(app.autoGoat.hidden, true);
   assert.ok(app.pads.every(button => button.disabled));
   assert.match(app.audioStatus.textContent, /try again/);

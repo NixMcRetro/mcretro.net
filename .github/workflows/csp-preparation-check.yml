@@ -27,7 +27,7 @@ on:
       - 'assets/js/mobile-navigation.js'
       - 'assets/js/search-page.js'
       - 'assets/js/random-post.js'
-      - 'assets/js/mcretro-webring.js'
+      - 'assets/js/mcretro-dialup.js'
       - 'assets/js/header-taglines.js'
       - '.github/tests/modem-destinations.mjs'
       - 'assets/data/random-post-urls.json'
@@ -59,7 +59,7 @@ on:
       - 'assets/js/mobile-navigation.js'
       - 'assets/js/search-page.js'
       - 'assets/js/random-post.js'
-      - 'assets/js/mcretro-webring.js'
+      - 'assets/js/mcretro-dialup.js'
       - 'assets/js/header-taglines.js'
       - '.github/tests/modem-destinations.mjs'
       - 'assets/data/random-post-urls.json'
@@ -88,7 +88,7 @@ jobs:
           node --check assets/js/mobile-navigation.js
           node --check assets/js/search-page.js
           node --check assets/js/random-post.js
-          node --check assets/js/mcretro-webring.js
+          node --check assets/js/mcretro-dialup.js
           node --check assets/js/archive-calendar.js
           node --check .github/tests/modem-destinations.mjs
           node --check .github/tests/script-tags.mjs

@@ -64,8 +64,10 @@ function fixture({ failOnce = null } = {}) {
   const requests = [], decoded = [], played = [];
   const timers = new Map();
   let nextTimerId = 0, audioContexts = 0, resumes = 0, failed = false;
+  let clock = 0;
   class AudioContext {
     constructor() { audioContexts++; this.state = 'suspended'; this.destination = {}; }
+    get currentTime() { return clock; }
     async resume() { resumes++; this.state = 'running'; }
     async decodeAudioData(data) {
       const key = new Uint8Array(data)[0];
@@ -116,18 +118,27 @@ function fixture({ failOnce = null } = {}) {
   };
   runInNewContext(source, {
     document, window, fetch, Promise, console,
-    setInterval(callback, ms) {
-      assert.equal(ms, 860);
+    setTimeout(callback, ms) {
+      assert.ok(ms >= 0 && ms <= 2 * (60000 / 69), '69 BPM scheduler drifted: ' + ms);
       const id = ++nextTimerId;
-      timers.set(id, callback);
+      timers.set(id, { callback, ms });
       return id;
     },
-    clearInterval(id) { timers.delete(id); }
+    clearTimeout(id) { timers.delete(id); }
   }, { timeout: 4000 });
   return {
     start: () => startAudio.listeners.click(),
     click: index => buttonArea.querySelectorAll('button')[index].listeners.click(),
-    tick() { for (const callback of [...timers.values()]) callback(); },
+    tick() {
+      const first = timers.entries().next().value;
+      if (!first) return;
+      const [id, timer] = first;
+      timers.delete(id);
+      clock += timer.ms / 1000;
+      timer.callback();
+    },
+    advance(ms) { clock += ms / 1000; },
+    get nextDelay() { return timers.values().next().value?.ms ?? null; },
     get pads() { return buttonArea.querySelectorAll('button'); },
     get requests() { return requests; },
     get decoded() { return decoded; },
@@ -230,6 +241,19 @@ test('same-column selection is exclusive and the original alternating rhythm rem
   assert.deepEqual(app.played, [12]);
   for (let i = 0; i < 8; i++) app.tick();
   assert.deepEqual(app.played, [12], 'Full-length sounds skip the alternate bar');
+});
+
+test('upstream 69 BPM scheduler corrects drift after tab throttling', async () => {
+  const app = fixture();
+  await app.start();
+  await app.click(0);
+  assert.ok(Math.abs(app.nextDelay - 60000 / 69) < 0.001, 'Should use 69 BPM');
+  app.advance(16000); // Simulate a tab suspended for sixteen seconds
+  app.tick();
+  assert.ok(Math.abs(app.nextDelay - 60000 / 69) < 0.001,
+    'Throttling should not produce rapid catch-up beats');
+  await app.click(0);
+  assert.equal(app.timers.size, 0, 'Deselected pads stop the clock entirely');
 });
 
 test('historical Goodies links remain intact', () => {

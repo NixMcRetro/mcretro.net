@@ -34,15 +34,27 @@ And here's Prince of Persia running with the Sound Blaster installed. I didn't h
 
 Finally, a quick look at Space Harrier. It's certainly playable in the sense that the game runs, although the frame rate gives me plenty of time to think about my next move. The real challenge turned out to be working out how to stop the game once I'd finished!
 
-![](/assets/images/2012/img_0271.jpg)
+![IBM PS/2 Model 30 desktop computer on a workbench, with its floppy-drive slot, large red power switch and a loose small speaker resting on top.](/assets/images/2012/img_0271.jpg)
 
-![](/assets/images/2012/img_0270.jpg)
+*Here's my IBM PS/2 Model 30, complete with that enormous red power switch. The little speaker sitting on top is part of the bench chaos!*
+{: .media-caption }
+
+![IBM PS/2 Model 30 with the top cover removed, exposing its hard drive and power supply; a monitor behind it displays Prince of Persia.](/assets/images/2012/img_0270.jpg)
+
+*The Model 30 open on the bench while Prince of Persia gets a run. The Sound Blaster makes this old 8086 a lot more fun.*
+{: .media-caption }
 
 There are plenty more photographs in the [photo gallery](/goodies/), and I'll be taking a closer look at the internals and possible upgrades in the related articles.
 
-![](/assets/images/2012/img_0269.jpg)
+![Close-up of the round IBM Personal System/2 Model 30 badge embossed on the computer's textured beige case.](/assets/images/2012/img_0269.jpg)
 
-![](/assets/images/2012/img_0268.jpg)
+*That round PS/2 Model 30 badge. It looks the part, even though this 8086 version is quite different from the later 286 model.*
+{: .media-caption }
+
+![Close-up of a yellow Panasonic BR-2/3A 3 V lithium backup battery mounted inside the IBM PS/2.](/assets/images/2012/img_0268.jpg)
+
+*The original-looking Panasonic lithium battery. I couldn't believe it was still showing around 3 V after all those years!*
+{: .media-caption }
 
 **Sources**
 

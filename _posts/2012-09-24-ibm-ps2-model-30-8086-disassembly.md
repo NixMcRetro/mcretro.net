@@ -14,17 +14,35 @@ Forgot I uploaded this giant video... This IBM PS/2 Model 30 sure was a fun beas
 
 The video above is the complete disassembly and reassembly, so if you have an hour to spare you can watch the whole thing. Be sure to watch all sixty minutes! Ahhh... optional viewing, I guess. The photographs below show some of the more interesting parts of the machine without requiring quite that level of commitment.
 
-![](/assets/images/2012/img_0272.jpg)
+![Large green IBM PS/2 Model 30 motherboard removed from its chassis, with expansion connectors, memory chips and rear I/O sockets exposed.](/assets/images/2012/img_0272.jpg)
 
-![](/assets/images/2012/img_0276.jpg)
+*The Model 30 motherboard out on the bench. It's a big, tidy-looking board, with more connectors to investigate than I expected.*
+{: .media-caption }
 
-![](/assets/images/2012/img_0275.jpg)
+![Disassembled IBM PS/2 Model 30 components spread across a blue workbench, including the hard drive, floppy drive, expansion cards, cables and riser board.](/assets/images/2012/img_0276.jpg)
 
-![](/assets/images/2012/img_0277.jpg)
+*Once everything started coming out of the Model 30, the bench filled up quickly. There's a lot packed into that little case!*
+{: .media-caption }
 
-![](/assets/images/2012/img_0274.jpg)
+![IBM PS/2 Model 30 stripped chassis, separate front-panel pieces and top cover laid out with pliers and loose screws on a blue workbench.](/assets/images/2012/img_0275.jpg)
 
-![](/assets/images/2012/img_0273.jpg)
+*Finally got those stubborn front-panel clips sorted. The Model 30 is now in enough pieces to give the case a proper clean.*
+{: .media-caption }
+
+![IBM PS/2 Model 30 hard drive, floppy drive, power supply, ribbon cables and circuit boards laid out separately on a blue bench.](/assets/images/2012/img_0277.jpg)
+
+*The power supply and drives laid out beside the rest of the Model 30. That power supply looks as though it means business!*
+{: .media-caption }
+
+![Empty metal chassis of the IBM PS/2 Model 30 on a blue workbench, surrounded by its detached plastic bezels, screws and hand tools.](/assets/images/2012/img_0274.jpg)
+
+*Almost down to a bare shell. After wrestling with all those flat-blade screws, at least I've got the case apart!*
+{: .media-caption }
+
+![Close-up of an MN8086-2 processor marked Matsushita and Intel on the IBM PS/2 motherboard, with an oscillator module below it.](/assets/images/2012/img_0273.jpg)
+
+*There it is: the MN8086-2 at the heart of this Model 30. Definitely the early 8086 machine, not the 286 I'd hoped for.*
+{: .media-caption }
 
 I didn't have a camera stand for this one, so filming the disassembly was a bit of a juggling act. Taking the lid off was easy enough, though. It slid backwards and lifted away, provided I could find a spare hand to help. That would have been rather useful while holding the camera!
 

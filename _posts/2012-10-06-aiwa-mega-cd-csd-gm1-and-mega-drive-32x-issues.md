@@ -8,7 +8,10 @@ share_description: >-
   Two rare Aiwa Mega-CD CSD-GM1 machines arrive with problems, including cracked circuit boards and bad audio. Meanwhile the 32X video mystery points towards the host Mega Drive. 🔧
 ---
 
-![](/assets/images/2012/img_0280.jpg)
+![Front view of a blue Aiwa CSD-GM1 radio-cassette unit, with two speaker grilles, a cassette window, central playback buttons and a Mega Drive emblem.](/assets/images/2012/img_0280.jpg)
+
+*One of the Aiwa CSD-GM1 units I brought home. This is the rougher one, and getting it to power on again is the first challenge.*
+{: .media-caption }
 
 ### Aiwa Mega-CD CSD-GM1
 

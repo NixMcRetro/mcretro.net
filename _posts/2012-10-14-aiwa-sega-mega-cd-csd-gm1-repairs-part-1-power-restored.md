@@ -13,9 +13,15 @@ share_description: >-
 
 Progress was her middle name. Success was her first. Not too sure what her last name was at this point. Still unwritten perhaps! As you can see from the video, repairs on the Aiwa Mega-CD CSD-GM1 are progressing in the usual fashion. I fix one problem, and another three appear to take its place.
 
-![](/assets/images/2012/img_0299.jpg)
+![Close-up of the Aiwa circuit board's green solder side, with orange and green jumper wires bridging an area of damaged copper tracks.](/assets/images/2012/img_0299.jpg)
 
-![](/assets/images/2012/img_0300.jpg)
+*The first jumper-wire repairs on the battered Aiwa board. It is starting to look like it might live again!*
+{: .media-caption }
+
+![Another close-up of the Aiwa board showing several green wires soldered across the traces, with orange and black leads nearby.](/assets/images/2012/img_0300.jpg)
+
+*More green jumper wires, all trying to put the broken Aiwa tracks back into one piece. A fiddly business!*
+{: .media-caption }
 
 The biggest success so far is getting power back into the damaged machine. I've been repairing the broken tracks on the mainboard with wires and solder, and things are finally starting to come together. It's a considerable improvement over having a completely dead Aiwa sitting on the workbench.
 
@@ -25,13 +31,19 @@ One interesting discovery is that the video quality actually looks better than t
 
 The little front indicator is lighting up too. It's red, by the way, not pink! Don't let the camera fool you. Unfortunately, I still can't get proper sound through the speakers or headphone socket, so the audio circuitry is another mystery waiting to be solved.
 
-![](/assets/images/2012/img_0302.jpg)
+![Samsung television displaying the Japanese Sega Mega-CD 2 startup screen, with Sonic, the Mega-CD 2 logo and '© 1993 SEGA Ver2.11'.](/assets/images/2012/img_0302.jpg)
+
+*The Mega-CD startup screen! Getting that far with a borrowed mechanism was a rather lovely milestone.*
+{: .media-caption }
 
 The original CD mechanism is going to be another adventure entirely. I suspect the KSS-210B optical pickup may be faulty and I've already ordered a replacement, although I haven't proved that's the only problem. There's also a triangular piece of PCB physically broken off the CD board, which I managed to find underneath the mainboard when I dismantled the machine.
 
 Now I just need to reconnect all those broken tracks, including the ones running towards the tiny pins on the damaged chip. Simple! Well, perhaps not quite as simple as I'd like, but at least I've got the missing piece and something to work with.
 
-![](/assets/images/2012/img_0301.jpg)
+![Blue Aiwa Mega-CD Game Unit with its lower circuit board and connector exposed, propped on top of the partly dismantled Aiwa stereo.](/assets/images/2012/img_0301.jpg)
+
+*The borrowed Mega-CD Game Unit sitting above the opened stereo. Not pretty, but it was enough to test the game hardware.*
+{: .media-caption }
 
 Power is still the bigger mystery. I've been comparing the regulator outputs between my two CSD-GM1 units and finding differences of as much as 14 V at some of the points I've measured. That's not something I want to start connecting blindly, especially when I've only just managed to revive the damaged mainboard.
 

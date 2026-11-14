@@ -31,19 +31,34 @@ One possibility is to experiment with power through the C-cell battery connectio
 
 More details as they happen can be found over at the [ASSEMbler Games forums](https://web.archive.org/web/20130920141927/http://www.assemblergames.com/forums/showthread.php?42186-Aiwa-Mega-CD-CSD-GM1-Mainboard-Repair).
 
-![](/assets/images/2012/img_0305.jpg)
+![Two partially disassembled blue Aiwa Mega-CD game modules side by side, with their brown circuit boards and edge connectors exposed; a loose front control panel lies nearby.](/assets/images/2012/img_0305.jpg)
+
+*Both Aiwa game units on the bench for comparison. At least I can borrow parts while I work out what each one needs.*
+{: .media-caption }
 
 There are some definite cosmetic differences between the two units as well. I've been comparing them quite closely while trying to work out which parts can be borrowed from one machine to test the other.
 
-![](/assets/images/2012/img_0306.jpg)
+![Inside the opened Aiwa CSD-GM1 cabinet, showing a metal shielding plate, wiring and a cassette mechanism; a multimeter rests beside the case.](/assets/images/2012/img_0306.jpg)
+
+*I'm still tracing the Aiwa's power arrangement. There are plenty of connections to check before I can trust either machine.*
+{: .media-caption }
 
 The transformer sits behind that metal plate, and it's becoming one of the more interesting parts of this investigation. Not necessarily interesting in a good way, mind you!
 
-![](/assets/images/2012/img_0303.jpg)
+![Partly dismantled blue Aiwa CSD-GM1 with its cassette and control panels removed and a green circuit board lifted above the open cabinet.](/assets/images/2012/img_0303.jpg)
 
-![](/assets/images/2012/img_0304.jpg)
+*One Aiwa in rather spectacular pieces. It is getting power again, but there is still plenty to sort out.*
+{: .media-caption }
 
-![](/assets/images/2012/img_0307.jpg)
+![Close-up of the Aiwa Mega-CD circuit board lifted from the cabinet, showing a torn-away section of PCB beside a rectangular copper-coloured shield.](/assets/images/2012/img_0304.jpg)
+
+*That missing chunk of PCB is still alarming. Yet the Mega Drive section has at least shown signs of life.*
+{: .media-caption }
+
+![Film still from Monty Python and the Holy Grail showing a white-clad knight facing a black-armoured knight in a wooded clearing.](/assets/images/2012/img_0307.jpg)
+
+*'Tis but a scratch! This joke felt very appropriate for the battered Aiwa, even if its damaged boards are rather less funny.*
+{: .media-caption }
 
 Tis but a scratch... or maybe it's just a flesh wound! :D There's still an awful lot of damage to sort out, but at least the Mega Drive section has given me a reason to keep going.
 

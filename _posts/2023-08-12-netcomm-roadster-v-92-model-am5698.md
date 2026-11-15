@@ -12,27 +12,45 @@ share_description: >-
 
 Back in mid-2022 I was given this modem as a gift, and while I wasn't looking for any V.92 modems, I figured I'd document it. While I tend to be a little more [V.32 or V.34](https://en.wikipedia.org/wiki/List_of_ITU-T_V-series_recommendations) inclined, I am open to the idea of V.92 modems doing the work of a V.34 modem. Maybe I just really like the old Rockwell chipsets more than the later [Conexant Systems](https://en.wikipedia.org/wiki/Conexant) ones.
 
-![](/assets/images/2023/img_1079.jpg)
+![Underside of the translucent blue NetComm Roadster V.92 AM5698 modem, showing a label specifying 7.5 V DC, 450 mA and its serial-number sticker.](/assets/images/2023/img_1079.jpg)
+
+*The underside has the important bit: 7.5 V DC at 450 mA. Pity the power plugs on these Roadsters can't all agree on a size.*
+{: .media-caption }
 
 Externally it is marked as a NetComm Roadster V.92 model AM5698, serial T510001CN0251. The label specifies 7.5 V DC, 450 mA, and I recorded the input as centre-positive. That's this unit's setup, rather than a specification for every NetComm AM56XX or Banksia Wave SP modem. The video even shows how irritating the power plugs can be: one other Roadster plug was loose in this socket, while the plug from this modem wouldn't fit the other unit at all. So much for keeping a single convenient power adapter for the modem shelf.
 
-![](/assets/images/2023/img_1076.jpg)
+![Close-up of the Roadster V.92 modem circuit board showing a large Conexant chip, an ATS-122 module, several electrolytic capacitors and the telephone socket.](/assets/images/2023/img_1076.jpg)
+
+*Under the blue shell: a Conexant chipset and plenty of capacitors. Apparently I was going to get the soldering iron out again.*
+{: .media-caption }
 
 Internally, the PCB is marked ST309 REV B. The component date codes point to 2004, although they don't pin down the finished modem's exact manufacturing date. That made the components under 20 years old when it came across my desk. There were 13 capacitors, most if not all STONE branded. Make note of those capacitor heights. I might have made a slight misstep when replacing them. More on that later.
 
-![](/assets/images/2023/img_1077.jpg)
+![Close-up of the NetComm Roadster V.92 circuit board populated with black Rubycon YXF electrolytic capacitors beside the serial connector and Conexant chip.](/assets/images/2023/img_1077.jpg)
+
+*Fresh Rubycon YXF capacitors were in place. Then I tried to close the modem and discovered the little problem with their height.*
+{: .media-caption }
 
 Oh, what's that? We're just jumping straight into the capacitors on this one? Well there you go! Mostly Rubycon YXF series were used, but look what happens when I try to put the case back together...
 
-![](/assets/images/2023/img_1078.jpg)
+![Low-angle view inside the blue modem case showing the speaker directly above several tall electrolytic capacitors, with very little clearance.](/assets/images/2023/img_1078.jpg)
+
+*Ah. The speaker sits right where the taller capacitors need to go. A few millimetres can ruin a perfectly good recap.*
+{: .media-caption }
 
 Dammit! That speaker does not have the clearance it needs. I need the ultra short capacitors. Slap in some shorter ZLG series caps and like magic...
 
-![](/assets/images/2023/img_1080.jpg)
+![NetComm Roadster V.92 circuit board on blue cloth after replacement capacitors were fitted, with shorter ZLG capacitors among the black and silver components.](/assets/images/2023/img_1080.jpg)
+
+*Shorter ZLG capacitors to the rescue. The circuit board could finally go back into its case without arguing with the speaker.*
+{: .media-caption }
 
 Perfect! Most of the affected originals were 10 uF, 25 V parts. I replaced some with 50 V parts, which increased the voltage rating but also made the cans too tall for the space under the speaker. That is not "derating" the capacitor; derating means operating a component below its rating. The shorter ZLG parts solved the mechanical problem. 😅 C25 was a 22 uF, 63 V part, with another little surprise waiting for me.
 
-![](/assets/images/2023/img_1081.jpg)
+![Assembled translucent blue NetComm Roadster V.92 modem beside a black Cisco device, with the modem's red power indicator illuminated.](/assets/images/2023/img_1081.jpg)
+
+*Back together, and looking rather good in blue. C25's original non-polar capacitor is a reminder to check the circuit, not just the PCB markings.*
+{: .media-caption }
 
 C25 was the odd one out: the fitted 22 uF, 63 V capacitor was bipolar or non-polar. [Jon](https://damntechnology.blogspot.com) suggested that the factory might simply have used what it had on hand, and I took the polarity mark on the PCB as confirmation. That was a theory, not a circuit check. A non-polar electrolytic may be deliberate where the voltage can reverse, so a polar replacement should only be used after checking the circuit and confirming the actual voltage polarity.
 

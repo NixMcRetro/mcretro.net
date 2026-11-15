@@ -8,17 +8,26 @@ share_description: >-
   Three months into hormone therapy, a February 2024 blood test brings questions about calcium, phosphate, ALT and progesterone. More investigation ahead. 🧪
 ---
 
-![](/assets/images/2024/img_1257.jpg)
+![Handwritten medication schedule on white paper held to a refrigerator by magnets, with several doses crossed out and progesterone and an implant noted below.](/assets/images/2024/img_1257.jpg)
+
+*My ever-changing medication plan, complete with scribbles and cross-outs. Quite the evolving masterpiece on the fridge!*
+{: .media-caption }
 
 A few milestones have been achieved this month. I've reached my third month of gender-affirming hormone therapy (GAHT) and was able to get an estradiol implant (200 mg, compounded). I stopped pregabalin because it wasn't helping my anxiety symptoms, although it had helped with sleep. I also ceased indometacin successfully. Hemicrania continua is [not being so continua now](/nixs-brains-mri-scan-september-2023/).
 
-![](/assets/images/2024/img_1259.jpg)
+![Biochemistry results across four dates, with red stars beside phosphate readings of 0.69 and 0.68 mmol/L and ALT readings of 45 and 21 U/L.](/assets/images/2024/img_1259.jpg)
+
+*The February blood chemistry numbers, with my red asterisks on phosphate and ALT. Interesting changes to follow up, not a mystery solved by one panel.*
+{: .media-caption }
 
 My phosphate, calcium and ALT levels. Ahhh yes. Let's start with the [ALT](https://en.wikipedia.org/wiki/Alanine_transaminase). Mine fell from 45 to 21 U/L after I ceased indometacin. Maybe the medication had something to do with it, although the timing alone wasn't enough to know. I also took milk thistle hoping to keep the old liver in tip top shape - with some theories about interesting consequences. I'll circle back to that!
 
 Phosphate and calcium: I wondered whether the lower numbers were necessarily a bad thing. An ionised calcium test was ordered and came back in range, as did the other calcium results this time. I'd changed my calcium supplement to a non-plant-based formula because I don't drink milk. Calcium was OK on this test, although I couldn't tell whether changing supplements had actually made the difference.
 
-![](/assets/images/2024/img_1262.jpg)
+![Phosphate History table listing results from 2017 to 2024, with 0.69 and 0.68 marked LOW below the heading 'GAHT Started'.](/assets/images/2024/img_1262.jpg)
+
+*A few years of phosphate results side by side. The last two readings were 0.69 and 0.68, so I had some questions to ask at the next appointment.*
+{: .media-caption }
 
 Now phosphorus is in plenty of foods, but a low blood phosphate result doesn't tell me whether intake, absorption, losses or something else is responsible. Thanks to my history of low iron, phosphate had often been ordered alongside the other tests, giving me a decent run of results to compare. I tended towards the lower side, with new lows after starting GAHT. I went looking for possible explanations in [a spirulina study](https://pmc.ncbi.nlm.nih.gov/articles/PMC9039118/) and [the MESA estrogen study](https://pmc.ncbi.nlm.nih.gov/articles/PMC3849680/).
 
@@ -28,13 +37,19 @@ My theory was that the spirulina in my multivitamin might be involved, or that t
 
 Estrogen has an important role in maintaining bone health, which helps explain why bone loss can become an issue after menopause. That doesn't make low phosphate a good result, or establish progesterone as a bone-protection treatment for me. The article gave me something to read and discuss, rather than proof my bones were getting denser. We'll be rechecking in three months.
 
-![](/assets/images/2024/img_1260.jpg)
+![Iron studies results from June 2023 to February 2024, with the latest ferritin value of 39 µg/L marked with a red asterisk.](/assets/images/2024/img_1260.jpg)
+
+*Oh iron, sweet, sweet iron. My ferritin went from 59 to 39 across these results, so it was back to thinking about the iron stores.*
+{: .media-caption }
 
 Oh iron, sweet, sweet iron. Each blood test takes about five vials of blood, and my ferritin had slipped from 59 to 39 ug/L across these results. I'd stopped donating blood, but that didn't rule out depleted stores from earlier donations or other causes. Diet was another possibility, not an answer I could establish from this panel. My plan was 210 mg of elemental iron every other morning, one hour before food.
 
 Oral iron can raise hepcidin, a hormone, for roughly 24 hours, reducing absorption from another dose soon afterwards. That is part of the rationale for alternate-day dosing in the studies I was reading. Vitamin C can help with non-haem iron absorption, but it doesn't simply override hepcidin; a clinical trial found similar outcomes with oral iron alone and iron plus vitamin C. I also hoped fewer dosing days would mean fewer GI side effects. Roughly half the issues? That was my hope! 😅
 
-![](/assets/images/2024/img_1263.jpg)
+![Prolactin results rising from 239 and 296 to 655 mIU/L, flagged high against a printed 85-500 reference interval, with 94% recovery.](/assets/images/2024/img_1263.jpg)
+
+*That prolactin reading caught my eye: 655 mIU/L, more than double the previous 296. What caused the change was still an open question.*
+{: .media-caption }
 
 Onto hormones! Errrrr... why did prolactin more than double, from 296 to 655 mIU/L, and zip outside the laboratory's 85-500 range? My GP wasn't sure why, and my endocrinologist wasn't concerned at that level. I had understood their explanation as not being an issue unless it was roughly triple that number.
 
@@ -44,7 +59,10 @@ So what caused mine to spike? I wondered whether it was the [milk thistle](https
 
 Hmmm, I wondered whether my calcium and phosphate levels would also change without milk thistle. I'd only taken it for two weeks, and the bone-mineralisation finding quoted above was from animals. Something to look at on the next test, not a mechanism I'd demonstrated in myself.
 
-![](/assets/images/2024/img_1261.jpg)
+![Reproductive hormones laboratory excerpt showing oestradiol 764 pmol/L and progesterone 9.1 nmol/L, both marked high against the printed reference values.](/assets/images/2024/img_1261.jpg)
+
+*Onto the hormones! Oestradiol at 764 pmol/L and progesterone at 9.1 nmol/L. The lab's high flags made for an interesting screenshot, but the treatment context matters more than those printed ranges.*
+{: .media-caption }
 
 Ahh yes, traditional sex hormones. Some of the more interesting results to look at. I aimed to have blood taken before the next dose so the timing was consistent. That can approximate a trough for a regularly dosed medicine, but doesn't guarantee every hormone is at its absolute lowest, especially when tablets, gel and implants have different release patterns.
 
@@ -62,13 +80,19 @@ There are other routes of administration (ROA) for progesterone, butt (ha!), I w
 
 Converting my 9.1 nmol/L to US-friendly units gives about 2.9 ng/mL, not the 2.6 I'd originally calculated. It helped me compare the number with the charts in [Transfeminine Science's oral-progesterone review](https://transfemscience.org/articles/oral-p4-low-levels/). Different routes can give different progesterone and metabolite profiles.
 
-![](/assets/images/2024/img_1258.jpg)
+![Hormone pathway diagram showing 5-alpha-reductase converting progesterone to DHP and testosterone to DHT, with finasteride and dutasteride shown as inhibitors.](/assets/images/2024/img_1258.jpg)
+
+*This is where the finasteride rabbit hole started. The diagram helped me think about 5-alpha-reductase doing rather more than just making DHT.*
+{: .media-caption }
 
 Which leads us onto finasteride, a 5-alpha-reductase inhibitor (5ARI). It inhibits the enzyme that converts testosterone (T) into dihydrotestosterone (DHT). That is different from blocking testosterone production or blocking the androgen receptor itself.
 
 DHT can contribute to androgenetic hair loss when the follicles are susceptible. As a transgender woman, I don't really want to be bald if I can avoid it, so I'd started finasteride early on. I had also been reading about progesterone and the same enzyme pathways, but that doesn't make progesterone a proven substitute for finasteride. Inhibiting 5-alpha-reductase can affect the production of several steroids, rather than just DHT.
 
-![](/assets/images/2024/img_1264.jpg)
+![Steroid metabolism chart showing 5-alpha-reductase inhibition along testosterone, progesterone and deoxycorticosterone pathways, with red down arrows and blue up arrows.](/assets/images/2024/img_1264.jpg)
+
+*A bigger map of the same biochemical rabbit hole. Blocking one enzyme can alter multiple connected pathways, although the diagram couldn't tell me exactly what was happening in my body.*
+{: .media-caption }
 
 Remember our little friend allopregnanolone from earlier? The pathway diagrams show why inhibiting 5-alpha-reductase can affect progesterone metabolites too, including pathways leading to [isopregnanolone](https://en.wikipedia.org/wiki/Isopregnanolone). The [review I was reading](https://www.researchgate.net/publication/338182353_Post-finasteride_syndrome_An_emerging_clinical_problem) discusses these wider effects. It doesn't show that my own metabolite levels were completely blocked, or that every user has the same outcome. Finasteride was feeling like quite a dirty drug to me, but these are potential downstream effects of the enzyme inhibition, not proof it randomly hits lots of unrelated targets.
 
@@ -80,7 +104,10 @@ I'd decided to stop finasteride and wasn't taking testosterone blockers such as 
 
 If DHT contributes to my hair loss, what happens after I cease finasteride? Will it resume? These blood results can help show how testosterone is responding, but they don't directly measure DHT or guarantee what happens at the hair follicles. That's a question to follow over time.
 
-![](/assets/images/2024/img_1265.jpg)
+![Testosterone, SHBG and FAI laboratory table with February 2024 readings of testosterone 1.1 nmol/L, SHBG 104 nmol/L and calculated free testosterone 9 pmol/L.](/assets/images/2024/img_1265.jpg)
+
+*Testosterone at 1.1 nmol/L! I was pretty pleased to see where things had landed after three months of treatment. The male reference flags weren't the goals I was aiming for.*
+{: .media-caption }
 
 Oh there it is, testosterone down to 1.1 nmol/L. It was flagged low against the male reference range printed on the report, which wasn't the range I was aiming for during feminising treatment. My sex hormone-binding globulin (SHBG) had risen from 32 to 71 to 104 nmol/L. Oral estrogen can raise SHBG. I couldn't find the document behind my old 115 nmol/L claim, and there isn't a switch at that number where estrogen suddenly starts being bound. From [Wikipedia](https://en.wikipedia.org/wiki/Sex_hormone-binding_globulin):
 

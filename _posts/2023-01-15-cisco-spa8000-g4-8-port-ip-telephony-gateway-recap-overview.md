@@ -16,13 +16,19 @@ This particular machine is a Cisco SPA8000-G4, an eight-port IP telephony gatewa
 
 The unit was manufactured around 2017 according to the information I had. It had originally arrived with a firmware-related boot problem, but I'd already managed to get it past that stage before recording this recap overview.
 
-![](/assets/images/2023/img_0991.jpg)
+![Close-up of a Cisco telephony gateway circuit board with a row of purple Su'scon electrolytic capacitors beside several large chips.](/assets/images/2023/img_0991.jpg)
+
+*The original purple Su'scon capacitors on the SPA8000 board, before the replacement job.*
+{: .media-caption }
 
 And there's nothing more sus than a capacitor that is half the size of the other brand. What are they leaving out to make it so small? Makes you wonder. Different capacitor series can use different case sizes for the same nominal ratings, though, so size alone doesn't tell me what's inside or how long it will last. This particular unit is an SPA8000-G4 with the serial CFH01T701904.
 
 Some of the original capacitors along the front were 470 uF parts with a 10 V rating. The replacements I fitted were physically larger Panasonic capacitors, with 16 V ratings for that group. I checked that they would fit with the case assembled, although they certainly looked rather more substantial than the original parts.
 
-![](/assets/images/2023/img_0992.jpg)
+![Cisco SPA8000 circuit board on a blue work mat, showing rows of black replacement electrolytic capacitors and black telephone-port connectors.](/assets/images/2023/img_0992.jpg)
+
+*The same gateway board with the larger replacement capacitors fitted. Plenty of telephone ports to play with!*
+{: .media-caption }
 
 Replaced all the electrolytic capacitors with Panasonic FR and FS series. This chip shortage is still dragging on. I think I've got some Rubycon capacitors for my Spirit Viper modem that I'm still waiting on from July... Yikes! 😅
 
@@ -38,7 +44,10 @@ The SPA8000 also has a little cooling fan. Unfortunately, the original fan and i
 
 The gateway powered up and stayed running during this brief test. I hadn't configured the full eight-port dial-up arrangement yet, so this was mainly about getting the hardware into a state where I could start experimenting with it.
 
-![](/assets/images/2023/img_0993.jpg)
+![Small brown patterned lizard with a long tail stretched across a blue textured surface above fallen leaves.](/assets/images/2023/img_0993.jpg)
+
+*A visiting lizard, taking a break from the capacitors and telephony experiments.*
+{: .media-caption }
 
 In other news, I've been uploading pretty consistently to the [Super Nature World YouTube Channel](https://www.youtube.com/@SuperNatureWorld). It's mostly lizards and bugs with a sprinkling of birds. I don't have much in store for the [Nix McRetro YouTube channel](https://www.youtube.com/@NixMcRetro) as I have been running low on disposable income for a while now. While the [Super Nature World homepage](/homepages/nature) may look a little dead now, wait until you see what I have in store for it! Stay tuned I guess! 😀
 

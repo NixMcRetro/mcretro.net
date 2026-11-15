@@ -8,7 +8,10 @@ share_description: >-
   Capacitor brand rankings get their own McRetro gist after a famous tier list leaves too many manufacturers out. A gist list, if you will! 🔧
 ---
 
-![](/assets/images/2023/img_0998.jpg)
+![Several removed black electrolytic capacitors arranged upright with their leads showing on a blue work mat.](/assets/images/2023/img_0998.jpg)
+
+*A small collection of retired capacitors. None of them look particularly keen on being ranked.*
+{: .media-caption }
 
 I'd previously linked to [Tom's Hardware's capacitor manufacturer tier list](https://www.tomshardware.com/reviews/power-supplies-101,4193-5.html) for my [Cisco SPA](/cisco-spa8000-g4-8-port-ip-telephony-gateway-recap-overview/). I was lucky that my capacitors were even on the list. It's occurred to me that plenty of brands don't appear anywhere on it, even in tier 4... Being missing from the list isn't a ranking in itself, but it certainly doesn't help me choose them.
 

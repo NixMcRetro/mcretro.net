@@ -8,7 +8,10 @@ share_description: >-
   New McRetro videos move into 4K HDR, with more vivid footage on compatible screens. Bigger files and brighter colours, because why not? 📹
 ---
 
-![](/assets/images/2022/img_0948.jpg)
+![Final Cut Pro on a Mac showing an HDR Export settings panel for a 3840 × 2160 video using HEVC 10-bit with Rec. 2020 HLG colour.](/assets/images/2022/img_0948.jpg)
+
+*A 4K HDR export in Final Cut Pro. Bigger files, brighter colours and more excuses to tinker.*
+{: .media-caption }
 
 Just a quick little update. I've started using HDR on videos now, fairly consistently. They should really pop when viewed on hardware that has HDR support. I'm noticing the change from non-HDR to HDR far more than I used to.
 

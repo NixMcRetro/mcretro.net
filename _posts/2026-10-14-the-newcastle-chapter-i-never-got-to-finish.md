@@ -7,7 +7,10 @@ share_description: >-
   A look back at a difficult Newcastle chapter in 2019, when housing upheaval, university plans and heartbreaking decisions about beloved birds collided. 🐦
 ---
 
-![The little birds perched together](/assets/images/2026/10/the-newcastle-chapter-i-never-got-to-finish/newcastle-2019-birds-perch.webp)
+![Two green-cheeked conures, one with a dark head and one with a lighter brown head, sitting apart on a thick rope perch above stainless-steel food bowls.](/assets/images/2026/10/the-newcastle-chapter-i-never-got-to-finish/newcastle-2019-birds-perch.webp)
+
+*The two little conures on their rope perch in Newcastle. I still miss these birds.*
+{: .media-caption }
 
 I've been going through some old messages and notes from 2019 recently. It's amazing how much you can forget about a particular period of your life, only to have it all come flooding back when you start piecing things together. Some memories are wonderful, others not so much, and this is unfortunately one of the latter.
 
@@ -21,7 +24,10 @@ From the moment that happened, I knew my own time there was probably limited. I 
 
 Anyone who knows me knows I have a soft spot for animals, birds in particular. I'd raised mine from a young age, and they had their own personalities, little routines and all the peculiar behaviours that make birds such wonderful companions. They were part of my everyday life, and I'd become incredibly attached to them.
 
-![The birds (Tillie and Chip) back in 2019.](/assets/images/2026/10/the-newcastle-chapter-i-never-got-to-finish/newcastle-2019-birds.webp)
+![Two green-cheeked conures perched close together on an outstretched hand near a security screen door, one dark-headed and one pale cinnamon-coloured.](/assets/images/2026/10/the-newcastle-chapter-i-never-got-to-finish/newcastle-2019-birds.webp)
+
+*Tillie and Chip together in 2019, looking out through the security door. Such lovely little characters.*
+{: .media-caption }
 
 Unfortunately, the birds had become an issue within the household, and I agreed to find them new homes. I listed them for sale, but the money wasn't really the point. Putting a price on them was my attempt to find someone who genuinely wanted them and was prepared to take responsibility for their care. It wasn't a foolproof method, obviously. Someone paying for an animal doesn't automatically make them a responsible owner, but giving them away for nothing worried me even more.
 
@@ -31,7 +37,10 @@ I didn't want someone picking them up simply because they were free, without app
 
 By March, the living situation had become something I no longer felt able to manage. On the 10th of March 2019, I left. Nobody physically threw me out that day. I made the decision because I no longer felt comfortable remaining there. The trust I'd previously had in the arrangement was gone, and I couldn't see that changing.
 
-![Just inside the Callaghan station at during my time in Newcastle at UON.](/assets/images/2026/10/the-newcastle-chapter-i-never-got-to-finish/newcastle-2019-train.webp)
+![University of Newcastle campus wayfinding sign beside a road, pointing towards Richardson Wing, Hunter Building, Student Services, and other campus buildings.](/assets/images/2026/10/the-newcastle-chapter-i-never-got-to-finish/newcastle-2019-train.webp)
+
+*A familiar sign at the University of Newcastle's Callaghan campus in 2019. University was meant to be the next chapter, but things went rather differently.*
+{: .media-caption }
 
 I ended up at a pet-friendly hotel near the University of Newcastle's Callaghan campus, spending far too much on temporary accommodation. Pretty much the last of my savings. Not exactly how I'd imagined my university years going! With my circumstances becoming increasingly difficult, I had to make one of the decisions I still regret. I gave the birds away for nothing, the very thing I'd been trying to avoid.
 
@@ -43,7 +52,10 @@ I don't know whether the people who took them fully appreciated what they were g
 
 The accommodation problems were only part of the story. I'd spent years studying at the University of Newcastle, trying to build something worthwhile for my future. University wasn't always easy for me, but it mattered, and I wanted to finish what I'd started. Instead, I found myself needing to return to Sydney to work for a boss I wasn't particularly fond of then, and still aren't especially fond of now.
 
-![Chemistry notes from my time at the University of Newcastle](/assets/images/2026/10/the-newcastle-chapter-i-never-got-to-finish/newcastle-2019-chem-notes.webp)
+![Lined notebook page covered in handwritten chemistry diagrams and electron-count calculations for iodine chloride compounds, including ICl, ICl3, and ICl5.](/assets/images/2026/10/the-newcastle-chapter-i-never-got-to-finish/newcastle-2019-chem-notes.webp)
+
+*Some of my chemistry notes from Newcastle. I really did enjoy getting stuck into this sort of thing.*
+{: .media-caption }
 
 I needed an income. The cost of accommodation, the uncertainty surrounding where I would live, and the practicalities of keeping everything together had become too much. My degree was left unfinished, and the future I'd been working towards suddenly looked rather different.
 

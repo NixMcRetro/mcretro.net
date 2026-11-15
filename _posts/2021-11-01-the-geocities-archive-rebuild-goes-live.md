@@ -16,7 +16,10 @@ You might ask why? My only reply is, why not! During the rebuild from the patche
 
 I'll eventually get to putting the entire work log on here as well. I'm still trying to sort through my notes. Turns out, a lot of them were written late at night and don't make a whole lot of sense when read in daylight hours.
 
-![](/assets/images/2021/img_0771.jpg)
+![Safari screenshot of an archived GeoCities Babylon 5 fan page, with a starry black background, blue links and a large Babylon 5 logo.](/assets/images/2021/img_0771.jpg)
+
+*A Babylon 5 fan page from Area51/Vault/8913, alive again through the GeoCities rebuild. Glorious mid-90s web design.*
+{: .media-caption }
 
 Anyway, there's a lot of weird sites to be found in the archive, but there's also gems like this one frozen in time. Incredible. Best viewed on a Windows 95/98 machine running Internet Explorer 5.x or Netscape 4.x. I hope you enjoy your stay!
 

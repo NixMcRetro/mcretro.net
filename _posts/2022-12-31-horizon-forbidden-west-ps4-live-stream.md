@@ -12,7 +12,10 @@ share_description: >-
 
 Firstly, I would like to take my hat off to the developers. This game did not crash once on my PlayStation 4 **_slim_**, and performance felt on par with Horizon Zero Dawn.
 
-![](/assets/images/2022/img_0990.jpg)
+![Television showing Horizon Forbidden West, with Aloy pressed against a leafy rock wall during the 'Forbidden Legacy' side quest.](/assets/images/2022/img_0990.jpg)
+
+*Aloy meets the scenery a little too closely. At least getting stuck in a wall was a rare event!*
+{: .media-caption }
 
 Plus, I only got stuck in a wall once! And after Cyberpunk 2077... I'd happily get stuck in the wall ten times before going back to that dumpster fire. This is how a game should be made, take note Cyberpunk! As for the story itself, it is incredible!
 

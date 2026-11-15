@@ -14,7 +14,10 @@ In this video I've used a first-generation Raspberry Pi as a little FM transmitt
 
 Before anyone is tempted to set up Radio McRetro across Sydney, this was just a very short-range bench experiment. A bare Raspberry Pi GPIO pin isn't automatically a compliant broadcast transmitter, and Australia's LIPD class-licence rules set limits on frequency, power and equipment. Worth checking those rules before attempting anything similar.
 
-![](/assets/images/2022/img_0979.jpg)
+![Brown General Electric 4665 digital clock radio on a blue workbench beside a clear-cased Raspberry Pi with a blue wire attached; loose capacitors sit on the radio.](/assets/images/2022/img_0979.jpg)
+
+*The old GE clock radio meets a first-generation Raspberry Pi. The blue wire was my tiny FM antenna.*
+{: .media-caption }
 
 The old capacitors I replaced are sitting on top of the radio in this photo, and the blue wire is the transmitter antenna.
 

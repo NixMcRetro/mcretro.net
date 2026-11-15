@@ -8,7 +8,10 @@ share_description: >-
   A Sega Mega-CD with a blown fuse and someone's rather creative solder bypass. Time to find a proper replacement and give that overcurrent protection another chance. 🔧
 ---
 
-![](/assets/images/2012/img_0008.jpg)
+![Two small green axial-leaded electronic fuses with long silver wires at each end, laid diagonally on a white background.](/assets/images/2012/img_0008.jpg)
+
+*Proper little axial fuses for the Mega-CD, rather than another solder blob pretending to do the job. Much more sensible!*
+{: .media-caption }
 
 Ohhhoooo so very [shiny](https://en.wikipedia.org/wiki/Firefly_(TV_series))! I discovered one of my Sega Mega-CDs has a blown fuse that someone replaced with a big blob of solder. It certainly passes power that way, but the fuse is there for a reason. I want the little guy to have its proper overcurrent protection back, so a little bit of research led me to this:
 

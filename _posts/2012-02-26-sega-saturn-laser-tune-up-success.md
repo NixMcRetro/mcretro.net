@@ -8,11 +8,17 @@ share_description: >-
   A supposedly dead Sega Saturn reads games again after a tiny laser adjustment. Meanwhile, a troublesome power supply refuses to join the celebration. 🔧
 ---
 
-![](/assets/images/2012/img_0005.jpg)
+![Front view of a black Sega Saturn console on a wooden table, showing the closed disc lid, central Open button, and two controller ports.](/assets/images/2012/img_0005.jpg)
+
+*The Saturn that had supposedly given up reading discs. A tiny laser adjustment got it playing again, although that's not a permanent fix for a tired pickup.*
+{: .media-caption }
 
 With a known-good power supply installed, I turned the laser-power trimpot slightly and the Saturn started reading commercially pressed games again. It still had trouble with a Taiyo Yuden CD-R containing CD audio, but another tiny adjustment got that playing as well.
 
-![](/assets/images/2012/img_0006.jpg)
+![Top-down view of a Sega Saturn CD drive mechanism removed from the console, with its circular spindle, optical pickup, white plastic gears and green circuit board visible.](/assets/images/2012/img_0006.jpg)
+
+*The Saturn's optical drive out on the table. Only a small adjustment brought it back to life, but it wasn't a proper substitute for a healthy laser.*
+{: .media-caption }
 
 It's amazing how much difference one or two degrees on a trimpot can make.
 
@@ -20,7 +26,10 @@ This isn't a proper cure for a worn optical pickup, though. Sega's service manua
 
 Still, this drive had been assumed completely dead, and it certainly wasn't dead anymore!
 
-![](/assets/images/2012/img_0007.jpg)
+![Close-up of a Sega Saturn CD drive's small brown circuit board and orange adjustment trimpot marked 202, beside white plastic gears and the ribbon cable.](/assets/images/2012/img_0007.jpg)
+
+*The tiny yellow-orange adjustment trimpot beside the Saturn's optical drive gears. Amazing what a fraction of a turn changed, even if it comes with risks.*
+{: .media-caption }
 
 I was also trying to work out why the power supply in the other Saturn was dead. With the known-good PSU installed, that Saturn works fine. Put the dead PSU into the working Saturn and it stops working, so the fault definitely follows the power supply.
 

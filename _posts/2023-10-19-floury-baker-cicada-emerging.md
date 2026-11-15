@@ -28,19 +28,31 @@ I was also comparing this shell with the others I'd collected over the summer. T
 
 Here are some of the best photos from the day.
 
-![](/assets/images/2023/img_1166.jpg)
+![A pale newly emerging cicada hanging head-down from its brown nymph shell attached to rough tree bark, with a sunny suburban street behind.](/assets/images/2023/img_1166.jpg)
+
+*The Floury Baker emerging on a tree in broad daylight. An amazing sight, even before the butcherbird excitement.*
+{: .media-caption }
 
 This is where she was found.
 
-![](/assets/images/2023/img_1167.jpg)
+![A freshly emerged pale cicada perched on a short piece of bark held in a hand, with long transparent greenish wings and delicate white veins.](/assets/images/2023/img_1167.jpg)
+
+*Safely brought home on a piece of bark, with those gorgeous new wings still looking wonderfully delicate.*
+{: .media-caption }
 
 This is me stealing her on a piece of bark (also stolen).
 
-![](/assets/images/2023/img_1109.jpg)
+![A brown-and-cream Floury Baker cicada with dark eyes and transparent veined wings resting on a person's open hand.](/assets/images/2023/img_1109.jpg)
+
+*Here she is once the colours had settled in. Those patterned markings and huge eyes are brilliant.*
+{: .media-caption }
 
 This is her in her mostly hardened state.
 
-![](/assets/images/2023/img_1165.jpg)
+![Macro side view of an empty golden-brown cicada nymph shell standing on bark, showing segmented abdomen, antenna, and sturdy hooked front legs.](/assets/images/2023/img_1165.jpg)
+
+*And this is what she left behind. Every little ridge, hair, and digging claw is a tiny bit of engineering.*
+{: .media-caption }
 
 Finally, we have the shell itself. Who would have thought [incomplete metamorphosis](https://australian.museum/learn/animals/insects/metamorphosis-a-remarkable-change/) (hemimetabolism) would be so cool!
 

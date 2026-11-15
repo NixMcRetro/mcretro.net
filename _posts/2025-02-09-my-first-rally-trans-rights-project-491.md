@@ -8,7 +8,10 @@ share_description: >-
   A first protest rally, Project 491 and a personal account of standing up for transgender young people during a debate over access to gender-affirming care. 🏳️‍⚧️
 ---
 
-![](/assets/images/2025/img_1372.jpg)
+![Large crowd at a trans rights rally, with a bright sign reading 'Gender Affirmation Saves Lives' and a tall Progress Pride coloured chevron installation among the trees.](/assets/images/2025/img_1372.jpg)
+
+*My first protest rally, and a strong reminder that gender-affirming care and trans rights are worth standing up for.*
+{: .media-caption }
 
 Yesterday, [I attended my very first protest rally](https://transjustice.org.au/youth/). It appears that the Liberal National Party of Queensland is following the playbook of the orange idiot in the states. As much as I hate linking to a News Corp Australia website... [this article](https://www.news.com.au/national/haters-going-to-hate-peter-dutton-backs-ban-on-transgender-girls-playing-female-sports/news-story/fd97eda9d3637e8def174e4b38904c56) made my decision to attend the [National Day of Action](https://transjustice.org.au/youth/) in my state.
 

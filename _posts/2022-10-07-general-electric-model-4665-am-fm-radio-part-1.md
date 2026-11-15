@@ -12,11 +12,17 @@ share_description: >-
 
 Here's where we start with the General Electric Model 4665 AM/FM Electronic Digital Clock Radio. One neat thing about this radio is that it has a vacuum fluorescent display (VFD) for the clock section, which makes it rather interesting before we've even got properly stuck into the electronics.
 
-![](/assets/images/2022/img_0963.jpg)
+![Front of a brown General Electric digital clock radio on a blue work mat, showing a turquoise 'PM 12:41' display and AM/FM tuning scale.](/assets/images/2022/img_0963.jpg)
+
+*The General Electric 4665, looking rather lovely with its glowing VFD clock.*
+{: .media-caption }
 
 VFD has always been an arch-nemesis of [my precious Nixie clock](/chronix-nixie-clock-slot-machine-demo/). I don't think the technology was that much of an improvement and quite frankly love the glow of the Nixie tubes. Well that and probably some influence from Steins;Gate, courtesy of SuperNick (Nick). Yes, that very same SuperNick (Nick).
 
-![](/assets/images/2022/img_0964.jpg)
+![Opened General Electric digital clock radio on a blue work mat, exposing its speaker, transformer, circuit boards, AM/FM tuning scale and illuminated clock display.](/assets/images/2022/img_0964.jpg)
+
+*Under the cover of the GE 4665: speaker, transformer, radio bits and that lovely VFD all on show.*
+{: .media-caption }
 
 I've already been inside this thing and replaced some of its ageing capacitors, so this video is more of a look at how the radio is behaving now. The VFD is quite lovely in its own way, even if I still prefer a nice warm Nixie tube. There's a brightness control on the back, which is a thoughtful addition for something designed to sit beside your bed.
 

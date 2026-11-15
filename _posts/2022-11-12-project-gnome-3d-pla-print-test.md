@@ -12,17 +12,26 @@ share_description: >-
 
 I don't own many things. However, I do own this gnome. This heavy, concrete gnome. I don't have a garden or any outdoor space because those things are expensive where I live. _Sigh._ Luckily, I was able to turn him into a digital 3D model using [photogrammetry](https://guides.lib.unc.edu/c.php?g=716413&p=5098011) and [Agisoft Metashape](https://en.wikipedia.org/wiki/Metashape).
 
-![](/assets/images/2022/img_0987.jpg)
+![Close-up of a framed old garden photograph with a small painted gnome riding a dark pig in grass beside flowering bushes.](/assets/images/2022/img_0987.jpg)
+
+*The gnome and pig back in the garden, looking rather colourful in the family photograph.*
+{: .media-caption }
 
 Here's the gnome in the wild circa early 1990s. A very vibrant looking gnome. Is that green space? Maybe things were better growing up. At least now I can make the gnome live on forever like a [Digimon](https://en.wikipedia.org/wiki/Digimon).
 
 Nan and Pa, my grandparents, gave this gnome to either Mum or me years ago. I'm not sure which, but the concrete gnome has certainly survived the years. It's rather nice being able to turn something I've known since childhood into something digital.
 
-![](/assets/images/2022/img_0986.jpg)
+![Worn concrete garden gnome with a red hat and blue overalls riding a black pig, displayed on a wooden shelf.](/assets/images/2022/img_0986.jpg)
+
+*Many years later, the gnome and pig are still here. A little worse for wear, but still going.*
+{: .media-caption }
 
 Here's our garden gnome in the present day. A little worn, but still looks like a garden variety garden gnome riding a pig.
 
-![](/assets/images/2022/img_0988.jpg)
+![Agisoft Metashape workspace displaying a textured 3D model of the garden gnome riding a pig, with the project's camera and model panels around it.](/assets/images/2022/img_0988.jpg)
+
+*The old concrete gnome, now living inside the computer as a 3D model. Pocket Gnomes are getting closer.*
+{: .media-caption }
 
 Getting a PLA print out of the 3D printer wasn't entirely straightforward. We had problems with bed adhesion and a nozzle that might have been clogged, or perhaps just wasn't fitted properly. Eventually we got a working print, and the support material came away more cleanly than I'd expected. Even the missing little piece of the pig's tail had made it into the digital model. Not bad!
 

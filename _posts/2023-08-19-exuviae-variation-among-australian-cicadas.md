@@ -12,19 +12,31 @@ share_description: >-
 
 Over the course of the Australian 2022-2023 summer I did a little collecting. At the end of cicada season, March 2023, I went and grabbed as many shells (exuviae) as I could find from a few different areas.
 
-![](/assets/images/2023/img_1109.jpg)
+![Brown-and-cream cicada with large grey eyes and transparent veined wings sitting in the palm of a hand.](/assets/images/2023/img_1109.jpg)
+
+*A lovely little Floury Baker from the summer's cicada encounters. The white markings really do make the name fit.*
+{: .media-caption }
 
 Most of the shells were like this little one's: a Floury Baker (*Aleeta curvicosta*), named for the white markings. This particular cicada emerged during the day, which surprised me: published observations describe the usual emergence at dusk or at night. More on her another time.
 
-![](/assets/images/2023/img_0364.jpg)
+![Close-up side view of an empty amber-coloured cicada nymph shell clinging to rough bark, with a split along its back.](/assets/images/2023/img_0364.jpg)
+
+*The empty shell left behind after a cicada emerged. All those tiny legs, and not a cicada left inside.*
+{: .media-caption }
 
 Finding an emerging cicada gives you a great opportunity to observe the beginning of its final stage of life and match the adult to its own shell. It's also one of the cicada's most vulnerable periods, so it's a moment to watch without disturbing it.
 
-![](/assets/images/2023/img_1107.jpg)
+![Four empty cicada nymph shells arranged from smallest to largest on a white illuminated surface, showing markedly different body sizes.](/assets/images/2023/img_1107.jpg)
+
+*Four shells in a row, and not remotely the same size. The Floury Baker is third from the left; the other IDs are tentative.*
+{: .media-caption }
 
 The shell third from the left is the one I identified as a Floury Baker. The rest are guesses based on the species I was able to identify during summer. From left to right, my identifications are Silver Princess (*Yoyetta celis*), Brown Bunyip (*Tamasa tristigma*), Floury Baker (*Aleeta curvicosta*), and either Black Prince (*Psaltoda plaga*) or Green Grocer (*Cyclochila australasiae*). Those first, second and fourth identifications are tentative.
 
-![](/assets/images/2023/img_1108.jpg)
+![Newly emerged cicada with pale body and soft blue-green veined wings resting on a narrow piece of bark, with its old shell behind it.](/assets/images/2023/img_1108.jpg)
+
+*Fresh out of the old shell, with those beautiful translucent wings still looking very delicate. What a transformation.*
+{: .media-caption }
 
 Over the entire summer I was able to hear Green Grocers but never came across one, which was a disappointment as they were the first cicadas I came across as a child. I was able to find a few Black Princes though. I was surprised at how much chunkier they were than the Floury Bakers.
 

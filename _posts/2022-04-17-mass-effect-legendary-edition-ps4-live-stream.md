@@ -12,19 +12,31 @@ share_description: >-
 
 This is as far as I got with Mass Effect. I was recently gifted the Legendary Edition and found the time to fire it up. You might notice I didn't get much further than naming my character honkers. I was trying to put [Honkers the Goose](https://channelchirp.com), but it crashed on the space bar character.
 
-![](/assets/images/2022/img_0919.jpg)
+![PlayStation 4 error screen stating that the Mass Effect Legendary Edition disc cannot be read and the application must be closed.](/assets/images/2022/img_0919.jpg)
+
+*Mass Effect barely got started before the PS4 complained it couldn't read the disc. Not a promising beginning.*
+{: .media-caption }
 
 This was a preowned game and the data disc had no issues installing. I took onboard the wisdom of the black square box and inspected the play disc.
 
-![](/assets/images/2022/img_0920.jpg)
+![Close-up of the printed Mass Effect Legendary Edition Play Disc held to a bright light, with a thin white damaged mark on its surface.](/assets/images/2022/img_0920.jpg)
+
+*A little white gash was visible on the Play Disc. That preowned bargain was looking less bargain-like.*
+{: .media-caption }
 
 Uhhhhh, hmmm, this gash is a feature, not a bug, right? And those specks or holes? Probably not good. With damage like that, I wouldn't be surprised if the disc was responsible for the crash.
 
-![](/assets/images/2022/img_0921.jpg)
+![Reflective read side of a Mass Effect Blu-ray disc held up to a light, showing a narrow pale mark and the reflection of the camera.](/assets/images/2022/img_0921.jpg)
+
+*On the other side, a suspicious mark showed up against the light. I wasn't going to polish my way out of this one.*
+{: .media-caption }
 
 I guess it will have to go back to the store. That one will not buff out, especially with visible damage you can see light through. As they say, with increased disc density, comes great responsibility.
 
-![](/assets/images/2022/img_0922.jpg)
+![Comparison diagram labelled CD, DVD, HD DVD and Blu-ray, showing their different data tracks, laser wavelengths and optical layer positions.](/assets/images/2022/img_0922.jpg)
+
+*A handy comparison of the disc formats. Blu-ray puts the reading layer much closer to the surface.*
+{: .media-caption }
 
 After having a bit of a read I learnt why damage on the read side of a Blu-ray Disc matters so much. The recording layers sit close to the read surface compared with older optical formats, which is why Blu-ray media relies heavily on a hard protective coating. Being able to see light through the damaged area certainly wasn't encouraging!
 

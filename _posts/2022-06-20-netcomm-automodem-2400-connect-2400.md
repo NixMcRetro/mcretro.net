@@ -12,7 +12,10 @@ share_description: >-
 
 A very brief video of the NetComm AutoModem 2400, model AM1500, dialling out at 2400 bps to my Acer AcerModem 56 Surf, model AME-MU00. I've found that my AcerModem can be a little picky and drops a lot of packets with some modems when I use it server-side. The Acer has a Motorola-based chipset, which felt unusual to me for an external modem. At least here in Australia, with Rockwell/Conexant running wild.
 
-![](/assets/images/2022/img_0949.jpg)
+![Top of the NetComm AutoModem 2400 circuit board on a blue cloth, with a Rockwell RC224ATF chip, capacitors, speaker and connectors visible.](/assets/images/2022/img_0949.jpg)
+
+*Inside the NetComm AutoModem 2400. That Rockwell chip takes us right back to the dial-up years.*
+{: .media-caption }
 
 The NetComm AutoModem uses a Rockwell RC224ATF R6641-14 with a 9337 date code, or week 37 of 1993 if I am reading it correctly. Around the same period, V.32terbo was pushing compatible dial-up modems to 19.2 kbit/s. It was a de facto extension to V.32bis rather than an ITU-T V-series Recommendation, so my little 2400 bps modem was already well behind the speed race. Of course, not everyone can have top-shelf hardware. Please enjoy this CONNECT 2400 video!
 

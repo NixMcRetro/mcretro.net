@@ -12,11 +12,17 @@ share_description: >-
 
 Recently I had the joy of replacing the capacitors on a Miss Melody ES688. The poor thing had NCK-branded caps, which are way past their best-before date. I've installed some Panasonics and Rubycons and it's ready to roll. Just need a machine to test it in.
 
-![](/assets/images/2023/img_0999.jpg)
+![Screenshot of 'ES688 Audio Drive Caps' notes listing Miss Melody capacitor positions, capacitances, voltages, sizes, order codes and replacement series.](/assets/images/2023/img_0999.jpg)
+
+*The capacitor shopping and replacement notes for the Miss Melody ES688. So many tiny cans!*
+{: .media-caption }
 
 Those old capacitors were way past their prime and couldn't even be found on the [big list](/capacitors-manufacturer-tier-list-ranking/) of decent to less-than-decent capacitors.
 
-![](/assets/images/2023/img_1000.jpg)
+![Angled view of a green Miss Melody ES688 ISA sound card on a blue mat, with its large chips, edge contacts, audio sockets and replacement capacitors visible.](/assets/images/2023/img_1000.jpg)
+
+*The Miss Melody ES688 looking considerably tidier after the recap.*
+{: .media-caption }
 
 The recording includes a slideshow of the card before and after the work. Some of the old capacitors were visibly bulging around their sleeves, and the PCB needed a clean as well as a recap. I used vinegar and bicarbonate of soda, made more of a mess than I'd intended, rinsed the board and left it drying for about a week. That's a record of what I did, rather than a recommended cleaning recipe for somebody else's sound card.
 
@@ -65,7 +71,10 @@ Note: 1144620 - Too big for the silkscreen but fits physically.
 
 ```
 
-![](/assets/images/2023/img_1001.jpg)
+![Overhead view of the green Miss Melody ES688 ISA sound card, showing its printed chip labels, edge connector, rows of headers and new electrolytic capacitors.](/assets/images/2023/img_1001.jpg)
+
+*The full board from above, all recapped and ready for a computer to test it in.*
+{: .media-caption }
 
 That's a good looking sound card! I cleaned the edge contacts and gave the little wheel potentiometer some attention too, but I still needed a suitable working PC before I could actually test the finished card. It looks the part, at least.
 

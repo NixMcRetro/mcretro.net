@@ -8,7 +8,10 @@ share_description: >-
   Reordering Certbot's domain arguments puts mcretro.net first in Safari's certificate display. Purely cosmetic, but rather satisfying. 🔒
 ---
 
-![](/assets/images/2021/img_0777.jpg)
+![Safari certificate viewer listing mcretro.net beneath ISRG Root X1 and R3, with fishtankworld.mcretro.net open behind it.](/assets/images/2021/img_0777.jpg)
+
+*After reordering Certbot's domain arguments, Safari displayed mcretro.net as the certificate name. Purely cosmetic, but satisfying.*
+{: .media-caption }
 
 Honestly, I didn't realise this, but after rejiggering the domain order there was `mcretro.net`, displayed proudly in Safari's certificate viewer. That display is separate from Certbot's internal certificate name, which defaults to the first `-d` domain unless I specify `--cert-name` or reuse an existing certificate. All the requested domains are included as Subject Alternative Names. Putting my favourite first didn't give it any special TLS priority.
 

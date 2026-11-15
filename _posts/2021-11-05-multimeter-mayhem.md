@@ -8,11 +8,17 @@ share_description: >-
   A leaky-battery AideTek VC97+ multimeter gets a cheap replacement holder and works again. SuperNick fixes the broken stand before I touch superglue. 🔧
 ---
 
-![](/assets/images/2021/img_0773.jpg)
+![Hand holding an orange AideTek VC97+ multimeter powered on with 'OL' displayed and red and black test leads attached.](/assets/images/2021/img_0773.jpg)
+
+*The VC97+ is alive again! OL is the expected open-circuit reading here, not a new fault.*
+{: .media-caption }
 
 Look at what can be achieved if you believe in yourself. This multimeter was a disaster zone before and now it turns on again! That OL reading is the over-range indication, which is what I'd expect with an open circuit in resistance mode.
 
-![](/assets/images/2021/img_0772.jpg)
+![Opened AideTek multimeter face-down on blue fabric, exposing its green circuit board and battery compartment alongside test leads and tools.](/assets/images/2021/img_0772.jpg)
+
+*Inside the VC97+, the battered battery contacts and new holder explain the repair.*
+{: .media-caption }
 
 This particular multimeter, an AideTek.com VC97+, had a few corroded Varta batteries in the battery compartment that ate away at some of the terminals. The above shows the corrosion and the new replacement battery holder to the right. It only cost a few dollars to get it back up and running.
 

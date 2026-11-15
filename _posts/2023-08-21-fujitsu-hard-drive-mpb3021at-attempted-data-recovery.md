@@ -19,7 +19,10 @@ Today we're looking at a broken Fujitsu MPB3021AT hard drive with a capacity of 
 
 The drive was missing a crystal oscillator from the position marked X1 on the circuit board. I had a note suggesting a 32 MHz replacement, although at one point we weren't entirely sure whether the original component was supposed to be in kilohertz or megahertz. The drive did nothing with that component missing, so we fitted a replacement to see whether it would respond.
 
-![](/assets/images/2023/img_1118.gif)
+![Animated Ubuntu terminal capture showing disk identification with lsblk; its opening frame lists a 2 GB /dev/sda drive and a larger /dev/sdc drive.](/assets/images/2023/img_1118.gif)
+
+*Finding the little 2 GB Fujitsu among the connected disks before trying ddrescue. Definitely a job where device names matter.*
+{: .media-caption }
 
 Once the crystal was installed, the drive began making a rather impressive clicking noise. Not exactly the sound you want to hear from an old hard drive, but at least something was happening now. The component date codes included markings from early 1998, which gives us a rough idea of the era we're dealing with.
 
@@ -39,23 +42,38 @@ I left the recovery running for roughly four days, listening to the Fujitsu clun
 
 Older ddrescue examples can be confusing because version 1.19 replaced the old splitting process with scraping and changed the meaning of `-n`. The [ddrescue cloning guide](https://datarecovery.com/rd/how-to-clone-hard-disks-with-ddrescue/) and [Linux.com's GNU ddrescue article](https://www.linux.com/topic/desktop/gnu-ddrescue-best-damaged-drive-rescue/) give some background.
 
-![](/assets/images/2023/img_1114.jpg)
+![Open desktop computer with a wide PATA ribbon cable leading to a Fujitsu hard drive on the desk, beside an LG monitor showing an Ubuntu terminal.](/assets/images/2023/img_1114.jpg)
+
+*The recovery rig in all its glory: open case, dangling PATA ribbon cable, old monitor, and a ball mouse. Beautifully modern.*
+{: .media-caption }
 
 The test computer used a Gigabyte GA-945GCMX-S2 motherboard. I've found these old boards handy for working with PATA and SATA drives, and I've got rather fond memories of the Intel 945 chipset from my Hackintosh days running Mac OS X Snow Leopard. A proper retro PC, complete with a ball mouse!
 
-![](/assets/images/2023/img_1115.jpg)
+![Close-up of a black Fujitsu MPB3021AT hard drive resting label-side up on a desk, with a broad beige ribbon cable and a white ball mouse nearby.](/assets/images/2023/img_1115.jpg)
+
+*The Fujitsu MPB3021AT itself, all 2.16 GB of it. Plenty of vintage storage, and unfortunately plenty of vintage trouble.*
+{: .media-caption }
 
 Here's the Fujitsu drive itself. It certainly looks like a 2 GB hard drive and sounds like one too. Fujitsu's [MPB3xxxAT product manual](https://web.archive.org/web/20240613043402/https://www.fujitsu.com/downloads/COMP/fcpa/hdd/discontinued/mpb3xxxat_prod-manual.pdf) is still available, which is rather handy when you're trying to identify missing components and other details. Good guy Fujitsu.
 
-![](/assets/images/2023/img_1116.jpg)
+![LG monitor displaying the Fujitsu MPB3021A SMART report, with a red BAD status and warnings for several error-related attributes.](/assets/images/2023/img_1116.jpg)
+
+*The SMART report did not mince words: BAD. I was beginning to suspect this drive had seen better days.*
+{: .media-caption }
 
 The SMART statistics weren't particularly happy after several days of recovery attempts. That's hardly surprising considering the noises the drive had been making and the trouble we were having reading its contents.
 
-![](/assets/images/2023/img_1117.jpg)
+![LG monitor showing an MHDD surface scan of the Fujitsu drive at 3.1%, with coloured timing blocks and warning messages at the side.](/assets/images/2023/img_1117.jpg)
+
+*MHDD had barely started and the warnings were already arriving. Not exactly an encouraging sight.*
+{: .media-caption }
 
 Before the destructive erase, I also ran pattern searches against a disk image created with ddrescue, but found no signs of deleted data that hadn't been zeroed. After the recovery attempt I used [MHDD](https://hddguru.com/software/2005.10.02-MHDD/) to examine the drive further. It started showing warnings quite early on, and I also experimented with its erase function. That operation is destructive, so anything examined after that point can't tell us what recoverable data might have existed beforehand.
 
-![](/assets/images/2023/img_1113.jpg)
+![Composite image of an open PC and two hard drives beside an LG monitor showing many MHDD verification errors, with a white Australian ibis photograph overlaid at the bottom right.](/assets/images/2023/img_1113.jpg)
+
+*The recovery attempt ended in a sea of errors, so naturally the ibis makes an appearance. Sydney's finest troubleshooting assistant.*
+{: .media-caption }
 
 Ultimately the data recovery was a bust. There either wasn't anything useful left, or the drive was too far gone for us to retrieve it. We didn't recover usable data before the destructive testing began, although it cost nothing to try and was interesting to hear the old Fujitsu clunking away for a few days. The takeaway? Make a backup today if you haven't already! 😎
 

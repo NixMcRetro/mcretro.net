@@ -26,7 +26,10 @@ One correction to my earlier theory though: the old browsers themselves were not
 
 Aren't cicadas neat? I've got videos queued up for both my [Nix McRetro](https://www.youtube.com/@NixMcRetro) and [Super Nature World](https://www.youtube.com/@SuperNatureWorld) channels over the coming weeks or even months. However, due to cashflow issues owing to long-term unemployment, I'll soon be forced to move to a location with no internet.
 
-![](/assets/images/2023/img_1227.jpg)
+![Two vintage computer expansion cards laid out on a white workbench, one green and one red, with rows of chips and gold edge connectors.](/assets/images/2023/img_1227.jpg)
+
+*Two more bits of retro hardware on the workbench. There was no shortage of old technology demanding attention while I tried to get everything online.*
+{: .media-caption }
 
 The rush is on to get as much video processed as possible and uploaded to YouTube. It also means this self-hosted website will temporarily disappear. The new internet connection poses a bunch of potential issues too, thanks to CG-NAT. Perhaps Cloudflare Tunnel, which I was still habitually calling Argo Tunnel, might be the answer? I'll see if I can work out a temporary solution to at least put a maintenance/planned downtime notice up. Absolute worst case, there is always [archive.org](https://web.archive.org/web/20231123091212/https://mcretro.net/). 🙃
 

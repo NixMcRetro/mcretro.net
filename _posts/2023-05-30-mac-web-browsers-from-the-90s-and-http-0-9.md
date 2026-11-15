@@ -14,49 +14,82 @@ Here I was thinking I had an 11-minute voiceover but I misread the timeline. I'l
 
 Most of this tinkering goes back to around April 2022, and here we are in May 2023. I wanted to get the photos and notes up because somebody else might find them useful when trying to get an old computer onto the internet. If nothing else, they might save someone from chasing a few of the same problems!
 
-![](/assets/images/2023/img_1016.jpg)
+![Photograph of a Macintosh Classic showing the NCSA Mosaic 1.0.3 splash screen, dated 27 January 1994.](/assets/images/2023/img_1016.jpg)
+
+*The Macintosh Classic fires up NCSA Mosaic 1.0.3. Modern web compatibility was never going to be straightforward.*
+{: .media-caption }
 
 Let's start with the innocent [NCSA Mosaic](https://en.wikipedia.org/wiki/NCSA_Mosaic). At this stage we were running on a [Macintosh Classic](https://web.archive.org/web/20210304075849/https://support.apple.com/kb/SP198?locale=en_US), complete with its Motorola 68000 and black-and-white screen. Its original hard drive had failed and we'd been trying RaSCSI, so this wasn't exactly the most straightforward internet machine. Give me an LC 475 any day! Still, the Mosaic splash screen works well.
 
-![](/assets/images/2023/img_1015.jpg)
+![Macintosh Classic screen with NCSA Mosaic displaying RetroJunkie.net's text-based homepage and ASCII-art logo.](/assets/images/2023/img_1015.jpg)
+
+*RetroJunkie.net loads in Mosaic on the Classic. Even the ASCII-art logo made it across.*
+{: .media-caption }
 
 We even made it to the [RetroJunkie homepage](https://retrojunkie.net)!
 
-![](/assets/images/2023/img_1014.jpg)
+![Macintosh Classic showing a system error dialog for NCSA Mosaic 1.0.3, reporting an address error and offering Restart.](/assets/images/2023/img_1014.jpg)
+
+*Mosaic was less enthusiastic about staying alive: an address error brings the entire Mac to a stop.*
+{: .media-caption }
 
 Like anything running way beyond what it was designed for, it crashed a good amount. Of course there's no memory protection so Mac OS went down with it forcing a slow restart.
 
-![](/assets/images/2023/img_1013.jpg)
+![Macintosh Classic running the French-language MacWeb browser, displaying the RetroJunkie.net homepage and ASCII-art logo.](/assets/images/2023/img_1013.jpg)
+
+*MacWeb manages the RetroJunkie homepage, although I managed to find the French version.*
+{: .media-caption }
 
 We ruled out Mosaic due to the crashes and really dated HTML support. Next up we had [MacWeb by Tradewave](https://en.wikipedia.org/wiki/MacWeb). And can I say, it actually worked OK for our purposes. There is a patched version, 2.0c, that has some tweaks for black and white Macs even. Unfortunately, I picked the French localisation.
 
-![](/assets/images/2023/img_1009.jpg)
+![French-language MacWeb on a Macintosh Classic displaying a 403 Forbidden page for retrojunkie.net.](/assets/images/2023/img_1009.jpg)
+
+*A rather unwelcoming 403 Forbidden response in MacWeb. The browser itself was not the only obstacle.*
+{: .media-caption }
 
 Forbidden address. Ahhh yes. I believe this was caused by Cloudflare doing something... what exactly - I can't remember! But I was able to get it by accessing retrojunkie.net or the IP retrojunkie.net was hosted at. It's the catch-all site in case anyone strays to my server's IP address.
 
-![](/assets/images/2023/img_1018.jpg)
+![macOS Terminal showing a telnet connection to retrojunkie.net on port 80, a GET / request, and a Cloudflare 400 Bad Request response.](/assets/images/2023/img_1018.jpg)
+
+*Even a plain `GET /` by telnet came back with a 400 Bad Request from Cloudflare. Very retro, very helpful.*
+{: .media-caption }
 
 So I resorted to telnet, which is very old-internet friendly it turns out. A simple `GET /` sent to retrojunkie.net resulted in... a bad request... with a sprinkling of Cloudflare, which was supposed to be disabled. The screenshot catches that in all its glory.
 
 A proper HTTP/0.9 request is just a one-line `GET` with no HTTP version token or request headers. There's no `Host` header either, so it can't choose between name-based virtual hosts. I messed with the proxy settings a bit more, possibly disabling Cloudflare completely for testing and...
 
-![](/assets/images/2023/img_1019.jpg)
+![macOS Terminal showing telnet to 203.166.239.130 on port 80, where GET / returns the GeoCities homepage HTML.](/assets/images/2023/img_1019.jpg)
+
+*Talking directly to the server IP gets us somewhere: GeoCities HTML in response to a simple `GET /`.*
+{: .media-caption }
 
 Telnet successfully gets the root! This time I connected directly to the server's IP and got the GeoCities HTML back from a simple `GET /`. By this point I'd opted to mess with the GeoCities subdomain. Now what about a web browser?
 
-![](/assets/images/2023/img_1020.jpg)
+![Safari browser showing a retro GeoCities homepage loaded from the IP address 203.166.239.130, with a GeoCities banner and navigation links.](/assets/images/2023/img_1020.jpg)
+
+*One IP address, one useful default page. The GeoCities landing page appears without a hostname in Safari.*
+{: .media-caption }
 
 One IP address, one default website. That gave these older clients somewhere useful to land even without a `Host` header.
 
-![](/assets/images/2023/img_1010.jpg)
+![Photograph of an HP monitor running Netscape 1.0 on Windows, displaying the RetroJunkie homepage from 203.166.239.130.](/assets/images/2023/img_1010.jpg)
+
+*Netscape 1.0 on Windows reaches the server by IP. MiSTer, modem and all, because apparently this was the easy option.*
+{: .media-caption }
 
 I only had Netscape 1.0 on hand in Windows via the MiSTer and a dial-up modem... as one does. But the IP address now resolves. Let's test with the retrojunkie.net domain name...
 
-![](/assets/images/2023/img_1012.jpg)
+![Windows Netscape 1.0 showing retrojunkie.net, with a dial-up connection status window indicating 28,800 bps.](/assets/images/2023/img_1012.jpg)
+
+*RetroJunkie.net loads by name too, with the NetComm dial-up status box proudly reporting 28,800 bps.*
+{: .media-caption }
 
 And it works a charm.
 
-![](/assets/images/2023/img_1011.jpg)
+![Netscape 1.0 displaying an Unknown File Type dialog for text/html; charset=UTF-8 over the RetroJunkie homepage.](/assets/images/2023/img_1011.jpg)
+
+*Netscape was happy enough until it met `charset=UTF-8` and wanted me to configure a viewer.*
+{: .media-caption }
 
 Well, close enough to a charm. Especially given charset=UTF-8 wasn't yet the rage and ISO-8859-1 would rule supreme for a while longer.
 
@@ -64,15 +97,24 @@ Well, close enough to a charm. Especially given charset=UTF-8 wasn't yet the rag
 
 Tailing the Apache2 access log shows us:
 
-![](/assets/images/2023/img_1021.jpg)
+![Terminal showing Apache access.log with a highlighted HTTP/1.0 request using the MacWeb/F2.0 libwww/2.17 user agent.](/assets/images/2023/img_1021.jpg)
+
+*Apache caught MacWeb/F2.0 in the logs, using libwww/2.17 and making an HTTP/1.0 request.*
+{: .media-caption }
 
 MacWeb/F2.0 uses libwww/2.17 - There's that F for French again...
 
-![](/assets/images/2023/img_1022.jpg)
+![Terminal showing Apache access.log with a highlighted GET / HTTP/1.0 request from MacMosaicB6 libwww2.09.](/assets/images/2023/img_1022.jpg)
+
+*Mosaic introduces itself as MacMosaicB6 using libwww2.09. Another HTTP/1.0 request, not HTTP/0.9.*
+{: .media-caption }
 
 Mosaic identifies itself in the log as MacMosaicB6 libwww2.09. The splash screen calls our copy version 1.0.3, so at least we know what this particular setup was reporting. That doesn't mean every earlier Mac Mosaic version necessarily sent the same user-agent string.
 
-![](/assets/images/2023/img_1017.jpg)
+![Terminal showing Apache access.log with highlighted HTTP/1.0 requests from Mozilla/1.0 (Windows).](/assets/images/2023/img_1017.jpg)
+
+*The Windows Netscape 1.0 test appears in Apache as Mozilla/1.0 (Windows), again over HTTP/1.0.*
+{: .media-caption }
 
 And our Windows Netscape 1.0 identifies itself as Mozilla/1.0 (Windows).
 

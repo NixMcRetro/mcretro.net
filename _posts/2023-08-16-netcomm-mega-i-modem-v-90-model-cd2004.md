@@ -21,7 +21,10 @@ The included documentation is an interesting little time capsule. There are refe
 
 Next is an internal overview of the modem before it was recapped. There are those STONE-branded capacitors again! Component date codes and PCB markings suggest this is a fairly late example, possibly from around mid-to-late 2008, although that's not the same as a confirmed manufacturing date.
 
-![](/assets/images/2021/img_0727.jpg)
+![Black NetComm Mega-i-Modem V.90 on a table beside an open cardboard box, a power adaptor and packaged cables.](/assets/images/2021/img_0727.jpg)
+
+*The CD2004 out of its box, with its accessories nearby. The missing modem logs were not included, unfortunately.*
+{: .media-caption }
 
 Unfortunately, I only have two photographs of the modem and a rather incomplete log. I might have accidentally run a rogue...
 

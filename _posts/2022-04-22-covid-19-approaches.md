@@ -8,7 +8,10 @@ share_description: >-
   COVID-19 hits several colleagues in April 2022, while my home tests remain negative. A little workplace anxiety and some very bad Photoshop. 🧪
 ---
 
-![](/assets/images/2022/img_0924.jpg)
+![Rapid antigen test cassette on a blue cloth, shown with a circular magnified edit containing two pink lines, one noticeably angled.](/assets/images/2022/img_0924.jpg)
+
+*My extremely convincing Photoshop attempt at a positive RAT. The sloping line rather gives the game away.*
+{: .media-caption }
 
 Three of our staff at work are off with coronavirus infections after testing positive on their rapid antigen tests (RATs). One other has been hit prior to these three. Above is a test I did. I tried to photoshop it to have a week off. It turns out I'm not very good at photo manipulation.
 

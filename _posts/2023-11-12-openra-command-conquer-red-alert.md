@@ -8,19 +8,31 @@ share_description: >-
   Command & Conquer: Red Alert returns through OpenRA, with ant missions, flamethrowers and an AI nuke that destroys my precious MCV. Silos needed! 🎮
 ---
 
-![](/assets/images/2023/img_1196.jpg)
+![OpenRA Red Alert battle screenshot showing a red base in a rocky clearing, infantry firing on blue vehicles, and a building-construction sidebar.](/assets/images/2023/img_1196.jpg)
+
+*A Red Alert base, enemy vehicles, and a worrying amount of incoming fire. Apparently the AI wasn't planning to give me much peace.*
+{: .media-caption }
 
 **Silos needed.** I used to love Command & Conquer as a teenager. My Athlon 500 MHz sure did clock a few hours as did Andrew's PC. While his PC wasn't as fast as mine, it was my gateway to getting my own PC. Then came Red Alert 2 and the Yuri's Revenge expansion. Such great gameplay.
 
-![](/assets/images/2023/img_1198.jpg)
+![OpenRA screenshot of a large red base on snowy terrain, with a radar dome, several power stations and timers for an atom bomb and GPS satellites.](/assets/images/2023/img_1198.jpg)
+
+*A snow-covered base with a nuke countdown at the top. You'd think that much infrastructure would make me feel secure.*
+{: .media-caption }
 
 While my PC of the time only had a PowerColor NVIDIA TNT2 M64 - it sure did kick Andrew's onboard 2D graphics. I won't say that my AMD Athlon FPU didn't help... but his poor ~200 MHz Intel CPU stood no chance.
 
-![](/assets/images/2023/img_1197.jpg)
+![OpenRA Red Alert screenshot showing two red base buildings and a few units on a small snowy peninsula surrounded by dark water and unexplored terrain.](/assets/images/2023/img_1197.jpg)
+
+*Just a little outpost on a snowy patch of land. Not much room for mistakes when the AI comes looking.*
+{: .media-caption }
 
 Regardless, it's good to see these classics up and running through OpenRA, which recreates them with its own gameplay and balance changes. Even if I keep getting attacked by flamethrower men and nuked by the AI. I don't remember the nukes being that powerful in Red Alert 2, but in OpenRA's Red Alert a single nuke took out my Mobile Construction Vehicle (MCV). I couldn't rebuild!
 
-![](/assets/images/2023/img_1199.jpg)
+![OpenRA Missions menu with the Ant Missions '01: Discovery' selected beside artwork of a giant red-eyed ant and its mission briefing.](/assets/images/2023/img_1199.jpg)
+
+*The ant missions! There they are, tucked into the OpenRA mission list with a very large and angry-looking ant.*
+{: .media-caption }
 
 The ant missions! Wow! Takes me back to holding Shift and clicking the speaker on the original Red Alert title screen to unlock the Counterstrike ant campaign. Geez that's a long time ago. Thanks to all who have helped develop OpenRA over the years. I only came across it in the Ubuntu App Store while installing 18.04 onto one of my HPE MicroServers - a great find!
 

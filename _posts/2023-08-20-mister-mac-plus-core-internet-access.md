@@ -24,7 +24,10 @@ It took a bit of fiddling with the connection script and authentication settings
 
 You can see more of the emulation settings in the live stream above from [McRetro Gaming](/channels). In the MiSTer settings, we can switch to the Macintosh SE ROM and select a 68020 at 16 MHz, with the same 4 MB of RAM. That's a MiSTer configuration rather than a stock Macintosh SE specification, but it gave the old software some extra legs. We were still limited by the paltry hardware and contemporary web browser support. Maybe asking a 1980s computer architecture to browse the 2020s web is a little unfair!
 
-![](/assets/images/2023/img_1110.jpg)
+![Large television and small monitor displaying the same black-and-white Macintosh System 7.5.5 desktop, with an About This Macintosh window showing 4 MB of memory.](/assets/images/2023/img_1110.jpg)
+
+*A giant System 7.5.5 desktop on the TV and a smaller one below. Four megabytes of RAM, displayed at thoroughly excessive size.*
+{: .media-caption }
 
 Another alternative is to run System 7.5 through the Amiga core and [ShapeShifter](http://shapeshifter.cebix.net), which might sound familiar to some. The name (mis)reminds me most of [SheepShaver](http://sheepshaver.cebix.net). Turns out they were both initially created by the same person, Christian Bauer. I didn't know the ins and outs of AmigaOS well enough to get it to dial out, though. There's definitely potential there.
 
@@ -38,11 +41,17 @@ NCSA Mosaic could also load parts of retrojunkie.net, although the layout wasn't
 
 Memory was another problem. At one point MacWeb was consuming around 1.956 MB on a machine configured with only 4 MB. Not much room left for anything else! I also had a go at iCab, but it wanted rather more memory than the poor little machine could reasonably provide.
 
-![](/assets/images/2023/img_1111.jpg)
+![Television and smaller monitor showing a monochrome Macintosh desktop overlaid with the MiSTer MacPlus settings menu, including SE mode, a 16 MHz CPU and 4 MB memory.](/assets/images/2023/img_1111.jpg)
+
+*The MiSTer menu let me give the old Mac a 16 MHz CPU while keeping the nostalgic four megabytes of memory.*
+{: .media-caption }
 
 The MiSTer, powered by the DE10-Nano, gives me HDMI and, with the analogue board add-on, VGA output. That lets me enjoy a giant System 7.5 desktop on a 5:4 screen, staring at me from a not-far-away-enough distance. But why do I only have one hard drive mounted when there's an option for two?
 
-![](/assets/images/2023/img_1112.jpg)
+![Large monitor showing a monochrome classic Macintosh desktop with two disk icons labelled HD20SC and Big Bob above the Trash.](/assets/images/2023/img_1112.jpg)
+
+*There he is, Big Bob, alongside HD20SC on the Macintosh desktop. Unfortunately, Bob was not destined for a long life.*
+{: .media-caption }
 
 Enter Big Bob. Big Bob was a great hard drive image we made up for the Macintosh Classic. However, the Mac Plus core at the time seemed to like corrupting drives around reboot. I wondered if we were using a drive that was too large for the system or something along those lines. Interestingly, a [2025 MiSTer issue](https://github.com/MiSTer-devel/MacPlus_MiSTer/issues/15) later documented VHD corruption after reboot when using the SE ROM with 68010 or 68020 CPU modes. That is very consistent with what I was seeing here, although it does not establish the exact cause of Big Bob's demise.
 

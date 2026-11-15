@@ -11,7 +11,7 @@ import sys
 
 IMAGE = re.compile(r'!\[[^\]\n]*\]\(\s*(?:<([^>]+)>|([^\s)]+))', re.I)
 LIQUID = re.compile(r'\{%\s*include\s+([^\s%]*(?:youtube|video|image|figure)[^\s%]*)\s+([^%]*?)\s*%\}', re.I)
-HTML = re.compile(r'<(?:img|iframe|video|source)\b[^>]*\b(?:src|poster)\s*=\s*["\']([^"\']+)["\']', re.I)
+HTML = re.compile(r'<(img|iframe|video|source)\b[^>]*\b(?:src|poster)\s*=\s*["\']([^"\']+)["\']', re.I)
 
 
 def git(*args):
@@ -25,7 +25,7 @@ def media(text):
     for match in LIQUID.finditer(text):
         found.append((match.start(), "include", f"{match.group(1)} {match.group(2).strip()}"))
     for match in HTML.finditer(text):
-        found.append((match.start(), "html", match.group(1).strip()))
+        found.append((match.start(), "image" if match.group(1).lower() == "img" else "html", match.group(2).strip()))
     return [item[1:] for item in sorted(found)]
 
 

@@ -12,23 +12,38 @@ share_description: >-
 
 After having a headache for nearly a week, I figured I should get it checked out at the local GP. Thanks to having a somewhat decent health system in place, I had a CT scan just one hour later. Having a background in human biomedical science, I naturally started poking around the images myself. Nothing obvious jumped out at me, apart from what looked like a chunky calcified or ossified section of the falx cerebri. The radiology report did not identify it as pathology, so this was me admiring an incidental-looking bit of anatomy rather than diagnosing myself.
 
-![](/assets/images/2023/img_1155.jpg)
+![Axial brain-window CT slice showing grey brain tissue inside a bright skull outline and a small, very bright area near the front midline.](/assets/images/2023/img_1155.jpg)
+
+*First up, a brain-window CT slice. The bright little patch near the midline sent me down an anatomy rabbit hole.*
+{: .media-caption }
 
 The CT scans provided have two display settings: brain window and bone window. Above is the brain window, which shows more detail in the brain itself. The falx cerebri is visible as that bright white section.
 
-![](/assets/images/2023/img_1155a.jpg)
+![Side-view sagittal CT slice through the head, with the skull in bright white and an oval bright area near the upper front of the brain.](/assets/images/2023/img_1155a.jpg)
+
+*Another angle on the bright region, this time from the side. I still couldn't tell calcification from ossification by staring at screenshots.*
+{: .media-caption }
 
 After a quick anatomy refresher, the falx cerebri is the dural fold separating the left and right cerebral hemispheres. Calcification and true ossification are not quite the same thing, and I couldn't establish which I was looking at from these screenshots alone. Both falx calcification and ossification can turn up as incidental imaging findings.
 
-![](/assets/images/2023/img_1154.jpg)
+![Axial head CT in bone-window display, with sharply defined white skull bone and a small bright diamond-shaped structure close to the midline.](/assets/images/2023/img_1154.jpg)
+
+*Bone-window mode makes the bright section really stand out. Interesting anatomy, even if it didn't explain the headache.*
+{: .media-caption }
 
 Next we have bone window mode, where you can see the bone detail but not so much the brain squiggly mush bits, I want to say spaghetti? To my eyes, the bright section of falx looked very similar to the skull itself. That alone doesn't establish whether it was calcification or true ossification, but it certainly looks neat. Cool science!
 
-![](/assets/images/2023/img_1156.jpg)
+![Axial CT slice through the eye sockets and base of the skull, showing two circular eye globes and the surrounding facial bones.](/assets/images/2023/img_1156.jpg)
+
+*Here's the CT slice with the eyeballs. A little unsettling, but also rather fascinating.*
+{: .media-caption }
 
 Unfortunately, none of this helps my headache. To make matters worse, this headache doesn't seem to be affected by ibuprofen, naproxen or paracetamol. I need to be doing other things in this down time but I can't think straight for long before my head starts to hurt. Is it stress? Probably. My eye twitch disappeared just before this started... last Wednesday. 😅
 
-![](/assets/images/2023/img_1153.jpg)
+![Axial CT slice through the upper neck, with an air-filled central airway and a bright vertebral arch behind it.](/assets/images/2023/img_1153.jpg)
+
+*And this is the neck image that reminded me of a happy axolotl. Medical imaging occasionally has a sense of humour.*
+{: .media-caption }
 
 I love pattern recognition though, is that a happy axolotl hiding in my vertebrae? A little less spooky than the other image with the eyeballs. Here's the full report from the doctor.
 

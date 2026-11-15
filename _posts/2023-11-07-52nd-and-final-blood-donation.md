@@ -20,13 +20,19 @@ Unfortunately for anyone watching the video, I managed to make this a very long 
 
 3. Pain. Recently my primary vein for donating had been hurting. Whether that was poor needlework or something else, I couldn't be sure. The painful occasions seemed to be when the needle went all the way in. That's what I experienced, rather than a rule about how far a donation needle should go.
 
-![](/assets/images/2023/img_1191.jpg)
+![A wrapped chocolate bar lying across an Australian Red Cross Lifeblood thank-you certificate for 50 donations, with the recipient's former name partly visible.](/assets/images/2023/img_1191.jpg)
+
+*Fifty donations and the prize was a dairy chocolate bar. As a vegan, I had to give it a miss. Perfect timing!*
+{: .media-caption }
 
 I reached the 50 donation milestone. And what did I get? A block of Cadbury Dairy Milk chocolate. As a vegan, that was incredibly useful! Too bad it wasn't a Whittaker's Oat Milk Chocolate Block. I had to decline it, which made the whole thing even more awkward thanks to social anxiety.
 
 And I did find one rather excellent typo while reading about iron: a paper said something about taking it for at least "six to nine moths". Naturally I had to put some actual moths into the video. I mean, I can talk about blood and iron all day, but there's always room for insects.
 
-![](/assets/images/2023/img_1192.jpg)
+![Blood donation equipment at a collection centre, with a partly filled blood bag on a Terumo BCT device and tubing running to a donor's arm.](/assets/images/2023/img_1192.jpg)
+
+*The 52nd donation in progress, this time whole blood. A fairly fitting way to finish where the whole thing began.*
+{: .media-caption }
 
 And at the very end here we have the 52nd, and final donation! Whole blood was a good way to go out as whole blood is how it all started back in October 2014 in a mobile blood van. For now I'll roll my sleeves down and keep my iron stores self-contained. Plus I get to keep all those [PFAS chemicals](https://en.wikipedia.org/wiki/Per-_and_polyfluoroalkyl_substances) that I would usually lose through plasma.
 
@@ -34,19 +40,28 @@ The final donation also came with one of those round hand-squeeze balls. I hated
 
 Weirdly enough, there was some science hiding behind that joke. A 2022 Australian trial in firefighters with elevated PFAS found that regular blood or plasma donation reduced some serum PFAS concentrations, with plasma having the larger effect.
 
-![](/assets/images/2023/img_1195.gif)
+![Animated image opening on a small square wall-mounted box with a grille, next to a large red 'DANGER' sign on a dark corrugated wall.](/assets/images/2023/img_1195.gif)
+
+*And somewhere in the slideshow there's a little wall box beside a rather dramatic DANGER sign. An unexpected detour.*
+{: .media-caption }
 
 A whole-blood donation removes roughly 250 mg of iron, so four donations would remove about 1,000 mg across the year. Haemoglobin screening can still be normal while iron stores are low, meaning frequent donors can run down ferritin without failing the pre-donation test. How quickly that iron is replaced varies, and supplements aren't automatically the answer for every donor. Whether they're appropriate depends on iron status, diet, other blood loss and donation frequency.
 
 Lifeblood lists approximate iron loss as about 10 mg for a plasma donation and 48 mg for a platelet donation, compared with about 250 mg for whole blood. Twelve plasma donations would therefore be roughly 120 mg of iron loss; 18 would be about 180 mg. The red cells being returned is why plasma donation has a much smaller effect on iron stores than whole blood.
 
-![](/assets/images/2023/img_1193.jpg)
+![Australian Red Cross Lifeblood congratulatory graphic with a large red blood drop marked 50, two celebrating figures and text thanking a donor for 50 donations.](/assets/images/2023/img_1193.jpg)
+
+*A proper congratulations graphic for hitting 50 donations. At least it didn't come with another block of dairy chocolate.*
+{: .media-caption }
 
 Alternate between plasma and whole blood? Whole blood is still the big iron hit. Lifeblood's [Anaemia and iron deficiency in blood donors](https://www.lifeblood.com.au/health-professionals/clinical-practice/clinical-indications/iron-deficiency-anaemia/blood-donors) gives a useful summary. [How do we manage iron deficiency after blood donation?](https://onlinelibrary.wiley.com/doi/full/10.1111/bjh.15136) was useful too, but I had applied the numbers too broadly.
 
 Another thing I had been reading about was alternate-day iron. Studies in iron-depleted or iron-deficient women found that oral iron can raise hepcidin for about 24 hours, and that a greater fraction may be absorbed with alternate-day dosing. Vitamin C can help with non-haem iron absorption.
 
-![](/assets/images/2023/img_1194.jpg)
+![Lifeblood donation summary graphic reading 'You've donated 52 times', broken down into 25 blood, 25 plasma and 2 platelet donations.](/assets/images/2023/img_1194.jpg)
+
+*The final tally: 25 whole blood, 25 plasma, and two platelet donations. So long, and thanks for all the mini pretzels!*
+{: .media-caption }
 
 And there we have it, the end of an era. 25 whole blood, 25 plasma, 2 platelets. So long and thanks for all the mini pretzels! 🥨 💁‍♀️
 

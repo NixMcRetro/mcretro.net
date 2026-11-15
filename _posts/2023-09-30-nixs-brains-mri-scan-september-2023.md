@@ -12,7 +12,10 @@ share_description: >-
 
 We're on day 25 of the [never](/nixs-brains-ct-scan-september-2023/)\-[ending](/the-headache-that-keeps-marching-on/) headache. The good news, however, is that I've been to a neurologist who prescribed some [indometacin](https://en.wikipedia.org/wiki/Indometacin) (US: indomethacin). It's a nonsteroidal anti-inflammatory drug (NSAID), like naproxen or ibuprofen, but it also has an interesting role in diagnosing and treating certain headache disorders.
 
-![](/assets/images/2023/img_1163.jpg)
+![Sagittal MRI slice of the head showing the curved corpus callosum, brainstem, cerebellum and upper cervical spine in grey tones.](/assets/images/2023/img_1163.jpg)
+
+*The MRI gave me another chance to peer at the machinery inside my head. Still no obvious answer for the headache.*
+{: .media-caption }
 
 I've been given a suspected diagnosis of [hemicrania continua](https://ichd-3.org/3-trigeminal-autonomic-cephalalgias/3-4-hemicrania-continua/). "The cause of hemicrania continua is unknown." Well that's probably not good. One interesting thing is that an absolute response to therapeutic doses of indometacin is part of the diagnostic criteria. The criteria also say the headache needs to have been present for more than three months. At day 25, I wasn't exactly able to tick that box, so this was still a working diagnosis.
 
@@ -20,7 +23,10 @@ I was taking 50 mg indometacin in the morning and 50 mg at night. I figured if I
 
 Have I checked I still have the [headache](https://www.sciencedirect.com/topics/medicine-and-dentistry/hemicrania-continua)? Yes! I missed a dose on at least one occasion and it's definitely still there. Neck, back of eye socket and scalp start to tickle(?) and then turn to pain.
 
-![](/assets/images/2023/img_1164.jpg)
+![A second sagittal MRI slice through the brain and upper neck, showing the curved corpus callosum, cerebellum and brainstem from a slightly different plane.](/assets/images/2023/img_1164.jpg)
+
+*Another slice from the September MRI. Lots of fascinating brain anatomy, even if the report was comparatively uneventful.*
+{: .media-caption }
 
 Another two months until I hear from the specialist. They were kind enough to give me another MRI (with contrast this time) and apparently if I wait until late October I can have it done for free with my Health Care Card that Centrelink won't send out.
 

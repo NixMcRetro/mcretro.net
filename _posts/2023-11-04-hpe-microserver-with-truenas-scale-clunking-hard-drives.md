@@ -14,11 +14,17 @@ I have been listening to my three or four drives go clunk, clunk, clunk for the 
 
 The MicroServer was sitting in my lounge room, so whenever the TV or music was off I could hear it. Clunk, clunk, clunk, roughly every five seconds. Occasionally it would go quiet just long enough for me to wonder whether it had stopped. Nope! Back again.
 
-![](/assets/images/2023/img_1189.jpg)
+![Two powered-on silver and black HP ProLiant MicroServer Gen8 computers side by side on a small cabinet, with boxes of tiny toy birds on top.](/assets/images/2023/img_1189.jpg)
+
+*Two little Gen8 MicroServers in the lounge room. The decorative birds were quieter than the hard drives, at least.*
+{: .media-caption }
 
 Well, I found a very plausible answer. Western Digital users describe "Preventive Wear Leveling", or PWL: periodic head movement that can produce a regular click while some drives are spun up and idle. It sounds a lot like what I was hearing. I haven't found a WD specification confirming PWL for my WD161KFGX drives, but it's a likely explanation!
 
-![](/assets/images/2023/img_1190.jpg)
+![A hand holding a rectangular silver metal server panel with a black-edged perforated grille and retaining clips, photographed over a kitchen sink.](/assets/images/2023/img_1190.jpg)
+
+*A close look at the MicroServer hardware, featuring a perforated metal panel. There's no easy way to photograph a clunk.*
+{: .media-caption }
 
 On one hand I'm glad that I know what the likely noise is now. Spinning rust. I might try spinning the drives down when I'm not using the NAS. It really is just storage at this point. Spindown trades noise and power use for extra start, stop and head-loading activity, so I don't want to churn cycles for no reason. I have multiple backups though, and a drive failure would at least let me test whether I actually know how to restore them! 😅
 
@@ -32,7 +38,10 @@ The rough arithmetic checks out: one event every hour is 8,760 a year, or about 
 
 Honestly though, I still have another four years of warranty. That doesn't promise a drive won't fail, but with backups in place I'm curious to see how the sleep settings behave without churning unnecessary start, stop and load cycles. The question is, how to make it work best?
 
-![](/assets/images/2023/img_1188.jpg)
+![Front view of a powered-on HP ProLiant MicroServer Gen8, with a silver perforated door, black optical drive and glowing green status lights.](/assets/images/2023/img_1188.jpg)
+
+*A MicroServer Gen8 in all its compact, blinking glory. Lovely machine, even if the drives had a new soundtrack.*
+{: .media-caption }
 
 There sure is a lot of voodoo when it comes to technology!
 

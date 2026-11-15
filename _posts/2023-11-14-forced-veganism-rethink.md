@@ -8,23 +8,38 @@ share_description: >-
   Three years of vegan eating collide with rising rent and shrinking savings. An uncomfortable rethink of food, ethics and what I can afford. 🌱
 ---
 
-![](/assets/images/2023/img_1201.jpg)
+![A crusty bread roll stuffed with chocolate sandwich biscuits and white creme filling, sitting in an open plastic bag on a blue desk.](/assets/images/2023/img_1201.jpg)
+
+*My idea of junk-food veganism: a bread roll packed with chocolate sandwich biscuits. Nutrition was clearly not the main event.*
+{: .media-caption }
 
 For the past three years I've been vegan. A junk food vegan. Processed foods have always been my friend. They're cheap, full of energy and bad for you? Meat Loaf had it right when he said two out of three ain't bad.
 
-![](/assets/images/2023/img_0430.jpg)
+![A bread roll filled with pale green crunchy stick-shaped snacks, sitting in a clear plastic bag on a desk beside a telephone.](/assets/images/2023/img_0430.jpg)
+
+*Another masterpiece from the snack-food sandwich department. Green crunchy sticks in bread, because apparently I could.*
+{: .media-caption }
 
 I've dusted off my old cognitive dissonance from storage. I guess once your eyes are opened to the ethical ["problems"](https://www.abc.net.au/news/2023-03-28/calls-for-investigation-after-pig-gassing-footage-aired/102155766) of a modern society it becomes difficult to close them again. Suffering does seem to be a keystone of our society.
 
-![](/assets/images/2023/img_1203.jpg)
+![Poverty infographic stating one in eight people and one in six children live in poverty, with percentages for unemployment, JobSeeker, public housing and disability.](/assets/images/2023/img_1203.jpg)
+
+*The poverty figures put the cost-of-living problem into rather grim perspective. Hard to stretch money that simply isn't there.*
+{: .media-caption }
 
 A major issue I face is lack of funds. I continue to bleed money being well into month four with no income outside of [government welfare](https://www.abc.net.au/news/2022-10-20/why-are-millions-of-australians-still-living-in-poverty/101553340#). Every week that passes a chunk of my savings disappears forever because our welfare doesn't even cover rent. **[Won't someone think of the landlords?](https://www.abc.net.au/news/2023-11-14/australias-rental-housing-affordability-deteriorates/103090470)**
 
-![](/assets/images/2023/img_1202.jpg)
+![Long-term body-weight line chart from 2008 to around 2023, showing repeated rises and falls and a highlighted reading of 114.7 kg on 21st January.](/assets/images/2023/img_1202.jpg)
+
+*A very long weight chart with several spectacular hills and valleys. The ups and downs were hardly subtle.*
+{: .media-caption }
 
 Failure to stem this bleeding will likely result in homelessness. This is the cost of living and it's too damn high. So for now, I return to being a carnivore. I'll still buy vegetarian or vegan when I can justify the cost, and I'll [cut down on meals](https://www.abc.net.au/news/2023-09-12/anglicare-poverty-premium-low-income-australians-cost-of-living/102843886) and make smaller portions. That was also my plan for getting my own weight back into the range I was aiming for, maybe.
 
-![](/assets/images/2023/img_1200.jpg)
+![Supermarket seafood counter displaying orange salmon fillets, other cut fish and a large tuna head, with price tags around $30 to $40 per kilogram.](/assets/images/2023/img_1200.jpg)
+
+*A visit to the seafood counter while rethinking what I could afford to eat. A whole tuna head alongside a mountain of salmon is quite a sight.*
+{: .media-caption }
 
 But unfortunately for salmon, salmon is a nutrient-dense meal and I was still willing to make that exception. Farmed Atlantic salmon feed has reduced its reliance on marine ingredients over time, but that does not make salmon farming environmentally benign. For my rough maths, take a 5 kg salmon and assume 60% edible yield. That's about 3 kg of flesh, or roughly 26 meals at 115 g each. Those are my estimates, not a standard yield for every fish. So that's still one entire salmon slaughtered every 26 meals.
 

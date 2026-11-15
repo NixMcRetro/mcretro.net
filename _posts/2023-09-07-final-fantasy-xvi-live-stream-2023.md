@@ -8,7 +8,10 @@ share_description: >-
   Final Fantasy XVI gives me 62 hours of gorgeous PS5 action. The story is excellent, even if the late side quests start to feel like homework. 🎮
 ---
 
-[![](/assets/images/2023/img_1152.jpg)](https://www.youtube.com/playlist?list=PLLJI5UKuYtwVAVaH6ywsjtI3atRdiJ5lO)
+[![Final Fantasy XVI livestream banner with two illustrated creatures circling the game title and yellow text reading 'Shane McRetro's' and 'Live Stream'.](/assets/images/2023/img_1152.jpg)
+
+*Sixty-two hours of Final Fantasy XVI, all linked from this rather dramatic livestream banner. I do love a big adventure.*
+{: .media-caption }](https://www.youtube.com/playlist?list=PLLJI5UKuYtwVAVaH6ywsjtI3atRdiJ5lO)
 
 Click the image above to beam on over to the full playlist. Clocked in at 2 days, 14 hours total - 62 hours. Wow! I usually play games on easy settings. I guess I consider them [novels that are somewhat visual](https://en.wikipedia.org/wiki/Visual_novel): more interactive than a movie, less wordy than a book.
 

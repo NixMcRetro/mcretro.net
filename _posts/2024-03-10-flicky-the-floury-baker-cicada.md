@@ -8,7 +8,10 @@ share_description: >-
   Flicky the injured Floury Baker cicada spent ten remarkable days laying eggs and being cared for. Her complete daily video diary is preserved here. 🪲
 ---
 
-![](/assets/images/2024/img_1266.jpg)
+![Brown Floury Baker cicada hanging upside down from a thin branch, with partly damaged wings extending to the right among green leaves.](/assets/images/2024/img_1266.jpg)
+
+*Flicky, my little Floury Baker survivor, hanging onto one of her branches. Her damaged wings put an end to flying, but certainly not to keeping me busy.*
+{: .media-caption }
 
 Flicky! Ohhh that little cicada was such a survivor. Resting and laying eggs almost every day for ten days while in captivity. Sadly she succumbed to time on 8th March 2023.
 

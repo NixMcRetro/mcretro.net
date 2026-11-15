@@ -8,7 +8,10 @@ share_description: >-
   Progesterone, restless nights and a strange brain-on-fire sensation make for a difficult experiment. The cause remains uncertain, even with plenty of reading. 🧠
 ---
 
-![](/assets/images/2024/img_1288.jpg)
+![Diagram titled 'Metabolism of progesterone in humans' showing pathways to allopregnanolone, isopregnanolone, pregnanolone, and other metabolites.](/assets/images/2024/img_1288.jpg)
+
+*Welcome back to the hormone rabbit hole! This is the progesterone metabolism chart that had me asking far too many questions about neurosteroids and sleep.*
+{: .media-caption }
 
 I touched on progesterone (P4) in my [last transgender update post](/blood-test-results-february-2024/). I am not quite sure if progesterone is working in the way I want it to. My biggest annoyance with it is feeling like my brain is on fire just before trying to sleep.
 
@@ -16,11 +19,17 @@ Rewind to late February 2024, for almost three weeks my progesterone dose was do
 
 I had also ceased finasteride, which inhibits 5-alpha reductase (5AR). That enzyme helps convert progesterone towards neurosteroids such as allopregnanolone. Could stopping finasteride have changed what was happening here? Something to investigate, though I hadn't measured those metabolites.
 
-![](/assets/images/2024/img_1289.jpg)
+![Apple Health sleep chart for February 2024 showing average time in bed of 8 hours 34 minutes and average time asleep of 6 hours 56 minutes.](/assets/images/2024/img_1289.jpg)
+
+*February's sleep was a mess of blue bars and orange interruptions. Almost eight and a half hours in bed, but under seven actually asleep on average.*
+{: .media-caption }
 
 My sleep quality has been pretty broken for a while now. Look at those orange blocks. And here I was hoping progesterone might help. [Anxiolytic?](https://en.wikipedia.org/wiki/Anxiolytic) Yes please! [Sleep improving?](https://pmc.ncbi.nlm.nih.gov/articles/PMC9175584/) Definitely on the wish list. That small study of 100 mg nightly found no clear improvement over three months, though.
 
-![](/assets/images/2024/img_1290.jpg)
+![Apple Health sleep chart for March 2024 showing average time in bed of 8 hours 33 minutes and average time asleep of 7 hours 37 minutes.](/assets/images/2024/img_1290.jpg)
+
+*March's sleep chart looked a bit better at 7 hours 37 minutes asleep on average, but those little orange interruptions weren't exactly gone.*
+{: .media-caption }
 
 Instead I get this whole brain fire thing and feel like I've taken an [anxiogenic](https://en.wikipedia.org/wiki/Anxiogenic). Brain on fire? Throw in some [formication](https://en.wikipedia.org/wiki/Formication), that crawling sensation, and I was wondering about a glutamate rebound or surge. Excitotoxicity perhaps? It **felt** that way, but I had no evidence of actual neuronal injury.
 
@@ -28,7 +37,10 @@ I've experienced similar feelings while withdrawing from pregabalin and trusty o
 
 Another interesting side effect I am seeing a lot more of is [dissociation](https://en.wikipedia.org/wiki/Dissociation_(psychology)). Ordinarily, I would only experience this while in high stress, high anxiety situations but recently I'm noting it a lot more just doing chores around the house - which is a little concerning.
 
-![](/assets/images/2024/img_1258.jpg)
+![Diagram of 5-alpha-reductase pathways from progesterone to DHP and testosterone to DHT, with finasteride and dutasteride shown inhibiting the enzyme.](/assets/images/2024/img_1258.jpg)
+
+*That 5-alpha-reductase diagram again! No wonder I kept staring at it while trying to untangle progesterone, finasteride, and how I was feeling.*
+{: .media-caption }
 
 Regardless, I wondered whether something was messing with my GABAergic system, and progesterone-derived neurosteroids fit the bill. Armed with my two-thirds of a biomedical science degree I went digging for more information. Up above is an image from my last health blog post. Finasteride can interfere with the 5-alpha-reduced pathway that produces allopregnanolone, though blocking the enzyme doesn't mean every last bit of that pathway stops.
 
@@ -44,7 +56,10 @@ I wondered whether moving to a more potent 5AR inhibitor, such as dutasteride, w
 
 Alright, so a bunch of neurosteroids are doing a bunch of things. The half-life figures I'd collected came from different contexts, so they weren't much of a clock for what was happening in me. Hormones are messy. Where does that leave me? I guess I am left questioning whether I should be taking progesterone at all. My plan was to return to 200 mg and go over the dose and symptoms with my endocrinologist.
 
-![](/assets/images/2024/img_1287.jpg)
+![Three-panel menstrual-cycle chart showing uterine phases, FSH and LH peaks at ovulation, and changing oestrogen and progesterone levels across 28 days.](/assets/images/2024/img_1287.jpg)
+
+*I was comparing the rises and falls of oestrogen and progesterone during a menstrual cycle. Interesting background reading, not a dosing chart for my own treatment.*
+{: .media-caption }
 
 My search revealed some interesting overlap with research into [premenstrual syndrome](https://en.wikipedia.org/wiki/Premenstrual_syndrome) (PMS) and [premenstrual dysphoric disorder](https://en.wikipedia.org/wiki/Premenstrual_dysphoric_disorder) (PMDD). Sensitivity to normal hormone and allopregnanolone fluctuations seemed particularly interesting. Could changing levels be part of what I was feeling? That gave me something to think about, without meaning I had PMDD.
 
@@ -62,7 +77,10 @@ What were my most recent levels again? 9.1 nmol/L (about **2.9ng/mL** in freedom
 
 Looking at the short-lived peaks involved in oral progesterone made me wonder whether splitting the dose might feel smoother. Would 100 mg twice daily work better for me than once at night? Something to discuss and test with my endocrinologist.
 
-![](/assets/images/2024/img_1286.jpg)
+![Colour-coded chart comparing canonical, backdoor, and C11-oxy backdoor androgen synthesis pathways, including progesterone and DHT.](/assets/images/2024/img_1286.jpg)
+
+*Then I wandered into the androgen backdoor pathways. More biochemical spaghetti, and a fresh list of things I couldn't answer from my own blood results.*
+{: .media-caption }
 
 Of course I was also thinking about the [androgen backdoor pathways](https://en.wikipedia.org/wiki/Androgen_backdoor_pathway). Progesterone can feed into pathways capable of producing potent androgens such as DHT, which got me wondering about the hair on my head. I hadn't measured a rise in DHT, though. Another question to investigate.
 
@@ -72,7 +90,10 @@ Libido was another thing I was watching because I absolutely did not want an inc
 
 Other oddities: my facial hair became darker while I was on the higher 400 mg progesterone dose. My upper lip now had black hairs where I remembered blonde ones. New and unwanted. I couldn't tell whether progesterone was responsible. It might be useful for [IPL](https://en.wikipedia.org/wiki/Intense_pulsed_light) treatment. But now there's shadow on my upper lip I never had before.
 
-![](/assets/images/2024/img_1291.jpg)
+![Line chart of estradiol and progesterone over a 28-day menstrual cycle, with a pink estradiol peak near ovulation and a later blue progesterone rise.](/assets/images/2024/img_1291.jpg)
+
+*One last menstrual-cycle graph while I tried to make sense of progesterone. A useful comparison, even if my own treatment doesn't follow this monthly pattern.*
+{: .media-caption }
 
 One big uncertainty is that I'm not sure what my levels of estradiol will be at the next blood test. Are the 200 mg of pellets doing their job properly? Or did they fail? Does the dose need to be increased?
 

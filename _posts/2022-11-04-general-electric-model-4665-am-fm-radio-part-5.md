@@ -14,15 +14,24 @@ All good things eventually come to an end. If you've watched the previous four v
 
 The stickers on my unit had disappeared, so I couldn't work out whether I had the A or B revision. These are the values from my actual board, not a parts list for every Model 4665 ever made. If you're recapping one yourself, check what's fitted, including the capacitor type, polarity, capacitance, voltage and temperature ratings, ESR, ripple-current requirements and physical fit.
 
-![](/assets/images/2022/img_0982.jpg)
+![Opened General Electric digital clock radio showing its loudspeaker, transformer, exposed circuit boards, tuning scale and glowing blue-green clock display.](/assets/images/2022/img_0982.jpg)
+
+*The GE 4665 laid open for one more look at its innards and the lovely glowing VFD.*
+{: .media-caption }
 
 For a write-up of the EA 7-4665B model, see [RadioMuseum's entry](https://www.radiomuseum.org/r/general_eo_ea7_4665b.html). It provides some useful background, but it doesn't identify the revision of my unlabelled unit.
 
-![](/assets/images/2022/img_0981.jpg)
+![Underside of several green circuit boards inside a disassembled clock radio, showing solder joints, copper tracks and multicoloured wires.](/assets/images/2022/img_0981.jpg)
+
+*A closer look under the GE radio's circuit boards, where the solder joints and wiring live.*
+{: .media-caption }
 
 Note that all capacitor markings are underneath the capacitors. On this unit the sticker with the model number was missing from the base. If any switches need cleaning, use a cleaner specifically suitable for the switch materials and surrounding plastics.
 
-![](/assets/images/2022/img_0983.jpg)
+![Brown General Electric digital clock radio assembled on a blue bench mat, with its turquoise fluorescent display reading AM 12:00.](/assets/images/2022/img_0983.jpg)
+
+*All buttoned up again. That glowing clock still has plenty of charm.*
+{: .media-caption }
 
 You can either [download the PDF version](/assets/uploads/General-Electric-Alarm-Clock.pdf) or copy and paste the list below into a plain text file. Where I've written "Upgraded", I fitted a capacitor with a higher voltage rating. That doesn't automatically make it a suitable replacement, of course, since all the other requirements still matter.
 

@@ -12,7 +12,10 @@ share_description: >-
 
 Now this is an interesting one. I entered [RetroChallenge 2022/10](https://www.retrochallenge.org) to see if I could bring the GeoCities archive back to life again using the scripts built by [despens](https://github.com/despens/Geocities) in 2012/2013. The goal was to use hardware from that era running Ubuntu 12.04, the OS those scripts were originally written for.
 
-![](/assets/images/2022/img_0980.jpg)
+![Safari showing a restored GeoCities page titled 'The Ugliest Home Page in the World' with bright green textured background, yellow headings and a cartoon animal.](/assets/images/2022/img_0980.jpg)
+
+*A restored GeoCities classic, loud green background and all. Web design was a different adventure back then.*
+{: .media-caption }
 
 And what can I say? If I'd been better at installing dependencies, it probably would have happened sooner. Regardless, it worked! Now that I've seen all of the scripts in action, I'm going to try running them on a modern OS, Ubuntu 22.04. I'll track it all in [my GeoCities GitHub repository](https://github.com/NixMcRetro/GeoCities). I've even downloaded GitHub Desktop to try using GitHub properly... that's a first.
 

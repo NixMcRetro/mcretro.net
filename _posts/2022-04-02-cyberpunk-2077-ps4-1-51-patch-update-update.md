@@ -8,31 +8,52 @@ share_description: >-
   After a PS4 system update finally fixes Cyberpunk's launch error, I rewind hours of saves to chase the platinum trophy. Painful, but achieved! 🏆
 ---
 
-![](/assets/images/2022/img_0913.jpg)
+![Screenshot of an Ask PlayStation post acknowledging that the PS4 disc version of Cyberpunk 2077 would not launch after a game patch, and promising a system update.](/assets/images/2022/img_0913.jpg)
+
+*When even the PlayStation needed an update to get Cyberpunk running again, things had gone a bit sideways.*
+{: .media-caption }
 
 How did they break the game to the point of [Sony needing to release a system patch](https://www.pushsquare.com/news/2022/02/sonys-releasing-a-ps4-system-update-to-fix-cyberpunk-2077-disc-issues) to fix it?
 
-![](/assets/images/2022/img_0915.jpg)
+![Photograph of PS4 notifications showing system software version 9.04 downloading above an installed Cyberpunk 2077 version 1.51 update.](/assets/images/2022/img_0915.jpg)
+
+*System software 9.04 was downloading, with Cyberpunk 1.51 already installed. Here we go again.*
+{: .media-caption }
 
 [That's impressive](https://web.archive.org/web/20220402195154/https://support.cdprojektred.com/en/cyberpunk/playstation/sp-technical/issue/2090/ps4-system-update-addresses-cannot-start-the-application-the-data-is-corrupted-issue-occuring-after-updating-to-1-5). But you know what I think is even more impressive?
 
-![](/assets/images/2022/img_0917.jpg)
+![Cyberpunk 2077 gameplay showing the 'Never Fade Away' trophy earned and 'Rayfield Aerondight Guinevere' vehicle acquired notifications beside a car in a palm-lined city.](/assets/images/2022/img_0917.jpg)
+
+*There it is! The Never Fade Away trophy popped up, with a new car for good measure. The completionist lives on.*
+{: .media-caption }
 
 A platinum trophy in Cyberpunk 2077 on a PS4 slim. It was a struggle but the completionist in me carried on. A couple of the quests were bugged and wouldn't complete.
 
-![](/assets/images/2022/img_0916.jpg)
+![Cyberpunk 2077 gameplay on a television showing the Shion MZ2 purchase prompt for €$57,000 beside a black car in a blue-lit car park.](/assets/images/2022/img_0916.jpg)
+
+*Another car to buy, another dent in the wallet. The Shion MZ2 was asking for €$57,000.*
+{: .media-caption }
 
 Nothing worse than having to buy a car that is missing and therefore can't be bought. And that one Watson NCPD quest marker that was missing. I made an action plan.
 
-![](/assets/images/2022/img_0918.jpg)
+![Handwritten Cyberpunk 2077 troubleshooting notes on yellow paper, with crossed-out tasks and reminders about buying cars, a missing Shion MZ2 and a version 1.00 money hack.](/assets/images/2022/img_0918.jpg)
+
+*The action plan had become a sheet of crossed-out jobs, missing cars and money-making schemes. Very organised chaos.*
+{: .media-caption }
 
 Some of the things I could address by reverting my 117 hours of gameplay by roughly 87 hours, back to around hour 30. Something went wrong at some point.
 
-![](/assets/images/2022/img_0914.jpg)
+![Cyberpunk 2077 Load Game screen listing level 50 Nomad saves from version 1.31, including a highlighted save at 117 hours and 37 minutes.](/assets/images/2022/img_0914.jpg)
+
+*The saves were sitting at around 117 hours. Time to rewind a rather painful chunk of progress.*
+{: .media-caption }
 
 But then again, some were broken from the very beginning, and others were out of reach in my playthrough because I hadn't saved my in-game cash from the start. Autojock trophy, I'm looking at you!
 
-![](/assets/images/2022/cyberpunk-2077-ps4-ce-34878-0-crash.jpg)
+![Photograph of a PS4 blue error screen for Cyberpunk 2077 showing code CE-34878-0 and 'Checking the error status' at 0%.](/assets/images/2022/cyberpunk-2077-ps4-ce-34878-0-crash.jpg)
+
+*And one last blue screen for old times' sake. CE-34878-0 was still doing the rounds.*
+{: .media-caption }
 
 How do I fix something that's bugged? I had to go back to the start, right back. Maybe I learnt from the best, CD Projekt RED when they broke the PS4 version of the game...
 

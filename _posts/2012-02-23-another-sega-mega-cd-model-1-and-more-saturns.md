@@ -8,11 +8,17 @@ share_description: >-
   Another Mega-CD, two Sega Saturns and a worrying amount of corrosion. A solder-blobbed fuse and some power-supply swapping make this a proper retro haul. 🎮
 ---
 
-![](/assets/images/2012/img_0003.jpg)
+![Close-up of a Sega circuit board with a shiny blob of solder bridging the fuse position marked F1, beside a black connector and cylindrical capacitors.](/assets/images/2012/img_0003.jpg)
+
+*That should be a fuse at F1, not a suspicious lump of solder. I don't think that's quite what Sega had in mind!*
+{: .media-caption }
 
 Received another Sega Mega-CD Model 1 today, this time with a Sega Mega Drive Model 1 sitting on top. It's in pretty rough shape, but it does function. Once I pulled it apart I found rust and liquid residue. Someone had bypassed the fuse with a blob of solder, possibly after it blew. Given the corrosion around it, the liquid damage may have played a part.
 
-![](/assets/images/2012/img_0004.jpg)
+![Removed grey metal shielding panel with orange-brown rust stains and water marks around its edges, lying on a wooden surface.](/assets/images/2012/img_0004.jpg)
+
+*The Mega-CD's metal shielding had seen rather better days. Rust and residue all over the place, just what I wanted to find inside!*
+{: .media-caption }
 
 I'll replace the fuse once I've cleaned everything up as best I can. It also seems a little slow to recognise music CDs, although once it finds them it plays through the disc fine.
 

@@ -8,7 +8,10 @@ share_description: >-
   A Sega Mega-CD Model 1 arrives from Germany and immediately gets opened up for inspection. Inside lurks a JVC Optima-5 laser, with replacements hard to find. 💿
 ---
 
-![](/assets/images/2012/img_0002.jpg)
+![Black Sega Mega Drive Model 1 with a 16-BIT label stacked on a front-loading Mega-CD Model 1 unit, both on a beige carpet.](/assets/images/2012/img_0002.jpg)
+
+*The Mega-CD Model 1 that arrived from Germany, paired with a Mega Drive. Naturally, it wasn't long before I had the lid off.*
+{: .media-caption }
 
 Received my Sega Mega-CD Model 1 from Germany yesterday, so naturally I pulled it apart to have a look inside. It has one of the dreaded JVC Optima-5 optical pickups. Replacement Optima-5 units were difficult to source compared with the more common Sony KSS-240A.
 

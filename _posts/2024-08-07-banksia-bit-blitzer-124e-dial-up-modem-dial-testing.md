@@ -14,7 +14,10 @@ And we return to the modems. From cicadas to real life issues and back to modems
 
 The modem in question is a Banksia BIT Blitzer 124E, which operates at a magnificent 2400 bps. That's not a typo. Two thousand four hundred bits per second! Forget downloading anything large, we're here to enjoy every last byte of the experience.
 
-![](/assets/images/2023/img_1026.jpg)
+![Exposed circuit board of a vintage Banksia BIT modem, with a large round speaker, integrated circuits, capacitors, yellow transformer, telephone socket and red indicator LEDs.](/assets/images/2023/img_1026.jpg)
+
+*Under the lid of the Banksia BIT Blitzer. All those chips, the speaker, and the row of LEDs helped bring a magnificent 2400 bps connection back to life.*
+{: .media-caption }
 
 I've connected it to an HP Gen8 MicroServer and a little VoIP arrangement, with a Banksia Wave SP modem at the other end. The connection passes through the telephone adapters and an Asterisk server running on a Raspberry Pi, allowing the two old modems to talk without needing a real dial-up ISP. Modern technology being used to recreate obsolete technology. Beautiful!
 

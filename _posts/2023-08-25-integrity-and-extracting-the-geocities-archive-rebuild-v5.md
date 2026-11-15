@@ -8,11 +8,17 @@ share_description: >-
   GeoCities rebuild v5 gets split into 794 tar chunks with SHA-256 checksums. The boring archive-integrity work is also the most important part. 💾
 ---
 
-![](/assets/images/2023/img_1130.jpg)
+![Server Fault answer screenshot demonstrating sha256sum commands for creating and later checking a SHA-256 checksum file for a tar.gz backup.](/assets/images/2023/img_1130.jpg)
+
+*Checksums aren't glamorous, but they are considerably better than discovering your archive is broken after moving it.*
+{: .media-caption }
 
 Quick heads up: this is a post for my own reference. The screenshot above comes from the [Server Fault discussion on checking a tar.gz backup's integrity](https://serverfault.com/questions/293605/check-integrity-of-tar-gz-backup).
 
-![](/assets/images/2023/img_1129.jpg)
+![Linux tar tutorial screenshot showing --wildcards '*.php' examples for extracting matching files from tar, tar.gz and tar.bz2 archives.](/assets/images/2023/img_1129.jpg)
+
+*Wildcard extraction is another reason I like tar. No need to unpack the entire lot just to find matching files.*
+{: .media-caption }
 
 Another awesome thing about tar files is that you can search for files and extract them using wildcard patterns. At the time I couldn't find the original link for the screenshot above, and neither Google nor the Duck was helping. It matches the wildcard-extraction example in [Tecmint's tar guide](https://web.archive.org/web/20230324065846/https://www.tecmint.com/18-tar-command-examples-in-linux/).
 

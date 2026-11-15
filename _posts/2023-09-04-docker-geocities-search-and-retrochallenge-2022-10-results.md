@@ -8,29 +8,47 @@ share_description: >-
   Winning RetroChallenge's grand prize is lovely, but building portable GeoCities search with Docker, Nutch and Solr is another adventure entirely. 🏆
 ---
 
-![](/assets/images/2023/img_1149.jpg)
+![RetroChallenge results page for ShaneMcRetro, describing a portable GeoCities Apache web server project and displaying the final status 'Grand Prize!'.](/assets/images/2023/img_1149.jpg)
+
+*The RetroChallenge results were in, and somehow my tiny GeoCities server project had picked up the Grand Prize. Nice!*
+{: .media-caption }
 
 Where to start with the last few days? Why not here! The [RetroChallenge 2022/10 results](https://www.retrochallenge.org/2023/09/rc202210-results.html) are in. Looks like I nabbed the **Grand Prize**. Not too bad.
 
-![](/assets/images/2023/img_1150.jpg)
+![RetroChallenge results page for SuperNick, with a photo of a Data General Dasher 386-25K computer and a final status of 'Prize Winner'.](/assets/images/2023/img_1150.jpg)
+
+*SuperNick got a prize too, with a Data General Dasher restoration. A troublesome old PC is a perfectly respectable project.*
+{: .media-caption }
 
 SuperNick (Nick) also got a place, congratulations! He won the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/) grand prize last year.
 
-![](/assets/images/2023/img_1148.jpg)
+![RetroChallenge results entry for Pendleton115 featuring a pumpkin-themed iMac G4 and the final status 'Finished the Month'.](/assets/images/2023/img_1148.jpg)
+
+*Pumpkin Mac survived the judging, even if the judges weren't quite as generous with the prizes as I would have been.*
+{: .media-caption }
 
 That poor pumpkin Mac just can't catch a break.
 
-![](/assets/images/2023/img_1146.jpg)
+![Orange jack-o'-lantern-themed iMac G4 dome with an Apple logo and stitched smile, displayed beside a matching mug and sticker.](/assets/images/2023/img_1146.jpg)
+
+*A pumpkin Mac, a matching mug, and a sticker. Honestly, how was anyone meant to compete with that level of merchandise?*
+{: .media-caption }
 
 I honestly believe it deserved a place. I suppose as the grand prize winner, I can relinquish my title and hand it to the true winner - [Tim](https://pendleton115.net/). Why? Pumpkin Mac has more merch of course!
 
-![](/assets/images/2023/img_1151.jpg)
+![Apache Solr administration page showing a query for 'war parrot' against a nutch collection and a JSON response containing two matching Channel Chirp documents.](/assets/images/2023/img_1151.jpg)
+
+*The Solr search was answering a test query for 'war parrot'. Getting that connected to a useful GeoCities search was the next adventure.*
+{: .media-caption }
 
 On the topic of RetroChallenge 2022/10, where we tried to bend the GeoCities archive to our needs, I've coincidentally been trying to cook up the following: [Solr](https://solr.apache.org) + [Nutch](https://nutch.apache.org) + [Blacklight](https://projectblacklight.org) in a [Docker](https://www.docker.com) setup.
 
 So far, from what I understand: Solr is the search platform and index, Nutch is the web crawler feeding content into it, and Project Blacklight is the search frontend talking to Solr. This should allow _**full-text searching**_ of the GeoCities Archive. And Docker? Well I've wanted to make GeoCities **_even more portable_** for a long while and now I've started making inroads.
 
-![](/assets/images/2023/img_1147.jpg)
+![Unstyled Blacklight search page running on localhost:3000, with a search box, plain text navigation and 'No results found' messages.](/assets/images/2023/img_1147.jpg)
+
+*Blacklight was loading, but the styling had fallen out and the search still wasn't cooperating. At least it was something!*
+{: .media-caption }
 
 Above is a crippled Blacklight. Not quite functional yet. Search doesn't work and I lost the formatting... wait, was PHP even installed? Maybe that's it! Nope. Blacklight is a Ruby on Rails application, so PHP was a complete red herring. This is why it is good to think out loud. 😆
 

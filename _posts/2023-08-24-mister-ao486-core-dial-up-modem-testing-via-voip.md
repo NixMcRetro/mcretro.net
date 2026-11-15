@@ -12,17 +12,26 @@ share_description: >-
 
 First thing I should probably note: this footage is from relatively early in my VoIP testing, back in 2021. I didn't use anything fancy apart from the VoIP box, some phone cables and good luck. Coupled with [Doge Microsystems' really great dial-up pool guide](https://dogemicrosystems.ca/wiki/Dial-up_pool), of course.
 
-![](/assets/images/2023/img_1126.jpg)
+![Several vintage external dial-up modems, including black Avtek units, a white Banksia unit and a blue NetComm Roadster V.92, arranged on a wooden shelf.](/assets/images/2023/img_1126.jpg)
+
+*A shelf of modems. Apparently one or two were never going to be enough for my dial-up experiments.*
+{: .media-caption }
 
 For the test, I had a NetComm and a Banksia modem connected through a Raspberry Pi running Asterisk, with Windows 98 running on the MiSTer ao486 core. It's a pretty ridiculous amount of equipment just to get a dial-up connection, which is probably why I enjoy it.
 
 It does get to a point where you stop and ask yourself, "How many modems are too many modems?" I think I've worked out the answer. They had a very limited use case for me: testing them while testing [the GeoCities Archive](/homepages/geocities). With that work mostly behind me, the modems don't really serve a purpose.
 
-![](/assets/images/2023/img_1127.jpg)
+![Closer view of a shelf holding Avtek, Banksia and blue NetComm Roadster V.92 modems, with another white modem and a pile of cables below.](/assets/images/2023/img_1127.jpg)
+
+*Another angle on the modem collection, complete with the inevitable pile of cables and power bricks.*
+{: .media-caption }
 
 That said, I still have plenty of modem video footage to process. Most of the modems have made their way to the [Australian Computer Museum Society (ACMS)](https://forum.acms.org.au/) after having their capacitors replaced.
 
-![](/assets/images/2023/img_1128.jpg)
+![Open black computer enclosure holding an illuminated MiSTer FPGA board and connected cables, with a small black MiSTer-labelled controller in front.](/assets/images/2023/img_1128.jpg)
+
+*The MiSTer hardware in its open enclosure. Far less physical bulk than keeping another complete vintage PC around.*
+{: .media-caption }
 
 I left the setup running for around eight hours. The reported connections included 31,200 bps before dropping to 28,800 bps, and downloads were coming through at roughly 3 kB/s. Not fast by today's standards, but that's hardly the point of messing about with dial-up modems!
 

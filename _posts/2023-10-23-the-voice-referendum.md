@@ -8,7 +8,10 @@ share_description: >-
   Looking back at Australia's 2023 Voice referendum, the result, the campaign and my own unsuccessful attempt to vote. A difficult reflection. 🗳️
 ---
 
-![](/assets/images/2023/img_1169.jpg)
+![Historical referendum results graphic reporting a 60.3% No and 39.7% Yes national tally, with No majorities in all six Australian states.](/assets/images/2023/img_1169.jpg)
+
+*An early ABC tally showing the Voice referendum defeated. The final percentages changed slightly as counting finished.*
+{: .media-caption }
 
 What the actual fuck Australia? When it comes to politics I am very left leaning and the echo chambers I frequent tend to be left aligned. Oh, aaaaaand I might not have voted. The final count was 39.94% Yes and 60.06% No; the screenshot above shows an earlier tally. But what the hell are we doing voting no on something that I believed could benefit First Nations people without taking anything away from anyone else?
 
@@ -18,13 +21,19 @@ Oh but we're already all considered equals they shout. Yeah? I'll let you know h
 
 To me, it was never about equality. I saw far too much of it as thinly veiled racism that we failed to stop.
 
-![](/assets/images/2023/img_1168.jpg)
+![Map of greater Sydney and nearby New South Wales electorates shaded by percentage voting Yes in the 2023 Voice referendum, with purple inner-city areas and orange outer areas.](/assets/images/2023/img_1168.jpg)
+
+*The Sydney-area map shows how much the Yes vote varied between electorates. Some inner-city patches were quite different from the outer suburbs.*
+{: .media-caption }
 
 Here's the great city of Sydney, my home and a place I can barely afford to live anymore. Every week I'm alive, I'm running at a loss. And maybe it's time to leave but then again, my area managed to vote in the right direction, a pale yes vote.
 
 But what of these no voters? Was this just a census for how racist and bigoted we are as Australians? If so the outer suburbs of Sydney are doing their part and regional New South Wales even more so. Please don't get me started on Queensland... bunch of backwater bumpkins!
 
-![](/assets/images/2023/img_1178.jpg)
+![Screenshot listing eligibility grounds for a single-event postal vote, including serious illness, infirmity and a reasonable fear for personal safety.](/assets/images/2023/img_1178.jpg)
+
+*Looking back, the postal-vote eligibility list was broader than I'd realised. I didn't work through those options at the time.*
+{: .media-caption }
 
 Why did I fail to vote? I wanted to do a postal vote but after looking at the requirements I didn't think I fitted them. Looking back at the actual 2023 AEC rules, they included serious illness, infirmity and a reasonable fear for personal wellbeing or safety. Whether my circumstances fitted one of those grounds was not something I worked through at the time. Instead I chose to go in person, have a panic attack, escape the voting area and not return all day. Great to see the pregabalin I've been prescribed not quite working right for anxiety. Works great for sleep, but that's about it.
 
@@ -32,21 +41,45 @@ When it comes to things like our constitution I am generally out of the loop. Pr
 
 I guess I am just disappointed at how we treat our own people. The federal Liberal Party had formally decided to oppose the proposed Voice and campaign for No, joining the Nationals, although not every Liberal politician agreed. I found that position disgusting. The following images show the [Voice design principles](https://web.archive.org/web/20231012062458/https://voice.gov.au/about-voice/voice-principles).
 
-![](/assets/images/2023/img_1170.jpg)
+![Voice design-principles graphic proposing independent advice to Parliament and government, including proactive representations on First Nations matters.](/assets/images/2023/img_1170.jpg)
 
-![](/assets/images/2023/img_1171.jpg)
+*The proposed Voice was designed to make representations to Parliament and government, rather than decide legislation itself.*
+{: .media-caption }
 
-![](/assets/images/2023/img_1172.jpg)
+![Voice design-principles graphic saying members would be chosen by Aboriginal and Torres Strait Islander communities according to local wishes, not appointed by government.](/assets/images/2023/img_1171.jpg)
 
-![](/assets/images/2023/img_1173.jpg)
+*Under the proposed principles, communities would choose their own Voice representatives. The details were to be worked out after the referendum.*
+{: .media-caption }
 
-![](/assets/images/2023/img_1174.jpg)
+![Voice design-principles graphic proposing representatives from states, territories and the Torres Strait, with gender balance and youth inclusion.](/assets/images/2023/img_1172.jpg)
 
-![](/assets/images/2023/img_1175.jpg)
+*The proposed membership aimed for geographic representation, gender balance, and a place for younger voices.*
+{: .media-caption }
 
-![](/assets/images/2023/img_1176.jpg)
+![Voice design-principles graphic describing a community-led, inclusive and culturally informed body that would consult grassroots and regional groups.](/assets/images/2023/img_1173.jpg)
 
-![](/assets/images/2023/img_1177.jpg)
+*The idea was for the Voice to stay connected with the communities it represented, including people often left out of consultation.*
+{: .media-caption }
+
+![Voice design-principles graphic proposing transparency and accountability, with standard reporting rules and oversight for serious misconduct.](/assets/images/2023/img_1174.jpg)
+
+*The proposed design also described reporting obligations, anti-corruption oversight, and ways to deal with misconduct.*
+{: .media-caption }
+
+![Voice design-principles graphic proposing that the body work alongside existing organisations and traditional structures rather than replace them.](/assets/images/2023/img_1175.jpg)
+
+*This principle was about respecting the work of organisations and traditional structures already in place.*
+{: .media-caption }
+
+![Voice design-principles graphic stating the proposed body would advise on improving programs and services but would not deliver them or manage funding.](/assets/images/2023/img_1176.jpg)
+
+*The proposal separated advice from program delivery. The Voice would make representations, not run services or budgets.*
+{: .media-caption }
+
+![Simple Voice design-principles banner stating that the proposed Aboriginal and Torres Strait Islander Voice would have no veto power.](/assets/images/2023/img_1177.jpg)
+
+*The final principle made one point very clearly: the proposed Voice would not have a veto.*
+{: .media-caption }
 
 If you find yourself supporting policies of the right, consider how you got there and rethink how you can align your values to be more supportive of others. Why aren't we more progressive? I do not like where things are going. We are fast becoming the new America, if we aren't already and I don't like it one bit. 😕
 

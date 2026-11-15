@@ -16,15 +16,24 @@ I've gotta hand it to Sony, these live streams look so much better at 60fps at 1
 
 But I mean look at this, it's part 2 of 2 and it's still 1080p 60fps streaming! The footage is amazing, isn't it? Gosh INTERmission is short - I might replay the full 18 chapters again in PS5 mode! Then again previously inaccessible PS5 exclusive Horizon DLC is now within my grasp!
 
-![](/assets/images/2023/img_1025.jpg)
+![Comparison photograph of three PS5 internal cooling assemblies labelled 1100, 1200 and 1000 from left to right.](/assets/images/2023/img_1025.jpg)
+
+*The PS5 1200-series cooling assembly is the one in the middle. There's a lot of metal under that plastic shell.*
+{: .media-caption }
 
 She's a beefy one, a [CFI-1202A](https://www.theverge.com/2022/9/7/23340577/sony-ps5-new-design-motherboard-less-power-lighter). The 1200-series internals are the middle set in the comparison above, from [Austin Evans's PS5 teardown](https://www.youtube.com/watch?v=21vJ9XBozeI), shared via The Verge. That's the least beefy version so far, and it barely fits in my entertainment unit - but it does, and horizontally at that! VCR-sized appliances are back, baby! The slims aren't here and I've waited as long as I can. The amount of heat it exhausts is crazy... and I've already filled the usable space on its built-in 825 GB SSD.
 
-![](/assets/images/2023/img_1024.jpg)
+![Three black Avtek external modems stacked on a tabletop, with MegaPlus V.32bis, Mega Data/Fax Modem and MegaPlusFax V.32bis front panels.](/assets/images/2023/img_1024.jpg)
+
+*Three more of the Avtek clan. It's difficult to stop collecting these things, even when I probably should.*
+{: .media-caption }
 
 In other news, I'm being made redundant at the end of this week. Among many other things, this will end my dial-up modem collecting. Which will probably then result in a barrage of modem-related videos over the next six months as I process the footage for [YouTube](https://www.youtube.com/@NixMcRetro). I love rambling while the video rolls, if you don't enjoy that - stay back! 🙂
 
-![](/assets/images/2023/img_1023.jpg)
+![Four empty cicada nymph shells of increasing size arranged on a white surface under a lamp.](/assets/images/2023/img_1023.jpg)
+
+*Four little cicada exuviae lined up for inspection. There's plenty of cicada footage still to sort through.*
+{: .media-caption }
 
 On the topic of YouTube, there's a lot of cicada related video for me to sift through as well for the [Super Nature World YouTube channel](https://www.youtube.com/@SuperNatureWorld). On the blog front, we now have Mastodon sharing via Jetpack for WordPress to my brand new [Mastodon feed](https://mastodon.social/@NixMcRetro). Coupling Mastodon with a sprinkling of Facebook and [Tumblr](https://www.tumblr.com/nixmcretro), I think we'll be OK. I'll try to post to Twitter when I remember but it won't be [automattic](https://automattic.com/about/) anymore... ha ha ha! 😉
 

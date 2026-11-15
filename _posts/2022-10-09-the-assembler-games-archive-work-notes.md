@@ -8,23 +8,35 @@ share_description: >-
   Old ASSEMblergames.com archive notes tackle enormous macOS pathnames, strange filenames and a stubborn mirror. Historical commands, not a how-to. 💻
 ---
 
-![](/assets/images/2022/img_0973.gif)
+![ASSEMbler title graphic with white letters in separate dark-blue blocks and a blue cartoon hedgehog giving a thumbs-up on the right.](/assets/images/2022/img_0973.gif)
+
+*The old ASSEMbler Games branding, complete with its cheerful blue mascot. Time for some archive archaeology.*
+{: .media-caption }
 
 For anyone else who has the [ASSEMbler Games archive](https://archive.org/details/AssemblerGames.com-Httrack-June-04th-2019-Nemesis), I thought I'd just leave up some notes on what I did and what issues I had while putting it all together.
 
 I've since taken down my mirror as I didn't have time to get it, let alone my GeoCities rebuild, working as well as I'd hoped. Maybe in the future it will reappear, who knows! Thanks to the good folk at [Obscure Gamers](https://web.archive.org/web/20221007095651/https://www.obscuregamers.com/threads/assemblergames-backups.23/) for tracking this as it all went down. The [YouTube archive credited to ASSEMBlergamers](https://archive.org/details/assemblergames-youtube-archive) describes videos saved in 2019, before the channel was reported missing in September 2021 - lucky!
 
-![](/assets/images/2022/img_0965.jpg)
+![Terminal listing numerous archive file paths containing question marks, including a long highlighted forum filename with garbled characters.](/assets/images/2022/img_0965.jpg)
+
+*Some of these recovered filenames were absolute monsters. Others were barely readable.*
+{: .media-caption }
 
 One of the biggest issues I hit on macOS was pathname length. I described it at the time as a "1024-character filename limit", but that was the wrong term. An individual filename component can be up to 255 characters, while the traditional macOS pathname limit is less than 1024 characters. These recursive archive paths were blowing out the full path, not creating a single 1024-character filename. I also had names that did not display cleanly in the terminal, as the question marks above show. I described those as "non-printable characters" in my original notes; that was a separate cleanup headache.
 
-![](/assets/images/2022/img_0966.jpg)
+![Terminal listing forum HTML files and category names, ending with a highlighted filename containing escaped, unreadable byte sequences.](/assets/images/2022/img_0966.jpg)
+
+*One of the filenames that made cleanup such a joy. At least the terminal could list it.*
+{: .media-caption }
 
 Another example above. For the awkward names, I used the inode number to find the file without having to type its name.
 
 The commands below are my historical cleanup notes. They include file deletion, so they are not paste-ready instructions for an archive you have not backed up and inspected.
 
-![](/assets/images/2022/img_0967.jpg)
+![Terminal screenshot showing a find command with inode number 99807 highlighted and an interactive remove option.](/assets/images/2022/img_0967.jpg)
+
+*Using an inode number to track down an awkwardly named file. The command asks before deleting.*
+{: .media-caption }
 
 We can identify the inode/file that needs to be removed with this command: `ls -li`
 
@@ -34,15 +46,24 @@ This finds files with inode number 99807 under the current directory and asks be
 
 The next issue I came across involved links not working, possibly due to redirects that once existed.
 
-![](/assets/images/2022/img_0970.jpg)
+![Safari showing an archived ASSEMbler member profile with comments and a hovered Nintendo 64 reset-switch thread link at the bottom.](/assets/images/2022/img_0970.jpg)
+
+*There was a link somewhere in this old ASSEMbler profile that needed attention. Precisely which problem? Good question.*
+{: .media-caption }
 
 In the middle of the page there is a link. I can't remember what was broken and I have insufficient notes and no access to the data... so we'll ummm skip over that one for the time being.
 
-![](/assets/images/2022/img_0968.jpg)
+![Ubuntu terminal showing an archive crawler log with mostly green ADD lines and a highlighted red ERR entry returning HTTP 404 for an attachment index page.](/assets/images/2022/img_0968.jpg)
+
+*The crawler found the attachment page missing. A 404 is not much use when you're restoring an archive.*
+{: .media-caption }
 
 Looking at the above image, you can see that the index.html file isn't found. That broken link blocks access to the attachment from this page and causes a little chaos when browsing threads, even though the attachment itself survives, as you can see below. I had this listed as "File listing not showing". An annoyance certainly, but having it fixed was and will remain on my to do list indefinitely, unfortunately. Here's the attachment for reference below.
 
-![](/assets/images/2022/img_0969.jpg)
+![Safari displaying the recovered simdisk.jpg attachment, a black console screenshot with Japanese simdisk usage text, under the ASSEMbler archive URL.](/assets/images/2022/img_0969.jpg)
+
+*The original attachment was still there, even though its listing page was missing.*
+{: .media-caption }
 
 Sitemap generation was a bit of a hassle. I had been using this command in Ubuntu 20.04: `sitemap-generator 192.168.1.254:8081 -v`. I vaguely remember doing a find and replace on the local IP address and port to match where the archive was hosted, changing 192.168.1.254:8081 to https://assembler.mcretro.net. Find and replace was my friend. Oh, and I think I kept the sitemap files to around 30,000 entries.
 
@@ -56,7 +77,10 @@ It all became a bit chaotic when I started using a proxy server and I tried to m
 
 Right?
 
-![](/assets/images/2022/img_0972.jpg)
+![Text window headed SITEMAP FULL LOG showing sitemap-generator crawling an archive at 192.168.1.254:8081, with many green ADD entries.](/assets/images/2022/img_0972.jpg)
+
+*Watching the sitemap generator work through the local archive, one URL after another.*
+{: .media-caption }
 
 I had been using the following to generate a sitemap, but it tended to fail part way through with an error. That's why I switched over to the local IP method: `sitemap-generator https://assembler.mcretro.net --verbose --max-depth 4`
 
@@ -127,7 +151,10 @@ As the forums were upgraded over the years we saw a shift in the way the URLs we
 
 **2017+** http://assemblergames.com/threads/saturn-model-search-help.50468/
 
-![](/assets/images/2022/img_0971.jpg)
+![Wayback Machine screenshot of an ASSEMbler Games forum thread titled 'saturn Model search help', captured on 26 June 2017.](/assets/images/2022/img_0971.jpg)
+
+*A snapshot of the original ASSEMbler forum layout, courtesy of the Wayback Machine.*
+{: .media-caption }
 
 Something simple I had on my cleanup list was to track down 0-byte files and delete them, though I never did get around to it. The root folder is quite chaotic owing to all the other sites that were ripped along with [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/). This can be good in some ways, as images of hardware in threads were captured. I'm not sure how well implemented this was though.
 

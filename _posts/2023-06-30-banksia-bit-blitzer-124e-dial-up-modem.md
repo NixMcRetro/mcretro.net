@@ -12,7 +12,10 @@ share_description: >-
 
 This is the first video in a two parter for the Banksia Bit Blitzer. This is quite a slow modem clocking in at 2400 bps. You can't get those levels of slow just anywhere you know. Model number found on the underside reads BBM124E-B2CL with a serial number of 303159.
 
-![](/assets/images/2023/img_1027.jpg)
+![Black Banksia BIT Blitzer 124E external dial-up modem with a row of red status LEDs marked MR, TR, AA, CD, OH, RD, TD, 300, 1200 and 2400.](/assets/images/2023/img_1027.jpg)
+
+*The BIT Blitzer 124E, in all its boxy glory. Look at that glorious row of status LEDs!*
+{: .media-caption }
 
 Not the fastest, but the cool factor is pretty high on this modem. Look at all those LEDs! Everything was through-hole inside and it was amazing to replace the capacitors. This modem was purchased in May 2023 and was recapped, had the ROM dumped and was tested all in May 2023.
 
@@ -22,7 +25,10 @@ I was using an HPE MicroServer running Ubuntu as the computer dialling out. The 
 
 A Raspberry Pi running Asterisk and mgetty handled the other parts of the arrangement. There's a lot going on just to make two modems talk to each other, but hearing the analogue bleeps and bloops travel through all that modern equipment is half the fun.
 
-![](/assets/images/2023/img_1026.jpg)
+![Exposed Banksia BIT Blitzer 124E circuit board with a loudspeaker, plug-in chips, electrolytic capacitors, transformer and red indicator LEDs.](/assets/images/2023/img_1026.jpg)
+
+*Inside the BIT Blitzer: through-hole parts, a speaker and plenty of room to get at those capacitors.*
+{: .media-caption }
 
 The firmware reports `891210`, so 10th December 1989 if that field is a date. I dumped the ROM using a [TL866CS programmer](https://proghq.org/wiki/TL866) and originally shared it through the [file server](/goodies). The PCB has the markings Banksia Bit Blitzer 124E/1234E-A, which suggests a shared board design across models; it doesn't establish that every version had identical components.
 
@@ -42,7 +48,10 @@ I tried browsing my own file server, and after several minutes Netscape finally 
 
 The modem certainly wasn't in any hurry. But it connected, transferred data, and gave me a very convincing reminder of why text-only websites were such a good idea.
 
-![](/assets/images/2023/img_1028.jpg)
+![Arlec AC adaptor beside the BIT Blitzer modem, labelled 240 V 50 Hz input and 9 V AC 500 mA output.](/assets/images/2023/img_1028.jpg)
+
+*The accompanying Arlec adaptor is marked 9 V AC at 500 mA. Important to check the AC bit.*
+{: .media-caption }
 
 Here's the Arlec power supply that came with it: 240 V AC at 50 Hz in, 9 V AC at 500 mA out. Other markings on the power supply are APP. NO. V/79309/61227. I'd put more photos in the [photo gallery](/goodies).
 

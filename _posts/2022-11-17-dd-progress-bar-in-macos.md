@@ -8,7 +8,10 @@ share_description: >-
   macOS disk cloning with dd gets a proper progress display thanks to Pipe Viewer. Just don't confuse your input and output disks. Seriously. 💾
 ---
 
-![](/assets/images/2022/img_0989.jpg)
+![A mostly empty macOS Terminal window showing a zsh prompt and the previous login line, before any disk-copy command is entered.](/assets/images/2022/img_0989.jpg)
+
+*A clean Terminal prompt. Sadly, `dd` does not supply a progress bar just because I ask nicely.*
+{: .media-caption }
 
 I've been using `dd` to clone some disks recently, usually when they use filesystems macOS does not handle natively. macOS is a UNIX operating system; Linux is Unix-like, and their command-line tools are similar without being identical. Homebrew fills in plenty of the gaps. Thanks to [Dave Jansen's dd with progress indication on macOS](https://davejansen.com/dd-with-progress-indication-on-macos/), I also found a way to give these disk-level clones a proper progress display using [Pipe Viewer (pv)](https://formulae.brew.sh/formula/pv).
 

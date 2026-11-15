@@ -8,25 +8,40 @@ share_description: >-
   Rebuilding GeoCities on macOS 12 hits full-path length limits, duplicate files and checksum problems. Linux handles the archive somewhat better. 🌐
 ---
 
-![](/assets/images/2022/img_0976.jpg)
+![GeoCities wordmark with 'Geo' in blue and 'Cities' in green on a plain white background.](/assets/images/2022/img_0976.jpg)
+
+*Back to GeoCities. Because rebuilding the entire thing once clearly wasn't enough.*
+{: .media-caption }
 
 A while back, some of you may remember that I entered [RetroChallenge 2021/10](https://www.retrochallenge.org/2021/10/). I had [some success](/the-geocities-rebuild-worklog/) rebuilding the [GeoCities Archive](https://archive.org/details/archiveteam-geocities), also known as The Archive Team Geocities Valhalla, and managed to host it on a Raspberry Pi.
 
 Of course it wasn't perfect and I knew that. So since then I've tried to reboot it again using the [GitHub repository from despens](https://github.com/despens/Geocities) as it would potentially solve some of the problems I had when I started to merge data together. But then this happened...
 
-![](/assets/images/2022/img_0975.jpg)
+![macOS text editor showing repeated 'File name too long' errors for a deeply nested GeoCities path containing dozens of dino directories.](/assets/images/2022/img_0975.jpg)
+
+*Dino, dino, dino... and eventually macOS decided the path was far too long.*
+{: .media-caption }
 
 Ideally, I wanted to use macOS instead of Ubuntu, but the archive ran straight into a pathname limit. I originally called it a "1024-character filename limit", but it was the full path causing the trouble. An individual filename component can be up to 255 characters, while the complete macOS pathname traditionally has to stay under 1024. Have a look at all those nested dino directories! Linux handled these particular paths without the same problem, which made the rebuild a lot less painful.
 
-![](/assets/images/2022/img_0978.jpg)
+![Side-by-side macOS text and Terminal windows comparing GeoCities torrent file checksum entries and MD5, CRC32 and SHA1 results.](/assets/images/2022/img_0978.jpg)
+
+*Comparing archive checksums to figure out why the downloads weren't matching up.*
+{: .media-caption }
 
 I was also getting checksum mismatches compared to the original torrent, which needless to say, is very bad. Not sure what caused that, but it was possibly the same thing that resulted in duplicates. Note the ".1." in the file names.
 
-![](/assets/images/2022/img_0974.jpg)
+![Text editor listing GeoCities torrent files with '.1.' inserted into their names, highlighted in a search for possible duplicates.](/assets/images/2022/img_0974.jpg)
+
+*Those extra '.1.' bits were rather suspicious. Another cleanup job for the list.*
+{: .media-caption }
 
 I did find what appears to be a typo in the [despens GitHub](https://github.com/despens/Geocities) too.
 
-![](/assets/images/2022/img_0977.jpg)
+![GitHub screenshot of despens' 013-indexes.sh script, highlighting the line calling $GEO_SCRIPTS/filer-indexes.pl.](/assets/images/2022/img_0977.jpg)
+
+*That script filename looked like a typo. My money was on 'filter-indexes.pl'.*
+{: .media-caption }
 
 `$GEO_SCRIPTS/filer-indexes.pl` should probably be `$GEO_SCRIPTS/filter-indexes.pl`. Don't worry, I'll fix it in post.
 
@@ -100,7 +115,10 @@ Mac OS limit of ~1024 characters
 /Volumes/GeoCities/work/geocities/YAHOOIDS/E/n/EnchantedForest/Dell/2237/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino/dino-d.html
 ```
 
-![](/assets/images/2022/img_0976a.jpg){: width="100" style="float:left; margin:0 1em 0.5em 0;"} For now, I'm back in the game with [RetroChallenge 2022/10](https://www.retrochallenge.org/2022/) doing something similar but different on hardware and software from 2012. I'm thinking a Mac Pro and Ubuntu 12.04.5. This should result in fewer errors and a more accurate replication of despens' results. :)
+![Square graphic with a large stylised black lowercase g above the blue-and-green GeoCities wordmark.](/assets/images/2022/img_0976a.jpg)
+
+*A little GeoCities badge for the next round of RetroChallenge adventures.*
+{: .media-caption }{: width="100" style="float:left; margin:0 1em 0.5em 0;"} For now, I'm back in the game with [RetroChallenge 2022/10](https://www.retrochallenge.org/2022/) doing something similar but different on hardware and software from 2012. I'm thinking a Mac Pro and Ubuntu 12.04.5. This should result in fewer errors and a more accurate replication of despens' results. :)
 
 ### Sources
 

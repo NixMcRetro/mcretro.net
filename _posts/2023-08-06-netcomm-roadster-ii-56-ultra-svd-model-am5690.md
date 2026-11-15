@@ -14,21 +14,33 @@ This modem takes me back to late-2021 when I purchased it. That's not surprising
 
 Of note, there are no power-supply specs on the device itself. My working conclusion was that it needed a 7.5 V DC, centre-positive adapter. The power socket feeds a Sharp PQ05SZ5 5 V regulator, which helps explain the arrangement but does not establish the finished modem's input requirements by itself. I should probably also mention that this modem's serial number is 900200591.
 
-![](/assets/images/2023/img_1065.jpg)
+![Open NetComm Roadster II AM5690 modem showing its green circuit board, Rockwell modem chip, ETAL transformer, capacitors and speaker in the lid.](/assets/images/2023/img_1065.jpg)
+
+*Pop the lid, and there is a familiar-looking modem board. The BT134 family resemblance was rather hard to miss.*
+{: .media-caption }
 
 After popping the hood, I noticed that the board design looked very familiar. That board number, BT134 REV B1. BT as in Banksia Technology? But the Banksia modems are much more vertical. So I pulled out my Banksia Wave SP 56 Rev.1 (Model Wave56-SP, Serial 13412650), and here are the two boards in a seizure-inducing GIF. **Update:** I made the GIF a little less like a strobe light from a 90s rave.
 
-![](/assets/images/2023/img_1064.gif)
+![Animated comparison of two modem circuit boards on blue cloth, showing the Banksia Wave SP 56 board and the related NetComm Roadster II layout.](/assets/images/2023/img_1064.gif)
+
+*Two modems, one family resemblance. At least the board comparison GIF is no longer trying to turn the room into a 90s rave.*
+{: .media-caption }
 
 The BT134 REV B1 is flat as a pancake in the NetComm AM5690, while the BT134 REV B stands tall in the Banksia Wave56-SP Rev 1. Pretty neat! The PCB on the AM5690 got a little longer (wider?) to fit the LEDs and most ports switched angles. [Gough Lui's site](https://goughlui.com/2012/11/18/tech-flashback-banskia-technology-modems/) has more on Banksia's history.
 
-![](/assets/images/2023/img_1066.jpg)
+![Close-up of the NetComm modem PCB with 'BT134 REV B1' printed beside electrolytic capacitors, a Sharp regulator and a large Rockwell chip.](/assets/images/2023/img_1066.jpg)
+
+*There it is in black and green: BT134 REV B1. Banksia's fingerprints are all over this NetComm board.*
+{: .media-caption }
 
 The BT134 REV B1 clearly shares a lot with the earlier BT134 REV B layout. The labelled Banksia hardware also gave me useful evidence that 7.5 V DC centre-positive and at least 450 mA was plausible for this family. That is good supporting evidence, not proof that every BT134 revision has identical power requirements.
 
 Poking around the board a bit more, I was delighted to see capacitors. Those who know me know that I love preventative maintenance. Some component date codes point to 1998, putting them at around 23 years old when I recapped the modem in November 2021. They don't tell us the exact week the PCB was designed. So out they came!
 
-![](/assets/images/2023/img_1067.jpg)
+![Several removed radial electrolytic capacitors lying on blue fabric with their metal leads pointing upwards.](/assets/images/2023/img_1067.jpg)
+
+*Out came the old capacitors. Not a glamorous retirement, but the Roadster had earned some fresh ones.*
+{: .media-caption }
 
 I'd love to give Nichicon the benefit of the doubt, but those caps don't look too happy. Fair, it's been over two decades, and most of that time has probably been spent in storage. There's a reason I always recap with Rubycon and Panasonic branded capacitors: in my experience, they seem to last longer. Even the general-purpose Rubys or ELNA ones in Sega's hardware seem to do very well. Regardless, they were replaced. I also restocked the [photo gallery](/goodies) to help quench your thirst for modems.
 
@@ -84,11 +96,17 @@ For the dial-up testing, I had a Raspberry Pi running Asterisk and mgetty on one
 
 As hinted at above in ATI4, the firmware version is F02_V1.56 and fits neatly inside the 2 Mbit flash chip, the AM29F002NB. Thanks to Gough Lui's excellent post on [flashing a dial-up modem using Flashcom](https://goughlui.com/2016/03/11/tech-flashback-flashing-a-dial-up-modem-using-flashcom/), we can use [SRecord](https://srecord.sourceforge.net) to convert these pesky .S37 files into something with \*some\* human-readable code, following the commands in his guide.
 
-![](/assets/images/2023/img_1069.jpg)
+![Hex editor screenshot of 'newer.bin' showing a selected modem firmware string containing 'NetComm RoadsterII 56 V.90 F02_V1.56'.](/assets/images/2023/img_1069.jpg)
+
+*Hex editor archaeology: the newer Roadster firmware identifies itself as F02_V1.56. Not much of an upgrade when that's already installed.*
+{: .media-caption }
 
 Unfortunately for me, the firmware upgrader, [am56906.exe](/goodies), was the same version as what I already had. The AM29F002NB datasheet gives a minimum pattern-retention figure of 20 years at 125°C. That is a high-temperature retention specification, not an expiry date saying the flash forgets its contents after 20 ordinary years on a shelf. I backed up the original firmware before proceeding, then reflashed it anyway because the updater was available and I was already in there. If it spent 20 years in a fire pit, we had bigger problems. 🤣
 
-![](/assets/images/2023/img_1068.jpg)
+![Hex editor screenshot of 'older.bin' with highlighted NetComm Roadster II firmware text identifying version F02_V1.53.](/assets/images/2023/img_1068.jpg)
+
+*And tucked inside the updater was F02_V1.53, an older version. A little time capsule in a modem installer.*
+{: .media-caption }
 
 The am56906.exe installer also included an older version of the flash ROM - V1.53. Good on NetComm for being cautiously optimistic with their firmware. It looks like this modem originally shipped with V1.52 installed, so someone else upgraded it along the way, way back in the day!
 

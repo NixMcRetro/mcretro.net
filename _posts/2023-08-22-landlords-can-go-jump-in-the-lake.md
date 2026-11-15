@@ -8,11 +8,17 @@ share_description: >-
   A 10% rent increase arrives without the required notice on my NSW periodic tenancy. I do some reading and challenge the landlord's paperwork. 🏠
 ---
 
-![](/assets/images/2023/img_1124.jpg)
+![Wooden letter tiles spelling 'LANDLORD' on a Scrabble-style rack, with loose tiles scattered across a wooden table.](/assets/images/2023/img_1124.jpg)
+
+*Landlord: eight letters, and apparently enough to ruin an otherwise perfectly good day.*
+{: .media-caption }
 
 Honestly, why do landlords even exist in modern times? Didn't we leave [medieval times](https://en.wikipedia.org/wiki/Feudalism) behind us a while back? This is a rant on how my landlords illegally increased my rent.
 
-![](/assets/images/2023/img_1120.jpg)
+![Screenshot showing three collapsed tenancy-guidance sections: 'Fixed term agreement', 'Periodic agreements' and 'No written agreement'.](/assets/images/2023/img_1120.jpg)
+
+*Three types of tenancy agreement from the NSW guidance I was reading. Mine had rolled over to a periodic tenancy.*
+{: .media-caption }
 
 Above are the three types of potential leases in NSW at the time of writing. I'd been on a one-year fixed-term agreement until it expired, leaving me on a periodic agreement. My landlords, who reign from above, decided to bump the rent up 10%.
 
@@ -20,7 +26,10 @@ Ten percent. For someone with no income, that is huge. Frankly, I think a 10% re
 
 They sent through a revised lease with the new weekly rent value and I thought, that isn't right. [Sure enough, the notice period was wrong](https://web.archive.org/web/20230812202356/https://www.fairtrading.nsw.gov.au/housing-and-property/renting/during-a-tenancy/rent). I had not been given the 60 days' written notice required before the increased rent became payable. As in against-the-law-illegal.
 
-![](/assets/images/2023/img_1119.jpg)
+![Screenshot of a 'Recent law changes' table comparing NSW rent increase rules before and after 23rd March 2020 for short fixed-term and periodic agreements.](/assets/images/2023/img_1119.jpg)
+
+*The 2020 changes were real, but the fixed-term exception in this table was not the agreement I was on.*
+{: .media-caption }
 
 So I queried them: where is my 60-day notice period? They sent back the screenshot above, pointing out that the laws had changed in 2020. [Right.](https://web.archive.org/web/20230812202356/https://www.fairtrading.nsw.gov.au/housing-and-property/renting/during-a-tenancy/rent) Two issues with that.
 
@@ -34,17 +43,26 @@ Fine, but that was what their screenshot referred to, and it still didn't fit my
 
 ## Mistake 2
 
-![](/assets/images/2023/img_1121.jpg)
+![Screenshot of NSW rent-increase guidance for fixed-term agreements, explaining when an increase must be stated in the lease and notice requirements.](/assets/images/2023/img_1121.jpg)
+
+*This is the fixed-term section they were relying on. The trick is that the agreement must actually contain the increase.*
+{: .media-caption }
 
 If they had bothered to look into the article they sent me, they would have noticed that their expired lease does not have a section that "sets out the increased amount or how the increase will be calculated."
 
-![](/assets/images/2023/img_1122.jpg)
+![Screenshot of NSW guidance for periodic tenancies, stating that a landlord must give at least 60 days' written notice before a rent increase.](/assets/images/2023/img_1122.jpg)
+
+*The periodic-agreement section was rather clearer: at least 60 days' written notice before the increase.*
+{: .media-caption }
 
 Regardless, my lease had expired, so I was on a continuing (periodic) agreement until they worked out how to paste the correct dates into a new lease for me to sign. Why did they let it lapse? Not malice, most likely sheer incompetence.
 
 Realistically do I even really have an option here? Can I risk being kicked out over an extra $8 a week over the next 12 months on top of the 10% increase? No, I can't. I'm going to pay the extra even though they are the ones doing the illegal rent increase. Why? Because without any income I am simply not in a position to move. Why do I have no income?
 
-![](/assets/images/2023/img_1123.jpg)
+![Screenshot of a message inbox showing repeated Services Australia notices about an online claim and one phone appointment, dated June to August 2023.](/assets/images/2023/img_1123.jpg)
+
+*Meanwhile, the inbox was full of claim updates and appointment notices. Still no sign of a quick resolution.*
+{: .media-caption }
 
 Thanks to our failings in social security, i.e. Centrelink, I am just forever waiting for them to review my claim. No worries, take your time. I don't have it as bad as some others thanks to rainy day funds. But how the hell do they expect someone without savings to get by with no income? You're a joke, Australia. More on this in a future post. 🤬
 

@@ -14,19 +14,31 @@ One thing I never get tired of is making videos about modems. And above is a mod
 
 To check the internals, I had to open the case and it might be an understatement to say that I had a little bit of trouble. The plastic was far more brittle than I would have liked aaaand all the clips holding it together snapped when attempting to open it.
 
-![](/assets/images/2023/img_1042.jpg)
+![Overhead view of the Avtek Flash Modem 288 circuit board with a large central chip, capacitors, telephone jacks, serial connector and round speaker.](/assets/images/2023/img_1042.jpg)
+
+*The Flash Modem 288 with its case off. Getting to this board cost the case every retaining clip.*
+{: .media-caption }
 
 And once the clips had snapped, I was able to look at the horrors inside. Those poor capacitors are not having a good time. Bad circuit design? Did someone not derate them? Orrrrr did we use a junk brand... Oh, Nichicon - is that you? A good example of why I don't use Nichicon in anything.
 
-![](/assets/images/2023/img_1044.jpg)
+![Close-up of the underside of the Avtek Flash Modem 288 circuit board showing copper traces, solder pads and surface-mount components.](/assets/images/2023/img_1044.jpg)
+
+*Underneath the modem are more surface-mount parts, including the bits I wasn't especially keen to revisit.*
+{: .media-caption }
 
 Here's a surface-mount capacitor I'm pretty sure I didn't replace because it was on the underside of the modem. There was no silkscreen with component numbering, which was a little annoying.
 
-![](/assets/images/2023/img_1041.jpg)
+![NetComm power supply label showing 240 V AC 50 Hz input, 9 V AC 1 A output and approval number N14311.](/assets/images/2023/img_1041.jpg)
+
+*At least the power supply was straightforward: 9 V AC, 1 A. AC, not DC!*
+{: .media-caption }
 
 At least the power supply was well built (solid). It's a NetComm 9 V AC 1 A (240 V AC 50 Hz) with markings WW069 and N14311.
 
-![](/assets/images/2023/img_1043.jpg)
+![Close-up of the Flash Modem 288 circuit board centred on a Motorola XC68DP356ZP25B chip, with capacitors and fine circuit traces around it.](/assets/images/2023/img_1043.jpg)
+
+*A Motorola chip inside an Avtek. Not the Rockwell internals I was used to seeing.*
+{: .media-caption }
 
 The Rockwell chipset is notably absent and we have a Motorola chipset instead. The only other modem I've seen with a Motorola chipset to date is the Acer AcerModem 56 Surf (AME-MU00). An odd sight for me! Gough's [V.90/V.92 modem-sounds collection](https://goughlui.com/2016/05/03/project-the-definitive-collection-of-v-90v-92-modem-sounds/) also includes an Acer Motorola-based external modem.
 
@@ -34,7 +46,10 @@ The Rockwell chipset is notably absent and we have a Motorola chipset instead. T
 
 The firmware calls it a Motorola Lifestyle 28.8 External 68356, so there's good reason to call this a Motorola-based Avtek. That string doesn't tell us who manufactured the finished modem, though, so I can't call it a straight rebadge on that alone. Cost cutting perhaps, or an attempt to diversify maybe. This Avtek still doesn't feel like an Avtek.
 
-![](/assets/images/2023/img_1040.jpg)
+![Beige Avtek Flash Modem 288 with V.34 handwritten on the lid, cables attached and three red indicator LEDs glowing.](/assets/images/2023/img_1040.jpg)
+
+*Externally the Flash Modem 288 still looks the part. Just don't try lifting it by the case!*
+{: .media-caption }
 
 I will admit that I didn't really need this modem - or want it. With the clips failing and it being beige, we **_might_** not have done the best job on the capacitor replacement. We used on-hand caps, with pads lifting here and there. There are more photos in the [photo gallery](/goodies) (surprise!) if you have a hunger for modem photos.
 

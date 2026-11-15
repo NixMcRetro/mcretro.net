@@ -14,33 +14,54 @@ This modem was purchased through eBay in February 2023 and recapped in late May 
 
 The CD900 is a beautiful little modem. It's similar in appearance to Avtek's faster 14.4K and 28.8K machines, although at 2400 bps it doesn't need quite as many fancy lights on the front. Look at those LEDs. They're arranged to make the letter A, for Avtek! I love little design touches like that.
 
-![](/assets/images/2023/img_1045.jpg)
+![Close-up of a Rockwell RC224ATF R6641-14 integrated circuit on the Avtek CD900 circuit board, with a 9230 date code.](/assets/images/2023/img_1045.jpg)
+
+*The CD900's Rockwell RC224ATF, marked week 30 of 1992. An early-1990s survivor.*
+{: .media-caption }
 
 Here's the brain of the modem: a Rockwell RC224ATF R6641-14 with a date code of week 30, 1992. I put more photos in the [photo gallery](/goodies).
 
-![](/assets/images/2023/img_1046.jpg)
+![Close-up of the CD900 circuit board with small upright surface-mount capacitors, nearby empty capacitor footprints and a black speaker.](/assets/images/2023/img_1046.jpg)
+
+*The surface-mount capacitor area after the old parts had been tackled. Tiny components, plenty of swearing.*
+{: .media-caption }
 
 Some of the surface-mount capacitors had leaked and started to corrode the board, but it was nothing a small scrub couldn't handle. A few pads lifted without breaking away from the PCB. Nobody likes surface-mount capacitors leaking. No one!
 
-![](/assets/images/2023/img_1047.jpg)
+![Avtek Mega Data/Fax Modem black outer case resting beside its removed green circuit board with a row of red LED housings.](/assets/images/2023/img_1047.jpg)
+
+*The CD900 dismantled: a compact black case and the circuit board responsible for all that 2400 bps glory.*
+{: .media-caption }
 
 Quite a simple board design, no firmware to dump as far as I could tell. The LEDs were different to other models I've seen but notice the front of the PCB and the lack of switches. Likely this board was used across a few different models, maybe even brands.
 
-![](/assets/images/2023/img_1048.jpg)
+![Avtek CD900 circuit board showing one black ETAL P1200 transformer fitted and another ETAL P1200 module placed beside it.](/assets/images/2023/img_1048.jpg)
+
+*Two ETAL P1200 transformers, one fitted and one loose. Replacing a broken leg turned out to be an adventure.*
+{: .media-caption }
 
 While recapping the SMD components, I did my due diligence (for once) and removed the P1200 rather than risk getting it, let's just say **_somewhat melted_**. How did the universe repay me? Why, one of the legs fell off. I tried jamming it back in, but no dial.
 
 So I sourced a replacement ETAL P1200 line-matching and isolation transformer. And here I was thinking it was just a relay! Isolation transformer... I'll try to remember that one!
 
-![](/assets/images/2023/img_1049.jpg)
+![Photograph of a Windows dial-up status dialog showing a 2400 bps connection for nine minutes, over a DOS window with successful ping replies.](/assets/images/2023/img_1049.jpg)
+
+*Another CONNECT 2400, with Windows ping replies arriving at the leisurely speeds this modem deserves.*
+{: .media-caption }
 
 Hmmm, good old 2,400 bps. Not the fastest of modems. That 1992 date code gives us an early-1990s component, rather than an exact birthday for the finished modem. The chip was over 30 years old by the time I got to it! I'm not surprised those surface-mount capacitors leaked.
 
-![](/assets/images/2023/img_1051.jpg)
+![Three black WW037 modem power supplies arranged side by side, each labelled 15 V AC, 10 VA.](/assets/images/2023/img_1051.jpg)
+
+*Three almost identical WW037 power bricks, all 15 V AC. Which one came with the modem? Still a mystery.*
+{: .media-caption }
 
 The power supply was one of the three pictured here. Which one? I could not be sure... All three are labelled WW037, 15 V AC, 10 VA. I used a 15 V AC supply with the female prong connector; that is a record of this setup, not a power-supply specification for every Avtek or NetComm modem.
 
-![](/assets/images/2023/img_1050.jpg)
+![Front of the black Avtek Mega Data/Fax Modem, with several red status lights forming an A-shaped design beside TD, RD, OH, CD, AA, TR and HS labels.](/assets/images/2023/img_1050.jpg)
+
+*And there's that illuminated Avtek A design. Little touches like this are why I keep collecting old modems.*
+{: .media-caption }
 
 With the modem back together, I hooked it into my dial-up arrangement through a Raspberry Pi running Asterisk and mgetty. The answering modem was a Banksia, connected over VoIP. Both were using Rockwell chipsets, which might have helped them get along.
 

@@ -12,7 +12,10 @@ share_description: >-
 
 This one is a bit of an oddball. I had a chicken-and-egg situation: I needed the Linksys PAP2T reset but had no handset. Well, until I realised my modem could stand in for one by sending the dialling tones. We use the recently tested Avtek MegaPlus V.32bis Modem (Model CD950), with some trial-and-error pauses (commas), to time the reset sequence right.
 
-![](/assets/images/2022/img_0923.jpg)
+![A grey Linksys VoIP Internet Phone Adapter beside a black Avtek MegaPlus V.32bis modem on a white table, with cables attached behind them.](/assets/images/2022/img_0923.jpg)
+
+*The odd couple: a Linksys PAP2T and the Avtek modem standing in for the missing telephone handset.*
+{: .media-caption }
 
 The next step of course is to use the PAP2T as a VoIP phone exchange emulator. At least at a local level anyway. Interesting times ahead, for me anyway. Haha! 🙃
 

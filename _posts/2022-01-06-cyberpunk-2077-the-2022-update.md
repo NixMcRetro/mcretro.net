@@ -12,13 +12,19 @@ share_description: >-
 
 Well it's been a year, [to the day](/cyberpunk-2077-ps4-live-stream-day-1/). There have been a few patches issued and the game has progressed from 1.06 to the current 1.31 on my trusty **PlayStation 4 slim**, aaaaand the game still crashes.
 
-![](/assets/images/2022/img_0782.jpg)
+![Television displaying a blue PlayStation 4 crash screen for Cyberpunk 2077 with error CE-34878-0 and a status-check progress bar.](/assets/images/2022/img_0782.jpg)
+
+*Cyberpunk 2077, patch 1.31, and another CE-34878-0 crash. Some things never change.*
+{: .media-caption }
 
 **Fun fact:** Most of the time the live stream ends because the game has crashed. I report the crashes every time, so it's heartening to see "Console-specific \[PlayStation\]" along with "GPU memory optimization" in the patch notes.
 
 The first several hours are quite boring. The story seems alright so far, though I guess I still have a lot of game ahead of me. I really wish they'd scale up some of the text sizes. It makes reading anything on the screen a little painful. I wonder if there's a setting for that?
 
-![](/assets/images/2022/img_0781.jpg)
+![Cyberpunk 2077 scene showing two characters facing three cloudy, metallic-looking mirrors on a brightly lit patterned wall.](/assets/images/2022/img_0781.jpg)
+
+*Those are supposed to be mirrors. To my eyes they look like someone attacked the glass with dull aluminium foil.*
+{: .media-caption }
 
 The above image hit me with whatever the uncanny valley equivalent is for glass surfaces. At first I was like what the heck is supposed to be rendering? Are they windows? Nope. They are mirrors. Mirrors folded from some of the dullest aluminium foil I've ever seen.
 

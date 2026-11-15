@@ -8,7 +8,10 @@ share_description: >-
   Nemesis's saved ASSEMblergames.com archive briefly gets a home on my Raspberry Pi. Search indexing and broken navigation are another adventure. 🌐
 ---
 
-![](/assets/images/2022/img_0790.jpg)
+![Safari screenshot of the dark ASSEMbler Games forum archive at assembler.mcretro.net, showing forum sections and a guest sidebar.](/assets/images/2022/img_0790.jpg)
+
+*The old ASSEMblergames.com forums back on a tiny Raspberry Pi. Rough around the edges, but a lovely bit of history.*
+{: .media-caption }
 
 [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/) was a large part of my online presence in the 2010s and had a great bunch of people to converse with about retro hardware. For the history of [ASSEMblergames.com](https://web.archive.org/web/20170919030325/https://www.assemblergames.com/), you can check out this archived link - [History of ASSEMblergames.com](https://web.archive.org/web/20220219061458/https://assembler.mcretro.net/threads/history-of-assemblergames-com.33019/)
 

@@ -8,19 +8,31 @@ share_description: >-
   Tiny cicada shells reveal an even smaller mystery perched on top. Could it be a leafhopper exuvia? Australian insect detective work begins! 🪲
 ---
 
-![](/assets/images/2021/img_0767.jpg)
+![Several small tan cicada nymph shells clinging to lichen-covered tree bark beside a street.](/assets/images/2021/img_0767.jpg)
+
+*A few tiny cicada shells on a street tree. Their species is still an educated guess.*
+{: .media-caption }
 
 I love cicada season! Giant bugs. Everyone loves giant bugs! I think these shells are from the ever so tiny [Silver Princess (Yoyetta celis)](https://en.wikipedia.org/wiki/Yoyetta_celis), although the shells alone don't confirm the species. I always find these ones trapped in spiderwebs, they've got a knack for it.
 
-![](/assets/images/2021/img_0768.jpg)
+![Close-up of a small brown cicada shell on rough tree bark with another tiny translucent shell attached near its head.](/assets/images/2021/img_0768.jpg)
+
+*One little shell, and then an even littler mystery passenger.*
+{: .media-caption }
 
 These shells would be around 1-1.5 cm long. Hang on, what's this guy got on his head? Enhance!
 
-![](/assets/images/2021/img_0769.jpg)
+![Macro photograph of a tan cicada shell on tree bark with a much smaller pale empty insect shell attached beside it.](/assets/images/2021/img_0769.jpg)
+
+*Enhance! That little shell may belong to a leafhopper, although the photograph can't settle it.*
+{: .media-caption }
 
 It's a smaller version of itself? I had to do a bit of digging on this one as I've never seen a smaller shell of the smallest cicada shell I know of on top of itself.
 
-![](/assets/images/2021/img_0770.jpg)
+![Museum reference photograph showing several dark leafhoppers, a pale newly emerged insect and ants on reddish plant stems.](/assets/images/2021/img_0770.jpg)
+
+*The museum's reference photo provides a promising lead for the tiny hitchhiker on my cicada shell.*
+{: .media-caption }
 
 Turns out it was likely a leafhopper shell, like the insects in this photograph supplied by Veronica Cuskelly to the Museum of Tropical Queensland. I can't confirm the little passenger from my shell photo alone, but the museum's Q&A helped make sense of it. The nymphs lack fully developed wings, the pale winged insect has just emerged as an adult, and the dark-winged ones are adults whose colouring has developed. The ants collect the leafhoppers' sugary honeydew and provide protection in return. Mutualism. Neat! 📸
 

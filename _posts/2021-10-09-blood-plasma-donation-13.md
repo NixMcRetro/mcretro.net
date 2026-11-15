@@ -50,7 +50,10 @@ Ah yes, I zapped a photo of the elusive, antique-looking 1 L isotonic saline. Ne
 
 While waiting for a bus on the return trip, I came across this sign. Did we learn nothing from Jane Darwell, born Patti Woodard, in her final film role as [The Bird Woman](https://en.wikipedia.org/wiki/Feed_the_Birds)?
 
-![](/assets/images/2021/img_0765.jpg)
+![Small dark bird standing on grass near a garden bed.](/assets/images/2021/img_0765.jpg)
+
+*A small dark bird stands on a sunny lawn beside a footpath and a raised garden bed.*
+{: .media-caption }
 
 We aren't feeding the birds, so they look ragged like this poor fellow. We stood around in the sun and, unfortunately for him, I didn't have any bird seed. Not that we want to encourage a pigeon boom in a metropolis like Sydney. The poor birds have it hard enough and it's all our fault. In other news...
 

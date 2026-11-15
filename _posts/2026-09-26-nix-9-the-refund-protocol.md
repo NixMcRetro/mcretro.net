@@ -9,9 +9,9 @@ share_description: >-
   A real travel refund dispute retold as a cyberpunk quest. One bad hotel, a cancelled flight and a netrunner armed with receipts, percentages and persistence. 💾
 ---
 
-![Nix-9 and her companion arrive in a rain-swept neon megacity](/assets/images/2026/09/nix-9-the-refund-protocol/prologue.jxl)
+![Nix-9 and her companion arrive in a rain-swept neon megacity.](/assets/images/2026/09/nix-9-the-refund-protocol/prologue.jxl)
 
-*A true consumer dispute, retold as a cyberpunk quest. Featuring one terrible hotel room, a cancelled flight, several corporate scribes, and the most dangerous weapon in the known universe: arithmetic.*
+*Two travellers stand beneath towering neon buildings on a rain-soaked futuristic city street.*
 {: .media-caption }
 
 ## Prologue: A Thousand Credits

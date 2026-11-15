@@ -9,7 +9,8 @@ share_description: >-
   A 14-part Raspberry Pi and Tor onion-service guide from January 2016 gets preserved in one place. The old v2 setup is history, not current security advice. 🌐
 ---
 <figure class="darknet-hero-wrap">
-  <img class="darknet-hero" src="/assets/images/2016/01/take-back-the-darknet/take-back-the-darknet.jxl" alt="Take Back the Darknet, original January 2016 guide artwork" width="1536" height="1024" fetchpriority="high" decoding="async">
+  <img class="darknet-hero" src="/assets/images/2016/01/take-back-the-darknet/take-back-the-darknet.jxl" alt="Colourful Take Back the Darknet artwork featuring retro computers and a Raspberry Pi." width="1536" height="1024" fetchpriority="high" decoding="async">
+  <figcaption class="media-caption">Retro computers, a Raspberry Pi, and a neon globe feature in the colourful Take Back the Darknet illustration.</figcaption>
 </figure>
 
 **Historical guide:** This 14-part series documents the Raspberry Pi, Raspbian Jessie and Tor setup I used in January 2016. The original preamble was marked as an incomplete draft.

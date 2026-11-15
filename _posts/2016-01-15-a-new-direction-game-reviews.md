@@ -8,7 +8,10 @@ share_description: >-
   Expensive retro repairs give way to PS4 clips and gloriously nonsensical game reviews. New scores, new ideas and absolutely no sensible rating scale. 🎮
 ---
 
-![Game Reviews collage](/assets/images/2016/game-reviews-collage.jxl)
+![Game Reviews collage featuring several different video game images.](/assets/images/2016/game-reviews-collage.jxl)
+
+*A colourful Game Reviews collage brings together a game controller, a racing car, fantasy artwork, and a menu screen.*
+{: .media-caption }
 
 It has recently occurred to me that being a full-time student (and unemployed) has really stopped me from having any disposable income like I had previously while employed full time. Ahhh, being a student gives you all the "freedoms" of working without the pay day at the end of the week.
 

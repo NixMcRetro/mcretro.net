@@ -8,9 +8,9 @@ share_description: >-
   Inside a macOS infostealer disguised as a licensing tool: encrypted strings, browser and wallet targets, and what the Odyssey Stealer analysis uncovered. 🔍
 ---
 
-![Illustrated Odyssey Stealer analysis overview showing the disguised Patch.app, Mach-O string decryption, targeted data, ZIP staging and C2 communications](/assets/images/2026/07/odyssey-stealer-technical-analysis/odyssey-stealer-analysis-overview.jxl)
+![Odyssey Stealer technical diagram showing the disguised application, data extraction, and command-and-control communications.](/assets/images/2026/07/odyssey-stealer-technical-analysis/odyssey-stealer-analysis-overview.jxl)
 
-*Illustrative overview of Odyssey Stealer's obfuscation, targeted data and collection workflow.*
+*An illustrated overview of Odyssey Stealer shows a disguised macOS application, extracted data, and command-and-control connections.*
 {: .media-caption }
 
 ## Executive Summary

@@ -8,7 +8,10 @@ share_description: >-
   ExifTool fixes the display rotation of sideways iPhone videos by updating MP4 metadata. No re-encoding, no quality loss, if the player honours it. 📹
 ---
 
-![](/assets/images/2019/img_0630.jpg)
+![Sega Mega Drive and other gaming hardware on a cluttered workbench.](/assets/images/2019/img_0630.jpg)
+
+*A Sega Mega Drive sits among stacked consoles, exposed cables, and electronics on a workbench.*
+{: .media-caption }
 
 Recently my iPhone has been doing that thing where it doesn't realise it is actually in landscape mode and captures my 4K video in portrait mode so everything is sideways. How fun! Thankfully Phil Harvey has created [ExifTool](https://exiftool.org/) that lets me change the display rotation metadata in MP4/MOV videos without re-encoding them or losing video quality. Playback software still needs to honour that metadata. I just wanted QuickTime to make this easy... Apple?
 

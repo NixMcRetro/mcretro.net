@@ -97,7 +97,10 @@ Check every connection and check for shorts before powering the console. Use Wol
 *The new video mode connections running to PPU1 and PPU2. Best not to confuse those pins halfway through soldering.*
 {: .media-caption }
 
-![](/assets/images/2013/10/supercic-f413a-installation.jxl)
+![SuperCIC chip connected to a Super Nintendo motherboard with coloured wires.](/assets/images/2013/10/supercic-f413a-installation.jxl)
+
+*A small chip wired into the Super Nintendo motherboard, with coloured leads running across the nearby circuit board.*
+{: .media-caption }
 
 ![Close-up of the SNES mainboard showing the S-WRAM chip, two Nintendo picture-processing chips and coloured wires connected to the PIC assembly.](/assets/images/2013/img_0431.jpg)
 

@@ -8,9 +8,9 @@ share_description: >-
   Using dd on Mac OS X to make raw disk images of classic Macintosh and Raspberry Pi media. Check the device number: copying the wrong way is not forgiving. 💾
 ---
 
-![Illustration of Mac OS X Terminal using dd to image a disk, with a source drive and disk image file](/assets/images/2013/07/block-imaging-drives-with-dd-under-mac-os-x/dd-disk-imaging-terminal.jxl)
+![Illustration of Mac OS X Terminal using dd to image a disk, with a source drive and disk image file.](/assets/images/2013/07/block-imaging-drives-with-dd-under-mac-os-x/dd-disk-imaging-terminal.jxl)
 
-*Illustrative disk imaging workflow in Terminal. Always verify the source disk identifier before running dd.*
+*An illustrated Mac OS X Terminal session shows the dd disk-imaging command and an image file destination.*
 {: .media-caption }
 
 I've found dd extremely useful when dealing with old disks and filesystems that Mac OS X doesn't necessarily understand. Sometimes all I want is a complete image of a drive, without worrying about whether the Mac can read the files sitting on it.

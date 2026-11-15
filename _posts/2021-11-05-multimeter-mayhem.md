@@ -22,7 +22,10 @@ Look at what can be achieved if you believe in yourself. This multimeter was a d
 
 This particular multimeter, an AideTek.com VC97+, had a few corroded Varta batteries in the battery compartment that ate away at some of the terminals. The above shows the corrosion and the new replacement battery holder to the right. It only cost a few dollars to get it back up and running.
 
-![](/assets/images/2021/img_0774.jpg)
+![Cream-coloured Nissan compact hatchback parked on a sunny residential street.](/assets/images/2021/img_0774.jpg)
+
+*A cream-coloured hatchback is parked beside a sunny residential street.*
+{: .media-caption }
 
 Unfortunately, I also noticed that the stand was broken. One of the pegs had snapped. I can't be trusted with superglue. So I handed it over to [SuperNick (Nick)](/humble-beginnings-nintendo-famicom-incoming/). He fixed it up and now it is as good as new. Thanks Nick, you've been part of the McRetro family since before it even existed!
 

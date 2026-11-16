@@ -1,0 +1,22 @@
+name: Validate R2 archive site starters
+on:
+  pull_request:
+    paths:
+      - 'archive-sites/**'
+      - '.github/tests/r2-archive-sites.test.mjs'
+      - '.github/workflows/r2-archive-sites.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Verify archive catalogues and JavaScript syntax
+        run: node --test .github/tests/r2-archive-sites.test.mjs

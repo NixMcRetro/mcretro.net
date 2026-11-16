@@ -1,0 +1,74 @@
+# Lean CodeQL schedule for an editorial-first Jekyll site.
+# IMPORTANT: Enable advanced setup / disable CodeQL default setup in
+# Settings > Advanced Security when adopting this workflow.
+# Otherwise default setup may continue scanning on every PR and push,
+# and may block uploads from this advanced workflow.
+name: CodeQL (targeted)
+
+on:
+  pull_request:
+    branches: [main]
+    # Editorial-only Markdown and CSS changes do not need a CodeQL run.
+    # Scan when executable code, templates, workflows or dependencies change.
+    paths:
+      - '**/*.js'
+      - '**/*.mjs'
+      - '**/*.cjs'
+      - '**/*.jsx'
+      - '**/*.ts'
+      - '**/*.tsx'
+      - '**/*.py'
+      - '**/*.rb'
+      - '**/*.html'
+      - '.github/workflows/**'
+      - '.github/actions/**'
+      - '.github/codeql/**'
+      - '.github/codeql.yml'
+      - '.github/codeql-config.yml'
+      - '.github/dependabot.yml'
+      - 'Gemfile'
+      - 'Gemfile.lock'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'npm-shrinkwrap.json'
+      - '_config.yml'
+  # Catch newly discovered vulnerabilities even when the site is quiet.
+  schedule:
+    - cron: '23 5 8 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  security-events: write
+
+concurrency:
+  group: codeql-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    # Pull requests from forks have read-only tokens and cannot upload alerts.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language:
+          - actions
+          - javascript-typescript
+          - python
+          - ruby
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: none
+      - name: Analyze code
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: "/language:${{ matrix.language }}"

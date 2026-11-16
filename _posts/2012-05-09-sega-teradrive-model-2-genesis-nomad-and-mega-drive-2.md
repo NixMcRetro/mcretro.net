@@ -24,7 +24,7 @@ He was also voted the most silent person in our two top-ranking LED counter vide
 
 ### Sega Genesis Nomad
 
-The Nomad is broken. It won't power on using either the AC adapter or the battery pack, and I haven't got a GameBit screwdriver handy to open it yet. That's reasonably good news, really, because it means I get to attempt a repair. Will victory be mine?
+The broken Nomad gives me something else to repair, which is reasonably good news, really. Will victory be mine?
 
 ![Black Sega Genesis Nomad handheld console on a speckled tabletop, with scratches visible across its unlit screen.](/assets/images/2012/img_0084.jpg)
 
@@ -44,7 +44,7 @@ I contacted them about the mistake, and they've agreed to send the Model 1 while
 
 ### TeraDrive Model 2
 
-The TeraDrive has arrived from Japan in working condition, which is fantastic news. The PC side boots properly, and both floppy drives are functioning. I've already had Scorched Earth running, although my attempt to finish off the green tank in the video didn't go quite as planned!
+It's fantastic news to have this machine working. I've already had Scorched Earth running, although my attempt to finish off the green tank in the video didn't go quite as planned!
 
 ![Front of a Sega TeraDrive Model 2 with two floppy drives, an attached keyboard, lit power light and plugged-in cables.](/assets/images/2012/img_0080.jpg)
 

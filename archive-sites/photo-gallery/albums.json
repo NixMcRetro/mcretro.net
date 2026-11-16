@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "albums": [
+    {
+      "id": "setup-tests",
+      "title": "Setup tests",
+      "description": "Connectivity checks only. Historical photo albums will be added after source review."
+    }
+  ],
+  "photos": [
+    {
+      "path": "mcretro-r2-check.png",
+      "thumbnail": "mcretro-r2-check.png",
+      "title": "Cloudflare R2 connection test",
+      "description": "A temporary setup image confirming that the McRetro Photo Gallery can display public photos from R2.",
+      "alt": "McRetro R2 test image",
+      "album": "setup-tests",
+      "hardware": "",
+      "credit": "McRetro setup test"
+    }
+  ]
+}

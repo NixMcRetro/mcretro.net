@@ -53,7 +53,7 @@ There is still the familiar 28-bit LBA ceiling at roughly 128 GiB, or 137 GB in 
 *The label says 250 GB. The PC said 160 GB. I never did get to the bottom of that one, but it was wonderfully quiet!*
 {: .media-caption }
 
-Another oddity was a Samsung 250 GB drive pulled from an el cheapo PVR. It only identified as 160 GB instead of the 250 GB printed on the label. I never established why. It could have involved firmware, capacity limiting or configuration, but I didn't investigate it far enough to know. Who cares! It works, and it runs much quieter than my other PATA drives.
+Another oddity was a Samsung hard drive pulled from an el cheapo PVR. The capacity mismatch could have involved firmware, capacity limiting or configuration, but I didn't investigate it far enough to know. Who cares! It works, and it's much quieter than my other PATA drives.
 
 #### picoPSU
 

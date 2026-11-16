@@ -50,7 +50,7 @@ So far, from what I understand: Solr is the search platform and index, Nutch is 
 *Blacklight was loading, but the styling had fallen out and the search still wasn't cooperating. At least it was something!*
 {: .media-caption }
 
-Above is a crippled Blacklight. Not quite functional yet. Search doesn't work and I lost the formatting... wait, was PHP even installed? Maybe that's it! Nope. Blacklight is a Ruby on Rails application, so PHP was a complete red herring. This is why it is good to think out loud. 😆
+Wait, was PHP even installed? Maybe that's it! Nope. Blacklight is a Ruby on Rails application, so PHP was a complete red herring. This is why it is good to think out loud. 😆
 
 Regardless, dockerising it has been tricky, but fun. I am definitely making progress though. Do I have a Dockerfile? Why yes, I do have a Dockerfile. I've dreamed of making one since 2019, and can now confirm it is magical. Quite hacky, of course, but that's generally [the way I roll](/). 😎
 

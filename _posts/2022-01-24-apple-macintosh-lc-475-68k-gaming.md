@@ -34,7 +34,7 @@ The first is [Munchies](https://web.archive.org/web/20201112041331/https://www.m
 *Brickles Plus, waiting for me to click. I'm still not entirely sure whether I'm meant to identify with the paddle or the ball.*
 {: .media-caption }
 
-Next up we have [Brickles Plus](https://web.archive.org/web/20160710131308/http://www.macintoshrepository.org/3641-brickles-plus). I'm still not sure who I am in this game. Am I the paddle or the ball? Is the paddle a rebellious brick that fell? After thinking about that for a while I had an existential crisis about poor Brickle. My favourite part is when the bricks disappear. Very neat!
+Next up we have [Brickles Plus](https://web.archive.org/web/20160710131308/http://www.macintoshrepository.org/3641-brickles-plus). Is the paddle a rebellious brick that fell? After thinking about that for a while I had an existential crisis about poor Brickle. My favourite part is when the bricks disappear. Very neat!
 
 ![Animated capture of the Maniac game in Basilisk II, with a large blue MANIAC title, colourful text and high-score and menu options.](/assets/images/2022/img_0803.gif)
 

@@ -13,7 +13,7 @@ share_description: >-
 *EarthBound on the SNES, with scanlines across the menu. Still one of my favourite games!*
 {: .media-caption }
 
-Here's EarthBound (1995) on the SNES, at the character select screen. Incredible game that I cannot recommend enough.
+Released in 1995, it's still an incredible game that I cannot recommend enough.
 
 ![Earth Defense Force on a CRT, showing aircraft over a pale sky beneath Level 1, Shield and Pause indicators, with scanlines across the image.](/assets/images/2020/img_0663.jpg)
 
@@ -27,14 +27,14 @@ Earth Defense Force (1991) SNES. This game is amazing with scanlines.
 *The SD2SNES menu behaving itself for once, with the games listed as they should be.*
 {: .media-caption }
 
-But nothing good ever seems to last forever. Above is my glorious SD2SNES working as it should, listing the games on the SD card.
+But nothing good ever seems to last forever.
 
 ![SD2SNES menu with the game list missing, leaving only a tiny white fragment on the purple selection bar beneath the logo.](/assets/images/2020/img_0659.jpg)
 
 *And then the SD2SNES menu forgets the whole game list. Not quite what I was hoping to see!*
 {: .media-caption }
 
-Then there's this, which definitely isn't right. The game list has disappeared, leaving a little bit of gibberish. It seems to be intermittent, which makes diagnosing the fault a little more interesting.
+Then there's this, which definitely isn't right. It seems to be intermittent, which makes diagnosing the fault a little more interesting.
 
 ![SD2SNES menu displaying a short string of garbled pale characters on a purple selection bar instead of readable game titles.](/assets/images/2020/img_0660.jpg)
 

@@ -23,7 +23,7 @@ share_description: >-
 *Off comes the microphone grille. The cartridge appears to be dead, so I've ordered a replacement to experiment with.*
 {: .media-caption }
 
-Just a quick update. I received the Sega Mega-CD Karaoke add-on today, gave it a test and found that there is a buzzing noise from the unit while it is powered up. More annoyingly, the microphone does not work. I pulled it apart, with more photos in the [photo gallery](/goodies/), and the microphone cartridge appears to be dead.
+Just a quick update. The Sega Mega-CD Karaoke add-on arrived today. I pulled apart the microphone, with more photos in the [photo gallery](/goodies/).
 
 I've gone ahead and bought a $10 600-ohm BG-58 microphone cartridge from eBay to try as a replacement. It'll be a few weeks before it arrives, so whether it'll actually fit and work in this thing is still anyone's guess.
 
@@ -41,8 +41,6 @@ I've gone ahead and bought a $10 600-ohm BG-58 microphone cartridge from eBay to
 
 *And a tiny suited Dreamcast keyring to complete the corporate chaos. I couldn't make this stuff up!*
 {: .media-caption }
-
-In the meantime, I've purchased a very nice-looking boxed Yukawa Dreamcast, my first NTSC-J Dreamcast.
 
 The Yukawa packaging is one of those oddities of the early Japanese Dreamcast launch. It's still the familiar Dreamcast hardware underneath, but Sega executive Hidekazu Yukawa appeared all over the Japanese launch advertising and even on the packaging.
 

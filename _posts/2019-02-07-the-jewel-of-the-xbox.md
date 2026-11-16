@@ -20,7 +20,7 @@ For the longest time I've had this Kasumi Blue Xbox from a fellow game enthusias
 *A proper top-down look at the Kasumi Blue lid and its jewel, finally back where it belongs. I should have straightened it ages ago!*
 {: .media-caption }
 
-Anyway, it was actually far easier than I thought, and I should have done it a long time ago. Now it's done and it will never have to be done again! Damn that blue is a beautiful colour. Too bad the DVT4 isn't a nice blue. Now I have to choose between one of the two? What would you keep? The better looking blue Xbox or the technologically cooler DVT4? The jury is still out for now.
+Anyway, it was actually far easier than I thought. Now it's done and it will never have to be done again! Damn that blue is a beautiful colour. Too bad the DVT4 isn't a nice blue. Now I have to choose between one of the two? What would you keep? The better looking blue Xbox or the technologically cooler DVT4? The jury is still out for now.
 
 ![Open original Xbox showing a green motherboard, two large aluminium heatsinks, cooling fan, cables and the power-supply components inside a metal chassis.](/assets/images/2019/img_0629.jpg)
 

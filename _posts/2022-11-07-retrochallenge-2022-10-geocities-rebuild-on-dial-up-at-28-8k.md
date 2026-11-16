@@ -24,7 +24,7 @@ We were using the Spirit Viper V.34 external modem on the client-side. These wer
 *Inside the Spirit Viper. Those capacitors were a little too close to the plastic lid for comfort.*
 {: .media-caption }
 
-The Spirit Viper V.34 is a nice looking modem internally too. Those capacitors at the front touch the plastic top. If they vent, they'll be melting through the top. I'm still waiting for a backorder to arrive with potentially suitable replacements, but as we all know, the chip shortage continues.
+The Spirit Viper V.34 is a nice looking modem internally too. If those capacitors vent, they'll be melting through the plastic top. I'm still waiting for a backorder to arrive with potentially suitable replacements, but as we all know, the chip shortage continues.
 
 ### Related Posts
 

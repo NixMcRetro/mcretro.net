@@ -49,7 +49,7 @@ The little battery on the board looked like a CR2032, so that's another thing to
 *And here are the capacitors on the GameCube's DC-in power board. Getting down to this board involved rather a lot of screws!*
 {: .media-caption }
 
-And these are the capacitors on the power board (DC-in area). Looking forward to replacing them one day! There were an awful lot of screws involved in getting this far, too. Nintendo really went to town with them. Screws, screws, and more screws.
+Looking forward to replacing those capacitors one day! Nintendo really went to town with the screws. Screws, screws, and more screws.
 
 Still, it's good to have this particular GameCube working again. I wasn't expecting it to come back to life quite so quickly, especially considering how long it had been sitting around.
 

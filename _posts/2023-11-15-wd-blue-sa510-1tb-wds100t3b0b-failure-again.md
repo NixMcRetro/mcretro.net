@@ -49,7 +49,7 @@ Hmmm right. Read-only is at least a safer failure mode than silently eating writ
 *Firmware updated, and WD Dashboard now decided the drive had 40% health. DriveDx had given it 100%. Wonderful consistency.*
 {: .media-caption }
 
-Through the motions we go. Updated firmware OK, but WD Dashboard reported only 40% health. DriveDx had shown 100% earlier. Wonderful, even the software can't agree on how healthy this thing is! Updating firmware doesn't replace the flash memory, and without knowing how either tool was calculating its figures I wasn't going to pretend the screenshots explained everything.
+Through the motions we go. Updating firmware doesn't replace the flash memory, and without knowing how either tool was calculating its figures I wasn't going to pretend the screenshots explained everything.
 
 ![Western Digital Dashboard SMART data window listing media wear-out indicator 60.83%, spare blocks at 100%, and total reported writes and reads.](/assets/images/2023/img_1210.jpg)
 

@@ -27,7 +27,7 @@ The failed drive powering GeoCities was a WD Blue SA510 1 TB M.2 SATA SSD, model
 *At least the old GeoCities pages were still readable at the raw-data level.*
 {: .media-caption }
 
-The drive reported 606 power-on hours and 43 power cycles, and it was behaving as read-only. GeoCities data was still there when read with [iBored](https://apps.tempel.org/iBored/). I could read it in Ubuntu and macOS, but couldn't get at the data in my Windows setup, even though WD Dashboard could see the drive.
+The drive was behaving as read-only. GeoCities data was still there when read with [iBored](https://apps.tempel.org/iBored/). I could read it in Ubuntu and macOS, but couldn't get at the data in my Windows setup, even though WD Dashboard could see the drive.
 
 Being overly cautious, I had another drive ready to go. The bad news is, that other drive was of the same vintage. This was the drive I'd been using for [RetroChallenge 2022/10](https://www.retrochallenge.org/2022/11/finish-line.html). Those reported power-on hours tell you how long the SSD had been running, not how many months had passed since the challenge.
 

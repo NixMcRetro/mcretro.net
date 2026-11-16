@@ -46,7 +46,7 @@ Good old Sega Ozisoft, weren't they a bunch of jolly jokers!
 *The 32X still nestled in its original tray with the adaptor and cables. Not a bad find at all!*
 {: .media-caption }
 
-My 32X thankfully came with the box and is in very good shape. A fine specimen indeed!
+It's in very good shape. A fine specimen indeed!
 
 ![Sega Mega Drive 32X with a game cartridge inserted, stacked on top of a Mega Drive Model 1 and Mega-CD Model 1.](/assets/images/2012/img_0227.jpg)
 

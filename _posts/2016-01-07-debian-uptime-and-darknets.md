@@ -35,7 +35,7 @@ They overlap a little, but they are not exactly the same thing. `lsb_release` fo
 *41 days, 19 hours and 50 minutes of uptime before I decided to rebuild the server. Because apparently I can't leave a perfectly good setup alone!*
 {: .media-caption }
 
-In other news, we hit **41 days uptime** before I decided to rebuild the server using Raspbian Jessie Lite. The smaller Lite image suited this little Raspberry Pi web-server setup much better than the larger desktop image I had been using.
+In other news, I decided to rebuild the server using Raspbian Jessie Lite. The smaller Lite image suited this little Raspberry Pi web-server setup much better than the larger desktop image I had been using.
 
 I guess the full Jessie image was getting a bit too beefy for 4 GB cards with all that bloat! Every day is a good day to rebuild! Most of the Take Back the Darknet guide was online by then too, although it still needed plenty of refining.
 

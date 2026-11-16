@@ -63,7 +63,7 @@ Another thing I had been reading about was alternate-day iron. Studies in iron-d
 *The final tally: 25 whole blood, 25 plasma, and two platelet donations. So long, and thanks for all the mini pretzels!*
 {: .media-caption }
 
-And there we have it, the end of an era. 25 whole blood, 25 plasma, 2 platelets. So long and thanks for all the mini pretzels! 🥨 💁‍♀️
+And there we have it, the end of an era. 🥨 💁‍♀️
 
 
 ### Sources

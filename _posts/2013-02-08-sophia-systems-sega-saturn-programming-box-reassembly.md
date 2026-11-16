@@ -45,7 +45,7 @@ For the moment, Sophia is heading back to the bookshelf while I start investigat
 *Now those are the SH-2 processor cards I've been hunting for! Two 171-6692B boards, side by side.*
 {: .media-caption }
 
-Look at that! 171-6692B SH7095 SH-2 CPUs. Those are exactly the sort of processor cards I'm trying to track down.
+Look at that! 171-6692B SH7095 SH-2 CPUs.
 
 **Update:** Someone has since sold me some SH-2 CPUs! What a wonderful person. That should give me something new to investigate when I return to Sophia.
 

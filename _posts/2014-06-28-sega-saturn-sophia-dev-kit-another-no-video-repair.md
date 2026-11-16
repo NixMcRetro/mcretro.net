@@ -34,7 +34,7 @@ After putting everything back together, it was time for the moment of truth. Pow
 *Fresh capacitors fitted in the third Sophia. This time the clock-setting screen came back after reassembly. Three for three!*
 {: .media-caption }
 
-Excellent! That's three Sophias with video output again. In this particular case, replacing the surface-mount capacitors made the difference, since changing the switch configuration hadn't restored the display.
+Excellent! In this particular case, replacing the surface-mount capacitors made the difference, since changing the switch configuration hadn't restored the display.
 
 Of course, that doesn't necessarily mean every no-video fault on a Sophia will be caused by capacitors, and there are still other ageing components to consider. But it's a rather satisfying result after all the time I've spent taking these machines apart.
 

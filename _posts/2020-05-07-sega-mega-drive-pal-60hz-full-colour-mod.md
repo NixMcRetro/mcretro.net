@@ -17,7 +17,7 @@ I've had this page bookmarked for something close to five years now. The site I 
 
 I suppose it doesn't really matter since I've mostly moved on to FPGA solutions for the Mega Drive, but for the sake of being complete, here's a 60 Hz full-colour mod I was once pondering. That explains why I found a bag of 4.433619 MHz crystals the other weekend... :P
 
-Zipplet's mod is for a Model 1 Mega Drive using the CXA1145 encoder. It supplies a separate PAL colourburst clock for 60 Hz composite and RF output; RGB already carries colour without this extra circuit. The module in the photo above is Zipplet's example, not a completed mod of mine.
+Zipplet's mod is for a Model 1 Mega Drive using the CXA1145 encoder. It supplies a separate PAL colourburst clock for 60 Hz composite and RF output; RGB already carries colour without this extra circuit.
 
 ### Sources
 

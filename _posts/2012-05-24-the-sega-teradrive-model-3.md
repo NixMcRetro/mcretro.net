@@ -59,7 +59,7 @@ The next problem is working out exactly what sort of replacement hard drive the 
 
 I'm still waiting on the ISA IDE controller card from the UK for the Model 2. In the meantime, I need to find a compatible drive to get the Model 3 back to its proper configuration.
 
-Another thing I noticed is that the trace wiring on the Model 3 travels to slightly different locations from my Model 2. The Model 3 also has much nicer-looking yellow wiring, while the Model 2 uses mostly green. Not exactly the most important engineering discovery of the century, but there it is!
+Another thing I noticed is that the trace wiring on the Model 3 travels to slightly different locations from my Model 2. Not exactly the most important engineering discovery of the century, but there it is!
 
 Time to get a hard drive installed and see how far this one can go. Many more images can be found in the [photo gallery](/goodies) filed under Sega TeraDrive Model 2 and Model 3.
 

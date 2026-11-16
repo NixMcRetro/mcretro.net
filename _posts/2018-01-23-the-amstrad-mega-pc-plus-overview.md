@@ -32,7 +32,7 @@ The front switch selects between the PC and Mega Drive video, with the circuitry
 
 Image provided by [WorldOfBrainFreeze](https://www.youtube.com/user/WorldOfBrainFreeze)
 
-Above is what the Mega PC looks like without a Mega Drive inside it, a hideous beige box. Also known as the Amstrad PC7386SX80.
+A hideous beige box, if you ask me!
 
 The original 386SX motherboard had suffered badly from a leaking NiCad backup battery. The corrosion had reached various tracks and connections, which wasn't something I wanted to experience again. The replacement 486SLC board uses a Dallas RTC arrangement instead, making it a rather more pleasant proposition for keeping the machine alive.
 

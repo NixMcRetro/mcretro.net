@@ -96,14 +96,14 @@ I included File Manager and Control Panel on the boot disk, but there wasn't eno
 *The MEM command tells the story: 612 KB of conventional memory free, but just 64 KB of extended memory left to play with.*
 {: .media-caption }
 
-Of course, I had to try Solitaire. If you're a professional Solitaire player, I would not recommend this particular machine. Everything seems to involve another trip to the floppy drive, and even moving cards around is painfully slow. Windows 3.00a was considerably better suited to that sort of thing.
+Of course, I had to try Solitaire. If you're a professional Solitaire player, I would not recommend this particular machine. Even moving cards around is painfully slow. Windows 3.00a was considerably better suited to that sort of thing.
 
 ![Windows File Manager listing files in the C:\\WINDOWS directory on a RAM drive, including executable and configuration files.](/assets/images/2012/img_0119.jpg)
 
 *File Manager browsing the Windows directory on the RAM disk. It works, as long as I don't expect the changes to survive a reboot.*
 {: .media-caption }
 
-Still, it boots and runs, which was the whole point of the experiment. With 612 KB of conventional memory reported and only 64 KB of extended memory left free, there isn't a great deal more I can squeeze out of this configuration. Anyone with another 286 and a bit more RAM might have better luck.
+Still, it boots and runs, which was the whole point of the experiment. There isn't a great deal more I can squeeze out of this memory-starved configuration. Anyone with another 286 and a bit more RAM might have better luck.
 
 The storage problem eventually had a much better solution. Later that year I got an XTIDE card working in the TeraDrive Model 2 and finally booted the machine from proper storage. You can find all the files in the [file server](/goodies/) and photos in the [photo gallery](/goodies/).
 

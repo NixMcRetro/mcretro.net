@@ -24,7 +24,7 @@ Open the Super Mario World (US) ROM in the utility. It reports a 0.5 MB, 4 Mbit 
 *IpsAndSum showing the checksum repair for MIX4AAE. No one likes a dirty checksum!*
 {: .media-caption }
 
-For the sake of being complete, we'll also fix up the checksum. No one likes a dirty checksum. I used [IpsAndSum](https://web.archive.org/web/20160225182328/http://www.romhacking.net/utilities/499). Open the newly patched file, select "Repair Snes CheckSum", accept the repair prompt, and save the resulting ROM.
+For the sake of being complete, we'll also fix up the checksum. I used [IpsAndSum](https://web.archive.org/web/20160225182328/http://www.romhacking.net/utilities/499). Open the newly patched file, select "Repair Snes CheckSum", accept the repair prompt, and save the resulting ROM.
 
 ![Snes9x emulator window showing the MIX4AAE ROM boot screen, with a 'VIPPER PRESENTS' logo and technical ROM information on a black background.](/assets/images/2016/img_0467.jpg)
 

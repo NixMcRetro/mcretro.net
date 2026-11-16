@@ -19,7 +19,7 @@ Before anyone is tempted to set up Radio McRetro across Sydney, this was just a 
 *The old GE clock radio meets a first-generation Raspberry Pi. The blue wire was my tiny FM antenna.*
 {: .media-caption }
 
-The old capacitors I replaced are sitting on top of the radio in this photo, and the blue wire is the transmitter antenna.
+The old capacitors I replaced are sitting on top of the radio in this photo.
 
 Unfortunately, an old site conversion mangled the command below, so don't copy and paste it expecting magic. I'm keeping it here for historical reference rather than guessing at the exact command I originally ran.
 

@@ -125,7 +125,7 @@ And then of course this result comes through on the day I submit my request to d
 *I ended up binge-watching The Owl House, surrounded by plants and fairy lights. What an excellent show!*
 {: .media-caption }
 
-I binged all of The Owl House. Amazing show, I highly recommend it for anyone. Season 3 was just the icing on the cake.
+Amazing show, I highly recommend it for anyone. Season 3 was just the icing on the cake.
 
 ![Small pale golden cicada-shaped shell clinging to rough tree bark beside a suburban street.](/assets/images/2024/img_1367.jpg)
 

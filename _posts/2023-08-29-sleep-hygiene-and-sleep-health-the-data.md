@@ -34,7 +34,7 @@ We'll start off with longer periods of recorded data. Above is the 17th August. 
 *One of the machine's 21-second clear-airway flags. An interesting trace, not a sleep-study result.*
 {: .media-caption }
 
-The machine flagged a clear-airway event lasting about 21 seconds. Interesting. The number alone couldn't tell me what caused it, or whether I'd actually been asleep the whole time.
+Interesting. The number alone couldn't tell me what caused it, or whether I'd actually been asleep the whole time.
 
 ![OSCAR daily view for 18th August 2023 displaying AHI 1.37, clear-airway and obstructive-event flags, flow rate, pressure and leak-rate graphs.](/assets/images/2023/img_1136.jpg)
 
@@ -76,7 +76,7 @@ Jumping forward a week to the 26th August we have more data. This one has it all
 *There it is, a hypopnoea flag in the OSCAR display. Another label assigned by the machine.*
 {: .media-caption }
 
-There's a hypopnoea. In plain English, that is a partial reduction in breathing rather than a complete apnoea. That's the label the machine has assigned based on the flow and pressure data.
+In plain English, a hypopnoea is a partial reduction in breathing rather than a complete apnoea. That's the label the machine has assigned based on the flow and pressure data.
 
 ![OSCAR daily view for 27th August showing AHI 0.83 over roughly two hours 24 minutes, with pressure rising above 10 cm H2O.](/assets/images/2023/img_1141.jpg)
 

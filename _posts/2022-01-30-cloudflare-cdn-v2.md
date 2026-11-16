@@ -20,7 +20,7 @@ Those who are long-term subscribers would remember that [way back in 2016](/clou
 *Always Online was one of the big reasons for revisiting Cloudflare. A useful fallback for some archive pages, not a complete mirror.*
 {: .media-caption }
 
-The motivations behind this are primarily hosting the [GeoCities Archive](/homepages/geocities) and the [ASSEMblerGames Archive](/the-assembler-games-archive/). Cloudflare's [Always Online](https://blog.cloudflare.com/cloudflares-always-online-and-the-internet-archive-team-up-to-fight-origin-errors/) has been on my bucket list too long. Now it is a reality. If my home server is unreachable, it can serve cached or Internet Archive copies of some static pages. It won't be a complete mirror of everything, but that's a handy fallback for an archive.
+The motivations behind this are primarily hosting the [GeoCities Archive](/homepages/geocities) and the [ASSEMblerGames Archive](/the-assembler-games-archive/). Cloudflare's [Always Online](https://blog.cloudflare.com/cloudflares-always-online-and-the-internet-archive-team-up-to-fight-origin-errors/) has been on my bucket list too long. Now it is a reality. If my home server is unreachable, it can serve cached or Internet Archive copies of some static pages.
 
 ![Cloudflare CSAM Scanning Tool settings description outlining hash-matching of cached images and possible reporting and URL blocking.](/assets/images/2022/img_0813.jpg)
 

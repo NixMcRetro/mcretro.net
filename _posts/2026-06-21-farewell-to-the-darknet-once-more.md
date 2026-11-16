@@ -12,7 +12,7 @@ share_description: >-
 *Farewell to the self-hosted era - the Raspberry Pi web server, Tor onion services, and nine retired websites, all switched off on 31st May 2026.*
 {: .media-caption }
 
-Well, that's that then. On 31st May 2026, I permanently shut down my self-hosted web server, taking all nine of my Tor onion websites with it. I mentioned back on 22nd May that the onions weren't going to survive the move to GitHub Pages, but now it's official. Farewell, darknet! 🧅
+Well, that's that then. I mentioned back on 22nd May that the onions weren't going to survive the move to GitHub Pages. Farewell, darknet! 🧅
 
 I've spent a rather ridiculous amount of time over the years configuring Apache, fiddling with virtual hosts, generating onion addresses and getting various websites to work on hardware that probably had better things to do. And for what? To host ordinary personal websites on the darknet, of course!
 

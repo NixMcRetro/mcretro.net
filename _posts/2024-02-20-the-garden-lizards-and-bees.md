@@ -13,7 +13,7 @@ share_description: >-
 *Bluey dropped in for a visit on the lawn, no doubt eyeing off the local snails and slugs. Naturally, he vanished once I'd bought him dinner!*
 {: .media-caption }
 
-We had a giant blue tongue turn up randomly on the lawn. No doubt here for the snails and slugs I keep finding at night. I picked up a tray of beef dog food with minimal grain content and he hasn't shown up since! 😭
+I keep finding snails and slugs at night, so I picked up a tray of beef dog food with minimal grain content for Bluey. He hasn't shown up since! 😭
 
 ![Small bronze-brown skink with a long tapering tail on dark grey paving among green grass blades.](/assets/images/2024/img_1252.jpg)
 

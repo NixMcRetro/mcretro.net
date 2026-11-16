@@ -15,4 +15,4 @@ share_description: >-
 
 Neighbours, everybody needs good neighbours. So why do mine play bongo drums? I live under a very thin roof/floor and my neighbours are inconsiderate. Please suggest some ways to get back at them!
 
-I don't know what happened to the overview video, so there's a cool dev unit from the near future!
+There's a cool dev unit from the near future!

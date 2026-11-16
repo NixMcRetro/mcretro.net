@@ -35,7 +35,7 @@ This is the usual welcome screen when the TeraDrive is first powered on, the Seg
 *And here's Puzzle Construction, with its lovely big colourful buttons. Quite a change from the austere IBM setup screen!*
 {: .media-caption }
 
-And here's the Puzzle Construction menu once it's loaded. Create your own Sega game and more! It looks remarkably similar to the startup screen, doesn't it? The TeraDrive has since been implemented in MAME, whose driver notes also record F1 during POST as the way into the setup program.
+Create your own Sega game and more! It looks remarkably similar to the startup screen, doesn't it? The TeraDrive has since been implemented in MAME, whose driver notes also record F1 during POST as the way into the setup program.
 
 ### More Fun with DOS-in-ROM
 

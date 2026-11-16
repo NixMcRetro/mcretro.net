@@ -1503,8 +1503,6 @@ The next part gets a little messy. Alright, messier. After trying [FlashDumpScri
 *Well, look at that: some HTML from the router's web interface. At least the data wasn't all nonsense!*
 {: .media-caption }
 
-Above is a quick peek inside the file being dumped. Why, that's HTML from the web interface.
-
 ![Ubuntu terminal windows showing a Python dumping script starting an output file, with progress increasing from zero toward 1%.](/assets/images/2021/img_0710.jpg)
 
 *A firmware-dumping script finally started doing something. Time to leave it alone and see what appeared.*
@@ -1573,8 +1571,6 @@ That's good, more similarities - and it shows I probably was dumping the (very) 
 
 *It was rather easier to inspect the bootloader-looking bytes than to get a trustworthy dump out of the modem.*
 {: .media-caption }
-
-Viewing the code we are trying to dump is easier than dumping it, or so it would seem.
 
 ![Ubuntu terminal launching bcm_cfedump with a nand_winner.img output file, reporting 667 of 65,536 pages read and a long estimated duration.](/assets/images/2021/img_0708.jpg)
 
@@ -1672,14 +1668,14 @@ continue
 *Same 128 MiB file size for both NAND dumps. Unfortunately, size alone doesn't mean matching contents.*
 {: .media-caption }
 
-The second dump has completed. Filesizes are the same, which should be expected. Comparing the two dumps in [Hex Fiend](https://hexfiend.com) shows the following:
+The second dump has completed. Comparing the two dumps in [Hex Fiend](https://hexfiend.com) shows the following:
 
 ![Hex Fiend file comparison of nand_winner.img and nand_v2.img, highlighting a 16 KiB difference between the two files.](/assets/images/2021/img_0719.jpg)
 
 *Hex Fiend found a 16 KiB block of differences after the factory reset. So much for a perfectly clean slate!*
 {: .media-caption }
 
-Hmmm, that's not identical. Hex Fiend shows a 16 KiB region of differences between the two dumps. The factory restore certainly didn't give me the clean slate I was hoping for: my TPG username is still in there... 🤔
+Hmmm. The factory restore certainly didn't give me the clean slate I was hoping for: my TPG username is still in there... 🤔
 
 ![MacBook Pro displaying a serial terminal next to a dismantled TP-Link modem router with a black heatsink and network ports.](/assets/images/2021/img_0690.jpg)
 

@@ -116,13 +116,7 @@ It's amazing! It looks like I'll be able to clone across from my APFS formatted 
 
 ```bash
 sudo chown www-data:www-data -R *
-```
-
-```bash
 sudo find . -type d -exec chmod 755 {} \;
-```
-
-```bash
 sudo find . -type f -exec chmod 644 {} \;
 ```
 
@@ -163,13 +157,7 @@ It looks like there's a faster way to change permissions that I wasn't aware of 
 
 ```bash
 cd /var/www
-```
-
-```bash
 sudo chown www-data:www-data -R *
-```
-
-```bash
 sudo chmod -R a=r,a+X,u+w .
 ```
 
@@ -177,9 +165,6 @@ That last line is a replacement for:
 
 ```bash
 sudo find . -type d -exec chmod 755 {} \;
-```
-
-```bash
 sudo find . -type f -exec chmod 644 {} \;
 ```
 
@@ -347,13 +332,7 @@ A quick run of the below commands fixed up the ownership and permissions issues 
 
 ```bash
 cd /var/www
-```
-
-```bash
 sudo chown www-data:www-data -R *
-```
-
-```bash
 sudo chmod -R a=r,a+X,u+w .
 ```
 
@@ -460,13 +439,7 @@ To generate a sitemap we'll need a... sitemap generator. I've decided on the apt
 
 ```bash
 sudo apt update
-```
-
-```bash
 sudo apt install npm
-```
-
-```bash
 sudo npm install -g sitemap-generator-cli
 ```
 
@@ -859,13 +832,7 @@ It worked. Next stop, clean out some more empty files, folders and .DS_Stores:
 
 ```bash
 find . -name .DS_Store -delete
-```
-
-```bash
 find . -empty -type f -delete
-```
-
-```bash
 find . -empty -type d -delete
 ```
 
@@ -1295,17 +1262,8 @@ Having a look around why this was happening resulted in me finding [this great s
 
 ```bash
 sudo a2dismod status
-```
-
-```bash
 sudo a2dismod info
-```
-
-```bash
 sudo apache2ctl configtest
-```
-
-```bash
 sudo systemctl restart apache2.service
 ```
 

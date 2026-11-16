@@ -3,7 +3,24 @@ layout: default
 title: The Blog
 pagefind: false
 ---
-<div class="blog-list">
+{% comment %}
+On paginated blog pages the sidebar calendar follows the year of most posts
+on this page. In a tie, group_by_exp follows post order, so the newest
+(first-listed) article wins. Individual articles and monthly archive pages
+still use their own page.date via the default layout.
+{% endcomment %}
+{% assign blog_first_post = paginator.posts | first %}
+{% assign blog_calendar_year = blog_first_post.date | date: '%Y' %}
+{% assign blog_calendar_year_count = 0 %}
+{% assign blog_calendar_groups = paginator.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year_group in blog_calendar_groups %}
+  {% assign year_count = year_group.items | size %}
+  {% if year_count > blog_calendar_year_count %}
+    {% assign blog_calendar_year = year_group.name %}
+    {% assign blog_calendar_year_count = year_count %}
+  {% endif %}
+{% endfor %}
+<div class="blog-list" data-archive-context-year="{{ blog_calendar_year }}">
 {% for post in paginator.posts %}
   <article class="post-entry">
 

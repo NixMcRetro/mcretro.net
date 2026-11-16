@@ -4,9 +4,10 @@ import { readFileSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
 const read = path => readFileSync(new URL('../../' + path, import.meta.url), 'utf8');
 const sidebar = read('_includes/sidebar.html'), layout = read('_layouts/default.html');
+const blog = read('blog/index.html');
 const code = read('assets/js/archive-calendar.js'), css = read('assets/css/overrides.css');
 
-function fixture(contextYear) {
+function fixture(contextYear, blogYear) {
   const handlers = {};
   class El {
     constructor(tag) { this.tag = tag; this.children = []; this.attrs = {}; }
@@ -27,7 +28,9 @@ function fixture(contextYear) {
   const els = { '[data-archive-year]': select, '[data-archive-older]': older,
     '[data-archive-newer]': newer, '[data-archive-months]': grid };
   runInNewContext(code, { document: { querySelector: x =>
-    x === '[data-archive-calendar]' ? { querySelector: k => els[k] } : null,
+    x === '[data-archive-calendar]' ? { querySelector: k => els[k] } :
+      (x === '.blog-list[data-archive-context-year]' && blogYear
+        ? { dataset: { archiveContextYear: blogYear } } : null),
     createElement: tag => new El(tag),
     body: { dataset: { archiveContextYear: contextYear } } } });
   return { grid, select, newer, older, handlers };
@@ -91,6 +94,21 @@ test('archive and article pages select the dated year', () => {
   assert.equal(f.grid.children[2].href, '/archive/2012/03/');
   f.handlers.newer();
   assert.equal(f.select.options[f.select.selectedIndex].value, '2016');
+});
+
+test('paginated blog pages select their majority year without overriding dated articles', () => {
+  assert.match(blog, /paginator\.posts \| group_by_exp: "post", "post\.date \| date: '%Y'"/);
+  assert.match(blog, /year_count > blog_calendar_year_count/);
+  assert.match(blog, /data-archive-context-year="{{ blog_calendar_year }}"/);
+  const blogPage = fixture(undefined, '2016');
+  assert.equal(blogPage.select.options[blogPage.select.selectedIndex].value, '2016');
+  assert.equal(blogPage.grid.attrs['aria-label'], '2016 monthly archives');
+  assert.equal(blogPage.newer.disabled, false);
+  assert.equal(blogPage.older.disabled, false);
+  const article = fixture('2012', '2016');
+  assert.equal(article.select.options[article.select.selectedIndex].value, '2012');
+  const invalid = fixture(undefined, '2038');
+  assert.equal(invalid.select.selectedIndex, 0, 'unknown blog year falls back to latest');
 });
 
 test('undated pages and unknown or malformed years select the latest year', () => {

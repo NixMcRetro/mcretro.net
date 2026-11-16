@@ -59,7 +59,7 @@ For diagnosis, I traced the power input and temporarily connected one of the DC-
 *Here's the replacement power jack borrowed from my Mega Drive 2. Thankfully, it was compatible with the Nomad.*
 {: .media-caption }
 
-On closer inspection I found that the DC-in jack from my Mega Drive 2 was compatible with the Nomad. Both machines use the same tip-positive power arrangement. So I removed the jack from one of my working Mega Drive 2 consoles and fitted it to the Nomad.
+Both machines use the same tip-positive power arrangement. So I removed the jack from one of my working Mega Drive 2 consoles and fitted it to the Nomad.
 
 ![Sega Genesis Nomad handheld powered on with a Sonic & Knuckles cartridge inserted and game characters visible on the screen.](/assets/images/2012/img_0129.jpg)
 

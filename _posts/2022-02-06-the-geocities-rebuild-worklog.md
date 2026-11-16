@@ -1114,7 +1114,7 @@ Good finds! I moved the server from the Raspberry Pi 3 to the Raspberry Pi 4 thi
 *Apache was not happy after the server move. The error log was rather clear about those broken links.*
 {: .media-caption }
 
-Apache, the web server software, was not happy with symlinks being broken. These are three very useful commands for debugging errors:
+These are three very useful commands for debugging Apache errors:
 
 `sudo tail -f /var/log/apache2/other_vhosts_access.log sudo tail -f /var/log/apache2/error.log sudo tail -f /var/log/apache2/access.log`
 

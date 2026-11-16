@@ -69,7 +69,7 @@ On this multi-chip board, lift PPU1 pin 24 and PPU2 pin 30 so that both are isol
 
 ### PIC placement
 
-I mounted the PIC16F630 over the CPU. It doesn't have blast processing so it shouldn't overheat. ;)
+I mounted the PIC16F630 over the CPU.
 
 If you are confident your chip has been programmed successfully, consider trimming the legs down. In this example I simply bent them outward slightly. Note the notch on the chip is at the top facing the back of the console.
 

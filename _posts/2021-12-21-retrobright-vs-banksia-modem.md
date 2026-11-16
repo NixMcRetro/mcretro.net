@@ -31,7 +31,7 @@ Hmmm, that looks like an iOS-style typo or unwanted autocorrect. Probably should
 *One last look around the Banksia case. Retrobright or retroblight? I'm still not convinced.*
 {: .media-caption }
 
-So is it a case of retrobright or retroblight? I've always found it better to try and collect either black or metal-based retro gear where possible.
+I've always found it better to try and collect either black or metal-based retro gear where possible.
 
 It's one of the reasons my earlier collecting did not focus on Nintendo with their easy-to-yellow Super Nintendo. Sega did well with the Master System, Mega Drive and Saturn. Dreamcast... well you could swap the white/yellowing case for a nice translucent smokey grey.
 

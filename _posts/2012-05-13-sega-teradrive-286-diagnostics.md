@@ -56,7 +56,7 @@ PC DOS 3.30 dates back to 2 April 1987 and added support for 1.44 MB 3.5-inch fl
 *A 10 MHz CPU and two suspiciously instant-seeking 'hard disks'. I suspect the RAM disk is having fun with this benchmark.*
 {: .media-caption }
 
-**3.** Here's something rather neat. The SEGA startup environment exposes a small RAM disk or virtual drive labelled LOADER 1.0. It's 242,176 bytes in size, with 87,552 bytes still free, and reports 1 head, 16 sectors and 130 cylinders. Read speed seems to be somewhere around 1300 KB to 1400 KB/sec.
+**3.** Here's something rather neat. The SEGA startup environment exposes a small RAM disk or virtual drive labelled LOADER 1.0. It reports 1 head, 16 sectors and 130 cylinders. Read speed seems to be somewhere around 1300 KB to 1400 KB/sec.
 
 ![POST CODE MASTER 1.40 reference screen showing AMI BIOS code 0b, one beep, and DRAM Refresh Failure.](/assets/images/2012/img_0097.jpg)
 
@@ -68,7 +68,7 @@ PC DOS 3.30 dates back to 2 April 1987 and added support for 1.44 MB 3.5-inch fl
 *The same reference associates nine beeps with a ROM BIOS checksum failure. I'm not declaring the TeraDrive faulty just because a utility says so.*
 {: .media-caption }
 
-**4.** The diagnostic reference I was looking at associates one beep with a DRAM refresh failure and nine beeps with a ROM BIOS checksum failure. Those are familiar AMI BIOS beep codes, but whether the IBM-branded TeraDrive BIOS uses the same meanings is another question. I'll need something more specific to this machine before trusting that list.
+**4.** The one- and nine-beep codes are familiar AMI BIOS beep codes, but whether the IBM-branded TeraDrive BIOS uses the same meanings is another question. I'll need something more specific to this machine before trusting that list.
 
 ![SysChk Video Information screen identifying a Paradise WD90C22 VGA chipset and at least 256 KB of video memory.](/assets/images/2012/img_0094.jpg)
 

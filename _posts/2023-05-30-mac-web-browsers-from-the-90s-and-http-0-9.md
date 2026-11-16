@@ -68,7 +68,7 @@ By this point I'd opted to mess with the GeoCities subdomain. Now what about a w
 *One IP address, one useful default page. The GeoCities landing page appears without a hostname in Safari.*
 {: .media-caption }
 
-One IP address, one default website. That gave these older clients somewhere useful to land even without a `Host` header.
+That gave these older clients somewhere useful to land even without a `Host` header.
 
 ![Photograph of an HP monitor running Netscape 1.0 on Windows, displaying the RetroJunkie homepage from 203.166.239.130.](/assets/images/2023/img_1010.jpg)
 

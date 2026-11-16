@@ -20,14 +20,14 @@ Starting from a cold boot, the TeraDrive goes through its usual checks and prese
 *The Model 2 can finally choose the TopSSD module from XTIDE's boot menu. Much more civilised than juggling floppies!*
 {: .media-caption }
 
-Above is XTIDE Universal BIOS 2.0.0 Beta 1 running the XT build and giving me the boot menu on the Model 2. The machine still has its 2.5 MB of RAM, but at least the storage situation is looking considerably more civilised.
+Above is XTIDE Universal BIOS 2.0.0 Beta 1 running the XT build and giving me the boot menu on the Model 2. The machine still has its 2.5 MB of RAM.
 
 ![Open Sega TeraDrive showing a green XTIDE ISA controller card and a black TOPSSD Disk on Module beside bundled grey ribbon cables.](/assets/images/2012/img_0357.jpg)
 
 *Here's the XTIDE card and TopSSD module fitted inside the Model 2. Lovely when the hardware finally plays nicely together.*
 {: .media-caption }
 
-Here's the XTIDE card itself, complete with its TopSSD Disk on Module. This is a revision-two card, with the appropriate jumper set to power the module, and there's an Atmel EEPROM holding the BIOS. There are plenty of variations on the basic XTIDE idea, with different board sizes, connectors and quantities of blinking LEDs. This particular arrangement works, which is presently my favourite feature.
+This is a revision-two card, with the appropriate jumper set to power the module, and there's an Atmel EEPROM holding the BIOS. There are plenty of variations on the basic XTIDE idea, with different board sizes, connectors and quantities of blinking LEDs. This particular arrangement works, which is presently my favourite feature.
 
 ![Monitor showing the XTIDE configuration and flashing program writing ide_at.bin version 2.0.0 Beta 2, with EEPROM type 2864 and a progress bar.](/assets/images/2012/img_0358.jpg)
 

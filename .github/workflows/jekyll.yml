@@ -21,6 +21,9 @@ on:
       - '.github/tests/caption-excerpts.test.rb'
       - '.github/tests/caption-excerpts-built.mjs'
       - 'assets/css/**'
+      - 'assets/js/post-media-layout.js'
+      - '_plugins/image_dimensions.rb'
+      - '.github/tests/post-media-built-check.mjs'
       - 'about.md'
       - 'channels.md'
       - 'goodies.md'
@@ -123,6 +126,11 @@ jobs:
 
       - name: Verify Fish Tank World pages and built-site internal links
         run: node .github/tests/fishtankworld-built.mjs _site
+
+      - name: Check blog image dimension markers and enlargement script
+        run: |
+          node --check assets/js/post-media-layout.js
+          node .github/tests/post-media-built-check.mjs _site
 
       - name: Verify GOATPAD audio startup, sample loading and sequencer behaviour
         run: node --test .github/tests/goatpad-audio.test.mjs

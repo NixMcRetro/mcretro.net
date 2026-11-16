@@ -130,7 +130,7 @@ The defect map also contains references to head 14, which would be consistent wi
 *Flip the drive over and there's the Maxtor controller board. A rather impressive amount of electronics!*
 {: .media-caption }
 
-Flip the drive over and things get even more interesting. The underside has a densely populated controller board with Maxtor components, large integrated circuits, and enough supporting electronics to make a modern SSD look positively boring. Both photographs are of the same physical drive, so we can connect its UTS asset number and defect map directly to the Maxtor electronics.
+The underside has Maxtor components, large integrated circuits, and plenty of supporting electronics to investigate. Both photographs are of the same physical drive, so we can connect its UTS asset number and defect map directly to the Maxtor electronics.
 
 ![Close-up of the Maxtor hard-drive controller showing integrated circuits, connectors, and densely populated electronics.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1727.jxl)
 

@@ -23,6 +23,7 @@ on:
       - 'assets/css/**'
       - 'assets/js/post-media-layout.js'
       - '_plugins/image_dimensions.rb'
+      - '.github/tests/post-media-built-check.mjs'
       - 'about.md'
       - 'channels.md'
       - 'goodies.md'
@@ -129,7 +130,7 @@ jobs:
       - name: Check blog image dimension markers and enlargement script
         run: |
           node --check assets/js/post-media-layout.js
-          node -e "const fs = require('node:fs'); const html = fs.readFileSync('_site/vegemite-australias-birthright/index.html', 'utf8'); const img = html.match(/<img\\b[^>]*img_0499\\.jpg[^>]*>/)?.[0]; if (!img?.includes('data-mcretro-intrinsic-dimensions=\\\"true\\\"') || !html.includes('post-media-layout.js')) { throw new Error('Missing blog image dimension marker or sizing script'); }"
+          node .github/tests/post-media-built-check.mjs _site
 
       - name: Verify GOATPAD audio startup, sample loading and sequencer behaviour
         run: node --test .github/tests/goatpad-audio.test.mjs

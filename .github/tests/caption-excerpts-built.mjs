@@ -30,8 +30,8 @@ assert.doesNotMatch(vram, /Some of my earlier VRAM experiments/);
 const fullArticle = read('still-dialling-in-my-head/index.html');
 assert.match(fullArticle, /The real Avtek MegaPlus V\.32bis CD950/,
   'Article captions must remain on full article pages');
-assert.match(fullArticle, /alt="Actual Avtek modem dialling spectrogram showing eight dual-tone pulses"/,
-  'Original image alt text must remain on full article pages');
+assert.ok(fullArticle.includes('alt="Spectrogram of the real Avtek modem dialling 8218 3400, with eight digit labels above pairs of bright horizontal frequency bands. The axes show time from 0 to 2 seconds and frequency in hertz."'),
+  'Owner-approved image alt text must remain on full article pages');
 const head = fullArticle.split('</head>', 1)[0];
 assert.doesNotMatch(head, /The real Avtek MegaPlus V\.32bis CD950/,
   'Caption should not become an article metadata description');

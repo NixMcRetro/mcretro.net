@@ -34,4 +34,4 @@ The capacitor was buried in an awkward part of the assembly, and I wasn't partic
 
 These CRT monitors can retain dangerous voltages even when disconnected from power, so I wouldn't recommend opening one without the appropriate experience and equipment. I've worked on enough old electronics to know that there are some parts of a monitor best left well alone.
 
-At the very least it has a tonne of inputs and outputs! It's a decent size too, unlike the 9044QM I have sitting around somewhere. It's a lovely old Sony monitor, even if the journey from the United Kingdom was rather hard on it. Hopefully it'll have a few more years of useful service ahead, although that capacitor is certainly something I'll need to keep in mind.
+It's a decent size too, unlike the 9044QM I have sitting around somewhere. It's a lovely old Sony monitor, even if the journey from the United Kingdom was rather hard on it. Hopefully it'll have a few more years of useful service ahead, although that capacitor is certainly something I'll need to keep in mind.

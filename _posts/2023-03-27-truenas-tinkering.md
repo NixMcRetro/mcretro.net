@@ -22,7 +22,7 @@ Sometime in October 2022 during RetroChallenge 2022/10 I started to tinker with 
 
 Fast-forward to today and I now have a cool mesh and 64 TB of raw drive capacity, with 32 TB of that going towards redundancy rather than file storage. That's before filesystem overheads. Redundancy isn't a backup, so I might have an offsite backup or two.
 
-And who could forget the ryegrass in my kitchen along with the empty shell of a desiccated cicada (zoom!). That's a story for another day. With the mesh fitted, the CPU temperature graph below shows a drop towards the end of March. Looking cooler!
+And who could forget the ryegrass in my kitchen along with the empty shell of a desiccated cicada (zoom!). That's a story for another day. The new mesh seems to have helped with CPU temperatures, too.
 
 ![CPU Temperature chart with four coloured traces between roughly 35 and 60 °C, showing a drop to the mid-30s in late March 2023.](/assets/images/2023/img_0997.jpg)
 

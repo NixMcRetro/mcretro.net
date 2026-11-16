@@ -13,7 +13,7 @@ share_description: >-
 *My magnificently low-effort vegan burger: patty, toast and fake mayo. Fine dining is not my speciality.*
 {: .media-caption }
 
-I've been called a lot of things in my time. Handsome, attractive, portly? But I have never been called a great cook. The above image is one of those fancy non-meat burgers, coupled with fake mayo on a healthy piece of toast. I started to test the waters with the vegan project back in late 2020.
+I've been called a lot of things in my time. Handsome, attractive, portly? But I have never been called a great cook. I started to test the waters with the vegan project back in late 2020.
 
 My diet up until this had mainly consisted of chicken and fish (salmon) as primary sources of protein, with salmon becoming a greater part with each passing day. My weight was down to where I wanted it to be with a new goal of stability - something I had previously failed at. So why vegan and not vegetarian? Let's have a look!
 

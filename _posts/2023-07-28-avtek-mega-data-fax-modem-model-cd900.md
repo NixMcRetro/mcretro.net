@@ -56,7 +56,7 @@ Hmmm, good old 2,400 bps. Not the fastest of modems. That 1992 date code gives u
 *Three almost identical WW037 power bricks, all 15 V AC. Which one came with the modem? Still a mystery.*
 {: .media-caption }
 
-The power supply was one of the three pictured here. Which one? I could not be sure... All three are labelled WW037, 15 V AC, 10 VA. I used a 15 V AC supply with the female prong connector; that is a record of this setup, not a power-supply specification for every Avtek or NetComm modem.
+All three are labelled WW037, 15 V AC, 10 VA. I used a 15 V AC supply with the female prong connector; that is a record of this setup, not a power-supply specification for every Avtek or NetComm modem.
 
 ![Front of the black Avtek Mega Data/Fax Modem, with several red status lights forming an A-shaped design beside TD, RD, OH, CD, AA, TR and HS labels.](/assets/images/2023/img_1050.jpg)
 

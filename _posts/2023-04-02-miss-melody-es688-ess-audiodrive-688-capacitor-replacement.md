@@ -76,7 +76,7 @@ Note: 1144620 - Too big for the silkscreen but fits physically.
 *The full board from above, all recapped and ready for a computer to test it in.*
 {: .media-caption }
 
-That's a good looking sound card! I cleaned the edge contacts and gave the little wheel potentiometer some attention too, but I still needed a suitable working PC before I could actually test the finished card. It looks the part, at least.
+I cleaned the edge contacts and gave the little wheel potentiometer some attention too, but I still needed a suitable working PC before I could actually test the finished card.
 
 ### Sources
 

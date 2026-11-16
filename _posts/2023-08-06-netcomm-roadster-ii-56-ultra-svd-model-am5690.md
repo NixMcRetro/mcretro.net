@@ -108,7 +108,7 @@ Unfortunately for me, the firmware upgrader, [am56906.exe](/goodies), was the sa
 *And tucked inside the updater was F02_V1.53, an older version. A little time capsule in a modem installer.*
 {: .media-caption }
 
-The am56906.exe installer also included an older version of the flash ROM - V1.53. Good on NetComm for being cautiously optimistic with their firmware. It looks like this modem originally shipped with V1.52 installed, so someone else upgraded it along the way, way back in the day!
+Good on NetComm for being cautiously optimistic with their firmware. It looks like this modem originally shipped with V1.52 installed, so someone else upgraded it along the way, way back in the day!
 
 Next up is a listing of the electrolytic capacitors and the manufacturer part numbers I used to replace them. All 11 were replaced in November 2021. This is a record of this board: check the actual parts, capacitor type and polarity, capacitance, voltage and temperature ratings, ESR, ripple current and fit before choosing replacements. The formatting isn't too web friendly. Copy the raw text out and paste it into a plain-text editor such as Notepad or TextEdit in plain-text mode and you'll probably be fine. 😄
 

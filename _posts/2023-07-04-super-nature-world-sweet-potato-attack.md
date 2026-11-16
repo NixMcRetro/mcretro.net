@@ -24,7 +24,7 @@ This was a small potato bug that must have fallen into my bath during the day. T
 *The dining experiment: one sweet potato cube, two bits of ordinary potato and a microscope to catch the action.*
 {: .media-caption }
 
-A freshly rinsed sweet potato cube cut from a frozen sweet potato chip with two regular potato bits and we see who the clear favourite is. I hear you little buggo. I'd eat sweet potato all day too! 🍠
+That sweet potato cube was freshly rinsed and cut from a frozen chip, and we see who the clear favourite is. I hear you little buggo. I'd eat sweet potato all day too! 🍠
 
 ![Small monitor showing magnified video of a woodlouse beneath the edge of an orange sweet potato cube, with a timecode at the top.](/assets/images/2023/img_1031.jpg)
 

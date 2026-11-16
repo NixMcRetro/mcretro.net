@@ -20,7 +20,7 @@ Since late 2014 I'd noticed the blood-donation van turning up every few months, 
 *The calculator's estimate using 115.4 kg and 75 mL/kg: 8.655 L. A formula, mind you, not a measured blood volume!*
 {: .media-caption }
 
-At my largest recorded weight, 115.4 kg, this calculator estimated my blood volume at 8.655 L. These days though...
+That was at my largest recorded weight. These days though...
 
 ![Estimated Blood Volume calculator showing an 82.6 kg input, 75 mL/kg selected and a calculated result of 6,195 mL.](/assets/images/2016/img_0496.jpg)
 

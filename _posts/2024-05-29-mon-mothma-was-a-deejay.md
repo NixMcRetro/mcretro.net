@@ -48,7 +48,7 @@ And I'm pretty sure that in hindsight, having a desire to take your girlfriend's
 *My weight history going all the way back to 2008. Those blue patches are the stretches when I weighed less than at the time of this post.*
 {: .media-caption }
 
-Weight loss is continuing to march in the right direction. Meals have been cut back to two a day, one at 11 am and one at 5 pm. This seems to work well so far. Looking at the image above, the shaded areas are times when I was under the weight I am now. Some rough pixel maths says one year is 510 px.
+Weight loss is continuing to march in the right direction. Meals have been cut back to two a day, one at 11 am and one at 5 pm. This seems to work well so far. Some rough pixel maths says one year is 510 px.
 
 ![Five homemade golden-brown pretzels heavily coated in sesame seeds resting on a metal cooling rack by a kitchen window.](/assets/images/2024/img_1303.jpg)
 

@@ -38,21 +38,15 @@ Sleep apnoea was one possibility I wanted investigated, especially because disru
 *Three hours with the MacBook Pro's built-in microphone. Plenty of spikes to investigate, but a waveform is not a diagnosis.*
 {: .media-caption }
 
-Three hour sample. Recorded with the built-in microphone on my MacBook Pro.
-
 ![Six-hour sleep recording dated 12th August 2023, showing four low-light views of a person in bed above a blue audio waveform with varied peaks.](/assets/images/2023/img_1086.jpg)
 
 *Six hours with the Blue Yeti Nano microphone. More audio to sift through, but the peaks cannot tell me what caused them.*
 {: .media-caption }
 
-Six hour sample. Recorded with a Blue Yeti Nano microphone.
-
 ![Six-hour sleep recording timeline dated 13th August 2023, with dark bedroom stills and a blue waveform of changing audio levels.](/assets/images/2023/img_1088.jpg)
 
 *Another six hours from the Blue Yeti Nano. This recording has its own assortment of spikes and quiet patches.*
 {: .media-caption }
-
-Another six hour sample. Recorded with a Blue Yeti Nano microphone.
 
 Alright, so we have some data. I'm using Final Cut Pro X to analyse the audio since it's what I have on hand. I boosted the audio amplitude above baseline so the peaks were easier to see. They sounded like a mixture of snoring, movement, breaths and brief awakenings. An audio waveform by itself cannot tell me whether an event is an apnoea or what caused it, but it was enough to convince me that my sleep was worth investigating properly.
 

@@ -20,7 +20,7 @@ Quick heads up: this is a post for my own reference. The screenshot above comes 
 *Wildcard extraction is another reason I like tar. No need to unpack the entire lot just to find matching files.*
 {: .media-caption }
 
-Another awesome thing about tar files is that you can search for files and extract them using wildcard patterns. At the time I couldn't find the original link for the screenshot above, and neither Google nor the Duck was helping. It matches the wildcard-extraction example in [Tecmint's tar guide](https://web.archive.org/web/20230324065846/https://www.tecmint.com/18-tar-command-examples-in-linux/).
+At the time I couldn't find the original link for the screenshot above, and neither Google nor the Duck was helping. It matches the wildcard-extraction example in [Tecmint's tar guide](https://web.archive.org/web/20230324065846/https://www.tecmint.com/18-tar-command-examples-in-linux/).
 
 While keeping the [original GeoCities data](https://wiki.archiveteam.org/index.php/GeoCities) from [archive.org](https://archive.org/details/archiveteam-geocities), I slapped my rebuild into a plain tar archive rather than a gzip-compressed `.tar.gz`. This was the workflow I got working on Ubuntu 22.04 for splitting it into 1 GB pieces.
 

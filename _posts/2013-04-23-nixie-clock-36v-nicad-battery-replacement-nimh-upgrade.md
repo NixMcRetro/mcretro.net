@@ -32,7 +32,7 @@ Now you might say, a NiMH battery isn't automatically a drop-in replacement for 
 *A handy IN-12A and IN-12B pinout reference. The IN-12B's dot uses pin 12, which the IN-12A leaves unconnected.*
 {: .media-caption }
 
-**Update 17th April 2022:** The battery was replaced again in late 2021. A couple of other details are worth keeping here for future reference. The IN-12B tube has a dot, while the IN-12A does not.
+**Update 17th April 2022:** The battery was replaced again in late 2021. A couple of other details are worth keeping here for future reference.
 
 The power supply details I recorded were:
 

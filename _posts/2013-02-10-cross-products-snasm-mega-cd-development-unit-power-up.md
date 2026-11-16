@@ -48,7 +48,7 @@ Eventually I managed to get some video output and signs of communication from th
 *That decorative silkscreen on the back of the SNASM2 card deserves its own photograph. Shame I still need to pull everything apart again!*
 {: .media-caption }
 
-Doesn't that silkscreen look attractive on the back of the SNASM2 card? I've barely started getting the hardware running, and already I'm planning to pull it apart again. Next on the list are disassembly, chip dumping, and a lot more photography.
+I've barely started getting the hardware running, and already I'm planning to pull it apart again. Next on the list are disassembly, chip dumping, and a lot more photography.
 
 **Sources**
 

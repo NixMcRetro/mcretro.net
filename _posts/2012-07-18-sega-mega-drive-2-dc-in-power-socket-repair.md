@@ -31,7 +31,7 @@ After taking the console apart and having a look at the DC-in socket, I found th
 
 So it's off to the soldering station. Well, what passes for my soldering station anyway. Alongside the soldering iron we've got an oven, a toasted sandwich maker, a milkshake machine and some random hard drives. All the essentials!
 
-With the console disconnected from power, I reflowed the damaged connection with some fresh solder and gave the other socket joints a little attention while I was there. Probably used a bit too much solder, but the joint was looking much better than before.
+With the console disconnected from power, I reflowed the damaged connection with some fresh solder and gave the other socket joints a little attention while I was there.
 
 Back to the gaming setup and the Mega Drive powered up without any trouble. Beautiful! It's a nice little result for what turned out to be a rather straightforward repair.
 

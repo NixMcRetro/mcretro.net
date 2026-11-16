@@ -26,8 +26,6 @@ Let's start with the innocent [NCSA Mosaic](https://en.wikipedia.org/wiki/NCSA_M
 *RetroJunkie.net loads in Mosaic on the Classic. Even the ASCII-art logo made it across.*
 {: .media-caption }
 
-We even made it to the [RetroJunkie homepage](https://retrojunkie.net)!
-
 ![Macintosh Classic showing a system error dialog for NCSA Mosaic 1.0.3, reporting an address error and offering Restart.](/assets/images/2023/img_1014.jpg)
 
 *Mosaic was less enthusiastic about staying alive: an address error brings the entire Mac to a stop.*
@@ -63,7 +61,7 @@ A proper HTTP/0.9 request is just a one-line `GET` with no HTTP version token or
 *Talking directly to the server IP gets us somewhere: GeoCities HTML in response to a simple `GET /`.*
 {: .media-caption }
 
-Telnet successfully gets the root! This time I connected directly to the server's IP and got the GeoCities HTML back from a simple `GET /`. By this point I'd opted to mess with the GeoCities subdomain. Now what about a web browser?
+By this point I'd opted to mess with the GeoCities subdomain. Now what about a web browser?
 
 ![Safari browser showing a retro GeoCities homepage loaded from the IP address 203.166.239.130, with a GeoCities banner and navigation links.](/assets/images/2023/img_1020.jpg)
 
@@ -102,21 +100,19 @@ Tailing the Apache2 access log shows us:
 *Apache caught MacWeb/F2.0 in the logs, using libwww/2.17 and making an HTTP/1.0 request.*
 {: .media-caption }
 
-MacWeb/F2.0 uses libwww/2.17 - There's that F for French again...
+There's that F for French again...
 
 ![Terminal showing Apache access.log with a highlighted GET / HTTP/1.0 request from MacMosaicB6 libwww2.09.](/assets/images/2023/img_1022.jpg)
 
 *Mosaic introduces itself as MacMosaicB6 using libwww2.09. Another HTTP/1.0 request, not HTTP/0.9.*
 {: .media-caption }
 
-Mosaic identifies itself in the log as MacMosaicB6 libwww2.09. The splash screen calls our copy version 1.0.3, so at least we know what this particular setup was reporting. That doesn't mean every earlier Mac Mosaic version necessarily sent the same user-agent string.
+The splash screen calls our copy version 1.0.3, so at least we know what this particular setup was reporting. That doesn't mean every earlier Mac Mosaic version necessarily sent the same user-agent string.
 
 ![Terminal showing Apache access.log with highlighted HTTP/1.0 requests from Mozilla/1.0 (Windows).](/assets/images/2023/img_1017.jpg)
 
 *The Windows Netscape 1.0 test appears in Apache as Mozilla/1.0 (Windows), again over HTTP/1.0.*
 {: .media-caption }
-
-And our Windows Netscape 1.0 identifies itself as Mozilla/1.0 (Windows).
 
 What's perhaps most interesting in these examples is the request protocol recorded by Apache. The old clients were reaching the server as HTTP/1.0. A real HTTP/0.9 request would just be a one-line `GET /path` with no HTTP version token and no request headers. Apache wasn't detecting an "HTML version" here at all. I'd been mixing up the page format with the transport protocol.
 

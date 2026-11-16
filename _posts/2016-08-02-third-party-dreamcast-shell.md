@@ -13,7 +13,7 @@ share_description: >-
 *The new translucent grey Dreamcast next to my 'This is COOL' Saturn. A little Dremel work made room for the Broadband Adapter's ethernet socket!*
 {: .media-caption }
 
-I've moved a smoke (and sun) discoloured Dreamcast into a fresh translucent grey shell. It fits in pretty well with the This is COOL Saturn.
+The old Dreamcast shell was smoke (and sun) discoloured, so it was time for a fresh one.
 
 I had a Broadband Adapter (BBA) in this particular Dreamcast, so I Dremelled away at the modem opening in the replacement shell to make room for the BBA's RJ45 ethernet socket.
 

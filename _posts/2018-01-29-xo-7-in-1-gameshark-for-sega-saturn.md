@@ -43,7 +43,7 @@ Additionally Skyway1985 writes, "This is one of the rarest cheat devices for Seg
 *There it is on-screen: Golden Finger Game Blaster V2.0. At last, a name to go with the mystery cartridge!*
 {: .media-caption }
 
-And now we know that's known as the Golden Finger Game Blaster V2.0 in firmware too! Thanks Skyway! :)
+Thanks Skyway! :)
 
 
 

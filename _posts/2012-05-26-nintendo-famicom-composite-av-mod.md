@@ -13,14 +13,14 @@ share_description: >-
 *The Nintendo Family Computer. Ohhhh yeahhhh! Time to give this one composite video and audio.*
 {: .media-caption }
 
-The Nintendo Family Computer. Ohhhh yeahhhh! I've been experimenting with a composite AV modification for this Famicom, and after three revisions I've managed to get it working. This particular console actually belongs to somebody else, so the aim is to give its owner a usable video and audio output rather than relying on Japanese RF television reception.
+I've been experimenting with a composite AV modification for this Famicom, and after three revisions I've managed to get it working. This particular console actually belongs to somebody else, so the aim is to give its owner a usable video and audio output rather than relying on Japanese RF television reception.
 
 ![Loose wires, resistors and a three-legged transistor forming a makeshift circuit on a light-coloured surface inside a console.](/assets/images/2012/img_0148.jpg)
 
 *Revision one: loose wires, resistors, and a healthy amount of optimism. Functional, but hideous!*
 {: .media-caption }
 
-The first attempt was a proof of concept, hence the mess of cables. Functional yet hideous, but at least it gave me something to work from.
+The first attempt was a proof of concept, which gave me something to work from.
 
 ![Two small perforated prototyping boards side by side, each holding a capacitor and blue resistors, with wires attached to the larger board.](/assets/images/2012/img_0149.jpg)
 
@@ -33,8 +33,6 @@ The second attempt used a slightly longer piece of prototyping board. I was buil
 
 *Third attempt, and the circuit finally fits onto a compact little board. Much less spaghetti!*
 {: .media-caption }
-
-By the third revision I'd managed to shrink everything onto a much smaller piece of prototyping board. Much better! Now the modification is compact enough to tuck into the Famicom without leaving quite such a spectacular collection of wires hanging everywhere.
 
 ### Parts used
 

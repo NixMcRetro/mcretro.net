@@ -27,14 +27,10 @@ With two beefy seven-segment LED display modules and a tiny bit of circuitry, it
 *A little bit of circuitry tucked underneath the Tentaku's display. Nice and simple, just how I like a kit.*
 {: .media-caption }
 
-Here's a bit of circuitry, nice and simple.
-
 ![Side view of an assembled Tentaku calculator with an AAA battery in its holder beneath the turquoise-lit display and white keys.](/assets/images/2021/img_0750.jpg)
 
 *A single AAA keeps the Tentaku going. Best remember to take it out when I'm finished.*
 {: .media-caption }
-
-Powered by one AAA battery, just don't forget to remove it when it isn't in use!
 
 ![Close-up of Tentaku calculator's turquoise seven-segment display reading 1337 above white mechanical keys.](/assets/images/2021/img_0751.jpg)
 
@@ -59,7 +55,7 @@ Assembly was straightforward. A&N Laboratory's build video above goes through th
 *1337 returns, this time with the alternate black ENTER key. The keycap obsession was clearly not over.*
 {: .media-caption }
 
-1337 with the alternate ENTER key. The keycaps installed are the [Drop MT3 Black-on-White Keycap Set](https://drop.com/buy/drop-mt3-black-on-white-keycap-set). I'll be installing these onto my GMMK Pro. I must admit though the Drop ALT keyboard looks very nice... expensive, but nice. In other news, I've also been working on a device known as the [YamPAD](https://github.com/mattdibi/yampad). More on that in a future post!
+The keycaps installed are the [Drop MT3 Black-on-White Keycap Set](https://drop.com/buy/drop-mt3-black-on-white-keycap-set). I'll be installing these onto my GMMK Pro. I must admit though the Drop ALT keyboard looks very nice... expensive, but nice. In other news, I've also been working on a device known as the [YamPAD](https://github.com/mattdibi/yampad). More on that in a future post!
 
 ### Sources
 

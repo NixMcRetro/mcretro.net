@@ -17,7 +17,7 @@ Oh dear! My Sega TeraDrive Model 3 power supply, an SPS-356JU, has given up. It 
 
 The Model 2 still worked, so I swapped modules and stripped the machines back to minimal configurations to narrow the fault down. Aren't I just an amazingly good technician? ;)
 
-With this particular Model 3 power supply installed, the rear speaker buzzed immediately at power-on and the machine produced no usable display or POST. Swapping the PSU moved the fault with it, but did not identify the failed component inside. The next stage will be investigating the supply itself.
+With this particular Model 3 power supply installed, the rear speaker buzzed immediately at power-on and the machine produced no usable display or POST. The next stage will be investigating the supply itself.
 
 **Mains-voltage warning:** power supplies can retain dangerous voltages even after being unplugged. Do not work on a live mains supply unless you are qualified and equipped to do so. Having survived a zap before does not make it safe.
 

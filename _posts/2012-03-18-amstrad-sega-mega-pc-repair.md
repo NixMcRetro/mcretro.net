@@ -76,7 +76,7 @@ Unfortunately, one of the main power tracks from the power connector was damaged
 *A generous amount of Kapton tape to keep our shiny new wires away from the case.*
 {: .media-caption }
 
-Shiny new wires on the underside of the board. We added a generous amount of Kapton tape to insulate the repairs from the case.
+Shiny new wires on the underside of the board.
 
 ![Blue BIOS setup screen with onboard IDE enabled and manual cylinder, head and sector settings for the first hard drive.](/assets/images/2012/img_0024.jpg)
 

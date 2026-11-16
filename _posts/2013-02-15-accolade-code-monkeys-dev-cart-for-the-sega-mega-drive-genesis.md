@@ -30,7 +30,7 @@ I might put some protective tape over that area before inserting the cartridge t
 *It actually displays The Code Monkeys introduction when plugged into a Mega Drive. At least the cartridge does something!*
 {: .media-caption }
 
-Above is the Code Monkeys intro displayed by the cartridge in a working Mega Drive. The cart is clearly doing something, but I haven't established whether this is simply a test ROM or part of a larger PC-controlled development setup.
+The cart is clearly doing something, but I haven't established whether this is simply a test ROM or part of a larger PC-controlled development setup.
 
 ![Close-up of the edge of a green Accolade cartridge PCB with gold contacts and two electrolytic capacitors near black epoxy-covered components.](/assets/images/2013/img_0372.jpg)
 

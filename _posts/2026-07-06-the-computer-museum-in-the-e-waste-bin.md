@@ -78,7 +78,7 @@ These weren't ordinary home computers. The Domain 3500 used a 25 MHz Motorola 68
 *The identification plate confirms it as a Domain Series 3500. Look at all those expansion connectors!*
 {: .media-caption }
 
-The rear identification plate confirmed the model, and the machine had an impressive assortment of expansion connectors. I rather like the construction of these older workstations. They were built for specialised applications, often with hardware and expansion systems quite different from the IBM-compatible PCs that eventually became the standard.
+I rather like the construction of these older workstations. They were built for specialised applications, often with hardware and expansion systems quite different from the IBM-compatible PCs that eventually became the standard.
 
 ![Open Apollo workstation chassis showing expansion slots, circuit boards, ribbon cables, and its internal power supply.](/assets/images/2026/07/the-computer-museum-in-the-e-waste-bin/IMG_1604.jxl)
 

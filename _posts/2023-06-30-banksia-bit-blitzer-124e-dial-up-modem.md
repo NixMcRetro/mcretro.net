@@ -53,7 +53,7 @@ The modem certainly wasn't in any hurry. But it connected, transferred data, and
 *The accompanying Arlec adaptor is marked 9 V AC at 500 mA. Important to check the AC bit.*
 {: .media-caption }
 
-Here's the Arlec power supply that came with it: 240 V AC at 50 Hz in, 9 V AC at 500 mA out. Other markings on the power supply are APP. NO. V/79309/61227. I'd put more photos in the [photo gallery](/goodies).
+The Arlec adaptor also lists a 240 V AC, 50 Hz input and approval number V/79309/61227. I'd put more photos in the [photo gallery](/goodies).
 
 Next up we have data from the modem itself and the `AT&FS0=0V1X3` initialisation string I used, probably found thanks to [wvdialconf](https://wiki.archlinux.org/title/Wvdial). It reached `CONNECT 2400` in this test; that doesn't make it the best init string for every setup.
 

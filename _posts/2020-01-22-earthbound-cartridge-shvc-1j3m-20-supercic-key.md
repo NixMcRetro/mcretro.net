@@ -55,7 +55,7 @@ and completed the soldering work...
 *The underside of the cartridge, showing the additional coloured wires near the old CIC connection points. Plenty of solder joints to double-check!*
 {: .media-caption }
 
-and triple checked the pinout from [DBWBP's SuperCIC key tutorial](https://www.dbwbp.com/index.php/10-electronic-projects/24-snes-cart-region-free-modification-replacing-cic-lockout-chip-with-supercic)... only to forget the CLK line!
+and triple checked the pinout against [DBWBP's SuperCIC key tutorial](https://www.dbwbp.com/index.php/10-electronic-projects/24-snes-cart-region-free-modification-replacing-cic-lockout-chip-with-supercic).
 
 ![Handwritten SuperCIC wiring notes on a small sheet of paper mapping CIC socket pins to an eight-pin SuperCIC chip, including a CLK connection.](/assets/images/2020/img_0645.jpg)
 

@@ -19,5 +19,3 @@ That's a much clearer picture of the journey I'm on. Happy I'm heading in the ri
 
 *Six months of measurements make that downward trend rather obvious. Another new record in early July 2016!*
 {: .media-caption }
-
-The six-month view makes the shorter-term trend much easier to see.

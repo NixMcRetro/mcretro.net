@@ -13,7 +13,7 @@ share_description: >-
 *A 386SX PC and a Mega Drive in one beige box. And here it is running Sonic & Knuckles. Amazing!*
 {: .media-caption }
 
-It has arrived. My Amstrad Mega PC. A 386SX combined with a Sega Mega Drive. Amazing!
+I finally have one! Amazing!
 
 ![Blue cylindrical NiCad battery on the Mega PC motherboard with blue-green corrosion across nearby components and circuit tracks.](/assets/images/2012/img_0012.jpg)
 
@@ -42,7 +42,7 @@ Sadly after having a look inside it, I discovered the rechargeable NiCad date/ti
 *And there's the AMD 386SX, rather than the Intel chip usually listed in the specifications. My favourite underdog!*
 {: .media-caption }
 
-And the CPU in this particular machine is AMD, my favourite underdog! Published Mega PC specifications normally list an Intel 80386SX at 25 MHz, so this unit appears to have an AMD-compatible 386SX instead. I'll have to get this cleaned up ASAP so that it may shine once more.
+Published Mega PC specifications normally list an Intel 80386SX at 25 MHz, so this unit appears to have an AMD-compatible 386SX instead. I'll have to get this cleaned up ASAP so that it may shine once more.
 
 
 ### Sources

@@ -13,6 +13,6 @@ share_description: >-
 *Sixty-two hours of Final Fantasy XVI, all linked from this rather dramatic livestream banner. I do love a big adventure.*
 {: .media-caption }](https://www.youtube.com/playlist?list=PLLJI5UKuYtwVAVaH6ywsjtI3atRdiJ5lO)
 
-Click the image above to beam on over to the full playlist. Clocked in at 2 days, 14 hours total - 62 hours. Wow! I usually play games on easy settings. I guess I consider them [novels that are somewhat visual](https://en.wikipedia.org/wiki/Visual_novel): more interactive than a movie, less wordy than a book.
+Click the image above to beam on over to the full playlist. Clocked in at 2 days, 14 hours total. Wow! I usually play games on easy settings. I guess I consider them [novels that are somewhat visual](https://en.wikipedia.org/wiki/Visual_novel): more interactive than a movie, less wordy than a book.
 
 That said, all the side quests towards the end got a little boring. You can tell because I spam through the dialogue, or even skip entire scenes. Overall though, I'd recommend it if you enjoy killing dragons and stuff. I don't know, I guess I am very keen for the Final Fantasy VII Remake parts two and three to be released.

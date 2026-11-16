@@ -30,7 +30,7 @@ It also accepts a universal 90 to 264 V AC input, which is rather convenient whe
 *DeChief's power supply retrofit inside the original metal housing. There's surprisingly little wasted space.*
 {: .media-caption }
 
-As you can see, the replacement board fits remarkably well inside the original housing. It's quite a tidy way of approaching the problem, especially if you're trying to keep the TeraDrive looking as original as possible from the outside.
+It's quite a tidy way of approaching the problem, especially if you're trying to keep the TeraDrive looking as original as possible from the outside.
 
 One interesting difference is that the PT-65B has a -12 V output. The stock TeraDrive power arrangement doesn't normally provide that rail, so it raises the possibility of making it available to suitable expansion hardware.
 

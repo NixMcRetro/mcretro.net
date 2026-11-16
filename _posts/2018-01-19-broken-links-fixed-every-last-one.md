@@ -13,8 +13,6 @@ share_description: >-
 *I'm still alive and still kickin'! Fixing more than 400 broken image links may have done something to my facial expression.*
 {: .media-caption }
 
-I'm still alive and still kickin'!
-
 Surprised? That's right, **I fixed all the broken links**. All the images work now. All of them! Over 400 of the blighters! I think I've developed RSI in my face from staring at all the broken Google links! Special thanks to Google for canning [Picasa](https://en.wikipedia.org/wiki/Picasa)...
 
 I've finally finished all my university commitments just in time for a month and a half of kickin' back and relaxing, McRetro style! I'm clearing some hard drive space as we speak to bring over that [250GB of video footage](/youtube-video-blitz/) I kept talking about... a year ago! Has that much time really passed?

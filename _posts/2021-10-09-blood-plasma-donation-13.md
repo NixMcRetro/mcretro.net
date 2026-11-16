@@ -13,7 +13,7 @@ share_description: >-
 *Plasma donation number thirteen begins at the Lifeblood donor centre. The 33rd donation overall.*
 {: .media-caption }
 
-Today was plasma donation #13 and my 33rd donation overall. Nothing went wrong, as usual. I'll be getting my iron stores checked before the next whole blood donation in roughly a month. My haemoglobin was rocking 159 g/L, back where I wanted it. That's a separate measurement from iron stores, though. And what's this?
+Nothing went wrong, as usual. I'll be getting my iron stores checked before the next whole blood donation in roughly a month. My haemoglobin was rocking 159 g/L, back where I wanted it. That's a separate measurement from iron stores, though. And what's this?
 
 ![Forearm wrapped in a bright red, green and white geometric patterned bandage after a plasma donation.](/assets/images/2021/img_0758.jpg)
 
@@ -69,7 +69,7 @@ We aren't feeding the birds, so they look ragged like this poor fellow. We stood
 *My grab bag of misprinted keycaps. Turns out it contained a suspicious number of F12s.*
 {: .media-caption }
 
-It all came from a "grab bag" keycap kit. Mostly misprints and a tonne of F12 keys. It has helped determine what profile would suit the upcoming [YamPAD](https://github.com/mattdibi/yampad) project. I think the lower profiles would suit better. Oh, look! You can also see the [GeoCities](/homepages/geocities) proxy server hanging by an ethernet cable in the background.
+At least the grab bag helped determine what profile would suit the upcoming [YamPAD](https://github.com/mattdibi/yampad) project. I think the lower profiles would suit better. Oh, look! You can also see the [GeoCities](/homepages/geocities) proxy server hanging by an ethernet cable in the background.
 
 ### Sources
 

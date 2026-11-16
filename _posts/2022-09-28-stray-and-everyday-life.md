@@ -21,7 +21,7 @@ Recently, there have been more tumbleweeds than posts. I've moved house, and tha
 *Moving house had one bonus: a chance to give the entertainment unit some new feet.*
 {: .media-caption }
 
-On a positive note, moving has given me the opportunity to slap new feet on my entertainment unit. It really is the small victories that make life worth living.
+It really is the small victories that make life worth living.
 
 ![Television resting on a floor and displaying two animated figures with karaoke-style Japanese lyrics and an English subtitle, in a partly unpacked room.](/assets/images/2022/img_0955.jpg)
 

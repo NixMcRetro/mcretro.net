@@ -47,14 +47,10 @@ Some of the case needed to be dremelled to fit the potentiometer through. I put 
 *The dial found its new home beside the fan grille. It actually looks reasonably tidy, for once.*
 {: .media-caption }
 
-Doesn't look too bad with the dial attached.
-
 ![Front view of a black Cisco VoIP gateway with green power and status lights, and the added fan-speed adjustment knob just visible at the far left.](/assets/images/2023/img_1104.jpg)
 
 *From the front, the new fan dial almost disappears. I wish the noise had done the same.*
 {: .media-caption }
-
-And you can hardly even notice it from the front.
 
 ![Three-quarter view of the silver and black Cisco SPA8000 on a blue workbench, with its side fan grille and added adjustment dial visible.](/assets/images/2023/img_1106.jpg)
 

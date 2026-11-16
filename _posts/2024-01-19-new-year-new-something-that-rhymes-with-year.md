@@ -69,7 +69,7 @@ Then you've got the other bugs, like the pictured assassin bug nymph, [Pristhesa
 *Back on the Apple Watch train with a 40 mm SE 2. Turns out I really didn't miss the bigger watch at all.*
 {: .media-caption }
 
-And now I'm back on the Apple Watch train with my shiny new Apple Watch SE 2. This time around I've picked out the smaller of the two and went with the 40 mm. And I have to say, I do not miss the bulk of the 44 mm. The Apple Watch is a great motivator to stay on track with new year health goals.
+The Apple Watch is a great motivator to stay on track with new year health goals.
 
 ![Another view across a backyard lawn filled with green dandelion leaves and scattered yellow flowers beside a pale metal fence.](/assets/images/2024/img_1246.jpg)
 

@@ -33,8 +33,6 @@ Here are some of the best photos from the day.
 *The Floury Baker emerging on a tree in broad daylight. An amazing sight, even before the butcherbird excitement.*
 {: .media-caption }
 
-This is where she was found.
-
 ![A freshly emerged pale cicada perched on a short piece of bark held in a hand, with long transparent greenish wings and delicate white veins.](/assets/images/2023/img_1167.jpg)
 
 *Safely brought home on a piece of bark, with those gorgeous new wings still looking wonderfully delicate.*

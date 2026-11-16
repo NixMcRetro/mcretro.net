@@ -34,7 +34,7 @@ Regardless, it's good to see these classics up and running through OpenRA, which
 *The ant missions! There they are, tucked into the OpenRA mission list with a very large and angry-looking ant.*
 {: .media-caption }
 
-The ant missions! Wow! Takes me back to holding Shift and clicking the speaker on the original Red Alert title screen to unlock the Counterstrike ant campaign. Geez that's a long time ago. Thanks to all who have helped develop OpenRA over the years. I only came across it in the Ubuntu App Store while installing 18.04 onto one of my HPE MicroServers - a great find!
+Wow! Takes me back to holding Shift and clicking the speaker on the original Red Alert title screen to unlock the Counterstrike ant campaign. Geez that's a long time ago. Thanks to all who have helped develop OpenRA over the years. I only came across it in the Ubuntu App Store while installing 18.04 onto one of my HPE MicroServers - a great find!
 
 You can find the project at [OpenRA](https://www.openra.net). At the time I was using the [OpenRA content set on Archive.org](https://archive.org/details/content-openra) and the [Walkman100 OpenRA Install Guide](https://github.com/Walkman100/OpenRA-Install-Guide). OpenRA also has its own installer for the original game assets, using downloads or original discs. Those two links record the route I was using at the time.
 

@@ -27,7 +27,7 @@ So very... boxy. Just the way a proper beige PC should look! There's something r
 *Now that's how you make a logo sticker! An Osborne 486 DX2-66, and it looks every bit as beige as I remember.*
 {: .media-caption }
 
-Now that's how you make a logo sticker! I rather like the old Osborne branding, especially when it's attached to a machine built here in Australia. It's funny how something as simple as a badge can bring back memories of the computers I grew up with.
+I rather like the old Osborne branding, especially when it's attached to a machine built here in Australia. It's funny how something as simple as a badge can bring back memories of the computers I grew up with.
 
 ![Close-up of the Osborne computer's rear casing stamped 'MADE IN AUSTRALIA', beside a round connector and yellow electrostatic warning.](/assets/images/2012/img_0291.jpg)
 
@@ -52,7 +52,7 @@ The 486DX2-66 runs its processor core at 66 MHz while the external bus operates 
 *Try and fill all those sockets! The Osborne certainly isn't short of ways to connect things.*
 {: .media-caption }
 
-Try and fill all those ports! Onboard video and two serial ports, with plenty of room for the various bits and pieces I'd like to connect. These older computers certainly weren't shy about giving you a collection of sockets to play with.
+Onboard video and two serial ports, with plenty of room for the various bits and pieces I'd like to connect. These older computers certainly weren't shy about giving you a collection of sockets to play with.
 
 ![Close-up of a green computer motherboard with the 'MICRONICS COMPUTERS INC.' silkscreen, an Osborne Australia sticker and circuit traces.](/assets/images/2012/img_0289.jpg)
 

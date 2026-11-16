@@ -296,14 +296,12 @@ Ahh! Wrong permissions are set on the web server. We had used Carbon Copy Cloner
 *Found it. CapeCanaveral had come across owned by 501:dialout, unlike the surrounding www-data directories.*
 {: .media-caption }
 
-This gave me some weird permissions, **501:dialout** against the CapeCanaveral directory.
-
 ![macOS Users & Groups Advanced Options showing the account's User ID as 501, group staff and login shell /bin/zsh.](/assets/images/2022/img_0824.jpg)
 
 *Of course, 501 was the account's user ID on the Mac. One ownership mystery solved.*
 {: .media-caption }
 
-Turns out 501 was the User ID of the account on my Mac, as the screenshot shows. Mystery solved! A quick run of the below commands fixed up the ownership and permissions issues and...
+A quick run of the below commands fixed up the ownership and permissions issues and...
 
 `cd /var/www sudo chown www-data:www-data -R \* sudo chmod -R a=r,a+X,u+w .`
 
@@ -711,7 +709,7 @@ The creation of hidden .DS_Store files and directory listing index.html files (s
 *Another static directory listing, with missing icons and very little else to offer.*
 {: .media-caption }
 
-As you can see above, these directory listing indexes are missing their icons and are quite boring. They don't have a lot in common, but their source code shared some unique beginnings. This is one of the files:
+They don't have a lot in common, but their source code shared some unique beginnings. This is one of the files:
 
 `<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> <HTML> <HEAD> <TITLE>Index of /CapeCanaveral/6276/wreck</TITLE> </HEAD> <BODY> <H1>Index of /CapeCanaveral/6276/wreck</H1>`
 
@@ -858,7 +856,7 @@ This means symlinks are off the menu again. They will only be used on the live s
 *More than 301,000 pages in the sitemap. Not bad for a little Raspberry Pi-based rebuild.*
 {: .media-caption }
 
-301,000 pages are now in the sitemap.xml split over seven files. That's with a depth flag of 4. I'm scared to think how long it would take if we did unlimited depth following every link found. I should try it one decade. Anyway, now that the sitemap is working, it's time to fix Jump™!
+The sitemap is now split over seven files, with a depth flag of 4. I'm scared to think how long it would take if we did unlimited depth following every link found. I should try it one decade. Anyway, now that the sitemap is working, it's time to fix Jump™!
 
 ![PHP source for Jump showing seven sitemap_part XML URLs, random selection of one sitemap and a redirect to a randomly chosen page.](/assets/images/2022/img_0868.jpg)
 
@@ -946,7 +944,7 @@ After this has completed, I've allocated some time to spend browsing the GeoCiti
 *Sixteen hours in and the sitemap generator was still exploring SunsetStrip. No wonder it felt endless.*
 {: .media-caption }
 
-The sitemap generation is still chugging along. We're up to 16 hours and we've just hit SunsetStrip. This will likely still be running tomorrow morning as I now have all the YahooIDs on there too. I'll probably manually delete them off the sitemap though as they are **_usually_** just storage for the neighborhood sites.
+The sitemap generation is still chugging along. This will likely still be running tomorrow morning as I now have all the YahooIDs on there too. I'll probably manually delete them off the sitemap though as they are **_usually_** just storage for the neighborhood sites.
 
 Another thought I had while beaming between sites randomly, is that the jump link might be better suited for each neighborhood. For example, to randomise a visit to a site from Area51 you could load /jump_area51.php. It would make it a little less random, but then you can focus in on what you may actually want to see. For example, I might be an X-Files fanatic, I'm unlikely to find X-Files in Heartland or MotorCity.
 
@@ -963,7 +961,7 @@ The above video is a live stream of me jumping between random sites and checking
 *The second sitemap run finished with 299,337 pages. Almost a full day's work for the crawler.*
 {: .media-caption }
 
-Sitemap generation complete. 299,337 pages in just shy of 24 hours. It hadn't occurred to me that the users (YahooIDs) won't be visible due to the way the website is structured, which I think is a good thing. Yahoo used to offer usernames alongside a regular neighborhood address, so the two could co-exist and share resources between each other. As the goal of this project was GeoCities prior to Yahoo takeover this suits well.
+It hadn't occurred to me that the users (YahooIDs) won't be visible due to the way the website is structured, which I think is a good thing. Yahoo used to offer usernames alongside a regular neighborhood address, so the two could co-exist and share resources between each other. As the goal of this project was GeoCities prior to Yahoo takeover this suits well.
 
 ![Finder listing neighbourhood-specific XML sitemap files including area51.xml, athens.xml, capecanaveral.xml and colosseum.xml, with their sizes.](/assets/images/2022/img_0897.jpg)
 

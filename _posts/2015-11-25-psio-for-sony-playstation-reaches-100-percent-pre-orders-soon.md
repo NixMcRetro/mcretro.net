@@ -13,7 +13,7 @@ share_description: >-
 *PSIO finally hit 100%! The first 50 pre-orders were on the horizon, although the countdown needed a little correcting.*
 {: .media-caption }
 
-It's taken a while, but it's great to see the project's status bar finally turn green and reach **100%**. Congratulations [Team PSIO](https://psio.cybdyn-systems.com.au/)! I don't doubt those first 50 pre-orders will disappear quickly.
+It's taken a while, but congratulations [Team PSIO](https://psio.cybdyn-systems.com.au/)! I don't doubt those first 50 pre-orders will disappear quickly.
 
 ![Photograph of a brown PSIO cardboard box and grey PSIO cartridge resting on a spread of original PlayStation game cases.](/assets/images/2015/img_0445.jpg)
 

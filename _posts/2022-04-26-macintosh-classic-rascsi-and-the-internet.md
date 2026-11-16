@@ -56,14 +56,12 @@ I hit up a relatively simple site (google.com) which I believed was supposed to 
 *Google looked rather more like a wall of code than a search engine. MacWeb wasn't impressed.*
 {: .media-caption }
 
-MacWeb 2.0 (French) doesn't really like it.
-
 ![NCSA Mosaic on a Macintosh Classic showing google.com as unformatted text and script fragments with a broken image placeholder.](/assets/images/2022/img_0937.jpg)
 
 *Mosaic 1.0.3 wasn't much happier. Google appeared as raw scripts and a broken image.*
 {: .media-caption }
 
-Neither does Mosaic 1.0.3. At least they are giving similar results but I had to test elsewhere to confirm whether my HTTP/0.9 theory held up. When I got home I jumped onto the information superhighway.
+At least they are giving similar results but I had to test elsewhere to confirm whether my HTTP/0.9 theory held up. When I got home I jumped onto the information superhighway.
 
 ![Windows 98 desktop on an HP monitor with a dial-up connection window showing 'Connecting to NetComm AM5690' and status 'Dialling'.](/assets/images/2022/img_0929.jpg)
 

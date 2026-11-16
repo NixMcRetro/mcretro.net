@@ -27,7 +27,7 @@ So all should be ready for an August launch. Thanks again to WooCommerce and Wor
 *The one-month graph on 11th July 2016, down to 84.4 kg. That shaded target range was getting closer!*
 {: .media-caption }
 
-I know, I know... I did say I wouldn't report on my weight-loss efforts until I reached the goal of 80 kg, but it's incredible to watch the weight just disappear. The graph above shows the BMI "healthy weight" range, with my target just inside the blue zone.
+I know, I know... I did say I wouldn't report on my weight-loss efforts until I reached the goal of 80 kg, but it's incredible to watch the weight just disappear.
 
 ![Withings all-time weight history from 2008 to July 2016, ending at 84.4 kg with a red horizontal marker.](/assets/images/2016/img_0486.jpg)
 

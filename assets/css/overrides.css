@@ -376,6 +376,12 @@
   }
 }
 
+/* After a caption, use ordinary prose spacing when the next block is
+   text rather than another image. Linked images are treated the same way. */
+.post-full .post-content > p.media-caption:has(+ p:not(.media-caption):not(:has(img))) {
+  margin-bottom: 1.15rem;
+}
+
 
 /* Centre standalone article images, without stretching their proportions.
    The companion script applies a per-image 170% ceiling to raster images. */

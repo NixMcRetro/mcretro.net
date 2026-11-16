@@ -288,6 +288,13 @@
 .post-full .post-content > p {
   margin: 0 0 1.15em;
 }
+/* Match the gap after a video to the usual paragraph-to-image gap.
+   Image/video captions retain their existing, tighter 0.25rem gap below media. */
+.post-full .post-content > .video-container {
+  margin: 0 0 1.15em;
+}
+
+
 
 /* Keep article body lists close to their introductory paragraphs.
    Preserve the established compact Sources/Related Posts label spacing. */
@@ -371,7 +378,7 @@
 
 
 /* Centre standalone article images, without stretching their proportions.
-   The companion script applies a per-image 150% ceiling to photographs. */
+   The companion script applies a per-image 170% ceiling to raster images. */
 .post-full .post-content > p:has(> img:only-child) > img,
 .post-full .post-content > p:has(> a:only-child > img:only-child) > a > img,
 .post-full .post-content > figure img {

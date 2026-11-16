@@ -49,12 +49,18 @@ function renderedWidth({ filename, alt = '', naturalWidth = 500, explicitWidth =
   });
   return img.style.width || null;
 }
-assert.equal(renderedWidth({ filename: '2020/img_0656.jpg', alt: 'Sonic the Hedgehog 1 title screen with glitches.' }), '750px');
-assert.equal(renderedWidth({ filename: '2020/img_0657.jpg', alt: 'Sonic 2 gameplay with scrambled scenery.' }), '750px');
-assert.equal(renderedWidth({ filename: '2020/img_0658.jpg', alt: 'Blue SEGA logo on a nearly white screen.' }), '750px');
-assert.equal(renderedWidth({ filename: '2020/example.png', alt: 'Computer screenshot.' }), '750px');
+assert.equal(renderedWidth({ filename: '2020/img_0656.jpg', alt: 'Sonic the Hedgehog 1 title screen with glitches.' }), '850px');
+assert.equal(renderedWidth({ filename: '2020/img_0657.jpg', alt: 'Sonic 2 gameplay with scrambled scenery.' }), '850px');
+assert.equal(renderedWidth({ filename: '2020/img_0658.jpg', alt: 'Blue SEGA logo on a nearly white screen.' }), '850px');
+assert.equal(renderedWidth({ filename: '2020/example.png', alt: 'Computer screenshot.' }), '850px');
 assert.equal(renderedWidth({ filename: '2020/example.jpg', explicitWidth: true }), null);
 assert.equal(renderedWidth({ filename: '2020/example.jpg', optOut: true }), null);
 assert.equal(renderedWidth({ filename: '2012/test-wide-1800.jxl' }), null);
 assert.equal(renderedWidth({ filename: '2020/example.gif' }), null);
-console.log('Post media uniform 150% scaling checks passed.');
+assert.equal(renderedWidth({ filename: '2016/img_0494.jpg', naturalWidth: 500 }), '850px');
+assert.equal(renderedWidth({ filename: '2016/img_0493.jpg', naturalWidth: 600 }), '1020px');
+assert.equal(renderedWidth({ filename: '2021/img_0780a.jpg', naturalWidth: 1024 }), '1741px');
+const css = fs.readFileSync('assets/css/overrides.css', 'utf8');
+assert.match(css, /\.post-full \.post-content > \.video-container\s*\{\s*margin:\s*0 0 1\.15em;/,
+  'Direct article videos should share the regular paragraph-to-media spacing');
+console.log('Post media uniform 170% scaling and video spacing checks passed.');

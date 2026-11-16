@@ -1,5 +1,5 @@
 /* Article media sizing: enlarge raster photographs, screenshots and diagrams
-   proportionally by up to 150%. Explicitly sized or opted-out images remain
+   proportionally by up to 170%. Explicitly sized or opted-out images remain
    unchanged; captions stay left-aligned with a readable narrow-media measure. */
 (() => {
   const content = document.querySelector('.post-full .post-content');
@@ -68,7 +68,7 @@
 
     const applyImageSize = () => {
       if (canEnlarge && img.naturalWidth > 0) {
-        img.style.width = `${Math.round(img.naturalWidth * 1.5)}px`;
+        img.style.width = `${Math.round(img.naturalWidth * 1.7)}px`;
         img.style.maxWidth = '100%';
         img.style.height = 'auto';
       }

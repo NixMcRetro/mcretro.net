@@ -27,7 +27,7 @@ The console-side SuperCIC lock uses a programmed PIC16F630 and provides switchle
 
 ### Board connections
 
-Locate PPU1, PPU2 and the F413A CIC. Don't mind the red wires leaving my PPU1. They were already there to repair corroded traces near the reset switch.
+Locate PPU1, PPU2 and the F413A CIC.
 
 ![Close-up of a Nintendo S-PPU2 chip on a Super Nintendo mainboard, with its fine soldered legs and neighbouring S-PPU1 chip visible.](/assets/images/2013/img_0421.jpg)
 

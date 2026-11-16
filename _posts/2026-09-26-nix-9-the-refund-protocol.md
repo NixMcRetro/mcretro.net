@@ -22,7 +22,10 @@ The pair had paid the Stellar Consortium of Orbital Journeys 1,000 credits for a
 
 ## I. The Cracked Chamber
 
-![Nix-9 discovers the shabby, leaking Nexus Spire hotel chamber](/assets/images/2026/09/nix-9-the-refund-protocol/chapter-1.jxl)
+![In a worn hotel room, Nix-9 stands beside an unmade bed as water drips from a wall-mounted air conditioner into a bucket. Her companion sits nearby, with a neon city visible through the window.](/assets/images/2026/09/nix-9-the-refund-protocol/chapter-1.jxl)
+
+*A spectacular skyline, a leaking air conditioner, and a room that was not quite as advertised.*
+{: .media-caption }
 
 The Nexus Spire Habitat looked acceptable from a distance. Inside, the air-conditioning was ancient and largely beyond the control of its occupants. Worse, a suspicious mouldy smell hung around the laundry equipment and refrigerator. A delightful little sanctuary, provided your idea of relaxation involved wondering what was growing behind the appliances.
 
@@ -32,7 +35,10 @@ Eventually, the Wardens agreed to refund 100 credits. The accommodation portion 
 
 ## II. The Cancelled Star-Liner
 
-![The travellers face a cancelled star-liner in a neon spaceport](/assets/images/2026/09/nix-9-the-refund-protocol/chapter-2.jxl)
+![Nix-9 and her companion stand with luggage beneath departure screens marked with red crosses in a rain-soaked futuristic spaceport. A spacecraft is visible beyond the glass.](/assets/images/2026/09/nix-9-the-refund-protocol/chapter-2.jxl)
+
+*The star-liner was cancelled. The updates were rather less decisive.*
+{: .media-caption }
 
 On departure day, the first neural-link notification announced a delay. Then came the cancellation. Orbital-lane restrictions, apparently. Nix-9 and her companion were now stranded, and the Consortium's promised updates became a small masterpiece of corporate indecision.
 
@@ -42,7 +48,10 @@ Being left to sort out a disrupted journey was no small inconvenience. Nix-9 kep
 
 ## III. The Dungeon of Customer Service
 
-![Nix-9 works through endless corporate correspondence and receipts](/assets/images/2026/09/nix-9-the-refund-protocol/chapter-3.jxl)
+![Nix-9 works at a desk piled with correspondence and receipts while her companion reads documents, surrounded by glowing screens and a rain-soaked neon skyline.](/assets/images/2026/09/nix-9-the-refund-protocol/chapter-3.jxl)
+
+*One cancelled journey and an almost infinite supply of corporate correspondence.*
+{: .media-caption }
 
 The airline acknowledged the disruption and distress but declined compensation. It said she had ultimately reached her destination and directed her to the Consortium, which had sold the package. The Consortium, in turn, had an impressive array of scribes and an apparently endless supply of polite ways to say no.
 
@@ -56,7 +65,10 @@ Eventually, another offer appeared: 100 credits as a goodwill refund. Better tha
 
 ## IV. The Mathematical Reckoning
 
-![Nix-9 uses percentages and arithmetic to challenge a refund offer](/assets/images/2026/09/nix-9-the-refund-protocol/chapter-4.jxl)
+![Nix-9 uses a calculator among scattered receipts and notes while her companion watches. Glowing financial graphics show 20% and 40% against a neon city backdrop.](/assets/images/2026/09/nix-9-the-refund-protocol/chapter-4.jxl)
+
+*The refund argument finally reached its most formidable opponent: arithmetic.*
+{: .media-caption }
 
 The complete package had cost 1,000 credits. The accommodation component was 500 credits, as the Consortium would eventually confirm. That left 500 credits attributable to the journey.
 
@@ -72,7 +84,10 @@ No threats of orbital bombardment. No elaborate hacking sequence. Just evidence,
 
 ## V. The Accord of Credits
 
-![The travellers celebrate an agreed settlement at an old computer](/assets/images/2026/09/nix-9-the-refund-protocol/chapter-5.jxl)
+![Nix-9 smiles beside an old computer displaying a green tick and coin symbols, while her companion looks on and paperwork covers the desk.](/assets/images/2026/09/nix-9-the-refund-protocol/chapter-5.jxl)
+
+*The additional 200-credit refund was agreed. Now for the Banking Houses to actually pay it.*
+{: .media-caption }
 
 At last, a new message arrived from the Senior Scribe. The Consortium was prepared to process the additional 200-credit refund to the original payment method. Nix-9 accepted, in a reply of breathtaking simplicity: yes please, proceed.
 
@@ -82,7 +97,10 @@ There was only one final boss left: the Banking Houses. At the time this chronic
 
 ## Epilogue: The Netrunner's Field Notes
 
-![Nix-9 reviews her carefully kept records overlooking the cyberpunk city](/assets/images/2026/09/nix-9-the-refund-protocol/epilogue.jxl)
+![Nix-9 studies a receipt at a desk covered in records, notebooks, and stacked paperwork, with rain and neon towers visible through the window.](/assets/images/2026/09/nix-9-the-refund-protocol/epilogue.jxl)
+
+*Save the messages, check the numbers, and keep the receipts. The ancient arts still work.*
+{: .media-caption }
 
 If there is a lesson in this saga, it isn't that every cancelled journey deserves a particular refund. Remedies depend on the circumstances, and a company's original explanation may not be the final word. It is that a complaint becomes much harder to dismiss when the facts are clear and the request is specific.
 

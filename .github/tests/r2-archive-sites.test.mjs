@@ -13,16 +13,62 @@ const validKey = key => typeof key === 'string' && key.length > 0 &&
   key.split('/').every(part => part && part !== '.' && part !== '..');
 const nonEmpty = value => typeof value === 'string' && value.trim().length > 0;
 
+// These starters deliberately permit exactly one bare inline <script> element.
+// Use literal case-insensitive tag discovery instead of an HTML-filtering regexp:
+// uppercase tags, attributes and extra scripts must not bypass this check.
+const extractSingleInlineScript = html => {
+  const lower = html.toLowerCase();
+  const starts = [];
+  let cursor = 0;
+  while (true) {
+    const at = lower.indexOf('<script', cursor);
+    if (at === -1) break;
+    const next = lower[at + '<script'.length];
+    if (next === '>' || ' \t\r\n\f/'.includes(next)) starts.push(at);
+    cursor = at + '<script'.length;
+  }
+  assert.equal(starts.length, 1, 'Exactly one inline script tag is required');
+  const start = starts[0];
+  assert.equal(
+    lower.slice(start, start + '<script>'.length),
+    '<script>',
+    'Script attributes and external scripts are not permitted'
+  );
+  const end = lower.indexOf('</script>', start + '<script>'.length);
+  assert.notEqual(end, -1, 'Missing script closing tag');
+  assert.equal(lower.indexOf('</script>'), end, 'Unexpected script closing tag');
+  assert.equal(lower.indexOf('</script>', end + '</script>'.length), -1, 'Extra script closing tag');
+  return html.slice(start + '<script>'.length, end);
+};
+
+const assertSelfContainedScript = html => {
+  assert.equal(html.toLowerCase().includes('<link'), false, 'External link elements are not permitted');
+  assert.doesNotThrow(() => new vm.Script(extractSingleInlineScript(html)));
+};
+
+test('inline script validation rejects HTML tag variants that could bypass the old regexp', () => {
+  const sample = '<SCRIPT>\nconst sample = 1;\n</SCRIPT>';
+  assert.equal(extractSingleInlineScript(sample).trim(), 'const sample = 1;');
+  assert.equal(extractSingleInlineScript('<scripture>not a script</scripture>' + sample).trim(), 'const sample = 1;');
+  for (const invalid of [
+    '<SCRIPT SRC="evil.js"></SCRIPT>',
+    '<ScRiPt type="module">const x = 1;</ScRiPt>',
+    '<script>const x = 1;</script><SCRIPT>const y = 2;</SCRIPT>',
+    '<script>const x = 1;</script></SCRIPT>',
+    '<script>const x = 1;'
+  ]) {
+    assert.throws(() => extractSingleInlineScript(invalid));
+  }
+  assert.throws(() => assertSelfContainedScript('<link rel="stylesheet" href="outside.css">' + sample));
+});
+
 test('file server HTML has its controls and valid inline JavaScript', () => {
   const html = read(path.join(fileDir, 'index.html'));
   assert.match(html, /<html lang="en-AU">/);
   assert.match(html, /<title>McRetro File Server<\/title>/);
   assert.match(html, /fetch\("\.\/catalogue\.json"/);
   for (const id of ['results','search','category','sort']) assert.ok(html.includes('id="' + id + '"'));
-  assert.doesNotMatch(html, /<script[^>]+src=|<link[^>]+rel="stylesheet"/);
-  const scripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
-  assert.equal(scripts.length, 1);
-  assert.doesNotThrow(() => new vm.Script(scripts[0][1]));
+  assertSelfContainedScript(html);
 });
 
 test('file catalogue validates and points at known test object', () => {
@@ -49,10 +95,7 @@ test('photo gallery HTML has its controls and valid inline JavaScript', () => {
   assert.match(html, /<title>McRetro Photo Gallery<\/title>/);
   assert.match(html, /fetch\("\.\/albums\.json"/);
   for (const id of ['viewer','search','albums','grid']) assert.ok(html.includes('id="' + id + '"'));
-  assert.doesNotMatch(html, /<script[^>]+src=|<link[^>]+rel="stylesheet"/);
-  const scripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
-  assert.equal(scripts.length, 1);
-  assert.doesNotThrow(() => new vm.Script(scripts[0][1]));
+  assertSelfContainedScript(html);
 });
 
 test('photo albums validate with accessible image labels', () => {

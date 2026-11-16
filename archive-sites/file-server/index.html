@@ -92,6 +92,7 @@
       item.append(details);
       const link = el("a", "download", "Download ↗");
       link.href = href;
+      link.setAttribute("download", "");
       link.setAttribute("aria-label", "Download " + file.title);
       item.append(link);
       fragment.append(item);

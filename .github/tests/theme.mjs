@@ -295,6 +295,19 @@ test('article image and video captions separate cleanly from following content',
   assert.match(teradrive, /\*Getting the TeraDrive back together,[^\n]*\*\n\{:\s*\.media-caption \}/);
 });
 
+test('linked article images have the same compact captions as ordinary images', () => {
+  const linked = '.post-full .post-content > p:has(> a:only-child > img:only-child):has(+ p.media-caption)';
+  assert.ok(overrides.includes(linked + ','), 'linked-image paragraphs use the same 0.25rem gap');
+  assert.ok(overrides.includes(linked + ' > a > img'), 'linked images become block images');
+  assert.match(overrides, /\.post-full \.post-content > p:has\(> a:only-child > img:only-child\):has\(\+ p\.media-caption\) > a \{\s*display: block;\s*width: fit-content;/);
+  assert.ok(overrides.includes('.post-full .post-content > p:has(> a:only-child > img:only-child) + p.media-caption,'),
+    'linked-image captions use the normal caption font and margins');
+  const op1 = read('_posts/2021-12-27-teenage-engineering-op-1-demo-track.md');
+  const finalFantasy = read('_posts/2023-09-07-final-fantasy-xvi-live-stream-2023.md');
+  assert.match(op1, /\]\(\/assets\/uploads\/demotrack\.mp3\)\n\n\*My OP-1 demo track,/);
+  assert.match(finalFantasy, /\]\(https:\/\/www\.youtube\.com\/playlist\?list=PLLJI5UKuYtwVAVaH6ywsjtI3atRdiJ5lO\)\n\n\*Sixty-two hours of Final Fantasy XVI,/);
+});
+
 test('Blog pagination is compact, accessible and retains numbered URLs', () => {
   assert.match(blog, /<nav class="pagination-wrapper" aria-label="Blog pagination">/);
   assert.match(blog, /class="page-number current-page" aria-current="page"/);

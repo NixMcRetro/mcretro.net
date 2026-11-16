@@ -316,16 +316,18 @@
   margin-top: 0;
 }
 
+/* Keep headings visually attached to the content that follows while
+   retaining stronger separation from the preceding section. */
 .post-full .post-content > h2 {
   font-size: 1.375rem;
   line-height: 1.35;
-  margin: 1em 0 0.55em;
+  margin: 1em 0 0.25em;
 }
 
 .post-full .post-content > h3 {
   font-size: 1.25rem;
   line-height: 1.35;
-  margin: 1.35em 0 0.5em;
+  margin: 1.35em 0 0.25em;
 }
 
 .post-full .post-content > h4,
@@ -333,7 +335,7 @@
 .post-full .post-content > h6 {
   font-size: 1.05rem;
   line-height: 1.4;
-  margin: 1.2em 0 0.45em;
+  margin: 1.2em 0 0.25em;
 }
 
 /* Only explicitly marked image and video captions receive compact caption spacing.

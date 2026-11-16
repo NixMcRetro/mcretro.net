@@ -370,6 +370,34 @@
 }
 
 
+/* Centre standalone article images, without stretching their proportions.
+   The companion script applies a per-image 150% ceiling to photographs. */
+.post-full .post-content > p:has(> img:only-child) > img,
+.post-full .post-content > p:has(> a:only-child > img:only-child) > a > img,
+.post-full .post-content > figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+/* For linked images, centre the clickable image rather than a full-width link. */
+.post-full .post-content > p:has(> a:only-child > img:only-child) > a {
+  margin-inline: auto;
+}
+
+/* Keep all article captions left-aligned. Narrow media get a centred,
+   comfortable text measure rather than a narrow, hard-to-read caption. */
+.post-full .post-content p.media-caption,
+.post-full .post-content figure figcaption {
+  text-align: left;
+}
+.post-full .post-content p.media-caption.media-caption--narrow,
+.post-full .post-content figure figcaption.media-caption--narrow {
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
 /* Keep the five approved 2012 grain-preserving JXL photographs at full
    available article width, without changing other images or video embeds. */
 .post-full .post-content img[src$="-wide-1800.jxl"] {

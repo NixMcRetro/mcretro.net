@@ -37,7 +37,7 @@ With two beefy seven-segment LED display modules and a tiny bit of circuitry, it
 *Obligatory 1337. It would have been a terrible waste of a calculator not to try it.*
 {: .media-caption }
 
-Obligatory 1337. The calculator has a six-digit display. So while I couldn't fit 8008135 onto it...
+The calculator has a six-digit display. So while I couldn't fit 8008135 onto it...
 
 ![Black-and-white overhead photograph of the white-keyed Tentaku calculator with its seven-segment display reading 80085.](/assets/images/2021/img_0752.jpg)
 

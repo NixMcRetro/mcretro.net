@@ -20,7 +20,7 @@ The Amstrad Mega PC doesn't count, of course. That's more of a 386SX on steroids
 *So very boxy. Just the way I remember a proper early-'90s Osborne computer!*
 {: .media-caption }
 
-So very... boxy. Just the way a proper beige PC should look! There's something rather comforting about a computer that makes absolutely no attempt to be sleek or fashionable. It's a big metal box, and I wouldn't have it any other way.
+There's something rather comforting about a computer that makes absolutely no attempt to be sleek or fashionable. It's a big metal box, and I wouldn't have it any other way.
 
 ![Close-up of the front badge on an Osborne computer, reading 'OSBORNE 486 DX 2 - 66 VL - BUS'.](/assets/images/2012/img_0294.jpg)
 

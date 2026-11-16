@@ -94,7 +94,7 @@ Jekyll::Hooks.register :posts, :post_render do |post|
     dimensions = McRetroImageDimensions.read(post.site.source, src[2])
     next tag unless dimensions
     tag.sub(/(\s*\/?>)\z/) do |ending|
-      %Q{ width="#{dimensions['width']}" height="#{dimensions['height']}"} + ending
+      %Q{ width="#{dimensions['width']}" height="#{dimensions['height']}" data-mcretro-intrinsic-dimensions="true"} + ending
     end
   end
 end

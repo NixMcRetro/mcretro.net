@@ -412,16 +412,15 @@
   margin-inline: auto;
 }
 
-/* Keep all article captions left-aligned. Narrow media get a centred,
-   comfortable text measure rather than a narrow, hard-to-read caption. */
+/* Centre captions under their media without limiting the size of wide photos.
+   The media script applies each image's rendered width to its caption.
+   Video captions retain the available embed width. */
 .post-full .post-content p.media-caption,
 .post-full .post-content figure figcaption {
-  text-align: left;
-}
-.post-full .post-content p.media-caption.media-caption--narrow,
-.post-full .post-content figure figcaption.media-caption--narrow {
-  max-width: 36rem;
+  max-width: 100%;
   margin-inline: auto;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 /* Keep the five approved 2012 grain-preserving JXL photographs at full

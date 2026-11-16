@@ -1,6 +1,6 @@
 /* Article media sizing: enlarge raster photographs, screenshots and diagrams
    proportionally by up to 170%. Explicitly sized or opted-out images remain
-   unchanged; captions stay left-aligned with a readable narrow-media measure. */
+   unchanged; captions match their rendered image widths, including on resize. */
 (() => {
   const content = document.querySelector('.post-full .post-content');
   if (!content) return;
@@ -40,12 +40,11 @@
   }
 
   function updateCaptions() {
-    for (const { img, frame, caption } of entries) {
+    for (const { img, caption } of entries) {
       if (!caption) continue;
-      const frameWidth = frame.getBoundingClientRect().width;
       const imageWidth = img.getBoundingClientRect().width;
-      if (frameWidth > 0 && imageWidth > 0) {
-        caption.classList.toggle('media-caption--narrow', imageWidth + 2 < frameWidth);
+      if (imageWidth > 0) {
+        caption.style.maxWidth = `${Math.round(imageWidth)}px`;
       }
     }
   }
@@ -64,7 +63,7 @@
     const frame = mediaFrame(img);
     if (!frame) continue;
     const canEnlarge = shouldEnlarge(img);
-    entries.push({ img, frame, caption: captionFor(frame) });
+    entries.push({ img, caption: captionFor(frame) });
 
     const applyImageSize = () => {
       if (canEnlarge && img.naturalWidth > 0) {

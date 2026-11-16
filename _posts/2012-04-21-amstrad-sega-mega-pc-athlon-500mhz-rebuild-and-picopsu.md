@@ -26,7 +26,7 @@ Have a look at this [Internet Archive capture](https://web.archive.org/web/20080
 
 #### The Athlon 500 MHz project
 
-In other news, my side project, the Athlon 500 MHz Project, came to life today. It can be seen here with a bonus 750 MHz CPU included with the motherboard running. I managed to get the Athlon coupled with an ASUS K7V Rev 1.01 and install Windows XP. Very happy with that result. Now I just need a rockin' case for it, with some horns if possible.
+In other news, my side project, the Athlon 500 MHz Project, came to life today. I managed to get the Athlon coupled with an ASUS K7V Rev 1.01 and install Windows XP. Very happy with that result. Now I just need a rockin' case for it, with some horns if possible.
 
 This 500 MHz Athlon CPU has significant sentimental value. The 750 MHz, not so much. It was used in the first PC I put together as a teenager back in 2000. According to the warranty sticker, February 2000. I remember that day well. We were looking for a faster CPU but the entry-level 500 MHz was all they had. I was not leaving empty handed.
 

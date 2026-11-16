@@ -74,7 +74,7 @@ Here's a little demonstration of those jumper settings on the original 386SX boa
 
 #### Memory
 
-The board has four SIMM positions and I couldn't get it beyond 16 MB. I even considered "borrowing" a few RAM slots from another motherboard, although that sounded like an awful lot of effort for very little payoff.
+I even considered "borrowing" a few RAM slots from another motherboard, although that sounded like an awful lot of effort for very little payoff.
 
 That limit makes more sense when you look at the TI486SLC. The processor can directly address up to 16 MB of physical memory, so borrowing extra sockets wasn't going to get me to 32 MB anyway.
 

@@ -97,8 +97,6 @@ Ehhhh, it was kind of annoying. PLL points and all that jazz.
 *The Raspberry Pi Pico finally got a job other than blinking LEDs. A whole lot of purple wiring later, the mod was taking shape.*
 {: .media-caption }
 
-But the Raspberry Pi Pico finally has a use beyond blinking an LED or blinking multiple LEDs.
-
 ![Television showing the bright blue 'XeLL RELOADED' Xbox 360 boot screen, with white console startup text below the logo.](/assets/images/2024/img_1363.jpg)
 
 *And there it was - XeLL Reloaded on the television! The pile of tiny wires had apparently been worth the effort.*

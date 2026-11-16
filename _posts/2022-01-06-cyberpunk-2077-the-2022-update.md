@@ -26,7 +26,7 @@ The first several hours are quite boring. The story seems alright so far, though
 *Those are supposed to be mirrors. To my eyes they look like someone attacked the glass with dull aluminium foil.*
 {: .media-caption }
 
-The above image hit me with whatever the uncanny valley equivalent is for glass surfaces. At first I was like what the heck is supposed to be rendering? Are they windows? Nope. They are mirrors. Mirrors folded from some of the dullest aluminium foil I've ever seen.
+The above image hit me with whatever the uncanny valley equivalent is for glass surfaces. At first I was like what the heck is supposed to be rendering? Are they windows? Nope. They are mirrors.
 
 {% include youtube.html id="KpDCnCzi1gM" %}
 

@@ -10,8 +10,6 @@ share_description: >-
 
 {% include youtube.html id="838vUIPhqH0" %}
 
-This little guy was found climbing around an Officeworks A-frame sign.
-
 ![Small bright green stick insect balanced across a person's thumb and fingers near a glass door.](/assets/images/2022/img_0783.jpg)
 
 *Found a tiny green phasmid climbing an Officeworks sign. All its little legs seemed to be present.*

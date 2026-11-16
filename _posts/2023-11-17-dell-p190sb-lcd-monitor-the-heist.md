@@ -34,7 +34,7 @@ share_description: >-
 *6th November. Under cover of darkness, the Dell was finally liberated in a green shopping bag. Operation Heist complete!*
 {: .media-caption }
 
-**6th November 2023.** Under the cover of darkness, [Jon](https://damntechnology.blogspot.com/) and I secure the monitor.
+**6th November 2023.** [Jon](https://damntechnology.blogspot.com/) and I secure the monitor.
 
 ![Black Dell LCD monitor standing upright indoors on a wooden floor, its screen dark with faint surface marks.](/assets/images/2023/img_1215.jpg)
 
@@ -55,7 +55,7 @@ I never expected to see such an incredible function in my lifetime. For now I mu
 *8th November. The Dell cleaned up rather nicely and was ready for a proper test, with the plush shark supervising.*
 {: .media-caption }
 
-**8th November 2023.** She cleaned up nicely. All of the marks were just surface scratches. Time to test the electronics.
+**8th November 2023.** All of the marks were just surface scratches. Time to test the electronics.
 
 ![Rescued Dell LCD displaying an HP ProLiant startup screen on the floor beside a smaller silver HP monitor and a striped hammock.](/assets/images/2023/img_1218.jpg)
 
@@ -69,7 +69,7 @@ Unbelievable, she works well. Dwarfing the 17" HP monitor in the background with
 *The Dell moved into the bedroom with a Raspberry Pi Zero 2 W and tiny keyboard. A whole new career was being planned.*
 {: .media-caption }
 
-**9th November 2023.** Overnight testing is successful. She is moved into the bedroom for setup with a Raspberry Pi Zero 2 W.
+**9th November 2023.** Overnight testing was successful.
 
 ![Dell monitor on a small bedroom table displaying a bright blue animated scene with aircraft and glowing circular effects.](/assets/images/2023/img_1219.jpg)
 

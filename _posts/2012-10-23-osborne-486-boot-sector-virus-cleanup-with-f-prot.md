@@ -27,7 +27,7 @@ I only discovered the problem after using the disks in the Osborne and then brin
 *There it is! F-PROT finds ABCD.A in the master boot sector and offers to disinfect it.*
 {: .media-caption }
 
-F-PROT 3.16f saved the day. The scan report identified ABCD.A in the master boot sector. The archive I used was fprot_dos_316f.zip, with virus definitions dating into 2009. F-PROT 3.16f was the final DOS version and is perfectly at home on a 486.
+F-PROT 3.16f saved the day. The archive I used was fprot_dos_316f.zip, with virus definitions dating into 2009. F-PROT 3.16f was the final DOS version and is perfectly at home on a 486.
 
 For this sort of boot-sector cleanup, you really want to start the infected computer from known-clean media rather than letting the compromised hard disk boot. Ideally the rescue floppy should be write-protected too, so the infected machine can't modify it. Windows 95 is now installed as well, and the next challenge is getting this thing onto the internet to some degree.
 

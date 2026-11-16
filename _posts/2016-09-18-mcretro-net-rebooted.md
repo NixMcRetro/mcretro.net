@@ -15,7 +15,7 @@ share_description: >-
 
 [GitHub](https://github.com), [Markdown](https://daringfireball.net/projects/markdown/) and a splash of [Jekyll](https://jekyllrb.com/docs/). Let's see how this goes! I've decided to give McRetro.net another reboot, which means finding out whether I can get everything working the way I want it.
 
-First challenge: importing everything again. Apparently I've managed to work that part out, because **all 566 posts have imported successfully!** That's quite a lot of Markdown to have lying around. Now to see what else needs fixing.
+First challenge: importing everything again. Apparently I've managed to work that part out! That's quite a lot of Markdown to have lying around. Now to see what else needs fixing.
 
 Big thanks to [jmcglone.com](https://jmcglone.com/guides/github-pages/) for the guide, too. It's been extremely useful getting everything set up.
 

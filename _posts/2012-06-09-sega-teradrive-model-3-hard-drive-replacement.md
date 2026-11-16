@@ -93,8 +93,6 @@ I've installed MS-DOS 6.22 on all three and Windows 3.11 on the drive that is st
 *The whole TeraDrive setup running Windows 3.11, with the lid off and plenty of bench clutter. Just how I like it.*
 {: .media-caption }
 
-Solitaire runs amazingly well and is on par with the RAMdisk version of Windows 3.11 I had knocked together for the TeraDrive Model 2.
-
 ![Close-up of the label on an IBM Japan hard drive identifying model WDI-325Q.](/assets/images/2012/img_0187.jpg)
 
 *The troublesome WDI-325Q. Unlike the three WDL-330Ps, this one was not keen to cooperate.*

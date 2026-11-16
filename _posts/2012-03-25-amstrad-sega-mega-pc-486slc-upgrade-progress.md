@@ -66,7 +66,7 @@ While I was on eBay I picked up a coprocessor for the 486 board as well. It is a
 
 #### Memory, video and jumpers
 
-I am also still waiting on my four 4 MB SIMMs to arrive from overseas. Very exciting times. The video RAM on this motherboard already appears to be maxed out, which is great news. Scorched Earth!
+Very exciting times. The video RAM on this motherboard already appears to be maxed out, which is great news. Scorched Earth!
 
 ![Close-up of motherboard jumper JP16 labelled '1-2 DISABLE VGA' and '2-3 ENABLE VGA'.](/assets/images/2012/img_0051.jpg)
 
@@ -82,8 +82,6 @@ I am also still waiting on my four 4 MB SIMMs to arrive from overseas. Very exci
 
 *And here are the jumpers for running the machine in PC-only mode.*
 {: .media-caption }
-
-It also looks like the onboard VGA can be disabled and an ISA video card used, although I do not know how happily that would coexist with the Mega Drive card.
 
 The photographs above also show the jumper settings for bypassing the Mega Drive card and running the machine in PC-only mode, along with the BIOS auto-detected hard-drive settings.
 

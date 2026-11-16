@@ -13,7 +13,7 @@ share_description: >-
 *The shop is closed! Selling retro hardware turned out to be rather less entertaining than tinkering with it.*
 {: .media-caption }
 
-Thanks to everyone who purchased from McRetro.net! Running the shop was an interesting experience, but selling things just isn't nearly as much fun as playing with them. So that's it: effective immediately, the shop is closed and the database has been purged.
+Thanks to everyone who purchased from McRetro.net! Running the shop was an interesting experience. So that's it: effective immediately, the shop is closed and the database has been purged.
 
 Nothing else on the website is going anywhere, though. You can still enjoy great YouTube videos, the [photo gallery](/goodies/) and... drum roll... [this blog!](/blog/) :-)
 

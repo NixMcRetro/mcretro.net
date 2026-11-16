@@ -319,18 +319,28 @@
 }
 
 /* Only explicitly marked image and video captions receive compact caption spacing.
-   The About panel reuses the same .media-caption convention as blog posts. */
+   Linked images use the same rhythm as standalone images. The About panel
+   reuses the same .media-caption convention as blog posts. */
 .post-full .post-content > p:has(> img:only-child):has(+ p.media-caption),
+.post-full .post-content > p:has(> a:only-child > img:only-child):has(+ p.media-caption),
 .post-full .post-content > .video-container:has(+ p.media-caption),
 .about-panel > .center > p:has(> img:only-child):has(+ p.media-caption) {
   margin-bottom: 0.25rem;
 }
 
 .post-full .post-content > p:has(> img:only-child):has(+ p.media-caption) > img,
+.post-full .post-content > p:has(> a:only-child > img:only-child):has(+ p.media-caption) > a > img,
 .about-panel > .center > p:has(> img:only-child):has(+ p.media-caption) > img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+/* Keep the clickable area confined to the image and avoid inline-link baseline spacing. */
+.post-full .post-content > p:has(> a:only-child > img:only-child):has(+ p.media-caption) > a {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
 }
 
 /* A block image must still be centred inside the existing .center container. */
@@ -339,6 +349,7 @@
 }
 
 .post-full .post-content > p:has(> img:only-child) + p.media-caption,
+.post-full .post-content > p:has(> a:only-child > img:only-child) + p.media-caption,
 .post-full .post-content > .video-container + p.media-caption,
 .about-panel > .center > p:has(> img:only-child) + p.media-caption {
   font-size: 0.875rem;

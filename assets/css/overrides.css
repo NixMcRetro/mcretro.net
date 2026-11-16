@@ -294,6 +294,17 @@
   margin: 0 0 1.15em;
 }
 
+/* Back-to-back YouTube players need more breathing room than a video
+   followed by prose; keep the regular video-to-text spacing unchanged. */
+.post-full .post-content > .video-container + .video-container {
+  margin-top: 2rem;
+}
+@media screen and (max-width: 600px) {
+  .post-full .post-content > .video-container + .video-container {
+    margin-top: 1.5rem;
+  }
+}
+
 
 
 /* Keep article body lists close to their introductory paragraphs.

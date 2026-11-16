@@ -8,7 +8,8 @@
 
   const photoFile = /\.(?:jpe?g|jxl|webp|avif)$/i;
   const graphicFile = /(?:^|[\/_ .-])(?:icon|logo|sprite|pixel-art|screenshot|screen-shot|diagram|chart|graph)(?:[\/_ .-]|$)/i;
-  const graphicAlt = /\b(?:screenshot|screen capture|pixel art|sprite|icon|logo|diagram|chart|graph|illustration|ascii art)\b/i;
+  const graphicAlt = /\b(?:screenshot|screen capture|gameplay|game screen|title screen|pixel art|sprite|diagram|chart|graph|illustration|illustrated guide|ascii art)\b/i;
+  const standaloneGraphicAlt = /^(?:an? |the )?(?:icon|logo)\b/i;
   const exemptSelector = '[data-no-enlarge], .no-enlarge, .pixel-art, .keep-original-size';
   const entries = [];
 
@@ -29,10 +30,13 @@
 
   function shouldEnlarge(img) {
     if (img.matches(exemptSelector) || img.closest(exemptSelector)) return false;
-    if (img.hasAttribute('width') || img.style.width || img.style.maxWidth) return false;
+    // Jekyll adds intrinsic width/height attributes for layout stability.
+    // Only authored dimensions (without the marker) opt out of enlargement.
+    if (img.hasAttribute('width') && !img.hasAttribute('data-mcretro-intrinsic-dimensions')) return false;
+    if (img.style.width || img.style.maxWidth) return false;
     const path = new URL(img.currentSrc || img.src, document.baseURI).pathname;
     if (!photoFile.test(path) || path.endsWith('-wide-1800.jxl')) return false;
-    if (graphicFile.test(path) || graphicAlt.test(img.alt || '')) return false;
+    if (graphicFile.test(path) || graphicAlt.test(img.alt || '') || standaloneGraphicAlt.test(img.alt || '')) return false;
     return true;
   }
 

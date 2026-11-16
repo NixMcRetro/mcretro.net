@@ -22,8 +22,6 @@ But they'll probably be alright if they've made it this far.
 
 {% include youtube.html id="KuER_28DZWQ" %}
 
-The next day, there's nothing left but a shell.
-
 ![Empty brown cicada nymph shell clinging to the bark of a small tree trunk, with soft-focus garden plants behind it.](/assets/images/2022/img_0791.jpg)
 
 *The next morning, the tiny cicada had gone and left this remarkable little shell behind.*

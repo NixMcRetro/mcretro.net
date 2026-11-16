@@ -114,7 +114,17 @@ Space has always been a premium for me unfortunately, so having a MiSTer instead
 
 It's amazing! It looks like I'll be able to clone across from my APFS formatted drive with relative ease. However, I will still have to apply the following permissions once mounted, as it is an ext4 formatted drive:
 
-`sudo chown www-data:www-data -R \* sudo find . -type d -exec chmod 755 {} \\; sudo find . -type f -exec chmod 644 {} \\;`
+```bash
+sudo chown www-data:www-data -R *
+```
+
+```bash
+sudo find . -type d -exec chmod 755 {} \;
+```
+
+```bash
+sudo find . -type f -exec chmod 644 {} \;
+```
 
 I guess I'll just have to wait out the 32,000,000 files and directories! I'm using extFS for Mac by Paragon Software to copy between drives.
 
@@ -131,27 +141,53 @@ I am very glad to see that the symlinks survived. Now it's on to trying to deter
 
 I don't think I'll be going down the bindfs route. It seems to introduce overheads without the benefits. At least not when using ext4 as the target filesystem. So I'll mount the external hard drive straight into the /var/www/html folder with the following command:
 
-`sudo mount /dev/sdb2 /var/www/html/geocities`
+```bash
+sudo mount /dev/sdb2 /var/www/html/geocities
+```
 
 I had been considering mounting the drive as read only with:
 
-`sudo mount -oro,noload /dev/sdb2 /var/www/html/geocities`
+```bash
+sudo mount -oro,noload /dev/sdb2 /var/www/html/geocities
+```
 
 But then I wouldn't be able to make any changes on the fly via samba. For reference this was the bindfs command that would have been used, just in case I change my mind down the road.
 
-`sudo bindfs -o create-with-perms=0644:a+X,force-group=www-data,force-user=www-data,create-for-user=www-data,create-for-group=www-data /media/geocities_ext/neighborhoods /var/www/html/geocities`
+```bash
+sudo bindfs -o create-with-perms=0644:a+X,force-group=www-data,force-user=www-data,create-for-user=www-data,create-for-group=www-data \
+  /media/geocities_ext/neighborhoods \
+  /var/www/html/geocities
+```
 
 It looks like there's a faster way to change permissions that I wasn't aware of until today too.
 
-`cd /var/www sudo chown www-data:www-data -R \* sudo chmod -R a=r,a+X,u+w .`
+```bash
+cd /var/www
+```
+
+```bash
+sudo chown www-data:www-data -R *
+```
+
+```bash
+sudo chmod -R a=r,a+X,u+w .
+```
 
 That last line is a replacement for:
 
-`sudo find . -type d -exec chmod 755 {} \\; sudo find . -type f -exec chmod 644 {} \\;`
+```bash
+sudo find . -type d -exec chmod 755 {} \;
+```
+
+```bash
+sudo find . -type f -exec chmod 644 {} \;
+```
 
 and then to unmount the partition and play with the data we just run:
 
-`sudo umount /var/www/html/geocities`
+```bash
+sudo umount /var/www/html/geocities
+```
 
 ![Text document listing original GeoCities neighbourhood names and descriptions with a 'Correct Capitalisation' heading and an archived neighbourhood URL.](/assets/images/2022/img_0829.jpg)
 
@@ -252,7 +288,9 @@ and a file to:
 
 is what I was doing earlier without really knowing. My original `-rwxr--r--` example accidentally included an execute bit, so it was not actually a 0644 file mode. Neat! Anyway, **hall** redirects to **Hall** OK in the first image above. I went through and manually tidied up the "Station" folder, so there is no longer a lowercase "station" folder. I've created a symlink on my Mac using:
 
-`ln -s Station station`
+```bash
+ln -s Station station
+```
 
 Which creates the following new symlink:
 
@@ -276,13 +314,17 @@ With symlinks working, we can move onto tidying up before symlinking everything 
 
 Oh, yes! Apache to the rescue with the [mod_speling](https://httpd.apache.org/docs/2.4/mod/mod_speling.html) module.
 
-`sudo a2enmod speling`
+```bash
+sudo a2enmod speling
+```
 
 We've placed the following in VirtualHost configuration file inside Directory tags: `# Case-insensitive CheckSpelling on CheckCaseOnly on`
 
 and a quick restart of apache2.
 
-`sudo service apache2 restart`
+```bash
+sudo service apache2 restart
+```
 
 ![Safari showing a 'Forbidden' permissions error for the GeoCities archive's CapeCanaveral directory, with an Apache/2.4.41 (Ubuntu) footer.](/assets/images/2022/img_0904.jpg)
 
@@ -303,7 +345,17 @@ Ahh! Wrong permissions are set on the web server. We had used Carbon Copy Cloner
 
 A quick run of the below commands fixed up the ownership and permissions issues and...
 
-`cd /var/www sudo chown www-data:www-data -R \* sudo chmod -R a=r,a+X,u+w .`
+```bash
+cd /var/www
+```
+
+```bash
+sudo chown www-data:www-data -R *
+```
+
+```bash
+sudo chmod -R a=r,a+X,u+w .
+```
 
 **Apache's mod_speling allows us to have the expected, correct capitalisation:**
 
@@ -406,11 +458,23 @@ Being able to teleport or jump to random sites inside the GeoCities archives is 
 
 To generate a sitemap we'll need a... sitemap generator. I've decided on the aptly named [Sitemap Generator CLI](https://github.com/lgraubner/sitemap-generator-cli). I decided it would be best to run it on one of the Ubuntu 20.04 servers. Installation was straightforward.
 
-`sudo apt update sudo apt install npm sudo npm install -g sitemap-generator-cli`
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install npm
+```
+
+```bash
+sudo npm install -g sitemap-generator-cli
+```
 
 Then the generation of the sitemap.xml file. Unsurprisingly, this will also serve as a sitemap for Google, Bing and others crawling the website for links. Depth of 4 seems to be sufficient to capture the majority of sites in the neighborhoods. Obviously this will not capture all links present but does capture just shy of 300,000.
 
-`sitemap-generator http://geocities.mcretro.net --verbose --max-depth 4`
+```bash
+sitemap-generator http://geocities.mcretro.net --verbose --max-depth 4
+```
 
 ![Ubuntu terminal running sitemap-generator for geocities.mcretro.net with a maximum depth of four and a growing list of Area51 URLs marked ADD.](/assets/images/2022/img_0895.jpg)
 
@@ -419,7 +483,9 @@ Then the generation of the sitemap.xml file. Unsurprisingly, this will also serv
 
 After waiting what felt like a few hours, move the sitemap into the appropriate folder:
 
-`sudo mv sitemap.xml /var/www/html/geocities/`
+```bash
+sudo mv sitemap.xml /var/www/html/geocities/
+```
 
 ![Safari displaying the generated XML sitemap for geocities.mcretro.net, with urlset and loc entries for site pages and Area51 folders.](/assets/images/2022/img_0894.jpg)
 
@@ -466,7 +532,9 @@ I did tinker with having JavaScript overwriting some of the code to inject a nav
 
 Loaded the VirtualHost config:
 
-`sudo nano /etc/apache2/sites-available/geocities.conf`
+```bash
+sudo nano /etc/apache2/sites-available/geocities.conf
+```
 
 and inserted the following:
 
@@ -547,7 +615,9 @@ One document root (my HTML) and two rewrite rules (Neighborhoods and YahooIDs) w
 
 I guess symlinks are back on the menu. I could use:
 
-`sudo ln -s Athens athens`
+```bash
+sudo ln -s Athens athens
+```
 
 This would let the lowercase athens address reach the same directory as Athens, but a symlink alone wouldn't redirect the browser to the capitalised URL. And what about SoHo, Soho and soho? Let alone the case sensitivity on YahooIDs... Plus there's a bunch of unmerged case differences. I'll merge them one day, maybe. mod_speling might negate the need to create all those links.
 
@@ -578,11 +648,15 @@ With "geocities" being taken care of we move on to the contents of the "External
 
 Simple? Not really. No wonder I got stuck on this so long! The larger of the two folders is going to be YahooIDs. There's a finite amount of neighborhoods, so core will have less items. Sounds like I need to symlink **_Core_** folders into **_YahooIDs_** so they both display at root in http://geocities.mcretro.net/ - symlink activate!
 
-`sudo ln -s /var/www/html/External/Core/\* /var/www/html/External/YahooIDs`
+```bash
+sudo ln -s /var/www/html/External/Core/* /var/www/html/External/YahooIDs
+```
 
 I could also use the following to force linking in case other symbolic links exist in the YahooID folder. I can't remember which one I used but the following would have been useful after the first run - and making sure there were no YahooIDs equal to Neighbourhoods...
 
-`sudo ln -sf /var/www/html/External/Core/\* /var/www/html/External/YahooIDs`
+```bash
+sudo ln -sf /var/www/html/External/Core/* /var/www/html/External/YahooIDs
+```
 
 `-f Force existing destination pathnames to be removed to allow the link.`
 
@@ -721,13 +795,17 @@ And that's pretty unique in itself as it narrows down HTML files that have "Inde
 
 Next up I did some searching to find what command line tool(s) I could use. Enter grep via [this post](https://stackoverflow.com/questions/16956810/find-all-files-containing-a-specific-text-string-on-linux):
 
-`grep --include=\\\*.{htm,html} -rnw '/path/to/somewhere/' -e "pattern"`
+```bash
+grep --include=\\\*.{htm,html} -rnw '/path/to/somewhere/' -e "pattern"
+```
 
 Grep seemed to work, but it was detecting my three lines as three searches and not stringing them together. So I'd have it return a positive for each line, I need all lines to be considered at the same time. Turns out **_grep_** wasn't good enough. I needed **_pcregrep_**.
 
 After playing around with switches and settings and adapting the code to suit my needs. I ended up with this:
 
-`pcregrep --buffer-size=2M --include=\\index.{htm,html} -rilM "(?s)<\\!DOCTYPE HTML PUBLIC \\"-//W3C//DTD HTML 3.2 Final//EN\\">.\*(?s)<HTML>.\*<HEAD>.\*(?s)<TITLE>Index of " '.' 2>&1 |tee ~/Desktop/blankindex.txt`
+```bash
+pcregrep --buffer-size=2M --include=\\index.{htm,html} -rilM "(?s)<\\!DOCTYPE HTML PUBLIC \\"-//W3C//DTD HTML 3.2 Final//EN\\">.\*(?s)<HTML>.\*<HEAD>.\*(?s)<TITLE>Index of " '.' 2>&1 |tee ~/Desktop/blankindex.txt
+```
 
 Firstly, pcregrep has a buffer limit of 20K. Not enough. It outputs errors and messes up my blankindex.txt file. Buffer size booster to 2M. Great!
 
@@ -746,13 +824,17 @@ Excellent, I have a massive list of all the directory listing index.html files I
 
 And we'll search with this code. This should yield a lot more results.
 
-`pcregrep --buffer-size=2M --include=\\index.{htm,html} -rilM "(?s)<HTML>.\*<HEAD>" '.' 2>&1 |tee ~/Desktop/fullindex.txt`
+```bash
+pcregrep --buffer-size=2M --include=\\index.{htm,html} -rilM "(?s)<HTML>.\*<HEAD>" '.' 2>&1 |tee ~/Desktop/fullindex.txt
+```
 
 And it did. The original was 12MB at 219,000, the new one was well over 50MB before I cancelled it. There's definitely a lot of index.html files with both HTML and HEAD tags. Past cool! :+1:
 
 I checked some samples from the blankindex.txt file to make sure I was definitely only removing static directory listings and not user generated content. Everything checked out. Next up, xargs.
 
-`xargs -n 1 ls -v < ~/Desktop/blankindex.txt`
+```bash
+xargs -n 1 ls -v < ~/Desktop/blankindex.txt
+```
 
 Whoops. Good thing that had an **ls** in place of the **rm**. Apparently white space is not liked by xargs unless enclosed in quotes...
 
@@ -763,15 +845,29 @@ Whoops. Good thing that had an **ls** in place of the **rm**. Apparently white s
 
 Adding quotes is quite easy using BBEdit as it has a built-in grep function. As I just happened to have the knowledge fresh in my memory, I did some grepping to add to the front of each line with the **^** (caret) symbol and to the end of each line with a **$** (dollar) symbol. Done. Now the file should be able to get parsed correctly in terminal (Mac OS).
 
-`xargs -n 1 ls -v < ~/Desktop/blankindex.txt`
+```bash
+xargs -n 1 ls -v < ~/Desktop/blankindex.txt
+```
 
 A lot of reading indicated I should have been using the `-0` (or `--null`) flag for xargs. That needs a list with each filename terminated by a NUL character, not just the same newline-separated file with a different flag. It would have saved the quoting step if I'd generated the list that way. But I didn't. I took the risk and watched it list the attributes of the files in blankindex.txt. I checked for any errors. None. We are go for the final command.
 
-`xargs -n 1 rm -v < ~/Desktop/blankindex.txt`
+```bash
+xargs -n 1 rm -v < ~/Desktop/blankindex.txt
+```
 
 It worked. Next stop, clean out some more empty files, folders and .DS_Stores:
 
-`find . -name .DS_Store -delete find . -empty -type f -delete find . -empty -type d -delete`
+```bash
+find . -name .DS_Store -delete
+```
+
+```bash
+find . -empty -type f -delete
+```
+
+```bash
+find . -empty -type d -delete
+```
 
 We now have a much tidier directory structure for merging and a lack of empty files (or useless files) will prevent collisions when merging folders. We'll have a look at more case sensitivity, redirection loops, sitemap and jump tomorrow.
 
@@ -811,7 +907,9 @@ The above image shows an example of what a typical loop would look like in Finde
 
 Running the following command will show the 10000 longest pathnames:
 
-`find . | awk '{print length($0), $0}' | sort -n | tail -n 10000`
+```bash
+find . | awk '{print length($0), $0}' | sort -n | tail -n 10000
+```
 
 I've run this command a few times now and fixed the loops by deleting duplicated data. One interesting error I've come across is seen in the next image.
 
@@ -1116,7 +1214,17 @@ Good finds! I moved the server from the Raspberry Pi 3 to the Raspberry Pi 4 thi
 
 These are three very useful commands for debugging Apache errors:
 
-`sudo tail -f /var/log/apache2/other_vhosts_access.log sudo tail -f /var/log/apache2/error.log sudo tail -f /var/log/apache2/access.log`
+```bash
+sudo tail -f /var/log/apache2/other_vhosts_access.log
+```
+
+```bash
+sudo tail -f /var/log/apache2/error.log
+```
+
+```bash
+sudo tail -f /var/log/apache2/access.log
+```
 
 ![Terminal listing GeoCities neighbourhood folders and a red Paris symbolic link pointing to /var/www/html/External/core/Paris.](/assets/images/2022/img_0842.jpg)
 
@@ -1185,7 +1293,21 @@ That was the expected result on the clearnet: external clients couldn't see it. 
 
 Having a look around why this was happening resulted in me finding [this great site](https://www.osintcurio.us/2019/03/05/apache-mod_status-in-tor-hidden-services-destroy-anonymity/) explaining how it all works in detail. After a quick read I ran the following commands to try and solve the problem I didn’t know I had.
 
-`sudo a2dismod status sudo a2dismod info sudo apache2ctl configtest sudo systemctl restart apache2.service`
+```bash
+sudo a2dismod status
+```
+
+```bash
+sudo a2dismod info
+```
+
+```bash
+sudo apache2ctl configtest
+```
+
+```bash
+sudo systemctl restart apache2.service
+```
 
 A quick refresh of the onion site...
 

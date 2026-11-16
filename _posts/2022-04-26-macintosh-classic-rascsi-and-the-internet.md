@@ -68,7 +68,7 @@ At least they are giving similar results but I had to test elsewhere to confirm 
 *Back home with Windows 98 and a modem connection. Time for another round of browser archaeology.*
 {: .media-caption }
 
-And using Internet Explorer 5.0 grabbed Mosaic 1.0 from [my file server](/goodies).
+At least [my file server](/goodies) was earning its keep!
 
 ![Internet Explorer on Windows 98 downloading Mosaic 1.0.zip from the McRetro files archive, with a progress window showing 43% completed.](/assets/images/2022/img_0930.jpg)
 

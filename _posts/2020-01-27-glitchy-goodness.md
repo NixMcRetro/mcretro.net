@@ -13,11 +13,11 @@ share_description: >-
 *The Sonic 1 title screen after a spot of circuit bending. I'm not sure this was the effect Sega had in mind!*
 {: .media-caption }
 
-At some point I decided the Mega Drive's graphics were far too sensible. Circuit bending interferes with the signals a console uses to draw its picture, and the results can be a glorious mess of colours, missing letters, and checkerboard chaos. These are a few screenshots from my experiments, with Sonic 1 and Sonic 2 looking considerably less healthy than Sega intended. This isn't a wiring guide, just a little gallery of the chaos. :)
+Some more circuit bending on the Mega Drive, and Sonic 1 has rather lost the plot. I've got missing letters, broken-up scenery and colours that really have no business being together. It's a mess, and I love it. :)
 
-![Sonic 2 gameplay with scrambled brown scenery, cyan horizontal bands, and Sonic partly obscured near the centre of the screen.](/assets/images/2020/img_0657.jpg)
+![Sonic 1 gameplay with scrambled brown scenery, cyan horizontal bands, and Sonic partly obscured near the centre of the screen.](/assets/images/2020/img_0657.jpg)
 
-*Don't you just love the colours? Sonic 2 has turned into a spectacular mess of scrambled scenery and cyan stripes.*
+*Don't you just love the colours? Sonic's world has turned into a spectacular mess of scrambled scenery and cyan stripes.*
 {: .media-caption }
 
 ![Blue SEGA logo on a nearly white screen, with the upper half faint, fragmented and partially missing.](/assets/images/2020/img_0658.jpg)
@@ -45,7 +45,7 @@ At some point I decided the Mega Drive's graphics were far too sensible. Circuit
 *Casino Night Zone has gone decidedly off the rails. At least Sonic is still standing!*
 {: .media-caption }
 
-I'm fairly sure this was done on a Mega Drive Model 2, but I didn't label my notes well enough to tell you exactly which points I was bending. I can admire the resulting chaos, but I can't confidently explain how I produced every stray letter or mangled bit of Sonic. Probably just as well: I've since learned to check the VRAM pinout properly and keep well away from power and ground pins. If you want to see more Mega Drive madness in motion, I've linked some circuit-bending footage in the Related Posts below. One day I'll have to revisit this with better notes and see what other visual nonsense I can produce. :)
+I'm pretty sure this was all done on a Mega Drive Model 2, but I don't seem to have labelled which points I was bending. Typical. At least I kept the screenshots, because I certainly can't tell you which connection produced which spectacular mess. I'm sure I'll work it out one day. :)
 
 ### Sources
 

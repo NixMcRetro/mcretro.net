@@ -1,15 +1,13 @@
-/* Article media sizing: enlarge photographs by at most 150% without distortion.
-   Intentionally small graphics and explicitly sized images are left at their
-   original display width. Captions stay left-aligned and are centred as a
-   readable text block only when the accompanying image is narrow. */
+/* Article media sizing: enlarge raster photographs, screenshots and diagrams
+   proportionally by up to 150%. Explicitly sized or opted-out images remain
+   unchanged; captions stay left-aligned with a readable narrow-media measure. */
 (() => {
   const content = document.querySelector('.post-full .post-content');
   if (!content) return;
 
-  const photoFile = /\.(?:jpe?g|jxl|webp|avif)$/i;
-  const graphicFile = /(?:^|[\/_ .-])(?:icon|logo|sprite|pixel-art|screenshot|screen-shot|diagram|chart|graph)(?:[\/_ .-]|$)/i;
-  const graphicAlt = /\b(?:screenshot|screen capture|gameplay|game screen|title screen|pixel art|sprite|diagram|chart|graph|illustration|illustrated guide|ascii art)\b/i;
-  const standaloneGraphicAlt = /^(?:an? |the )?(?:icon|logo)\b/i;
+  // Scale raster images consistently, regardless of whether their ALT text
+  // describes a photograph, screenshot, game screen, logo, or diagram.
+  const scalableRasterFile = /\.(?:jpe?g|jxl|png|webp|avif)$/i;
   const exemptSelector = '[data-no-enlarge], .no-enlarge, .pixel-art, .keep-original-size';
   const entries = [];
 
@@ -35,8 +33,9 @@
     if (img.hasAttribute('width') && !img.hasAttribute('data-mcretro-intrinsic-dimensions')) return false;
     if (img.style.width || img.style.maxWidth) return false;
     const path = new URL(img.currentSrc || img.src, document.baseURI).pathname;
-    if (!photoFile.test(path) || path.endsWith('-wide-1800.jxl')) return false;
-    if (graphicFile.test(path) || graphicAlt.test(img.alt || '') || standaloneGraphicAlt.test(img.alt || '')) return false;
+    // The five approved historical full-width JXL photos retain their
+    // existing dedicated CSS rule. GIF and SVG are deliberately untouched.
+    if (!scalableRasterFile.test(path) || path.endsWith('-wide-1800.jxl')) return false;
     return true;
   }
 

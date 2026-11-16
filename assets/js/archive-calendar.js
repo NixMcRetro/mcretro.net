@@ -52,7 +52,11 @@
   // Jekyll supplies a publication year for posts and monthly archives.
   // A post's permalink is /:title/, so the year cannot be read from its URL.
   // Only choose a known option; the validated year still builds archive hrefs.
-  const contextYear = document.body?.dataset?.archiveContextYear;
+  // Single posts and month archives get their year from <body>. Paginated blog
+  // pages declare the majority year of their displayed posts on the blog list.
+  // Undated pages without either context continue to show the latest year.
+  const contextYear = document.body?.dataset?.archiveContextYear ||
+    document.querySelector('.blog-list[data-archive-context-year]')?.dataset?.archiveContextYear;
   if (contextYear && /^\d{4}$/.test(contextYear)) {
     const contextIndex = Array.from(year.options).findIndex(
       option => option.value === contextYear);

@@ -128,5 +128,30 @@ assert.match(articleHtml2012, /<body\b[^>]*data-archive-context-year="2012"/,
 assert.doesNotMatch(home, /data-archive-context-year=/,
   'The undated homepage should keep the latest year as the default');
 
+// Blog archive context is derived from the articles displayed on each page,
+// not the newest year globally. Prefer the most frequent year; ties use the
+// first (newest) article, matching the Liquid group order.
+for (const number of [1, 2, 3, 4, 5]) {
+  const path = number === 1 ? join(site, 'blog', 'index.html') :
+    join(site, 'blog', 'page' + number, 'index.html');
+  assert.ok(existsSync(path), 'Expected generated blog page ' + number);
+  const html = readFileSync(path, 'utf8');
+  const years = [...html.matchAll(/<span class="post-date">([\s\S]*?)<\/span>/g)]
+    .map(([, date]) => date.match(/\b(\d{4})\b/)?.[1]);
+  assert.ok(years.length > 0 && years.every(Boolean),
+    'Blog page ' + number + ' must display dated posts');
+  let expected = years[0], topCount = 0;
+  for (const candidate of new Set(years)) {
+    const count = years.filter(year => year === candidate).length;
+    if (count > topCount) { expected = candidate; topCount = count; }
+  }
+  const assigned = html.match(/<div class="blog-list" data-archive-context-year="(\d{4})">/)?.[1];
+  assert.equal(assigned, expected,
+    'Blog page ' + number + ' should select the most common displayed article year');
+}
+const page3 = readFileSync(join(site, 'blog', 'page3', 'index.html'), 'utf8');
+assert.match(page3, /<div class="blog-list" data-archive-context-year="\d{4}">/,
+  'Reported page 3 calendar context must be in generated HTML');
+
 console.log('PASS: ' + options.length + ' years and ' + archiveMonths +
   ' published monthly archives have matching sidebar counts; Jan–Sep validated.');

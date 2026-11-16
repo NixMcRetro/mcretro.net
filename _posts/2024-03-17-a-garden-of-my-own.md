@@ -15,6 +15,8 @@ share_description: >-
 
 It's been almost a month since [I last posted](/the-garden-lizards-and-bees/) about the garden. I guess we're due for a bit of a dive into what I would populate my garden with if I had a garden I owned, not rented.
 
+These photos are a wish list, not a tour of my backyard. Apart from the carrot planter right at the end, they're all things I'd love to have if I had unlimited time, money, and a garden that wasn't rented.
+
 ![Close-up of pale yellow grevillea flowers with long curled styles among fine dark-green needle-like leaves.](/assets/images/2024/img_1284.jpg)
 
 *A closer look at those spectacular curly grevillea flowers. I'm starting to think the bees would approve.*
@@ -108,28 +110,28 @@ I would not want to fall into a grevillea bush.
 
 ![Angled view along a broad nursery grevillea display with numerous potted shrubs, other tall native plants, and terracotta pots in the background.](/assets/images/2024/img_1277.jpg)
 
-*And the grevillea section just kept going. I could already imagine filling the entire place with plants, assuming the landlord didn't mind!*
+*And the grevillea section just kept going. If I had unlimited time, money, and a place of my own, I'd be wheeling half the nursery home!*
 {: .media-caption }
 
 Or even a stand of grevillea! I guess I'd also like bottlebrush-type trees. Maybe some [Viola hederacea](https://en.wikipedia.org/wiki/Viola_hederacea) or similar in the shaded areas.
 
 ![Low spreading green shrub with a few pink flower spikes in a red-gravel garden bed against a brick wall, beside grass.](/assets/images/2024/img_1278.jpg)
 
-*The actual garden is full of low shrubs, but this definitely isn't the weeping grass I'd choose instead of a regular lawn!*
+*A low shrub spreading through a gravel bed. Not my garden, but certainly the kind of greenery I'd nick ideas from!*
 {: .media-caption }
 
 Weeping grass, [Microlaena stipoides](https://en.wikipedia.org/wiki/Microlaena_stipoides), would be high up on my list for a lawn replacement. The above is definitely not weeping grass.
 
 ![Close-up of green lance-shaped leaves with two upright reddish flower spikes emerging from a dense ground-cover shrub.](/assets/images/2024/img_1279.jpg)
 
-*A closer look at the ground cover already growing here. I quite like the dense greenery, even if I'm still daydreaming about other plants.*
+*A closer look at the ground cover and its little flower spikes. Another candidate for the completely imaginary garden shopping list.*
 {: .media-caption }
 
 Creeping Boobialla, [Myoporum parvifolium](https://en.wikipedia.org/wiki/Myoporum_parvifolium) is hardy so might make the list if the grevillea doesn't outcompete it.
 
 ![Wide garden bed of low green shrubs over reddish gravel along a brick house wall, bordered by grass and timber edging.](/assets/images/2024/img_1280.jpg)
 
-*The garden outside our brick wall isn't bad, really. I just wish I could be sure we'd get another year here to enjoy it.*
+*A well-established bed of shrubs beside a brick wall. I'm taking notes for the dream garden, not showing off something I've already planted!*
 {: .media-caption }
 
 I guess it's all just a pipe dream though. Who knows if we'll get another year on the lease. The uncertainty of housing is one of the most depressing things I get to think about.

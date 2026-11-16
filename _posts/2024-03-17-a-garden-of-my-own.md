@@ -13,9 +13,7 @@ share_description: >-
 *Grevillea juniperina 'Gold' spreading across the mulch. Pretty good argument for making room for native plants instead of yet more lawn.*
 {: .media-caption }
 
-It's been almost a month since [I last posted](/the-garden-lizards-and-bees/) about the garden. I guess we're due for a bit of a dive into what I would populate my garden with if I had a garden I owned, not rented.
-
-These photos are a wish list, not a tour of my backyard. Apart from the carrot planter right at the end, they're all things I'd love to have if I had unlimited time, money, and a garden that wasn't rented.
+It's been almost a month since [I last posted](/the-garden-lizards-and-bees/) about the garden. I guess we're due for a dive into what I'd grow if I had unlimited time, money, and a place of my own. These photos are all inspiration, except for the carrot planter right at the end. That one's actually mine!
 
 ![Close-up of pale yellow grevillea flowers with long curled styles among fine dark-green needle-like leaves.](/assets/images/2024/img_1284.jpg)
 

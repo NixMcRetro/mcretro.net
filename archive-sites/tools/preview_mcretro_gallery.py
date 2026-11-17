@@ -186,7 +186,10 @@ def local_static_pages(manifest: Path) -> tuple[dict, list]:
     if not stage.is_dir() or stage.is_symlink():
         return {}, ['Static folder pages have not been generated']
     data = json.loads(manifest.read_text(encoding='utf-8'))
-    routes = validate_routes(data.get('folders', []))
+    folders = data.get('folders', [])
+    if not folders or (isinstance(folders, list) and all('url' not in f for f in folders)):
+        return {}, ['Old folder catalogue: rerun build_mcretro_r2_catalogues.py for static URLs']
+    routes = validate_routes(folders)
     pages = {}
     missing = []
     for path in routes.values():

@@ -111,6 +111,40 @@ gallery is NOT indexed or published by this operation. Neither HTML, JSON
 catalogues, sitemap, fonts, private alt/caption approvals nor File Server files
 are included. These still require their own review and authorisation.
 
+## Further interrupted photo upload: authenticated R2 audit separated from Cloudflare public access
+
+Owner's Mac reported that the accelerated photo-only uploader passed LOCAL
+ARCHIVE and R2 INVENTORY but stopped during SAFETY INTERLOCKS at:
+
+```
+Checking public Content-Type and Length for 60 dispersed photos ...
+STOPPED: Public delivery header audit failed for
+full/accessories/eeprom-programmers/gq-4x/IMG_2475.jxl:
+HTTP Error 403: Forbidden
+```
+
+The original pilot object had previously returned HTTP 200 with `image/jxl`.
+**This HTTP 403 came from public `photos.mcretro.net`, not authenticated
+R2 storage.** It could be due to Cloudflare WAF/bot controls or other
+custom-domain conditions, so its actual cause remains unconfirmed.
+No new upload began in this failed attempt. The last owner-supplied bucket
+count was **8,768 objects**, but it must be recalculated at the next preflight.
+
+The uploader was corrected to check all remote names and sizes through fast
+`rclone lsjson --no-mimetype`, plus **authenticated R2 metadata samples**
+for the original 20 pilot objects and up to 40 other existing objects. It no
+longer requires the public custom domain to accept programmatic HEADs before
+resuming. Public delivery is now diagnosed independently through
+`--check-public`, which makes no R2 changes. Any genuine mismatched R2
+object key, size, or sampled MIME still aborts before an upload. The
+exact-file allowlist, no-overwrite/resume behaviour and prohibition on
+touching originals/site files are unchanged.
+
+**Outstanding:** establish whether ordinary browsers and `curl` also get 403
+on the affected JPEG XL URL and inspect any `cf-mitigated`/WAF details.
+Do this before publishing the gallery HTML. The photo-only transfer is
+separately owner-requested and does not constitute website publication.
+
 ## Work to do next - no R2 upload or publication
 
 1. **Recheck the current, private local staging only**, without reading the historical originals: `python3 "$HOME/Downloads/validate_r2_upload.py"`; then `python3 "$HOME/Downloads/preview_mcretro_gallery.py" --check-only` using the current gallery template and scripts. Ensure the manifest, upload-plan CSV and optimised filenames still agree.

@@ -40,6 +40,14 @@ class ArchiveBuilderTests(unittest.TestCase):
         self.assertEqual(result['albums'], 2)
         data = json.loads((self.stage/'photo-gallery/albums.generated.json').read_text())
         self.assertEqual(len(data['photos']), 3)
+        folder_map = {f['path']: f for f in data['folders']}
+        self.assertEqual(folder_map['']['photo_count'], 3)
+        self.assertEqual(folder_map['sega']['photo_count'], 2)
+        self.assertEqual(folder_map['sega/saturn']['direct_photo_count'], 2)
+        self.assertEqual(folder_map['sega/saturn']['parent'], 'sega')
+        self.assertEqual(folder_map['computers/mac']['photo_count'], 1)
+        self.assertEqual(folder_map['computers/mac']['parent'], 'computers')
+        self.assertTrue(all('path' in a for a in data['albums']))
         keys = [p['path'] for p in data['photos']]
         self.assertEqual(len(keys), len(set(keys)))
         self.assertIn('full/sega/saturn/IMG_0001.jpg.jxl', keys)
@@ -56,6 +64,23 @@ class ArchiveBuilderTests(unittest.TestCase):
         draft = json.loads((self.stage/'file-server/catalogue.generated.json').read_text())
         self.assertTrue(draft['owner_review_required'])
         self.assertEqual(draft['files'][0]['review_status'], 'NOT_REVIEWED')
+
+    def test_nested_folder_hierarchy_including_parent_with_photos(self):
+        self.photo('consoles/sega/cover.jpg')
+        self.photo('consoles/sega/saturn/unit.jpg')
+        self.photo('consoles/sega/saturn/model-1/front.jpg')
+        result = build_photos(self.original, self.converted, self.stage)
+        self.assertEqual(result['converted_pairs'], 3)
+        data = json.loads((self.stage/'photo-gallery/albums.generated.json').read_text())
+        folders = {entry['path']: entry for entry in data['folders']}
+        self.assertEqual(folders['']['photo_count'], 3)
+        self.assertEqual(folders['consoles']['photo_count'], 3)
+        self.assertEqual(folders['consoles/sega']['photo_count'], 3)
+        self.assertEqual(folders['consoles/sega']['direct_photo_count'], 1)
+        self.assertEqual(folders['consoles/sega/saturn']['photo_count'], 2)
+        self.assertEqual(folders['consoles/sega/saturn']['direct_photo_count'], 1)
+        self.assertEqual(folders['consoles/sega/saturn/model-1']['photo_count'], 1)
+        self.assertEqual(folders['consoles/sega/saturn/model-1']['direct_photo_count'], 1)
 
     def test_optional_bmp_and_gif_archive_items(self):
         self.photo('consoles/nintendo/capture/image0000.bmp')

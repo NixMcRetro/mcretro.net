@@ -19,6 +19,8 @@ import shutil
 import subprocess
 import sys
 
+from gallery_keys import public_photo_paths
+
 DEFAULT_STAGE = Path.home() / 'Desktop/McRetro-R2-Staging'
 DEFAULT_CONVERTED = Path.home() / 'Desktop/McRetro-PhotoGallery-Optimised-v2'
 FINAL_DESTINATION = 'r2:mcretro-photos'
@@ -77,6 +79,10 @@ def validate(stage: Path, converted: Path, deep_hash: bool = False):
         raise ValueError('Empty/invalid album identifier')
 
     photos = data['photos']
+    source_paths = [photo.get('source_path') if isinstance(photo, dict) else None
+                    for photo in photos]
+    public_names = public_photo_paths(source_paths)
+    source_by_key = {}
     desired = set()
     fulls = set()
     gif_count = 0
@@ -88,6 +94,11 @@ def validate(stage: Path, converted: Path, deep_hash: bool = False):
             raise ValueError('Invalid full-image key in catalogue: ' + repr(full))
         if not valid_key(thumb):
             raise ValueError('Invalid thumbnail key in catalogue: ' + repr(thumb))
+        source = photo['source_path']
+        if photo.get('filename') != Path(source).name:
+            raise ValueError('Original filename does not match source path: ' + source)
+        if full != 'full/' + public_names[source]:
+            raise ValueError('Public key does not match clean JXL naming: ' + full)
         if full in fulls:
             raise ValueError('Duplicate full-image key in catalogue: ' + full)
         fulls.add(full)
@@ -98,6 +109,8 @@ def validate(stage: Path, converted: Path, deep_hash: bool = False):
         elif thumb != 'thumbs/' + full[len('full/'):]:
             raise ValueError('Full and thumbnail paths do not correspond: ' + full)
         desired.update((full, thumb))
+        source_by_key[full] = source
+        source_by_key[thumb] = source
 
     if audit.exists():
         if audit.is_symlink():
@@ -139,7 +152,9 @@ def validate(stage: Path, converted: Path, deep_hash: bool = False):
             raise ValueError('Incorrect media type or kind for: ' + key)
         if not re.fullmatch(r'[1-9][0-9]*', row['bytes'] or ''):
             raise ValueError('Invalid byte count for: ' + key)
-        expected = converted.joinpath(*key.split('/'))
+        source = source_by_key[key]
+        local_key = key.split('/', 1)[0] + '/' + source + ('' if source.lower().endswith('.gif') else '.jxl')
+        expected = converted.joinpath(*local_key.split('/'))
         local = Path(row['local_path'])
         if not local.is_absolute() or local != expected:
             raise ValueError('Local file is not exactly the expected converted path for: ' + key)
@@ -170,27 +185,33 @@ def validate(stage: Path, converted: Path, deep_hash: bool = False):
     return photos, rows, total
 
 
-def dry_run_command(converted: Path) -> list[str]:
-    """Deliberately no mode capable of writing to R2, even if called directly."""
+def dry_run_command(local: Path, key: str) -> list[str]:
+    """Copyto permits source and public .jxl paths to differ, with mandatory dry-run."""
+    if not valid_key(key):
+        raise ValueError('Unsafe R2 object key: ' + repr(key))
     return [
-        'rclone', 'copy', '--dry-run', '--s3-no-check-bucket',
-        '--files-from0', '-', '--transfers', '4', '--checkers', '8',
-        '--stats', '15s', str(converted), FINAL_DESTINATION,
+        'rclone', 'copyto', '--dry-run', '--s3-no-check-bucket',
+        '--stats', '15s', str(local), FINAL_DESTINATION + '/' + key,
     ]
 
 
-def perform_rclone_dry_run(converted: Path, keys: list[str]) -> int:
+def perform_rclone_dry_run(rows: list[dict]) -> int:
     if not shutil.which('rclone'):
         raise ValueError('rclone is not installed')
-    if not keys:
+    if not rows:
         raise ValueError('No files selected for dry run')
-    if any(not valid_key(k) for k in keys):
-        raise ValueError('Unsafe key in rclone selection')
-    payload = ('\0'.join(keys) + '\0').encode('utf-8')
-    command = dry_run_command(converted)
-    print(f'Executing rclone DRY RUN for {len(keys)} objects against {FINAL_DESTINATION} (PUBLIC BUCKET; NO UPLOAD)', flush=True)
-    return subprocess.run(command, input=payload, check=False).returncode
-
+    print(f'Executing DRY RUN for {len(rows)} objects against {FINAL_DESTINATION} (PUBLIC BUCKET; NO UPLOAD)', flush=True)
+    # Separate copyto operations map the existing .jpg.jxl local filenames to
+    # clean .jxl-only R2 object keys without renaming or copying local images.
+    for row in rows:
+        key = row['r2_key']
+        command = dry_run_command(Path(row['local_path']), key)
+        result = subprocess.run(command, check=False)
+        if result.returncode:
+            print('Dry run failed for: ' + key, file=sys.stderr)
+            return result.returncode
+    print(f'DRY RUN passed for {len(rows)} simulated objects; nothing uploaded.')
+    return 0
 
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -199,7 +220,7 @@ def main(argv=None) -> int:
     parser.add_argument('--deep-hash', action='store_true',
                         help='Read every byte and compute SHA-256 locally (no hashes saved)')
     parser.add_argument('--rclone-dry-run', action='store_true',
-                        help='Run the fixed FINAL destination command with mandatory --dry-run')
+                        help='Simulate copyto from converted filenames to clean public .jxl keys; no writes')
     parser.add_argument('--all', action='store_true',
                         help='In dry-run mode, simulate every object rather than 10 photographs')
     args = parser.parse_args(argv)
@@ -215,11 +236,15 @@ def main(argv=None) -> int:
         print('Optional: --rclone-dry-run --all (all objects, read-only simulation)')
         return 0
     if args.all:
-        selected = sorted(row['r2_key'] for row in rows)
+        selected_keys = set(row['r2_key'] for row in rows)
     else:
         sample = sorted(photos, key=lambda p: p['path'])[:10]
-        selected = sorted({key for p in sample for key in (p['path'], p['thumbnail'])})
-    return perform_rclone_dry_run(converted, selected)
+        selected_keys = {key for p in sample for key in (p['path'], p['thumbnail'])}
+    selected = sorted((row for row in rows if row['r2_key'] in selected_keys),
+                      key=lambda row: row['r2_key'])
+    if args.all:
+        print('Full dry run uses one copyto operation per object and may be slow.', flush=True)
+    return perform_rclone_dry_run(selected)
 
 
 if __name__ == '__main__':

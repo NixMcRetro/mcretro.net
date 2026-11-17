@@ -67,7 +67,8 @@ test('file server HTML has its controls and valid inline JavaScript', () => {
   assert.match(html, /<html lang="en-AU">/);
   assert.match(html, /<title>McRetro File Server<\/title>/);
   assert.match(html, /fetch\("\.\/catalogue\.json"/);
-  for (const id of ['results','search','category','sort']) assert.ok(html.includes('id="' + id + '"'));
+  for (const id of ['results','search','category','sort','show-more-files']) assert.ok(html.includes('id="' + id + '"'));
+  assert.match(html, /const PAGE_SIZE = 80/);
   assertSelfContainedScript(html);
 });
 

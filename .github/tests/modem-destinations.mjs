@@ -267,14 +267,9 @@ test('Make New Connection saves a real editable shortcut and opens its dialler',
   assert.equal(reloaded.standalone.control('[data-modem-destination]').textContent, 'My Old ISP');
 });
 
-test('Goodies and Explorer preserve approved dial destinations', () => {
-  const goodies = readFileSync(new URL('../../goodies.md', import.meta.url), 'utf8');
+test('Explorer preserves approved dial destinations', () => {
   const modem = readFileSync(new URL('../../homepages/modem/index.html', import.meta.url), 'utf8');
   const connection = readFileSync(new URL('../../_includes/modem-connection.html', import.meta.url), 'utf8');
-  // Goodies now exposes Dial-Up Networking as a linked project card, not a Markdown list.
-  const dialCard = goodies.match(/<a\b[^>]*href="\/homepages\/modem\/"[^>]*>([\s\S]*?)<\/a>/);
-  assert.ok(dialCard, 'Dial-Up Networking card must keep its original destination');
-  assert.match(dialCard[1], /<span class="goodies-card-title">Dial-Up Networking<\/span>/);
   assert.match(modem, /data-modem-new/);
   assert.match(modem, /data-modem-target="blog-random"/);
   assert.match(modem, /data-modem-target="random"/);

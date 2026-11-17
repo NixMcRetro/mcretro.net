@@ -210,6 +210,14 @@ def build_files_review(files_root: Path, stage: Path) -> dict:
     write_csv(stage/'reports'/'file-server-owner-review.csv',
               ['r2_key','local_path','bytes','category','filename','extension','publish_approval','description','rights_notes'], rows)
     write_csv(stage/'reports'/'file-server-skipped.csv', ['path','reason'], errors)
+    draft_files = []
+    for item in rows:
+        draft_files.append({'path': item['r2_key'], 'title': pretty(Path(item['filename']).stem),
+                            'description': 'Archival file; description and redistribution rights pending owner review.',
+                            'category': item['category'], 'size_bytes': item['bytes'],
+                            'year': None, 'sha256': None, 'review_status': 'NOT_REVIEWED'})
+    write_json(stage/'file-server'/'catalogue.generated.json',
+               {'schema_version': 1, 'owner_review_required': True, 'files': draft_files})
     return {'status': 'review required; none approved', 'candidate_files': len(rows),
             'total_gb': round(sum(r['bytes'] for r in rows)/GB, 3), 'excluded': len(errors)}
 

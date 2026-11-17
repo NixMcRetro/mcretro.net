@@ -42,7 +42,7 @@ class ArchiveBuilderTests(unittest.TestCase):
         self.assertEqual(len(data['photos']), 3)
         self.assertTrue(all(p['caption'] == '' and p['caption_approved'] is False
                             and p['alt'] == '' and p['alt_approved'] is False
-                            and p['date_taken'] is None and p['date_approved'] is False
+                            and p['date_taken'] is None and p['date_taken_approved'] is False
                             for p in data['photos']))
         self.assertEqual({p['filename'] for p in data['photos']},
                          {'IMG_0001.jpg', 'IMG_0001.png', 'image.jpg'})

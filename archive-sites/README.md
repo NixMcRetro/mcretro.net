@@ -18,7 +18,15 @@ The restored collection lives on the owner's Mac; the paths below are *local*, n
 - Likely original File Server folder: /Users/nix/Desktop/R2 FILES/files (override with --files if elsewhere)
 - Existing conversion summary: 8,391 of 8,391 supported images processed, 0 failures, 271 unsupported/skipped, 4,275,129,262 bytes of JXL gallery images plus thumbnails.
 
-The photo viewer now offers collection/album selectors and **60-image batches** rather than inserting thousands of thumbnail elements at once. The gallery uses an external JSON catalogue and is still a static site with no backend.
+The Photo Gallery now follows the **original nested directory structure** using folder cards, breadcrumbs, an up-one-level button, and hash links to folders. A global search still finds images across the entire collection; image grids load in **60-image batches**. The catalogue builder adds a generated `folders` tree (parent and descendant/direct counts), while the browser also supports older manifests by reading the existing album folder paths. No images need reconverting or moving for navigation. This remains a static, backend-free site.
+
+## McRetro layout and light/dark-mode compatibility
+
+The separate Photo Gallery retains the existing McRetro-inspired window, navigation, thumbnails, lightbox and responsive grid, but its navigation now presents real nested folders rather than a giant flat album selector.
+
+Colours and typography are matched to the existing **main-branch** \`assets/css/style.css\` theme tokens (including cream light background #FFF8DC, dark background #191D27, light links #0009B5, dark links #93C5FD, Montserrat-style headings and Merriweather-style body fallback). The gallery uses the main site's \`mcretro-theme\` preference key and a manual light/dark button, with system preference when unset; because subdomains have separate browser storage, choices made on mcretro.net are not automatically shared with photos.mcretro.net. The button on the gallery remembers that subdomain's choice.
+
+The CSS remains self-contained within the standalone R2 homepage, rather than attempting to import the entire blog CSS (which assumes a different Jekyll page structure and would introduce external dependencies). The main blog CSS, assets, JS and navigation have **not been changed**.
 
 ## Owner archive audit (17th November 2026)
 
@@ -70,7 +78,7 @@ Generated files in ~/Desktop/McRetro-R2-Staging:
 
 | Path | Meaning |
 | --- | --- |
-| photo-gallery/albums.generated.json | DRAFT photo catalogue with 1 entry per verified JXL pair, organised into folders/collections |
+| photo-gallery/albums.generated.json | DRAFT photo catalogue, album paths, nested folder tree and folder counts, and 1 entry per verified image |
 | reports/audit-summary.json | Source counts, album count, sizes, skipped extensions and conversion gaps |
 | reports/skipped-photo-files.csv | Unsupported image-folder items (including possible videos, documents and other resources) |
 | reports/missing-photo-conversions.csv | Any supported source photos missing a valid full/thumbnail JXL pair |
@@ -132,7 +140,8 @@ This is a **local preview, not browser compatibility certification**. Check the 
 - Browse representative photographs from **each of the 212 discovered album folders**, particularly small or large images, portrait orientation, high-detail circuit boards, serial labels and photographs with text.
 - Compare the 20 Nintendo DS BMP capture conversions against the source BMPs for pixel detail and palette. If not yet recovered, run prepare_gallery_extras.py --apply on the Mac first and regenerate the manifest.
 - Verify the Project Yampad GIF still animates, has the expected frame sequence and doesn't show private material.
-- Review album labels, sort order, search, empty results, previous/next viewer controls and mobile layouts.
+- Review nested folder tiles, parent/child paths, breadcrumbs, browser back/forward navigation, photo counts, searches across all folders, empty results, previous/next viewer controls, and mobile layouts.
+- Compare light and dark modes against mcretro.net's current theme, including the gallery's manual theme toggle and keyboard focus contrast.
 - Review real visual descriptions for generic filename images before using the draft alt text for public accessibility.
 - Keep the File Server's 987 candidate files unapproved until their contents, provenance and redistribution rights are reviewed.
 

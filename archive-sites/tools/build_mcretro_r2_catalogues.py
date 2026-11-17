@@ -17,6 +17,8 @@ from pathlib import Path
 import re
 import sys
 
+from gallery_naming import load_rules, build_name_review
+
 DEFAULT_ORIGINAL = Path('/Users/nix/Desktop/R2 FILES/photos')
 DEFAULT_CONVERTED = Path.home() / 'Desktop/McRetro-PhotoGallery-Optimised-v2'
 DEFAULT_FILES = Path('/Users/nix/Desktop/R2 FILES/files')
@@ -92,7 +94,8 @@ def validate_dirs(original: Path, converted: Path, files: Path, stage: Path):
             raise ValueError('Staging must be separate from originals, converted images and file server.')
 
 
-def build_photos(original: Path, converted: Path, stage: Path) -> dict:
+def build_photos(original: Path, converted: Path, stage: Path, rules: dict | None = None) -> dict:
+    rules = load_rules() if rules is None else rules
     originals = []
     skipped = []
     for p in iter_files(original):
@@ -162,6 +165,13 @@ def build_photos(original: Path, converted: Path, stage: Path) -> dict:
                            'suggested_alt': f'Archive image {title} from {pretty(Path(directory).name)}'})
         images.append((rel, directory, title, full_key, thumb_key))
 
+    all_dirs = set()
+    for directory in albums_by_dir:
+        if directory == '.':
+            continue
+        parts = directory.split('/')
+        all_dirs.update('/'.join(parts[:i + 1]) for i in range(len(parts)))
+    display_names, name_review = build_name_review(list(all_dirs), rules)
     albums = []
     album_ids = {}
     for directory, members in sorted(albums_by_dir.items(), key=lambda kv: kv[0].casefold()):
@@ -169,8 +179,8 @@ def build_photos(original: Path, converted: Path, stage: Path) -> dict:
         identifier = 'album-' + digest
         album_ids[directory] = identifier
         parts = Path(directory).parts if directory != '.' else ()
-        top = pretty(parts[0]) if parts else 'Uncategorised'
-        label = pretty(parts[-1]) if parts else 'Uncategorised'
+        top = display_names.get(parts[0], 'Uncategorised') if parts else 'Uncategorised'
+        label = display_names.get(directory, 'Uncategorised')
         albums.append({'id': identifier, 'title': label, 'description': directory if directory != '.' else 'Root album',
                        'path': '' if directory == '.' else directory, 'group': top})
 
@@ -196,7 +206,7 @@ def build_photos(original: Path, converted: Path, stage: Path) -> dict:
             node_path = segment if not prefix else prefix + '/' + segment
             if node_path not in folder_nodes:
                 folder_nodes[node_path] = {
-                    'path': node_path, 'name': pretty(segment),
+                    'path': node_path, 'name': display_names.get(node_path, pretty(segment)),
                     'parent': prefix, 'photo_count': 0, 'direct_photo_count': 0}
             prefix = node_path
 
@@ -218,10 +228,14 @@ def build_photos(original: Path, converted: Path, stage: Path) -> dict:
     write_csv(stage / 'reports' / 'missing-photo-conversions.csv', ['path','problem'], missing)
     write_csv(stage / 'reports' / 'photo-alt-review.csv', ['source_path','album_folder','reason','suggested_alt'], review)
     write_csv(stage / 'reports' / 'photos-upload-plan.csv', ['r2_key','local_path','kind','bytes','mime','approved_for_publication'], upload)
+    write_csv(stage / 'reports' / 'folder-name-review.csv',
+              ['folder_path', 'original_segment', 'proposed_display_name', 'needs_review', 'method_or_reason',
+               'owner_approved', 'owner_replacement'], name_review)
 
     # Output is a preview-only draft; never a published catalogue.
     return {'original_supported_files': len(originals), 'converted_pairs': len(images),
-            'skipped': len(skipped), 'missing_pairs': len(missing), 'albums': len(albums),
+            'skipped': len(skipped), 'missing_pairs': len(missing), 'albums': len(albums), 'folder_labels': len(name_review),
+            'folder_labels_needing_review': sum(r['needs_review'] == 'YES' for r in name_review),
             'generic_alt_to_review': len(review), 'input_gb': round(total_original/GB, 3),
             'output_gb': round((total_gallery+total_thumbs)/GB, 3),
             'full_gb': round(total_gallery/GB, 3), 'thumbs_gb': round(total_thumbs/GB, 3),
@@ -271,12 +285,14 @@ def main(argv=None):
     parser.add_argument('--converted', type=Path, default=DEFAULT_CONVERTED)
     parser.add_argument('--files', type=Path, default=DEFAULT_FILES)
     parser.add_argument('--stage', type=Path, default=DEFAULT_STAGE)
+    parser.add_argument('--names', type=Path, default=None, help='Folder display-names.json override file')
     args = parser.parse_args(argv)
     photo_root, conversion_root, file_root, staging = (
         p.expanduser().resolve() for p in (args.photos, args.converted, args.files, args.stage))
     validate_dirs(photo_root, conversion_root, file_root, staging)
     staging.mkdir(parents=True, exist_ok=True)
-    photo_summary = build_photos(photo_root, conversion_root, staging)
+    naming_rules = load_rules(args.names.expanduser() if args.names else None)
+    photo_summary = build_photos(photo_root, conversion_root, staging, naming_rules)
     files_summary = build_files_review(file_root, staging)
     result = {'photos': photo_summary, 'file_server': files_summary,
               'publication': 'NONE; local drafts and review reports only'}

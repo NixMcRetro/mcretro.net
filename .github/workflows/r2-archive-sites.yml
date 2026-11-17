@@ -15,6 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Install Rich for terminal dashboard regression tests
+        run: python -m pip install 'rich>=13.9,<15'
       - uses: actions/setup-node@v6
         with:
           node-version: '24'

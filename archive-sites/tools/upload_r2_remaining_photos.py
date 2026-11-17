@@ -8,7 +8,8 @@ Server files, and the original ~26 GB photo archive are outside this scope.
 Default: validate the full local manifest and inspect R2, with NO uploads.
 --demo: animated PHOTON UPLINK preview, no local scan or network activity.
 --upload: copy ONLY missing, allowlisted objects, NEVER overwrite or delete.
---verify: check exact remote keys and sizes, public MIME/size samples and 40 downloaded-byte samples.
+--verify: check exact remote keys and sizes, authenticated R2 MIME/size samples and 40 downloaded-byte samples.
+--check-public: separate browser-facing HTTP HEAD diagnostics; no upload.
 --deep-verify: read-only byte comparison of ALL 16,823 R2 objects (~4.277 GB).
 
 The original 20 pilot objects must already be present with their expected
@@ -115,6 +116,69 @@ def header_sample_keys(remote: dict[str, dict]) -> list[str]:
     return sorted((PILOT_KEYS & set(remote)) | set(sampled))
 
 
+def verify_r2_mime_sample(plan: dict[str, dict], remote: dict[str, dict]) -> None:
+    """Read-only authenticated R2 MIME audit, independent of the public hostname.
+
+    Uses an exact NUL-delimited list of all 20 pilot objects plus up to 40
+    existing distributed objects. This avoids the public Cloudflare WAF and
+    avoids requesting MIME for every existing object.
+    """
+    keys = header_sample_keys(remote)
+    if not keys:
+        raise ValueError("No remote objects available for MIME verification")
+    command = [
+        "rclone", "lsjson", "--recursive", "--files-only", "--no-modtime",
+        "--files-from0", "-", "--s3-no-check-bucket", FINAL_DESTINATION,
+    ]
+    print(
+        f"Checking authenticated R2 Content-Type/size for {len(keys)} "
+        "sampled objects (including all 20 original pilot files)...",
+        flush=True,
+    )
+    try:
+        result = subprocess.run(
+            command, input=nul_keys(keys), capture_output=True,
+            check=False, timeout=120,
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise ValueError("Authenticated R2 MIME sample timed out; no upload started") from exc
+    if result.returncode:
+        reason = result.stderr.decode("utf-8", "replace")[-600:]
+        raise ValueError("Authenticated R2 MIME sample failed: " + reason)
+    try:
+        records = json.loads(result.stdout)
+    except (ValueError, TypeError) as exc:
+        raise ValueError("Authenticated R2 MIME audit returned invalid JSON") from exc
+    if not isinstance(records, list):
+        raise ValueError("Authenticated R2 MIME audit returned an invalid object list")
+    by_path = {}
+    for record in records:
+        if not isinstance(record, dict) or not isinstance(record.get("Path"), str):
+            raise ValueError("Malformed authenticated R2 MIME audit record")
+        key = record["Path"]
+        if key in by_path:
+            raise ValueError("Duplicate authenticated R2 MIME audit key: " + key)
+        by_path[key] = record
+    if set(by_path) != set(keys):
+        absent = sorted(set(keys) - set(by_path))
+        extra = sorted(set(by_path) - set(keys))
+        raise ValueError(
+            f"R2 MIME audit differs from allowlist: {len(absent)} missing, "
+            f"{len(extra)} unexpected; first missing: {absent[:2]}"
+        )
+    for key in keys:
+        record = by_path[key]
+        if record.get("Size") != int(plan[key]["bytes"]):
+            raise ValueError("Authenticated R2 MIME audit size mismatch: " + key)
+        if record.get("MimeType") != plan[key]["mime"]:
+            raise ValueError(
+                "Authenticated R2 MIME audit Content-Type mismatch for " +
+                key + ": got " + repr(record.get("MimeType")) +
+                ", expected " + repr(plan[key]["mime"])
+            )
+    print(f"PASS: {len(keys)} sampled authenticated R2 object types and sizes match.", flush=True)
+
+
 def verify_public_headers(plan: dict[str, dict], remote: dict[str, dict]) -> None:
     """Read-only HEAD samples for actual published Content-Type and Length.
 
@@ -200,12 +264,11 @@ def assess(plan: dict[str, dict], on_stage=None, quiet: bool = False) -> tuple[l
         on_stage(1)  # Existing R2 inventory, after validating local images.
     remote = all_remote_objects(with_mime=False)
     if on_stage is not None:
-        on_stage(2)  # Validate exact keys/sizes and public delivery samples.
+        on_stage(2)  # Validate exact keys/sizes and authenticated MIME samples.
     missing = audit_existing(plan, remote)
-    # MIME is not silently assumed correct: sample the actual browser-facing
-    # JPEG XL/GIF Content-Type and byte length, and always check the full pilot.
-    # Unlike rclone lsjson's default, this avoids thousands of S3 HEAD calls.
-    verify_public_headers(plan, remote)
+    # R2 data integrity is independent of Cloudflare's public HTTP access.
+    # A custom-domain WAF challenge/403 must not falsely mark storage corrupt.
+    verify_r2_mime_sample(plan, remote)
     present_bytes = sum(int(plan[key]["bytes"]) for key in remote)
     missing_bytes = sum(int(plan[key]["bytes"]) for key in missing)
     if not quiet:
@@ -234,7 +297,7 @@ def verify(plan: dict[str, dict], deep: bool = False) -> None:
     print(
         f"PASS: exactly {EXPECTED_OBJECTS:,} R2 keys and sizes "
         f"match the local catalogue ({EXPECTED_BYTES:,} bytes). "
-        "Content-Type/Length independently checked for all pilot objects "
+        "Authenticated R2 Content-Type/size checked for all pilot objects "
         "and a distributed sample; not every object's MIME type.",
         flush=True,
     )
@@ -260,6 +323,8 @@ def main(argv=None) -> int:
                       help="Download-check ALL 4.277 GB, read-only; slower")
     mode.add_argument("--demo", action="store_true",
                       help="Show the animated PHOTON UPLINK dashboard without accessing R2")
+    mode.add_argument("--check-public", action="store_true",
+                      help="Separately diagnose public Cloudflare HTTP access; NO upload")
     args = parser.parse_args(argv)
     if args.demo:
         show_demo()
@@ -272,6 +337,16 @@ def main(argv=None) -> int:
         # Explicit verification modes remain independent and read-only.
         plan = local_plan()
         verify(plan, deep=args.deep_verify)
+        return 0
+    if args.check_public:
+        # Public accessibility is separate from authenticated R2 correctness.
+        # A Cloudflare 403 should be diagnosed, never silently treated as
+        # missing/corrupt R2 content or used to trigger re-upload.
+        plan = local_plan()
+        remote = all_remote_objects(with_mime=False)
+        audit_existing(plan, remote)
+        verify_public_headers(plan, remote)
+        print("PASS: sampled public photo URLs are accessible.")
         return 0
     # Read-only preflight: show progress through local scan and remote listing.
     # This same preflight executes before real --upload as a safety gate.

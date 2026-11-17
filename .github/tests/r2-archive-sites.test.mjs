@@ -94,13 +94,18 @@ test('photo gallery HTML has its controls and valid inline JavaScript', () => {
   const html = read(path.join(photoDir, 'index.html'));
   assert.match(html, /<html lang="en-AU">/);
   assert.match(html, /<title>McRetro Photo Gallery<\/title>/);
-  assert.match(html, /fetch\("\.\/albums\.json"/);
+  assert.match(html, /fetch\("\/albums\.json"/);
+  assert.match(html, /class="utility-bar"/);
+  assert.doesNotMatch(html, /class="main-nav"/);
+  assert.doesNotMatch(html, /MCRETRO\.EXE \/ PHOTO ARCHIVE/);
   for (const id of ['viewer','search','breadcrumbs','folders','up-folder','grid','show-more','theme-toggle'])
     assert.ok(html.includes('id="' + id + '"'), 'Missing gallery control: ' + id);
   assert.match(html, /const PAGE_SIZE = 60/);
   assert.match(html, /moreButton\.addEventListener\("click", appendPage\)/);
   assert.match(html, /function buildFolderTree\(dataFolders\)/);
-  assert.match(html, /location\.hash/);
+  assert.match(html, /location\.pathname/);
+  assert.match(html, /window\.history\.pushState/);
+  assert.match(html, /location\.hash/, "Legacy hash URLs must still be supported");
   assert.match(html, /folderSection\.hidden = inSearch/);
   assert.match(html, /THEME_KEY = "mcretro-theme"/);
   assert.match(html, /data-theme="dark"/);
@@ -149,7 +154,8 @@ test('folder browser navigates deeply nested source paths, searches globally and
   };
   const callbacks = new Map();
   const storage = new Map();
-  const location = { hash: '' };
+  const location = { hash: '', pathname:'/' };
+  const deepUrl = '/albums/serial-001-9876543210.html';
   const albums = [
     { id: 'sega-a', title: 'Serial 001', path: 'consoles/sega/mega-drive/model-1/serial-001' },
     { id: 'nintendo-a', title: 'Serial 002', path: 'consoles/nintendo/game-boy/serial-002' },
@@ -164,10 +170,16 @@ test('folder browser navigates deeply nested source paths, searches globally and
     { path:'consoles', name:'Consoles', parent:'', photo_count:2 },
     { path:'consoles/sega', name:'Sega', parent:'consoles', photo_count:1 },
     { path:'consoles/nintendo', name:'Nintendo', parent:'consoles', photo_count:1 },
+    { path:'consoles/sega/mega-drive/model-1/serial-001', name:'Serial 001',
+      parent:'consoles/sega/mega-drive/model-1', photo_count:1, url:deepUrl },
   ] };
   const window = {
     matchMedia() { return { matches:false, addEventListener(){} }; },
     addEventListener(name, cb) { callbacks.set(name, cb); },
+    history: {
+      pushState(_state, _title, url) { location.pathname = url; location.hash = ''; },
+      replaceState(_state, _title, url) { location.pathname = url; location.hash = ''; },
+    },
   };
   const context = vm.createContext({
     document, window, location,
@@ -193,7 +205,8 @@ test('folder browser navigates deeply nested source paths, searches globally and
   openFolder('mega drive');
   openFolder('model 1');
   openFolder('serial 001');
-  assert.equal(location.hash, '#folder=consoles%2Fsega%2Fmega-drive%2Fmodel-1%2Fserial-001');
+  assert.equal(location.pathname, deepUrl);
+  assert.equal(location.hash, '');
   assert.equal(document.getElementById('count').textContent, '1 photograph');
   assert.equal(document.getElementById('grid').children.length, 1);
   const crumbs = document.getElementById('breadcrumbs').children;

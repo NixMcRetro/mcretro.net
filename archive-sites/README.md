@@ -99,27 +99,42 @@ JPEG XL-only delivery has browser compatibility limitations. Validate with the a
 
 ## Local preview (without any Cloudflare upload)
 
-From a checkout of this branch, the committed demo sites can be served with:
+The preview server reads only the **generated album manifest** and **converted image objects**. It binds to 127.0.0.1 and allows requests only for catalogue-listed image paths, index.html and albums.json; no directory listing, original image folder access, File Server access or publication is possible.
 
-    python3 -m http.server 8765 --bind 127.0.0.1
+From a checkout of the PR branch, after you run the catalogue builder:
 
-- http://127.0.0.1:8765/archive-sites/file-server/
-- http://127.0.0.1:8765/archive-sites/photo-gallery/
+    python3 archive-sites/tools/preview_mcretro_gallery.py --check-only
+    python3 archive-sites/tools/preview_mcretro_gallery.py --decode-album-samples
+    python3 archive-sites/tools/preview_mcretro_gallery.py
 
-These test-page references point to R2 connectivity objects, so their image links will not work in this local demo without those objects being available.
+Then open **http://127.0.0.1:8766/** in the Mac's browser. Press Ctrl+C to stop the server. The decode-album-samples mode requires djxl and checks one representative JXL thumbnail from each album; the check confirms decodability, **not photographic accuracy or rights approval**. By default the preview does not modify or copy photographs.
 
-For an actual *local generated gallery* preview, construct a separate temporary folder (do NOT upload this preview folder):
+To run without a complete Git checkout, download both script and HTML first:
 
-    PREVIEW="$HOME/Desktop/McRetro-R2-LocalPreview"
-    mkdir -p "$PREVIEW"
-    cp archive-sites/photo-gallery/index.html "$PREVIEW/index.html"
-    cp "$HOME/Desktop/McRetro-R2-Staging/photo-gallery/albums.generated.json" "$PREVIEW/albums.json"
-    ln -s "$HOME/Desktop/McRetro-PhotoGallery-Optimised-v2/full" "$PREVIEW/full"
-    ln -s "$HOME/Desktop/McRetro-PhotoGallery-Optimised-v2/thumbs" "$PREVIEW/thumbs"
-    cd "$PREVIEW"
-    python3 -m http.server 8766 --bind 127.0.0.1
+    BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites"
+    curl -fL "$BASE/tools/preview_mcretro_gallery.py" -o "$HOME/Downloads/preview_mcretro_gallery.py"
+    curl -fL "$BASE/photo-gallery/index.html" -o "$HOME/Downloads/mcretro-gallery-index.html"
+    python3 "$HOME/Downloads/preview_mcretro_gallery.py" \
+      --html "$HOME/Downloads/mcretro-gallery-index.html" \
+      --check-only
+    python3 "$HOME/Downloads/preview_mcretro_gallery.py" \
+      --html "$HOME/Downloads/mcretro-gallery-index.html" \
+      --decode-album-samples
+    python3 "$HOME/Downloads/preview_mcretro_gallery.py" \
+      --html "$HOME/Downloads/mcretro-gallery-index.html"
 
-Open http://127.0.0.1:8766/ . This preview serves only your **converted** copies via local symlinks, not originals. Keep it bound to localhost and never recursively upload that folder to R2. The generated manifest remains a draft.
+The generated JSON is expected at ~/Desktop/McRetro-R2-Staging/photo-gallery/albums.generated.json, and converted files at ~/Desktop/McRetro-PhotoGallery-Optimised-v2. Use --manifest and --converted for alternative local directories. The --port option changes the local port only. A manifest integrity check covers every JXL/GIF path. When recovery has not been run, missing BMP/GIF pairs prevent preview until those extra entries are prepared or deliberately omitted from the *local draft* catalogue.
+
+This is a **local preview, not browser compatibility certification**. Check the images in the actual browsers you expect to use. If JXL does not display, do not publish a broken JXL-only gallery. A failure message or support strategy must be decided separately.
+
+### Human gallery review checklist
+
+- Browse representative photographs from **each of the 212 discovered album folders**, particularly small or large images, portrait orientation, high-detail circuit boards, serial labels and photographs with text.
+- Compare the 20 Nintendo DS BMP capture conversions against the source BMPs for pixel detail and palette. If not yet recovered, run prepare_gallery_extras.py --apply on the Mac first and regenerate the manifest.
+- Verify the Project Yampad GIF still animates, has the expected frame sequence and doesn't show private material.
+- Review album labels, sort order, search, empty results, previous/next viewer controls and mobile layouts.
+- Review real visual descriptions for generic filename images before using the draft alt text for public accessibility.
+- Keep the File Server's 987 candidate files unapproved until their contents, provenance and redistribution rights are reviewed.
 
 ## Validation
 

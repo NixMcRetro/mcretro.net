@@ -31,9 +31,9 @@ def fixture():
 class PhotoOnlyUploadTests(unittest.TestCase):
     def setUp(self):
         self.plan, self.remote = fixture()
-        self.headers_patch = patch.object(task, "verify_public_headers")
-        self.headers_mock = self.headers_patch.start()
-        self.addCleanup(self.headers_patch.stop)
+        self.mime_patch = patch.object(task, "verify_r2_mime_sample")
+        self.mime_mock = self.mime_patch.start()
+        self.addCleanup(self.mime_patch.stop)
 
     def test_exact_existing_pilot_and_remaining_selection(self):
         pending = task.audit_existing(self.plan, self.remote)
@@ -71,7 +71,7 @@ class PhotoOnlyUploadTests(unittest.TestCase):
                           return_value=fast_remote) as fetch:
             missing, listed = task.assess(self.plan, quiet=True)
         fetch.assert_called_once_with(with_mime=False)
-        self.headers_mock.assert_called_once_with(self.plan, fast_remote)
+        self.mime_mock.assert_called_once_with(self.plan, fast_remote)
         self.assertEqual(len(missing), 3)
 
     def test_missing_pilot_stops_before_upload(self):
@@ -254,6 +254,89 @@ class PhotoOnlyUploadTests(unittest.TestCase):
         validate.return_value = ([{}] * 10, [], 1000)
         with self.assertRaisesRegex(ValueError, "counts/bytes changed"):
             task.local_plan()
+
+
+class AuthenticatedR2MimeTests(unittest.TestCase):
+    """Cloudflare public 403 must not block a valid authenticated R2 audit."""
+
+    def setUp(self):
+        self.plan, self.remote = fixture()
+
+    @staticmethod
+    def make_records(plan, remote, mime_override=None):
+        keys = task.header_sample_keys(remote)
+        return [
+            {"Path": key, "Size": 123,
+             "MimeType": mime_override or plan[key]["mime"]}
+            for key in keys
+        ]
+
+    def test_authenticated_mime_sample_uses_rclone_not_public_http(self):
+        records = self.make_records(self.plan, self.remote)
+        result = subprocess.CompletedProcess(
+            args=[], returncode=0, stdout=task.json.dumps(records).encode(), stderr=b""
+        )
+        with patch.object(task.subprocess, "run", return_value=result) as run, \
+             patch.object(task, "urlopen") as public:
+            task.verify_r2_mime_sample(self.plan, self.remote)
+        public.assert_not_called()
+        run.assert_called_once()
+        command = run.call_args.args[0]
+        self.assertEqual(command[:2], ["rclone", "lsjson"])
+        self.assertIn("--files-from0", command)
+        self.assertIn("--no-modtime", command)
+        self.assertNotIn("--no-mimetype", command)
+        self.assertNotIn("--upload", command)
+        self.assertNotIn("--sync", command)
+        self.assertEqual(run.call_args.kwargs["timeout"], 120)
+        supplied = run.call_args.kwargs["input"].rstrip(b"\0").split(b"\0")
+        self.assertEqual(set(supplied), {key.encode() for key in self.remote})
+
+    def test_bad_stored_mime_rejected(self):
+        records = self.make_records(self.plan, self.remote,
+                                    mime_override="application/octet-stream")
+        result = subprocess.CompletedProcess(
+            args=[], returncode=0, stdout=task.json.dumps(records).encode(), stderr=b""
+        )
+        with patch.object(task.subprocess, "run", return_value=result):
+            with self.assertRaisesRegex(ValueError, "Content-Type mismatch"):
+                task.verify_r2_mime_sample(self.plan, self.remote)
+
+    def test_sample_must_return_every_selected_key(self):
+        records = self.make_records(self.plan, self.remote)[:-1]
+        result = subprocess.CompletedProcess(
+            args=[], returncode=0, stdout=task.json.dumps(records).encode(), stderr=b""
+        )
+        with patch.object(task.subprocess, "run", return_value=result):
+            with self.assertRaisesRegex(ValueError, "differs from allowlist"):
+                task.verify_r2_mime_sample(self.plan, self.remote)
+
+    def test_public_403_does_not_abort_an_authenticated_preflight(self):
+        # A public WAF rejection is a separate --check-public concern.
+        with patch.object(task, "all_remote_objects",
+                          return_value=self.remote) as fetch, \
+             patch.object(task, "verify_r2_mime_sample") as mime, \
+             patch.object(task, "verify_public_headers",
+                          side_effect=ValueError("HTTP Error 403")) as public:
+            missing, _ = task.assess(self.plan, quiet=True)
+        self.assertEqual(len(missing), 3)
+        fetch.assert_called_once_with(with_mime=False)
+        mime.assert_called_once_with(self.plan, self.remote)
+        public.assert_not_called()
+
+    @patch.object(task, "all_remote_objects")
+    @patch.object(task, "local_plan")
+    @patch.object(task.shutil, "which", return_value="/usr/bin/rclone")
+    @patch.object(task, "verify_r2_mime_sample")
+    @patch.object(task, "verify_public_headers")
+    def test_explicit_public_diagnostic_is_read_only(
+        self, public, mime, which, local, remote,
+    ):
+        local.return_value = self.plan
+        remote.return_value = self.remote
+        self.assertEqual(task.main(["--check-public"]), 0)
+        public.assert_called_once_with(self.plan, self.remote)
+        mime.assert_not_called()
 
 
 class PublicHeaderTests(unittest.TestCase):

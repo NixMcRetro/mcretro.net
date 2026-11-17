@@ -87,12 +87,13 @@ class PhotoOnlyUploadTests(unittest.TestCase):
         run.assert_not_called()
         self.assertEqual(remote.call_count, 1)
 
+    @patch.object(task, "run_upload_with_dashboard", return_value=0)
     @patch.object(task, "all_remote_objects")
     @patch.object(task, "local_plan")
     @patch.object(task.shutil, "which", return_value="/usr/bin/rclone")
     @patch.object(task.subprocess, "run")
     def test_upload_only_the_three_missing_objects_and_check_bytes(
-        self, run, which, local, remote
+        self, run, which, local, remote, upload
     ):
         local.return_value = self.plan
         full = {**self.remote, **{
@@ -101,28 +102,34 @@ class PhotoOnlyUploadTests(unittest.TestCase):
         }}
         remote.side_effect = [self.remote, full]
         run.return_value = subprocess.CompletedProcess(args=[], returncode=0)
-        with patch.object(task, "EXPECTED_OBJECTS", len(self.plan)):
+        with patch.object(task, "EXPECTED_OBJECTS", len(self.plan)), patch.object(task, "require_rich"):
             self.assertEqual(task.main(["--upload"]), 0)
-        self.assertEqual(run.call_count, 2)
-        copy_call = run.call_args_list[0]
-        command = copy_call.args[0]
+        self.assertEqual(run.call_count, 1)
+        self.assertEqual(upload.call_count, 1)
+        command, raw_keys, byte_count, file_count, existing_count = upload.call_args.args
         self.assertEqual(command[1], "copy")
-        keys = copy_call.kwargs["input"].rstrip(b"\0").split(b"\0")
+        self.assertIn("--use-json-log", command)
+        self.assertIn("--stats-log-level", command)
+        keys = raw_keys.rstrip(b"\0").split(b"\0")
         self.assertEqual(set(keys), {
             key.encode() for key in set(self.plan) - task.PILOT_KEYS
         })
-        self.assertEqual(run.call_args_list[1].args[0][1], "check")
-        self.assertIn("--download", run.call_args_list[1].args[0])
-        self.assertTrue(set(run.call_args_list[1].kwargs["input"]
+        self.assertEqual(byte_count, 3 * 123)
+        self.assertEqual(file_count, 3)
+        self.assertEqual(existing_count, 20)
+        self.assertEqual(run.call_args.args[0][1], "check")
+        self.assertIn("--download", run.call_args.args[0])
+        self.assertTrue(set(run.call_args.kwargs["input"]
                             .rstrip(b"\0").split(b"\0")).isdisjoint(
                             {k.encode() for k in task.PILOT_KEYS}))
 
+    @patch.object(task, "run_upload_with_dashboard", return_value=0)
     @patch.object(task, "all_remote_objects")
     @patch.object(task, "local_plan")
     @patch.object(task.shutil, "which", return_value="/usr/bin/rclone")
     @patch.object(task.subprocess, "run")
     def test_interrupted_upload_resumes_only_missing_keys(
-        self, run, which, local, remote
+        self, run, which, local, remote, upload
     ):
         local.return_value = self.plan
         one = "full/consoles/sega/IMG_9991.jxl"
@@ -132,9 +139,9 @@ class PhotoOnlyUploadTests(unittest.TestCase):
              for k, v in self.plan.items()},
         ]
         run.return_value = subprocess.CompletedProcess(args=[], returncode=0)
-        with patch.object(task, "EXPECTED_OBJECTS", len(self.plan)):
+        with patch.object(task, "EXPECTED_OBJECTS", len(self.plan)), patch.object(task, "require_rich"):
             self.assertEqual(task.main(["--upload"]), 0)
-        sent = run.call_args_list[0].kwargs["input"].rstrip(b"\0").split(b"\0")
+        sent = upload.call_args.args[1].rstrip(b"\0").split(b"\0")
         self.assertNotIn(one.encode(), sent)
         self.assertNotIn(next(iter(task.PILOT_KEYS)).encode(), sent)
         self.assertEqual(len(sent), 2)
@@ -171,6 +178,33 @@ class PhotoOnlyUploadTests(unittest.TestCase):
             set(run.call_args.kwargs["input"].rstrip(b"\0").split(b"\0")),
             {key.encode() for key in self.plan},
         )
+
+    @patch.object(task, "show_demo")
+    @patch.object(task, "all_remote_objects")
+    @patch.object(task, "local_plan")
+    @patch.object(task.shutil, "which")
+    def test_demo_is_independent_from_rclone_and_the_originals(
+        self, which, local, remote, demo
+    ):
+        self.assertEqual(task.main(["--demo"]), 0)
+        demo.assert_called_once_with()
+        local.assert_not_called()
+        remote.assert_not_called()
+        which.assert_not_called()
+
+    @patch.object(task, "all_remote_objects")
+    @patch.object(task, "local_plan")
+    @patch.object(task.shutil, "which", return_value="/usr/bin/rclone")
+    @patch.object(task, "run_upload_with_dashboard", return_value=13)
+    def test_real_transfer_failure_stops_without_verification(
+        self, upload, which, local, remote
+    ):
+        local.return_value = self.plan
+        remote.return_value = self.remote
+        with patch.object(task, "require_rich"):
+            with self.assertRaisesRegex(ValueError, "rclone status 13"):
+                task.main(["--upload"])
+        remote.assert_called_once()
 
     @patch.object(task, "validate")
     def test_local_photo_counts_change_or_changed_approval_fails(self, validate):

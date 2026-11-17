@@ -57,6 +57,27 @@ class ArchiveBuilderTests(unittest.TestCase):
         self.assertTrue(draft['owner_review_required'])
         self.assertEqual(draft['files'][0]['review_status'], 'NOT_REVIEWED')
 
+    def test_optional_bmp_and_gif_archive_items(self):
+        self.photo('consoles/nintendo/capture/image0000.bmp')
+        gif = self.original/'projects/project-yampad/animated.gif'
+        gif.parent.mkdir(parents=True, exist_ok=True)
+        gif.write_bytes(b'GIF89a' + b'0' * 30)
+        copied = self.converted/'full/projects/project-yampad/animated.gif'
+        copied.parent.mkdir(parents=True, exist_ok=True)
+        copied.write_bytes(gif.read_bytes())
+        report = build_photos(self.original, self.converted, self.stage)
+        self.assertEqual(report['converted_pairs'], 2)
+        self.assertEqual(report['missing_pairs'], 0)
+        data = json.loads((self.stage/'photo-gallery/albums.generated.json').read_text())
+        self.assertEqual(len(data['photos']), 2)
+        animated = next(item for item in data['photos'] if item['path'].endswith('.gif'))
+        self.assertEqual(animated['path'], animated['thumbnail'])
+        with (self.stage/'reports/photos-upload-plan.csv').open() as handle:
+            uploads = list(csv.DictReader(handle))
+        self.assertEqual(len(uploads), 3)
+        self.assertEqual([r['mime'] for r in uploads].count('image/gif'), 1)
+        self.assertTrue(all(item['approved_for_publication'] == 'NO' for item in uploads))
+
     def test_missing_output_flagged(self):
         (self.original/'A.JPG').write_bytes(b'jpeg')
         report = build_photos(self.original, self.converted, self.stage)

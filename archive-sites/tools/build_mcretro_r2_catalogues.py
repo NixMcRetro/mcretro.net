@@ -172,7 +172,7 @@ def build_photos(original: Path, converted: Path, stage: Path) -> dict:
         top = pretty(parts[0]) if parts else 'Uncategorised'
         label = pretty(parts[-1]) if parts else 'Uncategorised'
         albums.append({'id': identifier, 'title': label, 'description': directory if directory != '.' else 'Root album',
-                       'group': top})
+                       'path': '' if directory == '.' else directory, 'group': top})
 
     # The only generated alt text is an honest filename/folder description.
     # Generic text is explicitly queued for owner review before public release.
@@ -183,8 +183,37 @@ def build_photos(original: Path, converted: Path, stage: Path) -> dict:
                        'alt': f'Archive photograph {title} in {pretty(Path(directory).name)}',
                        'album': album})
 
+    # Folder tree mirrors every source directory level, not merely the leaf
+    # directories that contain pictures. A single folder can hold both images
+    # and child folders. Paths remain source-relative, not display-name slugs.
+    folder_nodes = {'': {'path': '', 'name': 'All photographs', 'parent': None,
+                         'photo_count': 0, 'direct_photo_count': 0}}
+    def ensure_folder(directory):
+        if not directory or directory == '.':
+            return
+        prefix = ''
+        for segment in directory.split('/'):
+            node_path = segment if not prefix else prefix + '/' + segment
+            if node_path not in folder_nodes:
+                folder_nodes[node_path] = {
+                    'path': node_path, 'name': pretty(segment),
+                    'parent': prefix, 'photo_count': 0, 'direct_photo_count': 0}
+            prefix = node_path
+
+    for directory in albums_by_dir:
+        ensure_folder(directory)
+    for _, directory, _, _, _ in images:
+        node_path = '' if directory == '.' else directory
+        folder_nodes[node_path]['direct_photo_count'] += 1
+        folder_nodes['']['photo_count'] += 1
+        while node_path:
+            folder_nodes[node_path]['photo_count'] += 1
+            node_path = folder_nodes[node_path]['parent']
+    folders = [folder_nodes[key] for key in sorted(folder_nodes, key=lambda p: (p.count('/'), p.casefold()))]
+
     photo_stage = stage / 'photo-gallery'
-    write_json(photo_stage / 'albums.generated.json', {'schema_version': 1, 'albums': albums, 'photos': photos})
+    write_json(photo_stage / 'albums.generated.json',
+               {'schema_version': 1, 'albums': albums, 'folders': folders, 'photos': photos})
     write_csv(stage / 'reports' / 'skipped-photo-files.csv', ['path','reason','extension','bytes'], skipped)
     write_csv(stage / 'reports' / 'missing-photo-conversions.csv', ['path','problem'], missing)
     write_csv(stage / 'reports' / 'photo-alt-review.csv', ['source_path','album_folder','reason','suggested_alt'], review)

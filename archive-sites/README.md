@@ -11,6 +11,15 @@ Two separate static website starters are in this **draft, unmerged PR**. Neither
 
 The committed sample catalogues still contain **obsolete connectivity-test entries** (`mcretro-r2-check.txt` and `mcretro-r2-check.png`), **not** the full gallery or the verified 20-image pilot. They are examples only and **must not be uploaded as public catalogues**. No original photo archive, full generated photo catalogue, private review metadata or R2 credentials are committed.
 
+**Latest owner readback:** 329/329 HTML pages now match, with current
+`albums.json` and all 5 fonts present. Finder recreated a single
+`site/.DS_Store` file. The draft audit now reports this ordinary Finder
+metadata separately rather than making it a technical failure; all other
+unexpected files or symlinks remain errors. This is **not** permission to
+upload a folder recursively; only an explicitly approved, exact-key manifest
+could be used for any future transfer. The next milestone is a local browser
+review, not another image upload.
+
 ## Next action: read-only audit of the existing Mac staging (no source rescan)
 
 The 20-object R2 pilot was fully verified. Before considering any wider release,

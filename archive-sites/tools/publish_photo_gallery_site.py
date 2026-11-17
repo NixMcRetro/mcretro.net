@@ -95,6 +95,8 @@ def public_projection(private: dict) -> bytes:
 def rows_from_csv(stage: Path, catalogue_bytes: bytes) -> tuple[dict, dict]:
     """Return the exact release keys and verified photo-object size map."""
     site_dir = stage / SITE_ROOT
+    if site_dir.is_symlink() or not site_dir.is_dir():
+        raise ValueError("Unsafe or missing generated site directory")
     report = stage / "reports/gallery-pages-upload-plan.csv"
     with report.open(newline="", encoding="utf-8") as stream:
         static = list(csv.DictReader(stream))
@@ -247,9 +249,6 @@ def verify_remote(site: dict, photos: dict, catalogue: bytes,
     if missing:
         raise ValueError(f"{len(missing)} website objects still missing: {missing[:3]}")
     # Actual byte comparisons, not just filenames/sizes. No delete or overwrite.
-    groups = (
-        (next(iter(site.values()))["source"], None),  # unused placeholder
-    )
     site_root = next(item["source"] for key, item in site.items()
                      if key == "index.html")
     fonts_root = next(item["source"] for key, item in site.items()
@@ -289,8 +288,8 @@ def verify_remote(site: dict, photos: dict, catalogue: bytes,
         expected = site[key]["mime"]
         if actual.split(";", 1)[0].strip() != expected.split(";", 1)[0].strip():
             raise ValueError(f"R2 website Content-Type mismatch at {key}: {actual!r}")
-    print("PASS: 336 website keys/sizes, 336 downloaded-byte comparisons "
-          "and sampled MIME headers match.", flush=True)
+    print(f"PASS: {len(site)} website keys/sizes and downloaded-byte comparisons "
+          f"match, including {len(sample)} sampled MIME headers.", flush=True)
 
 
 def publish(stage: Path, converted: Path, html: Path,

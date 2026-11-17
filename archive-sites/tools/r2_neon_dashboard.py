@@ -306,7 +306,24 @@ def preflight_display():
     Stage changes are driven by completed operations, not invented progress.
     No R2 calls or file operations are made by the display itself.
     """
-    require_rich()
+    try:
+        require_rich()
+    except ValueError:
+        # Preserve the original dependency-free read-only preflight when Rich
+        # is not installed in the Python interpreter used to launch this CLI.
+        class PlainPreflight:
+            def advance(self, stage: int) -> None:
+                if stage not in (1, 2):
+                    raise ValueError("Invalid preflight stage")
+                print(f"PREFLIGHT: {STAGES[stage][0]} ...", flush=True)
+
+            def finish(self) -> None:
+                print("PREFLIGHT COMPLETE (read-only; nothing uploaded)", flush=True)
+
+        print(f"PREFLIGHT: {STAGES[0][0]} ...", flush=True)
+        yield PlainPreflight()
+        return
+
     from rich.console import Console
     from rich.live import Live
 

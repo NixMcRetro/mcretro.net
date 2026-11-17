@@ -31,6 +31,34 @@
 
 The 20 pilot objects are already publicly accessible at their exact URLs on the public R2 custom domain. **Unlisted URL is not private.** The owner previously authorised this narrow public pilot. Do not assume the remainder is also approved.
 
+## Read-only Mac staging audit: owner readback (17th November 2026)
+
+The owner ran the new `audit_gallery_staging.py` against the local optimised collection and provided the complete JSON result. This audit **did not access the 26 GB original archive, contact R2, or modify staging files**.
+
+| Check | Observed result |
+| --- | --- |
+| Photographs | **8,412** |
+| Albums containing photographs | **212** |
+| Generated folder routes expected | **329** |
+| Image objects verified locally | **16,823** |
+| Image bytes | **4,276,856,102** |
+| GIF objects | **1** |
+| Required staged fonts | **5** |
+| Approved per-photo metadata | **0** for alt, caption, scene description, components, search terms, and capture date |
+| Pending visual alt review | **8,412** |
+| File Server inventory | **987**, owner review still required |
+| Live/public upload authorisation | **None beyond previously uploaded 20-object pilot** |
+
+**Three local staging discrepancies were reported, not image-conversion failures:**
+
+1. `photo-gallery/site/albums.json` is **stale** against `photo-gallery/albums.generated.json`.
+2. **0 of 329** static HTML pages exactly match the current template and manifest; every page needs a refresh or is missing.
+3. `photo-gallery/site/.DS_Store` is the sole extraneous staging file; do not accidentally upload it.
+
+**Proposed remediation:** preserve the existing *generated site folder* as a local backup outside `site/`, then run **only** `render_gallery_pages.py --html <current-template>` to rebuild the 329 HTML pages, the site `albums.json`, sitemap, and all-`NO` HTML upload plan using the existing manifest. Do not rerun `build_mcretro_r2_catalogues.py`, since that would traverse the historical original photos unnecessarily. Do not run an R2 command. Moving the old `site/` aside also isolates its `.DS_Store` without deleting it. Afterwards rerun the read-only readiness audit, expecting 329 exactly matching HTML pages, 331 planned static site objects and no extra site files.
+
+**This remediation has been proposed, not yet shown as completed by the owner.** A technically clean result does not authorise the remaining 16,803 image objects, site HTML, captions/alt text, fonts, redirects, or the File Server.
+
 ## Work to do next - no R2 upload or publication
 
 1. **Recheck the current, private local staging only**, without reading the historical originals: `python3 "$HOME/Downloads/validate_r2_upload.py"`; then `python3 "$HOME/Downloads/preview_mcretro_gallery.py" --check-only` using the current gallery template and scripts. Ensure the manifest, upload-plan CSV and optimised filenames still agree.

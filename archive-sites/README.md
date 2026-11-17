@@ -20,6 +20,31 @@ The restored collection lives on the owner's Mac; the paths below are *local*, n
 
 The photo viewer now offers collection/album selectors and **60-image batches** rather than inserting thousands of thumbnail elements at once. The gallery uses an external JSON catalogue and is still a static site with no backend.
 
+## Owner archive audit (17th November 2026)
+
+The owner-supplied Mac audit confirmed:
+
+- 8,391 / 8,391 supported photographs converted successfully, **0 failed**, 212 album folders, 4.275 GB of gallery plus thumbnails.
+- The 271 skipped entries were **249 .DS_Store Finder files (ignore), 20 BMP capture images (keep), 1 animated GIF (keep animation), 1 sitemap.xml (review separately, not part of the photos)**. All skipped objects together occupy only 7,640,751 bytes.
+- 8,075 photographs have generic filenames and require descriptive accessibility text review. Generated filename-based alt text is a placeholder.
+- The File Server contains 987 candidate files totalling 0.999 GB. These are **not approved for publication**.
+
+The 20 BMPs are all in `consoles/nintendo/nintendo-ds-is-nitro-capture/serial-08062654/`. The GIF is `projects/project-yampad/animated.gif`.
+
+### Step 0 - Optional local recovery of 20 BMP screenshots and one animated GIF
+
+Use the companion local script **before regenerating** the catalogues, if these historical images should be included in the local preview:
+
+    python3 archive-sites/tools/prepare_gallery_extras.py
+
+That first invocation is a dry run. To explicitly create separate copies:
+
+    python3 archive-sites/tools/prepare_gallery_extras.py --apply
+
+The 20 Nintendo DS BMP source images become lossless JXL gallery and thumbnail copies in the existing converted tree, with no change to the original screenshots. The animated GIF is copied byte-for-byte into the converted `full/` tree, preserving its animation. Nothing is uploaded. The script verifies generated JXL images decode and checks the GIF copy checksum. Inspect the resulting DS screenshots for palette and pixel fidelity before approving publication. Any existing incomplete or mismatched output is reported rather than overwritten.
+
+Then run the catalogue builder below again. With this optional recovery completed, the archive may list **8,412 images**, comprising the 8,391 existing converted photographs, 20 recovered BMP screenshots and one GIF, provided all outputs validate. `sitemap.xml` and Finder metadata remain excluded.
+
 ## Step 1 - Build local inventories and draft catalogues (read-only)
 
 Run this on the Mac that contains the archives:
@@ -55,7 +80,7 @@ Generated files in ~/Desktop/McRetro-R2-Staging:
 | file-server/catalogue.generated.json | Draft File Server catalogue with **owner_review_required: true** and **NOT_REVIEWED** status for every file; never upload without review |
 | reports/file-server-skipped.csv | Skipped symlinks/nonregular file entries |
 
-The builder checks for an actual JXL signature, but does not re-decode or visually validate every file; do separate spot checks. It does not automatically identify private photos, licensing restrictions, malware, personal details or sensitive content. Review these before any public upload. Generated alt text is based on the source pathname, not an AI understanding of image contents; the generic descriptions are NOT accessibility-complete.
+The builder also accepts the recovered BMP-JXL pairs and the unchanged GIF copy; GIFs use their same full image as the thumbnail. The builder checks for an actual JXL signature, but does not re-decode or visually validate every file; do separate spot checks. It does not automatically identify private photos, licensing restrictions, malware, personal details or sensitive content. Review these before any public upload. Generated alt text is based on the source pathname, not an AI understanding of image contents; the generic descriptions are NOT accessibility-complete.
 
 **Do not put the local staging directory, original images, or review CSVs in GitHub.** They can include names and paths not intended for publication. A private review process must approve the eventual public catalogue. Photo thumbnails and original file downloads are public the moment they're uploaded into these public R2 buckets.
 

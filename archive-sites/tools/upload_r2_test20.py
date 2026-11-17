@@ -59,12 +59,20 @@ def selected_rows() -> list[dict]:
     return rows
 
 
-def all_remote_objects() -> dict[str, dict]:
-    """Read only. Lists the final bucket without changing its contents."""
+def all_remote_objects(with_mime: bool = True) -> dict[str, dict]:
+    """Read-only R2 inventory.
+
+    The original 20-object pilot retains full MIME verification by default.
+    Large archives can disable MIME during listing to avoid an extra HEAD
+    request per S3/R2 object; callers must separately sample HTTP headers.
+    """
     command = [
         "rclone", "lsjson", "--recursive", "--files-only",
-        "--no-modtime", "--s3-no-check-bucket", FINAL_DESTINATION,
+        "--no-modtime", "--s3-no-check-bucket",
     ]
+    if not with_mime:
+        command.append("--no-mimetype")
+    command.append(FINAL_DESTINATION)
     result = subprocess.run(command, capture_output=True, text=True, check=False)
     if result.returncode:
         raise ValueError("Cannot read final R2 bucket: " + result.stderr[-600:])

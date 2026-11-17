@@ -358,7 +358,6 @@ Finally, the ownership commands in this setup assigned `/var/www/` to `www-data`
 
 ~~~sh
 sudo chown -R www-data /var/www/
-
 sudo chgrp -R www-data /var/www/
 ~~~
 
@@ -489,7 +488,6 @@ Next we want to remove both default settings for Apache as they will just get in
 
 ~~~sh
 sudo rm /etc/apache2/sites-available/000-default.conf
-
 sudo rm /etc/apache2/sites-available/default-ssl.conf
 ~~~
 
@@ -637,7 +635,6 @@ a2dissite = Apache2 Disable Site. Disabling the already deleted configurations.
 
 ~~~sh
 sudo a2dissite 000-default.conf
-
 sudo a2dissite default-ssl.conf
 ~~~
 
@@ -725,19 +722,12 @@ Enter the following. If only using one website, don't enter the second "HiddenSe
 
 ~~~text
 SocksPort 0
-
 SocksListenAddress 127.0.0.1
-
 RunAsDaemon 1
-
 DataDirectory /var/lib/tor
-
 HiddenServiceDir /var/lib/tor/website1/
-
 HiddenServicePort 80 127.0.0.1:9070
-
 HiddenServiceDir /var/lib/tor/website2/
-
 HiddenServicePort 80 127.0.0.1:9071
 ~~~
 
@@ -759,23 +749,16 @@ Tor generates the normal service keys when it first starts with the service conf
 
 ~~~sh
 sudo service tor stop
-
 sudo rm /var/lib/tor/website1/private_key
-
 sudo nano /var/lib/tor/website1/private_key
-
 sudo chown -R debian-tor:debian-tor /var/lib/tor/website1/
-
 sudo chmod -R 700 /var/lib/tor/website1/
 ~~~
 
 ~~~sh
 sudo rm /var/lib/tor/website2/private_key
-
 sudo nano /var/lib/tor/website2/private_key
-
 sudo chown -R debian-tor:debian-tor /var/lib/tor/website2/
-
 sudo chmod -R 700 /var/lib/tor/website2/
 ~~~
 
@@ -803,9 +786,7 @@ You'll need three things in the intended workflow: a `.csr` certificate signing 
 
 ~~~sh
 cd ~
-
 openssl genrsa -out tim.key 4096
-
 openssl req -new -key tim.key -out tim.csr
 ~~~
 
@@ -813,43 +794,32 @@ The signing-request command asks for these details:
 
 ~~~text
 Country Name (Two letter code e.g. AU)
-
 State or Province Name (e.g. NSW)
-
 Locality Name (e.g. Sydney)
-
 Organisational Name (e.g. Tim's Website)
-
 Organisational Unit Name (e.g. Website)
-
 Common Name (Domain name *.tim.net or tim.net)
-
 Email Address (e.g. webmaster@tim.net)
 ~~~
 
 ~~~sh
 cd ~
-
 wget http://www.cacert.org/certs/root.txt
-
 sudo cp root.txt /etc/ssl/certs/cacert-root.crt
 ~~~
 
 ~~~sh
 sudo mv tim.key /etc/ssl/private/tim.key
-
 sudo mv tim.crt /etc/ssl/certs/tim.crt
 ~~~
 
 ~~~sh
 sudo chown root:root /etc/ssl/private/tim.key
-
 sudo chmod 600 /etc/ssl/private/tim.key
 ~~~
 
 ~~~sh
 sudo chown root:root /etc/ssl/certs/tim.crt
-
 sudo chmod 644 /etc/ssl/certs/tim.crt
 ~~~
 
@@ -869,21 +839,15 @@ For multiple onion services in this historical setup, this is where I prepared s
 
 ~~~sh
 cd /var/www/
-
 sudo mkdir website1
-
 sudo chown -R www-data /var/www/website1/
-
 sudo chgrp -R www-data /var/www/website1/
 ~~~
 
 ~~~sh
 cd /var/www/
-
 sudo mkdir website2
-
 sudo chown -R www-data /var/www/website2/
-
 sudo chgrp -R www-data /var/www/website2/
 ~~~
 

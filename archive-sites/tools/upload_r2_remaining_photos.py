@@ -8,7 +8,7 @@ Server files, and the original ~26 GB photo archive are outside this scope.
 Default: validate the full local manifest and inspect R2, with NO uploads.
 --demo: animated PHOTON UPLINK preview, no local scan or network activity.
 --upload: copy ONLY missing, allowlisted objects, NEVER overwrite or delete.
---verify: check exact remote keys, sizes, MIME and 40 downloaded-byte samples.
+--verify: check exact remote keys and sizes, public MIME/size samples and 40 downloaded-byte samples.
 --deep-verify: read-only byte comparison of ALL 16,823 R2 objects (~4.277 GB).
 
 The original 20 pilot objects must already be present with their expected
@@ -21,11 +21,14 @@ upload_r2_test20.py (for the immutable, frozen pilot key set).
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 from pathlib import Path
 import shutil
 import subprocess
 import sys
+from urllib.parse import quote
+from urllib.request import Request, urlopen
 
 from r2_neon_dashboard import show_demo, run_upload_with_dashboard, require_rich, preflight_display
 from upload_r2_test20 import KEYS as PILOT_KEYS, all_remote_objects
@@ -89,12 +92,68 @@ def audit_existing(plan: dict[str, dict],
         row = plan[key]
         if item.get("Size") != int(row["bytes"]):
             raise ValueError("Existing R2 object size mismatch: " + key)
-        if item.get("MimeType") != row["mime"]:
+        # Fast lsjson --no-mimetype deliberately omits this field: inspecting
+        # MIME for thousands of S3 objects may need a slow HEAD per object.
+        # If a full-MIME result is supplied, never ignore an actual mismatch.
+        mime = item.get("MimeType")
+        if mime is not None and mime != row["mime"]:
             raise ValueError(
                 "Existing R2 object MIME mismatch: " + key +
-                " (" + repr(item.get("MimeType")) + ")"
+                " (" + repr(mime) + ")"
             )
     return sorted(set(plan) - set(remote))
+
+
+def header_sample_keys(remote: dict[str, dict]) -> list[str]:
+    """Known pilot plus up to 40 evenly distributed, existing non-pilot keys."""
+    others = sorted(set(remote) - PILOT_KEYS)
+    if len(others) <= SAMPLE_COUNT:
+        sampled = others
+    else:
+        sampled = [others[i * (len(others) - 1) // (SAMPLE_COUNT - 1)]
+                   for i in range(SAMPLE_COUNT)]
+    return sorted((PILOT_KEYS & set(remote)) | set(sampled))
+
+
+def verify_public_headers(plan: dict[str, dict], remote: dict[str, dict]) -> None:
+    """Read-only HEAD samples for actual published Content-Type and Length.
+
+    A fast bucket ListObjects response gives exact keys and bytes, but not MIME.
+    Check all 20 pilot objects plus up to 40 dispersed existing object URLs,
+    concurrently, without requiring thousands of serial S3 HEAD requests.
+    """
+    keys = header_sample_keys(remote)
+    if not keys:
+        raise ValueError("Cannot inspect public image headers: no R2 objects")
+    def inspect(key: str) -> str:
+        url = "https://photos.mcretro.net/" + quote(key, safe="/")
+        request = Request(url, method="HEAD")
+        try:
+            with urlopen(request, timeout=15) as response:
+                if response.status != 200:
+                    raise ValueError("HTTP " + str(response.status))
+                actual_mime = response.headers.get_content_type()
+                size_str = response.headers.get("Content-Length", "")
+                expected = plan[key]
+                if actual_mime != expected["mime"]:
+                    raise ValueError("public Content-Type " + repr(actual_mime) +
+                                     ", expected " + repr(expected["mime"]))
+                if not size_str.isdigit() or int(size_str) != int(expected["bytes"]):
+                    raise ValueError("public Content-Length " + repr(size_str) +
+                                     ", expected " + repr(expected["bytes"]))
+        except Exception as exc:
+            raise ValueError(f"Public delivery header audit failed for {key}: {exc}") from exc
+        return key
+    print(
+        f"Checking public Content-Type and Length for {len(keys)} "
+        "dispersed photos (includes all 20 pilot objects)...", flush=True
+    )
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures = [pool.submit(inspect, key) for key in keys]
+        # Handle failures, but allow workers to finish cleanly.
+        for future in as_completed(futures):
+            future.result()
+    print(f"PASS: {len(keys)} sampled public image headers match.", flush=True)
 
 
 def nul_keys(keys: list[str]) -> bytes:
@@ -139,10 +198,14 @@ def verify_bytes(keys: list[str]) -> None:
 def assess(plan: dict[str, dict], on_stage=None, quiet: bool = False) -> tuple[list[str], dict[str, dict]]:
     if on_stage is not None:
         on_stage(1)  # Existing R2 inventory, after validating local images.
-    remote = all_remote_objects()
+    remote = all_remote_objects(with_mime=False)
     if on_stage is not None:
-        on_stage(2)  # Validate the pilot objects and exact allowlist.
+        on_stage(2)  # Validate exact keys/sizes and public delivery samples.
     missing = audit_existing(plan, remote)
+    # MIME is not silently assumed correct: sample the actual browser-facing
+    # JPEG XL/GIF Content-Type and byte length, and always check the full pilot.
+    # Unlike rclone lsjson's default, this avoids thousands of S3 HEAD calls.
+    verify_public_headers(plan, remote)
     present_bytes = sum(int(plan[key]["bytes"]) for key in remote)
     missing_bytes = sum(int(plan[key]["bytes"]) for key in missing)
     if not quiet:
@@ -169,8 +232,10 @@ def verify(plan: dict[str, dict], deep: bool = False) -> None:
     if len(remote) != EXPECTED_OBJECTS:
         raise ValueError("Unexpected complete-bucket object count")
     print(
-        f"PASS: exactly {EXPECTED_OBJECTS:,} R2 keys, sizes and image MIME types "
-        f"match the local catalogue ({EXPECTED_BYTES:,} bytes).",
+        f"PASS: exactly {EXPECTED_OBJECTS:,} R2 keys and sizes "
+        f"match the local catalogue ({EXPECTED_BYTES:,} bytes). "
+        "Content-Type/Length independently checked for all pilot objects "
+        "and a distributed sample; not every object's MIME type.",
         flush=True,
     )
     keys = sorted(plan) if deep else sampled_keys(plan)

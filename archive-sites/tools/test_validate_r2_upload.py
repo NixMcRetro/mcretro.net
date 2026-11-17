@@ -104,7 +104,7 @@ class FinalR2PreflightTests(unittest.TestCase):
     def test_wrong_local_source_path_blocked(self):
         self.rows[0]['local_path'] = str(self.converted / 'full/other/animated.gif')
         self.save()
-        with self.assertRaisesRegex(ValueError, 'not exactly'):
+        with self.assertRaisesRegex(ValueError, 'not an expected converted path'):
             validate(self.stage, self.converted)
 
     def test_publication_approval_unexpected_blocked(self):

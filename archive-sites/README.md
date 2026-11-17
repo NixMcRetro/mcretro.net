@@ -18,11 +18,11 @@ The restored collection lives on the owner's Mac; the paths below are *local*, n
 - Likely original File Server folder: /Users/nix/Desktop/R2 FILES/files (override with --files if elsewhere)
 - Existing conversion summary: 8,391 of 8,391 supported images processed, 0 failures, 271 unsupported/skipped, 4,275,129,262 bytes of JXL gallery images plus thumbnails.
 
-The Photo Gallery now follows the **original nested directory structure** using folder cards, breadcrumbs, an up-one-level button, and hash links to folders. A global search still finds images across the entire collection; image grids load in **60-image batches**. The catalogue builder adds a generated `folders` tree (parent and descendant/direct counts), while the browser also supports older manifests by reading the existing album folder paths. No images need reconverting or moving for navigation. This remains a static, backend-free site.
+The Photo Gallery now follows the **original nested directory structure** using folder cards, breadcrumbs, an up-one-level button, and real static folder URLs. A global search still finds images across the entire collection; image grids load in **60-image batches**. The catalogue builder adds a generated `folders` tree (parent and descendant/direct counts), while the browser also supports older manifests by reading the existing album folder paths. No images need reconverting or moving for navigation. This remains a static, backend-free site.
 
 ## McRetro layout and light/dark-mode compatibility
 
-The separate Photo Gallery retains its responsive image viewer and window styling, but now uses the **actual McRetro.net wordmark font (Korataki)**, the main site's header proportions, matching Montserrat and Merriweather typefaces, familiar navigation links, and the same sun/moon theme-toggle icon treatment. Nested folder cards, breadcrumbs, global search, and 60-photo batches remain. Only the standalone gallery template changes; no Jekyll theme rebuild is required.
+The separate Photo Gallery retains its responsive image viewer and window styling, but now uses the **actual McRetro.net wordmark font (Korataki)**, the main site's header proportions, matching Montserrat and Merriweather typefaces, one slim archive utility bar, and the same sun/moon theme-toggle icon treatment. Nested folder cards, breadcrumbs, global search, and 60-photo batches remain. Only the standalone gallery template changes; no Jekyll theme rebuild is required.
 
 Colours and typography are matched to the existing **main-branch** \`assets/css/style.css\` theme tokens (including cream light background #FFF8DC, dark background #191D27, light links #0009B5, dark links #93C5FD, Montserrat-style headings and Merriweather-style body fallback). The gallery uses the main site's \`mcretro-theme\` preference key and a manual light/dark button, with system preference when unset; because subdomains have separate browser storage, choices made on mcretro.net are not automatically shared with photos.mcretro.net. The button on the gallery remembers that subdomain's choice.
 
@@ -124,47 +124,45 @@ For R2, assign **Content-Type: image/jxl** to JPEG XL objects. Upload the manife
 
 JPEG XL-only delivery has browser compatibility limitations. Validate with the actual target browsers and provide clear feedback or a suitable fallback plan if required, before publication.
 
-## Local preview (without any Cloudflare upload)
+## Short, archive-friendly folder URLs
 
-The preview server reads only the **generated album manifest** and **converted image objects**. It binds to 127.0.0.1 and allows requests only for catalogue-listed image paths, index.html and albums.json; no directory listing, original image folder access, File Server access or publication is possible.
+The old \`#folder=accessories%2F...\` addresses were JavaScript fragments, not real server-side pages. This PR now generates a directly fetchable HTML object for **every folder**, for example:
 
-**Stage the main site's original font assets first.** This separate script fetches a verified snapshot of Korataki and the Latin subsets of Montserrat/Merriweather from McRetro's own GitHub repository into the local staging folder, along with OFL licences. It does not upload or publish font files.
+    https://photos.mcretro.net/albums/serial-cnk7040y04-XXXXXXXXXX.html
+
+The ten hexadecimal characters are a stable digest of the full source folder path, preventing collisions with other identically named serial folders. These are normal \`.html\` URLs, not fragments or query parameters. They are short enough to share and easier for preservation tools to discover. The original photo folder names, image keys and file contents never change.
+
+The generated HTML includes ordinary hyperlinks and real initial folder listings, breadcrumbs and image thumbnails. Even without JavaScript, archivists can follow links through the original folder tree. The builder also creates an XML sitemap. Internet Archive capture is not guaranteed, especially for JPEG XL image files, but this eliminates JavaScript-only navigation as a barrier.
+
+Unlike extensionless paths, \`/albums/<slug>-<hash>.html\` directly maps to an exact R2 object key; no Worker or deep-route rewrite is necessary. The gallery homepage at \`/\` will still require the existing planned Cloudflare rewrite to \`/index.html\` when publication is separately authorised.
+
+### Regenerate the manifest and static HTML locally
+
+The existing catalogue builder generates \`folder.url\` for every folder. It now imports \`gallery_routes.py\` as well as \`gallery_naming.py\`. Regenerate the catalogue as usual, then render the actual HTML pages:
+
+    python3 archive-sites/tools/build_mcretro_r2_catalogues.py
+    python3 archive-sites/tools/render_gallery_pages.py
+
+For the Downloads workflow, retrieve the current versions of \`build_mcretro_r2_catalogues.py\`, \`gallery_naming.py\`, \`gallery_routes.py\`, \`render_gallery_pages.py\`, the owner naming configuration \`folder-names.json\`, and the gallery HTML template. Then run:
+
+    python3 "$HOME/Downloads/build_mcretro_r2_catalogues.py" --names "$HOME/Downloads/folder-names.json"
+    python3 "$HOME/Downloads/render_gallery_pages.py" --html "$HOME/Downloads/mcretro-gallery-index.html"
+
+The generator writes \`~/Desktop/McRetro-R2-Staging/photo-gallery/site/index.html\`, \`site/albums/*.html\`, \`site/albums.json\`, and \`site/sitemap.xml\`. The new \`reports/gallery-pages-upload-plan.csv\` contains only **NO** publication approvals. Nothing is uploaded or pushed to the public blog.
+
+### Preview the working static folder URLs
+
+The gallery retains Korataki branding and McRetro light/dark colours but has **one slim utility bar** under the wordmark, not the full site menu or an additional window-title bar.
+
+Run \`stage_gallery_theme.py\` to prepare verified font copies locally, then \`preview_mcretro_gallery.py\` as before:
 
     python3 archive-sites/tools/stage_gallery_theme.py
-
-If running from Downloads, fetch the font staging script first:
-
-    BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites"
-    curl -fLsS "$BASE/tools/stage_gallery_theme.py" -o "$HOME/Downloads/stage_gallery_theme.py"
-    python3 "$HOME/Downloads/stage_gallery_theme.py"
-
-It writes only to \`~/Desktop/McRetro-R2-Staging/photo-gallery/assets/fonts/\` and an **unapproved** theme-assets upload-plan CSV in \`reports/\`. The local preview serves only the five exact verified font object paths, not arbitrary staging files. When gallery publication is separately authorised, these same-origin font objects must be uploaded to \`mcretro-photos\` alongside the public gallery; otherwise the wordmark falls back to ordinary text.
-
-From a checkout of the PR branch, after you run the catalogue builder:
-
     python3 archive-sites/tools/preview_mcretro_gallery.py --check-only
-    python3 archive-sites/tools/preview_mcretro_gallery.py --decode-album-samples
     python3 archive-sites/tools/preview_mcretro_gallery.py
 
-Then open **http://127.0.0.1:8766/** in the Mac's browser. Press Ctrl+C to stop the server. The decode-album-samples mode requires djxl and checks one representative JXL thumbnail from each album; the check confirms decodability, **not photographic accuracy or rights approval**. By default the preview does not modify or copy photographs.
+The preview serves the exact pre-generated \`/albums/*.html\` routes on \`http://127.0.0.1:8766/\`, along with only verified converted image objects, approved test font paths and catalogue JSON. It binds to localhost, never serves the original archive, and never uploads to Cloudflare.
 
-To run without a complete Git checkout, download both script and HTML first:
-
-    BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites"
-    curl -fL "$BASE/tools/preview_mcretro_gallery.py" -o "$HOME/Downloads/preview_mcretro_gallery.py"
-    curl -fL "$BASE/photo-gallery/index.html" -o "$HOME/Downloads/mcretro-gallery-index.html"
-    python3 "$HOME/Downloads/preview_mcretro_gallery.py" \
-      --html "$HOME/Downloads/mcretro-gallery-index.html" \
-      --check-only
-    python3 "$HOME/Downloads/preview_mcretro_gallery.py" \
-      --html "$HOME/Downloads/mcretro-gallery-index.html" \
-      --decode-album-samples
-    python3 "$HOME/Downloads/preview_mcretro_gallery.py" \
-      --html "$HOME/Downloads/mcretro-gallery-index.html"
-
-The generated JSON is expected at ~/Desktop/McRetro-R2-Staging/photo-gallery/albums.generated.json, and converted files at ~/Desktop/McRetro-PhotoGallery-Optimised-v2. Use --manifest and --converted for alternative local directories. The --port option changes the local port only. A manifest integrity check covers every JXL/GIF path. When recovery has not been run, missing BMP/GIF pairs prevent preview until those extra entries are prepared or deliberately omitted from the *local draft* catalogue.
-
-This is a **local preview, not browser compatibility certification**. Check the images in the actual browsers you expect to use. If JXL does not display, do not publish a broken JXL-only gallery. A failure message or support strategy must be decided separately.
+Legacy \`#folder=\` links are still recognised in JavaScript for compatibility and rewritten to the new URL when possible. Test a deep folder URL by copying it into a new tab, and verify browser Back/Forward navigation.
 
 ### Human gallery review checklist
 

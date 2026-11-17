@@ -90,6 +90,25 @@ class GalleryPreviewTests(unittest.TestCase):
         self.assertEqual(response.status, 404)
         response.read()
 
+    def test_renamed_in_place_files_are_served_from_final_public_paths(self):
+        data = json.loads(self.manifest.read_text(encoding='utf-8'))
+        photo = data['photos'][0]
+        photo['source_path'] = 'retro/pic.jpg'
+        photo['filename'] = 'pic.jpg'
+        photo['path'] = 'full/retro/PIC.jxl'
+        photo['thumbnail'] = 'thumbs/retro/PIC.jxl'
+        self.manifest.write_text(json.dumps(data), encoding='utf-8')
+        for prefix in ('full', 'thumbs'):
+            src = self.images / prefix / 'retro/pic.jpg.jxl'
+            src.rename(src.with_name('PIC.jxl'))
+        _, objects, missing, report = validate(self.manifest, self.images)
+        self.assertEqual(missing, [])
+        self.assertTrue(report['ready_for_local_preview'])
+        self.assertEqual(objects['full/retro/PIC.jxl'],
+                         self.images / 'full/retro/PIC.jxl')
+        self.assertEqual(objects['thumbs/retro/PIC.jxl'],
+                         self.images / 'thumbs/retro/PIC.jxl')
+
     def test_empty_unreviewed_alt_text_is_valid(self):
         """Regression: catalogue builder deliberately leaves unverified alt empty."""
         data = json.loads(self.manifest.read_text(encoding='utf-8'))

@@ -62,7 +62,8 @@ class PhotoOnlyUploadTests(unittest.TestCase):
 
     def test_fast_inventory_can_verify_names_sizes_without_mime_head(self):
         fast_remote = {
-            k: {"Path": k, "Size": 123} for k in task.PILOT_KEYS
+            k: {"Path": k, "Size": 123, "MimeType": ""}
+            for k in task.PILOT_KEYS
         }
         pending = task.audit_existing(self.plan, fast_remote)
         self.assertEqual(len(pending), 3)

@@ -25,6 +25,8 @@ import sys
 import tempfile
 from urllib.parse import unquote, urlsplit
 
+from gallery_routes import validate_routes
+
 DEFAULT_MANIFEST = Path.home() / 'Desktop/McRetro-R2-Staging/photo-gallery/albums.generated.json'
 DEFAULT_CONVERTED = Path.home() / 'Desktop/McRetro-PhotoGallery-Optimised-v2'
 DEFAULT_HTML = Path(__file__).resolve().parents[1] / 'photo-gallery/index.html'
@@ -178,8 +180,35 @@ def local_theme_fonts(manifest: Path) -> tuple[dict, list]:
     return assets, missing
 
 
-def make_handler(html_path: Path, manifest_path: Path, objects: dict, theme_assets: dict | None = None):
+def local_static_pages(manifest: Path) -> tuple[dict, list]:
+    """Allow only validated manifest folder routes and the generated sitemap."""
+    stage = manifest.parent / 'site'
+    if not stage.is_dir() or stage.is_symlink():
+        return {}, ['Static folder pages have not been generated']
+    data = json.loads(manifest.read_text(encoding='utf-8'))
+    routes = validate_routes(data.get('folders', []))
+    pages = {}
+    missing = []
+    for path in routes.values():
+        object_key = 'index.html' if path == '/' else path.lstrip('/')
+        filename = stage / object_key
+        if filename.is_symlink() or filename.resolve() != filename.absolute():
+            raise ValueError(f'Refusing unsafe generated route: {path}')
+        if not filename.is_file():
+            missing.append(object_key)
+            continue
+        pages[path] = filename
+    sitemap = stage / 'sitemap.xml'
+    if sitemap.is_file() and not sitemap.is_symlink():
+        pages['/sitemap.xml'] = sitemap
+    else:
+        missing.append('sitemap.xml')
+    return pages, missing
+
+
+def make_handler(html_path: Path, manifest_path: Path, objects: dict, theme_assets: dict | None = None, static_pages: dict | None = None):
     theme_assets = theme_assets or {}
+    static_pages = static_pages or {}
     html = html_path.read_bytes()
     manifest = manifest_path.read_bytes()
 
@@ -197,7 +226,13 @@ def make_handler(html_path: Path, manifest_path: Path, objects: dict, theme_asse
                 self.send_error(400, 'Invalid URL encoding')
                 return
             if key in ('/', '/index.html'):
-                content, mime, filename = html, 'text/html; charset=utf-8', None
+                if '/' in static_pages:
+                    content, mime, filename = None, 'text/html; charset=utf-8', static_pages['/']
+                else:
+                    content, mime, filename = html, 'text/html; charset=utf-8', None
+            elif key in static_pages:
+                content, filename = None, static_pages[key]
+                mime = 'application/xml; charset=utf-8' if key == '/sitemap.xml' else 'text/html; charset=utf-8'
             elif key == '/albums.json':
                 content, mime, filename = manifest, 'application/json; charset=utf-8', None
             elif key.startswith('/') and key[1:] in objects:
@@ -269,6 +304,12 @@ def main(argv=None):
         print('Run stage_gallery_theme.py to get McRetro typography in the local preview.', file=sys.stderr)
     else:
         print('McRetro self-hosted fonts ready for localhost preview.')
+    pages, missing_pages = local_static_pages(manifest)
+    if missing_pages:
+        print('STATIC PAGE WARNING: ' + ', '.join(missing_pages[:8]), file=sys.stderr)
+        print('Run render_gallery_pages.py to create archivally accessible folder URLs.', file=sys.stderr)
+    else:
+        print(f'{len(pages)-1} static folder pages ready for localhost preview.')
     if args.check_only:
         return 0
     html = args.html.expanduser()
@@ -276,7 +317,7 @@ def main(argv=None):
         raise ValueError(f'Gallery HTML not found: {html}. Download index.html or supply --html.')
     if not 1 <= args.port <= 65535:
         raise ValueError('Port must be between 1 and 65535')
-    handler = make_handler(html, manifest, objects, assets)
+    handler = make_handler(html, manifest, objects, assets, pages)
     with ThreadingHTTPServer((PREVIEW_HOST, args.port), handler) as server:
         print(f'LOCAL PREVIEW ONLY: http://{PREVIEW_HOST}:{args.port}/')
         print('Original photographs, file-server archives, and all unpublished files remain inaccessible.')

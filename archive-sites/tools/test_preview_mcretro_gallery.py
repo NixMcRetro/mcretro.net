@@ -6,7 +6,7 @@ import tempfile
 import threading
 import unittest
 
-from preview_mcretro_gallery import make_handler, resolve_object, safe_key, validate
+from preview_mcretro_gallery import make_handler, resolve_object, safe_key, validate, local_theme_fonts
 
 
 class GalleryPreviewTests(unittest.TestCase):
@@ -62,6 +62,34 @@ class GalleryPreviewTests(unittest.TestCase):
         _, _, missing, report = validate(self.manifest, self.images)
         self.assertEqual(missing, ['thumbs/retro/pic.jpg.jxl'])
         self.assertFalse(report['ready_for_local_preview'])
+
+    def test_font_route_only_allows_staged_woff2_assets(self):
+        font = self.stage / 'assets/fonts/korataki.woff2'
+        font.parent.mkdir(parents=True, exist_ok=True)
+        font.write_bytes(b'wOF2' + b'0' * 32)
+        (font.parent / 'unrelated-secret.txt').write_text('not public')
+        assets, missing = local_theme_fonts(self.manifest)
+        self.assertIn('assets/fonts/korataki.woff2', assets)
+        self.assertEqual(len(missing), 4)
+        _, objects, _, _ = validate(self.manifest, self.images)
+        server = ThreadingHTTPServer(('127.0.0.1', 0),
+                                     make_handler(self.html, self.manifest, objects, assets))
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        self.addCleanup(thread.join, 2)
+        self.addCleanup(server.server_close)
+        self.addCleanup(server.shutdown)
+        conn = http.client.HTTPConnection('127.0.0.1', server.server_port, timeout=4)
+        self.addCleanup(conn.close)
+        conn.request('GET', '/assets/fonts/korataki.woff2')
+        res = conn.getresponse()
+        self.assertEqual(res.status, 200)
+        self.assertEqual(res.getheader('Content-Type'), 'font/woff2')
+        self.assertEqual(res.read(), font.read_bytes())
+        conn.request('GET', '/assets/fonts/unrelated-secret.txt')
+        res = conn.getresponse()
+        self.assertEqual(res.status, 404)
+        res.read()
 
     def test_server_only_serves_whitelisted_images(self):
         _, objects, _, _ = validate(self.manifest, self.images)

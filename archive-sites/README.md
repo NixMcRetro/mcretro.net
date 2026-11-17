@@ -320,6 +320,48 @@ Use `deletefile` for the exact named object only, after verifying the target
 and considering a backup. Never use `sync`, `delete`, or `purge` against
 the bucket root as a cleanup shortcut.
 
+## Recommended upload method: prepare correctly named files locally
+
+Rather than relying on `rclone copyto` for thousands of public object renames,
+**create a separate upload-ready folder on the Mac**. This is the preferred
+method after the owner requested uppercase public JPEG XL basenames.
+
+The original archive and all existing `*.jpg.jxl` converted files remain
+untouched. The tool verifies the current CSV/catalogue, makes a distinct local
+tree under `~/Desktop/McRetro-R2-Staging/photo-gallery/upload-ready/`, and
+uses macOS `cp -c` (APFS copy-on-write clones where supported). If APFS cloning
+is unavailable, macOS `cp -c` or the script falls back to full ordinary copies,
+which may use about **4.28 GB** more disk space. The generated tree has
+`full/.../IMG_0835.jxl` and `thumbs/.../IMG_0835.jxl`. GIFs remain intact.
+The staging tree contains only the objects from `photos-upload-plan.csv`.
+
+The separate export is never overwritten silently. If it already exists,
+`--create` fails rather than merging old and new names. The script is not
+a publisher and contains **no R2 upload or delete code**.
+
+Download the current branch versions (or run scripts directly from the checkout):
+
+    BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites"
+    curl -fLsS "$BASE/tools/prepare_r2_photo_upload_tree.py" -o "$HOME/Downloads/prepare_r2_photo_upload_tree.py"
+    curl -fLsS "$BASE/tools/validate_r2_upload.py" -o "$HOME/Downloads/validate_r2_upload.py"
+    curl -fLsS "$BASE/tools/gallery_keys.py" -o "$HOME/Downloads/gallery_keys.py"
+
+Check what will happen, then optionally create and verify the *local* tree:
+
+    python3 "$HOME/Downloads/prepare_r2_photo_upload_tree.py"
+    python3 "$HOME/Downloads/prepare_r2_photo_upload_tree.py" --create
+    python3 "$HOME/Downloads/prepare_r2_photo_upload_tree.py" --verify --sha256
+
+Then use one directory-based rclone dry-run, preserving the final filenames
+exactly as they appear in Finder:
+
+    rclone copy "$HOME/Desktop/McRetro-R2-Staging/photo-gallery/upload-ready" "r2:mcretro-photos" --dry-run --s3-no-check-bucket
+
+This is a **simulation only**. No gallery upload, publishing, or R2 cleanup
+is authorised by running the preceding commands. For a real upload, first
+ensure that correct `image/jxl` Content-Type metadata will be set, review
+any pre-existing destination keys, and obtain separate owner approval.
+
 ## Validation
 
 In the repository root:

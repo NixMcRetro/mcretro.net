@@ -660,6 +660,82 @@ In the repository root:
 
 GitHub Actions runs both test suites on changes in this area. Tests cover known sample catalogues, HTML controls, JavaScript syntax, collision-safe image filenames, missing conversion pairs and explicit non-approval defaults.
 
+## Owner-approved gallery design upload: existing site artefacts only
+
+On **17th November 2026**, after the owner verified the complete **16,823**
+photo objects on R2, the owner explicitly requested: **"Let's upload the
+existing design we have."** This authorises the **existing Photo Gallery
+design** only, not changes to McRetro.net, the File Server, private review
+sidecars, or unrelated content.
+
+New tool: `archive-sites/tools/publish_photo_gallery_site.py`.
+
+It will check the local gallery audit first, including exact matching of
+**329 generated HTML pages**, the saved `site/albums.json`, sitemap, five
+WOFF2 fonts, the image plan and source-free review flags, without opening the
+26 GB historical originals. It checks that **all 16,823 images** are still
+on R2 with their expected keys and sizes before publishing the HTML.
+
+**Critical data minimisation:** the local staged `site/albums.json` is
+literally a copy of the **private** `albums.generated.json` manifest. It
+contains `source_path` fields that the browser does not need. The tool
+**never uploads that private file**. Instead, it generates an equivalent
+public-facing `albums.json` with just display/navigation fields, photo
+filenames and approved descriptive metadata. Unreviewed guesses, private
+source-path fields, arbitrary fields, reviews and local filesystem paths
+are excluded. The approved metadata count remains zero for now: the release
+does **not** invent alt text or captions.
+
+The uploader has a fixed **336-key allowlist** and ordered publication:
+
+1. Five self-hosted `assets/fonts/*.woff2` objects
+2. The public-projected `albums.json`
+3. All 328 nested `/albums/*.html` pages
+4. The static `sitemap.xml`
+5. The root `index.html` **last**
+
+It uses `rclone copy --files-from0 - --ignore-existing`, per-group explicit
+`content-type` metadata, and no delete/sync/overwrite command. Unexpected
+objects, missing photos or conflicting existing website sizes stop the
+transfer. A partial attempt can be resumed by checking the same keys, with
+unchanged site objects skipped.
+
+After publication, a read-only audit checks all remote keys/sizes, performs
+**downloaded-byte comparisons for all 336 website files**, and verifies
+sampled Content-Type including all fonts and entry-point files. The original
+16,823 photo objects are not retransferred.
+
+From the owner's Mac, first fetch matching `tools/` helpers from the
+draft branch or a pinned commit. The local source template is
+`~/Downloads/mcretro-gallery-index.html` and the staging folder is
+`~/Desktop/McRetro-R2-Staging`.
+
+Read-only validation:
+
+    python3 "$HOME/Downloads/publish_photo_gallery_site.py"
+
+Owner-approved upload:
+
+    python3 "$HOME/Downloads/publish_photo_gallery_site.py" --upload
+
+Read-only post-upload check:
+
+    python3 "$HOME/Downloads/publish_photo_gallery_site.py" --verify
+
+**No Cloudflare hostname rewrite is performed.** R2 does not automatically
+treat `/` as `/index.html`. The existing design may be directly viewable at
+`https://photos.mcretro.net/index.html`, while the bare hostname may require
+a separate hostname-specific `/` to `/index.html` URL Rewrite Rule.
+The previously observed public JPEG XL **HTTP 403** is an independent
+delivery/security issue; authenticated R2 transfer success alone does
+not demonstrate that visitor requests work. Check public GET responses,
+Cloudflare security logs and browser rendering before declaring the site live.
+
+This publishes the design in its **current editorial state**. All 8,412
+photos still need individual accessibility alt review and possibly useful
+captions; no AI text is silently approved. PR #271 stays draft and must
+not be merged as part of R2 publication.
+
 ## Later: publish only after explicit owner approval
 
 No Cloudflare access is required or stored by this PR. Publication is **not** automatic.

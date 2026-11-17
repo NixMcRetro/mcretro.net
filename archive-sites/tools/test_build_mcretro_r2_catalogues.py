@@ -47,6 +47,7 @@ class ArchiveBuilderTests(unittest.TestCase):
         self.assertEqual({p['filename'] for p in data['photos']},
                          {'IMG_0001.jpg', 'IMG_0001.png', 'image.jpg'})
         folder_map = {f['path']: f for f in data['folders']}
+        self.assertEqual(folder_map['']['name'], 'All Photographs')
         self.assertEqual(folder_map['']['photo_count'], 3)
         self.assertEqual(folder_map['sega']['photo_count'], 2)
         self.assertEqual(folder_map['sega/saturn']['direct_photo_count'], 2)

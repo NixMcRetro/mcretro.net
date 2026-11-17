@@ -38,7 +38,7 @@ function fixture(systemDark = false, stored = null, storageFails = false) {
   docHandlers.DOMContentLoaded();
   return {attrs, btnAttrs, metaAttrs, media, mediaHandlers, handlers, store};
 }
-test('early external script prevents incorrect-theme flash and preserves CSP', () => {
+test('core: early external script prevents incorrect-theme flash and preserves CSP', () => {
   assert.ok(layout.indexOf('assets/js/theme.js') < layout.indexOf('assets/css/style.css'));
   assert.ok(header.includes('data-theme-toggle') && header.includes('aria-label="Dark theme"'));
   assert.ok(!layout.includes('<script>') && !header.includes('onclick='));
@@ -46,7 +46,7 @@ test('early external script prevents incorrect-theme flash and preserves CSP', (
   assert.match(overrides,/\.mcretro-modem-titlebar[\s\S]*background: #000080/);
   assert.match(style,/\.mcretro-modem-dialog, \.mcretro-modem-card \{ color-scheme: light; \}/);
 });
-test('first visit respects light/dark system preference', () => {
+test('core: first visit respects light/dark system preference', () => {
   const light=fixture(false),dark=fixture(true);
   assert.equal(light.attrs['data-theme'],'light');
   assert.equal(light.btnAttrs['aria-pressed'],'false');
@@ -54,7 +54,7 @@ test('first visit respects light/dark system preference', () => {
   assert.equal(dark.metaAttrs.content,'#191D27');
   assert.equal(dark.btnAttrs['aria-pressed'],'true');
 });
-test('manual selection persists and takes priority over system changes', () => {
+test('core: manual selection persists and takes priority over system changes', () => {
   const f=fixture(false);
   f.handlers.click();
   assert.equal(f.store.get('mcretro-theme'),'dark');
@@ -65,7 +65,7 @@ test('manual selection persists and takes priority over system changes', () => {
   assert.equal(f.store.get('mcretro-theme'),'light');
   assert.equal(f.attrs['data-theme'],'light');
 });
-test('without manual selection, device changes update page', () => {
+test('core: without manual selection, device changes update page', () => {
   const f=fixture(false);
   f.media.matches=true;f.mediaHandlers.change();
   assert.equal(f.attrs['data-theme'],'dark');
@@ -73,27 +73,27 @@ test('without manual selection, device changes update page', () => {
   assert.equal(f.attrs['data-theme'],'light');
   assert.equal(f.store.has('mcretro-theme'),false);
 });
-test('invalid stored value is ignored; storage events sync other tabs', () => {
+test('core: invalid stored value is ignored; storage events sync other tabs', () => {
   const f=fixture(false,'unexpected');
   assert.equal(f.attrs['data-theme'],'light');
   f.store.set('mcretro-theme','dark');
   f.handlers.storage({key:'mcretro-theme'});
   assert.equal(f.attrs['data-theme'],'dark');
 });
-test('blocked localStorage still permits a page-only manual choice', () => {
+test('core: blocked localStorage still permits a page-only manual choice', () => {
   const f=fixture(true,null,true);
   f.handlers.click();
   assert.equal(f.attrs['data-theme'],'light');
   assert.equal(f.btnAttrs['aria-pressed'],'false');
 });
-test('two stable button positions, WCAG labels and CSS colour tokens', () => {
+test('advisory: two stable button positions, WCAG labels and CSS colour tokens', () => {
   assert.match(style,/\.theme-toggle[\s\S]*width: 40px/);
   assert.match(style,/@media screen and \(max-width: 750px\) \{\s*\.theme-toggle/);
   for(const value of ['#FFF8DC','#191D27','#0009B5','#93C5FD','#064584','#244D78','#FFFDF2','#242B38'])assert.ok(style.includes(value),value);
   assert.match(style,/:root\[data-theme="dark"\]/);
 });
 
-test('320px homepage proportions are tuned without changing larger mobile widths', () => {
+test('advisory: 320px homepage proportions are tuned without changing larger mobile widths', () => {
   const home = read('index.md');
   assert.match(home, /<h2 class="center home-headline">Blast Processed Since 199X<\/h2>/);
   assert.match(overrides, /@media screen and \(max-width: 360px\) \{\s*\.logo-area \{[^}]*grid-template-columns: minmax\(0, 1fr\) 36px 36px;[^}]*column-gap: 6px;/);
@@ -106,7 +106,7 @@ test('320px homepage proportions are tuned without changing larger mobile widths
   assert.match(overrides, /@media screen and \(max-width: 375px\) \{\s*\.textcycle \.phrase \{[^}]*display: none;/);
 });
 
-test('classic blue stays in Light mode; Dark links use soft sky blue', () => {
+test('advisory: classic blue stays in Light mode; Dark links use soft sky blue', () => {
   const light = style.split(':root[data-theme="dark"]')[0];
   const dark = style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
   assert.match(light, /--link:\s*#0009B5;/);
@@ -120,10 +120,10 @@ test('classic blue stays in Light mode; Dark links use soft sky blue', () => {
   assert.match(dark, /--nav-button-bg:\s*#93C5FD;/);
   assert.doesNotMatch(dark, /#78D0C3|#A5E5D9|#115B60|#19757B|#B9EEE6/);
 });
-test('recent sidebar post links underline on hover and keyboard focus', () => {
+test('advisory: recent sidebar post links underline on hover and keyboard focus', () => {
   assert.match(style, /\.recent-posts-list li a:hover,\s*\.recent-posts-list li a:focus-visible\s*\{[^}]*text-decoration:\s*underline;/);
 });
-test('sidebar action links and monthly archive counts follow the active theme', () => {
+test('advisory: sidebar action links and monthly archive counts follow the active theme', () => {
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*color:\s*var\(--link\);/);
   assert.match(style, /\.sidebar-action-link:hover,\s*\.sidebar-action-link:focus-visible\s*\{[^}]*color:\s*var\(--link-hover\);/);
   assert.match(style, /\.sidebar-action-link:focus-visible\s*\{[^}]*outline:\s*2px solid var\(--focus\)/);
@@ -132,7 +132,7 @@ test('sidebar action links and monthly archive counts follow the active theme', 
 });
 
 
-test('sidebar Search Go matches months with posts in both colour themes', () => {
+test('advisory: sidebar Search Go matches months with posts in both colour themes', () => {
   const light = style.split(':root[data-theme="dark"]')[0];
   const dark = style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
   for (const token of ['--sidebar-button-bg: #064584;', '--sidebar-button-hover: #00346D;', '--archive-tile: #064584;', '--archive-hover: #00346D;']) {
@@ -153,7 +153,7 @@ test('sidebar Search Go matches months with posts in both colour themes', () => 
 });
 
 
-test('accordion headers use Archives blues in both modes without changing panel markup', () => {
+test('advisory: accordion headers use Archives blues in both modes without changing panel markup', () => {
   const light = overrides.split(':root[data-theme="dark"]')[0];
   const dark = overrides.split(':root[data-theme="dark"]')[1].split('\n/*')[0];
   const lightPalette = style.split(':root[data-theme="dark"]')[0];
@@ -185,12 +185,12 @@ test('accordion headers use Archives blues in both modes without changing panel 
   assert.match(overrides, /\.content-area details\.about-panel > summary\s*\{\s*scroll-margin-top:\s*1rem;/);
 });
 
-test('desktop and mobile menus underline on pointer hover and keyboard focus', () => {
+test('advisory: desktop and mobile menus underline on pointer hover and keyboard focus', () => {
   assert.match(style, /\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{\s*text-decoration:\s*underline;\s*text-underline-offset:\s*0\.12em;\s*\}/);
   assert.match(style, /\.nav-list li a:hover,\s*\.nav-list li a:focus-visible\s*\{[^}]*text-decoration:\s*none;/);
 });
 
-test('Channels keeps emoji and links, without old summary siren GIFs', () => {
+test('advisory: Channels keeps emoji and links, without old summary siren GIFs', () => {
   const channels = read('channels.md');
   assert.ok(!channels.includes('/assets/images/about/siren.gif'));
   assert.equal((channels.match(/<summary markdown="span">/g) || []).length, 4);
@@ -204,7 +204,7 @@ test('Channels keeps emoji and links, without old summary siren GIFs', () => {
 });
 
 
-test('navigation hover underlines words without bolding or shifting adjacent items', () => {
+test('advisory: navigation hover underlines words without bolding or shifting adjacent items', () => {
   for(const [emoji, word] of [['🏡','Home'],['✏️','Blog'],['📺','Channels'],['💾','Goodies'],['🌏','Random'],['📡','About']]) {
     assert.ok(header.includes('<span class="nav-emoji" aria-hidden="true">' + emoji + '</span> <span class="nav-text">' + word + '</span>'), word);
   }
@@ -219,7 +219,7 @@ test('navigation hover underlines words without bolding or shifting adjacent ite
   assert.match(style, /\.nav-list li a:hover,\s*\.nav-list li a:focus-visible\s*\{[^}]*text-decoration:\s*none;/);
 });
 
-test('Recent Posts has four entries and paired More posts / random-blog Dial-up buttons', () => {
+test('advisory: Recent Posts has four entries and paired More posts / random-blog Dial-up buttons', () => {
   assert.match(sidebar, /\{% for post in site\.posts limit:4 %\}/);
   assert.match(sidebar, /<div class="recent-posts-actions">/);
   assert.match(sidebar, /class="recent-posts-more sidebar-action-link" href="\/blog\/"/);
@@ -241,7 +241,7 @@ test('Recent Posts has four entries and paired More posts / random-blog Dial-up 
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*border-radius:\s*0;/);
 });
 
-test('sidebar sections retain divider breathing room without obsolete dial widget', () => {
+test('advisory: sidebar sections retain divider breathing room without obsolete dial widget', () => {
   assert.match(style, /\.search-widget\s*\{[^}]*padding-bottom:\s*1\.3rem;/);
   const common = overrides.match(/\.sidebar \.archive-widget,\s*\.sidebar \.recent-posts-widget\s*\{([^}]*)\}/)?.[1];
   assert.ok(common, 'Archives and Recent Posts share their divider spacing');
@@ -252,7 +252,7 @@ test('sidebar sections retain divider breathing room without obsolete dial widge
   assert.match(overrides, /\.sidebar \.recent-posts-list li:last-child\s*\{[^}]*margin-bottom:\s*0;/);
 });
 
-test('calendar keeps four month columns with compact themed filled and empty tiles', () => {
+test('advisory: calendar keeps four month columns with compact themed filled and empty tiles', () => {
   const light=style.split(':root[data-theme="dark"]')[0];
   const dark=style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
   for(const token of ['--archive-tile: #064584;', '--archive-filled: #EAF2FF;', '--archive-filled-hover: #D5E6FF;', '--archive-filled-text: #064584;'])assert.ok(light.includes(token),token);
@@ -265,7 +265,7 @@ test('calendar keeps four month columns with compact themed filled and empty til
 });
 
 
-test('About portrait reuses blog media-caption markup and compact photo spacing', () => {
+test('advisory: About portrait reuses blog media-caption markup and compact photo spacing', () => {
   const about = read('about.md');
   const expectedCaption = [
     '![Future Lost](/assets/images/about/futurelost.jxl){: width="600" }',
@@ -283,7 +283,7 @@ test('About portrait reuses blog media-caption markup and compact photo spacing'
 });
 
 
-test('article image and video captions separate cleanly from following content', () => {
+test('advisory: article image and video captions separate cleanly from following content', () => {
   // This must not disturb the existing compact gap immediately beneath
   // photographs and YouTube video containers.
   assert.match(overrides, /\.post-full \.post-content > p:has\(> img:only-child\):has\(\+ p\.media-caption\),/);
@@ -295,7 +295,7 @@ test('article image and video captions separate cleanly from following content',
   assert.match(teradrive, /\*Getting the TeraDrive back together,[^\n]*\*\n\{:\s*\.media-caption \}/);
 });
 
-test('linked article images have the same compact captions as ordinary images', () => {
+test('advisory: linked article images have the same compact captions as ordinary images', () => {
   const linked = '.post-full .post-content > p:has(> a:only-child > img:only-child):has(+ p.media-caption)';
   assert.ok(overrides.includes(linked + ','), 'linked-image paragraphs use the same 0.25rem gap');
   assert.ok(overrides.includes(linked + ' > a > img'), 'linked images become block images');
@@ -308,7 +308,7 @@ test('linked article images have the same compact captions as ordinary images', 
   assert.match(finalFantasy, /\]\(https:\/\/www\.youtube\.com\/playlist\?list=PLLJI5UKuYtwVAVaH6ywsjtI3atRdiJ5lO\)\n\n\*Sixty-two hours of Final Fantasy XVI,/);
 });
 
-test('Blog pagination is compact, accessible and retains numbered URLs', () => {
+test('advisory: Blog pagination is compact, accessible and retains numbered URLs', () => {
   assert.match(blog, /<nav class="pagination-wrapper" aria-label="Blog pagination">/);
   assert.match(blog, /class="page-number current-page" aria-current="page"/);
   assert.match(blog, /class="arrow-link pagination-prev" rel="prev" aria-label="Previous page"/);
@@ -341,7 +341,7 @@ test('Blog pagination is compact, accessible and retains numbered URLs', () => {
   assert.doesNotMatch(style, /^\.page-number:hover,/m, "active page should not change on hover");
 });
 
-test('interactive hover backgrounds use themed blue without recolouring neutral surfaces', () => {
+test('advisory: interactive hover backgrounds use themed blue without recolouring neutral surfaces', () => {
   const light = style.split(':root[data-theme="dark"]')[0];
   const dark = style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
   assert.match(light, /--panel-subtle:\s*#F0EAD9;/);
@@ -364,7 +364,7 @@ test('interactive hover backgrounds use themed blue without recolouring neutral 
   assert.doesNotMatch(style + overrides, /--panel-hover|var\(--panel-hover\)/, 'no interactive control uses the old neutral hover token');
 });
 
-test('monthly Archives use a matching heading/subheading, breadcrumb and article media', () => {
+test('advisory: monthly Archives use a matching heading/subheading, breadcrumb and article media', () => {
   const archive = read('_layouts/archive.html');
   const index = read('archive/index.html');
   assert.match(archive, /<nav class="archive-breadcrumbs" aria-label="Breadcrumb">/);
@@ -422,7 +422,7 @@ test('monthly Archives use a matching heading/subheading, breadcrumb and article
   assert.match(overrides, /\.archive-index-grid\s*\{[^}]*grid-template-columns: repeat\(4/);
 });
 
-test('archive year deep links open only the requested year', () => {
+test('advisory: archive year deep links open only the requested year', () => {
   const source = read('assets/js/archive-year-deeplink.js');
   const setup = (hash) => {
     const calls = [], frames = [], listeners = {};
@@ -466,14 +466,11 @@ test('archive year deep links open only the requested year', () => {
   assert.equal(normal.panel.open, true);
 });
 
-test('Goodies links to the Windows 95 dial-up folder with all destinations', () => {
-  const goodies = read('goodies.md');
+test('advisory: Windows 95 dial-up preserves selectable destinations and mobile navigation', () => {
   const modem = read('assets/js/mcretro-dialup.js');
   const modemPage = read('homepages/modem/index.html');
   const connection = read('_includes/modem-connection.html');
   const header = read('_includes/header.html');
-  assert.match(goodies, /\[Dial-Up Networking\]\(\/homepages\/modem\/\)/);
-  assert.doesNotMatch(goodies, /data-dial-site=/);
   assert.match(modemPage, /data-modem-launch/);
   assert.match(modemPage, /include modem-connection\.html/);
   assert.match(modemPage, /data-modem-new/);

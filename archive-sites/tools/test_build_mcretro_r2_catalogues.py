@@ -57,8 +57,14 @@ class ArchiveBuilderTests(unittest.TestCase):
         self.assertTrue(all('path' in a for a in data['albums']))
         keys = [p['path'] for p in data['photos']]
         self.assertEqual(len(keys), len(set(keys)))
-        self.assertIn('full/sega/saturn/IMG_0001.jpg.jxl', keys)
-        self.assertIn('full/sega/saturn/IMG_0001.png.jxl', keys)
+        colliding = [k for k in keys if k.startswith('full/sega/saturn/IMG_0001-')]
+        self.assertEqual(len(colliding), 2)
+        self.assertTrue(all(k.endswith('.jxl') for k in colliding))
+        self.assertTrue(all(not k.endswith(('.jpg.jxl', '.png.jxl')) for k in keys))
+        self.assertIn('full/computers/mac/image.jxl', keys)
+        self.assertEqual({p['source_path'] for p in data['photos']},
+                         {'sega/saturn/IMG_0001.jpg', 'sega/saturn/IMG_0001.png',
+                          'computers/mac/image.jpg'})
         with (self.stage/'reports/photos-upload-plan.csv').open() as handle:
             rows = list(csv.DictReader(handle))
         self.assertEqual(len(rows), 6)

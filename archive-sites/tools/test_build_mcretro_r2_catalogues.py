@@ -40,6 +40,12 @@ class ArchiveBuilderTests(unittest.TestCase):
         self.assertEqual(result['albums'], 2)
         data = json.loads((self.stage/'photo-gallery/albums.generated.json').read_text())
         self.assertEqual(len(data['photos']), 3)
+        self.assertTrue(all(p['caption'] == '' and p['caption_approved'] is False
+                            and p['alt'] == '' and p['alt_approved'] is False
+                            and p['date_taken'] is None and p['date_approved'] is False
+                            for p in data['photos']))
+        self.assertEqual({p['filename'] for p in data['photos']},
+                         {'IMG_0001.jpg', 'IMG_0001.png', 'image.jpg'})
         folder_map = {f['path']: f for f in data['folders']}
         self.assertEqual(folder_map['']['photo_count'], 3)
         self.assertEqual(folder_map['sega']['photo_count'], 2)

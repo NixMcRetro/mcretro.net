@@ -96,7 +96,7 @@ def audit_existing(plan: dict[str, dict],
         # MIME for thousands of S3 objects may need a slow HEAD per object.
         # If a full-MIME result is supplied, never ignore an actual mismatch.
         mime = item.get("MimeType")
-        if mime is not None and mime != row["mime"]:
+        if mime not in (None, "") and mime != row["mime"]:
             raise ValueError(
                 "Existing R2 object MIME mismatch: " + key +
                 " (" + repr(mime) + ")"

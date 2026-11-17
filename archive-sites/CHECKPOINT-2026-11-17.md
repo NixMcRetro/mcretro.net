@@ -1,5 +1,48 @@
 # McRetro Photo Gallery and File Server - reconciled checkpoint
 
+## NEW OWNER AUTHORISATION - Upload the existing gallery design
+
+The owner has explicitly authorised uploading the existing Photo Gallery
+website design to the **existing public** `mcretro-photos` bucket,
+after the complete 16,823-object photo transfer was verified.
+
+**Status at this checkpoint: upload script prepared and tested in GitHub,
+but the website upload has NOT yet been executed on the Mac.**
+
+The new guarded tool is
+`archive-sites/tools/publish_photo_gallery_site.py`. Publication scope:
+
+- **329** current generated static HTML pages, including `index.html`
+- **1** public-projected `albums.json` (NOT the private generated manifest)
+- **1** generated `sitemap.xml`
+- **5** approved-by-allowlist staged WOFF2 fonts
+- **Total: 336 distinct website keys**, excluding `.DS_Store`.
+
+The private staged `site/albums.json` is currently a byte-for-byte copy
+of `albums.generated.json`, and includes private original `source_path`
+fields. The upload tool **omits** that source field and all arbitrary,
+unapproved review metadata, while keeping visible gallery functionality.
+It does not modify the local private catalogue or existing HTML pages.
+
+Before uploading, the tool runs the full local staging audit and confirms
+all 16,823 image keys and byte sizes on R2. It refuses extra remote keys,
+missing photos or mismatched existing site sizes. It uses an exact-key
+allowlist, never recursive blind copies, sets explicit MIME types, never
+overwrites existing objects and uploads the homepage last. After transfer
+it compares the downloaded bytes of all 336 site objects and checks MIME
+samples including all fonts and entry points.
+
+**Unauthorised / not included:** Cloudflare root URL rewrite, relaxing WAF
+or public 403 handling, navigation changes on the main McRetro site,
+File Server upload, private review sidecars, editing original 26 GB
+photos, GitHub PR merge, or approving the 8,412 pending alt texts.
+
+The user's Mac must still run the explicit `--upload` command. A verified
+upload is needed before updating this checkpoint to "published".
+An existing unresolved public JPEG XL HEAD 403 may prevent some public
+requests even if authenticated R2 object verification succeeds; check
+that separately before declaring the design visitor-accessible.
+
 ## LATEST VERIFIED STATUS - 17th November 2026, 17:19 AEDT
 
 **Owner-provided Mac terminal readback confirms the PHOTO OBJECT UPLOAD IS COMPLETE.**

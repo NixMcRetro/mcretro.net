@@ -361,8 +361,8 @@ Preview, inspect, then apply locally:
 Only after these checks pass should we prepare a bulk `rclone copy --dry-run`
 from the converted directory to the final `r2:mcretro-photos` bucket. Always
 use an explicit allowlist derived from `photos-upload-plan.csv`; ordinary
-directory copies might accidentally include unplanned hidden files. No
-real upload has been authorised yet.
+directory copies might accidentally include unplanned hidden files. The first **20-object test batch only** was
+subsequently authorised; see below.
 
 **Why did the old dry run show `img_0835.jpg.jxl`?** The earlier tool used
 `rclone copyto --dry-run LOCALFILE R2:BUCKET/IMG_0835.jxl`. rclone's notice
@@ -370,6 +370,60 @@ labelled the *source basename* in its output, not the explicit destination
 argument. No renaming or cloud transfer happened during that dry run. After
 renaming the optimised files in place, the local and eventual R2 filenames
 will match.
+
+
+## Owner-authorised 20-object test upload (17th November 2026)
+
+The owner explicitly authorised **only** the exact 20 JPEG XL objects from
+the successful 15:16 AEDT dry run: ten full-resolution images and their ten
+matching thumbnails. This does not authorise any of the remaining 16,803
+objects, HTML pages, site publication, overwrites, or other R2 changes.
+
+The dedicated script `tools/upload_r2_test20.py` **freezes the exact 20 keys
+in source**, instead of silently reselecting the first ten catalogue photos.
+It revalidates the full converted collection and upload plan, requires the
+local basenames to match the final uppercase JXL names, and refuses to upload
+if the destination bucket is no longer empty. Transfer uses `rclone copy`
+with a NUL-separated, exact 20-key allowlist from stdin, `--ignore-existing`
+to prevent overwrites, and `--s3-no-check-bucket` to avoid bucket creation.
+Neither the original photo archive nor the other optimised files are changed.
+
+From Downloads, retrieve the current draft scripts:
+
+    BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites/tools"
+    curl -fLsS "$BASE/gallery_keys.py" -o "$HOME/Downloads/gallery_keys.py"
+    curl -fLsS "$BASE/validate_r2_upload.py" -o "$HOME/Downloads/validate_r2_upload.py"
+    curl -fLsS "$BASE/upload_r2_test20.py" -o "$HOME/Downloads/upload_r2_test20.py"
+
+Always start with a read-only preflight:
+
+    python3 "$HOME/Downloads/upload_r2_test20.py"
+
+Only because the owner expressly authorised these twenty exact objects,
+the next command may be run on the Mac to transfer that batch:
+
+    python3 "$HOME/Downloads/upload_r2_test20.py" --upload
+
+The script immediately reads back the R2 bucket, confirming exactly the
+twenty permitted keys, sizes and `image/jxl` MIME values. It then uses
+`rclone check --download --one-way` against the same strict key allowlist
+to verify all downloaded remote bytes against the local converted files.
+The check reads data but does not delete or modify either side.
+
+If the upload is interrupted, do **not** run `--upload` again blindly.
+Instead inspect the R2 listing and use the read-only command:
+
+    python3 "$HOME/Downloads/upload_r2_test20.py" --verify
+
+A partial batch reports which keys are missing. Any mismatch or extra object
+stops verification, rather than triggering a repair or an overwrite. The
+owner's previously uploaded test PNG was separately deleted before this
+authorization; the initial remote bucket was confirmed empty.
+
+After readback, inspect browser headers for one full and one thumbnail URL
+using `curl -I` or `curl -sSI`. Public URL availability depends on
+Cloudflare custom-domain configuration, independent of R2 object metadata.
+The static Photo Gallery site remains unpublished.
 
 
 ## Validation

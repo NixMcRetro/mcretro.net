@@ -22,11 +22,27 @@ The Photo Gallery now follows the **original nested directory structure** using 
 
 ## McRetro layout and light/dark-mode compatibility
 
-The separate Photo Gallery retains the existing McRetro-inspired window, navigation, thumbnails, lightbox and responsive grid, but its navigation now presents real nested folders rather than a giant flat album selector.
+The separate Photo Gallery retains its responsive image viewer and window styling, but now uses the **actual McRetro.net wordmark font (Korataki)**, the main site's header proportions, matching Montserrat and Merriweather typefaces, familiar navigation links, and the same sun/moon theme-toggle icon treatment. Nested folder cards, breadcrumbs, global search, and 60-photo batches remain. Only the standalone gallery template changes; no Jekyll theme rebuild is required.
 
 Colours and typography are matched to the existing **main-branch** \`assets/css/style.css\` theme tokens (including cream light background #FFF8DC, dark background #191D27, light links #0009B5, dark links #93C5FD, Montserrat-style headings and Merriweather-style body fallback). The gallery uses the main site's \`mcretro-theme\` preference key and a manual light/dark button, with system preference when unset; because subdomains have separate browser storage, choices made on mcretro.net are not automatically shared with photos.mcretro.net. The button on the gallery remembers that subdomain's choice.
 
-The CSS remains self-contained within the standalone R2 homepage, rather than attempting to import the entire blog CSS (which assumes a different Jekyll page structure and would introduce external dependencies). The main blog CSS, assets, JS and navigation have **not been changed**.
+The gallery's CSS remains self-contained rather than loading the entire Jekyll blog stylesheets. Its font URLs point to same-origin `/assets/fonts/...` in the independent R2 gallery bucket, **not** to cross-origin blog assets. Run the font staging script below for local preview, and only upload those verified font assets later with separate owner approval. The main blog CSS, assets, JS, and navigation have **not been changed**.
+
+## Folder names and technical title-case rules
+
+Source paths, folder names on disk, R2 object keys and album identifiers stay unmodified. A new display-only formatter in \`tools/gallery_naming.py\` applies ordinary title casing, known brand/acronym conventions, and owner-editable exact-path exceptions from \`config/folder-names.json\`.
+
+The reported example becomes **All photographs › Accessories › HP L1706 17-inch LCD Colour Monitor PX849A › Serial CNK7040Y04**. Serial/model/part identifiers that cannot safely be inferred are flagged in \`reports/folder-name-review.csv\`, with original path, proposed label, review reason, approval and owner replacement columns. These **draft** labels may be refined without moving or reconverting any photograph. The gallery uses generated folder names on cards and breadcrumbs, as well as improved album titles and search terms.
+
+To run the builder from only downloaded files (not a repository checkout), fetch these three files into Downloads together:
+
+    BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites"
+    curl -fLsS "$BASE/tools/build_mcretro_r2_catalogues.py" -o "$HOME/Downloads/build_mcretro_r2_catalogues.py"
+    curl -fLsS "$BASE/tools/gallery_naming.py" -o "$HOME/Downloads/gallery_naming.py"
+    curl -fLsS "$BASE/config/folder-names.json" -o "$HOME/Downloads/folder-names.json"
+    python3 "$HOME/Downloads/build_mcretro_r2_catalogues.py" --names "$HOME/Downloads/folder-names.json"
+
+Keep edited owner decisions in the source naming rules and regenerate the manifest. Do not manually rewrite URLs in image catalogue JSON.
 
 ## Owner archive audit (17th November 2026)
 
@@ -62,7 +78,9 @@ Run this on the Mac that contains the archives:
 Or download the tool from this PR's branch and run it separately:
 
     curl -fL https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites/tools/build_mcretro_r2_catalogues.py -o ~/Downloads/build_mcretro_r2_catalogues.py
-    python3 ~/Downloads/build_mcretro_r2_catalogues.py
+    curl -fL https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites/tools/gallery_naming.py -o ~/Downloads/gallery_naming.py
+    curl -fL https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites/config/folder-names.json -o ~/Downloads/folder-names.json
+    python3 ~/Downloads/build_mcretro_r2_catalogues.py --names ~/Downloads/folder-names.json
 
 Only Python's standard library is required. Custom paths:
 
@@ -81,6 +99,7 @@ Generated files in ~/Desktop/McRetro-R2-Staging:
 | photo-gallery/albums.generated.json | DRAFT photo catalogue, album paths, nested folder tree and folder counts, and 1 entry per verified image |
 | reports/audit-summary.json | Source counts, album count, sizes, skipped extensions and conversion gaps |
 | reports/skipped-photo-files.csv | Unsupported image-folder items (including possible videos, documents and other resources) |
+| reports/folder-name-review.csv | All inferred folder display names, with technical/model flags and editorial approval columns; never published |
 | reports/missing-photo-conversions.csv | Any supported source photos missing a valid full/thumbnail JXL pair |
 | reports/photo-alt-review.csv | Generic, non-descriptive camera filenames requiring editorial alt-text work |
 | reports/photos-upload-plan.csv | Absolute local paths, exact intended R2 keys, byte counts and image/jxl MIME; **all rows default to NO for publication approval** |
@@ -108,6 +127,18 @@ JPEG XL-only delivery has browser compatibility limitations. Validate with the a
 ## Local preview (without any Cloudflare upload)
 
 The preview server reads only the **generated album manifest** and **converted image objects**. It binds to 127.0.0.1 and allows requests only for catalogue-listed image paths, index.html and albums.json; no directory listing, original image folder access, File Server access or publication is possible.
+
+**Stage the main site's original font assets first.** This separate script fetches a verified snapshot of Korataki and the Latin subsets of Montserrat/Merriweather from McRetro's own GitHub repository into the local staging folder, along with OFL licences. It does not upload or publish font files.
+
+    python3 archive-sites/tools/stage_gallery_theme.py
+
+If running from Downloads, fetch the font staging script first:
+
+    BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites"
+    curl -fLsS "$BASE/tools/stage_gallery_theme.py" -o "$HOME/Downloads/stage_gallery_theme.py"
+    python3 "$HOME/Downloads/stage_gallery_theme.py"
+
+It writes only to \`~/Desktop/McRetro-R2-Staging/photo-gallery/assets/fonts/\` and an **unapproved** theme-assets upload-plan CSV in \`reports/\`. The local preview serves only the five exact verified font object paths, not arbitrary staging files. When gallery publication is separately authorised, these same-origin font objects must be uploaded to \`mcretro-photos\` alongside the public gallery; otherwise the wordmark falls back to ordinary text.
 
 From a checkout of the PR branch, after you run the catalogue builder:
 

@@ -480,6 +480,16 @@ The static Photo Gallery site remains unpublished.
 
 ## PHOTON UPLINK - animated Rich terminal telemetry for the photo-only transfer
 
+The uploader's **default read-only preflight now has an animated Rich status
+screen too**. It immediately shows `LOCAL ARCHIVE` while validating the 16,823
+optimised objects, then `R2 INVENTORY` while rclone enumerates the public bucket,
+then `SAFETY INTERLOCKS` while checking the existing pilot objects and exact
+allowlist. These are truthful **phases**, not simulated transfer percentages:
+during a long local scan or remote inventory, the spinner keeps moving and
+the stage does not advance until its operation actually completes.
+On a non-interactive terminal, or when Rich is unavailable, printed phase
+messages appear instead. No upload is performed without `--upload`.
+
 The uploader now supports an optional **Rich** live display: neon cyan/violet
 panels, transferred bytes and file counts, real rclone-reported transfer
 speed and ETA, active/recent file paths, warnings, and a transfer-stage label.

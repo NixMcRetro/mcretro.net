@@ -1,6 +1,8 @@
 """Unit tests for the explicitly invoked, photo-only remaining R2 uploader."""
 import subprocess
 import unittest
+from email.message import Message
+from urllib.parse import unquote
 from unittest.mock import patch
 
 import upload_r2_remaining_photos as task
@@ -29,6 +31,9 @@ def fixture():
 class PhotoOnlyUploadTests(unittest.TestCase):
     def setUp(self):
         self.plan, self.remote = fixture()
+        self.headers_patch = patch.object(task, "verify_public_headers")
+        self.headers_mock = self.headers_patch.start()
+        self.addCleanup(self.headers_patch.stop)
 
     def test_exact_existing_pilot_and_remaining_selection(self):
         pending = task.audit_existing(self.plan, self.remote)
@@ -54,6 +59,19 @@ class PhotoOnlyUploadTests(unittest.TestCase):
                            MimeType="application/octet-stream")
         with self.assertRaisesRegex(ValueError, "MIME mismatch"):
             task.audit_existing(self.plan, remote)
+
+    def test_fast_inventory_can_verify_names_sizes_without_mime_head(self):
+        fast_remote = {
+            k: {"Path": k, "Size": 123} for k in task.PILOT_KEYS
+        }
+        pending = task.audit_existing(self.plan, fast_remote)
+        self.assertEqual(len(pending), 3)
+        with patch.object(task, "all_remote_objects",
+                          return_value=fast_remote) as fetch:
+            missing, listed = task.assess(self.plan, quiet=True)
+        fetch.assert_called_once_with(with_mime=False)
+        self.headers_mock.assert_called_once_with(self.plan, fast_remote)
+        self.assertEqual(len(missing), 3)
 
     def test_missing_pilot_stops_before_upload(self):
         remote = dict(self.remote)
@@ -235,6 +253,55 @@ class PhotoOnlyUploadTests(unittest.TestCase):
         validate.return_value = ([{}] * 10, [], 1000)
         with self.assertRaisesRegex(ValueError, "counts/bytes changed"):
             task.local_plan()
+
+
+class PublicHeaderTests(unittest.TestCase):
+    def test_distributed_samples_include_all_original_20(self):
+        keys = {key: {} for key in task.PILOT_KEYS}
+        for i in range(100):
+            keys[f"full/other/IMG_{i:04d}.jxl"] = {}
+        chosen = task.header_sample_keys(keys)
+        self.assertEqual(len(chosen), 60)
+        self.assertTrue(task.PILOT_KEYS.issubset(chosen))
+
+    def test_exact_public_content_type_and_size_checked(self):
+        plan, remote = fixture()
+        class Response:
+            status = 200
+            def __init__(self, length, mime):
+                self.headers = Message()
+                self.headers["Content-Type"] = mime
+                self.headers["Content-Length"] = str(length)
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+
+        def good(request, timeout):
+            self.assertEqual(request.get_method(), "HEAD")
+            key = unquote(request.full_url.split("photos.mcretro.net/", 1)[1])
+            self.assertIn(key, task.PILOT_KEYS)
+            return Response(123, "image/jxl")
+
+        with patch.object(task, "urlopen", side_effect=good) as get:
+            task.verify_public_headers(plan, remote)
+        self.assertEqual(get.call_count, 20)
+
+    def test_wrong_public_mime_fails_closed(self):
+        plan, remote = fixture()
+        class Response:
+            status = 200
+            headers = Message()
+            headers["Content-Type"] = "application/octet-stream"
+            headers["Content-Length"] = "123"
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+
+        with patch.object(task, "urlopen", return_value=Response()):
+            with self.assertRaisesRegex(ValueError, "Content-Type"):
+                task.verify_public_headers(plan, remote)
 
 
 if __name__ == "__main__":

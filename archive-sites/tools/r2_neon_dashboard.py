@@ -135,6 +135,96 @@ def require_rich() -> None:
         ) from error
 
 
+
+def compact_dashboard(t: Telemetry, height: int):
+    """Fit the entire live transfer UI within an ordinary 120x20 Terminal.
+
+    Under 16 rows use an even tighter flat layout. No telemetry is invented.
+    """
+    from rich import box
+    from rich.align import Align
+    from rich.console import Group
+    from rich.panel import Panel
+    from rich.progress import BarColumn, Progress, TextColumn
+    from rich.table import Table
+    from rich.text import Text
+
+    small = height < 16
+    headline = Table.grid(expand=True)
+    headline.add_column(ratio=1)
+    headline.add_column(justify="right")
+    name = Text("◆ McRETRO / ", style=f"bold {CYAN}")
+    name.append("PHOTON UPLINK", style=f"bold {VIOLET}")
+    headline.add_row(name,
+                     Text("SIMULATION // NO NETWORK" if t.demo else "LIVE // PUBLIC R2",
+                          style=f"bold {AMBER}" if t.demo else f"bold {MINT}"))
+    if small:
+        header = headline
+    else:
+        headline.add_row(Text("photos.mcretro.net", style=MUTED),
+                         Text(t.phase, style=f"bold {CYAN}"))
+        header = Panel(headline, box=box.ROUNDED, border_style=VIOLET, padding=(0, 1))
+
+    metrics = Table.grid(expand=True, padding=(0, 1))
+    for _ in range(4):
+        metrics.add_column(ratio=1)
+    metrics.add_row(*[Text(label, style=MUTED) for label in
+                      ("DATA SENT", "SPEED", "ETA", "OBJECTS")])
+    metrics.add_row(
+        Text(pretty_bytes(t.sent_bytes), style=f"bold {CYAN}"),
+        Text(pretty_bytes(t.speed) + "/s" if t.speed else "--",
+             style=f"bold {VIOLET}"),
+        Text(pretty_time(t.eta), style=f"bold {MINT}"),
+        Text(f"{t.files_done:,} / {t.total_files:,}", style=f"bold {AMBER}"),
+    )
+    metric_view = metrics if small else Panel(metrics, box=box.ROUNDED,
+                                              border_style="#344969",
+                                              padding=(0, 1))
+    bars = []
+    for label, colour, total, sent in (
+        ("DATA", CYAN, t.total_bytes, t.sent_bytes),
+        ("FILES", VIOLET, t.total_files, t.files_done),
+    ):
+        progress = Progress(TextColumn(f"[bold {colour}]{label}[/]"),
+                            BarColumn(bar_width=None, complete_style=colour,
+                                      finished_style=MINT),
+                            TextColumn("[bold]{task.percentage:>5.1f}%[/]"),
+                            expand=True, auto_refresh=False)
+        progress.add_task("live", total=max(1, total),
+                          completed=min(total, sent))
+        bars.append(progress)
+    progress_body = Group(
+        *bars,
+        Text(f"{t.already_present:,} existing  •  {pretty_time(t.elapsed)} elapsed  •  "
+             f"{pretty_bytes(t.total_bytes)} queued", style=MUTED),
+    )
+    progress_view = progress_body if small else Panel(
+        progress_body, title="◈ LIVE TRANSMISSION", title_align="left",
+        box=box.ROUNDED, border_style=CYAN, padding=(0, 1))
+
+    active = t.active[0] if t.active else "--"
+    recent = t.recent[0] if t.recent else "--"
+    channels = Table.grid(expand=True, padding=(0, 1))
+    channels.add_column(ratio=1)
+    channels.add_column(ratio=1)
+    channels.add_row(Text("ACTIVE OBJECT", style=f"bold {CYAN}"),
+                     Text("LAST COMPLETED", style=f"bold {VIOLET}"))
+    channels.add_row(Text(active[-50:], style="white"),
+                     Text(recent[-50:], style="white"))
+    if t.warnings:
+        channels.add_row(Text("ALERT: " + t.warnings[0][-75:], style=f"bold {AMBER}"),
+                         Text("", style=MUTED))
+    channel_view = channels if small else Panel(channels, box=box.ROUNDED,
+                                                border_style="#46537A", padding=(0, 1))
+    footer = Text(
+        "◇ EXACT ALLOWLIST   ◇ NO OVERWRITES   ◇ ORIGINALS PROTECTED   ◇ NO HTML PUBLISHING",
+        justify="center", style=f"bold {MUTED}")
+    if t.demo:
+        footer = Text("SIMULATION ONLY  ◇ NO RCLONE OR R2 REQUESTS",
+                      justify="center", style=f"bold {AMBER}")
+    return Group(header, metric_view, progress_view, channel_view, Align.center(footer))
+
+
 def dashboard(t: Telemetry):
     """Create a responsive, polished Rich renderable with live stats."""
     require_rich()
@@ -148,6 +238,8 @@ def dashboard(t: Telemetry):
     from rich.text import Text
 
     width, height = shutil.get_terminal_size((100, 28))
+    if height <= 22:
+        return compact_dashboard(t, height)
     compact = width < 104 or height < 30
     tag = " SIMULATION // NO NETWORK " if t.demo else " LIVE // PUBLIC R2 "
     title = Text("◆  McRETRO", style=f"bold {CYAN}")
@@ -239,6 +331,8 @@ class PreflightDisplay:
 
     def __init__(self):
         self.stage = 0
+        self.started = time.monotonic()
+        self.stage_started = self.started
         self.completed = False
         self.note = "READ ONLY // NO DATA TRANSFER"
         self.live = None
@@ -275,7 +369,8 @@ class PreflightDisplay:
             style=f"bold {MUTED}",
             justify="center",
         )
-        footer.append("\n" + self.note,
+        elapsed = pretty_time(time.monotonic() - self.started)
+        footer.append("\nELAPSED " + elapsed + "  •  " + self.note,
                       style=f"bold {MINT}" if self.completed else f"bold {AMBER}")
         return Panel(Group(headline, lines, footer), box=box.DOUBLE,
                      border_style=VIOLET, padding=(1, 2))
@@ -283,6 +378,8 @@ class PreflightDisplay:
     def advance(self, stage: int) -> None:
         if stage not in (0, 1, 2) or stage < self.stage:
             raise ValueError("Invalid preflight stage transition")
+        if stage != self.stage:
+            self.stage_started = time.monotonic()
         self.stage = stage
         if self.live is not None:
             self.live.update(self.render())
@@ -333,7 +430,7 @@ def preflight_display():
         ui.advance(0)
         yield ui
     else:
-        with Live(ui.render(), console=ui.console, refresh_per_second=8,
+        with Live(get_renderable=ui.render, console=ui.console, refresh_per_second=8,
                   transient=False, vertical_overflow="crop") as live:
             ui.live = live
             yield ui

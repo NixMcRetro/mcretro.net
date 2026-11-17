@@ -153,6 +153,29 @@ class FinalR2PreflightTests(unittest.TestCase):
         self.assertEqual(command[-2], self.rows[0]['local_path'])
         self.assertNotIn('input', run.call_args.kwargs)
 
+    @patch('validate_r2_upload.subprocess.run')
+    @patch('validate_r2_upload.shutil.which', return_value='/usr/bin/rclone')
+    def test_renamed_local_files_use_single_allowlisted_bulk_dry_run(self, _which, run):
+        run.return_value.returncode = 0
+        for row in self.rows:
+            old = Path(row['local_path'])
+            dest = self.converted / row['r2_key']
+            if dest != old:
+                old.rename(dest)
+                row['local_path'] = str(dest)
+        self.save()
+        validate(self.stage, self.converted)
+        self.assertEqual(perform_rclone_dry_run(self.rows, converted=self.converted), 0)
+        self.assertEqual(run.call_count, 1)
+        args = run.call_args.args[0]
+        self.assertEqual(args[:2], ['rclone', 'copy'])
+        self.assertIn('--dry-run', args)
+        self.assertIn('--files-from0', args)
+        self.assertEqual(args[-1], FINAL_DESTINATION)
+        self.assertEqual(args[-2], str(self.converted))
+        self.assertIn(b'full/sega/PICTURE.jxl\\0'.replace(b'\\0', b'\x00'),
+                      run.call_args.kwargs['input'])
+
     def test_direct_command_targets_only_final_bucket_for_dry_run(self):
         command = dry_run_command(Path(self.rows[0]['local_path']), self.rows[0]['r2_key'])
         self.assertIn('--dry-run', command)

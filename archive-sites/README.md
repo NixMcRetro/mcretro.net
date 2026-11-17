@@ -52,6 +52,7 @@ Generated files in ~/Desktop/McRetro-R2-Staging:
 | reports/photo-alt-review.csv | Generic, non-descriptive camera filenames requiring editorial alt-text work |
 | reports/photos-upload-plan.csv | Absolute local paths, exact intended R2 keys, byte counts and image/jxl MIME; **all rows default to NO for publication approval** |
 | reports/file-server-owner-review.csv | File Server candidate inventory; **all rows default to NOT_REVIEWED** |
+| file-server/catalogue.generated.json | Draft File Server catalogue with **owner_review_required: true** and **NOT_REVIEWED** status for every file; never upload without review |
 | reports/file-server-skipped.csv | Skipped symlinks/nonregular file entries |
 
 The builder checks for an actual JXL signature, but does not re-decode or visually validate every file; do separate spot checks. It does not automatically identify private photos, licensing restrictions, malware, personal details or sensitive content. Review these before any public upload. Generated alt text is based on the source pathname, not an AI understanding of image contents; the generic descriptions are NOT accessibility-complete.

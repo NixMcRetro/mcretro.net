@@ -61,7 +61,7 @@ class ArchiveBuilderTests(unittest.TestCase):
         self.assertEqual(len(colliding), 2)
         self.assertTrue(all(k.endswith('.jxl') for k in colliding))
         self.assertTrue(all(not k.endswith(('.jpg.jxl', '.png.jxl')) for k in keys))
-        self.assertIn('full/computers/mac/image.jxl', keys)
+        self.assertIn('full/computers/mac/IMAGE.jxl', keys)
         self.assertEqual({p['source_path'] for p in data['photos']},
                          {'sega/saturn/IMG_0001.jpg', 'sega/saturn/IMG_0001.png',
                           'computers/mac/image.jpg'})

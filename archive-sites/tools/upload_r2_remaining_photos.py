@@ -6,6 +6,7 @@ optimised photograph/thumbnail/GIF objects. Site HTML, metadata, fonts, File
 Server files, and the original ~26 GB photo archive are outside this scope.
 
 Default: validate the full local manifest and inspect R2, with NO uploads.
+--demo: animated PHOTON UPLINK preview, no local scan or network activity.
 --upload: copy ONLY missing, allowlisted objects, NEVER overwrite or delete.
 --verify: check exact remote keys, sizes, MIME and 40 downloaded-byte samples.
 --deep-verify: read-only byte comparison of ALL 16,823 R2 objects (~4.277 GB).
@@ -26,6 +27,7 @@ import shutil
 import subprocess
 import sys
 
+from r2_neon_dashboard import show_demo, run_upload_with_dashboard, require_rich
 from upload_r2_test20 import KEYS as PILOT_KEYS, all_remote_objects
 from validate_r2_upload import (
     DEFAULT_STAGE, DEFAULT_CONVERTED, FINAL_DESTINATION, validate,
@@ -103,7 +105,8 @@ def rclone_copy_command() -> list[str]:
     return [
         "rclone", "copy", "--files-from0", "-", "--ignore-existing",
         "--s3-no-check-bucket", "--transfers", "4", "--checkers", "8",
-        "--stats", "15s", "--progress",
+        "--stats", "1s", "--stats-log-level", "INFO",
+        "--use-json-log", "-v",
         str(CONVERTED), FINAL_DESTINATION,
     ]
 
@@ -185,7 +188,14 @@ def main(argv=None) -> int:
                       help="Verify remote metadata and 40 actual byte samples, read-only")
     mode.add_argument("--deep-verify", action="store_true",
                       help="Download-check ALL 4.277 GB, read-only; slower")
+    mode.add_argument("--demo", action="store_true",
+                      help="Show the animated PHOTON UPLINK dashboard without accessing R2")
     args = parser.parse_args(argv)
+    if args.demo:
+        show_demo()
+        return 0
+    if args.upload:
+        require_rich()  # Fail before any transfer if the optional UI package is absent.
     if not shutil.which("rclone"):
         raise ValueError("rclone command not installed")
     plan = local_plan()
@@ -210,11 +220,14 @@ def main(argv=None) -> int:
         "No overwrites, deletes or uploads from the 26 GB original archive.",
         flush=True,
     )
-    result = subprocess.run(rclone_copy_command(), input=nul_keys(missing),
-                            check=False)
-    if result.returncode:
+    bytes_to_send = sum(int(plan[key]["bytes"]) for key in missing)
+    return_code = run_upload_with_dashboard(
+        rclone_copy_command(), nul_keys(missing), bytes_to_send,
+        len(missing), EXPECTED_OBJECTS - len(missing),
+    )
+    if return_code:
         raise ValueError(
-            f"Upload interrupted or failed with rclone status {result.returncode}. "
+            f"Upload interrupted or failed with rclone status {return_code}. "
             "Nothing will be deleted. A later --upload will recheck R2 and "
             "resume only missing keys, subject to the same owner-approved scope."
         )

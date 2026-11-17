@@ -205,14 +205,33 @@ def dry_run_command(local: Path, key: str) -> list[str]:
     ]
 
 
-def perform_rclone_dry_run(rows: list[dict]) -> int:
+def perform_rclone_dry_run(rows: list[dict], converted: Path | None = None) -> int:
     if not shutil.which('rclone'):
         raise ValueError('rclone is not installed')
     if not rows:
         raise ValueError('No files selected for dry run')
     print(f'Executing DRY RUN for {len(rows)} objects against {FINAL_DESTINATION} (PUBLIC BUCKET; NO UPLOAD)', flush=True)
-    # Separate copyto operations map the existing .jpg.jxl local filenames to
-    # clean .jxl-only R2 object keys without renaming or copying local images.
+    # Once the 4GB converted files have been renamed in place, one bulk copy
+    # with a zero-delimited exact allowlist is much quicker than 16,823 copyto
+    # operations. Before renaming, keep the original copyto fallback.
+    if converted is not None and all(Path(row['local_path']) ==
+                                     converted.joinpath(*row['r2_key'].split('/'))
+                                     for row in rows):
+        keys = sorted(row['r2_key'] for row in rows)
+        payload = ('\0'.join(keys) + '\0').encode('utf-8')
+        command = [
+            'rclone', 'copy', '--dry-run', '--s3-no-check-bucket',
+            '--files-from0', '-', '--transfers', '4', '--checkers', '8',
+            '--stats', '15s', str(converted), FINAL_DESTINATION,
+        ]
+        result = subprocess.run(command, input=payload, check=False)
+        if result.returncode:
+            print('Bulk dry-run failed.', file=sys.stderr)
+        else:
+            print(f'DRY RUN passed for {len(rows)} allowlisted objects; nothing uploaded.')
+        return result.returncode
+    # Before the in-place rename, copyto can simulate public destination keys
+    # even when local file basenames differ.
     for row in rows:
         key = row['r2_key']
         command = dry_run_command(Path(row['local_path']), key)
@@ -253,8 +272,8 @@ def main(argv=None) -> int:
     selected = sorted((row for row in rows if row['r2_key'] in selected_keys),
                       key=lambda row: row['r2_key'])
     if args.all:
-        print('Full dry run uses one copyto operation per object and may be slow.', flush=True)
-    return perform_rclone_dry_run(selected)
+        print('Full dry run uses one bulk copy when files have already been renamed in place.', flush=True)
+    return perform_rclone_dry_run(selected, converted=converted)
 
 
 if __name__ == '__main__':

@@ -26,6 +26,7 @@ import tempfile
 from urllib.parse import unquote, urlsplit
 
 from gallery_routes import validate_routes
+from gallery_keys import public_photo_paths
 
 DEFAULT_MANIFEST = Path.home() / 'Desktop/McRetro-R2-Staging/photo-gallery/albums.generated.json'
 DEFAULT_CONVERTED = Path.home() / 'Desktop/McRetro-PhotoGallery-Optimised-v2'
@@ -85,6 +86,13 @@ def validate(manifest: Path, converted: Path):
         if album['id'] in ids:
             raise ValueError('Duplicate album ID: ' + album['id'])
         ids.add(album['id'])
+    sources = [p.get('source_path') for p in data['photos']]
+    if any(source is not None for source in sources):
+        if not all(isinstance(source, str) for source in sources):
+            raise ValueError('Mixed legacy and clean-key photo records')
+        public_names = public_photo_paths(sources)
+    else:
+        public_names = None  # Legacy local-preview catalogues remain usable.
     seen = set()
     allowed = {}
     missing = []
@@ -108,8 +116,21 @@ def validate(manifest: Path, converted: Path):
         seen.add(key)
         albums_with_photos[photo['album']] += 1
         thumbnail = photo.get('thumbnail') or key
+        source = photo.get('source_path')
+        if public_names is not None:
+            if key != 'full/' + public_names[source]:
+                raise ValueError('Public photo key does not match source: ' + key)
+            if thumbnail != (key if key.endswith('.gif') else 'thumbs/' + public_names[source]):
+                raise ValueError('Public thumbnail key does not match source: ' + key)
+            if photo.get('filename') != Path(source).name:
+                raise ValueError('Filename does not match source: ' + source)
         for object_key in {key, thumbnail}:
-            local = resolve_object(converted, object_key)
+            if public_names is None:
+                local_key = object_key
+            else:
+                prefix = object_key.split('/', 1)[0]
+                local_key = prefix + '/' + source + ('' if source.lower().endswith('.gif') else '.jxl')
+            local = resolve_object(converted, local_key)
             if object_key.endswith('.gif') and thumbnail == key:
                 genres['GIF animations'] += 1
             if object_key not in allowed:

@@ -138,8 +138,20 @@ def build_photos(original: Path, converted: Path, stage: Path, rules: dict | Non
     public_names = public_photo_paths([rel for _, rel, _ in originals])
     for p, rel, size in sorted(originals, key=lambda row: row[1].casefold()):
         is_gif = p.suffix.lower() == '.gif'
-        full = converted / 'full' / (rel if is_gif else rel + '.jxl')
-        thumb = full if is_gif else converted / 'thumbs' / (rel + '.jxl')
+        public_rel = public_names[rel]
+        legacy_full = converted / 'full' / (rel if is_gif else rel + '.jxl')
+        final_full = converted / 'full' / public_rel
+        if legacy_full != final_full and legacy_full.exists() and final_full.exists():
+            raise ValueError('Both old and renamed converted photo exist: ' + rel)
+        full = final_full if final_full.exists() else legacy_full
+        if is_gif:
+            thumb = full
+        else:
+            legacy_thumb = converted / 'thumbs' / (rel + '.jxl')
+            final_thumb = converted / 'thumbs' / public_rel
+            if legacy_thumb != final_thumb and legacy_thumb.exists() and final_thumb.exists():
+                raise ValueError('Both old and renamed thumbnail exist: ' + rel)
+            thumb = final_thumb if final_thumb.exists() else legacy_thumb
         problems = []
         if not (gif_ok(full) if is_gif else jxl_ok(full)):
             problems.append('missing/invalid full image')
@@ -148,7 +160,6 @@ def build_photos(original: Path, converted: Path, stage: Path, rules: dict | Non
         if problems:
             missing.append({'path': rel, 'problem': '; '.join(problems)})
             continue
-        public_rel = public_names[rel]
         full_key = 'full/' + public_rel
         thumb_key = full_key if is_gif else 'thumbs/' + public_rel
         keys = (full_key,) if is_gif else (full_key, thumb_key)

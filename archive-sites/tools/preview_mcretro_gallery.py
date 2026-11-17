@@ -126,11 +126,15 @@ def validate(manifest: Path, converted: Path):
                 raise ValueError('Filename does not match source: ' + source)
         for object_key in {key, thumbnail}:
             if public_names is None:
-                local_key = object_key
+                local = resolve_object(converted, object_key)
             else:
                 prefix = object_key.split('/', 1)[0]
-                local_key = prefix + '/' + source + ('' if source.lower().endswith('.gif') else '.jxl')
-            local = resolve_object(converted, local_key)
+                legacy_key = prefix + '/' + source + ('' if source.lower().endswith('.gif') else '.jxl')
+                legacy = resolve_object(converted, legacy_key)
+                final = resolve_object(converted, object_key)
+                if legacy != final and legacy.exists() and final.exists():
+                    raise ValueError('Both legacy and final converted image names exist: ' + object_key)
+                local = final if final.exists() else legacy
             if object_key.endswith('.gif') and thumbnail == key:
                 genres['GIF animations'] += 1
             if object_key not in allowed:

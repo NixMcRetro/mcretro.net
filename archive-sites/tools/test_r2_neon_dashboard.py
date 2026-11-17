@@ -106,6 +106,52 @@ class RenderTests(unittest.TestCase):
         self.assertIn("NO UPLOADS", visible)
         self.assertIn("PREFLIGHT COMPLETE", visible)
 
+    def test_live_dashboard_fits_normal_120_by_20_terminal(self):
+        from rich.console import Console
+        t = Telemetry(16803, 4270000000, 20)
+        t.consume(json.dumps({"stats": {
+            "bytes": 1200000000, "transfers": 4921, "speed": 3200000,
+            "eta": 940, "elapsedTime": 360,
+            "transferring": [{"name": "full/consoles/sega/mega-drive/IMG_0297.jxl"}]
+        }}))
+        with patch("r2_neon_dashboard.shutil.get_terminal_size",
+                   return_value=os.terminal_size((120, 20))):
+            console = Console(width=120, height=20, force_terminal=False,
+                              record=True)
+            console.print(dashboard(t))
+            visible = console.export_text()
+        self.assertLessEqual(len(visible.splitlines()), 20, visible)
+        for label in ("PHOTON UPLINK", "DATA SENT", "SPEED", "ETA",
+                      "OBJECTS", "DATA", "FILES", "ACTIVE OBJECT",
+                      "ORIGINALS PROTECTED"):
+            self.assertIn(label, visible)
+
+    def test_small_120_by_13_terminal_keeps_essentials(self):
+        from rich.console import Console
+        t = Telemetry(16803, 4270000000, 20, demo=True)
+        t.set_demo_position(.35)
+        with patch("r2_neon_dashboard.shutil.get_terminal_size",
+                   return_value=os.terminal_size((120, 13))):
+            console = Console(width=120, height=13,
+                              force_terminal=False, record=True)
+            console.print(dashboard(t))
+            visible = console.export_text()
+        self.assertLessEqual(len(visible.splitlines()), 13, visible)
+        self.assertIn("PHOTON UPLINK", visible)
+        self.assertIn("SIMULATION ONLY", visible)
+        self.assertIn("35.0%", visible)
+
+    def test_preflight_has_elapsed_time(self):
+        from rich.console import Console
+        ui = PreflightDisplay()
+        with patch("r2_neon_dashboard.time.monotonic",
+                   return_value=ui.started + 76):
+            console = Console(width=120, force_terminal=False, record=True)
+            console.print(ui.render())
+            visible = console.export_text()
+        self.assertIn("ELAPSED 01m 16s", visible)
+        self.assertIn("NO DATA TRANSFER", visible)
+
     def test_80_column_demo_renders_without_transfer(self):
         from rich.console import Console
         t = Telemetry(16803, 4270000000, 20, demo=True)

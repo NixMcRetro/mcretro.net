@@ -38,9 +38,17 @@ The commands below are my historical cleanup notes. They include file deletion, 
 *Using an inode number to track down an awkwardly named file. The command asks before deleting.*
 {: .media-caption }
 
-We can identify the inode/file that needs to be removed with this command: `ls -li`
+We can identify the inode/file that needs to be removed with this command:
 
-This finds files with inode number 99807 under the current directory and asks before removing each one. It removes the file, not the inode as a separate object: `sudo find . -inum 99807 -exec rm -i {} \;`
+```bash
+ls -li
+```
+
+This finds files with inode number 99807 under the current directory and asks before removing each one. It removes the file, not the inode as a separate object:
+
+```bash
+sudo find . -inum 99807 -exec rm -i {} \;
+```
 
 
 
@@ -69,7 +77,13 @@ Sitemap generation was a bit of a hassle. I had been using this command in Ubunt
 
 Another thing I had to do was modify the Apache configuration for assemblergames.mcretro.net to include the new port. My note for the virtual-host setting was `VirtualHost *:80 *:8081`, which is shorthand rather than a complete Apache configuration section.
 
-And then we needed to edit the ports file: `sudo nano /etc/apache2/ports.conf`. To make the server listen on port 8081 at that local address, my note was `Listen 192.168.1.254:8081`.
+And then we needed to edit the ports file.
+
+```bash
+sudo nano /etc/apache2/ports.conf
+```
+
+To make the server listen on port 8081 at that local address, my note was `Listen 192.168.1.254:8081`.
 
 It all became a bit chaotic when I started using a proxy server and I tried to merge it into my main server with deleterious effects... 
 

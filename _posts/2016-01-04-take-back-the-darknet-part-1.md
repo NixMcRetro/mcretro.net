@@ -152,7 +152,11 @@ static routers=xxx.xxx.xxx.yyy
 static domain_name_servers=8.8.8.8 8.8.4.4
 ```
 
-Save and exit, Ctrl-O (Writeout / Save) and Ctrl-X (Exit) and reboot. `sudo reboot`
+Save and exit, Ctrl-O (Writeout / Save) and Ctrl-X (Exit) and reboot.
+
+```bash
+sudo reboot
+```
 
 You'll be logged out of your terminal / PuTTY session and ready for the next step.
 
@@ -168,9 +172,17 @@ You'll be logged out of your terminal / PuTTY session and ready for the next ste
 
 [Hardening](https://en.wikipedia.org/wiki/Hardening_(computing)), important for the sake of reducing attack vectors! First off we'll create a new user and then delete the "pi" user that comes preinstalled.
 
-Log back in via SSH / Terminal / PuTTY `ssh pi@xxx.xxx.xxx.xxx`
+Log back in via SSH / Terminal / PuTTY
 
-Think of a new username. Could be your name or something a bit more fun. I'll be using "tim" as my example: `sudo adduser tim`
+```bash
+ssh pi@xxx.xxx.xxx.xxx
+```
+
+Think of a new username. Could be your name or something a bit more fun. I'll be using "tim" as my example:
+
+```bash
+sudo adduser tim
+```
 
 When prompted for a password, make a very long, complicated password (or even a passphrase). You could also use a [password generator](https://privacycanada.net/strong-password-generator/). This will be your new username and password to log in via SSH in the future. Don't forget it!
 
@@ -206,7 +218,11 @@ Finally, close the remote connection and log out of the `pi` user by typing:
 
 `exit`
 
-Try logging in with your newly created user `ssh tim@xxx.xxx.xxx.xxx`
+Try logging in with your newly created user
+
+```bash
+ssh tim@xxx.xxx.xxx.xxx
+```
 
 Check that the new account can both log in and use sudo successfully, and back up anything important from the old home directory before deleting the old account.
 
@@ -262,13 +278,29 @@ Next up we'll install Samba.
 
 We need a way to gain access to the files on the Raspberry Pi so we can update your new website. Samba allows sharing across Windows, OS X and Linux. Very useful. An alternative is FTP but isn't covered in this guide.
 
-Install Samba by running the following. `sudo apt-get install samba -y`
+Install Samba by running the following.
 
-We now need to stop the Samba service so we can edit the configuration file. `sudo /etc/init.d/samba stop`
+```bash
+sudo apt-get install samba -y
+```
 
-Remove the existing configuration file to start from scratch. `sudo rm /etc/samba/smb.conf`
+We now need to stop the Samba service so we can edit the configuration file.
 
-Create and edit your new configuration file. `sudo nano /etc/samba/smb.conf`
+```bash
+sudo /etc/init.d/samba stop
+```
+
+Remove the existing configuration file to start from scratch.
+
+```bash
+sudo rm /etc/samba/smb.conf
+```
+
+Create and edit your new configuration file.
+
+```bash
+sudo nano /etc/samba/smb.conf
+```
 
 **Formatting warning:** The block's line layout has been restored from a 15th July 2019 capture of this post. That capture already has the damaged `passwd chat` text, so it does not establish the missing backslashes. The block remains incomplete historical evidence and is not paste-ready Samba configuration.
 
@@ -316,7 +348,11 @@ Next, set a Samba password for the user named in `write list` and `valid users`,
 sudo smbpasswd -a tim
 ```
 
-Restart the Samba service to make the changes active. `sudo /etc/init.d/samba restart`
+Restart the Samba service to make the changes active.
+
+```bash
+sudo /etc/init.d/samba restart
+```
 
 Finally, the ownership commands in this setup assigned `/var/www/` to `www-data`. Changing ownership is not, by itself, a complete security measure.
 
@@ -338,7 +374,11 @@ Which will lead us on to hardening some more things in the next step.
 <details id="part-7" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🔒</span> 07. Hardening Apache and Secure Shell</summary>
 
-Next up we harden Apache and OpenSSH for the glass is always half empty. Start off by editing the security configuration file for Apache2. `sudo nano /etc/apache2/conf-available/security.conf`
+Next up we harden Apache and OpenSSH for the glass is always half empty. Start off by editing the security configuration file for Apache2.
+
+```bash
+sudo nano /etc/apache2/conf-available/security.conf
+```
 
 Change `ServerTokens OS` to `ServerTokens Prod` and `ServerSignature On` to `ServerSignature Off`. These reduce the details Apache advertises; they do not secure the server on their own. Save and exit, Ctrl-O (Writeout) and Ctrl-X (Exit).
 
@@ -392,11 +432,23 @@ ssh tim@xxx.xxx.xxx.xxx -p 38192
 <details id="part-8" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🧅</span> 08. Installing Tor</summary>
 
-To get Tor up and running we need to install it with the following. `sudo apt-get install tor -y`
+To get Tor up and running we need to install it with the following.
 
-And just like that, Tor is installed and establishing Tor circuits. Now let's stop the service while we sort out the configuration. `sudo service tor stop`
+```bash
+sudo apt-get install tor -y
+```
 
-Let's stop Apache as well. `sudo service apache2 stop`
+And just like that, Tor is installed and establishing Tor circuits. Now let's stop the service while we sort out the configuration.
+
+```bash
+sudo service tor stop
+```
+
+Let's stop Apache as well.
+
+```bash
+sudo service apache2 stop
+```
 
 The Tor configuration developed in the following parts belongs to the version 2 onion-service era. Current Tor still uses the general `HiddenServiceDir` and `HiddenServicePort` concept, but it creates v3 services and uses a different key format. See Part 1 for the archive warning.
 
@@ -445,7 +497,11 @@ The `sites-enabled` and `sites-available` directories are tied together by symli
 
 We want to create a single configuration with both http and https settings to keep things tidy. I've used tim as the name, but you should use something easier to remember.
 
-`sudo nano /etc/apache2/sites-available/tim.conf` If you have a clearnet website (http) copy the following into your configuration file. Anywhere you see "tim" change it to whatever is more appropriate for your configuration (such as the ServerAdmin setting). You'll note that http uses port 80 at the very top of the VirtualHost setting.
+```bash
+sudo nano /etc/apache2/sites-available/tim.conf
+```
+
+If you have a clearnet website (http) copy the following into your configuration file. Anywhere you see "tim" change it to whatever is more appropriate for your configuration (such as the ServerAdmin setting). You'll note that http uses port 80 at the very top of the VirtualHost setting.
 
 These configurations allow for a blog at website.net/blog, omit that part if you don't want to have a blog separate from your html files. Wordpress likes to be in the root (/var/www/) but can be placed in a subdirectory if you so please. We are directing the 404 page not found to /404/ which is where you can pop in an index.html or .index.php to customise your 404 not found page.
 
@@ -565,7 +621,17 @@ When done, save and exit, Ctrl-O (Writeout) and Ctrl-X (Exit)
 
 Now we need to tell Apache what we have done.
 
-Change your directory `cd /etc/apache2/sites-available/` a2ensite = Apache2 Enable Site. We want our new configuration enabled. `sudo a2ensite tim.conf`
+Change your directory
+
+```bash
+cd /etc/apache2/sites-available/
+```
+
+a2ensite = Apache2 Enable Site. We want our new configuration enabled.
+
+```bash
+sudo a2ensite tim.conf
+```
 
 a2dissite = Apache2 Disable Site. Disabling the already deleted configurations.
 
@@ -575,7 +641,11 @@ sudo a2dissite 000-default.conf
 sudo a2dissite default-ssl.conf
 ~~~
 
-a2enmod = Apache2 Enable Mod. We want to enable ssl (if using https). If not you could leave this disabled. `sudo a2enmod ssl`
+a2enmod = Apache2 Enable Mod. We want to enable ssl (if using https). If not you could leave this disabled.
+
+```bash
+sudo a2enmod ssl
+```
 
 And we want to enable rewrite which allows pretty permalinks on blogging software (like WordPress and FlatPress, probably others too).
 
@@ -583,9 +653,17 @@ And we want to enable rewrite which allows pretty permalinks on blogging softwar
 sudo a2enmod rewrite
 ```
 
-Finally, let's give Apache2 a little restart to acknowledge our changes. It should definitely fail if you enabled SSL as we haven't configured those certificate locations mentioned at the start of this section. `sudo service apache2 restart`
+Finally, let's give Apache2 a little restart to acknowledge our changes. It should definitely fail if you enabled SSL as we haven't configured those certificate locations mentioned at the start of this section.
 
-If you are wanting a password protected file server and have entered the settings into the Apache2 configuration as above. Let's make a new directory. `sudo mkdir /etc/htpasswd`
+```bash
+sudo service apache2 restart
+```
+
+If you are wanting a password protected file server and have entered the settings into the Apache2 configuration as above. Let's make a new directory.
+
+```bash
+sudo mkdir /etc/htpasswd
+```
 
 And inside that we will create a password file. Change "USERNAME" to the username you want; creating the file under `/etc/htpasswd/` also requires permission to write there. The command recorded in the guide was:
 
@@ -625,11 +703,23 @@ Once that is done we are onto the next part.
 <details id="part-10" class="about-panel panel--teal" name="mcretro-darknet" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🎛️</span> 10. Configuring Tor</summary>
 
-Stop the Tor service from running while we tinker. `sudo service tor stop`
+Stop the Tor service from running while we tinker.
 
-Remove the default configuration file. `sudo rm /etc/tor/torrc`
+```bash
+sudo service tor stop
+```
 
-Fire up Nano and make a new configuration file. `sudo nano /etc/tor/torrc`
+Remove the default configuration file.
+
+```bash
+sudo rm /etc/tor/torrc
+```
+
+Fire up Nano and make a new configuration file.
+
+```bash
+sudo nano /etc/tor/torrc
+```
 
 Enter the following. If only using one website, don't enter the second "HiddenServiceDir" or "HiddenServicePort". The "/var/lib/tor/" is where your hidden key goes. This is NOT readable by the general internet. It is also not where your website goes. Remember we configured /var/www/ for that. More on that later.
 
@@ -657,7 +747,11 @@ When done, save and exit, Ctrl-O (Writeout) and Ctrl-X (Exit), then start Tor. I
 sudo service tor start
 ```
 
-Once two or three minutes have passed, reboot! `sudo reboot`
+Once two or three minutes have passed, reboot!
+
+```bash
+sudo reboot
+```
 
 **Historical compatibility note:** The `private_key` replacement steps below belong to v2 onion services, which Tor retired in 2021. Modern v3 services use different key files, so these commands do not apply to them. Keep service keys secret: someone who obtains them can impersonate the service.
 
@@ -805,7 +899,11 @@ Restart Apache and Tor to pick up the configuration changes:
 sudo service apache2 restart && sudo service tor restart
 ```
 
-And one big reboot of the entire system for the heck of it. `sudo reboot`
+And one big reboot of the entire system for the heck of it.
+
+```bash
+sudo reboot
+```
 
 Next we get to the vanity onion-address experiment and then finally test the site.
 

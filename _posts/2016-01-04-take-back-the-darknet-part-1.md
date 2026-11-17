@@ -83,13 +83,17 @@ Pick up an SSH client. OS X and Linux already have one built in:
 
 Log in to the Raspberry Pi remotely with the IP address you noted earlier:
 
-`ssh pi@xxx.xxx.xxx.xxx`
+```bash
+ssh pi@xxx.xxx.xxx.xxx
+```
 
 You are now logged in to the Raspberry Pi remotely. Congratulations!
 
 Next up we need to run the basic setup options:
 
-`sudo raspi-config`
+```bash
+sudo raspi-config
+```
 
 For this Jessie-era setup, I used:
 
@@ -100,15 +104,21 @@ For this Jessie-era setup, I used:
 
 After completing these it will ask to reboot. Once it has rebooted, log back in over SSH:
 
-`ssh pi@xxx.xxx.xxx.xxx`
+```bash
+ssh pi@xxx.xxx.xxx.xxx
+```
 
 The update command used throughout this Jessie-era setup was:
 
-`sudo apt-get update && sudo apt-get upgrade`
+```bash
+sudo apt-get update && sudo apt-get upgrade
+```
 
 Once the updates have installed, reboot for good measure:
 
-`sudo reboot`
+```bash
+sudo reboot
+```
 
 ### Sources for Part 2
 
@@ -126,7 +136,9 @@ In the Raspbian Jessie image I was using, static network configuration went in `
 
 Let's get editing:
 
-`sudo nano /etc/dhcpcd.conf`
+```bash
+sudo nano /etc/dhcpcd.conf
+```
 
 Add the configuration below to the end, adjusting it for your own network. I originally suggested a memorable address ending in `.200` or `.250`, but it must be valid for your subnet, unused by another device and kept clear of addresses your router may hand out through DHCP. My "keep the first three numbers the same" shortcut assumed a typical `/24` home network; it was not a universal networking rule.
 
@@ -164,9 +176,13 @@ When prompted for a password, make a very long, complicated password (or even a 
 
 Now we have a new user, but it does not have the same permissions as the old `pi` account. Such lonely. The two explicit group-addition commands in this guide are for `sudo` and `adm`. I also originally suggested copying every group from `pi`, which was broader than necessary: add the groups the account needs rather than copying every privilege simply because the old account had it.
 
-`sudo adduser tim sudo`
+```bash
+sudo adduser tim sudo
+```
 
-`sudo adduser tim adm`
+```bash
+sudo adduser tim adm
+```
 
 You can compare group membership with:
 
@@ -176,7 +192,9 @@ You can compare group membership with:
 
 I can't remember if this next step was necessary or not, but I ended up doing it anyway:
 
-`sudo visudo`
+```bash
+sudo visudo
+```
 
 The original setup also included this line for unrestricted passwordless sudo:
 
@@ -194,11 +212,15 @@ Check that the new account can both log in and use sudo successfully, and back u
 
 The commands I used in this 2016 setup were:
 
-`sudo deluser pi`
+```bash
+sudo deluser pi
+```
 
 and then:
 
-`sudo rm -rf /home/pi`
+```bash
+sudo rm -rf /home/pi
+```
 
 Pretty cool! Now we've got a new user and a few things configured. We will revisit hardening later on (Metapod used Harden!) for other pieces of software yet to be installed.
 
@@ -216,11 +238,15 @@ For a clearnet site hosted behind your home router's NAT, forward TCP port 80 fo
 
 We'll use Apache 2.4 as the web server for this build. Nginx was another option, but this project used Apache, so Apache is what the rest of the series documents.
 
-`sudo apt-get install apache2 -y`
+```bash
+sudo apt-get install apache2 -y
+```
 
 We will also be using PHP alongside Apache's basic HTML support. The `php5` and `libapache2-mod-php5` package names below belong to the Jessie-era software stack used in 2016, so they stay as part of this historical setup.
 
-`sudo apt-get install php5 libapache2-mod-php5 -y`
+```bash
+sudo apt-get install php5 libapache2-mod-php5 -y
+```
 
 Next up we'll install Samba.
 
@@ -286,7 +312,9 @@ The historical configuration also used `force user = www-data`. Samba applies fi
 
 Next, set a Samba password for the user named in `write list` and `valid users`, entering it when prompted. My original guide allowed reuse of the Raspberry Pi account password for convenience; that was the 2016 advice, rather than a recommendation to reuse passwords today.
 
-`sudo smbpasswd -a tim`
+```bash
+sudo smbpasswd -a tim
+```
 
 Restart the Samba service to make the changes active. `sudo /etc/init.d/samba restart`
 
@@ -316,7 +344,9 @@ Change `ServerTokens OS` to `ServerTokens Prod` and `ServerSignature On` to `Ser
 
 Next, edit the main Apache configuration file.
 
-`sudo nano /etc/apache2/apache2.conf`
+```bash
+sudo nano /etc/apache2/apache2.conf
+```
 
 Add the line below, substituting `tim` with something more relevant to your own website:
 
@@ -324,11 +354,15 @@ Add the line below, substituting `tim` with something more relevant to your own 
 
 Then restart Apache2:
 
-`sudo service apache2 restart`
+```bash
+sudo service apache2 restart
+```
 
 Now edit the SSH daemon configuration file:
 
-`sudo nano /etc/ssh/sshd_config`
+```bash
+sudo nano /etc/ssh/sshd_config
+```
 
 Change `PermitRootLogin without-password` to `PermitRootLogin no`.
 
@@ -338,11 +372,15 @@ I also changed `Port 22` to `Port 38192`. That may reduce noise from indiscrimin
 
 Then reboot:
 
-`sudo reboot`
+```bash
+sudo reboot
+```
 
 Logging in with SSH (**S**ecure **SH**ell) is now slightly different because we changed the port from 22 to 38192. You can choose another valid port that does not clash with an [existing service](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers). For the port used here:
 
-`ssh tim@xxx.xxx.xxx.xxx -p 38192`
+```bash
+ssh tim@xxx.xxx.xxx.xxx -p 38192
+```
 
 ### Sources for Part 7
 
@@ -364,7 +402,9 @@ The Tor configuration developed in the following parts belongs to the version 2 
 
 We need to tell Apache to listen for Tor traffic:
 
-`sudo nano /etc/apache2/ports.conf`
+```bash
+sudo nano /etc/apache2/ports.conf
+```
 
 Add the following. If you only want onion websites, comment out `Listen 80` by adding `#` at the front, or remove it. For one onion site, keep `Listen 127.0.0.1:9070` and comment out `Listen 127.0.0.1:9071`. For additional sites, add more loopback listeners and use the same port numbers in the later Tor mappings.
 
@@ -389,7 +429,9 @@ Save and exit, Ctrl-O (Writeout) and Ctrl-X (Exit).
 
 First up, here's a cool add-on to limit bandwidth and connections for people visiting your website. Great if you have finite bandwidth on the upstream! Installing it was optional in this setup. The settings are in the `IfModule mod_bw.c` section below: `LargeFileLimit * 1 7200` applies a 7200 bytes-per-second limit (57.6 kbit/s) to files at least 1 kilobyte in size, not 1 byte. `MaxConnection all 20` limits concurrent connections for the matching origin collectively, rather than allowing 20 per visitor. At the time I couldn't remember what `Bandwidth all` did... it sets the available bandwidth for the matching origin, in bytes per second. Install with the following command.
 
-`sudo apt-get install libapache2-mod-bw -y`
+```bash
+sudo apt-get install libapache2-mod-bw -y
+```
 
 Next we want to remove both default settings for Apache as they will just get in the way otherwise. We are removing the http and https (ssl) settings.
 
@@ -537,7 +579,9 @@ a2enmod = Apache2 Enable Mod. We want to enable ssl (if using https). If not you
 
 And we want to enable rewrite which allows pretty permalinks on blogging software (like WordPress and FlatPress, probably others too).
 
-`sudo a2enmod rewrite`
+```bash
+sudo a2enmod rewrite
+```
 
 Finally, let's give Apache2 a little restart to acknowledge our changes. It should definitely fail if you enabled SSL as we haven't configured those certificate locations mentioned at the start of this section. `sudo service apache2 restart`
 
@@ -553,7 +597,9 @@ I also experimented with changing PHP's default character set from UTF-8 to ISO-
 
 Historical command:
 
-`sudo nano /etc/php5/apache2/php.ini`
+```bash
+sudo nano /etc/php5/apache2/php.ini
+```
 
 Change:
 
@@ -607,7 +653,9 @@ HiddenServicePort 80 127.0.0.1:9071
 
 When done, save and exit, Ctrl-O (Writeout) and Ctrl-X (Exit), then start Tor. I allowed two or three minutes in this setup; startup time can vary. No progress bar here, use a stopwatch? Maybe!
 
-`sudo service tor start`
+```bash
+sudo service tor start
+```
 
 Once two or three minutes have passed, reboot! `sudo reboot`
 
@@ -747,11 +795,15 @@ sudo chgrp -R www-data /var/www/website2/
 
 Start Tor. I allowed two or three minutes for it in this setup; the time can vary.
 
-`sudo service tor start`
+```bash
+sudo service tor start
+```
 
 Restart Apache and Tor to pick up the configuration changes:
 
-`sudo service apache2 restart && sudo service tor restart`
+```bash
+sudo service apache2 restart && sudo service tor restart
+```
 
 And one big reboot of the entire system for the heck of it. `sudo reboot`
 
@@ -788,7 +840,9 @@ Time to get some content onto the web server. In this setup I could use the Samb
 
 To see the onion address generated for this historical service:
 
-`sudo cat /var/lib/tor/website1/hostname`
+```bash
+sudo cat /var/lib/tor/website1/hostname
+```
 
 The next step was to open that address in Tor Browser and look for the test page. The address generated by this 2016 setup was a v2 onion address; those no longer work on the modern Tor network.
 

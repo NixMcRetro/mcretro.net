@@ -15,7 +15,7 @@ share_description: >-
 
 Honestly, I didn't realise this, but after rejiggering the domain order there was `mcretro.net`, displayed proudly in Safari's certificate viewer. That display is separate from Certbot's internal certificate name, which defaults to the first `-d` domain unless I specify `--cert-name` or reuse an existing certificate. All the requested domains are included as Subject Alternative Names. Putting my favourite first didn't give it any special TLS priority.
 
-```
+```bash
 sudo certbot --apache --no-redirect -d mcretro.net -d files.mcretro.net -d fishtankworld.mcretro.net -d frank.mcretro.net -d geocities.mcretro.net -d nature.mcretro.net -d pepper.mcretro.net -d photos.mcretro.net -d scifi.mcretro.net -d sonic.mcretro.net -d space.mcretro.net -d www.mcretro.net
 
 ```

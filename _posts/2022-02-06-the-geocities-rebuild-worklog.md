@@ -574,7 +574,7 @@ My external hard drive containing all Core and YahooIDs data is currently mounte
 
 I attempted to use [mod_alias](https://httpd.apache.org/docs/2.4/mod/mod_alias.html) only to find it kind of worked, but not really. Then I came across [this incredible idea](https://madbean.com/2007/two-docroots/) of having **two DocumentRoots**. My VirtualHost configuration became this:
 
-```
+```apache
 DocumentRoot /var/www/html/geocities <Directory /var/www/html/geocities> Options Indexes MultiViews FollowSymLinks AllowOverride None Require all granted </Directory>
 
 RewriteCond "/var/www/html/External/YahooIDs%{REQUEST_URI}" -f \[OR\] RewriteCond "/var/www/html/External/YahooIDs%{REQUEST_URI}" -d RewriteRule ^/?(.\*)$ /var/www/html/External/YahooIDs/$1 \[L\]
@@ -758,11 +758,15 @@ The creation of hidden .DS_Store files and directory listing index.html files (s
 
 They don't have a lot in common, but their source code shared some unique beginnings. This is one of the files:
 
-`<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> <HTML> <HEAD> <TITLE>Index of /CapeCanaveral/6276/wreck</TITLE> </HEAD> <BODY> <H1>Index of /CapeCanaveral/6276/wreck</H1>`
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> <HTML> <HEAD> <TITLE>Index of /CapeCanaveral/6276/wreck</TITLE> </HEAD> <BODY> <H1>Index of /CapeCanaveral/6276/wreck</H1>
+```
 
 From that we can steal the first part - four lines worth:
 
-`<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> <HTML> <HEAD> <TITLE>Index of`
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> <HTML> <HEAD> <TITLE>Index of
+```
 
 And that's pretty unique in itself as it narrows down HTML files that have "Index of" in their title. That's only going to be indexes of directories. Perfect. Another bonus is the !DOCTYPE declaration. HTML3.2 Final (we're up to HTML5 now). Very handy.
 

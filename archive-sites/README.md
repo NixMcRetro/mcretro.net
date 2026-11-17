@@ -11,6 +11,52 @@ Two separate static website starters are in this **draft, unmerged PR**. Neither
 
 The committed sample catalogues still contain **obsolete connectivity-test entries** (`mcretro-r2-check.txt` and `mcretro-r2-check.png`), **not** the full gallery or the verified 20-image pilot. They are examples only and **must not be uploaded as public catalogues**. No original photo archive, full generated photo catalogue, private review metadata or R2 credentials are committed.
 
+## Next action: read-only audit of the existing Mac staging (no source rescan)
+
+The 20-object R2 pilot was fully verified. Before considering any wider release,
+check whether the **existing local gallery catalogue, static folder pages,
+sitemap, HTML and fonts still match** the 4.277 GB renamed optimised collection.
+
+**Do not rerun `build_mcretro_r2_catalogues.py` at this stage.** Its historical
+build operation walks the original ~26 GB collection, which the owner now
+wants to leave completely untouched. The new `audit_gallery_staging.py` does
+not open, list, or traverse the originals. It is also read-only with respect
+to local staging, and never contacts R2.
+
+Download one consistent set of current **draft branch** scripts and the gallery
+template to `~/Downloads` (the exact commit can be pinned after CI passes):
+
+    BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites"
+    for f in gallery_keys.py gallery_routes.py gallery_naming.py gallery_descriptions.py validate_r2_upload.py preview_mcretro_gallery.py render_gallery_pages.py audit_gallery_staging.py; do
+      curl -fLsS "$BASE/tools/$f" -o "$HOME/Downloads/$f" || break
+    done
+    curl -fLsS "$BASE/photo-gallery/index.html" -o "$HOME/Downloads/mcretro-gallery-index.html"
+
+Then run:
+
+    python3 "$HOME/Downloads/audit_gallery_staging.py" --html "$HOME/Downloads/mcretro-gallery-index.html"
+
+The script performs local image/catalogue consistency checks, compares **all
+generated static HTML pages** with the current template and manifest, checks
+the staged `site/albums.json`, sitemap, HTML upload plan and five required
+theme fonts, and counts independently approved photo metadata fields. It
+also checks for stray files under `photo-gallery/site/` that should not be
+uploaded indiscriminately. Its JSON result remains in Terminal; it does not
+write a report by default.
+
+A technical `PASS` is **not** a privacy, accessibility, copyright or public
+release approval. If it reports stale pages, the **local-only**
+`render_gallery_pages.py` can regenerate from the existing manifest without
+reading the original 26 GB collection:
+
+    python3 "$HOME/Downloads/render_gallery_pages.py" --html "$HOME/Downloads/mcretro-gallery-index.html"
+
+Review each reported discrepancy before changing the staged files. If fonts
+are missing, `stage_gallery_theme.py` can retrieve verified copies of
+McRetro's current public fonts **into local staging only**; font use in R2
+still requires separate publication approval. Do not run any real image
+upload, HTML upload, site rewrite, or PR merge on the strength of this audit.
+
 ## Local source material and current conversion
 
 The restored collection lives on the owner's Mac; the paths below are *local*, not accessible to GitHub Actions.

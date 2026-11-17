@@ -1,0 +1,183 @@
+"""Unit tests for the explicitly invoked, photo-only remaining R2 uploader."""
+import subprocess
+import unittest
+from unittest.mock import patch
+
+import upload_r2_remaining_photos as task
+
+
+def fixture():
+    keys = sorted(task.PILOT_KEYS) + [
+        "full/consoles/sega/IMG_9991.jxl",
+        "thumbs/consoles/sega/IMG_9991.jxl",
+        "full/projects/project-yampad/animated.gif",
+    ]
+    plan = {
+        key: {"r2_key": key, "bytes": "123",
+              "mime": "image/gif" if key.endswith(".gif") else "image/jxl",
+              "local_path": str(task.CONVERTED / key),
+              "approved_for_publication": "NO"}
+        for key in keys
+    }
+    remote = {
+        key: {"Path": key, "Size": 123, "MimeType": plan[key]["mime"]}
+        for key in task.PILOT_KEYS
+    }
+    return plan, remote
+
+
+class PhotoOnlyUploadTests(unittest.TestCase):
+    def setUp(self):
+        self.plan, self.remote = fixture()
+
+    def test_exact_existing_pilot_and_remaining_selection(self):
+        pending = task.audit_existing(self.plan, self.remote)
+        self.assertEqual(pending, sorted(set(self.plan) - task.PILOT_KEYS))
+        self.assertEqual(len(pending), 3)
+        self.assertTrue(all(key not in task.PILOT_KEYS for key in pending))
+        self.assertEqual(len(task.PILOT_KEYS), 20)
+
+    def test_reject_unknown_remote_objects_even_with_correct_pilot(self):
+        remote = dict(self.remote)
+        remote["index.html"] = {"Path": "index.html", "Size": 100,
+                                "MimeType": "text/html"}
+        with self.assertRaisesRegex(ValueError, "unexpected objects"):
+            task.audit_existing(self.plan, remote)
+
+    def test_reject_tampered_existing_objects_no_overwrite(self):
+        remote = dict(self.remote)
+        key = next(iter(remote))
+        remote[key] = dict(remote[key], Size=124)
+        with self.assertRaisesRegex(ValueError, "size mismatch"):
+            task.audit_existing(self.plan, remote)
+        remote[key] = dict(remote[key], Size=123,
+                           MimeType="application/octet-stream")
+        with self.assertRaisesRegex(ValueError, "MIME mismatch"):
+            task.audit_existing(self.plan, remote)
+
+    def test_missing_pilot_stops_before_upload(self):
+        remote = dict(self.remote)
+        remote.pop(next(iter(task.PILOT_KEYS)))
+        with self.assertRaisesRegex(ValueError, "pilot objects are missing"):
+            task.audit_existing(self.plan, remote)
+
+    def test_rclone_command_cannot_upload_originals_or_unplanned_tree(self):
+        command = task.rclone_copy_command()
+        self.assertEqual(command[0:2], ["rclone", "copy"])
+        self.assertIn("--ignore-existing", command)
+        self.assertIn("--files-from0", command)
+        self.assertIn("--s3-no-check-bucket", command)
+        self.assertNotIn("sync", command)
+        self.assertNotIn("--delete-excluded", command)
+        self.assertNotIn("--ignore-times", command)
+        self.assertNotIn("--metadata", command)
+        self.assertNotIn("--dry-run", command)
+        self.assertEqual(command[-2:], [str(task.CONVERTED), task.FINAL_DESTINATION])
+        self.assertEqual(set(task.sampled_keys(self.plan)),
+                         set(self.plan) - task.PILOT_KEYS)
+
+    @patch.object(task, "all_remote_objects")
+    @patch.object(task, "local_plan")
+    @patch.object(task.shutil, "which", return_value="/usr/bin/rclone")
+    @patch.object(task.subprocess, "run")
+    def test_default_is_preflight_only(self, run, which, local, remote):
+        local.return_value = self.plan
+        remote.return_value = self.remote
+        self.assertEqual(task.main([]), 0)
+        run.assert_not_called()
+        self.assertEqual(remote.call_count, 1)
+
+    @patch.object(task, "all_remote_objects")
+    @patch.object(task, "local_plan")
+    @patch.object(task.shutil, "which", return_value="/usr/bin/rclone")
+    @patch.object(task.subprocess, "run")
+    def test_upload_only_the_three_missing_objects_and_check_bytes(
+        self, run, which, local, remote
+    ):
+        local.return_value = self.plan
+        full = {**self.remote, **{
+            key: {"Path": key, "Size": 123, "MimeType": self.plan[key]["mime"]}
+            for key in set(self.plan) - set(self.remote)
+        }}
+        remote.side_effect = [self.remote, full]
+        run.return_value = subprocess.CompletedProcess(args=[], returncode=0)
+        with patch.object(task, "EXPECTED_OBJECTS", len(self.plan)):
+            self.assertEqual(task.main(["--upload"]), 0)
+        self.assertEqual(run.call_count, 2)
+        copy_call = run.call_args_list[0]
+        command = copy_call.args[0]
+        self.assertEqual(command[1], "copy")
+        keys = copy_call.kwargs["input"].rstrip(b"\0").split(b"\0")
+        self.assertEqual(set(keys), {
+            key.encode() for key in set(self.plan) - task.PILOT_KEYS
+        })
+        self.assertEqual(run.call_args_list[1].args[0][1], "check")
+        self.assertIn("--download", run.call_args_list[1].args[0])
+        self.assertTrue(set(run.call_args_list[1].kwargs["input"]
+                            .rstrip(b"\0").split(b"\0")).isdisjoint(
+                            {k.encode() for k in task.PILOT_KEYS}))
+
+    @patch.object(task, "all_remote_objects")
+    @patch.object(task, "local_plan")
+    @patch.object(task.shutil, "which", return_value="/usr/bin/rclone")
+    @patch.object(task.subprocess, "run")
+    def test_interrupted_upload_resumes_only_missing_keys(
+        self, run, which, local, remote
+    ):
+        local.return_value = self.plan
+        one = "full/consoles/sega/IMG_9991.jxl"
+        remote.side_effect = [
+            {**self.remote, one: {"Path": one, "Size": 123, "MimeType": "image/jxl"}},
+            {k: {"Path": k, "Size": 123, "MimeType": v["mime"]}
+             for k, v in self.plan.items()},
+        ]
+        run.return_value = subprocess.CompletedProcess(args=[], returncode=0)
+        with patch.object(task, "EXPECTED_OBJECTS", len(self.plan)):
+            self.assertEqual(task.main(["--upload"]), 0)
+        sent = run.call_args_list[0].kwargs["input"].rstrip(b"\0").split(b"\0")
+        self.assertNotIn(one.encode(), sent)
+        self.assertNotIn(next(iter(task.PILOT_KEYS)).encode(), sent)
+        self.assertEqual(len(sent), 2)
+
+    @patch.object(task, "all_remote_objects")
+    @patch.object(task, "local_plan")
+    @patch.object(task.shutil, "which", return_value="/usr/bin/rclone")
+    @patch.object(task.subprocess, "run")
+    def test_verify_incomplete_never_uploads(self, run, which, local, remote):
+        local.return_value = self.plan
+        remote.return_value = self.remote
+        with self.assertRaisesRegex(ValueError, "INCOMPLETE"):
+            task.main(["--verify"])
+        run.assert_not_called()
+
+    @patch.object(task, "all_remote_objects")
+    @patch.object(task, "local_plan")
+    @patch.object(task.shutil, "which", return_value="/usr/bin/rclone")
+    @patch.object(task.subprocess, "run")
+    def test_deep_verification_reads_all_keys_no_writes(
+        self, run, which, local, remote
+    ):
+        local.return_value = self.plan
+        remote.return_value = {
+            k: {"Path": k, "Size": 123, "MimeType": v["mime"]}
+            for k, v in self.plan.items()
+        }
+        run.return_value = subprocess.CompletedProcess(args=[], returncode=0)
+        with patch.object(task, "EXPECTED_OBJECTS", len(self.plan)):
+            self.assertEqual(task.main(["--deep-verify"]), 0)
+        self.assertEqual(run.call_count, 1)
+        self.assertEqual(run.call_args.args[0][1], "check")
+        self.assertEqual(
+            set(run.call_args.kwargs["input"].rstrip(b"\0").split(b"\0")),
+            {key.encode() for key in self.plan},
+        )
+
+    @patch.object(task, "validate")
+    def test_local_photo_counts_change_or_changed_approval_fails(self, validate):
+        validate.return_value = ([{}] * 10, [], 1000)
+        with self.assertRaisesRegex(ValueError, "counts/bytes changed"):
+            task.local_plan()
+
+
+if __name__ == "__main__":
+    unittest.main()

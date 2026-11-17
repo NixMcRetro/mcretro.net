@@ -7,6 +7,9 @@ class FolderNameTests(unittest.TestCase):
     def setUpClass(cls):
         cls.rules = load_rules()
 
+    def test_root_label_is_title_case(self):
+        self.assertEqual(format_segment('', self.rules)[0], 'All Photographs')
+
     def test_exact_owner_example(self):
         labels, records = build_name_review([
             'accessories',

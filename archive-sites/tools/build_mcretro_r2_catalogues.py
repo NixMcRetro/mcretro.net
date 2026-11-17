@@ -19,6 +19,7 @@ import sys
 
 from gallery_naming import load_rules, build_name_review
 from gallery_routes import folder_url
+from gallery_descriptions import load_descriptions, approved_metadata
 
 DEFAULT_ORIGINAL = Path('/Users/nix/Desktop/R2 FILES/photos')
 DEFAULT_CONVERTED = Path.home() / 'Desktop/McRetro-PhotoGallery-Optimised-v2'
@@ -100,8 +101,10 @@ def p_name(relative: str) -> str:
     return relative.rsplit('/', 1)[-1]
 
 
-def build_photos(original: Path, converted: Path, stage: Path, rules: dict | None = None) -> dict:
+def build_photos(original: Path, converted: Path, stage: Path, rules: dict | None = None,
+                 descriptions: dict | None = None) -> dict:
     rules = load_rules() if rules is None else rules
+    descriptions = {} if descriptions is None else descriptions
     originals = []
     skipped = []
     for p in iter_files(original):
@@ -193,16 +196,25 @@ def build_photos(original: Path, converted: Path, stage: Path, rules: dict | Non
     # The only generated alt text is an honest filename/folder description.
     # Generic text is explicitly queued for owner review before public release.
     photos = []
+    review_status = []
+    reviewed_sources = set()
     for rel, directory, title, full_key, thumb_key in images:
         album = album_ids[directory]
-        # Keep the original filename privately available in the catalogue, but
-        # do not mistake camera-generated filenames or folder context for a
-        # verified description of the image contents.
+        # Never auto-infer scene descriptions or chip identifiers from the
+        # directory name. Only explicitly reviewed metadata leaves the private
+        # sidecar and enters the generated catalogue.
+        metadata = approved_metadata(descriptions.get(rel, {}))
+        if rel in descriptions:
+            reviewed_sources.add(rel)
         photos.append({'path': full_key, 'thumbnail': thumb_key,
                        'filename': p_name(rel), 'title': title, 'album': album,
-                       'caption': '', 'caption_approved': False,
-                       'alt': '', 'alt_approved': False,
-                       'date_taken': None, 'date_approved': False})
+                       **metadata})
+        review_status.append({'source_path': rel, 'album_folder': directory,
+                              'caption_approved': metadata['caption_approved'],
+                              'scene_approved': metadata['scene_description_approved'],
+                              'components_approved': metadata['components_approved'],
+                              'alt_approved': metadata['alt_approved'],
+                              'search_terms_approved': metadata['search_terms_approved']})
 
     # Folder tree mirrors every source directory level, not merely the leaf
     # directories that contain pictures. A single folder can hold both images
@@ -239,13 +251,24 @@ def build_photos(original: Path, converted: Path, stage: Path, rules: dict | Non
     write_csv(stage / 'reports' / 'missing-photo-conversions.csv', ['path','problem'], missing)
     write_csv(stage / 'reports' / 'photo-alt-review.csv', ['source_path','album_folder','reason','suggested_alt'], review)
     write_csv(stage / 'reports' / 'photos-upload-plan.csv', ['r2_key','local_path','kind','bytes','mime','approved_for_publication'], upload)
+    write_csv(stage / 'reports' / 'photo-description-status.csv',
+              ['source_path','album_folder','caption_approved','scene_approved',
+               'components_approved','alt_approved','search_terms_approved'], review_status)
+    unmatched = sorted(set(descriptions) - reviewed_sources)
+    write_csv(stage / 'reports' / 'photo-description-unmatched.csv',
+              ['original_source_path'], [{'original_source_path': path} for path in unmatched])
     write_csv(stage / 'reports' / 'folder-name-review.csv',
               ['folder_path', 'original_segment', 'proposed_display_name', 'needs_review', 'method_or_reason',
                'owner_approved', 'owner_replacement'], name_review)
 
     # Output is a preview-only draft; never a published catalogue.
     return {'original_supported_files': len(originals), 'converted_pairs': len(images),
-            'skipped': len(skipped), 'missing_pairs': len(missing), 'albums': len(albums), 'folder_labels': len(name_review),
+            'skipped': len(skipped), 'missing_pairs': len(missing), 'albums': len(albums), 'approved_captions': sum(p['caption_approved'] for p in photos),
+            'approved_scenes': sum(p['scene_description_approved'] for p in photos),
+            'approved_components': sum(p['components_approved'] for p in photos),
+            'approved_alt_texts': sum(p['alt_approved'] for p in photos),
+            'description_sidecar_unmatched': len(unmatched),
+            'folder_labels': len(name_review),
             'folder_labels_needing_review': sum(r['needs_review'] == 'YES' for r in name_review),
             'generic_alt_to_review': len(review), 'input_gb': round(total_original/GB, 3),
             'output_gb': round((total_gallery+total_thumbs)/GB, 3),
@@ -297,13 +320,18 @@ def main(argv=None):
     parser.add_argument('--files', type=Path, default=DEFAULT_FILES)
     parser.add_argument('--stage', type=Path, default=DEFAULT_STAGE)
     parser.add_argument('--names', type=Path, default=None, help='Folder display-names.json override file')
+    parser.add_argument('--descriptions', type=Path, default=None,
+                        help='Owner-reviewed source-relative JSON file; default is stage/reviews/photo-descriptions.json')
     args = parser.parse_args(argv)
     photo_root, conversion_root, file_root, staging = (
         p.expanduser().resolve() for p in (args.photos, args.converted, args.files, args.stage))
     validate_dirs(photo_root, conversion_root, file_root, staging)
     staging.mkdir(parents=True, exist_ok=True)
     naming_rules = load_rules(args.names.expanduser() if args.names else None)
-    photo_summary = build_photos(photo_root, conversion_root, staging, naming_rules)
+    description_source = (args.descriptions.expanduser() if args.descriptions
+                          else staging / 'reviews' / 'photo-descriptions.json')
+    description_data = load_descriptions(description_source, required=bool(args.descriptions))
+    photo_summary = build_photos(photo_root, conversion_root, staging, naming_rules, description_data)
     files_summary = build_files_review(file_root, staging)
     result = {'photos': photo_summary, 'file_server': files_summary,
               'publication': 'NONE; local drafts and review reports only'}

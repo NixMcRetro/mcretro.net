@@ -133,13 +133,24 @@ def _verify_site(stage: Path, data: dict, html: Path | None) -> dict:
             elif row.get('bytes') != str(path.stat().st_size):
                 problems.append('Static file size differs from page upload plan: ' + key)
 
-    # Notice staging debris instead of assuming every file under the site is safe
-    # to publish by an indiscriminate recursive rclone command.
+    # Finder can recreate .DS_Store even after a fresh static rebuild.
+    # Report normal Finder metadata but don't fail the technical site audit
+    # on it. This is NOT an upload allowlist: only exact planned object keys
+    # may ever be selected for publication, not a recursive folder copy.
+    finder_metadata = []
     if root.is_dir():
+        unexpected = [
+            p for p in root.rglob('*') if (p.is_file() or p.is_symlink()) and
+            p.relative_to(root).as_posix() not in expected_keys
+        ]
+        finder_metadata = sorted(
+            p.relative_to(root).as_posix() for p in unexpected
+            if p.name == '.DS_Store' and p.is_file() and not p.is_symlink()
+        )
         extras = sorted(
-            p.relative_to(root).as_posix()
-            for p in root.rglob('*') if p.is_file() and
-            p.relative_to(root).as_posix() not in expected_keys)
+            p.relative_to(root).as_posix() for p in unexpected
+            if not (p.name == '.DS_Store' and p.is_file() and not p.is_symlink())
+        )
         if extras:
             problems.append(f'{len(extras)} unplanned static site files (do not bulk upload); first: {extras[:3]}')
 
@@ -147,6 +158,8 @@ def _verify_site(stage: Path, data: dict, html: Path | None) -> dict:
         'expected_static_pages': len(routes),
         'expected_static_objects': len(expected_keys),
         'exact_html_pages_verified': verified_pages,
+        'ignored_finder_metadata_count': len(finder_metadata),
+        'ignored_finder_metadata_examples': finder_metadata[:3],
         'problems': problems[:25],
         'total_problem_count': len(problems),
     }

@@ -1,0 +1,53 @@
+# McRetro Photo Gallery and File Server - reconciled checkpoint
+
+**17th November 2026, 15:28 AEDT** | Source: user-supplied Mac commands and readback logs, plus draft PR #271. This is a project record, **not** a publication approval.
+
+## Established decisions
+
+- Keep `/Users/nix/Desktop/R2 FILES/photos` (approximately 26 GB of historical originals) untouched. The completed conversion, extra BMP recovery and in-place renaming are already done; do not scan or reconvert the original set again as part of the next steps.
+- Use the approximately 4.277 GB **optimised** set at `~/Desktop/McRetro-PhotoGallery-Optimised-v2` for gallery image delivery. Its `full/` and `thumbs/` folders now have the final public names such as `IMG_0835.jxl`, with the original relative directory structure intact. No duplicate upload-ready tree.
+- The recovered collection comprises **8,412 photographs**: 8,391 previously supported images, 20 Nintendo DS BMP screenshots converted to JXL, and one original animated GIF preserved unchanged. They correspond to **16,823 distinct objects**, since the GIF shares its full-image key as its thumbnail. The historical folder audit discovered **212 albums**.
+- The Photo Gallery is an independent static site intended for `photos.mcretro.net`, preserving nested folders, breadcrumbs, real `/albums/<slug>-<hash>.html` URLs, static HTML and sitemap for preservation, global search, 60-item image batches, accessible viewer controls and responsive mobile layouts.
+- Match McRetro.net's Korataki logo, Montserrat and Merriweather fonts, current light/dark theme tokens, compact image-first layout and manual theme toggle. Display-only folder-name rules and explicit exact-path overrides do not rename folder paths.
+- Keep captions, actual visual alt text, verified scene descriptions, chip/component identifiers, searchable keywords and recovered dates **separate**, each with its own owner-approval flag. Unreviewed AI guesses and generic filename captions do not appear as public facts. Private sidecar `reviews/photo-descriptions.json` is local-only; reports and private audit metadata are never public assets.
+- The File Server is separate: `mcretro-files` / `files.mcretro.net`; **987 candidate files (~0.999 GB)** remain unapproved pending provenance, licensing, redistribution, content and privacy review. Do not conflate their review with the Photo Gallery pilot.
+- Do not change the main Jekyll website's Goodies page, `/photos/` or `/files/` placeholders, current blog images, or historical articles without a separate explicit owner approval. PR #271 remains **draft and unmerged**.
+
+## Completed, with evidence
+
+| Item | Status | Evidence / limitation |
+| --- | --- | --- |
+| Local 8,412-photo and 16,823-object plan | **PASS** | User pasted validator result: 4.277 GB, all paths, signatures, sizes, MIME and `NO` upload-approval fields consistent |
+| Optimised names, not 26 GB originals | **DONE** | In-place rename followed by validator and 20-key dry run showing clean `IMG_XXXX.jxl` source keys |
+| First live R2 test | **COMPLETE ONLY FOR 20** | User explicitly authorised ten full JXL photos and ten matching thumbnails; dedicated `upload_r2_test20.py` used |
+| Remote object list, size and type | **PASS FOR 20** | User's 15:26:29 AEDT `--verify`: exactly 20 keys, expected sizes and `image/jxl` |
+| Byte-for-byte data check | **PASS FOR 20** | rclone: `0 differences found`, `20 matching files`, downloaded-byte comparison passed |
+| Public delivery | **PASS FOR TWO TEST URLS** | User `curl -sSI`: HTTP/2 200, `image/jxl` and correct Content-Length for `IMG_0835.jxl` full and thumbnail |
+| Old root PNG | **REMOVED** | User explicitly deleted `Cozy Retro-Tech Hammock with Parrots.png` and confirmed a temporarily empty bucket before the 20-object test |
+| Draft branch CI | **PASS at checkpoint** | GitHub CodeQL, Python/JS/Actions/Ruby analyses and archive validation succeeded; rerun after further changes |
+| Remaining R2 gallery assets | **NOT UPLOADED / NOT AUTHORISED** | Exactly **16,803** other gallery objects remain; no further transfer approval has been given |
+| Gallery page, manifests, fonts, sitemap | **DRAFT ONLY / NOT PUBLISHED** | Generated local staging expected; no readback from the owner's *current* Mac since optimised-name changes |
+| Text descriptions and file-server approvals | **NOT COMPLETE** | Publication gating still required; no blanket owner approval |
+
+The 20 pilot objects are already publicly accessible at their exact URLs on the public R2 custom domain. **Unlisted URL is not private.** The owner previously authorised this narrow public pilot. Do not assume the remainder is also approved.
+
+## Work to do next - no R2 upload or publication
+
+1. **Recheck the current, private local staging only**, without reading the historical originals: `python3 "$HOME/Downloads/validate_r2_upload.py"`; then `python3 "$HOME/Downloads/preview_mcretro_gallery.py" --check-only` using the current gallery template and scripts. Ensure the manifest, upload-plan CSV and optimised filenames still agree.
+2. **Confirm static page freshness** after the filename and metadata rules changed. Inspect `~/Desktop/McRetro-R2-Staging/photo-gallery/site/albums.json`, `site/index.html`, folder `.html` pages and `site/sitemap.xml` against the latest `albums.generated.json`. If stale, rerun the **local-only** `render_gallery_pages.py` with the current template; verify the new `reports/gallery-pages-upload-plan.csv` still marks every entry `NO`. Regeneration creates local staging files only.
+3. **Review the local gallery at `127.0.0.1:8766`.** Exercise all 212 album folders, ancestor folders, direct/subtree counts, technical display names, nested breadcrumbs and Back/Forward links, global search, 60-image batches, lightbox keys, mobile layout, light/dark contrast, real deep-link routes, GIF playback and 20 Nintendo DS screenshot fidelity. Test actual JPEG XL support in target browsers. This human review has **not** been signed off.
+4. **Make a private editorial review plan** for the 8,000+ generic-named images: prioritise accurate per-photo alt text, and separately review useful captions, verified hardware/components, searchable scene descriptions, and optional dates. Keep `reviews/photo-descriptions.json` private, and require independent approval flags. Neither scene descriptions nor captions may be inferred as approved from their presence.
+5. **File Server remains separate and blocked** pending review of all 987 candidates, rights, filenames, potentially sensitive data, and purpose. Any historical redirects and Goodies navigation changes require their own review and owner authorisation.
+6. **Only after the owner authorises a defined future batch**, prepare an exact-allowlist, no-overwrite upload plan for that specified batch. The 20 pilot entries must be excluded from any remaining-upload list except for verification. Never use `rclone sync`, blind recursive copy, deletion or overwrite.
+7. **Site publication is its own explicit gate**: review and separately approve public `albums.json`, generated HTML, sitemap, fonts, any rewrite for `/` to `/index.html`, and finally any changes to McRetro.net's navigation. No implicit approval follows from a successful image test.
+
+## Source-of-truth clarification
+
+- `archive-sites/photo-gallery/albums.json` and `archive-sites/file-server/catalogue.json` in GitHub are **old demonstration connectivity records**, **not** the complete generated galleries or approved deployable manifests. They must not be pushed to R2 as-is.
+- The full private manifest lives only at `~/Desktop/McRetro-R2-Staging/photo-gallery/albums.generated.json` and its corresponding upload plan at `reports/photos-upload-plan.csv`. The full content has not been committed to this PR. Generated local static pages and `gallery-pages-upload-plan.csv` also remain local.
+- The README is workflow/design documentation; this checkpoint supersedes earlier **status** statements that predate the 20-object pilot. Historical instructions for the test upload remain as a record; they are **not** permission to rerun it.
+- GitHub connector access cannot inspect the owner's local Mac staging or private Cloudflare R2 contents. The pilot's remote state is verified from user-shared terminal readback, not independently rechecked by the connector.
+
+## Explicit protections
+
+**This checkpoint does not authorise:** any upload beyond the original 20 objects, changing R2 access, deleting/replacing any object, publishing HTML/manifest/fonts/sitemap, amending Goodies/blog navigation, touching the 26 GB source originals, or merging PR #271.

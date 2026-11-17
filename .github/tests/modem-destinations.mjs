@@ -272,9 +272,9 @@ test('Goodies and Explorer preserve approved dial destinations', () => {
   const modem = readFileSync(new URL('../../homepages/modem/index.html', import.meta.url), 'utf8');
   const connection = readFileSync(new URL('../../_includes/modem-connection.html', import.meta.url), 'utf8');
   // Goodies now exposes Dial-Up Networking as a linked project card, not a Markdown list.
-  const dialCard = goodies.match(/<a\\b[^>]*href="\\/homepages\\/modem\\/"[^>]*>([\\s\\S]*?)<\\/a>/);
+  const dialCard = goodies.match(/<a\b[^>]*href="\/homepages\/modem\/"[^>]*>([\s\S]*?)<\/a>/);
   assert.ok(dialCard, 'Dial-Up Networking card must keep its original destination');
-  assert.match(dialCard[1], /<span class="goodies-card-title">Dial-Up Networking<\\/span>/);
+  assert.match(dialCard[1], /<span class="goodies-card-title">Dial-Up Networking<\/span>/);
   assert.match(modem, /data-modem-new/);
   assert.match(modem, /data-modem-target="blog-random"/);
   assert.match(modem, /data-modem-target="random"/);

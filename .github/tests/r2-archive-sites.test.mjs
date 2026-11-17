@@ -107,6 +107,12 @@ test('photo gallery HTML has its controls and valid inline JavaScript', () => {
   assert.match(html, /window\.history\.pushState/);
   assert.match(html, /location\.hash/, "Legacy hash URLs must still be supported");
   assert.match(html, /folderSection\.hidden = inSearch/);
+  assert.match(html, /function reviewedCaption\(photo\)/);
+  assert.match(html, /id="viewer-details"/);
+  assert.match(html, /id="viewer-filename"/);
+  assert.match(html, /id="viewer-date"/);
+  assert.doesNotMatch(html, /class="tile-label"/);
+  assert.doesNotMatch(html, /id="viewer-credit"/);
   assert.match(html, /THEME_KEY = "mcretro-theme"/);
   assert.match(html, /data-theme="dark"/);
   assert.match(html, /#FFF8DC/i, 'Main-site light theme background must be retained');
@@ -162,9 +168,13 @@ test('folder browser navigates deeply nested source paths, searches globally and
   ];
   const photos = [
     { album:'sega-a', title:'Console motherboard', path:'full/consoles/sega/01.jpg.jxl',
-      thumbnail:'thumbs/consoles/sega/01.jpg.jxl', alt:'Circuit board' },
+      thumbnail:'thumbs/consoles/sega/01.jpg.jxl', alt:'Unverified circuit board',
+      caption:'Unreviewed guess', caption_approved:false },
     { album:'nintendo-a', title:'Game Boy screen', path:'full/consoles/nintendo/02.jpg.jxl',
-      thumbnail:'thumbs/consoles/nintendo/02.jpg.jxl', alt:'Handheld LCD screen' },
+      thumbnail:'thumbs/consoles/nintendo/02.jpg.jxl',
+      caption:'Game Boy display', caption_approved:true,
+      alt:'A Game Boy screen', alt_approved:true,
+      date_taken:'2012-01-23', date_approved:true },
   ];
   const manifest = { schema_version:1, albums, photos, folders:[
     { path:'consoles', name:'Consoles', parent:'', photo_count:2 },
@@ -209,6 +219,17 @@ test('folder browser navigates deeply nested source paths, searches globally and
   assert.equal(location.hash, '');
   assert.equal(document.getElementById('count').textContent, '1 photograph');
   assert.equal(document.getElementById('grid').children.length, 1);
+  const firstTile = document.getElementById('grid').children[0];
+  assert.equal(firstTile.children.length, 1, 'No generic filename or repeated album caption');
+  assert.equal(firstTile.getAttribute('aria-label'), 'View photograph 1 of 1 in Serial 001');
+  assert.equal(firstTile.children[0].children[0].alt, '');
+  firstTile.listeners.click();
+  assert.equal(document.getElementById('viewer-title').textContent, 'Photograph 1 of 1');
+  assert.equal(document.getElementById('viewer-filename').textContent, '01.jpg');
+  assert.equal(document.getElementById('viewer-album').textContent, 'Serial 001');
+  assert.equal(document.getElementById('viewer-date').hidden, true);
+  assert.equal(document.getElementById('viewer-caption').hidden, true);
+  document.getElementById('viewer').close();
   const crumbs = document.getElementById('breadcrumbs').children;
   assert.ok(crumbs.some(entry => entry.textContent === 'Sega'));
   const input = document.getElementById('search');
@@ -217,6 +238,16 @@ test('folder browser navigates deeply nested source paths, searches globally and
   assert.equal(document.getElementById('folder-section').hidden, true);
   assert.equal(document.getElementById('count').textContent, '1 photograph',
     'Search must reach a photograph in another collection');
+  const reviewedTile = document.getElementById('grid').children[0];
+  assert.equal(reviewedTile.children.length, 2, 'Owner-approved caption is visible');
+  assert.equal(reviewedTile.children[1].textContent, 'Game Boy display');
+  reviewedTile.listeners.click();
+  assert.equal(document.getElementById('viewer-caption').textContent, 'Game Boy display');
+  assert.equal(document.getElementById('viewer-caption').hidden, false);
+  assert.equal(document.getElementById('viewer-date').textContent, '2012-01-23');
+  assert.equal(document.getElementById('viewer-date').hidden, false);
+  assert.equal(document.getElementById('viewer-image').alt, 'A Game Boy screen');
+  document.getElementById('viewer').close();
   input.value = '';
   input.listeners.input();
   assert.equal(document.getElementById('folder-section').hidden, false);

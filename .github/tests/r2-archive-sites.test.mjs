@@ -94,7 +94,9 @@ test('photo gallery HTML has its controls and valid inline JavaScript', () => {
   assert.match(html, /<html lang="en-AU">/);
   assert.match(html, /<title>McRetro Photo Gallery<\/title>/);
   assert.match(html, /fetch\("\.\/albums\.json"/);
-  for (const id of ['viewer','search','albums','grid']) assert.ok(html.includes('id="' + id + '"'));
+  for (const id of ['viewer','search','group','albums','grid','show-more']) assert.ok(html.includes('id="' + id + '"'));
+  assert.match(html, /const PAGE_SIZE = 60/);
+  assert.match(html, /moreButton\.addEventListener\("click", appendPage\)/);
   assertSelfContainedScript(html);
 });
 

@@ -15,8 +15,8 @@
 @font-face{font-family:"Merriweather";src:url("/assets/fonts/merriweather/merriweather-latin-700-normal.woff2") format("woff2");font-weight:700;font-display:swap}
 :root{color-scheme:light;--bg:#FFF8DC;--paper:#FFFDF2;--panel:#F0EAD9;--ink:#1A1A1A;--muted:#535A5D;--link:#0009B5;--link-hover:#000080;--accent:#EAF2FF;--accent-ink:#064584;--edge:#525D5B;--shadow:#BBC8BF;--focus:#0009B5;--tile-hover:#D5E6FF;--input-bg:#FFFFFF}
 :root[data-theme="dark"]{color-scheme:dark;--bg:#191D27;--paper:#242B38;--panel:#303A48;--ink:#F5F0E4;--muted:#B9C5CB;--link:#93C5FD;--link-hover:#BFDBFE;--accent:#293A55;--accent-ink:#BFDBFE;--edge:#88969C;--shadow:#10161B;--focus:#BFDBFE;--tile-hover:#2B405E;--input-bg:#242B38}@media(prefers-color-scheme:dark){:root:not([data-theme]){color-scheme:dark;--bg:#191D27;--paper:#242B38;--panel:#303A48;--ink:#F5F0E4;--muted:#B9C5CB;--link:#93C5FD;--link-hover:#BFDBFE;--accent:#293A55;--accent-ink:#BFDBFE;--edge:#88969C;--shadow:#10161B;--focus:#BFDBFE;--tile-hover:#2B405E;--input-bg:#242B38}}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Merriweather",Georgia,serif;letter-spacing:.015em}a{color:var(--link);text-decoration:none}a:hover{color:var(--link-hover);text-decoration:underline}h1,h2,h3{font-family:"Montserrat","Helvetica Neue",Arial,sans-serif}button,input{font:inherit}button{cursor:pointer}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.shell{max-width:1220px;padding:18px;margin:auto}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{font:700 1.15rem "Montserrat","Helvetica Neue",Arial,sans-serif;letter-spacing:.05em}.back{font-size:.9rem}.window{border:2px solid var(--edge);box-shadow:5px 5px 0 var(--shadow);background:var(--paper);margin:22px 5px 28px 0}.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--accent);padding:10px 16px;color:var(--accent-ink);font:700 .88rem ui-monospace,Menlo,monospace}.bar .lamps{letter-spacing:.25em}.content{padding:clamp(17px,4vw,34px)}h1{font-size:clamp(1.7rem,4vw,2.65rem);line-height:1.17;margin:0 0 10px}h2{font-size:1.2rem}p{margin:0 0 14px}.lede{max-width:70ch;color:var(--muted)}.notice{padding:11px 13px;margin:22px 0;border-left:4px solid var(--accent);background:var(--panel);font-size:.92rem}.toolrow{display:flex;gap:13px;justify-content:space-between;align-items:end;flex-wrap:wrap;margin:24px 0 13px}.toolrow label{display:grid;gap:5px;flex:1;min-width:210px;font-size:.88rem;font-weight:700}.toolrow input,.toolrow select{padding:11px 12px;border:1px solid var(--edge);border-radius:5px;background:var(--input-bg);color:var(--ink);width:100%}.count{font:600 .86rem ui-monospace,Menlo,monospace;color:var(--muted)}.albums{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0 25px}.album{border:1px solid var(--edge);border-radius:7px;padding:9px 14px;background:var(--panel);color:var(--ink);font-size:.88rem;font-weight:650}.album[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:16px}.tile{padding:0;text-align:left;display:block;width:100%;height:100%;overflow:hidden;border:1px solid var(--edge);border-radius:7px;background:var(--paper);color:var(--ink)}.tile:hover{border-color:var(--edge);background:var(--tile-hover);box-shadow:0 0 0 2px var(--edge)}.photo-frame{aspect-ratio:4/3;background:var(--panel);overflow:hidden;display:flex;align-items:center;justify-content:center}.photo-frame img{display:block;width:100%;height:100%;object-fit:contain}.tile-label{display:block;padding:11px 12px}.tile strong{display:block;font-size:.93rem;line-height:1.35}.tile small{color:var(--muted)}.empty{border:1px dashed var(--edge);padding:22px;background:var(--panel);border-radius:7px}.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:.85rem;margin:22px 3px 35px}.viewer{color:var(--ink);padding:0;border:2px solid var(--edge);border-radius:8px;background:var(--paper);width:min(94vw,1040px);max-height:94vh;box-shadow:0 18px 50px #0008}.viewer::backdrop{background:#060d13d9}.viewer-header{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;background:var(--accent);color:var(--accent-ink);font-weight:700}.viewer-header button,.viewer-nav button{border:1px solid var(--edge);background:var(--paper);border-radius:5px;color:var(--ink);padding:7px 12px}.viewer-image{display:block;max-height:65vh;max-width:100%;width:auto;height:auto;margin:12px auto;object-fit:contain}.viewer-info{padding:4px 20px 16px;text-align:center}.viewer-info p{font-size:.91rem;color:var(--muted);margin:3px 0}.viewer-nav{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;padding:0 12px 18px}.viewer-nav button:disabled{opacity:.45;cursor:default}.viewer-nav a{font-size:.91rem}.viewer-nav span{font-size:.85rem}.more-wrap{text-align:center;margin:23px 0 3px}.more-wrap button{border:1px solid var(--edge);border-radius:6px;padding:11px 20px;background:var(--panel);color:var(--ink);font-weight:700}.more-wrap button:hover{border-color:var(--accent)}.theme-toggle,.up-folder{border:1px solid var(--edge);border-radius:6px;padding:7px 12px;background:var(--panel);color:var(--ink);font:700 .84rem "Montserrat",Arial,sans-serif}.theme-toggle:hover,.up-folder:hover{background:var(--tile-hover)}.top-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.breadcrumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:13px 0 17px;font:.9rem "Montserrat",Arial,sans-serif}.breadcrumbs button{padding:5px 7px;border:0;border-radius:4px;background:transparent;color:var(--link);font:inherit;overflow-wrap:anywhere}.breadcrumbs button:hover{text-decoration:underline;color:var(--link-hover)}.breadcrumbs button[aria-current="page"]{color:var(--ink);font-weight:700;cursor:default;text-decoration:none}.breadcrumb-divider{color:var(--muted)}.folder-section{margin:22px 0 27px}.folder-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin:14px 0}.folder-card{width:100%;min-width:0;display:flex;gap:12px;align-items:center;text-align:left;padding:16px;border:1px solid var(--edge);border-radius:6px;background:var(--paper);color:var(--ink);font:inherit;cursor:pointer}.folder-card:hover{background:var(--tile-hover)}.folder-card .folder-icon{font-size:1.55rem;line-height:1}.folder-card strong{display:block;font:700 .92rem/1.3 "Montserrat",Arial,sans-serif;overflow-wrap:anywhere}.folder-card small{display:block;font:.8rem/1.4 "Montserrat",Arial,sans-serif;color:var(--muted);margin-top:4px}.folder-empty{color:var(--muted);font-size:.95rem}.theme-toggle:focus-visible,.up-folder:focus-visible,.breadcrumbs button:focus-visible,.folder-card:focus-visible{outline:3px solid var(--focus);outline-offset:3px}[hidden]{display:none!important}
-.utility-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:9px 12px;font:400 .91rem/1.5 "Montserrat",Arial,sans-serif}.utility-bar a{text-decoration:none}.utility-bar a:hover{text-decoration:underline}.utility-current{margin-left:auto;font-weight:700;color:var(--muted)}.utility-separator{color:var(--muted)}@media(max-width:650px){.utility-bar{padding:7px 3px;gap:8px;font-size:.82rem}.utility-current{display:none}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Merriweather",Georgia,serif;letter-spacing:.015em}a{color:var(--link);text-decoration:none}a:hover{color:var(--link-hover);text-decoration:underline}h1,h2,h3{font-family:"Montserrat","Helvetica Neue",Arial,sans-serif}button,input{font:inherit}button{cursor:pointer}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.shell{max-width:1220px;padding:18px;margin:auto}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{font:700 1.15rem "Montserrat","Helvetica Neue",Arial,sans-serif;letter-spacing:.05em}.back{font-size:.9rem}.window{border:2px solid var(--edge);box-shadow:5px 5px 0 var(--shadow);background:var(--paper);margin:22px 5px 28px 0}.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--accent);padding:10px 16px;color:var(--accent-ink);font:700 .88rem ui-monospace,Menlo,monospace}.bar .lamps{letter-spacing:.25em}.content{padding:clamp(17px,4vw,34px)}h1{font-size:clamp(1.7rem,4vw,2.65rem);line-height:1.17;margin:0 0 10px}h2{font-size:1.2rem}p{margin:0 0 14px}.lede{max-width:70ch;color:var(--muted)}.notice{padding:11px 13px;margin:22px 0;border-left:4px solid var(--accent);background:var(--panel);font-size:.92rem}.toolrow{display:flex;gap:13px;justify-content:space-between;align-items:end;flex-wrap:wrap;margin:24px 0 13px}.toolrow label{display:grid;gap:5px;flex:1;min-width:210px;font-size:.88rem;font-weight:700}.toolrow input,.toolrow select{padding:11px 12px;border:1px solid var(--edge);border-radius:5px;background:var(--input-bg);color:var(--ink);width:100%}.count{font:600 .86rem ui-monospace,Menlo,monospace;color:var(--muted)}.albums{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0 25px}.album{border:1px solid var(--edge);border-radius:7px;padding:9px 14px;background:var(--panel);color:var(--ink);font-size:.88rem;font-weight:650}.album[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:16px}.tile{padding:0;text-align:left;display:block;width:100%;height:100%;overflow:hidden;border:1px solid var(--edge);border-radius:7px;background:var(--paper);color:var(--ink)}.tile:hover{border-color:var(--edge);background:var(--tile-hover);box-shadow:0 0 0 2px var(--edge)}.photo-frame{aspect-ratio:4/3;background:var(--panel);overflow:hidden;display:flex;align-items:center;justify-content:center}.photo-frame img{display:block;width:100%;height:100%;object-fit:contain}.tile-label{display:block;padding:11px 12px}.tile strong{display:block;font-size:.93rem;line-height:1.35}.tile small{color:var(--muted)}.empty{border:1px dashed var(--edge);padding:22px;background:var(--panel);border-radius:7px}.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:.85rem;margin:22px 3px 35px}.viewer{color:var(--ink);padding:0;border:2px solid var(--edge);border-radius:8px;background:var(--paper);width:min(94vw,1040px);max-height:94vh;box-shadow:0 18px 50px #0008}.viewer::backdrop{background:#060d13d9}.viewer-header{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;background:var(--accent);color:var(--accent-ink);font-weight:700}.viewer-header button,.viewer-nav button{border:1px solid var(--edge);background:var(--paper);border-radius:5px;color:var(--ink);padding:7px 12px}.viewer-image{display:block;max-height:65vh;max-width:100%;width:auto;height:auto;margin:12px auto;object-fit:contain}.viewer-info{padding:4px 20px 16px;text-align:center}.viewer-info p{font-size:.91rem;color:var(--muted);margin:3px 0}.viewer-nav{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;padding:0 12px 18px}.viewer-nav button:disabled{opacity:.45;cursor:default}.viewer-nav a{font-size:.91rem}.viewer-nav span{font-size:.85rem}.more-wrap{text-align:center;margin:23px 0 3px}.more-wrap button{border:1px solid var(--edge);border-radius:6px;padding:11px 20px;background:var(--panel);color:var(--ink);font-weight:700}.more-wrap button:hover{border-color:var(--accent)}.theme-toggle,.up-folder{border:1px solid var(--edge);border-radius:6px;padding:7px 12px;background:var(--panel);color:var(--ink);font:700 .84rem "Montserrat",Arial,sans-serif}.theme-toggle:hover,.up-folder:hover{background:var(--tile-hover)}.top-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.breadcrumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:13px 0 17px;font:.9rem "Montserrat",Arial,sans-serif}.breadcrumbs a{padding:5px 7px;border:0;border-radius:4px;background:transparent;color:var(--link);font:inherit;overflow-wrap:anywhere}.breadcrumbs a:hover{text-decoration:underline;color:var(--link-hover)}.breadcrumbs a[aria-current="page"]{color:var(--ink);font-weight:700;cursor:default;text-decoration:none}.breadcrumb-divider{color:var(--muted)}.folder-section{margin:22px 0 27px}.folder-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin:14px 0}.folder-card{width:100%;min-width:0;text-decoration:none;display:flex;gap:12px;align-items:center;text-align:left;padding:16px;border:1px solid var(--edge);border-radius:6px;background:var(--paper);color:var(--ink);font:inherit;cursor:pointer}.folder-card:hover{background:var(--tile-hover);text-decoration:none}.folder-card .folder-icon{font-size:1.55rem;line-height:1}.folder-card strong{display:block;font:700 .92rem/1.3 "Montserrat",Arial,sans-serif;overflow-wrap:anywhere}.folder-card small{display:block;font:.8rem/1.4 "Montserrat",Arial,sans-serif;color:var(--muted);margin-top:4px}.folder-empty{color:var(--muted);font-size:.95rem}.theme-toggle:focus-visible,.up-folder:focus-visible,.breadcrumbs a:focus-visible,.folder-card:focus-visible{outline:3px solid var(--focus);outline-offset:3px}[hidden]{display:none!important}
+.static-crumbs{list-style:none;display:flex;flex-wrap:wrap;gap:7px;padding:0;margin:0}.static-crumbs li+li::before{content:"›";margin-right:7px;color:var(--muted)}.static-crumbs a[aria-current="page"]{color:var(--ink);font-weight:700;text-decoration:none}.utility-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:9px 12px;font:400 .91rem/1.5 "Montserrat",Arial,sans-serif}.utility-bar a{text-decoration:none}.utility-bar a:hover{text-decoration:underline}.utility-current{margin-left:auto;font-weight:700;color:var(--muted)}.utility-separator{color:var(--muted)}@media(max-width:650px){.utility-bar{padding:7px 3px;gap:8px;font-size:.82rem}.utility-current{display:none}}
 /* Shared typography and header proportions from McRetro.net's site-header. */
 .site-header{background:var(--bg);margin:0 auto;max-width:1320px;padding:17px 5% 0}
 .header-inner{display:flex;flex-direction:column;gap:10px}
@@ -161,7 +161,7 @@
       .map(function (node) { return [node.path, node]; }));
     folderLookup = new Map();
     directPhotos = new Map();
-    const root = {path:"",name:"All photographs",parent:null,children:[],photoCount:0};
+    const root = {path:"",name:"All photographs",url:"/",parent:null,children:[],photoCount:0};
     folderLookup.set("", root);
     directPhotos.set("", []);
     function ensureFolder(path) {
@@ -172,6 +172,7 @@
         if (!folderLookup.has(prefix)) {
           const info = metadata.get(prefix);
           const node = {path:prefix, name:info ? info.name : folderLabel(segment),
+            url:info && typeof info.url === "string" ? info.url : "#folder=" + encodeURIComponent(prefix),
             parent:parent.path,children:[],photoCount:0};
           folderLookup.set(prefix, node);
           directPhotos.set(prefix, []);
@@ -200,18 +201,42 @@
     });
   }
   function hashFolder() {
-    if (!location.hash.startsWith("#folder=")) return "";
+    if (!location.hash || !location.hash.startsWith("#folder=")) return "";
     try {
       const folder = decodeURIComponent(location.hash.slice("#folder=".length));
       return folderLookup.has(folder) ? folder : "";
     } catch (_) { return ""; }
   }
-  function navigateTo(folder) {
-    if (!folderLookup.has(folder)) return;
-    currentFolder = folder;
-    const next = "#folder=" + encodeURIComponent(folder);
-    if (location.hash !== next) location.hash = next;
+  function routeFolder() {
+    const url = location.pathname || "/";
+    for (const folder of folderLookup.values()) {
+      if (folder.url === url) return folder.path;
+    }
+    return hashFolder();
+  }
+  function navigateTo(path) {
+    if (!folderLookup.has(path)) return;
+    const entry = folderLookup.get(path);
+    if (entry.url.startsWith("/") && window.history && window.history.pushState) {
+      if (location.pathname !== entry.url) window.history.pushState({folder:path}, "", entry.url);
+    } else {
+      const next = "#folder=" + encodeURIComponent(path);
+      if (location.hash !== next) location.hash = next;
+    }
+    currentFolder = path;
     render();
+  }
+  function folderLink(path, className, label) {
+    const entry = folderLookup.get(path);
+    const link = el("a", className, label);
+    link.href = entry.url;
+    link.addEventListener("click", function (event) {
+      if (event && (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ||
+                    (event.button !== undefined && event.button !== 0))) return;
+      if (event && event.preventDefault) event.preventDefault();
+      navigateTo(path);
+    });
+    return link;
   }
   function renderFolders() {
     const folder = folderLookup.get(currentFolder) || folderLookup.get("");
@@ -224,11 +249,9 @@
     }
     ancestors.forEach(function (entry, i) {
       if (i) crumbs.append(el("span", "breadcrumb-divider", "›"));
-      const button = el("button", "", entry.name);
-      button.type = "button";
-      if (entry.path === currentFolder) button.setAttribute("aria-current", "page");
-      else button.addEventListener("click", function () { navigateTo(entry.path); });
-      crumbs.append(button);
+      const link = folderLink(entry.path, "", entry.name);
+      if (entry.path === currentFolder) link.setAttribute("aria-current", "page");
+      crumbs.append(link);
     });
     breadcrumbs.replaceChildren(crumbs);
     upButton.hidden = !folder.path;
@@ -236,8 +259,7 @@
       .sort(function (a,b) { return a.name.localeCompare(b.name, "en-AU", {numeric:true}); });
     const content = document.createDocumentFragment();
     children.forEach(function (item) {
-      const button = el("button", "folder-card");
-      button.type = "button";
+      const button = folderLink(item.path, "folder-card");
       const icon = el("span", "folder-icon", "📁");
       icon.setAttribute("aria-hidden", "true");
       const label = el("span", "");
@@ -245,7 +267,6 @@
       label.append(el("small", "", item.photoCount.toLocaleString("en-AU") + (item.photoCount === 1 ? " photograph" : " photographs")));
       button.append(icon, label);
       button.setAttribute("aria-label", "Open " + item.name + ", " + item.photoCount + " photographs");
-      button.addEventListener("click", function () { navigateTo(item.path); });
       content.append(button);
     });
     foldersNode.replaceChildren(content);
@@ -280,6 +301,10 @@
   function render() {
     const q = search.value.trim().toLocaleLowerCase();
     const inSearch = Boolean(q);
+    const activeFolder = folderLookup.get(currentFolder) || folderLookup.get("");
+    if (document.title !== undefined) {
+      document.title = activeFolder.name + " | McRetro Photo Gallery";
+    }
     currentFolder = folderLookup.has(currentFolder) ? currentFolder : "";
     folderSection.hidden = inSearch;
     if (!inSearch) renderFolders();
@@ -336,7 +361,8 @@
   search.addEventListener("input", render);
   moreButton.addEventListener("click", appendPage);
   upButton.addEventListener("click", function () { const folder = folderLookup.get(currentFolder); navigateTo(folder && folder.parent !== null ? folder.parent : ""); });
-  window.addEventListener("hashchange", function () { currentFolder = hashFolder(); render(); });
+  window.addEventListener("hashchange", function () { currentFolder = routeFolder(); render(); });
+  window.addEventListener("popstate", function () { currentFolder = routeFolder(); render(); });
   fetch("/albums.json", {cache:"no-cache"}).then(function (response) {
     if (!response.ok) throw new Error("Albums unavailable (" + response.status + ")");
     return response.json();
@@ -349,7 +375,13 @@
     });
     albumLookup = new Map(albums.map(function (album) { return [album.id, album]; }));
     buildFolderTree(data.folders);
-    currentFolder = hashFolder();
+    currentFolder = routeFolder();
+    if (location.hash && location.hash.startsWith("#folder=") && currentFolder) {
+      const entry = folderLookup.get(currentFolder);
+      if (entry.url.startsWith("/") && window.history && window.history.replaceState) {
+        window.history.replaceState({folder:currentFolder}, "", entry.url);
+      }
+    }
     render();
   }).catch(function (error) {
     count.textContent = "Gallery unavailable";

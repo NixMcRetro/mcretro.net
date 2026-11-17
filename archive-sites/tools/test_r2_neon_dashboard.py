@@ -3,10 +3,13 @@ import importlib.util
 import json
 import os
 import unittest
+import io
+from contextlib import redirect_stdout
 from unittest.mock import patch
 
 from r2_neon_dashboard import (
     Telemetry, dashboard, pretty_bytes, pretty_time, require_rich,
+    preflight_display, PreflightDisplay,
 )
 
 
@@ -61,6 +64,21 @@ class TelemetryTests(unittest.TestCase):
         self.assertGreater(demo.sent_bytes, 0)
         self.assertEqual(demo.phase, "SIMULATED UPLINK")
 
+    def test_read_only_preflight_fallback_reports_every_stage(self):
+        output = io.StringIO()
+        with patch("r2_neon_dashboard.require_rich",
+                   side_effect=ValueError("Rich missing")):
+            with redirect_stdout(output):
+                with preflight_display() as ui:
+                    ui.advance(1)
+                    ui.advance(2)
+                    ui.finish()
+        result = output.getvalue()
+        self.assertIn("LOCAL ARCHIVE", result)
+        self.assertIn("R2 INVENTORY", result)
+        self.assertIn("SAFETY INTERLOCKS", result)
+        self.assertIn("nothing uploaded", result)
+
     def test_display_helpers_are_consistent(self):
         self.assertEqual(pretty_bytes(0), "0 B")
         self.assertEqual(pretty_bytes(1024), "1.00 KiB")
@@ -72,6 +90,22 @@ class TelemetryTests(unittest.TestCase):
 @unittest.skipUnless(importlib.util.find_spec("rich") is not None,
                      "Rich is optional for the CLI, installed separately on the Mac")
 class RenderTests(unittest.TestCase):
+    def test_preflight_panel_displays_real_stages_and_no_upload_notice(self):
+        from rich.console import Console
+        ui = PreflightDisplay()
+        ui.advance(1)
+        ui.advance(2)
+        ui.finish()
+        console = Console(width=100, force_terminal=False, record=True)
+        console.print(ui.render())
+        visible = console.export_text()
+        self.assertIn("PHOTON UPLINK", visible)
+        self.assertIn("LOCAL ARCHIVE", visible)
+        self.assertIn("R2 INVENTORY", visible)
+        self.assertIn("SAFETY INTERLOCKS", visible)
+        self.assertIn("NO UPLOADS", visible)
+        self.assertIn("PREFLIGHT COMPLETE", visible)
+
     def test_80_column_demo_renders_without_transfer(self):
         from rich.console import Console
         t = Telemetry(16803, 4270000000, 20, demo=True)

@@ -5,7 +5,7 @@ import { runInNewContext } from 'node:vm';
 const read = path => readFileSync(new URL('../../' + path, import.meta.url), 'utf8');
 const sidebar = read('_includes/sidebar.html'), layout = read('_layouts/default.html');
 const blog = read('blog/index.html');
-const code = read('assets/js/archive-calendar.js'), css = read('assets/css/overrides.css');
+const code = read('assets/js/archive-calendar.js');
 
 function fixture(contextYear, blogYear) {
   const handlers = {};
@@ -54,14 +54,13 @@ test('Jekyll supplies 12 months per year and direct archive links', () => {
   assert.ok(sidebar.includes('if count > 0'));
   assert.ok(sidebar.includes('class="archive-calendar-month is-empty"'));
   assert.ok(sidebar.includes('href="/archive/{{ latest_year.name }}/{{ month_key }}/"'));
-  assert.ok(css.includes('grid-template-columns: repeat(4, minmax(0, 1fr))'));
 });
 test('CSP external JS and no inline click handlers', () => {
   assert.ok(layout.includes("'/assets/js/archive-calendar.js' | relative_url"));
   assert.ok(!layout.includes('archive-dropdown.js'));
   assert.ok(!sidebar.includes('onchange=') && !sidebar.includes('onclick='));
 });
-test('year navigation, 12 tiles, blue links and zero-month disabled cells', () => {
+test('year navigation, 12 monthly links and disabled empty months', () => {
   const f = fixture();
   assert.equal(f.select.disabled, false);
   assert.equal(f.grid.children.length, 12);

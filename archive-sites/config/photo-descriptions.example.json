@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "photos": {
+    "REPLACE-WITH-A-REAL-SOURCE-RELATIVE-PATH/IMG_0001.jpg": {
+      "caption": "Example only: rear AV connections",
+      "caption_approved": false,
+      "scene_description": "Example only: an electronic device on a workbench",
+      "scene_description_approved": false,
+      "components": [
+        "EXAMPLE-CHIP-ID"
+      ],
+      "components_approved": false,
+      "search_terms": [
+        "example circuit board"
+      ],
+      "search_terms_approved": false,
+      "alt": "Example only: rear view of a device with connectors",
+      "alt_approved": false,
+      "date_taken": "2010-01-01",
+      "date_taken_approved": false
+    }
+  }
+}

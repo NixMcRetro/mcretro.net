@@ -466,14 +466,11 @@ test('archive year deep links open only the requested year', () => {
   assert.equal(normal.panel.open, true);
 });
 
-test('Goodies links to the Windows 95 dial-up folder with all destinations', () => {
-  const goodies = read('goodies.md');
+test('Windows 95 dial-up preserves selectable destinations and mobile navigation', () => {
   const modem = read('assets/js/mcretro-dialup.js');
   const modemPage = read('homepages/modem/index.html');
   const connection = read('_includes/modem-connection.html');
   const header = read('_includes/header.html');
-  assert.match(goodies, /\[Dial-Up Networking\]\(\/homepages\/modem\/\)/);
-  assert.doesNotMatch(goodies, /data-dial-site=/);
   assert.match(modemPage, /data-modem-launch/);
   assert.match(modemPage, /include modem-connection\.html/);
   assert.match(modemPage, /data-modem-new/);

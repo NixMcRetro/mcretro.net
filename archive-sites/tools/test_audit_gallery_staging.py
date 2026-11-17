@@ -116,6 +116,25 @@ class GalleryReadinessTests(unittest.TestCase):
         self.assertTrue(any("incorrectly marked approved" in issue for issue
                             in result["page_or_font_issues"]))
 
+    def test_finder_metadata_is_reported_but_not_a_site_failure(self):
+        root = self.stage / "photo-gallery/site"
+        (root / ".DS_Store").write_bytes(b"Finder display metadata")
+        (root / "albums/.DS_Store").write_bytes(b"nested Finder metadata")
+        result = audit(self.stage, self.converted, TEMPLATE)
+        self.assertTrue(result["technical_staging_consistent"])
+        self.assertEqual(result["static_site"]["ignored_finder_metadata_count"], 2)
+        self.assertEqual(result["static_site"]["total_problem_count"], 0)
+        self.assertEqual(result["page_or_font_issues"], [])
+        self.assertFalse(result["publication_authorised"])
+
+    def test_unexpected_symlink_is_still_rejected(self):
+        root = self.stage / "photo-gallery/site"
+        (root / "danger.txt").symlink_to(self.manifest)
+        result = audit(self.stage, self.converted, TEMPLATE)
+        self.assertFalse(result["technical_staging_consistent"])
+        self.assertTrue(any("unplanned static site files" in issue for issue
+                            in result["page_or_font_issues"]))
+
     def test_missing_fonts_and_extra_static_asset_reported(self):
         (self.manifest.parent / "assets/fonts/korataki.woff2").unlink()
         (self.stage / "photo-gallery/site/unplanned.html").write_text("unplanned")

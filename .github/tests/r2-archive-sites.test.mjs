@@ -95,9 +95,19 @@ test('photo gallery HTML has its controls and valid inline JavaScript', () => {
   assert.match(html, /<html lang="en-AU">/);
   assert.match(html, /<title>McRetro Photo Gallery<\/title>/);
   assert.match(html, /fetch\("\.\/albums\.json"/);
-  for (const id of ['viewer','search','group','albums','grid','show-more']) assert.ok(html.includes('id="' + id + '"'));
+  for (const id of ['viewer','search','breadcrumbs','folders','up-folder','grid','show-more','theme-toggle'])
+    assert.ok(html.includes('id="' + id + '"'), 'Missing gallery control: ' + id);
   assert.match(html, /const PAGE_SIZE = 60/);
   assert.match(html, /moreButton\.addEventListener\("click", appendPage\)/);
+  assert.match(html, /function buildFolderTree\(dataFolders\)/);
+  assert.match(html, /location\.hash/);
+  assert.match(html, /folderSection\.hidden = inSearch/);
+  assert.match(html, /THEME_KEY = "mcretro-theme"/);
+  assert.match(html, /data-theme="dark"/);
+  assert.match(html, /#FFF8DC/i, 'Main-site light theme background must be retained');
+  assert.match(html, /#191D27/i, 'Main-site dark theme background must be retained');
+  assert.match(html, /#0009B5/i, 'Main-site light link colour must be retained');
+  assert.match(html, /#93C5FD/i, 'Main-site dark link colour must be retained');
   assertSelfContainedScript(html);
 });
 

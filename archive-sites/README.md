@@ -124,6 +124,35 @@ For R2, assign **Content-Type: image/jxl** to JPEG XL objects. Upload the manife
 
 JPEG XL-only delivery has browser compatibility limitations. Validate with the actual target browsers and provide clear feedback or a suitable fallback plan if required, before publication.
 
+## Original photograph metadata and title recovery (local-only)
+
+Do **not** treat camera-generated filenames such as HNTN7023 or IMG_0005 as useful public captions. The gallery generator currently uses names derived from source filenames; **no EXIF content has been inspected or approved**. The cropped browser screenshot cannot show the originals' EXIF metadata, and the optimised JPEG XL copies may not retain it.
+
+A read-only ExifTool audit now scans **the original photo directory on the owner's Mac** and writes private reports:
+
+    brew install exiftool
+    python3 archive-sites/tools/audit_photo_exif.py
+
+When using downloaded scripts:
+
+    BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites"
+    curl -fLsS "$BASE/tools/audit_photo_exif.py" -o "$HOME/Downloads/audit_photo_exif.py"
+    python3 "$HOME/Downloads/audit_photo_exif.py"
+
+Reports are created only in \`~/Desktop/McRetro-R2-Staging/reports/\`:
+
+| Private report | Contains |
+| --- | --- |
+| photo-exif-summary.json | Counts of EXIF capture dates, camera models, embedded captions, generic filenames, GPS-present images, and error records |
+| photo-exif-audit.csv | One row per source image, with available dates, make/model, existing title/description/keywords, and explicit owner-approval columns |
+| photo-exif-screenshot-examples.csv | Matching records for HNTN7023 and IMG_0005 (when present under supported original filenames) |
+
+**Important privacy guard:** The script records only whether GPS metadata exists, never actual GPS coordinates. Embedded titles, notes, keywords, and pathnames may nevertheless contain sensitive or personally identifying information. Keep both CSVs local and share only intentionally reviewed extracts. **Do not upload these reports to public GitHub, R2, Google Drive or third-party services by default.**
+
+A date or camera model helps identify the photo, but does not explain its contents. Distinguish date metadata from actual descriptive text and visual descriptions. An EXIF caption should be treated as a suggested public title, never as owner-approved by default; descriptive accessibility alt text requires a separate review.
+
+The audit leaves original image bytes, converted images, existing gallery titles, upload plans, and public website unchanged.
+
 ## Short, archive-friendly folder URLs
 
 The old \`#folder=accessories%2F...\` addresses were JavaScript fragments, not real server-side pages. This PR now generates a directly fetchable HTML object for **every folder**, for example:

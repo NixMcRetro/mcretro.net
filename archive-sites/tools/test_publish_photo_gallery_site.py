@@ -236,14 +236,51 @@ class GalleryWebsitePublishTests(unittest.TestCase):
             remote[key] = {"Path": key, "Size": site[key]["bytes"]}
         with patch.object(pub, "list_remote", return_value=remote), \
              patch.object(pub, "run_copy") as copy, \
+             patch.object(pub, "verify_existing_site_bytes") as original_check, \
              patch.object(pub.shutil, "which", return_value="/usr/bin/rclone"), \
              patch.object(pub, "verify_remote"):
             self.assertEqual(
                 pub.publish(self.stage, self.converted, TEMPLATE, "upload"), 0
             )
+        original_check.assert_called_once()
+        self.assertEqual(original_check.call_args.args[1],
+                         {"albums.json", "index.html"})
         key_lists = [key for call in copy.call_args_list for key in call.args[1]]
         self.assertNotIn("albums.json", key_lists)
         self.assertNotIn("index.html", key_lists)
+
+    def test_existing_same_size_private_catalogue_bytes_abort_upload(self):
+        site, _, _ = self.local_files()
+        with tempfile.TemporaryDirectory() as tmp:
+            temp = Path(tmp)
+            (temp / "albums.json").write_bytes(b"public-safe")
+            with patch.object(pub.subprocess, "run",
+                              return_value=subprocess.CompletedProcess([], 1)) as run:
+                with self.assertRaisesRegex(ValueError, "vetted release"):
+                    pub.verify_existing_site_bytes(site, {"albums.json"},
+                                                   self.stage, temp)
+            command = run.call_args.args[0]
+            self.assertEqual(command[:2], ["rclone", "check"])
+            self.assertIn("--download", command)
+            self.assertIn("--one-way", command)
+            self.assertEqual(run.call_args.kwargs["input"], b"albums.json\0")
+
+    def test_privacy_scan_blocks_third_party_autoloaded_javascript(self):
+        from publish_photo_gallery_site import ExternalResourceScanner
+        parser = ExternalResourceScanner()
+        parser.feed('<a href="https://mcretro.net/">Home</a>'
+                    '<script src="https://tracker.example/pixel.js"></script>'
+                    '<img src="/thumbs/photo.jxl">')
+        self.assertEqual(parser.external, ["script has external src"])
+
+    def test_privacy_scan_does_not_confuse_navigation_links_with_trackers(self):
+        from publish_photo_gallery_site import ExternalResourceScanner
+        parser = ExternalResourceScanner()
+        parser.feed('<a href="https://mcretro.net/">Home</a>'
+                    '<a href="https://files.mcretro.net/">Files</a>'
+                    '<img src="/thumbs/IMG_1.jxl">'
+                    '<link href="/assets/fonts/korataki.woff2" rel="preload">')
+        self.assertEqual(parser.external, [])
 
     def test_copy_uses_only_exact_keys_no_overwrite_or_sync(self):
         with patch.object(pub.subprocess, "run",

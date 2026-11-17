@@ -204,7 +204,7 @@ test('folder browser navigates deeply nested source paths, searches globally and
   openFolder('Sega');
   openFolder('mega drive');
   openFolder('model 1');
-  openFolder('serial 001');
+  openFolder('Serial 001');
   assert.equal(location.pathname, deepUrl);
   assert.equal(location.hash, '');
   assert.equal(document.getElementById('count').textContent, '1 photograph');

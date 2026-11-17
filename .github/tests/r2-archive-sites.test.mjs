@@ -111,6 +111,112 @@ test('photo gallery HTML has its controls and valid inline JavaScript', () => {
   assertSelfContainedScript(html);
 });
 
+test('folder browser navigates deeply nested source paths, searches globally and switches themes', async () => {
+  const html = read(path.join(photoDir, 'index.html'));
+  const source = extractSingleInlineScript(html);
+  class FakeElement {
+    constructor(tag = 'div') {
+      this.tag = tag;
+      this.children = [];
+      this.attributes = {};
+      this.listeners = {};
+      this.value = '';
+      this.textContent = '';
+      this.hidden = false;
+    }
+    addEventListener(event, callback) { this.listeners[event] = callback; }
+    setAttribute(name, value) { this.attributes[name] = String(value); }
+    getAttribute(name) { return this.attributes[name] ?? null; }
+    append(...parts) {
+      for (const part of parts) {
+        if (part.tag === 'fragment') this.children.push(...part.children);
+        else this.children.push(part);
+      }
+    }
+    replaceChildren(...parts) { this.children = []; this.append(...parts); }
+    showModal() { this.open = true; }
+    close() { this.open = false; }
+  }
+  const ids = new Map();
+  const document = {
+    documentElement: new FakeElement('html'),
+    getElementById(id) {
+      if (!ids.has(id)) ids.set(id, new FakeElement());
+      return ids.get(id);
+    },
+    createElement(tag) { return new FakeElement(tag); },
+    createDocumentFragment() { return new FakeElement('fragment'); },
+  };
+  const callbacks = new Map();
+  const storage = new Map();
+  const location = { hash: '' };
+  const albums = [
+    { id: 'sega-a', title: 'Serial 001', path: 'consoles/sega/mega-drive/model-1/serial-001' },
+    { id: 'nintendo-a', title: 'Serial 002', path: 'consoles/nintendo/game-boy/serial-002' },
+  ];
+  const photos = [
+    { album:'sega-a', title:'Console motherboard', path:'full/consoles/sega/01.jpg.jxl',
+      thumbnail:'thumbs/consoles/sega/01.jpg.jxl', alt:'Circuit board' },
+    { album:'nintendo-a', title:'Game Boy screen', path:'full/consoles/nintendo/02.jpg.jxl',
+      thumbnail:'thumbs/consoles/nintendo/02.jpg.jxl', alt:'Handheld LCD screen' },
+  ];
+  const manifest = { schema_version:1, albums, photos, folders:[
+    { path:'consoles', name:'Consoles', parent:'', photo_count:2 },
+    { path:'consoles/sega', name:'Sega', parent:'consoles', photo_count:1 },
+    { path:'consoles/nintendo', name:'Nintendo', parent:'consoles', photo_count:1 },
+  ] };
+  const window = {
+    matchMedia() { return { matches:false, addEventListener(){} }; },
+    addEventListener(name, cb) { callbacks.set(name, cb); },
+  };
+  const context = vm.createContext({
+    document, window, location,
+    localStorage: { getItem(key) { return storage.get(key) || null; },
+      setItem(key, value) { storage.set(key, value); } },
+    fetch: async () => ({ok:true, json: async () => manifest}),
+  });
+  vm.runInContext(source, context);
+  await new Promise(resolve => setImmediate(resolve));
+  const folderButtons = () => document.getElementById('folders').children;
+  const openFolder = name => {
+    const button = folderButtons().find(item => item.children.some(
+      child => child.children.some(entry => entry.textContent === name)));
+    assert.ok(button, 'Expected folder button: ' + name);
+    button.listeners.click();
+  };
+  assert.equal(folderButtons().length, 1, 'Top level should show only Consoles');
+  assert.equal(document.getElementById('grid').children[0].textContent,
+    'Choose a folder above to see its photographs.');
+  openFolder('Consoles');
+  assert.equal(folderButtons().length, 2);
+  openFolder('Sega');
+  openFolder('mega drive');
+  openFolder('model 1');
+  openFolder('serial 001');
+  assert.equal(location.hash, '#folder=consoles%2Fsega%2Fmega-drive%2Fmodel-1%2Fserial-001');
+  assert.equal(document.getElementById('count').textContent, '1 photograph');
+  assert.equal(document.getElementById('grid').children.length, 1);
+  const crumbs = document.getElementById('breadcrumbs').children;
+  assert.ok(crumbs.some(entry => entry.textContent === 'Sega'));
+  const input = document.getElementById('search');
+  input.value = 'Game Boy screen';
+  input.listeners.input();
+  assert.equal(document.getElementById('folder-section').hidden, true);
+  assert.equal(document.getElementById('count').textContent, '1 photograph',
+    'Search must reach a photograph in another collection');
+  input.value = '';
+  input.listeners.input();
+  assert.equal(document.getElementById('folder-section').hidden, false);
+  assert.equal(document.getElementById('count').textContent, '1 photograph');
+  const themeButton = document.getElementById('theme-toggle');
+  themeButton.listeners.click();
+  assert.equal(storage.get('mcretro-theme'), 'dark');
+  assert.equal(document.documentElement.getAttribute('data-theme'), 'dark');
+  assert.equal(themeButton.getAttribute('aria-pressed'), 'true');
+  themeButton.listeners.click();
+  assert.equal(document.documentElement.getAttribute('data-theme'), 'light');
+});
+
 test('photo albums validate with accessible image labels', () => {
   const data = JSON.parse(read(path.join(photoDir, 'albums.json')));
   assert.equal(data.schema_version, 1);

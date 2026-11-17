@@ -27,6 +27,7 @@ DEFAULT_TEMPLATE = Path(__file__).resolve().parents[1] / 'photo-gallery/index.ht
 SITE_HOST = 'https://photos.mcretro.net'
 
 FOLDER_MARKER = '<div id="folders" class="folder-grid"></div>'
+FOLDER_LIST_MARKER = '<div id="folder-list" class="folder-list">'
 BREADCRUMB_MARKER = '<nav id="breadcrumbs" class="breadcrumbs" aria-label="Folder path"></nav>'
 PHOTO_MARKER = '<div id="grid" class="grid"></div>'
 TITLE_MARKER = '<title>McRetro Photo Gallery</title>'
@@ -69,8 +70,7 @@ def render_static_page(template: str, folder: dict, by_path: dict,
             '<span class="folder-icon" aria-hidden="true">📁</span>'
             '<span><strong>' + escape(child['name']) + '</strong>'
             '<small>' + str(child['photo_count']) + ' photographs</small></span></a>')
-    if not folder_links:
-        folder_links.append('<p class="folder-empty">No subfolders at this level.</p>')
+    # A leaf folder has no extra empty-list panel above its photographs.
     photos = by_album.get(album_by_path.get(path, ''), [])
     image_links = []
     for index, photo in enumerate(photos, 1):
@@ -100,6 +100,8 @@ def render_static_page(template: str, folder: dict, by_path: dict,
                            else '<p class="empty">No photographs at this level.</p>')
     replacements = {
         FOLDER_MARKER: '<div id="folders" class="folder-grid">' + ''.join(folder_links) + '</div>',
+        FOLDER_LIST_MARKER: '<div id="folder-list" class="folder-list"' +
+                           ('' if children[path] else ' hidden') + '>',
         BREADCRUMB_MARKER: '<nav id="breadcrumbs" class="breadcrumbs" aria-label="Folder path">' +
                            ''.join(crumbs) + '</nav>',
         PHOTO_MARKER: '<div id="grid" class="grid">' + ''.join(image_links) + '</div>',

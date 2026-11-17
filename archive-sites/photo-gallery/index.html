@@ -416,7 +416,7 @@
     viewerComponents.textContent = components.join(", ");
     viewerComponents.hidden = components.length === 0;
     viewerComponentsLabel.hidden = components.length === 0;
-    const approvedDate = photo.date_approved === true && typeof photo.date_taken === "string"
+    const approvedDate = (photo.date_taken_approved === true || photo.date_approved === true) && typeof photo.date_taken === "string"
       ? photo.date_taken.trim() : "";
     viewerDate.textContent = approvedDate;
     viewerDate.hidden = !approvedDate;

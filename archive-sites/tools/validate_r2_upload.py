@@ -53,7 +53,8 @@ def image_signature_ok(path: Path, mime: str) -> bool:
     return False
 
 
-def validate(stage: Path, converted: Path, deep_hash: bool = False):
+def validate(stage: Path, converted: Path, deep_hash: bool = False,
+             allow_partial_local_rename: bool = False):
     """Return (photo records, plan rows, total bytes); no filesystem changes."""
     manifest = stage / 'photo-gallery/albums.generated.json'
     plan = stage / 'reports/photos-upload-plan.csv'
@@ -154,10 +155,19 @@ def validate(stage: Path, converted: Path, deep_hash: bool = False):
             raise ValueError('Invalid byte count for: ' + key)
         source = source_by_key[key]
         local_key = key.split('/', 1)[0] + '/' + source + ('' if source.lower().endswith('.gif') else '.jxl')
-        expected = converted.joinpath(*local_key.split('/'))
+        legacy = converted.joinpath(*local_key.split('/'))
+        final = converted.joinpath(*key.split('/'))
         local = Path(row['local_path'])
-        if not local.is_absolute() or local != expected:
-            raise ValueError('Local file is not exactly the expected converted path for: ' + key)
+        if not local.is_absolute() or local not in (legacy, final):
+            raise ValueError('Local file is not an expected converted path for: ' + key)
+        if legacy != final and legacy.exists() and final.exists():
+            if not legacy.samefile(final):
+                raise ValueError('Both legacy and final image filenames exist: ' + key)
+        expected = local
+        if allow_partial_local_rename and not expected.exists() and final.is_file() and local == legacy:
+            # Recover after an interrupted local-only rename, prior to the
+            # upload-plan CSV being atomically updated.
+            expected = final
         if not expected.is_file() or expected.is_symlink():
             raise ValueError('Missing or symlinked image: ' + key)
         if expected.resolve() != expected.absolute():

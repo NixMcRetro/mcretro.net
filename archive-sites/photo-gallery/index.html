@@ -103,7 +103,7 @@
 <dialog id="viewer" class="viewer" aria-labelledby="viewer-title">
   <div class="viewer-header"><span>📸 IMAGE VIEWER</span><button id="close" type="button">Close ×</button></div>
   <img id="viewer-image" class="viewer-image" alt="">
-  <div class="viewer-info"><h2 id="viewer-title"></h2><p id="viewer-caption" hidden></p><details id="viewer-details" class="viewer-details"><summary>Photograph details</summary><dl><dt>Original filename</dt><dd id="viewer-filename"></dd><dt>Album</dt><dd id="viewer-album"></dd><dt id="viewer-date-label" hidden>Date taken</dt><dd id="viewer-date" hidden></dd></dl></details></div>
+  <div class="viewer-info"><h2 id="viewer-title"></h2><p id="viewer-caption" hidden></p><details id="viewer-details" class="viewer-details"><summary>Photograph details</summary><dl><dt>Original filename</dt><dd id="viewer-filename"></dd><dt>Album</dt><dd id="viewer-album"></dd><dt id="viewer-scene-label" hidden>Scene</dt><dd id="viewer-scene" hidden></dd><dt id="viewer-components-label" hidden>Components</dt><dd id="viewer-components" hidden></dd><dt id="viewer-date-label" hidden>Date taken</dt><dd id="viewer-date" hidden></dd></dl></details></div>
   <div class="viewer-nav"><button id="previous" type="button">← Previous</button><span id="position"></span><button id="next" type="button">Next →</button><a id="original" href="#" target="_blank" rel="noopener noreferrer">Open image ↗</a></div>
 </dialog>
 <script>
@@ -126,6 +126,10 @@
   const viewerDetails = document.getElementById("viewer-details");
   const viewerFilename = document.getElementById("viewer-filename");
   const viewerAlbum = document.getElementById("viewer-album");
+  const viewerSceneLabel = document.getElementById("viewer-scene-label");
+  const viewerScene = document.getElementById("viewer-scene");
+  const viewerComponentsLabel = document.getElementById("viewer-components-label");
+  const viewerComponents = document.getElementById("viewer-components");
   const viewerDateLabel = document.getElementById("viewer-date-label");
   const viewerDate = document.getElementById("viewer-date");
   const previousButton = document.getElementById("previous");
@@ -319,6 +323,15 @@
     return photo.alt_approved === true && typeof photo.alt === "string"
       ? photo.alt.trim() : "";
   }
+  function reviewedScene(photo) {
+    return photo.scene_description_approved === true && typeof photo.scene_description === "string"
+      ? photo.scene_description.trim() : "";
+  }
+  function reviewedList(photo, field) {
+    return photo[field + "_approved"] === true && Array.isArray(photo[field])
+      ? photo[field].filter(function (value) { return typeof value === "string" && value.trim(); })
+      : [];
+  }
   function originalFilename(photo) {
     if (typeof photo.filename === "string" && photo.filename) return photo.filename;
     // Legacy manifests do not include filename. Recover it from the original
@@ -368,7 +381,9 @@
     visible = inSearch ? photos.filter(function (photo) {
       const album = albumLookup.get(photo.album);
       return [photo.title, photo.filename, photo.path, reviewedCaption(photo), reviewedAlt(photo),
-        album ? album.title : "", albumPaths.get(photo.album) || ""].join(" ").toLocaleLowerCase().includes(q);
+        reviewedScene(photo), reviewedList(photo, "components").join(" "),
+        reviewedList(photo, "search_terms").join(" "), album ? album.title : "",
+        albumPaths.get(photo.album) || ""].join(" ").toLocaleLowerCase().includes(q);
     }) : (directPhotos.get(currentFolder) || []);
     photosHeading.textContent = inSearch ? "Search results" : "Photographs";
     count.textContent = visible.length.toLocaleString("en-AU") + (visible.length === 1 ? " photograph" : " photographs");
@@ -393,6 +408,14 @@
     viewerCaption.hidden = !caption;
     viewerFilename.textContent = originalFilename(photo);
     viewerAlbum.textContent = albumName(photo.album);
+    const scene = reviewedScene(photo);
+    const components = reviewedList(photo, "components");
+    viewerScene.textContent = scene;
+    viewerScene.hidden = !scene;
+    viewerSceneLabel.hidden = !scene;
+    viewerComponents.textContent = components.join(", ");
+    viewerComponents.hidden = components.length === 0;
+    viewerComponentsLabel.hidden = components.length === 0;
     const approvedDate = photo.date_approved === true && typeof photo.date_taken === "string"
       ? photo.date_taken.trim() : "";
     viewerDate.textContent = approvedDate;

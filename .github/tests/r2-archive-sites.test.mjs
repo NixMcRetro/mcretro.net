@@ -108,9 +108,19 @@ test('photo gallery HTML has its controls and valid inline JavaScript', () => {
   assert.match(html, /location\.hash/, "Legacy hash URLs must still be supported");
   assert.match(html, /folderSection\.hidden = inSearch/);
   assert.match(html, /function reviewedCaption\(photo\)/);
+  assert.match(html, /function reviewedScene\(photo\)/);
+  assert.match(html, /function reviewedList\(photo, field\)/);
+  assert.match(html, /class="visually-hidden"/);
+  assert.match(html, /id="folder-list"/);
+  assert.doesNotMatch(html, /class="lede"/);
+  assert.doesNotMatch(html, /class="notice"/);
+  assert.match(html, /--archive-blue:#EAF2FF/);
+  assert.match(html, /--archive-blue:#293A55/);
   assert.match(html, /id="viewer-details"/);
   assert.match(html, /id="viewer-filename"/);
   assert.match(html, /id="viewer-date"/);
+  assert.match(html, /id="viewer-components"/);
+  assert.match(html, /id="viewer-scene"/);
   assert.doesNotMatch(html, /class="tile-label"/);
   assert.doesNotMatch(html, /id="viewer-credit"/);
   assert.match(html, /THEME_KEY = "mcretro-theme"/);
@@ -169,12 +179,17 @@ test('folder browser navigates deeply nested source paths, searches globally and
   const photos = [
     { album:'sega-a', title:'Console motherboard', path:'full/consoles/sega/01.jpg.jxl',
       thumbnail:'thumbs/consoles/sega/01.jpg.jxl', alt:'Unverified circuit board',
-      caption:'Unreviewed guess', caption_approved:false },
+      caption:'Unreviewed guess', caption_approved:false,
+      scene_description:'Unverified solder work',scene_description_approved:false,
+      components:['UNVERIFIED-CHIP-123'],components_approved:false },
     { album:'nintendo-a', title:'Game Boy screen', path:'full/consoles/nintendo/02.jpg.jxl',
       thumbnail:'thumbs/consoles/nintendo/02.jpg.jxl',
       caption:'Game Boy display', caption_approved:true,
       alt:'A Game Boy screen', alt_approved:true,
-      date_taken:'2012-01-23', date_approved:true },
+      date_taken:'2012-01-23', date_approved:true,
+      scene_description:'Handheld console on a workbench',scene_description_approved:true,
+      components:['Sharp LR35902', 'DMG-CPU-04'],components_approved:true,
+      search_terms:['handheld motherboard'],search_terms_approved:true },
   ];
   const manifest = { schema_version:1, albums, photos, folders:[
     { path:'consoles', name:'Consoles', parent:'', photo_count:2 },
@@ -217,6 +232,7 @@ test('folder browser navigates deeply nested source paths, searches globally and
   openFolder('Serial 001');
   assert.equal(location.pathname, deepUrl);
   assert.equal(location.hash, '');
+  assert.equal(document.getElementById('folder-list').hidden, true, 'Leaf albums hide empty folder headings');
   assert.equal(document.getElementById('count').textContent, '1 photograph');
   assert.equal(document.getElementById('grid').children.length, 1);
   const firstTile = document.getElementById('grid').children[0];
@@ -228,6 +244,8 @@ test('folder browser navigates deeply nested source paths, searches globally and
   assert.equal(document.getElementById('viewer-filename').textContent, '01.jpg');
   assert.equal(document.getElementById('viewer-album').textContent, 'Serial 001');
   assert.equal(document.getElementById('viewer-date').hidden, true);
+  assert.equal(document.getElementById('viewer-scene').hidden, true);
+  assert.equal(document.getElementById('viewer-components').hidden, true);
   assert.equal(document.getElementById('viewer-caption').hidden, true);
   document.getElementById('viewer').close();
   const crumbs = document.getElementById('breadcrumbs').children;
@@ -247,7 +265,19 @@ test('folder browser navigates deeply nested source paths, searches globally and
   assert.equal(document.getElementById('viewer-date').textContent, '2012-01-23');
   assert.equal(document.getElementById('viewer-date').hidden, false);
   assert.equal(document.getElementById('viewer-image').alt, 'A Game Boy screen');
+  assert.equal(document.getElementById('viewer-scene').textContent, 'Handheld console on a workbench');
+  assert.equal(document.getElementById('viewer-components').textContent, 'Sharp LR35902, DMG-CPU-04');
+  assert.equal(document.getElementById('viewer-components').hidden, false);
   document.getElementById('viewer').close();
+  input.value = 'LR35902';
+  input.listeners.input();
+  assert.equal(document.getElementById('count').textContent, '1 photograph', 'Verified chip IDs are searchable');
+  input.value = 'workbench';
+  input.listeners.input();
+  assert.equal(document.getElementById('count').textContent, '1 photograph', 'Verified scenes are searchable');
+  input.value = 'UNVERIFIED-CHIP-123';
+  input.listeners.input();
+  assert.equal(document.getElementById('count').textContent, '0 photographs', 'Unreviewed guesses must not be searchable');
   input.value = '';
   input.listeners.input();
   assert.equal(document.getElementById('folder-section').hidden, false);

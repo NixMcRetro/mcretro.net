@@ -21,6 +21,7 @@ import argparse
 import csv
 import os
 from pathlib import Path
+import shutil
 import sys
 import tempfile
 
@@ -132,6 +133,18 @@ def run(stage: Path, converted: Path, mode: str) -> int:
         print('VERIFIED: all filenames match the exact intended R2 object keys.')
         return 0
 
+    # Keep a small, separate record of the original converted filenames for
+    # provenance and possible recovery. This backup contains paths only,
+    # never photo data. It is not uploaded.
+    backup = plan.with_name('photos-upload-plan.before-local-rename.csv')
+    if backup.is_symlink():
+        raise ValueError('Refusing to use a symlink as local plan backup')
+    if not backup.exists():
+        with plan.open('rb') as source, backup.open('xb') as output:
+            shutil.copyfileobj(source, output)
+            output.flush()
+            os.fsync(output.fileno())
+        print('Saved original upload-plan path mapping:', backup)
     print('Renaming optimised files in place. No local duplicate tree will be made.', flush=True)
     changed = 0
     for src, final, _ in to_rename:

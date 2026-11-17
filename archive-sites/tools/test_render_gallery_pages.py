@@ -80,7 +80,11 @@ class StaticGalleryTests(unittest.TestCase):
         page = (website / routes[leaf].lstrip('/')).read_text()
         self.assertIn('Serial CNK7040Y04 | McRetro Photo Gallery', page)
         self.assertIn('HP L1706 17-inch LCD Colour Monitor PX849A', page)
-        self.assertIn('IMG 1', page)
+        self.assertNotIn('IMG 1</strong>', page)
+        self.assertNotIn('Serial CNK7040Y04</small>', page)
+        self.assertIn('aria-label="Open photograph 1 of 2 in Serial CNK7040Y04"', page)
+        self.assertIn('alt=""', page)
+        self.assertNotIn('class="tile-label"', page)
         self.assertIn('/thumbs/accessories/', page)
         self.assertIn('/full/accessories/', page)
         parsed = LinkParser()
@@ -102,8 +106,34 @@ class StaticGalleryTests(unittest.TestCase):
         site = self.stage / 'photo-gallery/site'
         route = folder_url('consoles/sega')
         html = (site / route.lstrip('/')).read_text()
-        self.assertIn('amp&amp;chip', html)
-        self.assertNotIn('>amp&chip<', html)
+        self.assertIn('amp%26chip.jpg.jxl', html)
+        self.assertNotIn('amp&amp;chip</strong>', html)
+        self.assertNotIn('amp&chip</strong>', html)
+
+    def test_only_explicitly_approved_captions_and_alt_appear(self):
+        self.photo('consoles/sega/IMG_0005.jpg')
+        self.photo('consoles/sega/IMG_0006.jpg')
+        build_photos(self.original, self.converted, self.stage)
+        manifest_path = self.stage/'photo-gallery/albums.generated.json'
+        manifest = json.loads(manifest_path.read_text())
+        first, second = manifest['photos']
+        first['caption'] = 'Rear AV connections'
+        first['caption_approved'] = True
+        first['alt'] = 'Rear connections on a Sega console'
+        first['alt_approved'] = True
+        second['caption'] = 'Unreviewed model identification'
+        second['caption_approved'] = False
+        second['alt'] = 'Unverified object in image'
+        second['alt_approved'] = False
+        manifest_path.write_text(json.dumps(manifest))
+        render_pages(self.stage, TEMPLATE)
+        page = (self.stage/'photo-gallery/site'/folder_url('consoles/sega').lstrip('/')).read_text()
+        self.assertIn('Rear AV connections', page)
+        self.assertIn('alt="Rear connections on a Sega console"', page)
+        self.assertNotIn('Unreviewed model identification', page)
+        self.assertNotIn('Unverified object in image', page)
+        self.assertNotIn('>IMG 0005<', page)
+        self.assertNotIn('>IMG 0006<', page)
 
     def test_idempotent_render_does_not_mutate_sources(self):
         self.photo('accessories/sample.jpg')

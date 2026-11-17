@@ -20,6 +20,7 @@ import sys
 from gallery_naming import load_rules, build_name_review
 from gallery_routes import folder_url
 from gallery_descriptions import load_descriptions, approved_metadata
+from gallery_keys import public_photo_paths
 
 DEFAULT_ORIGINAL = Path('/Users/nix/Desktop/R2 FILES/photos')
 DEFAULT_CONVERTED = Path.home() / 'Desktop/McRetro-PhotoGallery-Optimised-v2'
@@ -134,6 +135,7 @@ def build_photos(original: Path, converted: Path, stage: Path, rules: dict | Non
     upload = []
     total_original = total_gallery = total_thumbs = 0
     seen_keys = set()
+    public_names = public_photo_paths([rel for _, rel, _ in originals])
     for p, rel, size in sorted(originals, key=lambda row: row[1].casefold()):
         is_gif = p.suffix.lower() == '.gif'
         full = converted / 'full' / (rel if is_gif else rel + '.jxl')
@@ -146,8 +148,9 @@ def build_photos(original: Path, converted: Path, stage: Path, rules: dict | Non
         if problems:
             missing.append({'path': rel, 'problem': '; '.join(problems)})
             continue
-        full_key = 'full/' + rel + ('' if is_gif else '.jxl')
-        thumb_key = full_key if is_gif else 'thumbs/' + rel + '.jxl'
+        public_rel = public_names[rel]
+        full_key = 'full/' + public_rel
+        thumb_key = full_key if is_gif else 'thumbs/' + public_rel
         keys = (full_key,) if is_gif else (full_key, thumb_key)
         if any(key in seen_keys for key in keys):
             raise ValueError(f'Duplicate output object key: {rel}')
@@ -207,7 +210,8 @@ def build_photos(original: Path, converted: Path, stage: Path, rules: dict | Non
         if rel in descriptions:
             reviewed_sources.add(rel)
         photos.append({'path': full_key, 'thumbnail': thumb_key,
-                       'filename': p_name(rel), 'title': title, 'album': album,
+                       'filename': p_name(rel), 'source_path': rel,
+                       'title': title, 'album': album,
                        **metadata})
         review_status.append({'source_path': rel, 'album_folder': directory,
                               'caption_approved': metadata['caption_approved'],

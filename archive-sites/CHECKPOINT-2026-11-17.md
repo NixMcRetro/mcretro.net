@@ -1,5 +1,47 @@
 # McRetro Photo Gallery and File Server - reconciled checkpoint
 
+## LATEST VERIFIED STATUS - 17th November 2026, 17:19 AEDT
+
+**Owner-provided Mac terminal readback confirms the PHOTO OBJECT UPLOAD IS COMPLETE.**
+This section supersedes earlier incremental statuses in this checkpoint
+(including references to 20 or 8,768 uploaded objects, outstanding photo
+uploads, and preflight-only scripts).
+
+- **8,412 photographs** represented by **16,823 R2 photo objects** are now
+  present in the public `mcretro-photos` bucket.
+- Exact total: **4,276,856,102 bytes**. Every remote photo key and size
+  matched the validated optimised local catalogue.
+- On the final resumed transfer, **8,055 objects / 3,780,851,355 bytes**
+  were uploaded after 8,768 objects / 496,004,747 bytes were already present.
+  The dashboard reported **32m 54s** for the resumed copy.
+- Authenticated R2 sample: **60 of 60** stored object MIME types and byte
+  sizes matched, including the 20 original pilot objects.
+- Read-only downloaded-byte validation: **40 matching files, 0 differences**
+  (`rclone check --download --one-way`).
+- **0 objects remain to upload**. This is a complete names/sizes inventory
+  and **sampled** MIME/byte verification, *not* a complete byte-for-byte
+  check of all 16,823 files. Optional read-only `--deep-verify` checks
+  all object bytes if the owner wants exhaustive verification.
+- No further touch/rescan of the original 26 GB collection; File Server
+  files, private metadata/review sidecars, generated HTML, public
+  `albums.json`, sitemap, and fonts were **not uploaded**.
+- All 329 generated local gallery HTML pages were previously verified,
+  but **website publication is NOT authorised**.
+- **Unresolved:** an earlier public HTTP HEAD returned 403 on a pilot JPEG XL
+  URL. The authenticated R2 readback now succeeds. Investigate public
+  delivery and Cloudflare security rules *before* publishing gallery pages.
+- PR #271 remains **draft**, without merge. Owner has not authorised File
+  Server uploads, site/catalogue/fonts/sitemap publication, root rewrite,
+  Goodies navigation, or blog changes.
+- User's terminal output is the source of this remote-state checkpoint;
+  the GitHub connector cannot directly inspect the local Mac or private
+  R2 account.
+
+**Next recommended work:** inspect public object access (403) and review
+the **local** gallery in a browser, then separately review and approve any
+website publication. Do not rerun `--upload`: there are no missing photo
+objects.
+
 **17th November 2026, 15:28 AEDT** | Source: user-supplied Mac commands and readback logs, plus draft PR #271. This is a project record, **not** a publication approval.
 
 ## Established decisions
@@ -145,7 +187,7 @@ on the affected JPEG XL URL and inspect any `cf-mitigated`/WAF details.
 Do this before publishing the gallery HTML. The photo-only transfer is
 separately owner-requested and does not constitute website publication.
 
-## Work to do next - no R2 upload or publication
+## Remaining work - photo R2 transfer complete; website not published
 
 1. **Recheck the current, private local staging only**, without reading the historical originals: `python3 "$HOME/Downloads/validate_r2_upload.py"`; then `python3 "$HOME/Downloads/preview_mcretro_gallery.py" --check-only` using the current gallery template and scripts. Ensure the manifest, upload-plan CSV and optimised filenames still agree.
 2. **Confirm static page freshness** after the filename and metadata rules changed. Inspect `~/Desktop/McRetro-R2-Staging/photo-gallery/site/albums.json`, `site/index.html`, folder `.html` pages and `site/sitemap.xml` against the latest `albums.generated.json`. If stale, rerun the **local-only** `render_gallery_pages.py` with the current template; verify the new `reports/gallery-pages-upload-plan.csv` still marks every entry `NO`. Regeneration creates local staging files only.

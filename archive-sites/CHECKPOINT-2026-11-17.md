@@ -1,5 +1,25 @@
 # McRetro Photo Gallery and File Server - reconciled checkpoint
 
+## Gallery publication privacy review (17th November 2026)
+
+The owner requested a separate privacy check before the already-approved
+gallery website upload. The initial publisher was held back pending this
+review. The revised draft now omits the separate original filename from
+public albums.json, screens public HTML and the projected JSON for potential
+personal/contact/credential strings, rejects third-party auto-loaded web
+resources, and checks optimised JPEG XL container headers for Exif/XMP and
+other metadata boxes. It does not read the historical originals. Any
+suspicious findings stop the website upload. Already-present website objects
+must also match expected downloaded bytes before any new website transfer.
+
+The additional read-only command is
+`publish_photo_gallery_site.py --privacy-audit`. It does not connect to R2.
+The gallery upload has not happened. The generated folder names and public
+image paths remain discoverable in the design, and visually sensitive content
+cannot be cleared through automated pattern checks alone. The previously
+issued upload command was for an older script; use the revised version after
+running its local privacy audit. The earlier public HTTP 403 remains unresolved.
+
 ## NEW OWNER AUTHORISATION - Upload the existing gallery design
 
 The owner has explicitly authorised uploading the existing Photo Gallery

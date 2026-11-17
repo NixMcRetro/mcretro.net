@@ -1913,10 +1913,10 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   gap: 0.75rem;
   min-height: 2.3rem;
   padding: 0.25rem 0.4rem 0.25rem 0.9rem;
-  border-bottom: 1px solid var(--border-soft);
-  background: var(--panel);
-  color: var(--muted);
-  font: 500 0.72rem/1.4 Montserrat, 'Helvetica Neue', sans-serif;
+  border-bottom: 1px solid var(--archive-hover);
+  background: var(--archive-tile);
+  color: #fff;
+  font: 600 0.73rem/1.4 Montserrat, 'Helvetica Neue', sans-serif;
 }
 .post-full .post-content .mcretro-code-language {
   min-width: 0;
@@ -1932,25 +1932,26 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   gap: 0.4rem;
   min-height: 2rem;
   padding: 0.3rem 0.65rem;
-  border: 1px solid transparent;
-  border-radius: 6px;
+  border: 1px solid #ffffff45;
+  border-radius: 4px;
   background: transparent;
-  color: var(--muted);
+  color: #fff;
   cursor: pointer;
   font: inherit;
-  font-weight: 500;
+  font-weight: 600;
 }
 .post-full .post-content .mcretro-code-copy:hover {
-  border-color: var(--border-soft);
-  background: var(--code-bg);
-  color: var(--text);
+  border-color: #ffffff88;
+  background: var(--archive-hover);
+  color: #fff;
 }
 .post-full .post-content .mcretro-code-copy:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 1px;
 }
 .post-full .post-content .mcretro-code-copy.is-copied {
-  color: var(--link);
+  color: #fff;
+  background: var(--archive-hover);
 }
 .post-full .post-content .mcretro-code-copy-icon {
   position: relative;
@@ -1975,7 +1976,11 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
 .post-full .post-content .mcretro-code-copy-icon::after {
   top: 5px;
   left: 5px;
-  background: var(--panel);
+  background: var(--archive-tile);
+}
+.post-full .post-content .mcretro-code-copy:hover .mcretro-code-copy-icon::after,
+.post-full .post-content .mcretro-code-copy.is-copied .mcretro-code-copy-icon::after {
+  background: var(--archive-hover);
 }
 .post-full .post-content .mcretro-code-frame pre {
   box-sizing: border-box;
@@ -2025,11 +2030,7 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   grid-template-columns: minmax(0, 1.35fr) minmax(215px, .85fr);
   align-items: center;
   gap: 1.25rem;
-  padding: 1.1rem 1.3rem;
-  border: 1px solid var(--goodies-card-border);
-  border-left: 4px solid var(--retro-teal);
-  border-radius: 6px;
-  background: var(--panel);
+  padding: .35rem 0 .7rem;
 }
 .goodies-eyebrow, .goodies-section-overline, .goodies-card-kind, .goodies-section-count {
   font-family: Montserrat, "Helvetica Neue", sans-serif;
@@ -2046,12 +2047,14 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: .35rem;
-  min-height: 120px;
-  border: 1px dashed var(--border-soft);
+  gap: .25rem;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  border: 1px solid var(--border-soft);
   border-radius: 4px;
-  padding: .65rem;
-  background: var(--page-bg);
+  padding: .55rem .75rem;
+  background: var(--panel);
 }
 .goodies-floppy img { display: block; width: 272px; max-width: 100%; height: auto; aspect-ratio: 272 / 60; }
 .goodies-floppy span { font-weight: 700; font-size: .82rem; line-height: 1.5; }
@@ -2181,8 +2184,8 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
 .goodies-building-item p { margin: .3rem 0 0; font-size: .76rem; line-height: 1.55; }
 .goodies-outro { font-size: .87rem; line-height: 1.65; margin: 1.1rem 0 0; }
 @media (max-width: 700px) {
-  .goodies-hero { grid-template-columns: minmax(0, 1fr); padding: .95rem 1rem; }
-  .goodies-floppy { min-height: 100px; }
+  .goodies-hero { grid-template-columns: minmax(0, 1fr); padding: .35rem 0; }
+  .goodies-floppy { min-height: 0; }
   .goodies-building-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 540px) {

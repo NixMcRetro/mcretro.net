@@ -7,6 +7,7 @@ Synthetic values are permitted exclusively in --demo mode.
 from __future__ import annotations
 
 from collections import deque
+from contextlib import contextmanager
 from dataclasses import dataclass, field
 import json
 import math
@@ -223,6 +224,102 @@ def dashboard(t: Telemetry):
     return Group(Panel(headline, box=box.DOUBLE, border_style=VIOLET,
                        padding=(0, 1) if compact else (1, 2)),
                  metrics, progress_panel, activity_panel, Align.center(footer))
+
+
+
+STAGES = (
+    ("LOCAL ARCHIVE", "Validate 8,412 optimised photos and 16,823 objects"),
+    ("R2 INVENTORY", "Read existing object names, sizes and MIME types"),
+    ("SAFETY INTERLOCKS", "Verify the 20 pilot objects and calculate missing keys"),
+)
+
+
+class PreflightDisplay:
+    """Read-only activity display; never synthesises percentages or file counts."""
+
+    def __init__(self):
+        self.stage = 0
+        self.completed = False
+        self.note = "READ ONLY // NO DATA TRANSFER"
+        self.live = None
+        self.console = None
+
+    def render(self):
+        from rich import box
+        from rich.console import Group
+        from rich.panel import Panel
+        from rich.spinner import Spinner
+        from rich.table import Table
+        from rich.text import Text
+
+        headline = Text("◆  McRETRO  /  ", style=f"bold {CYAN}")
+        headline.append("PHOTON UPLINK", style=f"bold {VIOLET}")
+        headline.append("    ◇  PREFLIGHT", style=f"bold {AMBER}")
+        lines = Table.grid(expand=True, padding=(0, 1))
+        lines.add_column(width=3)
+        lines.add_column()
+        for idx, (name, detail) in enumerate(STAGES):
+            if idx < self.stage or self.completed:
+                mark = Text("✓", style=f"bold {MINT}")
+                colour = MINT
+            elif idx == self.stage:
+                mark = Spinner("dots", style=CYAN)
+                colour = CYAN
+            else:
+                mark = Text("○", style=MUTED)
+                colour = MUTED
+            lines.add_row(mark, Text(name, style=f"bold {colour}"))
+            lines.add_row("", Text(detail, style=MUTED))
+        footer = Text(
+            "◇ NO UPLOADS   ◇ NO OVERWRITES   ◇ ORIGINAL 26 GB ARCHIVE PROTECTED",
+            style=f"bold {MUTED}",
+            justify="center",
+        )
+        footer.append("\n" + self.note,
+                      style=f"bold {MINT}" if self.completed else f"bold {AMBER}")
+        return Panel(Group(headline, lines, footer), box=box.DOUBLE,
+                     border_style=VIOLET, padding=(1, 2))
+
+    def advance(self, stage: int) -> None:
+        if stage not in (0, 1, 2) or stage < self.stage:
+            raise ValueError("Invalid preflight stage transition")
+        self.stage = stage
+        if self.live is not None:
+            self.live.update(self.render())
+        elif self.console is not None:
+            name = STAGES[stage][0]
+            self.console.print(f"[{CYAN}]◆ PREFLIGHT[/]  {name} ...")
+
+    def finish(self) -> None:
+        self.completed = True
+        self.note = "PREFLIGHT COMPLETE // AWAITING EXPLICIT UPLOAD COMMAND"
+        if self.live is not None:
+            self.live.update(self.render())
+        elif self.console is not None:
+            self.console.print(f"[{MINT}]✓ PREFLIGHT COMPLETE[/]  No images transferred.")
+
+
+@contextmanager
+def preflight_display():
+    """Animated activity during blocking local validation and remote listing.
+
+    Stage changes are driven by completed operations, not invented progress.
+    No R2 calls or file operations are made by the display itself.
+    """
+    require_rich()
+    from rich.console import Console
+    from rich.live import Live
+
+    ui = PreflightDisplay()
+    ui.console = Console()
+    if not ui.console.is_terminal:
+        ui.advance(0)
+        yield ui
+    else:
+        with Live(ui.render(), console=ui.console, refresh_per_second=8,
+                  transient=False, vertical_overflow="crop") as live:
+            ui.live = live
+            yield ui
 
 
 def show_demo(duration: float = 7) -> None:

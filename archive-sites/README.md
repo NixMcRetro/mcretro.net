@@ -478,6 +478,36 @@ Cloudflare custom-domain configuration, independent of R2 object metadata.
 The static Photo Gallery site remains unpublished.
 
 
+## Fast inventory for a partially populated R2 bucket
+
+**Owner diagnosis (17th November 2026):** after cancelling an earlier bulk
+upload, `rclone lsf "r2:mcretro-photos" --recursive --files-only | wc -l`
+reported **8,768 objects already present**. A plain rclone filename listing
+finished in **3.590 seconds**, while PHOTON UPLINK's initial R2 inventory
+appeared stuck. The earlier `rclone lsjson` queried MIME information for
+each existing object. On S3/R2 this can require many additional HEAD
+requests, one per file. This was an avoidable performance bottleneck, not
+evidence that the bucket had stopped responding.
+
+The updated photo-only uploader now performs `rclone lsjson --no-modtime
+--no-mimetype` for a **fast, read-only bucket inventory**. It still checks
+**every** object name and byte length against the exact local allowlist,
+and requires the original 20 pilot objects. To avoid silently assuming
+correct MIME, it additionally performs parallel public HEAD requests for
+all 20 pilot images plus up to 40 distributed pre-existing photos, checking
+their browser-facing `Content-Type` and `Content-Length`. The final
+verification repeats those samples and independently downloads 40 file
+samples to compare actual bytes. MIME verification for **every** image is
+no longer part of the default fast inventory; this is explicitly a
+**sample-based** delivery-header check. A full byte comparison can still
+be requested via `--deep-verify` (which does not establish MIME
+for every object).
+
+If R2 contains any unplanned image key, an incorrect size, or a
+sample with wrong public MIME, the transfer stops without overwriting
+objects. Do not use blind recursive copies or `sync` to bypass this gate.
+The updated fast inventory does not itself upload or delete anything.
+
 ## PHOTON UPLINK - animated Rich terminal telemetry for the photo-only transfer
 
 The uploader's **default read-only preflight now has an animated Rich status
@@ -580,8 +610,7 @@ through can be resumed with the same explicit `--upload` invocation:
 the script relists R2, rejects any unexpected or mismatched objects, and
 copies only still-missing keys.
 
-After uploading, it confirms the **exact 16,823 remote keys**, each expected
-size and `image/jxl` or `image/gif` MIME type, and uses
+After uploading, it confirms the **exact 16,823 remote keys and sizes**, checks browser-facing `image/jxl` or `image/gif` MIME types for 20 pilot objects and up to 40 dispersed samples, and uses
 `rclone check --download --one-way` for **40 dispersed, deterministic
 non-pilot object samples**. This byte sample is stronger than remote
 metadata checks, but it **does not** establish that all 16,823 objects match

@@ -85,6 +85,32 @@ Next action is to rerun the read-only audit using the updated script, then
 inspect the gallery in a **localhost-only** browser session. No further cloud
 upload, publication or GitHub merge is authorised.
 
+## Owner request: put the optimised photo objects onto R2 before gallery publication
+
+The owner asked to complete **photo uploads first** rather than continue with
+the local interface and description review. This is a **sequence decision**:
+the existing 20-object test is complete and a guarded, resumable script
+(`tools/upload_r2_remaining_photos.py`) has been prepared for the remaining
+**16,803 image objects**. As of this checkpoint, **the script has not been
+executed on the Mac**, so those 16,803 objects remain *unuploaded*.
+
+The script's default action is read-only preflight. The owner must separately
+run its explicit `--upload` switch for a real public transfer. It checks the
+entire optimised local catalogue's 8,412 photos, 16,823 object keys and exact
+4,276,856,102 bytes, inspects R2's existing 20 verified pilot objects,
+rejects extras/mismatches, and passes **only remote-missing image keys** through
+a NUL-delimited rclone allowlist with `--ignore-existing`. It can resume after
+an interruption without overwriting or deleting anything. It does not open or
+scan the 26 GB originals. A completed transfer is verified for all remote
+keys, sizes and MIME types, with 40 actual downloaded-byte samples;
+`--deep-verify` is an optional exhaustive read-only check of ~4.277 GB.
+
+**Public-access consequence:** every image uploaded to the existing public
+R2 bucket can be fetched directly before any gallery homepage exists. The
+gallery is NOT indexed or published by this operation. Neither HTML, JSON
+catalogues, sitemap, fonts, private alt/caption approvals nor File Server files
+are included. These still require their own review and authorisation.
+
 ## Work to do next - no R2 upload or publication
 
 1. **Recheck the current, private local staging only**, without reading the historical originals: `python3 "$HOME/Downloads/validate_r2_upload.py"`; then `python3 "$HOME/Downloads/preview_mcretro_gallery.py" --check-only` using the current gallery template and scripts. Ensure the manifest, upload-plan CSV and optimised filenames still agree.

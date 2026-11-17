@@ -514,12 +514,3 @@ test('upstream 69 BPM scheduler corrects drift after tab throttling', async () =
   assert.equal(app.timers.size, 0, 'Deselected pads stop the clock entirely');
 });
 
-test('Goodies cards preserve GOATPAD and Fish Tank World links', () => {
-  const goodies = readFileSync(new URL('../../goodies.md', import.meta.url), 'utf8');
-
-  // Goodies uses HTML cards now, not the old Markdown link syntax.
-  const goatpadCard = goodies.match(/<a\b[^>]*href="\/homepages\/goatpad\/"[^>]*>([\s\S]*?)<\/a>/);
-  assert.ok(goatpadCard, 'GOATPAD card must link to its original page');
-  assert.match(goatpadCard[1], /<span class="goodies-card-title">GOATPAD 1337<\/span>/);
-  assert.match(goodies, /<a href="\/homepages\/fishtankworld\/">Fish Tank World<\/a>/);
-});

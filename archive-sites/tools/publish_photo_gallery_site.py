@@ -202,15 +202,31 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
         if key.endswith((".html", ".xml")):
             file = site[key]["local"]
             inspect_text("generated " + key, file.read_text(encoding="utf-8"))
-    # The relevant compressed photos are already publicly stored in R2.
-    # This is a privacy risk assessment prior to listing them on a website,
-    # not an attempt to rewrite or touch their original files.
+    # The existing validated photo plan can refer either to the final
+    # key-matched path or a pre-rename legacy converted filename. Use the
+    # *validated local_path*, never the 26 GB original source archive.
+    photo_plan = stage / "reports/photos-upload-plan.csv"
+    with photo_plan.open(newline="", encoding="utf-8") as handle:
+        file_rows = list(csv.DictReader(handle))
+    local_paths = {}
+    for row in file_rows:
+        key = row["r2_key"]
+        if key in local_paths:
+            raise ValueError("Duplicate converted plan key: " + key)
+        local_paths[key] = Path(row["local_path"])
+    if set(local_paths) != set(photo_keys):
+        raise ValueError("Privacy scan local image paths differ from validated photo plan")
+    root = converted.resolve()
+    # The relevant optimised photos are already publicly stored in R2.
+    # This check does not read or rewrite their historical originals.
     scanned = 0
     for key in sorted(photo_keys):
+        file = local_paths[key]
+        if (not file.is_file() or file.is_symlink() or
+                file.resolve() != file.absolute() or
+                not file.resolve().is_relative_to(root)):
+            raise ValueError("Unsafe optimised image path: " + key)
         if key.endswith(".jxl"):
-            file = converted.joinpath(*key.split("/"))
-            if not file.is_file() or file.is_symlink() or file.resolve() != file.absolute():
-                raise ValueError("Unsafe optimised JPEG XL path: " + key)
             flagged = jxl_private_boxes(file)
             if flagged:
                 issues.append(
@@ -221,9 +237,6 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
         elif key.endswith(".gif"):
             # A GIF can contain Comment or XMP application extensions.
             # Flag suspicious textual metadata rather than modifying it.
-            file = converted.joinpath(*key.split("/"))
-            if not file.is_file() or file.is_symlink():
-                raise ValueError("Unsafe optimised GIF path: " + key)
             payload = file.read_bytes()
             if b"XMP DataXMP" in payload or b"EXIF" in payload or b"\x21\xfe" in payload:
                 issues.append(f"{key}: GIF application/comment metadata needs review")

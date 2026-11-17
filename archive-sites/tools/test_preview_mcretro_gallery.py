@@ -57,6 +57,31 @@ class GalleryPreviewTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             resolve_object(self.images, 'full/../private.jpg.jxl')
 
+    def test_empty_unreviewed_alt_text_is_valid(self):
+        """Regression: catalogue builder deliberately leaves unverified alt empty."""
+        data = json.loads(self.manifest.read_text(encoding='utf-8'))
+        data['photos'][0]['alt'] = ''
+        data['photos'][0]['alt_approved'] = False
+        data['photos'][0]['caption'] = ''
+        data['photos'][0]['caption_approved'] = False
+        self.manifest.write_text(json.dumps(data), encoding='utf-8')
+        _, objects, missing, report = validate(self.manifest, self.images)
+        self.assertEqual(missing, [])
+        self.assertEqual(len(objects), 2)
+        self.assertTrue(report['ready_for_local_preview'])
+
+        data['photos'][0]['alt_approved'] = True
+        self.manifest.write_text(json.dumps(data), encoding='utf-8')
+        with self.assertRaisesRegex(ValueError, 'Approved photo alt text cannot be empty'):
+            validate(self.manifest, self.images)
+
+    def test_bad_alt_type_is_rejected(self):
+        data = json.loads(self.manifest.read_text(encoding='utf-8'))
+        data['photos'][0]['alt'] = 123
+        self.manifest.write_text(json.dumps(data), encoding='utf-8')
+        with self.assertRaisesRegex(ValueError, 'Photo alt text must be a string'):
+            validate(self.manifest, self.images)
+
     def test_missing_files_and_symlinks_rejected(self):
         p = self.images / 'thumbs/retro/pic.jpg.jxl'
         p.unlink()

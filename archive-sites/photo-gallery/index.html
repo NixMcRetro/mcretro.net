@@ -208,11 +208,12 @@
     } catch (_) { return ""; }
   }
   function routeFolder() {
+    if (location.hash && location.hash.startsWith("#folder=")) return hashFolder();
     const url = location.pathname || "/";
     for (const folder of folderLookup.values()) {
       if (folder.url === url) return folder.path;
     }
-    return hashFolder();
+    return "";
   }
   function navigateTo(path) {
     if (!folderLookup.has(path)) return;

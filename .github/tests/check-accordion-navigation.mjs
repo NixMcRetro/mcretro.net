@@ -16,7 +16,6 @@ assert.ok(!css.includes('details[name="mcretro-darknet"] { scroll-margin-top: 0.
 const pages = [
   ['about', 'mcretro-about', 4],
   ['channels', 'mcretro-channels', 4],
-  ['goodies', 'mcretro-goodies', 3],
   ['flicky-the-floury-baker-cicada', 'mcretro-flicky', 10],
   ['tp-link-archer-vr1600v-v2-firmware-dump-attempt', 'mcretro-tplink', 4],
   ['take-back-the-darknet', 'mcretro-darknet', 14],
@@ -34,6 +33,18 @@ for (const [slug, name, count] of pages) {
   }
   assert.ok(!html.includes('Native <details name> handles exclusivity. If collapsing'), `Legacy inline helper remains: ${slug}`);
 }
+// Goodies was intentionally redesigned as an always-visible directory.
+const goodies = readFileSync(path.join(site, 'goodies/index.html'), 'utf8');
+assert.equal(goodies.split(`src="${asset}"`).length - 1, 1, 'Goodies still loads the shared script exactly once');
+assert.equal((goodies.match(/class="goodies-card goodies-card--active"/g) || []).length, 6, 'Goodies must display all six projects');
+assert.equal((goodies.match(/class="goodies-card goodies-card--archive"/g) || []).length, 6, 'Goodies must display all six historical homepages');
+for (const section of ['goodies-ready', 'goodies-archive', 'goodies-building']) {
+  assert.ok(goodies.includes(`id="${section}"`), `Missing Goodies section: ${section}`);
+}
+assert.ok(goodies.includes('href="/homepages/goatpad/"'), 'GOATPAD destination missing');
+assert.ok(goodies.includes('href="/homepages/modem/"'), 'Dial-Up Networking destination missing');
+assert.ok(goodies.includes('href="/homepages/fishtankworld/"'), 'Fish Tank World destination missing');
+assert.ok(!goodies.includes('name="mcretro-goodies"'), 'Old Goodies accordion must not return');
 const darknet = readFileSync(path.join(site, 'take-back-the-darknet/index.html'), 'utf8');
 assert.ok(darknet.includes('/assets/js/darknet-accordion.js'), 'Darknet hash navigation script missing');
 const odyssey = readFileSync(path.join(site, 'odyssey-stealer-technical-analysis-of-a-macos-infostealer/index.html'), 'utf8');
@@ -78,4 +89,4 @@ frames.shift()();
 onClick({ target: new MockElement() });
 assert.equal(frames.length, 0);
 assert.equal(calls.length, 1);
-console.log('PASS: seven published accordion pages, shared CSS, one script per page, deep links and click-to-scroll behaviour.');
+console.log('PASS: six accordion pages, Goodies card directory, shared CSS, deep links and click-to-scroll behaviour.');

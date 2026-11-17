@@ -89,7 +89,13 @@ def build_photos(original: Path, converted: Path, stage: Path) -> dict:
     originals = []
     skipped = []
     for p in iter_files(original):
-        rel = safe_relative(original, p)
+        try:
+            rel = safe_relative(original, p)
+        except ValueError:
+            skipped.append({'path': p.relative_to(original).as_posix(),
+                            'reason': 'unsafe URL characters in path; review before publishing',
+                            'extension': p.suffix.lower(), 'bytes': ''})
+            continue
         if p.is_symlink():
             skipped.append({'path': rel, 'reason': 'symbolic link', 'extension': p.suffix.lower(), 'bytes': ''})
             continue
@@ -176,7 +182,8 @@ def build_photos(original: Path, converted: Path, stage: Path) -> dict:
             'generic_alt_to_review': len(review), 'input_gb': round(total_original/GB, 3),
             'output_gb': round((total_gallery+total_thumbs)/GB, 3),
             'full_gb': round(total_gallery/GB, 3), 'thumbs_gb': round(total_thumbs/GB, 3),
-            'skipped_extensions': dict(sorted(Counter(r['extension'] for r in skipped).items()))}
+            'skipped_extensions': dict(sorted(Counter(r['extension'] for r in skipped).items())),
+            'skipped_bytes': sum(int(r['bytes']) for r in skipped if isinstance(r['bytes'], int))}
 
 
 def build_files_review(files_root: Path, stage: Path) -> dict:
@@ -185,7 +192,12 @@ def build_files_review(files_root: Path, stage: Path) -> dict:
     if not files_root.is_dir():
         return {'status': 'not found; no file-server audit produced', 'path': str(files_root)}
     for path in iter_files(files_root):
-        rel = safe_relative(files_root, path)
+        try:
+            rel = safe_relative(files_root, path)
+        except ValueError:
+            errors.append({'path': path.relative_to(files_root).as_posix(),
+                           'reason': 'unsafe URL characters in path; review before publishing'})
+            continue
         if path.is_symlink() or not path.is_file():
             errors.append({'path': rel, 'reason': 'symlink/nonregular, skipped'})
             continue

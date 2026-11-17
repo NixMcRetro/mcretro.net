@@ -20,3 +20,5 @@ jobs:
           node-version: '24'
       - name: Verify archive catalogues and JavaScript syntax
         run: node --test .github/tests/r2-archive-sites.test.mjs
+      - name: Validate local archive builder with synthetic fixtures
+        run: python3 -m unittest discover -s archive-sites/tools -p 'test_*.py' -v

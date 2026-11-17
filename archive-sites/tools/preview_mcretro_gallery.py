@@ -93,8 +93,15 @@ def validate(manifest: Path, converted: Path):
     for photo in data['photos']:
         if not isinstance(photo, dict) or photo.get('album') not in ids:
             raise ValueError('Photo uses unknown album ID')
-        if not isinstance(photo.get('alt'), str) or not photo['alt'].strip():
-            raise ValueError('Missing photo alt text in draft')
+        # Unreviewed visual descriptions intentionally remain empty. The
+        # gallery supplies a useful ordinal/album label for the thumbnail
+        # control without pretending to describe the image's contents.
+        # Only explicitly approved visual descriptions must be non-empty.
+        alt = photo.get('alt', '')
+        if not isinstance(alt, str):
+            raise ValueError('Photo alt text must be a string when supplied')
+        if photo.get('alt_approved') is True and not alt.strip():
+            raise ValueError('Approved photo alt text cannot be empty')
         key = photo.get('path')
         if not isinstance(key, str) or key in seen:
             raise ValueError(f'Duplicate or missing photo path: {key!r}')

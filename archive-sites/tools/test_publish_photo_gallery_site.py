@@ -125,7 +125,9 @@ class GalleryWebsitePublishTests(unittest.TestCase):
     def test_privacy_gate_blocks_optimised_jxl_exif_container(self):
         site, photos, public = self.local_files()
         target_key = next(k for k in photos if k.endswith(".jxl"))
-        image = self.converted / target_key
+        with (self.stage / "reports/photos-upload-plan.csv").open(newline="", encoding="utf-8") as stream:
+            row = next(r for r in csv.DictReader(stream) if r["r2_key"] == target_key)
+        image = Path(row["local_path"])
         image.write_bytes(
             pub.JXL_CONTAINER_SIGNATURE +
             b"\x00\x00\x00\x0cExif" + b"TEST"

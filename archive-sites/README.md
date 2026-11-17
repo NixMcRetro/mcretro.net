@@ -124,6 +124,16 @@ For R2, assign **Content-Type: image/jxl** to JPEG XL objects. Upload the manife
 
 JPEG XL-only delivery has browser compatibility limitations. Validate with the actual target browsers and provide clear feedback or a suitable fallback plan if required, before publication.
 
+## Image-first photograph grid (no unverified image captions)
+
+The gallery grid now prioritises the actual image. Default thumbnails have **no filename label, no redundant album name, and no guessed AI description**. Previously generic titles like \`IMG 0005\` and \`HNTN7023\` are not printed on cards. The existing folder cards and breadcrumbs identify the archive context; the Photograph section no longer repeats an internal directory path.
+
+Clicking a photograph opens the lightbox with **Photograph X of Y** and an expandable **Photograph details** section containing the original filename and album. A date appears only when a human-approved \`date_taken\` exists and \`date_approved\` is \`true\`. The original filename is retained in the catalogue even though it is hidden on thumbnail cards. Neither EXIF values nor AI-generated guesses are injected automatically.
+
+Future human-approved captions can be added on a photo entry using \`caption\` with \`caption_approved: true\` (and \`alt\` with \`alt_approved: true\` for independently reviewed descriptions). **Only approved captions are displayed**. The builder defaults to empty captions and alt text, and false approval flags for all generated images. Do not edit the generated catalogue without preserving those owner decisions in the editorial source for subsequent regenerations; a persistent review workflow can be added later.
+
+The accessible default thumbnail link announces its position and album, such as *View photograph 5 of 128 in Retired*. Its nested thumbnail image has empty alt text to avoid duplicating the button's accessible name. The lightbox uses verified alt text when available, otherwise no invented visual description. The static, crawlable folder HTML follows the same image-first and approval-only rules, preserving real image links for archival services.
+
 ## Original photograph metadata and title recovery (local-only)
 
 Do **not** treat camera-generated filenames such as HNTN7023 or IMG_0005 as useful public captions. The gallery generator currently uses names derived from source filenames; **no EXIF content has been inspected or approved**. The cropped browser screenshot cannot show the originals' EXIF metadata, and the optimised JPEG XL copies may not retain it.
@@ -161,7 +171,7 @@ The old \`#folder=accessories%2F...\` addresses were JavaScript fragments, not r
 
 The ten hexadecimal characters are a stable digest of the full source folder path, preventing collisions with other identically named serial folders. These are normal \`.html\` URLs, not fragments or query parameters. They are short enough to share and easier for preservation tools to discover. The original photo folder names, image keys and file contents never change.
 
-The generated HTML includes ordinary hyperlinks and real initial folder listings, breadcrumbs and image thumbnails. Even without JavaScript, archivists can follow links through the original folder tree. The builder also creates an XML sitemap. Internet Archive capture is not guaranteed, especially for JPEG XL image files, but this eliminates JavaScript-only navigation as a barrier.
+The generated HTML includes ordinary hyperlinks and real initial folder listings, breadcrumbs and image thumbnails. It does not render camera filenames as card titles and includes optional verified captions only. Even without JavaScript, archivists can follow links through the original folder tree. The builder also creates an XML sitemap. Internet Archive capture is not guaranteed, especially for JPEG XL image files, but this eliminates JavaScript-only navigation as a barrier.
 
 Unlike extensionless paths, \`/albums/<slug>-<hash>.html\` directly maps to an exact R2 object key; no Worker or deep-route rewrite is necessary. The gallery homepage at \`/\` will still require the existing planned Cloudflare rewrite to \`/index.html\` when publication is separately authorised.
 

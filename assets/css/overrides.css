@@ -1894,3 +1894,114 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   .mcretro-modem-dialog .mcretro-modem-progress-layout { grid-template-columns: 36px 1fr; }
   .mcretro-modem-dialog .mcretro-modem-progress-layout > button { grid-column: 2; justify-self: end; }
 }
+
+/* Readable, copyable code blocks in articles only (including accordions).
+   Inline snippets, prose, media captions and other page types stay untouched. */
+.post-full .post-content .mcretro-code-frame {
+  max-width: 100%;
+  min-width: 0;
+  margin: 1rem 0 1.25rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  background: var(--code-bg);
+  overflow: hidden;
+}
+.post-full .post-content .mcretro-code-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.6rem;
+  padding: 0.25rem 0.4rem 0.25rem 0.9rem;
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--panel);
+  color: var(--muted);
+  font: 600 0.75rem/1.4 Montserrat, 'Helvetica Neue', sans-serif;
+}
+.post-full .post-content .mcretro-code-language {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.post-full .post-content .mcretro-code-copy {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 2rem;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+}
+.post-full .post-content .mcretro-code-copy:hover {
+  border-color: var(--border-soft);
+  background: var(--code-bg);
+}
+.post-full .post-content .mcretro-code-copy:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 1px;
+}
+.post-full .post-content .mcretro-code-copy.is-copied {
+  color: var(--link);
+}
+.post-full .post-content .mcretro-code-copy-icon {
+  position: relative;
+  display: inline-block;
+  flex: none;
+  width: 18px;
+  height: 18px;
+}
+.post-full .post-content .mcretro-code-copy-icon::before,
+.post-full .post-content .mcretro-code-copy-icon::after {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border: 1.6px solid currentColor;
+  border-radius: 2px;
+  content: '';
+}
+.post-full .post-content .mcretro-code-copy-icon::before {
+  top: 1px;
+  left: 1px;
+}
+.post-full .post-content .mcretro-code-copy-icon::after {
+  top: 5px;
+  left: 5px;
+  background: var(--panel);
+}
+.post-full .post-content .mcretro-code-frame pre {
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 0;
+  background: transparent;
+  font: 0.85rem/1.6 'Courier New', Courier, monospace;
+  white-space: pre;
+  tab-size: 2;
+}
+.post-full .post-content .mcretro-code-frame pre code {
+  display: block;
+  padding: 0;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+  font: inherit;
+  white-space: inherit;
+}
+@media (max-width: 500px) {
+  .post-full .post-content .mcretro-code-toolbar {
+    padding-left: 0.65rem;
+  }
+  .post-full .post-content .mcretro-code-frame pre {
+    padding: 0.75rem;
+  }
+}

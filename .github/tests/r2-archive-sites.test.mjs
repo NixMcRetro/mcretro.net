@@ -117,6 +117,7 @@ test('photo gallery HTML has its controls and valid inline JavaScript', () => {
   assert.match(html, /--archive-blue:#EAF2FF/);
   assert.match(html, /--archive-blue:#293A55/);
   assert.match(html, /id="viewer-details"/);
+  assert.doesNotMatch(html, /id="position"/, 'Viewer must show photograph number once, in its heading');
   assert.match(html, /id="viewer-filename"/);
   assert.match(html, /id="viewer-date"/);
   assert.match(html, /id="viewer-components"/);

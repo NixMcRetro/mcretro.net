@@ -207,7 +207,7 @@ function fixture({ failOnce = null } = {}) {
   };
 }
 
-test('only Opus is referenced, PNG favicon used, and page load is network-idle', () => {
+test('core: only Opus is referenced, PNG favicon used, and page load is network-idle', () => {
   assert.match(markup, /id="startAudio"[^>]*>🏆 Music Non Stop 🏆<\/button>/);
   assert.doesNotMatch(markup, /id="loadingScreen"/);
   assert.doesNotMatch(markup, /id="loadingMessage"/);
@@ -230,7 +230,7 @@ test('only Opus is referenced, PNG favicon used, and page load is network-idle',
   assert.equal(app.timers.size, 0);
 });
 
-test('responsive soundboard preserves all 64 full accessible names and short mobile labels', () => {
+test('core: responsive soundboard preserves all 64 full accessible names and short mobile labels', () => {
   const styles = readFileSync(new URL('../../homepages/goatpad/styles.css', import.meta.url), 'utf8');
   assert.match(markup, /class="sequence-viewport"[^>]+tabindex="0"/);
   assert.match(markup, /class="mobile-scroll-hint"/);
@@ -252,7 +252,7 @@ test('responsive soundboard preserves all 64 full accessible names and short mob
   }
 });
 
-test('the in-game HUD keeps lights aligned, original branding, and touch-friendly mobile controls', () => {
+test('advisory: the in-game HUD keeps lights aligned, original branding, and touch-friendly mobile controls', () => {
   const styles = readFileSync(new URL('../../homepages/goatpad/styles.css', import.meta.url), 'utf8');
   assert.match(markup, /class="brand-bar"/);
   assert.match(markup, /class="metronome" aria-hidden="true"/);
@@ -265,7 +265,7 @@ test('the in-game HUD keeps lights aligned, original branding, and touch-friendl
   assert.doesNotMatch(source, /function updateSizes\(/);
 });
 
-test('reference frame uses one decorative cable, white rails, and left/right footer elements', () => {
+test('advisory: reference frame uses one decorative cable, white rails, and left/right footer elements', () => {
   const styles = readFileSync(new URL('../../homepages/goatpad/styles.css', import.meta.url), 'utf8');
   assert.match(markup, /class="goatpad-cable"/);
   assert.equal((markup.match(/class="cable-shadow"/g) || []).length, 1);
@@ -286,7 +286,7 @@ test('reference frame uses one decorative cable, white rails, and left/right foo
   assert.match(styles, /\.goatpad-cable\s*\{\s*display:\s*none;/);
 });
 
-test('Auto Goat only selects a pad after visible physical contact', async () => {
+test('core: Auto Goat only selects a pad after visible physical contact', async () => {
   const styles = readFileSync(new URL('../../homepages/goatpad/styles.css', import.meta.url), 'utf8');
   assert.match(markup, /id="autoGoat"[^>]*aria-pressed="false"/);
   assert.match(markup, /id="goatSprite"[^>]*aria-hidden="true" hidden/);
@@ -324,7 +324,7 @@ test('Auto Goat only selects a pad after visible physical contact', async () => 
     'Stopping leaves the current mix intact');
 });
 
-test('Stopping mid-air prevents even an already-planned hoof hit', async () => {
+test('core: Stopping mid-air prevents even an already-planned hoof hit', async () => {
   const app = fixture();
   await app.start();
   await app.goatStep(); // An approach timer exists
@@ -338,7 +338,7 @@ test('Stopping mid-air prevents even an already-planned hoof hit', async () => {
   assert.ok([...app.timers.values()].every(timer => timer.ms < 2000));
 });
 
-test('Auto Goat mixes with one pad per lane, no more than six lanes, and foreground leaps', async () => {
+test('core: Auto Goat mixes with one pad per lane, no more than six lanes, and foreground leaps', async () => {
   const app = fixture();
   await app.start();
   let sawForeground = false;
@@ -369,7 +369,7 @@ test('Auto Goat mixes with one pad per lane, no more than six lanes, and foregro
   assert.equal(app.autoGoat['aria-pressed'], 'false');
 });
 
-test('Auto Goat visits all eight columns, including both edges, without overfilling', async () => {
+test('core: Auto Goat visits all eight columns, including both edges, without overfilling', async () => {
   const app = fixture();
   await app.start();
   const landedColumns = [];
@@ -396,7 +396,7 @@ test('Auto Goat visits all eight columns, including both edges, without overfill
   app.toggleGoat();
 });
 
-test('Music Non Stop click unlocks eight sounds and enables Auto Goat immediately', async () => {
+test('core: Music Non Stop click unlocks eight sounds and enables Auto Goat immediately', async () => {
   const app = fixture();
   assert.equal(app.startAudio.hidden, false);
   assert.equal(app.goatStartScreen.hidden, false);
@@ -423,7 +423,7 @@ test('Music Non Stop click unlocks eight sounds and enables Auto Goat immediatel
   assert.equal(app.timers.size, 0, 'Stopping should clear the Auto Goat timer');
 });
 
-test('failed initial audio shows an unobtrusive retryable error', async () => {
+test('core: failed initial audio shows an unobtrusive retryable error', async () => {
   const app = fixture({ failOnce: 11 });
   await app.start();
   assert.equal(app.startAudio.disabled, false);
@@ -442,7 +442,7 @@ test('failed initial audio shows an unobtrusive retryable error', async () => {
   app.toggleGoat();
 });
 
-test('an unvisited pad fetches its sample on demand, then plays after eight steps', async () => {
+test('core: an unvisited pad fetches its sample on demand, then plays after eight steps', async () => {
   const app = fixture();
   await app.start();
   app.toggleGoat(); // Manual sequencer test: disable the default automatic mixer.
@@ -462,7 +462,7 @@ test('an unvisited pad fetches its sample on demand, then plays after eight step
   assert.deepEqual(app.played, [44]);
 });
 
-test('byte-identical pad aliases reuse the same decoded Opus sound', async () => {
+test('core: byte-identical pad aliases reuse the same decoded Opus sound', async () => {
   const app = fixture();
   await app.start();
   app.toggleGoat(); // Manual sequencer test: disable the default automatic mixer.
@@ -474,7 +474,7 @@ test('byte-identical pad aliases reuse the same decoded Opus sound', async () =>
   assert.deepEqual(app.played, [16, 16]);
 });
 
-test('one failed on-demand request does not poison the cache; pad retries on click', async () => {
+test('core: one failed on-demand request does not poison the cache; pad retries on click', async () => {
   const app = fixture({ failOnce: 54 });
   await app.start();
   app.toggleGoat(); // Manual sequencer test: disable the default automatic mixer.
@@ -486,7 +486,7 @@ test('one failed on-demand request does not poison the cache; pad retries on cli
   assert.equal(app.requests.filter(x => x === './audio/54.opus').length, 2);
 });
 
-test('same-column selection is exclusive and the original alternating rhythm remains', async () => {
+test('core: same-column selection is exclusive and the original alternating rhythm remains', async () => {
   const app = fixture();
   await app.start();
   app.toggleGoat(); // Manual sequencer test: disable the default automatic mixer.
@@ -500,7 +500,7 @@ test('same-column selection is exclusive and the original alternating rhythm rem
   assert.deepEqual(app.played, [12], 'Full-length sounds skip the alternate bar');
 });
 
-test('upstream 69 BPM scheduler corrects drift after tab throttling', async () => {
+test('core: upstream 69 BPM scheduler corrects drift after tab throttling', async () => {
   const app = fixture();
   await app.start();
   app.toggleGoat(); // Manual sequencer test: disable the default automatic mixer.

@@ -19,15 +19,21 @@ For this experiment I'm using Ubuntu 16.04 (64-bit). Shallot needs the OpenSSL d
 
 First, update the package lists:
 
-`sudo apt-get update`
+```bash
+sudo apt-get update
+```
 
 Then install the missing development headers:
 
-`sudo apt-get install libssl-dev`
+```bash
+sudo apt-get install libssl-dev
+```
 
 With those out of the way, build Shallot:
 
-`./configure && make`
+```bash
+./configure && make
+```
 
 Now for the fun part. Running `./shallot cat` searches for an onion address containing `cat`, while `./shallot ^cat` looks for one beginning with `cat`. The caret is doing its usual job of anchoring the match to the beginning of the string. Simple enough!
 

@@ -19,7 +19,9 @@ Rather than work through everything manually, I've been playing around with `fin
 
 The first job is getting rid of the `_publicize_twitter_user` metadata from roughly 500 imported posts. Here's the command I've been working with, with the original account name replaced by a placeholder:
 
-`find . -type f -print0 | xargs -0 sed -i '' /" _publicize_twitter_user: '@HISTORICAL_HANDLE'"/d`
+```bash
+find . -type f -print0 | xargs -0 sed -i '' /" _publicize_twitter_user: '@HISTORICAL_HANDLE'"/d
+```
 
 The `find` command locates the files, while `xargs` passes them along to `sed`. Using `-print0` and `-0` helps keep filenames containing spaces from causing trouble. Finally, `sed` removes the lines matching the unwanted metadata.
 
@@ -33,7 +35,9 @@ Another thing that came across in the WordPress import was a whole lot of HTML p
 
 A simple example for removing literal opening and closing paragraph tags from Markdown files inside `_posts` would be:
 
-`find _posts -type f -name '*.md' -print0 | xargs -0 sed -i '' -e 's#<p>##g' -e 's#</p>##g'`
+```bash
+find _posts -type f -name '*.md' -print0 | xargs -0 sed -i '' -e 's#<p>##g' -e 's#</p>##g'
+```
 
 That'll deal with plain `<p>` and `</p>` tags, but not every possible variation of HTML. It also won't magically insert missing paragraph breaks, so I'll still need to check the results rather than assume everything has worked perfectly.
 

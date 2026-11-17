@@ -37,6 +37,7 @@ EXPECTED_HTML = 329
 EXPECTED_SITE = 331
 EXPECTED_FONTS = 5
 EXPECTED_PHOTOS = 16823
+EXPECTED_PHOTOGRAPHS = 8412
 EXPECTED_IMAGE_BYTES = 4276856102
 EXPECTED_PUBLIC = EXPECTED_SITE + EXPECTED_FONTS
 
@@ -187,7 +188,7 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
                 issues.append(f"{description}: possible {label}")
 
     public_data = json.loads(catalogue)
-    if len(public_data["photos"]) != EXPECTED_PHOTOS // 2 + 1:
+    if len(public_data["photos"]) != EXPECTED_PHOTOGRAPHS:
         # 8,412 photographs / 16,823 objects: one GIF shares its thumbnail.
         raise ValueError("Unexpected public catalogue photograph count")
     # Private original filenames are excluded. Visible public paths and titles
@@ -328,7 +329,8 @@ def check_local(stage: Path, converted: Path, html: Path) -> tuple[dict, dict, b
             site["exact_html_pages_verified"] != EXPECTED_HTML or
             site["expected_static_objects"] != EXPECTED_SITE or
             review["staged_font_count"] != EXPECTED_FONTS or
-            review["local_object_count"] != EXPECTED_PHOTOS):
+            review["local_object_count"] != EXPECTED_PHOTOS or
+            review["photo_count"] != EXPECTED_PHOTOGRAPHS):
         raise ValueError("Staged gallery failed the strict read-only readiness audit")
     private = json.loads((stage / "photo-gallery/albums.generated.json").read_text(
         encoding="utf-8"))

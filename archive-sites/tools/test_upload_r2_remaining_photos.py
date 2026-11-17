@@ -76,6 +76,30 @@ class PhotoOnlyUploadTests(unittest.TestCase):
         self.assertEqual(set(task.sampled_keys(self.plan)),
                          set(self.plan) - task.PILOT_KEYS)
 
+    def test_read_only_preflight_stage_order_without_upload(self):
+        class Tracer:
+            def __init__(self):
+                self.events = []
+            def __enter__(self):
+                self.events.append("enter")
+                return self
+            def __exit__(self, typ, exc, tb):
+                self.events.append("exit")
+            def advance(self, stage):
+                self.events.append(stage)
+            def finish(self):
+                self.events.append("done")
+
+        tracer = Tracer()
+        with patch.object(task, "preflight_display", return_value=tracer), \
+             patch.object(task, "local_plan", return_value=self.plan), \
+             patch.object(task, "all_remote_objects", return_value=self.remote), \
+             patch.object(task.shutil, "which", return_value="/usr/bin/rclone"), \
+             patch.object(task, "run_upload_with_dashboard") as upload:
+            self.assertEqual(task.main([]), 0)
+        self.assertEqual(tracer.events, ["enter", 1, 2, "done", "exit"])
+        upload.assert_not_called()
+
     @patch.object(task, "all_remote_objects")
     @patch.object(task, "local_plan")
     @patch.object(task.shutil, "which", return_value="/usr/bin/rclone")

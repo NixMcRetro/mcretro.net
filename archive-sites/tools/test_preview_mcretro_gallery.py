@@ -6,7 +6,8 @@ import tempfile
 import threading
 import unittest
 
-from preview_mcretro_gallery import make_handler, resolve_object, safe_key, validate, local_theme_fonts
+from preview_mcretro_gallery import make_handler, resolve_object, safe_key, validate, local_theme_fonts, local_static_pages
+from gallery_routes import folder_url
 
 
 class GalleryPreviewTests(unittest.TestCase):
@@ -27,7 +28,11 @@ class GalleryPreviewTests(unittest.TestCase):
             p.write_bytes(b'\xff\x0a' + b'X' * 18)
         self.manifest.write_text(json.dumps({
             'schema_version': 1,
-            'albums': [{'id': 'retro', 'title': 'Retro'}],
+            'albums': [{'id': 'retro', 'title': 'Retro', 'path': 'retro'}],
+            'folders': [
+                {'path':'','name':'All photographs','parent':None,'url':'/','photo_count':1},
+                {'path':'retro','name':'Retro','parent':'','url':folder_url('retro'),'photo_count':1},
+            ],
             'photos': [{
                 'album': 'retro',
                 'path': 'full/retro/pic.jpg.jxl',
@@ -90,6 +95,48 @@ class GalleryPreviewTests(unittest.TestCase):
         res = conn.getresponse()
         self.assertEqual(res.status, 404)
         res.read()
+
+    def test_static_folder_url_returns_actual_html_without_404(self):
+        website = self.stage / 'site'
+        route = folder_url('retro')
+        (website / route.lstrip('/')).parent.mkdir(parents=True, exist_ok=True)
+        (website / route.lstrip('/')).write_text('<html><h1>Retro</h1><a href="/">Back</a></html>')
+        (website / 'index.html').write_text('<html><a href="' + route + '">Retro</a></html>')
+        (website / 'sitemap.xml').write_text('<urlset/>')
+        pages, missing = local_static_pages(self.manifest)
+        self.assertEqual(missing, [])
+        self.assertIn(route, pages)
+        self.assertNotIn('/albums/secret.html', pages)
+        _, objects, _, _ = validate(self.manifest, self.images)
+        server = ThreadingHTTPServer(('127.0.0.1', 0),
+                                     make_handler(self.html, self.manifest, objects,
+                                                  static_pages=pages))
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        self.addCleanup(thread.join, 2)
+        self.addCleanup(server.server_close)
+        self.addCleanup(server.shutdown)
+        conn = http.client.HTTPConnection('127.0.0.1', server.server_port, timeout=4)
+        self.addCleanup(conn.close)
+        for url, expected, mime in (
+            ('/', 200, 'text/html'),
+            (route, 200, 'text/html'),
+            ('/sitemap.xml', 200, 'application/xml'),
+            ('/albums/secret.html', 404, 'text/html'),
+            ('/albums/../secret.html', 404, 'text/html'),
+        ):
+            with self.subTest(url=url):
+                conn.request('GET', url)
+                response = conn.getresponse()
+                self.assertEqual(response.status, expected)
+                self.assertTrue(response.getheader('Content-Type').startswith(mime))
+                body = response.read()
+                if url == route:
+                    self.assertIn(b'<h1>Retro</h1>', body)
+        conn.request('HEAD', route)
+        response = conn.getresponse()
+        self.assertEqual(response.status, 200)
+        self.assertEqual(response.read(), b'')
 
     def test_server_only_serves_whitelisted_images(self):
         _, objects, _, _ = validate(self.manifest, self.images)

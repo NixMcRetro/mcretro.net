@@ -57,6 +57,39 @@ class GalleryPreviewTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             resolve_object(self.images, 'full/../private.jpg.jxl')
 
+    def test_clean_r2_keys_map_to_unmodified_local_conversions(self):
+        data = json.loads(self.manifest.read_text(encoding='utf-8'))
+        photo = data['photos'][0]
+        photo['source_path'] = 'retro/pic.jpg'
+        photo['filename'] = 'pic.jpg'
+        photo['path'] = 'full/retro/pic.jxl'
+        photo['thumbnail'] = 'thumbs/retro/pic.jxl'
+        self.manifest.write_text(json.dumps(data), encoding='utf-8')
+        _, objects, missing, report = validate(self.manifest, self.images)
+        self.assertEqual(missing, [])
+        self.assertTrue(report['ready_for_local_preview'])
+        self.assertEqual(objects['full/retro/pic.jxl'], self.images/'full/retro/pic.jpg.jxl')
+        self.assertEqual(objects['thumbs/retro/pic.jxl'], self.images/'thumbs/retro/pic.jpg.jxl')
+        server = ThreadingHTTPServer(('127.0.0.1', 0),
+                                     make_handler(self.html, self.manifest, objects))
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        self.addCleanup(thread.join, 2)
+        self.addCleanup(server.server_close)
+        self.addCleanup(server.shutdown)
+        conn = http.client.HTTPConnection('127.0.0.1', server.server_port, timeout=4)
+        self.addCleanup(conn.close)
+        for public_key in ('full/retro/pic.jxl', 'thumbs/retro/pic.jxl'):
+            conn.request('GET', '/' + public_key)
+            response = conn.getresponse()
+            self.assertEqual(response.status, 200)
+            self.assertEqual(response.getheader('Content-Type'), 'image/jxl')
+            self.assertTrue(response.read().startswith(bytes((255, 10))))
+        conn.request('GET', '/full/retro/pic.jpg.jxl')
+        response = conn.getresponse()
+        self.assertEqual(response.status, 404)
+        response.read()
+
     def test_empty_unreviewed_alt_text_is_valid(self):
         """Regression: catalogue builder deliberately leaves unverified alt empty."""
         data = json.loads(self.manifest.read_text(encoding='utf-8'))

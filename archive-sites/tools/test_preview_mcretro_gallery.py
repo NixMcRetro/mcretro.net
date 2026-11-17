@@ -62,14 +62,14 @@ class GalleryPreviewTests(unittest.TestCase):
         photo = data['photos'][0]
         photo['source_path'] = 'retro/pic.jpg'
         photo['filename'] = 'pic.jpg'
-        photo['path'] = 'full/retro/pic.jxl'
-        photo['thumbnail'] = 'thumbs/retro/pic.jxl'
+        photo['path'] = 'full/retro/PIC.jxl'
+        photo['thumbnail'] = 'thumbs/retro/PIC.jxl'
         self.manifest.write_text(json.dumps(data), encoding='utf-8')
         _, objects, missing, report = validate(self.manifest, self.images)
         self.assertEqual(missing, [])
         self.assertTrue(report['ready_for_local_preview'])
-        self.assertEqual(objects['full/retro/pic.jxl'], self.images/'full/retro/pic.jpg.jxl')
-        self.assertEqual(objects['thumbs/retro/pic.jxl'], self.images/'thumbs/retro/pic.jpg.jxl')
+        self.assertEqual(objects['full/retro/PIC.jxl'], self.images/'full/retro/pic.jpg.jxl')
+        self.assertEqual(objects['thumbs/retro/PIC.jxl'], self.images/'thumbs/retro/pic.jpg.jxl')
         server = ThreadingHTTPServer(('127.0.0.1', 0),
                                      make_handler(self.html, self.manifest, objects))
         thread = threading.Thread(target=server.serve_forever, daemon=True)
@@ -79,7 +79,7 @@ class GalleryPreviewTests(unittest.TestCase):
         self.addCleanup(server.shutdown)
         conn = http.client.HTTPConnection('127.0.0.1', server.server_port, timeout=4)
         self.addCleanup(conn.close)
-        for public_key in ('full/retro/pic.jxl', 'thumbs/retro/pic.jxl'):
+        for public_key in ('full/retro/PIC.jxl', 'thumbs/retro/PIC.jxl'):
             conn.request('GET', '/' + public_key)
             response = conn.getresponse()
             self.assertEqual(response.status, 200)

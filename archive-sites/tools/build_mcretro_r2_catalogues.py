@@ -95,6 +95,11 @@ def validate_dirs(original: Path, converted: Path, files: Path, stage: Path):
             raise ValueError('Staging must be separate from originals, converted images and file server.')
 
 
+def p_name(relative: str) -> str:
+    """Source filename, unmodified by display title-casing."""
+    return relative.rsplit('/', 1)[-1]
+
+
 def build_photos(original: Path, converted: Path, stage: Path, rules: dict | None = None) -> dict:
     rules = load_rules() if rules is None else rules
     originals = []
@@ -190,9 +195,14 @@ def build_photos(original: Path, converted: Path, stage: Path, rules: dict | Non
     photos = []
     for rel, directory, title, full_key, thumb_key in images:
         album = album_ids[directory]
-        photos.append({'path': full_key, 'thumbnail': thumb_key, 'title': title,
-                       'alt': f'Archive photograph {title} in {pretty(Path(directory).name)}',
-                       'album': album})
+        # Keep the original filename privately available in the catalogue, but
+        # do not mistake camera-generated filenames or folder context for a
+        # verified description of the image contents.
+        photos.append({'path': full_key, 'thumbnail': thumb_key,
+                       'filename': p_name(rel), 'title': title, 'album': album,
+                       'caption': '', 'caption_approved': False,
+                       'alt': '', 'alt_approved': False,
+                       'date_taken': None, 'date_approved': False})
 
     # Folder tree mirrors every source directory level, not merely the leaf
     # directories that contain pictures. A single folder can hold both images

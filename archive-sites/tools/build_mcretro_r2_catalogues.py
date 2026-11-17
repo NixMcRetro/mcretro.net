@@ -18,6 +18,7 @@ import re
 import sys
 
 from gallery_naming import load_rules, build_name_review
+from gallery_routes import folder_url
 
 DEFAULT_ORIGINAL = Path('/Users/nix/Desktop/R2 FILES/photos')
 DEFAULT_CONVERTED = Path.home() / 'Desktop/McRetro-PhotoGallery-Optimised-v2'
@@ -196,7 +197,7 @@ def build_photos(original: Path, converted: Path, stage: Path, rules: dict | Non
     # Folder tree mirrors every source directory level, not merely the leaf
     # directories that contain pictures. A single folder can hold both images
     # and child folders. Paths remain source-relative, not display-name slugs.
-    folder_nodes = {'': {'path': '', 'name': 'All photographs', 'parent': None,
+    folder_nodes = {'': {'path': '', 'url': '/', 'name': 'All photographs', 'parent': None,
                          'photo_count': 0, 'direct_photo_count': 0}}
     def ensure_folder(directory):
         if not directory or directory == '.':
@@ -206,7 +207,7 @@ def build_photos(original: Path, converted: Path, stage: Path, rules: dict | Non
             node_path = segment if not prefix else prefix + '/' + segment
             if node_path not in folder_nodes:
                 folder_nodes[node_path] = {
-                    'path': node_path, 'name': display_names.get(node_path, pretty(segment)),
+                    'path': node_path, 'url': folder_url(node_path), 'name': display_names.get(node_path, pretty(segment)),
                     'parent': prefix, 'photo_count': 0, 'direct_photo_count': 0}
             prefix = node_path
 

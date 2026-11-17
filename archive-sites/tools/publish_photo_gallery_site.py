@@ -233,9 +233,9 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
                         f"generated {key}: unexpected external auto-loaded "
                         f"resource(s): {resource_scan.external[:3]}"
                     )
-                if re.search(r"(?i)@import\\s+(?:url\\()?\\s*['\\\"]?(?:https?:)?//", contents):
+                if re.search(r"(?i)@import\s+(?:url\()?\s*['\"]?(?:https?:)?//", contents):
                     issues.append(f"generated {key}: remote CSS import detected")
-                if re.search(r"(?i)url\\(\\s*['\\\"]?(?:https?:)?//", contents):
+                if re.search(r"(?i)url\(\s*['\"]?(?:https?:)?//", contents):
                     issues.append(f"generated {key}: remote CSS URL detected")
     # The existing validated photo plan can refer either to the final
     # key-matched path or a pre-rename legacy converted filename. Use the

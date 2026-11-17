@@ -478,6 +478,80 @@ Cloudflare custom-domain configuration, independent of R2 object metadata.
 The static Photo Gallery site remains unpublished.
 
 
+## Owner-requested photo-only R2 upload after the successful 20-object pilot
+
+The owner has asked to **put the optimised photographs onto R2 first**, before
+reviewing or publishing the gallery HTML. This is a change of **sequence**, not
+an authorisation to upload the File Server, private metadata, static gallery
+pages, fonts, or blog changes. Unlike the first 20-image test, the bulk
+photo-only transfer has **not yet run**, and must be triggered explicitly
+from the owner's Mac.
+
+The local 17th November audit confirmed **8,412 photos**, **16,823 distinct
+image objects**, **4,276,856,102 bytes**, and **329/329 current local static
+pages**. All five fonts are staged but must not be uploaded alongside photos.
+The single unexpected `.DS_Store` is ignored by the staging auditor, never
+included in the strict image allowlist.
+
+`tools/upload_r2_remaining_photos.py` accepts only paths from the validated
+`photos-upload-plan.csv`, exactly matching converted image filenames in
+`~/Desktop/McRetro-PhotoGallery-Optimised-v2`. It freezes those counts and
+bytes, requires the 20 successful pilot objects to exist unchanged on R2,
+checks every already-present image key, size, and MIME, and refuses any remote
+object not in the photo plan. It does **not read the 26 GB original tree**.
+It never alters staging approval fields or publishes any site files.
+
+From Downloads, fetch a mutually compatible set of tools:
+
+    BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites/tools"
+    for f in gallery_keys.py validate_r2_upload.py upload_r2_test20.py upload_r2_remaining_photos.py; do
+      curl -fLsS "$BASE/$f" -o "$HOME/Downloads/$f" || break
+    done
+
+Run the default **read-only preflight**:
+
+    python3 "$HOME/Downloads/upload_r2_remaining_photos.py"
+
+It should report 20 existing and **16,803 missing** objects, totalling the
+remaining ~4.27 GB, with no extra R2 keys. The public custom domain means
+uploaded photographs are accessible to anyone who knows or guesses their
+direct URL **even while the gallery index is not published**. Review any
+privacy-sensitive material before executing the upload.
+
+Once the owner decides to run the public photo-only transfer on their Mac:
+
+    python3 "$HOME/Downloads/upload_r2_remaining_photos.py" --upload
+
+This invokes a NUL-delimited, exact-key `rclone copy --files-from0 -` with
+`--ignore-existing`, copying **only objects missing at the time of the
+preflight**. Existing 20-object pilot keys are not passed for upload. No
+deletions, overwrites, recursive unfiltered copies, generated catalogues,
+HTML or `/assets/fonts/` are selected. A transfer interrupted partway
+through can be resumed with the same explicit `--upload` invocation:
+the script relists R2, rejects any unexpected or mismatched objects, and
+copies only still-missing keys.
+
+After uploading, it confirms the **exact 16,823 remote keys**, each expected
+size and `image/jxl` or `image/gif` MIME type, and uses
+`rclone check --download --one-way` for **40 dispersed, deterministic
+non-pilot object samples**. This byte sample is stronger than remote
+metadata checks, but it **does not** establish that all 16,823 objects match
+byte-for-byte. For optional exhaustive validation, the owner can run the
+following **read-only** command, which downloads approximately 4.277 GB of
+R2 object data and may take significantly longer:
+
+    python3 "$HOME/Downloads/upload_r2_remaining_photos.py" --deep-verify
+
+Or, to repeat the exact remote key/size/type checks and 40-byte sample
+without uploading:
+
+    python3 "$HOME/Downloads/upload_r2_remaining_photos.py" --verify
+
+A successful photo-only upload does **not** approve captions, accessibility
+alt text, search metadata, albums.json, generated HTML, sitemap, the
+File Server, Goodies navigation, or merging this draft PR. Keep those
+reviews and publication gates separate.
+
 ## Validation
 
 In the repository root:

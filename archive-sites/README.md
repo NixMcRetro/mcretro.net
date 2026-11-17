@@ -249,6 +249,61 @@ Legacy \`#folder=\` links are still recognised in JavaScript for compatibility a
 - Review real visual descriptions for generic filename images before using the draft alt text for public accessibility.
 - Keep the File Server's 987 candidate files unapproved until their contents, provenance and redistribution rights are reviewed.
 
+## Final-bucket photo upload preflight (read-only)
+
+**Owner decision (17th November 2026): use the final `mcretro-photos` bucket.
+No upload has been authorised yet.** The existing working rclone remote is
+`r2:`; a new Cloudflare bucket, API token, or remote is **not** needed.
+
+**Public-access risk accepted by owner:** `mcretro-photos` is already connected
+to `photos.mcretro.net`. After any future approved real upload, anyone with an
+object URL could access that object immediately, even if the gallery homepage
+is not published. The `full/` and `thumbs/` prefixes are not private areas.
+No files will be transferred during the steps below.
+
+### Local validation, no cloud access
+
+Run the checks on the Mac with the staged catalogue and converted images:
+
+    BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites"
+    curl -fLsS "$BASE/tools/validate_r2_upload.py" -o "$HOME/Downloads/validate_r2_upload.py"
+    python3 "$HOME/Downloads/validate_r2_upload.py"
+
+This script reads `~/Desktop/McRetro-R2-Staging/photo-gallery/albums.generated.json`,
+`~/Desktop/McRetro-R2-Staging/reports/photos-upload-plan.csv`,
+and `~/Desktop/McRetro-PhotoGallery-Optimised-v2/`. If the local audit
+summary exists, its photo and missing-pair counts must also match.
+
+The checks enforce: exact correspondence between catalogue keys and upload
+plan keys; unique full image paths; expected thumbnail paths and shared GIF
+keys; safe key names; actual converted files with correct sizes and JXL/GIF
+signatures; correct planned MIME values; and every publication approval still
+set to `NO`. The optional `--deep-hash` reads the converted files and
+calculates SHA-256 locally, without storing hashes or modifying bytes.
+
+### Optional rclone dry run against final bucket
+
+After the local validation passes:
+
+    python3 "$HOME/Downloads/validate_r2_upload.py" --rclone-dry-run
+
+This performs `rclone copy --dry-run` for ten catalogue photographs and their
+associated thumbnails, selecting exact relative file paths. It targets
+`r2:mcretro-photos` (the final existing bucket), never creates buckets,
+and cannot upload or delete an object. To **simulate** all objects rather than
+a ten-photograph sample:
+
+    python3 "$HOME/Downloads/validate_r2_upload.py" --rclone-dry-run --all
+
+The dry run checks how rclone would behave, but **does not verify the
+destination object count, decode image pixels, inspect photo contents, or
+guarantee successful real uploads**. Direct checks against R2 and a separate
+review/authorisation are needed before any actual transfer.
+
+The existing bucket object `Cozy Retro-Tech Hammock with Parrots.png` is
+unrelated to `full/` and `thumbs/` and must not be removed or overwritten.
+Do not use `sync`, `delete`, `purge`, or `--delete-*` upload commands.
+
 ## Validation
 
 In the repository root:

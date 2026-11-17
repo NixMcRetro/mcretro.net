@@ -139,10 +139,10 @@ jobs:
           node .github/tests/post-media-built-check.mjs _site
 
       - name: Verify GOATPAD audio startup, sample loading and sequencer behaviour
-        run: node --test --test-name-pattern='^(?!the in-game HUD|reference frame)' .github/tests/goatpad-audio.test.mjs
+        run: node --test --test-name-pattern='^core:' .github/tests/goatpad-audio.test.mjs
 
       - name: Verify theme and accessibility behaviour (required)
-        run: node --test --test-name-pattern='^(early external script|first visit|manual selection|without manual selection|invalid stored value|blocked localStorage)' .github/tests/theme.mjs
+        run: node --test --test-name-pattern='^core:' .github/tests/theme.mjs
 
       - name: Verify dial-up and archive calendar interactions (required)
         run: node --test .github/tests/modem-destinations.mjs .github/tests/archive-calendar.mjs
@@ -160,11 +160,11 @@ jobs:
       # publishing when an editor legitimately changes the visual design.
       - name: Advisory visual consistency checks (non-blocking)
         continue-on-error: true
-        run: node --test .github/tests/theme.mjs
+        run: node --test --test-name-pattern='^advisory:' .github/tests/theme.mjs
 
       - name: Advisory GOATPAD appearance checks (non-blocking)
         continue-on-error: true
-        run: node --test --test-name-pattern='^(the in-game HUD|reference frame)' .github/tests/goatpad-audio.test.mjs
+        run: node --test --test-name-pattern='^advisory:' .github/tests/goatpad-audio.test.mjs
 
       - name: Install Pagefind
         run: npm ci --no-audit --no-fund

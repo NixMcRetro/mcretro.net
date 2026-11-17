@@ -1,5 +1,7 @@
 # McRetro R2 archive sites - staged restoration
 
+**Current verified project state:** [17th November 2026 checkpoint](CHECKPOINT-2026-11-17.md). The first 20 real `mcretro-photos` image objects were uploaded and fully verified; **no other photo objects or gallery HTML are authorised or published**. The checkpoint supersedes historical status statements in this document. This is still a **draft, unmerged PR**, not a public site release.
+
 Two separate static website starters are in this **draft, unmerged PR**. Neither site has been published by this branch.
 
 | Source | Intended R2 bucket | Domain |
@@ -7,7 +9,7 @@ Two separate static website starters are in this **draft, unmerged PR**. Neither
 | archive-sites/file-server/ | mcretro-files | https://files.mcretro.net/ |
 | archive-sites/photo-gallery/ | mcretro-photos | https://photos.mcretro.net/ |
 
-The committed sample catalogues contain ONLY the two previously tested connectivity objects: mcretro-r2-check.txt and mcretro-r2-check.png. No source archives, generated photo catalogue, original photographs, private metadata or R2 credentials are committed.
+The committed sample catalogues still contain **obsolete connectivity-test entries** (`mcretro-r2-check.txt` and `mcretro-r2-check.png`), **not** the full gallery or the verified 20-image pilot. They are examples only and **must not be uploaded as public catalogues**. No original photo archive, full generated photo catalogue, private review metadata or R2 credentials are committed.
 
 ## Local source material and current conversion
 
@@ -173,7 +175,7 @@ The accessible default thumbnail link announces its position and album, such as 
 
 ## Original photograph metadata and title recovery (local-only)
 
-Do **not** treat camera-generated filenames such as HNTN7023 or IMG_0005 as useful public captions. The gallery generator currently uses names derived from source filenames; **no EXIF content has been inspected or approved**. The cropped browser screenshot cannot show the originals' EXIF metadata, and the optimised JPEG XL copies may not retain it.
+Do **not** treat camera-generated filenames such as HNTN7023 or IMG_0005 as useful public captions. The gallery generator currently uses names derived from source filenames. A **read-only local EXIF audit has been performed** on the historical archive (48 images with a date, 42 with a camera model, no embedded captions or titles found), but **no EXIF-derived descriptions or dates are approved for publication by default**. Do not rescan the 26 GB originals as part of the current phase. The cropped browser screenshot cannot show the originals' EXIF metadata, and the optimised JPEG XL copies may not retain it.
 
 A read-only ExifTool audit now scans **the original photo directory on the owner's Mac** and writes private reports:
 
@@ -255,7 +257,7 @@ Legacy \`#folder=\` links are still recognised in JavaScript for compatibility a
 **After a change to public naming rules, regenerate your local photo catalogue and upload plan before validating or running any dry run.** Download `gallery_keys.py` alongside the catalogue builder and validator, then rerun the builder. Old `.jpg.jxl` public keys and earlier lowercase `.jxl` public keys must not be uploaded.
 
 **Owner decision (17th November 2026): use the final `mcretro-photos` bucket.
-No upload has been authorised yet.** The existing working rclone remote is
+Only the narrowly approved 20-object pilot has been uploaded and verified. No further uploads are authorised.** The existing working rclone remote is
 `r2:`; a new Cloudflare bucket, API token, or remote is **not** needed.
 
 **Public-access risk accepted by owner:** `mcretro-photos` is already connected
@@ -291,9 +293,11 @@ After the local validation passes:
 
     python3 "$HOME/Downloads/validate_r2_upload.py" --rclone-dry-run
 
-This performs `rclone copyto --dry-run` for ten catalogue photographs and their
-associated thumbnails, mapping existing Mac files such as `img_0100.jpg.jxl`
-to clean R2 object keys such as `IMG_0100.jxl`. It targets
+For the **already-renamed** local images, this performs a single allowlisted
+`rclone copy --dry-run` for ten catalogue photographs and their associated
+thumbnails, using matching local and public filenames such as `IMG_0100.jxl`.
+The earlier `copyto` mode remains a compatibility fallback if the local
+converted collection still has legacy names. It targets
 `r2:mcretro-photos` (the final existing bucket), never creates buckets,
 and cannot upload or delete an object. To **simulate** all objects rather than
 a ten-photograph sample:
@@ -302,23 +306,16 @@ a ten-photograph sample:
 
 The dry run checks how rclone would behave, but **does not verify the
 destination object count, decode image pixels, inspect photo contents, or
-guarantee successful real uploads**. Because each renamed R2 key requires an
-individual `copyto` simulation, `--all` can take substantially longer than
-the earlier directory-based dry run. Never use the old bulk `rclone copy`
-with converted local filenames as the source of public object names. Direct checks against R2 and a separate
-review/authorisation are needed before any actual transfer.
+guarantee successful real uploads**. For renamed local JXL files, `--all` can use the bulk, exact-allowlist dry run.
+Never use a blind recursive `rclone copy` that could include unplanned files,
+and never assume that a dry run grants publication approval. Direct checks
+against R2 and separate owner authorisation remain required for any future transfer.
 
-The owner has requested eventual removal of the old root-level setup image
-`Cozy Retro-Tech Hammock with Parrots.png`. It is **not** part of the upload
-plan and the preflight never touches it. If the owner separately authorises
-its actual removal, check the exact target with:
-
-    rclone lsf "r2:mcretro-photos" --max-depth 1
-    rclone deletefile --dry-run "r2:mcretro-photos/Cozy Retro-Tech Hammock with Parrots.png"
-
-Use `deletefile` for the exact named object only, after verifying the target
-and considering a backup. Never use `sync`, `delete`, or `purge` against
-the bucket root as a cleanup shortcut.
+The owner **already removed** the old root-level setup image
+`Cozy Retro-Tech Hammock with Parrots.png` using an interactive, exact-key
+`rclone deletefile` and verified that the bucket was empty before the first
+20-object upload. Do not repeat that deletion or remove any other objects.
+Never use `sync`, `delete` or `purge` against the bucket root as a cleanup shortcut.
 
 ## Correct final workflow: rename the 4.28 GB optimised images in place
 
@@ -439,7 +436,7 @@ GitHub Actions runs both test suites on changes in this area. Tests cover known 
 
 No Cloudflare access is required or stored by this PR. Publication is **not** automatic.
 
-1. Review the 271 skipped photo-folder files and the File Server inventory. Decide which are public, redistributable and relevant.
+1. The 271 skipped photo-folder items were already classified: 249 Finder metadata files excluded, 20 BMP screenshots recovered, one animated GIF preserved, and one original sitemap.xml excluded pending separate review. Focus remaining checks on fidelity, privacy, rights and the File Server inventory rather than reprocessing the originals.
 2. Review source pathnames, generated album names, alt text and JXL browser behaviour; edit the local draft catalogue.
 3. Validate that every catalogue key has a corresponding verified source JXL and that the final download list contains only expressly approved files.
 4. Prepare a resumable **dry-run** R2 upload process with exact object keys, sizes and MIME values. Do not upload until authorised.
@@ -447,7 +444,7 @@ No Cloudflare access is required or stored by this PR. Publication is **not** au
 6. At that point, to route each bare hostname to its index.html, use a hostname-specific Cloudflare Transform Rule URL rewrite from / to /index.html. Do not rewrite all paths.
 7. Verify the live pages and object access before editing the blog's Goodies or placeholder pages in a separate owner-approved change.
 
-For initial connectivity testing only, the previously documented bucket-root test objects may remain. R2 public buckets do not automatically offer root directory listing. Reference: https://developers.cloudflare.com/r2/buckets/public-buckets/
+The old root test PNG in `mcretro-photos` is gone; the first 20 image objects are the only currently confirmed uploaded Photo Gallery objects. The draft **sample** catalogues are still not suitable for deployment. R2 public buckets do not automatically offer root directory listing. Reference: https://developers.cloudflare.com/r2/buckets/public-buckets/
 
 ## Rollback
 

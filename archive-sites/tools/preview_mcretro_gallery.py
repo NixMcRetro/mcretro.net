@@ -151,7 +151,35 @@ def sample_decode(data: dict, objects: dict):
     return checks, failures
 
 
-def make_handler(html_path: Path, manifest_path: Path, objects: dict):
+FONT_RELATIVE_PATHS = (
+    'korataki.woff2',
+    'montserrat/montserrat-latin-400-normal.woff2',
+    'montserrat/montserrat-latin-700-normal.woff2',
+    'merriweather/merriweather-latin-400-normal.woff2',
+    'merriweather/merriweather-latin-700-normal.woff2',
+)
+
+
+def local_theme_fonts(manifest: Path) -> tuple[dict, list]:
+    """Allowlist only exact staged WOFF2 paths; never serve unreviewed files."""
+    root = manifest.parent / 'assets/fonts'
+    assets = {}
+    missing = []
+    for rel in FONT_RELATIVE_PATHS:
+        target = root.joinpath(*rel.split('/'))
+        if not target.is_file() or target.is_symlink() or target.resolve() != target.absolute():
+            missing.append(rel)
+            continue
+        with target.open('rb') as stream:
+            if stream.read(4) != b'wOF2':
+                missing.append(rel)
+                continue
+        assets['assets/fonts/' + rel] = target
+    return assets, missing
+
+
+def make_handler(html_path: Path, manifest_path: Path, objects: dict, theme_assets: dict | None = None):
+    theme_assets = theme_assets or {}
     html = html_path.read_bytes()
     manifest = manifest_path.read_bytes()
 
@@ -175,6 +203,9 @@ def make_handler(html_path: Path, manifest_path: Path, objects: dict):
             elif key.startswith('/') and key[1:] in objects:
                 content, filename = None, objects[key[1:]]
                 mime = 'image/gif' if filename.suffix.lower() == '.gif' else 'image/jxl'
+            elif key.startswith('/') and key[1:] in theme_assets:
+                content, filename = None, theme_assets[key[1:]]
+                mime = 'font/woff2'
             else:
                 self.send_error(404, 'Not in local gallery catalogue')
                 return
@@ -232,6 +263,12 @@ def main(argv=None):
         for failure in failures:
             print('FAILED:', failure, file=sys.stderr)
         return 2 if failures else 0
+    assets, missing_fonts = local_theme_fonts(manifest)
+    if missing_fonts:
+        print('THEME FONT WARNING: Missing local font files:', ', '.join(missing_fonts), file=sys.stderr)
+        print('Run stage_gallery_theme.py to get McRetro typography in the local preview.', file=sys.stderr)
+    else:
+        print('McRetro self-hosted fonts ready for localhost preview.')
     if args.check_only:
         return 0
     html = args.html.expanduser()
@@ -239,7 +276,7 @@ def main(argv=None):
         raise ValueError(f'Gallery HTML not found: {html}. Download index.html or supply --html.')
     if not 1 <= args.port <= 65535:
         raise ValueError('Port must be between 1 and 65535')
-    handler = make_handler(html, manifest, objects)
+    handler = make_handler(html, manifest, objects, assets)
     with ThreadingHTTPServer((PREVIEW_HOST, args.port), handler) as server:
         print(f'LOCAL PREVIEW ONLY: http://{PREVIEW_HOST}:{args.port}/')
         print('Original photographs, file-server archives, and all unpublished files remain inaccessible.')

@@ -59,6 +59,32 @@ The owner ran the new `audit_gallery_staging.py` against the local optimised col
 
 **This remediation has been proposed, not yet shown as completed by the owner.** A technically clean result does not authorise the remaining 16,803 image objects, site HTML, captions/alt text, fonts, redirects, or the File Server.
 
+## Local static gallery refreshed: owner readback (17th November 2026)
+
+The owner moved the previous generated site into a local backup and reran
+`render_gallery_pages.py` using the existing optimised image manifest, not
+the 26 GB originals. Subsequent read-only audit results:
+
+- **329 / 329** exact, up-to-date HTML pages; **331** expected static objects
+- `site/albums.json` no longer stale; all **16,823** local optimised objects pass
+- All five self-hosted fonts available, 212 albums, 987 File Server candidates
+- **Only remaining technical warning:** `site/.DS_Store` recreated by Finder.
+  No other unexpected static site objects or stale pages were reported.
+- Photo descriptions, captions, accessibility alt text, scene/component tags,
+  dates and search terms remain entirely **unapproved (0/8,412)**.
+
+The initial audit considered any extra site file fatal, including routine Finder
+metadata. The draft audit now **separately reports genuine non-symlinked
+`.DS_Store` files as ignored Finder metadata**, without marking the gallery
+technically inconsistent. Every other unexpected file and any symlink still
+fails validation. **This does not authorise recursive directory uploads**:
+future transfers must use an exact allowlist of the 331 planned static keys
+and a separate owner publication approval.
+
+Next action is to rerun the read-only audit using the updated script, then
+inspect the gallery in a **localhost-only** browser session. No further cloud
+upload, publication or GitHub merge is authorised.
+
 ## Work to do next - no R2 upload or publication
 
 1. **Recheck the current, private local staging only**, without reading the historical originals: `python3 "$HOME/Downloads/validate_r2_upload.py"`; then `python3 "$HOME/Downloads/preview_mcretro_gallery.py" --check-only` using the current gallery template and scripts. Ensure the manifest, upload-plan CSV and optimised filenames still agree.

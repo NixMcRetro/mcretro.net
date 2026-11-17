@@ -680,11 +680,55 @@ on R2 with their expected keys and sizes before publishing the HTML.
 literally a copy of the **private** `albums.generated.json` manifest. It
 contains `source_path` fields that the browser does not need. The tool
 **never uploads that private file**. Instead, it generates an equivalent
-public-facing `albums.json` with just display/navigation fields, photo
-filenames and approved descriptive metadata. Unreviewed guesses, private
-source-path fields, arbitrary fields, reviews and local filesystem paths
-are excluded. The approved metadata count remains zero for now: the release
-does **not** invent alt text or captions.
+public-facing `albums.json` with a minimal set of display/navigation
+fields. It omits the private original `source_path` **and the separate original
+`filename` attribute**. The browser derives a display name from the public
+image URL if required. Unreviewed guesses, arbitrary fields, review sidecars
+and local filesystem paths are excluded. This first design release also
+**refuses any newly approved descriptive fields** until a separate editorial
+review; the current metadata approval count is zero. The release does **not**
+invent alt text or captions.
+
+### Privacy hardening before the first public gallery release
+
+The publication script now runs a **fail-closed local privacy check** before
+any upload. It checks the public-projected catalogue and every generated
+HTML/sitemap file for high-risk exposed strings such as absolute user
+directory paths, email addresses, credential-like text and sensitive
+location/identity labels. It rejects external **auto-loaded** scripts,
+frames, remote CSS and image resources. It does not reject passive
+navigation links back to McRetro or File Server.
+
+It also examines **only the already-optimised JPEG XL and GIF files** from
+the validated local photo plan. For every JPEG XL it parses container box
+headers without decoding the pixels, looking for Exif, XMP, JUMBF, JPEG
+reconstruction metadata, Brotli-compressed metadata and unknown custom boxes.
+These can retain personally identifying details or GPS information, and are
+blocked for human review. Raw JXL codestreams cannot carry these container
+boxes. This check **does not read the 26 GB original photo archive**, alter
+the uploaded photos, or guarantee that the visible picture itself contains
+no sensitive information.
+
+For a completely offline privacy preflight:
+
+    "$HOME/Downloads/mcretro-r2-venv/bin/python" "$HOME/Downloads/publish_photo_gallery_site.py" --privacy-audit
+
+The default preflight and `--upload` run the *same privacy checks*.
+Detected concerns prevent upload; do not bypass them. If any web objects
+already exist on R2, their **downloaded bytes are checked before new files
+are uploaded**, because a matching byte count alone would not rule out a
+stale or private `albums.json`.
+
+**Human review remains essential.** The gallery publicly exposes folder
+names, archive image URLs, title text and visually recognisable people,
+addresses, serial numbers or background details. It also publishes a sitemap
+that makes the full folder structure easy to discover. The 16,823 image
+objects are *already* in a public R2 bucket; approving the website will make
+them much easier to find. Automated pattern checks cannot certify that all
+8,412 photographs and folder names are appropriate for public distribution.
+Metadata scans on the local optimised files do not independently re-download
+and inspect every remote object. Public HTTP 403 rules must be investigated
+separately.
 
 The uploader has a fixed **336-key allowlist** and ordered publication:
 

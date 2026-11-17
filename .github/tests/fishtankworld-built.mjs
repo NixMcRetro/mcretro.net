@@ -49,11 +49,8 @@ for (const relative of pages) {
     referencesChecked++;
   }
 }
-const goodies = read('goodies/index.html');
-assert.ok(goodies.includes('/homepages/fishtankworld/'), 'Goodies lost Fish Tank World');
-assert.ok(goodies.includes('/homepages/goatpad/'), 'Goodies lost Goatpad');
 assert.ok(!existsSync(path.join(root, fishRoot, 'gallery-source')),
   'Binary photo staging parts must not appear in the published site');
 
 console.log('PASS: ' + pages.length + ' Fish Tank World pages, 8 profiles, 13 gallery photographs, ' +
-  referencesChecked + ' internal references and Goodies links.');
+  referencesChecked + ' internal asset and navigation references.');

@@ -1,0 +1,100 @@
+import http.client
+from http.server import ThreadingHTTPServer
+import json
+from pathlib import Path
+import tempfile
+import threading
+import unittest
+
+from preview_mcretro_gallery import make_handler, resolve_object, safe_key, validate
+
+
+class GalleryPreviewTests(unittest.TestCase):
+    def setUp(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.root = Path(tmp.name)
+        self.images = self.root / 'converted'
+        self.stage = self.root / 'stage'
+        self.images.mkdir()
+        self.stage.mkdir()
+        self.html = self.root / 'index.html'
+        self.html.write_text('<!doctype html><title>Local gallery preview</title>', encoding='utf-8')
+        self.manifest = self.stage / 'albums.generated.json'
+        for name in ('full/retro/pic.jpg.jxl', 'thumbs/retro/pic.jpg.jxl'):
+            p = self.images / name
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.write_bytes(b'\xff\x0a' + b'X' * 18)
+        self.manifest.write_text(json.dumps({
+            'schema_version': 1,
+            'albums': [{'id': 'retro', 'title': 'Retro'}],
+            'photos': [{
+                'album': 'retro',
+                'path': 'full/retro/pic.jpg.jxl',
+                'thumbnail': 'thumbs/retro/pic.jpg.jxl',
+                'title': 'Retro',
+                'alt': 'Image of a retro object'
+            }]
+        }), encoding='utf-8')
+
+    def test_catalogue_count_and_strict_file_allowlist(self):
+        data, objects, missing, report = validate(self.manifest, self.images)
+        self.assertEqual(report['albums'], 1)
+        self.assertEqual(report['photos'], 1)
+        self.assertEqual(report['valid_local_objects'], 2)
+        self.assertEqual(missing, [])
+        self.assertFalse(report['approved_for_publication'])
+        self.assertEqual(len(objects), 2)
+        self.assertTrue(safe_key('full/retro/pic.jpg.jxl'))
+        for name in ('/etc/passwd', 'full/../secret.jpg.jxl', 'full/x?y.jxl',
+                     'thumbs/../../photos/private.jpg.jxl', 'full/retro/bad\\path.jxl'):
+            self.assertFalse(safe_key(name))
+        with self.assertRaises(ValueError):
+            resolve_object(self.images, 'full/../private.jpg.jxl')
+
+    def test_missing_files_and_symlinks_rejected(self):
+        p = self.images / 'thumbs/retro/pic.jpg.jxl'
+        p.unlink()
+        p.symlink_to(self.images/'full/retro/pic.jpg.jxl')
+        with self.assertRaises(ValueError):
+            validate(self.manifest, self.images)
+        p.unlink()
+        _, _, missing, report = validate(self.manifest, self.images)
+        self.assertEqual(missing, ['thumbs/retro/pic.jpg.jxl'])
+        self.assertFalse(report['ready_for_local_preview'])
+
+    def test_server_only_serves_whitelisted_images(self):
+        _, objects, _, _ = validate(self.manifest, self.images)
+        handler = make_handler(self.html, self.manifest, objects)
+        server = ThreadingHTTPServer(('127.0.0.1', 0), handler)
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        self.addCleanup(thread.join, 2)
+        self.addCleanup(server.server_close)
+        self.addCleanup(server.shutdown)
+        conn = http.client.HTTPConnection('127.0.0.1', server.server_port, timeout=4)
+        self.addCleanup(conn.close)
+        for url, expected, mime in [
+            ('/', 200, 'text/html'),
+            ('/albums.json', 200, 'application/json'),
+            ('/full/retro/pic.jpg.jxl', 200, 'image/jxl'),
+            ('/thumbs/retro/pic.jpg.jxl', 200, 'image/jxl'),
+            ('/nonexistent.jxl', 404, 'text/html'),
+            ('/full/%2e%2e/secret.jpg.jxl', 404, 'text/html'),
+            ('/../../etc/passwd', 404, 'text/html')
+        ]:
+            with self.subTest(url=url):
+                conn.request('GET', url)
+                response = conn.getresponse()
+                self.assertEqual(response.status, expected)
+                self.assertTrue(response.getheader('Content-Type').startswith(mime))
+                response.read()
+        conn.request('HEAD', '/full/retro/pic.jpg.jxl')
+        response = conn.getresponse()
+        self.assertEqual(response.status, 200)
+        self.assertEqual(response.getheader('Content-Type'), 'image/jxl')
+        self.assertEqual(response.read(), b'')
+
+
+if __name__ == '__main__':
+    unittest.main()

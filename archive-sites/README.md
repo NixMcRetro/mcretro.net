@@ -30,7 +30,7 @@ The gallery's CSS remains self-contained rather than loading the entire Jekyll b
 
 ## Folder names and technical title-case rules
 
-Source paths, folder names on disk and album identifiers stay unmodified. Public R2 JXL keys use clean `.jxl` filenames with deterministic suffixes only where original file stems collide. A new display-only formatter in \`tools/gallery_naming.py\` applies ordinary title casing, known brand/acronym conventions, and owner-editable exact-path exceptions from \`config/folder-names.json\`.
+Source paths, folder names on disk and album identifiers stay unmodified. Public R2 JXL keys use **uppercase basenames and lowercase `.jxl` extensions**, with deterministic uppercase hash suffixes only where original file stems collide. Folder paths remain case-preserved. A new display-only formatter in \`tools/gallery_naming.py\` applies ordinary title casing, known brand/acronym conventions, and owner-editable exact-path exceptions from \`config/folder-names.json\`.
 
 The reported example becomes **All photographs › Accessories › HP L1706 17-inch LCD Colour Monitor PX849A › Serial CNK7040Y04**. Serial/model/part identifiers that cannot safely be inferred are flagged in \`reports/folder-name-review.csv\`, with original path, proposed label, review reason, approval and owner replacement columns. These **draft** labels may be refined without moving or reconverting any photograph. The gallery uses generated folder names on cards and breadcrumbs, as well as improved album titles and search terms.
 
@@ -116,10 +116,10 @@ The builder also accepts the recovered BMP-JXL pairs and the unchanged GIF copy;
 
 The R2 gallery preserves the original folder hierarchy with **single-extension JXL filenames**:
 
-    full/<original-directory>/img_0100.jxl
-    thumbs/<original-directory>/img_0100.jxl
+    full/<original-directory>/IMG_0100.jxl
+    thumbs/<original-directory>/IMG_0100.jxl
 
-For example, original `photos/computers/mac/img_0100.jpg` becomes R2 objects `full/computers/mac/img_0100.jxl` and `thumbs/computers/mac/img_0100.jxl`. The existing Mac converted files can remain `img_0100.jpg.jxl`; catalogue and upload plan map those local paths to the clean R2 keys without reconversion. If `scan.jpg` and `scan.png` are in the same original folder, their proposed `scan.jxl` keys would collide. The generator therefore adds a deterministic source-path hash suffix **to both colliding public names** and refuses to overwrite either source. GIF animation remains `.gif` and shares its thumbnail key.
+For example, original `photos/computers/mac/img_0100.jpg` becomes R2 objects `full/computers/mac/IMG_0100.jxl` and `thumbs/computers/mac/IMG_0100.jxl`. The existing Mac converted files can remain `img_0100.jpg.jxl`; catalogue and upload plan map those local paths to the clean R2 keys without reconversion. If `scan.jpg` and `scan.png` are in the same original folder, their proposed `SCAN.jxl` keys would collide. The generator therefore adds a deterministic uppercase source-path hash suffix **to both colliding public names** and refuses to overwrite either source. Other filename stems are capitalised, but the format extension remains lowercase `.jxl` (not `.JXL`). GIF animation remains an unchanged `.gif` file and shares its thumbnail key.
 
 For R2, assign **Content-Type: image/jxl** to JPEG XL objects. Upload the manifest as **application/json** and the homepage as **text/html**. The stable photo keys must match those inside albums.json. Do not upload JPG originals unless specifically approved.
 
@@ -252,6 +252,8 @@ Legacy \`#folder=\` links are still recognised in JavaScript for compatibility a
 
 ## Final-bucket photo upload preflight (read-only)
 
+**After a change to public naming rules, regenerate your local photo catalogue and upload plan before validating or running any dry run.** Download `gallery_keys.py` alongside the catalogue builder and validator, then rerun the builder. Old `.jpg.jxl` public keys and earlier lowercase `.jxl` public keys must not be uploaded.
+
 **Owner decision (17th November 2026): use the final `mcretro-photos` bucket.
 No upload has been authorised yet.** The existing working rclone remote is
 `r2:`; a new Cloudflare bucket, API token, or remote is **not** needed.
@@ -291,7 +293,7 @@ After the local validation passes:
 
 This performs `rclone copyto --dry-run` for ten catalogue photographs and their
 associated thumbnails, mapping existing Mac files such as `img_0100.jpg.jxl`
-to clean R2 object keys such as `img_0100.jxl`. It targets
+to clean R2 object keys such as `IMG_0100.jxl`. It targets
 `r2:mcretro-photos` (the final existing bucket), never creates buckets,
 and cannot upload or delete an object. To **simulate** all objects rather than
 a ten-photograph sample:

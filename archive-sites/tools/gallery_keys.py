@@ -2,6 +2,7 @@
 
 Source files and already-converted local images are deliberately NOT renamed.
 Only public R2 object keys and catalogue URLs use the new .jxl-only names.
+JXL basenames are uppercase; extensions remain lowercase for web consistency.
 """
 from __future__ import annotations
 
@@ -31,7 +32,7 @@ def public_photo_paths(source_paths: list[str]) -> dict[str, str]:
         if path.suffix.lower() == '.gif':
             candidate = source
         else:
-            candidate = str(path.with_suffix('.jxl'))
+            candidate = str(path.with_name(path.stem.upper() + '.jxl'))
         candidates[source] = candidate
         groups[candidate.casefold()].append(source)
 
@@ -50,7 +51,7 @@ def public_photo_paths(source_paths: list[str]) -> dict[str, str]:
             raise ValueError('Unexpected collision on non-JXL item: ' + source)
         digest = hashlib.sha256(source.encode('utf-8')).hexdigest()
         for n in (10, 16, 24, 32, 64):
-            proposed = str(path.with_name(path.stem + '-' + digest[:n] + '.jxl'))
+            proposed = str(path.with_name(path.stem + '-' + digest[:n].upper() + '.jxl'))
             if proposed.casefold() not in used:
                 outputs[source] = proposed
                 used.add(proposed.casefold())

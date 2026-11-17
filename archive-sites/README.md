@@ -30,7 +30,7 @@ The gallery's CSS remains self-contained rather than loading the entire Jekyll b
 
 ## Folder names and technical title-case rules
 
-Source paths, folder names on disk, R2 object keys and album identifiers stay unmodified. A new display-only formatter in \`tools/gallery_naming.py\` applies ordinary title casing, known brand/acronym conventions, and owner-editable exact-path exceptions from \`config/folder-names.json\`.
+Source paths, folder names on disk and album identifiers stay unmodified. Public R2 JXL keys use clean `.jxl` filenames with deterministic suffixes only where original file stems collide. A new display-only formatter in \`tools/gallery_naming.py\` applies ordinary title casing, known brand/acronym conventions, and owner-editable exact-path exceptions from \`config/folder-names.json\`.
 
 The reported example becomes **All photographs › Accessories › HP L1706 17-inch LCD Colour Monitor PX849A › Serial CNK7040Y04**. Serial/model/part identifiers that cannot safely be inferred are flagged in \`reports/folder-name-review.csv\`, with original path, proposed label, review reason, approval and owner replacement columns. These **draft** labels may be refined without moving or reconverting any photograph. The gallery uses generated folder names on cards and breadcrumbs, as well as improved album titles and search terms.
 
@@ -39,6 +39,7 @@ To run the builder from only downloaded files (not a repository checkout), fetch
     BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites"
     curl -fLsS "$BASE/tools/build_mcretro_r2_catalogues.py" -o "$HOME/Downloads/build_mcretro_r2_catalogues.py"
     curl -fLsS "$BASE/tools/gallery_naming.py" -o "$HOME/Downloads/gallery_naming.py"
+    curl -fLsS "$BASE/tools/gallery_keys.py" -o "$HOME/Downloads/gallery_keys.py"
     curl -fLsS "$BASE/config/folder-names.json" -o "$HOME/Downloads/folder-names.json"
     python3 "$HOME/Downloads/build_mcretro_r2_catalogues.py" --names "$HOME/Downloads/folder-names.json"
 
@@ -113,12 +114,12 @@ The builder also accepts the recovered BMP-JXL pairs and the unchanged GIF copy;
 
 ## Object keys and JXL delivery
 
-The converter produces the same directory hierarchy twice:
+The R2 gallery preserves the original folder hierarchy with **single-extension JXL filenames**:
 
-    full/<source-relative-path>.<original-extension>.jxl
-    thumbs/<source-relative-path>.<original-extension>.jxl
+    full/<original-directory>/img_0100.jxl
+    thumbs/<original-directory>/img_0100.jxl
 
-Example: original photos/computers/mac/img_0100.jpg becomes R2 object key full/computers/mac/img_0100.jpg.jxl and its thumbnail becomes thumbs/computers/mac/img_0100.jpg.jxl.
+For example, original `photos/computers/mac/img_0100.jpg` becomes R2 objects `full/computers/mac/img_0100.jxl` and `thumbs/computers/mac/img_0100.jxl`. The existing Mac converted files can remain `img_0100.jpg.jxl`; catalogue and upload plan map those local paths to the clean R2 keys without reconversion. If `scan.jpg` and `scan.png` are in the same original folder, their proposed `scan.jxl` keys would collide. The generator therefore adds a deterministic source-path hash suffix **to both colliding public names** and refuses to overwrite either source. GIF animation remains `.gif` and shares its thumbnail key.
 
 For R2, assign **Content-Type: image/jxl** to JPEG XL objects. Upload the manifest as **application/json** and the homepage as **text/html**. The stable photo keys must match those inside albums.json. Do not upload JPG originals unless specifically approved.
 
@@ -266,6 +267,7 @@ No files will be transferred during the steps below.
 Run the checks on the Mac with the staged catalogue and converted images:
 
     BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites"
+    curl -fLsS "$BASE/tools/gallery_keys.py" -o "$HOME/Downloads/gallery_keys.py"
     curl -fLsS "$BASE/tools/validate_r2_upload.py" -o "$HOME/Downloads/validate_r2_upload.py"
     python3 "$HOME/Downloads/validate_r2_upload.py"
 
@@ -287,8 +289,9 @@ After the local validation passes:
 
     python3 "$HOME/Downloads/validate_r2_upload.py" --rclone-dry-run
 
-This performs `rclone copy --dry-run` for ten catalogue photographs and their
-associated thumbnails, selecting exact relative file paths. It targets
+This performs `rclone copyto --dry-run` for ten catalogue photographs and their
+associated thumbnails, mapping existing Mac files such as `img_0100.jpg.jxl`
+to clean R2 object keys such as `img_0100.jxl`. It targets
 `r2:mcretro-photos` (the final existing bucket), never creates buckets,
 and cannot upload or delete an object. To **simulate** all objects rather than
 a ten-photograph sample:
@@ -297,12 +300,23 @@ a ten-photograph sample:
 
 The dry run checks how rclone would behave, but **does not verify the
 destination object count, decode image pixels, inspect photo contents, or
-guarantee successful real uploads**. Direct checks against R2 and a separate
+guarantee successful real uploads**. Because each renamed R2 key requires an
+individual `copyto` simulation, `--all` can take substantially longer than
+the earlier directory-based dry run. Never use the old bulk `rclone copy`
+with converted local filenames as the source of public object names. Direct checks against R2 and a separate
 review/authorisation are needed before any actual transfer.
 
-The existing bucket object `Cozy Retro-Tech Hammock with Parrots.png` is
-unrelated to `full/` and `thumbs/` and must not be removed or overwritten.
-Do not use `sync`, `delete`, `purge`, or `--delete-*` upload commands.
+The owner has requested eventual removal of the old root-level setup image
+`Cozy Retro-Tech Hammock with Parrots.png`. It is **not** part of the upload
+plan and the preflight never touches it. If the owner separately authorises
+its actual removal, check the exact target with:
+
+    rclone lsf "r2:mcretro-photos" --max-depth 1
+    rclone deletefile --dry-run "r2:mcretro-photos/Cozy Retro-Tech Hammock with Parrots.png"
+
+Use `deletefile` for the exact named object only, after verifying the target
+and considering a backup. Never use `sync`, `delete`, or `purge` against
+the bucket root as a cleanup shortcut.
 
 ## Validation
 

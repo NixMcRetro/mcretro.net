@@ -78,6 +78,25 @@ class ArchiveBuilderTests(unittest.TestCase):
         self.assertTrue(draft['owner_review_required'])
         self.assertEqual(draft['files'][0]['review_status'], 'NOT_REVIEWED')
 
+    def test_catalogue_rebuild_after_optimised_set_renamed_in_place(self):
+        self.photo('accessories/utility/img_0835.jpg')
+        full_old = self.converted / 'full/accessories/utility/img_0835.jpg.jxl'
+        thumb_old = self.converted / 'thumbs/accessories/utility/img_0835.jpg.jxl'
+        full_new = full_old.with_name('IMG_0835.jxl')
+        thumb_new = thumb_old.with_name('IMG_0835.jxl')
+        full_old.rename(full_new)
+        thumb_old.rename(thumb_new)
+        report = build_photos(self.original, self.converted, self.stage)
+        self.assertEqual(report['converted_pairs'], 1)
+        self.assertEqual(report['missing_pairs'], 0)
+        with (self.stage / 'reports/photos-upload-plan.csv').open() as stream:
+            rows = list(csv.DictReader(stream))
+        self.assertEqual([row['r2_key'] for row in rows],
+                         ['full/accessories/utility/IMG_0835.jxl',
+                          'thumbs/accessories/utility/IMG_0835.jxl'])
+        self.assertEqual([row['local_path'] for row in rows],
+                         [str(full_new), str(thumb_new)])
+
     def test_nested_folder_hierarchy_including_parent_with_photos(self):
         self.photo('consoles/sega/cover.jpg')
         self.photo('consoles/sega/saturn/unit.jpg')

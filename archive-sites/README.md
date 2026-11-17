@@ -1,6 +1,6 @@
 # McRetro R2 archive sites - staged restoration
 
-**Current verified project state:** [17th November 2026 checkpoint](CHECKPOINT-2026-11-17.md). The first 20 real `mcretro-photos` image objects were uploaded and fully verified; **no other photo objects or gallery HTML are authorised or published**. The checkpoint supersedes historical status statements in this document. This is still a **draft, unmerged PR**, not a public site release.
+**Latest verified project state:** [17th November 2026 checkpoint](CHECKPOINT-2026-11-17.md). **All 16,823 image objects (4,276,856,102 bytes) have now been uploaded to `mcretro-photos`**, with all remote keys and sizes matched, 60 authenticated MIME/size samples passed, and 40 downloaded-byte comparisons matching. The **Photo Gallery website, HTML, sitemap, fonts, and private metadata remain unpublished**. This is a **draft, unmerged PR**, not a gallery website release. The checkpoint supersedes any earlier status statements below.
 
 Two separate static website starters are in this **draft, unmerged PR**. Neither site has been published by this branch.
 
@@ -577,6 +577,8 @@ The dashboard adds no photo uploads of its own, never contacts the original
 never publishes site HTML, private metadata or File Server files.
 
 ## Owner-requested photo-only R2 upload after the successful 20-object pilot
+
+**STATUS UPDATE - COMPLETE (17th November 2026, 17:19 AEDT):** The owner ran the resumed photo-only upload successfully. Exactly **16,823 of 16,823** planned image objects, **4,276,856,102 bytes**, were matched in R2, with 60 authenticated MIME/size samples and 40 downloaded-byte samples passing. **0 photo objects remain.** The instructions below document the already-completed procedure and must **not** be treated as an invitation to repeat it. The remaining work is public HTTP access investigation (a previous HEAD returned 403), local gallery interface review, accessibility metadata review, and separately authorised HTML/site publication.
 
 The owner has asked to **put the optimised photographs onto R2 first**, before
 reviewing or publishing the gallery HTML. This is a change of **sequence**, not

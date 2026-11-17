@@ -85,6 +85,8 @@ class StaticGalleryTests(unittest.TestCase):
         self.assertIn('aria-label="Open photograph 1 of 2 in Serial CNK7040Y04"', page)
         self.assertIn('alt=""', page)
         self.assertNotIn('class="tile-label"', page)
+        self.assertIn('id="folder-list" class="folder-list" hidden', page,
+                      'Leaf album should not reserve space for an empty folder panel')
         self.assertIn('/thumbs/accessories/', page)
         self.assertIn('/full/accessories/', page)
         parsed = LinkParser()

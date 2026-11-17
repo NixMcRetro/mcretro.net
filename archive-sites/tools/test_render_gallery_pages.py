@@ -108,7 +108,7 @@ class StaticGalleryTests(unittest.TestCase):
         site = self.stage / 'photo-gallery/site'
         route = folder_url('consoles/sega')
         html = (site / route.lstrip('/')).read_text()
-        self.assertIn('amp%26chip.jxl', html)
+        self.assertIn('AMP%26CHIP.jxl', html)
         self.assertNotIn('amp&amp;chip</strong>', html)
         self.assertNotIn('amp&chip</strong>', html)
 

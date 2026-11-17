@@ -124,15 +124,51 @@ For R2, assign **Content-Type: image/jxl** to JPEG XL objects. Upload the manife
 
 JPEG XL-only delivery has browser compatibility limitations. Validate with the actual target browsers and provide clear feedback or a suitable fallback plan if required, before publication.
 
-## Image-first photograph grid (no unverified image captions)
+## Compact image-first gallery and McRetro theme
 
-The gallery grid now prioritises the actual image. Default thumbnails have **no filename label, no redundant album name, and no guessed AI description**. Previously generic titles like \`IMG 0005\` and \`HNTN7023\` are not printed on cards. The existing folder cards and breadcrumbs identify the archive context; the Photograph section no longer repeats an internal directory path.
+The independent gallery no longer wastes the top of an album on a duplicate **McRetro Photo Gallery** heading, long explanation or oversized notice. Its top content is now the folder breadcrumbs, an optional slim Folders section (only if child folders exist), a compact search field and the photographs. The semantic page heading is still available to assistive technology. Both static HTML and JavaScript navigation collapse empty child-folder lists.
 
-Clicking a photograph opens the lightbox with **Photograph X of Y** and an expandable **Photograph details** section containing the original filename and album. A date appears only when a human-approved \`date_taken\` exists and \`date_approved\` is \`true\`. The original filename is retained in the catalogue even though it is hidden on thumbnail cards. Neither EXIF values nor AI-generated guesses are injected automatically.
+The previous beige notice was caused by using the generic \`--panel\` colour. Any future gallery notice now uses McRetro.net's light/dark archive-blue palette, and the **Parent folder** and **Show more** controls use the matching archive colours (\`#EAF2FF\`, \`#064584\` in light mode, and \`#293A55\`, \`#BFDBFE\` in dark mode).
 
-Future human-approved captions can be added on a photo entry using \`caption\` with \`caption_approved: true\` (and \`alt\` with \`alt_approved: true\` for independently reviewed descriptions). **Only approved captions are displayed**. The builder defaults to empty captions and alt text, and false approval flags for all generated images. Do not edit the generated catalogue without preserving those owner decisions in the editorial source for subsequent regenerations; a persistent review workflow can be added later.
+Photo thumbnails remain image-first: no generic filename labels, no repeated album name and no guessed AI captions. The optional photo viewer details still disclose the original source filename, album and a date if explicitly approved. The grid uses 60-image batches for performance; static generated pages preserve real links and image URLs for archive crawlers.
 
-The accessible default thumbnail link announces its position and album, such as *View photograph 5 of 128 in Retired*. Its nested thumbnail image has empty alt text to avoid duplicating the button's accessible name. The lightbox uses verified alt text when available, otherwise no invented visual description. The static, crawlable folder HTML follows the same image-first and approval-only rules, preserving real image links for archival services.
+## Reviewed, searchable microchip and scene descriptions
+
+Three kinds of text deliberately remain distinct:
+
+- **Caption**: optional short visible title, displayed beneath the image only if \`caption_approved: true\`.
+- **Scene description and components**: verified description of the photograph and exact chip/model identifiers, exposed in the optional **Photograph details** panel, searchable across the gallery **only if each field is approved**. An additional approved \`search_terms\` list can include hardware synonyms. This is ideal for searching \`315-XXXX\`, \`68000\`, \`power supply\`, \`motherboard\`, \`workbench\`, etc., when actually verified.
+- **Alt text**: independently approved visual description for screen readers, not blindly copied from the folder, filename or a guessed chip ID.
+
+No model identification is performed by the site or the generator. AI suggestions can be collected separately in a private review workflow, but **nothing is published, added to search or shown as fact until approved**.
+
+To preserve editorial decisions across catalogue regeneration, maintain a **private JSON sidecar** keyed by original source-relative photo path. The default path is:
+
+    ~/Desktop/McRetro-R2-Staging/reviews/photo-descriptions.json
+
+The new source module \`tools/gallery_descriptions.py\` loads this file when present. An example format is included as \`config/photo-descriptions.example.json\` (its sample key is intentionally fictitious and all flags default to false). The file can start simply as:
+
+    {
+      "schema_version": 1,
+      "photos": {}
+    }
+
+For a real photo, create an entry under \`photos\` using the exact original relative pathname, with fields such as \`caption\`, \`scene_description\`, \`components\`, \`search_terms\`, \`alt\` and \`date_taken\`. Give each an independent \`<field>_approved: true\` only after checking the original photograph, part markings and privacy. All false/unapproved values remain in the **private source file** and are excluded from public catalogue JSON even when they contain plausible text. Do not upload the sidecar or review reports to R2 or public GitHub.
+
+Example entry (NOT a claim about any archive image):
+
+    "consoles/sega/EXAMPLE/IMG_0001.jpg": {
+      "scene_description": "Rear AV connections on a console",
+      "scene_description_approved": false,
+      "components": ["EXAMPLE-CHIP-123"],
+      "components_approved": false
+    }
+
+When a description has actually been visually verified, change only the appropriate flags to true.
+
+The catalogue builder reads the private file automatically if it exists, or use \`--descriptions /path/to/photo-descriptions.json\` to select another file. The generator emits \`reports/photo-description-status.csv\` and \`reports/photo-description-unmatched.csv\` to help monitor approved entries and mismatched paths. Original JPEG XL objects never need to be reconverted. The separate static page renderer and the client search read only approved fields from the generated JSON.
+
+The accessible default thumbnail link announces its position and album, such as *View photograph 5 of 128 in Retired*. The thumbnail image has empty alt text because the control is already named. The lightbox can later display the independently approved alt text and verified scene or components.
 
 ## Original photograph metadata and title recovery (local-only)
 

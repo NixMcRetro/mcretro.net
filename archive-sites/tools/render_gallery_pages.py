@@ -73,15 +73,28 @@ def render_static_page(template: str, folder: dict, by_path: dict,
         folder_links.append('<p class="folder-empty">No subfolders at this level.</p>')
     photos = by_album.get(album_by_path.get(path, ''), [])
     image_links = []
-    for photo in photos:
-        name = escape(photo['title'])
-        alt = escape(photo.get('alt') or photo['title'], quote=True)
+    for index, photo in enumerate(photos, 1):
+        approved_caption = (
+            photo.get('caption', '').strip()
+            if photo.get('caption_approved') is True and isinstance(photo.get('caption'), str)
+            else ''
+        )
+        approved_alt = (
+            photo.get('alt', '').strip()
+            if photo.get('alt_approved') is True and isinstance(photo.get('alt'), str)
+            else ''
+        )
+        accessible_name = (approved_caption or
+                           f'Open photograph {index} of {len(photos)} in {folder["name"]}')
+        caption_markup = ('<span class="tile-caption">' + escape(approved_caption) + '</span>'
+                          if approved_caption else '')
         image_links.append(
-            '<a class="tile" href="' + escape(safe_image_url(photo['path']), quote=True) + '">'
+            '<a class="tile" aria-label="' + escape(accessible_name, quote=True) +
+            '" href="' + escape(safe_image_url(photo['path']), quote=True) + '">'
             '<span class="photo-frame"><img loading="lazy" src="' +
             escape(safe_image_url(photo.get('thumbnail') or photo['path']), quote=True) +
-            '" alt="' + alt + '"></span>'
-            '<span class="tile-label"><strong>' + name + '</strong></span></a>')
+            '" alt="' + escape(approved_alt, quote=True) + '"></span>' +
+            caption_markup + '</a>')
     if not image_links:
         image_links.append('<p class="empty">Choose a subfolder to explore these photographs.</p>' if children[path]
                            else '<p class="empty">No photographs at this level.</p>')

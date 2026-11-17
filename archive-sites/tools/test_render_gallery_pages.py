@@ -73,7 +73,8 @@ class StaticGalleryTests(unittest.TestCase):
         parser = LinkParser()
         parser.feed(root)
         self.assertIn(routes['accessories'], parser.hrefs)
-        self.assertNotIn('#folder=', root)
+        self.assertTrue(all('#folder=' not in link for link in parser.hrefs),
+                        'Canonical links must not use JavaScript hash fragments')
         self.assertIn('fetch("/albums.json"', root)
         leaf = 'accessories/hp-l1706-17-inch-lcd-colour-monitor-px849a/serial-cnk7040y04'
         page = (website / routes[leaf].lstrip('/')).read_text()

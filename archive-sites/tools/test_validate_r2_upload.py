@@ -10,7 +10,7 @@ from validate_r2_upload import (
 )
 
 
-class PrivateR2PreflightTests(unittest.TestCase):
+class FinalR2PreflightTests(unittest.TestCase):
     def setUp(self):
         self.tmp = TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
@@ -23,18 +23,19 @@ class PrivateR2PreflightTests(unittest.TestCase):
         (self.stage / 'photo-gallery').mkdir()
 
         self.photos = [
-            {'album': 'a', 'path': 'full/sega/picture.jpg.jxl',
-             'thumbnail': 'thumbs/sega/picture.jpg.jxl'},
-            {'album': 'a', 'path': 'full/other/animated.gif',
-             'thumbnail': 'full/other/animated.gif'},
+            {'album': 'a', 'source_path': 'sega/picture.jpg', 'filename': 'picture.jpg',
+             'path': 'full/sega/picture.jxl', 'thumbnail': 'thumbs/sega/picture.jxl'},
+            {'album': 'a', 'source_path': 'other/animated.gif', 'filename': 'animated.gif',
+             'path': 'full/other/animated.gif', 'thumbnail': 'full/other/animated.gif'},
         ]
         self.rows = []
         for key, kind, mime, payload in (
-            ('full/sega/picture.jpg.jxl', 'gallery', 'image/jxl', b'\xff\x0a' + b'A' * 40),
-            ('thumbs/sega/picture.jpg.jxl', 'thumbnail', 'image/jxl', b'\xff\x0a' + b'B' * 20),
+            ('full/sega/picture.jxl', 'gallery', 'image/jxl', b'\xff\x0a' + b'A' * 40),
+            ('thumbs/sega/picture.jxl', 'thumbnail', 'image/jxl', b'\xff\x0a' + b'B' * 20),
             ('full/other/animated.gif', 'animation', 'image/gif', b'GIF89a' + b'0' * 40),
         ):
-            path = self.converted / key
+            local_key = key.replace('picture.jxl', 'picture.jpg.jxl')
+            path = self.converted / local_key
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(payload)
             self.rows.append({'r2_key': key, 'local_path': str(path), 'kind': kind,
@@ -89,7 +90,7 @@ class PrivateR2PreflightTests(unittest.TestCase):
             validate(self.stage, self.converted)
 
     def test_invalid_signature_blocked(self):
-        (self.converted / self.rows[0]['r2_key']).write_bytes(b'Z' * 42)
+        Path(self.rows[0]['local_path']).write_bytes(b'Z' * 42)
         self.save()
         with self.assertRaisesRegex(ValueError, 'signature'):
             validate(self.stage, self.converted)
@@ -125,9 +126,9 @@ class PrivateR2PreflightTests(unittest.TestCase):
             validate(self.stage, self.converted)
 
     def test_symlinked_image_blocked(self):
-        img = self.converted / self.rows[0]['r2_key']
+        img = Path(self.rows[0]['local_path'])
         img.unlink()
-        img.symlink_to(self.converted / self.rows[1]['r2_key'])
+        img.symlink_to(Path(self.rows[1]['local_path']))
         self.save()
         with self.assertRaisesRegex(ValueError, 'symlinked image'):
             validate(self.stage, self.converted)
@@ -143,19 +144,19 @@ class PrivateR2PreflightTests(unittest.TestCase):
     def test_rclone_is_always_dry_run_and_final_destination(self, _which, run):
         run.return_value.returncode = 0
         self.assertEqual(
-            perform_rclone_dry_run(self.converted, [self.rows[0]['r2_key']]), 0)
+            perform_rclone_dry_run([self.rows[0]]), 0)
         command = run.call_args.args[0]
-        self.assertEqual(command[0:2], ['rclone', 'copy'])
+        self.assertEqual(command[0:2], ['rclone', 'copyto'])
         self.assertIn('--dry-run', command)
         self.assertIn('--s3-no-check-bucket', command)
-        self.assertEqual(command[-1], FINAL_DESTINATION)
-        self.assertEqual(
-            run.call_args.kwargs['input'], (self.rows[0]['r2_key'] + '\0').encode('utf-8'))
+        self.assertEqual(command[-1], FINAL_DESTINATION + '/' + self.rows[0]['r2_key'])
+        self.assertEqual(command[-2], self.rows[0]['local_path'])
+        self.assertNotIn('input', run.call_args.kwargs)
 
     def test_direct_command_targets_only_final_bucket_for_dry_run(self):
-        command = dry_run_command(self.converted)
+        command = dry_run_command(Path(self.rows[0]['local_path']), self.rows[0]['r2_key'])
         self.assertIn('--dry-run', command)
-        self.assertEqual(command[-1], 'r2:mcretro-photos')
+        self.assertEqual(command[-1], 'r2:mcretro-photos/full/sega/picture.jxl')
 
 
 if __name__ == '__main__':

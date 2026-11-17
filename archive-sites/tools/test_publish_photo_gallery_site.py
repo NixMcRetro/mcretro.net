@@ -58,6 +58,7 @@ class GalleryWebsitePublishTests(unittest.TestCase):
             patch.object(pub, "EXPECTED_FONTS", 5),
             patch.object(pub, "EXPECTED_PUBLIC", self.expected_site + 5),
             patch.object(pub, "EXPECTED_PHOTOS", 4),
+            patch.object(pub, "EXPECTED_PHOTOGRAPHS", 2),
             patch.object(pub, "EXPECTED_IMAGE_BYTES",
                          4 * len(b"\xff\x0a" + b"test image" * 10)),
         ]
@@ -96,7 +97,7 @@ class GalleryWebsitePublishTests(unittest.TestCase):
             self.assertFalse(photo["alt_approved"])
             self.assertFalse(photo["caption_approved"])
             self.assertEqual(photo["alt"], "")
-            self.assertIn("filename", photo)
+            self.assertNotIn("filename", photo)
         self.assertNotEqual(
             b, (self.stage / "photo-gallery/site/albums.json").read_bytes()
         )
@@ -111,6 +112,52 @@ class GalleryWebsitePublishTests(unittest.TestCase):
         self.assertNotIn("do not publish", public)
         self.assertNotIn("/Users/private/", public)
         self.assertNotIn("unreviewed invented description", public)
+
+    def test_privacy_gate_blocks_a_private_email_in_visible_catalogue(self):
+        site, photos, _ = self.local_files()
+        modified = json.loads(json.dumps(self.private))
+        modified["folders"][0]["name"] = "Private person@example.com"
+        public = pub.public_projection(modified)
+        with self.assertRaisesRegex(ValueError, "privacy preflight"):
+            pub.scan_public_privacy(self.stage, self.converted, site,
+                                    public, photos)
+
+    def test_privacy_gate_blocks_optimised_jxl_exif_container(self):
+        site, photos, public = self.local_files()
+        target_key = next(k for k in photos if k.endswith(".jxl"))
+        image = self.converted / target_key
+        image.write_bytes(
+            pub.JXL_CONTAINER_SIGNATURE +
+            b"\x00\x00\x00\x0cExif" + b"TEST"
+        )
+        self.assertIn("Exif", pub.jxl_private_boxes(image))
+        with self.assertRaisesRegex(ValueError, "privacy preflight"):
+            pub.scan_public_privacy(self.stage, self.converted, site,
+                                    public, photos)
+
+    def test_brotli_metadata_box_is_conservatively_flagged(self):
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "test.jxl"
+            path.write_bytes(
+                pub.JXL_CONTAINER_SIGNATURE +
+                b"\x00\x00\x00\x0dbrob" + b"Exif" + b"X"
+            )
+            self.assertIn("compressed Exif", pub.jxl_private_boxes(path))
+
+    def test_codestream_optimised_jxl_has_no_container_metadata_boxes(self):
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "test.jxl"
+            path.write_bytes(b"\xff\x0a" + b"sample codestream" * 10)
+            self.assertEqual(pub.jxl_private_boxes(path), [])
+
+    def test_privacy_audit_exits_before_remote_access(self):
+        with patch.object(pub, "check_local") as local, \
+             patch.object(pub, "list_remote") as remote, \
+             patch.object(pub.shutil, "which") as rclone:
+            self.assertEqual(pub.main(["--privacy-audit"]), 0)
+        local.assert_called_once()
+        remote.assert_not_called()
+        rclone.assert_not_called()
 
     def test_exact_website_allowlist_does_not_include_finder_or_reviews(self):
         site, photos, data = self.local_files()

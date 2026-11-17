@@ -219,7 +219,7 @@ def build_photos(original: Path, converted: Path, stage: Path, rules: dict | Non
     # Folder tree mirrors every source directory level, not merely the leaf
     # directories that contain pictures. A single folder can hold both images
     # and child folders. Paths remain source-relative, not display-name slugs.
-    folder_nodes = {'': {'path': '', 'url': '/', 'name': 'All photographs', 'parent': None,
+    folder_nodes = {'': {'path': '', 'url': '/', 'name': 'All Photographs', 'parent': None,
                          'photo_count': 0, 'direct_photo_count': 0}}
     def ensure_folder(directory):
         if not directory or directory == '.':

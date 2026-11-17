@@ -30,7 +30,7 @@ def load_rules(path: Path | None = None) -> dict:
 def format_segment(path: str, rules: dict) -> tuple[str, bool, str]:
     """Return (display label, needs owner review, reason)."""
     if path == '':
-        return 'All photographs', False, 'root'
+        return 'All Photographs', False, 'root'
     slug = path.split('/')[-1]
     if path in rules['folder_overrides']:
         return rules['folder_overrides'][path], False, 'explicit owner-approved override'

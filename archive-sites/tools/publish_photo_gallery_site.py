@@ -22,6 +22,8 @@ import argparse
 import csv
 import json
 from pathlib import Path
+import re
+import struct
 import shutil
 import subprocess
 import sys
@@ -38,7 +40,10 @@ EXPECTED_PHOTOS = 16823
 EXPECTED_IMAGE_BYTES = 4276856102
 EXPECTED_PUBLIC = EXPECTED_SITE + EXPECTED_FONTS
 
-PHOTO_FIELDS = ("path", "thumbnail", "title", "filename", "album")
+# The image URL and album title are already inherently public once the gallery
+# launches. Do not additionally copy the original source filename into JSON.
+# Existing browser JS derives a display name from the public JXL path instead.
+PHOTO_FIELDS = ("path", "thumbnail", "title", "album")
 ALBUM_FIELDS = ("id", "title", "path", "group")
 FOLDER_FIELDS = ("path", "url", "name", "parent", "photo_count", "direct_photo_count")
 REVIEW_FIELDS = ("alt", "caption", "scene_description", "components",
@@ -90,6 +95,161 @@ def public_projection(private: dict) -> bytes:
         output["photos"].append(item)
     return (json.dumps(output, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
             + "\n").encode("utf-8")
+
+
+# A small, conservative first line of defence. These regexes screen *public
+# names and generated HTML*, not the private manifest's source_path values.
+# Human review is still required for people, house numbers in pictures, etc.
+SENSITIVE_PUBLIC_MARKERS = (
+    ("local machine path", re.compile(
+        r"(?i)(?:/users/[^/\s\"'<>]+/|/home/[^/\s\"'<>]+/|"
+        r"[a-z]:\\users\\|file://|smb://|afp://)")),
+    ("email address", re.compile(
+        r"(?i)\b[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}\b")),
+    ("potential secret token", re.compile(
+        r"\b(?:AKIA|ASIA)[A-Z0-9]{16}\b|"
+        r"(?i:-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----)|"
+        r"(?i:\b(?:api[_ -]?key|password|access[_ -]?token)\s*[:=])")),
+    ("sensitive location/ID label", re.compile(
+        r"(?i)(?:^|[/\s_.-])(?:gps|geotag|coordinates|latitude|longitude|"
+        r"passport|birth.?certificate|medical.?record|driver.?licen[cs]e|"
+        r"bank.?statement|tax.?file.?number|home.?address|confidential)"
+        r"(?:$|[/\s_.-])")),
+)
+
+JXL_CONTAINER_SIGNATURE = b"\x00\x00\x00\x0cJXL \r\n\x87\n"
+PRIVATE_JXL_BOX_TYPES = {b"Exif", b"xml ", b"jumb", b"jbrd"}
+KNOWN_JXL_BOX_TYPES = {
+    b"JXL ", b"ftyp", b"jxll", b"jxlc", b"jxlp", b"jxli",
+    b"jxic", b"jxld", b"jxlv", b"jxlm",
+}
+
+
+def jxl_private_boxes(path: Path) -> list[str]:
+    """Inspect JXL container *box headers*, never the 26 GB source archive.
+
+    Raw JPEG XL codestreams contain no EXIF/XML/JUMBF container boxes.
+    For containers, jump between box headers without decoding pixel data.
+    Reject unknown/custom boxes and compressed boxes conservatively.
+    """
+    size = path.stat().st_size
+    with path.open("rb") as stream:
+        signature = stream.read(12)
+        if signature.startswith(b"\xff\x0a"):
+            return []
+        if signature != JXL_CONTAINER_SIGNATURE:
+            raise ValueError("Invalid JPEG XL signature: " + path.name)
+        stream.seek(0)
+        flagged = []
+        while stream.tell() < size:
+            beginning = stream.tell()
+            header = stream.read(8)
+            if len(header) != 8:
+                raise ValueError("Truncated JPEG XL box header: " + path.name)
+            length, kind = struct.unpack(">I4s", header)
+            header_size = 8
+            if length == 1:
+                extended = stream.read(8)
+                if len(extended) != 8:
+                    raise ValueError("Truncated JPEG XL extended box: " + path.name)
+                length = struct.unpack(">Q", extended)[0]
+                header_size = 16
+            elif length == 0:
+                length = size - beginning
+            if length < header_size or beginning + length > size:
+                raise ValueError("Invalid JPEG XL box length: " + path.name)
+            if kind in PRIVATE_JXL_BOX_TYPES:
+                flagged.append(kind.decode("ascii", "replace").strip())
+            elif kind == b"brob":
+                # Brotli-compressed boxes can conceal Exif/XMP/JUMBF data.
+                if length - header_size < 4:
+                    raise ValueError("Invalid Brotli metadata box")
+                inner = stream.read(4)
+                flagged.append("compressed " + inner.decode("ascii", "replace").strip())
+            elif kind not in KNOWN_JXL_BOX_TYPES:
+                flagged.append("unknown " + kind.decode("ascii", "replace").strip())
+            stream.seek(beginning + length)
+        return flagged
+
+
+def scan_public_privacy(stage: Path, converted: Path, site: dict,
+                        catalogue: bytes, photo_keys: dict) -> None:
+    """Fail closed on obvious data leaks; document limits of automated audit."""
+    print(
+        "PRIVACY PREFLIGHT: scanning public catalogue, generated pages, "
+        "and optimised JXL metadata boxes ...", flush=True
+    )
+    issues = []
+
+    def inspect_text(description: str, value: str) -> None:
+        for label, pattern in SENSITIVE_PUBLIC_MARKERS:
+            if pattern.search(value):
+                issues.append(f"{description}: possible {label}")
+
+    public_data = json.loads(catalogue)
+    if len(public_data["photos"]) != EXPECTED_PHOTOS // 2 + 1:
+        # 8,412 photographs / 16,823 objects: one GIF shares its thumbnail.
+        raise ValueError("Unexpected public catalogue photograph count")
+    # Private original filenames are excluded. Visible public paths and titles
+    # are nevertheless published by design and must be screened.
+    for category in ("albums", "folders", "photos"):
+        for index, item in enumerate(public_data[category]):
+            for field, value in item.items():
+                if isinstance(value, str):
+                    inspect_text(f"{category}[{index}].{field}", value)
+    for key in sorted(site):
+        if key.endswith((".html", ".xml")):
+            file = site[key]["local"]
+            inspect_text("generated " + key, file.read_text(encoding="utf-8"))
+    # The relevant compressed photos are already publicly stored in R2.
+    # This is a privacy risk assessment prior to listing them on a website,
+    # not an attempt to rewrite or touch their original files.
+    scanned = 0
+    for key in sorted(photo_keys):
+        if key.endswith(".jxl"):
+            file = converted.joinpath(*key.split("/"))
+            if not file.is_file() or file.is_symlink() or file.resolve() != file.absolute():
+                raise ValueError("Unsafe optimised JPEG XL path: " + key)
+            flagged = jxl_private_boxes(file)
+            if flagged:
+                issues.append(
+                    f"{key}: JPEG XL container boxes requiring privacy "
+                    f"review ({', '.join(flagged)})"
+                )
+            scanned += 1
+        elif key.endswith(".gif"):
+            # A GIF can contain Comment or XMP application extensions.
+            # Flag suspicious textual metadata rather than modifying it.
+            file = converted.joinpath(*key.split("/"))
+            if not file.is_file() or file.is_symlink():
+                raise ValueError("Unsafe optimised GIF path: " + key)
+            payload = file.read_bytes()
+            if b"XMP DataXMP" in payload or b"EXIF" in payload or b"\x21\xfe" in payload:
+                issues.append(f"{key}: GIF application/comment metadata needs review")
+    if issues:
+        print(f"PRIVACY REVIEW REQUIRED: {len(issues)} potential issue(s) detected.",
+              file=sys.stderr)
+        for item in issues[:12]:
+            print("  - " + item, file=sys.stderr)
+        if len(issues) > 12:
+            print(f"  ... and {len(issues) - 12} more", file=sys.stderr)
+        raise ValueError(
+            "Public website upload blocked by privacy preflight. "
+            "Review the named source fields/optimised metadata locally, "
+            "do not bypass the exact-key gate."
+        )
+    print(
+        f"PASS: no obvious private strings in generated HTML/public catalogue; "
+        f"{scanned:,} optimised JPEG XL objects have no flagged "
+        "container metadata boxes. Original source archive untouched.",
+        flush=True,
+    )
+    print(
+        "LIMITATION: filenames, folder labels, and image contents can still "
+        "identify people, places or private details. Human visual review "
+        "is not replaced by this automated scan.",
+        flush=True,
+    )
 
 
 def rows_from_csv(stage: Path, catalogue_bytes: bytes) -> tuple[dict, dict]:
@@ -172,8 +332,17 @@ def check_local(stage: Path, converted: Path, html: Path) -> tuple[dict, dict, b
         raise ValueError("Staged gallery failed the strict read-only readiness audit")
     private = json.loads((stage / "photo-gallery/albums.generated.json").read_text(
         encoding="utf-8"))
+    # This release is of the current *unreviewed* design, not permission to
+    # silently make newly filled accessibility/description fields public.
+    reviewed = review["reviewed_metadata_counts"]
+    if any(reviewed.values()):
+        raise ValueError(
+            "This first design release expects zero approved photo metadata "
+            "fields; a separately reviewed revision is required."
+        )
     catalogue = public_projection(private)
     release, photos = rows_from_csv(stage, catalogue)
+    scan_public_privacy(stage, converted, release, catalogue, photos)
     return release, photos, catalogue
 
 
@@ -359,7 +528,15 @@ def main(argv=None) -> int:
                       help="Upload the existing 336 planned gallery website objects")
     mode.add_argument("--verify", action="store_true",
                       help="Read-only verify public website objects already on R2")
+    mode.add_argument("--privacy-audit", action="store_true",
+                      help="Local-only privacy preflight; NO R2 requests or uploads")
     args = parser.parse_args(argv)
+    if args.privacy_audit:
+        check_local(args.stage.expanduser().absolute(),
+                    args.converted.expanduser().absolute(),
+                    args.html.expanduser().absolute())
+        print("LOCAL PRIVACY PREFLIGHT PASSED. NO R2 REQUESTS OR UPLOADS.")
+        return 0
     return publish(
         args.stage.expanduser().absolute(),
         args.converted.expanduser().absolute(),

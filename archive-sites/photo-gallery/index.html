@@ -104,7 +104,7 @@
   <div class="viewer-header"><span>📸 IMAGE VIEWER</span><button id="close" type="button">Close ×</button></div>
   <img id="viewer-image" class="viewer-image" alt="">
   <div class="viewer-info"><h2 id="viewer-title"></h2><p id="viewer-caption" hidden></p><details id="viewer-details" class="viewer-details"><summary>Photograph details</summary><dl><dt>Original filename</dt><dd id="viewer-filename"></dd><dt>Album</dt><dd id="viewer-album"></dd><dt id="viewer-scene-label" hidden>Scene</dt><dd id="viewer-scene" hidden></dd><dt id="viewer-components-label" hidden>Components</dt><dd id="viewer-components" hidden></dd><dt id="viewer-date-label" hidden>Date taken</dt><dd id="viewer-date" hidden></dd></dl></details></div>
-  <div class="viewer-nav"><button id="previous" type="button">← Previous</button><span id="position"></span><button id="next" type="button">Next →</button><a id="original" href="#" target="_blank" rel="noopener noreferrer">Open image ↗</a></div>
+  <div class="viewer-nav"><button id="previous" type="button">← Previous</button><button id="next" type="button">Next →</button><a id="original" href="#" target="_blank" rel="noopener noreferrer">Open image ↗</a></div>
 </dialog>
 <script>
 "use strict";
@@ -134,7 +134,6 @@
   const viewerDate = document.getElementById("viewer-date");
   const previousButton = document.getElementById("previous");
   const nextButton = document.getElementById("next");
-  const position = document.getElementById("position");
   const original = document.getElementById("original");
   const themeToggle = document.getElementById("theme-toggle");
   const PAGE_SIZE = 60;
@@ -422,7 +421,6 @@
     viewerDate.hidden = !approvedDate;
     viewerDateLabel.hidden = !approvedDate;
     original.href = objectURL(photo.path);
-    position.textContent = (index + 1) + " of " + visible.length;
     previousButton.disabled = visible.length < 2;
     nextButton.disabled = visible.length < 2;
   }

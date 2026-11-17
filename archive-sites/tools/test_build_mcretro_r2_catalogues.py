@@ -53,6 +53,9 @@ class ArchiveBuilderTests(unittest.TestCase):
         with (self.stage/'reports/file-server-owner-review.csv').open() as handle:
             review = list(csv.DictReader(handle))
         self.assertEqual(review[0]['publish_approval'], 'NOT_REVIEWED')
+        draft = json.loads((self.stage/'file-server/catalogue.generated.json').read_text())
+        self.assertTrue(draft['owner_review_required'])
+        self.assertEqual(draft['files'][0]['review_status'], 'NOT_REVIEWED')
 
     def test_missing_output_flagged(self):
         (self.original/'A.JPG').write_bytes(b'jpeg')

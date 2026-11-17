@@ -21,7 +21,7 @@ DEFAULT_ORIGINAL = Path('/Users/nix/Desktop/R2 FILES/photos')
 DEFAULT_CONVERTED = Path.home() / 'Desktop/McRetro-PhotoGallery-Optimised-v2'
 DEFAULT_FILES = Path('/Users/nix/Desktop/R2 FILES/files')
 DEFAULT_STAGE = Path.home() / 'Desktop/McRetro-R2-Staging'
-SUPPORTED = {'.jpg', '.jpeg', '.png', '.tif', '.tiff', '.heic', '.webp'}
+SUPPORTED = {'.jpg', '.jpeg', '.png', '.tif', '.tiff', '.heic', '.webp', '.bmp', '.gif'}
 PHOTO_PREFIXES = ('full/', 'thumbs/')
 JXL_MAGIC = (b'\xff\x0a', b'\x00\x00\x00\x0cJXL \r\n\x87\n')
 GENERIC = re.compile(r'^(?:img|dsc|dscf|dscn|image|photo|p|pxl|scan|screenshot|screen-shot|screen_shot)[-_\s\d.]*$', re.I)
@@ -57,6 +57,13 @@ def jxl_ok(path: Path) -> bool:
     with path.open('rb') as f:
         header = f.read(12)
     return header.startswith(JXL_MAGIC[0]) or header == JXL_MAGIC[1]
+
+
+def gif_ok(path: Path) -> bool:
+    if not path.is_file() or path.is_symlink() or path.stat().st_size < 16:
+        return False
+    with path.open('rb') as stream:
+        return stream.read(6) in (b'GIF87a', b'GIF89a')
 
 
 def write_csv(path: Path, fields: list[str], rows: list[dict]):
@@ -116,36 +123,43 @@ def build_photos(original: Path, converted: Path, stage: Path) -> dict:
     total_original = total_gallery = total_thumbs = 0
     seen_keys = set()
     for p, rel, size in sorted(originals, key=lambda row: row[1].casefold()):
-        full = converted / 'full' / (rel + '.jxl')
-        thumb = converted / 'thumbs' / (rel + '.jxl')
+        is_gif = p.suffix.lower() == '.gif'
+        full = converted / 'full' / (rel if is_gif else rel + '.jxl')
+        thumb = full if is_gif else converted / 'thumbs' / (rel + '.jxl')
         problems = []
-        if not jxl_ok(full):
-            problems.append('missing/invalid full JXL')
-        if not jxl_ok(thumb):
+        if not (gif_ok(full) if is_gif else jxl_ok(full)):
+            problems.append('missing/invalid full image')
+        if not is_gif and not jxl_ok(thumb):
             problems.append('missing/invalid thumbnail JXL')
         if problems:
             missing.append({'path': rel, 'problem': '; '.join(problems)})
             continue
-        full_key, thumb_key = 'full/' + rel + '.jxl', 'thumbs/' + rel + '.jxl'
-        if full_key in seen_keys or thumb_key in seen_keys:
+        full_key = 'full/' + rel + ('' if is_gif else '.jxl')
+        thumb_key = full_key if is_gif else 'thumbs/' + rel + '.jxl'
+        keys = (full_key,) if is_gif else (full_key, thumb_key)
+        if any(key in seen_keys for key in keys):
             raise ValueError(f'Duplicate output object key: {rel}')
-        seen_keys.update([full_key, thumb_key])
+        seen_keys.update(keys)
         directory = Path(rel).parent.as_posix()
         albums_by_dir[directory].append(rel)
         title = pretty(p.stem)
         total_original += size
         gallery_size = full.stat().st_size
-        thumb_size = thumb.stat().st_size
+        thumb_size = 0 if is_gif else thumb.stat().st_size
         total_gallery += gallery_size
         total_thumbs += thumb_size
-        for key, local, kind, bytes_ in ((full_key, full, 'gallery', gallery_size),
-                                         (thumb_key, thumb, 'thumbnail', thumb_size)):
+        entries = ((full_key, full, 'animation' if is_gif else 'gallery',
+                    gallery_size, 'image/gif' if is_gif else 'image/jxl'),)
+        if not is_gif:
+            entries += ((thumb_key, thumb, 'thumbnail', thumb_size, 'image/jxl'),)
+        for key, local, kind, bytes_, mime in entries:
             upload.append({'r2_key': key, 'local_path': str(local), 'kind': kind,
-                           'bytes': bytes_, 'mime': 'image/jxl', 'approved_for_publication': 'NO'})
-        if GENERIC.fullmatch(p.stem):
+                           'bytes': bytes_, 'mime': mime, 'approved_for_publication': 'NO'})
+        if GENERIC.fullmatch(p.stem) or is_gif:
             review.append({'source_path': rel, 'album_folder': directory,
-                           'reason': 'generic filename; photographic alt text needs editorial review',
-                           'suggested_alt': f'Archive photograph {title} from {pretty(Path(directory).name)}'})
+                           'reason': ('animated GIF: review motion and description before publication'
+                                      if is_gif else 'generic filename; photographic alt text needs editorial review'),
+                           'suggested_alt': f'Archive image {title} from {pretty(Path(directory).name)}'})
         images.append((rel, directory, title, full_key, thumb_key))
 
     albums = []

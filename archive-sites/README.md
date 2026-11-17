@@ -320,47 +320,57 @@ Use `deletefile` for the exact named object only, after verifying the target
 and considering a backup. Never use `sync`, `delete`, or `purge` against
 the bucket root as a cleanup shortcut.
 
-## Recommended upload method: prepare correctly named files locally
+## Correct final workflow: rename the 4.28 GB optimised images in place
 
-Rather than relying on `rclone copyto` for thousands of public object renames,
-**create a separate upload-ready folder on the Mac**. This is the preferred
-method after the owner requested uppercase public JPEG XL basenames.
+**Owner decision:** The original 26 GB photograph collection is off limits. It
+is never renamed, deleted, moved or reconverted. For the final public filenames,
+work directly on `~/Desktop/McRetro-PhotoGallery-Optimised-v2/full/` and
+`thumbs/`, which already contain approximately 4.28 GB of optimised images.
+**Do not create a duplicate 4 GB `upload-ready` directory.**
 
-The original archive and all existing `*.jpg.jxl` converted files remain
-untouched. The tool verifies the current CSV/catalogue, makes a distinct local
-tree under `~/Desktop/McRetro-R2-Staging/photo-gallery/upload-ready/`, and
-uses macOS `cp -c` (APFS copy-on-write clones where supported). If APFS cloning
-is unavailable, macOS `cp -c` or the script falls back to full ordinary copies,
-which may use about **4.28 GB** more disk space. The generated tree has
-`full/.../IMG_0835.jxl` and `thumbs/.../IMG_0835.jxl`. GIFs remain intact.
-The staging tree contains only the objects from `photos-upload-plan.csv`.
+The tool reads only the existing local JSON catalogue, upload-plan CSV and the
+converted images. It renames the converted images **in the same directories**:
+`img_0835.jpg.jxl` becomes `IMG_0835.jxl`. It preserves the folder tree
+and the lone animated GIF. Colliding source stems already have deterministic,
+unique clean public names in the catalogue. The script enforces those names,
+does not recompress or copy images and does not access the originals.
 
-The separate export is never overwritten silently. If it already exists,
-`--create` fails rather than merging old and new names. The script is not
-a publisher and contains **no R2 upload or delete code**.
+The default invocation performs a **read-only preview**. `--apply` performs
+the in-place renames, then atomically rewrites the *local staging*
+`reports/photos-upload-plan.csv` to point to the new local filenames. A
+rerun resumes safely after an interruption. The preflight rejects unknown
+paths, symlinks, duplicate or conflicting targets, missing files, wrong MIME
+types, and mismatches with the catalogue. **Neither mode contains any R2
+upload or deletion operation.** After renaming, `--verify` checks names
+and the updated upload plan.
 
-Download the current branch versions (or run scripts directly from the checkout):
+From the owner's Mac with the latest draft scripts in Downloads:
 
     BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites"
-    curl -fLsS "$BASE/tools/prepare_r2_photo_upload_tree.py" -o "$HOME/Downloads/prepare_r2_photo_upload_tree.py"
-    curl -fLsS "$BASE/tools/validate_r2_upload.py" -o "$HOME/Downloads/validate_r2_upload.py"
     curl -fLsS "$BASE/tools/gallery_keys.py" -o "$HOME/Downloads/gallery_keys.py"
+    curl -fLsS "$BASE/tools/validate_r2_upload.py" -o "$HOME/Downloads/validate_r2_upload.py"
+    curl -fLsS "$BASE/tools/rename_optimised_jxl_in_place.py" -o "$HOME/Downloads/rename_optimised_jxl_in_place.py"
 
-Check what will happen, then optionally create and verify the *local* tree:
+Preview, inspect, then apply locally:
 
-    python3 "$HOME/Downloads/prepare_r2_photo_upload_tree.py"
-    python3 "$HOME/Downloads/prepare_r2_photo_upload_tree.py" --create
-    python3 "$HOME/Downloads/prepare_r2_photo_upload_tree.py" --verify --sha256
+    python3 "$HOME/Downloads/rename_optimised_jxl_in_place.py"
+    python3 "$HOME/Downloads/rename_optimised_jxl_in_place.py" --apply
+    python3 "$HOME/Downloads/rename_optimised_jxl_in_place.py" --verify
+    python3 "$HOME/Downloads/validate_r2_upload.py"
 
-Then use one directory-based rclone dry-run, preserving the final filenames
-exactly as they appear in Finder:
+Only after these checks pass should we prepare a bulk `rclone copy --dry-run`
+from the converted directory to the final `r2:mcretro-photos` bucket. Always
+use an explicit allowlist derived from `photos-upload-plan.csv`; ordinary
+directory copies might accidentally include unplanned hidden files. No
+real upload has been authorised yet.
 
-    rclone copy "$HOME/Desktop/McRetro-R2-Staging/photo-gallery/upload-ready" "r2:mcretro-photos" --dry-run --s3-no-check-bucket
+**Why did the old dry run show `img_0835.jpg.jxl`?** The earlier tool used
+`rclone copyto --dry-run LOCALFILE R2:BUCKET/IMG_0835.jxl`. rclone's notice
+labelled the *source basename* in its output, not the explicit destination
+argument. No renaming or cloud transfer happened during that dry run. After
+renaming the optimised files in place, the local and eventual R2 filenames
+will match.
 
-This is a **simulation only**. No gallery upload, publishing, or R2 cleanup
-is authorised by running the preceding commands. For a real upload, first
-ensure that correct `image/jxl` Content-Type metadata will be set, review
-any pre-existing destination keys, and obtain separate owner approval.
 
 ## Validation
 

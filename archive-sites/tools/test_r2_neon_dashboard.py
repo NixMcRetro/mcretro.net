@@ -145,7 +145,7 @@ class RenderTests(unittest.TestCase):
         from rich.console import Console
         ui = PreflightDisplay()
         with patch("r2_neon_dashboard.time.monotonic",
-                   return_value=ui.started + 76):
+                   return_value=ui.started + 76.5):
             console = Console(width=120, force_terminal=False, record=True)
             console.print(ui.render())
             visible = console.export_text()

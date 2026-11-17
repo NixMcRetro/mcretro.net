@@ -478,6 +478,45 @@ Cloudflare custom-domain configuration, independent of R2 object metadata.
 The static Photo Gallery site remains unpublished.
 
 
+## PHOTON UPLINK - animated Rich terminal telemetry for the photo-only transfer
+
+The uploader now supports an optional **Rich** live display: neon cyan/violet
+panels, transferred bytes and file counts, real rclone-reported transfer
+speed and ETA, active/recent file paths, warnings, and a transfer-stage label.
+The 80-column layout is more compact; a wider Terminal window displays more
+status panels. rclone emits structured JSON log lines (`--use-json-log`,
+`--stats 1s`), parsed rather than guessed. A zero in any live counter is
+never treated as proof of remote integrity. The existing post-transfer
+remote key/size/MIME and downloaded-byte checks are still authoritative.
+
+Use a small isolated Python environment rather than modifying macOS-managed
+Python or globally installing dependencies:
+
+    python3 -m venv "$HOME/Downloads/mcretro-r2-venv"
+    "$HOME/Downloads/mcretro-r2-venv/bin/python" -m pip install 'rich>=13.9,<15'
+
+Download `r2_neon_dashboard.py` **alongside** the existing uploader and its
+helpers, using the same branch or pinned commit.
+
+Preview the interface **without any filesystem scan, rclone invocation,
+Cloudflare request or image upload**:
+
+    "$HOME/Downloads/mcretro-r2-venv/bin/python" "$HOME/Downloads/upload_r2_remaining_photos.py" --demo
+
+The banner says **SIMULATION // NO NETWORK** and never represents demo
+bytes as actual transfer progress. Running the default command (no flags)
+remains a real **read-only preflight**. The transfer only begins when the
+owner runs `--upload`; it uses the *same* strict allowlist, existing-key
+protection and resumable transfer mechanism. For a live dashboard during that
+real transfer, invoke the uploader through the venv Python:
+
+    "$HOME/Downloads/mcretro-r2-venv/bin/python" "$HOME/Downloads/upload_r2_remaining_photos.py" --upload
+
+**Do not** run the real command merely to preview the appearance.
+The dashboard adds no photo uploads of its own, never contacts the original
+26 GB source archive, never downloads unapproved packages automatically, and
+never publishes site HTML, private metadata or File Server files.
+
 ## Owner-requested photo-only R2 upload after the successful 20-object pilot
 
 The owner has asked to **put the optimised photographs onto R2 first**, before

@@ -60,6 +60,15 @@ class ArchiveBuilderTests(unittest.TestCase):
         self.assertEqual(report['missing_pairs'], 1)
         self.assertEqual(report['converted_pairs'], 0)
 
+    def test_unsafe_pathnames_reported_for_owner_review(self):
+        (self.original/'bad#name.jpg').write_bytes(b'jpeg')
+        (self.files/'unsafe?name.zip').write_bytes(b'zip')
+        result = build_photos(self.original, self.converted, self.stage)
+        self.assertEqual(result['skipped'], 1)
+        self.assertEqual(result['missing_pairs'], 0)
+        file_result = build_files_review(self.files, self.stage)
+        self.assertEqual(file_result['excluded'], 1)
+
     def test_no_nested_staging(self):
         with self.assertRaises(ValueError):
             validate_dirs(self.original, self.converted, self.files, self.original/'inside')

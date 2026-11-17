@@ -24,17 +24,17 @@ class FinalR2PreflightTests(unittest.TestCase):
 
         self.photos = [
             {'album': 'a', 'source_path': 'sega/picture.jpg', 'filename': 'picture.jpg',
-             'path': 'full/sega/picture.jxl', 'thumbnail': 'thumbs/sega/picture.jxl'},
+             'path': 'full/sega/PICTURE.jxl', 'thumbnail': 'thumbs/sega/PICTURE.jxl'},
             {'album': 'a', 'source_path': 'other/animated.gif', 'filename': 'animated.gif',
              'path': 'full/other/animated.gif', 'thumbnail': 'full/other/animated.gif'},
         ]
         self.rows = []
         for key, kind, mime, payload in (
-            ('full/sega/picture.jxl', 'gallery', 'image/jxl', b'\xff\x0a' + b'A' * 40),
-            ('thumbs/sega/picture.jxl', 'thumbnail', 'image/jxl', b'\xff\x0a' + b'B' * 20),
+            ('full/sega/PICTURE.jxl', 'gallery', 'image/jxl', b'\xff\x0a' + b'A' * 40),
+            ('thumbs/sega/PICTURE.jxl', 'thumbnail', 'image/jxl', b'\xff\x0a' + b'B' * 20),
             ('full/other/animated.gif', 'animation', 'image/gif', b'GIF89a' + b'0' * 40),
         ):
-            local_key = key.replace('picture.jxl', 'picture.jpg.jxl')
+            local_key = key.replace('PICTURE.jxl', 'picture.jpg.jxl')
             path = self.converted / local_key
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(payload)
@@ -156,7 +156,7 @@ class FinalR2PreflightTests(unittest.TestCase):
     def test_direct_command_targets_only_final_bucket_for_dry_run(self):
         command = dry_run_command(Path(self.rows[0]['local_path']), self.rows[0]['r2_key'])
         self.assertIn('--dry-run', command)
-        self.assertEqual(command[-1], 'r2:mcretro-photos/full/sega/picture.jxl')
+        self.assertEqual(command[-1], 'r2:mcretro-photos/full/sega/PICTURE.jxl')
 
 
 if __name__ == '__main__':

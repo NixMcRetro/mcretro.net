@@ -478,35 +478,53 @@ Cloudflare custom-domain configuration, independent of R2 object metadata.
 The static Photo Gallery site remains unpublished.
 
 
-## Fast inventory for a partially populated R2 bucket
+## Fast inventory and authenticated MIME check after Cloudflare 403
 
-**Owner diagnosis (17th November 2026):** after cancelling an earlier bulk
-upload, `rclone lsf "r2:mcretro-photos" --recursive --files-only | wc -l`
-reported **8,768 objects already present**. A plain rclone filename listing
-finished in **3.590 seconds**, while PHOTON UPLINK's initial R2 inventory
-appeared stuck. The earlier `rclone lsjson` queried MIME information for
-each existing object. On S3/R2 this can require many additional HEAD
-requests, one per file. This was an avoidable performance bottleneck, not
-evidence that the bucket had stopped responding.
+**Owner's Mac evidence (17th November 2026):** An earlier bulk upload
+was interrupted after **8,768** R2 objects were present; a filename listing
+took **3.590 seconds**. Original `rclone lsjson` required MIME lookups on
+every object, which was too slow. The first acceleration used
+`--no-mimetype` plus **60 concurrent public Cloudflare HEAD requests**.
+That public check returned **HTTP 403 Forbidden** on the already-verified
+pilot image `full/accessories/eeprom-programmers/gq-4x/IMG_2475.jxl`,
+stopping the second bulk-upload attempt **before transferring anything**.
 
-The updated photo-only uploader now performs `rclone lsjson --no-modtime
---no-mimetype` for a **fast, read-only bucket inventory**. It still checks
-**every** object name and byte length against the exact local allowlist,
-and requires the original 20 pilot objects. To avoid silently assuming
-correct MIME, it additionally performs parallel public HEAD requests for
-all 20 pilot images plus up to 40 distributed pre-existing photos, checking
-their browser-facing `Content-Type` and `Content-Length`. The final
-verification repeats those samples and independently downloads 40 file
-samples to compare actual bytes. MIME verification for **every** image is
-no longer part of the default fast inventory; this is explicitly a
-**sample-based** delivery-header check. A full byte comparison can still
-be requested via `--deep-verify` (which does not establish MIME
-for every object).
+A **public-domain 403 is not evidence that R2 lost an object or changed its
+bytes**. Cloudflare's custom domain may have WAF/bot protection or another
+public access condition. This requires **separate investigation before gallery
+website publication**; it does not justify re-uploading existing photos.
 
-If R2 contains any unplanned image key, an incorrect size, or a
-sample with wrong public MIME, the transfer stops without overwriting
-objects. Do not use blind recursive copies or `sync` to bypass this gate.
-The updated fast inventory does not itself upload or delete anything.
+The corrected uploader now separates the checks:
+
+1. `rclone lsjson --recursive --no-modtime --no-mimetype` quickly
+   inventories **all** remote object names and byte lengths, rejecting
+   unknown keys, missing original 20 pilot keys, or mismatched sizes.
+2. A **second authenticated R2 `lsjson` call** uses an exact,
+   NUL-delimited `--files-from0 -` allowlist to check the stored MIME and
+   size for **all 20 original pilot objects plus up to 40 other distributed
+   existing objects**. This avoids the public domain entirely and still
+   refuses bad stored `image/jxl` or `image/gif` metadata in samples.
+3. After a real transfer, repeat the strict full-name/size audit,
+   authenticated sample, and downloadable-byte check for 40 dispersed
+   photographs. The optional `--deep-verify` tests all object bytes.
+
+**Only a sample of stored MIME types is checked**. The full list of
+keys/sizes is checked. The sample-based approach preserves the fast listing
+without pretending that every remote Content-Type was verified.
+
+The public-domain check remains an **explicitly separate, read-only**
+diagnostic:
+
+    "$HOME/Downloads/mcretro-r2-venv/bin/python" "$HOME/Downloads/upload_r2_remaining_photos.py" --check-public
+
+It performs the public HTTP HEAD checks and may still return 403. Do not
+interpret that as a storage-integrity failure, and do not run
+`--check-public` to resume a transfer.
+
+The default preflight and `--upload` no longer require public HEAD requests.
+The actual photo-only transfer still requires an explicit `--upload` and
+uses the same exact keys, `--ignore-existing`, no deletions, and no access
+to the original 26 GB archive.
 
 ## PHOTON UPLINK - animated Rich terminal telemetry for the photo-only transfer
 
@@ -527,7 +545,8 @@ The 80-column layout is more compact; a wider Terminal window displays more
 status panels. rclone emits structured JSON log lines (`--use-json-log`,
 `--stats 1s`), parsed rather than guessed. A zero in any live counter is
 never treated as proof of remote integrity. The existing post-transfer
-remote key/size/MIME and downloaded-byte checks are still authoritative.
+remote key/size checks, authenticated MIME samples and downloaded-byte
+checks remain authoritative for their respective scopes.
 
 Use a small isolated Python environment rather than modifying macOS-managed
 Python or globally installing dependencies:

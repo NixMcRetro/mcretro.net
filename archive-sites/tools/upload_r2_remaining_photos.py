@@ -27,7 +27,7 @@ import shutil
 import subprocess
 import sys
 
-from r2_neon_dashboard import show_demo, run_upload_with_dashboard, require_rich
+from r2_neon_dashboard import show_demo, run_upload_with_dashboard, require_rich, preflight_display
 from upload_r2_test20 import KEYS as PILOT_KEYS, all_remote_objects
 from validate_r2_upload import (
     DEFAULT_STAGE, DEFAULT_CONVERTED, FINAL_DESTINATION, validate,
@@ -136,21 +136,26 @@ def verify_bytes(keys: list[str]) -> None:
         )
 
 
-def assess(plan: dict[str, dict]) -> tuple[list[str], dict[str, dict]]:
+def assess(plan: dict[str, dict], on_stage=None, quiet: bool = False) -> tuple[list[str], dict[str, dict]]:
+    if on_stage is not None:
+        on_stage(1)  # Existing R2 inventory, after validating local images.
     remote = all_remote_objects()
+    if on_stage is not None:
+        on_stage(2)  # Validate the pilot objects and exact allowlist.
     missing = audit_existing(plan, remote)
     present_bytes = sum(int(plan[key]["bytes"]) for key in remote)
     missing_bytes = sum(int(plan[key]["bytes"]) for key in missing)
-    print(
-        f"Local: {EXPECTED_PHOTOS:,} photographs / {EXPECTED_OBJECTS:,} objects / "
-        f"{EXPECTED_BYTES:,} bytes (all validated)\n"
-        f"R2 already present: {len(remote):,} matching, "
-        f"{present_bytes:,} bytes\n"
-        f"Remaining for upload: {len(missing):,} objects, "
-        f"{missing_bytes:,} bytes\n"
-        "Protected originals: NOT ACCESSED. No HTML, fonts or File Server objects selected.",
-        flush=True,
-    )
+    if not quiet:
+        print(
+            f"Local: {EXPECTED_PHOTOS:,} photographs / {EXPECTED_OBJECTS:,} objects / "
+            f"{EXPECTED_BYTES:,} bytes (all validated)\n"
+            f"R2 already present: {len(remote):,} matching, "
+            f"{present_bytes:,} bytes\n"
+            f"Remaining for upload: {len(missing):,} objects, "
+            f"{missing_bytes:,} bytes\n"
+            "Protected originals: NOT ACCESSED. No HTML, fonts or File Server objects selected.",
+            flush=True,
+        )
     return missing, remote
 
 
@@ -198,11 +203,27 @@ def main(argv=None) -> int:
         require_rich()  # Fail before any transfer if the optional UI package is absent.
     if not shutil.which("rclone"):
         raise ValueError("rclone command not installed")
-    plan = local_plan()
     if args.verify or args.deep_verify:
+        # Explicit verification modes remain independent and read-only.
+        plan = local_plan()
         verify(plan, deep=args.deep_verify)
         return 0
-    missing, _ = assess(plan)
+    # Read-only preflight: show progress through local scan and remote listing.
+    # This same preflight executes before real --upload as a safety gate.
+    with preflight_display() as status:
+        plan = local_plan()
+        missing, _ = assess(plan, on_stage=status.advance, quiet=True)
+        status.finish()
+    missing_bytes = sum(int(plan[key]["bytes"]) for key in missing)
+    print(
+        f"Local: {EXPECTED_PHOTOS:,} photographs / {EXPECTED_OBJECTS:,} objects / "
+        f"{EXPECTED_BYTES:,} bytes (validated)\n"
+        f"R2 already present: {EXPECTED_OBJECTS - len(missing):,} matching, "
+        f"{EXPECTED_BYTES - missing_bytes:,} bytes\n"
+        f"Remaining for upload: {len(missing):,} objects, {missing_bytes:,} bytes\n"
+        "Original 26 GB archive: NOT ACCESSED. No HTML, fonts or File Server objects selected.",
+        flush=True,
+    )
     if not args.upload:
         print("READ-ONLY PREFLIGHT. No upload, overwrite or deletion performed.")
         print("The owner-requested upload, if intended, is explicitly started with --upload.")

@@ -348,7 +348,8 @@ test('interactive hover backgrounds use themed blue without recolouring neutral 
   assert.match(dark, /--panel-subtle:\s*#303A48;/);
   assert.match(light, /--interactive-hover:\s*var\(--archive-filled-hover\);/);
   assert.match(dark, /--interactive-hover:\s*var\(--archive-filled-hover\);/);
-  assert.match(style, /--code-bg:\s*#F0EAD9;/);
+  assert.match(light, /--code-bg:\s*#EAF2FF;/);
+  assert.match(dark, /--code-bg:\s*#303A48;/);
   assert.match(style, /--pagefind-ui-tag:\s*var\(--panel-subtle\);/);
   assert.match(style, /a\.page-number:hover,\s*\.arrow-link:hover\s*\{[^}]*background:\s*var\(--interactive-hover\);/);
   assert.match(style, /\.theme-toggle:hover\s*\{\s*background:\s*var\(--interactive-hover\);/);

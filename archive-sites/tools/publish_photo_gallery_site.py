@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+from html.parser import HTMLParser
 from pathlib import Path
 import re
 import struct
@@ -118,6 +119,27 @@ SENSITIVE_PUBLIC_MARKERS = (
         r"(?:$|[/\s_.-])")),
 )
 
+
+class ExternalResourceScanner(HTMLParser):
+    """Passive navigation links are fine; external auto-loaded resources are not."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.external = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attributes = dict(attrs)
+        field = "href" if tag == "link" else "src"
+        if tag not in ("script", "iframe", "img", "link", "video",
+                       "audio", "source", "embed", "object"):
+            return
+        if tag == "object":
+            field = "data"
+        url = attributes.get(field) or ""
+        if url.startswith(("http://", "https://", "//")):
+            self.external.append(tag + " has external " + field)
+
+
 JXL_CONTAINER_SIGNATURE = b"\x00\x00\x00\x0cJXL \r\n\x87\n"
 PRIVATE_JXL_BOX_TYPES = {b"Exif", b"xml ", b"jumb", b"jbrd"}
 KNOWN_JXL_BOX_TYPES = {
@@ -201,7 +223,20 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
     for key in sorted(site):
         if key.endswith((".html", ".xml")):
             file = site[key]["local"]
-            inspect_text("generated " + key, file.read_text(encoding="utf-8"))
+            contents = file.read_text(encoding="utf-8")
+            inspect_text("generated " + key, contents)
+            if key.endswith(".html"):
+                resource_scan = ExternalResourceScanner()
+                resource_scan.feed(contents)
+                if resource_scan.external:
+                    issues.append(
+                        f"generated {key}: unexpected external auto-loaded "
+                        f"resource(s): {resource_scan.external[:3]}"
+                    )
+                if re.search(r"(?i)@import\\s+(?:url\\()?\\s*['\\\"]?(?:https?:)?//", contents):
+                    issues.append(f"generated {key}: remote CSS import detected")
+                if re.search(r"(?i)url\\(\\s*['\\\"]?(?:https?:)?//", contents):
+                    issues.append(f"generated {key}: remote CSS URL detected")
     # The existing validated photo plan can refer either to the final
     # key-matched path or a pre-rename legacy converted filename. Use the
     # *validated local_path*, never the 26 GB original source archive.
@@ -426,6 +461,39 @@ def run_copy(source: Path, keys: list[str], mime: str) -> None:
         )
 
 
+def verify_existing_site_bytes(site: dict, keys: set[str],
+                               stage: Path, temp_root: Path) -> None:
+    """Fail before uploading if already-public website objects differ by bytes.
+
+    Matching names and sizes alone do not prove existing site HTML or
+    albums.json is the approved public-safe version.
+    """
+    if not keys:
+        return
+    print(f"Verifying {len(keys)} existing website objects byte-for-byte "
+          "before any new publication...", flush=True)
+    for source, selected in (
+        (stage / SITE_ROOT, sorted(
+            key for key in keys if key.endswith((".html", ".xml")))),
+        (stage / "photo-gallery", sorted(
+            key for key in keys if key.endswith(".woff2"))),
+        (temp_root, sorted(key for key in keys if key == "albums.json")),
+    ):
+        if not selected:
+            continue
+        command = [
+            "rclone", "check", "--download", "--one-way", "--files-from0",
+            "-", "--s3-no-check-bucket", str(source), FINAL_DESTINATION,
+        ]
+        result = subprocess.run(command, input=keys_input(selected),
+                                check=False)
+        if result.returncode:
+            raise ValueError(
+                "Existing public gallery object differs from vetted release "
+                f"({len(selected)} checked). No additional upload started."
+            )
+
+
 def verify_remote(site: dict, photos: dict, catalogue: bytes,
                   temp_root: Path) -> None:
     remote = list_remote()
@@ -504,6 +572,11 @@ def publish(stage: Path, converted: Path, html: Path,
         temp_root = Path(folder)
         (temp_root / "albums.json").write_bytes(catalogue)
         if mode == "upload":
+            # A pre-existing same-size object might be the private/stale
+            # albums.json or unwanted HTML. Check its actual bytes first.
+            verify_existing_site_bytes(
+                site, set(site) - set(missing), stage, temp_root
+            )
             site_root = stage / SITE_ROOT
             # Order matters: fonts/catalogue first, folder pages, sitemap,
             # homepage last. The root index is the explicit final website key.

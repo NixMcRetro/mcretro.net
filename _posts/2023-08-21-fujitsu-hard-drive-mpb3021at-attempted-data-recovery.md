@@ -28,7 +28,7 @@ Once the crystal was installed, the drive began making a rather impressive click
 
 I tried using GNU ddrescue 1.23 to make a copy of the drive. The [GNU ddrescue manual](https://web.archive.org/web/20260511155236/https://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html) explains how it tracks readable and unreadable areas so a recovery can be resumed. The command below is preserved from my notes, although the device names must not be copied blindly.
 
-```
+```bash
 sudo ddrescue -f -r3 /dev/sdb /dev/sdc logfile
 ```
 

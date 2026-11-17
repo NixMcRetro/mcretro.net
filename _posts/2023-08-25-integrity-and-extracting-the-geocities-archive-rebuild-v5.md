@@ -26,7 +26,7 @@ While keeping the [original GeoCities data](https://wiki.archiveteam.org/index.p
 
  
 
-```
+```bash
 # Create a archive (tar) and split into a few pieces to allow better checksumming (sha256).
 cd /media/ubuntu/GC_2TB/
 tar cvf - Rebuild_v5/ | split --bytes=1GB - "/media/ubuntu/GC_2TB/REBUILD/GeoCities_Rebuild.tar." -a 3 -d
@@ -37,7 +37,7 @@ That produced consecutive decimal 1 GB chunks. GNU `split` interprets `GB` here 
 
  
 
-```
+```bash
 # Generate a list of sha256 checksums for each part.
 cd /media/ubuntu/GC_2TB/REBUILD/
 sha256sum GeoCities_Rebuild.tar.* > GeoCities_Rebuild.sha256
@@ -48,7 +48,7 @@ We could then copy the data across the rickety old network and check each piece 
 
  
 
-```
+```bash
 # Checks all the files in the sha256 file for sha256 checksum matches - once on the Mac Pro SSD locally
 cd /media/ubuntu/GC_2TB/REBUILD/
 sha256sum -c GeoCities_Rebuild.sha256 > ~/Desktop/GeoCities_Rebuild.sha256.status1
@@ -60,7 +60,7 @@ Then we would run the same check again on the destination.
 
  
 
-```
+```bash
 # And again on the HPE RAID after transfer
 cd /run/user/1000/gvfs/smb-share:server=truenas.local,share=archived%20websites/GeoCities/Rebuild_v5
 sha256sum -c GeoCities_Rebuild.sha256 > ~/Desktop/GeoCities_Rebuild.sha256.status2
@@ -72,7 +72,7 @@ We can then join all the pieces back into the giant single tar file. Because `sp
 
  
 
-```
+```bash
 # If constructed, it will make a giant 793.9 GB (793,889,955,840 bytes) tar archive.
 # Direct cat GeoCities_Rebuild.tar.* to CHONK (otherwise space will run out)
 cd /media/ubuntu/GC_2TB/REBUILD/
@@ -122,7 +122,7 @@ My note says "Decompress" below, but there is no compression involved here. This
 
  
 
-```
+```bash
 # Decompress to the 2TB rotational once the dataset is verified OK
 # TO REBUILD into a folder called Rebuild_v5 in the SAME folder as the archives... watch out for free space...
 cd /media/ubuntu/GC_2TB/REBUILD/
@@ -138,7 +138,7 @@ The next block comes straight from my original notes. One thing worth correcting
 
  
 
-```
+```text
 # RUN THIS TO CONFIRM DATA IS THE SAME AS THE ORIGINAL SET (compare with 1TB external untouched also)
 # It will give a very precise number, don't worry if it is off by a little bit.
 sudo du -s -h --si -B1

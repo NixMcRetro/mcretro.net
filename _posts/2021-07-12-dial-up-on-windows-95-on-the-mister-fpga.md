@@ -34,7 +34,7 @@ Another major step was realising that, on my RPi3, the forwarding rules I'd put 
 
  
 
-```
+```text
 [ 1835.122153] usb 1-1.2: new full-speed USB device number 5 using dwc2
 [ 1835.216757] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001, bcdDevice= 6.00
 [ 1835.216771] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3

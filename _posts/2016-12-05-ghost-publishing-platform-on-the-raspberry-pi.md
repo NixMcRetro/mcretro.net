@@ -17,7 +17,7 @@ I decided to have a look around for an alternative to WordPress. I must admit I 
 
 Anyway, get your Raspberry Pi up and running with Raspbian Jessie and then plug in the following commands. You can check [here](https://nodejs.org/dist/latest-argon/) for the latest v4 (Argon) Node.js. That is currently the best supported version Ghost recommends.
 
-```
+```bash
 cd ~
 wget http://nodejs.org/dist/latest-argon/node-v4.6.2.tar.gz
 tar -xzf node node-v4.6.2.tar.gz
@@ -28,7 +28,7 @@ sudo make install
 node -v
 ```
 
-```
+```bash
 cd ~
 curl -L https://ghost.org/zip/ghost-latest.zip -o ghost.zip
 sudo unzip -uo ghost.zip -d /var/www/[your-web-site]

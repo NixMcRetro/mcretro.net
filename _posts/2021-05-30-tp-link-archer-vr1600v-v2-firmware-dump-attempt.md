@@ -151,7 +151,7 @@ Something wasn't right, see the first column, why is my RX open line? Bad solder
 
 Well, I'll be damned. We have readable, formatted output. The full output is below.
 
-```
+```text
 Welcome to minicom 2.7.1
 
 OPTIONS: I18n 
@@ -1628,7 +1628,7 @@ Probably worth mentioning that inside [bcm\_cfedump.py](https://github.com/Depau
 
  
 
-```
+```bash
 sudo python3 -m bcm_cfedump -D /dev/ttyUSB0 -O nand.img -t 0.01 nand
 
 ```

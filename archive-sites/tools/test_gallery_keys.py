@@ -9,9 +9,9 @@ class PublicGalleryKeysTests(unittest.TestCase):
             'accessories/minipro/img_0835.jpg', 'nested/a.png', 'elsewhere/screenshot.bmp',
             'projects/yampad/animated.gif'])
         self.assertEqual(mapping['accessories/minipro/img_0835.jpg'],
-                         'accessories/minipro/img_0835.jxl')
-        self.assertEqual(mapping['nested/a.png'], 'nested/a.jxl')
-        self.assertEqual(mapping['elsewhere/screenshot.bmp'], 'elsewhere/screenshot.jxl')
+                         'accessories/minipro/IMG_0835.jxl')
+        self.assertEqual(mapping['nested/a.png'], 'nested/A.jxl')
+        self.assertEqual(mapping['elsewhere/screenshot.bmp'], 'elsewhere/SCREENSHOT.jxl')
         self.assertEqual(mapping['projects/yampad/animated.gif'],
                          'projects/yampad/animated.gif')
 
@@ -25,10 +25,22 @@ class PublicGalleryKeysTests(unittest.TestCase):
         self.assertTrue(all(key.startswith('saturn/IMG_0001-') and key.endswith('.jxl')
                             for key in one.values()))
         self.assertTrue(all('.jpg.jxl' not in key for key in one.values()))
+        self.assertTrue(all(key.rsplit('/', 1)[-1].split('.')[0].upper() == key.rsplit('/', 1)[-1].split('.')[0]
+                            for key in one.values()))
 
     def test_case_insensitive_collisions_are_disambiguated(self):
         results = public_photo_paths(['album/SCAN.JPG', 'album/scan.png'])
         self.assertEqual(len({x.casefold() for x in results.values()}), 2)
+        self.assertTrue(all(x.endswith('.jxl') for x in results.values()))
+        self.assertTrue(all(x.split('/')[-1].startswith('SCAN-') for x in results.values()))
+
+    def test_basename_uppercase_does_not_change_folder_or_original_extension(self):
+        keys = public_photo_paths(['consoles/sega/mega-drive/front-view.JPEG',
+                                   'consoles/sega/mega-drive/IMG_1.jpg'])
+        self.assertEqual(keys['consoles/sega/mega-drive/front-view.JPEG'],
+                         'consoles/sega/mega-drive/FRONT-VIEW.jxl')
+        self.assertEqual(keys['consoles/sega/mega-drive/IMG_1.jpg'],
+                         'consoles/sega/mega-drive/IMG_1.jxl')
 
     def test_bad_original_paths_are_rejected(self):
         for key in ('/etc/passwd', '../evil.jpg', 'folder//pic.jpg',

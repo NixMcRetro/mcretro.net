@@ -44,7 +44,7 @@ Be careful not to replace the existing contents of `Path`. Windows probably woul
 
 Open a new Command Prompt and enter:
 
-```
+```bat
 echo %GDK%
 echo %GDK_WIN%
 ```

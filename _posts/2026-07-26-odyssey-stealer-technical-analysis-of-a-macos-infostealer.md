@@ -257,7 +257,7 @@ set app_id to "xxxblyat"
 ### 4.4 AppleScript Command Execution Flow
 
 The C2 server returns three lines per command:
-```
+```text
 [actionID]
 [actionName]
 [actionComment]
@@ -288,7 +288,7 @@ $mac password get scpt output: password1
 
 ### 4.6 Exfiltration Commands
 
-```
+```text
 curl -s 
 rm -rf '
 Library/
@@ -303,7 +303,7 @@ The malware stages data in `/tmp/lksopo/`, compresses it with `ditto -c -k --seq
 
 ### 4.7 Staging and Cleanup
 
-```
+```text
 /tmp/lksopo/
 ditto -c -k --sequesterRsrc /tmp/lksopo /tmp/lksopo.zip
 rm -rf /tmp/lksopo
@@ -558,7 +558,7 @@ The AppleScript bot requests use `User-Agent: bot`. The `repeat` request also se
 
 The server returns exactly three lines:
 
-```
+```text
 [actionID]
 [actionName]
 [actionComment]
@@ -662,7 +662,7 @@ Every 60 seconds, a `curl` process connected to `192.253.248.181:80`, matching t
 
 The following detection script (`detect_odyssey_mac.sh`) is retained as a historical tool from the investigation. It checks the older `Install.app` path and an older target hash; it does not directly check the `Patch.app` path or the sample hashes listed in this article. Detect-only mode still writes temporary files and invokes system tools. In `--clean` mode, backup failures are suppressed and do not prevent deletion, so this version should not be used to clean a system without independently preserving the evidence first.
 
-```
+```bash
 #!/bin/bash
 #
 # detect_odyssey_mac.sh
@@ -1037,7 +1037,7 @@ say " 5. Strongly consider erase/reinstall macOS instead of trusting cleanup alo
 
 ### 10.2 Script Usage
 
-```
+```bash
 # Detect only (safe, changes nothing)
 sudo ./detect_odyssey_mac.sh
 
@@ -1053,7 +1053,7 @@ The script recommends erasing and reinstalling macOS; it does not perform that o
 
 A separate script (`detect_external_mac.sh`) is retained for scanning external drives. It assumes a conventional macOS directory layout, checks the older `Install.app` path, and does not establish that every backup snapshot has been examined. Its optional `--clean` mode deletes indicators without first backing them up, and its closing instructions say to erase the drive. Those are historical instructions, not a reason to destroy the only forensic copy. Preserve that copy and plan any recovery or cleanup separately.
 
-```
+```bash
 #!/bin/bash
 #
 # detect_external_mac.sh
@@ -1347,7 +1347,7 @@ This script:
 - Prints a blanket instruction to erase Time Machine backups; the limited scan does not establish that every snapshot is infected or that the only evidence copy should be destroyed.
 
 Usage:
-```
+```bash
 sudo ./detect_external_mac.sh "/Volumes/MyDrive"
 ```
 

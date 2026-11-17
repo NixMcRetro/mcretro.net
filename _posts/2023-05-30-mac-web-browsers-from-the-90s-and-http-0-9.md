@@ -91,7 +91,9 @@ And it works a charm.
 
 Well, close enough to a charm. Especially given charset=UTF-8 wasn't yet the rage and ISO-8859-1 would rule supreme for a while longer.
 
-`sudo tail -f /var/log/apache2/access.log`
+```bash
+sudo tail -f /var/log/apache2/access.log
+```
 
 Tailing the Apache2 access log shows us:
 

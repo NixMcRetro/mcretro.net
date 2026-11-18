@@ -24,6 +24,41 @@ extensions (one warning). The 336-object gallery website publication
 remains BLOCKED. No gallery web objects have been uploaded, PR #271 is
 still draft and unmerged.
 
+## 19th November 2026 - Owner-confirmed benign Yampad metadata
+
+The owner ran an additional *local read-only* ExifTool command on the single
+optimised `full/projects/project-yampad/animated.gif`, using the validated
+converted plan path, and provided the following exact metadata values:
+
+- **GIF Comment:** `Optimized using ezgif.com` (25 bytes)
+- **Both ICC profile descriptions:** `Display P3`
+- **Both ICC profile copyrights:** `Copyright Apple Inc., 2017`
+- Remaining observed ICC tags: BlueMatrixColumn, BlueTRC,
+  ChromaticAdaptation, GreenMatrixColumn, GreenTRC, MediaWhitePoint,
+  RedMatrixColumn and RedTRC.
+
+These are ordinary colour-management and optimisation metadata, rather than
+any identified private email, GPS location, or personal source-path
+information. No destructive stripping is warranted.
+
+The **draft** publication tool now includes a narrow, fail-closed
+`cleared_yampad_gif_extensions` rule, applicable **only** to the exact
+Project Yampad GIF key. It requires the precisely observed three-extension
+order (ICC / Comment / ICC), 548/25/548 payload lengths, matching opaque
+ICC fingerprints, the *exact* ezgif comment, both named Display P3 profiles,
+the exact Apple copyright values, and a strict ten-tag ICC allowlist with
+no parser errors or other metadata groups. It runs ExifTool read-only on
+each publication preflight; changed, extra or missing metadata still blocks.
+Regression tests include the permitted case and fail-closed variants.
+
+**Status:** The new strict rule passed synthetic GitHub validation, but the
+owner has not yet run the updated local `--privacy-audit` on the real
+staging files. **Do not claim the full site is published or privacy passed
+until that local readback succeeds.** The earlier 16,823 photo objects stay
+as they are. This change does not authorise overwriting originals, R2 photo
+objects or merging PR #271. The owner previously authorised uploading the
+existing *website design*, conditional on clearing privacy preflight.
+
 ## 19th November 2026 - Latest local readback, only GIF extensions unresolved
 
 **Owner's latest read-only GIF diagnostic:** `--inspect-unresolved` on the Mac

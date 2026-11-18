@@ -1,7 +1,7 @@
 """Canonical nested gallery URLs and compatibility links for old flat URLs.
 
 New paths are real static HTML R2 object keys, without server-side rewrites.
-The original hashed routes remain as separate, exact redirect HTML objects.
+Old hashed routes are recognised only to identify obsolete R2 object keys for retirement.
 Collision suffixes are used only for sibling names whose normalised slugs
 would otherwise match. Never rename public image object keys.
 """
@@ -28,7 +28,7 @@ def _slug(segment: str, length: int = 80) -> str:
 
 
 def legacy_folder_url(path: str) -> str:
-    """Original published flat route, maintained solely for old bookmarks."""
+    """Original published flat route, used solely to inventory old keys to retire."""
     if path == '':
         return '/'
     parts = _validated_parts(path)
@@ -77,7 +77,7 @@ def plan_folder_routes(paths: list[str]) -> dict[str, str]:
     canonical = set(routes.values())
     legacy = {legacy_folder_url(path) for path in paths if path}
     if len(canonical) != len(routes) or any(key in canonical for key in legacy):
-        raise ValueError('Canonical folder URL conflicts with legacy redirect key')
+        raise ValueError('Canonical folder URL conflicts with an old hashed key')
     return routes
 
 

@@ -1,5 +1,29 @@
 # McRetro Photo Gallery and File Server - reconciled checkpoint
 
+## 19th November 2026 - Verified EXIF technical-only result
+
+The owner supplied the expanded, local-only ExifTool report for all 40
+optimised Nintendo DS IS-NITRO JPEG XL images (20 full and 20 thumbnails).
+All 40 ExifIFD sections were decoded. Exactly nine tag names were reported
+globally: Composite image dimensions/megapixels; ExifIFD ColorSpace,
+ExifImageHeight, ExifImageWidth; ExifTool version; and three JPEG XL
+compatibility/brand indicators. **No GPS, owner, serial number, or
+timestamp fields were identified.** This supports treating the 40 cases
+as benign **technical-only metadata**, without recompression.
+
+The privacy auditor now checks this exact nine-name allowlist dynamically
+through ExifTool for each of the 40 local optimised JXL files, refusing
+unexpected tags, missing ExifTool, or errors. It neither strips metadata
+nor accesses original 26 GB files or R2. This is a narrow clearance, not
+blanket metadata approval.
+
+**Remaining prepublication findings:** the email-shaped path/thumbnail
+for one photograph at public catalogue index 8283 (two warnings, one
+photo) and the Project Yampad GIF's Comment and other Application
+extensions (one warning). The 336-object gallery website publication
+remains BLOCKED. No gallery web objects have been uploaded, PR #271 is
+still draft and unmerged.
+
 ## Gallery publication privacy review (17th November 2026)
 
 **Subsequent Mac audit readback:** The owner ran the local-only

@@ -719,6 +719,30 @@ already exist on R2, their **downloaded bytes are checked before new files
 are uploaded**, because a matching byte count alone would not rule out a
 stale or private `albums.json`.
 
+**Real owner readback (November 2026):** the local-only privacy audit stopped
+with **43 potential issues**, including two flags on the same public
+photo[8283] path/thumbnail, plus Brotli-compressed Exif boxes within the
+optimised Nintendo DS IS-NITRO capture collection. This means metadata
+**exists**, not that any particular GPS/personal tags are confirmed.
+No website objects were published by that audit. The existing images
+were previously uploaded to R2, and that is a separate public exposure.
+
+The follow-up diagnostic is local-only and intentionally **does not clear**
+the publication gate:
+
+    "$HOME/Downloads/mcretro-r2-venv/bin/python" "$HOME/Downloads/publish_photo_gallery_site.py" --privacy-report
+
+It prints **all** scanner findings, not merely the first 12. If an existing
+`exiftool` is found, it additionally reads the flagged optimised JPEG XL
+images and prints **metadata tag names and counts only**, never tag values
+(GPS coordinates, names, or device identifiers are not printed). This is
+useful for deciding whether to review/remove metadata. It does not
+automatically determine whether a tag is harmless. The report does not
+write an output file, contact R2 or run an upload. If ExifTool is missing
+or unable to decode Brotli-compressed Exif, the report explicitly says
+the content remains uninspected. Avoid posting any potentially
+identifying raw paths or metadata values when sharing diagnostics.
+
 **Human review remains essential.** The gallery publicly exposes folder
 names, archive image URLs, title text and visually recognisable people,
 addresses, serial numbers or background details. It also publishes a sitemap

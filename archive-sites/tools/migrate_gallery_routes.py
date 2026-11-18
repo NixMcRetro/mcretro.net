@@ -2,10 +2,11 @@
 """Guarded migration from flat hashed Photo Gallery URLs to nested URLs.
 
 --prepare: LOCAL ONLY. Save the exact old, public-safe website baseline before
-           replacing local staged HTML/manifest with nested URLs and redirects.
+           replacing local staged HTML/manifest with nested URLs only.
 --preflight: READ ONLY. Privacy audit, remote inventory and downloaded-byte gate.
---upload: Explicitly authorised WEBSITE-ONLY update, no photos/delete/sync.
---verify: READ ONLY. Compare all expected site bytes after migration.
+--upload: WEBSITE-ONLY update; does not remove existing old routes.
+--retire-old: Exact-key deletion of verified obsolete hashed website HTML only.
+--verify: READ ONLY. Check new site bytes and confirm old routes are absent.
 
 Never reads the historical photo originals or publishes private manifest fields.
 Partial uploads are resumable: remote files must match either the captured old
@@ -144,16 +145,23 @@ def prepare(stage: Path, template: Path) -> None:
         (temporary / 'original-private-manifest.json').write_bytes(old)
         temporary.rename(snapshot)
 
+    # Remove exact old staged HTML after securely snapshotting its bytes.
+    # These are website HTML files only. No local photos are touched.
+    for path in paths:
+        if path:
+            key = legacy_folder_url(path).lstrip('/')
+            original_page = _safe_file(stage / SITE, key)
+            original_page.unlink()
+
     # Only the private STAGING manifest and generated pages are changed.
     for item in folders:
         item['url'] = routes[item['path']]
     manifest.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n',
                         encoding='utf-8')
     result = render_pages(stage, template)
-    if (result['html_pages'] != 2 * EXPECTED_CANONICAL_HTML - 1 or
-            result['legacy_redirect_pages'] != EXPECTED_CANONICAL_HTML - 1):
+    if result['html_pages'] != EXPECTED_CANONICAL_HTML:
         raise ValueError('Nested page generation did not match expected counts')
-    print('LOCAL STAGING PREPARED: nested folder URLs plus old-link redirects.')
+    print('LOCAL STAGING PREPARED: nested folder URLs only (no old-link redirects).')
     print(f'Original {len(old_keys)} public-safe site objects captured under {snapshot}')
     print('NO R2 access or upload. Run --preflight before any release.')
 
@@ -190,12 +198,10 @@ def inspect(stage: Path, converted: Path, html: Path):
     for key, size in photos.items():
         if key not in remote or remote[key].get('Size') != size:
             raise ValueError('Missing/changed existing R2 photo: ' + key)
-    if any(key not in remote for key in baseline):
-        raise ValueError('Missing originally published website object: migration blocked')
     if not shutil.which('rclone'):
         raise ValueError('rclone is unavailable')
 
-    # Only 336 old website objects plus up to 328 new canonical pages are read.
+    # Up to 336 old website objects and 329 canonical pages are examined.
     # Hash remote bytes, never interpret them as text or print their contents.
     state = {}
     targets = sorted((set(baseline) | set(new_site)) & set(remote))
@@ -229,20 +235,12 @@ def upload(stage: Path, converted: Path, html: Path) -> None:
     with tempfile.TemporaryDirectory(prefix='public-route-migration-') as tmp:
         root = Path(tmp)
         (root / 'albums.json').write_bytes(catalogue)
-        # New canonical pages before redirects; index last. No image objects.
+        # New canonical pages first; index last. No image objects.
         groups = [
             (stage / 'photo-gallery', sorted(
                 k for k in remaining if k.endswith('.woff2')), 'font/woff2'),
-            (site_root, sorted(
-                k for k in remaining if k.startswith('albums/')
-                and k not in {legacy_folder_url(p['path']).lstrip('/')
-                              for p in json.loads((stage / CATALOGUE).read_text())['folders']
-                              if p['path']}), 'text/html; charset=utf-8'),
-            (site_root, sorted(
-                k for k in remaining if k.startswith('albums/')
-                and k in {legacy_folder_url(p['path']).lstrip('/')
-                          for p in json.loads((stage / CATALOGUE).read_text())['folders']
-                          if p['path']}), 'text/html; charset=utf-8'),
+            (site_root, sorted(k for k in remaining if k.startswith('albums/')),
+             'text/html; charset=utf-8'),
             (root, ['albums.json'] if 'albums.json' in remaining else [],
              'application/json'),
             (site_root, ['sitemap.xml'] if 'sitemap.xml' in remaining else [],
@@ -263,8 +261,67 @@ def upload(stage: Path, converted: Path, html: Path) -> None:
             result = subprocess.run(command, input=keys_input(keys), check=False)
             if result.returncode:
                 raise ValueError('Website route transfer stopped; rerun --preflight before resuming')
+        newly_ready = inspect(stage, converted, html)[3]
+        if newly_ready:
+            raise ValueError('New website objects not all verified after upload')
+        legacy = frozenset(_baseline_map(
+            stage,
+            [f['path'] for f in json.loads((stage / CATALOGUE).read_text())['folders']]
+        )) - frozenset(site)
+        verify_remote(site, photos, catalogue, root, allowed_legacy_keys=legacy)
+    print('NEW ROUTES VERIFIED. Old hashed URLs remain until --retire-old.')
+
+
+def retire_old(stage: Path, converted: Path, html: Path) -> None:
+    """Retire ONLY the 328 original hashed HTML URLs after validating the new site.
+
+    This is a separate, explicit website-deletion operation. Every target must
+    exactly match the owner-reviewed SHA-256 baseline immediately beforehand.
+    There is no bucket-wide delete, sync, glob, or image-object access.
+    """
+    site, photos, catalogue, pending = inspect(stage, converted, html)
+    if pending:
+        raise ValueError('Refusing to retire old pages until all new site objects exist')
+    folders = json.loads((stage / CATALOGUE).read_text(encoding='utf-8'))['folders']
+    baseline = _baseline_map(stage, [f['path'] for f in folders])
+    old_only = sorted(set(baseline) - set(site))
+    if len(old_only) != EXPECTED_CANONICAL_HTML - 1 or any(
+        not key.startswith('albums/') or not key.endswith('.html')
+        for key in old_only
+    ):
+        raise ValueError('Unexpected retired website key inventory')
+    with tempfile.TemporaryDirectory(prefix='public-route-retirement-') as tmp:
+        root = Path(tmp)
+        (root / 'albums.json').write_bytes(catalogue)
+        # Full new-site byte and MIME verification BEFORE any deletion.
+        verify_remote(site, photos, catalogue, root,
+                      allowed_legacy_keys=frozenset(old_only))
+
+    present = list_remote()
+    for key in old_only:
+        if key not in present:
+            continue  # Already successfully retired in an earlier attempt.
+        if _remote_bytes(key) != baseline[key].read_bytes():
+            raise ValueError('Old website page changed before retirement: ' + key)
+        result = subprocess.run(
+            ['rclone', 'deletefile', FINAL_DESTINATION.rstrip('/') + '/' + key,
+             '--s3-no-check-bucket'], capture_output=True,
+            check=False, timeout=120,
+        )
+        if result.returncode:
+            raise ValueError('Could not retire one old HTML key; stop and review: ' + key)
+        print('Retired old hashed HTML page: ' + key)
+    # A second exact inventory confirms no old links remain. No images deleted.
+    post = list_remote()
+    remaining = sorted(set(old_only) & set(post))
+    if remaining:
+        raise ValueError('Some old album HTML keys remain: ' + str(remaining[:3]))
+    with tempfile.TemporaryDirectory(prefix='public-route-final-') as tmp:
+        root = Path(tmp)
+        (root / 'albums.json').write_bytes(catalogue)
         verify_remote(site, photos, catalogue, root)
-    print('ROUTE MIGRATION VERIFIED. Existing image files were not touched.')
+    print('PASS: new nested gallery verified; obsolete hashed R2 pages removed.')
+    print('Cloudflare edge cache may still require a targeted purge of old URLs.')
 
 
 def main(argv=None) -> int:
@@ -277,6 +334,7 @@ def main(argv=None) -> int:
     actions.add_argument('--prepare', action='store_true')
     actions.add_argument('--preflight', action='store_true')
     actions.add_argument('--upload', action='store_true')
+    actions.add_argument('--retire-old', action='store_true')
     actions.add_argument('--verify', action='store_true')
     args = parser.parse_args(argv)
     stage, converted, html = (args.stage.expanduser().absolute(),
@@ -285,11 +343,16 @@ def main(argv=None) -> int:
     if args.prepare:
         prepare(stage, html)
     elif args.verify:
-        site, photos, catalogue = check_local(stage, converted, html)
+        site, photos, catalogue, pending = inspect(stage, converted, html)
+        if pending:
+            raise ValueError('New gallery publication is incomplete')
         with tempfile.TemporaryDirectory(prefix='public-route-verify-') as tmp:
             root = Path(tmp)
             (root / 'albums.json').write_bytes(catalogue)
+            # No legacy-key exception: verification fails until all retired.
             verify_remote(site, photos, catalogue, root)
+    elif args.retire_old:
+        retire_old(stage, converted, html)
     elif args.upload:
         upload(stage, converted, html)
     else:

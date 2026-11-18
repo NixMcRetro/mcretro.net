@@ -52,7 +52,7 @@ class GalleryWebsitePublishTests(unittest.TestCase):
         shutil.rmtree(self.original)
         private = json.loads(self.manifest.read_text())
         self.private = private
-        self.expected_pages = len(private["folders"])
+        self.expected_pages = 2 * len(private["folders"]) - 1
         self.expected_site = self.expected_pages + 2
         self.count_patches = [
             patch.object(pub, "EXPECTED_HTML", self.expected_pages),

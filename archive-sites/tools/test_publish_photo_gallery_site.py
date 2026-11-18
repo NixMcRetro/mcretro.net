@@ -188,6 +188,109 @@ class GalleryWebsitePublishTests(unittest.TestCase):
             pub.scan_public_privacy(self.stage, self.converted, site,
                                     public_with_warning, photos)
 
+    @staticmethod
+    def minimal_safe_exif_record(source: str):
+        return {
+            "SourceFile": source,
+            "Composite:ImageSize": "1280x960",
+            "Composite:Megapixels": 1.2,
+            "ExifIFD:ColorSpace": 1,
+            "ExifIFD:ExifImageHeight": 960,
+            "ExifIFD:ExifImageWidth": 1280,
+            "ExifTool:ExifToolVersion": 13.50,
+            "Jpeg2000:CompatibleBrands": "jxl ",
+            "Jpeg2000:MajorBrand": "jxl ",
+            "Jpeg2000:MinorVersion": 0,
+        }
+
+    def test_strict_technical_exif_allowlist_clears_only_dimension_tags(self):
+        file = Path("/synthetic/clean.jxl")
+        record = self.minimal_safe_exif_record(str(file))
+        result = subprocess.CompletedProcess(
+            [], 0, stdout=json.dumps([record]).encode(), stderr=b""
+        )
+        with patch.object(pub.shutil, "which",
+                          return_value="/usr/bin/exiftool"), \
+             patch.object(pub.subprocess, "run", return_value=result):
+            self.assertEqual(
+                pub.cleared_technical_exif([("full/test.jxl", file)]),
+                {"full/test.jxl"},
+            )
+
+    def test_exif_allowlist_refuses_gps_even_with_benign_nine_tags(self):
+        file = Path("/synthetic/private.jxl")
+        record = self.minimal_safe_exif_record(str(file))
+        record["GPS:GPSLatitude"] = -33.123
+        result = subprocess.CompletedProcess(
+            [], 0, stdout=json.dumps([record]).encode(), stderr=b""
+        )
+        with patch.object(pub.shutil, "which",
+                          return_value="/usr/bin/exiftool"), \
+             patch.object(pub.subprocess, "run", return_value=result):
+            self.assertEqual(
+                pub.cleared_technical_exif([("full/private.jxl", file)]),
+                set(),
+            )
+
+    def test_exif_allowlist_refuses_missing_dimensions_or_parser_error(self):
+        file = Path("/synthetic/incomplete.jxl")
+        record = self.minimal_safe_exif_record(str(file))
+        record.pop("ExifIFD:ExifImageWidth")
+        result = subprocess.CompletedProcess(
+            [], 0, stdout=json.dumps([record]).encode(), stderr=b""
+        )
+        with patch.object(pub.shutil, "which",
+                          return_value="/usr/bin/exiftool"), \
+             patch.object(pub.subprocess, "run", return_value=result):
+            self.assertEqual(
+                pub.cleared_technical_exif([("full/incomplete.jxl", file)]),
+                set(),
+            )
+        record["ExifIFD:ExifImageWidth"] = 960
+        record["ExifTool:Warning"] = "decoder warning"
+        result = subprocess.CompletedProcess(
+            [], 0, stdout=json.dumps([record]).encode(), stderr=b""
+        )
+        with patch.object(pub.shutil, "which",
+                          return_value="/usr/bin/exiftool"), \
+             patch.object(pub.subprocess, "run", return_value=result):
+            self.assertEqual(
+                pub.cleared_technical_exif([("full/incomplete.jxl", file)]),
+                set(),
+            )
+
+    def test_exif_allowlist_requires_exiftool(self):
+        with patch.object(pub.shutil, "which", return_value=None):
+            self.assertEqual(pub.cleared_technical_exif(
+                [("full/metadata.jxl", Path("/synthetic/a.jxl"))]), set())
+
+    def test_same_size_email_and_gif_still_block_with_safe_exif(self):
+        site, photos, base_catalogue = self.local_files()
+        altered = json.loads(base_catalogue)
+        altered["photos"][0]["path"] = "full/foo/person@example.com.jxl"
+        public = (json.dumps(altered) + "\n").encode()
+        target = next(k for k in photos if k.endswith(".jxl"))
+        with (self.stage / "reports/photos-upload-plan.csv").open(
+            newline="", encoding="utf-8"
+        ) as stream:
+            row = next(x for x in csv.DictReader(stream)
+                       if x["r2_key"] == target)
+        path = Path(row["local_path"])
+        path.write_bytes(
+            pub.JXL_CONTAINER_SIGNATURE +
+            b"\x00\x00\x00\x0dbrob" + b"Exif" + b"X"
+        )
+        rec = self.minimal_safe_exif_record(str(path))
+        result = subprocess.CompletedProcess(
+            [], 0, stdout=json.dumps([rec]).encode(), stderr=b""
+        )
+        with patch.object(pub.shutil, "which",
+                          return_value="/usr/bin/exiftool"), \
+             patch.object(pub.subprocess, "run", return_value=result):
+            with self.assertRaisesRegex(ValueError, "privacy preflight"):
+                pub.scan_public_privacy(self.stage, self.converted, site,
+                                        public, photos)
+
     def test_exif_report_displays_tag_names_never_sensitive_values(self):
         first = ("/synthetic/a.jxl", "/synthetic/path/a")
         records = [{

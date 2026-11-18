@@ -54,6 +54,25 @@ unchanged.
 
 ## 19th November 2026 - Owner-confirmed benign Yampad metadata
 
+### Follow-up local privacy check: standard ICC header group mismatch
+
+The owner's Mac preflight using the strict GIF validator failed only
+because ExifTool provided two standard groups, `ICC-header` and
+`ICC-header2`, for the two previously reviewed matching ICC profiles.
+These groups are standard fixed-layout ICC profile headers, not evidence
+of unexpected personal content. The new validator on the draft branch
+recognises these two specific groups only, requires documented ICC
+header tag names, necessary signature/version/colour-space fields,
+`acsp` signature, equal header values between the two copies, and no
+detected sensitive strings. Other metadata groups remain disallowed.
+
+Synthetic regression tests on GitHub now cover two valid ICC header
+groups, extra/unrecognised header fields, differing copies, and
+email-shaped header values. These do not weaken the hard publication
+gate. **Latest local Mac privacy audit still must be re-run before
+site publication.** No new objects have been uploaded to R2 and no
+original photographs or optimised GIF data have been altered.
+
 The owner ran an additional *local read-only* ExifTool command on the single
 optimised `full/projects/project-yampad/animated.gif`, using the validated
 converted plan path, and provided the following exact metadata values:

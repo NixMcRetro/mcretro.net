@@ -338,7 +338,7 @@ def describe_exif_tag_names(candidates: list[tuple[str, Path]]) -> None:
         )
         tags_seen.update(names)
         groups_seen.update(k.split(":", 1)[0] for k in names if ":" in k)
-        if any(k.lower().startswith(("exif:", "gps:")) for k in names):
+        if any(k.lower().startswith(("exif:", "gps:", "ifd0:", "exififd:", "gpsifd:", "interopifd:")) for k in names):
             exif_groups_seen += 1
         if "Warning" in record or "Error" in record or any(
             k.endswith((":Warning", ":Error")) for k in record

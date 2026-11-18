@@ -216,6 +216,41 @@ class GalleryWebsitePublishTests(unittest.TestCase):
         self.assertNotIn("DO NOT PRINT PRIVATE VALUE", shown)
         self.assertNotIn("PrivateCamera", shown)
 
+    def test_gif_loop_control_is_not_misclassified_as_private_metadata(self):
+        # Minimal 1x1 GIF with a normal NETSCAPE2.0 looping extension.
+        image = (b"GIF89a\x01\x00\x01\x00\x80\x00\x00"
+                 + b"\x00\x00\x00\xff\xff\xff"
+                 + b"\x2c\x00\x00\x00\x00\x01\x00\x01\x00\x00"
+                 + b"\x02\x02\x4c\x01\x00\x3b")
+        loop = b"\x21\xff\x0bNETSCAPE2.0\x03\x01\x00\x00\x00"
+        with tempfile.TemporaryDirectory() as temp:
+            filepath = Path(temp) / "loop.gif"
+            filepath.write_bytes(image[:19] + loop + image[19:])
+            self.assertEqual(pub.gif_metadata_extensions(filepath), [])
+
+    def test_gif_real_comment_extension_is_flagged_without_contents(self):
+        image = (b"GIF89a\x01\x00\x01\x00\x80\x00\x00"
+                 + b"\x00\x00\x00\xff\xff\xff"
+                 + b"\x2c\x00\x00\x00\x00\x01\x00\x01\x00\x00"
+                 + b"\x02\x02\x4c\x01\x00\x3b")
+        comment = b"\x21\xfe\x06SECRET\x00"
+        with tempfile.TemporaryDirectory() as temp:
+            filepath = Path(temp) / "with-comment.gif"
+            filepath.write_bytes(image[:19] + comment + image[19:])
+            findings = pub.gif_metadata_extensions(filepath)
+            self.assertEqual(findings, ["GIF Comment extension"])
+            self.assertNotIn("SECRET", str(findings))
+
+    def test_gif_random_comment_bytes_inside_image_data_not_flagged(self):
+        image = (b"GIF89a\x01\x00\x01\x00\x80\x00\x00"
+                 + b"\x00\x00\x00\xff\xff\xff"
+                 + b"\x2c\x00\x00\x00\x00\x01\x00\x01\x00\x00"
+                 + b"\x02\x04\x21\xfe\x4c\x01\x00\x3b")
+        with tempfile.TemporaryDirectory() as temp:
+            filepath = Path(temp) / "image-byte-pattern.gif"
+            filepath.write_bytes(image)
+            self.assertEqual(pub.gif_metadata_extensions(filepath), [])
+
     def test_privacy_report_cli_does_not_contact_r2(self):
         with patch.object(pub, "check_local") as local, \
              patch.object(pub, "list_remote") as remote, \

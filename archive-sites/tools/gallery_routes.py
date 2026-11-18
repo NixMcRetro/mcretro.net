@@ -1,42 +1,98 @@
-"""Stable, readable, directly fetchable archive folder URLs.
+"""Canonical nested gallery URLs and compatibility links for old flat URLs.
 
-Each folder is represented by an actual .html object in the public R2 bucket.
-The short digest disambiguates same-named folders without exposing a long or
-percent-encoded local source pathname. Do not rename routes after publication.
+New paths are real static HTML R2 object keys, without server-side rewrites.
+The original hashed routes remain as separate, exact redirect HTML objects.
+Collision suffixes are used only for sibling names whose normalised slugs
+would otherwise match. Never rename public image object keys.
 """
 from __future__ import annotations
 
+from collections import Counter
 import hashlib
 import re
 import unicodedata
 
 
-def folder_url(path: str) -> str:
+def _validated_parts(path: str) -> list[str]:
+    if (not isinstance(path, str) or not path or path.startswith('/') or
+            any(ord(c) < 32 or ord(c) == 127 for c in path) or
+            any(c in path for c in '?#\\') or
+            any(part in ('', '.', '..') for part in path.split('/'))):
+        raise ValueError(f'Unsafe gallery folder path: {path!r}')
+    return path.split('/')
+
+
+def _slug(segment: str) -> str:
+    ascii_label = unicodedata.normalize('NFKD', segment).encode('ascii', 'ignore').decode('ascii')
+    return re.sub(r'[^a-z0-9]+', '-', ascii_label.lower()).strip('-')[:80].strip('-') or 'folder'
+
+
+def legacy_folder_url(path: str) -> str:
+    """Original published flat route, maintained solely for old bookmarks."""
     if path == '':
         return '/'
-    if (not isinstance(path, str) or path.startswith('/') or
-            any(c in path for c in '?#\\\x00') or
-            any(part in ('', '.', '..') for part in path.split('/'))):
-        raise ValueError(f'Unsafe folder path: {path!r}')
-    last = path.split('/')[-1]
-    ascii_label = unicodedata.normalize('NFKD', last).encode('ascii', 'ignore').decode('ascii')
-    slug = re.sub(r'[^a-z0-9]+', '-', ascii_label.lower()).strip('-')[:40].strip('-') or 'folder'
+    parts = _validated_parts(path)
+    old_slug = _slug(parts[-1])[:40].strip('-') or 'folder'
+    # This reproduces the *original* 40-character legacy slug, including
+    # truncation after normalization (before collision hashing).
     digest = hashlib.sha256(path.encode('utf-8')).hexdigest()[:10]
-    return '/albums/' + slug + '-' + digest + '.html'
+    return '/albums/' + old_slug + '-' + digest + '.html'
+
+
+def folder_url(path: str) -> str:
+    """Readable default; use plan_folder_routes for collision-aware catalogues."""
+    if path == '':
+        return '/'
+    return '/albums/' + '/'.join(_slug(s) for s in _validated_parts(path)) + '.html'
+
+
+def plan_folder_routes(paths: list[str]) -> dict[str, str]:
+    """Assign stable nested paths and hash only true sibling slug collisions."""
+    if '' not in paths or len(paths) != len(set(paths)):
+        raise ValueError('Gallery needs one unique root folder')
+    all_paths = set(paths)
+    for path in paths:
+        if path:
+            parts = _validated_parts(path)
+            parent = '/'.join(parts[:-1])
+            if parent not in all_paths:
+                raise ValueError(f'Gallery folder has no parent: {path!r}')
+    siblings: dict[str, Counter] = {}
+    for path in paths:
+        if path:
+            parent, _, last = path.rpartition('/')
+            siblings.setdefault(parent, Counter())[_slug(last)] += 1
+
+    segments: dict[str, str] = {}
+    routes = {'': '/'}
+    for path in sorted((p for p in paths if p), key=lambda p: (p.count('/'), p)):
+        parent, _, last = path.rpartition('/')
+        name = _slug(last)
+        if siblings[parent][name] > 1:
+            name += '-' + hashlib.sha256(path.encode('utf-8')).hexdigest()[:10]
+        segments[path] = name
+        parent_route = routes[parent]
+        route = (parent_route.removesuffix('.html') + '/' + name + '.html'
+                 if parent else '/albums/' + name + '.html')
+        routes[path] = route
+
+    canonical = set(routes.values())
+    legacy = {legacy_folder_url(path) for path in paths if path}
+    if len(canonical) != len(routes) or any(key in canonical for key in legacy):
+        raise ValueError('Canonical folder URL conflicts with legacy redirect key')
+    return routes
 
 
 def validate_routes(folders: list[dict]) -> dict[str, str]:
-    routes: dict[str, str] = {}
-    used = set()
+    paths = [node.get('path') for node in folders]
+    if any(not isinstance(p, str) for p in paths):
+        raise ValueError('Invalid gallery folder path')
+    routes = plan_folder_routes(paths)
     for node in folders:
-        path = node.get('path')
-        if not isinstance(path, str) or path in routes:
-            raise ValueError(f'Duplicate or invalid folder path: {path!r}')
-        url = folder_url(path)
-        if url in used or node.get('url') != url:
-            raise ValueError(f'Incorrect or duplicate canonical folder URL: {path!r}')
-        used.add(url)
-        routes[path] = url
-    if '' not in routes:
-        raise ValueError('Root folder missing')
+        if node.get('url') != routes[node['path']]:
+            raise ValueError('Incorrect canonical nested folder URL: ' + node['path'])
+        parent = node.get('parent')
+        expected_parent = None if not node['path'] else node['path'].rpartition('/')[0]
+        if parent != expected_parent:
+            raise ValueError('Incorrect gallery parent folder: ' + node['path'])
     return routes

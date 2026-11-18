@@ -24,6 +24,34 @@ extensions (one warning). The 336-object gallery website publication
 remains BLOCKED. No gallery web objects have been uploaded, PR #271 is
 still draft and unmerged.
 
+## 19th November 2026 - Real Mac strict preflight still blocks GIF
+
+The owner reran `--privacy-audit` using the first file-specific GIF
+allowlist. **40 JPEG XL objects passed** their technical Exif test; the
+retina-name false positive did not recur. But the final local scan still
+reported **one** blocking item:
+`full/projects/project-yampad/animated.gif`, with Comment and other GIF
+Application extensions. This indicates that at least one *strict*
+ExifTool/json/metadata-schema predicate rejected the file, despite
+the earlier human-visible review showing generic values. **Do not
+interpret the owner-reviewed human output as passing the actual
+publication gate**, and do not weaken it.
+
+To diagnose the precise mismatch without publishing private metadata,
+the draft tool now supports optional reason-code reporting in
+`cleared_yampad_gif_extensions(path, diagnostics=[])`. The existing
+**local-only** `--inspect-unresolved` prints its strict PASS/BLOCKED
+status and the safe failure reason (tag *names* or generic categories
+only, never values). Tests check fail-closed behavior and redaction.
+This diagnostic does **not** contact R2, modify any images, or approve
+publication.
+
+**Current status: website remains unpublished.** Await the targeted
+Mac-local diagnostic readback, correct only the actual mismatching
+predicate, and require a fresh `--privacy-audit` PASS before uploading
+the 336 site objects. The 16,823 already uploaded photo objects are
+unchanged.
+
 ## 19th November 2026 - Owner-confirmed benign Yampad metadata
 
 The owner ran an additional *local read-only* ExifTool command on the single

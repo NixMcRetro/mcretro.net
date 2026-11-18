@@ -6,7 +6,8 @@ import tempfile
 import unittest
 
 from build_mcretro_r2_catalogues import build_photos
-from gallery_routes import folder_url, validate_routes
+from gallery_routes import (folder_url, legacy_folder_url, plan_folder_routes,
+                            validate_routes)
 from render_gallery_pages import render_pages
 
 TEMPLATE = Path(__file__).resolve().parents[1] / 'photo-gallery/index.html'
@@ -46,14 +47,33 @@ class StaticGalleryTests(unittest.TestCase):
     def test_readable_canonical_url_stable_and_unambiguous(self):
         a = folder_url('accessories/hp-l1706-17-inch-lcd-colour-monitor-px849a/serial-cnk7040y04')
         b = folder_url('computers/serial-cnk7040y04')
-        self.assertTrue(a.startswith('/albums/serial-cnk7040y04-'))
+        self.assertTrue(a.startswith('/albums/accessories/hp-l1706-17-inch-lcd-colour-monitor-px849a/serial-cnk7040y04'))
         self.assertTrue(a.endswith('.html'))
-        self.assertLess(len(a), 100)
+        self.assertLess(len(a), 250)
         self.assertEqual(a, folder_url('accessories/hp-l1706-17-inch-lcd-colour-monitor-px849a/serial-cnk7040y04'))
         self.assertNotEqual(a, b)
         self.assertEqual(folder_url(''), '/')
         with self.assertRaises(ValueError):
             folder_url('../etc/passwd')
+
+    def test_nested_urls_and_legacy_redirects_are_collision_safe(self):
+        paths = ['', 'the-collection', 'the-collection/retired',
+                 'other', 'other/retired', 'other/RETired']
+        planned = plan_folder_routes(paths)
+        self.assertEqual(planned['the-collection'],
+                         '/albums/the-collection.html')
+        self.assertEqual(planned['the-collection/retired'],
+                         '/albums/the-collection/retired.html')
+        self.assertNotEqual(planned['other/retired'],
+                            planned['other/RETired'])
+        self.assertTrue(planned['other/retired'].startswith('/albums/other/retired-'))
+        self.assertEqual(legacy_folder_url('the-collection/retired'),
+                         '/albums/retired-ef04734302.html')
+        self.assertEqual(legacy_folder_url('the-collection'),
+                         '/albums/the-collection-0a3ae27b1b.html')
+        self.assertNotEqual(planned['other/retired'], planned['the-collection/retired'])
+        with self.assertRaises(ValueError):
+            plan_folder_routes(['', 'ab/cd'])
 
     def test_static_html_and_sitemap_show_real_folder_links(self):
         self.photo('accessories/hp-l1706-17-inch-lcd-colour-monitor-px849a/serial-cnk7040y04/IMG_1.jpg')
@@ -66,7 +86,7 @@ class StaticGalleryTests(unittest.TestCase):
         routes = validate_routes(manifest['folders'])
         self.assertGreater(len(routes), 5)
         result = render_pages(self.stage, TEMPLATE)
-        self.assertEqual(result['html_pages'], len(routes))
+        self.assertEqual(result['html_pages'], 2 * len(routes) - 1)
         self.assertFalse(result['published'])
         website = self.stage / 'photo-gallery/site'
         root = (website / 'index.html').read_text()
@@ -75,6 +95,10 @@ class StaticGalleryTests(unittest.TestCase):
         self.assertIn(routes['accessories'], parser.hrefs)
         self.assertTrue(all('#folder=' not in link for link in parser.hrefs),
                         'Canonical links must not use JavaScript hash fragments')
+        self.assertTrue((website / legacy_folder_url('accessories').lstrip('/')).is_file())
+        old_page = (website / legacy_folder_url('accessories').lstrip('/')).read_text()
+        self.assertIn('content="0; url=/albums/accessories.html"', old_page)
+        self.assertIn('name="robots" content="noindex,follow"', old_page)
         self.assertIn('fetch("/albums.json"', root)
         leaf = 'accessories/hp-l1706-17-inch-lcd-colour-monitor-px849a/serial-cnk7040y04'
         page = (website / routes[leaf].lstrip('/')).read_text()
@@ -98,7 +122,7 @@ class StaticGalleryTests(unittest.TestCase):
         self.assertIn('https://photos.mcretro.net' + routes[leaf], sitemap)
         with (self.stage / 'reports/gallery-pages-upload-plan.csv').open() as source:
             planned = list(csv.DictReader(source))
-        self.assertEqual(len(planned), len(routes) + 2)
+        self.assertEqual(len(planned), 2 * len(routes) + 1)
         self.assertTrue(all(item['approved_for_publication'] == 'NO' for item in planned))
 
     def test_unsafe_photo_names_escaped_in_html(self):

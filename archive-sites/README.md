@@ -691,6 +691,28 @@ invent alt text or captions.
 
 ### Privacy hardening before the first public gallery release
 
+**Latest owner-reviewed metadata (19th November 2026):** The initial
+43 privacy scanner findings were resolved individually without changing
+any optimised photos. Forty Nintendo DS JPEG XL objects contained only
+strictly allowlisted dimensions and colour-space tags. The two apparent
+email warnings were one `@3x.jxl` retina-image filename and were fixed
+with a narrowly constrained filename-pattern exception. The remaining
+Project Yampad GIF was found to contain **two identical Display P3
+colour profiles** and the exact benign 25-byte comment
+`Optimized using ezgif.com`, with both profile copyright tags reading
+`Copyright Apple Inc., 2017`.
+
+The draft publication script now performs an **exact, fail-closed** check
+for these GIF values on each privacy preflight, including all ten approved
+ICC tag names for both profiles, their exact descriptions and copyright
+values, identical ICC payloads and no additional extensions. The
+specific GIF may pass without stripping metadata if the owner's
+Mac confirms the same values. This does **not** allow arbitrary comments,
+unknown profiles, or other GIFs. The owner has **not yet rerun**
+`--privacy-audit` against this newest script; the gallery website
+remains **unpublished** pending that live readback and the previously
+authorised `--upload`.
+
 The publication script now runs a **fail-closed local privacy check** before
 any upload. It checks the public-projected catalogue and every generated
 HTML/sitemap file for high-risk exposed strings such as absolute user

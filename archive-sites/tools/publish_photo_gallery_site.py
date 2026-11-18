@@ -195,6 +195,82 @@ def jxl_private_boxes(path: Path) -> list[str]:
         return flagged
 
 
+def gif_metadata_extensions(path: Path) -> list[str]:
+    """Parse actual GIF extension blocks, ignoring image data and loop controls.
+
+    Never output comment/application values: report only structural types.
+    This avoids matching arbitrary '\x21\xfe' bytes inside pixel data.
+    """
+    data = path.read_bytes()
+    if len(data) < 14 or data[:6] not in (b"GIF87a", b"GIF89a"):
+        raise ValueError("Invalid GIF structure: " + path.name)
+    packed = data[10]
+    index = 13 + (3 * (1 << ((packed & 7) + 1)) if packed & 128 else 0)
+    findings = []
+
+    def skip_subblocks(pos: int) -> int:
+        while True:
+            if pos >= len(data):
+                raise ValueError("Truncated GIF data sub-block")
+            length = data[pos]
+            pos += 1
+            if pos + length > len(data):
+                raise ValueError("Truncated GIF extension data")
+            pos += length
+            if length == 0:
+                return pos
+
+    while index < len(data):
+        marker = data[index]
+        index += 1
+        if marker == 0x3B:  # GIF trailer
+            if index != len(data):
+                findings.append("trailing data after GIF trailer")
+            return findings
+        if marker == 0x21:  # extension introducer
+            if index >= len(data):
+                raise ValueError("Truncated GIF extension")
+            label = data[index]
+            index += 1
+            if index >= len(data):
+                raise ValueError("Truncated GIF extension block size")
+            header_len = data[index]
+            index += 1
+            if index + header_len > len(data):
+                raise ValueError("Truncated GIF extension header")
+            header = data[index:index + header_len]
+            index += header_len
+            if label == 0xFE:
+                findings.append("GIF Comment extension")
+            elif label == 0xFF:
+                if header in (b"NETSCAPE2.0", b"ANIMEXTS1.0"):
+                    pass  # ordinary animation loop control, not a privacy alert
+                elif header == b"XMP DataXMP":
+                    findings.append("GIF XMP application extension")
+                else:
+                    findings.append("other GIF application extension")
+            elif label == 0x01:
+                findings.append("GIF Plain Text extension")
+            elif label not in (0xF9,):
+                findings.append("unrecognised GIF extension")
+            index = skip_subblocks(index)
+            continue
+        if marker == 0x2C:  # image descriptor
+            if index + 9 > len(data):
+                raise ValueError("Truncated GIF frame descriptor")
+            local_packed = data[index + 8]
+            index += 9
+            if local_packed & 128:
+                index += 3 * (1 << ((local_packed & 7) + 1))
+            if index >= len(data):
+                raise ValueError("Truncated GIF LZW data")
+            index += 1  # LZW minimum code size
+            index = skip_subblocks(index)
+            continue
+        raise ValueError("Unexpected GIF block marker")
+    raise ValueError("GIF trailer missing")
+
+
 def describe_exif_tag_names(candidates: list[tuple[str, Path]]) -> None:
     """Diagnostic only: ExifTool tag NAMES, never field VALUES.
 
@@ -246,6 +322,10 @@ def describe_exif_tag_names(candidates: list[tuple[str, Path]]) -> None:
     )
     files_with_suspect_tags = 0
     unparsed = 0
+    tags_seen: set[str] = set()
+    groups_seen: set[str] = set()
+    warnings_seen = 0
+    exif_groups_seen = 0
     for key, local in candidates:
         record = by_source.get(str(local))
         if not record:
@@ -256,6 +336,14 @@ def describe_exif_tag_names(candidates: list[tuple[str, Path]]) -> None:
             str(k) for k in record
             if k != "SourceFile" and not k.startswith(("File:", "System:"))
         )
+        tags_seen.update(names)
+        groups_seen.update(k.split(":", 1)[0] for k in names if ":" in k)
+        if any(k.lower().startswith(("exif:", "gps:")) for k in names):
+            exif_groups_seen += 1
+        if "Warning" in record or "Error" in record or any(
+            k.endswith((":Warning", ":Error")) for k in record
+        ):
+            warnings_seen += 1
         suspects = [k for k in names if pattern.search(k)]
         if suspects:
             files_with_suspect_tags += 1
@@ -269,7 +357,19 @@ def describe_exif_tag_names(candidates: list[tuple[str, Path]]) -> None:
     print(
         f"  SUMMARY: {len(candidates)} metadata-bearing objects, "
         f"{files_with_suspect_tags} with potentially sensitive tag names, "
-        f"{unparsed} unparsed. Values intentionally withheld.",
+        f"{unparsed} unparsed, {warnings_seen} with ExifTool warning/error tags. "
+        "Values intentionally withheld.",
+        flush=True,
+    )
+    print("  ALL UNIQUE TAG NAMES (no values): " +
+          (", ".join(sorted(tags_seen)) if tags_seen else "none"), flush=True)
+    print("  TAG GROUPS: " +
+          (", ".join(sorted(groups_seen)) if groups_seen else "none"),
+          flush=True)
+    print(
+        f"  EXIF/GPS GROUP PARSED IN: {exif_groups_seen}/{len(candidates)} "
+        "files. If zero, the Brotli-compressed Exif payload may not have "
+        "been decoded. This is not privacy clearance.",
         flush=True,
     )
     print(
@@ -357,11 +457,14 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
                 metadata_candidates.append((key, file))
             scanned += 1
         elif key.endswith(".gif"):
-            # A GIF can contain Comment or XMP application extensions.
-            # Flag suspicious textual metadata rather than modifying it.
-            payload = file.read_bytes()
-            if b"XMP DataXMP" in payload or b"EXIF" in payload or b"\x21\xfe" in payload:
-                issues.append(f"{key}: GIF application/comment metadata needs review")
+            # Parse the actual extension blocks. A raw byte-pattern search
+            # can hit random compressed image data and invent a warning.
+            labels = gif_metadata_extensions(file)
+            if labels:
+                issues.append(
+                    f"{key}: GIF extension(s) requiring privacy review "
+                    f"({', '.join(sorted(set(labels)))})"
+                )
     if issues:
         print(f"PRIVACY REVIEW REQUIRED: {len(issues)} potential issue(s) detected.",
               file=sys.stderr)

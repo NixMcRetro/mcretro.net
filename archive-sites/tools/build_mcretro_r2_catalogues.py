@@ -18,7 +18,7 @@ import re
 import sys
 
 from gallery_naming import load_rules, build_name_review
-from gallery_routes import folder_url
+from gallery_routes import plan_folder_routes
 from gallery_descriptions import load_descriptions, approved_metadata
 from gallery_keys import public_photo_paths
 
@@ -194,6 +194,8 @@ def build_photos(original: Path, converted: Path, stage: Path, rules: dict | Non
             continue
         parts = directory.split('/')
         all_dirs.update('/'.join(parts[:i + 1]) for i in range(len(parts)))
+    route_paths = [''] + sorted(all_dirs)
+    nested_routes = plan_folder_routes(route_paths)
     display_names, name_review = build_name_review(list(all_dirs), rules)
     albums = []
     album_ids = {}
@@ -244,7 +246,7 @@ def build_photos(original: Path, converted: Path, stage: Path, rules: dict | Non
             node_path = segment if not prefix else prefix + '/' + segment
             if node_path not in folder_nodes:
                 folder_nodes[node_path] = {
-                    'path': node_path, 'url': folder_url(node_path), 'name': display_names.get(node_path, pretty(segment)),
+                    'path': node_path, 'url': nested_routes[node_path], 'name': display_names.get(node_path, pretty(segment)),
                     'parent': prefix, 'photo_count': 0, 'direct_photo_count': 0}
             prefix = node_path
 

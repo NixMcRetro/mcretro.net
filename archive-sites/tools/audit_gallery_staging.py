@@ -24,11 +24,11 @@ from pathlib import Path
 import sys
 from xml.etree import ElementTree
 
-from gallery_routes import validate_routes
+from gallery_routes import legacy_folder_url, validate_routes
 from preview_mcretro_gallery import (
     validate as preview_validate, local_theme_fonts, local_static_pages,
 )
-from render_gallery_pages import render_static_page
+from render_gallery_pages import render_legacy_redirect, render_static_page
 from validate_r2_upload import (
     DEFAULT_CONVERTED, DEFAULT_STAGE, validate as upload_validate,
 )
@@ -46,7 +46,10 @@ def _verify_site(stage: Path, data: dict, html: Path | None) -> dict:
     root = stage / 'photo-gallery/site'
     manifest = stage / 'photo-gallery/albums.generated.json'
     routes = validate_routes(data['folders'])
-    expected_keys = {_page_key(route) for route in routes.values()} | {
+    alias_keys = {
+        _page_key(legacy_folder_url(path)) for path in routes if path
+    }
+    expected_keys = {_page_key(route) for route in routes.values()} | alias_keys | {
         'albums.json', 'sitemap.xml',
     }
     problems: list[str] = []
@@ -100,6 +103,15 @@ def _verify_site(stage: Path, data: dict, html: Path | None) -> dict:
                 stale.append(key)
             else:
                 verified_pages += 1
+            if folder['path']:
+                alias_key = _page_key(legacy_folder_url(folder['path']))
+                alias_path = root / alias_key
+                if (not alias_path.is_file() or alias_path.is_symlink() or
+                        alias_path.read_text(encoding='utf-8') !=
+                        render_legacy_redirect(routes[folder['path']])):
+                    stale.append(alias_key)
+                else:
+                    verified_pages += 1
         if stale:
             problems.append(f'{len(stale)} missing or STALE static HTML pages; first: {stale[:3]}')
 
@@ -155,7 +167,7 @@ def _verify_site(stage: Path, data: dict, html: Path | None) -> dict:
             problems.append(f'{len(extras)} unplanned static site files (do not bulk upload); first: {extras[:3]}')
 
     return {
-        'expected_static_pages': len(routes),
+        'expected_static_pages': len(routes) + len(alias_keys),
         'expected_static_objects': len(expected_keys),
         'exact_html_pages_verified': verified_pages,
         'ignored_finder_metadata_count': len(finder_metadata),

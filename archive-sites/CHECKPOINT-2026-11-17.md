@@ -26,6 +26,19 @@ still draft and unmerged.
 
 ## 19th November 2026 - 43 privacy flags reduced to 3, website still not uploaded
 
+**Subsequent review of the previously supplied 8,412-photo manifest:**
+photo 8283 has the display name `yampad on@3x`. The scanner's broad
+email regex mistakes the standard `@3x.jxl` retina-image suffix for an
+email domain. The draft publisher now exempts **only** `@2x.jxl` or
+`@3x.jxl` matches occurring at the very end of photo-path/thumb
+filenames, with no other email-like matches in the path. Actual email
+addresses elsewhere still fail the privacy gate. Regression tests added.
+**After the owner reruns the local check against current staging, the
+expected remaining issue is only the Project Yampad animated GIF's
+Comment and non-loop Application extensions.** No cloud or local image
+objects have been changed or waived. Do not mark the public site ready
+until the strict privacy preflight reports PASS.
+
 The owner's second read-only privacy report (script commit
 `3971ccca2c630c8ce129cf5dd1afcd1322fdc6d5`) confirms that 40
 optimised Nintendo DS IS-NITRO JPEG XL objects contain only strictly

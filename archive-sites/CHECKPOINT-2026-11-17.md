@@ -26,6 +26,25 @@ still draft and unmerged.
 
 ## 19th November 2026 - Latest local readback, only GIF extensions unresolved
 
+**Owner's latest read-only GIF diagnostic:** `--inspect-unresolved` on the Mac
+reported **zero** strict email-like paths and one recognised retina
+`@2x/@3x` filename (not an email). The Project Yampad
+`full/projects/project-yampad/animated.gif` has exactly three
+non-loop extensions: **two recognised `ICCRGBG1012` ICC colour-profile
+blocks**, each 548 payload bytes, whose opaque payloads are
+**byte-for-byte identical**; and one **25-byte printable GIF Comment**.
+No known sensitive-data regex matched any extension. The ICC
+identifier identifies standard colour-management storage, **not a
+complete audit of embedded ICC tag values**. The actual comment contents
+have deliberately **not** been logged or posted.
+
+**Privacy status:** only the GIF extension content requires further
+owner/technical review before clearing the strict privacy gate.
+No image replacement, no R2 object deletion and no gallery site
+publication has occurred. Next step should be local-only display and
+owner judgement of the 25-byte comment, alongside safe ICC structure/tag
+inspection. `--inspect-unresolved` is not a publishing waiver.
+
 Owner ran the targeted offline `--inspect-unresolved` on their Mac.
 Results:
 

@@ -105,6 +105,12 @@ class RouteMigrationTests(unittest.TestCase):
                 control = patch.object(module, name, value)
                 control.start()
                 self.addCleanup(control.stop)
+        rclone_check = patch.object(
+            migration.shutil, 'which',
+            side_effect=lambda name: '/usr/bin/rclone' if name == 'rclone' else None
+        )
+        rclone_check.start()
+        self.addCleanup(rclone_check.stop)
 
     @staticmethod
     def _row(file, key):

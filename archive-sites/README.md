@@ -1,5 +1,85 @@
 # McRetro R2 archive sites - staged restoration
 
+## 19th November 2026: nested URL migration (draft, NOT executed)
+
+The owner has since reported accessing live flat URLs for The Collection
+and Retired. Those old URLs hide their parent folder path. This draft
+generates nested pages such as:
+
+    /albums/the-collection.html
+    /albums/the-collection/retired.html
+
+Every old hashed link is retained as an exact same-origin, non-indexed
+HTML redirect to its canonical location. No photo key, byte, album ID,
+private review metadata, Cloudflare routing rule, or main McRetro site changes.
+
+**This is a controlled website migration, not another image transfer.**
+The original publisher belongs to the PRE-migration release. After
+regeneration the website contains **329 canonical HTML pages, 328 legacy
+redirect pages, public-projected JSON, sitemap and five fonts = 664 keys**.
+All 336 original website keys remain present as redirects or updated files.
+
+**IMPORTANT: do not rerun the old publisher --upload with new staging.**
+Use the separate migration tool below. Neither committing this PR nor
+running --prepare uploads anything. Older "website unpublished" assertions
+later in this file refer to the prior checkpoint, not necessarily the live
+current state.
+
+### Mac-local migration sequence
+
+Fetch a matching set of draft branch scripts into Downloads. Keep the
+gallery HTML template and the other existing helpers in the same directory.
+Do not rerun the catalogue builder: it traverses the protected original
+archive, which this migration does not need.
+
+    BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites"
+    for tool in gallery_routes.py render_gallery_pages.py audit_gallery_staging.py publish_photo_gallery_site.py migrate_gallery_routes.py; do
+      curl -fLsS "$BASE/tools/$tool" -o "$HOME/Downloads/$tool" || exit 1
+    done
+
+1. **Local preparation only:** run --prepare once, before re-rendering by
+   any other means. This snapshots the ORIGINAL staged 336 website keys
+   as exact PUBLIC-SAFE bytes under the private staging reports folder:
+   ~/Desktop/McRetro-R2-Staging/reports/gallery-route-migration/old-site/
+   The snapshot has sanitised public albums.json, never the private staged
+   albums.json. An original PRIVATE manifest snapshot is held OUTSIDE that
+   old-site folder. The script changes only staged folder URL fields and
+   re-renders nested HTML, legacy redirects and sitemap. Never upload a
+   snapshot folder.
+
+       "$HOME/Downloads/mcretro-r2-venv/bin/python" "$HOME/Downloads/migrate_gallery_routes.py" --prepare
+
+2. **Read-only R2 preflight:** run --preflight. It performs the existing
+   strict local privacy audit, confirms all 16,823 photo keys and sizes,
+   and downloads each existing website object to verify exact old/new
+   allowed bytes. Unknown keys, missing originals, altered bytes or
+   metadata still block migration.
+
+       "$HOME/Downloads/mcretro-r2-venv/bin/python" "$HOME/Downloads/migrate_gallery_routes.py" --preflight
+
+3. **Separate owner release decision required:** only after review and
+   clean preflight, --upload replaces precisely those website keys that
+   have been verified. New canonical pages are written first, legacy
+   redirect pages next, then public JSON/sitemap and homepage last.
+   It does not delete any R2 objects, alter images, touch GitHub main,
+   or add Cloudflare rewrite rules. Partial uploads may be safely resumed
+   only if existing remote bytes remain the reviewed old or new versions.
+
+       "$HOME/Downloads/mcretro-r2-venv/bin/python" "$HOME/Downloads/migrate_gallery_routes.py" --upload
+
+4. **Read-only verification:** run --verify to compare every new website
+   object byte-for-byte and sample MIME headers. Test old and new links
+   in a browser. Edge caching and the root "/" rewrite are separate.
+
+       "$HOME/Downloads/mcretro-r2-venv/bin/python" "$HOME/Downloads/migrate_gallery_routes.py" --verify
+
+No GitHub Action runs these real Mac-local commands. CI uses synthetic
+local fixtures and mocked R2 responses only. Never upload the private
+albums.generated.json or site/albums.json instead of the projected public
+catalogue.
+
+---
+
 **Latest verified project state:** [17th November 2026 checkpoint](CHECKPOINT-2026-11-17.md). **All 16,823 image objects (4,276,856,102 bytes) have now been uploaded to `mcretro-photos`**, with all remote keys and sizes matched, 60 authenticated MIME/size samples passed, and 40 downloaded-byte comparisons matching. The **Photo Gallery website, HTML, sitemap, fonts, and private metadata remain unpublished**. This is a **draft, unmerged PR**, not a gallery website release. The checkpoint supersedes any earlier status statements below.
 
 Two separate static website starters are in this **draft, unmerged PR**. Neither site has been published by this branch.

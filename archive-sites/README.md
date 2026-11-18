@@ -735,7 +735,11 @@ the publication gate:
 It prints **all** scanner findings, not merely the first 12. If an existing
 `exiftool` is found, it additionally reads the flagged optimised JPEG XL
 images and prints **metadata tag names and counts only**, never tag values
-(GPS coordinates, names, or device identifiers are not printed). This is
+(GPS coordinates, names, or device identifiers are not printed). The report
+also prints all unique tag names and groups, with an explicit indication
+when no Exif/GPS group was decoded. A structurally parsed GIF extension
+check now distinguishes actual comments/XMP from normal NETSCAPE looping
+extensions or accidental byte matches inside compressed image data. This is
 useful for deciding whether to review/remove metadata. It does not
 automatically determine whether a tag is harmless. The report does not
 write an output file, contact R2 or run an upload. If ExifTool is missing
@@ -803,6 +807,18 @@ This publishes the design in its **current editorial state**. All 8,412
 photos still need individual accessibility alt review and possibly useful
 captions; no AI text is silently approved. PR #271 stays draft and must
 not be merged as part of R2 publication.
+
+**Owner's next report:** The all-findings report confirmed the original
+43 alerts comprise 40 JXL metadata-box warnings (20 full-size
+Nintendo DS IS-NITRO capture images and 20 thumbnails), two path/thumbnail
+email-pattern hits on the same photo, and one Project Yampad animated GIF.
+ExifTool reported nine tag names for each of the 40 JXLs, with zero
+**identified** sensitive tag-name patterns and zero unparsed files.
+This is NOT yet proof that their compressed Exif contents were
+decoded. The improved next diagnostic prints the tag names/group names
+so the owner can distinguish Exif from generic JXL/file metadata.
+Do not modify the already-public R2 photos or weaken the site upload gate
+until the relevant metadata and URL have been reviewed.
 
 ## Later: publish only after explicit owner approval
 

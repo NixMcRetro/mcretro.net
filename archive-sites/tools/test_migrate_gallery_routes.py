@@ -91,7 +91,8 @@ class RouteMigrationTests(unittest.TestCase):
 
         patches = {
             migration: [('EXPECTED_CANONICAL_HTML', self.folder_count),
-                        ('EXPECTED_OLD_SITE', self.folder_count + 2 + 5)],
+                        ('EXPECTED_OLD_SITE', self.folder_count + 2 + 5),
+                        ('EXPECTED_PHOTOS', 4)],
             pub: [('EXPECTED_HTML', self.folder_count * 2 - 1),
                   ('EXPECTED_SITE', self.folder_count * 2 + 1),
                   ('EXPECTED_PUBLIC', self.folder_count * 2 + 6),

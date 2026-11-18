@@ -124,6 +124,35 @@ class GalleryWebsitePublishTests(unittest.TestCase):
             pub.scan_public_privacy(self.stage, self.converted, site,
                                     public, photos)
 
+    def test_retina_at_3x_filename_is_not_an_email(self):
+        pattern = next(pat for label, pat in pub.SENSITIVE_PUBLIC_MARKERS
+                       if label == "email address")
+        self.assertTrue(pub.is_retina_suffix_email_false_positive(
+            "full/projects/project-yampad/yampad-on@3x.jxl", pattern
+        ))
+        self.assertTrue(pub.is_retina_suffix_email_false_positive(
+            "thumbs/projects/project-yampad/yampad-on@2x.jxl", pattern
+        ))
+        site, photos, _ = self.local_files()
+        modified = json.loads(json.dumps(self.private))
+        modified["photos"][0]["path"] = "full/project/yampad-on@3x.jxl"
+        modified["photos"][0]["thumbnail"] = "thumbs/project/yampad-on@3x.jxl"
+        pub.scan_public_privacy(self.stage, self.converted, site,
+                                pub.public_projection(modified), photos)
+
+    def test_retina_exception_does_not_hide_real_email(self):
+        pattern = next(pat for label, pat in pub.SENSITIVE_PUBLIC_MARKERS
+                       if label == "email address")
+        self.assertFalse(pub.is_retina_suffix_email_false_positive(
+            "full/private/person@example.com@3x.jxl", pattern
+        ))
+        self.assertFalse(pub.is_retina_suffix_email_false_positive(
+            "full/private/person@example.com.jxl", pattern
+        ))
+        self.assertFalse(pub.is_retina_suffix_email_false_positive(
+            "full/private/name@3x.jpg.jxl", pattern
+        ))
+
     def test_privacy_gate_blocks_optimised_jxl_exif_container(self):
         site, photos, public = self.local_files()
         target_key = next(k for k in photos if k.endswith(".jxl"))

@@ -492,6 +492,15 @@ def inspect_remaining_privacy(stage: Path, converted: Path) -> None:
         "  Payload values, unrecognised application identifiers, and "
         "email-like strings were NOT printed.", flush=True
     )
+    reasons: list[str] = []
+    exact_ok = cleared_yampad_gif_extensions(gif_file, diagnostics=reasons)
+    print(
+        "  Strict Yampad GIF check: " +
+        ("PASS" if exact_ok else "BLOCKED"), flush=True
+    )
+    if reasons:
+        for reason in reasons:
+            print("    Safe failure reason: " + reason, flush=True)
     print(
         "NOT A PRIVACY CLEARANCE. Existing images on R2 unchanged; "
         "website publication remains blocked.",
@@ -705,61 +714,69 @@ SAFE_YAMPAD_ICC_TAGS = frozenset({
 SAFE_YAMPAD_GIF_COMMENT = "Optimized using ezgif.com"
 
 
-def cleared_yampad_gif_extensions(path: Path) -> bool:
-    """Verify the *observed* benign Yampad GIF combination, without edits.
+def cleared_yampad_gif_extensions(path: Path,
+                                  diagnostics: list[str] | None = None) -> bool:
+    """Strict, read-only clearance of the ONE observed Yampad GIF.
 
-    Requires exactly two equal 548-byte ICCRGBG1012 extensions, one exact
-    25-byte ezgif.com comment, and a successful ExifTool parse of *both*
-    Display P3 profiles. No arbitrary GIF comment/profile is allowlisted.
-    Unknown extensions, extra ICC tags, GPS metadata, changed values, and
-    missing tools fail closed. This doesn't alter local or public files.
+    Optional diagnostics are predetermined *reason codes*, never metadata
+    values, local path strings, or raw profile/comment bytes. Any unexpected
+    metadata remains blocking; no blanket bypass or R2 changes are possible.
     """
+    def blocked(reason: str) -> bool:
+        if diagnostics is not None:
+            diagnostics.append(reason)
+        return False
+
     try:
         details = gif_extension_privacy_details(path)
     except (OSError, ValueError):
-        return False
+        return blocked("GIF structure unreadable")
     expected = ["GIF ICC colour profile", "GIF Comment", "GIF ICC colour profile"]
     if [item["type"] for item in details] != expected:
-        return False
+        return blocked("Unexpected GIF extension types or order")
     if [item["bytes"] for item in details] != [548, 25, 548]:
-        return False
+        return blocked("GIF extension lengths differ from reviewed values")
     if any(item["signals"] for item in details):
-        return False
+        return blocked("Potential sensitive data detected in GIF extension")
     if details[0]["payload_digest"] != details[2]["payload_digest"]:
-        return False
+        return blocked("ICC profile payloads differ")
     if not details[1]["text_like"]:
-        return False
+        return blocked("GIF comment is not plain text")
 
     exe = shutil.which("exiftool")
     if not exe:
-        return False
+        return blocked("ExifTool not found")
     try:
         process = subprocess.run(
             [exe, "-j", "-a", "-G1", "-s", "-u", "-n", str(path)],
             capture_output=True, check=False, timeout=30,
         )
         if process.returncode:
-            return False
+            return blocked("ExifTool returned an error")
         records = json.loads(process.stdout)
     except (OSError, ValueError, UnicodeError, subprocess.TimeoutExpired):
-        return False
+        return blocked("ExifTool output unreadable or timed out")
     if not isinstance(records, list) or len(records) != 1:
-        return False
+        return blocked("Unexpected ExifTool record count")
     record = records[0]
     if not isinstance(record, dict) or record.get("SourceFile") != str(path):
-        return False
+        return blocked("ExifTool source identification mismatch")
     if any(
         key == "Warning" or key == "Error" or
         key.endswith((":Warning", ":Error"))
         for key in record
     ):
-        return False
+        return blocked("ExifTool warning or error tags found")
     comments = [
         value for key, value in record.items()
         if key == "Comment" or key.endswith(":Comment")
     ]
     if comments != [SAFE_YAMPAD_GIF_COMMENT]:
-        return False
+        return blocked(
+            "GIF Comment does not match the exact owner-reviewed text "
+            f"(matching comment fields: {sum(x == SAFE_YAMPAD_GIF_COMMENT for x in comments)}, "
+            f"total comment fields: {len(comments)})"
+        )
     for group in ("ICC_Profile", "ICC_Profile2"):
         prefix = group + ":"
         tags = {
@@ -767,23 +784,30 @@ def cleared_yampad_gif_extensions(path: Path) -> bool:
             if key.startswith(prefix)
         }
         if tags != SAFE_YAMPAD_ICC_TAGS:
-            return False
+            # Tag names are non-sensitive *schema* only; no tag values shown.
+            missing = sorted(SAFE_YAMPAD_ICC_TAGS - tags)
+            extra = sorted(tags - SAFE_YAMPAD_ICC_TAGS)
+            return blocked(
+                f"ICC tag set mismatch in {group}: "
+                f"missing names={missing}, unexpected names={extra}"
+            )
         if record.get(prefix + "ProfileDescription") != "Display P3":
-            return False
+            return blocked(f"{group} description differs from owner-reviewed value")
         if record.get(prefix + "ProfileCopyright") != "Copyright Apple Inc., 2017":
-            return False
-    # The GIF parser above permits no XMP, user-text, or other application
-    # blocks. ExifTool must not reveal unexpected additional metadata groups.
-    permitted = ("File", "System", "ExifTool", "Composite",
-                 "GIF", "ICC_Profile", "ICC_Profile2")
-    if any(
-        key != "SourceFile" and
-        (":" not in key or key.split(":", 1)[0] not in permitted)
-        for key in record
-    ):
-        return False
-    return True
+            return blocked(f"{group} copyright differs from owner-reviewed value")
 
+    permitted = {"File", "System", "ExifTool", "Composite",
+                 "GIF", "ICC_Profile", "ICC_Profile2"}
+    extras = sorted({
+        key.split(":", 1)[0] if ":" in key else "(ungrouped)"
+        for key in record
+        if key != "SourceFile" and
+        (":" not in key or key.split(":", 1)[0] not in permitted)
+    })
+    if extras:
+        return blocked(f"Unrecognised ExifTool metadata groups: {extras}")
+
+    return True
 
 def scan_public_privacy(stage: Path, converted: Path, site: dict,
                         catalogue: bytes, photo_keys: dict,

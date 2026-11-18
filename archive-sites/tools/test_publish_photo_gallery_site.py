@@ -168,6 +168,38 @@ class GalleryWebsitePublishTests(unittest.TestCase):
             pub.scan_public_privacy(self.stage, self.converted, site,
                                     public, photos)
 
+    def test_blocked_yampad_gif_reports_safe_reason_without_values(self):
+        site, photos, catalogue = self.local_files()
+        key = "full/projects/project-yampad/animated.gif"
+        gif = self.converted / key
+        gif.parent.mkdir(parents=True, exist_ok=True)
+        gif.write_bytes(b"GIF89a" + b"\0" * 100)
+        plan = self.stage / "reports/photos-upload-plan.csv"
+        with plan.open("a", newline="", encoding="utf-8") as handle:
+            writer = csv.DictWriter(handle,
+                                    fieldnames=["r2_key", "local_path"])
+            writer.writerow({"r2_key": key, "local_path": str(gif)})
+        photos[key] = gif.stat().st_size
+
+        def deny(_path, diagnostics=None):
+            diagnostics.append("GIF Comment does not match owner-reviewed text")
+            return False
+
+        with patch.object(pub, "gif_metadata_extensions",
+                          return_value=["GIF Comment extension"]), \
+             patch.object(pub, "cleared_yampad_gif_extensions",
+                          side_effect=deny):
+            stderr = io.StringIO()
+            from contextlib import redirect_stderr
+            with redirect_stderr(stderr):
+                with self.assertRaisesRegex(ValueError, "privacy preflight"):
+                    pub.scan_public_privacy(self.stage, self.converted, site,
+                                            catalogue, photos)
+        message = stderr.getvalue()
+        self.assertIn("Project Yampad GIF validation:", message)
+        self.assertIn("Comment does not match", message)
+        self.assertNotIn("private comment data", message)
+
     def test_brotli_metadata_box_is_conservatively_flagged(self):
         with tempfile.TemporaryDirectory() as temp:
             path = Path(temp) / "test.jxl"

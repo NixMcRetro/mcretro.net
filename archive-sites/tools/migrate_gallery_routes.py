@@ -63,7 +63,14 @@ def _baseline_map(stage: Path, paths: list[str]) -> dict[str, Path]:
     keys.update(fonts)
     if len(keys) != EXPECTED_OLD_SITE:
         raise ValueError('Unexpected original site key count')
-    return {key: _safe_file(saved, key) for key in sorted(keys)}
+    records = json.loads(_safe_file(stage / BASELINE, 'baseline-sha256.json').read_text())
+    if not isinstance(records, dict) or set(records) != keys:
+        raise ValueError('Original site checksum manifest is incomplete')
+    files = {key: _safe_file(saved, key) for key in sorted(keys)}
+    if any(not isinstance(records[key], str) or _sha(file.read_bytes()) != records[key]
+           for key, file in files.items()):
+        raise ValueError('Original public-safe website baseline was altered')
+    return files
 
 
 def prepare(stage: Path, template: Path) -> None:
@@ -90,6 +97,8 @@ def prepare(stage: Path, template: Path) -> None:
                          'search_terms', 'date_taken')):
         raise ValueError('Newly approved photo metadata needs separate review')
 
+    if _safe_file(stage / SITE, 'albums.json').read_bytes() != old:
+        raise ValueError('Original staged private catalogue does not match manifest')
     public_json = public_projection(data)
     old_keys = {'index.html', 'sitemap.xml', 'albums.json'} | {
         legacy_folder_url(p).lstrip('/') for p in paths if p
@@ -111,6 +120,7 @@ def prepare(stage: Path, template: Path) -> None:
     with tempfile.TemporaryDirectory(prefix='route-migration-', dir=stage / 'reports') as tmp:
         temporary = Path(tmp) / 'snapshot'
         saved = temporary / 'old-site'
+        checksum_map = {}
         for key in sorted(old_keys):
             if key == 'albums.json':
                 blob = public_json  # NEVER copy the private local site/albums.json.
@@ -127,6 +137,10 @@ def prepare(stage: Path, template: Path) -> None:
             dest = saved / key
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_bytes(blob)
+            checksum_map[key] = _sha(blob)
+        (temporary / 'baseline-sha256.json').write_text(
+            json.dumps(checksum_map, sort_keys=True, indent=2) + '\n',
+            encoding='utf-8')
         (temporary / 'original-private-manifest.json').write_bytes(old)
         temporary.rename(snapshot)
 

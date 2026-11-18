@@ -456,6 +456,120 @@ class GalleryWebsitePublishTests(unittest.TestCase):
                              records[1]["payload_digest"])
             self.assertNotIn(profile, records)
 
+    @staticmethod
+    def synthetic_yampad_gif(path: Path, *, comment: bytes =
+                            b"Optimized using ezgif.com",
+                            duplicate_profile: bool = True):
+        image = (b"GIF89a\x01\x00\x01\x00\x80\x00\x00"
+                 + b"\x00\x00\x00\xff\xff\xff"
+                 + b"\x2c\x00\x00\x00\x00\x01\x00\x01\x00\x00"
+                 + b"\x02\x02\x4c\x01\x00\x3b")
+
+        def subblocks(data):
+            return (b"".join(bytes([len(data[i:i + 255])]) + data[i:i + 255]
+                             for i in range(0, len(data), 255)) + b"\x00")
+
+        profile = bytes([1, 1]) + b"\0" * 546
+        profile2 = profile if duplicate_profile else (
+            bytes([1, 1]) + b"\1" + b"\0" * 545
+        )
+        first = b"\x21\xff\x0bICCRGBG1012" + subblocks(profile)
+        other = b"\x21\xff\x0bICCRGBG1012" + subblocks(profile2)
+        comment_block = b"\x21\xfe" + subblocks(comment)
+        path.write_bytes(image[:19] + first + comment_block +
+                         other + image[19:])
+
+    @staticmethod
+    def yampad_exif_record(path: Path):
+        record = {
+            "SourceFile": str(path),
+            "File:Comment": "Optimized using ezgif.com",
+        }
+        for group in ("ICC_Profile", "ICC_Profile2"):
+            for name in pub.SAFE_YAMPAD_ICC_TAGS:
+                record[group + ":" + name] = "technical value"
+            record[group + ":ProfileDescription"] = "Display P3"
+            record[group + ":ProfileCopyright"] = "Copyright Apple Inc., 2017"
+        return record
+
+    def test_verified_yampad_metadata_passes_exact_allowlist(self):
+        with tempfile.TemporaryDirectory() as temp:
+            gif = Path(temp) / "animated.gif"
+            self.synthetic_yampad_gif(gif)
+            record = self.yampad_exif_record(gif)
+            result = subprocess.CompletedProcess(
+                [], 0, stdout=json.dumps([record]).encode(), stderr=b""
+            )
+            with patch.object(pub.shutil, "which",
+                              return_value="/usr/local/bin/exiftool"), \
+                 patch.object(pub.subprocess, "run", return_value=result):
+                self.assertTrue(pub.cleared_yampad_gif_extensions(gif))
+            self.assertEqual(pub.gif_metadata_extensions(gif), [
+                "other GIF application extension",
+                "GIF Comment extension",
+                "other GIF application extension",
+            ])
+
+    def test_verified_yampad_comment_fails_if_changed_even_without_pii(self):
+        with tempfile.TemporaryDirectory() as temp:
+            gif = Path(temp) / "animated.gif"
+            self.synthetic_yampad_gif(gif, comment=b"Another harmless GIF note")
+            record = self.yampad_exif_record(gif)
+            record["File:Comment"] = "Another harmless GIF note"
+            result = subprocess.CompletedProcess(
+                [], 0, stdout=json.dumps([record]).encode(), stderr=b""
+            )
+            with patch.object(pub.shutil, "which",
+                              return_value="/usr/local/bin/exiftool"), \
+                 patch.object(pub.subprocess, "run", return_value=result):
+                self.assertFalse(pub.cleared_yampad_gif_extensions(gif))
+
+    def test_verified_yampad_refuses_changed_profile_or_unexpected_tags(self):
+        with tempfile.TemporaryDirectory() as temp:
+            gif = Path(temp) / "animated.gif"
+            self.synthetic_yampad_gif(gif, duplicate_profile=False)
+            record = self.yampad_exif_record(gif)
+            result = subprocess.CompletedProcess(
+                [], 0, stdout=json.dumps([record]).encode(), stderr=b""
+            )
+            with patch.object(pub.shutil, "which",
+                              return_value="/usr/local/bin/exiftool"), \
+                 patch.object(pub.subprocess, "run", return_value=result):
+                self.assertFalse(pub.cleared_yampad_gif_extensions(gif))
+
+            self.synthetic_yampad_gif(gif)
+            record["ICC_Profile2:OwnerName"] = "private identity"
+            result = subprocess.CompletedProcess(
+                [], 0, stdout=json.dumps([record]).encode(), stderr=b""
+            )
+            with patch.object(pub.shutil, "which",
+                              return_value="/usr/local/bin/exiftool"), \
+                 patch.object(pub.subprocess, "run", return_value=result):
+                self.assertFalse(pub.cleared_yampad_gif_extensions(gif))
+            record.pop("ICC_Profile2:OwnerName")
+            record["ICC_Profile2:ProfileCopyright"] = "Private person"
+            result = subprocess.CompletedProcess(
+                [], 0, stdout=json.dumps([record]).encode(), stderr=b""
+            )
+            with patch.object(pub.shutil, "which",
+                              return_value="/usr/local/bin/exiftool"), \
+                 patch.object(pub.subprocess, "run", return_value=result):
+                self.assertFalse(pub.cleared_yampad_gif_extensions(gif))
+
+    def test_verified_yampad_requires_successful_exiftool(self):
+        with tempfile.TemporaryDirectory() as temp:
+            gif = Path(temp) / "animated.gif"
+            self.synthetic_yampad_gif(gif)
+            with patch.object(pub.shutil, "which", return_value=None):
+                self.assertFalse(pub.cleared_yampad_gif_extensions(gif))
+            with patch.object(pub.shutil, "which",
+                              return_value="/usr/local/bin/exiftool"), \
+                 patch.object(pub.subprocess, "run",
+                              return_value=subprocess.CompletedProcess(
+                                  [], 1, stdout=b"[]", stderr=b"error"
+                              )):
+                self.assertFalse(pub.cleared_yampad_gif_extensions(gif))
+
     def test_unresolved_diagnostic_does_not_contact_r2(self):
         with patch.object(pub, "inspect_remaining_privacy") as scan, \
              patch.object(pub, "list_remote") as remote, \

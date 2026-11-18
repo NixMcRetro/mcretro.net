@@ -1155,9 +1155,12 @@ def list_remote() -> dict[str, dict]:
     return remote
 
 
-def compare_remote(site: dict, photos: dict, remote: dict) -> list[str]:
+def compare_remote(site: dict, photos: dict, remote: dict,
+                   allowed_legacy_keys: frozenset[str] = frozenset()) -> list[str]:
     expected = set(site) | set(photos)
-    extra = sorted(set(remote) - expected)
+    if set(allowed_legacy_keys) & expected:
+        raise ValueError('Legacy exception overlaps expected release keys')
+    extra = sorted(set(remote) - expected - set(allowed_legacy_keys))
     if extra:
         raise ValueError(f"Unplanned remote objects ({len(extra)}); first: {extra[:3]}")
     missing_photos = sorted(set(photos) - set(remote))
@@ -1231,9 +1234,10 @@ def verify_existing_site_bytes(site: dict, keys: set[str],
 
 
 def verify_remote(site: dict, photos: dict, catalogue: bytes,
-                  temp_root: Path) -> None:
+                  temp_root: Path,
+                  allowed_legacy_keys: frozenset[str] = frozenset()) -> None:
     remote = list_remote()
-    missing = compare_remote(site, photos, remote)
+    missing = compare_remote(site, photos, remote, allowed_legacy_keys)
     if missing:
         raise ValueError(f"{len(missing)} website objects still missing: {missing[:3]}")
     # Actual byte comparisons, not just filenames/sizes. No delete or overwrite.

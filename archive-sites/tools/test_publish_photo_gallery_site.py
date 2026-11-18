@@ -435,6 +435,27 @@ class GalleryWebsitePublishTests(unittest.TestCase):
             self.assertNotIn("PRIVATEAPP1", output)
             self.assertIn("website publication remains blocked", output)
 
+    def test_gif_icc_application_is_classified_without_payload_contents(self):
+        with tempfile.TemporaryDirectory() as temp:
+            photo = Path(temp) / "synthetic.gif"
+            image = (b"GIF89a\x01\x00\x01\x00\x80\x00\x00"
+                     + b"\x00\x00\x00\xff\xff\xff"
+                     + b"\x2c\x00\x00\x00\x00\x01\x00\x01\x00\x00"
+                     + b"\x02\x02\x4c\x01\x00\x3b")
+            profile = b"\x00" * 40 + b"acsp" + b"\x00" * 100
+            # The recognised application ID is public format metadata;
+            # profile bytes remain confidential in diagnostic output.
+            ext = (b"\x21\xff\x0bICCRGBG1012" +
+                   bytes([len(profile)]) + profile + b"\x00")
+            photo.write_bytes(image[:19] + ext + ext + image[19:])
+            records = pub.gif_extension_privacy_details(photo)
+            self.assertEqual(len(records), 2)
+            self.assertEqual(records[0]["type"], "GIF ICC colour profile")
+            self.assertEqual(records[1]["type"], "GIF ICC colour profile")
+            self.assertEqual(records[0]["payload_digest"],
+                             records[1]["payload_digest"])
+            self.assertNotIn(profile, records)
+
     def test_unresolved_diagnostic_does_not_contact_r2(self):
         with patch.object(pub, "inspect_remaining_privacy") as scan, \
              patch.object(pub, "list_remote") as remote, \

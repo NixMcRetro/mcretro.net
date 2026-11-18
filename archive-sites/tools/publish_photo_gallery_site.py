@@ -271,6 +271,181 @@ def gif_metadata_extensions(path: Path) -> list[str]:
     raise ValueError("GIF trailer missing")
 
 
+def gif_extension_privacy_details(path: Path) -> list[dict]:
+    """Report GIF extension TYPES and risky-pattern categories, not values.
+
+    This is only an inspection helper: the publication gate continues to
+    block any GIF Comment or unknown Application extension regardless of this
+    diagnostic's result. Never print raw payloads or application identifiers.
+    """
+    data = path.read_bytes()
+    if len(data) < 14 or data[:6] not in (b"GIF87a", b"GIF89a"):
+        raise ValueError("Invalid GIF signature")
+    packed = data[10]
+    index = 13 + (3 * (1 << ((packed & 7) + 1)) if packed & 128 else 0)
+    results = []
+
+    def blocks(position: int) -> tuple[int, bytes]:
+        pieces = []
+        while True:
+            if position >= len(data):
+                raise ValueError("Truncated GIF extension data")
+            count = data[position]
+            position += 1
+            if position + count > len(data):
+                raise ValueError("Invalid GIF extension length")
+            if count:
+                pieces.append(data[position:position + count])
+            position += count
+            if count == 0:
+                return position, b"".join(pieces)
+
+    while index < len(data):
+        marker = data[index]
+        index += 1
+        if marker == 0x3B:
+            if index != len(data):
+                results.append({"type": "trailing GIF bytes", "bytes": len(data) - index,
+                                "text_like": False, "signals": ["unclassified"]})
+            return results
+        if marker == 0x21:
+            if index + 2 > len(data):
+                raise ValueError("Truncated GIF metadata extension")
+            label = data[index]
+            count = data[index + 1]
+            index += 2
+            if index + count > len(data):
+                raise ValueError("Invalid GIF metadata extension")
+            header = data[index:index + count]
+            index += count
+            index, tail = blocks(index)
+            if label == 0xFF and header in (b"NETSCAPE2.0", b"ANIMEXTS1.0"):
+                continue
+            if label == 0xF9:
+                continue
+            if label == 0xFE:
+                kind = "GIF Comment"
+                payload = header + tail
+            elif label == 0xFF and header == b"XMP DataXMP":
+                kind = "GIF XMP application"
+                payload = tail
+            elif label == 0xFF:
+                kind = "GIF other application (identifier withheld)"
+                payload = header + tail
+            elif label == 0x01:
+                kind = "GIF Plain Text"
+                payload = header + tail
+            else:
+                kind = "GIF unknown extension"
+                payload = header + tail
+            text_value = payload.decode("latin-1")
+            signals = sorted({
+                label for label, pattern in SENSITIVE_PUBLIC_MARKERS
+                if pattern.search(text_value)
+            })
+            if re.search(r"(?i)(?:https?://|www\.)", text_value):
+                signals.append("web address")
+            printable = all(
+                (32 <= value <= 126) or value in (9, 10, 13)
+                for value in payload
+            )
+            results.append({
+                "type": kind, "bytes": len(payload),
+                "text_like": printable, "signals": sorted(set(signals))
+            })
+            continue
+        if marker == 0x2C:
+            if index + 9 > len(data):
+                raise ValueError("Truncated GIF frame descriptor")
+            frame_flags = data[index + 8]
+            index += 9
+            if frame_flags & 128:
+                index += 3 * (1 << ((frame_flags & 7) + 1))
+            if index >= len(data):
+                raise ValueError("Missing GIF frame LZW size")
+            index += 1
+            index, _ = blocks(index)
+            continue
+        raise ValueError("Unrecognised GIF block in privacy diagnostic")
+    raise ValueError("GIF trailer missing")
+
+
+def inspect_remaining_privacy(stage: Path, converted: Path) -> None:
+    """Offline owner-only summary for remaining email-pattern and GIF alerts.
+
+    Read only the private local generated gallery manifest and one GIF from
+    the existing validated converted-files plan; do not touch R2, upload, or
+    loosen the mandatory privacy preflight.
+    """
+    manifest = stage / "photo-gallery/albums.generated.json"
+    private = json.loads(manifest.read_text(encoding="utf-8"))
+    public = json.loads(public_projection(private))
+    email_pattern = next(pat for label, pat in SENSITIVE_PUBLIC_MARKERS
+                         if label == "email address")
+    print("REMAINING PRIVACY REVIEW - LOCAL ONLY", flush=True)
+    flagged = 0
+    photo_indices = set()
+    for index, photo in enumerate(public["photos"]):
+        for field in ("path", "thumbnail"):
+            value = photo.get(field, "")
+            if not isinstance(value, str):
+                continue
+            matches = list(email_pattern.finditer(value))
+            if not matches:
+                continue
+            flagged += 1
+            photo_indices.add(index)
+            basename = value.rsplit("/", 1)[-1]
+            masked = email_pattern.sub("[EMAIL-SHAPED-TEXT]", basename)
+            ends_in_jxl = any(m.group(0).lower().endswith((".jxl", ".gif"))
+                              for m in matches)
+            print(
+                f"  photos[{index}].{field}: basename={masked!r}; "
+                f"match extends into file extension: {ends_in_jxl}; "
+                "literal email-like string withheld",
+                flush=True,
+            )
+    print(f"  Email-pattern flags: {flagged} fields across "
+          f"{len(photo_indices)} photo(s).", flush=True)
+    if flagged:
+        print("  Owner must inspect the actual filename locally and decide "
+              "whether it is acceptable as a PUBLIC URL.", flush=True)
+    report = stage / "reports/photos-upload-plan.csv"
+    gif_key = "full/projects/project-yampad/animated.gif"
+    with report.open(newline="", encoding="utf-8") as stream:
+        matches = [row for row in csv.DictReader(stream)
+                   if row.get("r2_key") == gif_key]
+    if len(matches) != 1:
+        raise ValueError("Missing/duplicate Project Yampad GIF in validated plan")
+    gif_file = Path(matches[0]["local_path"])
+    if (not gif_file.is_file() or gif_file.is_symlink() or
+            not gif_file.resolve().is_relative_to(converted.resolve())):
+        raise ValueError("Unsafe optimised GIF path")
+    details = gif_extension_privacy_details(gif_file)
+    labels = gif_metadata_extensions(gif_file)
+    if not details or len(labels) != len(details):
+        raise ValueError("GIF privacy diagnostics disagree; manual review required")
+    print(f"  Project Yampad GIF: {len(details)} non-loop extension(s) "
+          "requiring review.", flush=True)
+    for i, entry in enumerate(details, 1):
+        indicators = ", ".join(entry["signals"]) if entry["signals"] else "none detected"
+        print(
+            f"    {i}: {entry['type']}; {entry['bytes']} payload bytes; "
+            f"printable text: {entry['text_like']}; "
+            f"possible private-data patterns: {indicators}",
+            flush=True,
+        )
+    print(
+        "  Payload values, application identifiers, and email-like strings "
+        "were NOT printed.", flush=True
+    )
+    print(
+        "NOT A PRIVACY CLEARANCE. Existing images on R2 unchanged; "
+        "website publication remains blocked.",
+        flush=True,
+    )
+
+
 def describe_exif_tag_names(candidates: list[tuple[str, Path]]) -> None:
     """Diagnostic only: ExifTool tag NAMES, never field VALUES.
 
@@ -933,7 +1108,14 @@ def main(argv=None) -> int:
     mode.add_argument("--privacy-report", action="store_true",
                       help="Show all blocking findings and optional Exif tag names; "
                            "read-only, NO R2 access")
+    mode.add_argument("--inspect-unresolved", action="store_true",
+                      help="Fast local-only diagnostics for email-shaped image "
+                           "path and Project Yampad GIF; NO R2 access")
     args = parser.parse_args(argv)
+    if args.inspect_unresolved:
+        inspect_remaining_privacy(args.stage.expanduser().absolute(),
+                                  args.converted.expanduser().absolute())
+        return 0
     if args.privacy_audit or args.privacy_report:
         check_local(args.stage.expanduser().absolute(),
                     args.converted.expanduser().absolute(),

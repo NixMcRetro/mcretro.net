@@ -556,6 +556,47 @@ class GalleryWebsitePublishTests(unittest.TestCase):
                  patch.object(pub.subprocess, "run", return_value=result):
                 self.assertFalse(pub.cleared_yampad_gif_extensions(gif))
 
+    def test_yampad_diagnostics_redact_unexpected_private_metadata_values(self):
+        with tempfile.TemporaryDirectory() as temp:
+            gif = Path(temp) / "animated.gif"
+            self.synthetic_yampad_gif(gif)
+            record = self.yampad_exif_record(gif)
+            record["File:Comment"] = "Private data 1800 SECRET"
+            result = subprocess.CompletedProcess(
+                [], 0, stdout=json.dumps([record]).encode(), stderr=b""
+            )
+            reasons = []
+            with patch.object(pub.shutil, "which",
+                              return_value="/usr/local/bin/exiftool"), \
+                 patch.object(pub.subprocess, "run", return_value=result):
+                self.assertFalse(pub.cleared_yampad_gif_extensions(
+                    gif, diagnostics=reasons
+                ))
+            self.assertEqual(len(reasons), 1)
+            self.assertIn("GIF Comment does not match", reasons[0])
+            self.assertNotIn("SECRET", str(reasons))
+            self.assertNotIn("Private data", str(reasons))
+
+    def test_yampad_diagnostics_identify_schema_mismatch_without_values(self):
+        with tempfile.TemporaryDirectory() as temp:
+            gif = Path(temp) / "animated.gif"
+            self.synthetic_yampad_gif(gif)
+            record = self.yampad_exif_record(gif)
+            record["ICC_Profile2:OwnerName"] = "PRIVATE PERSON"
+            result = subprocess.CompletedProcess(
+                [], 0, stdout=json.dumps([record]).encode(), stderr=b""
+            )
+            reasons = []
+            with patch.object(pub.shutil, "which",
+                              return_value="/usr/local/bin/exiftool"), \
+                 patch.object(pub.subprocess, "run", return_value=result):
+                self.assertFalse(pub.cleared_yampad_gif_extensions(
+                    gif, diagnostics=reasons
+                ))
+            self.assertEqual(len(reasons), 1)
+            self.assertIn("unexpected names=['OwnerName']", reasons[0])
+            self.assertNotIn("PRIVATE PERSON", reasons[0])
+
     def test_verified_yampad_requires_successful_exiftool(self):
         with tempfile.TemporaryDirectory() as temp:
             gif = Path(temp) / "animated.gif"

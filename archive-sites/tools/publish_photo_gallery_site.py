@@ -690,6 +690,101 @@ def cleared_technical_exif(candidates: list[tuple[str, Path]]) -> set[str]:
     return cleared
 
 
+SAFE_YAMPAD_ICC_TAGS = frozenset({
+    "BlueMatrixColumn",
+    "BlueTRC",
+    "ChromaticAdaptation",
+    "GreenMatrixColumn",
+    "GreenTRC",
+    "MediaWhitePoint",
+    "ProfileCopyright",
+    "ProfileDescription",
+    "RedMatrixColumn",
+    "RedTRC",
+})
+SAFE_YAMPAD_GIF_COMMENT = "Optimized using ezgif.com"
+
+
+def cleared_yampad_gif_extensions(path: Path) -> bool:
+    """Verify the *observed* benign Yampad GIF combination, without edits.
+
+    Requires exactly two equal 548-byte ICCRGBG1012 extensions, one exact
+    25-byte ezgif.com comment, and a successful ExifTool parse of *both*
+    Display P3 profiles. No arbitrary GIF comment/profile is allowlisted.
+    Unknown extensions, extra ICC tags, GPS metadata, changed values, and
+    missing tools fail closed. This doesn't alter local or public files.
+    """
+    try:
+        details = gif_extension_privacy_details(path)
+    except (OSError, ValueError):
+        return False
+    expected = ["GIF ICC colour profile", "GIF Comment", "GIF ICC colour profile"]
+    if [item["type"] for item in details] != expected:
+        return False
+    if [item["bytes"] for item in details] != [548, 25, 548]:
+        return False
+    if any(item["signals"] for item in details):
+        return False
+    if details[0]["payload_digest"] != details[2]["payload_digest"]:
+        return False
+    if not details[1]["text_like"]:
+        return False
+
+    exe = shutil.which("exiftool")
+    if not exe:
+        return False
+    try:
+        process = subprocess.run(
+            [exe, "-j", "-a", "-G1", "-s", "-u", "-n", str(path)],
+            capture_output=True, check=False, timeout=30,
+        )
+        if process.returncode:
+            return False
+        records = json.loads(process.stdout)
+    except (OSError, ValueError, UnicodeError, subprocess.TimeoutExpired):
+        return False
+    if not isinstance(records, list) or len(records) != 1:
+        return False
+    record = records[0]
+    if not isinstance(record, dict) or record.get("SourceFile") != str(path):
+        return False
+    if any(
+        key == "Warning" or key == "Error" or
+        key.endswith((":Warning", ":Error"))
+        for key in record
+    ):
+        return False
+    comments = [
+        value for key, value in record.items()
+        if key == "Comment" or key.endswith(":Comment")
+    ]
+    if comments != [SAFE_YAMPAD_GIF_COMMENT]:
+        return False
+    for group in ("ICC_Profile", "ICC_Profile2"):
+        prefix = group + ":"
+        tags = {
+            key[len(prefix):] for key in record
+            if key.startswith(prefix)
+        }
+        if tags != SAFE_YAMPAD_ICC_TAGS:
+            return False
+        if record.get(prefix + "ProfileDescription") != "Display P3":
+            return False
+        if record.get(prefix + "ProfileCopyright") != "Copyright Apple Inc., 2017":
+            return False
+    # The GIF parser above permits no XMP, user-text, or other application
+    # blocks. ExifTool must not reveal unexpected additional metadata groups.
+    permitted = ("File", "System", "ExifTool", "Composite",
+                 "GIF", "ICC_Profile", "ICC_Profile2")
+    if any(
+        key != "SourceFile" and
+        (":" not in key or key.split(":", 1)[0] not in permitted)
+        for key in record
+    ):
+        return False
+    return True
+
+
 def scan_public_privacy(stage: Path, converted: Path, site: dict,
                         catalogue: bytes, photo_keys: dict,
                         report_only: bool = False) -> None:
@@ -771,10 +866,18 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
                 candidate_flags[key] = flagged
             scanned += 1
         elif key.endswith(".gif"):
-            # Parse the actual extension blocks. A raw byte-pattern search
-            # can hit random compressed image data and invent a warning.
+            # Parse real extension blocks, never compressed-pixel byte matches.
             labels = gif_metadata_extensions(file)
-            if labels:
+            if labels and key == "full/projects/project-yampad/animated.gif" and (
+                cleared_yampad_gif_extensions(file)
+            ):
+                print(
+                    "TECHNICAL GIF REVIEW: Project Yampad has only two "
+                    "identical Display P3 ICC profiles and the exact approved "
+                    "ezgif optimisation comment; no changes needed.",
+                    flush=True,
+                )
+            elif labels:
                 issues.append(
                     f"{key}: GIF extension(s) requiring privacy review "
                     f"({', '.join(sorted(set(labels)))})"

@@ -120,6 +120,24 @@ SENSITIVE_PUBLIC_MARKERS = (
 )
 
 
+def is_retina_suffix_email_false_positive(value: str, pattern: re.Pattern) -> bool:
+    """Recognise '@2x.jxl' and '@3x.jxl' display-scale filenames only.
+
+    The broad email regex can mistake 'image@3x.jxl' for an email because
+    '.jxl' looks like a top-level domain. Require EVERY email-shaped match
+    to end precisely at that JXL filename suffix. An actual address such as
+    'person@example.com@3x.jxl' must still be flagged.
+    """
+    if not re.search(r"(?i)@[23]x\.jxl$", value):
+        return False
+    matches = list(pattern.finditer(value))
+    return bool(matches) and all(
+        match.end() == len(value) and
+        match.group(0).lower().endswith(".jxl")
+        for match in matches
+    )
+
+
 class ExternalResourceScanner(HTMLParser):
     """Passive navigation links are fine; external auto-loaded resources are not."""
 
@@ -385,6 +403,7 @@ def inspect_remaining_privacy(stage: Path, converted: Path) -> None:
     print("REMAINING PRIVACY REVIEW - LOCAL ONLY", flush=True)
     flagged = 0
     photo_indices = set()
+    retina_photo_indices = set()
     for index, photo in enumerate(public["photos"]):
         for field in ("path", "thumbnail"):
             value = photo.get(field, "")
@@ -392,6 +411,9 @@ def inspect_remaining_privacy(stage: Path, converted: Path) -> None:
                 continue
             matches = list(email_pattern.finditer(value))
             if not matches:
+                continue
+            if is_retina_suffix_email_false_positive(value, email_pattern):
+                retina_photo_indices.add(index)
                 continue
             flagged += 1
             photo_indices.add(index)
@@ -405,8 +427,14 @@ def inspect_remaining_privacy(stage: Path, converted: Path) -> None:
                 "literal email-like string withheld",
                 flush=True,
             )
-    print(f"  Email-pattern flags: {flagged} fields across "
+    print(f"  Strict email-pattern flags: {flagged} fields across "
           f"{len(photo_indices)} photo(s).", flush=True)
+    if retina_photo_indices:
+        print(
+            f"  Recognised @2x/@3x JPEG XL retina naming in "
+            f"{len(retina_photo_indices)} photo(s); these suffix-only "
+            "matches are not email addresses.", flush=True
+        )
     if flagged:
         print("  Owner must inspect the actual filename locally and decide "
               "whether it is acceptable as a PUBLIC URL.", flush=True)
@@ -651,8 +679,13 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
 
     def inspect_text(description: str, value: str) -> None:
         for label, pattern in SENSITIVE_PUBLIC_MARKERS:
-            if pattern.search(value):
-                issues.append(f"{description}: possible {label}")
+            if not pattern.search(value):
+                continue
+            if (label == "email address" and description.startswith("photos[")
+                    and description.endswith((".path", ".thumbnail"))
+                    and is_retina_suffix_email_false_positive(value, pattern)):
+                continue
+            issues.append(f"{description}: possible {label}")
 
     public_data = json.loads(catalogue)
     if len(public_data["photos"]) != EXPECTED_PHOTOGRAPHS:

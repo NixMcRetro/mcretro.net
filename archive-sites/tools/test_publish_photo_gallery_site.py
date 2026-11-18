@@ -90,7 +90,7 @@ class GalleryWebsitePublishTests(unittest.TestCase):
         data = json.loads(b)
         self.assertEqual(data["schema_version"], 1)
         self.assertEqual(len(data["photos"]), 2)
-        self.assertEqual(len(data["folders"]), self.expected_pages)
+        self.assertEqual(len(data["folders"]), len(self.private["folders"]))
         self.assertEqual(data["photos"][0]["path"], self.private["photos"][0]["path"])
         self.assertNotIn(b"source_path", b)
         self.assertNotIn(b"local_path", b)

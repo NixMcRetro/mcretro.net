@@ -2,6 +2,24 @@
 
 ## Gallery publication privacy review (17th November 2026)
 
+**Subsequent Mac audit readback:** The owner ran the local-only
+`--privacy-audit` and received **43 potential issues**. The first two
+were an email-shaped string in both `photos[8283].path` and
+`photos[8283].thumbnail` (the same underlying photo). Other flags
+included Brotli-compressed Exif boxes on optimised Nintendo DS IS-NITRO
+capture JPEG XL files. Metadata box existence does **not** identify the
+actual embedded tags or establish that GPS details are present. The
+script prevented gallery website publication; no website objects
+were uploaded in that attempt.
+
+A diagnostic-only `--privacy-report` has now been added. It lists the
+complete scanner findings and, if ExifTool is already installed, reads
+the optimised files to list metadata **tag names only**, never values.
+The result is **not a waiver or a passing privacy audit**, and no original
+26 GB photos or R2 objects are changed. Inspect the findings before
+considering whether image metadata remediation or public filenames
+require a separate owner-approved plan.
+
 The owner requested a separate privacy check before the already-approved
 gallery website upload. The initial publisher was held back pending this
 review. The revised draft now omits the separate original filename from

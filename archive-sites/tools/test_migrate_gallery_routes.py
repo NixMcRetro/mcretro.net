@@ -94,9 +94,9 @@ class RouteMigrationTests(unittest.TestCase):
             migration: [('EXPECTED_CANONICAL_HTML', self.folder_count),
                         ('EXPECTED_OLD_SITE', self.folder_count + 2 + 5),
                         ('EXPECTED_PHOTOS', 4)],
-            pub: [('EXPECTED_HTML', self.folder_count * 2 - 1),
-                  ('EXPECTED_SITE', self.folder_count * 2 + 1),
-                  ('EXPECTED_PUBLIC', self.folder_count * 2 + 6),
+            pub: [('EXPECTED_HTML', self.folder_count),
+                  ('EXPECTED_SITE', self.folder_count + 2),
+                  ('EXPECTED_PUBLIC', self.folder_count + 7),
                   ('EXPECTED_PHOTOS', 4),
                   ('EXPECTED_PHOTOGRAPHS', 2),
                   ('EXPECTED_IMAGE_BYTES', 4 * len(b'\xff\x0a' + b'SYNTHETIC TEST JXL' * 4))]
@@ -126,7 +126,7 @@ class RouteMigrationTests(unittest.TestCase):
         with patch.object(migration, 'list_remote', side_effect=AssertionError('R2 called')):
             migration.prepare(self.stage, TEMPLATE)
 
-    def test_prepare_keeps_public_baseline_and_exact_legacy_redirects(self):
+    def test_prepare_keeps_public_baseline_but_generates_no_legacy_redirects(self):
         old_manifest_bytes = self.manifest.read_bytes()
         self.prepare()
         snapshot = self.stage / migration.BASELINE
@@ -139,14 +139,15 @@ class RouteMigrationTests(unittest.TestCase):
         urls = {node['path']: node['url'] for node in new['folders']}
         self.assertEqual(urls['the-collection/retired'],
                          '/albums/the-collection/retired.html')
-        redirect = (self.stage / migration.SITE /
-                    legacy_folder_url('the-collection/retired').lstrip('/')).read_text()
-        self.assertIn('url=/albums/the-collection/retired.html', redirect)
-        self.assertIn('noindex,follow', redirect)
+        retired = self.stage / migration.SITE / legacy_folder_url(
+            'the-collection/retired').lstrip('/')
+        self.assertFalse(retired.exists(), 'Old hashed pages must not survive staging')
+        self.assertTrue((snapshot / 'old-site' /
+                         legacy_folder_url('the-collection/retired').lstrip('/')).is_file())
         with self.assertRaisesRegex(ValueError, 'baseline already exists'):
             migration.prepare(self.stage, TEMPLATE)
         site, images, catalogue = pub.check_local(self.stage, self.converted, TEMPLATE)
-        self.assertEqual(len(site), self.folder_count * 2 + 6)
+        self.assertEqual(len(site), self.folder_count + 7)
         self.assertEqual(len(images), 4)
         self.assertNotIn(b'source_path', catalogue)
 
@@ -211,7 +212,6 @@ class RouteMigrationTests(unittest.TestCase):
         pending = [
             'albums/the-collection.html',
             'albums/the-collection/retired.html',
-            legacy_folder_url('the-collection/retired').lstrip('/'),
             'albums.json', 'sitemap.xml', 'index.html',
         ]
         commands = []
@@ -219,15 +219,17 @@ class RouteMigrationTests(unittest.TestCase):
             commands.append((command, kwargs.get('input', b'')))
             return subprocess.CompletedProcess(command, 0, stdout=b'', stderr=b'')
         with patch.object(migration, 'inspect',
-                          return_value=(site, photos, catalogue, pending)), \
+                          side_effect=[(site, photos, catalogue, pending),
+                                       (site, photos, catalogue, [])]), \
              patch.object(migration.subprocess, 'run', side_effect=record), \
              patch.object(migration, 'verify_remote') as verify:
             migration.upload(self.stage, self.converted, TEMPLATE)
             verify.assert_called_once()
-        self.assertEqual(len(commands), 5)
+        self.assertEqual(len(commands), 4)
         sent = [stream.decode('utf-8').split('\0') for _, stream in commands]
         self.assertIn('albums/the-collection/retired.html', sent[0])
-        self.assertIn(legacy_folder_url('the-collection/retired').lstrip('/'), sent[1])
+        self.assertFalse(any(legacy_folder_url('the-collection/retired').lstrip('/')
+                             in entry for batch in sent for entry in batch))
         self.assertEqual(sent[-1], ['index.html', ''])
         for command, stream in commands:
             self.assertEqual(command[:2], ['rclone', 'copy'])
@@ -236,6 +238,67 @@ class RouteMigrationTests(unittest.TestCase):
             self.assertNotIn('delete', command)
             self.assertNotIn(b'full/', stream)
             self.assertNotIn(b'thumbs/', stream)
+
+    def test_retire_old_requires_completed_new_gallery(self):
+        self.prepare()
+        site, photos, catalogue = pub.check_local(self.stage, self.converted, TEMPLATE)
+        with patch.object(migration, 'inspect',
+                          return_value=(site, photos, catalogue, ['index.html'])), \
+             patch.object(migration.subprocess, 'run') as commands:
+            with self.assertRaisesRegex(ValueError, 'all new site objects exist'):
+                migration.retire_old(self.stage, self.converted, TEMPLATE)
+            commands.assert_not_called()
+
+    def test_retire_old_deletes_only_verified_hashed_html_keys(self):
+        self.prepare()
+        site, photos, catalogue = pub.check_local(self.stage, self.converted, TEMPLATE)
+        keys = sorted(set(migration._baseline_map(
+            self.stage,
+            [f['path'] for f in json.loads(self.manifest.read_text())['folders']]
+        )) - set(site))
+        blobs = {key: (self.stage / migration.BASELINE / 'old-site' / key).read_bytes()
+                 for key in keys}
+        remote = {key: {'Path': key, 'Size': len(blobs[key])} for key in keys}
+        remote_after = {}
+        commands = []
+        def delete(command, **kwargs):
+            commands.append(command)
+            return subprocess.CompletedProcess(command, 0, stdout=b'', stderr=b'')
+        with patch.object(migration, 'inspect',
+                          return_value=(site, photos, catalogue, [])), \
+             patch.object(migration, 'list_remote',
+                          side_effect=[remote, remote_after]), \
+             patch.object(migration, '_remote_bytes', side_effect=lambda key: blobs[key]), \
+             patch.object(migration, 'verify_remote') as verified, \
+             patch.object(migration.subprocess, 'run', side_effect=delete):
+            migration.retire_old(self.stage, self.converted, TEMPLATE)
+            self.assertEqual(verified.call_count, 2)
+        self.assertEqual([item[0:2] for item in commands],
+                         [['rclone', 'deletefile']] * len(keys))
+        self.assertEqual(set(item[2].split('/')[-1] for item in commands),
+                         set(key.split('/')[-1] for key in keys))
+        self.assertTrue(all('/albums/' in item[2] and item[2].endswith('.html')
+                            for item in commands))
+        self.assertTrue(all('full/' not in item[2] and 'thumbs/' not in item[2]
+                            for item in commands))
+
+    def test_retire_old_rejects_changed_remote_page_without_deletion(self):
+        self.prepare()
+        site, photos, catalogue = pub.check_local(self.stage, self.converted, TEMPLATE)
+        keys = sorted(set(migration._baseline_map(
+            self.stage,
+            [f['path'] for f in json.loads(self.manifest.read_text())['folders']]
+        )) - set(site))
+        remote = {key: {'Path': key, 'Size': 999} for key in keys}
+        with patch.object(migration, 'inspect',
+                          return_value=(site, photos, catalogue, [])), \
+             patch.object(migration, 'list_remote', return_value=remote), \
+             patch.object(migration, '_remote_bytes', return_value=b'UNKNOWN HTML'), \
+             patch.object(migration, 'verify_remote'), \
+             patch.object(migration.subprocess, 'run') as commands:
+            with self.assertRaisesRegex(ValueError, 'changed before retirement'):
+                migration.retire_old(self.stage, self.converted, TEMPLATE)
+            commands.assert_not_called()
 
 
 if __name__ == '__main__':

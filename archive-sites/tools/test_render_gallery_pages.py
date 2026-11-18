@@ -56,7 +56,7 @@ class StaticGalleryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             folder_url('../etc/passwd')
 
-    def test_nested_urls_and_legacy_redirects_are_collision_safe(self):
+    def test_nested_urls_are_collision_safe(self):
         paths = ['', 'the-collection', 'the-collection/retired',
                  'other', 'other/retired', 'other/RETired']
         planned = plan_folder_routes(paths)
@@ -86,7 +86,7 @@ class StaticGalleryTests(unittest.TestCase):
         routes = validate_routes(manifest['folders'])
         self.assertGreater(len(routes), 5)
         result = render_pages(self.stage, TEMPLATE)
-        self.assertEqual(result['html_pages'], 2 * len(routes) - 1)
+        self.assertEqual(result['html_pages'], len(routes))
         self.assertFalse(result['published'])
         website = self.stage / 'photo-gallery/site'
         root = (website / 'index.html').read_text()
@@ -95,10 +95,8 @@ class StaticGalleryTests(unittest.TestCase):
         self.assertIn(routes['accessories'], parser.hrefs)
         self.assertTrue(all('#folder=' not in link for link in parser.hrefs),
                         'Canonical links must not use JavaScript hash fragments')
-        self.assertTrue((website / legacy_folder_url('accessories').lstrip('/')).is_file())
-        old_page = (website / legacy_folder_url('accessories').lstrip('/')).read_text()
-        self.assertIn('content="0; url=/albums/accessories.html"', old_page)
-        self.assertIn('name="robots" content="noindex,follow"', old_page)
+        self.assertFalse((website / legacy_folder_url('accessories').lstrip('/')).exists(),
+                         'Old hashed URLs must not be generated or kept')
         self.assertIn('fetch("/albums.json"', root)
         leaf = 'accessories/hp-l1706-17-inch-lcd-colour-monitor-px849a/serial-cnk7040y04'
         page = (website / routes[leaf].lstrip('/')).read_text()
@@ -122,7 +120,7 @@ class StaticGalleryTests(unittest.TestCase):
         self.assertIn('https://photos.mcretro.net' + routes[leaf], sitemap)
         with (self.stage / 'reports/gallery-pages-upload-plan.csv').open() as source:
             planned = list(csv.DictReader(source))
-        self.assertEqual(len(planned), 2 * len(routes) + 1)
+        self.assertEqual(len(planned), len(routes) + 2)
         self.assertTrue(all(item['approved_for_publication'] == 'NO' for item in planned))
 
     def test_unsafe_photo_names_escaped_in_html(self):

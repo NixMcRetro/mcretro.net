@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 from html.parser import HTMLParser
 from pathlib import Path
@@ -347,6 +348,9 @@ def gif_extension_privacy_details(path: Path) -> list[dict]:
             elif label == 0xFF and header == b"XMP DataXMP":
                 kind = "GIF XMP application"
                 payload = tail
+            elif label == 0xFF and header == b"ICCRGBG1012":
+                kind = "GIF ICC colour profile"
+                payload = tail
             elif label == 0xFF:
                 kind = "GIF other application (identifier withheld)"
                 payload = header + tail
@@ -369,7 +373,10 @@ def gif_extension_privacy_details(path: Path) -> list[dict]:
             )
             results.append({
                 "type": kind, "bytes": len(payload),
-                "text_like": printable, "signals": sorted(set(signals))
+                "text_like": printable, "signals": sorted(set(signals)),
+                # Compare duplicate application blocks without printing their
+                # identifiers, hidden metadata, or raw private comment text.
+                "payload_digest": hashlib.sha256(payload).digest(),
             })
             continue
         if marker == 0x2C:
@@ -463,9 +470,27 @@ def inspect_remaining_privacy(stage: Path, converted: Path) -> None:
             f"possible private-data patterns: {indicators}",
             flush=True,
         )
+    applications = [
+        entry for entry in details
+        if entry["type"].startswith("GIF ICC") or
+        entry["type"].startswith("GIF other application")
+    ]
+    if len(applications) > 1:
+        unique = len({entry["payload_digest"] for entry in applications})
+        print(
+            f"  Application extension payload comparison: "
+            f"{len(applications)} extension(s), {unique} distinct payload(s). "
+            "Digests not printed.", flush=True
+        )
+    if any(entry["type"] == "GIF ICC colour profile" for entry in details):
+        print(
+            "  Recognised ICCRGBG1012 standard colour-profile extension. "
+            "Profile contents still require appropriate tag review; "
+            "not automatically cleared.", flush=True
+        )
     print(
-        "  Payload values, application identifiers, and email-like strings "
-        "were NOT printed.", flush=True
+        "  Payload values, unrecognised application identifiers, and "
+        "email-like strings were NOT printed.", flush=True
     )
     print(
         "NOT A PRIVACY CLEARANCE. Existing images on R2 unchanged; "

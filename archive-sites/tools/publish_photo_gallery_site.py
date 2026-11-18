@@ -2,7 +2,7 @@
 """Publish only the already-generated McRetro Photo Gallery website to R2.
 
 Owner approval (17th November 2026): upload the existing gallery design.
-Scope: 329 generated HTML pages, a *public-projected* albums.json,
+Scope: 329 nested pages, 328 legacy redirects, a *public-projected* albums.json,
 one sitemap.xml and five self-hosted WOFF2 fonts (336 keys in total).
 No photos (already present), File Server content, private source_path fields,
 review sidecars, original 26 GB archive, root Cloudflare rewrite, or GitHub merge.
@@ -35,8 +35,10 @@ from audit_gallery_staging import audit
 from preview_mcretro_gallery import local_theme_fonts
 from validate_r2_upload import DEFAULT_CONVERTED, DEFAULT_STAGE, FINAL_DESTINATION
 
-EXPECTED_HTML = 329
-EXPECTED_SITE = 331
+EXPECTED_CANONICAL_HTML = 329
+EXPECTED_LEGACY_REDIRECTS = 328
+EXPECTED_HTML = EXPECTED_CANONICAL_HTML + EXPECTED_LEGACY_REDIRECTS
+EXPECTED_SITE = EXPECTED_HTML + 2
 EXPECTED_FONTS = 5
 EXPECTED_PHOTOS = 16823
 EXPECTED_PHOTOGRAPHS = 8412
@@ -1064,7 +1066,7 @@ def rows_from_csv(stage: Path, catalogue_bytes: bytes) -> tuple[dict, dict]:
         files[key] = {"source": site_dir, "local": local, "mime": mime,
                       "bytes": local.stat().st_size}
     if len(files) != EXPECTED_SITE or "index.html" not in files or "albums.json" not in files or "sitemap.xml" not in files:
-        raise ValueError("Expected exactly 329 HTML pages plus albums.json and sitemap.xml")
+        raise ValueError("Expected exact nested HTML, legacy redirects, albums.json and sitemap.xml counts")
     if sum(k.endswith(".html") for k in files) != EXPECTED_HTML:
         raise ValueError("Unexpected generated page count")
     # The plan's private albums.json is NOT the one we publish.
@@ -1290,7 +1292,7 @@ def publish(stage: Path, converted: Path, html: Path,
         f"Existing R2 photos: {len(photos):,} verified by name/size\n"
         f"Existing website objects: {len(site) - len(missing)} / {len(site)}\n"
         f"Website objects still to upload: {len(missing)} "
-        "(329 HTML + JSON + sitemap + 5 fonts in full release)\n"
+        "(329 nested HTML + 328 legacy redirects + JSON + sitemap + 5 fonts)\n"
         f"Public catalogue: {len(catalogue):,} bytes, "
         "private source_path fields omitted\n"
         f"Target: {FINAL_DESTINATION} (PUBLIC custom domain)\n"

@@ -24,6 +24,38 @@ extensions (one warning). The 336-object gallery website publication
 remains BLOCKED. No gallery web objects have been uploaded, PR #271 is
 still draft and unmerged.
 
+## 19th November 2026 - 43 privacy flags reduced to 3, website still not uploaded
+
+The owner's second read-only privacy report (script commit
+`3971ccca2c630c8ce129cf5dd1afcd1322fdc6d5`) confirms that 40
+optimised Nintendo DS IS-NITRO JPEG XL objects contain only strictly
+allowlisted Exif dimensions and colour-space fields. They **pass the
+technical Exif check** without modifying original or optimised files.
+
+Three scanner flags remain, representing two separate questions:
+
+- `photos[8283].path` and `photos[8283].thumbnail`: the **same
+  photograph** has an email-shaped substring in two public URLs.
+  Its actual text has not yet been owner-reviewed.
+- `full/projects/project-yampad/animated.gif`: one GIF has a true
+  **Comment extension** and another **non-loop Application extension**.
+  The extension payloads have not yet been shown or classified as harmless.
+
+A new read-only local option, `publish_photo_gallery_site.py
+--inspect-unresolved`, prints only **masked** filename hints and GIF
+extension types, byte lengths, text/binary classification, and suspicious
+data-pattern categories. It does not print email strings, comment text,
+or application identifiers, and does not contact R2. The existing strict
+preflight remains unchanged: this option is diagnostic and **cannot approve
+publication or clear unresolved findings**.
+
+**No gallery HTML, sitemap, fonts or public catalogue has been uploaded.
+The 16,823 R2 photograph objects remain present from the earlier completed
+transfer.** Existing cloud photos are not renamed, deleted or modified.
+Next: inspect the safe diagnostic, get the owner's decisions on the two
+remaining questions, and only then modify the public-release allowlist or
+individual optimised copies as separately approved.
+
 ## Gallery publication privacy review (17th November 2026)
 
 **Subsequent Mac audit readback:** The owner ran the local-only

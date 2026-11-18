@@ -713,6 +713,23 @@ SAFE_YAMPAD_ICC_TAGS = frozenset({
 })
 SAFE_YAMPAD_GIF_COMMENT = "Optimized using ezgif.com"
 
+# ExifTool uses ICC-header and ICC-header2 for the two embedded ICC
+# profile *headers*. These are standard fixed-format ICC header fields,
+# separate from the already-reviewed ICC_Profile tags. Keep an exact
+# schema, reject unknown tags, and compare both copies; do NOT broadly
+# waive arbitrary ICC or embedded image metadata.
+SAFE_YAMPAD_ICC_HEADER_TAGS = frozenset({
+    "ProfileCMMType", "ProfileVersion", "ProfileClass", "ColorSpaceData",
+    "ProfileConnectionSpace", "ProfileDateTime", "ProfileFileSignature",
+    "PrimaryPlatform", "CMMFlags", "DeviceManufacturer", "DeviceModel",
+    "DeviceAttributes", "RenderingIntent", "ConnectionSpaceIlluminant",
+    "ProfileCreator", "ProfileID",
+})
+YAMPAD_REQUIRED_ICC_HEADER_TAGS = frozenset({
+    "ProfileVersion", "ProfileClass", "ColorSpaceData",
+    "ProfileConnectionSpace", "ProfileFileSignature",
+})
+
 
 def cleared_yampad_gif_extensions(path: Path,
                                   diagnostics: list[str] | None = None) -> bool:
@@ -796,8 +813,45 @@ def cleared_yampad_gif_extensions(path: Path,
         if record.get(prefix + "ProfileCopyright") != "Copyright Apple Inc., 2017":
             return blocked(f"{group} copyright differs from owner-reviewed value")
 
+    # Validate the separately reported ICC fixed-format headers. ExifTool
+    # distinguishes duplicates with an ICC-header2 group name. Both copies
+    # must contain identical standard schema and values; free-form or
+    # unexpected fields are NOT permitted.
+    first_header = {
+        key.split(":", 1)[1]: value
+        for key, value in record.items()
+        if key.startswith("ICC-header:")
+    }
+    second_header = {
+        key.split(":", 1)[1]: value
+        for key, value in record.items()
+        if key.startswith("ICC-header2:")
+    }
+    for name, header in (("ICC-header", first_header),
+                         ("ICC-header2", second_header)):
+        missing = sorted(YAMPAD_REQUIRED_ICC_HEADER_TAGS - header.keys())
+        unexpected = sorted(header.keys() - SAFE_YAMPAD_ICC_HEADER_TAGS)
+        if missing or unexpected:
+            return blocked(
+                f"{name} standard header tag mismatch: "
+                f"missing names={missing}, unexpected names={unexpected}"
+            )
+        if header.get("ProfileFileSignature") != "acsp":
+            return blocked(f"{name} ICC file signature mismatch")
+        for value in header.values():
+            if not isinstance(value, (str, int, float)):
+                return blocked(f"{name} non-scalar header value")
+            if len(str(value)) > 128:
+                return blocked(f"{name} abnormally long header field")
+            if any(pattern.search(str(value)) for _label, pattern
+                   in SENSITIVE_PUBLIC_MARKERS):
+                return blocked(f"{name} potentially sensitive header field")
+    if first_header != second_header:
+        return blocked("Two ICC fixed-format header copies differ")
+
     permitted = {"File", "System", "ExifTool", "Composite",
-                 "GIF", "ICC_Profile", "ICC_Profile2"}
+                 "GIF", "ICC_Profile", "ICC_Profile2",
+                 "ICC-header", "ICC-header2"}
     extras = sorted({
         key.split(":", 1)[0] if ":" in key else "(ungrouped)"
         for key in record

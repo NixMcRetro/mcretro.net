@@ -892,15 +892,24 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
         elif key.endswith(".gif"):
             # Parse real extension blocks, never compressed-pixel byte matches.
             labels = gif_metadata_extensions(file)
-            if labels and key == "full/projects/project-yampad/animated.gif" and (
-                cleared_yampad_gif_extensions(file)
-            ):
-                print(
-                    "TECHNICAL GIF REVIEW: Project Yampad has only two "
-                    "identical Display P3 ICC profiles and the exact approved "
-                    "ezgif optimisation comment; no changes needed.",
-                    flush=True,
-                )
+            if labels and key == "full/projects/project-yampad/animated.gif":
+                reasons: list[str] = []
+                if cleared_yampad_gif_extensions(file, diagnostics=reasons):
+                    print(
+                        "TECHNICAL GIF REVIEW: Project Yampad has only two "
+                        "identical Display P3 ICC profiles and the exact approved "
+                        "ezgif optimisation comment; no changes needed.",
+                        flush=True,
+                    )
+                else:
+                    issues.append(
+                        f"{key}: GIF extension(s) requiring privacy review "
+                        f"({', '.join(sorted(set(labels)))})"
+                    )
+                    # Predetermined mismatch diagnostics contain no raw values.
+                    # Keep the privacy gate blocking until the mismatch is fixed.
+                    for reason in reasons:
+                        issues.append("Project Yampad GIF validation: " + reason)
             elif labels:
                 issues.append(
                     f"{key}: GIF extension(s) requiring privacy review "

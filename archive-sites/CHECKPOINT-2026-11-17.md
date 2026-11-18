@@ -24,6 +24,34 @@ extensions (one warning). The 336-object gallery website publication
 remains BLOCKED. No gallery web objects have been uploaded, PR #271 is
 still draft and unmerged.
 
+## 19th November 2026 - Latest local readback, only GIF extensions unresolved
+
+Owner ran the targeted offline `--inspect-unresolved` on their Mac.
+Results:
+
+- **0 strict email-pattern hits**; one `@2x/@3x` JPEG XL retina-name
+  false positive was recognised without revealing the value.
+- **Project Yampad `animated.gif`: 3 non-loop metadata extensions**:
+  two non-text Application extensions with **559 payload bytes each**,
+  and one printable **25-byte Comment extension**. No sensitive-data
+  regular-expression patterns were detected in any of the three blocks.
+- **Previously-cleared 40 Nintendo DS JXLs remain cleared** under the
+  exact allowlist for technical Exif dimensions/colour space.
+
+Two 559-byte application blocks **may** be ICC colour profiles; byte
+length alone is not proof. The GIF89a format supports embedded ICC
+profiles as application extensions. The draft's local-only diagnostic was
+extended to recognise standard `ICCRGBG1012` identifiers if present and
+compare opaque application payload fingerprints for duplicates. The
+25-byte comment contents are never printed by this diagnostic.
+
+**Do not mark the GIF privacy-cleared yet.** The test/report has not
+confirmed the application types or the comment contents. All uploaded
+photos remain untouched, and no gallery site HTML, JSON, fonts or sitemap
+has been uploaded. User's prior authorisation to upload the existing
+design remains in scope, subject to the privacy gate passing. Do not
+silently waive GIF findings, replace any R2 image, or publish partially.
+
 ## 19th November 2026 - 43 privacy flags reduced to 3, website still not uploaded
 
 **Subsequent review of the previously supplied 8,412-photo manifest:**

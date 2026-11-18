@@ -4,7 +4,9 @@ All fixtures are synthetic and local. Never contacts R2 or touches user
 photos, originals, cloud bucket, real gallery metadata, or private files.
 """
 import csv
+import io
 import json
+from contextlib import redirect_stdout
 from pathlib import Path
 import shutil
 import subprocess
@@ -158,6 +160,68 @@ class GalleryWebsitePublishTests(unittest.TestCase):
              patch.object(pub.shutil, "which") as rclone:
             self.assertEqual(pub.main(["--privacy-audit"]), 0)
         local.assert_called_once()
+        remote.assert_not_called()
+        rclone.assert_not_called()
+
+    def test_privacy_report_lists_all_issues_without_loosening_upload_gate(self):
+        site, photos, public = self.local_files()
+        altered = json.loads(public)
+        altered["photos"][0]["path"] = "full/private/person@example.com.jxl"
+        public_with_warning = (json.dumps(altered) + "\n").encode()
+        target_key = next(k for k in photos if k.endswith(".jxl"))
+        with (self.stage / "reports/photos-upload-plan.csv").open(
+            newline="", encoding="utf-8"
+        ) as stream:
+            row = next(r for r in csv.DictReader(stream)
+                       if r["r2_key"] == target_key)
+        Path(row["local_path"]).write_bytes(
+            pub.JXL_CONTAINER_SIGNATURE +
+            b"\x00\x00\x00\x0dbrob" + b"Exif" + b"X"
+        )
+        with patch.object(pub, "describe_exif_tag_names") as details:
+            pub.scan_public_privacy(self.stage, self.converted, site,
+                                    public_with_warning, photos,
+                                    report_only=True)
+        details.assert_called_once()
+        self.assertEqual(len(details.call_args.args[0]), 1)
+        with self.assertRaisesRegex(ValueError, "privacy preflight"):
+            pub.scan_public_privacy(self.stage, self.converted, site,
+                                    public_with_warning, photos)
+
+    def test_exif_report_displays_tag_names_never_sensitive_values(self):
+        first = ("/synthetic/a.jxl", "/synthetic/path/a")
+        records = [{
+            "SourceFile": first[1],
+            "EXIF:GPSLatitude": "-33.987654",
+            "EXIF:GPSLongitude": "151.123456",
+            "EXIF:OwnerName": "DO NOT PRINT PRIVATE VALUE",
+            "EXIF:Make": "PrivateCamera",
+            "File:FileName": "a.jxl",
+        }]
+        result = subprocess.CompletedProcess(
+            [], 0, stdout=json.dumps(records).encode(), stderr=b""
+        )
+        output = io.StringIO()
+        with patch.object(pub.shutil, "which",
+                          return_value="/usr/local/bin/exiftool"), \
+             patch.object(pub.subprocess, "run", return_value=result), \
+             redirect_stdout(output):
+            pub.describe_exif_tag_names([(first[0], Path(first[1]))])
+        shown = output.getvalue()
+        self.assertIn("EXIF:GPSLatitude", shown)
+        self.assertIn("EXIF:GPSLongitude", shown)
+        self.assertIn("EXIF:OwnerName", shown)
+        self.assertNotIn("-33.987654", shown)
+        self.assertNotIn("151.123456", shown)
+        self.assertNotIn("DO NOT PRINT PRIVATE VALUE", shown)
+        self.assertNotIn("PrivateCamera", shown)
+
+    def test_privacy_report_cli_does_not_contact_r2(self):
+        with patch.object(pub, "check_local") as local, \
+             patch.object(pub, "list_remote") as remote, \
+             patch.object(pub.shutil, "which") as rclone:
+            self.assertEqual(pub.main(["--privacy-report"]), 0)
+        self.assertTrue(local.call_args.kwargs["privacy_report"])
         remote.assert_not_called()
         rclone.assert_not_called()
 

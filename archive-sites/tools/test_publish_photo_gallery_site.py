@@ -354,6 +354,67 @@ class GalleryWebsitePublishTests(unittest.TestCase):
             filepath.write_bytes(image)
             self.assertEqual(pub.gif_metadata_extensions(filepath), [])
 
+    def test_unresolved_diagnostic_redacts_values_and_reads_only_optimised_gif(self):
+        with tempfile.TemporaryDirectory() as temp:
+            stage = Path(temp) / "stage"
+            converted = Path(temp) / "converted"
+            (stage / "photo-gallery").mkdir(parents=True)
+            (stage / "reports").mkdir(parents=True)
+            file = converted / "full/projects/project-yampad/animated.gif"
+            file.parent.mkdir(parents=True)
+            image = (b"GIF89a\x01\x00\x01\x00\x80\x00\x00"
+                     + b"\x00\x00\x00\xff\xff\xff"
+                     + b"\x2c\x00\x00\x00\x00\x01\x00\x01\x00\x00"
+                     + b"\x02\x02\x4c\x01\x00\x3b")
+            private_comment = b"contact@example.org"
+            comment = (b"\x21\xfe" + bytes([len(private_comment)]) +
+                       private_comment + b"\x00")
+            application = b"\x21\xff\x0bPRIVATEAPP1\x03\x01\x02\x03\x00"
+            file.write_bytes(image[:19] + comment + application + image[19:])
+            catalogue = {
+                "schema_version": 1,
+                "albums": [], "folders": [],
+                "photos": [{
+                    "path": "full/private/contact@example.org.jxl",
+                    "thumbnail": "thumbs/private/contact@example.org.jxl",
+                    "title": "Synthetic", "album": "album-test",
+                }],
+            }
+            (stage / "photo-gallery/albums.generated.json").write_text(
+                json.dumps(catalogue), encoding="utf-8"
+            )
+            with (stage / "reports/photos-upload-plan.csv").open(
+                "w", encoding="utf-8", newline=""
+            ) as stream:
+                writer = csv.DictWriter(stream,
+                                        fieldnames=["r2_key", "local_path"])
+                writer.writeheader()
+                writer.writerow({
+                    "r2_key": "full/projects/project-yampad/animated.gif",
+                    "local_path": str(file),
+                })
+            buf = io.StringIO()
+            with redirect_stdout(buf):
+                pub.inspect_remaining_privacy(stage, converted)
+            output = buf.getvalue()
+            self.assertIn("2 fields across 1 photo(s)", output)
+            self.assertIn("EMAIL-SHAPED-TEXT", output)
+            self.assertIn("GIF Comment", output)
+            self.assertIn("other application", output)
+            self.assertIn("email address", output)
+            self.assertNotIn("contact@example.org", output)
+            self.assertNotIn("PRIVATEAPP1", output)
+            self.assertIn("website publication remains blocked", output)
+
+    def test_unresolved_diagnostic_does_not_contact_r2(self):
+        with patch.object(pub, "inspect_remaining_privacy") as scan, \
+             patch.object(pub, "list_remote") as remote, \
+             patch.object(pub, "publish") as upload:
+            self.assertEqual(pub.main(["--inspect-unresolved"]), 0)
+        scan.assert_called_once()
+        remote.assert_not_called()
+        upload.assert_not_called()
+
     def test_privacy_report_cli_does_not_contact_r2(self):
         with patch.object(pub, "check_local") as local, \
              patch.object(pub, "list_remote") as remote, \

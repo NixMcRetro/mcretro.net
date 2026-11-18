@@ -195,14 +195,100 @@ def jxl_private_boxes(path: Path) -> list[str]:
         return flagged
 
 
+def describe_exif_tag_names(candidates: list[tuple[str, Path]]) -> None:
+    """Diagnostic only: ExifTool tag NAMES, never field VALUES.
+
+    Retains the conservative container-box upload gate. No decoded metadata
+    is sent to GitHub, R2, web APIs, or local report files.
+    """
+    print("\nDECODED EXIF TAG DIAGNOSTIC (names only; no values):", flush=True)
+    exe = shutil.which("exiftool")
+    if not exe:
+        print(
+            "  ExifTool is not installed. The compressed Exif contents have "
+            "NOT been inspected. Keep publication blocked; consider "
+            "'brew install exiftool' after reviewing the package.",
+            flush=True,
+        )
+        return
+    command = [exe, "-j", "-G1", "-s", "-u", "-n"] + [
+        str(p) for _, p in candidates
+    ]
+    try:
+        result = subprocess.run(command, capture_output=True,
+                                check=False, timeout=120)
+    except (OSError, subprocess.TimeoutExpired):
+        print("  ExifTool could not complete; manual metadata review required.",
+              flush=True)
+        return
+    if result.returncode:
+        print("  ExifTool returned an error; metadata is still UNREVIEWED.",
+              flush=True)
+        return
+    try:
+        records = json.loads(result.stdout)
+    except (ValueError, UnicodeError):
+        print("  ExifTool metadata output was unreadable; manual review required.",
+              flush=True)
+        return
+    if not isinstance(records, list):
+        print("  ExifTool result format unexpected; manual review required.",
+              flush=True)
+        return
+    by_source = {
+        str(record.get("SourceFile")): record for record in records
+        if isinstance(record, dict) and isinstance(record.get("SourceFile"), str)
+    }
+    pattern = re.compile(
+        r"(?i)(gps|latitude|longitude|location|address|serial|owner|"
+        r"artist|person|face|usercomment|comment|description|copyright|"
+        r"date.?time|create.?date|modify.?date|history|creator)"
+    )
+    files_with_suspect_tags = 0
+    unparsed = 0
+    for key, local in candidates:
+        record = by_source.get(str(local))
+        if not record:
+            print(f"  {key}: not parsed; still requires review", flush=True)
+            unparsed += 1
+            continue
+        names = sorted(
+            str(k) for k in record
+            if k != "SourceFile" and not k.startswith(("File:", "System:"))
+        )
+        suspects = [k for k in names if pattern.search(k)]
+        if suspects:
+            files_with_suspect_tags += 1
+        print(
+            f"  {key}: {len(names)} metadata tag name(s); "
+            f"potentially sensitive categories: "
+            f"{', '.join(suspects[:18]) if suspects else 'none identified'}"
+            + (" (plus more)" if len(suspects) > 18 else ""),
+            flush=True,
+        )
+    print(
+        f"  SUMMARY: {len(candidates)} metadata-bearing objects, "
+        f"{files_with_suspect_tags} with potentially sensitive tag names, "
+        f"{unparsed} unparsed. Values intentionally withheld.",
+        flush=True,
+    )
+    print(
+        "  A lack of flagged tag names does NOT prove the Exif is safe. "
+        "Metadata box concerns remain blocking pending content review.",
+        flush=True,
+    )
+
+
 def scan_public_privacy(stage: Path, converted: Path, site: dict,
-                        catalogue: bytes, photo_keys: dict) -> None:
+                        catalogue: bytes, photo_keys: dict,
+                        report_only: bool = False) -> None:
     """Fail closed on obvious data leaks; document limits of automated audit."""
     print(
         "PRIVACY PREFLIGHT: scanning public catalogue, generated pages, "
         "and optimised JXL metadata boxes ...", flush=True
     )
     issues = []
+    metadata_candidates: list[tuple[str, Path]] = []
 
     def inspect_text(description: str, value: str) -> None:
         for label, pattern in SENSITIVE_PUBLIC_MARKERS:
@@ -268,6 +354,7 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
                     f"{key}: JPEG XL container boxes requiring privacy "
                     f"review ({', '.join(flagged)})"
                 )
+                metadata_candidates.append((key, file))
             scanned += 1
         elif key.endswith(".gif"):
             # A GIF can contain Comment or XMP application extensions.
@@ -278,10 +365,20 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
     if issues:
         print(f"PRIVACY REVIEW REQUIRED: {len(issues)} potential issue(s) detected.",
               file=sys.stderr)
-        for item in issues[:12]:
+        entries = issues if report_only else issues[:12]
+        for item in entries:
             print("  - " + item, file=sys.stderr)
-        if len(issues) > 12:
+        if not report_only and len(issues) > 12:
             print(f"  ... and {len(issues) - 12} more", file=sys.stderr)
+        if report_only:
+            describe_exif_tag_names(metadata_candidates)
+            print(
+                "\nREPORT ONLY: Findings remain BLOCKING. "
+                "No local images modified; no remote access, "
+                "R2 upload or website publication.",
+                flush=True,
+            )
+            return
         raise ValueError(
             "Public website upload blocked by privacy preflight. "
             "Review the named source fields/optimised metadata locally, "
@@ -369,7 +466,8 @@ def rows_from_csv(stage: Path, catalogue_bytes: bytes) -> tuple[dict, dict]:
     return files, photos
 
 
-def check_local(stage: Path, converted: Path, html: Path) -> tuple[dict, dict, bytes]:
+def check_local(stage: Path, converted: Path, html: Path,
+                privacy_report: bool = False) -> tuple[dict, dict, bytes]:
     """Read local staging only. This never scans or opens historical originals."""
     review = audit(stage, converted, html)
     site = review["static_site"]
@@ -392,7 +490,8 @@ def check_local(stage: Path, converted: Path, html: Path) -> tuple[dict, dict, b
         )
     catalogue = public_projection(private)
     release, photos = rows_from_csv(stage, catalogue)
-    scan_public_privacy(stage, converted, release, catalogue, photos)
+    scan_public_privacy(stage, converted, release, catalogue, photos,
+                        report_only=privacy_report)
     return release, photos, catalogue
 
 
@@ -618,12 +717,19 @@ def main(argv=None) -> int:
                       help="Read-only verify public website objects already on R2")
     mode.add_argument("--privacy-audit", action="store_true",
                       help="Local-only privacy preflight; NO R2 requests or uploads")
+    mode.add_argument("--privacy-report", action="store_true",
+                      help="Show all blocking findings and optional Exif tag names; "
+                           "read-only, NO R2 access")
     args = parser.parse_args(argv)
-    if args.privacy_audit:
+    if args.privacy_audit or args.privacy_report:
         check_local(args.stage.expanduser().absolute(),
                     args.converted.expanduser().absolute(),
-                    args.html.expanduser().absolute())
-        print("LOCAL PRIVACY PREFLIGHT PASSED. NO R2 REQUESTS OR UPLOADS.")
+                    args.html.expanduser().absolute(),
+                    privacy_report=args.privacy_report)
+        if args.privacy_audit:
+            print("LOCAL PRIVACY PREFLIGHT PASSED. NO R2 REQUESTS OR UPLOADS.")
+        else:
+            print("PRIVACY REPORT COMPLETE. NOT PUBLICATION CLEARANCE.")
         return 0
     return publish(
         args.stage.expanduser().absolute(),

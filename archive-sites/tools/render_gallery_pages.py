@@ -129,7 +129,7 @@ def render_legacy_redirect(destination: str) -> str:
             any(ch not in 'abcdefghijklmnopqrstuvwxyz0123456789-/.' for ch in destination)):
         raise ValueError('Unsafe canonical redirect destination')
     safe = escape(destination, quote=True)
-    canonical = escape(SITE_HOST + destination, quote=True)
+    canonical = safe  # Same-origin canonical link; no external auto-loaded href.
     return (
         '<!doctype html>\n<html lang="en"><head><meta charset="utf-8">'
         '<meta name="robots" content="noindex,follow">'

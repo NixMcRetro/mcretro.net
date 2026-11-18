@@ -571,7 +571,19 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
         if not report_only and len(issues) > 12:
             print(f"  ... and {len(issues) - 12} more", file=sys.stderr)
         if report_only:
-            describe_exif_tag_names(metadata_candidates)
+            unresolved_metadata = [
+                (key, path) for key, path in metadata_candidates
+                if key not in cleared
+            ]
+            if unresolved_metadata:
+                describe_exif_tag_names(unresolved_metadata)
+            elif cleared:
+                print(
+                    f"All {len(cleared)} compressed-Exif JPEG XL objects "
+                    "were checked against the exact benign technical "
+                    "tag allowlist; no repeated 40-file listing.",
+                    flush=True,
+                )
             print(
                 "\nREPORT ONLY: Findings remain BLOCKING. "
                 "No local images modified; no remote access, "

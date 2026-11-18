@@ -820,6 +820,32 @@ so the owner can distinguish Exif from generic JXL/file metadata.
 Do not modify the already-public R2 photos or weaken the site upload gate
 until the relevant metadata and URL have been reviewed.
 
+### Verified technical-only Nintendo DS Exif follow-up
+
+The owner's expanded read-only metadata diagnostic confirmed that all
+**40** flagged Nintendo DS IS-NITRO JPEG XL files actually expose exactly
+the following **nine** ExifTool tag names (full-size images and thumbnails):
+`Composite:ImageSize`, `Composite:Megapixels`, `ExifIFD:ColorSpace`,
+`ExifIFD:ExifImageHeight`, `ExifIFD:ExifImageWidth`,
+`ExifTool:ExifToolVersion`, `Jpeg2000:CompatibleBrands`,
+`Jpeg2000:MajorBrand`, `Jpeg2000:MinorVersion`. ExifTool identified
+**no GPS, camera owner, serial, timestamp or other potentially private
+metadata tag names**, and parsed ExifIFD content in all 40 files.
+
+The privacy preflight now **automatically clears compressed Exif only when
+the exact technical-tag allowlist is verified on the local optimised JXL**
+using ExifTool, with no parser errors, unrecognised tags or malformed image
+dimensions. Any extra tag, missing ExifTool or failed read remains blocking.
+This does **not** remove metadata, change image bytes or relax the public
+filename/GIF privacy requirements.
+
+**Still unresolved:** the email-shaped public image name for
+`photos[8283]` (two path/thumbnail warnings referring to one photograph),
+and the Project Yampad animated GIF's actual **Comment** and **other
+application** extensions. A full privacy diagnostic or content review
+is needed for those, before running the public site uploader. The existing
+R2 photo collection remains unchanged.
+
 ## Later: publish only after explicit owner approval
 
 No Cloudflare access is required or stored by this PR. Publication is **not** automatic.

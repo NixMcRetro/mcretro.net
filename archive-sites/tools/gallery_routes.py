@@ -22,9 +22,9 @@ def _validated_parts(path: str) -> list[str]:
     return path.split('/')
 
 
-def _slug(segment: str) -> str:
+def _slug(segment: str, length: int = 80) -> str:
     ascii_label = unicodedata.normalize('NFKD', segment).encode('ascii', 'ignore').decode('ascii')
-    return re.sub(r'[^a-z0-9]+', '-', ascii_label.lower()).strip('-')[:80].strip('-') or 'folder'
+    return re.sub(r'[^a-z0-9]+', '-', ascii_label.lower()).strip('-')[:length].strip('-') or 'folder'
 
 
 def legacy_folder_url(path: str) -> str:
@@ -32,7 +32,7 @@ def legacy_folder_url(path: str) -> str:
     if path == '':
         return '/'
     parts = _validated_parts(path)
-    old_slug = _slug(parts[-1])[:40].strip('-') or 'folder'
+    old_slug = _slug(parts[-1], 40)
     # This reproduces the *original* 40-character legacy slug, including
     # truncation after normalization (before collision hashing).
     digest = hashlib.sha256(path.encode('utf-8')).hexdigest()[:10]
@@ -63,14 +63,12 @@ def plan_folder_routes(paths: list[str]) -> dict[str, str]:
             parent, _, last = path.rpartition('/')
             siblings.setdefault(parent, Counter())[_slug(last)] += 1
 
-    segments: dict[str, str] = {}
     routes = {'': '/'}
     for path in sorted((p for p in paths if p), key=lambda p: (p.count('/'), p)):
         parent, _, last = path.rpartition('/')
         name = _slug(last)
         if siblings[parent][name] > 1:
             name += '-' + hashlib.sha256(path.encode('utf-8')).hexdigest()[:10]
-        segments[path] = name
         parent_route = routes[parent]
         route = (parent_route.removesuffix('.html') + '/' + name + '.html'
                  if parent else '/albums/' + name + '.html')

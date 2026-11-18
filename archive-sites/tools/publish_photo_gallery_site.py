@@ -379,6 +379,89 @@ def describe_exif_tag_names(candidates: list[tuple[str, Path]]) -> None:
     )
 
 
+# Strictly scoped to the 40 owner's verified Nintendo DS JPEG XL objects.
+# No GPS, owner, serial, date or descriptive fields are included. The
+# metadata need not be stripped if ExifTool decodes precisely these fields.
+SAFE_TECHNICAL_JXL_TAGS = frozenset({
+    "Composite:ImageSize",
+    "Composite:Megapixels",
+    "ExifIFD:ColorSpace",
+    "ExifIFD:ExifImageHeight",
+    "ExifIFD:ExifImageWidth",
+    "ExifTool:ExifToolVersion",
+    "Jpeg2000:CompatibleBrands",
+    "Jpeg2000:MajorBrand",
+    "Jpeg2000:MinorVersion",
+})
+
+
+def cleared_technical_exif(candidates: list[tuple[str, Path]]) -> set[str]:
+    """Clear compressed Exif *only* with an exact tag-name allowlist.
+
+    ExifTool must parse every requested file, with no errors/unknown/extra
+    tags, and all of the observed dimensions/colour-space keys. Its output
+    is captured in memory; nothing sensitive is logged or written to disk.
+    Failure or absent ExifTool leaves every candidate BLOCKING.
+    """
+    if not candidates:
+        return set()
+    exe = shutil.which("exiftool")
+    if not exe:
+        return set()
+    try:
+        result = subprocess.run(
+            [exe, "-j", "-G1", "-s", "-u", "-n"] +
+            [str(p) for _, p in candidates],
+            capture_output=True, check=False, timeout=120,
+        )
+        if result.returncode:
+            return set()
+        records = json.loads(result.stdout)
+    except (OSError, subprocess.TimeoutExpired, ValueError, UnicodeError):
+        return set()
+    if not isinstance(records, list) or len(records) != len(candidates):
+        return set()
+    by_path: dict[str, dict] = {}
+    for record in records:
+        if not isinstance(record, dict):
+            return set()
+        name = record.get("SourceFile")
+        if not isinstance(name, str) or name in by_path:
+            return set()
+        by_path[name] = record
+    cleared = set()
+    required = {
+        "ExifIFD:ColorSpace",
+        "ExifIFD:ExifImageHeight",
+        "ExifIFD:ExifImageWidth",
+    }
+    for key, local in candidates:
+        item = by_path.get(str(local))
+        if item is None:
+            continue
+        names = {
+            name for name in item
+            if name != "SourceFile" and
+            not name.startswith(("File:", "System:"))
+        }
+        if not names or not required.issubset(names):
+            continue
+        if not names.issubset(SAFE_TECHNICAL_JXL_TAGS):
+            continue
+        if any(name in item for name in ("Warning", "Error")) or any(
+            name.endswith((":Warning", ":Error")) for name in item
+        ):
+            continue
+        if not all(isinstance(item.get(name), (int, str)) and
+                   str(item[name]).strip().isdigit() and
+                   int(item[name]) > 0
+                   for name in ("ExifIFD:ExifImageHeight",
+                                "ExifIFD:ExifImageWidth")):
+            continue
+        cleared.add(key)
+    return cleared
+
+
 def scan_public_privacy(stage: Path, converted: Path, site: dict,
                         catalogue: bytes, photo_keys: dict,
                         report_only: bool = False) -> None:
@@ -389,6 +472,7 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
     )
     issues = []
     metadata_candidates: list[tuple[str, Path]] = []
+    candidate_flags: dict[str, list[str]] = {}
 
     def inspect_text(description: str, value: str) -> None:
         for label, pattern in SENSITIVE_PUBLIC_MARKERS:
@@ -450,11 +534,8 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
         if key.endswith(".jxl"):
             flagged = jxl_private_boxes(file)
             if flagged:
-                issues.append(
-                    f"{key}: JPEG XL container boxes requiring privacy "
-                    f"review ({', '.join(flagged)})"
-                )
                 metadata_candidates.append((key, file))
+                candidate_flags[key] = flagged
             scanned += 1
         elif key.endswith(".gif"):
             # Parse the actual extension blocks. A raw byte-pattern search
@@ -465,6 +546,22 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
                     f"{key}: GIF extension(s) requiring privacy review "
                     f"({', '.join(sorted(set(labels)))})"
                 )
+    technical_only = [(key, path) for key, path in metadata_candidates
+                      if candidate_flags[key] == ["compressed Exif"]]
+    cleared = cleared_technical_exif(technical_only)
+    if cleared:
+        print(
+            f"TECHNICAL EXIF REVIEW: {len(cleared)} optimised JPEG XL objects "
+            "contain only strictly allowlisted Exif dimensions/colour-space "
+            "metadata; no metadata alterations required.",
+            flush=True,
+        )
+    for key, _path in metadata_candidates:
+        if key not in cleared:
+            issues.append(
+                f"{key}: JPEG XL container boxes requiring privacy "
+                f"review ({', '.join(candidate_flags[key])})"
+            )
     if issues:
         print(f"PRIVACY REVIEW REQUIRED: {len(issues)} potential issue(s) detected.",
               file=sys.stderr)
@@ -488,9 +585,10 @@ def scan_public_privacy(stage: Path, converted: Path, site: dict,
             "do not bypass the exact-key gate."
         )
     print(
-        f"PASS: no obvious private strings in generated HTML/public catalogue; "
-        f"{scanned:,} optimised JPEG XL objects have no flagged "
-        "container metadata boxes. Original source archive untouched.",
+        "PASS: no obvious private strings in generated HTML/public catalogue; "
+        f"{scanned:,} optimised JPEG XL objects checked, with "
+        f"{len(cleared)} strictly allowlisted technical Exif cases. "
+        "Original source archive untouched.",
         flush=True,
     )
     print(

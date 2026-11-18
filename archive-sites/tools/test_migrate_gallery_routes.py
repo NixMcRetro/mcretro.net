@@ -2,6 +2,7 @@
 from collections import defaultdict
 import csv
 import json
+import subprocess
 from pathlib import Path
 import shutil
 import tempfile
@@ -193,6 +194,48 @@ class RouteMigrationTests(unittest.TestCase):
                           side_effect=lambda key: remote_blobs[key]):
             _, _, _, pending = migration.inspect(self.stage, self.converted, TEMPLATE)
         self.assertEqual(pending, [])
+
+
+    def test_tampered_local_baseline_blocks_any_remote_migration(self):
+        self.prepare()
+        old_file = (self.stage / migration.BASELINE / 'old-site' /
+                    legacy_folder_url('the-collection/retired').lstrip('/'))
+        old_file.write_bytes(b'CHANGED AFTER CAPTURE')
+        paths = [f['path'] for f in json.loads(self.manifest.read_text())['folders']]
+        with self.assertRaisesRegex(ValueError, 'baseline was altered'):
+            migration._baseline_map(self.stage, paths)
+
+    def test_upload_groups_are_exact_website_keys_with_homepage_last(self):
+        self.prepare()
+        site, photos, catalogue = pub.check_local(self.stage, self.converted, TEMPLATE)
+        pending = [
+            'albums/the-collection.html',
+            'albums/the-collection/retired.html',
+            legacy_folder_url('the-collection/retired').lstrip('/'),
+            'albums.json', 'sitemap.xml', 'index.html',
+        ]
+        commands = []
+        def record(command, **kwargs):
+            commands.append((command, kwargs.get('input', b'')))
+            return subprocess.CompletedProcess(command, 0, stdout=b'', stderr=b'')
+        with patch.object(migration, 'inspect',
+                          return_value=(site, photos, catalogue, pending)), \
+             patch.object(migration.subprocess, 'run', side_effect=record), \
+             patch.object(migration, 'verify_remote') as verify:
+            migration.upload(self.stage, self.converted, TEMPLATE)
+            verify.assert_called_once()
+        self.assertEqual(len(commands), 5)
+        sent = [stream.decode('utf-8').split('\0') for _, stream in commands]
+        self.assertIn('albums/the-collection/retired.html', sent[0])
+        self.assertIn(legacy_folder_url('the-collection/retired').lstrip('/'), sent[1])
+        self.assertEqual(sent[-1], ['index.html', ''])
+        for command, stream in commands:
+            self.assertEqual(command[:2], ['rclone', 'copy'])
+            self.assertIn('--files-from0', command)
+            self.assertNotIn('sync', command)
+            self.assertNotIn('delete', command)
+            self.assertNotIn(b'full/', stream)
+            self.assertNotIn(b'thumbs/', stream)
 
 
 if __name__ == '__main__':

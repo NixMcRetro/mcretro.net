@@ -20,7 +20,7 @@ import json
 from pathlib import Path
 import shutil
 
-from gallery_routes import validate_routes
+from gallery_routes import legacy_folder_url, validate_routes
 
 DEFAULT_STAGE = Path.home() / 'Desktop/McRetro-R2-Staging'
 DEFAULT_TEMPLATE = Path(__file__).resolve().parents[1] / 'photo-gallery/index.html'
@@ -118,6 +118,30 @@ def render_static_page(template: str, folder: dict, by_path: dict,
     return result
 
 
+def render_legacy_redirect(destination: str) -> str:
+    """Static compatibility page for an old hashed album URL.
+
+    This is generated from a validated canonical route. Never put user-supplied
+    HTML or unreviewed photo metadata into a redirect page.
+    """
+    if (not destination.startswith('/albums/') or
+            not destination.endswith('.html') or
+            any(ch not in 'abcdefghijklmnopqrstuvwxyz0123456789-/.' for ch in destination)):
+        raise ValueError('Unsafe canonical redirect destination')
+    safe = escape(destination, quote=True)
+    canonical = escape(SITE_HOST + destination, quote=True)
+    return (
+        '<!doctype html>\n<html lang="en"><head><meta charset="utf-8">'
+        '<meta name="robots" content="noindex,follow">'
+        '<meta http-equiv="refresh" content="0; url=' + safe + '">'
+        '<link rel="canonical" href="' + canonical + '">'
+        '<title>Album moved | McRetro Photo Gallery</title>'
+        '</head><body><main><p>This album has moved to '
+        '<a href="' + safe + '">its permanent address</a>.'
+        '</p></main></body></html>\n'
+    )
+
+
 def render_pages(stage: Path, template_path: Path) -> dict:
     manifest = stage / 'photo-gallery/albums.generated.json'
     if not manifest.is_file():
@@ -171,6 +195,18 @@ def render_pages(stage: Path, template_path: Path) -> dict:
         rows.append({'r2_key': local.relative_to(output).as_posix(), 'local_path': str(local),
                      'mime': 'text/html; charset=utf-8', 'bytes': local.stat().st_size,
                      'approved_for_publication': 'NO'})
+        if folder['path']:
+            alias = legacy_folder_url(folder['path']).lstrip('/')
+            if alias == local.relative_to(output).as_posix():
+                raise ValueError('Legacy redirect unexpectedly overlaps canonical route')
+            old_page = output / alias
+            if old_page.is_symlink():
+                raise ValueError('Refusing symlink legacy redirect: ' + str(old_page))
+            old_page.parent.mkdir(parents=True, exist_ok=True)
+            old_page.write_text(render_legacy_redirect(route), encoding='utf-8')
+            rows.append({'r2_key': alias, 'local_path': str(old_page),
+                         'mime': 'text/html; charset=utf-8', 'bytes': old_page.stat().st_size,
+                         'approved_for_publication': 'NO'})
     # Copy the generated catalogue to its expected public object key.
     catalogue = output / 'albums.json'
     shutil.copyfile(manifest, catalogue)
@@ -192,7 +228,8 @@ def render_pages(stage: Path, template_path: Path) -> dict:
                                 fieldnames=['r2_key','local_path','mime','bytes','approved_for_publication'])
         writer.writeheader()
         writer.writerows(rows)
-    return {'html_pages':len(folders), 'folder_pages':len(folders)-1,
+    return {'html_pages':2*len(folders)-1, 'folder_pages':len(folders)-1,
+            'legacy_redirect_pages':len(folders)-1,
             'sitemap_urls':len(urls),'unapproved_objects':len(rows),
             'preview_site':str(output),'published':False}
 

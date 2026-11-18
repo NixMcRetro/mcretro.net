@@ -522,6 +522,13 @@ class GalleryWebsitePublishTests(unittest.TestCase):
                 record[group + ":" + name] = "technical value"
             record[group + ":ProfileDescription"] = "Display P3"
             record[group + ":ProfileCopyright"] = "Copyright Apple Inc., 2017"
+        for group in ("ICC-header", "ICC-header2"):
+            record[group + ":ProfileVersion"] = "4.0.0"
+            record[group + ":ProfileClass"] = "Display Device Profile"
+            record[group + ":ColorSpaceData"] = "RGB"
+            record[group + ":ProfileConnectionSpace"] = "XYZ"
+            record[group + ":ProfileFileSignature"] = "acsp"
+            record[group + ":DeviceManufacturer"] = "Apple"
         return record
 
     def test_verified_yampad_metadata_passes_exact_allowlist(self):
@@ -541,6 +548,62 @@ class GalleryWebsitePublishTests(unittest.TestCase):
                 "GIF Comment extension",
                 "other GIF application extension",
             ])
+
+    def test_verified_yampad_rejects_unknown_icc_header_fields(self):
+        with tempfile.TemporaryDirectory() as temp:
+            gif = Path(temp) / "animated.gif"
+            self.synthetic_yampad_gif(gif)
+            record = self.yampad_exif_record(gif)
+            record["ICC-header:UnexpectedPrivateNote"] = "sensitive data"
+            mocked = subprocess.CompletedProcess(
+                [], 0, stdout=json.dumps([record]).encode(), stderr=b""
+            )
+            reasons = []
+            with patch.object(pub.shutil, "which",
+                              return_value="/usr/local/bin/exiftool"), \
+                 patch.object(pub.subprocess, "run", return_value=mocked):
+                self.assertFalse(pub.cleared_yampad_gif_extensions(
+                    gif, diagnostics=reasons))
+            self.assertIn("unexpected names", str(reasons))
+            self.assertNotIn("sensitive data", str(reasons))
+
+    def test_verified_yampad_rejects_different_icc_header_copies(self):
+        with tempfile.TemporaryDirectory() as temp:
+            gif = Path(temp) / "animated.gif"
+            self.synthetic_yampad_gif(gif)
+            record = self.yampad_exif_record(gif)
+            record["ICC-header2:DeviceManufacturer"] = "Another Vendor"
+            mocked = subprocess.CompletedProcess(
+                [], 0, stdout=json.dumps([record]).encode(), stderr=b""
+            )
+            reasons = []
+            with patch.object(pub.shutil, "which",
+                              return_value="/usr/local/bin/exiftool"), \
+                 patch.object(pub.subprocess, "run", return_value=mocked):
+                self.assertFalse(pub.cleared_yampad_gif_extensions(
+                    gif, diagnostics=reasons))
+            self.assertIn("Two ICC fixed-format header copies differ",
+                          str(reasons))
+            self.assertNotIn("Another Vendor", str(reasons))
+
+    def test_verified_yampad_rejects_private_icc_header_value(self):
+        with tempfile.TemporaryDirectory() as temp:
+            gif = Path(temp) / "animated.gif"
+            self.synthetic_yampad_gif(gif)
+            record = self.yampad_exif_record(gif)
+            for group in ("ICC-header", "ICC-header2"):
+                record[group + ":DeviceManufacturer"] = "person@example.com"
+            mocked = subprocess.CompletedProcess(
+                [], 0, stdout=json.dumps([record]).encode(), stderr=b""
+            )
+            reasons = []
+            with patch.object(pub.shutil, "which",
+                              return_value="/usr/local/bin/exiftool"), \
+                 patch.object(pub.subprocess, "run", return_value=mocked):
+                self.assertFalse(pub.cleared_yampad_gif_extensions(
+                    gif, diagnostics=reasons))
+            self.assertIn("potentially sensitive header field", str(reasons))
+            self.assertNotIn("person@example.com", str(reasons))
 
     def test_verified_yampad_comment_fails_if_changed_even_without_pii(self):
         with tempfile.TemporaryDirectory() as temp:

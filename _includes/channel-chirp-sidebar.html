@@ -1,4 +1,5 @@
 {% assign chirp_posts = site.categories.parrots | where_exp: "bird", "bird.channel_chirp != false" %}
+{% assign bird_fallback = chirp_posts | sort: 'title' %}
 <section class="widget nest-widget" aria-labelledby="nest-sidebar-search">
   <h4 class="widgettitle" id="nest-sidebar-search">🪶 Search the flock</h4>
   <form action="/chirp/" method="get" class="inline-search-form">
@@ -8,10 +9,10 @@
   </form>
 </section>
 
-<section class="widget nest-widget recent-posts-widget" aria-labelledby="nest-sidebar-recent">
-  <h4 class="widgettitle" id="nest-sidebar-recent">🦜 Recent Chirps</h4>
-  <ul class="recent-posts-list">
-    {% for bird in chirp_posts limit: 4 %}
+<section class="widget nest-widget recent-posts-widget" aria-labelledby="nest-sidebar-random">
+  <h4 class="widgettitle" id="nest-sidebar-random">🎲 Random Posts</h4>
+  <ul class="recent-posts-list" data-chirp-random-posts>
+    {% for bird in bird_fallback limit: 4 %}
       <li>
         <a href="{{ bird.url | relative_url }}">{{ bird.title | escape }}</a>
         <span class="post-date-sidebar">
@@ -27,7 +28,8 @@
       </li>
     {% endfor %}
   </ul>
-  <a class="nest-sidebar-more" href="/chirp/#nest-adventures">More Channel Chirp posts ({{ chirp_posts.size }})</a>
+  <button class="nest-sidebar-shuffle" type="button" data-chirp-random-shuffle aria-label="Show four other random Channel Chirp posts">🎲 Shuffle again</button>
+  <a class="nest-sidebar-more" href="/chirp/#nest-adventures">Browse all {{ chirp_posts.size }} Channel Chirp posts</a>
 </section>
 
 <section class="widget nest-widget" aria-labelledby="nest-sidebar-flock">

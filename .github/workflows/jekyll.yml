@@ -26,6 +26,11 @@ on:
       - '.github/tests/post-media-built-check.mjs'
       - 'about.md'
       - 'channels.md'
+      - 'channels/channel-chirp/**'
+      - '_includes/channel-chirp-nav.html'
+      - '_includes/channel-chirp-sidebar.html'
+      - 'assets/js/channel-chirp-filter.js'
+      - '.github/tests/channel-chirp-built.mjs'
       - 'goodies.md'
       - 'homepages/fishtankworld/**'
       - 'homepages/goatpad/**'
@@ -136,6 +141,11 @@ jobs:
 
       - name: Verify Fish Tank World pages and built-site internal links
         run: node .github/tests/fishtankworld-built.mjs _site
+
+      - name: Verify Channel Chirp Nest posts, navigation and theme isolation
+        run: |
+          node --check assets/js/channel-chirp-filter.js
+          node .github/tests/channel-chirp-built.mjs _site
 
       - name: Verify Goodies projects and restored homepages remain reachable
         run: node .github/tests/goodies-directory-built.mjs _site

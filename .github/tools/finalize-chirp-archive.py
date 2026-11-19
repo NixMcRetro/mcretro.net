@@ -89,7 +89,7 @@ def validate(source: Path, dest: Path) -> dict:
     rendered = 0
     for article in post_files:
         fm = article.read_text(encoding="utf-8")
-        match = re.search(r"^permalink:\s*['\"]?(/[^'\"]+)", fm, re.M)
+        match = re.search(r"^permalink:[ \\t]*['\\"]?(/[^\\r\\n'\\\" \\t]+)", fm, re.M)
         if not match:
             raise ValueError(f"Missing canonical permalink: {article.name}")
         slug = match.group(1).strip().strip("'\"").strip("/")

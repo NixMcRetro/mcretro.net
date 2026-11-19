@@ -1,85 +1,88 @@
-# Channel Chirp retirement and preservation checklist
+# Channel Chirp: staged migration to McRetro
 
-**Status:** Draft PR #282. Do not merge or switch off the original website yet.
+**Status:** Draft PR #282. Not merged, not published, and not authorised to
+turn off either the original Channel Chirp website or YouTube channel.
 
-## Preservation layout
+## The intended experience
 
-- `/chirp/`: McRetro-hosted, Bird-themed front door with restored/editable
-  conure articles, site-wide Light/Dark/Bird control, and local navigation.
-- `/chirp/archive/`: complete **historical snapshot** of the former
-  Channel Chirp Jekyll site, built into the McRetro GitHub Pages artifact.
-- `/chirp/archive/adventures/`: all 229 original articles, including content
-  not already reworked on McRetro.
-- `/chirp/archive/pudge/`, `tillie/`, `chip/`, `diet/`, and `timeline/`:
-  original content and chronology.
-- `/chirp/archive/soundborb/`: the complete original Soundborb v0.8 app,
-  its 509 approved MP3 clips (15,330,556 bytes total) and 509-entry manifest.
-- `/chirp/archive/images/`: the 16 original website images, preserving
-  existing paths for the historical snapshot.
-- Original Channel Chirp repo: `ChannelChirp/website`, immutable snapshot
-  **4bb407a15f29cb75000d4ef636d441af009b2a48**, 19th November 2026.
-- The source repo stays unchanged. The build checks it out **only after**
-  the ordinary McRetro Jekyll site has been built and then builds under
-  `_site/chirp/archive` so it cannot leak source files to the root site.
+**One root:** `https://mcretro.net/chirp/`. There must be **no separate,
+public historical-post archive**. All Channel Chirp sections and tools will
+live directly beneath `/chirp/`, with coherent navigation and sidebars.
 
-The original repo has 229 posts; 50 use exact filenames already present on
-McRetro and 179 do not. The Nest's existing `parrots` filter intentionally
-excludes the Little Corella article from its 54 restored-conure list, but
-the original archive preserves **all** original Channel Chirp posts, even
-non-conure ones. The historic snapshot and rewritten McRetro articles are
-distinct, labelled experiences; do not silently overwrite edited posts.
+**Bird mode is a content filter, not simply an additional colour palette.**
+- Light and Dark preserve the ordinary McRetro navigation, recent posts,
+  blog archives, search, and post-to-post navigation.
+- Bird changes the header/logo, six-item nav, sidebar, recent posts, search
+  and previous/next articles to a **Channel Chirp-only experience**.
+- Only released McRetro posts in `site.categories.parrots` are included,
+  except those explicitly marked `channel_chirp: false`. The Little
+  Corella article (three unrelated videos) is the current exception.
+- The bird sidebar lists the **four most recent published conure posts**
+  and its search filters the released bird index; it does not search
+  unrelated McRetro articles.
+- Clicking the theme button can switch Light -> Dark -> Bird -> Light.
+  Entering `/chirp/` activates Bird. Selecting Light from the Nest
+  returns to the ordinary blog. Previously selected themes persist.
+- Bird filters **existing McRetro posts only**. Changing to Bird while
+  browsing the general blog, archives, or an unrelated post takes the
+  visitor to the curated `/chirp/` feed instead of mixing other articles.
+- On published conure posts the Bird-only navigation/sidebar apply only
+  while Bird mode is selected. Light and Dark can display the ordinary
+  McRetro post navigation and sidebar.
 
-## Safeguards implemented in this PR
+## Release cadence
 
-1. Pin original source to a specific commit, not a mutable branch or site.
-2. Run a second static Jekyll build into the nested archive directory.
-3. Require exact counts of 229 posts, 509 playable MP3s, a matching
-   509-entry Soundborb catalogue, and 16 original images.
-4. Verify each source article's requested permalink exists in the output.
-5. Compare 509 audio objects, 16 images, Soundborb JS/CSS and clip catalogue
-   with the source checkout using SHA256. Reject missing or changed bytes.
-6. Rewrite root-relative and old-domain HTML links to local archive routes,
-   retaining the main `/pagefind/` UI assets.
-7. Remove a copied old `CNAME` from the nested archive output.
-8. Ensure the new Nest, main sidebar and links no longer depend on
-   `channelchirp.com`; build checks run before any publication.
-9. No Cloudflare uploads, DNS changes, edits to the source repository,
-   or merges to `main` occur in this PR.
+The owner is **gradually re-releasing historical Channel Chirp YouTube
+videos on the main McRetro YouTube channel** and adding updated blog
+articles as each is ready. The original Channel Chirp YouTube channel will
+eventually be retired. Do **not** bulk-publish the original 229 historical
+posts or embed links to old videos that are scheduled to disappear.
 
-## Release blockers before owner approval
+- Existing released articles stay at their established McRetro permalinks.
+- New posts are added as usual, normally with the `parrots` category,
+  and automatically join The Nest and the recent-bird list.
+- Use `channel_chirp: false` for unrelated Parrots category entries.
+- The original `ChannelChirp/website` repository is a reference and
+  private staging/migration source, not an extra public set of blog posts.
+- Record original-to-McRetro article/video IDs in a private migration
+  checklist when necessary. Do not expose unpublished video URLs.
+- The released-post timeline grows as each new article appears.
 
-- **Image metadata and privacy.** The original site has 16 images, including
-  DNA sexing documents/certificates and old personal photographs. These
-  require deliberate human visual review and metadata examination before
-  republishing at a new hostname. Merely being public on the old site does
-  not establish approval to republish under McRetro.
-- **Legacy post privacy.** Check all 229 original articles for historical
-  addresses, phone numbers, full names, buyer/adoption details and other
-  information that should not be preserved publicly. Rework or redact with
-  owner approval as necessary.
-- **JPEG XL policy.** The archive currently preserves the old site's JPEG
-  and PNG images for faithful rendering. McRetro normally prefers JPEG XL
-  only. Decide on and test the conversion and metadata-stripping policy
-  before merging; update all referenced asset URLs if images change.
-- **External dependencies and CSP.** Old layouts use Bootstrap/Font Awesome
-  CDN, Google Fonts, and some inline JS. The legacy source may need to be
-  adapted to the modern McRetro CSP and local-only asset standards. A green
-  Jekyll build verifies structure, not every browser interaction.
-- **Browser walkthrough.** Manually test profiles, the full timeline,
-  pagination, mobile layout, keyboard navigation, YouTube embeds, Pagefind,
-  Soundborb playback/queue/favourites/Party Parrot, and all deep links.
-- **Search/canonical and SEO.** Decide whether to mark original duplicates
-  as archival or point search-engine canonicals to rewritten McRetro posts.
-  Check archived sitemaps and preserve historical URL mapping.
-- **Build independence.** The generated site is independent of the
-  `channelchirp.com` **domain**, but the build process still checks out
-  pinned files from the **GitHub source repository**. Before deleting or
-  privatizing that repository, mirror a reviewed immutable source snapshot
-  within McRetro or a separately maintained owned archive and update CI.
-- **Retirement transition.** Do not turn off the old site until the new
-  `/chirp/` and `/chirp/archive/` pages are live, all migrated audio/images
-  are confirmed accessible, content is reviewed, and any intended
-  redirects from old public URLs are planned and tested.
+## Features that will move into /chirp/
 
-This is a preservation project, not an instruction to merge, purge, or
-remove the historical source. PR #282 remains a draft for review.
+- Flock profiles and images for Pudge, Tillie, and Chip, following a
+  metadata and privacy review.
+- The Soundborb app, its catalogue, and all **509 approved individual MP3
+  clips** (15,330,556 source bytes). Preserve its queue, favourites,
+  Party Parrot, and responsive layouts in a dedicated direct child URL,
+  `/chirp/soundborb/`.
+- Diet and flock timeline pages under the same root.
+- Original channel branding adapted to McRetro's three modes and
+  JPEG XL image policies.
+
+**The Soundborb landing section on /chirp/ is a migration notice, not a
+claim that the old audio has already been moved.** Do not link the new
+public site to audio or a player hosted by the original domain.
+
+## Required checks before merging or retiring the original services
+
+1. Source review of the 229 historical articles to identify what has
+   actually been re-released and what remains deliberately unpublished.
+2. Publish *only* approved reworked posts, not the original bulk archive.
+3. Review legacy source images for privacy, consent, embedded personal
+   documents, metadata, and conversion to JPEG XL.
+4. Migrate Soundborb's **approved** audio and assets under `/chirp/`
+   without external domain runtime dependencies. Check hashes and real
+   playback in browsers before changing the original site.
+5. Test Bird content isolation, recent-posts counts, back-to-McRetro
+   controls, keyboard navigation, mobile sizes, and each theme's
+   header/sidebar changes.
+6. Replace references to the retiring original YouTube channel in
+   newly published articles with verified McRetro video URLs at the
+   time of each re-release.
+7. Do not remove the original site, source repository, or YouTube
+   channel until all desired content and features have been approved,
+   migrated, and tested.
+
+This draft never uploads media, changes DNS, removes original assets,
+or merges to `main` without explicit owner approval.

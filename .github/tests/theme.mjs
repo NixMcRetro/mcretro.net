@@ -10,8 +10,8 @@ const layout = read('_layouts/default.html');
 const style = read('assets/css/style.css');
 const overrides = read('assets/css/overrides.css');
 const blog = read('blog/index.html');
-function fixture(systemDark = false, stored = null, storageFails = false) {
-  const handlers = {}, docHandlers = {}, mediaHandlers = {}, attrs = {};
+function fixture(systemDark = false, stored = null, storageFails = false, defaultBird = false) {
+  const handlers = {}, docHandlers = {}, mediaHandlers = {}, attrs = defaultBird ? {'data-default-theme':'bird'} : {};
   const btnAttrs = {}, metaAttrs = {};
   const store = new Map(stored ? [['mcretro-theme', stored]] : []);
   const button = {
@@ -40,21 +40,26 @@ function fixture(systemDark = false, stored = null, storageFails = false) {
 }
 test('core: early external script prevents incorrect-theme flash and preserves CSP', () => {
   assert.ok(layout.indexOf('assets/js/theme.js') < layout.indexOf('assets/css/style.css'));
-  assert.ok(header.includes('data-theme-toggle') && header.includes('aria-label="Dark theme"'));
+  assert.ok(header.includes('data-theme-toggle') &&
+    header.includes('aria-label="Current theme: Light. Switch to Dark theme"'));
   assert.ok(!layout.includes('<script>') && !header.includes('onclick='));
+  assert.match(layout, /assets\/css\/bird-theme\.css/);
+  assert.match(layout, /data-default-theme="bird"/);
   assert.match(style,/--retro-teal: #008080/);
   assert.match(overrides,/\.mcretro-modem-titlebar[\s\S]*background: #000080/);
   assert.match(style,/\.mcretro-modem-dialog, \.mcretro-modem-card \{ color-scheme: light; \}/);
 });
-test('core: first visit respects light/dark system preference', () => {
+
+test('core: first visit respects light/dark system preference on non-bird pages', () => {
   const light=fixture(false),dark=fixture(true);
   assert.equal(light.attrs['data-theme'],'light');
-  assert.equal(light.btnAttrs['aria-pressed'],'false');
+  assert.match(light.btnAttrs['aria-label'], /Current theme: Light\. Switch to Dark theme/);
   assert.equal(dark.attrs['data-theme'],'dark');
   assert.equal(dark.metaAttrs.content,'#191D27');
-  assert.equal(dark.btnAttrs['aria-pressed'],'true');
+  assert.match(dark.btnAttrs['aria-label'], /Current theme: Dark\. Switch to Bird theme/);
 });
-test('core: manual selection persists and takes priority over system changes', () => {
+
+test('core: theme button cycles Light, Dark, Bird, Light and persists', () => {
   const f=fixture(false);
   f.handlers.click();
   assert.equal(f.store.get('mcretro-theme'),'dark');
@@ -62,10 +67,30 @@ test('core: manual selection persists and takes priority over system changes', (
   f.media.matches=true;f.mediaHandlers.change();
   assert.equal(f.attrs['data-theme'],'dark');
   f.handlers.click();
+  assert.equal(f.store.get('mcretro-theme'),'bird');
+  assert.equal(f.attrs['data-theme'],'bird');
+  assert.equal(f.metaAttrs.content,'#F4F4E7');
+  assert.match(f.btnAttrs['aria-label'], /Current theme: Bird\. Switch to Light theme/);
+  f.handlers.click();
   assert.equal(f.store.get('mcretro-theme'),'light');
   assert.equal(f.attrs['data-theme'],'light');
 });
-test('core: without manual selection, device changes update page', () => {
+
+test('core: conure pages default to Bird unless explicitly overridden', () => {
+  const f=fixture(false,null,false,true);
+  assert.equal(f.attrs['data-theme'],'bird');
+  assert.equal(f.store.has('mcretro-theme'),false);
+  f.media.matches=true;f.mediaHandlers.change();
+  assert.equal(f.attrs['data-theme'],'bird', 'system mode does not override the Nest default');
+  f.handlers.click();
+  assert.equal(f.attrs['data-theme'],'light', 'one click leaves Bird mode');
+  const existing=fixture(true,'dark',false,true);
+  assert.equal(existing.attrs['data-theme'],'dark');
+  const selectedBird=fixture(false,'bird',false,false);
+  assert.equal(selectedBird.attrs['data-theme'],'bird', 'Bird persists on other McRetro pages');
+});
+
+test('core: without manual selection, device changes update normal pages', () => {
   const f=fixture(false);
   f.media.matches=true;f.mediaHandlers.change();
   assert.equal(f.attrs['data-theme'],'dark');
@@ -73,19 +98,35 @@ test('core: without manual selection, device changes update page', () => {
   assert.equal(f.attrs['data-theme'],'light');
   assert.equal(f.store.has('mcretro-theme'),false);
 });
-test('core: invalid stored value is ignored; storage events sync other tabs', () => {
+
+test('core: invalid stored value is ignored; storage events sync all three modes', () => {
   const f=fixture(false,'unexpected');
   assert.equal(f.attrs['data-theme'],'light');
+  f.store.set('mcretro-theme','bird');
+  f.handlers.storage({key:'mcretro-theme'});
+  assert.equal(f.attrs['data-theme'],'bird');
   f.store.set('mcretro-theme','dark');
   f.handlers.storage({key:'mcretro-theme'});
   assert.equal(f.attrs['data-theme'],'dark');
 });
-test('core: blocked localStorage still permits a page-only manual choice', () => {
+
+test('core: blocked localStorage still permits page-local theme choice', () => {
   const f=fixture(true,null,true);
   f.handlers.click();
-  assert.equal(f.attrs['data-theme'],'light');
-  assert.equal(f.btnAttrs['aria-pressed'],'false');
+  assert.equal(f.attrs['data-theme'],'bird');
+  assert.match(f.btnAttrs['aria-label'], /Current theme: Bird/);
 });
+
+test('core: Bird stylesheet and header icon preserve original mobile layout', () => {
+  const bird=read('assets/css/bird-theme.css');
+  assert.match(bird, /:root\[data-theme="bird"\]/);
+  assert.match(bird, /--page-bg: #F4F4E7/);
+  assert.match(bird, /--link: #27652C/);
+  assert.match(bird, /\.theme-icon--bird/);
+  assert.match(header, /class="theme-icon theme-icon--bird"/);
+  assert.match(layout, /<html lang="en"\{% if channel_chirp_mode %\} data-default-theme="bird"/);
+});
+
 test('advisory: two stable button positions, WCAG labels and CSS colour tokens', () => {
   assert.match(style,/\.theme-toggle[\s\S]*width: 40px/);
   assert.match(style,/@media screen and \(max-width: 750px\) \{\s*\.theme-toggle/);

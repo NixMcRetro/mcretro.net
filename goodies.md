@@ -29,9 +29,16 @@ title: Goodies
         <p class="goodies-section-overline">OPEN A TAB AND HAVE A PLAY</p>
         <h3 id="goodies-ready-heading">✅ Ready to Visit</h3>
       </div>
-      <span class="goodies-section-count">6 PROJECTS</span>
+      <span class="goodies-section-count">7 PROJECTS</span>
     </div>
     <div class="goodies-grid">
+    <a class="goodies-card goodies-card--active" href="https://photos.mcretro.net/index.html">
+      <span class="goodies-card-meta"><span class="goodies-card-icon" aria-hidden="true">📸</span><span class="goodies-card-kind">PHOTO ARCHIVE</span></span>
+      <span class="goodies-card-title">Photo Gallery</span>
+      <span class="goodies-card-description">A deep dive into thousands of photos of retro computers, game consoles, modems, accessories, projects, and the occasional bit of nature. Browse the folders, search for obscure gadgets, and zoom in on all the tiny details. It turns out I photographed a lot of stuff!</span>
+      <span class="goodies-card-action">Explore gallery <span aria-hidden="true">↗</span></span>
+    </a>
+
     <a class="goodies-card goodies-card--active" href="/homepages/op-1/">
       <span class="goodies-card-meta"><span class="goodies-card-icon" aria-hidden="true">🎹</span><span class="goodies-card-kind">MUSIC MAKER</span></span>
       <span class="goodies-card-title">BleepGarden Music Maker 2000</span>
@@ -136,12 +143,11 @@ title: Goodies
         <p class="goodies-section-overline">THE WORKBENCH IS A MESS</p>
         <h3 id="goodies-building-heading">🚧 Still Under Construction</h3>
       </div>
-      <span class="goodies-section-count">3 IN PROGRESS</span>
+      <span class="goodies-section-count">2 IN PROGRESS</span>
     </div>
     <div class="goodies-building-grid">
       <div class="goodies-building-item"><span aria-hidden="true">📁</span><div><strong>File Server</strong><p>Not ready yet. The promised 10 KB/s downloads remain a dream!</p></div></div>
       <div class="goodies-building-item"><span aria-hidden="true">🏗️</span><div><strong><a href="/homepages/geocities/">GeoCities</a></strong><p>Still needs its proper historical content restored.</p></div></div>
-      <div class="goodies-building-item"><span aria-hidden="true">📸</span><div><strong>Photo Gallery</strong><p>The gallery is still being restored.</p></div></div>
     </div>
     <p class="goodies-outro">As for the other tools and experiments, they'll turn up here as they become ready.</p>
   </section>

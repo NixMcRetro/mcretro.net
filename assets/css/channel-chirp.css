@@ -1,6 +1,6 @@
 /*
  * Channel Chirp / The Nest
- * Structural styles scoped to conure posts and the independent Nest index.
+ * Bird-only structural styles plus the standalone released-conure Nest index.
  * No web fonts, cross-origin images, or trackers.
  * Accent nods to Channel Chirp's original #29a518 while using softer tones.
  */
@@ -9,28 +9,28 @@
  * Its green colours now come from the site-wide Bird preference, rather
  * than overriding the selected Light/Dark palette on those pages.
  */
-.channel-chirp-theme .site-header { background: transparent; }
-.channel-chirp-theme .site-logo {
+:root[data-theme="bird"] .site-header { background: transparent; }
+:root[data-theme="bird"] .site-logo {
   font-family: Montserrat, "Helvetica Neue", sans-serif;
   letter-spacing: .035em;
   font-weight: 700;
   color: var(--link);
 }
-.channel-chirp-theme .textcycle .phrase {
+:root[data-theme="bird"] .textcycle .phrase {
   animation: none;
   opacity: 1;
   color: var(--muted);
 }
-.channel-chirp-theme .main-nav {
+:root[data-theme="bird"] .main-nav {
   border-color: var(--border);
 }
-.channel-chirp-theme .main-nav a.active {
+:root[data-theme="bird"] .main-nav a.active {
   color: var(--link);
 }
-.channel-chirp-theme .sidebar { border-top-color: var(--border); }
-.channel-chirp-theme .widget { border-bottom-color: var(--border-soft); }
-.channel-chirp-theme .widgettitle { color: var(--link); }
-.channel-chirp-theme .post-full {
+:root[data-theme="bird"] .sidebar { border-top-color: var(--border); }
+:root[data-theme="bird"] .widget { border-bottom-color: var(--border-soft); }
+:root[data-theme="bird"] .widgettitle { color: var(--link); }
+:root[data-theme="bird"] .post-full {
   background: var(--panel);
   border: 1px solid var(--border-soft);
   border-top: 4px solid var(--border);
@@ -38,8 +38,8 @@
   padding: clamp(16px, 3vw, 32px);
   box-shadow: 0 10px 30px rgba(26, 48, 25, .07);
 }
-.channel-chirp-theme .post-full .post-title { color: var(--link); }
-.channel-chirp-theme .post-navigation { border-color: var(--border-soft); }
+:root[data-theme="bird"] .post-full .post-title { color: var(--link); }
+:root[data-theme="bird"] .post-navigation { border-color: var(--border-soft); }
 
 .nest-subnav {
   width: min(1190px, 90%);
@@ -250,3 +250,11 @@
   .nest-heading-row { flex-direction: column; }
   .nest-post-grid { grid-template-columns: 1fr; }
 }
+
+/* The original Jekyll article chronology applies when Bird filtering is off. */
+:root:not([data-theme="bird"]) .post-navigation--bird { display: none !important; }
+:root[data-theme="bird"] .post-navigation--mcretro { display: none !important; }
+.chirp-timeline { list-style: none; padding: 0; margin: 1.3rem 0; }
+.chirp-timeline li { display: flex; flex-wrap: wrap; gap: .6rem 1rem; padding: .55rem 0; border-bottom: 1px solid var(--border-soft); }
+.chirp-timeline time { color: var(--muted); font-size: .81rem; min-width: 8.5em; }
+.chirp-timeline a { flex: 1; min-width: 10rem; font-weight: 600; }

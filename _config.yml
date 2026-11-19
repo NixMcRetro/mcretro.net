@@ -14,13 +14,6 @@ encoding: utf-8
 # The blog structure
 permalink: /:title/
 
-# The retired Channel Chirp archive is a separate content collection.
-# Its posts must not enter the main McRetro blog, Jekyll archives, or RSS feed.
-collections:
-  chirp_archive:
-    output: true
-    permalink: /chirp/:name/
-
 # Pagination for the blog (adventures)
 paginate: 5
 paginate_path: "/blog/page:num/"

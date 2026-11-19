@@ -21,6 +21,7 @@ on:
       - '.github/tests/caption-excerpts.test.rb'
       - '.github/tests/caption-excerpts-built.mjs'
       - 'assets/css/**'
+      - 'assets/js/theme.js'
       - 'assets/js/post-media-layout.js'
       - '_plugins/image_dimensions.rb'
       - '.github/tests/post-media-built-check.mjs'

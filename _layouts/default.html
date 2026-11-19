@@ -1,11 +1,20 @@
-{% assign channel_chirp_mode = false %}
+{% assign channel_chirp_page = false %}
+{% assign channel_chirp_article = false %}
 {% if page.channel_chirp == true %}
-  {% assign channel_chirp_mode = true %}
-{% elsif page.categories contains 'parrots' and page.channel_chirp != false %}
-  {% assign channel_chirp_mode = true %}
+  {% assign channel_chirp_page = true %}
+{% endif %}
+{% if page.categories contains 'parrots' and page.channel_chirp != false %}
+  {% assign channel_chirp_article = true %}
+{% endif %}
+{% assign chirp_filtered_content = false %}
+{% if page.layout == 'post' and channel_chirp_article == false %}
+  {% assign chirp_filtered_content = true %}
+{% endif %}
+{% if page.url contains '/blog/' or page.url contains '/archive/' %}
+  {% assign chirp_filtered_content = true %}
 {% endif %}
 <!DOCTYPE html>
-<html lang="en"{% if channel_chirp_mode %} data-default-theme="bird"{% endif %}>
+<html lang="en"{% if channel_chirp_page %} data-default-theme="bird"{% endif %}{% if chirp_filtered_content %} data-chirp-unrelated="true"{% endif %}{% if channel_chirp_page %} data-chirp-landing="true"{% endif %}>
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16x16.png' | relative_url }}?v=20261018b">
@@ -24,25 +33,26 @@
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/overrides.css">
   <link rel="stylesheet" href="/assets/css/bird-theme.css">
-  {% if channel_chirp_mode %}<link rel="stylesheet" href="/assets/css/channel-chirp.css">{% endif %}
+  <link rel="stylesheet" href="/assets/css/channel-chirp.css">
   <script src="{{ '/assets/js/accordion-navigation.js' | relative_url }}" defer></script>
   {% feed_meta %}
   {% seo %}
 </head>
-<body {% if channel_chirp_mode %}class="channel-chirp-theme" {% endif %}{% if page.pagefind == false %}data-pagefind-ignore="all" {% endif %}{% if page.date %}data-archive-context-year="{{ page.date | date: '%Y' }}"{% endif %}>
+<body {% if channel_chirp_page %}class="channel-chirp-page" {% endif %}{% if page.pagefind == false %}data-pagefind-ignore="all" {% endif %}{% if page.date %}data-archive-context-year="{{ page.date | date: '%Y' }}"{% endif %}>
   {% include header.html %}
-  {% if channel_chirp_mode %}{% include channel-chirp-nav.html %}{% endif %}
+  {% include channel-chirp-nav.html %}
   <script src="{{ '/assets/js/header-taglines.js' | relative_url }}"></script>
   <div class="site-content">
     <main class="content-area">
       {{ content }}
     </main>
     <aside class="sidebar" data-pagefind-ignore="all">
-      {% if channel_chirp_mode %}
-        {% include channel-chirp-sidebar.html %}
-      {% else %}
+      <div class="sidebar-mode-mcretro">
         {% include_cached sidebar.html %}
-      {% endif %}
+      </div>
+      <div class="sidebar-mode-bird">
+        {% include channel-chirp-sidebar.html %}
+      </div>
     </aside>
   </div>
   {% include footer.html %}

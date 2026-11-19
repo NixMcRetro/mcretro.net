@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
+import { scriptElements } from './script-tags.mjs';
 
 const root = 'archive-sites/file-server';
 const read = path => fs.readFileSync(path, 'utf8');
@@ -16,23 +17,17 @@ test('draft file-server UI has local controls and one inline script', () => {
     assert.ok(html.includes('id="' + id + '"'));
   }
   assert.match(html, /const PAGE_SIZE = 80/);
-  const scripts = [...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script\s*>/gi)];
+  const scripts = scriptElements(html);
   assert.equal(scripts.length, 1);
-  assert.match(scripts[0][0], /^<script>/i);
-  assert.doesNotThrow(() => new vm.Script(scripts[0][1]));
+  assert.equal(scripts[0].attributes.trim(), '');
+  assert.doesNotThrow(() => new vm.Script(scripts[0].body));
 });
 
-test('sample catalogue remains unapproved and schema-valid', () => {
+test('repository catalogue is intentionally empty and embargoed', () => {
   assert.equal(data.schema_version, 1);
-  assert.ok(Array.isArray(data.files) && data.files.length >= 1);
-  assert.equal(data.files[0].path, 'mcretro-r2-check.txt');
-  const seen = new Set();
-  for (const file of data.files) {
-    assert.match(file.path, /^[^\\?#]+$/);
-    assert.ok(!file.path.split('/').some(x => !x || x === '.' || x === '..'));
-    assert.ok(!seen.has(file.path));
-    seen.add(file.path);
-  }
+  assert.equal(data.owner_review_required, true);
+  assert.deepEqual(data.files, []);
+  assert.doesNotMatch(JSON.stringify(data), /mcretro-r2-check\.txt/);
 });
 
 test('draft files contain no Cloudflare API credentials', () => {

@@ -1,47 +1,14 @@
 /*
  * Channel Chirp / The Nest
- * Scoped to opted-in Parrots posts and the independent Nest index.
- * No web fonts, cross-origin images, trackers, or global theme changes.
+ * Structural styles scoped to conure posts and the independent Nest index.
+ * No web fonts, cross-origin images, or trackers.
  * Accent nods to Channel Chirp's original #29a518 while using softer tones.
  */
-body.channel-chirp-theme {
-  --page-bg: #f4f4e7;
-  --panel: #fffcf0;
-  --panel-subtle: #e8eedc;
-  --text: #233526;
-  --muted: #4e6250;
-  --link: #27652c;
-  --link-hover: #17451d;
-  --focus: #275f2d;
-  --border: #638467;
-  --border-soft: #b9cdb3;
-  --quote-bg: #eef4e5;
-  --table-head: #dfe9d5;
-  --table-even: #f0f5e9;
-  --table-odd: #fffcf0;
-  --sidebar-button-bg: #2f6934;
-  background: linear-gradient(145deg, #eaf1df 0, #f4f4e7 340px, var(--page-bg) 650px);
-}
-
-:root[data-theme="dark"] body.channel-chirp-theme {
-  --page-bg: #161e1a;
-  --panel: #202d25;
-  --panel-subtle: #273a2d;
-  --text: #edf7e9;
-  --muted: #b9cfb8;
-  --link: #a8e4a1;
-  --link-hover: #d5f4c8;
-  --focus: #caefb8;
-  --border: #709375;
-  --border-soft: #3e5643;
-  --quote-bg: #283b2d;
-  --table-head: #314735;
-  --table-even: #26352a;
-  --table-odd: #202d25;
-  --sidebar-button-bg: #a8e4a1;
-  background: linear-gradient(145deg, #203529 0, #161e1a 380px, var(--page-bg) 700px);
-}
-
+/*
+ * The Nest is structurally branded on conure pages in all three themes.
+ * Its green colours now come from the site-wide Bird preference, rather
+ * than overriding the selected Light/Dark palette on those pages.
+ */
 .channel-chirp-theme .site-header { background: transparent; }
 .channel-chirp-theme .site-logo {
   font-family: Montserrat, "Helvetica Neue", sans-serif;

@@ -1,3 +1,9 @@
+{% assign channel_chirp_mode = false %}
+{% if page.channel_chirp == true %}
+  {% assign channel_chirp_mode = true %}
+{% elsif page.categories contains 'parrots' and page.channel_chirp != false %}
+  {% assign channel_chirp_mode = true %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,19 +23,25 @@
   <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/overrides.css">
+  {% if channel_chirp_mode %}<link rel="stylesheet" href="/assets/css/channel-chirp.css">{% endif %}
   <script src="{{ '/assets/js/accordion-navigation.js' | relative_url }}" defer></script>
   {% feed_meta %}
   {% seo %}
 </head>
-<body {% if page.pagefind == false %}data-pagefind-ignore="all" {% endif %}{% if page.date %}data-archive-context-year="{{ page.date | date: '%Y' }}"{% endif %}>
+<body {% if channel_chirp_mode %}class="channel-chirp-theme" {% endif %}{% if page.pagefind == false %}data-pagefind-ignore="all" {% endif %}{% if page.date %}data-archive-context-year="{{ page.date | date: '%Y' }}"{% endif %}>
   {% include header.html %}
+  {% if channel_chirp_mode %}{% include channel-chirp-nav.html %}{% endif %}
   <script src="{{ '/assets/js/header-taglines.js' | relative_url }}"></script>
   <div class="site-content">
     <main class="content-area">
       {{ content }}
     </main>
     <aside class="sidebar" data-pagefind-ignore="all">
-      {% include_cached sidebar.html %}
+      {% if channel_chirp_mode %}
+        {% include channel-chirp-sidebar.html %}
+      {% else %}
+        {% include_cached sidebar.html %}
+      {% endif %}
     </aside>
   </div>
   {% include footer.html %}

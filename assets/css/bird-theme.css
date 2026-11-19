@@ -1,0 +1,61 @@
+/*
+ * Bird mode: a third, explicitly selectable McRetro colour palette.
+ * This extends the existing Light/Dark preferences without changing
+ * site navigation, the post archive, or the historic Windows 95 artwork.
+ */
+:root[data-theme="bird"] {
+  color-scheme: light;
+  --page-bg: #F4F4E7;
+  --panel: #FFFCF0;
+  --panel-subtle: #E8EEDC;
+  --text: #233526;
+  --muted: #4E6250;
+  --link: #27652C;
+  --link-hover: #17451D;
+  --focus: #275F2D;
+  --border: #638467;
+  --border-soft: #B9CDB3;
+  --code-bg: #EFF4E9;
+  --quote-bg: #EEF4E5;
+  --table-head: #DFE9D5;
+  --table-even: #F0F5E9;
+  --table-odd: #FFFCF0;
+  --input-bg: #FFFFFF;
+  --button-bg: #27652C;
+  --button-hover: #17451D;
+  --button-text: #FFFFFF;
+  --sidebar-button-bg: #27652C;
+  --sidebar-button-hover: #17451D;
+  --nav-button-bg: #233526;
+  --nav-button-text: #FFFFFF;
+  --archive-tile: #417443;
+  --archive-hover: #285B2B;
+  --archive-empty: #FFFCF0;
+  --archive-filled: #E3F0D8;
+  --archive-filled-hover: #D2E7C3;
+  --interactive-hover: var(--archive-filled-hover);
+  --archive-filled-text: #235326;
+  --archive-accent: #417443;
+  --accordion-neutral-bg: #E9F0E0;
+  --accordion-neutral-hover: #D2E7C3;
+  --accordion-teal-bg: #E3F0D8;
+  --accordion-teal-hover: #D2E7C3;
+  --accordion-teal-open: #D6E9C8;
+  --accordion-teal-open-hover: #C8E0B6;
+  --accordion-accent: #417443;
+}
+
+:root[data-theme="bird"] body {
+  background: linear-gradient(145deg, #E8F1DE 0, #F4F4E7 360px, var(--page-bg) 700px);
+}
+:root[data-theme="bird"] .site-header {
+  background: transparent;
+}
+:root[data-theme="bird"] .site-logo {
+  color: var(--link);
+}
+:root[data-theme="bird"] .widgettitle,
+:root[data-theme="bird"] .post-title a:hover {
+  color: var(--link);
+}
+/* Light/Dark keep their original colours; Bird is a distinct soft-green theme. */

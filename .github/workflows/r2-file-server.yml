@@ -1,0 +1,22 @@
+name: Validate draft R2 File Server
+on:
+  pull_request:
+    paths:
+      - 'archive-sites/file-server/**'
+      - '.github/tests/r2-file-server.test.mjs'
+      - '.github/workflows/r2-file-server.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Validate standalone File Server prototype
+        run: node --test .github/tests/r2-file-server.test.mjs

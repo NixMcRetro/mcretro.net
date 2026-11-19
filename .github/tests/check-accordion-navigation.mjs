@@ -38,7 +38,7 @@ for (const slug of pages) {
   assert.ok(summaries >= panels.length, 'An accordion cannot lack its keyboard-accessible summary: ' + slug);
 }
 const flicky = readFileSync(path.join(site, 'flicky-the-floury-baker-cicada/index.html'), 'utf8');
-assert.equal((flicky.match(/<details\\b[^>]*\\bflicky-panel\\b/g) || []).length, 10,
+assert.equal((flicky.match(/<details\b[^>]*\bflicky-panel\b/g) || []).length, 10,
   'Flicky panels need their dedicated class for embedded video styling');
 
 const darknet = readFileSync(path.join(site, 'take-back-the-darknet/index.html'), 'utf8');

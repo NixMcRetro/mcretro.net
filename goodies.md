@@ -15,7 +15,7 @@ title: Goodies
 
 Welcome to the Goodies page! This is where I keep all sorts of bits and pieces that don't quite fit anywhere else. There's a mix of old favourites, restored pages and experiments I've tinkered with over the years.
 
-<details class="about-panel panel--teal" name="mcretro-goodies" markdown="1">
+<details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">✅</span> Ready to Visit</summary>
 
 **🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**<br>
@@ -41,7 +41,7 @@ Bend the bits of a Sega Mega Drive right in your browser! Load your own game ROM
 
 </details>
 
-<details class="about-panel panel--teal" name="mcretro-goodies" markdown="1">
+<details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🗃️</span> Restored Historical Homepages</summary>
 
 The original HTML and artwork from these restored sites have made it back onto McRetro.net. No modern makeover here; these are the old-style pages as they were, with just the paths fixed where necessary.
@@ -66,7 +66,7 @@ An old-fashioned nature homepage featuring a frog, a lizard and a few original p
 
 </details>
 
-<details class="about-panel panel--teal" name="mcretro-goodies" markdown="1">
+<details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🚧</span> Still Under Construction</summary>
 
 - **File Server**: Not ready yet. The promised 10 KB/s downloads remain a dream!

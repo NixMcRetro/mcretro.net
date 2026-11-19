@@ -5,7 +5,7 @@
   {% assign channel_chirp_mode = true %}
 {% endif %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"{% if channel_chirp_mode %} data-default-theme="bird"{% endif %}>
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16x16.png' | relative_url }}?v=20261018b">
@@ -23,6 +23,7 @@
   <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/overrides.css">
+  <link rel="stylesheet" href="/assets/css/bird-theme.css">
   {% if channel_chirp_mode %}<link rel="stylesheet" href="/assets/css/channel-chirp.css">{% endif %}
   <script src="{{ '/assets/js/accordion-navigation.js' | relative_url }}" defer></script>
   {% feed_meta %}

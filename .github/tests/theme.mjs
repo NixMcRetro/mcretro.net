@@ -74,7 +74,7 @@ test('core: theme button cycles Light, Dark, Bird, Light and remembers the filte
   f.handlers.click();
   assert.equal(f.store.get('mcretro-theme'),'bird');
   assert.equal(f.attrs['data-theme'],'bird');
-  assert.equal(f.metaAttrs.content,'#F4F4E7');
+  assert.equal(f.metaAttrs.content,'#424242');
   assert.deepEqual(f.navigations.at(-1), { method:'assign', url:'/chirp/' });
   assert.match(f.btnAttrs['aria-label'], /Current theme: Bird\. Switch to Light theme/);
   f.handlers.click();
@@ -182,8 +182,8 @@ test('core: tagline shuffle keeps Bird outside the original animation positions'
 test('core: Bird stylesheet and header icon preserve original mobile layout', () => {
   const bird=read('assets/css/bird-theme.css');
   assert.match(bird, /:root\[data-theme="bird"\]/);
-  assert.match(bird, /--page-bg: #F4F4E7/);
-  assert.match(bird, /--link: #27652C/);
+  assert.match(bird, /--page-bg: #424242/);
+  assert.match(bird, /--link: #18770C/);
   assert.match(bird, /\.theme-icon--bird/);
   assert.match(header, /class="theme-icon theme-icon--bird"/);
   assert.match(layout, /data-default-theme="bird"/);

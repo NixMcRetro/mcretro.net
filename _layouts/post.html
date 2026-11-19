@@ -42,7 +42,42 @@ layout: default
   
   {% include post-share.html %}
 
-  <nav class="post-navigation" data-pagefind-ignore="all">
+  {% comment %}Keep conure article navigation within the conure archive.{% endcomment %}
+  {% assign chirp_article = false %}
+  {% if page.categories contains 'parrots' and page.channel_chirp != false %}
+    {% assign chirp_article = true %}
+  {% endif %}
+  {% if chirp_article %}
+    {% assign chirp_posts = site.categories.parrots | where_exp: "bird", "bird.channel_chirp != false" %}
+    {% assign found_chirp_article = false %}
+    {% assign latest_earlier_bird = nil %}
+    {% assign newer_bird = nil %}
+    {% assign older_bird = nil %}
+    {% for bird in chirp_posts %}
+      {% if bird.url == page.url %}
+        {% assign newer_bird = latest_earlier_bird %}
+        {% assign found_chirp_article = true %}
+      {% elsif found_chirp_article and older_bird == nil %}
+        {% assign older_bird = bird %}
+      {% endif %}
+      {% assign latest_earlier_bird = bird %}
+    {% endfor %}
+    <nav class="post-navigation post-navigation--bird nest-post-navigation" aria-label="More Channel Chirp adventures">
+      <div class="nav-previous">
+        {% if older_bird %}
+          <span class="nav-label">OLDER CONURE ADVENTURE</span>
+          <a href="{{ older_bird.url | relative_url }}" class="nav-title">{{ older_bird.title | escape }}</a>
+        {% endif %}
+      </div>
+      <div class="nav-next">
+        {% if newer_bird %}
+          <span class="nav-label">NEWER CONURE ADVENTURE</span>
+          <a href="{{ newer_bird.url | relative_url }}" class="nav-title">{{ newer_bird.title | escape }}</a>
+        {% endif %}
+      </div>
+    </nav>
+  {% endif %}
+  <nav class="post-navigation post-navigation--mcretro" data-pagefind-ignore="all">
     <div class="nav-previous">
       {% if page.previous %}
         <span class="nav-label">PREVIOUS</span>

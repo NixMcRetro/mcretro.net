@@ -19,4 +19,9 @@
   phrases.slice(1).forEach(function (phrase) {
     cycle.appendChild(phrase);
   });
+
+  // Keep the separate Bird-only subtitle after the original ten phrases,
+  // preserving their exact nth-child animation timing in Light and Dark.
+  var birdTagline = cycle.querySelector('.bird-tagline');
+  if (birdTagline) cycle.appendChild(birdTagline);
 })();

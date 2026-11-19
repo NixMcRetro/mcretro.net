@@ -1,0 +1,19 @@
+---
+layout: null
+permalink: /assets/data/chirp-random.json
+---
+{% assign chirp_posts = site.categories.parrots | where_exp: "bird", "bird.channel_chirp != false" %}
+[
+{% for bird in chirp_posts %}
+  {% assign day = bird.date | date: '%-d' | plus: 0 %}
+  {% case day %}
+    {% when 1 or 21 or 31 %}{% assign ordinal = 'st' %}
+    {% when 2 or 22 %}{% assign ordinal = 'nd' %}
+    {% when 3 or 23 %}{% assign ordinal = 'rd' %}
+    {% else %}{% assign ordinal = 'th' %}
+  {% endcase %}
+  {% assign bird_month = bird.date | date: '%B %Y' %}
+  {% assign bird_display_date = day | append: ordinal | append: ' ' | append: bird_month %}
+  {"url": {{ bird.url | relative_url | jsonify }}, "title": {{ bird.title | jsonify }}, "date": {{ bird.date | date: '%Y-%m-%d' | jsonify }}, "date_label": {{ bird_display_date | jsonify }} }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

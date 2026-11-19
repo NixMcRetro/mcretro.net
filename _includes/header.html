@@ -1,7 +1,8 @@
 <header class="site-header" data-pagefind-ignore="all">
   <div class="header-inner">
     <div class="logo-area">
-      <a href="/" class="site-logo">{{ site.title }}</a>
+      <a href="/" class="site-logo site-logo--mcretro">{{ site.title }}</a>
+      <a href="/chirp/" class="site-logo site-logo--bird">🦜 Channel Chirp</a>
       <div class="textcycle">
         <span class="phrase">⏳ Website found. Waiting for reply...</span>
         <span class="phrase mobile-tagline">🚀 Blast Processed Since 199X</span>
@@ -13,8 +14,10 @@
         <span class="phrase">🌐 Best viewed with Internet Explorer</span>
         <span class="phrase">💣 Somebody set up us the bomb</span>
         <span class="phrase">🦭 It's time to seal the deal!!!</span>
+        <span class="bird-tagline">Welcome to The Nest · Pudge, Tillie, and Chip</span>
       </div>
-      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Dark theme" aria-pressed="false" title="Switch to dark theme">
+      <!-- One stable, keyboard-accessible button cycles Light > Dark > Bird > Light. -->
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Current theme: Light. Switch to Dark theme" title="Light theme. Click to switch to Dark">
         <svg class="theme-icon theme-icon--sun" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
           <circle cx="12" cy="12" r="4"></circle>
           <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
@@ -22,6 +25,7 @@
         <svg class="theme-icon theme-icon--moon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
           <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
         </svg>
+        <span class="theme-icon theme-icon--bird" aria-hidden="true">🦜</span>
       </button>
       <!-- Hamburger toggle (hidden on desktop) -->
       <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
@@ -35,12 +39,30 @@
       
   <!-- Navigation list (same as before) -->
       <ul class="nav-list">
-        <li><a href="/" {% if page.url == "/" or page.url == "/index.html" %}class="active"{% endif %}><span class="nav-emoji" aria-hidden="true">🏡</span> <span class="nav-text">Home</span></a></li>
-        <li><a href="/blog/" {% if page.url contains "/blog/" or page.url contains "/archive/" or page.layout == "post" or page.layout == "archive" %}class="active"{% endif %}><span class="nav-emoji" aria-hidden="true">✏️</span> <span class="nav-text">Blog</span></a></li>
-        <li><a href="/channels/" {% if page.url contains "/channels/" %}class="active"{% endif %}><span class="nav-emoji" aria-hidden="true">📺</span> <span class="nav-text">Channels</span></a></li>
-        <li><a href="/goodies/" {% if page.url contains "/goodies/" %}class="active"{% endif %}><span class="nav-emoji" aria-hidden="true">💾</span> <span class="nav-text">Goodies</span></a></li>
-        <li><a href="/blog/" id="random-post-link"><span class="nav-emoji" aria-hidden="true">🌏</span> <span class="nav-text">Random</span></a></li>
-        <li><a href="/about/" {% if page.url contains "/about/" %}class="active"{% endif %}><span class="nav-emoji" aria-hidden="true">📡</span> <span class="nav-text">About</span></a></li>
+        <li>
+          <a class="nav-mode-mcretro" href="/" {% if page.url == "/" or page.url == "/index.html" %}aria-current="page"{% endif %}><span class="nav-emoji" aria-hidden="true">🏡</span> <span class="nav-text">Home</span></a>
+          <a class="nav-mode-bird" href="/chirp/" {% if channel_chirp_page %}aria-current="page"{% endif %}><span class="nav-emoji" aria-hidden="true">🪺</span> <span class="nav-text">The Nest</span></a>
+        </li>
+        <li>
+          <a class="nav-mode-mcretro{% if page.url contains "/blog/" or page.url contains "/archive/" or page.layout == "post" %} active{% endif %}" href="/blog/"><span class="nav-emoji" aria-hidden="true">✏️</span> <span class="nav-text">Blog</span></a>
+          <a class="nav-mode-bird" href="/chirp/#nest-adventures"><span class="nav-emoji" aria-hidden="true">🪶</span> <span class="nav-text">Adventures</span></a>
+        </li>
+        <li>
+          <a class="nav-mode-mcretro{% if page.url contains "/channels/" %} active{% endif %}" href="/channels/"><span class="nav-emoji" aria-hidden="true">📺</span> <span class="nav-text">Channels</span></a>
+          <a class="nav-mode-bird" href="/chirp/#nest-flock"><span class="nav-emoji" aria-hidden="true">🦜</span> <span class="nav-text">Our Flock</span></a>
+        </li>
+        <li>
+          <a class="nav-mode-mcretro{% if page.url contains "/goodies/" %} active{% endif %}" href="/goodies/"><span class="nav-emoji" aria-hidden="true">💾</span> <span class="nav-text">Goodies</span></a>
+          <a class="nav-mode-bird" href="/chirp/timeline/"><span class="nav-emoji" aria-hidden="true">📅</span> <span class="nav-text">Timeline</span></a>
+        </li>
+        <li>
+          <a class="nav-mode-mcretro" href="/blog/" id="random-post-link"><span class="nav-emoji" aria-hidden="true">🌏</span> <span class="nav-text">Random</span></a>
+          <a class="nav-mode-bird" href="/chirp/#nest-soundborb"><span class="nav-emoji" aria-hidden="true">🎶</span> <span class="nav-text">Soundborb</span></a>
+        </li>
+        <li>
+          <a class="nav-mode-mcretro{% if page.url contains "/about/" %} active{% endif %}" href="/about/"><span class="nav-emoji" aria-hidden="true">📡</span> <span class="nav-text">About</span></a>
+          <a class="nav-mode-bird" href="/blog/" data-theme-exit="light"><span class="nav-emoji" aria-hidden="true">↩</span> <span class="nav-text">McRetro</span></a>
+        </li>
       </ul>
     </nav>
     <div class="nav-overlay"></div>

@@ -21,11 +21,20 @@ on:
       - '.github/tests/caption-excerpts.test.rb'
       - '.github/tests/caption-excerpts-built.mjs'
       - 'assets/css/**'
+      - 'assets/js/theme.js'
       - 'assets/js/post-media-layout.js'
       - '_plugins/image_dimensions.rb'
       - '.github/tests/post-media-built-check.mjs'
       - 'about.md'
       - 'channels.md'
+      - 'chirp/**'
+      - '_includes/channel-chirp-nav.html'
+      - '_includes/channel-chirp-sidebar.html'
+      - 'assets/js/channel-chirp-filter.js'
+      - 'assets/data/chirp-random.json'
+      - 'assets/js/channel-chirp-random.js'
+      - '.github/tests/channel-chirp-built.mjs'
+      - '.github/tests/chirp-random.test.mjs'
       - 'goodies.md'
       - 'homepages/fishtankworld/**'
       - 'homepages/goatpad/**'
@@ -123,6 +132,17 @@ jobs:
             exit 1
           fi
 
+      # IMPORTANT: Do not republish the 229 historical Channel Chirp posts here.
+      # Their videos are being re-released gradually on the McRetro YouTube
+      # channel, with new McRetro articles published only as each is ready.
+      # See .github/CHANNEL-CHIRP-RETIREMENT.md for the staged migration plan.
+      - name: Do not publish the unreleased Channel Chirp snapshot
+        run: |
+          if test -e _site/chirp/archive; then
+            echo "::error::Unreleased historical Channel Chirp posts must not be published"
+            exit 1
+          fi
+
       - name: Verify committed GOATPAD 24 kbps Opus audio and MIT notice
         run: python3 .github/tests/verify-goatpad-opus.py --site _site
 
@@ -136,6 +156,13 @@ jobs:
 
       - name: Verify Fish Tank World pages and built-site internal links
         run: node .github/tests/fishtankworld-built.mjs _site
+
+      - name: Verify Channel Chirp Nest posts, navigation and theme isolation
+        run: |
+          node --check assets/js/channel-chirp-filter.js
+          node --check assets/js/channel-chirp-random.js
+          node --test .github/tests/chirp-random.test.mjs
+          node .github/tests/channel-chirp-built.mjs _site
 
       - name: Verify Goodies projects and restored homepages remain reachable
         run: node .github/tests/goodies-directory-built.mjs _site

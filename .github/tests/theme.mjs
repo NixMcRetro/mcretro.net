@@ -10,8 +10,11 @@ const layout = read('_layouts/default.html');
 const style = read('assets/css/style.css');
 const overrides = read('assets/css/overrides.css');
 const blog = read('blog/index.html');
-function fixture(systemDark = false, stored = null, storageFails = false) {
-  const handlers = {}, docHandlers = {}, mediaHandlers = {}, attrs = {};
+function fixture(systemDark = false, stored = null, storageFails = false, defaultBird = false, context = {}) {
+  const handlers = {}, docHandlers = {}, mediaHandlers = {}, attrs = defaultBird ? {'data-default-theme':'bird','data-chirp-landing':'true'} : {};
+  if (context.unrelated) attrs['data-chirp-unrelated'] = 'true';
+  if (context.article) attrs['data-chirp-article'] = 'true';
+  const navigations = [];
   const btnAttrs = {}, metaAttrs = {};
   const store = new Map(stored ? [['mcretro-theme', stored]] : []);
   const button = {
@@ -27,6 +30,10 @@ function fixture(systemDark = false, stored = null, storageFails = false) {
   };
   const media = { matches: systemDark, addEventListener(k,fn) { mediaHandlers[k] = fn; } };
   const window = {
+    location: {
+      assign(url) { navigations.push({ method: 'assign', url }); },
+      replace(url) { navigations.push({ method: 'replace', url }); }
+    },
     matchMedia(s) { assert.equal(s, '(prefers-color-scheme: dark)'); return media; },
     localStorage: {
       getItem(k) { if(storageFails) throw Error('blocked'); return store.get(k) || null; },
@@ -36,36 +43,66 @@ function fixture(systemDark = false, stored = null, storageFails = false) {
   };
   runInNewContext(code,{ window, document });
   docHandlers.DOMContentLoaded();
-  return {attrs, btnAttrs, metaAttrs, media, mediaHandlers, handlers, store};
+  return {attrs, btnAttrs, metaAttrs, media, mediaHandlers, handlers, store, navigations};
 }
 test('core: early external script prevents incorrect-theme flash and preserves CSP', () => {
   assert.ok(layout.indexOf('assets/js/theme.js') < layout.indexOf('assets/css/style.css'));
-  assert.ok(header.includes('data-theme-toggle') && header.includes('aria-label="Dark theme"'));
+  assert.ok(header.includes('data-theme-toggle') &&
+    header.includes('aria-label="Current theme: Light. Switch to Dark theme"'));
   assert.ok(!layout.includes('<script>') && !header.includes('onclick='));
+  assert.match(layout, /assets\/css\/bird-theme\.css/);
+  assert.match(layout, /data-default-theme="bird"/);
   assert.match(style,/--retro-teal: #008080/);
   assert.match(overrides,/\.mcretro-modem-titlebar[\s\S]*background: #000080/);
   assert.match(style,/\.mcretro-modem-dialog, \.mcretro-modem-card \{ color-scheme: light; \}/);
 });
-test('core: first visit respects light/dark system preference', () => {
+
+test('core: first visit respects light/dark system preference on non-bird pages', () => {
   const light=fixture(false),dark=fixture(true);
   assert.equal(light.attrs['data-theme'],'light');
-  assert.equal(light.btnAttrs['aria-pressed'],'false');
+  assert.match(light.btnAttrs['aria-label'], /Current theme: Light\. Switch to Dark theme/);
   assert.equal(dark.attrs['data-theme'],'dark');
   assert.equal(dark.metaAttrs.content,'#191D27');
-  assert.equal(dark.btnAttrs['aria-pressed'],'true');
+  assert.match(dark.btnAttrs['aria-label'], /Current theme: Dark\. Switch to Bird and show Channel Chirp posts/);
 });
-test('core: manual selection persists and takes priority over system changes', () => {
+
+test('core: theme button cycles Light, Dark, Bird, Light and remembers the filter', () => {
   const f=fixture(false);
   f.handlers.click();
   assert.equal(f.store.get('mcretro-theme'),'dark');
   assert.equal(f.attrs['data-theme'],'dark');
-  f.media.matches=true;f.mediaHandlers.change();
-  assert.equal(f.attrs['data-theme'],'dark');
+  f.handlers.click();
+  assert.equal(f.store.get('mcretro-theme'),'bird');
+  assert.equal(f.attrs['data-theme'],'bird');
+  assert.equal(f.metaAttrs.content,'#F4F4E7');
+  assert.deepEqual(f.navigations.at(-1), { method:'assign', url:'/chirp/' });
+  assert.match(f.btnAttrs['aria-label'], /Current theme: Bird\. Switch to Light theme/);
   f.handlers.click();
   assert.equal(f.store.get('mcretro-theme'),'light');
   assert.equal(f.attrs['data-theme'],'light');
 });
-test('core: without manual selection, device changes update page', () => {
+
+test('core: opening /chirp/ activates Bird; turning it off returns to the full blog', () => {
+  const f=fixture(false,'dark',false,true);
+  assert.equal(f.attrs['data-theme'],'bird');
+  assert.equal(f.store.get('mcretro-theme'),'bird');
+  f.handlers.click();
+  assert.equal(f.attrs['data-theme'],'light');
+  assert.deepEqual(f.navigations.at(-1), {method:'assign',url:'/blog/'});
+});
+
+test('core: Bird redirects ordinary post and blog pages but keeps released conure articles', () => {
+  const standard=fixture(false,'bird',false,false,{unrelated:true});
+  assert.deepEqual(standard.navigations[0], {method:'replace',url:'/chirp/'});
+  const article=fixture(false,'bird',false,false,{article:true});
+  assert.equal(article.attrs['data-theme'],'bird');
+  assert.equal(article.navigations.length,0);
+  article.handlers.click();
+  assert.equal(article.attrs['data-theme'],'light');
+  assert.equal(article.navigations.length,0,'Light can read original conure post layout');
+});
+
+test('core: without manual selection, device changes update normal pages', () => {
   const f=fixture(false);
   f.media.matches=true;f.mediaHandlers.change();
   assert.equal(f.attrs['data-theme'],'dark');
@@ -73,19 +110,88 @@ test('core: without manual selection, device changes update page', () => {
   assert.equal(f.attrs['data-theme'],'light');
   assert.equal(f.store.has('mcretro-theme'),false);
 });
-test('core: invalid stored value is ignored; storage events sync other tabs', () => {
+
+test('core: invalid stored value is ignored; storage events sync all three modes', () => {
   const f=fixture(false,'unexpected');
   assert.equal(f.attrs['data-theme'],'light');
+  f.store.set('mcretro-theme','bird');
+  f.handlers.storage({key:'mcretro-theme'});
+  assert.equal(f.attrs['data-theme'],'bird');
   f.store.set('mcretro-theme','dark');
   f.handlers.storage({key:'mcretro-theme'});
   assert.equal(f.attrs['data-theme'],'dark');
 });
-test('core: blocked localStorage still permits a page-only manual choice', () => {
+
+test('core: blocked localStorage still permits page-local theme choice', () => {
   const f=fixture(true,null,true);
   f.handlers.click();
-  assert.equal(f.attrs['data-theme'],'light');
-  assert.equal(f.btnAttrs['aria-pressed'],'false');
+  assert.equal(f.attrs['data-theme'],'bird');
+  assert.match(f.btnAttrs['aria-label'], /Current theme: Bird/);
+  assert.deepEqual(f.navigations.at(-1), {method:'assign', url:'/chirp/'});
 });
+
+test('core: Light and Dark keep the original ten rotating taglines', () => {
+  const classic = [...header.matchAll(/class="phrase(?: mobile-tagline)?"/g)].length;
+  assert.equal(classic, 10, 'The ten original McRetro tagline animations must remain');
+  assert.match(header, /class="bird-tagline"/);
+  assert.ok(!header.includes('class="phrase phrase--bird"'));
+  const script = read('assets/js/header-taglines.js');
+  assert.match(script, /cycle\.appendChild\(birdTagline\)/,
+    'Bird title stays after the original ten tags when shuffled');
+  const firstClassic = header.indexOf('class="phrase"');
+  const lastClassic = header.lastIndexOf('class="phrase"');
+  const birdPosition = header.indexOf('class="bird-tagline"');
+  assert.ok(firstClassic < lastClassic && lastClassic < birdPosition);
+  const bird = read('assets/css/bird-theme.css');
+  assert.match(bird, /:root:not\(\[data-theme="bird"\]\) \.textcycle \.bird-tagline/);
+  assert.match(bird, /:root\[data-theme="bird"\] \.textcycle \.phrase/);
+});
+
+test('core: tagline shuffle keeps Bird outside the original animation positions', () => {
+  const nodes = Array.from({length:10}, (_, i) => ({ name:'classic-' + i }));
+  const bird = { name:'bird' };
+  const cycle = {
+    children: [...nodes,bird],
+    querySelectorAll(selector) {
+      assert.equal(selector,'.phrase');
+      return nodes;
+    },
+    querySelector(selector) {
+      assert.equal(selector,'.bird-tagline');
+      return bird;
+    },
+    appendChild(item) {
+      const i = this.children.indexOf(item);
+      if (i !== -1) this.children.splice(i,1);
+      this.children.push(item);
+    }
+  };
+  runInNewContext(read('assets/js/header-taglines.js'), {
+    document: {querySelector(selector) {
+      assert.equal(selector,'.textcycle');
+      return cycle;
+    }},
+    Math
+  });
+  assert.equal(cycle.children.length,11);
+  assert.equal(cycle.children[0],nodes[0], 'First familiar tagline must stay first');
+  assert.equal(cycle.children[10],bird, 'Bird title must never occupy a rotating position');
+  assert.equal(new Set(cycle.children.slice(0,10)).size,10);
+});
+
+test('core: Bird stylesheet and header icon preserve original mobile layout', () => {
+  const bird=read('assets/css/bird-theme.css');
+  assert.match(bird, /:root\[data-theme="bird"\]/);
+  assert.match(bird, /--page-bg: #F4F4E7/);
+  assert.match(bird, /--link: #27652C/);
+  assert.match(bird, /\.theme-icon--bird/);
+  assert.match(header, /class="theme-icon theme-icon--bird"/);
+  assert.match(layout, /data-default-theme="bird"/);
+  assert.match(layout, /data-chirp-unrelated="true"/);
+  assert.match(layout, /class="sidebar-mode-bird"/);
+  assert.match(header, /class="nav-mode-bird"/);
+});
+
 test('advisory: two stable button positions, WCAG labels and CSS colour tokens', () => {
   assert.match(style,/\.theme-toggle[\s\S]*width: 40px/);
   assert.match(style,/@media screen and \(max-width: 750px\) \{\s*\.theme-toggle/);
@@ -197,9 +303,11 @@ test('advisory: Channels keeps emoji and links, without old summary siren GIFs',
   for (const name of ['🎸 Nix McRetro', '👾 McRetro Gaming', '🪲 Super Nature World', '🦜 Channel Chirp']) {
     assert.ok(channels.includes(name), name);
   }
-  for (const handle of ['@NixMcRetro', '@McRetroGaming', '@SuperNatureWorld', '@ChannelChirp']) {
+  for (const handle of ['@NixMcRetro', '@McRetroGaming', '@SuperNatureWorld']) {
     assert.ok(channels.includes(handle), handle);
   }
+  assert.ok(!channels.includes('@ChannelChirp'), 'Retiring YouTube channel should not be advertised');
+  assert.ok(channels.includes('/chirp/'));
   assert.match(overrides, /\.mcretro-modem-titlebar[\s\S]*background: #000080/);
 });
 
@@ -208,7 +316,10 @@ test('advisory: navigation hover underlines words without bolding or shifting ad
   for(const [emoji, word] of [['🏡','Home'],['✏️','Blog'],['📺','Channels'],['💾','Goodies'],['🌏','Random'],['📡','About']]) {
     assert.ok(header.includes('<span class="nav-emoji" aria-hidden="true">' + emoji + '</span> <span class="nav-text">' + word + '</span>'), word);
   }
-  assert.equal((header.match(/class="nav-text"/g) || []).length, 6);
+  assert.equal((header.match(/class="nav-text"/g) || []).length, 12,
+    'Each of the six navigation positions has one McRetro and one Bird link');
+  assert.equal((header.match(/<li>/g) || []).length, 6);
+  assert.equal((header.match(/class="nav-mode-bird"/g) || []).length, 6);
   const labelHoverRule = style.match(/\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{([^}]*)\}/)?.[1];
   assert.ok(labelHoverRule, 'text-only nav hover and focus rule exists');
   assert.doesNotMatch(labelHoverRule, /font-weight\s*:/, 'hover must not change font weight or item widths');

@@ -31,6 +31,8 @@ on:
       - '_includes/channel-chirp-nav.html'
       - '_includes/channel-chirp-sidebar.html'
       - 'assets/js/channel-chirp-filter.js'
+      - 'assets/data/chirp-random.json'
+      - 'assets/js/channel-chirp-random.js'
       - '.github/tests/channel-chirp-built.mjs'
       - 'goodies.md'
       - 'homepages/fishtankworld/**'

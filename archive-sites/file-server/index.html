@@ -120,8 +120,13 @@
     return response.json();
   }).then(function (data) {
     if (data.schema_version !== 1 || !Array.isArray(data.files)) throw new Error("Unexpected catalogue format");
+    // Draft owner-review catalogues must never become public download listings.
+    if (data.owner_review_required === true) { files = []; render(); return; }
     files = data.files.filter(function (entry) {
-      return entry && typeof entry.title === "string" && typeof entry.category === "string" && objectURL(entry.path);
+      return entry && !entry.review_status && typeof entry.title === "string" &&
+        typeof entry.category === "string" && Number.isSafeInteger(entry.size_bytes) &&
+        entry.size_bytes >= 0 && typeof entry.sha256 === "string" &&
+        /^[a-f0-9]{64}$/i.test(entry.sha256) && objectURL(entry.path);
     });
     Array.from(new Set(files.map(function (file) { return file.category; }))).sort().forEach(function (name) {
       const option = el("option", "", name);

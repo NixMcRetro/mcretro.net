@@ -1,7 +1,8 @@
-/* Give every McRetro accordion the same scroll position after opening.
-   Use the summary's CSS scroll-margin-top to leave 1rem of page background.
-   Only user activation is handled here: existing deep-link scripts remain in
-   charge of programmatic navigation and can still reveal nested anchors. */
+/* Keep an accordion heading in place when opening or closing it.
+   Native <details name="..."> panels can collapse a previous panel above
+   the clicked heading. Correct only that resulting layout shift, rather than
+   forcibly scrolling every newly opened heading to the top of the screen.
+   Deep-link scripts retain control of deliberate programmatic navigation. */
 (() => {
   'use strict';
   const selector = '.content-area details.about-panel > summary';
@@ -12,15 +13,14 @@
     const summary = target.closest(selector);
     if (!summary) return;
 
-    const panel = summary.parentElement;
+    const before = summary.getBoundingClientRect().top;
     requestAnimationFrame(() => {
-      // Closing a section must not move the page.
-      if (!panel.open) return;
-      summary.scrollIntoView({
-        block: 'start',
-        inline: 'nearest',
-        behavior: 'instant'
-      });
+      const after = summary.getBoundingClientRect().top;
+      const shift = after - before;
+      // The browser may already have preserved the position with scroll
+      // anchoring. Only compensate if the heading actually moved.
+      if (Math.abs(shift) <= 1) return;
+      window.scrollBy({ top: shift, left: 0, behavior: 'instant' });
     });
   });
 })();

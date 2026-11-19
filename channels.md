@@ -43,6 +43,8 @@ Channel Chirp is home to the cheekiest green-cheeked conures. We had the pleasur
 YouTube Channel: [https://youtube.com/@ChannelChirp](https://www.youtube.com/@ChannelChirp)<br>
 Homepage: [https://channelchirp.com](https://channelchirp.com)
 
+**[🪺 Visit The Nest: Channel Chirp adventures on McRetro](/channels/channel-chirp/)** - a bird-only archive of Pudge, Tillie, and Chip, with links to their original profiles, timeline, and Soundborb.
+
 </details>
 
 

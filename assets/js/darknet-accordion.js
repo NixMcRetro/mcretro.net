@@ -1,7 +1,7 @@
-/* Restore redirected 2016 guide chapter deep links. Native details[name] handles exclusivity. */
+/* Restore redirected 2016 guide chapter deep links without requiring grouped accordions. */
 (() => {
   'use strict';
-  const selector = 'details[name="mcretro-darknet"]';
+  const selector = 'details.about-panel[id^="part-"]';
   function reveal() {
     const hash = window.location.hash.slice(1);
     if (!/^part-(?:[1-9]|1[0-4])$/.test(hash)) return;

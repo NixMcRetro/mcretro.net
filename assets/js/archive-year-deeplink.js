@@ -13,7 +13,7 @@
     const panel = document.getElementById('year-' + match[1]);
     if (!panel || !years.contains(panel) || !panel.matches('details.archive-index-year')) return;
 
-    // Native <details name> keeps the year accordions mutually exclusive.
+    // Open the linked year without closing any other expanded years.
     panel.open = true;
     requestAnimationFrame(() => {
       panel.querySelector('summary')?.scrollIntoView({

@@ -14,7 +14,7 @@
         <span class="phrase">🌐 Best viewed with Internet Explorer</span>
         <span class="phrase">💣 Somebody set up us the bomb</span>
         <span class="phrase">🦭 It's time to seal the deal!!!</span>
-        <span class="bird-tagline">Welcome to The Nest · Pudge, Tillie, and Chip</span>
+        <span class="bird-tagline">Welcome to the Nest</span>
       </div>
       <!-- One stable, keyboard-accessible button cycles Light > Dark > Bird > Light. -->
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Current theme: Light. Switch to Dark theme" title="Light theme. Click to switch to Dark">
@@ -41,7 +41,7 @@
       <ul class="nav-list">
         <li>
           <a class="nav-mode-mcretro" href="/" {% if page.url == "/" or page.url == "/index.html" %}aria-current="page"{% endif %}><span class="nav-emoji" aria-hidden="true">🏡</span> <span class="nav-text">Home</span></a>
-          <a class="nav-mode-bird" href="/chirp/" {% if channel_chirp_page %}aria-current="page"{% endif %}><span class="nav-emoji" aria-hidden="true">🪺</span> <span class="nav-text">The Nest</span></a>
+          <a class="nav-mode-bird" href="/chirp/" {% if page.url == "/chirp/" %}aria-current="page"{% endif %}><span class="nav-emoji" aria-hidden="true">🪺</span> <span class="nav-text">The Nest</span></a>
         </li>
         <li>
           <a class="nav-mode-mcretro{% if page.url contains "/blog/" or page.url contains "/archive/" or page.layout == "post" %} active{% endif %}" href="/blog/"><span class="nav-emoji" aria-hidden="true">✏️</span> <span class="nav-text">Blog</span></a>
@@ -53,11 +53,10 @@
         </li>
         <li>
           <a class="nav-mode-mcretro{% if page.url contains "/goodies/" %} active{% endif %}" href="/goodies/"><span class="nav-emoji" aria-hidden="true">💾</span> <span class="nav-text">Goodies</span></a>
-          <a class="nav-mode-bird" href="/chirp/timeline/"><span class="nav-emoji" aria-hidden="true">📅</span> <span class="nav-text">Timeline</span></a>
+          <a class="nav-mode-bird" href="/chirp/timeline/" {% if page.url == "/chirp/timeline/" %}aria-current="page"{% endif %}><span class="nav-emoji" aria-hidden="true">📅</span> <span class="nav-text">Timeline</span></a>
         </li>
-        <li>
+        <li class="nav-item--mcretro-only">
           <a class="nav-mode-mcretro" href="/blog/" id="random-post-link"><span class="nav-emoji" aria-hidden="true">🌏</span> <span class="nav-text">Random</span></a>
-          <a class="nav-mode-bird" href="/chirp/#nest-soundborb"><span class="nav-emoji" aria-hidden="true">🎶</span> <span class="nav-text">Soundborb</span></a>
         </li>
         <li>
           <a class="nav-mode-mcretro{% if page.url contains "/about/" %} active{% endif %}" href="/about/"><span class="nav-emoji" aria-hidden="true">📡</span> <span class="nav-text">About</span></a>

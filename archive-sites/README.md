@@ -1,114 +1,78 @@
-# McRetro R2 archive sites - staged restoration
+# McRetro Photo Gallery on Cloudflare R2
 
-## 19th November 2026: nested URL migration (draft, NOT executed)
+## Current status: 19th November 2026, 11:11 AEDT
 
-The owner explicitly **does not want old hashed album URLs preserved or
-redirected**. The new release generates only 329 real, hierarchical HTML
-pages, such as:
+**The Photo Gallery is published.** The owner completed the guarded
+nested-URL migration and supplied the successful real-world R2 logs.
+
+- **16,823 public photo objects** in `mcretro-photos` were preserved, with
+  no original source archive access or image re-upload during the migration.
+- **336 final website objects** were verified: 329 canonical HTML pages,
+  `albums.json`, `sitemap.xml`, and five locally hosted fonts.
+- The **328 obsolete hashed album HTML pages were retired** from R2 by
+  the dedicated, exact-key-only `--retire-old` operation.
+- The final read-only `--verify` reported zero missing or different
+  website files, 336 successful downloaded-byte comparisons, and 12 sampled
+  Content-Type checks passing.
+- The privacy preflight examined 16,822 optimised JPEG XL objects, including
+  40 strictly allowlisted technical Exif cases, and reviewed the one
+  Project Yampad GIF with the narrowly approved metadata. This does **not**
+  replace human review of filenames, folders, or recognizable image content.
+- No old hashed-route redirects, aliases, or compatibility pages are generated.
+  Cloudflare's edge cache may require a targeted purge if old URLs keep
+  appearing after their R2 objects have been deleted.
+- The website was published **directly to R2 from the owner's Mac**. GitHub
+  Actions contains only tests and never publishes the gallery.
+
+The current canonical routes reflect the original folder hierarchy:
 
     /albums/the-collection.html
     /albums/the-collection/retired.html
 
-No compatibility redirects, legacy HTML copies, or old addresses are placed
-in the new catalogue or sitemap. The 328 obsolete hashed HTML objects will
-be **retired from R2 with separately initiated, exact-key deletion** after
-all 336 new site objects have been uploaded and verified. The old links
-will then return 404 once any Cloudflare cached copies are purged or expire.
+The repository contains source code, test fixtures, and *examples only*,
+not the public release's 8,412-photo catalogue or its optimised images.
+The checked-in `photo-gallery/albums.json` is a **non-production example**
+and must never replace the sanitised, generated R2 catalogue.
 
-**Release inventory:** 329 canonical HTML + public-projected JSON + sitemap
-+ 5 self-hosted fonts = **336 final website objects**. The photo collection
-(16,823 objects) stays exactly as it is; no conversion or photo-object
-deletion is part of this work.
+The unfinished standalone **File Server** prototype has been moved into
+[separate draft PR #281](https://github.com/NixMcRetro/mcretro.net/pull/281).
+Its connectivity-test catalogue is neither a production inventory nor
+approved for redistribution. PR #271 should merge Photo Gallery source only,
+not any File Server website.
 
-**Do not run the original publisher --upload on updated staging.** It
-intentionally rejects existing website objects or unexpected old keys and
-has no controlled migration semantics. Use only the migration steps below.
+### Maintenance and safety
 
-### Mac-local preparation, verification, and retirement
+The following operations have **already been completed** and must not be
+run again as a new migration without independent review: `--prepare`,
+`--upload`, and `--retire-old` on
+`tools/migrate_gallery_routes.py`. The owner's frozen local baseline lives
+only on her Mac under
+`~/Desktop/McRetro-R2-Staging/reports/gallery-route-migration`.
+Never commit, publish, or recursively copy that baseline or the private
+`albums.generated.json`.
 
-Fetch the matching versions of the branch scripts into Downloads. Use the
-existing local HTML template and other previously downloaded helpers.
-Do **not** rerun the full catalogue builder, which would traverse the
-protected ~26 GB photo archive.
+For a **read-only** check of the completed R2 website, from the owner's
+existing downloaded matching scripts and staged files:
 
-    BASE="https://raw.githubusercontent.com/NixMcRetro/mcretro.net/feat/r2-archive-sites-starter/archive-sites"
-    for tool in gallery_routes.py render_gallery_pages.py audit_gallery_staging.py publish_photo_gallery_site.py migrate_gallery_routes.py; do
-      curl -fLsS "$BASE/tools/$tool" -o "$HOME/Downloads/$tool" || exit 1
-    done
+    "$HOME/Downloads/mcretro-r2-venv/bin/python" \
+      "$HOME/Downloads/migrate_gallery_routes.py" --verify
 
-1. **Local-only --prepare** captures the existing 336 old public-safe
-   website files and SHA-256 values in the private staging reports directory,
-   including a sanitised public albums.json, not private source_path fields.
-   It then removes only the 328 old staged HTML files and regenerates 329
-   canonical nested pages, catalogue, and sitemap. This does not contact R2,
-   modify the source archive or publish anything. It can be run only once:
+That check reads R2 objects and validates the 336 exact site keys and
+16,823 image keys, but never uploads, deletes, reconverts, or touches
+the historical ~26 GB source archive. It also requires local stage
+artifacts to match the reviewed release. The public domain's response
+status and caching should be checked in a browser separately.
 
-       "$HOME/Downloads/mcretro-r2-venv/bin/python" "$HOME/Downloads/migrate_gallery_routes.py" --prepare
+## Historical engineering and audit notes (17th-19th November 2026)
 
-   If you already ran --prepare from a prior version that generated redirects,
-   STOP. Do not run it again or manually delete the saved baseline. Review
-   the already-prepared staging with the migration author before continuing.
+The material below records the previous staging, test, privacy and upload
+procedure **as it existed before the completed 19th November publication**.
+References to unpublished HTML, pending upload approval or a combined
+File Server starter are historical and no longer describe the current R2
+website or current PR scope. They are retained for audit history, not as
+instructions to repeat uploads or delete operations.
 
-2. **Read-only --preflight** checks privacy, local staging, all photo
-   keys/sizes, existing R2 website bytes, and the SHA-256 protected old
-   baseline. All remote old HTML bytes must match the captured old release;
-   unexpected files or changed bytes block migration.
-
-       "$HOME/Downloads/mcretro-r2-venv/bin/python" "$HOME/Downloads/migrate_gallery_routes.py" --preflight
-
-3. **Separately authorised --upload** uploads or replaces only the reviewed
-   336 new website objects. It writes canonical pages first and index.html
-   last. This step does NOT remove old hashed pages: those remain temporarily
-   accessible until the separate retirement command is run. Partial uploads
-   can be resumed after the exact-byte preflight passes again.
-
-       "$HOME/Downloads/mcretro-r2-venv/bin/python" "$HOME/Downloads/migrate_gallery_routes.py" --upload
-
-4. **Explicit --retire-old (deletes website HTML only).** The script first
-   verifies all 336 canonical site objects, then checks each of the precisely
-   328 obsolete hashed pages against its SHA-256 frozen baseline, and runs
-   rclone deletefile **only for those individually verified keys**. It never
-   deletes photos, other website assets, the bucket, or anything by wildcard.
-   It checks the final remote inventory and verifies the new site's bytes and
-   sample MIME headers again. This deliberate deletion is not performed by
-   --prepare, --preflight, --upload or GitHub Actions.
-
-       "$HOME/Downloads/mcretro-r2-venv/bin/python" "$HOME/Downloads/migrate_gallery_routes.py" --retire-old
-
-5. **Read-only --verify** requires the new 336-object release and no old
-   hashed pages in R2. It verifies byte-for-byte and sampled MIME types.
-   Then test public navigation; Cloudflare may need an exact-URL cache purge
-   to stop serving old HTML after R2 deletion. Do not purge image URLs.
-
-       "$HOME/Downloads/mcretro-r2-venv/bin/python" "$HOME/Downloads/migrate_gallery_routes.py" --verify
-
-The full migration and retirement have NOT been executed against R2.
-Everything is currently in draft PR #271. No public gallery has been
-republished or deleted as part of these commits.
-
----
-
-**Latest verified project state:** [17th November 2026 checkpoint](CHECKPOINT-2026-11-17.md). **All 16,823 image objects (4,276,856,102 bytes) have now been uploaded to `mcretro-photos`**, with all remote keys and sizes matched, 60 authenticated MIME/size samples passed, and 40 downloaded-byte comparisons matching. The **Photo Gallery website, HTML, sitemap, fonts, and private metadata remain unpublished**. This is a **draft, unmerged PR**, not a gallery website release. The checkpoint supersedes any earlier status statements below.
-
-Two separate static website starters are in this **draft, unmerged PR**. Neither site has been published by this branch.
-
-| Source | Intended R2 bucket | Domain |
-| --- | --- | --- |
-| archive-sites/file-server/ | mcretro-files | https://files.mcretro.net/ |
-| archive-sites/photo-gallery/ | mcretro-photos | https://photos.mcretro.net/ |
-
-The committed sample catalogues still contain **obsolete connectivity-test entries** (`mcretro-r2-check.txt` and `mcretro-r2-check.png`), **not** the full gallery or the verified 20-image pilot. They are examples only and **must not be uploaded as public catalogues**. No original photo archive, full generated photo catalogue, private review metadata or R2 credentials are committed.
-
-**Latest owner readback:** 329/329 HTML pages now match, with current
-`albums.json` and all 5 fonts present. Finder recreated a single
-`site/.DS_Store` file. The draft audit now reports this ordinary Finder
-metadata separately rather than making it a technical failure; all other
-unexpected files or symlinks remain errors. This is **not** permission to
-upload a folder recursively; only an explicitly approved, exact-key manifest
-could be used for any future transfer. The next milestone is a local browser
-review, not another image upload.
-
-## Next action: read-only audit of the existing Mac staging (no source rescan)
+### Historical: read-only audit of the previous Mac staging (no source rescan)
 
 The 20-object R2 pilot was fully verified. Before considering any wider release,
 check whether the **existing local gallery catalogue, static folder pages,

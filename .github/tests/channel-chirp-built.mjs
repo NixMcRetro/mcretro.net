@@ -14,6 +14,8 @@ const blog = read('blog/index.html');
 const channels = read('channels/index.html');
 const birdCss = read('assets/css/bird-theme.css');
 const birdLayout = read('assets/css/channel-chirp.css');
+const randomPosts = JSON.parse(read('assets/data/chirp-random.json'));
+const shuffleScript = read('assets/js/channel-chirp-random.js');
 
 assert.ok(exists('assets/js/channel-chirp-filter.js'));
 assert.match(nest, /<html[^>]*data-chirp-landing="true"/);
@@ -56,11 +58,30 @@ assert.match(conure, /post-navigation--bird/);
 assert.match(conure, /post-navigation--mcretro/);
 assert.match(conure, /OLDER CONURE ADVENTURE|NEWER CONURE ADVENTURE/);
 
-const recent = nest.match(/<h4 class="widgettitle" id="nest-sidebar-recent">[\s\S]*?<\/section>/);
-assert.ok(recent, 'Bird sidebar must show recent flock articles');
-assert.equal((recent[0].match(/<li>/g) || []).length, 4, 'Bird sidebar must list exactly 4 newest conure articles');
-assert.doesNotMatch(recent[0], /Little Corella at the Local Nursery/);
-assert.match(recent[0], /More Channel Chirp posts \(54\)/);
+const random = nest.match(/<h4 class="widgettitle" id="nest-sidebar-random">[\s\S]*?<\/section>/);
+assert.ok(random, 'Bird sidebar must have a Random Posts widget');
+assert.match(random[0], /🎲 Random Posts/);
+assert.equal((random[0].match(/<li>/g) || []).length, 4, 'Fallback should have four bird links');
+assert.match(random[0], /data-chirp-random-posts/);
+assert.match(random[0], /data-chirp-random-shuffle/);
+assert.doesNotMatch(random[0], /Little Corella at the Local Nursery/);
+assert.match(random[0], /Browse all 54 Channel Chirp posts/);
+assert.equal(randomPosts.length, 54, 'Only released conure articles may be shuffled');
+assert.equal(new Set(randomPosts.map(post => post.url)).size, 54, 'No duplicate random URLs');
+for (const post of randomPosts) {
+  assert.ok(/^\/(?![\\/])[^?#]*\/$/.test(post.url), 'Random URL must be local: ' + post.url);
+  assert.ok(post.title && post.date_label);
+  assert.ok(nestMain.includes('href="' + post.url + '"'),
+    'Every random link must belong to the published Nest feed: ' + post.url);
+}
+assert.ok(randomPosts.every(post => !/little-corella-at-the-local-nursery/.test(post.url)));
+assert.match(shuffleScript, /MutationObserver/);
+assert.match(shuffleScript, /Math\.random/);
+assert.match(nest, /assets\/js\/channel-chirp-random\.js/);
+const normalSidebar = nest.match(/<div class="sidebar-mode-mcretro">[\s\S]*?<div class="sidebar-mode-bird">/);
+assert.ok(normalSidebar, 'McRetro sidebar is still present for Light/Dark');
+assert.match(normalSidebar[0], /Recent Posts/);
+assert.doesNotMatch(normalSidebar[0], /🎲 Random Posts/);
 assert.match(birdCss, /:root\[data-theme="bird"\] \.sidebar-mode-mcretro[\s\S]*display: none !important/);
 assert.match(birdCss, /:root:not\(\[data-theme="bird"\]\) \.sidebar-mode-bird[\s\S]*display: none !important/);
 assert.match(birdCss, /\.nav-mode-bird/);
@@ -68,4 +89,4 @@ assert.match(birdLayout, /post-navigation--bird/);
 assert.match(birdLayout, /post-navigation--mcretro/);
 assert.ok(!exists('chirp/archive/index.html'), 'No unpublished historical articles should be generated');
 
-console.log('PASS: Bird filter shows ' + cards + ' released conure posts, bird-only sidebar, and theme-specific navigation.');
+console.log('PASS: Bird filter shows ' + cards + ' released conure posts, four random-only sidebar entries, and theme-specific navigation.');

@@ -14,7 +14,7 @@
   {% assign chirp_filtered_content = true %}
 {% endif %}
 <!DOCTYPE html>
-<html lang="en"{% if channel_chirp_page %} data-default-theme="bird"{% endif %}{% if chirp_filtered_content %} data-chirp-unrelated="true"{% endif %}{% if channel_chirp_page %} data-chirp-landing="true"{% endif %}>
+<html lang="en"{% if channel_chirp_page %} data-default-theme="bird"{% endif %}{% if chirp_filtered_content %} data-chirp-unrelated="true"{% endif %}{% if channel_chirp_page %} data-chirp-landing="true"{% endif %}{% if channel_chirp_article %} data-chirp-article="true"{% endif %}>
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16x16.png' | relative_url }}?v=20261018b">

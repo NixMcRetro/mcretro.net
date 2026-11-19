@@ -258,3 +258,19 @@
 .chirp-timeline li { display: flex; flex-wrap: wrap; gap: .6rem 1rem; padding: .55rem 0; border-bottom: 1px solid var(--border-soft); }
 .chirp-timeline time { color: var(--muted); font-size: .81rem; min-width: 8.5em; }
 .chirp-timeline a { flex: 1; min-width: 10rem; font-weight: 600; }
+
+/* A compact, accessible Bird-only reshuffle control. */
+.nest-sidebar-shuffle {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--panel-subtle);
+  color: var(--link);
+  padding: .45rem .7rem;
+  cursor: pointer;
+  font: 600 .81rem Montserrat, sans-serif;
+  margin: .45rem 0 .15rem;
+}
+.nest-sidebar-shuffle:hover { background: var(--interactive-hover); }
+.nest-sidebar-shuffle:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }

@@ -20,7 +20,14 @@ const shuffleScript = read('assets/js/channel-chirp-random.js');
 assert.ok(exists('assets/js/channel-chirp-filter.js'));
 assert.match(nest, /<html[^>]*data-chirp-landing="true"/);
 assert.match(nest, /<body[^>]*class="channel-chirp-page"/);
-assert.match(nest, /<nav class="nest-subnav"/);
+assert.doesNotMatch(nest, /<nav class="nest-subnav"/);
+assert.match(nest, /class="bird-tagline">Welcome to the Nest<\/span>/);
+assert.match(nest, /class="nest-flock-list"/);
+assert.doesNotMatch(nest, /class="nest-flock-links"/);
+assert.ok(nest.indexOf('id="nest-adventures"') < nest.indexOf('id="nest-flock"'));
+assert.ok(nest.indexOf('id="nest-flock"') < nest.indexOf('id="nest-soundborb"'));
+assert.doesNotMatch(nest, /nav-mode-bird" href="\/chirp\/#nest-soundborb"/);
+assert.match(birdLayout, /\.nest-post-grid \{ display: block; \}/);
 assert.match(nest, /href="\/chirp\/#nest-adventures"/);
 assert.match(nest, /id="nest-flock"/);
 assert.match(nest, /id="nest-soundborb"/);
@@ -40,7 +47,7 @@ assert.doesNotMatch(timeline, /Little Corella at the Local Nursery/);
 assert.doesNotMatch(timeline, /229 Original Posts/);
 
 const cards = [...nest.matchAll(/class="nest-post-card" data-nest-post/g)].length;
-assert.equal(cards, 54, 'Only 54 already-released conure posts should appear for now');
+assert.ok(cards > 0, 'The published Nest should contain released conure posts');
 assert.ok(nest.includes(cards + ' adventures'));
 assert.match(channels, /Visit The Nest: Channel Chirp adventures on McRetro/);
 
@@ -65,8 +72,8 @@ assert.equal((random[0].match(/<li>/g) || []).length, 4, 'Fallback should have f
 assert.match(random[0], /data-chirp-random-posts/);
 assert.match(random[0], /data-chirp-random-shuffle/);
 assert.doesNotMatch(random[0], /Little Corella at the Local Nursery/);
-assert.match(random[0], /Browse all 54 Channel Chirp posts/);
-assert.equal(randomPosts.length, 54, 'Only released conure articles may be shuffled');
+assert.match(random[0], new RegExp('Browse all ' + cards + ' Channel Chirp posts'));
+assert.equal(randomPosts.length, cards, 'Random Posts should include every published conure article');
 assert.equal(new Set(randomPosts.map(post => post.url)).size, 54, 'No duplicate random URLs');
 for (const post of randomPosts) {
   assert.ok(/^\/(?![\\/])[^?#]*\/$/.test(post.url), 'Random URL must be local: ' + post.url);

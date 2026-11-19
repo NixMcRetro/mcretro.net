@@ -37,6 +37,10 @@ for (const slug of pages) {
   const summaries = [...html.matchAll(/<summary\b/gi)].length;
   assert.ok(summaries >= panels.length, 'An accordion cannot lack its keyboard-accessible summary: ' + slug);
 }
+const flicky = readFileSync(path.join(site, 'flicky-the-floury-baker-cicada/index.html'), 'utf8');
+assert.equal((flicky.match(/<details\\b[^>]*\\bflicky-panel\\b/g) || []).length, 10,
+  'Flicky panels need their dedicated class for embedded video styling');
+
 const darknet = readFileSync(path.join(site, 'take-back-the-darknet/index.html'), 'utf8');
 assert.ok(darknet.includes('/assets/js/darknet-accordion.js'), 'Darknet hash navigation script missing');
 const darknetScript = readFileSync(path.join(site, 'assets/js/darknet-accordion.js'), 'utf8');

@@ -1,41 +1,47 @@
 {% assign chirp_posts = site.categories.parrots | where_exp: "bird", "bird.channel_chirp != false" %}
-<section class="widget nest-widget" aria-labelledby="nest-sidebar-about">
-  <h4 class="widgettitle" id="nest-sidebar-about">🦜 Our Little Flock</h4>
-  <p>Get to know the three small personalities behind Channel Chirp.</p>
-  <ul class="nest-sidebar-links">
-    <li><a href="/chirp/archive/pudge/">Pudge · The boss bird</a></li>
-    <li><a href="/chirp/archive/tillie/">Tillie · The talker</a></li>
-    <li><a href="/chirp/archive/chip/">Chip · Baby Borb</a></li>
-  </ul>
+<section class="widget nest-widget" aria-labelledby="nest-sidebar-search">
+  <h4 class="widgettitle" id="nest-sidebar-search">🪶 Search the flock</h4>
+  <form action="/chirp/" method="get" class="inline-search-form">
+    <label class="visually-hidden" for="bird-sidebar-search">Search Channel Chirp articles</label>
+    <input id="bird-sidebar-search" type="search" name="q" placeholder="Search bird posts..." required>
+    <button type="submit">Go</button>
+  </form>
 </section>
 
-<section class="widget nest-widget" aria-labelledby="nest-sidebar-explore">
-  <h4 class="widgettitle" id="nest-sidebar-explore">🌿 Explore The Nest</h4>
-  <ul class="nest-sidebar-links">
-    <li><a href="/chirp/">Restored conure adventures</a></li>
-    <li><a href="/chirp/archive/adventures/">Complete 229-post archive</a></li>
-    <li><a href="/chirp/archive/timeline/">The preserved bird timeline</a></li>
-    <li><a href="/chirp/archive/soundborb/">Soundborb · Our sound machine</a></li>
-    <li><a href="/chirp/archive/diet/">What's for dinner?</a></li>
-    <li><a href="https://www.youtube.com/@ChannelChirp">Channel Chirp on YouTube</a></li>
-  </ul>
-</section>
-
-<section class="widget nest-widget" aria-labelledby="nest-sidebar-recent">
-  <h4 class="widgettitle" id="nest-sidebar-recent">🪶 More Adventures</h4>
-  <ul class="nest-sidebar-links">
-    {% for bird in chirp_posts limit: 5 %}
-      <li><a href="{{ bird.url | relative_url }}">{{ bird.title | escape }}</a></li>
+<section class="widget nest-widget recent-posts-widget" aria-labelledby="nest-sidebar-recent">
+  <h4 class="widgettitle" id="nest-sidebar-recent">🦜 Recent Chirps</h4>
+  <ul class="recent-posts-list">
+    {% for bird in chirp_posts limit: 4 %}
+      <li>
+        <a href="{{ bird.url | relative_url }}">{{ bird.title | escape }}</a>
+        <span class="post-date-sidebar">
+          {% assign d = bird.date | date: '%-d' | plus: 0 %}
+          {% case d %}
+            {% when 1 or 21 or 31 %}{% assign ordinal = 'st' %}
+            {% when 2 or 22 %}{% assign ordinal = 'nd' %}
+            {% when 3 or 23 %}{% assign ordinal = 'rd' %}
+            {% else %}{% assign ordinal = 'th' %}
+          {% endcase %}
+          {{ d }}{{ ordinal }} {{ bird.date | date: '%B %Y' }}
+        </span>
+      </li>
     {% endfor %}
   </ul>
-  <a class="nest-sidebar-more" href="/chirp/#nest-adventures">Browse all {{ chirp_posts.size }} adventures</a>
+  <a class="nest-sidebar-more" href="/chirp/#nest-adventures">More Channel Chirp posts ({{ chirp_posts.size }})</a>
+</section>
+
+<section class="widget nest-widget" aria-labelledby="nest-sidebar-flock">
+  <h4 class="widgettitle" id="nest-sidebar-flock">🌿 Meet the flock</h4>
+  <p>Little personalities, big adventures. Explore the birds and their stories.</p>
+  <ul class="nest-sidebar-links">
+    <li><a href="/chirp/#nest-flock">Pudge, Tillie, and Chip</a></li>
+    <li><a href="/chirp/timeline/">Our conure timeline</a></li>
+    <li><a href="/chirp/#nest-soundborb">Soundborb migration</a></li>
+  </ul>
 </section>
 
 <section class="widget nest-widget" aria-labelledby="nest-sidebar-home">
   <h4 class="widgettitle" id="nest-sidebar-home">Back to McRetro</h4>
-  <p>Finished birdwatching? The main blog and the rest of the channels are just around the corner.</p>
-  <ul class="nest-sidebar-links">
-    <li><a href="/blog/">✏️ The McRetro Blog</a></li>
-    <li><a href="/channels/">📺 All Channels</a></li>
-  </ul>
+  <p>Want the full blog again? Switch to Light or Dark, or return to McRetro.</p>
+  <a class="nest-sidebar-more" href="/blog/" data-theme-exit="light">✏️ All McRetro posts</a>
 </section>

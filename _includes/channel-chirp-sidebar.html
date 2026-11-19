@@ -11,7 +11,7 @@
 
 <section class="widget nest-widget recent-posts-widget" aria-labelledby="nest-sidebar-random">
   <h4 class="widgettitle" id="nest-sidebar-random">🎲 Random Posts</h4>
-  <ul class="recent-posts-list" data-chirp-random-posts>
+  <ul class="recent-posts-list" data-chirp-random-posts aria-live="polite">
     {% for bird in bird_fallback limit: 4 %}
       <li>
         <a href="{{ bird.url | relative_url }}">{{ bird.title | escape }}</a>
@@ -28,7 +28,7 @@
       </li>
     {% endfor %}
   </ul>
-  <button class="nest-sidebar-shuffle" type="button" data-chirp-random-shuffle aria-label="Show four other random Channel Chirp posts">🎲 Shuffle again</button>
+  <button class="nest-sidebar-shuffle" type="button" data-chirp-random-shuffle disabled aria-label="Show four other random Channel Chirp posts">🎲 Shuffle again</button>
   <a class="nest-sidebar-more" href="/chirp/#nest-adventures">Browse all {{ chirp_posts.size }} Channel Chirp posts</a>
 </section>
 

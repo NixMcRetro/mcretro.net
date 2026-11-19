@@ -133,3 +133,17 @@
     color: var(--link);
   }
 }
+
+/* Bird article share buttons must not inherit Light-mode blue borders. */
+:root[data-theme="bird"] .post-full .post-share__action {
+  color: var(--archive-filled-text);
+  background: var(--archive-filled);
+  border-color: var(--border-soft);
+}
+:root[data-theme="bird"] .post-full .post-share__action:hover,
+:root[data-theme="bird"] .post-full .post-share__action:focus-visible,
+:root[data-theme="bird"] .post-full .post-share__action.is-copied {
+  color: var(--link-hover);
+  background: var(--archive-filled-hover);
+  border-color: var(--border);
+}

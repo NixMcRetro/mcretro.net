@@ -1,16 +1,5 @@
 {% assign chirp_posts = site.categories.parrots | where_exp: "bird", "bird.channel_chirp != false" %}
 {% assign bird_fallback = chirp_posts | sort: 'title' %}
-{% unless page.url == '/chirp/' %}
-<section class="widget nest-widget nest-search-widget" aria-labelledby="nest-sidebar-search">
-  <h4 class="widgettitle" id="nest-sidebar-search">🪶 Search the flock</h4>
-  <form action="/chirp/" method="get" class="inline-search-form">
-    <label class="visually-hidden" for="bird-sidebar-search">Search Channel Chirp articles</label>
-    <input id="bird-sidebar-search" type="search" name="q" placeholder="Search bird posts..." required>
-    <button type="submit">Go</button>
-  </form>
-</section>
-{% endunless %}
-
 <section class="widget nest-widget recent-posts-widget" aria-labelledby="nest-sidebar-random">
   <h4 class="widgettitle" id="nest-sidebar-random">🎲 Random Posts</h4>
   <ul class="recent-posts-list" data-chirp-random-posts aria-live="polite">
@@ -31,5 +20,34 @@
     {% endfor %}
   </ul>
   <button class="nest-sidebar-shuffle" type="button" data-chirp-random-shuffle disabled aria-label="Show four other random Channel Chirp posts">🎲 Shuffle again</button>
-  <a class="nest-sidebar-more" href="/chirp/#nest-adventures">Browse all {{ chirp_posts.size }} Channel Chirp posts</a>
+  <a class="nest-sidebar-more" href="/chirp/adventures/">Browse Channel Chirp Adventures</a>
 </section>
+
+<section class="widget nest-widget nest-search-widget" aria-labelledby="nest-sidebar-find">
+  <h4 class="widgettitle" id="nest-sidebar-find">Find-a-Squawk</h4>
+  <a class="chirp-sidebar-action" href="/chirp/search/">🔎 Search?</a>
+</section>
+
+{% assign chirp_months = chirp_posts | group_by_exp: "bird", "bird.date | date: '%Y-%m'" | sort: 'name' | reverse %}
+<section class="widget nest-widget nest-archive-widget" aria-labelledby="nest-sidebar-archives">
+  <h4 class="widgettitle" id="nest-sidebar-archives">Archives</h4>
+  <label class="visually-hidden" for="chirp-archive-select">Browse released Channel Chirp adventures by month</label>
+  <select id="chirp-archive-select" data-chirp-archive-select>
+    <option value="">Select Month</option>
+    {% for month in chirp_months %}
+      <option value="/chirp/adventures/#chirp-month-{{ month.name }}">{{ month.name | date: '%B %Y' }} ({{ month.items.size }})</option>
+    {% endfor %}
+  </select>
+  <noscript><p><a href="/chirp/adventures/">Browse the released adventures by month</a></p></noscript>
+</section>
+
+<section class="widget nest-widget nest-cool-links" aria-labelledby="nest-sidebar-links">
+  <h4 class="widgettitle" id="nest-sidebar-links">Cool Links</h4>
+  <nav aria-label="Channel Chirp cool links">
+    <a href="/chirp/timeline/">Bird Time Line</a>
+    <a href="/chirp/soundborb/">Our Soundboard</a>
+    <a href="/chirp/diet/">Our Diet</a>
+  </nav>
+</section>
+
+<p class="chirp-return"><a href="/blog/" data-theme-exit="light">↩ Return to McRetro</a></p>

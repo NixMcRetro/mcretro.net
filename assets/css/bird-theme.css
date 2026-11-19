@@ -78,20 +78,24 @@
 :root:not([data-theme="bird"]) .nav-mode-bird,
 :root:not([data-theme="bird"]) .sidebar-mode-bird,
 :root:not([data-theme="bird"]) .nest-subnav,
-:root:not([data-theme="bird"]) .textcycle .phrase--bird {
+:root:not([data-theme="bird"]) .textcycle .bird-tagline {
   display: none !important;
 }
 :root[data-theme="bird"] .site-logo--mcretro,
 :root[data-theme="bird"] .nav-mode-mcretro,
 :root[data-theme="bird"] .sidebar-mode-mcretro,
-:root[data-theme="bird"] .textcycle .phrase:not(.phrase--bird) {
+:root[data-theme="bird"] .textcycle .phrase {
   display: none !important;
 }
-:root[data-theme="bird"] .textcycle .phrase--bird {
+:root[data-theme="bird"] .textcycle .bird-tagline {
   display: block !important;
   position: absolute;
-  opacity: 1 !important;
-  animation: none !important;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
   color: var(--link);
 }
 :root[data-theme="bird"] .site-logo--bird {

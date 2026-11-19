@@ -32,7 +32,9 @@ on:
       - 'chirp/**'
       - '_includes/channel-chirp-nav.html'
       - '_includes/channel-chirp-sidebar.html'
+      - '_includes/channel-chirp-archive-list.html'
       - 'assets/js/channel-chirp-filter.js'
+      - 'assets/js/channel-chirp-archive.js'
       - 'assets/data/chirp-random.json'
       - 'assets/js/channel-chirp-random.js'
       - '.github/tests/channel-chirp-built.mjs'
@@ -162,6 +164,7 @@ jobs:
       - name: Verify Channel Chirp Nest posts, navigation and theme isolation
         run: |
           node --check assets/js/channel-chirp-filter.js
+          node --check assets/js/channel-chirp-archive.js
           node --check assets/js/channel-chirp-random.js
           node --test .github/tests/chirp-random.test.mjs
           node .github/tests/channel-chirp-built.mjs _site

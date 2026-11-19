@@ -17,7 +17,7 @@ live directly beneath `/chirp/`, with coherent navigation and sidebars.
 - Only released McRetro posts in `site.categories.parrots` are included,
   except those explicitly marked `channel_chirp: false`. The Little
   Corella article (three unrelated videos) is the current exception.
-- The bird sidebar lists the **four most recent published conure posts**
+- The bird sidebar lists **four random published conure posts**, refreshed on page load and with a Shuffle again button
   and its search filters the released bird index; it does not search
   unrelated McRetro articles.
 - Clicking the theme button can switch Light -> Dark -> Bird -> Light.
@@ -40,7 +40,7 @@ posts or embed links to old videos that are scheduled to disappear.
 
 - Existing released articles stay at their established McRetro permalinks.
 - New posts are added as usual, normally with the `parrots` category,
-  and automatically join The Nest and the recent-bird list.
+  and automatically become eligible for the random-bird widget.
 - Use `channel_chirp: false` for unrelated Parrots category entries.
 - The original `ChannelChirp/website` repository is a reference and
   private staging/migration source, not an extra public set of blog posts.

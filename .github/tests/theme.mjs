@@ -318,7 +318,7 @@ test('advisory: navigation hover underlines words without bolding or shifting ad
   }
   assert.equal((header.match(/class="nav-text"/g) || []).length, 11,
     'Six McRetro links and five Bird links, without the unreleased Soundborb item');
-  assert.equal((header.match(/<li(?:\\s[^>]*)?>/g) || []).length, 6);
+  assert.equal((header.match(/<li(?:\s[^>]*)?>/g) || []).length, 6);
   assert.equal((header.match(/class="nav-mode-bird"/g) || []).length, 5);
   assert.match(header, /<li class="nav-item--mcretro-only">/);
   const labelHoverRule = style.match(/\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{([^}]*)\}/)?.[1];

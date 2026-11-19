@@ -1,30 +1,41 @@
-/* Resolve the theme before stylesheets render. This file is intentionally loaded in <head>. */
+/* Resolve Light, Dark, or Bird before stylesheets render to prevent a theme flash. */
 (function () {
   'use strict';
   var key = 'mcretro-theme';
   var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : { matches: false };
   var sessionChoice = null; // Fallback when localStorage is blocked.
+  var themes = ['light', 'dark', 'bird'];
+  var names = { light: 'Light', dark: 'Dark', bird: 'Bird' };
+  var colours = { light: '#FFF8DC', dark: '#191D27', bird: '#F4F4E7' };
 
   function savedTheme() {
     try {
       var value = window.localStorage.getItem(key);
-      return value === 'light' || value === 'dark' ? value : null;
+      return themes.indexOf(value) !== -1 ? value : null;
     } catch (error) {
-      return sessionChoice; // Preserve a manual choice within the page.
+      return sessionChoice;
     }
   }
 
+  function defaultTheme() {
+    // Only conure pages default to Bird for visitors without a manual choice.
+    // Explicit choices persist across McRetro, including on conure pages.
+    if (document.documentElement.getAttribute('data-default-theme') === 'bird') return 'bird';
+    return media.matches ? 'dark' : 'light';
+  }
+
   function applyTheme() {
-    var theme = savedTheme() || (media.matches ? 'dark' : 'light');
+    var theme = savedTheme() || defaultTheme();
     document.documentElement.setAttribute('data-theme', theme);
 
     var browserColour = document.querySelector('meta[name="theme-color"]');
-    if (browserColour) browserColour.setAttribute('content', theme === 'dark' ? '#191D27' : '#FFF8DC');
+    if (browserColour) browserColour.setAttribute('content', colours[theme]);
 
     var button = document.querySelector('[data-theme-toggle]');
     if (button) {
-      button.setAttribute('aria-pressed', String(theme === 'dark'));
-      button.setAttribute('title', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' theme');
+      var next = themes[(themes.indexOf(theme) + 1) % themes.length];
+      button.setAttribute('aria-label', 'Current theme: ' + names[theme] + '. Switch to ' + names[next] + ' theme');
+      button.setAttribute('title', names[theme] + ' theme. Click to switch to ' + names[next]);
     }
   }
 
@@ -36,7 +47,8 @@
     var button = document.querySelector('[data-theme-toggle]');
     if (button) {
       button.addEventListener('click', function () {
-        var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        var current = document.documentElement.getAttribute('data-theme');
+        var next = themes[(themes.indexOf(current) + 1) % themes.length];
         try { window.localStorage.setItem(key, next); }
         catch (error) { sessionChoice = next; }
         applyTheme();

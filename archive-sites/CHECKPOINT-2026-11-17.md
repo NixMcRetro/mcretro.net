@@ -1,5 +1,16 @@
 # McRetro Photo Gallery and File Server - reconciled checkpoint
 
+> **Historical checkpoint only.** The Photo Gallery has since been
+> successfully published to R2 and migrated to 329 clean nested HTML routes,
+> plus two metadata objects and five fonts (336 website objects total).
+> The 328 old hashed HTML objects were removed on 19th November 2026.
+> Final downloaded-byte checks for all 336 website objects passed.
+> Nothing in this 17th November checkpoint authorises repeating the upload
+> or reopening the protected originals. For current information see
+> [Photo Gallery README](README.md). The unfinished File Server is managed
+> separately in [draft PR #281](https://github.com/NixMcRetro/mcretro.net/pull/281).
+>
+
 ## 19th November 2026 - Verified EXIF technical-only result
 
 The owner supplied the expanded, local-only ExifTool report for all 40

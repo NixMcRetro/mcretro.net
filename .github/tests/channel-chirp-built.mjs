@@ -1,5 +1,4 @@
-// Regression checks for the isolated Channel Chirp Nest inside McRetro.
-// Run against the built _site after Jekyll. No network or live site updates.
+// Tests run only against the generated preview _site; they never publish.
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -7,73 +6,64 @@ import path from 'node:path';
 const site = process.argv[2] || '_site';
 const read = rel => fs.readFileSync(path.join(site, rel), 'utf8');
 const exists = rel => fs.existsSync(path.join(site, rel));
-const home = read('chirp/index.html');
+const nest = read('chirp/index.html');
+const timeline = read('chirp/timeline/index.html');
 const conure = read('the-first-day/index.html');
 const corella = read('little-corella-at-the-local-nursery/index.html');
-const normalBlog = read('blog/index.html');
+const blog = read('blog/index.html');
 const channels = read('channels/index.html');
+const birdCss = read('assets/css/bird-theme.css');
+const birdLayout = read('assets/css/channel-chirp.css');
 
-assert.ok(exists('assets/css/bird-theme.css'), 'Bird palette must be built');
-assert.ok(exists('assets/css/channel-chirp.css'), 'Nest CSS must be built');
-assert.ok(exists('assets/js/channel-chirp-filter.js'), 'Nest filter must be built');
-assert.match(home, /<html[^>]*data-default-theme="bird"/, 'The Nest defaults to Bird mode');
-assert.doesNotMatch(home, /channels\/channel-chirp/, 'Draft nested URL must not leak');
-assert.match(home, /<body[^>]*class="channel-chirp-theme"/, 'The Nest needs its own theme');
-assert.match(home, /<nav class="nest-subnav"/);
-assert.match(home, /href="\/chirp\/#nest-adventures"/);
-assert.match(home, /id="nest-search-input"/);
-assert.match(home, /id="nest-search-status"/);
-assert.match(home, /id="nest-no-results"/);
-assert.match(home, /assets\/js\/channel-chirp-filter\.js/);
-assert.match(home, /assets\/css\/channel-chirp\.css/);
-assert.match(home, /The First Day!/);
-assert.match(home, /Burrrp! Tillie!/);
-assert.doesNotMatch(home, /Little Corella at the Local Nursery/);
-assert.doesNotMatch(home, /Bits, Brass, and Bugs/);
-for (const route of [
-  '/chirp/archive/pudge/', '/chirp/archive/tillie/',
-  '/chirp/archive/chip/', '/chirp/archive/timeline/',
-  '/chirp/archive/soundborb/'
-]) assert.ok(home.includes(route), 'The Nest should link to ' + route);
+assert.ok(exists('assets/js/channel-chirp-filter.js'));
+assert.match(nest, /<html[^>]*data-chirp-landing="true"/);
+assert.match(nest, /<body[^>]*class="channel-chirp-page"/);
+assert.match(nest, /<nav class="nest-subnav"/);
+assert.match(nest, /href="\/chirp\/#nest-adventures"/);
+assert.match(nest, /id="nest-flock"/);
+assert.match(nest, /id="nest-soundborb"/);
+assert.match(nest, /id="nest-search-input"/);
+assert.match(nest, /assets\/js\/channel-chirp-filter\.js/);
+assert.match(nest, /The First Day!/);
+assert.doesNotMatch(nest, /Little Corella at the Local Nursery/);
+assert.doesNotMatch(nest, /Bits, Brass, and Bugs/);
+assert.doesNotMatch(nest, /229 Original Posts|229 original adventures|509 individual recordings/);
+assert.doesNotMatch(nest, /\/chirp\/archive\//);
 
-// The full original site must be present locally, not merely linked to its old domain.
-for (const route of [
-  'chirp/archive/index.html',
-  'chirp/archive/pudge/index.html',
-  'chirp/archive/tillie/index.html',
-  'chirp/archive/chip/index.html',
-  'chirp/archive/timeline/index.html',
-  'chirp/archive/diet/index.html',
-  'chirp/archive/adventures/index.html',
-  'chirp/archive/the-first-day/index.html',
-  'chirp/archive/soundborb/index.html',
-  'chirp/archive/assets/soundborb/clips.json',
-  'chirp/archive/assets/soundborb/audio/beep-boop-001.mp3'
-]) assert.ok(exists(route), 'The preserved original site must include ' + route);
-assert.doesNotMatch(home, /href="https:\/\/(?:www\.)?channelchirp\.com\//,
-  'The Nest cannot rely on the retiring Channel Chirp domain');
-assert.match(home, /229 original/i);
-assert.match(home, /509 individual recordings/);
+assert.match(timeline, /The Flock Timeline/);
+assert.match(timeline, /The First Day!/);
+assert.doesNotMatch(timeline, /Little Corella at the Local Nursery/);
+assert.doesNotMatch(timeline, /229 Original Posts/);
 
-const cards = [...home.matchAll(/class="nest-post-card" data-nest-post/g)].length;
-assert.ok(cards >= 54, 'Expected all 54 historical conure posts, not ' + cards);
-assert.ok(home.includes(cards + ' adventures'), 'Displayed count must match rendered cards');
+const cards = [...nest.matchAll(/class="nest-post-card" data-nest-post/g)].length;
+assert.equal(cards, 54, 'Only 54 already-released conure posts should appear for now');
+assert.ok(nest.includes(cards + ' adventures'));
 assert.match(channels, /Visit The Nest: Channel Chirp adventures on McRetro/);
 
-assert.match(conure, /<body[^>]*class="channel-chirp-theme"/,
-  'A conure post must stay inside The Nest');
-assert.match(conure, /More Channel Chirp adventures/);
+for (const doc of [nest, conure, corella, blog]) {
+  assert.match(doc, /class="sidebar-mode-mcretro"/);
+  assert.match(doc, /class="sidebar-mode-bird"/);
+  assert.match(doc, /class="nav-mode-bird"/);
+  assert.match(doc, /class="nav-mode-mcretro/);
+}
+assert.match(blog, /data-chirp-unrelated="true"/);
+assert.match(corella, /data-chirp-unrelated="true"/);
+assert.doesNotMatch(corella, /data-chirp-article="true"/);
+assert.match(conure, /data-chirp-article="true"/);
+assert.match(conure, /post-navigation--bird/);
+assert.match(conure, /post-navigation--mcretro/);
 assert.match(conure, /OLDER CONURE ADVENTURE|NEWER CONURE ADVENTURE/);
-assert.match(conure, /Our Little Flock/);
-assert.doesNotMatch(conure, /Browse all archives/, 'Nest sidebar must not be the global blog sidebar');
 
-assert.doesNotMatch(corella, /class="channel-chirp-theme"/,
-  'The Little Corella remains a Parrots post but not a Nest post');
-assert.doesNotMatch(corella, /class="nest-subnav"/);
-assert.match(corella, /Browse all archives/, 'Non-flock posts keep the normal sidebar');
-assert.doesNotMatch(normalBlog, /class="channel-chirp-theme"/);
-assert.doesNotMatch(normalBlog, /data-default-theme="bird"/);
-assert.ok(!exists('channels/channel-chirp/index.html'), 'No second Nest URL');
-assert.doesNotMatch(normalBlog, /channel-chirp-sidebar/);
+const recent = nest.match(/<h4 class="widgettitle" id="nest-sidebar-recent">[\s\S]*?<\/section>/);
+assert.ok(recent, 'Bird sidebar must show recent flock articles');
+assert.equal((recent[0].match(/<li>/g) || []).length, 4, 'Bird sidebar must list exactly 4 newest conure articles');
+assert.doesNotMatch(recent[0], /Little Corella at the Local Nursery/);
+assert.match(recent[0], /More Channel Chirp posts \(54\)/);
+assert.match(birdCss, /:root\[data-theme="bird"\] \.sidebar-mode-mcretro[\s\S]*display: none !important/);
+assert.match(birdCss, /:root:not\(\[data-theme="bird"\]\) \.sidebar-mode-bird[\s\S]*display: none !important/);
+assert.match(birdCss, /\.nav-mode-bird/);
+assert.match(birdLayout, /post-navigation--bird/);
+assert.match(birdLayout, /post-navigation--mcretro/);
+assert.ok(!exists('chirp/archive/index.html'), 'No unpublished historical articles should be generated');
 
-console.log('PASS: The Nest contains ' + cards + ' conure posts; corella and other blog pages stay separate.');
+console.log('PASS: Bird filter shows ' + cards + ' released conure posts, bird-only sidebar, and theme-specific navigation.');

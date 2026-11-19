@@ -1,0 +1,26 @@
+/* Progressive-enhancement sticky navigation shared across all three modes.
+ * The masthead scrolls offscreen on desktop; the primary nav remains.
+ * On narrow screens, the compact logo/controls stay visible instead. */
+.site-header.has-sticky-navigation {
+  position: sticky;
+  top: var(--sticky-nav-top, 0px);
+  z-index: 40;
+  background: var(--page-bg);
+}
+:root[data-theme="light"] .site-header.has-sticky-navigation .main-nav,
+:root[data-theme="dark"] .site-header.has-sticky-navigation .main-nav {
+  background: var(--page-bg);
+}
+@media screen and (max-width: 750px) {
+  .site-header.has-sticky-navigation { top: 0; }
+  .site-header.has-sticky-navigation[data-nav-condensed="true"] .textcycle {
+    display: none;
+  }
+  .site-header.has-sticky-navigation[data-nav-condensed="true"] .header-inner {
+    padding-top: .35rem;
+    padding-bottom: .35rem;
+  }
+  .site-header.has-sticky-navigation[data-nav-condensed="true"] .main-nav {
+    margin-top: .4rem;
+  }
+}

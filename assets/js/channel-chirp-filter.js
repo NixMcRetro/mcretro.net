@@ -29,6 +29,13 @@
       (query ? ' found' : '');
   }
 
+  // Bird-only sidebar searches return directly to /chirp/?q=... .
+  // Do not query the global McRetro search index, which contains other posts.
+  if (window.location && window.location.search) {
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('q');
+    if (query) field.value = query;
+  }
   field.addEventListener('input', filter);
   filter();
 }());

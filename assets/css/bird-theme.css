@@ -108,3 +108,28 @@
 :root[data-theme="bird"] .sidebar-mode-bird .widget {
   border-bottom-color: var(--border-soft);
 }
+
+/* The shared not-dark control rules also include Bird, so override them
+ * with Bird colours rather than modifying the protected Light/Dark styles. */
+:root[data-theme="bird"] .theme-toggle,
+:root[data-theme="bird"] .nav-toggle {
+  color: var(--link);
+  background: var(--panel-subtle);
+  border-color: var(--border-soft);
+}
+:root[data-theme="bird"] .theme-toggle:hover,
+:root[data-theme="bird"] .nav-toggle:hover {
+  color: var(--link-hover);
+  background: var(--interactive-hover);
+  border-color: var(--border);
+}
+:root[data-theme="bird"] .nav-list li.nav-item--mcretro-only { display: none !important; }
+@media (max-width: 750px) {
+  :root[data-theme="bird"] .main-nav .nav-list li a:hover,
+  :root[data-theme="bird"] .main-nav .nav-list li a:focus-visible,
+  :root[data-theme="bird"] .main-nav .nav-list li a.active,
+  :root[data-theme="bird"] .main-nav .nav-list li a[aria-current="page"] {
+    background: var(--panel-subtle);
+    color: var(--link);
+  }
+}

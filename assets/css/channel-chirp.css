@@ -3,8 +3,8 @@
  * Bird content lives in the shared McRetro layout, with readable article
  * lists, whitespace and separators instead of oversized cards.
  */
-:root[data-theme="bird"] .site-header { background: transparent; }
-:root[data-theme="bird"] .site-logo { color: var(--link); }
+:root[data-theme="bird"] .site-header { background: #424242; }
+:root[data-theme="bird"] .site-logo { color: #FFFFFF; }
 :root[data-theme="bird"] .main-nav { border-color: var(--border); }
 :root[data-theme="bird"] .main-nav a.active,
 :root[data-theme="bird"] .main-nav a[aria-current="page"] {

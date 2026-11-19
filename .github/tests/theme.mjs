@@ -254,9 +254,11 @@ test('advisory: Channels keeps emoji and links, without old summary siren GIFs',
   for (const name of ['🎸 Nix McRetro', '👾 McRetro Gaming', '🪲 Super Nature World', '🦜 Channel Chirp']) {
     assert.ok(channels.includes(name), name);
   }
-  for (const handle of ['@NixMcRetro', '@McRetroGaming', '@SuperNatureWorld', '@ChannelChirp']) {
+  for (const handle of ['@NixMcRetro', '@McRetroGaming', '@SuperNatureWorld']) {
     assert.ok(channels.includes(handle), handle);
   }
+  assert.ok(!channels.includes('@ChannelChirp'), 'Retiring YouTube channel should not be advertised');
+  assert.ok(channels.includes('/chirp/'));
   assert.match(overrides, /\.mcretro-modem-titlebar[\s\S]*background: #000080/);
 });
 
@@ -265,7 +267,10 @@ test('advisory: navigation hover underlines words without bolding or shifting ad
   for(const [emoji, word] of [['🏡','Home'],['✏️','Blog'],['📺','Channels'],['💾','Goodies'],['🌏','Random'],['📡','About']]) {
     assert.ok(header.includes('<span class="nav-emoji" aria-hidden="true">' + emoji + '</span> <span class="nav-text">' + word + '</span>'), word);
   }
-  assert.equal((header.match(/class="nav-text"/g) || []).length, 6);
+  assert.equal((header.match(/class="nav-text"/g) || []).length, 12,
+    'Each of the six navigation positions has one McRetro and one Bird link');
+  assert.equal((header.match(/<li>/g) || []).length, 6);
+  assert.equal((header.match(/class="nav-mode-bird"/g) || []).length, 6);
   const labelHoverRule = style.match(/\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{([^}]*)\}/)?.[1];
   assert.ok(labelHoverRule, 'text-only nav hover and focus rule exists');
   assert.doesNotMatch(labelHoverRule, /font-weight\s*:/, 'hover must not change font weight or item widths');

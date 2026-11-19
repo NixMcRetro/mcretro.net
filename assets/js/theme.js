@@ -6,7 +6,7 @@
   var sessionChoice = null;
   var themes = ['light', 'dark', 'bird'];
   var names = { light: 'Light', dark: 'Dark', bird: 'Bird' };
-  var colours = { light: '#FFF8DC', dark: '#191D27', bird: '#F4F4E7' };
+  var colours = { light: '#FFF8DC', dark: '#191D27', bird: '#424242' };
   var root = document.documentElement;
   var landing = root.getAttribute('data-chirp-landing') === 'true';
   var conureArticle = root.getAttribute('data-chirp-article') === 'true';

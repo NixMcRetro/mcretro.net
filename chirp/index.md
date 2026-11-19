@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Channel Chirp - Welcome to The Nest"
+title: "Channel Chirp - Welcome to the Nest"
 permalink: /chirp/
 channel_chirp: true
 pagefind: false
@@ -14,44 +14,25 @@ Keep category taxonomy, original post URLs, and YouTube embeds unchanged.
 {% assign chirp_posts = site.categories.parrots | where_exp: "bird", "bird.channel_chirp != false" %}
 <section class="nest-hero" aria-labelledby="nest-heading">
   <span class="nest-hero-eyebrow">CHANNEL CHIRP · THE CONURE ARCHIVE</span>
-  <div class="nest-hero-birds" aria-hidden="true">🦜 ✨ 🦜 ✨ 🦜</div>
-  <h1 id="nest-heading">Welcome to The Nest</h1>
-  <p>The adventures of Pudge, Tillie, and Chip. Three little green-cheeked conures, an unreasonable amount of mischief, and enough chirps to fill a lifetime.</p>
-  <div class="nest-hero-actions">
-    <a href="#nest-adventures">Explore the adventures</a>
-    <a href="#nest-flock" class="nest-hero-secondary">Meet the flock</a>
-  </div>
-</section>
-
-<section id="nest-flock" class="nest-intro" aria-labelledby="nest-intro-heading">
-  <h2 id="nest-intro-heading">Little birds, big personalities</h2>
-  <p>Pudge was the boss, Tillie had opinions about everything, and Chip was a tiny cinnamon-coloured chaos machine. Their stories are returning to McRetro as the original videos are re-released on the McRetro YouTube channel.</p>
-  <div class="nest-flock-links">
-    <a href="#nest-adventures"><span aria-hidden="true">🦜</span><strong>Pudge</strong><small>The boss bird · Discover the adventures</small></a>
-    <a href="#nest-adventures"><span aria-hidden="true">🦜</span><strong>Tillie</strong><small>The talker · Discover the adventures</small></a>
-    <a href="#nest-adventures"><span aria-hidden="true">🦜</span><strong>Chip</strong><small>Baby Borb · Discover the adventures</small></a>
-  </div>
-</section>
-<section id="nest-soundborb" class="nest-intro" aria-labelledby="nest-soundborb-heading">
-  <span class="nest-kicker">THE LITTLE FLOCK SOUND MACHINE</span>
-  <h2 id="nest-soundborb-heading">Soundborb is finding a new nest</h2>
-  <p>The existing soundboard is being prepared for its own home directly under <code>/chirp/</code>. We will move its audio and controls without depending on the original Channel Chirp website. It will appear here after the migration is reviewed and tested.</p>
-  <p><a href="/chirp/timeline/">Explore the timeline of re-released adventures</a></p>
+  <h1 id="nest-heading">Pudge, Tillie, and Chip</h1>
+  <p>Three little green-cheeked conures, an unreasonable amount of mischief, and enough chirps to fill a lifetime. Their adventures are returning as the original videos are re-released on the McRetro YouTube channel.</p>
 </section>
 
 <section id="nest-adventures" class="nest-adventures" aria-labelledby="nest-adventures-heading">
+  <div class="nest-adventures-tools">
   <div class="nest-heading-row">
     <div>
-      <span class="nest-kicker">BIRD BLOG</span>
       <h2 id="nest-adventures-heading">Adventures from the flock</h2>
-      <p>Only Channel Chirp stories that have been re-released and published on McRetro appear here. More adventures will join the flock as their videos return.</p>
+      <p>Only already-released Channel Chirp stories appear here. More adventures will join the flock as their videos return.</p>
     </div>
     <span class="nest-post-total">{{ chirp_posts.size }} adventures</span>
   </div>
   <div class="nest-search">
     <label for="nest-search-input">Find an adventure</label>
-    <input id="nest-search-input" type="search" autocomplete="off" placeholder="Try Tillie, Chip, millet, bath...">
+    <input id="nest-search-input" type="search" autocomplete="off" placeholder="Search Tillie, Chip, millet, baths...">
     <p id="nest-search-status" role="status" aria-live="polite">{{ chirp_posts.size }} adventures</p>
+  </div>
+
   </div>
 
   {% assign bird_years = chirp_posts | group_by_exp: "bird", "bird.date | date: '%Y'" %}
@@ -62,6 +43,7 @@ Keep category taxonomy, original post URLs, and YouTube embeds unchanged.
       <div class="nest-post-grid">
       {% for post in year.items %}
         <article class="nest-post-card" data-nest-post>
+          <h4><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h4>
           <time datetime="{{ post.date | date_to_xmlschema }}">
             {% assign d = post.date | date: '%-d' | plus: 0 %}
             {% case d %}
@@ -72,9 +54,8 @@ Keep category taxonomy, original post URLs, and YouTube embeds unchanged.
             {% endcase %}
             {{ d }}{{ ordinal }} {{ post.date | date: '%B %Y' }}
           </time>
-          <h4><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h4>
           <p>{{ post.share_description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 170 | escape }}</p>
-          <a class="nest-read-link" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title | escape }}">Read this adventure <span aria-hidden="true">›</span></a>
+          <a class="nest-read-link" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title | escape }}">Continue reading</a>
         </article>
       {% endfor %}
       </div>
@@ -82,5 +63,20 @@ Keep category taxonomy, original post URLs, and YouTube embeds unchanged.
   {% endfor %}
   </div>
   <p id="nest-no-results" class="nest-no-results" hidden>No chirps matched that search. Try a different word!</p>
+</section>
+
+<section id="nest-flock" class="nest-intro" aria-labelledby="nest-intro-heading">
+  <h2 id="nest-intro-heading">Little birds, big personalities</h2>
+  <p>Pudge was the boss, Tillie had opinions about everything, and Chip was a tiny cinnamon-coloured chaos machine. Meet the little personalities behind the adventures.</p>
+  <ul class="nest-flock-list">
+    <li><strong>Pudge</strong><span>The boss bird</span></li>
+    <li><strong>Tillie</strong><span>The talker</span></li>
+    <li><strong>Chip</strong><span>Baby Borb</span></li>
+  </ul>
+</section>
+
+<section id="nest-soundborb" class="nest-intro nest-soundborb" aria-labelledby="nest-soundborb-heading">
+  <h2 id="nest-soundborb-heading">Soundborb is finding a new nest</h2>
+  <p>The soundboard isn't available here yet. Its audio and controls will move to Channel Chirp after the migration has been reviewed and tested.</p>
 </section>
 <script src="/assets/js/channel-chirp-filter.js" defer></script>

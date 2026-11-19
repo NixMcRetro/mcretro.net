@@ -5,60 +5,60 @@
  */
 :root[data-theme="bird"] {
   color-scheme: light;
-  --page-bg: #F4F4E7;
-  --panel: #FFFCF0;
-  --panel-subtle: #E8EEDC;
-  --text: #233526;
-  --muted: #4E6250;
-  --link: #27652C;
-  --link-hover: #17451D;
-  --focus: #275F2D;
-  --border: #638467;
-  --border-soft: #B9CDB3;
-  --code-bg: #EFF4E9;
-  --quote-bg: #EEF4E5;
-  --table-head: #DFE9D5;
-  --table-even: #F0F5E9;
-  --table-odd: #FFFCF0;
+  --page-bg: #424242;
+  --panel: #FFFFFF;
+  --panel-subtle: #F5F5F5;
+  --text: #424242;
+  --muted: #727272;
+  --link: #18770C;
+  --link-hover: #14660A;
+  --focus: #18770C;
+  --border: #29A518;
+  --border-soft: #DDDDDD;
+  --code-bg: #F5F5F5;
+  --quote-bg: #F5F5F5;
+  --table-head: #E9F7E7;
+  --table-even: #F7FAF7;
+  --table-odd: #FFFFFF;
   --input-bg: #FFFFFF;
-  --button-bg: #27652C;
-  --button-hover: #17451D;
+  --button-bg: #18770C;
+  --button-hover: #105B08;
   --button-text: #FFFFFF;
-  --sidebar-button-bg: #27652C;
-  --sidebar-button-hover: #17451D;
-  --nav-button-bg: #233526;
+  --sidebar-button-bg: #18770C;
+  --sidebar-button-hover: #105B08;
+  --nav-button-bg: #18770C;
   --nav-button-text: #FFFFFF;
-  --archive-tile: #417443;
-  --archive-hover: #285B2B;
-  --archive-empty: #FFFCF0;
-  --archive-filled: #E3F0D8;
-  --archive-filled-hover: #D2E7C3;
+  --archive-tile: #18770C;
+  --archive-hover: #105B08;
+  --archive-empty: #FFFFFF;
+  --archive-filled: #E7F5E4;
+  --archive-filled-hover: #D6ECCD;
   --interactive-hover: var(--archive-filled-hover);
-  --archive-filled-text: #235326;
-  --archive-accent: #417443;
-  --accordion-neutral-bg: #E9F0E0;
-  --accordion-neutral-hover: #D2E7C3;
-  --accordion-teal-bg: #E3F0D8;
-  --accordion-teal-hover: #D2E7C3;
-  --accordion-teal-open: #D6E9C8;
-  --accordion-teal-open-hover: #C8E0B6;
-  --accordion-accent: #417443;
+  --archive-filled-text: #17660D;
+  --archive-accent: #29A518;
+  --accordion-neutral-bg: #F5F5F5;
+  --accordion-neutral-hover: #E7F5E4;
+  --accordion-teal-bg: #E7F5E4;
+  --accordion-teal-hover: #D6ECCD;
+  --accordion-teal-open: #D6ECCD;
+  --accordion-teal-open-hover: #C8E5BD;
+  --accordion-accent: #29A518;
 }
 
 :root[data-theme="bird"] body {
-  background: linear-gradient(145deg, #E8F1DE 0, #F4F4E7 360px, var(--page-bg) 700px);
+  background: var(--page-bg);
 }
 :root[data-theme="bird"] .site-header {
-  background: transparent;
+  background: #424242;
 }
 :root[data-theme="bird"] .site-logo {
-  color: var(--link);
+  color: #FFFFFF;
 }
 :root[data-theme="bird"] .widgettitle,
 :root[data-theme="bird"] .post-title a:hover {
   color: var(--link);
 }
-/* Light/Dark keep their original colours; Bird is a distinct soft-green theme. */
+/* Light/Dark are unchanged; Bird borrows the original Channel Chirp #424242 / #29A518 / #FFFFFF palette. */
 
 /* Three-state theme button keeps the existing 40px desktop/mobile footprint. */
 .theme-icon--bird { display: none; }
@@ -96,7 +96,7 @@
   white-space: nowrap;
   font-size: 1.1rem;
   letter-spacing: 0.03em;
-  color: var(--link);
+  color: #F5F5F5;
 }
 :root[data-theme="bird"] .site-logo--bird {
   font-family: Montserrat, "Helvetica Neue", sans-serif;
@@ -108,3 +108,98 @@
 :root[data-theme="bird"] .sidebar-mode-bird .widget {
   border-bottom-color: var(--border-soft);
 }
+
+/* The shared not-dark control rules also include Bird, so override them
+ * with Bird colours rather than modifying the protected Light/Dark styles. */
+:root[data-theme="bird"] .theme-toggle,
+:root[data-theme="bird"] .nav-toggle {
+  color: var(--link);
+  background: var(--panel-subtle);
+  border-color: var(--border-soft);
+}
+:root[data-theme="bird"] .theme-toggle:hover,
+:root[data-theme="bird"] .nav-toggle:hover {
+  color: var(--link-hover);
+  background: var(--interactive-hover);
+  border-color: var(--border);
+}
+:root[data-theme="bird"] .nav-list li.nav-item--mcretro-only { display: none !important; }
+@media (max-width: 750px) {
+  :root[data-theme="bird"] .main-nav .nav-list li a:hover,
+  :root[data-theme="bird"] .main-nav .nav-list li a:focus-visible,
+  :root[data-theme="bird"] .main-nav .nav-list li a.active,
+  :root[data-theme="bird"] .main-nav .nav-list li a[aria-current="page"] {
+    background: var(--panel-subtle);
+    color: var(--link);
+  }
+}
+
+/* Bird article share buttons must not inherit Light-mode blue borders. */
+:root[data-theme="bird"] .post-full .post-share__action {
+  color: var(--archive-filled-text);
+  background: var(--archive-filled);
+  border-color: var(--border-soft);
+}
+:root[data-theme="bird"] .post-full .post-share__action:hover,
+:root[data-theme="bird"] .post-full .post-share__action:focus-visible,
+:root[data-theme="bird"] .post-full .post-share__action.is-copied {
+  color: var(--link-hover);
+  background: var(--archive-filled-hover);
+  border-color: var(--border);
+}
+
+/* Original Channel Chirp green bar, with darker green for readable white
+ * navigation text. The old accent #29A518 is retained for narrow green bars. */
+:root[data-theme="bird"] .main-nav {
+  background: #18770C;
+  border: 0;
+  border-radius: 2px;
+  padding: 10px 0;
+}
+:root[data-theme="bird"] .main-nav a { color: #FFFFFF; }
+:root[data-theme="bird"] .main-nav a:hover,
+:root[data-theme="bird"] .main-nav a:focus-visible { color: #FFFFFF; }
+:root[data-theme="bird"] .site-logo--bird { color: #FFFFFF; }
+:root[data-theme="bird"] .textcycle .bird-tagline { color: #F5F5F5; }
+:root[data-theme="bird"] .theme-toggle,
+:root[data-theme="bird"] .nav-toggle {
+  background: #FFFFFF;
+  color: #17660D;
+  border-color: #29A518;
+}
+:root[data-theme="bird"] .theme-toggle:hover,
+:root[data-theme="bird"] .nav-toggle:hover {
+  color: #14660A;
+  border-color: #1E8C10;
+  background: #E7F5E4;
+}
+@media (max-width: 750px) {
+  :root[data-theme="bird"] .main-nav {
+    background: transparent;
+    border-top: 2px solid #29A518;
+    border-radius: 0;
+    padding: 0;
+  }
+  :root[data-theme="bird"] .main-nav .nav-list {
+    background: #FFFFFF;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+  }
+  :root[data-theme="bird"] .main-nav .nav-list li a { color: #424242; }
+  :root[data-theme="bird"] .main-nav .nav-list li a:hover,
+  :root[data-theme="bird"] .main-nav .nav-list li a:focus-visible,
+  :root[data-theme="bird"] .main-nav .nav-list li a.active,
+  :root[data-theme="bird"] .main-nav .nav-list li a[aria-current="page"] {
+    background: #E7F5E4;
+    color: #17660D;
+  }
+}
+
+/* The site-wide footer is outside the white cards. Keep it readable against
+ * the original Channel Chirp charcoal background without touching Light/Dark. */
+:root[data-theme="bird"] .site-footer { color: #FFFFFF; }
+:root[data-theme="bird"] .site-footer a {
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-underline-offset: .14em;
+}
+:root[data-theme="bird"] .site-footer a:hover { color: #E7F5E4; }

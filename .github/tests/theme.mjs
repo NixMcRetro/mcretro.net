@@ -74,7 +74,7 @@ test('core: theme button cycles Light, Dark, Bird, Light and remembers the filte
   f.handlers.click();
   assert.equal(f.store.get('mcretro-theme'),'bird');
   assert.equal(f.attrs['data-theme'],'bird');
-  assert.equal(f.metaAttrs.content,'#F4F4E7');
+  assert.equal(f.metaAttrs.content,'#424242');
   assert.deepEqual(f.navigations.at(-1), { method:'assign', url:'/chirp/' });
   assert.match(f.btnAttrs['aria-label'], /Current theme: Bird\. Switch to Light theme/);
   f.handlers.click();
@@ -182,8 +182,8 @@ test('core: tagline shuffle keeps Bird outside the original animation positions'
 test('core: Bird stylesheet and header icon preserve original mobile layout', () => {
   const bird=read('assets/css/bird-theme.css');
   assert.match(bird, /:root\[data-theme="bird"\]/);
-  assert.match(bird, /--page-bg: #F4F4E7/);
-  assert.match(bird, /--link: #27652C/);
+  assert.match(bird, /--page-bg: #424242/);
+  assert.match(bird, /--link: #18770C/);
   assert.match(bird, /\.theme-icon--bird/);
   assert.match(header, /class="theme-icon theme-icon--bird"/);
   assert.match(layout, /data-default-theme="bird"/);
@@ -316,10 +316,11 @@ test('advisory: navigation hover underlines words without bolding or shifting ad
   for(const [emoji, word] of [['🏡','Home'],['✏️','Blog'],['📺','Channels'],['💾','Goodies'],['🌏','Random'],['📡','About']]) {
     assert.ok(header.includes('<span class="nav-emoji" aria-hidden="true">' + emoji + '</span> <span class="nav-text">' + word + '</span>'), word);
   }
-  assert.equal((header.match(/class="nav-text"/g) || []).length, 12,
-    'Each of the six navigation positions has one McRetro and one Bird link');
-  assert.equal((header.match(/<li>/g) || []).length, 6);
-  assert.equal((header.match(/class="nav-mode-bird"/g) || []).length, 6);
+  assert.equal((header.match(/class="nav-text"/g) || []).length, 11,
+    'Six McRetro links and five Bird links, without the unreleased Soundborb item');
+  assert.equal((header.match(/<li(?:\s[^>]*)?>/g) || []).length, 6);
+  assert.equal((header.match(/class="nav-mode-bird"/g) || []).length, 5);
+  assert.match(header, /<li class="nav-item--mcretro-only">/);
   const labelHoverRule = style.match(/\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{([^}]*)\}/)?.[1];
   assert.ok(labelHoverRule, 'text-only nav hover and focus rule exists');
   assert.doesNotMatch(labelHoverRule, /font-weight\s*:/, 'hover must not change font weight or item widths');

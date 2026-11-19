@@ -1,9 +1,9 @@
-name: Validate R2 archive site starters
+name: Validate R2 Photo Gallery source
 on:
   pull_request:
     paths:
       - 'archive-sites/**'
-      - '.github/tests/r2-archive-sites.test.mjs'
+      - '.github/tests/r2-photo-gallery.test.mjs'
       - '.github/workflows/r2-archive-sites.yml'
   workflow_dispatch:
 
@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '24'
-      - name: Verify archive catalogues and JavaScript syntax
-        run: node --test .github/tests/r2-archive-sites.test.mjs
-      - name: Validate local archive builder with synthetic fixtures
+      - name: Verify Photo Gallery catalogue and JavaScript
+        run: node --test .github/tests/r2-photo-gallery.test.mjs
+      - name: Validate Photo Gallery Python helpers with synthetic fixtures
         run: python3 -m unittest discover -s archive-sites/tools -p 'test_*.py' -v

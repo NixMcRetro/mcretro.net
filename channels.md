@@ -41,9 +41,9 @@ Homepage: [https://mcretro.net](https://mcretro.net)
 Channel Chirp is home to the cheekiest green-cheeked conures. We had the pleasure of being in the flock of Pudge, Tillie and Chip. Established a couple of weeks after Pudge and Tillie were taken home. They have all since left the nest and are most likely living their best lives. Their site remains so we can remember them.
 
 YouTube Channel: [https://youtube.com/@ChannelChirp](https://www.youtube.com/@ChannelChirp)<br>
-Homepage: [https://channelchirp.com](https://channelchirp.com)
+Homepage: [https://mcretro.net/chirp/](/chirp/)
 
-**[🪺 Visit The Nest: Channel Chirp adventures on McRetro](/chirp/)** - a bird-only archive of Pudge, Tillie, and Chip, with links to their original profiles, timeline, and Soundborb.
+**[🪺 Visit The Nest: Channel Chirp adventures on McRetro](/chirp/)** - a bird-only archive of Pudge, Tillie, and Chip, with the preserved original profiles, complete 229-post archive, timeline, and Soundborb soundboard.
 
 </details>
 

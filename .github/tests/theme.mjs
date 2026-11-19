@@ -10,8 +10,11 @@ const layout = read('_layouts/default.html');
 const style = read('assets/css/style.css');
 const overrides = read('assets/css/overrides.css');
 const blog = read('blog/index.html');
-function fixture(systemDark = false, stored = null, storageFails = false, defaultBird = false) {
-  const handlers = {}, docHandlers = {}, mediaHandlers = {}, attrs = defaultBird ? {'data-default-theme':'bird'} : {};
+function fixture(systemDark = false, stored = null, storageFails = false, defaultBird = false, context = {}) {
+  const handlers = {}, docHandlers = {}, mediaHandlers = {}, attrs = defaultBird ? {'data-default-theme':'bird','data-chirp-landing':'true'} : {};
+  if (context.unrelated) attrs['data-chirp-unrelated'] = 'true';
+  if (context.article) attrs['data-chirp-article'] = 'true';
+  const navigations = [];
   const btnAttrs = {}, metaAttrs = {};
   const store = new Map(stored ? [['mcretro-theme', stored]] : []);
   const button = {
@@ -27,6 +30,10 @@ function fixture(systemDark = false, stored = null, storageFails = false, defaul
   };
   const media = { matches: systemDark, addEventListener(k,fn) { mediaHandlers[k] = fn; } };
   const window = {
+    location: {
+      assign(url) { navigations.push({ method: 'assign', url }); },
+      replace(url) { navigations.push({ method: 'replace', url }); }
+    },
     matchMedia(s) { assert.equal(s, '(prefers-color-scheme: dark)'); return media; },
     localStorage: {
       getItem(k) { if(storageFails) throw Error('blocked'); return store.get(k) || null; },
@@ -36,7 +43,7 @@ function fixture(systemDark = false, stored = null, storageFails = false, defaul
   };
   runInNewContext(code,{ window, document });
   docHandlers.DOMContentLoaded();
-  return {attrs, btnAttrs, metaAttrs, media, mediaHandlers, handlers, store};
+  return {attrs, btnAttrs, metaAttrs, media, mediaHandlers, handlers, store, navigations};
 }
 test('core: early external script prevents incorrect-theme flash and preserves CSP', () => {
   assert.ok(layout.indexOf('assets/js/theme.js') < layout.indexOf('assets/css/style.css'));
@@ -56,38 +63,43 @@ test('core: first visit respects light/dark system preference on non-bird pages'
   assert.match(light.btnAttrs['aria-label'], /Current theme: Light\. Switch to Dark theme/);
   assert.equal(dark.attrs['data-theme'],'dark');
   assert.equal(dark.metaAttrs.content,'#191D27');
-  assert.match(dark.btnAttrs['aria-label'], /Current theme: Dark\. Switch to Bird theme/);
+  assert.match(dark.btnAttrs['aria-label'], /Current theme: Dark\. Switch to Bird and show Channel Chirp posts/);
 });
 
-test('core: theme button cycles Light, Dark, Bird, Light and persists', () => {
+test('core: theme button cycles Light, Dark, Bird, Light and remembers the filter', () => {
   const f=fixture(false);
   f.handlers.click();
   assert.equal(f.store.get('mcretro-theme'),'dark');
-  assert.equal(f.attrs['data-theme'],'dark');
-  f.media.matches=true;f.mediaHandlers.change();
   assert.equal(f.attrs['data-theme'],'dark');
   f.handlers.click();
   assert.equal(f.store.get('mcretro-theme'),'bird');
   assert.equal(f.attrs['data-theme'],'bird');
   assert.equal(f.metaAttrs.content,'#F4F4E7');
+  assert.deepEqual(f.navigations.at(-1), { method:'assign', url:'/chirp/' });
   assert.match(f.btnAttrs['aria-label'], /Current theme: Bird\. Switch to Light theme/);
   f.handlers.click();
   assert.equal(f.store.get('mcretro-theme'),'light');
   assert.equal(f.attrs['data-theme'],'light');
 });
 
-test('core: conure pages default to Bird unless explicitly overridden', () => {
-  const f=fixture(false,null,false,true);
+test('core: opening /chirp/ activates Bird; turning it off returns to the full blog', () => {
+  const f=fixture(false,'dark',false,true);
   assert.equal(f.attrs['data-theme'],'bird');
-  assert.equal(f.store.has('mcretro-theme'),false);
-  f.media.matches=true;f.mediaHandlers.change();
-  assert.equal(f.attrs['data-theme'],'bird', 'system mode does not override the Nest default');
+  assert.equal(f.store.get('mcretro-theme'),'bird');
   f.handlers.click();
-  assert.equal(f.attrs['data-theme'],'light', 'one click leaves Bird mode');
-  const existing=fixture(true,'dark',false,true);
-  assert.equal(existing.attrs['data-theme'],'dark');
-  const selectedBird=fixture(false,'bird',false,false);
-  assert.equal(selectedBird.attrs['data-theme'],'bird', 'Bird persists on other McRetro pages');
+  assert.equal(f.attrs['data-theme'],'light');
+  assert.deepEqual(f.navigations.at(-1), {method:'assign',url:'/blog/'});
+});
+
+test('core: Bird redirects ordinary post and blog pages but keeps released conure articles', () => {
+  const standard=fixture(false,'bird',false,false,{unrelated:true});
+  assert.deepEqual(standard.navigations[0], {method:'replace',url:'/chirp/'});
+  const article=fixture(false,'bird',false,false,{article:true});
+  assert.equal(article.attrs['data-theme'],'bird');
+  assert.equal(article.navigations.length,0);
+  article.handlers.click();
+  assert.equal(article.attrs['data-theme'],'light');
+  assert.equal(article.navigations.length,0,'Light can read original conure post layout');
 });
 
 test('core: without manual selection, device changes update normal pages', () => {
@@ -115,6 +127,7 @@ test('core: blocked localStorage still permits page-local theme choice', () => {
   f.handlers.click();
   assert.equal(f.attrs['data-theme'],'bird');
   assert.match(f.btnAttrs['aria-label'], /Current theme: Bird/);
+  assert.deepEqual(f.navigations.at(-1), {method:'assign', url:'/chirp/'});
 });
 
 test('core: Bird stylesheet and header icon preserve original mobile layout', () => {
@@ -124,7 +137,10 @@ test('core: Bird stylesheet and header icon preserve original mobile layout', ()
   assert.match(bird, /--link: #27652C/);
   assert.match(bird, /\.theme-icon--bird/);
   assert.match(header, /class="theme-icon theme-icon--bird"/);
-  assert.match(layout, /<html lang="en"\{% if channel_chirp_mode %\} data-default-theme="bird"/);
+  assert.match(layout, /data-default-theme="bird"/);
+  assert.match(layout, /data-chirp-unrelated="true"/);
+  assert.match(layout, /class="sidebar-mode-bird"/);
+  assert.match(header, /class="nav-mode-bird"/);
 });
 
 test('advisory: two stable button positions, WCAG labels and CSS colour tokens', () => {

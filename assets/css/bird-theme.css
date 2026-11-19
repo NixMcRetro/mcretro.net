@@ -193,3 +193,13 @@
     color: #17660D;
   }
 }
+
+/* The site-wide footer is outside the white cards. Keep it readable against
+ * the original Channel Chirp charcoal background without touching Light/Dark. */
+:root[data-theme="bird"] .site-footer { color: #FFFFFF; }
+:root[data-theme="bird"] .site-footer a {
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-underline-offset: .14em;
+}
+:root[data-theme="bird"] .site-footer a:hover { color: #E7F5E4; }

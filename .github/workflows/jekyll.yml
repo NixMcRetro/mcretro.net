@@ -22,6 +22,8 @@ on:
       - '.github/tests/caption-excerpts-built.mjs'
       - 'assets/css/**'
       - 'assets/js/theme.js'
+      - 'assets/js/sticky-navigation.js'
+      - '.github/tests/sticky-navigation.test.mjs'
       - 'assets/js/post-media-layout.js'
       - '_plugins/image_dimensions.rb'
       - '.github/tests/post-media-built-check.mjs'
@@ -177,6 +179,11 @@ jobs:
 
       - name: Verify theme and accessibility behaviour (required)
         run: node --test --test-name-pattern='^core:' .github/tests/theme.mjs
+
+      - name: Verify sticky desktop and mobile navigation (required)
+        run: |
+          node --check assets/js/sticky-navigation.js
+          node --test .github/tests/sticky-navigation.test.mjs
 
       - name: Verify dial-up and archive calendar interactions (required)
         run: node --test .github/tests/modem-destinations.mjs .github/tests/archive-calendar.mjs

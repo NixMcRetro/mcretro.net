@@ -1,0 +1,5 @@
+# Build-time-only settings for the retired Channel Chirp site's complete snapshot.
+# This never changes ChannelChirp/website or the live channelchirp.com domain.
+url: "https://mcretro.net"
+baseurl: "/chirp/archive"
+timezone: Australia/Sydney

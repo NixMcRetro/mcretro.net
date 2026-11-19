@@ -19,6 +19,7 @@ Keep category taxonomy, original post URLs, and YouTube embeds unchanged.
 </section>
 
 <section id="nest-adventures" class="nest-adventures" aria-labelledby="nest-adventures-heading">
+  <div class="nest-adventures-tools">
   <div class="nest-heading-row">
     <div>
       <h2 id="nest-adventures-heading">Adventures from the flock</h2>
@@ -30,6 +31,8 @@ Keep category taxonomy, original post URLs, and YouTube embeds unchanged.
     <label for="nest-search-input">Find an adventure</label>
     <input id="nest-search-input" type="search" autocomplete="off" placeholder="Search Tillie, Chip, millet, baths...">
     <p id="nest-search-status" role="status" aria-live="polite">{{ chirp_posts.size }} adventures</p>
+  </div>
+
   </div>
 
   {% assign bird_years = chirp_posts | group_by_exp: "bird", "bird.date | date: '%Y'" %}

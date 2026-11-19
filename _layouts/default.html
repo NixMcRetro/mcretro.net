@@ -40,7 +40,6 @@
 </head>
 <body {% if channel_chirp_page %}class="channel-chirp-page" {% endif %}{% if page.pagefind == false %}data-pagefind-ignore="all" {% endif %}{% if page.date %}data-archive-context-year="{{ page.date | date: '%Y' }}"{% endif %}>
   {% include header.html %}
-  {% include channel-chirp-nav.html %}
   <script src="{{ '/assets/js/header-taglines.js' | relative_url }}"></script>
   <div class="site-content">
     <main class="content-area">

@@ -156,7 +156,7 @@ def scan(source: Path, stage: Path) -> dict:
         for name in sorted(directories):
             directory = base_path / name
             rel = directory.relative_to(source).as_posix()
-            if directory.is_symlink() or name in SKIP_NAMES or name.startswith("._"):
+            if directory.is_symlink() or name in SKIP_NAMES or name.startswith("."):
                 excluded.append({"source_path": sheet_safe(rel), "reason": "excluded directory or symlink"})
             else:
                 keep.append(name)
@@ -164,7 +164,7 @@ def scan(source: Path, stage: Path) -> dict:
         for name in sorted(names):
             path = base_path / name
             rel = path.relative_to(source).as_posix()
-            if (name in SKIP_NAMES or name.startswith("._") or
+            if (name in SKIP_NAMES or name.startswith(".") or
                     path.suffix.lower() in SKIP_SUFFIXES):
                 excluded.append({"source_path": sheet_safe(rel), "reason": "system or sensitive sidecar"})
                 continue
@@ -312,7 +312,7 @@ def prepare(source: Path, stage: Path) -> dict:
         "content_type", "owner_approved",
     ), transfers)
     private_json(stage / "approved-summary.private.json", {
-        "approved_files": len(approved), "approved_bytes": sum(x["bytes"] for x in approved),
+        "approved_files": len(approved), "approved_bytes": sum(x["size_bytes"] for x in approved),
         "review_sha256": hashlib.sha256(
             (stage / "owner-review.csv").read_bytes()
         ).hexdigest(), "publication": "NONE",

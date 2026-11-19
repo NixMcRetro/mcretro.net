@@ -64,6 +64,7 @@
       if (candidates.length > maxPosts) {
         candidates = candidates.filter(post => post.url !== current);
       }
+      shuffleButton.disabled = false;
       render();
     } catch (error) {
       // Keep the four ordinary, accessible server-rendered fallback links.
@@ -73,5 +74,16 @@
   shuffleButton.addEventListener('click', function () {
     if (candidates) render();
   });
-  void load();
+  // Avoid loading the bird-only catalogue while readers use Light/Dark.
+  // Observe the existing theme switch so Bird also works without reloading
+  // a published conure article.
+  let requested = false;
+  function activateIfBird() {
+    if (requested || document.documentElement.getAttribute('data-theme') !== 'bird') return;
+    requested = true;
+    void load();
+  }
+  activateIfBird();
+  const observer = new MutationObserver(activateIfBird);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 })();

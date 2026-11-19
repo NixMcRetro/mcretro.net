@@ -1,9 +1,8 @@
-<nav class="nest-subnav" aria-label="Channel Chirp sections">
-  <a href="/chirp/" {% if page.channel_chirp == true %}aria-current="page"{% endif %}>🪺 The Nest</a>
-  <a href="/chirp/#nest-adventures">🪶 Restored Posts</a>
-  <a href="/chirp/archive/adventures/">📚 Original Adventures</a>
-  <a href="/chirp/archive/timeline/">📅 Timeline</a>
-  <a href="/chirp/archive/soundborb/">🎶 Soundborb</a>
-  <a href="/chirp/archive/">🌿 Preserved Site</a>
-  <a href="/blog/" class="nest-back-to-mcretro">↩ McRetro Blog</a>
+<nav class="nest-subnav" aria-label="Channel Chirp quick navigation">
+  <a href="/chirp/" {% if channel_chirp_page %}aria-current="page"{% endif %}>🪺 The Nest</a>
+  <a href="/chirp/#nest-adventures">🪶 Released Adventures</a>
+  <a href="/chirp/#nest-flock">🦜 The Flock</a>
+  <a href="/chirp/timeline/">📅 Timeline</a>
+  <a href="/chirp/#nest-soundborb">🎶 Soundborb</a>
+  <a href="/blog/" data-theme-exit="light" class="nest-back-to-mcretro">↩ McRetro Blog</a>
 </nav>

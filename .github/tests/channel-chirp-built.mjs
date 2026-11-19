@@ -7,14 +7,17 @@ import path from 'node:path';
 const site = process.argv[2] || '_site';
 const read = rel => fs.readFileSync(path.join(site, rel), 'utf8');
 const exists = rel => fs.existsSync(path.join(site, rel));
-const home = read('channels/channel-chirp/index.html');
+const home = read('chirp/index.html');
 const conure = read('the-first-day/index.html');
 const corella = read('little-corella-at-the-local-nursery/index.html');
 const normalBlog = read('blog/index.html');
 const channels = read('channels/index.html');
 
+assert.ok(exists('assets/css/bird-theme.css'), 'Bird palette must be built');
 assert.ok(exists('assets/css/channel-chirp.css'), 'Nest CSS must be built');
 assert.ok(exists('assets/js/channel-chirp-filter.js'), 'Nest filter must be built');
+assert.match(home, /<html[^>]*data-default-theme="bird"/, 'The Nest defaults to Bird mode');
+assert.doesNotMatch(home, /channels\/channel-chirp/, 'Draft nested URL must not leak');
 assert.match(home, /<body[^>]*class="channel-chirp-theme"/, 'The Nest needs its own theme');
 assert.match(home, /<nav class="nest-subnav"/);
 assert.match(home, /href="\/channels\/channel-chirp\/#nest-adventures"/);
@@ -50,6 +53,8 @@ assert.doesNotMatch(corella, /class="channel-chirp-theme"/,
 assert.doesNotMatch(corella, /class="nest-subnav"/);
 assert.match(corella, /Browse all archives/, 'Non-flock posts keep the normal sidebar');
 assert.doesNotMatch(normalBlog, /class="channel-chirp-theme"/);
+assert.doesNotMatch(normalBlog, /data-default-theme="bird"/);
+assert.ok(!exists('channels/channel-chirp/index.html'), 'No second Nest URL');
 assert.doesNotMatch(normalBlog, /channel-chirp-sidebar/);
 
 console.log('PASS: The Nest contains ' + cards + ' conure posts; corella and other blog pages stay separate.');

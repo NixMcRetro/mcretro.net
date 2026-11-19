@@ -31,10 +31,29 @@ assert.match(home, /Burrrp! Tillie!/);
 assert.doesNotMatch(home, /Little Corella at the Local Nursery/);
 assert.doesNotMatch(home, /Bits, Brass, and Bugs/);
 for (const route of [
-  'https://channelchirp.com/pudge/', 'https://channelchirp.com/tillie/',
-  'https://channelchirp.com/chip/', 'https://channelchirp.com/timeline/',
-  'https://channelchirp.com/soundborb/'
+  '/chirp/archive/pudge/', '/chirp/archive/tillie/',
+  '/chirp/archive/chip/', '/chirp/archive/timeline/',
+  '/chirp/archive/soundborb/'
 ]) assert.ok(home.includes(route), 'The Nest should link to ' + route);
+
+// The full original site must be present locally, not merely linked to its old domain.
+for (const route of [
+  'chirp/archive/index.html',
+  'chirp/archive/pudge/index.html',
+  'chirp/archive/tillie/index.html',
+  'chirp/archive/chip/index.html',
+  'chirp/archive/timeline/index.html',
+  'chirp/archive/diet/index.html',
+  'chirp/archive/adventures/index.html',
+  'chirp/archive/the-first-day/index.html',
+  'chirp/archive/soundborb/index.html',
+  'chirp/archive/assets/soundborb/clips.json',
+  'chirp/archive/assets/soundborb/audio/beep-boop-001.mp3'
+]) assert.ok(exists(route), 'The preserved original site must include ' + route);
+assert.doesNotMatch(home, /href="https:\/\/(?:www\.)?channelchirp\.com\//,
+  'The Nest cannot rely on the retiring Channel Chirp domain');
+assert.match(home, /229 original/i);
+assert.match(home, /509 individual recordings/);
 
 const cards = [...home.matchAll(/class="nest-post-card" data-nest-post/g)].length;
 assert.ok(cards >= 54, 'Expected all 54 historical conure posts, not ' + cards);

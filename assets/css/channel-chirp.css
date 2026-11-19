@@ -582,3 +582,20 @@
     text-decoration: none;
   }
 }
+
+/* Existing post metadata is a flex row. Force Bird's single date above
+ * the accent bar, rather than rendering the bar alongside the date. */
+:root[data-theme="bird"][data-chirp-article="true"] .post-full .post-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+:root[data-theme="bird"][data-chirp-article="true"] .post-full .post-meta::after {
+  flex: 0 0 4px;
+}
+:root[data-theme="bird"] .nest-year-group,
+:root[data-theme="bird"] .chirp-profile {
+  scroll-margin-top: 6rem;
+}

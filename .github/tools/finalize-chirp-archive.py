@@ -7,6 +7,7 @@ Never contacts live websites or uploads/deletes hosted objects.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -20,6 +21,14 @@ BASE = "/chirp/archive"
 # Keep links to the main global Pagefind search asset, which is generated
 # later in the McRetro Pages workflow, rather than in the old site snapshot.
 ROOT_EXCEPTIONS = ("/pagefind/",)
+
+def digest(file: Path) -> str:
+    h = hashlib.sha256()
+    with file.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            h.update(block)
+    return h.hexdigest()
+
 
 ATTR = re.compile(r'(?P<prefix>\b(?:href|src|data-manifest|data-audio-root)\s*=\s*)(?P<quote>["\'])(?P<value>[^"\']+)(?P=quote)', re.I)
 
@@ -61,8 +70,8 @@ def validate(source: Path, dest: Path) -> dict:
         raise ValueError("Original and copied Soundborb MP3 inventories differ")
     for original in original_audio:
         built = dest / "assets/soundborb/audio" / original.name
-        if original.stat().st_size != built.stat().st_size:
-            raise ValueError(f"MP3 length mismatch: {original.name}")
+        if original.stat().st_size != built.stat().st_size or digest(original) != digest(built):
+            raise ValueError(f"MP3 downloaded-byte mismatch: {original.name}")
 
     manifest = json.loads((dest / "assets/soundborb/clips.json").read_text(encoding="utf-8"))
     clips = manifest.get("clips")
@@ -85,6 +94,14 @@ def validate(source: Path, dest: Path) -> dict:
     copied_images = {p.name for p in (dest / "images").iterdir() if p.is_file()}
     if len(original_images) != EXPECTED_IMAGES or original_images != copied_images:
         raise ValueError(f"Historical image inventory incomplete: {len(copied_images)} copied")
+    for name in original_images:
+        if digest(source / "images" / name) != digest(dest / "images" / name):
+            raise ValueError(f"Historical image bytes differ: {name}")
+    for relative in ["assets/soundborb/clips.json", "js/soundborb.js",
+                     "css/soundborb.css", "css/soundborb-site.css"]:
+        if digest(source / relative) != digest(dest / relative):
+            raise ValueError(f"Historical supporting asset bytes differ: {relative}")
+
 
     rendered = 0
     for article in post_files:

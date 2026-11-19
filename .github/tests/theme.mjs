@@ -186,8 +186,12 @@ test('core: Bird stylesheet and header icon preserve original mobile layout', ()
   assert.match(bird, /--link: #18770C/);
   assert.match(bird, /\.theme-icon--bird/);
   assert.match(header, /class="theme-icon theme-icon--bird"/);
+  assert.match(header, /bird-brand-name">Channel Chirp<\/span>/);
+  assert.match(header, /bird-brand-mark" aria-hidden="true">🦜<\/span>/);
   assert.match(layout, /data-default-theme="bird"/);
   assert.match(layout, /data-chirp-unrelated="true"/);
+  assert.match(layout, /\{% unless channel_chirp_page or channel_chirp_article %\}/,
+    'Bird preference must redirect every ordinary McRetro page, including its homepage');
   assert.match(layout, /class="sidebar-mode-bird"/);
   assert.match(header, /class="nav-mode-bird"/);
 });

@@ -4,6 +4,7 @@ author: "Nix McRetro"
 date: 2017-11-26
 last_modified_at: 2026-10-20
 categories: [parrots, reconstructed, youtube]
+channel_chirp: false # Three corella videos, not a Channel Chirp conure adventure
 share_description: >-
   A Little Corella at a local nursery puts on three gloriously silly head-bobbing performances, in slow motion and at regular speed. What a show! 🦜
 ---

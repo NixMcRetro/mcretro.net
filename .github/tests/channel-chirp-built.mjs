@@ -20,7 +20,7 @@ assert.match(home, /<html[^>]*data-default-theme="bird"/, 'The Nest defaults to 
 assert.doesNotMatch(home, /channels\/channel-chirp/, 'Draft nested URL must not leak');
 assert.match(home, /<body[^>]*class="channel-chirp-theme"/, 'The Nest needs its own theme');
 assert.match(home, /<nav class="nest-subnav"/);
-assert.match(home, /href="\/channels\/channel-chirp\/#nest-adventures"/);
+assert.match(home, /href="\/chirp\/#nest-adventures"/);
 assert.match(home, /id="nest-search-input"/);
 assert.match(home, /id="nest-search-status"/);
 assert.match(home, /id="nest-no-results"/);

@@ -41,7 +41,10 @@ for (const [href, label] of preserved) {
 // Both Markdown and HTML links are supported, so neither syntax is mandated.
 const authored = [
   ...[...source.matchAll(/\bhref\s*=\s*(["'])(.*?)\1/gi)].map(match => match[2]),
-  ...[...source.matchAll(/\]\((\/[^)\s]+)\)/g)].map(match => match[1])
+  // Markdown images are not navigational links; the floppy GIF is verified below.
+  ...[...source.matchAll(/(!?)\[[^\]\n]*\]\((\/[^)\s]+)\)/g)]
+    .filter(match => match[1] !== '!')
+    .map(match => match[2])
 ];
 let checked = 0;
 for (const rawUrl of new Set(authored)) {

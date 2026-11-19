@@ -34,6 +34,7 @@ on:
       - 'assets/data/chirp-random.json'
       - 'assets/js/channel-chirp-random.js'
       - '.github/tests/channel-chirp-built.mjs'
+      - '.github/tests/chirp-random.test.mjs'
       - 'goodies.md'
       - 'homepages/fishtankworld/**'
       - 'homepages/goatpad/**'
@@ -159,6 +160,8 @@ jobs:
       - name: Verify Channel Chirp Nest posts, navigation and theme isolation
         run: |
           node --check assets/js/channel-chirp-filter.js
+          node --check assets/js/channel-chirp-random.js
+          node --test .github/tests/chirp-random.test.mjs
           node .github/tests/channel-chirp-built.mjs _site
 
       - name: Verify Goodies projects and restored homepages remain reachable

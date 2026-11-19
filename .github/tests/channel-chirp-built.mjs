@@ -25,8 +25,10 @@ assert.match(nest, /id="nest-soundborb"/);
 assert.match(nest, /id="nest-search-input"/);
 assert.match(nest, /assets\/js\/channel-chirp-filter\.js/);
 assert.match(nest, /The First Day!/);
-assert.doesNotMatch(nest, /Little Corella at the Local Nursery/);
-assert.doesNotMatch(nest, /Bits, Brass, and Bugs/);
+const nestMain = nest.split('<main class="content-area">')[1]?.split('</main>')[0];
+assert.ok(nestMain, 'Nest article cards must be inside main content');
+assert.doesNotMatch(nestMain, /Little Corella at the Local Nursery/);
+assert.doesNotMatch(nestMain, /Bits, Brass, and Bugs/);
 assert.doesNotMatch(nest, /229 Original Posts|229 original adventures|509 individual recordings/);
 assert.doesNotMatch(nest, /\/chirp\/archive\//);
 

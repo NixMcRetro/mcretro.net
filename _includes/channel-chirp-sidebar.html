@@ -1,0 +1,40 @@
+{% assign chirp_posts = site.categories.parrots | where_exp: "bird", "bird.channel_chirp != false" %}
+<section class="widget nest-widget" aria-labelledby="nest-sidebar-about">
+  <h4 class="widgettitle" id="nest-sidebar-about">🦜 Our Little Flock</h4>
+  <p>Get to know the three small personalities behind Channel Chirp.</p>
+  <ul class="nest-sidebar-links">
+    <li><a href="https://channelchirp.com/pudge/">Pudge · The boss bird</a></li>
+    <li><a href="https://channelchirp.com/tillie/">Tillie · The talker</a></li>
+    <li><a href="https://channelchirp.com/chip/">Chip · Baby Borb</a></li>
+  </ul>
+</section>
+
+<section class="widget nest-widget" aria-labelledby="nest-sidebar-explore">
+  <h4 class="widgettitle" id="nest-sidebar-explore">🌿 Explore The Nest</h4>
+  <ul class="nest-sidebar-links">
+    <li><a href="/channels/channel-chirp/">All conure adventures</a></li>
+    <li><a href="https://channelchirp.com/timeline/">The original bird timeline</a></li>
+    <li><a href="https://channelchirp.com/soundborb/">Soundborb · Our sound machine</a></li>
+    <li><a href="https://channelchirp.com/diet/">What's for dinner?</a></li>
+    <li><a href="https://www.youtube.com/@ChannelChirp">Channel Chirp on YouTube</a></li>
+  </ul>
+</section>
+
+<section class="widget nest-widget" aria-labelledby="nest-sidebar-recent">
+  <h4 class="widgettitle" id="nest-sidebar-recent">🪶 More Adventures</h4>
+  <ul class="nest-sidebar-links">
+    {% for bird in chirp_posts limit: 5 %}
+      <li><a href="{{ bird.url | relative_url }}">{{ bird.title | escape }}</a></li>
+    {% endfor %}
+  </ul>
+  <a class="nest-sidebar-more" href="/channels/channel-chirp/#nest-adventures">Browse all {{ chirp_posts.size }} adventures</a>
+</section>
+
+<section class="widget nest-widget" aria-labelledby="nest-sidebar-home">
+  <h4 class="widgettitle" id="nest-sidebar-home">Back to McRetro</h4>
+  <p>Finished birdwatching? The main blog and the rest of the channels are just around the corner.</p>
+  <ul class="nest-sidebar-links">
+    <li><a href="/blog/">✏️ The McRetro Blog</a></li>
+    <li><a href="/channels/">📺 All Channels</a></li>
+  </ul>
+</section>

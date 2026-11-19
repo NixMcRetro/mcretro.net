@@ -89,10 +89,17 @@ def validate(source: Path, dest: Path) -> dict:
     rendered = 0
     for article in post_files:
         fm = article.read_text(encoding="utf-8")
-        match = re.search(r"^permalink:[ \\t]*['\\"]?(/[^\\r\\n'\\\" \\t]+)", fm, re.M)
-        if not match:
+        # Avoid matching across YAML line breaks into the Markdown content.
+        permalink_line = next((line for line in fm.splitlines()
+                               if line.startswith("permalink:")), None)
+        if permalink_line is None:
             raise ValueError(f"Missing canonical permalink: {article.name}")
-        slug = match.group(1).strip().strip("'\"").strip("/")
+        raw = permalink_line.partition(":")[2].strip()
+        if raw and raw[0] in ("'", '"') and raw[-1] == raw[0]:
+            raw = raw[1:-1]
+        if not raw.startswith("/") or not raw.endswith("/"):
+            raise ValueError(f"Unexpected permalink format: {article.name}")
+        slug = raw.strip("/")
         target = dest / slug / "index.html"
         if not target.is_file():
             raise ValueError(f"Missing generated original article: {slug}")

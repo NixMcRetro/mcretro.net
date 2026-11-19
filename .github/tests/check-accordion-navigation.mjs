@@ -40,41 +40,56 @@ assert.ok(odyssey.includes('/assets/js/odyssey-sections.js'), 'Odyssey deep-link
 
 // Exercise the click handler without requiring a browser-dependent test stack.
 class MockElement {
+  constructor(top = 0) { this.top = top; }
   closest(selector) {
     assert.match(selector, /details.*summary/, 'Handler should be limited to accordion summaries');
     return this.summary || null;
   }
+  getBoundingClientRect() { return { top: this.top }; }
 }
 let onClick;
 const frames = [];
+const scrolls = [];
 vm.runInNewContext(source, {
   Element: MockElement,
   document: { addEventListener(type, handler) {
     assert.equal(type, 'click');
     onClick = handler;
   } },
-  requestAnimationFrame(callback) { frames.push(callback); }
+  requestAnimationFrame(callback) { frames.push(callback); },
+  window: { scrollBy(options) { scrolls.push(options); } }
 });
 assert.equal(typeof onClick, 'function');
-const calls = [];
-const summary = new MockElement();
-summary.parentElement = { open: true };
-summary.scrollIntoView = opts => calls.push(opts);
+
+const summary = new MockElement(240);
 const child = new MockElement();
 child.summary = summary;
+
+// Opening a panel normally must not scroll the page.
 onClick({ target: child });
 assert.equal(frames.length, 1);
 frames.shift()();
-assert.equal(calls.length, 1);
-assert.equal(calls[0].block, 'start');
-assert.equal(calls[0].inline, 'nearest');
-assert.equal(calls[0].behavior, 'instant');
+assert.equal(scrolls.length, 0);
 
-// Closing an open panel or clicking elsewhere must not change scroll.
-summary.parentElement.open = false;
+// A previously expanded panel closing above this heading can move it.
+// Compensate by precisely that amount, not by jumping to the top.
+summary.top = 340;
+onClick({ target: child });
+summary.top = 120;
+frames.shift()();
+assert.equal(scrolls.length, 1);
+assert.equal(scrolls[0].top, -220);
+assert.equal(scrolls[0].left, 0);
+assert.equal(scrolls[0].behavior, 'instant');
+
+// Browser scroll anchoring may already have prevented movement.
+summary.top = 120;
 onClick({ target: child });
 frames.shift()();
+assert.equal(scrolls.length, 1);
+
+// Ignore unrelated clicks.
 onClick({ target: new MockElement() });
 assert.equal(frames.length, 0);
-assert.equal(calls.length, 1);
-console.log('PASS: ' + accordionPages + ' accordion pages, shared navigation, deep links and click-to-scroll behaviour.');
+assert.equal(scrolls.length, 1);
+console.log('PASS: ' + accordionPages + ' accordion pages, shared navigation, deep links and position-preserving clicks.');

@@ -28,6 +28,8 @@ on:
       - 'about.md'
       - 'channels.md'
       - 'chirp/**'
+      - '.github/chirp-archive-config.yml'
+      - '.github/tools/finalize-chirp-archive.py'
       - '_includes/channel-chirp-nav.html'
       - '_includes/channel-chirp-sidebar.html'
       - 'assets/js/channel-chirp-filter.js'
@@ -128,6 +130,28 @@ jobs:
             echo "::error::archive-sites source or test files must not be published on mcretro.net"
             exit 1
           fi
+
+      # Build a pinned snapshot from the original public repository.
+      # This does not read channelchirp.com or use any live external media URLs.
+      # It is intentionally checked out AFTER the McRetro Jekyll build so
+      # original source documents can never leak into the root public build.
+      - name: Checkout the original Channel Chirp source (pinned)
+        uses: actions/checkout@v5
+        with:
+          repository: ChannelChirp/website
+          ref: 4bb407a15f29cb75000d4ef636d441af009b2a48
+          path: .channel-chirp-source
+          persist-credentials: false
+
+      - name: Build and verify independent Channel Chirp archive
+        run: |
+          bundle exec jekyll build \
+            --source .channel-chirp-source \
+            --destination _site/chirp/archive \
+            --config .channel-chirp-source/_config.yml,.github/chirp-archive-config.yml
+          python3 .github/tools/finalize-chirp-archive.py \
+            --source .channel-chirp-source --site _site/chirp/archive
+
 
       - name: Verify committed GOATPAD 24 kbps Opus audio and MIT notice
         run: python3 .github/tests/verify-goatpad-opus.py --site _site

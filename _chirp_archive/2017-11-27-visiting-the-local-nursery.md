@@ -1,0 +1,15 @@
+---
+channel_chirp: true
+layout: chirp_archive_post
+title: Visiting the Local Nursery
+date: '2017-11-27T08:25:45+10:00'
+categories: adventures
+permalink: /chirp/visiting-the-local-nursery/
+---
+{% include embed/youtube.html id="HYL0MbuKRt4" %}
+
+{% include embed/youtube.html id="BYOohRhX5aQ" %}
+
+{% include embed/youtube.html id="gPMSo0jDhzA" %}
+
+Many years ago, when we were all so young and Tillie and Pudding had just hatched, unbeknownst to us, the future bird parents visited a local garden nursery where we found this old chap just hanging about. Who would have thought just over a month later we'd have a pair of big babies of our own.

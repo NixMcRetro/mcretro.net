@@ -12,6 +12,8 @@ permalink: /assets/data/chirp-random.json
     {% when 3 or 23 %}{% assign ordinal = 'rd' %}
     {% else %}{% assign ordinal = 'th' %}
   {% endcase %}
-  {"url": {{ bird.url | relative_url | jsonify }}, "title": {{ bird.title | jsonify }}, "date": {{ bird.date | date: '%Y-%m-%d' | jsonify }}, "date_label": {{ day | append: ordinal | append: ' ' | append: (bird.date | date: '%B %Y') | jsonify }} }{% unless forloop.last %},{% endunless %}
+  {% assign bird_month = bird.date | date: '%B %Y' %}
+  {% assign bird_display_date = day | append: ordinal | append: ' ' | append: bird_month %}
+  {"url": {{ bird.url | relative_url | jsonify }}, "title": {{ bird.title | jsonify }}, "date": {{ bird.date | date: '%Y-%m-%d' | jsonify }}, "date_label": {{ bird_display_date | jsonify }} }{% unless forloop.last %},{% endunless %}
 {% endfor %}
 ]

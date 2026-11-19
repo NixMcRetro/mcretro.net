@@ -34,6 +34,9 @@ include:
   - homepages/vrampage-md/
 
 exclude:
+  # R2 gallery source, audit tooling and local-only sample manifests
+  # must not be copied into the public mcretro.net Jekyll output.
+  - archive-sites
   - Gemfile
   - Gemfile.lock
   - node_modules

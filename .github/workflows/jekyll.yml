@@ -116,6 +116,13 @@ jobs:
       - name: Build site with Jekyll
         run: bundle exec jekyll build --destination _site
 
+      - name: Ensure private R2 archive source files never enter public site
+        run: |
+          if test -e _site/archive-sites; then
+            echo "::error::archive-sites source or test files must not be published on mcretro.net"
+            exit 1
+          fi
+
       - name: Verify committed GOATPAD 24 kbps Opus audio and MIT notice
         run: python3 .github/tests/verify-goatpad-opus.py --site _site
 

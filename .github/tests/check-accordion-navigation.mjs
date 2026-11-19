@@ -14,6 +14,8 @@ const source = readFileSync(path.join(site, asset.slice(1)), 'utf8');
 const pages = [
   'about',
   'channels',
+  'goodies',
+  'archive',
   'flicky-the-floury-baker-cicada',
   'tp-link-archer-vr1600v-v2-firmware-dump-attempt',
   'take-back-the-darknet',
@@ -28,6 +30,8 @@ for (const slug of pages) {
     .filter(([tag]) => /\babout-panel\b/.test(tag));
   if (!panels.length) continue; // Other accessible designs are allowed.
   accordionPages++;
+  assert.ok(panels.every(([tag]) => !/\bname\s*=/.test(tag)),
+    'Shared accordions must permit multiple open panels: ' + slug);
   assert.equal(html.split('src="' + asset + '"').length - 1, 1,
     'Shared accordion behaviour must load exactly once: ' + slug);
   const summaries = [...html.matchAll(/<summary\b/gi)].length;
@@ -35,6 +39,9 @@ for (const slug of pages) {
 }
 const darknet = readFileSync(path.join(site, 'take-back-the-darknet/index.html'), 'utf8');
 assert.ok(darknet.includes('/assets/js/darknet-accordion.js'), 'Darknet hash navigation script missing');
+const darknetScript = readFileSync(path.join(site, 'assets/js/darknet-accordion.js'), 'utf8');
+assert.ok(darknetScript.includes('details.about-panel[id^="part-"]'),
+  'Darknet chapter deep links must not depend on exclusive accordion groups');
 const odyssey = readFileSync(path.join(site, 'odyssey-stealer-technical-analysis-of-a-macos-infostealer/index.html'), 'utf8');
 assert.ok(odyssey.includes('/assets/js/odyssey-sections.js'), 'Odyssey deep-link navigation script missing');
 

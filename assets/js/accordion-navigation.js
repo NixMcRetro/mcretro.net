@@ -1,7 +1,7 @@
 /* Keep an accordion heading in place when opening or closing it.
-   Native <details name="..."> panels can collapse a previous panel above
-   the clicked heading. Correct only that resulting layout shift, rather than
-   forcibly scrolling every newly opened heading to the top of the screen.
+   Changes to page layout can move a clicked heading out of position.
+   Correct only an actual shift, rather than forcibly scrolling every
+   opened heading to the top of the screen.
    Deep-link scripts retain control of deliberate programmatic navigation. */
 (() => {
   'use strict';

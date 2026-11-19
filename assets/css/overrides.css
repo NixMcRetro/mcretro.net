@@ -16,7 +16,7 @@
 }
 
 /* Shared accordions follow Archives blues in both themes. The historic
-   panel--teal class name is preserved for articles and exclusive-panel scripts. */
+   panel--teal class name is retained for existing articles and shared styles. */
 :root {
   --accordion-neutral-bg: #F3EAC9;
   --accordion-neutral-hover: var(--interactive-hover);
@@ -78,7 +78,7 @@
   line-height: 1.4;
 }
 /* Keep the page's cream background visible when any site accordion opens.
-   The shared navigation script aligns the clicked summary to the viewport. */
+   The shared navigation script preserves the clicked heading's position. */
 .content-area details.about-panel > summary {
   scroll-margin-top: 1rem;
 }

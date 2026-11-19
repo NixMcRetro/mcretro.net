@@ -36,7 +36,7 @@ I found that the auto-update functionality could be disabled on this firmware by
 
 Our goal now becomes, how to extract the existing firmware from the modem. We were running firmware version 0.1.0 0.9.1 v5006.0 build 190228 rel.72265n on our donor modem. Apparently [TPG changed the super user password](https://forums.whirlpool.net.au/archive/3yz2q0n9#r67949962) - which is good but also bad. Bad actors knowing your router super user password is bad, not being able to configure VoIP is bad though.
 
-<details id="day-1" class="about-panel panel--teal" name="mcretro-tplink" markdown="1">
+<details id="day-1" class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🔌</span> Day 1</summary>
 
 Most of day one was tracking down the serial TTL port / UART header location. First I had to learn about serial and how on earth I was meant to extract anything from it.
@@ -1512,7 +1512,7 @@ It was definitely doing something, so I left it to run overnight. [This guide](h
 
 </details>
 
-<details id="day-2" class="about-panel panel--teal" name="mcretro-tplink" markdown="1">
+<details id="day-2" class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">💻</span> Day 2</summary>
 
 ![Terminal window showing a NAND dump's progress reaching 99% of 33,554,432 bytes.](/assets/images/2021/img_0711.jpg)
@@ -1581,7 +1581,7 @@ Eventually, I entered a command that looked like it might do something. Full of 
 
 </details>
 
-<details id="day-3" class="about-panel panel--teal" name="mcretro-tplink" markdown="1">
+<details id="day-3" class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🔍</span> Day 3</summary>
 
 ![Ubuntu terminal after bcm_cfedump reports 65,536 of 65,536 pages and 128.0 MB, returning to the shell prompt.](/assets/images/2021/img_0715.jpg)
@@ -1655,7 +1655,7 @@ continue
 
 </details>
 
-<details id="day-4" class="about-panel panel--teal" name="mcretro-tplink" markdown="1">
+<details id="day-4" class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🧪</span> Day 4</summary>
 
 ![Dark terminal showing bcm_cfedump completing 65,536 pages and listing nand_v2.img alongside nand_winner.img.](/assets/images/2021/img_0717.jpg)

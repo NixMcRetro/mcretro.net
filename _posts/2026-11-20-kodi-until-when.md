@@ -42,7 +42,7 @@ I also showed some of the early sheet music to someone who actually has skill an
 *The original trumpet/flugelhorn score, including the opening bars that earned that feedback.*
 {: .media-caption }
 
-Well deserved because there was so much more to do. The notation was corrected, rhythmic groupings revamped, and a quick tidy up the spacing around the key signature. The finished sheet music includes a separate B♭ trumpet or flugelhorn part, written in D major.
+Well deserved, because there was so much more to do! The notation was corrected, rhythmic groupings revamped, and a quick tidy up the spacing around the key signature. The finished sheet music includes a separate B♭ trumpet or flugelhorn part, written in D major.
 
 ![Page 1 of the KODI (Until When?) jazz duet score, showing musical staves for voice and B♭ trumpet, with notes, lyrics, and jazz chord symbols.](/assets/images/2026/11/kodi-until-when/kodi-jazz-duet-page1.jxl)
 

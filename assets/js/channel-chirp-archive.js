@@ -21,8 +21,11 @@
     const option = year.options[year.selectedIndex];
     if (!option || !/^(2018|2019)$/.test(option.value)) return;
     const counts = (option.dataset.counts || '').split(',').map(Number);
-    if (counts.length !== 12 ||
-        counts.some(n => !Number.isSafeInteger(n) || n < 0)) return;
+    const pageNumbers = (option.dataset.pages || '').split(',').map(Number);
+    if (counts.length !== 12 || pageNumbers.length !== 12 ||
+        counts.some(n => !Number.isSafeInteger(n) || n < 0) ||
+        pageNumbers.some((page, i) => !Number.isSafeInteger(page) ||
+          page < 0 || (counts[i] > 0 && page < 1))) return;
     const archiveYear = option.value;
     const tiles = counts.map((count, index) => {
       const month = String(index + 1).padStart(2, '0');
@@ -30,7 +33,10 @@
       tile.className = 'archive-calendar-month ' +
         (count ? 'has-posts' : 'is-empty');
       if (count) {
-        tile.href = '/chirp/adventures/#chirp-month-' + archiveYear + '-' + month;
+        const prefix = pageNumbers[index] > 1
+          ? '/chirp/adventures/page' + pageNumbers[index] + '/'
+          : '/chirp/adventures/';
+        tile.href = prefix + '#chirp-month-' + archiveYear + '-' + month;
         tile.setAttribute('aria-label', full[index] + ' ' + archiveYear + ': ' +
           count + (count === 1 ? ' adventure' : ' adventures'));
       }

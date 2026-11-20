@@ -47,7 +47,7 @@ Bend the bits of a Sega Mega Drive right in your browser! Load your own game ROM
 </details>
 
 <details class="about-panel panel--teal" markdown="1">
-<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🗃️</span> Restored Historical Homepages</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🗃️</span> Historical Homepages</summary>
 
 The original HTML and artwork from these restored sites have made it back onto McRetro.net. No modern makeover here; these are the old-style pages as they were, with just the paths fixed where necessary.
 

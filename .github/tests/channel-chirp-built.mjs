@@ -147,9 +147,22 @@ assert.match(pages.nest, /Welcome to the Nest/);
 assert.match(pages.nest, /Welcome to our homepage! We are the most adorable <strong>green-cheeked conures<\/strong> in Australia!/);
 assert.match(pages.nest, /href="\/chirp\/adventures\/">our adventures<\/a>/);
 assert.match(pages.nest, /href="\/chirp\/random\/" data-chirp-random-link(?:="")?>random post<\/a>/);
-assert.match(pages.nest, /href="https:\/\/www\.youtube\.com\/playlist\?list=PLJAZP-TLMPj50jY6ytY53J3bQkgPIbeYP">YouTube Channel<\/a>/);
-assert.match(pages.nest, /We are Pudge, Tillie, and Chip!/);
+assert.match(pages.nest, /href="https:\/\/www\.youtube\.com\/playlist\?list=PLJAZP-TLMPj50jY6ytY53J3bQkgPIbeYP">YouTube Playlist<\/a>/);
+assert.doesNotMatch(pages.nest, />YouTube Channel<\/a>/, 'Nest uses the more accurate playlist label');
+assert.match(pages.nest, /<p class="chirp-home-names">We are Pudge, Tillie, and Chip!<\/p>/);
 assert.match(pages.nest, /❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️/);
+
+const brandHoverRule = birdLayout.match(/:root\[data-theme="bird"\] a\.site-logo--bird:hover,\s*:root\[data-theme="bird"\] a\.site-logo--bird:focus-visible\s*\{([^}]+)\}/)?.[1];
+assert.ok(brandHoverRule?.includes('color: #69D65B;'), 'Bird title must turn green on hover and keyboard focus');
+assert.ok(brandHoverRule?.includes('text-decoration: none;'), 'Bird title hover should not underline');
+assert.ok(birdLayout.includes('a.site-logo--bird:focus-visible {\n  outline: 2px solid #BDF7B0;'),
+  'Bird title has a clearly visible keyboard focus outline');
+const nameSpacingRule = birdLayout.match(/:root\[data-theme="bird"\] \.chirp-home-copy \.chirp-home-names\s*\{([^}]+)\}/)?.[1];
+const heartSpacingRule = birdLayout.match(/:root\[data-theme="bird"\] \.chirp-home-copy \.chirp-home-hearts\s*\{([^}]+)\}/)?.[1];
+assert.ok(nameSpacingRule?.includes('margin-bottom: .15rem;'));
+assert.ok(heartSpacingRule?.includes('margin-top: 0;'));
+assert.match(pages.nest, /class="chirp-home-hearts">❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️<\/p>/);
+
 assert.doesNotMatch(pages.nest, /class="chirp-home-links"/);
 
 
@@ -226,7 +239,7 @@ assert.ok(birdLayout.includes('background: #F7FBF5;'), 'result hover card is dis
 assert.ok(birdLayout.includes('.chirp-search-result mark {'), 'Bird search matches are highlighted');
 assert.ok(birdLayout.includes('.chirp-search-result[hidden],'),
   'hidden search results stay hidden regardless of CSS rules');
-assert.ok(pages.search.includes('channel-chirp.css?v=20261120-search-icon'),
+assert.ok(pages.search.includes('channel-chirp.css?v=20261121-brand-copy'),
   'search loads the newest Bird search stylesheet');
 
 assert.match(pages.soundborb, /Migration in progress/);
@@ -430,9 +443,9 @@ assert.ok(birdLayout.includes('.chirp-archive-index > .archive-index-intro,'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs [aria-current="page"] {'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs a {'));
 assert.ok(birdLayout.includes('color: #BDF7B0;'));
-assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261120-search-icon"'),
+assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261121-brand-copy"'),
   'Bird archive loads fresh stylesheet to avoid a stale dark-on-charcoal heading');
-assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261120-search-icon"'),
+assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261121-brand-copy"'),
   'Shared template loads the same current Bird stylesheet');
 
 const birdByMonth = new Map();
@@ -526,7 +539,7 @@ assert.ok(birdLayout.includes('.chirp-archive-month .archive-blog-list .post-ent
 for (const month of birdByMonth.keys()) {
   const [year, number] = month.split('-');
   assert.ok(read('chirp/archive/' + year + '/' + number + '/index.html')
-    .includes('href="/assets/css/channel-chirp.css?v=20261120-search-icon"'),
+    .includes('href="/assets/css/channel-chirp.css?v=20261121-brand-copy"'),
     'all Bird month pages receive the updated stylesheet: ' + month);
 }
 assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive')).sort(),

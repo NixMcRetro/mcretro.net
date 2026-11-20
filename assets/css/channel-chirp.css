@@ -408,6 +408,17 @@
   font-size: clamp(1.4rem, 4.8vw, 2.2rem);
   letter-spacing: .1em;
 }
+/* Give the Channel Chirp wordmark a clearly visible green hover/focus state
+ * on charcoal, without changing the McRetro wordmark. */
+:root[data-theme="bird"] a.site-logo--bird:hover,
+:root[data-theme="bird"] a.site-logo--bird:focus-visible {
+  color: #69D65B;
+  text-decoration: none;
+}
+:root[data-theme="bird"] a.site-logo--bird:focus-visible {
+  outline: 2px solid #BDF7B0;
+  outline-offset: 4px;
+}
 :root[data-theme="bird"] .main-nav {
   /* Pale green gives navigation emoji a light canvas to stand out against. */
   background: #E7F5E4;
@@ -760,6 +771,14 @@
   max-width: 740px;
   margin-inline: auto;
   text-align: center;
+}
+/* The flock introduction and sign-off stay separate; pull only the
+ * names and final row of hearts closer together. */
+:root[data-theme="bird"] .chirp-home-copy .chirp-home-names {
+  margin-bottom: .15rem;
+}
+:root[data-theme="bird"] .chirp-home-copy .chirp-home-hearts {
+  margin-top: 0;
 }
 :root[data-theme="bird"] .chirp-home-links {
   justify-content: center;

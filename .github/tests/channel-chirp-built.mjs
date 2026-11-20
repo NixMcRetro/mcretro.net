@@ -53,7 +53,7 @@ assert.match(pages.nest, /Welcome to the Nest/);
 
 assert.match(pages.nest, /Welcome to our homepage! We are the most adorable <strong>green-cheeked conures<\/strong> in Australia!/);
 assert.match(pages.nest, /href="\/chirp\/adventures\/">our adventures<\/a>/);
-assert.match(pages.nest, /href="\/chirp\/adventures\/" data-chirp-random-link>random post<\/a>/);
+assert.match(pages.nest, /href="\/chirp\/adventures\/" data-chirp-random-link(?:="")?>random post<\/a>/);
 assert.match(pages.nest, /href="https:\/\/www\.youtube\.com\/@NixMcRetro">YouTube Channel<\/a>/);
 assert.match(pages.nest, /We are Pudge, Tillie, and Chip!/);
 assert.match(pages.nest, /❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️/);

@@ -6,7 +6,7 @@ title: GeoCities Neighbourhoods
 <link rel="stylesheet" href="/homepages/geocities/geocities.css">
 <script src="/homepages/geocities/neighborhoods/browser.js" defer></script>
 
-[← GeoCities Rebuild](/homepages/geocities/) · [Project News](/homepages/geocities/news/) · [Cool Pages](/homepages/geocities/cool/)
+[← GeoCities Rebuild](/homepages/geocities/) · [Artwork Gallery](/homepages/geocities/artwork/) · [Project News](/homepages/geocities/news/) · [Cool Pages](/homepages/geocities/cool/)
 
 <div id="gc-directory-top"></div>
 <div class="gc-art"><img src="/homepages/geocities/images/neighborhoods/neighborhoods.gif" width="430" height="60" alt="Visit these GeoCities Neighbourhoods" loading="eager"></div>
@@ -28,11 +28,12 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 <div class="gc-browser-tools" hidden>
   <label for="gc-neighbourhood-search">Find a Neighbourhood or Suburb</label>
   <div class="gc-browser-tool-row">
-    <input id="gc-neighbourhood-search" type="search" autocomplete="off" placeholder="Try Area51, Alien, Tokyo..." aria-controls="gc-neighbourhood-list">
+    <input id="gc-neighbourhood-search" type="search" autocomplete="off" placeholder="Try Area51, Alien, Tokyo..." aria-controls="gc-neighbourhood-list" aria-describedby="gc-neighbourhood-hint">
     <button type="button" data-gc-action="expand">Expand All</button>
     <button type="button" data-gc-action="collapse">Collapse All</button>
     <button type="button" data-gc-action="random">Random Neighbourhood</button>
   </div>
+  <p id="gc-neighbourhood-hint" class="gc-browser-hint">Press / to search, or Esc to clear. Search results can be shared using the URL.</p>
   <output id="gc-neighbourhood-results" aria-live="polite" aria-atomic="true">Showing all 41 neighbourhoods.</output>
 </div>
 

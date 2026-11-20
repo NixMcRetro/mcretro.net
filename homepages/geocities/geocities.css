@@ -57,3 +57,27 @@
 .gc-private-gateway[target="_blank"]::after { content: " ↗"; font-size: .82em; white-space: nowrap; }
 .gc-back-to-top { margin: 1.2rem 0 .8rem; text-align: right; }
 .gc-back-to-top a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+/* The full public artwork exhibit only reuses already-published GIF files. */
+.gc-home-card-badges { flex-wrap: wrap; align-content: center; gap: .3rem; }
+.gc-home-card-badges img { max-width: min(88px, 46%); max-height: 31px; }
+.gc-artwork-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 135px), 1fr)); gap: .7rem; margin: 1.2rem 0 1.9rem; }
+.gc-artwork-featured { grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+.gc-artwork-tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .6rem; min-width: 0; min-height: 88px; margin: 0; padding: .85rem .5rem; border: 1px solid var(--border-soft); border-radius: 4px; background: var(--panel); color: var(--text); text-decoration: none; text-align: center; }
+a.gc-artwork-tile, a.gc-artwork-tile:visited { color: var(--link); }
+a.gc-artwork-tile:hover { background: var(--interactive-hover); border-color: var(--link); color: var(--link-hover); }
+a.gc-artwork-tile:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.gc-artwork-tile img { display: block; max-width: 100%; max-height: 110px; width: auto; height: auto; object-fit: contain; }
+.gc-artwork-buttons .gc-artwork-tile img { width: 88px; height: 31px; max-height: 31px; }
+.gc-artwork-tile figcaption, .gc-artwork-tile span { font: 600 .84rem/1.4 Montserrat, sans-serif; overflow-wrap: anywhere; }
+
+/* Linked sections open automatically and leave room below the sticky header. */
+.gc-neighbourhood { scroll-margin-top: 5.25rem; }
+.gc-neighbourhood-tour { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; justify-content: space-between; margin-top: 1.3rem; padding-top: .8rem; border-top: 1px solid var(--border-soft); font-size: .8rem; }
+.gc-neighbourhood-tour a { display: inline-block; padding: .3rem 0; }
+.gc-share-neighbourhood { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; }
+.gc-share-neighbourhood button { padding: .4rem .6rem; border: 1px solid var(--border); border-radius: 3px; background: var(--panel); color: var(--text); font: 600 .8rem Montserrat, sans-serif; cursor: pointer; }
+.gc-share-neighbourhood button:hover { background: var(--interactive-hover); border-color: var(--link); }
+.gc-share-neighbourhood button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.gc-copy-status { color: var(--muted); }
+.gc-browser-hint { margin: .5rem 0 0; color: var(--muted); font-size: .8rem; }

@@ -327,8 +327,9 @@ test('advisory: navigation hover underlines words without bolding or shifting ad
   assert.match(header, /<li class="nav-item--mcretro-only">/);
 
   assert.match(header, /class="nav-mode-bird" href="\/chirp\/adventures\/" data-chirp-random-link/);
-  assert.match(header, /class="nav-mode-bird" href="\/chirp\/flock\/"[^\n]*<span class="nav-text">About<\/span>/);
+  assert.match(header, /class="nav-mode-bird" href="\/chirp\/about\/"[^\n]*<span class="nav-text">About<\/span>/);
   assert.doesNotMatch(header, /class="nav-mode-bird" href="\/chirp\/timeline\//);
+  assert.doesNotMatch(header, /\/chirp\/flock\//, 'no old flock link remains');
 
   const labelHoverRule = style.match(/\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{([^}]*)\}/)?.[1];
   assert.ok(labelHoverRule, 'text-only nav hover and focus rule exists');

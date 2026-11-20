@@ -10,7 +10,7 @@ const exists = file => fs.existsSync(path.join(site, file));
 const pages = {
   nest: read('chirp/index.html'),
   adventures: read('chirp/adventures/index.html'),
-  flock: read('chirp/flock/index.html'),
+  about: read('chirp/about/index.html'),
   timeline: read('chirp/timeline/index.html'),
   search: read('chirp/search/index.html'),
   soundborb: read('chirp/soundborb/index.html'),
@@ -42,7 +42,7 @@ assert.match(conure, /post-navigation--bird/);
 assert.match(conure, /post-navigation--mcretro/);
 
 for (const [slug, label] of [
-  ['adventures', 'Adventures'], ['flock', 'About'],
+  ['adventures', 'Adventures'], ['about', 'About'],
   ['soundborb', 'Soundborb']
 ]) {
   assert.match(pages.nest, new RegExp('href="/chirp/' + slug + '/"'), slug + ' is an independent Bird page');
@@ -56,7 +56,7 @@ assert.match(pages.nest, /class="bird-brand-name">Channel Chirp<\/span>/);
 assert.doesNotMatch(pages.nest, /bird-brand-mark/);
 assert.match(pages.nest, /href="\/chirp\/adventures\/" data-chirp-random-link(?:="")?/);
 // Correct About destination is checked against the rendered nav, independent of active state.
-assert.match(birdNavigation[4][0], /href="\/chirp\/flock\/"/);
+assert.match(birdNavigation[4][0], /href="\/chirp\/about\/"/);
 assert.match(birdNavigation[3][0], /data-chirp-random-link/);
 assert.match(birdNavigation[2][0], /href="\/chirp\/soundborb\/"/);
 assert.doesNotMatch(birdNavigation.map(item => item[0]).join(' '), /href="\/chirp\/timeline\/"/);
@@ -92,9 +92,14 @@ assert.equal(frontpageJxl.subarray(0, 12).toString('hex'),
   '0000000c4a584c200d0a870a', 'photo should be a JPEG XL container, not a renamed JPEG');
 assert.match(birdLayout, /\.chirp-home-figure img\s*\{[^}]*width: 100%;[^}]*height: auto;/);
 
-assert.match(pages.flock, /id="pudge"/);
-assert.match(pages.flock, /id="tillie"/);
-assert.match(pages.flock, /id="chip"/);
+assert.match(pages.about, /id="pudge"/);
+assert.match(pages.about, /id="tillie"/);
+assert.match(pages.about, /id="chip"/);
+assert.match(pages.about, /<h1 id="chirp-about-heading">About Channel Chirp<\/h1>/);
+assert.match(pages.about, /href="\/chirp\/diet\/">Our Diet<\/a>/);
+assert.ok(!exists('chirp/flock/index.html'), 'former /chirp/flock/ must not exist or redirect');
+assert.doesNotMatch(pages.about, /redirect_from:|http-equiv="refresh"/i,
+  'About is a native route, not a redirect');
 assert.match(pages.search, /id="nest-search-input"/);
 assert.match(pages.soundborb, /Migration in progress/);
 assert.doesNotMatch(pages.soundborb, /data-manifest|data-audio-root/);
@@ -159,7 +164,7 @@ const randomPos = sidebar.indexOf('>Random Posts<');
 const coolPos = sidebar.indexOf('Cool Links');
 assert.ok(searchPos >= 0 && searchPos < calendarPos, 'Bird search is first');
 assert.ok(calendarPos < randomPos, 'Bird archive calendar precedes Random Posts');
-assert.ok(randomPos < coolPos, 'Cool Links remain below Random Posts');
+assert.equal(coolPos, -1, 'Cool Links section is removed from the Bird sidebar');
 assert.match(sidebar, /action="\/chirp\/search\/" method="get"/);
 assert.match(sidebar, /id="bird-sidebar-search" type="text" name="q"/);
 assert.match(sidebar, /class="archive-calendar" data-chirp-calendar/);
@@ -181,11 +186,9 @@ assert.match(sidebar, /class="recent-posts-dial sidebar-action-link" type="butto
 assert.match(sidebar, /<span class="sidebar-action-link__icon" aria-hidden="true">🎲<\/span>/);
 assert.match(sidebar, /<span class="sidebar-action-link__label">Random!<\/span>/);
 assert.doesNotMatch(sidebar, /🎲 Random Posts|☎️|Dial-up|Shuffle again|Browse Adventures/);
-assert.match(sidebar, /href="\/chirp\/adventures\/" data-chirp-random-link(?:="")?[^>]*>🌏 Random<\/a>/);
-assert.doesNotMatch(sidebar, /href="\/chirp\/timeline\/"/);
-for (const href of ['/chirp/soundborb/', '/chirp/diet/']) {
-  assert.ok(sidebar.includes('href="' + href + '"'), href);
-}
+assert.doesNotMatch(sidebar, /Cool Links|nest-cool-links|Our Soundboard|Our Diet|data-chirp-random-link/,
+  'the sidebar contains no former Cool Links destinations');
+
 assert.ok(exists('assets/js/channel-chirp-archive.js'));
 assert.ok(exists('assets/js/channel-chirp-filter.js'));
 assert.ok(exists('assets/js/channel-chirp-random.js'));

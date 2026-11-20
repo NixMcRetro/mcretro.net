@@ -1,18 +1,19 @@
 ---
 layout: default
-title: Our Flock - Channel Chirp
-permalink: /chirp/flock/
+title: About - Channel Chirp
+permalink: /chirp/about/
 channel_chirp: true
 pagefind: false
 ---
-<section class="chirp-page-intro" aria-labelledby="chirp-flock-heading">
-  <h1 id="chirp-flock-heading">Our Flock</h1>
+<section class="chirp-page-intro" aria-labelledby="chirp-about-heading">
+  <h1 id="chirp-about-heading">About Channel Chirp</h1>
   <p>Meet the three green-cheeked conures who made Channel Chirp what it was. Pudge and Tillie arrived together on New Year's Day 2018. Chip, a little cinnamon-coloured Baby Borb, joined them on 3rd February 2018.</p>
   <nav class="chirp-flock-jump" aria-label="Meet each bird">
     <a href="#pudge">Pudge</a>
     <a href="#tillie">Tillie</a>
     <a href="#chip">Chip</a>
   </nav>
+  <p>Want to know what kept these little borbs fuelled? Check out <a href="/chirp/diet/">Our Diet</a>.</p>
 </section>
 
 <section id="pudge" class="chirp-profile" aria-labelledby="chirp-pudge-title">

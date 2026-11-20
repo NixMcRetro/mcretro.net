@@ -50,14 +50,20 @@ function birdArticleRule(suffix) {
   assert.ok(pos >= 0, 'missing Bird article selector: ' + suffix);
   return birdLayout.slice(pos + selector.length, birdLayout.indexOf('}', pos));
 }
+const articleStyle = birdArticleRule('');
+assert.match(articleStyle, /padding-top:\s*1rem;/,
+  'the Bird post title should sit closer to the top of the white card');
 const headingStyle = birdArticleRule('.post-title');
-assert.match(headingStyle, /font-weight:\s*600;/);
+assert.match(headingStyle, /font-weight:\s*500;/,
+  'avoid heavier fallback bold weight when Montserrat has only regular and bold files');
 assert.match(headingStyle, /margin-bottom:\s*\.2rem;/);
 assert.match(headingStyle, /line-height:\s*1\.25;/);
 const metadataStyle = birdArticleRule('.post-meta');
 assert.match(metadataStyle, /margin:\s*0 0 1\.5rem;/);
 const dateStyle = birdArticleRule('.post-date');
 assert.match(dateStyle, /color:\s*#626262;/);
+assert.match(dateStyle, /font-size:\s*1rem;/,
+  'article date should be clearly legible like the original Channel Chirp');
 const headingRuleStyle = birdArticleRule('.post-meta::after');
 assert.match(headingRuleStyle, /background:\s*#29A518;/);
 assert.match(headingRuleStyle, /margin:\s*\.4rem auto 0;/);

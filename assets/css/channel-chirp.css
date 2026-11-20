@@ -599,3 +599,122 @@
 :root[data-theme="bird"] .chirp-profile {
   scroll-margin-top: 6rem;
 }
+
+/* Bird sidebar follows the familiar McRetro divider-and-calendar layout.
+ * Content cards stay white; the sidebar itself is unboxed on charcoal. */
+:root[data-theme="bird"] .sidebar {
+  border-top: 4px solid #29A518;
+  padding-top: .5rem;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .widget {
+  color: #F8F8F8;
+  background: transparent;
+  border: 0;
+  border-bottom: 4px solid #29A518;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0 0 1rem;
+  padding: .8rem 0 1.3rem;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .widgettitle {
+  color: #FFFFFF;
+  border: 0;
+  margin: 0 0 .65rem;
+  padding: 0;
+  font: 700 .95rem/1.3 Montserrat, sans-serif;
+  letter-spacing: .02em;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .search-widget {
+  padding-top: .8rem;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .inline-search-form {
+  border-color: #29A518;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .inline-search-form input[type="text"] {
+  background: #FFFFFF;
+  color: #212121;
+  border: 0;
+  width: 100%;
+  min-width: 0;
+  flex: 1;
+  font: .9rem/1.2 Merriweather, Georgia, serif;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .inline-search-form input[type="text"]:focus-visible {
+  outline: 2px solid #18770C;
+  outline-offset: -2px;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .inline-search-form button {
+  background: #E7F5E4;
+  color: #17660D;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .inline-search-form button:hover,
+:root[data-theme="bird"] .sidebar-mode-bird .inline-search-form button:focus-visible {
+  background: #D6ECCD;
+  color: #17660D;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .archive-calendar {
+  border-color: #29A518;
+  background: #FFFFFF;
+}
+:root[data-theme="bird"] .nest-archive-widget .archive-calendar-nav select {
+  width: 100%;
+  padding: .3rem .2rem;
+  border: 0;
+  border-left: 1px solid #ffffff45;
+  border-right: 1px solid #ffffff45;
+  border-radius: 0;
+  color: #FFFFFF;
+  background: var(--archive-tile);
+  font: 700 .88rem/1.2 Montserrat, sans-serif;
+  text-align: center;
+  text-align-last: center;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .archive-calendar-month.is-empty {
+  color: #555555;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .recent-posts-list li a {
+  color: #BDF7B0;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .recent-posts-list li a:hover,
+:root[data-theme="bird"] .sidebar-mode-bird .recent-posts-list li a:focus-visible {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .post-date-sidebar {
+  color: #F0F0F0;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .sidebar-action-link {
+  color: #17660D;
+  background: #FFFFFF;
+  border-color: #29A518;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .sidebar-action-link:hover,
+:root[data-theme="bird"] .sidebar-mode-bird .sidebar-action-link:focus-visible {
+  color: #105B08;
+  background: #E7F5E4;
+  border-color: #17660D;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .recent-posts-actions button.sidebar-action-link {
+  box-sizing: border-box;
+  min-height: 2.4rem;
+  padding: .3rem .7rem;
+  margin: 0;
+  border: 1px solid #29A518;
+  border-radius: 0;
+  font: 700 .85rem/1.25 Montserrat, sans-serif;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .recent-posts-actions button.sidebar-action-link:disabled {
+  opacity: .65;
+  cursor: not-allowed;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .nest-cool-links nav a {
+  color: #BDF7B0;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .nest-cool-links nav a:hover,
+:root[data-theme="bird"] .sidebar-mode-bird .nest-cool-links nav a:focus-visible {
+  color: #FFFFFF;
+}
+:root[data-theme="bird"] .sidebar-mode-bird .chirp-return {
+  margin: .3rem 0 0;
+  padding: 0;
+}

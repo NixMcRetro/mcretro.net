@@ -36,9 +36,7 @@ pagefind: false
             {% assign month_name = date_key | date: '%b' %}
             {% assign month_long = date_key | date: '%B' %}
             {% if count > 0 %}
-              {% assign full_month = year.name | append: '-' | append: month_key %}
-              {% assign month_page = site.data.chirp_adventures_month_pages[full_month] | default: 1 %}
-              <a class="archive-index-month has-posts" data-archive-month="{{ year.name }}-{{ month_key }}" data-article-count="{{ count }}" href="/chirp/adventures/{% if month_page > 1 %}page{{ month_page }}/{% endif %}#chirp-month-{{ full_month }}" aria-label="{{ month_long }} {{ year.name }}: {{ count }} {% if count == 1 %}article{% else %}articles{% endif %}">
+              <a class="archive-index-month has-posts" data-archive-month="{{ year.name }}-{{ month_key }}" data-article-count="{{ count }}" href="/chirp/archive/{{ year.name }}/{{ month_key }}/" aria-label="{{ month_long }} {{ year.name }}: {{ count }} {% if count == 1 %}article{% else %}articles{% endif %}">
                 <span class="archive-index-month-name">{{ month_name }}</span>
                 <span class="archive-index-month-count">{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
               </a>

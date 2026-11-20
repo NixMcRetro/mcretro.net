@@ -879,3 +879,49 @@
 :root[data-theme="bird"] .chirp-archive-index > .archive-breadcrumbs a:focus-visible {
   color: #FFFFFF;
 }
+
+/* Bird monthly archives reuse the McRetro article layout. Headings stay
+ * readable on charcoal and the article entries use white reading panels. */
+:root[data-theme="bird"] .chirp-archive-month {
+  color: #FFFFFF;
+}
+:root[data-theme="bird"] .chirp-archive-month .archive-month-header {
+  border-bottom: 1px solid #29A518;
+}
+:root[data-theme="bird"] .chirp-archive-month .archive-month-header > .post-title,
+:root[data-theme="bird"] .chirp-archive-month .archive-month-count,
+:root[data-theme="bird"] .chirp-archive-month .archive-breadcrumbs [aria-current="page"] {
+  color: #FFFFFF;
+}
+:root[data-theme="bird"] .chirp-archive-month .archive-breadcrumbs,
+:root[data-theme="bird"] .chirp-archive-month .archive-breadcrumb-sep {
+  color: #E5E5E5;
+}
+:root[data-theme="bird"] .chirp-archive-month .archive-breadcrumbs a {
+  color: #BDF7B0;
+}
+:root[data-theme="bird"] .chirp-archive-month .archive-breadcrumbs a:hover,
+:root[data-theme="bird"] .chirp-archive-month .archive-breadcrumbs a:focus-visible {
+  color: #FFFFFF;
+}
+:root[data-theme="bird"] .chirp-archive-month .archive-blog-list .post-entry {
+  background: #FFFFFF;
+  color: #424242;
+  border: 0;
+  border-left: 4px solid #29A518;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .18);
+  padding: clamp(1rem, 2.5vw, 1.8rem);
+}
+:root[data-theme="bird"] .chirp-archive-month .archive-blog-list .post-title,
+:root[data-theme="bird"] .chirp-archive-month .archive-blog-list .post-title a,
+:root[data-theme="bird"] .chirp-archive-month .archive-blog-list .post-title a:visited,
+:root[data-theme="bird"] .chirp-archive-month .archive-card-meta,
+:root[data-theme="bird"] .chirp-archive-month .archive-blog-list .post-excerpt {
+  color: #424242;
+}
+:root[data-theme="bird"] .chirp-archive-month .archive-blog-list .post-title a:hover,
+:root[data-theme="bird"] .chirp-archive-month .archive-blog-list .post-title a:focus-visible,
+:root[data-theme="bird"] .chirp-archive-month .archive-blog-list .read-more {
+  color: #17660D;
+}

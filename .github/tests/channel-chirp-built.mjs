@@ -247,7 +247,7 @@ assert.match(sidebar, /data-chirp-newer/);
 assert.match(sidebar, /data-chirp-months/);
 const calendarYears = [...sidebar.matchAll(/<option value="(\d{4})" data-counts=/g)].map(match => match[1]);
 assert.deepEqual(calendarYears, ['2019', '2018'], 'Bird calendar only displays 2018/2019');
-assert.match(sidebar, /href="\/chirp\/adventures\/(?:page\d+\/)?#chirp-month-2019-\d{2}"/);
+assert.match(sidebar, /href="\/chirp\/archive\/2019\/\d{2}\/"/);
 assert.doesNotMatch(sidebar, /href="\/archive\/\d{4}\//);
 assert.ok(sidebar.includes('class="archive-all-link sidebar-action-link" href="/chirp/archive/"'));
 assert.match(sidebar, /Browse all archives/);
@@ -359,13 +359,9 @@ assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261120-ar
 const birdByMonth = new Map();
 const chronologicalBirds = [...randomPosts].sort((a, b) =>
   b.date.localeCompare(a.date) || b.url.localeCompare(a.url));
-const firstBirdPageByMonth = new Map();
-for (const [index, post] of chronologicalBirds.entries()) {
+for (const post of chronologicalBirds) {
   const month = post.date.slice(0, 7);
   birdByMonth.set(month, (birdByMonth.get(month) || 0) + 1);
-  if (!firstBirdPageByMonth.has(month)) {
-    firstBirdPageByMonth.set(month, Math.floor(index / 5) + 1);
-  }
 }
 const availableYears = [...new Set([...birdByMonth.keys()].map(month => month.slice(0, 4)))].sort().reverse();
 const archiveYearPanels = [...birdArchive.matchAll(/<details id="year-(\d{4})" class="archive-index-year about-panel panel--teal">/g)]
@@ -374,24 +370,74 @@ assert.deepEqual(archiveYearPanels, availableYears, 'Bird archive year sections 
 const allMonthTiles = [...birdArchive.matchAll(/data-archive-month="(\d{4}-\d{2})" data-article-count="(\d+)"/g)];
 assert.equal(allMonthTiles.length, availableYears.length * 12, 'all 12 month tiles exist for each Bird year');
 const filledMonthTiles = [...birdArchive.matchAll(/<a class="archive-index-month has-posts" data-archive-month="(\d{4}-\d{2})" data-article-count="(\d+)" href="([^"]+)"/g)];
-assert.equal(filledMonthTiles.length, birdByMonth.size, 'only published months link to Adventures');
+assert.equal(filledMonthTiles.length, birdByMonth.size, 'only released months link to month archives');
 assert.equal(filledMonthTiles.reduce((sum, match) => sum + Number(match[2]), 0), randomPosts.length,
-  'every released adventure is counted exactly once in the archive');
+  'every released adventure appears exactly once in archive counts');
 for (const [, month, count, href] of filledMonthTiles) {
-  assert.equal(Number(count), birdByMonth.get(month), 'released-article count for ' + month);
-  const page = firstBirdPageByMonth.get(month);
-  const expected = '/chirp/adventures/' + (page > 1 ? 'page' + page + '/' : '') + '#chirp-month-' + month;
-  assert.equal(href, expected, 'archive month tile must reach the correct Adventures page for ' + month);
-  const targetPage = page === 1 ? pages.adventures : rollPages[page - 1];
-  assert.ok(targetPage.includes('id="chirp-month-' + month + '"'), 'archive anchor exists on ' + expected);
+  assert.equal(Number(count), birdByMonth.get(month), 'published-article count for ' + month);
+  const [year, number] = month.split('-');
+  assert.equal(href, '/chirp/archive/' + year + '/' + number + '/',
+    'year/month tile links to its own Bird archive for ' + month);
+}
+for (const [month, count] of birdByMonth) {
+  const [year, number] = month.split('-');
+  const monthPath = 'chirp/archive/' + year + '/' + number + '/index.html';
+  assert.ok(exists(monthPath), 'missing released Bird month page for ' + month);
+  const monthly = read(monthPath);
+  const main = monthly.split('<main class="content-area">')[1]?.split('</main>')[0];
+  assert.ok(main, 'monthly archive contains its own main content');
+  assert.match(monthly, /<html[^>]*data-chirp-landing="true"/);
+  assert.match(main, /class="post-full archive-month chirp-archive-month"/);
+  assert.ok(main.includes('href="/chirp/">Home</a>'));
+  assert.ok(main.includes('href="/chirp/archive/">Archives</a>'));
+  assert.ok(main.includes('href="/chirp/archive/#year-' + year + '">' + year + '</a>'));
+  const monthName = new Date(Date.UTC(Number(year), Number(number) - 1, 1))
+    .toLocaleString('en-AU', {month: 'long', timeZone: 'UTC'});
+  assert.ok(main.includes('<h1 class="post-title">' + monthName + ' ' + year + '</h1>'));
+  assert.match(monthly, new RegExp('data-archive-context-year="' + year + '"'));
+  const subtitle = main.match(/<p class="archive-month-count">([\s\S]*?)<\/p>/)?.[1]
+    ?.replace(/\s+/g, ' ').trim();
+  assert.equal(subtitle, count + ' article' + (count === 1 ? '' : 's'));
+  const articles = [...main.matchAll(/<article class="post-entry">([\s\S]*?)<\/article>/g)];
+  assert.equal(articles.length, count, 'month page has every released article for ' + month);
+  const linkedUrls = articles.map(([, card]) => {
+    const title = card.indexOf('<h2 class="post-title">');
+    const meta = card.indexOf('class="archive-card-meta"');
+    const media = card.indexOf('class="archive-card-media"');
+    const excerpt = card.indexOf('class="post-excerpt"');
+    assert.ok(title >= 0 && meta > title && excerpt > meta,
+      'monthly archive preserves title, date and excerpt reading order');
+    assert.ok(media < 0 || (media > meta && media < excerpt),
+      'monthly media follows metadata and precedes excerpt');
+    return card.match(/<h2 class="post-title"><a href="([^"]+)"/)?.[1];
+  });
+  assert.ok(linkedUrls.every(Boolean), 'each archive card links to its article');
+  const releasedUrls = chronologicalBirds.filter(p => p.date.startsWith(month)).map(p => p.url);
+  assert.deepEqual(linkedUrls.slice().sort(), releasedUrls.slice().sort(),
+    'monthly page contains only the released Bird articles for ' + month);
+  assert.doesNotMatch(main, /little-corella-at-the-local-nursery/i);
+  assert.ok(monthly.includes('class="nav-mode-bird active" href="/chirp/adventures/"'),
+    'Adventures navigation stays highlighted for monthly archives');
 }
 for (const year of availableYears) {
   const count = chronologicalBirds.filter(post => post.date.startsWith(year)).length;
   assert.match(birdArchive, new RegExp('class="archive-index-year-count">' + count + ' articles?</span>'),
-    'archive should show released-only total for ' + year);
+    'release-only count for ' + year);
 }
-assert.ok(exists('chirp/archive/index.html'), 'new released-only Bird archive page must be generated');
-assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive')).sort(), ['index.html'],
-  'the released archive publishes exactly one index, never the legacy post snapshot');
+assert.ok(birdLayout.includes(':root[data-theme="bird"] .chirp-archive-month {'),
+  'Bird monthly archive styling is scoped');
+assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive')).sort(),
+  ['index.html', ...availableYears].sort(),
+  'only approved years plus the archive index are published');
+for (const year of availableYears) {
+  const months = [...birdByMonth.keys()].filter(month => month.startsWith(year + '-'))
+    .map(month => month.slice(5)).sort();
+  assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive', year)).sort(), months,
+    'released-only month directories for ' + year);
+  for (const number of months) {
+    assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive', year, number)), ['index.html'],
+      'no historical archive snapshots inside ' + year + '/' + number);
+  }
+}
 
 console.log('PASS: Bird blog roll spans ' + rollPages.length + ' pages with ' + entries + ' released articles, ordinal dates, filtered archives and scoped styling.');

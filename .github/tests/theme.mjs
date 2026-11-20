@@ -584,8 +584,7 @@ test('advisory: navigation hover underlines words without bolding or shifting ad
 
   assert.match(header, /class="nav-mode-bird" href="\/chirp\/random\/" data-chirp-random-link/);
 
-  assert.match(header, /page\.url contains '\/chirp\/adventures\/' or page\.categories contains 'parrots' and page\.channel_chirp != false/,
-    'Bird Adventures is active for both the roll and released conure articles');
+  assert.ok(header.includes("page.url contains '/chirp/adventures/' or page.url contains '/chirp/archive/' or page.categories contains 'parrots' and page.channel_chirp != false"), 'Bird Adventures remains active on monthly archives');
 
   assert.match(header, /class="nav-mode-bird" href="\/chirp\/about\/"[^\n]*<span class="nav-text">About<\/span>/);
   assert.doesNotMatch(header, /class="nav-mode-bird" href="\/chirp\/timeline\//);
@@ -763,7 +762,9 @@ test('advisory: monthly Archives use a matching heading/subheading, breadcrumb a
   const archive = read('_layouts/archive.html');
   const index = read('archive/index.html');
   assert.match(archive, /<nav class="archive-breadcrumbs" aria-label="Breadcrumb">/);
-  assert.match(archive, /<a href="\/archive\/">Archives<\/a>/);
+  assert.ok(archive.includes("{% assign archive_index = '/archive/' %}"), 'standard McRetro archive breadcrumb preserved');
+  assert.ok(archive.includes("{% assign archive_index = '/chirp/archive/' %}"), 'Bird archive breadcrumb available');
+  assert.ok(archive.includes('<a href="{{ archive_index }}">Archives</a>'));
   assert.match(archive, /<h1 class="post-title">\{\{ page\.date \| date: "%B %Y" \}\}<\/h1>/);
   assert.match(archive, /<p class="archive-month-count">\{% if month_count == 1 %\}1 article\{% else %\}\{\{ month_count \}\} articles\{% endif %\}<\/p>/);
   assert.doesNotMatch(archive, /<span class="archive-month-count">|class="archive-month-summary"/);
@@ -804,7 +805,7 @@ test('advisory: monthly Archives use a matching heading/subheading, breadcrumb a
   assert.ok(cardOrder.every((position, i) => i === 0 || position > cardOrder[i - 1]), 'archive source reading order must be title, meta, image, excerpt');
   assert.match(index, /permalink: \/archive\//);
   assert.match(index, /<details id="year-\{\{ year\.name \}\}" class="archive-index-year about-panel panel--teal">/);
-  assert.ok(archive.includes("href=\"/archive/#year-{{ page.date | date: '%Y' }}\""));
+  assert.ok(archive.includes("href=\"{{ archive_index }}#year-{{ page.date | date: '%Y' }}\""), 'year breadcrumb follows the active archive');
   assert.ok(archive.includes('<span aria-current="page">{{ page.date | date: "%B" }}</span>'));
   assert.ok(index.includes('<script src="/assets/js/archive-year-deeplink.js"></script>'));
   assert.match(index, /<summary><span class="about-panel-icon" aria-hidden="true">📅<\/span>/u);

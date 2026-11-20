@@ -139,21 +139,33 @@ jobs:
             exit 1
           fi
 
-      # Only the released-only year/month index is permitted at /chirp/archive/.
-      # Preserve the ban on all old Channel Chirp article directories and files
-      # until their videos and posts are individually approved for re-release.
-      # See .github/CHANNEL-CHIRP-RETIREMENT.md for the staged migration plan.
-      - name: Enforce the released-only Channel Chirp archive boundary
+      # Only approved month pages computed from released Bird articles may
+      # exist under /chirp/archive/. Reject any retired historical snapshot.
+      - name: Enforce released-only Channel Chirp archive boundary
         run: |
-          if ! test -f _site/chirp/archive/index.html; then
-            echo "::error::The approved Channel Chirp archive index is missing"
-            exit 1
-          fi
-          unexpected=$(find _site/chirp/archive -mindepth 1 ! -path _site/chirp/archive/index.html -print -quit)
-          if test -n "$unexpected"; then
-            echo "::error::Unapproved Channel Chirp archive output: $unexpected"
-            exit 1
-          fi
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          import re
+          
+          root = Path("_site/chirp/archive")
+          catalogue = json.loads(Path("_site/assets/data/chirp-random.json").read_text(encoding="utf-8"))
+          dates = [post["date"] for post in catalogue]
+          if not dates or any(not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date) for date in dates):
+              raise SystemExit("Invalid released Channel Chirp catalogue")
+          months = {(date[:4], date[5:7]) for date in dates}
+          approved = {root, root / "index.html"}
+          approved.update(root / year for year, month in months)
+          approved.update(root / year / month for year, month in months)
+          approved.update(root / year / month / "index.html" for year, month in months)
+          actual = {root} | set(root.rglob("*"))
+          extra = sorted(actual - approved)
+          missing = sorted(approved - actual)
+          symlinks = sorted(path for path in actual if path.is_symlink())
+          if extra or missing or symlinks:
+              raise SystemExit(f"Unapproved Bird archive output: extra={extra}, missing={missing}, symlinks={symlinks}")
+          print(f"PASS: Only released Bird archive index and {len(months)} monthly pages are published")
+          PY
 
       - name: Verify committed GOATPAD 24 kbps Opus audio and MIT notice
         run: python3 .github/tests/verify-goatpad-opus.py --site _site

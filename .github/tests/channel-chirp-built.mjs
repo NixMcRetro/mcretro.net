@@ -284,7 +284,7 @@ assert.match(pages.nest, /class="nav-mode-bird"/);
 assert.match(birdCss, /:root\[data-theme="bird"\] \.sidebar-mode-mcretro[\s\S]*display: none !important/);
 assert.match(birdCss, /:root:not\(\[data-theme="bird"\]\) \.sidebar-mode-bird[\s\S]*display: none !important/);
 assert.match(birdLayout, /font-family: 'Korataki'/);
-// Bird navigation uses pale green for emoji readability and dark-green text,
+// Bird navigation uses pale green for emoji readability and black labels,
 // with only thin green horizontal rules. McRetro Light/Dark stays unchanged.
 assert.match(birdCss, /--page-bg:\s*#424242;/);
 const desktopNavStart = birdLayout.indexOf(
@@ -303,8 +303,9 @@ const desktopNavLinks = birdLayout.slice(
   birdLayout.indexOf(':root[data-theme="bird"] .main-nav a,'),
   birdLayout.indexOf('/* Post previews use the original Channel Chirp rhythm')
 );
-assert.ok(desktopNavLinks.includes('color: #17660D;'));
-assert.ok(desktopNavLinks.includes('color: #105B08;'));
+assert.ok(desktopNavLinks.includes('color: #000000;'));
+assert.ok(!desktopNavLinks.includes('color: #17660D;') && !desktopNavLinks.includes('color: #105B08;'),
+  'Bird navigation no longer uses green label text');
 assert.ok(desktopNavLinks.includes('outline: 2px solid #17660D;'));
 assert.ok(desktopNavLinks.includes('font-weight: 700;'));
 assert.ok(desktopNavLinks.includes('text-decoration: none;'));
@@ -322,7 +323,7 @@ const mobileNavLinkStart = birdLayout.indexOf(
 );
 assert.ok(mobileNavLinkStart >= 0);
 assert.ok(birdLayout.slice(mobileNavLinkStart, birdLayout.indexOf('}', mobileNavLinkStart))
-  .includes('color: #17660D;'));
+  .includes('color: #000000;'));
 
 assert.doesNotMatch(birdLayout, /border-left: 6px solid #0C4308/);
 assert.ok(pages.nest.includes('<p class="chirp-return"><a href="/" data-theme-exit="standard">↩ Return to McRetro.net</a></p>'));
@@ -375,9 +376,9 @@ assert.ok(birdLayout.includes('.chirp-archive-index > .archive-index-intro,'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs [aria-current="page"] {'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs a {'));
 assert.ok(birdLayout.includes('color: #BDF7B0;'));
-assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261120-pale-nav"'),
+assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261120-black-nav"'),
   'Bird archive loads fresh stylesheet to avoid a stale dark-on-charcoal heading');
-assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261120-pale-nav"'),
+assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261120-black-nav"'),
   'Shared template loads the same current Bird stylesheet');
 
 const birdByMonth = new Map();
@@ -471,7 +472,7 @@ assert.ok(birdLayout.includes('.chirp-archive-month .archive-blog-list .post-ent
 for (const month of birdByMonth.keys()) {
   const [year, number] = month.split('-');
   assert.ok(read('chirp/archive/' + year + '/' + number + '/index.html')
-    .includes('href="/assets/css/channel-chirp.css?v=20261120-pale-nav"'),
+    .includes('href="/assets/css/channel-chirp.css?v=20261120-black-nav"'),
     'all Bird month pages receive the updated stylesheet: ' + month);
 }
 assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive')).sort(),

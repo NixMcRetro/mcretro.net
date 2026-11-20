@@ -514,15 +514,18 @@
 }
 :root[data-theme="bird"] .nest-year-title small { color: #122C0B; }
 
-/* Full conure article view, not ordinary McRetro posts. */
+/* Keep released conure article headings compact like original Channel Chirp,
+ * without changing ordinary McRetro post typography. */
 :root[data-theme="bird"][data-chirp-article="true"] .post-full .post-title {
-  font-weight: 500;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: .2rem;
   text-align: center;
   color: #212121;
 }
 :root[data-theme="bird"][data-chirp-article="true"] .post-full .post-meta {
   text-align: center;
-  margin: .3rem 0 1.5rem;
+  margin: 0 0 1.5rem;
 }
 :root[data-theme="bird"][data-chirp-article="true"] .post-full .post-meta .post-author,
 :root[data-theme="bird"][data-chirp-article="true"] .post-full .post-meta .meta-sep,
@@ -530,7 +533,7 @@
   display: none;
 }
 :root[data-theme="bird"][data-chirp-article="true"] .post-full .post-date {
-  color: #727272;
+  color: #626262;
   display: block;
   letter-spacing: .04em;
 }
@@ -540,7 +543,7 @@
   width: 125px;
   height: 4px;
   background: #29A518;
-  margin: .75rem auto 0;
+  margin: .4rem auto 0;
 }
 
 /* The Bird sidebar uses the same search, calendar and Random Posts sections as McRetro. */

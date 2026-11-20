@@ -74,7 +74,3 @@ An old-fashioned nature homepage featuring a frog, a lizard and a few original p
 - **File Server**: Not ready yet. The promised 10 KB/s downloads remain a dream!
 
 </details>
-
-As for the other tools and experiments, they'll turn up here as they become ready.
-
-

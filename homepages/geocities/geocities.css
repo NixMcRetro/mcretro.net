@@ -1,0 +1,22 @@
+/* Scoped styles for the restored GeoCities public exhibit. No global theme changes. */
+.gc-art { text-align: center; margin: 1.3rem 0; }
+.gc-art img { display: inline-block; max-width: 100%; height: auto; }
+.gc-jump { display: flex; flex-wrap: wrap; gap: .3rem .6rem; margin: 1.25rem 0; font-size: .88rem; }
+.gc-neighbourhoods { display: grid; gap: .75rem; }
+.gc-neighbourhood { border: 2px ridge #888; background: #f1f1f1; color: #202020; }
+.gc-neighbourhood summary { display: flex; flex-wrap: wrap; align-items: center; gap: .85rem; padding: .7rem .85rem; cursor: pointer; font-weight: bold; }
+.gc-neighbourhood summary:hover, .gc-neighbourhood summary:focus-visible { background: #e1e7ec; }
+.gc-neighbourhood summary img { flex: none; width: 88px; height: 31px; object-fit: contain; image-rendering: auto; }
+.gc-neighbourhood-title { display: flex; flex-direction: column; gap: .1rem; }
+.gc-neighbourhood-title small { font-size: .8rem; font-weight: normal; }
+.gc-neighbourhood-body { border-top: 1px solid #aaa; padding: .7rem .85rem 1rem; }
+.gc-neighbourhood-body p { margin: .45rem 0 .75rem; }
+.gc-neighbourhood-mast img { max-width: 100%; height: auto; }
+.gc-suburbs { display: grid; grid-template-columns: repeat(auto-fit, minmax(125px, 1fr)); gap: .4rem .7rem; margin-top: .65rem; }
+.gc-neighbourhood a, .gc-neighbourhood a:visited { color: #064fa3; text-decoration: underline; }
+.gc-neighbourhood a:hover, .gc-neighbourhood a:focus-visible { color: #00315d; }
+.gc-credit, .gc-archive-note { font-size: .9rem; }
+.gc-cool-pages { padding: .6rem 1.1rem; border: 1px solid #a6a6a6; }
+.gc-cool-pages p { margin: .7rem 0; }
+.gc-historic-update { padding: 1rem; border: 1px solid #a6a6a6; overflow-wrap: anywhere; }
+@media (max-width: 550px) { .gc-neighbourhood summary { gap: .5rem; } .gc-suburbs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

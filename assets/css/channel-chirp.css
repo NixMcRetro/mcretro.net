@@ -444,20 +444,6 @@
 :root[data-theme="bird"] .main-nav a:focus-visible {
   color: #105B08;
 }
-/* Clear hover/focus highlight for Bird links, without changing item widths. */
-:root[data-theme="bird"] .main-nav a.nav-mode-bird {
-  border-radius: 2px;
-}
-:root[data-theme="bird"] .main-nav a.nav-mode-bird:hover,
-:root[data-theme="bird"] .main-nav a.nav-mode-bird:focus-visible {
-  color: #105B08;
-  background: #C8E5BD;
-  box-shadow: 0 0 0 .25rem #C8E5BD;
-}
-:root[data-theme="bird"] .main-nav a.nav-mode-bird:hover .nav-text,
-:root[data-theme="bird"] .main-nav a.nav-mode-bird:focus-visible .nav-text {
-  text-decoration: none;
-}
 :root[data-theme="bird"] .main-nav a:focus-visible {
   outline: 2px solid #17660D;
   outline-offset: 2px;
@@ -621,10 +607,16 @@
   :root[data-theme="bird"] .main-nav .nav-list li a.nav-mode-bird.active .nav-text {
     text-decoration: none;
   }
+  /* Only the expanded mobile Bird menu uses a filled hover/focus state. */
   :root[data-theme="bird"] .main-nav .nav-list li a.nav-mode-bird:hover,
   :root[data-theme="bird"] .main-nav .nav-list li a.nav-mode-bird:focus-visible {
+    color: #105B08;
     background: #C8E5BD;
     box-shadow: none;
+  }
+  :root[data-theme="bird"] .main-nav .nav-list li a.nav-mode-bird:hover .nav-text,
+  :root[data-theme="bird"] .main-nav .nav-list li a.nav-mode-bird:focus-visible .nav-text {
+    text-decoration: none;
   }
 }
 
@@ -719,17 +711,11 @@
 }
 :root[data-theme="bird"] .sidebar-mode-bird .recent-posts-list li a {
   color: #BDF7B0;
-  padding: .1rem .25rem;
-  margin: 0 -.25rem;
-  border-radius: 2px;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
 }
 :root[data-theme="bird"] .sidebar-mode-bird .recent-posts-list li a:hover,
 :root[data-theme="bird"] .sidebar-mode-bird .recent-posts-list li a:focus-visible {
-  color: #105B08;
-  background: #C8E5BD;
-  text-decoration: none;
+  color: #FFFFFF;
+  text-decoration: underline;
 }
 :root[data-theme="bird"] .sidebar-mode-bird .post-date-sidebar {
   color: #F0F0F0;

@@ -283,17 +283,22 @@ assert.match(pages.nest, /class="nav-mode-bird"/);
 assert.match(birdCss, /:root\[data-theme="bird"\] \.sidebar-mode-mcretro[\s\S]*display: none !important/);
 assert.match(birdCss, /:root:not\(\[data-theme="bird"\]\) \.sidebar-mode-bird[\s\S]*display: none !important/);
 assert.match(birdLayout, /font-family: 'Korataki'/);
-// The Bird nav is pale green with thin horizontal rules in the sidebar accent green.
+// Bird navigation uses the charcoal page background and white labels, with
+// the existing thin green horizontal rules. Light/Dark remain untouched.
+assert.match(birdCss, /--page-bg:\s*#424242;/);
 const navStyles = [...birdLayout.matchAll(/:root\[data-theme="bird"\] \.main-nav \{([^}]+)\}/g)]
   .map(match => match[1]);
 assert.ok(navStyles.some(block =>
-  /background: #E7F5E4;/.test(block) &&
+  /background: var\(--page-bg\);/.test(block) &&
   /border-top: 1px solid #29A518;/.test(block) &&
   /border-bottom: 1px solid #29A518;/.test(block) &&
   !/border-left: 6px|border-right: 6px/.test(block)),
-  'Bird desktop menu must have pale green background and 1px sidebar-green top/bottom borders');
-assert.match(birdLayout, /\.main-nav a:visited[\s\S]*?color: #17451D;/);
-assert.match(birdLayout, /\.main-nav \.nav-list \{\s*background: #E7F5E4;\s*border-bottom: 1px solid #29A518;/);
+  'Bird desktop menu should match charcoal background and retain thin green rules');
+assert.match(birdLayout, /\.main-nav a\.active \{\s*color: #FFFFFF;/);
+assert.match(birdLayout, /\.main-nav a:hover,[\s\S]*?\.main-nav a:focus-visible \{\s*color: #FFFFFF;/);
+assert.match(birdLayout, /\.main-nav \.nav-list \{\s*background: var\(--page-bg\);\s*border-bottom: 1px solid #29A518;/);
+assert.match(birdLayout, /\.main-nav \.nav-list li a:visited \{\s*color: #FFFFFF;/);
+assert.match(birdLayout, /\.main-nav \.nav-list li a\.nav-mode-bird\.active \{\s*color: #FFFFFF;/);
 assert.doesNotMatch(birdLayout, /border-left: 6px solid #0C4308/);
 assert.ok(pages.nest.includes('<p class="chirp-return"><a href="/" data-theme-exit="light">↩ Return to McRetro.net</a></p>'));
 // Filled Bird menu hover is intentionally limited to mobile widths.

@@ -421,8 +421,8 @@
   letter-spacing: .1em;
 }
 :root[data-theme="bird"] .main-nav {
-  /* Pale navigation with thin horizontal rules matching Bird's sidebar green. */
-  background: #E7F5E4;
+  /* Match the charcoal Bird canvas and retain thin green horizontal rules. */
+  background: var(--page-bg);
   border: 0;
   border-top: 1px solid #29A518;
   border-bottom: 1px solid #29A518;
@@ -433,7 +433,7 @@
 :root[data-theme="bird"] .main-nav a:visited,
 :root[data-theme="bird"] .main-nav a[aria-current="page"],
 :root[data-theme="bird"] .main-nav a.active {
-  color: #17451D;
+  color: #FFFFFF;
   text-decoration: none;
 }
 :root[data-theme="bird"] .main-nav a[aria-current="page"],
@@ -442,10 +442,10 @@
 }
 :root[data-theme="bird"] .main-nav a:hover,
 :root[data-theme="bird"] .main-nav a:focus-visible {
-  color: #105B08;
+  color: #FFFFFF;
 }
 :root[data-theme="bird"] .main-nav a:focus-visible {
-  outline: 2px solid #17660D;
+  outline: 2px solid #BDF7B0;
   outline-offset: 2px;
 }
 :root[data-theme="bird"] .main-nav a[aria-current="page"] .nav-text,
@@ -581,7 +581,7 @@
 
 @media screen and (max-width: 750px) {
   :root[data-theme="bird"] .main-nav {
-    /* Preserve the collapsed mobile header; the opened menu is pale green. */
+    /* Preserve the collapsed header and a charcoal expanded Bird menu. */
     border-left: 0;
     border-right: 0;
     border-top: 1px solid #29A518;
@@ -590,16 +590,16 @@
     padding: 0;
   }
   :root[data-theme="bird"] .main-nav .nav-list {
-    background: #E7F5E4;
+    background: var(--page-bg);
     border-bottom: 1px solid #29A518;
   }
   :root[data-theme="bird"] .main-nav .nav-list li a,
   :root[data-theme="bird"] .main-nav .nav-list li a:visited {
-    color: #17451D;
+    color: #FFFFFF;
   }
   :root[data-theme="bird"] .main-nav .nav-list li a[aria-current="page"],
   :root[data-theme="bird"] .main-nav .nav-list li a.nav-mode-bird.active {
-    color: #17451D;
+    color: #FFFFFF;
     font-weight: 700;
     text-decoration: none;
   }

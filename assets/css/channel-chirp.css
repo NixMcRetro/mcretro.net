@@ -432,7 +432,7 @@
 :root[data-theme="bird"] .main-nav a:visited,
 :root[data-theme="bird"] .main-nav a[aria-current="page"],
 :root[data-theme="bird"] .main-nav a.active {
-  color: #17660D;
+  color: #000000;
   text-decoration: none;
 }
 :root[data-theme="bird"] .main-nav a[aria-current="page"],
@@ -441,7 +441,7 @@
 }
 :root[data-theme="bird"] .main-nav a:hover,
 :root[data-theme="bird"] .main-nav a:focus-visible {
-  color: #105B08;
+  color: #000000;
 }
 :root[data-theme="bird"] .main-nav a:focus-visible {
   outline: 2px solid #17660D;
@@ -594,11 +594,11 @@
   }
   :root[data-theme="bird"] .main-nav .nav-list li a,
   :root[data-theme="bird"] .main-nav .nav-list li a:visited {
-    color: #17660D;
+    color: #000000;
   }
   :root[data-theme="bird"] .main-nav .nav-list li a[aria-current="page"],
   :root[data-theme="bird"] .main-nav .nav-list li a.nav-mode-bird.active {
-    color: #17660D;
+    color: #000000;
     font-weight: 700;
     text-decoration: none;
   }
@@ -609,7 +609,7 @@
   /* Only the expanded mobile Bird menu uses a filled hover/focus state. */
   :root[data-theme="bird"] .main-nav .nav-list li a.nav-mode-bird:hover,
   :root[data-theme="bird"] .main-nav .nav-list li a.nav-mode-bird:focus-visible {
-    color: #105B08;
+    color: #000000;
     background: #C8E5BD;
     box-shadow: none;
   }

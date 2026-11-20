@@ -327,7 +327,8 @@ assert.match(channels, /Visit The Nest: Channel Chirp adventures on McRetro/);
 
 // Bird archives reuse the McRetro year accordions and month tiles, with
 // counts from only the released Channel Chirp catalogue.
-const birdArchive = pages.archive;
+const birdArchive = pages.archive.split('<main class="content-area">')[1]?.split('</main>')[0];
+assert.ok(birdArchive, 'Bird archive has its own main content');
 assert.ok(birdArchive.includes('class="archive-index chirp-archive-index"'));
 assert.ok(birdArchive.includes('href="/chirp/">Home</a>'));
 assert.ok(birdArchive.includes('/assets/js/archive-year-deeplink.js'));

@@ -39,6 +39,17 @@ I also showed some of the early sheet music to someone who actually has skill an
 
 Well deserved because there was so much more to do. The notation was corrected, rhythmic groupings revamped, and a quick tidy up the spacing around the key signature. The finished sheet music includes a separate B♭ trumpet or flugelhorn part, written in D major.
 
+![Page 1 of the KODI (Until When?) jazz duet score, showing musical staves for voice and B♭ trumpet, with notes, lyrics, and jazz chord symbols.](/assets/images/2026/11/kodi-until-when/kodi-jazz-duet-page1.jxl)
+
+*Page 1 of 2: The opening and first vocal passage, with the singer and trumpet together.*
+{: .media-caption }
+
+![Page 2 of the KODI (Until When?) jazz duet score, continuing the voice and B♭ trumpet notation through the repeated lyrics and closing bars.](/assets/images/2026/11/kodi-until-when/kodi-jazz-duet-page2.jxl)
+
+*Page 2 of 2: The rest of the duet, including the ending.*
+{: .media-caption }
+
+
 ## One Small Problem
 
 After all that work, I noticed I'd made a mistake in the original sentence. I'd written **"temporally"** when I actually meant **"temporarily"**.

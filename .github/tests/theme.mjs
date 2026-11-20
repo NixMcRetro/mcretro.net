@@ -805,7 +805,7 @@ test('advisory: monthly Archives use a matching heading/subheading, breadcrumb a
   assert.ok(cardOrder.every((position, i) => i === 0 || position > cardOrder[i - 1]), 'archive source reading order must be title, meta, image, excerpt');
   assert.match(index, /permalink: \/archive\//);
   assert.match(index, /<details id="year-\{\{ year\.name \}\}" class="archive-index-year about-panel panel--teal">/);
-  assert.ok(archive.includes("href=\"/archive/#year-{{ page.date | date: '%Y' }}\""));
+  assert.ok(archive.includes("href=\"{{ archive_index }}#year-{{ page.date | date: '%Y' }}\""), 'year breadcrumb follows the active archive');
   assert.ok(archive.includes('<span aria-current="page">{{ page.date | date: "%B" }}</span>'));
   assert.ok(index.includes('<script src="/assets/js/archive-year-deeplink.js"></script>'));
   assert.match(index, /<summary><span class="about-panel-icon" aria-hidden="true">📅<\/span>/u);

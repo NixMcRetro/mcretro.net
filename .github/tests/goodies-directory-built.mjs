@@ -64,6 +64,34 @@ for (const rawUrl of new Set(authored)) {
   checked++;
 }
 
+// Keep the user-curated historical Cool Links list deduplicated and visible.
+assert.match(source, /Cool Links<\/summary>/, 'Goodies Cool Links accordion is missing');
+assert.doesNotMatch(source, /Still Under Construction/, 'Obsolete construction accordion remains');
+const coolLinkNames = [
+  'ASSEMblergames.com',
+  'Sega World Sydney',
+  'Segata Sanshiro Music Video',
+  'Ship to Shore Theme Music',
+  'The Cover Project',
+  'XBOX Archive',
+  'Macintosh Garden',
+  'Pippi Longstocking Theme Song',
+  'The Vintage Computing Files Archive',
+  'VOGONS Vintage Driver Library',
+  "Peter H. S. Madsen's Animated GIF Archive"
+];
+for (const name of coolLinkNames) {
+  assert.equal(source.split('**[' + name + '](').length - 1, 1,
+    'Cool Links must contain exactly one entry for ' + name);
+  assert.ok(anchors.some(link => link.text.includes(name)),
+    'Cool Links entry is not visible in built HTML: ' + name);
+}
+const fileServer = 'https://files.mcretro.net/index.html';
+assert.ok(source.includes('[File Server](' + fileServer + ')'),
+  'File Server is not listed under Ready to Visit');
+assert.ok(anchors.some(link => link.href === fileServer && link.text.includes('File Server')),
+  'Ready to Visit File Server link was not rendered');
+
 // Preserve the original animated artefact without constraining its border or
 // location. The image must be reachable in the built website.
 const floppy = '/assets/images/goodies/filecopy.gif';

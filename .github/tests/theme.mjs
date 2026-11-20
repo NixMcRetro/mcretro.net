@@ -581,7 +581,21 @@ test('advisory: Channels keeps emoji and links, without old summary siren GIFs',
   }
   assert.ok(!channels.includes('@ChannelChirp'), 'Retiring YouTube channel should not be advertised');
   assert.ok(channels.includes('/chirp/'));
-  assert.ok(channels.includes('Recently (2026) we’re continuing to merge former channels, such as Fish Tank World and Channel Chirp, into this website and YouTube channel. Stay tuned! :)'));
+  for (const snippet of [
+    'This all started back in March 2012, when I created my very first YouTube channel',
+    "In 2026, I've also started merging former channels, including Fish Tank World and Channel Chirp",
+    'gradually re-releasing their videos and preserving their stories along the way. Stay tuned! :)',
+    'Established in June 2014, McRetro Gaming is where I share all sorts of gaming videos',
+    'the trusty PlayStation 4 to retro gaming through the MiSTer FPGA',
+    "It's mostly nature, superfied.",
+    'Channel Chirp was home to three of the cheekiest green-cheeked conures',
+    'Pudge, Tillie, and Chip',
+    'their original videos are gradually being re-released on my Nix McRetro YouTube channel.'
+  ]) {
+    assert.ok(channels.includes(snippet), 'Missing updated Channels copy: ' + snippet);
+  }
+  assert.ok(!channels.includes('PlayStation 5'), 'Gaming description should use PlayStation 4');
+  assert.ok(!channels.includes('Recently (2026)'), 'Old merging summary should not remain');
   assert.ok(channels.includes('YouTube Playlist: [Channel Chirp](https://www.youtube.com/playlist?list=PLJAZP-TLMPj50jY6ytY53J3bQkgPIbeYP)<br>'));
   assert.ok(channels.includes('Homepage: [https://mcretro.net/chirp/](/chirp/)'));
   assert.ok(!channels.includes('Visit The Nest: Channel Chirp adventures on McRetro'));

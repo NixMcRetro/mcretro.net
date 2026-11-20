@@ -8,7 +8,7 @@ title: Channels
 <details class="about-panel panel--teal" markdown="1">
 <summary markdown="span">🎸 Nix McRetro</summary>
 
-The very first YouTube channel I started way back in March 2012 to help document all sorts of retro hardware. However, a lack of free time and funding we just kick around with what we have... tinkering and rambling. Lots of rambling, I love to ramble in these videos and I usually don't edit them down too much. Recently (2026) we’re continuing to merge former channels, such as Fish Tank World and Channel Chirp, into this website and YouTube channel. Stay Tuned :)
+The very first YouTube channel I started way back in March 2012 to help document all sorts of retro hardware. However, a lack of free time and funding we just kick around with what we have... tinkering and rambling. Lots of rambling, I love to ramble in these videos and I usually don't edit them down too much. Recently (2026) we’re continuing to merge former channels, such as Fish Tank World and Channel Chirp, into this website and YouTube channel. Stay tuned :)
 
 YouTube Channel: [@NixMcRetro](https://www.youtube.com/@NixMcRetro)<br>
 Homepage: [https://mcretro.net](https://mcretro.net)

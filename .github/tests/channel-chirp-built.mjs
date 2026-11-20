@@ -142,17 +142,17 @@ assert.match(pages.nest, /class="nav-mode-bird"/);
 assert.match(birdCss, /:root\[data-theme="bird"\] \.sidebar-mode-mcretro[\s\S]*display: none !important/);
 assert.match(birdCss, /:root:not\(\[data-theme="bird"\]\) \.sidebar-mode-bird[\s\S]*display: none !important/);
 assert.match(birdLayout, /font-family: 'Korataki'/);
-// The Bird nav is a pale green surface framed by DARK horizontal rules.
+// The Bird nav is pale green with thin horizontal rules in the sidebar accent green.
 const navStyles = [...birdLayout.matchAll(/:root\[data-theme="bird"\] \.main-nav \{([^}]+)\}/g)]
   .map(match => match[1]);
 assert.ok(navStyles.some(block =>
   /background: #E7F5E4;/.test(block) &&
-  /border-top: 4px solid #17660D;/.test(block) &&
-  /border-bottom: 4px solid #17660D;/.test(block) &&
+  /border-top: 1px solid #29A518;/.test(block) &&
+  /border-bottom: 1px solid #29A518;/.test(block) &&
   !/border-left: 6px|border-right: 6px/.test(block)),
-  'Bird desktop menu must have pale green background and dark top/bottom borders');
+  'Bird desktop menu must have pale green background and 1px sidebar-green top/bottom borders');
 assert.match(birdLayout, /\.main-nav a:visited[\s\S]*?color: #17451D;/);
-assert.match(birdLayout, /\.main-nav \.nav-list \{\s*background: #E7F5E4;\s*border-bottom: 4px solid #17660D;/);
+assert.match(birdLayout, /\.main-nav \.nav-list \{\s*background: #E7F5E4;\s*border-bottom: 1px solid #29A518;/);
 assert.doesNotMatch(birdLayout, /border-left: 6px solid #0C4308/);
 
 assert.match(birdLayout, /\.nest-post-card time::after/);

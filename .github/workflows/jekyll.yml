@@ -188,7 +188,7 @@ jobs:
           node --check assets/js/channel-chirp-filter.js
           node --check assets/js/channel-chirp-archive.js
           node --check assets/js/channel-chirp-random.js
-          node --test .github/tests/chirp-random.test.mjs .github/tests/chirp-calendar.test.mjs
+          node --test .github/tests/chirp-random.test.mjs .github/tests/chirp-calendar.test.mjs .github/tests/chirp-search.test.mjs
           node .github/tests/channel-chirp-built.mjs _site
 
       - name: Verify Goodies projects and restored homepages remain reachable

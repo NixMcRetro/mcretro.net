@@ -2024,24 +2024,23 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   overflow-wrap: anywhere;
 }
 
-/* About: frame the original small transparent running-cat GIF like Goodies.
-   Keep the retro grey panel independent of the site theme and avoid scaling blur. */
+/* Keep the McRetro heading's hover target as narrow as the visible title.
+   Channel Chirp already has its own content-width logo rule. */
+.site-logo--mcretro {
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* About: restore the unframed running cat at a modest 1.25x scale. */
 .about-running-cat {
   display: flex;
   justify-content: center;
   max-width: 100%;
   margin: 1.25rem auto 1.5rem;
 }
-.about-running-cat-frame {
-  box-sizing: border-box;
-  max-width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #333;
-  background: #c0c0c0;
-}
-.about-running-cat-frame img {
+.about-running-cat img {
   display: block;
-  width: 170px;
+  width: 106px;
   max-width: 100%;
   height: auto;
   image-rendering: pixelated;

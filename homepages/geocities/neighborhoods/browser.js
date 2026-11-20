@@ -16,11 +16,12 @@
   const matchingOnly = document.getElementById('gc-suburbs-matching-only');
   const reset = toolbar.querySelector('[data-gc-action="reset"]');
   const copySearch = toolbar.querySelector('[data-gc-action="copy-search"]');
+  const copySearchGroup = document.getElementById('gc-search-share');
   const copySearchStatus = document.getElementById('gc-copy-search-status');
   const noResults = document.getElementById('gc-neighbourhood-empty');
   const clearSearchButton = noResults?.querySelector('[data-gc-action="clear-search"]');
   if (!input || !output || !expand || !collapse || !random || !sortSelect ||
-      !matchingOnly || !reset || !copySearch || !copySearchStatus ||
+      !matchingOnly || !reset || !copySearch || !copySearchGroup || !copySearchStatus ||
       !noResults || !clearSearchButton) return;
 
   const fold = (text) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase();
@@ -111,6 +112,7 @@
     matchingOnly.disabled = !query;
     if (!query) matchingOnly.checked = false;
     copySearch.disabled = !query;
+    copySearchGroup.hidden = !query;
     if (!query) copySearchStatus.textContent = '';
     if (query && preSearchOpen === null) {
       preSearchOpen = groups.map(group => group.details.open);

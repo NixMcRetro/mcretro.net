@@ -194,9 +194,26 @@ assert.match(directory, /data-gc-action="reset"/);
 assert.match(directory, /data-gc-action="copy-search" disabled/);
 assert.match(directory, /id="gc-suburbs-matching-only" type="checkbox" disabled/);
 assert.match(directory, /id="gc-neighbourhood-empty" class="gc-no-results" hidden/);
+const panel = directory.match(/<div class="gc-browser-tools" hidden>([\s\S]*?)<\/div>\s*<div id="gc-neighbourhood-empty"/);
+assert.ok(panel, 'Browser panel and no-results block must exist');
+assert.ok(panel[0].indexOf('gc-browser-search-row') < panel[0].indexOf('gc-browser-tool-row'),
+  'Search should be before the actions row');
+assert.ok(panel[0].indexOf('gc-browser-options') < panel[0].indexOf('gc-browser-status'),
+  'Sorting and filters should be grouped before results');
+assert.equal([...directory.matchAll(/id="gc-neighbourhood-search"/g)].length, 1);
 assert.match(directory, /data-gc-action="clear-search"/);
 assert.match(script, /matchingOnly\.disabled = !query/);
 assert.match(script, /copySearch\.disabled = !query/);
+assert.match(script, /copySearchGroup\.hidden = !query/);
+assert.match(directory, /class="gc-browser-search-row"/);
+assert.match(directory, /class="gc-browser-tool-row" role="group"/);
+assert.match(directory, /class="gc-browser-status"/);
+assert.match(directory, /id="gc-search-share" hidden/);
+assert.match(styles, /\.gc-search-share\[hidden\] \{ display: none; \}/);
+assert.match(styles, /\.gc-browser-options \{ display: grid; grid-template-columns:/);
+assert.match(styles, /@media \(max-width: 620px\)/);
+assert.match(directory, /aria-label="Random Neighbourhood">🎲 Random<\/button>/);
+assert.match(directory, /Press \/ to search, Esc to clear/);
 assert.match(script, /noResults\.hidden = !\(query && found === 0\)/);
 assert.match(script, /const resetView = \(\) =>/);
 assert.match(script, /sortSelect\.value = 'alphabetical'/);

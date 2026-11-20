@@ -35,19 +35,23 @@
 .gc-home-card small { color: var(--muted); font-size: .78rem; line-height: 1.5; }
 
 /* Search and expansion progressively enhance the full accessible directory. */
-.gc-browser-tools { margin: 1.35rem 0; padding: .85rem 1rem; border: 1px solid var(--border-soft); border-radius: 4px; background: var(--panel-subtle); color: var(--text); }
+.gc-browser-tools { margin: .95rem 0 1.1rem; padding: .85rem 1rem; border: 1px solid var(--border-soft); border-radius: 4px; background: var(--panel-subtle); color: var(--text); }
 .gc-browser-tools[hidden], .gc-neighbourhood[hidden] { display: none; }
 .gc-browser-tools label { display: block; margin-bottom: .5rem; font-family: Montserrat, sans-serif; font-weight: 700; }
-.gc-browser-tool-row { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
-.gc-browser-tool-row input { flex: 1 1 215px; min-width: 0; max-width: 380px; padding: .55rem .7rem; border: 1px solid var(--border); border-radius: 3px; background: var(--input-bg); color: var(--text); font: inherit; }
-.gc-browser-tool-row button { padding: .5rem .75rem; border: 1px solid var(--border); border-radius: 3px; background: var(--panel); color: var(--text); font: 600 .8rem Montserrat, sans-serif; cursor: pointer; }
-.gc-browser-tool-row button:hover { background: var(--interactive-hover); border-color: var(--link); }
-.gc-browser-tool-row input:focus-visible, .gc-browser-tool-row button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
-#gc-neighbourhood-results { display: block; margin-top: .65rem; font-size: .88rem; color: var(--muted); }
-@media (max-width: 550px) { .gc-home-nav { grid-template-columns: 1fr; } .gc-browser-tool-row input { flex-basis: 100%; max-width: none; } }
+.gc-browser-search-row { margin: .1rem 0 .65rem; }
+.gc-browser-search-row input { display: block; box-sizing: border-box; width: 100%; min-width: 0; padding: .65rem .75rem; border: 1px solid var(--border); border-radius: 3px; background: var(--input-bg); color: var(--text); font: inherit; }
+.gc-browser-tool-row { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; }
+.gc-browser-tool-row button, .gc-search-share button { padding: .5rem .7rem; border: 1px solid var(--border); border-radius: 3px; background: var(--panel); color: var(--text); font: 600 .8rem Montserrat, sans-serif; cursor: pointer; }
+.gc-browser-tool-row button:hover, .gc-search-share button:hover { background: var(--interactive-hover); border-color: var(--link); }
+.gc-browser-search-row input:focus-visible, .gc-browser-tool-row button:focus-visible, .gc-search-share button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.gc-browser-status { display: flex; flex-wrap: wrap; gap: .45rem 1rem; align-items: center; justify-content: space-between; margin-top: .7rem; }
+#gc-neighbourhood-results { display: block; font-size: .88rem; color: var(--muted); }
+.gc-search-share { display: flex; flex-wrap: wrap; gap: .45rem; align-items: center; }
+.gc-search-share[hidden] { display: none; }
+@media (max-width: 550px) { .gc-home-nav { grid-template-columns: 1fr; } }
 
 /* Extra directory controls; only the GeoCities directory loads these rules. */
-.gc-directory-stats { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1.4rem; margin: 1.1rem 0; padding: .7rem .9rem; border: 1px solid var(--border-soft); border-radius: 4px; background: var(--panel); color: var(--text); font-size: .88rem; }
+.gc-directory-stats { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1.4rem; margin: .9rem 0; padding: .7rem .9rem; border: 1px solid var(--border-soft); border-radius: 4px; background: var(--panel); color: var(--text); font-size: .88rem; }
 .gc-directory-stats strong { font-size: 1.12em; font-variant-numeric: tabular-nums; }
 .gc-neighbourhood mark { background: #FFE389; color: #171717; box-decoration-break: clone; border-radius: 2px; padding: 0 .06em; }
 :root[data-theme="dark"] .gc-neighbourhood mark { background: #BCE9A9; color: #111A13; }
@@ -79,14 +83,15 @@ a.gc-artwork-tile:focus-visible { outline: 3px solid var(--focus); outline-offse
 .gc-share-neighbourhood button:hover { background: var(--interactive-hover); border-color: var(--link); }
 .gc-share-neighbourhood button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .gc-copy-status { color: var(--muted); }
-.gc-browser-hint { margin: .5rem 0 0; color: var(--muted); font-size: .8rem; }
+.gc-browser-hint { margin: .45rem 0 0; color: var(--muted); font-size: .8rem; }
 
 /* Sorting and matching-suburb controls use the existing McRetro theme. */
-.gc-browser-options { display: flex; flex-wrap: wrap; align-items: end; gap: .8rem 1.5rem; margin-top: .8rem; }
+.gc-browser-options { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; gap: .75rem 1rem; margin-top: .85rem; padding-top: .75rem; border-top: 1px solid var(--border-soft); }
 .gc-browser-options label { margin: 0; }
-.gc-sort-label { display: flex; flex-direction: column; align-items: start; gap: .35rem; font-size: .85rem; }
-.gc-sort-label select { max-width: 100%; min-width: min(100%, 225px); padding: .5rem; border: 1px solid var(--border); border-radius: 3px; background: var(--input-bg); color: var(--text); font: inherit; }
-.gc-suburb-only-label { display: inline-flex !important; align-items: center; gap: .5rem; padding-bottom: .5rem; font-size: .85rem; cursor: pointer; }
+.gc-sort-label { display: flex; flex-direction: column; align-items: stretch; gap: .35rem; font-size: .85rem; }
+.gc-sort-label select { width: 100%; min-width: 0; padding: .5rem; border: 1px solid var(--border); border-radius: 3px; background: var(--input-bg); color: var(--text); font: inherit; }
+.gc-suburb-only-label { display: inline-flex !important; flex-wrap: wrap; align-items: center; gap: .5rem; padding-bottom: .5rem; font-size: .85rem; cursor: pointer; }
+@media (max-width: 620px) { .gc-browser-options { grid-template-columns: 1fr; } .gc-suburb-only-label { padding-bottom: 0; } }
 .gc-suburb-only-label input { width: 1.1rem; height: 1.1rem; accent-color: var(--link); }
 .gc-sort-label select:focus-visible, .gc-suburb-only-label input:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
 .gc-suburbs a[hidden] { display: none; }
@@ -107,6 +112,6 @@ a.gc-artwork-tile:focus-visible { outline: 3px solid var(--focus); outline-offse
 .gc-no-results button { padding: .5rem .8rem; border: 1px solid var(--border); border-radius: 3px; background: var(--panel); color: var(--text); font: 600 .8rem Montserrat, sans-serif; cursor: pointer; }
 .gc-no-results button:hover { background: var(--interactive-hover); border-color: var(--link); }
 .gc-no-results button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
-.gc-browser-tool-row button:disabled { opacity: .55; cursor: not-allowed; }
+.gc-browser-tool-row button:disabled, .gc-search-share button:disabled { opacity: .55; cursor: not-allowed; }
 .gc-suburb-only-label:has(input:disabled) { opacity: .6; cursor: not-allowed; }
 .gc-copy-search-status { color: var(--muted); font-size: .82rem; }

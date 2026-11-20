@@ -197,7 +197,7 @@ assert.ok(!chirpSearch.includes('class="nest-post-card"'));
 assert.ok(!chirpSearch.includes('class="nest-adventures"'));
 assert.ok(!chirpSearch.includes('/pagefind/pagefind-ui.js'));
 assert.ok(!chirpSearch.includes('little-corella-at-the-local-nursery'));
-const searchLinks = [...chirpSearch.matchAll(/<h2 class="chirp-search-result-title"><a href="([^"]+)" data-nest-highlight>/g)]
+const searchLinks = [...chirpSearch.matchAll(/<h2 class="chirp-search-result-title">\s*<a href="([^"]+)" data-nest-highlight(?:="")?>/g)]
   .map(match => match[1]);
 assert.equal(searchLinks.length, randomPosts.length,
   'search results must include every released Bird article, exactly once');

@@ -123,7 +123,7 @@ assert.equal([...directory.matchAll(/<a href="http:\/\/geocities\.mcretro\.net\/
 assert.match(directory, /data-gc-action="random"/);
 assert.match(directory, /id="gc-directory-top"/);
 assert.match(directory, /href="#gc-directory-top">↑ Back to Top<\/a>/);
-assert.match(directory, /Private archive links are marked ↗/);
+assert.match(directory, /Links marked ↗ open my private/);
 assert.match(home, /class="gc-private-gateway"/);
 assert.match(styles, /\.gc-neighbourhood mark/);
 assert.match(styles, /\.gc-cool-pages a\[target="_blank"\]/);
@@ -194,9 +194,29 @@ assert.match(directory, /data-gc-action="reset"/);
 assert.match(directory, /data-gc-action="copy-search" disabled/);
 assert.match(directory, /id="gc-suburbs-matching-only" type="checkbox" disabled/);
 assert.match(directory, /id="gc-neighbourhood-empty" class="gc-no-results" hidden/);
+const panelStart = directory.indexOf('class="gc-browser-tools" hidden');
+const emptyStart = directory.indexOf('id="gc-neighbourhood-empty"');
+assert.ok(panelStart >= 0 && emptyStart > panelStart,
+  'Browser panel and no-results block must exist in that order');
+const panel = directory.slice(panelStart, emptyStart);
+assert.ok(panel.indexOf('gc-browser-search-row') < panel.indexOf('gc-browser-tool-row'),
+  'Search should be before the actions row');
+assert.ok(panel.indexOf('gc-browser-options') < panel.indexOf('gc-browser-status'),
+  'Sorting and filters should be grouped before results');
+assert.equal([...directory.matchAll(/id="gc-neighbourhood-search"/g)].length, 1);
 assert.match(directory, /data-gc-action="clear-search"/);
 assert.match(script, /matchingOnly\.disabled = !query/);
 assert.match(script, /copySearch\.disabled = !query/);
+assert.match(script, /copySearchGroup\.hidden = !query/);
+assert.match(directory, /class="gc-browser-search-row"/);
+assert.match(directory, /class="gc-browser-tool-row" role="group"/);
+assert.match(directory, /class="gc-browser-status"/);
+assert.match(directory, /id="gc-search-share" hidden/);
+assert.match(styles, /\.gc-search-share\[hidden\] \{ display: none; \}/);
+assert.match(styles, /\.gc-browser-options \{ display: grid; grid-template-columns:/);
+assert.match(styles, /@media \(max-width: 620px\)/);
+assert.match(directory, /aria-label="Random Neighbourhood">🎲 Random<\/button>/);
+assert.match(directory, /Press \/ to search, Esc to clear/);
 assert.match(script, /noResults\.hidden = !\(query && found === 0\)/);
 assert.match(script, /const resetView = \(\) =>/);
 assert.match(script, /sortSelect\.value = 'alphabetical'/);

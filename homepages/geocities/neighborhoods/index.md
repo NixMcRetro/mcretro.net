@@ -13,11 +13,9 @@ title: GeoCities Neighbourhoods
 
 # Visit the GeoCities Neighbourhoods
 
-GeoCities members, known as Homesteaders, built their homepages in themed neighbourhoods. I restored this directory from the original GeoCities rebuild frontend, including **all 41 neighbourhoods**, their vintage buttons, descriptions, listed suburbs, and the historical population counts.
+GeoCities members, known as Homesteaders, built homepages in themed neighbourhoods. I restored **all 41 neighbourhoods** from my original rebuild frontend, including their vintage buttons, descriptions, and listed suburbs. The historic total of **298,559 Homesteaders** comes from that reconstruction, **not current measurements** of available websites. Some original sites were never preserved.
 
-The directory recorded a total of **298,559 Homesteaders**. These are counts from my historic reconstruction, **not current measurements** of available websites. Some original sites were never preserved.
-
-**The directory and artwork are public.** Select a neighbourhood to see its suburb names. Private archive links are marked ↗ and open in a new tab; they only work on a computer configured to reach my local `geocities.mcretro.net` server. No archived personal homepages are served from McRetro.net.
+**The directory and artwork are public.** Select a neighbourhood to browse its suburbs. Links marked ↗ open my private `geocities.mcretro.net` archive in a new tab and only work on computers configured to reach that server. No archived personal homepages are served from McRetro.net.
 
 <div class="gc-directory-stats" role="group" aria-label="Historical Directory Statistics">
   <span><strong>41</strong> neighbourhoods</span>
@@ -27,14 +25,14 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <div class="gc-browser-tools" hidden>
   <label for="gc-neighbourhood-search">Find a Neighbourhood or Suburb</label>
-  <div class="gc-browser-tool-row">
+  <div class="gc-browser-search-row">
     <input id="gc-neighbourhood-search" type="search" autocomplete="off" placeholder="Try Area51, Alien, Tokyo..." aria-controls="gc-neighbourhood-list" aria-describedby="gc-neighbourhood-hint">
+  </div>
+  <div class="gc-browser-tool-row" role="group" aria-label="Directory actions">
     <button type="button" data-gc-action="expand">Expand All</button>
     <button type="button" data-gc-action="collapse">Collapse All</button>
-    <button type="button" data-gc-action="random">Random Neighbourhood</button>
+    <button type="button" data-gc-action="random" aria-label="Random Neighbourhood">🎲 Random</button>
     <button type="button" data-gc-action="reset">Reset View</button>
-    <button type="button" data-gc-action="copy-search" disabled>Copy Search Link</button>
-    <span class="gc-copy-search-status" id="gc-copy-search-status" role="status" aria-live="polite"></span>
   </div>
   <div class="gc-browser-options">
     <label class="gc-sort-label" for="gc-neighbourhood-sort">Sort Neighbourhoods
@@ -47,11 +45,17 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
       </select>
     </label>
     <label class="gc-suburb-only-label" for="gc-suburbs-matching-only">
-      <input id="gc-suburbs-matching-only" type="checkbox" disabled> Show Only Matching Suburbs
+      <input id="gc-suburbs-matching-only" type="checkbox" disabled> Only Matching Suburbs
     </label>
   </div>
-  <p id="gc-neighbourhood-hint" class="gc-browser-hint">Press / to search, or Esc to clear. Searches update the URL. Matching Suburbs hides other suburbs when suburb names match.</p>
-  <output id="gc-neighbourhood-results" aria-live="polite" aria-atomic="true">Showing all 41 neighbourhoods.</output>
+  <div class="gc-browser-status">
+    <output id="gc-neighbourhood-results" aria-live="polite" aria-atomic="true">Showing all 41 neighbourhoods.</output>
+    <div class="gc-search-share" id="gc-search-share" hidden>
+      <button type="button" data-gc-action="copy-search" disabled>Copy Search Link</button>
+      <span class="gc-copy-search-status" id="gc-copy-search-status" role="status" aria-live="polite"></span>
+    </div>
+  </div>
+  <p id="gc-neighbourhood-hint" class="gc-browser-hint">Press / to search, Esc to clear. Searches update the URL.</p>
 </div>
 
 <div id="gc-neighbourhood-empty" class="gc-no-results" hidden>

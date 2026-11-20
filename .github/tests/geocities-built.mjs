@@ -45,6 +45,14 @@ for (const heading of ['Project Updates', 'Contemporary GeoCities Headlines']) {
     'GeoCities news heading lost Title Case: ' + heading);
 }
 
+// Both original homepage GIFs must use the existing centred layout helper.
+for (const filename of ['mai_mast.gif', 'welcome.gif']) {
+  assert.match(home, new RegExp('<figure class="center">\\s*<img[^>]*' + filename.replace('.', '\\.') + '[^>]*>', 'i'),
+    'GeoCities image is not centred: ' + filename);
+}
+assert.doesNotMatch(home, /<figure class="aligncenter">/,
+  'Unsupported aligncenter class reintroduced');
+
 const directory = read('neighborhoods/index.html');
 assert.match(directory, /<strong>all 41 neighbourhoods<\/strong>/i);
 assert.match(directory, /<strong>298,559 Homesteaders<\/strong>/i);

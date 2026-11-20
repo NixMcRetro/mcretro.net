@@ -3,7 +3,7 @@ layout: default
 title: GeoCities Rebuild
 ---
 
-<figure class="aligncenter">
+<figure class="center">
   <img src="/homepages/geocities/images/main/mai_mast.gif" alt="Original GeoCities masthead, with a city skyline and the words Welcome to Our Community." width="420" height="60" loading="eager">
 </figure>
 
@@ -57,7 +57,7 @@ These are my articles, worklogs, demonstrations, and occasional lessons in how n
 
 The masthead, welcome graphic, and badge on this page come from my old GeoCities rebuild frontend. They are presented as their original GIF files, including the animated badge, rather than being recreated or replaced with modern artwork.
 
-<figure class="aligncenter">
+<figure class="center">
   <img src="/homepages/geocities/images/main/welcome.gif" alt="Original Welcome to GeoCities graphic." width="173" height="40" loading="lazy">
 </figure>
 

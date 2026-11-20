@@ -5,7 +5,7 @@
   var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : { matches: false };
   var sessionChoice = null;
   var themes = ['light', 'dark', 'bird'];
-  var actionLabels = { light: 'Switch to Dark Mode', dark: 'Visit Channel Chirp', bird: 'Return to Light Mode' };
+  var actionLabels = { light: 'Switch to Dark Mode', dark: 'Visit Channel Chirp', bird: 'Switch to Light Mode' };
   var colours = { light: '#FFF8DC', dark: '#191D27', bird: '#424242' };
   var root = document.documentElement;
   var landing = root.getAttribute('data-chirp-landing') === 'true';

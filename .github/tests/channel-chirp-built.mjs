@@ -42,6 +42,18 @@ assert.match(conure, /data-chirp-article="true"/);
 assert.match(conure, /post-navigation--bird/);
 assert.match(conure, /post-navigation--mcretro/);
 
+const preening = read('preening-party/index.html');
+assert.match(preening, /class="post-navigation post-navigation--bird nest-post-navigation"/,
+  'bird posts retain independent conure chronology');
+assert.match(preening, /<span class="nav-label">OLDER ADVENTURE<\/span>/,
+  'Bird previous-post label is shortened');
+assert.match(preening, /<span class="nav-label">NEWER ADVENTURE<\/span>/,
+  'Bird next-post label is shortened');
+assert.doesNotMatch(preening, /OLDER CONURE ADVENTURE|NEWER CONURE ADVENTURE/);
+assert.match(preening, /<span class="nav-label">PREVIOUS<\/span>/,
+  'standard McRetro post navigation remains intact');
+
+
 for (const [slug, label] of [
   ['adventures', 'Adventures'], ['about', 'About'],
   ['soundborb', 'Soundborb']
@@ -52,7 +64,7 @@ for (const [slug, label] of [
 // Exactly five Bird links appear in this order, with the text-only Korataki title.
 const birdNavigation = [...pages.nest.matchAll(/<a class="nav-mode-bird"[^>]*>([\s\S]*?)<\/a>/g)];
 assert.deepEqual(birdNavigation.map(item => item[1].match(/class="nav-text">([^<]+)</)?.[1]),
-  ['The Nest', 'Adventures', 'Soundborb', 'Random', 'About']);
+  ['Home', 'Adventures', 'Soundborb', 'Random', 'About']);
 assert.match(pages.nest, /class="bird-brand-name">Channel Chirp<\/span>/);
 assert.doesNotMatch(pages.nest, /bird-brand-mark/);
 assert.match(pages.nest, /href="\/chirp\/random\/" data-chirp-random-link(?:="")?/);
@@ -79,6 +91,16 @@ assert.doesNotMatch(corella,
 assert.doesNotMatch(pages.nest,
   /class="nav-mode-bird active" href="\/chirp\/adventures\/"/);
 assert.match(birdLayout, /a\.nav-mode-bird\.active\s*\{\s*font-weight:\s*700;/);
+
+const birdPagination = birdLayout.match(
+  /:root\[data-theme="bird"\] \.chirp-blog-list \+ \.pagination-wrapper \{([^}]+)\}/);
+assert.ok(birdPagination, 'Bird pagination has its own scoped layout');
+assert.match(birdPagination[1], /border-top:\s*3px solid #29A518;/);
+assert.match(birdPagination[1], /padding:\s*0 \.8rem \.4rem;/,
+  'pagination highlights must touch the green rule with no top gap');
+assert.match(birdLayout, /\.chirp-blog-list \+ \.pagination-wrapper \.pagination-bar \{\s*border:\s*0;/,
+  'avoid a second rule between the green border and tiles');
+
 
 assert.match(pages.timeline, /Flock Timeline|Timeline/, 'Timeline remains available at its own URL');
 assert.match(pages.nest, /class="chirp-home-panel"/);

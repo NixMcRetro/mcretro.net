@@ -36,6 +36,11 @@ The original neighbourhood directory, rebuild news, and Cool Pages list are now 
     <strong>Cool Pages</strong>
     <small>11 interesting websites I picked from the original archive</small>
   </a>
+  <a class="gc-home-card" href="/homepages/geocities/artwork/">
+    <span class="gc-home-card-art gc-home-card-badges"><img src="/homepages/geocities/images/icons/area51.gif" width="88" height="31" alt="" loading="lazy"><img src="/homepages/geocities/images/icons/tokyo88.gif" width="88" height="31" alt="" loading="lazy"><img src="/homepages/geocities/images/icons/ybutton.gif" width="88" height="31" alt="" loading="lazy"></span>
+    <strong>Original Artwork Gallery</strong>
+    <small>Preserved GeoCities GIF buttons, banners, and graphics</small>
+  </a>
 </nav>
 
 ## Enter My Private GeoCities Archive

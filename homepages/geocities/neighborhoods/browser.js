@@ -83,7 +83,7 @@
     const descriptionText = description?.textContent || '';
 
     return {
-      section, details, name, nameElement, suburbs, description, descriptionText,
+      section, details, body, name, nameElement, suburbs, description, descriptionText,
       searchText: normalise([section.id, heading.textContent, descriptionText,
         ...suburbs.map(item => item.original)].join(' '))
     };
@@ -117,6 +117,95 @@
       : 'Showing all ' + groups.length + ' neighbourhoods.';
   };
 
+
+  // Add public, in-page navigation to each neighbourhood, without changing
+  // the original artwork, text, suburb list, or any private archive link.
+  const byId = new Map(groups.map(group => [group.section.id, group]));
+  const makeLink = (id, text) => {
+    const anchor = document.createElement('a');
+    anchor.href = '#' + id;
+    anchor.textContent = text;
+    return anchor;
+  };
+
+  groups.forEach((group, index) => {
+    const previous = groups[(index - 1 + groups.length) % groups.length];
+    const next = groups[(index + 1) % groups.length];
+    const nav = document.createElement('nav');
+    nav.className = 'gc-neighbourhood-tour';
+    nav.setAttribute('aria-label', 'Navigate from ' + group.name);
+    nav.appendChild(makeLink(previous.section.id, '← Previous: ' + previous.name));
+
+    const share = document.createElement('span');
+    share.className = 'gc-share-neighbourhood';
+    const copy = document.createElement('button');
+    copy.type = 'button';
+    copy.textContent = 'Copy Link';
+    copy.setAttribute('aria-label', 'Copy public link to ' + group.name);
+    const feedback = document.createElement('span');
+    feedback.className = 'gc-copy-status';
+    feedback.setAttribute('role', 'status');
+    share.append(copy, feedback);
+    nav.appendChild(share);
+
+    copy.addEventListener('click', async () => {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('q');
+      url.hash = group.section.id;
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(url.href);
+        } else {
+          const temporary = document.createElement('textarea');
+          temporary.value = url.href;
+          temporary.setAttribute('readonly', '');
+          temporary.style.position = 'fixed';
+          temporary.style.opacity = '0';
+          document.body.appendChild(temporary);
+          temporary.select();
+          const success = document.execCommand('copy');
+          temporary.remove();
+          if (!success) throw new Error('Copy command unavailable');
+        }
+        feedback.textContent = 'Link copied.';
+      } catch {
+        feedback.textContent = 'Copy unavailable. Use the section link in the address bar.';
+      }
+    });
+
+    nav.appendChild(makeLink(next.section.id, 'Next: ' + next.name + ' →'));
+    group.body.appendChild(nav);
+  });
+
+  // Preserve unrelated query parameters, but keep the directory's q= search
+  // bookmarkable. Typing replaces the URL without adding browser-history spam.
+  const syncQuery = (clearHash = false) => {
+    const url = new URL(window.location.href);
+    const query = input.value.trim();
+    if (query) url.searchParams.set('q', query);
+    else url.searchParams.delete('q');
+    if (clearHash) url.hash = '';
+    window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+  };
+
+  // A linked neighbourhood takes priority over an old search filter.
+  // It also opens on a direct page load (gallery link, bookmark, or reload).
+  const revealHash = () => {
+    let id;
+    try { id = decodeURIComponent(window.location.hash.slice(1)); }
+    catch { return; }
+    const target = byId.get(id);
+    if (!target) return;
+    if (input.value) {
+      input.value = '';
+      filter();
+      syncQuery(false);
+    }
+    target.section.hidden = false;
+    target.details.open = true;
+    window.requestAnimationFrame(() => target.section.scrollIntoView({ block: 'start' }));
+  };
+
   const toggle = (state) => {
     groups.forEach(group => {
       if (!group.section.hidden) group.details.open = state;
@@ -129,6 +218,7 @@
     // Search should not limit the random choice. Include every neighbourhood.
     input.value = '';
     filter();
+    syncQuery(true);
     const pool = groups.length - (lastRandom >= 0 && groups.length > 1 ? 1 : 0);
     let index = Math.floor(Math.random() * pool);
     if (lastRandom >= 0 && groups.length > 1 && index >= lastRandom) index++;
@@ -144,10 +234,52 @@
     picked.details.querySelector('summary')?.focus({ preventScroll: true });
   };
 
-  input.addEventListener('input', filter);
+  input.addEventListener('input', () => {
+    filter();
+    syncQuery(true);
+  });
   expand.addEventListener('click', () => toggle(true));
   collapse.addEventListener('click', () => toggle(false));
   random.addEventListener('click', pickRandom);
+
+  // The jump list also works when a visitor clicks the same hash twice.
+  list.addEventListener('click', (event) => {
+    const anchor = event.target.closest('a[href^="#"]');
+    const group = anchor && byId.get(anchor.getAttribute('href').slice(1));
+    if (group) group.details.open = true;
+  });
+  jump?.addEventListener('click', (event) => {
+    const anchor = event.target.closest('a[href^="#"]');
+    const group = anchor && byId.get(anchor.getAttribute('href').slice(1));
+    if (group) group.details.open = true;
+  });
+  window.addEventListener('hashchange', revealHash);
+  window.addEventListener('popstate', () => {
+    input.value = new URL(window.location.href).searchParams.get('q') || '';
+    filter();
+    revealHash();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.ctrlKey || event.metaKey || event.altKey) return;
+    if (event.key === 'Escape' && document.activeElement === input) {
+      event.preventDefault();
+      input.value = '';
+      filter();
+      syncQuery(false);
+      return;
+    }
+    if (event.key !== '/' || event.repeat) return;
+    const active = document.activeElement;
+    if (active?.isContentEditable || active?.matches('input, textarea, select, [contenteditable]')) return;
+    event.preventDefault();
+    input.focus();
+    input.select();
+  });
+
+  // Initial URL state can be shared and refreshed without losing the filter.
+  input.value = new URL(window.location.href).searchParams.get('q') || '';
   toolbar.hidden = false;
   filter();
+  revealHash();
 })();

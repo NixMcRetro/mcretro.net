@@ -11,6 +11,7 @@ const pages = [
   ['neighborhoods/index.html', 'Visit the GeoCities Neighbourhoods'],
   ['news/index.html', 'News from the GeoCities Rebuild'],
   ['cool/index.html', 'Cool Pages'],
+  ['artwork/index.html', 'Original GeoCities Artwork Gallery'],
   ...['2021-09-05', '2021-09-19', '2021-10-09', '2021-10-31', '2022-01-03']
     .map(date => ['news/' + date + '.html', 'GeoCities Rebuild News: ' + date])
 ];
@@ -55,7 +56,7 @@ assert.doesNotMatch(home, /<figure class="aligncenter">/,
 
 // The three public destinations use local links and actual preserved GIFs.
 assert.match(home, /<nav class="gc-home-nav"[^>]*>/);
-for (const route of ['neighborhoods/', 'news/', 'cool/']) {
+for (const route of ['neighborhoods/', 'news/', 'cool/', 'artwork/']) {
   assert.match(home, new RegExp('<a class="gc-home-card" href="/homepages/geocities/' + route + '">'));
 }
 const styles = read('geocities.css');
@@ -103,7 +104,7 @@ assert.match(directory, /class="gc-browser-tools" hidden/);
 assert.match(directory, /id="gc-neighbourhood-list"/);
 assert.match(directory, /\/homepages\/geocities\/neighborhoods\/browser\.js/);
 const script = read('neighborhoods/browser.js');
-assert.match(script, /addEventListener\('input', filter\)/);
+assert.match(script, /addEventListener\('input', \(\) =>/);
 assert.match(script, /addEventListener\('click', \(\) => toggle\(true\)\)/);
 assert.match(script, /addEventListener\('click', \(\) => toggle\(false\)\)/);
 assert.match(script, /preSearchOpen = groups\.map/);
@@ -130,5 +131,35 @@ assert.match(script, /group\.suburbs\.forEach\(item => highlightText/);
 assert.match(script, /random\.addEventListener\('click', pickRandom\)/);
 assert.match(script, /lastRandom = index/);
 assert.match(script, /prefers-reduced-motion: reduce/);
+// The public-only artwork gallery must use existing local files and link
+// back to the public directory rather than archived personal homepages.
+const gallery = read('artwork/index.html');
+const galleryImages = [...gallery.matchAll(/<img\b[^>]+src="(\/homepages\/geocities\/[^"]+\.gif)"/g)]
+  .map(match => match[1]);
+assert.equal(galleryImages.length, 49, 'Expected 41 buttons, six frontend graphics and two banners');
+for (const img of galleryImages) {
+  assert.ok(existsSync(path.join(root, img.slice(1))), 'Missing gallery GIF: ' + img);
+}
+assert.equal([...gallery.matchAll(/class="gc-artwork-tile" href="\/homepages\/geocities\/neighborhoods\/#/g)].length, 43);
+assert.match(gallery, /href="\/homepages\/geocities\/neighborhoods\/#Area51"/);
+assert.doesNotMatch(gallery, /href="http:\/\/geocities\.mcretro\.net/);
+assert.match(directory, /<a href="\/homepages\/geocities\/artwork\/">Artwork Gallery<\/a>/);
+assert.match(styles, /\.gc-artwork-grid \{/);
+assert.match(styles, /\.gc-neighbourhood-tour \{/);
+assert.match(script, /const byId = new Map\(/);
+assert.match(script, /window\.addEventListener\('hashchange', revealHash\)/);
+assert.match(script, /navigator\.clipboard\?\.writeText/);
+assert.match(script, /'Copy Link'/);
+assert.match(script, /'← Previous: '/);
+assert.match(script, /'Next: '/);
+assert.match(script, /url\.searchParams\.set\('q', query\)/);
+assert.match(script, /window\.history\.replaceState/);
+assert.match(script, /event\.key === 'Escape'/);
+assert.match(script, /event\.key !== '\/'/);
+assert.match(script, /random\.addEventListener\('click', pickRandom\)/);
+// Parse the standalone browser script as JavaScript, not merely source text.
+import { execFileSync } from 'node:child_process';
+execFileSync(process.execPath, ['--check', path.join(root, base, 'neighborhoods/browser.js')]);
+
 console.log('PASS: ' + pages.length +
   ' GeoCities pages rendered as HTML; original artwork and private gateway preserved.');

@@ -177,6 +177,44 @@ assert.ok(!exists('chirp/flock/index.html'), 'former /chirp/flock/ must not exis
 assert.doesNotMatch(pages.about, /redirect_from:|http-equiv="refresh"/i,
   'About is a native route, not a redirect');
 assert.match(pages.search, /id="nest-search-input"/);
+
+// Bird search matches McRetro's compact result hierarchy while staying
+// completely separate from the global Pagefind and unreleased article index.
+const chirpSearch = pages.search.split('<main class="content-area">')[1]?.split('</main>')[0];
+assert.ok(chirpSearch, 'Bird search must have its own main content');
+assert.ok(chirpSearch.includes('class="chirp-search-page"'));
+assert.ok(chirpSearch.includes('id="chirp-search-heading">Find-a-Squawk</h1>'));
+assert.ok(chirpSearch.includes('src="/assets/images/search/search.gif"'));
+assert.ok(chirpSearch.includes('role="search" aria-label="Search Channel Chirp"'));
+assert.ok(chirpSearch.includes('id="nest-search-input" name="q" type="search"'));
+assert.ok(chirpSearch.includes('id="nest-search-clear"'));
+assert.ok(chirpSearch.includes('id="nest-search-more"'));
+assert.ok(chirpSearch.includes('id="nest-search-status"'));
+assert.ok(chirpSearch.includes('/assets/js/channel-chirp-filter.js'));
+assert.ok(!chirpSearch.includes('class="chirp-page-intro"'));
+assert.ok(!chirpSearch.includes('class="nest-year-title"'));
+assert.ok(!chirpSearch.includes('class="nest-post-card"'));
+assert.ok(!chirpSearch.includes('class="nest-adventures"'));
+assert.ok(!chirpSearch.includes('/pagefind/pagefind-ui.js'));
+assert.ok(!chirpSearch.includes('little-corella-at-the-local-nursery'));
+const searchLinks = [...chirpSearch.matchAll(/<h2 class="chirp-search-result-title"><a href="([^"]+)" data-nest-highlight>/g)]
+  .map(match => match[1]);
+assert.equal(searchLinks.length, randomPosts.length,
+  'search results must include every released Bird article, exactly once');
+assert.deepEqual(searchLinks.slice().sort(), randomPosts.map(post => post.url).sort(),
+  'search must exclude unrelated and unreleased McRetro posts');
+assert.equal((chirpSearch.match(/class="chirp-search-result-excerpt" data-nest-highlight/g) || []).length,
+  randomPosts.length, 'every result has a searchable excerpt');
+assert.equal((chirpSearch.match(/class="chirp-search-result-date"/g) || []).length,
+  randomPosts.length, 'every result has its own date');
+assert.ok(birdLayout.includes(':root[data-theme="bird"] .chirp-search-page {'));
+assert.ok(birdLayout.includes('background: #F7FBF5;'), 'result hover card is distinct');
+assert.ok(birdLayout.includes('.chirp-search-result mark {'), 'Bird search matches are highlighted');
+assert.ok(birdLayout.includes('.chirp-search-result[hidden],'),
+  'hidden search results stay hidden regardless of CSS rules');
+assert.ok(pages.search.includes('channel-chirp.css?v=20261120-chirp-search'),
+  'search loads the newest Bird search stylesheet');
+
 assert.match(pages.soundborb, /Migration in progress/);
 assert.doesNotMatch(pages.soundborb, /data-manifest|data-audio-root/);
 assert.match(pages.diet, /Our Diet/);

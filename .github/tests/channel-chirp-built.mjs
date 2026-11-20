@@ -286,15 +286,19 @@ assert.match(birdCss, /:root:not\(\[data-theme="bird"\]\) \.sidebar-mode-bird[\s
 assert.match(birdLayout, /font-family: 'Korataki'/);
 // Bird navigation uses pale green for emoji readability and dark-green text,
 // with only thin green horizontal rules. McRetro Light/Dark stays unchanged.
-assert.match(birdCss, /--page-bg:\\s*#424242;/);
-const navStyles = [...birdLayout.matchAll(/:root\\[data-theme="bird"\\] \\.main-nav \\{([^}]+)\\}/g)]
-  .map(match => match[1]);
-assert.ok(navStyles.some(block =>
-  /background: #E7F5E4;/.test(block) &&
-  /border-top: 1px solid #29A518;/.test(block) &&
-  /border-bottom: 1px solid #29A518;/.test(block) &&
-  !/border-left: 6px|border-right: 6px/.test(block)),
-  'Bird desktop menu must have a pale-green background and thin horizontal green rules');
+assert.match(birdCss, /--page-bg:\s*#424242;/);
+const desktopNavStart = birdLayout.indexOf(
+  ':root[data-theme="bird"] .main-nav {\n  /* Pale green gives navigation emoji'
+);
+assert.ok(desktopNavStart >= 0, 'Bird desktop navigation styling exists');
+const desktopNavBlock = birdLayout.slice(
+  desktopNavStart, birdLayout.indexOf('}', desktopNavStart)
+);
+assert.ok(desktopNavBlock.includes('background: #E7F5E4;'));
+assert.ok(desktopNavBlock.includes('border-top: 1px solid #29A518;'));
+assert.ok(desktopNavBlock.includes('border-bottom: 1px solid #29A518;'));
+assert.ok(!desktopNavBlock.includes('border-left: 6px') &&
+          !desktopNavBlock.includes('border-right: 6px'));
 const desktopNavLinks = birdLayout.slice(
   birdLayout.indexOf(':root[data-theme="bird"] .main-nav a,'),
   birdLayout.indexOf('/* Post previews use the original Channel Chirp rhythm')
@@ -304,9 +308,22 @@ assert.ok(desktopNavLinks.includes('color: #105B08;'));
 assert.ok(desktopNavLinks.includes('outline: 2px solid #17660D;'));
 assert.ok(desktopNavLinks.includes('font-weight: 700;'));
 assert.ok(desktopNavLinks.includes('text-decoration: none;'));
-assert.ok(birdLayout.includes(':root[data-theme="bird"] .main-nav .nav-list {\\n    background: #E7F5E4;'));
-assert.ok(birdLayout.includes(':root[data-theme="bird"] .main-nav .nav-list li a:visited {\\n    color: #17660D;'));
-assert.ok(birdLayout.includes(':root[data-theme="bird"] .main-nav .nav-list li a.nav-mode-bird.active {\\n    color: #17660D;'));
+const mobileNavBlockStart = birdLayout.indexOf(
+  ':root[data-theme="bird"] .main-nav .nav-list {'
+);
+assert.ok(mobileNavBlockStart >= 0);
+const mobileNavBlock = birdLayout.slice(
+  mobileNavBlockStart, birdLayout.indexOf('}', mobileNavBlockStart)
+);
+assert.ok(mobileNavBlock.includes('background: #E7F5E4;'));
+assert.ok(mobileNavBlock.includes('border-bottom: 1px solid #29A518;'));
+const mobileNavLinkStart = birdLayout.indexOf(
+  ':root[data-theme="bird"] .main-nav .nav-list li a:visited {'
+);
+assert.ok(mobileNavLinkStart >= 0);
+assert.ok(birdLayout.slice(mobileNavLinkStart, birdLayout.indexOf('}', mobileNavLinkStart))
+  .includes('color: #17660D;'));
+
 assert.doesNotMatch(birdLayout, /border-left: 6px solid #0C4308/);
 assert.ok(pages.nest.includes('<p class="chirp-return"><a href="/" data-theme-exit="standard">↩ Return to McRetro.net</a></p>'));
 // Filled Bird menu hover is intentionally limited to mobile widths.

@@ -15,7 +15,7 @@ These are the dated updates from my original 2021-2022 GeoCities frontend. Back 
 
 The updates are preserved as historical notes. References to the old Tor service, archive search, or public hosting describe features of the **former rebuild**, not services operating today.
 
-## Project updates
+## Project Updates
 
 - **[2022-01-03](/homepages/geocities/news/2022-01-03.html)**: Fixed Darknet Jumping (historical note)
 - **[2021-10-31](/homepages/geocities/news/2021-10-31.html)**: Future ideas
@@ -23,7 +23,7 @@ The updates are preserved as historical notes. References to the old Tor service
 - **[2021-09-19](/homepages/geocities/news/2021-09-19.html)**: Website Update #2
 - **[2021-09-05](/homepages/geocities/news/2021-09-05.html)**: Website Update #1
 
-## Contemporary GeoCities headlines
+## Contemporary GeoCities Headlines
 
 My original news index also kept a short record of these historical Yahoo! announcements. Their titles and dates are included here for context, without republishing the full archived press-release texts.
 

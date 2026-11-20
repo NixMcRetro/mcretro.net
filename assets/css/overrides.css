@@ -2001,13 +2001,13 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
 .goodies-floppy-frame {
   box-sizing: border-box;
   max-width: 100%;
-  padding: 0.75rem;
-  border: 2px solid #333;
+  padding: 0.5rem;
+  border: 1px solid #333;
   background: #c0c0c0;
 }
 .goodies-floppy-frame img {
   display: block;
-  width: 544px;
+  width: 408px;
   max-width: 100%;
   height: auto;
   image-rendering: pixelated;

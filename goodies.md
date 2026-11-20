@@ -9,7 +9,7 @@ title: Goodies
   <div class="goodies-floppy-frame">
     <img src="/assets/images/goodies/filecopy.gif" width="272" height="60" alt="Animated Windows file copy graphic, with sheets of paper moving between two yellow folders">
   </div>
-  <figcaption>Don't copy that floppy!</figcaption>
+  <figcaption class="media-caption"><em>Don't copy that floppy!</em></figcaption>
 </figure>
 
 Welcome to the Goodies page! This is where I keep all sorts of bits and pieces that don't quite fit anywhere else. There's a mix of old favourites, restored pages and experiments I've tinkered with over the years.

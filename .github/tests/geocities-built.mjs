@@ -53,6 +53,17 @@ for (const filename of ['mai_mast.gif', 'welcome.gif']) {
 assert.doesNotMatch(home, /<figure class="aligncenter">/,
   'Unsupported aligncenter class reintroduced');
 
+// The three public destinations use local links and actual preserved GIFs.
+assert.match(home, /<nav class="gc-home-nav"[^>]*>/);
+for (const route of ['neighborhoods/', 'news/', 'cool/']) {
+  assert.match(home, new RegExp('<a class="gc-home-card" href="/homepages/geocities/' + route + '">'));
+}
+const styles = read('geocities.css');
+assert.match(styles, /gc-home-nav/);
+assert.match(styles, /\.gc-neighbourhood \{[^}]+var\(--panel\)[^}]+var\(--text\)/);
+assert.match(styles, /gc-browser-tools\[hidden\]/);
+assert.doesNotMatch(styles, /background:\s*#f1f1f1/i);
+
 const directory = read('neighborhoods/index.html');
 assert.match(directory, /<strong>all 41 neighbourhoods<\/strong>/i);
 assert.match(directory, /<strong>298,559 Homesteaders<\/strong>/i);
@@ -78,5 +89,24 @@ for (const asset of [
 }
 assert.ok(!existsSync(path.join(root, base, 'news/2011-04-29.mp3')),
   'Archive Team interview must not be included');
+const privateLinks = [
+  ...directory.matchAll(/<a\b[^>]*href="http:\/\/geocities\.mcretro\.net\/[^"]+"[^>]*>/g),
+  ...cool.matchAll(/<a\b[^>]*href="http:\/\/geocities\.mcretro\.net\/[^"]+"[^>]*>/g)
+].map(match => match[0]);
+assert.ok(privateLinks.length >= 760, 'Private archive links are missing');
+for (const anchor of privateLinks) {
+  assert.match(anchor, /\btarget="_blank"/);
+  assert.match(anchor, /\brel="noopener noreferrer nofollow"/);
+}
+assert.match(directory, /id="gc-neighbourhood-search"/);
+assert.match(directory, /class="gc-browser-tools" hidden/);
+assert.match(directory, /id="gc-neighbourhood-list"/);
+assert.match(directory, /\/homepages\/geocities\/neighborhoods\/browser\.js/);
+const script = read('neighborhoods/browser.js');
+assert.match(script, /addEventListener\('input', filter\)/);
+assert.match(script, /addEventListener\('click', \(\) => toggle\(true\)\)/);
+assert.match(script, /addEventListener\('click', \(\) => toggle\(false\)\)/);
+assert.match(script, /preSearchOpen = groups\.map/);
+assert.match(script, /toolbar\.hidden = false/);
 console.log('PASS: ' + pages.length +
   ' GeoCities pages rendered as HTML; original artwork and private gateway preserved.');

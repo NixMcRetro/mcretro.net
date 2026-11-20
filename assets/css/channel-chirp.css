@@ -640,7 +640,7 @@
   border-radius: 0;
   box-shadow: none;
   margin: 0 0 1rem;
-  padding: .8rem 0 1.3rem;
+  padding: 0 0 1.3rem;
 }
 :root[data-theme="bird"] .sidebar-mode-bird .widgettitle {
   color: #FFFFFF;

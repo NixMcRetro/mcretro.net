@@ -27,7 +27,7 @@ pagefind: false
     {% for post in chirp_posts %}
     <article class="chirp-search-result" data-nest-post>
       <h2 class="chirp-search-result-title"><a href="{{ post.url | relative_url }}" data-nest-highlight>{{ post.title | escape }}</a></h2>
-      <p class="chirp-search-result-excerpt" data-nest-highlight>{{ post.share_description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 220 | escape }}</p>
+      <p class="chirp-search-result-excerpt" data-nest-highlight>{{ post.share_description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 170 | escape }}</p>
       <p class="chirp-search-result-date">
         <time datetime="{{ post.date | date_to_xmlschema }}">
           {% assign d = post.date | date: '%-d' | plus: 0 %}

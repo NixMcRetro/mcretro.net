@@ -46,3 +46,14 @@
 .gc-browser-tool-row input:focus-visible, .gc-browser-tool-row button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 #gc-neighbourhood-results { display: block; margin-top: .65rem; font-size: .88rem; color: var(--muted); }
 @media (max-width: 550px) { .gc-home-nav { grid-template-columns: 1fr; } .gc-browser-tool-row input { flex-basis: 100%; max-width: none; } }
+
+/* Extra directory controls; only the GeoCities directory loads these rules. */
+.gc-directory-stats { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1.4rem; margin: 1.1rem 0; padding: .7rem .9rem; border: 1px solid var(--border-soft); border-radius: 4px; background: var(--panel); color: var(--text); font-size: .88rem; }
+.gc-directory-stats strong { font-size: 1.12em; font-variant-numeric: tabular-nums; }
+.gc-neighbourhood mark { background: #FFE389; color: #171717; box-decoration-break: clone; border-radius: 2px; padding: 0 .06em; }
+:root[data-theme="dark"] .gc-neighbourhood mark { background: #BCE9A9; color: #111A13; }
+.gc-neighbourhood a[target="_blank"][href^="http://geocities.mcretro.net/"]::after,
+.gc-cool-pages a[target="_blank"][href^="http://geocities.mcretro.net/"]::after,
+.gc-private-gateway[target="_blank"]::after { content: " ↗"; font-size: .82em; white-space: nowrap; }
+.gc-back-to-top { margin: 1.2rem 0 .8rem; text-align: right; }
+.gc-back-to-top a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }

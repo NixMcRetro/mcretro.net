@@ -40,7 +40,7 @@ The original neighbourhood directory, rebuild news, and Cool Pages list are now 
 
 ## Enter My Private GeoCities Archive
 
-**<a href="http://geocities.mcretro.net/" target="_blank" rel="noopener noreferrer nofollow">Enter GeoCities</a>** - my personal gateway to the full historical archive. The archived sites themselves are not hosted publicly. This link only works on a computer configured to resolve the hostname to my private intranet server, and only when that server is running.
+**<a class="gc-private-gateway" href="http://geocities.mcretro.net/" target="_blank" rel="noopener noreferrer nofollow">Enter GeoCities</a>** - my personal gateway to the full historical archive. The archived sites themselves are not hosted publicly. This link only works on a computer configured to resolve the hostname to my private intranet server, and only when that server is running.
 
 The public directory and Cool Pages list also contain links to specific private-archive paths for my own use. Other visitors can browse those lists and their original artwork, but those private destinations are not public services.
 

@@ -8,6 +8,7 @@ title: GeoCities Neighbourhoods
 
 [← GeoCities Rebuild](/homepages/geocities/) · [Project News](/homepages/geocities/news/) · [Cool Pages](/homepages/geocities/cool/)
 
+<div id="gc-directory-top"></div>
 <div class="gc-art"><img src="/homepages/geocities/images/neighborhoods/neighborhoods.gif" width="430" height="60" alt="Visit these GeoCities Neighbourhoods" loading="eager"></div>
 
 # Visit the GeoCities Neighbourhoods
@@ -16,7 +17,13 @@ GeoCities members, known as Homesteaders, built their homepages in themed neighb
 
 The directory recorded a total of **298,559 Homesteaders**. These are counts from my historic reconstruction, **not current measurements** of available websites. Some original sites were never preserved.
 
-**The directory and artwork are public.** Select a neighbourhood to see its suburb names. Links marked as private archive destinations open in a new tab, and only work on a computer configured to reach my local `geocities.mcretro.net` server. No archived personal homepages are served from McRetro.net.
+**The directory and artwork are public.** Select a neighbourhood to see its suburb names. Private archive links are marked ↗ and open in a new tab; they only work on a computer configured to reach my local `geocities.mcretro.net` server. No archived personal homepages are served from McRetro.net.
+
+<div class="gc-directory-stats" role="group" aria-label="Historical Directory Statistics">
+  <span><strong>41</strong> neighbourhoods</span>
+  <span><strong>714</strong> suburbs</span>
+  <span><strong>298,559</strong> historical Homesteaders</span>
+</div>
 
 <div class="gc-browser-tools" hidden>
   <label for="gc-neighbourhood-search">Find a Neighbourhood or Suburb</label>
@@ -24,6 +31,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
     <input id="gc-neighbourhood-search" type="search" autocomplete="off" placeholder="Try Area51, Alien, Tokyo..." aria-controls="gc-neighbourhood-list">
     <button type="button" data-gc-action="expand">Expand All</button>
     <button type="button" data-gc-action="collapse">Collapse All</button>
+    <button type="button" data-gc-action="random">Random Neighbourhood</button>
   </div>
   <output id="gc-neighbourhood-results" aria-live="polite" aria-atomic="true">Showing all 41 neighbourhoods.</output>
 </div>
@@ -1282,5 +1290,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 </div>
 
 <p class="gc-credit">The old frontend credited the Wayback Machine for neighbourhood banners and “eighty eight by thirty one” for the image buttons. These original files have been retained as GIFs.</p>
+
+<p class="gc-back-to-top"><a href="#gc-directory-top">↑ Back to Top</a></p>
 
 [Return to the GeoCities project page](/homepages/geocities/)

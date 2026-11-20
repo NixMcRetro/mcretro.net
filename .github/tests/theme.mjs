@@ -538,11 +538,12 @@ test('advisory: Bird filled hover belongs to the expanded mobile menu only', () 
   assert.ok(birdPaleNavStart >= 0 && birdPaleNavEnd > birdPaleNavStart);
   const desktopColour = bird.slice(birdPaleNavStart, birdPaleNavEnd);
   assert.ok(desktopColour.includes('background: #E7F5E4;'));
-  assert.ok(desktopColour.includes('color: #17660D;'));
-  assert.ok(desktopColour.includes('color: #105B08;'));
+  assert.ok(desktopColour.includes('color: #000000;'));
+  assert.ok(!desktopColour.includes('color: #17660D;'));
+  assert.ok(!desktopColour.includes('color: #105B08;'));
   assert.ok(desktopColour.includes('outline: 2px solid #17660D;'));
   assert.ok(mobile.includes('background: #E7F5E4;'));
-  assert.ok(mobile.includes('color: #17660D;'));
+  assert.ok(mobile.includes('color: #000000;'));
 
   assert.ok(mobile.includes('text-decoration: none;'),
     'mobile labels use a filled highlight instead of an underline');

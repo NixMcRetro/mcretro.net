@@ -585,7 +585,6 @@ test('advisory: navigation hover underlines words without bolding or shifting ad
   assert.match(header, /class="nav-mode-bird" href="\/chirp\/random\/" data-chirp-random-link/);
 
   assert.ok(header.includes("page.url contains '/chirp/adventures/' or page.url contains '/chirp/archive/' or page.categories contains 'parrots' and page.channel_chirp != false"), 'Bird Adventures remains active on monthly archives');
-    'Bird Adventures is active for both the roll and released conure articles');
 
   assert.match(header, /class="nav-mode-bird" href="\/chirp\/about\/"[^\n]*<span class="nav-text">About<\/span>/);
   assert.doesNotMatch(header, /class="nav-mode-bird" href="\/chirp\/timeline\//);

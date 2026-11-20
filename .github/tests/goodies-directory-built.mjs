@@ -65,6 +65,7 @@ for (const rawUrl of new Set(authored)) {
 }
 
 // Keep the user-curated historical Cool Links list deduplicated and visible.
+assert.match(source, /Historical Homepages<\/summary>/, 'Historical Homepages accordion heading is missing');
 assert.match(source, /Cool Links<\/summary>/, 'Goodies Cool Links accordion is missing');
 assert.doesNotMatch(source, /Still Under Construction/, 'Obsolete construction accordion remains');
 const coolLinkNames = [
@@ -83,7 +84,9 @@ const coolLinkNames = [
 for (const name of coolLinkNames) {
   assert.equal(source.split('**[' + name + '](').length - 1, 1,
     'Cool Links must contain exactly one entry for ' + name);
-  assert.ok(anchors.some(link => link.text.includes(name)),
+  // Jekyll may encode an apostrophe as an HTML entity or a curly quote.
+  const normaliseApostrophes = text => text.replace(/&#(?:0*39|0*8217);|&#x(?:0*27|0*2019);|&(?:apos|rsquo);|[\u2018\u2019]/gi, "'");
+  assert.ok(anchors.some(link => normaliseApostrophes(link.text).includes(name)),
     'Cool Links entry is not visible in built HTML: ' + name);
 }
 const fileServer = 'https://files.mcretro.net/index.html';

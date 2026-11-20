@@ -263,6 +263,19 @@ test('advisory: sidebar Search Go matches months with posts in both colour theme
 });
 
 
+test('advisory: article quotes match the Archives blue palette in both themes', () => {
+  const light = style.split(':root[data-theme="dark"]')[0];
+  const dark = style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
+  for (const palette of [light, dark]) {
+    assert.match(palette, /--quote-bg:\\s*var\\(--archive-filled\\);/);
+  }
+  assert.match(light, /--archive-filled:\\s*#EAF2FF;/);
+  assert.match(light, /--archive-accent:\\s*#064584;/);
+  assert.match(dark, /--archive-filled:\\s*#293A55;/);
+  assert.match(dark, /--archive-accent:\\s*#93C5FD;/);
+  assert.match(overrides, /\\.post-full \\.post-content blockquote\\s*\\{[^}]*border-left:\\s*4px solid var\\(--archive-accent\\);[^}]*background:\\s*var\\(--quote-bg\\);/);
+});
+
 test('advisory: accordion headers use Archives blues in both modes without changing panel markup', () => {
   const light = overrides.split(':root[data-theme="dark"]')[0];
   const dark = overrides.split(':root[data-theme="dark"]')[1].split('\n/*')[0];

@@ -572,6 +572,13 @@ test('advisory: Channels keeps emoji and links, without old summary siren GIFs',
   for (const handle of ['@NixMcRetro', '@McRetroGaming', '@SuperNatureWorld']) {
     assert.ok(channels.includes(handle), handle);
   }
+  for (const handle of ['NixMcRetro', 'McRetroGaming', 'SuperNatureWorld']) {
+    const url = 'https://www.youtube.com/@' + handle;
+    assert.ok(channels.includes('YouTube Channel: [@' + handle + '](' + url + ')<br>'),
+      'Channels should show the handle and keep the existing URL for ' + handle);
+    assert.ok(!channels.includes('YouTube Channel: [https://youtube.com/@' + handle + ']'),
+      'Old full-URL link text should be removed for ' + handle);
+  }
   assert.ok(!channels.includes('@ChannelChirp'), 'Retiring YouTube channel should not be advertised');
   assert.ok(channels.includes('/chirp/'));
   assert.ok(channels.includes('Recently (2026) we’re continuing to merge former channels, such as Fish Tank World and Channel Chirp, into this website and YouTube channel. Stay Tuned :)'));

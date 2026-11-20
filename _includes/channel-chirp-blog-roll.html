@@ -1,0 +1,126 @@
+{% comment %}
+Use the same post-entry markup as /blog/: title, author/date/categories,
+automatic media preview, excerpt, and Continue reading. Only the generator's
+released, non-opted-out conure posts are passed into this include.
+{% endcomment %}
+<div class="blog-list chirp-blog-list" data-archive-context-year="{{ page.chirp_page_posts.first.date | date: '%Y' }}">
+{% for post in page.chirp_page_posts %}
+  {% assign month_key = post.date | date: '%Y-%m' %}
+  <article class="post-entry"{% if site.data.chirp_adventures_month_first_urls[month_key] == post.url %} id="chirp-month-{{ month_key }}"{% endif %}>
+    <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+    <div class="chirp-roll-heading-date">
+      <time datetime="{{ post.date | date_to_xmlschema }}">
+        {% assign d = post.date | date: '%-d' | plus: 0 %}
+        {% case d %}
+          {% when 1 or 21 or 31 %}{% assign ordinal = 'st' %}
+          {% when 2 or 22 %}{% assign ordinal = 'nd' %}
+          {% when 3 or 23 %}{% assign ordinal = 'rd' %}
+          {% else %}{% assign ordinal = 'th' %}
+        {% endcase %}
+        {{ d }}{{ ordinal }} {{ post.date | date: '%B %Y' }}
+      </time>
+    </div>
+    <div class="chirp-roll-heading-line" aria-hidden="true"></div>
+    <div class="post-meta-row">
+      <div class="post-meta">
+        {% if post.author %}
+          <span class="post-author">
+            <picture>
+              <source media="(min-width: 751px)" type="image/jxl" srcset="/assets/images/mcretro-author-portrait-192.jxl?v=20261018d">
+              <source media="(min-width: 751px)" type="image/webp" srcset="/assets/images/mcretro-author-portrait-192.webp?v=20261018d">
+              <img src="/assets/favicon/favicon-96x96.png?v=20261018b" width="96" height="96" alt="" class="author-avatar">
+            </picture>
+            {{ post.author | escape }}
+          </span>
+        {% endif %}
+        {% if post.categories.size > 0 %}
+          <span class="meta-sep">//</span>
+          <span class="post-categories">
+            <span class="category-label">Categories:</span>
+            {% for cat in post.categories %}
+              {{ site.data.categories[cat] | default: cat }}{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+          </span>
+        {% endif %}
+      </div>
+
+      <div class="post-content-preview">
+        {% include auto-thumbnail.html content=post.content url=post.url title=post.title %}
+        <div class="post-excerpt">
+          {% assign excerpt_text = post.content | without_media_captions | strip_html | normalize_whitespace | truncatewords: 50 %}
+          {% if excerpt_text != blank %}
+            {{ excerpt_text }}
+          {% else %}
+            Click to read the full post.
+          {% endif %}
+          <a href="{{ post.url | relative_url }}" class="read-more">Continue reading</a>
+        </div>
+      </div>
+    </div>
+  </article>
+{% endfor %}
+</div>
+
+{% if page.chirp_total_pages > 1 %}
+<nav class="pagination-wrapper" aria-label="Channel Chirp Adventures pagination">
+  <div class="pagination-bar">
+    <div class="pagination-controls">
+      <div class="pagination-numbers">
+        {% assign window_size = 5 %}
+        {% assign half = window_size | divided_by: 2 %}
+        {% assign start = page.chirp_current_page | minus: half %}
+        {% assign end = page.chirp_current_page | plus: half %}
+        {% if start < 1 %}
+          {% assign start = 1 %}
+          {% assign end = window_size %}
+          {% if end > page.chirp_total_pages %}{% assign end = page.chirp_total_pages %}{% endif %}
+        {% endif %}
+        {% if end > page.chirp_total_pages %}
+          {% assign end = page.chirp_total_pages %}
+          {% assign start = end | minus: window_size | plus: 1 %}
+          {% if start < 1 %}{% assign start = 1 %}{% endif %}
+        {% endif %}
+
+        {% if start > 1 %}
+          <a href="/chirp/adventures/" class="page-number" aria-label="Page 1">1</a>
+          {% if start > 2 %}<span class="pagination-gap" aria-hidden="true">…</span>{% endif %}
+        {% endif %}
+        {% for number in (start..end) %}
+          {% if number == page.chirp_current_page %}
+            <span class="page-number current-page" aria-current="page">{{ number }}</span>
+          {% else %}
+            {% if number == 1 %}
+              <a href="/chirp/adventures/" class="page-number" aria-label="Page {{ number }}">{{ number }}</a>
+            {% else %}
+              <a href="/chirp/adventures/page{{ number }}/" class="page-number" aria-label="Page {{ number }}">{{ number }}</a>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        {% if end < page.chirp_total_pages %}
+          {% assign before_last = page.chirp_total_pages | minus: 1 %}
+          {% if end < before_last %}<span class="pagination-gap" aria-hidden="true">…</span>{% endif %}
+          <a href="/chirp/adventures/page{{ page.chirp_total_pages }}/" class="page-number" aria-label="Page {{ page.chirp_total_pages }}">{{ page.chirp_total_pages }}</a>
+        {% endif %}
+      </div>
+      <div class="pagination-arrows">
+        {% assign prev_num = page.chirp_current_page | minus: 1 %}
+        {% if prev_num >= 1 %}
+          {% if prev_num == 1 %}
+            <a href="/chirp/adventures/" class="arrow-link pagination-prev" rel="prev" aria-label="Previous page"><span class="arrow-icon" aria-hidden="true">&larr;</span></a>
+          {% else %}
+            <a href="/chirp/adventures/page{{ prev_num }}/" class="arrow-link pagination-prev" rel="prev" aria-label="Previous page"><span class="arrow-icon" aria-hidden="true">&larr;</span></a>
+          {% endif %}
+        {% else %}
+          <span class="arrow-placeholder pagination-prev" aria-hidden="true"></span>
+        {% endif %}
+        {% assign next_num = page.chirp_current_page | plus: 1 %}
+        {% if next_num <= page.chirp_total_pages %}
+          <a href="/chirp/adventures/page{{ next_num }}/" class="arrow-link pagination-next" rel="next" aria-label="Next page"><span class="arrow-icon" aria-hidden="true">&rarr;</span></a>
+        {% else %}
+          <span class="arrow-placeholder pagination-next" aria-hidden="true"></span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>
+{% endif %}

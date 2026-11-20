@@ -33,6 +33,8 @@ on:
       - '_includes/channel-chirp-nav.html'
       - '_includes/channel-chirp-sidebar.html'
       - '_includes/channel-chirp-archive-list.html'
+      - '_includes/channel-chirp-blog-roll.html'
+      - '_plugins/channel_chirp_adventures.rb'
       - 'assets/js/channel-chirp-filter.js'
       - 'assets/js/channel-chirp-archive.js'
       - 'assets/data/chirp-random.json'

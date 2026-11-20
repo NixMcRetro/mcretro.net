@@ -50,6 +50,24 @@ for (const [slug, label] of [
 assert.match(pages.nest, /class="chirp-home-panel"/);
 assert.doesNotMatch(pages.nest, /class="nest-post-card"/);
 assert.match(pages.nest, /Welcome to the Nest/);
+
+assert.match(pages.nest, /<figure class="chirp-home-figure">/);
+assert.match(pages.nest, /src="\/assets\/images\/2019\/01\/channel-chirp-nest\/frontpage\.jxl"/);
+assert.match(pages.nest, /width="1024"\s+height="768"/);
+assert.match(pages.nest, /Chirp, chirp, <strong>quack!<\/strong>/);
+assert.ok(pages.nest.indexOf('<h1 id="chirp-welcome">') <
+  pages.nest.indexOf('<figure class="chirp-home-figure">'));
+assert.ok(pages.nest.indexOf('<figure class="chirp-home-figure">') <
+  pages.nest.indexOf('class="chirp-home-copy"'));
+assert.doesNotMatch(pages.nest, /A note about Soundborb|Our soundboard has a new home planned|chirp-home-secondary/);
+const frontpageJxl = fs.readFileSync(path.join(site,
+  'assets/images/2019/01/channel-chirp-nest/frontpage.jxl'));
+assert.ok(frontpageJxl.length > 10000 && frontpageJxl.length < 150000,
+  'the original welcome photo should be self-hosted, optimized and nonempty');
+assert.equal(frontpageJxl.subarray(0, 12).toString('hex'),
+  '0000000c4a584c200d0a870a', 'photo should be a JPEG XL container, not a renamed JPEG');
+assert.match(birdLayout, /\.chirp-home-figure img\s*\{[^}]*width: 100%;[^}]*height: auto;/);
+
 assert.match(pages.flock, /id="pudge"/);
 assert.match(pages.flock, /id="tillie"/);
 assert.match(pages.flock, /id="chip"/);

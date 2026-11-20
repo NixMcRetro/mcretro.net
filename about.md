@@ -6,9 +6,7 @@ title: About
 ## The About Page
 
 <figure class="about-running-cat">
-  <div class="about-running-cat-frame">
-    <img src="/assets/images/about/0CATRUNY.gif" width="85" height="41" alt="Running cat">
-  </div>
+  <img src="/assets/images/about/0CATRUNY.gif" width="85" height="41" alt="Running cat">
 </figure>
 
 Ahhh yes, the About page. A staple of every gloriously overengineered homepage. I've been putting things on the internet since the 1990s, and apparently I still haven't learned when to stop. McRetro.net is part hardware workshop, part internet scrapbook and part evidence of my inability to leave old computers alone.

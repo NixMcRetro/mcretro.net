@@ -86,13 +86,43 @@ test('core: theme button cycles Light, Dark, Bird, Light and remembers the filte
   assert.equal(f.attrs['data-theme'],'light');
 });
 
-test('core: opening /chirp/ activates Bird; turning it off returns to the full blog', () => {
+test('core: opening /chirp/ activates Bird; turning it off returns to McRetro Home', () => {
   const f=fixture(false,'dark',false,true);
   assert.equal(f.attrs['data-theme'],'bird');
   assert.equal(f.store.get('mcretro-theme'),'bird');
   f.handlers.click();
   assert.equal(f.attrs['data-theme'],'light');
-  assert.deepEqual(f.navigations.at(-1), {method:'assign',url:'/blog/'});
+  assert.deepEqual(f.navigations.at(-1), {method:'assign',url:'/'});
+});
+
+test('core: McRetro Home and the Nest are paired across theme switches', () => {
+  const home=fixture(false,null,false,false,{unrelated:true,path:'/'});
+  home.handlers.click();
+  assert.equal(home.attrs['data-theme'],'dark');
+  assert.equal(home.navigations.length,0,'Light to Dark should not leave McRetro Home');
+  home.handlers.click();
+  assert.deepEqual(home.navigations.at(-1), {method:'assign',url:'/chirp/'});
+
+  const nest=fixture(false,'bird',false,true,{path:'/chirp/'});
+  nest.handlers.click();
+  assert.equal(nest.attrs['data-theme'],'light');
+  assert.deepEqual(nest.navigations.at(-1), {method:'assign',url:'/'});
+  assert.match(read('chirp/index.md'), /permalink: \/chirp\//);
+});
+
+test('core: Goodies and Soundborb are paired across theme switches', () => {
+  const goodies=fixture(false,null,false,false,{unrelated:true,path:'/goodies/'});
+  goodies.handlers.click();
+  assert.equal(goodies.attrs['data-theme'],'dark');
+  assert.equal(goodies.navigations.length,0,'Light to Dark should not leave Goodies');
+  goodies.handlers.click();
+  assert.deepEqual(goodies.navigations.at(-1), {method:'assign',url:'/chirp/soundborb/'});
+
+  const soundborb=fixture(false,'bird',false,true,{path:'/chirp/soundborb/'});
+  soundborb.handlers.click();
+  assert.equal(soundborb.attrs['data-theme'],'light');
+  assert.deepEqual(soundborb.navigations.at(-1), {method:'assign',url:'/goodies/'});
+  assert.match(read('chirp/soundborb/index.md'), /permalink: \/chirp\/soundborb\//);
 });
 
 test('core: Blog and Adventures remain paired when cycling Light, Dark and Bird', () => {
@@ -138,7 +168,11 @@ test('core: saved Bird preference opens corresponding section, preserving fallba
   assert.deepEqual(about.navigations, [{method:'replace',url:'/chirp/about/'}]);
   const blog=fixture(false,'bird',false,false,{unrelated:true,path:'/blog/'});
   assert.deepEqual(blog.navigations, [{method:'replace',url:'/chirp/adventures/'}]);
-  const unrelated=fixture(false,'bird',false,false,{unrelated:true,path:'/goodies/'});
+  const home=fixture(false,'bird',false,false,{unrelated:true,path:'/'});
+  assert.deepEqual(home.navigations, [{method:'replace',url:'/chirp/'}]);
+  const goodies=fixture(false,'bird',false,false,{unrelated:true,path:'/goodies/'});
+  assert.deepEqual(goodies.navigations, [{method:'replace',url:'/chirp/soundborb/'}]);
+  const unrelated=fixture(false,'bird',false,false,{unrelated:true,path:'/channels/'});
   assert.deepEqual(unrelated.navigations, [{method:'replace',url:'/chirp/'}]);
 });
 

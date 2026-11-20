@@ -539,8 +539,7 @@
   margin: .75rem auto 0;
 }
 
-/* Sidebar widgets preserve the four original Channel Chirp destinations. */
-:root[data-theme="bird"] .nest-cool-links nav { display: grid; gap: .3rem; }
+/* The Bird sidebar uses the same search, calendar and Random Posts sections as McRetro. */
 :root[data-theme="bird"] .nest-archive-widget select {
   box-sizing: border-box;
   width: 100%;
@@ -720,13 +719,6 @@
 :root[data-theme="bird"] .sidebar-mode-bird .recent-posts-actions button.sidebar-action-link:disabled {
   opacity: .65;
   cursor: not-allowed;
-}
-:root[data-theme="bird"] .sidebar-mode-bird .nest-cool-links nav a {
-  color: #BDF7B0;
-}
-:root[data-theme="bird"] .sidebar-mode-bird .nest-cool-links nav a:hover,
-:root[data-theme="bird"] .sidebar-mode-bird .nest-cool-links nav a:focus-visible {
-  color: #FFFFFF;
 }
 :root[data-theme="bird"] .sidebar-mode-bird .chirp-return {
   margin: .3rem 0 0;

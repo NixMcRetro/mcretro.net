@@ -284,22 +284,46 @@ assert.match(pages.nest, /class="nav-mode-bird"/);
 assert.match(birdCss, /:root\[data-theme="bird"\] \.sidebar-mode-mcretro[\s\S]*display: none !important/);
 assert.match(birdCss, /:root:not\(\[data-theme="bird"\]\) \.sidebar-mode-bird[\s\S]*display: none !important/);
 assert.match(birdLayout, /font-family: 'Korataki'/);
-// Bird navigation uses the charcoal page background and white labels, with
-// the existing thin green horizontal rules. Light/Dark remain untouched.
+// Bird navigation uses pale green for emoji readability and dark-green text,
+// with only thin green horizontal rules. McRetro Light/Dark stays unchanged.
 assert.match(birdCss, /--page-bg:\s*#424242;/);
-const navStyles = [...birdLayout.matchAll(/:root\[data-theme="bird"\] \.main-nav \{([^}]+)\}/g)]
-  .map(match => match[1]);
-assert.ok(navStyles.some(block =>
-  /background: var\(--page-bg\);/.test(block) &&
-  /border-top: 1px solid #29A518;/.test(block) &&
-  /border-bottom: 1px solid #29A518;/.test(block) &&
-  !/border-left: 6px|border-right: 6px/.test(block)),
-  'Bird desktop menu should match charcoal background and retain thin green rules');
-assert.match(birdLayout, /\.main-nav a\.active \{\s*color: #FFFFFF;/);
-assert.match(birdLayout, /\.main-nav a:hover,[\s\S]*?\.main-nav a:focus-visible \{\s*color: #FFFFFF;/);
-assert.match(birdLayout, /\.main-nav \.nav-list \{\s*background: var\(--page-bg\);\s*border-bottom: 1px solid #29A518;/);
-assert.match(birdLayout, /\.main-nav \.nav-list li a:visited \{\s*color: #FFFFFF;/);
-assert.match(birdLayout, /\.main-nav \.nav-list li a\.nav-mode-bird\.active \{\s*color: #FFFFFF;/);
+const desktopNavStart = birdLayout.indexOf(
+  ':root[data-theme="bird"] .main-nav {\n  /* Pale green gives navigation emoji'
+);
+assert.ok(desktopNavStart >= 0, 'Bird desktop navigation styling exists');
+const desktopNavBlock = birdLayout.slice(
+  desktopNavStart, birdLayout.indexOf('}', desktopNavStart)
+);
+assert.ok(desktopNavBlock.includes('background: #E7F5E4;'));
+assert.ok(desktopNavBlock.includes('border-top: 1px solid #29A518;'));
+assert.ok(desktopNavBlock.includes('border-bottom: 1px solid #29A518;'));
+assert.ok(!desktopNavBlock.includes('border-left: 6px') &&
+          !desktopNavBlock.includes('border-right: 6px'));
+const desktopNavLinks = birdLayout.slice(
+  birdLayout.indexOf(':root[data-theme="bird"] .main-nav a,'),
+  birdLayout.indexOf('/* Post previews use the original Channel Chirp rhythm')
+);
+assert.ok(desktopNavLinks.includes('color: #17660D;'));
+assert.ok(desktopNavLinks.includes('color: #105B08;'));
+assert.ok(desktopNavLinks.includes('outline: 2px solid #17660D;'));
+assert.ok(desktopNavLinks.includes('font-weight: 700;'));
+assert.ok(desktopNavLinks.includes('text-decoration: none;'));
+const mobileNavBlockStart = birdLayout.indexOf(
+  ':root[data-theme="bird"] .main-nav .nav-list {'
+);
+assert.ok(mobileNavBlockStart >= 0);
+const mobileNavBlock = birdLayout.slice(
+  mobileNavBlockStart, birdLayout.indexOf('}', mobileNavBlockStart)
+);
+assert.ok(mobileNavBlock.includes('background: #E7F5E4;'));
+assert.ok(mobileNavBlock.includes('border-bottom: 1px solid #29A518;'));
+const mobileNavLinkStart = birdLayout.indexOf(
+  ':root[data-theme="bird"] .main-nav .nav-list li a:visited {'
+);
+assert.ok(mobileNavLinkStart >= 0);
+assert.ok(birdLayout.slice(mobileNavLinkStart, birdLayout.indexOf('}', mobileNavLinkStart))
+  .includes('color: #17660D;'));
+
 assert.doesNotMatch(birdLayout, /border-left: 6px solid #0C4308/);
 assert.ok(pages.nest.includes('<p class="chirp-return"><a href="/" data-theme-exit="standard">↩ Return to McRetro.net</a></p>'));
 // Filled Bird menu hover is intentionally limited to mobile widths.
@@ -351,9 +375,9 @@ assert.ok(birdLayout.includes('.chirp-archive-index > .archive-index-intro,'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs [aria-current="page"] {'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs a {'));
 assert.ok(birdLayout.includes('color: #BDF7B0;'));
-assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261120-month-contrast"'),
+assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261120-pale-nav"'),
   'Bird archive loads fresh stylesheet to avoid a stale dark-on-charcoal heading');
-assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261120-month-contrast"'),
+assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261120-pale-nav"'),
   'Shared template loads the same current Bird stylesheet');
 
 const birdByMonth = new Map();
@@ -447,7 +471,7 @@ assert.ok(birdLayout.includes('.chirp-archive-month .archive-blog-list .post-ent
 for (const month of birdByMonth.keys()) {
   const [year, number] = month.split('-');
   assert.ok(read('chirp/archive/' + year + '/' + number + '/index.html')
-    .includes('href="/assets/css/channel-chirp.css?v=20261120-month-contrast"'),
+    .includes('href="/assets/css/channel-chirp.css?v=20261120-pale-nav"'),
     'all Bird month pages receive the updated stylesheet: ' + month);
 }
 assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive')).sort(),

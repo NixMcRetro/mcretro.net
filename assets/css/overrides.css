@@ -2012,9 +2012,14 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   height: auto;
   image-rendering: pixelated;
 }
-.goodies-floppy-art figcaption {
-  font-size: clamp(1.2rem, 3.5vw, 1.5rem);
-  font-weight: 700;
-  line-height: 1.3;
+/* Match the blog's existing small, italic .media-caption convention. */
+.goodies-floppy-art figcaption.media-caption {
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
   color: var(--text);
+  text-align: center;
+  overflow-wrap: anywhere;
 }

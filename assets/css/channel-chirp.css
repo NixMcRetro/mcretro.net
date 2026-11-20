@@ -514,10 +514,13 @@
 }
 :root[data-theme="bird"] .nest-year-title small { color: #122C0B; }
 
-/* Keep released conure article headings compact like original Channel Chirp,
- * without changing ordinary McRetro post typography. */
+/* Tighter article top padding and an unforced title weight for the original
+ * Channel Chirp look. Do not touch ordinary McRetro or Bird blog roll pages. */
+:root[data-theme="bird"][data-chirp-article="true"] .post-full {
+  padding-top: 1rem;
+}
 :root[data-theme="bird"][data-chirp-article="true"] .post-full .post-title {
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
   margin-bottom: .2rem;
   text-align: center;
@@ -535,6 +538,7 @@
 :root[data-theme="bird"][data-chirp-article="true"] .post-full .post-date {
   color: #626262;
   display: block;
+  font-size: 1rem;
   letter-spacing: .04em;
 }
 :root[data-theme="bird"][data-chirp-article="true"] .post-full .post-meta::after {

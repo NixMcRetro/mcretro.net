@@ -81,18 +81,37 @@ assert.match(list, /chirp-month-\d{4}-\d{2}/);
 
 const sidebar = pages.nest.split('<div class="sidebar-mode-bird">')[1]?.split('</aside>')[0];
 assert.ok(sidebar, 'Bird sidebar exists');
-assert.ok(sidebar.indexOf('🎲 Random Posts') < sidebar.indexOf('Find-a-Squawk'));
-assert.ok(sidebar.indexOf('Find-a-Squawk') < sidebar.indexOf('>Archives<'));
-assert.ok(sidebar.indexOf('>Archives<') < sidebar.indexOf('Cool Links'));
-assert.match(sidebar, /Browse Adventures/);
+const searchPos = sidebar.indexOf('placeholder="Find a Squawk"');
+const calendarPos = sidebar.indexOf('data-chirp-calendar');
+const randomPos = sidebar.indexOf('>Random Posts<');
+const coolPos = sidebar.indexOf('Cool Links');
+assert.ok(searchPos >= 0 && searchPos < calendarPos, 'Bird search is first');
+assert.ok(calendarPos < randomPos, 'Bird archive calendar precedes Random Posts');
+assert.ok(randomPos < coolPos, 'Cool Links remain below Random Posts');
+assert.match(sidebar, /action="\/chirp\/search\/" method="get"/);
+assert.match(sidebar, /id="bird-sidebar-search" type="text" name="q"/);
+assert.match(sidebar, /class="archive-calendar" data-chirp-calendar/);
+assert.match(sidebar, /data-chirp-older/);
+assert.match(sidebar, /data-chirp-newer/);
+assert.match(sidebar, /data-chirp-months/);
+const calendarYears = [...sidebar.matchAll(/<option value="(\d{4})" data-counts=/g)].map(match => match[1]);
+assert.deepEqual(calendarYears, ['2019', '2018'], 'Bird calendar only displays 2018/2019');
+assert.match(sidebar, /href="\/chirp\/adventures\/#chirp-month-2019-\d{2}"/);
+assert.doesNotMatch(sidebar, /href="\/archive\/\d{4}\//);
+assert.match(sidebar, /Browse all archives/);
 assert.match(sidebar, /data-chirp-random-posts/);
 assert.match(sidebar, /data-chirp-random-shuffle/);
-assert.equal((sidebar.match(/<li>/g)||[]).length, 4);
-for (const href of ['/chirp/search/', '/chirp/timeline/', '/chirp/soundborb/', '/chirp/diet/']) {
+assert.equal((sidebar.match(/<li>/g)||[]).length, 4, 'exactly four released Bird fallback posts');
+assert.match(sidebar, /class="recent-posts-more sidebar-action-link" href="\/chirp\/adventures\/"/);
+assert.match(sidebar, /<span class="sidebar-action-link__icon" aria-hidden="true">📚<\/span>/);
+assert.match(sidebar, /<span class="sidebar-action-link__label">More posts<\/span>/);
+assert.match(sidebar, /class="recent-posts-dial sidebar-action-link" type="button" data-chirp-random-shuffle disabled/);
+assert.match(sidebar, /<span class="sidebar-action-link__icon" aria-hidden="true">🎲<\/span>/);
+assert.match(sidebar, /<span class="sidebar-action-link__label">Random!<\/span>/);
+assert.doesNotMatch(sidebar, /🎲 Random Posts|☎️|Dial-up|Shuffle again|Browse Adventures/);
+for (const href of ['/chirp/timeline/', '/chirp/soundborb/', '/chirp/diet/']) {
   assert.ok(sidebar.includes('href="' + href + '"'), href);
 }
-assert.match(sidebar, /data-chirp-archive-select/);
-assert.match(sidebar, /chirp-month-\d{4}-\d{2}/);
 assert.ok(exists('assets/js/channel-chirp-archive.js'));
 assert.ok(exists('assets/js/channel-chirp-filter.js'));
 assert.ok(exists('assets/js/channel-chirp-random.js'));

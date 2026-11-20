@@ -10,7 +10,7 @@ const sample = Array.from({length: 10}, (_, i) => ({
   date_label: '1st January 2018'
 }));
 
-function setup({theme='bird', fail=false, current='/chirp-post-0/'}={}) {
+function setup({theme='bird', fail=false, current='/chirp-post-0/', randomValue=null}={}) {
   const children = [];
   const listeners = {};
   let mutation;
@@ -55,7 +55,8 @@ function setup({theme='bird', fail=false, current='/chirp-post-0/'}={}) {
   }
   runInNewContext(code, {
     document, fetch: fakeFetch, MutationObserver: Observer,
-    window: {location: {pathname: current}}
+    window: {location: {pathname: current}},
+    ...(randomValue === null ? {} : {Math: {min: Math.min, floor: Math.floor, random: () => randomValue}})
   });
   return {
     button, list, children, root, listeners,
@@ -104,4 +105,16 @@ test('Failed fetch preserves progressive-enhancement fallback and disables Shuff
   assert.equal(app.fetchCount(), 1);
   assert.equal(app.button.disabled, true);
   assert.equal(app.children.length, 0, 'Fallback DOM was never replaced');
+});
+
+test('Random! changes the four displayed posts even when the random draw repeats them', async () => {
+  const app = setup({randomValue: 0});
+  await flush();
+  const before = app.children.map(item => item.children[0].href).sort();
+  assert.equal(before.length, 4);
+  app.listeners.click();
+  const after = app.children.map(item => item.children[0].href).sort();
+  assert.notDeepEqual(after, before, 'a different article should appear when alternatives exist');
+  assert.equal(new Set(after).size, 4);
+  assert.equal(app.fetchCount(), 1, 'reuses the same released-only catalogue');
 });

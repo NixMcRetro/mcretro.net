@@ -33,6 +33,18 @@ for (const [relative, heading] of pages) {
     'Raw Markdown heading remains: ' + relative);
 }
 
+// GeoCities editorial headings use Title Case, not sentence case.
+const home = read('index.html');
+for (const heading of ["Explore the Restored Frontend","Enter My Private GeoCities Archive","A Short History of the Rebuild","Read the Rebuild Story","A Little Piece of the Original Site"]) {
+  assert.match(home, new RegExp('<h2\\b[^>]*>' + heading + '<\\/h2>'),
+    'GeoCities project heading lost Title Case: ' + heading);
+}
+const newsHeadings = read('news/index.html');
+for (const heading of ['Project Updates', 'Contemporary GeoCities Headlines']) {
+  assert.match(newsHeadings, new RegExp('<h2\\b[^>]*>' + heading + '<\\/h2>'),
+    'GeoCities news heading lost Title Case: ' + heading);
+}
+
 const directory = read('neighborhoods/index.html');
 assert.match(directory, /<strong>all 41 neighbourhoods<\/strong>/i);
 assert.match(directory, /<strong>298,559 Homesteaders<\/strong>/i);

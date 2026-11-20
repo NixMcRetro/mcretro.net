@@ -16,7 +16,7 @@ In 2021, I started rebuilding part of that lost world for older computers and br
 
 The project eventually ran on a Raspberry Pi 3, survived several increasingly ambitious rebuilds, and even picked up the [RetroChallenge 2022/10 Grand Prize](/docker-geocities-search-and-retrochallenge-2022-10-results/). It also taught me quite a lot about case-sensitive filesystems, archive integrity, and how many tiny files can fit into a truly ridiculous amount of storage.
 
-## Explore the restored frontend
+## Explore the Restored Frontend
 
 The original neighbourhood directory, rebuild news, and Cool Pages list are now restored as public McRetro pages, complete with artwork from the old site. No 1 TB archive is required to browse them.
 
@@ -24,13 +24,13 @@ The original neighbourhood directory, rebuild news, and Cool Pages list are now 
 - **[Project News](/homepages/geocities/news/)** - updates from 2021 and 2022, plus a small collection of historical headlines.
 - **[Cool Pages](/homepages/geocities/cool/)** - the original recommendations from my old GeoCities rebuild.
 
-## Enter my private GeoCities archive
+## Enter My Private GeoCities Archive
 
 **<a href="http://geocities.mcretro.net/" target="_blank" rel="noopener noreferrer nofollow">Enter GeoCities</a>** - my personal gateway to the full historical archive. The archived sites themselves are not hosted publicly. This link only works on a computer configured to resolve the hostname to my private intranet server, and only when that server is running.
 
 The public directory and Cool Pages list also contain links to specific private-archive paths for my own use. Other visitors can browse those lists and their original artwork, but those private destinations are not public services.
 
-## A short history of the rebuild
+## A Short History of the Rebuild
 
 **2021: Getting the old web online.** I began with the Archive Team material and a collection of reconstruction scripts, concentrating on the old neighbourhood addresses and compatibility with vintage browsers. On 1st November 2021, [the first public rebuild went live](/the-geocities-archive-rebuild-goes-live/) on a Raspberry Pi 3.
 
@@ -40,7 +40,7 @@ The public directory and Cool Pages list also contain links to specific private-
 
 **Now: Keeping the story alive.** This public page preserves the history, links, and some original GeoCities artwork. The actual archive stays offline or private. I can still explore it locally without making a terabyte of other people's old websites publicly available.
 
-## Read the rebuild story
+## Read the Rebuild Story
 
 These are my articles, worklogs, demonstrations, and occasional lessons in how not to move millions of files around.
 
@@ -54,7 +54,7 @@ These are my articles, worklogs, demonstrations, and occasional lessons in how n
 - [Docker, GeoCities Search, and RetroChallenge Results (2023)](/docker-geocities-search-and-retrochallenge-2022-10-results/)
 - [GeoCities Archive Retired, Dockerisation Abandoned (2023)](/geocities-archive-retired-dockerisation-abandoned/)
 
-## A little piece of the original site
+## A Little Piece of the Original Site
 
 The masthead, welcome graphic, and badge on this page come from my old GeoCities rebuild frontend. They are presented as their original GIF files, including the animated badge, rather than being recreated or replaced with modern artwork.
 

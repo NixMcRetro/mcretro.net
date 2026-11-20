@@ -127,7 +127,7 @@ assert.match(styles, /\.gc-cool-pages a\[target="_blank"\]/);
 assert.match(styles, /gc-directory-stats/);
 assert.match(script, /const highlightText = \(element, original, query\) =>/);
 assert.match(script, /document\.createElement\('mark'\)/);
-assert.match(script, /group\.suburbs\.forEach\(item => highlightText/);
+assert.match(script, /group\.suburbs\.forEach\(item => \{/);
 assert.match(script, /random\.addEventListener\('click', pickRandom\)/);
 assert.match(script, /lastRandom = index/);
 assert.match(script, /prefers-reduced-motion: reduce/);

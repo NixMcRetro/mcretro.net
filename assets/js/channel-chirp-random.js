@@ -10,6 +10,7 @@
 
   let candidates = null;
   const maxPosts = 4;
+  let lastShown = new Set();
 
   function pickRandom(items, count) {
     const shuffled = items.slice();
@@ -23,6 +24,14 @@
   function render() {
     if (!candidates || candidates.length === 0) return;
     const selected = pickRandom(candidates, maxPosts);
+    // A click should visibly change the selection when other posts exist.
+    // Preserve four distinct links even when the random draw repeats a set.
+    if (lastShown.size > 0 && candidates.length > maxPosts &&
+        selected.every(post => lastShown.has(post.url))) {
+      const unseen = candidates.filter(post => !lastShown.has(post.url));
+      if (unseen.length) selected[0] = unseen[Math.floor(Math.random() * unseen.length)];
+    }
+    lastShown = new Set(selected.map(post => post.url));
     const fragment = document.createDocumentFragment();
     for (const post of selected) {
       const item = document.createElement('li');

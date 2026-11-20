@@ -369,5 +369,6 @@ for (const [year, count] of availableYears.map(y => [y, chronologicalBirds.filte
     'archive should show released-only total for ' + year);
 }
 assert.ok(exists('chirp/archive/index.html'), 'new released-only Bird archive page must be generated');
-assert.ok(!exists('chirp/archive/2018/index.html'), 'do not import the unreleased historical Channel Chirp archive');
+assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive')).sort(), ['index.html'],
+  'the release archive publishes exactly one index, never the legacy post snapshot');
 console.log('PASS: Bird blog roll spans ' + rollPages.length + ' pages with ' + entries + ' released articles, ordinal dates, filtered archives and scoped styling.');

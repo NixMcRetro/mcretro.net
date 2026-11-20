@@ -326,6 +326,12 @@ test('advisory: navigation hover underlines words without bolding or shifting ad
   assert.equal((header.match(/class="nav-mode-bird/g) || []).length, 5);
   assert.match(header, /<li class="nav-item--mcretro-only">/);
 
+  assert.match(header, /class="nav-mode-bird" href="\/chirp\/"[^>]*>[^<]*<span class="nav-emoji" aria-hidden="true">🪺<\/span> <span class="nav-text">Home<\/span><\/a>/,
+    'Bird Home replaces The Nest in the primary nav');
+  assert.doesNotMatch(header, /<span class="nav-text">The Nest<\/span>/,
+    'The Nest name remains in the homepage heading, not the nav');
+
+
   assert.match(header, /class="nav-mode-bird" href="\/chirp\/random\/" data-chirp-random-link/);
 
   assert.match(header, /page\.url contains '\/chirp\/adventures\/' or page\.categories contains 'parrots' and page\.channel_chirp != false/,

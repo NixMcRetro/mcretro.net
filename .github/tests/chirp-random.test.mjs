@@ -10,11 +10,15 @@ const sample = Array.from({length: 10}, (_, i) => ({
   date_label: '1st January 2018'
 }));
 
-function setup({theme='bird', fail=false, current='/chirp-post-0/', randomValue=null}={}) {
+function setup({theme='bird', fail=false, current='/chirp-post-0/', randomValue=null, withRandomLink=false}={}) {
   const children = [];
   const listeners = {};
   let mutation;
   let fetches = 0;
+  const redirects = [];
+  const randomLink = {
+    addEventListener(type, listener) { listeners['random:' + type] = listener; }
+  };
   const list = {replaceChildren(fragment) {
     children.splice(0, children.length, ...fragment.children);
   }};
@@ -31,6 +35,7 @@ function setup({theme='bird', fail=false, current='/chirp-post-0/', randomValue=
     querySelector(selector) {
       if (selector === '[data-chirp-random-posts]') return list;
       if (selector === '[data-chirp-random-shuffle]') return button;
+      if (selector === '[data-chirp-random-link]') return withRandomLink ? randomLink : null;
       return null;
     },
     createElement(tag) {
@@ -55,11 +60,11 @@ function setup({theme='bird', fail=false, current='/chirp-post-0/', randomValue=
   }
   runInNewContext(code, {
     document, fetch: fakeFetch, MutationObserver: Observer,
-    window: {location: {pathname: current}},
+    window: {location: {pathname: current, assign(url) { redirects.push(url); }}},
     ...(randomValue === null ? {} : {Math: {min: Math.min, floor: Math.floor, random: () => randomValue}})
   });
   return {
-    button, list, children, root, listeners,
+    button, list, children, root, listeners, redirects,
     fetchCount:()=>fetches,
     changeTheme(next) { root.theme = next; mutation(); }
   };
@@ -117,4 +122,21 @@ test('Random! changes the four displayed posts even when the random draw repeats
   assert.notDeepEqual(after, before, 'a different article should appear when alternatives exist');
   assert.equal(new Set(after).size, 4);
   assert.equal(app.fetchCount(), 1, 'reuses the same released-only catalogue');
+});
+
+test('Homepage random post link chooses a released conure URL, excluding the current article', async () => {
+  const app = setup({withRandomLink:true, randomValue:0});
+  await flush();
+  let prevented = false;
+  await app.listeners['random:click']({preventDefault() { prevented = true; }});
+  assert.ok(prevented);
+  assert.deepEqual(app.redirects, ['/chirp-post-1/']);
+  assert.equal(app.fetchCount(), 1, 'random link reuses the sidebar catalogue');
+});
+
+test('Homepage random post link falls back to Adventures when the catalogue fails', async () => {
+  const app = setup({withRandomLink:true, fail:true});
+  await flush();
+  await app.listeners['random:click']({preventDefault() {}});
+  assert.deepEqual(app.redirects, ['/chirp/adventures/']);
 });

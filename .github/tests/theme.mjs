@@ -187,7 +187,7 @@ test('core: Bird stylesheet and header icon preserve original mobile layout', ()
   assert.match(bird, /\.theme-icon--bird/);
   assert.match(header, /class="theme-icon theme-icon--bird"/);
   assert.match(header, /bird-brand-name">Channel Chirp<\/span>/);
-  assert.match(header, /bird-brand-mark" aria-hidden="true">🦜<\/span>/);
+  assert.doesNotMatch(header, /bird-brand-mark/, 'Bird wordmark must not show the parrot');
   assert.match(layout, /data-default-theme="bird"/);
   assert.match(layout, /data-chirp-unrelated="true"/);
   assert.match(layout, /\{% unless channel_chirp_page or channel_chirp_article %\}/,
@@ -321,10 +321,15 @@ test('advisory: navigation hover underlines words without bolding or shifting ad
     assert.ok(header.includes('<span class="nav-emoji" aria-hidden="true">' + emoji + '</span> <span class="nav-text">' + word + '</span>'), word);
   }
   assert.equal((header.match(/class="nav-text"/g) || []).length, 11,
-    'Six McRetro links and five Bird links, without the unreleased Soundborb item');
+    'Six original McRetro links and five Bird links');
   assert.equal((header.match(/<li(?:\s[^>]*)?>/g) || []).length, 6);
   assert.equal((header.match(/class="nav-mode-bird"/g) || []).length, 5);
   assert.match(header, /<li class="nav-item--mcretro-only">/);
+
+  assert.match(header, /class="nav-mode-bird" href="\/chirp\/adventures\/" data-chirp-random-link/);
+  assert.match(header, /class="nav-mode-bird" href="\/chirp\/flock\/"[^\n]*<span class="nav-text">About<\/span>/);
+  assert.doesNotMatch(header, /class="nav-mode-bird" href="\/chirp\/timeline\//);
+
   const labelHoverRule = style.match(/\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{([^}]*)\}/)?.[1];
   assert.ok(labelHoverRule, 'text-only nav hover and focus rule exists');
   assert.doesNotMatch(labelHoverRule, /font-weight\s*:/, 'hover must not change font weight or item widths');

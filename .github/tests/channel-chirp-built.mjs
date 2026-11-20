@@ -296,13 +296,24 @@ assert.match(birdLayout, /\.main-nav a:visited[\s\S]*?color: #17451D;/);
 assert.match(birdLayout, /\.main-nav \.nav-list \{\s*background: #E7F5E4;\s*border-bottom: 1px solid #29A518;/);
 assert.doesNotMatch(birdLayout, /border-left: 6px solid #0C4308/);
 assert.ok(pages.nest.includes('<p class="chirp-return"><a href="/" data-theme-exit="light">↩ Return to McRetro.net</a></p>'));
-const birdNavHover = birdLayout.indexOf(':root[data-theme="bird"] .main-nav a.nav-mode-bird:hover,');
-assert.ok(birdNavHover >= 0, 'Bird navigation hover rule exists');
-assert.ok(birdLayout.slice(birdNavHover, birdLayout.indexOf('}', birdNavHover)).includes('background: #C8E5BD;'));
+// Filled Bird menu hover is intentionally limited to mobile widths.
+const desktopBirdHover = birdLayout.slice(
+  birdLayout.indexOf(':root[data-theme="bird"] .main-nav a:hover,'),
+  birdLayout.indexOf('/* Post previews use the original Channel Chirp rhythm')
+);
+assert.ok(desktopBirdHover.includes('text-decoration: underline;'));
+assert.ok(!desktopBirdHover.includes('background: #C8E5BD;'));
+const mobileBirdHover = birdLayout.slice(
+  birdLayout.indexOf('@media screen and (max-width: 750px) {'),
+  birdLayout.indexOf('/* Existing post metadata is a flex row.')
+);
+assert.ok(mobileBirdHover.includes('.nav-list li a.nav-mode-bird:hover,'));
+assert.ok(mobileBirdHover.includes('background: #C8E5BD;'));
 const birdPostsHover = birdLayout.indexOf(':root[data-theme="bird"] .sidebar-mode-bird .recent-posts-list li a:hover,');
-assert.ok(birdPostsHover >= 0, 'Bird Random Posts hover rule exists');
-assert.ok(birdLayout.slice(birdPostsHover, birdLayout.indexOf('}', birdPostsHover)).includes('background: #C8E5BD;'));
-
+assert.ok(birdPostsHover >= 0);
+const birdPostsRule = birdLayout.slice(birdPostsHover, birdLayout.indexOf('}', birdPostsHover));
+assert.ok(birdPostsRule.includes('text-decoration: underline;'));
+assert.ok(!birdPostsRule.includes('background:'));
 
 assert.match(birdLayout, /\.nest-post-card time::after/);
 assert.match(birdLayout, /\.post-full \.post-meta::after/);

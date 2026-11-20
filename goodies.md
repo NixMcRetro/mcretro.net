@@ -15,7 +15,7 @@ title: Goodies
 Welcome to the Goodies page! This is where I keep all sorts of bits and pieces that don't quite fit anywhere else. There's a mix of old favourites, restored pages and experiments I've tinkered with over the years.
 
 <details class="about-panel panel--teal" markdown="1">
-<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">✅</span> Ready to Visit</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">✅</span> Ready to Visit Projects</summary>
 
 **🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**<br>
 A browser-based music maker originally created for SuperNick. Make some noise with synthesizers, keyboards, rhythms and songs. Bleep, bloop, bleep!
@@ -68,6 +68,18 @@ Travel back to 1996 with a page full of planets, animated graphics and some wond
 
 **🌳 [Super Nature World](/homepages/nature/)**<br>
 An old-fashioned nature homepage featuring a frog, a lizard and a few original placeholder pictures. Apparently not a place for fish or birds!
+
+</details>
+
+<details class="about-panel panel--teal" markdown="1">
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🥔</span> Super Secret Recipes</summary>
+
+A few old favourites from the kitchen. I've finally dug up some of the original recipes!
+
+- [Garlic Roast Potatoes](/recipes/garlic-roast-potatoes/)
+- [Quick Mix Chocolate Cake](/recipes/quick-mix-chocolate-cake/)
+- [Mars Bar Slice](/recipes/mars-bar-slice/)
+- [Soft Pretzels](https://sallysbakingaddiction.com/easy-homemade-soft-pretzels/)
 
 </details>
 

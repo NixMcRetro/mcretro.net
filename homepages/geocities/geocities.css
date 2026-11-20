@@ -88,7 +88,7 @@ a.gc-artwork-tile:focus-visible { outline: 3px solid var(--focus); outline-offse
 /* Sorting and matching-suburb controls use the existing McRetro theme. */
 .gc-browser-options { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; gap: .75rem 1rem; margin-top: .85rem; padding-top: .75rem; border-top: 1px solid var(--border-soft); }
 .gc-browser-options label { margin: 0; }
-.gc-sort-label { display: flex; flex-direction: column; align-items: stretch; gap: .35rem; font-size: .85rem; }
+.gc-browser-options .gc-sort-label { display: flex; flex-direction: column; align-items: stretch; gap: .35rem; font-size: .85rem; }
 .gc-sort-label select { width: 100%; min-width: 0; padding: .5rem; border: 1px solid var(--border); border-radius: 3px; background: var(--input-bg); color: var(--text); font: inherit; }
 .gc-suburb-only-label { display: inline-flex !important; flex-wrap: wrap; align-items: center; gap: .5rem; padding-bottom: .5rem; font-size: .85rem; cursor: pointer; }
 @media (max-width: 620px) { .gc-browser-options { grid-template-columns: 1fr; } .gc-suburb-only-label { padding-bottom: 0; } }

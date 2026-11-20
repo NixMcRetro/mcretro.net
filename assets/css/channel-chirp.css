@@ -978,9 +978,11 @@
   outline-offset: 2px;
 }
 :root[data-theme="bird"] .chirp-search-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
   color: #444444;
   flex: 0 0 auto;
-  font: 700 1.35rem/1 Montserrat, sans-serif;
 }
 :root[data-theme="bird"] .chirp-search-field input[type="search"] {
   min-width: 0;

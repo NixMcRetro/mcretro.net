@@ -718,3 +718,36 @@
   margin: .3rem 0 0;
   padding: 0;
 }
+
+/* Original Channel Chirp welcome photograph: centred beneath its heading and
+ * green rule, with the historical caption directly below the image. */
+:root[data-theme="bird"] .chirp-home-figure {
+  width: 100%;
+  max-width: 740px;
+  margin: 1.5rem auto 1.6rem;
+  text-align: center;
+}
+:root[data-theme="bird"] .chirp-home-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+:root[data-theme="bird"] .chirp-home-figure figcaption {
+  margin: .65rem auto 0;
+  color: #646464;
+  font: italic .94rem/1.5 Merriweather, Georgia, serif;
+}
+:root[data-theme="bird"] .chirp-home-copy {
+  max-width: 740px;
+  margin-inline: auto;
+  text-align: center;
+}
+:root[data-theme="bird"] .chirp-home-links {
+  justify-content: center;
+}
+@media (max-width: 560px) {
+  :root[data-theme="bird"] .chirp-home-figure {
+    margin: 1rem auto 1.35rem;
+  }
+}

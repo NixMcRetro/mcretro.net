@@ -1,7 +1,6 @@
 /* Scoped styles for the restored GeoCities public exhibit. No global theme changes. */
 .gc-art { text-align: center; margin: 1.3rem 0; }
 .gc-art img { display: inline-block; max-width: 100%; height: auto; }
-.gc-jump { display: flex; flex-wrap: wrap; gap: .3rem .6rem; margin: 1.25rem 0; font-size: .88rem; }
 .gc-neighbourhoods { display: grid; gap: .75rem; }
 .gc-neighbourhood { border: 2px ridge var(--border-soft); background: var(--panel); color: var(--text); }
 .gc-neighbourhood summary { display: flex; flex-wrap: wrap; align-items: center; gap: .85rem; padding: .7rem .85rem; cursor: pointer; font-weight: bold; }
@@ -37,7 +36,7 @@
 
 /* Search and expansion progressively enhance the full accessible directory. */
 .gc-browser-tools { margin: 1.35rem 0; padding: .85rem 1rem; border: 1px solid var(--border-soft); border-radius: 4px; background: var(--panel-subtle); color: var(--text); }
-.gc-browser-tools[hidden], .gc-jump[hidden], .gc-neighbourhood[hidden] { display: none; }
+.gc-browser-tools[hidden], .gc-neighbourhood[hidden] { display: none; }
 .gc-browser-tools label { display: block; margin-bottom: .5rem; font-family: Montserrat, sans-serif; font-weight: 700; }
 .gc-browser-tool-row { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
 .gc-browser-tool-row input { flex: 1 1 215px; min-width: 0; max-width: 380px; padding: .55rem .7rem; border: 1px solid var(--border); border-radius: 3px; background: var(--input-bg); color: var(--text); font: inherit; }

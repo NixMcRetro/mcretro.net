@@ -9,7 +9,6 @@
 
   const input = document.getElementById('gc-neighbourhood-search');
   const output = document.getElementById('gc-neighbourhood-results');
-  const jump = document.querySelector('.gc-jump');
   const expand = toolbar.querySelector('[data-gc-action="expand"]');
   const collapse = toolbar.querySelector('[data-gc-action="collapse"]');
   const random = toolbar.querySelector('[data-gc-action="random"]');
@@ -135,7 +134,6 @@
         highlightText(item.element, item.original, match ? query : '');
       });
     });
-    if (jump) jump.hidden = !!query;
     const message = query
       ? found + ' of ' + groups.length + ' neighbourhoods match. ' +
         matchingSuburbs + ' suburb names match.'
@@ -297,13 +295,8 @@
   sortSelect.addEventListener('change', applySort);
   matchingOnly.addEventListener('change', filter);
 
-  // The jump list also works when a visitor clicks the same hash twice.
+  // Existing in-section public links work even when a hash is revisited.
   list.addEventListener('click', (event) => {
-    const anchor = event.target.closest('a[href^="#"]');
-    const group = anchor && byId.get(anchor.getAttribute('href').slice(1));
-    if (group) group.details.open = true;
-  });
-  jump?.addEventListener('click', (event) => {
     const anchor = event.target.closest('a[href^="#"]');
     const group = anchor && byId.get(anchor.getAttribute('href').slice(1));
     if (group) group.details.open = true;

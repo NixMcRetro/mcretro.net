@@ -295,6 +295,10 @@ assert.ok(navStyles.some(block =>
 assert.match(birdLayout, /\.main-nav a:visited[\s\S]*?color: #17451D;/);
 assert.match(birdLayout, /\.main-nav \.nav-list \{\s*background: #E7F5E4;\s*border-bottom: 1px solid #29A518;/);
 assert.doesNotMatch(birdLayout, /border-left: 6px solid #0C4308/);
+assert.ok(pages.nest.includes('<p class="chirp-return"><a href="/" data-theme-exit="light">↩ Return to McRetro.net</a></p>'));
+assert.match(birdLayout, /\\.main-nav a\\.nav-mode-bird:hover,[\\s\\S]*?background: #C8E5BD;/);
+assert.match(birdLayout, /\\.recent-posts-list li a:hover,[\\s\\S]*?background: #C8E5BD;/);
+
 
 assert.match(birdLayout, /\.nest-post-card time::after/);
 assert.match(birdLayout, /\.post-full \.post-meta::after/);

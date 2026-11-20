@@ -1,0 +1,30 @@
+name: Validate draft R2 File Server
+on:
+  pull_request:
+    paths:
+      - 'archive-sites/file-server/**'
+      - 'archive-sites/tools/file_server_inventory.py'
+      - 'archive-sites/tools/test_file_server_inventory.py'
+      - '.github/tests/r2-file-server.test.mjs'
+      - '.github/tests/script-tags.mjs'
+      - '.github/workflows/r2-file-server.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Validate standalone File Server prototype
+        run: node --test .github/tests/r2-file-server.test.mjs
+      - name: Test private File Server inventory and review
+        run: python3 -m unittest discover -s archive-sites/tools -p 'test_file_server_inventory.py' -v

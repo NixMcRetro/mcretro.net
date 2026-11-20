@@ -350,7 +350,12 @@ assert.ok(!birdPostsRule.includes('background:'));
 
 assert.match(birdLayout, /\.nest-post-card time::after/);
 assert.match(birdLayout, /\.post-full \.post-meta::after/);
-assert.match(channels, /Visit The Nest: Channel Chirp adventures on McRetro/);
+assert.doesNotMatch(channels, /Visit The Nest: Channel Chirp adventures on McRetro/,
+  'Removed Nest promotional copy must not reappear');
+assert.match(channels, /href="https:\/\/www\.youtube\.com\/playlist\?list=PLJAZP-TLMPj50jY6ytY53J3bQkgPIbeYP"/,
+  'Channel Chirp must link directly to the re-released YouTube playlist');
+assert.match(channels, /YouTube Playlist:\s*<a[^>]*>Channel Chirp<\/a>/,
+  'Channel Chirp playlist needs its intended label');
 
 // Bird archives reuse the McRetro year accordions and month tiles, with
 // counts from only the released Channel Chirp catalogue.

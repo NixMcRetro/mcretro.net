@@ -822,7 +822,8 @@
 :root[data-theme="bird"] .chirp-blog-list + .pagination-wrapper {
   border-top: 3px solid #29A518;
   background: #FFFFFF;
-  padding: .6rem .8rem .4rem;
+  /* Keep page highlights and arrow tiles flush against the top green rule. */
+  padding: 0 .8rem .4rem;
   border-radius: 2px;
 }
 :root[data-theme="bird"] .chirp-blog-list + .pagination-wrapper .pagination-bar {

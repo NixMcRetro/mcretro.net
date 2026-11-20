@@ -223,16 +223,6 @@
 /* Conure article chronology is isolated from regular Light/Dark posts. */
 :root:not([data-theme="bird"]) .post-navigation--bird { display: none !important; }
 :root[data-theme="bird"] .post-navigation--mcretro { display: none !important; }
-.chirp-timeline { list-style: none; padding: 0; margin: 1.1rem 0; }
-.chirp-timeline li {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .4rem 1rem;
-  padding: .6rem 0;
-  border-bottom: 1px solid var(--border-soft);
-}
-.chirp-timeline time { color: var(--muted); font-size: .81rem; min-width: 8.5em; }
-.chirp-timeline a { flex: 1; min-width: 10rem; font-weight: 600; }
 .nest-archive-list [hidden],
 .nest-no-results[hidden] { display: none !important; }
 
@@ -320,7 +310,6 @@
 :root[data-theme="bird"] .nest-flock-list li { border-color: #29A518; }
 :root[data-theme="bird"] .nest-hero-eyebrow { color: #18770C; }
 :root[data-theme="bird"] .nest-no-results { color: #FFFFFF; }
-:root[data-theme="bird"] .chirp-timeline time { color: #727272; }
 @media (max-width: 560px) {
   :root[data-theme="bird"] .nest-hero,
   :root[data-theme="bird"] .nest-intro,

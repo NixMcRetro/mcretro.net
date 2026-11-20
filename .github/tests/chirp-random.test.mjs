@@ -16,9 +16,11 @@ function setup({theme='bird', fail=false, current='/chirp-post-0/', randomValue=
   let mutation;
   let fetches = 0;
   const redirects = [];
-  const randomLink = {
-    addEventListener(type, listener) { listeners['random:' + type] = listener; }
-  };
+  const randomLinks = Array.from({length: withRandomLink ? 3 : 0}, (_, index) => ({
+    addEventListener(type, listener) {
+      listeners[index === 0 ? 'random:' + type : 'random:' + index + ':' + type] = listener;
+    }
+  }));
   const list = {replaceChildren(fragment) {
     children.splice(0, children.length, ...fragment.children);
   }};
@@ -35,8 +37,11 @@ function setup({theme='bird', fail=false, current='/chirp-post-0/', randomValue=
     querySelector(selector) {
       if (selector === '[data-chirp-random-posts]') return list;
       if (selector === '[data-chirp-random-shuffle]') return button;
-      if (selector === '[data-chirp-random-link]') return withRandomLink ? randomLink : null;
       return null;
+    },
+    querySelectorAll(selector) {
+      assert.equal(selector, '[data-chirp-random-link]');
+      return randomLinks;
     },
     createElement(tag) {
       const element = { tag, children: [], appendChild(child) {this.children.push(child);} };
@@ -139,4 +144,27 @@ test('Homepage random post link falls back to Adventures when the catalogue fail
   await flush();
   await app.listeners['random:click']({preventDefault() {}});
   assert.deepEqual(app.redirects, ['/chirp/adventures/']);
+});
+
+test('Bird nav, sidebar and Nest Random links share the same released-only catalogue', async () => {
+  const app = setup({withRandomLink:true, randomValue:0});
+  await flush();
+  assert.ok(app.listeners['random:click'], 'Nest link is wired');
+  assert.ok(app.listeners['random:1:click'], 'menu link is wired');
+  assert.ok(app.listeners['random:2:click'], 'sidebar link is wired');
+  for (const key of ['random:1:click', 'random:2:click']) {
+    let cancelled = false;
+    await app.listeners[key]({preventDefault() {cancelled = true;}});
+    assert.ok(cancelled);
+  }
+  assert.deepEqual(app.redirects, ['/chirp-post-1/', '/chirp-post-1/']);
+  assert.equal(app.fetchCount(), 1, 'all Random links reuse one catalogue');
+});
+
+test('Every Bird Random destination falls back to Adventures when offline', async () => {
+  const app = setup({withRandomLink:true, fail:true});
+  await flush();
+  await app.listeners['random:1:click']({preventDefault() {}});
+  await app.listeners['random:2:click']({preventDefault() {}});
+  assert.deepEqual(app.redirects, ['/chirp/adventures/', '/chirp/adventures/']);
 });

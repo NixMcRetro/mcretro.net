@@ -407,8 +407,8 @@
 :root[data-theme="bird"] .chirp-profile p:last-child { margin-bottom: 0; }
 :root[data-theme="bird"] .chirp-page-intro p:last-child { margin-bottom: 0; }
 
-/* Korataki matches the main McRetro wordmark; only Bird's parrot moves
- * to the right of its name. Keep McRetro's logo and ten taglines intact. */
+/* Korataki matches the main McRetro wordmark. The title is text-only;
+ * the Bird icon remains in the theme toggle and About navigation link. */
 :root[data-theme="bird"] .site-logo--bird {
   display: inline-flex;
   align-items: center;
@@ -419,12 +419,6 @@
   font-weight: 300;
   font-size: clamp(1.4rem, 4.8vw, 2.2rem);
   letter-spacing: .1em;
-}
-:root[data-theme="bird"] .bird-brand-mark {
-  font-family: system-ui, sans-serif;
-  font-size: .72em;
-  line-height: 1;
-  flex: 0 0 auto;
 }
 :root[data-theme="bird"] .main-nav {
   /* Pale navigation with thin horizontal rules matching Bird's sidebar green. */

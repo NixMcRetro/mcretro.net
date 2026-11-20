@@ -6,7 +6,7 @@
   'use strict';
   const list = document.querySelector('[data-chirp-random-posts]');
   const shuffleButton = document.querySelector('[data-chirp-random-shuffle]');
-  const randomPostLink = document.querySelector('[data-chirp-random-link]');
+  const randomPostLinks = document.querySelectorAll('[data-chirp-random-link]');
   if (!list || !shuffleButton) return;
 
   let candidates = null;
@@ -86,9 +86,9 @@
     if (candidates) render();
   });
 
-  // A homepage link selects one released Bird article, never a regular
-  // McRetro post. Without JavaScript, the link opens Adventures instead.
-  if (randomPostLink) {
+  // All Bird Random links (nav, sidebar and homepage) open one released
+  // conure article. Without JavaScript they safely open Adventures instead.
+  randomPostLinks.forEach(function (randomPostLink) {
     randomPostLink.addEventListener('click', async function (event) {
       event.preventDefault();
       if (loadingPromise) await loadingPromise;
@@ -99,7 +99,7 @@
       const selected = candidates[Math.floor(Math.random() * candidates.length)];
       window.location.assign(selected.url);
     });
-  }
+  });
   // Avoid loading the bird-only catalogue while readers use Light/Dark.
   // Observe the existing theme switch so Bird also works without reloading
   // a published conure article.

@@ -8,7 +8,7 @@ date: 2024-04-06T15:08:01.000+11:00
 
 *Recipe by Sharon Kotzur*
 
-![Original recipe photo placeholder, currently represented by a placeholder](/assets/images/2024/04/quick-mix-chocolate-cake/placeholder.jxl)
+![Quick Mix Chocolate Cake photograph](/assets/images/2024/04/quick-mix-chocolate-cake/placeholder.jxl)
 
 ### Cake Base
 

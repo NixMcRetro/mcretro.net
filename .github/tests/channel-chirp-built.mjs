@@ -10,6 +10,7 @@ const exists = file => fs.existsSync(path.join(site, file));
 const pages = {
   nest: read('chirp/index.html'),
   adventures: read('chirp/adventures/index.html'),
+  random: read('chirp/random/index.html'),
   about: read('chirp/about/index.html'),
   timeline: read('chirp/timeline/index.html'),
   search: read('chirp/search/index.html'),
@@ -54,12 +55,30 @@ assert.deepEqual(birdNavigation.map(item => item[1].match(/class="nav-text">([^<
   ['The Nest', 'Adventures', 'Soundborb', 'Random', 'About']);
 assert.match(pages.nest, /class="bird-brand-name">Channel Chirp<\/span>/);
 assert.doesNotMatch(pages.nest, /bird-brand-mark/);
-assert.match(pages.nest, /href="\/chirp\/adventures\/" data-chirp-random-link(?:="")?/);
+assert.match(pages.nest, /href="\/chirp\/random\/" data-chirp-random-link(?:="")?/);
 // Correct About destination is checked against the rendered nav, independent of active state.
 assert.match(birdNavigation[4][0], /href="\/chirp\/about\/"/);
-assert.match(birdNavigation[3][0], /data-chirp-random-link/);
+assert.match(birdNavigation[3][0], /href="\/chirp\/random\/" data-chirp-random-link/);
 assert.match(birdNavigation[2][0], /href="\/chirp\/soundborb\/"/);
 assert.doesNotMatch(birdNavigation.map(item => item[0]).join(' '), /href="\/chirp\/timeline\/"/);
+
+
+// Bird Random has an addressable native destination, including on new-tab clicks.
+assert.match(pages.random, /data-chirp-random-destination/);
+assert.match(pages.random, /href="\/chirp\/adventures\/">browse Adventures<\/a>/);
+assert.doesNotMatch(pages.random, /data-chirp-unrelated="true"/);
+assert.match(pages.adventures,
+  /class="nav-mode-bird active" href="\/chirp\/adventures\/"[^>]*aria-current="page"/,
+  'Adventures is bold on the blog roll');
+assert.match(conure,
+  /class="nav-mode-bird active" href="\/chirp\/adventures\/"/,
+  'Adventures is bold on released bird articles');
+assert.doesNotMatch(corella,
+  /class="nav-mode-bird active" href="\/chirp\/adventures\/"/,
+  'regular McRetro articles do not gain Bird Adventures active styling');
+assert.doesNotMatch(pages.nest,
+  /class="nav-mode-bird active" href="\/chirp\/adventures\/"/);
+assert.match(birdLayout, /a\.nav-mode-bird\.active\s*\{\s*font-weight:\s*700;/);
 
 assert.match(pages.timeline, /Flock Timeline|Timeline/, 'Timeline remains available at its own URL');
 assert.match(pages.nest, /class="chirp-home-panel"/);
@@ -68,7 +87,7 @@ assert.match(pages.nest, /Welcome to the Nest/);
 
 assert.match(pages.nest, /Welcome to our homepage! We are the most adorable <strong>green-cheeked conures<\/strong> in Australia!/);
 assert.match(pages.nest, /href="\/chirp\/adventures\/">our adventures<\/a>/);
-assert.match(pages.nest, /href="\/chirp\/adventures\/" data-chirp-random-link(?:="")?>random post<\/a>/);
+assert.match(pages.nest, /href="\/chirp\/random\/" data-chirp-random-link(?:="")?>random post<\/a>/);
 assert.match(pages.nest, /href="https:\/\/www\.youtube\.com\/playlist\?list=PLJAZP-TLMPj50jY6ytY53J3bQkgPIbeYP">YouTube Channel<\/a>/);
 assert.match(pages.nest, /We are Pudge, Tillie, and Chip!/);
 assert.match(pages.nest, /❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️/);

@@ -10,13 +10,14 @@ const sample = Array.from({length: 10}, (_, i) => ({
   date_label: '1st January 2018'
 }));
 
-function setup({theme='bird', fail=false, current='/chirp-post-0/', randomValue=null, withRandomLink=false}={}) {
+function setup({theme='bird', fail=false, current='/chirp-post-0/', randomValue=null, withRandomLink=false, randomDestination=false, withSidebar=true}={}) {
   const children = [];
   const listeners = {};
   let mutation;
   let fetches = 0;
   const redirects = [];
-  const randomLinks = Array.from({length: withRandomLink ? 3 : 0}, (_, index) => ({
+  const replacements = [];
+  const randomLinks = Array.from({length: withRandomLink ? 2 : 0}, (_, index) => ({
     addEventListener(type, listener) {
       listeners[index === 0 ? 'random:' + type : 'random:' + index + ':' + type] = listener;
     }
@@ -35,8 +36,9 @@ function setup({theme='bird', fail=false, current='/chirp-post-0/', randomValue=
   const document = {
     documentElement: root,
     querySelector(selector) {
-      if (selector === '[data-chirp-random-posts]') return list;
-      if (selector === '[data-chirp-random-shuffle]') return button;
+      if (selector === '[data-chirp-random-posts]') return withSidebar ? list : null;
+      if (selector === '[data-chirp-random-shuffle]') return withSidebar ? button : null;
+      if (selector === '[data-chirp-random-destination]') return randomDestination ? {} : null;
       return null;
     },
     querySelectorAll(selector) {
@@ -65,11 +67,15 @@ function setup({theme='bird', fail=false, current='/chirp-post-0/', randomValue=
   }
   runInNewContext(code, {
     document, fetch: fakeFetch, MutationObserver: Observer,
-    window: {location: {pathname: current, assign(url) { redirects.push(url); }}},
+    window: {location: {
+      pathname: current,
+      assign(url) { redirects.push(url); },
+      replace(url) { replacements.push(url); }
+    }},
     ...(randomValue === null ? {} : {Math: {min: Math.min, floor: Math.floor, random: () => randomValue}})
   });
   return {
-    button, list, children, root, listeners, redirects,
+    button, list, children, root, listeners, redirects, replacements,
     fetchCount:()=>fetches,
     changeTheme(next) { root.theme = next; mutation(); }
   };
@@ -146,25 +152,58 @@ test('Homepage random post link falls back to Adventures when the catalogue fail
   assert.deepEqual(app.redirects, ['/chirp/adventures/']);
 });
 
-test('Bird nav, sidebar and Nest Random links share the same released-only catalogue', async () => {
+
+test('Bird navbar and Nest Random links reuse one released-only catalogue', async () => {
   const app = setup({withRandomLink:true, randomValue:0});
   await flush();
   assert.ok(app.listeners['random:click'], 'Nest link is wired');
-  assert.ok(app.listeners['random:1:click'], 'menu link is wired');
-  assert.ok(app.listeners['random:2:click'], 'sidebar link is wired');
-  for (const key of ['random:1:click', 'random:2:click']) {
-    let cancelled = false;
-    await app.listeners[key]({preventDefault() {cancelled = true;}});
-    assert.ok(cancelled);
-  }
+  assert.ok(app.listeners['random:1:click'], 'navbar Random is wired');
+  await app.listeners['random:click']({preventDefault() {}});
+  await app.listeners['random:1:click']({preventDefault() {}});
   assert.deepEqual(app.redirects, ['/chirp-post-1/', '/chirp-post-1/']);
-  assert.equal(app.fetchCount(), 1, 'all Random links reuse one catalogue');
+  assert.equal(app.fetchCount(), 1, 'both Random links share the Bird catalogue');
 });
 
-test('Every Bird Random destination falls back to Adventures when offline', async () => {
+test('Bird Random links fall back to Adventures on a failed catalogue request', async () => {
   const app = setup({withRandomLink:true, fail:true});
   await flush();
+  await app.listeners['random:click']({preventDefault() {}});
   await app.listeners['random:1:click']({preventDefault() {}});
-  await app.listeners['random:2:click']({preventDefault() {}});
   assert.deepEqual(app.redirects, ['/chirp/adventures/', '/chirp/adventures/']);
+});
+
+test('Random links work without sidebar widgets', async () => {
+  const app = setup({withRandomLink:true, withSidebar:false, randomValue:0});
+  await flush();
+  await app.listeners['random:click']({preventDefault() {}});
+  assert.deepEqual(app.redirects, ['/chirp-post-1/']);
+  assert.equal(app.fetchCount(), 1);
+});
+
+test('The native /chirp/random/ route picks an article on page load', async () => {
+  const app = setup({current:'/chirp/random/', randomDestination:true, randomValue:0});
+  await flush();
+  assert.deepEqual(app.replacements, ['/chirp-post-0/']);
+  assert.deepEqual(app.redirects, [], 'automatic navigation replaces random intermediary');
+  assert.equal(app.fetchCount(), 1);
+});
+
+test('The native /chirp/random/ route preserves its manual fallback when offline', async () => {
+  const app = setup({current:'/chirp/random/', randomDestination:true, fail:true});
+  await flush();
+  assert.deepEqual(app.replacements, []);
+  assert.deepEqual(app.redirects, []);
+  assert.equal(app.fetchCount(), 1);
+});
+
+test('Modified clicks use the native Random URL for a new tab', async () => {
+  const app = setup({withRandomLink:true, randomValue:0});
+  await flush();
+  let cancelled = false;
+  await app.listeners['random:click']({
+    metaKey:true,
+    preventDefault() { cancelled = true; }
+  });
+  assert.equal(cancelled, false);
+  assert.deepEqual(app.redirects, []);
 });

@@ -323,10 +323,14 @@ test('advisory: navigation hover underlines words without bolding or shifting ad
   assert.equal((header.match(/class="nav-text"/g) || []).length, 11,
     'Six original McRetro links and five Bird links');
   assert.equal((header.match(/<li(?:\s[^>]*)?>/g) || []).length, 6);
-  assert.equal((header.match(/class="nav-mode-bird"/g) || []).length, 5);
+  assert.equal((header.match(/class="nav-mode-bird/g) || []).length, 5);
   assert.match(header, /<li class="nav-item--mcretro-only">/);
 
-  assert.match(header, /class="nav-mode-bird" href="\/chirp\/adventures\/" data-chirp-random-link/);
+  assert.match(header, /class="nav-mode-bird" href="\/chirp\/random\/" data-chirp-random-link/);
+
+  assert.match(header, /page\.url contains '\/chirp\/adventures\/' or page\.categories contains 'parrots' and page\.channel_chirp != false/,
+    'Bird Adventures is active for both the roll and released conure articles');
+
   assert.match(header, /class="nav-mode-bird" href="\/chirp\/about\/"[^\n]*<span class="nav-text">About<\/span>/);
   assert.doesNotMatch(header, /class="nav-mode-bird" href="\/chirp\/timeline\//);
   assert.doesNotMatch(header, /\/chirp\/flock\//, 'no old flock link remains');

@@ -13,7 +13,6 @@ const pages = {
   archive: read('chirp/archive/index.html'),
   random: read('chirp/random/index.html'),
   about: read('chirp/about/index.html'),
-  timeline: read('chirp/timeline/index.html'),
   search: read('chirp/search/index.html'),
   soundborb: read('chirp/soundborb/index.html'),
   diet: read('chirp/diet/index.html')
@@ -137,7 +136,10 @@ assert.match(birdLayout, /\.chirp-blog-list \+ \.pagination-wrapper \.pagination
   'avoid a second rule between the green border and tiles');
 
 
-assert.match(pages.timeline, /Flock Timeline|Timeline/, 'Timeline remains available at its own URL');
+assert.ok(!exists('chirp/timeline/index.html'), 'removed Timeline page must not be generated');
+for (const [name, html] of Object.entries(pages)) {
+  assert.doesNotMatch(html, /href="\/chirp\/timeline\//, 'no Bird page should link to the retired Timeline: ' + name);
+}
 assert.match(pages.nest, /class="chirp-home-panel"/);
 assert.doesNotMatch(pages.nest, /class="nest-post-card"/);
 assert.match(pages.nest, /Welcome to the Nest/);
@@ -263,12 +265,6 @@ for (const [index, html] of pageEntries.entries()) {
 }
 assert.match(list, /The First Day!/);
 assert.doesNotMatch(list, /Little Corella at the Local Nursery|Bits, Brass, and Bugs/);
-assert.doesNotMatch(pages.timeline, /Little Corella at the Local Nursery/);
-assert.match(pages.timeline, /The First Day!/);
-assert.doesNotMatch(pages.timeline, /<time[^>]*>\s*\d{1,2}\s+[A-Z]/,
-  'timeline dates need ordinal suffixes');
-assert.match(pages.timeline,
-  /\d{1,2}(?:st|nd|rd|th)\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)/);
 for (const post of randomPosts) {
   assert.match(post.url, /^\/(?![\\/])[^?#]*\/$/);
   assert.ok(post.title && post.date_label);
@@ -302,6 +298,7 @@ assert.deepEqual(calendarYears, ['2019', '2018'], 'Bird calendar only displays 2
 assert.match(sidebar, /href="\/chirp\/archive\/2019\/\d{2}\/"/);
 assert.doesNotMatch(sidebar, /href="\/archive\/\d{4}\//);
 assert.ok(sidebar.includes('class="archive-all-link sidebar-action-link" href="/chirp/archive/"'));
+assert.doesNotMatch(sidebar, /href="\/chirp\/timeline\//, 'Bird sidebar must not link to the retired Timeline');
 assert.match(sidebar, /Browse all archives/);
 assert.match(sidebar, /data-chirp-random-posts/);
 assert.match(sidebar, /data-chirp-random-shuffle/);

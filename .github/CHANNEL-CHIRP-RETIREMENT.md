@@ -46,7 +46,7 @@ posts or embed links to old videos that are scheduled to disappear.
   private staging/migration source, not an extra public set of blog posts.
 - Record original-to-McRetro article/video IDs in a private migration
   checklist when necessary. Do not expose unpublished video URLs.
-- The released-post timeline grows as each new article appears.
+- Released adventures appear in the Bird-only Adventures roll and archive calendar as new articles are published.
 
 ## Features that will move into /chirp/
 
@@ -56,7 +56,7 @@ posts or embed links to old videos that are scheduled to disappear.
   clips** (15,330,556 source bytes). Preserve its queue, favourites,
   Party Parrot, and responsive layouts in a dedicated direct child URL,
   `/chirp/soundborb/`.
-- Diet and flock timeline pages under the same root.
+- The Diet page at `/chirp/diet/` and the released-only archive at `/chirp/archive/`.
 - Original channel branding adapted to McRetro's three modes and
   JPEG XL image policies.
 

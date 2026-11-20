@@ -6,9 +6,11 @@
   'use strict';
   const list = document.querySelector('[data-chirp-random-posts]');
   const shuffleButton = document.querySelector('[data-chirp-random-shuffle]');
+  const randomPostLink = document.querySelector('[data-chirp-random-link]');
   if (!list || !shuffleButton) return;
 
   let candidates = null;
+  let loadingPromise = null;
   const maxPosts = 4;
   let lastShown = new Set();
 
@@ -83,6 +85,21 @@
   shuffleButton.addEventListener('click', function () {
     if (candidates) render();
   });
+
+  // A homepage link selects one released Bird article, never a regular
+  // McRetro post. Without JavaScript, the link opens Adventures instead.
+  if (randomPostLink) {
+    randomPostLink.addEventListener('click', async function (event) {
+      event.preventDefault();
+      if (loadingPromise) await loadingPromise;
+      if (!candidates || !candidates.length) {
+        window.location.assign('/chirp/adventures/');
+        return;
+      }
+      const selected = candidates[Math.floor(Math.random() * candidates.length)];
+      window.location.assign(selected.url);
+    });
+  }
   // Avoid loading the bird-only catalogue while readers use Light/Dark.
   // Observe the existing theme switch so Bird also works without reloading
   // a published conure article.
@@ -90,7 +107,7 @@
   function activateIfBird() {
     if (requested || document.documentElement.getAttribute('data-theme') !== 'bird') return;
     requested = true;
-    void load();
+    loadingPromise = load();
   }
   activateIfBird();
   const observer = new MutationObserver(activateIfBird);

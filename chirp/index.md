@@ -18,8 +18,8 @@ pagefind: false
     <figcaption>Chirp, chirp, <strong>quack!</strong></figcaption>
   </figure>
   <div class="chirp-home-copy">
-    <p>Three little green-cheeked conures, an unreasonable amount of mischief, and enough chirps to fill a lifetime. Pudge, Tillie, and Chip's stories are returning to McRetro as their original videos are re-released.</p>
-    <p>The Nest is home to the released adventures, a timeline of the flock, and the birds themselves. New stories will join as they're ready, without republishing the old archive all at once.</p>
+    <p>Welcome to our homepage! We are the most adorable <strong>green-cheeked conures</strong> in Australia! Thank you for taking the time to visit and be sure to check out <a href="/chirp/adventures/">our adventures</a>, a <a href="/chirp/adventures/" data-chirp-random-link>random post</a>, or our <a href="https://www.youtube.com/playlist?list=PLJAZP-TLMPj50jY6ytY53J3bQkgPIbeYP">YouTube Channel</a>.</p>
+    <p>We are Pudge, Tillie, and Chip!</p>
+    <p class="chirp-home-hearts">❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️</p>
   </div>
-  <p class="chirp-home-links"><a href="/chirp/adventures/">🪶 Explore the Adventures</a><a href="/chirp/flock/">🦜 Meet Our Flock</a><a href="/chirp/timeline/">📅 Flock Timeline</a></p>
 </section>

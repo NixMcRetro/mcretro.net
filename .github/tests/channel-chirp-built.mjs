@@ -51,6 +51,15 @@ assert.match(pages.nest, /class="chirp-home-panel"/);
 assert.doesNotMatch(pages.nest, /class="nest-post-card"/);
 assert.match(pages.nest, /Welcome to the Nest/);
 
+assert.match(pages.nest, /Welcome to our homepage! We are the most adorable <strong>green-cheeked conures<\/strong> in Australia!/);
+assert.match(pages.nest, /href="\/chirp\/adventures\/">our adventures<\/a>/);
+assert.match(pages.nest, /href="\/chirp\/adventures\/" data-chirp-random-link(?:="")?>random post<\/a>/);
+assert.match(pages.nest, /href="https:\/\/www\.youtube\.com\/playlist\?list=PLJAZP-TLMPj50jY6ytY53J3bQkgPIbeYP">YouTube Channel<\/a>/);
+assert.match(pages.nest, /We are Pudge, Tillie, and Chip!/);
+assert.match(pages.nest, /❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️/);
+assert.doesNotMatch(pages.nest, /class="chirp-home-links"/);
+
+
 assert.match(pages.nest, /<figure class="chirp-home-figure">/);
 assert.match(pages.nest, /src="\/assets\/images\/2019\/01\/channel-chirp-nest\/frontpage\.jxl"/);
 assert.match(pages.nest, /width="1024"\s+height="768"/);

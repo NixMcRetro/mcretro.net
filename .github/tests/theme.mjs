@@ -574,6 +574,12 @@ test('advisory: Channels keeps emoji and links, without old summary siren GIFs',
   }
   assert.ok(!channels.includes('@ChannelChirp'), 'Retiring YouTube channel should not be advertised');
   assert.ok(channels.includes('/chirp/'));
+  assert.ok(channels.includes('Recently (2026) we’re continuing to merge former channels, such as Fish Tank World and Channel Chirp, into this website and YouTube channel. Stay Tuned :)'));
+  assert.ok(channels.includes('YouTube Playlist: [Channel Chirp](https://www.youtube.com/playlist?list=PLJAZP-TLMPj50jY6ytY53J3bQkgPIbeYP)<br>'));
+  assert.ok(channels.includes('Homepage: [https://mcretro.net/chirp/](/chirp/)'));
+  assert.ok(!channels.includes('Visit The Nest: Channel Chirp adventures on McRetro'));
+  assert.ok(!channels.includes('Re-released videos: [McRetro on YouTube]'));
+  assert.ok(!channels.includes('Recently (2024)'));
   assert.match(overrides, /\.mcretro-modem-titlebar[\s\S]*background: #000080/);
 });
 

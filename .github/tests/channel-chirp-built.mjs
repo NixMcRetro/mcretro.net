@@ -42,8 +42,8 @@ assert.match(conure, /post-navigation--bird/);
 assert.match(conure, /post-navigation--mcretro/);
 
 for (const [slug, label] of [
-  ['adventures', 'Adventures'], ['flock', 'Our Flock'],
-  ['timeline', 'Timeline'], ['soundborb', 'Soundborb']
+  ['adventures', 'Adventures'], ['flock', 'About'],
+  ['soundborb', 'Soundborb']
 ]) {
   assert.match(pages.nest, new RegExp('href="/chirp/' + slug + '/"'), slug + ' is an independent Bird page');
 }
@@ -61,6 +61,7 @@ assert.match(birdNavigation[3][0], /data-chirp-random-link/);
 assert.match(birdNavigation[2][0], /href="\/chirp\/soundborb\/"/);
 assert.doesNotMatch(birdNavigation.map(item => item[0]).join(' '), /href="\/chirp\/timeline\/"/);
 
+assert.match(pages.timeline, /Flock Timeline|Timeline/, 'Timeline remains available at its own URL');
 assert.match(pages.nest, /class="chirp-home-panel"/);
 assert.doesNotMatch(pages.nest, /class="nest-post-card"/);
 assert.match(pages.nest, /Welcome to the Nest/);

@@ -32,6 +32,9 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
     <button type="button" data-gc-action="expand">Expand All</button>
     <button type="button" data-gc-action="collapse">Collapse All</button>
     <button type="button" data-gc-action="random">Random Neighbourhood</button>
+    <button type="button" data-gc-action="reset">Reset View</button>
+    <button type="button" data-gc-action="copy-search" disabled>Copy Search Link</button>
+    <span class="gc-copy-search-status" id="gc-copy-search-status" role="status" aria-live="polite"></span>
   </div>
   <div class="gc-browser-options">
     <label class="gc-sort-label" for="gc-neighbourhood-sort">Sort Neighbourhoods
@@ -39,20 +42,27 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
         <option value="alphabetical">Alphabetical (Original)</option>
         <option value="largest">Largest Population First</option>
         <option value="smallest">Smallest Population First</option>
+        <option value="most-suburbs">Most Suburbs First</option>
+        <option value="fewest-suburbs">Fewest Suburbs First</option>
       </select>
     </label>
     <label class="gc-suburb-only-label" for="gc-suburbs-matching-only">
-      <input id="gc-suburbs-matching-only" type="checkbox"> Show Only Matching Suburbs
+      <input id="gc-suburbs-matching-only" type="checkbox" disabled> Show Only Matching Suburbs
     </label>
   </div>
   <p id="gc-neighbourhood-hint" class="gc-browser-hint">Press / to search, or Esc to clear. Searches update the URL. Matching Suburbs hides other suburbs when suburb names match.</p>
   <output id="gc-neighbourhood-results" aria-live="polite" aria-atomic="true">Showing all 41 neighbourhoods.</output>
 </div>
 
+<div id="gc-neighbourhood-empty" class="gc-no-results" hidden>
+  <p>No neighbourhoods or suburbs match your search. Try another term, or clear your search.</p>
+  <button type="button" data-gc-action="clear-search">Clear Search</button>
+</div>
+
 <div class="gc-neighbourhoods" id="gc-neighbourhood-list">
 <section class="gc-neighbourhood" id="Area51">
 <details>
-<summary><img src="/homepages/geocities/images/icons/area51.gif" width="88" height="31" alt="Area51 neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Area51<small>Historic population: 17,729</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/area51.gif" width="88" height="31" alt="Area51 neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Area51<small>Historic population: 17,729</small><small>Listed suburbs: 43</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p class="gc-neighbourhood-mast"><img src="/homepages/geocities/images/neighborhoods/Area51/Area51.gif" alt="Original Area51 neighbourhood banner" loading="lazy"></p>
 <p>Science fiction and fantasy.</p>
@@ -109,7 +119,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Athens">
 <details>
-<summary><img src="/homepages/geocities/images/icons/athens1.gif" width="88" height="31" alt="Athens neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Athens<small>Historic population: 16,038</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/athens1.gif" width="88" height="31" alt="Athens neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Athens<small>Historic population: 16,038</small><small>Listed suburbs: 26</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Education, literature, poetry, philosophy.</p>
 
@@ -148,7 +158,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Augusta">
 <details>
-<summary><img src="/homepages/geocities/images/icons/augusta.gif" width="88" height="31" alt="Augusta neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Augusta<small>Historic population: 1,416</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/augusta.gif" width="88" height="31" alt="Augusta neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Augusta<small>Historic population: 1,416</small><small>Listed suburbs: 3</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Golf and the finer side of the fairways.</p>
 
@@ -164,7 +174,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Baja">
 <details>
-<summary><img src="/homepages/geocities/images/icons/baja8831.gif" width="88" height="31" alt="Baja neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Baja<small>Historic population: 3,295</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/baja8831.gif" width="88" height="31" alt="Baja neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Baja<small>Historic population: 3,295</small><small>Listed suburbs: 9</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Four-wheeling, SUVs, off-roading, adventure travel.</p>
 
@@ -186,7 +196,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="BourbonStreet">
 <details>
-<summary><img src="/homepages/geocities/images/icons/bourbong.gif" width="88" height="31" alt="BourbonStreet neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">BourbonStreet<small>Historic population: 662</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/bourbong.gif" width="88" height="31" alt="BourbonStreet neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">BourbonStreet<small>Historic population: 662</small><small>Listed suburbs: 6</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Jazz, Cajun food, Southern culture.</p>
 
@@ -205,7 +215,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Broadway">
 <details>
-<summary><img src="/homepages/geocities/images/icons/broadwb.gif" width="88" height="31" alt="Broadway neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Broadway<small>Historic population: 0</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/broadwb.gif" width="88" height="31" alt="Broadway neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Broadway<small>Historic population: 0</small><small>Listed suburbs: 7</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Theater, musicals, show business.</p>
 <p><strong>Note:</strong> This neighbourhood was recorded as absent from the restored archive.</p>
@@ -225,7 +235,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="CapeCanaveral">
 <details>
-<summary><img src="/homepages/geocities/images/icons/cape8831.gif" width="88" height="31" alt="CapeCanaveral neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">CapeCanaveral<small>Historic population: 6,329</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/cape8831.gif" width="88" height="31" alt="CapeCanaveral neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">CapeCanaveral<small>Historic population: 6,329</small><small>Listed suburbs: 11</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Science, mathematics, aviation.</p>
 
@@ -249,7 +259,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="CapitolHill">
 <details>
-<summary><img src="/homepages/geocities/images/icons/capitol.gif" width="88" height="31" alt="CapitolHill neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">CapitolHill<small>Historic population: 4,198</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/capitol.gif" width="88" height="31" alt="CapitolHill neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">CapitolHill<small>Historic population: 4,198</small><small>Listed suburbs: 6</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Government, politics, and lots of strong opinions.</p>
 
@@ -268,7 +278,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="CollegePark">
 <details>
-<summary><img src="/homepages/geocities/images/icons/collegep.gif" width="88" height="31" alt="CollegePark neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">CollegePark<small>Historic population: 10,149</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/collegep.gif" width="88" height="31" alt="CollegePark neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">CollegePark<small>Historic population: 10,149</small><small>Listed suburbs: 24</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>University life, from academics to extracurriculars.</p>
 
@@ -305,7 +315,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Colosseum">
 <details>
-<summary><img src="/homepages/geocities/images/icons/coloss88.gif" width="88" height="31" alt="Colosseum neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Colosseum<small>Historic population: 13,294</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/coloss88.gif" width="88" height="31" alt="Colosseum neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Colosseum<small>Historic population: 13,294</small><small>Listed suburbs: 28</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Sports and recreation.</p>
 
@@ -346,7 +356,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="EnchantedForest">
 <details>
-<summary><img src="/homepages/geocities/images/icons/enchant.gif" width="88" height="31" alt="EnchantedForest neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">EnchantedForest<small>Historic population: 4,496</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/enchant.gif" width="88" height="31" alt="EnchantedForest neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">EnchantedForest<small>Historic population: 4,496</small><small>Listed suburbs: 14</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>A neighborhood for and by kids.</p>
 
@@ -373,7 +383,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Eureka">
 <details>
-<summary><img src="/homepages/geocities/images/icons/eureka2.gif" width="88" height="31" alt="Eureka neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Eureka<small>Historic population: 5,591</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/eureka2.gif" width="88" height="31" alt="Eureka neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Eureka<small>Historic population: 5,591</small><small>Listed suburbs: 20</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Small businesses, home offices.</p>
 
@@ -406,7 +416,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="FashionAvenue">
 <details>
-<summary><img src="/homepages/geocities/images/icons/fashion.gif" width="88" height="31" alt="FashionAvenue neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">FashionAvenue<small>Historic population: 2,329</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/fashion.gif" width="88" height="31" alt="FashionAvenue neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">FashionAvenue<small>Historic population: 2,329</small><small>Listed suburbs: 7</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Top designers, beauty and fashion.</p>
 
@@ -426,7 +436,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Heartland">
 <details>
-<summary><img src="/homepages/geocities/images/icons/heartl88.gif" width="88" height="31" alt="Heartland neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Heartland<small>Historic population: 28,122</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/heartl88.gif" width="88" height="31" alt="Heartland neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Heartland<small>Historic population: 28,122</small><small>Listed suburbs: 44</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Families, hometown values.</p>
 
@@ -483,7 +493,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Hollywood">
 <details>
-<summary><img src="/homepages/geocities/images/icons/hollyw88.gif" width="88" height="31" alt="Hollywood neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Hollywood<small>Historic population: 14,619</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/hollyw88.gif" width="88" height="31" alt="Hollywood neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Hollywood<small>Historic population: 14,619</small><small>Listed suburbs: 35</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Film and TV.</p>
 
@@ -531,7 +541,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="HotSprings">
 <details>
-<summary><img src="/homepages/geocities/images/icons/hotspr88.gif" width="88" height="31" alt="HotSprings neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">HotSprings<small>Historic population: 4,739</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/hotspr88.gif" width="88" height="31" alt="HotSprings neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">HotSprings<small>Historic population: 4,739</small><small>Listed suburbs: 9</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Health and fitness.</p>
 
@@ -553,7 +563,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="MadisonAvenue">
 <details>
-<summary><img src="/homepages/geocities/images/icons/madison.gif" width="88" height="31" alt="MadisonAvenue neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">MadisonAvenue<small>Historic population: 858</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/madison.gif" width="88" height="31" alt="MadisonAvenue neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">MadisonAvenue<small>Historic population: 858</small><small>Listed suburbs: 3</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Advertising.</p>
 
@@ -569,7 +579,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="MotorCity">
 <details>
-<summary><img src="/homepages/geocities/images/icons/motor88.gif" width="88" height="31" alt="MotorCity neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">MotorCity<small>Historic population: 8,001</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/motor88.gif" width="88" height="31" alt="MotorCity neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">MotorCity<small>Historic population: 8,001</small><small>Listed suburbs: 16</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Cars, trucks, motorcycles.</p>
 
@@ -598,7 +608,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="NapaValley">
 <details>
-<summary><img src="/homepages/geocities/images/icons/napa8831.gif" width="88" height="31" alt="NapaValley neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">NapaValley<small>Historic population: 1,504</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/napa8831.gif" width="88" height="31" alt="NapaValley neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">NapaValley<small>Historic population: 1,504</small><small>Listed suburbs: 2</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Food, wine, dining out, the gourmet lifestyle.</p>
 
@@ -613,7 +623,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Nashville">
 <details>
-<summary><img src="/homepages/geocities/images/icons/nashvill.gif" width="88" height="31" alt="Nashville neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Nashville<small>Historic population: 2,585</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/nashvill.gif" width="88" height="31" alt="Nashville neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Nashville<small>Historic population: 2,585</small><small>Listed suburbs: 5</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Country music.</p>
 
@@ -631,7 +641,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Paris">
 <details>
-<summary><img src="/homepages/geocities/images/icons/paris88.gif" width="88" height="31" alt="Paris neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Paris<small>Historic population: 9,458</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/paris88.gif" width="88" height="31" alt="Paris neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Paris<small>Historic population: 9,458</small><small>Listed suburbs: 32</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Romance, poetry, the arts.</p>
 
@@ -676,7 +686,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Pentagon">
 <details>
-<summary><img src="/homepages/geocities/images/icons/pentagon.gif" width="88" height="31" alt="Pentagon neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Pentagon<small>Historic population: 2,958</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/pentagon.gif" width="88" height="31" alt="Pentagon neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Pentagon<small>Historic population: 2,958</small><small>Listed suburbs: 6</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Military men and women.</p>
 
@@ -695,7 +705,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Petsburgh">
 <details>
-<summary><img src="/homepages/geocities/images/icons/petsburgh.gif" width="88" height="31" alt="Petsburgh neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Petsburgh<small>Historic population: 3,472</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/petsburgh.gif" width="88" height="31" alt="Petsburgh neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Petsburgh<small>Historic population: 3,472</small><small>Listed suburbs: 8</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Pets and the people who love them.</p>
 
@@ -716,7 +726,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="PicketFence">
 <details>
-<summary><img src="/homepages/geocities/images/icons/picket88.gif" width="88" height="31" alt="PicketFence neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">PicketFence<small>Historic population: 1,150</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/picket88.gif" width="88" height="31" alt="PicketFence neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">PicketFence<small>Historic population: 1,150</small><small>Listed suburbs: 2</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Home improvement and real estate.</p>
 
@@ -731,7 +741,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Pipeline">
 <details>
-<summary><img src="/homepages/geocities/images/icons/pipeln88.gif" width="88" height="31" alt="Pipeline neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Pipeline<small>Historic population: 3,466</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/pipeln88.gif" width="88" height="31" alt="Pipeline neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Pipeline<small>Historic population: 3,466</small><small>Listed suburbs: 11</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Extreme sports.</p>
 
@@ -755,7 +765,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="RainForest">
 <details>
-<summary><img src="/homepages/geocities/images/icons/rainfo88.gif" width="88" height="31" alt="RainForest neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">RainForest<small>Historic population: 4,009</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/rainfo88.gif" width="88" height="31" alt="RainForest neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">RainForest<small>Historic population: 4,009</small><small>Listed suburbs: 7</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>The environment, conservation, recycling.</p>
 
@@ -775,7 +785,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="ResearchTriangle">
 <details>
-<summary><img src="/homepages/geocities/images/icons/restri88.gif" width="88" height="31" alt="ResearchTriangle neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">ResearchTriangle<small>Historic population: 3,742</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/restri88.gif" width="88" height="31" alt="ResearchTriangle neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">ResearchTriangle<small>Historic population: 3,742</small><small>Listed suburbs: 8</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>The future of technology.</p>
 
@@ -796,7 +806,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="RodeoDrive">
 <details>
-<summary><img src="/homepages/geocities/images/icons/rodeo88.gif" width="88" height="31" alt="RodeoDrive neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">RodeoDrive<small>Historic population: 1,141</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/rodeo88.gif" width="88" height="31" alt="RodeoDrive neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">RodeoDrive<small>Historic population: 1,141</small><small>Listed suburbs: 2</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Shopping, upscale living.</p>
 
@@ -811,7 +821,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="SiliconValley">
 <details>
-<summary><img src="/homepages/geocities/images/icons/silval2.gif" width="88" height="31" alt="SiliconValley neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">SiliconValley<small>Historic population: 14,794</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/silval2.gif" width="88" height="31" alt="SiliconValley neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">SiliconValley<small>Historic population: 14,794</small><small>Listed suburbs: 44</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Hardware, software, programming.</p>
 
@@ -868,7 +878,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="SoHo">
 <details>
-<summary><img src="/homepages/geocities/images/icons/sohop88.gif" width="88" height="31" alt="SoHo neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">SoHo<small>Historic population: 12,092</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/sohop88.gif" width="88" height="31" alt="SoHo neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">SoHo<small>Historic population: 12,092</small><small>Listed suburbs: 26</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Art, poetry, prose, the bohemian spirit.</p>
 
@@ -907,7 +917,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="SouthBeach">
 <details>
-<summary><img src="/homepages/geocities/images/icons/southp88.gif" width="88" height="31" alt="SouthBeach neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">SouthBeach<small>Historic population: 15,674</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/southp88.gif" width="88" height="31" alt="SouthBeach neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">SouthBeach<small>Historic population: 15,674</small><small>Listed suburbs: 48</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Hanging out, chatting, meeting and greeting.</p>
 
@@ -968,7 +978,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="SunsetStrip">
 <details>
-<summary><img src="/homepages/geocities/images/icons/sunset88.gif" width="88" height="31" alt="SunsetStrip neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">SunsetStrip<small>Historic population: 20,453</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/sunset88.gif" width="88" height="31" alt="SunsetStrip neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">SunsetStrip<small>Historic population: 20,453</small><small>Listed suburbs: 55</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Rock, grunge, punk, the club scene.</p>
 
@@ -1036,7 +1046,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="TelevisionCity">
 <details>
-<summary><img src="/homepages/geocities/images/icons/tvcity88.gif" width="88" height="31" alt="TelevisionCity neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">TelevisionCity<small>Historic population: 5,048</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/tvcity88.gif" width="88" height="31" alt="TelevisionCity neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">TelevisionCity<small>Historic population: 5,048</small><small>Listed suburbs: 11</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>TV fan clubs, sitcoms, talk shows.</p>
 
@@ -1060,7 +1070,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="TheTropics">
 <details>
-<summary><img src="/homepages/geocities/images/icons/tropic88.gif" width="88" height="31" alt="TheTropics neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">TheTropics<small>Historic population: 7,877</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/tropic88.gif" width="88" height="31" alt="TheTropics neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">TheTropics<small>Historic population: 7,877</small><small>Listed suburbs: 16</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Vacations, resorts, travel.</p>
 
@@ -1089,7 +1099,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="TimesSquare">
 <details>
-<summary><img src="/homepages/geocities/images/icons/times88.gif" width="88" height="31" alt="TimesSquare neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">TimesSquare<small>Historic population: 11,480</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/times88.gif" width="88" height="31" alt="TimesSquare neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">TimesSquare<small>Historic population: 11,480</small><small>Listed suburbs: 37</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p class="gc-neighbourhood-mast"><img src="/homepages/geocities/images/neighborhoods/TimeSquare/ts_mast.gif" alt="Original TimesSquare neighbourhood banner" loading="lazy"></p>
 <p>Computers, games, role-playing.</p>
@@ -1140,7 +1150,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Tokyo">
 <details>
-<summary><img src="/homepages/geocities/images/icons/tokyo88.gif" width="88" height="31" alt="Tokyo neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Tokyo<small>Historic population: 16,230</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/tokyo88.gif" width="88" height="31" alt="Tokyo neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Tokyo<small>Historic population: 16,230</small><small>Listed suburbs: 30</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Anime and all things Asian.</p>
 
@@ -1183,7 +1193,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Vienna">
 <details>
-<summary><img src="/homepages/geocities/images/icons/vienna88.gif" width="88" height="31" alt="Vienna neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Vienna<small>Historic population: 3,846</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/vienna88.gif" width="88" height="31" alt="Vienna neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Vienna<small>Historic population: 3,846</small><small>Listed suburbs: 9</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Classical music, opera, ballet.</p>
 
@@ -1205,7 +1215,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="WallStreet">
 <details>
-<summary><img src="/homepages/geocities/images/icons/wallst88.gif" width="88" height="31" alt="WallStreet neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">WallStreet<small>Historic population: 198</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/wallst88.gif" width="88" height="31" alt="WallStreet neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">WallStreet<small>Historic population: 198</small><small>Listed suburbs: 12</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Personal investing, finance, economics.</p>
 
@@ -1230,7 +1240,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Wellesley">
 <details>
-<summary><img src="/homepages/geocities/images/icons/wellg88.gif" width="88" height="31" alt="Wellesley neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Wellesley<small>Historic population: 2,936</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/wellg88.gif" width="88" height="31" alt="Wellesley neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Wellesley<small>Historic population: 2,936</small><small>Listed suburbs: 7</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>A community for women.</p>
 
@@ -1250,7 +1260,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="WestHollywood">
 <details>
-<summary><img src="/homepages/geocities/images/icons/whrainbo.gif" width="88" height="31" alt="WestHollywood neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">WestHollywood<small>Historic population: 6,867</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/whrainbo.gif" width="88" height="31" alt="WestHollywood neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">WestHollywood<small>Historic population: 6,867</small><small>Listed suburbs: 12</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Gay, lesbian, bisexual and transgendered.</p>
 
@@ -1275,7 +1285,7 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
 
 <section class="gc-neighbourhood" id="Yosemite">
 <details>
-<summary><img src="/homepages/geocities/images/icons/ybutton.gif" width="88" height="31" alt="Yosemite neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Yosemite<small>Historic population: 5,714</small></span></summary>
+<summary><img src="/homepages/geocities/images/icons/ybutton.gif" width="88" height="31" alt="Yosemite neighbourhood button" loading="lazy"><span class="gc-neighbourhood-title">Yosemite<small>Historic population: 5,714</small><small>Listed suburbs: 13</small></span></summary>
 <div class="gc-neighbourhood-body">
 <p>Hiking, rafting, and the great outdoors.</p>
 

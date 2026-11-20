@@ -84,7 +84,7 @@ assert.ok(sidebar, 'Bird sidebar exists');
 assert.ok(sidebar.indexOf('🎲 Random Posts') < sidebar.indexOf('Find-a-Squawk'));
 assert.ok(sidebar.indexOf('Find-a-Squawk') < sidebar.indexOf('>Archives<'));
 assert.ok(sidebar.indexOf('>Archives<') < sidebar.indexOf('Cool Links'));
-assert.match(sidebar, /Browse Channel Chirp Adventures/);
+assert.match(sidebar, /Browse Adventures/);
 assert.match(sidebar, /data-chirp-random-posts/);
 assert.match(sidebar, /data-chirp-random-shuffle/);
 assert.equal((sidebar.match(/<li>/g)||[]).length, 4);

@@ -533,10 +533,10 @@ test('advisory: Bird filled hover belongs to the expanded mobile menu only', () 
   assert.ok(mobile.includes('.nav-list li a.nav-mode-bird:focus-visible {'),
     'expanded mobile menu has a keyboard-focus style');
   assert.ok(mobile.includes('background: #C8E5BD;'));
-  const desktopStart = bird.indexOf('/* Pale green gives navigation emoji');
-  const desktopEnd = bird.indexOf('/* Post previews use the original Channel Chirp rhythm');
-  assert.ok(desktopStart >= 0 && desktopEnd > desktopStart);
-  const desktopColour = bird.slice(desktopStart, desktopEnd);
+  const birdPaleNavStart = bird.indexOf('/* Pale green gives navigation emoji');
+  const birdPaleNavEnd = bird.indexOf('/* Post previews use the original Channel Chirp rhythm');
+  assert.ok(birdPaleNavStart >= 0 && birdPaleNavEnd > birdPaleNavStart);
+  const desktopColour = bird.slice(birdPaleNavStart, birdPaleNavEnd);
   assert.ok(desktopColour.includes('background: #E7F5E4;'));
   assert.ok(desktopColour.includes('color: #17660D;'));
   assert.ok(desktopColour.includes('color: #105B08;'));

@@ -194,11 +194,14 @@ assert.match(directory, /data-gc-action="reset"/);
 assert.match(directory, /data-gc-action="copy-search" disabled/);
 assert.match(directory, /id="gc-suburbs-matching-only" type="checkbox" disabled/);
 assert.match(directory, /id="gc-neighbourhood-empty" class="gc-no-results" hidden/);
-const panel = directory.match(/<div class="gc-browser-tools" hidden>([\s\S]*?)<\/div>\s*<div id="gc-neighbourhood-empty"/);
-assert.ok(panel, 'Browser panel and no-results block must exist');
-assert.ok(panel[0].indexOf('gc-browser-search-row') < panel[0].indexOf('gc-browser-tool-row'),
+const panelStart = directory.indexOf('class="gc-browser-tools" hidden');
+const emptyStart = directory.indexOf('id="gc-neighbourhood-empty"');
+assert.ok(panelStart >= 0 && emptyStart > panelStart,
+  'Browser panel and no-results block must exist in that order');
+const panel = directory.slice(panelStart, emptyStart);
+assert.ok(panel.indexOf('gc-browser-search-row') < panel.indexOf('gc-browser-tool-row'),
   'Search should be before the actions row');
-assert.ok(panel[0].indexOf('gc-browser-options') < panel[0].indexOf('gc-browser-status'),
+assert.ok(panel.indexOf('gc-browser-options') < panel.indexOf('gc-browser-status'),
   'Sorting and filters should be grouped before results');
 assert.equal([...directory.matchAll(/id="gc-neighbourhood-search"/g)].length, 1);
 assert.match(directory, /data-gc-action="clear-search"/);

@@ -17,6 +17,11 @@ function fixture(systemDark = false, stored = null, storageFails = false, defaul
   const navigations = [];
   const btnAttrs = {}, metaAttrs = {};
   const store = new Map(stored ? [['mcretro-theme', stored]] : []);
+  if (context.standard) store.set('mcretro-last-standard-theme', context.standard);
+  const exitLink = {
+    getAttribute(k) { return k === 'data-theme-exit' ? 'standard' : null; },
+    addEventListener(k,fn) { if (k === 'click') handlers.exitClick = fn; }
+  };
   const button = {
     setAttribute(k,v) { btnAttrs[k] = String(v); },
     addEventListener(k,fn) { handlers[k] = fn; }
@@ -26,12 +31,15 @@ function fixture(systemDark = false, stored = null, storageFails = false, defaul
     readyState: 'loading',
     documentElement: { setAttribute(k,v) { attrs[k] = String(v); }, getAttribute(k) { return attrs[k] || null; } },
     querySelector(s) { return s === '[data-theme-toggle]' ? button : s === 'meta[name="theme-color"]' ? meta : null; },
+    querySelectorAll(s) { return s === '[data-theme-exit]' && context.exitLink ? [exitLink] : []; },
     addEventListener(k,fn) { docHandlers[k] = fn; }
   };
   const media = { matches: systemDark, addEventListener(k,fn) { mediaHandlers[k] = fn; } };
   const window = {
     location: {
       pathname: context.path || (defaultBird ? '/chirp/' : '/'),
+      search: context.search || '',
+      hash: context.hash || '',
       assign(url) { navigations.push({ method: 'assign', url }); },
       replace(url) { navigations.push({ method: 'replace', url }); }
     },
@@ -73,9 +81,11 @@ test('core: theme button cycles Light, Dark, Bird, Light and remembers the filte
   const f=fixture(false);
   f.handlers.click();
   assert.equal(f.store.get('mcretro-theme'),'dark');
+  assert.equal(f.store.get('mcretro-last-standard-theme'),'dark');
   assert.equal(f.attrs['data-theme'],'dark');
   f.handlers.click();
   assert.equal(f.store.get('mcretro-theme'),'bird');
+  assert.equal(f.store.get('mcretro-last-standard-theme'),'dark');
   assert.equal(f.attrs['data-theme'],'bird');
   assert.equal(f.metaAttrs.content,'#424242');
   assert.deepEqual(f.navigations.at(-1), { method:'assign', url:'/chirp/' });
@@ -90,6 +100,8 @@ test('core: opening /chirp/ activates Bird; turning it off returns to McRetro Ho
   const f=fixture(false,'dark',false,true);
   assert.equal(f.attrs['data-theme'],'bird');
   assert.equal(f.store.get('mcretro-theme'),'bird');
+  assert.equal(f.store.get('mcretro-last-standard-theme'),'dark',
+    'explicit Bird destination must remember the previous McRetro colour');
   f.handlers.click();
   assert.equal(f.attrs['data-theme'],'light');
   assert.deepEqual(f.navigations.at(-1), {method:'assign',url:'/'});
@@ -163,22 +175,83 @@ test('core: About and Channel Chirp About remain paired across modes', () => {
   assert.match(read('chirp/adventures/index.md'), /permalink: \/chirp\/adventures\//);
 });
 
-test('core: saved Bird preference opens corresponding section, preserving fallback elsewhere', () => {
-  const about=fixture(false,'bird',false,false,{unrelated:true,path:'/about/'});
-  assert.deepEqual(about.navigations, [{method:'replace',url:'/chirp/about/'}]);
-  const blog=fixture(false,'bird',false,false,{unrelated:true,path:'/blog/'});
-  assert.deepEqual(blog.navigations, [{method:'replace',url:'/chirp/adventures/'}]);
-  const home=fixture(false,'bird',false,false,{unrelated:true,path:'/'});
-  assert.deepEqual(home.navigations, [{method:'replace',url:'/chirp/'}]);
-  const goodies=fixture(false,'bird',false,false,{unrelated:true,path:'/goodies/'});
-  assert.deepEqual(goodies.navigations, [{method:'replace',url:'/chirp/soundborb/'}]);
-  const unrelated=fixture(false,'bird',false,false,{unrelated:true,path:'/channels/'});
-  assert.deepEqual(unrelated.navigations, [{method:'replace',url:'/chirp/'}]);
+test('core: direct McRetro links never redirect when Bird was the saved experience', () => {
+  for (const path of ['/', '/about/', '/blog/', '/blog/page3/', '/goodies/',
+    '/channels/', '/kodi-until-when/']) {
+    const f=fixture(false,'bird',false,false,
+      {unrelated:true,path,standard:'dark',search:'?utm_source=external',hash:'#notes'});
+    assert.equal(f.attrs['data-theme'],'dark', 'remembered Dark is used for ' + path);
+    assert.equal(f.navigations.length,0, 'requested URL is preserved for ' + path);
+    assert.equal(f.store.get('mcretro-theme'),'bird', 'visiting McRetro does not erase Bird choice');
+  }
+  const light=fixture(true,'bird',false,false,
+    {unrelated:true,path:'/kodi-until-when/',standard:'light'});
+  assert.equal(light.attrs['data-theme'],'light', 'remembered Light overrides system Dark');
+  assert.equal(light.navigations.length,0);
 });
 
-test('core: Bird redirects ordinary post and blog pages but keeps released conure articles', () => {
-  const standard=fixture(false,'bird',false,false,{unrelated:true});
-  assert.deepEqual(standard.navigations[0], {method:'replace',url:'/chirp/'});
+test('core: older saved Bird preference falls back to system Light/Dark', () => {
+  const dark=fixture(true,'bird',false,false,
+    {unrelated:true,path:'/kodi-until-when/'});
+  assert.equal(dark.attrs['data-theme'],'dark');
+  assert.equal(dark.navigations.length,0);
+  dark.media.matches=false;
+  dark.mediaHandlers.change();
+  assert.equal(dark.attrs['data-theme'],'light',
+    'unconfigured last-standard fallback responds to system changes');
+  const light=fixture(false,'bird',false,false,
+    {unrelated:true,path:'/kodi-until-when/'});
+  assert.equal(light.attrs['data-theme'],'light');
+  assert.equal(light.navigations.length,0);
+});
+
+test('core: explicit Bird destinations are authoritative, preserving McRetro preference', () => {
+  const bird=fixture(false,'dark',false,true,
+    {path:'/chirp/adventures/',standard:'light',exitLink:true});
+  assert.equal(bird.attrs['data-theme'],'bird');
+  assert.equal(bird.store.get('mcretro-last-standard-theme'),'dark',
+    'most recent standard choice is saved on entry into Bird');
+  bird.handlers.exitClick();
+  assert.equal(bird.store.get('mcretro-theme'),'dark');
+  assert.equal(bird.attrs['data-theme'],'dark');
+
+  const standard=fixture(false,'bird',false,false,
+    {unrelated:true,path:'/kodi-until-when/',standard:'dark'});
+  standard.handlers.click();
+  assert.equal(standard.attrs['data-theme'],'bird',
+    'the existing toggle can still deliberately enter Bird');
+  assert.deepEqual(standard.navigations.at(-1), {method:'assign',url:'/chirp/'});
+});
+
+test('core: another tab and back navigation never hijack the requested URL', () => {
+  const standard=fixture(false,'bird',false,false,
+    {unrelated:true,path:'/kodi-until-when/',standard:'dark'});
+  standard.store.set('mcretro-last-standard-theme','light');
+  standard.handlers.storage({key:'mcretro-last-standard-theme'});
+  assert.equal(standard.attrs['data-theme'],'light');
+  assert.equal(standard.navigations.length,0);
+  standard.store.set('mcretro-theme','dark');
+  standard.handlers.storage({key:'mcretro-theme'});
+  assert.equal(standard.attrs['data-theme'],'dark');
+  standard.store.set('mcretro-theme','bird');
+  standard.handlers.storage({key:'mcretro-theme'});
+  assert.equal(standard.attrs['data-theme'],'light');
+  standard.handlers.pageshow({persisted:true});
+  assert.equal(standard.attrs['data-theme'],'light');
+  assert.equal(standard.navigations.length,0);
+
+  const bird=fixture(false,'bird',false,true,
+    {path:'/chirp/about/',standard:'dark'});
+  bird.store.set('mcretro-theme','light');
+  bird.handlers.storage({key:'mcretro-theme'});
+  assert.equal(bird.attrs['data-theme'],'bird');
+  bird.handlers.pageshow({persisted:true});
+  assert.equal(bird.attrs['data-theme'],'bird');
+  assert.equal(bird.store.get('mcretro-theme'),'bird');
+  assert.equal(bird.navigations.length,0);
+});
+
+test('core: released conure articles retain the existing Bird and Light toggling', () => {
   const article=fixture(false,'bird',false,false,{article:true});
   assert.equal(article.attrs['data-theme'],'bird');
   assert.equal(article.navigations.length,0);
@@ -196,12 +269,13 @@ test('core: without manual selection, device changes update normal pages', () =>
   assert.equal(f.store.has('mcretro-theme'),false);
 });
 
-test('core: invalid stored value is ignored; storage events sync all three modes', () => {
-  const f=fixture(false,'unexpected');
+test('core: invalid preferences are ignored and ordinary pages remain in Light/Dark', () => {
+  const f=fixture(false,'unexpected',false,false,{unrelated:true});
   assert.equal(f.attrs['data-theme'],'light');
   f.store.set('mcretro-theme','bird');
   f.handlers.storage({key:'mcretro-theme'});
-  assert.equal(f.attrs['data-theme'],'bird');
+  assert.equal(f.attrs['data-theme'],'light');
+  assert.equal(f.navigations.length,0);
   f.store.set('mcretro-theme','dark');
   f.handlers.storage({key:'mcretro-theme'});
   assert.equal(f.attrs['data-theme'],'dark');
@@ -301,7 +375,7 @@ test('core: Bird stylesheet and header icon preserve original mobile layout', ()
   assert.match(layout, /data-default-theme="bird"/);
   assert.match(layout, /data-chirp-unrelated="true"/);
   assert.match(layout, /\{% unless channel_chirp_page or channel_chirp_article %\}/,
-    'Bird preference must redirect every ordinary McRetro page, including its homepage');
+    'ordinary McRetro pages must be identified to prevent Bird hijacking their URLs');
   assert.match(layout, /class="sidebar-mode-bird"/);
   assert.match(header, /class="nav-mode-bird"/);
 });
@@ -471,7 +545,7 @@ test('advisory: Bird filled hover belongs to the expanded mobile menu only', () 
     'Random Posts do not inherit mobile-menu highlighting');
 
   const chirpSidebar = read('_includes/channel-chirp-sidebar.html');
-  assert.ok(chirpSidebar.includes('href="/" data-theme-exit="light">↩ Return to McRetro.net</a>'));
+  assert.ok(chirpSidebar.includes('href="/" data-theme-exit="standard">↩ Return to McRetro.net</a>'));
   assert.ok(style.includes('.main-nav a:hover .nav-text,'),
     'Light and Dark navigation remains unchanged');
 });

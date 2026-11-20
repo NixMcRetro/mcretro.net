@@ -3,6 +3,7 @@ layout: default
 title: GeoCities Rebuild
 ---
 
+<link rel="stylesheet" href="/homepages/geocities/geocities.css">
 <figure class="center">
   <img src="/homepages/geocities/images/main/mai_mast.gif" alt="Original GeoCities masthead, with a city skyline and the words Welcome to Our Community." width="420" height="60" loading="eager">
 </figure>
@@ -19,9 +20,23 @@ The project eventually ran on a Raspberry Pi 3, survived several increasingly am
 
 The original neighbourhood directory, rebuild news, and Cool Pages list are now restored as public McRetro pages, complete with artwork from the old site. No 1 TB archive is required to browse them.
 
-- **[Browse the neighbourhoods](/homepages/geocities/neighborhoods/)** - 41 neighbourhoods, historic descriptions and population counts, the old GIF buttons, and their suburbs.
-- **[Project News](/homepages/geocities/news/)** - updates from 2021 and 2022, plus a small collection of historical headlines.
-- **[Cool Pages](/homepages/geocities/cool/)** - the original recommendations from my old GeoCities rebuild.
+<nav class="gc-home-nav" aria-label="Explore the GeoCities restoration">
+  <a class="gc-home-card" href="/homepages/geocities/neighborhoods/">
+    <span class="gc-home-card-art"><img src="/homepages/geocities/images/neighborhoods/neighborhoods.gif" width="430" height="60" alt="" loading="lazy"></span>
+    <strong>Browse the Neighbourhoods</strong>
+    <small>41 neighbourhoods, original GIF buttons, and 714 suburb names</small>
+  </a>
+  <a class="gc-home-card" href="/homepages/geocities/news/">
+    <span class="gc-home-card-art"><img src="/homepages/geocities/images/main/info/areaid_news.gif" width="430" height="60" alt="" loading="lazy"></span>
+    <strong>Project News</strong>
+    <small>Original 2021-2022 updates and historic headlines</small>
+  </a>
+  <a class="gc-home-card" href="/homepages/geocities/cool/">
+    <span class="gc-home-card-art"><img src="/homepages/geocities/pictures/geocool.gif" width="193" height="106" alt="" loading="lazy"></span>
+    <strong>Cool Pages</strong>
+    <small>11 interesting websites I picked from the original archive</small>
+  </a>
+</nav>
 
 ## Enter My Private GeoCities Archive
 

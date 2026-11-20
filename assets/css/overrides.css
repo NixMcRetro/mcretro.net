@@ -2023,3 +2023,26 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   text-align: center;
   overflow-wrap: anywhere;
 }
+
+/* About: frame the original small transparent running-cat GIF like Goodies.
+   Keep the retro grey panel independent of the site theme and avoid scaling blur. */
+.about-running-cat {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  margin: 1.25rem auto 1.5rem;
+}
+.about-running-cat-frame {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #333;
+  background: #c0c0c0;
+}
+.about-running-cat-frame img {
+  display: block;
+  width: 170px;
+  max-width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}

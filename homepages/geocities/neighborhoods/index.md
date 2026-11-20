@@ -33,7 +33,19 @@ The directory recorded a total of **298,559 Homesteaders**. These are counts fro
     <button type="button" data-gc-action="collapse">Collapse All</button>
     <button type="button" data-gc-action="random">Random Neighbourhood</button>
   </div>
-  <p id="gc-neighbourhood-hint" class="gc-browser-hint">Press / to search, or Esc to clear. Search results can be shared using the URL.</p>
+  <div class="gc-browser-options">
+    <label class="gc-sort-label" for="gc-neighbourhood-sort">Sort Neighbourhoods
+      <select id="gc-neighbourhood-sort">
+        <option value="alphabetical">Alphabetical (Original)</option>
+        <option value="largest">Largest Population First</option>
+        <option value="smallest">Smallest Population First</option>
+      </select>
+    </label>
+    <label class="gc-suburb-only-label" for="gc-suburbs-matching-only">
+      <input id="gc-suburbs-matching-only" type="checkbox"> Show Only Matching Suburbs
+    </label>
+  </div>
+  <p id="gc-neighbourhood-hint" class="gc-browser-hint">Press / to search, or Esc to clear. Searches update the URL. Matching Suburbs hides other suburbs when suburb names match.</p>
   <output id="gc-neighbourhood-results" aria-live="polite" aria-atomic="true">Showing all 41 neighbourhoods.</output>
 </div>
 

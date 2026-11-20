@@ -127,7 +127,7 @@ assert.match(styles, /\.gc-cool-pages a\[target="_blank"\]/);
 assert.match(styles, /gc-directory-stats/);
 assert.match(script, /const highlightText = \(element, original, query\) =>/);
 assert.match(script, /document\.createElement\('mark'\)/);
-assert.match(script, /group\.suburbs\.forEach\(item => highlightText/);
+assert.match(script, /group\.suburbs\.forEach\(item => \{/);
 assert.match(script, /random\.addEventListener\('click', pickRandom\)/);
 assert.match(script, /lastRandom = index/);
 assert.match(script, /prefers-reduced-motion: reduce/);
@@ -140,7 +140,11 @@ assert.equal(galleryImages.length, 49, 'Expected 41 buttons, six frontend graphi
 for (const img of galleryImages) {
   assert.ok(existsSync(path.join(root, img.slice(1))), 'Missing gallery GIF: ' + img);
 }
-assert.equal([...gallery.matchAll(/class="gc-artwork-tile" href="\/homepages\/geocities\/neighborhoods\/#/g)].length, 43);
+assert.equal([...gallery.matchAll(/class="gc-artwork-directory-link" href="\/homepages\/geocities\/neighborhoods\/#/g)].length, 43);
+const gifOpenLinks = [...gallery.matchAll(/<a class="gc-artwork-image-link" href="([^"]+\.gif)" target="_blank" rel="noopener noreferrer"/g)]
+  .map(match => match[1]);
+assert.equal(gifOpenLinks.length, 49, 'Every image has its own raw GIF link');
+assert.deepEqual(gifOpenLinks.slice().sort(), galleryImages.slice().sort(), 'No displayed or linked GIF path changed');
 assert.match(gallery, /href="\/homepages\/geocities\/neighborhoods\/#Area51"/);
 assert.doesNotMatch(gallery, /href="http:\/\/geocities\.mcretro\.net/);
 assert.match(directory, /<a href="\/homepages\/geocities\/artwork\/">Artwork Gallery<\/a>/);
@@ -161,5 +165,27 @@ assert.match(script, /random\.addEventListener\('click', pickRandom\)/);
 import { execFileSync } from 'node:child_process';
 execFileSync(process.execPath, ['--check', path.join(root, base, 'neighborhoods/browser.js')]);
 
+// Directory sorting, match-only filtering, and the accessible live count.
+assert.match(directory, /id="gc-neighbourhood-sort"/);
+for (const mode of ['alphabetical', 'largest', 'smallest']) {
+  assert.match(directory, new RegExp('<option value="' + mode + '">'));
+}
+assert.match(directory, /id="gc-suburbs-matching-only"/);
+assert.match(styles, /gc-suburbs a\[hidden\]/);
+assert.match(styles, /gc-artwork-jump/);
+assert.match(script, /sortSelect\.addEventListener\('change', applySort\)/);
+assert.match(script, /matchingOnly\.addEventListener\('change', filter\)/);
+assert.match(script, /population: Number/);
+assert.match(script, /direction \* \(a\.population - b\.population\)/);
+assert.match(script, /list\.appendChild\(reordered\)/);
+assert.match(script, /const highlightCache = new WeakMap\(\)/);
+assert.match(script, /highlightCache\.get\(element\) === query/);
+assert.match(script, /matchingSuburbs \+ ' suburb names match\.'/);
+assert.match(gallery, /id="gc-artwork-top"/);
+for (const id of ['frontend-graphics', 'neighbourhood-buttons', 'preserved-banners']) {
+  assert.match(gallery, new RegExp('<a href="#' + id + '">'));
+  assert.match(gallery, new RegExp('<h2 id="' + id + '">'));
+}
+assert.match(gallery, /href="#gc-artwork-top">↑ Back to Top<\/a>/);
 console.log('PASS: ' + pages.length +
   ' GeoCities pages rendered as HTML; original artwork and private gateway preserved.');

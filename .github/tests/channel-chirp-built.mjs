@@ -85,26 +85,56 @@ assert.match(pages.soundborb, /Migration in progress/);
 assert.doesNotMatch(pages.soundborb, /data-manifest|data-audio-root/);
 assert.match(pages.diet, /Our Diet/);
 
-const list = pages.adventures.split('<main class="content-area">')[1]?.split('</main>')[0];
-assert.ok(list);
-const cards = [...list.matchAll(/class="nest-post-card" data-nest-post/g)].length;
-assert.ok(cards > 0, 'released conure collection must not be empty');
-assert.equal(randomPosts.length, cards, 'random catalogue matches published Adventures');
-assert.equal(new Set(randomPosts.map(post => post.url)).size, cards, 'random catalogue URLs stay unique');
+// Adventures now uses McRetro's five-entry blog roll, not archive cards.
+const rollPages = Array.from({length: Math.ceil(randomPosts.length / 5)}, (_, i) => {
+  const page = i === 0
+    ? pages.adventures
+    : read('chirp/adventures/page' + (i + 1) + '/index.html');
+  assert.match(page, /class="blog-list chirp-blog-list"/);
+  assert.match(page, /data-chirp-landing="true"/);
+  assert.doesNotMatch(page, /class="nest-post-card"|class="nest-year-title"|nest-search-input/);
+  return page;
+});
+const pageEntries = rollPages.map(html => html.split('<main class="content-area">')[1]?.split('</main>')[0]);
+assert.ok(pageEntries.every(Boolean), 'every Bird Adventures page must have a main area');
+const list = pageEntries.join('\n');
+const entries = [...list.matchAll(/<article class="post-entry"/g)].length;
+assert.ok(entries > 0, 'released conure blog roll must not be empty');
+assert.equal(randomPosts.length, entries, 'all released conures appear once across pages');
+assert.equal(new Set(randomPosts.map(post => post.url)).size, entries,
+  'random catalogue URLs stay unique');
+for (const [index, html] of pageEntries.entries()) {
+  const perPage = (html.match(/<article class="post-entry"/g) || []).length;
+  assert.equal(perPage, Math.min(5, randomPosts.length - index * 5),
+    'Bird Adventures uses the same five posts per page as McRetro');
+  assert.match(html, /post-meta-row/);
+  assert.match(html, /post-content-preview/);
+  assert.match(html, /post-excerpt/);
+  assert.match(html, /class="post-title"/);
+  assert.match(html, /chirp-roll-heading-date/);
+  assert.match(html, /chirp-roll-heading-line/);
+  assert.match(html, /Continue reading/);
+}
 assert.match(list, /The First Day!/);
 assert.doesNotMatch(list, /Little Corella at the Local Nursery|Bits, Brass, and Bugs/);
 assert.doesNotMatch(pages.timeline, /Little Corella at the Local Nursery/);
 assert.match(pages.timeline, /The First Day!/);
-assert.doesNotMatch(pages.timeline, /<time[^>]*>\s*\d{1,2}\s+[A-Z]/, 'timeline dates need ordinal suffixes');
-assert.match(pages.timeline, /\d{1,2}(?:st|nd|rd|th)\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)/);
+assert.doesNotMatch(pages.timeline, /<time[^>]*>\s*\d{1,2}\s+[A-Z]/,
+  'timeline dates need ordinal suffixes');
+assert.match(pages.timeline,
+  /\d{1,2}(?:st|nd|rd|th)\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)/);
 for (const post of randomPosts) {
   assert.match(post.url, /^\/(?![\\/])[^?#]*\/$/);
   assert.ok(post.title && post.date_label);
-  assert.ok(list.includes('href="' + post.url + '"'));
+  assert.ok(list.includes('href="' + post.url + '"'),
+    'Adventures lists released article ' + post.url);
   assert.doesNotMatch(post.url, /little-corella-at-the-local-nursery/);
 }
-assert.equal((list.match(/<time datetime=/g) || []).length, cards);
-assert.match(list, /chirp-month-\d{4}-\d{2}/);
+assert.equal((list.match(/class="chirp-roll-heading-date"/g) || []).length, entries);
+assert.match(list, /id="chirp-month-\d{4}-\d{2}"/);
+assert.match(rollPages[0], /aria-label="Channel Chirp Adventures pagination"/);
+assert.match(rollPages[0], /href="\/chirp\/adventures\/page2\/"/);
+assert.match(rollPages.at(-1), /href="\/chirp\/adventures\/page\d+\/"|rel="prev"/);
 
 const sidebar = pages.nest.split('<div class="sidebar-mode-bird">')[1]?.split('</aside>')[0];
 assert.ok(sidebar, 'Bird sidebar exists');
@@ -123,7 +153,7 @@ assert.match(sidebar, /data-chirp-newer/);
 assert.match(sidebar, /data-chirp-months/);
 const calendarYears = [...sidebar.matchAll(/<option value="(\d{4})" data-counts=/g)].map(match => match[1]);
 assert.deepEqual(calendarYears, ['2019', '2018'], 'Bird calendar only displays 2018/2019');
-assert.match(sidebar, /href="\/chirp\/adventures\/#chirp-month-2019-\d{2}"/);
+assert.match(sidebar, /href="\/chirp\/adventures\/(?:page\d+\/)?#chirp-month-2019-\d{2}"/);
 assert.doesNotMatch(sidebar, /href="\/archive\/\d{4}\//);
 assert.match(sidebar, /Browse all archives/);
 assert.match(sidebar, /data-chirp-random-posts/);
@@ -168,4 +198,4 @@ assert.match(birdLayout, /\.nest-post-card time::after/);
 assert.match(birdLayout, /\.post-full \.post-meta::after/);
 assert.match(channels, /Visit The Nest: Channel Chirp adventures on McRetro/);
 assert.ok(!exists('chirp/archive/index.html'), 'unreleased historical archive must not be generated');
-console.log('PASS: Bird owns seven routes, contains ' + cards + ' released articles, ordinal dates, filtered archives and scoped styling.');
+console.log('PASS: Bird blog roll spans ' + rollPages.length + ' pages with ' + entries + ' released articles, ordinal dates, filtered archives and scoped styling.');

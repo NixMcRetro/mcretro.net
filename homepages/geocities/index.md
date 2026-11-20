@@ -26,7 +26,7 @@ The original neighbourhood directory, rebuild news, and Cool Pages list are now 
 
 ## Enter my private GeoCities archive
 
-**[Enter GeoCities](http://geocities.mcretro.net/)** - my personal gateway to the full historical archive. The archived sites themselves are not hosted publicly. This link only works on a computer configured to resolve the hostname to my private intranet server, and only when that server is running.
+**<a href="http://geocities.mcretro.net/" target="_blank" rel="noopener noreferrer nofollow">Enter GeoCities</a>** - my personal gateway to the full historical archive. The archived sites themselves are not hosted publicly. This link only works on a computer configured to resolve the hostname to my private intranet server, and only when that server is running.
 
 The public directory and Cool Pages list also contain links to specific private-archive paths for my own use. Other visitors can browse those lists and their original artwork, but those private destinations are not public services.
 
@@ -59,7 +59,7 @@ These are my articles, worklogs, demonstrations, and occasional lessons in how n
 The masthead, welcome graphic, and badge on this page come from my old GeoCities rebuild frontend. They are presented as their original GIF files, including the animated badge, rather than being recreated or replaced with modern artwork.
 
 <p class="center">
-  <a href="http://geocities.mcretro.net/" rel="nofollow"><img src="/homepages/geocities/pictures/gc_icon.gif" alt="Animated GeoCities 88 by 31 pixel badge; links to the private archive gateway." width="88" height="31" loading="lazy"></a>
+  <a href="http://geocities.mcretro.net/" target="_blank" rel="noopener noreferrer nofollow"><img src="/homepages/geocities/pictures/gc_icon.gif" alt="Animated GeoCities 88 by 31 pixel badge; links to the private archive gateway." width="88" height="31" loading="lazy"></a>
 </p>
 
 If you're here for the original internet experience, the [GeoCities Archive Rebuild worklog](/the-geocities-rebuild-worklog/) is a good place to start. Bring a modem. Or at least some patience. :)

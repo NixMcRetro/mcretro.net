@@ -149,7 +149,7 @@ assert.match(pages.nest, /href="\/chirp\/adventures\/">our adventures<\/a>/);
 assert.match(pages.nest, /href="\/chirp\/random\/" data-chirp-random-link(?:="")?>random post<\/a>/);
 assert.match(pages.nest, /href="https:\/\/www\.youtube\.com\/playlist\?list=PLJAZP-TLMPj50jY6ytY53J3bQkgPIbeYP">YouTube playlist<\/a>/);
 assert.doesNotMatch(pages.nest, />YouTube Channel<\/a>/, 'Nest uses the more accurate playlist label');
-assert.match(pages.nest, /<p>We are Pudge, Tillie, and Chip!<br>❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️<\/p>/,
+assert.match(pages.nest, /<p>We are Pudge, Tillie, and Chip!<br\s*\/?\s*>❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️<\/p>/,
   'names and emojis must share one paragraph separated by one line break');
 assert.doesNotMatch(pages.nest, /class="chirp-home-(?:names|hearts)"/, 'no separate sign-off paragraphs');
 assert.match(pages.nest, /❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️/);

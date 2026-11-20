@@ -7,7 +7,10 @@ share_description: >-
   Yamaha's VQF promised smaller files and better sound than MP3. My 500 MHz Athlon had other ideas about the encoding time! 🎵
 ---
 
-![Yamaha TwinVQ audio encoder interface.](/assets/images/2025/07/yamaha-vqf/twinvq-encoder.jxl)
+![TwinVQ Encoder window with Chariots Of Fire.wav as the source, a VQF destination, stereo encoding at 48 kbps per channel, and High quality selected.](/assets/images/2025/07/yamaha-vqf/twinvq-encoder.jxl)
+
+*Chariots Of Fire.wav ready to become a VQF file, with 48 kbps per channel and High quality selected. Now for the long wait! :)*
+{: .media-caption }
 
 Oh yes, I remember Yamaha's VQF quite well. Back in the late 1990s, when MP3 was taking over the internet, Yamaha had another audio format that looked like it might give MP3 a proper run for its money. Smaller files, supposedly better sound quality and less time waiting for music to download over a dial-up connection. What wasn't there to like?
 

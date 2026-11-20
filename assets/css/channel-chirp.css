@@ -328,3 +328,274 @@
   :root[data-theme="bird"] .nest-adventures-tools { padding: 1rem; }
   :root[data-theme="bird"] .nest-post-card { padding: .9rem 1rem; }
 }
+
+/* Channel Chirp v2: restore the original white reading surfaces without
+ * affecting the two McRetro palettes or non-Bird layouts. */
+:root[data-theme="bird"] .chirp-home-panel,
+:root[data-theme="bird"] .chirp-page-intro,
+:root[data-theme="bird"] .chirp-profile {
+  background: #FFFFFF;
+  color: #424242;
+  border: 0;
+  border-left: 4px solid #29A518;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .18);
+  padding: clamp(1.15rem, 3.2vw, 2rem);
+  margin: 0 0 1.35rem;
+}
+:root[data-theme="bird"] .chirp-home-panel h1,
+:root[data-theme="bird"] .chirp-home-panel h2,
+:root[data-theme="bird"] .chirp-page-intro h1,
+:root[data-theme="bird"] .chirp-profile h2 {
+  color: #212121;
+  margin: 0 0 .85rem;
+}
+:root[data-theme="bird"] .chirp-home-panel h1 {
+  font-weight: 500;
+  text-align: center;
+  font-size: clamp(1.7rem, 3.6vw, 2.35rem);
+}
+:root[data-theme="bird"] .chirp-home-panel h1::after {
+  content: "";
+  display: block;
+  width: 125px;
+  height: 4px;
+  margin: 1rem auto 1.35rem;
+  background: #29A518;
+}
+:root[data-theme="bird"] .chirp-page-intro h1::after {
+  content: "";
+  display: block;
+  width: 125px;
+  height: 4px;
+  margin: .9rem 0 1.25rem;
+  background: #29A518;
+}
+:root[data-theme="bird"] .chirp-eyebrow {
+  display: block;
+  margin: 0 0 .85rem;
+  font: 700 .75rem/1.5 Montserrat, sans-serif;
+  letter-spacing: .07em;
+  color: #17660D;
+  text-align: center;
+}
+:root[data-theme="bird"] .chirp-home-links,
+:root[data-theme="bird"] .chirp-flock-jump {
+  display: flex;
+  gap: .7rem 1.1rem;
+  flex-wrap: wrap;
+  margin: 1.3rem 0 .3rem;
+}
+:root[data-theme="bird"] .chirp-home-links a,
+:root[data-theme="bird"] .chirp-flock-jump a {
+  display: inline-flex;
+  padding: .4rem .65rem;
+  border-left: 3px solid #29A518;
+  color: #17660D;
+  background: #F5F5F5;
+  text-decoration: none;
+}
+:root[data-theme="bird"] .chirp-home-links a:hover,
+:root[data-theme="bird"] .chirp-flock-jump a:hover {
+  text-decoration: underline;
+  background: #E7F5E4;
+}
+:root[data-theme="bird"] .chirp-profile h2 {
+  padding-bottom: .45rem;
+  border-bottom: 4px solid #29A518;
+}
+:root[data-theme="bird"] .chirp-profile p:last-child { margin-bottom: 0; }
+:root[data-theme="bird"] .chirp-page-intro p:last-child { margin-bottom: 0; }
+
+/* Korataki matches the main McRetro wordmark; only Bird's parrot moves
+ * to the right of its name. Keep McRetro's logo and ten taglines intact. */
+:root[data-theme="bird"] .site-logo--bird {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  width: fit-content;
+  max-width: 100%;
+  font-family: 'Korataki', 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: clamp(1.4rem, 4.8vw, 2.2rem);
+  letter-spacing: .1em;
+}
+:root[data-theme="bird"] .bird-brand-mark {
+  font-family: system-ui, sans-serif;
+  font-size: .72em;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+:root[data-theme="bird"] .main-nav {
+  background: #228515;
+  border: 0;
+  border-left: 6px solid #0C4308;
+  border-right: 6px solid #0C4308;
+  padding: .62rem 0;
+}
+:root[data-theme="bird"] .main-nav a,
+:root[data-theme="bird"] .main-nav a[aria-current="page"],
+:root[data-theme="bird"] .main-nav a.active {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+:root[data-theme="bird"] .main-nav a[aria-current="page"] {
+  font-weight: 700;
+}
+:root[data-theme="bird"] .main-nav a[aria-current="page"] .nav-text,
+:root[data-theme="bird"] .main-nav a[aria-current="page"]:hover .nav-text,
+:root[data-theme="bird"] .main-nav a[aria-current="page"]:focus-visible .nav-text {
+  text-decoration: none;
+}
+:root[data-theme="bird"] .main-nav a:not([aria-current="page"]):hover .nav-text,
+:root[data-theme="bird"] .main-nav a:not([aria-current="page"]):focus-visible .nav-text {
+  text-decoration: underline;
+}
+
+/* Post previews use the original Channel Chirp rhythm: black heading,
+ * date below, then a centred green rule, all on a white card. */
+:root[data-theme="bird"] .nest-post-card {
+  border: 0;
+  padding: clamp(1.05rem, 3vw, 1.75rem);
+  text-align: center;
+}
+:root[data-theme="bird"] .nest-post-card h3 {
+  margin: 0 0 .3rem;
+  font: 500 clamp(1.2rem, 2.4vw, 1.55rem)/1.4 Montserrat, sans-serif;
+}
+:root[data-theme="bird"] .nest-post-card h3 a,
+:root[data-theme="bird"] .nest-post-card h3 a:visited {
+  color: #212121;
+  text-decoration: none;
+}
+:root[data-theme="bird"] .nest-post-card h3 a:hover,
+:root[data-theme="bird"] .nest-post-card h3 a:focus-visible {
+  color: #18770C;
+  text-decoration: none;
+}
+:root[data-theme="bird"] .nest-post-card time {
+  display: block;
+  color: #727272;
+  font-size: .86rem;
+  letter-spacing: .04em;
+}
+:root[data-theme="bird"] .nest-post-card time::after {
+  content: "";
+  display: block;
+  width: 125px;
+  height: 4px;
+  margin: .65rem auto 1rem;
+  background: #29A518;
+}
+:root[data-theme="bird"] .nest-post-card .nest-post-preview {
+  text-align: left;
+  max-width: 55rem;
+  margin: .6rem auto .75rem;
+  color: #424242;
+  line-height: 1.7;
+}
+:root[data-theme="bird"] .nest-post-card .nest-read-link {
+  margin-bottom: .1rem;
+  text-align: left;
+}
+:root[data-theme="bird"] .nest-year-title {
+  background: #29A518;
+  color: #122C0B;
+  margin-top: 1.2rem;
+}
+:root[data-theme="bird"] .nest-year-title small { color: #122C0B; }
+
+/* Full conure article view, not ordinary McRetro posts. */
+:root[data-theme="bird"][data-chirp-article="true"] .post-full .post-title {
+  font-weight: 500;
+  text-align: center;
+  color: #212121;
+}
+:root[data-theme="bird"][data-chirp-article="true"] .post-full .post-meta {
+  text-align: center;
+  margin: .3rem 0 1.5rem;
+}
+:root[data-theme="bird"][data-chirp-article="true"] .post-full .post-meta .post-author,
+:root[data-theme="bird"][data-chirp-article="true"] .post-full .post-meta .meta-sep,
+:root[data-theme="bird"][data-chirp-article="true"] .post-full .post-meta .post-categories {
+  display: none;
+}
+:root[data-theme="bird"][data-chirp-article="true"] .post-full .post-date {
+  color: #727272;
+  display: block;
+  letter-spacing: .04em;
+}
+:root[data-theme="bird"][data-chirp-article="true"] .post-full .post-meta::after {
+  content: "";
+  display: block;
+  width: 125px;
+  height: 4px;
+  background: #29A518;
+  margin: .75rem auto 0;
+}
+
+/* Sidebar widgets preserve the four original Channel Chirp destinations. */
+:root[data-theme="bird"] .nest-cool-links nav { display: grid; gap: .3rem; }
+:root[data-theme="bird"] .nest-archive-widget select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: .65rem .5rem;
+  color: #424242;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  font: .83rem Montserrat, sans-serif;
+}
+:root[data-theme="bird"] .nest-archive-widget select:focus-visible {
+  outline: 2px solid #18770C;
+  outline-offset: 2px;
+}
+:root[data-theme="bird"] .chirp-sidebar-action {
+  display: inline-flex;
+  padding: .5rem .9rem;
+  color: #FFFFFF;
+  background: #228515;
+  border-radius: 20px;
+  font: 700 .86rem Montserrat, sans-serif;
+  text-decoration: none;
+}
+:root[data-theme="bird"] .chirp-sidebar-action:hover { background: #17660D; color: #FFFFFF; }
+:root[data-theme="bird"] .chirp-return { padding: .2rem 0; }
+:root[data-theme="bird"] .chirp-return a { color: #FFFFFF; }
+:root[data-theme="bird"] .chirp-return a:hover { color: #E7F5E4; }
+:root[data-theme="bird"] .nest-post-total { color: #727272; }
+
+@media screen and (max-width: 750px) {
+  :root[data-theme="bird"] .main-nav {
+    border-left: 0;
+    border-right: 0;
+    border-top: 2px solid #0C4308;
+    border-bottom: 2px solid #29A518;
+    background: transparent;
+    padding: 0;
+  }
+  :root[data-theme="bird"] .main-nav .nav-list li a[aria-current="page"] {
+    color: #17660D;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  :root[data-theme="bird"] .main-nav .nav-list li a[aria-current="page"] .nav-text {
+    text-decoration: none;
+  }
+}
+
+/* Existing post metadata is a flex row. Force Bird's single date above
+ * the accent bar, rather than rendering the bar alongside the date. */
+:root[data-theme="bird"][data-chirp-article="true"] .post-full .post-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+:root[data-theme="bird"][data-chirp-article="true"] .post-full .post-meta::after {
+  flex: 0 0 4px;
+}
+:root[data-theme="bird"] .nest-year-group,
+:root[data-theme="bird"] .chirp-profile {
+  scroll-margin-top: 6rem;
+}

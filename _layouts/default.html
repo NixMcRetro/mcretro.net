@@ -7,12 +7,9 @@
   {% assign channel_chirp_article = true %}
 {% endif %}
 {% assign chirp_filtered_content = false %}
-{% if page.layout == 'post' and channel_chirp_article == false %}
+{% unless channel_chirp_page or channel_chirp_article %}
   {% assign chirp_filtered_content = true %}
-{% endif %}
-{% if page.url contains '/blog/' or page.url contains '/archive/' %}
-  {% assign chirp_filtered_content = true %}
-{% endif %}
+{% endunless %}
 <!DOCTYPE html>
 <html lang="en"{% if channel_chirp_page %} data-default-theme="bird"{% endif %}{% if chirp_filtered_content %} data-chirp-unrelated="true"{% endif %}{% if channel_chirp_page %} data-chirp-landing="true"{% endif %}{% if channel_chirp_article %} data-chirp-article="true"{% endif %}>
 <head>
@@ -64,6 +61,7 @@
 <script src="{{ '/assets/js/archive-calendar.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/random-post.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/channel-chirp-random.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/channel-chirp-archive.js' | relative_url }}" defer></script>
 
 <script src="{{ '/assets/js/mobile-navigation.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/sticky-navigation.js' | relative_url }}" defer></script>

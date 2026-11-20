@@ -14,7 +14,16 @@ pagefind: false
   <ol class="chirp-timeline">
     {% for post in chirp_posts %}
       <li>
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%-d %B %Y' }}</time>
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          {% assign day = post.date | date: '%-d' | plus: 0 %}
+          {% case day %}
+            {% when 1 or 21 or 31 %}{% assign suffix = 'st' %}
+            {% when 2 or 22 %}{% assign suffix = 'nd' %}
+            {% when 3 or 23 %}{% assign suffix = 'rd' %}
+            {% else %}{% assign suffix = 'th' %}
+          {% endcase %}
+          {{ day }}{{ suffix }} {{ post.date | date: '%B %Y' }}
+        </time>
         <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
       </li>
     {% endfor %}

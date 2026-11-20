@@ -2,7 +2,7 @@
   <div class="header-inner">
     <div class="logo-area">
       <a href="/" class="site-logo site-logo--mcretro">{{ site.title }}</a>
-      <a href="/chirp/" class="site-logo site-logo--bird">🦜 Channel Chirp</a>
+      <a href="/chirp/" class="site-logo site-logo--bird"><span class="bird-brand-name">Channel Chirp</span><span class="bird-brand-mark" aria-hidden="true">🦜</span></a>
       <div class="textcycle">
         <span class="phrase">⏳ Website found. Waiting for reply...</span>
         <span class="phrase mobile-tagline">🚀 Blast Processed Since 199X</span>
@@ -45,11 +45,11 @@
         </li>
         <li>
           <a class="nav-mode-mcretro{% if page.url contains "/blog/" or page.url contains "/archive/" or page.layout == "post" %} active{% endif %}" href="/blog/"><span class="nav-emoji" aria-hidden="true">✏️</span> <span class="nav-text">Blog</span></a>
-          <a class="nav-mode-bird" href="/chirp/#nest-adventures"><span class="nav-emoji" aria-hidden="true">🪶</span> <span class="nav-text">Adventures</span></a>
+          <a class="nav-mode-bird" href="/chirp/adventures/" {% if page.url == "/chirp/adventures/" %}aria-current="page"{% endif %}><span class="nav-emoji" aria-hidden="true">🪶</span> <span class="nav-text">Adventures</span></a>
         </li>
         <li>
           <a class="nav-mode-mcretro{% if page.url contains "/channels/" %} active{% endif %}" href="/channels/"><span class="nav-emoji" aria-hidden="true">📺</span> <span class="nav-text">Channels</span></a>
-          <a class="nav-mode-bird" href="/chirp/#nest-flock"><span class="nav-emoji" aria-hidden="true">🦜</span> <span class="nav-text">Our Flock</span></a>
+          <a class="nav-mode-bird" href="/chirp/flock/" {% if page.url == "/chirp/flock/" %}aria-current="page"{% endif %}><span class="nav-emoji" aria-hidden="true">🦜</span> <span class="nav-text">Our Flock</span></a>
         </li>
         <li>
           <a class="nav-mode-mcretro{% if page.url contains "/goodies/" %} active{% endif %}" href="/goodies/"><span class="nav-emoji" aria-hidden="true">💾</span> <span class="nav-text">Goodies</span></a>
@@ -60,7 +60,7 @@
         </li>
         <li>
           <a class="nav-mode-mcretro{% if page.url contains "/about/" %} active{% endif %}" href="/about/"><span class="nav-emoji" aria-hidden="true">📡</span> <span class="nav-text">About</span></a>
-          <a class="nav-mode-bird" href="/blog/" data-theme-exit="light"><span class="nav-emoji" aria-hidden="true">↩</span> <span class="nav-text">McRetro</span></a>
+          <a class="nav-mode-bird" href="/chirp/soundborb/" {% if page.url == "/chirp/soundborb/" %}aria-current="page"{% endif %}><span class="nav-emoji" aria-hidden="true">🎶</span> <span class="nav-text">Soundborb</span></a>
         </li>
       </ul>
     </nav>

@@ -855,3 +855,17 @@
     padding: 1rem;
   }
 }
+
+/* Bird-only archive landing page shares the McRetro year/month accordion
+ * layout, on a readable white panel against Channel Chirp charcoal. */
+:root[data-theme="bird"] .chirp-archive-index {
+  background: #FFFFFF;
+  color: #424242;
+  border-top: 4px solid #29A518;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .18);
+  padding: clamp(1rem, 2.5vw, 1.8rem);
+}
+:root[data-theme="bird"] .chirp-archive-index > .post-title {
+  color: #212121;
+}

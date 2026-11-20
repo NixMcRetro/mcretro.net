@@ -1,0 +1,57 @@
+---
+layout: default
+title: Channel Chirp Archives
+permalink: /chirp/archive/
+channel_chirp: true
+pagefind: false
+---
+<section class="archive-index chirp-archive-index">
+  <nav class="archive-breadcrumbs" aria-label="Breadcrumb">
+    <a href="/chirp/">Home</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
+    <span aria-current="page">Archives</span>
+  </nav>
+  <h1 class="post-title">Archives</h1>
+  <p class="archive-index-intro">Browse released Channel Chirp adventures by year and month. Select a year to see its monthly archives.</p>
+
+  {% assign chirp_posts = site.categories.parrots | where_exp: "bird", "bird.channel_chirp != false" %}
+  {% assign archive_years = chirp_posts | group_by_exp: "post", "post.date | date: '%Y'" | sort: 'name' | reverse %}
+  <div class="archive-index-years">
+    {% for year in archive_years %}
+      {% assign year_months = year.items | group_by_exp: "post", "post.date | date: '%m'" %}
+      {% assign year_count = year.items | size %}
+      <details id="year-{{ year.name }}" class="archive-index-year about-panel panel--teal">
+        <summary><span class="about-panel-icon" aria-hidden="true">📅</span><span class="archive-index-year-name">{{ year.name }}</span><span class="archive-index-year-count">{{ year_count }} {% if year_count == 1 %}article{% else %}articles{% endif %}</span></summary>
+        <div class="archive-index-grid" role="group" aria-label="{{ year.name }} monthly archives">
+          {% for m in (1..12) %}
+            {% assign month_key = m | prepend: '0' | slice: -2, 2 %}
+            {% assign count = 0 %}
+            {% for month_group in year_months %}
+              {% assign numeric_month = month_group.name | plus: 0 %}
+              {% if numeric_month == m %}
+                {% assign count = month_group.items | size %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            {% assign date_key = year.name | append: '-' | append: month_key | append: '-01' %}
+            {% assign month_name = date_key | date: '%b' %}
+            {% assign month_long = date_key | date: '%B' %}
+            {% if count > 0 %}
+              {% assign full_month = year.name | append: '-' | append: month_key %}
+              {% assign month_page = site.data.chirp_adventures_month_pages[full_month] | default: 1 %}
+              <a class="archive-index-month has-posts" data-archive-month="{{ year.name }}-{{ month_key }}" data-article-count="{{ count }}" href="/chirp/adventures/{% if month_page > 1 %}page{{ month_page }}/{% endif %}#chirp-month-{{ full_month }}" aria-label="{{ month_long }} {{ year.name }}: {{ count }} {% if count == 1 %}article{% else %}articles{% endif %}">
+                <span class="archive-index-month-name">{{ month_name }}</span>
+                <span class="archive-index-month-count">{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
+              </a>
+            {% else %}
+              <span class="archive-index-month is-empty" data-archive-month="{{ year.name }}-{{ month_key }}" data-article-count="0">
+                <span class="archive-index-month-name">{{ month_name }}</span>
+                <span class="archive-index-month-count">0 articles</span>
+              </span>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </details>
+    {% endfor %}
+  </div>
+</section>
+<script src="/assets/js/archive-year-deeplink.js"></script>

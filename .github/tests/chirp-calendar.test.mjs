@@ -8,8 +8,8 @@ const script = readFileSync(new URL('../../assets/js/channel-chirp-archive.js', 
 function fixture({ contextYear, invalidCounts = false } = {}) {
   const listeners = {};
   const options = [
-    {value: '2019', dataset: {counts: invalidCounts ? 'not-numbers' : '0,0,1,0,0,0,0,0,0,0,2,0'}},
-    {value: '2018', dataset: {counts: '1,3,2,0,0,0,0,0,0,0,0,0'}}
+    {value: '2019', dataset: {counts: invalidCounts ? 'not-numbers' : '0,0,1,0,0,0,0,0,0,0,2,0', pages: '0,0,2,0,0,0,0,0,0,0,1,0'}},
+    {value: '2018', dataset: {counts: '1,3,2,0,0,0,0,0,0,0,0,0', pages: '11,10,9,0,0,0,0,0,0,0,0,0'}}
   ];
   const year = {
     options,
@@ -64,7 +64,7 @@ test('Bird calendar renders the 2019 archive with the same 12 McRetro-style mont
   assert.equal(f.year.options.length, 2);
   assert.equal(f.year.selectedIndex, 0);
   assert.equal(f.grid.children.length, 12);
-  assert.equal(f.grid.children[2].href, '/chirp/adventures/#chirp-month-2019-03');
+  assert.equal(f.grid.children[2].href, '/chirp/adventures/page2/#chirp-month-2019-03');
   assert.equal(f.grid.children[10].href, '/chirp/adventures/#chirp-month-2019-11');
   assert.equal(f.grid.children[0].tag, 'span');
   assert.equal(f.grid.children[2].attributes['aria-label'], 'March 2019: 1 adventure');
@@ -76,17 +76,17 @@ test('Older/newer buttons and selector navigate only between 2018 and 2019', () 
   const f = fixture();
   f.listeners['older:click']();
   assert.equal(f.year.selectedIndex, 1);
-  assert.equal(f.grid.children[0].href, '/chirp/adventures/#chirp-month-2018-01');
-  assert.equal(f.grid.children[1].href, '/chirp/adventures/#chirp-month-2018-02');
+  assert.equal(f.grid.children[0].href, '/chirp/adventures/page11/#chirp-month-2018-01');
+  assert.equal(f.grid.children[1].href, '/chirp/adventures/page10/#chirp-month-2018-02');
   assert.equal(f.older.disabled, true);
   assert.equal(f.newer.disabled, false);
   f.listeners['newer:click']();
   assert.equal(f.year.selectedIndex, 0);
   f.year.selectedIndex = 1;
   f.listeners['year:change']();
-  assert.equal(f.grid.children[2].href, '/chirp/adventures/#chirp-month-2018-03');
+  assert.equal(f.grid.children[2].href, '/chirp/adventures/page9/#chirp-month-2018-03');
   assert.ok(f.grid.children.every(item => !item.href ||
-    /^\/chirp\/adventures\/#chirp-month-2018-\d{2}$/.test(item.href)));
+    /^\/chirp\/adventures\/(?:page\d+\/)?#chirp-month-2018-\d{2}$/.test(item.href)));
 });
 
 test('A conure article selects its own year and invalid month counts never become URLs', () => {
@@ -101,5 +101,6 @@ test('A conure article selects its own year and invalid month counts never becom
 test('Calendar code never writes into the unrelated McRetro archive calendar', () => {
   assert.match(script, /querySelector\('\[data-chirp-calendar\]'\)/);
   assert.doesNotMatch(script, /data-archive-calendar|document\.querySelectorAll|innerHTML/);
-  assert.match(script, /\/chirp\/adventures\/#chirp-month-/);
+  assert.match(script, /\/chirp\/adventures\/page/);
+  assert.match(script, /#chirp-month-/);
 });

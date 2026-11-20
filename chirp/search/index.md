@@ -11,19 +11,22 @@ pagefind: false
     <img src="/assets/images/search/search.gif" width="35" height="35" alt="" aria-hidden="true">
     <div>
       <h1 id="chirp-search-heading">Find-a-Squawk</h1>
-      <p>Search released Channel Chirp adventures only.</p>
+      <p>Search Channel Chirp adventures.</p>
     </div>
   </header>
   <div class="chirp-search-form" role="search" aria-label="Search Channel Chirp">
     <label class="visually-hidden" for="nest-search-input">Search the flock</label>
     <div class="chirp-search-field">
-      <span class="chirp-search-icon" aria-hidden="true">⌕</span>
+      <svg class="chirp-search-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="m16 16 5 5"></path>
+      </svg>
       <input id="nest-search-input" name="q" type="search" autocomplete="off" placeholder="Search the flock...">
       <button id="nest-search-clear" class="chirp-search-clear" type="button" hidden>Clear</button>
     </div>
   </div>
   <p id="nest-search-status" class="chirp-search-status" role="status" aria-live="polite">{{ chirp_posts.size }} adventures</p>
-  <div id="nest-archive-list" class="chirp-search-results" aria-label="Released Channel Chirp search results">
+  <div id="nest-archive-list" class="chirp-search-results" aria-label="Channel Chirp search results">
     {% for post in chirp_posts %}
     <article class="chirp-search-result" data-nest-post>
       <h2 class="chirp-search-result-title"><a href="{{ post.url | relative_url }}" data-nest-highlight>{{ post.title | escape }}</a></h2>

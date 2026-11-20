@@ -29,6 +29,23 @@ module Jekyll
       site.data["chirp_adventures_month_pages"] = month_pages
       site.data["chirp_adventures_month_first_urls"] = month_first_urls
 
+      # Generate month pages from the exact same released-only Bird post set
+      # as Adventures; never import the retired Channel Chirp snapshot.
+      posts.group_by { |post| post.date.strftime("%Y-%m") }.each do |month, month_posts|
+        year, number = month.split("-")
+        page = PageWithoutAFile.new(site, site.source,
+                                    "chirp/archive/#{year}/#{number}", "index.html")
+        page.data["layout"] = "archive"
+        page.data["type"] = "month"
+        page.data["date"] = month_posts.first.date
+        page.data["posts"] = month_posts
+        page.data["permalink"] = "/chirp/archive/#{year}/#{number}/"
+        page.data["channel_chirp"] = true
+        page.data["pagefind"] = false
+        page.content = ""
+        site.pages << page
+      end
+
       index = site.pages.find do |page|
         page.data["permalink"] == "/chirp/adventures/" ||
           page.url == "/chirp/adventures/"

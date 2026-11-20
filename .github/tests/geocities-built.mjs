@@ -123,7 +123,7 @@ assert.equal([...directory.matchAll(/<a href="http:\/\/geocities\.mcretro\.net\/
 assert.match(directory, /data-gc-action="random"/);
 assert.match(directory, /id="gc-directory-top"/);
 assert.match(directory, /href="#gc-directory-top">↑ Back to Top<\/a>/);
-assert.match(directory, /Private archive links are marked ↗/);
+assert.match(directory, /Links marked ↗ open my private/);
 assert.match(home, /class="gc-private-gateway"/);
 assert.match(styles, /\.gc-neighbourhood mark/);
 assert.match(styles, /\.gc-cool-pages a\[target="_blank"\]/);

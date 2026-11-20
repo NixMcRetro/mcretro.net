@@ -98,3 +98,15 @@ a.gc-artwork-tile:focus-visible { outline: 3px solid var(--focus); outline-offse
 .gc-artwork-directory-link { text-align: center; font: 600 .84rem/1.4 Montserrat, sans-serif; }
 .gc-artwork-tile:focus-within { border-color: var(--link); }
 .gc-artwork-featured .gc-artwork-image-link img { max-width: 100%; max-height: 110px; width: auto; height: auto; }
+
+/* GeoCities directory quality-of-life controls. Scoped to this exhibit. */
+.gc-neighbourhood-title small + small { color: var(--muted); }
+.gc-no-results { margin: .8rem 0 1.2rem; padding: 1rem; border: 1px solid var(--border-soft); border-radius: 4px; background: var(--panel); color: var(--text); }
+.gc-no-results[hidden] { display: none; }
+.gc-no-results p { margin: .1rem 0 .8rem; }
+.gc-no-results button { padding: .5rem .8rem; border: 1px solid var(--border); border-radius: 3px; background: var(--panel); color: var(--text); font: 600 .8rem Montserrat, sans-serif; cursor: pointer; }
+.gc-no-results button:hover { background: var(--interactive-hover); border-color: var(--link); }
+.gc-no-results button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.gc-browser-tool-row button:disabled { opacity: .55; cursor: not-allowed; }
+.gc-suburb-only-label:has(input:disabled) { opacity: .6; cursor: not-allowed; }
+.gc-copy-search-status { color: var(--muted); font-size: .82rem; }

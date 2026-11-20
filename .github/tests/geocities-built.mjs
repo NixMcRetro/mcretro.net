@@ -179,11 +179,36 @@ assert.match(styles, /gc-artwork-jump/);
 assert.match(script, /sortSelect\.addEventListener\('change', applySort\)/);
 assert.match(script, /matchingOnly\.addEventListener\('change', filter\)/);
 assert.match(script, /population: Number/);
-assert.match(script, /direction \* \(a\.population - b\.population\)/);
+assert.match(script, /const bySuburbs = sortSelect\.value/);
+assert.match(script, /suburbCount: suburbs\.length/);
+assert.match(script, /direction \* \(first - second\)/);
 assert.match(script, /list\.appendChild\(reordered\)/);
 assert.match(script, /const highlightCache = new WeakMap\(\)/);
 assert.match(script, /highlightCache\.get\(element\) === query/);
 assert.match(script, /matchingSuburbs \+ ' suburb names match\.'/);
+// All six Round Five additions stay inside the public GeoCities directory.
+for (const value of ['most-suburbs', 'fewest-suburbs']) {
+  assert.match(directory, new RegExp('<option value="' + value + '">'));
+}
+assert.match(directory, /data-gc-action="reset"/);
+assert.match(directory, /data-gc-action="copy-search" disabled/);
+assert.match(directory, /id="gc-suburbs-matching-only" type="checkbox" disabled/);
+assert.match(directory, /id="gc-neighbourhood-empty" class="gc-no-results" hidden/);
+assert.match(directory, /data-gc-action="clear-search"/);
+assert.match(script, /matchingOnly\.disabled = !query/);
+assert.match(script, /copySearch\.disabled = !query/);
+assert.match(script, /noResults\.hidden = !\(query && found === 0\)/);
+assert.match(script, /const resetView = \(\) =>/);
+assert.match(script, /sortSelect\.value = 'alphabetical'/);
+assert.match(script, /copySearch\.addEventListener\('click', \(\) =>/);
+assert.match(script, /copyUrl\(url\.href, copySearchStatus\)/);
+assert.match(script, /clearSearchButton\.addEventListener\('click', clearSearch\)/);
+assert.match(styles, /\.gc-no-results\[hidden\]/);
+const displayedSuburbCounts = [...directory.matchAll(/<small>Listed suburbs: (\d+)<\/small>/g)]
+  .map(match => Number(match[1]));
+assert.equal(displayedSuburbCounts.length, 41, 'All 41 neighbourhood headers need suburb counts');
+assert.equal(displayedSuburbCounts.reduce((sum, count) => sum + count, 0), 714,
+  'Suburb counts must sum to 714, not a guessed total');
 assert.match(gallery, /id="gc-artwork-top"/);
 for (const id of ['frontend-graphics', 'neighbourhood-buttons', 'preserved-banners']) {
   assert.match(gallery, new RegExp('<a href="#' + id + '">'));

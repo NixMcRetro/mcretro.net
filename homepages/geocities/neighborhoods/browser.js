@@ -14,7 +14,14 @@
   const random = toolbar.querySelector('[data-gc-action="random"]');
   const sortSelect = document.getElementById('gc-neighbourhood-sort');
   const matchingOnly = document.getElementById('gc-suburbs-matching-only');
-  if (!input || !output || !expand || !collapse || !random || !sortSelect || !matchingOnly) return;
+  const reset = toolbar.querySelector('[data-gc-action="reset"]');
+  const copySearch = toolbar.querySelector('[data-gc-action="copy-search"]');
+  const copySearchStatus = document.getElementById('gc-copy-search-status');
+  const noResults = document.getElementById('gc-neighbourhood-empty');
+  const clearSearchButton = noResults?.querySelector('[data-gc-action="clear-search"]');
+  if (!input || !output || !expand || !collapse || !random || !sortSelect ||
+      !matchingOnly || !reset || !copySearch || !copySearchStatus ||
+      !noResults || !clearSearchButton) return;
 
   const fold = (text) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase();
   const normalise = (text) => fold(text).trim();
@@ -90,6 +97,7 @@
     return {
       section, details, body, name, nameElement, suburbs, description, descriptionText,
       originalIndex,
+      suburbCount: suburbs.length,
       population: Number((heading.querySelector('small')?.textContent || '').match(/[\d,]+/)?.[0].replace(/,/g, '') || 0),
       searchText: normalise([section.id, heading.textContent, descriptionText,
         ...suburbs.map(item => item.original)].join(' '))
@@ -99,6 +107,11 @@
   let preSearchOpen = null;
   const filter = () => {
     const query = normalise(input.value);
+    // No search means no match-only filtering or stale hidden suburb links.
+    matchingOnly.disabled = !query;
+    if (!query) matchingOnly.checked = false;
+    copySearch.disabled = !query;
+    if (!query) copySearchStatus.textContent = '';
     if (query && preSearchOpen === null) {
       preSearchOpen = groups.map(group => group.details.open);
     } else if (!query && preSearchOpen !== null) {
@@ -139,6 +152,7 @@
         matchingSuburbs + ' suburb names match.'
       : 'Showing all ' + groups.length + ' neighbourhoods and ' + allSuburbs + ' suburbs.';
     if (output.textContent !== message) output.textContent = message;
+    noResults.hidden = !(query && found === 0);
   };
 
 
@@ -150,6 +164,29 @@
     anchor.href = '#' + id;
     anchor.textContent = text;
     return anchor;
+  };
+
+  // Clipboard API on modern browsers; selection fallback for older browsers.
+  const copyUrl = async (url, feedback) => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        const temporary = document.createElement('textarea');
+        temporary.value = url;
+        temporary.setAttribute('readonly', '');
+        temporary.style.position = 'fixed';
+        temporary.style.opacity = '0';
+        document.body.appendChild(temporary);
+        temporary.select();
+        const success = document.execCommand('copy');
+        temporary.remove();
+        if (!success) throw new Error('Copy command unavailable');
+      }
+      feedback.textContent = 'Link copied.';
+    } catch {
+      feedback.textContent = 'Copy unavailable. Use the URL in the address bar.';
+    }
   };
 
   groups.forEach((group, index) => {
@@ -174,29 +211,11 @@
     share.append(copy, feedback);
     nav.appendChild(share);
 
-    copy.addEventListener('click', async () => {
+    copy.addEventListener('click', () => {
       const url = new URL(window.location.href);
       url.searchParams.delete('q');
       url.hash = group.section.id;
-      try {
-        if (navigator.clipboard?.writeText) {
-          await navigator.clipboard.writeText(url.href);
-        } else {
-          const temporary = document.createElement('textarea');
-          temporary.value = url.href;
-          temporary.setAttribute('readonly', '');
-          temporary.style.position = 'fixed';
-          temporary.style.opacity = '0';
-          document.body.appendChild(temporary);
-          temporary.select();
-          const success = document.execCommand('copy');
-          temporary.remove();
-          if (!success) throw new Error('Copy command unavailable');
-        }
-        feedback.textContent = 'Link copied.';
-      } catch {
-        feedback.textContent = 'Copy unavailable. Use the section link in the address bar.';
-      }
+      copyUrl(url.href, feedback);
     });
 
     const nextLink = makeLink(next.section.id, 'Next: ' + next.name + ' →');
@@ -211,9 +230,13 @@
   const applySort = () => {
     orderedGroups = groups.slice();
     if (sortSelect.value !== 'alphabetical') {
-      const direction = sortSelect.value === 'largest' ? -1 : 1;
-      orderedGroups.sort((a, b) =>
-        direction * (a.population - b.population) || a.originalIndex - b.originalIndex);
+      const bySuburbs = sortSelect.value === 'most-suburbs' || sortSelect.value === 'fewest-suburbs';
+      const direction = sortSelect.value === 'largest' || sortSelect.value === 'most-suburbs' ? -1 : 1;
+      orderedGroups.sort((a, b) => {
+        const first = bySuburbs ? a.suburbCount : a.population;
+        const second = bySuburbs ? b.suburbCount : b.population;
+        return direction * (first - second) || a.originalIndex - b.originalIndex;
+      });
     }
     const reordered = document.createDocumentFragment();
     orderedGroups.forEach(group => reordered.appendChild(group.section));
@@ -285,15 +308,45 @@
     picked.details.querySelector('summary')?.focus({ preventScroll: true });
   };
 
+  const clearSearch = () => {
+    input.value = '';
+    filter();
+    syncQuery(true);
+    input.focus();
+  };
+
+  const resetView = () => {
+    input.value = '';
+    matchingOnly.checked = false;
+    sortSelect.value = 'alphabetical';
+    filter();
+    applySort();
+    groups.forEach(group => { group.details.open = false; });
+    preSearchOpen = null;
+    syncQuery(true);
+    copySearchStatus.textContent = '';
+    input.focus();
+  };
+
   input.addEventListener('input', () => {
     filter();
     syncQuery(true);
+    copySearchStatus.textContent = '';
   });
   expand.addEventListener('click', () => toggle(true));
   collapse.addEventListener('click', () => toggle(false));
   random.addEventListener('click', pickRandom);
   sortSelect.addEventListener('change', applySort);
   matchingOnly.addEventListener('change', filter);
+  reset.addEventListener('click', resetView);
+  clearSearchButton.addEventListener('click', clearSearch);
+  copySearch.addEventListener('click', () => {
+    if (!normalise(input.value)) return;
+    const url = new URL(window.location.href);
+    url.searchParams.set('q', input.value.trim());
+    url.hash = '';
+    copyUrl(url.href, copySearchStatus);
+  });
 
   // Existing in-section public links work even when a hash is revisited.
   list.addEventListener('click', (event) => {

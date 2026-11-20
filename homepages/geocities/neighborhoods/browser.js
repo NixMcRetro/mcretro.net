@@ -13,19 +13,25 @@
   const expand = toolbar.querySelector('[data-gc-action="expand"]');
   const collapse = toolbar.querySelector('[data-gc-action="collapse"]');
   const random = toolbar.querySelector('[data-gc-action="random"]');
-  if (!input || !output || !expand || !collapse || !random) return;
+  const sortSelect = document.getElementById('gc-neighbourhood-sort');
+  const matchingOnly = document.getElementById('gc-suburbs-matching-only');
+  if (!input || !output || !expand || !collapse || !random || !sortSelect || !matchingOnly) return;
 
   const fold = (text) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase();
   const normalise = (text) => fold(text).trim();
 
-  // Build text nodes rather than HTML strings so archived link text stays safe.
-  // The index mapping keeps highlights accurate even with accented characters.
+  // Avoid rebuilding 714 suburb links on every keystroke. Only update DOM
+  // nodes when their highlight actually changes, and never use innerHTML.
+  const highlightCache = new WeakMap();
   const highlightText = (element, original, query) => {
-    if (!element) return;
-    if (!query) {
-      element.textContent = original;
+    if (!element || highlightCache.get(element) === query) return;
+    highlightCache.set(element, query);
+    if (!query || !normalise(original).includes(query)) {
+      if (element.querySelector('mark')) element.textContent = original;
       return;
     }
+    // Mapping normalised characters back to the original text preserves
+    // accents and UTF-16 offsets in highlights.
     let folded = '';
     const starts = [];
     const ends = [];
@@ -62,7 +68,7 @@
     element.replaceChildren(fragment);
   };
 
-  const groups = [...list.querySelectorAll('.gc-neighbourhood')].map(section => {
+  const groups = [...list.querySelectorAll('.gc-neighbourhood')].map((section, originalIndex) => {
     const details = section.querySelector('details');
     const heading = section.querySelector('.gc-neighbourhood-title');
     const body = section.querySelector('.gc-neighbourhood-body');
@@ -84,6 +90,8 @@
 
     return {
       section, details, body, name, nameElement, suburbs, description, descriptionText,
+      originalIndex,
+      population: Number((heading.querySelector('small')?.textContent || '').match(/[\d,]+/)?.[0].replace(/,/g, '') || 0),
       searchText: normalise([section.id, heading.textContent, descriptionText,
         ...suburbs.map(item => item.original)].join(' '))
     };
@@ -100,6 +108,8 @@
     }
 
     let found = 0;
+    let matchingSuburbs = 0;
+    let allSuburbs = 0;
     groups.forEach(group => {
       const match = !query || group.searchText.includes(query);
       group.section.hidden = !match;
@@ -107,14 +117,30 @@
         found++;
         if (query) group.details.open = true;
       }
-      highlightText(group.nameElement, group.name, query);
-      highlightText(group.description, group.descriptionText, query);
-      group.suburbs.forEach(item => highlightText(item.element, item.original, query));
+
+      // If a neighbourhood matches only by its name or description,
+      // keep its suburbs visible rather than creating an empty list.
+      const suburbHits = query
+        ? group.suburbs.filter(item => normalise(item.original).includes(query)).length
+        : group.suburbs.length;
+      allSuburbs += group.suburbs.length;
+      if (match) matchingSuburbs += suburbHits;
+      const hideUnmatched = !!query && matchingOnly.checked && suburbHits > 0;
+
+      highlightText(group.nameElement, group.name, match ? query : '');
+      highlightText(group.description, group.descriptionText, match ? query : '');
+      group.suburbs.forEach(item => {
+        const isSuburbMatch = !query || normalise(item.original).includes(query);
+        item.element.hidden = match && hideUnmatched && !isSuburbMatch;
+        highlightText(item.element, item.original, match ? query : '');
+      });
     });
     if (jump) jump.hidden = !!query;
-    output.textContent = query
-      ? found + ' of ' + groups.length + ' neighbourhoods match your search.'
-      : 'Showing all ' + groups.length + ' neighbourhoods.';
+    const message = query
+      ? found + ' of ' + groups.length + ' neighbourhoods match. ' +
+        matchingSuburbs + ' suburb names match.'
+      : 'Showing all ' + groups.length + ' neighbourhoods and ' + allSuburbs + ' suburbs.';
+    if (output.textContent !== message) output.textContent = message;
   };
 
 
@@ -134,7 +160,9 @@
     const nav = document.createElement('nav');
     nav.className = 'gc-neighbourhood-tour';
     nav.setAttribute('aria-label', 'Navigate from ' + group.name);
-    nav.appendChild(makeLink(previous.section.id, '← Previous: ' + previous.name));
+    const previousLink = makeLink(previous.section.id, '← Previous: ' + previous.name);
+    group.previousLink = previousLink;
+    nav.appendChild(previousLink);
 
     const share = document.createElement('span');
     share.className = 'gc-share-neighbourhood';
@@ -173,9 +201,34 @@
       }
     });
 
-    nav.appendChild(makeLink(next.section.id, 'Next: ' + next.name + ' →'));
+    const nextLink = makeLink(next.section.id, 'Next: ' + next.name + ' →');
+    group.nextLink = nextLink;
+    nav.appendChild(nextLink);
     group.body.appendChild(nav);
   });
+
+  // Reorder the existing original sections, never duplicate or rewrite them.
+  // The tour links follow the selected order and retain their original IDs.
+  let orderedGroups = groups.slice();
+  const applySort = () => {
+    orderedGroups = groups.slice();
+    if (sortSelect.value !== 'alphabetical') {
+      const direction = sortSelect.value === 'largest' ? -1 : 1;
+      orderedGroups.sort((a, b) =>
+        direction * (a.population - b.population) || a.originalIndex - b.originalIndex);
+    }
+    const reordered = document.createDocumentFragment();
+    orderedGroups.forEach(group => reordered.appendChild(group.section));
+    list.appendChild(reordered);
+    orderedGroups.forEach((group, index) => {
+      const previous = orderedGroups[(index - 1 + orderedGroups.length) % orderedGroups.length];
+      const next = orderedGroups[(index + 1) % orderedGroups.length];
+      group.previousLink.href = '#' + previous.section.id;
+      group.previousLink.textContent = '← Previous: ' + previous.name;
+      group.nextLink.href = '#' + next.section.id;
+      group.nextLink.textContent = 'Next: ' + next.name + ' →';
+    });
+  };
 
   // Preserve unrelated query parameters, but keep the directory's q= search
   // bookmarkable. Typing replaces the URL without adding browser-history spam.
@@ -241,6 +294,8 @@
   expand.addEventListener('click', () => toggle(true));
   collapse.addEventListener('click', () => toggle(false));
   random.addEventListener('click', pickRandom);
+  sortSelect.addEventListener('change', applySort);
+  matchingOnly.addEventListener('change', filter);
 
   // The jump list also works when a visitor clicks the same hash twice.
   list.addEventListener('click', (event) => {
@@ -281,5 +336,7 @@
   input.value = new URL(window.location.href).searchParams.get('q') || '';
   toolbar.hidden = false;
   filter();
+  // Native HTML starts in the original alphabetical order.
+  // Do not move sections unless the visitor explicitly changes sorting.
   revealHash();
 })();

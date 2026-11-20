@@ -436,7 +436,8 @@
   color: #17451D;
   text-decoration: none;
 }
-:root[data-theme="bird"] .main-nav a[aria-current="page"] {
+:root[data-theme="bird"] .main-nav a[aria-current="page"],
+:root[data-theme="bird"] .main-nav a.nav-mode-bird.active {
   font-weight: 700;
 }
 :root[data-theme="bird"] .main-nav a:hover,
@@ -449,11 +450,14 @@
 }
 :root[data-theme="bird"] .main-nav a[aria-current="page"] .nav-text,
 :root[data-theme="bird"] .main-nav a[aria-current="page"]:hover .nav-text,
-:root[data-theme="bird"] .main-nav a[aria-current="page"]:focus-visible .nav-text {
+:root[data-theme="bird"] .main-nav a[aria-current="page"]:focus-visible .nav-text,
+:root[data-theme="bird"] .main-nav a.nav-mode-bird.active .nav-text,
+:root[data-theme="bird"] .main-nav a.nav-mode-bird.active:hover .nav-text,
+:root[data-theme="bird"] .main-nav a.nav-mode-bird.active:focus-visible .nav-text {
   text-decoration: none;
 }
-:root[data-theme="bird"] .main-nav a:not([aria-current="page"]):hover .nav-text,
-:root[data-theme="bird"] .main-nav a:not([aria-current="page"]):focus-visible .nav-text {
+:root[data-theme="bird"] .main-nav a:not([aria-current="page"]):not(.active):hover .nav-text,
+:root[data-theme="bird"] .main-nav a:not([aria-current="page"]):not(.active):focus-visible .nav-text {
   text-decoration: underline;
 }
 
@@ -586,12 +590,14 @@
   :root[data-theme="bird"] .main-nav .nav-list li a:visited {
     color: #17451D;
   }
-  :root[data-theme="bird"] .main-nav .nav-list li a[aria-current="page"] {
+  :root[data-theme="bird"] .main-nav .nav-list li a[aria-current="page"],
+  :root[data-theme="bird"] .main-nav .nav-list li a.nav-mode-bird.active {
     color: #17451D;
     font-weight: 700;
     text-decoration: none;
   }
-  :root[data-theme="bird"] .main-nav .nav-list li a[aria-current="page"] .nav-text {
+  :root[data-theme="bird"] .main-nav .nav-list li a[aria-current="page"] .nav-text,
+  :root[data-theme="bird"] .main-nav .nav-list li a.nav-mode-bird.active .nav-text {
     text-decoration: none;
   }
 }

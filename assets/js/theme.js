@@ -48,14 +48,18 @@
     if (!window.location) return null;
     var path = window.location.pathname || '';
     if (theme === 'bird') {
-      // Keep the same section when moving into the Channel Chirp experience.
+      // Navigate to the matching Channel Chirp section when available.
+      if (path === '/' || path === '/index.html') return '/chirp/';
       if (/^\/about\/?$/.test(path)) return '/chirp/about/';
       if (/^\/blog(?:\/page\d+)?\/?$/.test(path)) return '/chirp/adventures/';
+      if (/^\/goodies\/?$/.test(path)) return '/chirp/soundborb/';
       // Other McRetro pages still enter the Nest; conure articles can stay put.
       if (unrelatedPosts || (isUserChange && !landing && !conureArticle)) return '/chirp/';
     }
     if (theme !== 'bird' && landing && isUserChange) {
+      if (/^\/chirp\/?$/.test(path)) return '/';
       if (/^\/chirp\/about\/?$/.test(path)) return '/about/';
+      if (/^\/chirp\/soundborb\/?$/.test(path)) return '/goodies/';
       // Adventures (including pagination) returns to the main Blog.
       if (/^\/chirp\/adventures(?:\/page\d+)?\/?$/.test(path)) return '/blog/';
       // Other Nest destinations keep their existing Blog fallback.

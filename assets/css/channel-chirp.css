@@ -249,9 +249,8 @@
  * Light/Dark layouts and colour variables remain untouched. */
 :root[data-theme="bird"] .main-nav a.active,
 :root[data-theme="bird"] .main-nav a[aria-current="page"] {
-  color: #FFFFFF;
-  text-decoration: underline;
-  text-underline-offset: .18em;
+  color: #17660D;
+  text-decoration: none;
 }
 :root[data-theme="bird"] .post-full {
   background: #FFFFFF;
@@ -421,8 +420,8 @@
   letter-spacing: .1em;
 }
 :root[data-theme="bird"] .main-nav {
-  /* Match the charcoal Bird canvas and retain thin green horizontal rules. */
-  background: var(--page-bg);
+  /* Pale green gives navigation emoji a light canvas to stand out against. */
+  background: #E7F5E4;
   border: 0;
   border-top: 1px solid #29A518;
   border-bottom: 1px solid #29A518;
@@ -433,7 +432,7 @@
 :root[data-theme="bird"] .main-nav a:visited,
 :root[data-theme="bird"] .main-nav a[aria-current="page"],
 :root[data-theme="bird"] .main-nav a.active {
-  color: #FFFFFF;
+  color: #17660D;
   text-decoration: none;
 }
 :root[data-theme="bird"] .main-nav a[aria-current="page"],
@@ -442,10 +441,10 @@
 }
 :root[data-theme="bird"] .main-nav a:hover,
 :root[data-theme="bird"] .main-nav a:focus-visible {
-  color: #FFFFFF;
+  color: #105B08;
 }
 :root[data-theme="bird"] .main-nav a:focus-visible {
-  outline: 2px solid #BDF7B0;
+  outline: 2px solid #17660D;
   outline-offset: 2px;
 }
 :root[data-theme="bird"] .main-nav a[aria-current="page"] .nav-text,
@@ -581,7 +580,7 @@
 
 @media screen and (max-width: 750px) {
   :root[data-theme="bird"] .main-nav {
-    /* Preserve the collapsed header and a charcoal expanded Bird menu. */
+    /* Keep the collapsed header while matching the expanded Bird menu. */
     border-left: 0;
     border-right: 0;
     border-top: 1px solid #29A518;
@@ -590,16 +589,16 @@
     padding: 0;
   }
   :root[data-theme="bird"] .main-nav .nav-list {
-    background: var(--page-bg);
+    background: #E7F5E4;
     border-bottom: 1px solid #29A518;
   }
   :root[data-theme="bird"] .main-nav .nav-list li a,
   :root[data-theme="bird"] .main-nav .nav-list li a:visited {
-    color: #FFFFFF;
+    color: #17660D;
   }
   :root[data-theme="bird"] .main-nav .nav-list li a[aria-current="page"],
   :root[data-theme="bird"] .main-nav .nav-list li a.nav-mode-bird.active {
-    color: #FFFFFF;
+    color: #17660D;
     font-weight: 700;
     text-decoration: none;
   }

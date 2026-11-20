@@ -279,7 +279,7 @@
   --border: #525D5B;
   --border-soft: #BBC8BF;
   --code-bg: #EAF2FF;
-  --quote-bg: #EDF2E8;
+  --quote-bg: var(--archive-filled);
   --table-head: #E3EEE7;
   --table-even: #F4F1E4;
   --table-odd: #FFFAF0;
@@ -314,7 +314,7 @@
   --border: #88969C;
   --border-soft: #4B5A63;
   --code-bg: #303A48;
-  --quote-bg: #2B364B;
+  --quote-bg: var(--archive-filled);
   --table-head: #30405B;
   --table-even: #222C38;
   --table-odd: #273240;

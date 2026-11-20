@@ -263,6 +263,33 @@ test('advisory: sidebar Search Go matches months with posts in both colour theme
 });
 
 
+test('advisory: article quotes use theme-appropriate colours, including Bird', () => {
+  const light = style.split(':root[data-theme="dark"]')[0];
+  const dark = style.split(':root[data-theme="dark"]')[1].split('\nhtml {')[0];
+  const bird = read('assets/css/bird-theme.css');
+
+  // Main McRetro Light/Dark quote surfaces and borders use the Archives blue palette.
+  for (const palette of [light, dark]) {
+    assert.ok(palette.includes('--quote-bg: var(--archive-filled);'));
+  }
+  assert.ok(light.includes('--archive-filled: #EAF2FF;'));
+  assert.ok(light.includes('--archive-accent: #064584;'));
+  assert.ok(dark.includes('--archive-filled: #293A55;'));
+  assert.ok(dark.includes('--archive-accent: #93C5FD;'));
+
+  const quoteRule = overrides.match(/\.post-full \.post-content blockquote\s*\{([^}]*)\}/)?.[1];
+  assert.ok(quoteRule, 'Shared article quote rule must exist');
+  assert.ok(quoteRule.includes('border-left: 4px solid var(--archive-accent);'));
+  assert.ok(quoteRule.includes('background: var(--quote-bg);'));
+
+  // Bird mode is a separate stylesheet loaded after the shared styles. It
+  // deliberately overrides both tokens, so Channel Chirp stays grey and green.
+  const birdPalette = bird.split(':root[data-theme="bird"] {')[1].split('\n}')[0];
+  assert.ok(birdPalette.includes('--quote-bg: #F5F5F5;'));
+  assert.ok(birdPalette.includes('--archive-accent: #29A518;'));
+  assert.ok(birdPalette.includes('--archive-filled: #E7F5E4;'));
+});
+
 test('advisory: accordion headers use Archives blues in both modes without changing panel markup', () => {
   const light = overrides.split(':root[data-theme="dark"]')[0];
   const dark = overrides.split(':root[data-theme="dark"]')[1].split('\n/*')[0];

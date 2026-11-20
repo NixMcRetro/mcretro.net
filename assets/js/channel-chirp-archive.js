@@ -1,6 +1,6 @@
 /* Bird-only archive calendar. Shares McRetro's visual calendar classes,
  * but never touches the ordinary McRetro calendar or its /archive/ URLs.
- * Month links go to the corresponding released-only Adventures section.
+ * Month links open the released-only monthly archive pages.
  */
 (() => {
   'use strict';
@@ -21,11 +21,8 @@
     const option = year.options[year.selectedIndex];
     if (!option || !/^(2018|2019)$/.test(option.value)) return;
     const counts = (option.dataset.counts || '').split(',').map(Number);
-    const pageNumbers = (option.dataset.pages || '').split(',').map(Number);
-    if (counts.length !== 12 || pageNumbers.length !== 12 ||
-        counts.some(n => !Number.isSafeInteger(n) || n < 0) ||
-        pageNumbers.some((page, i) => !Number.isSafeInteger(page) ||
-          page < 0 || (counts[i] > 0 && page < 1))) return;
+    if (counts.length !== 12 ||
+        counts.some(n => !Number.isSafeInteger(n) || n < 0)) return;
     const archiveYear = option.value;
     const tiles = counts.map((count, index) => {
       const month = String(index + 1).padStart(2, '0');
@@ -33,10 +30,7 @@
       tile.className = 'archive-calendar-month ' +
         (count ? 'has-posts' : 'is-empty');
       if (count) {
-        const prefix = pageNumbers[index] > 1
-          ? '/chirp/adventures/page' + pageNumbers[index] + '/'
-          : '/chirp/adventures/';
-        tile.href = prefix + '#chirp-month-' + archiveYear + '-' + month;
+        tile.href = '/chirp/archive/' + archiveYear + '/' + month + '/';
         tile.setAttribute('aria-label', full[index] + ' ' + archiveYear + ': ' +
           count + (count === 1 ? ' adventure' : ' adventures'));
       }

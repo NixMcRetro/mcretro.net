@@ -139,14 +139,19 @@ jobs:
             exit 1
           fi
 
-      # IMPORTANT: Do not republish the 229 historical Channel Chirp posts here.
-      # Their videos are being re-released gradually on the McRetro YouTube
-      # channel, with new McRetro articles published only as each is ready.
+      # Only the released-only year/month index is permitted at /chirp/archive/.
+      # Preserve the ban on all old Channel Chirp article directories and files
+      # until their videos and posts are individually approved for re-release.
       # See .github/CHANNEL-CHIRP-RETIREMENT.md for the staged migration plan.
-      - name: Do not publish the unreleased Channel Chirp snapshot
+      - name: Enforce the released-only Channel Chirp archive boundary
         run: |
-          if test -e _site/chirp/archive; then
-            echo "::error::Unreleased historical Channel Chirp posts must not be published"
+          if ! test -f _site/chirp/archive/index.html; then
+            echo "::error::The approved Channel Chirp archive index is missing"
+            exit 1
+          fi
+          unexpected=$(find _site/chirp/archive -mindepth 1 ! -path _site/chirp/archive/index.html -print -quit)
+          if test -n "$unexpected"; then
+            echo "::error::Unapproved Channel Chirp archive output: $unexpected"
             exit 1
           fi
 

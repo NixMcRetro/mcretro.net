@@ -6,14 +6,21 @@ import { runInNewContext } from 'node:vm';
 const script = readFileSync(new URL('../../assets/js/channel-chirp-filter.js', import.meta.url), 'utf8');
 
 function setup(query = '?q=tillie') {
-  const makeText = text => ({
-    textContent: text,
-    nodes: [],
-    replaceChildren(...nodes) {
-      this.nodes = nodes;
-      this.textContent = nodes.map(node => node.textContent).join('');
-    }
-  });
+  const makeText = text => {
+    let value = text;
+    return {
+      nodes: [],
+      get textContent() { return value; },
+      set textContent(next) {
+        value = next;
+        this.nodes = []; // Mirrors DOM: replacing textContent removes child marks.
+      },
+      replaceChildren(...nodes) {
+        this.nodes = nodes;
+        value = nodes.map(node => node.textContent).join('');
+      }
+    };
+  };
   const cards = Array.from({ length: 15 }, (_, i) => {
     const title = makeText((i < 12 ? 'Tillie ' : 'Chip ') + (i + 1));
     const excerpt = makeText(i < 12 ? 'Silly Tillie makes noise' : 'Chip eats seeds');

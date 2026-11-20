@@ -16,18 +16,19 @@ In 2021, I started rebuilding part of that lost world for older computers and br
 
 The project eventually ran on a Raspberry Pi 3, survived several increasingly ambitious rebuilds, and even picked up the [RetroChallenge 2022/10 Grand Prize](/docker-geocities-search-and-retrochallenge-2022-10-results/). It also taught me quite a lot about case-sensitive filesystems, archive integrity, and how many tiny files can fit into a truly ridiculous amount of storage.
 
-## Enter the private GeoCities archive
+## Explore the restored frontend
 
-The large GeoCities collection is **not hosted on the public internet**. I keep the archive separate from this website and may browse it through a private, local server instead.
+The original neighbourhood directory, rebuild news, and Cool Pages list are now restored as public McRetro pages, complete with artwork from the old site. No 1 TB archive is required to browse them.
 
-These are gateways to my personal copy of the rebuild. They only work from a computer configured to resolve `geocities.mcretro.net` to that private server, and only while the server is running. For everyone else, this page is the public exhibit.
+- **[Browse the neighbourhoods](/homepages/geocities/neighborhoods/)** - 41 neighbourhoods, historic descriptions and population counts, the old GIF buttons, and their suburbs.
+- **[Project News](/homepages/geocities/news/)** - updates from 2021 and 2022, plus a small collection of historical headlines.
+- **[Cool Pages](/homepages/geocities/cool/)** - the original recommendations from my old GeoCities rebuild.
 
-- **[Enter GeoCities](http://geocities.mcretro.net/)** - the original rebuild homepage.
-- **[Browse the neighbourhoods](http://geocities.mcretro.net/neighborhoods/)** - the old neighbourhood directory.
-- **[Project news](http://geocities.mcretro.net/news/)** - updates from the original rebuild.
-- **[Cool Pages](http://geocities.mcretro.net/cool/)** - the original list of interesting finds.
+## Enter my private GeoCities archive
 
-These are ordinary website links, not public access permissions. The private server and network configuration provide the separation. No archived user websites, bulk directories, search indexes, or old PHP forms are included in the public McRetro site.
+**[Enter GeoCities](http://geocities.mcretro.net/)** - my personal gateway to the full historical archive. The archived sites themselves are not hosted publicly. This link only works on a computer configured to resolve the hostname to my private intranet server, and only when that server is running.
+
+The public directory and Cool Pages list also contain links to specific private-archive paths for my own use. Other visitors can browse those lists and their original artwork, but those private destinations are not public services.
 
 ## A short history of the rebuild
 

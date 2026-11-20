@@ -335,6 +335,27 @@ assert.ok(birdArchive.includes('/assets/js/archive-year-deeplink.js'));
 assert.doesNotMatch(birdArchive, /href="\/archive\/\d{4}\//);
 assert.doesNotMatch(birdArchive, /little-corella-at-the-local-nursery/i);
 assert.ok(birdLayout.includes(':root[data-theme="bird"] .chirp-archive-index {'));
+// The Bird archive intro must remain legible against charcoal without
+// introducing a separate content card or changing regular McRetro themes.
+const archiveCssStart = birdLayout.indexOf(':root[data-theme="bird"] .chirp-archive-index {');
+assert.ok(archiveCssStart >= 0, 'Bird archive styling exists');
+const archiveContainerCss = birdLayout.slice(archiveCssStart, birdLayout.indexOf('}', archiveCssStart));
+assert.ok(archiveContainerCss.includes('background: transparent;'),
+  'Bird archive stays on the charcoal background');
+assert.ok(archiveContainerCss.includes('color: #FFFFFF;'),
+  'Archive fallback text is legible');
+assert.ok(!archiveContainerCss.includes('box-shadow:') && !archiveContainerCss.includes('border-top:'),
+  'Do not add a separate card to Bird archive');
+assert.ok(birdLayout.includes('.chirp-archive-index > .post-title,'));
+assert.ok(birdLayout.includes('.chirp-archive-index > .archive-index-intro,'));
+assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs [aria-current="page"] {'));
+assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs a {'));
+assert.ok(birdLayout.includes('color: #BDF7B0;'));
+assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261120-archive-contrast"'),
+  'Bird archive loads fresh stylesheet to avoid a stale dark-on-charcoal heading');
+assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261120-archive-contrast"'),
+  'Shared template loads the same current Bird stylesheet');
+
 const birdByMonth = new Map();
 const chronologicalBirds = [...randomPosts].sort((a, b) =>
   b.date.localeCompare(a.date) || b.url.localeCompare(a.url));

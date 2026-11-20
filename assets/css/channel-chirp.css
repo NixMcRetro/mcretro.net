@@ -856,16 +856,26 @@
   }
 }
 
-/* Bird-only archive landing page shares the McRetro year/month accordion
- * layout, on a readable white panel against Channel Chirp charcoal. */
+/* The Bird archive keeps McRetro's disclosure layout directly on the
+ * charcoal canvas. Make the introductory copy and breadcrumbs readable
+ * without an extra white card; the green year tiles remain unchanged. */
 :root[data-theme="bird"] .chirp-archive-index {
-  background: #FFFFFF;
-  color: #424242;
-  border-top: 4px solid #29A518;
-  border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .18);
-  padding: clamp(1rem, 2.5vw, 1.8rem);
+  background: transparent;
+  color: #FFFFFF;
 }
-:root[data-theme="bird"] .chirp-archive-index > .post-title {
-  color: #212121;
+:root[data-theme="bird"] .chirp-archive-index > .post-title,
+:root[data-theme="bird"] .chirp-archive-index > .archive-index-intro,
+:root[data-theme="bird"] .chirp-archive-index > .archive-breadcrumbs [aria-current="page"] {
+  color: #FFFFFF;
+}
+:root[data-theme="bird"] .chirp-archive-index > .archive-breadcrumbs,
+:root[data-theme="bird"] .chirp-archive-index > .archive-breadcrumbs .archive-breadcrumb-sep {
+  color: #E5E5E5;
+}
+:root[data-theme="bird"] .chirp-archive-index > .archive-breadcrumbs a {
+  color: #BDF7B0;
+}
+:root[data-theme="bird"] .chirp-archive-index > .archive-breadcrumbs a:hover,
+:root[data-theme="bird"] .chirp-archive-index > .archive-breadcrumbs a:focus-visible {
+  color: #FFFFFF;
 }

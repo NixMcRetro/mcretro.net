@@ -427,20 +427,31 @@
   flex: 0 0 auto;
 }
 :root[data-theme="bird"] .main-nav {
-  background: #228515;
+  /* Light green between matching horizontal dark-green rules, not side bars. */
+  background: #E7F5E4;
   border: 0;
-  border-left: 6px solid #0C4308;
-  border-right: 6px solid #0C4308;
+  border-top: 4px solid #17660D;
+  border-bottom: 4px solid #17660D;
+  border-radius: 0;
   padding: .62rem 0;
 }
 :root[data-theme="bird"] .main-nav a,
+:root[data-theme="bird"] .main-nav a:visited,
 :root[data-theme="bird"] .main-nav a[aria-current="page"],
 :root[data-theme="bird"] .main-nav a.active {
-  color: #FFFFFF;
+  color: #17451D;
   text-decoration: none;
 }
 :root[data-theme="bird"] .main-nav a[aria-current="page"] {
   font-weight: 700;
+}
+:root[data-theme="bird"] .main-nav a:hover,
+:root[data-theme="bird"] .main-nav a:focus-visible {
+  color: #105B08;
+}
+:root[data-theme="bird"] .main-nav a:focus-visible {
+  outline: 2px solid #17660D;
+  outline-offset: 2px;
 }
 :root[data-theme="bird"] .main-nav a[aria-current="page"] .nav-text,
 :root[data-theme="bird"] .main-nav a[aria-current="page"]:hover .nav-text,
@@ -566,15 +577,24 @@
 
 @media screen and (max-width: 750px) {
   :root[data-theme="bird"] .main-nav {
+    /* Preserve the collapsed mobile header; the opened menu is pale green. */
     border-left: 0;
     border-right: 0;
-    border-top: 2px solid #0C4308;
-    border-bottom: 2px solid #29A518;
+    border-top: 4px solid #17660D;
+    border-bottom: 0;
     background: transparent;
     padding: 0;
   }
+  :root[data-theme="bird"] .main-nav .nav-list {
+    background: #E7F5E4;
+    border-bottom: 4px solid #17660D;
+  }
+  :root[data-theme="bird"] .main-nav .nav-list li a,
+  :root[data-theme="bird"] .main-nav .nav-list li a:visited {
+    color: #17451D;
+  }
   :root[data-theme="bird"] .main-nav .nav-list li a[aria-current="page"] {
-    color: #17660D;
+    color: #17451D;
     font-weight: 700;
     text-decoration: none;
   }

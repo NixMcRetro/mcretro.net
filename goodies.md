@@ -24,6 +24,9 @@ A browser-based music maker originally created for SuperNick. Make some noise wi
 **☎️ [Dial-Up Networking](/homepages/modem/)**<br>
 Hear the old-school modem connection, then dial into either a randomly selected McRetro article or one of the restored historical homepages.
 
+**🌐 [GeoCities Rebuild Project](/homepages/geocities/)**<br>
+The story of my GeoCities archive rebuild, with original artwork, dial-up adventures, links to the worklogs, and a gateway to my private local archive.
+
 **🐐 [GOATPAD 1337](/homepages/goatpad/)**<br>
 A 64-pad browser soundboard and sequencer from 2024, with drums, effects, bass, GOAT SOUL, and melodies. A strange little musical time capsule!
 
@@ -70,7 +73,6 @@ An old-fashioned nature homepage featuring a frog, a lizard and a few original p
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🚧</span> Still Under Construction</summary>
 
 - **File Server**: Not ready yet. The promised 10 KB/s downloads remain a dream!
-- **[GeoCities](/homepages/geocities/)**: Still needs its proper historical content restored.
 
 </details>
 

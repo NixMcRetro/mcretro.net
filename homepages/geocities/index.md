@@ -1,14 +1,64 @@
 ---
 layout: default
-title: GeoCities Launch Page
+title: GeoCities Rebuild
 ---
 
 <figure class="aligncenter">
-IMAGE OF GEOCITIES (Not Frank)
+  <img src="/homepages/geocities/images/main/mai_mast.gif" alt="Original GeoCities masthead, with a city skyline and the words Welcome to Our Community." width="420" height="60" loading="eager">
+  <img src="/homepages/geocities/images/main/welcome.gif" alt="Original Welcome to GeoCities graphic." width="173" height="40" loading="lazy">
 </figure>
 
-<main role="main">
-<div class="text-center" markdown="1">
-FRANK BLURB
-</main>
-</div>
+# The GeoCities Rebuild
+
+GeoCities was an enormous collection of personal homepages, organised into neighbourhoods such as Area51, Athens, Hollywood, Tokyo, and Yosemite. People built their own corners of the web with backgrounds, GIFs, guestbooks, and whatever else would fit. Yahoo! acquired GeoCities in 1999 and closed the service in 2009, but [Archive Team](https://wiki.archiveteam.org/index.php/GeoCities_Project) managed to preserve a substantial, incomplete collection of those old pages.
+
+In 2021, I started rebuilding part of that lost world for older computers and browsers. I wanted something I could actually dial into from a MiSTer running Windows 98, using real modems, Internet Explorer 5, and Netscape 4. A normal modern web page wasn't much use at 14.4 kbit/s. But a long-forgotten GeoCities homepage? Perfect! 🌐
+
+The project eventually ran on a Raspberry Pi 3, survived several increasingly ambitious rebuilds, and even picked up the [RetroChallenge 2022/10 Grand Prize](/docker-geocities-search-and-retrochallenge-2022-10-results/). It also taught me quite a lot about case-sensitive filesystems, archive integrity, and how many tiny files can fit into a truly ridiculous amount of storage.
+
+## Enter the private GeoCities archive
+
+The large GeoCities collection is **not hosted on the public internet**. I keep the archive separate from this website and may browse it through a private, local server instead.
+
+These are gateways to my personal copy of the rebuild. They only work from a computer configured to resolve `geocities.mcretro.net` to that private server, and only while the server is running. For everyone else, this page is the public exhibit.
+
+- **[Enter GeoCities](http://geocities.mcretro.net/)** - the original rebuild homepage.
+- **[Browse the neighbourhoods](http://geocities.mcretro.net/neighborhoods/)** - the old neighbourhood directory.
+- **[Project news](http://geocities.mcretro.net/news/)** - updates from the original rebuild.
+- **[Cool Pages](http://geocities.mcretro.net/cool/)** - the original list of interesting finds.
+
+These are ordinary website links, not public access permissions. The private server and network configuration provide the separation. No archived user websites, bulk directories, search indexes, or old PHP forms are included in the public McRetro site.
+
+## A short history of the rebuild
+
+**2021: Getting the old web online.** I began with the Archive Team material and a collection of reconstruction scripts, concentrating on the old neighbourhood addresses and compatibility with vintage browsers. On 1st November 2021, [the first public rebuild went live](/the-geocities-archive-rebuild-goes-live/) on a Raspberry Pi 3.
+
+**2022: Dial-up, as nature intended.** The rebuild became a RetroChallenge experiment involving period-appropriate software, a MiSTer, Windows 98, and real modems. I tested browsing GeoCities at [14.4 kbit/s](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-14-4k/) and [28.8 kbit/s](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-28-8k/). The pages loaded slowly, which was rather the point.
+
+**2023: A very large reality check.** I worked on [verifying and extracting a rebuild archive](/integrity-and-extracting-the-geocities-archive-rebuild-v5/) and experimented with Docker and full-text search. In October, I [retired the public archive](/geocities-archive-retired-dockerisation-abandoned/): the volume of unreviewed material, including content that needed moderation, made unrestricted public hosting impractical.
+
+**Now: Keeping the story alive.** This public page preserves the history, links, and some original GeoCities artwork. The actual archive stays offline or private. I can still explore it locally without making a terabyte of other people's old websites publicly available.
+
+## Read the rebuild story
+
+These are my articles, worklogs, demonstrations, and occasional lessons in how not to move millions of files around.
+
+- [The GeoCities Archive Rebuild Blog (2021)](/the-geocities-archive-rebuild-blog/)
+- [The GeoCities Archive Rebuild Goes Live (2021)](/the-geocities-archive-rebuild-goes-live/)
+- [The GeoCities Rebuild Worklog (2021-2022)](/the-geocities-rebuild-worklog/)
+- [Rebuilding GeoCities on macOS 12 (2022)](/rebuilding-geocities-on-macos-12/)
+- [RetroChallenge 2022/10 - GeoCities at 14.4k](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-14-4k/)
+- [RetroChallenge 2022/10 - GeoCities at 28.8k](/retrochallenge-2022-10-geocities-rebuild-on-dial-up-at-28-8k/)
+- [Integrity and Extracting the GeoCities Archive - Rebuild V5 (2023)](/integrity-and-extracting-the-geocities-archive-rebuild-v5/)
+- [Docker, GeoCities Search, and RetroChallenge Results (2023)](/docker-geocities-search-and-retrochallenge-2022-10-results/)
+- [GeoCities Archive Retired, Dockerisation Abandoned (2023)](/geocities-archive-retired-dockerisation-abandoned/)
+
+## A little piece of the original site
+
+The masthead, welcome graphic, and badge on this page come from my old GeoCities rebuild frontend. They are presented as their original GIF files, including the animated badge, rather than being recreated or replaced with modern artwork.
+
+<p class="center">
+  <a href="http://geocities.mcretro.net/" rel="nofollow"><img src="/homepages/geocities/pictures/gc_icon.gif" alt="Animated GeoCities 88 by 31 pixel badge; links to the private archive gateway." width="88" height="31" loading="lazy"></a>
+</p>
+
+If you're here for the original internet experience, the [GeoCities Archive Rebuild worklog](/the-geocities-rebuild-worklog/) is a good place to start. Bring a modem. Or at least some patience. :)

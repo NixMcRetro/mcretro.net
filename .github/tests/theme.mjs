@@ -215,54 +215,79 @@ test('core: blocked localStorage still permits page-local theme choice', () => {
   assert.deepEqual(f.navigations.at(-1), {method:'assign', url:'/chirp/'});
 });
 
-test('core: Light and Dark keep the original ten rotating taglines', () => {
+test('core: Light and Dark retain their ten taglines while Bird has exactly nine', () => {
   const classic = [...header.matchAll(/class="phrase(?: mobile-tagline)?"/g)].length;
   assert.equal(classic, 10, 'The ten original McRetro tagline animations must remain');
-  assert.match(header, /class="bird-tagline"/);
   assert.ok(!header.includes('class="phrase phrase--bird"'));
-  const script = read('assets/js/header-taglines.js');
-  assert.match(script, /cycle\.appendChild\(birdTagline\)/,
-    'Bird title stays after the original ten tags when shuffled');
+  const birdLines = header.split('\n').filter(line => line.includes('class="bird-tagline"'))
+    .map(line => line.split('>')[1].split('<')[0]);
+  assert.deepEqual(birdLines, [
+    "🪺 Welcome to the Nest!",
+    "📢 You've Got Squawk!",
+    "📟 404: Silence Not Found",
+    "💾 All Your Seeds Are Belong to Us",
+    "🎮 Press START to Squawk!",
+    "🦖 Tiny Dinosaurs, Big Attitudes",
+    "🌻 Powered by Seeds and Screams",
+    "💻 Best Viewed with a Beak",
+    "🔊 Volume Control Not Found"
+]);
   const firstClassic = header.indexOf('class="phrase"');
   const lastClassic = header.lastIndexOf('class="phrase"');
   const birdPosition = header.indexOf('class="bird-tagline"');
-  assert.ok(firstClassic < lastClassic && lastClassic < birdPosition);
+  assert.ok(firstClassic < lastClassic && lastClassic < birdPosition,
+    'Bird taglines must occupy separate slots after the classic taglines');
+
   const bird = read('assets/css/bird-theme.css');
-  assert.match(bird, /:root:not\(\[data-theme="bird"\]\) \.textcycle \.bird-tagline/);
-  assert.match(bird, /:root\[data-theme="bird"\] \.textcycle \.phrase/);
+  assert.ok(bird.includes(':root:not([data-theme="bird"]) .textcycle .bird-tagline'));
+  assert.ok(bird.includes(':root[data-theme="bird"] .textcycle .phrase'));
+  assert.ok(bird.includes('animation: birdTaglineCycle 54s infinite'));
+  for (let i = 0; i < 9; i += 1) {
+    assert.ok(bird.includes('.bird-tagline:nth-child(' + (i + 11) +
+      ') { animation-delay: ' + (i * 6) + 's; }'), 'Bird delay slot ' + i);
+  }
+  assert.ok(bird.includes('@media (prefers-reduced-motion: reduce)'));
+  assert.ok(bird.includes('.bird-tagline:nth-child(11) { opacity: 1; }'));
 });
 
-test('core: tagline shuffle keeps Bird outside the original animation positions', () => {
-  const nodes = Array.from({length:10}, (_, i) => ({ name:'classic-' + i }));
-  const bird = { name:'bird' };
+test('core: each theme shuffles after its fixed first tagline without mixing slots', () => {
+  const classic = Array.from({length: 10}, (_, i) => ({name: 'classic-' + i}));
+  const birds = Array.from({length: 9}, (_, i) => ({name: 'bird-' + i}));
   const cycle = {
-    children: [...nodes,bird],
+    children: [...classic, ...birds],
     querySelectorAll(selector) {
-      assert.equal(selector,'.phrase');
-      return nodes;
-    },
-    querySelector(selector) {
-      assert.equal(selector,'.bird-tagline');
-      return bird;
+      if (selector === '.phrase') return classic;
+      if (selector === '.bird-tagline') return birds;
+      assert.fail('unexpected selector: ' + selector);
     },
     appendChild(item) {
       const i = this.children.indexOf(item);
-      if (i !== -1) this.children.splice(i,1);
+      if (i !== -1) this.children.splice(i, 1);
       this.children.push(item);
     }
   };
+  // Fixed random value produces a deterministic but genuinely shuffled order.
+  const shuffledMath = Object.create(Math);
+  shuffledMath.random = () => 0;
   runInNewContext(read('assets/js/header-taglines.js'), {
     document: {querySelector(selector) {
-      assert.equal(selector,'.textcycle');
+      assert.equal(selector, '.textcycle');
       return cycle;
     }},
-    Math
+    Math: shuffledMath
   });
-  assert.equal(cycle.children.length,11);
-  assert.equal(cycle.children[0],nodes[0], 'First familiar tagline must stay first');
-  assert.equal(cycle.children[10],bird, 'Bird title must never occupy a rotating position');
-  assert.equal(new Set(cycle.children.slice(0,10)).size,10);
+  assert.equal(cycle.children.length, 19);
+  assert.equal(cycle.children[0], classic[0], 'McRetro opener remains first');
+  assert.equal(cycle.children[10], birds[0], 'Nest welcome must always play first in Bird mode');
+  assert.equal(new Set(cycle.children).size, 19, 'no lost or duplicated taglines');
+  assert.deepEqual(cycle.children.slice(0, 10).slice(1).map(node => node.name).sort(),
+    classic.slice(1).map(node => node.name).sort());
+  assert.deepEqual(cycle.children.slice(10).slice(1).map(node => node.name).sort(),
+    birds.slice(1).map(node => node.name).sort());
+  assert.notDeepEqual(cycle.children.slice(11), birds.slice(1),
+    'the eight remaining Bird taglines are shuffled, not fixed in markup order');
 });
+
 
 test('core: Bird stylesheet and header icon preserve original mobile layout', () => {
   const bird=read('assets/css/bird-theme.css');

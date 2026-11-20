@@ -97,7 +97,37 @@
   font-size: 1.1rem;
   letter-spacing: 0.03em;
   color: #F5F5F5;
+  opacity: 0;
+  animation: birdTaglineCycle 54s infinite;
 }
+/* Nine six-second slots, mirroring McRetro's existing fade and loop. */
+@keyframes birdTaglineCycle {
+  0% { opacity: 0; }
+  1% { opacity: 1; }
+  10% { opacity: 1; }
+  11.111% { opacity: 0; }
+  100% { opacity: 0; }
+}
+:root[data-theme="bird"] .textcycle .bird-tagline:nth-child(11) { animation-delay: 0s; }
+:root[data-theme="bird"] .textcycle .bird-tagline:nth-child(12) { animation-delay: 6s; }
+:root[data-theme="bird"] .textcycle .bird-tagline:nth-child(13) { animation-delay: 12s; }
+:root[data-theme="bird"] .textcycle .bird-tagline:nth-child(14) { animation-delay: 18s; }
+:root[data-theme="bird"] .textcycle .bird-tagline:nth-child(15) { animation-delay: 24s; }
+:root[data-theme="bird"] .textcycle .bird-tagline:nth-child(16) { animation-delay: 30s; }
+:root[data-theme="bird"] .textcycle .bird-tagline:nth-child(17) { animation-delay: 36s; }
+:root[data-theme="bird"] .textcycle .bird-tagline:nth-child(18) { animation-delay: 42s; }
+:root[data-theme="bird"] .textcycle .bird-tagline:nth-child(19) { animation-delay: 48s; }
+@media (max-width: 500px) {
+  :root[data-theme="bird"] .textcycle .bird-tagline {
+    font-size: .9rem;
+    letter-spacing: .02em;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="bird"] .textcycle .bird-tagline { animation: none; }
+  :root[data-theme="bird"] .textcycle .bird-tagline:nth-child(11) { opacity: 1; }
+}
+
 :root[data-theme="bird"] .site-logo--bird {
   font-family: Montserrat, "Helvetica Neue", sans-serif;
   font-weight: 700;

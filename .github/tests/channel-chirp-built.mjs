@@ -30,7 +30,9 @@ for (const [name, html] of Object.entries(pages)) {
   assert.match(html, /<html[^>]*data-chirp-landing="true"/, name + ' must activate Bird');
   assert.match(html, /class="sidebar-mode-bird"/);
   assert.match(html, /class="nav-mode-bird"/);
-  assert.match(html, /class="bird-tagline">Welcome to the Nest<\/span>/);
+  assert.ok(html.includes('class="bird-tagline">🪺 Welcome to the Nest!</span>'));
+  assert.equal([...html.matchAll(/class="bird-tagline">/g)].length, 9,
+    name + " must contain exactly nine Bird taglines");
   assert.doesNotMatch(html, /\/chirp\/archive\//);
   assert.doesNotMatch(html, /<nav class="nest-subnav"/);
 }

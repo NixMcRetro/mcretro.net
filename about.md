@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About
+date: 2020-01-11T21:18:07.000+11:00
 ---
 
 ## The About Page
@@ -43,7 +44,7 @@ Recently I realised that my gender identity aligns better with that of a woman. 
 
 After a decade or so of moving homepages, I've decided this is where my internet home will be. I've had an online presence in one form or another since the mid-1990s. Born in the 80s and living for the 90s!
 
-And what a time they were! Chatting on Mirabilis ICQ, blasting MP3s at 128 kbps in Winamp 2.x, playing Mega Drive games through Genecyst and KGen, and using GetRight to resume downloads after somebody picked up the telephone.
+And what a time they were! Chatting on Mirabilis ICQ (Uh-oh!), blasting MP3s at 128 kbps in Winamp 2.x, playing Mega Drive games through Genecyst and KGen, and using GetRight to resume downloads when my mum picked up the telephone.
 
 There was WS_FTP LE for uploading websites, Sausage Software's HotDog Professional for creating them, and far too many hours spent trying to make everything work. Wonderful stuff!
 

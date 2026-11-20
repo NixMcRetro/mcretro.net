@@ -272,7 +272,7 @@ assert.match(rollPages.at(-1), /href="\/chirp\/adventures\/page\d+\/"|rel="prev"
 
 const sidebar = pages.nest.split('<div class="sidebar-mode-bird">')[1]?.split('</aside>')[0];
 assert.ok(sidebar, 'Bird sidebar exists');
-const searchPos = sidebar.indexOf('placeholder="Find a Squawk"');
+const searchPos = sidebar.indexOf('placeholder="Find-a-Squawk..."');
 const calendarPos = sidebar.indexOf('data-chirp-calendar');
 const randomPos = sidebar.indexOf('>Random Posts<');
 const coolPos = sidebar.indexOf('Cool Links');

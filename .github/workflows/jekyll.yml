@@ -43,6 +43,8 @@ on:
       - '.github/tests/chirp-random.test.mjs'
       - '.github/tests/chirp-calendar.test.mjs'
       - 'goodies.md'
+      - 'homepages/geocities/**'
+      - '.github/tests/geocities-built.mjs'
       - 'homepages/fishtankworld/**'
       - 'homepages/goatpad/**'
       - '.github/tests/restore-fishtank-gallery.py'
@@ -191,6 +193,9 @@ jobs:
 
       - name: Verify Goodies projects and restored homepages remain reachable
         run: node .github/tests/goodies-directory-built.mjs _site
+
+      - name: Verify restored GeoCities pages render Markdown and preserve original artwork
+        run: node .github/tests/geocities-built.mjs _site
 
       - name: Check blog image dimension markers and enlargement script
         run: |

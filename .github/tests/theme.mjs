@@ -78,8 +78,8 @@ test('core: theme button cycles Light, Dark, Bird, Light and remembers the filte
   assert.equal(f.attrs['data-theme'],'bird');
   assert.equal(f.metaAttrs.content,'#424242');
   assert.deepEqual(f.navigations.at(-1), { method:'assign', url:'/chirp/' });
-  assert.equal(f.btnAttrs['aria-label'], 'Return to Light Mode');
-  assert.equal(f.btnAttrs.title, 'Return to Light Mode');
+  assert.equal(f.btnAttrs['aria-label'], 'Switch to Light Mode');
+  assert.equal(f.btnAttrs.title, 'Switch to Light Mode');
   f.handlers.click();
   assert.equal(f.store.get('mcretro-theme'),'light');
   assert.equal(f.attrs['data-theme'],'light');
@@ -129,7 +129,7 @@ test('core: blocked localStorage still permits page-local theme choice', () => {
   const f=fixture(true,null,true);
   f.handlers.click();
   assert.equal(f.attrs['data-theme'],'bird');
-  assert.equal(f.btnAttrs['aria-label'], 'Return to Light Mode');
+  assert.equal(f.btnAttrs['aria-label'], 'Switch to Light Mode');
   assert.deepEqual(f.navigations.at(-1), {method:'assign', url:'/chirp/'});
 });
 

@@ -107,19 +107,3 @@ You can find me on [Bluesky](https://bsky.app/profile/nixmcretro.bsky.social) or
 </div>
 
 </details>
-
-
-
-<details class="about-panel panel--teal" markdown="1">
-<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🥔</span> Super Secret Recipes</summary>
-
-A few old favourites from the kitchen. I've finally dug up some of the original recipes!
-
-- [Garlic Roast Potatoes](/recipes/garlic-roast-potatoes/)
-- [Quick Mix Chocolate Cake](/recipes/quick-mix-chocolate-cake/)
-- [Mars Bar Slice](/recipes/mars-bar-slice/)
-- [Soft Pretzels](https://sallysbakingaddiction.com/easy-homemade-soft-pretzels/)
-
-</details>
-
-

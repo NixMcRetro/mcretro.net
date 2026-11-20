@@ -8,6 +8,19 @@ released, non-opted-out conure posts are passed into this include.
   {% assign month_key = post.date | date: '%Y-%m' %}
   <article class="post-entry"{% if site.data.chirp_adventures_month_first_urls[month_key] == post.url %} id="chirp-month-{{ month_key }}"{% endif %}>
     <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+    <div class="chirp-roll-heading-date">
+      <time datetime="{{ post.date | date_to_xmlschema }}">
+        {% assign d = post.date | date: '%-d' | plus: 0 %}
+        {% case d %}
+          {% when 1 or 21 or 31 %}{% assign ordinal = 'st' %}
+          {% when 2 or 22 %}{% assign ordinal = 'nd' %}
+          {% when 3 or 23 %}{% assign ordinal = 'rd' %}
+          {% else %}{% assign ordinal = 'th' %}
+        {% endcase %}
+        {{ d }}{{ ordinal }} {{ post.date | date: '%B %Y' }}
+      </time>
+    </div>
+    <div class="chirp-roll-heading-line" aria-hidden="true"></div>
     <div class="post-meta-row">
       <div class="post-meta">
         {% if post.author %}
@@ -19,20 +32,7 @@ released, non-opted-out conure posts are passed into this include.
             </picture>
             {{ post.author | escape }}
           </span>
-          <span class="meta-sep">//</span>
         {% endif %}
-
-        <span class="post-date">
-          {% assign d = post.date | date: '%-d' | plus: 0 %}
-          {% case d %}
-            {% when 1 or 21 or 31 %}{% assign ordinal = 'st' %}
-            {% when 2 or 22 %}{% assign ordinal = 'nd' %}
-            {% when 3 or 23 %}{% assign ordinal = 'rd' %}
-            {% else %}{% assign ordinal = 'th' %}
-          {% endcase %}
-          {{ d }}{{ ordinal }} {{ post.date | date: '%B %Y' }}
-        </span>
-
         {% if post.categories.size > 0 %}
           <span class="meta-sep">//</span>
           <span class="post-categories">

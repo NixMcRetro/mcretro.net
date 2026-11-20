@@ -142,17 +142,19 @@ assert.match(pages.nest, /class="nav-mode-bird"/);
 assert.match(birdCss, /:root\[data-theme="bird"\] \.sidebar-mode-mcretro[\s\S]*display: none !important/);
 assert.match(birdCss, /:root:not\(\[data-theme="bird"\]\) \.sidebar-mode-bird[\s\S]*display: none !important/);
 assert.match(birdLayout, /font-family: 'Korataki'/);
-// The Bird menu has a pale green surface with DARK horizontal rules only.
-const navStyle = birdLayout.match(/:root\\[data-theme="bird"\\] \\.main-nav \\{([^}]+)\\}/g) || [];
-assert.ok(navStyle.some(block => /background: #E7F5E4;/.test(block) &&
+// The Bird nav is a pale green surface framed by DARK horizontal rules.
+const navStyles = [...birdLayout.matchAll(/:root\[data-theme="bird"\] \.main-nav \{([^}]+)\}/g)]
+  .map(match => match[1]);
+assert.ok(navStyles.some(block =>
+  /background: #E7F5E4;/.test(block) &&
   /border-top: 4px solid #17660D;/.test(block) &&
   /border-bottom: 4px solid #17660D;/.test(block) &&
   !/border-left: 6px|border-right: 6px/.test(block)),
   'Bird desktop menu must have pale green background and dark top/bottom borders');
-assert.match(birdLayout, /\\.main-nav a:visited[\\s\\S]*?color: #17451D;/);
-assert.match(birdLayout, /\\.main-nav \\.nav-list \\{\\s*background: #E7F5E4;\\s*border-bottom: 4px solid #17660D;/);
+assert.match(birdLayout, /\.main-nav a:visited[\s\S]*?color: #17451D;/);
+assert.match(birdLayout, /\.main-nav \.nav-list \{\s*background: #E7F5E4;\s*border-bottom: 4px solid #17660D;/);
+assert.doesNotMatch(birdLayout, /border-left: 6px solid #0C4308/);
 
-assert.match(birdLayout, /border-left: 6px solid #0C4308/);
 assert.match(birdLayout, /\.nest-post-card time::after/);
 assert.match(birdLayout, /\.post-full \.post-meta::after/);
 assert.match(channels, /Visit The Nest: Channel Chirp adventures on McRetro/);

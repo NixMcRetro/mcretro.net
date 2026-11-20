@@ -98,6 +98,8 @@ for (const [slug, label] of [
 const birdNavigation = [...pages.nest.matchAll(/<a class="nav-mode-bird"[^>]*>([\s\S]*?)<\/a>/g)];
 assert.deepEqual(birdNavigation.map(item => item[1].match(/class="nav-text">([^<]+)</)?.[1]),
   ['Home', 'Adventures', 'Soundborb', 'Random', 'About']);
+assert.deepEqual(birdNavigation.map(item => item[1].match(/class="nav-emoji" aria-hidden="true">([^<]+)</)?.[1]),
+  ['🪺', '🪶', '🔊', '🌏', '🦜'], 'only the Soundborb emoji should change');
 assert.match(pages.nest, /class="bird-brand-name">Channel Chirp<\/span>/);
 assert.doesNotMatch(pages.nest, /bird-brand-mark/);
 assert.match(pages.nest, /href="\/chirp\/random\/" data-chirp-random-link(?:="")?/);

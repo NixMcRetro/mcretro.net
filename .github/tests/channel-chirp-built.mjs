@@ -351,9 +351,9 @@ assert.ok(birdLayout.includes('.chirp-archive-index > .archive-index-intro,'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs [aria-current="page"] {'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs a {'));
 assert.ok(birdLayout.includes('color: #BDF7B0;'));
-assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261120-archive-contrast"'),
+assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261120-month-contrast"'),
   'Bird archive loads fresh stylesheet to avoid a stale dark-on-charcoal heading');
-assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261120-archive-contrast"'),
+assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261120-month-contrast"'),
   'Shared template loads the same current Bird stylesheet');
 
 const birdByMonth = new Map();
@@ -424,8 +424,32 @@ for (const year of availableYears) {
   assert.match(birdArchive, new RegExp('class="archive-index-year-count">' + count + ' articles?</span>'),
     'release-only count for ' + year);
 }
-assert.ok(birdLayout.includes(':root[data-theme="bird"] .chirp-archive-month {'),
-  'Bird monthly archive styling is scoped');
+const monthShellStart = birdLayout.indexOf(':root[data-theme="bird"] .post-full.chirp-archive-month {');
+assert.ok(monthShellStart >= 0, 'monthly archive override is scoped to Bird only');
+const monthShellStyle = birdLayout.slice(monthShellStart, birdLayout.indexOf('}', monthShellStart));
+for (const declaration of [
+  'background: transparent;',
+  'color: #FFFFFF;',
+  'border: 0;',
+  'padding: 0;',
+  'box-shadow: none;'
+]) {
+  assert.ok(monthShellStyle.includes(declaration), 'month archive shell: ' + declaration);
+}
+assert.ok(birdLayout.includes(':root[data-theme="bird"] .post-full {\n  background: #FFFFFF;'),
+  'ordinary Bird articles retain their white panels');
+assert.ok(birdLayout.includes('.chirp-archive-month .archive-month-header > .post-title,'),
+  'month heading remains white on charcoal');
+assert.ok(birdLayout.includes('.chirp-archive-month .archive-breadcrumbs a {\n  color: #BDF7B0;'),
+  'Bird monthly archive breadcrumb remains pale-green on charcoal');
+assert.ok(birdLayout.includes('.chirp-archive-month .archive-blog-list .post-entry {\n  background: #FFFFFF;'),
+  'individual month article cards stay white');
+for (const month of birdByMonth.keys()) {
+  const [year, number] = month.split('-');
+  assert.ok(read('chirp/archive/' + year + '/' + number + '/index.html')
+    .includes('href="/assets/css/channel-chirp.css?v=20261120-month-contrast"'),
+    'all Bird month pages receive the updated stylesheet: ' + month);
+}
 assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive')).sort(),
   ['index.html', ...availableYears].sort(),
   'only approved years plus the archive index are published');

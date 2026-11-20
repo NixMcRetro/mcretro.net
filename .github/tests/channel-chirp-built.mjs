@@ -47,6 +47,20 @@ for (const [slug, label] of [
 ]) {
   assert.match(pages.nest, new RegExp('href="/chirp/' + slug + '/"'), slug + ' is an independent Bird page');
 }
+
+// Exactly five Bird links appear in this order, with the text-only Korataki title.
+const birdNavigation = [...pages.nest.matchAll(/<a class="nav-mode-bird"[^>]*>([\s\S]*?)<\/a>/g)];
+assert.deepEqual(birdNavigation.map(item => item[1].match(/class="nav-text">([^<]+)</)?.[1]),
+  ['The Nest', 'Adventures', 'Soundborb', 'Random', 'About']);
+assert.match(pages.nest, /class="bird-brand-name">Channel Chirp<\/span>/);
+assert.doesNotMatch(pages.nest, /bird-brand-mark/);
+assert.match(pages.nest, /href="\/chirp\/adventures\/" data-chirp-random-link(?:="")?/);
+// Correct About destination is checked against the rendered nav, independent of active state.
+assert.match(birdNavigation[4][0], /href="\/chirp\/flock\/"/);
+assert.match(birdNavigation[3][0], /data-chirp-random-link/);
+assert.match(birdNavigation[2][0], /href="\/chirp\/soundborb\/"/);
+assert.doesNotMatch(birdNavigation.map(item => item[0]).join(' '), /href="\/chirp\/timeline\/"/);
+
 assert.match(pages.nest, /class="chirp-home-panel"/);
 assert.doesNotMatch(pages.nest, /class="nest-post-card"/);
 assert.match(pages.nest, /Welcome to the Nest/);
@@ -166,7 +180,9 @@ assert.match(sidebar, /class="recent-posts-dial sidebar-action-link" type="butto
 assert.match(sidebar, /<span class="sidebar-action-link__icon" aria-hidden="true">🎲<\/span>/);
 assert.match(sidebar, /<span class="sidebar-action-link__label">Random!<\/span>/);
 assert.doesNotMatch(sidebar, /🎲 Random Posts|☎️|Dial-up|Shuffle again|Browse Adventures/);
-for (const href of ['/chirp/timeline/', '/chirp/soundborb/', '/chirp/diet/']) {
+assert.match(sidebar, /href="\/chirp\/adventures\/" data-chirp-random-link(?:="")?[^>]*>🌏 Random<\/a>/);
+assert.doesNotMatch(sidebar, /href="\/chirp\/timeline\/"/);
+for (const href of ['/chirp/soundborb/', '/chirp/diet/']) {
   assert.ok(sidebar.includes('href="' + href + '"'), href);
 }
 assert.ok(exists('assets/js/channel-chirp-archive.js'));

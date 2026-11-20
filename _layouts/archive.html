@@ -1,13 +1,19 @@
 ---
 layout: default
 ---
-<section class="post-full archive-month" data-pagefind-ignore="all">
+{% assign archive_home = '/' %}
+{% assign archive_index = '/archive/' %}
+{% if page.channel_chirp == true %}
+  {% assign archive_home = '/chirp/' %}
+  {% assign archive_index = '/chirp/archive/' %}
+{% endif %}
+<section class="post-full archive-month{% if page.channel_chirp == true %} chirp-archive-month{% endif %}" data-pagefind-ignore="all">
   {% assign month_count = page.posts | size %}
   <header class="archive-month-header">
     <nav class="archive-breadcrumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
-      <a href="/archive/">Archives</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
-      <a href="/archive/#year-{{ page.date | date: '%Y' }}">{{ page.date | date: "%Y" }}</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="{{ archive_home }}">Home</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="{{ archive_index }}">Archives</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="{{ archive_index }}#year-{{ page.date | date: '%Y' }}">{{ page.date | date: "%Y" }}</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
       <span aria-current="page">{{ page.date | date: "%B" }}</span>
     </nav>
     <h1 class="post-title">{{ page.date | date: "%B %Y" }}</h1>

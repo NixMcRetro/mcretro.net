@@ -880,10 +880,16 @@
   color: #FFFFFF;
 }
 
-/* Bird monthly archives reuse the McRetro article layout. Headings stay
- * readable on charcoal and the article entries use white reading panels. */
-:root[data-theme="bird"] .chirp-archive-month {
+/* The shared Bird .post-full rule draws a white article panel.
+ * The monthly archive is instead a charcoal section containing white cards;
+ * keep its white heading and pale-green breadcrumbs off the white background. */
+:root[data-theme="bird"] .post-full.chirp-archive-month {
+  background: transparent;
   color: #FFFFFF;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 :root[data-theme="bird"] .chirp-archive-month .archive-month-header {
   border-bottom: 1px solid #29A518;

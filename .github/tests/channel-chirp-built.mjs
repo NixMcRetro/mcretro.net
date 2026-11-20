@@ -250,6 +250,14 @@ assert.doesNotMatch(sidebar, /href="\/archive\/\d{4}\//);
 assert.match(sidebar, /Browse all archives/);
 assert.match(sidebar, /data-chirp-random-posts/);
 assert.match(sidebar, /data-chirp-random-shuffle/);
+const randomList = sidebar.match(/<ul class="recent-posts-list" data-chirp-random-posts[^>]*>[\s\S]*?<\/ul>/)?.[0];
+assert.ok(randomList, 'server-rendered Bird fallback list exists');
+const fallbackUrls = [...randomList.matchAll(/<a href="([^"]+)"/g)].map(match => match[1]);
+const publishedDates = new Map(randomPosts.map(post => [post.url, post.date]));
+assert.ok(fallbackUrls.every(url => publishedDates.has(url)), 'fallback links must be published Bird articles');
+const fallbackDates = fallbackUrls.map(url => publishedDates.get(url));
+assert.deepEqual(fallbackDates, fallbackDates.slice().sort().reverse(),
+  'fallback Bird Random Posts should also be newest-first');
 assert.equal((sidebar.match(/<li>/g)||[]).length, 4, 'exactly four released Bird fallback posts');
 assert.match(sidebar, /class="recent-posts-more sidebar-action-link" href="\/chirp\/adventures\/"/);
 assert.match(sidebar, /<span class="sidebar-action-link__icon" aria-hidden="true">📚<\/span>/);

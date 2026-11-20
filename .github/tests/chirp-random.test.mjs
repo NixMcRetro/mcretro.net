@@ -7,6 +7,7 @@ const code = readFileSync(new URL('../../assets/js/channel-chirp-random.js', imp
 const sample = Array.from({length: 10}, (_, i) => ({
   url: '/chirp-post-' + i + '/',
   title: 'Bird adventure ' + i,
+  date: '2018-01-' + String(i + 1).padStart(2, '0'),
   date_label: '1st January 2018'
 }));
 
@@ -96,6 +97,20 @@ test('Bird mode selects four distinct released posts, excluding the current page
   assert.equal(app.children.length, 4);
   assert.equal(new Set(app.children.map(item => item.children[0].href)).size, 4);
   assert.equal(app.fetchCount(), 1, 'Shuffle reuses cached list');
+});
+
+test('Random Posts keep random selection but display the four results newest-first', async () => {
+  const app = setup({randomValue: 0});
+  const dates = new Map(sample.map(post => [post.url, post.date]));
+  const visibleDates = () => app.children.map(item => dates.get(item.children[0].href));
+  const newestFirst = arr => arr.slice().sort().reverse();
+  await flush();
+  assert.deepEqual(visibleDates(), newestFirst(visibleDates()));
+  const before = app.children.map(item => item.children[0].href);
+  app.listeners.click();
+  assert.deepEqual(visibleDates(), newestFirst(visibleDates()));
+  assert.notDeepEqual(app.children.map(item => item.children[0].href).slice().sort(),
+    before.slice().sort(), 'shuffle must still change the random selection');
 });
 
 test('Light and Dark never fetch Bird-only data until Bird is activated', async () => {

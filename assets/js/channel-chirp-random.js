@@ -35,6 +35,9 @@
       const unseen = candidates.filter(post => !lastShown.has(post.url));
       if (unseen.length) selected[0] = unseen[Math.floor(Math.random() * unseen.length)];
     }
+    // Choose posts randomly, then display the selected four newest-first.
+    // Dates are ISO YYYY-MM-DD strings in the published Jekyll catalogue.
+    selected.sort((a, b) => b.date.localeCompare(a.date) || a.url.localeCompare(b.url));
     lastShown = new Set(selected.map(post => post.url));
     const fragment = document.createDocumentFragment();
     for (const post of selected) {
@@ -56,6 +59,7 @@
     return post && typeof post.url === 'string' &&
       /^\/(?![\\/])[^?#]*\/$/.test(post.url) &&
       typeof post.title === 'string' && post.title.length > 0 &&
+      typeof post.date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(post.date) &&
       typeof post.date_label === 'string';
   }
 

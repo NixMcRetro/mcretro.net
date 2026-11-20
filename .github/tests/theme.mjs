@@ -48,7 +48,7 @@ function fixture(systemDark = false, stored = null, storageFails = false, defaul
 test('core: early external script prevents incorrect-theme flash and preserves CSP', () => {
   assert.ok(layout.indexOf('assets/js/theme.js') < layout.indexOf('assets/css/style.css'));
   assert.ok(header.includes('data-theme-toggle') &&
-    header.includes('aria-label="Current theme: Light. Switch to Dark theme"'));
+    header.includes('aria-label="Switch to Dark Mode"'));
   assert.ok(!layout.includes('<script>') && !header.includes('onclick='));
   assert.match(layout, /assets\/css\/bird-theme\.css/);
   assert.match(layout, /data-default-theme="bird"/);
@@ -60,10 +60,12 @@ test('core: early external script prevents incorrect-theme flash and preserves C
 test('core: first visit respects light/dark system preference on non-bird pages', () => {
   const light=fixture(false),dark=fixture(true);
   assert.equal(light.attrs['data-theme'],'light');
-  assert.match(light.btnAttrs['aria-label'], /Current theme: Light\. Switch to Dark theme/);
+  assert.equal(light.btnAttrs['aria-label'], 'Switch to Dark Mode');
+  assert.equal(light.btnAttrs.title, 'Switch to Dark Mode');
   assert.equal(dark.attrs['data-theme'],'dark');
   assert.equal(dark.metaAttrs.content,'#191D27');
-  assert.match(dark.btnAttrs['aria-label'], /Current theme: Dark\. Switch to Bird and show Channel Chirp posts/);
+  assert.equal(dark.btnAttrs['aria-label'], 'Visit Channel Chirp');
+  assert.equal(dark.btnAttrs.title, 'Visit Channel Chirp');
 });
 
 test('core: theme button cycles Light, Dark, Bird, Light and remembers the filter', () => {
@@ -76,7 +78,8 @@ test('core: theme button cycles Light, Dark, Bird, Light and remembers the filte
   assert.equal(f.attrs['data-theme'],'bird');
   assert.equal(f.metaAttrs.content,'#424242');
   assert.deepEqual(f.navigations.at(-1), { method:'assign', url:'/chirp/' });
-  assert.match(f.btnAttrs['aria-label'], /Current theme: Bird\. Switch to Light theme/);
+  assert.equal(f.btnAttrs['aria-label'], 'Return to Light Mode');
+  assert.equal(f.btnAttrs.title, 'Return to Light Mode');
   f.handlers.click();
   assert.equal(f.store.get('mcretro-theme'),'light');
   assert.equal(f.attrs['data-theme'],'light');
@@ -126,7 +129,7 @@ test('core: blocked localStorage still permits page-local theme choice', () => {
   const f=fixture(true,null,true);
   f.handlers.click();
   assert.equal(f.attrs['data-theme'],'bird');
-  assert.match(f.btnAttrs['aria-label'], /Current theme: Bird/);
+  assert.equal(f.btnAttrs['aria-label'], 'Return to Light Mode');
   assert.deepEqual(f.navigations.at(-1), {method:'assign', url:'/chirp/'});
 });
 
@@ -398,6 +401,19 @@ test('advisory: Recent Posts has four entries and paired More posts / random-blo
   assert.match(overrides, /\.recent-posts-actions \.sidebar-action-link\s*\{ margin-top: 0; \}/);
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*font-weight:\s*700;/);
   assert.match(style, /\.sidebar-action-link\s*\{[^}]*border-radius:\s*0;/);
+});
+
+test('advisory: Bird sidebar dividers use normal widget spacing without shifting panels down', () => {
+  const bird = read('assets/css/channel-chirp.css');
+  const widget = bird.match(/:root\[data-theme="bird"\] \.sidebar-mode-bird \.widget\s*\{([^}]*)\}/)?.[1];
+  assert.ok(widget, 'Bird sidebar widget layout exists');
+  assert.match(widget, /margin:\s*0 0 1rem;/);
+  assert.match(widget, /padding:\s*0 0 1\.3rem;/);
+  assert.doesNotMatch(widget, /padding:\s*\.8rem 0/);
+  const search = bird.match(/:root\[data-theme="bird"\] \.sidebar-mode-bird \.search-widget\s*\{([^}]*)\}/)?.[1];
+  assert.match(search || '', /padding-top:\s*\.8rem;/, 'only the search widget needs top padding');
+  assert.match(style, /\.search-widget\s*\{[^}]*padding-top:\s*0\.8rem;/,
+    'Light/Dark search keeps its existing top spacing');
 });
 
 test('advisory: sidebar sections retain divider breathing room without obsolete dial widget', () => {

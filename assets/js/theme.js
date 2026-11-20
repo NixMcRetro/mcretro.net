@@ -5,7 +5,7 @@
   var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : { matches: false };
   var sessionChoice = null;
   var themes = ['light', 'dark', 'bird'];
-  var names = { light: 'Light', dark: 'Dark', bird: 'Bird' };
+  var actionLabels = { light: 'Switch to Dark Mode', dark: 'Visit Channel Chirp', bird: 'Return to Light Mode' };
   var colours = { light: '#FFF8DC', dark: '#191D27', bird: '#424242' };
   var root = document.documentElement;
   var landing = root.getAttribute('data-chirp-landing') === 'true';
@@ -37,11 +37,9 @@
     if (browserColour) browserColour.setAttribute('content', colours[theme]);
     var button = document.querySelector('[data-theme-toggle]');
     if (button) {
-      var next = themes[(themes.indexOf(theme) + 1) % themes.length];
-      button.setAttribute('aria-label',
-        'Current theme: ' + names[theme] + '. Switch to ' + names[next] +
-        (next === 'bird' ? ' and show Channel Chirp posts' : ' theme'));
-      button.setAttribute('title', names[theme] + ' mode. Switch to ' + names[next]);
+      var action = actionLabels[theme];
+      button.setAttribute('aria-label', action);
+      button.setAttribute('title', action);
     }
     return theme;
   }

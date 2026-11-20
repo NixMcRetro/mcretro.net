@@ -1,5 +1,5 @@
 {% assign chirp_posts = site.categories.parrots | where_exp: "bird", "bird.channel_chirp != false" %}
-{% assign bird_fallback = chirp_posts | sort: 'title' %}
+{% assign bird_fallback = chirp_posts | sort: 'title' | slice: 0, 4 | sort: 'date' | reverse %}
 
 <div class="widget search-widget nest-search-widget">
   <form action="/chirp/search/" method="get" class="inline-search-form">
@@ -89,7 +89,7 @@
 <div class="widget recent-posts-widget nest-random-widget">
   <h4 class="widgettitle">Random Posts</h4>
   <ul class="recent-posts-list" data-chirp-random-posts aria-live="polite">
-    {% for bird in bird_fallback limit: 4 %}
+    {% for bird in bird_fallback %}
       <li>
         <a href="{{ bird.url | relative_url }}">{{ bird.title | escape }}</a>
         <span class="post-date-sidebar">

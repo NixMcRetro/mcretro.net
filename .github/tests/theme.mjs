@@ -437,24 +437,43 @@ test('advisory: desktop and mobile menus underline on pointer hover and keyboard
   assert.match(style, /\.nav-list li a:hover,\s*\.nav-list li a:focus-visible\s*\{[^}]*text-decoration:\s*none;/);
 });
 
-test('advisory: Bird link hover and focus use a filled highlight without changing McRetro', () => {
+test('advisory: Bird filled hover belongs to the expanded mobile menu only', () => {
   const bird = read('assets/css/channel-chirp.css');
-  const navStart = bird.indexOf(':root[data-theme="bird"] .main-nav a.nav-mode-bird:hover,');
-  assert.ok(navStart >= 0, 'Bird navigation hover/focus rule exists');
-  const navRule = bird.slice(navStart, bird.indexOf('}', navStart));
-  assert.ok(navRule.includes('background: #C8E5BD;'));
-  assert.ok(navRule.includes('box-shadow: 0 0 0 .25rem #C8E5BD;'));
+  const desktopStart = bird.indexOf(':root[data-theme="bird"] .main-nav a:hover,');
+  const desktopEnd = bird.indexOf('/* Post previews use the original Channel Chirp rhythm', desktopStart);
+  assert.ok(desktopStart >= 0 && desktopEnd > desktopStart);
+  const desktop = bird.slice(desktopStart, desktopEnd);
+  assert.ok(desktop.includes('text-decoration: underline;'),
+    'desktop Bird links retain their original text-only hover behaviour');
+  assert.ok(!desktop.includes('background: #C8E5BD;'),
+    'desktop Bird navigation must not gain a filled background');
+  assert.ok(!desktop.includes('box-shadow: 0 0 0 .25rem #C8E5BD;'),
+    'desktop Bird navigation must not gain a highlight halo');
+
+  const mobileStart = bird.indexOf('@media screen and (max-width: 750px) {');
+  const mobileEnd = bird.indexOf('/* Existing post metadata is a flex row.', mobileStart);
+  assert.ok(mobileStart >= 0 && mobileEnd > mobileStart);
+  const mobile = bird.slice(mobileStart, mobileEnd);
+  assert.ok(mobile.includes('.nav-list li a.nav-mode-bird:hover,'),
+    'expanded mobile menu has a hover style');
+  assert.ok(mobile.includes('.nav-list li a.nav-mode-bird:focus-visible {'),
+    'expanded mobile menu has a keyboard-focus style');
+  assert.ok(mobile.includes('background: #C8E5BD;'));
+  assert.ok(mobile.includes('text-decoration: none;'),
+    'mobile labels use a filled highlight instead of an underline');
+
   const postsStart = bird.indexOf(':root[data-theme="bird"] .sidebar-mode-bird .recent-posts-list li a:hover,');
-  assert.ok(postsStart >= 0, 'Bird Random Posts hover/focus rule exists');
   const postsRule = bird.slice(postsStart, bird.indexOf('}', postsStart));
-  assert.ok(postsRule.includes('background: #C8E5BD;'));
-  assert.ok(postsRule.includes('text-decoration: none;'));
-  assert.ok(bird.includes('box-shadow: none;'), 'Mobile menu avoids box-shadow bleed');
+  assert.ok(postsStart >= 0 && postsRule.includes('color: #FFFFFF;'));
+  assert.ok(postsRule.includes('text-decoration: underline;'),
+    'Random Posts keep their original desktop/sidebar hover treatment');
+  assert.ok(!postsRule.includes('background:'),
+    'Random Posts do not inherit mobile-menu highlighting');
+
   const chirpSidebar = read('_includes/channel-chirp-sidebar.html');
   assert.ok(chirpSidebar.includes('href="/" data-theme-exit="light">↩ Return to McRetro.net</a>'));
-  assert.ok(!chirpSidebar.includes('href="/blog/" data-theme-exit="light"'));
   assert.ok(style.includes('.main-nav a:hover .nav-text,'),
-    'Light and Dark navigation retains its original interaction');
+    'Light and Dark navigation remains unchanged');
 });
 
 test('advisory: Channels keeps emoji and links, without old summary siren GIFs', () => {

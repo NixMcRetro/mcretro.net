@@ -42,6 +42,30 @@ assert.match(conure, /data-chirp-article="true"/);
 assert.match(conure, /post-navigation--bird/);
 assert.match(conure, /post-navigation--mcretro/);
 
+// Original Channel Chirp article hierarchy: tighter title/date/rule group.
+// These overrides must target Bird articles only, not the McRetro post layout.
+function birdArticleRule(suffix) {
+  const selector = ':root[data-theme="bird"][data-chirp-article="true"] .post-full ' + suffix + ' {';
+  const pos = birdLayout.indexOf(selector);
+  assert.ok(pos >= 0, 'missing Bird article selector: ' + suffix);
+  return birdLayout.slice(pos + selector.length, birdLayout.indexOf('}', pos));
+}
+const headingStyle = birdArticleRule('.post-title');
+assert.match(headingStyle, /font-weight:\s*600;/);
+assert.match(headingStyle, /margin-bottom:\s*\.2rem;/);
+assert.match(headingStyle, /line-height:\s*1\.25;/);
+const metadataStyle = birdArticleRule('.post-meta');
+assert.match(metadataStyle, /margin:\s*0 0 1\.5rem;/);
+const dateStyle = birdArticleRule('.post-date');
+assert.match(dateStyle, /color:\s*#626262;/);
+const headingRuleStyle = birdArticleRule('.post-meta::after');
+assert.match(headingRuleStyle, /background:\s*#29A518;/);
+assert.match(headingRuleStyle, /margin:\s*\.4rem auto 0;/);
+assert.match(conure, /class="post-title" data-pagefind-title/,
+  'released Bird articles keep their real title element');
+
+
+
 const preening = read('preening-party/index.html');
 assert.match(preening, /class="post-navigation post-navigation--bird nest-post-navigation"/,
   'bird posts retain independent conure chronology');

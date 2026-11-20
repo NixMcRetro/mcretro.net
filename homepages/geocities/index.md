@@ -5,7 +5,6 @@ title: GeoCities Rebuild
 
 <figure class="aligncenter">
   <img src="/homepages/geocities/images/main/mai_mast.gif" alt="Original GeoCities masthead, with a city skyline and the words Welcome to Our Community." width="420" height="60" loading="eager">
-  <img src="/homepages/geocities/images/main/welcome.gif" alt="Original Welcome to GeoCities graphic." width="173" height="40" loading="lazy">
 </figure>
 
 # The GeoCities Rebuild
@@ -57,6 +56,10 @@ These are my articles, worklogs, demonstrations, and occasional lessons in how n
 ## A Little Piece of the Original Site
 
 The masthead, welcome graphic, and badge on this page come from my old GeoCities rebuild frontend. They are presented as their original GIF files, including the animated badge, rather than being recreated or replaced with modern artwork.
+
+<figure class="aligncenter">
+  <img src="/homepages/geocities/images/main/welcome.gif" alt="Original Welcome to GeoCities graphic." width="173" height="40" loading="lazy">
+</figure>
 
 <p class="center">
   <a href="http://geocities.mcretro.net/" target="_blank" rel="noopener noreferrer nofollow"><img src="/homepages/geocities/pictures/gc_icon.gif" alt="Animated GeoCities 88 by 31 pixel badge; links to the private archive gateway." width="88" height="31" loading="lazy"></a>

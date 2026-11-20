@@ -185,6 +185,13 @@ assert.ok(chirpSearch, 'Bird search must have its own main content');
 assert.ok(chirpSearch.includes('class="chirp-search-page"'));
 assert.ok(chirpSearch.includes('id="chirp-search-heading">Find-a-Squawk</h1>'));
 assert.ok(chirpSearch.includes('src="/assets/images/search/search.gif"'));
+assert.ok(chirpSearch.includes('<p>Search Channel Chirp adventures.</p>'));
+assert.ok(!chirpSearch.includes('Search released Channel Chirp adventures only.'));
+assert.match(chirpSearch, /<svg[^>]*class="chirp-search-icon"[^>]*viewBox="0 0 24 24"[^>]*aria-hidden="true"[^>]*>/);
+assert.ok(chirpSearch.includes('<circle cx="11" cy="11" r="7"></circle>'));
+assert.ok(chirpSearch.includes('<path d="m16 16 5 5"></path>'));
+assert.ok(!chirpSearch.includes('>⌕</span>'));
+assert.ok(chirpSearch.includes('aria-label="Channel Chirp search results"'));
 assert.ok(chirpSearch.includes('role="search" aria-label="Search Channel Chirp"'));
 assert.ok(chirpSearch.includes('id="nest-search-input" name="q" type="search"'));
 assert.ok(chirpSearch.includes('id="nest-search-clear"'));
@@ -208,11 +215,16 @@ assert.equal((chirpSearch.match(/class="chirp-search-result-excerpt" data-nest-h
 assert.equal((chirpSearch.match(/class="chirp-search-result-date"/g) || []).length,
   randomPosts.length, 'every result has its own date');
 assert.ok(birdLayout.includes(':root[data-theme="bird"] .chirp-search-page {'));
+const iconStyleStart = birdLayout.indexOf(':root[data-theme="bird"] .chirp-search-icon {');
+assert.ok(iconStyleStart >= 0, 'Bird magnifier has scoped styling');
+const iconStyle = birdLayout.slice(iconStyleStart, birdLayout.indexOf('}', iconStyleStart));
+assert.ok(iconStyle.includes('width: 22px;') && iconStyle.includes('height: 22px;'));
+assert.ok(iconStyle.includes('flex: 0 0 auto;'));
 assert.ok(birdLayout.includes('background: #F7FBF5;'), 'result hover card is distinct');
 assert.ok(birdLayout.includes('.chirp-search-result mark {'), 'Bird search matches are highlighted');
 assert.ok(birdLayout.includes('.chirp-search-result[hidden],'),
   'hidden search results stay hidden regardless of CSS rules');
-assert.ok(pages.search.includes('channel-chirp.css?v=20261120-chirp-search'),
+assert.ok(pages.search.includes('channel-chirp.css?v=20261120-search-icon'),
   'search loads the newest Bird search stylesheet');
 
 assert.match(pages.soundborb, /Migration in progress/);
@@ -421,9 +433,9 @@ assert.ok(birdLayout.includes('.chirp-archive-index > .archive-index-intro,'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs [aria-current="page"] {'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs a {'));
 assert.ok(birdLayout.includes('color: #BDF7B0;'));
-assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261120-chirp-search"'),
+assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261120-search-icon"'),
   'Bird archive loads fresh stylesheet to avoid a stale dark-on-charcoal heading');
-assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261120-chirp-search"'),
+assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261120-search-icon"'),
   'Shared template loads the same current Bird stylesheet');
 
 const birdByMonth = new Map();
@@ -517,7 +529,7 @@ assert.ok(birdLayout.includes('.chirp-archive-month .archive-blog-list .post-ent
 for (const month of birdByMonth.keys()) {
   const [year, number] = month.split('-');
   assert.ok(read('chirp/archive/' + year + '/' + number + '/index.html')
-    .includes('href="/assets/css/channel-chirp.css?v=20261120-chirp-search"'),
+    .includes('href="/assets/css/channel-chirp.css?v=20261120-search-icon"'),
     'all Bird month pages receive the updated stylesheet: ' + month);
 }
 assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive')).sort(),

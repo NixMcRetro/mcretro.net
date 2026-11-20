@@ -108,5 +108,27 @@ assert.match(script, /addEventListener\('click', \(\) => toggle\(true\)\)/);
 assert.match(script, /addEventListener\('click', \(\) => toggle\(false\)\)/);
 assert.match(script, /preSearchOpen = groups\.map/);
 assert.match(script, /toolbar\.hidden = false/);
+
+// Low-risk directory additions must preserve all original names, links, and GIFs.
+assert.match(directory, /<strong>41<\/strong> neighbourhoods/);
+assert.match(directory, /<strong>714<\/strong> suburbs/);
+assert.match(directory, /<strong>298,559<\/strong> historical Homesteaders/);
+assert.equal([...directory.matchAll(/<section class="gc-neighbourhood"/g)].length, 41);
+assert.equal([...directory.matchAll(/<div class="gc-suburbs">/g)].length, 41);
+assert.equal([...directory.matchAll(/<a href="http:\/\/geocities\.mcretro\.net\//g)].length, 755);
+assert.match(directory, /data-gc-action="random"/);
+assert.match(directory, /id="gc-directory-top"/);
+assert.match(directory, /href="#gc-directory-top">↑ Back to Top<\/a>/);
+assert.match(directory, /Private archive links are marked ↗/);
+assert.match(home, /class="gc-private-gateway"/);
+assert.match(styles, /\.gc-neighbourhood mark/);
+assert.match(styles, /\.gc-cool-pages a\[target="_blank"\]/);
+assert.match(styles, /gc-directory-stats/);
+assert.match(script, /const highlightText = \(element, original, query\) =>/);
+assert.match(script, /document\.createElement\('mark'\)/);
+assert.match(script, /group\.suburbs\.forEach\(item => highlightText/);
+assert.match(script, /random\.addEventListener\('click', pickRandom\)/);
+assert.match(script, /lastRandom = index/);
+assert.match(script, /prefers-reduced-motion: reduce/);
 console.log('PASS: ' + pages.length +
   ' GeoCities pages rendered as HTML; original artwork and private gateway preserved.');

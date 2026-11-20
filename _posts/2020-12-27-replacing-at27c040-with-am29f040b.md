@@ -3,7 +3,7 @@ title: "Replacing AT27C040 with Am29F040B"
 author: "Nix McRetro"
 date: 2020-12-27T22:51:25.000+11:00
 categories: [guides, hacks, sega]
-last_modified_at: 2026-10-18
+last_modified_at: 2026-11-21
 share_description: >-
   Replacing an AT27C040 EPROM with Am29F040B flash isn't plug-and-play. Pins 1 and 31 have different jobs, so the Sonic cartridge needs rerouting. 💾
 ---
@@ -48,6 +48,8 @@ Start with normal text bin or md file byteswap in USBPrg (GQ-4X or similar) Win 
 (If not byteswapped first, the first one burnt might be the second rom... it doesn't really make a difference just swap the ROM chips around in the sockets)
 
 There was also a SwapEndian.zip included in the folder, so here it is - [SwapEndian.zip](/assets/uploads/SwapEndian.zip) - Mystery solved!
+
+Another utility worth keeping around for this sort of thing is [ROMWak](https://github.com/freem/romwak). It can merge the bytes from upper and lower ROM dumps, concatenate files, split ROM images, and swap byte order. There's also [another fork here](https://github.com/ozzyyzzo4096/romwak). I used WinHex for the original work described above, but ROMWak is a handy alternative if you're trying to piece together dumps from multiple chips.
 
 ### Sources
 

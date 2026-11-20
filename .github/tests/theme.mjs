@@ -31,6 +31,7 @@ function fixture(systemDark = false, stored = null, storageFails = false, defaul
   const media = { matches: systemDark, addEventListener(k,fn) { mediaHandlers[k] = fn; } };
   const window = {
     location: {
+      pathname: context.path || (defaultBird ? '/chirp/' : '/'),
       assign(url) { navigations.push({ method: 'assign', url }); },
       replace(url) { navigations.push({ method: 'replace', url }); }
     },
@@ -92,6 +93,53 @@ test('core: opening /chirp/ activates Bird; turning it off returns to the full b
   f.handlers.click();
   assert.equal(f.attrs['data-theme'],'light');
   assert.deepEqual(f.navigations.at(-1), {method:'assign',url:'/blog/'});
+});
+
+test('core: Blog and Adventures remain paired when cycling Light, Dark and Bird', () => {
+  const blog=fixture(false,null,false,false,{unrelated:true,path:'/blog/'});
+  blog.handlers.click();
+  assert.equal(blog.attrs['data-theme'],'dark');
+  assert.equal(blog.navigations.length,0,'Light to Dark stays on Blog');
+  blog.handlers.click();
+  assert.deepEqual(blog.navigations.at(-1), {method:'assign',url:'/chirp/adventures/'});
+
+  const adventures=fixture(false,'bird',false,true,{path:'/chirp/adventures/'});
+  adventures.handlers.click();
+  assert.equal(adventures.attrs['data-theme'],'light');
+  assert.deepEqual(adventures.navigations.at(-1), {method:'assign',url:'/blog/'});
+
+  // Pagination maps to the counterpart's first page, not an unrelated Nest page.
+  const blogPage=fixture(false,'dark',false,false,{unrelated:true,path:'/blog/page3/'});
+  blogPage.handlers.click();
+  assert.deepEqual(blogPage.navigations.at(-1), {method:'assign',url:'/chirp/adventures/'});
+  const birdPage=fixture(false,'bird',false,true,{path:'/chirp/adventures/page2/'});
+  birdPage.handlers.click();
+  assert.deepEqual(birdPage.navigations.at(-1), {method:'assign',url:'/blog/'});
+});
+
+test('core: About and Channel Chirp About remain paired across modes', () => {
+  const about=fixture(false,null,false,false,{unrelated:true,path:'/about/'});
+  about.handlers.click();
+  assert.equal(about.attrs['data-theme'],'dark');
+  assert.equal(about.navigations.length,0,'Light to Dark stays on About');
+  about.handlers.click();
+  assert.deepEqual(about.navigations.at(-1), {method:'assign',url:'/chirp/about/'});
+
+  const birdAbout=fixture(false,'bird',false,true,{path:'/chirp/about/'});
+  birdAbout.handlers.click();
+  assert.equal(birdAbout.attrs['data-theme'],'light');
+  assert.deepEqual(birdAbout.navigations.at(-1), {method:'assign',url:'/about/'});
+  assert.match(read('chirp/about/index.md'), /permalink: \/chirp\/about\//);
+  assert.match(read('chirp/adventures/index.md'), /permalink: \/chirp\/adventures\//);
+});
+
+test('core: saved Bird preference opens corresponding section, preserving fallback elsewhere', () => {
+  const about=fixture(false,'bird',false,false,{unrelated:true,path:'/about/'});
+  assert.deepEqual(about.navigations, [{method:'replace',url:'/chirp/about/'}]);
+  const blog=fixture(false,'bird',false,false,{unrelated:true,path:'/blog/'});
+  assert.deepEqual(blog.navigations, [{method:'replace',url:'/chirp/adventures/'}]);
+  const unrelated=fixture(false,'bird',false,false,{unrelated:true,path:'/goodies/'});
+  assert.deepEqual(unrelated.navigations, [{method:'replace',url:'/chirp/'}]);
 });
 
 test('core: Bird redirects ordinary post and blog pages but keeps released conure articles', () => {

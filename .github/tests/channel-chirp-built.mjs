@@ -147,9 +147,11 @@ assert.match(pages.nest, /Welcome to the Nest/);
 assert.match(pages.nest, /Welcome to our homepage! We are the most adorable <strong>green-cheeked conures<\/strong> in Australia!/);
 assert.match(pages.nest, /href="\/chirp\/adventures\/">our adventures<\/a>/);
 assert.match(pages.nest, /href="\/chirp\/random\/" data-chirp-random-link(?:="")?>random post<\/a>/);
-assert.match(pages.nest, /href="https:\/\/www\.youtube\.com\/playlist\?list=PLJAZP-TLMPj50jY6ytY53J3bQkgPIbeYP">YouTube Playlist<\/a>/);
+assert.match(pages.nest, /href="https:\/\/www\.youtube\.com\/playlist\?list=PLJAZP-TLMPj50jY6ytY53J3bQkgPIbeYP">YouTube playlist<\/a>/);
 assert.doesNotMatch(pages.nest, />YouTube Channel<\/a>/, 'Nest uses the more accurate playlist label');
-assert.match(pages.nest, /<p class="chirp-home-names">We are Pudge, Tillie, and Chip!<\/p>/);
+assert.match(pages.nest, /<p>We are Pudge, Tillie, and Chip!<br>❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️<\/p>/,
+  'names and emojis must share one paragraph separated by one line break');
+assert.doesNotMatch(pages.nest, /class="chirp-home-(?:names|hearts)"/, 'no separate sign-off paragraphs');
 assert.match(pages.nest, /❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️/);
 
 const brandHoverRule = birdLayout.match(/:root\[data-theme="bird"\] a\.site-logo--bird:hover,\s*:root\[data-theme="bird"\] a\.site-logo--bird:focus-visible\s*\{([^}]+)\}/)?.[1];
@@ -157,11 +159,8 @@ assert.ok(brandHoverRule?.includes('color: #69D65B;'), 'Bird title must turn gre
 assert.ok(brandHoverRule?.includes('text-decoration: none;'), 'Bird title hover should not underline');
 assert.ok(birdLayout.includes('a.site-logo--bird:focus-visible {\n  outline: 2px solid #BDF7B0;'),
   'Bird title has a clearly visible keyboard focus outline');
-const nameSpacingRule = birdLayout.match(/:root\[data-theme="bird"\] \.chirp-home-copy \.chirp-home-names\s*\{([^}]+)\}/)?.[1];
-const heartSpacingRule = birdLayout.match(/:root\[data-theme="bird"\] \.chirp-home-copy \.chirp-home-hearts\s*\{([^}]+)\}/)?.[1];
-assert.ok(nameSpacingRule?.includes('margin-bottom: .15rem;'));
-assert.ok(heartSpacingRule?.includes('margin-top: 0;'));
-assert.match(pages.nest, /class="chirp-home-hearts">❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️<\/p>/);
+assert.doesNotMatch(birdLayout, /\.chirp-home-(?:names|hearts)\b/,
+  'no paragraph-spacing workaround should remain');
 
 assert.doesNotMatch(pages.nest, /class="chirp-home-links"/);
 

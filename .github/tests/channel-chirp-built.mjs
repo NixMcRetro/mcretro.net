@@ -45,7 +45,8 @@ assert.match(conure, /post-navigation--mcretro/);
 // Original Channel Chirp article hierarchy: tighter title/date/rule group.
 // These overrides must target Bird articles only, not the McRetro post layout.
 function birdArticleRule(suffix) {
-  const selector = ':root[data-theme="bird"][data-chirp-article="true"] .post-full ' + suffix + ' {';
+  const selector = ':root[data-theme="bird"][data-chirp-article="true"] .post-full' +
+    (suffix ? ' ' + suffix : '') + ' {';
   const pos = birdLayout.indexOf(selector);
   assert.ok(pos >= 0, 'missing Bird article selector: ' + suffix);
   return birdLayout.slice(pos + selector.length, birdLayout.indexOf('}', pos));

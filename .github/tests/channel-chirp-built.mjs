@@ -301,7 +301,7 @@ assert.match(birdLayout, /\.main-nav \.nav-list \{\s*background: var\(--page-bg\
 assert.match(birdLayout, /\.main-nav \.nav-list li a:visited \{\s*color: #FFFFFF;/);
 assert.match(birdLayout, /\.main-nav \.nav-list li a\.nav-mode-bird\.active \{\s*color: #FFFFFF;/);
 assert.doesNotMatch(birdLayout, /border-left: 6px solid #0C4308/);
-assert.ok(pages.nest.includes('<p class="chirp-return"><a href="/" data-theme-exit="light">↩ Return to McRetro.net</a></p>'));
+assert.ok(pages.nest.includes('<p class="chirp-return"><a href="/" data-theme-exit="standard">↩ Return to McRetro.net</a></p>'));
 // Filled Bird menu hover is intentionally limited to mobile widths.
 const desktopBirdHover = birdLayout.slice(
   birdLayout.indexOf(':root[data-theme="bird"] .main-nav a:hover,'),

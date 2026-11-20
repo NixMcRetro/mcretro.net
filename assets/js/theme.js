@@ -2,8 +2,10 @@
 (function () {
   'use strict';
   var key = 'mcretro-theme';
+  var standardKey = 'mcretro-last-standard-theme';
   var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : { matches: false };
   var sessionChoice = null;
+  var sessionStandardChoice = null;
   var themes = ['light', 'dark', 'bird'];
   var actionLabels = { light: 'Switch to Dark Mode', dark: 'Visit Channel Chirp', bird: 'Switch to Light Mode' };
   var colours = { light: '#FFF8DC', dark: '#191D27', bird: '#424242' };
@@ -21,17 +23,52 @@
     }
   }
 
+  function systemTheme() {
+    return media.matches ? 'dark' : 'light';
+  }
+
+  function savedStandardTheme() {
+    try {
+      var value = window.localStorage.getItem(standardKey);
+      return value === 'light' || value === 'dark' ? value : null;
+    } catch (error) {
+      return sessionStandardChoice;
+    }
+  }
+
+  function lastStandardTheme() {
+    return savedStandardTheme() || systemTheme();
+  }
+
+  function rememberStandard(theme) {
+    sessionStandardChoice = theme;
+    try { window.localStorage.setItem(standardKey, theme); }
+    catch (error) { /* Still available in this tab. */ }
+  }
+
   function persist(theme) {
+    var previous = savedTheme();
+    if (theme === 'light' || theme === 'dark') rememberStandard(theme);
+    // When opening /chirp/ directly, retain the previously selected standard
+    // colour even though the main preference is about to become Bird.
+    else if (theme === 'bird' && (previous === 'light' || previous === 'dark')) {
+      rememberStandard(previous);
+    }
     try { window.localStorage.setItem(key, theme); }
     catch (error) { sessionChoice = theme; }
   }
 
   function effectiveTheme() {
-    return savedTheme() || (media.matches ? 'dark' : 'light');
+    // The URL decides the experience. Bird cannot hijack an ordinary McRetro
+    // link, and an explicit /chirp/ destination is always displayed in Bird.
+    if (landing) return 'bird';
+    var chosen = savedTheme();
+    if (unrelatedPosts && chosen === 'bird') return lastStandardTheme();
+    return chosen || systemTheme();
   }
 
-  function updatePresentation() {
-    var theme = effectiveTheme();
+  function updatePresentation(forcedTheme) {
+    var theme = forcedTheme || effectiveTheme();
     root.setAttribute('data-theme', theme);
     var browserColour = document.querySelector('meta[name="theme-color"]');
     if (browserColour) browserColour.setAttribute('content', colours[theme]);
@@ -45,7 +82,9 @@
   }
 
   function navigationTarget(theme, isUserChange) {
-    if (!window.location) return null;
+    // Only the user's theme-toggle click changes destinations.
+    // Loading a link, restoring history or syncing another tab never does.
+    if (!isUserChange || !window.location) return null;
     var path = window.location.pathname || '';
     if (theme === 'bird') {
       // Navigate to the matching Channel Chirp section when available.
@@ -54,9 +93,9 @@
       if (/^\/blog(?:\/page\d+)?\/?$/.test(path)) return '/chirp/adventures/';
       if (/^\/goodies\/?$/.test(path)) return '/chirp/soundborb/';
       // Other McRetro pages still enter the Nest; conure articles can stay put.
-      if (unrelatedPosts || (isUserChange && !landing && !conureArticle)) return '/chirp/';
+      if (unrelatedPosts || (!landing && !conureArticle)) return '/chirp/';
     }
-    if (theme !== 'bird' && landing && isUserChange) {
+    if (theme !== 'bird' && landing) {
       if (/^\/chirp\/?$/.test(path)) return '/';
       if (/^\/chirp\/about\/?$/.test(path)) return '/about/';
       if (/^\/chirp\/soundborb\/?$/.test(path)) return '/goodies/';
@@ -68,14 +107,10 @@
     return null;
   }
 
-  // Opening /chirp/ or /chirp/timeline/ explicitly opts into Bird mode,
-  // including when the visitor previously selected Light or Dark.
+  // Opening /chirp/ explicitly opts into Bird while preserving the last
+  // Light/Dark preference for ordinary McRetro URLs.
   if (landing) persist('bird');
-  var firstTheme = updatePresentation();
-  if (firstTheme === 'bird' && unrelatedPosts &&
-      window.location && typeof window.location.replace === 'function') {
-    window.location.replace(navigationTarget(firstTheme, false) || '/chirp/');
-  }
+  updatePresentation();
 
   function ready() {
     var button = document.querySelector('[data-theme-toggle]');
@@ -84,7 +119,7 @@
         var current = root.getAttribute('data-theme');
         var next = themes[(themes.indexOf(current) + 1) % themes.length];
         persist(next);
-        updatePresentation();
+        updatePresentation(next);
         var target = navigationTarget(next, true);
         if (target && window.location && typeof window.location.assign === 'function') {
           window.location.assign(target);
@@ -92,14 +127,15 @@
       });
     }
 
-    // Explicit escape links restore the ordinary McRetro sidebar and post feed.
+    // Explicit exit links restore the remembered McRetro colour scheme.
     var exits = document.querySelectorAll ? document.querySelectorAll('[data-theme-exit]') : [];
     Array.prototype.forEach.call(exits, function (link) {
       link.addEventListener('click', function () {
         var choice = link.getAttribute('data-theme-exit');
+        if (choice === 'standard') choice = lastStandardTheme();
         if (choice === 'light' || choice === 'dark') {
           persist(choice);
-          updatePresentation();
+          updatePresentation(choice);
         }
       });
     });
@@ -107,18 +143,26 @@
   }
 
   function systemChanged() {
-    if (!savedTheme()) updatePresentation();
+    // An older saved Bird preference without a standard choice falls back
+    // to the device colour scheme and should still follow its changes.
+    if (!savedTheme() ||
+        (unrelatedPosts && savedTheme() === 'bird' && !savedStandardTheme())) {
+      updatePresentation();
+    }
   }
 
   if (media.addEventListener) media.addEventListener('change', systemChanged);
   else if (media.addListener) media.addListener(systemChanged);
   window.addEventListener('storage', function (event) {
-    if (event.key === key || event.key === null) {
-      var theme = updatePresentation();
-      var destination = navigationTarget(theme, false);
-      if (destination && window.location && typeof window.location.replace === 'function') {
-        window.location.replace(destination);
-      }
+    if (event.key === key || event.key === standardKey || event.key === null) {
+      updatePresentation();
+    }
+  });
+  // Back/forward-cache restoration must also respect the page's own URL.
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) {
+      if (landing) persist('bird');
+      updatePresentation();
     }
   });
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready);

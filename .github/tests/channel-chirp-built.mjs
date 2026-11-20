@@ -421,9 +421,9 @@ assert.ok(birdLayout.includes('.chirp-archive-index > .archive-index-intro,'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs [aria-current="page"] {'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs a {'));
 assert.ok(birdLayout.includes('color: #BDF7B0;'));
-assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261120-black-nav"'),
+assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261120-chirp-search"'),
   'Bird archive loads fresh stylesheet to avoid a stale dark-on-charcoal heading');
-assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261120-black-nav"'),
+assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261120-chirp-search"'),
   'Shared template loads the same current Bird stylesheet');
 
 const birdByMonth = new Map();
@@ -517,7 +517,7 @@ assert.ok(birdLayout.includes('.chirp-archive-month .archive-blog-list .post-ent
 for (const month of birdByMonth.keys()) {
   const [year, number] = month.split('-');
   assert.ok(read('chirp/archive/' + year + '/' + number + '/index.html')
-    .includes('href="/assets/css/channel-chirp.css?v=20261120-black-nav"'),
+    .includes('href="/assets/css/channel-chirp.css?v=20261120-chirp-search"'),
     'all Bird month pages receive the updated stylesheet: ' + month);
 }
 assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive')).sort(),

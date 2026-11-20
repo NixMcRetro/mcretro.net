@@ -427,11 +427,11 @@
   flex: 0 0 auto;
 }
 :root[data-theme="bird"] .main-nav {
-  /* Light green between matching horizontal dark-green rules, not side bars. */
+  /* Pale navigation with thin horizontal rules matching Bird's sidebar green. */
   background: #E7F5E4;
   border: 0;
-  border-top: 4px solid #17660D;
-  border-bottom: 4px solid #17660D;
+  border-top: 1px solid #29A518;
+  border-bottom: 1px solid #29A518;
   border-radius: 0;
   padding: .62rem 0;
 }
@@ -580,14 +580,14 @@
     /* Preserve the collapsed mobile header; the opened menu is pale green. */
     border-left: 0;
     border-right: 0;
-    border-top: 4px solid #17660D;
+    border-top: 1px solid #29A518;
     border-bottom: 0;
     background: transparent;
     padding: 0;
   }
   :root[data-theme="bird"] .main-nav .nav-list {
     background: #E7F5E4;
-    border-bottom: 4px solid #17660D;
+    border-bottom: 1px solid #29A518;
   }
   :root[data-theme="bird"] .main-nav .nav-list li a,
   :root[data-theme="bird"] .main-nav .nav-list li a:visited {

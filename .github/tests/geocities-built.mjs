@@ -143,7 +143,7 @@ for (const img of galleryImages) {
 assert.equal([...gallery.matchAll(/class="gc-artwork-tile" href="\/homepages\/geocities\/neighborhoods\/#/g)].length, 43);
 assert.match(gallery, /href="\/homepages\/geocities\/neighborhoods\/#Area51"/);
 assert.doesNotMatch(gallery, /href="http:\/\/geocities\.mcretro\.net/);
-assert.match(directory, /\[Artwork Gallery\]\(\/homepages\/geocities\/artwork\/\)/);
+assert.match(directory, /<a href="\/homepages\/geocities\/artwork\/">Artwork Gallery<\/a>/);
 assert.match(styles, /\.gc-artwork-grid \{/);
 assert.match(styles, /\.gc-neighbourhood-tour \{/);
 assert.match(script, /const byId = new Map\(/);

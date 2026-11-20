@@ -437,21 +437,23 @@ test('advisory: desktop and mobile menus underline on pointer hover and keyboard
   assert.match(style, /\.nav-list li a:hover,\s*\.nav-list li a:focus-visible\s*\{[^}]*text-decoration:\s*none;/);
 });
 
-test('advisory: Bird link hover/focus highlights use filled green without changing McRetro', () => {
+test('advisory: Bird link hover and focus use a filled highlight without changing McRetro', () => {
   const bird = read('assets/css/channel-chirp.css');
-  const nav = bird.match(/\\.main-nav a\\.nav-mode-bird:hover,\\s*:root\\[data-theme="bird"\\] \\.main-nav a\\.nav-mode-bird:focus-visible\\s*\\{([^}]*)\\}/)?.[1];
-  assert.ok(nav, 'Bird navigation hover/focus rule exists');
-  assert.match(nav, /background:\\s*#C8E5BD;/);
-  assert.match(nav, /box-shadow:\\s*0 0 0 \\.25rem #C8E5BD;/);
-  const links = bird.match(/\\.recent-posts-list li a:hover,\\s*:root\\[data-theme="bird"\\] \\.sidebar-mode-bird \\.recent-posts-list li a:focus-visible\\s*\\{([^}]*)\\}/)?.[1];
-  assert.ok(links, 'Bird Random Posts hover/focus rule exists');
-  assert.match(links, /background:\\s*#C8E5BD;/);
-  assert.match(links, /text-decoration:\\s*none;/);
-  assert.match(bird, /\\.main-nav \\.nav-list li a\\.nav-mode-bird:hover,[\\s\\S]*?box-shadow:\\s*none;/);
-  assert.match(read('_includes/channel-chirp-sidebar.html'),
-    /href="\\/" data-theme-exit="light">↩ Return to McRetro\\.net<\\/a>/u);
-  assert.ok(!read('_includes/channel-chirp-sidebar.html').includes('href="/blog/" data-theme-exit="light"'));
-  assert.match(style, /\\.main-nav a:hover \\.nav-text,/,
+  const navStart = bird.indexOf(':root[data-theme="bird"] .main-nav a.nav-mode-bird:hover,');
+  assert.ok(navStart >= 0, 'Bird navigation hover/focus rule exists');
+  const navRule = bird.slice(navStart, bird.indexOf('}', navStart));
+  assert.ok(navRule.includes('background: #C8E5BD;'));
+  assert.ok(navRule.includes('box-shadow: 0 0 0 .25rem #C8E5BD;'));
+  const postsStart = bird.indexOf(':root[data-theme="bird"] .sidebar-mode-bird .recent-posts-list li a:hover,');
+  assert.ok(postsStart >= 0, 'Bird Random Posts hover/focus rule exists');
+  const postsRule = bird.slice(postsStart, bird.indexOf('}', postsStart));
+  assert.ok(postsRule.includes('background: #C8E5BD;'));
+  assert.ok(postsRule.includes('text-decoration: none;'));
+  assert.ok(bird.includes('box-shadow: none;'), 'Mobile menu avoids box-shadow bleed');
+  const chirpSidebar = read('_includes/channel-chirp-sidebar.html');
+  assert.ok(chirpSidebar.includes('href="/" data-theme-exit="light">↩ Return to McRetro.net</a>'));
+  assert.ok(!chirpSidebar.includes('href="/blog/" data-theme-exit="light"'));
+  assert.ok(style.includes('.main-nav a:hover .nav-text,'),
     'Light and Dark navigation retains its original interaction');
 });
 

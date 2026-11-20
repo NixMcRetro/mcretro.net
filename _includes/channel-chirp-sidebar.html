@@ -40,11 +40,6 @@
               {%- endfor -%}
               {{- count -}}
               {%- unless forloop.last -%},{%- endunless -%}
-            {%- endfor %}" data-pages="{% for m in (1..12) -%}
-              {%- assign month_key = m | prepend: '0' | slice: -2, 2 -%}
-              {%- assign full_month = year.name | append: '-' | append: month_key -%}
-              {{- site.data.chirp_adventures_month_pages[full_month] | default: 0 -}}
-              {%- unless forloop.last -%},{%- endunless -%}
             {%- endfor %}">{{ year.name }}</option>
           {% endif %}
         {% endfor %}
@@ -67,9 +62,7 @@
         {% assign month_short = date_key | date: '%b' %}
         {% assign month_long = date_key | date: '%B' %}
         {% if count > 0 %}
-          {% assign full_month = chirp_latest_year.name | append: '-' | append: month_key %}
-          {% assign month_page = site.data.chirp_adventures_month_pages[full_month] | default: 1 %}
-          <a class="archive-calendar-month has-posts" href="/chirp/adventures/{% if month_page > 1 %}page{{ month_page }}/{% endif %}#chirp-month-{{ chirp_latest_year.name }}-{{ month_key }}" aria-label="{{ month_long }} {{ chirp_latest_year.name }}: {{ count }} {% if count == 1 %}adventure{% else %}adventures{% endif %}">
+          <a class="archive-calendar-month has-posts" href="/chirp/archive/{{ chirp_latest_year.name }}/{{ month_key }}/" aria-label="{{ month_long }} {{ chirp_latest_year.name }}: {{ count }} {% if count == 1 %}adventure{% else %}adventures{% endif %}">
             <span class="archive-calendar-month-name">{{ month_short }}</span>
             <span class="archive-calendar-month-count">{{ count }} {% if count == 1 %}Post{% else %}Posts{% endif %}</span>
           </a>

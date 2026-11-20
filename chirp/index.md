@@ -18,8 +18,7 @@ pagefind: false
     <figcaption>Chirp, chirp, <strong>quack!</strong></figcaption>
   </figure>
   <div class="chirp-home-copy">
-    <p>Welcome to our homepage! We are the most adorable <strong>green-cheeked conures</strong> in Australia! Thank you for taking the time to visit and be sure to check out <a href="/chirp/adventures/">our adventures</a>, a <a href="/chirp/random/" data-chirp-random-link>random post</a>, or our <a href="https://www.youtube.com/playlist?list=PLJAZP-TLMPj50jY6ytY53J3bQkgPIbeYP">YouTube Playlist</a>.</p>
-    <p class="chirp-home-names">We are Pudge, Tillie, and Chip!</p>
-    <p class="chirp-home-hearts">❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️</p>
+    <p>Welcome to our homepage! We are the most adorable <strong>green-cheeked conures</strong> in Australia! Thank you for taking the time to visit and be sure to check out <a href="/chirp/adventures/">our adventures</a>, a <a href="/chirp/random/" data-chirp-random-link>random post</a>, or our <a href="https://www.youtube.com/playlist?list=PLJAZP-TLMPj50jY6ytY53J3bQkgPIbeYP">YouTube playlist</a>.</p>
+    <p>We are Pudge, Tillie, and Chip!<br>❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️</p>
   </div>
 </section>

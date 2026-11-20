@@ -772,14 +772,6 @@
   margin-inline: auto;
   text-align: center;
 }
-/* The flock introduction and sign-off stay separate; pull only the
- * names and final row of hearts closer together. */
-:root[data-theme="bird"] .chirp-home-copy .chirp-home-names {
-  margin-bottom: .15rem;
-}
-:root[data-theme="bird"] .chirp-home-copy .chirp-home-hearts {
-  margin-top: 0;
-}
 :root[data-theme="bird"] .chirp-home-links {
   justify-content: center;
 }

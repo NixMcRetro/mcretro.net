@@ -2045,3 +2045,67 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   height: auto;
   image-rendering: pixelated;
 }
+
+/* Channels-only banner artwork. Keep global Light, Dark, and Bird styles intact.
+   The artwork is a background on an accessible role=img element so only
+   the active colour variant downloads; CSS controls focal-point cropping. */
+.channels-art {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+}
+.channels-art--hero {
+  width: 100%;
+  aspect-ratio: 6 / 1;
+  margin: 0.7rem 0 1.35rem;
+}
+.about-panel > .channels-art--section {
+  width: calc(100% - 2rem);
+  aspect-ratio: 7 / 1;
+  margin: 0.75rem 1rem 0.9rem;
+}
+/* Bird mode uses a light inner panel, so it shares the light artwork. */
+:root:not([data-theme="dark"]) .channels-art--hero {
+  background-image: url('/assets/images/channels/mcretro_channels_hero_light_cropped_6x1.jxl');
+}
+:root[data-theme="dark"] .channels-art--hero {
+  background-image: url('/assets/images/channels/mcretro_channels_hero_dark_cropped_6x1.jxl');
+}
+:root:not([data-theme="dark"]) .channels-art--nix {
+  background-image: url('/assets/images/channels/mcretro_nix_light_cropped_7x1.jxl');
+}
+:root[data-theme="dark"] .channels-art--nix {
+  background-image: url('/assets/images/channels/mcretro_nix_dark_cropped_7x1.jxl');
+}
+:root:not([data-theme="dark"]) .channels-art--gaming {
+  background-image: url('/assets/images/channels/mcretro_gaming_light_cropped_7x1.jxl');
+}
+:root[data-theme="dark"] .channels-art--gaming {
+  background-image: url('/assets/images/channels/mcretro_gaming_dark_cropped_7x1.jxl');
+}
+:root:not([data-theme="dark"]) .channels-art--supernature {
+  background-image: url('/assets/images/channels/mcretro_supernature_light_cropped_7x1.jxl');
+}
+:root[data-theme="dark"] .channels-art--supernature {
+  background-image: url('/assets/images/channels/mcretro_supernature_dark_cropped_7x1.jxl');
+}
+:root:not([data-theme="dark"]) .channels-art--chirp {
+  background-image: url('/assets/images/channels/mcretro_chirp_light_cropped_7x1.jxl');
+}
+:root[data-theme="dark"] .channels-art--chirp {
+  background-image: url('/assets/images/channels/mcretro_chirp_dark_cropped_7x1.jxl');
+}
+@media (max-width: 600px) {
+  .channels-art--hero {
+    aspect-ratio: auto;
+    height: clamp(76px, 25vw, 108px);
+  }
+  .about-panel > .channels-art--section {
+    aspect-ratio: auto;
+    height: clamp(70px, 24vw, 95px);
+    width: calc(100% - 1.5rem);
+    margin: 0.75rem 0.75rem 0.85rem;
+  }
+}

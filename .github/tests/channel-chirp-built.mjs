@@ -280,7 +280,7 @@ assert.ok(pages.about.includes('Tillie’s Story') || pages.about.includes('Till
 assert.ok(pages.about.includes('Chip’s Story') || pages.about.includes('Chip&#8217;s Story'));
 assert.ok(pages.about.includes('historical food diary'));
 const flockPhotoCaptions = [
-  'Pudge at the back with his new turquoise nest buddy in front.',
+  'Pudge at the back with his turquoise nest friend in front.',
   'Tillie on the left, Chip on the right.',
   'Chip, our cheeky cinnamon Baby Borb.',
   "A few of the flock's favourite foods."

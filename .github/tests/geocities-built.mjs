@@ -193,7 +193,7 @@ assert.doesNotMatch(styles, /content:\s*["']\s*↗/,
 assert.doesNotMatch(cool, /<code>geocities\.mcretro\.net<\/code>/,
   'Cool Pages archive note should use normal text, not a code box');
 assert.match(home, /class="gc-private-gateway"/);
-assert.match(cool, /The list is public, but the archived websites aren't/,
+assert.match(cool, /The list is public, but the archived websites aren['’]t/,
   'A concise one-time private link note remains for direct visitors');
 assert.match(styles, /gc-directory-stats/);
 assert.match(script, /const highlightText = \(element, original, query\) =>/);

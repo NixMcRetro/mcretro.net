@@ -619,15 +619,15 @@ test('advisory: Channels keeps emoji and links, without old summary siren GIFs',
   assert.ok(!channels.includes('@ChannelChirp'), 'Retiring YouTube channel should not be advertised');
   assert.ok(channels.includes('/chirp/'));
   for (const snippet of [
-    'This all started back in March 2012, when I created my very first YouTube channel',
-    "In 2026, I've also started merging former channels, including Fish Tank World and Channel Chirp",
-    'gradually re-releasing their videos and preserving their stories along the way. Stay tuned! :)',
-    'Established in June 2014, McRetro Gaming is where I share all sorts of gaming videos',
-    'the trusty PlayStation 4 to retro gaming through the MiSTer FPGA',
-    "It's mostly nature, superfied.",
-    'Channel Chirp was home to three of the cheekiest green-cheeked conures',
-    'Pudge, Tillie, and Chip',
-    'their original videos are gradually being re-released on my Nix McRetro YouTube channel.'
+    "What started as a YouTube channel about retro computers back in 2012",
+    "In 2026, I also started bringing videos from former channels, including Fish Tank World and Channel Chirp",
+    "These channels have become something of a video scrapbook",
+    "McRetro Gaming started in June 2014",
+    "the trusty PlayStation 4 to retro gaming through the MiSTer FPGA",
+    "It's mostly nature, superfied!",
+    "Channel Chirp began just a couple of weeks after Pudge and Tillie came home",
+    "Along with Chip, they were three of the cheekiest green-cheeked conures",
+    "I'm gradually re-releasing their original videos on my Nix McRetro YouTube channel"
   ]) {
     assert.ok(channels.includes(snippet), 'Missing updated Channels copy: ' + snippet);
   }

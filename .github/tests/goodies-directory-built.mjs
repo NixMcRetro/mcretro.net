@@ -122,10 +122,13 @@ assert.ok(anchors.some(link =>
   'The File Server should have a real hyperlink even if its destination returns 404');
 for (const domain of ['files', 'photos']) {
   const url = 'https://' + domain + '.mcretro.net/index.html';
-  const tag = html.match(new RegExp('<a\\b[^>]*href="' + url.replace(/\\./g, '\\\\.') + '"[^>]*>'));
+  const tag = [...html.matchAll(/<a\b[^>]*>/g)]
+    .map(match => match[0])
+    .find(opening => opening.includes('href="' + url + '"') &&
+      opening.includes('class="goodies-archive-button"'));
   assert.ok(tag, 'Missing external archive button for ' + domain);
-  assert.match(tag[0], /target="_blank"/);
-  assert.match(tag[0], /rel="noopener noreferrer"/);
+  assert.match(tag, /target="_blank"/);
+  assert.match(tag, /rel="noopener noreferrer"/);
 }
 const styles = readFileSync(new URL('../../assets/css/overrides.css', import.meta.url), 'utf8');
 assert.match(styles, /\.goodies-archive-actions\s*\{[^}]*justify-content:\s*center\s*;/,

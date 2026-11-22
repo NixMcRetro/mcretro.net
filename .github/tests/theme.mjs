@@ -55,6 +55,10 @@ function fixture(systemDark = false, stored = null, storageFails = false, defaul
       assign(url) { navigations.push({ method: 'assign', url }); },
       replace(url) { navigations.push({ method: 'replace', url }); }
     },
+    history: {
+      state: context.historyState || null,
+      replaceState(next, title) { this.state = next; }
+    },
     matchMedia(s) { assert.equal(s, '(prefers-color-scheme: dark)'); return media; },
     localStorage: {
       getItem(k) { if(storageFails) throw Error('blocked'); return store.get(k) || null; },
@@ -69,7 +73,7 @@ function fixture(systemDark = false, stored = null, storageFails = false, defaul
   };
   runInNewContext(code,{ window, document, URL });
   docHandlers.DOMContentLoaded();
-  return {attrs, btnAttrs, metaAttrs, media, mediaHandlers, handlers, docHandlers, store, navigationStore, navigations};
+  return {attrs, btnAttrs, metaAttrs, media, mediaHandlers, handlers, docHandlers, store, navigationStore, navigations, history: window.history};
 }
 test('core: early external script prevents incorrect-theme flash and preserves CSP', () => {
   assert.ok(layout.indexOf('assets/js/theme.js') < layout.indexOf('assets/css/style.css'));
@@ -341,6 +345,13 @@ test('core: standard archive and Pagefind links preserve the visible Light/Dark 
   assert.equal(article.store.get('mcretro-theme'),'bird',
     'do not rewrite the remembered Bird preference just to follow a link');
   assert.equal(navigationStore.size,0,'navigation intent is consumed on arrival');
+  assert.equal(article.history.state['mcretro-conure-standard-view'].theme,'dark');
+  // Reload preserves this particular history entry's Dark presentation.
+  const refreshed=fixture(false,'bird',false,false,{
+    article:true,path:'/sprinkles-and-pudding/',standard:'dark',
+    historyState:article.history.state,navigationStore
+  });
+  assert.equal(refreshed.attrs['data-theme'],'dark','refresh keeps Dark despite stored Bird');
 
   // The same event delegation catches Pagefind search results added after load.
   const search=fixture(false,'bird',false,false,{
@@ -366,6 +377,12 @@ test('core: standard archive and Pagefind links preserve the visible Light/Dark 
   assert.equal(click.defaultPrevented,true);
   assert.equal(next.attrs['data-theme'],'bird');
   assert.equal(next.navigations.length,0);
+  assert.equal(next.history.state['mcretro-conure-standard-view'],undefined,
+    'explicit Bird selection removes previous standard history override');
+  const reloadBird=fixture(false,'bird',false,false,{
+    article:true,path:'/the-first-day/',historyState:next.history.state,navigationStore
+  });
+  assert.equal(reloadBird.attrs['data-theme'],'bird','refresh after explicit Bird selection stays Bird');
 
   // Following a link from a real Bird page must remain in Bird Mode.
   const bird=fixture(false,'bird',false,true,{path:'/chirp/adventures/',navigationStore});

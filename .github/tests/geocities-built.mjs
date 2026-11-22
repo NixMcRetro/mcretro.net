@@ -77,7 +77,7 @@ for (const date of ['2021-09-05', '2021-09-19', '2021-10-09', '2021-10-31', '202
 
 // GeoCities editorial headings use Title Case, not sentence case.
 const home = read('index.html');
-for (const heading of ["Explore the Restored Frontend","Enter My Private GeoCities Archive","A Short History of the Rebuild","Read the Rebuild Story","A Little Piece of the Original Site"]) {
+for (const heading of ["Explore the Restored Frontend","Enter My GeoCities Archive","A Short History of the Rebuild","Read the Rebuild Story","A Little Piece of the Original Site"]) {
   assert.match(home, new RegExp('<h2\\b[^>]*>' + heading + '<\\/h2>'),
     'GeoCities project heading lost Title Case: ' + heading);
 }

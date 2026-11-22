@@ -258,11 +258,31 @@ assert.equal(frontpageJxl.subarray(0, 12).toString('hex'),
   '0000000c4a584c200d0a870a', 'photo should be a JPEG XL container, not a renamed JPEG');
 assert.match(birdLayout, /\.chirp-home-figure img\s*\{[^}]*width: 100%;[^}]*height: auto;/);
 
-assert.match(pages.about, /id="pudge"/);
-assert.match(pages.about, /id="tillie"/);
-assert.match(pages.about, /id="chip"/);
-assert.match(pages.about, /<h1 id="chirp-about-heading">About Channel Chirp<\/h1>/);
-assert.match(pages.about, /href="\/chirp\/diet\/">Our Diet<\/a>/);
+assert.match(pages.about, /<h1 id="chirp-about-heading">About The Flock<\\/h1>/);
+for (const name of ['pudge', 'tillie', 'chip', 'diet']) {
+  assert.ok(pages.about.includes('data-flock-tab="' + name + '"'), 'selectable flock tab ' + name);
+  const section = pages.about.match(new RegExp('<section id="' + name + '"[^>]+>'))?.[0];
+  assert.ok(section && section.includes('role="tabpanel"') && section.includes(' hidden'),
+    name + ' has one initially hidden tab panel');
+  assert.ok(pages.about.includes('src="/assets/images/2018/01/chirp-flock/' + name + '.jxl"'),
+    name + ' uses the original JXL image only');
+  const photo = fs.readFileSync(path.join(site, 'assets/images/2018/01/chirp-flock', name + '.jxl'));
+  const isContainer = photo.subarray(0, 12).toString('hex') === '0000000c4a584c200d0a870a';
+  const isCodestream = photo.subarray(0, 2).toString('hex') === 'ff0a';
+  assert.ok(photo.length > 1000 && (isContainer || isCodestream), name + ' is a valid JPEG XL file');
+}
+assert.ok(pages.about.includes('role="tablist" aria-label="Choose a flock profile"'));
+assert.ok(pages.about.includes('aria-selected="false"'));
+assert.ok(pages.about.includes('id="chirp-flock-help"'));
+assert.ok(pages.about.includes('assets/js/chirp-flock-tabs.js'));
+assert.ok(pages.about.includes('Pudge’s Story') || pages.about.includes('Pudge&#8217;s Story'));
+assert.ok(pages.about.includes('Tillie’s Story') || pages.about.includes('Tillie&#8217;s Story'));
+assert.ok(pages.about.includes('Chip’s Story') || pages.about.includes('Chip&#8217;s Story'));
+assert.ok(pages.about.includes('historical food diary'));
+for (const file of ['pudge.jpg', 'tillie.jpg', 'chip.jpg', 'bird-food.png']) {
+  assert.ok(!exists('assets/images/2018/01/chirp-flock/' + file),
+    'do not ship the original-format fallback: ' + file);
+}
 assert.ok(!exists('chirp/flock/index.html'), 'former /chirp/flock/ must not exist or redirect');
 assert.doesNotMatch(pages.about, /redirect_from:|http-equiv="refresh"/i,
   'About is a native route, not a redirect');

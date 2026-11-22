@@ -2043,7 +2043,7 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   max-width: 100%;
 }
 
-/* About: preserve the running cat at its modest 1.25x scale. */
+/* About: enlarge the running cat slightly while preserving its original GIF. */
 .about-running-cat {
   box-sizing: border-box;
   display: flex;
@@ -2059,7 +2059,7 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
 }
 .about-running-cat img {
   display: block;
-  width: 106px;
+  width: 128px;
   max-width: 100%;
   height: auto;
   image-rendering: pixelated;
@@ -2099,14 +2099,14 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   image-rendering: pixelated;
 }
 
-/* Place the framed About cat and Channels TV alongside their introductions.
-   On narrow screens, retain the existing centred treatment above the text.
-   Do not change the Goodies artwork or the GIF dimensions. */
+/* Align the framed About cat and Channels TV with the first paragraph,
+   maintaining a consistent 24px text gap on desktop. On narrow screens,
+   retain the centred image above the introduction. */
 @media screen and (min-width: 651px) {
   .about-running-cat,
   .channels-tv-art {
     float: right;
-    margin: 0 0 1rem 1.5rem;
+    margin: 1.25rem 0 1rem 1.5rem;
   }
 
   /* Keep the expandable sections below the complete introduction. */

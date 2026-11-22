@@ -280,10 +280,10 @@ assert.ok(pages.about.includes('Tillie’s Story') || pages.about.includes('Till
 assert.ok(pages.about.includes('Chip’s Story') || pages.about.includes('Chip&#8217;s Story'));
 assert.ok(pages.about.includes('historical food diary'));
 const flockPhotoCaptions = [
-  'Pudge keeps watch from the back',
-  'Tillie on the left and Chip on the right',
-  'Meet Chip, our little cinnamon Baby Borb',
-  "What's on the menu for the flock?"
+  'Pudge at the back with his new turquoise nest buddy in front.',
+  'Tillie on the left, Chip on the right.',
+  'Chip, our cheeky cinnamon Baby Borb.',
+  "A few of the flock's favourite foods."
 ];
 assert.equal((pages.about.match(/<figcaption>/g) || []).length, 4,
   'all four flock photographs must have captions');

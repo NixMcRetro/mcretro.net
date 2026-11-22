@@ -10,6 +10,7 @@ const layout = read('_layouts/default.html');
 const style = read('assets/css/style.css');
 const overrides = read('assets/css/overrides.css');
 const blog = read('blog/index.html');
+const postTemplate = read('_layouts/post.html');
 function fixture(systemDark = false, stored = null, storageFails = false, defaultBird = false, context = {}) {
   const handlers = {}, docHandlers = {}, mediaHandlers = {}, attrs = defaultBird ? {'data-default-theme':'bird','data-chirp-landing':'true'} : {};
   if (context.unrelated) attrs['data-chirp-unrelated'] = 'true';
@@ -22,6 +23,9 @@ function fixture(systemDark = false, stored = null, storageFails = false, defaul
     getAttribute(k) { return k === 'data-theme-exit' ? 'standard' : null; },
     addEventListener(k,fn) { if (k === 'click') handlers.exitClick = fn; }
   };
+  const chirpLink = {
+    addEventListener(k, fn) { if (k === 'click') handlers.chirpClick = fn; }
+  };
   const button = {
     setAttribute(k,v) { btnAttrs[k] = String(v); },
     addEventListener(k,fn) { handlers[k] = fn; }
@@ -31,7 +35,11 @@ function fixture(systemDark = false, stored = null, storageFails = false, defaul
     readyState: 'loading',
     documentElement: { setAttribute(k,v) { attrs[k] = String(v); }, getAttribute(k) { return attrs[k] || null; } },
     querySelector(s) { return s === '[data-theme-toggle]' ? button : s === 'meta[name="theme-color"]' ? meta : null; },
-    querySelectorAll(s) { return s === '[data-theme-exit]' && context.exitLink ? [exitLink] : []; },
+    querySelectorAll(s) {
+      if (s === '[data-theme-exit]') return context.exitLink ? [exitLink] : [];
+      if (s === '[data-chirp-view-post]') return context.article ? [chirpLink] : [];
+      return [];
+    },
     addEventListener(k,fn) { docHandlers[k] = fn; }
   };
   const media = { matches: systemDark, addEventListener(k,fn) { mediaHandlers[k] = fn; } };
@@ -258,6 +266,35 @@ test('core: released conure articles retain the existing Bird and Light toggling
   article.handlers.click();
   assert.equal(article.attrs['data-theme'],'light');
   assert.equal(article.navigations.length,0,'Light can read original conure post layout');
+});
+
+
+test('core: View in Channel Chirp changes only the current conure article theme', () => {
+  assert.match(postTemplate, /page.categories contains 'parrots' and page.channel_chirp != false/);
+  assert.match(postTemplate, /href="\/chirp\/adventures\/" data-chirp-view-post>🦜 View in Channel Chirp<\/a>/);
+  assert.match(overrides, /:root\[data-theme="bird"\] \.chirp-view-invitation \{\s*display: none;/);
+
+  const article = fixture(false, 'dark', false, false,
+    {article:true, path:'/the-first-day/', standard:'dark'});
+  assert.equal(article.attrs['data-theme'], 'dark');
+  const e = {button:0, defaultPrevented:false, preventDefault() { this.defaultPrevented = true; }};
+  article.handlers.chirpClick(e);
+  assert.equal(e.defaultPrevented, true, 'normal click switches theme in place');
+  assert.equal(article.attrs['data-theme'], 'bird');
+  assert.equal(article.store.get('mcretro-theme'), 'bird');
+  assert.equal(article.store.get('mcretro-last-standard-theme'), 'dark');
+  assert.equal(article.navigations.length, 0, 'same article URL remains untouched');
+  article.handlers.click();
+  assert.equal(article.attrs['data-theme'], 'light', 'theme toggle still exits Bird');
+  assert.equal(article.navigations.length, 0);
+
+  const modified = fixture(false,'dark',false,false,{article:true,path:'/the-first-day/'});
+  const ctrl = {button:0,ctrlKey:true,defaultPrevented:false,preventDefault(){this.defaultPrevented=true;}};
+  modified.handlers.chirpClick(ctrl);
+  assert.equal(ctrl.defaultPrevented,false,'modified click retains normal hyperlink/new-tab behaviour');
+  assert.equal(modified.attrs['data-theme'],'dark');
+  const unrelated = fixture(false,'dark',false,false,{unrelated:true,path:'/kodi-until-when/'});
+  assert.equal(typeof unrelated.handlers.chirpClick,'undefined','ordinary McRetro posts have no Bird invitation');
 });
 
 test('core: without manual selection, device changes update normal pages', () => {

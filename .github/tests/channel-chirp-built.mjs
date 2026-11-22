@@ -258,7 +258,7 @@ assert.equal(frontpageJxl.subarray(0, 12).toString('hex'),
   '0000000c4a584c200d0a870a', 'photo should be a JPEG XL container, not a renamed JPEG');
 assert.match(birdLayout, /\.chirp-home-figure img\s*\{[^}]*width: 100%;[^}]*height: auto;/);
 
-assert.match(pages.about, /<h1 id="chirp-about-heading">About The Flock<\\/h1>/);
+assert.ok(pages.about.includes('<h1 id="chirp-about-heading">About The Flock</h1>'));
 for (const name of ['pudge', 'tillie', 'chip', 'diet']) {
   assert.ok(pages.about.includes('data-flock-tab="' + name + '"'), 'selectable flock tab ' + name);
   const section = pages.about.match(new RegExp('<section id="' + name + '"[^>]+>'))?.[0];

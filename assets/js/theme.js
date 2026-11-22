@@ -163,11 +163,80 @@
     return theme;
   }
 
+  // Preserve an unsupported page when switching between McRetro and the Nest.
+  // The redirect still leads to the other site's landing page. A one-use,
+  // tab-local transfer attaches the originating URL to that history entry,
+  // so switching back returns to the exact original path/query/fragment.
+  var modeReturnPendingKey = 'mcretro-mode-return-pending';
+  var modeReturnHistoryKey = 'mcretro-mode-return';
+
+  function localModeRoute(value) {
+    if (typeof value !== 'string' || value.charAt(0) !== '/' ||
+        value.slice(0, 2) === '//' || value.indexOf('\\') !== -1) return null;
+    try {
+      var url = new URL(value, window.location.origin);
+      if (url.origin !== window.location.origin) return null;
+      return url.pathname + url.search + url.hash;
+    } catch (error) { return null; }
+  }
+
+  function rememberFallbackReturn(destination, returnTheme) {
+    var source = localModeRoute(window.location.pathname +
+      window.location.search + window.location.hash);
+    var target = localModeRoute(destination);
+    if (!source || !target || source === target) return;
+    try {
+      window.sessionStorage.setItem(modeReturnPendingKey, JSON.stringify({
+        source: source, target: target, returnTheme: returnTheme, at: Date.now()
+      }));
+    } catch (error) { /* Fallback navigation still works without storage. */ }
+  }
+
+  function attachPendingFallbackReturn() {
+    var raw = null;
+    try {
+      raw = window.sessionStorage.getItem(modeReturnPendingKey);
+      window.sessionStorage.removeItem(modeReturnPendingKey);
+    } catch (error) { return; }
+    if (!raw) return;
+    try {
+      var intent = JSON.parse(raw);
+      var age = Date.now() - intent.at;
+      if (!Number.isFinite(age) || age < 0 || age > 120000) return;
+      var current = window.location.pathname + window.location.search + window.location.hash;
+      if (intent.target !== current || (current !== '/chirp/' && current !== '/blog/')) return;
+      var source = localModeRoute(intent.source);
+      if (!source || source === current ||
+          (intent.returnTheme !== 'light' && intent.returnTheme !== 'bird')) return;
+      var previousState = window.history.state;
+      if (previousState !== null &&
+          (typeof previousState !== 'object' || Array.isArray(previousState))) return;
+      var nextState = Object.assign({}, previousState || {});
+      nextState[modeReturnHistoryKey] = {
+        source: source, target: current, returnTheme: intent.returnTheme
+      };
+      window.history.replaceState(nextState, '');
+    } catch (error) { /* Invalid or blocked history cannot affect navigation. */ }
+  }
+
+  function rememberedFallbackReturn(nextTheme) {
+    try {
+      var intent = window.history.state && window.history.state[modeReturnHistoryKey];
+      var current = window.location.pathname + window.location.search + window.location.hash;
+      if (!intent || intent.target !== current || intent.returnTheme !== nextTheme) return null;
+      return localModeRoute(intent.source);
+    } catch (error) { return null; }
+  }
+
   function navigationTarget(theme, isUserChange) {
     // Only the user's theme-toggle click changes destinations.
     // Loading a link, restoring history or syncing another tab never does.
     if (!isUserChange || !window.location) return null;
     var path = window.location.pathname || '';
+    // A saved fallback applies only to the exact landing-page history entry,
+    // never to another tab or a direct visit to that URL.
+    var remembered = rememberedFallbackReturn(theme);
+    if (remembered) return remembered;
     if (theme === 'bird') {
       // Navigate to the matching Channel Chirp section when available.
       if (path === '/' || path === '/index.html') return '/chirp/';
@@ -189,6 +258,9 @@
     return null;
   }
 
+  // Import the short-lived fallback once, before presenting this history entry.
+  attachPendingFallbackReturn();
+
   // Opening /chirp/ explicitly opts into Bird while preserving the last
   // Light/Dark preference for ordinary McRetro URLs.
   if (landing) persist('bird');
@@ -207,6 +279,14 @@
         updatePresentation(next);
         var target = navigationTarget(next, true);
         if (target && window.location && typeof window.location.assign === 'function') {
+          var path = window.location.pathname || '';
+          if (current !== 'bird' && next === 'bird' && target === '/chirp/' &&
+              path !== '/' && path !== '/index.html') {
+            rememberFallbackReturn(target, 'light');
+          } else if (current === 'bird' && next !== 'bird' && target === '/blog/' &&
+              landing && !/^\\/chirp\\/adventures(?:\\/page\\d+)?\\/?$/.test(path)) {
+            rememberFallbackReturn(target, 'bird');
+          }
           window.location.assign(target);
         }
       });

@@ -36,8 +36,8 @@ for (const [name, html] of Object.entries(pages)) {
   assert.doesNotMatch(html, /<nav class="nest-subnav"/);
   const simpleFooter = html.match(/<footer class="site-footer site-footer--chirp"[^>]*>[\s\S]*?<\/footer>/)?.[0];
   assert.ok(simpleFooter, name + ' must use the original Channel Chirp footer');
-  assert.match(simpleFooter, /<p>&copy; <a href="https:\/\/github\.com\/ChannelChirp\/website">\d{4} Channel Chirp<\/a><\/p>/,
-    name + ' must leave the copyright mark outside the underlined year/name link');
+  assert.match(simpleFooter, /<p>&copy; <a href="https:\/\/github\.com\/NixMcRetro\/mcretro\.net">\d{4} Channel Chirp<\/a><\/p>/,
+    name + ' must link to the McRetro repository, keeping the copyright symbol outside the year/name link');
   assert.doesNotMatch(simpleFooter, /<a[^>]*>&copy;/, 'copyright symbol must not be part of the link');
   assert.doesNotMatch(simpleFooter, /footer-badges|footer-details|footer-pride|counter\.gif/,
     name + ' must not display McRetro footer decorations');

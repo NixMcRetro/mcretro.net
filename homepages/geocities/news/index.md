@@ -5,7 +5,7 @@ title: GeoCities Project News
 
 <link rel="stylesheet" href="/homepages/geocities/geocities.css">
 
-[← GeoCities Rebuild](/homepages/geocities/) · [Neighbourhoods](/homepages/geocities/neighborhoods/) · [Cool Pages](/homepages/geocities/cool/)
+{% include geocities-navigation.html section="news" %}
 
 <div class="gc-art"><img src="/homepages/geocities/images/main/info/areaid_news.gif" width="430" height="60" alt="Original GeoCities News banner" loading="eager"></div>
 

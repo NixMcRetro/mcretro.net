@@ -5,7 +5,7 @@ title: GeoCities Artwork Gallery
 
 <link rel="stylesheet" href="/homepages/geocities/geocities.css">
 
-[← GeoCities Rebuild](/homepages/geocities/) · [Neighbourhoods](/homepages/geocities/neighborhoods/) · [Project News](/homepages/geocities/news/) · [Cool Pages](/homepages/geocities/cool/)
+{% include geocities-navigation.html section="artwork" %}
 
 <div id="gc-artwork-top"></div>
 

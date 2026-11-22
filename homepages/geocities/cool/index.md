@@ -5,7 +5,7 @@ title: GeoCities Cool Pages
 
 <link rel="stylesheet" href="/homepages/geocities/geocities.css">
 
-[← GeoCities Rebuild](/homepages/geocities/) · [Neighbourhoods](/homepages/geocities/neighborhoods/) · [Project News](/homepages/geocities/news/)
+{% include geocities-navigation.html section="cool" %}
 
 <div class="gc-art"><img src="/homepages/geocities/pictures/geocool.gif" width="193" height="106" alt="Original Cool Page of the Day GeoCities graphic" loading="eager"></div>
 

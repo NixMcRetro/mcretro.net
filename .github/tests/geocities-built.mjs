@@ -34,6 +34,47 @@ for (const [relative, heading] of pages) {
     'Raw Markdown heading remains: ' + relative);
 }
 
+// The breadcrumb is a real Home > Goodies > GeoCities hierarchy, not a
+// mixed back button and sibling-link bar. Dated news has an additional level.
+const breadcrumbCases = [
+  ['index.html', ['Home', 'Goodies', 'GeoCities Rebuild']],
+  ['neighborhoods/index.html', ['Home', 'Goodies', 'GeoCities Rebuild', 'Neighbourhoods']],
+  ['news/index.html', ['Home', 'Goodies', 'GeoCities Rebuild', 'Project News']],
+  ['cool/index.html', ['Home', 'Goodies', 'GeoCities Rebuild', 'Cool Pages']],
+  ['artwork/index.html', ['Home', 'Goodies', 'GeoCities Rebuild', 'Artwork Gallery']],
+  ['news/2021-09-05.html', ['Home', 'Goodies', 'GeoCities Rebuild', 'Project News', '5th September 2021']],
+  ['news/2021-09-19.html', ['Home', 'Goodies', 'GeoCities Rebuild', 'Project News', '19th September 2021']],
+  ['news/2021-10-09.html', ['Home', 'Goodies', 'GeoCities Rebuild', 'Project News', '9th October 2021']],
+  ['news/2021-10-31.html', ['Home', 'Goodies', 'GeoCities Rebuild', 'Project News', '31st October 2021']],
+  ['news/2022-01-03.html', ['Home', 'Goodies', 'GeoCities Rebuild', 'Project News', '3rd January 2022']]
+];
+for (const [file, expected] of breadcrumbCases) {
+  const html = read(file);
+  const match = html.match(/<nav class="archive-breadcrumbs gc-breadcrumbs" aria-label="Breadcrumb">([\s\S]*?)<\/nav>/);
+  assert.ok(match, 'Missing shared GeoCities breadcrumb: ' + file);
+  const breadcrumb = match[1];
+  const labels = [...breadcrumb.matchAll(/(?:<a\b[^>]*>|<span aria-current="page">)([^<]+)<\/(?:a|span)>/g)]
+    .map(([, label]) => label.trim());
+  assert.deepEqual(labels, expected, 'Incorrect GeoCities breadcrumb hierarchy: ' + file);
+  assert.equal((breadcrumb.match(/aria-current="page"/g) || []).length, 1,
+    'Exactly one current breadcrumb per page: ' + file);
+  assert.match(breadcrumb, /<a href="\/goodies\/">Goodies<\/a>/,
+    'Every GeoCities page links back through Goodies');
+}
+for (const section of ['neighborhoods', 'news', 'cool', 'artwork']) {
+  const html = read(section + '/index.html');
+  const nav = html.match(/<nav class="gc-section-nav" aria-label="Explore GeoCities">([\s\S]*?)<\/nav>/);
+  assert.ok(nav, 'Missing separate sibling-section navigation on ' + section);
+  assert.equal((nav[1].match(/<a\b/g) || []).length, 4,
+    'All four sibling destinations remain accessible');
+  assert.equal((nav[1].match(/aria-current="page"/g) || []).length, 1,
+    'Sibling navigation identifies the active section');
+}
+for (const date of ['2021-09-05', '2021-09-19', '2021-10-09', '2021-10-31', '2022-01-03']) {
+  assert.doesNotMatch(read('news/' + date + '.html'), /<nav class="gc-section-nav"/,
+    'Dated historical news pages need a breadcrumb, not duplicate section menus');
+}
+
 // GeoCities editorial headings use Title Case, not sentence case.
 const home = read('index.html');
 for (const heading of ["Explore the Restored Frontend","Enter My Private GeoCities Archive","A Short History of the Rebuild","Read the Rebuild Story","A Little Piece of the Original Site"]) {
@@ -61,6 +102,14 @@ for (const route of ['neighborhoods/', 'news/', 'cool/', 'artwork/']) {
 }
 const styles = read('geocities.css');
 assert.match(styles, /gc-home-nav/);
+assert.match(styles, /\.gc-breadcrumbs \{ margin-bottom: \.55rem; \}/);
+assert.match(styles, /\.content-area:has\(> \.gc-breadcrumbs\) > h2 \{/,
+  'GeoCities uses a scoped, article-sized H2 heading');
+assert.match(styles, /\.content-area:has\(> \.gc-breadcrumbs\) > :is\(h1, h2, h3\) \+ :is\(p, ul, ol\)/,
+  'Headings and following body text should not have doubled margins');
+assert.match(styles, /\.content-area:has\(> \.gc-breadcrumbs\) > \.gc-art/,
+  'Historic banner spacing is compact only on GeoCities pages');
+
 assert.match(styles, /\.gc-neighbourhood \{[^}]+var\(--panel\)[^}]+var\(--text\)/);
 assert.match(styles, /gc-browser-tools\[hidden\]/);
 assert.doesNotMatch(styles, /background:\s*#f1f1f1/i);

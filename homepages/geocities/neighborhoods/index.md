@@ -6,7 +6,7 @@ title: GeoCities Neighbourhoods
 <link rel="stylesheet" href="/homepages/geocities/geocities.css">
 <script src="/homepages/geocities/neighborhoods/browser.js" defer></script>
 
-[← GeoCities Rebuild](/homepages/geocities/) · [Artwork Gallery](/homepages/geocities/artwork/) · [Project News](/homepages/geocities/news/) · [Cool Pages](/homepages/geocities/cool/)
+{% include geocities-navigation.html section="neighborhoods" %}
 
 <div id="gc-directory-top"></div>
 <div class="gc-art"><img src="/homepages/geocities/images/neighborhoods/neighborhoods.gif" width="430" height="60" alt="Visit these GeoCities Neighbourhoods" loading="eager"></div>

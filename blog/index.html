@@ -34,12 +34,16 @@ still use their own page.date via the default layout.
       <div class="post-meta">
         {% if post.author %}
           <span class="post-author">
+            {% if post.categories contains 'parrots' and post.channel_chirp != false %}
+              <img src="/assets/images/chirp/sprinkles-192.jxl" width="192" height="192" alt="" class="author-avatar">
+            {% else %}
             <picture>
               <source media="(min-width: 751px)" type="image/jxl" srcset="/assets/images/mcretro-author-portrait-192.jxl?v=20261018d">
               <source media="(min-width: 751px)" type="image/webp" srcset="/assets/images/mcretro-author-portrait-192.webp?v=20261018d">
               <img src="/assets/favicon/favicon-96x96.png?v=20261018b" width="96" height="96" alt="" class="author-avatar">
             </picture>
-            {{ post.author }}
+            {% endif %}
+            {% if post.categories contains 'parrots' and post.channel_chirp != false %}Sprinkles{% else %}{{ post.author }}{% endif %}
           </span>
           <span class="meta-sep">//</span>
         {% endif %}

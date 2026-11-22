@@ -13,6 +13,11 @@ module Jekyll
           post.data["channel_chirp"] != false
       end.sort_by { |post| [post.date, post.url] }.reverse
 
+      # Present released conure adventures under their Channel Chirp persona.
+      # This also updates Jekyll/SEO author metadata in the built pages, while
+      # preserving source front matter and non-Chirp post authors.
+      posts.each { |post| post.data["author"] = "Sprinkles" }
+
       per_page = site.config.fetch("paginate", 5).to_i
       per_page = 5 unless per_page.positive?
       total_pages = [(posts.size.to_f / per_page).ceil, 1].max

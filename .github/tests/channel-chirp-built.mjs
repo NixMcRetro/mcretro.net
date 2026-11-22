@@ -43,6 +43,45 @@ assert.match(conure, /data-chirp-article="true"/);
 assert.match(conure, /post-navigation--bird/);
 assert.match(conure, /post-navigation--mcretro/);
 
+// Channel Chirp uses Sprinkles as its visible and generated author, with a
+// dedicated JPEG XL-only avatar. Ordinary McRetro posts retain their assets.
+const sprinklesAvatar = 'assets/images/chirp/sprinkles-192.jxl';
+assert.ok(exists(sprinklesAvatar), 'Sprinkles avatar must be published');
+const sprinklesBytes = fs.readFileSync(path.join(site, sprinklesAvatar));
+assert.ok(sprinklesBytes.length > 3000 && sprinklesBytes.length < 30000,
+  'author avatar must be a compact, nonempty JPEG XL image');
+assert.equal(sprinklesBytes.subarray(0, 2).toString('hex'), 'ff0a',
+  'author avatar must contain a genuine JPEG XL codestream');
+const sprinklesMarkup = /<span class="post-author">\s*<img src="\/assets\/images\/chirp\/sprinkles-192\.jxl" width="192" height="192" alt="" class="author-avatar"\s*\/?>\s*Sprinkles\s*<\/span>/;
+assert.match(pages.adventures, sprinklesMarkup,
+  'Adventures posts display Sprinkles and a JXL-only avatar');
+assert.match(conure, sprinklesMarkup,
+  'individual Channel Chirp posts display the same author and avatar');
+assert.doesNotMatch(pages.adventures,
+  /src="\/assets\/favicon\/favicon-96x96\.png[^"]*"[^>]*class="author-avatar"|mcretro-author-portrait-192/,
+  'Adventures must not use a McRetro author-avatar fallback');
+assert.match(corella, /<span class="post-author">\s*<img src="\/assets\/favicon\/favicon-96x96\.png[^"]*" alt="" class="author-avatar"\s*\/?>\s*Nix McRetro\s*<\/span>/,
+  'an explicitly excluded parrot post retains the normal McRetro identity');
+assert.match(blog, /mcretro-author-portrait-192\.jxl/,
+  'ordinary McRetro entries still use the existing author portrait');
+assert.match(blog, /mcretro-author-portrait-192\.webp/,
+  'the existing McRetro fallback must remain unchanged');
+
+let birdOnMainBlog = null;
+for (let number = 1; number <= 250; number++) {
+  const file = number === 1 ? 'blog/index.html' : 'blog/page' + number + '/index.html';
+  if (!exists(file)) break;
+  const html = number === 1 ? blog : read(file);
+  if (html.includes('href="/the-first-day/"')) {
+    birdOnMainBlog = html;
+    break;
+  }
+}
+assert.ok(birdOnMainBlog, 'the published conure article must also appear on /blog/ pagination');
+assert.match(birdOnMainBlog, sprinklesMarkup,
+  'conure entries on the main Blog must display Sprinkles and JXL-only avatar');
+
+
 // Original Channel Chirp article hierarchy: tighter title/date/rule group.
 // These overrides must target Bird articles only, not the McRetro post layout.
 function birdArticleRule(suffix) {

@@ -43,7 +43,7 @@ still use their own page.date via the default layout.
               <img src="/assets/favicon/favicon-96x96.png?v=20261018b" width="96" height="96" alt="" class="author-avatar">
             </picture>
             {% endif %}
-            {{ post.author }}
+            {% if post.categories contains 'parrots' and post.channel_chirp != false %}Sprinkles{% else %}{{ post.author }}{% endif %}
           </span>
           <span class="meta-sep">//</span>
         {% endif %}

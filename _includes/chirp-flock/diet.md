@@ -1,5 +1,6 @@
 <figure class="chirp-flock-media">
-  <img src="/assets/images/2018/01/chirp-flock/diet.jxl" alt="A selection of food from the original Channel Chirp diet page" loading="lazy" decoding="async">
+  <img src="/assets/images/2018/01/chirp-flock/diet.jxl" alt="Bird food pictured on the original Channel Chirp diet page" loading="lazy" decoding="async">
+  <figcaption>What's on the menu for the flock? Fresh fruit, vegetables, pellets, and a few favourite treats.</figcaption>
 </figure>
 
 We love a varied diet of fresh fruits, vegetables, pellets, and seeds. Here's some of our favourites.

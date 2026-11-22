@@ -8,7 +8,10 @@ date: 2024-04-06T15:04:21.000+11:00
 
 *Recipe adapted from Lyndelle Lindner*
 
-![Recipe photograph IMG_9804](/assets/images/2024/04/mars-bar-slice/IMG_9804.jxl)
+![Close-up of golden-brown, chocolate-coated Rice Bubbles mixture spread across a white baking tray with a dark blue rim.](/assets/images/2024/04/mars-bar-slice/IMG_9804.jxl)
+
+*Homemade Mars Bar slice, pressed into the tray and ready to set.*
+{: .media-caption }
 
 ### Ingredients
 
@@ -27,16 +30,37 @@ date: 2024-04-06T15:04:21.000+11:00
 7. Eat immediately or store in fridge.
 8. Serve cool, but not cold.
 
-![Recipe photograph IMG_9773](/assets/images/2024/04/mars-bar-slice/IMG_9773.jxl)
+![Pieces of chopped Mars Bar scattered across a white plate decorated with pale green leaves, with a kitchen knife nearby.](/assets/images/2024/04/mars-bar-slice/IMG_9801.jxl)
 
-![Recipe photograph IMG_9802](/assets/images/2024/04/mars-bar-slice/IMG_9802.jxl)
+*Mars Bars chopped into smaller pieces, ready for melting.*
+{: .media-caption }
 
-![Recipe photograph IMG_9801](/assets/images/2024/04/mars-bar-slice/IMG_9801.jxl)
+![A white bowl containing butter sits on a digital kitchen scale displaying 60 g, with chopped Mars Bar pieces on a plate nearby.](/assets/images/2024/04/mars-bar-slice/IMG_9800.jxl)
 
-![Recipe photograph IMG_9800](/assets/images/2024/04/mars-bar-slice/IMG_9800.jxl)
+*Weighing out 60 g of butter. At least one part of this recipe involves precision!*
+{: .media-caption }
 
-![Recipe photograph IMG_9781](/assets/images/2024/04/mars-bar-slice/IMG_9781.jxl)
+![Pieces of Mars Bar melting into a brown mixture in a black saucepan on an electric stovetop, with a black spoon resting inside.](/assets/images/2024/04/mars-bar-slice/IMG_9773.jxl)
 
-![Recipe photograph IMG_9776](/assets/images/2024/04/mars-bar-slice/IMG_9776.jxl)
+*Melting the Mars Bars and butter together over low heat.*
+{: .media-caption }
 
-![Recipe photograph IMG_9803](/assets/images/2024/04/mars-bar-slice/IMG_9803.jxl)
+![Smooth, glossy brown Mars Bar and butter mixture in the bottom of a black saucepan on an electric stovetop.](/assets/images/2024/04/mars-bar-slice/IMG_9781.jxl)
+
+*The Mars Bars and butter, melted together and ready for mixing.*
+{: .media-caption }
+
+![A blue measuring cup filled with Rice Bubbles sitting inside an empty white baking tray with a dark blue rim.](/assets/images/2024/04/mars-bar-slice/IMG_9776.jxl)
+
+*Measuring out the Rice Bubbles before mixing everything together.*
+{: .media-caption }
+
+![Rice Bubbles coated in melted chocolate and caramel mixture inside a large white mixing bowl, with a metal spoon resting against the side.](/assets/images/2024/04/mars-bar-slice/IMG_9802.jxl)
+
+*Mixing the melted Mars Bars and butter through the Rice Bubbles.*
+{: .media-caption }
+
+![Chocolate-coated Rice Bubbles mixture spread across part of a white baking tray with a dark blue rim on a kitchen benchtop.](/assets/images/2024/04/mars-bar-slice/IMG_9803.jxl)
+
+*Spreading the mixture into the tray before letting it cool and set.*
+{: .media-caption }

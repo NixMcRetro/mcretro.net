@@ -7,7 +7,11 @@ layout: default
   <div class="post-meta" data-pagefind-ignore="all">
     {% if page.author %}
       <span class="post-author">
+        {% if page.categories contains 'parrots' and page.channel_chirp != false %}
+        <img src="/assets/images/chirp/sprinkles-192.jxl" width="192" height="192" alt="" class="author-avatar">
+        {% else %}
         <img src="/assets/favicon/favicon-96x96.png?v=20261018b" alt="" class="author-avatar">
+        {% endif %}
         {{ page.author }}
       </span>
       <span class="meta-sep">//</span>

@@ -104,16 +104,27 @@ assert.deepEqual(panelSections.map(panelHeading), expectedSections,
   'Goodies sections are independent accordions sorted alphabetically');
 assert.doesNotMatch(panelSections[4], /\[File Server\]|\[Photo Gallery\]/,
   'Files and photos must not appear among interactive projects');
-assert.match(panelSections[1], /<button class="goodies-archive-button goodies-archive-button--pending" type="button" disabled>/,
-  'File Server has a genuinely disabled Coming Soon button until launched');
-assert.doesNotMatch(panelSections[1], /href="https:\/\/files\.mcretro\.net/,
-  'Do not advertise an unavailable server as a working destination');
-assert.match(panelSections[3], /<a class="goodies-archive-button" href="https:\/\/photos\.mcretro\.net\/index\.html">/,
-  'Photo Gallery has a styled, functional external browse link');
-assert.ok(anchors.some(link =>
-  link.href === 'https://photos.mcretro.net/index.html' &&
-  link.text.includes('Browse the Photo Gallery')),
-  'The live Photo Gallery browse button must appear in the rendered site');
+const externalArchives = [
+  [1, 'https://files.mcretro.net/index.html', 'Visit File Server (Coming Soon)'],
+  [3, 'https://photos.mcretro.net/index.html', 'Browse the Photo Gallery']
+];
+for (const [panelIndex, href, label] of externalArchives) {
+  const expectedLink = '<a class="goodies-archive-button" href="' + href +
+    '" target="_blank" rel="noopener noreferrer">';
+  assert.ok(panelSections[panelIndex].includes(expectedLink),
+    label + ' must be a styled link opening in a new tab with secure rel');
+  assert.ok(html.includes(expectedLink),
+    label + ' must be present in the published page');
+  assert.ok(anchors.some(link => link.href === href && link.text.includes(label)),
+    label + ' must remain a visible working hyperlink');
+}
+assert.doesNotMatch(panelSections[1], /<button\b[^>]*disabled/,
+  'File Server is intentionally a live link to its current 404 until launch');
+assert.match(panelSections[1], /404 page/,
+  'File Server explicitly describes its current 404 destination');
+const goodiesStyles = readFileSync(new URL('../../assets/css/overrides.css', import.meta.url), 'utf8');
+assert.match(goodiesStyles, /\.goodies-archive-actions\s*\{[^}]*justify-content:\s*center;/,
+  'Both gallery buttons must be centred in their accordion');
 // Only sort the leading bold item titles, not secondary links within
 // descriptions (such as historical homepages' own photo galleries).
 const entryNames = panel => panel.split('\n')

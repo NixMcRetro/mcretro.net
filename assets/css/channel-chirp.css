@@ -1228,7 +1228,7 @@
 }
 
 /* Original Channel Chirp's solid-black footer bar. The copyright mark is
- * plain text; only the year and Channel Chirp name form the underlined link.
+ * plain text; the year and Channel Chirp name underline on hover or keyboard focus.
  * Keep it legible even if someone switches theme while on /chirp/. */
 :root[data-chirp-landing="true"] .site-footer--chirp {
   box-sizing: border-box;
@@ -1243,7 +1243,10 @@
 }
 :root[data-chirp-landing="true"] .site-footer--chirp p { margin: 0; color: #FFFFFF; }
 :root[data-chirp-landing="true"] .site-footer--chirp a,
-:root[data-chirp-landing="true"] .site-footer--chirp a:visited,
+:root[data-chirp-landing="true"] .site-footer--chirp a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+}
 :root[data-chirp-landing="true"] .site-footer--chirp a:hover,
 :root[data-chirp-landing="true"] .site-footer--chirp a:focus-visible {
   color: #FFFFFF;

@@ -2048,7 +2048,7 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
 
 /* Channels-only illustrated banners: reuse the existing dark JXL artwork in
    Light, Dark, and Bird modes. The modest card framing is intentionally local to
-   these five illustrations and does not change the site's theme palettes. */
+   these four channel illustrations and does not change the site's theme palettes. */
 .channels-art {
   display: block;
   box-sizing: border-box;
@@ -2065,18 +2065,10 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   border-color: rgba(255, 255, 255, 0.07);
   box-shadow: none;
 }
-.channels-art--hero {
-  width: 100%;
-  aspect-ratio: 6 / 1;
-  margin: 0.7rem 0 1.35rem;
-}
 .about-panel > .channels-art--section {
   width: calc(100% - 2rem);
   aspect-ratio: 7 / 1;
   margin: 0.75rem 1rem 0.9rem;
-}
-.channels-art--hero {
-  background-image: url('/assets/images/channels/mcretro_channels_hero_dark_cropped_6x1.jxl');
 }
 .channels-art--nix {
   background-image: url('/assets/images/channels/mcretro_nix_dark_cropped_7x1.jxl');
@@ -2091,10 +2083,6 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   background-image: url('/assets/images/channels/mcretro_chirp_dark_cropped_7x1.jxl');
 }
 @media (max-width: 600px) {
-  .channels-art--hero {
-    aspect-ratio: auto;
-    height: clamp(76px, 25vw, 108px);
-  }
   .about-panel > .channels-art--section {
     aspect-ratio: auto;
     height: clamp(70px, 24vw, 95px);

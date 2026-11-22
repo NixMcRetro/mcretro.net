@@ -14,91 +14,6 @@ title: Goodies
 Welcome to the Goodies page! This is where I keep all sorts of bits and pieces that don't quite fit anywhere else. There's a mix of old favourites, restored pages and experiments I've tinkered with over the years.
 
 <details class="about-panel panel--teal" markdown="1">
-<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">✅</span> Ready to Visit Projects</summary>
-
-**🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**<br>
-A browser-based music maker originally created for SuperNick. Make some noise with synthesizers, keyboards, rhythms and songs. Bleep, bloop, bleep!
-
-**☎️ [Dial-Up Networking](/homepages/modem/)**<br>
-Hear the old-school modem connection, then dial into either a randomly selected McRetro article or one of the restored historical homepages.
-
-**🌐 [GeoCities Rebuild Project](/homepages/geocities/)**<br>
-The story of my GeoCities archive rebuild, with original artwork, dial-up adventures, links to the worklogs, and a gateway to my private local archive.
-
-**🐐 [GOATPAD 1337](/homepages/goatpad/)**<br>
-A 64-pad browser soundboard and sequencer from 2024, with drums, effects, bass, GOAT SOUL, and melodies. A strange little musical time capsule!
-
-**🎵 [Lunchbeat](/homepages/lunchbeat/)**<br>
-An original 1-bit groovebox running in your web browser, with an electronics project behind it. Sometimes the simplest sounds are the most entertaining!
-
-**🎳 [The Cyber Lanes](/homepages/bowling/)**<br>
-An old-school bowling league homepage with scores, averages and a leaderboard. Check out those lanes!
-
-**🎮 [VRAMpage MD](/homepages/vrampage-md/)**<br>
-Bend the bits of a Sega Mega Drive right in your browser! Load your own game ROM, experiment with video memory, work RAM and sound, and see how wonderfully strange things can get.
-
-</details>
-
-<details class="about-panel panel--teal" markdown="1">
-<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🗄️</span> File Server</summary>
-
-Some of the best bits of computer history aren't articles or photographs. They're the old drivers, firmware, utilities, and odd little files that went with the hardware. I'm putting together a separate, browsable archive so they don't have to hide among the blog posts. The virtual filing cabinet is taking shape, but the doors aren't open just yet!
-
-<p class="goodies-archive-actions">
-  <button class="goodies-archive-button goodies-archive-button--pending" type="button" disabled>🗄️ File Server Coming Soon</button>
-</p>
-
-</details>
-
-<details class="about-panel panel--teal" markdown="1">
-<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">📸</span> Photo Gallery</summary>
-
-I've photographed a ridiculous amount of retro computing gear over the years, from game consoles and modems to obscure accessories, repair projects, and the occasional bit of nature. Now those thousands of photos have a home of their own. Browse the collections, find that odd piece of hardware, and zoom in on all the little details. Apparently I never knew when to put the camera down! :)
-
-<p class="goodies-archive-actions">
-  <a class="goodies-archive-button" href="https://photos.mcretro.net/index.html">📸 Browse the Photo Gallery</a>
-</p>
-
-</details>
-
-<details class="about-panel panel--teal" markdown="1">
-<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🗃️</span> Historical Homepages</summary>
-
-The original HTML and artwork from these restored sites have made it back onto McRetro.net. No modern makeover here; these are the old-style pages as they were, with just the paths fixed where necessary.
-
-**🐟 [Fish Tank World](/homepages/fishtankworld/)**<br>
-The original aquarium homepage, with fish biographies, tank readings, animated artwork, and a restored [photo gallery](/homepages/fishtankworld/gallery/). Splash!
-
-**🐍 [Frank the Snake](/homepages/frank/)**<br>
-Frank's own homepage, snake facts and an original [photo gallery](/homepages/frank/gallery.html). A big snake with a big heart!
-
-**🐶 [Pepper the Dog Blog](/homepages/pepper/)**<br>
-Hello, I am Pepper the Dog! The original sausage dog homepage, complete with photographs, adventures and entries dating from 2016 to 2018. Woof!
-
-**🦔 [Sonic the Hedgehog Homepage](/homepages/sonic/)**<br>
-One of my earliest websites, dedicated to the Sonic the Hedgehog Saturday morning cartoon. Character biographies, original images, MIDI files and even a downloadable theme song. The guestbook link is a historical placeholder, and modern browsers may block automatic music playback.
-
-**🪐 [Space / Planets Webpage](/homepages/space/)**<br>
-Travel back to 1996 with a page full of planets, animated graphics and some wonderfully brief astronomical descriptions.
-
-**🌳 [Super Nature World](/homepages/nature/)**<br>
-An old-fashioned nature homepage featuring a frog, a lizard and a few original placeholder pictures. Apparently not a place for fish or birds!
-
-</details>
-
-<details class="about-panel panel--teal" markdown="1">
-<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🥔</span> Super Secret Recipes</summary>
-
-A few old favourites from the kitchen. I've finally dug up some of the original recipes!
-
-- [Garlic Roast Potatoes](/recipes/garlic-roast-potatoes/)
-- [Mars Bar Slice](/recipes/mars-bar-slice/)
-- [Quick Mix Chocolate Cake](/recipes/quick-mix-chocolate-cake/)
-- [Soft Pretzels](https://sallysbakingaddiction.com/easy-homemade-soft-pretzels/)
-
-</details>
-
-<details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🔗</span> Cool Links</summary>
 
 Below are some of the coolest links I've amassed over the years. Who knows, there might be something of use for you here!
@@ -135,5 +50,90 @@ Drivers for old computer hardware.
 
 🎮 **[XBOX Archive](https://web.archive.org/web/20160219035811/http://xboxarchive.co.uk/)**<br>
 A wiki for true XBOX enthusiasts who wish to collect valuable information about the XBOX system from Microsoft.
+
+</details>
+
+<details class="about-panel panel--teal" markdown="1">
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🗄️</span> File Server</summary>
+
+Some of the best bits of computer history aren't articles or photographs. They're the old drivers, firmware, utilities, and odd little files that went with the hardware. I'm putting together a separate, browsable archive so they don't have to hide among the blog posts. The virtual filing cabinet is taking shape, but the doors aren't open just yet!
+
+<p class="goodies-archive-actions">
+  <button class="goodies-archive-button goodies-archive-button--pending" type="button" disabled>🗄️ File Server Coming Soon</button>
+</p>
+
+</details>
+
+<details class="about-panel panel--teal" markdown="1">
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🗃️</span> Historical Homepages</summary>
+
+The original HTML and artwork from these restored sites have made it back onto McRetro.net. No modern makeover here; these are the old-style pages as they were, with just the paths fixed where necessary.
+
+**🐟 [Fish Tank World](/homepages/fishtankworld/)**<br>
+The original aquarium homepage, with fish biographies, tank readings, animated artwork, and a restored [photo gallery](/homepages/fishtankworld/gallery/). Splash!
+
+**🐍 [Frank the Snake](/homepages/frank/)**<br>
+Frank's own homepage, snake facts and an original [photo gallery](/homepages/frank/gallery.html). A big snake with a big heart!
+
+**🐶 [Pepper the Dog Blog](/homepages/pepper/)**<br>
+Hello, I am Pepper the Dog! The original sausage dog homepage, complete with photographs, adventures and entries dating from 2016 to 2018. Woof!
+
+**🦔 [Sonic the Hedgehog Homepage](/homepages/sonic/)**<br>
+One of my earliest websites, dedicated to the Sonic the Hedgehog Saturday morning cartoon. Character biographies, original images, MIDI files and even a downloadable theme song. The guestbook link is a historical placeholder, and modern browsers may block automatic music playback.
+
+**🪐 [Space / Planets Webpage](/homepages/space/)**<br>
+Travel back to 1996 with a page full of planets, animated graphics and some wonderfully brief astronomical descriptions.
+
+**🌳 [Super Nature World](/homepages/nature/)**<br>
+An old-fashioned nature homepage featuring a frog, a lizard and a few original placeholder pictures. Apparently not a place for fish or birds!
+
+</details>
+
+<details class="about-panel panel--teal" markdown="1">
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">📸</span> Photo Gallery</summary>
+
+I've photographed a ridiculous amount of retro computing gear over the years, from game consoles and modems to obscure accessories, repair projects, and the occasional bit of nature. Now those thousands of photos have a home of their own. Browse the collections, find that odd piece of hardware, and zoom in on all the little details. Apparently I never knew when to put the camera down! :)
+
+<p class="goodies-archive-actions">
+  <a class="goodies-archive-button" href="https://photos.mcretro.net/index.html">📸 Browse the Photo Gallery</a>
+</p>
+
+</details>
+
+<details class="about-panel panel--teal" markdown="1">
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">✅</span> Projects</summary>
+
+**🎹 [BleepGarden Music Maker 2000](/homepages/op-1/)**<br>
+A browser-based music maker originally created for SuperNick. Make some noise with synthesizers, keyboards, rhythms and songs. Bleep, bloop, bleep!
+
+**☎️ [Dial-Up Networking](/homepages/modem/)**<br>
+Hear the old-school modem connection, then dial into either a randomly selected McRetro article or one of the restored historical homepages.
+
+**🌐 [GeoCities Rebuild Project](/homepages/geocities/)**<br>
+The story of my GeoCities archive rebuild, with original artwork, dial-up adventures, links to the worklogs, and a gateway to my private local archive.
+
+**🐐 [GOATPAD 1337](/homepages/goatpad/)**<br>
+A 64-pad browser soundboard and sequencer from 2024, with drums, effects, bass, GOAT SOUL, and melodies. A strange little musical time capsule!
+
+**🎵 [Lunchbeat](/homepages/lunchbeat/)**<br>
+An original 1-bit groovebox running in your web browser, with an electronics project behind it. Sometimes the simplest sounds are the most entertaining!
+
+**🎳 [The Cyber Lanes](/homepages/bowling/)**<br>
+An old-school bowling league homepage with scores, averages and a leaderboard. Check out those lanes!
+
+**🎮 [VRAMpage MD](/homepages/vrampage-md/)**<br>
+Bend the bits of a Sega Mega Drive right in your browser! Load your own game ROM, experiment with video memory, work RAM and sound, and see how wonderfully strange things can get.
+
+</details>
+
+<details class="about-panel panel--teal" markdown="1">
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🥔</span> Super Secret Recipes</summary>
+
+A few old favourites from the kitchen. I've finally dug up some of the original recipes!
+
+- [Garlic Roast Potatoes](/recipes/garlic-roast-potatoes/)
+- [Mars Bar Slice](/recipes/mars-bar-slice/)
+- [Quick Mix Chocolate Cake](/recipes/quick-mix-chocolate-cake/)
+- [Soft Pretzels](https://sallysbakingaddiction.com/easy-homemade-soft-pretzels/)
 
 </details>

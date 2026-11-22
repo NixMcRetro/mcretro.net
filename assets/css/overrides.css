@@ -2054,7 +2054,8 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   box-sizing: border-box;
   background-color: #242B38;
   background-repeat: no-repeat;
-  background-size: cover;
+  /* A gentle 18% focal zoom lifts the artwork without changing the JXL files. */
+  background-size: 118% auto;
   background-position: center;
   border: 1px solid transparent;
   border-radius: 10px;
@@ -2083,6 +2084,10 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   background-image: url('/assets/images/channels/mcretro_chirp_dark_cropped_7x1.jxl');
 }
 @media (max-width: 600px) {
+  /* Mobile banners are taller: scale by height to prevent empty bands. */
+  .channels-art {
+    background-size: auto 118%;
+  }
   .about-panel > .channels-art--section {
     aspect-ratio: auto;
     height: clamp(70px, 24vw, 95px);

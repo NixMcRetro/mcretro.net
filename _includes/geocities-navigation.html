@@ -1,0 +1,31 @@
+{% assign gc_section = include.section | default: '' %}
+{% assign gc_entry = include.entry | default: '' %}
+{% case gc_section %}
+  {% when 'neighborhoods' %}{% assign gc_title = 'Neighbourhoods' %}
+  {% when 'news' %}{% assign gc_title = 'Project News' %}
+  {% when 'cool' %}{% assign gc_title = 'Cool Pages' %}
+  {% when 'artwork' %}{% assign gc_title = 'Artwork Gallery' %}
+{% endcase %}
+<nav class="archive-breadcrumbs gc-breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
+  <a href="/goodies/">Goodies</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
+  {% if gc_section == '' %}
+    <span aria-current="page">GeoCities Rebuild</span>
+  {% else %}
+    <a href="/homepages/geocities/">GeoCities Rebuild</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
+    {% if gc_entry != '' %}
+      <a href="/homepages/geocities/news/">Project News</a><span class="archive-breadcrumb-sep" aria-hidden="true">›</span>
+      <span aria-current="page">{{ gc_entry }}</span>
+    {% else %}
+      <span aria-current="page">{{ gc_title }}</span>
+    {% endif %}
+  {% endif %}
+</nav>
+{% if gc_section != '' and gc_entry == '' %}
+<nav class="gc-section-nav" aria-label="Explore GeoCities">
+  <a href="/homepages/geocities/neighborhoods/"{% if gc_section == 'neighborhoods' %} aria-current="page"{% endif %}>Neighbourhoods</a>
+  <a href="/homepages/geocities/news/"{% if gc_section == 'news' %} aria-current="page"{% endif %}>Project News</a>
+  <a href="/homepages/geocities/cool/"{% if gc_section == 'cool' %} aria-current="page"{% endif %}>Cool Pages</a>
+  <a href="/homepages/geocities/artwork/"{% if gc_section == 'artwork' %} aria-current="page"{% endif %}>Artwork Gallery</a>
+</nav>
+{% endif %}

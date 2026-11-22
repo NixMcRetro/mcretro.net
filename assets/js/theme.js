@@ -87,11 +87,55 @@
       var destination = new URL(anchor.href, window.location.href);
       if (destination.origin !== window.location.origin ||
           destination.pathname === window.location.pathname) return;
+      if (landing && window.location.pathname === '/chirp/') clearBirdReturn();
       window.sessionStorage.setItem(navigationThemeKey, JSON.stringify({
         path: destination.pathname, theme: theme, at: Date.now()
       }));
     } catch (error) { /* Navigation remains functional if storage is blocked. */ }
   }
+
+  // A page without a Channel Chirp counterpart temporarily visits the Nest.
+  // Keep its exact path, search and fragment in this browser tab so cycling
+  // back can return to the same McRetro page instead of the homepage.
+  var birdReturnKey = 'mcretro-bird-return-url';
+  function clearBirdReturn() {
+    try { window.sessionStorage.removeItem(birdReturnKey); }
+    catch (error) { /* Theme switching must still work without storage. */ }
+  }
+  function rememberBirdReturn() {
+    var path = window.location.pathname || '/';
+    if (path.charAt(0) !== '/' || path.slice(0, 2) === '//' ||
+        /^\/chirp(?:\/|$)/.test(path)) return;
+    try {
+      window.sessionStorage.setItem(birdReturnKey, JSON.stringify({
+        url: path + (window.location.search || '') + (window.location.hash || ''),
+        at: Date.now()
+      }));
+    } catch (error) { /* With storage blocked, keep the normal Nest fallback. */ }
+  }
+  function consumeBirdReturn() {
+    var raw = null;
+    try {
+      raw = window.sessionStorage.getItem(birdReturnKey);
+      window.sessionStorage.removeItem(birdReturnKey);
+    } catch (error) { return null; }
+    if (!raw) return null;
+    try {
+      var value = JSON.parse(raw);
+      if (!value || typeof value.url !== 'string' ||
+          value.url.charAt(0) !== '/' || value.url.slice(0, 2) === '//') return null;
+      var age = Date.now() - value.at;
+      if (!Number.isFinite(age) || age < 0 || age > 1800000) return null;
+      var target = new URL(value.url, window.location.origin);
+      if (target.origin !== window.location.origin ||
+          /^\/chirp(?:\/|$)/.test(target.pathname)) return null;
+      return target.pathname + target.search + target.hash;
+    } catch (error) { return null; }
+  }
+
+  // The return ticket only belongs to the Nest homepage reached through the
+  // fallback theme toggle. Visiting another page invalidates a stale ticket.
+  if (window.location.pathname !== '/chirp/') clearBirdReturn();
 
   function savedTheme() {
     try {
@@ -169,16 +213,21 @@
     if (!isUserChange || !window.location) return null;
     var path = window.location.pathname || '';
     if (theme === 'bird') {
+      clearBirdReturn();
       // Navigate to the matching Channel Chirp section when available.
       if (path === '/' || path === '/index.html') return '/chirp/';
       if (/^\/about\/?$/.test(path)) return '/chirp/about/';
       if (/^\/blog(?:\/page\d+)?\/?$/.test(path)) return '/chirp/adventures/';
       if (/^\/goodies\/?$/.test(path)) return '/chirp/soundborb/';
       // Other McRetro pages still enter the Nest; conure articles can stay put.
-      if (unrelatedPosts || (!landing && !conureArticle)) return '/chirp/';
+      if (unrelatedPosts || (!landing && !conureArticle)) {
+        rememberBirdReturn();
+        return '/chirp/';
+      }
     }
     if (theme !== 'bird' && landing) {
-      if (/^\/chirp\/?$/.test(path)) return '/';
+      if (/^\/chirp\/?$/.test(path)) return consumeBirdReturn() || '/';
+      clearBirdReturn();
       if (/^\/chirp\/about\/?$/.test(path)) return '/about/';
       if (/^\/chirp\/soundborb\/?$/.test(path)) return '/goodies/';
       // Adventures (including pagination) returns to the main Blog.

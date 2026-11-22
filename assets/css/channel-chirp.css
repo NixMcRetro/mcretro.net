@@ -3,6 +3,9 @@
  * Bird content lives in the shared McRetro layout, with readable article
  * lists, whitespace and separators instead of oversized cards.
  */
+/* White reading surfaces use true black type. Keep the charcoal canvas,
+ * white-on-dark headings, sidebar, and footer text high-contrast. */
+:root[data-theme="bird"] { --text: #000000; }
 :root[data-theme="bird"] .site-header { background: #424242; }
 :root[data-theme="bird"] .site-logo { color: #FFFFFF; }
 :root[data-theme="bird"] .main-nav { border-color: var(--border); }
@@ -118,7 +121,7 @@
   border-radius: 0;
 }
 .nest-search input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-.nest-search #nest-search-status { margin: .4rem 0 0; color: var(--muted); font-size: .8rem; }
+.nest-search #nest-search-status { margin: .4rem 0 0; color: #000000; font-size: .8rem; }
 .nest-year-title {
   display: flex;
   flex-wrap: wrap;
@@ -172,7 +175,7 @@
 .nest-flock-list strong,
 .nest-flock-list span { display: block; }
 .nest-flock-list strong { color: var(--link); font: 700 .95rem Montserrat, sans-serif; }
-.nest-flock-list span { color: var(--muted); font-size: .85rem; }
+.nest-flock-list span { color: #000000; font-size: .85rem; }
 .nest-soundborb h2 { font-size: 1.18rem; }
 
 /* Sidebar widgets follow the original site's simple divider style. */
@@ -260,7 +263,7 @@
   box-shadow: 0 1px 3px rgba(0,0,0,.18);
   padding: clamp(1rem, 2.5vw, 1.6rem);
   margin-bottom: 1.25rem;
-  color: #424242;
+  color: #000000;
 }
 :root[data-theme="bird"] .nest-hero { padding-top: 1.55rem; }
 :root[data-theme="bird"] .nest-intro {
@@ -273,14 +276,14 @@
   margin-bottom: 1.5rem;
 }
 :root[data-theme="bird"] .nest-year-title {
-  color: #212121;
+  color: #000000;
   background: #29A518;
   border: 0;
   border-radius: 2px;
   padding: .65rem .85rem;
   margin: 1.1rem 0 .7rem;
 }
-:root[data-theme="bird"] .nest-year-title small { color: #212121; }
+:root[data-theme="bird"] .nest-year-title small { color: #000000; }
 :root[data-theme="bird"] .nest-post-card {
   background: #FFFFFF;
   border: 0;
@@ -303,7 +306,7 @@
 }
 :root[data-theme="bird"] .sidebar { border-top: 0; padding-top: 0; }
 :root[data-theme="bird"] .sidebar-mode-bird .nest-widget .widgettitle {
-  color: #212121;
+  color: #000000;
   padding-bottom: .6rem;
   border-bottom: 2px solid #29A518;
 }
@@ -323,7 +326,7 @@
 :root[data-theme="bird"] .chirp-page-intro,
 :root[data-theme="bird"] .chirp-profile {
   background: #FFFFFF;
-  color: #424242;
+  color: #000000;
   border: 0;
   border-left: 4px solid #29A518;
   border-radius: 2px;
@@ -335,7 +338,7 @@
 :root[data-theme="bird"] .chirp-home-panel h2,
 :root[data-theme="bird"] .chirp-page-intro h1,
 :root[data-theme="bird"] .chirp-profile h2 {
-  color: #212121;
+  color: #000000;
   margin: 0 0 .85rem;
 }
 :root[data-theme="bird"] .chirp-home-panel h1 {
@@ -473,7 +476,7 @@
 }
 :root[data-theme="bird"] .nest-post-card h3 a,
 :root[data-theme="bird"] .nest-post-card h3 a:visited {
-  color: #212121;
+  color: #000000;
   text-decoration: none;
 }
 :root[data-theme="bird"] .nest-post-card h3 a:hover,
@@ -483,7 +486,7 @@
 }
 :root[data-theme="bird"] .nest-post-card time {
   display: block;
-  color: #727272;
+  color: #000000;
   font-size: .86rem;
   letter-spacing: .04em;
 }
@@ -499,7 +502,7 @@
   text-align: left;
   max-width: 55rem;
   margin: .6rem auto .75rem;
-  color: #424242;
+  color: #000000;
   line-height: 1.7;
 }
 :root[data-theme="bird"] .nest-post-card .nest-read-link {
@@ -523,7 +526,7 @@
   line-height: 1.25;
   margin-bottom: .2rem;
   text-align: center;
-  color: #212121;
+  color: #000000;
 }
 :root[data-theme="bird"][data-chirp-article="true"] .post-full .post-meta {
   text-align: center;
@@ -535,7 +538,7 @@
   display: none;
 }
 :root[data-theme="bird"][data-chirp-article="true"] .post-full .post-date {
-  color: #626262;
+  color: #000000;
   display: block;
   font-size: 1rem;
   letter-spacing: .04em;
@@ -554,7 +557,7 @@
   box-sizing: border-box;
   width: 100%;
   padding: .65rem .5rem;
-  color: #424242;
+  color: #000000;
   background: #FFFFFF;
   border: 1px solid #DDDDDD;
   font: .83rem Montserrat, sans-serif;
@@ -576,7 +579,7 @@
 :root[data-theme="bird"] .chirp-return { padding: .2rem 0; }
 :root[data-theme="bird"] .chirp-return a { color: #FFFFFF; }
 :root[data-theme="bird"] .chirp-return a:hover { color: #E7F5E4; }
-:root[data-theme="bird"] .nest-post-total { color: #727272; }
+:root[data-theme="bird"] .nest-post-total { color: #000000; }
 
 @media screen and (max-width: 750px) {
   :root[data-theme="bird"] .main-nav {
@@ -668,7 +671,7 @@
 }
 :root[data-theme="bird"] .sidebar-mode-bird .inline-search-form input[type="text"] {
   background: #FFFFFF;
-  color: #212121;
+  color: #000000;
   border: 0;
   width: 100%;
   min-width: 0;
@@ -706,7 +709,7 @@
   text-align-last: center;
 }
 :root[data-theme="bird"] .sidebar-mode-bird .archive-calendar-month.is-empty {
-  color: #555555;
+  color: #000000;
 }
 :root[data-theme="bird"] .sidebar-mode-bird .recent-posts-list li a {
   color: #BDF7B0;
@@ -788,7 +791,7 @@
  * month-grouped cards. Keep Bird's white reading surfaces and green accent. */
 :root[data-theme="bird"] .chirp-blog-list .post-entry {
   background: #FFFFFF;
-  color: #424242;
+  color: #000000;
   border: 0;
   border-left: 4px solid #29A518;
   border-radius: 2px;
@@ -802,20 +805,20 @@
   padding-bottom: clamp(1rem, 2.5vw, 1.8rem);
 }
 :root[data-theme="bird"] .chirp-blog-list .post-title {
-  color: #212121;
+  color: #000000;
   margin: 0 0 .25rem;
   line-height: 1.3;
 }
 :root[data-theme="bird"] .chirp-blog-list .post-title a,
 :root[data-theme="bird"] .chirp-blog-list .post-title a:visited {
-  color: #212121;
+  color: #000000;
 }
 :root[data-theme="bird"] .chirp-blog-list .post-title a:hover,
 :root[data-theme="bird"] .chirp-blog-list .post-title a:focus-visible {
   color: #18770C;
 }
 :root[data-theme="bird"] .chirp-roll-heading-date {
-  color: #646464;
+  color: #000000;
   font: 500 .87rem/1.45 Montserrat, sans-serif;
 }
 :root[data-theme="bird"] .chirp-roll-heading-line {
@@ -827,7 +830,7 @@
 :root[data-theme="bird"] .chirp-blog-list .post-meta,
 :root[data-theme="bird"] .chirp-blog-list .meta-sep,
 :root[data-theme="bird"] .chirp-blog-list .post-excerpt {
-  color: #424242;
+  color: #000000;
 }
 :root[data-theme="bird"] .chirp-blog-list .post-content-preview {
   min-width: 0;
@@ -914,7 +917,7 @@
 }
 :root[data-theme="bird"] .chirp-archive-month .archive-blog-list .post-entry {
   background: #FFFFFF;
-  color: #424242;
+  color: #000000;
   border: 0;
   border-left: 4px solid #29A518;
   border-radius: 2px;
@@ -926,7 +929,7 @@
 :root[data-theme="bird"] .chirp-archive-month .archive-blog-list .post-title a:visited,
 :root[data-theme="bird"] .chirp-archive-month .archive-card-meta,
 :root[data-theme="bird"] .chirp-archive-month .archive-blog-list .post-excerpt {
-  color: #424242;
+  color: #000000;
 }
 :root[data-theme="bird"] .chirp-archive-month .archive-blog-list .post-title a:hover,
 :root[data-theme="bird"] .chirp-archive-month .archive-blog-list .post-title a:focus-visible,
@@ -971,7 +974,7 @@
   box-sizing: border-box;
   padding: 0 .85rem;
   background: #FFFFFF;
-  color: #212121;
+  color: #000000;
   border: 2px solid #9ABB94;
   border-radius: 8px;
 }
@@ -984,7 +987,7 @@
   display: block;
   width: 22px;
   height: 22px;
-  color: #444444;
+  color: #000000;
   flex: 0 0 auto;
 }
 :root[data-theme="bird"] .chirp-search-field input[type="search"] {
@@ -996,11 +999,11 @@
   border: 0;
   box-shadow: none;
   outline: none;
-  color: #212121;
+  color: #000000;
   font: 600 1rem/1.35 Montserrat, sans-serif;
 }
 :root[data-theme="bird"] .chirp-search-field input[type="search"]::placeholder {
-  color: #666666;
+  color: #000000;
   opacity: 1;
 }
 :root[data-theme="bird"] .chirp-search-clear {
@@ -1008,7 +1011,7 @@
   padding: .45rem .25rem;
   background: transparent;
   border: 0;
-  color: #333333;
+  color: #000000;
   font: 500 .8rem Montserrat, sans-serif;
   cursor: pointer;
 }
@@ -1041,7 +1044,7 @@
   background: #F7FBF5;
   border-color: #B8D7B1;
   border-left: 3px solid #29A518;
-  color: #212121;
+  color: #000000;
 }
 :root[data-theme="bird"] .chirp-search-result:focus-within {
   outline: 2px solid #BDF7B0;
@@ -1078,7 +1081,7 @@
 }
 :root[data-theme="bird"] .chirp-search-result:hover .chirp-search-result-date,
 :root[data-theme="bird"] .chirp-search-result:focus-within .chirp-search-result-date {
-  color: #555555;
+  color: #000000;
 }
 :root[data-theme="bird"] .chirp-search-result mark {
   background: #FFF176;
@@ -1159,7 +1162,7 @@
 }
 :root[data-theme="bird"] .chirp-flock-help {
   background: #FFFFFF;
-  color: #424242;
+  color: #000000;
   border: 0;
   border-left: 4px solid #29A518;
   border-radius: 2px;
@@ -1168,7 +1171,7 @@
   margin-bottom: 1.35rem;
 }
 :root[data-theme="bird"] .chirp-flock-help h2 {
-  color: #212121;
+  color: #000000;
   margin: 0 0 .65rem;
   font-size: 1.25rem;
 }
@@ -1194,18 +1197,18 @@
 :root[data-theme="bird"] .chirp-flock-panel .chirp-flock-media figcaption {
   max-width: 36rem;
   margin: .6rem auto 0;
-  color: #555555;
+  color: #000000;
   font: italic .85rem/1.55 Merriweather, Georgia, serif;
   text-align: center;
 }
-:root[data-theme="bird"] .chirp-flock-panel h3 { clear: both; margin: 1.6rem 0 .75rem; color: #212121; }
-:root[data-theme="bird"] .chirp-flock-panel h4 { margin: 1.25rem 0 .6rem; color: #333333; }
+:root[data-theme="bird"] .chirp-flock-panel h3 { clear: both; margin: 1.6rem 0 .75rem; color: #000000; }
+:root[data-theme="bird"] .chirp-flock-panel h4 { margin: 1.25rem 0 .6rem; color: #000000; }
 :root[data-theme="bird"] .chirp-flock-panel .chirp-flock-more {
   border-top: 1px solid #CFE7CA;
   padding-top: 1rem;
   margin-top: 1.35rem;
 }
-:root[data-theme="bird"] .chirp-flock-historical { color: #555555; }
+:root[data-theme="bird"] .chirp-flock-historical { color: #000000; }
 @media (max-width: 700px) {
   :root[data-theme="bird"] .chirp-flock-panel .chirp-flock-media {
     float: none;

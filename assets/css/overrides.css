@@ -2058,6 +2058,22 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   object-position: center;
 }
 
+/* Channels: display the original 100 x 100 animated TV GIF at the same
+   1.5x scale as the Goodies file-copy animation, without a frame or caption. */
+.channels-tv-art {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  margin: 1.25rem auto 1.5rem;
+}
+.channels-tv-art img {
+  display: block;
+  width: 150px;
+  max-width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
 /* Channels-only illustrated banners: reuse the existing dark JXL artwork in
    Light, Dark, and Bird modes. The modest card framing is intentionally local to
    these four channel illustrations and does not change the site's theme palettes. */

@@ -94,18 +94,21 @@ const panelSections = [...source.matchAll(/<details class="about-panel panel--te
   .map(match => match[1]);
 const panelHeading = panel => panel.match(/<\/span>\s*([^<]+)<\/summary>/)?.[1];
 const expectedSections = [
-  'Ready to Visit Projects', 'File Server', 'Photo Gallery',
-  'Historical Homepages', 'Super Secret Recipes', 'Cool Links'
+  'Cool Links', 'File Server', 'Historical Homepages',
+  'Photo Gallery', 'Projects', 'Super Secret Recipes'
 ];
+const sectionCollator = new Intl.Collator('en', {sensitivity: 'base'});
+assert.deepEqual(expectedSections, [...expectedSections].sort(sectionCollator.compare),
+  'Top-level Goodies accordion headings must also be alphabetised');
 assert.deepEqual(panelSections.map(panelHeading), expectedSections,
-  'Archives are independent accordions without changing the original group sequence');
-assert.doesNotMatch(panelSections[0], /\[File Server\]|\[Photo Gallery\]/,
+  'Goodies sections are independent accordions sorted alphabetically');
+assert.doesNotMatch(panelSections[4], /\[File Server\]|\[Photo Gallery\]/,
   'Files and photos must not appear among interactive projects');
 assert.match(panelSections[1], /<button class="goodies-archive-button goodies-archive-button--pending" type="button" disabled>/,
   'File Server has a genuinely disabled Coming Soon button until launched');
 assert.doesNotMatch(panelSections[1], /href="https:\/\/files\.mcretro\.net/,
   'Do not advertise an unavailable server as a working destination');
-assert.match(panelSections[2], /<a class="goodies-archive-button" href="https:\/\/photos\.mcretro\.net\/index\.html">/,
+assert.match(panelSections[3], /<a class="goodies-archive-button" href="https:\/\/photos\.mcretro\.net\/index\.html">/,
   'Photo Gallery has a styled, functional external browse link');
 assert.ok(anchors.some(link =>
   link.href === 'https://photos.mcretro.net/index.html' &&
@@ -118,12 +121,12 @@ const entryNames = panel => panel.split('\n')
   .map(line => line.match(/\[([^\]]+)\]\(/)?.[1])
   .filter(Boolean);
 const collator = new Intl.Collator('en', {sensitivity:'base'});
-for (const index of [0, 3, 5]) {
+for (const index of [0, 2, 4]) {
   const names = entryNames(panelSections[index]);
   assert.deepEqual(names, [...names].sort(collator.compare),
     expectedSections[index] + ' must list entries alphabetically by name');
 }
-const recipeNames = [...panelSections[4].matchAll(/^- \[([^\]]+)\]/gm)].map(match => match[1]);
+const recipeNames = [...panelSections[5].matchAll(/^- \[([^\]]+)\]/gm)].map(match => match[1]);
 assert.deepEqual(recipeNames, [...recipeNames].sort(collator.compare),
   'Recipes must list items alphabetically by name');
 

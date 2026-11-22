@@ -77,7 +77,7 @@ for (const date of ['2021-09-05', '2021-09-19', '2021-10-09', '2021-10-31', '202
 
 // GeoCities editorial headings use Title Case, not sentence case.
 const home = read('index.html');
-for (const heading of ["Explore the Restored Frontend","Enter My Private GeoCities Archive","A Short History of the Rebuild","Read the Rebuild Story","A Little Piece of the Original Site"]) {
+for (const heading of ["Explore the Restored Frontend","Enter My GeoCities Archive","A Short History of the Rebuild","Read the Rebuild Story","A Little Piece of the Original Site"]) {
   assert.match(home, new RegExp('<h2\\b[^>]*>' + heading + '<\\/h2>'),
     'GeoCities project heading lost Title Case: ' + heading);
 }
@@ -172,10 +172,29 @@ assert.equal([...directory.matchAll(/<a href="http:\/\/geocities\.mcretro\.net\/
 assert.match(directory, /data-gc-action="random"/);
 assert.match(directory, /id="gc-directory-top"/);
 assert.match(directory, /href="#gc-directory-top">↑ Back to Top<\/a>/);
-assert.match(directory, /Links marked ↗ open my private/);
+assert.match(directory, /The neighbourhood and suburb links lead to my personal archive/,
+  'Explain private destination access once, without markers or code formatting');
+assert.doesNotMatch(directory, /Links marked ↗|<code>geocities\.mcretro\.net<\/code>/,
+  'Old arrow explanations and monospace hostname must not return');
+assert.doesNotMatch(directory, /title="Private archive:/,
+  'Suburb links should not repeat the private archive tooltip hundreds of times');
+assert.doesNotMatch(directory, /in my private archive<\/a>/,
+  'Neighbourhood link labels should not repeat the private disclaimer');
+assert.equal([...directory.matchAll(/Open [^<]+ in the archive<\/a>/g)].length, 41,
+  'All 41 neighbourhood archive links retain clear, concise names');
 assert.match(home, /class="gc-private-gateway"/);
 assert.match(styles, /\.gc-neighbourhood mark/);
-assert.match(styles, /\.gc-cool-pages a\[target="_blank"\]/);
+assert.match(styles, /\.gc-browser-tools \{[^}]*background: var\(--panel\)/,
+  'Directory controls use the same panel colour as the other cards');
+assert.doesNotMatch(styles, /\.gc-browser-tools \{[^}]*background: var\(--panel-subtle\)/,
+  'No mismatched grey search-panel background');
+assert.doesNotMatch(styles, /content:\s*["']\s*↗/,
+  'Do not automatically append arrows to hundreds of private archive links');
+assert.doesNotMatch(cool, /<code>geocities\.mcretro\.net<\/code>/,
+  'Cool Pages archive note should use normal text, not a code box');
+assert.match(home, /class="gc-private-gateway"/);
+assert.match(cool, /The list is public, but the archived websites aren['’]t/,
+  'A concise one-time private link note remains for direct visitors');
 assert.match(styles, /gc-directory-stats/);
 assert.match(script, /const highlightText = \(element, original, query\) =>/);
 assert.match(script, /document\.createElement\('mark'\)/);

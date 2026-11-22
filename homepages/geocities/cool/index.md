@@ -13,7 +13,7 @@ title: GeoCities Cool Pages
 
 “This page hosts the best of GeoCities,” said my original rebuild. Here's that original hand-picked collection of interesting sites, preserved as a list so I can find them again without having to remember which neighbourhood they lived in.
 
-**This list is public, but the actual archived pages are private.** The links below open my local rebuild at `geocities.mcretro.net` in a new tab and only work from a computer configured to reach it. The pages themselves have not been uploaded to McRetro.net.
+**The list is public, but the archived websites aren't.** These links are kept for my own use on my local network.
 
 <div class="gc-cool-pages">
 <p><a href="http://geocities.mcretro.net/TelevisionCity/Stage/4547/" target="_blank" rel="noopener noreferrer nofollow">The Excellent Father Ted's Unofficial Ted Webpage</a></p>

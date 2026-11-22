@@ -292,8 +292,10 @@ assert.match(simpleFooterCss, /background: #000000;/,
   'the entire Channel Chirp footer bar must be solid black');
 assert.match(simpleFooterCss, /color: #FFFFFF;/,
   'the copyright footer must remain readable against black');
-assert.match(birdLayout, /\.site-footer--chirp a:focus-visible\s*\{[^}]*text-decoration: underline;/,
-  'the year and Channel Chirp name must be underlined');
+assert.match(birdLayout, /\.site-footer--chirp a:visited\s*\{[^}]*text-decoration: none;/,
+  'the copyright link should not be underlined by default');
+assert.match(birdLayout, /\.site-footer--chirp a:hover,\s*:root\[data-chirp-landing="true"\] \.site-footer--chirp a:focus-visible\s*\{[^}]*text-decoration: underline;/,
+  'the year and Channel Chirp name should underline only on hover or keyboard focus');
 assert.match(birdLayout, /\.chirp-home-figure figcaption\.media-caption\s*\{[^}]*font: italic 400 \.875rem\/1\.5/,
   'Nest figcaption should match McRetro photo caption sizing');
 
@@ -423,7 +425,7 @@ assert.ok(birdLayout.includes('background: #F7FBF5;'), 'result hover card is dis
 assert.ok(birdLayout.includes('.chirp-search-result mark {'), 'Bird search matches are highlighted');
 assert.ok(birdLayout.includes('.chirp-search-result[hidden],'),
   'hidden search results stay hidden regardless of CSS rules');
-assert.ok(pages.search.includes('channel-chirp.css?v=20261123-uncropped-black-text'),
+assert.ok(pages.search.includes('channel-chirp.css?v=20261123-chirp-footer-hover'),
   'search loads the newest Bird search stylesheet');
 
 assert.match(pages.soundborb, /Migration in progress/);
@@ -627,9 +629,9 @@ assert.ok(birdLayout.includes('.chirp-archive-index > .archive-index-intro,'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs [aria-current="page"] {'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs a {'));
 assert.ok(birdLayout.includes('color: #BDF7B0;'));
-assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261123-uncropped-black-text"'),
+assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-footer-hover"'),
   'Bird archive loads fresh stylesheet to avoid a stale dark-on-charcoal heading');
-assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261123-uncropped-black-text"'),
+assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-footer-hover"'),
   'Shared template loads the same current Bird stylesheet');
 
 const birdByMonth = new Map();
@@ -723,7 +725,7 @@ assert.ok(birdLayout.includes('.chirp-archive-month .archive-blog-list .post-ent
 for (const month of birdByMonth.keys()) {
   const [year, number] = month.split('-');
   assert.ok(read('chirp/archive/' + year + '/' + number + '/index.html')
-    .includes('href="/assets/css/channel-chirp.css?v=20261123-uncropped-black-text"'),
+    .includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-footer-hover"'),
     'all Bird month pages receive the updated stylesheet: ' + month);
 }
 assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive')).sort(),

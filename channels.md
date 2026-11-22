@@ -5,6 +5,10 @@ title: Channels
 
 ## Channels
 
+<figure class="channels-tv-art">
+  <img src="/assets/images/channels/tv006.gif" width="100" height="100" alt="Animated vintage television with rabbit-ear antennae and flickering static">
+</figure>
+
 What started as a YouTube channel about retro computers back in 2012 somehow grew into videos about gaming, wildlife, parrots, and whatever else caught my attention. There was never really a grand plan. I just liked filming things!
 
 These channels have become something of a video scrapbook, complete with questionable camera work, plenty of rambling, and the occasional useful bit of footage. I'm gradually bringing the old videos and their stories together here on McRetro.net. Have a look around! :)

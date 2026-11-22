@@ -15,7 +15,7 @@ Ahhh yes, the About page. A staple of every gloriously overengineered homepage. 
 Click a section below to explore the wreckage!
 
 <details class="about-panel panel--teal" markdown="1">
-<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🛠️</span> About McRetro</summary>
+<summary markdown="span"><span class="about-panel-icon" aria-hidden="true">🛠️</span> About Nix McRetro</summary>
 
 <div class="center" markdown="1">
 

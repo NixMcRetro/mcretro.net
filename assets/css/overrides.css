@@ -2099,6 +2099,23 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   image-rendering: pixelated;
 }
 
+/* Place the framed About cat and Channels TV alongside their introductions.
+   On narrow screens, retain the existing centred treatment above the text.
+   Do not change the Goodies artwork or the GIF dimensions. */
+@media screen and (min-width: 651px) {
+  .about-running-cat,
+  .channels-tv-art {
+    float: right;
+    margin: 0 0 1rem 1.5rem;
+  }
+
+  /* Keep the expandable sections below the complete introduction. */
+  .about-running-cat ~ details.about-panel:first-of-type,
+  .channels-tv-art ~ details.about-panel:first-of-type {
+    clear: right;
+  }
+}
+
 /* Channels-only illustrated banners: reuse the existing dark JXL artwork in
    Light, Dark, and Bird modes. The modest card framing is intentionally local to
    these four channel illustrations and does not change the site's theme palettes. */

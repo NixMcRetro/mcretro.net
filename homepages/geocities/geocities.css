@@ -35,7 +35,7 @@
 .gc-home-card small { color: var(--muted); font-size: .78rem; line-height: 1.5; }
 
 /* Search and expansion progressively enhance the full accessible directory. */
-.gc-browser-tools { margin: .95rem 0 1.1rem; padding: .85rem 1rem; border: 1px solid var(--border-soft); border-radius: 4px; background: var(--panel-subtle); color: var(--text); }
+.gc-browser-tools { margin: .95rem 0 1.1rem; padding: .85rem 1rem; border: 1px solid var(--border-soft); border-radius: 4px; background: var(--panel); color: var(--text); }
 .gc-browser-tools[hidden], .gc-neighbourhood[hidden] { display: none; }
 .gc-browser-tools label { display: block; margin-bottom: .5rem; font-family: Montserrat, sans-serif; font-weight: 700; }
 .gc-browser-search-row { margin: .1rem 0 .65rem; }
@@ -55,9 +55,6 @@
 .gc-directory-stats strong { font-size: 1.12em; font-variant-numeric: tabular-nums; }
 .gc-neighbourhood mark { background: #FFE389; color: #171717; box-decoration-break: clone; border-radius: 2px; padding: 0 .06em; }
 :root[data-theme="dark"] .gc-neighbourhood mark { background: #BCE9A9; color: #111A13; }
-.gc-neighbourhood a[target="_blank"][href^="http://geocities.mcretro.net/"]::after,
-.gc-cool-pages a[target="_blank"][href^="http://geocities.mcretro.net/"]::after,
-.gc-private-gateway[target="_blank"]::after { content: " ↗"; font-size: .82em; white-space: nowrap; }
 .gc-back-to-top { margin: 1.2rem 0 .8rem; text-align: right; }
 .gc-back-to-top a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 

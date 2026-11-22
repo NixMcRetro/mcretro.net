@@ -2019,7 +2019,8 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
 }
 .goodies-floppy-frame img {
   display: block;
-  width: 150px;
+  /* 2x its native 50 x 40 pixels: crisp detail without oversized framing. */
+  width: 100px;
   max-width: 100%;
   height: auto;
   image-rendering: pixelated;

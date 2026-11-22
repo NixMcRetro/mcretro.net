@@ -34,7 +34,37 @@
     } catch (error) { /* Ignore malformed or expired navigation state. */ }
     return null;
   }
+  // Browser history keeps an article's chosen view through reload and
+  // back/forward, without changing its URL or modifying global preferences.
+  var historyThemeKey = 'mcretro-conure-standard-view';
+  function readHistoryStandardTheme() {
+    if (!conureArticle) return null;
+    try {
+      var entry = window.history.state && window.history.state[historyThemeKey];
+      if (entry && entry.path === window.location.pathname &&
+          (entry.theme === 'light' || entry.theme === 'dark')) return entry.theme;
+    } catch (error) { /* History state may be unavailable. */ }
+    return null;
+  }
+  function writeHistoryStandardTheme(theme) {
+    if (!conureArticle) return;
+    try {
+      var state = window.history.state;
+      if (state !== null && typeof state !== 'object') return;
+      var next = Object.assign({}, state || {});
+      if (theme === 'light' || theme === 'dark') {
+        next[historyThemeKey] = {path: window.location.pathname, theme: theme};
+      } else {
+        delete next[historyThemeKey];
+      }
+      window.history.replaceState(next, '');
+    } catch (error) { /* The current page still works without history state. */ }
+  }
   var incomingStandardTheme = consumeNavigationTheme();
+  if (conureArticle) {
+    if (incomingStandardTheme) writeHistoryStandardTheme(incomingStandardTheme);
+    else incomingStandardTheme = readHistoryStandardTheme();
+  }
 
   function captureStandardNavigation(event) {
     if (event.defaultPrevented || event.metaKey || event.ctrlKey ||
@@ -90,6 +120,7 @@
 
   function persist(theme) {
     incomingStandardTheme = null;
+    if (conureArticle) writeHistoryStandardTheme(null);
     var previous = savedTheme();
     if (theme === 'light' || theme === 'dark') rememberStandard(theme);
     // When opening /chirp/ directly, retain the previously selected standard

@@ -12,7 +12,7 @@ layout: default
         {% else %}
         <img src="/assets/favicon/favicon-96x96.png?v=20261018b" alt="" class="author-avatar">
         {% endif %}
-        {{ page.author }}
+        {% if page.categories contains 'parrots' and page.channel_chirp != false %}Sprinkles{% else %}{{ page.author }}{% endif %}
       </span>
       <span class="meta-sep">//</span>
     {% endif %}

@@ -88,37 +88,37 @@ A few old favourites from the kitchen. I've finally dug up some of the original 
 
 Below are some of the coolest links I've amassed over the years. Who knows, there might be something of use for you here!
 
-**[ASSEMblergames.com](https://web.archive.org/web/20180202174959/https://assemblergames.com/)**<br>
+**🛠️ [ASSEMblergames.com](https://web.archive.org/web/20180202174959/https://assemblergames.com/)**<br>
 Great place to learn about rare hardware, help others and get help with repairs.
 
-**[Sega World Sydney](https://web.archive.org/web/20110721034955/http://gaming.chronomagister.com/fanums/sws/archived/segaworld/index.html)**<br>
+**🎢 [Sega World Sydney](https://web.archive.org/web/20110721034955/http://gaming.chronomagister.com/fanums/sws/archived/segaworld/index.html)**<br>
 Get Out of the House! A look back at what Sega World Sydney was all about before their demise.
 
-**[Segata Sanshiro Music Video](https://web.archive.org/web/20180202174959/https://www.youtube.com/watch?v=hhZWB_KfBLs)**<br>
+**🥋 [Segata Sanshiro Music Video](https://web.archive.org/web/20180202174959/https://www.youtube.com/watch?v=hhZWB_KfBLs)**<br>
 Chuck Norris doesn't stand a chance.
 
-**[Ship to Shore Theme Music](https://www.youtube.com/watch?v=q6tZpuQPfko)**<br>
+**🎵 [Ship to Shore Theme Music](https://www.youtube.com/watch?v=q6tZpuQPfko)**<br>
 Don't even ask about this one, very catchy tune though...
 
-**[The Cover Project](https://www.thecoverproject.net/)**<br>
+**🖼️ [The Cover Project](https://www.thecoverproject.net/)**<br>
 Lots of covers for most consoles for DVD shaped cases.
 
-**[XBOX Archive](https://web.archive.org/web/20160219035811/http://xboxarchive.co.uk/)**<br>
+**🎮 [XBOX Archive](https://web.archive.org/web/20160219035811/http://xboxarchive.co.uk/)**<br>
 A wiki for true XBOX enthusiasts who wish to collect valuable information about the XBOX system from Microsoft.
 
-**[Macintosh Garden](https://macintoshgarden.org/)**<br>
+**🍎 [Macintosh Garden](https://macintoshgarden.org/)**<br>
 Great software archive for the classic Macs of all ages.
 
-**[Pippi Longstocking Theme Song](https://www.youtube.com/watch?v=8ulG3-QJeAA)**<br>
+**🎶 [Pippi Longstocking Theme Song](https://www.youtube.com/watch?v=8ulG3-QJeAA)**<br>
 A relic of a song I once heard while playing on a Commodore 64. Relevant right?
 
-**[The Vintage Computing Files Archive](https://web.archive.org/web/20160219035811/http://themacarchive.net/)**<br>
+**💾 [The Vintage Computing Files Archive](https://web.archive.org/web/20160219035811/http://themacarchive.net/)**<br>
 The VCFA's mission was to ensure that hard-to-find files remained easy to find and accessible to everyone. (Archived copy.)
 
-**[VOGONS Vintage Driver Library](https://www.vogonsdrivers.com/)**<br>
+**💻 [VOGONS Vintage Driver Library](https://www.vogonsdrivers.com/)**<br>
 Drivers for old computer hardware.
 
-**[Peter H. S. Madsen's Animated GIF Archive](https://web.archive.org/web/20180202174959/http://madsenworld.dk/anigif/frameset.htm)**<br>
+**🎞️ [Peter H. S. Madsen's Animated GIF Archive](https://web.archive.org/web/20180202174959/http://madsenworld.dk/anigif/frameset.htm)**<br>
 What can I say, animated GIFs make me weak at the knees.
 
 </details>

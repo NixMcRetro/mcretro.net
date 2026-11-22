@@ -1118,3 +1118,95 @@
 @media (prefers-reduced-motion: reduce) {
   :root[data-theme="bird"] .chirp-search-result { transition: none; }
 }
+
+/* About The Flock only: four responsive, accessible profile selectors. */
+.chirp-flock-panel[hidden],
+.chirp-flock-help[hidden] { display: none !important; }
+:root[data-theme="bird"] .chirp-flock-intro .chirp-flock-jump {
+  margin: 1.2rem 0 0;
+  gap: .6rem;
+}
+:root[data-theme="bird"] .chirp-flock-jump button {
+  appearance: none;
+  min-height: 44px;
+  border: 0;
+  border-left: 3px solid #29A518;
+  border-radius: 2px;
+  background: #F5F5F5;
+  color: #17660D;
+  padding: .55rem .95rem;
+  font: 700 .95rem/1.4 Montserrat, sans-serif;
+  cursor: pointer;
+  transition: background-color .15s ease;
+}
+:root[data-theme="bird"] .chirp-flock-jump button:hover {
+  background: #E7F5E4;
+  text-decoration: underline;
+}
+:root[data-theme="bird"] .chirp-flock-jump button[aria-selected="true"] {
+  background: #D6EFD0;
+  border-left-color: #17660D;
+  color: #104F08;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+:root[data-theme="bird"] .chirp-flock-jump button:focus-visible {
+  outline: 3px solid #17660D;
+  outline-offset: 3px;
+}
+:root[data-theme="bird"] .chirp-flock-help {
+  background: #FFFFFF;
+  color: #424242;
+  border: 0;
+  border-left: 4px solid #29A518;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.18);
+  padding: clamp(1.15rem, 3.2vw, 2rem);
+  margin-bottom: 1.35rem;
+}
+:root[data-theme="bird"] .chirp-flock-help h2 {
+  color: #212121;
+  margin: 0 0 .65rem;
+  font-size: 1.25rem;
+}
+:root[data-theme="bird"] .chirp-flock-help p:last-child { margin-bottom: 0; }
+:root[data-theme="bird"] .chirp-flock-panel {
+  scroll-margin-top: 6rem;
+}
+:root[data-theme="bird"] .chirp-flock-panel .chirp-flock-media {
+  margin: .8rem 0 1.25rem;
+  text-align: center;
+}
+:root[data-theme="bird"] .chirp-flock-panel .chirp-flock-media img {
+  display: block;
+  width: auto;
+  max-width: min(100%, 480px);
+  height: auto;
+  margin: 0 auto;
+  border-radius: 3px;
+}
+:root[data-theme="bird"] .chirp-flock-panel .chirp-flock-media figcaption {
+  max-width: 36rem;
+  margin: .6rem auto 0;
+  color: #555555;
+  font: italic .85rem/1.55 Merriweather, Georgia, serif;
+  text-align: center;
+}
+:root[data-theme="bird"] .chirp-flock-panel h3 { margin: 1.6rem 0 .75rem; color: #212121; }
+:root[data-theme="bird"] .chirp-flock-panel h4 { margin: 1.25rem 0 .6rem; color: #333333; }
+:root[data-theme="bird"] .chirp-flock-panel .chirp-flock-more {
+  border-top: 1px solid #CFE7CA;
+  padding-top: 1rem;
+  margin-top: 1.35rem;
+}
+:root[data-theme="bird"] .chirp-flock-historical { color: #555555; }
+@media (max-width: 520px) {
+  :root[data-theme="bird"] .chirp-flock-intro .chirp-flock-jump {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  :root[data-theme="bird"] .chirp-flock-jump button { justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="bird"] .chirp-flock-jump button { transition: none; }
+}

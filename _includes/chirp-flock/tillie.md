@@ -1,0 +1,50 @@
+<figure class="chirp-flock-media">
+  <img src="/assets/images/2018/01/chirp-flock/tillie.jxl" alt="Tillie the green-cheeked conure on the left, beside Chip the cinnamon conure on the right" loading="lazy" decoding="async">
+  <figcaption>Tillie on the left, Chip on the right.</figcaption>
+</figure>
+
+**Nickname:** Sprinkles  
+**Species:** Green‑cheeked conure  
+**Sex:** Likely female (DNA inconclusive)  
+**Hatchday:** Late 2017 in Maitland, NSW, Australia    
+**Adoption Anniversary:** 1st January 2018  
+**Forever Home:** 19th March 2019  
+**Weight:** 68 grams (6th June 2018)  
+**Favourite foods:** Banana, blueberry, capsicum, carrot - plus grape, apple, and millet  
+**Personality:** Cautious with attitude  
+
+### Tillie’s Story
+
+Tillie, also known as Sprinkles, joined the family on New Year’s Day 2018, together with her brother Pudge. From the start she showed that she was a bird of delightful contradictions: cautious yet bold, quiet yet talkative, and always ready to make her feelings known.
+
+#### Early Days with Pudge
+
+Tillie’s very first bath was in the drinking water, an economy bathtub and a sign of things to come. She and Pudge quickly became a tight‑knit team. They raced across the rooftop in spirited rumbles and chases, and smacked each other down in play‑fights so wild that even the referee couldn’t stay neutral. After a long week of settling into their new home, the two siblings would snuggle down together for the night.
+
+Tillie was the second‑in‑command, the **2IC**. When Chip arrived as the new baby, she hid inside the cage to prevent conflict while Pudge met the outsider. The merge ended with quite a surprise to both her and Pudge, but Tillie handled it with her usual mix of caution and attitude.
+
+#### A Bird of Spectacular Contrasts
+
+Tillie takes off in glorious slow‑mo style, shooting for the stars, yet she’s also plummeted mid‑play and landed on an exposed set of toes, tickling them dangerously. She’s camera‑shy, ducking and weaving, but at the same time launches into her famous **Tillie Attack Formation**, charging the camera at every chance, often with Chip in tow. She’s a mover, a shaker, a camera attacker, jumping from perch to perch doing that bird thing!
+
+#### The Talker
+
+Tillie has a non‑stop attitude and loves to chat. She trains daily on her signature phrase *“Hello Chip, chirp, chirp”* - repetition seems to work! On quieter days you’ll catch a *“Hello Tillie,”* some quacks, and even kisses. She’s a natural parrot in every sense.
+
+Her trademark **car‑alarm call** is legendary. You’ll know it once you hear it. She sounds the alert when curtain rods are moved, pink water bottles appear, or an overly loud looking t‑shirt enters the room. Tillie wants to keep us safe, and it's the only way she knows how.
+
+#### Bath Time Enthusiast
+
+Tillie loves bath time, mostly. She jumps into the sink on a white dinner plate filled with water, a lean green washing machine who is straight to the point. She’s been known to jump the queue at the watering hole, cutting right in front of little Chip. Other times, she fibs about wanting a bath and only commits to half of one. As the old adage says, *"You can’t always predict a conure."*
+
+#### Loyal Companion
+
+Tillie hates being separated from Chip for long periods, it makes her quite worried. She’s used to his grumpy/sleepy behaviour and tolerates it with patience. She enjoys everyone's company, especially when Chip is nearby. Television or some background radio helps keep her mind off things.
+
+She arrived with clipped wings and was stunned to meet Chip, who could fly. The look on her face, we’ll never forget it! Since then she’s become a good flapper as her flight feathers grew back in. She now needs several exercise outings a day in their busy bird schedules.
+
+Tillie won’t hesitate to give you a peck if you hold her the wrong way or refuse to let her go, but she’ll give an adorable warning squawk first. Don’t overstay your welcome or she’ll show you what she’s really made of. She enjoys a good game of peck‑and‑run, especially when she’s feeling cheeky.
+
+Through all her quirks, the car alarms, the camera attacks, the bath‑time mischief, Tillie’s steady loyalty and fierce affection make her the emotional centre of the flock. She’s cautious, but once she trusts, she gives everything.
+
+*"I may be cautious, but I have the biggest heart."*

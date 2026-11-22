@@ -26,7 +26,11 @@ Click a section below to explore the wreckage!
 
 </div>
 
-Recently I realised that my gender identity aligns better with that of a woman. That makes me a transgender woman. I've got a lot of work to do. I still enjoy a relatively (junk-food) [vegan lifestyle](https://en.wikipedia.org/wiki/Veganism). I have two aloe vera plants that aren't dead. I believe in quality over quantity of life.
+Hello! I'm Nix, a transgender woman with a lifelong fascination for old computers, video games, and the stranger corners of the internet. Sega hardware has always been a particular weakness of mine, and I've spent far too much time taking things apart to see if I can make them work again. Sometimes I even succeed!
+
+Away from the electronics, I love animals and wildlife, especially birds, cicadas, lizards, and all the little creatures most people walk straight past. I'm also a part-time [vegan](https://en.wikipedia.org/wiki/Veganism) and a full-time junk food enthusiast. :)
+
+I've usually got more ideas than spare time, and there's always something else waiting to be tinkered with. I still believe in quality over quantity of life, even if the number of projects I've taken on might suggest otherwise!
 
 </details>
 
@@ -98,7 +102,9 @@ The place you're visiting right now. We've got a blog, historical videos, repair
 
 </div>
 
-You can find me on [Bluesky](https://bsky.app/profile/nixmcretro.bsky.social) or [Tumblr](https://tumblr.com/nixmcretro). Two perfectly good places to send a message without having to know my ICQ number!
+Got a question, spotted something I've managed to get wrong, or have a story to share? Feel free to get in touch! I'm particularly interested in hearing from people who remember the same obscure bits of computing history, or might know something about the old hardware and websites I've been documenting.
+
+You can find me on [Bluesky](https://bsky.app/profile/nixmcretro.bsky.social) or [Tumblr](https://tumblr.com/nixmcretro). Both are considerably easier than tracking down my old ICQ number, although I do miss that little "Uh-oh!" sound! :)
 
 <div class="center" markdown="1">
 

@@ -2224,3 +2224,32 @@ body[data-recipe-page="true"] .content-area > p.media-caption:has(+ p:not(.media
     margin-bottom: 1.35rem;
   }
 }
+
+/* An optional entrance to the Nest on released parrot articles only.
+   Light and Dark show the invitation; Bird already provides that experience. */
+.post-full .chirp-view-invitation {
+  margin: 0.1rem 0 1.25rem;
+}
+.post-full .chirp-view-invitation a {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid #29A518;
+  background: var(--panel);
+  color: var(--link);
+  font: 700 0.8125rem/1.5 Montserrat, "Helvetica Neue", sans-serif;
+  text-decoration: none;
+}
+.post-full .chirp-view-invitation a:hover {
+  background: var(--interactive-hover);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+.post-full .chirp-view-invitation a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+:root[data-theme="bird"] .chirp-view-invitation {
+  display: none;
+}
+

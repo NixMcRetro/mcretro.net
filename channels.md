@@ -5,8 +5,6 @@ title: Channels
 
 ## Channels
 
-<div class="channels-art channels-art--hero" role="img" aria-label="Hand-drawn illustration of a vintage computer and repair tools, gaming devices, urban wildlife, and two green-cheeked conures connected by a winding vine."></div>
-
 <details class="about-panel panel--teal" markdown="1">
 <summary markdown="span">🎸 Nix McRetro</summary>
 

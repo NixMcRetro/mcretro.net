@@ -748,24 +748,34 @@
   padding: 0;
 }
 
-/* Original Channel Chirp welcome photograph: centred beneath its heading and
- * green rule, with the historical caption directly below the image. */
+/* Crop only the Nest welcome photograph to a wider frame. The original
+ * JPEG XL file and its intrinsic dimensions stay untouched. */
 :root[data-theme="bird"] .chirp-home-figure {
   width: 100%;
   max-width: 740px;
   margin: 1.5rem auto 1.6rem;
   text-align: center;
 }
+:root[data-theme="bird"] .chirp-home-photo-crop {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
 :root[data-theme="bird"] .chirp-home-figure img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 43%;
   margin: 0 auto;
 }
-:root[data-theme="bird"] .chirp-home-figure figcaption {
-  margin: .65rem auto 0;
+:root[data-theme="bird"] .chirp-home-figure figcaption.media-caption {
+  max-width: 100%;
+  margin: .55rem auto 0;
   color: #646464;
-  font: italic .94rem/1.5 Merriweather, Georgia, serif;
+  font: italic 400 .875rem/1.5 Merriweather, Georgia, serif;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 :root[data-theme="bird"] .chirp-home-copy {
   max-width: 740px;
@@ -1210,3 +1220,13 @@
 @media (prefers-reduced-motion: reduce) {
   :root[data-theme="bird"] .chirp-flock-jump button { transition: none; }
 }
+
+/* Match the original Channel Chirp copyright-only footer on /chirp/ pages. */
+:root[data-theme="bird"] .site-footer--chirp {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+}
+:root[data-theme="bird"] .site-footer--chirp p { margin: 0; }
+:root[data-theme="bird"] .site-footer--chirp a { text-decoration: none; }
+:root[data-theme="bird"] .site-footer--chirp a:hover,
+:root[data-theme="bird"] .site-footer--chirp a:focus-visible { text-decoration: underline; }

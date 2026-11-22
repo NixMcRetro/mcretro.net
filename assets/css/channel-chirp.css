@@ -1172,9 +1172,12 @@
 :root[data-theme="bird"] .chirp-flock-help p:last-child { margin-bottom: 0; }
 :root[data-theme="bird"] .chirp-flock-panel {
   scroll-margin-top: 6rem;
+  display: flow-root; /* Keep the right-aligned photo inside the profile card. */
 }
 :root[data-theme="bird"] .chirp-flock-panel .chirp-flock-media {
-  margin: .8rem 0 1.25rem;
+  float: right;
+  width: min(44%, 350px);
+  margin: 0 0 1.25rem 1.5rem;
   text-align: center;
 }
 :root[data-theme="bird"] .chirp-flock-panel .chirp-flock-media img {
@@ -1192,7 +1195,7 @@
   font: italic .85rem/1.55 Merriweather, Georgia, serif;
   text-align: center;
 }
-:root[data-theme="bird"] .chirp-flock-panel h3 { margin: 1.6rem 0 .75rem; color: #212121; }
+:root[data-theme="bird"] .chirp-flock-panel h3 { clear: both; margin: 1.6rem 0 .75rem; color: #212121; }
 :root[data-theme="bird"] .chirp-flock-panel h4 { margin: 1.25rem 0 .6rem; color: #333333; }
 :root[data-theme="bird"] .chirp-flock-panel .chirp-flock-more {
   border-top: 1px solid #CFE7CA;
@@ -1200,6 +1203,13 @@
   margin-top: 1.35rem;
 }
 :root[data-theme="bird"] .chirp-flock-historical { color: #555555; }
+@media (max-width: 700px) {
+  :root[data-theme="bird"] .chirp-flock-panel .chirp-flock-media {
+    float: none;
+    width: auto;
+    margin: .8rem auto 1.25rem;
+  }
+}
 @media (max-width: 520px) {
   :root[data-theme="bird"] .chirp-flock-intro .chirp-flock-jump {
     display: grid;

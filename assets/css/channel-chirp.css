@@ -1185,6 +1185,13 @@
   margin: 0 auto;
   border-radius: 3px;
 }
+:root[data-theme="bird"] .chirp-flock-panel .chirp-flock-media figcaption {
+  max-width: 36rem;
+  margin: .6rem auto 0;
+  color: #555555;
+  font: italic .85rem/1.55 Merriweather, Georgia, serif;
+  text-align: center;
+}
 :root[data-theme="bird"] .chirp-flock-panel h3 { margin: 1.6rem 0 .75rem; color: #212121; }
 :root[data-theme="bird"] .chirp-flock-panel h4 { margin: 1.25rem 0 .6rem; color: #333333; }
 :root[data-theme="bird"] .chirp-flock-panel .chirp-flock-more {

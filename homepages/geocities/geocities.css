@@ -115,3 +115,38 @@ a.gc-artwork-tile:focus-visible { outline: 3px solid var(--focus); outline-offse
 .gc-browser-tool-row button:disabled, .gc-search-share button:disabled { opacity: .55; cursor: not-allowed; }
 .gc-suburb-only-label:has(input:disabled) { opacity: .6; cursor: not-allowed; }
 .gc-copy-search-status { color: var(--muted); font-size: .82rem; }
+
+
+/* Match McRetro's breadcrumb and blog heading rhythm on public GeoCities
+   pages only. The historical GIFs, directory and archive remain untouched. */
+.gc-breadcrumbs { margin-bottom: .55rem; }
+.gc-section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem .9rem;
+  margin: 0 0 .75rem;
+  font: 500 .82rem/1.5 Montserrat, "Helvetica Neue", sans-serif;
+}
+.gc-section-nav a { color: var(--link); text-decoration: none; }
+.gc-section-nav a[aria-current="page"] { color: var(--text); font-weight: 700; }
+.gc-section-nav a:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: .12em; }
+.gc-section-nav a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.content-area:has(> .gc-breadcrumbs) > .gc-art { margin: .6rem 0 .8rem; }
+.content-area:has(> .gc-breadcrumbs) > h1 {
+  font-size: 1.75rem;
+  line-height: 1.35;
+  margin: .5rem 0 .35rem;
+}
+.content-area:has(> .gc-breadcrumbs) > h2 {
+  font-size: 1.375rem;
+  line-height: 1.35;
+  margin: 1em 0 .25em;
+}
+.content-area:has(> .gc-breadcrumbs) > h3 {
+  font-size: 1.25rem;
+  line-height: 1.35;
+  margin: 1.35em 0 .25em;
+}
+.content-area:has(> .gc-breadcrumbs) > :is(h1, h2, h3) + :is(p, ul, ol) {
+  margin-top: 0;
+}

@@ -1361,7 +1361,8 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
 
   /* Replace the old saturated teal mobile menu selection with Archives blue.
      Retain the active page's bold text and the existing focus indicators. */
-  :root:not([data-theme="dark"]) .main-nav .nav-list li a.active {
+  :root:not([data-theme="dark"]) .main-nav .nav-list li a.active,
+  :root:not([data-theme="dark"]) .main-nav .nav-list li a[aria-current="page"] {
     color: var(--archive-filled-text);
     background: var(--archive-filled);
   }

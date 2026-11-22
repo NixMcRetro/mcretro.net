@@ -519,7 +519,8 @@ pre code {
   text-decoration: underline;
   text-underline-offset: 0.12em;
 }
-.main-nav a.active {
+.main-nav a.active,
+.main-nav a[aria-current="page"] {
   color: var(--text);
   font-weight: bold;
 }

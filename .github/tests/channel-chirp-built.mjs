@@ -384,7 +384,7 @@ assert.ok(birdLayout.includes('background: #F7FBF5;'), 'result hover card is dis
 assert.ok(birdLayout.includes('.chirp-search-result mark {'), 'Bird search matches are highlighted');
 assert.ok(birdLayout.includes('.chirp-search-result[hidden],'),
   'hidden search results stay hidden regardless of CSS rules');
-assert.ok(pages.search.includes('channel-chirp.css?v=20261121-brand-copy'),
+assert.ok(pages.search.includes('channel-chirp.css?v=20261123-chirp-hero-footer'),
   'search loads the newest Bird search stylesheet');
 
 assert.match(pages.soundborb, /Migration in progress/);
@@ -588,9 +588,9 @@ assert.ok(birdLayout.includes('.chirp-archive-index > .archive-index-intro,'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs [aria-current="page"] {'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs a {'));
 assert.ok(birdLayout.includes('color: #BDF7B0;'));
-assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261121-brand-copy"'),
+assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-hero-footer"'),
   'Bird archive loads fresh stylesheet to avoid a stale dark-on-charcoal heading');
-assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261121-brand-copy"'),
+assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-hero-footer"'),
   'Shared template loads the same current Bird stylesheet');
 
 const birdByMonth = new Map();
@@ -684,7 +684,7 @@ assert.ok(birdLayout.includes('.chirp-archive-month .archive-blog-list .post-ent
 for (const month of birdByMonth.keys()) {
   const [year, number] = month.split('-');
   assert.ok(read('chirp/archive/' + year + '/' + number + '/index.html')
-    .includes('href="/assets/css/channel-chirp.css?v=20261121-brand-copy"'),
+    .includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-hero-footer"'),
     'all Bird month pages receive the updated stylesheet: ' + month);
 }
 assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive')).sort(),

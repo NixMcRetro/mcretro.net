@@ -296,6 +296,23 @@ assert.ok(!flockTabScript.includes('chirp-flock-intro') && !flockTabScript.inclu
   'selecting a profile must leave the permanent flock introduction and title visible');
 assert.match(pages.about, /Sunflower seeds, grapes, apple, millet\s*<br\s*\/?>\s*<strong>Personality:<\/strong>\s*The adventurous leader/,
   'Pudge\u2019s personality appears on a separate rendered line');
+// Bird profile photos sit beside their stats on wide screens, but stack on mobile.
+// Scope the layout to About The Flock so the regular McRetro theme is unaffected.
+const flockMediaRule = birdLayout.match(
+  /:root\[data-theme="bird"\] \.chirp-flock-panel \.chirp-flock-media \{([^}]+)\}/)?.[1];
+assert.ok(flockMediaRule, 'About The Flock must retain a Bird-scoped photo layout');
+assert.match(flockMediaRule, /float:\s*right;/, 'every flock photo should align right beside its details');
+assert.match(flockMediaRule, /width:\s*min\(44%, 350px\);/, 'photo width must leave room for facts');
+assert.match(birdLayout,
+  /:root\[data-theme="bird"\] \.chirp-flock-panel \{[^}]*display:\s*flow-root;/,
+  'the photo float must stay within its selected profile panel');
+assert.match(birdLayout,
+  /:root\[data-theme="bird"\] \.chirp-flock-panel h3 \{[^}]*clear:\s*both;/,
+  'bird stories must start below the photo and stats');
+assert.match(birdLayout,
+  /@media \(max-width: 700px\) \{\s*:root\[data-theme="bird"\] \.chirp-flock-panel \.chirp-flock-media \{[^}]*float:\s*none;[^}]*width:\s*auto;/,
+  'narrow screens must stack photos instead of squeezing their stats');
+
 const flockPhotoCaptions = [
   'Pudge at the back with his turquoise nest friend in front.',
   'Tillie on the left, Chip on the right.',

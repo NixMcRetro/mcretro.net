@@ -36,8 +36,9 @@ for (const [name, html] of Object.entries(pages)) {
   assert.doesNotMatch(html, /<nav class="nest-subnav"/);
   const simpleFooter = html.match(/<footer class="site-footer site-footer--chirp"[^>]*>[\s\S]*?<\/footer>/)?.[0];
   assert.ok(simpleFooter, name + ' must use the original Channel Chirp footer');
-  assert.match(simpleFooter, /<a href="https:\/\/github\.com\/ChannelChirp\/website">&copy; \d{4} Channel Chirp<\/a>/,
-    name + ' must show a linked copyright notice');
+  assert.match(simpleFooter, /<p>&copy; <a href="https:\/\/github\.com\/ChannelChirp\/website">\d{4} Channel Chirp<\/a><\/p>/,
+    name + ' must leave the copyright mark outside the underlined year/name link');
+  assert.doesNotMatch(simpleFooter, /<a[^>]*>&copy;/, 'copyright symbol must not be part of the link');
   assert.doesNotMatch(simpleFooter, /footer-badges|footer-details|footer-pride|counter\.gif/,
     name + ' must not display McRetro footer decorations');
 }
@@ -148,7 +149,8 @@ assert.match(headingStyle, /line-height:\s*1\.25;/);
 const metadataStyle = birdArticleRule('.post-meta');
 assert.match(metadataStyle, /margin:\s*0 0 1\.5rem;/);
 const dateStyle = birdArticleRule('.post-date');
-assert.match(dateStyle, /color:\s*#626262;/);
+assert.match(dateStyle, /color:\s*#000000;/,
+  'released Channel Chirp article dates must be black on their white card');
 assert.match(dateStyle, /font-size:\s*1rem;/,
   'article date should be clearly legible like the original Channel Chirp');
 const headingRuleStyle = birdArticleRule('.post-meta::after');
@@ -253,8 +255,8 @@ assert.doesNotMatch(pages.nest, /class="chirp-home-links"/);
 assert.match(pages.nest, /<figure class="chirp-home-figure">/);
 assert.match(pages.nest, /src="\/assets\/images\/2019\/01\/channel-chirp-nest\/frontpage\.jxl"/);
 assert.match(pages.nest, /width="1024"\s+height="768"/);
-assert.match(pages.nest, /<div class="chirp-home-photo-crop">\s*<img/,
-  'the unchanged JXL image must sit inside a CSS-only cropped frame');
+assert.doesNotMatch(pages.nest, /chirp-home-photo-crop/,
+  'the full-resolution JXL image must no longer have a cropping wrapper');
 assert.match(pages.nest, /<figcaption class="media-caption">Chirp, chirp, <strong>quack!<\/strong><\/figcaption>/,
   'Nest should use the McRetro caption class and preserve the quack text');
 assert.ok(pages.nest.indexOf('<h1 id="chirp-welcome">') <
@@ -268,10 +270,30 @@ assert.ok(frontpageJxl.length > 10000 && frontpageJxl.length < 150000,
   'the original welcome photo should be self-hosted, optimized and nonempty');
 assert.equal(frontpageJxl.subarray(0, 12).toString('hex'),
   '0000000c4a584c200d0a870a', 'photo should be a JPEG XL container, not a renamed JPEG');
-assert.match(birdLayout, /\.chirp-home-photo-crop\s*\{[^}]*aspect-ratio:\s*16\s*\/\s*9;[^}]*overflow:\s*hidden;/,
-  'Nest photo wrapper must crop the 4:3 image to a 16:9 view');
-assert.match(birdLayout, /\.chirp-home-figure img\s*\{[^}]*width: 100%;[^}]*height: 100%;[^}]*object-fit: cover;[^}]*object-position: center 43%;/,
-  'Nest photo must scale and crop within the wrapper');
+assert.doesNotMatch(birdLayout, /\.chirp-home-photo-crop\s*\{/,
+  'the Nest crop stylesheet rule must be removed');
+assert.match(birdLayout, /\.chirp-home-figure img\s*\{[^}]*width: 100%;[^}]*height: auto;/,
+  'Nest photo must display at its full original 4:3 aspect ratio');
+assert.doesNotMatch(birdLayout, /\.chirp-home-figure img\s*\{[^}]*object-fit:\s*cover;/,
+  'Nest photo must not be cropped via object-fit');
+assert.match(birdLayout, /\.chirp-home-figure figcaption\.media-caption\s*\{[^}]*color: #000000;/,
+  'Nest photo caption must be black');
+assert.match(birdLayout, /:root\[data-theme="bird"\]\s*\{\s*--text: #000000;/,
+  'Bird theme should use black text on white reading surfaces');
+assert.match(birdLayout,
+  /:root\[data-theme="bird"\] \.chirp-home-panel,\s*:root\[data-theme="bird"\] \.chirp-page-intro,\s*:root\[data-theme="bird"\] \.chirp-profile\s*\{[^}]*color: #000000;/,
+  'Channel Chirp homepage, introduction and bird profiles should use black body text');
+assert.match(birdLayout, /\.chirp-flock-panel \.chirp-flock-media figcaption\s*\{[^}]*color: #000000;/,
+  'all flock profile photo captions should use black text');
+const simpleFooterStart = birdLayout.indexOf(':root[data-chirp-landing="true"] .site-footer--chirp {');
+assert.ok(simpleFooterStart >= 0, 'Channel Chirp has a dedicated footer style');
+const simpleFooterCss = birdLayout.slice(simpleFooterStart, birdLayout.indexOf('}', simpleFooterStart));
+assert.match(simpleFooterCss, /background: #000000;/,
+  'the entire Channel Chirp footer bar must be solid black');
+assert.match(simpleFooterCss, /color: #FFFFFF;/,
+  'the copyright footer must remain readable against black');
+assert.match(birdLayout, /\.site-footer--chirp a:focus-visible\s*\{[^}]*text-decoration: underline;/,
+  'the year and Channel Chirp name must be underlined');
 assert.match(birdLayout, /\.chirp-home-figure figcaption\.media-caption\s*\{[^}]*font: italic 400 \.875rem\/1\.5/,
   'Nest figcaption should match McRetro photo caption sizing');
 
@@ -401,7 +423,7 @@ assert.ok(birdLayout.includes('background: #F7FBF5;'), 'result hover card is dis
 assert.ok(birdLayout.includes('.chirp-search-result mark {'), 'Bird search matches are highlighted');
 assert.ok(birdLayout.includes('.chirp-search-result[hidden],'),
   'hidden search results stay hidden regardless of CSS rules');
-assert.ok(pages.search.includes('channel-chirp.css?v=20261123-chirp-hero-footer'),
+assert.ok(pages.search.includes('channel-chirp.css?v=20261123-uncropped-black-text'),
   'search loads the newest Bird search stylesheet');
 
 assert.match(pages.soundborb, /Migration in progress/);
@@ -605,9 +627,9 @@ assert.ok(birdLayout.includes('.chirp-archive-index > .archive-index-intro,'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs [aria-current="page"] {'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs a {'));
 assert.ok(birdLayout.includes('color: #BDF7B0;'));
-assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-hero-footer"'),
+assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261123-uncropped-black-text"'),
   'Bird archive loads fresh stylesheet to avoid a stale dark-on-charcoal heading');
-assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-hero-footer"'),
+assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261123-uncropped-black-text"'),
   'Shared template loads the same current Bird stylesheet');
 
 const birdByMonth = new Map();
@@ -701,7 +723,7 @@ assert.ok(birdLayout.includes('.chirp-archive-month .archive-blog-list .post-ent
 for (const month of birdByMonth.keys()) {
   const [year, number] = month.split('-');
   assert.ok(read('chirp/archive/' + year + '/' + number + '/index.html')
-    .includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-hero-footer"'),
+    .includes('href="/assets/css/channel-chirp.css?v=20261123-uncropped-black-text"'),
     'all Bird month pages receive the updated stylesheet: ' + month);
 }
 assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive')).sort(),

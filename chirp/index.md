@@ -8,15 +8,13 @@ pagefind: false
 <section class="chirp-home-panel" aria-labelledby="chirp-welcome">
   <h1 id="chirp-welcome">Welcome to the Nest</h1>
   <figure class="chirp-home-figure">
-    <div class="chirp-home-photo-crop">
-      <img
-        src="/assets/images/2019/01/channel-chirp-nest/frontpage.jxl"
-        width="1024"
-        height="768"
-        decoding="async"
-        fetchpriority="high"
-        alt="The original Channel Chirp welcome photo: Tillie and Chip perched on a patterned hanging curtain by a doorway, with their names written beside them.">
-    </div>
+    <img
+      src="/assets/images/2019/01/channel-chirp-nest/frontpage.jxl"
+      width="1024"
+      height="768"
+      decoding="async"
+      fetchpriority="high"
+      alt="The original Channel Chirp welcome photo: Tillie and Chip perched on a patterned hanging curtain by a doorway, with their names written beside them.">
     <figcaption class="media-caption">Chirp, chirp, <strong>quack!</strong></figcaption>
   </figure>
   <div class="chirp-home-copy">

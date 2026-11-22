@@ -14,8 +14,9 @@
   var conureArticle = root.getAttribute('data-chirp-article') === 'true';
   var unrelatedPosts = root.getAttribute('data-chirp-unrelated') === 'true';
 
-  // A link from a Light/Dark page into a released conure article should keep
-  // that *visible* mode, even if an older Bird choice is still stored.
+  // Carry the visible experience when following a link: Light/Dark from
+  // ordinary McRetro pages, Bird from Channel Chirp. A saved preference alone
+  // is not enough to identify the origin of an article navigation.
   // The intent is one-shot, bound to the destination, and tab-local.
   var navigationThemeKey = 'mcretro-next-article-theme';
   function consumeNavigationTheme() {
@@ -29,7 +30,7 @@
       var intent = JSON.parse(raw);
       var age = Date.now() - intent.at;
       if (intent.path === window.location.pathname &&
-          (intent.theme === 'light' || intent.theme === 'dark') &&
+          themes.indexOf(intent.theme) !== -1 &&
           Number.isFinite(age) && age >= 0 && age <= 60000) return intent.theme;
     } catch (error) { /* Ignore malformed or expired navigation state. */ }
     return null;
@@ -60,10 +61,15 @@
       window.history.replaceState(next, '');
     } catch (error) { /* The current page still works without history state. */ }
   }
-  var incomingStandardTheme = consumeNavigationTheme();
+  var incomingNavigationTheme = consumeNavigationTheme();
   if (conureArticle) {
-    if (incomingStandardTheme) writeHistoryStandardTheme(incomingStandardTheme);
-    else incomingStandardTheme = readHistoryStandardTheme();
+    if (incomingNavigationTheme) {
+      // An explicit Bird arrival must also clear any older Light/Dark
+      // history override for this browser entry.
+      writeHistoryStandardTheme(incomingNavigationTheme);
+    } else {
+      incomingNavigationTheme = readHistoryStandardTheme();
+    }
   }
 
   function captureStandardNavigation(event) {
@@ -71,7 +77,8 @@
         event.shiftKey || event.altKey ||
         (typeof event.button === 'number' && event.button !== 0)) return;
     var theme = root.getAttribute('data-theme');
-    if (theme !== 'light' && theme !== 'dark') return;
+    if (theme !== 'light' && theme !== 'dark' &&
+        !(theme === 'bird' && (landing || conureArticle))) return;
     var anchor = event.target && event.target.closest && event.target.closest('a[href]');
     if (!anchor || anchor.hasAttribute('download') ||
         anchor.hasAttribute('data-chirp-view-post') ||
@@ -119,7 +126,7 @@
   }
 
   function persist(theme) {
-    incomingStandardTheme = null;
+    incomingNavigationTheme = null;
     if (conureArticle) writeHistoryStandardTheme(null);
     var previous = savedTheme();
     if (theme === 'light' || theme === 'dark') rememberStandard(theme);
@@ -136,7 +143,7 @@
     // The URL decides the experience. Bird cannot hijack an ordinary McRetro
     // link, and an explicit /chirp/ destination is always displayed in Bird.
     if (landing) return 'bird';
-    if (conureArticle && incomingStandardTheme) return incomingStandardTheme;
+    if (conureArticle && incomingNavigationTheme) return incomingNavigationTheme;
     var chosen = savedTheme();
     if (unrelatedPosts && chosen === 'bird') return lastStandardTheme();
     return chosen || systemTheme();
@@ -188,7 +195,8 @@
   updatePresentation();
 
   function ready() {
-    // Delegation also catches Pagefind search links added after page load.
+    // Delegation covers Pagefind links added after load and Find-a-Squawk
+    // links whose titles get dynamically highlighted.
     document.addEventListener('click', captureStandardNavigation, true);
     var button = document.querySelector('[data-theme-toggle]');
     if (button) {

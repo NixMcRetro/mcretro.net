@@ -39,6 +39,4 @@ date: 2024-04-06T15:04:21.000+11:00
 
 ![Recipe photograph IMG_9776](/assets/images/2024/04/mars-bar-slice/IMG_9776.jxl)
 
-![Recipe photograph IMG_9804](/assets/images/2024/04/mars-bar-slice/IMG_9804.jxl)
-
 ![Recipe photograph IMG_9803](/assets/images/2024/04/mars-bar-slice/IMG_9803.jxl)

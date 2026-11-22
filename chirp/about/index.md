@@ -13,10 +13,10 @@ pagefind: false
     <button type="button" role="tab" id="chirp-tab-chip" aria-controls="chip" aria-selected="false" tabindex="-1" data-flock-tab="chip">Chip</button>
     <button type="button" role="tab" id="chirp-tab-diet" aria-controls="diet" aria-selected="false" tabindex="-1" data-flock-tab="diet">Diet</button>
   </nav>
+  <p>Meet Pudge, Tillie, and Chip, the three green-cheeked conures behind Channel Chirp. Pudge and Tillie arrived together on New Year's Day 2018, and little cinnamon-coloured Chip joined them on 3rd February 2018. There's also the important matter of what these borbs liked to eat.</p>
 </section>
 
 <section class="chirp-flock-help" id="chirp-flock-help" aria-label="How to meet the flock">
-  <p>Meet Pudge, Tillie, and Chip, the three green-cheeked conures behind Channel Chirp. Pudge and Tillie arrived together on New Year's Day 2018, and little cinnamon-coloured Chip joined them on 3rd February 2018. There's also the important matter of what these borbs liked to eat.</p>
   <h2>Who's that bird?</h2>
   <p>Pick <strong>Pudge</strong>, <strong>Tillie</strong>, or <strong>Chip</strong> above to open their own photo, little facts, and original Channel Chirp story. Choose <strong>Diet</strong> to see what went into the food bowls. Nothing is open until you choose, and you can swap between them whenever you like.</p>
 </section>

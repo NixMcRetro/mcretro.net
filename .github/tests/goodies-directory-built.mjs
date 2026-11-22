@@ -104,16 +104,32 @@ assert.deepEqual(panelSections.map(panelHeading), expectedSections,
   'Goodies sections are independent accordions sorted alphabetically');
 assert.doesNotMatch(panelSections[4], /\[File Server\]|\[Photo Gallery\]/,
   'Files and photos must not appear among interactive projects');
-assert.match(panelSections[1], /<button class="goodies-archive-button goodies-archive-button--pending" type="button" disabled>/,
-  'File Server has a genuinely disabled Coming Soon button until launched');
-assert.doesNotMatch(panelSections[1], /href="https:\/\/files\.mcretro\.net/,
-  'Do not advertise an unavailable server as a working destination');
-assert.match(panelSections[3], /<a class="goodies-archive-button" href="https:\/\/photos\.mcretro\.net\/index\.html">/,
-  'Photo Gallery has a styled, functional external browse link');
+assert.match(panelSections[1], /<a class="goodies-archive-button" href="https:\/\/files\.mcretro\.net\/index\.html" target="_blank" rel="noopener noreferrer">/,
+  'File Server links to the intended not-yet-live address in a new tab');
+assert.match(panelSections[3], /<a class="goodies-archive-button" href="https:\/\/photos\.mcretro\.net\/index\.html" target="_blank" rel="noopener noreferrer">/,
+  'Photo Gallery opens in a separate tab with safe opener attributes');
+assert.match(source, /\.goodies-archive-actions|class="goodies-archive-actions"/,
+  'Both archive actions retain their shared styling hook');
+assert.doesNotMatch(source, /goodies-archive-button--pending|type="button" disabled/,
+  'The File Server is a real link rather than a disabled button');
 assert.ok(anchors.some(link =>
   link.href === 'https://photos.mcretro.net/index.html' &&
   link.text.includes('Browse the Photo Gallery')),
   'The live Photo Gallery browse button must appear in the rendered site');
+assert.ok(anchors.some(link =>
+  link.href === 'https://files.mcretro.net/index.html' &&
+  link.text.includes('Browse the File Server')),
+  'The File Server should have a real hyperlink even if its destination returns 404');
+for (const domain of ['files', 'photos']) {
+  const url = 'https://' + domain + '.mcretro.net/index.html';
+  const tag = html.match(new RegExp('<a\\b[^>]*href="' + url.replace(/\\./g, '\\\\.') + '"[^>]*>'));
+  assert.ok(tag, 'Missing external archive button for ' + domain);
+  assert.match(tag[0], /target="_blank"/);
+  assert.match(tag[0], /rel="noopener noreferrer"/);
+}
+const styles = readFileSync(new URL('../../assets/css/overrides.css', import.meta.url), 'utf8');
+assert.match(styles, /\.goodies-archive-actions\s*\{[^}]*justify-content:\s*center\s*;/,
+  'Both external archive buttons must be centered');
 // Only sort the leading bold item titles, not secondary links within
 // descriptions (such as historical homepages' own photo galleries).
 const entryNames = panel => panel.split('\n')

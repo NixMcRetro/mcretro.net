@@ -837,6 +837,11 @@ test('advisory: navigation hover underlines words without bolding or shifting ad
   assert.equal((header.match(/class="nav-mode-bird/g) || []).length, 5);
   assert.match(header, /<li class="nav-item--mcretro-only">/);
 
+  assert.match(header, /class="nav-mode-mcretro" href="\/" \{% if page\.url == "\/" or page\.url == "\/index\.html" %\}aria-current="page"\{% endif %\}/,
+    'McRetro Home is marked current on the main homepage');
+  assert.match(header, /class="nav-mode-bird" href="\/chirp\/" \{% if page\.url == "\/chirp\/" %\}aria-current="page"\{% endif %\}/,
+    'Channel Chirp Home is marked current on its own homepage');
+
   assert.match(header, /class="nav-mode-bird" href="\/chirp\/"[^>]*>[^<]*<span class="nav-emoji" aria-hidden="true">🪺<\/span> <span class="nav-text">Home<\/span><\/a>/,
     'Bird Home replaces The Nest in the primary nav');
   assert.doesNotMatch(header, /<span class="nav-text">The Nest<\/span>/,
@@ -855,7 +860,9 @@ test('advisory: navigation hover underlines words without bolding or shifting ad
   assert.ok(labelHoverRule, 'text-only nav hover and focus rule exists');
   assert.doesNotMatch(labelHoverRule, /font-weight\s*:/, 'hover must not change font weight or item widths');
   assert.match(style, /\.main-nav a\s*\{[^}]*font-weight:\s*normal;/, 'regular menu links remain normal weight');
-  assert.match(style, /\.main-nav a\.active\s*\{[^}]*font-weight:\s*bold;/, 'current-page highlight remains unchanged');
+  assert.match(style, /\.main-nav a\.active,\s*\.main-nav a\[aria-current="page"\]\s*\{[^}]*font-weight:\s*bold;/, 'current-page highlight honours .active and aria-current');
+  assert.match(overrides, /:root:not\(\[data-theme="dark"\]\) \.main-nav \.nav-list li a\.active,\s*:root:not\(\[data-theme="dark"\]\) \.main-nav \.nav-list li a\[aria-current="page"\]\s*\{[^}]*background: var\(--archive-filled\);/,
+    'mobile Light Mode highlights aria-current Home exactly like active pages');
   assert.match(style, /\.main-nav a:hover,\s*\.main-nav a:focus-visible\s*\{[^}]*text-decoration:\s*none;/);
   assert.match(style, /\.main-nav a:hover \.nav-text,\s*\.main-nav a:focus-visible \.nav-text\s*\{\s*text-decoration:\s*underline;\s*text-underline-offset:\s*0\.12em;\s*\}/);
   assert.match(style, /\.nav-list li a:hover,\s*\.nav-list li a:focus-visible\s*\{[^}]*text-decoration:\s*none;/);

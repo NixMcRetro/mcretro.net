@@ -196,6 +196,134 @@ test('core: About and Channel Chirp About remain paired across modes', () => {
   assert.match(read('chirp/adventures/index.md'), /permalink: \/chirp\/adventures\//);
 });
 
+test('core: unsupported McRetro pages return from Bird to the exact original URL', () => {
+  const session = new Map();
+  const previous = fixture(false,'light',false,false,{
+    unrelated:true,path:'/homepages/geocities/neighborhoods/',
+    search:'?q=Area51',hash:'#athens',navigationStore:session
+  });
+  previous.handlers.click();
+  assert.equal(previous.attrs['data-theme'],'dark');
+  previous.handlers.click();
+  assert.deepEqual(previous.navigations.at(-1), {method:'assign',url:'/chirp/'});
+  const pending=JSON.parse(session.get('mcretro-mode-return-pending'));
+  assert.equal(pending.source,'/homepages/geocities/neighborhoods/?q=Area51#athens');
+  assert.equal(pending.target,'/chirp/');
+  assert.equal(pending.returnTheme,'light');
+
+  const nest=fixture(false,'bird',false,true,{path:'/chirp/',navigationStore:session});
+  assert.equal(nest.attrs['data-theme'],'bird');
+  assert.equal(session.has('mcretro-mode-return-pending'),false,
+    'return intent transfers into this browser history entry only');
+  assert.equal(nest.history.state['mcretro-mode-return'].source,
+    '/homepages/geocities/neighborhoods/?q=Area51#athens');
+
+  // Refresh or back/forward reconstruction must not discard the saved route.
+  const refreshed=fixture(false,'bird',false,true,{
+    path:'/chirp/',historyState:nest.history.state,navigationStore:session
+  });
+  refreshed.handlers.click();
+  assert.equal(refreshed.attrs['data-theme'],'light');
+  assert.deepEqual(refreshed.navigations.at(-1),{
+    method:'assign',url:'/homepages/geocities/neighborhoods/?q=Area51#athens'
+  });
+
+  const returned=fixture(false,'light',false,false,{
+    unrelated:true,path:'/homepages/geocities/neighborhoods/',
+    search:'?q=Area51',hash:'#athens',navigationStore:session
+  });
+  assert.equal(returned.attrs['data-theme'],'light');
+  assert.equal(returned.navigations.length,0);
+});
+
+test('core: an old monthly archive returns to the same month rather than McRetro Home', () => {
+  const session=new Map();
+  const archive=fixture(false,'dark',false,false,{
+    unrelated:true,path:'/archive/2018/01/',standard:'dark',navigationStore:session
+  });
+  archive.handlers.click(); // Dark -> Bird
+  assert.deepEqual(archive.navigations.at(-1),{method:'assign',url:'/chirp/'});
+  const bird=fixture(false,'bird',false,true,{path:'/chirp/',navigationStore:session});
+  bird.handlers.click(); // Bird -> Light
+  assert.deepEqual(bird.navigations.at(-1),{method:'assign',url:'/archive/2018/01/'});
+});
+
+test('core: an unsupported Bird page is restored after cycling through Light and Dark', () => {
+  const session=new Map();
+  const birdSearch=fixture(false,'bird',false,true,{
+    path:'/chirp/search/',search:'?q=sprinkles',hash:'#results',navigationStore:session
+  });
+  birdSearch.handlers.click(); // Bird -> Light, fallback to /blog/
+  assert.deepEqual(birdSearch.navigations.at(-1),{method:'assign',url:'/blog/'});
+  const pending=JSON.parse(session.get('mcretro-mode-return-pending'));
+  assert.equal(pending.source,'/chirp/search/?q=sprinkles#results');
+  assert.equal(pending.returnTheme,'bird');
+
+  const blog=fixture(false,'light',false,false,{
+    unrelated:true,path:'/blog/',navigationStore:session
+  });
+  assert.equal(blog.history.state['mcretro-mode-return'].source,
+    '/chirp/search/?q=sprinkles#results');
+  blog.handlers.click(); // Light -> Dark, no navigation
+  assert.equal(blog.navigations.length,0);
+  blog.handlers.click(); // Dark -> Bird, restore exact Bird URL
+  assert.deepEqual(blog.navigations.at(-1),{
+    method:'assign',url:'/chirp/search/?q=sprinkles#results'
+  });
+  const birdAgain=fixture(false,'bird',false,true,{
+    path:'/chirp/search/',search:'?q=sprinkles',hash:'#results',navigationStore:session
+  });
+  assert.equal(birdAgain.attrs['data-theme'],'bird');
+  assert.equal(birdAgain.navigations.length,0);
+});
+
+test('core: fallback return state cannot hijack unrelated or direct visits', () => {
+  const pendingKey='mcretro-mode-return-pending';
+  const session=new Map([[pendingKey,JSON.stringify({
+    source:'/channels/',target:'/chirp/',returnTheme:'light',at:Date.now()
+  })]]);
+  const unrelated=fixture(false,'bird',false,true,{
+    path:'/chirp/about/',navigationStore:session
+  });
+  assert.equal(unrelated.history.state,null);
+  assert.equal(session.has(pendingKey),false,'mismatched pending destination is discarded');
+  unrelated.handlers.click();
+  assert.deepEqual(unrelated.navigations.at(-1),{method:'assign',url:'/about/'});
+
+  // A direct visit has no fallback history state and retains homepage pairing.
+  const direct=fixture(false,'bird',false,true,{path:'/chirp/'});
+  direct.handlers.click();
+  assert.deepEqual(direct.navigations.at(-1),{method:'assign',url:'/'});
+  const regularBlog=fixture(false,'dark',false,false,{unrelated:true,path:'/blog/'});
+  regularBlog.handlers.click();
+  assert.deepEqual(regularBlog.navigations.at(-1),{method:'assign',url:'/chirp/adventures/'});
+
+  for(const [source,at] of [
+    ['//attacker.example/',Date.now()],
+    ['/channels/',Date.now()-180000]
+  ]) {
+    const store=new Map([[pendingKey,JSON.stringify({
+      source,target:'/chirp/',returnTheme:'light',at
+    })]]);
+    const nest=fixture(false,'bird',false,true,{path:'/chirp/',navigationStore:store});
+    assert.equal(nest.history.state,null,'unsafe or stale intents must not enter history');
+    nest.handlers.click();
+    assert.deepEqual(nest.navigations.at(-1),{method:'assign',url:'/'});
+  }
+
+  const blocked=fixture(false,'dark',false,false,{
+    unrelated:true,path:'/channels/',sessionStorageFails:true
+  });
+  blocked.handlers.click();
+  assert.deepEqual(blocked.navigations.at(-1),{method:'assign',url:'/chirp/'},
+    'blocked sessionStorage must never break the theme switch');
+  const fallBackNest=fixture(false,'bird',false,true,{
+    path:'/chirp/',sessionStorageFails:true
+  });
+  fallBackNest.handlers.click();
+  assert.deepEqual(fallBackNest.navigations.at(-1),{method:'assign',url:'/'});
+});
+
 test('core: direct McRetro links never redirect when Bird was the saved experience', () => {
   for (const path of ['/', '/about/', '/blog/', '/blog/page3/', '/goodies/',
     '/channels/', '/kodi-until-when/']) {

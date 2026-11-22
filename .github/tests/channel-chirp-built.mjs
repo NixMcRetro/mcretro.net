@@ -57,8 +57,9 @@ assert.match(pages.adventures, sprinklesMarkup,
   'Adventures posts display Sprinkles and a JXL-only avatar');
 assert.match(conure, sprinklesMarkup,
   'individual Channel Chirp posts display the same author and avatar');
-assert.doesNotMatch(pages.adventures, /mcretro-author-portrait-192|favicon-96x96\.png/,
-  'Adventures must not use a McRetro avatar fallback');
+assert.doesNotMatch(pages.adventures,
+  /src="\/assets\/favicon\/favicon-96x96\.png[^"]*"[^>]*class="author-avatar"|mcretro-author-portrait-192/,
+  'Adventures must not use a McRetro author-avatar fallback');
 assert.match(corella, /<span class="post-author">\s*<img src="\/assets\/favicon\/favicon-96x96\.png[^"]*" alt="" class="author-avatar">\s*Nix McRetro\s*<\/span>/,
   'an explicitly excluded parrot post retains the normal McRetro identity');
 assert.match(blog, /mcretro-author-portrait-192\.jxl/,

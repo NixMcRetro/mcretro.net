@@ -2095,3 +2095,71 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
     margin: 0.75rem 0.75rem 0.85rem;
   }
 }
+
+/* Recipe page typography and media captions.
+   Recipes use the default layout, not .post-full .post-content.
+   Keep these rules scoped to /recipes/ so blog posts and site themes stay intact. */
+body[data-recipe-page="true"] .content-area > h2:first-child {
+  font-size: 1.75rem;
+  line-height: 1.35;
+  margin: 0 0 0.35em;
+}
+body[data-recipe-page="true"] .content-area > h2:not(:first-child) {
+  font-size: 1.375rem;
+  line-height: 1.35;
+  margin: 1em 0 0.25em;
+}
+body[data-recipe-page="true"] .content-area > h3 {
+  font-size: 1.25rem;
+  line-height: 1.35;
+  margin: 1.35em 0 0.25em;
+}
+body[data-recipe-page="true"] .content-area > :is(h4, h5, h6) {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin: 1.2em 0 0.25em;
+}
+body[data-recipe-page="true"] .content-area > :is(h2, h3, h4, h5, h6) + :is(p, ul, ol),
+body[data-recipe-page="true"] .content-area > :is(ul, ol) {
+  margin-top: 0;
+}
+body[data-recipe-page="true"] .content-area > p:not(.media-caption) {
+  margin-bottom: 1.15em;
+}
+
+/* Keep each caption close to its photo, while centring both as on blog posts. */
+body[data-recipe-page="true"] .content-area > p:has(> img:only-child):has(+ p.media-caption),
+body[data-recipe-page="true"] .content-area > p:has(> a:only-child > img:only-child):has(+ p.media-caption) {
+  margin-bottom: 0.25rem;
+}
+body[data-recipe-page="true"] .content-area > p:has(> img:only-child) > img,
+body[data-recipe-page="true"] .content-area > p:has(> a:only-child > img:only-child) > a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+body[data-recipe-page="true"] .content-area > p:has(> a:only-child > img:only-child) > a {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+}
+body[data-recipe-page="true"] .content-area > p.media-caption {
+  max-width: 100%;
+  margin: 0 auto 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+body[data-recipe-page="true"] .content-area > p.media-caption:has(+ p:not(.media-caption):not(:has(img))) {
+  margin-bottom: 1.15rem;
+}
+@media screen and (max-width: 600px) {
+  body[data-recipe-page="true"] .content-area > p.media-caption {
+    margin-bottom: 1.35rem;
+  }
+}

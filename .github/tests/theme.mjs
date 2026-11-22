@@ -61,9 +61,9 @@ function fixture(systemDark = false, stored = null, storageFails = false, defaul
       setItem(k,v) { if(storageFails) throw Error('blocked'); store.set(k,v); }
     },
     sessionStorage: {
-      getItem(k) { if(storageFails) throw Error('blocked'); return navigationStore.get(k) || null; },
-      setItem(k,v) { if(storageFails) throw Error('blocked'); navigationStore.set(k,v); },
-      removeItem(k) { if(storageFails) throw Error('blocked'); navigationStore.delete(k); }
+      getItem(k) { if(storageFails || context.sessionStorageFails) throw Error('blocked'); return navigationStore.get(k) || null; },
+      setItem(k,v) { if(storageFails || context.sessionStorageFails) throw Error('blocked'); navigationStore.set(k,v); },
+      removeItem(k) { if(storageFails || context.sessionStorageFails) throw Error('blocked'); navigationStore.delete(k); }
     },
     addEventListener(k,fn) { handlers[k] = fn; }
   };
@@ -413,8 +413,8 @@ test('core: navigation intent is one-shot, path-bound, and expires safely', () =
     article:true,path:'/the-first-day/',navigationStore
   });
   assert.equal(corrupt.attrs['data-theme'],'bird');
-  const blocked=fixture(false,'bird',true,false,{
-    article:true,path:'/the-first-day/',navigationStore
+  const blocked=fixture(false,'bird',false,false,{
+    article:true,path:'/the-first-day/',navigationStore,sessionStorageFails:true
   });
   assert.equal(blocked.attrs['data-theme'],'bird','disabled sessionStorage is non-fatal');
 });

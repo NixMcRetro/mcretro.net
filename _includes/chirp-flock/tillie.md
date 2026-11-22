@@ -1,6 +1,6 @@
 <figure class="chirp-flock-media">
   <img src="/assets/images/2018/01/chirp-flock/tillie.jxl" alt="Tillie the green-cheeked conure on the left, beside Chip the cinnamon conure on the right" loading="lazy" decoding="async">
-  <figcaption>Tillie on the left and Chip on the right. Two little troublemakers who ended up finding their forever home together.</figcaption>
+  <figcaption>Tillie on the left, Chip on the right.</figcaption>
 </figure>
 
 **Nickname:** Sprinkles  

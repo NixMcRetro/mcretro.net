@@ -2146,15 +2146,28 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   background-image: url('/assets/images/channels/mcretro_chirp_dark_cropped_7x1.jxl');
 }
 @media (max-width: 600px) {
-  /* Mobile banners are taller: scale by height to prevent empty bands. */
-  .channels-art {
-    background-size: auto 118%;
+  /* Mobile channel art favours the first recognizable objects over an even
+     centre crop. Keep the existing JXL banners and desktop layout unchanged. */
+  .channels-art--section {
+    background-size: auto 108%;
   }
   .about-panel > .channels-art--section {
     aspect-ratio: auto;
     height: clamp(70px, 24vw, 95px);
     width: calc(100% - 1.5rem);
     margin: 0.75rem 0.75rem 0.85rem;
+  }
+  .channels-art--nix {
+    background-position: 24% center;
+  }
+  .channels-art--gaming {
+    background-position: 22% center;
+  }
+  .channels-art--supernature {
+    background-position: 20% center;
+  }
+  .channels-art--chirp {
+    background-position: 18% center;
   }
 }
 

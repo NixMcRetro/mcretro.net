@@ -14,6 +14,85 @@
   var conureArticle = root.getAttribute('data-chirp-article') === 'true';
   var unrelatedPosts = root.getAttribute('data-chirp-unrelated') === 'true';
 
+  // Carry the visible experience when following a link: Light/Dark from
+  // ordinary McRetro pages, Bird from Channel Chirp. A saved preference alone
+  // is not enough to identify the origin of an article navigation.
+  // The intent is one-shot, bound to the destination, and tab-local.
+  var navigationThemeKey = 'mcretro-next-article-theme';
+  function consumeNavigationTheme() {
+    var raw = null;
+    try {
+      raw = window.sessionStorage.getItem(navigationThemeKey);
+      window.sessionStorage.removeItem(navigationThemeKey);
+    } catch (error) { return null; }
+    if (!raw) return null;
+    try {
+      var intent = JSON.parse(raw);
+      var age = Date.now() - intent.at;
+      if (intent.path === window.location.pathname &&
+          themes.indexOf(intent.theme) !== -1 &&
+          Number.isFinite(age) && age >= 0 && age <= 60000) return intent.theme;
+    } catch (error) { /* Ignore malformed or expired navigation state. */ }
+    return null;
+  }
+  // Browser history keeps an article's chosen view through reload and
+  // back/forward, without changing its URL or modifying global preferences.
+  var historyThemeKey = 'mcretro-conure-standard-view';
+  function readHistoryStandardTheme() {
+    if (!conureArticle) return null;
+    try {
+      var entry = window.history.state && window.history.state[historyThemeKey];
+      if (entry && entry.path === window.location.pathname &&
+          (entry.theme === 'light' || entry.theme === 'dark')) return entry.theme;
+    } catch (error) { /* History state may be unavailable. */ }
+    return null;
+  }
+  function writeHistoryStandardTheme(theme) {
+    if (!conureArticle) return;
+    try {
+      var state = window.history.state;
+      if (state !== null && typeof state !== 'object') return;
+      var next = Object.assign({}, state || {});
+      if (theme === 'light' || theme === 'dark') {
+        next[historyThemeKey] = {path: window.location.pathname, theme: theme};
+      } else {
+        delete next[historyThemeKey];
+      }
+      window.history.replaceState(next, '');
+    } catch (error) { /* The current page still works without history state. */ }
+  }
+  var incomingNavigationTheme = consumeNavigationTheme();
+  if (conureArticle) {
+    if (incomingNavigationTheme) {
+      // An explicit Bird arrival must also clear any older Light/Dark
+      // history override for this browser entry.
+      writeHistoryStandardTheme(incomingNavigationTheme);
+    } else {
+      incomingNavigationTheme = readHistoryStandardTheme();
+    }
+  }
+
+  function captureStandardNavigation(event) {
+    if (event.defaultPrevented || event.metaKey || event.ctrlKey ||
+        event.shiftKey || event.altKey ||
+        (typeof event.button === 'number' && event.button !== 0)) return;
+    var theme = root.getAttribute('data-theme');
+    if (theme !== 'light' && theme !== 'dark' &&
+        !(theme === 'bird' && (landing || conureArticle))) return;
+    var anchor = event.target && event.target.closest && event.target.closest('a[href]');
+    if (!anchor || anchor.hasAttribute('download') ||
+        anchor.hasAttribute('data-chirp-view-post') ||
+        (anchor.target && anchor.target !== '_self')) return;
+    try {
+      var destination = new URL(anchor.href, window.location.href);
+      if (destination.origin !== window.location.origin ||
+          destination.pathname === window.location.pathname) return;
+      window.sessionStorage.setItem(navigationThemeKey, JSON.stringify({
+        path: destination.pathname, theme: theme, at: Date.now()
+      }));
+    } catch (error) { /* Navigation remains functional if storage is blocked. */ }
+  }
+
   function savedTheme() {
     try {
       var value = window.localStorage.getItem(key);
@@ -47,6 +126,8 @@
   }
 
   function persist(theme) {
+    incomingNavigationTheme = null;
+    if (conureArticle) writeHistoryStandardTheme(null);
     var previous = savedTheme();
     if (theme === 'light' || theme === 'dark') rememberStandard(theme);
     // When opening /chirp/ directly, retain the previously selected standard
@@ -62,6 +143,7 @@
     // The URL decides the experience. Bird cannot hijack an ordinary McRetro
     // link, and an explicit /chirp/ destination is always displayed in Bird.
     if (landing) return 'bird';
+    if (conureArticle && incomingNavigationTheme) return incomingNavigationTheme;
     var chosen = savedTheme();
     if (unrelatedPosts && chosen === 'bird') return lastStandardTheme();
     return chosen || systemTheme();
@@ -113,6 +195,9 @@
   updatePresentation();
 
   function ready() {
+    // Delegation covers Pagefind links added after load and Find-a-Squawk
+    // links whose titles get dynamically highlighted.
+    document.addEventListener('click', captureStandardNavigation, true);
     var button = document.querySelector('[data-theme-toggle]');
     if (button) {
       button.addEventListener('click', function () {

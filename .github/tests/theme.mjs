@@ -16,6 +16,8 @@ function fixture(systemDark = false, stored = null, storageFails = false, defaul
   if (context.unrelated) attrs['data-chirp-unrelated'] = 'true';
   if (context.article) attrs['data-chirp-article'] = 'true';
   const navigations = [];
+  const navigationStore = context.navigationStore || new Map();
+  const pathname = context.path || (defaultBird ? '/chirp/' : '/');
   const btnAttrs = {}, metaAttrs = {};
   const store = new Map(stored ? [['mcretro-theme', stored]] : []);
   if (context.standard) store.set('mcretro-last-standard-theme', context.standard);
@@ -45,22 +47,33 @@ function fixture(systemDark = false, stored = null, storageFails = false, defaul
   const media = { matches: systemDark, addEventListener(k,fn) { mediaHandlers[k] = fn; } };
   const window = {
     location: {
-      pathname: context.path || (defaultBird ? '/chirp/' : '/'),
+      pathname,
+      origin: 'https://mcretro.net',
+      href: 'https://mcretro.net' + pathname + (context.search || ''),
       search: context.search || '',
       hash: context.hash || '',
       assign(url) { navigations.push({ method: 'assign', url }); },
       replace(url) { navigations.push({ method: 'replace', url }); }
+    },
+    history: {
+      state: context.historyState || null,
+      replaceState(next, title) { this.state = next; }
     },
     matchMedia(s) { assert.equal(s, '(prefers-color-scheme: dark)'); return media; },
     localStorage: {
       getItem(k) { if(storageFails) throw Error('blocked'); return store.get(k) || null; },
       setItem(k,v) { if(storageFails) throw Error('blocked'); store.set(k,v); }
     },
+    sessionStorage: {
+      getItem(k) { if(storageFails || context.sessionStorageFails) throw Error('blocked'); return navigationStore.get(k) || null; },
+      setItem(k,v) { if(storageFails || context.sessionStorageFails) throw Error('blocked'); navigationStore.set(k,v); },
+      removeItem(k) { if(storageFails || context.sessionStorageFails) throw Error('blocked'); navigationStore.delete(k); }
+    },
     addEventListener(k,fn) { handlers[k] = fn; }
   };
-  runInNewContext(code,{ window, document });
+  runInNewContext(code,{ window, document, URL });
   docHandlers.DOMContentLoaded();
-  return {attrs, btnAttrs, metaAttrs, media, mediaHandlers, handlers, store, navigations};
+  return {attrs, btnAttrs, metaAttrs, media, mediaHandlers, handlers, docHandlers, store, navigationStore, navigations, history: window.history};
 }
 test('core: early external script prevents incorrect-theme flash and preserves CSP', () => {
   assert.ok(layout.indexOf('assets/js/theme.js') < layout.indexOf('assets/css/style.css'));
@@ -295,6 +308,178 @@ test('core: View in Channel Chirp changes only the current conure article theme'
   assert.equal(modified.attrs['data-theme'],'dark');
   const unrelated = fixture(false,'dark',false,false,{unrelated:true,path:'/kodi-until-when/'});
   assert.equal(typeof unrelated.handlers.chirpClick,'undefined','ordinary McRetro posts have no Bird invitation');
+});
+
+
+test('core: standard archive and Pagefind links preserve the visible Light/Dark theme on conure articles', () => {
+  const navigationStore = new Map();
+  function navigate(fixtureResult, url, options = {}) {
+    const anchor = {
+      href: url,
+      target: options.target || '',
+      hasAttribute(name) { return name === 'download' && !!options.download; }
+    };
+    fixtureResult.docHandlers.click({
+      button: options.button ?? 0,
+      ctrlKey: !!options.ctrlKey, metaKey: !!options.metaKey,
+      defaultPrevented: false,
+      target: {closest(selector) {
+        assert.equal(selector, 'a[href]');
+        return anchor;
+      }}
+    });
+  }
+
+  // A previously stored Bird selection can display Dark on a normal archive.
+  // Opening its conure article must keep Dark rather than exposing old Bird.
+  const archive = fixture(false,'bird',false,false,{
+    unrelated:true, path:'/archive/2018/01/', standard:'dark', navigationStore
+  });
+  assert.equal(archive.attrs['data-theme'],'dark');
+  navigate(archive,'https://mcretro.net/sprinkles-and-pudding/');
+  const article = fixture(false,'bird',false,false,{
+    article:true,path:'/sprinkles-and-pudding/',standard:'dark',navigationStore
+  });
+  assert.equal(article.attrs['data-theme'],'dark');
+  assert.equal(article.navigations.length,0,'preserve the original article permalink');
+  assert.equal(article.store.get('mcretro-theme'),'bird',
+    'do not rewrite the remembered Bird preference just to follow a link');
+  assert.equal(navigationStore.size,0,'navigation intent is consumed on arrival');
+  assert.equal(article.history.state['mcretro-conure-standard-view'].theme,'dark');
+  // Reload preserves this particular history entry's Dark presentation.
+  const refreshed=fixture(false,'bird',false,false,{
+    article:true,path:'/sprinkles-and-pudding/',standard:'dark',
+    historyState:article.history.state,navigationStore
+  });
+  assert.equal(refreshed.attrs['data-theme'],'dark','refresh keeps Dark despite stored Bird');
+
+  // The same event delegation catches Pagefind search results added after load.
+  const search=fixture(false,'bird',false,false,{
+    unrelated:true,path:'/search/',search:'?q=sprinkles',standard:'light',navigationStore
+  });
+  assert.equal(search.attrs['data-theme'],'light');
+  navigate(search,'/sprinkles-and-pudding-feast/');
+  const found=fixture(false,'bird',false,false,{
+    article:true,path:'/sprinkles-and-pudding-feast/',standard:'light',navigationStore
+  });
+  assert.equal(found.attrs['data-theme'],'light');
+
+  // Carry the displayed standard theme through further article-to-article links.
+  navigate(found,'/the-first-day/');
+  const next=fixture(false,'bird',false,false,{
+    article:true,path:'/the-first-day/',standard:'light',navigationStore
+  });
+  assert.equal(next.attrs['data-theme'],'light');
+
+  // The explicit invitation still enters the Nest without changing the URL.
+  const click={button:0,defaultPrevented:false,preventDefault() {this.defaultPrevented=true;}};
+  next.handlers.chirpClick(click);
+  assert.equal(click.defaultPrevented,true);
+  assert.equal(next.attrs['data-theme'],'bird');
+  assert.equal(next.navigations.length,0);
+  assert.equal(next.history.state['mcretro-conure-standard-view'],undefined,
+    'explicit Bird selection removes previous standard history override');
+  const reloadBird=fixture(false,'bird',false,false,{
+    article:true,path:'/the-first-day/',historyState:next.history.state,navigationStore
+  });
+  assert.equal(reloadBird.attrs['data-theme'],'bird','refresh after explicit Bird selection stays Bird');
+
+  // Following a link from a real Bird page must remain in Bird Mode.
+  const bird=fixture(false,'bird',false,true,{path:'/chirp/adventures/',navigationStore});
+  navigate(bird,'/the-first-day/');
+  const conure=fixture(false,'bird',false,false,{
+    article:true,path:'/the-first-day/',navigationStore
+  });
+  assert.equal(conure.attrs['data-theme'],'bird');
+
+  // External, modified, and new-tab clicks do not write navigation context.
+  const normal=fixture(false,'bird',false,false,{
+    unrelated:true,path:'/archive/2018/01/',standard:'dark',navigationStore
+  });
+  navigate(normal,'https://example.org/sprinkles/');
+  navigate(normal,'/the-first-day/',{metaKey:true});
+  navigate(normal,'/the-first-day/',{target:'_blank'});
+  navigate(normal,'/the-first-day/',{download:true});
+  navigate(normal,'/archive/2018/01/');
+  assert.equal(navigationStore.size,0);
+});
+
+test('core: Find-a-Squawk results explicitly carry Bird Mode into canonical articles', () => {
+  const navigationStore = new Map();
+  const source = fixture(false,'dark',false,true,{
+    path:'/chirp/search/',search:'?q=sprinkles',navigationStore
+  });
+  assert.equal(source.attrs['data-theme'],'bird');
+  assert.equal(source.store.get('mcretro-theme'),'bird');
+
+  // The result is pre-rendered HTML, but its title may contain dynamically
+  // inserted <mark> nodes. The delegated click still finds its parent link.
+  const resultLink = {
+    href:'https://mcretro.net/sprinkles-and-pudding/',
+    target:'',
+    hasAttribute(name) { return false; }
+  };
+  const mark = {closest(selector) {
+    assert.equal(selector,'a[href]');
+    return resultLink;
+  }};
+  source.docHandlers.click({button:0,defaultPrevented:false,target:mark});
+  const stored=JSON.parse(navigationStore.get('mcretro-next-article-theme'));
+  assert.equal(stored.theme,'bird','bird context is explicitly passed to the result');
+  assert.equal(stored.path,'/sprinkles-and-pudding/');
+
+  // Bird arrival must override even a contradictory old standard-theme
+  // history entry or stale saved preference.
+  const staleHistory={
+    'mcretro-conure-standard-view':{path:'/sprinkles-and-pudding/',theme:'dark'}
+  };
+  const article=fixture(false,'dark',false,false,{
+    article:true,path:'/sprinkles-and-pudding/',
+    historyState:staleHistory,navigationStore
+  });
+  assert.equal(article.attrs['data-theme'],'bird');
+  assert.equal(article.history.state['mcretro-conure-standard-view'],undefined);
+  assert.equal(navigationStore.size,0,'Bird navigation context is one-shot');
+  assert.equal(article.navigations.length,0,'article retains its canonical URL');
+  assert.match(overrides, /:root\[data-theme="bird"\] \.chirp-view-invitation \{\s*display: none;/,
+    'View in Channel Chirp is hidden in Bird Mode');
+  const refreshed=fixture(false,'bird',false,false,{
+    article:true,path:'/sprinkles-and-pudding/',
+    historyState:article.history.state,navigationStore
+  });
+  assert.equal(refreshed.attrs['data-theme'],'bird','reload remains Bird');
+});
+
+test('core: navigation intent is one-shot, path-bound, and expires safely', () => {
+  const navigationStore = new Map();
+  const key='mcretro-next-article-theme';
+  navigationStore.set(key,JSON.stringify({
+    path:'/the-first-day/',theme:'light',at:Date.now()-120000
+  }));
+  const expired=fixture(false,'bird',false,false,{
+    article:true,path:'/the-first-day/',navigationStore
+  });
+  assert.equal(expired.attrs['data-theme'],'bird');
+  assert.equal(navigationStore.size,0);
+
+  navigationStore.set(key,JSON.stringify({
+    path:'/the-first-day/',theme:'dark',at:Date.now()
+  }));
+  const wrongPath=fixture(false,'bird',false,false,{
+    article:true,path:'/sprinkles-and-pudding/',navigationStore
+  });
+  assert.equal(wrongPath.attrs['data-theme'],'bird');
+  assert.equal(navigationStore.size,0);
+
+  navigationStore.set(key,'not JSON');
+  const corrupt=fixture(false,'bird',false,false,{
+    article:true,path:'/the-first-day/',navigationStore
+  });
+  assert.equal(corrupt.attrs['data-theme'],'bird');
+  const blocked=fixture(false,'bird',false,false,{
+    article:true,path:'/the-first-day/',navigationStore,sessionStorageFails:true
+  });
+  assert.equal(blocked.attrs['data-theme'],'bird','disabled sessionStorage is non-fatal');
 });
 
 test('core: without manual selection, device changes update normal pages', () => {

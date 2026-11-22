@@ -37,9 +37,27 @@ for (const [name, html] of Object.entries(pages)) {
 }
 assert.match(root, /<html[^>]*data-chirp-unrelated="true"/, 'Bird stored preference must not show McRetro homepage on charcoal');
 assert.match(blog, /data-chirp-unrelated="true"/);
+const regularJanuaryArchive = read('archive/2018/01/index.html');
+const standardSearch = read('search/index.html');
+assert.match(regularJanuaryArchive, /<html[^>]*data-chirp-unrelated="true"/,
+  'the ordinary January 2018 archive must never force Bird Mode');
+assert.doesNotMatch(regularJanuaryArchive, /data-chirp-landing="true"/,
+  'the normal archive must not impersonate a Channel Chirp landing page');
+assert.match(regularJanuaryArchive, /href="\/sprinkles-and-pudding\/"/,
+  'ordinary archives link to the single canonical parrot article URL');
+assert.match(standardSearch, /<html[^>]*data-chirp-unrelated="true"/,
+  'main search remains a standard Light/Dark page');
+assert.match(standardSearch, /\/assets\/js\/search-page\.js/,
+  'main search retains its Pagefind query handling');
 assert.match(corella, /data-chirp-unrelated="true"/);
 assert.doesNotMatch(corella, /data-chirp-article="true"/);
 assert.match(conure, /data-chirp-article="true"/);
+assert.match(pages.search, /href="\/sprinkles-and-pudding\/" data-nest-highlight/,
+  'Find-a-Squawk links directly to the canonical Sprinkles article');
+assert.match(pages.search, /\/assets\/js\/channel-chirp-filter\.js/,
+  'the static Find-a-Squawk list still uses its dynamic filter script');
+assert.doesNotMatch(pages.search, /data-chirp-view-post/,
+  'Bird search results should not show an invitation to enter the Nest');
 assert.match(conure, /post-navigation--bird/);
 assert.match(conure, /post-navigation--mcretro/);
 

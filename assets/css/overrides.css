@@ -2254,3 +2254,47 @@ body[data-recipe-page="true"] .content-area > p.media-caption:has(+ p:not(.media
   display: none;
 }
 
+
+/* Goodies' independent File Server and Photo Gallery collections.
+   Use the same accessible Archive-blue palette in Light and Dark modes. */
+.goodies-archive-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.9rem;
+}
+.goodies-archive-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.7rem;
+  max-width: 100%;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--archive-accent);
+  border-left: 3px solid var(--archive-accent);
+  border-radius: 4px;
+  background: var(--archive-filled);
+  color: var(--archive-filled-text);
+  font: 700 0.85rem/1.45 Montserrat, "Helvetica Neue", sans-serif;
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+a.goodies-archive-button:hover {
+  background: var(--archive-filled-hover);
+  color: var(--archive-filled-text);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+a.goodies-archive-button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.goodies-archive-button--pending:disabled {
+  background: var(--panel-subtle);
+  border-color: var(--border-soft);
+  color: var(--muted);
+  opacity: 0.85;
+  cursor: not-allowed;
+}

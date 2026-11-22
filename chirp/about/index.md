@@ -1,41 +1,55 @@
 ---
 layout: default
-title: About - Channel Chirp
+title: About The Flock
 permalink: /chirp/about/
 channel_chirp: true
 pagefind: false
 ---
-<section class="chirp-page-intro" aria-labelledby="chirp-about-heading">
-  <h1 id="chirp-about-heading">About Channel Chirp</h1>
-  <p>Meet the three green-cheeked conures who made Channel Chirp what it was. Pudge and Tillie arrived together on New Year's Day 2018. Chip, a little cinnamon-coloured Baby Borb, joined them on 3rd February 2018.</p>
-  <nav class="chirp-flock-jump" aria-label="Meet each bird">
-    <a href="#pudge">Pudge</a>
-    <a href="#tillie">Tillie</a>
-    <a href="#chip">Chip</a>
+<section class="chirp-page-intro chirp-flock-intro" aria-labelledby="chirp-about-heading">
+  <h1 id="chirp-about-heading">About The Flock</h1>
+  <p>Meet Pudge, Tillie, and Chip, the three green-cheeked conures behind Channel Chirp. Pudge and Tillie arrived together on New Year's Day 2018, and little cinnamon-coloured Chip joined them on 3rd February 2018. There's also the important matter of what these borbs liked to eat.</p>
+  <nav class="chirp-flock-jump" id="chirp-flock-tabs" role="tablist" aria-label="Choose a flock profile">
+    <button type="button" role="tab" id="chirp-tab-pudge" aria-controls="pudge" aria-selected="false" tabindex="0" data-flock-tab="pudge">Pudge</button>
+    <button type="button" role="tab" id="chirp-tab-tillie" aria-controls="tillie" aria-selected="false" tabindex="-1" data-flock-tab="tillie">Tillie</button>
+    <button type="button" role="tab" id="chirp-tab-chip" aria-controls="chip" aria-selected="false" tabindex="-1" data-flock-tab="chip">Chip</button>
+    <button type="button" role="tab" id="chirp-tab-diet" aria-controls="diet" aria-selected="false" tabindex="-1" data-flock-tab="diet">Diet</button>
   </nav>
-  <p>Want to know what kept these little borbs fuelled? Check out <a href="/chirp/diet/">Our Diet</a>.</p>
 </section>
 
-<section id="pudge" class="chirp-profile" aria-labelledby="chirp-pudge-title">
-  <h2 id="chirp-pudge-title">Pudge - The Boss</h2>
-  <p><strong>Also known as:</strong> Pudding. <strong>Morph:</strong> Green-cheeked conure. <strong>Adopted:</strong> 1st January 2018.</p>
-  <p>Pudge was the biggest and boldest of the bunch, a little greyer on top, and utterly convinced he was king of the cage. He and his sister Tillie raced, wrestled, played, preened, and napped together. He wasn't always gentle when Chip arrived, but the trio eventually found their flock rhythm.</p>
-  <p>Pudge moved to a forever home on 19th May 2018, where he joined another green-cheeked conure. He remains the original boss bird of Channel Chirp.</p>
-  <p><a href="/chirp/search/?q=Pudge">Find Pudge's released adventures</a></p>
+<section class="chirp-flock-help" id="chirp-flock-help" aria-label="How to meet the flock">
+  <h2>Who's that bird?</h2>
+  <p>Pick <strong>Pudge</strong>, <strong>Tillie</strong>, or <strong>Chip</strong> above to open their own photo, little facts, and original Channel Chirp story. Choose <strong>Diet</strong> to see what went into the food bowls. Nothing is open until you choose, and you can swap between them whenever you like.</p>
 </section>
 
-<section id="tillie" class="chirp-profile" aria-labelledby="chirp-tillie-title">
-  <h2 id="chirp-tillie-title">Tillie - The Talker</h2>
-  <p><strong>Also known as:</strong> Sprinkles. <strong>Morph:</strong> Green-cheeked conure. <strong>Adopted:</strong> 1st January 2018.</p>
-  <p>Tillie could be cautious one moment and full of attitude the next. She was famous for her chatter, car-alarm calls, camera attacks, and enthusiasm for a good splash. She was Pudge's second-in-command and became especially close to Chip.</p>
-  <p>She and Chip moved to their forever home together on 19th March 2019.</p>
-  <p><a href="/chirp/search/?q=Tillie">Find Tillie's released adventures</a></p>
+<section id="pudge" class="chirp-profile chirp-flock-panel" role="tabpanel" aria-labelledby="chirp-tab-pudge" tabindex="0" hidden>
+  <h2>Pudge - The Boss</h2>
+  {% capture chirp_pudge %}{% include chirp-flock/pudge.md %}{% endcapture %}
+  {{ chirp_pudge | markdownify }}
+  <p class="chirp-flock-more"><a href="/chirp/search/?q=Pudge">Find Pudge's released adventures</a></p>
 </section>
 
-<section id="chip" class="chirp-profile" aria-labelledby="chirp-chip-title">
-  <h2 id="chirp-chip-title">Chip - Baby Borb</h2>
-  <p><strong>Also known as:</strong> Chippy and Cinnamon. <strong>Morph:</strong> Cinnamon green-cheeked conure. <strong>Adopted:</strong> 3rd February 2018.</p>
-  <p>Chip came home in a tissue box, an impossibly small, mischievous borb. He became known for sultana heists, upside-down adventures, very determined baths, and increasingly grumpy sleepy moments. He loved exploring, and Tillie often followed close behind.</p>
-  <p>Chip and Tillie left for their forever home together on 19th March 2019.</p>
-  <p><a href="/chirp/search/?q=Chip">Find Chip's released adventures</a></p>
+<section id="tillie" class="chirp-profile chirp-flock-panel" role="tabpanel" aria-labelledby="chirp-tab-tillie" tabindex="0" hidden>
+  <h2>Tillie - The Talker</h2>
+  {% capture chirp_tillie %}{% include chirp-flock/tillie.md %}{% endcapture %}
+  {{ chirp_tillie | markdownify }}
+  <p class="chirp-flock-more"><a href="/chirp/search/?q=Tillie">Find Tillie's released adventures</a></p>
 </section>
+
+<section id="chip" class="chirp-profile chirp-flock-panel" role="tabpanel" aria-labelledby="chirp-tab-chip" tabindex="0" hidden>
+  <h2>Chip - Baby Borb</h2>
+  {% capture chirp_chip %}{% include chirp-flock/chip.md %}{% endcapture %}
+  {{ chirp_chip | markdownify }}
+  <p class="chirp-flock-more"><a href="/chirp/search/?q=Chip">Find Chip's released adventures</a></p>
+</section>
+
+<section id="diet" class="chirp-profile chirp-flock-panel" role="tabpanel" aria-labelledby="chirp-tab-diet" tabindex="0" hidden>
+  <h2>Our Diet</h2>
+  <p class="chirp-flock-historical"><em>This is the original flock's historical food diary, not current veterinary feeding advice.</em></p>
+  {% capture chirp_diet %}{% include chirp-flock/diet.md %}{% endcapture %}
+  {{ chirp_diet | markdownify }}
+</section>
+
+<noscript>
+  <p class="chirp-flock-noscript">Enable JavaScript to switch between the four cards here. You can also read the <a href="https://channelchirp.com/pudge/">original Pudge profile</a>, <a href="https://channelchirp.com/tillie/">Tillie profile</a>, <a href="https://channelchirp.com/chip/">Chip profile</a>, and <a href="/chirp/diet/">Diet page</a>.</p>
+</noscript>
+<script src="/assets/js/chirp-flock-tabs.js" defer></script>

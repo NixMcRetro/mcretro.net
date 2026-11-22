@@ -404,6 +404,52 @@ test('core: standard archive and Pagefind links preserve the visible Light/Dark 
   assert.equal(navigationStore.size,0);
 });
 
+test('core: Find-a-Squawk results explicitly carry Bird Mode into canonical articles', () => {
+  const navigationStore = new Map();
+  const source = fixture(false,'dark',false,true,{
+    path:'/chirp/search/',search:'?q=sprinkles',navigationStore
+  });
+  assert.equal(source.attrs['data-theme'],'bird');
+  assert.equal(source.store.get('mcretro-theme'),'bird');
+
+  // The result is pre-rendered HTML, but its title may contain dynamically
+  // inserted <mark> nodes. The delegated click still finds its parent link.
+  const resultLink = {
+    href:'https://mcretro.net/sprinkles-and-pudding/',
+    target:'',
+    hasAttribute(name) { return false; }
+  };
+  const mark = {closest(selector) {
+    assert.equal(selector,'a[href]');
+    return resultLink;
+  }};
+  source.docHandlers.click({button:0,defaultPrevented:false,target:mark});
+  const stored=JSON.parse(navigationStore.get('mcretro-next-article-theme'));
+  assert.equal(stored.theme,'bird','bird context is explicitly passed to the result');
+  assert.equal(stored.path,'/sprinkles-and-pudding/');
+
+  // Bird arrival must override even a contradictory old standard-theme
+  // history entry or stale saved preference.
+  const staleHistory={
+    'mcretro-conure-standard-view':{path:'/sprinkles-and-pudding/',theme:'dark'}
+  };
+  const article=fixture(false,'dark',false,false,{
+    article:true,path:'/sprinkles-and-pudding/',
+    historyState:staleHistory,navigationStore
+  });
+  assert.equal(article.attrs['data-theme'],'bird');
+  assert.equal(article.history.state['mcretro-conure-standard-view'],undefined);
+  assert.equal(navigationStore.size,0,'Bird navigation context is one-shot');
+  assert.equal(article.navigations.length,0,'article retains its canonical URL');
+  assert.match(overrides, /:root\[data-theme="bird"\] \.chirp-view-invitation \{\s*display: none;/,
+    'View in Channel Chirp is hidden in Bird Mode');
+  const refreshed=fixture(false,'bird',false,false,{
+    article:true,path:'/sprinkles-and-pudding/',
+    historyState:article.history.state,navigationStore
+  });
+  assert.equal(refreshed.attrs['data-theme'],'bird','reload remains Bird');
+});
+
 test('core: navigation intent is one-shot, path-bound, and expires safely', () => {
   const navigationStore = new Map();
   const key='mcretro-next-article-theme';

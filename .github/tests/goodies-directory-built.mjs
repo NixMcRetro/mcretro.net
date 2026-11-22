@@ -111,8 +111,12 @@ assert.ok(anchors.some(link =>
   link.href === 'https://photos.mcretro.net/index.html' &&
   link.text.includes('Browse the Photo Gallery')),
   'The live Photo Gallery browse button must appear in the rendered site');
-const entryNames = panel => [...panel.matchAll(/\[([^\]]+)\]\([^)]+\)/g)]
-  .map(match => match[1]);
+// Only sort the leading bold item titles, not secondary links within
+// descriptions (such as historical homepages' own photo galleries).
+const entryNames = panel => panel.split('\n')
+  .filter(line => /\*\*[^\n]*\[([^\]]+)\]\(/.test(line))
+  .map(line => line.match(/\[([^\]]+)\]\(/)?.[1])
+  .filter(Boolean);
 const collator = new Intl.Collator('en', {sensitivity:'base'});
 for (const index of [0, 3, 5]) {
   const names = entryNames(panelSections[index]);

@@ -196,6 +196,110 @@ test('core: About and Channel Chirp About remain paired across modes', () => {
   assert.match(read('chirp/adventures/index.md'), /permalink: \/chirp\/adventures\//);
 });
 
+
+test('core: an unmatched McRetro page returns to its exact URL after the Bird visit', () => {
+  const navigationStore = new Map();
+  const origin = fixture(false,'dark',false,false,{
+    unrelated:true, path:'/homepages/geocities/neighborhoods/',
+    search:'?q=Athens', hash:'#area51',standard:'dark', navigationStore
+  });
+  assert.equal(origin.attrs['data-theme'],'dark');
+  origin.handlers.click(); // Dark -> Bird (no corresponding Chirp page).
+  assert.deepEqual(origin.navigations.at(-1),{method:'assign',url:'/chirp/'});
+  const saved=JSON.parse(navigationStore.get('mcretro-bird-return-url'));
+  assert.equal(saved.url,'/homepages/geocities/neighborhoods/?q=Athens#area51');
+
+  const nest=fixture(false,'bird',false,true,{path:'/chirp/',navigationStore});
+  assert.equal(nest.attrs['data-theme'],'bird');
+  nest.handlers.click(); // Bird -> Light returns to the precise origin.
+  assert.equal(nest.attrs['data-theme'],'light');
+  assert.deepEqual(nest.navigations.at(-1),{
+    method:'assign',url:'/homepages/geocities/neighborhoods/?q=Athens#area51'
+  });
+  assert.equal(navigationStore.has('mcretro-bird-return-url'),false,
+    'The return target is used once, never persisted as a permanent redirect');
+
+  const directNest=fixture(false,'bird',false,true,{path:'/chirp/',navigationStore});
+  directNest.handlers.click();
+  assert.deepEqual(directNest.navigations.at(-1),{method:'assign',url:'/'},
+    'Opening the Nest directly still exits to the standard McRetro homepage');
+});
+
+test('core: unmatched archives and individual articles remember their source, paired pages do not', () => {
+  for(const path of ['/archive/2018/01/','/channels/','/kodi-until-when/','/homepages/geocities/news/']) {
+    const navigationStore=new Map();
+    const origin=fixture(false,'light',false,false,{path,unrelated:true,navigationStore});
+    origin.handlers.click(); // Light -> Dark.
+    origin.handlers.click(); // Dark -> Bird.
+    assert.deepEqual(origin.navigations.at(-1),{method:'assign',url:'/chirp/'});
+    const bird=fixture(false,'bird',false,true,{path:'/chirp/',navigationStore});
+    bird.handlers.click();
+    assert.deepEqual(bird.navigations.at(-1),{method:'assign',url:path},
+      'Leaving Bird returns to the same unsupported McRetro URL');
+  }
+  const pairedStore=new Map();
+  const goodies=fixture(false,'dark',false,false,{
+    path:'/goodies/',unrelated:true,navigationStore:pairedStore
+  });
+  goodies.handlers.click();
+  assert.deepEqual(goodies.navigations.at(-1),{method:'assign',url:'/chirp/soundborb/'});
+  assert.equal(pairedStore.has('mcretro-bird-return-url'),false,
+    'Paired routes should not create an unmatched-page return ticket');
+  const soundborb=fixture(false,'bird',false,true,{
+    path:'/chirp/soundborb/',navigationStore:pairedStore
+  });
+  soundborb.handlers.click();
+  assert.deepEqual(soundborb.navigations.at(-1),{method:'assign',url:'/goodies/'});
+});
+
+test('core: stale, tampered or blocked return storage cannot hijack navigation', () => {
+  const key='mcretro-bird-return-url';
+  const expiryStore=new Map([[key, JSON.stringify({
+    url:'/channels/',at:Date.now()-3600000
+  })]]);
+  const expired=fixture(false,'bird',false,true,{path:'/chirp/',navigationStore:expiryStore});
+  expired.handlers.click();
+  assert.deepEqual(expired.navigations.at(-1),{method:'assign',url:'/'});
+  assert.equal(expiryStore.has(key),false);
+
+  for(const url of ['//example.com/redirect', 'https://example.com/redirect','/chirp/about/']) {
+    const storage=new Map([[key,JSON.stringify({url,at:Date.now()})]]);
+    const bird=fixture(false,'bird',false,true,{path:'/chirp/',navigationStore:storage});
+    bird.handlers.click();
+    assert.deepEqual(bird.navigations.at(-1),{method:'assign',url:'/'});
+    assert.equal(storage.has(key),false);
+  }
+  const storage=new Map();
+  const src=fixture(false,'dark',false,false,{
+    path:'/channels/',unrelated:true,navigationStore:storage,sessionStorageFails:true
+  });
+  src.handlers.click();
+  assert.deepEqual(src.navigations.at(-1),{method:'assign',url:'/chirp/'});
+  const nest=fixture(false,'bird',false,true,{
+    path:'/chirp/',navigationStore:storage,sessionStorageFails:true
+  });
+  nest.handlers.click();
+  assert.deepEqual(nest.navigations.at(-1),{method:'assign',url:'/'});
+});
+
+test('core: navigating elsewhere in the Nest cancels an unmatched-page return ticket', () => {
+  const storage=new Map();
+  const src=fixture(false,'dark',false,false,{
+    path:'/channels/',unrelated:true,navigationStore:storage
+  });
+  src.handlers.click();
+  assert.ok(storage.has('mcretro-bird-return-url'));
+  const bird=fixture(false,'bird',false,true,{path:'/chirp/',navigationStore:storage});
+  bird.docHandlers.click({
+    button:0,defaultPrevented:false,
+    target: {closest() {
+      return {href:'https://mcretro.net/chirp/search/',target:'',
+        hasAttribute() {return false;}};
+    }}
+  });
+  assert.equal(storage.has('mcretro-bird-return-url'),false);
+});
+
 test('core: direct McRetro links never redirect when Bird was the saved experience', () => {
   for (const path of ['/', '/about/', '/blog/', '/blog/page3/', '/goodies/',
     '/channels/', '/kodi-until-when/']) {

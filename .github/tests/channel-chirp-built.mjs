@@ -36,6 +36,13 @@ for (const [name, html] of Object.entries(pages)) {
   assert.doesNotMatch(html, /<nav class="nest-subnav"/);
 }
 assert.match(root, /<html[^>]*data-chirp-unrelated="true"/, 'Bird stored preference must not show McRetro homepage on charcoal');
+assert.match(root, /<a class="nav-mode-mcretro" href="\/"\s+aria-current="page">/,
+  'McRetro homepage must identify Home as the current navigation item');
+assert.doesNotMatch(root, /<a class="nav-mode-bird" href="\/chirp\/"\s+aria-current="page">/,
+  'McRetro homepage must not mark Channel Chirp Home current');
+assert.match(pages.nest, /<a class="nav-mode-bird" href="\/chirp\/"\s+aria-current="page">/,
+  'Channel Chirp homepage must identify Bird Home as the current navigation item');
+
 assert.match(blog, /data-chirp-unrelated="true"/);
 const regularJanuaryArchive = read('archive/2018/01/index.html');
 const standardSearch = read('search/index.html');

@@ -44,6 +44,7 @@
     if (theme !== 'light' && theme !== 'dark') return;
     var anchor = event.target && event.target.closest && event.target.closest('a[href]');
     if (!anchor || anchor.hasAttribute('download') ||
+        anchor.hasAttribute('data-chirp-view-post') ||
         (anchor.target && anchor.target !== '_self')) return;
     try {
       var destination = new URL(anchor.href, window.location.href);

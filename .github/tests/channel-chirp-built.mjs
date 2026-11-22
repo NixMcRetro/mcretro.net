@@ -279,6 +279,22 @@ assert.ok(pages.about.includes('Pudge’s Story') || pages.about.includes('Pudge
 assert.ok(pages.about.includes('Tillie’s Story') || pages.about.includes('Tillie&#8217;s Story'));
 assert.ok(pages.about.includes('Chip’s Story') || pages.about.includes('Chip&#8217;s Story'));
 assert.ok(pages.about.includes('historical food diary'));
+const flockPhotoCaptions = [
+  'Pudge keeps watch from the back',
+  'Tillie on the left and Chip on the right',
+  'Meet Chip, our little cinnamon Baby Borb',
+  "What's on the menu for the flock?"
+];
+assert.equal((pages.about.match(/<figcaption>/g) || []).length, 4,
+  'all four flock photographs must have captions');
+for (const caption of flockPhotoCaptions) {
+  assert.ok(pages.about.includes(caption), 'original flock photo caption: ' + caption);
+}
+assert.ok(pages.about.includes('turquoise green-cheeked conure nest buddy in front'),
+  'Pudge photo ALT text identifies both birds and their position');
+assert.ok(pages.about.includes('Tillie the green-cheeked conure on the left'),
+  'Tillie photo ALT text identifies the birds and their position');
+
 for (const file of ['pudge.jpg', 'tillie.jpg', 'chip.jpg', 'bird-food.png']) {
   assert.ok(!exists('assets/images/2018/01/chirp-flock/' + file),
     'do not ship the original-format fallback: ' + file);

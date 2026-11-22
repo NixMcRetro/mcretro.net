@@ -52,7 +52,7 @@ assert.ok(sprinklesBytes.length > 3000 && sprinklesBytes.length < 30000,
   'author avatar must be a compact, nonempty JPEG XL image');
 assert.equal(sprinklesBytes.subarray(0, 2).toString('hex'), 'ff0a',
   'author avatar must contain a genuine JPEG XL codestream');
-const sprinklesMarkup = /<span class="post-author">\s*<img src="\/assets\/images\/chirp\/sprinkles-192\.jxl" width="192" height="192" alt="" class="author-avatar">\s*Sprinkles\s*<\/span>/;
+const sprinklesMarkup = /<span class="post-author">\s*<img src="\/assets\/images\/chirp\/sprinkles-192\.jxl" width="192" height="192" alt="" class="author-avatar"\s*\/?>\s*Sprinkles\s*<\/span>/;
 assert.match(pages.adventures, sprinklesMarkup,
   'Adventures posts display Sprinkles and a JXL-only avatar');
 assert.match(conure, sprinklesMarkup,
@@ -60,7 +60,7 @@ assert.match(conure, sprinklesMarkup,
 assert.doesNotMatch(pages.adventures,
   /src="\/assets\/favicon\/favicon-96x96\.png[^"]*"[^>]*class="author-avatar"|mcretro-author-portrait-192/,
   'Adventures must not use a McRetro author-avatar fallback');
-assert.match(corella, /<span class="post-author">\s*<img src="\/assets\/favicon\/favicon-96x96\.png[^"]*" alt="" class="author-avatar">\s*Nix McRetro\s*<\/span>/,
+assert.match(corella, /<span class="post-author">\s*<img src="\/assets\/favicon\/favicon-96x96\.png[^"]*" alt="" class="author-avatar"\s*\/?>\s*Nix McRetro\s*<\/span>/,
   'an explicitly excluded parrot post retains the normal McRetro identity');
 assert.match(blog, /mcretro-author-portrait-192\.jxl/,
   'ordinary McRetro entries still use the existing author portrait');

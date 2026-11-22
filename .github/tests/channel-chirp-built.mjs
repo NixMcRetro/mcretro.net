@@ -52,6 +52,12 @@ assert.match(standardSearch, /\/assets\/js\/search-page\.js/,
 assert.match(corella, /data-chirp-unrelated="true"/);
 assert.doesNotMatch(corella, /data-chirp-article="true"/);
 assert.match(conure, /data-chirp-article="true"/);
+assert.match(pages.search, /href="\/sprinkles-and-pudding\/" data-nest-highlight/,
+  'Find-a-Squawk links directly to the canonical Sprinkles article');
+assert.match(pages.search, /\/assets\/js\/channel-chirp-filter\.js/,
+  'the static Find-a-Squawk list still uses its dynamic filter script');
+assert.doesNotMatch(pages.search, /data-chirp-view-post/,
+  'Bird search results should not show an invitation to enter the Nest');
 assert.match(conure, /post-navigation--bird/);
 assert.match(conure, /post-navigation--mcretro/);
 

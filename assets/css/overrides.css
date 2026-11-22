@@ -2046,6 +2046,18 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   image-rendering: pixelated;
 }
 
+/* About > My Internet History: match the 600px, 16:9 framing of the
+   About McRetro image. The original JPEG and shared .media-caption spacing
+   remain unchanged; only its displayed dimensions are adjusted. */
+.about-panel > .center img[src$="/assets/images/about/zap_it_here.jpg"] {
+  width: 600px;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Channels-only illustrated banners: reuse the existing dark JXL artwork in
    Light, Dark, and Bird modes. The modest card framing is intentionally local to
    these four channel illustrations and does not change the site's theme palettes. */

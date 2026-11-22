@@ -43,6 +43,18 @@ assert.match(conure, /data-chirp-article="true"/);
 assert.match(conure, /post-navigation--bird/);
 assert.match(conure, /post-navigation--mcretro/);
 
+
+// Only released conure articles offer an optional way to enter Bird Mode.
+// Both normal and explicitly excluded parrot posts must keep their own identity.
+assert.match(conure, /<a href="\/chirp\/adventures\/" data-chirp-view-post>🦜 View in Channel Chirp<\/a>/,
+  'released conure article offers the in-place Bird Mode invitation');
+assert.doesNotMatch(corella, /data-chirp-view-post/,
+  'explicitly excluded Corella article does not offer Channel Chirp invitation');
+assert.match(read('kodi-until-when/index.html'), /data-chirp-unrelated="true"/,
+  'ordinary McRetro article remains independent of the Bird interface');
+assert.doesNotMatch(read('kodi-until-when/index.html'), /data-chirp-view-post/,
+  'ordinary McRetro article must not have a Bird invitation');
+
 // Channel Chirp uses Sprinkles as its visible and generated author, with a
 // dedicated JPEG XL-only avatar. Ordinary McRetro posts retain their assets.
 const sprinklesAvatar = 'assets/images/chirp/sprinkles-192.jxl';

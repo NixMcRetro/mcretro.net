@@ -127,6 +127,20 @@
       });
     }
 
+    // A released conure article can enter Bird Mode in place. Keep its
+    // canonical URL and the user's last Light/Dark preference unchanged.
+    // The link remains a working route to Adventures without JavaScript.
+    var chirpLinks = document.querySelectorAll ? document.querySelectorAll('[data-chirp-view-post]') : [];
+    Array.prototype.forEach.call(chirpLinks, function (link) {
+      link.addEventListener('click', function (event) {
+        if (event.defaultPrevented || event.metaKey || event.ctrlKey ||
+            event.shiftKey || event.altKey || (typeof event.button === 'number' && event.button !== 0)) return;
+        event.preventDefault();
+        persist('bird');
+        updatePresentation('bird');
+      });
+    });
+
     // Explicit exit links restore the remembered McRetro colour scheme.
     var exits = document.querySelectorAll ? document.querySelectorAll('[data-theme-exit]') : [];
     Array.prototype.forEach.call(exits, function (link) {

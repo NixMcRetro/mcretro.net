@@ -39,6 +39,12 @@ layout: default
     {% endif %}
   </div>
 
+  {% if page.categories contains 'parrots' and page.channel_chirp != false %}
+  <p class="chirp-view-invitation" data-pagefind-ignore="all">
+    <a href="/chirp/adventures/" data-chirp-view-post>🦜 View in Channel Chirp</a>
+  </p>
+  {% endif %}
+
   <div class="post-content">
     {{ content }}
   </div>

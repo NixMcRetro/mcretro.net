@@ -149,7 +149,8 @@ assert.match(headingStyle, /line-height:\s*1\.25;/);
 const metadataStyle = birdArticleRule('.post-meta');
 assert.match(metadataStyle, /margin:\s*0 0 1\.5rem;/);
 const dateStyle = birdArticleRule('.post-date');
-assert.match(dateStyle, /color:\s*#626262;/);
+assert.match(dateStyle, /color:\s*#000000;/,
+  'released Channel Chirp article dates must be black on their white card');
 assert.match(dateStyle, /font-size:\s*1rem;/,
   'article date should be clearly legible like the original Channel Chirp');
 const headingRuleStyle = birdArticleRule('.post-meta::after');

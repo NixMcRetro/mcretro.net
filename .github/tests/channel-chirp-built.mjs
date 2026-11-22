@@ -278,7 +278,21 @@ assert.ok(pages.about.includes('assets/js/chirp-flock-tabs.js'));
 assert.ok(pages.about.includes('Pudge’s Story') || pages.about.includes('Pudge&#8217;s Story'));
 assert.ok(pages.about.includes('Tillie’s Story') || pages.about.includes('Tillie&#8217;s Story'));
 assert.ok(pages.about.includes('Chip’s Story') || pages.about.includes('Chip&#8217;s Story'));
-assert.ok(pages.about.includes('historical food diary'));
+assert.doesNotMatch(pages.about, /This is the original flock's historical food diary, not current veterinary feeding advice\./,
+  'Diet must not display the removed historical note');
+const flockIntro = "Meet Pudge, Tillie, and Chip, the three green-cheeked conures behind Channel Chirp.";
+const introPosition = pages.about.indexOf(flockIntro);
+const helpPosition = pages.about.indexOf('<section class="chirp-flock-help" id="chirp-flock-help"');
+const helpEndPosition = pages.about.indexOf('</section>', helpPosition);
+const tabsEndPosition = pages.about.indexOf('</nav>', pages.about.indexOf('id="chirp-flock-tabs"'));
+assert.ok(tabsEndPosition > 0 && helpPosition > tabsEndPosition &&
+  introPosition > helpPosition && introPosition < helpEndPosition,
+  'the unique flock introduction appears below the four selectors inside the dismissible help card');
+assert.equal(pages.about.split(flockIntro).length - 1, 1, 'the flock introduction appears exactly once');
+assert.match(read('assets/js/chirp-flock-tabs.js'), /help\.hidden\s*=\s*Boolean\(selected\)/,
+  'selecting any flock tab must hide its introduction and help card');
+assert.match(pages.about, /Sunflower seeds, grapes, apple, millet\s*<br\s*\/?>\s*<strong>Personality:<\/strong>\s*The adventurous leader/,
+  'Pudge\u2019s personality appears on a separate rendered line');
 const flockPhotoCaptions = [
   'Pudge at the back with his turquoise nest friend in front.',
   'Tillie on the left, Chip on the right.',

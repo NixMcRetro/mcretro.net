@@ -7,7 +7,6 @@ pagefind: false
 ---
 <section class="chirp-page-intro chirp-flock-intro" aria-labelledby="chirp-about-heading">
   <h1 id="chirp-about-heading">About The Flock</h1>
-  <p>Meet Pudge, Tillie, and Chip, the three green-cheeked conures behind Channel Chirp. Pudge and Tillie arrived together on New Year's Day 2018, and little cinnamon-coloured Chip joined them on 3rd February 2018. There's also the important matter of what these borbs liked to eat.</p>
   <nav class="chirp-flock-jump" id="chirp-flock-tabs" role="tablist" aria-label="Choose a flock profile">
     <button type="button" role="tab" id="chirp-tab-pudge" aria-controls="pudge" aria-selected="false" tabindex="0" data-flock-tab="pudge">Pudge</button>
     <button type="button" role="tab" id="chirp-tab-tillie" aria-controls="tillie" aria-selected="false" tabindex="-1" data-flock-tab="tillie">Tillie</button>
@@ -17,6 +16,7 @@ pagefind: false
 </section>
 
 <section class="chirp-flock-help" id="chirp-flock-help" aria-label="How to meet the flock">
+  <p>Meet Pudge, Tillie, and Chip, the three green-cheeked conures behind Channel Chirp. Pudge and Tillie arrived together on New Year's Day 2018, and little cinnamon-coloured Chip joined them on 3rd February 2018. There's also the important matter of what these borbs liked to eat.</p>
   <h2>Who's that bird?</h2>
   <p>Pick <strong>Pudge</strong>, <strong>Tillie</strong>, or <strong>Chip</strong> above to open their own photo, little facts, and original Channel Chirp story. Choose <strong>Diet</strong> to see what went into the food bowls. Nothing is open until you choose, and you can swap between them whenever you like.</p>
 </section>
@@ -44,7 +44,6 @@ pagefind: false
 
 <section id="diet" class="chirp-profile chirp-flock-panel" role="tabpanel" aria-labelledby="chirp-tab-diet" tabindex="0" hidden>
   <h2>Our Diet</h2>
-  <p class="chirp-flock-historical"><em>This is the original flock's historical food diary, not current veterinary feeding advice.</em></p>
   {% capture chirp_diet %}{% include chirp-flock/diet.md %}{% endcapture %}
   {{ chirp_diet | markdownify }}
 </section>

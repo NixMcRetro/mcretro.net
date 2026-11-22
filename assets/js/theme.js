@@ -284,7 +284,7 @@
               path !== '/' && path !== '/index.html') {
             rememberFallbackReturn(target, 'light');
           } else if (current === 'bird' && next !== 'bird' && target === '/blog/' &&
-              landing && !/^\\/chirp\\/adventures(?:\\/page\\d+)?\\/?$/.test(path)) {
+              landing && !/^\/chirp\/adventures(?:\/page\d+)?\/?$/.test(path)) {
             rememberFallbackReturn(target, 'bird');
           }
           window.location.assign(target);

@@ -2260,6 +2260,7 @@ body[data-recipe-page="true"] .content-area > p.media-caption:has(+ p:not(.media
 .goodies-archive-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.65rem;
   margin-top: 0.9rem;
 }
@@ -2291,10 +2292,5 @@ a.goodies-archive-button:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
-.goodies-archive-button--pending:disabled {
-  background: var(--panel-subtle);
-  border-color: var(--border-soft);
-  color: var(--muted);
-  opacity: 0.85;
-  cursor: not-allowed;
-}
+/* The File Server link intentionally remains usable even before launch;
+   it currently leads to the archive's not-yet-available page. */

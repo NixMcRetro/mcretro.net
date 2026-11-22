@@ -95,10 +95,17 @@ assert.ok(source.includes('[File Server](' + fileServer + ')'),
 assert.ok(anchors.some(link => link.href === fileServer && link.text.includes('File Server')),
   'Ready to Visit File Server link was not rendered');
 
-// Preserve the original animated artefact without constraining its border or
-// location. The image must be reachable in the built website.
-const floppy = '/assets/images/goodies/filecopy.gif';
-assert.ok(html.includes(floppy), 'The Goodies floppy animation is missing');
-assert.ok(existsSync(path.join(root, floppy.slice(1))), 'The original floppy GIF was not published');
+// Goodies now features the rotating floppy; keep its original file-copy GIF
+// as an archived asset. Both must survive the published Jekyll build.
+const floppy = '/assets/images/goodies/floppy-download.gif';
+const historicFloppy = '/assets/images/goodies/filecopy.gif';
+assert.ok(source.includes('src="' + floppy + '"'),
+  'The Goodies source no longer references the rotating floppy GIF');
+assert.ok(html.includes('src="' + floppy + '"'),
+  'The rotating Goodies floppy animation is missing from the built page');
+assert.ok(existsSync(path.join(root, floppy.slice(1))),
+  'The rotating Goodies floppy GIF was not published');
+assert.ok(existsSync(path.join(root, historicFloppy.slice(1))),
+  'The historical Goodies file-copy GIF was not preserved');
 console.log('PASS: ' + preserved.size + ' historical and active links, ' +
-  checked + ' authored internal destinations, section anchors and original floppy animation.');
+  checked + ' authored internal destinations, section anchors, rotating floppy and historical file-copy GIF.');

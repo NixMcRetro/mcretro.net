@@ -1,5 +1,6 @@
 <figure class="chirp-flock-media">
-  <img src="/assets/images/2018/01/chirp-flock/chip.jxl" alt="Chip the cinnamon green-cheeked conure" loading="lazy" decoding="async">
+  <img src="/assets/images/2018/01/chirp-flock/chip.jxl" alt="Chip, the cinnamon green-cheeked conure" loading="lazy" decoding="async">
+  <figcaption>Meet Chip, our little cinnamon Baby Borb. Small bird, enormous personality, and never far from a bit of mischief.</figcaption>
 </figure>
 
 **Nicknames:** Baby Borb, Chippy, Cinnamon  

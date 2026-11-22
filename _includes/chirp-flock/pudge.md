@@ -1,6 +1,6 @@
 <figure class="chirp-flock-media">
   <img src="/assets/images/2018/01/chirp-flock/pudge.jxl" alt="Pudge at the back, with his turquoise green-cheeked conure nest buddy in front" loading="lazy" decoding="async">
-  <figcaption>Pudge at the back with his new turquoise nest buddy in front.</figcaption>
+  <figcaption>Pudge at the back with his turquoise nest friend in front.</figcaption>
 </figure>
 
 **Nickname:** Pudding  

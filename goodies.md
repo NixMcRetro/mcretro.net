@@ -59,7 +59,7 @@ A wiki for true XBOX enthusiasts who wish to collect valuable information about 
 Some of the best bits of computer history aren't articles or photographs. They're the old drivers, firmware, utilities, and odd little files that went with the hardware. I'm putting together a separate, browsable archive so they don't have to hide among the blog posts. The virtual filing cabinet is taking shape, but the doors aren't open just yet!
 
 <p class="goodies-archive-actions">
-  <button class="goodies-archive-button goodies-archive-button--pending" type="button" disabled>🗄️ File Server Coming Soon</button>
+  <a class="goodies-archive-button" href="https://files.mcretro.net/index.html" target="_blank" rel="noopener noreferrer">🗄️ Browse the File Server (Coming Soon)</a>
 </p>
 
 </details>
@@ -95,7 +95,7 @@ An old-fashioned nature homepage featuring a frog, a lizard and a few original p
 I've photographed a ridiculous amount of retro computing gear over the years, from game consoles and modems to obscure accessories, repair projects, and the occasional bit of nature. Now those thousands of photos have a home of their own. Browse the collections, find that odd piece of hardware, and zoom in on all the little details. Apparently I never knew when to put the camera down! :)
 
 <p class="goodies-archive-actions">
-  <a class="goodies-archive-button" href="https://photos.mcretro.net/index.html">📸 Browse the Photo Gallery</a>
+  <a class="goodies-archive-button" href="https://photos.mcretro.net/index.html" target="_blank" rel="noopener noreferrer">📸 Browse the Photo Gallery</a>
 </p>
 
 </details>

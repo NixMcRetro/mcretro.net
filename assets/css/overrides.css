@@ -1998,42 +1998,31 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   --retro-gif-frame-border: #71818C;
 }
 
-/* Goodies: keep the original Windows 9x file-copy GIF and its frame size.
-   The frame shares the same theme-aware colours as About and Channels. */
+/* Goodies: match the compact framed animations on About and Channels.
+   Keep the original file-copy GIF in the repository. */
 .goodies-floppy-art {
+  box-sizing: border-box;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  width: fit-content;
   max-width: 100%;
   margin: 1.25rem auto 1.5rem;
-  text-align: center;
 }
 .goodies-floppy-frame {
   box-sizing: border-box;
   max-width: 100%;
-  padding: 0.5rem;
+  padding: 0.625rem;
   border: 1px solid var(--retro-gif-frame-border);
   border-radius: 0;
   background: var(--retro-gif-frame-bg);
 }
 .goodies-floppy-frame img {
   display: block;
-  width: 408px;
+  width: 150px;
   max-width: 100%;
   height: auto;
   image-rendering: pixelated;
-}
-/* Match the blog's existing small, italic .media-caption convention. */
-.goodies-floppy-art figcaption.media-caption {
-  max-width: 100%;
-  margin: 0 auto;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--text);
-  text-align: center;
-  overflow-wrap: anywhere;
 }
 
 /* Keep the McRetro heading's hover target as narrow as the visible title.
@@ -2099,19 +2088,20 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   image-rendering: pixelated;
 }
 
-/* Align the framed About cat and Channels TV with the first paragraph,
-   maintaining a consistent 24px text gap on desktop. On narrow screens,
-   retain the centred image above the introduction. */
+/* Align the three framed header GIFs with their introductory text,
+   maintaining a 24px gap on desktop. On narrow screens they stay centred. */
 @media screen and (min-width: 651px) {
   .about-running-cat,
-  .channels-tv-art {
+  .channels-tv-art,
+  .goodies-floppy-art {
     float: right;
     margin: 1.25rem 0 1rem 1.5rem;
   }
 
-  /* Keep the expandable sections below the complete introduction. */
+  /* Keep expandable sections below each complete introduction. */
   .about-running-cat ~ details.about-panel:first-of-type,
-  .channels-tv-art ~ details.about-panel:first-of-type {
+  .channels-tv-art ~ details.about-panel:first-of-type,
+  .goodies-floppy-art ~ details.about-panel:first-of-type {
     clear: right;
   }
 }

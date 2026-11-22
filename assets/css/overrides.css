@@ -1987,8 +1987,19 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   }
 }
 
-/* Goodies: retain the original transparent Windows 9x file-copy animation.
-   Only its small grey frame changes; other media and themes stay untouched. */
+/* Shared retro-GIF framing for Goodies, About and Channels.
+   Warm stone in Light mode, cool silver in Dark mode. */
+:root {
+  --retro-gif-frame-bg: #E6E2D9;
+  --retro-gif-frame-border: #626B70;
+}
+:root[data-theme="dark"] {
+  --retro-gif-frame-bg: #CBD0D5;
+  --retro-gif-frame-border: #71818C;
+}
+
+/* Goodies: keep the original Windows 9x file-copy GIF and its frame size.
+   The frame shares the same theme-aware colours as About and Channels. */
 .goodies-floppy-art {
   display: flex;
   flex-direction: column;
@@ -2002,8 +2013,9 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   box-sizing: border-box;
   max-width: 100%;
   padding: 0.5rem;
-  border: 1px solid #333;
-  background: #c0c0c0;
+  border: 1px solid var(--retro-gif-frame-border);
+  border-radius: 0;
+  background: var(--retro-gif-frame-bg);
 }
 .goodies-floppy-frame img {
   display: block;
@@ -2031,11 +2043,18 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   max-width: 100%;
 }
 
-/* About: restore the unframed running cat at a modest 1.25x scale. */
+/* About: preserve the running cat at its modest 1.25x scale. */
 .about-running-cat {
+  box-sizing: border-box;
   display: flex;
+  align-items: center;
   justify-content: center;
+  width: fit-content;
   max-width: 100%;
+  padding: 0.625rem;
+  border: 1px solid var(--retro-gif-frame-border);
+  border-radius: 0;
+  background: var(--retro-gif-frame-bg);
   margin: 1.25rem auto 1.5rem;
 }
 .about-running-cat img {
@@ -2058,12 +2077,18 @@ a.archive-index-month.has-posts:focus-visible { outline: 3px solid var(--focus);
   object-position: center;
 }
 
-/* Channels: display the original 100 x 100 animated TV GIF at the same
-   1.5x scale as the Goodies file-copy animation, without a frame or caption. */
+/* Channels: preserve the original TV GIF at 1.5x scale in a compact frame. */
 .channels-tv-art {
+  box-sizing: border-box;
   display: flex;
+  align-items: center;
   justify-content: center;
+  width: fit-content;
   max-width: 100%;
+  padding: 0.625rem;
+  border: 1px solid var(--retro-gif-frame-border);
+  border-radius: 0;
+  background: var(--retro-gif-frame-bg);
   margin: 1.25rem auto 1.5rem;
 }
 .channels-tv-art img {

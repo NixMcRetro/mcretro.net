@@ -4,6 +4,7 @@ title: GeoCities Rebuild
 ---
 
 <link rel="stylesheet" href="/homepages/geocities/geocities.css">
+{% include geocities-navigation.html %}
 <figure class="center">
   <img src="/homepages/geocities/images/main/mai_mast.gif" alt="Original GeoCities masthead, with a city skyline and the words Welcome to Our Community." width="420" height="60" loading="eager">
 </figure>

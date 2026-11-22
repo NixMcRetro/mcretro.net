@@ -89,11 +89,47 @@ for (const name of coolLinkNames) {
   assert.ok(anchors.some(link => normaliseApostrophes(link.text).includes(name)),
     'Cool Links entry is not visible in built HTML: ' + name);
 }
-const fileServer = 'https://files.mcretro.net/index.html';
-assert.ok(source.includes('[File Server](' + fileServer + ')'),
-  'File Server is not listed under Ready to Visit');
-assert.ok(anchors.some(link => link.href === fileServer && link.text.includes('File Server')),
-  'Ready to Visit File Server link was not rendered');
+
+const panelSections = [...source.matchAll(/<details class="about-panel panel--teal" markdown="1">([\s\S]*?)<\/details>/g)]
+  .map(match => match[1]);
+const panelHeading = panel => panel.match(/<\/span>\s*([^<]+)<\/summary>/)?.[1];
+const expectedSections = [
+  'Cool Links', 'File Server', 'Historical Homepages',
+  'Photo Gallery', 'Projects', 'Super Secret Recipes'
+];
+const sectionCollator = new Intl.Collator('en', {sensitivity: 'base'});
+assert.deepEqual(expectedSections, [...expectedSections].sort(sectionCollator.compare),
+  'Top-level Goodies accordion headings must also be alphabetised');
+assert.deepEqual(panelSections.map(panelHeading), expectedSections,
+  'Goodies sections are independent accordions sorted alphabetically');
+assert.doesNotMatch(panelSections[4], /\[File Server\]|\[Photo Gallery\]/,
+  'Files and photos must not appear among interactive projects');
+assert.match(panelSections[1], /<button class="goodies-archive-button goodies-archive-button--pending" type="button" disabled>/,
+  'File Server has a genuinely disabled Coming Soon button until launched');
+assert.doesNotMatch(panelSections[1], /href="https:\/\/files\.mcretro\.net/,
+  'Do not advertise an unavailable server as a working destination');
+assert.match(panelSections[3], /<a class="goodies-archive-button" href="https:\/\/photos\.mcretro\.net\/index\.html">/,
+  'Photo Gallery has a styled, functional external browse link');
+assert.ok(anchors.some(link =>
+  link.href === 'https://photos.mcretro.net/index.html' &&
+  link.text.includes('Browse the Photo Gallery')),
+  'The live Photo Gallery browse button must appear in the rendered site');
+// Only sort the leading bold item titles, not secondary links within
+// descriptions (such as historical homepages' own photo galleries).
+const entryNames = panel => panel.split('\n')
+  .filter(line => /\*\*[^\n]*\[([^\]]+)\]\(/.test(line))
+  .map(line => line.match(/\[([^\]]+)\]\(/)?.[1])
+  .filter(Boolean);
+const collator = new Intl.Collator('en', {sensitivity:'base'});
+for (const index of [0, 2, 4]) {
+  const names = entryNames(panelSections[index]);
+  assert.deepEqual(names, [...names].sort(collator.compare),
+    expectedSections[index] + ' must list entries alphabetically by name');
+}
+const recipeNames = [...panelSections[5].matchAll(/^- \[([^\]]+)\]/gm)].map(match => match[1]);
+assert.deepEqual(recipeNames, [...recipeNames].sort(collator.compare),
+  'Recipes must list items alphabetically by name');
+
 
 // Goodies now features the rotating floppy; keep its original file-copy GIF
 // as an archived asset. Both must survive the published Jekyll build.

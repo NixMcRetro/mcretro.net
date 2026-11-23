@@ -411,6 +411,16 @@
   font-size: clamp(1.4rem, 4.8vw, 2.2rem);
   letter-spacing: .1em;
 }
+/* The Korataki Channel Chirp wordmark is wider than McRetro's title. On
+ * narrow phones scale it with viewport width so the two 40px controls stay
+ * beside the title, not between two wrapped lines. Desktop is unchanged. */
+@media screen and (max-width: 500px) {
+  :root[data-theme="bird"] .site-logo--bird {
+    font-size: clamp(.96rem, 4.65vw, 1.4rem);
+    letter-spacing: .02em;
+    white-space: nowrap;
+  }
+}
 /* Give the Channel Chirp wordmark a clearly visible green hover/focus state
  * on charcoal, without changing the McRetro wordmark. */
 :root[data-theme="bird"] a.site-logo--bird:hover,
@@ -1227,10 +1237,25 @@
   :root[data-theme="bird"] .chirp-flock-jump button { transition: none; }
 }
 
+/* Channel Chirp pages use a full-height column so their copyright bar reaches
+ * the bottom of short desktop and mobile viewports without overlapping content.
+ * On mobile the sidebar still precedes the footer in normal document order. */
+:root[data-chirp-landing="true"] body.channel-chirp-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+:root[data-chirp-landing="true"] body.channel-chirp-page > .site-content {
+  flex: 1 0 auto;
+}
+
 /* Original Channel Chirp's solid-black footer bar. The copyright mark is
  * plain text; the year and Channel Chirp name underline on hover or keyboard focus.
  * Keep it legible even if someone switches theme while on /chirp/. */
 :root[data-chirp-landing="true"] .site-footer--chirp {
+  display: block;
+  flex-shrink: 0;
   box-sizing: border-box;
   width: 100%;
   max-width: none;

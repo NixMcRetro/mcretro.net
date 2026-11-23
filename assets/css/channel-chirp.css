@@ -756,15 +756,14 @@
   opacity: .65;
   cursor: not-allowed;
 }
-/* Finish the Bird sidebar with the same green divider as the widgets.
- * Padding above the line and below it separates the Return link from
- * the copyright footer on narrow phones and desktop alike. */
+/* Keep the final green divider close to the Return link, with a modest
+ * gap before the black footer on both desktop and mobile. */
 :root[data-chirp-landing="true"] .sidebar-mode-bird {
-  padding-bottom: 1.75rem;
+  padding-bottom: 1rem;
 }
 :root[data-chirp-landing="true"] .sidebar-mode-bird .chirp-return {
   margin: .3rem 0 0;
-  padding: 0 0 1.4rem;
+  padding: 0 0 .75rem;
   border-bottom: 4px solid #29A518;
 }
 

@@ -756,9 +756,16 @@
   opacity: .65;
   cursor: not-allowed;
 }
-:root[data-theme="bird"] .sidebar-mode-bird .chirp-return {
+/* Finish the Bird sidebar with the same green divider as the widgets.
+ * Padding above the line and below it separates the Return link from
+ * the copyright footer on narrow phones and desktop alike. */
+:root[data-chirp-landing="true"] .sidebar-mode-bird {
+  padding-bottom: 1.75rem;
+}
+:root[data-chirp-landing="true"] .sidebar-mode-bird .chirp-return {
   margin: .3rem 0 0;
-  padding: 0;
+  padding: 0 0 1.4rem;
+  border-bottom: 4px solid #29A518;
 }
 
 /* Display the original Nest welcome photograph at its full 4:3 height.

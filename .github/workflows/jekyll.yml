@@ -10,6 +10,21 @@ on:
       - '.github/workflows/op1-browser-tests.yml'
   pull_request:
     paths:
+      # Retain CSP regression coverage now owned by this deployment workflow.
+      - '_includes/footer.html'
+      - 'assets/css/style.css'
+      - '.github/tests/footer-csp.mjs'
+      - '.github/tests/footer-csp-built.mjs'
+      - 'Gemfile.lock'
+      - '.github/tests/script-tags.mjs'
+      - '.github/tests/script-tags.test.mjs'
+      - 'search/index.html'
+      - 'assets/js/mobile-navigation.js'
+      - 'assets/js/search-page.js'
+      - 'assets/js/random-post.js'
+      - 'assets/data/random-post-urls.json'
+      - '.github/tests/random-post.mjs'
+      - '.github/tests/csp-preparation.mjs'
       - '_posts/**'
       - 'blog/index.html'
       - 'archive/index.html'
@@ -179,6 +194,22 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '24'
+
+      - name: Check CSP-sensitive JavaScript syntax
+        run: |
+          node --check assets/js/theme.js
+          node --check .github/tests/theme.mjs
+          node --check assets/js/mobile-navigation.js
+          node --check assets/js/search-page.js
+          node --check assets/js/random-post.js
+          node --check assets/js/mcretro-dialup.js
+          node --check assets/js/archive-calendar.js
+          node --check .github/tests/modem-destinations.mjs
+          node --check .github/tests/script-tags.mjs
+          node --check .github/tests/csp-built.mjs
+
+      - name: Verify CSP preparation, footer, script tags and random-post behaviour
+        run: node --test .github/tests/csp-preparation.mjs .github/tests/random-post.mjs .github/tests/footer-csp.mjs .github/tests/script-tags.test.mjs
 
       - name: Verify Fish Tank World pages and built-site internal links
         run: node .github/tests/fishtankworld-built.mjs _site

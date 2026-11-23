@@ -1,0 +1,36 @@
+name: EK-1 Browser Regression
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'homepages/electronic-keyboard/**'
+      - '.github/tests/ek1-*.mjs'
+      - '.github/workflows/ek1-browser-tests.yml'
+  pull_request:
+    paths:
+      - 'homepages/electronic-keyboard/**'
+      - '.github/tests/ek1-*.mjs'
+      - '.github/workflows/ek1-browser-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  electronic-keyboard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: node --check homepages/electronic-keyboard/app.js
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.57.0
+          npx playwright install --with-deps chromium firefox webkit
+      - name: EK-1 browser regression
+        run: node .github/tests/ek1-browser-smoke.mjs

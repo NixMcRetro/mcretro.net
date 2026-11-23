@@ -411,6 +411,16 @@
   font-size: clamp(1.4rem, 4.8vw, 2.2rem);
   letter-spacing: .1em;
 }
+/* The Korataki Channel Chirp wordmark is wider than McRetro's title. On
+ * narrow phones scale it with viewport width so the two 40px controls stay
+ * beside the title, not between two wrapped lines. Desktop is unchanged. */
+@media screen and (max-width: 500px) {
+  :root[data-theme="bird"] .site-logo--bird {
+    font-size: clamp(.96rem, 4.65vw, 1.4rem);
+    letter-spacing: .02em;
+    white-space: nowrap;
+  }
+}
 /* Give the Channel Chirp wordmark a clearly visible green hover/focus state
  * on charcoal, without changing the McRetro wordmark. */
 :root[data-theme="bird"] a.site-logo--bird:hover,

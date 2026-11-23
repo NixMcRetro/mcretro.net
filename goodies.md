@@ -103,11 +103,11 @@ I've photographed a ridiculous amount of retro computing gear over the years, fr
 <details class="about-panel panel--teal" markdown="1">
 <summary markdown="span"><span class="about-panel-icon" aria-hidden="true">✅</span> Projects</summary>
 
-**🎹 [Electronic Keyboard (Model EK-1)](/homepages/electronic-keyboard/)**<br>
-A simple, old-school browser keyboard with instrument sounds, rhythms, and five built-in demo songs. Pick a sound, press DEMO, or play your own tune!
-
 **☎️ [Dial-Up Networking](/homepages/modem/)**<br>
 Hear the old-school modem connection, then dial into either a randomly selected McRetro article or one of the restored historical homepages.
+
+**🎹 [Electronic Keyboard (Model EK-1)](/homepages/electronic-keyboard/)**<br>
+A simple, old-school browser keyboard with instrument sounds, rhythms, and five built-in demo songs. Pick a sound, press DEMO, or play your own tune!
 
 **🌐 [GeoCities Rebuild Project](/homepages/geocities/)**<br>
 The story of my GeoCities archive rebuild, with original artwork, dial-up adventures, links to the worklogs, and a gateway to my private local archive.

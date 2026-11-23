@@ -52,7 +52,7 @@ for (const [name, browserType] of Object.entries({chromium, firefox, webkit})) {
       await page.locator('#rhythm').selectOption('3');
       await page.locator('#startRhythm').click();
       await page.waitForFunction(() => EK1.state.transport === 'rhythm');
-      await page.locator('#tempo').fill('155');
+      await page.locator('#tempo').evaluate(el => { el.value = '155'; el.dispatchEvent(new Event('input', {bubbles:true})); });
       assert.match(await page.locator('#tempoValue').innerText(),/155 BPM/);
       await page.locator('#accomp').click();
       assert.equal(await page.evaluate(() => EK1.state.autoChord), true);

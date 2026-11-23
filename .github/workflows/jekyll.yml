@@ -58,6 +58,7 @@ on:
       - '.github/tests/chirp-random.test.mjs'
       - '.github/tests/chirp-calendar.test.mjs'
       - 'goodies.md'
+      - 'homepages/electronic-keyboard/**'
       - 'homepages/geocities/**'
       - '.github/tests/geocities-built.mjs'
       - 'homepages/fishtankworld/**'

@@ -10,6 +10,13 @@ Tests are here to prevent broken pages and lost material, not to forbid a redesi
 - Interactive audio, dial-up, calendar navigation, colour-theme switching, and accordion click/scroll behaviour work.
 - Captions, archive article counts, navigation destinations, and accessible control names remain correct.
 
+## Workflow ownership
+
+- `.github/workflows/jekyll.yml` owns the published Jekyll/Pagefind build and the CSP, footer, navigation, script-tag and random-post regressions. The old standalone CSP Preparation workflow has been consolidated here to avoid duplicate runs.
+- `.github/workflows/op1-browser-tests.yml` runs BleepGarden browser regressions for relevant source and test changes on `main` and pull requests. Historical development branch triggers have been retired.
+- `.github/workflows/preserve-blog-media.yml` guards article media removals in pull requests. It does not protect direct pushes to `main`; major media edits should therefore be made through a PR.
+- `.github/workflows/link-audit.yml` remains an on-demand, report-only link checker.
+
 ## Advisory checks (do not block deployment)
 
 - Exact colours, dimensions, spacing, decorative GIFs, visual alignment, and other stylistic choices.

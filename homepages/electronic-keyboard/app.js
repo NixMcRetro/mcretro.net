@@ -152,7 +152,13 @@
       const data = noise.getChannelData(0);
       for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
     }
-    if (ctx.state !== 'running') await ctx.resume();
+    if (ctx.state !== 'running') {
+      // Firefox can leave resume() pending under autoplay rules. Do not deadlock UI.
+      ctx.resume().catch(() => show('AUDIO BLOCKED', 'ALLOW SOUND IN YOUR BROWSER'));
+      setTimeout(() => {
+        if (ctx && ctx.state !== 'running') show('AUDIO BLOCKED', 'CLICK A KEY OR ALLOW SOUND');
+      }, 900);
+    }
     return true;
   }
   function show(main, sub) {

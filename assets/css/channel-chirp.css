@@ -756,10 +756,10 @@
   opacity: .65;
   cursor: not-allowed;
 }
-/* Keep the final green divider close to the Return link, with a modest
- * gap before the black footer on both desktop and mobile. */
+/* Keep the final green divider close to the Return link, with a clear
+ * 40px gap before the black footer on both desktop and mobile. */
 :root[data-chirp-landing="true"] .sidebar-mode-bird {
-  padding-bottom: 1.5rem;
+  padding-bottom: 2.5rem;
 }
 :root[data-chirp-landing="true"] .sidebar-mode-bird .chirp-return {
   margin: .3rem 0 0;

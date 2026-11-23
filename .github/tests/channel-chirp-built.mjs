@@ -285,9 +285,27 @@ assert.match(birdLayout,
   'Channel Chirp homepage, introduction and bird profiles should use black body text');
 assert.match(birdLayout, /\.chirp-flock-panel \.chirp-flock-media figcaption\s*\{[^}]*color: #000000;/,
   'all flock profile photo captions should use black text');
+const fullHeightBody = birdLayout.match(
+  /:root\[data-chirp-landing="true"\] body\.channel-chirp-page \{([^}]+)\}/)?.[1];
+assert.ok(fullHeightBody, 'Channel Chirp pages must have a scoped full-height layout');
+assert.match(fullHeightBody, /display: flex;/,
+  'Channel Chirp page body must be a column flex container');
+assert.match(fullHeightBody, /flex-direction: column;/);
+assert.match(fullHeightBody, /min-height: 100dvh;/,
+  'Channel Chirp should fill the dynamic mobile viewport without a charcoal strip');
+assert.match(birdLayout,
+  /:root\[data-chirp-landing="true"\] body\.channel-chirp-page > \.site-content \{[^}]*flex: 1 0 auto;/,
+  'content must grow on short pages to push the copyright footer to the bottom');
+assert.match(read('assets/css/style.css'),
+  /@media screen and \(max-width: 860px\) \{\s*\.site-content \{\s*flex-direction: column;/,
+  'mobile pages retain the stacked sidebar above their footer');
 const simpleFooterStart = birdLayout.indexOf(':root[data-chirp-landing="true"] .site-footer--chirp {');
 assert.ok(simpleFooterStart >= 0, 'Channel Chirp has a dedicated footer style');
 const simpleFooterCss = birdLayout.slice(simpleFooterStart, birdLayout.indexOf('}', simpleFooterStart));
+assert.match(simpleFooterCss, /display: block;/,
+  'the footer remains a visible block on narrow screens');
+assert.match(simpleFooterCss, /flex-shrink: 0;/,
+  'the footer must not collapse inside the full-height layout');
 assert.match(simpleFooterCss, /background: #000000;/,
   'the entire Channel Chirp footer bar must be solid black');
 assert.match(simpleFooterCss, /color: #FFFFFF;/,
@@ -425,7 +443,7 @@ assert.ok(birdLayout.includes('background: #F7FBF5;'), 'result hover card is dis
 assert.ok(birdLayout.includes('.chirp-search-result mark {'), 'Bird search matches are highlighted');
 assert.ok(birdLayout.includes('.chirp-search-result[hidden],'),
   'hidden search results stay hidden regardless of CSS rules');
-assert.ok(pages.search.includes('channel-chirp.css?v=20261123-chirp-footer-hover'),
+assert.ok(pages.search.includes('channel-chirp.css?v=20261123-chirp-footer-bottom'),
   'search loads the newest Bird search stylesheet');
 
 assert.match(pages.soundborb, /Migration in progress/);
@@ -629,9 +647,9 @@ assert.ok(birdLayout.includes('.chirp-archive-index > .archive-index-intro,'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs [aria-current="page"] {'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs a {'));
 assert.ok(birdLayout.includes('color: #BDF7B0;'));
-assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-footer-hover"'),
+assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-footer-bottom"'),
   'Bird archive loads fresh stylesheet to avoid a stale dark-on-charcoal heading');
-assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-footer-hover"'),
+assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-footer-bottom"'),
   'Shared template loads the same current Bird stylesheet');
 
 const birdByMonth = new Map();
@@ -725,7 +743,7 @@ assert.ok(birdLayout.includes('.chirp-archive-month .archive-blog-list .post-ent
 for (const month of birdByMonth.keys()) {
   const [year, number] = month.split('-');
   assert.ok(read('chirp/archive/' + year + '/' + number + '/index.html')
-    .includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-footer-hover"'),
+    .includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-footer-bottom"'),
     'all Bird month pages receive the updated stylesheet: ' + month);
 }
 assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive')).sort(),

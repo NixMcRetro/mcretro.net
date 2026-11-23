@@ -1227,10 +1227,25 @@
   :root[data-theme="bird"] .chirp-flock-jump button { transition: none; }
 }
 
+/* Channel Chirp pages use a full-height column so their copyright bar reaches
+ * the bottom of short desktop and mobile viewports without overlapping content.
+ * On mobile the sidebar still precedes the footer in normal document order. */
+:root[data-chirp-landing="true"] body.channel-chirp-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+:root[data-chirp-landing="true"] body.channel-chirp-page > .site-content {
+  flex: 1 0 auto;
+}
+
 /* Original Channel Chirp's solid-black footer bar. The copyright mark is
  * plain text; the year and Channel Chirp name underline on hover or keyboard focus.
  * Keep it legible even if someone switches theme while on /chirp/. */
 :root[data-chirp-landing="true"] .site-footer--chirp {
+  display: block;
+  flex-shrink: 0;
   box-sizing: border-box;
   width: 100%;
   max-width: none;

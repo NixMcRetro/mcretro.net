@@ -107,7 +107,7 @@
   let ctx, master, noise, transport = null, loop = null, endTimer = null;
   let tone = 0, rhythm = 0, tempo = 116, volume = .7, melodyOff = false, autoChord = false;
   let heldChord = null, recording = false, take = [], takeStart = 0, recordTimer = null;
-  const held = new Map(), lights = new Map(), timers = new Set(), keyElements = new Map();
+  const held = new Map(), pending = new Set(), cancelled = new Set(), lights = new Map(), timers = new Set(), keyElements = new Map();
   const noteToMidi = s => {
     const m = /^([A-G])([#b]?)(-?[0-9]+)$/.exec(s);
     if (!m) throw new Error('Invalid note: ' + s);
@@ -291,6 +291,7 @@
     if (tr.type === 'demo') {
       const song = SONGS[tr.song];
       if (step >= song.bars * STEPS_PER_BAR) {
+        if (loop) { clearInterval(loop); loop = null; }
         if (!endTimer) endTimer = setTimeout(() => { stopTransport(); show('DEMO FINISHED', song.title.toUpperCase()); }, Math.max(100, (at - ctx.currentTime + .65) * 1000));
         return false;
       }
@@ -352,15 +353,18 @@
   }
   function stopHeld() {
     for (const entry of held.values()) entry.sound.release(ctx.currentTime);
-    held.clear();
+    held.clear(); pending.forEach(token => cancelled.add(token));
     keyElements.forEach(node => node.classList.remove('pressed'));
   }
   async function press(midi, token) {
-    if (held.has(token)) return;
-    if (!await audio()) return;
+    if (held.has(token) || pending.has(token)) return;
+    pending.add(token);
+    const ready = await audio();
+    pending.delete(token);
+    if (!ready || cancelled.has(token)) { cancelled.delete(token); return; }
     if (held.has(token)) return;
     if (autoChord && midi < 60 && transport?.type !== 'demo') {
-      heldChord = label(midi) + ($('chordType').value === 'minor' ? 'm' : '');
+      heldChord = label(midi + 12) + ($('chordType').value === 'minor' ? 'm' : '');
       const chord = chordInfo(heldChord);
       const sounds = chord.notes.map(n => voice(n, ctx.currentTime, .0, 2, .12, master, true));
       held.set(token, { midi, sound: { release: t => sounds.forEach(s => s.release(t)) }, started: ctx.currentTime, chord: true });
@@ -377,6 +381,7 @@
     keyElements.get(midi)?.classList.add('pressed');
   }
   function release(token) {
+    if (pending.has(token)) cancelled.add(token);
     const entry = held.get(token);
     if (!entry) return;
     held.delete(token);

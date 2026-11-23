@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#272c31">
+  <meta name="description" content="Electronic Keyboard (Model EK-1), a simple browser-based home keyboard with five original built-in demo songs.">
+  <title>Electronic Keyboard (Model EK-1) v0.1.0</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+<main class="shell">
+  <section class="instrument" aria-label="Electronic Keyboard Model EK-1">
+    <header class="brand">
+      <div><p class="brand-small">ELECTRONIC KEYBOARD</p><h1>MODEL EK-1</h1></div>
+      <span class="version">v0.1.0</span>
+    </header>
+    <div class="top-panel">
+      <div class="display" role="status" aria-live="polite" aria-atomic="true">
+        <span class="display-label">EK-1 DIGITAL DISPLAY</span>
+        <strong id="displayMain">01 GRAND PIANO</strong>
+        <span id="displaySub">READY TO PLAY</span>
+      </div>
+      <div class="settings">
+        <label for="tone">TONE <select id="tone" aria-label="Instrument sound"></select></label>
+        <label for="rhythm">RHYTHM <select id="rhythm" aria-label="Rhythm style"></select></label>
+        <label for="tempo">TEMPO <span id="tempoValue" class="readout">116 BPM</span>
+          <input id="tempo" type="range" min="60" max="180" step="1" value="116">
+        </label>
+        <label for="volume">VOLUME
+          <input id="volume" type="range" min="0" max="100" step="1" value="70" aria-label="Volume">
+        </label>
+      </div>
+    </div>
+    <div class="button-panel">
+      <section class="control-group" aria-labelledby="demoHeading">
+        <h2 id="demoHeading">DEMO SONGS</h2>
+        <div class="control-row">
+          <label class="select-wrap" for="demoSong"><span>SONG</span><select id="demoSong" aria-label="Choose demo song"></select></label>
+          <button id="prevDemo" type="button" aria-label="Previous demo song">◀</button>
+          <button id="playDemo" type="button" class="accent">DEMO</button>
+          <button id="nextDemo" type="button" aria-label="Next demo song">▶</button>
+          <button id="melodyOff" type="button" aria-pressed="false">MELODY OFF</button>
+        </div>
+      </section>
+      <section class="control-group" aria-labelledby="rhythmHeading">
+        <h2 id="rhythmHeading">RHYTHM &amp; ACCOMPANIMENT</h2>
+        <div class="control-row">
+          <button id="startRhythm" type="button">START</button>
+          <button id="stop" type="button" class="stop">STOP ■</button>
+          <button id="accomp" type="button" aria-pressed="false">AUTO CHORD</button>
+          <label class="select-wrap" for="chordType"><span>CHORD</span>
+            <select id="chordType"><option value="major">Major</option><option value="minor">Minor</option></select>
+          </label>
+        </div>
+      </section>
+      <section class="control-group recording" aria-labelledby="recordHeading">
+        <h2 id="recordHeading">RECORD</h2>
+        <div class="control-row">
+          <button id="record" type="button">● REC</button>
+          <button id="playTake" type="button" disabled>PLAY BACK</button>
+          <button id="clearTake" type="button" disabled>CLEAR</button>
+        </div>
+      </section>
+    </div>
+    <div class="keyboard-body">
+      <p class="keyboard-label"><span>49-KEY ELECTRONIC KEYBOARD</span><span>POLYPHONIC SOUND</span></p>
+      <div class="keyboard-scroll" tabindex="0" aria-label="Scroll to reach all 49 piano keys">
+        <div class="keys" id="keys" role="group" aria-label="Playable piano keyboard from C3 to C7"></div>
+      </div>
+      <p class="hint">Play with your mouse, touchscreen, or computer keys <strong>Z S X D C V G B H N J M</strong> and <strong>Q 2 W 3 E R 5 T 6 Y 7 U</strong>. With AUTO CHORD on, the lowest octave chooses a chord.</p>
+    </div>
+  </section>
+  <footer>
+    <p>Five original demo songs. Twelve tones. Six rhythms. No accounts or downloads required.</p>
+    <p>EK-1 is an original home-keyboard-inspired instrument, not a Casio product. Audio begins when you press a key or control.</p>
+  </footer>
+</main>
+</body>
+</html>

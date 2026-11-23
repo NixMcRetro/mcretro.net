@@ -453,7 +453,7 @@ assert.ok(birdLayout.includes('background: #F7FBF5;'), 'result hover card is dis
 assert.ok(birdLayout.includes('.chirp-search-result mark {'), 'Bird search matches are highlighted');
 assert.ok(birdLayout.includes('.chirp-search-result[hidden],'),
   'hidden search results stay hidden regardless of CSS rules');
-assert.ok(pages.search.includes('channel-chirp.css?v=20261123-chirp-return-divider'),
+assert.ok(pages.search.includes('channel-chirp.css?v=20261123-chirp-compact-divider'),
   'search loads the newest Bird search stylesheet');
 
 assert.match(pages.soundborb, /Migration in progress/);
@@ -606,13 +606,13 @@ assert.ok(pages.nest.includes('<p class="chirp-return"><a href="/" data-theme-ex
 const chirpReturnRule = birdLayout.match(
   /:root\[data-chirp-landing="true"\] \.sidebar-mode-bird \.chirp-return \{([^}]+)\}/)?.[1];
 assert.ok(chirpReturnRule, 'Bird Return link needs a dedicated bottom divider');
-assert.match(chirpReturnRule, /padding:\s*0 0 1\.4rem;/,
-  'Return link should have space before its green divider');
+assert.match(chirpReturnRule, /padding:\s*0 0 \.75rem;/,
+  'Return link should have a compact gap above its green divider');
 assert.match(chirpReturnRule, /border-bottom:\s*4px solid #29A518;/,
   'Bird sidebar should end in the same 4px green bar as its other sections');
 assert.match(birdLayout,
-  /:root\[data-chirp-landing="true"\] \.sidebar-mode-bird \{[^}]*padding-bottom:\s*1\.75rem;/,
-  'space must separate the bottom green divider from the black footer');
+  /:root\[data-chirp-landing="true"\] \.sidebar-mode-bird \{[^}]*padding-bottom:\s*1rem;/,
+  'a modest gap should separate the divider from the black footer');
 assert.doesNotMatch(read('assets/css/style.css'),
   /chirp-return/,
   'ordinary McRetro styling must not be changed by the Channel Chirp divider');
@@ -671,9 +671,9 @@ assert.ok(birdLayout.includes('.chirp-archive-index > .archive-index-intro,'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs [aria-current="page"] {'));
 assert.ok(birdLayout.includes('.chirp-archive-index > .archive-breadcrumbs a {'));
 assert.ok(birdLayout.includes('color: #BDF7B0;'));
-assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-return-divider"'),
+assert.ok(pages.archive.includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-compact-divider"'),
   'Bird archive loads fresh stylesheet to avoid a stale dark-on-charcoal heading');
-assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-return-divider"'),
+assert.ok(pages.nest.includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-compact-divider"'),
   'Shared template loads the same current Bird stylesheet');
 
 const birdByMonth = new Map();
@@ -767,7 +767,7 @@ assert.ok(birdLayout.includes('.chirp-archive-month .archive-blog-list .post-ent
 for (const month of birdByMonth.keys()) {
   const [year, number] = month.split('-');
   assert.ok(read('chirp/archive/' + year + '/' + number + '/index.html')
-    .includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-return-divider"'),
+    .includes('href="/assets/css/channel-chirp.css?v=20261123-chirp-compact-divider"'),
     'all Bird month pages receive the updated stylesheet: ' + month);
 }
 assert.deepEqual(fs.readdirSync(path.join(site, 'chirp/archive')).sort(),

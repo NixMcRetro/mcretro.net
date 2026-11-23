@@ -241,6 +241,16 @@ assert.match(pages.nest, /<p>We are Pudge, Tillie, and Chip!<br\s*\/?\s*>❤️ 
 assert.doesNotMatch(pages.nest, /class="chirp-home-(?:names|hearts)"/, 'no separate sign-off paragraphs');
 assert.match(pages.nest, /❤️ 🦜 ❤️ 🦜 ❤️ 🦜 ❤️/);
 
+const mobileBrandRule = birdLayout.match(
+  /@media screen and \(max-width: 500px\)\s*\{\s*:root\[data-theme="bird"\] \.site-logo--bird\s*\{([^}]+)\}/)?.[1];
+assert.ok(mobileBrandRule, 'Bird mobile header must have a dedicated logo sizing rule');
+assert.match(mobileBrandRule, /font-size:\s*clamp\(\.96rem,\s*4\.65vw,\s*1\.4rem\);/,
+  'narrow screens must scale the Korataki wordmark instead of retaining its desktop minimum');
+assert.match(mobileBrandRule, /white-space:\s*nowrap;/,
+  'Channel Chirp title must stay on one line beside the two mobile controls');
+assert.match(mobileBrandRule, /letter-spacing:\s*\.02em;/,
+  'mobile wordmark tracking should not force an extra line');
+
 const brandHoverRule = birdLayout.match(/:root\[data-theme="bird"\] a\.site-logo--bird:hover,\s*:root\[data-theme="bird"\] a\.site-logo--bird:focus-visible\s*\{([^}]+)\}/)?.[1];
 assert.ok(brandHoverRule?.includes('color: #69D65B;'), 'Bird title must turn green on hover and keyboard focus');
 assert.ok(brandHoverRule?.includes('text-decoration: none;'), 'Bird title hover should not underline');

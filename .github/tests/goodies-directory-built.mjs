@@ -14,7 +14,7 @@ const source = readFileSync(new URL('../../goodies.md', import.meta.url), 'utf8'
 // Link names and destinations are preservation contracts. New entries and
 // different layouts are welcome; silently losing an old project is not.
 const preserved = new Map([
-  ['/homepages/op-1/', 'BleepGarden Music Maker 2000'],
+  ['/homepages/electronic-keyboard/', 'Electronic Keyboard (Model EK-1)'],
   ['/homepages/modem/', 'Dial-Up Networking'],
   ['/homepages/goatpad/', 'GOATPAD 1337'],
   ['/homepages/lunchbeat/', 'Lunchbeat'],

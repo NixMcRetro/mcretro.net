@@ -782,19 +782,25 @@ button:focus-visible,[role=slider]:focus-visible,input:focus-visible{outline:2px
  .board-shell{padding:6px 6px 10px}.mobile-one-note{padding:0 0 10px}
 }
 
+/* Optional desktop tabbed rack; no changes to the simulated PCB. */
+[hidden].rack-tabs,#viewToggle[hidden],#rack>.rack-unit[hidden]{display:none!important}
+.rack-tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--rule);margin:0 0 8px;padding:0 0 4px}
+.rack-tabs button{min-height:32px}.rack-tabs button[aria-selected=true],#viewToggle[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+#rack.tabbed>.cable,#rack.tabbed .unit-select{display:none}
 </style>
 </head>
 <body>
 <header class="wrap top"><div class="mark"><a href="https://mcretro.net/">McRetro.net</a><span aria-hidden="true">/</span><h1>Lunchbeat</h1></div><nav class="nav-right"><a href="https://github.com/NixMcRetro/Lunchbeat-PCB" target="_blank" rel="noopener">Original PCB source</a></nav></header>
 <main class="wrap">
   <section class="rack-toolbar" aria-label="Lunchbeat rack controls">
-    <div class="rack-actions"><span class="rack-count" id="rackCount" aria-live="polite">1 Lunchbeat</span><button id="playAll" class="small-btn">PLAY ALL</button><button id="addLunchbeat" class="small-btn highlight">+ ADD LUNCHBEAT</button></div>
+    <div class="rack-actions"><span class="rack-count" id="rackCount" aria-live="polite">1 Lunchbeat</span><button id="viewToggle" class="small-btn" aria-pressed="false" hidden>Tabs</button><button id="playAll" class="small-btn">PLAY ALL</button><button id="addLunchbeat" class="small-btn highlight">+ ADD LUNCHBEAT</button></div>
   </section>
   <section class="mobile-message" id="mobileMultiMessage" role="status" hidden>
     <h2>Multiple Lunchbeats</h2>
     <p>For two or more connected Lunchbeats, please open this page on a computer. You can still enjoy one Lunchbeat on your phone!</p>
     <button class="small-btn highlight" id="keepOne">KEEP ONE LUNCHBEAT</button>
   </section>
+  <div id="rackTabs" class="rack-tabs" role="tablist" aria-label="Lunchbeats" hidden></div>
   <div id="rack" aria-live="off"></div>
   <div class="mobile-one-note">Mobile mode: a single full-size, touch-friendly Lunchbeat. Want to connect more? Use a computer.</div>
   <section class="source" aria-label="About and licensing">
@@ -1075,8 +1081,10 @@ function statusMessage(m){if(m.type!=='status')return;const u=getUnit(m.id);if(!
   Object.assign(u,{playing:m.playing,playstep:m.playstep,gate:m.active,lastCounter:m.counter,lastTempo:m.tempo,lastLevel:m.level,external:m.external,division:m.division});
   u.update();
 }
+let tabView=false;
 function setSelected(unit){selected=unit;
   for(const u of units){u.el.classList.toggle('is-selected',u===unit);u.el.querySelector('[data-select]').setAttribute('aria-pressed',String(u===unit));}
+  syncTabView();
 }
 class LunchbeatUI {
   constructor(id,position){
@@ -1216,6 +1224,38 @@ class LunchbeatUI {
     this.ui('pulseButton').addEventListener('click',()=>send(this.id,{type:'trig'}));
   }
 }
+function syncTabView(){
+  const active=tabView&&units.length>1&&!smallScreen.matches;
+  const tabs=$('rackTabs'),rack=$('rack'),toggle=$('viewToggle');
+  toggle.hidden=units.length<2||smallScreen.matches;
+  toggle.setAttribute('aria-pressed',String(active));
+  tabs.hidden=!active;rack.classList.toggle('tabbed',active);
+  for(const u of units){
+    const current=u===selected;
+    u.el.hidden=active&&!current;
+    if(active){u.el.setAttribute('role','tabpanel');u.el.setAttribute('aria-labelledby','rack-tab-'+u.id);}
+    else{u.el.removeAttribute('role');u.el.removeAttribute('aria-labelledby');}
+    const tab=document.getElementById('rack-tab-'+u.id);
+    if(tab){tab.setAttribute('aria-selected',String(current));tab.tabIndex=current?0:-1;}
+  }
+}
+function buildRackTabs(){
+  const tabs=$('rackTabs');tabs.replaceChildren();
+  units.forEach((u,i)=>{
+    u.el.id='rack-panel-'+u.id;
+    const b=document.createElement('button');b.type='button';b.className='small-btn';b.id='rack-tab-'+u.id;
+    b.textContent='Lunchbeat '+String(i+1).padStart(2,'0');b.setAttribute('role','tab');b.setAttribute('aria-controls',u.el.id);
+    b.addEventListener('click',()=>setSelected(u));
+    b.addEventListener('keydown',e=>{
+      let j=i;
+      if(e.key==='ArrowRight')j=(i+1)%units.length;else if(e.key==='ArrowLeft')j=(i+units.length-1)%units.length;
+      else if(e.key==='Home')j=0;else if(e.key==='End')j=units.length-1;else return;
+      e.preventDefault();setSelected(units[j]);document.getElementById('rack-tab-'+units[j].id).focus();
+    });
+    tabs.appendChild(b);
+  });
+  syncTabView();
+}
 function refreshRack(){
   if(!smallScreen.matches)document.body.classList.remove('mobile-notice');
   const count=units.length;document.body.classList.toggle('mobile-multi',smallScreen.matches&&count>1);
@@ -1230,6 +1270,7 @@ function refreshRack(){
     u.el.querySelector('[data-remove]').hidden=i===0;
     if(i>0&&!u.external){u.external=true;send(u.id,{type:'external',value:true});}
   });
+  buildRackTabs();
 }
 function createUnit(){
   if(smallScreen.matches&&units.length){$('mobileMultiMessage').hidden=false;
@@ -1262,6 +1303,7 @@ document.addEventListener('keydown',e=>{
 });
 document.addEventListener('keyup',e=>{if(/^[1-4]$/.test(e.key)&&selected){const i=+e.key-1;if(keysHeld.has(i)){const owner=keysHeld.get(i);keysHeld.delete(i);if(!owner.editmode&&!owner.setmode)owner.toggleSound(i,false);}}});
 window.addEventListener('blur',()=>{for(const u of units)for(let i=0;i<4;i++){u.heldUI[i]=false;send(u.id,{type:'live',i,down:false});}keysHeld.clear();});
+$('viewToggle').addEventListener('click',()=>{tabView=!tabView;syncTabView();});
 $('addLunchbeat').addEventListener('click',createUnit);
 $('keepOne').addEventListener('click',()=>{for(const u of units.slice(1))removeUnit(u);document.body.classList.remove('mobile-notice');refreshRack();});
 $('playAll').addEventListener('click',async()=>{

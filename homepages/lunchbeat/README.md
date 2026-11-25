@@ -6,7 +6,7 @@ A playable browser adaptation of Jan Cumpelik's Lunchbeat PCB v1.31, featuring f
 
 ## Getting started
 
-Open index.html in a browser, or use the live page. Enable audio, select a groove and press PLAY. Drag the knobs to change sound and tempo. The four sound buttons can be played manually or used to edit an eight-step pattern. On a computer, add up to four Lunchbeats and connect them with virtual trigger cables. Mobile mode supports one board.
+Open index.html in a browser, or use the live page. Enable audio, select a groove and press PLAY. Drag the knobs to change sound and tempo. The four sound buttons can be played manually or used to edit an eight-step pattern. On a computer, add up to four Lunchbeats and connect them with virtual trigger cables. Mobile mode supports one board. On desktop, select Tabs after adding a second Lunchbeat to display one board at a time, or turn Tabs off to return to the stacked layout. All connected boards continue playing regardless of the selected tab.
 
 Keyboard: 1-4 play or edit the four sounds; Space starts or stops playback; E advances the edit step; Shift+E toggles setup mode. Hold the physical-style EDIT button for setup.
 

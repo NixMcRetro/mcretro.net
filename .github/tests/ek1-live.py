@@ -9,7 +9,7 @@ import time
 
 pin = json.loads(Path(".github/ek1-release.json").read_text())
 name = f"EK-1-v{pin['version']}-offline.zip"
-base = "https://mcretro.net/goodies/ek-1/"
+base = "https://mcretro.net/homepages/ek-1/"
 
 def fetch(url):
     return subprocess.check_output(["curl", "--fail", "--location", "--silent", "--show-error",
@@ -24,7 +24,12 @@ def check():
     archive = fetch(base + name)
     expected = fetch(base + name + ".sha256").decode()
     assert expected == f"{hashlib.sha256(archive).hexdigest()}  {name}\n"
-    assert "/goodies/ek-1/" in fetch("https://mcretro.net/goodies/").decode()
+    goodies = fetch("https://mcretro.net/goodies/").decode()
+    assert "/homepages/ek-1/" in goodies and "/goodies/ek-1/" not in goodies, "Incorrect Goodies link"
+    old_status = subprocess.check_output(["curl", "--silent", "--show-error", "--output", "/dev/null",
+                                          "--write-out", "%{http_code}", "--connect-timeout", "15",
+                                          "--max-time", "60", "https://mcretro.net/goodies/ek-1/"]).decode()
+    assert old_status in ("404", "410"), "Obsolete EK-1 URL is still served or redirects: " + old_status
     print(f"PASS: live EK-1 v{pin['version']}, all runtime files, checksum and Goodies link")
 
 for attempt in range(5):

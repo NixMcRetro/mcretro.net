@@ -59,7 +59,8 @@ def verify_archive(archive):
     return actual
 
 def verify_site(site):
-    dest = Path(site) / "goodies/ek-1"
+    require(not (Path(site) / "goodies/ek-1").exists(), "Obsolete EK-1 path must not be published")
+    dest = Path(site) / "homepages/ek-1"
     source = verify_archive(dest / NAME)
     checksum = digest((dest / NAME).read_bytes())
     require((dest / (NAME + ".sha256")).read_text() == f"{checksum}  {NAME}\n", "Wrong mirrored checksum")
@@ -75,7 +76,7 @@ def verify_site(site):
     print(f"PASS: EK-1 v{VERSION}: {len(PIN['runtime'])} exact runtime/notice files and complete corresponding source.")
 
 def install(site):
-    dest = Path(site) / "goodies/ek-1"
+    dest = Path(site) / "homepages/ek-1"
     require(not dest.exists(), "Refusing to overwrite a pre-existing EK-1 directory")
     with tempfile.TemporaryDirectory() as tmp:
         temp = Path(tmp)

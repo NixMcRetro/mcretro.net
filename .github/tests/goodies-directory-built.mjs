@@ -16,7 +16,7 @@ const source = readFileSync(new URL('../../goodies.md', import.meta.url), 'utf8'
 const preserved = new Map([
   ['/homepages/op-1/', 'BleepGarden Music Maker 2000'],
   ['/homepages/modem/', 'Dial-Up Networking'],
-  ['/goodies/ek-1/', 'Electronic Keyboard (Model EK-1)'],
+  ['/homepages/ek-1/', 'Electronic Keyboard (Model EK-1)'],
   ['/homepages/goatpad/', 'GOATPAD 1337'],
   ['/homepages/lunchbeat/', 'Lunchbeat'],
   ['/homepages/bowling/', 'The Cyber Lanes'],

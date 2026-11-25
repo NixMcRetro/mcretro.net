@@ -94,6 +94,9 @@ on:
       - 'assets/images/2016/01/take-back-the-darknet/**'
       - 'assets/js/darknet-accordion.js'
       - '.github/vrampage-release.json'
+      - '.github/ek1-release.json'
+      - '.github/tests/ek1-package.py'
+      - '.github/tests/ek1-live.py'
   workflow_dispatch:
 
 permissions:
@@ -148,6 +151,9 @@ jobs:
 
       - name: Build site with Jekyll
         run: bundle exec jekyll build --destination _site
+
+      - name: Install only the approved EK-1 release into generated site
+        run: python3 .github/tests/ek1-package.py install _site
 
       - name: Ensure private R2 archive source files never enter public site
         run: |
@@ -275,6 +281,9 @@ jobs:
       - name: Run Pagefind
         run: ./node_modules/.bin/pagefind --site _site --output-subdir pagefind --force-language en
 
+      - name: Verify EK-1 runtime and complete source after indexing
+        run: python3 .github/tests/ek1-package.py verify _site
+
       - name: Verify generated site CSP requirements
         run: node .github/tests/csp-built.mjs _site
 
@@ -305,6 +314,11 @@ jobs:
           sparse-checkout: |
             /homepages/vrampage-md/
             /.github/tests/vrampage-live.py
+            /.github/tests/ek1-live.py
+            /.github/ek1-release.json
 
       - name: Verify live VRAMpage runtime, cartridges and source
         run: python3 .github/tests/vrampage-live.py
+
+      - name: Verify live EK-1 runtime and corresponding-source download
+        run: python3 .github/tests/ek1-live.py

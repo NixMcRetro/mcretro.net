@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+"""Check the exact hosted release, not just the HTML status code."""
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+import tempfile
+import time
+
+pin = json.loads(Path(".github/ek1-release.json").read_text())
+name = f"EK-1-v{pin['version']}-offline.zip"
+base = "https://mcretro.net/goodies/ek-1/"
+
+def fetch(url):
+    return subprocess.check_output(["curl", "--fail", "--location", "--silent", "--show-error",
+                                    "--connect-timeout", "15", "--max-time", "60", url])
+
+def check():
+    html = fetch(base)
+    assert f"v{pin['version']}".encode() in html, "Wrong live version"
+    for path in pin["runtime"]:
+        data = fetch(base + path)
+        assert hashlib.sha1(f"blob {len(data)}\0".encode() + data).hexdigest() == pin["files"][path]["git_blob"], path
+    archive = fetch(base + name)
+    expected = fetch(base + name + ".sha256").decode()
+    assert expected == f"{hashlib.sha256(archive).hexdigest()}  {name}\n"
+    assert "/goodies/ek-1/" in fetch("https://mcretro.net/goodies/").decode()
+    print(f"PASS: live EK-1 v{pin['version']}, all runtime files, checksum and Goodies link")
+
+for attempt in range(5):
+    try:
+        check()
+        break
+    except (AssertionError, subprocess.CalledProcessError) as e:
+        if attempt == 4:
+            raise
+        print(f"Live deployment not yet visible: {e}", flush=True)
+        time.sleep(15)

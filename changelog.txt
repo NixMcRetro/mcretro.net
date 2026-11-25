@@ -6,6 +6,9 @@ https://retrojunkie.net
 To Do
 - Image cycle on front page (randomised).
 
+2026-11-25
+- Added Electronic Keyboard (Model EK-1) v1.0.1 to Goodies, with a playable browser instrument and offline source download.
+
 2026-11-07
 - Hundreds of articles reviewed and enriched using archived YouTube transcripts.
 - Added accessibility, community and contribution documentation.

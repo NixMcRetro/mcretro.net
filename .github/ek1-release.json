@@ -1,0 +1,318 @@
+{
+  "version": "1.0.1",
+  "source_commit": "7cb0b4b80876276f6676d89db85a2b5507263c04",
+  "source_tree": "60d37fa08fb3e021d73063ef0fd2c48de82bc352",
+  "files": {
+    ".github/tests/ek1-accompaniment.mjs": {
+      "git_blob": "14e30dc09be1d8d31265106792715284f97cfcc7",
+      "size": 3218
+    },
+    ".github/tests/ek1-browser-smoke.mjs": {
+      "git_blob": "4a83fddc7084250336e3ae9a6b86b592ce8c23ea",
+      "size": 13360
+    },
+    ".github/tests/ek1-composition-browser.mjs": {
+      "git_blob": "74db5ef19ea758d32c03ff803adf1e6d8bef34a1",
+      "size": 7374
+    },
+    ".github/tests/ek1-demo-loop.mjs": {
+      "git_blob": "bb69a72747339a07c6c1bac86cecc87c1d4453cd",
+      "size": 3183
+    },
+    ".github/tests/ek1-fm-audio.mjs": {
+      "git_blob": "7771ff99f7a37d289918076a5a50c5697947bd47",
+      "size": 1767
+    },
+    ".github/tests/ek1-integrity.mjs": {
+      "git_blob": "3628752c034fdc59fe2f2b23d2326fc25f8ca611",
+      "size": 1728
+    },
+    ".github/tests/ek1-midi-codec.mjs": {
+      "git_blob": "bde285b873d92d82f37d97644f45fcd5b083d918",
+      "size": 2080
+    },
+    ".github/tests/ek1-midi-loop.mjs": {
+      "git_blob": "6b4f20761accc35a104c8952129ca8e7d59167eb",
+      "size": 3363
+    },
+    ".github/tests/ek1-midi-override.mjs": {
+      "git_blob": "e253e6eba00fc9810d7614c67df23af6b266b0ca",
+      "size": 3058
+    },
+    ".github/tests/ek1-musical-arrangement.mjs": {
+      "git_blob": "e8517f1ac9c729efb566fe0de827309cc3a640c9",
+      "size": 1965
+    },
+    ".github/tests/ek1-output-levels.mjs": {
+      "git_blob": "a3e75bfc5c8fcd40b636eecbfa0fb32816942ae9",
+      "size": 5352
+    },
+    ".github/tests/ek1-pause-browser.mjs": {
+      "git_blob": "b8813743172a689d4b1b7101f29d45d3d018db42",
+      "size": 3667
+    },
+    ".github/tests/ek1-preferences.mjs": {
+      "git_blob": "c2f7d0f089a0b2bf0ae5ad0a214edfcd4fda7937",
+      "size": 3884
+    },
+    ".github/tests/ek1-sf2-fixture.mjs": {
+      "git_blob": "b4ef966e67fc39ce7dcad8de501f236cadb1cc16",
+      "size": 1991
+    },
+    ".github/tests/ek1-soundfont-browser.mjs": {
+      "git_blob": "8a4ef506688b91b6bffa58fb36be8bdb90a2574c",
+      "size": 6138
+    },
+    ".github/workflows/ek1-browser-tests.yml": {
+      "git_blob": "608bce578fc19b5d40189543329f922b58cf9483",
+      "size": 3405
+    },
+    ".gitignore": {
+      "git_blob": "5d470f07cd7554863506a60b21ef41ed7f1d578b",
+      "size": 62
+    },
+    ".nojekyll": {
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    "CHANGELOG.md": {
+      "git_blob": "7cc5e5c77ce1d893356430aac002d5150e8d2de6",
+      "size": 10769
+    },
+    "DESIGN.md": {
+      "git_blob": "62923adc4ef3776b7fa23d755da71bd01b2d866b",
+      "size": 3101
+    },
+    "EK-1-example-song.mid": {
+      "git_blob": "1240e8c847770786492b8e0a4f0fccb085e4873e",
+      "size": 484
+    },
+    "LICENSE": {
+      "git_blob": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "size": 35149
+    },
+    "README.md": {
+      "git_blob": "f96c3822bf98e3ebbbe3b30d4c14d5c376012fa5",
+      "size": 7358
+    },
+    "RELEASE-NOTES.md": {
+      "git_blob": "190854054349a95b6a77265e898c79a881804788",
+      "size": 632
+    },
+    "START-HERE.txt": {
+      "git_blob": "0d69d232f0db2f7c7536d1643280bf573ebe3a24",
+      "size": 2204
+    },
+    "TEST-REPORT.txt": {
+      "git_blob": "cf38356b26cb59efaad9e3ffcbe8baa07a5c2907",
+      "size": 3202
+    },
+    "THIRD-PARTY-NOTICES.txt": {
+      "git_blob": "5f23f81daf7c7fe5b6862658f6e3bcac48a908e5",
+      "size": 3301
+    },
+    "app.js": {
+      "git_blob": "53b67a4167e1ab69363e96a8391a2af7ad6b6c21",
+      "size": 63508
+    },
+    "audio-export.js": {
+      "git_blob": "0d20beacd91014c730c9aa6c07d27bed62e92d59",
+      "size": 7968
+    },
+    "composer-ui.js": {
+      "git_blob": "61d434421bf7590f8b59bc8bd9a32bd154b22172",
+      "size": 18525
+    },
+    "composer.js": {
+      "git_blob": "f55bc201f630130e49f6603066a1750acbee96ec",
+      "size": 11976
+    },
+    "fm.js": {
+      "git_blob": "f10ffbccf4413dcf24f9f0c4249b9a59931f9b88",
+      "size": 4673
+    },
+    "index.html": {
+      "git_blob": "dfae0f0a347e37ccd04a57f068cf644747b817fb",
+      "size": 18730
+    },
+    "levels.js": {
+      "git_blob": "ca7566be5d82f7348a09eb053791eeec4f06ecc6",
+      "size": 2823
+    },
+    "licenses/FluidR3-README.txt": {
+      "git_blob": "f8bfc859c6abf57eaf45d8d6f6d6d579596bc8f2",
+      "size": 1042
+    },
+    "licenses/FluidR3-copyright-reference.txt": {
+      "git_blob": "49a9284aecff27f9f3f9ae9843cb6341022a3a21",
+      "size": 2132
+    },
+    "licenses/GPL-3.0.txt": {
+      "git_blob": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "size": 35149
+    },
+    "licenses/LGPL-3.0.txt": {
+      "git_blob": "0a041280bd00a9d068f503b8ee7ce35214bd24a1",
+      "size": 7652
+    },
+    "licenses/OpenMPT-bundled-notice.txt": {
+      "git_blob": "b982b239c6d98473bea1c099ab4e0800523513ba",
+      "size": 3827
+    },
+    "licenses/fflate-LICENSE.txt": {
+      "git_blob": "bd36874f34b9ae537f2bbc383fdf6e320dfafe98",
+      "size": 1069
+    },
+    "licenses/lamejs-UPSTREAM-LICENSE.txt": {
+      "git_blob": "e456b65d30e5df56ba66cef91716bdc35085463e",
+      "size": 424
+    },
+    "licenses/lamejs-upstream-COPYING.txt": {
+      "git_blob": "f5030495bf6ed4609db75324b1b6e94f97790d6a",
+      "size": 25284
+    },
+    "licenses/spessasynth_core-LICENSE.txt": {
+      "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "size": 11358
+    },
+    "licenses/spessasynth_lib-LICENSE.txt": {
+      "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "size": 11358
+    },
+    "licenses/stb-MIT.txt": {
+      "git_blob": "48b774af49c4a552d5593e005da685af27be2f20",
+      "size": 2588
+    },
+    "licenses/stb-vorbis-LICENSE.txt": {
+      "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "size": 11358
+    },
+    "licenses/use-strict-LICENSE.txt": {
+      "git_blob": "19129e315fe593965a2fdd50ec0d1253bcbd2ece",
+      "size": 765
+    },
+    "local-audio.js": {
+      "git_blob": "84adba9b54ae366052aea710d11dab2986e94bad",
+      "size": 1793
+    },
+    "midi.js": {
+      "git_blob": "a393a131932b74e93038c976ca1269fd52cd9a51",
+      "size": 8726
+    },
+    "package.json": {
+      "git_blob": "1b76a8d5cb555133043b0ebacff0f196f024ca7d",
+      "size": 864
+    },
+    "preferences.js": {
+      "git_blob": "bde948d82e0de7c702c04f2fd67dcb5e070e0cde",
+      "size": 1855
+    },
+    "soundfont.js": {
+      "git_blob": "0e13b65ccc70968160e1861b4eb836ea20d211bb",
+      "size": 5786
+    },
+    "style.css": {
+      "git_blob": "69793c01840a3bde14d40e7be826788bef6e7e9c",
+      "size": 32540
+    },
+    "vendor/SHA256SUMS.txt": {
+      "git_blob": "ae3a701ab5a7e5f97e8eb109fa30cef98bdc4e1f",
+      "size": 278
+    },
+    "vendor/lame.min.js": {
+      "git_blob": "8dc6b0726388ff75bec69ac55ac5a6cc49e61093",
+      "size": 156043
+    },
+    "vendor/lamejs-COPYING": {
+      "git_blob": "f5030495bf6ed4609db75324b1b6e94f97790d6a",
+      "size": 25284
+    },
+    "vendor/lamejs-LICENSE": {
+      "git_blob": "e456b65d30e5df56ba66cef91716bdc35085463e",
+      "size": 424
+    },
+    "vendor/sources/dependency-lock.json": {
+      "git_blob": "590761155c9faed891a2a12ae4183224e25a19e3",
+      "size": 2342
+    },
+    "vendor/sources/fflate-0.8.3.tgz": {
+      "git_blob": "13594a4db878b217b448f4d9cd510d20334e3293",
+      "size": 173034
+    },
+    "vendor/sources/lamejs-1.2.1.tgz": {
+      "git_blob": "572e2bf2fa9c7a7534306c7e9fe740996fc89cec",
+      "size": 3071027
+    },
+    "vendor/sources/spessasynth_core-4.4.12.tgz": {
+      "git_blob": "47fee634841780a24f1f3aa6d837750315683050",
+      "size": 1154769
+    },
+    "vendor/sources/spessasynth_lib-4.4.10.tgz": {
+      "git_blob": "022b3da23e84642e76ebb8b75e7ec466db354b16",
+      "size": 1225027
+    },
+    "vendor/sources/stb-vorbis-0.0.8.tgz": {
+      "git_blob": "912c23bcbbb633c0f41bfa88fa776b06055f9fa6",
+      "size": 61658
+    },
+    "vendor/sources/use-strict-1.0.1.tgz": {
+      "git_blob": "f77520478179224979b9b29438e1870ce7577f0d",
+      "size": 2822
+    },
+    "vendor/spessasynth-local-core.js": {
+      "git_blob": "c9f38f526486f8629f01a117a53b2f85eacac7b6",
+      "size": 838002
+    },
+    "vendor/spessasynth-local.js": {
+      "git_blob": "7e502bbde7629cbeebfd437acb9cf9722c493d1c",
+      "size": 327870
+    },
+    "vendor/spessasynth_core-LICENSE": {
+      "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "size": 11358
+    },
+    "vendor/spessasynth_lib-LICENSE": {
+      "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "size": 11358
+    }
+  },
+  "runtime": [
+    "EK-1-example-song.mid",
+    "LICENSE",
+    "START-HERE.txt",
+    "THIRD-PARTY-NOTICES.txt",
+    "app.js",
+    "audio-export.js",
+    "composer-ui.js",
+    "composer.js",
+    "fm.js",
+    "index.html",
+    "levels.js",
+    "licenses/FluidR3-README.txt",
+    "licenses/FluidR3-copyright-reference.txt",
+    "licenses/GPL-3.0.txt",
+    "licenses/LGPL-3.0.txt",
+    "licenses/OpenMPT-bundled-notice.txt",
+    "licenses/fflate-LICENSE.txt",
+    "licenses/lamejs-UPSTREAM-LICENSE.txt",
+    "licenses/lamejs-upstream-COPYING.txt",
+    "licenses/spessasynth_core-LICENSE.txt",
+    "licenses/spessasynth_lib-LICENSE.txt",
+    "licenses/stb-MIT.txt",
+    "licenses/stb-vorbis-LICENSE.txt",
+    "licenses/use-strict-LICENSE.txt",
+    "local-audio.js",
+    "midi.js",
+    "preferences.js",
+    "soundfont.js",
+    "style.css",
+    "vendor/SHA256SUMS.txt",
+    "vendor/lame.min.js",
+    "vendor/lamejs-COPYING",
+    "vendor/lamejs-LICENSE",
+    "vendor/spessasynth-local-core.js",
+    "vendor/spessasynth-local.js",
+    "vendor/spessasynth_core-LICENSE",
+    "vendor/spessasynth_lib-LICENSE"
+  ]
+}

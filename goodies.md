@@ -109,6 +109,9 @@ A browser-based music maker originally created for SuperNick. Make some noise wi
 **☎️ [Dial-Up Networking](/homepages/modem/)**<br>
 Hear the old-school modem connection, then dial into either a randomly selected McRetro article or one of the restored historical homepages.
 
+**🎹 [Electronic Keyboard (Model EK-1)](/goodies/ek-1/)**<br>
+A little electronic keyboard inspired by the home keyboards of the 1990s. Play 49 keys, experiment with FM and SoundFont instruments, jam along with the demos, or make your own songs. [Download the offline edition and source code](/goodies/ek-1/EK-1-v1.0.1-offline.zip).
+
 **🌐 [GeoCities Rebuild Project](/homepages/geocities/)**<br>
 The story of my GeoCities archive rebuild, with original artwork, dial-up adventures, links to the worklogs, and a gateway to my private local archive.
 

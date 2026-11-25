@@ -1,66 +1,72 @@
-# McRetro.net
+# 💾 McRetro.net
 
-The source repository for [McRetro.net](https://mcretro.net), my long-running home on the web.
+**Analog ghosts, digital debris, and a little dial-up nostalgia.**
 
-McRetro.net is a personal archive documenting the analog ghosts and digital debris of a life lived across both worlds.
+Welcome to the source repository for [McRetro.net](https://mcretro.net), my long-running home on the web. What started with retro computers, game consoles, and hardware repairs has grown into a personal archive of all sorts of wonderfully interesting things.
 
-What started with retro computers, game consoles, repairs and hardware experiments has expanded into digital preservation, software archaeology, old websites, networking, programming, security research, nature and whatever else happens to become interesting along the way.
-
-The archive dates back to 2012, incorporating the earlier RetroJunkie.net project and fragments of personal websites from even further back.
+I've been documenting my adventures since 2012, back in the RetroJunkie.net days, with fragments of my personal websites dating back even further.
 
 **Something interesting exists. I wonder how it works. There is probably only one way to find out.**
 
-## What's Here?
+[**🌐 Visit McRetro.net**](https://mcretro.net) | [**🎁 Explore the Goodies**](https://mcretro.net/goodies/) | [**👋 About me**](https://mcretro.net/about/)
 
-- **Retro hardware:** Vintage computers, consoles, development systems, repairs, modifications and experiments.
-- **Digital preservation:** BIOS, ROM and disk imaging, software recovery, archival storage and data integrity.
-- **The old web:** GeoCities, dial-up networking, forgotten websites, archived communities and restored personal homepages.
-- **Technical projects:** Programming, home servers, networking, digital forensics and security research.
-- **Everything else:** Photography, nature, personal projects and assorted distractions.
+## 🕹️ What's lurking in the archive?
 
-There's plenty of Sega, Sony, old Macintosh hardware, SCSI drives and a truly unreasonable number of capacitors.
+| | |
+| --- | --- |
+| 🖥️ **Retro hardware** | Vintage computers, consoles, development systems, repairs, and modifications |
+| 💽 **Digital preservation** | BIOS and ROM dumps, disk imaging, software recovery, and archival storage |
+| ☎️ **The old web** | GeoCities, dial-up networking, forgotten communities, and restored homepages |
+| 🛠️ **Technical tinkering** | Programming, home servers, networking, digital forensics, and security research |
+| 🐦 **Everything else** | Photography, nature, personal projects, and assorted distractions |
 
-Some projects worked. Others became Part 2.
+There's plenty of Sega, Sony, old Macintosh hardware, SCSI drives, and a truly unreasonable number of capacitors.
 
-## Preserving the Mess
+**Some projects worked. Others became Part 2.**
 
-McRetro.net is intentionally archival. Old posts are not rewritten to pretend I knew something in 2012 that I only discovered years later.
+## 🎁 A few extra goodies
 
-Technical errors may be corrected, sources improved, dead links repaired and later context added, but the original experiments, failures and personality remain part of the record.
+Fancy making some noise? [Play Electronic Keyboard (Model EK-1)](https://mcretro.net/goodies/ek-1/), a little bit of home keyboard nostalgia in your browser. Or wander through the [Goodies page](https://mcretro.net/goodies/) for restored websites, experiments, and other bits and pieces.
 
-The point is to document what happened, preserve what can be preserved and leave enough information behind for somebody else to continue.
+## 📼 Preserving the mess
 
-Some investigations use AI as a research and writing assistant. Pages substantially written by AI are identified as AI-generated.
+Old posts aren't rewritten to pretend I knew something in 2012 that I only discovered years later. I'll correct technical errors, repair broken links, improve sources, and add context, but the original experiments, failures, and personality stay.
 
-## Behind the Website
+The idea is to preserve what I can and leave enough information behind for somebody else to pick up where I left off. Some investigations use AI as a research and writing assistant, and pages substantially written by AI are identified as AI-generated.
 
-McRetro.net is a static website built with [Jekyll](https://jekyllrb.com/), GitHub Pages, GitHub Actions, [Pagefind](https://pagefind.app/) and custom HTML, CSS and Markdown.
+## ⚙️ Under the bonnet
 
-The main repository directories are:
+Powered by [Jekyll](https://jekyllrb.com/), GitHub Pages, GitHub Actions, [Pagefind](https://pagefind.app/), and a collection of HTML, CSS, and Markdown.
 
-```text
-_posts/       Blog posts
-_layouts/     Page layouts
-_includes/    Reusable components
-assets/       Images, styles and scripts
-homepages/    Restored personal websites
-files/        File and preservation resources
-photos/       Photo archive
-.github/      Build and deployment workflows
-```
+<details>
+<summary>📂 Peek inside the repository</summary>
 
-The website itself has survived WordPress, Dropplets, FlatPress, Ghost, assorted Raspberry Pis and enough questionable architectural decisions to become another project in its own right.
+| Directory | What's inside? |
+| --- | --- |
+| `_posts/` | Blog posts |
+| `_layouts/` | Page layouts |
+| `_includes/` | Reusable components |
+| `assets/` | Images, styles, and scripts |
+| `homepages/` | Restored personal websites |
+| `files/` | File and preservation resources |
+| `photos/` | Photo archive |
+| `.github/` | Build and deployment workflows |
 
-## More Information
+</details>
 
-Visit [McRetro.net](https://mcretro.net) to explore the archive, or read the [About page](https://mcretro.net/about/) for more of its history.
+The website itself has survived WordPress, Dropplets, FlatPress, Ghost, assorted Raspberry Pis, and enough questionable architectural decisions to become another project in its own right.
 
-**Accessibility:** See the [Accessibility Statement](ACCESSIBILITY.md) for supported environments, known limitations and how to report accessibility problems.
+## 📚 The useful bits
 
-## Licence
+- 🌐 [McRetro.net](https://mcretro.net) - explore the archive
+- 👋 [About](https://mcretro.net/about/) - a little more history
+- ♿ [Accessibility statement](ACCESSIBILITY.md) - supported environments, known limitations, and reporting accessibility problems
+- 📜 [Content licence](CONTENT-LICENSE.md) - what's covered and what isn't
+
+## ❤️ Licence and credits
 
 No repository-wide licence is currently declared. Original written prose authored by Nix McRetro is available under [CC BY-NC-ND 4.0](CONTENT-LICENSE.md) where I own or control the relevant copyright.
 
-The licence does not automatically cover photographs, videos, source code, archived websites, software, disk images or third-party material. See the [Content Licence](CONTENT-LICENSE.md) for full details and exclusions.
+This does not automatically cover photographs, videos, source code, archived websites, software, disk images, or third-party material. Individual projects may have their own licences. For example, [Lunchbeat Web](homepages/lunchbeat/README.md) uses GPL-3.0-only application code, with separate hardware illustration licensing and third-party artwork notices. See its [licensing details](homepages/lunchbeat/LICENSING.md).
 
-Individual software projects may carry separate licences. For example, [Lunchbeat Web](homepages/lunchbeat/README.md) has GPL-3.0-only application code, separate hardware illustration licensing and third-party artwork notices. See its [licensing details](homepages/lunchbeat/LICENSING.md).
+**Happy tinkering! 🔧**

@@ -6,7 +6,7 @@ The original Lunchbeat PCB firmware v1.31 carries the notice (c) 2013 Jan Cumpel
 
 The browser application code (HTML, CSS and JavaScript, excluding independently licensed or third-party artwork) is distributed under GNU GPL version 3 only (SPDX: GPL-3.0-only). See [LICENSE.txt](LICENSE.txt) for the unmodified licence text. The preferred editable source is [index.html](index.html).
 
-Modified by McRetro in 2026: ported firmware sound and sequencing algorithms to JavaScript, added Web Audio output and mixing, browser controls, multi-device virtual synchronisation, presets, and responsive light/dark presentation. Licensing notices updated 2026-11-25. No warranty is provided to the extent permitted by law.
+Modified by McRetro in 2026: ported firmware sound and sequencing algorithms to JavaScript, added Web Audio output and mixing, browser controls, multi-device virtual synchronisation, presets, responsive light/dark presentation, and optional bass vibrato (a browser-only extension). Licensing notices updated 2026-11-25. No warranty is provided to the extent permitted by law.
 
 ## PCB illustration
 

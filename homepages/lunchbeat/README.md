@@ -10,6 +10,8 @@ Open index.html in a browser, or use the live page. Enable audio, select a groov
 
 Keyboard: 1-4 play or edit the four sounds; Space starts or stops playback; E advances the edit step; Shift+E toggles setup mode. Hold the physical-style EDIT button for setup.
 
+The VIBRATO button adds optional 5 Hz pitch modulation to live and sequenced bass notes. It is a browser-only extension, off by default and independent for each board. Reset Device turns it off. Percussion and clock timing are unchanged.
+
 ## Origins and changes
 
 Original Lunchbeat PCB firmware v1.31: Copyright (c) 2013 Jan Cumpelik (Buran Electrix). [Original firmware and hardware](https://github.com/NixMcRetro/Lunchbeat-PCB).

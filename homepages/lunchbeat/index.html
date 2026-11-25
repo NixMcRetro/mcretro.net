@@ -765,23 +765,38 @@ button:focus-visible,[role=slider]:focus-visible,input:focus-visible{outline:2px
 @media(max-width:800px){.wrap{padding-inline:14px}.help-layout{grid-template-columns:1fr}.board-shell{padding:10px}}
 @media(max-width:767px){.top{padding-top:12px;padding-bottom:9px}.mark,.nav-right{font-size:12px}.hero{padding:15px 0 12px}.hero h1{font-size:30px}.lede{font-size:14px}.rack-toolbar{padding:10px 0;margin:0 0 8px}.rack-toolbar h2{font-size:15px}.rack-toolbar p{font-size:12px}.rack-actions .small-btn{flex:0 1 auto}.unit-heading{gap:5px}.unit-actions{width:auto}.unit-actions button{flex:none}.displaybar{padding:9px;gap:8px;margin:0 0 8px}.status{font-size:11px}.display-right{flex-wrap:wrap}.small-btn{font-size:12px;padding:7px 9px;min-height:32px}.help-layout{gap:14px}.panel{padding:12px 0 0}.board-caption{font-size:11px}.instructions div{font-size:12px}.mobile-one-note{padding:5px 0 12px;font-size:12px}}
 
+
+/* Instrument-first layout: preserve the board and put controls within reach. */
+.top{padding-top:10px;padding-bottom:9px;gap:10px}
+.mark{gap:9px;flex-wrap:wrap}.mark h1{font:700 20px/1.2 Arial,Helvetica,sans-serif;margin:0;color:var(--ink)}
+.rack-toolbar{border-top:0;gap:8px;padding:7px 0;margin:0 0 8px}
+.rack-actions{width:100%;justify-content:flex-end;gap:8px}.rack-count{margin-right:auto}
+#rack>.rack-unit:only-child .unit-heading{display:none}
+.unit-heading{margin-bottom:5px}.displaybar{padding:6px 9px;margin:0 0 7px;gap:8px}
+.display-left,.display-right{gap:12px}.board-shell{padding:8px;margin-bottom:12px}
+.mobile-one-note{padding:0 0 12px}
+@media(max-width:767px){
+ .top{padding-top:8px;padding-bottom:8px}.mark{gap:5px}.mark h1{font-size:17px}.nav-right{font-size:11px}
+ .rack-toolbar{padding:6px 0;margin-bottom:6px}.rack-actions{gap:5px}.rack-count{font-size:12px}
+ .displaybar{padding:7px;gap:6px;margin-bottom:6px}.display-left,.display-right{gap:6px}
+ .board-shell{padding:6px 6px 10px}.mobile-one-note{padding:0 0 10px}
+}
+
 </style>
 </head>
 <body>
-<header class="wrap top"><div class="mark"><a href="https://mcretro.net/">McRetro.net</a>&nbsp; / &nbsp;Lunchbeat</div><nav class="nav-right"><a href="https://github.com/NixMcRetro/Lunchbeat-PCB" target="_blank" rel="noopener">Original PCB source</a></nav></header>
+<header class="wrap top"><div class="mark"><a href="https://mcretro.net/">McRetro.net</a><span aria-hidden="true">/</span><h1>Lunchbeat</h1></div><nav class="nav-right"><a href="https://github.com/NixMcRetro/Lunchbeat-PCB" target="_blank" rel="noopener">Original PCB source</a></nav></header>
 <main class="wrap">
-  <section class="hero"><h1>Lunchbeat</h1><p class="lede">A playable browser version of Jan Cumpelik's 2013 1-bit groovebox. Turn the knobs, make a beat, or connect up to four Lunchbeats.</p></section>
   <section class="rack-toolbar" aria-label="Lunchbeat rack controls">
-    <div><h2>Linked Lunchbeats</h2><p>Each board has its own pattern and sounds. Additional boards follow the first board’s clock.</p></div>
     <div class="rack-actions"><span class="rack-count" id="rackCount" aria-live="polite">1 Lunchbeat</span><button id="playAll" class="small-btn">PLAY ALL</button><button id="addLunchbeat" class="small-btn highlight">+ ADD LUNCHBEAT</button></div>
   </section>
-  <div class="mobile-one-note">Mobile mode: a single full-size, touch-friendly Lunchbeat. Want to connect more? Use a computer.</div>
   <section class="mobile-message" id="mobileMultiMessage" role="status" hidden>
     <h2>Multiple Lunchbeats</h2>
     <p>For two or more connected Lunchbeats, please open this page on a computer. You can still enjoy one Lunchbeat on your phone!</p>
     <button class="small-btn highlight" id="keepOne">KEEP ONE LUNCHBEAT</button>
   </section>
   <div id="rack" aria-live="off"></div>
+  <div class="mobile-one-note">Mobile mode: a single full-size, touch-friendly Lunchbeat. Want to connect more? Use a computer.</div>
   <section class="source" aria-label="About and licensing">
   <p><strong>About Lunchbeat Web.</strong> Adapted by McRetro in 2026 from the Lunchbeat PCB v1.31 firmware, copyright &copy; 2013 Jan Cumpelik (Buran Electrix). This browser version recreates the four 1-bit voices, eight-step sequencer and controls; it is not a cycle-accurate AVR or analogue circuit simulation. Everything runs locally.</p>
   <p><strong>Licensing.</strong> Application code: <a href="LICENSE.txt">GNU GPL 3.0 only</a>. PCB illustration adapted from the original hardware design: <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. The separate mascot artwork is excluded from these licence grants; its source and permission are unverified. The software is provided without warranty.</p>

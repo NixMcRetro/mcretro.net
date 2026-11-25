@@ -62,3 +62,5 @@ Visit [McRetro.net](https://mcretro.net) to explore the archive, or read the [Ab
 No repository-wide licence is currently declared. Original written prose authored by Nix McRetro is available under [CC BY-NC-ND 4.0](CONTENT-LICENSE.md) where I own or control the relevant copyright.
 
 The licence does not automatically cover photographs, videos, source code, archived websites, software, disk images or third-party material. See the [Content Licence](CONTENT-LICENSE.md) for full details and exclusions.
+
+Individual software projects may carry separate licences. For example, [Lunchbeat Web](homepages/lunchbeat/README.md) has GPL-3.0-only application code, separate hardware illustration licensing and third-party artwork notices. See its [licensing details](homepages/lunchbeat/LICENSING.md).

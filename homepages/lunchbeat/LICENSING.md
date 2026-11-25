@@ -6,13 +6,13 @@ The original Lunchbeat PCB firmware v1.31 carries the notice (c) 2013 Jan Cumpel
 
 The browser application code (HTML, CSS and JavaScript, excluding independently licensed or third-party artwork) is distributed under GNU GPL version 3 only (SPDX: GPL-3.0-only). See [LICENSE.txt](LICENSE.txt) for the unmodified licence text. The preferred editable source is [index.html](index.html).
 
-Modified by McRetro in 2026: ported firmware sound and sequencing algorithms to JavaScript, added Web Audio output and mixing, browser controls, multi-device virtual synchronisation, presets, and responsive light/dark presentation. Licensing notices updated 2026-11-25. No warranty is provided to the extent permitted by law.
+Modified by Nix McRetro in 2026: ported firmware sound and sequencing algorithms to JavaScript, added Web Audio output and mixing, browser controls, multi-device virtual synchronisation, presets, and responsive light/dark presentation. Licensing notices updated 2026-11-25. No warranty is provided to the extent permitted by law.
 
 ## PCB illustration
 
 Original hardware design: Lunchbeat PCB, Jan Cumpelik (Buran Electrix). [Source repository](https://github.com/NixMcRetro/Lunchbeat-PCB/tree/master/lunchbeat-PCB-hardware).
 
-The original PCB layout and schematics are released under CC BY-SA 3.0. The browser's adapted visual board design is offered under [CC BY-SA 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/), excluding separate third-party artwork. Changes include a purple board, stylised components and controls, changed LED colours and layout adjustments. It is an illustration, not the original manufacturing design.
+The original PCB layout and schematics are released under CC BY-SA 3.0. The browser's adapted visual board design is offered under [CC BY-SA 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/), excluding separate third-party artwork. Changes include a purple board, stylised components and controls, changed LED colours, layout adjustments and a photo-referenced cosmetic revision of the battery holder, potentiometers, switches, resistor banks and crystal. It is an illustration, not the original manufacturing design.
 
 ## Separate mascot artwork
 

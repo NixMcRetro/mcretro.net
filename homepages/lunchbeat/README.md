@@ -14,7 +14,7 @@ Keyboard: 1-4 play or edit the four sounds; Space starts or stops playback; E ad
 
 Original Lunchbeat PCB firmware v1.31: Copyright (c) 2013 Jan Cumpelik (Buran Electrix). [Original firmware and hardware](https://github.com/NixMcRetro/Lunchbeat-PCB).
 
-Browser adaptation by McRetro in 2026: the C sound algorithms and sequencer were adapted to JavaScript/Web Audio, with a simulated control surface, preset patterns, virtual synchronisation and responsive layout. The browser implementation is not a cycle-accurate AVR or analogue circuit simulation. The artwork is not manufacturing-ready PCB artwork.
+Browser adaptation by Nix McRetro in 2026: the C sound algorithms and sequencer were adapted to JavaScript/Web Audio, with a simulated control surface, preset patterns, virtual synchronisation and responsive layout. The browser implementation is not a cycle-accurate AVR or analogue circuit simulation. The artwork is not manufacturing-ready PCB artwork. The 25 November 2026 cosmetic revision uses photographs of the assembled board to align pairs of LEDs with the instrument switches and refine the battery holder, potentiometers and passive component illustrations. The custom mascot, LED colours and browser control mapping are retained.
 
 ## Licensing
 

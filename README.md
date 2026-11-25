@@ -26,7 +26,7 @@ There's plenty of Sega, Sony, old Macintosh hardware, SCSI drives, and a truly u
 
 ## 🎁 A few extra goodies
 
-Fancy making some noise? [Play Electronic Keyboard (Model EK-1)](https://mcretro.net/goodies/ek-1/), a little bit of home keyboard nostalgia in your browser. Or wander through the [Goodies page](https://mcretro.net/goodies/) for restored websites, experiments, and other bits and pieces.
+Fancy making some noise? [Play Electronic Keyboard (Model EK-1)](https://mcretro.net/homepages/ek-1/), a little bit of home keyboard nostalgia in your browser. Or wander through the [Goodies page](https://mcretro.net/goodies/) for restored websites, experiments, and other bits and pieces.
 
 ## 📼 Preserving the mess
 

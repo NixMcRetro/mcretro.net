@@ -15,9 +15,15 @@ share_description: >-
 
 Well, for the most part it seemed to work for a while and I was able to join in on my conversation with myself a few times. IRC might be a good way of having an instant chat running on the rock-solid Raspberry Pi.
 
+Back on 20th March I'd already been wondering about putting an IRC client on the website. Three months later I'd got my own server working well enough to chat to myself!
+
 So far I've meddled with InspIRCd for the server and Anope and Atheme for the services (bot control and whatnot... ChanServ, NickServ, etc.), and I got stuck on that second part. Still, progress is progress. I'm sure I'll have it working before the month is out. There should be a web-based version sitting here too for those less inclined to crack open mIRC, Textual, Konversation and heck, even Irssi! :)
 
 ### McRetroNet IRC server
 
 - [SSL / TLS / HTTPS Enabled, IRC Server Running](/ssl-tls-https-enabled-irc-server-running/)
 - [IRC RIP in Peace](/irc-rip-in-peace/)
+
+### Sources
+
+- [Original Twitter post (711354713254416385)](https://twitter.com/i/web/status/711354713254416385)

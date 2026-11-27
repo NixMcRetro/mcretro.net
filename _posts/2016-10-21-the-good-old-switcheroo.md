@@ -42,6 +42,8 @@ In my rough cold-boot checks, Xubuntu used something like 270 MB of RAM. Ubuntu 
 
 Arch was simply too much hassle for me to set up. I must admit I can see the attraction, though. If I had more time I'd probably reinstall the operating system a few dozen times just to get the hang of it!
 
+I'd been trying Arch on 17th October and connecting to Wi-Fi was quite an adventure in itself! :)
+
 Xubuntu has my attention because just about everything works out of the box. Next comes the search for equivalent programs to what I use on the Mac, starting with the web browser.
 
 Hmmm... no Safari for Linux, which means my iCloud bookmarks won't sync. In the bin with Safari! I've moved over to Firefox with Firefox Sync, slapped Classic Theme Restorer in, and suddenly it doesn't look so bad. Why use all those curved tabs taking up most of the screen?
@@ -70,3 +72,4 @@ With all that said, here's hoping I don't actually have to switch computers or p
 
 - [Microsoft - DISM Image Management Command-Line Options](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-image-management-command-line-options-s14)
 - [Arch Linux - About](https://archlinux.org/about/)
+- [Original Twitter post (787930846237908992)](https://twitter.com/i/web/status/787930846237908992)

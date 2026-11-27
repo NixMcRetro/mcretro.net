@@ -12,6 +12,8 @@ share_description: >-
 
 Rock out to Sega Channel Japan with this fantastic video and slideshow! I recorded the audio directly from the output of a Mega Drive Model 1 HDG into my Canon EOS 600D camera. Don't forget to like, subscribe and comment!
 
+A little warning: I managed to record the audio a little too loudly for this one. Turn it down a bit and enjoy the tune!
+
 ### Sega Channel Japan series
 
 - [Japanese Sega Channel Adapter - First Look](/japanese-sega-channel-adapter-first-look/)
@@ -20,3 +22,7 @@ Rock out to Sega Channel Japan with this fantastic video and slideshow! I record
 - [Dumping the Japanese Sega Channel BIOS (Failure 1)](/dumping-the-japanese-sega-channel-bios-failure-1/)
 - [Dumping the Japanese Sega Channel BIOS (Failure 2)](/dumping-the-japanese-sega-channel-bios-failure-2/)
 - [Dumping the Japanese Sega Channel BIOS (Success)](/dumping-the-japanese-sega-channel-bios-success/)
+
+### Sources
+
+- [Original Twitter post (406727294313836544)](https://twitter.com/i/web/status/406727294313836544)

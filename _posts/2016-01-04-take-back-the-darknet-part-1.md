@@ -17,6 +17,14 @@ share_description: >-
 
 Debian 8 Jessie is obsolete, Tor retired the v2 onion-service system used here in 2021, and Raspberry Pi OS, Apache, Samba, SSH and Tor defaults have moved on. Treat this as an archive of what I built, not as current deployment or security guidance. If you're doing this today, use a supported operating system and the current Tor documentation.
 
+**Update 2016:** The onion mirror kept evolving. By 12th February I had the CSS working, and on 3rd March I was untangling WordPress absolute links. On 1st October I reported that the site and blog were happily accessible through Tor!
+
+### Historical Twitter sources
+
+- [Original Twitter post (697925830962335744)](https://twitter.com/i/web/status/697925830962335744)
+- [Original Twitter post (705302620924039168)](https://twitter.com/i/web/status/705302620924039168)
+- [Original Twitter post (781987716565086208)](https://twitter.com/i/web/status/781987716565086208)
+
 **Take Back the Darknet: The complete January 2016 guide.**
 
 The original 14 chapters are now together in one place. Click any chapter below to expand it. Opening another chapter will close the previous one.

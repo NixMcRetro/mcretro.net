@@ -17,7 +17,6 @@ COMMIT = PIN["source_commit"]
 NAME = f"EK-1-v{VERSION}-offline.zip"
 PREFIX = f"EK-1-v{VERSION}/"
 BASE = "https://github.com/NixMcRetro/EK-1/releases/download/v" + VERSION + "/"
-API = "https://api.github.com/repos/NixMcRetro/EK-1/releases/tags/v" + VERSION
 
 def require(condition, message):
     if not condition:
@@ -31,6 +30,11 @@ def fetch(url, destination):
 
 def digest(data):
     return hashlib.sha256(data).hexdigest()
+
+def verify_release_asset(path):
+    record = PIN["release_assets"][path.name]
+    require(path.stat().st_size == record["size"], "Release asset size mismatch: " + path.name)
+    require(digest(path.read_bytes()) == record["sha256"], "Release asset digest mismatch: " + path.name)
 
 def blob(data):
     return hashlib.sha1(f"blob {len(data)}\0".encode() + data).hexdigest()
@@ -61,6 +65,8 @@ def verify_archive(archive):
 def verify_site(site):
     require(not (Path(site) / "goodies/ek-1").exists(), "Obsolete EK-1 path must not be published")
     dest = Path(site) / "homepages/ek-1"
+    for filename in (NAME, NAME + ".sha256"):
+        verify_release_asset(dest / filename)
     source = verify_archive(dest / NAME)
     checksum = digest((dest / NAME).read_bytes())
     require((dest / (NAME + ".sha256")).read_text() == f"{checksum}  {NAME}\n", "Wrong mirrored checksum")
@@ -80,16 +86,11 @@ def install(site):
     require(not dest.exists(), "Refusing to overwrite a pre-existing EK-1 directory")
     with tempfile.TemporaryDirectory() as tmp:
         temp = Path(tmp)
-        fetch(API, temp / "release.json")
-        rel = json.loads((temp / "release.json").read_text())
-        require(rel["tag_name"] == "v" + VERSION and rel["target_commitish"] == COMMIT
-                and not rel["draft"] and not rel["prerelease"], "Unapproved or unpublished release")
-        assets = {a["name"]: a for a in rel["assets"]}
+        # The approved public release metadata was verified when its exact assets
+        # were pinned. Avoid anonymous REST API rate limits on every build.
         for filename in (NAME, NAME + ".sha256"):
-            require(assets[filename]["browser_download_url"] == BASE + filename, "Unexpected release URL")
             fetch(BASE + filename, temp / filename)
-            data = (temp / filename).read_bytes()
-            require(assets[filename]["digest"] == "sha256:" + digest(data), "Release asset digest mismatch")
+            verify_release_asset(temp / filename)
         archive = temp / NAME
         checksum = digest(archive.read_bytes())
         require((temp / (NAME + ".sha256")).read_text() == f"{checksum}  {NAME}\n", "Release checksum mismatch")

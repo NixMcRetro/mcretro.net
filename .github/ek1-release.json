@@ -2,6 +2,16 @@
   "version": "1.0.1",
   "source_commit": "7cb0b4b80876276f6676d89db85a2b5507263c04",
   "source_tree": "60d37fa08fb3e021d73063ef0fd2c48de82bc352",
+  "release_assets": {
+    "EK-1-v1.0.1-offline.zip": {
+      "sha256": "141ca1db085b6a8b51163e775957e544d2792493f6fb0723444b099ab32480f0",
+      "size": 6302429
+    },
+    "EK-1-v1.0.1-offline.zip.sha256": {
+      "sha256": "b46bc2ab63d75da5712a124d03a441fad7649435f6eeb86a6cadd6eba6a040c2",
+      "size": 90
+    }
+  },
   "files": {
     ".github/tests/ek1-accompaniment.mjs": {
       "git_blob": "14e30dc09be1d8d31265106792715284f97cfcc7",

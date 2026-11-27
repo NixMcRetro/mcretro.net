@@ -14,14 +14,12 @@ I've found that YouTube Cards now offer a poll/voting system. You finally get a 
 
 There are three choices: a PAL/NTSC region modification for a Sega Mega Drive Model 1, some fine-pitch TSOP soldering and flash programming for the SNES project, or another round of game reviews. I've still got the list of games people suggested, even if I've been a little slack about getting around to them.
 
-I'm hoping to have the chosen video ready by the end of the week. First I need to work out exactly where YouTube is going to put the voting card and when the poll closes. Minor details! :P
-
-**Update 2nd March 2016:** The TSOP flash-cart project was leading the vote with roughly 15 hours left. Would the Mega Drive region modification catch up?
-
 ![Interim poll showing TSOP flash-cart soldering with 17 votes, Mega Drive region mod with 14, and game reviews with 3.](/assets/images/2016/twitter-704800047649558528-Ccfz6HEUMAAI2Mc.jpg)
 
 *With around 15 hours left, TSOP flash-cart soldering was ahead with 17 of the 34 votes. Could the Mega Drive catch up?*
 {: .media-caption }
+
+I'm hoping to have the chosen video ready by the end of the week. First I need to work out exactly where YouTube is going to put the voting card and when the poll closes. Minor details! :P
 
 ### Sources
 

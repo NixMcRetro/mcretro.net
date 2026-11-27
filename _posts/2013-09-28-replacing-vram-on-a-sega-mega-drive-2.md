@@ -36,6 +36,17 @@ Of course, if I accidentally fixed the Mega Drive completely, that would ruin my
 
 At least I got another opportunity to practise soldering those tiny surface-mount chips. More investigation required for serial 440005313, I think!
 
+An earlier Twitter post from 1st September 2013 reported a successful VRAM replacement on a Mega Drive 2. This photograph is from that earlier post; the serial number is not visible, so it does not establish that the intermittent fault in 440005313 was resolved.
+
+![Close-up of the Mega Drive 2 mainboard and its soldered video RAM chip.](/assets/images/2013/twitter-374041067953213440-BTDcXpsCUAEvHi6.jpg)
+
+*Soldering practice leads to a working Sega Mega Drive 2!*
+{: .media-caption }
+
+### Sources
+
+- [Original Twitter post (374041067953213440)](https://twitter.com/i/web/status/374041067953213440)
+
 **Related Posts**
 
 - [Sega Mega Drive 2 Video Distortion (Serial 440005313)](/sega-mega-drive-2-video-distortion-serial-440005313/)

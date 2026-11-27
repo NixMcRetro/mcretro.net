@@ -18,6 +18,14 @@ I'd already opened this unit previously to dump the BIOS, so a few screws were c
 
 The daughterboard comes away after removing its retaining screws and carefully separating the board-to-board connector. There are capacitors everywhere! Looking at the number of them, I suspect replacing the whole lot is going to take a while. Still, it's rather nice to see the hardware laid out like this.
 
+<video controls preload="metadata" playsinline style="max-width:100%; height:auto;">
+  <source src="/assets/videos/2015/twitter-503800851232600064-Bv3cM1ACAAAvQ9g.mp4" type="video/mp4">
+  <a href="/assets/videos/2015/twitter-503800851232600064-Bv3cM1ACAAAvQ9g.mp4">Watch the original MP4 clip</a>.
+</video>
+
+*Dancing capacitors! A little clip from 25th August 2014.*
+{: .media-caption }
+
 Getting the front panel off required a little more care. There were two additional screws hiding underneath, and I'm very glad I noticed them before trying to pull the plastic away. Snapping the front off a piece of hardware like this would have been a complete disaster! The controller ports are connected internally by cables, with white to the right and an orangey-yellow one to the left. The first one even rhymes! I disconnected them after noting their positions.
 
 With the front removed, the mainboard can slide out of the metal frame once the remaining screws are out of the way. There are some interesting little details inside, including the battery, the familiar Sega processors and the BIOS EPROM. The markings on a few of the chips also suggest this particular unit dates from around 1993.
@@ -31,6 +39,7 @@ What a lovely piece of hardware, though. Incredible! Just fantastic!
 ### Sources
 
 - [ConsoleMods - LaserActive: PAC-S10](https://consolemods.org/wiki/LaserActive:PAC-S10)
+- [Original Twitter post (503800851232600064)](https://twitter.com/i/web/status/503800851232600064)
 
 ### Related Posts
 

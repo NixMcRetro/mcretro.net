@@ -14,9 +14,11 @@ I've got a Raspberry Pi on the bench, and I'm wondering just how much work I can
 
 I'm starting with BerryBoot and Raspbian Wheezy. BerryBoot provides the boot-selection and operating-system installation environment, starting from the SD card, while Raspbian Wheezy gives me a Debian-based system adapted for the Pi. The idea is to see whether I can eventually run the system from USB storage, rather than relying on the SD card for everything.
 
-There are four jobs on my list: an FTP server, something to seed torrents, remote access so I can check what the Pi is doing, and that USB storage arrangement. The Pi doesn't simply boot from USB out of the box in this setup, which is one reason I'm giving BerryBoot a go. None of those server jobs is finished yet, but at least I've got a plan!
+There are four jobs on my list: an FTP server, something to seed torrents, remote access so I can check what the Pi is doing, and that USB storage arrangement. The Pi doesn't simply boot from USB out of the box in this setup, which is one reason I'm giving BerryBoot a go. The complete file server project isn't finished yet, but at least I've got a plan!
 
-Naturally, I sat down to configure the thing with a mouse and no keyboard, because I couldn't find one. That went about as far as you'd expect. After tracking down a Dell keyboard and choosing my setup options, I did get Raspbian booted to the desktop, so the first part is working. FTP, remote access and the rest can come next.
+I'd ordered the Raspberry Pi from Element 14 back on 14th April 2013, having finally given in when they had stock locally. By 6th May I was getting FTP enabled while rocking out to SPACEDEB.MOD. A couple of days later I'd even installed some heatsinks. Bling!
+
+Naturally, I sat down to configure the thing with a mouse and no keyboard, because I couldn't find one. That went about as far as you'd expect. After tracking down a Dell keyboard and choosing my setup options, I did get Raspbian booted to the desktop, so the first part is working. Getting FTP, remote access and the rest working together can come next.
 
 The real end goal is a little more McRetro-specific: I want this machine to become the [File Server](/goodies/) for material that needs preserving for future generations. I'm also aiming for a static network address that's easy to remember, rather than having to hunt for the Pi whenever I want to connect to it.
 
@@ -31,3 +33,6 @@ Whether the Raspberry Pi is actually going to enjoy that job remains to be seen.
 
 - [Raspberry Pi: Raspbian Wheezy SD Card Image Announcement (30 October 2012)](https://www.raspberrypi.com/news/new-sd-card-image/)
 - [BerryBoot: Raspberry Pi Multiboot Installer and Storage Documentation](https://www.berryterminal.com/doku.php/berryboot)
+- [Original Twitter post (323416341900042241)](https://twitter.com/i/web/status/323416341900042241)
+- [Original Twitter post (331374365042147328)](https://twitter.com/i/web/status/331374365042147328)
+- [Original Twitter post (332084382133272578)](https://twitter.com/i/web/status/332084382133272578)

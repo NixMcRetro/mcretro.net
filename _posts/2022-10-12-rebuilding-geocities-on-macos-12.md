@@ -117,7 +117,7 @@ Mac OS limit of ~1024 characters
 
 ![Square graphic with a large stylised black lowercase g above the blue-and-green GeoCities wordmark.](/assets/images/2022/img_0976a.jpg){: width="100" }
 
-*A little GeoCities badge for the next round of RetroChallenge adventures.*
+*GeoCities!*
 {: .media-caption }
 
 For now, I'm back in the game with [RetroChallenge 2022/10](https://www.retrochallenge.org/2022/) doing something similar but different on hardware and software from 2012. I'm thinking a Mac Pro and Ubuntu 12.04.5. This should result in fewer errors and a more accurate replication of despens' results. :)

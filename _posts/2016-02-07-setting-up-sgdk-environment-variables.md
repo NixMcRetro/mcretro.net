@@ -15,6 +15,18 @@ share_description: >-
 
 Just leaving this here as a reminder for myself... I've been looking into SGDK, the Sega Genesis Development Kit, which allows you to write software for the Sega Mega Drive / Genesis using C. Much easier than having to write absolutely everything in Motorola 68000 assembly, or at least that's the theory!
 
+A couple of days before writing this, I was experimenting with SGDK through GENDEV and managed to get a little Hello World working. I posted screenshots on 5th February 2016.
+
+![Ubuntu terminal compiling m68k binutils and GCC with GENDEV.](/assets/images/2016/twitter-695240106760798210-CaX9MSqUYAA8CzN.png)
+
+*A little late-night compiling with GENDEV on Ubuntu, building the Mega Drive development toolchain.*
+{: .media-caption }
+
+![Genesis sample program window displaying Shane McRetro Rules! in white pixel lettering on a black background.](/assets/images/2016/twitter-695263368060411908-CaYSWTnUAAARSXD.png)
+
+*Hello World success! My little sample program, running in an emulator on 5th February 2016.*
+{: .media-caption }
+
 Before anything useful can happen, Windows needs to know where SGDK is installed. That's where environment variables come in.
 
 ### Setting up SGDK
@@ -71,3 +83,5 @@ The resulting ROM should appear as `out\rom.bin`, ready to try in a Mega Drive e
 
 - [SGDK on GitHub](https://github.com/Stephane-D/SGDK)
 - [Setting up SGDK Environment Variables](https://github.com/Stephane-D/SGDK/wiki/Setup-SGDK-basic)
+- [Original Twitter post (695240106760798210)](https://twitter.com/i/web/status/695240106760798210)
+- [Original Twitter post (695263368060411908)](https://twitter.com/i/web/status/695263368060411908)

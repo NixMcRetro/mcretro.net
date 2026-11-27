@@ -17,3 +17,12 @@ Making a clock out of a Sega Mega Drive II seemed like a wonderful idea. Unfortu
 The clock mechanism was also a little too short for the job, which meant one of the cartridges wouldn't fit properly. The other cartridge was being held in place with Blu Tack. Meanwhile, I'd drilled a couple of holes in the back and used some electrical wire to hang the whole contraption on the wall.
 
 I'd originally bought the clock mechanism for a PlayStation, but didn't have a suitable broken one lying around. The Mega Drive II was available, so here we are! A different set of clock hands and something to cover that extra hole would finish things off rather nicely.
+
+![Black Sega Mega Drive II mounted on a wall with red clock hands.](/assets/images/2014/twitter-407130192981671936-BaZqwOJCQAAKAQS.jpg)
+
+*The Mega Drive 2 clock as photographed in December 2013.*
+{: .media-caption }
+
+### Sources
+
+- [Original Twitter post (407130192981671936)](https://twitter.com/i/web/status/407130192981671936)

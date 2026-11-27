@@ -16,11 +16,15 @@ I was going through some photographs when I spotted what looked like a strange r
 
 That might explain why we've got no audio. I was already looking for another way to get sound out of the board, so finding such obvious physical damage gives me something definite to investigate. I'll need to find a suitable replacement or work out another way around the problem.
 
+**Update 7th September 2013:** Unfortunately I couldn't bring SNES UP17388130 back from the brink. Its parts might be able to help two other Super Nintendo consoles instead.
+
 At least the new capacitors are fitted. I'm hoping they'll stay leak-free for another 15 to 20 years, although of course that depends on the parts and their operating conditions. For now, the sound problem remains, and the S-MIX chip has moved right to the top of my list.
 
 ### Sources
 
 - [Nichicon: Aluminum Electrolytic Capacitors (Technical Notes)](https://www.nichicon.co.jp/english/products/pdf/aluminum-e.pdf)
+- [Original Twitter post (376312508803321856)](https://twitter.com/i/web/status/376312508803321856)
+- [Original Twitter post (376312755134795778)](https://twitter.com/i/web/status/376312755134795778)
 
 ### Related Posts
 

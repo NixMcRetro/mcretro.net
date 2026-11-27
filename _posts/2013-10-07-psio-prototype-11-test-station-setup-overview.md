@@ -20,6 +20,8 @@ I've also got the PSIO connected to the computer for loading games. This particu
 
 For the tests I've prepared a 16 GB card containing a selection of game images, mostly BIN files and associated image data. Some had already given me trouble in an emulator, so it will be interesting to see whether they behave any differently on the prototype. I've got quite a few games to work through!
 
+On 2nd October I'd been wrestling with ECM while getting the game images ready for these PSIO tests. Apparently preparing the software was going to be an adventure of its own!
+
 Another interesting detail is that PSIO handles the PlayStation's disc-open or disc-closed state through software. The Systems Console gives me access to the game list, and from there I can select an image to try. Let's start with Tekken and see what happens.
 
 Please remember that this is prototype hardware, so the game compatibility and behaviour may differ substantially from the final product. You can hit up [ps-io.com](https://ps-io.com/) if you have any questions, since I am but a mere tester. I don't understand all the technology behind this wonderful invention.
@@ -35,6 +37,7 @@ Please remember that this is prototype hardware, so the game compatibility and b
 ### Sources
 
 - [PSX-SPX - Mods - PAL/NTSC Color Mods](https://psx-spx.consoledev.net/ps1/pinouts/mods-pal-ntsc-color-mods/)
+- [Original Twitter post (385202081012781056)](https://twitter.com/i/web/status/385202081012781056)
 
 ### Related Posts
 

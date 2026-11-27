@@ -15,6 +15,8 @@ share_description: >-
 
 PICkit 2 is a Microchip programmer/debugger designed primarily for PIC chips. The fun part is that AVRDUDE can also use it as an ISP programmer for supported AVR microcontrollers, including the ATmega328P I'm working with here. That AVR support comes from AVRDUDE rather than Microchip's PICkit 2 application.
 
+On 22nd December 2013 I finally managed to flash the Lunchbeat using PICkit 2 and AVRDUDE. Success!
+
 Atmel is one of Microchip's competitors, so I have to wonder whether that's why Microchip doesn't seem particularly interested in supporting the PICkit 2 anymore. After all, you wouldn't want your own programmer helping sell your biggest competitor's chips! That's just my theory, of course.
 
 What I used:
@@ -33,6 +35,7 @@ Compiling all of this has been particularly entertaining because I have very lit
 
 - [Microchip Technology - PICkit 2 Development Programmer/Debugger](https://www.microchip.com/en-us/development-tool/pg164120)
 - [AVRDUDE - Version 6.0 Manual (2013)](https://download-mirror.savannah.gnu.org/releases/avrdude/avrdude-doc-6.0.1.pdf)
+- [Original Twitter post (414593101735284736)](https://twitter.com/i/web/status/414593101735284736)
 
 ### Related Posts
 

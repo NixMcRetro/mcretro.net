@@ -33,7 +33,7 @@ I was also still chasing the strange 32X flickering problem on my Model 1 Mega D
 
 I wondered whether this was another capacitor problem, or perhaps something related to a particular production range. I even had a few ideas about the video hardware, although I wasn't exactly certain whether I should be blaming a VDP or VDU. Whatever it wanted to call itself, how was I supposed to shoot anything with the screen jumping around like that? I was even starting to miss the terrible Doom music!
 
-Testing several completely different 32X units against the same affected Mega Drive was the important clue. The common factor was increasingly looking like the host console rather than the 32X itself.
+At the end of September I tested four 32X units with five Mega Drives. At first I thought one Model 1 didn't play nicely with the add-ons, but a second Mega Drive turned out to have compatibility problems as well. The common factor was increasingly looking like the host consoles rather than the 32X units.
 
 **Update 6th February 2018:** I later learned that Sega had already documented this problem on PAL and Asian Model 1 VA4 boards in its 1994 and 1995 service bulletins. Poor EDCLK and VCLK signal quality in the Mega Drive itself can cause 32X-generated video to jitter and the system to lock up as it warms. Sega's repair modifies the Mega Drive motherboard rather than the 32X. That fits my symptoms much better than the capacitor theory I was exploring here.
 
@@ -44,6 +44,9 @@ I've also started a thread on the [ASSEMbler Games forum](https://web.archive.or
 - [ConsoleMods: 32X Service Bulletin Fixes (PAL/Asian VA4)](https://consolemods.org/wiki/Genesis:32X_Service_Bulletin_Fixes)
 - [Sega: Service Bulletin 008 (13 December 1994, EDCLK, PAL VA4)](https://drive.google.com/file/d/1gUPVeXch-TWNjwld4bYFWFZG23_RJ9Be/view)
 - [Sega: Service Bulletin 012 (28 March 1995, VCLK, MD/32X VA4)](https://drive.google.com/file/d/1sOElKt5W6S89mjgpqdoGD3c4R3beXH_q/view)
+- [Original Twitter post (252239526276239360)](https://twitter.com/i/web/status/252239526276239360)
+- [Original Twitter post (252291590280851456)](https://twitter.com/i/web/status/252291590280851456)
+- [Original Twitter post (252392326520008705)](https://twitter.com/i/web/status/252392326520008705)
 
 ### Related Posts
 

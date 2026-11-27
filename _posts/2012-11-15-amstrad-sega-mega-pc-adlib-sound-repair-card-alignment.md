@@ -52,6 +52,11 @@ For a while I had Monkey Island producing lovely FM music, only for everything t
 
 Eventually I loosened the four mounting screws securing the board assembly and adjusted its position relative to the front connector board. That brought the boards back into proper alignment.
 
+![Reassembled beige Amstrad Mega PC on a desk.](/assets/images/2012/twitter-267519871712124928-A7Zr5-xCYAATzYD.jpg)
+
+*The Amstrad Mega PC back in one piece!*
+{: .media-caption }
+
 The Mega Drive side had continued producing sound normally, which is why I had spent so long blaming software on the PC side. The PC side is finicky as all hell.
 
 Once I carefully reassembled the machine piece by piece and made sure the boards were seated correctly, the AdLib audio worked properly again. Paku Paku and Monkey Island both finally had FM music instead of broken or missing audio, without needing command-line switches.
@@ -66,6 +71,7 @@ You can follow the original troubleshooting discussion in the archived [ASSEMble
 
 - [Amstrad: Mega PC Owners Manual (AdLib Sound, p. 9)](https://acpc.me/ACME/AMSTRAD_PRO/AMSTRAD_PC/LITTERATURE/MANUELS/MEGA_PC_Manual%5BENG%5D.pdf)
 - [Jason M. Knight: Paku Paku 1.6 README and Pascal Source (/adlib)](https://www.classicdosgames.com/files/games/jasonmknight/paku_1_6.rar)
+- [Original Twitter post (11 November 2012)](https://twitter.com/i/web/status/267519871712124928)
 
 ### Related Posts
 

@@ -41,12 +41,15 @@ A 27C1024-class device stores 1 megabit as 64K x 16 bits, so that size made sens
 
 At the time, I believed this was the first public dump of the Aiwa BIOS. MAME now catalogues `mpr-15768-t.bin` at 128 KiB with CRC32 `8052c7a0`, although that doesn't tell us who made the first public release.
 
+**Update 9th February 2013:** I pointed The Cutting Room Floor (TCRF) Wiki towards the dumped Aiwa Mega-CD BIOS on Twitter, sharing a link to the ASSEMbler Games discussion. Another little step towards keeping this unusual bit of Sega history from disappearing!
+
 I later returned to the Game Unit to install a BIOS socket, repair damaged traces, and program replacement EPROMs. Those adventures are covered in the related posts below. More details about this original investigation are also preserved in the archived [ASSEMbler Games thread](https://web.archive.org/web/20191111212702/https://assemblergames.com/threads/aiwa-mega-cd-game-unit-bios-dump-mpr-15768-t-2-11c.43866/).
 
 **Sources**
 
 - [Atmel: AT27C1024 Datasheet (1 Mbit, 64K x 16)](https://ww1.microchip.com/downloads/en/DeviceDoc/doc0019.pdf)
 - [MAME: Aiwa ROM mpr-15768-t.bin (0x020000 bytes / 128 KiB; CRC32 8052c7a0)](https://github.com/mamedev/mame/blob/master/src/mame/sega/mdconsole.cpp)
+- [Original Twitter post (9 February 2013)](https://twitter.com/i/web/status/300183564845191168)
 
 **Related Posts**
 

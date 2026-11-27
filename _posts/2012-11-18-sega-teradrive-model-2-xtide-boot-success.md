@@ -21,6 +21,11 @@ I had a look through FDISK, then decided to start again with an MS-DOS 6.22 boot
 
 The next step was running `FDISK /MBR` to rebuild the master boot record. With that done, I removed the floppy and rebooted the machine to see whether the XTIDE BIOS could finally start DOS from the drive. And there it was! A proper boot from the XTIDE setup, followed by DOS appearing on the screen. Fantastic!
 
+![Monitor showing MS-DOS 6.22 after booting from the TeraDrive's hard drive.](/assets/images/2012/twitter-269651396922580992-A73-hE-CIAAQjCZ.jpg)
+
+*C:\\> The future is now, probably.exe*
+{: .media-caption }
+
 There is still one little quirk. When the machine starts from cold, it first checks the floppy drives and drops into the Sega startup menu rather than going straight to the XTIDE boot process. I tried several setup and configuration options without finding a way around it.
 
 It isn't really a disaster, because the Sega menu looks rather nice. From there I can select the hard drive or one of the floppy drives, and the XTIDE menu eventually appears with the option to boot from the new storage. Would I remove the Sega screen if I could? Probably, but then I'd want to put it back again.
@@ -33,6 +38,7 @@ The XTIDE card really is an amazing piece of hardware. Thanks to the Vintage Com
 
 - [Sega Hardware Archive: TeraDrive (Model 2, Two Floppies)](https://www.sega.jp/fb/segahard/md/tera.html)
 - [XTIDE Universal BIOS (ATA Storage for Older PCs)](https://www.xtideuniversalbios.org/)
+- [Original Twitter post (17 November 2012)](https://twitter.com/i/web/status/269651396922580992)
 
 **Related Posts**
 

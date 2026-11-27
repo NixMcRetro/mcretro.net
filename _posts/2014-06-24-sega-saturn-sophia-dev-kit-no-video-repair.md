@@ -42,6 +42,8 @@ And would you believe it, we have video!
 
 However, there's another important part to this story. While comparing my Japanese and European Sophia units, I discovered that their PAL/NTSC switch configurations could also cause a completely blank display. I'd been experimenting with the BIOS revisions and region settings, and the two machines weren't behaving quite the same way.
 
+If we rewind back to May I also compared the BIOS chips in my three Sophia systems. There was a string that included the text BTRD1.0032941012, which I guess might mean version 1.0032 with 941012 as the date code.
+
 With the European hardware configured incorrectly, the television would report no signal. Switching it back to PAL brought the display to life. That made it difficult to say with certainty how much of this particular repair was down to the capacitors and how much was the configuration.
 
 After some further experimenting, I managed to get into Sophia's menus and even load Saturn Bomberman. There was a bit of fiddling with the language and region settings, but the CD drive was showing signs of life too. Beautiful!
@@ -51,6 +53,10 @@ To complicate matters, I tried the same switch settings on the third Sophia, whi
 So perhaps the capacitors really were part of the problem after all!
 
 There's still more capacitor work to do on these machines. The next experiment is to give the remaining Sophia the same treatment and see whether we can get three working units. Don't you just love trial and error?
+
+### Sources
+
+- [Original Twitter post (13 May 2014)](https://twitter.com/i/web/status/466111923713343488)
 
 ### Related Posts
 

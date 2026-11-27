@@ -18,6 +18,8 @@ That was encouraging, although a scrap memory board is a rather different propos
 
 The plan was to remove the original 25 MHz AMD 386SX processor and replace it with a Texas Instruments 486SXLC2-G50. The idea of getting a 50 MHz-class processor into this old Mega PC was rather appealing, especially with the possibility of some cache memory helping things along.
 
+Back in June I'd even been looking at a 100 MHz four-pin oscillator for the planned 50 MHz CPU. That was my best bet for what might be needed to get the processor running at full speed.
+
 I've never removed one of these four-sided QFP processors before, so the whole operation was a learning experience. There are 25 pins on each side, and after a fair bit of heating and carefully working around the package, the original processor finally came free. Unfortunately, one track appeared to have lifted during the process.
 
 With the old 386SX removed, I went over the pads with desoldering braid to clear the remaining solder. That took some experimentation of its own, but I eventually got the technique working well enough to prepare the board for the replacement. The original AMD processor survived the removal, which was good news. At least I had one small victory before attempting the considerably more difficult business of installing its successor.
@@ -74,6 +76,7 @@ There are more photographs of both motherboards in the [photo gallery](/goodies/
 
 - [Texas Instruments: TI486SXLC/SXL Reference Guide (100-Pin QFP)](https://www.bitsavers.org/components/ti/TI486/1994_TI486SXLC_and_TI486SXL_Microprocessors_Reference_Guide.pdf)
 - [Texas Instruments: Designing with TI486SXL2-G (Power and Compatibility)](https://www.bitsavers.org/components/ti/TI486/SRZA004_Designing_With_The_TI486SCL2-G_199502.pdf)
+- [Original Twitter post (17 June 2012)](https://twitter.com/i/web/status/214294308155699201)
 
 **Related Posts**
 

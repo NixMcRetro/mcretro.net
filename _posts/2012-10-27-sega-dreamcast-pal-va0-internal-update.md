@@ -25,10 +25,13 @@ What I'd really like to know is how this PAL VA0 compares with the Japanese and 
 
 And while we're at it, how many PAL VA0 Dreamcasts are still out there? Probably not many! I'd love to hear from anyone else who's managed to find one.
 
+**Update 3rd November 2012:** I also managed to dump the BIOS from this PAL VA0 using the Dreamcast Broadband Adapter. I've documented the process separately in my [Sega Dreamcast BIOS Dumping Guide](/sega-dreamcast-bios-dumping-guide/).
+
 ### Sources
 
 - [Dreamcast Wiki: Hardware Variations (PAL VA0)](https://dreamcast.wiki/Hardware_variations)
 - [TSSZ News: Dreamcast European Launch Delay (14 October 1999)](https://lastminutecontinue.com/news/dreamcast-launch-in-europe-delayed/)
+- [Original Twitter post (28 October 2012)](https://twitter.com/i/web/status/262516635385069568)
 
 ### Related Posts
 

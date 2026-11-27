@@ -16,6 +16,11 @@ The solution? Not [Retrobright](https://en.wikipedia.org/wiki/Retrobright). I si
 
 This particular Dreamcast is a VA1 revision, and I'd already pulled the original case apart before starting the video. The new smokey-grey shell needed a bit of cleaning before everything could go back in, along with the original power button, fan and other bits and pieces. There's also the small matter of transferring an entire Dreamcast without breaking anything.
 
+![Powered-on Dreamcast in a translucent grey shell with a controller cable attached.](/assets/images/2012/twitter-262386908414488577-A6QvgMZCMAA8kle.jpg)
+
+*Translucent grey really is a favourite colour when it comes to console cases!*
+{: .media-caption }
+
 First in went the metal shielding and motherboard, making sure the thermal pads were still where they belonged. Then came the controller board, with its rechargeable battery and connecting cable. I didn't have a replacement battery handy, so that particular job could wait for another day.
 
 The GD-ROM drive went back in next, followed by the power supply and its protective cover. Of course, I managed to trap the fan cable under the motherboard at one point, and I very nearly forgot the power supply screws. Just to make things more exciting, my tripod decided to fall apart halfway through the recording. Bits of tripod everywhere. Wonderful!
@@ -25,3 +30,7 @@ With everything back together, I gave the Dreamcast a test using a Bomberman bac
 The replacement case isn't a perfect match for the original, including some of the printed details, but I'm quite happy with how it turned out. The original yellowed shell can stay preserved rather than becoming another chemical experiment, and the translucent grey replacement looks pretty good anyway.
 
 There are more photos of the Dreamcast in the [photo gallery](/goodies).
+
+### Sources
+
+- [Original Twitter post (28 October 2012)](https://twitter.com/i/web/status/262386908414488577)

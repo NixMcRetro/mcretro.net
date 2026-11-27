@@ -17,6 +17,11 @@ I connected another supply to see whether that would get things moving again. In
 
 The motherboard appeared to be in reasonable condition, and I couldn't immediately find anything burnt around it. That left the floppy and hard drives as possible suspects, so I kept digging. Eventually I found the culprit: a tantalum capacitor on the Seagate 107 MB hard drive had failed rather spectacularly.
 
+![Close-up of a hard-drive circuit board with a burnt component beside a yellow capacitor.](/assets/images/2012/twitter-267533195816361985-A7Z4Bi7CYAA4p9e.jpg)
+
+*The damage photographed on 11th November 2012, after the Seagate hard drive decided to produce rather more smoke than intended. Ouch!*
+{: .media-caption }
+
 The original capacitor is a 15 uF, 25 V part in a case-size D package. I've ordered a replacement and may try repairing the drive, although I'll want to inspect the surrounding circuitry as well. The capacitor is clearly where the smoke came from, but I still don't know whether it failed on its own or whether something else contributed to the problem. At least the floppy drives appear to have survived.
 
 In the meantime I've installed a 517 MB hard drive and got the machine running again. That's a ridiculous amount of space for some of the things I want to do on this Mega PC. DOS 6.22, Windows for Workgroups 3.11, the Entertainment Pack and probably a fair few games should keep it occupied. Monkey Island, anyone?
@@ -28,6 +33,7 @@ I even got the network card talking well enough to ping [RetroJunkie.net](https:
 ### Sources
 
 - [Amstrad: Mega PC Owners Manual (AdLib Sound, p. 9)](https://acpc.me/ACME/AMSTRAD_PRO/AMSTRAD_PC/LITTERATURE/MANUELS/MEGA_PC_Manual%5BENG%5D.pdf)
+- [Original Twitter post (11 November 2012)](https://twitter.com/i/web/status/267533195816361985)
 
 ### Related Posts
 

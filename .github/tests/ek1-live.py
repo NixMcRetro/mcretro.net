@@ -22,7 +22,12 @@ def check():
         data = fetch(base + path)
         assert hashlib.sha1(f"blob {len(data)}\0".encode() + data).hexdigest() == pin["files"][path]["git_blob"], path
     archive = fetch(base + name)
-    expected = fetch(base + name + ".sha256").decode()
+    checksum_file = fetch(base + name + ".sha256")
+    for filename, data in ((name, archive), (name + ".sha256", checksum_file)):
+        record = pin["release_assets"][filename]
+        assert len(data) == record["size"], "Wrong live asset size: " + filename
+        assert hashlib.sha256(data).hexdigest() == record["sha256"], "Wrong live asset digest: " + filename
+    expected = checksum_file.decode()
     assert expected == f"{hashlib.sha256(archive).hexdigest()}  {name}\n"
     goodies = fetch("https://mcretro.net/goodies/").decode()
     assert "/homepages/ek-1/" in goodies and "/goodies/ek-1/" not in goodies, "Incorrect Goodies link"

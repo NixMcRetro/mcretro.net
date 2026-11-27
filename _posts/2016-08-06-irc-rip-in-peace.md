@@ -19,7 +19,7 @@ You will always live on in our hearts. Plus, it was fun getting it all working!
 
 **Update 17th August 2016:** The next little web experiment was [Eleventy7.net](/the-birth-of-eleventy7-net/), a site dedicated to the old!
 
-### McRetroNet IRC server
+### Related Posts
 
 - [Initial Tests for a McRetroNet IRC Server](/initial-tests-for-a-mcretronet-irc-server/)
 - [SSL / TLS / HTTPS Enabled, IRC Server Running](/ssl-tls-https-enabled-irc-server-running/)
